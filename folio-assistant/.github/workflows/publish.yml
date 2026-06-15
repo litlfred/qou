@@ -182,8 +182,28 @@ jobs:
           python3 .github/scripts/extract-folio.py > papers.json
           echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
 
+      - name: Detect compute changes (gate witness regen)
+        id: compute_diff
+        run: |
+          # Witnesses are DERIVED from the computation Python; if no compute
+          # file changed in this PR, the committed witnesses can't be stale,
+          # so the ~36 min regen is pure waste. Fail-safe: default to running
+          # (changed=true); only an explicit empty compute-diff skips it.
+          changed=true
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            base="${{ github.event.pull_request.base.sha }}"
+            if git cat-file -e "$base" 2>/dev/null && \
+               [ -z "$(git diff --name-only "$base"...HEAD -- \
+                        folio-assistant/computations tools 2>/dev/null \
+                        | grep -E '\.py$')" ]; then
+              changed=false
+            fi
+          fi
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+          echo "compute changed since base: $changed (false => skip witness regen)"
+
       - name: Regenerate stale witnesses
-        if: inputs.skip_witnesses != true
+        if: inputs.skip_witnesses != true && steps.compute_diff.outputs.changed == 'true'
         continue-on-error: true
         run: |
           set -o pipefail
@@ -207,7 +227,8 @@ jobs:
         if: >
           github.event_name == 'pull_request' &&
           github.event.pull_request.head.repo.full_name == github.repository &&
-          inputs.skip_witnesses != true
+          inputs.skip_witnesses != true &&
+          steps.compute_diff.outputs.changed == 'true'
         continue-on-error: true
         env:
           HEAD_REF: ${{ github.event.pull_request.head.ref }}
@@ -345,11 +366,17 @@ jobs:
           # It does NOT write a latexmk .fdb, so it can't confuse the real
           # (full latexmk) main build below. This is the draft-vs-main split:
           # cheap syntax gate, full build only once.
-          pdflatex -shell-escape -draftmode -interaction=nonstopmode main.tex \
+          # The fast-fail gate only needs fatal '! ' errors, which the ~2944
+          # \marginnote annotations never cause — and they cost ~50% of
+          # compile (measured). Strip them here for a ~2x faster gate; the
+          # full build below keeps every margin icon.
+          sed 's|\\begin{document}|\\renewcommand{\\marginnote}[2][]{}\\begin{document}|' \
+            main.tex > main-syntax.tex
+          pdflatex -shell-escape -draftmode -interaction=nonstopmode main-syntax.tex \
             > latex-syntax.log 2>&1 || true
-          if grep -aqE '^! ' main.log 2>/dev/null; then
+          if grep -aqE '^! ' main-syntax.log 2>/dev/null; then
             echo "::error::Fatal LaTeX error(s) in draftmode syntax check:"
-            grep -anE '^! ' main.log | head -20
+            grep -anE '^! ' main-syntax.log | head -20
             tail -50 latex-syntax.log
             exit 1
           fi
