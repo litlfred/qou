@@ -348,51 +348,31 @@ memoize, when enabled, additionally needs `-shell-escape` on every
 
 ---
 
-## Update 2026-06-15 — shipped DEFAULT-ON (supersedes the "staged / `use_fmt`" framing above)
+## FINAL 2026-06-15 — both cache mechanisms non-functional on the toolchain; REVERTED
 
-Per owner directive ("make ideal behaviour default; will debug later"),
-the cache is **on by default** in `publish.yml` (no `use_fmt` opt-in
-gate): content-pipeline generates with `--use-format qou --memoize`;
-`paper-pdf` + `diff-pdf` restore the caches and build `qou.fmt`; the
-draft gate is a single `pdflatex -draftmode` pass.
+Real-engine testing (texlive-full 2023, installed in-sandbox via
+`scripts/install-tex.sh`) refuted both layers. **The default build is
+plain inline-preamble + full latexmk; there is no preamble or diagram
+cache.** Authoritative findings: [`.claude/skills/local/latex-build-cache.md`](../../.claude/skills/local/latex-build-cache.md) §Negative results.
 
-**Cache propagation (main → draft).** GitHub scopes default-branch
-caches to every branch, so:
-- **Format** (`qou.fmt`): keyed on `sha256(preamble.tex)` only — content-
-  addressed, so main builds it once and every branch/PR with the same
-  preamble restores it.
-- **Memoize** (`.memo`): main builds save the canonical
-  `latex-memo-main-<run_id>` ("blessed") cache; draft/feature builds
-  restore `latex-memo-<branch>-` (own, fast iteration) then
-  `latex-memo-main-` (main's). So drafts always build on main's cache,
-  and each main build squash-consolidates the boxes for later drafts —
-  branch caches never pollute main's blessed set.
+| Mechanism | Verdict | Root cause |
+|-----------|---------|-----------|
+| `.fmt` (mylatexformat `%&qou`) | unusable | mylatexformat gobbles everything between `%&fmt` and `\begin{document}` → drops per-paper manifest macros (`\ordw` …) + the per-render memoize `\usepackage`. |
+| memoize | unusable for tikzcd | this TeXLive lacks memoize's tikz library; the manual env breaks tikzcd's `&` catcode; all 74 diagrams are `tikzcd` (0 `tikzpicture`) → 0 boxes cache. |
+| tikz `\tikzexternalize` | aborts on tikzcd | collects until `\end{tikzpicture}`; tikzcd ends `\end{tikzcd}`. |
+| fixed numbering + per-section `\clearpage` | reverted | enablers for block caching that none of the above delivered. |
 
-### Block-level caching via FIXED (declarative) numbering
+**Reverted** (commit *"de-default broken LaTeX cache …"*): removed
+`--use-format`/`--memoize` from the pipeline + `publish.yml`, deleted
+`scripts/build-fmt.sh`, reverted fixed-numbering/page-break, deleted the
+`actions/cache` steps.
 
-The cascade that blocks block-level caching (a block's number depends on
-position) is removed by computing numbers in the **pipeline** and forcing
-them with `\setcounter`, so a block's `.tex` is deterministic given its
-source + number → cacheable by `memoize`. Combined with a **page break
-per section/subsection** (each (sub)section's internal layout is then
-independent of prior content), a section becomes a self-contained
-cacheable unit whose only global dependency is its start-page number
-(computed cheaply at assembly). Both **default-on**:
+**Kept (genuinely useful):** `scripts/install-tex.sh` (get a TeX engine
+into the sandbox) and `scripts/feature-build.sh` (quick changed-chapter
+preview + diffs, inline). Plus the content compile-bug fixes surfaced by
+the first real compile (`ż`/`𝓕`/`📝` + an unescaped `%` in `:val` units).
 
-| Behaviour | Where | Kill-switch |
-|-----------|-------|-------------|
-| Fixed numbering (`\setcounter` before each chapter/section/subsection/numbered block; matches `report` + amsthm `theorem`[section]) | `render-latex.ts` | `QOU_NO_FIXED_NUMBERING=1` |
-| Page break before each section/subsection | `render-latex.ts` | `QOU_NO_SECTION_PAGEBREAK=1` |
-
-Numbers are forced explicitly, so the worst failure mode is *wrong
-numbers* (debug later), not a broken compile. Native `\ref`/`\label`
-still resolve (the counter is set, not bypassed).
-
-**Known residuals (debug later):** equation numbers (inside block `.md`,
-not yet `\setcounter`-forced → still position-dependent); page
-numbers / TOC / `\pageref` (recomputed each build by the pagination
-pass — correct, just not skippable); `memoize` cross-refs inside cached
-boxes need a TeX run to confirm. Compile-unverified in the sandbox (no
-engine); CI verifies once Actions billing clears. Testing recipe:
-[`docs/latex-build-cache-testing.md`](../latex-build-cache-testing.md).
+**The only viable diagram cache** is a `standalone`-package restructure
+(render each tikzcd → its own PDF → `\includegraphics`); large, deferred
+to a future PR.
 

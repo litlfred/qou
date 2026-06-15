@@ -57,22 +57,17 @@ generate-index.py                   → per-paper index.html (viewer)
 ### Running locally
 
 ```bash
-# Build chapters + generate main.tex (cache-aware default: %&qou format +
-# memoize — see local/latex-build-cache)
+# Build chapters + generate main.tex from manifest
 cd content && bun run pipeline/build.ts \
   quantum-observable-universe/quantum-observable-universe.ts \
   --out-dir ../chapters/ \
   --generate-main \
   --main-out ../main.tex \
-  --preamble ../latex/preamble.tex \
-  --use-format qou --memoize
+  --preamble ../latex/preamble.tex
 
-# Compile PDF (requires TeX Live). No engine in the sandbox? Run the scripted
-# fallback FIRST — scripts/install-tex.sh disables the firewalled launchpad
-# PPAs and installs texlive-full + latexmk (bundles mylatexformat + memoize).
-# See local/latex-build-cache "Getting a TeX engine in the sandbox".
-cd .. && scripts/build-fmt.sh --preamble latex/preamble.tex --name qou
-latexmk -pdf -shell-escape main.tex
+# Compile PDF (requires TeX Live). No engine in the sandbox? Run
+# scripts/install-tex.sh first (installs texlive-full + latexmk).
+cd .. && latexmk -pdf main.tex
 ```
 
 ### Key files

@@ -304,13 +304,6 @@ if (import.meta.main) {
     const chaptersDirIdx = args.indexOf("--chapters-dir");
     const chaptersDir = chaptersDirIdx >= 0 ? args[chaptersDirIdx + 1] : "chapters/";
 
-    // --use-format <name>: emit `%&<name>` instead of inlining the preamble
-    // (the format must be precompiled first via scripts/build-fmt.sh).
-    const useFormatIdx = args.indexOf("--use-format");
-    const useFormat = useFormatIdx >= 0 ? args[useFormatIdx + 1] : undefined;
-    // --memoize: load memoize live to cache tikz/tikz-cd boxes (needs -shell-escape).
-    const memoize = args.includes("--memoize");
-
     const paperMod = await import(paperPath);
     const paperData: Paper = paperMod.default;
 
@@ -323,8 +316,6 @@ if (import.meta.main) {
       chapterSlugs: result.chapterSlugs,
       excludeChapterIndices,
       phantomLabels: result.appendixPhantomLabels,
-      useFormat,
-      memoize,
     });
     writeFileSync(mainOutPath, mainTex);
     console.log(`\n  → main.tex: ${mainOutPath}`);
@@ -336,8 +327,6 @@ if (import.meta.main) {
       const appendixTex = generateStandaloneAppendixTex(paperData, info.slug, info.title, {
         preamblePath,
         chaptersDir,
-        useFormat,
-        memoize,
       });
       const appendixPath = join(mainOutDir, `standalone-${info.slug}.tex`);
       writeFileSync(appendixPath, appendixTex);

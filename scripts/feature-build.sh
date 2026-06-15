@@ -39,7 +39,7 @@ PAPERDIR="content/$PAPER"
 echo "feature-build: [1/3] render chapters + inline main.tex (cheap)…"
 ( cd content && bun run pipeline/build.ts "$PAPER/$PAPER.ts" \
     --out-dir ../chapters/ --generate-main --main-out ../main.tex \
-    --preamble ../latex/preamble.tex --memoize >/dev/null 2>&1 ) \
+    --preamble ../latex/preamble.tex >/dev/null 2>&1 ) \
   || echo "feature-build: (content build reported issues — continuing)"
 
 if [ -z "$CHAPTERS" ]; then

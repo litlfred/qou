@@ -238,22 +238,7 @@ export function loadCompileUnit(mainTexPath: string): {
     }
   };
 
-  // Format-aware: if main.tex references a precompiled format (`%&name` first
-  // line — see generate-main-tex `--use-format`), the shared preamble is NOT
-  // inlined. Load latex/preamble.tex too so its macro definitions and
-  // \newunicodechar mappings are visible to the linter; otherwise every
-  // preamble-defined macro/unicode reads as undefined. The format is always
-  // built from latex/preamble.tex in this repo (scripts/build-fmt.sh).
   const mainAbs = resolve(mainTexPath);
-  if (existsSync(mainAbs)) {
-    const firstLine = (readFileSync(mainAbs, "utf8").split("\n", 1)[0] ?? "").trim();
-    if (firstLine.startsWith("%&")) {
-      const repoRoot = resolve(__dirname, "..", "..");
-      const preamble = join(repoRoot, "latex", "preamble.tex");
-      if (existsSync(preamble)) walk(preamble);
-    }
-  }
-
   walk(mainAbs);
   return { records, missing };
 }

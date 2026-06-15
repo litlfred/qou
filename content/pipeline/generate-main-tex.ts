@@ -48,35 +48,16 @@ export interface GenerateMainTexOptions {
   excludeChapterIndices?: Set<number>;
   /** Labels from excluded appendix chapters to declare as phantom anchors. */
   phantomLabels?: string[];
-  /**
-   * If set, the shared preamble is assumed precompiled into a `<useFormat>.fmt`
-   * format file (see scripts/build-fmt.sh). Instead of inlining the preamble,
-   * emit a `%&<useFormat>` reference as the first line. The per-document tail
-   * (paper macros + print-mode read) is always emitted live. Default
-   * (undefined) keeps the full inline-preamble behavior.
-   */
-  useFormat?: string;
-  /**
-   * If true, load the `memoize` package live (per-render, never dumped into a
-   * `.fmt`) so tikz / tikz-cd pictures are cached to per-box PDFs keyed on box
-   * source. Requires the compile to pass `-shell-escape`. Default off.
-   */
-  memoize?: boolean;
 }
 
 /**
- * Emit shared preamble + paper-specific macros (used by both main and standalone).
- */
-/**
  * Per-document preamble tail: paper macros + the per-render print-mode read.
- * Emitted live in BOTH the inline-preamble path and the precompiled-format
- * path, because these are per-paper / per-render and must never be baked into
- * a shared `.fmt` format.
+ * These are per-paper / per-render, emitted live after the inlined preamble.
  */
-function emitPerDocPreambleTail(paper: Paper, memoize?: boolean): string[] {
+function emitPerDocPreambleTail(paper: Paper): string[] {
   const lines: string[] = [];
 
-  // Paper-specific macros (per-paper, not shared → stay live).
+  // Paper-specific macros (per-paper, not shared).
   if (paper.macros && Object.keys(paper.macros).length > 0) {
     lines.push("% ── Paper macros (generated from manifest) ────────────────────────────────");
     for (const [name, macro] of Object.entries(paper.macros)) {
@@ -86,29 +67,11 @@ function emitPerDocPreambleTail(paper: Paper, memoize?: boolean): string[] {
     lines.push("");
   }
 
-  // Diagram memoization (opt-in; requires -shell-escape). Loaded LIVE here —
-  // never dumped into a `.fmt` — so the cache toggle is per-render. memoize
-  // auto-caches tikz / tikz-cd pictures to per-box PDFs keyed on box source.
-  if (memoize) {
-    lines.push("% ── Diagram memoization (per-render; needs -shell-escape) ───────────────────");
-    // Resilient load: skip gracefully if memoize.sty is absent (older TeX
-    // distributions predate it) rather than aborting the compile.
-    // Direct memoize's cache files to .memo/ via the `prefix` option (a path
-    // segment ending in / is the memo dir; default is CWD → clutter + CI miss).
-    // The package auto-memoizes tikzpicture, and tikzcd expands to one. (The
-    // earlier dir=.memo / \memoizeenvironment form was wrong — not memoize's
-    // API; confirmed against the installed package on a real TeX run.)
-    lines.push("\\IfFileExists{memoize.sty}{\\usepackage[prefix=.memo/]{memoize}}{}% memoize.sty absent -> diagram caching disabled");
-    lines.push("");
-  }
-
-  // Per-render print-mode flag — kept live, NOT dumped into a `.fmt` format.
-  // `\newif\ifshowaffiliations` stays in the shared preamble (dumpable); only
-  // this file-read is per-document, since print-mode.tex is written per render
-  // by the MCP render tool. Lands after the preamble (where `\newif` is
-  // defined) and before `\begin{document}` / the title page (which consumes
-  // `\ifshowaffiliations`).
-  lines.push("% ── Print mode (per-render; lives outside any dumped format) ────────────────");
+  // Per-render print-mode flag. `\newif\ifshowaffiliations` stays in the shared
+  // preamble; only this file-read is per-document (print-mode.tex is written
+  // per render by the MCP render tool). Lands after the preamble (where `\newif`
+  // is defined) and before the title page (which consumes `\ifshowaffiliations`).
+  lines.push("% ── Print mode (per-render) ─────────────────────────────────────────────────");
   lines.push("\\IfFileExists{print-mode.tex}{\\input{print-mode.tex}}{}");
   lines.push("");
 
@@ -116,33 +79,15 @@ function emitPerDocPreambleTail(paper: Paper, memoize?: boolean): string[] {
 }
 
 /**
- * Emit the document preamble: either the full shared preamble inlined
- * (default), or a `%&<format>` reference to a precompiled `.fmt` that already
- * contains it (when `useFormat` is set — see scripts/build-fmt.sh). The
- * per-document tail (paper macros + print-mode) is always emitted live.
+ * Emit the document preamble (the full shared preamble inlined) + the
+ * per-document tail (paper macros + print-mode).
  */
-function emitPreambleAndMacros(
-  paper: Paper,
-  preamblePath: string,
-  useFormat?: string,
-  memoize?: boolean,
-): string[] {
+function emitPreambleAndMacros(paper: Paper, preamblePath: string): string[] {
   const lines: string[] = [];
-
-  if (useFormat) {
-    // Shared preamble is precompiled into <useFormat>.fmt. Reference it as the
-    // VERY FIRST line of the file (TeX `%&format` mechanism) and do not inline
-    // the preamble — pdflatex resumes in the post-preamble state.
-    lines.push(`%&${useFormat}`);
-    lines.push("");
-  } else {
-    // Inline the full shared preamble (default behavior).
-    const preamble = readFileSync(preamblePath, "utf-8");
-    lines.push(preamble.trimEnd());
-    lines.push("");
-  }
-
-  lines.push(...emitPerDocPreambleTail(paper, memoize));
+  const preamble = readFileSync(preamblePath, "utf-8");
+  lines.push(preamble.trimEnd());
+  lines.push("");
+  lines.push(...emitPerDocPreambleTail(paper));
   return lines;
 }
 
@@ -159,7 +104,7 @@ export function generateMainTex(
   const lines: string[] = [];
 
   // 1. Preamble + macros
-  lines.push(...emitPreambleAndMacros(paper, opts.preamblePath, opts.useFormat, opts.memoize));
+  lines.push(...emitPreambleAndMacros(paper, opts.preamblePath));
 
   // 2. Metadata (for hypersetup PDF fields)
   lines.push("% ── Metadata (generated from manifest) ────────────────────────────────────");
@@ -312,12 +257,12 @@ export function generateStandaloneAppendixTex(
   paper: Paper,
   chapterSlug: string,
   chapterTitle: string,
-  opts: { preamblePath: string; chaptersDir: string; useFormat?: string; memoize?: boolean },
+  opts: { preamblePath: string; chaptersDir: string },
 ): string {
   const lines: string[] = [];
 
   // 1. Preamble + macros (same as main paper)
-  lines.push(...emitPreambleAndMacros(paper, opts.preamblePath, opts.useFormat, opts.memoize));
+  lines.push(...emitPreambleAndMacros(paper, opts.preamblePath));
 
   // 2. Metadata
   const authorName = escapeLatexMeta(paper.authors[0] || "");
@@ -376,13 +321,6 @@ if (import.meta.main) {
   const chaptersDirIdx = args.indexOf("--chapters-dir");
   const chaptersDir = chaptersDirIdx >= 0 ? args[chaptersDirIdx + 1] : "chapters/";
 
-  // --use-format <name>: emit a `%&<name>` reference instead of inlining the
-  // shared preamble (the preamble must be precompiled via scripts/build-fmt.sh).
-  const useFormatIdx = args.indexOf("--use-format");
-  const useFormat = useFormatIdx >= 0 ? args[useFormatIdx + 1] : undefined;
-  // --memoize: load memoize live to cache tikz/tikz-cd boxes (needs -shell-escape).
-  const memoize = args.includes("--memoize");
-
   console.log(`Generating main.tex for: ${paperPath}`);
   console.log(`Preamble: ${preamblePath}`);
   console.log(`Output: ${outPath}`);
@@ -399,8 +337,6 @@ if (import.meta.main) {
     preamblePath,
     chaptersDir,
     chapterSlugs: result.chapterSlugs,
-    useFormat,
-    memoize,
   });
 
   writeFileSync(outPath, tex);
