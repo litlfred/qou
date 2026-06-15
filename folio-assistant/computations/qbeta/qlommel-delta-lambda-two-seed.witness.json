@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-14T23:37:52.495194+00:00",
-  "commitSha": "a53faff1290a2620cd19a24717cefd5ba29639f9",
+  "computedAt": "2026-06-15T01:08:01.946862+00:00",
+  "commitSha": "0b793d024b0e1810988f4e116429eb40f660bf4e",
   "assertions": [
     {
       "name": "derived_b_matches_NgeZ_chain_within_5pct",
@@ -30,8 +30,8 @@
   "durationMs": 12,
   "computation": "qlommel-delta-lambda-two-seed",
   "scriptFile": "qlommel_delta_lambda_two_seed_test.py",
-  "scriptHash": "b2ee376174ca",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "213efacc3dd2",
+  "scriptCommitSha": "aa119f6ebf8c1de6a8432ebb3f20d9f5569a23ff",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
