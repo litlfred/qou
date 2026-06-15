@@ -51,10 +51,10 @@ $$
   Q
   = 
   \sum_{\text{changed crossings}} \Delta \mathfrak{E}_\times
-  -  S_q(e)
+  -  \mathfrak{S}_q(e)
 $$
 
-(dropping $S_q(\nu^{\sigma}) = 0$ since the unknot has trivial
+(dropping $\mathfrak{S}_q(\nu^{\sigma}) = 0$ since the unknot has trivial
 action).
 
 ## Classical limit and the $q$-anomaly
@@ -140,9 +140,9 @@ This shift modifies $Q$ at second order:
 $$
   Q
   = 
-  \underbrace{\Delta S_q - S_q(e)}_{\text{leading (crossing change)}}
+  \underbrace{\Delta \mathfrak{S}_q - \mathfrak{S}_q(e)}_{\text{leading (crossing change)}}
   + 
-  \underbrace{\frac{\partial S_q}{\partial q} \cdot \Delta q_{\mathrm{eff}}}_{\delta_q \text{ (q-anomaly)}}
+  \underbrace{\frac{\partial \mathfrak{S}_q}{\partial q} \cdot \Delta q_{\mathrm{eff}}}_{\delta_q \text{ (q-anomaly)}}
 $$
 
 **At $q = 1$:** $\delta_q = 0$ and
@@ -165,17 +165,17 @@ substrate parameter from $q$ to $q + \Delta q_{\mathrm{eff}}$.
 
 This is not a violation of physics — it is the $q$-deformed
 version of the quantum anomaly. The conserved quantity is not
-$Q$ but the **full categorical action** $S_q$ of
+$Q$ but the **full categorical action** $\mathfrak{S}_q$ of
 the entire system (products + vacuum shift):
 
 $$
-  S_q(\mathrm{par})
+  \mathfrak{S}_q(\mathrm{par})
   = 
-  S_{q + \Delta q}(\mathrm{dau})
+  \mathfrak{S}_{q + \Delta q}(\mathrm{dau})
   + 
-  S_q(e)
+  \mathfrak{S}_q(e)
   + 
-  S_q(\nu^{\sigma})
+  \mathfrak{S}_q(\nu^{\sigma})
   + 
   \text{kinetic terms}
 $$

@@ -86,7 +86,7 @@ where every factor is determined by $q$:
 4. **Phase-space integral**: The $Q$-value
    ([transition energy](#def:Q-value-transition)) is the
    categorical action difference
-   $Q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$.
+   $Q = \mathfrak{S}_q(\mathrm{par}) - \mathfrak{S}_q(\mathrm{dau}) - \mathfrak{S}_q(e)$.
    This is **not** defined by classical energy conservation
    ($M_{\mathrm{par}} - M_{\mathrm{dau}} - m_e$), which assumes
    $d_q^2 = 0$ and fails at $q \neq 1$.  The action of each
@@ -188,7 +188,7 @@ $$
 A $1\%$ shift in $q$ changes decay rates by $\sim 50\%$.
 
 The half-life is *not* a new observable — it is derived from the
-categorical action $\mathcal{S}_q$ evaluated on the nuclear link,
+categorical action $\mathfrak{S}_q$ evaluated on the nuclear link,
 using the same parameter $q$ that determines the valley of
 stability.  The parameter $q$ controls both *which* nuclei are
 stable and *how fast* unstable nuclei decay.
