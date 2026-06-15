@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-15T21:51:47.810052+00:00",
-  "commitSha": "2b12e1f50f4ceae2f90d4f955f6dd34176080112",
+  "computedAt": "2026-06-15T22:06:38.813847+00:00",
+  "commitSha": "1bd143b2d52b798673fb3105a87a69ffa2c20225",
   "assertions": [
     {
       "name": "lin_ladder_geometric_ratio_matches_r_within_15pct",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "qlommel-delta-lambda-lin-vs-sym-ladder",
   "scriptFile": "qlommel_delta_lambda_lin_vs_sym_ladder.py",
   "scriptHash": "7b16b3a55482",
-  "scriptCommitSha": "2096a5a52af46f928876f2d410547a1e280d51e7",
+  "scriptCommitSha": "e78da252937536654435bb990c698381c8606d9f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

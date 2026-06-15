@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+combinatorial",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-15T21:51:48.097620+00:00",
-  "commitSha": "2b12e1f50f4ceae2f90d4f955f6dd34176080112",
+  "computedAt": "2026-06-15T22:06:39.110769+00:00",
+  "commitSha": "1bd143b2d52b798673fb3105a87a69ffa2c20225",
   "assertions": [
     {
       "name": "slope_10A_minus_2_holds_through_A12",
@@ -28,11 +28,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 102,
+  "durationMs": 113,
   "computation": "qlommel-b-ladder-slope-derivation",
   "scriptFile": "qlommel_b_ladder_slope_derivation.py",
   "scriptHash": "fd1cc81800a1",
-  "scriptCommitSha": "ee2726d8a159e91c7f19185d12c09454b12d4922",
+  "scriptCommitSha": "e0a9d692ffc3b38c27485e3014c51c86dba99996",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
