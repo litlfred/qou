@@ -48,7 +48,13 @@ mkdir -p "$OUTDIR"
 
 FMT="$OUTDIR/$NAME.fmt"
 SHAFILE="$OUTDIR/$NAME.fmt.sha"
-SHA="$(sha256sum "$PREAMBLE" | cut -d' ' -f1)"
+if command -v sha256sum >/dev/null 2>&1; then
+  SHA="$(sha256sum "$PREAMBLE" | cut -d' ' -f1)"
+elif command -v shasum >/dev/null 2>&1; then
+  SHA="$(shasum -a 256 "$PREAMBLE" | cut -d' ' -f1)"   # macOS / BSD
+else
+  echo "build-fmt: need sha256sum or shasum" >&2; exit 1
+fi
 
 # Cache hit: format present and its recorded preamble hash still matches.
 if [ "$FORCE" -eq 0 ] && [ -f "$FMT" ] && [ -f "$SHAFILE" ] \
@@ -64,9 +70,12 @@ echo "build-fmt: building $FMT from $PREAMBLE (sha ${SHA:0:12})"
 # the working directory is irrelevant). If a package is not dump-safe, move
 # ONLY that package after \endofdump in the driver — see
 # docs/workplans/2026-06-14-latex-build-caching-strategy.md §3.
-DRIVER="$(mktemp --suffix=.tex)"
-trap 'rm -f "$DRIVER"' EXIT
-printf '\\input{%s}\n\\endofdump\n' "$(realpath "$PREAMBLE")" > "$DRIVER"
+# Portable temp driver (BSD/macOS lack `mktemp --suffix` and may lack realpath).
+DRIVER_DIR="$(mktemp -d "${TMPDIR:-/tmp}/latex-fmt.XXXXXX")"
+DRIVER="$DRIVER_DIR/driver.tex"
+trap 'rm -rf "$DRIVER_DIR"' EXIT
+PREAMBLE_ABS="$(cd "$(dirname "$PREAMBLE")" && pwd)/$(basename "$PREAMBLE")"
+printf '\\input{%s}\n\\endofdump\n' "$PREAMBLE_ABS" > "$DRIVER"
 
 if [ -n "${FMT_ENGINE:-}" ]; then
   # Test / override hook (no real TeX engine in the dev sandbox).

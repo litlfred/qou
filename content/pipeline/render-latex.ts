@@ -1026,7 +1026,9 @@ export function renderSection(
   const sectionLabel = section.label ? `\\label{${section.label}}` : "";
   // Page break + fixed section number (default-on): make this section a
   // self-contained, position-independent cacheable unit.
-  if (SECTION_PAGEBREAK) lines.push("\\clearpage");
+  // Skip the break before the FIRST section so the chapter title isn't
+  // orphaned on its own page (Gemini #2310); break before sections 2..n.
+  if (SECTION_PAGEBREAK && sectionNumber !== 1) lines.push("\\clearpage");
   if (FIXED_NUMBERING && sectionNumber != null) {
     lines.push(`\\setcounter{section}{${sectionNumber - 1}}`);
   }
@@ -1095,7 +1097,9 @@ export function renderSection(
   let subNo = 0;
   for (const sub of subsections) {
     subNo += 1;
-    if (SECTION_PAGEBREAK) lines.push("\\clearpage");
+    // Skip the break before the FIRST subsection so the section heading isn't
+    // orphaned (Gemini #2310); break before subsections 2..n.
+    if (SECTION_PAGEBREAK && subNo !== 1) lines.push("\\clearpage");
     if (FIXED_NUMBERING) lines.push(`\\setcounter{subsection}{${subNo - 1}}`);
     lines.push(`\\subsection{${escapeLatex(sub.title)}}`);
     if (sub.label) {
