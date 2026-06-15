@@ -63,10 +63,13 @@
      exponent 25, as `q₀^(10A−5)` requires). **The slope 10 = 9 (intra-𝓑₃
      non-averaged) + 1 (interface) per nucleon — derived, not fitted.** The
      closed form **predicts** the un-measured tower: ⁶Li → 55, ⁸Be → 75 (a
-     derive-or-refute, NOT a fit — the test the data-gate awaited). Still open:
-     the **−3** offset (H₃ seed's 3 strands?), the per-nucleon **9 = intra-𝓑₃**
-     count from the Borromean/Bring quintic (`5·(2A−1)`; same `5,7` as the
-     Weinberg cosh-ratio).
+     derive-or-refute, NOT a fit — the test the data-gate awaited). **The −3
+     offset dissolves under the chain-SITE reading:** `exponent = 5·(2A−1) =
+     5 × (A nucleons + A−1 bonds)` — i.e. **5 (Bring quintic) per chain-site,
+     with no offset** (`σ+σ⁻¹ = 10A−2` is a separate count, exactly 3 above the
+     site-law). The `−3` was an artifact of using crossings rather than sites as
+     the unit. Still open: *why* `5 =` the Bring quintic per site (same `5,7` as
+     the Weinberg cosh-ratio), and the per-nucleon **9 = intra-𝓑₃** count.
   2. **The Z-dependent correction** (³He deviates −1.40 q₀-units) — SOURCE
      derived: `Z−N = (p-p interfaces) − (n-n interfaces)`, and **p-p are σ
      (positive), n-n are σ⁻¹ (negative)**, so a proton excess is a net-σ

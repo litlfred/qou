@@ -1,8 +1,8 @@
 {
   "engine": "python+combinatorial",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-15T01:08:01.793333+00:00",
-  "commitSha": "0b793d024b0e1810988f4e116429eb40f660bf4e",
+  "computedAt": "2026-06-15T01:17:00.947686+00:00",
+  "commitSha": "c1c3a6ccd446e695f473a34322fb91a75045f8b8",
   "assertions": [
     {
       "name": "closed_forms_sigma_inv_avg_exact",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 81,
+  "durationMs": 80,
   "computation": "delta-lambda-exponent-from-crossings",
   "scriptFile": "delta_lambda_exponent_from_crossings.py",
-  "scriptHash": "0a44a88e1b8d",
-  "scriptCommitSha": "0b793d024b0e1810988f4e116429eb40f660bf4e",
+  "scriptHash": "d8cce0a8aa30",
+  "scriptCommitSha": "c1c3a6ccd446e695f473a34322fb91a75045f8b8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -124,8 +124,13 @@
       "7Li": 65,
       "8Be": 75
     },
+    "site_reading": {
+      "exponent": "5·(2A-1) = 5 × (A nucleons + A-1 bonds) = 5 per chain-site",
+      "per_site_q_power": "5 = Bring quintic (𝒳₅; Aut=S₅; g²=5)",
+      "offset_minus_3_resolved": "artifact of crossing-count vs site-count; σ+σ⁻¹=10A-2 = site-law 10A-5 + 3 (separate counts)"
+    },
     "open": {
-      "offset_minus_3": "H₃ seed (3 strands)? not derived",
+      "why_5_is_bring_quintic": "the per-site quintic q-power, not derived",
       "Z_coefficient": "~-1.4/excess-proton; p≠n asymmetry open",
       "per_nucleon_9": "intra-𝓑₃ count from Borromean/Bring, not derived"
     },
