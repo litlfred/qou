@@ -114,10 +114,7 @@ def _constants():
     """E_0, m_e, q_0, 8G — all from the canonical substrate / knot-volume sources."""
     from q_parameter import Q as q0
     from knot_volumes import VOL_BORROMEAN  # 8G = Vol(L6a4), mpmath 50dps source
-    try:
-        from codata_constants import M_E_MEV as me
-    except Exception:
-        me = 0.51099895
+    from codata_constants import M_E_MEV as me  # CAL-1 electron mass (registry, full precision)
     me, q0, g8 = float(me), float(q0), float(VOL_BORROMEAN)
     return me, q0, me / (q0 * (q0 - 1.0)), g8
 
