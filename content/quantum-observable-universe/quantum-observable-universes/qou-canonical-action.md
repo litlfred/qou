@@ -102,7 +102,8 @@ multiplicative integral
 $\overrightarrow{\textstyle\prod}\!\int_\Sigma F_\nabla$ of the
 curvature ([Yekutieli--Stokes remark](#rem:yekutieli-stokes)).  So the
 gauge term is literally the Yang--Mills curvature integral, and the
-action is the categorical $S = \int L\,\mathrm{d}t$: $\int_A$ (Frobenius
+categorical action $\mathfrak{S}_q$ is the analogue of Hamilton's
+classical $S = \int L\,\mathrm{d}t$: $\int_A$ (Frobenius
 form $=$ Markov trace $=$ Yekutieli integral) plays the role of
 integration over spacetime, $\mathcal{L}_q$ the Lagrangian density.
 
