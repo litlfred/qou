@@ -5,6 +5,15 @@ crossing/second-kind derivation (PR #2311; audit
 `2026-06-14-qlommel-delta-lambda-second-kind-derived-b.md`). Bean: `qb5s`
 (record the quintic/EW interpretation) + this (the mechanism).
 
+> **⚠ Magnitude caveat (2026-06-15).** A back-of-envelope check against #2320's
+> `B_sym/B_lin` numbers finds the literal `q₀^{5(2A−1)}` exponent **overpredicts
+> by 3×→145×** (and runs away exponentially in A, where the data grows ~linearly);
+> the exponent that actually fits is ≈ 1.4 per site, **not 5**, and is consistent
+> with the `−ln(1−s)/s` exp-vs-linear correction, not a q₀-power. Confirm the
+> exponent *exists* (real compute, measured vs `B_sym`) before chasing the
+> complex-q mechanism. Full table:
+> [`2026-06-15-binding-qa-followups-investigation.md` §5](2026-06-15-binding-qa-followups-investigation.md).
+
 ## The well-posed question
 
 The Δ_λ q₀-exponent is `5·(2A−1) = 5 × (A nucleons + A−1 bonds)` = **5 per
