@@ -123,4 +123,11 @@ with the per-atom trace assembly in
 [`tr-m-atom-via-transfer.witness.json`](../../../folio-assistant/computations/tr-m-atom-via-transfer.witness.json)),
 validated to the 50-dps floor against the Hoefsmit characters
 ($n \leq 6$) and the cached per-basis-vector trace witnesses
-($n \leq 12$).*
+($n \leq 12$). The production binding consumers
+[`binding_canonical`](../../../folio-assistant/computations/binding_canonical.py)
+and
+[`canonical_tr_m_via_branching`](../../../folio-assistant/computations/canonical_tr_m_via_branching.py)
+($A \geq 3$) route their atom-trace through this transfer path (the
+former brute-force atom-level Wedderburn tower,
+`atom_level_wedderburn_tower.py`, is retained only as a
+$d_\lambda$-explicit cross-check).*

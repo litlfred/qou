@@ -6,6 +6,7 @@ export default algorithm({
   uses: [
     "rem:term6-binding-density",
     "thm:knot-mass-formula-unified",
+    "alg:markov-trace",
   ],
   computation: {
     engine: "python+mpmath",

@@ -24,7 +24,8 @@ $\Delta_\lambda$.*
    braid index n_K.
 2. For each λ ⊢ n_K:
    a. Compute y_λ(q_0) (Wedderburn weight).
-   b. Compute χ^λ(K) (Hoefsmit character on the isotope braid).
+   b. Compute χ^λ(K) via the Step 3 fine-Bratteli transfer matrix
+      (lossless over all λ ⊢ n_K; no d_λ Hoefsmit rep materialised).
    c. Look up Δ_λ(K) from the candidate closure ansatz
       (currently: Option-E / crystal — see sidecar).
 3. Sum λ contributions and multiply by m_e.
@@ -46,8 +47,15 @@ direction is Option E (Kashiwara crystal) — see
 
 ### Complexity
 
-*Dominated by Step 5; same scaling as Step 9a per isotope.
-Mass-table sweeps over $A \leq 4$ take seconds.*
+*The $\chi^\lambda$ trace (step 2b) is computed by the Step 3
+transfer matrix — a fine-Bratteli edge sweep (a few thousand edges
+at $n = 21$), not the $d_\lambda$-dimensional Hoefsmit
+representation — so the per-isotope cost is the partition count
+$p(3A)$ times that sweep, not $n!$. Mass-table sweeps therefore
+reach $A \geq 6$ ($^6$Li $\approx 0.2$ s, $^7$Li $\approx 0.6$ s),
+where the former per-basis-vector path hit the $d_\lambda$ wall
+(markov\_peel $\approx 17$ min at $^6$Li). The open gate is
+$\Delta_\lambda$ (step 2c), not the trace compute.*
 
 ### Python API entry point
 
@@ -99,3 +107,18 @@ residual, which is the inter-nucleon multiplicity (the $C(A,2)$
 bond count) plus per-bond growth. See
 [`docs/audits/2026-06-03-color-averaging-wiring-audit.md`](../../../docs/audits/2026-06-03-color-averaging-wiring-audit.md)
 and [`docs/audits/2026-06-03-nuclear-a3-dpn-plan.md`](../../../docs/audits/2026-06-03-nuclear-a3-dpn-plan.md).*
+
+*Production wiring (2026-06-15): the canonical color-weighted
+$\mathrm{tr}_M(\beta_{\text{atom}})$ feeding step 2b is assembled by
+[`tr_m_atom_via_transfer.tr_m_atom_zn`](../../../folio-assistant/computations/tr_m_atom_via_transfer.py),
+through which the binding consumers
+[`binding_canonical`](../../../folio-assistant/computations/binding_canonical.py)
+(default path) and
+[`canonical_tr_m_via_branching`](../../../folio-assistant/computations/canonical_tr_m_via_branching.py)
+($A \geq 3$) now route — replacing the symbolic `tr_M_element` and
+the native `chi_lambda_all_partitions_mpfr` per-partition paths.
+Lossless (all $p(3A)$ partitions kept; the active-set truncation is a
+$\sim10^{-3}$ error rejected for 1-ppQ per
+[`docs/audits/2026-06-10-binding-active-set-compute-optimization.md`](../../../docs/audits/2026-06-10-binding-active-set-compute-optimization.md)),
+validated $\mathrm{tr}_M$-transfer $\equiv$ full Hoefsmit
+(`char_fast`) to $4.7\times10^{-15}$.*
