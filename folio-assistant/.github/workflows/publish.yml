@@ -266,7 +266,8 @@ jobs:
             --out-dir ../chapters/ \
             --generate-main \
             --main-out ../main.tex \
-            --preamble ../latex/preamble.tex 2>&1 | tail -20 || \
+            --preamble ../latex/preamble.tex \
+            --use-format qou --memoize 2>&1 | tail -20 || \
             echo "::warning::Content build reported issues (chapters/main.tex still generated)"
           echo "── Generated artefacts ──"
           ls -la ../main.tex ../chapters/*.tex 2>/dev/null | head -20 || \
@@ -325,6 +326,15 @@ jobs:
           sudo apt-get install -y --no-install-recommends \
             texlive-full texlive-extra-utils latexdiff latexmk
 
+      - name: Build preamble format (qou.fmt — precompiled preamble cache)
+        run: |
+          # Precompile latex/preamble.tex → qou.fmt so the %&qou main.tex
+          # (generated with --use-format) compiles without re-reading the
+          # heavy preamble (pgf/tikz/tikz-cd/hyperref + unicode shims) on
+          # every pass. Fails loudly with the \endofdump guidance if a
+          # package is not dump-safe (docs/workplans/2026-06-14-latex-build-caching-strategy.md §3).
+          bash scripts/build-fmt.sh --preamble latex/preamble.tex --name qou
+
       - name: Quick LaTeX syntax check (draftmode)
         run: |
           # -f so undefined-citation warnings (the first pass runs before
@@ -334,7 +344,7 @@ jobs:
           # NOTE: grep -a — a failing compile injects control bytes (e.g.
           # ^^Y) into main.log, so without -a grep treats it as binary and
           # silently misses the '! ' lines, letting a broken compile pass.
-          latexmk -pdf -draftmode -f -interaction=nonstopmode main.tex \
+          latexmk -pdf -shell-escape -draftmode -f -interaction=nonstopmode main.tex \
             > latex-syntax.log 2>&1 || true
           if grep -aqE '^! ' main.log 2>/dev/null; then
             echo "::error::Fatal LaTeX error(s) in draftmode syntax check:"
@@ -362,7 +372,7 @@ jobs:
           # (before the .bbl exists). Without -f latexmk stops before
           # bibtex and every \cite stays undefined. Gate on PDF production +
           # absence of fatal '! ' errors rather than latexmk's exit code.
-          latexmk -pdf -f -interaction=nonstopmode main.tex || true
+          latexmk -pdf -shell-escape -f -interaction=nonstopmode main.tex || true
           # grep -a: a failing compile injects control bytes into main.log,
           # so without -a grep treats it as binary and misses the '! ' lines.
           if grep -aqE '^! ' main.log 2>/dev/null; then
@@ -478,6 +488,9 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends \
             texlive-full texlive-extra-utils latexdiff latexmk
+
+      - name: Build preamble format (qou.fmt)
+        run: bash scripts/build-fmt.sh --preamble latex/preamble.tex --name qou || true
 
       - name: Fetch base branch + flatten + latexdiff
         continue-on-error: true
