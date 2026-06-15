@@ -32,9 +32,9 @@ $q^{-1}$ (negative), or $(q + q^{-1})/2$ (mixed).
 \begin{tabular}{l|c|c|c|c|c|c}
 \toprule
 \textbf{Move} & \textbf{Algebra} &
-  $\mathcal{S}^{\mathrm{grav}}$ &
-  $\mathcal{S}^{\mathrm{gauge}}$ &
-  $\mathcal{S}^{\mathrm{matter}}$ &
+  $\mathfrak{S}^{\mathrm{grav}}$ &
+  $\mathfrak{S}^{\mathrm{gauge}}$ &
+  $\mathfrak{S}^{\mathrm{matter}}$ &
   \textbf{Vol} & \textbf{tr} \\
 \midrule
 R1 (self-twist) &
