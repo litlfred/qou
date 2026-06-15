@@ -48,7 +48,7 @@ $$
    kinetic contribution vanishes at lowest order.
 
 4. **Internal (action)**: the categorical action
-   $S_q(K_H) = \mathrm{tr}_\tau(\rho(\beta_H))$, where
+   $\mathfrak{S}_q(K_H) = \mathrm{tr}_\tau(\rho(\beta_H))$, where
    $\beta_H$ is the braid representative of $K_H$.
    This is the rest-mass contribution.
 
@@ -57,7 +57,7 @@ The single-atom partition function is therefore
 $$
   z_q
   \;=\;
-  e^{-\beta_q \, S_q(K_H)}
+  e^{-\beta_q \, \mathfrak{S}_q(K_H)}
   \cdot z_q^{(\mathrm{rot})}
   \cdot z_q^{(\mathrm{vib})},
 $$
@@ -76,16 +76,16 @@ $$
   \left(
     1 \;+\;
     \frac{\hbar_q^2}{[2]_q}
-    \,S_q(K_H)
+    \,\mathfrak{S}_q(K_H)
   \right).
 $$
 
 The correction term
-$\hbar_q^2 \, S_q(K_H) / [2]_q$ is the ratio of the
+$\hbar_q^2 \, \mathfrak{S}_q(K_H) / [2]_q$ is the ratio of the
 $q$-anomaly energy (from the non-trivial knot topology
 of hydrogen interacting with the boundary) to the fibre
 volume.  For a gas of unknots (hypothetical structureless
-particles with $S_q = 0$), the correction vanishes and
+particles with $\mathfrak{S}_q = 0$), the correction vanishes and
 we recover the exact leading-order law $P_q V_q = N \hbar_q$.
 
 **Why hydrogen is "easiest".**

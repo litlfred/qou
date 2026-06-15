@@ -2,7 +2,7 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 with quantum temperature $T_q = \hbar_q$
 ([quantum temperature](#def:quantum-temperature)).
 Let $U \subset M$ be a region of the brane with boundary
-$\partial U$, and let $S_q(K)$ denote the categorical action
+$\partial U$, and let $\mathfrak{S}_q(K)$ denote the categorical action
 of a knot configuration $K$ in $U$
 ([categorical action](#def:categorical-action)).
 The **quantum pressure** on $\partial U$ is
@@ -18,7 +18,7 @@ $$
   Z_q(U) \;=\;
   \mathrm{tr}_{\mathrm{Ad}}
   \!\sum_{K \,\in\, \mathrm{Conf}(U)}
-  e^{-\beta_q \, S_q(K)}
+  e^{-\beta_q \, \mathfrak{S}_q(K)}
 $$
 
 is the partition function over the configuration space

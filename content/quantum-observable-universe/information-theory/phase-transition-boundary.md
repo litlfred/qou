@@ -9,11 +9,11 @@ sectors of $\mathrm{Conf}(U)$.
 
 The critical temperatures are determined by the **$S^3$
 boundary action**: the restriction of the categorical
-action $S_q$ to the Hopf base $S^2$ of the fibration
+action $\mathfrak{S}_q$ to the Hopf base $S^2$ of the fibration
 $S^1 \hookrightarrow S^3_q \to S^2$,
 
 $$
-  S_q^{(\partial)}
+  \mathfrak{S}_q^{(\partial)}
   \;:=\;
   \mathrm{tr}_{\mathrm{Ad}}
   \!\oint_{S^2}
@@ -29,7 +29,7 @@ The gas--liquid critical temperature is
 $$
   T_q^{(g \to l)}
   \;=\;
-  \frac{S_q^{(\partial)}}{[2]_q}.
+  \frac{\mathfrak{S}_q^{(\partial)}}{[2]_q}.
 $$
 
 The liquid--solid critical temperature is
@@ -37,7 +37,7 @@ The liquid--solid critical temperature is
 $$
   T_q^{(l \to s)}
   \;=\;
-  \frac{S_q^{(\partial)}}{[2]_q \cdot [n_K]_q},
+  \frac{\mathfrak{S}_q^{(\partial)}}{[2]_q \cdot [n_K]_q},
 $$
 
 where $n_K$ is the crossing number of the particle knot.

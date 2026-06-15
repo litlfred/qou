@@ -20,7 +20,7 @@ billiard-ball momentum transfer at the wall.  This assumes
 3. **The $q$-anomaly** from $d_q^2 \neq 0$ means the
    momentum transfer is not elastic.  Each interaction
    with the boundary shifts the action by
-   $\delta S_q \propto \hbar_q^2$, contributing a
+   $\delta \mathfrak{S}_q \propto \hbar_q^2$, contributing a
    quantum correction to pressure.
 
 The boundary pressure $P_q^{(\mathrm{boundary})}$ has no
