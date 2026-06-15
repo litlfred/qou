@@ -1,8 +1,8 @@
 {
   "engine": "python+algebra",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-15T21:57:44.412938+00:00",
-  "commitSha": "6b0b2a8675e9e64ce9f8c488a98559459c4a5232",
+  "computedAt": "2026-06-15T22:06:39.297655+00:00",
+  "commitSha": "1bd143b2d52b798673fb3105a87a69ffa2c20225",
   "assertions": [
     {
       "name": "exponent_is_five_times_open_chain_sites",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "qlommel-offset-open-chain-site-law",
   "scriptFile": "qlommel_offset_open_chain_site_law.py",
   "scriptHash": "04d1e1e095cf",
-  "scriptCommitSha": "6b0b2a8675e9e64ce9f8c488a98559459c4a5232",
+  "scriptCommitSha": "40cc8debbd3db9956258b38db71953e4af31606b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
