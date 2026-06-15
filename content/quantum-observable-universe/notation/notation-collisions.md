@@ -294,3 +294,35 @@ base-ring realisation, and the two are categorically distinct. When
 authoring, **say which** — "$\tau$ specialised to $\mathbf{Arch}$"
 or "the $R \mapsto \mathbb{R}$ realisation" — and never write "the
 archimedean functor" without context.
+
+**Binding-energy notions $B_\bullet$ (2026-06-15 disambiguation).** The
+framework accumulated many distinct "binding energy" objects, almost all
+written as a bare $B$ or $B(K)$ — a collision. Note $\mathfrak{B}$ (fraktur B)
+is **bandwidth** (stable-conventions table), so binding stays **plain $B$ with
+systematic subscripts**. The kept / canonical symbols (full 18-notion
+catalogue:
+[`2026-06-15-binding-energy-notation-catalog.md`](../../../docs/audits/2026-06-15-binding-energy-notation-catalog.md)):
+
+| Symbol | Definition | Role | Status |
+|---|---|---|---|
+| $B_{\mathrm{AME}}$ | AME 2020 measurement | experimental ground truth | anchor |
+| $B_{\mathrm{sym}}$ | $-\alpha \ln\lvert\mathrm{tr}_M(K)\rvert$ (log-trace) | **exact** symbolic, light $A$ | kept |
+| $B_{\mathrm{qCLT}}$ | $-\alpha \sum_i \ln\lvert V_i\rvert$ | qCLT asymptotic, $A\to\infty$ | kept |
+| $B_{\mathrm{lin}}$ | $Q_\beta(n)\,(\mathrm{tr}_M(W_{\text{free}}) - \mathrm{tr}_M(W_{\text{atom}}))$ | **linear-truncation** production (formerly `B_canonical` / `B_pred`) | canonical compute |
+| $B_{\mathrm{depth}}$ | $\sum_k \alpha_k \Phi_k$ | depth-stratified tower | default; empirical $\alpha_k$ |
+| $B_{\mathrm{magic}}$ | $2\,m_e A\,\mathrm{Vol}(L6a4)$ (⁴He) | flat magic-$A$ | ⁴He canonical |
+| $B_\lambda$ | $m_e \sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda$ | per-partition | $\Delta_\lambda$-gated |
+
+**Critical distinction — $B_{\mathrm{sym}}$ (exact) vs $B_{\mathrm{lin}}$
+(linear).** $B_{\mathrm{lin}}$ is the *linearization* of $B_{\mathrm{sym}}$
+(Kashaev $\mathrm{tr}_M \sim \exp(\mathrm{Vol})$; the scalar $\Delta\mathrm{tr}$
+is the first-order term). They are NOT interchangeable — their ratio is the
+binding deficit
+$$ B_{\mathrm{sym}} / B_{\mathrm{lin}} \;\approx\; q_0^{\,5(2A-1)}, $$
+i.e. the $\Delta_\lambda = B_{\mathrm{AME}}/B_{\mathrm{lin}}$ residual; the rename
+$\texttt{B\_canonical}/\texttt{B\_pred} \to B_{\mathrm{lin}}$ exists precisely so
+this identity is statable. Always subscript $B$; a bare $B$ in prose denotes the
+production $B_{\mathrm{lin}}$. Exploratory ($B_{\mathrm{reeb}}, B_{\mathrm{endo}},
+B_{\mathrm{block}}, B_{\mathrm{int}}$) and deprecated/rejected
+($B_{\mathrm{plnc}}, B_{\mathrm{abs}}, B_{\mathrm{bar}}$) variants are in the
+catalogue and must not be used unqualified.
