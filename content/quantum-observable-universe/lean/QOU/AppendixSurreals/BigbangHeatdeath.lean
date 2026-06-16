@@ -41,8 +41,8 @@ class BigbangHeatdeath where
 
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/bigbang-heatdeath.ts
 noncomputable instance : BigbangHeatdeath := by
-  trivial
+  -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/bigbang-heatdeath.ts
+  sorry
 
 end QOU.AppendixSurreals
