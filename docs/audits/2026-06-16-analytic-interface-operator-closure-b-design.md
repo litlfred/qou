@@ -133,21 +133,34 @@ The deuteron is the full-rank anchor: its $\mathbf H_6$ fitted extract is
 verified end-to-end against `markov_peel` at $7\times10^{-15}$, so it is the
 ground truth for the analytic construction.
 
-1. **`I=identity` reduction** (this PR's scaffold): analytic
+1. **`I=identity` reduction** — **DONE (exact, 1e-25).** Analytic
    $A^\lambda_{\xi\nu}(\mathbb1)$ equals $c^\lambda_{\xi\nu}\mathbb1$ for every
    $\lambda\vdash6$, verified via the character identity
-   $\chi^\lambda(W\!\cdot\!\beta)=\sum c^\lambda_{\xi\nu}\chi^\xi(W)\chi^\nu(\beta)$
-   against the seminormal ground truth, plus the restriction-dimension identity
-   $d_\lambda=\sum c^\lambda_{\xi\nu}d_\xi d_\nu$. **Runnable now**, no operator
-   embedding needed. **Result: PASS** — deuteron (H₃×H₃→H₆), 11/11 dimension
-   checks + 891/891 character checks, max residual $\sim10^{-14}$.
-   **Precision caveat:** the ground-truth routine `char_fast.chi_lambda_fast_mp`
-   lambdifies the seminormal matrices from **f64-precision source entries**
-   (`_cached_seminormal` is numpy/f64), so this preflight validates the
-   *structural* identity at $\sim10^{-14}$, **not** at the 1e-25 L1 floor. The
-   exact 50-dps verification requires an exact-rational seminormal construction
-   (`tools/hecke-engine/src/seminormal_mpfr.rs` or an exact Python path) and is
-   folded into step 2.
+   $\chi^\lambda(W\!\cdot\!\beta)=\sum c^\lambda_{\xi\nu}\chi^\xi(W)\chi^\nu(\beta)$,
+   plus the restriction-dimension identity
+   $d_\lambda=\sum c^\lambda_{\xi\nu}d_\xi d_\nu$.
+   - **f64 path** (`char_fast.chi_lambda_fast_mp`): deuteron (H₃×H₃→H₆),
+     11/11 dimension + 891/891 character checks, max residual $\sim10^{-14}$.
+   - **Exact path** (`pyhecke_native.chi_lambda_braid_mpfr`, MPFR Hoefsmit
+     seminormal at 50 dps): 891/891 character checks, **max residual
+     $\sim1.6\times10^{-49}$** — far below the 1e-25 L1 floor. The native
+     character is signed and matches the `char_fast` convention (agrees to
+     $\sim10^{-16}$, char_fast's f64 floor); native generator indices are
+     1-based. This removes the earlier f64 precision caveat: the
+     $A^\lambda_{\xi\nu}(\mathbb1)=c^\lambda_{\xi\nu}\mathbb1$ identity is
+     **exact**.
+
+   **Step-2b precision dependency (finding).** The native layer exposes exact
+   *characters* (traces) but **not** exact seminormal **matrices** —
+   `pyhecke_native.chi_lambda_matrix` is f64-only, and `char_fast` matrices are
+   f64. The operator-level $A^\lambda_{\xi\nu}(I)=\Pi_{\xi\nu}\rho_\lambda(I)\Pi_{\xi\nu}$
+   construction (step 2 below) therefore requires an **exact-precision
+   seminormal matrix builder** as its first task — either an mpmath Hoefsmit
+   matrix routine or a new mpfr Rust binding exposing $\rho_\lambda(\sigma_i)$
+   (the kernel exists internally in `seminormal_mpfr.rs`; only a matrix-returning
+   binding is missing). Until that lands, the operator construction can be
+   *prototyped* at f64 against the full-rank H₆ fitted extract (mirroring the
+   step-1 f64→exact pattern).
 2. **Deuteron analytic $A$** (next): construct $A^\lambda_{\xi\nu}(I_{pn})$ from
    the seminormal $\sigma_2$ block; require it to (a) match the full-rank
    $\mathbf H_6$ fitted extract entrywise (modulo the $V_\xi\otimes V_\nu$ basis
