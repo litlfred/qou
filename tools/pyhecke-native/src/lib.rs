@@ -970,6 +970,92 @@ fn lagrange_projectors_mpfr(
     Ok(out)
 }
 
+/// Parse a decimal-string matrix into MPFR Floats at `prec`.
+fn parse_matrix_mpfr(rows: &[Vec<String>], prec: u32) -> Result<Vec<Vec<Float>>, String> {
+    rows.iter()
+        .map(|row| row.iter()
+            .map(|s| match Float::parse(s) {
+                Ok(p) => Ok(Float::with_val(prec, p)),
+                Err(_) => Err(format!("bad matrix entry {:?}", s)),
+            })
+            .collect())
+        .collect()
+}
+
+/// Serialise an MPFR matrix to decimal strings at `dps` digits.
+fn mat_to_strings(m: &[Vec<Float>], dps: u32) -> Vec<Vec<String>> {
+    m.iter()
+        .map(|row| row.iter()
+            .map(|v| v.to_string_radix(10, Some(dps as usize)))
+            .collect())
+        .collect()
+}
+
+fn parse_tol_mpfr(tol: Option<String>, prec: u32) -> PyResult<Float> {
+    let s = tol.unwrap_or_else(|| "1e-30".to_string());
+    match Float::parse(&s) {
+        Ok(p) => Ok(Float::with_val(prec, p)),
+        Err(_) => Err(pyo3::exceptions::PyValueError::new_err(
+            format!("invalid tolerance {:?}", s))),
+    }
+}
+
+/// **Kronecker product `A ⊗ B`** at MPFR precision (decimal-string matrices in/out).
+#[pyfunction]
+#[pyo3(signature = (a, b, dps=50))]
+fn mat_kron_mpfr(
+    a: Vec<Vec<String>>,
+    b: Vec<Vec<String>>,
+    dps: u32,
+) -> PyResult<Vec<Vec<String>>> {
+    let prec = seminormal_mpfr::dps_to_bits(dps);
+    let am = parse_matrix_mpfr(&a, prec)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(format!("mat_kron_mpfr: {e}")))?;
+    let bm = parse_matrix_mpfr(&b, prec)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(format!("mat_kron_mpfr: {e}")))?;
+    Ok(mat_to_strings(&dense_la_mpfr::kron_mpfr(&am, &bm, prec), dps))
+}
+
+/// **Right null space** of a matrix at MPFR precision: list of basis vectors
+/// (each a row of decimal strings). `tol` (default `1e-30`) is the pivot-zero
+/// threshold.
+#[pyfunction]
+#[pyo3(signature = (m, dps=50, tol=None))]
+fn mat_nullspace_mpfr(
+    m: Vec<Vec<String>>,
+    dps: u32,
+    tol: Option<String>,
+) -> PyResult<Vec<Vec<String>>> {
+    let prec = seminormal_mpfr::dps_to_bits(dps);
+    let mm = parse_matrix_mpfr(&m, prec)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(format!("mat_nullspace_mpfr: {e}")))?;
+    let tolf = parse_tol_mpfr(tol, prec)?;
+    let basis = dense_la_mpfr::nullspace_mpfr(&mm, prec, &tolf);
+    Ok(basis.iter()
+        .map(|v| v.iter().map(|x| x.to_string_radix(10, Some(dps as usize))).collect())
+        .collect())
+}
+
+/// **Matrix inverse** at MPFR precision (Gauss-Jordan). Raises `ValueError` if
+/// singular. `tol` (default `1e-30`) is the pivot-zero threshold.
+#[pyfunction]
+#[pyo3(signature = (m, dps=50, tol=None))]
+fn mat_inverse_mpfr(
+    m: Vec<Vec<String>>,
+    dps: u32,
+    tol: Option<String>,
+) -> PyResult<Vec<Vec<String>>> {
+    let prec = seminormal_mpfr::dps_to_bits(dps);
+    let mm = parse_matrix_mpfr(&m, prec)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(format!("mat_inverse_mpfr: {e}")))?;
+    let tolf = parse_tol_mpfr(tol, prec)?;
+    match dense_la_mpfr::inverse_mpfr(&mm, prec, &tolf) {
+        Some(inv) => Ok(mat_to_strings(&inv, dps)),
+        None => Err(pyo3::exceptions::PyValueError::new_err(
+            "mat_inverse_mpfr: singular matrix (pivot below tolerance)")),
+    }
+}
+
 /// Matrix-M block-restricted χ^λ at substrate q.
 ///
 /// Computes χ^λ(T_β)(q) for a parabolic-shaped braid
@@ -1165,6 +1251,9 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(seminormal_matrices_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(transposition_class_sum_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(lagrange_projectors_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(mat_kron_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(mat_nullspace_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(mat_inverse_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_via_matrix_m_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
