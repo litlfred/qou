@@ -63,8 +63,20 @@ elsewhere in the paper:
    calibrations exactly.
 3. **Overdetermination (and the physical-observations anchor).** The
    canonical $H^1$ modulus is pinned by the lepton ratio $m_\mu/m_e$
-   (it dimensionalises to $\mathrm{Vol}(4_1)$, the simplest hyperbolic
-   knot invariant), and is itself overdetermined: it can equally be
+   through the figure-eight volume identity
+
+   $$
+     \frac{m_\mu}{m_e} \;=\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^2},
+     \qquad \hbar_q = 1 - q_0^{-1},
+     \qquad \mathrm{Vol}(4_1) = 2\Lambda(\pi/3) \approx 2.0299,
+   $$
+
+   inverted for $q_0$ — so CAL-1 and CAL-2 together *coordinatize* the
+   single modulus $q_0$ one-to-one (the ratio **determines** $q_0$; note
+   $q_0 \approx 1.110$ while $m_\mu/m_e \approx 206.77$, so $q_0$ is the
+   *root* of the identity, not the ratio itself). This is why CAL-1 +
+   CAL-2 are **one** dimensionless $H^1$ datum, not two. The modulus is
+   itself overdetermined: it can equally be
    fixed by $\alpha_{\mathrm{EM}}^{-1}$ or by tritium $t_{1/2}$, which
    agree on $q_0$ to within 0.3% (per
    [substrate-consistency window](#prop\:substrate-consistency-window)).
