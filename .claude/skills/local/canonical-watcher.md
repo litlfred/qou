@@ -8,7 +8,7 @@ description: >
   Canonical-derivation-discipline integration watcher — watches
   origin/main + open active PRs + newly-opened PRs for
   non-canonical empirical/fitting/calibration inputs beyond the
-  three categorically allowed (CAL-1 m_e, CAL-2 m_μ/m_e→q_0,
+  three categorically allowed (CAL-1 m_e, CAL-2 m_μ→q_0,
   CAL-3 m_π; Q_β is derived), numerology, or justification/rationalization in
   place of derivation. Inherits shared mechanics (Monitor,
   subscriptions, queue, ledger, idle sweep, author-ask,
@@ -70,7 +70,7 @@ defines the rule it enforces.
 | ID | Quantity | (Co)homology | Wedderburn block | What it fixes |
 |----|----------|--------------|------------------|---------------|
 | **CAL-1** | $m_e$ (CODATA) | $H^0$ | std (2,1) | leptonic mass scale |
-| **CAL-2** | $m_\mu/m_e \approx 206.768$ (CODATA) | $H^1$ | alt (1³) | substrate $q_0$ |
+| **CAL-2** | $m_\mu$ (CODATA) | $H^1$ | alt (1³) | substrate $q_0$ (via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$) |
 | **CAL-3** | $m_{\pi^\pm} \approx 139.57$ MeV (PDG) | orthogonal class | sym (3) | meson / chiral scale ($\mathrm{Vol}(\mathrm{Hopf})=0$) |
 
 These are **exhaustive**. A fourth dimensional input anywhere is
@@ -133,7 +133,7 @@ number`, `rationalization`, `CODATA`, `tautolog`, `back-fit`,
 
 | Violation | Severity | Definition | Auto-fix possible? |
 |-----------|----------|------------|--------------------|
-| `fourth-calibration` | critical | Script/block introduces an external input beyond {m_e, m_μ/m_e, m_π} (Q_β is derived, not an input) | No — author ask |
+| `fourth-calibration` | critical | Script/block introduces an external input beyond the three masses {m_e, m_μ, m_π} (Q_β is derived, not an input) | No — author ask |
 | `coefficient-fit` | critical | Bethe-Weizsäcker / mass-formula coefficient labelled "ad hoc", "approx", "tuned to AME/CODATA" | Author ask; sometimes "demote to remark" |
 | `numerology` | critical | Magic number ({2,8,20,28,50,82,126}, "0.7823...", any literal) asserted without derivation chain | Author ask |
 | `hidden-codata-literal` (P31) | major | Free-floating CODATA string in production script outside the registry | Yes — `codata_constants` migration |

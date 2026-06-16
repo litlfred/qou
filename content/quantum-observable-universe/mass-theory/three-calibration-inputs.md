@@ -7,9 +7,13 @@ is a prediction.*
 
 | ID | Observable | Measurement | What it fixes | (Co)homology |
 |----|-----------|-------------|--------------|--------------|
-| **CAL-1** | $m_\mathfrak{e}$ | electron mass (Penning trap) | leptonic mass scale | $H^0$ ($W$-plane scale) |
-| **CAL-2** | $m_\mu/m_\mathfrak{e}$ | muon–electron mass ratio (CODATA) | substrate $q_0$ ($= \mathrm{Vol}(4_1)/\hbar_q^2$) | $H^1$ ($W$-plane modulus) |
+| **CAL-1** | $m_\mathfrak{e}$ | electron mass (Penning trap) | the dimensional unit (leptonic mass scale) | $H^0$ ($W$-plane scale) |
+| **CAL-2** | $m_\mu$ | muon mass (CODATA) | substrate $q_0$ via $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$, $\hbar_q = 1-q_0^{-1}$ | $H^1$ ($W$-plane modulus) |
 | **CAL-3** | $m_\pi$ | charged-pion mass (PDG) | meson scale; independent of $(m_\mathfrak{e}, q_0)$ via $\mathrm{Vol}(\mathrm{Hopf})=0$ | orthogonal class |
+
+The three measured inputs are **three masses** $(m_\mathfrak{e}, m_\mu, m_\pi)$;
+$m_\mathfrak{e}$ sets the unit, so $q_0$ (dimensionless) is fixed by $m_\mu$
+*in that unit* — the ratio $m_\mu/m_\mathfrak{e}$.
 
 $Q_\beta$ (neutron $\beta$-decay, $\mathfrak{D}_\beta$) is **derived**
 from CAL-1 + CAL-2, **not** a calibration — the bar-odd $\sinh$ partner

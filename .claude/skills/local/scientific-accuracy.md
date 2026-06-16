@@ -307,7 +307,7 @@ and
 | ID | Quantity | (Co)homology | Source |
 |----|----------|--------------|--------|
 | **CAL-1** | $m_e$ | $H^0$ | CODATA |
-| **CAL-2** | $m_\mu/m_e \to q_0$ | $H^1$ | CODATA (phys-obs may anchor $q_0$ on $m_p/m_e$ for precision) |
+| **CAL-2** | $m_\mu$ ($\to q_0$ via $m_\mu/m_e$) | $H^1$ | CODATA (phys-obs may anchor $q_0$ on $m_p/m_e$ for precision) |
 | **CAL-3** | $m_{\pi^\pm}$ (meson scale) | orthogonal class | PDG ($Q_\beta$ is *derived* from CAL-1+CAL-2, not CAL-3) |
 
 Every numerical observable in the paper must factor as

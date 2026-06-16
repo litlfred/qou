@@ -17,7 +17,7 @@ binding energy in the paper is a prediction.
 | ID    | Quantity              | Module export        | Source witness                          |
 |-------|----------------------|----------------------|------------------------------------------|
 | CAL-1 | m_e                  | M_E_MEV              | (hardcoded — framework's only direct mass anchor) |
-| CAL-2 | m_μ / m_e (→ q₀)     | (in q_parameter.py)  | q-pinning-50-digit.witness.json:calibration_inputs (phys-obs may anchor q₀ on m_p/m_e for precision) |
+| CAL-2 | m_μ (→ q₀)           | (in q_parameter.py)  | muon mass; fixes q₀ via m_μ/m_e = Vol(4_1)/ℏ_q² (q-pinning-50-digit.witness.json; phys-obs may anchor q₀ on m_p/m_e for precision) |
 | CAL-3 | m_π                  | (not yet exported)   | charged-pion mass (PDG) — orthogonal meson scale |
 
 Note (convention, 2026-06-16): the canonical CAL-3 is ``m_π``. ``Q_β`` is

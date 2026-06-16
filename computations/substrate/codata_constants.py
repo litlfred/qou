@@ -20,7 +20,7 @@ and binding energy in the paper is a prediction.
 | ID    | Observable            | Module export        | Measurement / Source                      |
 |-------|----------------------|----------------------|------------------------------------------|
 | CAL-1 | m_e                  | M_E_MEV              | electron mass (Penning trap); H⁰ W-plane scale |
-| CAL-2 | m_μ/m_e (→ q₀)       | (in q_parameter.py)  | muon–electron mass ratio (CODATA); H¹ W-plane modulus. Phys-obs may anchor q₀ on the more-precise proton ratio m_p/m_e (live q_at, re-pin 2026-05-28) — precision substitution, not a change to canonical CAL-2 |
+| CAL-2 | m_μ (→ q₀)           | (in q_parameter.py)  | muon mass (CODATA); fixes q₀ via m_μ/m_e = Vol(4_1)/ℏ_q²; H¹ W-plane modulus. Phys-obs may anchor q₀ on the more-precise proton ratio m_p/m_e (live q_at, re-pin 2026-05-28) — precision substitution, not a change to canonical CAL-2 |
 | CAL-3 | m_π                  | M_PI_PM_MEV_VALIDATION | charged-pion mass (PDG); orthogonal Vol(Hopf)=0 meson class. Q_β (neutron β-decay 𝔇_β) is DERIVED from CAL-1+CAL-2, not a calibration |
 
 `m_p`, `m_n`, `m_D`, `m_T`, `m_3He`, `m_4He` are **predictions** of
