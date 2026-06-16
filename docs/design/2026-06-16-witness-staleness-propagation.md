@@ -112,6 +112,43 @@ failures.
 - `.github/workflows/witness-staleness.yml` — warn-mode CI step.
 - This design doc + the hadron findings doc.
 
+## Triage of the 694 self-stale (#1)
+
+The 694 self-stale count **overcounts "wrong"**. Most of it is the recent
+repo reorg (producers moved/reformatted, changing `scriptHash` without
+changing compute output) — cosmetic for the *value*, real for the *hash*.
+Precisely classifying each into genuine-wrong vs cosmetic requires
+*regenerating* the producer and diffing the data (expensive; some
+producers hang on SDP solves), so a per-witness 694-way classification is
+not cheaply truthful.
+
+**Better proxy for "actually wrong":** intersect self-staleness with the
+**assertion gate** (#4). A witness that is self-stale *and* has
+`allPassed == false` is the actionable set — its producer changed *and*
+its own claims fail. The 47 production assertion-failures are the
+high-signal list to drain first; pure self-staleness (no assertion
+failure) is mostly reorg churn and is drained by a routine regenerate
+pass, not investigation. Recommended: run
+`witness_assertion_gate.py --strict` to get the 47, fix/regenerate those
+(assertion-gated), then bulk-regenerate the cosmetic remainder.
+
+## Adoption rollout (#2)
+
+Edge adoption is 8.8%. A code-only `add_upstream` change does not populate
+the edge until the witness is regenerated, so adoption advances one
+*regenerated* producer at a time. Priority order (highest fan-in first):
+
+1. The **mass/binding chain** consumers that read `proton-mass-codata-50dps`,
+   `atomic-tr-m-mpfr-50dps`, `q-beta-predicted` (the 2026-05-16 audit
+   already wired 3; ~50 remain).
+2. Any producer that `json.load`s another `*.witness.json` — grep
+   `read_text\|json.load` over `computations/**/*.py` for cross-witness
+   reads, and add `builder.add_upstream(path)` for each.
+
+A lint can enforce this going forward: warn when a producer reads a
+`*.witness.json` it does not record as an upstream (the dual of the
+q=111/100 ratchet). Deferred — not built here.
+
 ## Recommended escalation order
 
 1. Land the warn-mode CI step (visibility, no PR breakage).
