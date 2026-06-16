@@ -1,3 +1,27 @@
+diff --git a/package.json b/package.json
+index 157e755..d61814e 100644
+--- a/package.json
++++ b/package.json
+@@ -43,6 +43,8 @@
+     "start:stdio": "bun run src/index.ts --stdio",
+     "start:http": "bun run src/index.ts --http",
+     "check-deps": "bun run src/index.ts --check-deps",
++    "vendor:three": "node scripts/vendor-three.cjs",
++    "pretest:e2e": "node scripts/vendor-three.cjs",
+     "test:e2e": "playwright test",
+     "test": "bun test",
+     "lint": "eslint ."
+@@ -65,8 +67,9 @@
+     "zod": "^3.23.0"
+   },
+   "devDependencies": {
++    "@playwright/test": "^1.60.0",
+     "bun-types": "latest",
+-    "@playwright/test": "^1.60.0"
++    "three": "0.149.0"
+   },
+   "engines": {
+     "bun": ">=1.0.0"
 diff --git a/playwright.config.ts b/playwright.config.ts
 index eb3f416..78161ce 100644
 --- a/playwright.config.ts
@@ -95,6 +119,65 @@ index eb3f416..78161ce 100644
 +    timeout: 10_000,
    },
  });
+diff --git a/scripts/vendor-three.cjs b/scripts/vendor-three.cjs
+new file mode 100644
+index 0000000..5201ae6
+--- /dev/null
++++ b/scripts/vendor-three.cjs
+@@ -0,0 +1,53 @@
++#!/usr/bin/env node
++// Vendor the global (UMD) Three.js build the WebGL simulators expect.
++//
++// brings_surface.html and quantum_brings_surface.html load `./three.min.js`
++// and use the global `THREE.*` API. That global/UMD build was last shipped in
++// r149 (`three@0.149.0`, `build/three.min.js`); r150+ ships ESM only. This
++// script copies it into `simulators/` so the pages — and the E2E suite — have
++// it. Wired as `pretest:e2e` so `bun run test:e2e` self-provisions.
++//
++// Idempotent and non-fatal: if the asset is already present it no-ops; if
++// `three` isn't installed it warns and exits 0 (the spec's HEAD guard then
++// skips the WebGL tests rather than failing the run).
++//
++// NOTE: r149 is a best-effort pin (the original vendored file was never
++// committed, so its exact version is unknown). If a simulator uses an API that
++// changed since the version it was authored against, bump this pin.
++//
++// For the DEPLOYED viewer, prefer committing `simulators/three.min.js` (devDeps
++// are not deployed); this script then simply respects the committed file.
++
++const fs = require('node:fs');
++const path = require('node:path');
++
++const ROOT = path.resolve(__dirname, '..');
++const DEST = path.join(ROOT, 'simulators', 'three.min.js');
++
++if (fs.existsSync(DEST)) {
++  console.log(`vendor-three: ${path.relative(ROOT, DEST)} already present — nothing to do.`);
++  process.exit(0);
++}
++
++// Primary: the conventional install path. Fallback: resolve the package main
++// and look beside it (avoids `three/package.json`, which the exports map blocks).
++let src = path.join(ROOT, 'node_modules', 'three', 'build', 'three.min.js');
++if (!fs.existsSync(src)) {
++  try {
++    src = path.join(path.dirname(require.resolve('three')), 'three.min.js');
++  } catch {
++    src = null;
++  }
++}
++
++if (!src || !fs.existsSync(src)) {
++  console.warn(
++    'vendor-three: global build not found. Run `bun install` (three@0.149.0 is a\n' +
++      '             devDependency) or vendor simulators/three.min.js manually.\n' +
++      '             WebGL E2E tests will SKIP until it is present.'
++  );
++  process.exit(0); // non-fatal: the spec guard handles the missing asset
++}
++
++fs.copyFileSync(src, DEST);
++console.log(`vendor-three: copied ${src} -> ${path.relative(ROOT, DEST)}`);
 diff --git a/test-server.cjs b/test-server.cjs
 new file mode 100644
 index 0000000..0a08901

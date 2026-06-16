@@ -26,7 +26,8 @@ that (a) references a `test-server.cjs` that **also doesn't exist**, (b) carries
 several flakiness anti-patterns, and the two WebGL simulators reference a
 **`three.min.js` that is not vendored anywhere** (a separate, real broken-asset
 bug). The fix is therefore a *reconstruction*: a robust spec, a static server,
-a corrected config, plus a remediation note for `three.min.js`.
+a corrected config, plus turnkey vendoring of `three.min.js` (the sims' missing
+global build).
 
 ---
 
@@ -112,20 +113,27 @@ Three files (patch: `2026-06-16-playwright-simulators.patch`):
 | `playwright.config.ts` | dedupe `timeout`; `fullyParallel:false`; CI retries; container launch flags (`--disable-dev-shm-usage` + SwiftShader); `actionTimeout`/`navigationTimeout`; `webServer.url` health check on `simulators/empty.html`. |
 | `test-server.cjs` | **new** — dependency-free static server on `127.0.0.1:8080`, traversal-guarded, clean SIGTERM/SIGINT shutdown. |
 | `tests/simulators.spec.ts` | **new** — serial Tier-1 suite (7 tests): load + URL-param parsing for the 2D sims (beta-decay `q`+`shell`, knot `q`+`color`), WebGL load/parse for the Brings sims guarded behind a `three.min.js` HEAD check; every test fails on any uncaught `pageerror`. |
+| `scripts/vendor-three.cjs` | **new** — idempotent, non-fatal vendoring of the global `three.min.js` from the `three` devDep into `simulators/`. |
+| `package.json` | add `three@0.149.0` devDep; `vendor:three` script; `pretest:e2e` hook so `bun run test:e2e` self-provisions the asset. |
 
-### `three.min.js` remediation (do this too)
+### `three.min.js` remediation — wired into the patch (turnkey)
 
-The spec's WebGL tests **skip** until this is resolved. Pick one (vendoring is
-recommended — the sims are written offline-first with `./three.min.js`):
+The patch makes vendoring automatic: `three@0.149.0` (the **last UMD/global
+build** — r150+ is ESM-only, and the sims use the `THREE.*` global) is a
+devDependency, and `pretest:e2e` runs `scripts/vendor-three.cjs`, which copies
+`node_modules/three/build/three.min.js` → `simulators/three.min.js` if missing.
+So `bun install && bun run test:e2e` provisions the asset and the WebGL tests
+un-skip — no manual step.
 
-1. **Vendor the file (recommended).** Add `simulators/three.min.js` (the legacy
-   UMD/global build matching the `THREE.*` global API the sims use, i.e. a
-   pre-r150 `three.min.js`) and commit it. The skip guard then activates the
-   WebGL tests automatically.
-2. **Pin a CDN.** Replace `./three.min.js` with a hash-pinned CDN URL — but this
-   breaks the offline-first design and adds a network dependency to the sims.
-3. **Bundle from npm.** Add `three` (legacy global build) as a dependency and
-   copy `three.min.js` into `simulators/` at build time.
+> **Version caveat.** The originally-vendored `three.min.js` was never committed,
+> so its exact version is unknown; r149 is the principled pin (last global
+> build). If a simulator uses an API that changed since the version it was
+> authored against, bump the pin in `package.json`.
+
+> **Production note.** devDependencies are not deployed, so for the **live
+> viewer** prefer committing `simulators/three.min.js` (the script then simply
+> respects the committed file). The vendor script is the test-time convenience;
+> committing the asset is the production fix.
 
 ---
 
@@ -135,9 +143,10 @@ recommended — the sims are written offline-first with `./three.min.js`):
 |---|---|
 | `tsc --noEmit --strict` on spec + config (Playwright types resolved) | ✅ exit 0 |
 | `node --check test-server.cjs` | ✅ syntax OK |
-| `test-server.cjs` live serving | ✅ `empty/beta/knot` → 200; `three.min.js` → 404 (confirms #4) |
+| `test-server.cjs` live serving | ✅ `empty/beta/knot` → 200; `three.min.js` → 404 before / 200 after vendoring (confirms #4) |
+| `scripts/vendor-three.cjs` | ✅ provisions the 608 KB build when missing; idempotent no-op when present; non-fatal when `three` absent |
 | `playwright test --list` (config loads, tests discovered, no browser) | ✅ 7 tests discovered |
-| `git apply --check` on clean folio-assistant `main` | ✅ applies cleanly |
+| `git apply --check` on clean folio-assistant `main` (5 files) | ✅ applies cleanly |
 | **Live browser run** | ⛔ **deferred** — `cdn.playwright.dev` is not in this environment's egress allowlist (`playwright install chromium` → HTTP 403), and no system Chrome/Chromium is present. Run in CI or a network-allowlisted folio-assistant session. |
 
 ---
@@ -147,13 +156,15 @@ recommended — the sims are written offline-first with `./three.min.js`):
 ```bash
 cd /path/to/folio-assistant            # litlfred/folio-assistant, on main
 git apply /path/to/qou/docs/audits/2026-06-16-playwright-simulators.patch
-git add playwright.config.ts test-server.cjs tests/simulators.spec.ts
-# (Separately) vendor simulators/three.min.js to enable the WebGL tests.
-bun install
+git add playwright.config.ts test-server.cjs tests/simulators.spec.ts \
+        scripts/vendor-three.cjs package.json
+bun install                            # installs three@0.149.0 (+ @playwright/test)
 bunx playwright install chromium       # needs cdn.playwright.dev allowlisted
-bun run test:e2e                       # == playwright test
+bun run test:e2e                       # pretest:e2e vendors three.min.js, then runs
 ```
 
-Expected on a fresh clone *without* `three.min.js`: the 4 two-D-sim tests pass,
-the 3 WebGL tests **skip** with reason "three.min.js not vendored". After
-vendoring `three.min.js`, all 7 run.
+`bun run test:e2e` self-provisions `simulators/three.min.js` via the
+`pretest:e2e` hook, so all 7 tests run. (If `three` is absent for any reason the
+vendor step is non-fatal and the 3 WebGL tests **skip** with a clear reason
+while the 4 two-D-sim tests still pass.) For production, also commit
+`simulators/three.min.js` (see *Production note*).
