@@ -187,3 +187,34 @@ from regression. The classifier fix (this PR) is the first drain step.
 5. Flip CI to `--self-strict`, then `--strict`.
 6. (Optional) effectiveHash Merkle roots for single-pass transitive
    closure.
+
+## Audit-suite scan-root rot (reorg silently disabled discipline audits)
+
+Investigating the `float64-leak-audit` assertion failure surfaced a
+*class* of bug: the discipline audits in `computations/audits/` scan
+`HERE.glob("*.py")`. Pre-reorg they lived in the compute dir and scanned
+their siblings (the whole compute tree); after the move into `audits/`,
+`HERE.glob` saw only the audits dir — so each **passed vacuously** (false
+green) and, for constant-policing audits, **false-flagged sibling audit
+scripts** (which legitimately reference the constants they police). This
+is the staleness-laundering pattern at the *audit* level: a stale
+scan-root turns a discipline check green while it inspects almost nothing.
+
+Fixed this PR (scan `HERE.parent.rglob`, skip `_deprecated` + `audits/`):
+
+| Audit | scripts scanned | candidates surfaced |
+|-------|----------------:|--------------------:|
+| `float64_leak_audit` | 2 → 55 | 16 |
+| `hardcoded_literal_audit` | 6 → 263 | 248 |
+| `validation_as_input_audit` | 3 → 39 | 39 |
+
+**Remaining candidates (same `HERE.glob`, need per-audit verification of
+intent + exclusions — NOT a blind sed):** `canonical_script_input_audit`,
+`guarded_off_audit`, `i2_probe_only_audit`, `incomplete_coverage_audit`,
+`legacy_formula_audit`, `stale_probe_audit`, `witness_provenance_audit`.
+(`fitted_labelled_canonical_audit` already uses `HERE.parent.rglob`;
+`noncanonical_reentry_audit` uses `walk`.) Systematic follow-up.
+
+The high post-fix counts (248, 39) reflect the audits' own broad matching
+(a separate calibration concern); restoring SCOPE is the fix — an audit
+scanning 6 files is worse than one honestly red.
