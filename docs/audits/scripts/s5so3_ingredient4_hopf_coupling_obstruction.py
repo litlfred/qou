@@ -39,9 +39,14 @@ SIGMA = [sx, sy, sz]
 TOL = 1e-12
 
 
+def mu_raw(z):
+    """The three complex sandwiches z* sigma z (real for Hermitian sigma)."""
+    return np.array([np.vdot(z, s @ z) for s in SIGMA])
+
+
 def mu(z):
-    """Hopf moment map C^2 -> R^3 (returns a real 3-vector)."""
-    return np.array([np.vdot(z, s @ z) for s in SIGMA])  # z* s z, real for Hermitian s
+    """Hopf moment map C^2 -> R^3 (real 3-vector; .real extracted to keep dtype real)."""
+    return mu_raw(z).real
 
 
 def Ad(g):
@@ -67,8 +72,9 @@ print("=" * 70)
 print("Canonical coupling mu(z) = z* sigma z  (Hopf moment map C^2 -> R^3)")
 print("=" * 70)
 m = mu(z)
-real_ok = np.allclose(m.imag, 0, atol=TOL)
-print(f"  mu(z) = {np.round(m.real, 6)}   (purely real: {real_ok})")
+# reality is a theorem (z* Hermitian z is real); verify on the raw complex sandwiches:
+real_ok = np.allclose(mu_raw(z).imag, 0, atol=TOL)
+print(f"  mu(z) = {np.round(m, 6)}   (z* sigma z purely real: {real_ok})")
 
 # (1) even -> central -1 of 2I trivial on image (parity resolved)
 even_ok = np.allclose(mu(-z), mu(z), atol=TOL)
@@ -87,13 +93,13 @@ g_rand = su2_axis_angle(rng.standard_normal(3), 1.3)
 equiv_rand = np.allclose(mu(g_rand @ z), Ad(g_rand) @ mu(z), atol=1e-10)
 g5 = su2_axis_angle([0, 0, 1], 2 * np.pi / 5)          # order-5 (binary: order 10)
 equiv5 = np.allclose(mu(g5 @ z), Ad(g5) @ mu(z), atol=1e-10)
-order5 = np.allclose((g5 @ g5 @ g5 @ g5 @ g5), -np.eye(2), atol=1e-10)  # g5^5 = -I in SU(2)
+order5 = np.allclose(np.linalg.matrix_power(g5, 5), -np.eye(2), atol=1e-10)  # g5^5 = -I in SU(2)
 print(f"  (3) mu(g z) == Ad(g) mu(z): random g {equiv_rand}; order-5 g {equiv5}")
 print(f"      (order-5 binary element: g5^5 = -I in SU(2): {order5}) -> A_5-equivariant")
 
 # (4) OBSTRUCTION: colour phase does NOT preserve R^3
 phi = 0.9
-colour_phase_img = np.exp(1j * phi) * m.real            # colour Reeb acts by overall phase
+colour_phase_img = np.exp(1j * phi) * m                 # colour Reeb acts by overall phase (m real)
 leaves_R3 = not np.allclose(colour_phase_img.imag, 0, atol=TOL)
 print(f"  (4) colour Reeb (phase e^(i phi)) on mu(z): leaves R^3 (nonzero imag): {leaves_R3}")
 print(f"      => the round-S^5 colour Reeb is TRANSVERSE to mu's image R^3:")
