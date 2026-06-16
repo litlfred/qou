@@ -1,16 +1,28 @@
 import Mathlib.Data.Real.Basic
-import Mathlib.Data.Rat.Cast.Order
-import Mathlib.Data.Polynomial.Laurent
 
 /-!
 # QOU.Observations.threeCalibrationDiscipline
 
 Conditional proposition: every algebraic-side mass functional in
-the QOU paper factors as `m_e^a · Q_β^c · Q(q_0)` with
-`Q(q) ∈ ℚ(q)`, `a, c ∈ ℕ`. The framework allows
-**categorically exactly three** external calibration inputs
-($m_\mu/m_e$ via $q_0$ in $H^1$, $m_e$ in $H^0$, $Q_\beta$ in
-$H^2$). The narrative proof is by induction along the 19-link
+the QOU paper factors as `m_e^a · m_π^c · Q(q_0)` with
+`Q ∈ ℚ(q)` realised at `q_0`, `a, c ∈ ℕ`. The framework allows
+**categorically exactly three** external calibration inputs, which
+are the three real degrees of freedom of the Bring Hodge structure
+`H^1 = 2W` (see `prop:calibration-cohomology-alignment`):
+
+* `m_e` — the **scale** of the rank-2 `W`-Hodge plane (`h^0` prefactor);
+* `q_0` — the **modulus** of that plane (`SL₂` trace `2cosh θ`), fixed
+  by the proton ratio `m_p/m_e` (re-pinned 2026-05-28; the muon ratio
+  `m_μ/m_e` is now a `9.5σ` cross-check prediction, not the anchor);
+* `m_π` — the **scale** of the `Vol(Hopf)=0` meson sector, an
+  *orthogonal* class independent of `(m_e, q_0)` because the Hopf-link
+  complement has zero hyperbolic volume.
+
+`Q_β` is **derived** from CAL-1 + CAL-2 via the substrate identity
+`Q_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³)` and is therefore *not* a primitive
+calibration factor; for the baryon sector the meson exponent `c` is `0`.
+
+The narrative proof is by induction along the 19-link
 cat-action → Hecke-energy chain
 ([three-calibration-discipline.md](three-calibration-discipline.md)).
 
@@ -22,13 +34,17 @@ assumption on the realisation of the mass functional, not a
 free-standing theorem about an arbitrary `MassFunctional`
 typeclass.
 
-The tower polynomial carries `ℚ`-coefficients — every algebraic-side
-construction in the cat-action → Hecke-energy chain produces an
-element of `ℤ[q^{±1}]` (or `ℚ[q^{±1}]` after Wedderburn weights),
-strictly inside the algebraic substrate. The numerical evaluation
-at the substrate parameter `q_0 ∈ ℝ` is the final step that crosses
-into `ℝ` via the ring homomorphism `Rat.castRingHom ℝ` applied to
-each coefficient.
+The realised tower value `towerValue X : ℝ` is the coefficient-wise
+cast along `ℚ → ℝ` of a `ℚ[q^{±1}]`-element evaluated at `q_0` —
+every algebraic-side construction in the cat-action → Hecke-energy
+chain produces an element of `ℤ[q^{±1}]` (or `ℚ[q^{±1}]` after
+Wedderburn weights), strictly inside the algebraic substrate. The
+numerical evaluation at the substrate parameter `q_0 ∈ ℝ` is the
+final step that crosses into `ℝ`, on the far side of the
+substrate→archimedean wall (CLAUDE.md §7c). We carry the realised
+real value here rather than the formal Laurent polynomial, since
+`LaurentPolynomial.eval` at a non-unit ring element is not the
+intended archimedean evaluation.
 
 Ref: [jones1985] https://doi.org/10.2307/1971403
 Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
@@ -42,79 +58,81 @@ universe u
 /-- A formal hadronic state — abstract carrier; the algebraic-side
     chain produces a `ℚ(q)`-valued tower expression for each such
     `X`, together with non-negative integer exponents counting the
-    `m_e` and `Q_β` insertions supplied by the observable. -/
+    `m_e` and `m_π` insertions supplied by the observable. -/
 structure HadronicState where
   carrier : Type u
 
 /-- The three-calibration discipline class.
 
     An instance asserts that the mass functional `mass` factors as
-    `m_e^a · Q_β^c · Q(q_0)` for some Laurent polynomial `Q` in
-    `q` and non-negative integer grading exponents `a, c` supplied
+    `m_e^a · m_π^c · towerValue(X)` for the realised tower value at
+    `q_0` and non-negative integer grading exponents `a, c` supplied
     by the observable.
 
-    The three calibration inputs (`m_e`, `q_0`, `Q_β`) align to
-    distinct (co)homological degrees of the substrate sheaf:
+    The three calibration inputs (`m_e`, `q_0`, `m_π`) are the three
+    real degrees of freedom of the Bring Hodge structure `H^1 = 2W`
+    (`prop:calibration-cohomology-alignment`):
 
-    - `m_e` sits in `H^0` (mass scale).
-    - `q_0` sits in `H^1` (substrate parameter — fixed by lepton
-      ratio `m_μ/m_e`).
-    - `Q_β` sits in `H^2` (weak-sector / beta-decay scale).
+    - `m_e` is the **scale** of the rank-2 `W`-Hodge plane.
+    - `q_0` is the **modulus** of that plane, fixed by the proton
+      ratio `m_p/m_e`.
+    - `m_π` is the **scale** of the `Vol(Hopf)=0` meson sector — an
+      orthogonal class independent of `(m_e, q_0)`.
 
-    A **fourth** dimensional input would violate the
-    (co)homological alignment and is a hard audit failure. -/
+    `Q_β` is **derived** from `m_e` and `q_0`, not an independent
+    input. A **fourth** dimensional input would violate the
+    cohomological alignment and is a hard audit failure. -/
 class ThreeCalibrationDiscipline (State : Type u) where
-  /-- `H^0` calibration: dimensional unit (CODATA `m_e`). -/
+  /-- CAL-1: dimensional unit (CODATA `m_e`), the scale of the
+      `W`-Hodge plane. -/
   m_e : ℝ
   /-- Positivity of the mass scale. -/
   m_e_pos : 0 < m_e
-  /-- `H^1` calibration: dimensionless substrate parameter, fixed
-      by the lepton mass ratio `m_μ / m_e`. -/
+  /-- CAL-2: dimensionless substrate parameter (the modulus of the
+      `W`-Hodge plane), fixed by the proton mass ratio `m_p / m_e`. -/
   q_0 : ℝ
   /-- `q_0 > 1` (positivity / non-degenerate substrate). -/
   q_0_pos : 1 < q_0
-  /-- `H^2` calibration: beta-decay scale (representative
-      `Q_β`), in the same energy units as `m_e`. -/
-  Q_beta : ℝ
-  /-- Non-negativity of the weak scale. -/
-  Q_beta_nonneg : 0 ≤ Q_beta
-  /-- The dimensionless tower expression as a Laurent polynomial
-      in `q` with **rational coefficients** — the algebraic-side
-      framework constructs every tower element strictly inside
-      `ℚ[q^{±1}]` (Wedderburn weights × Markov-trace polynomials in
-      `ℤ[q^{±1}]`). The cast to `ℝ` is deferred to the evaluation
-      step. -/
-  towerPoly : State → LaurentPolynomial ℚ
+  /-- CAL-3: meson-sector scale (representative `m_π`), the scale of
+      the `Vol(Hopf)=0` orthogonal class, in the same energy units as
+      `m_e`. -/
+  m_pi : ℝ
+  /-- Positivity of the meson scale. -/
+  m_pi_pos : 0 < m_pi
+  /-- The realised dimensionless tower value `Q_X(q_0) ∈ ℝ`, obtained
+      by casting a `ℚ[q^{±1}]`-element along `ℚ → ℝ` and evaluating at
+      `q_0`. The algebraic-side framework constructs every tower
+      element strictly inside `ℚ[q^{±1}]` (Wedderburn weights ×
+      Markov-trace polynomials in `ℤ[q^{±1}]`); the cast to `ℝ` is the
+      final archimedean step. -/
+  towerValue : State → ℝ
   /-- Cohomological-grading exponents supplied by the observable:
-      `a` counts `H^0` (`m_e`) insertions, `c` counts `H^2`
-      (`Q_β`) insertions. -/
+      `a` counts `m_e` insertions, `c` counts meson-sector (`m_π`)
+      insertions (`c = 0` for the baryon sector). -/
   m_e_degree : State → ℕ
-  Q_beta_degree : State → ℕ
+  m_pi_degree : State → ℕ
   /-- The mass functional. -/
   mass : State → ℝ
   /-- The discipline:
-      `mass X = m_e^{a(X)} · Q_β^{c(X)} · towerPoly_ℝ(q_0)`,
-      where `towerPoly_ℝ` is the coefficient-wise cast of
-      `towerPoly` along `ℚ → ℝ`. -/
+      `mass X = m_e^{a(X)} · m_π^{c(X)} · towerValue(X)`. -/
   mass_factorisation :
     ∀ X,
       mass X =
         m_e ^ (m_e_degree X)
-          * Q_beta ^ (Q_beta_degree X)
-          * ((towerPoly X).map (Rat.castRingHom ℝ)).eval q_0
+          * m_pi ^ (m_pi_degree X)
+          * towerValue X
 
 /-- Headline statement: under `ThreeCalibrationDiscipline`, every
-    mass factors as `m_e^a · Q_β^c · Q_ℝ(q_0)` where
-    `Q_ℝ` is the coefficient-wise cast of the
-    `ℚ`-Laurent polynomial `Q` along the canonical ring
-    homomorphism `Rat.castRingHom ℝ`. -/
+    mass factors as `m_e^a · m_π^c · Q_ℝ(q_0)` where `Q_ℝ(q_0)` is the
+    realised real value (`towerValue`) of the dimensionless
+    `ℚ[q^{±1}]`-tower at the substrate parameter. -/
 theorem threeCalibrationDiscipline
     {State : Type u} [c : ThreeCalibrationDiscipline State]
     (X : State) :
     c.mass X =
       c.m_e ^ (c.m_e_degree X)
-        * c.Q_beta ^ (c.Q_beta_degree X)
-        * ((c.towerPoly X).map (Rat.castRingHom ℝ)).eval c.q_0 :=
+        * c.m_pi ^ (c.m_pi_degree X)
+        * c.towerValue X :=
   c.mass_factorisation X
 
 end QOU.Observations
