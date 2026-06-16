@@ -86,23 +86,23 @@ $$
   \pmod{\Phi_{n_\ell}(q)}.
 $$
 
-## Why this replaces the Lean `opaque`
+## Why this replaces the class field representation
 
-The Lean declaration
+The Lean formulation in
+[`gb-residue-spectral-sum.lean`](gb-residue-spectral-sum.lean)
+treats the residue as an abstract class field:
 
 ```lean
-noncomputable opaque residueAtRoot (ℓ : ℕ) (ζ : RootOfUnity) (q : ℝ) : ℝ
+residue : Fin levelBound → ℝ
 ```
 
-in [`gb-residue-spectral-sum.lean`](gb-residue-spectral-sum.lean)
-treats the residue as an unspecified function of three variables
-($\ell$, $\zeta$, $q$) returning a real number — which forces the
-formalisation to live over $\mathbb{R}$ and to invoke complex
-analysis informally to compute residues at unit-circle roots.
+This effectively treats the residue as an unspecified function returning a real number — which forces the formalisation to live over $\mathbb{R}$ and implicitly relies on complex analysis to compute residues at unit-circle roots.
 
 The proposition above replaces this by a constructive algebraic
 definition entirely inside $\widehat{\mathbb{Z}[q]}$: cyclotomic
-projection plus the Habiro-ring isomorphism. Three things become
+projection plus the Habiro-ring isomorphism. (A full Lean 
+formalisation of this constructive approach is a deferred 
+multi-week effort for the `QOU.AlgebraicSubstrate` layer.) Three things become
 immediate:
 
 1. **No analytic continuation.** The residue is a quotient by a

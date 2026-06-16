@@ -5,7 +5,7 @@
  *   import { definition, theorem, prose } from "./schema";
  *   import type { Block, Chapter, Document } from "./schema";
  */
-export * from "../../folio-assistant/schemas/index";
+export * from "../../../FolioAssistant/schemas/index";
 
 // Bibliography (CSL-JSON source of truth)
 export {

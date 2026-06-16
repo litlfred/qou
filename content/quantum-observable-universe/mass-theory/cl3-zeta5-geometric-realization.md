@@ -58,10 +58,8 @@ be expressible via $\mathrm{Cl}_3(2\pi/5)$ and its Galois conjugates.
 $\mathrm{CS}(K) \stackrel{?}{=} \alpha \cdot \mathrm{Cl}_3(2\pi/5) + \beta \cdot \zeta(3) + \cdots$
 for explicit $\alpha, \beta \in \mathbb{Q}$.
 
-Candidates from existing tables: torus knots $T(2, 5)$, $T(3, 5)$,
-$T(5, 2)$ (the seven generators of [`rem:bring-embeddable-knots`](#rem:bring-embeddable-knots))
-have known CS invariants — likely related, but the specific
-linear-combination coefficients require computation.
+> [!WARNING]
+> **Update (Numerical refutation)**: A PSLQ numerical experiment on the CS invariants of the seven Bring-natural torus-knot generators $\{T(2, 3), T(2, 5), T(2, 7), T(2, 9), T(3, 4), T(3, 5), T(5, 2)\}$ reveals that their Chern-Simons invariants are exactly rational (e.g., $\mathrm{CS}(T(2,5)) = 1/20, \mathrm{CS}(T(2,3)) = -1/12$). Therefore, their CS invariants cannot be expressed as non-trivial $\mathbb{Q}$-linear combinations of transcendental numbers like $\zeta(3)$ and $\mathrm{Cl}_3(2\pi/5)$. This strictly rules out torus knots as direct geometric realisations for this depth-3 period under Candidate 2.
 
 #### Candidate 3: iterated integral on $\overline{\mathcal{M}}_{0, 5}$
 

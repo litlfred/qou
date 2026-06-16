@@ -26,4 +26,4 @@ export {
   paperRef,
   folio,
   document,
-} from "../../folio-assistant/schemas/builders";
+} from "../../../FolioAssistant/schemas/builders";
