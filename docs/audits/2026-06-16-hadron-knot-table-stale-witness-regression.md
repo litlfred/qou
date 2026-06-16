@@ -1,4 +1,9 @@
-# hadron-knot-table — stale witness + binding regression (findings)
+# hadron-knot-table — stale witness advertising a retired fit (findings)
+
+> **Filename note:** this file's slug says "regression"; the corrected
+> finding (below) is that the ⁴He binding change is **de-fitting masked
+> by a stale witness**, not a code regression. Slug kept for link
+> stability.
 
 **Date:** 2026-06-16
 **Branch:** `claude/youthful-faraday-5snwms` (PR #2355)
@@ -17,20 +22,45 @@ on this PR — see
 It is one of **694 self-stale witnesses (42%)** the enhanced validator
 now surfaces.
 
-## Finding 2 — regeneration reveals a likely binding regression
+## Finding 2 — regeneration reveals a stale *fitted* value (NOT a code regression)
 
 Re-running the current producer changes values far beyond any q effect:
 
 | ⁴He field | committed witness | current-code regen | note |
 |-----------|-------------------|--------------------|------|
-| `tr_M` | 1.427904 | 1.496291 | from `build_atom_nf`/`nf_tr` — **not** touched by the q₀ work |
-| `B_MeV` | 28.1915 | 0.7183 | ⁴He binds at ~28 MeV; **0.72 MeV is physically wrong** |
+| `tr_M` | 1.427904 | 1.496291 | from `build_atom_nf`/`nf_tr` — not the q₀ work |
+| `B_MeV` | 28.1915 | 0.7183 | see below |
 
-`tr_M` and `B_MeV` come from `build_atom_nf`/`binding_energy`, which the
-q₀ volume change does not touch — so this is a **pre-existing regression**
-in the current producer (or its upstream `binding_energy` in
-`hecke_core_legacy.py`), independent of q₀. Because the committed witness
-predates it, the regression has been masked.
+**Initial mis-read (corrected):** I first called the `B_MeV`
+28.19 → 0.72 change a "physically-wrong regression". That is **wrong**.
+The term breakdown of the current categorical `binding_energy(2,2)` is
+
+```
+unified_iterative_correction = −8.3613   (LP-dual shadow)
+sdp_cross_channel            ≈ +8.3728   (near-cancels the above)
+binding_from_frobenius       = +0.7068   (Markov trace)
+                       total ≈  0.7183 MeV
+```
+
+⁴He binds at **28.296 MeV** experimentally; the **Bethe–Weizsäcker**
+formula (the *retired* empirical-fit path the `binding_energy` docstring
+says it "replaces") reproduces ~28 by construction. So:
+
+- committed `28.1915` ≈ the **retired empirical-fit / older path** value
+  (suspiciously ≈ experiment);
+- current `0.7183` is the **honest categorical value** — far from
+  experiment because per-isotope binding is the documented **open Δ_λ
+  problem** (CLAUDE.md Δ_λ gate: six closure ansätze failed; ⁴He binding
+  research state is "+5.97% off" at best —
+  `docs/audits/2026-06-01-he4-multi-nucleon-interface-research-state.md`).
+
+So this is **de-fitting masked by a stale witness**, not a regression:
+the appendix witness keeps advertising a *fitted* ⁴He binding that the
+framework has since disavowed under the three-calibration discipline.
+That is arguably a *worse* integrity problem than numerical drift — a
+stale witness laundering a retired fit — and it sharpens the case for the
+staleness infra (a stale witness can violate the no-fit discipline
+retroactively).
 
 ## Action taken
 
@@ -51,16 +81,24 @@ This is exactly the failure the staleness-propagation design targets:
 
 1. **Self-staleness** (Finding 1) sat undetected — *no CI gate on
    `scriptHash` drift*. → fixed by the validator's new self-check.
-2. **Refresh-laundering** (Finding 2) — a blind "regenerate the stale
-   witness" would have committed a physically-wrong value. → motivates
-   **assertion-gating on refresh** (block when `allPassed` flips false;
-   an assertion `B(⁴He) ≈ 28 MeV` would have caught it).
+2. **Stale-fit laundering** (Finding 2) — the committed witness keeps
+   advertising a *retired empirical-fit* ⁴He binding (≈ experiment) that
+   the current categorical producer no longer reproduces (0.72 MeV,
+   honestly open). A stale witness can thus retroactively violate the
+   three-calibration / no-fit discipline. → motivates **assertion-gating
+   tied to the framework's actual claim**: the witness should assert what
+   the categorical path *does* produce (and that it is not yet within X%
+   of experiment), so a stale fitted value can't sit unflagged.
 
 ## Follow-ups (owner-scoped)
 
-1. Investigate the ⁴He `B_MeV` 28.19 → 0.72 regression in
-   `binding_energy` / `hecke_core_legacy.py` (separate from this PR).
-2. After (1), regenerate `hadron-knot-table.witness.json` **with the
-   q₀ `V_full` port** and an assertion gate.
-3. Add a `B(⁴He) ≈ 28 MeV` (and a few anchor) assertions to the witness
-   so a future regression can't pass silently.
+1. **Decide ⁴He binding's honest reported value.** The current
+   `binding_energy` categorical path gives ~0.72 MeV; per-isotope binding
+   is the open Δ_λ problem. The committed witness's 28.19 MeV is a retired
+   fit and should not stand. (No "regression bug" to fix — the question is
+   what the appendix table should honestly report.)
+2. Regenerate `hadron-knot-table.witness.json` with the q₀ `V_full` port
+   once (1) is settled.
+3. Add assertions that encode the *honest* state (categorical B(⁴He) and
+   its distance from `B_AME = 28.296`), so a stale fitted value can't pass
+   silently — and so the no-fit discipline is enforced at the witness level.
