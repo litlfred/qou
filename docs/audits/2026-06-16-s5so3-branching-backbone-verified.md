@@ -125,8 +125,15 @@ diagonalization) and is a 3-strand construction**, i.e. the $S_3$ *target*, not 
 Promoting it to the full icosahedral $A_5$ action threading the Reeb flow is a five-ingredient
 construction program, scoped separately:
 [`docs/scope/2026-06-16-icosahedral-reeb-fiber-map-construction.md`](../scope/2026-06-16-icosahedral-reeb-fiber-map-construction.md).
-The cheap formalize-first link (the two bridging branchings §1a) is now discharged; the genuinely
-unbuilt objects are the **$A_5$-invariant orbit blow-up** and the **$2I$-equivariant Reeb field**.
+The cheap formalize-first link (the two bridging branchings §1a) is now discharged. **Follow-up
+(2026-06-16): ingredient 1 fully settled** (the $2I$ spin lift exists via the SU(2) structure group +
+the $S_3\!\to\!\mathrm{Dic}_3$ precedent; the geometric $A_5$ is forced to the icosahedral $T_1$),
+**ingredient 4's algebraic leg is concrete** (Hecke-tower restriction = the verified branching, projector
+traces computable in `pyhecke`), and **ingredient 5 (the 210 ppb muon mechanism) is REFUTED** — every
+named Wedderburn-projector correction overshoots the gap by 6–8 orders of magnitude. Full close-out +
+compute: [`docs/scope/2026-06-16-icosahedral-reeb-fiber-map-construction.md` §"Ingredient 4+5 close-out"](../scope/2026-06-16-icosahedral-reeb-fiber-map-construction.md)
++ [`scripts/s5so3_ingredient_4_5_markov_shift.py`](scripts/s5so3_ingredient_4_5_markov_shift.py). The sole
+remaining structural unknown is the **geometric Reeb = functor identification** (ingredient 4 geometric leg).
 
 ## 3. Critical-distance flag — two status over-reads to correct
 
