@@ -114,7 +114,10 @@ def main() -> int:
     SELF_OUTPUT = "incomplete-coverage-audit.witness.json"
 
     rows: list[dict[str, Any]] = []
-    for w in sorted(HERE.glob("*.witness.json")):
+    # Scan the whole compute tree's witnesses (reorg scan-root fix).
+    for w in sorted((HERE.parent).rglob("*.witness.json")):
+        if "_deprecated" in w.parts:
+            continue
         if w.name == SELF_OUTPUT:
             continue
         result = _audit_witness(w)

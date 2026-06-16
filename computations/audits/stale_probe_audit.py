@@ -178,7 +178,10 @@ def main() -> int:
     print(f"  indexed {len(label_index)} labels")
 
     all_rows: list[dict[str, Any]] = []
-    for w in sorted(HERE.glob("*.witness.json")):
+    # Scan the whole compute tree's witnesses (reorg scan-root fix).
+    for w in sorted((HERE.parent).rglob("*.witness.json")):
+        if "_deprecated" in w.parts:
+            continue
         if w.name == "stale-probe-audit.witness.json":
             continue
         all_rows.extend(_audit_witness(w, label_index))
