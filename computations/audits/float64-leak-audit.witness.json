@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-16T19:17:57.521077+00:00",
-  "commitSha": "cecd4921a6996ca81d902a444a04aebf3efa7832",
+  "computedAt": "2026-06-16T22:14:41.410034+00:00",
+  "commitSha": "1f4600305a109d9c8230ac8a7d20ed164d192e00",
   "assertions": [
     {
       "name": "no_i8_violations",
@@ -18,8 +18,8 @@
   "durationMs": 10,
   "computation": "float64-leak-audit",
   "scriptFile": "float64_leak_audit.py",
-  "scriptHash": "33ec2116134d",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "1b62ab40a983",
+  "scriptCommitSha": "e3b41d8797ffdca247bde4685e428ff04e4ca4a5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,15 +37,28 @@
   "description": "I8 audit per local/compute-integration-watcher: scripts whose docstrings claim substrate-pure / canonical / 50-dps precision are scanned for float64 leaks — `np.float64(...)`, `float(...)` casts on derived mpf values, f-string precision clipping, and `==` comparison on mpf values. Antipattern shapes are matched against the four catalogue items. False-positive guards: lines inside builder `add_data` / `add_parameter` / `add_assertion` calls are classified as `ok_witness_emit` (final-step JSON serialization is expected); lines followed within 3 by `mp.mpf(str(...))` re-wrap are `false_positive_candidate`.",
   "contentBlock": "I8 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "substrate_banner_scripts_total": 55
+    "substrate_banner_scripts_total": 56
   },
   "data": {
     "by_result": {
-      "ok_with_display_or_fp": 6,
-      "ok_no_leaks": 33,
-      "i8_violation": 16
+      "ok_no_leaks": 34,
+      "ok_with_display_or_fp": 11,
+      "i8_violation": 11
     },
     "rows": [
+      {
+        "path": "computations/a_operator/a_operator_gauge_align.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
       {
         "path": "computations/atomic_tr_m_helium4_canonical.py",
         "substrate_banner": true,
@@ -120,11 +133,11 @@
         "path": "computations/bar_pairing_binding_observable.py",
         "substrate_banner": true,
         "hit_count": 6,
-        "violation_count": 3,
+        "violation_count": 0,
         "display_count": 1,
         "comparison_count": 2,
         "noqa_count": 0,
-        "witness_emit_count": 0,
+        "witness_emit_count": 3,
         "false_positive_count": 0,
         "hits": [
           {
@@ -136,19 +149,19 @@
           {
             "line_number": 276,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"B_arch_MeV\": float(B_arch),"
           },
           {
             "line_number": 277,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"B_bar_MeV\": float(B_bar),"
           },
           {
             "line_number": 278,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"AME_MeV\": float(ame),"
           },
           {
@@ -164,7 +177,7 @@
             "code_snippet": "\"err_bar_pct\": float(err_bar * 100),"
           }
         ],
-        "result": "i8_violation"
+        "result": "ok_with_display_or_fp"
       },
       {
         "path": "computations/borromean_markov_trace_h_expansion_50dps.py",
@@ -423,23 +436,23 @@
         "path": "computations/constit_factor_residual_phase5k.py",
         "substrate_banner": true,
         "hit_count": 47,
-        "violation_count": 16,
-        "display_count": 27,
+        "violation_count": 1,
+        "display_count": 24,
         "comparison_count": 2,
         "noqa_count": 0,
-        "witness_emit_count": 2,
+        "witness_emit_count": 20,
         "false_positive_count": 0,
         "hits": [
           {
             "line_number": 89,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"h_k_value\": float(h_k),"
           },
           {
             "line_number": 90,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"c_estimate\": float(c_estimate),"
           },
           {
@@ -451,31 +464,31 @@
           {
             "line_number": 94,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"rho_measured\": float(rho_meas),"
           },
           {
             "line_number": 95,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"predicted_2q_minus_1\": float(predicted),"
           },
           {
             "line_number": 96,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"residual\": float(residual),"
           },
           {
             "line_number": 97,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"rel_err\": float(rel_err),"
           },
           {
             "line_number": 98,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"h_at_q0\": float(h),"
           },
           {
@@ -511,43 +524,43 @@
           {
             "line_number": 165,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"h\": float(h),"
           },
           {
             "line_number": 166,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"h_squared\": float(h ** 2),"
           },
           {
             "line_number": 167,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"h_cubed\": float(h ** 3),"
           },
           {
             "line_number": 168,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"h_to_4\": float(h ** 4),"
           },
           {
             "line_number": 169,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "\"h_to_5\": float(h ** 5),"
           },
           {
             "line_number": 170,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "\"cosh_h\": float(cosh_h),"
           },
           {
             "line_number": 171,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "\"cosh_log_q\": float(cosh_log_q),"
           }
         ],
@@ -557,11 +570,11 @@
         "path": "computations/delta_lambda_categorical_verification.py",
         "substrate_banner": true,
         "hit_count": 10,
-        "violation_count": 2,
+        "violation_count": 1,
         "display_count": 1,
         "comparison_count": 0,
         "noqa_count": 0,
-        "witness_emit_count": 7,
+        "witness_emit_count": 8,
         "false_positive_count": 0,
         "hits": [
           {
@@ -579,7 +592,7 @@
           {
             "line_number": 286,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"error_relative\": float(err_rel),"
           },
           {
@@ -734,26 +747,14 @@
       {
         "path": "computations/markov/markov_trace_for_knot.py",
         "substrate_banner": true,
-        "hit_count": 4,
-        "violation_count": 3,
+        "hit_count": 2,
+        "violation_count": 1,
         "display_count": 1,
         "comparison_count": 0,
         "noqa_count": 0,
         "witness_emit_count": 0,
         "false_positive_count": 0,
         "hits": [
-          {
-            "line_number": 115,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "Equivalent to `pn.trace_weights_n_q_schur(2, float(q))` at f64,"
-          },
-          {
-            "line_number": 265,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "mp.mpf at requested dps (default) or Python float (f64 mode)."
-          },
           {
             "line_number": 286,
             "pattern": "float_cast",
@@ -824,20 +825,14 @@
       {
         "path": "computations/normalization_reconciliation_phase5l2.py",
         "substrate_banner": true,
-        "hit_count": 27,
-        "violation_count": 3,
-        "display_count": 23,
+        "hit_count": 26,
+        "violation_count": 2,
+        "display_count": 19,
         "comparison_count": 0,
         "noqa_count": 0,
-        "witness_emit_count": 1,
+        "witness_emit_count": 5,
         "false_positive_count": 0,
         "hits": [
-          {
-            "line_number": 53,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "float (~16 dps truncation); the un-truncated 50-dps q-strings live"
-          },
           {
             "line_number": 126,
             "pattern": "float_cast",
@@ -889,25 +884,25 @@
           {
             "line_number": 132,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "\"q\": float(q_val),"
           },
           {
             "line_number": 133,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "\"ratio\": float(tau_canonical / T_at_q),"
           },
           {
             "line_number": 138,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "\"q\": float(q_val),"
           },
           {
             "line_number": 139,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "\"ratio\": float(tau_canonical / T_at_qsq),"
           },
           {
@@ -949,6 +944,12 @@
           {
             "line_number": 155,
             "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    relative spread = {float(rel_spread):.4e}\")"
+          },
+          {
+            "line_number": 155,
+            "pattern": "fstring_precision_e",
             "context": "ok_display",
             "code_snippet": "print(f\"    relative spread = {float(rel_spread):.4e}\")"
           }
@@ -998,59 +999,59 @@
         "path": "computations/probes/geom_leading_alt_q_locality_probe.py",
         "substrate_banner": true,
         "hit_count": 16,
-        "violation_count": 11,
+        "violation_count": 0,
         "display_count": 4,
         "comparison_count": 1,
         "noqa_count": 0,
-        "witness_emit_count": 0,
+        "witness_emit_count": 11,
         "false_positive_count": 0,
         "hits": [
           {
             "line_number": 170,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"delta\": float(delta),"
           },
           {
             "line_number": 171,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"slope_ppm_per_q\": float(s),"
           },
           {
             "line_number": 172,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"abs_slope_ppm_per_q\": float(abs(s)),"
           },
           {
             "line_number": 182,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"geom_leading_at_q0\": float(gl_q0),"
           },
           {
             "line_number": 183,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"lw_target_at_q0\": float(target_q0),"
           },
           {
             "line_number": 184,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"lw_family_a_at_q0\": float(lw_a_q0),"
           },
           {
             "line_number": 185,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"gap_target_minus_family_a_ppm_at_q0\": float(gap_ppm),"
           },
           {
             "line_number": 186,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"m_p_pred_MeV_with_family_a_lw\": float(m_p),"
           },
           {
@@ -1062,7 +1063,7 @@
           {
             "line_number": 190,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"max_abs_slope_ppm_per_q\": float(max_abs_slope),"
           },
           {
@@ -1092,17 +1093,17 @@
           {
             "line_number": 266,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"tolerance_ppm_per_q\": float(TOLERANCE_PPM_PER_Q),"
           },
           {
             "line_number": 267,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"sweep_deltas\": [float(d) for d in SWEEP_DELTAS],"
           }
         ],
-        "result": "i8_violation"
+        "result": "ok_with_display_or_fp"
       },
       {
         "path": "computations/probes/higher_n_wedderburn_h2_drift_probe.py",
@@ -1255,11 +1256,11 @@
         "path": "computations/probes/vol_density_borromean_h4_probe.py",
         "substrate_banner": true,
         "hit_count": 44,
-        "violation_count": 10,
-        "display_count": 29,
+        "violation_count": 0,
+        "display_count": 26,
         "comparison_count": 5,
         "noqa_count": 0,
-        "witness_emit_count": 0,
+        "witness_emit_count": 13,
         "false_positive_count": 0,
         "hits": [
           {
@@ -1319,7 +1320,7 @@
           {
             "line_number": 179,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "slopes_at_solved.append({\"delta\": float(delta), \"slope_ppm_per_q\": float(s)})"
           },
           {
@@ -1383,7 +1384,7 @@
             "code_snippet": "print(f\"  gap vs CODATA      = {float(gap_pct_struct):+.3f}%\")"
           }
         ],
-        "result": "i8_violation"
+        "result": "ok_with_display_or_fp"
       },
       {
         "path": "computations/q_dirac_h5_lift_and_refinements_50dps.py",
@@ -1537,16 +1538,16 @@
         "substrate_banner": true,
         "hit_count": 7,
         "violation_count": 0,
-        "display_count": 1,
+        "display_count": 0,
         "comparison_count": 0,
         "noqa_count": 0,
-        "witness_emit_count": 6,
+        "witness_emit_count": 7,
         "false_positive_count": 0,
         "hits": [
           {
             "line_number": 372,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "f\"c_{k}\": float(v) for k, v in c_k.items()"
           },
           {
@@ -1592,11 +1593,11 @@
         "path": "computations/qbeta/qbeta_decay_sdp_full_ck.py",
         "substrate_banner": true,
         "hit_count": 17,
-        "violation_count": 2,
-        "display_count": 7,
+        "violation_count": 0,
+        "display_count": 6,
         "comparison_count": 0,
         "noqa_count": 0,
-        "witness_emit_count": 8,
+        "witness_emit_count": 11,
         "false_positive_count": 0,
         "hits": [
           {
@@ -1638,7 +1639,7 @@
           {
             "line_number": 155,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "w.add_data(\"c_k_extracted\", {f\"c_{k}\": float(v) for k, v in c_k.items()})"
           },
           {
@@ -1656,13 +1657,13 @@
           {
             "line_number": 160,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"c_5\": f\"-(b² + 1/2) = {float(-(b**2 + mpf(1)/2)):.6f}\","
           },
           {
             "line_number": 160,
             "pattern": "fstring_precision_f",
-            "context": "violation",
+            "context": "ok_witness_emit",
             "code_snippet": "\"c_5\": f\"-(b² + 1/2) = {float(-(b**2 + mpf(1)/2)):.6f}\","
           },
           {
@@ -1702,7 +1703,7 @@
             "code_snippet": "computed=float(abs(c_k[7] - mpf(\"57.149243\"))),"
           }
         ],
-        "result": "i8_violation"
+        "result": "ok_with_display_or_fp"
       },
       {
         "path": "computations/qbeta/qbeta_habiro_q_difference_recurrence_probe.py",
@@ -1761,10 +1762,10 @@
         "substrate_banner": true,
         "hit_count": 19,
         "violation_count": 1,
-        "display_count": 16,
+        "display_count": 11,
         "comparison_count": 0,
         "noqa_count": 0,
-        "witness_emit_count": 2,
+        "witness_emit_count": 7,
         "false_positive_count": 0,
         "hits": [
           {
@@ -1782,31 +1783,31 @@
           {
             "line_number": 127,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "\"q\": float(q_val),"
           },
           {
             "line_number": 128,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "\"tau_M_proton_H3\": float(tau_p_H3),"
           },
           {
             "line_number": 130,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "\"rho_Z_constit\": float(rho),"
           },
           {
             "line_number": 132,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "\"diff\": float(diff),"
           },
           {
             "line_number": 133,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_witness_emit",
             "code_snippet": "\"rel_err\": float(rel_err),"
           },
           {
@@ -1949,20 +1950,14 @@
       {
         "path": "computations/snappy_borromean_volume.py",
         "substrate_banner": true,
-        "hit_count": 4,
-        "violation_count": 1,
+        "hit_count": 3,
+        "violation_count": 0,
         "display_count": 2,
         "comparison_count": 1,
         "noqa_count": 0,
         "witness_emit_count": 0,
         "false_positive_count": 0,
         "hits": [
-          {
-            "line_number": 103,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "SnapPy 3.2.0+ returns a Python float (Manifold.volume()) or a"
-          },
           {
             "line_number": 183,
             "pattern": "float_cast",
@@ -1982,7 +1977,7 @@
             "code_snippet": "snappy_canonical_agreement = float(delta) < 10 ** (-(max(PRECISION_TIERS) - 5))"
           }
         ],
-        "result": "i8_violation"
+        "result": "ok_with_display_or_fp"
       },
       {
         "path": "computations/substrate/hecke_core_symbolic.py",
@@ -2000,20 +1995,14 @@
       {
         "path": "computations/substrate/knot_volumes.py",
         "substrate_banner": true,
-        "hit_count": 8,
-        "violation_count": 8,
+        "hit_count": 7,
+        "violation_count": 7,
         "display_count": 0,
         "comparison_count": 0,
         "noqa_count": 0,
         "witness_emit_count": 0,
         "false_positive_count": 0,
         "hits": [
-          {
-            "line_number": 41,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "`float(mpf)` — round-trip safe to ~17 digits, sufficient for"
-          },
           {
             "line_number": 185,
             "pattern": "float_cast",
