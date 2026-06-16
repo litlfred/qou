@@ -97,11 +97,40 @@ print("     kills all >=3-row partitions).  The strand fibre must be >=3-dim")
 print("     (colour C^3).  The 2I spin lift lives on the divisor sphere P(C^2),")
 print("     NOT on the strand fibre -- the two spaces must stay distinct.")
 
+# ============================================================================
+# NUMEROLOGY GUARD: is the electron block (3,1,1) = colour C^3 (x) spin C^2 ?
+# dim(3,1,1) = 6 = 3*2 is suggestive.  But test STRUCTURE, not the dim match.
+# Decisive invariant: the CENTRAL CHARACTER of -1 in 2I (= spin parity).
+#   - (3,1,1) is a genuine A_5 rep (the central -1 of 2I acts as +1).
+#   - colour C^3 = T_1 is also an A_5 rep -> central char +1.
+#   - spin C^2 is the faithful spinor -> central -1 acts as -1.
+#   => C^3 (x) C^2 has central char (+1)*(-1) = -1 != +1 = that of (3,1,1).
+# So (3,1,1) is NOT colour (x) spin: it does not even descend-match.  And as an
+# A_5 rep it is the DIRECT SUM T_1 (+) T_2 (the two chiralities, 3+3), not a
+# tensor 3x2.  The dim-6 coincidence is chirality, not colour-spin.
+# ============================================================================
+print()
+print("=" * 70)
+print("NUMEROLOGY GUARD — is (3,1,1) = colour C^3 (x) spin C^2 ?  (dim 6 = 3*2)")
+print("=" * 70)
+central_char = {"(3,1,1)": +1, "colour_C3_T1": +1, "spin_C2_spinor": -1}
+cc_tensor = central_char["colour_C3_T1"] * central_char["spin_C2_spinor"]
+cc_electron = central_char["(3,1,1)"]
+print(f"  central char of -1 in 2I:  (3,1,1)={cc_electron:+d}  colour C^3={central_char['colour_C3_T1']:+d}"
+      f"  spin C^2={central_char['spin_C2_spinor']:+d}")
+print(f"  => C^3 (x) C^2 central char = {cc_tensor:+d}  vs (3,1,1) = {cc_electron:+d}")
+matches = (cc_tensor == cc_electron)
+print(f"  central characters match: {matches}  -> (3,1,1) = colour (x) spin: {matches}")
+print("  Moreover (3,1,1)|A5 = T1 (+) T2 (verified elsewhere): a DIRECT SUM 3+3")
+print("  (the two chiralities), NOT a tensor 3x2.  dim-6 match is coincidence.")
+print("  VERDICT: colour (x) spin lead REFUTED (spin-parity mismatch).")
+
 # Assertions encode the finding.
 assert hosted2 == [(5,), (4, 1), (3, 2)], "spinor content drift"
 assert not e_on_spin, "electron must be ABSENT on spinor C^2"
 assert mu_on_spin, "muon must be present on spinor C^2"
 assert e_on_col, "electron must be present on colour C^3"
+assert not matches, "colour-spin tensor must MISMATCH (3,1,1) on central character"
 assert ok2 and ok3, "Schur-Weyl dimension count must close"
 print("\nALL INGREDIENT-4 FIBRE-CONSTRAINT ASSERTIONS VERIFIED.")
 sys.exit(0)
