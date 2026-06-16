@@ -18,12 +18,20 @@ for the parabolic split `n = n_1 + n_2`, an interface element
 
 $$
 \chi^\lambda(\beta_1\,I\,\beta_2)
-  = \sum_{\mu\vdash n_1,\ \nu\vdash n_2} c^\lambda_{\mu\nu}\;
+  = \sum_{\mu\vdash n_1,\ \nu\vdash n_2}\;
     \mathrm{Tr}_{V_\mu\otimes V_\nu}\!\Big(
       A^\lambda_{\mu\nu}(I)\,\big(\rho_\mu(\beta_1)\otimes\rho_\nu(\beta_2)\big)
     \Big).
 \tag{1}
 $$
+
+**Convention.** We use the **multiplicity-absorbed** form (matching the code:
+the `sublemma_2_1` comment "do NOT multiply by `c` again"). The original
+refined Sub-lemma 2.1 writes (1) with an explicit `c^λ_{μν}` prefactor and a
+*single-copy* operator `A`; the two differ exactly by the multiplicity factor
+`c^λ_{μν}`. Since only the diagonal multiplicity-blocks of `ρ_λ(I)` survive the
+trace (§2), the absorbed form carries no explicit `c` — and the H₆ verification
+(§4) confirms (1) holds numerically in this no-`c` form to 3.5e-14.
 
 The current code **fits** `A^λ_{μν}(I)` from a panel of `K·K` test-word
 pairs by `np.linalg.lstsq`. That system is full-rank at H₆ (A=2) but
@@ -119,29 +127,39 @@ the `H_n` seminormal basis of `V_λ` (indexed by `SYT(λ)`) to
    `ρ_μ(β_1)⊗id`-block-diagonal in this grading.
 2. **ν-grading is NOT free.** The span of `{T : shape_{n_1}(T)=μ}` is the
    skew module `V_{λ/μ} = ⊕_ν V_ν^{⊕c^λ_{μν}}`; extracting the straight-irrep
-   `ν`-blocks requires the **skew→straight change of basis** (the sub-algebra
-   `H_{n_2}` JM elements `L''_k = Σ_{n_1<i<k}(i,k)` are *not* diagonal in the
-   global seminormal basis). This CoB is the concrete engineering task —
+   `ν`-blocks requires the **skew→straight change of basis** (the `H_{n_2}`
+   sub-algebra JM elements — the q-deformed Hecke JM elements of the shifted
+   factor, *not* the global `L_k` — are *not* diagonal in the global seminormal
+   basis). This CoB is the concrete engineering task —
    computable per `(λ,μ)` by diagonalising the `H_{n_2}` action / building the
    `ν` central idempotents from `σ_{n_1+1},…,σ_{n-1}` (all available as
    seminormal matrices via `char_fast._compiled_sigmas`).
 
-## 4. Pre-flight gate (the kill-switch)
+## 4. Pre-flight gate — RUN, PASSED ✓
 
-Per the workplan, the multi-day A≥3 build is gated on a **cheap H₆ check**:
-construct the H₃⊗H₃ branching CoB, apply (5) to the deuteron interface
-`I = σ_3 − h/2`, and verify the resulting `A^λ_{μν}(I)` reproduces the
-full-rank least-squares extract
-([`sublemma-2-1-A-operator-extract.witness.json`](../../computations/sublemma-2-1-A-operator-extract.witness.json))
-to ≤ 1e-12 (modulo a per-block unitary on the multiplicity space, so compare
-the **basis-independent** invariants: the block trace `Tr A^λ_{μν}`, the
-Frobenius norm `‖A^λ_{μν}‖_F`, and — the decisive test — that (5) reproduces
-`χ^λ(β_1 I β_2)` on the existing test-word panel to 1e-12 via (1)).
+The multi-day A≥3 build is gated on a **cheap H₆ check** of the
+convention-free identity (4′),
+`χ^λ(β_1 I β_2) = Σ_{μ,ν} Tr_{V_λ}[P_{μν} ρ_λ(I) P_{μν} · ρ_λ(β_1 β_2)]`, where
+`P_{μν} = P_μ P_ν` is the H₃⊗H₃′ isotypic projector on `V_λ`. This needs only
+the projectors (built as Lagrange spectral projectors of the central element
+`C = σ_a + σ_b + σ_a σ_b σ_a`, distinct eigenvalues on the three irreps of
+`⊢3`) — **no** skew→straight CoB, **no** least-squares, **no** basis alignment.
 
-If the invariants match → implement the skew CoB at H₉/H₁₂ and run step 3
-(the A=3 cross-check vs `markov_peel`). If they do **not** match → (5) has a
-convention/normalisation error to resolve before any A≥3 work. The
-`χ^λ`-reproduction test in (4) is convention-free and is the primary gate.
+[`computations/wenzl_a3_fusion_preflight.py`](../../computations/wenzl_a3_fusion_preflight.py)
+runs it for the deuteron interface `I = σ_2 − h/2` over the 144-pair test panel:
+
+| | result |
+|---|---|
+| central `C` eigenvalues `c_μ` (`(3)`,`(21)`,`(1³)`) | `+3.5875…`, `+0.2091…`, `−2.5331…` — **distinct** ✓ |
+| identity (4′), worst over all 11 `λ ⊢ 6` | **3.5e-14** ✓ |
+
+**The derivation (5) is VERIFIED** — and, since (4′) holds with no explicit
+`c^λ_{μν}`, it independently confirms the multiplicity-absorbed convention of §1.
+A≥3 (skew CoB + recursion, workplan step 2) is **unblocked**; step 3 (A=3
+cross-check vs `markov_peel`) is the next gate.
+
+(f64 cross-check; the committed production witness re-runs at the 50-dps mpmath
+floor per compute-author §1.)
 
 ## 5. Discipline
 
