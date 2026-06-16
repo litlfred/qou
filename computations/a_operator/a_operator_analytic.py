@@ -60,7 +60,6 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 import argparse
-import math
 import sys
 from pathlib import Path
 
@@ -115,22 +114,11 @@ def q0_mp(dps: int = 50) -> mp.mpf:
     return q_at(dps)
 
 
-def partition_dim(lam: tuple[int, ...]) -> int:
-    """Dimension of the seminormal/Specht module V_λ (= # SYT of shape λ),
-    via the hook-length formula d_λ = n! / Π hook(cell). Exact integer."""
-    n = sum(lam)
-    # Conjugate partition for arm/leg.
-    cols = [0] * (lam[0] if lam else 0)
-    for r in lam:
-        for j in range(r):
-            cols[j] += 1
-    hook_prod = 1
-    for i, row in enumerate(lam):
-        for j in range(row):
-            arm = row - j - 1
-            leg = cols[j] - i - 1
-            hook_prod *= arm + leg + 1
-    return math.factorial(n) // hook_prod
+# Dimension of the seminormal/Specht module V_λ (= # SYT of shape λ), via the
+# hook-length formula. Centralised in `partition_utils` (single source of truth;
+# Gemini review #2353) — aliased here so existing `partition_dim` callers (incl.
+# a_operator_gauge_align) keep working.
+from partition_utils import dim_lambda as partition_dim  # noqa: E402
 
 
 def verify_dimension_identity(n_inner: int, n_block: int) -> dict:
@@ -522,6 +510,12 @@ def verify_operator_decomposition_exact(dps: int = 50) -> dict:
         if abs(sum_tr - dim) > mp.mpf("1e-20"):
             rank_ok = False
 
+        # A^λ_ξν(I) = Π_ξν ρ_λ(I) Π_ξν is independent of the words W, β —
+        # precompute once per λ rather than per (W, β) pair (Gemini review
+        # #2353: lifts the projected-interface multiplications out of the
+        # nested word loop).
+        A_blocks = {k: Pi[k] * I_iface * Pi[k] for k in Pi}
+
         for wi in inner_braids:
             fi = braid_to_factors(wi, h)
             W = word_matrix(mats, fi)
@@ -535,8 +529,7 @@ def verify_operator_decomposition_exact(dps: int = 50) -> dict:
                 # Operator decomposition Σ_{ξν} Tr[ W · (Π I Π) · β ]:
                 rhs = mp.mpf(0)
                 for k in Pi:
-                    A_block = Pi[k] * I_iface * Pi[k]
-                    rhs += _trace(W * A_block * B)
+                    rhs += _trace(W * A_blocks[k] * B)
                 ad = abs(lhs - rhs)
                 rel = ad / max(abs(lhs), abs(rhs), mp.mpf("1e-40"))
                 ok = (ad < EXACT_TOL) or (rel < EXACT_TOL)
