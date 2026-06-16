@@ -7,11 +7,12 @@
   "scriptHash": null,
   "scriptCommitSha": null,
   "commitSha": null,
-  "computedAt": "2026-05-24T14:00:00Z",
-  "description": "AME 2020 atomic binding energies for the canonical light isotopes (D, T, 3He, 4He, 5Li, 6Li, 7Li) — comparison-only validation values, NOT prediction inputs. Used by binding-energy-prediction scripts to compute `err = pred - AME_B_<X>_MEV_VALIDATION`. Per CLAUDE.md three-calibration discipline (CAL-1 m_e, CAL-2 m_µ/m_e, CAL-3 Q_β), these values are PREDICTIONS of the framework; importing them as upstream inputs to a mass / binding pipeline would inflate the calibration count beyond the allowed 3.",
+  "computedAt": "2026-06-16T00:00:00Z",
+  "description": "AME 2020 atomic binding energies for the canonical light isotopes (D, T, 3He, 4He, 5Li, 6Li, 7Li, 8Be, 9Be) plus the two alpha-conjugate cluster / shell-closure points 12C (3-alpha) and 16O (doubly-magic, 2nd magic point) — comparison-only validation values, NOT prediction inputs. Used by binding-energy-prediction scripts to compute `err = pred - AME_B_<X>_MEV_VALIDATION`. Per CLAUDE.md three-calibration discipline (CAL-1 m_e, CAL-2 m_µ/m_e, CAL-3 Q_β), these values are PREDICTIONS of the framework; importing them as upstream inputs to a mass / binding pipeline would inflate the calibration count beyond the allowed 3.",
   "parameters": {
     "source": "AME 2020 (Wang, M. et al., 'The AME 2020 atomic mass evaluation', Chinese Physics C 45.3 (2021) 030003)",
-    "precision_note": "Values stored as strings (per codata_constants._load_mpf convention) to preserve precision through JSON round-trip; 6-7 sig figs from the AME 2020 evaluation."
+    "precision_note": "Values stored as strings (per codata_constants._load_mpf convention) to preserve precision through JSON round-trip; 6-7 sig figs from the AME 2020 evaluation.",
+    "derivation_note_c12_o16": "B(12C)=6*(Delta_H + Delta_n)=6*(7.288971+8.071317)=92.16173 MeV (Delta(12C)=0 by the u definition). B(16O)=8*(Delta_H+Delta_n)-Delta(16O)=8*15.360288-(-4.737001)=127.61931 MeV, using AME2020 mass excesses Delta_H=7.288971, Delta_n=8.071317, Delta(16O)=-4.737001 MeV."
   },
   "data": {
     "B_deuteron_MeV": "2.224566",
@@ -22,6 +23,8 @@
     "B_li6_MeV": "31.99405",
     "B_li7_MeV": "39.24397",
     "B_be8_MeV": "56.49950",
-    "B_be9_MeV": "58.16480"
+    "B_be9_MeV": "58.16480",
+    "B_c12_MeV": "92.16173",
+    "B_o16_MeV": "127.61931"
   }
 }
