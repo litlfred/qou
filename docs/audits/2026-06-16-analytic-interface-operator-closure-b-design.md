@@ -135,8 +135,19 @@ ground truth for the analytic construction.
 
 1. **`I=identity` reduction** (this PR's scaffold): analytic
    $A^\lambda_{\xi\nu}(\mathbb1)$ equals $c^\lambda_{\xi\nu}\mathbb1$ for every
-   $\lambda\vdash6$, cross-checked against `get_lr_table` and against
-   `wenzl_lr.chi_via_lr_2way`. **Runnable now**, no operator embedding needed.
+   $\lambda\vdash6$, verified via the character identity
+   $\chi^\lambda(W\!\cdot\!\beta)=\sum c^\lambda_{\xi\nu}\chi^\xi(W)\chi^\nu(\beta)$
+   against the seminormal ground truth, plus the restriction-dimension identity
+   $d_\lambda=\sum c^\lambda_{\xi\nu}d_\xi d_\nu$. **Runnable now**, no operator
+   embedding needed. **Result: PASS** — deuteron (H₃×H₃→H₆), 11/11 dimension
+   checks + 891/891 character checks, max residual $\sim10^{-14}$.
+   **Precision caveat:** the ground-truth routine `char_fast.chi_lambda_fast_mp`
+   lambdifies the seminormal matrices from **f64-precision source entries**
+   (`_cached_seminormal` is numpy/f64), so this preflight validates the
+   *structural* identity at $\sim10^{-14}$, **not** at the 1e-25 L1 floor. The
+   exact 50-dps verification requires an exact-rational seminormal construction
+   (`tools/hecke-engine/src/seminormal_mpfr.rs` or an exact Python path) and is
+   folded into step 2.
 2. **Deuteron analytic $A$** (next): construct $A^\lambda_{\xi\nu}(I_{pn})$ from
    the seminormal $\sigma_2$ block; require it to (a) match the full-rank
    $\mathbf H_6$ fitted extract entrywise (modulo the $V_\xi\otimes V_\nu$ basis
