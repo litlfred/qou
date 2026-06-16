@@ -8,7 +8,7 @@ the fine-Bratteli path); B_AME comes from the vendored AME2020 table
 probe `binding_single_pipeline_comparison.py` (PR #2320); see the appendix
 `standard-part-functor.md` for the form definitions.
 
-Feasibility: the trace forms (B_lin / B_sym / B_qCLT-uniform) need the full
+Feasibility: the trace forms (B_sym / B_qCLT-uniform) need the full
 per-knot trace `tr_M(W_atom)`, whose partition sum p(3A) explodes with A, so they
 are computed only when `n = 3A ≤ --max-strands` (default 21, i.e. A ≤ 7; each
 ≲ 3 s). The factorized q-CLT and the ⁴He magic volume are cheap (combinatorics +
@@ -120,17 +120,16 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
     m_sym_free = Z * msp + N * msn
     # ---- forms that DO need the bound-knot trace tr_M(W_atom) ---------------
     #   (the p(3A) partition sum explodes → capped at n ≤ max_strands)
-    B_lin = B_sym = m_sym_atom = None
+    B_sym = m_sym_atom = None
     if n <= max_strands:
         from tr_m_atom_via_transfer import tr_m_atom_zn
         ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
         ta, tf = float(ta), float(tf)
-        B_lin = alpha * (1.0 - ta / tf)
         B_sym = alpha * math.log(tf / ta)
         m_sym_atom = -alpha * math.log(ta)           # B_sym = m_sym_atom − m_sym_free
     return {"name": name, "Z": Z, "N": N, "A": A, "n": n, "B_AME": bame,
             "n_pp": n_pp, "n_pn": n_pn, "n_nn": n_nn,
-            "B_lin": B_lin, "B_sym": B_sym, "B_qCLT": B_qCLT,
+            "B_sym": B_sym, "B_qCLT": B_qCLT,
             "B_qCLT_fac": B_fac, "B_base": B_base, "B_chir": B_chir,
             "B_magic": B_magic,
             "m_sym_atom": m_sym_atom, "m_sym_free": m_sym_free}
@@ -150,7 +149,7 @@ def main(argv=None) -> int:
     ap.add_argument("--group", choices=["low", "low-mid", "mid", "high", "sweep"],
                     help="named isotope band")
     ap.add_argument("--max-strands", type=int, default=21,
-                    help="trace forms (B_lin/B_sym/B_qCLT) computed only when "
+                    help="trace forms (B_sym/B_qCLT) computed only when "
                          "n=3A ≤ this (default 21 = A≤7; raise for more rows, slower)")
     args = ap.parse_args(argv)
 
@@ -182,27 +181,27 @@ def main(argv=None) -> int:
     print(f"\n  MASS-BINDING DASHBOARD [{title}]   α = E₀ = {E0:.4f} MeV"
           f"   (bond-type L: pp={Lbond['pp']:.3f} pn={Lbond['pn']:.3f} "
           f"nn={Lbond['nn']:.3f})")
-    print(f"  exact-trace forms (lin/sym, m_sym atom) need the bound-knot trace → "
+    print(f"  exact-trace forms (sym, m_sym atom) need the bound-knot trace → "
           f"shown for n=3A ≤ {args.max_strands} (A ≤ {args.max_strands // 3}); "
           f"qCLT/fac/magic + m_sym(free) are combinatorial → all A.\n")
 
     # 1. BINDING
     print("### Binding  B (MeV)")
-    print("| iso | A | B_AME | B_lin | B_sym | B_qCLT | B_qCLT_fac | B_magic |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|")
+    print("| iso | A | B_AME | B_sym | B_qCLT | B_qCLT_fac | B_magic |")
+    print("|---|--:|--:|--:|--:|--:|--:|")
     for r in rows:
-        print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_fmt(r['B_lin'])} "
+        print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} "
               f"| {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT'])} | {_fmt(r['B_qCLT_fac'])} "
               f"| {_fmt(r['B_magic'])} |")
 
     # 2. ERROR  B_AME / B
     print("\n### Error  (B_AME / B_model; 1.00 = perfect, >1 under-binds)")
-    print("| iso | A | lin | sym | qCLT | qCLT_fac | magic |")
-    print("|---|--:|--:|--:|--:|--:|--:|")
+    print("| iso | A | sym | qCLT | qCLT_fac | magic |")
+    print("|---|--:|--:|--:|--:|--:|")
     for r in rows:
         e = {k: _err(r["B_AME"], r[k]) for k in
-             ("B_lin", "B_sym", "B_qCLT", "B_qCLT_fac", "B_magic")}
-        print(f"| {r['name']} | {r['A']} | {_fmt(e['B_lin'],6)} | {_fmt(e['B_sym'],6)} "
+             ("B_sym", "B_qCLT", "B_qCLT_fac", "B_magic")}
+        print(f"| {r['name']} | {r['A']} | {_fmt(e['B_sym'],6)} "
               f"| {_fmt(e['B_qCLT'],6)} | {_fmt(e['B_qCLT_fac'],6)} "
               f"| {_fmt(e['B_magic'],6)} |")
 
@@ -238,7 +237,7 @@ def main(argv=None) -> int:
         print(f"| {r['name']} | {r['A']} | {r['m_sym_free']:>8.3f} "
               f"| {_fmt(r['m_sym_atom'],8,3)} | {_fmt(r['B_sym'],8,3)} |")
 
-    print("\n  Forms: B_lin=α·s · B_sym=α·ln(tr_free/tr_atom) · "
+    print("\n  Forms: B_sym=α·ln(tr_free/tr_atom) · "
           "B_qCLT=α·(A−1)·ℓ̄(D) · B_qCLT_fac=α·(A−1)·⟨bond-type L⟩ · "
           "B_magic=2·m_e·A·8G (⁴He). Defn: standard-part-functor.md.")
     return 0
