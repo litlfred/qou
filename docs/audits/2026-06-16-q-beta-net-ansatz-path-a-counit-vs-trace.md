@@ -34,7 +34,7 @@ Apply the two canonical functionals on $H_3(q)$:
 | functional | def on basis | value on $(n-p)$ |
 |---|---|---|
 | **Frobenius counit** $\varepsilon$ | $\varepsilon(e_i)=1$ | $\dfrac{(q-1)(q+1)(q^2-2q-1)}{2q^2}$ |
-| **Markov trace** $\mathrm{tr}_M$ | $\mathrm{tr}_M(e_i)=z^{\#\text{cr}(e_i)}$ | $-\dfrac{z\,(q-1)(q+1)(-q^2+2qz+1)}{2q^2}$ |
+| **Markov trace** $\mathrm{tr}_M$ | $\mathrm{tr}_M(e_i)=z^{\#\text{cr}(e_i)}$ | $\dfrac{z\,(q-1)(q+1)(q^2-2qz-1)}{2q^2}$ |
 
 - **"net" $=\varepsilon$.** The unweighted sum $\sum_i c_i$ is exactly the
   Frobenius counit (cited:
