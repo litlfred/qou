@@ -16,7 +16,7 @@ $\sum_w n^w_\lambda\,X_w$ (extending `kazhdan_lusztig.py` past its $n\le4$ cap t
 trivial-multiplicity candidates were already refuted (they return $\chi^\lambda$); PROBE 4 hopes the
 **non-trivial** KL multiplicities close it.
 
-## The prune (verified — `scripts/option_e_probe4_kl_positivity_prune.py`, exit 0; no KL engine needed)
+## The prune (verified — `docs/audits/scripts/option_e_probe4_kl_positivity_prune.py`, exit 0; no KL engine needed)
 
 1. **The target is mixed-sign.** $\Delta_\lambda = \mathrm{sgn}(w_0^{S_{\lambda'}})\cdot\dim$ has both positive
    and negative blocks: $n=3 \to 1{+}/2{-}$; $n=6 \to 6{+}/5{-}$ (computed).
@@ -53,4 +53,4 @@ formalize-first reason it need not be, computed from pure combinatorics + the KL
 
 - [`docs/coordination/option-e.md`](../coordination/option-e.md) — Δ_λ closure ledger (PROBE 4 §"Open probes")
 - `docs/audits/2026-05-26-delta-lambda-binding-formula-closure.md` — the deuteron sgn·dim closure
-- `scripts/option_e_probe4_kl_positivity_prune.py` — sign pattern + positivity prune (exit 0)
+- `docs/audits/scripts/option_e_probe4_kl_positivity_prune.py` — sign pattern + positivity prune (exit 0)
