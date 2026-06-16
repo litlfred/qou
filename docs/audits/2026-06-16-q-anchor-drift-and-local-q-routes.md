@@ -7,6 +7,19 @@ about what pins `q₀`, and gives an outside-view validity assessment of
 four proposed routes for making `q` a *local* field `q(p)`. No
 production wiring is changed by this audit.
 
+> **⚠ CORRECTION (owner, 2026-06-16).** Where this audit says the
+> resolution is "`q₀` **proton**-anchored," the corrected convention is
+> **two-layer**: the canonical *mathematical* CAL-2 is the **muon** ratio
+> `m_μ/m_e` (→ `q₀`); the proton ratio `m_p/m_e` is a
+> **Physical-Observations precision anchor only** (a derived quantity of
+> smaller experimental error, re-pin 2026-05-28), **not** a change to the
+> canonical CAL-2. CAL-3 = `m_π` and `Q_β` derived stand. The convention
+> was propagated muon-canonical across CLAUDE.md + the 4 discipline skills
+> + the calibration content blocks + `codata_constants.py` docstrings. See
+> the coordination ledger
+> [`2026-06-16-q-local-evolution.md`](../coordination/2026-06-16-q-local-evolution.md)
+> §"CORRECTION".
+
 ---
 
 ## Part A — The anchor drift (what currently pins `q₀`?)
