@@ -1,7 +1,7 @@
 ---
 # zwtw
 title: 'Session: flavor-split-habiro merge'
-status: in-progress
+status: completed
 type: milestone
 priority: normal
 created_at: 2026-06-13T18:07:27Z

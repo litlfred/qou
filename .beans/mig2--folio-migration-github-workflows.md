@@ -2,7 +2,7 @@
 id: mig2
 parent: miga
 type: child
-status: pending
+status: completed
 created_at: 2026-06-14
 updated_at: 2026-06-14
 ---

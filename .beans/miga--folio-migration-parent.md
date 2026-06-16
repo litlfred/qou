@@ -1,7 +1,7 @@
 ---
 id: miga
 type: parent
-status: in_progress
+status: completed
 created_at: 2026-06-14
 updated_at: 2026-06-14
 ---

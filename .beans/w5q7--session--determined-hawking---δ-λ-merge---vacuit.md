@@ -1,7 +1,7 @@
 ---
 # w5q7
 title: 'Session: determined-hawking — Δ_λ merge + vacuity drains + Lean cascade drains'
-status: in-progress
+status: completed
 type: milestone
 priority: high
 created_at: 2026-06-14T17:29:07Z
