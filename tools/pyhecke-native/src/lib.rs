@@ -834,11 +834,11 @@ fn transposition_class_sum_mpfr(
     strand_hi: usize,
     q_str: String,
     dps: u32,
-) -> Vec<Vec<String>> {
+) -> PyResult<Vec<Vec<String>>> {
     let prec = seminormal_mpfr::dps_to_bits(dps);
     let sparse = seminormal_mpfr::seminormal_matrices_mpfr(&shape, &q_str, dps);
     if sparse.is_empty() {
-        return Vec::new();
+        return Ok(Vec::new());
     }
     let dim = sparse[0].len();
     // Dense generator matrices ρ_λ(σ_{g+1}) for 0-based generator g.
@@ -846,6 +846,16 @@ fn transposition_class_sum_mpfr(
         .iter()
         .map(|sp| dense_la_mpfr::sparse_to_dense_mpfr(sp, dim, prec))
         .collect();
+    // Bounds check: the transposition word for strands [i,j] uses generators up
+    // to j-1, so the largest generator index reached is strand_hi-1; it must be
+    // < gens.len() (= n-1). Out-of-range strands would panic on gens[g].
+    if strand_lo > strand_hi || strand_hi > gens.len() {
+        return Err(pyo3::exceptions::PyValueError::new_err(format!(
+            "transposition_class_sum_mpfr: invalid strand range [{}, {}] for \
+             {} generators (max strand index is {})",
+            strand_lo, strand_hi, gens.len(), gens.len()
+        )));
+    }
     let ident: Vec<Vec<Float>> = (0..dim)
         .map(|i| (0..dim)
             .map(|j| Float::with_val(prec, if i == j { 1 } else { 0 }))
@@ -871,11 +881,11 @@ fn transposition_class_sum_mpfr(
             }
         }
     }
-    acc.iter()
+    Ok(acc.iter()
         .map(|row| row.iter()
             .map(|v| v.to_string_radix(10, Some(dps as usize)))
             .collect())
-        .collect()
+        .collect())
 }
 
 /// Matrix-M block-restricted χ^λ at substrate q.
