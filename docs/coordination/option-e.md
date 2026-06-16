@@ -133,6 +133,17 @@ near-match. Do NOT wire as a derivation.
     (#1707 refuted (1+q)/2 separately); PROBE 4 is now framed as
     Δ_λ closure via crystal-vertex weights rather than as a
     cross-check on (1+q)/2.
+  - **(2026-06-16) KL-POSITIVITY PRUNE — full n^w_λ sum DE-PRIORITISED.**
+    The target Δ_λ = sgn(w_0^{S_{λ'}})·dim is **mixed-sign** (n=3: 1+/2−;
+    n=6: 6+/5−), but KL multiplicities n^w_λ are **non-negative** (KL
+    positivity). So Σ_w n^w_λ·X_w supplies at most the *magnitude*
+    |Δ_λ|=dim (already the deuteron f^λ); the chirality *sign* must come
+    exogenously, as the closed formula already does. ⇒ extending
+    `kazhdan_lusztig.py` to S_6 to run the full sum would hit a positivity
+    wall — PROBE 4 is not a new closure mechanism. Honest frontier is
+    PROBE 2 (A=4 interface operator), the sibling A≥3 cluster's scope
+    (#2369/#2371/#2372). Audit:
+    `docs/audits/2026-06-16-option-e-probe4-kl-positivity-prune.md`.
 
 ## Anti-patterns (DO NOT repeat)
 
@@ -162,6 +173,8 @@ near-match. Do NOT wire as a derivation.
 | 2026-06-02 | Claude / `claude/option-e-phase1-gram-h6-2026-06-02` | Phase 1 H_n Gram-matrix generalisation at H_6 (deuteron) — deliver the per-block Hoefsmit-seminormal infrastructure that #1516's doc update identified as missing. Pure-Python, no pyhecke_native dep. | landed (PR #1697); 11 H_6 partition blocks with σ_k matrices + ρ_λ(w_0) at q_0; 4 assertions pass (χ_λ cross-check residual 2.22e-16 at H_6, Σ dim_λ² = n! at both n=3,6). Witness `option-e-phase1-gram-h6.witness.json` carries the data needed to test **PROBE 1** ("`(1+q)/2` = half-trace of σ_1 in standard rep") on the (5,1) standard rep of H_6 — not run in this PR (scope = infrastructure). |
 | 2026-06-02 | Claude / `claude/option-e-derive-1plusq-over-2-2026-06-02` | Open **PROBE 1** — derive `(1+q)/2` structurally or falsify as near-match. Per ledger §"Open probes" line 85. | in flight (PR #1707, stub-only commit; coord posts cross-published on #1697 and #1707; canonical q_0 confirmed not stale; can consume #1697's `option-e-phase1-gram-h6.witness.json::data.h6.blocks["5_1"]` data for the half-trace hypothesis test). |
 | 2026-06-02 | Claude / `claude/option-e-phase2-gram-probe-2026-05-30` (PR #1516) | **PROBE 4 (cheap pass)** — test single-vertex KL candidate rules for Δ_λ closure at H_6/deuteron, mirroring PR #1709's "cheap proxy first" strategy. Also extends Phase 2 entry-point probe H_3 → H_6 consuming #1697's just-merged Gram. | **VERDICT: ALL FOUR SINGLE-VERTEX CANDIDATES REFUTED** (miss ≥ 66%): A χ^λ(w_0) 99.83%, B \|χ^λ(w_0)\| 120.73%, C sgn·dim_λ 66.47%, D peak \|ρ_λ(w_0) diag\| 117.46%. Symmetric to #1709's geometric Vol_λ refutation. Remaining in-Option-E direction: full `n^w_λ` enumeration across multiple vertices (extend `kazhdan_lusztig.py` past n ≤ 4 cap to S_6). Otherwise: pivot to GAP-A-3/A-4. Witness: `probe-option-e-phase2-crystal-vertex-candidates.witness.json`. |
+
+| 2026-06-16 | Claude / `claude/option-e-probe4-kl-positivity-prune-2026-06-16` | Formalize-first prune of PROBE 4 (the remaining in-Option-E path) before committing to the S_6 KL extension | **PRUNED.** Target Δ_λ=sgn·dim is mixed-sign (verified n=3,6); KL multiplicities are non-negative (KL positivity) ⇒ a Σ_w n^w_λ·X_w sum supplies at most \|Δ_λ\|=dim (already f^λ), never the chirality sign. PROBE 4 not a new closure mechanism; de-prioritise the S_6 KL extension. Frontier = PROBE 2 (A=4 interface), sibling cluster #2369/#2371/#2372. No fit. Audit `2026-06-16-option-e-probe4-kl-positivity-prune.md`. |
 
 ## Cross-refs
 
