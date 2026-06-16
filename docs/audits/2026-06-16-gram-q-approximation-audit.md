@@ -103,8 +103,20 @@ atom path and (b) the appendix `hadron-knot-table` witness. The headline
 L1/L2 precision goals are unaffected.
 
 **Optional low-priority follow-up:** repoint `hadron_knot_table.py` at
-q₀ (`HeckeEngine(q=q0)` instead of `HeckeEngine(111, 100)`) and
-regenerate `hadron-knot-table.witness.json`, so the appendix table sits
-at the canonical substrate. Trivial code change, but it regenerates a
-production witness (sidecar/hash refresh) — left for an owner-approved
-follow-up rather than bundled here.
+q₀ so the appendix table sits at the canonical substrate.
+
+**Attempted + reverted (2026-06-16):** `HeckeEngine(11099786, 10000000)`
+(exact-rational q₀) is **intractable** — the exact-Fraction engine
+(`hecke/hecke_engine.py`) blows up at high-denominator q (q₀^k has
+denominator 10^{7k}, so products of traced volumes across ~40 generators
+become thousand-digit Fractions and the 19-atom table never terminates).
+The 111/100 is therefore a *deliberate tractability choice* for the
+exact-rational engine, not an oversight. The genuine q₀ route is the
+**float/mpmath path** (`pyhecke.build_atom_nf` /
+`atom_per_generator_volumes` at q₀), which would require rerouting
+`hadron_knot_table.py`'s volume computation off the rational engine — a
+moderate refactor that changes the witness values/structure. Left for a
+separate owner-scoped task; the table is not precision-critical. The
+script now carries an explanatory comment + this pointer (the printed
+`q = …` header already shows q₀ via the imported `Q`, while the engine
+internally used 1.11 — also documented).
