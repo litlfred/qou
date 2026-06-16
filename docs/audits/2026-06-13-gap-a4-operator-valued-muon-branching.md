@@ -4,6 +4,20 @@
 **Branch:** `claude/gap-a4-muon-operator-branching`
 **Status:** Scoping document
 
+> **⚠ Correction (2026-06-16) — §5 "gaps closed" / "ppb-ppq subtraction" claims are REFUTED on magnitude.**
+> The structural content of §5 (the electron−muon trace difference is the exact $(1,1,1)$ sign-block, with
+> $\chi^{(1,1,1)}(\beta_{\mathrm{Bor}})=1$) is **correct and verified**. But the claim that *"physical anomalies
+> at the ppb/ppq level are exact subtractions of 1-dimensional boundary blocks"* (§5.0) and that this *"closes"*
+> CCR-9/CCR-10 (§5.2) and the *"1ppq gaps"* (§5.3) is **quantitatively false**: a $(1,1,1)$-block subtraction is
+> an $O(10\%)$ effect, not a ppb effect. At $q_0$, $W_{\mathrm{alt}}\,\chi^{(1,1,1)}=1/[3]_q!\approx 0.163$
+> (16.3 %), and the figure-eight channel ratio $R_{(3,2)}/R_{(3,1,1)}\approx 14.97$ (1397 %) — **6–8 orders of
+> magnitude too large** to be the 210 ppb muon gap. The bare $m_e\,\mathrm{Vol}(4_1)/\hbar_q^2$ is already good
+> to 209.8 ppb, so multiplying by either projector correction *destroys* that agreement. The named Wedderburn-
+> projector mechanism therefore does **not** close the 210 ppb (or any ppb/ppq) gap. Verified compute + tiering:
+> [`2026-06-16-s5so3-branching-backbone-verified.md`](2026-06-16-s5so3-branching-backbone-verified.md) §"Ingredient 4+5 close-out"
+> and [`docs/scope/2026-06-16-icosahedral-reeb-fiber-map-construction.md`](../scope/2026-06-16-icosahedral-reeb-fiber-map-construction.md).
+> Read §5 below as the (correct) structural identity only — the magnitude/"closure" language is superseded.
+
 ## 1. The 210 ppb Substrate Floor
 The bare-categorical formulation of the muon mass is:
 $$ m_\mu = m_e \cdot \frac{\mathrm{Vol}(4_1)}{\hbar_q^2} $$
