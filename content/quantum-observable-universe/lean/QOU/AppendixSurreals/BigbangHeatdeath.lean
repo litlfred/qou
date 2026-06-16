@@ -26,10 +26,11 @@ class BigbangHeatdeath where
   -- Witness: folio-assistant/computations/none
   /-- **Content statement** (from manuscript):
 
-      **Caveat: this conjecture is more speculative than the others.**
-It sketches a use of surreals as endpoints of cosmological time
-that the rest of the paper does not depend on.
-
+      **Status: Highly speculative** and outside the appendix's main thrust.
+      It is included to record an evident application of named-surreal
+      calculus (Big Bang ~ 1 + ε^ω; heat death ~ ω) without claiming
+      any of the physics-of-cosmology details. The mathematical content
+      is correct; the interpretive content is metaphor.
       Field schema below is a structural placeholder; refine per §3b
       to match the conjecture's actual content. The single sorry on
       the `noncomputable instance` is the conjecture itself. -/
@@ -40,8 +41,8 @@ that the rest of the paper does not depend on.
 
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/bigbang-heatdeath.ts
 noncomputable instance : BigbangHeatdeath := by
-  trivial
+  -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/bigbang-heatdeath.ts
+  sorry
 
 end QOU.AppendixSurreals

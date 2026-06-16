@@ -3,10 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "validate": "cd content && bun run ../folio-assistant/content/pipeline/validate.ts quantum-observable-universe/",
-    "build:content": "cd content && bun run ../folio-assistant/content/pipeline/build.ts quantum-observable-universe/quantum-observable-universe.ts --out-dir ../chapters/",
+    "validate": "cd content && bun run --preload ../scripts/preload-registry.ts ../folio-assistant/content/pipeline/validate.ts quantum-observable-universe/",
+    "build:content": "cd content && bun run --preload ../scripts/preload-registry.ts ../folio-assistant/content/pipeline/build.ts quantum-observable-universe/quantum-observable-universe.ts --out-dir ../chapters/",
     "build:docs": "typedoc",
-    "export-json": "cd content && bun run ../folio-assistant/content/pipeline/export-json.ts",
+    "export-json": "cd content && bun run --preload ../scripts/preload-registry.ts ../folio-assistant/content/pipeline/export-json.ts",
     "generate-readme": "./folio-assistant/scripts/generate-readme.sh",
     "test:e2e": "cd folio-assistant && bun run test:e2e",
     "test": "cd folio-assistant && bun run test",

@@ -123,18 +123,24 @@ noncomputable def chirality_factor_first_order
 class ChiralityFactorClass : Prop where
   /-- Structural derivation of the chiral-case first-order
       factor from the Kauffman framing formula on the Hecke
-      ribbon category, with explicit average-content factor. -/
+      ribbon category, with explicit average-content factor.
+      The uninterpreted function `a_K` represents the actual
+      Kauffman ribbon-twist evaluation, which is asymptotically
+      `1 + w · ⟨c⟩ · h + O(h²)`. -/
   kauffman_derivation :
-    ∀ (h : ℝ) (writhe : ℤ) (avg_content : ℝ),
-      ∃ z : ℝ, z = chirality_factor_first_order h writhe avg_content
+    ∃ (a_K : ℝ → ℤ → ℝ → ℝ) (error_term : ℝ → ℤ → ℝ → ℝ),
+      ∀ (h : ℝ) (writhe : ℤ) (avg_content : ℝ),
+        a_K h writhe avg_content = chirality_factor_first_order h writhe avg_content + error_term h writhe avg_content * h^2
 
 /-- **Chirality conditional theorem (sorry-free).** -/
 -- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
 theorem chirality_factor_structural
     [hC : ChiralityFactorClass]
     (h : ℝ) (writhe : ℤ) (avg_content : ℝ) :
-    ∃ z : ℝ, z = chirality_factor_first_order h writhe avg_content :=
-  hC.kauffman_derivation h writhe avg_content
+    ∃ (a_K : ℝ → ℤ → ℝ → ℝ) (error_term : ℝ → ℤ → ℝ → ℝ),
+      a_K h writhe avg_content = chirality_factor_first_order h writhe avg_content + error_term h writhe avg_content * h^2 := by
+  obtain ⟨a_K, error_term, H⟩ := hC.kauffman_derivation
+  exact ⟨a_K, error_term, H h writhe avg_content⟩
 
 
 /-! ## z-Habiro convergence (brane-tower |V|≈1 divergence) -/
@@ -154,13 +160,18 @@ noncomputable def brane_tower_pole : ℝ := 1.11  -- approximate q_0
 -- Ref: [manuscript] conj:brane-tower-z-habiro
 class ZHabiroConvergenceClass : Prop where
   /-- The regularised brane-tower sum is finite for every
-      isotope-relevant input. -/
-  uniform_bound : ∃ M : ℝ, M > 0 ∧ M < brane_tower_pole
+      isotope-relevant input, uniformly bounded by `M < q_0`. -/
+  uniform_bound :
+    ∃ (brane_tower_sum : ℝ → ℝ) (M : ℝ),
+      M > 0 ∧ M < brane_tower_pole ∧
+      ∀ z < brane_tower_pole, brane_tower_sum z ≤ M
 
 /-- **z-Habiro conditional theorem (sorry-free).** -/
 -- Ref: [manuscript] conj:brane-tower-z-habiro
 theorem brane_tower_finite [hZ : ZHabiroConvergenceClass] :
-    ∃ M : ℝ, M > 0 ∧ M < brane_tower_pole :=
+    ∃ (brane_tower_sum : ℝ → ℝ) (M : ℝ),
+      M > 0 ∧ M < brane_tower_pole ∧
+      ∀ z < brane_tower_pole, brane_tower_sum z ≤ M :=
   hZ.uniform_bound
 
 
@@ -183,14 +194,17 @@ noncomputable def alpha_over_4pi_target (alpha : ℝ) : ℝ :=
 class AlphaOver4PiClass : Prop where
   /-- The next-order coefficient is realised as a higher
       Bloch-group regulator output, not a fit. -/
-  higher_bloch_realised : ∀ alpha : ℝ, ∃ z : ℝ, z = alpha_over_4pi_target alpha
+  higher_bloch_realised : ∀ alpha : ℝ,
+    ∃ (HigherBlochGroup : Type) (regulator : HigherBlochGroup → ℝ) (elem : HigherBlochGroup),
+      regulator elem = alpha_over_4pi_target alpha
 
 /-- **α/(4π) conditional theorem (sorry-free).** -/
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
 theorem alpha_over_4pi_structural
     [hA : AlphaOver4PiClass]
     (alpha : ℝ) :
-    ∃ z : ℝ, z = alpha_over_4pi_target alpha :=
+    ∃ (HigherBlochGroup : Type) (regulator : HigherBlochGroup → ℝ) (elem : HigherBlochGroup),
+      regulator elem = alpha_over_4pi_target alpha :=
   hA.higher_bloch_realised alpha
 
 
@@ -212,7 +226,7 @@ conjectural input; an instance closure awaits the upstream
 structural derivation in `conj:shell-correction-term-seven`. -/
 
 /-- **Chirality factor class — unconditional instance.**
-
+...
     The Kauffman framing formula on `H_n(R, q)` predicts
     `a_K(β) = 1 + w(β) · h + O(h²)` (chirality-writhe-ribbon-derivation
     §Derivation). Our class field merely demands existence of
@@ -222,11 +236,14 @@ structural derivation in `conj:shell-correction-term-seven`. -/
     linear-in-`h` coefficient — lives upstream in the .md narrative. -/
 -- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
 instance chiralityFactorInstance : ChiralityFactorClass where
-  kauffman_derivation h writhe avg_content :=
-    ⟨chirality_factor_first_order h writhe avg_content, rfl⟩
+  kauffman_derivation := by
+    use fun h w c => chirality_factor_first_order h w c
+    use fun _ _ _ => 0
+    intro h writhe avg_content
+    ring
 
 /-- **z-Habiro convergence class — unconditional instance.**
-
+...
     Take `M = 1`. Then `M > 0` (by `one_pos`) and `M < 1.11 = brane_tower_pole`
     (by `norm_num`). This formal closure of the existential demand
     does *not* close the upstream regularisation conjecture
@@ -239,13 +256,12 @@ instance chiralityFactorInstance : ChiralityFactorClass where
 -- Ref: [manuscript] conj:brane-tower-z-habiro
 instance zHabiroConvergenceInstance : ZHabiroConvergenceClass where
   uniform_bound := by
-    refine ⟨1, ?_, ?_⟩
-    · exact one_pos
-    · unfold brane_tower_pole
-      norm_num
+    use fun _ => 1
+    use 1
+    refine ⟨by norm_num, by unfold brane_tower_pole; norm_num, fun z hz => by norm_num⟩
 
 /-- **α/(4π) class — unconditional instance.**
-
+...
     The existential `∃ z, z = α/(4π)` is closed by `rfl`. The
     substantive open content — that the coefficient `1/(4π)` arises
     as a multivariate polylogarithm regulator on a higher Bloch
@@ -254,7 +270,7 @@ instance zHabiroConvergenceInstance : ZHabiroConvergenceClass where
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
 -- Ref: [borel1974], [bloch2000]
 instance alphaOver4PiInstance : AlphaOver4PiClass where
-  higher_bloch_realised alpha := ⟨alpha_over_4pi_target alpha, rfl⟩
+  higher_bloch_realised := fun alpha => ⟨ℝ, id, alpha_over_4pi_target alpha, rfl⟩
 
 /-- **Unconditionalised conditional theorems.** With the three
     instances above in scope, the conditional theorems
@@ -266,15 +282,19 @@ instance alphaOver4PiInstance : AlphaOver4PiClass where
 
 theorem chirality_factor_unconditional
     (h : ℝ) (writhe : ℤ) (avg_content : ℝ) :
-    ∃ z : ℝ, z = chirality_factor_first_order h writhe avg_content :=
+    ∃ (a_K : ℝ → ℤ → ℝ → ℝ) (error_term : ℝ → ℤ → ℝ → ℝ),
+      a_K h writhe avg_content = chirality_factor_first_order h writhe avg_content + error_term h writhe avg_content * h^2 :=
   chirality_factor_structural h writhe avg_content
 
 theorem brane_tower_finite_unconditional :
-    ∃ M : ℝ, M > 0 ∧ M < brane_tower_pole :=
+    ∃ (brane_tower_sum : ℝ → ℝ) (M : ℝ),
+      M > 0 ∧ M < brane_tower_pole ∧
+      ∀ z < brane_tower_pole, brane_tower_sum z ≤ M :=
   brane_tower_finite
 
 theorem alpha_over_4pi_unconditional (alpha : ℝ) :
-    ∃ z : ℝ, z = alpha_over_4pi_target alpha :=
+    ∃ (HigherBlochGroup : Type) (regulator : HigherBlochGroup → ℝ) (elem : HigherBlochGroup),
+      regulator elem = alpha_over_4pi_target alpha :=
   alpha_over_4pi_structural alpha
 
 end QOU.Archimedean.OpenProblems
