@@ -1056,6 +1056,246 @@ fn mat_inverse_mpfr(
     }
 }
 
+/// dim×dim identity at MPFR precision.
+fn eye_mpfr(n: usize, prec: u32) -> Vec<Vec<Float>> {
+    (0..n)
+        .map(|i| (0..n).map(|j| Float::with_val(prec, if i == j { 1 } else { 0 })).collect())
+        .collect()
+}
+
+/// Transpose at MPFR precision.
+fn transpose_mpfr(m: &[Vec<Float>], prec: u32) -> Vec<Vec<Float>> {
+    let nr = m.len();
+    let nc = if nr == 0 { 0 } else { m[0].len() };
+    (0..nc)
+        .map(|j| (0..nr).map(|i| Float::with_val(prec, &m[i][j])).collect())
+        .collect()
+}
+
+/// Single Lagrange spectral projector `P = Π_{e≠target} (C − e·I)/(target − e)`
+/// onto the `target`-eigenspace of the central matrix `C` (eigenvalues `eigs`).
+fn lagrange_one(
+    c_mat: &[Vec<Float>],
+    eigs: &[Float],
+    target: &Float,
+    prec: u32,
+) -> Vec<Vec<Float>> {
+    let dim = c_mat.len();
+    let mut p = eye_mpfr(dim, prec);
+    let tiny = Float::with_val(prec, 1e-40);
+    for e in eigs {
+        if Float::with_val(prec, target - e).abs() <= tiny {
+            continue; // skip the target's own factor
+        }
+        let denom = Float::with_val(prec, target - e);
+        let term: Vec<Vec<Float>> = (0..dim)
+            .map(|i| (0..dim)
+                .map(|j| {
+                    let mut v = Float::with_val(prec, &c_mat[i][j]);
+                    if i == j {
+                        v -= e;
+                    }
+                    Float::with_val(prec, &v / &denom)
+                })
+                .collect())
+            .collect();
+        p = dense_la_mpfr::dense_dense_mul_mpfr(&p, &term, prec);
+    }
+    p
+}
+
+/// **Gauge-aligned categorical interface operator `A^λ_{μν}(I)`** in standard
+/// `V_μ⊗V_ν` coordinates, at MPFR precision — the speedup combiner matrix
+/// (closure-b Rust port, increment 3b). One whole-compute PyO3 call per
+/// `(λ,μ,ν)` (compute-author §2.1 granularity): builds the isotypic projectors
+/// `Π_{μν}=P_μ P_ν` (Lagrange spectral projectors of the inner/block class-sums),
+/// a range basis `B` of `range(Π)` (pivot columns via RREF), the restricted
+/// generators `B⁺σB`, the intertwiner `U` (null space of `I⊗g̃ − Rᵀ⊗I`), and
+/// returns `A = partial-trace_{ℂ^c}(U⁻¹ Ĩ U)`. The interface is
+/// `I = σ_{n_inner-1} + d·1` (`interface_d` = the `d` coefficient: `0` for pp,
+/// `−h` for nn, `−h/2` for pn). `inner_eigs`/`block_eigs` are the distinct
+/// central-character eigenvalues of the class-sums; `*_target` selects μ/ν.
+#[pyfunction]
+#[pyo3(signature = (lam, n_inner, mu, nu, inner_eigs, inner_target,
+                    block_eigs, block_target, interface_d, q_str, dps=50))]
+#[allow(clippy::too_many_arguments)]
+fn gauge_aligned_a_combiner_mpfr(
+    lam: Vec<usize>,
+    n_inner: usize,
+    mu: Vec<usize>,
+    nu: Vec<usize>,
+    inner_eigs: Vec<String>,
+    inner_target: String,
+    block_eigs: Vec<String>,
+    block_target: String,
+    interface_d: String,
+    q_str: String,
+    dps: u32,
+) -> PyResult<Vec<Vec<String>>> {
+    let prec = seminormal_mpfr::dps_to_bits(dps);
+    let n_block: usize = nu.iter().sum();
+    let n = n_inner + n_block;
+    let parse_f = |s: &str| -> PyResult<Float> {
+        match Float::parse(s) {
+            Ok(p) => Ok(Float::with_val(prec, p)),
+            Err(_) => Err(pyo3::exceptions::PyValueError::new_err(
+                format!("gauge_aligned_a_combiner_mpfr: bad number {:?}", s))),
+        }
+    };
+    // λ seminormal generator matrices (dense).
+    let sparse = seminormal_mpfr::seminormal_matrices_mpfr(&lam, &q_str, dps);
+    if sparse.is_empty() {
+        return Ok(Vec::new());
+    }
+    let dim = sparse[0].len();
+    let gens: Vec<Vec<Vec<Float>>> = sparse
+        .iter()
+        .map(|sp| dense_la_mpfr::sparse_to_dense_mpfr(sp, dim, prec))
+        .collect();
+    if gens.len() + 1 < n {
+        return Err(pyo3::exceptions::PyValueError::new_err(format!(
+            "gauge_aligned_a_combiner_mpfr: λ={:?} has {} generators, need ≥ {}",
+            lam, gens.len(), n - 1)));
+    }
+    // Isotypic projectors Π_{μν} = P_μ^(in) · P_ν^(bl).
+    let (c_in, _) = class_sum_dense(&lam, 0, n_inner - 1, &q_str, dps)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(format!("a_combiner: {e}")))?;
+    let (c_bl, _) = class_sum_dense(&lam, n_inner, n - 1, &q_str, dps)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(format!("a_combiner: {e}")))?;
+    let ein: Vec<Float> = inner_eigs.iter().map(|s| parse_f(s)).collect::<PyResult<_>>()?;
+    let ebl: Vec<Float> = block_eigs.iter().map(|s| parse_f(s)).collect::<PyResult<_>>()?;
+    let mu_e = parse_f(&inner_target)?;
+    let nu_e = parse_f(&block_target)?;
+    let p_mu = lagrange_one(&c_in, &ein, &mu_e, prec);
+    let p_nu = lagrange_one(&c_bl, &ebl, &nu_e, prec);
+    let pi = dense_la_mpfr::dense_dense_mul_mpfr(&p_mu, &p_nu, prec);
+    // Range basis B (dim×r): pivot columns of Π via RREF of Πᵀ.
+    let tol = Float::with_val(prec, 1e-30);
+    let (_rr, pivots) = dense_la_mpfr::rref_mpfr(&transpose_mpfr(&pi, prec), prec, &tol);
+    let r = pivots.len();
+    if r == 0 {
+        return Ok(Vec::new());
+    }
+    let b_mat: Vec<Vec<Float>> = (0..dim)
+        .map(|i| pivots.iter().map(|&c| Float::with_val(prec, &pi[i][c])).collect())
+        .collect();
+    // Left inverse B⁺ = (BᵀB)⁻¹ Bᵀ (r×dim).
+    let bt = transpose_mpfr(&b_mat, prec);
+    let btb = dense_la_mpfr::dense_dense_mul_mpfr(&bt, &b_mat, prec);
+    let btb_inv = dense_la_mpfr::inverse_mpfr(&btb, prec, &tol)
+        .ok_or_else(|| pyo3::exceptions::PyValueError::new_err("a_combiner: BᵀB singular"))?;
+    let bplus = dense_la_mpfr::dense_dense_mul_mpfr(&btb_inv, &bt, prec);
+    let restrict = |g: &[Vec<Float>]| -> Vec<Vec<Float>> {
+        let gb = dense_la_mpfr::dense_dense_mul_mpfr(g, &b_mat, prec);
+        dense_la_mpfr::dense_dense_mul_mpfr(&bplus, &gb, prec)
+    };
+    // Restricted generators g̃ = B⁺ σ B.
+    let inner_g: Vec<Vec<Vec<Float>>> = (0..n_inner - 1).map(|a| restrict(&gens[a])).collect();
+    let block_g: Vec<Vec<Vec<Float>>> =
+        (0..n_block - 1).map(|b| restrict(&gens[n_inner + b])).collect();
+    // Ĩ = B⁺ (σ_{n_inner-1} + d·I) B.
+    let d_coef = parse_f(&interface_d)?;
+    let i_dense: Vec<Vec<Float>> = (0..dim)
+        .map(|i| (0..dim)
+            .map(|j| {
+                let mut v = Float::with_val(prec, &gens[n_inner - 1][i][j]);
+                if i == j {
+                    v += &d_coef;
+                }
+                v
+            })
+            .collect())
+        .collect();
+    let itil = restrict(&i_dense);
+    // Standard ρ_μ (H_{n_inner}), ρ_ν (H_{n_block}).
+    let smu = seminormal_mpfr::seminormal_matrices_mpfr(&mu, &q_str, dps);
+    let snv = seminormal_mpfr::seminormal_matrices_mpfr(&nu, &q_str, dps);
+    let d_mu = if smu.is_empty() { 1 } else { smu[0].len() };
+    let d_nu = if snv.is_empty() { 1 } else { snv[0].len() };
+    if d_mu * d_nu == 0 || r % (d_mu * d_nu) != 0 {
+        return Err(pyo3::exceptions::PyValueError::new_err(format!(
+            "a_combiner: rank {} not divisible by d_μ·d_ν = {}·{}", r, d_mu, d_nu)));
+    }
+    let c = r / (d_mu * d_nu);
+    let rmu: Vec<Vec<Vec<Float>>> =
+        smu.iter().map(|sp| dense_la_mpfr::sparse_to_dense_mpfr(sp, d_mu, prec)).collect();
+    let rnv: Vec<Vec<Vec<Float>>> =
+        snv.iter().map(|sp| dense_la_mpfr::sparse_to_dense_mpfr(sp, d_nu, prec)).collect();
+    let (i_r, i_dmu, i_dnu, i_c) =
+        (eye_mpfr(r, prec), eye_mpfr(d_mu, prec), eye_mpfr(d_nu, prec), eye_mpfr(c, prec));
+    // Target generators R = ρ_μ(σ)⊗I_ν⊗I_c (inner) / I_μ⊗ρ_ν(σ)⊗I_c (block).
+    let mut targets: Vec<Vec<Vec<Float>>> = Vec::new();
+    let mut restricted: Vec<&Vec<Vec<Float>>> = Vec::new();
+    for a in 0..n_inner - 1 {
+        let k = dense_la_mpfr::kron_mpfr(
+            &dense_la_mpfr::kron_mpfr(&rmu[a], &i_dnu, prec), &i_c, prec);
+        targets.push(k);
+        restricted.push(&inner_g[a]);
+    }
+    for b in 0..n_block - 1 {
+        let k = dense_la_mpfr::kron_mpfr(
+            &dense_la_mpfr::kron_mpfr(&i_dmu, &rnv[b], prec), &i_c, prec);
+        targets.push(k);
+        restricted.push(&block_g[b]);
+    }
+    // Intertwiner constraint M: stack (I_r ⊗ g̃ − Rᵀ ⊗ I_r).
+    let r2 = r * r;
+    let mut m_rows: Vec<Vec<Float>> = Vec::with_capacity(targets.len() * r2);
+    for (rk, gk) in targets.iter().zip(restricted.iter()) {
+        let lhs = dense_la_mpfr::kron_mpfr(&i_r, gk, prec);
+        let rhs = dense_la_mpfr::kron_mpfr(&transpose_mpfr(rk, prec), &i_r, prec);
+        for row in 0..r2 {
+            let diff: Vec<Float> = (0..r2)
+                .map(|col| Float::with_val(prec, &lhs[row][col] - &rhs[row][col]))
+                .collect();
+            m_rows.push(diff);
+        }
+    }
+    let null = dense_la_mpfr::nullspace_mpfr(&m_rows, prec, &tol);
+    if null.is_empty() {
+        return Err(pyo3::exceptions::PyValueError::new_err(
+            "a_combiner: empty intertwiner null space"));
+    }
+    // Generic invertible combination → U (column-major reshape vecU[j*r+i]).
+    let mut vec_u: Vec<Float> = (0..r2).map(|_| Float::with_val(prec, 0)).collect();
+    for (k, v) in null.iter().enumerate() {
+        let coeff = Float::with_val(prec, (k as u32) + 2).sqrt()
+            + Float::with_val(prec, (k as u32) + 1);
+        for idx in 0..r2 {
+            vec_u[idx] = Float::with_val(prec, &vec_u[idx] + &(Float::with_val(prec, &coeff * &v[idx])));
+        }
+    }
+    let u_mat: Vec<Vec<Float>> = (0..r)
+        .map(|i| (0..r).map(|j| Float::with_val(prec, &vec_u[j * r + i])).collect())
+        .collect();
+    let u_inv = dense_la_mpfr::inverse_mpfr(&u_mat, prec, &tol)
+        .ok_or_else(|| pyo3::exceptions::PyValueError::new_err("a_combiner: U singular"))?;
+    // Ã = U⁻¹ Ĩ U.
+    let atil = dense_la_mpfr::dense_dense_mul_mpfr(
+        &dense_la_mpfr::dense_dense_mul_mpfr(&u_inv, &itil, prec), &u_mat, prec);
+    // A = partial-trace over ℂ^c (basis μ⊗ν⊗c, multiplicity fastest).
+    let dd = d_mu * d_nu;
+    let mut a_out: Vec<Vec<Float>> = (0..dd)
+        .map(|_| (0..dd).map(|_| Float::with_val(prec, 0)).collect())
+        .collect();
+    for am in 0..d_mu {
+        for bm in 0..d_nu {
+            for ap in 0..d_mu {
+                for bp in 0..d_nu {
+                    let mut s = Float::with_val(prec, 0);
+                    for t in 0..c {
+                        let ri = am * d_nu * c + bm * c + t;
+                        let ci = ap * d_nu * c + bp * c + t;
+                        s += &atil[ri][ci];
+                    }
+                    a_out[am * d_nu + bm][ap * d_nu + bp] = s;
+                }
+            }
+        }
+    }
+    Ok(mat_to_strings(&a_out, dps))
+}
+
 /// Matrix-M block-restricted χ^λ at substrate q.
 ///
 /// Computes χ^λ(T_β)(q) for a parabolic-shaped braid
@@ -1254,6 +1494,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(mat_kron_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(mat_nullspace_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(mat_inverse_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(gauge_aligned_a_combiner_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_via_matrix_m_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
