@@ -97,8 +97,8 @@ _MU_QUOTED = (
 OBSERVABLES: dict[str, tuple[mpf, mpf, str, str]] = {
     "m_e":      (M_E_MEV,         M_E_MEV_ERR,            "CAL-1 anchor",
                  "codata_constants.M_E_MEV"),
-    "Q_beta":   (Q_BETA_MEV,      Q_BETA_MEV_ERR,         "CAL-3 anchor",
-                 "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)"),
+    "Q_beta":   (Q_BETA_MEV,      Q_BETA_MEV_ERR,         "derived (CAL-1+CAL-2)",
+                 "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json; CODATA validation value — Q_β is derived, not CAL-3)"),
     "m_p":      (M_P_MEV_VALIDATION, M_P_MEV_VALIDATION_ERR, "CAL-2 numerical anchor",
                  "codata_constants.M_P_MEV_VALIDATION"),
     "m_n":      (M_N_MEV_VALIDATION, M_N_MEV_VALIDATION_ERR, "validation",
