@@ -82,9 +82,9 @@ speedup needs a Rust kernel.
 - **LR coefficients** — `littlewood_richardson.rs`; **cross-level embedding** — `cross_level_embedding.rs`.
 
 ### What the Rust port adds
-1. **Isotypic projectors** `Π_{μν}` — transposition class-sum (separates all 11 H₆ irreps at q₀, min eigen-gap 1.15; the q≠1 deformation breaks the q=1 `(4,1,1)/(3,3)` content-sum degeneracy) + Lagrange spectral projection, in `rug::Float`.
+1. **Isotypic projectors** `Π_{μν}` — transposition class-sum (separates all 11 H₆ irreps at q₀, min eigen-gap 1.15; the q≠1 deformation breaks **both** q=1 content-sum degeneracies — `(4,1,1)/(3,3)` (both at +3) and `(3,1,1,1)/(2,2,2)` (both at −3)) + Lagrange spectral projection, in `rug::Float`.
 2. **Intertwiner / gauge-alignment** — the `(I⊗g̃ − Rᵀ⊗I)vec(U)=0` null-space solve and the `A_combiner = partial-trace(U⁻¹ Ĩ U)` (the O(r⁶) bottleneck), at scale.
-3. **Recursion kernel** — `compute_chi_lambda_via_branching` for A≥3: peel one H₃ block per level, computing the inner `ρ_μ(W_inner)` recursively (the `_build_rho_recursive` the current Python `return None` placeholder names), cost `Σ_level Σ_{μ,ν} dim(μ)·dim(ν)` ≪ `p(3A)`.
+3. **Recursion kernel** — `compute_chi_lambda_via_branching` for A≥3: peel one H₃ block per level, computing the inner `ρ_μ(W_inner)` recursively (which the `_build_rho_recursive` placeholder named in the current Python `return None` stub references), cost `Σ_level Σ_{μ,ν} dim(μ)·dim(ν)` ≪ `p(3A)`.
 4. **PyO3 binding + production wiring** — route A≥3 in `canonical_tr_m_via_branching.py` through the Rust operator-branching, replacing the transfer fallback once cross-validated.
 
 ### Discipline gates (per CLAUDE.md)
