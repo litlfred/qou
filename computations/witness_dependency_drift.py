@@ -190,6 +190,11 @@ def check_self_staleness(
     witness was last generated (self-staleness) — the witness must be
     re-run.  Returns a record, or None when fresh/unverifiable.
 
+    Producer resolution (#5): when several files share the basename in
+    `scriptFile`, prefer the candidate in the SAME directory as the
+    witness, then the shallowest path — this resolves most of the
+    name-collision "ambiguous" cases instead of giving up.
+
     This is the complement of `check_witness` (which checks UPSTREAM
     witness edges).  Together they cover both staleness directions:
     self (my producer changed) and transitive (an upstream changed).
@@ -209,16 +214,66 @@ def check_self_staleness(
     if len(candidates) == 0:
         return {"downstream": witness_path.name, "kind": "producer_unresolved",
                 "scriptFile": script_file}
-    if len(candidates) > 1:
-        return {"downstream": witness_path.name, "kind": "producer_ambiguous",
-                "scriptFile": script_file,
-                "detail": f"{len(candidates)} files named {script_file}"}
-    current = _file_hash12(candidates[0])
+    producer = _resolve_producer(candidates, witness_path)
+    current = _file_hash12(producer)
     if current != recorded:
         return {"downstream": witness_path.name, "kind": "self_stale",
-                "scriptFile": script_file,
+                "scriptFile": script_file, "producer": str(producer),
                 "recorded_scriptHash": recorded, "current_scriptHash": current}
     return None
+
+
+def _resolve_producer(candidates: list[Path], witness_path: Path) -> Path:
+    """Pick the most likely producer among same-basename candidates (#5):
+    prefer one in the witness's own directory, else the shallowest path."""
+    if len(candidates) == 1:
+        return candidates[0]
+    same_dir = [c for c in candidates if c.parent == witness_path.parent]
+    if len(same_dir) == 1:
+        return same_dir[0]
+    pool = same_dir or candidates
+    return min(pool, key=lambda c: (len(c.parts), str(c)))
+
+
+def _upstream_edges(witness_path: Path) -> list[str]:
+    """Return the list of upstream witness basenames this witness records."""
+    try:
+        w = json.loads(witness_path.read_text())
+    except (json.JSONDecodeError, UnicodeDecodeError):
+        return []
+    if not isinstance(w, dict):
+        return []
+    di = w.get("derivation_inputs")
+    dat = w.get("data")
+    arr = (
+        (di.get("upstream_witness_hashes") if isinstance(di, dict) else None)
+        or (dat.get("upstream_witness_hashes") if isinstance(dat, dict) else None)
+        or []
+    )
+    return [e.get("path") for e in arr if isinstance(e, dict) and e.get("path")]
+
+
+def _propagate_transitive(
+    edges: dict[str, list[str]], directly_stale: set[str]
+) -> set[str]:
+    """Close `directly_stale` upward over the edge DAG: a node is stale if
+    any upstream it records is (directly or transitively) stale. Memoised
+    DFS with cycle guard."""
+    memo: dict[str, bool] = {}
+
+    def stale(node: str, seen: frozenset) -> bool:
+        if node in memo:
+            return memo[node]
+        if node in directly_stale:
+            memo[node] = True
+            return True
+        if node in seen:  # cycle — don't recurse
+            return False
+        res = any(stale(up, seen | {node}) for up in edges.get(node, []))
+        memo[node] = res
+        return res
+
+    return {n for n in edges if stale(n, frozenset())}
 
 
 def main() -> int:
@@ -241,16 +296,30 @@ def main() -> int:
     n_checked = n_with_deps = 0
     all_drifts: list[dict] = []
     self_records: list[dict] = []
+    edges: dict[str, list[str]] = {}      # witness name -> upstream names
+    directly_stale: set[str] = set()      # self-stale OR has upstream drift
     for w in witnesses:
         n_checked += 1
         drifts, has_deps = check_witness(w)
         all_drifts.extend(drifts)
         if has_deps:
             n_with_deps += 1
+        if drifts:
+            directly_stale.add(w.name)
+        edges[w.name] = _upstream_edges(w)
         if not args.no_self:
             rec = check_self_staleness(w, producer_index)
             if rec is not None:
                 self_records.append(rec)
+                if rec["kind"] == "self_stale":
+                    directly_stale.add(w.name)
+
+    # #6 — transitive (Merkle-style) propagation: a witness is stale if any
+    # upstream it records is itself (directly or transitively) stale, even
+    # when its own recorded hashes still match. One memoised pass over the
+    # on-disk DAG; only as deep as the recorded `upstream_witness_hashes`.
+    transitively_stale = _propagate_transitive(edges, directly_stale)
+    n_transitive_only = len(transitively_stale - directly_stale)
 
     n_self_stale = sum(1 for r in self_records if r["kind"] == "self_stale")
     pct = (100.0 * n_with_deps / n_checked) if n_checked else 0.0
@@ -261,6 +330,8 @@ def main() -> int:
         print(f"  self-staleness:   {n_self_stale} self-stale "
               f"(scriptHash != current producer); "
               f"{len(self_records) - n_self_stale} unverifiable/unresolved.")
+    print(f"  transitive:       {n_transitive_only} additionally stale via "
+          f"upstream propagation (recorded edges only).")
 
     if all_drifts:
         print("\nUpstream drift detail:")
