@@ -37,26 +37,47 @@ namespace QOU.MassEndomorphism
 
 open Complex
 
-/-! ## Bar-parity decomposition (generic field, §7c)
+/-! ## Bar-parity + descent over a CommRing with involution (§7c — NOT `ℂ`)
 
-The bar-even part is `∝ q + q⁻¹ = 2cosh(log q)` and the bar-odd part is
-`∝ q − q⁻¹ = 2sinh(log q)`.  The `/2` normalisation (`cosh`/`sinh`) is
-narrative; the structural fact proved here is that the two parities
-reconstruct the eigenvalues `q` (`= e^{+λ}`) and `q⁻¹` (`= e^{−λ}`),
-holding over any field (`q⁻¹` cancels additively — no `q ≠ 0`). -/
-section BarParity
-variable {R : Type*} [Field R]
+The *proofs* live over a commutative ring `R` with a ring **involution**
+`σ` (the bar-involution `q ↦ q⁻¹`), **not** `ℂ`. `σ`-even `x + σx` is the
+binding (bar-even / `cosh`) channel; `σ`-odd `x − σx` is the `𝔔_β`
+(bar-odd / `sinh`) channel. `ℂ` with complex conjugation is just the
+*archimedean realisation* (below). The `/2` (`cosh`/`sinh`) normalisation
+is narrative; we use the division-free `x ± σx` forms, so everything
+holds over any `CommRing`. -/
+section BarParityInvolution
+variable {R : Type*} [CommRing R] (σ : R →+* R)
 
-/-- Sum of the bar-parities reconstructs `2q` (`= e^λ + e^{−λ}` doubled
-    even part... here `(q+q⁻¹) + (q−q⁻¹) = 2q`). -/
-theorem barParity_sum (q : R) : (q + q⁻¹) + (q - q⁻¹) = 2 * q := by ring
+/-- `σ`-even + `σ`-odd reconstructs `2x` (`(x+σx) + (x−σx) = 2x`). -/
+theorem barParity_sum (x : R) : (x + σ x) + (x - σ x) = 2 * x := by ring
 
-/-- Difference of the bar-parities reconstructs `2q⁻¹`. -/
-theorem barParity_diff (q : R) : (q + q⁻¹) - (q - q⁻¹) = 2 * q⁻¹ := by ring
+/-- `σ`-even − `σ`-odd reconstructs `2·σx`. -/
+theorem barParity_diff (x : R) : (x + σ x) - (x - σ x) = 2 * σ x := by ring
 
-end BarParity
+/-- **Involution descent.** One ring identity `x = w` yields BOTH the
+    bar-even (binding) and bar-odd (`𝔔_β`) identities at once — the
+    `[CommRing R]`-generic form of "prove on `𝔙` once, read off both
+    channels" (no `ℂ`, no `/2`). -/
+theorem invol_descent {x w : R} (h : x = w) :
+    (x + σ x = w + σ w) ∧ (x - σ x = w - σ w) :=
+  ⟨by rw [h], by rw [h]⟩
 
-/-! ## The complex convolution-defect and the definitional unification -/
+/-- **Recurrence descent — the `c_k`-ladder mechanism, generic.** A
+    three-term recurrence `𝔙ₚ = c·𝔙ₖ − 𝔙ₘ` with a **bar-even** multiplier
+    `c` (`σ c = c`, the `2cosh η` analogue) yields the binding (`σ`-even)
+    AND `𝔔_β` (`σ`-odd) recurrences from the *single* ring proof. -/
+theorem recurrence_invol_descent {Vp Vk Vm c : R} (hc : σ c = c)
+    (h : Vp = c * Vk - Vm) :
+    ((Vp + σ Vp) = c * (Vk + σ Vk) - (Vm + σ Vm)) ∧
+    ((Vp - σ Vp) = c * (Vk - σ Vk) - (Vm - σ Vm)) := by
+  have key : σ Vp = c * σ Vk - σ Vm := by
+    simp only [h, map_sub, map_mul, hc]
+  exact ⟨by rw [key, h]; ring, by rw [key, h]; ring⟩
+
+end BarParityInvolution
+
+/-! ## Archimedean realisation (`ℂ`, `σ =` complex conjugation) -/
 
 /-- The complex fibre observable `𝔙 = E₀·tr_M((Π_free−1)∘𝓜) ∈ ℂ`. -/
 noncomputable def fibreDefect (E0 : ℝ) (trDefect : ℂ) : ℂ := (E0 : ℂ) * trDefect
@@ -76,32 +97,15 @@ theorem complex_volume_unification (E0 : ℝ) (trDefect : ℂ) :
   unfold binding Qbeta
   exact Complex.re_add_im _
 
-/-! ## Re/Im descent — one proof on `𝔙` covers binding AND `𝔔_β` at once
+/-! ## Descent — one proof on `𝔙` covers binding AND `𝔔_β`
 
-The payoff of the unification. Because `Complex.re` and `Complex.im` are
-ℝ-linear, any relation proved for the *complex* `𝔙` (with real
-coefficients) descends **simultaneously** to its real part (binding,
-`𝔈_bind = Re 𝔙`) and imaginary part (`𝔔_β = Im 𝔙`) — a single complex
-proof replaces the two separate bar-even/bar-odd arguments. -/
-
-/-- A complex identity descends to its real and imaginary parts at once:
-    one complex equation `=` two real equations. -/
-theorem reIm_descent {z w : ℂ} (h : z = w) :
-    z.re = w.re ∧ z.im = w.im :=
-  ⟨congrArg Complex.re h, congrArg Complex.im h⟩
-
-/-- **Recurrence descent — the `c_k`-ladder mechanism.** A complex
-    three-term recurrence with a *real* multiplier `c` (e.g. the `𝔙`-tower
-    `𝔙_{k+1} = c·𝔙_k − 𝔙_{k−1}`) yields the **binding** (Re) and **`𝔔_β`**
-    (Im) recurrences from the *single* complex proof — prove the ladder once
-    on `𝔙`, read off both observable channels. -/
-theorem recurrence_reIm_descent (Vp Vk Vm : ℂ) (c : ℝ)
-    (h : Vp = (c : ℂ) * Vk - Vm) :
-    (Vp.re = c * Vk.re - Vm.re) ∧ (Vp.im = c * Vk.im - Vm.im) := by
-  subst h
-  refine ⟨?_, ?_⟩
-  · simp [Complex.sub_re, Complex.mul_re, Complex.ofReal_re, Complex.ofReal_im]
-  · simp [Complex.sub_im, Complex.mul_im, Complex.ofReal_re, Complex.ofReal_im]
+The "prove once, read off both channels" payoff is the **generic**
+`invol_descent` / `recurrence_invol_descent` above (over `[CommRing R]`
+with the bar-involution `σ`). The `ℂ` Re/Im descent is simply their
+**archimedean instance** with `σ =` complex conjugation: `Re z = (z+σz)/2`
+(bar-even / binding) and `Im z` carried by `(z−σz)/2` (bar-odd / `𝔔_β`).
+No separate `ℂ`-only lemma is needed — the proofs live over the ring with
+involution, per CLAUDE.md §7c. -/
 
 /-! ## Physical-match conjecture (the only open content) -/
 
