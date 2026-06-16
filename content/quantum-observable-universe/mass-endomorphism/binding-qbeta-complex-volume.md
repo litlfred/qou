@@ -133,13 +133,15 @@ residual" and the binding $\Delta_\lambda$ gap become the *same* unclosed
 object — the imaginary and real parts of one defect — rather than two
 independent open problems.
 
-**Proof economy.** Because $\operatorname{Re}$ and $\operatorname{Im}$
-are $\mathbb{R}$-linear, any relation proved for the *complex*
-$\mathfrak{V}$ (with real coefficients) descends to **both** binding
-($\operatorname{Re}$) and $\mathfrak{Q}_\beta$ ($\operatorname{Im}$) from
-a *single* proof — the two bar-even/bar-odd arguments collapse into one.
-Formalised: `reIm_descent` (a complex identity is two real identities) and
-`recurrence_reIm_descent` (a complex three-term `𝔙`-recurrence with real
-multiplier yields the binding and $\mathfrak{Q}_\beta$ recurrences at once
-— the `c_k`-ladder mechanism), both sorry-free in
-[`QOU.MassEndomorphism`](binding-qbeta-complex-volume.lean).
+**Proof economy.** A relation proved for $\mathfrak{V}$ over a commutative
+ring $R$ with the **bar-involution** $\sigma$ (the structural setting —
+*not* $\mathbb{C}$, per CLAUDE.md §7c) descends to **both** the bar-even
+(binding) and bar-odd ($\mathfrak{Q}_\beta$) parts from a *single* proof,
+because the projections $x \mapsto x\pm\sigma x$ are additive. Formalised
+sorry-free in [`QOU.MassEndomorphism`](binding-qbeta-complex-volume.lean):
+`invol_descent` (one ring identity $\Rightarrow$ both parity identities)
+and `recurrence_invol_descent` (a three-term $\mathfrak{V}$-recurrence with
+a bar-even multiplier $c$, $\sigma c = c$, yields the binding and
+$\mathfrak{Q}_\beta$ recurrences at once — the `c_k`-ladder mechanism). The
+$\mathbb{C}$/Re–Im picture is the archimedean instance ($\sigma=$ complex
+conjugation).
