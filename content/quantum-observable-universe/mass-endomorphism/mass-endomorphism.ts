@@ -82,6 +82,20 @@ export default chapter({
       ],
     }),
 
+    // ═══ THE COMPLEX VOLUME 𝔙 ═══════════════════════════════════
+    // Binding (Re 𝔙) and β-decay Q-value (Im 𝔙) are two real
+    // shadows of one complex fibre observable. Frames the rest of
+    // the mass + β-decay narrative as one derivation.
+    section({
+      title:
+        "The complex volume $\\mathfrak{V}$: binding and decay as $\\operatorname{Re}$/$\\operatorname{Im}$",
+      label: "sec:complex-volume",
+      blocks: [
+        "complex-volume-intro",
+        "binding-qbeta-complex-volume",
+      ],
+    }),
+
     // ═══ ALGEBRAIC FACE ═════════════════════════════════════════
     section({
       title: "Categorical mass foundations: eigenspace decompositions",
