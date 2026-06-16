@@ -23,6 +23,7 @@ deps: computations/kazhdan_lusztig.py (in-repo); stdlib otherwise.
 """
 import os
 import sys
+from collections import Counter
 from math import factorial
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -49,11 +50,12 @@ def kl_positivity_S4():
         for x in S4:
             P = kl.kl_polynomial(x, w)
             pairs += 1
-            poly = sp.Poly(sp.expand(P), q) if P != 0 else None
-            coeffs = poly.all_coeffs() if poly is not None else [0]
-            if any(sp.nsimplify(c) < 0 for c in coeffs):
-                nonneg = False
-            s = str(sp.expand(P))
+            P_exp = sp.expand(P)
+            if not P.equals(0):
+                coeffs = sp.Poly(P_exp, q).all_coeffs()  # KL coeffs are integers
+                if any(c < 0 for c in coeffs):
+                    nonneg = False
+            s = str(P_exp)
             if s not in ("0", "1"):
                 nontrivial.append(s)
     return pairs, nonneg, nontrivial
