@@ -13,7 +13,7 @@ Reproducible compute:
 | Item | Block | Verdict |
 |------|-------|---------|
 | #1 | `cl3-zeta5-geometric-realization` | **smallest-viable-step is ill-posed** (refuted) |
-| #7 | `negative-debt-confinement` | **reframed: tractable, gated on modeling not compute** |
+| #7 | `negative-debt-confinement` | **tractable, but the literal colour-resolution is trace-invisible** (colour singlet $\dim_q = 1$) — prunes the "9-strand = 3×colour" route |
 | #6 | `gram-matrix-h3-symbolic` | **deferral confirmed correct** (brute-force re-checked) |
 | #4 | `bigbang-heatdeath` | speculative metaphor; no action (math already correct) |
 
@@ -108,14 +108,68 @@ fit the three-calibration discipline and the critical-distance license
 warn against. The honest path is to fix the braid word from an
 independent structural principle (color-singlet closure + the existing
 $u$–$d$ crossing-typing of the $H_3$ model) **first**, then compute
-$\mathrm{tr}_M$ and check $\mathfrak{E}_0$ as a genuine prediction. The
-compute, once the word is fixed, is cheap.
+$\mathrm{tr}_M$ and check $\mathfrak{E}_0$ as a genuine prediction.
 
 **Note:** the bean cites `beta-decay-energy-scale.witness.json`, which
 **does not exist** in `folio-assistant/computations/`. The $H_3$
 NF₊/NF₋ table in `negative-debt-confinement.md` is not currently backed by
 a committed witness; producing one is a prerequisite for the 9-strand
 comparison.
+
+### #7 next step — the literal color-resolution is trace-invisible
+
+Carrying out the principled construction the author approved (resolve
+each quark into a 3-strand color bundle; close on the baryon
+color-singlet; keep the $u$–$d$ flavor typing), a structural obstruction
+appears **before** any braid word need be written down.
+
+A baryon is a color singlet: totally **antisymmetric** in the three
+quark colors ($\varepsilon_{abc}$), i.e. the **$(1^3)$** irrep of the
+color $H_3(q)$. If the 9 strands factor as colour $\otimes$ flavour
+(the clean, freedom-free reading of "tensor each quark with its colour
+bundle"), the Markov trace factorises and the colour contribution is the
+**quantum dimension of the closed colour channel**:
+
+$$
+\mathrm{tr}_M(\mathcal{B}_9) \;=\; \mathrm{tr}_M(\mathcal{B}_3)\;\cdot\;\dim_q(1^3).
+$$
+
+But $(1^3)$ is a single column (hooks $3,2,1$), so
+
+$$
+\dim_q(1^3) \;=\; \frac{[3]_q!}{[3]_q[2]_q[1]_q} \;=\; 1 \qquad\text{identically, for all } q
+$$
+
+(sympy-verified exact; numerically $1.000000$ at $q_0 = 1.10998$; by
+contrast the standard channel $\dim_q(2,1) = q + q^{-1} = [2]_q \approx
+2.0109$).
+
+> **Verdict (#7).** The literal "each quark → 3-strand colour bundle,
+> closed on the colour singlet" construction is **trace-invisible**:
+> $\mathrm{tr}_M(\mathcal{B}_9) = \mathrm{tr}_M(\mathcal{B}_3)$, because
+> the antisymmetric colour singlet has quantum dimension exactly $1$. It
+> **reproduces** the $H_3$ result and therefore predicts **nothing new**
+> about $\mathfrak{E}_0$ — the energy scale stays a calibration.
+
+The only way to make the 9-strand trace carry $\mathfrak{E}_0$-fixing
+information is to **break the colour$\otimes$flavour factorisation** —
+entangle the colour and flavour braidings so the closure is no longer a
+pure $(1^3)$ projector. But that entanglement is precisely a new modeling
+input with new degrees of freedom, i.e. the fitting hazard the
+critical-distance license flags. So:
+
+- the 9-strand direction is **compute-tractable** (P7 above), **but**
+- in its clean, principled form it is **trace-invisible** and predicts
+  nothing, **and**
+- any non-trivial variant injects free parameters (colour–flavour
+  entanglement) that would have to be fixed independently to count as a
+  prediction rather than a fit.
+
+This does not close item #7, but it **prunes the literal "9-strand =
+3×colour" route**: the quantum dimension of the baryon colour singlet is
+$1$, so colour resolution alone cannot supply the energy scale.
+Reproducible: `h9_wedderburn_tractability` probe + the $\dim_q$ table
+above (exact sympy).
 
 ---
 
