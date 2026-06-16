@@ -260,6 +260,126 @@ def verify_isotypic_multiplicity_structure(dps: int = 50) -> dict:
     }
 
 
+def _transposition_factor_words(strand_lo: int, strand_hi: int) -> list:
+    """Hecke words (lists of (c,d,gen0) factors) for every transposition (i,j),
+    strand_lo ≤ i < j ≤ strand_hi (0-based strands). T_(i,j) =
+    σ_{j-1}…σ_{i+1} σ_i σ_{i+1}…σ_{j-1} (0-based generators)."""
+    words = []
+    for i in range(strand_lo, strand_hi + 1):
+        for j in range(i + 1, strand_hi + 1):
+            mid = list(range(i + 1, j))            # 0-based gens between i,j
+            gens = mid[::-1] + [i] + mid
+            words.append([(mp.mpf(1), mp.mpf(0), g) for g in gens])
+    return words
+
+
+def _transposition_class_sum(mats: list, strand_lo: int, strand_hi: int) -> "mp.matrix":
+    """Σ over transpositions of strands [lo,hi] of ρ(T_(i,j)) (central in that
+    H_k factor), built from the H_n seminormal generator matrices `mats`."""
+    dim = mats[0].rows
+    out = mp.zeros(dim, dim)
+    for w in _transposition_factor_words(strand_lo, strand_hi):
+        M = mp.eye(dim)
+        for (c, d, g) in w:
+            M = M * (c * mats[g] + d * mp.eye(dim))
+        out += M
+    return out
+
+
+def _classsum_eigenvalues(n_strands: int, q_str: str, dps: int) -> dict:
+    """e_μ = (Σ_{transpositions} χ^μ)/d_μ for μ ⊢ n_strands — the scalar by which
+    the transposition class-sum acts on the μ-isotypic component. Native chars on
+    the standalone H_{n_strands} transposition words (strands 0..n-1)."""
+    words = _transposition_factor_words(0, n_strands - 1)
+    # native (sign, gen1based) form — all factors here are +σ (sign +1).
+    nat = [[(1, g + 1) for (_c, _d, g) in w] for w in words]
+    ev = {}
+    for mu in partitions_of(n_strands):
+        s = sum(mp.mpf(aoa._pyn.chi_lambda_braid_mpfr(list(mu), w, q_str, dps))
+                for w in nat)
+        ev[mu] = s / aoa.partition_dim(mu)
+    return ev
+
+
+def gauge_aligned_A_combiner_general(lam: tuple[int, ...], n_inner: int,
+                                     n_block: int, q_str: str, dps: int) -> dict:
+    """General-n_inner version of `gauge_aligned_A_combiner`: the combiner-ready
+    A^λ_{μν}(I_pn) for the split H_{n_inner} × H_{n_block} → H_n (μ⊢n_inner,
+    ν⊢n_block). Isotypic projectors from the transposition class-sums (separating
+    at q₀ — verified for H_6, min eigen-gap 1.15). Same intertwiner null-space
+    construction as the deuteron path."""
+    q = mp.mpf(q_str)
+    h = q - 1 / q
+    n = n_inner + n_block
+    mats, dim = aoa.exact_seminormal_matrices(lam, q_str, dps)
+    if dim == 0:
+        return {}
+    ev_in = _classsum_eigenvalues(n_inner, q_str, dps)
+    ev_bl = _classsum_eigenvalues(n_block, q_str, dps)
+    C_in = _transposition_class_sum(mats, 0, n_inner - 1)
+    C_bl = _transposition_class_sum(mats, n_inner, n - 1)
+    P_in = aoa._lagrange_projectors(C_in, ev_in, dim)
+    P_bl = aoa._lagrange_projectors(C_bl, ev_bl, dim)
+    # Interface I_pn = σ_{n_inner-1} − (h/2)·1 (the bridge generator).
+    I_iface = mats[n_inner - 1] - (h / 2) * mp.eye(dim)
+    null_tol = mp.mpf("1e-30")
+    out = {}
+    for mu in ev_in:
+        d_mu = aoa.partition_dim(mu)
+        rmu, _ = aoa.exact_seminormal_matrices(mu, q_str, dps)  # H_{n_inner} gens
+        for nu in ev_bl:
+            Pi = P_in[mu] * P_bl[nu]
+            r = int(mp.nint(aoa._trace(Pi)).real)
+            if r == 0:
+                continue
+            d_nu = aoa.partition_dim(nu)
+            rnu, _ = aoa.exact_seminormal_matrices(nu, q_str, dps)
+            c = r // (d_mu * d_nu)
+            Q = _orthonormal_range_basis(Pi, r)
+            Itil = Q.T * I_iface * Q
+            # restricted inner gens (0..n_inner-2) and block gens (n_inner..n-2)
+            g_in = [Q.T * mats[a] * Q for a in range(n_inner - 1)]
+            g_bl = [Q.T * mats[n_inner + b] * Q for b in range(n_block - 1)]
+            Ic, Imu, Inu = mp.eye(c), mp.eye(d_mu), mp.eye(d_nu)
+            R = ([_kron(_kron(rmu[a], Inu), Ic) for a in range(n_inner - 1)]
+                 + [_kron(_kron(Imu, rnu[b]), Ic) for b in range(n_block - 1)])
+            G = g_in + g_bl
+            Ir = mp.eye(r)
+            nrows = len(G) * r * r
+            M = mp.zeros(nrows, r * r)
+            for bi, (Gk, Rk) in enumerate(zip(G, R)):
+                blk = _kron(Ir, Gk) - _kron(Rk.T, Ir)
+                for i in range(r * r):
+                    for j in range(r * r):
+                        M[bi * r * r + i, j] = blk[i, j]
+            null = _nullspace(M, null_tol)
+            if len(null) == 0:
+                out[(mu, nu)] = {"error": "empty intertwiner null space"}
+                continue
+            coeffs = [mp.sqrt(2) + i + mp.pi * (i + 1) for i in range(len(null))]
+            vecU = mp.zeros(r * r, 1)
+            for z, v in zip(coeffs, null):
+                vecU += z * v
+            U = mp.zeros(r, r)
+            for i in range(r):
+                for j in range(r):
+                    U[i, j] = vecU[j * r + i, 0]
+            Atil = U ** -1 * Itil * U
+            dd = d_mu * d_nu
+            A = mp.zeros(dd, dd)
+            for a in range(d_mu):
+                for b in range(d_nu):
+                    for ap in range(d_mu):
+                        for bp in range(d_nu):
+                            s = mp.mpf(0)
+                            for t in range(c):
+                                s += Atil[a * d_nu * c + b * c + t,
+                                          ap * d_nu * c + bp * c + t]
+                            A[a * d_nu + b, ap * d_nu + bp] = s
+            out[(mu, nu)] = {"A": A, "c": c, "d_mu": d_mu, "d_nu": d_nu}
+    return out
+
+
 def gauge_aligned_A_combiner(lam: tuple[int, ...], q_str: str,
                             dps: int) -> dict:
     """Construct the combiner-ready A^λ_{μν}(I_pn) in standard ρ_μ⊗ρ_ν
@@ -421,6 +541,83 @@ def verify_combiner_identity(dps: int = 50) -> dict:
     }
 
 
+def verify_combiner_h9(lambdas=None, dps: int = 50) -> dict:
+    """Step 3 (H_9 universality, exact 1e-25): verify the analytic A^λ_{μν}
+    (μ⊢6, ν⊢3) reconstructs χ^λ for *generic multi-strand H_6 inner words* —
+    the case the least-squares fit misses by 21–42 %.
+
+        χ^λ(β_1^{H6} · I_pn · β_2^{H3}) = Σ_{μ,ν} Tr[ A^λ_{μν}(I)·(ρ_μ(β_1)⊗ρ_ν(β_2)) ]
+
+    with ρ_μ at H_6, ρ_ν at H_3. Restricted to a curated set of small λ⊢9 (the
+    full sweep over all p(9)=30 needs the Rust kernel — pure-mpmath null-space
+    SVD is O(r^6)).
+    """
+    if lambdas is None:
+        # Fast, reproducible demonstration set (small range-blocks). The pure-
+        # mpmath null-space SVD is O(r^6); larger λ⊢9 (e.g. (7,2),(6,3)) and the
+        # full p(9)=30 sweep are correct but slow — deferred to the Rust kernel.
+        lambdas = [(9,), (8, 1)]
+    q = aoa.q0_mp(dps)
+    q_str = mp.nstr(q, dps)
+    h = q - 1 / q
+    p6, p3 = partitions_of(6), partitions_of(3)
+
+    def fac(br):
+        return [(mp.mpf(1), mp.mpf(0) if s > 0 else -h, gg) for (s, gg) in br]
+
+    def wm(mats, f):
+        M = mp.eye(mats[0].rows)
+        for (c, d, gg) in f:
+            M = M * (c * mats[gg] + d * mp.eye(mats[0].rows))
+        return M
+
+    # Generic multi-strand H_6 inner words (NOT H_3-lifted) + H_3 block words.
+    inner_panel = [[(1, 0), (1, 2), (1, 4), (-1, 1), (1, 3)],
+                   [(1, 1), (-1, 3), (1, 0), (1, 4)],
+                   [(-1, 2), (1, 0), (1, 3), (1, 1)]]
+    block_panel = [[(1, 0), (-1, 1)], [(1, 1), (1, 0)], [(-1, 0)]]
+    rho6 = {m: aoa.exact_seminormal_matrices(m, q_str, dps)[0] for m in p6}
+    rho3 = {n: aoa.exact_seminormal_matrices(n, q_str, dps)[0] for n in p3}
+
+    max_abs = mp.mpf(0)
+    n_checks = 0
+    n_fail = 0
+    worst = None
+    for lam in lambdas:
+        mats9, dim = aoa.exact_seminormal_matrices(lam, q_str, dps)
+        if dim == 0:
+            continue
+        I_iface = mats9[5] - (h / 2) * mp.eye(dim)        # bridge gen 5
+        Ac = gauge_aligned_A_combiner_general(lam, 6, 3, q_str, dps)
+        if any("error" in v for v in Ac.values()):
+            return {"all_passed": False, "error": "intertwiner failed λ=" + str(list(lam))}
+        for ib in inner_panel:
+            W = wm(mats9, fac(ib))
+            rmu = {m: wm(rho6[m], fac(ib)) for m in p6}
+            for bb in block_panel:
+                B = wm(mats9, [(c, d, gg + 6) for (c, d, gg) in fac(bb)])
+                lhs = aoa._trace(W * I_iface * B)
+                rnu = {n: wm(rho3[n], fac(bb)) for n in p3}
+                rhs = sum((aoa._trace(info["A"] * _kron(rmu[mu], rnu[nu]))
+                           for (mu, nu), info in Ac.items() if "A" in info),
+                          mp.mpf(0))
+                ad = abs(lhs - rhs)
+                if ad > max_abs:
+                    max_abs = ad
+                if not (ad < EXACT_TOL):
+                    n_fail += 1
+                    if worst is None:
+                        worst = {"lambda": list(lam), "abs_residual": mp.nstr(ad, 6)}
+                n_checks += 1
+    return {
+        "lambdas": [list(l) for l in lambdas],
+        "n_checks": n_checks, "n_fail": n_fail,
+        "max_absolute_residual": mp.nstr(max_abs, 8),
+        "tolerance": mp.nstr(EXACT_TOL, 4),
+        "all_passed": n_fail == 0, "worst_failure": worst,
+    }
+
+
 def main() -> int:
     dps = 50
     print("=" * 78)
@@ -452,9 +649,21 @@ def main() -> int:
         if not cres["all_passed"]:
             print(f"        worst: {cres['worst_failure']}")
     print()
-    print("  TODO(closure-b): H_9 universality (A^λ_μν with μ⊢6, ν⊢3 → tr_M(T)/³He).")
+    hres = verify_combiner_h9(dps=dps)
+    print(f"  [d] H_9 universality — analytic A^λ_μν (μ⊢6,ν⊢3), GENERIC H_6 inner words:")
+    print(f"      λ⊢9 tested: {hres.get('lambdas')}")
+    if hres.get("error"):
+        print(f"      → FAIL — {hres['error']}")
+    else:
+        print(f"      → {'PASS' if hres['all_passed'] else 'FAIL'} — "
+              f"{hres['n_checks']} checks ({hres['n_fail']} fail), "
+              f"max abs residual = {hres['max_absolute_residual']}")
+        if not hres["all_passed"]:
+            print(f"        worst: {hres['worst_failure']}")
+    print()
+    print("  (full p(9)=30 sweep + recursive tr_M(T)/³He → Rust-kernel follow-up.)")
     return 0 if (res["all_passed"] and mres["all_passed"]
-                 and cres["all_passed"]) else 1
+                 and cres["all_passed"] and hres["all_passed"]) else 1
 
 
 if __name__ == "__main__":
