@@ -24,7 +24,7 @@ so their equality is required for consistency.
 The equality is not a small-correction limit. At the substrate the
 single Markov-trace term already misses the target by a wide margin:
 the $N=0$ contribution $\lvert\mathrm{tr}_M(\Delta)\rvert\cdot\mathfrak{E}_0
-\approx 0.49$ MeV falls short of $Q_\beta \approx 0.78$ MeV, a deficit of
+\approx 0.49$ MeV falls short of $\mathfrak{Q}_\beta \approx 0.78$ MeV, a deficit of
 roughly $259\%$ of the leading term. The Markov trace and the counit
 differ at leading order by $\varepsilon(\Delta) - \mathrm{tr}_M(\Delta)
 = h\,(z-1)$, which the substrate loop $z = 1/(\sqrt q + 1/\sqrt q)$ does

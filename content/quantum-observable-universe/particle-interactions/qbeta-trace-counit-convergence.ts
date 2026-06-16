@@ -7,7 +7,7 @@ export default conjecture({
     validation: "not_checked",
   },
   title:
-    "Trace–counit convergence of the $Q_\\beta$ mass difference",
+    "Trace–counit convergence of the $\\mathfrak{Q}_\\beta$ mass difference",
   uses: [
     "prop:qbeta-counit-closed-form",
   ],
