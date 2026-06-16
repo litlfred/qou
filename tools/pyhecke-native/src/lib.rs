@@ -6,12 +6,13 @@
 //! the wheel small and the build simple.
 
 use hecke_engine::{
-    geck_pfeiffer, gram, littlewood_richardson, matrix_m_mpfr,
+    dense_la_mpfr, geck_pfeiffer, gram, littlewood_richardson, matrix_m_mpfr,
     reduce_laurent as rust_reduce_laurent, seminormal, seminormal_mn, seminormal_mpfr,
     tr_m_atomic_mpfr as rust_tr_m_atomic_mpfr,
     tr_m_word_lq as rust_tr_m_word_lq, wenzl_lr,
 };
 use pyo3::prelude::*;
+use rug::Float;
 
 /// Markov parameter z = 1 / (q^{1/2} + q^{-1/2}).
 #[pyfunction]
@@ -816,6 +817,67 @@ fn seminormal_matrices_mpfr(
         .collect()
 }
 
+/// **Transposition class-sum `C = Σ_{i<j∈[lo,hi]} ρ_λ(T_{(i,j)})` at MPFR
+/// precision** — central in the `H_k` factor on (0-based) strands `[lo,hi]`.
+///
+/// Returns the dense `dim×dim` matrix as decimal strings. Its Lagrange spectral
+/// projectors are the `(μ,ν)`-isotypic projectors `Π` of the categorical
+/// interface-operator combiner (closure-b Rust port — first increment). The
+/// class-sum separates all 11 `H_6` irreps at the substrate q₀ (min eigen-gap
+/// 1.15), so the projectors are well-defined. `T_{(i,j)} = σ_{j-1}…σ_{i+1} σ_i
+/// σ_{i+1}…σ_{j-1}` (0-based generators).
+#[pyfunction]
+#[pyo3(signature = (shape, strand_lo, strand_hi, q_str, dps=50))]
+fn transposition_class_sum_mpfr(
+    shape: Vec<usize>,
+    strand_lo: usize,
+    strand_hi: usize,
+    q_str: String,
+    dps: u32,
+) -> Vec<Vec<String>> {
+    let prec = seminormal_mpfr::dps_to_bits(dps);
+    let sparse = seminormal_mpfr::seminormal_matrices_mpfr(&shape, &q_str, dps);
+    if sparse.is_empty() {
+        return Vec::new();
+    }
+    let dim = sparse[0].len();
+    // Dense generator matrices ρ_λ(σ_{g+1}) for 0-based generator g.
+    let gens: Vec<Vec<Vec<Float>>> = sparse
+        .iter()
+        .map(|sp| dense_la_mpfr::sparse_to_dense_mpfr(sp, dim, prec))
+        .collect();
+    let ident: Vec<Vec<Float>> = (0..dim)
+        .map(|i| (0..dim)
+            .map(|j| Float::with_val(prec, if i == j { 1 } else { 0 }))
+            .collect())
+        .collect();
+    let mut acc: Vec<Vec<Float>> = (0..dim)
+        .map(|_| (0..dim).map(|_| Float::with_val(prec, 0)).collect())
+        .collect();
+    for i in strand_lo..=strand_hi {
+        for j in (i + 1)..=strand_hi {
+            // word gens (0-based): (i+1..j).rev() ++ [i] ++ (i+1..j)
+            let mut word: Vec<usize> = ((i + 1)..j).rev().collect();
+            word.push(i);
+            word.extend((i + 1)..j);
+            let mut m = ident.clone();
+            for &g in &word {
+                m = dense_la_mpfr::dense_dense_mul_mpfr(&m, &gens[g], prec);
+            }
+            for r in 0..dim {
+                for c in 0..dim {
+                    acc[r][c] = Float::with_val(prec, &acc[r][c]) + &m[r][c];
+                }
+            }
+        }
+    }
+    acc.iter()
+        .map(|row| row.iter()
+            .map(|v| v.to_string_radix(10, Some(dps as usize)))
+            .collect())
+        .collect()
+}
+
 /// Matrix-M block-restricted χ^λ at substrate q.
 ///
 /// Computes χ^λ(T_β)(q) for a parabolic-shaped braid
@@ -1009,6 +1071,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_lambdas_braid, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(seminormal_matrices_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(transposition_class_sum_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_via_matrix_m_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
