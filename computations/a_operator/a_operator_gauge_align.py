@@ -167,20 +167,85 @@ def verify_restricted_gens(dps: int = 50) -> dict:
     }
 
 
+def verify_isotypic_multiplicity_structure(dps: int = 50) -> dict:
+    """Verify (deuteron H_6, exact) that range(Π_{ξν}) decomposes as
+    V_ξ ⊗ V_ν ⊗ ℂ^c with the correct multiplicity c = c^λ_{ξν}.
+
+    Method (convention-free — no Jucys-Murphy needed): the inner factor ρ_ξ is
+    irreducible, so the restricted inner algebra ⟨σ̃_0,σ̃_1⟩ is the full matrix
+    algebra M_{d_ξ} acting as ρ_ξ⊗I_{c d_ν}. A *generic* inner element therefore
+    has d_ξ distinct eigenvalues, each of multiplicity c·d_ν; a generic block
+    element has d_ν distinct, each mult c·d_ξ. Since inner ⊥ block (commute), a
+    generic M = G_in + φ·G_bl has exactly **d_ξ·d_ν distinct eigenvalues, each
+    of multiplicity c** — which must equal the LR coefficient c^λ_{ξν}.
+    """
+    from lr_coefficients import get_lr_table
+    q = aoa.q0_mp(dps)
+    q_str = mp.nstr(q, dps)
+    lr = get_lr_table(3, 3)
+    # Irrational generic coefficients (avoid accidental degeneracy).
+    a1, a2, b1, b2, phi = mp.sqrt(2), mp.sqrt(3), mp.pi, mp.sqrt(5), mp.e
+    clust_tol = mp.mpf("1e-18")
+    n_blocks = 0
+    n_fail = 0
+    failures = []
+    for lam in partitions_of(6):
+        info = range_basis_and_restricted_gens(lam, q_str, dps)
+        for (xi, nu), d in info.items():
+            n_blocks += 1
+            si0, si1 = d["inner"]
+            sb0, sb1 = d["block"]
+            G_in = si0 + a1 * si1 + a2 * (si0 * si1)
+            G_bl = sb0 + b1 * sb1 + b2 * (sb0 * sb1)
+            M = G_in + phi * G_bl
+            E, _ER = mp.eig(M)
+            clusters: list[list] = []
+            for e in E:
+                for cl in clusters:
+                    if abs(e - cl[0]) < clust_tol:
+                        cl.append(e)
+                        break
+                else:
+                    clusters.append([e])
+            sizes = sorted(len(cl) for cl in clusters)
+            c_lr = lr.get((xi, nu, lam), 0)
+            expect_n = aoa.partition_dim(xi) * aoa.partition_dim(nu)
+            ok = (len(clusters) == expect_n and sizes == [c_lr] * expect_n)
+            if not ok:
+                n_fail += 1
+                if len(failures) < 5:
+                    failures.append({
+                        "lambda": list(lam), "xi": list(xi), "nu": list(nu),
+                        "n_distinct": len(clusters), "expect_distinct": expect_n,
+                        "cluster_sizes": sizes, "c_lr": c_lr})
+    return {
+        "n_blocks": n_blocks, "n_fail": n_fail,
+        "all_passed": n_fail == 0, "failures": failures,
+        "method": "generic inner+block eigenvalue multiplicities vs c^λ_ξν",
+    }
+
+
 def main() -> int:
     dps = 50
     print("=" * 78)
     print("  Closure-b step 2g/3 — gauge-alignment building blocks (WIP)")
     print("=" * 78)
     res = verify_restricted_gens(dps)
-    print(f"  range-basis + restricted generators (deuteron H_6, {res['n_blocks']} blocks):")
-    print(f"    orthonormality   max residual = {res['max_orthonormality_residual']}")
-    print(f"    Hecke relation   max residual = {res['max_hecke_relation_residual']}")
-    print(f"    isotypic e_ξ/e_ν max residual = {res['max_isotypic_residual']}")
-    print(f"    → {'PASS' if res['all_passed'] else 'FAIL'} (tol {res['tolerance']})")
+    print(f"  [a] range-basis + restricted generators (deuteron H_6, {res['n_blocks']} blocks):")
+    print(f"      orthonormality   max residual = {res['max_orthonormality_residual']}")
+    print(f"      Hecke relation   max residual = {res['max_hecke_relation_residual']}")
+    print(f"      isotypic e_ξ/e_ν max residual = {res['max_isotypic_residual']}")
+    print(f"      → {'PASS' if res['all_passed'] else 'FAIL'} (tol {res['tolerance']})")
     print()
-    print("  TODO(closure-b): intertwiner U → A_combiner (partial trace) → H_9.")
-    return 0 if res["all_passed"] else 1
+    mres = verify_isotypic_multiplicity_structure(dps)
+    print(f"  [b] V_ξ⊗V_ν⊗ℂ^c multiplicity structure ({mres['n_blocks']} blocks):")
+    print(f"      joint-weight count + multiplicities vs c^λ_ξν")
+    print(f"      → {'PASS' if mres['all_passed'] else 'FAIL'} ({mres['n_fail']} fail)")
+    for f in mres["failures"]:
+        print(f"        FAIL {f}")
+    print()
+    print("  TODO(closure-b): phase-aligned ladder → U → A_combiner (partial trace) → H_9.")
+    return 0 if (res["all_passed"] and mres["all_passed"]) else 1
 
 
 if __name__ == "__main__":
