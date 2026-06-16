@@ -236,7 +236,13 @@ def main() -> int:
     print(f"  {len(registry)} scalar constants in scope")
 
     rows: list[dict[str, Any]] = []
-    for py in sorted(HERE.glob("*.py")):
+    # Scan the compute tree (HERE.parent = computations/), not just audits/.
+    # Post-reorg HERE.glob saw only audits/ — which MISSED the compute tree
+    # AND false-flagged sibling audits (they legitimately reference the
+    # policed constants). Skip _deprecated and the audits/ dir.
+    for py in sorted((HERE.parent).rglob("*.py")):
+        if "_deprecated" in py.parts or HERE.name in py.parts:
+            continue
         if py.name.startswith("_"):
             continue
         if py.name == "codata_constants.py":

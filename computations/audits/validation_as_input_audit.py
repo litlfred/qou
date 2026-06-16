@@ -196,7 +196,13 @@ def main() -> int:
     strict = "--strict" in sys.argv
 
     rows: list[dict[str, Any]] = []
-    for py in sorted(HERE.glob("*.py")):
+    # Scan the compute tree (HERE.parent = computations/), not just audits/.
+    # Post-reorg HERE.glob saw only audits/ — missing the compute tree and
+    # false-flagging sibling audits (which legitimately import validation
+    # constants to police them). Skip _deprecated and the audits/ dir.
+    for py in sorted((HERE.parent).rglob("*.py")):
+        if "_deprecated" in py.parts or HERE.name in py.parts:
+            continue
         if py.name.startswith("_"):
             continue
         if py.name == "codata_constants.py":
