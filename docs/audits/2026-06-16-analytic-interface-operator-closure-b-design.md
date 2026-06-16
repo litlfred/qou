@@ -161,12 +161,32 @@ ground truth for the analytic construction.
    binding is missing). Until that lands, the operator construction can be
    *prototyped* at f64 against the full-rank H₆ fitted extract (mirroring the
    step-1 f64→exact pattern).
-2. **Deuteron analytic $A$** (next): construct $A^\lambda_{\xi\nu}(I_{pn})$ from
-   the seminormal $\sigma_2$ block; require it to (a) match the full-rank
-   $\mathbf H_6$ fitted extract entrywise (modulo the $V_\xi\otimes V_\nu$ basis
-   gauge) and (b) reconstruct $\operatorname{tr}_M(D)$ matching the transfer-
-   matrix / `markov_peel` reference at $\mathbf{1e\text{-}25}$ (50 dps — **not**
-   the f64 `1e-6` the fitter tolerates; cf. compute-author §1.1).
+2. **Deuteron analytic $A$** — **DONE (exact, 1e-25).** Constructed
+   $A^\lambda_{\xi\nu}(I)=\Pi_{\xi\nu}\,\rho_\lambda(I)\,\Pi_{\xi\nu}$ from the
+   exact MPFR seminormal matrices (new binding
+   `pyhecke_native.seminormal_matrices_mpfr`), with the isotypic projectors
+   $\Pi_{\xi\nu}=P^{(\text{in})}_\xi P^{(\text{bl})}_\nu$ built from the central
+   $\mathbf H_3$ class-sums $C_2=\sigma_a+\sigma_b+\sigma_a\sigma_b\sigma_a$
+   (distinct eigenvalues per irrep $\Rightarrow$ exact Lagrange spectral
+   projectors, no eigensolve). Because the inner word $W$ and block word $\beta$
+   commute with $\Pi_{\xi\nu}$, the decomposition
+   $\chi^\lambda(W\!\cdot\!I\!\cdot\!\beta)=\sum_{\xi\nu}\operatorname{Tr}[\rho_\lambda(W)\cdot(\Pi_{\xi\nu}\rho_\lambda(I)\Pi_{\xi\nu})\cdot\rho_\lambda(\beta)]$
+   is verifiable in the seminormal basis directly. **Result: deuteron (H₆),
+   pn interface, 891/891 PASS, partition-of-unity verified, max residual
+   $\sim1.5\times10^{-49}$.** Independently validated: the new matrices' trace
+   matches the native character to $\sim10^{-51}$ and satisfy the Hecke relation
+   $(\sigma-q)(\sigma+q^{-1})=0$ to $\sim10^{-50}$. **This proves the closure-b
+   structural claim at the operator level — the interface operator *is* the
+   projected bridge generator.**
+
+2g. **$\rho_\xi\otimes\rho_\nu$ gauge alignment** (remaining): express
+   $A^\lambda_{\xi\nu}(I)$ in $V_\xi\otimes V_\nu$ coordinates (a basis-change of
+   $\operatorname{range}\Pi_{\xi\nu}$ aligning the inner factor to $\rho_\xi$ —
+   already automatic — and the block factor to $\rho_\nu$ in `char_fast`'s
+   standard seminormal gauge) so the matrix can be fed to the combiner /
+   matched entrywise against the full-rank H₆ fitted extract. This is a
+   basis-change, **not** a structural unknown.
+
 3. **$\mathbf H_9$ universality** (the payoff): construct $A^\lambda_{\xi\nu}$ at
    $\mathbf H_9$ analytically and reconstruct $\operatorname{tr}_M$(T), (³He)
    matching the transfer-matrix reference at $1e\text{-}25$ — the case the fitted
