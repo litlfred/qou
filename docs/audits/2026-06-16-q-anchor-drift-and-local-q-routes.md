@@ -35,6 +35,12 @@ paper-side statement is stale relative to the 2026-05-28 re-pin.
    table's "neutron β-decay `τ_n`" is a *third* description that matches
    neither the live proton anchor nor the paper's muon anchor. See
    [`2026-05-30-q0-repin-stale-witness-audit.md`](2026-05-30-q0-repin-stale-witness-audit.md).
+   The m_μ L2 status is itself **convention-dependent** — ratio-anchored
+   (`m_e × (m_μ/m_e)_CODATA`) meets the 100× target to numerical noise,
+   while the bare-categorical (`4₁` Geom) prediction misses ~964× —
+   reconciled in [PR #1556](https://github.com/litlfred/qou/pull/1556).
+   The ratio-anchored convention *is* "read `q₀` off the lepton ratio",
+   the defensible kernel of "q is the ratio" (box below).
 
 2. **3rd calibration: `Q_β` vs `m_π`.** The paper blocks make `Q_β` the
    third *input* (fixing the hadronic scale `𝔈₀ = Q_β/|Δ(net)|`). The
