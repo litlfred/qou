@@ -5,9 +5,32 @@ status: in_progress
 type: task
 priority: normal
 created_at: 2026-06-16T02:14:00Z
-updated_at: 2026-06-16T02:14:00Z
+updated_at: 2026-06-16T02:40:00Z
 parent: qz9k
 ---
+
+## Result (2026-06-16) — Stage C scoped + formalize-first pruning; pending human close
+
+Scope doc delivered:
+[`docs/scope/2026-06-16-qbeta-kernel-hunt-stage-c-scope.md`](../docs/scope/2026-06-16-qbeta-kernel-hunt-stage-c-scope.md).
+
+- **Stage C defined:** with C1–C12 refuted, target the **fibre-level q-difference
+  kernel R(q,ξ)** in `F(qξ)=R(q,ξ)·F(ξ)` directly (the one open decay-side axis);
+  formalization target is R(q,ξ), not another c_k value.
+- **Formalize-first pruning (value-add):** the corpus-map agent's "use the q-Lommel
+  ORDER recurrence (binding Δ_λ ladder, constant b=q₀¹⁰+q₀⁻¹⁰) as the c_k template"
+  is a **double category error** — (i) wrong recurrence: c_k are k-indexed →
+  *argument*/contiguity recurrence (`QBesselContiguityRecurrence.lean`), not the
+  *order* recurrence (`QLommelOrderRecurrence.lean`, which the docstring binds to the
+  binding ladder); (ii) wrong class: c_k are **q-holonomic** (first-order (★), q^k-dep
+  coeffs), NOT C-finite — the constant-b recurrence is the degeneration PR #1839
+  already falsified. Confirming numeric: constant-b predicts c_4≈−5.38 vs empirical
+  c_4≈−0.97.
+- **No probe run** — fibre-Habiro axis is owner-gated multi-session research;
+  coordinate before any probe branch. Hoefsmit Stage-B localization noted as a
+  separate, now-unblocked narrowing input.
+- Disambiguated the two overloaded "Stage X" lineages (Hoefsmit per-block infra vs
+  kernel hunt).
 
 ## Goal
 
