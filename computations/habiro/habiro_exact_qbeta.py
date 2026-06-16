@@ -163,10 +163,14 @@ def main():
     print()
     print("  NOTE: The Habiro form gives EXACT tr_M for each atom.")
     print("  The Q_β observable = m_e × f(tr_M_n, tr_M_p, q₀).")
-    print("  The c_k ladder was the Taylor expansion of this exact form.")
-    print("  Both give the same numerical result (5.744 ppb) because")
-    print("  the Habiro series terminates at M=8 and the ladder at N=5")
-    print("  already captures the dominant terms.")
+    print("  The c_k ladder is the Taylor expansion of this exact form.")
+    print("  At the live PROTON-anchored q₀ the N=5 ladder gives ~0.168%")
+    print("  (≈ the c₂ base) — NO improvement over c₂. The pre-re-pin")
+    print("  '5.744 ppb' was a MUON-anchored artifact destroyed by the")
+    print("  2026-05-28 proton re-pin (c₃ anchor sensitivity dc₃/dq≈4.6e6;")
+    print("  c₃+ refuted as real-q, below the AME precision floor). Production")
+    print("  Q_β is c₂-only; improving it needs the fibre-level kernel R(q,ξ),")
+    print("  not the c_k ladder. See docs/audits/2026-06-10-qbeta-ck-state-of-play-synthesis.md.")
 
     # Build witness
     wb = WitnessBuilder("habiro-exact-qbeta", start_time=t0)
