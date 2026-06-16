@@ -91,7 +91,10 @@ LABEL_PREFIXES = ("def:", "thm:", "lem:", "prop:", "cor:", "conj:")
 def _enumerate_production_scripts() -> list[Path]:
     """Find production consumer scripts by name pattern."""
     scripts: list[Path] = []
-    for py in sorted(HERE.glob("*.py")):
+    # Scan the compute tree (computations/), not just audits/ (reorg fix).
+    for py in sorted((HERE.parent).rglob("*.py")):
+        if "_deprecated" in py.parts:
+            continue
         if any(pat in py.name for pat in PRODUCTION_CONSUMER_PATTERNS):
             scripts.append(py)
     return scripts
@@ -101,7 +104,9 @@ def _collect_upstream_refs() -> dict[str, list[str]]:
     """Map witness-file-name → list of other witnesses that name it
     as an upstream (via `upstream_witness_hashes`)."""
     upstream_map: dict[str, list[str]] = {}
-    for w in sorted(HERE.glob("*.witness.json")):
+    for w in sorted((HERE.parent).rglob("*.witness.json")):
+        if "_deprecated" in w.parts:
+            continue
         try:
             d = json.loads(w.read_text(encoding="utf-8"))
         except (OSError, UnicodeDecodeError, json.JSONDecodeError):
