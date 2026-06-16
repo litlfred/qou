@@ -52,10 +52,12 @@ SCAN_ROOTS = [HERE, REPO / "tools"]
 
 
 def _rel(p: Path) -> str:
+    # as_posix() so Windows backslash paths still match the forward-slash
+    # ALLOWLIST entries (Gemini #2355).
     try:
-        return str(p.relative_to(REPO))
+        return p.relative_to(REPO).as_posix()
     except ValueError:
-        return str(p)
+        return p.as_posix()
 
 
 def main() -> int:
@@ -73,7 +75,7 @@ def main() -> int:
             parts = py.parts
             if "_deprecated" in parts or ".lake" in parts:
                 continue
-            if py.name.startswith("test_") or "/tests/" in str(py):
+            if py.name.startswith("test_") or "tests" in parts:
                 continue
             if py.resolve() == Path(__file__).resolve():
                 continue

@@ -56,6 +56,9 @@ def solve_atom_dual_q0_mpfr(prec_bits: int = 167) -> dict:
     }
     proc = subprocess.run([str(binp)], input=json.dumps(payload),
                           capture_output=True, text=True)
+    if proc.returncode != 0:
+        return {"error": f"clarabel binary exit {proc.returncode}: "
+                f"{proc.stderr[:300]}"}
     out = json.loads(proc.stdout) if proc.stdout.strip() else {}
     out["_inputs_float64_free"] = True
     out["_t_str_sample"] = t_str[:3]

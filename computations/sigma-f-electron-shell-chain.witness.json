@@ -2,7 +2,7 @@
   "computation": "sigma-f-electron-shell-chain",
   "auditOnly": true,
   "engine": "mpmath",
-  "timestamp": "2026-06-16T03:54:20.114298+00:00",
+  "timestamp": "2026-06-16T20:00:29.002582+00:00",
   "parameters": {
     "q_0": "1.1099785955573347198997632204832250266562084087802",
     "compute_dps": 60,
@@ -19463,5 +19463,5 @@
       "summary": "\u03c3_F(k) is monotone DECREASING along the dressing chain (after k=3), not increasing \u2014 claim 1's '\u03c3_F peaks at closed shells' is NOT supported by the categorical compute. \u03bc\u22652 degeneracy is GENERIC (conjugate-pair Wedderburn maximisers at many k), not a noble-gas-specific signature \u2014 claim 2's mechanism does not single out closed shells. Reported as computed."
     }
   },
-  "witness_builder_note": "WitnessBuilder unavailable: No module named 'witness_base'"
+  "witness_builder_note": "WitnessBuilder unavailable: WitnessBuilder.__init__() got an unexpected keyword argument 'description'"
 }
