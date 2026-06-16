@@ -89,3 +89,23 @@ CLAUDE.md, the 4 discipline skills, `three-calibration-inputs`,
   3 content blocks + 2 compute docstrings (commits A/B/C). Dashboards
   (low + sweep) re-run clean at α=E₀=4.186 MeV (convention is doc-only;
   compute unperturbed). Intent posted on #2355, #2295.
+
+## Coordinate sweep (2026-06-16 ~20:40, main +115)
+
+- **#2346 reviews:** none yet (`reviews=[]`) — nothing to triage.
+- **Broad-change coordination risk (log).** This branch now carries two
+  *wide* changes that will conflict with siblings on rebase:
+  1. **`Q_β → 𝔔_β` migration** (~138 content `.md`/`.ts` files; `.lean` keeps
+     the `Q_β` identifier).
+  2. **Calibration convention** sweep (CLAUDE.md + 4 skills + calibration
+     blocks: muon-canonical CAL-2, `m_π` CAL-3, `Q_β` derived).
+  Plus the **`𝔙` complex-volume unification** (binding = Re, `𝔔_β` = Im).
+- **Intent posted:** [#2363](https://github.com/litlfred/qou/pull/2363#issuecomment-4723802115)
+  (Q_β Path A counit observable — most direct overlap: notation + `Q_β=Im 𝔙` +
+  derived-not-CAL-3).
+- **Other overlapping siblings (will meet the migration on rebase; not posted
+  individually — flagged here):** #2347 (Markov-M3 knot decoupling), #2348
+  (atom→electron mass / e-Hartree binding), #2325 (m_qCLT factorized binding),
+  #2285 (production mass-tables). All touch mass/binding/Markov content with
+  roman `Q_β`; recommend they rebase onto #2346 after it lands. #2295 (Lean
+  two-layer drift) already has intent re: the repaired `three-calibration-discipline.lean`.
