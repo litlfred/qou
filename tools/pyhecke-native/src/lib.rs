@@ -788,6 +788,34 @@ fn chi_lambda_braid_mpfr(
     seminormal_mpfr::chi_lambda_braid_mpfr(&shape, &word, &q_str, dps)
 }
 
+/// **Exact MPFR seminormal generator matrices** ρ_λ(σ_i) for a partition.
+///
+/// Returns one sparse matrix per Hecke generator σ_1, …, σ_{n-1} (1-indexed),
+/// each as a list of rows; each row is a list of `(col_index, decimal_string)`
+/// pairs with entries at `dps` digits. Exact-precision analogue of the f64
+/// `chi_lambda_matrix`: the operator-valued interface-operator construction
+/// (closure path (b)) needs the seminormal *matrices*, not just their trace.
+#[pyfunction]
+#[pyo3(signature = (shape, q_str, dps=50))]
+fn seminormal_matrices_mpfr(
+    shape: Vec<usize>,
+    q_str: String,
+    dps: u32,
+) -> Vec<Vec<Vec<(usize, String)>>> {
+    seminormal_mpfr::seminormal_matrices_mpfr(&shape, &q_str, dps)
+        .into_iter()
+        .map(|mat| {
+            mat.into_iter()
+                .map(|row| {
+                    row.into_iter()
+                        .map(|(c, v)| (c, v.to_string_radix(10, Some(dps as usize))))
+                        .collect()
+                })
+                .collect()
+        })
+        .collect()
+}
+
 /// Matrix-M block-restricted χ^λ at substrate q.
 ///
 /// Computes χ^λ(T_β)(q) for a parabolic-shaped braid
@@ -980,6 +1008,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_q_atomic, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(seminormal_matrices_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_via_matrix_m_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
