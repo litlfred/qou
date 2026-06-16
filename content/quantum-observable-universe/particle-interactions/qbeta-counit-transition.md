@@ -1,7 +1,7 @@
 The closed form
 [`prop:qbeta-counit-closed-form`](#prop:qbeta-counit-closed-form)
 clarifies the standing of the free-neutron relation
-$Q_\beta = |\Delta(\mathrm{net})|\cdot\mathfrak{E}_0$
+$\mathfrak{Q}_\beta = |\Delta(\mathrm{net})|\cdot\mathfrak{E}_0$
 ([`prop:neutron-qvalue-symbolic`](#prop:neutron-qvalue-symbolic)).
 The relation uses the Frobenius counit $\varepsilon$, whereas the
 per-braid mass is built on the Markov trace $\mathrm{tr}_M$. These
@@ -28,7 +28,7 @@ per-Hecke-step energy is exactly $\mathfrak{E}_0$
 ([energy scale](#rem:energy-scale-planck)). The counit form
 
 $$
-  Q_\beta = \varepsilon(\Delta)\cdot\mathfrak{E}_0
+  \mathfrak{Q}_\beta = \varepsilon(\Delta)\cdot\mathfrak{E}_0
 $$
 
 is therefore the natural transition observable, while the Markov
