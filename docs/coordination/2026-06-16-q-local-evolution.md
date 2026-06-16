@@ -90,6 +90,26 @@ CLAUDE.md, the 4 discipline skills, `three-calibration-inputs`,
   (low + sweep) re-run clean at α=E₀=4.186 MeV (convention is doc-only;
   compute unperturbed). Intent posted on #2355, #2295.
 
+## Coordinate sweep — phase/color/S₅ tranche (2026-06-16 ~23:xx)
+
+- **My PR #2346 review state:** no gemini/copilot review threads (gemini at
+  daily quota — `#issuecomment-4714310301`, not a code issue). Incoming intent
+  from **#2363** (`#issuecomment-4722425655`): q₀-anchor-agnostic, consumes
+  `𝔈₀ = m_e/(q(q−1))`, no file collision; asks a ping only if CAL-3 reframing
+  changes `𝔈₀`. **Verified: my muon-canonical convention leaves `𝔈₀`'s form
+  unchanged (q₀ form unchanged) — no ping needed.**
+- **Scope map (phase/color/S₅ tranche):**
+
+  | PR | relationship | overlap / dep / cherry-pick | action |
+  |---|---|---|---|
+  | **#2346** (this) | lead | — | phase audit + S₅ Lean landed |
+  | **#2297** `friendly-archimedes` (3D color-tube render) | **genuine overlap** — color-tube cubic, `conj:s5-so3-fiber-action`, complex roots {−1,±i} | overlap=high (structural), dep=none, cherry-pick=none; **no file collision** (they: `scripts/knot-plots`+`color-tube-cubic`/`coral-elliptic`; me: `mass-endo`+new Lean+audit) | **intent posted** (`#issuecomment-4724158064`) |
+  | **#1552** α_EM RT Phase 4 (dim H¹(M_Bring)=8) | conceptual EM↔Bring only | overlap=low, no file overlap, modifies no content/Lean, stale (06-13) | **logged, not commented** (avoid noise) |
+  | #2363 Q_β counit | incoming intent (above) | no collision | acknowledged in ledger |
+- **main advanced** `9a2ee428..1017b897` — landed changes are schema-path +
+  content-refactor housekeeping (`5808964b`, `d27b0027`, `fa58e1b1`); no direct
+  conflict with the new phase/color files. **NOT merged silently** (§8).
+
 ## 𝔙 reorg + mass-endo phase investigation (2026-06-16 ~22:xx)
 
 - **Reorg merged.** `claude/complex-volume-one-voice-reorg-2026-06-16` (6 commits)
