@@ -122,6 +122,12 @@ RECORDING_INDICATORS = (
     ".nstr(", "print(", 'f"', "f'", "logging.", "logger.",
 )
 
+# Dict-value recording — `"key": str(M_X_VALIDATION)` stores the anchor into a
+# (string-keyed) data structure (e.g. an `ATOMS = {…}` roster used later in
+# `B = M_codata − pred` comparisons), not a derivation input (refinement,
+# 2026-06-16 — the dict-roster false-positive class, parallel to the I8 fix).
+DICT_VALUE_RX = re.compile(r"""["'][^"']*["']\s*:\s*""")
+
 
 def _classify_script(path: Path) -> dict[str, Any] | None:
     """Audit one Python script for validation-constant usage."""
@@ -215,6 +221,7 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
                 m.group(1) in found for m in COMPARISON_KW_PATTERN.finditer(line)
             )
             or any(ind in line for ind in RECORDING_INDICATORS)
+            or DICT_VALUE_RX.search(line)  # `"key": str(M_X_VALIDATION)` roster
         )
         if not is_ok:
             am = re.match(r"\s*([A-Za-z_]\w*)\s*=", line)
