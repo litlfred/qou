@@ -90,7 +90,32 @@ This is exactly the failure the staleness-propagation design targets:
    the categorical path *does* produce (and that it is not yet within X%
    of experiment), so a stale fitted value can't sit unflagged.
 
-## Follow-ups (owner-scoped)
+## Sweep for other retired-fit witnesses (#8, 2026-06-16)
+
+Swept all `*.witness.json` for committed binding values ≈ the AME2020
+experimental anchors (D 2.224, T 8.482, ³He 7.718, ⁴He 28.296, ⁶Li
+31.995, ¹²C 92.162, ¹⁶O 127.619) that the current categorical path does
+not reproduce. Result — **`hadron-knot-table` is the only confirmed
+production case**:
+
+- Most near-experimental values are **`B_AME_MeV`** fields — the
+  experimental anchor stored *alongside* a prediction for comparison
+  (legitimate, not a fit).
+- The rest are either under `_deprecated/` (out of scope) or unwired
+  **exploratory probes/prototypes** (`prototype-gs-nf-shell-binding`,
+  `binding-a3plus-full-theta-assembly`, `b-over-m-order-probe`,
+  `probe-binding-measure-search`, `delta-lambda-feed-analysis` — none
+  content-wired).
+- The **only content-block-wired** witness advertising a near-experiment
+  binding the categorical path can't reproduce is `hadron-knot-table`
+  (⁴He `B_MeV = 28.1915`), referenced by
+  `appendix-knot-operations/hadron-level-knot-table.ts` +
+  `observations/mass-formula-validation.md`.
+
+So the de-fitting-laundering class is **bounded to hadron in
+production** — good news. The exploratory probes that fit binding are a
+separate (lower-severity) matter; they live in `probe_`/`prototype_`
+files by name and are not paper claims.
 
 1. **Decide ⁴He binding's honest reported value.** The current
    `binding_energy` categorical path gives ~0.72 MeV; per-isotope binding
