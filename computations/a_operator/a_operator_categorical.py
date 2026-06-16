@@ -562,8 +562,8 @@ def verify_operator_decomposition_exact(dps: int = 50) -> dict:
 # ──────────────────────────────────────────────────────────────────────
 
 def categorical_A_interface(lam: tuple[int, ...], xi: tuple[int, ...],
-                         nu: tuple[int, ...], interface: str,
-                         n_inner: int, dps: int = 50):
+                            nu: tuple[int, ...], interface: str,
+                            n_inner: int, dps: int = 50):
     """TODO(closure-b): the categorical interface operator A^λ_{ξν}(I), I ≠ 1.
 
     Spec (what this MUST return): the (d_ξ·d_ν)×(d_ξ·d_ν) matrix
