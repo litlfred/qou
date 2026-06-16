@@ -9,7 +9,7 @@ description: >
   origin/main + open active PRs + newly-opened PRs for
   non-canonical empirical/fitting/calibration inputs beyond the
   three categorically allowed (CAL-1 m_e, CAL-2 m_μ/m_e→q_0,
-  CAL-3 Q_β), numerology, or justification/rationalization in
+  CAL-3 m_π; Q_β is derived), numerology, or justification/rationalization in
   place of derivation. Inherits shared mechanics (Monitor,
   subscriptions, queue, ledger, idle sweep, author-ask,
   watch-prepared-PRs, witness-drift recovery, billing-quick-fail
@@ -71,10 +71,20 @@ defines the rule it enforces.
 |----|----------|--------------|------------------|---------------|
 | **CAL-1** | $m_e$ (CODATA) | $H^0$ | std (2,1) | leptonic mass scale |
 | **CAL-2** | $m_\mu/m_e \approx 206.768$ (CODATA) | $H^1$ | alt (1³) | substrate $q_0$ |
-| **CAL-3** | $Q_\beta(n) \approx 0.78233$ MeV (PDG) | $H^2$ | sym (3) | hadronic scale $\mathbf{E}_0$ |
+| **CAL-3** | $m_{\pi^\pm} \approx 139.57$ MeV (PDG) | orthogonal class | sym (3) | meson / chiral scale ($\mathrm{Vol}(\mathrm{Hopf})=0$) |
 
 These are **exhaustive**. A fourth dimensional input anywhere is
 a hard audit failure.
+
+**$Q_\beta$ is derived, not a calibration.** $Q_\beta = m_e\,|q_0^2-2q_0-1|(q_0+1)/(2q_0^3)$
+is a function of CAL-1 + CAL-2 (the bar-odd $\sinh$ partner of the
+bar-even $\cosh$ meson scale $m_\pi$); the neutron $\beta$-decay width
+$\mathfrak{D}_\beta/\tau_n$ is its experimental face, **not** a third
+calibration. **Physical-Observations anchor note:** the canonical CAL-2
+is $m_\mu/m_e$, but $q_0$ may be *numerically* anchored on the
+more-precise proton ratio $m_p/m_e$ (re-pin 2026-05-28) — this is a
+precision substitution within the same $H^1$ datum and is **not** a
+`second-q0-pin` violation.
 
 ## Slot B — §3 trigger filter
 
@@ -123,14 +133,14 @@ number`, `rationalization`, `CODATA`, `tautolog`, `back-fit`,
 
 | Violation | Severity | Definition | Auto-fix possible? |
 |-----------|----------|------------|--------------------|
-| `fourth-calibration` | critical | Script/block introduces an external input beyond {m_e, m_μ/m_e, Q_β(n)} | No — author ask |
+| `fourth-calibration` | critical | Script/block introduces an external input beyond {m_e, m_μ/m_e, m_π} (Q_β is derived, not an input) | No — author ask |
 | `coefficient-fit` | critical | Bethe-Weizsäcker / mass-formula coefficient labelled "ad hoc", "approx", "tuned to AME/CODATA" | Author ask; sometimes "demote to remark" |
 | `numerology` | critical | Magic number ({2,8,20,28,50,82,126}, "0.7823...", any literal) asserted without derivation chain | Author ask |
 | `hidden-codata-literal` (P31) | major | Free-floating CODATA string in production script outside the registry | Yes — `codata_constants` migration |
 | `tautology` | major | "Derivation" that uses the result as input (LO tautology pattern, e.g. $\rho_K^{LO}$ via $m_p, m_n$ CODATA) | Yes — apply tautology banner + flag in `.md` |
 | `archimedean-leak` | critical | Algebraic-side derivation consumes $\mathrm{Vol}(K)$, hyperbolic structure, Mostow constant, etc. | Author ask |
 | `second-q0-pin` | critical | A second independent fit to $q_0$ beyond CAL-2 | Author ask |
-| `second-hadronic-scale` | critical | $E_0$ pinned by something other than CAL-3 | Author ask |
+| `second-meson-scale` | critical | A second meson/hadronic scale introduced beyond CAL-3 = $m_\pi$ (recall $E_0$ and $Q_\beta$ are *derived* from CAL-1+CAL-2, not pinned by CAL-3) | Author ask |
 | `three-route-convergence` | major | "Three routes agree at q_0" claim where routes compute different categorical objects | Author ask; demote to remark |
 | `universal-extrapolation` | major | Single-atom result extrapolated to "universal" | Author ask; demote |
 | `rationalization` | major | Prose in a proposition body arguing *why* a value is right rather than *deriving* it | `scientific-accuracy` rewrite or author ask |
@@ -163,7 +173,7 @@ Per `docs/audits/2026-05-11-three-calibration-discipline-violations.md`:
 | Class | What it is | How to mark |
 |-------|------------|-------------|
 | **Class-A** | Acknowledged stub with explicit "calibrated" / "tautology" banner — block/script openly states it is currently empirical and lists what would derive it | Banner in docstring (Python) or front-matter callout (`.md`); commit message cites `Class-A` |
-| **Class-B** | Baseline-extraction script that *produces* the calibration input (e.g. computes $m_\mu/m_e$ → $q_0$, or extracts $Q_\beta$) — by definition it consumes CODATA | Filename or top-level docstring labels purpose; review confirms no algebraic-side claim is drawn from it |
+| **Class-B** | Baseline-extraction script that *produces* the calibration input (e.g. computes $m_\mu/m_e$ → $q_0$, or extracts $m_\pi$) — by definition it consumes CODATA/PDG | Filename or top-level docstring labels purpose; review confirms no algebraic-side claim is drawn from it |
 | **Class-C** | Diagnostic probe / cross-check — read-only, never feeds a downstream witness, purpose is to *compare* an algebraic-side prediction against CODATA | Docstring `# Class: C — diagnostic probe` + no `*.witness.json` consumer |
 
 When the watcher classifies a finding as `wontfix-allowed`, it

@@ -97,7 +97,7 @@ code lands.
 | Source | What it gives you | Read time |
 |--------|-------------------|----------:|
 | [`docs/precision-goals.md`](../../docs/precision-goals.md) | **L1 (compute precision) vs L2 (per-observable accuracy)** — what "1 ppb" means in QOU; substrate q_0 conventions; subgoals; CAL-2 floor | 15 min |
-| [`CLAUDE.md` §Precision goals (STRICT)](../../CLAUDE.md) | three-calibration discipline (CAL-1 m_e, CAL-2 m_μ/m_e, CAL-3 Q_β); no fitting; Δ_λ gate (no 7th ansatz) | 10 min |
+| [`CLAUDE.md` §Precision goals (STRICT)](../../CLAUDE.md) | three-calibration discipline (CAL-1 m_e, CAL-2 m_μ/m_e, CAL-3 m_π; Q_β derived); no fitting; Δ_λ gate (no 7th ansatz) | 10 min |
 | [`CLAUDE.md` §LP/SDP duals — first-class infra](../../CLAUDE.md) | every LP/SDP must emit `y0_star`, `y_star`, `active_set`, `primal_obj`, `dual_obj`, `duality_gap`; `lp_dual_solver.py` is the canonical entry | 5 min |
 | [`.claude/skills/local/production-vs-exploratory-discipline.md`](production-vs-exploratory-discipline.md) | **CAL-4 / empirical-fit / numerology bright-line** — 3-category framework (production / exploratory / numerology), 13-driver canonical menu, Rule 14 escalation, q-locality gate, pre-promotion 7-step checklist. Read BEFORE deciding whether a candidate goes into a `*_50dps.py` production script or stays in a `probe_*.py` exploratory file. | 15 min |
 | [`docs/audits/2026-05-20-compute-optimization-roadmap.md`](../../docs/audits/2026-05-20-compute-optimization-roadmap.md) | current optimization roadmap — Tier 1.A through 1.F | 10 min |
@@ -192,8 +192,8 @@ Only three calibration anchors:
 | # | Anchor | Source |
 |---|--------|--------|
 | CAL-1 | electron mass `m_e` | `codata_constants.M_E_MEV` |
-| CAL-2 | mass ratio `m_μ / m_e` | derived |
-| CAL-3 | beta-decay Q-value `Q_β(n)` | derived |
+| CAL-2 | lepton mass ratio `m_μ / m_e` → `q_0` | CODATA (phys-obs may anchor `q_0` on `m_p/m_e` for precision) |
+| CAL-3 | charged-pion mass `m_π` (meson scale) | PDG (`Q_β` is *derived* from CAL-1+CAL-2, not a calibration) |
 
 A **fourth calibration is forbidden.** Any compute that introduces a new
 free parameter calibrated against an experimental observable will be
