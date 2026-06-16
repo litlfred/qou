@@ -67,6 +67,16 @@ class** with the **geometric fibre map left OPEN**:
 This is the **single open object** for: per-atom mass multiplier λ(K) (GAP-A-4), per-partition
 binding Δ_λ (GAP-A-3), and the lepton tower ξ_ℓ / m_τ (option 2). They are one problem.
 
+> **Combinatorial backbone identified + VERIFIED (2026-06-16 follow-up).** The 2026-06-13
+> [`functor-resolution doc`](2026-06-13-s5-so3-fiber-action-functor-resolution.md) proposes the
+> **combinatorial** side of the open functor is $\mathrm{Res}^{S_5}_{S_3}$ and its branching
+> backbone is now verified
+> ([`2026-06-16-s5so3-branching-backbone-verified.md`](2026-06-16-s5so3-branching-backbone-verified.md)):
+> $(3,2)\downarrow S_3=(3)\oplus2(2,1)$, $(3,1,1)\downarrow S_3=(1,1,1)\oplus2(2,1)\oplus(3)$,
+> electron−muon difference $=$ sign rep $(1,1,1)$ (all exact). So "awaiting the functor" is precise
+> only for the **geometric** fibre map (partition ↦ A₅ rotation on Bring) + Markov-trace shift +
+> 210 ppb resolution — the combinatorial candidate is identified, not open.
+
 ## 4. Critical-distance flag — the 2026-06-13 "Formal Resolution" is overstated
 
 [`2026-06-13-gap-a4-operator-valued-muon-branching.md`](2026-06-13-gap-a4-operator-valued-muon-branching.md)
@@ -114,6 +124,8 @@ branch. **Not** a per-braid ξ_ℓ fit, **not** a 7th Δ_λ ansatz, **not** a GA
 ## 7. Cross-references
 
 - [`2026-06-05-gap-a4-final-retrospective.md`](2026-06-05-gap-a4-final-retrospective.md) — 22 closures → one conjecture
+- [`2026-06-13-s5-so3-fiber-action-functor-resolution.md`](2026-06-13-s5-so3-fiber-action-functor-resolution.md) — the candidate combinatorial functor $\mathrm{Res}^{S_5}_{S_3}$
+- [`2026-06-16-s5so3-branching-backbone-verified.md`](2026-06-16-s5so3-branching-backbone-verified.md) — branching backbone verified + functor status tiered (this session's follow-up)
 - [`2026-06-13-gap-a4-operator-valued-muon-branching.md`](2026-06-13-gap-a4-operator-valued-muon-branching.md) — the live attack (§4 flag above)
 - [`2026-06-04-gap-a3-brane-tower-level-selection-scope.md`](2026-06-04-gap-a3-brane-tower-level-selection-scope.md) — the GAP-A-3 P_λ scope (channel refuted)
 - [`lepton-mass-tower-canonical.md`](../../content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md) — Path A (ξ_ℓ underdetermined)
