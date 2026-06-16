@@ -87,3 +87,45 @@ group-theoretic statement that these three readings are orthogonal sectors
 of one trace object — and the rigidity that bars the continuous phase from
 being the discrete color charge.
 
+## Classical antecedents of the involutive reading
+
+Resolving one object into observables under an involution is a recurring
+structure, and four classical instances frame the present one.
+
+- **Frobenius–Schur indicator.** The involution $\chi\mapsto\chi(g^{-1})$ on
+  characters — the bar-involution $q\mapsto q^{-1}$ on the Hecke side — sorts
+  every irreducible representation as real, quaternionic, or complex. The
+  bar-even (binding, $\cosh$) and bar-odd ($\beta$-decay, $\sinh$) channels
+  are the rank-one shadow of this trichotomy on the trace.
+- **Modular conjugation.** The Markov trace is a trace on a finite von
+  Neumann algebra \cite{jones1985}, and every such algebra carries the
+  Tomita–Takesaki modular conjugation $J$ and modular operator $\Delta$. The
+  observable elements are the $J$-fixed (self-adjoint) ones, and
+  $a=\tfrac12(a+a^*)+\tfrac12(a-a^*)$ is the algebra-level bar-parity split;
+  the polar reading mass $=\lVert\mathrm{tr}_M\rVert$, phase
+  $=\arg\mathrm{tr}_M$ is its modulus–modular-flow form.
+- **Weil operator.** On a polarized Hodge structure the Weil operator
+  supplies the complex structure that packages real harmonic periods into a
+  polarized complex period; the complex volume $\operatorname{Vol}+i\,
+  \mathrm{CS}$ \cite{neumann-zagier1985} is such a period and
+  $H^1(\mathrm{Bring})=2W$ such a structure — the Hodge-theoretic home of the
+  complex-volume half.
+- **Conjugate-variable amplitude.** The oscillator amplitude $a=q+ip$
+  combines a canonically conjugate pair through the symplectic complex
+  structure, with $\lVert a\rVert^2$ the energy and $\arg a$ the phase — the
+  oldest instance of "the modulus is the magnitude, the argument is the
+  phase" of one complex amplitude.
+
+The same reading is, in physics, the **complex-energy / resonance**
+tradition: a state is a complex pole $\mathfrak{E}=\mathfrak{m}-i\Gamma/2$
+(Gamow; Breit–Wigner) whose real part is the mass and whose imaginary part is
+the decay width, the bound sector lying on the conjugation-fixed real axis and
+the optical theorem tying the imaginary part to the total decay rate; the
+Kramers–Kronig dispersion relations lock the reactive (real) and absorptive
+(imaginary) parts of one causal response. There the involution is complex
+conjugation / time reversal; here the bar-involution $q\mapsto q^{-1}$ plays
+that role at the fibre level. The framework's claim is not the involutive
+reading but its realization on the categorical knot trace, where
+$\operatorname{Im}(q_0)=0$ at the archimedean level renders the two parts
+separately real observable shadows.
+
