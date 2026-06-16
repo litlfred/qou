@@ -211,6 +211,50 @@ re-pin lever ($\Delta q_0\times$ lever, doc §1), not a categorical projector co
 So `conj:s5-so3-fiber-action` is now sharply localized: the **geometric Reeb=functor identification** (ing. 4) is
 the open object; the muon-mass *physics* via Wedderburn projection (ing. 5) is refuted. No fit was introduced.
 
+## Ingredient 4 geometric leg — formalize-first scoping (2026-06-16, fourth pass)
+
+The sole remaining structural unknown is the **geometric leg of the commuting square**: that the
+$A_5$-equivariant Reeb flow on the spin-fibre $\mathbb{CP}^1$ *equals* the (now-concrete) Hecke-tower
+restriction functor. Before treating this as a wide open construction, decompose it and apply the
+formalize-first prune:
+
+**The commuting square (precise).** For a braid $\beta$ routed through generation degree $\ell$:
+$$
+\underbrace{\text{Reeb-thread}_\ell(\beta)\big|_{\text{3-tube}}}_{\text{geometric}}
+\;\overset{?}{=}\;
+\underbrace{\mathrm{tr}^{H_3}_M\!\big(\mathrm{Res}^{S_5}_{S_3}\,E_{\lambda(\ell)}\,\rho_5(\beta)\big)}_{\text{algebraic}}
+$$
+where $\lambda(\ell)$ is the $S_5$ block of degree $\ell$ (verified bridge: $\ell{=}1\to(3,1,1)$,
+$\ell{=}2\to(3,2)$) and the 3-tube is the $123\to345$ embedding.
+
+**Decomposition into three pieces:**
+
+1. **$S_3$ base case — ESTABLISHED.** The existing exceptional-divisor Reeb construction already threads the
+   six $S_3$ braid words into six knot operators whose Markov traces are the $H_3$ Wedderburn-channel values
+   (`exceptional-divisor-reeb-intro.md`; the channel-trace machinery is live — e.g. the figure-eight values
+   `FIG8_R_311/R_32/R_41` used in the ingredient-5 compute). So the geometric$=$algebraic identity holds at
+   the 3-strand base.
+2. **Ocneanu-trace consistency — STANDARD (Jones).** The Markov trace is a consistent family on the Hecke tower
+   $H_3\subset H_4\subset H_5$: $\mathrm{tr}_{n+1}|_{H_n}=\mathrm{tr}_n$ and
+   $\mathrm{tr}_{n+1}(x\sigma_n)=z\,\mathrm{tr}_n(x)$ for $x\in H_n$. The Bratteli restriction is box removal
+   $=$ the verified $\mathrm{Res}^{S_5}_{S_3}$ branching.
+3. **$H_5$ extension — OPEN (geometric only).** A 5-strand Reeb construction on the Bring **spin** bundle whose
+   Markov trace is the $H_5(q)$ Ocneanu trace, $2I$-equivariantly.
+
+**Formalize-first prune (the narrowing).** Pieces 1+2 **pin the algebraic target of any $H_5$ extension on the
+3-tube** — by Ocneanu consistency the trace of the threaded $H_5$ operator restricted to the 3-tube is *forced*
+to equal the existing $H_3$ construction, and the 2-spectator-strand contribution is determined by the Markov
+relations ($\mathrm{tr}(x)$ and $\mathrm{tr}(x\sigma_n)=z\,\mathrm{tr}(x)$). **Therefore the open problem is NOT
+"which algebraic functor"** — that is forced to be restriction, with no free parameters — **but purely whether a
+$2I$-equivariant 5-strand Reeb (geometric) realization EXISTS** matching the forced target.
+
+Consequence for how to attack it: **do not run an algebraic search over candidate $H_5\to H_3$ functors** (the
+target is rigid). The work is a *geometric existence* construction — a $2I$-equivariant contact/Sasakian
+structure on the 5-strand Bring spin bundle whose Reeb flow's Markov trace is the (already-determined) $H_5$
+Ocneanu trace. This is contact + spin geometry on the Bring surface, owner-gated and multi-session; it is the
+genuine remaining content of `conj:s5-so3-fiber-action`. Everything algebraic/combinatorial around it
+(ingredients 1–3, the algebraic leg of 4) is now settled.
+
 ## Risks / honest blockers (critical-distance)
 
 - **Building 1–4 proves the geometric map EXISTS; it does NOT guarantee the physics.** The $S_3$-side
