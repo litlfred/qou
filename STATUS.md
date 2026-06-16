@@ -19,6 +19,7 @@
 | **Q_β c_k flip-flop prevention** | enforcement live on main (PR #1577 merged: canonical-no-negative-result + ck-tiered-not-binary) | (lives in 1ppq-qbeta.md flip-flop history) | — |
 | **Lean uniqueness wiring** | ~18% witness coverage | (per-PR) | #1572 |
 | **Mass-sweep gap (A ≥ 4)** | mean abs err 4.25% pre-2026-06-03; α-cluster wire-up landed PR #1756 — 7 atoms (¹⁶O / ²⁰Ne / ²⁴Mg / ²⁸Si / ³²S / ³⁶Ar / ⁴⁰Ca) moved from B=0 to α-recursion B_pred, m_err improved from ~+0.9% to ~−0.1% (10× better); non-α-cluster A > 12 (32 atoms) still gated on H_{3A} kernel | (lives in option-e.md + [`docs/workplans/2026-06-03-per-knot-mass-table-wireup-workplan.md`](docs/workplans/2026-06-03-per-knot-mass-table-wireup-workplan.md)) | #1756 |
+| **s5-so3 fibre-action keystone** | geometric leg reduced to one differential-geometry problem: selection ℓ→λ **realized** by the Hopf moment map μ; strand fibre forced to colour ℂ³; static coupling Schur-forced; refuted = 210 ppb muon mechanism + colour⊗spin + Reeb-resonance; **open** = does the Wu-manifold SU(3)/SO(3) Sasakian's equivariant index reproduce the Ocneanu weights `W_λ` | [`s5-so3-keystone.md`](docs/coordination/s5-so3-keystone.md) | (8 PRs merged 2026-06-16; sibling A≥3 compute #2369/#2371/#2372) |
 
 ## Cross-cutting queues
 
