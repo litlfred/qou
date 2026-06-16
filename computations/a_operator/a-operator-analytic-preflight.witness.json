@@ -1,0 +1,74 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-16T04:06:33.048056+00:00",
+  "commitSha": "51dd837969e39ea2e52a187b4d6a6985ebd84793",
+  "assertions": [
+    {
+      "name": "dimension_identity_holds",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "restriction d_λ = Σ c^λ_ξν d_ξ d_ν"
+    },
+    {
+      "name": "chi_identity_reduction_f64",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "χ^λ(disjoint) = Σ c^λ_ξν χ^ξ χ^ν vs chi_lambda_fast_mp (f64-limited ~1e-14; exact 1e-25 path = closure-b step 2)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "a-operator-analytic-preflight",
+  "scriptFile": "a_operator_analytic.py",
+  "scriptHash": "12b7dcd5b5bc",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Closure-b preflight for the analytic interface operator A^λ_{ξν}(I): the I=identity reduction A^λ_{ξν}(1)=c^λ_{ξν}·1 (Wenzl LR-scalar limit) cross-checked at 50 dps against the seminormal ground truth, plus the restriction-dimension identity. Steps 2-3 (bridge deformation, H_9 universality) are scaffolded TODO(closure-b).",
+  "auditOnly": "docs/audits/2026-06-16-analytic-interface-operator-closure-b-design.md",
+  "parameters": {
+    "n_inner": 3,
+    "n_block": 3,
+    "dps": 50
+  },
+  "data": {
+    "dimension_identity": {
+      "n_inner": 3,
+      "n_block": 3,
+      "n": 6,
+      "n_partitions": 11,
+      "all_passed": true,
+      "failures": []
+    },
+    "chi_disjoint_reduction": {
+      "n_inner": 3,
+      "n_block": 3,
+      "n": 6,
+      "dps": 50,
+      "precision_note": "LOSSY f64 (~1e-14) — chi_lambda_fast_mp is f64-limited at the seminormal source",
+      "n_checks": 891,
+      "n_fail": 0,
+      "max_absolute_residual": "2.8565748e-15",
+      "max_relative_residual_wellcond": "9.9418644e-15",
+      "tolerance_abs": "1.0e-11",
+      "tolerance_rel": "1.0e-11",
+      "all_passed": true,
+      "worst_failure": null
+    }
+  }
+}
