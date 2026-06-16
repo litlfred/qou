@@ -102,16 +102,16 @@ def lagrange_projectors(C: np.ndarray, present_eigs: dict) -> dict:
 
 def split_atom_word(word):
     """Split a (6,3) A=3 atom word into (inner H_6 gens≤4, interface gen5,
-    outer H_3' gens≥6). Asserts block-sequential structure."""
-    inner = [op for op in word if op[2] <= 4]
-    iface = [op for op in word if op[2] == 5]
-    outer = [op for op in word if op[2] >= 6]
-    assert len(iface) == 1, f"expected single gen-5 interface, got {len(iface)}"
-    # sequential check: every inner op precedes the interface precedes every outer
-    idx_iface = word.index(iface[0])
-    assert all(word.index(op) < idx_iface for op in inner)
-    assert all(word.index(op) > idx_iface for op in outer)
-    return inner, iface[0], outer
+    outer H_3' gens≥6). Position-based slicing (robust to duplicate ops —
+    `list.index` would return the first match and mis-verify ordering)."""
+    iface_pos = [i for i, op in enumerate(word) if op[2] == 5]
+    assert len(iface_pos) == 1, f"expected single gen-5 interface, got {len(iface_pos)}"
+    p = iface_pos[0]
+    inner, iface, outer = word[:p], word[p], word[p + 1:]
+    # block-sequential structure: prefix is all H_6 (gen ≤ 4), suffix all H_3' (gen ≥ 6)
+    assert all(op[2] <= 4 for op in inner), "inner block has gen > 4 before interface"
+    assert all(op[2] >= 6 for op in outer), "outer block has gen < 6 after interface"
+    return inner, iface, outer
 
 
 def main() -> int:
