@@ -403,27 +403,35 @@ def gauge_aligned_A_combiner_general_rust(lam: tuple[int, ...], n_inner: int,
             "(pip install -e tools/pyhecke-native) — the Rust combiner from "
             "PR #2376") from e
     from lr_coefficients import lr_coef
-    q = mp.mpf(q_str)
-    h = q - 1 / q
-    d_pn = mp.nstr(-h / 2, dps + 5)
-    ev_in = _classsum_eigenvalues(n_inner, q_str, dps)
-    ev_bl = _classsum_eigenvalues(n_block, q_str, dps)
-    p_in, p_bl = partitions_of(n_inner), partitions_of(n_block)
-    eig_in = [mp.nstr(ev_in[p], dps + 5) for p in p_in]
-    eig_bl = [mp.nstr(ev_bl[p], dps + 5) for p in p_bl]
-    out = {}
-    for mu in p_in:
-        for nu in p_bl:
-            R = pn.gauge_aligned_a_combiner_mpfr(
-                list(lam), n_inner, list(mu), list(nu),
-                eig_in, mp.nstr(ev_in[mu], dps + 5),
-                eig_bl, mp.nstr(ev_bl[nu], dps + 5), d_pn, q_str, dps)
-            if not R:
-                continue
-            A = mp.matrix([[mp.mpf(x) for x in row] for row in R])
-            out[(mu, nu)] = {"A": A, "c": lr_coef(mu, nu, lam),
-                             "d_mu": aoa.partition_dim(mu),
-                             "d_nu": aoa.partition_dim(nu)}
+    # Raise the mpmath precision floor for the whole body (Gemini review #2380):
+    # the Python boundary parses Rust's dps-digit strings via mp.mpf and
+    # serialises eigenvalues/interface via mp.nstr — under the caller's default
+    # global mp.dps (15) those would silently truncate the 50-digit values.
+    # workdps restores the caller's context on exit; nstr digit counts are tied
+    # to the active mp.mp.dps so caller-configured extra precision is preserved.
+    with mp.workdps(dps + 10):
+        sig = mp.mp.dps
+        q = mp.mpf(q_str)
+        h = q - 1 / q
+        d_pn = mp.nstr(-h / 2, sig)
+        ev_in = _classsum_eigenvalues(n_inner, q_str, dps)
+        ev_bl = _classsum_eigenvalues(n_block, q_str, dps)
+        p_in, p_bl = partitions_of(n_inner), partitions_of(n_block)
+        eig_in = [mp.nstr(ev_in[p], sig) for p in p_in]
+        eig_bl = [mp.nstr(ev_bl[p], sig) for p in p_bl]
+        out = {}
+        for mu in p_in:
+            for nu in p_bl:
+                R = pn.gauge_aligned_a_combiner_mpfr(
+                    list(lam), n_inner, list(mu), list(nu),
+                    eig_in, mp.nstr(ev_in[mu], sig),
+                    eig_bl, mp.nstr(ev_bl[nu], sig), d_pn, q_str, dps)
+                if not R:
+                    continue
+                A = mp.matrix([[mp.mpf(x) for x in row] for row in R])
+                out[(mu, nu)] = {"A": A, "c": lr_coef(mu, nu, lam),
+                                 "d_mu": aoa.partition_dim(mu),
+                                 "d_nu": aoa.partition_dim(nu)}
     return out
 
 
