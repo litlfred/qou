@@ -5,8 +5,25 @@ status: in_progress
 type: milestone
 priority: high
 created_at: 2026-06-16T02:14:00Z
-updated_at: 2026-06-16T02:14:00Z
+updated_at: 2026-06-16T02:52:00Z
 ---
+
+## Session results (2026-06-16) — all three children delivered (pending human close)
+
+PR [#2345](https://github.com/litlfred/qou/pull/2345). Each child produced a tiered,
+grounded, non-fitting finding (verified against source, not just the corpus-map agents):
+
+| Child | Verdict | Artifact |
+|-------|---------|----------|
+| `k9td` Koide | **refuted against a fit** — Koide forces m_τ to 62 ppm but QOU has no Z/3 democracy / √m-amplitude / categorical 2/3 ⇒ CAL-4 import, out of scope | `docs/audits/2026-06-16-koide-tau-forcing-assessment.md` |
+| `qkhc` Q_β Stage C | **scoped + pruned** — Stage C = target fibre kernel R(q,ξ); c_k are q-holonomic (argument recurrence), NOT the C-finite order recurrence (binding ladder) — kills the q-Lommel conflation on paper | `docs/scope/2026-06-16-qbeta-kernel-hunt-stage-c-scope.md` |
+| `cbnf` binding | **state pinned + direction sharpened** — (1+q)/2 is a refuted near-match (no re-chase); GAP-A-3 is the non-fit direction; P_λ≡1 ⇒ tr_M, so P_λ = binding's deviation from the flat trace distribution | `docs/audits/2026-06-16-categorical-binding-wiring-state-and-no-fit-direction.md` |
+
+Common thread: each corrected/sharpened a tempting-but-wrong path
+(torus-Vol=0 overstatement; q-Lommel order-recurrence conflation; re-chasing
+(1+q)/2) rather than running a blind probe. Two probes (Q_β fibre kernel,
+GAP-A-3 P_λ) are infra-gated (no pyhecke_native) + owner-gated — next steps
+recorded, not run. No fitting, no CAL-4, no production wire/un-wire.
 
 Consolidated work-plan from user request (2026-06-16): "work on beans"
 1. `k9td` — koide-tau-forcing-derivation
