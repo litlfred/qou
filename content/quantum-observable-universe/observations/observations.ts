@@ -173,7 +173,8 @@ export default chapter({
     // example) and the magic-shell consequences (trace ratio,
     // double-magic LR-fusion, magic-numbers-from-q, Strutinsky).
     section({
-      title: "Beta decay: mechanism, half-life, and tritium",
+      title:
+        "Beta decay as $\\operatorname{Im}\\mathfrak{V}$: $Q$-values, half-life, and tritium",
       label: "sec:beta-decay-mechanism",
       blocks: [
         "beta-decay-observations-intro",
@@ -208,7 +209,8 @@ export default chapter({
       ],
     }),
     section({
-      title: "Beta decay: magic-shell consequences",
+      title:
+        "Beta decay: magic-shell structure and complex-volume consequences",
       label: "sec:beta-decay-magic-shells",
       blocks: [
         "beta-decay-magic-shells-intro",
