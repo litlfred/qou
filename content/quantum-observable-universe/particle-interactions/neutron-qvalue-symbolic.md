@@ -122,7 +122,12 @@ not derived from the canonical per-braid mass formula). No
 hadronic calibration (neutron mass, proton mass, or $\mathfrak{Q}_\beta$
 itself) is used in the closed form *given the ansatz*; the
 +0.17% match is empirical evidence for the ansatz but does
-not derive it. See
+not derive it. The functional standing of the relation — the
+counit $\varepsilon$ used here versus the Markov trace
+$\mathrm{tr}_M$ of the mass formula — is analysed in
+[`prop:qbeta-counit-closed-form`](#prop:qbeta-counit-closed-form)
+and [`rem:qbeta-counit-transition`](#rem:qbeta-counit-transition);
+see also
 [`docs/audits/-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md)
 for the audit and resolution paths.
 

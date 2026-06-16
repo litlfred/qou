@@ -170,6 +170,8 @@ export default chapter({
         "ground-state-ordering-table2-data",
         "ground-state-ordering-table1-data",
         "neutron-qvalue-symbolic",
+        "qbeta-counit-closed-form",
+        "qbeta-counit-transition",
         "delta-pre-archimedean",
         // Merged from the former auto-split "Transfer matrices and beta
         // decay : vs" (small base, strongly-related continuation — the
