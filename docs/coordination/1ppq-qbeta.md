@@ -470,6 +470,24 @@ to `ε(Δ)·𝔈₀` with +0.17% as the `N=0` remainder.
 #2363 is q₀-anchor-agnostic, generic-`q` Lean, no conflict with deferred
 q₀-selection). #2127 (Habiro/QA plumbing) — silent pass.
 
+**Reconciliation flag (§6, 2026-06-16, #2346 ↔ #2363).** #2346 promotes
+`Q_β → 𝔔_β` (fraktur, ~138 files) and adds `conj:binding-qbeta-complex-volume`:
+`𝔙(K) = E₀·tr_M((Π_free−1)∘𝓜) ∈ ℂ`, **binding = Re 𝔙, 𝔔_β = Im 𝔙**
+(bar-odd/`sinh`). This is a *second* Q_β framing (`Im` of a **trace** object)
+parallel to #2363's **counit** `ε(Δ)·𝔈₀`. They are **not** trivially the same:
+`ε(Δ) = h²/2 − h` splits under bar (`q→q⁻¹`, `h→−h`) into bar-even `+h²/2`
+and bar-odd `−h`; the bar-odd (`Im`) channel *alone* gives **+11.86%**, while
+the full counit (both channels) gives **+0.17%**. So if `Im 𝔙` is strictly the
+`sinh` channel, `Im 𝔙 ≠ ε(Δ)·𝔈₀` by the bar-even `h²/2` term (~11.7% gap) —
+reconciliation target, **not** a silent fold. Posted on #2363
+([comment](https://github.com/litlfred/qou/pull/2363#issuecomment-4724054009));
+awaiting owner confirmation whether `Im 𝔙` is the pure `sinh` channel or the
+full transition value. Notation: rebase #2363 onto #2346 once it lands, mirror
+`𝔔_β` in the 4 new content blocks. Additional unifying lead from #2346:
+**binding is also a transition** (constituents→bound = `Re 𝔙`), matching
+#2363's prediction that binding *and* Q_β are both transition observables.
+
+
 ## Cross-refs
 
 - CLAUDE.md §Precision goals (L1 / L2 / Subgoal-1 / Subgoal-2)
