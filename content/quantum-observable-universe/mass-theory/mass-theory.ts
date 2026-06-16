@@ -856,7 +856,8 @@ export default chapter({
 
     // §physical: mass formulas, baryon/meson, binding energy, predictions
     section({
-      title: "Physical face: mass formulas and predictions",
+      title:
+        "Physical face: mass, binding ($\\operatorname{Re}\\mathfrak{V}$), and decay ($\\operatorname{Im}\\mathfrak{V}$)",
       label: "sec:mass-physical-face",
       blocks: [
                 "mass-physical-face-intro",

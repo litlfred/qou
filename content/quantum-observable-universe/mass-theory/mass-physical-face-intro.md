@@ -16,3 +16,15 @@ binding energy
 first non-trivial test.  The mass table for $Z = 1$--$20$
 ([mass table](#rem:mass-table-z1-20)) collects all predictions
 against CODATA/AME data.
+
+These binding energies are the **real part** of the complex volume
+$\mathfrak{V}$ ([The complex volume $\mathfrak{V}$](#sec:complex-volume)):
+$\mathfrak{E}_{\mathrm{bind}} = \operatorname{Re}\mathfrak{V}$, the
+bar-even ($\cosh$) strong channel of stable binding.  The same
+physical face carries the complementary **imaginary part**
+$\mathfrak{Q}_\beta = \operatorname{Im}\mathfrak{V}$, the bar-odd
+($\sinh$) weak channel — the $\beta$-decay $Q$-value — developed as
+the $\operatorname{Im}$ leg of the complex-volume precision ladder
+([complex-volume ladder](#sec:mass-algebraic-complex-volume-ladder)).
+Binding and decay are one complex object read on its two parities,
+not two independent predictions.
