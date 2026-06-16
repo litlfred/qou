@@ -53,7 +53,15 @@ from witness_base import WitnessBuilder
 _z = 1.0 / (Q**0.5 + Q_INV**0.5)
 _Z2 = _z * _z
 
-# Reusable engine for per-generator traced volumes
+# Reusable engine for per-generator traced volumes.
+# NOTE: q = 111/100 = 1.11 is the legacy rational approximation (~2e-4 off
+# the true substrate q0 = 1.1099786). It is a deliberate TRACTABILITY choice
+# for this exact-Fraction engine: at q0 = 11099786/10000000 the q^k
+# denominators (10^7k) make products of traced volumes thousand-digit
+# Fractions and the table non-terminating. This appendix table is NOT
+# precision-critical (see docs/audits/2026-06-16-gram-q-approximation-audit.md);
+# the float/mpmath q0 path (pyhecke build_atom_nf / atom_per_generator_volumes)
+# is the route if a q0-accurate volume table is ever needed.
 _HE = HeckeEngine(111, 100)
 
 
