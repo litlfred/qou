@@ -1,6 +1,6 @@
 """Closure-b step 2g/3 — ρ_ξ⊗ρ_ν gauge alignment + H_9 universality (WIP).
 
-Builds on the verified step-2 result (PR #2353): the analytic interface operator
+Builds on the verified step-2 result (PR #2353): the categorical interface operator
 A^λ_{ξν}(I) = Π_{ξν} ρ_λ(I) Π_{ξν} reconstructs χ^λ exactly (deuteron, 1.5e-49).
 This module adds the remaining pieces toward feeding the combiner / unlocking
 A ≥ 3:
@@ -39,7 +39,7 @@ Verification target: Σ_{ξν} Tr[A_combiner·(ρ_ξ(W)⊗ρ_ν(β))] = χ^λ(W�
 consistency only is needed (same seminormal source on both sides); matching the
 legacy fitted extract entrywise is optional.
 
-Design: docs/audits/2026-06-16-analytic-interface-operator-closure-b-design.md
+Design: docs/audits/2026-06-16-categorical-interface-operator-closure-b-design.md
 """
 from __future__ import annotations
 
@@ -59,7 +59,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from lr_coefficients import partitions_of  # noqa: E402
-import a_operator_analytic as aoa  # noqa: E402
+import a_operator_categorical as aoa  # noqa: E402
 
 EXACT_TOL = mp.mpf("1e-25")
 
@@ -545,7 +545,7 @@ def verify_combiner_identity(dps: int = 50) -> dict:
 
 
 def verify_combiner_h9(lambdas=None, dps: int = 50) -> dict:
-    """Step 3 (H_9 universality, exact 1e-25): verify the analytic A^λ_{μν}
+    """Step 3 (H_9 universality, exact 1e-25): verify the categorical A^λ_{μν}
     (μ⊢6, ν⊢3) reconstructs χ^λ for *generic multi-strand H_6 inner words* —
     the case the least-squares fit misses by 21–42 %.
 
@@ -653,7 +653,7 @@ def main() -> int:
             print(f"        worst: {cres['worst_failure']}")
     print()
     hres = verify_combiner_h9(dps=dps)
-    print(f"  [d] H_9 universality — analytic A^λ_μν (μ⊢6,ν⊢3), GENERIC H_6 inner words:")
+    print(f"  [d] H_9 universality — categorical A^λ_μν (μ⊢6,ν⊢3), GENERIC H_6 inner words:")
     print(f"      λ⊢9 tested: {hres.get('lambdas')}")
     if hres.get("error"):
         print(f"      → FAIL — {hres['error']}")
