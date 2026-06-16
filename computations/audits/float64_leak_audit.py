@@ -101,6 +101,11 @@ DISPLAY_CONTEXT_RX = re.compile(r"\b(print|mp\.nstr|logger|warnings\.warn|sys\.s
 COMPARISON_CONTEXT_RX = re.compile(
     r"(?:(?:<|>|<=|>=|==|!=)\s*\d|key\s*=\s*lambda|\bassert\b|\bppm\b|_pct\b|\bgap_[a-z]\b|reverse=True)"
 )
+# Dict-value serialization — `"key": float(x)` writes the value into a
+# (string-keyed) dict, almost always for witness/JSON output, not a compute
+# input (refinement, 2026-06-16: this was the dominant remaining I8 FP class —
+# `"B_arch_MeV": float(B_arch)` etc.).
+DICT_VALUE_RX = re.compile(r"""["'][^"']*["']\s*:\s*[^,]*\bfloat\s*\(""")
 # `# noqa: I8 — <reason>` explicit triage marker.
 NOQA_I8_RX = re.compile(r"#\s*noqa:\s*I8\b", re.IGNORECASE)
 # Mp re-wrap on next line: `mp.mpf(str(...))` indicates the float
@@ -126,6 +131,8 @@ def _classify_line_context(lines: list[str], idx: int) -> str:
         return "ok_display"
     if COMPARISON_CONTEXT_RX.search(lines[idx]):
         return "ok_comparison"
+    if DICT_VALUE_RX.search(lines[idx]):
+        return "ok_witness_emit"  # `"key": float(x)` — serialization, not input
     # Multi-line context window — catches f-strings split across
     # print(\n  f"..."\n) and similar.
     start = max(0, idx - 3)
@@ -138,6 +145,26 @@ def _classify_line_context(lines: list[str], idx: int) -> str:
     if MP_REWRAP_RX.search(window):
         return "false_positive_candidate"
     return "violation"
+
+
+def _triple_quoted_line_set(text: str) -> set[int]:
+    """0-based line indices that fall inside a triple-quoted string block.
+
+    Toggles state on each line with an odd count of triple-quote markers;
+    the opening line and every line through the close are marked. Good
+    enough to suppress `float(` matches inside multi-line docstrings (the
+    dominant I8 false-positive class) without a full tokenizer."""
+    inside: set[int] = set()
+    in_block = False
+    for i, line in enumerate(text.splitlines()):
+        if in_block:
+            inside.add(i)
+        toggles = len(re.findall(r'"""|\'\'\'', line))
+        if toggles % 2 == 1:
+            if not in_block:
+                inside.add(i)  # opening line carries string content
+            in_block = not in_block
+    return inside
 
 
 def _classify_script(path: Path) -> dict[str, Any] | None:
@@ -165,9 +192,16 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
     }
 
     lines = text.splitlines()
+    # Lines inside a triple-quoted string (docstring / multi-line string)
+    # are documentation, not code — a `float(` there is a false positive
+    # (refinement, 2026-06-16: the dominant I8 FP class was `float(q)` etc.
+    # appearing in docstrings like markov_trace_for_knot / snappy_borromean).
+    docstring_lines = _triple_quoted_line_set(text)
     hits: list[dict[str, Any]] = []
 
     for i, line in enumerate(lines):
+        if i in docstring_lines:
+            continue
         # Strip comments first
         code_part = re.sub(r"#.*$", "", line)
         for label, rx in ANTIPATTERN_RX:

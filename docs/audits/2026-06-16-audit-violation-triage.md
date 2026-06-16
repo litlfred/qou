@@ -57,6 +57,8 @@ not the benign `mp.mpf(str(x))` re-entry). Examples:
 `canonical_tr_m_via_branching.py` (5), `constit_factor_residual_phase5k.py`
 (16), `canonical_mass_table_extended.py` (3), `closed_form_tau_M.py` (1).
 
+**Update (audit refined, PR #i8-float64-leak-fixes):** like I11, the I8 audit over-flagged. Two safe exclusions added — `float(` inside triple-quoted docstrings, and dict-value serialization `"key": float(x)` (witness/JSON output, not a compute input). Result: **i8_violation 16 → 11**. The remaining 11 are a mix of by-design f64-mode paths (`knot_volumes._F64` constants, `markov_trace` f64 mode) and ~2 genuine candidates (`h_val = float(Q0-1/Q0)` feeding `marshal_to_chi_lambda_braid` in `closed_form_tau_M` / `rho_constit`). The genuine ones are RISKY to auto-fix — the marshaller is typed `h_val: float` and changing to mpf would shift validated trace results — so they need careful per-script review + regeneration, not a blind edit.
+
 **Remediation:** per-script — replace the f64 cast with a 50-dps path
 (`mpmath` throughout, decimal-string round-trips), or, if the value is
 display-only, move the cast to the print/serialise boundary. Concrete and
