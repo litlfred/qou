@@ -12,28 +12,42 @@ program, not one fix).
 
 ## Summary
 
-| Audit | candidates | severity | nature |
-|-------|-----------:|----------|--------|
-| `validation_as_input` (I11) | 39 | **HIGH** | experimental anchor used as a derivation *input* → hidden calibration (violates three-cal discipline) |
+| Audit | flagged | severity | nature |
+|-------|--------:|----------|--------|
+| `validation_as_input` (I11) | 39 | **audit over-flags** | ≥13 pure FP (witness recordings / comparisons); most rest are two-step comparisons. Refine the heuristic first; true hidden-cal subset is small. |
 | `float64_leak` (I8) | 16 | MEDIUM | `float()` cast on a derived `mpf` in a substrate-pure script (precision leak); all `fp_candidate=0` |
 | `hardcoded_literal` (I9) | 248 | LOW | inline numeric literal matching a registry constant (P31: route through `codata_constants.py`) |
 
-## I11 — validation-as-input (39, HIGH priority)
+## I11 — validation-as-input (39 flagged; audit OVER-FLAGS — see review below)
 
 The I11 antipattern: a script imports a `*_VALIDATION` constant (an
 experimental anchor — AME binding, CODATA mass) and uses it as a
-**computation input**, not merely for a post-hoc comparison. That is a
-*hidden fourth calibration* — exactly what `prop:three-calibration-inputs`
-forbids. Flagged scripts include `applied_uniqueness_mass_table.py`,
-`binding_K_direct.py`, `binding_canonical.py`,
-`borromean_volume_propagation_to_m_p.py`,
-`canonical_derivation_pipeline_compliance.py`, `audit_delta_S_chain.py`, …
+**computation input**, not merely for a post-hoc comparison. A true such
+use is a *hidden fourth calibration* — what `prop:three-calibration-inputs`
+forbids.
 
-**Remediation:** per-script review to confirm input-vs-comparison use.
-True input uses must be re-derived or demoted to `auditOnly` comparison;
-confirmed comparison-only uses get an acknowledgement marker so the audit
-stops flagging them. This is the highest-value set — each is a potential
-discipline breach, not a style nit.
+**Review finding (2026-06-16) — the audit's flat count of 39 substantially
+over-flags.** Reading the flagged lines:
+
+- **≥ 13 / 39 are pure false-positives** — every flagged line is either an
+  `add_parameter("m_p_MeV", str(M_P_MEV_VALIDATION))` **witness-provenance
+  recording** (e.g. `binding_K_direct.py:209-210`) or an `err = pred −
+  M_X_VALIDATION` **comparison** the heuristic's "final-line" check missed.
+- **Most of the remaining 26 are two-step comparisons** — `m_p =
+  mp.mpf(str(M_P_MEV_VALIDATION))` assigns the anchor to a local, which is
+  then used in `err = pred − m_p` (e.g. `audit_delta_S_chain.py`,
+  `m_p_borromean_verification_50dps.py`). That is comparison-reference, not
+  a derivation input.
+- The **genuine hidden-calibration subset** (anchor actually feeding a
+  predicted quantity) is plausibly small and needs per-line confirmation.
+
+**Recommendation (corrects the earlier "HIGH, 39 breaches" framing):** the
+highest-value action is to **refine the I11 audit heuristic first** so it
+stops counting (a) `add_parameter` / witness-recording uses and (b)
+two-step `local = anchor; … pred − local` comparisons. That collapses 39
+to the true-candidate subset; only then review that (much smaller) set for
+real hidden calibration. Do **not** mass-edit 39 scripts — most are not
+violations.
 
 ## I8 — float64-leak (16, MEDIUM)
 
@@ -65,11 +79,16 @@ acknowledge-marker convention is.
 
 ## Recommended order
 
-1. **I11 (39)** — highest value: hidden-calibration breaches. Review +
-   re-derive/demote, one cluster per PR.
+1. **I11 — refine the audit first** (not mass-edit). Exclude `add_parameter`
+   recordings + two-step `local = anchor; pred − local` comparisons; the 39
+   collapses to the true hidden-cal subset, then review that.
 2. **I8 (16)** — bounded precision fixes; aligns with #2355's no-float64
-   work.
+   work; the concrete, real set.
 3. **I9 (248)** — codemod + acknowledge-marker; lowest severity.
+
+The I11 over-flagging is itself the main review finding: a flat violation
+count is misleading until the heuristic excludes provenance recordings and
+two-step comparisons.
 
 Each is its own scoped follow-up; none is attempted in this PR (which
 restores the audits' *scope* + regenerates their witnesses so the
