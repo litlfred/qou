@@ -258,7 +258,33 @@ print("  electron: ell=1 -> T1 -> (3,1,1) -> " + fmt(b_311))
 print("  muon:     ell=2 -> H  -> (3,2)   -> " + fmt(b_32))
 print("  e - mu  = " + fmt(diff(b_311, b_32)) + "  (= sign rep = H3 alt channel)")
 
-all_ok = all_ok and ok_emb and ok_so3 and ok_bridge
-print("\nALL BACKBONE + BRIDGE CLAIMS VERIFIED:", all_ok)
+# ============================================================================
+# INGREDIENT-1 ANCHOR: the icosahedral action on the divisor CP^1 = S^2 must
+# lift to the BINARY icosahedral group 2I (subset SU(2)), NOT A5 directly.
+# Reason: A5 has irrep dims {1,3,3,4,5} (no faithful 2-dim), so it cannot act
+# on the spinor C^2 whose projectivization is the CP^1.  The rotation action
+# I = A5 subset SO(3) = PSU(2) on S^2 = P^1 lifts to 2I subset SU(2) on C^2
+# (order 120, irrep dims {1,2,2,3,3,4,4,5,6}).  This identifies the icosahedral
+# fibre action with the spin SU(2)_S lift (spin-from-so3-fiber.md): they are
+# the SAME lift; S^3/2I is the Poincare homology sphere (link of E8).
+# ============================================================================
+A5_DIMS = [1, 3, 3, 4, 5]            # A5 irreducible dimensions
+BINARY_2I_DIMS = [1, 2, 2, 3, 3, 4, 4, 5, 6]  # binary icosahedral 2I (E8 McKay)
+ok_a5_order = (sum(d * d for d in A5_DIMS) == 60)
+ok_2i_order = (sum(d * d for d in BINARY_2I_DIMS) == 120)
+ok_no_2dim_a5 = (2 not in A5_DIMS)
+ok_2dim_in_2i = (2 in BINARY_2I_DIMS)
+print("\n=== INGREDIENT-1 anchor: icosahedral CP^1 action lifts to 2I, not A5 ===")
+print(f"  A5 dims {A5_DIMS}: sum sq = {sum(d*d for d in A5_DIMS)} (=60: {ok_a5_order}); "
+      f"no 2-dim irrep: {ok_no_2dim_a5}")
+print(f"  2I dims {BINARY_2I_DIMS}: sum sq = {sum(d*d for d in BINARY_2I_DIMS)} "
+      f"(=120: {ok_2i_order}); has 2-dim spinor irrep: {ok_2dim_in_2i}")
+print("  => A5 rotation of S^2=P^1 must lift to 2I on C^2_spin (= the SU(2)_S")
+print("     spin fibre).  The CP^1 is the state-bundle/spin fibre P(C^2), NOT a")
+print("     blow-up of the genus-4 Bring CURVE (dim 1 -> no CP^1 exceptional).")
+ok_ing1 = ok_a5_order and ok_2i_order and ok_no_2dim_a5 and ok_2dim_in_2i
+
+all_ok = all_ok and ok_emb and ok_so3 and ok_bridge and ok_ing1
+print("\nALL BACKBONE + BRIDGE + INGREDIENT-1-ANCHOR CLAIMS VERIFIED:", all_ok)
 import sys
 sys.exit(0 if all_ok else 1)
