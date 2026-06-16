@@ -205,3 +205,59 @@ Cross-ref `docs/coordination/option-e.md` (Δ_λ master ledger).
   PROBE-2 `A^λ_{ξν}(I)` combiner** (`wenzl-a3-intertwiner-or3`, "the A≥4 unlock"
   — an *operator* magnitude, exactly what the scalar-magnitude refutation says is
   needed).
+---
+
+## 2026-06-16 — Level 6 atom→electron wiring (PR #2348)
+
+**Session branch:** `claude/zealous-hypatia-05xyp9` → PR
+[#2348](https://github.com/litlfred/qou/pull/2348)
+**Goal:** owner asked for 1 ppQ on `m_sym` + the AME/CODATA error decomposition,
+which drifted (prior session, different agent) into electron-binding. Picked up
+the stalled discussion; coordinate + extend the comparison to the neutral atom.
+
+### Scope map (this pass)
+| PR | Branch | Class | Relationship |
+|---|---|---|---|
+| **#2348** (this) | `claude/zealous-hypatia-05xyp9` | own | Level-6 atom→electron mass diagnostic + e-Hartree audit |
+| #2343 | `claude/ecstatic-archimedes-7dkuiq` | **DUPLICATE (done)** | m_sym error budget; #2348 is its atomic-level companion |
+| #2078 | `claude/atom-vhyp-workplan` | OVERLAP (B_sym frontier) | Δ_λ closure owns the residual; declared non-collision |
+| #2325 | `claude/vigilant-brown-x0tzat` | OVERLAP (B_sym frontier) | b-ladder slope derived; flagged e-Hartree non-distraction |
+
+### Findings
+- **The electron-binding scale was never open green-field.** It is the canonical
+  `hecke_core.E_HARTREE_EV = 27.21 eV` (Ry 13.6057, α_EM = 1/137.036, derived),
+  already wired, and is the 25-round `conj:e-hartree-categorical-derivation` —
+  a **conditional theorem** (α² scaling exact in R r20; capacity categorical via
+  `ElectronShell.bindingMultiplicity`; 1/n² spacing r8b; residual = CAL-1 unit,
+  owner-declined Subgoal-2). The prior session's "~25 MeV/electron, not derived"
+  was a ~6-orders scale blunder (used the nucleon `E₀` not `α²·m_e`).
+- **¹H atomic mass reproduces exactly** (Δ = 0.000 MeV) to the 13.6 eV level from
+  canonical constants alone. For all of ¹H–⁷Li, `Δ_total = Δ_nuclear (B_AME−B_sym)`
+  with the electron remainder **sub-keV** (−0.08 keV He, −0.23 keV Li from
+  no-screening over-binding). ⇒ the atomic-mass residual is **~100% the nuclear
+  B_sym error** — confirms #2343 at the atomic level.
+
+### Actions (PRs)
+- **#2348** — `computations/atom_electron_mass.py` + audit
+  `docs/audits/2026-06-16-level6-atom-electron-wiring.md`. Exploratory diagnostic;
+  no production rewire, no fit, no witness (mirrors `/dashboard-low` + #2343).
+
+### Coordination posted
+- #2343 — atomic-level companion + the e-Hartree scale correction.
+  [Link](https://github.com/litlfred/qou/pull/2343#issuecomment-4714362593)
+- #2325 — non-collision + sharpened target (electrons sub-keV ⇒ Δ_λ owns 100%) +
+  e-Hartree non-distraction.
+  [Link](https://github.com/litlfred/qou/pull/2325#issuecomment-4714362827)
+- #2078 — non-collision + full atomic-mass residual is theirs (no e-correction).
+  [Link](https://github.com/litlfred/qou/pull/2078#issuecomment-4714363018)
+
+### Watch state
+- `main` not advanced under this branch (0 behind; nothing landed in
+  `computations/` or `docs/audits/`). #2348 webhook subscription active; first
+  bot comment was a Gemini daily-quota notice (no action). CI 0 check-runs so far.
+
+### Next concrete task (non-overlapping)
+- (Optional, owner to choose) revive the deprecated `electron-shell-ilp` SDP for a
+  live "add electrons until infeasible" capacity demo — current scratch gave wrong
+  capacities (H=5). Screening (`Z_eff`) is the open e-Hartree magnitude piece;
+  eV-scale, never reaches the mass residual. Accuracy moves only on B_sym (#2078/#2325).
