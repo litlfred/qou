@@ -7,7 +7,7 @@
     "build:content": "cd content && bun run ../folio-assistant/content/pipeline/build.ts quantum-observable-universe/quantum-observable-universe.ts --out-dir ../chapters/",
     "build:docs": "typedoc",
     "export-json": "cd content && bun run ../folio-assistant/content/pipeline/export-json.ts",
-    "generate-readme": "./scripts/generate-readme.sh",
+    "generate-readme": "./folio-assistant/scripts/generate-readme.sh",
     "test:e2e": "cd folio-assistant && bun run test:e2e",
     "test": "cd folio-assistant && bun run test",
     "lint": "cd folio-assistant && bun run lint"
