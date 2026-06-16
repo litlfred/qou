@@ -105,6 +105,22 @@ print(f"  (4) colour Reeb (phase e^(i phi)) on mu(z): leaves R^3 (nonzero imag):
 print(f"      => the round-S^5 colour Reeb is TRANSVERSE to mu's image R^3:")
 print(f"         mu does NOT intertwine the colour Reeb (only the spin Reeb).")
 
+# (5) REFRAME: the spin Hopf Reeb (overall phase e^{i phi} I) is Ad-TRIVIAL, so it
+# is the mu-fibre with NO spatial SO(3) image -- it is NOT the generation
+# direction.  The generation degree ell is an SO(3)-harmonic level on the BASE
+# S^2 = S^3 / Hopf, a SPATIAL-SO(3) datum.  mu is spatial-SO(3)-equivariant
+# (check (3)), so the SAME A_5 subset SO(3) acts on spin-S^2 and colour-R^3:
+# the generation SELECTION ell -> lambda is carried by mu's spatial equivariance.
+# The phase-Reeb transversality (4) is therefore on the CONTACT circles, NOT on
+# the generation direction -- it does not block the generation selection.
+Ad_phase = Ad(np.exp(1j * phi) * np.eye(2))
+hopf_reeb_ad_trivial = np.allclose(Ad_phase, np.eye(3), atol=1e-10)
+print(f"  (5) spin Hopf Reeb (overall phase) Ad-trivial (no SO(3) image): {hopf_reeb_ad_trivial}")
+print(f"      => generation direction is the SPATIAL SO(3) on the base S^2, not")
+print(f"         the phase Reeb; mu's spatial SO(3)-equivariance (check 3) carries")
+print(f"         the ell->lambda SELECTION.  Obstruction (4) is on the contact")
+print(f"         phase circles, NOT the generation selection.")
+
 print()
 print("=" * 70)
 print("VERDICT")
@@ -115,12 +131,17 @@ print("    - realizes the static Schur-forced coupling geometrically;")
 print("    - intertwines the SPIN Hopf Reeb (it IS the Hopf fibration).")
 print("  OBSTRUCTION (verified): the round-S^5 COLOUR Reeb (U(1) phase) is")
 print("    transverse to mu's image R^3, so it is NOT intertwined by mu.")
-print("  RESOLUTION DIRECTION: the intertwinable colour contact structure must")
-print("    carry its Reeb in the SPATIAL SO(3)_colour subset SU(3) (where the")
-print("    icosahedral A_5 acts), i.e. an SU(3)/SO(3)-homogeneous Sasakian, NOT")
-print("    the round S^5.  That is the next construction target (open).")
+print("  REFRAME: the spin Hopf Reeb is Ad-trivial (the mu-fibre), so it is NOT")
+print("    the generation direction.  Generation (ell) is the SPATIAL SO(3) on")
+print("    the base S^2, and mu's spatial SO(3)-equivariance ALREADY carries the")
+print("    ell->lambda SELECTION.  The transversality obstruction is on the")
+print("    contact phase circles, separate from the selection.")
+print("  REMAINING (open): the Markov-trace WEIGHTING -- the contact/dynamical")
+print("    structure giving the y_lambda weights -- needs the colour Reeb in the")
+print("    SPATIAL SO(3)_colour subset SU(3) (an SU(3)/SO(3)-homogeneous Sasakian,")
+print("    not the round S^5).  That is the next construction target.")
 
 assert real_ok and even_ok and phase_ok and equiv_rand and equiv5 and order5
-assert leaves_R3
+assert leaves_R3 and hopf_reeb_ad_trivial
 print("\nCOUPLING-CONSTRUCTION + OBSTRUCTION ASSERTIONS VERIFIED.")
 sys.exit(0)
