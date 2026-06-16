@@ -85,7 +85,18 @@ def _bond_type_L():
     return out
 
 
-def _row(name, Z, N, alpha, me, g8, Lbond, ame, max_strands):
+def _nucleon_msym(alpha):
+    """Per-nucleon Kashaev mass m_sym(W) = −α·ln tr_M(W) for the free proton and
+    neutron (A=1 sub-braids; cheap). The free atom word factorizes
+    tr_free = tr_p^Z·tr_n^N, so m_sym(free components) = Z·msp + N·msn for ANY A
+    with no bound-knot trace — the un-gateable half of the B_sym decomposition."""
+    from tr_m_atom_via_transfer import tr_m_atom_zn
+    tp = float(tr_m_atom_zn(1, 0, dps=50)[1])   # A=1 → no interfaces → atom==free
+    tn = float(tr_m_atom_zn(0, 1, dps=50)[1])
+    return -alpha * math.log(tp), -alpha * math.log(tn)
+
+
+def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
     A = Z + N
     n = 3 * A
     bame = ame.get((Z, A))
@@ -96,29 +107,27 @@ def _row(name, Z, N, alpha, me, g8, Lbond, ame, max_strands):
     B_fac = alpha * (A - 1) * Lbar
     B_magic = (2.0 * me * A * g8) if (Z, N) == (2, 2) else None
     # ---- colour-weighting decomposition of the factorized q-CLT ------------
-    #   B_qCLT_fac = isospin-symmetric baseline (every bond = p-n) + the p↔n
-    #   chirality correction (n-n stronger / p-p weaker than p-n). The baseline
-    #   equals the uniform B_qCLT; the correction is what splits mirror nuclei.
+    #   B_qCLT_fac = isospin-symmetric baseline (every bond = the deuteron p-n
+    #   bond) + the p↔n chirality correction. The baseline IS the uniform
+    #   B_qCLT — pure combinatorics on a cached constant, so it (and the
+    #   free-component mass below) are available for ALL A.
     B_base = alpha * (A - 1) * Lbond["pn"]
+    B_qCLT = B_base                                  # uniform per-bond (un-gated)
     B_chir = B_fac - B_base
-    # ---- trace forms (only when the per-knot tr_M is feasible) --------------
-    B_lin = B_sym = B_qCLT = None
-    m_sym_atom = m_sym_free = None
+    # free-component Kashaev mass: tr_free = tr_p^Z·tr_n^N factorizes over GB
+    # components, so m_sym(free) = Z·msp + N·msn for ANY A (no bound-knot trace).
+    msp, msn = nucleon_msym
+    m_sym_free = Z * msp + N * msn
+    # ---- forms that DO need the bound-knot trace tr_M(W_atom) ---------------
+    #   (the p(3A) partition sum explodes → capped at n ≤ max_strands)
+    B_lin = B_sym = m_sym_atom = None
     if n <= max_strands:
         from tr_m_atom_via_transfer import tr_m_atom_zn
         ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
         ta, tf = float(ta), float(tf)
-        s = 1.0 - ta / tf
-        L = math.log(tf / ta)
-        ell_bond = Lbond["pn"]                       # deuteron p-n bond
-        B_lin = alpha * s
-        B_sym = alpha * L
-        B_qCLT = alpha * (A - 1) * ell_bond          # uniform per-bond
-        # compositional: per-braid mass m_sym(W) = −α·ln tr_M(W); the free word
-        # factorizes over GB components (tr_free = tr_p^Z·tr_n^N), so
-        # B_sym = m_sym(atom) − m_sym(free GB components) exactly.
-        m_sym_atom = -alpha * math.log(ta)
-        m_sym_free = -alpha * math.log(tf)
+        B_lin = alpha * (1.0 - ta / tf)
+        B_sym = alpha * math.log(tf / ta)
+        m_sym_atom = -alpha * math.log(ta)           # B_sym = m_sym_atom − m_sym_free
     return {"name": name, "Z": Z, "N": N, "A": A, "n": n, "B_AME": bame,
             "n_pp": n_pp, "n_pn": n_pn, "n_nn": n_nn,
             "B_lin": B_lin, "B_sym": B_sym, "B_qCLT": B_qCLT,
@@ -164,16 +173,18 @@ def main(argv=None) -> int:
 
     me, q0, E0, g8 = _constants()
     Lbond = _bond_type_L()
+    nucleon_msym = _nucleon_msym(E0)         # per-nucleon free Kashaev mass (cheap)
     ame = _ame_table()                       # parse AME2020 once, not per row
-    rows = [_row(nm, Z, N, E0, me, g8, Lbond, ame, args.max_strands)
+    rows = [_row(nm, Z, N, E0, me, g8, Lbond, nucleon_msym, ame, args.max_strands)
             for (nm, Z, N) in sel]
 
     title = (args.group or ("custom" if args.isotopes else "low")).upper()
     print(f"\n  MASS-BINDING DASHBOARD [{title}]   α = E₀ = {E0:.4f} MeV"
           f"   (bond-type L: pp={Lbond['pp']:.3f} pn={Lbond['pn']:.3f} "
           f"nn={Lbond['nn']:.3f})")
-    print(f"  trace forms (lin/sym/qCLT) shown for n=3A ≤ {args.max_strands} "
-          f"(A ≤ {args.max_strands // 3}); fac/magic are the A→∞ extrapolation.\n")
+    print(f"  exact-trace forms (lin/sym, m_sym atom) need the bound-knot trace → "
+          f"shown for n=3A ≤ {args.max_strands} (A ≤ {args.max_strands // 3}); "
+          f"qCLT/fac/magic + m_sym(free) are combinatorial → all A.\n")
 
     # 1. BINDING
     print("### Binding  B (MeV)")
@@ -199,15 +210,16 @@ def main(argv=None) -> int:
     from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
     mp_, mn_ = float(mp_), float(mn_)
     print("\n### Mass  M = Z·m_p + N·m_n − B (MeV)")
-    print("| iso | A | m_unbound | M_AME | m_sym | m_qCLT_fac |")
-    print("|---|--:|--:|--:|--:|--:|")
+    print("| iso | A | m_unbound | M_AME | m_sym | m_qCLT | m_qCLT_fac |")
+    print("|---|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         mu = r["Z"] * mp_ + r["N"] * mn_
         mame = (mu - r["B_AME"]) if r["B_AME"] is not None else None
         msym = (mu - r["B_sym"]) if r["B_sym"] is not None else None
+        mqclt = mu - r["B_qCLT"]
         mfac = mu - r["B_qCLT_fac"]
         print(f"| {r['name']} | {r['A']} | {mu:>9.1f} | {_fmt(mame,9,1)} "
-              f"| {_fmt(msym,9,1)} | {mfac:>9.1f} |")
+              f"| {_fmt(msym,9,1)} | {mqclt:>9.1f} | {mfac:>9.1f} |")
 
     # 4. COLOUR-WEIGHTING decomposition (B_qCLT_fac = baseline + p↔n chirality)
     print("\n### Colour-weighting  (B_qCLT_fac = isospin-symmetric baseline + p↔n chirality)")
@@ -217,16 +229,14 @@ def main(argv=None) -> int:
         print(f"| {r['name']} | {r['A']} | {r['n_pp']}/{r['n_pn']}/{r['n_nn']} "
               f"| {r['B_base']:>8.2f} | {r['B_chir']:>+8.2f} | {r['B_qCLT_fac']:>8.2f} |")
 
-    # 5. COMPOSITIONAL B_sym (atom GB-braid mass − free GB-component masses)
-    if any(r["m_sym_atom"] is not None for r in rows):
-        print("\n### Compositional B_sym  (m_sym(W) = −α·ln tr_M(W); free = GB components)")
-        print("| iso | A | m_sym(free comps) | m_sym(atom) | B_sym = atom−free |")
-        print("|---|--:|--:|--:|--:|")
-        for r in rows:
-            if r["m_sym_atom"] is None:
-                continue
-            print(f"| {r['name']} | {r['A']} | {r['m_sym_free']:>8.3f} "
-                  f"| {r['m_sym_atom']:>8.3f} | {r['B_sym']:>8.3f} |")
+    # 5. COMPOSITIONAL B_sym (atom GB-braid mass − free GB-component masses).
+    #   m_sym(free) is combinatorial (all A); m_sym(atom) needs the bound trace.
+    print("\n### Compositional B_sym  (m_sym(W) = −α·ln tr_M(W); free = GB components)")
+    print("| iso | A | m_sym(free comps) | m_sym(atom) | B_sym = atom−free |")
+    print("|---|--:|--:|--:|--:|")
+    for r in rows:
+        print(f"| {r['name']} | {r['A']} | {r['m_sym_free']:>8.3f} "
+              f"| {_fmt(r['m_sym_atom'],8,3)} | {_fmt(r['B_sym'],8,3)} |")
 
     print("\n  Forms: B_lin=α·s · B_sym=α·ln(tr_free/tr_atom) · "
           "B_qCLT=α·(A−1)·ℓ̄(D) · B_qCLT_fac=α·(A−1)·⟨bond-type L⟩ · "
