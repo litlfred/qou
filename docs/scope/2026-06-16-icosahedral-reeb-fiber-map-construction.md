@@ -34,7 +34,7 @@ sphere, so the ingredients are known objects to be assembled on *this* divisor.
 
 | # | Ingredient | Type | Status |
 |---|---|---|---|
-| 1 | **Identify the divisor $\mathbb{CP}^1$ with Klein's icosahedral $\mathbb{P}^1$ via the spin lift.** Show the $S_5=\mathrm{Aut}(\Sigma_4)$ action restricts on $A_5$ to the **binary icosahedral $2I\subset\mathrm{SU}(2)_S$** on the spin fibre $\mathbb{C}^2_{\mathrm{spin}}$, so its projectivization $\mathbb{P}(\mathbb{C}^2)=\mathbb{CP}^1$ is Klein's icosahedral line ($A_5\cong I\subset\mathrm{PSL}_2$, Möbius rotations). | spin structure / rep theory | **existence SETTLED** (SU(2) structure group + S₃→Dic₃ precedent; §"Gate resolution"); residual = 5-sheet extension (→ ing. 4) + finite rep-id |
+| 1 | **Identify the divisor $\mathbb{CP}^1$ with Klein's icosahedral $\mathbb{P}^1$ via the spin lift.** Show the $S_5=\mathrm{Aut}(\Sigma_4)$ action restricts on $A_5$ to the **binary icosahedral $2I\subset\mathrm{SU}(2)_S$** on the spin fibre $\mathbb{C}^2_{\mathrm{spin}}$, so $\mathbb{P}(\mathbb{C}^2)=\mathbb{CP}^1$ is Klein's icosahedral line ($A_5\cong I$, Möbius rotations). | spin structure / rep theory | **SETTLED** — existence (§"Gate resolution") + identification as icosahedral $T_1$ (§"Residual-2 RESOLVED") |
 | 2 | **2I-equivariant Reeb field.** Show the q-Reeb field $\xi_q$ ($\dot\psi=q$, `q-reeb-flow-on-coral-coords`) commutes with the binary icosahedral $2I\subset\mathrm{SU}(2)$ on the Hopf $S^3\to S^2$. | contact geometry | **inherits the precedent** — the existing $S_3\!\to\!\mathrm{Dic}_3$ Reeb field is already binary-equivariant; $2I$ is the analogue |
 | 3 | **The two bridging branchings.** $\mathrm{SO}(3)\downarrow A_5$ ($V_1\!\to\!T_1$, $V_2\!\to\!H$, $V_3\!\to\!T_2\oplus G$) and $S_5\downarrow A_5$ ($(3,1,1)\to T_1\oplus T_2$, $(3,2),(2,2,1)\to H$). | character theory | **VERIFIED** (this session) |
 | 4 | **Commuting square (the functor).** A₅-equivariant Reeb operator on the ℓ-sector, restricted to the 3-tube via the **$123\!\to\!345$ embedding** (spacetime strands $\{1,2\}$ fixed — see embedding-independence note), equals the six $S_3$ knot operators with the $\mathrm{Res}^{S_5}_{S_3}$ multiplicities. | category theory | depends on 1,2 |
@@ -141,6 +141,35 @@ precedent already coded. The real remaining work is the **5-sheet extension** (i
 the Reeb field on the $S_3\to\mathrm{Dic}_3$ construction is already binary-equivariant, so the $2I$ case is the
 analogue, not a new obstruction.
 
+### Residual-2 RESOLVED (2026-06-16, third pass) — the geometric $A_5$ is forced to be icosahedral $T_1$
+
+The "is the geometric $A_5$ the icosahedral $T_1$?" residual closes — it is **forced** by representation theory
+(three checks in the verifier, all pass):
+
+- **(a) Dimension forces it.** The only 3-dim irreps of $A_5$ are $T_1, T_2$. The $\mathrm{SO}(3)$-holonomy on
+  the chiral sheets acts on a 3-dim real space, so its $A_5$-rep is 3-dim ⟹ $T_1$ or $T_2$. And $A_5$ is
+  **simple**, so any nontrivial rep is faithful ⟹ the action is the genuine icosahedral rotation. There is no
+  freedom *except* chirality.
+- **(b) Chirality = the $T_1/T_2$ split.** $S_5$ **fuses** the two 5-cycle conjugacy classes that $A_5$ keeps
+  separate (an odd permutation conjugates a 5-cycle to its $A_5$-non-conjugate square; verified: $A_5$ has two
+  classes of 12, $S_5$ has one of 24). That fusion swaps $\chi(C_5)\leftrightarrow\chi(C_5^2)$, i.e. swaps
+  $T_1\leftrightarrow T_2$. So $T_1$ and $T_2$ are the **two enantiomorphic icosahedra**, exchanged by
+  $S_5\setminus A_5$ — physical **parity**. The $S_5$-stable object is $T_1\oplus T_2=(3,1,1)$.
+- **(c) The rotation rep is NOT the sheet-permutation rep.** The $A_5$ permutation rep on the 5 Bring sheets is
+  $A\oplus G$ (trivial + 4-dim standard), with $T_1$ multiplicity 0 (verified). So the geometric $\mathrm{SO}(3)$
+  rotation ($T_1$) is a *distinct* rep from "which sheet goes where" ($G$) — the rotation is the Klein
+  icosahedral action on the *spin fibre*, not the sheet shuffle.
+
+**Structural payoff (closes the loop with §1a).** $(3,1,1)$ — which hosts *both* $T_1$ (electron, $\ell=1$) and
+$T_2$ (tau's $\ell=3$ part) — is exactly the $S_5$-stable chirality-pair block. The electron and tau's $T_2$
+component are **parity partners** in the same Wedderburn block; the odd-permutation (parity) operation swaps
+them. Chirality is not added by hand — it is the $A_5\subset S_5$ index-2 structure.
+
+**Remaining open (now isolated):** only the **5-sheet extension** (ingredient 4 — the commuting square, promoting
+the implemented 3-sheet $S_3$ to the full 5-sheet $A_5$) and the **Markov-trace shift** (ingredient 5 — the
+empirical 210 ppb). Both ingredient-1 sub-pieces (existence of the $2I$ lift; identification as icosahedral $T_1$)
+are settled.
+
 ## Risks / honest blockers (critical-distance)
 
 - **Building 1–4 proves the geometric map EXISTS; it does NOT guarantee the physics.** The $S_3$-side
@@ -157,13 +186,13 @@ analogue, not a new obstruction.
 ## Immediate next step (cheap, already done) and the gate
 
 - ✅ **Ingredient 3** verified this session (extends the backbone checker).
-- ✅ **Ingredient-1 existence leg SETTLED** this session (§"Gate resolution"): the SU(2) structure group +
-  the standard double-cover lift supply the $2I$ action, with the $S_3\to\mathrm{Dic}_3$ precedent already coded
-  in `su2-generators.md`. The feared "build $2I$-equivariance from scratch" is not the obstruction.
-- ⛔ **New gate = the 5-sheet extension (ingredient 4) + a finite rep-identification (residual 2).** The
-  implemented spin action is 3-sheet ($S_3\to\mathrm{Dic}_3$); promoting to the full 5-sheet $A_5\to 2I$ **is**
-  the 5-strand extension, and confirming geometric $A_5 = $ icosahedral $T_1$/$T_2$ is a finite check. Neither
-  is a from-scratch geometric construction.
+- ✅ **Ingredient 1 fully SETTLED** this session: existence leg (§"Gate resolution" — SU(2) structure group +
+  $S_3\to\mathrm{Dic}_3$ precedent supply the $2I$ lift) AND identification leg (§"Residual-2 RESOLVED" — the
+  geometric $A_5$ is forced to the icosahedral $T_1$, with $T_1/T_2$ = chirality, $S_5$-stable sum $(3,1,1)$).
+- ⛔ **New gate = ingredient 4 (the commuting square / 5-sheet extension).** Promote the implemented 3-sheet
+  $S_3\to\mathrm{Dic}_3$ Reeb construction to the full 5-sheet $A_5\to 2I$ and show the 3-tube restriction (the
+  $123\to345$ embedding) reproduces the $S_3$ knot operators per $\mathrm{Res}^{S_5}_{S_3}$. Then ingredient 5
+  (Markov-trace shift → 210 ppb), the only empirical unknown.
 
 ## Cross-references
 
