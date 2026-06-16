@@ -28,13 +28,23 @@ $$
 $$
 
 Note the leading $L_+$ term (coefficient $1$ in both) **cancels** in the
-difference; what survives is carried by $\gamma$ and the $\sigma_i$.
-Apply the two canonical functionals on $H_3(q)$:
+difference; what survives is carried by $\gamma$ (the identity) and the
+$\sigma_i$. Apply the two canonical functionals on $H_3(q)$, writing
+$h = q - q^{-1}$ for the Hecke parameter and $z$ for the Markov loop:
 
 | functional | def on basis | value on $(n-p)$ |
 |---|---|---|
-| **Frobenius counit** $\varepsilon$ | $\varepsilon(e_i)=1$ | $\dfrac{(q-1)(q+1)(q^2-2q-1)}{2q^2}$ |
-| **Markov trace** $\mathrm{tr}_M$ | $\mathrm{tr}_M(e_i)=z^{\#\text{cr}(e_i)}$ | $\dfrac{z\,(q-1)(q+1)(q^2-2qz-1)}{2q^2}$ |
+| **Frobenius counit** $\varepsilon$ | $\varepsilon(e_i)=1$ | $\dfrac{h^2}{2}-h \;=\; \dfrac{(q^2-1)(q^2-2q-1)}{2q^2}$ |
+| **Markov trace** $\mathrm{tr}_M$ | $\mathrm{tr}_M(e_i)=z^{\#\mathrm{cr}(e_i)}$, so $\mathrm{tr}_M(\mathbf 1)=1,\ \mathrm{tr}_M(\sigma)=z$ | $\dfrac{h^2}{2}-hz \;=\; \dfrac{(q^2-1)(q^2-2qz-1)}{2q^2}$ |
+
+> **Weight correction (M1).** The identity $\gamma=\mathbf 1$ carries Markov
+> weight $\mathrm{tr}_M(\mathbf 1)=1$ (axiom M1), **not** $z$. The clean
+> survivors are therefore $\varepsilon(n-p)=\tfrac{h^2}{2}-h$ and
+> $\mathrm{tr}_M(n-p)=\tfrac{h^2}{2}-hz$, differing by $\varepsilon-\mathrm{tr}_M
+> = h(z-1)$ — they coincide **iff $z=1$** (for $h\ne 0$). (An earlier draft of
+> this row carried a spurious overall factor of $z$ from mis-weighting
+> $\gamma$; the numeric table below — computed from the actual `TR_M`
+> constants — was unaffected.)
 
 - **"net" $=\varepsilon$.** The unweighted sum $\sum_i c_i$ is exactly the
   Frobenius counit (cited:
@@ -92,6 +102,49 @@ question no current content answers:
 > counit $\varepsilon$ rather than the Markov trace $\mathrm{tr}_M$ that the
 > mass itself uses?**
 
+## Categorical grounding — trace = pair-with-unit, counit = pair-with-integral
+
+Both functionals are the **same Frobenius pairing**
+$\langle x,y\rangle_G = \mathrm{tr}_M(xy)$ (Gram matrix $G_{ij}=\mathrm{tr}_M(b_ib_j)$)
+— they differ only in *which element they pair against*. The categorical
+action lands in $H_3(q)$, a **symmetric Frobenius algebra** with the Markov
+trace as symmetrizing form.
+
+- **Trace $=$ pair with the unit $\mathbf 1$.** The dual-basis identity
+  $G^{-1}t = e_\gamma$
+  ([`2026-05-11-q-beta-residual-decomposition.md`](2026-05-11-q-beta-residual-decomposition.md) §2,
+  re-verified here numerically) says the Markov vector $t_i=\mathrm{tr}_M(b_i)$
+  is the $G$-image of the **identity element** $\mathbf 1=e_\gamma$. Hence
+  $$\mathrm{tr}_M(\beta)=\langle\beta,\mathbf 1\rangle_G.$$
+  Categorically this is the **loop / Markov closure** (cap the cylinder); a
+  static mass is a closed loop, so the mass uses $\mathrm{tr}_M$.
+
+- **Counit $=$ pair with the integral $\omega$.** The augmentation
+  $\varepsilon(\beta)=\sum_i x_i$ is *also* a $G$-pairing, against a distinct
+  element $\omega = G^{-1}\mathbf 1$ (computed:
+  $\omega=(0.601,0.188,0.188,0.396,0.396,0.026)$, normalised so
+  $\mathrm{tr}_M(\omega)=1$):
+  $$\varepsilon(\beta)=\langle\beta,\omega\rangle_G,\qquad \omega=G^{-1}\mathbf 1.$$
+  $\omega$ is the **(co)integral** — the Frobenius dual of the augmentation
+  covector $\mathbf 1=(1,\dots,1)$.
+
+The two are the *same trace at different loop values*: $\varepsilon =
+\mathrm{tr}_M|_{z=1}$, and $z=1$ is the **$q$-stripped / topological limit**
+(unreachable for real $q$, since $\sqrt q + 1/\sqrt q \ge 2$). So:
+
+| observable | functional | pairs with | measures |
+|---|---|---|---|
+| mass $\mathfrak m=\lvert\mathrm{tr}_M\rvert$ | trace | unit $\mathbf 1$ | $q$-weighted **dynamics** (loop) |
+| $Q_\beta=\varepsilon(\Delta)\,\mathfrak E_0$ | counit | integral $\omega$ | $q$-stripped **net topology** |
+
+**Physical reading** (motivated, not proven): $\beta$-decay $n\to p+e^-+\bar\nu$
+reroutes *conserved topological content* ($d\to u$), which the augmentation
+$\varepsilon$ — braiding stripped — counts; a mass is the *dynamical* loop
+amplitude, which the $q$-weighted $\mathrm{tr}_M$ measures. A transition
+amplitude pairs with the integral; a partition function pairs with the unit.
+That is *why* the difference (a transition) can be a counit while the masses
+(loops) are traces.
+
 ## Forward direction (constructive, not a dead end)
 
 This is a concrete lead, not a refutation. In the nucleon difference the
@@ -108,8 +161,11 @@ remains an exact *counit* identity, not a *mass-tower* derivation.
 
 ## Reproducibility
 
-All symbolic identities (`net = ε`, `ε = tr_M|_{z=1}`, the two factorized
-difference forms) are sympy-exact; the numeric table uses the framework's
-`PROTON_NF`, `NEUTRON_NF`, `TR_M` constants and $q_0$ from `qou_substrate`.
-No fitting, no scan — a single pre-registered comparison of two named
-canonical functionals.
+All symbolic identities (`net = ε`, `ε = tr_M|_{z=1}`, `ε − tr_M = h(z−1)`,
+the difference forms) are sympy-exact; the pairing facts (`G⁻¹t = e_γ`,
+`ω = G⁻¹𝟙`, `tr_M(ω)=1`) use the framework's `G`, `G_INV`, `TR_M` constants;
+the numeric table uses `PROTON_NF`, `NEUTRON_NF`, `TR_M` and $q_0$ from
+`qou_substrate`. No fitting, no scan — a pre-registered comparison of two
+named canonical functionals. The core algebraic identities are
+Lean-verified in
+[`qbeta_counit_vs_trace.lean`](../../content/quantum-observable-universe/lean/QOU/Interactions/qbeta_counit_vs_trace.lean).
