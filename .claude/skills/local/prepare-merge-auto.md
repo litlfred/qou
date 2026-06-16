@@ -140,7 +140,8 @@ all escalated questions):
 3. If all green: merge via `mcp__github__merge_pull_request` with
    `merge_method: "merge"` (default per CLAUDE.md — preserves
    structured commits).
-4. Report the merge SHA + URL.
+4. **CRITICAL:** DO NOT DELETE THE BRANCH EVER! If using the GitHub CLI, DO NOT pass `--delete-branch`. If using the GitHub API, ensure the branch is preserved.
+5. Report the merge SHA + URL.
 
 ### Phase 5: Post-merge coordination
 
@@ -167,3 +168,4 @@ After merge:
 - Do NOT skip sibling coordination — it prevents post-merge conflicts.
 - Do NOT ask trivial questions in Phase 3 — only genuinely ambiguous
   decisions warrant user input.
+- **Do NOT delete the branch after merging.**
