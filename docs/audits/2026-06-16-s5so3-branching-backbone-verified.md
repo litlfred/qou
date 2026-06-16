@@ -162,7 +162,7 @@ sited under `docs/audits/scripts/` per the existing precedent
 `pyhecke` / `hecke-engine` compute stack: the claim it checks is pure $S_n$ representation
 combinatorics, so a self-contained checker is the appropriate (and auditable) form. If a
 Markov-trace–level follow-up is opened (obligation §2.2), that compute belongs in
-`folio-assistant/computations/` and should consume `pyhecke`.
+`computations/` and should consume `pyhecke`.
 
 ## 5. Cross-references
 

@@ -32,7 +32,7 @@ Test bench: every w ∈ S_n for n ∈ {2, 3, 4, 5} (1 + 2 + 6 + 24 + 120
 
 Reuses the symbolic Hoefsmit machinery from alpha_shift_torus.py.
 
-@module folio-assistant/computations/nh_basis_shift
+@module computations/nh_basis_shift
 """
 
 from __future__ import annotations

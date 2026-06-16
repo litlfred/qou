@@ -8,7 +8,7 @@
 ## Result
 
 Script:
-[`qbeta_c3_complex_singularity_probe.py`](../../folio-assistant/computations/qbeta/qbeta_c3_complex_singularity_probe.py)
+[`qbeta_c3_complex_singularity_probe.py`](../../computations/qbeta/qbeta_c3_complex_singularity_probe.py)
 · witness `qbeta-c3-complex-singularity-probe.witness.json`.
 
 From the published anchors (`c_3(proton) = -2.0693`, `c_3(muon) = -2.0097`,

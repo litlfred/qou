@@ -11,8 +11,8 @@ export default proposition({
   uses: ["rem:beta-decay-energy-scale", "prop:boltzmann-constant"],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/hecke_log_decomposition_probe.py",
-    witness: "folio-assistant/computations/hecke-log-decomposition-probe.witness.json",
+    script: "computations/hecke_log_decomposition_probe.py",
+    witness: "computations/hecke-log-decomposition-probe.witness.json",
     status: "verified",
   },
 });

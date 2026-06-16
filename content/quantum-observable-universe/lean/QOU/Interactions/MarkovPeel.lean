@@ -4,7 +4,7 @@ import QOU.Archimedean.GroundRing
 # Markov-axiom recursive ascent for the Jones–Markov trace
 
 Lean scaffold for the production recursive-ascent algorithm
-implemented in `folio-assistant/computations/markov/markov_peel.py`
+implemented in `computations/markov/markov_peel.py`
 ([#508](https://github.com/litlfred/qou/issues/508) /
 [PR #516](https://github.com/litlfred/qou/pull/516)).
 
@@ -218,7 +218,7 @@ theorem markov_pair_z2
 /-- Recursive Markov-axiom evaluator.
 
     Production-side analogue of
-    [`markov_peel.tr_M_atomic`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov/markov_peel.py).
+    [`markov_peel.tr_M_atomic`](https://github.com/litlfred/qou/blob/main/computations/markov/markov_peel.py).
     Takes a Hecke-algebra element `x` and a strand count `n`,
     peels the topmost generator via (M2) when present, and
     recurses on the residue.  The base case is `tr_M^{(1)}(1) = 1`.

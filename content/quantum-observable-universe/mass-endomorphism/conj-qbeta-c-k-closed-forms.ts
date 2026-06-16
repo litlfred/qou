@@ -27,9 +27,9 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/qbeta/qbeta_decay_sdp_full_ck.py",
+    script: "computations/qbeta/qbeta_decay_sdp_full_ck.py",
     witness: [
-      "folio-assistant/computations/qbeta/qbeta-decay-sdp-full-ck-derivation.witness.json",
+      "computations/qbeta/qbeta-decay-sdp-full-ck-derivation.witness.json",
     ],
     status: "experimental",
   },

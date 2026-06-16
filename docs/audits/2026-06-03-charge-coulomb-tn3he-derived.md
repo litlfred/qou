@@ -5,7 +5,7 @@
 records how far the **already-derived** categorical Coulomb structure gets
 toward it, and names the remaining gate.
 
-Probe: [`charge_coulomb_tn3he_derived.py`](../../folio-assistant/computations/charge_coulomb_tn3he_derived.py)
+Probe: [`charge_coulomb_tn3he_derived.py`](../../computations/charge_coulomb_tn3he_derived.py)
 (witness `charge-coulomb-tn3he-derived.witness.json`).
 
 ## Derived inputs (zero fit)

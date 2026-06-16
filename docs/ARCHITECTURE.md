@@ -7,7 +7,7 @@ This document describes the **architecture of the QOU repository** — how the l
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
 │ LAYER 4 — Witness JSON (universal interchange format)                │
-│ folio-assistant/computations/*.witness.json — every script emits     │
+│ computations/*.witness.json — every script emits     │
 │ ~860 files; schema = tools/witness-schema/schema/witness.schema.json │
 └──────────────────────────────────────────────────────────────────────┘
                                   ▲
@@ -16,7 +16,7 @@ This document describes the **architecture of the QOU repository** — how the l
 ┌──────────────────────────────────────────────────────────────────────┐
 │ LAYER 3 — Two consumer paths emit Layer-4 witnesses                  │
 │                                                                      │
-│ (A) In-repo compute scripts (Python, folio-assistant/computations/)  │
+│ (A) In-repo compute scripts (Python, computations/)  │
 │     ~539 scripts. Each runs the canonical pipeline directly. ~67%    │
 │     depend on the substrate trio; ~60% depend on pyhecke; ~2% depend │
 │     on pyhecke-native (Rust acceleration).                           │
@@ -78,14 +78,14 @@ The **witness JSON** is the universal data-interchange format. Any language with
 
 ## Library coherence status
 
-The package ecosystem is layered but **mid-migration**. Today's import counts (from `folio-assistant/computations/*.py`, the 901-file compute layer; refresh with [`scripts/audit-library-coherence.sh`](../scripts/audit-library-coherence.sh) — anchored regex `^(import|from) <pkg>([ .]|$)`, so the numbers measure real import statements, not loose substring matches):
+The package ecosystem is layered but **mid-migration**. Today's import counts (from `computations/*.py`, the 901-file compute layer; refresh with [`scripts/audit-library-coherence.sh`](../scripts/audit-library-coherence.sh) — anchored regex `^(import|from) <pkg>([ .]|$)`, so the numbers measure real import statements, not loose substring matches):
 
 | Package | Importers in compute layer | Status |
 |---|---:|---|
 | [`qou-substrate`](../tools/qou-substrate/) | 7 | wired — substrate trio, the foundation |
 | [`pyhecke`](../tools/pyhecke/) | 19 | wired — primary Hecke / Gram surface |
 | [`pyhecke-native`](../tools/pyhecke-native/) | 15 | wired — Rust-accelerated Markov trace |
-| [`qou-mass`](../qou-mass/) | 1 | alpha; first in-repo importer is the canonical wiring example [`qou_mass_canonical_wiring_example.py`](../folio-assistant/computations/qou_mass_canonical_wiring_example.py) |
+| [`qou-mass`](../qou-mass/) | 1 | alpha; first in-repo importer is the canonical wiring example [`qou_mass_canonical_wiring_example.py`](../computations/qou_mass_canonical_wiring_example.py) |
 | [`witness-schema`](../tools/witness-schema/) | 1 | alpha; same wiring example demonstrates the Pydantic `model_validate` emit-time-schema-check pattern |
 | `mpmath` (also exposed transitively via `qou_substrate.precision`) | 593 | direct imports — pre-substrate carve-out |
 | `sympy` | 206 | direct imports — `Rational`, `Symbol`, partition combinatorics |
@@ -114,7 +114,7 @@ Names of mathematical primitives — `gram`, `seminormal`, `wenzl_lr`, `laurent`
 | Rust core | `tools/hecke-engine/src/{gram,seminormal,wenzl_lr,laurent_*,gb_nf_reducer,sdp_*,…}.rs` (single-purpose flat files) |
 | Python library | `tools/pyhecke/python/pyhecke/{gram,trace,wedderburn,partition,tower,sdp,lp_dual_solver,…}.py` |
 | Python substrate | `tools/qou-substrate/python/qou_substrate/{constants,precision,witness}.py` |
-| Python in-repo substrate | `folio-assistant/computations/substrate/{q_parameter,witness_base,_precision,hecke_core,…}.py` |
+| Python in-repo substrate | `computations/substrate/{q_parameter,witness_base,_precision,hecke_core,…}.py` |
 | Python facade | `qou-mass/src/qou_mass/{api,prediction}.py` + `_internal/` |
 | Thin-binding crates | `tools/pyhecke-native/src/lib.rs`, `tools/hecke-engine-{wasm,node,r,jvm,c,gap,julia,octave}/src/lib.rs`, `tools/sage-examples/` (single-file re-export shims, size varies) |
 
@@ -122,7 +122,7 @@ This axis is **identity-preserving**: `pyhecke.gram` calls `pyhecke_native::gram
 
 ### Axis B — Workflow clusters (in-repo only; do NOT mirror to libraries)
 
-Names of research-script categories — `probes/`, `audits/`, `sweeps/`, `phase5/`, `habiro/`, `markov/`, `qbeta/`, `alpha/`, `a_operator/` — only exist inside `folio-assistant/computations/`:
+Names of research-script categories — `probes/`, `audits/`, `sweeps/`, `phase5/`, `habiro/`, `markov/`, `qbeta/`, `alpha/`, `a_operator/` — only exist inside `computations/`:
 
 | Cluster | What lives there |
 |---|---|
@@ -139,7 +139,7 @@ The substrate cluster is the **only** in-repo cluster whose contents map 1-to-1 
 ### Rule of thumb when adding code
 
 - **Adding a new mathematical primitive** (a new Hecke operation, a new Markov-trace variant, a new SDP backend) → Axis A. Add it to `tools/hecke-engine/src/`, surface it in `tools/pyhecke/`, optionally re-export through `pyhecke-native` / the WASM / Node bindings. Same name everywhere.
-- **Adding a new research script** (a probe to test a conjecture, an audit to check a discipline, a sweep over a new parameter family) → Axis B. Drop it into the matching `folio-assistant/computations/<cluster>/` subdirectory. The cluster name is for filesystem organisation only; the script's logic lives entirely inside `folio-assistant/computations/` and is not exposed by any published library.
+- **Adding a new research script** (a probe to test a conjecture, an audit to check a discipline, a sweep over a new parameter family) → Axis B. Drop it into the matching `computations/<cluster>/` subdirectory. The cluster name is for filesystem organisation only; the script's logic lives entirely inside `computations/` and is not exposed by any published library.
 
 ## Content-object architecture
 
@@ -230,7 +230,7 @@ The **folio deployment** (`deploy/`) is a separate Docker-based hosting for the 
 |---|---|
 | **Substrate** | The fundamental parameter `q_0 ≈ 1.1097` from which all observables derive |
 | **Canonical surface** | The 11-step derivation chain (cheat sheet) — pyhecke owns 100% of this |
-| **Exploratory surface** | Phase-5 LP-dual + Plancherel-trace cluster — lives in `folio-assistant/computations/hecke_core_legacy.py` with a `DEPRECATION-CANDIDATE` banner (moved out of `_deprecated/` 2026-06-01 because 9 live importers still depend on it). |
+| **Exploratory surface** | Phase-5 LP-dual + Plancherel-trace cluster — lives in `computations/hecke_core_legacy.py` with a `DEPRECATION-CANDIDATE` banner (moved out of `_deprecated/` 2026-06-01 because 9 live importers still depend on it). |
 | **L1 / L2 precision** | L1 = compute-stable to 1 ppb; L2 = per-observable σ_pred ≤ σ_exp / 100 |
 | **CAL-2 floor** | The CODATA-2022 experimental precision floor (~780 ppb on m_p) |
 | **NF** | Normal Form (in the H₃(q) Gröbner-Shirshov reduction) |

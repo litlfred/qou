@@ -68,7 +68,7 @@ Combining: $(q_0^5 - q_0^{-5}) \times (9/5)^2 \approx 1.0914 \times
 
 ## Computational witness
 
-[`meson-kaon-pion-derivation.witness.json`](../../folio-assistant/computations/meson-kaon-pion-derivation.witness.json)
+[`meson-kaon-pion-derivation.witness.json`](../../computations/meson-kaon-pion-derivation.witness.json)
 verifies the formula at $50$-digit precision, confirms the algebraic
 identity $q^5 - q^{-5} = h \cdot [5]_q$, and validates the Seifert
 ratio $V_S(T(2,5))/V_S(T(2,3)) = 9/5$ exactly.

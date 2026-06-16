@@ -76,7 +76,7 @@ noncomputable def frobeniusCoCasimirTraceN3 : ℝ :=
 
     Ref: [manuscript] §Frobenius derivation in
     `prop:partition-sum-proton-residual`;
-    `folio-assistant/computations/frobenius_partition_sum.py`. -/
+    `computations/frobenius_partition_sum.py`. -/
 theorem proton_tower_residual_frobenius :
     ∃ (ε : ℝ), abs ε ≤ electronMass * (4 / 1000) ∧
       protonCodata - protonTowerMass =
@@ -84,7 +84,7 @@ theorem proton_tower_residual_frobenius :
   -- Bound loosened from 2/1000 to 4/1000 per option (a) in the comment
   -- below. The witnessed |ε| ≈ 0.00179 MeV fits within m_e · 4/1000
   -- ≈ 0.00204 MeV. The exact ε is a witness axiom (below).
-  -- Ref: [manuscript] folio-assistant/computations/frobenius_partition_sum.py
+  -- Ref: [manuscript] computations/frobenius_partition_sum.py
   exact ⟨protonCodata - protonTowerMass - electronMass * frobeniusCoCasimirTraceN3,
     by sorry, by ring⟩
 
@@ -92,7 +92,7 @@ theorem proton_tower_residual_frobenius :
 def neutronCodata : ℝ := 939.56542194
 
 /-- The pure-tower neutron mass at q_0, in MeV.  From
-    `folio-assistant/computations/six_term_consumer.py` at q_0:
+    `computations/six_term_consumer.py` at q_0:
     ≈ 411.227 MeV (genuine framework prediction, ≈ 528 MeV short of
     CODATA — the documented neutron-tower gap). -/
 def neutronTowerMass : ℝ := 411.227

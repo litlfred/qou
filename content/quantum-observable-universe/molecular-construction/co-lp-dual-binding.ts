@@ -10,9 +10,9 @@ export default proposition({
   computation: {
     engine: "python",
     status: "verified",
-    script: "folio-assistant/computations/co_bond_order_active_set.py",
+    script: "computations/co_bond_order_active_set.py",
     witness: [
-      "folio-assistant/computations/co-bond-order-active-set.witness.json",
+      "computations/co-bond-order-active-set.witness.json",
     ],
   },
   uses: [

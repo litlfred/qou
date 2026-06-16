@@ -1,7 +1,7 @@
 # Q_β c_3 order audit — the "−2" is an accidental cross-order coincidence
 
 **Date:** 2026-05-31
-**Probe:** [`qbeta_multiblock_order_audit.py`](../../folio-assistant/computations/audits/qbeta_multiblock_order_audit.py)
+**Probe:** [`qbeta_multiblock_order_audit.py`](../../computations/audits/qbeta_multiblock_order_audit.py)
 → `qbeta-multiblock-order-audit.witness.json`
 **Goal arm:** 1ppQ-Q_β (`docs/coordination/1ppq-qbeta.md`)
 **Probe claim:** `probe-qbeta-habiro-element-search` sub-attack — the

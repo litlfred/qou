@@ -39,7 +39,7 @@ Substituting Conv A explicitly: $m_p \approx E_0 \cdot |\mathrm{tr}_M(\beta_p)| 
 1. Closure of the `brane-tower-z-habiro` $n_\star$ conjecture (open R&D, may close binding-energy residuals to ~5%, much further still to 1ppb).
 2. A **substrate-derived $\lambda_{\text{scale}}$** for the Borromean baryon-mass formula
    $m(B) = \mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2 \cdot \lambda_{\text{scale}} + \text{Skein corrections}$
-   from `borromean-baryon-interpretation.md`. **Status:** $\lambda_{\text{scale}}$ is **declared but not defined** anywhere in `content/` or `folio-assistant/computations/` — it's an undefined symbol in the paper's mass formula. This is the next concrete "open derivation" needed.
+   from `borromean-baryon-interpretation.md`. **Status:** $\lambda_{\text{scale}}$ is **declared but not defined** anywhere in `content/` or `computations/` — it's an undefined symbol in the paper's mass formula. This is the next concrete "open derivation" needed.
 3. Quark-mass / QCD-scale inputs (would expand the 3-cal discipline; needs author authorization).
 
 **The 999M ppb residual on PR #640 is honest substrate-only exposure of the missing $\lambda_{\text{scale}}$ / $n_\star$ closure.** Not noise to close via tweaks.

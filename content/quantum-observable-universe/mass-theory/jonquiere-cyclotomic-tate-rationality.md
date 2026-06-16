@@ -123,8 +123,8 @@ $$
 
 ### Numerical verification at 50 dps
 
-[`jonquiere_cyclotomic_general.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/jonquiere_cyclotomic_general.py),
-[witness](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/jonquiere-cyclotomic-general.witness.json):
+[`jonquiere_cyclotomic_general.py`](https://github.com/litlfred/qou/blob/main/computations/jonquiere_cyclotomic_general.py),
+[witness](https://github.com/litlfred/qou/blob/main/computations/jonquiere-cyclotomic-general.witness.json):
 
 Verified at $n \in \{2, 3, 4, 5\}$ and $K \in \{3, 4, 5, 6, 7\}$ —
 20 combinations.  Max residual $4.0 \times 10^{-51}$.

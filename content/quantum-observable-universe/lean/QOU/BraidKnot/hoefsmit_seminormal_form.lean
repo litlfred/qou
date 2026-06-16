@@ -37,7 +37,7 @@ namespace QOU.BraidKnot
 
 /-- Abstract context for the Hoefsmit seminormal form. -/
 class HoefsmitSeminormalContext (n : ℕ) where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- The substrate parameter `q > 1`. -/
   q : ℝ
   q_gt_one : 1 < q

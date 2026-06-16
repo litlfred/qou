@@ -21,9 +21,9 @@ Failure output now includes:
 ## Usage
 
 ```bash
-python3 folio-assistant/computations/lp_dual_witness_validator.py --list-wired
-python3 folio-assistant/computations/lp_dual_witness_validator.py --strict-wired
-python3 folio-assistant/computations/lp_dual_witness_validator.py --strict
+python3 computations/lp_dual_witness_validator.py --list-wired
+python3 computations/lp_dual_witness_validator.py --strict-wired
+python3 computations/lp_dual_witness_validator.py --strict
 ```
 
 This keeps CI policy explicit: enforce wired production outputs first, while still allowing broader audit scans when needed.

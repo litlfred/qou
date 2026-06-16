@@ -56,13 +56,13 @@ five-way conjunction is `nStar_all_probed_forms_refuted`.
 
 | Witness | Computes | Engine |
 |:---|:---|:---|
-| [`probe-phiq-uniform-k.witness.json`](../../folio-assistant/computations/probe-phiq-uniform-k.witness.json) | family 1 (uniform `k` sweep) | scipy |
-| [`probe-phiq-n-star-rule.witness.json`](../../folio-assistant/computations/probe-phiq-n-star-rule.witness.json) | family 2 ($\ell n_0 + k$) | scipy |
-| [`probe-phiq-operator-valued.witness.json`](../../folio-assistant/computations/probe-phiq-operator-valued.witness.json) | family 3 (per-eigenvalue), persists eigenvalue spectra | numpy + Hoefsmit |
-| [`probe-phiq-avg-chi-over-classical-dim.witness.json`](../../folio-assistant/computations/probe-phiq-avg-chi-over-classical-dim.witness.json) | family 3 historical Wedderburn-block-average variant (audit only) | numpy |
-| [`probe-phiq-multiplicity-refined.witness.json`](../../folio-assistant/computations/probe-phiq-multiplicity-refined.witness.json) | family 4 (R1–R4 rules in both scalar and operator-valued) | numpy |
-| [`probe-phiq-pair-knot-magic-shell.witness.json`](../../folio-assistant/computations/probe-phiq-pair-knot-magic-shell.witness.json) | family 5 (pair-knot product-volume + operator-selection LP dual, diagonal Gram) | scipy linprog |
-| [`probe-phiq-pair-knot-markov-trace.witness.json`](../../folio-assistant/computations/probe-phiq-pair-knot-markov-trace.witness.json) | family 5 refinement (Markov-trace composite + full Frobenius Gram + LP **and** SDP duals) | scipy + cvxpy/SCS |
+| [`probe-phiq-uniform-k.witness.json`](../../computations/probe-phiq-uniform-k.witness.json) | family 1 (uniform `k` sweep) | scipy |
+| [`probe-phiq-n-star-rule.witness.json`](../../computations/probe-phiq-n-star-rule.witness.json) | family 2 ($\ell n_0 + k$) | scipy |
+| [`probe-phiq-operator-valued.witness.json`](../../computations/probe-phiq-operator-valued.witness.json) | family 3 (per-eigenvalue), persists eigenvalue spectra | numpy + Hoefsmit |
+| [`probe-phiq-avg-chi-over-classical-dim.witness.json`](../../computations/probe-phiq-avg-chi-over-classical-dim.witness.json) | family 3 historical Wedderburn-block-average variant (audit only) | numpy |
+| [`probe-phiq-multiplicity-refined.witness.json`](../../computations/probe-phiq-multiplicity-refined.witness.json) | family 4 (R1–R4 rules in both scalar and operator-valued) | numpy |
+| [`probe-phiq-pair-knot-magic-shell.witness.json`](../../computations/probe-phiq-pair-knot-magic-shell.witness.json) | family 5 (pair-knot product-volume + operator-selection LP dual, diagonal Gram) | scipy linprog |
+| [`probe-phiq-pair-knot-markov-trace.witness.json`](../../computations/probe-phiq-pair-knot-markov-trace.witness.json) | family 5 refinement (Markov-trace composite + full Frobenius Gram + LP **and** SDP duals) | scipy + cvxpy/SCS |
 
 ## Positive structural finding from the LP/SDP dual
 
@@ -124,8 +124,8 @@ pair-knot product-volume collapse ($\sigma_{pp}$ as single
 composite), ³He is at $+218.7\%$; ⁴He at $-19.4\%$.
 
 **Markov-trace audit (B.1, 2026-05-11):**
-[`probe_tr_m_he3_audit.py`](../../folio-assistant/computations/probe_tr_m_he3_audit.py)
-([witness](../../folio-assistant/computations/tr-m-he3-audit.witness.json))
+[`probe_tr_m_he3_audit.py`](../../computations/probe_tr_m_he3_audit.py)
+([witness](../../computations/tr-m-he3-audit.witness.json))
 cross-checked $|\mathrm{tr}_M(\beta)|$ for $\{D, T, ^3\mathrm{He}\}$
 via two independent canonical paths:
 
@@ -179,8 +179,8 @@ diagonal Frobenius Gram approximation $G_{ij} = \delta_{ij}
 $G_{ij} = \mathrm{tr}_M(\sigma_i \sigma_j)$.
 
 The Markov-trace refinement was implemented in
-[`probe_phiq_pair_knot_markov_trace.py`](../../folio-assistant/computations/probe_phiq_pair_knot_markov_trace.py)
-([witness](../../folio-assistant/computations/probe-phiq-pair-knot-markov-trace.witness.json));
+[`probe_phiq_pair_knot_markov_trace.py`](../../computations/probe_phiq_pair_knot_markov_trace.py)
+([witness](../../computations/probe-phiq-pair-knot-markov-trace.witness.json));
 **also refuted**:
 
 | Atom | Markov-trace tower at $n_\star$ | $B_{\text{pred}}$ MeV | $B_{\text{AME}}$ MeV | err |
@@ -255,7 +255,7 @@ Their finding for deuteron under canonical τ_M:
 | T1+T2+T3+T4+T5 (naive sum) | $-2.25$ | $-201\%$ |
 
 Pulling the same T1+T2+T3 for tritium from their witness
-([deprecated](../../folio-assistant/computations/_deprecated/multi-term-tau-M-corrected.witness.json)):
+([deprecated](../../computations/_deprecated/multi-term-tau-M-corrected.witness.json)):
 
 | Atom | T1+T2+T3 | AME | err |
 |:-:|---:|---:|---:|
@@ -289,8 +289,8 @@ $$
 
 where $E_C$ is the proton-proton Coulomb correction for ³He.
 
-[`probe_z_n_brane_tower_falsifiability.py`](../../folio-assistant/computations/probe_z_n_brane_tower_falsifiability.py)
-([witness](../../folio-assistant/computations/z-n-brane-tower-falsifiability.witness.json))
+[`probe_z_n_brane_tower_falsifiability.py`](../../computations/probe_z_n_brane_tower_falsifiability.py)
+([witness](../../computations/z-n-brane-tower-falsifiability.witness.json))
 tests this across the six probed brane-tower conventions. **None
 satisfy the prediction** — the closest (operator-valued uniform
 $k=1$) has discrepancy $1.87$ MeV; others are $3$–$10^6$ MeV off.
@@ -331,13 +331,13 @@ therefore consistent with AME.
 
 User pushback: "where optimize ⁴He? are you using cached/recursion
 /full compute infra?" — I was building Hoefsmit seminormal matrices
-when [`markov_peel.tr_M_atomic`](../../folio-assistant/computations/markov/markov_peel.py)
+when [`markov_peel.tr_M_atomic`](../../computations/markov/markov_peel.py)
 (Gröbner-Shirshov reduction + Markov-axiom recursive peeling, with
 `@functools.lru_cache` on per-nucleon NFs) bypasses matrix
 construction entirely.
 
-[`probe_tr_m_he4_canonical.py`](../../folio-assistant/computations/probe_tr_m_he4_canonical.py)
-([witness](../../folio-assistant/computations/tr-m-he4-canonical.witness.json))
+[`probe_tr_m_he4_canonical.py`](../../computations/probe_tr_m_he4_canonical.py)
+([witness](../../computations/tr-m-he4-canonical.witness.json))
 runs `tr_M_atomic(2, 2, include_inter=True)` symbolically, then
 evaluates at $q_0$ with `mpmath` at 50dps. **NO FLOAT64** in the
 pipeline.
@@ -426,7 +426,7 @@ behind the optimisation work.
 
 ### D.2 — Other AME isotopes (scoping, deferred to follow-up)
 
-Available chi caches in `folio-assistant/computations/`:
+Available chi caches in `computations/`:
 `chi-proton-h3`, `chi-neutron-h3`, `chi-deuteron-h6`,
 `chi-tritium-h9`, `chi-helium-3-h9`, `chi-helium-4-h12` (the last
 uses a DEPRECATED disjoint-word convention; the canonical

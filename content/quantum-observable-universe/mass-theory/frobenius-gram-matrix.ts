@@ -16,8 +16,8 @@ export default proposition({
   ],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/probes/frobenius_gram_matrix_probe.py",
-    witness: "folio-assistant/computations/probes/frobenius-gram-matrix-probe.witness.json",
+    script: "computations/probes/frobenius_gram_matrix_probe.py",
+    witness: "computations/probes/frobenius-gram-matrix-probe.witness.json",
     status: "verified",
   },
   authorNotes: [

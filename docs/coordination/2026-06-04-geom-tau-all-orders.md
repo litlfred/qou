@@ -40,7 +40,7 @@ both are categorically plausible.
 ## Empirical test — RUN (2026-06-04), refines the conjecture
 
 The h⁶,h⁸ extension was implemented in
-`folio-assistant/computations/probes/tau_all_orders_h6_empirical.py`
+`computations/probes/tau_all_orders_h6_empirical.py`
 (witness `tau-all-orders-empirical-bridge.witness.json`). It does NOT
 resolve the dichotomy — instead it sharpens it and corrects the
 "discriminating at h⁶" expectation above:
@@ -84,7 +84,7 @@ corpus was searched:
 
 - `grep -rln "tau.*all.orders" docs/audits/` → empty
 - `grep -rln "tau.*all.orders\|order.mixing.*tau" content/` → empty
-- `grep -rln "tau_order_mixing\|alg_h.*kappa.*all_orders" folio-assistant/computations/` → empty
+- `grep -rln "tau_order_mixing\|alg_h.*kappa.*all_orders" computations/` → empty
 - Coordination ledgers: no prior closure of this specific question.
 
 The four greps returning empty modulo this branch confirm the
@@ -126,7 +126,7 @@ sharpened form. If picked up: branch off
 
 - Content block: [`conj:tau-all-orders-bridge`](../../content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.md)
 - Lean class skeleton: `content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.lean` (declares `TauOrderMixingMap` + `TauDistinctInvariants` classes, no instances — honest open state)
-- Precedent disproof: [`phi0_normalization_disproof.py`](../../folio-assistant/computations/hecke/phi0_normalization_disproof.py)
+- Precedent disproof: [`phi0_normalization_disproof.py`](../../computations/hecke/phi0_normalization_disproof.py)
 - Anchor proposition: [`prop:crossed-module-euler-characteristic`](../../content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.md)
 - Upstream conjecture: [`conj:geom-universality`](../../content/quantum-observable-universe/particle-interactions/geom-universality.md)
 - Status remark this sharpens: [`rem:geom-bridge-status`](../../content/quantum-observable-universe/mass-theory/geom-bridge-status.md)

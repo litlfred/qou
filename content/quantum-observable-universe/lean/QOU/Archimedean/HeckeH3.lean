@@ -161,7 +161,7 @@ theorem stdRep3_braid :
     the trivial (q^{2n}) and sign (q^{-2n}) Wedderburn channels.
 
     **Computational provenance**: sympy-verified at q symbolic in
-    [`folio-assistant/computations/probes/t3n_binomial_pattern_probe.py`]. -/
+    [`computations/probes/t3n_binomial_pattern_probe.py`]. -/
 -- Ref: [jones1987]
 theorem stdRep3_M_cubed_eq_one :
     (stdRep3_gen0 * stdRep3_gen1) ^ 3 = (1 : TMatrix) := by
@@ -188,7 +188,7 @@ theorem stdRep3_M_cubed_eq_one :
   which expands in h = q − q⁻¹ to
       χ^{(2,1)}(β_Bor)(h)  =  2 − 3h⁴ − h⁶  (exact, finite-degree 6 polynomial)
 
-  Sympy-verified in `folio-assistant/computations/crystal_yekutieli_probes_abcd.py`
+  Sympy-verified in `computations/crystal_yekutieli_probes_abcd.py`
   (PR #1233 probe B). The Lean theorem stating this polynomial equality
   would require the q-form to be written in the t-parameter algebra
   (HA_t / q_from_t machinery), which is non-trivial; this section just

@@ -121,7 +121,7 @@ and the algebraic prediction of the binding-per-nucleon peak is a
 
 *The dominant component $V_{\lambda_A}$ in the LR decomposition need
 **not** itself be self-conjugate — empirical Yamanouchi enumeration
-([`lr_fusion_self_conj_test.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/folio-assistant/computations/lr_fusion_self_conj_test.py))
+([`lr_fusion_self_conj_test.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/lr_fusion_self_conj_test.py))
 finds the dominant $\nu$ is non-self-conjugate at every tested
 $(Z, N)$. The criterion is **content additivity** on the LR-fusion,
 not self-conjugacy of the dominant component.*

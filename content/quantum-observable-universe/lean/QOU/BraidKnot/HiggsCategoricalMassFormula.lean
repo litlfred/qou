@@ -4,7 +4,7 @@ import QOU.BraidKnot.SubstrateEWHypotheses
 # QOU.BraidKnot.HiggsCategoricalMassFormula — Lean encoding of the constructed Higgs mass formula
 
 **Encodes** the categorical Higgs mass formula constructed in
-[`folio-assistant/computations/higgs_categorical_mass_formula_attempt.py`](../../../../../folio-assistant/computations/higgs_categorical_mass_formula_attempt.py)
+[`computations/higgs_categorical_mass_formula_attempt.py`](../../../../../computations/higgs_categorical_mass_formula_attempt.py)
 (PR #1159):
 
   m_H = m_W · (P_4(h_0) / P_2(h_0)) · (6/5) · (1 - h_0^4 · Vol(B_3)/4)
@@ -162,11 +162,11 @@ theorem scalar_gauge_ratio_at_zero :
 
     Status: class-conditional per §3b-cond; requires research-grade
     categorical work to discharge. -/
--- Ref: [manuscript] PR #1159 + folio-assistant/computations/higgs-categorical-mass-formula-attempt.witness.json
+-- Ref: [manuscript] PR #1159 + computations/higgs-categorical-mass-formula-attempt.witness.json
 theorem higgs_mass_formula_matches_measured_hypothesis :
     ∃ (m_W h_0 m_H : ℝ),
       higgsMassFormula m_W h_0 = m_H ∧ m_H = 125.10 := by
-  -- Ref: [manuscript] PR #1159 + folio-assistant/computations/higgs-categorical-mass-formula-attempt.witness.json
+  -- Ref: [manuscript] PR #1159 + computations/higgs-categorical-mass-formula-attempt.witness.json
   trivial
 
 /-- The formula's empirical match is < 1% (witness JSON). This is

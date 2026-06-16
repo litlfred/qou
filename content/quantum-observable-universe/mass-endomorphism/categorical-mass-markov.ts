@@ -17,9 +17,9 @@ export default proposition({
   },
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/canonical_isospin_pyhecke.py",
+    script: "computations/canonical_isospin_pyhecke.py",
     witness:
-      "folio-assistant/computations/canonical-isospin-pyhecke.witness.json",
+      "computations/canonical-isospin-pyhecke.witness.json",
     status: "verified",
     requires: ["pyhecke"],
   },

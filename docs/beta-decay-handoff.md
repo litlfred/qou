@@ -135,7 +135,7 @@ Q_bare overshoots for heavy nuclei (60Co +79%, 90Sr +70%, 137Cs +171%, 210Bi +82
 Results: ³H -0.6%, ¹⁴C -2.2%, ⁶⁰Co +6.4%, ⁹⁰Sr +2.1%, ¹³⁷Cs +4.6%, ²¹⁰Bi +10.3%
 Mean absolute error: 4.4%, RMS: 5.4%
 
-Script: folio-assistant/computations/qvalue-representation-theory.py
+Script: computations/qvalue-representation-theory.py
 
 ### P2: 137Cs specifically — RESOLVED
 
@@ -364,7 +364,7 @@ Upstream changed `E_×` → `𝓔_×` and made q parametric (good — matches ou
 - `ch7/finiteness-bound-interpretation.md` — A=5 gap interpretation
 
 ### Should NOT block merge (exploratory):
-- All computation scripts in folio-assistant/computations/
+- All computation scripts in computations/
 - These are witness computations, not paper content
 
 ### Skill update:

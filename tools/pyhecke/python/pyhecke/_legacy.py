@@ -1,4 +1,4 @@
-"""Bridge to folio-assistant/computations/hecke_core.py.
+"""Bridge to computations/hecke_core.py.
 
 Adds the legacy computations directory to sys.path so `hecke_core` and
 its siblings (q_parameter, experimental_constants, crt_markov, etc.)

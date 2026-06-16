@@ -20,9 +20,9 @@ This branch picks up Subgoal-1 from where the 2026-05-31 binding-magic-A-wireup 
 
 | Script | Role |
 |---|---|
-| `folio-assistant/computations/canonical_tr_m_via_branching.py` | Operator-valued Wenzl branching for tr_M via per-arc A operators |
-| `folio-assistant/computations/A_operator_extract_at_level.py` | Extract A^λ_ξν(I) operators from the substrate Hecke at each level |
-| `folio-assistant/computations/lr_coefficients.py` | Littlewood-Richardson coefficients for the branching combiner |
+| `computations/canonical_tr_m_via_branching.py` | Operator-valued Wenzl branching for tr_M via per-arc A operators |
+| `computations/A_operator_extract_at_level.py` | Extract A^λ_ξν(I) operators from the substrate Hecke at each level |
+| `computations/lr_coefficients.py` | Littlewood-Richardson coefficients for the branching combiner |
 
 ### Lean
 

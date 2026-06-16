@@ -23,7 +23,7 @@ namespace QOU.BraidKnot
 
     Conjectural class — see [`conj:classical-riemann-hypothesis`](../../../quantum-observable-universe/braids-and-knots/classical-riemann-hypothesis.md). -/
 class ClassicalRiemannHypothesis where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       **Conjecture (Riemann, 1859).** All non-trivial zeros of the Riemann

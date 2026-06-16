@@ -60,7 +60,7 @@ from pyhecke.gram import (  # type: ignore[import-not-found]
 # computations/ for now (not yet pyhecke-owned). Pull through the
 # legacy bridge.
 from . import _legacy  # noqa: F401 — sys.path bridge
-# Prefer the in-repo `folio-assistant/computations/substrate/`
+# Prefer the in-repo `computations/substrate/`
 # (re-exported via flat-name `experimental_constants` / `knot_volumes`
 # shims that _legacy adds to sys.path).  Fall back to qou_substrate
 # (PyPI wheel) when pyhecke runs outside the repo — Pyodide, Sage,
@@ -107,7 +107,7 @@ q2 = q0**2  # kept for local alpha_em derivation
 #          = q · [9]_q · [10]_q
 # where α_shift(T_{p,k}) = k(p-1) on V_{(1^p)} per
 # prop:alpha-shift-torus-knot. Verified to 50 dps in
-# folio-assistant/computations/alpha-em-shift-multiplicative-chain.witness.json
+# computations/alpha-em-shift-multiplicative-chain.witness.json
 _bare_alpha_em = qi / (q_int(9) * q_int(10))
 _bare_alpha_inv = q0 * q_int(9) * q_int(10)
 

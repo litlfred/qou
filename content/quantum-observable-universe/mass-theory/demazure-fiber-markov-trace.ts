@@ -10,8 +10,8 @@ export default proposition({
   },
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/demazure_markov_trace.py",
-    witness: "folio-assistant/computations/demazure-markov-trace.witness.json",
+    script: "computations/demazure_markov_trace.py",
+    witness: "computations/demazure-markov-trace.witness.json",
     status: "verified",
     requires: ["sympy"],
   },

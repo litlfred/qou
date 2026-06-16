@@ -89,7 +89,7 @@ actual substrate constraint. Not preferred.
 ## Cross-check
 
 Sympy regression script emits the full factorization as a witness:
-[`folio-assistant/computations/gram_h3_det_factorization.py`](../../folio-assistant/computations/gram_h3_det_factorization.py).
+[`computations/gram_h3_det_factorization.py`](../../computations/gram_h3_det_factorization.py).
 The witness asserts:
 
 - `det(G(q_0)) ≈ −0.189` (matches existing regression)

@@ -119,7 +119,7 @@ is REQUIRED before any candidate gets wired.
 
 ## Witness
 
-`folio-assistant/computations/probes/qbeta-delta-tr-bar-decomposition-probe.witness.json`
+`computations/probes/qbeta-delta-tr-bar-decomposition-probe.witness.json`
 
 Includes the symbolic decomposition + numerical sanity check
 (sym + antisym = Δtr_M to 1e-12 at q_proton).
@@ -128,6 +128,6 @@ Includes the symbolic decomposition + numerical sanity check
 
 - `docs/audits/2026-05-31-qbeta-bridge-narrowing.md` — 7 ruled-out mechanisms
 - `docs/audits/2026-05-30-qbeta-recursive-pair-rules-and-habiro-pde.md` — Habiro q-difference equation framing
-- `folio-assistant/computations/_li_2_q_util.py` — prop:li2q-phiq-bar-symmetrization docstring
+- `computations/_li_2_q_util.py` — prop:li2q-phiq-bar-symmetrization docstring
 - `docs/coordination/1ppq-qbeta.md` — flip-flop history
 - `todos/research-queue.json` — `research-qbeta-habiro-element-search`

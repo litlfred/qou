@@ -1,7 +1,7 @@
 **Remark (per-observable $100\times$ experimental status — dashboard).**
 
 *This remark wraps the live per-observable accuracy dashboard at
-[`folio-assistant/computations/per-observable-100x-status.witness.json`](#),
+[`computations/per-observable-100x-status.witness.json`](#),
 emitted by
 [`per_observable_100x_status.py`](#).
 The dashboard reports the **L2 leg** of the precision-goals

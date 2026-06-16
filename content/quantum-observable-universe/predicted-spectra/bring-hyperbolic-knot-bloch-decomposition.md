@@ -143,7 +143,7 @@ NF-basis triple products $b_i \cdot \beta(T_{m,n}) \cdot b_j$
 across all relevant $H_n(q)$ — see
 [`knot-operator-lp-selection`](../braids-and-knots/knot-operator-lp-selection.md)
 and the witness
-[`knot-operator-table.witness.json`](../../../folio-assistant/computations/knot-operator-table.witness.json).
+[`knot-operator-table.witness.json`](../../../computations/knot-operator-table.witness.json).
 For $H_3(q)$ alone the NF basis
 $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ is six-dimensional;
 products with the torus operators $T_{1,0}, T_{2,1}, T_{2,2},
@@ -284,7 +284,7 @@ identifies the present coverage gap concretely:
 So **only 1 of 5 atlas hyperbolic objects has a principled-derivation
 $\sigma$-word**; the other four lack explicit Hecke representatives.
 The existing
-[`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/gb_filtration_jet_tracker.py)
+[`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/main/computations/gb_filtration_jet_tracker.py)
 has tested $\sigma_1^3$ (electron, trefoil — torus, no BW) and
 $(\sigma_1\sigma_2^{-1})^3$ (Borromean, hyperbolic) but has NOT
 been extended to $H_{18}$ / $H_{21}$ / etc. for the four
@@ -296,7 +296,7 @@ $H_n(q_0)$ for $n \leq 8$, either by (a) extending
 `gb_filtration_jet_tracker.py` to handle these knots, or (b)
 running the joint-tower SDP referenced as `"next_step"` in the
 existing
-[`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/gb-filtration-jet-order.witness.json).
+[`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/main/computations/gb-filtration-jet-order.witness.json).
 Once obtained, verify closure-identity against SnapPy volumes. This
 is the irreducible computational gate to inhabiting
 `BringHyperbolicDecomposition` from the atlas side — the question

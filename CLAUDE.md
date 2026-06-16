@@ -154,7 +154,7 @@ mentioned file.
       scope (e.g. the same chapter or the same Python/Lean file).
    4. **Refresh stale sidecars + witnesses** (added 2026-06-03).
       The QA pipeline depends on `*.qa.json` sidecars and
-      `folio-assistant/computations/*.witness.json` files staying
+      `computations/*.witness.json` files staying
       in sync with the source they audit. Sidecars are stale
       when `source_hashes.{md,ts,lean}` or
       `criteria.<crit>[-1].reviewer.script_hash` (both 12-char
@@ -446,7 +446,7 @@ corpus — run the **corpus-grep checklist**:
    you started in) — related conjectures/propositions cross-cut
    chapters (e.g. `brings-surface/inter-nucleon-channel-color-tube`
    answers a `mass-theory/` p/n asymmetry question).
-3. `grep -rln <topic> folio-assistant/computations/` — implemented
+3. `grep -rln <topic> computations/` — implemented
    Python may already realise the categorical content the source
    file says is "open" (e.g. `pn_convention="bring_color_weighted"`
    in `closed_form_tau_M.py`).
@@ -661,8 +661,8 @@ crystal). Full context:
 
 **Where to check status:**
 
-- L1: `folio-assistant/computations/onepb-status-dashboard.witness.json`
-- L2: `folio-assistant/computations/per-observable-100x-status.witness.json`
+- L1: `computations/onepb-status-dashboard.witness.json`
+- L2: `computations/per-observable-100x-status.witness.json`
 
 **When writing a precision-affecting change**, run BOTH dashboards
 and report the deltas. Mention which leg the change addresses.
@@ -858,13 +858,13 @@ emit BOTH primal and dual variables in its witness JSON:
 | `duality_gap` | $|\text{primal\_obj} - \text{dual\_obj}|$ |
 
 **Canonical entry point**:
-[`folio-assistant/computations/lp_dual_solver.py`](folio-assistant/computations/lp_dual_solver.py)
+[`computations/lp_dual_solver.py`](computations/lp_dual_solver.py)
 exposes `solve_operator_selection_lp(t, G, n_target)` and
 `solve_psd_operator_selection_sdp(t, G, n_target)`. Both return
 a result whose `.to_dict()` contains all required fields.
 
 **CI enforcement**:
-[`folio-assistant/computations/lp_dual_witness_validator.py`](folio-assistant/computations/lp_dual_witness_validator.py)
+[`computations/lp_dual_witness_validator.py`](computations/lp_dual_witness_validator.py)
 runs in `witness-pipeline.yml` (warn-only by default; `--strict`
 fails CI). Scans every `*.witness.json` whose name or
 `description`/`computation` field signals an LP/SDP/operator-
@@ -880,7 +880,7 @@ the dual at the time this rule was added). Do not repeat this
 pattern.
 
 **Current baseline.** Run
-[`lp_dual_witness_validator.py`](folio-assistant/computations/lp_dual_witness_validator.py)
+[`lp_dual_witness_validator.py`](computations/lp_dual_witness_validator.py)
 for the live count of missing-dual witnesses — do not cite a dated
 baseline from CLAUDE.md, as new LP/SDP witnesses land regularly.
 The validator's narrowed hint list (`lp-dual` /
@@ -1149,7 +1149,7 @@ However:
   uniqueness is conjectural) **should** carry an explicit narrative
   note in its `.md` flagging the conjectural backing, and should
   cite any computational witnesses available
-  (`folio-assistant/computations/*.witness.json`) so empirical
+  (`computations/*.witness.json`) so empirical
   support is discoverable from the manifest.
 - Any `theorem`/`proposition`/`lemma`/`corollary` whose `uses[]`
   cites such a definition **does** trigger propagation — it is
@@ -2064,8 +2064,8 @@ tool rather than silently failing.
 | `folio-assistant/ui/` | Assistant chat SPA |
 | `folio-assistant/simulators/` | Interactive HTML simulators |
 | `folio-assistant/feedback/` | User feedback (TypeScript files, committed to main) |
-| `folio-assistant/computations/` | Computation scripts and witness data (Layer 3 in-repo path; see `docs/ARCHITECTURE.md`) |
-| `qou-mass/` | `qou-mass` PyPI package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). Alpha (`v0.1.0a1`); 1 in-repo importer (the canonical wiring example `folio-assistant/computations/qou_mass_canonical_wiring_example.py`). |
+| `computations/` | Computation scripts and witness data (Layer 3 in-repo path; see `docs/ARCHITECTURE.md`) |
+| `qou-mass/` | `qou-mass` PyPI package — external-researcher facade (`predict()`, `compute_tr_M()`, `canonical_braid()`). Alpha (`v0.1.0a1`); 1 in-repo importer (the canonical wiring example `computations/qou_mass_canonical_wiring_example.py`). |
 | `tools/qou-substrate/` | `qou-substrate` PyPI package — Layer 2a (q₀, mpmath precision, `WitnessBuilder`). 7 in-repo direct importers (≈67 % transitive via `pyhecke`). |
 | `tools/pyhecke/` | `pyhecke` PyPI package — Layer 2b (Hecke / Gram / Markov trace). 19 in-repo direct importers. |
 | `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 bindings into `hecke-engine`. 15 in-repo direct importers. |

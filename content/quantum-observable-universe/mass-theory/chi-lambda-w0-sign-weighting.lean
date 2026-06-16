@@ -49,7 +49,7 @@ $(1\,3)$. Standard $S_n$ character theory:
 /-! ## Empirical per-irrep ε-expansion coefficients
 
 Values lifted bit-exactly from
-[`folio-assistant/computations/per-wedderburn-block-ck.witness.json`](../../../folio-assistant/computations/per-wedderburn-block-ck.witness.json)
+[`computations/per-wedderburn-block-ck.witness.json`](../../../computations/per-wedderburn-block-ck.witness.json)
 (PR #672). The per-irrep $c_k^{(\lambda)}$ for $k \in \{5, 6\}$
 (equivalently the $\varepsilon^{10}$ and $\varepsilon^{12}$
 coefficients of $\chi_\lambda(\beta_n) - \chi_\lambda(\beta_p)$

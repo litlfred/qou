@@ -37,8 +37,8 @@ c_10 **freely** (no form imposed). Therefore:
 
 ## Result
 
-[`qbeta/qbeta_c6_c10_crossanchor_falsification.py`](../../folio-assistant/computations/qbeta/qbeta_c6_c10_crossanchor_falsification.py)
-→ [witness](../../folio-assistant/computations/qbeta/qbeta-c6-c10-crossanchor-falsification.witness.json) (4/4 assertions)
+[`qbeta/qbeta_c6_c10_crossanchor_falsification.py`](../../computations/qbeta/qbeta_c6_c10_crossanchor_falsification.py)
+→ [witness](../../computations/qbeta/qbeta-c6-c10-crossanchor-falsification.witness.json) (4/4 assertions)
 
 | rung | closed(q₀) | bias-corrected | raw (old #1833) | role | match |
 |------|-----------|----------------|-----------------|------|-------|

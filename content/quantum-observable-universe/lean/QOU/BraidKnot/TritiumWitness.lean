@@ -32,7 +32,7 @@ seminormal representation.
 
 - PR #608 deferred-Hoefsmit-H5
 - `tools/hecke-engine` (Rust H_5 implementation)
-- `folio-assistant/computations/hecke/hecke_characters.py` (Python H_3
+- `computations/hecke/hecke_characters.py` (Python H_3
   / H_4 implementation; H_5 awaits port)
 -/
 

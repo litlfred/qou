@@ -115,9 +115,9 @@ R&D` item 1 and is the load-bearing step.
 
 ## Numerical landscape (witness)
 
-[`folio-assistant/computations/lambda_scale_alt_i_yekutieli_percell_numerical.py`](../../folio-assistant/computations/lambda_scale_alt_i_yekutieli_percell_numerical.py)
+[`computations/lambda_scale_alt_i_yekutieli_percell_numerical.py`](../../computations/lambda_scale_alt_i_yekutieli_percell_numerical.py)
 emits the witness
-[`lambda-scale-alt-i-yekutieli-percell-numerical.witness.json`](../../folio-assistant/computations/lambda-scale-alt-i-yekutieli-percell-numerical.witness.json)
+[`lambda-scale-alt-i-yekutieli-percell-numerical.witness.json`](../../computations/lambda-scale-alt-i-yekutieli-percell-numerical.witness.json)
 documenting:
 
   | quantity | value at q_0 |

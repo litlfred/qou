@@ -108,7 +108,7 @@ Together with the empirical n-context shifts
 $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_p \text{ in } H_{3A}) = 18$ and
 $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_n \text{ in } H_{3A}) = 21$
 (stable for all $A = 2, \ldots, 6$ per
-[habiro-coefficients-extended.witness.json](../../../folio-assistant/computations/habiro-coefficients-extended.witness.json)),
+[habiro-coefficients-extended.witness.json](../../../computations/habiro-coefficients-extended.witness.json)),
 the formula yields
 
 $$\mathrm{shift}_{\mathrm{NF}}(\beta_{\mathrm{atomic}}(Z, N)) = 18Z + 21N + 1,$$

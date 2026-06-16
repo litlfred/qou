@@ -29,13 +29,13 @@ axis (cross-chapter forward references). Written after the quark-sector move
 | Artifact | Path |
 |---|---|
 | Triage doc (Tables A/B = waive inventory) | [`docs/audits/2026-06-09-cross-chapter-forward-ref-triage.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-09-cross-chapter-forward-ref-triage.md) |
-| Classifier | [`folio-assistant/computations/forward_ref_classifier.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/forward_ref_classifier.py) (`:94` `WAIVED_CHAPTERS`, `:170` structural waivers) |
+| Classifier | [`computations/forward_ref_classifier.py`](https://github.com/litlfred/qou/blob/main/computations/forward_ref_classifier.py) (`:94` `WAIVED_CHAPTERS`, `:170` structural waivers) |
 | Waiver policy | [`docs/forward-ref-waiver-policy.md`](https://github.com/litlfred/qou/blob/main/docs/forward-ref-waiver-policy.md) |
 | H2 cross-chapter heuristic | `content/pipeline/content-graph-analysis.py --json` |
 
 Re-run the actionable list:
 ```bash
-python3 folio-assistant/computations/forward_ref_classifier.py --json --actionable-only
+python3 computations/forward_ref_classifier.py --json --actionable-only
 ```
 
 ## Next steps — prioritized

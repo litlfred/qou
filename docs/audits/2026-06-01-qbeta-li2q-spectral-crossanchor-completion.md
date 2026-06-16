@@ -87,8 +87,8 @@ window into fibre Im content — it's noise from the empirical pipeline.
 
 ## Files
 
-- `folio-assistant/computations/probes/qbeta_li2q_spectral_combiner_crossanchor_probe.py`
-- `folio-assistant/computations/probes/qbeta-li2q-spectral-combiner-crossanchor.witness.json`
+- `computations/probes/qbeta_li2q_spectral_combiner_crossanchor_probe.py`
+- `computations/probes/qbeta-li2q-spectral-combiner-crossanchor.witness.json`
 - `docs/audits/2026-06-01-qbeta-li2q-spectral-crossanchor-completion.md` (this file)
 
 ## Cross-refs

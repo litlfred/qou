@@ -6,7 +6,7 @@
 
 ## Classification (filename heuristics)
 
-Heuristics applied to 541 active Python scripts under `folio-assistant/computations/`:
+Heuristics applied to 541 active Python scripts under `computations/`:
 
 | bucket | count | naming pattern | sidecar action |
 |---|---:|---|---|
@@ -43,7 +43,7 @@ y_lambda_at_q0_cache.py               y_lambda_pole_order_cache.py
 **Edit shape (per file):**
 
 ```jsonc
-// folio-assistant/computations/script-qa/<name>.script-qa.json
+// computations/script-qa/<name>.script-qa.json
 {
   "$schema": "script-qa/v1",
   "script_path": "...",

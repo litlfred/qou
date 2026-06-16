@@ -23,8 +23,8 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/toffoli-lp-stability.py",
-    witness: "folio-assistant/computations/toffoli-lp-stability.witness.json",
+    script: "computations/toffoli-lp-stability.py",
+    witness: "computations/toffoli-lp-stability.witness.json",
     status: "verified",
   },
 });

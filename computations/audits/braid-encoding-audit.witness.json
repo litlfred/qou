@@ -1202,7 +1202,7 @@
       }
     },
     "structural_finding": {
-      "source": "folio-assistant/computations/fresh_derivation_pn_true_sdp.py:1-26",
+      "source": "computations/fresh_derivation_pn_true_sdp.py:1-26",
       "claim": "Per the framework's own SDP audit (commit history pre-dates this audit): 'Absolute m_p and m_n are NOT directly derivable from γγ → target Hecke-energy distance because entanglement energy (pre-observable complex-q sector) is gauged away. Only DIFFERENCES/RATIOS project to observables. The clean prior result is: m_n − m_p = S_dd − S_uu = ((q+q⁻¹)/(q^{1/2}+q^{-1/2})) · (μ_d − μ_u), giving < 1 ppm on Δm across isotopes once μ_d − μ_u is calibrated from CODATA.'",
       "implication": "Strategy-3 (atomic_braid_mass_table.py) computes |tr_M(p)| and |tr_M(n)| separately and combines via E_0 calibration. This violates the framework's own claim — the bare absolute traces are not observables. The −8.3% neutron error is a direct consequence: the σ↔σ⁻¹ asymmetry between uud and udd is real in the Hecke algebra but does NOT correspond to a physical absolute-mass observable in the framework's stated semantics.",
       "actionable_path": "The framework predicts m_n − m_p (an observable) via the (q+q⁻¹)/(q^{1/2}+q^{-1/2})·(μ_d − μ_u) formula at < 1 ppm. Strategy-3 should consume this difference formula directly rather than deriving m_n independently from |tr_M(n)|. A two-step calibration: (a) anchor m_p via CODATA (or via a different absolute-mass channel), (b) derive m_n = m_p + (q+q⁻¹)/(q^{1/2}+q^{-1/2})·(μ_d − μ_u)."

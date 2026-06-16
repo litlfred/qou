@@ -87,7 +87,7 @@ u = b * hbar_q ** 2        # Q_β precision-ladder variable
 def load_ck_data() -> dict[int, mp.mpf]:
     """Load c_2..c_10 at 50 dps from the SDP extraction witness.
 
-    HERE = folio-assistant/computations/qbeta — so the sibling
+    HERE = computations/qbeta — so the sibling
     witness lives at HERE / "qbeta-decay-sdp-extended-ck.witness.json"
     primarily. Fall back to a nested ../qbeta/ path only if the
     parent layout ever flips (Gemini #1713 review: prior code had

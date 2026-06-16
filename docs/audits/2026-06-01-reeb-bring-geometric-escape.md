@@ -3,8 +3,8 @@
 **Status:** COMPLETE — negative result for the Reeb-rotation channel
 (branch `claude/reeb-bring-geometric-escape-2026-06-01`).
 **Date:** 2026-06-01.
-**Probe:** [`folio-assistant/computations/reeb_rotation_pn_test.py`](../../folio-assistant/computations/reeb_rotation_pn_test.py)
-**Witness:** `folio-assistant/computations/reeb-rotation-pn-test-reeb.witness.json`
+**Probe:** [`computations/reeb_rotation_pn_test.py`](../../computations/reeb_rotation_pn_test.py)
+**Witness:** `computations/reeb-rotation-pn-test-reeb.witness.json`
 
 ## The hypothesis under test
 

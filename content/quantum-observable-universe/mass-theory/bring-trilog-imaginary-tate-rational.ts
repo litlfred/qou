@@ -10,9 +10,9 @@ export default proposition({
   },
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/kummer_reflection_zeta5.py",
+    script: "computations/kummer_reflection_zeta5.py",
     witness:
-      "folio-assistant/computations/kummer-reflection-zeta5.witness.json",
+      "computations/kummer-reflection-zeta5.witness.json",
     status: "verified",
   },
   // conj:qou-infra-discharges-goncharov-zeta5 removed from uses[] (2026-06-08

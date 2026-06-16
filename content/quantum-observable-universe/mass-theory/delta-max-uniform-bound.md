@@ -161,7 +161,7 @@ For light atoms ($A \le 16$) at $q_0$, numerical evaluation
 shows $N = 3$ is sufficient for sub-ppm precision on binding
 energies; the bound is saturated within a factor of 2 on the
 deuteron, tritium, and ${}^3\mathrm{He}$
-(cf. `folio-assistant/computations/unified_lift.py` with
+(cf. `computations/unified_lift.py` with
 `JET_TARGET_PPM`).
 
 ## What remains open

@@ -1,7 +1,7 @@
 # The canonical binding is INTENSIVE; A≥3 needs an EXTENSIVE term — a zero-fit derivation
 
 **Date:** 2026-06-02
-**Derivation:** [`derive_binding_per_block_archimedean.py`](../../folio-assistant/computations/derive_binding_per_block_archimedean.py)
+**Derivation:** [`derive_binding_per_block_archimedean.py`](../../computations/derive_binding_per_block_archimedean.py)
 → `derive-binding-per-block-archimedean.witness.json`
 **Status:** DERIVATION (zero fitted parameters). Reframes the Δ_λ gate.
 

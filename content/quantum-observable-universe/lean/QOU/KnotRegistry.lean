@@ -187,7 +187,7 @@ noncomputable def hopfLinkEntry : KnotEntry where
     `± 1×10⁻⁵⁰`.  Bumped 2026-06-07 from the previous 15-dps
     literal `7.32772475341775 ± 1×10⁻¹⁴` to match the project's
     standard working serialization precision (50 dps per
-    `folio-assistant/computations/_precision.py`).
+    `computations/_precision.py`).
     Source: **mpmath `mp.catalan` at `mp.dps = 50`, evaluated as
     `8 * mp.catalan`** — a closed-form-derived decimal (computed
     from the exact identity `Vol(L6a4) = 8·G`), NOT a SnapPy

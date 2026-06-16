@@ -54,9 +54,9 @@ So the negative-result trail is **already** documented across the audit chain. N
 
 ## What canonical code does
 
-- [`folio-assistant/computations/_li_2_q_util.py`](../folio-assistant/computations/_li_2_q_util.py)
+- [`computations/_li_2_q_util.py`](../computations/_li_2_q_util.py)
   `vol_density_borromean(q)` returns `Vol(𝓑₃)/ℏ_q² × linking_weight(q)`; the linking_weight currently uses the PROVED Family A `5/2 + (3/4)h²` from H_4 Wedderburn as the best categorical input.
-- [`folio-assistant/computations/m_p_borromean_verification_50dps.py`](../folio-assistant/computations/m_p_borromean_verification_50dps.py)
+- [`computations/m_p_borromean_verification_50dps.py`](../computations/m_p_borromean_verification_50dps.py)
   consumes `vol_density_borromean(q₀)` to predict m_p ≈ 965 MeV.
 
 The `lambda_*_FITTED_FROM_CODATA = 2.4599527869` literals were PURGED from production on 2026-05-22 (PR #888) and are retained ONLY as `*_AUDIT_ONLY` comparison columns in the witness JSON. They will never be consumed by a production prediction.

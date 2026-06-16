@@ -23,7 +23,7 @@ namespace QOU.QuantumObservableUniverses
 
     Conjectural class — see [`conj:g-action-on-substrate`](../../../quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md). -/
 class GActionOnSubstrate where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Conjecture statement** (from manuscript):
 
       Let $A$ be a Frobenius–Hopf substrate

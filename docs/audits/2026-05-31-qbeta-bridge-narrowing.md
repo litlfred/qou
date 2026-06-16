@@ -94,10 +94,10 @@ failure modes the §7b audit flags).
 
 ## Witnesses / files
 
-- `folio-assistant/computations/qbeta/qbeta-delta-tr-vs-formA.witness.json` (item 1)
-- `folio-assistant/computations/qbeta/qbeta-scaling-bridge-investigation.witness.json`
-- `folio-assistant/computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json`
-- `folio-assistant/computations/qbeta/qbeta_per_block_uniform_rule_verify.py`
-- `folio-assistant/computations/qbeta/qbeta-ck-cache.witness.json` (cal-anchored tier)
+- `computations/qbeta/qbeta-delta-tr-vs-formA.witness.json` (item 1)
+- `computations/qbeta/qbeta-scaling-bridge-investigation.witness.json`
+- `computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json`
+- `computations/qbeta/qbeta_per_block_uniform_rule_verify.py`
+- `computations/qbeta/qbeta-ck-cache.witness.json` (cal-anchored tier)
 - `content/.../mass-theory/q-beta-categorical-precision-ladder.lean` (§3b-cond `QbetaC3StructuralFormClass`)
 - `content/.../braids-and-knots/habiro-precision-ladder-equivalence.lean` (§3b-cond `QbetaHabiroTaylorBridgeClass`)

@@ -42,7 +42,7 @@ References:
     _nf_matrices_in_block(), _y_lambda_n3().
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_markov_trace_steps_4_5.py
+  python3 computations/qbeta/qbeta_markov_trace_steps_4_5.py
 
 Emits: qbeta-markov-trace-steps-4-5.witness.json (>= 3 assertions).
 """

@@ -113,7 +113,7 @@ Total ≈ 100–200 candidates per n — manageable in one PR.
 docs/audits/
   2026-06-04-qbeta-mixed-chains-plan.md      # this file
   2026-06-04-qbeta-mixed-chains-verdict.md   # final TIERED verdict
-folio-assistant/computations/qbeta/
+computations/qbeta/
   qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py
   qbeta-chain4-mixed-wenzl-kashaev-kashiwara.witness.json  # auto-emitted
 ```

@@ -61,7 +61,7 @@ Phase 4 (Lean closure of conditional results) for the Lean agent.
 
 ## 1  Live mass table on this branch (M0 baseline)
 
-Source: `folio-assistant/computations/sweeps/paper-six-term-isotope-sweep.witness.json`.
+Source: `computations/sweeps/paper-six-term-isotope-sweep.witness.json`.
 Default mode `tower_mode="li2q"`, proton-calibrated $E_0$ at S9,
 Model A T1 from Hoefsmit + Wenzl bridge.
 
@@ -135,7 +135,7 @@ only (no CAL-3 leak). Already implemented in
 
 **Code:** Add a new boolean parameter `use_substrate_E0=False` (or
 a new mode label) to `run_sweep_for_mode()` in
-`folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py`. When
+`computations/sweeps/paper_six_term_isotope_sweep.py`. When
 true, use `e_0_full_mev()` instead of the proton-fit calibration at
 line 564. Emit a parallel set of rows in the witness JSON under
 `all_modes[<mode>].rows_substrate_E0`.
@@ -172,10 +172,10 @@ stand up a new production-grade `term5_aK_canonical.py`); (b) emit
 `chirality_signs_for_isotope` lookup with a witness-driven $a_K$.
 
 **Status (2026-05-12, this PR):**
-- (a) ✅ Done — script lives at `folio-assistant/computations/audits/term5_aK_audit.py`.
+- (a) ✅ Done — script lives at `computations/audits/term5_aK_audit.py`.
 - (b) ✅ V1 backfill done for {p, n, D, T, ³He}; V2–V4 done for {p, n}
   only. ⁴He still blocked on P1.E (no canonical Model B braid). Witness:
-  `folio-assistant/computations/audits/term5-aK-audit.witness.json`. Run with
+  `computations/audits/term5-aK-audit.witness.json`. Run with
   `--merge-prior` for incremental backfills; use `--variants V1` to skip
   the slow symbolic mirror conventions (V2 alone takes >34 min for
   deuteron in this implementation — unbounded for A=3).
@@ -256,7 +256,7 @@ from PR #639 once it merges. Integrate into
 `paper_six_term_isotope_sweep.py:546` branch implements
 `tower_mode="per-partition-k"` and is wired into `tower_mode="combined"`
 for {T, ³He}. Witness:
-`folio-assistant/computations/probe-phiq-per-partition-klambda.witness.json`.
+`computations/probe-phiq-per-partition-klambda.witness.json`.
 (Note: PR #639 itself shipped the Q_β spectral bridge content, not the
 per-partition-k machinery; the per-partition-k pieces landed via a
 separate path. Cross-reference label retained for historical traceability.)
@@ -287,7 +287,7 @@ range $[0.05, 0.5]$ at $q_0$ to be plausible.
 selection still needs owner input.**
 
 - ✅ **Survey witness**:
-  `folio-assistant/computations/model-b-he4-knot-survey.witness.json`
+  `computations/model-b-he4-knot-survey.witness.json`
   via `probe_he4_model_b_knot_survey.py`. Computes $\tau_M(\beta)$
   at $q_0$ in both Plancherel and Wenzl-Schur conventions for
   $\{L6a4,\ 8_{17},\ 8_{18},\ 10_{123}\}$ in $B_3$; ranks against

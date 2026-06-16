@@ -21,7 +21,7 @@ This computation adds:
   Φ₅ = Wigner partition channels → isospin/form corrections
 
 Usage:
-    python3 folio-assistant/computations/next_partition_levels.py
+    python3 computations/next_partition_levels.py
 """
 
 import math

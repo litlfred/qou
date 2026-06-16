@@ -5,7 +5,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 
 The algebraic skeleton of the "derive the `c_k` recurrence from q-Bessel
 contiguity" result (compute:
-`folio-assistant/computations/qbeta/qbeta_qbessel_contiguity_cfinite.py`;
+`computations/qbeta/qbeta_qbessel_contiguity_cfinite.py`;
 audit: `docs/audits/2026-06-13-reeb-phase-qbessel-identification.md`).
 
 The Hahn–Exton q-Bessel function `J_ν(x;q)` (the matrix coefficient of `E_q(2)`,
@@ -99,7 +99,7 @@ theorem qbessel_second_order_factor (q a : K) (k : ℕ) :
 q-Bessel generating function `g(w) = Σ c_k w^k` satisfies
 `q^ν·g(q²w) − (1+q^ν−w)·g(qw) + g(w) = 0` (the function-level q-Bessel equation;
 verified to 60 dps in
-`folio-assistant/computations/qbeta/qbessel_second_order_qdifference_equation.py`).
+`computations/qbeta/qbessel_second_order_qdifference_equation.py`).
 Its `w^{k+1}` coefficient is the relation below, which follows from the
 first-order `★` via `qbessel_second_order_factor`. The "second order" is the
 q-difference order (three q-shifts `w, qw, q²w`); on the coefficients it collapses

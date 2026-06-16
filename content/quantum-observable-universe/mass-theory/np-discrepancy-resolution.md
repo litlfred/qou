@@ -17,7 +17,7 @@ and CAL-3 ($\mathfrak{Q}_\beta$). The "no $\beta$-decay calibration" mode
 uses only CAL-1 + CAL-2, leaving $\mathfrak{Q}_\beta$ as a prediction.*
 
 *The full mass-endomorphism tower at 50-dps symbolic
-([`mass_endomorphism.py`](../../folio-assistant/computations/mass_endomorphism.py),
+([`mass_endomorphism.py`](../../computations/mass_endomorphism.py),
 recomputed at 50 dps via sympy + mpmath, no float64):*
 
 | quantity | value | vs CODATA |
@@ -151,8 +151,8 @@ terms dominate.*
 
 **Reference implementations.**
 
-- `folio-assistant/computations/residual_probe_pn.py` (upstream): raw tower $n/p$ diagnosis
-- `folio-assistant/computations/sweeps/light_isotope_sweep.py`: Term 1 + Frob sweep
-- `folio-assistant/computations/bw_chirality_isotopes.py` (upstream): Term 5 (BW+χ) sweep
-- `folio-assistant/computations/mass_formula_6term.py`: integrated 6-term comparison
-- `folio-assistant/computations/d_chirality_probe.py`: shows paper's D-chirality is wrong
+- `computations/residual_probe_pn.py` (upstream): raw tower $n/p$ diagnosis
+- `computations/sweeps/light_isotope_sweep.py`: Term 1 + Frob sweep
+- `computations/bw_chirality_isotopes.py` (upstream): Term 5 (BW+χ) sweep
+- `computations/mass_formula_6term.py`: integrated 6-term comparison
+- `computations/d_chirality_probe.py`: shows paper's D-chirality is wrong

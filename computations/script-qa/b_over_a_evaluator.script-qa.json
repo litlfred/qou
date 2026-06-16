@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/b_over_a_evaluator.py",
+  "script_path": "computations/b_over_a_evaluator.py",
   "language": "python",
   "source_hash": "fd2ca79d3398",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-22T18:27:38.070Z",
         "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
         "severity": "major",
-        "evidence": "folio-assistant/computations/b_over_a_evaluator.py:97: bare float literal `0.51099895069` — wrap in `mpmath.mpf(\"0.51099895069\")` / `Decimal(\"0.51099895069\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/b_over_a_evaluator.py:98: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/b_over_a_evaluator.py:98: bare float literal `137.035999084` — wrap in `mpmath.mpf(\"137.035999084\")` / `Decimal(\"137.035999084\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/b_over_a_evaluator.py:99: bare float literal `197.3269804` — wrap in `mpmath.mpf(\"197.3269804\")` / `Decimal(\"197.3269804\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/b_over_a_evaluator.py:100: bare float literal `1.2` — wrap in `mpmath.mpf(\"1.2\")` / `Decimal(\"1.2\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/b_over_a_evaluator.py:97: bare float literal `0.51099895069` — wrap in `mpmath.mpf(\"0.51099895069\")` / `Decimal(\"0.51099895069\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/b_over_a_evaluator.py:98: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/b_over_a_evaluator.py:98: bare float literal `137.035999084` — wrap in `mpmath.mpf(\"137.035999084\")` / `Decimal(\"137.035999084\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/b_over_a_evaluator.py:99: bare float literal `197.3269804` — wrap in `mpmath.mpf(\"197.3269804\")` / `Decimal(\"197.3269804\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/b_over_a_evaluator.py:100: bare float literal `1.2` — wrap in `mpmath.mpf(\"1.2\")` / `Decimal(\"1.2\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -38,7 +38,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/b_over_a_evaluator.py:97: bare float literal `0.51099895069` — wrap in `mpmath.mpf(\"0.51099895069\")` / `Decimal(\"0.51099895069\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/b_over_a_evaluator.py:98: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/b_over_a_evaluator.py:98: bare float literal `137.035999084` — wrap in `mpmath.mpf(\"137.035999084\")` / `Decimal(\"137.035999084\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/b_over_a_evaluator.py:99: bare float literal `197.3269804` — wrap in `mpmath.mpf(\"197.3269804\")` / `Decimal(\"197.3269804\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/b_over_a_evaluator.py:100: bare float literal `1.2` — wrap in `mpmath.mpf(\"1.2\")` / `Decimal(\"1.2\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/b_over_a_evaluator.py:97: bare float literal `0.51099895069` — wrap in `mpmath.mpf(\"0.51099895069\")` / `Decimal(\"0.51099895069\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/b_over_a_evaluator.py:98: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/b_over_a_evaluator.py:98: bare float literal `137.035999084` — wrap in `mpmath.mpf(\"137.035999084\")` / `Decimal(\"137.035999084\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/b_over_a_evaluator.py:99: bare float literal `197.3269804` — wrap in `mpmath.mpf(\"197.3269804\")` / `Decimal(\"197.3269804\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/b_over_a_evaluator.py:100: bare float literal `1.2` — wrap in `mpmath.mpf(\"1.2\")` / `Decimal(\"1.2\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -55,7 +55,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/b_over_a_evaluator.py:98: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/b_over_a_evaluator.py:98: bare float literal `137.035999084` — wrap in `mpmath.mpf(\"137.035999084\")` / `Decimal(\"137.035999084\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/b_over_a_evaluator.py:99: bare float literal `197.3269804` — wrap in `mpmath.mpf(\"197.3269804\")` / `Decimal(\"197.3269804\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/b_over_a_evaluator.py:100: bare float literal `1.2` — wrap in `mpmath.mpf(\"1.2\")` / `Decimal(\"1.2\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/b_over_a_evaluator.py:103: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/b_over_a_evaluator.py:98: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/b_over_a_evaluator.py:98: bare float literal `137.035999084` — wrap in `mpmath.mpf(\"137.035999084\")` / `Decimal(\"137.035999084\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/b_over_a_evaluator.py:99: bare float literal `197.3269804` — wrap in `mpmath.mpf(\"197.3269804\")` / `Decimal(\"197.3269804\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/b_over_a_evaluator.py:100: bare float literal `1.2` — wrap in `mpmath.mpf(\"1.2\")` / `Decimal(\"1.2\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/b_over_a_evaluator.py:103: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/b_over_a_evaluator.py:182: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/b_over_a_evaluator.py:231: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/b_over_a_evaluator.py:245: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
+        "evidence": "computations/b_over_a_evaluator.py:182: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | computations/b_over_a_evaluator.py:231: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | computations/b_over_a_evaluator.py:245: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
       },
       {
         "field_hash": {
@@ -91,7 +91,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/b_over_a_evaluator.py:182: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | folio-assistant/computations/b_over_a_evaluator.py:231: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | folio-assistant/computations/b_over_a_evaluator.py:245: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/`"
+        "evidence": "computations/b_over_a_evaluator.py:182: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | computations/b_over_a_evaluator.py:231: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | computations/b_over_a_evaluator.py:245: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/`"
       }
     ],
     "code_is_commented": [
@@ -174,7 +174,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/b_over_a_evaluator.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/b_over_a_evaluator.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       },
       {
         "field_hash": {
@@ -191,7 +191,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/b_over_a_evaluator.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/b_over_a_evaluator.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -210,7 +210,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/b_over_a_evaluator.py:1: script `b_over_a_evaluator.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/b_over_a_evaluator.py:1: script `b_over_a_evaluator.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       },
       {
         "field_hash": {
@@ -227,7 +227,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/b_over_a_evaluator.py:1: script `b_over_a_evaluator.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/b_over_a_evaluator.py:1: script `b_over_a_evaluator.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [

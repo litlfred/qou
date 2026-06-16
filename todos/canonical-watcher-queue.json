@@ -21,8 +21,8 @@
       "id": "961ce964d344",
       "block_or_script": "AGG: compute-audit-scan P31 (hidden CODATA literals)",
       "paths": {
-        "py": "folio-assistant/computations/compute_audit_scan.py",
-        "witness": "folio-assistant/computations/compute-audit-scan.witness.json"
+        "py": "computations/compute_audit_scan.py",
+        "witness": "computations/compute-audit-scan.witness.json"
       },
       "finding": "hidden-codata-literal",
       "severity": "major",
@@ -37,8 +37,8 @@
       "id": "f3cc925644ce",
       "block_or_script": "AGG: canonical-script-input-audit over-count (4-input m_p AND m_n)",
       "paths": {
-        "py": "folio-assistant/computations/canonical_script_input_audit.py",
-        "witness": "folio-assistant/computations/audits/canonical-script-input-audit.witness.json"
+        "py": "computations/canonical_script_input_audit.py",
+        "witness": "computations/audits/canonical-script-input-audit.witness.json"
       },
       "finding": "over-count-3-input",
       "severity": "major",
@@ -53,8 +53,8 @@
       "id": "c644093e32ec",
       "block_or_script": "AGG: compute-audit-scan P30 (witnesses without WitnessBuilder)",
       "paths": {
-        "py": "folio-assistant/computations/compute_audit_scan.py",
-        "witness": "folio-assistant/computations/compute-audit-scan.witness.json"
+        "py": "computations/compute_audit_scan.py",
+        "witness": "computations/compute-audit-scan.witness.json"
       },
       "finding": "hidden-codata-literal",
       "severity": "minor",

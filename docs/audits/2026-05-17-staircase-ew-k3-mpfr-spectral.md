@@ -30,7 +30,7 @@ This audit asks: **is the `0.13 %` residual a float64 noise artifact
 
 ## Probe
 
-[`probe_staircase_ew_k3_categorical.py`](../../folio-assistant/computations/probe_staircase_ew_k3_categorical.py)
+[`probe_staircase_ew_k3_categorical.py`](../../computations/probe_staircase_ew_k3_categorical.py)
 re-does the k=3 spectral computation at **mpmath 50 dps**:
 
 1. Build 16×16 Hoefsmit V_(3,2,1) matrices `σ_1, …, σ_5` at 50 dps
@@ -114,7 +114,7 @@ be **refined** to state that:
 
 ## Provenance
 
-* Probe: `folio-assistant/computations/probe_staircase_ew_k3_categorical.py`
-* Witness: `folio-assistant/computations/staircase-ew-k3-mpfr-spectral.witness.json`
-* Float64 baseline: `folio-assistant/computations/close_321_weinberg_gap.py`
+* Probe: `computations/probe_staircase_ew_k3_categorical.py`
+* Witness: `computations/staircase-ew-k3-mpfr-spectral.witness.json`
+* Float64 baseline: `computations/close_321_weinberg_gap.py`
 * Original conjecture audit: `docs/audits/2026-05-06-staircase-ew-residual-conjecture.md`

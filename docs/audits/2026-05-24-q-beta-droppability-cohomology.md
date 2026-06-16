@@ -85,7 +85,7 @@ prediction from the other two — which is precisely the Q_β question.
 
 ## 3. Q_β substrate derivation — the closed form
 
-[`derived_masses.py:49–62`](../../folio-assistant/computations/derived_masses.py)
+[`derived_masses.py:49–62`](../../computations/derived_masses.py)
 implements the **single-wrap closed form** for Q_β using CAL-1 + CAL-2 only:
 
 $$\boxed{\;\;Q_\beta \;=\; m_e \cdot |q_0^2 - 2q_0 - 1| \cdot \frac{q_0 + 1}{2 q_0^3} \;\approx\; 0.7836\,\text{MeV}\;\;}$$
@@ -101,7 +101,7 @@ uses the single-tick $\mathfrak{E}_0 = m_e/(q_0(q_0-1)) \approx 4.186$ MeV;
 the tower-summed $\mathfrak{E}_0^{\text{full}} = \mathfrak{E}_0/(1-\hbar_q^2)$
 form would close it (Workplan 2 Phase 2 — [`docs/audits/2026-05-03-tower-mev-calibration-finding.md`](2026-05-03-tower-mev-calibration-finding.md)).
 
-Witness: [`q-beta-predicted.witness.json`](../../folio-assistant/computations/q-beta-predicted.witness.json):143–162.
+Witness: [`q-beta-predicted.witness.json`](../../computations/q-beta-predicted.witness.json):143–162.
 
 ## 4. 𝔈_0 is already 2-CAL derived
 
@@ -131,11 +131,11 @@ Files consuming Q_β:
 
 | Script | Use | Tolerance | +0.18 % impact |
 |---|---|---:|---|
-| [`derived_masses.py`](../../folio-assistant/computations/derived_masses.py) | legacy typed-crossings form (deprecated) | n/a | n/a |
-| [`beta-decay-energy-scale.py`](../../folio-assistant/computations/beta-decay-energy-scale.py) | refactors to symbolic form | <1 % | ✓ within |
-| [`e_0_calibration_audit.py`](../../folio-assistant/computations/e_0_calibration_audit.py) | audits Q_β propagation (Class-A) | 1 ppb (audit) | ⚠ fails |
-| [`c_alpha_from_Q_beta_trace.py`](../../folio-assistant/computations/c_alpha_from_Q_beta_trace.py) | α-cluster β-chain | ~4 % MAE | ✓ within |
-| [`atomic_mass_via_rho_k.py`](../../folio-assistant/computations/atomic_mass_via_rho_k.py) | binding-energy back-compute (Class-B audit) | n/a (audit) | n/a |
+| [`derived_masses.py`](../../computations/derived_masses.py) | legacy typed-crossings form (deprecated) | n/a | n/a |
+| [`beta-decay-energy-scale.py`](../../computations/beta-decay-energy-scale.py) | refactors to symbolic form | <1 % | ✓ within |
+| [`e_0_calibration_audit.py`](../../computations/e_0_calibration_audit.py) | audits Q_β propagation (Class-A) | 1 ppb (audit) | ⚠ fails |
+| [`c_alpha_from_Q_beta_trace.py`](../../computations/c_alpha_from_Q_beta_trace.py) | α-cluster β-chain | ~4 % MAE | ✓ within |
+| [`atomic_mass_via_rho_k.py`](../../computations/atomic_mass_via_rho_k.py) | binding-energy back-compute (Class-B audit) | n/a (audit) | n/a |
 
 **Net**: all production-mass consumers have tolerance > +0.18 %.
 Only the 1ppb audit (`e_0_calibration_audit.py`) would fail, but it
@@ -154,7 +154,7 @@ downstream production consumer's tolerance.
 2. Migrate $\mathfrak{E}_0^{\text{full}}$ from the geometric series
    form $1/(1 - \hbar_q^2)$ to the bounded symmetric q-dilogarithm
    form $\mathfrak{E}_0^{\text{full,Li}_2^q}$ (conjectured in
-   [`derived_masses.py:28`](../../folio-assistant/computations/derived_masses.py)).
+   [`derived_masses.py:28`](../../computations/derived_masses.py)).
 3. Verify the tower-closed substrate Q_β is within 1ppb of CODATA.
 4. Then demote CAL-3 → "substrate-derived" and update
    [`calibration-inputs.md`](../../content/quantum-observable-universe/braids-and-knots/calibration-inputs.md).
@@ -189,4 +189,4 @@ a structural problem.
 - [`content/quantum-observable-universe/braids-and-knots/calibration-inputs.md`](../../content/quantum-observable-universe/braids-and-knots/calibration-inputs.md)
 - [`content/quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md`](../../content/quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md)
 - [`content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)
-- [`folio-assistant/computations/derived_masses.py`](../../folio-assistant/computations/derived_masses.py) — substrate Q_β closed form
+- [`computations/derived_masses.py`](../../computations/derived_masses.py) — substrate Q_β closed form

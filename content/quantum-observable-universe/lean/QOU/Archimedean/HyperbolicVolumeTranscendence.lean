@@ -163,12 +163,12 @@ The three QOU volumes used in `SingleVolumeIrrational` /
 noncomputable def vol_4_1 : ℝ := figureEightEntry.volume.value
 
 /-- Hyperbolic volume of the three-twist knot 5₂ (strange quark
-    per `folio-assistant/computations/substrate/knot-volumes.witness.json`
+    per `computations/substrate/knot-volumes.witness.json`
     — NOT the down quark, which is an unknot with negative crossing
     orientation per `QOU.Archimedean.DownQuark`).
 
     Numerical: `2.82812208833078` (15 dps, from
-    `folio-assistant/computations/hyperbolic-volumes.witness.json`
+    `computations/hyperbolic-volumes.witness.json`
     field `vol_5_2_decimal_15`, cross-checked against
     `QOU.Encounter.MostowRigidity` which uses the identical value).
 

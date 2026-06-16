@@ -6,7 +6,7 @@
 2. Investigation of v_framework / v_SM ≈ 1.78 factor
 3. Cross-particle-class ratio 171/143 ≈ 1.196 categorical origin
 
-**Status:** Empirical-match probe ([`ew_couplings_substrate_derivation_probe.py`](../../folio-assistant/computations/probes/ew_couplings_substrate_derivation_probe.py)) tested ~50 candidate substrate formulas. This audit documents the cleanest matches + identifies which are structurally promising vs likely numerology.
+**Status:** Empirical-match probe ([`ew_couplings_substrate_derivation_probe.py`](../../computations/probes/ew_couplings_substrate_derivation_probe.py)) tested ~50 candidate substrate formulas. This audit documents the cleanest matches + identifies which are structurally promising vs likely numerology.
 
 ## §1. Clean matches found (< 1% deviation)
 
@@ -198,4 +198,4 @@ instance hypotheses.
 - [`docs/audits/2026-05-24-gauge-vs-scalar-mass-factor-derivation-path.md`](2026-05-24-gauge-vs-scalar-mass-factor-derivation-path.md) — earlier 143/171 audit (paths A/B/C considered, this audit identifies the 6/5 ratio match)
 - [`docs/audits/2026-05-24-yekutieli-mi-derivation-path.md`](2026-05-24-yekutieli-mi-derivation-path.md) — categorical machinery for the connection-1-form derivation of g
 - [`content/quantum-observable-universe/braids-and-knots/knot-operator-bring-action.md`](../../content/quantum-observable-universe/braids-and-knots/knot-operator-bring-action.md) — 6 GS-NF basis operators (source of the "6" in log(6) and 6/5)
-- [`folio-assistant/computations/probes/ew_couplings_substrate_derivation_probe.py`](../../folio-assistant/computations/probes/ew_couplings_substrate_derivation_probe.py) — empirical match probe (this PR)
+- [`computations/probes/ew_couplings_substrate_derivation_probe.py`](../../computations/probes/ew_couplings_substrate_derivation_probe.py) — empirical match probe (this PR)

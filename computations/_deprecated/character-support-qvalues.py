@@ -20,7 +20,7 @@ For the Q-value:
   Q = |Σ_λ Schur_weight(λ) × [⟨w_λ(par)|Δ|w_λ(par)⟩ - ⟨w_λ(dau)|Δ|w_λ(dau)⟩]|
 
 Usage:
-    cd folio-assistant/computations && python3 character-support-qvalues.py
+    cd computations && python3 character-support-qvalues.py
 """
 
 import math

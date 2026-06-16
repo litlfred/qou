@@ -37,7 +37,7 @@ Skein polynomial (used in Q-value spectral decomposition):
     P_N(q) = ∏_i V̂_i(q)
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 mass-from-q-symbolic.py
 
 References:

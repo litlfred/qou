@@ -29,7 +29,7 @@ c_2..c_10. The extrapolated A is reported WITH its error bar — no
 over-claiming.
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_residue_a_precision_ceiling.py
+  python3 computations/qbeta/qbeta_residue_a_precision_ceiling.py
 Emits: qbeta-residue-a-precision-ceiling.witness.json
 """
 

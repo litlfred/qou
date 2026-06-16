@@ -29,7 +29,7 @@ This is analogous to CODATA:
   - Both are observations of the same archimedean realization
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_archimedean.py
+    python3 computations/atom_mass_archimedean.py
 """
 
 import math

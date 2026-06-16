@@ -2,7 +2,7 @@
 
 **Date.** 2026-05-24
 **Branch.** `claude/hecke-core-audit-2026-05-24` (based on `origin/main` @ `d128bdee`)
-**Target file.** [`folio-assistant/computations/substrate/hecke_core.py`](../../folio-assistant/computations/substrate/hecke_core.py) (3 183 LOC, 72 top-level `def`/`class`, 52 importers)
+**Target file.** [`computations/substrate/hecke_core.py`](../../computations/substrate/hecke_core.py) (3 183 LOC, 72 top-level `def`/`class`, 52 importers)
 **Prereq for.** pyhecke 1.0 hardening (workplan §3.5 — split canonical surface from Phase-5 probes before promoting the canonical surface into `pyhecke`).
 **Companion docs.**
 
@@ -14,7 +14,7 @@
 ## 1. Methodology
 
 For every top-level `def` / `class` / module-level cached constant in
-[`hecke_core.py`](../../folio-assistant/computations/substrate/hecke_core.py),
+[`hecke_core.py`](../../computations/substrate/hecke_core.py),
 classification was derived from three signals:
 
 1. **Cheat-sheet match.** Does the symbol appear in the canonical chain
@@ -25,7 +25,7 @@ classification was derived from three signals:
    `partitions_of`, `partition_conjugate`, `partition_is_self_conjugate`)
    are the canonical seed set the workplan called out.
 2. **Importer scan.** Grepped all 52 importers under
-   `folio-assistant/computations/` for each symbol.  A symbol consumed
+   `computations/` for each symbol.  A symbol consumed
    by a canonical script (`mass_table_ppb.py`,
    `mass_formula_6term_mpfr_50dps.py`, `binding_canonical.py`,
    `m_p_borromean_verification_50dps.py`, `closed_form_tau_M.py`,
@@ -46,7 +46,7 @@ called only from EXPLORATORY functions is itself EXPLORATORY.
 
 **`chi_lambda_braid` clarification (per starting allowlist).**  The
 cheat-sheet step 6 cites `chi_lambda_braid`, but a grep confirms it
-lives in `folio-assistant/computations/hecke/hecke_characters.py:280`, not
+lives in `computations/hecke/hecke_characters.py:280`, not
 in `hecke_core.py`.  No row is added here for it — out of scope for
 this audit.
 
@@ -56,7 +56,7 @@ this audit.
 
 The table below has 73 rows total: 72 top-level `def` / `class`
 declarations (matching
-`grep -cE '^(class |def )' folio-assistant/computations/substrate/hecke_core.py`)
+`grep -cE '^(class |def )' computations/substrate/hecke_core.py`)
 plus 1 inline tuple-assignment (row #28, `_PROTON_G0/G1`,
 `_NEUTRON_G0/G1`, emitted at module load by `nucleon_gen_chains`).
 A supplementary table at §C below covers 8 more module-level cached
@@ -91,7 +91,7 @@ once during drafting, and the name is stable across reorderings.
 | 10 | `wedderburn_weight` | 341 | **CANONICAL** | Seed allowlist; w_λ = d_q(λ)²/[n]_q!. Imported by `proton_residual_rootcause`, `paper_six_term_isotope_sweep`. |
 | 11 | `q_laplacian_eigenvalue` | 349 | **EXPLORATORY** | Phase-5 q-heat-kernel probe (μ_λ via JM Casimir). Cited from `prop:q-heat-kernel-peter-weyl` but the substrate Wedderburn / Markov-trace chain in the cheat-sheet does NOT route through Laplacian eigenvalues; this is the "resolvent-damped" alternative ansatz consumed by `unified_iterative_correction`. |
 | 12 | `q_resolvent_weight` | 392 | **EXPLORATORY** | Consumes #11; "categorical Laplace transform" of the q-Laplacian. Replacement for the "ad-hoc Kerov Plancherel multiplier" — *another* Phase-5 ansatz, not a cheat-sheet step. |
-| 13 | `lp_shadow_price` | 420 | **EXPLORATORY** | "LP-dual shadow price" — note CLAUDE.md `## LP / SDP duals` mandates the canonical LP entry is [`lp_dual_solver.py`](../../folio-assistant/computations/lp_dual_solver.py) (`solve_operator_selection_lp`), NOT this file. This is an internal per-partition shadow used by `unified_iterative_correction`. No production importer. |
+| 13 | `lp_shadow_price` | 420 | **EXPLORATORY** | "LP-dual shadow price" — note CLAUDE.md `## LP / SDP duals` mandates the canonical LP entry is [`lp_dual_solver.py`](../../computations/lp_dual_solver.py) (`solve_operator_selection_lp`), NOT this file. This is an internal per-partition shadow used by `unified_iterative_correction`. No production importer. |
 | 14 | `_count_syts_by_12_relation` | 471 | UTILITY-of-`partition_character_sigma1` | Counts SYTs by (1,2)-relation; only consumed inside this file. The transitive parent `partition_character_sigma1` is EXPLORATORY (row 15), so this helper is UTILITY-of-EXPLORATORY. |
 | 15 | `partition_character_sigma1` | 514 | **EXPLORATORY** | YSN-derived character of σ_1 in irrep λ. Only consumer is `partition_spectral_log_rate`; used in the q-Gaussian fallback (`_q_gaussian_character_approx`), explicitly tagged as a Perron-Frobenius approximation that is "not Bozejko-Speicher". |
 | 16 | `partition_spectral_log_rate` | 525 | **EXPLORATORY** | Phase-5 spectral log-rate ρ_λ used only by the q-Gaussian fallback. |
@@ -101,7 +101,7 @@ once during drafting, and the name is stable across reorderings.
 | 20 | `_chebyshev_magic` | 670 | **EXPLORATORY** | Cheat-sheet §1 magic-numbers note: "{2, 8, 20, 28, 50, 82, 126} are EMPIRICAL and not derived". This helper attempts a derivation from a Chebyshev recurrence in q; explicitly tagged as inadequate above `MAGIC_NUMBERS` (line 711-712: "These values are CODATA-class inputs, not canonical predictions"). Strong EXPLORATORY candidate per the workplan; confirmed. |
 | 21 | `build_atom_nf_exact` | 727 | **CANONICAL** | Sibling of `build_atom_nf`: exact-Fraction version for verification (e.g. `pn_alpha_lp_dual.py`, `closed_form_tau_M_verification_phase5q.py`). Verified-precision path; canonical. |
 | 22 | `nf_channel_exact` | 799 | UTILITY-of-`build_atom_nf_exact` | Exact-Fraction Wedderburn channel decomposition. Used by the same verification pipeline. |
-| 23 | `knot_factor` | 819 | **EXPLORATORY** | Hard-coded `A=2/3/4` knot-classification factors with literal h-polynomial. Pre-Phase 5; superseded by [`closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py) (per cheat-sheet §5 closure #4). |
+| 23 | `knot_factor` | 819 | **EXPLORATORY** | Hard-coded `A=2/3/4` knot-classification factors with literal h-polynomial. Pre-Phase 5; superseded by [`closed_form_tau_M.py`](../../computations/closed_form_tau_M.py) (per cheat-sheet §5 closure #4). |
 | 24 | `check_frobenius` | 845 | UTILITY (general) | Frobenius positivity check on NF vectors. Used by `molecular_binding_frobenius`; canonical Frobenius pairing infra. |
 | 25 | `build_atom_nf` | 857 | **CANONICAL** | Seed allowlist; cheat-sheet step 4 (the canonical H_3 atomic-braid NF). Production consumers: `mass_at_3A_proper`, `binding_canonical`, etc. |
 | 26 | `vertex_volume` | 939 | **CANONICAL** | Cheat-sheet step 6 — Wedderburn-weighted traced volume per generator. Sibling of `atom_per_generator_volumes`. |
@@ -203,7 +203,7 @@ the 8 cached module-level objects in the §C table are classified
 separately and not counted toward the 72-`def`/`class` tally above.
 
 **Total = 19 + 29 + 24 = 72**, matching
-`grep -cE "^(class |def )" folio-assistant/computations/substrate/hecke_core.py` = 72.
+`grep -cE "^(class |def )" computations/substrate/hecke_core.py` = 72.
 Sanity-check passes.
 
 The strong-exploratory candidates the workplan flagged (`_chebyshev_magic`,
@@ -219,7 +219,7 @@ EXPLORATORY or UTILITY-of-EXPLORATORY.
 
 Move the following 29 top-level symbols (and the 4 caches / private
 helpers that serve only them) into a new sibling file
-`folio-assistant/computations/_deprecated/hecke_core_legacy.py`.  The
+`computations/_deprecated/hecke_core_legacy.py`.  The
 surviving `hecke_core.py` keeps the 19 CANONICAL functions plus the
 24 utilities they need.
 
@@ -400,7 +400,7 @@ Compared to the workplan's "strong EXPLORATORY candidates" list:
 
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
 - [`docs/pyhecke-optimization-workplan.md`](../pyhecke-optimization-workplan.md) §B1
-- [`folio-assistant/computations/lp_dual_solver.py`](../../folio-assistant/computations/lp_dual_solver.py) — canonical LP/SDP entry (per CLAUDE.md `## LP / SDP duals`)
-- [`folio-assistant/computations/hecke/hecke_characters.py`](../../folio-assistant/computations/hecke/hecke_characters.py) — where `chi_lambda_braid` lives (line 280)
-- [`folio-assistant/computations/binding_canonical.py`](../../folio-assistant/computations/binding_canonical.py) — canonical binding entry referenced by deprecated `binding_from_frobenius_pairing`
-- [`folio-assistant/computations/_deprecated/`](../../folio-assistant/computations/_deprecated/) — destination directory for the recommended split
+- [`computations/lp_dual_solver.py`](../../computations/lp_dual_solver.py) — canonical LP/SDP entry (per CLAUDE.md `## LP / SDP duals`)
+- [`computations/hecke/hecke_characters.py`](../../computations/hecke/hecke_characters.py) — where `chi_lambda_braid` lives (line 280)
+- [`computations/binding_canonical.py`](../../computations/binding_canonical.py) — canonical binding entry referenced by deprecated `binding_from_frobenius_pairing`
+- [`computations/_deprecated/`](../../computations/_deprecated/) — destination directory for the recommended split

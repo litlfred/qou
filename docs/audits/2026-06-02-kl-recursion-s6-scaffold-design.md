@@ -7,7 +7,7 @@ direction surfaced by PR #1516's cheap-pass refutation).
 
 ## Context
 
-[`folio-assistant/computations/kazhdan_lusztig.py`](../../folio-assistant/computations/kazhdan_lusztig.py)
+[`computations/kazhdan_lusztig.py`](../../computations/kazhdan_lusztig.py)
 is currently capped at **n ≤ 4** (Coxeter rank ≤ 3).  The cap is
 NOT theoretically grounded — Brenti (*Combinatorics of Coxeter
 Groups* §5.1) shows every Kazhdan–Lusztig polynomial

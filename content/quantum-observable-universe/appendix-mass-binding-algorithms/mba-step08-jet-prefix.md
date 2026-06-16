@@ -42,7 +42,7 @@ in the Hecke dimension.*
 ### Python API entry point
 
 *Canonical compute is the script
-[`folio-assistant/computations/gb_filtration_jet_order_reader.py`](../../../folio-assistant/computations/gb_filtration_jet_order_reader.py),
+[`computations/gb_filtration_jet_order_reader.py`](../../../computations/gb_filtration_jet_order_reader.py),
 which reads the GS-filtered NF and emits the per-jet-order
 truncation witness. The substrate's precision discipline (compute
 at 65 dps, serialise at 50 dps) is configured by
@@ -51,7 +51,7 @@ at 65 dps, serialise at 50 dps) is configured by
 ### Witness contract
 
 *Canonical witness:
-[`gb-filtration-jet-order-reader.witness.json`](../../../folio-assistant/computations/gb-filtration-jet-order-reader.witness.json).
+[`gb-filtration-jet-order-reader.witness.json`](../../../computations/gb-filtration-jet-order-reader.witness.json).
 Records the truncated polynomial, the jet-order metadata, and a
 cross-check against the symbolic Taylor expansion.*
 

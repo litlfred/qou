@@ -36,7 +36,7 @@ $1 \leq i_j \leq n - 1$.
 to expand
 $\beta = \sum_{w \in S_n} c_w(q) \, T_w$
 in the canonical basis. The
-[`HeckeElement`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/gb_filtration_jet_tracker.py)
+[`HeckeElement`](https://github.com/litlfred/qou/blob/main/computations/gb_filtration_jet_tracker.py)
 class implements this symbolically over $\mathbb{Q}(q)$ via the
 ascending/descending case split on Coxeter length.
 
@@ -120,7 +120,7 @@ its own algebra $H_{n-k-1}$.
 ## Empirical verification
 
 Numerical evaluation at $q_0$ for the canonical atomic-braid
-words ([`markov_trace_axiomatic_multi_atom.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov/markov_trace_axiomatic_multi_atom.py)):
+words ([`markov_trace_axiomatic_multi_atom.py`](https://github.com/litlfred/qou/blob/main/computations/markov/markov_trace_axiomatic_multi_atom.py)):
 
 | atom              | braid word                              | $H_n$ | $\operatorname{tr}_M(q_0)$ |
 |-------------------|----------------------------------------|------|----------------------------|
@@ -133,7 +133,7 @@ The deuteron's value matches $\operatorname{tr}_M(\text{proton})
 precision, confirming the disjoint-product property.
 
 The proton value matches the prior Hecke-power expansion in
-[`markov_trace_atomic_proton_full.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov/markov_trace_atomic_proton_full.py)
+[`markov_trace_atomic_proton_full.py`](https://github.com/litlfred/qou/blob/main/computations/markov/markov_trace_atomic_proton_full.py)
 ([`prop:markov-trace-axiomatic-closed-form`](#prop:markov-trace-axiomatic-closed-form))
 at 50-dps (mpmath) precision, providing an independent cross-check
 via two different reduction strategies. (Earlier float64 evaluations
@@ -167,8 +167,8 @@ $\sigma_2$ acting on shape $(3)$).
 
 ## Witness scripts
 
-- [`folio-assistant/computations/markov/markov_trace_recursive.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov/markov_trace_recursive.py) — algorithm + H_3..H_6 unit tests.
-- [`folio-assistant/computations/markov/markov_trace_axiomatic_multi_atom.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov/markov_trace_axiomatic_multi_atom.py) — proton/neutron/deuteron anchor + disjoint-product check.
+- [`computations/markov/markov_trace_recursive.py`](https://github.com/litlfred/qou/blob/main/computations/markov/markov_trace_recursive.py) — algorithm + H_3..H_6 unit tests.
+- [`computations/markov/markov_trace_axiomatic_multi_atom.py`](https://github.com/litlfred/qou/blob/main/computations/markov/markov_trace_axiomatic_multi_atom.py) — proton/neutron/deuteron anchor + disjoint-product check.
 
 ## References
 

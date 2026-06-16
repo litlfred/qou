@@ -78,14 +78,14 @@ where z = √q/(q+1) and h = q - q⁻¹.
 
   Numerical witness: `det(G(q_0)) ≈ −0.189205253071` at q_0 ≈ 1.110.
   Symbolic factorization witness:
-  `folio-assistant/computations/gram-h3-det-factorization.witness.json`
+  `computations/gram-h3-det-factorization.witness.json`
   (emits the explicit 6-factor product).
 
 Ref: [manuscript] def:universal-ilp-algorithm
 Ref: [manuscript] prop:frobenius-gram-matrix
 Ref: [manuscript] docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md
 Ref: [halverson_ram_1998] Hoefsmit seminormal Gram on H_3(q)
-Ref: sympy regression guard `folio-assistant/computations/gram_h3_symbolic_regression.py`
+Ref: sympy regression guard `computations/gram_h3_symbolic_regression.py`
      (transcribes the same closed-form entries; emits witness asserting
      match-to-pyhecke and symmetry at 50 dps)
 Ref: numerical pyhecke source: `gram-matrix-dual.witness.json`
@@ -197,7 +197,7 @@ theorem gramMatrix_top_left (u : ℝ) : gramMatrix u 0 0 = 1 := by
     The `sorry` is conjectural-conditional per CLAUDE.md §3b-cond;
     discharging it requires lifting the symbolic factorisation into
     Lean. Witness sidecar:
-    `folio-assistant/computations/gram-h3-det-factorization.witness.json`. -/
+    `computations/gram-h3-det-factorization.witness.json`. -/
 /-! ## Symbolic factorization of det(gramMatrix u) — Phase 1b-2
 
 Per `gram-h3-det-factorization.witness.json` (sympy at 50-dps), the
@@ -271,7 +271,7 @@ theorem detFactor4_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor4 u := by
 
 /-- **POSITIVITY LEMMA 5.** `p(u) = u⁶ − u⁵ + u⁴ − u³ + 2u² − u + 1 > 0`
     for `u > 1`. Strategy: group as `(u−1)(u⁵ + u³) + (2u² − u + 1)` where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
     the first part is positive (product of positives for `u > 1`) and the
     second has discriminant `1 − 8 = −7 < 0`, so is always positive. -/
 theorem detFactor5_pos (u : ℝ) (hu : 1 < u) : 0 < detFactor5 u := by

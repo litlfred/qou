@@ -23,7 +23,7 @@ export default remark({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/probe_q_beta_c5_c6_multilink.py",
+    script: "computations/probe_q_beta_c5_c6_multilink.py",
     status: "experimental",
   },
   authorNotes: [

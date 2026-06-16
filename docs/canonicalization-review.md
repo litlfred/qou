@@ -43,7 +43,7 @@ either fix above.
 
 Units: `M` = million ppb (10⁶ ppb), i.e. `+10.9 M` ≈ +10.9 × 10⁶ ppb ≈ 1.09 %.
 
-Source: [`mass-table-ppb.witness.json`](../folio-assistant/computations/mass-table-ppb.witness.json).
+Source: [`mass-table-ppb.witness.json`](../computations/mass-table-ppb.witness.json).
 Numerical precision is not the bottleneck — `q₀` is CODATA-bounded at
 σ/q ≈ 1.22 × 10⁻⁹, already 1-ppb-class. **All residual is structural-formula
 incompleteness.**
@@ -96,7 +96,7 @@ not ambient hyperbolic volume.
 
 ### 2.3 What's wired
 
-[`folio-assistant/computations/joint-tower-sdp-rust.witness.json`](../folio-assistant/computations/joint-tower-sdp-rust.witness.json)
+[`computations/joint-tower-sdp-rust.witness.json`](../computations/joint-tower-sdp-rust.witness.json)
 contains, for 7 particles (quark, electron, proton, neutron, D, T, ³He),
 the full GB-NF data:
 
@@ -150,7 +150,7 @@ S-even subspace of the symmetrised blend, while chirality is
 S-anti-invariant and vanishes under Frobenius symmetrisation. `α*` is
 absorbing what the **chirality term $H_A^2 \Phi_3$** should contribute
 in the full 3-term Wedderburn formula — see
-[`alpha_blend_tower.py:151–193`](../folio-assistant/computations/alpha/alpha_blend_tower.py).
+[`alpha_blend_tower.py:151–193`](../computations/alpha/alpha_blend_tower.py).
 
 There is no closed form for `α*` in the 2-term frame because the
 quantity it patches is structurally outside that frame.
@@ -177,7 +177,7 @@ The volumes 4.4008 / 8.2863 / 7.3277 are correct hyperbolic constants
 ### Sprint A — canonical mass for Family 1 (this branch's follow-up)
 
 **A1.** Implement the six-term formula consumer that reads
-[`joint-tower-sdp-rust.witness.json`](../folio-assistant/computations/joint-tower-sdp-rust.witness.json)
+[`joint-tower-sdp-rust.witness.json`](../computations/joint-tower-sdp-rust.witness.json)
 per-atom certificates and produces `b_pred_mev` from `filtration_certificate.by_grade`
 + `wedderburn_blocks` directly. **No SnapPy volumes anywhere in the path.**
 
@@ -270,7 +270,7 @@ but a measurement input.
 - [`tools/hecke-engine/R5_5_BUG_REPORT.md`](../tools/hecke-engine/R5_5_BUG_REPORT.md) — svec post-mortem (issue resolved)
 - [`prop:atom-knot-mass-derivation`](../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) — pipeline status table
 - [`prop:joint-tower-sdp-confinement`](../content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md) — design spec
-- [`folio-assistant/computations/joint-tower-sdp-rust.witness.json`](../folio-assistant/computations/joint-tower-sdp-rust.witness.json) — current GB-NF + Wedderburn data for 7 particles
+- [`computations/joint-tower-sdp-rust.witness.json`](../computations/joint-tower-sdp-rust.witness.json) — current GB-NF + Wedderburn data for 7 particles
 
 ---
 
@@ -318,7 +318,7 @@ The original framing — *"PSLQ-falsified at 25 digits in `{1, G, π, 1/π, q₀
 in the 2-term blend)**. PSLQ falsified `α*`, not `α_em`. The correct
 state is:
 
-- **Closed form** ([`alpha_em_pslq_uniqueness.py`](../folio-assistant/computations/alpha/alpha_em_pslq_uniqueness.py)):
+- **Closed form** ([`alpha_em_pslq_uniqueness.py`](../computations/alpha/alpha_em_pslq_uniqueness.py)):
 
   $$\frac{1}{\alpha_{EM}} \;=\; 45 \cdot [3]_q \cdot \bigl(1 + \delta_{CS} + 8q \cdot \delta_{CS}^2\bigr), \qquad \delta_{CS} = \hbar_q^{4} \cdot [5]_q.$$
 
@@ -326,7 +326,7 @@ state is:
   m_μ/m_e is bounded to ~22 ppb, propagating to q_0 → α_em — the
   formula sits inside the q_0-uncertainty band.
 
-- **PSLQ uniqueness** ([`alpha-em-pslq-uniqueness.witness.json`](../folio-assistant/computations/alpha/alpha-em-pslq-uniqueness.witness.json), 2026-04-26): no
+- **PSLQ uniqueness** ([`alpha-em-pslq-uniqueness.witness.json`](../computations/alpha/alpha-em-pslq-uniqueness.witness.json), 2026-04-26): no
   competing integer relation found in 52-element basis at tolerances
   tol_dps ∈ {50, 100, 200}. Above 200 dps PSLQ runs to its precision
   ceiling without finding alternatives.

@@ -1,7 +1,7 @@
 # Bar-symmetric / antisymmetric decomposition of `B_pp` — the per-crossing-vs-per-block gap
 
 **Date:** 2026-06-04
-**Probe:** [`folio-assistant/computations/probes/c2_bpp_variants_routes_abc.py`](../../folio-assistant/computations/probes/c2_bpp_variants_routes_abc.py)
+**Probe:** [`computations/probes/c2_bpp_variants_routes_abc.py`](../../computations/probes/c2_bpp_variants_routes_abc.py)
 **Witness:** `route-abc-bpp-derivation.witness.json`
 **Branch:** `claude/habiro-per-knot-lambda-derivation-2026-06-03` (PR #1765 follow-up to PR #1777)
 **Status:** EXPLORATORY. **Reframes** the PR #1777 c=2 candidate chain.

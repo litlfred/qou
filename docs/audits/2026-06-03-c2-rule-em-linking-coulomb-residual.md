@@ -1,7 +1,7 @@
 # c=2 selection-rule × T-³He Coulomb-residual probe — a 0.1 %-level lead
 
 **Date:** 2026-06-03
-**Probe:** [`folio-assistant/computations/probes/c2_rule_em_linking_residual.py`](../../folio-assistant/computations/probes/c2_rule_em_linking_residual.py)
+**Probe:** [`computations/probes/c2_rule_em_linking_residual.py`](../../computations/probes/c2_rule_em_linking_residual.py)
 **Witness:** `c2-rule-em-linking-residual.witness.json`
 **Branch:** `claude/habiro-per-knot-lambda-derivation-2026-06-03` (PR #1765 follow-up)
 **Status:** EXPLORATORY. Suggestive lead at 0.1 % — **NOT** a derivation. No production wiring, no fit.
@@ -76,7 +76,7 @@ All symbolic work at fibre level (formal q). q₀ enters only at the final archi
 
 ### Step B (PSLQ scan for alternative residual identifications) — clean NEGATIVE
 
-Probe: [`probes/c2_residual_pslq_scan.py`](../../folio-assistant/computations/probes/c2_residual_pslq_scan.py)
+Probe: [`probes/c2_residual_pslq_scan.py`](../../computations/probes/c2_residual_pslq_scan.py)
 
 PSLQ at tol `1e-30`, maxcoeff up to `10000`, against bases:
 
@@ -90,7 +90,7 @@ PSLQ at tol `1e-30`, maxcoeff up to `10000`, against bases:
 
 ### Step A (H_3 → H_4 categorical derivation) — PARTIAL SUCCESS
 
-Probe: [`probes/c2_h3_h4_pieri_branching_derivation.py`](../../folio-assistant/computations/probes/c2_h3_h4_pieri_branching_derivation.py)
+Probe: [`probes/c2_h3_h4_pieri_branching_derivation.py`](../../computations/probes/c2_h3_h4_pieri_branching_derivation.py)
 
 Direct computation: the Frobenius-reciprocity branching trace of `H_3 → H_4` (Pieri rule, multiplicity 1 per addable box) gives
 

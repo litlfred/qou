@@ -1,6 +1,6 @@
 # hecke-engine
 
-> *Part of the [QOU library stack](../../docs/ARCHITECTURE.md#two-axes-of-organisation-domain-vs-workflow). See the two-axis explanation for how this package fits relative to the in-repo `folio-assistant/computations/` clusters.*
+> *Part of the [QOU library stack](../../docs/ARCHITECTURE.md#two-axes-of-organisation-domain-vs-workflow). See the two-axis explanation for how this package fits relative to the in-repo `computations/` clusters.*
 
 Pure-Rust canonical compute core for the QOU paper's Iwahori-Hecke `H_3(q)` Gram + Markov-trace surface. Source of truth for every other crate under `tools/` — `hecke-engine-c`, `hecke-engine-{node,wasm,jvm,r,octave,julia,gap}` all wrap this directly or via the C ABI in `hecke-engine-c/`.
 

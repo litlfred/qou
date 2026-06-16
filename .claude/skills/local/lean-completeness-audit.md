@@ -70,7 +70,7 @@ bun run scripts/lean-witness.ts stamp <file>  # create witness after build
 ### Python witness staleness
 
 ```bash
-cd folio-assistant/computations
+cd computations
 python3 witness_base.py check-all        # check all Python witnesses
 python3 witness_base.py check-stale <file>  # check single witness
 ```

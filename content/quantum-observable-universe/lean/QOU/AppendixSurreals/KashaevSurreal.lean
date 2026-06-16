@@ -23,7 +23,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:kashaev-surreal`](../../../quantum-observable-universe/appendix-surreals/kashaev-surreal.md). -/
 class KashaevSurreal where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       The Kashaev volume conjecture [@kashaev1997] (proved for various

@@ -19,10 +19,10 @@ diagnose CI red as a code problem here.
 |---|---|---|
 | Audit + pipeline walkthrough | `docs/audits/2026-06-04-hidden-fitting-verification-gap-mass-binding-walkthrough.md` | done |
 | Convention discipline (KEEP THE WRITHE) | `docs/homfly-markov-convention-discipline.md` | done |
-| Reference-value gate | `folio-assistant/computations/homflypt_reference_qa.py` | **5/5 pass** |
-| Reworked correct engine | `folio-assistant/computations/homfly_ocneanu_trace.py` | n=2,3 validated |
-| Exponent fix + de-buried warning | `folio-assistant/computations/homflypt_engine.py` | done |
-| Mass-tower demotion | `folio-assistant/computations/homflypt_su_n_mass_tower.py` | done |
+| Reference-value gate | `computations/homflypt_reference_qa.py` | **5/5 pass** |
+| Reworked correct engine | `computations/homfly_ocneanu_trace.py` | n=2,3 validated |
+| Exponent fix + de-buried warning | `computations/homflypt_engine.py` | done |
+| Mass-tower demotion | `computations/homflypt_su_n_mass_tower.py` | done |
 
 ## The technical story (so you don't re-derive it)
 
@@ -93,7 +93,7 @@ diagnose CI red as a code problem here.
 ## How to verify quickly
 
 ```bash
-cd folio-assistant/computations && python3 homflypt_reference_qa.py
+cd computations && python3 homflypt_reference_qa.py
 #   expect: reference symbolic PASS, "n≥3 path: 5/5 match reference"
 python3 homfly_ocneanu_trace.py   # prints proton/neutron/fig-8 (self-validates on import)
 ```

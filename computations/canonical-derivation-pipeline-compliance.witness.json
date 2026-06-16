@@ -20,12 +20,12 @@
   "auditOnly": "docs/audits/2026-05-12-canonical-derivation-compute-review.md",
   "parameters": {
     "sources": {
-      "compute_audit_scan": "folio-assistant/computations/compute-audit-scan.witness.json",
-      "canonical_script_input_audit": "folio-assistant/computations/audits/canonical-script-input-audit.witness.json",
-      "derivation_chain_audit": "folio-assistant/computations/derivation-chain-audit.witness.json",
-      "codata_reconciliation": "folio-assistant/computations/codata-reconciliation.witness.json",
-      "witness_reproducibility": "folio-assistant/computations/witness-reproducibility-check.witness.json",
-      "witness_provenance": "folio-assistant/computations/audits/witness-provenance-audit.witness.json"
+      "compute_audit_scan": "computations/compute-audit-scan.witness.json",
+      "canonical_script_input_audit": "computations/audits/canonical-script-input-audit.witness.json",
+      "derivation_chain_audit": "computations/derivation-chain-audit.witness.json",
+      "codata_reconciliation": "computations/codata-reconciliation.witness.json",
+      "witness_reproducibility": "computations/witness-reproducibility-check.witness.json",
+      "witness_provenance": "computations/audits/witness-provenance-audit.witness.json"
     }
   },
   "data": {
@@ -222,7 +222,7 @@
     "known_open_conflicts": [
       {
         "id": "TR_M_AT_Q0_vs_frobenius_proof",
-        "where": "folio-assistant/computations/derivation_chain.py:68-93",
+        "where": "computations/derivation_chain.py:68-93",
         "summary": "Registry TR_M_AT_Q0 (Wenzl-bridge y_λ assembly) disagrees with Frobenius-selected τ_M (`from_scratch/` chain on commit 25a204efa). Two distinct canonical values for the same nominal quantity.",
         "audit_doc": "docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md §\"Update 2026-05-11 — τ_M / τ_SW conflation diagnosis\"",
         "blocks_fix": "P2.1 schur-weyl-weight-* → tau-sw-weight-* rename"

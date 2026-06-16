@@ -228,7 +228,7 @@ theorem crystal_isospin_degeneracy
     Therefore `S_crystal(T) = S_crystal(³He)`.
 
     Witness:
-    `folio-assistant/computations/term7-alpha5-crystal-derivation.witness.json`
+    `computations/term7-alpha5-crystal-derivation.witness.json`
     records both at 50 dps as `0.0020612874779541296`. -/
 -- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
 theorem crystal_T_helium3_degeneracy

@@ -843,7 +843,7 @@ def main(L_max: int = 8, top_k: int = 8):
             "PSD-trivial near-pure-power braids whose |tr_M| "
             "coincidentally matches B_AME/(m_e·ρ).",
             "Port klr_canonical_basis_filter to other braid-enumerators "
-            "in folio-assistant/computations/ (universal-ilp.py, "
+            "in computations/ (universal-ilp.py, "
             "ch-bond-writhe-lp.py, h2-integer-lp.py per the cemetery-"
             "applicability survey).  These use an OPS-tuple abstraction "
             "(named operators with state-update fns) rather than raw "

@@ -73,8 +73,8 @@ Witness: `binding-combiner-markov-peel-fallback.witness.json`
 Ref: prop:atomic-mass-gb-nf
 
 Usage:
-    python folio-assistant/computations/binding_combiner_markov_peel_fallback.py
-    python folio-assistant/computations/binding_combiner_markov_peel_fallback.py --include-li
+    python computations/binding_combiner_markov_peel_fallback.py
+    python computations/binding_combiner_markov_peel_fallback.py --include-li
 """
 from __future__ import annotations
 

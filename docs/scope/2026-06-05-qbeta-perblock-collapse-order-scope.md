@@ -16,7 +16,7 @@ claim, no fit; the compute is for a focused session.
 ## 🟢 Owner-confirmed (2026-06-05): the coherent-collapse cancellation IS the mechanism
 
 > **🔴 UPDATE 2026-06-06 — REFUTED by the heavy per-λ probe (the negative branch this falsifiable design anticipated).**
-> The test below was run — [`qbeta_perlambda_collapse_cancellation_probe.py`](../../folio-assistant/computations/qbeta/qbeta_perlambda_collapse_cancellation_probe.py),
+> The test below was run — [`qbeta_perlambda_collapse_cancellation_probe.py`](../../computations/qbeta/qbeta_perlambda_collapse_cancellation_probe.py),
 > verdict [`2026-06-05-qbeta-perlambda-collapse-cancellation-refuted.md`](../audits/2026-06-05-qbeta-perlambda-collapse-cancellation-refuted.md).
 > **Result: NO cancellation.** The per-λ n↔p contributions are all the **same
 > sign** (every `Δχ^λ < 0`, every Wenzl `y_λ > 0`), so `cancellation_ratio = 1.0000`

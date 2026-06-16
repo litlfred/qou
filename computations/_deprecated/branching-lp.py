@@ -17,7 +17,7 @@ For Z protons + N neutrons, each configuration is a map
 All expressions are exact rational functions of q.
 
 Usage:
-    cd folio-assistant/computations && python3 branching-lp.py
+    cd computations && python3 branching-lp.py
 """
 
 import sympy as sp

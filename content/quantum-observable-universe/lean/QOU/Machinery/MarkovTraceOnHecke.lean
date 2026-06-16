@@ -110,7 +110,7 @@ This realizes the `MarkovTrace` intent above for `n = 3` with an explicit
 linear functional on the NF free module `Fin 6 → R`, replacing the
 `True` marker with proved laws. The NF basis order is
 `[γ, σ₀, σ₁, L₊, L₋, e⁻]`, identical to `gram.NF_BASIS`; the data mirror
-`folio-assistant/computations/.../gram.py` (`hm`, `TR_M`) and the
+`computations/.../gram.py` (`hm`, `TR_M`) and the
 symbolic `pyhecke.trace_formal`. The mathematics is cross-verified in
 Python against `gram.py` (randomized) and over ℚ(s) by
 `tools/pyhecke/tests/test_trace_formal.py`. -/

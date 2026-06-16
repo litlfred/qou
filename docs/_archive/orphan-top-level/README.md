@@ -27,7 +27,7 @@ canonical references.
 - **Path-to-1ppb series** (path-to-1ppb.md, -02-content, -03-engine) —
   an old roadmap from before the L2 100× per-observable framework
   replaced it. The canonical "what passes 100×" answer now lives in
-  [`folio-assistant/computations/per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json).
+  [`computations/per-observable-100x-status.witness.json`](../../computations/per-observable-100x-status.witness.json).
 - **Phase-3 findings, tr_M reconciliation, qou-open-conjecture-strategies**
   — all subsumed by the canonical cheat sheet's §3 Phase 5 findings
   table.

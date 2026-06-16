@@ -217,7 +217,7 @@ Candidates ranked by suspicion:
 
 ## Audit script status (this PR)
 
-`folio-assistant/computations/audits/weight_factor_audit.py` is added in this PR. Implementation status:
+`computations/audits/weight_factor_audit.py` is added in this PR. Implementation status:
 
 | Check | Implemented? | Result at $n \le 12$ |
 |---|:---:|---|

@@ -17,9 +17,9 @@ export default proposition({
   computation: {
     engine: "sympy",
     script:
-      "folio-assistant/computations/qbeta/qbeta_habiro_f_from_shape_collapse.py",
+      "computations/qbeta/qbeta_habiro_f_from_shape_collapse.py",
     witness:
-      "folio-assistant/computations/qbeta/qbeta-habiro-f-from-shape-collapse.witness.json",
+      "computations/qbeta/qbeta-habiro-f-from-shape-collapse.witness.json",
     status: "verified",
   },
   tags: [

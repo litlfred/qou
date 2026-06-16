@@ -24,7 +24,7 @@ single-pn-arc atoms) move the f-factor spread between T and ³He?
 
 Outputs `binding-bring-enhancement-compare.witness.json`.
 
-Run from repo root: `python3 folio-assistant/computations/binding_bring_enhancement_compare.py --print`
+Run from repo root: `python3 computations/binding_bring_enhancement_compare.py --print`
 """
 from __future__ import annotations
 
@@ -137,7 +137,7 @@ def build_witness() -> dict:
             "'strict_averaged' and 'bring_color_weighted'; f required to "
             "close B_endo to B_AME under each."
         ),
-        "generator": "folio-assistant/computations/binding_bring_enhancement_compare.py",
+        "generator": "computations/binding_bring_enhancement_compare.py",
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "inputs": {
             "q_0_50dps": Q_50_DIGIT_STR,
@@ -155,7 +155,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
         "--out",
-        default="folio-assistant/computations/binding-bring-enhancement-compare.witness.json",
+        default="computations/binding-bring-enhancement-compare.witness.json",
     )
     ap.add_argument("--print", action="store_true")
     args = ap.parse_args()

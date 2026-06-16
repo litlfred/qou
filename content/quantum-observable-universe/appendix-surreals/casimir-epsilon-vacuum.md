@@ -64,7 +64,7 @@ $\mathrm{Geom}_\varepsilon(N_\unicode{9737} \cdot \unicode{9737})
 = N_\unicode{9737} \cdot \varepsilon / \hbar^{2}_{q}$
 (disjoint-union additivity of $\mathrm{Vol}$, linking_weight = 1
 on disjoint unknots, per the
-[Hoefsmit-additivity probe](../../../folio-assistant/computations/probes/casimir-hoefsmit-additivity-probe.witness.json)).
+[Hoefsmit-additivity probe](../../../computations/probes/casimir-hoefsmit-additivity-probe.witness.json)).
 The $\hbar^{2}_{q}$ in the denominator cancels the same factor in
 $N_\unicode{9737}$'s formula above, leaving a finite real energy:
 

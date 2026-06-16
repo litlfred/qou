@@ -8,7 +8,7 @@ principles that could yield `−G·h²` as the h² coefficient of
 
 ## Why we're here
 
-[Reading-A residual probe at 50 dps](../../folio-assistant/computations/reading_a_residual_at_50dps.py)
+[Reading-A residual probe at 50 dps](../../computations/reading_a_residual_at_50dps.py)
 shows that **`5/2 − G·h²`** matches the m_p-anchored target
 linking_weight to within 1.38e-5 (≈ 5.6 ppm in m_p), closing
 99.98 % of the Family A gap with a single h² coefficient swap.

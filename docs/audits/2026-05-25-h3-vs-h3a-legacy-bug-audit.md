@@ -40,7 +40,7 @@ Per the BIG review investigation, `atom_per_generator_volumes(Z, N)` is called b
 
 ## §4. The "proper" alternative already exists (but is orphaned)
 
-`folio-assistant/computations/mass_at_3A_proper.py`:
+`computations/mass_at_3A_proper.py`:
 - Uses full H_{3A} character decomposition via `build_seminormal_matrices_cached`
 - Computes per-gen V̂_i using H_{3A} Wedderburn weights dynamically
 - Implements both Markov-trace and full-tower binding
@@ -106,6 +106,6 @@ The bug shows up most clearly in:
 - PR [#1214](https://github.com/litlfred/qou/pull/1214) — wiring-status taxonomy (0/17 canonically wired)
 - PR [#1220](https://github.com/litlfred/qou/pull/1220) — α-cluster recursion bug (likely downstream of this)
 - PR [#1233](https://github.com/litlfred/qou/pull/1233) — crystal-Yekutieli probes A-D + BIG review
-- [`folio-assistant/computations/mass_at_3A_proper.py`](../../folio-assistant/computations/mass_at_3A_proper.py) — orphan "proper" implementation
-- [`folio-assistant/computations/atom_mass_derived.py`](../../folio-assistant/computations/atom_mass_derived.py) — secondary bug (multiplicative composition)
-- [`folio-assistant/computations/alpha/alpha_k_jones_markov_h4.py`](../../folio-assistant/computations/alpha/alpha_k_jones_markov_h4.py) — H_4 reference implementation (this PR)
+- [`computations/mass_at_3A_proper.py`](../../computations/mass_at_3A_proper.py) — orphan "proper" implementation
+- [`computations/atom_mass_derived.py`](../../computations/atom_mass_derived.py) — secondary bug (multiplicative composition)
+- [`computations/alpha/alpha_k_jones_markov_h4.py`](../../computations/alpha/alpha_k_jones_markov_h4.py) — H_4 reference implementation (this PR)

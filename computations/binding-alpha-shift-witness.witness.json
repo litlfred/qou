@@ -2,7 +2,7 @@
   "name": "binding-alpha-shift-witness",
   "description": "Numerical cross-check of the light-nuclei BindingForceCarrierKnot candidates against experimental B(A). Honest gap report; the candidate identifications are agent-survey hypotheses, not derived uniqueness theorems (Phase 3 open math).",
   "computation": "B(A) = m_e · ρ_0 · α_shift(T(p_A, k_A))",
-  "generator": "folio-assistant/computations/binding_alpha_shift_witness.py",
+  "generator": "computations/binding_alpha_shift_witness.py",
   "timestamp_utc": "2026-05-31T04:35:11.916322+00:00",
   "inputs": {
     "m_e_MeV": 0.5109989461,

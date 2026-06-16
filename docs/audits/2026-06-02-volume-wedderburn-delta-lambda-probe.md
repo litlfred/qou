@@ -1,7 +1,7 @@
 # Volume-Wedderburn Δ_λ — cheap geometric proxies refuted; q-6j saddle remains
 
 **Date:** 2026-06-02
-**Probe:** [`probe_volume_wedderburn_delta_lambda.py`](../../folio-assistant/computations/probe_volume_wedderburn_delta_lambda.py)
+**Probe:** [`probe_volume_wedderburn_delta_lambda.py`](../../computations/probe_volume_wedderburn_delta_lambda.py)
 → `probe-volume-wedderburn-delta-lambda.witness.json`
 **Status:** EXPLORATORY (per `production-vs-exploratory-discipline`); asserts the
 refutation. Δ_λ remains an open gate (GAP-A-3/A-4).
@@ -64,7 +64,7 @@ and the Option E programme PR #1697). What this probe establishes is that the
 
 ## Follow-up: q-6j / JM-spectral volume + the T/³He sign obstruction
 
-[`probe_q6j_jm_spectral_delta_lambda.py`](../../folio-assistant/computations/probe_q6j_jm_spectral_delta_lambda.py)
+[`probe_q6j_jm_spectral_delta_lambda.py`](../../computations/probe_q6j_jm_spectral_delta_lambda.py)
 upgrades `Vol_λ` to the genuine q-6j mechanism — the **Jucys–Murphy content
 spectrum** through the Bloch–Wigner dilogarithm at root-of-unity order `r`,
 

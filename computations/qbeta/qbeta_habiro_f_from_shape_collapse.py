@@ -89,7 +89,7 @@ import sympy as sp
 
 HERE = Path(__file__).resolve().parent
 # Single sys.path insertion in the _path_bridge import above already adds
-# `__file__.parent.parent` (= folio-assistant/computations/), which is the
+# `__file__.parent.parent` (= computations/), which is the
 # same dir as `HERE.parent`. No second insertion needed for the
 # `_precision` / `witness_base` imports below.
 

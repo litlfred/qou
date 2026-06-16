@@ -53,15 +53,15 @@ export default conjecture({
         "`[2]_q·(1−h²α)` Habiro element, PR #1511); only then do `c_{k≥3}` upgrade from near-match " +
         "to proved.",
       see:
-        "folio-assistant/computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json",
+        "computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json",
     },
   ],
   computation: {
     engine: "python+mpmath",
     script:
-      "folio-assistant/computations/qbeta/qbeta_ck_truncation_order_analysis.py",
+      "computations/qbeta/qbeta_ck_truncation_order_analysis.py",
     witness: [
-      "folio-assistant/computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json",
+      "computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json",
     ],
     status: "experimental",
   },

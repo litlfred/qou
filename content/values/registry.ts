@@ -13,7 +13,7 @@
  *
  * Adding a new entry:
  *   1. Identify the canonical witness JSON the value should track
- *      (look in `folio-assistant/computations/*.witness.json`).
+ *      (look in `computations/*.witness.json`).
  *   2. Pick a stable, snake-case name (mirror the symbol when
  *      possible — `q_0`, `m_n_MeV`, `inv_alpha`).
  *   3. Set `defaultPrecision` no larger than the underlying witness
@@ -109,7 +109,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Substrate parameter, derived from Vol(4_1) and CODATA m_μ/m_e.",
       symbol: "q_0",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "derived_50_digit.q",
       defaultPrecision: 4,
       units: null,
@@ -120,7 +120,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Reciprocal substrate parameter q_0^{-1}.",
       symbol: "q_0^{-1}",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "derived_50_digit.q_inv",
       defaultPrecision: 4,
       units: null,
@@ -134,7 +134,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "of CO, from the bond-order active-set probe.",
       symbol: "b_\\sigma",
       witnessFile:
-        "folio-assistant/computations/co-bond-order-active-set.witness.json",
+        "computations/co-bond-order-active-set.witness.json",
       witnessPath: "data.sigma_channel_eV",
       defaultPrecision: 4,
       units: "eV",
@@ -147,7 +147,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "reference for the bond-order active-set probe.",
       symbol: "D_0(\\mathrm{CO})",
       witnessFile:
-        "folio-assistant/computations/co-bond-order-active-set.witness.json",
+        "computations/co-bond-order-active-set.witness.json",
       witnessPath: "data.observed_D0_CO_eV",
       defaultPrecision: 4,
       units: "eV",
@@ -160,7 +160,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Observed CO₂ C=O double-bond comparison energy (per-bond reference).",
       symbol: "D_0(\\mathrm{CO_2})",
       witnessFile:
-        "folio-assistant/computations/molecular-experimental-refs.witness.json",
+        "computations/molecular-experimental-refs.witness.json",
       witnessPath: "data.d0_co2_double_ev",
       defaultPrecision: 3,
       units: "eV",
@@ -172,7 +172,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Observed H₂ bond dissociation energy D_0(H₂) — experimental reference.",
       symbol: "D_0(\\mathrm{H_2})",
       witnessFile:
-        "folio-assistant/computations/molecular-experimental-refs.witness.json",
+        "computations/molecular-experimental-refs.witness.json",
       witnessPath: "data.d0_h2_ev",
       defaultPrecision: 4,
       units: "eV",
@@ -184,7 +184,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Observed C–C single-bond dissociation energy — experimental reference.",
       symbol: "D_0(\\mathrm{C\\text{-}C})",
       witnessFile:
-        "folio-assistant/computations/molecular-experimental-refs.witness.json",
+        "computations/molecular-experimental-refs.witness.json",
       witnessPath: "data.d0_cc_ev",
       defaultPrecision: 3,
       units: "eV",
@@ -195,7 +195,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Observed benzene aromatic C–C bond length.",
       symbol: "r_{\\mathrm{C-C}}^{\\mathrm{benzene}}",
       witnessFile:
-        "folio-assistant/computations/molecular-experimental-refs.witness.json",
+        "computations/molecular-experimental-refs.witness.json",
       witnessPath: "data.bond_len_benzene_ang",
       defaultPrecision: 3,
       units: "Å",
@@ -206,7 +206,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "C–C single-bond length reference.",
       symbol: "r_{\\mathrm{C-C}}^{\\mathrm{single}}",
       witnessFile:
-        "folio-assistant/computations/molecular-experimental-refs.witness.json",
+        "computations/molecular-experimental-refs.witness.json",
       witnessPath: "data.bond_len_cc_single_ang",
       defaultPrecision: 3,
       units: "Å",
@@ -217,7 +217,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "C=C double-bond length reference.",
       symbol: "r_{\\mathrm{C=C}}^{\\mathrm{double}}",
       witnessFile:
-        "folio-assistant/computations/molecular-experimental-refs.witness.json",
+        "computations/molecular-experimental-refs.witness.json",
       witnessPath: "data.bond_len_cc_double_ang",
       defaultPrecision: 3,
       units: "Å",
@@ -228,7 +228,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Observed benzene resonance (delocalization) energy.",
       symbol: "E_{\\mathrm{res}}^{\\mathrm{benzene}}",
       witnessFile:
-        "folio-assistant/computations/molecular-experimental-refs.witness.json",
+        "computations/molecular-experimental-refs.witness.json",
       witnessPath: "data.benzene_resonance_kcal",
       defaultPrecision: 2,
       units: "kcal/mol",
@@ -240,7 +240,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Predicted CH₄ H–C–H angle (braid-weight VSEPR, no fit).",
       symbol: "\\theta_{\\mathrm{CH_4}}",
       witnessFile:
-        "folio-assistant/computations/molecular-angle-master-table.witness.json",
+        "computations/molecular-angle-master-table.witness.json",
       witnessPath: "data.table.CH4.predicted_deg",
       defaultPrecision: 5,
       units: "deg",
@@ -250,7 +250,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Predicted NH₃ H–N–H angle (braid-weight VSEPR, no fit).",
       symbol: "\\theta_{\\mathrm{NH_3}}",
       witnessFile:
-        "folio-assistant/computations/molecular-angle-master-table.witness.json",
+        "computations/molecular-angle-master-table.witness.json",
       witnessPath: "data.table.NH3.predicted_deg",
       defaultPrecision: 5,
       units: "deg",
@@ -260,7 +260,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Predicted H₂O H–O–H angle (braid-weight VSEPR, no fit).",
       symbol: "\\theta_{\\mathrm{H_2O}}",
       witnessFile:
-        "folio-assistant/computations/molecular-angle-master-table.witness.json",
+        "computations/molecular-angle-master-table.witness.json",
       witnessPath: "data.table.H2O.predicted_deg",
       defaultPrecision: 5,
       units: "deg",
@@ -270,7 +270,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Predicted C₂H₄ H–C–H angle (braid-weight VSEPR, no fit).",
       symbol: "\\theta_{\\mathrm{C_2H_4}}",
       witnessFile:
-        "folio-assistant/computations/molecular-angle-master-table.witness.json",
+        "computations/molecular-angle-master-table.witness.json",
       witnessPath: "data.table.C2H4.predicted_deg",
       defaultPrecision: 5,
       units: "deg",
@@ -280,7 +280,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Predicted CO₂ O–C–O angle (linear, braid-weight VSEPR).",
       symbol: "\\theta_{\\mathrm{CO_2}}",
       witnessFile:
-        "folio-assistant/computations/molecular-angle-master-table.witness.json",
+        "computations/molecular-angle-master-table.witness.json",
       witnessPath: "data.table.CO2.predicted_deg",
       defaultPrecision: 5,
       units: "deg",
@@ -291,7 +291,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Predicted H₂S H–S–H angle (pure-p base, braid-weight VSEPR).",
       symbol: "\\theta_{\\mathrm{H_2S}}",
       witnessFile:
-        "folio-assistant/computations/molecular-angle-master-table.witness.json",
+        "computations/molecular-angle-master-table.witness.json",
       witnessPath: "data.table.H2S.predicted_deg",
       defaultPrecision: 5,
       units: "deg",
@@ -304,7 +304,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Seifert genus of the trefoil T_{2,3} (the chiral channel) in Σ₄.",
       symbol: "g(T_{2,3})",
       witnessFile:
-        "folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json",
+        "computations/bring-trefoil-cinquefoil-channel.witness.json",
       witnessPath: "data.g_trefoil_chiral_channel",
       defaultPrecision: 0,
       units: null,
@@ -315,7 +315,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Seifert genus of the cinquefoil T_{2,5} (the ζ₅ carrier) in Σ₄.",
       symbol: "g(T_{2,5})",
       witnessFile:
-        "folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json",
+        "computations/bring-trefoil-cinquefoil-channel.witness.json",
       witnessPath: "data.g_cinquefoil_zeta5",
       defaultPrecision: 0,
       units: null,
@@ -325,7 +325,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Genus of Bring's Seifert fibre Σ₄ (both knots embed: ≤ 4).",
       symbol: "g(\\Sigma_4)",
       witnessFile:
-        "folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json",
+        "computations/bring-trefoil-cinquefoil-channel.witness.json",
       witnessPath: "data.brings_genus_sigma4",
       defaultPrecision: 0,
       units: null,
@@ -336,7 +336,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Quadratic Gauss sum over the cinquefoil's ℤ₅-orbit, g = Σ ζ₅^{k²} = √5.",
       symbol: "\\textstyle\\sum_k \\zeta_5^{k^2}",
       witnessFile:
-        "folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json",
+        "computations/bring-trefoil-cinquefoil-channel.witness.json",
       witnessPath: "data.gauss_sum",
       defaultPrecision: 5,
       units: null,
@@ -347,7 +347,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "The Bring constant 1/√5 — leading chiral coefficient of the H₂S residual.",
       symbol: "1/\\sqrt5",
       witnessFile:
-        "folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json",
+        "computations/bring-trefoil-cinquefoil-channel.witness.json",
       witnessPath: "data.inv_sqrt5_bring",
       defaultPrecision: 5,
       units: null,
@@ -360,7 +360,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "h² = (q₀−q₀⁻¹)² — the predicted H-bond/covalent energy ratio (~0.044).",
       symbol: "h^2",
       witnessFile:
-        "folio-assistant/computations/hbond-categorical-action.witness.json",
+        "computations/hbond-categorical-action.witness.json",
       witnessPath: "data.h_squared_hbond_ratio",
       defaultPrecision: 4,
       units: null,
@@ -371,7 +371,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Predicted H₂O latent heat = 2·h²·E_OH (no fit), kJ/mol.",
       symbol: "L_{\\mathrm{H_2O}}^{\\mathrm{pred}}",
       witnessFile:
-        "folio-assistant/computations/hbond-categorical-action.witness.json",
+        "computations/hbond-categorical-action.witness.json",
       witnessPath: "data.H2O_L_pred_kJmol",
       defaultPrecision: 1,
       units: "kJ/mol",
@@ -382,7 +382,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "H₂O latent-heat prediction error vs measured 40.66 kJ/mol (no fit), %.",
       symbol: "\\varepsilon_{\\mathrm{H_2O}}",
       witnessFile:
-        "folio-assistant/computations/hbond-categorical-action.witness.json",
+        "computations/hbond-categorical-action.witness.json",
       witnessPath: "data.H2O_err_pct",
       defaultPrecision: 1,
       units: "%",
@@ -395,7 +395,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Symmetric-block fraction q²/(q²+q⁻²) of the Hopf link σ₁² (vdW-dominated).",
       symbol: "q^2/(q^2+q^{-2})",
       witnessFile:
-        "folio-assistant/computations/hbond-vdw-sdp.witness.json",
+        "computations/hbond-vdw-sdp.witness.json",
       witnessPath: "data.sigma1sq_pct_symmetric",
       defaultPrecision: 1,
       units: "%",
@@ -406,7 +406,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Markov q-dimension of the symmetric block e₊ (the van der Waals channel).",
       symbol: "\\mathrm{tr}_M(e_+)",
       witnessFile:
-        "folio-assistant/computations/hbond-vdw-sdp.witness.json",
+        "computations/hbond-vdw-sdp.witness.json",
       witnessPath: "data.tr_M_e_plus_symmetric_vdw",
       defaultPrecision: 3,
       units: null,
@@ -418,7 +418,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "cosh(2λ)=(q²+q⁻²)/2 — the retained bar-even carrier of the Hopf link.",
       symbol: "\cosh 2\lambda",
       witnessFile:
-        "folio-assistant/computations/vdw-pskew-sinh-probe.witness.json",
+        "computations/vdw-pskew-sinh-probe.witness.json",
       witnessPath: "data.cosh_2lambda",
       defaultPrecision: 5,
       units: null,
@@ -429,7 +429,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "The van der Waals bar-odd residual sinh(2λ)·(e₊−e₋) (P_skew channel, exact).",
       symbol: "\sinh(2\lambda)(e_+-e_-)",
       witnessFile:
-        "folio-assistant/computations/vdw-pskew-sinh-probe.witness.json",
+        "computations/vdw-pskew-sinh-probe.witness.json",
       witnessPath: "data.vdw_bar_odd_residual",
       defaultPrecision: 5,
       units: null,
@@ -440,7 +440,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Planck constant ℏ_q = q - q^{-1} at the substrate.",
       symbol: "H_A",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "derived_50_digit.H_A",
       defaultPrecision: 4,
       units: null,
@@ -451,7 +451,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Categorical Planck constant ℏ_q = (q-1)/q.",
       symbol: "\\hbar_q",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "derived_50_digit.hbar_q",
       defaultPrecision: 4,
       units: null,
@@ -462,7 +462,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Squared Planck constant ℏ_q^2 — denominator of ξ(q).",
       symbol: "\\hbar_q^{2}",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "derived_50_digit.hbar_q_sq",
       defaultPrecision: 4,
       units: null,
@@ -473,7 +473,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Quantum integer [2]_q = q + q^{-1}.",
       symbol: "[2]_q",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "derived_50_digit.two_q",
       defaultPrecision: 4,
       units: null,
@@ -484,7 +484,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Quantum integer [3]_q.",
       symbol: "[3]_q",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "quantum_integers.[3]_q",
       defaultPrecision: 4,
       units: null,
@@ -495,7 +495,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Quantum integer [4]_q.",
       symbol: "[4]_q",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "quantum_integers.[4]_q",
       defaultPrecision: 4,
       units: null,
@@ -506,7 +506,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Quantum integer [5]_q.",
       symbol: "[5]_q",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "quantum_integers.[5]_q",
       defaultPrecision: 4,
       units: null,
@@ -517,7 +517,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Markov parameter z = 1/(q^{1/2} + q^{-1/2}).",
       symbol: "z",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "derived_50_digit.z_markov",
       defaultPrecision: 4,
       units: null,
@@ -528,7 +528,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Hecke trace density ρ_q.",
       symbol: "\\rho_q",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "derived_50_digit.rho_q",
       defaultPrecision: 4,
       units: null,
@@ -539,7 +539,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Skein normalisation s = z · (q - q^{-1}).",
       symbol: "s",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "derived_50_digit.s_skein",
       defaultPrecision: 4,
       units: null,
@@ -551,7 +551,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "CODATA relative uncertainty on m_μ/m_e — bounds physical anchoring of q_0.",
       symbol: "\\sigma(q_0)/q_0",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "physical_anchoring_bound.codata_relative_uncertainty",
       defaultPrecision: 3,
       units: null,
@@ -563,7 +563,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "Hyperbolic volume of the figure-eight knot 4_1.",
       symbol: "\\mathrm{Vol}(4_1)",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       // The witness JSON exposes the 50-digit value as a string under
       // `..._str`, with a parallel f64 mirror at `..._float`.  We
       // dereference the string field to preserve full precision.
@@ -577,7 +577,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "CODATA muon-electron mass ratio (calibration input).",
       symbol: "m_\\mu/m_e",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "calibration_inputs.m_mu_over_e_str",
       defaultPrecision: 7,
       units: null,
@@ -591,7 +591,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "AME experimental binding energy of 4He (helium-4).",
       symbol: "B_{\\mathrm{AME}}({}^4\\mathrm{He})",
       witnessFile:
-        "folio-assistant/computations/4he-binding-full-pipeline.witness.json",
+        "computations/4he-binding-full-pipeline.witness.json",
       witnessPath: "B_AME_MeV",
       defaultPrecision: 6,
       units: "MeV",
@@ -608,7 +608,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       description: "AME experimental binding energy of deuterium (2H).",
       symbol: "B_{\\mathrm{AME}}(\\mathrm{D})",
       witnessFile:
-        "folio-assistant/computations/canonical-mass-table-extended.witness.json",
+        "computations/canonical-mass-table-extended.witness.json",
       witnessPath: "data.rows.2.B_AME_MeV",
       defaultPrecision: 5,
       units: "MeV",
@@ -636,7 +636,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "via the codata-masses witness.",
       symbol: "m_p",
       witnessFile:
-        "folio-assistant/computations/codata-masses.witness.json",
+        "computations/codata-masses.witness.json",
       witnessPath: "data.m_p_MeV",
       defaultPrecision: 11,
       units: "MeV",
@@ -650,7 +650,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "codata_constants.py via the codata-masses witness.",
       symbol: "m_n",
       witnessFile:
-        "folio-assistant/computations/codata-masses.witness.json",
+        "computations/codata-masses.witness.json",
       witnessPath: "data.m_n_MeV",
       defaultPrecision: 11,
       units: "MeV",
@@ -664,7 +664,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "via the codata-masses witness.",
       symbol: "m_e",
       witnessFile:
-        "folio-assistant/computations/codata-masses.witness.json",
+        "computations/codata-masses.witness.json",
       witnessPath: "data.m_e_MeV",
       defaultPrecision: 8,
       units: "MeV",
@@ -678,7 +678,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "derived from CAL-1 (m_e) and CAL-2 (q_0) alone; no CAL-3 input.",
       symbol: "\\mathbf{E}_0^{(N=0)}",
       witnessFile:
-        "folio-assistant/computations/q-beta-form-a-n1-extension.witness.json",
+        "computations/q-beta-form-a-n1-extension.witness.json",
       witnessPath: "data.E0_N0_MeV_50dps",
       defaultPrecision: 6,
       units: "MeV",
@@ -695,7 +695,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "derivation review (conj:alpha-k-categorical-closure).",
       symbol: "\\mathbf{E}_0^{\\text{full}}",
       witnessFile:
-        "folio-assistant/computations/q-beta-form-a-n1-extension.witness.json",
+        "computations/q-beta-form-a-n1-extension.witness.json",
       witnessPath: "data.E0_full_MeV_50dps",
       defaultPrecision: 6,
       units: "MeV",
@@ -713,7 +713,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "(prop:mass-endomorphism-tower) require braid input.",
       symbol: "\\mathbf{E}_0^{\\text{full},\\mathrm{Li}_2^q}",
       witnessFile:
-        "folio-assistant/computations/q-beta-form-a-n1-extension.witness.json",
+        "computations/q-beta-form-a-n1-extension.witness.json",
       witnessPath: "data.E0_full_li2q_MeV_50dps",
       defaultPrecision: 6,
       units: "MeV",
@@ -732,7 +732,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "0.6% typed-vs-symbolic gap is itself a recorded finding.",
       symbol: "\\mathbf{E}_0^{(\\text{cal})}",
       witnessFile:
-        "folio-assistant/computations/q-beta-form-a-n1-extension.witness.json",
+        "computations/q-beta-form-a-n1-extension.witness.json",
       witnessPath: "data.E0_calibrated_MeV_50dps",
       defaultPrecision: 6,
       units: "MeV",
@@ -744,7 +744,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Inverse fine-structure constant 1/α (CODATA).  Canonical witness pending.",
       symbol: "\\alpha^{-1}",
       witnessFile:
-        "folio-assistant/computations/alpha/alpha-high-precision.witness.json",
+        "computations/alpha/alpha-high-precision.witness.json",
       witnessPath: "computation",
       defaultPrecision: 6,
       units: null,
@@ -757,7 +757,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Categorical speed of light c_q = 1/(q-1).  Canonical witness pending — derive from q-pinning.",
       symbol: "c_q",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "derived_50_digit.q",
       defaultPrecision: 4,
       units: null,
@@ -770,7 +770,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Operational entropy η_q = (2q-1)/q^3.  Canonical witness pending.",
       symbol: "\\eta_q",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "derived_50_digit.q",
       defaultPrecision: 4,
       units: null,
@@ -783,7 +783,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "q-deformed Lyapunov exponent χ_q = 1/(2q-1).  Canonical witness pending.",
       symbol: "\\chi_q",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "derived_50_digit.q",
       defaultPrecision: 4,
       units: null,
@@ -796,7 +796,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Hausdorff dimension d_H(q) = (2q-1)^2/q^3.  Canonical witness pending.",
       symbol: "d_H",
       witnessFile:
-        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
       witnessPath: "derived_50_digit.q",
       defaultPrecision: 4,
       units: null,
@@ -826,7 +826,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Vol(4_1) = 2 Cl_2(π/3) at 50-digit precision.",
       symbol: "\\mathrm{Vol}(4_1)",
       witnessFile:
-        "folio-assistant/computations/hyperbolic-volumes.witness.json",
+        "computations/hyperbolic-volumes.witness.json",
       witnessPath: "data.vol_4_1_decimal_50",
       unit: "",
     }),
@@ -841,7 +841,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "knot-complement volume.",
       symbol: "\\mathrm{Vol}(5_2)",
       witnessFile:
-        "folio-assistant/computations/hyperbolic-volumes.witness.json",
+        "computations/hyperbolic-volumes.witness.json",
       witnessPath: "data.vol_5_2_decimal_15",
       defaultPrecision: 15,
       units: null,
@@ -857,7 +857,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "gap_5_2_minus_4_1_15 in the same witness.",
       symbol: "\\Delta_{\\mathrm{Mostow}}(4_1)",
       witnessFile:
-        "folio-assistant/computations/hyperbolic-volumes.witness.json",
+        "computations/hyperbolic-volumes.witness.json",
       witnessPath: "data.gap_lower_bound",
       defaultPrecision: 1,
       units: null,
@@ -873,7 +873,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Hecke parameter h = q - q^{-1} = HA at q_0 — substrate Hecke-algebra structure constant.",
       symbol: "h",
       witnessFile:
-        "folio-assistant/computations/gram-matrix-dual.witness.json",
+        "computations/gram-matrix-dual.witness.json",
       witnessPath: "parameters.HA",
       defaultPrecision: 5,
       units: null,
@@ -885,7 +885,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Markov parameter z = 1/(q^{1/2} + q^{-1/2}) at q_0 — Gram-matrix entry tr_M(σ_0) = tr_M(σ_1).",
       symbol: "z",
       witnessFile:
-        "folio-assistant/computations/gram-matrix-dual.witness.json",
+        "computations/gram-matrix-dual.witness.json",
       witnessPath: "parameters.z",
       defaultPrecision: 5,
       units: null,
@@ -897,7 +897,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Markov trace z^2 of L_± = σ_0σ_1 / σ_1σ_0 at q_0.",
       symbol: "z^2",
       witnessFile:
-        "folio-assistant/computations/gram-matrix-dual.witness.json",
+        "computations/gram-matrix-dual.witness.json",
       witnessPath: "markov_trace_basis.L₊",
       defaultPrecision: 5,
       units: null,
@@ -909,7 +909,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Markov trace of e^- = σ_0σ_1σ_0 at q_0: tr_M(e^-) = h·z² + z (post-2026-05-19 TR_M[5] fix per docs/audits/2026-05-19-trm5-markov-bug.md). The earlier z^3 value was a bug.",
       symbol: "h \\cdot z^2 + z",
       witnessFile:
-        "folio-assistant/computations/gram-matrix-dual.witness.json",
+        "computations/gram-matrix-dual.witness.json",
       witnessPath: "markov_trace_basis.e⁻",
       defaultPrecision: 5,
       units: null,
@@ -921,7 +921,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Determinant of the 6×6 NF Gram matrix at q_0 (post TR_M[5] fix).",
       symbol: "\\det G",
       witnessFile:
-        "folio-assistant/computations/confinement-operator-selection.witness.json",
+        "computations/confinement-operator-selection.witness.json",
       witnessPath: "gram_det",
       defaultPrecision: 4,
       units: null,
@@ -935,7 +935,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Net constraint net(B_3 · uud) at q_0 — selects the Borromean operator as the unique confinement choice.",
       symbol: "\\mathrm{net}(\\mathcal{B}_3 \\cdot uud)",
       witnessFile:
-        "folio-assistant/computations/confinement-operator-selection.witness.json",
+        "computations/confinement-operator-selection.witness.json",
       witnessPath: "candidates.proton.B₃ = (σ₀σ₁⁻¹)³.net",
       defaultPrecision: 4,
       units: null,
@@ -947,7 +947,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Net constraint net(L_+ · uud) at q_0 — runner-up in candidate-operator ranking (no confinement, mesonic pairing).",
       symbol: "\\mathrm{net}(L_+ \\cdot uud)",
       witnessFile:
-        "folio-assistant/computations/confinement-operator-selection.witness.json",
+        "computations/confinement-operator-selection.witness.json",
       witnessPath: "candidates.proton.L₊ = σ₀σ₁.net",
       defaultPrecision: 4,
       units: null,
@@ -959,7 +959,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Net constraint net(𝟙 · uud) for the unconfined (identity) candidate at q_0.",
       symbol: "\\mathrm{net}(\\mathbf{1} \\cdot uud)",
       witnessFile:
-        "folio-assistant/computations/confinement-operator-selection.witness.json",
+        "computations/confinement-operator-selection.witness.json",
       witnessPath: "candidates.proton.𝟏 (identity, no binding).net",
       defaultPrecision: 4,
       units: null,
@@ -973,7 +973,7 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "Per-crossing molecular energy scale E_mol = m_e · q^{-5} (eV) at q_0 — input parameter to molecular Frobenius LP.",
       symbol: "\\mathbf{E}_{\\mathrm{mol}}",
       witnessFile:
-        "folio-assistant/computations/molecular-frobenius-lp.witness.json",
+        "computations/molecular-frobenius-lp.witness.json",
       witnessPath: "parameters.E_mol_eV",
       defaultPrecision: 4,
       units: "eV",

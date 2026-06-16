@@ -88,7 +88,7 @@ naive numerical substitution of $\mathrm{Li}_2^q$ at $q = q_0$; the
 naive substitution kills the dimensional mass scale by the
 bar-symmetric projection (empirical: $m_{\mathfrak{p}}/m_e \approx
 3.31$ vs CODATA $1836$; see
-[`m-p-m-e-li2q.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/m-p-m-e-li2q.witness.json)).
+[`m-p-m-e-li2q.witness.json`](https://github.com/litlfred/qou/blob/main/computations/m-p-m-e-li2q.witness.json)).
 The $\sim 173\times$ shortfall flagged below is consistent with this
 bar-projection structure; the $\rho_K$ closure path of
 [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md) and the Faddeev
@@ -108,7 +108,7 @@ wording wrote $M(\mathfrak{H}) = \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w)$
 single-term form is **shorthand** for the multi-term sum above
 and is structurally inadequate as a mass formula on its own,
 verified empirically in
-[`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe-sdp-canonical-paper-formula.witness.json):
+[`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe-sdp-canonical-paper-formula.witness.json):
 single-term fails by 87--100% on $D$, $T$, ${}^3\mathrm{He}$ under
 both Plancherel and Wenzl-Schur conventions; multi-term without
 the brane tower reduces error to 36--63%; the multi-term form
@@ -164,7 +164,7 @@ slice depth (= filtration grade $\leq$ some $k$), the surviving
 $E_\infty$-classes already account for all of $\mathrm{tr}_M(T_w)$
 because $d_r = 0$ for $r \geq 3$. No higher slices contribute. The
 GB-filtration tracker's certificate
-([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json))
+([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json))
 records exactly the data the $E_2 \Rightarrow E_\infty$ collapse needs:
 filtration-graded coefficients per term, in jet order.
 
@@ -172,7 +172,7 @@ The *finite slice* is essential: at every finite resolution Yekutieli's
 multiplicative integral is a finite product / finite sum in $\mathbb{Q}(q)$,
 exact, with no asymptotic limit. This is exactly the categorical
 content captured by the GB-filtration + jet-order certificate
-([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json)).
+([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json)).
 
 ### Pipeline
 
@@ -312,9 +312,9 @@ with methodology tag and high-precision certificate.
 The categorical pipeline is now implemented in two parallel
 implementations:
 
-- **Python prototypes** ([`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb_filtration_jet_tracker.py),
- [`joint_tower_sdp_solver.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/joint_tower_sdp_solver.py),
- [`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/joint_tower_sdp_solver_v2.py)) — design-spec
+- **Python prototypes** ([`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb_filtration_jet_tracker.py),
+ [`joint_tower_sdp_solver.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/joint_tower_sdp_solver.py),
+ [`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/joint_tower_sdp_solver_v2.py)) — design-spec
  reference, exact in $q$ via SymPy + cvxpy SDP feasibility for $H_3$.
 - **Rust production scaling** ([`tools/hecke-engine/src/{gb_nf_reducer,joint_tower_sdp_certificate,wedderburn_psd,cross_level_embedding,sdp_verifier}.rs`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/tools/hecke-engine/src/),
  binary [`joint-tower-sdp`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/tools/hecke-engine/src/bin/joint_tower_sdp.rs)) — bit-for-bit
@@ -378,9 +378,9 @@ Markov-trace computation) and the production-scale Rust port
 
  **Status ( issue #604 deliverable 1).** A first-pass
  Python R5-full prototype landed at
- [`folio-assistant/computations/r5_full_canonical_knot_solver.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/r5_full_canonical_knot_solver.py)
+ [`computations/r5_full_canonical_knot_solver.py`](https://github.com/litlfred/qou/blob/main/computations/r5_full_canonical_knot_solver.py)
  with witness
- [`r5-full-canonical-knot-solver.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/r5-full-canonical-knot-solver.witness.json).
+ [`r5-full-canonical-knot-solver.witness.json`](https://github.com/litlfred/qou/blob/main/computations/r5-full-canonical-knot-solver.witness.json).
  It enumerates $B_3$ braid words up to length $L_{\max} = 8$,
  filters via a KLR canonical-basis "cemetery" prune (drops $\sigma_i^{\pm k}$
  pure-power Demazure-trivial classes per CLAUDE.md §7b symmetric-
@@ -399,14 +399,14 @@ Markov-trace computation) and the production-scale Rust port
  on the standard $(2,1)$ block) and ranks in the top 45 %. The
  single-term shorthand $B = m_e \cdot \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w)$
  (retired — see Statement above) has the known structural offset documented in
- [`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-sdp-canonical-paper-formula.witness.json),
+ [`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/main/computations/probe-sdp-canonical-paper-formula.witness.json),
  which prevents the historical $T_w$ from being the unique global
  winner; wiring the multi-term tower (T2--T6 of
  [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified))
  into the cost is the next-session deliverable. ${}^{3}$H ($8_{11}$ in
  $B_5$) is also next-session work — needs Hoefsmit seminormal at
  $H_5$, consistent with the deferred-to-Rust posture in
- [`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint_tower_sdp_solver_v2.py).
+ [`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/main/computations/joint_tower_sdp_solver_v2.py).
 
 A second item — the structural prefactor rule $\nu_{\mathrm{SDP}}(Z, N)$ — is a
 downstream consequence: once the SDP-solver returns canonical $T_w$

@@ -6,12 +6,12 @@ the five roots the Bring radical resolves — the chiral channel and the $\zeta_
 symmetry are carried by two **distinct** torus knots, linked by the ambient $S_5$:*
 
 - *the **chiral channel** is the **trefoil** $T_{2,3}$, of Seifert genus
-  $g(T_{2,3}) = :val[bring_g_trefoil]{precision=0, witness=folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json}$
+  $g(T_{2,3}) = :val[bring_g_trefoil]{precision=0, witness=computations/bring-trefoil-cinquefoil-channel.witness.json}$
   — the colour-tube cubic's three sheets $(r,g,b)$ with $B_3 \twoheadrightarrow H_3$
   branch monodromy, i.e. the signed-content-zero block $V_{(2,1)}$
   ($c_\lambda = 0$, the $q$-Dirac kernel);*
 - *the **$\zeta_5$ carrier** is the **cinquefoil** $T_{2,5}$, of Seifert genus
-  $g(T_{2,5}) = :val[bring_g_cinquefoil]{precision=0, witness=folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json}$
+  $g(T_{2,5}) = :val[bring_g_cinquefoil]{precision=0, witness=computations/bring-trefoil-cinquefoil-channel.witness.json}$
   — the hyperelliptic quintic $\mathcal{X}_5 \colon y^2 = x^5 - 1$
   ([`def:hyperelliptic-quintic`](#def:hyperelliptic-quintic)) **embedded** (not
   covered) by the first Lagrange resolvent $w_1$ of the cyclic
@@ -19,7 +19,7 @@ symmetry are carried by two **distinct** torus knots, linked by the ambient $S_5
   $\{1, \zeta_5, \dots, \zeta_5^4\}$ ([`prop:x5-z5-automorphism`](#prop:x5-z5-automorphism)).*
 
 *Both embed in $\Sigma_4$ — genus $1$ and $2$ are $\le g(\Sigma_4) =
-:val[bring_sigma4_genus]{precision=0, witness=folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json}$, within the complete embeddable
+:val[bring_sigma4_genus]{precision=0, witness=computations/bring-trefoil-cinquefoil-channel.witness.json}$, within the complete embeddable
 list $\{(2,3),(2,5),(2,7),(2,9),(3,4),(3,5)\}$ of
 [`prop:torus-embeddable-complete`](#prop:torus-embeddable-complete) — and they
 are distinct. The quadratic Gauss sum over the cinquefoil's $\mathbb{Z}_5$-orbit,*
@@ -31,10 +31,10 @@ $$
 $$
 
 *is the unique source of $\zeta_5$'s irrationality over $\mathbb{Q}$, carried by
-the resolvent $w_1$ (numerically $g \approx :val[bring_gauss_sum_sqrt5]{precision=5, witness=folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json}$).
+the resolvent $w_1$ (numerically $g \approx :val[bring_gauss_sum_sqrt5]{precision=5, witness=computations/bring-trefoil-cinquefoil-channel.witness.json}$).
 The chiral residue's only available irrational scale on this configuration is
 therefore $\sqrt5$, and its Bring constant is
-$1/\sqrt5 \approx :val[bring_inv_sqrt5]{precision=5, witness=folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json}$.*
+$1/\sqrt5 \approx :val[bring_inv_sqrt5]{precision=5, witness=computations/bring-trefoil-cinquefoil-channel.witness.json}$.*
 
 ## Two torus knots, not one fibre
 

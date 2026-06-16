@@ -16,9 +16,9 @@ export default conjecture({
   computation: {
     engine: "python",
     script:
-      "folio-assistant/computations/binding_depth_stratified_knot_weighted.py",
+      "computations/binding_depth_stratified_knot_weighted.py",
     witness:
-      "folio-assistant/computations/binding-depth-stratified-knot-weighted.witness.json",
+      "computations/binding-depth-stratified-knot-weighted.witness.json",
     status: "experimental",
   },
   tags: [

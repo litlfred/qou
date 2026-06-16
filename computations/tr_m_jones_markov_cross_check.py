@@ -43,7 +43,7 @@ gap honestly so downstream consumers know the new path is
 Witness: tr-m-jones-markov-cross-check.witness.json
 Audit-only: docs/audits/2026-05-08-p3-h-3a-divergence.md
 
-@module folio-assistant/computations/tr_m_jones_markov_cross_check
+@module computations/tr_m_jones_markov_cross_check
 """
 
 from __future__ import annotations

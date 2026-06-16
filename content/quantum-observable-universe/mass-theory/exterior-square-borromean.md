@@ -78,7 +78,7 @@ strand-strand couplings, including **lepton-quark crossings** which
 mediate the EM coupling.
 
 **Witness.** Computational verification at $q = 1$ via
-[`folio-assistant/computations/alpha_em_q9_q10_derivation.py`](#) and
+[`computations/alpha_em_q9_q10_derivation.py`](#) and
 the dimension formula directly: numerical match to the expected
 $45 \cdot [3]_q = 136.967$ at $q_0$, with $-0.05\%$ residue
 explained by the $\delta_{CS}$ + $8q \delta_{CS}^2$ corrections per

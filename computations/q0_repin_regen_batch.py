@@ -60,7 +60,7 @@ except Exception:  # pragma: no cover
     SHAPE = re.compile(re.escape(Q_50_DIGIT_STR[:6]) + r"\d{6,}")
     AUDIT_SUFFIXES = ("-audit.witness.json", "-scan.witness.json",
                       "-compliance.witness.json")
-WGLOB = "folio-assistant/computations/*.witness.json"
+WGLOB = "computations/*.witness.json"
 BRANCH = "claude/q0-repin-regen-batch-2026-05-30"
 
 
@@ -154,7 +154,7 @@ def main() -> int:
             skipped.append(f"{script} (missing)")
             continue
         # Clean slate: discard any residue from a prior timed-out run.
-        git("checkout", "--", "folio-assistant/computations", check=False)
+        git("checkout", "--", "computations", check=False)
         t0 = time.time()
         try:
             r = subprocess.run([sys.executable, "-u", str(spath)], cwd=REPO,
@@ -165,7 +165,7 @@ def main() -> int:
             rc = -1
         dt = time.time() - t0
         if rc != 0:
-            git("checkout", "--", "folio-assistant/computations", check=False)
+            git("checkout", "--", "computations", check=False)
             log(f"[{idx}/{len(producers)}] {'TIMEOUT' if rc==-1 else f'FAIL rc={rc}'}"
                 f" {script} ({dt:.0f}s, {len(targets)} witnesses) — skipped")
             skipped.append(f"{script} ({'timeout' if rc==-1 else 'rc'+str(rc)})")
@@ -177,7 +177,7 @@ def main() -> int:
             if wf.exists() and not stale_q0(wf.read_text()):
                 fresh.append(rel)
         if not fresh:
-            git("checkout", "--", "folio-assistant/computations", check=False)
+            git("checkout", "--", "computations", check=False)
             log(f"[{idx}/{len(producers)}] NOCHANGE {script} ({dt:.0f}s) — "
                 f"witness still stale, skipped")
             skipped.append(f"{script} (no-fresh)")
@@ -185,8 +185,8 @@ def main() -> int:
         # Stage every witness this run touched (a producer may emit siblings),
         # but reset non-witness residue to keep the tree clean.
         git("add", *fresh)
-        git("add", "folio-assistant/computations/*.witness.json", check=False)
-        git("checkout", "--", "folio-assistant/computations", check=False)  # non-staged residue
+        git("add", "computations/*.witness.json", check=False)
+        git("checkout", "--", "computations", check=False)  # non-staged residue
         diff = git("diff", "--cached", "--name-only", check=False).stdout.split()
         n_committed = len(diff)
         git("commit", "-q", "-m",

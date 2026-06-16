@@ -1,7 +1,7 @@
 # Extensive per-bond binding sum — zero-fit derivation quadruples the A-scaling
 
 **Date:** 2026-06-02
-**Derivation:** [`derive_binding_bond_sum.py`](../../folio-assistant/computations/derive_binding_bond_sum.py)
+**Derivation:** [`derive_binding_bond_sum.py`](../../computations/derive_binding_bond_sum.py)
 → `derive-binding-bond-sum.witness.json`
 **Status:** DERIVATION (zero fit, level-0). The intensive→extensive fix, validated.
 

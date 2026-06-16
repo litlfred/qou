@@ -2,7 +2,7 @@
 
 Date: 2026-05-07
 
-Restored `/home/runner/work/qou/qou/folio-assistant/computations/staircase_ew_disjoint_spectrum.py` and reran the disjoint braid
+Restored `/home/runner/work/qou/qou/computations/staircase_ew_disjoint_spectrum.py` and reran the disjoint braid
 
 $$
 \beta_{\mathrm{EW}} = \sigma_1^4 \cdot \sigma_3^6 \cdot \sigma_5^8.

@@ -2,7 +2,7 @@
 name: compute-audit
 roles: [collaborator, owner]
 description: >
-  Audit Python compute scripts under folio-assistant/computations/ for
+  Audit Python compute scripts under computations/ for
   the 30 patterns (P1-P30) extracted from a 50-commit review of QOU
   performance and mathematical-improvement landings. Distinguishes
   CORRECTNESS antipatterns (P1-P16) from PERFORMANCE antipatterns
@@ -34,7 +34,7 @@ numerical equivalence at q₀ before/after.
 
 ## Workflow
 
-1. Run `python folio-assistant/computations/compute_audit_scan.py`
+1. Run `python computations/compute_audit_scan.py`
    (writes `compute-audit-scan.witness.json` next to the script).
 2. Read the JSON: it lists per-file findings tagged by pattern ID.
 3. Cross-reference findings against `docs/audits/2026-05-08-compute-audit-workplan.md`
@@ -126,7 +126,7 @@ numerical equivalence at q₀ before/after.
 
 - **P17. Wrong number kernel.** Hecke generators have Laurent-poly
   coefficients in q over ℚ by construction. `sympy.Expr` is overkill;
-  use `LaurentQ` (folio-assistant/computations/laurent_q.py).
+  use `LaurentQ` (computations/laurent_q.py).
   Sweet spot: A=3 (3–6× speedup); A≥5 fades. (79ca1200, 17aee993.)
 
 - **P18. Symbolic partial-fraction polar split** instead of per-pole
@@ -150,7 +150,7 @@ numerical equivalence at q₀ before/after.
   dict per shape to eliminate the O(d_λ²) swap-partner search.
   (syt_prefix_cache.BlockCache; ocneanu_weights wires it.)
   **Audit gap**: 21 numerical Hoefsmit callers in
-  `folio-assistant/computations/` do not yet use BlockCache.
+  `computations/` do not yet use BlockCache.
 
 - **P22. Sparse representation when nnz < 0.1·dim²** for Hoefsmit
   matrices. `build_seminormal_matrices_cached` already auto-switches

@@ -135,12 +135,12 @@ form, since it tests $Q = q$ or $Q = q^2$ with $z_{\mathrm{GL}} = z$
 
 ## Witness
 
-[`folio-assistant/computations/gb_filtration_gauge_invariance_test.py`](#)
+[`computations/gb_filtration_gauge_invariance_test.py`](#)
 implements the Wenzl-bridge formula and verifies per-partition
 agreement at $n = 3, \ldots, 9$.  Output:
 `gb-filtration-gauge-invariance.witness.json`.
 
-[`folio-assistant/computations/y_lambda_wenzl_bridge_extended.py`](#)
+[`computations/y_lambda_wenzl_bridge_extended.py`](#)
 extends symbolic $y_\lambda$ to **all 270 partitions across $n = 2, \ldots, 12$
 in $45$ seconds total** via direct sympy substitution into the
 principal-specialization formula:

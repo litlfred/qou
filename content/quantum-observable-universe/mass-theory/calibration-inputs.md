@@ -93,7 +93,7 @@ one nucleon, no nuclear environment. Once $\mathfrak{E}_0$ is fixed,
 
 **CAL-3 gap — explicit tower-correction direction.**
 With the tower form $\mathfrak{E}_0^{\text{full}}$ now wired into
-production compute ([`derived_masses.py:e_0_full_mev`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/derived_masses.py#L145)),
+production compute ([`derived_masses.py:e_0_full_mev`](https://github.com/litlfred/qou/blob/main/computations/derived_masses.py#L145)),
 the framework-derived value overshoots the calibrated value by
 **$+1.75\%$** (was $+0.75\%$ with the single-tick form). The
 geometric series direction therefore does *not* close the

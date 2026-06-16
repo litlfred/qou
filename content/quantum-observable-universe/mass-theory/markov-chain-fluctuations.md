@@ -38,7 +38,7 @@ the Touchard pair-partition moments
 $T_n(q_0) = \sum_\pi q_0^{\mathrm{cr}(\pi)}$ grow super-exponentially
 in $n$, so no well-defined $q$-Gaussian distribution exists.
 This failure is documented in the computation layer
-(`folio-assistant/computations/substrate/hecke_core.py`), which selects the
+(`computations/substrate/hecke_core.py`), which selects the
 **Perron--Frobenius dominant eigenvalue** proxy instead:
 
 $$

@@ -28,7 +28,7 @@ Result: m_p/m_e ≈ 1870 (CODATA: 1836, error 1.8%).
 Zero fitted parameters.  Inputs: q₀ and m_e only.
 
 Usage:
-    python3 folio-assistant/computations/mass_endomorphism.py
+    python3 computations/mass_endomorphism.py
 """
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import math

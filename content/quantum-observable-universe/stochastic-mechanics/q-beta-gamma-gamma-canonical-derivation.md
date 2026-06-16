@@ -2,7 +2,7 @@
 
 This content captures the current understanding of the $\mathfrak{Q}_\beta$
 precision-ladder coefficients $c_k$, settling the Story A vs Story B
-ambiguity flagged in [`probe_q_beta_high_precision_ck.py`](../../folio-assistant/computations/probe_q_beta_high_precision_ck.py).
+ambiguity flagged in [`probe_q_beta_high_precision_ck.py`](../../computations/probe_q_beta_high_precision_ck.py).
 
 ## The chain
 
@@ -93,7 +93,7 @@ $\mathfrak{Q}_\beta^{\text{cat}}$ precision ladder from
 
 ## Story A vs Story B resolution
 
-[`probe_q_beta_gamma_gamma_derivation.py`](../../folio-assistant/computations/probe_q_beta_gamma_gamma_derivation.py)
+[`probe_q_beta_gamma_gamma_derivation.py`](../../computations/probe_q_beta_gamma_gamma_derivation.py)
 runs the categorical-derivation chain end-to-end and observes:
 
 | precision-ladder rung | residual against CODATA $\mathfrak{Q}_\beta$ |

@@ -53,7 +53,7 @@ m_proton_MeV = predict(atom="proton").value
 ### Witness contract
 
 *Canonical witness:
-[`per-observable-100x-status.witness.json`](../../../folio-assistant/computations/per-observable-100x-status.witness.json).
+[`per-observable-100x-status.witness.json`](../../../computations/per-observable-100x-status.witness.json).
 Records per-observable predicted mass, experimental anchor, ratio
 $\sigma_{\mathrm{pred}} / \sigma_{\mathrm{exp}}$ vs the 100× L2
 target, and the L1 cross-method agreement.*

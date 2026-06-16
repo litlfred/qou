@@ -35,8 +35,8 @@ CI gate: invoke with `--strict` to exit non-zero on any divergence OR
 any character-engine mismatch against the closed form.
 
 Usage:
-    python3 folio-assistant/computations/cross_check_trM_1ppb.py
-    python3 folio-assistant/computations/cross_check_trM_1ppb.py --strict
+    python3 computations/cross_check_trM_1ppb.py
+    python3 computations/cross_check_trM_1ppb.py --strict
 """
 from __future__ import annotations
 

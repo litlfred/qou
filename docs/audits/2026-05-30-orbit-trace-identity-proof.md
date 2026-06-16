@@ -7,7 +7,7 @@ roadmap ([`2026-05-20-compute-optimization-roadmap.md`](2026-05-20-compute-optim
 speedup (36× ⁶Li, 576× ⁸Be, the gateway to organic chemistry) — on an
 **unproven orbit-trace identity**, with the worry that interface swaps
 (I_pp / I_pn / I_nn) might break it for mixed-interface atoms.
-**Reproducer:** [`folio-assistant/computations/orbit_trace_identity_proof.py`](../../folio-assistant/computations/orbit_trace_identity_proof.py)
+**Reproducer:** [`computations/orbit_trace_identity_proof.py`](../../computations/orbit_trace_identity_proof.py)
 → `orbit-trace-identity.witness.json`.
 
 ## The claim

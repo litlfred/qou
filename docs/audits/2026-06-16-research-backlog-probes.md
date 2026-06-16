@@ -7,8 +7,8 @@ Formalize-first probes against the four open items in
 *"Formalize-first probe discipline"*.
 
 Reproducible compute:
-[`folio-assistant/computations/research_backlog_probes_2026_06_16.py`](../../folio-assistant/computations/research_backlog_probes_2026_06_16.py)
-→ [`research-backlog-probes.witness.json`](../../folio-assistant/computations/research-backlog-probes.witness.json).
+[`computations/research_backlog_probes_2026_06_16.py`](../../computations/research_backlog_probes_2026_06_16.py)
+→ [`research-backlog-probes.witness.json`](../../computations/research-backlog-probes.witness.json).
 
 | Item | Block | Verdict |
 |------|-------|---------|
@@ -258,7 +258,7 @@ already derived at $N=0$; re-deriving it would duplicate
 existing content).
 
 **Note:** the bean cites `beta-decay-energy-scale.witness.json`, which
-**does not exist** in `folio-assistant/computations/`. The $H_3$
+**does not exist** in `computations/`. The $H_3$
 NF₊/NF₋ table in `negative-debt-confinement.md` is not currently backed by
 a committed witness; producing one is a prerequisite for any future
 $\mathfrak{E}_0$ comparison.

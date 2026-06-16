@@ -285,7 +285,7 @@ content.
 
 **Fix.** Implement the recipe using the Wenzl-bridge closed forms in
 $\mathbb{Z}[q^{\pm 1}]$ (already worked out in
-`folio-assistant/computations/y-lambda-clean-closed-forms.md`; the
+`computations/y-lambda-clean-closed-forms.md`; the
 Python is already symbolic in $q$).
 
 ### Step 13 — `prop:graded-trace-residue-split`

@@ -64,10 +64,10 @@ $$
 
 The composition is exact at the symbolic level. Numerical
 re-evaluation at $q_0$
-([`alpha-em-shift-multiplicative-chain.witness.json`](../../folio-assistant/computations/alpha/alpha-em-shift-multiplicative-chain.witness.json),
+([`alpha-em-shift-multiplicative-chain.witness.json`](../../computations/alpha/alpha-em-shift-multiplicative-chain.witness.json),
 mpmath 50-dps) reads $\alpha_{\mathrm{shift}}(T_{2,9})$ and
 $\alpha_{\mathrm{shift}}(T_{3,5})$ from the upstream witness
-[`alpha-shift-torus.witness.json`](../../folio-assistant/computations/alpha/alpha-shift-torus.witness.json)
+[`alpha-shift-torus.witness.json`](../../computations/alpha/alpha-shift-torus.witness.json)
 and compares the chain expression $q \cdot [\alpha_{\mathrm{shift}}(T_{2,9})]_q
 \cdot [\alpha_{\mathrm{shift}}(T_{3,5})]_q$ to the bare expression
 $q \cdot [9]_q \cdot [10]_q$:

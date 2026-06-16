@@ -85,8 +85,8 @@ cosh_q / sinh_q?" can cite this audit instead of re-running the scan.
 
 ## Files
 
-- `folio-assistant/computations/qbeta/qbeta_cosh_q_sinh_q_candidate_scan.py`
-- `folio-assistant/computations/qbeta/qbeta-cosh-q-sinh-q-candidate-scan.witness.json`
+- `computations/qbeta/qbeta_cosh_q_sinh_q_candidate_scan.py`
+- `computations/qbeta/qbeta-cosh-q-sinh-q-candidate-scan.witness.json`
 
 ## Cross-refs
 

@@ -39,7 +39,7 @@ mass-table chain.  Its job is to identify whether the 544k ppb is
 (4) a residual outside all three (i.e. an upstream V_hat or formula bug).
 
 Usage:
-    python3 folio-assistant/computations/proton_residual_rootcause.py
+    python3 computations/proton_residual_rootcause.py
 """
 from __future__ import annotations
 

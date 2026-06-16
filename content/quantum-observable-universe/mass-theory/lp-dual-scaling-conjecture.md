@@ -1,7 +1,7 @@
 **Remark.**
 
 Empirical data on $y_0^*$ from
-[`alpha-5-lp-dual-crystal.witness.json`](folio-assistant/computations/alpha/alpha-5-lp-dual-crystal.witness.json)
+[`alpha-5-lp-dual-crystal.witness.json`](computations/alpha/alpha-5-lp-dual-crystal.witness.json)
 (2-row stratum, $\ell = 5$):
 
 | $q$ | $y_0^*(D)$ <br/>$(A=2,|T_3|=0)$ | $y_0^*(T) = y_0^*({}^3\mathrm{He})$ <br/>$(A=3,|T_3|=\tfrac{1}{2})$ | ratio $T/D$ |

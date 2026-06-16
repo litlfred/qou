@@ -23,7 +23,7 @@ LaTeX label: `prop:jet-gb-pl-correspondence`
 
 ## Witness
 
-- [jet-gb-pl-correspondence.witness.json](../../../folio-assistant/computations/jet-gb-pl-correspondence.witness.json)
+- [jet-gb-pl-correspondence.witness.json](../../../computations/jet-gb-pl-correspondence.witness.json)
   — per-stratum table `(E_0^p, J^p(A), J^p𝓢, Π^(p))` for `p ∈ {0,1,2,3}`
   with rank-chain assertion and PL-period finiteness.
 -/

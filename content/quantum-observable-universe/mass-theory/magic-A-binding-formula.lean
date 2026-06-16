@@ -37,8 +37,8 @@
        [manuscript] prop:gravity-spectral-prefactor
        [manuscript] rem:strutinsky-from-graded-trace
        [audit] docs/audits/2026-05-31-binding-magic-A-wireup.md
-       [compute] folio-assistant/computations/magic_A_formula.py
-       [compute] folio-assistant/computations/binding_alpha_shift_witness.py
+       [compute] computations/magic_A_formula.py
+       [compute] computations/binding_alpha_shift_witness.py
 -/
 
 import Mathlib.Data.Real.Basic

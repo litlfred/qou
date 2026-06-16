@@ -14,9 +14,9 @@ Tests:
   4. The brane-tower assembly contains no numerical root-find calls.
 
 Run with:
-    python -m pytest folio-assistant/computations/test_three_term_wedderburn.py -v
+    python -m pytest computations/test_three_term_wedderburn.py -v
 or:
-    python folio-assistant/computations/test_three_term_wedderburn.py
+    python computations/test_three_term_wedderburn.py
 """
 from __future__ import annotations
 import sys

@@ -55,7 +55,7 @@ No silent rewrite, no cherry-pick.
 
 4. **Pell-Lucas utility centralisation** (Gemini's follow-up): move
    `is_pell_lucas_clean` and related primitives into a shared module
-   (candidate: `folio-assistant/computations/silver_ratio_utils.py`).
+   (candidate: `computations/silver_ratio_utils.py`).
 
 ## §4 — Watch state
 

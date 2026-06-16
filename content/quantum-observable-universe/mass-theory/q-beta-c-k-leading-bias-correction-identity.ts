@@ -16,9 +16,9 @@ export default proposition({
   computation: {
     engine: "python+mpmath",
     script:
-      "folio-assistant/computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py",
+      "computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py",
     witness:
-      "folio-assistant/computations/qbeta/qbeta-ck-truncation-bias-correction-probe.witness.json",
+      "computations/qbeta/qbeta-ck-truncation-bias-correction-probe.witness.json",
     status: "verified",
   },
   tags: [

@@ -11,7 +11,7 @@ trace-weighted VSEPR value **with no fitting**, via:
 This doc records how that program maps onto existing framework infrastructure,
 the concrete quantities computed so far, an honest assessment, and the next
 step. Companion compute:
-[`h2o_angle_knot_correction.py`](../../folio-assistant/computations/h2o_angle_knot_correction.py)
+[`h2o_angle_knot_correction.py`](../../computations/h2o_angle_knot_correction.py)
 (witness `h2o-angle-knot-correction`).
 
 ## The mechanism, mapped to existing infra

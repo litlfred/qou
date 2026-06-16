@@ -5,7 +5,7 @@
 
 ## What was run
 
-`folio-assistant/computations/joint_tower_sdp_solver_v2.py` — Hoefsmit seminormal SDP feasibility check at H_6, H_9 with cvxpy 1.9.1. Single-block PSD-feasibility test for the standard `(2,1)` Wedderburn block at q_0 (the SDP gating constraint of `conj:canonical-knot-id-sdp`).
+`computations/joint_tower_sdp_solver_v2.py` — Hoefsmit seminormal SDP feasibility check at H_6, H_9 with cvxpy 1.9.1. Single-block PSD-feasibility test for the standard `(2,1)` Wedderburn block at q_0 (the SDP gating constraint of `conj:canonical-knot-id-sdp`).
 
 `pip install cvxpy` was required (1.9.1 + clarabel + scipy + osqp). Otherwise the solver bails out with "No module named 'cvxpy'" (this was the production state until this session).
 
@@ -67,7 +67,7 @@ The SDP infrastructure is operational (post-cvxpy install). For the production m
 
 - Conjecture: [`content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md`](../../content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md)
 - Lean class: [`content/quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.lean`](../../content/quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.lean)
-- Solver: [`folio-assistant/computations/joint_tower_sdp_solver_v2.py`](../../folio-assistant/computations/joint_tower_sdp_solver_v2.py)
-- Witness (regenerated this session): [`folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json`](../../folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json)
-- R5 full solver (prior): [`folio-assistant/computations/r5_full_canonical_knot_solver.py`](../../folio-assistant/computations/r5_full_canonical_knot_solver.py) — requires pyhecke_native (not installed in sandbox)
+- Solver: [`computations/joint_tower_sdp_solver_v2.py`](../../computations/joint_tower_sdp_solver_v2.py)
+- Witness (regenerated this session): [`computations/joint-tower-sdp-h6-h9.witness.json`](../../computations/joint-tower-sdp-h6-h9.witness.json)
+- R5 full solver (prior): [`computations/r5_full_canonical_knot_solver.py`](../../computations/r5_full_canonical_knot_solver.py) — requires pyhecke_native (not installed in sandbox)
 - Phase B verdict: [`docs/audits/2026-06-02-subgoal-1-final-verdict.md`](2026-06-02-subgoal-1-final-verdict.md)

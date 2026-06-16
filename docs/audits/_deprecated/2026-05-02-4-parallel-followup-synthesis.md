@@ -9,8 +9,8 @@ User picked option 6 (all four 1-4 in parallel). Results:
 
 ## Item 1 — GT-MATRIX PSLQ probe
 
-**Driver**: [`gt_matrix_pslq_probe.py`](../../folio-assistant/computations/probes/gt_matrix_pslq_probe.py)
-**Witness**: [`gt-matrix-pslq-probe.witness.json`](../../folio-assistant/computations/probes/gt-matrix-pslq-probe.witness.json)
+**Driver**: [`gt_matrix_pslq_probe.py`](../../computations/probes/gt_matrix_pslq_probe.py)
+**Witness**: [`gt-matrix-pslq-probe.witness.json`](../../computations/probes/gt-matrix-pslq-probe.witness.json)
 
 **Finding**: Leading order $g_A \approx [5]_q/[4]_q = 1.27027852$ vs PDG $1.27510(13)$ — residual $\delta_{\rm GT} = 0.003796$. Best small-rational ansatz for $\delta_{\rm GT}$:
 
@@ -27,8 +27,8 @@ User picked option 6 (all four 1-4 in parallel). Results:
 
 ## Item 2 — NV-1 PSLQ extended basis
 
-**Driver**: [`nv_pslq_extended_basis.py`](../../folio-assistant/computations/nv_pslq_extended_basis.py)
-**Witness**: [`nv-pslq-extended-basis.witness.json`](../../folio-assistant/computations/nv-pslq-extended-basis.witness.json)
+**Driver**: [`nv_pslq_extended_basis.py`](../../computations/nv_pslq_extended_basis.py)
+**Witness**: [`nv-pslq-extended-basis.witness.json`](../../computations/nv-pslq-extended-basis.witness.json)
 
 **Finding**: Re-ran PSLQ on extended basis $\{q^k, [k]_q, \hbar_q^k, [4]_q^2/[2]_q, [6]_q^2/[2]_q, [8]_q^2/[2]_q, [4]_q[6]_q[8]_q/[2]_q^3, \text{small primes}\}$ at four tolerances. Result:
 
@@ -41,8 +41,8 @@ User picked option 6 (all four 1-4 in parallel). Results:
 
 ## Item 3 — v4 mass pipeline integration
 
-**Driver**: [`v4_mass_pipeline.py`](../../folio-assistant/computations/v4_mass_pipeline.py)
-**Witness**: [`v4-mass-pipeline.witness.json`](../../folio-assistant/computations/v4-mass-pipeline.witness.json)
+**Driver**: [`v4_mass_pipeline.py`](../../computations/v4_mass_pipeline.py)
+**Witness**: [`v4-mass-pipeline.witness.json`](../../computations/v4-mass-pipeline.witness.json)
 
 **Test**: take `crt_markov_v4` depth-1 single-generator + depth-2 adjacent-pair tower terms, integrate via $\Delta M = \alpha_{\rm bind} \cdot (\text{markov}_{\rm total} - \text{markov}_{\rm desc})$ where $\alpha_{\rm bind} = 8 \cdot m_e \cdot G$ (Catalan binding scale).
 
@@ -63,8 +63,8 @@ User picked option 6 (all four 1-4 in parallel). Results:
 
 ## Item 4 — SHELL-7 BB-stratum test
 
-**Driver**: [`shell7_bb_stratum_test.py`](../../folio-assistant/computations/shell7_bb_stratum_test.py)
-**Witness**: [`shell7-bb-stratum.witness.json`](../../folio-assistant/computations/shell7-bb-stratum.witness.json)
+**Driver**: [`shell7_bb_stratum_test.py`](../../computations/shell7_bb_stratum_test.py)
+**Witness**: [`shell7-bb-stratum.witness.json`](../../computations/shell7-bb-stratum.witness.json)
 
 **Test**: $f_{\rm magic}(Z, N) \stackrel{?}{=} \sum_{\lambda \vdash 3A,\, \lambda = \lambda'} w_\lambda \cdot \chi_\lambda(\beta_{Z,N})$ at A ∈ {4, 6, 8, 12, 28}.
 

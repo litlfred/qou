@@ -222,27 +222,27 @@ Phase numbering matches `/root/.claude/plans/lots-of-new-math-parallel-lagoon.md
 ## 6 — Cross-Reference Index
 
 **Witnesses cited:**
-- `folio-assistant/computations/proton-mass-50dps.derivation.json`
-- `folio-assistant/computations/mass-table-best.witness.json`
-- `folio-assistant/computations/low-isotope-mass-table-precision-audit.witness.json`
-- `folio-assistant/computations/mass-formula-6term-mpfr-50dps.witness.json`
+- `computations/proton-mass-50dps.derivation.json`
+- `computations/mass-table-best.witness.json`
+- `computations/low-isotope-mass-table-precision-audit.witness.json`
+- `computations/mass-formula-6term-mpfr-50dps.witness.json`
 
 **Scripts cited:**
-- `folio-assistant/computations/mass_endomorphism.py`
-- `folio-assistant/computations/_phi_q_util.py`
-- `folio-assistant/computations/d_phi_q_series.py`
-- `folio-assistant/computations/per_block_phi_q.py`
-- `folio-assistant/computations/proton_mass_tower_derivation.py`
-- `folio-assistant/computations/cross_check_trM_1ppb.py`
-- `folio-assistant/computations/substrate/q_parameter.py`
-- `folio-assistant/computations/lp_dual_solver.py`
-- `folio-assistant/computations/atomic_braid_mass_table.py`
-- `folio-assistant/computations/habiro/habiro_witness_validator.py`
-- `folio-assistant/computations/build_atom_tr_M_chains.py`
-- `folio-assistant/computations/build_markov_trace_assembly_chain.py`
-- `folio-assistant/computations/n_sym_w2_retraction.py`
-- `folio-assistant/computations/jsj_atom_volume.py`
-- `folio-assistant/computations/ocneanu_cancellation_derivation.py`
+- `computations/mass_endomorphism.py`
+- `computations/_phi_q_util.py`
+- `computations/d_phi_q_series.py`
+- `computations/per_block_phi_q.py`
+- `computations/proton_mass_tower_derivation.py`
+- `computations/cross_check_trM_1ppb.py`
+- `computations/substrate/q_parameter.py`
+- `computations/lp_dual_solver.py`
+- `computations/atomic_braid_mass_table.py`
+- `computations/habiro/habiro_witness_validator.py`
+- `computations/build_atom_tr_M_chains.py`
+- `computations/build_markov_trace_assembly_chain.py`
+- `computations/n_sym_w2_retraction.py`
+- `computations/jsj_atom_volume.py`
+- `computations/ocneanu_cancellation_derivation.py`
 
 **Lean files cited:**
 - `content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.lean`

@@ -7,9 +7,9 @@ export default conjecture({
   lean: { ref: "qou:QOU.BraidKnot.BringFigureEightDepth2Witness", validation: "stub" },
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/gb_depth_period_bring_fig8.py",
+    script: "computations/gb_depth_period_bring_fig8.py",
     witness:
-      "folio-assistant/computations/gb-depth-period-bring-fig8.witness.json",
+      "computations/gb-depth-period-bring-fig8.witness.json",
     status: "verified",
   },
   uses: [

@@ -3,7 +3,7 @@
 $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_K) = 18Z + 21N + 1$ for $A \geq 2$.
 
 The existing `Path A` verifier
-[`per_irrep_pole_atom.py`](../../../folio-assistant/computations/per_irrep_pole_atom.py)
+[`per_irrep_pole_atom.py`](../../../computations/per_irrep_pole_atom.py)
 computes per-irrep $\chi^\lambda(\mathcal{B}_K)(q)$ symbolically via
 Hoefsmit seminormal matrices, then extracts the $u$-pole order
 after substituting $q = u^2$.  At $H_n$ for $n \geq 9$ this
@@ -21,7 +21,7 @@ Young tableaux SYT($\lambda$).  The per-letter
 $u$-power contribution on a fixed eigenline is then a constant
 integer (per [crystal isospin degeneracy](#prop:crystal-isospin-degeneracy)
 and per the column-rich SYT analysis of
-[`crystal_pole_order.py`](../../../folio-assistant/computations/crystal_pole_order.py)),
+[`crystal_pole_order.py`](../../../computations/crystal_pole_order.py)),
 yielding the lookup table:
 
 See [Table 1](#tbl:crystal-bases-path-a-table1-data).
@@ -43,7 +43,7 @@ with the full pole order $= -\min$ when negative.
 
 ## Implementation
 
-[`per_irrep_pole_atom_crystal.py`](../../../folio-assistant/computations/per_irrep_pole_atom_crystal.py)
+[`per_irrep_pole_atom_crystal.py`](../../../computations/per_irrep_pole_atom_crystal.py)
 implements the crystal-bases path with two layered caches:
 
 - **C1**: `lru_cache` on `standard_young_tableaux` — atoms of the
@@ -54,8 +54,8 @@ implements the crystal-bases path with two layered caches:
   10 array-index ops to a single integer lookup.
 
 The $\mathrm{ord}_{u=0}(y_\lambda)$ values are precomputed once via
-[`y_lambda_pole_order_cache.py`](../../../folio-assistant/computations/y_lambda_pole_order_cache.py)
-into [`y-lambda-pole-order-cache.json`](../../../folio-assistant/computations/y-lambda-pole-order-cache.json),
+[`y_lambda_pole_order_cache.py`](../../../computations/y_lambda_pole_order_cache.py)
+into [`y-lambda-pole-order-cache.json`](../../../computations/y-lambda-pole-order-cache.json),
 keyed by $(n, \lambda)$.  The cache is the only sympy-heavy piece;
 once built, the per-atom verification is pure integer arithmetic
 on the SYT basis.
@@ -65,7 +65,7 @@ on the SYT basis.
 See [Table 2](#tbl:crystal-bases-path-a-table2-data).
 
 Witness:
-[`per-irrep-pole-atom-crystal.witness.json`](../../../folio-assistant/computations/per-irrep-pole-atom-crystal.witness.json).
+[`per-irrep-pole-atom-crystal.witness.json`](../../../computations/per-irrep-pole-atom-crystal.witness.json).
 The top-level `asserted_atoms_match_closed_form_shift` assertion
 gates only on **asserted atoms** — the verified $A \geq 2$ scope
 of the closed form plus the proton (which agrees with the closed
@@ -111,7 +111,7 @@ structure).  Either:
 1. **Closed-form extrapolation fails at $A = 1$** for the neutron
    — the formula $\mathrm{shift}(Z, N) = 18Z + 21N + 1$ is
    verified only on the $A \in \{2, 3, 4, 5, 6\}$ atoms in
-   [`per-nucleon-shift-derivation.witness.json`](../../../folio-assistant/computations/per-nucleon-shift-derivation.witness.json),
+   [`per-nucleon-shift-derivation.witness.json`](../../../computations/per-nucleon-shift-derivation.witness.json),
    and its $A = 1$ extrapolation gives 22 for the neutron without
    independent verification.  The proton case happens to give
    $19$ either way (closed-form $18 \cdot 1 + 0 + 1 = 19$ matches

@@ -31,8 +31,8 @@ CI gate: invoke with `--strict` to exit non-zero on any
 divergence > 1e-9.
 
 Usage:
-    python3 folio-assistant/computations/cross_check_trM_wenzl_lr_1ppb.py
-    python3 folio-assistant/computations/cross_check_trM_wenzl_lr_1ppb.py --strict
+    python3 computations/cross_check_trM_wenzl_lr_1ppb.py
+    python3 computations/cross_check_trM_wenzl_lr_1ppb.py --strict
 
 Per workplan v4 (docs/audits/2026-05-17-1ppb-workplan-v4.md):
 this script lives in the "compute-precision" layer; the

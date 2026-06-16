@@ -173,11 +173,11 @@ different weights ($w_\lambda$ Plancherel vs $y_\lambda$ Jones-Markov,
 
 ## Witness scripts
 
-- `folio-assistant/computations/markov/markov_trace_atomic_proton_full.py` — full
+- `computations/markov/markov_trace_atomic_proton_full.py` — full
   proton word $\sigma_1^7\sigma_2^4$ with `sp.cancel` rationalisation.
-- `folio-assistant/computations/markov/markov_trace_axiomatic_proton.py` — pedagogical
+- `computations/markov/markov_trace_axiomatic_proton.py` — pedagogical
   $\sigma_1\sigma_2\sigma_1$ demonstration of the methodology.
-- `folio-assistant/computations/markov/markov_trace_recursive.py` — partial recursive
+- `computations/markov/markov_trace_recursive.py` — partial recursive
   reducer (see *Methodology generalisation* above).
 
 ## References

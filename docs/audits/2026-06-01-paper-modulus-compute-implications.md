@@ -126,7 +126,7 @@ production-impact").
 
 - This audit doc: `docs/audits/2026-06-01-paper-modulus-compute-implications.md`
 - Sister audit (paper sites): `docs/audits/2026-06-01-paper-modulus-nonarchimedean-audit.md`
-- Sister diagnostic (Φ_q sensitivity): `folio-assistant/computations/qbeta/qbeta_signed_vs_abs_tower_diagnostic.py` + witness
+- Sister diagnostic (Φ_q sensitivity): `computations/qbeta/qbeta_signed_vs_abs_tower_diagnostic.py` + witness
 - One representative refactor: `content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.md` (lines 66, 76 — `|tr_M|` → `tr_M`, `|V̂_i|` → `V̂_i` in categorical formula)
 
 ## Cross-refs

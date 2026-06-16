@@ -196,7 +196,7 @@ theorem s5_so3_fiber_action_scaffold [BringFiberAction] :
 /-! ## Derived facts (sorry-free) from the icosahedral character analysis
 
     These encode the RAW results of
-    `folio-assistant/computations/s5_so3_su2_u1_fiber_action.py`
+    `computations/s5_so3_su2_u1_fiber_action.py`
     (audit `docs/audits/2026-06-01-s5-so3-su2-u1-fiber-action.md`).
     They are unconditional Lean facts — they do NOT depend on
     `BringFiberAction` — and capture exactly what the icosahedral

@@ -80,7 +80,7 @@ same witness they did last time.
 - Scripts that want the optimization wrap their main with
   `if not w.skip_if_fresh(): compute()`.
 
-**Files:** `folio-assistant/computations/substrate/witness_base.py`
+**Files:** `computations/substrate/witness_base.py`
 
 **Verification:** rerun any migrated script twice; second run should
 log "fresh; skipping" and take < 100 ms.
@@ -114,7 +114,7 @@ computations/` pays this tax on the first Python invocation.
 - `atom_per_generator_volumes` cache initialization
 - Any `scipy.sparse` re-import overhead
 
-**Files:** `folio-assistant/computations/substrate/hecke_core.py`
+**Files:** `computations/substrate/hecke_core.py`
 
 **Verification:**
 ```bash
@@ -203,7 +203,7 @@ wrap each in `__main__` for consistency with `mass_endomorphism.py`
 
 ### B3-historical. Previously audited
 
-**Goal:** Grep every `folio-assistant/computations/*.py` for
+**Goal:** Grep every `computations/*.py` for
 top-level `WitnessBuilder`, `print`, heavy function calls; guard each
 under `if __name__ == "__main__":`.
 
@@ -212,7 +212,7 @@ similar hidden costs.
 
 **Implementation:**
 ```bash
-cd folio-assistant/computations
+cd computations
 for f in *.py; do
   # Find top-level WitnessBuilder / heavy compute after the last
   # def/class
@@ -261,7 +261,7 @@ On a 4-core runner, a trivial `multiprocessing.Pool(4)` gives ~3×.
 - Replace loop with `Pool.imap_unordered`.
 - Cap concurrency to `min(4, cpu_count())` to avoid CI OOM.
 
-**Files:** `folio-assistant/computations/run_pipeline.py`
+**Files:** `computations/run_pipeline.py`
 
 **Verification:** wall time on full pipeline drops from minutes to
 ~⅓; all witnesses still produced.
@@ -285,7 +285,7 @@ eliminates the hecke_core cold-path entirely for common constants.
 - Alternatively: add a pyhecke-level `load_constants()` helper that
   prefers the cache, falls back to hecke_core.
 
-**Files:** ~30 scripts under `folio-assistant/computations/`.
+**Files:** ~30 scripts under `computations/`.
 
 **Verification:** each migrated script imports in < 50 ms.
 

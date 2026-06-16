@@ -23,7 +23,7 @@ namespace QOU.QGeometricLanglands
 
     Conjectural class — see [`conj:q-gl-classical-limit`](../../../quantum-observable-universe/q-geometric-langlands/q-gl-classical-limit.md). -/
 class q_gl_classical_limit where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- Scalar residual encoding the conjecture's content (placeholder
       shape: refine to match the actual claim). -/
   residual : ℝ

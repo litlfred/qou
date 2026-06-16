@@ -253,10 +253,10 @@ improvement, and Path A/empirical geometric-mean cross-check.
 
 This audit added:
 
-- `folio-assistant/computations/close_321_weinberg_gap.py` — single
+- `computations/close_321_weinberg_gap.py` — single
   probe combining all three paths, ~750 lines, sympy + numpy +
   `WitnessBuilder`.
-- `folio-assistant/computations/close-321-weinberg-gap.witness.json`
+- `computations/close-321-weinberg-gap.witness.json`
   — 10 assertions, all passed; full per-group/per-candidate data
   preserved for downstream analyses.
 

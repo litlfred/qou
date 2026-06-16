@@ -5,7 +5,7 @@ Date: 2026-05-07
 Ran:
 
 ```bash
-cd /home/runner/work/qou/qou/folio-assistant/computations
+cd /home/runner/work/qou/qou/computations
 python3 lp_dual_witness_validator.py
 ```
 

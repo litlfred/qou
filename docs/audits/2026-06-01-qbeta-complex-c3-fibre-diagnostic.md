@@ -141,8 +141,8 @@ Per CLAUDE.md no-7th-ansatz discipline:
 
 ## Witness + cross-refs
 
-- `folio-assistant/computations/probes/qbeta-complex-c3-fibre-probe.witness.json`
-- `folio-assistant/computations/probes/qbeta_complex_c3_fibre_probe.py`
+- `computations/probes/qbeta-complex-c3-fibre-probe.witness.json`
+- `computations/probes/qbeta_complex_c3_fibre_probe.py`
 - PR #1616 — Im(q) fibre/observable framing in CLAUDE.md
 - PR #1620 — bar-decomposition Hecke-natural form (the REAL bar-involution
   eigenspaces, not complex Re/Im)

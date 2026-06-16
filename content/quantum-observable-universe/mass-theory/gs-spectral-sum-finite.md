@@ -61,7 +61,7 @@ support of the residue function requires:*
 *Witness scripts truncate the sum at $\ell = 6$ and observe vanishing
 contributions beyond, consistent with the proton/neutron/deuteron
 confinement levels.  See
-`folio-assistant/computations/term6-full-pole-sum.witness.json`.*
+`computations/term6-full-pole-sum.witness.json`.*
 
 **Structural shortcut.**
 *The vanishing of the residue strata above $\ell(K, q_0)$ is

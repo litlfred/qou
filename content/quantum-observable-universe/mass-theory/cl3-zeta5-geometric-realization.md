@@ -114,7 +114,7 @@ Identifying *any one* of the three candidates explicitly would:
    [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action).
 3. **Provide the Bring-natural depth-3 witness target.** The witness
    script
-   ([`bring_trilog_zeta5_depth_3.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring_trilog_zeta5_depth_3.py))
+   ([`bring_trilog_zeta5_depth_3.py`](https://github.com/litlfred/qou/blob/main/computations/bring_trilog_zeta5_depth_3.py))
    currently records the algebraic value; geometric identification
    would let it record a *measurement target* (e.g. SnapPy CS
    computation on a specific knot) and verify equality at 50 dps.

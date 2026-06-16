@@ -11,7 +11,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
-# DEPRECATION-CANDIDATE: witness was moved to folio-assistant/computations/_deprecated/ in PR #554 (dead-exploratory).
+# DEPRECATION-CANDIDATE: witness was moved to computations/_deprecated/ in PR #554 (dead-exploratory).
 # This .py script is kept in place because it is still imported by live code; revisit when the live importer is itself retired or rewired.
 """
 Light-isotope sweep: Schur-Weyl + Frobenius pipeline for A = 2..4.

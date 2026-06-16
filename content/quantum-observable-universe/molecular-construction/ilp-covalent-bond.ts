@@ -20,9 +20,9 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/molecular_experimental_refs.py",
+    script: "computations/molecular_experimental_refs.py",
     witness: [
-      "folio-assistant/computations/molecular-experimental-refs.witness.json"
+      "computations/molecular-experimental-refs.witness.json"
     ],
     status: "experimental",
   },

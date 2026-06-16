@@ -18,7 +18,7 @@ Architecture:
   4. Shadow prices from the LP dual cone structure
 
 Usage:
-    cd folio-assistant/computations && python3 symbolic_k6_shadow.py
+    cd computations && python3 symbolic_k6_shadow.py
 """
 
 import sympy as sp

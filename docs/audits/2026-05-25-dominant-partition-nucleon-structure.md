@@ -6,7 +6,7 @@
 
 ## Empirical observation
 
-Per [`alpha_star_dominant_partitions.py`](../../folio-assistant/computations/alpha/alpha_star_dominant_partitions.py) (PR #1284), the Wedderburn partition forcing the smallest α* in each canonical atom-braid's PSD bisection has a structural correspondence with the atom's nucleon decomposition.
+Per [`alpha_star_dominant_partitions.py`](../../computations/alpha/alpha_star_dominant_partitions.py) (PR #1284), the Wedderburn partition forcing the smallest α* in each canonical atom-braid's PSD bisection has a structural correspondence with the atom's nucleon decomposition.
 
 | Atom | A | dominant λ* | transpose λ*^T | rows(λ*^T) | cols(λ*^T) | Pattern |
 |---|---:|---|---|---:|---:|---|
@@ -52,7 +52,7 @@ Testing requires extending the Rust solver to higher-A atoms via the `atom_braid
 
 ## Gap-narrowing probe (3) — α* vs binding-energy gap correlation
 
-Per [`alpha_star_vs_binding_gap.py`](../../folio-assistant/computations/alpha/alpha_star_vs_binding_gap.py), tested whether the PSD obstruction depth `(1 − α*)` per atom tracks the absolute fractional binding-energy gap `|B_pred − B_AME| / B_AME`:
+Per [`alpha_star_vs_binding_gap.py`](../../computations/alpha/alpha_star_vs_binding_gap.py), tested whether the PSD obstruction depth `(1 − α*)` per atom tracks the absolute fractional binding-energy gap `|B_pred − B_AME| / B_AME`:
 
 | sym | α* | 1−α* | B_AME | B_pred | \|err\|/B | err_MeV |
 |---|---:|---:|---:|---:|---:|---:|
@@ -72,7 +72,7 @@ Per [`alpha_star_vs_binding_gap.py`](../../folio-assistant/computations/alpha/al
 
 ## Gap-narrowing probe (1) — project ⁴He mass on PSD-dominant pair
 
-Per [`probe_1_project_4he_on_dominant.py`](../../folio-assistant/computations/probe_1_project_4he_on_dominant.py), computed `y_λ · χ^λ(T_w_⁴He)` for the PSD-dominant pair vs the trace-dominant blocks. **PSD-dominance ≠ trace-dominance** — they are orthogonal structural axes.
+Per [`probe_1_project_4he_on_dominant.py`](../../computations/probe_1_project_4he_on_dominant.py), computed `y_λ · χ^λ(T_w_⁴He)` for the PSD-dominant pair vs the trace-dominant blocks. **PSD-dominance ≠ trace-dominance** — they are orthogonal structural axes.
 
 **Top-10 trace contributors (by |y_λ · χ^λ|) — all low-row "long-string" partitions:**
 
@@ -102,7 +102,7 @@ Per [`probe_1_project_4he_on_dominant.py`](../../folio-assistant/computations/pr
 
 ## Gap-narrowing probe (4) — ⁶Li rectangular pair via Python Lanczos
 
-Per [`probe_4_li6_rectangular_python.py`](../../folio-assistant/computations/probe_4_li6_rectangular_python.py), computed `min_eig` and `max_eig` of `(ρ + ρ^T)/2` for the conjectured rectangular pair at A=6, bypassing the full Rust solver (infeasible at `d_λ = 87,516` → 61 GB dense matrix). Uses scipy `LinearOperator` + Lanczos with on-the-fly sparse matvec.
+Per [`probe_4_li6_rectangular_python.py`](../../computations/probe_4_li6_rectangular_python.py), computed `min_eig` and `max_eig` of `(ρ + ρ^T)/2` for the conjectured rectangular pair at A=6, bypassing the full Rust solver (infeasible at `d_λ = 87,516` → 61 GB dense matrix). Uses scipy `LinearOperator` + Lanczos with on-the-fly sparse matvec.
 
 **Method validated at A=4:** Python Lanczos on (4,4,4) gives min=−20.017, max=+20.904 — matches Rust dense-LAPACK exactly (6+ digits) at d_λ=462.
 
@@ -126,7 +126,7 @@ Per [`probe_4_li6_rectangular_python.py`](../../folio-assistant/computations/pro
 
 ## Gap-narrowing probe (4b) — ⁶Li non-rectangular falsification scan
 
-Per [`probe_4b_li6_non_rectangular_scan.py`](../../folio-assistant/computations/probe_4b_li6_non_rectangular_scan.py), scanned 16 non-rectangular ⁶Li partitions via the same Lanczos LinearOperator approach. **NONE beats the rectangular pair's −96.52.**
+Per [`probe_4b_li6_non_rectangular_scan.py`](../../computations/probe_4b_li6_non_rectangular_scan.py), scanned 16 non-rectangular ⁶Li partitions via the same Lanczos LinearOperator approach. **NONE beats the rectangular pair's −96.52.**
 
 **Top 5 most-negative (sorted):**
 
@@ -150,7 +150,7 @@ Per [`probe_4b_li6_non_rectangular_scan.py`](../../folio-assistant/computations/
 
 ## Gap-narrowing probe (4c) — large-d_λ tail FALSIFIES the rectangular conjecture
 
-Per [`probe_4c_li6_large_d_scan.py`](../../folio-assistant/computations/probe_4c_li6_large_d_scan.py), four "almost-rectangular" non-rectangular shapes:
+Per [`probe_4c_li6_large_d_scan.py`](../../computations/probe_4c_li6_large_d_scan.py), four "almost-rectangular" non-rectangular shapes:
 
 | Shape | d_λ | min_eig | beats −96.52? |
 |---|---:|---:|---:|
@@ -175,7 +175,7 @@ The conjecture as stated is FALSIFIED at A=6. The pattern (a) clause needs revis
 
 ## Gap-narrowing probe (1b) — orthogonality holds STRONGER at A=6
 
-Per [`probe_1b_li6_orthogonality.py`](../../folio-assistant/computations/probe_1b_li6_orthogonality.py), the PSD-vs-trace orthogonality is **even stronger** at A=6 than at A=4.
+Per [`probe_1b_li6_orthogonality.py`](../../computations/probe_1b_li6_orthogonality.py), the PSD-vs-trace orthogonality is **even stronger** at A=6 than at A=4.
 
 **Trace-dominant family at n=18 (top |y_λ|)** — all 1- or 2-row "long-string" partitions:
 
@@ -223,24 +223,24 @@ This sign flip is structurally significant — it means these blocks would *subt
 
 ## Cross-references
 
-- [`alpha_star_dominant_partitions.py`](../../folio-assistant/computations/alpha/alpha_star_dominant_partitions.py) — empirical witness (PR #1284)
+- [`alpha_star_dominant_partitions.py`](../../computations/alpha/alpha_star_dominant_partitions.py) — empirical witness (PR #1284)
 - [`conj-atom-braid-exterior-algebra.lean`](../../content/quantum-observable-universe/braids-and-knots/conj-atom-braid-exterior-algebra.lean) — Lean transpose-pair theorems (PR #1286)
-- [`joint-tower-sdp-rust.witness.json`](../../folio-assistant/computations/joint-tower-sdp-rust.witness.json) — per-partition eigenvalue data (PR #1283)
-- [`mass_at_3A_proper.py`](../../folio-assistant/computations/mass_at_3A_proper.py) — canonical atom-braid recipe
-- [`alpha_star_vs_binding_gap.py`](../../folio-assistant/computations/alpha/alpha_star_vs_binding_gap.py) — Probe (3): obstruction-vs-gap correlation (ρ=+0.80)
-- [`alpha-star-vs-binding-gap.witness.json`](../../folio-assistant/computations/alpha/alpha-star-vs-binding-gap.witness.json) — per-atom data + Spearman
-- [`probe_1_project_4he_on_dominant.py`](../../folio-assistant/computations/probe_1_project_4he_on_dominant.py) — Probe (1): y·χ projection on (4,4,4)/(3,3,3,3)
-- [`probe-1-project-4he-on-dominant.witness.json`](../../folio-assistant/computations/probe-1-project-4he-on-dominant.witness.json) — per-block contributions to tr_M_⁴He
-- [`probe_4_li6_rectangular_python.py`](../../folio-assistant/computations/probe_4_li6_rectangular_python.py) — Probe (4): ⁶Li (6,6,6) / (3,3,3,3,3,3) via Lanczos LinearOperator
-- [`probe-4-li6-rectangular-python-targeted.witness.json`](../../folio-assistant/computations/probe-4-li6-rectangular-python-targeted.witness.json) — ⁶Li rectangular-pair min/max eigvals
-- [`probe_4_validate_lanczos_on_he4.py`](../../folio-assistant/computations/probe_4_validate_lanczos_on_he4.py) — validation: Python Lanczos vs Rust dense at (4,4,4)
-- [`probe_4b_li6_non_rectangular_scan.py`](../../folio-assistant/computations/probe_4b_li6_non_rectangular_scan.py) — Probe (4b): 16-shape falsification scan; rectangle holds
-- [`probe-4b-li6-non-rectangular-scan.witness.json`](../../folio-assistant/computations/probe-4b-li6-non-rectangular-scan.witness.json) — per-shape min/max eigvals
-- [`probe_4c_li6_large_d_scan.py`](../../folio-assistant/computations/probe_4c_li6_large_d_scan.py) — Probe (4c): large-d_λ tail; **falsifies** rectangular conjecture
-- [`probe-4c-li6-large-d-scan.witness.json`](../../folio-assistant/computations/probe-4c-li6-large-d-scan.witness.json) — 4 large-d shapes, 3 falsify
+- [`joint-tower-sdp-rust.witness.json`](../../computations/joint-tower-sdp-rust.witness.json) — per-partition eigenvalue data (PR #1283)
+- [`mass_at_3A_proper.py`](../../computations/mass_at_3A_proper.py) — canonical atom-braid recipe
+- [`alpha_star_vs_binding_gap.py`](../../computations/alpha/alpha_star_vs_binding_gap.py) — Probe (3): obstruction-vs-gap correlation (ρ=+0.80)
+- [`alpha-star-vs-binding-gap.witness.json`](../../computations/alpha/alpha-star-vs-binding-gap.witness.json) — per-atom data + Spearman
+- [`probe_1_project_4he_on_dominant.py`](../../computations/probe_1_project_4he_on_dominant.py) — Probe (1): y·χ projection on (4,4,4)/(3,3,3,3)
+- [`probe-1-project-4he-on-dominant.witness.json`](../../computations/probe-1-project-4he-on-dominant.witness.json) — per-block contributions to tr_M_⁴He
+- [`probe_4_li6_rectangular_python.py`](../../computations/probe_4_li6_rectangular_python.py) — Probe (4): ⁶Li (6,6,6) / (3,3,3,3,3,3) via Lanczos LinearOperator
+- [`probe-4-li6-rectangular-python-targeted.witness.json`](../../computations/probe-4-li6-rectangular-python-targeted.witness.json) — ⁶Li rectangular-pair min/max eigvals
+- [`probe_4_validate_lanczos_on_he4.py`](../../computations/probe_4_validate_lanczos_on_he4.py) — validation: Python Lanczos vs Rust dense at (4,4,4)
+- [`probe_4b_li6_non_rectangular_scan.py`](../../computations/probe_4b_li6_non_rectangular_scan.py) — Probe (4b): 16-shape falsification scan; rectangle holds
+- [`probe-4b-li6-non-rectangular-scan.witness.json`](../../computations/probe-4b-li6-non-rectangular-scan.witness.json) — per-shape min/max eigvals
+- [`probe_4c_li6_large_d_scan.py`](../../computations/probe_4c_li6_large_d_scan.py) — Probe (4c): large-d_λ tail; **falsifies** rectangular conjecture
+- [`probe-4c-li6-large-d-scan.witness.json`](../../computations/probe-4c-li6-large-d-scan.witness.json) — 4 large-d shapes, 3 falsify
 - [`2026-05-25-categorical-derivation-rectangular-conjecture.md`](2026-05-25-categorical-derivation-rectangular-conjecture.md) — categorical-derivation framing (predates falsification; needs revision)
-- [`probe_1b_li6_orthogonality.py`](../../folio-assistant/computations/probe_1b_li6_orthogonality.py) — Probe (1b): A=6 orthogonality with 10⁹ y_λ separation
-- [`probe-1b-li6-orthogonality.witness.json`](../../folio-assistant/computations/probe-1b-li6-orthogonality.witness.json) — trace vs PSD family y_λ comparison
+- [`probe_1b_li6_orthogonality.py`](../../computations/probe_1b_li6_orthogonality.py) — Probe (1b): A=6 orthogonality with 10⁹ y_λ separation
+- [`probe-1b-li6-orthogonality.witness.json`](../../computations/probe-1b-li6-orthogonality.witness.json) — trace vs PSD family y_λ comparison
 
 ## What this audit does NOT do
 

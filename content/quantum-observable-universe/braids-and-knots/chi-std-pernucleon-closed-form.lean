@@ -167,7 +167,7 @@ def neutronBraid (H_A : ℝ) : NucBraidWord :=
 
     The polynomial identity (step 4) is established by direct sympy
     computation and recorded in
-    `folio-assistant/computations/chi-std-pernucleon.witness.json`.
+    `computations/chi-std-pernucleon.witness.json`.
 
     In Lean, the full matrix expansion produces expressions of degree
     up to 22 in q that ring-normalise to the claimed Laurent form.
@@ -205,7 +205,7 @@ def neutronBraid (H_A : ℝ) : NucBraidWord :=
     sorry with this citation.
 
     Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof,
-         folio-assistant/computations/chi-std-pernucleon.witness.json.
+         computations/chi-std-pernucleon.witness.json.
 -/
 /-- **External axiom (manuscript chi-std-pernucleon-theorem §Proof):
     closed-form χ_std for proton braid.**  Verified externally via

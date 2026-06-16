@@ -7,15 +7,15 @@ Branch `claude/epic-shannon-eo7vh0`, PR #2314.
 
 The atom-binding Markov trace `tr_M(β_atom) = Σ_{λ⊢3A} y_λ χ^λ(β_atom)`
 is now computed by the **fine-Bratteli transfer matrix**
-([`chi_monotone_transfer.chi_all_lambda`](../../folio-assistant/computations/chi_monotone_transfer.py)
+([`chi_monotone_transfer.chi_all_lambda`](../../computations/chi_monotone_transfer.py)
 via
-[`tr_m_atom_via_transfer.tr_m_atom_zn`](../../folio-assistant/computations/tr_m_atom_via_transfer.py))
+[`tr_m_atom_via_transfer.tr_m_atom_zn`](../../computations/tr_m_atom_via_transfer.py))
 in the two production binding consumers:
 
 | consumer | before | after |
 |----------|--------|-------|
-| [`binding_canonical`](../../folio-assistant/computations/binding_canonical.py) | symbolic `tr_M_element` (d_λ wall at A≥3) | transfer (default `use_transfer=True`) |
-| [`canonical_tr_m_via_branching`](../../folio-assistant/computations/canonical_tr_m_via_branching.py) A≥3 | `pyhecke_native.chi_lambda_all_partitions_mpfr` (Rust wheel) | transfer (pure-Python mpmath) |
+| [`binding_canonical`](../../computations/binding_canonical.py) | symbolic `tr_M_element` (d_λ wall at A≥3) | transfer (default `use_transfer=True`) |
+| [`canonical_tr_m_via_branching`](../../computations/canonical_tr_m_via_branching.py) A≥3 | `pyhecke_native.chi_lambda_all_partitions_mpfr` (Rust wheel) | transfer (pure-Python mpmath) |
 
 `atom_level_wedderburn_tower.py` (brute-force, materialises the full
 `d_λ × d_λ` Hoefsmit rep per partition) is marked **superseded** and

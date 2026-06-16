@@ -207,7 +207,7 @@ These improvements help all classes:
   derived consequence of the cone's "root" classes.
 
 - **Class instances from existing witnesses**: many conjectures have
-  numerical witnesses under `folio-assistant/computations/`.  An
+  numerical witnesses under `computations/`.  An
   instance constructor `instance fromWitness : C` would let any
   `.witness.json` ground a concrete class instance — turning
   computational evidence into a Lean-side anchor.

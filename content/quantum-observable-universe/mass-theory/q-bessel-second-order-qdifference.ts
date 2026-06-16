@@ -9,8 +9,8 @@ export default proof({
   },
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/qbeta/qbessel_second_order_qdifference_equation.py",
-    witness: "folio-assistant/computations/qbeta/qbessel-second-order-qdifference-equation.witness.json",
+    script: "computations/qbeta/qbessel_second_order_qdifference_equation.py",
+    witness: "computations/qbeta/qbessel-second-order-qdifference-equation.witness.json",
     status: "verified",
   },
   authorNotes: [

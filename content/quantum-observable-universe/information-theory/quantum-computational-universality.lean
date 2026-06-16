@@ -93,7 +93,7 @@ class QuantumComputationalUniversality : Prop where
 -- Ref: [manuscript] conj:quantum-computational-universality
 instance quantum_computational_universality_conjecture :
     QuantumComputationalUniversality where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   -- Ref: [freedman2003]
   quadratic_level := fun _ => sorry
   -- Ref: [freedman2003]

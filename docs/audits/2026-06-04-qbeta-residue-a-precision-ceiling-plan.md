@@ -16,7 +16,7 @@ structural search.
 ## What A actually is (feasibility-critical)
 
 Define the tail terms `x_k := c_k · u_subst^k`. Step 1 of PR #1727
-([`qbeta_singularity_type_probe.py`](../../folio-assistant/computations/qbeta/qbeta_singularity_type_probe.py))
+([`qbeta_singularity_type_probe.py`](../../computations/qbeta/qbeta_singularity_type_probe.py))
 extracts the **asymptotic limit** of the simple-pole signature
 
 ```
@@ -87,7 +87,7 @@ An honest **precision-ceiling analysis**, not a fabricated 30-digit A:
 docs/audits/
   2026-06-04-qbeta-residue-a-precision-ceiling-plan.md     # this file
   2026-06-04-qbeta-residue-a-precision-ceiling-verdict.md  # verdict
-folio-assistant/computations/qbeta/
+computations/qbeta/
   qbeta_residue_a_precision_ceiling.py
   qbeta-residue-a-precision-ceiling.witness.json           # auto-emitted
 ```

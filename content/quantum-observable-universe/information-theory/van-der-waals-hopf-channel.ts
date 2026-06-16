@@ -10,8 +10,8 @@ export default definition({
   computation: {
     engine: "python",
     status: "verified",
-    script: "folio-assistant/computations/hbond_vdw_sdp.py",
-    witness: ["folio-assistant/computations/hbond-vdw-sdp.witness.json"],
+    script: "computations/hbond_vdw_sdp.py",
+    witness: ["computations/hbond-vdw-sdp.witness.json"],
   },
   uses: [
     "def:hopf-diquark",

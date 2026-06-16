@@ -27,7 +27,7 @@ the operator-valued interface coefficient. For the deuteron
 $(\beta_1 = \beta_p \in H_3, I = I_{pn} = \sigma_2 - h/2, \beta_2 = \beta_n \in H_3)$
 this is **verified at machine ε** (max residual $6.87 \times 10^{-15}$
 across all 11 $\lambda \vdash 6$) in
-[`sublemma-2-1-A-operator-extract.witness.json`](../../folio-assistant/computations/sublemma-2-1-A-operator-extract.witness.json).
+[`sublemma-2-1-A-operator-extract.witness.json`](../../computations/sublemma-2-1-A-operator-extract.witness.json).
 
 The single-interface formula closes the canonical Δ_λ derivation at
 the deuteron. The pending extension is to atoms with $\geq 2$
@@ -113,7 +113,7 @@ The single-interface $A$ values that exist:
 
 - $A^\lambda_{\mu \nu}(I_{pn})$ at $H_6$ for the deuteron interface
   $I_{pn} = \sigma_2 - h/2$: **verified at machine ε** in
-  [`sublemma-2-1-A-operator-extract.witness.json`](../../folio-assistant/computations/sublemma-2-1-A-operator-extract.witness.json).
+  [`sublemma-2-1-A-operator-extract.witness.json`](../../computations/sublemma-2-1-A-operator-extract.witness.json).
 
 The single-interface $A$ values needed for tritium / ³He:
 
@@ -206,9 +206,9 @@ data enters.
   — single-interface operator-valued formula (parent)
 - [`docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md`](2026-05-08-crystal-r-matrix-sublemma-2-1.md)
   — q→0 crystal-bases proof (alternative route at $q = 0$)
-- [`folio-assistant/computations/sublemma_2_1_A_operator_extract.py`](../../folio-assistant/computations/sublemma_2_1_A_operator_extract.py)
+- [`computations/sublemma_2_1_A_operator_extract.py`](../../computations/sublemma_2_1_A_operator_extract.py)
   — existing $H_6$ extraction infra
-- [`folio-assistant/computations/v_hat_to_chi_lambda_integrated.py`](../../folio-assistant/computations/v_hat_to_chi_lambda_integrated.py)
+- [`computations/v_hat_to_chi_lambda_integrated.py`](../../computations/v_hat_to_chi_lambda_integrated.py)
   — single-interface 1-dim + multi-dim unified at $H_6$
 - [`def:canonical-braid-interface-composition`](../../content/quantum-observable-universe/braids-and-knots/canonical-braid-interface-composition.md)
   — interface-type counts $(n_{pp}, n_{pn}, n_{nn})$ per atom

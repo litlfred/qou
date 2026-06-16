@@ -75,7 +75,7 @@ The binding-energy gap $|B_{\mathrm{pred}}(K) - B_{\mathrm{AME}}(K)|$ lives in t
 
 ## Cross-references — empirical witnesses
 
-- [`folio-assistant/computations/probe_1_project_4he_on_dominant.py`](../../../folio-assistant/computations/probe_1_project_4he_on_dominant.py) — Probe (1) at A=4
-- [`folio-assistant/computations/probe_1b_li6_orthogonality.py`](../../../folio-assistant/computations/probe_1b_li6_orthogonality.py) — Probe (1b) at A=6
-- [`folio-assistant/computations/probe_4_li6_rectangular_python.py`](../../../folio-assistant/computations/probe_4_li6_rectangular_python.py) — Lanczos LinearOperator framework
-- [`folio-assistant/computations/probe_4c_li6_large_d_scan.py`](../../../folio-assistant/computations/probe_4c_li6_large_d_scan.py) — large-$d_\lambda$ scan that falsified the rectangular-form conjecture
+- [`computations/probe_1_project_4he_on_dominant.py`](../../../computations/probe_1_project_4he_on_dominant.py) — Probe (1) at A=4
+- [`computations/probe_1b_li6_orthogonality.py`](../../../computations/probe_1b_li6_orthogonality.py) — Probe (1b) at A=6
+- [`computations/probe_4_li6_rectangular_python.py`](../../../computations/probe_4_li6_rectangular_python.py) — Lanczos LinearOperator framework
+- [`computations/probe_4c_li6_large_d_scan.py`](../../../computations/probe_4c_li6_large_d_scan.py) — large-$d_\lambda$ scan that falsified the rectangular-form conjecture

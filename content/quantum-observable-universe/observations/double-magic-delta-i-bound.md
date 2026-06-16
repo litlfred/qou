@@ -100,11 +100,11 @@ space for double-magic LR-fusion verification:
 
 Either restriction is significant for the
 algebraic-primality verifier
-([`sdp-primality-verifier-spec.md`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/folio-assistant/computations/sdp-primality-verifier-spec.md)):
+([`sdp-primality-verifier-spec.md`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/sdp-primality-verifier-spec.md)):
 the LR-coefficient computation per pair scales as $O(p(n))^2$.
 
 **Empirical speedup confirmed** on small-$n$ pairs via
-[`optimised_magic_verifier.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/folio-assistant/computations/optimised_magic_verifier.py)
+[`optimised_magic_verifier.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/optimised_magic_verifier.py)
 — actual measured speedup factor $\approx 16\times$ on the tractable
 subset (caveat: per-pair variance is large; e.g. $(2, 3)$ took
 $28\,\text{s}$ vs $(3, 2)$ in $0.02\,\text{s}$).

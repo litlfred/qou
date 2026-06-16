@@ -14,7 +14,7 @@ setup error, not an LP-theory issue.** KLR (Khovanov-Lauda-Rouquier)
 positivity guarantees that Markov traces of compound operators in
 the canonical-basis cone are non-negative at $q > 0$
 [Kashiwara-Saito, Brundan-Kleshchev]. The supply vector $t_k$ used
-by [`wedderburn_lp_ew_wiring.py`](../../folio-assistant/computations/wedderburn_lp_ew_wiring.py)
+by [`wedderburn_lp_ew_wiring.py`](../../computations/wedderburn_lp_ew_wiring.py)
 on PR #618 was
 
 $$
@@ -95,7 +95,7 @@ max+/2nd-max+ = 1.78 reading on Δ_I^minimal = σ_2 σ_4 σ_2 was
 Test ~14 alternative Δ_I words and report the best.
 
 Witness:
-[`folio-assistant/computations/wedderburn-lp-ew-wiring.witness.json`](../../folio-assistant/computations/wedderburn-lp-ew-wiring.witness.json)
+[`computations/wedderburn-lp-ew-wiring.witness.json`](../../computations/wedderburn-lp-ew-wiring.witness.json)
 
 ## 2. Deliverable (A) — LP/SDP-EW wiring
 
@@ -118,7 +118,7 @@ the LP supply vector $t_k$.
 
 Per [`prop:operator-selection-lp`](../../content/quantum-observable-universe/braids-and-knots/operator-selection-lp.md),
 solver contract from
-[`lp_dual_solver.py`](../../folio-assistant/computations/lp_dual_solver.py):
+[`lp_dual_solver.py`](../../computations/lp_dual_solver.py):
 
 $$
   \begin{aligned}
@@ -171,7 +171,7 @@ $\lambda$. This is the **genuine off-diagonal Wedderburn coupling**
 projection — and is full-rank generically (modulo bar-involution
 kernel).
 
-Implementation: [`_full_wedderburn_gram`](../../folio-assistant/computations/wedderburn_lp_ew_wiring.py)
+Implementation: [`_full_wedderburn_gram`](../../computations/wedderburn_lp_ew_wiring.py)
 pre-computes f64 Hoefsmit generator matrices once per partition via
 `_hoefsmit_build`, then evaluates each pair-pair Markov trace as a
 chain of three matrix products + trace summed over $\lambda$.
@@ -198,7 +198,7 @@ this restriction (open frontier).
 ### Atom sweep — actual results (full Wedderburn Gram)
 
 Read live from
-[`wedderburn-lp-ew-wiring.witness.json`](../../folio-assistant/computations/wedderburn-lp-ew-wiring.witness.json):
+[`wedderburn-lp-ew-wiring.witness.json`](../../computations/wedderburn-lp-ew-wiring.witness.json):
 
 | Atom | $(Z, N)$ | $H_n$ | # pairs | $t_{\min}$ | $t_{\max}$ | primal | dual | gap | # active |
 |------|---------:|------:|--------:|-----------:|-----------:|-------:|-----:|----:|---------:|
@@ -353,8 +353,8 @@ Recommended next actions per v3 §3:
 - This audit:
   [`docs/audits/2026-05-09-wedderburn-lp-ew-wiring.md`](2026-05-09-wedderburn-lp-ew-wiring.md)
 - Witness:
-  [`folio-assistant/computations/wedderburn-lp-ew-wiring.witness.json`](../../folio-assistant/computations/wedderburn-lp-ew-wiring.witness.json)
+  [`computations/wedderburn-lp-ew-wiring.witness.json`](../../computations/wedderburn-lp-ew-wiring.witness.json)
 - Script:
-  [`folio-assistant/computations/wedderburn_lp_ew_wiring.py`](../../folio-assistant/computations/wedderburn_lp_ew_wiring.py)
+  [`computations/wedderburn_lp_ew_wiring.py`](../../computations/wedderburn_lp_ew_wiring.py)
 - Workplan v3:
   [`docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md`](2026-05-09-refocused-1ppb-workplan-v3.md)

@@ -33,7 +33,7 @@ per-block sum"). Sole consumer: `vol_density_per_block_wiring.py` (testbed).
 `vol_density_borromean` — and show the error drops from +2.86 % toward the AME value.
 Then migrate the *mechanical* path (`vol_density_borromean` → `vol_density_per_block`)
 for p/n/D only; A≥3 waits on Thread 4. (Machinery is fragile under ad-hoc
-`PYTHONPATH` — run from `folio-assistant/computations/`.)
+`PYTHONPATH` — run from `computations/`.)
 
 ---
 

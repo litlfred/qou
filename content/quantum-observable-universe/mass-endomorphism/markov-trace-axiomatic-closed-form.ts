@@ -51,10 +51,10 @@ export default proposition({
   computation: {
     engine: "sympy",
     script:
-      "folio-assistant/computations/markov/markov_trace_atomic_proton_full.py",
+      "computations/markov/markov_trace_atomic_proton_full.py",
     witness: [
-      "folio-assistant/computations/markov/markov-trace-atomic-proton-full.witness.json",
-      "folio-assistant/computations/markov/markov-trace-axiomatic-proton.witness.json",
+      "computations/markov/markov-trace-atomic-proton-full.witness.json",
+      "computations/markov/markov-trace-axiomatic-proton.witness.json",
     ],
     status: "verified",
     requires: ["sympy"],

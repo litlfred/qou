@@ -23,7 +23,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:jones-birthday`](../../../quantum-observable-universe/appendix-surreals/jones-birthday.md). -/
 class JonesBirthday where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       The Jones polynomial $J_K(q) \in \mathbb{Z}[q^{\pm 1/2}]$ is the

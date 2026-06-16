@@ -108,7 +108,7 @@ three-calibration discipline is preserved.
 **Phase 1b numerical test on deuteron — partial / negative.**
 
 The script
-[`delta_lambda_categorical_verification.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/delta_lambda_categorical_verification.py)
+[`delta_lambda_categorical_verification.py`](https://github.com/litlfred/qou/blob/main/computations/delta_lambda_categorical_verification.py)
 tests the naive closure form (using the **bare** principal Galois orbit
 $\mathcal{O}_{\mathrm{prin}} = \{z_c^\pm\}$ for all $\lambda$, i.e.
 ignoring the per-$\lambda$ projection of $\Delta(z)$) with five
@@ -125,7 +125,7 @@ deuteron binding $B(D) = :val[B_2H_AME_MeV]{precision=6}$ MeV at the required pr
 | by_rows | −0.0100 MeV | 100% miss |
 
 **Diagnosis** (compared to empirical Δ tabulation in
-[`delta-lambda-empirical-tabulation.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json)):
+[`delta-lambda-empirical-tabulation.witness.json`](https://github.com/litlfred/qou/blob/main/computations/delta-lambda-empirical-tabulation.witness.json)):
 
 - Empirical best-single-block $\Delta_{[5,1]}(D) \approx -22.96$.
 - My closure form predicts $\Delta_{[5,1]}(D) \approx |c_3| \approx 0.260$

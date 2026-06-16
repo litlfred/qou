@@ -38,7 +38,7 @@ generator under the quotient map `B_n → H_n`, `σ_i ↦ g_i`, where the
   tr_M(x·g_n⁻¹)  = z'  · tr_M(x)
 
 with (canonical, from
-[`hecke/hecke_symbolic.py:46`](../../folio-assistant/computations/hecke/hecke_symbolic.py)):
+[`hecke/hecke_symbolic.py:46`](../../computations/hecke/hecke_symbolic.py)):
 
   z = 1 / (q^½ + q^{-½}) = 1 / [2]_{√q}.
 
@@ -57,7 +57,7 @@ promotion adds one strand with a single positive generator.)
   q₀ ≈ 1.10998   ⇒   √q₀ ≈ 1.05356,   z = 1/(1.05356 + 0.94917) ≈ **0.4993**.
 
 (Matches the cached `z_markov = 0.4993203…` in
-[`inductive-atom-witness.json`](../../folio-assistant/computations/inductive-atom-witness.json).)
+[`inductive-atom-witness.json`](../../computations/inductive-atom-witness.json).)
 
 **Direction obstruction.** z ≈ 0.4993 < 1, whereas the linking_weight
 ≈ 2.53 > 1. A single Markov stabilization β ↦ β·σ₃ **decreases** the trace

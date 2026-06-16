@@ -40,10 +40,10 @@ Also tested: pair-products $\mathrm{Vol}(K_1)\,\mathrm{Vol}(K_2)/\hbar_q^k$.
 ## Methodology
 
 Compute script:
-[`folio-assistant/computations/m_tau_knot_prediction.py`](../../folio-assistant/computations/m_tau_knot_prediction.py).
+[`computations/m_tau_knot_prediction.py`](../../computations/m_tau_knot_prediction.py).
 Operates at 50 dps via mpmath; uses the canonical
 $q_0 = 1.10997859555\ldots$ pin
-([`q_parameter.Q_50_DIGIT_STR`](../../folio-assistant/computations/substrate/q_parameter.py)).
+([`q_parameter.Q_50_DIGIT_STR`](../../computations/substrate/q_parameter.py)).
 
 Candidate table: 25 hyperbolic knots and links from the SnapPy census
 through 10 crossings + Borromean / Whitehead / $L_{n}$ family. All
@@ -152,5 +152,5 @@ honest outcome.
 - [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md) — $H^0$/$H^1$/$H^2$ mapping
 - [`-cal-2-cohomological-vs-calibration-critique.md`](-cal-2-cohomological-vs-calibration-critique.md) §F5 — driver question
 - Compute script + witness:
-  [`m_tau_knot_prediction.py`](../../folio-assistant/computations/m_tau_knot_prediction.py),
-  [`m-tau-knot-prediction.witness.json`](../../folio-assistant/computations/m-tau-knot-prediction.witness.json)
+  [`m_tau_knot_prediction.py`](../../computations/m_tau_knot_prediction.py),
+  [`m-tau-knot-prediction.witness.json`](../../computations/m-tau-knot-prediction.witness.json)

@@ -28,7 +28,7 @@ embeds via the strand-augmentation $H_{12} \hookrightarrow H_{18}$).
 A solution $(c_{\mathfrak{H}, w}(q_0))$ is a **structured certificate**
 of the canonical Hecke elements $\{T_w(\mathfrak{H})\}_{\mathfrak{H} \in \mathcal{R}}$
 together with the **GB-filtration certificate** and **jet-order log**
-([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json))
+([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json))
 on each. Existence is asserted by [prop:confinement-sdp](#prop:confinement-sdp);
 this proposition refines that with the joint-tower / GB-filtration /
 jet-order structure required by the categorical mass derivation
@@ -81,7 +81,7 @@ The SDP variables are indexed by *jet order* — i.e.\ the temporal
 sequence of GB reductions. Concretely: at each Wedderburn block
 $\lambda$, the variables $\{c_{\mathfrak{H}, w}\}_{\ell(w) \leq L}$
 are ordered by an admissible jet sequence as in
-[gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json).
+[gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json).
 Two effects:
 
 - The SDP is decomposed into a **chain of sub-problems** along the
@@ -147,8 +147,8 @@ for the atom-knot mass derivation
 
 - Confinement SDP: [prop:confinement-sdp](#prop:confinement-sdp).
 - GB filtration / jet-order certificate format:
- [gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json) +
- [`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb_filtration_jet_tracker.py).
+ [gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json) +
+ [`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb_filtration_jet_tracker.py).
 - GB spectral-sequence collapse:
  [prop:gb-spectral-sequence](#prop:gb-spectral-sequence),
  [prop:spectral-sequence-collapse](#prop:spectral-sequence-collapse).

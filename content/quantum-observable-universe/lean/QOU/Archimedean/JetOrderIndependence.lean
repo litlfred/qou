@@ -251,7 +251,7 @@ noncomputable def JetOrderIndependence.ofPivots (pivots : ℕ → ℚ × ℚ × 
     coefficient vectors `(1/4, −1, 55/16)`, `(1/2, 0, −1/16)`, `(1, 0, 0)`;
     their `3×3` jet-Jacobian has elimination determinant `1/16 ≠ 0`, with
     LU pivots `(1/4, 2, 1/8)`.  Source:
-    `folio-assistant/computations/jet_order_pivots.py` →
+    `computations/jet_order_pivots.py` →
     `jet-order-pivots.witness.json`.  The constant extension certifies
     full rank `3` at every order via `ofPivots`; higher-order pivots come
     from the same compute at higher jet truncation.
@@ -288,7 +288,7 @@ is the remaining structural input, not a lemma proved in this file. -/
 
 /-- Witnessed base-order jet-Jacobian: rows are the order-`≤2` coefficient
     vectors of `tr_M(K)` about `q = 1` for `K ∈ {4₁, 5₂, 𝓑₃}`.  Source:
-    `folio-assistant/computations/jet_order_pivots.py`. -/
+    `computations/jet_order_pivots.py`. -/
 def jetJacobianBase : Matrix (Fin 3) (Fin 3) ℚ :=
   !![1/4, -1, 55/16; 1/2, 0, -1/16; 1, 0, 0]
 

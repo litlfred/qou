@@ -12,7 +12,7 @@ Q-value subtraction does NOT isolate the shell magnitude.
 
 The **corrected categorical frame** (per
 `docs/audits/sigma-shell-categorical-identification.md` and
-`folio-assistant/computations/sigma-shell-A2-closed-form.derivation.json`):
+`computations/sigma-shell-A2-closed-form.derivation.json`):
 
   σ_shell is a separately-constructed element of H_{3·A_magic}(q)
   supported on the staircase partition λ_shell. The shell magnitude

@@ -9,7 +9,7 @@ Each script in this directory is a `*_probe.py` that:
     on success.
 
 Phase 1 of the subdirectory refactor moves the 99 _probe.py
-files from `folio-assistant/computations/` flat into this
+files from `computations/` flat into this
 subdirectory.  See [`docs/proposals/computations-subdirectory-
 refactor.md`](../../../docs/proposals/computations-subdirectory-refactor.md).
 """

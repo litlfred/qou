@@ -125,4 +125,4 @@ The actual closure should be a follow-up branch dedicated to one of Paths 1, 2, 
 - [`docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md`](2026-05-19-qbeta-all-ck-categorical-extension.md) — empirical pattern findings
 - [`docs/audits/2026-05-18-qbeta-n5-cohomological-breakdown.md`](2026-05-18-qbeta-n5-cohomological-breakdown.md) — original cohomological-strata hypothesis
 - [`content/quantum-observable-universe/braids-and-knots/q-beta-categorical-precision-ladder.{md,lean}`](../../content/quantum-observable-universe/braids-and-knots/q-beta-categorical-precision-ladder.md) — the precision-ladder content block
-- [`folio-assistant/computations/sweeps/binding_q_target_sweep.py`](../../folio-assistant/computations/sweeps/binding_q_target_sweep.py) — sweep with N=0..7 rungs
+- [`computations/sweeps/binding_q_target_sweep.py`](../../computations/sweeps/binding_q_target_sweep.py) — sweep with N=0..7 rungs

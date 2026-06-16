@@ -275,7 +275,7 @@ except ImportError:
     Q_50_DIGIT_STR = repr(Q)
 
 # ── Experimental observable anchors (CODATA 2022) ─────────────
-# Mirrored from `folio-assistant/computations/substrate/experimental_constants.py`
+# Mirrored from `computations/substrate/experimental_constants.py`
 # so consumers running outside the repo (Pyodide, Sage, PyPI installs)
 # can reach the same MeV anchors without depending on the flat-name
 # `experimental_constants` shim that only `_legacy` puts on sys.path.

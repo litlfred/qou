@@ -29,7 +29,7 @@ LaTeX label: `conj:lambda-scale-substrate-form` (Family A theorem)
 ## References
 
 - Adams, "Hyperbolic Structures on Link Complements" (1985) — Vol(B_3) = 8G
-- `folio-assistant/computations/lambda_scale_all_c_i_family_a.py` (sympy proof)
+- `computations/lambda_scale_all_c_i_family_a.py` (sympy proof)
 - `docs/audits/2026-05-18-all-c-i-status.md` (full inventory)
 - `docs/audits/2026-05-18-conjecture-falsification.md` (Family B falsification)
 -/

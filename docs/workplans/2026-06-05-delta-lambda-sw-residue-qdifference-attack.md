@@ -74,7 +74,7 @@ Sources: background corpus trace (2026-06-05) + direct reads of `mi-sw-abelianis
 | Fibre vs archimedean (`τ`) wall | **fully formalised** | [`kashaev-as-archimedean-realization.md`](../../content/quantum-observable-universe/mass-theory/kashaev-as-archimedean-realization.md), [`tau-all-orders-bridge.md`](../../content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.md) |
 | Dirac operator / spinor | mostly absent (S₅/Bring present, Dirac conjectural) | [`n-v-bring-action.md`](../../content/quantum-observable-universe/observations/n-v-bring-action.md) |
 | Residue program (not yet tied to λ_SW) | present | [`2026-06-04-residue-a-unblock-kernel-scope.md`](../audits/2026-06-04-residue-a-unblock-kernel-scope.md), `atomic_chirality_residue.py`, `term6_full_pole_sum.py` |
-| per-λ `θ_λ` carrier (un-collapsed) | **present** | [`binding_reeb_phase_decomposition.py`](../../folio-assistant/computations/binding_reeb_phase_decomposition.py) |
+| per-λ `θ_λ` carrier (un-collapsed) | **present** | [`binding_reeb_phase_decomposition.py`](../../computations/binding_reeb_phase_decomposition.py) |
 | operator-valued combiner (additive series host) | in-flight | #1698 (m_avg combiner) |
 
 **Owner checks (verified 2026-06-05):** (1) SW period via algebraic residues — machinery live (residue `A`, fibre-level, dual/shadow-price) but **not yet identified with `∮λ_SW^(n)`** → Lemma L1. (2) SW = decomposition of `τ` — **yes structurally** (jet prolongation `J^nE`, n=0 electron period) but the explicit `τ`-identification is unwritten → Lemma L2.

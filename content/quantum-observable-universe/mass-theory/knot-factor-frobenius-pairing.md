@@ -121,7 +121,7 @@ higher-degree invariant; "Skein eigenvalue of $4_1$" denotes this
 reduced quantity. See
 [audit](../../../docs/audits/2026-06-07-knot-factor-skein-verification.md)
 + witness
-[`knot-factor-skein-verification.witness.json`](../../../folio-assistant/computations/knot-factor-skein-verification.witness.json).
+[`knot-factor-skein-verification.witness.json`](../../../computations/knot-factor-skein-verification.witness.json).
 The crossing-sign assignment, the $A\geq5$ extension, and the
 identification of $a_K$ as the canonical mass-formula knot factor remain
 conjectural.)*
@@ -136,7 +136,7 @@ the Markov trace remains the universal categorical quantity.
 step proposed
 $a(N) = \lvert\mathrm{tr}_M(W_{\mathrm{atom}})\rvert / \lvert\mathrm{tr}_M(W_{\mathrm{free}})\rvert$
 as the ratio form. Empirical verification at 50dps
-([`a-K-via-lp-dual` witness](../../folio-assistant/computations/a-K-via-lp-dual.witness.json),
+([`a-K-via-lp-dual` witness](../../computations/a-K-via-lp-dual.witness.json),
 see `-m-p-item-b-t5-categorical-attribution.md §7c`)
 finds this ratio is 6–17$\times$ off the Skein values above for
 A=2,3,4. The ratio form measures the **mass-defect envelope**
@@ -168,10 +168,10 @@ archimedean realisation at $q = q_0$ gives the physical MeV scale
 via $E_0$.
 
 **Witness.**
-- `folio-assistant/computations/substrate/hecke_core.py::atom_markov_trace`:
+- `computations/substrate/hecke_core.py::atom_markov_trace`:
   $\mathrm{tr}_M(W_{\mathrm{atom}})$ and $\mathrm{tr}_M(W_{\mathrm{free}})$
   via Wedderburn-block Markov trace.
-- `folio-assistant/computations/substrate/hecke_core.py::binding_from_frobenius_pairing`:
+- `computations/substrate/hecke_core.py::binding_from_frobenius_pairing`:
   $B_{\mathrm{bulk}} = E_0 \cdot (|\mathrm{tr}_M^{\mathrm{free}}| -
   |\mathrm{tr}_M^{\mathrm{atom}}|)$ with
   $E_0 = 0.782$ MeV (free-neutron $\beta$-decay $Q$).

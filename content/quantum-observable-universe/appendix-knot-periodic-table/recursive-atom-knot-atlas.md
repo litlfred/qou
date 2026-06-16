@@ -25,13 +25,13 @@ volume-match results are **never** mixed with derivation-based ones.
 | `manual-historical-volume-match` | Knot was identified in earlier work via volume-match against AME; well-established but the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed yet. | ${}^2$H = $6_2$, ${}^{3}$H = $8_{11}$, ${}^{3}$He = $L_{6a4}$. |
 | `magic-A-formula` | Algebraic shell-closure formula $A \cdot 8G$ for double-magic light nuclei; no single hyperbolic knot. | ${}^{4}$He. |
 | `recursive-on-⁴He` | Built from $n \cdot {}^{4}\mathrm{He} + n_{\alpha\alpha} \cdot c_{\alpha\alpha}$ recursion; principled given ${}^{4}$He. | ${}^{8}$Be–${}^{40}$Ca. |
-| `deprecated-volume-match` | **PROVISIONAL — do not cite as principled.** Brute-force SnapPy volume search picked the closest knot to the AME-derived volume target; reverse-engineers the answer. See [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json). | ${}^{6}$Li, ${}^{7}$Li (quarantined below). |
+| `deprecated-volume-match` | **PROVISIONAL — do not cite as principled.** Brute-force SnapPy volume search picked the closest knot to the AME-derived volume target; reverse-engineers the answer. See [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/methodology-deprecation.witness.json). | ${}^{6}$Li, ${}^{7}$Li (quarantined below). |
 
 The principled pipeline computes $\mathrm{Vol}_{\mathrm{hyp}}$ from the
 $\sigma$-braid word at $\geq 50$ decimal digits via SnapPy's
 `Link(braid_closure=...).exterior.high_precision` inside
 `mpmath.workdps(50)`; symbolic-in-$q$ Markov-trace coefficients $y_\lambda$
-are supplied by the Wenzl bridge ([`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/y_lambda_wenzl_bridge_extended.py)).
+are supplied by the Wenzl bridge ([`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/y_lambda_wenzl_bridge_extended.py)).
 
 For atoms $A \geq 5$, where the combinatorics of the full $\mathcal{H}_{3A}$ space explode and `SnapPea` topological limits fail, we bypass the full evaluation by taking the exact symbolic trace restricted solely to **active block-partitions** (`closed_form_tau_M`), sidestepping the combinatorial blow-up. This exact symbolic trace $B_{sym} = -\alpha \ln |\tau_M|$ is shown side-by-side with the rigorous Q-CLT finite-sum approximation $B_{qCLT} = -\alpha \sum \ln |\hat{V}_i|$.
 
@@ -205,7 +205,7 @@ obtained.
 
 > **The two entries below are NOT principled.** They come from a
 > brute-force SnapPy volume-match search
-> ([`li_atom_knot_search.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/li_atom_knot_search.py))
+> ([`li_atom_knot_search.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/li_atom_knot_search.py))
 > which picks the knot whose hyperbolic volume matches the AME
 > binding-energy target — i.e. it **reverse-engineers** the answer.
 > At $\sim 2400$ knots/links searched, residuals below $\sim 10$ ppb
@@ -213,7 +213,7 @@ obtained.
 > GB-NF derivation in $H_{18}(q_0)$ / $H_{21}(q_0)$. Listed here for
 > historical transparency only. **Do not cite these as evidence for
 > the mass-table-ppb framework.** See
-> [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json)
+> [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/methodology-deprecation.witness.json)
 > for the full per-particle methodology audit.
 
 **${}^{6}$Li (PROVISIONAL — `deprecated-volume-match`)**
@@ -288,9 +288,9 @@ theoretical) under a single registry:
 | **Layer 4** | Heavy nuclei ($A > 40$) | Brane-tower asymptotic + LP-active-set ansatz |
 | **Layer 5** | Theoretical / hypothetical isotopes | Same Layer-1/3 machinery; flagged `prediction-only` |
 
-Per-isotope records follow the [`IsotopeRecord`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/isotope_record_schema.py)
+Per-isotope records follow the [`IsotopeRecord`](https://github.com/litlfred/qou/blob/main/computations/isotope_record_schema.py)
 dataclass schema with explicit knot-operator catalogue. Layer-1
-pipeline implementation: [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical_mass_table_extended.py).
+pipeline implementation: [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_mass_table_extended.py).
 
 ### Knot-operator catalogue — per-step primitives
 
@@ -337,7 +337,7 @@ $B_{3A}$ is built sequentially per nucleon: at each $k \in \{0,
 \ldots, A-1\}$ apply the intra block at base $3k$ and $3k+1$,
 then (for $k < A-1$) apply the inter-nucleon interface at $3k+2$
 between nucleon $k$ and $k+1$. The full sequence is enumerated by
-[`build_knot_operator_catalogue(Z, N)`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/isotope_record_schema.py)
+[`build_knot_operator_catalogue(Z, N)`](https://github.com/litlfred/qou/blob/main/computations/isotope_record_schema.py)
 and reported in every per-isotope record.
 
 ### Layer-1 canonical $|\mathrm{tr}_M(q_0)|$ table
@@ -355,27 +355,27 @@ and reported in every per-isotope record.
 | ${}^5$Li | 5 | 15 | $0.0294413937003971$ | B (binding) | — | 26.3280 | — |
 | ${}^6$Li | 6 | 18 | $0.0078896372028510$ | B (binding) | — | 31.9941 | — |
 
-_Computed via [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical_mass_table_extended.py) (method=`markov_peel`). Witness: [`canonical-mass-table-extended.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical-mass-table-extended.witness.json). Nucleon masses (m_p, m_n) via [`m-p-borromean-verification-50dps.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/m-p-borromean-verification-50dps.witness.json). Paper hard floor (CAL-2 propagation): ~780 ppb._
+_Computed via [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_mass_table_extended.py) (method=`markov_peel`). Witness: [`canonical-mass-table-extended.witness.json`](https://github.com/litlfred/qou/blob/main/computations/canonical-mass-table-extended.witness.json). Nucleon masses (m_p, m_n) via [`m-p-borromean-verification-50dps.witness.json`](https://github.com/litlfred/qou/blob/main/computations/m-p-borromean-verification-50dps.witness.json). Paper hard floor (CAL-2 propagation): ~780 ppb._
 
 <!-- AUTO:canonical-tr-m-table END -->
 
 ## Build-pipeline integration
 
 The atlas is auto-rendered by
-[`recursive_atom_knot_atlas_render.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/recursive_atom_knot_atlas_render.py).
+[`recursive_atom_knot_atlas_render.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/recursive_atom_knot_atlas_render.py).
 
 **Sources of truth** (in order):
 
 1. [`confined-particle.md`](#def:confined-particle) — GB-NF particle registry (canonical $T_w$).
-2. [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/mass-table-ppb.witness.json) — D..${}^{40}$Ca (manual-historical, recursive, magic-A).
-3. [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json) — per-particle methodology audit.
-4. [`hp_volume.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/hp_volume.py) — $\geq 50$-digit symbolic-$q$ Markov-closure $\to$ $\mathrm{Vol}_{\mathrm{hyp}}$.
-5. [`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/y_lambda_wenzl_bridge_extended.py) — symbolic-$q$ Wenzl bridge for $y_\lambda$.
+2. [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/mass-table-ppb.witness.json) — D..${}^{40}$Ca (manual-historical, recursive, magic-A).
+3. [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/methodology-deprecation.witness.json) — per-particle methodology audit.
+4. [`hp_volume.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/hp_volume.py) — $\geq 50$-digit symbolic-$q$ Markov-closure $\to$ $\mathrm{Vol}_{\mathrm{hyp}}$.
+5. [`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/y_lambda_wenzl_bridge_extended.py) — symbolic-$q$ Wenzl bridge for $y_\lambda$.
 
 **Deprecated input** (consumed only by the quarantined provisional
 section):
 
-6. [`li-atom-knot-search.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/li-atom-knot-search.witness.json) — *(provisional)* volume-match search.
+6. [`li-atom-knot-search.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/li-atom-knot-search.witness.json) — *(provisional)* volume-match search.
 
 For `principled-derivation` entries (electron, proton, neutron) the
 hyperbolic volume of the Markov closure is computed from the
@@ -383,7 +383,7 @@ $\sigma$-braid word at $\geq 50$ decimal digits via
 `hp_volume_of_link_closure(braid_word, digits=50)` which calls
 SnapPy's `Link(braid_closure=...).exterior.high_precision`
 inside `mpmath.workdps(50)`. Updates to any input propagate via
-[`witness_staleness_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/witness_staleness_tracker.py)
+[`witness_staleness_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/witness_staleness_tracker.py)
 to the rendered appendix on the next `bun run build`.
 
 ## SDP-uniqueness wiring (Lean side)
@@ -437,8 +437,8 @@ for the gating analysis.
  **Gröbner–Shirshov filtration tracking** and **jet-order tracking**,
  yielding a canonical $T_w \in H_{n_0}(q_0)$ *per atom* as a structured
  certificate. Status: **certificate format proof-of-concept complete**
- ([`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb_filtration_jet_tracker.py)
- + [`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json)).
+ ([`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb_filtration_jet_tracker.py)
+ + [`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json)).
  The reducer computes filtration grade + jet-order events exactly in
  symbolic $q$ via SymPy on the test cases $\sigma_1^3$ (electron) and
  $(\sigma_1 \sigma_2^{-1})^3$ (proton/neutron body). The joint-tower
@@ -576,7 +576,7 @@ mass-formula derivation and column-key conventions._
 
 ## Per-element coverage (AME 2020 cross-reference)
 
-_Auto-rendered from per-Z shards `canonical-isotope-witness-Z<NN>.witness.json` (emitted by [`canonical_isotope_witness.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical_isotope_witness.py)). Each row carries the Layer used (L1 canonical |tr_M|, L2 α-cluster recursion, L3 paper-six-term [pending], L4 composite mass), the framework prediction, the AME 2020 reference, and the residual. `Predicts = mass` for free nucleons (p, n) — value is the Borromean tower nucleon mass conditional on `conj:borromean-baryon-mass-formula`. `Predicts = binding_energy` for D and up; AME 2020 reference is the total binding energy. $M_{\text{composite}}$ is the L4 composite mass $N \cdot m_n + Z \cdot m_p - B$ when both nucleon masses (Borromean) and a binding-energy prediction are available; reference is the AME atomic mass converted via 1 u = 931.49410242 MeV._
+_Auto-rendered from per-Z shards `canonical-isotope-witness-Z<NN>.witness.json` (emitted by [`canonical_isotope_witness.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_isotope_witness.py)). Each row carries the Layer used (L1 canonical |tr_M|, L2 α-cluster recursion, L3 paper-six-term [pending], L4 composite mass), the framework prediction, the AME 2020 reference, and the residual. `Predicts = mass` for free nucleons (p, n) — value is the Borromean tower nucleon mass conditional on `conj:borromean-baryon-mass-formula`. `Predicts = binding_energy` for D and up; AME 2020 reference is the total binding energy. $M_{\text{composite}}$ is the L4 composite mass $N \cdot m_n + Z \cdot m_p - B$ when both nucleon masses (Borromean) and a binding-energy prediction are available; reference is the AME atomic mass converted via 1 u = 931.49410242 MeV._
 
 ### neutron (Z = 0)
 

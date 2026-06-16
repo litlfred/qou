@@ -23,7 +23,7 @@ namespace QOU.BraidKnot
 
     Conjectural class — see [`conj:bring-trilog-depth-3-witness`](../../../quantum-observable-universe/braids-and-knots/bring-trilog-depth-3-witness.md). -/
 class BringTrilogDepth3Witness where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- Scalar residual encoding the conjecture's content (placeholder
       shape: refine to match the actual claim). -/
   residual : ℝ

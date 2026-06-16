@@ -35,7 +35,7 @@ For exact symbolic computation over Q(q). Fastest for large A.
 ./scripts/setup-singular.sh
 
 # Run
-Singular folio-assistant/computations/singular-nuclear-braid.sing
+Singular computations/singular-nuclear-braid.sing
 ```
 
 **Letterplace convention:**
@@ -68,7 +68,7 @@ result = compute_nucleus(p=6, n=8, q_val=1.110)
 Level 1 computation with 3 quark strands per nucleon.
 
 ```python
-python3 folio-assistant/computations/nuclear-braid-level1.py
+python3 computations/nuclear-braid-level1.py
 ```
 
 ## The Gröbner Basis
@@ -97,7 +97,7 @@ length-lexicographic ordering.
 
 ## Witness Files
 
-All computations produce witness JSON in `folio-assistant/computations/`:
+All computations produce witness JSON in `computations/`:
 - `nuclear-braid-reduction.witness.json`
 - `nuclear-markov-trace.witness.json`
 - `nuclear-braid-level1.witness.json`

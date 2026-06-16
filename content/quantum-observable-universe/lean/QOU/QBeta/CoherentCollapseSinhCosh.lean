@@ -25,7 +25,7 @@ This complements PR #1887's `QBetaReebSinhParity` (the parity wall) at the
 
 Cross-refs: cheat sheet §4, §9.2; PR #1895 scope
 `docs/scope/2026-06-05-qbeta-perblock-collapse-order-scope.md` +
-`folio-assistant/computations/qbeta/qbeta_coherent_collapse_sinh_cosh.py` witness.
+`computations/qbeta/qbeta_coherent_collapse_sinh_cosh.py` witness.
 -/
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic

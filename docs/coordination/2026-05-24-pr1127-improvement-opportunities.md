@@ -68,7 +68,7 @@ CLAUDE.md §"Skill routing" has `production-vs-exploratory-discipline` skill. Ap
 ### C-5 — Consolidate the muon braid catalogue
 
 Multiple files identify muon variously (P-3 above). Compute should have ONE canonical source:
-- `folio-assistant/computations/canonical_braid_catalog.py` (or similar) — single source of truth for: electron = σ_1³, muon = (σ_1 σ_2⁻¹)² [figure-eight], proton = [u,u,d], neutron = [u,d,d], W = T(2,5), etc.
+- `computations/canonical_braid_catalog.py` (or similar) — single source of truth for: electron = σ_1³, muon = (σ_1 σ_2⁻¹)² [figure-eight], proton = [u,u,d], neutron = [u,d,d], W = T(2,5), etc.
 - All other scripts consume this catalogue
 - `knot-volumes.py` particle labels align with it
 

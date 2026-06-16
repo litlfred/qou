@@ -24,8 +24,8 @@ Witness: `markov-peel-atomic-tr-m.witness.json`
 Reference: prop:markov-pair-z2 (QOU narrative)
 
 Usage:
-    python folio-assistant/computations/markov_peel_atomic_witness.py
-    python folio-assistant/computations/markov_peel_atomic_witness.py --include-li
+    python computations/markov_peel_atomic_witness.py
+    python computations/markov_peel_atomic_witness.py --include-li
 """
 from __future__ import annotations
 

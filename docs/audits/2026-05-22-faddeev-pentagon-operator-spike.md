@@ -100,7 +100,7 @@ yielding:
 | λ_p (CODATA target) | 2.45995278436… | — |
 
 The existing benchmark `5/2 − h_q²·G` (recorded in
-[`probe_family_a_variants.py`](../../folio-assistant/computations/probe_family_a_variants.py))
+[`probe_family_a_variants.py`](../../computations/probe_family_a_variants.py))
 remains the **closer** near-match by a factor of 3.4×. But the
 new form `1/(1 − h_q·q_0^{10})` carries an explicit
 operator-theoretic interpretation:
@@ -166,7 +166,7 @@ neither establishing a closed form.
 
 ## Witness
 
-[`folio-assistant/computations/faddeev-pentagon-operator-spike.witness.json`](../../folio-assistant/computations/faddeev-pentagon-operator-spike.witness.json)
+[`computations/faddeev-pentagon-operator-spike.witness.json`](../../computations/faddeev-pentagon-operator-spike.witness.json)
 
 ## Known issues
 

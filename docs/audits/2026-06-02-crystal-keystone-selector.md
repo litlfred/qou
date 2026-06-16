@@ -8,9 +8,9 @@ geometric/holonomy #1699) closed, and the SU(2)-spin selector (#1687) closed —
 all separate-not-select. This is the THIRD and final structural selector test of
 the keystone arc.
 **Compute:**
-[`crystal_keystone_selector.py`](../../folio-assistant/computations/crystal_keystone_selector.py),
+[`crystal_keystone_selector.py`](../../computations/crystal_keystone_selector.py),
 witness
-[`crystal-keystone-selector.witness.json`](../../folio-assistant/computations/crystal-keystone-selector.witness.json)
+[`crystal-keystone-selector.witness.json`](../../computations/crystal-keystone-selector.witness.json)
 (audit-only; exact integer / SYT / partition-transpose combinatorics + RAW
 q-contents @ the canonical `compute_dps`; 10 assertions pass). **No tuning to
 h⁴ = −3/4, m_n − m_p, B_AME, spin, or hypercharge.** Reuses the validated
@@ -224,11 +224,11 @@ never fixing a line.
   [`2026-06-02-h5-h3-functor-keystone.md`](2026-06-02-h5-h3-functor-keystone.md)
   (#1684).
 - The validated Kashiwara primitives reused here:
-  [`crystal_basis.py`](../../folio-assistant/computations/crystal_basis.py).
+  [`crystal_basis.py`](../../computations/crystal_basis.py).
 - The discipline guardrails (re-pitch failure modes; §7b authoring-guidance
   framing): [`2026-05-30-klr-dialog-assessment.md`](2026-05-30-klr-dialog-assessment.md);
   CLAUDE.md §7b; the Δ_λ gate warning.
 - The `h⁴ = −3/4` block invariant (falsification reference):
-  [`borromean_h3_2_1_irrep_derivation.py`](../../folio-assistant/computations/borromean_h3_2_1_irrep_derivation.py).
+  [`borromean_h3_2_1_irrep_derivation.py`](../../computations/borromean_h3_2_1_irrep_derivation.py).
 - Lusztig bar / Schützenberger evacuation realizing it on type-A canonical bases:
   Lascoux–Leclerc–Thibon 1995; Lusztig 1990; Kashiwara 1991.

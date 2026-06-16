@@ -53,7 +53,7 @@ element:*
 
 ## Numerical verification
 
-From [`per-wedderburn-block-ck.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/per-wedderburn-block-ck.witness.json)
+From [`per-wedderburn-block-ck.witness.json`](https://github.com/litlfred/qou/blob/main/computations/per-wedderburn-block-ck.witness.json)
 ( merge, per-Wedderburn-block probe at $q = 1 + \varepsilon$
 to order $\varepsilon^{12}$):
 

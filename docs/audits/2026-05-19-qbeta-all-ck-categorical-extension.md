@@ -168,6 +168,6 @@ This is a research-grade project, not soluble in one session. **What's been deli
 - [`docs/audits/2026-05-18-qbeta-n4-sign-investigation.md`](2026-05-18-qbeta-n4-sign-investigation.md) — initial N=4 doc-vs-recomputation issue
 - [`docs/audits/2026-05-18-qbeta-n5-cohomological-breakdown.md`](2026-05-18-qbeta-n5-cohomological-breakdown.md) — cohomological-strata hypothesis
 - [`content/quantum-observable-universe/braids-and-knots/q-beta-categorical-precision-ladder.{md,lean}`](../../content/quantum-observable-universe/braids-and-knots/q-beta-categorical-precision-ladder.md) — the precision-ladder block (needs c_4 update per this audit)
-- [`folio-assistant/computations/sweeps/binding_q_target_sweep.py`](../../folio-assistant/computations/sweeps/binding_q_target_sweep.py) — emits the ladder rungs at 50 dps
-- [`folio-assistant/computations/probes/khovanov_klr_rank_cohomology_probe.py`](../../folio-assistant/computations/probes/khovanov_klr_rank_cohomology_probe.py) — q=1 rank probe (prior audit)
-- [`folio-assistant/computations/probes/khovanov_at_q0_probe.py`](../../folio-assistant/computations/probes/khovanov_at_q0_probe.py) — Khovanov at q_0 probe
+- [`computations/sweeps/binding_q_target_sweep.py`](../../computations/sweeps/binding_q_target_sweep.py) — emits the ladder rungs at 50 dps
+- [`computations/probes/khovanov_klr_rank_cohomology_probe.py`](../../computations/probes/khovanov_klr_rank_cohomology_probe.py) — q=1 rank probe (prior audit)
+- [`computations/probes/khovanov_at_q0_probe.py`](../../computations/probes/khovanov_at_q0_probe.py) — Khovanov at q_0 probe

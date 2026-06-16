@@ -39,7 +39,7 @@ Then assembles via `B(K) = μ₀ · Vol(K_bind) · Σ y · dim · Δθ_combined`
 
 ## Usage
 
-    cd folio-assistant/computations
+    cd computations
     python3 binding_a3plus_arccosh_growth_split.py
 """
 from __future__ import annotations

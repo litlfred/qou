@@ -211,7 +211,7 @@ At $q = q_0$:
 $J(\tau(2,9)) \approx 2.167$ and $J(\tau(3,4)) \approx 5.794$
 (computed from the Rosso--Jones expansion
 $J(\tau(r,s)) = \sum_\lambda d_\lambda(q_0)\omega_\lambda^s$;
-see `folio-assistant/computations/qvalue-representation-theory.py`),
+see `computations/qvalue-representation-theory.py`),
 so $\tau(3,4)$ receives approximately $2.67\times$ the weight
 of $\tau(2,9)$.
 

@@ -16,7 +16,7 @@ Term 2: α×Φ_q — binding correction from quantum dilogarithm
 7 atoms (Li, Be, B, N, O, F, Ne) are pure PREDICTIONS.
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_two_term.py
+    python3 computations/atom_mass_two_term.py
 """
 
 import math, sys, time

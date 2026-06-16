@@ -54,7 +54,7 @@
       "gb_filtration_level": 0,
       "lean_ref": "qou:STUB:YoungDiagram.hookLength",
       "citation": "kassel1995",
-      "notes": "Mathlib's `Mathlib.Combinatorics.Young.YoungDiagram` exposes `hookLength`; the value is read off the Young diagram combinatorially.  Source on the Python side: `folio-assistant/computations/schur_weyl_symbolic.hook_lengths`."
+      "notes": "Mathlib's `Mathlib.Combinatorics.Young.YoungDiagram` exposes `hookLength`; the value is read off the Young diagram combinatorially.  Source on the Python side: `computations/schur_weyl_symbolic.hook_lengths`."
     },
     {
       "name": "Wedderburn block dimension f_λ for λ = (3, 3, 2, 1)",

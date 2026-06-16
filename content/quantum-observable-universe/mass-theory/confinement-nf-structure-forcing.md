@@ -24,9 +24,9 @@ $|A| < n!$. Then:*
 ### Empirical evidence
 
 The witness
-[`lp-confinement-nf-forcing.witness.json`](../../folio-assistant/computations/lp-confinement-nf-forcing.witness.json)
+[`lp-confinement-nf-forcing.witness.json`](../../computations/lp-confinement-nf-forcing.witness.json)
 runs a 6-compound bench at $n \in \{3, 4\}$. For each compound the
-LP is solved via [`solve_operator_selection_lp`](../../folio-assistant/computations/lp_dual_solver.py)
+LP is solved via [`solve_operator_selection_lp`](../../computations/lp_dual_solver.py)
 (emitting **both primal and dual** per CLAUDE.md §LP/SDP duals),
 the active set $A$ is read off the dual vector $y_\lambda^*$, and
 the seminormal pole order of $T_\beta$ is computed independently.

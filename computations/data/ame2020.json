@@ -1,7 +1,7 @@
 {
   "_metadata": {
     "source": "uploads/mass_1.mas20.txt (AME2020 mass.mas20 from W.J.Huang, M.Wang, F.G.Kondev, G.Audi, S.Naimi, Chinese Physics C45, 030002, March 2021)",
-    "source_path_in_repo": "folio-assistant/computations/data/ame2020.mas20.txt",
+    "source_path_in_repo": "computations/data/ame2020.mas20.txt",
     "fortran_format": "a1,i3,i5,i5,i5,1x,a3,a4,1x,f14.6,f12.6,f13.5,1x,f10.5,1x,a2,f13.5,f11.5,1x,i3,1x,f13.6,f12.6",
     "units": {
       "mass_excess_keV": "keV",
@@ -15,7 +15,7 @@
       "*": "not calculable / measured"
     },
     "vendored_at": "2026-05-19",
-    "vendored_by": "folio-assistant/computations/vendor_ame2020.py — repo-owner directive: provide AME 2020 mass data as the canonical reference for the recursive atom-knot atlas across all isotopes",
+    "vendored_by": "computations/vendor_ame2020.py — repo-owner directive: provide AME 2020 mass data as the canonical reference for the recursive atom-knot atlas across all isotopes",
     "n_entries": 3558,
     "n_experimental": 2550,
     "n_estimated": 1008

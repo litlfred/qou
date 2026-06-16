@@ -64,7 +64,7 @@ def cl2(theta: mp.mpf) -> mp.mpf:
     Uses `mp.clsin(2, θ)` (mpmath's dedicated Clausen function) per
     PR #952 review (Copilot r3292599698) — avoids polylog branch /
     precision quirks on the unit circle and matches the convention
-    used elsewhere in `folio-assistant/computations/`.
+    used elsewhere in `computations/`.
     """
     return mp.clsin(2, theta)
 

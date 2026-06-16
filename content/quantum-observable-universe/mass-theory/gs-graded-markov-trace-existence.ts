@@ -16,9 +16,9 @@ export default conjecture({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/markov/markov_pipeline_cross_validator.py",
+    script: "computations/markov/markov_pipeline_cross_validator.py",
     witness:
-      "folio-assistant/computations/markov/markov-pipeline-cross-validation.witness.json",
+      "computations/markov/markov-pipeline-cross-validation.witness.json",
     status: "verified",
   },
   tags: [

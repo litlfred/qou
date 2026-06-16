@@ -8,7 +8,7 @@
 
 The original doc claimed the `laurent_q_rust` default in `compute_tr_m_canonical()` dispatches through the f64 pyhecke-native surface and regresses the L1 50-dps floor. **This is wrong.**
 
-The actual code at `folio-assistant/computations/canonical_mass_table_extended.py:147`:
+The actual code at `computations/canonical_mass_table_extended.py:147`:
 
 ```python
 if method == "laurent_q_rust":

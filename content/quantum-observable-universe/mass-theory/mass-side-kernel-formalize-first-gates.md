@@ -11,7 +11,7 @@ The $\mathfrak{Q}_\beta$ decay-side
 [`prop:q-beta-bar-even-kernel-typeclass`](q-beta-bar-even-kernel-typeclass.md)
 bundles the four $\S 4$ invariants for any candidate Habiro element
 $F(q)$. The **mass-side analog** is scoped operationally by the sympy
-[`mass_theory_formalize_first_invariants_probe.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/mass_theory_formalize_first_invariants_probe.py),
+[`mass_theory_formalize_first_invariants_probe.py`](https://github.com/litlfred/qou/blob/main/computations/mass_theory_formalize_first_invariants_probe.py),
 which runs a $4 \times 3$ verdict matrix on three published
 `linking_weight` candidates (Family A, via-Jones, Bring color-tube).
 
@@ -29,14 +29,14 @@ For any candidate `linking_weight` function $w : \mathbb{R} \to \mathbb{R}$:
 | (a) | **Anchor-stable** | cross-anchor swing $|w(q_\mu) - w(q_p)| / |w(q_p)| < 10^{-6}$ | `MassAnchorStableGateClass swing` (where `swing` is the probe-computed magnitude) |
 | (b) | **Bar-even** | $w(q) = w(q^{-1})$ (as elements of the formal q-rationals) | covered by [`prop:q-beta-bar-even-kernel-invariant`](q-beta-bar-even-kernel-invariant.md) (CommRing R lemma) |
 | (c) | **q = 1 classical-limit shadow** | $w(1)$ equals a registered categorical anchor — **OPEN GAP** (no registered anchor for `linking_weight` is established) | `MassQOneShadowGateClass w (anchor : Option ℝ)` — vacuous when `anchor = none`, requires $w(1) = a$ when `anchor = some a` |
-| (d) | **Direction sanity** | $|m - \text{target}| \le \text{threshold} \cdot \text{target}$ (additive form; substrate target $\approx 2.46$, the CODATA-implied near-match documented in [`_li_2_q_util.py:298-313`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/_li_2_q_util.py)) | `MassDirectionSanityGateClass m_candidate` (where `m_candidate = |w(q_0)|`) |
+| (d) | **Direction sanity** | $|m - \text{target}| \le \text{threshold} \cdot \text{target}$ (additive form; substrate target $\approx 2.46$, the CODATA-implied near-match documented in [`_li_2_q_util.py:298-313`](https://github.com/litlfred/qou/blob/main/computations/_li_2_q_util.py)) | `MassDirectionSanityGateClass m_candidate` (where `m_candidate = |w(q_0)|`) |
 
 > **Direction-sanity formula note.** The Lean class uses the
 > **additive** form $|m - \text{target}| \le \text{threshold} \cdot \text{target}$
 > to match the decay-side
 > [`prop:q-beta-direction-sanity-gate`](q-beta-direction-sanity-gate.md)
 > Lean precedent. The companion sympy probes (e.g.
-> [`mass_theory_formalize_first_invariants_probe.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/mass_theory_formalize_first_invariants_probe.py))
+> [`mass_theory_formalize_first_invariants_probe.py`](https://github.com/litlfred/qou/blob/main/computations/mass_theory_formalize_first_invariants_probe.py))
 > implement the **multiplicative** variant
 > $\max(|m| / \text{target}, \text{target} / |m|) \le \text{threshold}$
 > for the operational direction-magnitude check. The Lean form is
@@ -111,6 +111,6 @@ lemma. Mirrors the $\mathfrak{Q}_\beta$ `BarEvenKernel` pattern.
 
 **No sympy probe.** The mass-side $\S 4$ $4 \times 3$ verdict matrix
 is already in
-[`mass_theory_formalize_first_invariants_probe.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/mass_theory_formalize_first_invariants_probe.py).
+[`mass_theory_formalize_first_invariants_probe.py`](https://github.com/litlfred/qou/blob/main/computations/mass_theory_formalize_first_invariants_probe.py).
 Future probes wanting to test a candidate $w$ against the Lean class
 plug its substrate values into the `MassSideKernel` field hypotheses.

@@ -53,7 +53,7 @@ $n_0 = 6$ for ${}^{3}$H/${}^{3}$He, which conflicted with the joint-tower SDP
 convention $n_0 = 3 \cdot A$ used in
 [`prop:joint-tower-sdp-confinement`](#prop:joint-tower-sdp-confinement)
 and in
-[`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json)
+[`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/main/computations/joint-tower-sdp-h6-h9.witness.json)
 (`atomic_n_0 = 9` for ${}^{3}$H, ${}^{3}$He). This table is now reconciled to
 $n_0 = 3 \cdot A$. The conjectural $\lambda^* \vdash 9$ entries
 remain to be verified once Hoefsmit at $H_9$ is implemented (deferred
@@ -110,8 +110,8 @@ and $\rho = 2$ for double-cover nuclei.
 ## Critical structural finding (issue #604, deliverable 4)
 
 The B_3-level numerical evaluation
-([`folio-assistant/computations/rho_prefactor_structural_verifier.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho_prefactor_structural_verifier.py),
-witness [`rho-prefactor-structural-verifier.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho-prefactor-structural-verifier.witness.json))
+([`computations/rho_prefactor_structural_verifier.py`](https://github.com/litlfred/qou/blob/main/computations/rho_prefactor_structural_verifier.py),
+witness [`rho-prefactor-structural-verifier.witness.json`](https://github.com/litlfred/qou/blob/main/computations/rho-prefactor-structural-verifier.witness.json))
 **falsifies** the simple form of the rule "$\rho = \mathrm{round}[\dim_q(\lambda^*)]$" when
 $\lambda^*$ is computed from the *braid strand count* alone:
 

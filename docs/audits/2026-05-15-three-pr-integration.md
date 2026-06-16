@@ -38,13 +38,13 @@ stopped working).
 
 ## §V1 ≠ mirror — the physics correction
 
-PR #644's [`paper_six_term_isotope_sweep.py`](../../folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py)
+PR #644's [`paper_six_term_isotope_sweep.py`](../../computations/sweeps/paper_six_term_isotope_sweep.py)
 P1.B section states:
 
 > V1 is the natural Hecke choice; V2–V4 are alternative mirror-knot
 > conventions whose physical meaning differs.
 
-Reading [`term5_aK_audit.py`](../../folio-assistant/computations/audits/term5_aK_audit.py)
+Reading [`term5_aK_audit.py`](../../computations/audits/term5_aK_audit.py)
 module docstring directly contradicts the "natural choice" framing:
 
 | Variant | Definition | What $\tau(\beta \cdot \beta^{*-1})$ computes | Physical meaning |
@@ -97,20 +97,20 @@ inverse), not equality.
 ### V2 production-wired into `paper_six_term_mass` (2026-05-15 follow-up)
 
 Canonical V2 library
-[`term5_v2_chirality.py`](../../folio-assistant/computations/term5_v2_chirality.py)
+[`term5_v2_chirality.py`](../../computations/term5_v2_chirality.py)
 exposes `aK_v2(Z, N, q_val=Q_0)` (mp.mpf return for 50-dps callers) and
 `term5_v2_factor(...)` (drop-in for `term5_chirality`). Both wired
 into:
 
 | Caller | Mode flag | Default |
 |---|---|---|
-| [`paper_six_term_isotope_sweep.paper_six_term_mass`](../../folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py) | `chirality_source: "v2" | "closed_form"` | `"v2"` |
-| [`mass_formula_6term_mpfr_50dps.term_5_chirality_bw_mp`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py) | `chirality_source: "v2" | "bw_legacy"` | `"v2"` |
+| [`paper_six_term_isotope_sweep.paper_six_term_mass`](../../computations/sweeps/paper_six_term_isotope_sweep.py) | `chirality_source: "v2" | "closed_form"` | `"v2"` |
+| [`mass_formula_6term_mpfr_50dps.term_5_chirality_bw_mp`](../../computations/mass_formula_6term_mpfr_50dps.py) | `chirality_source: "v2" | "bw_legacy"` | `"v2"` |
 
 V2-cache-miss fallback in both callers: surface the routing
 decision (`print` flush) and fall back to the legacy path so the
 sweep completes for out-of-window (Z, N). The probe script
-[`probe_term5_aK_v2_mirror_chirality.py`](../../folio-assistant/computations/probe_term5_aK_v2_mirror_chirality.py)
+[`probe_term5_aK_v2_mirror_chirality.py`](../../computations/probe_term5_aK_v2_mirror_chirality.py)
 was de-duplicated to import the library's `aK_v2_full` — single
 source of truth, no copy/paste compute.
 
@@ -119,7 +119,7 @@ Witness records the routing decision under
 
 ### V2 numerical result (initial witness)
 
-[`probe_term5_aK_v2_mirror_chirality.py`](../../folio-assistant/computations/probe_term5_aK_v2_mirror_chirality.py)
+[`probe_term5_aK_v2_mirror_chirality.py`](../../computations/probe_term5_aK_v2_mirror_chirality.py)
 wires V2 via the per-irrep numeric Hoefsmit path
 (`global_wedderburn_sum_q_hecke_seminormal` machinery) — fast: <1 s
 total across {p, n, D, T, ³He}. The probe computes the canonical
@@ -149,7 +149,7 @@ construction.
 $(V_2(T) - V_2({}^3\mathrm{He})) / V_2({}^3\mathrm{He}) = -25.1275\,\%$.
 This is the structural T ↔ ³He spin-involution chirality that V1
 cannot detect. Witness:
-[`term5-aK-v2-mirror-chirality-probe.witness.json`](../../folio-assistant/computations/term5-aK-v2-mirror-chirality-probe.witness.json).
+[`term5-aK-v2-mirror-chirality-probe.witness.json`](../../computations/term5-aK-v2-mirror-chirality-probe.witness.json).
 
 **Compute cost.** Per-atom timings on the integration branch:
 proton 0.18 s, neutron 0.00 s (cache hit), deuteron 0.00 s
@@ -165,7 +165,7 @@ While building the F1-braid probe (canonical ⁴He τ_M at n=12), the
 y_λ load was bottlenecking at 974 s. Root cause:
 `wedderburn_jones_markov.y_lambda_at(n, q_val=q_0)` was recomputing
 y_λ from scratch on every call despite an existing 50-dps witness
-[`y-lambda-at-q0.witness.json`](../../folio-assistant/computations/y-lambda-at-q0.witness.json)
+[`y-lambda-at-q0.witness.json`](../../computations/y-lambda-at-q0.witness.json)
 covering n=2..12.
 
 Fix: extend `y_lambda_at` with a fast-path check — when the
@@ -185,9 +185,9 @@ fallback for non-q_0 numeric values or missing witness file.
 
 ### F1 ⁴He compositional probe — SDP/LP active-set fingerprint
 
-[`probe_he4_sdp_compositional.py`](../../folio-assistant/computations/probe_he4_sdp_compositional.py)
+[`probe_he4_sdp_compositional.py`](../../computations/probe_he4_sdp_compositional.py)
 + witness
-[`he4-sdp-compositional-probe.witness.json`](../../folio-assistant/computations/he4-sdp-compositional-probe.witness.json).
+[`he4-sdp-compositional-probe.witness.json`](../../computations/he4-sdp-compositional-probe.witness.json).
 Uses `lp_dual_solver.solve_psd_operator_selection_sdp` with LP
 fallback (equivalent for diagonal $G$, no cvxpy dep needed).
 
@@ -231,9 +231,9 @@ refuted at A=3 but not at A=4 doubly-magic).
 
 ### F1 ⁴He canonical Markov-trace fingerprint (braid-comp)
 
-[`probe_he4_canonical_tr_m_fingerprint.py`](../../folio-assistant/computations/probe_he4_canonical_tr_m_fingerprint.py)
+[`probe_he4_canonical_tr_m_fingerprint.py`](../../computations/probe_he4_canonical_tr_m_fingerprint.py)
 + witness
-[`he4-canonical-tr-m-block-fingerprint.witness.json`](../../folio-assistant/computations/he4-canonical-tr-m-block-fingerprint.witness.json).
+[`he4-canonical-tr-m-block-fingerprint.witness.json`](../../computations/he4-canonical-tr-m-block-fingerprint.witness.json).
 
 Computes the full canonical Markov trace `tr_M(β_⁴He) =
 Σ_{λ ⊢ 12} y_λ(q_0) · χ^λ_q(β_⁴He)` on the 47-crossing
@@ -324,19 +324,19 @@ nice" rationale is empirical, not derivational.
 | `docs/audits/2026-05-12-1ppb-implementation-plan.md` | landed + corrected | banner override on P1.B + P1.E |
 | `docs/audits/2026-05-12-lean-handover.md` | landed | Phase 4 hand-off for Lean agent |
 | `docs/audits/2026-05-12-m1-mass-table.md` | landed | honest −98% MAE baseline under substrate $E_0$ |
-| `folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py` | landed | P1.A, P1.C, P1.D, P2.A, P2.B all wired |
-| `folio-assistant/computations/sweeps/paper-six-term-isotope-sweep.witness.json` | landed | output of the above; combined+sub_tower_mode audit field present |
-| `folio-assistant/computations/d_from_scratch.py` | landed | T4 → per-3A migration; P1.C hard break comment |
-| `folio-assistant/computations/mass_formula_6term_mpfr_50dps.py` | landed | T4 → per-3A migration |
-| `folio-assistant/computations/unified_low_isotope_predictor.py` | landed | docstring fix only |
-| `folio-assistant/computations/magic-shell-empirical-instantiation.witness.json` | landed | Δ_cat columns for {p, n, D, T, ³He, ⁴He} — required by #645's H7a cross-anchor |
-| `folio-assistant/computations/probe_magic_shell_empirical_instantiation.py` | landed | producer for the above |
-| `folio-assistant/computations/probes/delta_coupling_closed_form_probe.py` | landed | H1 closed-form probe |
-| `folio-assistant/computations/probes/delta-coupling-closed-form-probe.witness.json` | landed | H1 witness |
-| `folio-assistant/computations/audits/term5_aK_audit.py` | landed (audit-only) | V1-V4 audit; **not** production-wired |
-| `folio-assistant/computations/audits/term5-aK-audit.witness.json` | landed (audit-only) | V1 backfill {p, n, D, T, ³He} |
-| `folio-assistant/computations/probe_he4_model_b_knot_survey.py` | **DROPPED** | compositionality violation |
-| `folio-assistant/computations/model-b-he4-knot-survey.witness.json` | **DROPPED** | compositionality violation |
+| `computations/sweeps/paper_six_term_isotope_sweep.py` | landed | P1.A, P1.C, P1.D, P2.A, P2.B all wired |
+| `computations/sweeps/paper-six-term-isotope-sweep.witness.json` | landed | output of the above; combined+sub_tower_mode audit field present |
+| `computations/d_from_scratch.py` | landed | T4 → per-3A migration; P1.C hard break comment |
+| `computations/mass_formula_6term_mpfr_50dps.py` | landed | T4 → per-3A migration |
+| `computations/unified_low_isotope_predictor.py` | landed | docstring fix only |
+| `computations/magic-shell-empirical-instantiation.witness.json` | landed | Δ_cat columns for {p, n, D, T, ³He, ⁴He} — required by #645's H7a cross-anchor |
+| `computations/probe_magic_shell_empirical_instantiation.py` | landed | producer for the above |
+| `computations/probes/delta_coupling_closed_form_probe.py` | landed | H1 closed-form probe |
+| `computations/probes/delta-coupling-closed-form-probe.witness.json` | landed | H1 witness |
+| `computations/audits/term5_aK_audit.py` | landed (audit-only) | V1-V4 audit; **not** production-wired |
+| `computations/audits/term5-aK-audit.witness.json` | landed (audit-only) | V1 backfill {p, n, D, T, ³He} |
+| `computations/probe_he4_model_b_knot_survey.py` | **DROPPED** | compositionality violation |
+| `computations/model-b-he4-knot-survey.witness.json` | **DROPPED** | compositionality violation |
 | `docs/coordination/1ppb.md` (one ledger row) | **NOT cherry-picked** | replaced by this branch's integrated row |
 
 ### From #645 — H7a finding + Lean P4 audit
@@ -347,10 +347,10 @@ nice" rationale is empirical, not derivational.
 | `docs/audits/2026-05-12-delta-coupling-residual-closure.md` | landed (H7a finding) |
 | `docs/audits/2026-05-12-lean-gap-closeability-audit.md` | landed |
 | `docs/audits/2026-05-12-lean-p4-canonical-instance-review.md` | landed |
-| `folio-assistant/computations/probe_delta_coupling_leading_form.py` | landed (H1/H3/H4/H5) |
-| `folio-assistant/computations/probe_delta_coupling_residual_closure.py` | landed (H6/H7/H8 — H7a is the win) |
-| `folio-assistant/computations/delta-coupling-leading-form-probe.witness.json` | landed |
-| `folio-assistant/computations/delta-coupling-residual-closure-probe.witness.json` | landed |
+| `computations/probe_delta_coupling_leading_form.py` | landed (H1/H3/H4/H5) |
+| `computations/probe_delta_coupling_residual_closure.py` | landed (H6/H7/H8 — H7a is the win) |
+| `computations/delta-coupling-leading-form-probe.witness.json` | landed |
+| `computations/delta-coupling-residual-closure-probe.witness.json` | landed |
 | `content/quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.lean` | landed |
 | `content/quantum-observable-universe/braids-and-knots/prop-rigid-monoidal-structural-gap-invariance.lean` | landed |
 
@@ -360,10 +360,10 @@ nice" rationale is empirical, not derivational.
 |------|--------|
 | `.claude/skills/local/compute-audit.md` | landed |
 | `docs/audits/2026-05-12-canonical-derivation-compute-review.md` | landed |
-| `folio-assistant/computations/canonical_derivation_pipeline_compliance.py` (NEW) | landed |
-| `folio-assistant/computations/canonical-derivation-pipeline-compliance.witness.json` (NEW) | landed |
-| `folio-assistant/computations/witness_reproducibility_check.py` (NEW) | landed |
-| `folio-assistant/computations/witness-reproducibility-check.witness.json` (NEW) | landed |
+| `computations/canonical_derivation_pipeline_compliance.py` (NEW) | landed |
+| `computations/canonical-derivation-pipeline-compliance.witness.json` (NEW) | landed |
+| `computations/witness_reproducibility_check.py` (NEW) | landed |
+| `computations/witness-reproducibility-check.witness.json` (NEW) | landed |
 | 28 compute scripts with CODATA literal migrations | landed |
 | `paper_six_term_isotope_sweep.py` CODATA imports | **re-applied on top of #644's version** |
 | `d_from_scratch.py` CODATA import | **re-applied on top of #644's version** |
@@ -389,8 +389,8 @@ JSJ decomposition of the closure. Compare:
    ambiguous and needs structural narrowing.
 
 **F2. H7a cross-anchor at (2,1) and (1,2).** ✅ **Landed — H7a
-REFUTED at A = 3.** [`probe_h7a_cross_anchor_a3.py`](../../folio-assistant/computations/probe_h7a_cross_anchor_a3.py)
-+ [`h7a-cross-anchor-a3-probe.witness.json`](../../folio-assistant/computations/h7a-cross-anchor-a3-probe.witness.json)
+REFUTED at A = 3.** [`probe_h7a_cross_anchor_a3.py`](../../computations/probe_h7a_cross_anchor_a3.py)
++ [`h7a-cross-anchor-a3-probe.witness.json`](../../computations/h7a-cross-anchor-a3-probe.witness.json)
 at 50 dps:
 
 | anchor | decomposition | value (MeV) | H7a prediction (MeV) | gap |

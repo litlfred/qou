@@ -90,9 +90,9 @@ instance canonical (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where
 -- Type-B-folded-crystal depth (CLAUDE.md §7b).
 --
 -- Witnesses:
---   folio-assistant/computations/probe-phiq-uniform-k.witness.json
---   folio-assistant/computations/probe-phiq-n-star-rule.witness.json
---   folio-assistant/computations/probe-phiq-operator-valued.witness.json
+--   computations/probe-phiq-uniform-k.witness.json
+--   computations/probe-phiq-n-star-rule.witness.json
+--   computations/probe-phiq-operator-valued.witness.json
 -- ────────────────────────────────────────────────────────────────────────────
 
 /-- Falsifiability threshold from the conjecture's `## Falsifiability`
@@ -109,7 +109,7 @@ def falsifiabilityThresholdPct : ℝ := 10.0
     `³He` at `+134%`.
 
     Source:
-    `folio-assistant/computations/probe-phiq-uniform-k.witness.json`
+    `computations/probe-phiq-uniform-k.witness.json`
     (computed `2026-04-29`, `commitSha 95ed3374…`). -/
 def witnessUniformKBestMaxErrPct : ℝ := 134.0
 
@@ -119,7 +119,7 @@ def witnessUniformKBestMaxErrPct : ℝ := 134.0
     Maximum is on `³He` at `+1.18 × 10^6 %`.
 
     Source:
-    `folio-assistant/computations/probe-phiq-n-star-rule.witness.json`
+    `computations/probe-phiq-n-star-rule.witness.json`
     (computed `2026-05-09`, `commitSha c8f9603d…`). -/
 def witnessNStarRuleMaxErrPct : ℝ := 1177119.823748267
 
@@ -144,7 +144,7 @@ def witnessNStarRuleMaxErrPct : ℝ := 1177119.823748267
     (resolved directly by `tr_λ` of Φ_q applied to ρ_λ).
 
     Source:
-    `folio-assistant/computations/probe-phiq-operator-valued.witness.json`
+    `computations/probe-phiq-operator-valued.witness.json`
     (computed `2026-05-11`). -/
 def witnessPerEigenvalueOperatorBestMaxAbsErrPct : ℝ := 64.75
 
@@ -220,7 +220,7 @@ theorem nStar_scalar_eigenvalue_form_refuted :
     ³He gap itself, not the n_⋆ choice.
 
     Source:
-    `folio-assistant/computations/probe-phiq-multiplicity-refined.witness.json`
+    `computations/probe-phiq-multiplicity-refined.witness.json`
     (computed `2026-05-11`). -/
 def witnessMultiplicityBestMaxAbsErrPct : ℝ := 56.0
 
@@ -234,7 +234,7 @@ def witnessMultiplicityBestMaxAbsErrPct : ℝ := 56.0
     from ⁴He — opposite signs, 1.326× ratio.
 
     Source:
-    `folio-assistant/computations/probe-phiq-pair-knot-magic-shell.witness.json`
+    `computations/probe-phiq-pair-knot-magic-shell.witness.json`
     (computed `2026-05-11`). -/
 def witnessPairKnotProductVolumeMaxAbsErrPct : ℝ := 1056.9
 
@@ -251,7 +251,7 @@ def witnessPairKnotProductVolumeMaxAbsErrPct : ℝ := 1056.9
     `996.6%` on tritium.
 
     Source:
-    `folio-assistant/computations/probe-phiq-pair-knot-markov-trace.witness.json`
+    `computations/probe-phiq-pair-knot-markov-trace.witness.json`
     (computed `2026-05-11`). -/
 def witnessPairKnotMarkovTraceMaxAbsErrPct : ℝ := 996.6
 

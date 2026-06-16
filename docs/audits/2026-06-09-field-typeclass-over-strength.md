@@ -1,7 +1,7 @@
 # Field-typeclass over-strength audit (`[Field]` where a weaker class suffices)
 
-**Tool:** [`folio-assistant/computations/audits/field_typeclass_audit.py`](../../folio-assistant/computations/audits/field_typeclass_audit.py)
-**Witness:** [`folio-assistant/computations/audits/field-typeclass-audit.witness.json`](../../folio-assistant/computations/audits/field-typeclass-audit.witness.json)
+**Tool:** [`computations/audits/field_typeclass_audit.py`](../../computations/audits/field_typeclass_audit.py)
+**Witness:** [`computations/audits/field-typeclass-audit.witness.json`](../../computations/audits/field-typeclass-audit.witness.json)
 **Origin:** surfaced 2026-06-09 — `QuantumUniverse` carries a phantom `[Field k]`
 that never divides (the substrate ground ring is a *commutative ring* `R`, per
 the §7c base-ring convention), which blocked the `[Linear R C]` lift (PR #2065).
@@ -157,6 +157,6 @@ notes:
   with an over-strong `[Field V]` relaxes in place; verify the owning module
   builds, then move on.
 
-Run `python3 folio-assistant/computations/audits/field_typeclass_audit.py`
+Run `python3 computations/audits/field_typeclass_audit.py`
 (add `--strict` for a CI gate) to refresh the witness after each batch; the
 `over-strong` count is the burn-down metric.

@@ -53,7 +53,7 @@ input, currently as `sorry` per CLAUDE.md §3b.*
  elliptic curve.*
 
 *Effort is "very large" per the
-[audit](../../folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md);
+[audit](../../computations/AUDIT-gb-residue-opaque-declarations.md);
 the empirical witness (machine-precision agreement on every available
 atom) is the working substitute.*
 
@@ -61,4 +61,4 @@ atom) is the working substitute.*
 *Cross-pipeline validation at `proton`, `neutron`, `deuteron` records
 relative difference $\le$ $10^{-9}$ to machine precision on every
 checkpoint. See
-`folio-assistant/computations/markov/markov-pipeline-cross-validation.witness.json`.*
+`computations/markov/markov-pipeline-cross-validation.witness.json`.*

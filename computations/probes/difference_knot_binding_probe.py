@@ -50,8 +50,8 @@ derived) per the Δ_λ-gate discipline.
 
 Ref: docs/audits/2026-06-13-9b-h1-exponent-location-refuted.md  (why the
      algebraic trace route is exhausted — motivates the geometric attack)
-Ref: folio-assistant/computations/binding_volume_difference_probe.py
-Ref: folio-assistant/computations/binding_link_volumes.py
+Ref: computations/binding_volume_difference_probe.py
+Ref: computations/binding_link_volumes.py
 Ref: content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md
 """
 from __future__ import annotations

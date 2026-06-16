@@ -35,7 +35,7 @@ $\mathfrak{Q}_\beta$ Form A
 ([prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge))
 $\mathfrak{Q}_\beta^A(q_0) = m_e \cdot |q^2 - 2q - 1|(q+1)/(2q^3)$
 recorded in the
-[m-baryon-volume-form witness](https://github.com/litlfred/qou/blob/claude/neutron-mass-50dps-chain/folio-assistant/computations/m-baryon-volume-form.witness.json),
+[m-baryon-volume-form witness](https://github.com/litlfred/qou/blob/claude/neutron-mass-50dps-chain/computations/m-baryon-volume-form.witness.json),
 with no calibration to the proton or neutron individually.*
 
 ## Per-Borromean-quantum normalisation
@@ -52,9 +52,9 @@ $$
 $$
 
 *At the substrate parameter* $q_0 = 1.109978595554181\ldots$ *(50 dps) and CAL-1
-$m_e = :val[m_e_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}\ldots\;\mathrm{MeV}$, evaluating to 50 dps via the
+$m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}\ldots\;\mathrm{MeV}$, evaluating to 50 dps via the
 witness*
-[`m-baryon-volume-form.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/m-baryon-volume-form.witness.json)
+[`m-baryon-volume-form.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/m-baryon-volume-form.witness.json)
 *gives:*
 
 | Quantity | 50-dps value | Source |
@@ -107,7 +107,7 @@ The derivation consumes exactly three substrate quantities:
 *$\mathfrak{Q}_\beta$ enters via the substrate ansatz
 $\mathfrak{Q}_\beta(q_0) = m_e \cdot |q^2 - 2q - 1|(q+1)/(2q^3)$
 evaluated in the
-[m-baryon-volume-form witness](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/m-baryon-volume-form.witness.json),
+[m-baryon-volume-form witness](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/m-baryon-volume-form.witness.json),
 which agrees with the CAL-3 empirical value
 ([rem:beta-decay-energy-scale](#rem:beta-decay-energy-scale)) to
 $760$ ppm at the current $q_0$ pinning. The identity therefore

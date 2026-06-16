@@ -1,7 +1,7 @@
 # Alpha-Blend Tower Formula — Formal Derivation
 
 **Status**: derivation documented 2026-04-24.
-**Witness**: `folio-assistant/computations/alpha/alpha_blend_tower.py`.
+**Witness**: `computations/alpha/alpha_blend_tower.py`.
 
 ## 1. Problem statement
 
@@ -256,7 +256,7 @@ $\mathrm{Geom}(4_1) = \mathrm{Vol}(4_1)/\hbar_q^2$ normalisation.
 
 The atomic braid for any nucleon is constructed by **prepending the
 Borromean braid word** B_3 to the typed quark crossings
-([atom_mass_volume.py](../folio-assistant/computations/atom_mass_volume.py)):
+([atom_mass_volume.py](../computations/atom_mass_volume.py)):
 
 $$
   \beta_{\text{nucleon}} = \underbrace{(\sigma_1 \sigma_2^{-1})^3}_{B_3 \text{ prefix}} \cdot \underbrace{\sigma_{i_1}^{\epsilon_1} \sigma_{i_2}^{\epsilon_2} \sigma_{i_3}^{\epsilon_3}}_{\text{typed quark crossings}}
@@ -583,7 +583,7 @@ This justifies why:
 ## 6.7 Direct numerical evaluation of the 3-term formula
 
 Implemented in
-[`wedderburn_mass_3term.py`](../folio-assistant/computations/wedderburn_mass_3term.py)
+[`wedderburn_mass_3term.py`](../computations/wedderburn_mass_3term.py)
 — takes constituent $m_p, m_n, m_e$ as inputs and computes the binding
 correction $\alpha (\Phi_1 - 2[3]_q \Phi_2 + H_A^2 \Phi_3)$ from
 per-generator log-functionals (with $\alpha = m_e \cdot 8G$, no fitted
@@ -632,7 +632,7 @@ std, alt) projections.
 ## 6.8 Refinement: inter-only Φ + Wigner partition correction
 
 Two refinements implemented in
-[`wedderburn_3term_inter_only.py`](../folio-assistant/computations/wedderburn_3term_inter_only.py):
+[`wedderburn_3term_inter_only.py`](../computations/wedderburn_3term_inter_only.py):
 
 1. **Inter-nucleon-only Φ.** Subtract free-constituent intra-nucleon
    contributions to avoid double-counting the quark confinement
@@ -680,7 +680,7 @@ construction over-counts in symmetric cases.
 Attempted to generalise the Wigner $(2,2)\vdash 4$ correction by
 summing over **all** self-conjugate $\lambda \vdash 3A$ partitions
 weighted by $H_q(\lambda) \cdot (\dim_q V_\lambda)^2$, normalised
-([`self_conjugate_partition_corrections.py`](../folio-assistant/computations/self_conjugate_partition_corrections.py)).
+([`self_conjugate_partition_corrections.py`](../computations/self_conjugate_partition_corrections.py)).
 
 **Catalogue:**
 
@@ -916,7 +916,7 @@ with all mass predictions sub-percent:
 
 ## Computational artifacts
 
-- `folio-assistant/computations/alpha/alpha_blend_tower.py` — formula + α* root-find
-- `folio-assistant/computations/tower_with_frobenius_fix.py` — Frobenius-only (−13%)
-- `folio-assistant/computations/frobenius_antipode_symmetry.py` — Frobenius antipode probe
-- `folio-assistant/computations/alpha-blend-tower.witness.json` — high-precision α*
+- `computations/alpha/alpha_blend_tower.py` — formula + α* root-find
+- `computations/tower_with_frobenius_fix.py` — Frobenius-only (−13%)
+- `computations/frobenius_antipode_symmetry.py` — Frobenius antipode probe
+- `computations/alpha-blend-tower.witness.json` — high-precision α*

@@ -62,9 +62,9 @@ So the genuinely-open follow-ups are:
    A ∈ {3, 4}? This is concrete + cheap; tracked separately.
 
 The companion commit on this branch (witness emitter
-[`folio-assistant/computations/binding_alpha_shift_witness.py`](../../folio-assistant/computations/binding_alpha_shift_witness.py)
+[`computations/binding_alpha_shift_witness.py`](../../computations/binding_alpha_shift_witness.py)
 emitting
-[`binding-alpha-shift-witness.witness.json`](../../folio-assistant/computations/binding-alpha-shift-witness.witness.json))
+[`binding-alpha-shift-witness.witness.json`](../../computations/binding-alpha-shift-witness.witness.json))
 addresses #3 above and reports the numerical gap honestly.
 
 ## How this finding fits the pattern
@@ -88,4 +88,4 @@ start of every work tranche keeps the queue current.
 - [`binding-alpha-shift-extension.md`](../../content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.md) — narrative.
 - [`alpha-shift-torus-knot.lean`](../../content/quantum-observable-universe/mass-theory/alpha-shift-torus-knot.lean) — defines `BindingForceCarrierKnot` upstream.
 - [Universal-branching-multinucleon gap audit (2026-05-30)](https://github.com/litlfred/qou/blob/claude/track-b-skew-syt-count-2026-05-30/docs/audits/2026-05-30-universal-branching-multinucleon-gap.md) (PR [#1515](https://github.com/litlfred/qou/pull/1515), not yet merged at the time this PR was opened) — analogous already-closed-on-main finding for Track B Gap #2.
-- [`binding_rotation_phase_lead.py`](../../folio-assistant/computations/binding_rotation_phase_lead.py) and its existing witness output — the probe that derived `ρ_full(D) ≈ 14.67 MeV/rad`. The numerical value is in the emitted witness, not the script source; see the script's `--out` argument for the witness path.
+- [`binding_rotation_phase_lead.py`](../../computations/binding_rotation_phase_lead.py) and its existing witness output — the probe that derived `ρ_full(D) ≈ 14.67 MeV/rad`. The numerical value is in the emitted witness, not the script source; see the script's `--out` argument for the witness path.

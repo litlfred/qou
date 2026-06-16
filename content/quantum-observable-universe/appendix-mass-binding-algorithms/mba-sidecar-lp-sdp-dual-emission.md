@@ -22,11 +22,11 @@ and expose `solve_operator_selection_lp(t, G, n_target)` and
 `solve_psd_operator_selection_sdp(t, G, n_target)`. Both return a
 result whose `.to_dict()` contains every required field. The
 per-witness driver script is
-[`confinement-operator-selection.py`](../../../folio-assistant/computations/confinement-operator-selection.py).
+[`confinement-operator-selection.py`](../../../computations/confinement-operator-selection.py).
 
 ### CI enforcement
 
-[`folio-assistant/computations/lp_dual_witness_validator.py`](../../../folio-assistant/computations/lp_dual_witness_validator.py)
+[`computations/lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py)
 runs in `witness-pipeline.yml`:
 
 - warn-only by default;

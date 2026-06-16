@@ -3,7 +3,7 @@
 **Date:** 2026-05-12
 **Branch:** `copilot/feature-coordinate-pr-644` (PR #645)
 **Builds on:** [`2026-05-12-delta-coupling-leading-term-followup.md`](2026-05-12-delta-coupling-leading-term-followup.md),
-[`probe_delta_coupling_leading_form.py`](../../folio-assistant/computations/probe_delta_coupling_leading_form.py)
+[`probe_delta_coupling_leading_form.py`](../../computations/probe_delta_coupling_leading_form.py)
 **Author:** Copilot agent (PR #645 Section C — Phase 3 residual-closure)
 
 This is a **single-finding** follow-up to the Section A leading-term
@@ -35,9 +35,9 @@ $q$-corrections or anchor-class-specific structural terms.
 ## What was done
 
 A new probe script,
-[`folio-assistant/computations/probe_delta_coupling_residual_closure.py`](../../folio-assistant/computations/probe_delta_coupling_residual_closure.py),
+[`computations/probe_delta_coupling_residual_closure.py`](../../computations/probe_delta_coupling_residual_closure.py),
 emits witness
-[`delta-coupling-residual-closure-probe.witness.json`](../../folio-assistant/computations/delta-coupling-residual-closure-probe.witness.json)
+[`delta-coupling-residual-closure-probe.witness.json`](../../computations/delta-coupling-residual-closure-probe.witness.json)
 recording three hypothesis families at 50 dps for the doubly-magic
 (2,2) anchor:
 
@@ -145,6 +145,6 @@ The improvement from H1 to H7a is structurally meaningful:
 
 ## Files added by this section
 
-- [`folio-assistant/computations/probe_delta_coupling_residual_closure.py`](../../folio-assistant/computations/probe_delta_coupling_residual_closure.py)
-- [`folio-assistant/computations/delta-coupling-residual-closure-probe.witness.json`](../../folio-assistant/computations/delta-coupling-residual-closure-probe.witness.json)
+- [`computations/probe_delta_coupling_residual_closure.py`](../../computations/probe_delta_coupling_residual_closure.py)
+- [`computations/delta-coupling-residual-closure-probe.witness.json`](../../computations/delta-coupling-residual-closure-probe.witness.json)
 - This handover document.

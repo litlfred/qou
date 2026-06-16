@@ -127,7 +127,7 @@ cubic terms at level $n$
  $\leq \Delta_{\max} \hbar_q^{2(N+1)} / (1 - \hbar_q^{2})$.
  The uniform bound is now an explicit conjecture with empirical
  support: the
- [`jet_tower_delta_max.py`](../../../folio-assistant/computations/jet_tower_delta_max.py)
+ [`jet_tower_delta_max.py`](../../../computations/jet_tower_delta_max.py)
  measurement script confirms `uniform_bound_pass = true` for
  D, T, ${}^{3}$He across $n = 1, \dots, 7$. The path-(a) proof from
  GS spectral-sequence $E_2$-collapse remains open.

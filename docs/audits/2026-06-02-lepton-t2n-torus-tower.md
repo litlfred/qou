@@ -10,9 +10,9 @@ PR #1677) identified as the lepton sector. Tabulate the tower group
 structure; verify the `S₅`-equivariance selection `n∈{3,5}`; compare the
 mass ratios RAW (falsification only); assess the `U(1)`-framing ladder.
 **Compute:**
-[`lepton_t2n_torus_tower.py`](../../folio-assistant/computations/lepton_t2n_torus_tower.py),
+[`lepton_t2n_torus_tower.py`](../../computations/lepton_t2n_torus_tower.py),
 witness
-[`lepton-t2n-torus-tower.witness.json`](../../folio-assistant/computations/lepton-t2n-torus-tower.witness.json)
+[`lepton-t2n-torus-tower.witness.json`](../../computations/lepton-t2n-torus-tower.witness.json)
 (audit-only, RAW @ 60 dps + symbolic-in-q, 21 assertions pass). **No
 tuning to any lepton mass ratio, electric charge, hypercharge, spin, or
 any h^k.** The `H₂(q)` Wenzl Markov-trace machinery is reused verbatim
@@ -299,6 +299,6 @@ known multi-session open item, not newly surfaced here.
   [`skein-mass-relation.md`](../../content/quantum-observable-universe/observations/skein-mass-relation.md),
   [`lepton-mass-tower-canonical.md`](../../content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md).
 - Existing lepton braid-word compute (per-braid mass tower, crude V̂):
-  [`canonical_lepton_braid_words.py`](../../folio-assistant/computations/canonical_lepton_braid_words.py).
+  [`canonical_lepton_braid_words.py`](../../computations/canonical_lepton_braid_words.py).
 - The s5-so3 fiber audit (U(1)=writhe, spin=ribbon-twist):
   [`2026-06-01-s5-so3-su2-u1-fiber-action.md`](2026-06-01-s5-so3-su2-u1-fiber-action.md).

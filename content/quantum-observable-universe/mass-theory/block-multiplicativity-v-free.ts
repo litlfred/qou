@@ -17,9 +17,9 @@ export default remark({
   computation: {
     engine: "python",
     script:
-      "folio-assistant/computations/binding_block_multiplicative.py",
+      "computations/binding_block_multiplicative.py",
     witness:
-      "folio-assistant/computations/binding-block-multiplicative.witness.json",
+      "computations/binding-block-multiplicative.witness.json",
     status: "verified",
   },
   tags: [

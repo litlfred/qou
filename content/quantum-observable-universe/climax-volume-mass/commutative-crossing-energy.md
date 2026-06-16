@@ -198,13 +198,13 @@ complexification.
 **Caveat (updated).** The structural form of the
 per-nucleon scaling between $A = 2$ and $A = 3$ is now categorically
 derived: the **Path A pipeline** (commits `f9f25b5f`, `23e447dc`,
-[`per_irrep_pole_atom.py`](../../../folio-assistant/computations/per_irrep_pole_atom.py))
+[`per_irrep_pole_atom.py`](../../../computations/per_irrep_pole_atom.py))
 verifies $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta)) = 18Z + 21N + 1$
 via symbolic Hoefsmit pole-order analysis for proton ($Z=1, N=0$)
 and deuteron ($Z=N=1$). Predictions then agree with experimental
 atomic masses to $\leq 0.30\%$ across $Z = 1$..$20$ via the
 single-generator $\rho_K$ formula
-([`rho-k-pair-gen-v2-wedderburn.witness.json`](../../../folio-assistant/computations/rho-k-pair-gen-v2-wedderburn.witness.json));
+([`rho-k-pair-gen-v2-wedderburn.witness.json`](../../../computations/rho-k-pair-gen-v2-wedderburn.witness.json));
 the Wedderburn pair-generator extension was tested and **rejected**
 (it worsens the fit to $\sim 4.7\%$ MAE).
 The categorical-coordinate identification $i = \sqrt{\lambda_-}$ is

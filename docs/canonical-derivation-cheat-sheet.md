@@ -148,7 +148,7 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 | **2. Non-abelian Stokes** | Hecke quadratic $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ as curvature 2-form | `prop:hecke-spectral-sequence`, [yekutieli2015] | `hecke_core.py`, `hecke_character_symbolic.py` (Hoefsmit + Hecke) | — |
 | **3. Alexander+Markov** | Unique trace $\mathrm{tr}_M$ invariant under braid + stabilization moves; $J_K(q) = \mathrm{tr}_M(\beta)$ | `thm:jones-markov-trace`, [jones1987] | `hecke_characters.chi_lambda_braid`; `pyhecke_native` (Rust) | per-witness. $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ closed form **Lean-proved** (`BorromeanMarkovTrace.lean`, modulo cited $V$). **Cross-method checkpoint:** the *narrative-only* per-rep $\chi^\lambda(\beta_{\mathrm{Bor}})$ ($\chi^{(3)}{=}\chi^{(1^3)}{=}1$, $\chi^{(2,1)}{=}2{-}3h^4{-}h^6$) confirmed numerically to $\le 4\mathrm{e}{-}50$ by the skein-validated seminormal engine (`borromean-chi-independent-crosscheck`; proof-status audit [`2026-06-07`](audits/2026-06-07-borromean-chi-crossmethod-proof-status.md)) |
 | **4. Bring χ=−6** | $\dim H_3(q) = 6 = $ # embeddable torus knots in $\Sigma_4$; particle content fixed | `prop:x5-bring-weight-identification`, `prop:spectral-sequence-h3-explicit` | `hecke_core._PROTON_G0/G1`, `_NEUTRON_G0/G1` (canonical H_3 chains) | — |
-| **5. Wedderburn + partitions** | $H_n(q) \cong \bigoplus_{\lambda \vdash n} M_{d_\lambda}(\mathbb{Q}(q))$; $\mathrm{tr}_M = \sum y_\lambda \chi^\lambda$ | `prop:alpha-k-derivation-procedure`, [wenzl1988] §1 | `y_lambda_wenzl_bridge.py` (numeric + symbolic); **3-axis (K, λ, A) derived-χ catalogue** [`derived_chi_catalogue_sweep.py`](../folio-assistant/computations/derived_chi_catalogue_sweep.py) (PR #1952) — pre-emits $\chi^\lambda(\beta_K)(q)$ as exact q-Laurent for every production atom × every partition; backed by `pyhecke_native.chi_q_via_gp` (Rust Geck-Pfeiffer, GIL-released v0.9.0) | `y-lambda-at-q0.witness.json`; `derived-chi-catalogue.witness.json` |
+| **5. Wedderburn + partitions** | $H_n(q) \cong \bigoplus_{\lambda \vdash n} M_{d_\lambda}(\mathbb{Q}(q))$; $\mathrm{tr}_M = \sum y_\lambda \chi^\lambda$ | `prop:alpha-k-derivation-procedure`, [wenzl1988] §1 | `y_lambda_wenzl_bridge.py` (numeric + symbolic); **3-axis (K, λ, A) derived-χ catalogue** [`derived_chi_catalogue_sweep.py`](../computations/derived_chi_catalogue_sweep.py) (PR #1952) — pre-emits $\chi^\lambda(\beta_K)(q)$ as exact q-Laurent for every production atom × every partition; backed by `pyhecke_native.chi_q_via_gp` (Rust Geck-Pfeiffer, GIL-released v0.9.0) | `y-lambda-at-q0.witness.json`; `derived-chi-catalogue.witness.json` |
 | **6. Frobenius pairing** | $\langle a, b \rangle_F = \int_A(a \cdot b)$; $\Psi = S^2 = \mathrm{id}_A$ (symmetric); chirality $a_K = 1 + w(K)·h + O(h^2)$ | `def:frobenius-hopf-substrate`, `prop:chirality-writhe-ribbon-derivation` | `chi_lambda_braid` + `tau_M_*` family | various |
 | **7. GB filtration** | Filtration by Coxeter length $\ell(w)$; spectral sequence collapses at $E_2$ | `prop:gb-spectral-sequence`, `prop:spectral-sequence-collapse` | `derivation_chain.py` (GB-NF tracker) | per-chain |
 | **8. Jet order** | Slice-traversal order = jet-prefix partial order; jet tower → classical limit at $q \to 1$ | `prop:jet-convergence-classical-limit` | `derivation_chain.py` (jet-order log) | — |
@@ -183,11 +183,11 @@ $$\frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N
 
 $$\mathrm{tr}_M(\mathcal{B}_K) \;=\; \mathrm{tr}_M^3(\mathcal{B}_p, q)^Z \cdot \mathrm{tr}_M^3(\mathcal{B}_n, q)^N \cdot \prod_{i \in \bowtie_K} f_i(q),$$
 
-with per-interface factors $f_i \in \{z, \, z - h\}$ for positive ($\sigma$, both p-p and **p-n**) and negative ($\sigma^{-1}$, n-n) interfaces. **Convention finding (Phase 5q v2).** The production marshalling for `chi_lambda_braid` — implemented in [`canonical_braid_marshalling.marshal_to_chi_lambda_braid`](../folio-assistant/computations/canonical_braid_marshalling.py) — silently maps the canonical averaged p-n form `(c=1, d=-h/2, gen)` to `(sign=+1, gen)` (the explicit `# averaged → σ convention` line), so `chi_lambda_braid` itself never sees the averaging coefficient. The closed form for production-matching purposes uses $f_{pn} = z$, NOT $z - h/2$. The strict averaged convention (math-correct $z - h/2$) is available as an opt-in via `pn_convention="strict_averaged"` for audit-trail probes; the default in [`closed_form_tau_M.py`](../folio-assistant/computations/closed_form_tau_M.py) matches the production marshalling. Verification witness: `closed-form-tau-M-verification-phase5q.witness.json`.
+with per-interface factors $f_i \in \{z, \, z - h\}$ for positive ($\sigma$, both p-p and **p-n**) and negative ($\sigma^{-1}$, n-n) interfaces. **Convention finding (Phase 5q v2).** The production marshalling for `chi_lambda_braid` — implemented in [`canonical_braid_marshalling.marshal_to_chi_lambda_braid`](../computations/canonical_braid_marshalling.py) — silently maps the canonical averaged p-n form `(c=1, d=-h/2, gen)` to `(sign=+1, gen)` (the explicit `# averaged → σ convention` line), so `chi_lambda_braid` itself never sees the averaging coefficient. The closed form for production-matching purposes uses $f_{pn} = z$, NOT $z - h/2$. The strict averaged convention (math-correct $z - h/2$) is available as an opt-in via `pn_convention="strict_averaged"` for audit-trail probes; the default in [`closed_form_tau_M.py`](../computations/closed_form_tau_M.py) matches the production marshalling. Verification witness: `closed-form-tau-M-verification-phase5q.witness.json`.
 
 **Geom ↔ tr_M unification (Phase 5p, queued).** The downstream `ω` stage of `prop:hoefsmit-scattering-pipeline` (`braid β → tr_M → J_K(q) → ω → Geom(K) → × m_e → 𝔪`) consumes $J_K = \mathrm{tr}_M(\mathcal{B}_K)$. The Phase 5q closed form gives the input to ω in closed form; verifying that the propagation through ω → Geom(K) matches the canonical mass-table chain is the Phase 5p task (queued, depends on Phase 5q verification landing).
 
-**Bring color-tube weighted averaging — open audit finding (Phase 5q).** The p-n interface "averaging" in the canonical atomic braid is currently the **uniform bar-invariant projection** $\sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2 = \sigma - h/2$ (per [`prop:averaging-resonance-rule`](#prop:averaging-resonance-rule)). However, the owner's intuition — recorded in [`probe_pn_flavor_asymmetry.py`](../folio-assistant/computations/probe_pn_flavor_asymmetry.py) and [`probe_per_sheet_flavor_nonin.py`](../folio-assistant/computations/probe_per_sheet_flavor_nonin.py) — is that the canonical form should be **Bring color-tube weighted**: each nucleon carries 3 quark color sheets (proton uud → $(\mu_u, \mu_u, \mu_d)$; neutron udd → $(\mu_u, \mu_d, \mu_d)$), and the p-n boundary should average over the 9 color-pair assignments weighted by quark content. Empirically (Scheme 4, per-sheet PL integration on Bring's surface) this reproduces $\Delta m_{n-p}$ to ~0.14% of CODATA. **Status**: this is a research-level open item; substrate H_{3A} compute (where [`closed_form_tau_M.py`](../folio-assistant/computations/closed_form_tau_M.py) operates) doesn't carry quark-mass inputs, so the weighted averaging is a downstream/mass-level operation. The module exposes `pn_convention="bring_color_weighted"` as a placeholder that raises `NotImplementedError` with the queue context. Implementing it requires (a) extending the closed form to accept quark-mass inputs, (b) defining the canonical color-sheet ↔ quark-flavor mapping (open per `probe_pn_flavor_asymmetry.py` conclusion: "research-level color-sheet ↔ quark-flavor mapping not explicitly stated in the paper").
+**Bring color-tube weighted averaging — open audit finding (Phase 5q).** The p-n interface "averaging" in the canonical atomic braid is currently the **uniform bar-invariant projection** $\sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2 = \sigma - h/2$ (per [`prop:averaging-resonance-rule`](#prop:averaging-resonance-rule)). However, the owner's intuition — recorded in [`probe_pn_flavor_asymmetry.py`](../computations/probe_pn_flavor_asymmetry.py) and [`probe_per_sheet_flavor_nonin.py`](../computations/probe_per_sheet_flavor_nonin.py) — is that the canonical form should be **Bring color-tube weighted**: each nucleon carries 3 quark color sheets (proton uud → $(\mu_u, \mu_u, \mu_d)$; neutron udd → $(\mu_u, \mu_d, \mu_d)$), and the p-n boundary should average over the 9 color-pair assignments weighted by quark content. Empirically (Scheme 4, per-sheet PL integration on Bring's surface) this reproduces $\Delta m_{n-p}$ to ~0.14% of CODATA. **Status**: this is a research-level open item; substrate H_{3A} compute (where [`closed_form_tau_M.py`](../computations/closed_form_tau_M.py) operates) doesn't carry quark-mass inputs, so the weighted averaging is a downstream/mass-level operation. The module exposes `pn_convention="bring_color_weighted"` as a placeholder that raises `NotImplementedError` with the queue context. Implementing it requires (a) extending the closed form to accept quark-mass inputs, (b) defining the canonical color-sheet ↔ quark-flavor mapping (open per `probe_pn_flavor_asymmetry.py` conclusion: "research-level color-sheet ↔ quark-flavor mapping not explicitly stated in the paper").
 
 **A≥3 binding campaign — summary (PR #1417, 2026-05-29).** Full record:
 [`docs/audits/2026-05-28-binding-endomorphism-analogy.md`](audits/2026-05-28-binding-endomorphism-analogy.md) §"A≥3 derivation campaign". Key chain (all derive-or-refute, no AME fit):
@@ -322,24 +322,24 @@ The forward work has shifted from §5 mechanics to scientific closure:
 | Need | Look at |
 |---|---|
 | The full chain rendered in the paper | [`pre-archimedean-derivation-chain.md`](../content/quantum-observable-universe/braids-and-knots/pre-archimedean-derivation-chain.md) |
-| 7 first-principles entry points + trust basis hierarchy | `folio-assistant/computations/DERIVATION-CHAIN-METHODOLOGY.md` |
-| Canonical-derivation discipline (production scripts) | `folio-assistant/computations/derivation_chain.py` |
-| q_0 50-dps canonical pin | `folio-assistant/computations/q_parameter.Q_50_DIGIT_STR` |
-| Wenzl y_λ (numeric + symbolic) | `folio-assistant/computations/y_lambda_wenzl_bridge.py` |
-| Hecke characters at varying q | `folio-assistant/computations/hecke_characters.chi_lambda_braid` (Python + Rust kernel) |
-| **3-axis (knot, partition, atom) derived-χ catalogue** | [`folio-assistant/computations/derived_chi_catalogue.py`](../folio-assistant/computations/derived_chi_catalogue.py) (schema), [`derived_chi_catalogue_sweep.py`](../folio-assistant/computations/derived_chi_catalogue_sweep.py) (production sweep), `derived-chi-catalogue.witness.json` (cell witness) — PR #1952 |
-| Catalogue parallel backend (auto-detects GIL release) | [`derived_chi_catalogue_parallel.py`](../folio-assistant/computations/derived_chi_catalogue_parallel.py) — `ThreadPoolExecutor` when `pyhecke_native >= 0.9.0`, else `ProcessPoolExecutor` fallback |
-| Catalogue Tier 2/3/4 optimisations | Tier 4 in-memory memoize: [`derived_chi_catalogue_memoize.py`](../folio-assistant/computations/derived_chi_catalogue_memoize.py); Tier 3 bar-symmetry: [`derived_chi_catalogue_bar_symmetry_audit.py`](../folio-assistant/computations/derived_chi_catalogue_bar_symmetry_audit.py) (1.9× sweep speedup); Tier 2 M_n disk cache: [`derived_chi_catalogue_mn_disk_cache.py`](../folio-assistant/computations/derived_chi_catalogue_mn_disk_cache.py) |
-| Catalogue Tier 1 LR factorisation (math + scaffold) | Audit: [`docs/audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md`](audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md); Scaffold: [`derived_chi_catalogue_lr_scaffold.py`](../folio-assistant/computations/derived_chi_catalogue_lr_scaffold.py) |
-| Catalogue Phase 3 production wire demo (1189× lookup speedup) | [`derived_chi_catalogue_production_wire_demo.py`](../folio-assistant/computations/derived_chi_catalogue_production_wire_demo.py) |
+| 7 first-principles entry points + trust basis hierarchy | `computations/DERIVATION-CHAIN-METHODOLOGY.md` |
+| Canonical-derivation discipline (production scripts) | `computations/derivation_chain.py` |
+| q_0 50-dps canonical pin | `computations/q_parameter.Q_50_DIGIT_STR` |
+| Wenzl y_λ (numeric + symbolic) | `computations/y_lambda_wenzl_bridge.py` |
+| Hecke characters at varying q | `computations/hecke_characters.chi_lambda_braid` (Python + Rust kernel) |
+| **3-axis (knot, partition, atom) derived-χ catalogue** | [`computations/derived_chi_catalogue.py`](../computations/derived_chi_catalogue.py) (schema), [`derived_chi_catalogue_sweep.py`](../computations/derived_chi_catalogue_sweep.py) (production sweep), `derived-chi-catalogue.witness.json` (cell witness) — PR #1952 |
+| Catalogue parallel backend (auto-detects GIL release) | [`derived_chi_catalogue_parallel.py`](../computations/derived_chi_catalogue_parallel.py) — `ThreadPoolExecutor` when `pyhecke_native >= 0.9.0`, else `ProcessPoolExecutor` fallback |
+| Catalogue Tier 2/3/4 optimisations | Tier 4 in-memory memoize: [`derived_chi_catalogue_memoize.py`](../computations/derived_chi_catalogue_memoize.py); Tier 3 bar-symmetry: [`derived_chi_catalogue_bar_symmetry_audit.py`](../computations/derived_chi_catalogue_bar_symmetry_audit.py) (1.9× sweep speedup); Tier 2 M_n disk cache: [`derived_chi_catalogue_mn_disk_cache.py`](../computations/derived_chi_catalogue_mn_disk_cache.py) |
+| Catalogue Tier 1 LR factorisation (math + scaffold) | Audit: [`docs/audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md`](audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md); Scaffold: [`derived_chi_catalogue_lr_scaffold.py`](../computations/derived_chi_catalogue_lr_scaffold.py) |
+| Catalogue Phase 3 production wire demo (1189× lookup speedup) | [`derived_chi_catalogue_production_wire_demo.py`](../computations/derived_chi_catalogue_production_wire_demo.py) |
 | Catalogue Lean scaffold | [`content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean`](../content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean) |
 | pyhecke_native GIL release + batched-GP roadmap | [`docs/audits/2026-06-07-pyhecke-native-gil-release-patch.md`](audits/2026-06-07-pyhecke-native-gil-release-patch.md) — Patch 1 (GIL) LANDED in v0.9.0; Patch 2 (batched chi_lambdas_via_gp + Rayon) LANDED but **NOT routed by default** — empirical perf showed threads + Tier 3 outperform batched-Rayon at medium n |
-| Hoefsmit symbolic matrices | `folio-assistant/computations/hecke_character_symbolic.hoefsmit_matrices_symbolic` |
-| Canonical atomic braid construction | `folio-assistant/computations/mass_at_3A_proper.atom_braid_word_3A` |
-| LP duality (operator selection) | `folio-assistant/computations/lp_dual_solver.py` (`solve_operator_selection_lp`) |
+| Hoefsmit symbolic matrices | `computations/hecke_character_symbolic.hoefsmit_matrices_symbolic` |
+| Canonical atomic braid construction | `computations/mass_at_3A_proper.atom_braid_word_3A` |
+| LP duality (operator selection) | `computations/lp_dual_solver.py` (`solve_operator_selection_lp`) |
 | Notation register (post-Phase 5n) | [`content/quantum-observable-universe/notation/notation-register.md`](../content/quantum-observable-universe/notation/notation-register.md) |
 | 1ppb coordination ledger | [`docs/coordination/1ppb-categorical-chain.md`](coordination/1ppb-categorical-chain.md) |
-| Precision dashboards | `folio-assistant/computations/onepb-status-dashboard.witness.json` (L1) + `per-observable-100x-status.witness.json` (L2) |
+| Precision dashboards | `computations/onepb-status-dashboard.witness.json` (L1) + `per-observable-100x-status.witness.json` (L2) |
 
 ---
 
@@ -353,7 +353,7 @@ The forward work has shifted from §5 mechanics to scientific closure:
 - Calibration parameters not in the 3-input set → **4th-calibration violation**. The CLAUDE.md `Δ_λ gate` (Track A blocker) explicitly forbids a 7th closure ansatz.
 - Substrate-side compute using $q$ as $\mathbb{R}$ before the Archimedean functor → **§7c base-ring violation**. Everything categorical should be generic over `[Field R]` until step 9.
 
-**Final-stage discipline**: every script in `folio-assistant/computations/` (non-deprecated) should either (a) be backed by a `derivation_chain.py`-tracked DerivationChain, or (b) be marked `SCRIPT_CITED` against a canonical script that IS so backed.
+**Final-stage discipline**: every script in `computations/` (non-deprecated) should either (a) be backed by a `derivation_chain.py`-tracked DerivationChain, or (b) be marked `SCRIPT_CITED` against a canonical script that IS so backed.
 
 ---
 
@@ -435,7 +435,7 @@ shape, with the volume entering as `exp`-linearized angle, not raw `Vol`.
 > fibre-vs-observable cut as the `Im(q)` discipline and the "delta is
 > pre-archimedean" result (`prop:delta-pre-archimedean`): **stay in the fibre as
 > long as possible, observe last.** The per-λ vector is now emitted by
-> [`binding_reeb_phase_decomposition.py`](../folio-assistant/computations/binding_reeb_phase_decomposition.py)
+> [`binding_reeb_phase_decomposition.py`](../computations/binding_reeb_phase_decomposition.py)
 > (`results[atom].by_partition`: `θ_free`, `θ_atom`, `Δθ_λ`, channel) — the
 > un-collapsed carrier ready for downstream observation.
 
@@ -563,11 +563,11 @@ generating set at depth ≤ 3.
 
 The default binding-energy compute IS the depth-stratified tower sum:
 
-- **Production**: [`binding_depth_stratified_rust.py`](../folio-assistant/computations/binding_depth_stratified_rust.py)
+- **Production**: [`binding_depth_stratified_rust.py`](../computations/binding_depth_stratified_rust.py)
   (full H_{3A} via Geck-Pfeiffer + Hoefsmit Rust kernel, n ≥ 9)
 - **LR variant** (per-nucleon H_3 → H_{3A} combiner for A ≥ 4):
-  [`binding_depth_stratified_lr.py`](../folio-assistant/computations/binding_depth_stratified_lr.py)
-- **Python fallback**: [`binding_depth_stratified.py`](../folio-assistant/computations/binding_depth_stratified.py)
+  [`binding_depth_stratified_lr.py`](../computations/binding_depth_stratified_lr.py)
+- **Python fallback**: [`binding_depth_stratified.py`](../computations/binding_depth_stratified.py)
 
 α_k coefficients (NOT empirical fits):
 - α_0 = α_1 = α_3 = 1 (trivial layers)
@@ -620,7 +620,7 @@ choice.
 ## See also
 
 - [`pre-archimedean-derivation-chain.md`](../content/quantum-observable-universe/braids-and-knots/pre-archimedean-derivation-chain.md) — paper-side rendering of this chain
-- [`DERIVATION-CHAIN-METHODOLOGY.md`](../folio-assistant/computations/DERIVATION-CHAIN-METHODOLOGY.md) — compute-side discipline
+- [`DERIVATION-CHAIN-METHODOLOGY.md`](../computations/DERIVATION-CHAIN-METHODOLOGY.md) — compute-side discipline
 - [`docs/precision-goals.md`](precision-goals.md) — L1 vs L2 precision targets
 - [`docs/duality-tracker.md`](duality-tracker.md) — coordinate-side classifier of every duality the framework uses or could use (D1-D24); status flags + closure paths; sibling-coordination index
 - [`docs/audits/2026-06-09-binding-canonical-default-depth-stratified.md`](audits/2026-06-09-binding-canonical-default-depth-stratified.md) — depth-stratified `Σ_k α_k Φ_k` is the canonical binding default; α_k structural (z² Markov + m_e·8G Borromean), per-depth assignment rule is the unclosed gap

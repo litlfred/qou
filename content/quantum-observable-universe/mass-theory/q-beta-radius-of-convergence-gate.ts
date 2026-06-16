@@ -17,9 +17,9 @@ export default proposition({
   computation: {
     engine: "python+sympy+mpmath",
     script:
-      "folio-assistant/computations/qbeta/qbeta_radius_of_convergence_gate_probe.py",
+      "computations/qbeta/qbeta_radius_of_convergence_gate_probe.py",
     witness:
-      "folio-assistant/computations/qbeta/qbeta-radius-of-convergence-gate-probe.witness.json",
+      "computations/qbeta/qbeta-radius-of-convergence-gate-probe.witness.json",
     status: "verified",
   },
   tags: [

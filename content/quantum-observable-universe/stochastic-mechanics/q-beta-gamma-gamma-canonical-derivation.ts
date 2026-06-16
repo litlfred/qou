@@ -21,7 +21,7 @@ export default remark({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/probe_q_beta_high_precision_ck.py",
+    script: "computations/probe_q_beta_high_precision_ck.py",
     status: "experimental",
   },
   authorNotes: [

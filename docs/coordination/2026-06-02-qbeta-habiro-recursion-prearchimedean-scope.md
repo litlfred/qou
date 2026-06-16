@@ -42,7 +42,7 @@ This recursion:
 
 ## Cross-references
 
-- T_β knot operator witness: `folio-assistant/computations/qbeta/qbeta-decay-sdp-knot-operator.witness.json`
+- T_β knot operator witness: `computations/qbeta/qbeta-decay-sdp-knot-operator.witness.json`
 - Habiro-ladder equivalence Lean: `content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.lean`
 - PR #1727 audit (archimedean simple-pole / fibre-level): `docs/audits/2026-06-02-qbeta-1ppq-singularity-simple-pole-fibre-level.md`
 - Master ledger: `docs/coordination/1ppq-qbeta.md`

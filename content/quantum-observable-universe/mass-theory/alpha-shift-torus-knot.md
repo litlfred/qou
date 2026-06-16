@@ -57,7 +57,7 @@ never fires on $V_{(1^p)}$.
 
 The maximality claim — that no other $\lambda \vdash p$ achieves
 pole order $> k(p - 1)$ — is **verified case-by-case** in
-[`folio-assistant/computations/alpha/alpha_shift_torus.py`](../../folio-assistant/computations/alpha/alpha_shift_torus.py)
+[`computations/alpha/alpha_shift_torus.py`](../../computations/alpha/alpha_shift_torus.py)
 for $(p, k) \in \{(2, 3), (2, 5), (2, 9), (3, 4), (3, 5),
 (3, 7)\}$: in every case the trivial-channel $V_{(p)}$ gives
 pole order $0$ (it acts by the eigenvalue $q$, contributing
@@ -76,7 +76,7 @@ but defer the categorical argument to a separate proposition.
 ### Witness summary
 
 The numerical evidence
-([`alpha-shift-torus.witness.json`](../../folio-assistant/computations/alpha/alpha-shift-torus.witness.json))
+([`alpha-shift-torus.witness.json`](../../computations/alpha/alpha-shift-torus.witness.json))
 records the full per-irrep symbolic $\chi_\lambda \in \mathbb{Q}(q)$
 together with the pole order at $q = 0$ for every test pair, summarised
 in

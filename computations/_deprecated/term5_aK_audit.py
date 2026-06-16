@@ -57,7 +57,7 @@ Reference:
   - `conj:knot-factor-frobenius-pairing`
 
 Usage:
-    python folio-assistant/computations/term5_aK_audit.py
+    python computations/term5_aK_audit.py
 """
 from __future__ import annotations
 

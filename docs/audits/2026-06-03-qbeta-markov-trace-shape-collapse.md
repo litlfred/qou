@@ -2,8 +2,8 @@
 
 **Date.** 2026-06-03
 **PR.** [#1750](https://github.com/litlfred/qou/pull/1750) (`claude/qbeta-markov-trace-2026-06-03`)
-**Companion compute.** [`folio-assistant/computations/qbeta/qbeta_markov_trace_norm_probe.py`](../../folio-assistant/computations/qbeta/qbeta_markov_trace_norm_probe.py)
-**Witness.** [`qbeta-markov-trace-norm-probe.witness.json`](../../folio-assistant/computations/qbeta/qbeta-markov-trace-norm-probe.witness.json)
+**Companion compute.** [`computations/qbeta/qbeta_markov_trace_norm_probe.py`](../../computations/qbeta/qbeta_markov_trace_norm_probe.py)
+**Witness.** [`qbeta-markov-trace-norm-probe.witness.json`](../../computations/qbeta/qbeta-markov-trace-norm-probe.witness.json)
 **Addresses.** [`2026-06-03-qbeta-step1-symbolic-min-l2.md`](2026-06-03-qbeta-step1-symbolic-min-l2.md) caveat §1 (basis-dependence of the Euclidean L2 norm).
 
 ## TL;DR

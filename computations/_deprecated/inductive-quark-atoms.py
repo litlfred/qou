@@ -14,7 +14,7 @@ Negative coefficients = prior interaction inputs (causal history)
 Positive coefficients = observable outputs (the atom/particle)
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 inductive-quark-atoms.py
 
     # For specific atom only:

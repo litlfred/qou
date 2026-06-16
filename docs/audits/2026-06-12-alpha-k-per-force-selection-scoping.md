@@ -13,7 +13,7 @@ what are the other 5?").
 | The 7 force operators: identity (**unknot**, free propagation) + 6 cohomological basis knots | [`cohomological-embedding.md`](../../content/quantum-observable-universe/brings-surface/cohomological-embedding.md) consequence 3 | established |
 | Per-operator interaction roles: T_{2,3} mass/EM (trefoil), T_{2,5} 2nd gen, T_{2,7} 3rd gen, T_{2,9} strong, T_{3,4} Hopf-squared/top, T_{3,5} weak | same block + [`force-knot-identification.md`](../../content/quantum-observable-universe/predicted-spectra/force-knot-identification.md) | established |
 | EM is **not a knot** — it is the involutive structure; its coupling slot is the unique 2-strand singlet V₋ ≅ **1** (the unknot channel) | [`em-spectral-completeness.md`](../../content/quantum-observable-universe/mass-theory/em-spectral-completeness.md), [`gauge-coupling-uniqueness.md`](../../content/quantum-observable-universe/predicted-spectra/gauge-coupling-uniqueness.md) | theorem |
-| α_EM value: 1/α_EM = q[9]_q[10]_q from the genus-4 carrier pair (T_{2,9}, T_{3,5}) | `prop:alpha-em-categorical-trace-ratio`; assembled end-to-end in [`alpha_k_per_force_assembly.py`](../../folio-assistant/computations/alpha_k_per_force_assembly.py) (PR #2107) | established |
+| α_EM value: 1/α_EM = q[9]_q[10]_q from the genus-4 carrier pair (T_{2,9}, T_{3,5}) | `prop:alpha-em-categorical-trace-ratio`; assembled end-to-end in [`alpha_k_per_force_assembly.py`](../../computations/alpha_k_per_force_assembly.py) (PR #2107) | established |
 | δ_q(T_{m,k}) = h[(m−1)k]_q (writhe rule) | `prop:torus-knot-delta-q-writhe` (PR #2107), sorry-free Lean | proved |
 | Intertwining channel λ(T_{m,k}) = (m, 1^{n−m}) | [`force-carrier-intertwining-correspondence.md`](../../content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.md) | conditional on `conj:e-hartree-categorical-derivation` |
 
@@ -41,7 +41,7 @@ slot carries each force's coupling. The established EM case: the 2-strand
 sector has **exactly one** braid-invariant scalar coupling A⊗A → **1**
 (`thm:em-spectral-completeness`, rank-2 e₊/e₋ split; V₋ ≅ **1**).
 
-New probe [`alpha_k_four_strand_singlet_selection.py`](../../folio-assistant/computations/alpha_k_four_strand_singlet_selection.py)
+New probe [`alpha_k_four_strand_singlet_selection.py`](../../computations/alpha_k_four_strand_singlet_selection.py)
 (witness 5/5) derives the full ladder, exact and pre-archimedean:
 
 $$\dim\operatorname{Hom}(\mathbf{1}, A^{\otimes n}) = \begin{cases} 0 & n \text{ odd}\\ \mathrm{Catalan}(n/2) & n \text{ even}\end{cases} = 1, 2, 5, 14 \text{ at } n = 2, 4, 6, 8.$$
@@ -64,7 +64,7 @@ archimedean trace-ratio on the slot space) is open and gated.
 
 ## 3b. The conditional selection rule (owner-directed continuation, same day)
 
-Probe [`alpha_k_selection_rule_conditional.py`](../../folio-assistant/computations/alpha_k_selection_rule_conditional.py)
+Probe [`alpha_k_selection_rule_conditional.py`](../../computations/alpha_k_selection_rule_conditional.py)
 (witness 6/6) derives the rule exactly, conditional on
 `conj:e-hartree-categorical-derivation`:
 

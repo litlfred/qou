@@ -41,7 +41,7 @@ derivatives via `m_n = m_p(substrate) + Q_β + m_e` and
 ## 2. Current L2 dashboard (2026-05-31T15:23 UTC)
 
 Per
-[`per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json)
+[`per-observable-100x-status.witness.json`](../../computations/per-observable-100x-status.witness.json)
 (commit `9e45f6d4`):
 
 | obs | role | miss × | err (ppb) | target (ppb) |
@@ -88,7 +88,7 @@ Per the canonical truncation-order framing
 ([`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)),
 the dashboard's 164× headline reflects a **tier policy**, not a
 compute limit. Per
-[`qbeta-ck-truncation-order-analysis.witness.json`](../../folio-assistant/computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json):
+[`qbeta-ck-truncation-order-analysis.witness.json`](../../computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json):
 
 | N | c_k tier | cumulative residual (ppb) | miss factor vs 7.8 ppb target |
 |---:|---|---:|---:|
@@ -196,8 +196,8 @@ Q_β-derivation gap propagating to m_n / Δ_pn). This 2026-05-31 audit
 - Δ_λ gating context (deeper structural backdrop):
   [`2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md)
 - L2 dashboard witness:
-  [`per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json)
+  [`per-observable-100x-status.witness.json`](../../computations/per-observable-100x-status.witness.json)
 - Q_β c_k cache (tier table):
-  [`qbeta-ck-cache.witness.json`](../../folio-assistant/computations/qbeta/qbeta-ck-cache.witness.json)
+  [`qbeta-ck-cache.witness.json`](../../computations/qbeta/qbeta-ck-cache.witness.json)
 - Q_β truncation-order analysis (per-rung residuals):
-  [`qbeta-ck-truncation-order-analysis.witness.json`](../../folio-assistant/computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json)
+  [`qbeta-ck-truncation-order-analysis.witness.json`](../../computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json)

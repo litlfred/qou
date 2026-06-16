@@ -63,7 +63,7 @@ class PeriodicTableDemand : Prop where
     is the unproved content of the corresponding claim. -/
 -- Ref: [manuscript] conj:periodic-table-demand
 instance periodic_table_demand_conjecture : PeriodicTableDemand where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   valley_of_stability_matches := fun _ _ => sorry
   -- Ref: [manuscript]
   magic_numbers_from_demand_closure := sorry

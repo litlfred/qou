@@ -23,7 +23,7 @@ namespace QOU.Information
 
     Conjectural class — see [`conj:qou-p-neq-np`](../../../quantum-observable-universe/information-theory/qou-p-neq-np.md). -/
 class QouPNeqNp where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Conjecture statement** (from manuscript):
 
       At the physical substrate parameter

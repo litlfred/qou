@@ -45,8 +45,8 @@
        [manuscript] prop:alpha-shift-torus-knot
        [audit] docs/audits/2026-05-28-binding-endomorphism-analogy.md
        [audit] docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md
-       [probe] folio-assistant/computations/binding_rotation_phase_lead.py
-       [probe] folio-assistant/computations/binding_qhamiltonian_rotational_scale.py
+       [probe] computations/binding_rotation_phase_lead.py
+       [probe] computations/binding_qhamiltonian_rotational_scale.py
 -/
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Data.Real.Basic

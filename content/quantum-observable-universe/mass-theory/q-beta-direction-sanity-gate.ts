@@ -18,9 +18,9 @@ export default proposition({
   computation: {
     engine: "python+sympy+mpmath",
     script:
-      "folio-assistant/computations/qbeta/qbeta_direction_sanity_gate_probe.py",
+      "computations/qbeta/qbeta_direction_sanity_gate_probe.py",
     witness:
-      "folio-assistant/computations/qbeta/qbeta-direction-sanity-gate-probe.witness.json",
+      "computations/qbeta/qbeta-direction-sanity-gate-probe.witness.json",
     status: "verified",
   },
   tags: [

@@ -2,7 +2,7 @@
 
 **Status:** design pass. No code changes yet.
 **Target:** four atomic-link entries in
-[`folio-assistant/computations/low-isotope-mass-table.witness.json`](../../folio-assistant/computations/low-isotope-mass-table.witness.json)
+[`computations/low-isotope-mass-table.witness.json`](../../computations/low-isotope-mass-table.witness.json)
 that use the `manual-historical-volume-match` shortcut:
 
 | Entry | Strategy tag | Census braid | SnapPy `Vol_hyp` used today |
@@ -29,9 +29,9 @@ with the symbolic value.  Compare against AME-derived B values.
 
 | Asset | Path | Coverage | Gap |
 |-------|------|----------|-----|
-| Symbolic Markov-trace recursion | `folio-assistant/computations/markov/markov_trace_canonical.py` | Implements canonical tr_M with cyclicity, Markov II, Hecke quadratic.  Symbolic in q. | Returns sympy expression; needs harness to feed it the four target braid words and evaluate at `q_0` mpf. |
-| Memoised q-MN characters | `folio-assistant/computations/q_mn_recursive_memoized.py` | Halverson–Ram broken-strip rule, all partitions/cycle types up to large n. | Already gives χ_λ(β) symbolically; not yet wired to ²H/³H/³He braid words. |
-| Wenzl-bridge `y_λ` extension | `folio-assistant/computations/y_lambda_wenzl_bridge_extended.py` | Symbolic `y_λ` for n=2..12 via Schur principal specialisation. | Provides the *weights*; combined with χ_λ they form `tr_M = Σ y_λ χ_λ / d_λ` (or similar) — needs explicit assembler. |
+| Symbolic Markov-trace recursion | `computations/markov/markov_trace_canonical.py` | Implements canonical tr_M with cyclicity, Markov II, Hecke quadratic.  Symbolic in q. | Returns sympy expression; needs harness to feed it the four target braid words and evaluate at `q_0` mpf. |
+| Memoised q-MN characters | `computations/q_mn_recursive_memoized.py` | Halverson–Ram broken-strip rule, all partitions/cycle types up to large n. | Already gives χ_λ(β) symbolically; not yet wired to ²H/³H/³He braid words. |
+| Wenzl-bridge `y_λ` extension | `computations/y_lambda_wenzl_bridge_extended.py` | Symbolic `y_λ` for n=2..12 via Schur principal specialisation. | Provides the *weights*; combined with χ_λ they form `tr_M = Σ y_λ χ_λ / d_λ` (or similar) — needs explicit assembler. |
 | Hoefsmit witness (k=3..11) | `hoefsmit_witness.py` + `hoefsmit_witness.json` | Pre-computed χ(4₁), χ(B³) at every λ for k=3..11. | Lacks `χ(8_11)` for ³H; lacks `χ(T(2,3))` for the electron. |
 | MPFR seminormal kernel | `tools/hecke-engine/src/seminormal_mpfr.rs` | Arbitrary-precision χ_λ(β) evaluator. | Already callable from Python via `pyhecke_native`. |
 
@@ -60,7 +60,7 @@ For each braid word, we need:
 ## New emitter required
 
 A single new script
-`folio-assistant/computations/tr_m_symbolic_low_isotope.py` that:
+`computations/tr_m_symbolic_low_isotope.py` that:
 
 1. Imports `markov_trace_canonical.tr_M_word`.
 2. Hard-codes the four braid words above (with literature
@@ -71,7 +71,7 @@ A single new script
    the derivative `d/dq tr_M` at `q_0` (for error budget), and
    the AME-derived target.
 4. Writes
-   `folio-assistant/computations/tr-m-symbolic-low-isotope.witness.json`
+   `computations/tr-m-symbolic-low-isotope.witness.json`
    with `precision: "mpfr_50dps"`.
 
 ## tr_M outputs we need (concrete table)

@@ -12,7 +12,7 @@ Usage:
 
 The Sommerfeld factor F(η) handles Coulomb corrections for all Z.
 
-@module folio-assistant/computations/phase_space
+@module computations/phase_space
 """
 
 import math

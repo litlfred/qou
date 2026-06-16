@@ -21,10 +21,10 @@ export default remark({
   ],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/q_beta_form_a_n1_extension.py",
+    script: "computations/q_beta_form_a_n1_extension.py",
     witness: [
-      "folio-assistant/computations/q-beta-form-a-n1-extension.witness.json",
-      "folio-assistant/computations/confinement-operator-selection.witness.json",
+      "computations/q-beta-form-a-n1-extension.witness.json",
+      "computations/confinement-operator-selection.witness.json",
     ],
     status: "experimental",
   },

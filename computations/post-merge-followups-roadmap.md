@@ -18,7 +18,7 @@ this PR opens with the planning + first probes.
 ### A. Cross-witness schema standardization (Copilot review)
 
 The repo's canonical schema (`folio-assistant/schemas/types.ts` →
-`ComputationWitness`, with `folio-assistant/computations/witness_base.py`)
+`ComputationWitness`, with `computations/witness_base.py`)
 uses `computedAt`. Most witnesses pre-dating the schema use
 `timestamp`; the 34 newer witnesses introduced in PR #427 use
 `timestamp_utc`. Three legacy fields, one canonical:

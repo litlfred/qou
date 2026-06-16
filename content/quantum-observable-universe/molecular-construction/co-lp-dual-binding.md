@@ -17,7 +17,7 @@ orbital** ($\sigma$ head-on, $\pi_x, \pi_y$ lateral).  Because distinct
 orbitals are orthogonal, electrons in different channels share **no**
 $e$–$e$ crossing, so the channels bind independently and additively.  The
 single $\sigma$ channel binds at
-$:val[sigma_channel_eV]{precision=4, witness=folio-assistant/computations/co-bond-order-active-set.witness.json}$
+$:val[sigma_channel_eV]{precision=4, witness=computations/co-bond-order-active-set.witness.json}$
 (the $H_2$-scale covalent channel).
 
 ## Why a single chain fails (computational refutation)
@@ -28,7 +28,7 @@ the second and third pairs **anti-bind**, because forcing every bonding
 electron into one orbital accumulates $e$–$e$ repulsion — the braid-model
 expression of orbital exclusion.  The bond-selection LP on that
 single-chain model has an active set of cardinality $1$, not $3$
-([witness `co-bond-order-active-set`](folio-assistant/computations/co-bond-order-active-set.witness.json)).
+([witness `co-bond-order-active-set`](computations/co-bond-order-active-set.witness.json)).
 The triple bond therefore *requires* the orthogonal decomposition; a
 "decreasing-but-positive marginal in one chain" does not occur.
 
@@ -79,7 +79,7 @@ as equal independent copies, which overbinds the total energy
 reduction: the **cardinality** result is robust, the **energy** is not.
 
 The observed dissociation energy
-$D_0(CO) \approx :val[observed_D0_CO_eV]{precision=4, witness=folio-assistant/computations/co-bond-order-active-set.witness.json}$
+$D_0(CO) \approx :val[observed_D0_CO_eV]{precision=4, witness=computations/co-bond-order-active-set.witness.json}$
 is the strongest diatomic bond, consistent with three occupied channels.
 $CO$ is isoelectronic with $\mathrm{N_2}$: both carry three shared
 orthogonal channels with the same Hecke-algebra structure in their

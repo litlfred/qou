@@ -48,12 +48,12 @@ to reveal which terms combine to produce the (u^4+1) factor.
 DATA SOURCES
 ============
 
-  - folio-assistant/computations/habiro-coefficients-atomic.witness.json
+  - computations/habiro-coefficients-atomic.witness.json
     (p, n, D; on main)
   - /tmp/he3.json, /tmp/he4.json — ³He, ⁴He, extracted from
     PR #1618 branch (claude/qbeta-habiro-followup-2026-06-01) since
     those witnesses are not yet on main. The probe falls back to
-    looking for sibling-branch witnesses in `folio-assistant/computations/`
+    looking for sibling-branch witnesses in `computations/`
     if /tmp copies are missing.
 
 USAGE
@@ -63,7 +63,7 @@ USAGE
 
 OUTPUTS
 -------
-  folio-assistant/computations/qbeta-habiro-delta-am-partial-sum-scan.witness.json
+  computations/qbeta-habiro-delta-am-partial-sum-scan.witness.json
 
 Ref:
   docs/audits/2026-06-01-qbeta-habiro-phi8-squared-mechanism.md
@@ -135,7 +135,7 @@ def load_atomic(u: sp.Symbol) -> dict[str, dict[int, sp.Poly]]:
 def load_helium(u: sp.Symbol) -> dict[str, dict[int, sp.Poly]]:
     """Helium witnesses live on PR #1618 branch (not on main yet).
     We try /tmp first (extracted via `git show`), then a sibling-branch
-    fallback inside folio-assistant/computations."""
+    fallback inside computations."""
 
     def _try(p: Path) -> dict | None:
         if p.exists():

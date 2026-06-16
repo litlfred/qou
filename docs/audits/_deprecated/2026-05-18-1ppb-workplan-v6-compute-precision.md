@@ -21,7 +21,7 @@ though `cross_check_trM_1ppb.py`'s headline table over-reports
 agreement at atoms where it can't run a full 4-way comparison:
 
 ```
-$ python3 folio-assistant/computations/cross_check_trM_1ppb.py
+$ python3 computations/cross_check_trM_1ppb.py
   proton       Hoefsmit, peel, chi-cache              5.18e-16  OK
   neutron      Hoefsmit, peel, chi-cache              4.79e-16  OK
   deuteron     Hoefsmit, peel, chi-cache, Habiro      1.00e-15  OK
@@ -85,7 +85,7 @@ call-sites were migrated to `Q_50_DIGIT_STR` in PR #749 (e.g.
 `canonical_tr_m_via_chi_cache.py:108`). A repo-wide search for
 `mp.mpf(repr(Q_FLOAT))` now returns zero hits in production paths.
 The 1ppb gate is green at all 8 atoms with the worst residual
-below 1e-13 per the [L1 dashboard](../../folio-assistant/computations/onepb-status-dashboard.witness.json).
+below 1e-13 per the [L1 dashboard](../../computations/onepb-status-dashboard.witness.json).
 This subsection is retained as historical context for the v6
 workplan; new precision work should reference the dashboard, not
 this paragraph.
@@ -268,5 +268,5 @@ is GP-free and clears the gate.
 - [`prop:atomic-mass-via-rho-k`](../../content/quantum-observable-universe/braids-and-knots/atomic-mass-via-rho-k.md)
 - [`2026-05-18-hoefsmit-c-full-step6-bench-finding.md`](2026-05-18-hoefsmit-c-full-step6-bench-finding.md) — the #730 negative result
 - [`2026-05-18-y-lambda-scaling-analysis.md`](2026-05-18-y-lambda-scaling-analysis.md) — atom-extension feasibility ceiling
-- `folio-assistant/computations/cross-check-trM-1ppb.witness.json`
-- `folio-assistant/computations/cross_check_trM_1ppb.py`
+- `computations/cross-check-trM-1ppb.witness.json`
+- `computations/cross_check_trM_1ppb.py`

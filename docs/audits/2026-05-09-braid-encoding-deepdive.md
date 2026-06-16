@@ -205,14 +205,14 @@ shell-saturation.
 
 ## 7 — Cross-references
 
-- Braid-encoding audit + script: [`braid-encoding-audit.witness.json`](../../folio-assistant/computations/audits/braid-encoding-audit.witness.json),
-  [`braid_encoding_audit.py`](../../folio-assistant/computations/audits/braid_encoding_audit.py)
-- Neutron error diagnostic: [`neutron-error-diagnostic.witness.json`](../../folio-assistant/computations/neutron-error-diagnostic.witness.json)
-- Option B closed-form chain: [`option-b-proton-mass-full-chain.witness.json`](../../folio-assistant/computations/option-b-proton-mass-full-chain.witness.json)
+- Braid-encoding audit + script: [`braid-encoding-audit.witness.json`](../../computations/audits/braid-encoding-audit.witness.json),
+  [`braid_encoding_audit.py`](../../computations/audits/braid_encoding_audit.py)
+- Neutron error diagnostic: [`neutron-error-diagnostic.witness.json`](../../computations/neutron-error-diagnostic.witness.json)
+- Option B closed-form chain: [`option-b-proton-mass-full-chain.witness.json`](../../computations/option-b-proton-mass-full-chain.witness.json)
 - m_e anomaly audit: [`2026-05-09-proton-m_e-anomaly.md`](2026-05-09-proton-m_e-anomaly.md)
 - Mass-table 1ppb audit: [`2026-05-09-mass-table-1ppb-audit.md`](2026-05-09-mass-table-1ppb-audit.md)
 - Sibling: `claude/term7-alpha5-derive-investigation` HEAD
   [`6c385531`](https://github.com/litlfred/qou/commit/6c385531fccc3fda82b43ee71bd49673f1204ec3)
-- Strategy-3 chain: [`atomic_braid_mass_table.py`](../../folio-assistant/computations/atomic_braid_mass_table.py)
+- Strategy-3 chain: [`atomic_braid_mass_table.py`](../../computations/atomic_braid_mass_table.py)
 - Writhe convention: [`chirality-writhe-ribbon-derivation.md`](../../content/quantum-observable-universe/braids-and-knots/chirality-writhe-ribbon-derivation.md)
-- Difference-formula source: [`fresh_derivation_pn_true_sdp.py:1-26`](../../folio-assistant/computations/fresh_derivation_pn_true_sdp.py)
+- Difference-formula source: [`fresh_derivation_pn_true_sdp.py:1-26`](../../computations/fresh_derivation_pn_true_sdp.py)

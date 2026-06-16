@@ -29,4 +29,4 @@ phenomenon, in agreement with the first-order Reeb coupling
 $(1 - q^{-1})$ of the
 [categorical Dirac operator](#def:categorical-dirac-operator).  The
 identity is verified numerically to fifty digits in the witness
-[`q1-mass-gap-probe.witness.json`](../../../folio-assistant/computations/q1-mass-gap-probe.witness.json).
+[`q1-mass-gap-probe.witness.json`](../../../computations/q1-mass-gap-probe.witness.json).

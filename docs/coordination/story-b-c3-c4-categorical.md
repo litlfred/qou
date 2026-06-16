@@ -198,7 +198,7 @@ the one cited by CLAUDE.md §7a `thm:jones-markov-trace`.**
 
 ### Fix shipped (commit 19ac57828 on this branch)
 
-Added to `folio-assistant/computations/hoefsmit_symbolic.py`:
+Added to `computations/hoefsmit_symbolic.py`:
 
 | Name | Status | Function |
 |---|---|---|

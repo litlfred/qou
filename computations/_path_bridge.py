@@ -12,7 +12,7 @@ existing 794-file cross-import surface uses bare-name imports:
     from A_operator_extract_general import ...
 
 This module, when imported, ensures every cluster subdirectory
-of `folio-assistant/computations/` is on `sys.path`, so bare-name
+of `computations/` is on `sys.path`, so bare-name
 imports continue to resolve regardless of which subdirectory the
 importer or importee lives in. Skips `_deprecated/`,
 `__pycache__/`, `data/`, and any other leading-underscore /
@@ -25,7 +25,7 @@ USAGE — every moved script begins with this 4-line bootstrap:
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
     import _path_bridge  # noqa: F401
 
-The first 3 lines add `folio-assistant/computations/` to sys.path
+The first 3 lines add `computations/` to sys.path
 so that this module (`_path_bridge`) is findable. The fourth line
 loads this module, which then adds every cluster subdir to
 sys.path.
@@ -94,7 +94,7 @@ def witness_path(name: str, prefer_dir: "Path | None" = None) -> Path:
          so a script's own emitted witness is found in its own
          directory first (post-cluster-refactor convention).
       2. Every cluster subdirectory of
-         ``folio-assistant/computations/``, then the package
+         ``computations/``, then the package
          root.
 
     Returns the first existing match. If nothing matches, returns

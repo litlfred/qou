@@ -11,9 +11,9 @@ Two files in the codebase identify the muon's underlying knot **differently**:
 | File | Muon knot | Vol | Hyperbolic? |
 |---|---|---|---|
 | [`observations/skein-mass-relation.md`](../../content/quantum-observable-universe/observations/skein-mass-relation.md):32 | $4_1$ (figure-eight) | $\mathrm{Vol}(4_1) \approx 2.0299$ | **YES** |
-| [`folio-assistant/computations/knot-volumes.py`](../../folio-assistant/computations/knot-volumes.py):67-73 | $5_1$ = T(2,5) cinquefoil | $\mathrm{Vol}(5_1) = 0$ | **NO** (torus knot) |
+| [`computations/knot-volumes.py`](../../computations/knot-volumes.py):67-73 | $5_1$ = T(2,5) cinquefoil | $\mathrm{Vol}(5_1) = 0$ | **NO** (torus knot) |
 
-In the same script ([`knot-volumes.py`](../../folio-assistant/computations/knot-volumes.py):58-64), the figure-eight $4_1$ is identified as **the Higgs** particle, NOT the muon.
+In the same script ([`knot-volumes.py`](../../computations/knot-volumes.py):58-64), the figure-eight $4_1$ is identified as **the Higgs** particle, NOT the muon.
 
 ## Why this matters
 
@@ -109,6 +109,6 @@ The current empirical evidence (Skein formula gives correct CODATA 206.77 → q_
 - Conflicting sources:
   - [`observations/skein-mass-relation.md`](../../content/quantum-observable-universe/observations/skein-mass-relation.md):32
   - [`observations/skein-mass-relation-proof.md`](../../content/quantum-observable-universe/observations/skein-mass-relation-proof.md):6 (cites $4_1$)
-  - [`folio-assistant/computations/knot-volumes.py`](../../folio-assistant/computations/knot-volumes.py):67-73
+  - [`computations/knot-volumes.py`](../../computations/knot-volumes.py):67-73
 - Sibling: PR #1153 (T(2,5) ≠ muon per its labeling)
 - Affected: any compute consuming `knot-volumes.py` particle labels

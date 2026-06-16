@@ -10,9 +10,9 @@ export default proposition({
   },
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/cyclotomic_trilog_imaginary.py",
+    script: "computations/cyclotomic_trilog_imaginary.py",
     witness:
-      "folio-assistant/computations/cyclotomic-trilog-imaginary.witness.json",
+      "computations/cyclotomic-trilog-imaginary.witness.json",
     status: "verified",
   },
   uses: [

@@ -58,7 +58,7 @@ ordering).  The two force-carrier predictions:
 | $T_{3,5}$ | $p = 3$ | $\lambda = (3, 1)$ |
 
 Computational verification at $q_0 \approx 1.110$ (witness
-[`delta-q-decoration.witness.json`](folio-assistant/computations/delta-q-decoration.witness.json)):
+[`delta-q-decoration.witness.json`](computations/delta-q-decoration.witness.json)):
 
 | $\lambda \vdash 4$ | $\delta_q$-component on bare braid $\sigma_1\sigma_2\sigma_3$ | interpretation |
 |---|---:|---|

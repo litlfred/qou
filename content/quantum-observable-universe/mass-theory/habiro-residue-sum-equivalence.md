@@ -37,7 +37,7 @@ declarations of `gradedMarkovTrace` and `residueAtRoot`.
 
 **Empirical witness.** The agreement is certified at machine precision
 on every available atomic Markov trace by
-`folio-assistant/computations/markov/markov_pipeline_cross_validator.py`.  The
+`computations/markov/markov_pipeline_cross_validator.py`.  The
 cross-pipeline witness records, per atom, the relative difference
 between the two paths.  The current run achieves:
 

@@ -47,7 +47,7 @@
         "reviewed_at": "2026-06-14T01:08:44.722Z",
         "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/molecular-construction/h2-lp-dual-binding.ts:1: LP/SDP witness 'folio-assistant/computations/h2-integer-lp.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
+        "evidence": "content/quantum-observable-universe/molecular-construction/h2-lp-dual-binding.ts:1: LP/SDP witness 'computations/h2-integer-lp.witness.json' missing dual field(s): y0_star, y_star, primal_obj, dual_obj, duality_gap, active_set (or alias: active_set/active_constraints/active_channels)"
       }
     ],
     "voice-status-leak": [

@@ -85,7 +85,7 @@ spectrum (both in
   orientable cusped hyperbolic 3-manifold (Cao--Meyerhoff 2001):
   volume $\mathrm{Vol}(4_1) = 2 \, \mathrm{Cl}_2(\pi/3) \approx
   2.02988321281931$ (witnessed at $50$ decimal digits in
-  [`hyperbolic-volumes.witness.json`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/folio-assistant/computations/hyperbolic-volumes.witness.json)
+  [`hyperbolic-volumes.witness.json`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/computations/hyperbolic-volumes.witness.json)
   via the Clausen-function identity), gap conservatively set to
   $0.5 < \mathrm{Vol}(5_2) - \mathrm{Vol}(4_1) \approx 0.798$.
   Both Lean literals carry `:leanval[...]` tags so the

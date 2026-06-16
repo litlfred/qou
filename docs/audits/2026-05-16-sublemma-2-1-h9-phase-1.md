@@ -24,19 +24,19 @@ For tritium $\beta_T = \beta_p \cdot I_{pn} \cdot \beta_n \cdot I_{nn} \cdot \be
 
 Three new files:
 
-1. **[`folio-assistant/computations/sublemma_2_1_A_operator_extract_h9.py`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/folio-assistant/computations/sublemma_2_1_A_operator_extract_h9.py)**
+1. **[`computations/sublemma_2_1_A_operator_extract_h9.py`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/computations/sublemma_2_1_A_operator_extract_h9.py)**
    — extracts $A^\lambda_{\xi\nu}(I_2)$ at H_9 via least-squares
    bilinear-system inversion across $K_6 \times K_3 = 12 \times 12 = 144$
    test pairs. Emits both summary stats AND full matrix entries
    (`matrix_re`, `matrix_im`) per (ξ, ν) block, so downstream
    verification can apply A directly without re-extracting.
-2. **[`folio-assistant/computations/sublemma_2_1_h9_tritium_verify.py`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/folio-assistant/computations/sublemma_2_1_h9_tritium_verify.py)**
+2. **[`computations/sublemma_2_1_h9_tritium_verify.py`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/computations/sublemma_2_1_h9_tritium_verify.py)**
    — Path A vs Path B verification on the tritium braid:
    - Path A: direct $\chi^\lambda(\beta_T)$ via Hoefsmit at H_9 for all 30 λ ⊢ 9
    - Path B: iterated 2-interface formula using extracted A's + the
      existing H_6 deuteron $A^\xi_{\mu\nu'}(I_{pn})$
 3. **Cache-path bug fix in
-   [`folio-assistant/computations/mass_at_3A_proper.py`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/folio-assistant/computations/mass_at_3A_proper.py)**
+   [`computations/mass_at_3A_proper.py`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/computations/mass_at_3A_proper.py)**
    (separate concern, see §"Cache-path bug fix" below).
 
 ### Results
@@ -122,7 +122,7 @@ extraction (~3.5 min), exact (no rank deficiency), works for ALL
 
 ### Implementation status — DONE
 
-[`folio-assistant/computations/sublemma_2_1_h9_branching_basis.py`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/folio-assistant/computations/sublemma_2_1_h9_branching_basis.py)
+[`computations/sublemma_2_1_h9_branching_basis.py`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/computations/sublemma_2_1_h9_branching_basis.py)
 implements the branching-basis algorithm in ~400 lines:
 
 1. **SYT enumeration + ξ-restriction grouping** (~30 lines): uses
@@ -169,7 +169,7 @@ $(W_{\mathrm{inner}}, \beta_3)$ pair.
 ## Cache-path bug fix (separate concern)
 
 While running Phase 1 extraction, hit a CACHE COLLISION bug in
-[`mass_at_3A_proper._cached_seminormal`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/folio-assistant/computations/mass_at_3A_proper.py):
+[`mass_at_3A_proper._cached_seminormal`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/computations/mass_at_3A_proper.py):
 
 ```python
 # before (buggy)
@@ -219,9 +219,9 @@ Phase 1 uses only $q_0$ (CAL-2). No $m_e$, $Q_\beta$, AME data.
   — original scaffold + math
 - [`docs/audits/2026-05-04-sublemma-2-1-refined.md`](2026-05-04-sublemma-2-1-refined.md)
   — single-interface H_6 (deuteron) closure at machine ε
-- [`folio-assistant/computations/sublemma_2_1_A_operator_extract.py`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/folio-assistant/computations/sublemma_2_1_A_operator_extract.py)
+- [`computations/sublemma_2_1_A_operator_extract.py`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/computations/sublemma_2_1_A_operator_extract.py)
   — H_6 (deuteron) extraction (Phase 0; verified)
-- [`folio-assistant/computations/sublemma-2-1-A-operator-extract-h9-nn.witness.json`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/folio-assistant/computations/sublemma-2-1-A-operator-extract-h9-nn.witness.json)
+- [`computations/sublemma-2-1-A-operator-extract-h9-nn.witness.json`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/computations/sublemma-2-1-A-operator-extract-h9-nn.witness.json)
   — Phase 1 H_9 extraction witness (this branch)
-- [`folio-assistant/computations/sublemma-2-1-h9-tritium-verify.witness.json`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/folio-assistant/computations/sublemma-2-1-h9-tritium-verify.witness.json)
+- [`computations/sublemma-2-1-h9-tritium-verify.witness.json`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/computations/sublemma-2-1-h9-tritium-verify.witness.json)
   — Phase 1 verification witness (this branch)

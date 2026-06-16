@@ -19,7 +19,7 @@ $$
 - *$C_{\lambda_{\mathrm{shell}}}(q_0)$ is the **closed-form Wedderburn
  coefficient** of $\sigma_{\mathrm{shell}}$ at the staircase
  partition, derived in
- [`sigma-shell-A2-closed-form.derivation.json`](../../../folio-assistant/computations/sigma-shell-A2-closed-form.derivation.json)
+ [`sigma-shell-A2-closed-form.derivation.json`](../../../computations/sigma-shell-A2-closed-form.derivation.json)
  for $A_{\mathrm{magic}} = 2$ (where $\lambda_{\mathrm{shell}} = (3,2,1)$,
  $C_{(3,2,1)}(q_0) = 0.0374882414\ldots$);*
 - *$y_{\lambda_{\mathrm{shell}}}(q_0)$ is the **Wenzl-bridge central
@@ -27,22 +27,22 @@ $$
  ([prop:y-lambda-closed-form-wenzl-bridge](#prop:y-lambda-closed-form-wenzl-bridge));
  for $(3,2,1)$ at $q_0$, $y_{(3,2,1)}(q_0) = 0.00731845\ldots$
  (read from
- [`y-lambda-wenzl-bridge-symbolic-witness.json`](../../../folio-assistant/computations/y-lambda-wenzl-bridge-symbolic-witness.json));*
+ [`y-lambda-wenzl-bridge-symbolic-witness.json`](../../../computations/y-lambda-wenzl-bridge-symbolic-witness.json));*
 - *$\chi^{\lambda_{\mathrm{shell}}}(\mathcal{B}_K)$ is the **Hoefsmit
  character** of the atom braid in the irrep $\rho_{\lambda_{\mathrm{shell}}}$
  ([conj:hoefsmit-scattering-pipeline](#conj:hoefsmit-scattering-pipeline));
  computed for the deuteron via
- [`hecke_character_symbolic.q_character_on_braid_word`](../../../folio-assistant/computations/hecke/hecke_character_symbolic.py).*
+ [`hecke_character_symbolic.q_character_on_braid_word`](../../../computations/hecke/hecke_character_symbolic.py).*
 
 **Numerical verification — A_magic = 2 (deuteron).**
 
 *Computed live in
-[`sigma-shell-from-beta-chain.witness.json`](../../../folio-assistant/computations/sigma-shell-from-beta-chain.witness.json):*
+[`sigma-shell-from-beta-chain.witness.json`](../../../computations/sigma-shell-from-beta-chain.witness.json):*
 
 See [Table](#tbl:sigma-shell-from-beta-chain-derivation-table-data).
 
 *The benchmark is itself order-of-magnitude
-([HANDOVER-STATUS.md §3c](../../../folio-assistant/computations/HANDOVER-STATUS.md));
+([HANDOVER-STATUS.md §3c](../../../computations/HANDOVER-STATUS.md));
 12 % agreement is consistent. An exact derivation would replace the
 benchmark with the true categorical mass-formula contribution
 $\Delta\mathfrak{m}_{\mathrm{shell}}(D) / \mathfrak{m}(D)$, picking
@@ -70,7 +70,7 @@ identifies $\sigma_{\mathrm{shell}}$ as a **separately-constructed
 element** of $H_{n}(q)$ supported on the staircase partition, with
 closed-form Wedderburn coefficient $C_{\lambda_{\mathrm{shell}}}$
 already derived in
-[`sigma-shell-A2-closed-form.derivation.json`](../../../folio-assistant/computations/sigma-shell-A2-closed-form.derivation.json).
+[`sigma-shell-A2-closed-form.derivation.json`](../../../computations/sigma-shell-A2-closed-form.derivation.json).
 The shell magnitude $y_{\mathrm{target}}$ is therefore a
 **categorical observable** depending on:*
 
@@ -147,7 +147,7 @@ $$
 from the substrate:*
 
 - *$C_{\lambda_{\mathrm{shell}}}(q_0)$ — derived in
- [`sigma-shell-A2-closed-form.derivation.json`](../../../folio-assistant/computations/sigma-shell-A2-closed-form.derivation.json) (ALL steps trust-basis = AXIOM or DERIVED, no SCRIPT_CITED frontier);*
+ [`sigma-shell-A2-closed-form.derivation.json`](../../../computations/sigma-shell-A2-closed-form.derivation.json) (ALL steps trust-basis = AXIOM or DERIVED, no SCRIPT_CITED frontier);*
 - *$y_{\lambda}(q_0)$ — closed form per
  [`prop:y-lambda-closed-form-wenzl-bridge`](#prop:y-lambda-closed-form-wenzl-bridge);*
 - *$\chi^\lambda(\mathcal{B}_K)$ — Hoefsmit character per

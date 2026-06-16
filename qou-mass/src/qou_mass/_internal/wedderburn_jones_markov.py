@@ -24,7 +24,7 @@ References:
 - 1ppb workplan §P3 (`docs/coordination/1ppb.md`)
 - docs/audits/2026-05-08-p3-h-3a-divergence.md
 
-@module folio-assistant/computations/wedderburn_jones_markov
+@module computations/wedderburn_jones_markov
 """
 
 from __future__ import annotations

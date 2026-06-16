@@ -84,7 +84,7 @@ giving $c_3 = -2$ as a **structural prediction**, not an empirical fit.
 
 ## Empirical confirmation
 
-Per [`probe_q_beta_gamma_gamma_derivation.py`](../../folio-assistant/computations/probe_q_beta_gamma_gamma_derivation.py),
+Per [`probe_q_beta_gamma_gamma_derivation.py`](../../computations/probe_q_beta_gamma_gamma_derivation.py),
 the prediction is empirically observable:
 
 - N=2 (Kashiwara $b^2$ alone): residual $+1.25$ ppm (above CODATA's

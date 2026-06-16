@@ -29,7 +29,7 @@ bar-symmetric closing trace.*
 
 The factor $[3]_q \cdot [2]_q / [4]_q$ was numerically identified
 in [`docs/audits/-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/-lepton-bring-surface-h3-3channel-convention.md)
-+ [`folio-assistant/computations/t6_three_halves_factor_probes.py`](../../../folio-assistant/computations/t6_three_halves_factor_probes.py)
++ [`computations/t6_three_halves_factor_probes.py`](../../../computations/t6_three_halves_factor_probes.py)
 as the closed-form fit (matching 28 candidate ratios to 0.034%, the
 best by 20$\times$ over the next best).
 
@@ -167,8 +167,8 @@ The categorical derivation (why $\xi_m = [2m-1]_q \cdot [m]_q / [2m]_q$ specific
 
 - [`docs/audits/-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/-lepton-bring-surface-h3-3channel-convention.md) — T6 gap (c) full diagnosis (muon side)
 - [`docs/audits/-t6-f-ell-derivation-attempt.md`](../../../docs/audits/-t6-f-ell-derivation-attempt.md) — T6/F_ℓ workplan +  tau followup section
-- [`folio-assistant/computations/t6_three_halves_factor_probes.py`](../../../folio-assistant/computations/t6_three_halves_factor_probes.py) — muon empirical probe
-- [`folio-assistant/computations/probes/tau_amphichiral_sdp_probe.py`](../../../folio-assistant/computations/probes/tau_amphichiral_sdp_probe.py) — tau amphichiral q-bracket probe
+- [`computations/t6_three_halves_factor_probes.py`](../../../computations/t6_three_halves_factor_probes.py) — muon empirical probe
+- [`computations/probes/tau_amphichiral_sdp_probe.py`](../../../computations/probes/tau_amphichiral_sdp_probe.py) — tau amphichiral q-bracket probe
 - [`prop:three-halves-structural-factor`](three-halves-structural-factor.md) — Lean-proved structural identities (muon + tau)
 - [`prop:lepton-bring-surface-h3-3channel`](lepton-bring-surface-h3-3channel.md) — $\hat{V}_e$ convention (calibration check)
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — canonical mass formula

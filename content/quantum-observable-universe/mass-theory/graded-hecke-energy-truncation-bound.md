@@ -64,7 +64,7 @@ indexed cache does not have.
 
 ## Empirical witness
 
-[`folio-assistant/computations/probes/graded_hecke_energy_probe.py`](https://github.com/litlfred/qou/blob/claude/wire-applied-uniqueness-mass-table/folio-assistant/computations/probes/graded_hecke_energy_probe.py)
+[`computations/probes/graded_hecke_energy_probe.py`](https://github.com/litlfred/qou/blob/claude/wire-applied-uniqueness-mass-table/computations/probes/graded_hecke_energy_probe.py)
 demonstrates the stratification on the proton/neutron/deuteron
 braids at the canonical $q_0$, emitting per-grade $c_d$ values
 and confirming the truncation bound holds. Output:

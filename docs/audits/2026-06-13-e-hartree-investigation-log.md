@@ -89,7 +89,7 @@ retracted upon audit:
  was **transported from QED dimensional analysis**, not derived
  from Hecke algebra. A direct computational test on the H_2
  binding code
- ([`folio-assistant/computations/h2-molecular-binding.py`](folio-assistant/computations/h2-molecular-binding.py))
+ ([`computations/h2-molecular-binding.py`](computations/h2-molecular-binding.py))
  showed that the per-generator transfer-matrix updates are
  **multiplicative** — kinetic (intra-atomic / dressed) and
  Coulomb (inter-atomic / bare) crossing contributions get mixed
@@ -781,11 +781,11 @@ this conjecture and the broader Φ_q–JSJ programme.
 ### Round 17 — Wedderburn projection computed: hypothesis FALSIFIED for bare braid
 
 Implementing the Wedderburn decomposition via the existing
-[`hecke_characters.py`](folio-assistant/computations/hecke/hecke_characters.py)
+[`hecke_characters.py`](computations/hecke/hecke_characters.py)
 infrastructure, computed the H_4(q) Wedderburn projection of the
 bare H_2 molecular braid $\sigma_1 \sigma_2 \sigma_3 \in B_4$.
 
-Witness: [`delta-q-decoration.witness.json`](folio-assistant/computations/delta-q-decoration.witness.json).
+Witness: [`delta-q-decoration.witness.json`](computations/delta-q-decoration.witness.json).
 
 **Result at $q_0 \approx 1.110$:**
 
@@ -929,9 +929,9 @@ tried.
 ### Round 19 — bare support is the classical hook theorem; the dressed scalar block activates (exact)
 
 Witness:
-[`e-hartree-round19-dressed-scalar-block.witness.json`](folio-assistant/computations/e-hartree-round19-dressed-scalar-block.witness.json)
+[`e-hartree-round19-dressed-scalar-block.witness.json`](computations/e-hartree-round19-dressed-scalar-block.witness.json)
 (producer
-[`e_hartree_round19_dressed_scalar_block.py`](folio-assistant/computations/e_hartree_round19_dressed_scalar_block.py),
+[`e_hartree_round19_dressed_scalar_block.py`](computations/e_hartree_round19_dressed_scalar_block.py),
 6/6; exact tables cross-checked against the seminormal builder at
 $q_0$ to $9 \times 10^{-16}$). Two outstanding round-17/18 steps
 closed exactly:
@@ -987,7 +987,7 @@ character column of $(12)(34)$.)
 **Round-19 net status.** The $(2,2)$ scalar block — the unique
 self-transpose (antipode-closed) partition of $4$, identified in
 the per-force selection-rule probe
-([`alpha-k-selection-rule-conditional.witness.json`](folio-assistant/computations/alpha-k-selection-rule-conditional.witness.json))
+([`alpha-k-selection-rule-conditional.witness.json`](computations/alpha-k-selection-rule-conditional.witness.json))
 as the Schur–Weyl dual of the 2-dimensional scalar-coupling slot
 space — is invisible to the bare braid for a classical reason and
 **becomes visible under atomic (K-shell) dressing** with an exact,
@@ -1001,9 +1001,9 @@ activated scalar block — plus the two standing transports
 ### Round 20 — the trace-ratio closes the algebraic side; $\alpha_{EM}^2$ scaling emerges exactly
 
 Witness:
-[`e-hartree-round20-trace-ratio.witness.json`](folio-assistant/computations/e-hartree-round20-trace-ratio.witness.json)
+[`e-hartree-round20-trace-ratio.witness.json`](computations/e-hartree-round20-trace-ratio.witness.json)
 (producer
-[`e_hartree_round20_trace_ratio.py`](folio-assistant/computations/e_hartree_round20_trace_ratio.py),
+[`e_hartree_round20_trace_ratio.py`](computations/e_hartree_round20_trace_ratio.py),
 4/4). Round 19 left a single algebraic gap — the magnitude. In the
 established EM derivation
 ([`prop:em-coupling-projection`](#prop:em-coupling-projection)) the
@@ -1053,15 +1053,15 @@ $O(1)$ coefficient is made — that comparison is the gated step.
 ### Round 21 — Mechanism B refuted (kink, not smooth facet); the $\alpha^2$ is a q-dimension-layer effect
 
 Witness:
-[`e-hartree-mechanism-b-probe.witness.json`](folio-assistant/computations/e-hartree-mechanism-b-probe.witness.json)
+[`e-hartree-mechanism-b-probe.witness.json`](computations/e-hartree-mechanism-b-probe.witness.json)
 (producer
-[`e_hartree_mechanism_b_probe.py`](folio-assistant/computations/e_hartree_mechanism_b_probe.py),
+[`e_hartree_mechanism_b_probe.py`](computations/e_hartree_mechanism_b_probe.py),
 3/3). Round 20 reduced the conjecture to one question: is the
 separated-atom point a **smooth facet** of the binding LP (so
 $y_{\mathrm{cov}} \sim \varepsilon^2$, Mechanism B) or a **kink**?
 This probe answers it on the actual H$_2$ binding functional
 ([`prop:h2-lp-dual-binding`](#prop:h2-lp-dual-binding),
-[`h2-molecular-binding.py`](folio-assistant/computations/h2-molecular-binding.py)):
+[`h2-molecular-binding.py`](computations/h2-molecular-binding.py)):
 interpolate every inter-atomic (covalent-channel) crossing toward the
 identity by $\varepsilon \in [0,1]$ — $\varepsilon = 0$ is two
 separated atoms, $\varepsilon = 1$ is the molecule — and read the
@@ -1104,9 +1104,9 @@ q-dim-layer-to-archimedean bridge.
 ### Round 22 — the bridge is $q_0$-evaluation, not new infrastructure; a single derived O(1) coefficient remains
 
 Witness:
-[`e-hartree-round22-arch-bridge.witness.json`](folio-assistant/computations/e-hartree-round22-arch-bridge.witness.json)
+[`e-hartree-round22-arch-bridge.witness.json`](computations/e-hartree-round22-arch-bridge.witness.json)
 (producer
-[`e_hartree_round22_arch_bridge.py`](folio-assistant/computations/e_hartree_round22_arch_bridge.py),
+[`e_hartree_round22_arch_bridge.py`](computations/e_hartree_round22_arch_bridge.py),
 2/2). Round 11 feared the $\delta_q \to$ archimedean bridge was a whole missing
 functor layer. It is not. The archimedean functor τ_arch is already
 pinned: its transcendental action is the **Bloch–Suslin regulator**
@@ -1166,9 +1166,9 @@ The residual is calibration ($m_e c^2$), not mathematics.
 ### Round 23 — the normalizer is the two-electron EM cost, not a free choice
 
 Witness:
-[`e-hartree-round23-normalization.witness.json`](folio-assistant/computations/e-hartree-round23-normalization.witness.json)
+[`e-hartree-round23-normalization.witness.json`](computations/e-hartree-round23-normalization.witness.json)
 (producer
-[`e_hartree_round23_normalization.py`](folio-assistant/computations/e_hartree_round23_normalization.py),
+[`e_hartree_round23_normalization.py`](computations/e_hartree_round23_normalization.py),
 2/2). Round 20 *defined* $\rho_{(2,2)} = \chi_{(2,2)}/(q[9]_q[10]_q)^2$;
 round 21 removed the LP-smoothness justification for that normalizer.
 Round 23 reduces it to established structure (it does **not** fabricate a
@@ -1211,9 +1211,9 @@ explicitly named; neither is a hidden gap.
 ### Round 24 — the molecular-reuse residual is not a free, separable input
 
 Witness:
-[`e-hartree-round24-molecular-reuse.witness.json`](folio-assistant/computations/e-hartree-round24-molecular-reuse.witness.json)
+[`e-hartree-round24-molecular-reuse.witness.json`](computations/e-hartree-round24-molecular-reuse.witness.json)
 (producer
-[`e_hartree_round24_molecular_reuse.py`](folio-assistant/computations/e_hartree_round24_molecular_reuse.py),
+[`e_hartree_round24_molecular_reuse.py`](computations/e_hartree_round24_molecular_reuse.py),
 3/3; stdlib-only, exact integer enumeration). Round 23 named *"the molecular
 EM exchange reuses the bare EM complexity $\mathrm{cplx} = q[9]_q[10]_q$"* as
 **one isolated natural assumption**. Examined against the upstream
@@ -1277,9 +1277,9 @@ own $(2,2) = \mathrm{EM}$ hypothesis.
 ### Round 25 — why the EM channel is $(2,2)$: the doubled-singlet induction
 
 Witness:
-[`e-hartree-round25-em-channel-induction.witness.json`](folio-assistant/computations/e-hartree-round25-em-channel-induction.witness.json)
+[`e-hartree-round25-em-channel-induction.witness.json`](computations/e-hartree-round25-em-channel-induction.witness.json)
 (producer
-[`e_hartree_round25_em_channel_induction.py`](folio-assistant/computations/e_hartree_round25_em_channel_induction.py),
+[`e_hartree_round25_em_channel_induction.py`](computations/e_hartree_round25_em_channel_induction.py),
 3/3; stdlib, exact $S_4$ character theory). Round 24 left the
 $(2,2) = \mathrm{EM}$ identification as the conjecture's core conditional. This
 round **grounds** that choice — it derives $(2,2)$ from the covalent-pair
@@ -1410,7 +1410,7 @@ $$
 
 *so that the Hartree energy
 $E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ used in
-[`hecke_core.py:198`](folio-assistant/computations/substrate/hecke_core.py)
+[`hecke_core.py:198`](computations/substrate/hecke_core.py)
 emerges as the leading non-trivial coefficient
 $c_2 \cdot m_e c_q^{2}$ of the LP-dual sensitivity to the
 covalent constraint. The coefficient
@@ -1871,7 +1871,7 @@ they match within an $R$-rational factor, the conjecture
 upgrades to a proposition with explicit $c_2$.
 
 **Empirical check from the H_2 witness**
-([`folio-assistant/computations/h2-molecular-binding.witness.json`](folio-assistant/computations/h2-molecular-binding.witness.json)):
+([`computations/h2-molecular-binding.witness.json`](computations/h2-molecular-binding.witness.json)):
 - $y_{\mathrm{cov}}^{*} = 0.687$ (in $\Phi_1$ units)
 - $E_{\mathrm{bind}}^{\mathrm{predicted}} \approx 4.638\,\mathrm{eV}$
 - $E_{\mathrm{Hartree}} \approx 27.296\,\mathrm{eV}$
@@ -1932,7 +1932,7 @@ framing:
 ```
 binding_Phi_diff = 0.6870 (Phi_1 units, dimensionless, ~ O(1))
 E_HARTREE = 27.30 eV (= 511000 eV * alpha^2, HARDCODED in
-                              folio-assistant/computations/substrate/hecke_core.py:198)
+                              computations/substrate/hecke_core.py:198)
 E_MOL = E_HARTREE / TWO_Q^2 = 6.75 eV per Phi_1 unit
 E_bind = binding_Phi_diff * E_MOL = 4.64 eV
 ```
@@ -2021,7 +2021,7 @@ Closing this rigorously requires:
 specific eigenvalue/length in the molecular Hecke representation;
 (ii) verification that the archimedean functor
 $\rho_\infty$ (currently embodied implicitly in
-[`hecke_core.py:198`](folio-assistant/computations/substrate/hecke_core.py))
+[`hecke_core.py:198`](computations/substrate/hecke_core.py))
 is forced to multiply Markov-trace outputs by $1/(a_{0}^{\mathrm{cat}})^{2}$;
 (iii) showing this is the unique consistent choice given the
 Frobenius pairing structure.
@@ -2043,7 +2043,7 @@ categorical Bohr radius is given a precise Hecke definition.
  $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$.
 - It does **not** override the existing usage of
  $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$ in
- [`hecke_core.py:198`](folio-assistant/computations/substrate/hecke_core.py)
+ [`hecke_core.py:198`](computations/substrate/hecke_core.py)
  as a numerical input — that usage remains an empirical scale
  pending closure of this conjecture.
 
@@ -2108,5 +2108,5 @@ is a building block of force-carrier $\delta_q$ values).
 The remaining gap is the precise multiplicative chain that produces
 $h^4$ scaling in the binding energy from these dressed Wedderburn
 contributions. Witness data is now cached in
-[`delta-q-decoration.witness.json`](folio-assistant/computations/delta-q-decoration.witness.json)
+[`delta-q-decoration.witness.json`](computations/delta-q-decoration.witness.json)
 for downstream symbolic-$q$ analysis.

@@ -96,7 +96,7 @@ $\sigma \mapsto \sigma^{-1}$:
 † $\mathrm{Li}_2^q$ row corrected per
 ([`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization)
 errata 2026-05-20 + witness
-[`li2q-phiq-bar-symmetry.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/li2q-phiq-bar-symmetry.witness.json)).
+[`li2q-phiq-bar-symmetry.witness.json`](https://github.com/litlfred/qou/blob/main/computations/li2q-phiq-bar-symmetry.witness.json)).
 The earlier "sum" form $\tfrac{1}{2}(\log\Phi_q + \log\Phi_{q^{-1}})$
 is identically zero (since $\log\Phi_{q^{-1}} = -\log\Phi_q$ for
 Faddeev's $\Phi_q$); the **bar-anti-symmetric image rescaled by
@@ -207,7 +207,7 @@ verified empirical matches, all in the bar-symmetric projection:
 
 | Layer | Empirical match | Source |
 |---|---|---|
-| Series (Li_2^q) | sign-correct binding energies on D, T, ${}^{3}$He; variance $1.82\times$ | `folio-assistant/computations/binding_depth_stratified_rust.py` |
+| Series (Li_2^q) | sign-correct binding energies on D, T, ${}^{3}$He; variance $1.82\times$ | `computations/binding_depth_stratified_rust.py` |
 | Phase (cos at N=1) | $Q_\beta$ to sub-ppt | `prop:neutron-qvalue-symbolic` |
 | Gain (cosh at per-Z step) | rel. error $0.022\%$ on $\alpha_Z$ | cross-PR Phase 5b audit (`docs/audits/2026-05-19-delta-lambda-phase5-alpha-derivation-progress.md`) |
 

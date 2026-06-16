@@ -101,7 +101,7 @@ w.save()
 ### Witness contract (meta)
 
 *Every `*.witness.json` is audited by:
-[`lp_dual_witness_validator.py`](../../../folio-assistant/computations/lp_dual_witness_validator.py)
+[`lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py)
 (LP/SDP duals), `q-usage-watcher` (q-regime declarations), and
 the q₀ staleness detector. Stale or schema-violating witnesses
 fail CI in `witness-pipeline.yml`.*

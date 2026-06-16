@@ -16,7 +16,7 @@ The obvious next question: **does the binomial pattern $c_{2j}(T(2,2m)) = \binom
 
 ## §2. The probe
 
-[`folio-assistant/computations/probes/t3n_binomial_pattern_probe.py`](../../folio-assistant/computations/probes/t3n_binomial_pattern_probe.py) builds the Hoefsmit (2,1) standard rep of H_3(q) symbolically:
+[`computations/probes/t3n_binomial_pattern_probe.py`](../../computations/probes/t3n_binomial_pattern_probe.py) builds the Hoefsmit (2,1) standard rep of H_3(q) symbolically:
 
 $$\sigma_0 = \begin{pmatrix} q & 1 \\ 0 & -q^{-1}\end{pmatrix}, \quad \sigma_1 = \begin{pmatrix} -q^{-1} & 0 \\ 1 & q\end{pmatrix}$$
 
@@ -82,7 +82,7 @@ with the same `ext` + `fin_cases` + `simp [Matrix.mul_apply, …]` + `ring` proo
 
 ## §6. Implications for the framework's RT-chain
 
-1. **For T(3, 5) (strong-force particle)**: the Jones polynomial is fully determined by the trivial/sign q-powers and the Markov weights y_λ at H_3(q), which are computed in [`alpha_k_jones_markov_h3.py`](../../folio-assistant/computations/alpha/alpha_k_jones_markov_h3.py).  No new h-polynomial structure to discover at the (2,1) channel.
+1. **For T(3, 5) (strong-force particle)**: the Jones polynomial is fully determined by the trivial/sign q-powers and the Markov weights y_λ at H_3(q), which are computed in [`alpha_k_jones_markov_h3.py`](../../computations/alpha/alpha_k_jones_markov_h3.py).  No new h-polynomial structure to discover at the (2,1) channel.
 
 2. **For higher-p T(p, q) generalization**: the same phenomenon will recur at H_p(q).  Each higher-dimensional irrep contributes roots-of-unity eigenvalue contributions to the trace of $(\sigma_0\cdots\sigma_{p-1})^n$, and the Hecke deformation acts as identity on those roots.  **The Fibonacci/Chebyshev richness is H_2(q)-specific.**
 
@@ -95,5 +95,5 @@ with the same `ext` + `fin_cases` + `simp [Matrix.mul_apply, …]` + `ring` proo
 - PR [#1185](https://github.com/litlfred/qou/pull/1185) — Lean encoding of P_m, Q_m + Pythagorean identity
 - PR [#1193](https://github.com/litlfred/qou/pull/1193) — Borromean H_3(q) (2,1) irrep derivation probe (Q_Borromean = 0)
 - [`2026-05-24-sm-particle-categorical-map-rt-route.md`](2026-05-24-sm-particle-categorical-map-rt-route.md) — SM particle map (T(3, 5) = strong-force)
-- [`alpha_k_jones_markov_h3.py`](../../folio-assistant/computations/alpha/alpha_k_jones_markov_h3.py) — H_3 Jones-Markov weights
+- [`alpha_k_jones_markov_h3.py`](../../computations/alpha/alpha_k_jones_markov_h3.py) — H_3 Jones-Markov weights
 - [`HeckeH3.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/HeckeH3.lean) — Lean (2,1) standard rep + `stdRep3_M_cubed_eq_one`

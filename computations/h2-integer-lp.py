@@ -11,7 +11,7 @@ the LP select from {σ₀, σ₁, σ₀⁻¹, σ₁⁻¹, L₊, L₋, e⁻, id}
 at each inter-atomic position.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 h2-integer-lp.py
 """
 

@@ -18,7 +18,7 @@ From these, EVERYTHING ELSE is derived:
   - All nuclear binding energies
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_qou_calibration.py
+    python3 computations/atom_mass_qou_calibration.py
 """
 
 import math, sys

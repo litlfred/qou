@@ -117,7 +117,7 @@ $$
   + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
 $$
 
-At the CODATA value $q_0$: $\mathfrak{m}_{\mathfrak{p}}(q_0) \approx :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).
+At the CODATA value $q_0$: $\mathfrak{m}_{\mathfrak{p}}(q_0) \approx :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).
 
 **Coulomb charge.**
 The proton carries net **positive crossing chirality**: two
@@ -130,7 +130,7 @@ $$
 
 **Computational backing.** The Borromean construction underlying
 this definition is supported by witness data committed alongside
-the paper: `folio-assistant/computations/borromean-axial-coupling.witness.json`
+the paper: `computations/borromean-axial-coupling.witness.json`
 (the axial-coupling $g_A$ from $H_3(q_0)$ matches PDG 2024
 $g_A = 1.2754$), `proton-braid-sweep-gg.witness.json` (proton
 braid coefficients in the NF basis at $q_0$), and

@@ -49,7 +49,7 @@ yet been identified.
    the natural half-symmetric projection at $H_4$ gives $+0.5$, not
    $-G$. The Yekutieli per-cell bijection conjecture (Reading-B)
    is also NEGATIVE under the natural reading.
-3. [**Path C1 probe**](../../../folio-assistant/computations/probes/higher_n_wedderburn_h2_drift_probe.py)
+3. [**Path C1 probe**](../../../computations/probes/higher_n_wedderburn_h2_drift_probe.py)
    (this branch) — the higher-N Wedderburn limit
    $(1/N)\sum_{\lambda \vdash N} \dim_q V_\lambda$ has $h^2$
    coefficient growing roughly factorially with $N$ (0.75, 4.0,

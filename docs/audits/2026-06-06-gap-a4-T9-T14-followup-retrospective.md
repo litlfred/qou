@@ -178,8 +178,8 @@ would be a separate, carefully-scoped follow-up.
 - The SAME missing object on K_1 (inter-nucleon-color-tube):
   [`inter-nucleon-channel-color-tube.md`](../../content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md)
 - Probes:
-  - T10 [McKay-character / spin-lift](../../folio-assistant/computations/probes/gap_a4_T10_mckay_character_2I_probe.py) (#1904, merged)
-  - T11 [Klein J-invariant](../../folio-assistant/computations/probes/gap_a4_T11_klein_J_invariant_probe.py) (#1904, merged)
-  - T12 [Bring discriminant](../../folio-assistant/computations/probes/gap_a4_T12_bring_discriminant_scaffold_probe.py) (#1904, merged)
-  - T13 [q-Eisenstein](../../folio-assistant/computations/probes/gap_a4_T13_q_eisenstein_probe.py) (#1922, in flight)
-  - T14 [q-Hermite resolvent](../../folio-assistant/computations/probes/gap_a4_T14_q_hermite_resolvent_probe.py) (#1922, in flight)
+  - T10 [McKay-character / spin-lift](../../computations/probes/gap_a4_T10_mckay_character_2I_probe.py) (#1904, merged)
+  - T11 [Klein J-invariant](../../computations/probes/gap_a4_T11_klein_J_invariant_probe.py) (#1904, merged)
+  - T12 [Bring discriminant](../../computations/probes/gap_a4_T12_bring_discriminant_scaffold_probe.py) (#1904, merged)
+  - T13 [q-Eisenstein](../../computations/probes/gap_a4_T13_q_eisenstein_probe.py) (#1922, in flight)
+  - T14 [q-Hermite resolvent](../../computations/probes/gap_a4_T14_q_hermite_resolvent_probe.py) (#1922, in flight)

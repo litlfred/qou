@@ -30,7 +30,7 @@ Candidates for g:
 The Q-value = |ΔE| × energy_scale
 
 Usage:
-    cd folio-assistant/computations && python3 poiseuille-qvalues.py
+    cd computations && python3 poiseuille-qvalues.py
 """
 import math
 import json

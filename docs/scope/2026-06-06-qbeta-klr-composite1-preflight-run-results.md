@@ -4,8 +4,8 @@
 
 ## Result
 
-[`qbeta_klr_composite1_preflight_run.py`](../../folio-assistant/computations/qbeta/qbeta_klr_composite1_preflight_run.py) computes `[u²]F = (q;q)_2 · Σ_{ℓ(w)=2} D_w(ω₁; sl_3)` at both anchors (mp 65-dps), using the explicit Demazure-character formula from
-[`qbeta_chain4_demazure_fund_weights.py`](../../folio-assistant/computations/qbeta/qbeta_chain4_demazure_fund_weights.py)
+[`qbeta_klr_composite1_preflight_run.py`](../../computations/qbeta/qbeta_klr_composite1_preflight_run.py) computes `[u²]F = (q;q)_2 · Σ_{ℓ(w)=2} D_w(ω₁; sl_3)` at both anchors (mp 65-dps), using the explicit Demazure-character formula from
+[`qbeta_chain4_demazure_fund_weights.py`](../../computations/qbeta/qbeta_chain4_demazure_fund_weights.py)
 (`D_w(ω_j; q) = Σ_S q^{Σ(a_k − 1)}`, the Joseph/Andersen unsigned Demazure):
 
 | anchor | `(q;q)_2` | sign | `Σ D_w(ω₁; sl_3)` at ℓ=2 | `[u²]F` | vs `c_2 = -1` |
@@ -58,6 +58,6 @@ Both cont. 9 single-Option preflights done in one session each. Combined effect 
 
 - Sibling Composite-4 RUN: [`2026-06-06-qbeta-klr-composite4-preflight-run-results.md`](2026-06-06-qbeta-klr-composite4-preflight-run-results.md).
 - Master KLR-infra roadmap: [`2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md`](2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md).
-- Demazure character evaluator + crystal model: [`qbeta_chain4_demazure_fund_weights.py`](../../folio-assistant/computations/qbeta/qbeta_chain4_demazure_fund_weights.py).
-- cont. 11 1281-sweep (already included `Demazure(2,1) × (q;q)_k` 2-factor combinations): [`qbeta_composite_crossanchor_2factor_sweep.py`](../../folio-assistant/computations/qbeta/qbeta_composite_crossanchor_2factor_sweep.py).
-- Witness: [`qbeta-klr-composite1-preflight-run.witness.json`](../../folio-assistant/computations/qbeta/qbeta-klr-composite1-preflight-run.witness.json).
+- Demazure character evaluator + crystal model: [`qbeta_chain4_demazure_fund_weights.py`](../../computations/qbeta/qbeta_chain4_demazure_fund_weights.py).
+- cont. 11 1281-sweep (already included `Demazure(2,1) × (q;q)_k` 2-factor combinations): [`qbeta_composite_crossanchor_2factor_sweep.py`](../../computations/qbeta/qbeta_composite_crossanchor_2factor_sweep.py).
+- Witness: [`qbeta-klr-composite1-preflight-run.witness.json`](../../computations/qbeta/qbeta-klr-composite1-preflight-run.witness.json).

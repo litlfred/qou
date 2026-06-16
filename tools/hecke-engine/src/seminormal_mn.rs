@@ -222,7 +222,7 @@ fn mn_chi_rec_memo(
 /// At `q = 1` this distinction disappears (`H_n(1) = ℂ[S_n]`), so
 /// classical MN cross-validation succeeds.  At `q ≠ 1`, the
 /// cross-validation against Hoefsmit DIVERGES — see
-/// `folio-assistant/computations/qmn_vs_hoefsmit_cross_check.py`.
+/// `computations/qmn_vs_hoefsmit_cross_check.py`.
 ///
 /// Two paths to fix (deferred to F3.2.γ):
 ///

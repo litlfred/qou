@@ -19,7 +19,7 @@ This is the I9 antipattern in `local/compute-integration-watcher`:
   import the corresponding `M_*_MEV` / `Q_*_MEV` symbol.
 
 The audit walks every Python script under
-`folio-assistant/computations/`, harvests all numerical literals,
+`computations/`, harvests all numerical literals,
 and matches each against the registry.  Reports per-script
 violations.
 
@@ -36,7 +36,7 @@ Limitations:
 Emits `hardcoded-literal-audit.witness.json`.
 
 Usage:
-    python3 folio-assistant/computations/hardcoded_literal_audit.py [--strict]
+    python3 computations/hardcoded_literal_audit.py [--strict]
 """
 
 

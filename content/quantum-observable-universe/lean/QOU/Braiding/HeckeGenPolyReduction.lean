@@ -17,7 +17,7 @@ by a DIVISION-FREE recursion driven only by the Hecke quadratic relation
 ```
 
 This is the algebraic core of the monotone-word fine-Bratteli transfer
-matrix for the atom character (`folio-assistant/computations/chi_monotone_transfer.py`).
+matrix for the atom character (`computations/chi_monotone_transfer.py`).
 The atom braid word has a monotone generator sequence, so each
 per-generator operator `O_g = ∏ⱼ(σ_g + dⱼ·1)` is a single-generator
 polynomial; by this reduction its seminormal *diagonal* entry is

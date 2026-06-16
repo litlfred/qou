@@ -22,7 +22,7 @@ which remain open, nor on the *successful* free-subtracted Frobenius co-Casimir
 which uses a different functional.
 
 Numbers pinned (50 dps) from
-`folio-assistant/computations/rho-k-h3a-crystal.witness.json`: the
+`computations/rho-k-h3a-crystal.witness.json`: the
 crystal / Demazure Δ_λ sum at the deuteron is `≈ +1796.735` (m_e units) versus
 the empirical target `−B_D/m_e ≈ −4.353` — wrong sign and off by a factor
 `≈ 412` (gap `≈ 1801.089`, = the witness `residual_target_minus_sum`).

@@ -23,8 +23,8 @@ export default diagram({
   meta: {
     file: "figures/affine-light-cone.pdf",
     altFile: "figures/affine-light-cone.svg",
-    generator: "folio-assistant/computations/affine_light_cone_figure.py",
-    witness: "folio-assistant/computations/affine-light-cone-figure.witness.json",
+    generator: "computations/affine_light_cone_figure.py",
+    witness: "computations/affine-light-cone-figure.witness.json",
     workplan: "docs/workplans/2026-05-24-pr31-affine-light-cone-redo.md",
   },
 });

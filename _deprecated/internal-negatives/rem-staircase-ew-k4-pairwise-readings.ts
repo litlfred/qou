@@ -53,9 +53,9 @@ export default remark({
   computation: {
     engine: "numpy",
     script:
-      "folio-assistant/computations/probe_staircase_ew_k4_pairwise_readings.py",
+      "computations/probe_staircase_ew_k4_pairwise_readings.py",
     witness:
-      "folio-assistant/computations/staircase-ew-k4-pairwise-readings.witness.json",
+      "computations/staircase-ew-k4-pairwise-readings.witness.json",
     status: "verified",
   },
   tags: [

@@ -45,7 +45,7 @@ The chirality factor measures the **antipode-asymmetry** of the
 braid in the symmetric Wedderburn channel.*
 
 **Application 2: Neutron tower closure
-(`folio-assistant/computations/frobenius_antipode_symmetry.py`).**
+(`computations/frobenius_antipode_symmetry.py`).**
 
 *Upstream commit `8ee07e2` (rebased into this branch) discovered:
 the neutron tower undershoots CODATA by $-56\%$ in the raw
@@ -71,7 +71,7 @@ This is **exactly** the Frobenius antipode operation that gives
 chirality in the symmetric channel.*
 
 **Application 3: $\alpha$-blend full closure
-(`folio-assistant/computations/alpha/alpha_blend_tower.py`).**
+(`computations/alpha/alpha_blend_tower.py`).**
 
 *Upstream commits `fad1ebd` + `82dd7d4` (rebased): blending the
 Frobenius-symmetrized $\hat V$ with the Frobenius-INVARIANT
@@ -143,14 +143,14 @@ algebraic.*
 
 **Reference implementations (rebased upstream + my chirality work).**
 
-- *`folio-assistant/computations/frobenius_antipode_symmetry.py`
+- *`computations/frobenius_antipode_symmetry.py`
   + witness — the $4\times$ neutron improvement.*
-- *`folio-assistant/computations/alpha/alpha_blend_tower.py`
+- *`computations/alpha/alpha_blend_tower.py`
   + witness — sub-ppm closure at $\alpha^* = 0.306$.*
-- *`folio-assistant/computations/tower_full_jet_filtration.py`
+- *`computations/tower_full_jet_filtration.py`
   — confirms paper's pair-truncation is structurally insufficient
   (matches my all-subsets finding in
-  `folio-assistant/computations/all_subsets_tower.py`).*
+  `computations/all_subsets_tower.py`).*
 - *My chirality blocks
   ([Frobenius self-pairing](#prop:chirality-from-frobenius-self-pairing),
   [chirality dual-space](#prop:chirality-dual-space-derivation))

@@ -71,8 +71,8 @@ $S_3(2\pi/5) = 4 \pi^3 / 125$. $\square$
 
 ### Numerical verification at 50 dps
 
-Verified by [`kummer_reflection_zeta5.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/kummer_reflection_zeta5.py)
-([witness JSON](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/kummer-reflection-zeta5.witness.json)):
+Verified by [`kummer_reflection_zeta5.py`](https://github.com/litlfred/qou/blob/main/computations/kummer_reflection_zeta5.py)
+([witness JSON](https://github.com/litlfred/qou/blob/main/computations/kummer-reflection-zeta5.witness.json)):
 
 | Quantity | Value (50 dps) |
 |---|---|

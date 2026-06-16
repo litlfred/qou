@@ -28,7 +28,7 @@ q-special functions:
   [n]_q    = (q^n - q^{-n})/(q - q^{-1})  — q-integer
 
 Usage:
-    python3 folio-assistant/computations/atom_colored_jones_volume.py
+    python3 computations/atom_colored_jones_volume.py
 """
 
 import math

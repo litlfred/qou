@@ -7,7 +7,7 @@ of the Bessel audit — the q-drumhead question, *"is the framework's confinemen
 mode spectrum a q-Bessel **zero** spectrum?"* — by **exact symbolic algebra in
 ℚ(q)**, no float, no fit.
 
-- **Compute (exact, symbolic):** [`folio-assistant/computations/qbeta/qbessel_mu_lambda_vs_qlommel_zeros.py`](../../folio-assistant/computations/qbeta/qbessel_mu_lambda_vs_qlommel_zeros.py) → witness (3/3).
+- **Compute (exact, symbolic):** [`computations/qbeta/qbessel_mu_lambda_vs_qlommel_zeros.py`](../../computations/qbeta/qbessel_mu_lambda_vs_qlommel_zeros.py) → witness (3/3).
 - **Companion (step 1, proved):** the 2nd-order q-Bessel equation `☆` is now a Lean theorem — [`QBesselContiguityRecurrence.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/QBesselContiguityRecurrence.lean) (`qbessel_second_order_recurrence`, sorry-free).
 
 ## The question

@@ -18,7 +18,7 @@ The Gröbner-Shirshov energy theorem:
   - Total energy is path-independent (diamond lemma)
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 t35-braid-concatenation.py
 """
 

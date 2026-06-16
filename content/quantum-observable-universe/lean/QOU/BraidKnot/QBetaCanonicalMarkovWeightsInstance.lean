@@ -66,7 +66,7 @@ The three lemmas below make the §3b-cond conditional theorems concrete at
 the one in-repo instance (`explicitInstance`), closing the loop between
 the class hypothesis and a downstream computation. They feed the
 numerical companion
-[`qbeta_delta_tau_M_canonical_explicit_instance.py`](../../../../../folio-assistant/computations/qbeta/qbeta_delta_tau_M_canonical_explicit_instance.py)
+[`qbeta_delta_tau_M_canonical_explicit_instance.py`](../../../../../computations/qbeta/qbeta_delta_tau_M_canonical_explicit_instance.py)
 (witness `qbeta-delta-tau-m-canonical-explicit-instance.witness.json`),
 which evaluates the SAME object at substrate q₀ and reports the
 cross-anchor swing against the rational surrogate. -/

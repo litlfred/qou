@@ -44,7 +44,7 @@ References:
   - markov_peel (peel-recursion algorithm; equivalent output).
 
 Run:
-    python3 folio-assistant/computations/markov_weights_symbolic.py
+    python3 computations/markov_weights_symbolic.py
 """
 from __future__ import annotations
 

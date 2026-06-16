@@ -8,7 +8,7 @@
 
 The molecular-binding framework uses the Hartree energy
 $E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ as a conversion scale (for example in
-[`hecke_core.py:198`](folio-assistant/computations/substrate/hecke_core.py)).
+[`hecke_core.py:198`](computations/substrate/hecke_core.py)).
 This block asks whether the $\alpha_{EM}^{2}$ factor arises from QOU/Hecke
 structure rather than as an empirical input. The answer reached is a
 **clean conditional theorem**, not a closed one.
@@ -188,7 +188,7 @@ $\lambda_{\mathrm{bound}}^{-1}(q_0) = \alpha_{EM}(q_0)\,c_1$ for some
 $c_1 \in R$ of order unity — a direct symbolic computation
 (See [Table 11](#tbl:e-hartree-categorical-derivation-table11-data)). The
 $H_2$ witness
-([`h2-molecular-binding.witness.json`](folio-assistant/computations/h2-molecular-binding.witness.json))
+([`h2-molecular-binding.witness.json`](computations/h2-molecular-binding.witness.json))
 gives the dimensionless ratio $E_{\mathrm{bind}}/E_{\mathrm{Hartree}} \approx 0.170$,
 of order unity (matching the standard-physics $H_2$ ratio $\approx 1/6$),
 consistent with Mechanism D without any $J^{1}$-vanishing miracle.
@@ -265,7 +265,7 @@ scope:
   $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$.
 - It does **not** override the existing usage of
   $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$ in
-  [`hecke_core.py:198`](folio-assistant/computations/substrate/hecke_core.py)
+  [`hecke_core.py:198`](computations/substrate/hecke_core.py)
   as a numerical input — that usage remains an empirical scale pending
   closure of this conjecture.
 

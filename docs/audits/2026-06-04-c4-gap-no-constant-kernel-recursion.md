@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-04
 **Branch:** `claude/qbeta-c8-c10-pell-lucas-closed-forms-2026-06-04`
-**Probe:** [`folio-assistant/computations/probes/qbeta_constant_kernel_depth_test.py`](../../folio-assistant/computations/probes/qbeta_constant_kernel_depth_test.py)
+**Probe:** [`computations/probes/qbeta_constant_kernel_depth_test.py`](../../computations/probes/qbeta_constant_kernel_depth_test.py)
 **Status:** EXPLORATORY. Decisive negative result.
 
 ## Question

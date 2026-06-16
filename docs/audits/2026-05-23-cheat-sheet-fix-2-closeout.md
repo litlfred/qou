@@ -88,9 +88,9 @@ The Python function `mass_from_tower` IS the computational implementation of bot
 
 ## Files
 
-- `folio-assistant/computations/mass_tower_operator_valued.py` (+22 lines, canonical API surface)
-- `folio-assistant/computations/mass_at_3A_proper.py` (line 604: import path migration + comment)
-- `folio-assistant/computations/pn_alpha_lp_dual.py` (line 61: same)
+- `computations/mass_tower_operator_valued.py` (+22 lines, canonical API surface)
+- `computations/mass_at_3A_proper.py` (line 604: import path migration + comment)
+- `computations/pn_alpha_lp_dual.py` (line 61: same)
 - `docs/audits/2026-05-23-cheat-sheet-fix-2-closeout.md` (this audit)
 
 ## Cross-references

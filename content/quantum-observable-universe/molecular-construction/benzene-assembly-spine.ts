@@ -16,9 +16,9 @@ export default remark({
   computation: {
     engine: "python",
     status: "verified",
-    script: "folio-assistant/computations/benzene_assembly_spine.py",
+    script: "computations/benzene_assembly_spine.py",
     witness: [
-      "folio-assistant/computations/benzene-assembly-spine.witness.json",
+      "computations/benzene-assembly-spine.witness.json",
     ],
   },
   uses: [

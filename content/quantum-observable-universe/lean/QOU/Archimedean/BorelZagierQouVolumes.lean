@@ -23,7 +23,7 @@ namespace QOU.Archimedean
 
     Conjectural class — see [`conj:borel-zagier-qou-volumes`](../../../quantum-observable-universe/archimedean-universe/borel-zagier-qou-volumes.md). -/
 class BorelZagierQouVolumes where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       **Conjecture (Borel--Zagier for QOU volumes).**

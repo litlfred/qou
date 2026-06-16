@@ -28,10 +28,10 @@ export default proposition({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/probe_q_beta_operator_valued_N3.py",
+    script: "computations/probe_q_beta_operator_valued_N3.py",
     witness: [
-      "folio-assistant/computations/q-beta-operator-valued-N3.witness.json",
-      "folio-assistant/computations/delta-S-chain-audit.witness.json"
+      "computations/q-beta-operator-valued-N3.witness.json",
+      "computations/delta-S-chain-audit.witness.json"
     ],
     status: "experimental",
   },

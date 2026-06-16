@@ -17,7 +17,7 @@ per the framework's three-calibration discipline. No floating CODATA
 literals in this script.
 
 Run:
-    python3 folio-assistant/computations/per_observable_100x_status.py
+    python3 computations/per_observable_100x_status.py
 """
 from __future__ import annotations
 

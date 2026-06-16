@@ -37,7 +37,7 @@ Substrate braid word β_D from ``atom_canonical_crossings(1,1)`` — the IDENTIC
 canonical deuteron word the χ-cache was built from (sigma / sigma_inv / averaged
 = interface σ_g − h/2·1).
 
-@module folio-assistant/computations/rho_w_crystal_vertex_trace
+@module computations/rho_w_crystal_vertex_trace
 """
 from __future__ import annotations
 

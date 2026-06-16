@@ -17,9 +17,9 @@ export default conjecture({
   computation: {
     engine: "python",
     script:
-      "folio-assistant/computations/delta_lambda_z4N_phase4.py",
+      "computations/delta_lambda_z4N_phase4.py",
     witness:
-      "folio-assistant/computations/delta-lambda-z4N-phase4.witness.json",
+      "computations/delta-lambda-z4N-phase4.witness.json",
     status: "verified",
   },
   tags: [

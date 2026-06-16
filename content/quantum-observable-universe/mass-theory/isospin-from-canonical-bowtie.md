@@ -40,7 +40,7 @@ $$
 
 *per [`prop:flavor-split-substrate`](#prop:flavor-split-substrate)
 and the closed form computed in
-[`_li_2_q_util.flavor_split_subleading`](../../folio-assistant/computations/_li_2_q_util.py).
+[`_li_2_q_util.flavor_split_subleading`](../../computations/_li_2_q_util.py).
 The 305 ppm match is the isospin-Z/2-anti-symmetric leading residue of the
 $\mathrm{SU}(2)_I$ Z/2 swap on the operator-valued interface — i.e.,
 it IS the canonical-isospin $q_0$-anomaly.*
@@ -51,7 +51,7 @@ The Z/2 isospin swap $u \leftrightarrow d$ exchanges the proton's
 flavor triple $(u, u, d)$ with the neutron's flavor triple $(u, d, d)$
 on the three color sheets per nucleon.  At the level of the canonical
 atomic braid (per
-[`isotope_record_schema.py`](../../folio-assistant/computations/isotope_record_schema.py)),
+[`isotope_record_schema.py`](../../computations/isotope_record_schema.py)),
 this swap exchanges:
 
 - **pp** intra-block ($\sigma$ generators) with **nn** intra-block
@@ -149,9 +149,9 @@ $$
 $$
 
 This is already computed in
-[`_li_2_q_util.flavor_split_subleading`](../../folio-assistant/computations/_li_2_q_util.py)
+[`_li_2_q_util.flavor_split_subleading`](../../computations/_li_2_q_util.py)
 and consumed by
-[`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py).
+[`m_p_borromean_verification_50dps.py`](../../computations/m_p_borromean_verification_50dps.py).
 The conjectural content of THIS block is the **categorical
 identification** of that closed form as the regularised-crystal
 $\mathrm{SU}(2)_I$ anomaly.
@@ -173,7 +173,7 @@ $\Delta m / M_N$ classify as:
 
 Net product $\hbar_q^2 \cdot h \cdot [2]_q \cdot (1 + \hbar_q^3) / 3$
 is **mixed** under bar (verified at $q_{0}$ by
-[`verify_isospin_bar_anomaly.py`](../../folio-assistant/computations/verify_isospin_bar_anomaly.py)).
+[`verify_isospin_bar_anomaly.py`](../../computations/verify_isospin_bar_anomaly.py)).
 The product carries the bar-odd $h$ factor as a coefficient, but
 the $\hbar_q$ factors don't bar-classify cleanly.
 
@@ -315,7 +315,7 @@ ultimately lives in the upstream-conjecture class instances.
   [`prop:flavor-split-substrate`](flavor-split-substrate.md)
 
 - The compute consumer:
-  [`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
+  [`m_p_borromean_verification_50dps.py`](../../computations/m_p_borromean_verification_50dps.py)
 - D6 (charge conjugation): [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md)
   — sibling Z/2 categorical symmetry on color sheets (same color-tube infrastructure)
 - The Markov-trace machinery: [`bar-involution.md`](bar-involution.md)

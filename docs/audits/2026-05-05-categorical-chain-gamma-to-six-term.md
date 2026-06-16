@@ -81,11 +81,11 @@ Total: 11 atomic crossings (canonical Markov-peel braid).
 **Hecke action.** Symbolic Hoefsmit seminormal matrices for
 $\lambda \in \{(3), (2,1), (1,1,1)\}$, sizes $1, 2, 1$. Per-irrep
 $\chi^\lambda(\beta_p)$ now closed-form in $q$
-([`hoefsmit_symbolic.py`](../../folio-assistant/computations/hoefsmit_symbolic.py)).
+([`hoefsmit_symbolic.py`](../../computations/hoefsmit_symbolic.py)).
 
 **Markov weights at $H_3$.** Solved via Markov axioms on
 $\{1, \sigma_1, \sigma_1\sigma_2\}$
-([`markov_weights_symbolic.py`](../../folio-assistant/computations/markov/markov_weights_symbolic.py)):
+([`markov_weights_symbolic.py`](../../computations/markov/markov_weights_symbolic.py)):
 $y_{(3)}, y_{(2,1)}, y_{(1,1,1)}$ as rational functions in $\sqrt q$.
 At $q_0$ they match the bridge witness to 10 digits.
 
@@ -168,7 +168,7 @@ combined T2/T3 expansion is a sum of $\mathrm{Li}_2^q$ values.
 
 **Gap B — Cyclotomic residue tail (T6).** Habiro completion residues
 at roots of unity. The Habiro tail-in-ideal axiom
-([`habiro_witness_validator.py`](../../folio-assistant/computations/habiro/habiro_witness_validator.py))
+([`habiro_witness_validator.py`](../../computations/habiro/habiro_witness_validator.py))
 gives the structural form, but evaluating individual residues
 symbolically requires either:
 - direct cyclotomic specialization of the closed-form $\mathrm{tr}_M$

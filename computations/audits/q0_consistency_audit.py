@@ -9,7 +9,7 @@ pin (1.10997859555…) to the proton pin (1.10997858275…). Scripts that
 hardcoded the OLD value — instead of importing the canonical q₀ from
 `q_parameter` — silently keep computing at the stale constant.
 
-This audit scans `folio-assistant/computations/**/*.py` (and the
+This audit scans `computations/**/*.py` (and the
 `tools/qou-substrate` package) and flags:
 
   * OLD-q₀ literal   — the muon-pin digits "10997859555" / "859555"

@@ -101,7 +101,7 @@ involution.  Such elements satisfy $x_\lambda = x_{\lambda^*}$ in
 the Wedderburn decomposition.
 
 The **SDP/LP optimum** identified numerically by
-[sdp_on_shadows.py](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/sdp_on_shadows.py)
+[sdp_on_shadows.py](https://github.com/litlfred/qou/blob/main/computations/sdp_on_shadows.py)
 at $A_{\mathrm{magic}} = 8$ —
 $(x_{(7,1)} = x_{(2,1^6)} = 35.24)$ — is precisely this self-dual
 combination, providing numerical confirmation of the categorical

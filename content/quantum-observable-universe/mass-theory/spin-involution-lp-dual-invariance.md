@@ -167,7 +167,7 @@ Wedderburn strata defined by partition height
 are $S$-stable. Apply the proposition. $\square$
 
 **Empirical confirmation.**
-[`alpha-5-lp-dual-crystal.witness.json`](folio-assistant/computations/alpha/alpha-5-lp-dual-crystal.witness.json)
+[`alpha-5-lp-dual-crystal.witness.json`](computations/alpha/alpha-5-lp-dual-crystal.witness.json)
 verifies $y_0^*(T) = y_0^*({}^3\mathrm{He})$ to machine
 precision (= 570.6762 at $q_0$, = 26.8242 in ht=6 stratum, and
 exactly equal across the entire $q$-sweep).
@@ -177,7 +177,7 @@ exactly equal across the entire $q$-sweep).
 \sigma_{i_2} \sigma_{i_3} \sigma_{i_4}$ be the proton-pair sub-braid
 at the $Z=2$ closed proton shell of $({}^3\mathrm{He}, {}^4\mathrm{He})$
 (intra-strand generator product at positions $\{0,1,3,4\}$ in
-[`atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py))
+[`atom_braid_word_3A`](../../../computations/mass_at_3A_proper.py))
 and $\sigma_{nn}$ the analogous neutron-pair sub-braid at the $N=2$
 closed neutron shell of $({}^3\mathrm{H}, {}^4\mathrm{He})$
 (positions $\{3Z, 3Z+1, 3(Z+1), 3(Z+1)+1\}$). Then*
@@ -201,7 +201,7 @@ elements of $H_n(R, q)$. Apply the proposition with $c = 1$ (trivial
 central operator). $\square$
 
 **Empirical confirmation (Markov-trace level).**
-[`probe-phiq-pair-knot-markov-trace.witness.json`](../../../folio-assistant/computations/probe-phiq-pair-knot-markov-trace.witness.json)
+[`probe-phiq-pair-knot-markov-trace.witness.json`](../../../computations/probe-phiq-pair-knot-markov-trace.witness.json)
 (PR [#638](https://github.com/litlfred/qou/pull/638)) computes
 $\mathrm{tr}_M(\sigma_{pp})$ and $\mathrm{tr}_M(\sigma_{nn})$ via
 Hoefsmit seminormal at $q_0$ for $T$ ($n=9$ with $N=2$ shell) and
@@ -214,14 +214,14 @@ $$
 
 The earlier $1.326\times$ ratio between $\Delta_{\text{shell}}(Z=2)$
 and $\Delta_{\text{shell}}(N=2)$ in
-[`probe_phiq_pair_knot_magic_shell.py`](../../../folio-assistant/computations/probe_phiq_pair_knot_magic_shell.py)
+[`probe_phiq_pair_knot_magic_shell.py`](../../../computations/probe_phiq_pair_knot_magic_shell.py)
 was a **product-volume artifact** — the simple convention
 $|\hat V_{\text{shell}}| = \prod_i |\hat V_i|$ does NOT respect the
 Hecke-algebra structure of the shell sub-braid, while the canonical
 Markov trace does.
 
 **Operator-level signature.** The
-[operator-selection LP dual](../../../folio-assistant/computations/lp_dual_solver.py)
+[operator-selection LP dual](../../../computations/lp_dual_solver.py)
 (per [`prop:operator-selection-lp`](#prop:operator-selection-lp))
 confirms that $\sigma_{pp}, \sigma_{nn}$ are in the active set
 EXACTLY at magic-shell atoms ($Z=2$ activates $\sigma_{pp}$, $N=2$

@@ -150,14 +150,14 @@ See [Table 1](#tbl:binding-knots-visual-inventory-table1-data).
 ## Higher-order links (in mass-table-ppb pipeline)
 
 The zero-parameter Kashaev law $B = \rho_F \cdot \mathrm{Vol}_{\mathrm{hyp}}(K)$
-in [`mass_table_ppb.py`](../../../folio-assistant/computations/mass_table_ppb.py)
+in [`mass_table_ppb.py`](../../../computations/mass_table_ppb.py)
 uses additional hyperbolic knots/links that do not yet have
 visualizations here:
 
 See [Table 2](#tbl:binding-knots-visual-inventory-table2-data).
 
 These are flagged `census-assigned` in
-[`mass-table-ppb.witness.json`](../../../folio-assistant/computations/mass-table-ppb.witness.json),
+[`mass-table-ppb.witness.json`](../../../computations/mass-table-ppb.witness.json),
 indicating the assignment was selected by census search to
 match AME binding energies rather than derived from first
 principles ([Workplan 0b §4 derivation status](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)).

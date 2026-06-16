@@ -28,7 +28,7 @@ substrate derivation must be reformulated.
 
 Witness: `a-minus-2-q-substrate-probe.witness.json`
 
-@module folio-assistant/computations/probe_a_minus_2_q_substrate
+@module computations/probe_a_minus_2_q_substrate
 """
 from __future__ import annotations
 

@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-24
 **Branch:** `claude/sinh-bar-antisymmetric-partner-probe-2026-05-24`
-**Script:** [`folio-assistant/computations/sinh_bar_antisymmetric_partner.py`](../../folio-assistant/computations/sinh_bar_antisymmetric_partner.py)
+**Script:** [`computations/sinh_bar_antisymmetric_partner.py`](../../computations/sinh_bar_antisymmetric_partner.py)
 **Witness:** `sinh-bar-antisymmetric-partner.witness.json`
 **Status:** EXPLORATORY (audit-only). Identities PROVED symbolically + numerically.
 
@@ -65,7 +65,7 @@ So the **EM-channel fraction grows with knot complexity**, asymptotically satura
 
 ## Pythagorean identity (PROVED by sibling commit `596b500f5`)
 
-After this probe landed, a sibling derivation on `main` (commit `596b500f5` — [`p_q_pythagorean_identity.py`](../../folio-assistant/computations/p_q_pythagorean_identity.py)) proved a clean **m-INDEPENDENT** structural identity relating `P_m` and `Q_m`:
+After this probe landed, a sibling derivation on `main` (commit `596b500f5` — [`p_q_pythagorean_identity.py`](../../computations/p_q_pythagorean_identity.py)) proved a clean **m-INDEPENDENT** structural identity relating `P_m` and `Q_m`:
 
 ```
 P_m(h)² − Q_m(h)²  =  1 / [2]_q²            (PROVED for all m via sympy trigsimp).

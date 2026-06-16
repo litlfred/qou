@@ -48,7 +48,7 @@ None of these are obvious special-value matches (e.g., D(1) ≠ 0, so u=1 is not
 The a_7 absolute coefficients `[110, 84, 63, 48, 34, 24, 17, 12]` were checked against:
 
 - **Binomial coefficients C(n, k)**: only `84 = C(9, 3)` matches, and `12 = C(12, 1)`, `17 = C(17, 1)` — isolated coincidences, no systematic pattern.
-- **Colored partitions** p_{b=2}, p_{b=3}, p_{b=4} — confirmed NO match in the prior audit ([`qbeta_habiro_a7_partition_check.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_a7_partition_check.py)).
+- **Colored partitions** p_{b=2}, p_{b=3}, p_{b=4} — confirmed NO match in the prior audit ([`qbeta_habiro_a7_partition_check.py`](../../computations/qbeta/qbeta_habiro_a7_partition_check.py)).
 - **Sequence differences**: first differences `[26, 21, 15, 14, 10, 7, 5]`, second differences `[5, 6, 1, 4, 3, 2]` — no clean pattern.
 - **Sum at u=1**: `a_7(1) = -(110+84+63+48+34+24+17+12) = −392 = −2³ · 7²`.
 

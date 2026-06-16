@@ -44,7 +44,7 @@ actual confinement data (`n₀ = 3·A = 9`, `A = 3`):
 - **cost** — the binding-residual quadratic of the multi-term mass formula
   `ρ·[tr_M(T_w) + tower(T_w) + tr_M(C_{dimq})]·𝔈₀ − B_AME(³He)`², with `ρ = 2`,
   `B_AME = 7.7181 MeV`. Pull the numeric coefficients from
-  [`r5-full-canonical-knot-solver.witness.json`](../../folio-assistant/computations/r5-full-canonical-knot-solver.witness.json)
+  [`r5-full-canonical-knot-solver.witness.json`](../../computations/r5-full-canonical-knot-solver.witness.json)
   (the `³He` row: PSD-feasible, α⋆ = 0, recovered word `(σ₁σ₂⁻¹)³` in the `(2,1)`
   Wedderburn block).
 - **constraints `ι`** — encode the `Δ_max` Frobenius ball

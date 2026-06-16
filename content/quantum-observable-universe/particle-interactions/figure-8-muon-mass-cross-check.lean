@@ -60,7 +60,7 @@ theorem muon_ratio_is_topological
 --   Vol(4_1) / ℏ_q²       = 206.7682830…
 --   CODATA m_μ/m_e        = 206.7682830…
 --   relative residual     = 1.45 × 10⁻³⁰ ppm
--- See folio-assistant/computations/m-baryon-volume-form.witness.json.
+-- See computations/m-baryon-volume-form.witness.json.
 
 end MuonVolForm
 end QOU

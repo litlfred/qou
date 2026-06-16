@@ -93,9 +93,9 @@ This is the path the existing `mass_at_3A_proper` was designed for. The combiner
 
 ## Cross-references
 
-- [`folio-assistant/computations/canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py) — combiner, now correctly returns None for A≥3
-- [`folio-assistant/computations/a_operator/A_operator_extract_at_level.py`](../../folio-assistant/computations/a_operator/A_operator_extract_at_level.py) — extract generator
-- [`folio-assistant/computations/markov/markov_peel.py`](../../folio-assistant/computations/markov/markov_peel.py) — canonical inner |tr_M| (workaround)
-- [`folio-assistant/computations/rho_k_h3a_crystal.py`](../../folio-assistant/computations/rho_k_h3a_crystal.py) — Option E (failed)
+- [`computations/canonical_tr_m_via_branching.py`](../../computations/canonical_tr_m_via_branching.py) — combiner, now correctly returns None for A≥3
+- [`computations/a_operator/A_operator_extract_at_level.py`](../../computations/a_operator/A_operator_extract_at_level.py) — extract generator
+- [`computations/markov/markov_peel.py`](../../computations/markov/markov_peel.py) — canonical inner |tr_M| (workaround)
+- [`computations/rho_k_h3a_crystal.py`](../../computations/rho_k_h3a_crystal.py) — Option E (failed)
 - [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md) — Δ_λ gate + Path A/B/C/D split
 - [`docs/audits/2026-05-18-1ppb-workplan-v7-100x-experimental.md`](2026-05-18-1ppb-workplan-v7-100x-experimental.md) — workplan

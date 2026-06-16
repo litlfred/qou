@@ -12,7 +12,7 @@ The Q_β precision-ladder Habiro element `F(u) = Π_{k=2..} (1 + c_k u^k)` has *
 lim_{k→∞} c_{k+1} / c_k  =  1 / u_substrate  ≈  117.409001
 ```
 
-Empirical (SDP-extracted c_k at 50 dps, [`qbeta-decay-sdp-extended-ck.witness.json`](../../folio-assistant/computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json)):
+Empirical (SDP-extracted c_k at 50 dps, [`qbeta-decay-sdp-extended-ck.witness.json`](../../computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json)):
 
 | k → k+1 | c_{k+1} / c_k |
 |---|---|
@@ -71,8 +71,8 @@ This finding may be relevant to PR #1521 (α_em Habiro categorical ID) — if α
 
 ## Files
 
-- Probe: [`folio-assistant/computations/qbeta/qbeta_habiro_q_difference_recurrence_probe.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_q_difference_recurrence_probe.py)
-- Witness: [`folio-assistant/computations/qbeta/qbeta-habiro-q-difference-recurrence-probe.witness.json`](../../folio-assistant/computations/qbeta/qbeta-habiro-q-difference-recurrence-probe.witness.json)
+- Probe: [`computations/qbeta/qbeta_habiro_q_difference_recurrence_probe.py`](../../computations/qbeta/qbeta_habiro_q_difference_recurrence_probe.py)
+- Witness: [`computations/qbeta/qbeta-habiro-q-difference-recurrence-probe.witness.json`](../../computations/qbeta/qbeta-habiro-q-difference-recurrence-probe.witness.json)
 
 ## Cross-references
 
@@ -80,4 +80,4 @@ This finding may be relevant to PR #1521 (α_em Habiro categorical ID) — if α
 - Fibre-vs-observable framing: CLAUDE.md §"Im(q) at fibre vs observable level (2026-06-01)"
 - c_3 cross-anchor swing: [`docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md`](2026-05-31-qbeta-c3-q0-stability-verdict.md)
 - Accidental-coincidence audit: [`docs/audits/2026-05-31-qbeta-c3-order-audit-accidental-coincidence.md`](2026-05-31-qbeta-c3-order-audit-accidental-coincidence.md)
-- SDP c_k extraction: [`folio-assistant/computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json`](../../folio-assistant/computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json)
+- SDP c_k extraction: [`computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json`](../../computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json)

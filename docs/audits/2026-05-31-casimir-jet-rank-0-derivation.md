@@ -93,7 +93,7 @@ $$
 
 ## Verification probe
 
-[`casimir_jet_order_derivation.py`](../../folio-assistant/computations/casimir_jet_order_derivation.py)
+[`casimir_jet_order_derivation.py`](../../computations/casimir_jet_order_derivation.py)
 evaluates the derived prefactor at `q ∈ {1.05, 1.110, 1.5}` and
 confirms:
 - All three give exactly `π²/720` (q-independence ✓)

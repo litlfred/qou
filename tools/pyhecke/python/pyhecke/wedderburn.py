@@ -15,7 +15,7 @@ Symbols owned by this module:
 For the `partition_jet_depth` (jet-prefix combinatorial depth) symbol
 — EXPLORATORY per the canonical/exploratory audit
 (docs/audits/2026-05-24-hecke-core-canonical-audit.md) — see
-`folio-assistant/computations/_deprecated/hecke_core_legacy.py`. It
+`computations/_deprecated/hecke_core_legacy.py`. It
 is re-exported here for back-compat but lives in the legacy file.
 
 See `partition.py` for Young-tableau specific helpers (SYT
@@ -30,14 +30,14 @@ import math
 # Substrate q from q_parameter (no hecke_core dependency — this module
 # is a SOURCE, not a re-exporter). q_parameter is part of the
 # substrate trio that's been promoted to `qou-substrate` (PR #1068);
-# the back-compat shim in folio-assistant/computations/q_parameter.py
+# the back-compat shim in computations/q_parameter.py
 # re-exports from qou_substrate, so either import path works at
 # runtime.
 try:
     from q_parameter import q_int  # type: ignore[import-not-found]
 except ImportError:
     # Fallback for installations where qou-substrate is the only
-    # provider (no folio-assistant/computations/ on sys.path).
+    # provider (no computations/ on sys.path).
     from qou_substrate.constants import q_int  # type: ignore[import-not-found]
 
 

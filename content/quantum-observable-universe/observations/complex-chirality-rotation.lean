@@ -50,7 +50,7 @@ class ComplexChiralityRotation : Prop where
 
 -- Ref: [manuscript] conj:complex-chirality-rotation
 instance complex_chirality_rotation_conjecture : ComplexChiralityRotation where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   crossing_energy_phase := fun _ => sorry
   -- Ref: [manuscript]
   chirality_interpolation := fun _ => sorry

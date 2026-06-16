@@ -15,7 +15,7 @@ Knot operators (braid words):
 Output: JSON witness + markdown table for inclusion in content.
 
 Usage:
-    cd folio-assistant/computations && python3 knot-operator-table.py
+    cd computations && python3 knot-operator-table.py
 """
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json

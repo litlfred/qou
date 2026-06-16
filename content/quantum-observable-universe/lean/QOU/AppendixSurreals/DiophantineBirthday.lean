@@ -32,7 +32,7 @@ $q$ (Liouville), and Roth improves the exponent to $2 + \delta$ for
 any $\delta > 0$.  We use $\delta$ rather than $\varepsilon$ here
 to avoid collision with the surreal infinitesimal $\varepsilon =
 1/\omega$ used elsewhere
-  -- Witness: folio-assistant/computations/none in this appendix.
+  -- Witness: computations/none in this appendix.
 
       Field schema below is a structural placeholder; refine per §3b
       to match the conjecture's actual content. The single sorry on

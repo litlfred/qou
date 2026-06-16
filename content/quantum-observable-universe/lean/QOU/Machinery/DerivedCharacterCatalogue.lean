@@ -5,7 +5,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 
 > **Lean side of the 3-axis (knot, partition, atom) derived-χ catalogue**
 > implemented in Python at
-> [`folio-assistant/computations/derived_chi_catalogue.py`](../../../../../folio-assistant/computations/derived_chi_catalogue.py)
+> [`computations/derived_chi_catalogue.py`](../../../../../computations/derived_chi_catalogue.py)
 > (PR #1952). This module gives the catalogue a Lean type-level
 > presence: a `KnotPartitionAtomCell` structure mirroring the Python
 > schema, conditional classes for R-matrix derivation provenance, and
@@ -199,7 +199,7 @@ def borromeanTwoOneBaryon : KnotPartitionAtomCell where
   tier := Tier.derived
   derivationRef :=
     "PR #1933 (T17 R-matrix on V⊗3); independent re-derivation in "
-    ++ "folio-assistant/computations/derived_chi_catalogue_build.py "
+    ++ "computations/derived_chi_catalogue_build.py "
     ++ "(Kassel form 2 − 3h⁴ − h⁶ with h = q − q⁻¹)"
 
 /-- Genuine `ℚ → ℚ` evaluation of `borromeanTwoOneBaryon.chiLambdaQLaurent`

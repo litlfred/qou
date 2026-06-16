@@ -10,9 +10,9 @@ export default proposition({
   },
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/jonquiere_cyclotomic_general.py",
+    script: "computations/jonquiere_cyclotomic_general.py",
     witness:
-      "folio-assistant/computations/jonquiere-cyclotomic-general.witness.json",
+      "computations/jonquiere-cyclotomic-general.witness.json",
     status: "verified",
   },
   cites: ["bloch2000", "zagier1986"],

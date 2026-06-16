@@ -2,9 +2,9 @@
   "items": [
     {
       "id": "76b05912d7d5",
-      "block_or_script": "folio-assistant/computations/derivation_chain.py",
+      "block_or_script": "computations/derivation_chain.py",
       "paths": {
-        "py": "folio-assistant/computations/derivation_chain.py"
+        "py": "computations/derivation_chain.py"
       },
       "finding": "I-conflict-two-canonical-values",
       "severity": "critical",
@@ -549,9 +549,9 @@
     },
     {
       "id": "d53f7c2a9912",
-      "block_or_script": "folio-assistant/computations/atomic_mass_via_rho_k.py",
+      "block_or_script": "computations/atomic_mass_via_rho_k.py",
       "paths": {
-        "py": "folio-assistant/computations/atomic_mass_via_rho_k.py"
+        "py": "computations/atomic_mass_via_rho_k.py"
       },
       "finding": "I9-hardcoded-codata-production",
       "severity": "major",
@@ -565,9 +565,9 @@
     },
     {
       "id": "1f9df47e14f2",
-      "block_or_script": "folio-assistant/computations/binding_K_direct.py",
+      "block_or_script": "computations/binding_K_direct.py",
       "paths": {
-        "py": "folio-assistant/computations/binding_K_direct.py"
+        "py": "computations/binding_K_direct.py"
       },
       "finding": "I9-hardcoded-codata-production",
       "severity": "major",
@@ -581,9 +581,9 @@
     },
     {
       "id": "23db5cbf19d2",
-      "block_or_script": "folio-assistant/computations/build_six_term_substrate_model_b.py",
+      "block_or_script": "computations/build_six_term_substrate_model_b.py",
       "paths": {
-        "py": "folio-assistant/computations/build_six_term_substrate_model_b.py"
+        "py": "computations/build_six_term_substrate_model_b.py"
       },
       "finding": "I9-hardcoded-codata-production",
       "severity": "major",
@@ -597,9 +597,9 @@
     },
     {
       "id": "401f39200784",
-      "block_or_script": "folio-assistant/computations/compound_binding_via_differences.py",
+      "block_or_script": "computations/compound_binding_via_differences.py",
       "paths": {
-        "py": "folio-assistant/computations/compound_binding_via_differences.py"
+        "py": "computations/compound_binding_via_differences.py"
       },
       "finding": "I9-hardcoded-codata-production",
       "severity": "major",
@@ -612,9 +612,9 @@
     },
     {
       "id": "fa4610f2db74",
-      "block_or_script": "folio-assistant/computations/derive_m_baryon_volume_form.py",
+      "block_or_script": "computations/derive_m_baryon_volume_form.py",
       "paths": {
-        "py": "folio-assistant/computations/derive_m_baryon_volume_form.py"
+        "py": "computations/derive_m_baryon_volume_form.py"
       },
       "finding": "I9-hardcoded-codata-production",
       "severity": "major",
@@ -628,9 +628,9 @@
     },
     {
       "id": "f6173e841039",
-      "block_or_script": "folio-assistant/computations/inter_nucleon_linked_channel.py",
+      "block_or_script": "computations/inter_nucleon_linked_channel.py",
       "paths": {
-        "py": "folio-assistant/computations/inter_nucleon_linked_channel.py"
+        "py": "computations/inter_nucleon_linked_channel.py"
       },
       "finding": "I9-hardcoded-codata-production",
       "severity": "major",
@@ -644,9 +644,9 @@
     },
     {
       "id": "66d6e35f7bd1",
-      "block_or_script": "folio-assistant/computations/m_p_substrate_identity_50dps.py",
+      "block_or_script": "computations/m_p_substrate_identity_50dps.py",
       "paths": {
-        "py": "folio-assistant/computations/m_p_substrate_identity_50dps.py"
+        "py": "computations/m_p_substrate_identity_50dps.py"
       },
       "finding": "I9-hardcoded-codata-production",
       "severity": "major",
@@ -660,9 +660,9 @@
     },
     {
       "id": "28d8564c3dec",
-      "block_or_script": "folio-assistant/computations/mass_formula_6term_mpfr_50dps.py",
+      "block_or_script": "computations/mass_formula_6term_mpfr_50dps.py",
       "paths": {
-        "py": "folio-assistant/computations/mass_formula_6term_mpfr_50dps.py"
+        "py": "computations/mass_formula_6term_mpfr_50dps.py"
       },
       "finding": "I9-hardcoded-codata-production",
       "severity": "major",
@@ -676,9 +676,9 @@
     },
     {
       "id": "aca22173f91a",
-      "block_or_script": "folio-assistant/computations/mass_table_l1_full_crosscheck.py",
+      "block_or_script": "computations/mass_table_l1_full_crosscheck.py",
       "paths": {
-        "py": "folio-assistant/computations/mass_table_l1_full_crosscheck.py"
+        "py": "computations/mass_table_l1_full_crosscheck.py"
       },
       "finding": "I9-hardcoded-codata-production",
       "severity": "major",
@@ -691,9 +691,9 @@
     },
     {
       "id": "29d7569c2ad4",
-      "block_or_script": "folio-assistant/computations/mass_table_ppb.py",
+      "block_or_script": "computations/mass_table_ppb.py",
       "paths": {
-        "py": "folio-assistant/computations/mass_table_ppb.py"
+        "py": "computations/mass_table_ppb.py"
       },
       "finding": "I9-hardcoded-codata-production",
       "severity": "major",
@@ -706,9 +706,9 @@
     },
     {
       "id": "4b9aa11b2400",
-      "block_or_script": "folio-assistant/computations/meson_mass_from_hecke.py",
+      "block_or_script": "computations/meson_mass_from_hecke.py",
       "paths": {
-        "py": "folio-assistant/computations/meson_mass_from_hecke.py"
+        "py": "computations/meson_mass_from_hecke.py"
       },
       "finding": "I9-hardcoded-codata-production",
       "severity": "major",
@@ -722,9 +722,9 @@
     },
     {
       "id": "437b3941d743",
-      "block_or_script": "folio-assistant/computations/meson_vol_density.py",
+      "block_or_script": "computations/meson_vol_density.py",
       "paths": {
-        "py": "folio-assistant/computations/meson_vol_density.py"
+        "py": "computations/meson_vol_density.py"
       },
       "finding": "I9-hardcoded-codata-production",
       "severity": "major",
@@ -738,9 +738,9 @@
     },
     {
       "id": "b6635069b6a5",
-      "block_or_script": "folio-assistant/computations/tower_isotope_absolute.py",
+      "block_or_script": "computations/tower_isotope_absolute.py",
       "paths": {
-        "py": "folio-assistant/computations/tower_isotope_absolute.py"
+        "py": "computations/tower_isotope_absolute.py"
       },
       "finding": "I9-hardcoded-codata-production",
       "severity": "major",
@@ -753,9 +753,9 @@
     },
     {
       "id": "54aabc03fbfd",
-      "block_or_script": "folio-assistant/computations/canonical_lepton_braid_words.py",
+      "block_or_script": "computations/canonical_lepton_braid_words.py",
       "paths": {
-        "py": "folio-assistant/computations/canonical_lepton_braid_words.py"
+        "py": "computations/canonical_lepton_braid_words.py"
       },
       "finding": "I9-hardcoded-codata",
       "severity": "minor",
@@ -769,9 +769,9 @@
     },
     {
       "id": "38e6ec02d26e",
-      "block_or_script": "folio-assistant/computations/f_ell_derivation_via_per_braid_mass_tower.py",
+      "block_or_script": "computations/f_ell_derivation_via_per_braid_mass_tower.py",
       "paths": {
-        "py": "folio-assistant/computations/f_ell_derivation_via_per_braid_mass_tower.py"
+        "py": "computations/f_ell_derivation_via_per_braid_mass_tower.py"
       },
       "finding": "I9-hardcoded-codata",
       "severity": "minor",
@@ -785,9 +785,9 @@
     },
     {
       "id": "7a4917b4e649",
-      "block_or_script": "folio-assistant/computations/h4_residual_vs_fine_structure_50dps.py",
+      "block_or_script": "computations/h4_residual_vs_fine_structure_50dps.py",
       "paths": {
-        "py": "folio-assistant/computations/h4_residual_vs_fine_structure_50dps.py"
+        "py": "computations/h4_residual_vs_fine_structure_50dps.py"
       },
       "finding": "I9-hardcoded-codata",
       "severity": "minor",
@@ -801,9 +801,9 @@
     },
     {
       "id": "a6cd69bb52d1",
-      "block_or_script": "folio-assistant/computations/knot_operator_sdp_4_1.py",
+      "block_or_script": "computations/knot_operator_sdp_4_1.py",
       "paths": {
-        "py": "folio-assistant/computations/knot_operator_sdp_4_1.py"
+        "py": "computations/knot_operator_sdp_4_1.py"
       },
       "finding": "I9-hardcoded-codata",
       "severity": "minor",
@@ -817,9 +817,9 @@
     },
     {
       "id": "37a8faa017e4",
-      "block_or_script": "folio-assistant/computations/lambda_scale_refinement_h4_correction_bring.py",
+      "block_or_script": "computations/lambda_scale_refinement_h4_correction_bring.py",
       "paths": {
-        "py": "folio-assistant/computations/lambda_scale_refinement_h4_correction_bring.py"
+        "py": "computations/lambda_scale_refinement_h4_correction_bring.py"
       },
       "finding": "I9-hardcoded-codata",
       "severity": "minor",
@@ -833,9 +833,9 @@
     },
     {
       "id": "296d8c70c729",
-      "block_or_script": "folio-assistant/computations/lambda_scale_refinements_composed_predictions.py",
+      "block_or_script": "computations/lambda_scale_refinements_composed_predictions.py",
       "paths": {
-        "py": "folio-assistant/computations/lambda_scale_refinements_composed_predictions.py"
+        "py": "computations/lambda_scale_refinements_composed_predictions.py"
       },
       "finding": "I9-hardcoded-codata",
       "severity": "minor",
@@ -849,9 +849,9 @@
     },
     {
       "id": "3b12829a0d7c",
-      "block_or_script": "folio-assistant/computations/m_tau_knot_prediction.py",
+      "block_or_script": "computations/m_tau_knot_prediction.py",
       "paths": {
-        "py": "folio-assistant/computations/m_tau_knot_prediction.py"
+        "py": "computations/m_tau_knot_prediction.py"
       },
       "finding": "I9-hardcoded-codata",
       "severity": "minor",
@@ -865,9 +865,9 @@
     },
     {
       "id": "711cac4c6169",
-      "block_or_script": "folio-assistant/computations/per_generator_V_hat_general.py",
+      "block_or_script": "computations/per_generator_V_hat_general.py",
       "paths": {
-        "py": "folio-assistant/computations/per_generator_V_hat_general.py"
+        "py": "computations/per_generator_V_hat_general.py"
       },
       "finding": "I9-hardcoded-codata",
       "severity": "minor",
@@ -881,9 +881,9 @@
     },
     {
       "id": "2eb609f034f2",
-      "block_or_script": "folio-assistant/computations/q_dirac_linking_weight_extended_50dps.py",
+      "block_or_script": "computations/q_dirac_linking_weight_extended_50dps.py",
       "paths": {
-        "py": "folio-assistant/computations/q_dirac_linking_weight_extended_50dps.py"
+        "py": "computations/q_dirac_linking_weight_extended_50dps.py"
       },
       "finding": "I9-hardcoded-codata",
       "severity": "minor",
@@ -897,9 +897,9 @@
     },
     {
       "id": "960cd85db999",
-      "block_or_script": "folio-assistant/computations/t6_lepton_h3_3channel_convention.py",
+      "block_or_script": "computations/t6_lepton_h3_3channel_convention.py",
       "paths": {
-        "py": "folio-assistant/computations/t6_lepton_h3_3channel_convention.py"
+        "py": "computations/t6_lepton_h3_3channel_convention.py"
       },
       "finding": "I9-hardcoded-codata",
       "severity": "minor",
@@ -913,9 +913,9 @@
     },
     {
       "id": "b8d4c3567519",
-      "block_or_script": "folio-assistant/computations/verify_isospin_bar_anomaly.py",
+      "block_or_script": "computations/verify_isospin_bar_anomaly.py",
       "paths": {
-        "py": "folio-assistant/computations/verify_isospin_bar_anomaly.py"
+        "py": "computations/verify_isospin_bar_anomaly.py"
       },
       "finding": "I9-hardcoded-codata",
       "severity": "minor",
@@ -929,9 +929,9 @@
     },
     {
       "id": "f0a17276535d",
-      "block_or_script": "folio-assistant/computations/per-pair-wedderburn-enumeration.witness.json",
+      "block_or_script": "computations/per-pair-wedderburn-enumeration.witness.json",
       "paths": {
-        "py": "folio-assistant/computations/per-pair-wedderburn-enumeration.witness.json"
+        "py": "computations/per-pair-wedderburn-enumeration.witness.json"
       },
       "finding": "I6-list-typed-data-schema-drift",
       "severity": "major",
@@ -945,9 +945,9 @@
     },
     {
       "id": "cef47fdce772",
-      "block_or_script": "folio-assistant/computations/topic2-mirror-pair-phi8-boundary-scan.witness.json",
+      "block_or_script": "computations/topic2-mirror-pair-phi8-boundary-scan.witness.json",
       "paths": {
-        "py": "folio-assistant/computations/topic2-mirror-pair-phi8-boundary-scan.witness.json"
+        "py": "computations/topic2-mirror-pair-phi8-boundary-scan.witness.json"
       },
       "finding": "I6-list-typed-data-schema-drift",
       "severity": "major",
@@ -963,7 +963,7 @@
       "id": "78fb2f73615a",
       "block_or_script": "mass-table-sweep:exploratory",
       "paths": {
-        "py": "folio-assistant/computations/mass_table_ppb.py",
+        "py": "computations/mass_table_ppb.py",
         "ts": "n/a"
       },
       "finding": "I2-mass-table-not-canonically-wired",
@@ -979,7 +979,7 @@
       "id": "dd63070e288b",
       "block_or_script": "mass-table-sweep:extrapolated",
       "paths": {
-        "py": "folio-assistant/computations/mass_table_ppb.py",
+        "py": "computations/mass_table_ppb.py",
         "ts": "n/a"
       },
       "finding": "I2-mass-table-not-canonically-wired",
@@ -995,7 +995,7 @@
       "id": "ef50351c2ecb",
       "block_or_script": "mass-table-sweep:gap",
       "paths": {
-        "py": "folio-assistant/computations/mass_table_ppb.py",
+        "py": "computations/mass_table_ppb.py",
         "ts": "n/a"
       },
       "finding": "I2-mass-table-not-canonically-wired",
@@ -1011,7 +1011,7 @@
       "id": "fb83faba85d4",
       "block_or_script": "mass-table-sweep:alpha-cluster",
       "paths": {
-        "py": "folio-assistant/computations/mass_table_ppb.py",
+        "py": "computations/mass_table_ppb.py",
         "ts": "n/a"
       },
       "finding": "I2-mass-table-not-canonically-wired",
@@ -1027,7 +1027,7 @@
       "id": "5e1594d29b41",
       "block_or_script": "mass-table-sweep:klr-positivity",
       "paths": {
-        "py": "folio-assistant/computations/mass_sweep_wiring_status.py"
+        "py": "computations/mass_sweep_wiring_status.py"
       },
       "finding": "I2-klr-positivity-violation",
       "severity": "major",
@@ -1042,7 +1042,7 @@
       "id": "153e1a484b43",
       "block_or_script": "AGGREGATE:witness-builder-p30",
       "paths": {
-        "py": "folio-assistant/computations/compute_audit_scan.py"
+        "py": "computations/compute_audit_scan.py"
       },
       "finding": "I-infra-no-witnessbuilder-P30",
       "severity": "minor",
@@ -1057,7 +1057,7 @@
       "id": "63a90056cb57",
       "block_or_script": "AGGREGATE:witness-provenance-i14",
       "paths": {
-        "py": "folio-assistant/computations/audits/witness_provenance_audit.py"
+        "py": "computations/audits/witness_provenance_audit.py"
       },
       "finding": "I14-witness-provenance-incomplete",
       "severity": "minor",
@@ -1072,7 +1072,7 @@
       "id": "dc74da9b9293",
       "block_or_script": "AGGREGATE:cal-overcount",
       "paths": {
-        "py": "folio-assistant/computations/audits/canonical_script_input_audit.py"
+        "py": "computations/audits/canonical_script_input_audit.py"
       },
       "finding": "I-cal-input-overcount",
       "severity": "minor",
@@ -1085,7 +1085,7 @@
     }
   ],
   "audited": {
-    "folio-assistant/computations/derivation_chain.py": {
+    "computations/derivation_chain.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
@@ -1302,182 +1302,182 @@
         "I1-proven-no-probe"
       ]
     },
-    "folio-assistant/computations/atomic_mass_via_rho_k.py": {
+    "computations/atomic_mass_via_rho_k.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata-production"
       ]
     },
-    "folio-assistant/computations/binding_K_direct.py": {
+    "computations/binding_K_direct.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata-production"
       ]
     },
-    "folio-assistant/computations/build_six_term_substrate_model_b.py": {
+    "computations/build_six_term_substrate_model_b.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata-production"
       ]
     },
-    "folio-assistant/computations/compound_binding_via_differences.py": {
+    "computations/compound_binding_via_differences.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata-production"
       ]
     },
-    "folio-assistant/computations/derive_m_baryon_volume_form.py": {
+    "computations/derive_m_baryon_volume_form.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata-production"
       ]
     },
-    "folio-assistant/computations/inter_nucleon_linked_channel.py": {
+    "computations/inter_nucleon_linked_channel.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata-production"
       ]
     },
-    "folio-assistant/computations/m_p_substrate_identity_50dps.py": {
+    "computations/m_p_substrate_identity_50dps.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata-production"
       ]
     },
-    "folio-assistant/computations/mass_formula_6term_mpfr_50dps.py": {
+    "computations/mass_formula_6term_mpfr_50dps.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata-production"
       ]
     },
-    "folio-assistant/computations/mass_table_l1_full_crosscheck.py": {
+    "computations/mass_table_l1_full_crosscheck.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata-production"
       ]
     },
-    "folio-assistant/computations/mass_table_ppb.py": {
+    "computations/mass_table_ppb.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata-production"
       ]
     },
-    "folio-assistant/computations/meson_mass_from_hecke.py": {
+    "computations/meson_mass_from_hecke.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata-production"
       ]
     },
-    "folio-assistant/computations/meson_vol_density.py": {
+    "computations/meson_vol_density.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata-production"
       ]
     },
-    "folio-assistant/computations/tower_isotope_absolute.py": {
+    "computations/tower_isotope_absolute.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata-production"
       ]
     },
-    "folio-assistant/computations/canonical_lepton_braid_words.py": {
+    "computations/canonical_lepton_braid_words.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata"
       ]
     },
-    "folio-assistant/computations/f_ell_derivation_via_per_braid_mass_tower.py": {
+    "computations/f_ell_derivation_via_per_braid_mass_tower.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata"
       ]
     },
-    "folio-assistant/computations/h4_residual_vs_fine_structure_50dps.py": {
+    "computations/h4_residual_vs_fine_structure_50dps.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata"
       ]
     },
-    "folio-assistant/computations/knot_operator_sdp_4_1.py": {
+    "computations/knot_operator_sdp_4_1.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata"
       ]
     },
-    "folio-assistant/computations/lambda_scale_refinement_h4_correction_bring.py": {
+    "computations/lambda_scale_refinement_h4_correction_bring.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata"
       ]
     },
-    "folio-assistant/computations/lambda_scale_refinements_composed_predictions.py": {
+    "computations/lambda_scale_refinements_composed_predictions.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata"
       ]
     },
-    "folio-assistant/computations/m_tau_knot_prediction.py": {
+    "computations/m_tau_knot_prediction.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata"
       ]
     },
-    "folio-assistant/computations/per_generator_V_hat_general.py": {
+    "computations/per_generator_V_hat_general.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata"
       ]
     },
-    "folio-assistant/computations/q_dirac_linking_weight_extended_50dps.py": {
+    "computations/q_dirac_linking_weight_extended_50dps.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata"
       ]
     },
-    "folio-assistant/computations/t6_lepton_h3_3channel_convention.py": {
+    "computations/t6_lepton_h3_3channel_convention.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata"
       ]
     },
-    "folio-assistant/computations/verify_isospin_bar_anomaly.py": {
+    "computations/verify_isospin_bar_anomaly.py": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I9-hardcoded-codata"
       ]
     },
-    "folio-assistant/computations/per-pair-wedderburn-enumeration.witness.json": {
+    "computations/per-pair-wedderburn-enumeration.witness.json": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
         "I6-list-typed-data-schema-drift"
       ]
     },
-    "folio-assistant/computations/topic2-mirror-pair-phi8-boundary-scan.witness.json": {
+    "computations/topic2-mirror-pair-phi8-boundary-scan.witness.json": {
       "ts": "2026-06-13T00:00:00Z",
       "sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "criteria": [
@@ -1830,7 +1830,7 @@
   },
   "verification": {
     "date": "2026-06-13",
-    "method": "corpus-grep (4-path: docs/audits, content, folio-assistant/computations, docs/coordination) + source inspection + live aggregator re-runs (pyhecke installed OK from tools/pyhecke; ran compute_audit_scan.py [P30=133,P31=53], witness_dependency_drift.py [reproduced I6 crash], canonical_script_input_audit.py, witness_provenance_audit.py; built full 251-label witness index vs the initial 153-label index)",
+    "method": "corpus-grep (4-path: docs/audits, content, computations, docs/coordination) + source inspection + live aggregator re-runs (pyhecke installed OK from tools/pyhecke; ran compute_audit_scan.py [P30=133,P31=53], witness_dependency_drift.py [reproduced I6 crash], canonical_script_input_audit.py, witness_provenance_audit.py; built full 251-label witness index vs the initial 153-label index)",
     "demoted_false_positives": 24,
     "confirmed": 40,
     "notes": "I1 over-flagging root cause: initial audit used a 153-label exact-contentBlock index over the top-level computations/ dir only, missing (a) the fuller 251-label index, (b) subdir witnesses (probes/, qbeta/), (c) umbrella-regression consumers (four_unwired_theorems_regression.py), (d) production formulas tagged under sibling labels, and (e) probes lacking set_content_block. It also flagged pure existence/uniqueness props that have no numerical content to probe, and conjecture-class blocks (skill says skip). 6 items kept queued are UNSURE and flagged for author (borromean-hopf-energy-crossover, eos-borromean-cfl, neutron-prediction-comparison, mass-formula-regime-switching, AGGREGATE:cal-overcount [scope-stale], AGGREGATE:witness-provenance-i14 [scope-stale]).",

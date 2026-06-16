@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/constit_factor_residual_phase5k.py",
+  "script_path": "computations/constit_factor_residual_phase5k.py",
   "language": "python",
   "source_hash": "a37f3f4f91e8",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-22T18:27:38.070Z",
         "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
         "severity": "major",
-        "evidence": "folio-assistant/computations/constit_factor_residual_phase5k.py:87: bare `float(h_k)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/constit_factor_residual_phase5k.py:88: bare `float(c_estimate)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/constit_factor_residual_phase5k.py:89: bare `float(h_k / abs(residual))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/constit_factor_residual_phase5k.py:92: bare `float(rho_meas)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/constit_factor_residual_phase5k.py:93: bare `float(predicted)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/constit_factor_residual_phase5k.py:87: bare `float(h_k)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/constit_factor_residual_phase5k.py:88: bare `float(c_estimate)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/constit_factor_residual_phase5k.py:89: bare `float(h_k / abs(residual))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/constit_factor_residual_phase5k.py:92: bare `float(rho_meas)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/constit_factor_residual_phase5k.py:93: bare `float(predicted)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       },
       {
         "field_hash": {
@@ -38,7 +38,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/constit_factor_residual_phase5k.py:87: bare `float(h_k)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/constit_factor_residual_phase5k.py:88: bare `float(c_estimate)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/constit_factor_residual_phase5k.py:89: bare `float(h_k / abs(residual))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/constit_factor_residual_phase5k.py:92: bare `float(rho_meas)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/constit_factor_residual_phase5k.py:93: bare `float(predicted)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/constit_factor_residual_phase5k.py:87: bare `float(h_k)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/constit_factor_residual_phase5k.py:88: bare `float(c_estimate)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/constit_factor_residual_phase5k.py:89: bare `float(h_k / abs(residual))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/constit_factor_residual_phase5k.py:92: bare `float(rho_meas)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/constit_factor_residual_phase5k.py:93: bare `float(predicted)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       },
       {
         "field_hash": {
@@ -55,7 +55,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/constit_factor_residual_phase5k.py:87: bare `float(h_k)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/constit_factor_residual_phase5k.py:88: bare `float(c_estimate)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/constit_factor_residual_phase5k.py:89: bare `float(h_k / abs(residual))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/constit_factor_residual_phase5k.py:92: bare `float(rho_meas)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/constit_factor_residual_phase5k.py:93: bare `float(predicted)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/constit_factor_residual_phase5k.py:87: bare `float(h_k)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/constit_factor_residual_phase5k.py:88: bare `float(c_estimate)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/constit_factor_residual_phase5k.py:89: bare `float(h_k / abs(residual))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/constit_factor_residual_phase5k.py:92: bare `float(rho_meas)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/constit_factor_residual_phase5k.py:93: bare `float(predicted)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       }
     ],
     "respects_archimedean_wall": [
@@ -170,7 +170,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/constit_factor_residual_phase5k.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/constit_factor_residual_phase5k.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       },
       {
         "field_hash": {
@@ -187,7 +187,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/constit_factor_residual_phase5k.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/constit_factor_residual_phase5k.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -206,7 +206,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/constit_factor_residual_phase5k.py:1: script `constit_factor_residual_phase5k.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/constit_factor_residual_phase5k.py:1: script `constit_factor_residual_phase5k.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       },
       {
         "field_hash": {
@@ -223,7 +223,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/constit_factor_residual_phase5k.py:1: script `constit_factor_residual_phase5k.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/constit_factor_residual_phase5k.py:1: script `constit_factor_residual_phase5k.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [
@@ -306,7 +306,7 @@
         "reviewed_at": "2026-06-09T03:37:13.209Z",
         "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33",
         "severity": "critical",
-        "evidence": "folio-assistant/computations/constit_factor_residual_phase5k.py:172: mpmath/sympy → float64 cast `float(mp.exp(h))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/constit_factor_residual_phase5k.py:175: mpmath/sympy → float64 cast `float(mp.exp(h) - 2 * q + 1)` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/constit_factor_residual_phase5k.py:179: mpmath/sympy → float64 cast `float(mp.sinh(h))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
+        "evidence": "computations/constit_factor_residual_phase5k.py:172: mpmath/sympy → float64 cast `float(mp.exp(h))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/constit_factor_residual_phase5k.py:175: mpmath/sympy → float64 cast `float(mp.exp(h) - 2 * q + 1)` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/constit_factor_residual_phase5k.py:179: mpmath/sympy → float64 cast `float(mp.sinh(h))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
       },
       {
         "field_hash": {
@@ -323,7 +323,7 @@
         "reviewed_at": "2026-06-09T03:47:37.719Z",
         "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be",
         "severity": "critical",
-        "evidence": "folio-assistant/computations/constit_factor_residual_phase5k.py:172: mpmath/sympy → float64 cast `float(mp.exp(h))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/constit_factor_residual_phase5k.py:175: mpmath/sympy → float64 cast `float(mp.exp(h) - 2 * q + 1)` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/constit_factor_residual_phase5k.py:179: mpmath/sympy → float64 cast `float(mp.sinh(h))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
+        "evidence": "computations/constit_factor_residual_phase5k.py:172: mpmath/sympy → float64 cast `float(mp.exp(h))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/constit_factor_residual_phase5k.py:175: mpmath/sympy → float64 cast `float(mp.exp(h) - 2 * q + 1)` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/constit_factor_residual_phase5k.py:179: mpmath/sympy → float64 cast `float(mp.sinh(h))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
       }
     ]
   }

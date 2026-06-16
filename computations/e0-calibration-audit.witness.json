@@ -1,7 +1,7 @@
 {
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
-  "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
+  "description": "Audit of E_0 / Q_β(n) calibration constants across computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
   "computedAt": "2026-06-02T15:22:03.952547+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
@@ -26,7 +26,7 @@
     "literal_0_782": [],
     "literal_0_78233341": [
       {
-        "file": "folio-assistant/computations/binding_canonical.py",
+        "file": "computations/binding_canonical.py",
         "line": 144,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -34,7 +34,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/build_cal_3_q_beta_witness.py",
+        "file": "computations/build_cal_3_q_beta_witness.py",
         "line": 71,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -42,7 +42,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/c_alpha_from_Q_beta_trace.py",
+        "file": "computations/c_alpha_from_Q_beta_trace.py",
         "line": 17,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -50,7 +50,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/canonical_plus_multibrane.py",
+        "file": "computations/canonical_plus_multibrane.py",
         "line": 41,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -58,7 +58,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/canonical_plus_multibrane.py",
+        "file": "computations/canonical_plus_multibrane.py",
         "line": 51,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -66,7 +66,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/canonical_plus_multibrane.py",
+        "file": "computations/canonical_plus_multibrane.py",
         "line": 83,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -74,7 +74,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/canonical_tower.py",
+        "file": "computations/canonical_tower.py",
         "line": 63,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -82,7 +82,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/canonical_tower.py",
+        "file": "computations/canonical_tower.py",
         "line": 637,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -90,7 +90,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 156,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -98,7 +98,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 159,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -106,7 +106,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 176,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -114,7 +114,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 189,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -122,7 +122,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/compute_audit_scan.py",
+        "file": "computations/compute_audit_scan.py",
         "line": 69,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -130,7 +130,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/crt_markov.py",
+        "file": "computations/crt_markov.py",
         "line": 591,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -138,7 +138,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/crt_markov.py",
+        "file": "computations/crt_markov.py",
         "line": 653,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -146,7 +146,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/derive_e_0_lp_dual_h3.py",
+        "file": "computations/derive_e_0_lp_dual_h3.py",
         "line": 228,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -154,7 +154,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/derive_e_0_lp_dual_h3.py",
+        "file": "computations/derive_e_0_lp_dual_h3.py",
         "line": 272,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -162,7 +162,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/derived_masses.py",
+        "file": "computations/derived_masses.py",
         "line": 62,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -170,7 +170,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/derived_masses.py",
+        "file": "computations/derived_masses.py",
         "line": 473,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -178,7 +178,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/substrate/experimental_constants.py",
+        "file": "computations/substrate/experimental_constants.py",
         "line": 53,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -186,7 +186,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/substrate/experimental_constants.py",
+        "file": "computations/substrate/experimental_constants.py",
         "line": 60,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -194,7 +194,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/free-neutron-decay.py",
+        "file": "computations/free-neutron-decay.py",
         "line": 457,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -202,7 +202,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/hecke/hecke_characters.py",
+        "file": "computations/hecke/hecke_characters.py",
         "line": 46,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -210,7 +210,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/homflypt_su_n_mass_tower.py",
+        "file": "computations/homflypt_su_n_mass_tower.py",
         "line": 107,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -218,7 +218,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/inverse-markov-qvalues.py",
+        "file": "computations/inverse-markov-qvalues.py",
         "line": 283,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -226,7 +226,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/sweeps/light_isotope_sweep.py",
+        "file": "computations/sweeps/light_isotope_sweep.py",
         "line": 16,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -234,7 +234,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "file": "computations/mass_at_3A_proper.py",
         "line": 25,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -242,7 +242,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "file": "computations/mass_at_3A_proper.py",
         "line": 602,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -250,7 +250,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "file": "computations/mass_at_3A_proper.py",
         "line": 687,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -258,7 +258,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "file": "computations/mass_at_3A_proper.py",
         "line": 787,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -266,7 +266,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/mass_formula_6term.py",
+        "file": "computations/mass_formula_6term.py",
         "line": 34,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -274,7 +274,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/mass_formula_6term.py",
+        "file": "computations/mass_formula_6term.py",
         "line": 254,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -282,7 +282,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/mass_formula_6term.py",
+        "file": "computations/mass_formula_6term.py",
         "line": 375,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -290,7 +290,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/meson_vol_density.py",
+        "file": "computations/meson_vol_density.py",
         "line": 136,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -298,7 +298,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/meson_mass_from_hecke.py",
+        "file": "computations/meson_mass_from_hecke.py",
         "line": 131,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -306,7 +306,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/meson_mass_from_hecke.py",
+        "file": "computations/meson_mass_from_hecke.py",
         "line": 343,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -314,7 +314,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/multi_level_jet_sum.py",
+        "file": "computations/multi_level_jet_sum.py",
         "line": 119,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -322,7 +322,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/multi_level_jet_sum.py",
+        "file": "computations/multi_level_jet_sum.py",
         "line": 136,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -330,7 +330,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/nf-qvalues.py",
+        "file": "computations/nf-qvalues.py",
         "line": 29,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -338,7 +338,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py",
+        "file": "computations/sweeps/paper_six_term_isotope_sweep.py",
         "line": 1036,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -346,7 +346,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase5/phase1e_neutron_and_cross_isotope_h_expansion.py",
+        "file": "computations/phase5/phase1e_neutron_and_cross_isotope_h_expansion.py",
         "line": 135,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -354,7 +354,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase5/phase1e_neutron_and_cross_isotope_h_expansion.py",
+        "file": "computations/phase5/phase1e_neutron_and_cross_isotope_h_expansion.py",
         "line": 135,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -362,7 +362,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/probes/phase2a_flavor_split_higher_order_probe.py",
+        "file": "computations/probes/phase2a_flavor_split_higher_order_probe.py",
         "line": 209,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -370,7 +370,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/probes/phase2a_flavor_split_higher_order_probe.py",
+        "file": "computations/probes/phase2a_flavor_split_higher_order_probe.py",
         "line": 209,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -378,7 +378,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/q_beta_complex_q_test1_phaseA.py",
+        "file": "computations/q_beta_complex_q_test1_phaseA.py",
         "line": 8,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -386,7 +386,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/q_beta_complex_q_test1_phaseA.py",
+        "file": "computations/q_beta_complex_q_test1_phaseA.py",
         "line": 45,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -394,7 +394,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/q_beta_complex_q_test1_phaseA_v2.py",
+        "file": "computations/q_beta_complex_q_test1_phaseA_v2.py",
         "line": 16,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -402,7 +402,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/q_beta_complex_q_test1_phaseA_v2.py",
+        "file": "computations/q_beta_complex_q_test1_phaseA_v2.py",
         "line": 41,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -410,7 +410,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/qbeta/qbeta_delta_tr_vs_formA.py",
+        "file": "computations/qbeta/qbeta_delta_tr_vs_formA.py",
         "line": 124,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -418,7 +418,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/qbeta/qbeta_habiro_taylor_investigation.py",
+        "file": "computations/qbeta/qbeta_habiro_taylor_investigation.py",
         "line": 152,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -426,7 +426,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/qbeta/qbeta_scaling_bridge_investigation.py",
+        "file": "computations/qbeta/qbeta_scaling_bridge_investigation.py",
         "line": 80,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
@@ -436,7 +436,7 @@
     ],
     "literal_0_78233": [
       {
-        "file": "folio-assistant/computations/beta-decay-energy-scale.py",
+        "file": "computations/beta-decay-energy-scale.py",
         "line": 10,
         "pattern": "literal_0_78233",
         "match": "0.78233",
@@ -444,7 +444,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/compute_audit_scan.py",
+        "file": "computations/compute_audit_scan.py",
         "line": 69,
         "pattern": "literal_0_78233",
         "match": "0.78233",
@@ -452,7 +452,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/compute_audit_scan.py",
+        "file": "computations/compute_audit_scan.py",
         "line": 69,
         "pattern": "literal_0_78233",
         "match": "0.78233",
@@ -460,7 +460,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/free-neutron-decay.py",
+        "file": "computations/free-neutron-decay.py",
         "line": 516,
         "pattern": "literal_0_78233",
         "match": "0.78233",
@@ -468,7 +468,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/probes/kaon_pion_ratio_7_8_probe.py",
+        "file": "computations/probes/kaon_pion_ratio_7_8_probe.py",
         "line": 69,
         "pattern": "literal_0_78233",
         "match": "0.78233",
@@ -476,7 +476,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/probes/kaon_pion_ratio_7_8_probe.py",
+        "file": "computations/probes/kaon_pion_ratio_7_8_probe.py",
         "line": 92,
         "pattern": "literal_0_78233",
         "match": "0.78233",
@@ -484,7 +484,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/m_p_substrate_identity_50dps.py",
+        "file": "computations/m_p_substrate_identity_50dps.py",
         "line": 57,
         "pattern": "literal_0_78233",
         "match": "0.78233",
@@ -492,7 +492,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/q_beta_complex_q_test1_phaseA.py",
+        "file": "computations/q_beta_complex_q_test1_phaseA.py",
         "line": 59,
         "pattern": "literal_0_78233",
         "match": "0.78233",
@@ -502,7 +502,7 @@
     ],
     "E_0_CALIBRATION_MEV": [
       {
-        "file": "folio-assistant/computations/probes/adjacent_vs_full_probe.py",
+        "file": "computations/probes/adjacent_vs_full_probe.py",
         "line": 59,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -510,7 +510,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/probes/adjacent_vs_full_probe.py",
+        "file": "computations/probes/adjacent_vs_full_probe.py",
         "line": 398,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -518,7 +518,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/binding_block_multiplicative.py",
+        "file": "computations/binding_block_multiplicative.py",
         "line": 83,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -526,7 +526,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_block_multiplicative.py",
+        "file": "computations/binding_block_multiplicative.py",
         "line": 280,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -534,7 +534,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_block_multiplicative.py",
+        "file": "computations/binding_block_multiplicative.py",
         "line": 306,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -542,7 +542,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_block_multiplicative.py",
+        "file": "computations/binding_block_multiplicative.py",
         "line": 345,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -550,7 +550,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_depth_stratified.py",
+        "file": "computations/binding_depth_stratified.py",
         "line": 73,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -558,7 +558,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_depth_stratified_lr.py",
+        "file": "computations/binding_depth_stratified_lr.py",
         "line": 47,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -566,7 +566,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_depth_stratified_rust.py",
+        "file": "computations/binding_depth_stratified_rust.py",
         "line": 44,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -574,7 +574,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_via_interface_knot.py",
+        "file": "computations/binding_via_interface_knot.py",
         "line": 70,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -582,7 +582,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_via_interface_knot.py",
+        "file": "computations/binding_via_interface_knot.py",
         "line": 173,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -590,7 +590,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_via_interface_knot.py",
+        "file": "computations/binding_via_interface_knot.py",
         "line": 238,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -598,7 +598,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_via_interface_knot.py",
+        "file": "computations/binding_via_interface_knot.py",
         "line": 241,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -606,7 +606,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/canonical_tower.py",
+        "file": "computations/canonical_tower.py",
         "line": 456,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -614,7 +614,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/canonical_tower.py",
+        "file": "computations/canonical_tower.py",
         "line": 469,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -622,7 +622,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/canonical_tower.py",
+        "file": "computations/canonical_tower.py",
         "line": 538,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -630,7 +630,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/derivation_chain.py",
+        "file": "computations/derivation_chain.py",
         "line": 361,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -638,7 +638,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/hecke/hecke_characters.py",
+        "file": "computations/hecke/hecke_characters.py",
         "line": 40,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -646,7 +646,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/substrate/hecke_core.py",
+        "file": "computations/substrate/hecke_core.py",
         "line": 188,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -654,7 +654,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/substrate/hecke_core.py",
+        "file": "computations/substrate/hecke_core.py",
         "line": 189,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -662,7 +662,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/hecke_core_legacy.py",
+        "file": "computations/hecke_core_legacy.py",
         "line": 150,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -670,7 +670,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/hecke_core_legacy.py",
+        "file": "computations/hecke_core_legacy.py",
         "line": 150,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -678,7 +678,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/hecke_core_legacy.py",
+        "file": "computations/hecke_core_legacy.py",
         "line": 2149,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -686,7 +686,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/hecke_core_legacy.py",
+        "file": "computations/hecke_core_legacy.py",
         "line": 2155,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -694,7 +694,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/hecke_core_legacy.py",
+        "file": "computations/hecke_core_legacy.py",
         "line": 2160,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -702,7 +702,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "file": "computations/mass_at_3A_proper.py",
         "line": 61,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -710,7 +710,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "file": "computations/mass_at_3A_proper.py",
         "line": 584,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -718,7 +718,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "file": "computations/mass_at_3A_proper.py",
         "line": 642,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -726,7 +726,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "file": "computations/mass_at_3A_proper.py",
         "line": 685,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -734,7 +734,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/mass_at_3A_proper.py",
+        "file": "computations/mass_at_3A_proper.py",
         "line": 707,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -742,7 +742,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase5/phase3_triton_binding_convention_b.py",
+        "file": "computations/phase5/phase3_triton_binding_convention_b.py",
         "line": 30,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -750,7 +750,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase5/phase3_triton_binding_convention_b.py",
+        "file": "computations/phase5/phase3_triton_binding_convention_b.py",
         "line": 70,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -758,7 +758,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/phase5/phase3_triton_binding_convention_b.py",
+        "file": "computations/phase5/phase3_triton_binding_convention_b.py",
         "line": 99,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -766,7 +766,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase5/phase3_triton_binding_convention_b.py",
+        "file": "computations/phase5/phase3_triton_binding_convention_b.py",
         "line": 134,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -774,7 +774,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase5/phase3_triton_binding_convention_b.py",
+        "file": "computations/phase5/phase3_triton_binding_convention_b.py",
         "line": 174,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -782,7 +782,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/phase5/phase3_triton_binding_convention_b.py",
+        "file": "computations/phase5/phase3_triton_binding_convention_b.py",
         "line": 175,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
@@ -792,7 +792,7 @@
     ],
     "Q_BETA_MEV": [
       {
-        "file": "folio-assistant/computations/beta-decay-energy-scale.py",
+        "file": "computations/beta-decay-energy-scale.py",
         "line": 10,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -800,7 +800,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/binding_canonical.py",
+        "file": "computations/binding_canonical.py",
         "line": 51,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_N",
@@ -808,7 +808,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_canonical.py",
+        "file": "computations/binding_canonical.py",
         "line": 136,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_N",
@@ -816,7 +816,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_canonical.py",
+        "file": "computations/binding_canonical.py",
         "line": 315,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_N",
@@ -824,7 +824,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/binding_canonical.py",
+        "file": "computations/binding_canonical.py",
         "line": 355,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_N",
@@ -832,7 +832,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/binding_canonical.py",
+        "file": "computations/binding_canonical.py",
         "line": 367,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_N",
@@ -840,7 +840,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_error_source.py",
+        "file": "computations/binding_error_source.py",
         "line": 39,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -848,7 +848,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_error_source.py",
+        "file": "computations/binding_error_source.py",
         "line": 74,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -856,7 +856,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_link_volumes.py",
+        "file": "computations/binding_link_volumes.py",
         "line": 65,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -864,7 +864,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_link_volumes.py",
+        "file": "computations/binding_link_volumes.py",
         "line": 66,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -872,7 +872,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_log_scale_investigation.py",
+        "file": "computations/binding_log_scale_investigation.py",
         "line": 57,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -880,7 +880,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_log_scale_investigation.py",
+        "file": "computations/binding_log_scale_investigation.py",
         "line": 92,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -888,7 +888,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_shell_enhancement_derivation.py",
+        "file": "computations/binding_shell_enhancement_derivation.py",
         "line": 58,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -896,7 +896,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/binding_shell_enhancement_derivation.py",
+        "file": "computations/binding_shell_enhancement_derivation.py",
         "line": 107,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -904,7 +904,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/probes/binding_volume_difference_probe.py",
+        "file": "computations/probes/binding_volume_difference_probe.py",
         "line": 59,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -912,7 +912,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/probes/binding_volume_difference_probe.py",
+        "file": "computations/probes/binding_volume_difference_probe.py",
         "line": 135,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -920,7 +920,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/build_cal_3_q_beta_witness.py",
+        "file": "computations/build_cal_3_q_beta_witness.py",
         "line": 5,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -928,7 +928,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/build_cal_3_q_beta_witness.py",
+        "file": "computations/build_cal_3_q_beta_witness.py",
         "line": 24,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -936,7 +936,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/build_cal_3_q_beta_witness.py",
+        "file": "computations/build_cal_3_q_beta_witness.py",
         "line": 25,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -944,7 +944,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/build_cal_3_q_beta_witness.py",
+        "file": "computations/build_cal_3_q_beta_witness.py",
         "line": 59,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -952,7 +952,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/build_cal_3_q_beta_witness.py",
+        "file": "computations/build_cal_3_q_beta_witness.py",
         "line": 67,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -960,7 +960,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/build_cal_3_q_beta_witness.py",
+        "file": "computations/build_cal_3_q_beta_witness.py",
         "line": 68,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -968,7 +968,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/build_cal_3_q_beta_witness.py",
+        "file": "computations/build_cal_3_q_beta_witness.py",
         "line": 75,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -976,7 +976,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/c_k_beta_decay_witness.py",
+        "file": "computations/c_k_beta_decay_witness.py",
         "line": 45,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -984,7 +984,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/c_k_beta_decay_witness.py",
+        "file": "computations/c_k_beta_decay_witness.py",
         "line": 51,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -992,7 +992,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/c_k_beta_decay_witness.py",
+        "file": "computations/c_k_beta_decay_witness.py",
         "line": 72,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1000,7 +1000,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/c_k_beta_decay_witness.py",
+        "file": "computations/c_k_beta_decay_witness.py",
         "line": 94,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1008,7 +1008,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/cal4_disguise_hunt.py",
+        "file": "computations/cal4_disguise_hunt.py",
         "line": 90,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1016,7 +1016,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 122,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1024,7 +1024,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 156,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1032,7 +1032,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 167,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1040,7 +1040,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 169,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1048,7 +1048,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 182,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1056,7 +1056,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 212,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1064,7 +1064,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 212,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1072,7 +1072,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 213,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1080,7 +1080,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 214,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1088,7 +1088,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 215,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1096,7 +1096,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 216,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1104,7 +1104,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 226,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1112,7 +1112,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 226,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1120,7 +1120,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 229,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1128,7 +1128,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 229,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1136,7 +1136,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 230,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1144,7 +1144,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 233,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1152,7 +1152,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 233,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1160,7 +1160,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 249,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1168,7 +1168,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 249,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1176,7 +1176,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 250,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1184,7 +1184,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/codata_2022_source.py",
+        "file": "computations/codata_2022_source.py",
         "line": 251,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1192,7 +1192,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/substrate/codata_constants.py",
+        "file": "computations/substrate/codata_constants.py",
         "line": 104,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1200,7 +1200,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/substrate/codata_constants.py",
+        "file": "computations/substrate/codata_constants.py",
         "line": 105,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1208,7 +1208,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/substrate/codata_constants.py",
+        "file": "computations/substrate/codata_constants.py",
         "line": 182,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1216,7 +1216,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/substrate/codata_constants.py",
+        "file": "computations/substrate/codata_constants.py",
         "line": 187,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1224,7 +1224,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/substrate/codata_constants.py",
+        "file": "computations/substrate/codata_constants.py",
         "line": 241,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1232,7 +1232,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/substrate/codata_constants.py",
+        "file": "computations/substrate/codata_constants.py",
         "line": 241,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1240,7 +1240,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/derived_masses.py",
+        "file": "computations/derived_masses.py",
         "line": 134,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1248,7 +1248,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/derived_masses.py",
+        "file": "computations/derived_masses.py",
         "line": 513,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1256,7 +1256,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/free-neutron-decay.py",
+        "file": "computations/free-neutron-decay.py",
         "line": 516,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1264,7 +1264,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/habiro/habiro_exact_qbeta.py",
+        "file": "computations/habiro/habiro_exact_qbeta.py",
         "line": 32,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1272,7 +1272,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/habiro/habiro_exact_qbeta.py",
+        "file": "computations/habiro/habiro_exact_qbeta.py",
         "line": 89,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1280,7 +1280,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/audits/hardcoded_literal_audit.py",
+        "file": "computations/audits/hardcoded_literal_audit.py",
         "line": 179,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1288,7 +1288,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/mass_table_comprehensive.py",
+        "file": "computations/mass_table_comprehensive.py",
         "line": 52,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1296,7 +1296,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/mass_table_comprehensive.py",
+        "file": "computations/mass_table_comprehensive.py",
         "line": 245,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1304,7 +1304,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/mass_table_comprehensive.py",
+        "file": "computations/mass_table_comprehensive.py",
         "line": 259,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1312,7 +1312,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/per_observable_100x_status.py",
+        "file": "computations/per_observable_100x_status.py",
         "line": 37,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1320,7 +1320,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/per_observable_100x_status.py",
+        "file": "computations/per_observable_100x_status.py",
         "line": 37,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1328,7 +1328,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/per_observable_100x_status.py",
+        "file": "computations/per_observable_100x_status.py",
         "line": 99,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1336,7 +1336,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/per_observable_100x_status.py",
+        "file": "computations/per_observable_100x_status.py",
         "line": 99,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1344,7 +1344,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/per_observable_100x_status.py",
+        "file": "computations/per_observable_100x_status.py",
         "line": 100,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1352,7 +1352,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/q_beta_form_a_n1_extension.py",
+        "file": "computations/q_beta_form_a_n1_extension.py",
         "line": 92,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1360,7 +1360,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/q_beta_form_a_n1_extension.py",
+        "file": "computations/q_beta_form_a_n1_extension.py",
         "line": 106,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1368,7 +1368,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/q_beta_predicted.py",
+        "file": "computations/q_beta_predicted.py",
         "line": 58,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1376,7 +1376,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/q_beta_predicted.py",
+        "file": "computations/q_beta_predicted.py",
         "line": 83,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1384,7 +1384,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/q_beta_substrate_prediction.py",
+        "file": "computations/q_beta_substrate_prediction.py",
         "line": 35,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1392,7 +1392,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/q_beta_substrate_prediction.py",
+        "file": "computations/q_beta_substrate_prediction.py",
         "line": 50,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1400,7 +1400,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/qbeta/qbeta_ck_cache.py",
+        "file": "computations/qbeta/qbeta_ck_cache.py",
         "line": 57,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1408,7 +1408,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/qbeta/qbeta_ck_cache.py",
+        "file": "computations/qbeta/qbeta_ck_cache.py",
         "line": 66,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1416,7 +1416,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/qbeta/qbeta_ck_cache.py",
+        "file": "computations/qbeta/qbeta_ck_cache.py",
         "line": 197,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1424,7 +1424,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/qbeta/qbeta_decay_sdp_solver.py",
+        "file": "computations/qbeta/qbeta_decay_sdp_solver.py",
         "line": 46,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1432,7 +1432,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/qbeta/qbeta_decay_sdp_solver.py",
+        "file": "computations/qbeta/qbeta_decay_sdp_solver.py",
         "line": 66,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1440,7 +1440,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/qbeta/qbeta_decay_sdp_solver.py",
+        "file": "computations/qbeta/qbeta_decay_sdp_solver.py",
         "line": 74,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1448,7 +1448,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/qbeta/qbeta_decay_sdp_solver.py",
+        "file": "computations/qbeta/qbeta_decay_sdp_solver.py",
         "line": 147,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1456,7 +1456,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/qbeta/qbeta_decay_sdp_solver.py",
+        "file": "computations/qbeta/qbeta_decay_sdp_solver.py",
         "line": 170,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1464,7 +1464,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/qbeta/qbeta_fsc_g_pattern_comparison.py",
+        "file": "computations/qbeta/qbeta_fsc_g_pattern_comparison.py",
         "line": 43,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1472,7 +1472,7 @@
         "kind": "active"
       },
       {
-        "file": "folio-assistant/computations/qbeta/qbeta_fsc_g_pattern_comparison.py",
+        "file": "computations/qbeta/qbeta_fsc_g_pattern_comparison.py",
         "line": 83,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
@@ -1482,7 +1482,7 @@
     ],
     "proton_mass_anchor": [
       {
-        "file": "folio-assistant/computations/canonical_tower.py",
+        "file": "computations/canonical_tower.py",
         "line": 486,
         "pattern": "proton_mass_anchor",
         "match": "938.272 / m_proton",
@@ -1490,7 +1490,7 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/canonical_tower.py",
+        "file": "computations/canonical_tower.py",
         "line": 552,
         "pattern": "proton_mass_anchor",
         "match": "938.272 / m_proton",

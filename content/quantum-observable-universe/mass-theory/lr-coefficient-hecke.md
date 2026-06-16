@@ -56,7 +56,7 @@ $c^\lambda_{\mu\nu}$-dimensional multiplicity space.
 ## Computational realisation
 
 The script
-[`folio-assistant/computations/substrate/lr_coefficients.py`](../../folio-assistant/computations/substrate/lr_coefficients.py)
+[`computations/substrate/lr_coefficients.py`](../../computations/substrate/lr_coefficients.py)
 computes $c^\lambda_{\mu\nu}$ via direct LR-tableau enumeration with
 Yamanouchi pruning. Precomputed tables exist for the canonical
 A=2/3/4 atomic decompositions

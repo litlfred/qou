@@ -7,7 +7,7 @@ Authoritative source for:
   Internals   _hm_dict, _reduce_nf, _build_gram
 
 Moved here (with inversion in M2b) from the 3425-line
-folio-assistant/computations/hecke_core.py so there is a single
+computations/hecke_core.py so there is a single
 source of truth that downstream code can depend on. `hecke_core.py`
 now imports these back for backward compatibility.
 
@@ -24,7 +24,7 @@ import numpy as np
 
 from . import _legacy  # noqa: F401  — adjusts sys.path
 
-# Prefer the in-repo folio-assistant/computations/q_parameter shim (which
+# Prefer the in-repo computations/q_parameter shim (which
 # _legacy puts on sys.path).  Fall back to the published qou_substrate
 # package when pyhecke is used outside the repo (e.g. inside a Sage
 # docker, on PyPI installs, in Pyodide, …).  Same fallback chain the

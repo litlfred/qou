@@ -30,7 +30,7 @@ unique linear functional satisfying the Markov axioms with the
 same y_λ(q) at the irrep level.
 
 Run:
-  python3 folio-assistant/computations/y_lambda_equivalence_proof.py
+  python3 computations/y_lambda_equivalence_proof.py
 """
 from __future__ import annotations
 

@@ -130,7 +130,7 @@ integration improvement instead.
 
 - **I1. PROVEN-IN-LEAN, NO PROBE.** A `prop:`/`thm:`/`lem:` block has a
   `.lean` sibling with 0 sorrys (or §3b-cond conditional-class), but
-  no `folio-assistant/computations/probe_*` script and no
+  no `computations/probe_*` script and no
   `*.witness.json` referencing the label via `contentBlock`.  Fix:
   write a probe that exercises the claim at q₀ + emits a witness
   whose `contentBlock` field points at the prop.
@@ -333,10 +333,10 @@ changed by the commit:
      "conjecture-class" (CLAUDE.md §3b-cond) — those don't need a
      compute consumer.
    - **Step 2 — Probe presence.** Grep
-     `folio-assistant/computations/*.witness.json` for
+     `computations/*.witness.json` for
      `"contentBlock": "L"`.  Record producer script name.
    - **Step 3 — Production consumption.** Grep
-     `folio-assistant/computations/{derive_*,paper_six_term*,build_*_chain,atomic_mass_*}` for the
+     `computations/{derive_*,paper_six_term*,build_*_chain,atomic_mass_*}` for the
      producer witness file name OR for the prop label string.
    - **Step 4 — Apply I-patterns.** Walk I1–I12 in order; emit
      hits.
@@ -372,8 +372,8 @@ working?":
 
 | Question | Tool / file |
 |---------|-------------|
-| Which props have probes? | `grep '"contentBlock":' folio-assistant/computations/*.witness.json` |
-| Which probes have production consumers? | `grep -l '<witness-name>' folio-assistant/computations/derive_*.py paper_six_term_isotope_sweep.py atomic_mass_via_rho_k.py mass_table_ppb.py` |
+| Which props have probes? | `grep '"contentBlock":' computations/*.witness.json` |
+| Which probes have production consumers? | `grep -l '<witness-name>' computations/derive_*.py paper_six_term_isotope_sweep.py atomic_mass_via_rho_k.py mass_table_ppb.py` |
 | What's the canonical mass formula? | `paper_six_term_isotope_sweep.py` (per its own docstring) |
 | What's the m_p production chain? | `derive_m_p_hecke_full_tower_50dps.py` → `build_proton_mass_50dps_chain.py` → `atomic-tr-m-mpfr-50dps.witness.json` |
 | What's the m_n production chain? | `derive_m_n_hecke_full_tower_50dps.py` → `build_neutron_mass_50dps_chain.py` |

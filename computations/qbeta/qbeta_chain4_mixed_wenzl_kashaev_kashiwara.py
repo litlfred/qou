@@ -48,7 +48,7 @@ ANTI-PATTERN GUARDS (CLAUDE.md):
   - Diagnostic-only; no production wiring.
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py
+  python3 computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py
 Emits: qbeta-chain4-mixed-wenzl-kashaev-kashiwara.witness.json
 """
 

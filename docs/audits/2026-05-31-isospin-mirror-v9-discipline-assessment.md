@@ -24,14 +24,14 @@ closes the A=3 isospin mirror difference to **0.11 %** (target 0.7637 MeV).
 
 ## 1. What was actually computed (evidence)
 
-Scripts on `main` (all under `folio-assistant/computations/`):
+Scripts on `main` (all under `computations/`):
 
-- [`option_e_v7_involution_aware.py`](../../folio-assistant/computations/option_e_v7_involution_aware.py)
+- [`option_e_v7_involution_aware.py`](../../computations/option_e_v7_involution_aware.py)
   — 5 scales × 7 involution sums = **35 candidates** for the mirror pair,
   plus the same grid against D, T, ³He absolute energies.
-- [`option_e_v8_hecke_involution_isospin_mirror.py`](../../folio-assistant/computations/option_e_v8_hecke_involution_isospin_mirror.py)
+- [`option_e_v8_hecke_involution_isospin_mirror.py`](../../computations/option_e_v8_hecke_involution_isospin_mirror.py)
   — 6 scales × 5 inputs = **30 candidates** for the mirror pair.
-- [`option_e_v9_all_symmetries.py`](../../folio-assistant/computations/option_e_v9_all_symmetries.py)
+- [`option_e_v9_all_symmetries.py`](../../computations/option_e_v9_all_symmetries.py)
   — docstring: "Tests 9 scales × 9 input combinations = **81 candidates**",
   PLUS a separate **9-candidate** "multiplicative correction" search.
 
@@ -60,7 +60,7 @@ solve for the residual, then find a substrate label near it.
 ### The "all symmetries" search itself FAILED
 
 The 81-candidate grid in v9's witness
-([`option-e-v9-all-symmetries.witness.json`](../../folio-assistant/computations/option-e-v9-all-symmetries.witness.json))
+([`option-e-v9-all-symmetries.witness.json`](../../computations/option-e-v9-all-symmetries.witness.json))
 has **`best_err_pct` = 2.52 %** (`m_π·ℏ_q·(1+ℏ_q) · (v8 alt y M_asym)`).
 None of the 81 structural combinations reached the cheat-sheet's 2 %; the
 0.11 % number comes ONLY from the appended divide-and-name-match step, not
@@ -88,7 +88,7 @@ fitting" is **not supported by the code**. The code's own variable name is
 
 ## 3. Generalization test (Option 3) — DECISIVE
 
-Probe: [`probe_isospin_mirror_v9_generalization.py`](../../folio-assistant/computations/probe_isospin_mirror_v9_generalization.py)
+Probe: [`probe_isospin_mirror_v9_generalization.py`](../../computations/probe_isospin_mirror_v9_generalization.py)
 → witness `probe-isospin-mirror-v9-generalization.witness.json`.
 
 If `(1+q)/2` is a genuine substrate factor it must help the **absolute**

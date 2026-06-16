@@ -14,7 +14,7 @@ from AME measurements). The probe reports which (if any) closes
 deuteron AME within 10%.
 
 Inputs:
-- folio-assistant/computations/chi-deuteron-h6-at-q0-50dps.witness.json
+- computations/chi-deuteron-h6-at-q0-50dps.witness.json
   (y_λ, χ^λ(β_D) for each of the 11 partitions of 6)
 - AME binding energy B_D = 2.224566 MeV
 - m_e = 0.51099895069 MeV
@@ -23,7 +23,7 @@ Path-D prediction:
   B_pred / m_e = Σ_λ y_λ · χ^λ(β_D) · Δ_λ
 
 Output:
-- folio-assistant/computations/option-e-deuteron-delta-lambda-probe.witness.json
+- computations/option-e-deuteron-delta-lambda-probe.witness.json
 """
 
 

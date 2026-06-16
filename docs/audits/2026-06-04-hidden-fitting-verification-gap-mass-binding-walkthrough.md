@@ -10,7 +10,7 @@ this is a hidden fitting."*
 ## 0. Why this doc exists (the buried-admission complaint)
 
 The HOMFLYPT `n≥3` SU(2) path in
-[`homflypt_engine.py`](../../folio-assistant/computations/homflypt_engine.py)
+[`homflypt_engine.py`](../../computations/homflypt_engine.py)
 carries, **inside a source-code comment**, the admission that its output is
 correct only up to an overall normalisation:
 
@@ -88,7 +88,7 @@ self-consistency.
 
 ### 2d. Production blast radius
 
-[`homflypt_su_n_mass_tower.py`](../../folio-assistant/computations/homflypt_su_n_mass_tower.py)
+[`homflypt_su_n_mass_tower.py`](../../computations/homflypt_su_n_mass_tower.py)
 consumes this path for proton `(σ₁σ₂⁻¹)³`, neutron `(σ₁⁻¹σ₂)³`, figure-eight,
 and trefoil at SU(N), N=2..6. It then:
 
@@ -120,7 +120,7 @@ must not be cited as predictions until the path is reference-validated.
 ## 2e. The DEEPER root cause (added 2026-06-04): a degenerate evaluation point
 
 Building the reference-QA module (§4.1, now
-[`homflypt_reference_qa.py`](../../folio-assistant/computations/homflypt_reference_qa.py))
+[`homflypt_reference_qa.py`](../../computations/homflypt_reference_qa.py))
 surfaced a root cause **deeper than ratio-only normalisation**: the engine's
 SU(N) specialisation exponent was wrong, putting the SU(2) evaluation at a
 **degenerate point**.
@@ -212,7 +212,7 @@ SDP-derivation path.
 ## 4. Recommended fixes (priority order) — status this PR
 
 1. ✅ **DONE — reference-value QA module**
-   [`homflypt_reference_qa.py`](../../folio-assistant/computations/homflypt_reference_qa.py):
+   [`homflypt_reference_qa.py`](../../computations/homflypt_reference_qa.py):
    skein-relation reference (self-tested symbolically against textbook Hopf +
    trefoil) for the 2-strand torus family, applied to the n≥3 path via Markov
    stabilisation. Reports **0/5** against the engine today — the verification

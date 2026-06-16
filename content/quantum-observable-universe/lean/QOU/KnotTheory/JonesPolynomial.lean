@@ -36,7 +36,7 @@ the conjectural class capturing:
 The Lean discharge of this class is the **§3b-cond conjectural witness**
 for the Jones polynomial framework.  Until Mathlib gains Markov-trace
 primitives, the closed forms hardcoded in
-`folio-assistant/computations/metallic_q_jones_sign_sweep.py` are the
+`computations/metallic_q_jones_sign_sweep.py` are the
 empirical instantiations that the Lean class will eventually parametrise.
 
 ## Why this matters for the metallic-q conjecture

@@ -13,7 +13,7 @@ violation.
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 #!/usr/bin/env python3
-# DEPRECATION-CANDIDATE: witness was moved to folio-assistant/computations/_deprecated/ in PR #554 (dead-exploratory).
+# DEPRECATION-CANDIDATE: witness was moved to computations/_deprecated/ in PR #554 (dead-exploratory).
 # This .py script is kept in place because it is still imported by live code; revisit when the live importer is itself retired or rewired.
 """
 TRACK A: CRT-style polynomial reconstruction for Markov traces.

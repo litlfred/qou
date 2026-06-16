@@ -228,7 +228,7 @@ The identity $\hbar_q^{2(N+1)} / (1 - \hbar_q^2) = C(K) \cdot e^{-c(K) N}$
 is unconditional algebra (geometric $\leftrightarrow$ exponential form), and the
 left-hand side is the per-braid-mass-tower bound of
 [prop:per-braid-mass-tower](#prop:per-braid-mass-tower). At
-$q_0 \approx 1.1100$ ([`q-pinning-50-digit.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q-pinning-50-digit.witness.json)):
+$q_0 \approx 1.1100$ ([`q-pinning-50-digit.witness.json`](https://github.com/litlfred/qou/blob/main/computations/q-pinning-50-digit.witness.json)):
 
 | Depth $N$ | $\lvert R_N\rvert$ bound | as % | as ppm | as ppb |
 |---:|---:|---:|---:|---:|
@@ -246,8 +246,8 @@ $c(K)$ for the operator class may exceed the ceiling rate; pinning
 the *exact* fall-off requires the open lift formula of
 [conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro).
 
-Witness: [`c_k_beta_decay_witness.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/c_k_beta_decay_witness.py)
-$\to$ [`c-k-beta-decay-bound.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/c-k-beta-decay-bound.witness.json).
+Witness: [`c_k_beta_decay_witness.py`](https://github.com/litlfred/qou/blob/main/computations/c_k_beta_decay_witness.py)
+$\to$ [`c-k-beta-decay-bound.witness.json`](https://github.com/litlfred/qou/blob/main/computations/c-k-beta-decay-bound.witness.json).
 Both assertions (50-dps geometric $\leftrightarrow$ exponential agreement + $N=0$
 margin $\leq 1$) pass.
 

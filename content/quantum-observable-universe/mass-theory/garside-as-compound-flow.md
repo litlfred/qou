@@ -66,7 +66,7 @@ of $\xi_q$ never has to be proved directly:
 | layer | status |
 |---|---|
 | combinatorial $S_3$ bijection on the six braid words | `sorry`-free in Lean (`QOU.CategoricalReeb.boundary_perm_realises_S3`, a finite case check on six `CanonicalBraid` constructors) |
-| closed-form ODE per sub-interval | Python-verified (`folio-assistant/computations/reeb_flow_garside_closed_form_verification.py`, witness status `verified`) |
+| closed-form ODE per sub-interval | Python-verified (`computations/reeb_flow_garside_closed_form_verification.py`, witness status `verified`) |
 | existence of $\phi^q_t$ as a continuous group on $\mathcal{R}_p$ | axiomatised via [$q$-Reeb flow on coral coords](#def:q-reeb-flow-on-coral-coords) per CLAUDE.md §3b-cond |
 
 Discharging the third row — Picard–Lindelöf for the

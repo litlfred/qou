@@ -45,9 +45,9 @@ results from the probes:
 
 -- Ref: [metallichierarchy] QOU.AlgebraicSubstrate.MetallicHierarchy
 -- Ref: [audit] docs/audits/2026-06-08-metallic-q-hierarchy-proof.md
--- Ref: [probe-w] folio-assistant/computations/metallic_q_wenzl_sign_sweep.py
--- Ref: [probe-j] folio-assistant/computations/metallic_q_jones_sign_sweep.py
--- Ref: [probe-q] folio-assistant/computations/metallic_q_quark_bifurcation.py
+-- Ref: [probe-w] computations/metallic_q_wenzl_sign_sweep.py
+-- Ref: [probe-j] computations/metallic_q_jones_sign_sweep.py
+-- Ref: [probe-q] computations/metallic_q_quark_bifurcation.py
 -/
 
 namespace QOU.KnotTheory.MetallicPiecewise

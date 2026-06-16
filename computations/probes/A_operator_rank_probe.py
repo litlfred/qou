@@ -32,7 +32,7 @@ This script probes ALL λ at A=3 to determine the per-λ rank-vs-
 ambient ratio, providing a roadmap for the symmetry analysis.
 
 Usage:
-    python3 folio-assistant/computations/A_operator_rank_probe.py [--A 2|3]
+    python3 computations/A_operator_rank_probe.py [--A 2|3]
 """
 from __future__ import annotations
 

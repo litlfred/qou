@@ -11,7 +11,7 @@ export default algorithm({
   computation: {
     engine: "python",
     script: "tools/pyhecke/python/pyhecke/wedderburn.py",
-    witness: "folio-assistant/computations/wedderburn-lp-ew-wiring.witness.json",
+    witness: "computations/wedderburn-lp-ew-wiring.witness.json",
     status: "verified",
   },
   tags: [

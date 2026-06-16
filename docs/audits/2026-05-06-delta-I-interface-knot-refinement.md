@@ -37,7 +37,7 @@ The trivial case $\Delta_I = \mathbf{1}$ recovers the disjoint-product pre-EWSB 
 
 ## 3. Structural finding from the Hoefsmit probe
 
-[`ew_interface_knot_probe.py`](../../folio-assistant/computations/probes/ew_interface_knot_probe.py) enumerates standard Young tableaux of partitions of 6 (76 total) and classifies each tableau by the eigenvalue class (sym, alt, mixed) of each $\sigma_i$ for $i \in \{1, 2, 3, 4, 5\}$.
+[`ew_interface_knot_probe.py`](../../computations/probes/ew_interface_knot_probe.py) enumerates standard Young tableaux of partitions of 6 (76 total) and classifies each tableau by the eigenvalue class (sym, alt, mixed) of each $\sigma_i$ for $i \in \{1, 2, 3, 4, 5\}$.
 
 **Theorem (verified by enumeration).** For $\beta_{\rm EW}(\Delta_I^{\rm minimal})$ on $V^{\otimes 6}$:
 
@@ -72,7 +72,7 @@ Three reasons:
 
 2. **The 64% → 8.4% Weinberg-angle gap is exactly $\Delta_I$-shaped.** The simple-uniform-multiplicity reading at 64% off CODATA, and the corrected non-uniform reading at 8.4% off — both are $\Delta_I = \mathbf{1}$ computations. The remaining 8.4% gap is plausibly closed by the $\Delta_I^{\rm minimal}$-induced rotation (action item: extract the $\Delta_I^{\rm minimal}$ eigenvalue spectrum and recompute $\cot\theta_W$).
 
-3. **The PSLQ null result on the bar-self-dual basis is expected.** $\mathrm{tr}_{\rm pure}(\sigma_1^4 \sigma_3^6 \sigma_5^8) = 4(q^{18}+q^{-18}) + 2(q^{10}+q^{-10}) + (q^6+q^{-6}) + 3(q^2+q^{-2})$ is bar-self-dual term-by-term; the constrained-PSLQ on this basis returned 0 hits at CODATA tolerance ([`nv-pslq-tr-pure-basis.witness.json`](../../folio-assistant/computations/nv-pslq-tr-pure-basis.witness.json)). With $\Delta_I \neq \mathbf{1}$, the trace acquires asymmetric contributions and the PSLQ basis must be enlarged accordingly.
+3. **The PSLQ null result on the bar-self-dual basis is expected.** $\mathrm{tr}_{\rm pure}(\sigma_1^4 \sigma_3^6 \sigma_5^8) = 4(q^{18}+q^{-18}) + 2(q^{10}+q^{-10}) + (q^6+q^{-6}) + 3(q^2+q^{-2})$ is bar-self-dual term-by-term; the constrained-PSLQ on this basis returned 0 hits at CODATA tolerance ([`nv-pslq-tr-pure-basis.witness.json`](../../computations/nv-pslq-tr-pure-basis.witness.json)). With $\Delta_I \neq \mathbf{1}$, the trace acquires asymmetric contributions and the PSLQ basis must be enlarged accordingly.
 
 ## 6. Action items
 
@@ -92,6 +92,6 @@ Three reasons:
   [`conj:hoefsmit-ew-cell-content`](../../content/quantum-observable-universe/braids-and-knots/hoefsmit-ew-cell-content.md)
   (new §"Refinement (2026-05-06)")
 - Witness:
-  [`folio-assistant/computations/probes/ew-interface-knot-probe.witness.json`](../../folio-assistant/computations/probes/ew-interface-knot-probe.witness.json)
+  [`computations/probes/ew-interface-knot-probe.witness.json`](../../computations/probes/ew-interface-knot-probe.witness.json)
 - Workplan:
   [`docs/audits/2026-05-06-refocused-1ppb-workplan-v2.md`](2026-05-06-refocused-1ppb-workplan-v2.md)

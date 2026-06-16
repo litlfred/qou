@@ -15,8 +15,8 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/probes/three_parameters_wedderburn_probe.py",
-    witness: "folio-assistant/computations/probes/three-parameters-wedderburn-probe.witness.json",
+    script: "computations/probes/three_parameters_wedderburn_probe.py",
+    witness: "computations/probes/three-parameters-wedderburn-probe.witness.json",
     status: "verified",
   },
 });

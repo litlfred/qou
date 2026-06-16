@@ -31,7 +31,7 @@ where:
   [`crossing-energy.md`](../../content/quantum-observable-universe/braids-and-knots/crossing-energy.md));
 - $\mu_0 = m_e / (3 E_\times)$ is the **dimensional scale** (forced
   by CAL-0; from
-  [`q_parameter.py`](../../folio-assistant/computations/substrate/q_parameter.py));
+  [`q_parameter.py`](../../computations/substrate/q_parameter.py));
 - $N_v$ is the **effective weak-scale crossing count** — a
   topological invariant of the brane-tower at the weak place.
 
@@ -45,7 +45,7 @@ $$
 
 ### Where the flag is
 
-[`folio-assistant/computations/beta-decay-from-q.py`](../../folio-assistant/computations/beta-decay-from-q.py)
+[`computations/beta-decay-from-q.py`](../../computations/beta-decay-from-q.py)
 lines 41–45:
 
 ```python
@@ -59,7 +59,7 @@ N_v = v_weak / (E_cross * mu_0)  # effective crossing count
 
 The script **back-solves** $N_v$ from CODATA $v$ — it does not
 derive $N_v$ from the substrate's algebraic structure. Half-life
-predictions in [`beta-decay-from-q.py`](../../folio-assistant/computations/beta-decay-from-q.py)
+predictions in [`beta-decay-from-q.py`](../../computations/beta-decay-from-q.py)
 line 50 then scale as $G_F^2 \propto N_v^{-4}$, so a derivation of
 $N_v$ would close every β-decay rate prediction simultaneously.
 
@@ -346,7 +346,7 @@ either confirm or kill it.
 ### Statement of the gap
 
 The β-decay Q-value computation in
-[`branching-qvalues.witness.json`](../../folio-assistant/computations/branching-qvalues.witness.json)
+[`branching-qvalues.witness.json`](../../computations/branching-qvalues.witness.json)
 uses **three different methods** depending on atomic mass $A$:
 
 | $A$ | Method | Configs counted | Reference |
@@ -428,7 +428,7 @@ by $f_\lambda^2$). If the first $A$ with $q_{3A} \geq 1$ matches
 the empirical activation in `branching-qvalues.witness.json`,
 this conjecture is plausible. The compute is straightforward
 given existing
-[`y_lambda_wenzl_bridge_extended.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge_extended.py).
+[`y_lambda_wenzl_bridge_extended.py`](../../computations/y_lambda_wenzl_bridge_extended.py).
 
 **Refinement.** A stronger version pins the filter rule
 "me_par ≥ 0 AND me_dau ≥ 0" (line 63) to the *intersection* of
@@ -467,7 +467,7 @@ flags.**
 
 Computation: evaluated the Wenzl-bridge $y_\lambda(q_0)$ values
 from
-[`y-lambda-wenzl-bridge-symbolic-witness.json`](../../folio-assistant/computations/y-lambda-wenzl-bridge-symbolic-witness.json)
+[`y-lambda-wenzl-bridge-symbolic-witness.json`](../../computations/y-lambda-wenzl-bridge-symbolic-witness.json)
 at $q_0$ to 25 dps; weighted by Plancherel $f_\lambda^2$; tabulated
 $(p_n, q_n)$ as a symmetric-bilinear-form signature.
 
@@ -524,11 +524,11 @@ have $y_\lambda < 0$, totalling 51% by Plancherel weight).
 
 The compute bottleneck (sympy `simplify` recursion-error past
 n=12, MPFR Hoefsmit matmul timeout past n=11 in
-[`y_lambda_mpfr_witness.py`](../../folio-assistant/computations/y_lambda_mpfr_witness.py))
+[`y_lambda_mpfr_witness.py`](../../computations/y_lambda_mpfr_witness.py))
 is **fixed** by bypassing both: evaluate the Wenzl-bridge Schur
 principal-specialization formula numerically in mpmath at $q = q_0$
 without any symbolic simplification or matrix multiplication.
-[`y_lambda_wenzl_bridge_numeric.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge_numeric.py)
+[`y_lambda_wenzl_bridge_numeric.py`](../../computations/y_lambda_wenzl_bridge_numeric.py)
 runs $n = 2..18$ in **0.07 s** at 50 dps —
 versus the sympy version timing out / OOM'ing at $n \geq 14$ and
 the MPFR version not completing $n = 12$ in 45 min.
@@ -585,10 +585,10 @@ the actual pattern is exact cancellation in $\Sigma_{\rm all}$.**
 Computation: enumerated all $4^A$ per-nucleon channel
 configurations for synthetic $\beta$-decay chains at $A = 1..6$
 (using the proton/neutron channels from
-[`full-derivation-verified.py`](../../folio-assistant/computations/full-derivation-verified.py)),
+[`full-derivation-verified.py`](../../computations/full-derivation-verified.py)),
 computed $\Sigma_{\rm all}$ and $\Sigma_{\rm FP}$, and probed
 both refined hypotheses
-([`frob_filter_cancellation_test.py`](../../folio-assistant/computations/frob_filter_cancellation_test.py)).
+([`frob_filter_cancellation_test.py`](../../computations/frob_filter_cancellation_test.py)).
 
 | $A$ | $n_{\rm total} = 4^A$ | $|\Sigma_{\rm all}|$ | $|\Sigma_{\rm FP}|$ | ratio $\Sigma_{\rm FP}/\Sigma_{\rm all}$ | required prec |
 |----:|----------------------:|---------------------:|--------------------:|-----------------------------------------:|--------------:|
@@ -642,7 +642,7 @@ in the limit.
 > few %)**. By $A = 4$ the ratio is $> 100$ already, so
 > $\Sigma_{\rm all}$ is **categorically wrong** for $A \geq 4$;
 > the empirical use of $\Sigma_{\rm all}$ at $A = 3$ in
-> [`branching-qvalues.witness.json`](../../folio-assistant/computations/branching-qvalues.witness.json)
+> [`branching-qvalues.witness.json`](../../computations/branching-qvalues.witness.json)
 > works only by accident (ratio 3.1, leaving 2-4% error).*
 
 **Strong predictions** (testable):
@@ -682,7 +682,7 @@ carries physical content.
 
 ### **Symbolic compute result (2026-05-02 evening): closed form found.**
 
-[`sigma_all_symbolic_decay.py`](../../folio-assistant/computations/sigma_all_symbolic_decay.py)
+[`sigma_all_symbolic_decay.py`](../../computations/sigma_all_symbolic_decay.py)
 computes $\Sigma_{\rm all}(A)$ symbolically in $\mathbb{Q}(q)$ for
 $A = 1, ..., 6$ and factors each. The result is a clean closed form
 that **falsifies (a)** but yields **a stronger version of (b)**:
@@ -784,7 +784,7 @@ mechanical from the channel-algebra structure and induction is
 expected to be straightforward).
 
 **Witness:**
-[`sigma-all-symbolic-decay.witness.json`](../../folio-assistant/computations/sigma-all-symbolic-decay.witness.json)
+[`sigma-all-symbolic-decay.witness.json`](../../computations/sigma-all-symbolic-decay.witness.json)
 — full symbolic factorizations + decay rate + precision schedule.
 
 ### **Induction proof — spectator factorization (2026-05-02 evening).**
@@ -901,7 +901,7 @@ handled differently per A in the existing pipeline:
 
 - **A=1 (n→p)**: $Q = (\Sigma_{\rm all} + 1) \cdot m_e$ — the
   $+1$ (= one electron mass in $m_e$ units) is **added by hand**
-  in [`full-derivation-verified.py`](../../folio-assistant/computations/full-derivation-verified.py)
+  in [`full-derivation-verified.py`](../../computations/full-derivation-verified.py)
   line 257.
 - **A=3 (³H→³He)**: $Q = \|\Sigma_{\rm all}\| \cdot m_e$ — no
   explicit $+1$; the absolute value plus the small magnitude of
@@ -911,7 +911,7 @@ handled differently per A in the existing pipeline:
 - **A≥6 (⁶He→⁶Li, ...)**: $Q = \|\Sigma_{\rm FP}\| \cdot m_e$ —
   uses Frobenius-positive sub-cone, no explicit electron.
 
-[`branching-qvalues.witness.json`](../../folio-assistant/computations/branching-qvalues.witness.json)
+[`branching-qvalues.witness.json`](../../computations/branching-qvalues.witness.json)
 line 68 explicitly lists this as an open problem:
 
 > "The +1 (emitted electron) should emerge from the LP dual,
@@ -927,9 +927,9 @@ call it **ELECTRON-1** — distinct from FROB-FILTER and NV-1.
 
 ### Witnesses
 
-- [`y-lambda-wenzl-bridge-numeric-witness.json`](../../folio-assistant/computations/y-lambda-wenzl-bridge-numeric-witness.json)
+- [`y-lambda-wenzl-bridge-numeric-witness.json`](../../computations/y-lambda-wenzl-bridge-numeric-witness.json)
   — full $n=2..18$ data, $0.07$ s runtime, 50 dps precision.
-- [`y_lambda_wenzl_bridge_numeric.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge_numeric.py)
+- [`y_lambda_wenzl_bridge_numeric.py`](../../computations/y_lambda_wenzl_bridge_numeric.py)
   — the bottleneck-fixed driver script.
 
 **Reduction to existing framework.** The conjecture is now a
@@ -941,7 +941,7 @@ Frobenius positivity cone) + `prop:y-lambda-recipe-from-partition`
 both upstream props + the signature compute.
 
 **Action:** extend
-[`y_lambda_wenzl_bridge_extended.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge_extended.py)
+[`y_lambda_wenzl_bridge_extended.py`](../../computations/y_lambda_wenzl_bridge_extended.py)
 to $n=12, 15, 18$ (estimated 1–4 hours each level via Schur
 principal-specialisation), then compute $A_{**}$.
 

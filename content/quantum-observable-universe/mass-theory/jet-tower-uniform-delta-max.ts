@@ -19,8 +19,8 @@ export default conjecture({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/jet_tower_delta_max.py",
-    witness: "folio-assistant/computations/jet-tower-delta-max.witness.json",
+    script: "computations/jet_tower_delta_max.py",
+    witness: "computations/jet-tower-delta-max.witness.json",
     status: "verified",
   },
   tags: [

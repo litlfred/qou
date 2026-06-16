@@ -24,7 +24,7 @@ We compute:
 4. The mass ratios m_e : m_μ : m_p from the periods
 
 Usage:
-    python3 folio-assistant/computations/sw_period_baryon.py
+    python3 computations/sw_period_baryon.py
 """
 
 import sys, math, cmath

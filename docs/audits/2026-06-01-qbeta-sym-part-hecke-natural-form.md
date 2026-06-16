@@ -58,7 +58,7 @@ plus a structural derivation are both required before any wiring.
 
 ## Verification
 
-Run `folio-assistant/computations/qbeta/qbeta_sym_part_hecke_natural_form.py`.
+Run `computations/qbeta/qbeta_sym_part_hecke_natural_form.py`.
 
 All three forms verified algebraically equal to the upstream
 sym closed form `(-q³+q²+q-1)/(2q^(3/2))` from PR #1615. SymPy
@@ -91,7 +91,7 @@ from substrate axioms, not match-by-fitting.
 
 - PR #1615 — bar-decomposition structural finding (this PR's upstream)
 - `docs/audits/2026-06-01-delta-tr-m-bar-decomposition-structural-finding.md`
-- `folio-assistant/computations/probes/qbeta-delta-tr-bar-decomposition-probe.witness.json`
-- `folio-assistant/computations/qbeta/qbeta-sym-part-hecke-natural-form.witness.json` (this PR)
+- `computations/probes/qbeta-delta-tr-bar-decomposition-probe.witness.json`
+- `computations/qbeta/qbeta-sym-part-hecke-natural-form.witness.json` (this PR)
 - `todos/research-queue.json` — `research-qbeta-bar-decomposition-followup`
 - CLAUDE.md §Canonical derivation chain: Im(q) fibre vs observable (PR #1616 framing)

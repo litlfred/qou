@@ -1,6 +1,6 @@
 # A.3 jet-extension result — q-Plancherel scaffold (per-braid hybrid)
 
-**Pair:** [`per_braid_tower_hybrid_jet.py`](../../folio-assistant/computations/per_braid_tower_hybrid_jet.py)
+**Pair:** [`per_braid_tower_hybrid_jet.py`](../../computations/per_braid_tower_hybrid_jet.py)
 + witness [`2026-05-02-per-braid-hybrid-jet.witness.json`](2026-05-02-per-braid-hybrid-jet.witness.json).
 
 The truncation audit

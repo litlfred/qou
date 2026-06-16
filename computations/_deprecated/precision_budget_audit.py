@@ -24,7 +24,7 @@ the residuals reported in the f64 witness today are already at the
 f64 floor for ¹H, ⁴He, and ¹²C. Plan F's higher-leverage step (Hoefsmit
 seminormal in MPFR end-to-end) is what moves the floor.
 
-Output: folio-assistant/computations/low-isotope-mass-table-precision-
+Output: computations/low-isotope-mass-table-precision-
 audit.witness.json
 """
 from __future__ import annotations

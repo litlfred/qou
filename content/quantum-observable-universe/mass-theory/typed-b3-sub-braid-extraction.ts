@@ -16,9 +16,9 @@ export default remark({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/probe_q_beta_operator_valued_N3.py",
+    script: "computations/probe_q_beta_operator_valued_N3.py",
     witness: [
-      "folio-assistant/computations/q-beta-operator-valued-N3.witness.json"
+      "computations/q-beta-operator-valued-N3.witness.json"
     ],
     status: "experimental",
   },

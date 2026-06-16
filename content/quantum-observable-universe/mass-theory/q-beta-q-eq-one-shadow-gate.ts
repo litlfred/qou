@@ -18,9 +18,9 @@ export default proposition({
   computation: {
     engine: "python+sympy+mpmath",
     script:
-      "folio-assistant/computations/qbeta/qbeta_q_eq_one_shadow_gate_probe.py",
+      "computations/qbeta/qbeta_q_eq_one_shadow_gate_probe.py",
     witness:
-      "folio-assistant/computations/qbeta/qbeta-q-eq-one-shadow-gate-probe.witness.json",
+      "computations/qbeta/qbeta-q-eq-one-shadow-gate-probe.witness.json",
     status: "verified",
   },
   tags: [

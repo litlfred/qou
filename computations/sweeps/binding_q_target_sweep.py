@@ -17,7 +17,7 @@ current canonical state against the L2 100×-experimental bar per
 docs/precision-goals.md.
 
 Run:
-    python3 folio-assistant/computations/binding_q_target_sweep.py
+    python3 computations/binding_q_target_sweep.py
 """
 from __future__ import annotations
 

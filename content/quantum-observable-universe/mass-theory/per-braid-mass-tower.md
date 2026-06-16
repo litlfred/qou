@@ -137,7 +137,7 @@ keeping the natural sub-braid scale.
 ## Numerical verification
 
 The per-braid tower has been computed for D, ${}^{3}$He, ${}^{3}$H, ${}^{4}$He via
-[`folio-assistant/computations/per_braid_tower.py`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/folio-assistant/computations/per_braid_tower.py),
+[`computations/per_braid_tower.py`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/computations/per_braid_tower.py),
 with witness
 [`docs/audits/-per-braid-tower.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/docs/audits/-per-braid-tower.witness.json).
 

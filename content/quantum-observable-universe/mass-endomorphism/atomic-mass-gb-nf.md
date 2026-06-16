@@ -190,11 +190,11 @@ $(18, 21, 1)$ governing
 [`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md)
 are now **categorically verified** for the proton and deuteron via
 the symbolic Hoefsmit pole-order analysis in
-[`per_irrep_pole_atom.py`](../../folio-assistant/computations/per_irrep_pole_atom.py)
+[`per_irrep_pole_atom.py`](../../computations/per_irrep_pole_atom.py)
 (witnesses
-[`per-irrep-pole-proton-h3.witness.json`](../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json)
+[`per-irrep-pole-proton-h3.witness.json`](../../computations/per-irrep-pole-proton-h3.witness.json)
 +
-[`per-irrep-pole-deuteron-h6.witness.json`](../../folio-assistant/computations/per-irrep-pole-deuteron-h6.witness.json)),
+[`per-irrep-pole-deuteron-h6.witness.json`](../../computations/per-irrep-pole-deuteron-h6.witness.json)),
 closing the per-nucleon contribution to $\mathrm{shift}_{\mathrm{NF}}$
 that controls the $u$-power in $D(u)$. Closing the strand-context
 profile $(1, 4, 0, 0, 1, 0)$ remains open.

@@ -2018,7 +2018,7 @@
       "psd_feasible_subset_finding": "1 of 2 historical T_w lie in the PSD-feasible cone (alpha_gap ≤ 1e-6).  The PSD-feasible subset is the natural domain of the joint-tower SDP without multi-term completion; restricting the search to this subset produces a much sharper ranking.",
       "next_session_deliverables": [
         "Wire multi-term mass formula (T2-T6 of thm:knot-mass-formula-unified) into cost_for_candidate — without this the single-term residual is dominated by PSD-trivial near-pure-power braids whose |tr_M| coincidentally matches B_AME/(m_e·ρ).",
-        "Port klr_canonical_basis_filter to other braid-enumerators in folio-assistant/computations/ (universal-ilp.py, ch-bond-writhe-lp.py, h2-integer-lp.py per the cemetery-applicability survey).  These use an OPS-tuple abstraction (named operators with state-update fns) rather than raw B_n generators, so each port needs an adapted evaluator(word) → fingerprint function.",
+        "Port klr_canonical_basis_filter to other braid-enumerators in computations/ (universal-ilp.py, ch-bond-writhe-lp.py, h2-integer-lp.py per the cemetery-applicability survey).  These use an OPS-tuple abstraction (named operators with state-update fns) rather than raw B_n generators, so each port needs an adapted evaluator(word) → fingerprint function.",
         "Extend to B_5 / 8_11 (³H) — needs Hoefsmit at H_5; consistent with deferred-to-Rust posture in joint_tower_sdp_solver_v2.py",
         "Categorical uniqueness theorem (issue #604 deliverable 3) discharging conj:canonical-knot-id-sdp",
         "Structural ρ(Z, N) rule (issue #604 deliverable 4) discharging conj:rho-prefactor-structural"

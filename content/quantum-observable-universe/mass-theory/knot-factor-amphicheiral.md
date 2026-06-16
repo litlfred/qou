@@ -73,4 +73,4 @@ clean sum-of-positive-squares formula.  See the resolution
 discussion in
 [`docs/coordination/i1-probe-author-queue-.md`](../../../../docs/coordination/i1-probe-author-queue-.md)
 and the computational verification in
-[`folio-assistant/computations/probes/knot_factor_amphicheiral_BD_probe.py`](../../../../folio-assistant/computations/probes/knot_factor_amphicheiral_BD_probe.py).
+[`computations/probes/knot_factor_amphicheiral_BD_probe.py`](../../../../computations/probes/knot_factor_amphicheiral_BD_probe.py).

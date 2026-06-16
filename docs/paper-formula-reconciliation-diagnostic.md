@@ -157,4 +157,4 @@ These are theory-level decisions for the paper; this branch's contribution is th
 - [`thm:knot-mass-formula-unified`](../content/quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.md)
 - [`prop:y-lambda-recipe-from-partition`](../content/quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.md)
 - Parallel-branch audit findings: `claude/continue-pr-442-DJRWm@a12818da2` (refutation), `@a5135cd8b` (naïve-sum failure), `@b2c0e4af75` (Plancherel-vs-Wenzl-Schur)
-- Compute heuristic: `folio-assistant/computations/mass_formula_6term.py`
+- Compute heuristic: `computations/mass_formula_6term.py`

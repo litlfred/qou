@@ -65,7 +65,7 @@ Original (legacy) docstring:
     (energy scale).  No Bethe-Weizsacker, no CODATA m_p/m_n.
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_derived.py
+    python3 computations/atom_mass_derived.py
 """
 
 import math

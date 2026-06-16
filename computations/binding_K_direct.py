@@ -56,7 +56,7 @@ its tautology now made explicit in the docstring).  Downstream
 consumers should prefer this direct-binding form.
 
 Usage:
-    python3 folio-assistant/computations/binding_K_direct.py
+    python3 computations/binding_K_direct.py
 """
 from __future__ import annotations
 

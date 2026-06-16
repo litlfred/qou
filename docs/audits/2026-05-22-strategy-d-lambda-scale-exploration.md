@@ -20,7 +20,7 @@
 1. **Leading-order ansatz confirmed.** `λ_scale ≈ 5/2 − h²·G` matches
    the 32-digit closure target at **−5.619 ppm** (`G` = Catalan). This
    is the legacy "5/2 − h²·G + O(h^4)" ansatz already noted in
-   [`build_proton_mass_50dps_chain.py:86`](../../folio-assistant/computations/build_proton_mass_50dps_chain.py).
+   [`build_proton_mass_50dps_chain.py:86`](../../computations/build_proton_mass_50dps_chain.py).
 2. **Next-order term:** the residual
    `ε := target − (5/2 − h²·G) = −1.3823e-5`
    matches **−h⁶/6 to within 0.66%** at q_0. The 0.66% mismatch is
@@ -46,7 +46,7 @@
 ## Structural inputs (at q_0)
 
 Computed via
-[`folio-assistant/computations/strategy_d_lambda_scale_exploration.py`](../../folio-assistant/computations/strategy_d_lambda_scale_exploration.py).
+[`computations/strategy_d_lambda_scale_exploration.py`](../../computations/strategy_d_lambda_scale_exploration.py).
 
 | Object | Value at q_0 (16 sig fig) |
 |---|---|
@@ -62,7 +62,7 @@ Computed via
 | target λ_scale (32-digit) | `2.4599527843613182892482457339493` |
 
 (The 10-digit literal `2.4599527869` in
-[`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
+[`m_p_borromean_verification_50dps.py`](../../computations/m_p_borromean_verification_50dps.py)
 carries only ~10 digits of information. Residuals smaller than 2.5e-9
 cannot be probed against it; this exploration uses the 32-digit form
 that appears in the bring_bloch_tier{1..5}_search scripts.)
@@ -70,9 +70,9 @@ that appears in the bring_bloch_tier{1..5}_search scripts.)
 **Note on Markov-trace normalization.** The structural form
 `T(B_p, q) = Σ_λ y_λ · χ_λ` evaluated here gives **1.0653...** at
 q_0, while the canonical Phase 5l witness
-[`rho-constit-equals-tau-M-proton-phase5l.witness.json`](../../folio-assistant/computations/rho-constit-equals-tau-M-proton-phase5l.witness.json)
+[`rho-constit-equals-tau-M-proton-phase5l.witness.json`](../../computations/rho-constit-equals-tau-M-proton-phase5l.witness.json)
 reports tr_M^3(𝓑_p, q_0) = **1.2203628...**. Per
-[`tau-M-proton-closed-form-phase5l1.witness.json`](../../folio-assistant/computations/tau-M-proton-closed-form-phase5l1.witness.json)
+[`tau-M-proton-closed-form-phase5l1.witness.json`](../../computations/tau-M-proton-closed-form-phase5l1.witness.json)
 the discrepancy is a normalization difference that "is NOT a simple
 q-independent multiplicative constant"; Phase 5l.2 reconciliation
 remains queued. **For Strategy D the choice between the two
@@ -162,7 +162,7 @@ Setup:
 - `t = [q^3, q^0, q^{-3}]` (q-content cost per partition; per
   [`prop:mass-formula-iterative-lp-dual`](../../content/quantum-observable-universe/braids-and-knots/)
   and the
-  [`delta_n2_lp_dual_extraction.py`](../../folio-assistant/computations/delta_n2_lp_dual_extraction.py)
+  [`delta_n2_lp_dual_extraction.py`](../../computations/delta_n2_lp_dual_extraction.py)
   pattern)
 - `G = diag(y_λ)`, `n_target = tr_M^3 = 1.0653`
 
@@ -210,9 +210,9 @@ In priority order (each is independent of the others):
 
 2. **Test against Li_2^q / Φ_q at natural algebraic arguments**
    (per Strategy A and B of the brief). Use
-   [`_li_2_q_util.li_2_q`](../../folio-assistant/computations/_li_2_q_util.py)
+   [`_li_2_q_util.li_2_q`](../../computations/_li_2_q_util.py)
    and
-   [`_phi_q_util.phi_q`](../../folio-assistant/computations/_phi_q_util.py).
+   [`_phi_q_util.phi_q`](../../computations/_phi_q_util.py).
    Candidate arguments: `{q_0, 1/q_0, q_0², h², h²·G, −h², ...}`.
 
 3. **Symbolic-q LP via KKT.** linprog can't take symbolic inputs,
@@ -222,7 +222,7 @@ In priority order (each is independent of the others):
    price equal to the closed-form λ_scale(q) from stage 2.
 
 4. **PSD-relaxed SDP variant.** Use
-   [`solve_psd_operator_selection_sdp`](../../folio-assistant/computations/lp_dual_solver.py)
+   [`solve_psd_operator_selection_sdp`](../../computations/lp_dual_solver.py)
    with the PSD constraint applied to the Hoefsmit (2,1)-block
    submatrix (the only block in the H_3 NF basis with non-trivial
    2×2 structure). The PSD constraint may regularize the
@@ -243,26 +243,26 @@ In priority order (each is independent of the others):
 2. **Do not drop precision.** PSLQ at < 50 dps will produce false
    positives. Stage 2 PSLQ runs should use `mp.dps = 100` minimum.
 3. **Do not switch q_0 conventions.** The 50-digit pin in
-   [`q-pinning-50-digit.witness.json`](../../folio-assistant/computations/q-pinning-50-digit.witness.json)
+   [`q-pinning-50-digit.witness.json`](../../computations/q-pinning-50-digit.witness.json)
    is authoritative.
 
 ## Cross-references
 
 - [`docs/agent-briefs/2026-05-22-lambda-scale-qdilog-tower-direct.md`](../agent-briefs/2026-05-22-lambda-scale-qdilog-tower-direct.md)
   — Strategy D brief (this exploration's spec)
-- [`folio-assistant/computations/strategy_d_lambda_scale_exploration.py`](../../folio-assistant/computations/strategy_d_lambda_scale_exploration.py)
+- [`computations/strategy_d_lambda_scale_exploration.py`](../../computations/strategy_d_lambda_scale_exploration.py)
   — exploration script (this audit's compute)
-- [`folio-assistant/computations/strategy-d-lambda-scale-exploration.witness.json`](../../folio-assistant/computations/strategy-d-lambda-scale-exploration.witness.json)
+- [`computations/strategy-d-lambda-scale-exploration.witness.json`](../../computations/strategy-d-lambda-scale-exploration.witness.json)
   — output witness with per-probe data
-- [`folio-assistant/computations/build_proton_mass_50dps_chain.py:86`](../../folio-assistant/computations/build_proton_mass_50dps_chain.py)
+- [`computations/build_proton_mass_50dps_chain.py:86`](../../computations/build_proton_mass_50dps_chain.py)
   — legacy `5/2 − h²·G` ansatz
-- [`folio-assistant/computations/m_p_borromean_verification_50dps.py:100`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
+- [`computations/m_p_borromean_verification_50dps.py:100`](../../computations/m_p_borromean_verification_50dps.py)
   — production hardcoded literal (`LAMBDA_PROTON_DOC`)
-- [`folio-assistant/computations/bring_bloch_tier{1..5}_search_m_p.py`](../../folio-assistant/computations/)
+- [`computations/bring_bloch_tier{1..5}_search_m_p.py`](../../computations/)
   — exhausted Bring-Bloch path (Strategy of brief §"Why Bring-Bloch is exhausted")
-- [`folio-assistant/computations/tau-M-proton-closed-form-phase5l1.witness.json`](../../folio-assistant/computations/tau-M-proton-closed-form-phase5l1.witness.json)
+- [`computations/tau-M-proton-closed-form-phase5l1.witness.json`](../../computations/tau-M-proton-closed-form-phase5l1.witness.json)
   — symbolic closed form for T(𝓑_p, q)
-- [`folio-assistant/computations/rho-constit-equals-tau-M-proton-phase5l.witness.json`](../../folio-assistant/computations/rho-constit-equals-tau-M-proton-phase5l.witness.json)
+- [`computations/rho-constit-equals-tau-M-proton-phase5l.witness.json`](../../computations/rho-constit-equals-tau-M-proton-phase5l.witness.json)
   — canonical tr_M^3(𝓑_p, q) per Phase 5l
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
   §5 #1 — Migration Backlog item this work aims to close

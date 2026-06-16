@@ -107,7 +107,7 @@ moves from §3b-cond conjecture to derived theorem. At that point:
 
 - Standing scope: [`2026-06-05-qbeta-phi2-ckrecursion-kernel-constraints.md`](2026-06-05-qbeta-phi2-ckrecursion-kernel-constraints.md)
 - Refutation commit: `89616febbe`
-- Refutation witness: [`folio-assistant/computations/qbeta/qbeta-alpha-eff-ladder-reconciliation-probe.witness.json`](../../folio-assistant/computations/qbeta/qbeta-alpha-eff-ladder-reconciliation-probe.witness.json)
+- Refutation witness: [`computations/qbeta/qbeta-alpha-eff-ladder-reconciliation-probe.witness.json`](../../computations/qbeta/qbeta-alpha-eff-ladder-reconciliation-probe.witness.json)
 - Refutation scope: [`2026-06-06-qbeta-alpha-eff-hoefsmit-symbolic-finding.md`](2026-06-06-qbeta-alpha-eff-hoefsmit-symbolic-finding.md)
 - Q_β master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
 - CLAUDE.md Φ₂ context: §"Q_β c_k is a TRUNCATION ORDER"

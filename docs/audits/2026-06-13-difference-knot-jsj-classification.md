@@ -1,6 +1,6 @@
 # Difference-knot binding — JSJ classification + the two blockers (2026-06-13)
 
-**Probe:** [`probes/difference_knot_jsj_classification_probe.py`](../../folio-assistant/computations/probes/difference_knot_jsj_classification_probe.py)
+**Probe:** [`probes/difference_knot_jsj_classification_probe.py`](../../computations/probes/difference_knot_jsj_classification_probe.py)
 (witness `difference-knot-jsj-classification.witness.json`)
 **Follows:** [`2026-06-13-difference-knot-binding-geometric-probe.md`](2026-06-13-difference-knot-binding-geometric-probe.md)
 (PR #2235) and [`prop:binding-error-amplification`](../../content/quantum-observable-universe/mass-theory/binding-error-amplification.md)

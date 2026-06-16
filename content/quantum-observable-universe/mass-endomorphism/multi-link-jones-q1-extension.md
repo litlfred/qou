@@ -12,7 +12,7 @@ multi-link Jones values for $c_5, c_7, \ldots$ — Borromean rings,
 double-Hopf, etc.
 
 **Empirically this fails**: at $q_0$ at 50 dps via
-[`probe_q_beta_c5_c6_multilink.py`](../../folio-assistant/computations/probe_q_beta_c5_c6_multilink.py),
+[`probe_q_beta_c5_c6_multilink.py`](../../computations/probe_q_beta_c5_c6_multilink.py),
 
 | coefficient | empirical | closest simple multi-link Jones candidate |
 |:---:|---:|---:|

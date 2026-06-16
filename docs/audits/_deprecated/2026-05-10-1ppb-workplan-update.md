@@ -41,7 +41,7 @@ The largest single block of 1 ppb-relevant infrastructure to land on
 The Lean-side scaffolding is now in place to express **per-nucleus
 binding-energy uniqueness theorems** the way the narrative has been
 asserting them for months. The actual derivation chains in
-`folio-assistant/computations/*.py` are not yet wired through the
+`computations/*.py` are not yet wired through the
 new uniqueness instances — that wiring is **Phase 1 of this update**.
 
 ### PR #622 — `claude/term7-alpha5-derive-investigation` (merged earlier)
@@ -218,8 +218,8 @@ of magnitude (from 1–3% to 0.01–0.1%) once the predictions come
 from the SDP-derived chain rather than fitted volumes.
 
 **Files**:
-- `folio-assistant/computations/applied_{deuteron,tritium,helium3}_derivation.py` (new)
-- `folio-assistant/computations/atomic_braid_mass_table.py` (consumer; consume new derivations)
+- `computations/applied_{deuteron,tritium,helium3}_derivation.py` (new)
+- `computations/atomic_braid_mass_table.py` (consumer; consume new derivations)
 
 ### Phase 2 — Proton 544k ppb root-cause closure
 
@@ -247,9 +247,9 @@ Subtasks:
 A precision floor, ~10 ppb). Resolves the 544k ppb structurally.
 
 **Files**:
-- `folio-assistant/computations/derive_m_p_hecke_path_a.py` (new)
-- `folio-assistant/computations/derive_m_e_hecke_path_a.py` (new)
-- `folio-assistant/computations/derivation_chain.py` (consumer)
+- `computations/derive_m_p_hecke_path_a.py` (new)
+- `computations/derive_m_e_hecke_path_a.py` (new)
+- `computations/derivation_chain.py` (consumer)
 
 ### Phase 3 — Triton (smallest absolute error, easiest first win)
 

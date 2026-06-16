@@ -73,7 +73,7 @@ PRIMARY TESTS:
      Test: does a_7 factor as a small polynomial times another?
 
 OUTPUT:
-    folio-assistant/computations/qbeta-habiro-recursion.witness.json
+    computations/qbeta-habiro-recursion.witness.json
 
 USAGE:
     python3 -u qbeta_habiro_recursion_probe.py 2>&1 \

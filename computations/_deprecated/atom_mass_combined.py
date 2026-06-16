@@ -11,7 +11,7 @@ The atomic Φ captures electron binding. The F_Pauli captures
 Gram character (alternating trace / net) from the full NF.
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_combined.py
+    python3 computations/atom_mass_combined.py
 """
 
 import math, sys, json, time, subprocess

@@ -16,7 +16,7 @@ INPUTS: Vol(4₁), m_μ/m_e, m_e (3 CODATA values)
 OUTPUT: Q-values for n→p, ³H→³He, ⁶He→⁶Li
 
 Usage:
-    python3 folio-assistant/computations/full-derivation-verified.py
+    python3 computations/full-derivation-verified.py
 """
 
 import sympy as sp

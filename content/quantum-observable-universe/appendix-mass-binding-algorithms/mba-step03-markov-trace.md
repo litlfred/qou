@@ -78,7 +78,7 @@ The PyO3 binding `pyhecke_native` calls the Rust core directly.*
 ### Witness contract
 
 *Canonical witness:
-[`markov-free-energy-qvalues.witness.json`](../../../folio-assistant/computations/markov-free-energy-qvalues.witness.json).
+[`markov-free-energy-qvalues.witness.json`](../../../computations/markov-free-energy-qvalues.witness.json).
 Per-particle assembly traces are emitted separately as
 `markov-trace-assembly-{proton,neutron,deuteron}.derivation.json`.
 Each witness records the input braid word, the chosen $q$
@@ -116,17 +116,17 @@ Hoefsmit representation: the cost is the fine-Bratteli edge count
 (a few thousand at $n = 21$) rather than $n!$, extending the
 numerical $\mathrm{tr}_M$ at $q_0$ to $A \geq 6$ ($^6$Li, $^7$Li,
 and beyond) in seconds. Implemented in
-[`chi_monotone_transfer.py`](../../../folio-assistant/computations/chi_monotone_transfer.py)
+[`chi_monotone_transfer.py`](../../../computations/chi_monotone_transfer.py)
 with the per-atom trace assembly in
-[`tr_m_atom_via_transfer.py`](../../../folio-assistant/computations/tr_m_atom_via_transfer.py)
+[`tr_m_atom_via_transfer.py`](../../../computations/tr_m_atom_via_transfer.py)
 (witness
-[`tr-m-atom-via-transfer.witness.json`](../../../folio-assistant/computations/tr-m-atom-via-transfer.witness.json)),
+[`tr-m-atom-via-transfer.witness.json`](../../../computations/tr-m-atom-via-transfer.witness.json)),
 validated to the 50-dps floor against the Hoefsmit characters
 ($n \leq 6$) and the cached per-basis-vector trace witnesses
 ($n \leq 12$). The production binding consumers
-[`binding_canonical`](../../../folio-assistant/computations/binding_canonical.py)
+[`binding_canonical`](../../../computations/binding_canonical.py)
 and
-[`canonical_tr_m_via_branching`](../../../folio-assistant/computations/canonical_tr_m_via_branching.py)
+[`canonical_tr_m_via_branching`](../../../computations/canonical_tr_m_via_branching.py)
 ($A \geq 3$) route their atom-trace through this transfer path (the
 former brute-force atom-level Wedderburn tower,
 `atom_level_wedderburn_tower.py`, is retained only as a

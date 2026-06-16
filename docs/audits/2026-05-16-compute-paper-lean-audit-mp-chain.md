@@ -208,7 +208,7 @@ Covers `bw_chirality_isotopes.py`, `gb_filtration_jet_tracker.py`,
    - Lean stub (per CLAUDE.md §3, may carry a `sorry` with
      `-- Ref:` to the audit doc)
    - Empirical witness already exists
-     ([`probe-derived-A-from-gs-normal-form.witness.json`](../../folio-assistant/computations/probe-derived-A-from-gs-normal-form.witness.json))
+     ([`probe-derived-A-from-gs-normal-form.witness.json`](../../computations/probe-derived-A-from-gs-normal-form.witness.json))
 
 2. **`prop:T5-categorical-from-derived-A`** — the assembled T5
    formula `T5(β) = a_K·B_bulk + f_Zdep·B_Zdep + B_shell` at

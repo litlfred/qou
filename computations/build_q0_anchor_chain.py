@@ -102,7 +102,7 @@ def build() -> DerivationChain:
         jet_order=0,
         spectral_stratum="archimedean (q_0 ∈ ℝ_{>1})",
         notes=(
-            "script: folio-assistant/computations/q_parameter.py.  "
+            "script: computations/q_parameter.py.  "
             "This SCRIPT_CITED step is the open frontier of the "
             "chain — the candidate derivations on the horizon are "
             "(A) closure of the α-FSC ↔ q_0 algebraic relation via "

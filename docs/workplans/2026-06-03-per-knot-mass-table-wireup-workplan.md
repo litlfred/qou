@@ -12,7 +12,7 @@ The canonical mass formula is `m(K) = m_e · VolDensity(K, q₀)` with K knot-de
 2. **Uniform linking_weight bug** — production uses H_4 Family-A `λ_A = 5/2 + 3h²/4 ≈ 2.53` for all atoms. No per-knot `linking_weight(K)` generalisation exists in compute or paper.
 
 Naive fix attempts:
-- Replace `vol_density_borromean(q)` → `vol_density_per_block(vol_K, tr_M_K, q)` in production: takes m_p from +2.89% to **−50.4%** (PR #1756 demonstration; mirrors the RED verdict of [`vol_density_per_block_wiring.py`](../../folio-assistant/computations/vol_density_per_block_wiring.py)). Per-block H_n tr_M(K) drops from 1.22 at p to 0.12 at ⁴He, while production's H_4 Family-A linking_weight stays at 2.53. The two scalars are **different objects**, not refinements.
+- Replace `vol_density_borromean(q)` → `vol_density_per_block(vol_K, tr_M_K, q)` in production: takes m_p from +2.89% to **−50.4%** (PR #1756 demonstration; mirrors the RED verdict of [`vol_density_per_block_wiring.py`](../../computations/vol_density_per_block_wiring.py)). Per-block H_n tr_M(K) drops from 1.22 at p to 0.12 at ⁴He, while production's H_4 Family-A linking_weight stays at 2.53. The two scalars are **different objects**, not refinements.
 
 ## Phased implementation
 
@@ -28,7 +28,7 @@ Naive fix attempts:
 
 **Scope correction (2026-06-03, mid-session)**: digging into `mass_table_comprehensive.py` showed the actual gap is NOT Vol(K) extension. Production already uses `m_pred = Z·m_p + N·m_n − B(K)` where m_p/m_n come from substrate-identity (single-knot-Borromean correct for protons); the +2.89% → +3.73% growth is dominated by **`B_pred = 0` for A > 12** because `try_binding_canonical` is gated on the H_{3A} kernel.
 
-The `recursive-on-⁴He` atlas tag IS the user's "build each atom recursively from prior atoms + canonical braids w/ unfolding". The formula `B(nα) = n·B(⁴He) + C(n,2)·c_αα` (Whitehead link 7²_1 for the α-α coupling) is **already implemented** in [`folio-assistant/computations/alpha/alpha_cluster_recursion.py`](../../folio-assistant/computations/alpha/alpha_cluster_recursion.py) for the A>12 α-cluster atoms (¹⁶O, ²⁰Ne, ²⁴Mg, ²⁸Si, ³²S, ³⁶Ar, ⁴⁰Ca; ⁸Be / ¹²C are A≤12 so they go through the existing `binding_canonical` branch, not α-recursion). It just **isn't wired** into `mass_table_comprehensive.py:try_binding_canonical` for the A>12 branch.
+The `recursive-on-⁴He` atlas tag IS the user's "build each atom recursively from prior atoms + canonical braids w/ unfolding". The formula `B(nα) = n·B(⁴He) + C(n,2)·c_αα` (Whitehead link 7²_1 for the α-α coupling) is **already implemented** in [`computations/alpha/alpha_cluster_recursion.py`](../../computations/alpha/alpha_cluster_recursion.py) for the A>12 α-cluster atoms (¹⁶O, ²⁰Ne, ²⁴Mg, ²⁸Si, ³²S, ³⁶Ar, ⁴⁰Ca; ⁸Be / ¹²C are A≤12 so they go through the existing `binding_canonical` branch, not α-recursion). It just **isn't wired** into `mass_table_comprehensive.py:try_binding_canonical` for the A>12 branch.
 
 **What**: modify `try_binding_canonical(Z, N, q_str)` to:
 1. Existing: A ≤ 12 → `binding_canonical` (Δtr_M closed form) — unchanged. Covers ⁸Be / ¹²C.

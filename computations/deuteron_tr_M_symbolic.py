@@ -46,7 +46,7 @@ naive "universal −1/(2 n!)" conjecture from the round-1 audit.  The
 leading coefficient is still a power of 2 (1/2^7 here, 1/2^3 there),
 suggesting a refined conjecture in terms of $\\dim_q$ specializations.
 
-Run:  python3 folio-assistant/computations/deuteron_tr_M_symbolic.py
+Run:  python3 computations/deuteron_tr_M_symbolic.py
 """
 from __future__ import annotations
 

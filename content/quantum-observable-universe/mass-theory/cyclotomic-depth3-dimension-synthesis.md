@@ -147,8 +147,8 @@ $$
 
 ### Numerical PSLQ certification at $K = 5, 7$
 
-[`cyclotomic_depth3_dimension_pslq.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/cyclotomic_depth3_dimension_pslq.py),
-[witness](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/cyclotomic-depth3-dimension-pslq.witness.json):
+[`cyclotomic_depth3_dimension_pslq.py`](https://github.com/litlfred/qou/blob/main/computations/cyclotomic_depth3_dimension_pslq.py),
+[witness](https://github.com/litlfred/qou/blob/main/computations/cyclotomic-depth3-dimension-pslq.witness.json):
 
 See [Table 1](#tbl:cyclotomic-depth3-dimension-synthesis-table1-data).
 

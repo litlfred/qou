@@ -45,7 +45,7 @@ The infrastructure for the lever has landed via sibling commits:
 - `ba7af156cb` — per-block θ_λ carry on D/T/³He/⁴He (absolute open;
   signed difference structural)
 
-[`binding-reeb-phase-decomposition.witness.json`](../../folio-assistant/computations/binding-reeb-phase-decomposition.witness.json)
+[`binding-reeb-phase-decomposition.witness.json`](../../computations/binding-reeb-phase-decomposition.witness.json)
 now carries the per-λ vector (`by_partition`):
 
 ```json

@@ -11,7 +11,7 @@ bond orders minimize total Φ₁ — this is VSEPR from the LP dual.
 Content block: prop:co2-lp-dual-binding
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 co2-molecular-binding.py
 """
 

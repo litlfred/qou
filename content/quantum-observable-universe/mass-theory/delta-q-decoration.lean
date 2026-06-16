@@ -3,8 +3,8 @@ The δ_q decoration of the Iwahori–Hecke algebra H_n(q).
 
 LaTeX label: `def:delta-q-decoration`
 Computational reference:
-  folio-assistant/computations/delta_q_decoration.py
-  folio-assistant/computations/delta-q-decoration.witness.json
+  computations/delta_q_decoration.py
+  computations/delta-q-decoration.witness.json
 -/
 
 import Mathlib.RepresentationTheory.Basic

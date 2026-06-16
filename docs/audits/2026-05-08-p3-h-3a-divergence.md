@@ -10,20 +10,20 @@ shortcut** and the **H_{3A} Jones-Markov formulation** required by
 draft of this audit used `hecke_3a_weights.wedderburn_weights_3a`
 which returns the **symmetric Plancherel** weight
 $w_\lambda = d_q(\lambda)^2 / [n]_q!$. Per
-[`markov_weights_symbolic.py:18-23`](../../folio-assistant/computations/markov/markov_weights_symbolic.py),
+[`markov_weights_symbolic.py:18-23`](../../computations/markov/markov_weights_symbolic.py),
 that is **NOT** the correct Jones-Markov weight $y_\lambda(q)$
 for $q \neq 1$; they coincide only at the classical Plancherel
 point $q = 1$. The QOU paper at $q = q_0 \approx 1.1098$
 **requires** $y_\lambda$ via Wenzl's Schur principal
 specialization. This audit now uses the correct $y_\lambda$.
 
-**Witness:** [`h-3a-vs-h-3-divergence.witness.json`](../../folio-assistant/computations/h-3a-vs-h-3-divergence.witness.json)
+**Witness:** [`h-3a-vs-h-3-divergence.witness.json`](../../computations/h-3a-vs-h-3-divergence.witness.json)
 — 9 / 9 assertions pass.
 
 ## Methodology
 
 Each $y_\lambda(q)$ computed via
-[`markov_weights_symbolic.schur_principal_symbolic`](../../folio-assistant/computations/markov/markov_weights_symbolic.py)
+[`markov_weights_symbolic.schur_principal_symbolic`](../../computations/markov/markov_weights_symbolic.py)
 with **numerical-q-from-start** — substitutes $q = q_0$ before
 the symbolic `sp.cancel` step that was the bottleneck in naive
 `solve_y_lambda(n)`. Timings:
@@ -76,7 +76,7 @@ with the audit's Step 5 prediction (column-pole maximizer for the
 ## Audit-side finding: same wrong-weight pattern elsewhere
 
 The user flagged "are you using proper weights? not symmetric see
-paper". Surveying `folio-assistant/computations/`:
+paper". Surveying `computations/`:
 
 | File | Function | Formula | Verdict |
 |---|---|---|---|
@@ -121,7 +121,7 @@ that haven't migrated to the rho-k path.
 
 After wiring `crt_markov.py` to use `wedderburn_jones_markov.global_wedderburn_sum_jones_markov`
 (commit [`ac7880c5`](https://github.com/litlfred/qou/pull/572/commits/ac7880c5)),
-ran [`tr_m_jones_markov_cross_check.py`](../../folio-assistant/computations/tr_m_jones_markov_cross_check.py)
+ran [`tr_m_jones_markov_cross_check.py`](../../computations/tr_m_jones_markov_cross_check.py)
 against the canonical reducer (`markov_trace_recursive` →
 `atomic-tr-m-mpfr-50dps.witness.json`):
 
@@ -233,6 +233,6 @@ follow-up:
 - [`prop:atomic-mass-gb-nf`](../../content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md) — defines the H_{3A} mass formula
 - [`prop:per-nucleon-shift-additive-linearity`](../../content/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md)
 - [`docs/audits/2026-05-08-rho-k-mass-table-audit.md`](2026-05-08-rho-k-mass-table-audit.md) — pre-P3 baseline (0.23% MAE)
-- [`folio-assistant/computations/markov/markov_weights_symbolic.py`](../../folio-assistant/computations/markov/markov_weights_symbolic.py) — canonical y_λ
-- [`folio-assistant/computations/schur_weyl_symbolic.py`](../../folio-assistant/computations/schur_weyl_symbolic.py) — wrong-weight site
+- [`computations/markov/markov_weights_symbolic.py`](../../computations/markov/markov_weights_symbolic.py) — canonical y_λ
+- [`computations/schur_weyl_symbolic.py`](../../computations/schur_weyl_symbolic.py) — wrong-weight site
 - [`docs/coordination/1ppb.md`](../coordination/1ppb.md) — P3 in workplan

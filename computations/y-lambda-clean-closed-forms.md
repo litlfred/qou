@@ -104,13 +104,13 @@ removes the manual algebra entirely.
 
 ## Witnesses
 
-- [`y_lambda_macdonald_telescope.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y_lambda_macdonald_telescope.py)
+- [`y_lambda_macdonald_telescope.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_macdonald_telescope.py)
   — symbolic verification of the telescope identity for $n = 0,\ldots,8$
   (sympy reduces the difference to exactly $0$); per-partition closed-
   form collapse for $n = 0,\ldots,6$; emits all 272 closed forms for
   $n = 0,\ldots,12$; cross-checks against the MPFR witness with max
   $|\Delta| \approx 2.5 \times 10^{-51}$ across 191 samples.
-- [`y-lambda-macdonald-telescope.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y-lambda-macdonald-telescope.witness.json)
+- [`y-lambda-macdonald-telescope.witness.json`](https://github.com/litlfred/qou/blob/main/computations/y-lambda-macdonald-telescope.witness.json)
   — full output.
 - The hand-derived $n = 2$ form above is preserved as the smallest
   worked example.

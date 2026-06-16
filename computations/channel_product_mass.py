@@ -32,7 +32,7 @@ Content block: rem:q-integer-mass-table
 Witness: channel-product-mass.witness.json
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 channel_product_mass.py
 """
 

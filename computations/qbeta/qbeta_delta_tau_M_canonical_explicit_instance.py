@@ -76,7 +76,7 @@ References:
     Lean instance: QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance
     Lean eval:     QOU.BraidKnot.delta_tau_M_canonical_explicit_eq
                    (this PR) — the Lean lemma this probe mirrors numerically
-    Surrogate:     folio-assistant/computations/qbeta/
+    Surrogate:     computations/qbeta/
                        qbeta_c3_multiblock_recursion_attack.py
     Shared utils:  qbeta_utils.py (χ-blocks, markov_parameter, the two
                    Δτ_M evaluators)

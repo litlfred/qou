@@ -70,9 +70,9 @@ classical $\log$. The proposed identity (R) is the natural
 q-deformation: $\log \to \log_q$.
 
 **Numerical evidence** at $q_0 \approx 1.110$, from
-[`pentagon_reduction_li2q.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/pentagon_reduction_li2q.py)
+[`pentagon_reduction_li2q.py`](https://github.com/litlfred/qou/blob/main/computations/pentagon_reduction_li2q.py)
 (witness:
-[`pentagon-reduction-li2q.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/pentagon-reduction-li2q.witness.json)):
+[`pentagon-reduction-li2q.witness.json`](https://github.com/litlfred/qou/blob/main/computations/pentagon-reduction-li2q.witness.json)):
 
 | $(u, v)$ | bare LHS−RHS of (P) | classical $\log^2$ err | q-$\log_q^2$ err | improvement |
 |---|---:|---:|---:|---:|
@@ -115,7 +115,7 @@ defining identity for the algebraic level-2 primitive in $\mathcal{H}_q$.
 Computational consequences of the post-$\tau$ pentagon (R):
 
 1. **T3 reorganisation**:
-   [`pentagon_reduction_li2q.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/pentagon_reduction_li2q.py)
+   [`pentagon_reduction_li2q.py`](https://github.com/litlfred/qou/blob/main/computations/pentagon_reduction_li2q.py)
    uses (P$'$) — the duplication form of (R) — to evaluate
    $\mathrm{Li}_2^q(|V_i V_j|)$ at out-of-radius arguments via factorisation
    $z = uv$ with $|u|, |v| < q_0$. The Rogers $\log_q^2$ correction

@@ -79,8 +79,8 @@ mp.mp.dps = 100
 def load_R_q0() -> tuple[mp.mpf, mp.mpf, mp.mpf, mp.mpf]:
     """Load R(q_0), b, ℏ_q², and u_subst from canonical witnesses.
 
-    Witness lives in folio-assistant/computations/, NOT in
-    folio-assistant/computations/qbeta/ — use the parent path.
+    Witness lives in computations/, NOT in
+    computations/qbeta/ — use the parent path.
     """
     src = HERE.parent / "q-beta-operator-valued-N3.witness.json"
     with src.open() as f:

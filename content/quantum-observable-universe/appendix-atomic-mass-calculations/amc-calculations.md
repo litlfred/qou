@@ -1,9 +1,9 @@
 This appendix presents the complete atomic mass calculation for all 118 elements
 using the QOU Skein-lattice mass formula. For each element, we compute the
-predicted mass $M_q$ from rounded CODATA constants ($\mathfrak{m}_{\mathfrak{p}} \approx :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV,
-$\mathfrak{m}_{\mathfrak{n}} \approx :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV, $\mathfrak{m}_e \approx 0.511$ MeV) and compare
+predicted mass $M_q$ from rounded CODATA constants ($\mathfrak{m}_{\mathfrak{p}} \approx :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV,
+$\mathfrak{m}_{\mathfrak{n}} \approx :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV, $\mathfrak{m}_e \approx 0.511$ MeV) and compare
 against $M_o$ computed from full-precision CODATA 2022 values ($\mathfrak{m}_{\mathfrak{p}} = 938.27208943$ MeV,
-$\mathfrak{m}_{\mathfrak{n}} = 939.56542194$ MeV, $\mathfrak{m}_e = :val[m_e_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV).
+$\mathfrak{m}_{\mathfrak{n}} = 939.56542194$ MeV, $\mathfrak{m}_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV).
 Both computations use identical binding energy per nucleon $B/A$ from AME2020.
 The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
@@ -13,7 +13,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $1\mathfrak{p} \oplus 0\mathfrak{n} \oplus 1 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 1 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 0 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 938.3 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 1 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 0 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 938.3 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 938.3 + 1 \times 0.511 = 938.8 \text{MeV}$
 
@@ -29,7 +29,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $2\mathfrak{p} \oplus 2\mathfrak{n} \oplus 2 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 2 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 2 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 3755.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 2 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 2 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 3755.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 3755.7 + 2 \times 0.511 = 3756.7 \text{MeV}$
 
@@ -45,7 +45,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $3\mathfrak{p} \oplus 4\mathfrak{n} \oplus 3 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 3 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 4 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 6573.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 3 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 4 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 6573.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 6573.1 + 3 \times 0.511 = 6574.6 \text{MeV}$
 
@@ -61,7 +61,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $4\mathfrak{p} \oplus 5\mathfrak{n} \oplus 4 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 4 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 5 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 8450.9 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 4 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 5 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 8450.9 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 8450.9 + 4 \times 0.511 = 8453.0 \text{MeV}$
 
@@ -77,7 +77,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $5\mathfrak{p} \oplus 6\mathfrak{n} \oplus 5 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 5 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 6 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 10328.8 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 5 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 6 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 10328.8 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 10328.8 + 5 \times 0.511 = 10331.3 \text{MeV}$
 
@@ -93,7 +93,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $6\mathfrak{p} \oplus 6\mathfrak{n} \oplus 6 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 6 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 6 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 11267.0 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 6 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 6 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 11267.0 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 11267.0 + 6 \times 0.511 = 11270.1 \text{MeV}$
 
@@ -109,7 +109,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $7\mathfrak{p} \oplus 7\mathfrak{n} \oplus 7 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 7 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 7 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 13144.9 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 7 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 7 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 13144.9 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 13144.9 + 7 \times 0.511 = 13148.4 \text{MeV}$
 
@@ -125,7 +125,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $8\mathfrak{p} \oplus 8\mathfrak{n} \oplus 8 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 8 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 8 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 15022.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 8 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 8 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 15022.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 15022.7 + 8 \times 0.511 = 15026.8 \text{MeV}$
 
@@ -141,7 +141,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $9\mathfrak{p} \oplus 10\mathfrak{n} \oplus 9 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 9 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 10 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 17840.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 9 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 10 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 17840.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 17840.1 + 9 \times 0.511 = 17844.7 \text{MeV}$
 
@@ -157,7 +157,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $10\mathfrak{p} \oplus 10\mathfrak{n} \oplus 10 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 10 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 10 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 18778.4 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 10 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 10 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 18778.4 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 18778.4 + 10 \times 0.511 = 18783.5 \text{MeV}$
 
@@ -173,7 +173,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $11\mathfrak{p} \oplus 12\mathfrak{n} \oplus 11 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 11 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 12 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 21595.8 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 11 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 12 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 21595.8 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 21595.8 + 11 \times 0.511 = 21601.4 \text{MeV}$
 
@@ -189,7 +189,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $12\mathfrak{p} \oplus 12\mathfrak{n} \oplus 12 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 12 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 12 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 22534.0 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 12 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 12 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 22534.0 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 22534.0 + 12 \times 0.511 = 22540.2 \text{MeV}$
 
@@ -205,7 +205,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $13\mathfrak{p} \oplus 14\mathfrak{n} \oplus 13 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 13 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 14 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 25351.4 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 13 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 14 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 25351.4 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 25351.4 + 13 \times 0.511 = 25358.1 \text{MeV}$
 
@@ -221,7 +221,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $14\mathfrak{p} \oplus 14\mathfrak{n} \oplus 14 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 14 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 14 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 26289.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 14 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 14 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 26289.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 26289.7 + 14 \times 0.511 = 26296.9 \text{MeV}$
 
@@ -237,7 +237,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $15\mathfrak{p} \oplus 16\mathfrak{n} \oplus 15 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 15 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 16 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 29107.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 15 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 16 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 29107.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 29107.1 + 15 \times 0.511 = 29114.8 \text{MeV}$
 
@@ -253,7 +253,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $16\mathfrak{p} \oplus 16\mathfrak{n} \oplus 16 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 16 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 16 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 30045.4 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 16 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 16 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 30045.4 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 30045.4 + 16 \times 0.511 = 30053.6 \text{MeV}$
 
@@ -269,7 +269,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $17\mathfrak{p} \oplus 18\mathfrak{n} \oplus 17 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 17 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 18 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 32862.8 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 17 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 18 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 32862.8 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 32862.8 + 17 \times 0.511 = 32871.5 \text{MeV}$
 
@@ -285,7 +285,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $18\mathfrak{p} \oplus 22\mathfrak{n} \oplus 18 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 18 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 22 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 37559.3 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 18 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 22 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 37559.3 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 37559.3 + 18 \times 0.511 = 37568.5 \text{MeV}$
 
@@ -301,7 +301,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $19\mathfrak{p} \oplus 20\mathfrak{n} \oplus 19 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 19 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 20 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 36618.5 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 19 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 20 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 36618.5 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 36618.5 + 19 \times 0.511 = 36628.2 \text{MeV}$
 
@@ -317,7 +317,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $20\mathfrak{p} \oplus 20\mathfrak{n} \oplus 20 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 20 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 20 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 37556.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 20 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 20 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 37556.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 37556.7 + 20 \times 0.511 = 37567.0 \text{MeV}$
 
@@ -333,7 +333,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $21\mathfrak{p} \oplus 24\mathfrak{n} \oplus 21 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 21 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 24 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 42253.3 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 21 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 24 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 42253.3 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 42253.3 + 21 \times 0.511 = 42264.0 \text{MeV}$
 
@@ -349,7 +349,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $22\mathfrak{p} \oplus 26\mathfrak{n} \oplus 22 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 22 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 26 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 45070.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 22 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 26 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 45070.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 45070.7 + 22 \times 0.511 = 45081.9 \text{MeV}$
 
@@ -365,7 +365,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $23\mathfrak{p} \oplus 28\mathfrak{n} \oplus 23 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 23 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 28 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 47888.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 23 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 28 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 47888.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 47888.1 + 23 \times 0.511 = 47899.8 \text{MeV}$
 
@@ -381,7 +381,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $24\mathfrak{p} \oplus 28\mathfrak{n} \oplus 24 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 24 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 28 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 48826.3 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 24 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 28 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 48826.3 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 48826.3 + 24 \times 0.511 = 48838.6 \text{MeV}$
 
@@ -397,7 +397,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $25\mathfrak{p} \oplus 30\mathfrak{n} \oplus 25 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 25 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 30 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 51643.8 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 25 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 30 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 51643.8 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 51643.8 + 25 \times 0.511 = 51656.5 \text{MeV}$
 
@@ -413,7 +413,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $26\mathfrak{p} \oplus 30\mathfrak{n} \oplus 26 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 26 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 30 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 52582.0 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 26 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 30 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 52582.0 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 52582.0 + 26 \times 0.511 = 52595.3 \text{MeV}$
 
@@ -429,7 +429,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $27\mathfrak{p} \oplus 32\mathfrak{n} \oplus 27 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 27 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 32 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 55399.4 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 27 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 32 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 55399.4 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 55399.4 + 27 \times 0.511 = 55413.2 \text{MeV}$
 
@@ -445,7 +445,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $28\mathfrak{p} \oplus 30\mathfrak{n} \oplus 28 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 28 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 30 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 54458.6 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 28 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 30 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 54458.6 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 54458.6 + 28 \times 0.511 = 54472.9 \text{MeV}$
 
@@ -461,7 +461,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $29\mathfrak{p} \oplus 34\mathfrak{n} \oplus 29 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 29 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 34 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 59155.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 29 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 34 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 59155.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 59155.1 + 29 \times 0.511 = 59169.9 \text{MeV}$
 
@@ -477,7 +477,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $30\mathfrak{p} \oplus 34\mathfrak{n} \oplus 30 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 30 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 34 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 60093.4 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 30 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 34 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 60093.4 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 60093.4 + 30 \times 0.511 = 60108.7 \text{MeV}$
 
@@ -493,7 +493,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $31\mathfrak{p} \oplus 38\mathfrak{n} \oplus 31 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 31 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 38 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 64789.9 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 31 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 38 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 64789.9 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 64789.9 + 31 \times 0.511 = 64805.7 \text{MeV}$
 
@@ -509,7 +509,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $32\mathfrak{p} \oplus 42\mathfrak{n} \oplus 32 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 32 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 42 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 69486.4 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 32 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 42 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 69486.4 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 69486.4 + 32 \times 0.511 = 69502.8 \text{MeV}$
 
@@ -525,7 +525,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $33\mathfrak{p} \oplus 42\mathfrak{n} \oplus 33 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 33 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 42 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 70424.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 33 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 42 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 70424.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 70424.7 + 33 \times 0.511 = 70441.6 \text{MeV}$
 
@@ -541,7 +541,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $34\mathfrak{p} \oplus 46\mathfrak{n} \oplus 34 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 34 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 46 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 75121.2 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 34 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 46 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 75121.2 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 75121.2 + 34 \times 0.511 = 75138.6 \text{MeV}$
 
@@ -557,7 +557,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $35\mathfrak{p} \oplus 44\mathfrak{n} \oplus 35 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 35 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 44 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 74180.4 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 35 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 44 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 74180.4 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 74180.4 + 35 \times 0.511 = 74198.3 \text{MeV}$
 
@@ -573,7 +573,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $36\mathfrak{p} \oplus 48\mathfrak{n} \oplus 36 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 36 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 48 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 78876.9 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 36 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 48 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 78876.9 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 78876.9 + 36 \times 0.511 = 78895.3 \text{MeV}$
 
@@ -589,7 +589,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $37\mathfrak{p} \oplus 48\mathfrak{n} \oplus 37 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 37 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 48 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 79815.2 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 37 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 48 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 79815.2 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 79815.2 + 37 \times 0.511 = 79834.1 \text{MeV}$
 
@@ -605,7 +605,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $38\mathfrak{p} \oplus 50\mathfrak{n} \oplus 38 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 38 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 50 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 82632.6 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 38 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 50 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 82632.6 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 82632.6 + 38 \times 0.511 = 82652.0 \text{MeV}$
 
@@ -621,7 +621,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $39\mathfrak{p} \oplus 50\mathfrak{n} \oplus 39 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 39 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 50 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 83570.9 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 39 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 50 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 83570.9 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 83570.9 + 39 \times 0.511 = 83590.8 \text{MeV}$
 
@@ -637,7 +637,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $40\mathfrak{p} \oplus 50\mathfrak{n} \oplus 40 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 40 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 50 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 84509.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 40 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 50 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 84509.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 84509.1 + 40 \times 0.511 = 84529.6 \text{MeV}$
 
@@ -653,7 +653,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $41\mathfrak{p} \oplus 52\mathfrak{n} \oplus 41 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 41 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 52 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 87326.5 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 41 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 52 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 87326.5 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 87326.5 + 41 \times 0.511 = 87347.5 \text{MeV}$
 
@@ -669,7 +669,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $42\mathfrak{p} \oplus 56\mathfrak{n} \oplus 42 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 42 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 56 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 92023.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 42 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 56 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 92023.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 92023.1 + 42 \times 0.511 = 92044.5 \text{MeV}$
 
@@ -685,7 +685,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $43\mathfrak{p} \oplus 55\mathfrak{n} \oplus 43 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 43 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 55 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 92021.8 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 43 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 55 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 92021.8 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 92021.8 + 43 \times 0.511 = 92043.7 \text{MeV}$
 
@@ -701,7 +701,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $44\mathfrak{p} \oplus 58\mathfrak{n} \oplus 44 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 44 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 58 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 95778.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 44 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 58 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 95778.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 95778.7 + 44 \times 0.511 = 95801.2 \text{MeV}$
 
@@ -717,7 +717,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $45\mathfrak{p} \oplus 58\mathfrak{n} \oplus 45 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 45 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 58 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 96717.0 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 45 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 58 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 96717.0 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 96717.0 + 45 \times 0.511 = 96740.0 \text{MeV}$
 
@@ -733,7 +733,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $46\mathfrak{p} \oplus 60\mathfrak{n} \oplus 46 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 46 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 60 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 99534.4 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 46 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 60 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 99534.4 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 99534.4 + 46 \times 0.511 = 99557.9 \text{MeV}$
 
@@ -749,7 +749,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $47\mathfrak{p} \oplus 60\mathfrak{n} \oplus 47 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 47 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 60 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 100472.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 47 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 60 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 100472.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 100472.7 + 47 \times 0.511 = 100496.7 \text{MeV}$
 
@@ -765,7 +765,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $48\mathfrak{p} \oplus 66\mathfrak{n} \oplus 48 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 48 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 66 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 107048.3 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 48 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 66 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 107048.3 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 107048.3 + 48 \times 0.511 = 107072.9 \text{MeV}$
 
@@ -781,7 +781,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $49\mathfrak{p} \oplus 66\mathfrak{n} \oplus 49 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 49 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 66 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 107986.6 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 49 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 66 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 107986.6 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 107986.6 + 49 \times 0.511 = 108011.7 \text{MeV}$
 
@@ -797,7 +797,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $50\mathfrak{p} \oplus 70\mathfrak{n} \oplus 50 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 50 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 70 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 112683.2 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 50 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 70 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 112683.2 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 112683.2 + 50 \times 0.511 = 112708.7 \text{MeV}$
 
@@ -813,7 +813,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $51\mathfrak{p} \oplus 70\mathfrak{n} \oplus 51 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 51 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 70 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 113621.4 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 51 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 70 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 113621.4 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 113621.4 + 51 \times 0.511 = 113647.5 \text{MeV}$
 
@@ -829,7 +829,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $52\mathfrak{p} \oplus 78\mathfrak{n} \oplus 52 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 52 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 78 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 122076.2 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 52 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 78 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 122076.2 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 122076.2 + 52 \times 0.511 = 122102.8 \text{MeV}$
 
@@ -845,7 +845,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $53\mathfrak{p} \oplus 74\mathfrak{n} \oplus 53 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 53 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 74 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 119256.2 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 53 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 74 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 119256.2 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 119256.2 + 53 \times 0.511 = 119283.3 \text{MeV}$
 
@@ -861,7 +861,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $54\mathfrak{p} \oplus 78\mathfrak{n} \oplus 54 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 54 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 78 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 123952.8 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 54 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 78 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 123952.8 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 123952.8 + 54 \times 0.511 = 123980.4 \text{MeV}$
 
@@ -877,7 +877,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $55\mathfrak{p} \oplus 78\mathfrak{n} \oplus 55 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 55 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 78 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 124891.0 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 55 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 78 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 124891.0 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 124891.0 + 55 \times 0.511 = 124919.1 \text{MeV}$
 
@@ -893,7 +893,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $56\mathfrak{p} \oplus 82\mathfrak{n} \oplus 56 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 56 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 82 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 129587.6 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 56 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 82 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 129587.6 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 129587.6 + 56 \times 0.511 = 129616.2 \text{MeV}$
 
@@ -909,7 +909,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $57\mathfrak{p} \oplus 82\mathfrak{n} \oplus 57 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 57 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 82 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 130525.8 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 57 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 82 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 130525.8 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 130525.8 + 57 \times 0.511 = 130555.0 \text{MeV}$
 
@@ -925,7 +925,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $58\mathfrak{p} \oplus 82\mathfrak{n} \oplus 58 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 58 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 82 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 131464.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 58 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 82 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 131464.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 131464.1 + 58 \times 0.511 = 131493.7 \text{MeV}$
 
@@ -941,7 +941,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $59\mathfrak{p} \oplus 82\mathfrak{n} \oplus 59 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 59 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 82 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 132402.4 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 59 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 82 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 132402.4 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 132402.4 + 59 \times 0.511 = 132432.5 \text{MeV}$
 
@@ -957,7 +957,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $60\mathfrak{p} \oplus 82\mathfrak{n} \oplus 60 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 60 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 82 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 133340.6 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 60 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 82 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 133340.6 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 133340.6 + 60 \times 0.511 = 133371.3 \text{MeV}$
 
@@ -973,7 +973,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $61\mathfrak{p} \oplus 84\mathfrak{n} \oplus 61 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 61 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 84 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 136158.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 61 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 84 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 136158.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 136158.1 + 61 \times 0.511 = 136189.2 \text{MeV}$
 
@@ -989,7 +989,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $62\mathfrak{p} \oplus 90\mathfrak{n} \oplus 62 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 62 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 90 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 142733.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 62 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 90 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 142733.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 142733.7 + 62 \times 0.511 = 142765.4 \text{MeV}$
 
@@ -1005,7 +1005,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $63\mathfrak{p} \oplus 90\mathfrak{n} \oplus 63 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 63 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 90 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 143672.0 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 63 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 90 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 143672.0 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 143672.0 + 63 \times 0.511 = 143704.2 \text{MeV}$
 
@@ -1021,7 +1021,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $64\mathfrak{p} \oplus 94\mathfrak{n} \oplus 64 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 64 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 94 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 148368.5 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 64 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 94 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 148368.5 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 148368.5 + 64 \times 0.511 = 148401.2 \text{MeV}$
 
@@ -1037,7 +1037,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $65\mathfrak{p} \oplus 94\mathfrak{n} \oplus 65 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 65 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 94 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 149306.8 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 65 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 94 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 149306.8 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 149306.8 + 65 \times 0.511 = 149340.0 \text{MeV}$
 
@@ -1053,7 +1053,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $66\mathfrak{p} \oplus 98\mathfrak{n} \oplus 66 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 66 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 98 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 154003.3 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 66 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 98 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 154003.3 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 154003.3 + 66 \times 0.511 = 154037.0 \text{MeV}$
 
@@ -1069,7 +1069,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $67\mathfrak{p} \oplus 98\mathfrak{n} \oplus 67 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 67 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 98 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 154941.6 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 67 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 98 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 154941.6 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 154941.6 + 67 \times 0.511 = 154975.8 \text{MeV}$
 
@@ -1085,7 +1085,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $68\mathfrak{p} \oplus 98\mathfrak{n} \oplus 68 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 68 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 98 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 155879.9 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 68 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 98 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 155879.9 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 155879.9 + 68 \times 0.511 = 155914.6 \text{MeV}$
 
@@ -1101,7 +1101,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $69\mathfrak{p} \oplus 100\mathfrak{n} \oplus 69 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 69 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 100 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 158697.3 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 69 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 100 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 158697.3 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 158697.3 + 69 \times 0.511 = 158732.5 \text{MeV}$
 
@@ -1117,7 +1117,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $70\mathfrak{p} \oplus 104\mathfrak{n} \oplus 70 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 70 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 104 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 163393.8 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 70 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 104 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 163393.8 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 163393.8 + 70 \times 0.511 = 163429.6 \text{MeV}$
 
@@ -1133,7 +1133,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $71\mathfrak{p} \oplus 104\mathfrak{n} \oplus 71 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 71 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 104 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 164332.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 71 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 104 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 164332.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 164332.1 + 71 \times 0.511 = 164368.4 \text{MeV}$
 
@@ -1149,7 +1149,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $72\mathfrak{p} \oplus 108\mathfrak{n} \oplus 72 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 72 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 108 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 169028.6 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 72 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 108 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 169028.6 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 169028.6 + 72 \times 0.511 = 169065.4 \text{MeV}$
 
@@ -1165,7 +1165,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $73\mathfrak{p} \oplus 108\mathfrak{n} \oplus 73 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 73 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 108 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 169966.9 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 73 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 108 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 169966.9 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 169966.9 + 73 \times 0.511 = 170004.2 \text{MeV}$
 
@@ -1181,7 +1181,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $74\mathfrak{p} \oplus 110\mathfrak{n} \oplus 74 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 74 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 110 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 172784.3 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 74 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 110 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 172784.3 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 172784.3 + 74 \times 0.511 = 172822.1 \text{MeV}$
 
@@ -1197,7 +1197,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $75\mathfrak{p} \oplus 112\mathfrak{n} \oplus 75 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 75 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 112 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 175601.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 75 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 112 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 175601.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 175601.7 + 75 \times 0.511 = 175640.0 \text{MeV}$
 
@@ -1213,7 +1213,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $76\mathfrak{p} \oplus 116\mathfrak{n} \oplus 76 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 76 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 116 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 180298.2 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 76 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 116 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 180298.2 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 180298.2 + 76 \times 0.511 = 180337.0 \text{MeV}$
 
@@ -1229,7 +1229,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $77\mathfrak{p} \oplus 116\mathfrak{n} \oplus 77 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 77 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 116 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 181236.5 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 77 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 116 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 181236.5 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 181236.5 + 77 \times 0.511 = 181275.8 \text{MeV}$
 
@@ -1245,7 +1245,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $78\mathfrak{p} \oplus 117\mathfrak{n} \oplus 78 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 78 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 117 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 183114.3 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 78 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 117 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 183114.3 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 183114.3 + 78 \times 0.511 = 183154.2 \text{MeV}$
 
@@ -1261,7 +1261,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $79\mathfrak{p} \oplus 118\mathfrak{n} \oplus 79 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 79 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 118 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 184992.2 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 79 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 118 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 184992.2 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 184992.2 + 79 \times 0.511 = 185032.5 \text{MeV}$
 
@@ -1277,7 +1277,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $80\mathfrak{p} \oplus 122\mathfrak{n} \oplus 80 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 80 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 122 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 189688.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 80 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 122 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 189688.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 189688.7 + 80 \times 0.511 = 189729.6 \text{MeV}$
 
@@ -1293,7 +1293,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $81\mathfrak{p} \oplus 124\mathfrak{n} \oplus 81 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 81 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 124 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 192506.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 81 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 124 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 192506.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 192506.1 + 81 \times 0.511 = 192547.5 \text{MeV}$
 
@@ -1309,7 +1309,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $82\mathfrak{p} \oplus 126\mathfrak{n} \oplus 82 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 82 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 126 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 195323.5 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 82 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 126 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 195323.5 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 195323.5 + 82 \times 0.511 = 195365.4 \text{MeV}$
 
@@ -1325,7 +1325,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $83\mathfrak{p} \oplus 126\mathfrak{n} \oplus 83 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 83 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 126 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 196261.8 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 83 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 126 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 196261.8 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 196261.8 + 83 \times 0.511 = 196304.2 \text{MeV}$
 
@@ -1341,7 +1341,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $84\mathfrak{p} \oplus 125\mathfrak{n} \oplus 84 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 84 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 125 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 196260.5 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 84 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 125 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 196260.5 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 196260.5 + 84 \times 0.511 = 196303.4 \text{MeV}$
 
@@ -1357,7 +1357,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $85\mathfrak{p} \oplus 125\mathfrak{n} \oplus 85 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 85 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 125 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 197198.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 85 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 125 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 197198.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 197198.7 + 85 \times 0.511 = 197242.2 \text{MeV}$
 
@@ -1373,7 +1373,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $86\mathfrak{p} \oplus 136\mathfrak{n} \oplus 86 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 86 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 136 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 208472.2 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 86 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 136 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 208472.2 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 208472.2 + 86 \times 0.511 = 208516.2 \text{MeV}$
 
@@ -1389,7 +1389,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $87\mathfrak{p} \oplus 136\mathfrak{n} \oplus 87 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 87 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 136 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 209410.5 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 87 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 136 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 209410.5 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 209410.5 + 87 \times 0.511 = 209455.0 \text{MeV}$
 
@@ -1405,7 +1405,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $88\mathfrak{p} \oplus 138\mathfrak{n} \oplus 88 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 88 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 138 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 212227.9 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 88 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 138 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 212227.9 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 212227.9 + 88 \times 0.511 = 212272.9 \text{MeV}$
 
@@ -1421,7 +1421,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $89\mathfrak{p} \oplus 138\mathfrak{n} \oplus 89 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 89 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 138 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 213166.2 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 89 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 138 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 213166.2 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 213166.2 + 89 \times 0.511 = 213211.7 \text{MeV}$
 
@@ -1437,7 +1437,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $90\mathfrak{p} \oplus 142\mathfrak{n} \oplus 90 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 90 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 142 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 217862.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 90 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 142 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 217862.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 217862.7 + 90 \times 0.511 = 217908.7 \text{MeV}$
 
@@ -1453,7 +1453,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $91\mathfrak{p} \oplus 140\mathfrak{n} \oplus 91 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 91 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 140 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 216921.9 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 91 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 140 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 216921.9 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 216921.9 + 91 \times 0.511 = 216968.4 \text{MeV}$
 
@@ -1469,7 +1469,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $92\mathfrak{p} \oplus 146\mathfrak{n} \oplus 92 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 92 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 146 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 223497.5 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 92 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 146 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 223497.5 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 223497.5 + 92 \times 0.511 = 223544.5 \text{MeV}$
 
@@ -1487,7 +1487,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $93\mathfrak{p} \oplus 144\mathfrak{n} \oplus 93 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 93 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 144 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 222556.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 93 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 144 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 222556.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 222556.7 + 93 \times 0.511 = 222604.2 \text{MeV}$
 
@@ -1503,7 +1503,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $94\mathfrak{p} \oplus 150\mathfrak{n} \oplus 94 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 94 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 150 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 229132.3 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 94 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 150 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 229132.3 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 229132.3 + 94 \times 0.511 = 229180.4 \text{MeV}$
 
@@ -1519,7 +1519,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $95\mathfrak{p} \oplus 148\mathfrak{n} \oplus 95 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 95 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 148 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 228191.5 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 95 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 148 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 228191.5 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 228191.5 + 95 \times 0.511 = 228240.0 \text{MeV}$
 
@@ -1535,7 +1535,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $96\mathfrak{p} \oplus 151\mathfrak{n} \oplus 96 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 96 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 151 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 231948.4 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 96 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 151 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 231948.4 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 231948.4 + 96 \times 0.511 = 231997.5 \text{MeV}$
 
@@ -1551,7 +1551,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $97\mathfrak{p} \oplus 150\mathfrak{n} \oplus 97 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 97 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 150 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 231947.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 97 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 150 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 231947.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 231947.1 + 97 \times 0.511 = 231996.7 \text{MeV}$
 
@@ -1567,7 +1567,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $98\mathfrak{p} \oplus 153\mathfrak{n} \oplus 98 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 98 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 153 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 235704.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 98 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 153 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 235704.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 235704.1 + 98 \times 0.511 = 235754.2 \text{MeV}$
 
@@ -1583,7 +1583,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $99\mathfrak{p} \oplus 153\mathfrak{n} \oplus 99 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 99 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 153 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 236642.4 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 99 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 153 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 236642.4 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 236642.4 + 99 \times 0.511 = 236693.0 \text{MeV}$
 
@@ -1599,7 +1599,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $100\mathfrak{p} \oplus 157\mathfrak{n} \oplus 100 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 100 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 157 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 241338.9 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 100 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 157 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 241338.9 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 241338.9 + 100 \times 0.511 = 241390.0 \text{MeV}$
 
@@ -1615,7 +1615,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $101\mathfrak{p} \oplus 157\mathfrak{n} \oplus 101 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 101 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 157 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 242277.2 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 101 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 157 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 242277.2 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 242277.2 + 101 \times 0.511 = 242328.8 \text{MeV}$
 
@@ -1631,7 +1631,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $102\mathfrak{p} \oplus 157\mathfrak{n} \oplus 102 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 102 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 157 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 243215.4 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 102 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 157 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 243215.4 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 243215.4 + 102 \times 0.511 = 243267.6 \text{MeV}$
 
@@ -1647,7 +1647,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $103\mathfrak{p} \oplus 163\mathfrak{n} \oplus 103 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 103 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 163 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 249791.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 103 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 163 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 249791.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 249791.1 + 103 \times 0.511 = 249843.7 \text{MeV}$
 
@@ -1663,7 +1663,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $104\mathfrak{p} \oplus 163\mathfrak{n} \oplus 104 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 104 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 163 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 250729.4 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 104 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 163 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 250729.4 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 250729.4 + 104 \times 0.511 = 250782.5 \text{MeV}$
 
@@ -1679,7 +1679,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $105\mathfrak{p} \oplus 163\mathfrak{n} \oplus 105 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 105 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 163 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 251667.7 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 105 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 163 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 251667.7 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 251667.7 + 105 \times 0.511 = 251721.3 \text{MeV}$
 
@@ -1695,7 +1695,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $106\mathfrak{p} \oplus 163\mathfrak{n} \oplus 106 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 106 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 163 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 252605.9 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 106 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 163 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 252605.9 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 252605.9 + 106 \times 0.511 = 252660.1 \text{MeV}$
 
@@ -1711,7 +1711,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $107\mathfrak{p} \oplus 163\mathfrak{n} \oplus 107 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 107 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 163 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 253544.2 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 107 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 163 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 253544.2 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 253544.2 + 107 \times 0.511 = 253598.9 \text{MeV}$
 
@@ -1727,7 +1727,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $108\mathfrak{p} \oplus 169\mathfrak{n} \oplus 108 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 108 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 169 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 260119.9 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 108 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 169 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 260119.9 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 260119.9 + 108 \times 0.511 = 260175.0 \text{MeV}$
 
@@ -1743,7 +1743,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $109\mathfrak{p} \oplus 169\mathfrak{n} \oplus 109 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 109 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 169 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 261058.1 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 109 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 169 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 261058.1 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 261058.1 + 109 \times 0.511 = 261113.8 \text{MeV}$
 
@@ -1759,7 +1759,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $110\mathfrak{p} \oplus 171\mathfrak{n} \oplus 110 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 110 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 171 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 263875.5 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 110 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 171 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 263875.5 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 263875.5 + 110 \times 0.511 = 263931.7 \text{MeV}$
 
@@ -1775,7 +1775,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $111\mathfrak{p} \oplus 171\mathfrak{n} \oplus 111 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 111 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 171 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 264813.8 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 111 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 171 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 264813.8 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 264813.8 + 111 \times 0.511 = 264870.5 \text{MeV}$
 
@@ -1791,7 +1791,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $112\mathfrak{p} \oplus 173\mathfrak{n} \oplus 112 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 112 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 173 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 267631.2 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 112 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 173 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 267631.2 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 267631.2 + 112 \times 0.511 = 267688.4 \text{MeV}$
 
@@ -1807,7 +1807,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $113\mathfrak{p} \oplus 173\mathfrak{n} \oplus 113 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 113 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 173 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 268569.5 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 113 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 173 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 268569.5 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 268569.5 + 113 \times 0.511 = 268627.2 \text{MeV}$
 
@@ -1823,7 +1823,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $114\mathfrak{p} \oplus 175\mathfrak{n} \oplus 114 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 114 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 175 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 271386.9 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 114 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 175 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 271386.9 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 271386.9 + 114 \times 0.511 = 271445.1 \text{MeV}$
 
@@ -1839,7 +1839,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $115\mathfrak{p} \oplus 175\mathfrak{n} \oplus 115 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 115 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 175 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 272325.2 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 115 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 175 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 272325.2 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 272325.2 + 115 \times 0.511 = 272383.9 \text{MeV}$
 
@@ -1855,7 +1855,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $116\mathfrak{p} \oplus 177\mathfrak{n} \oplus 116 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 116 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 177 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 275142.6 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 116 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 177 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 275142.6 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 275142.6 + 116 \times 0.511 = 275201.8 \text{MeV}$
 
@@ -1871,7 +1871,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $117\mathfrak{p} \oplus 177\mathfrak{n} \oplus 117 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 117 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 177 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 276080.8 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 117 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 177 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 276080.8 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 276080.8 + 117 \times 0.511 = 276140.6 \text{MeV}$
 
@@ -1887,7 +1887,7 @@ The deviation $\Delta = M_q - M_o$ therefore isolates the rounding artifact.
 
 **Knot formula.** $118\mathfrak{p} \oplus 176\mathfrak{n} \oplus 118 \cdot T_{2,3}$
 
-**Step 1.** Free nucleon mass: $M_{\text{free}} = 118 \times :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} + 176 \times :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} = 276079.5 \text{MeV}$
+**Step 1.** Free nucleon mass: $M_{\text{free}} = 118 \times :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} + 176 \times :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json} = 276079.5 \text{MeV}$
 
 **Step 2.** Add electron mass: $M_{\text{free+e}} = 276079.5 + 118 \times 0.511 = 276139.8 \text{MeV}$
 

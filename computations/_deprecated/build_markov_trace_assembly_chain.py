@@ -128,7 +128,7 @@ def build() -> DerivationChain:
         notes=(
             "Normalization matches `schur-weyl-weight-3.derivation.json` "
             "(w_λ(q) = (q − q^{-1})^(n − l(λ)) · ∏ [h_x]_q^{-1}).  "
-            "script: folio-assistant/computations/build_schur_weyl_weight_chain.py — "
+            "script: computations/build_schur_weyl_weight_chain.py — "
             "this is the BUILDER pattern that should be specialised "
             "to λ=(2,1) and λ=(1,1,1) in follow-up PRs.  The existing "
             "helper `schur_weyl_symbolic.py:schur_weyl_weight(lam, q)` "

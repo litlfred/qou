@@ -1,8 +1,8 @@
 # Kite-tail reconciliation — PR #546 round-3 vs PR #545 D(u)
 
 **Branch.** `claude/kite-tail-reconciliation`
-**Witness.** [`kite-tail-reconciliation.witness.json`](../../folio-assistant/computations/kite-tail-reconciliation.witness.json)
-**Script.** [`kite_tail_reconciliation.py`](../../folio-assistant/computations/kite_tail_reconciliation.py)
+**Witness.** [`kite-tail-reconciliation.witness.json`](../../computations/kite-tail-reconciliation.witness.json)
+**Script.** [`kite_tail_reconciliation.py`](../../computations/kite_tail_reconciliation.py)
 **Continues.** [PR #546 round-3 audit](../../docs/audits/2026-05-05-r-and-kite-tails-exploration.md) (kite-tail status was `FALSIFIED-naive-form`).
 
 ## TL;DR
@@ -35,7 +35,7 @@ canonical word.
 
 ## Diagnostic
 
-Run [`kite_tail_reconciliation.py`](../../folio-assistant/computations/kite_tail_reconciliation.py)
+Run [`kite_tail_reconciliation.py`](../../computations/kite_tail_reconciliation.py)
 to reproduce the table.
 
 The script computes the canonical Markov trace via
@@ -102,7 +102,7 @@ Three reconciliation paths to test:
 **convention issue in PR #545's $2^{2A+1}$ formula**, NOT the braid
 encoding.
 
-PR #545's commit message [`bcafe0d1d`](https://github.com/litlfred/qou/commit/bcafe0d1d) (also referenced in [`d_u_closed_form_proof.py`](../../folio-assistant/computations/d_u_closed_form_proof.py)) derives the $2^{2A+1}$
+PR #545's commit message [`bcafe0d1d`](https://github.com/litlfred/qou/commit/bcafe0d1d) (also referenced in [`d_u_closed_form_proof.py`](../../computations/d_u_closed_form_proof.py)) derives the $2^{2A+1}$
 prefactor by counting averaged crossings:
 
 > "each averaged crossing = $(\sigma + \sigma^{-1})/2$, contributing
@@ -178,11 +178,11 @@ $$
 $$
 
 The new
-[`folio-assistant/computations/binding_K_direct.py`](../../folio-assistant/computations/binding_K_direct.py)
+[`computations/binding_K_direct.py`](../../computations/binding_K_direct.py)
 script computes this binding directly, surfacing the physical
 content rather than packaging it through the ρ_K · m_e · |tr_M|
 intermediate.  The legacy
-[`atomic_mass_via_rho_k.py`](../../folio-assistant/computations/atomic_mass_via_rho_k.py)
+[`atomic_mass_via_rho_k.py`](../../computations/atomic_mass_via_rho_k.py)
 is retained as the LO baseline reference; both scripts now flag
 the LO tautology in their docstrings.  The content block
 [`recomputed-low-isotope-mass-table.md`](../../content/quantum-observable-universe/braids-and-knots/recomputed-low-isotope-mass-table.md)
@@ -190,8 +190,8 @@ has been rewritten to lead with the direct-binding formula.
 
 ## V̂_i ↔ Δ_λ bridge — universal 1-dim closure (corrected formulation)
 
-**Probe.** [`v_hat_to_delta_lambda_bridge.py`](../../folio-assistant/computations/v_hat_to_delta_lambda_bridge.py)
-([witness](../../folio-assistant/computations/v-hat-to-delta-lambda-bridge.witness.json))
+**Probe.** [`v_hat_to_delta_lambda_bridge.py`](../../computations/v_hat_to_delta_lambda_bridge.py)
+([witness](../../computations/v-hat-to-delta-lambda-bridge.witness.json))
 tests whether the q-character $\chi^\lambda(\beta_K)$ that appears
 in Option G's $\Delta_\lambda^G = (\text{target}/S) \cdot \chi^\lambda / d_\lambda$
 factors through the per-generator volumes $\hat V_i^\lambda$ from
@@ -231,7 +231,7 @@ $$
 $$
 where $\hat V_i^\varphi := \prod_{k:\,i_k=i}(c_k\,\lambda_\varphi(i) + d_k)$
 is the per-generator volume in the $\varphi$-channel as computed by
-[`wedderburn_pair_volumes.atom_per_generator_full_matrices`](../../folio-assistant/computations/wedderburn_pair_volumes.py).
+[`wedderburn_pair_volumes.atom_per_generator_full_matrices`](../../computations/wedderburn_pair_volumes.py).
 
 Since $\chi^\varphi = \varphi$ on a 1-dim irrep, we conclude
 $\chi^\varphi(\beta_K) = \prod_i \hat V_i^\varphi$.  $\square$

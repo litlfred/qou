@@ -13,9 +13,9 @@ complex shapes, so isospin enters `Σ D` (the K₃ Bloch-Wigner hyperbolic
 volume), not just the real Borel regulator `r₁ = Σ ln|V̂_i|` (K₁).
 
 **Compute:**
-[`flavor_dependent_cusp_shape.py`](../../folio-assistant/computations/flavor_dependent_cusp_shape.py),
+[`flavor_dependent_cusp_shape.py`](../../computations/flavor_dependent_cusp_shape.py),
 witness
-[`flavor-dependent-cusp-shape.witness.json`](../../folio-assistant/computations/flavor-dependent-cusp-shape.witness.json).
+[`flavor-dependent-cusp-shape.witness.json`](../../computations/flavor-dependent-cusp-shape.witness.json).
 All values RAW @ 60 dps via `WitnessBuilder.wrap_legacy` +
 `set_audit_only` (audit-only). No tuning to m_n−m_p / B_AME / known
 volumes.
@@ -144,7 +144,7 @@ Does the flavor modify the Thurston cusp shape `z_k` itself
 (meridian/longitude holonomy eigenvalues carrying the flavor)? No:
 
 - The cusp shapes are **fixed by the topological complement**. SnapPy
-  ([`snappy-cusp-seeding.witness.json`](../../folio-assistant/computations/snappy-cusp-seeding.witness.json))
+  ([`snappy-cusp-seeding.witness.json`](../../computations/snappy-cusp-seeding.witness.json))
   gives `m004`/`m003` → `e^{iπ/3}` and `L6a4` (Borromean) → `(1+i)/2`,
   **independent of the algebraic seed** (the bare seeds sit at distance
   0.4–0.9 from the true shapes). The shape is a property of the
@@ -153,7 +153,7 @@ Does the flavor modify the Thurston cusp shape `z_k` itself
   2·Cl₂(π/3)` exactly (the figure-8 volume) and records `Vol(ℬ₃) = 8G`
   — both flavor-blind.
 - Proton and neutron are the **same unfilled ℬ₃ complement**
-  ([`derive_m_baryon_volume_form.py`](../../folio-assistant/computations/derive_m_baryon_volume_form.py)).
+  ([`derive_m_baryon_volume_form.py`](../../computations/derive_m_baryon_volume_form.py)).
   A flavored **Dehn filling** would change the manifold (a filled cusp
   gives a different volume), but that is not the QOU nucleon model —
   both nucleons are the same unfilled link complement.
@@ -263,6 +263,6 @@ which is the same gap `conj:s5-so3-fiber-action` /
   (conditional on `conj:s5-so3-fiber-action`).
 - Cusp holonomy:
   [`conj:shared-denominator-cusp-holonomy`](../../content/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.md),
-  [`snappy-cusp-seeding.witness.json`](../../folio-assistant/computations/snappy-cusp-seeding.witness.json).
+  [`snappy-cusp-seeding.witness.json`](../../computations/snappy-cusp-seeding.witness.json).
 - Canonical baryon volume (one ℬ₃ for p and n):
-  [`derive_m_baryon_volume_form.py`](../../folio-assistant/computations/derive_m_baryon_volume_form.py).
+  [`derive_m_baryon_volume_form.py`](../../computations/derive_m_baryon_volume_form.py).

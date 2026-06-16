@@ -167,8 +167,8 @@ def build() -> DerivationChain:
         citation="manuscript:§atomic-braid-recipe",
         jet_order=0,
         notes=(
-            "script: folio-assistant/computations/atomic_braid_gb_filtration_extension.py "
-            "(ATOMIC_BRAIDS table) + folio-assistant/computations/mass_at_3A_proper.py "
+            "script: computations/atomic_braid_gb_filtration_extension.py "
+            "(ATOMIC_BRAIDS table) + computations/mass_at_3A_proper.py "
             "(`atom_braid_word_3A`).  Awaits Lean formalisation of "
             "the quark-content → Hecke-NF map (`uud → σ_1 σ_2 σ_1^{-1}`); "
             "once that lands, this step becomes LEAN_PROVEN and the "
@@ -197,7 +197,7 @@ def build() -> DerivationChain:
         citation="manuscript:§atomic-braid-recipe",
         jet_order=0,
         notes=(
-            "script: folio-assistant/computations/mass_at_3A_proper.py "
+            "script: computations/mass_at_3A_proper.py "
             "(`atom_braid_word_3A`).  Awaits Lean formalisation of the "
             "(udd) → `σ_1 σ_2^{-1} σ_1` map.  When closed jointly with "
             "the proton word (step 3), every atom mass chain becomes "

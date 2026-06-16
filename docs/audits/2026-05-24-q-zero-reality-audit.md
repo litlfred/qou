@@ -37,7 +37,7 @@ be relaxed.
 
 | Site | What it requires | Why |
 |---|---|---|
-| [`q_parameter.py`](../../folio-assistant/computations/substrate/q_parameter.py), `Q_50_DIGIT_STR` | 50-dps real decimal string | Hardcoded; uses `math.sqrt` and `mpmath` (real arbitrary precision). No complex capability. |
+| [`q_parameter.py`](../../computations/substrate/q_parameter.py), `Q_50_DIGIT_STR` | 50-dps real decimal string | Hardcoded; uses `math.sqrt` and `mpmath` (real arbitrary precision). No complex capability. |
 | [`markov-trace-factorization.lean`](../../content/quantum-observable-universe/braids-and-knots/markov-trace-factorization.lean):27–47 | `(q : ℝ)` with `hq : 1 < q` | Uses `Real.sqrt`, `Real.rpow`; `linarith` requires ordered field. |
 | [`hoefsmit-V21-cos-symmetrization.lean`](../../content/quantum-observable-universe/braids-and-knots/hoefsmit-V21-cos-symmetrization.lean) | `Real.sqrt q` for seminormal entries | Orthogonality of Hoefsmit basis requires $q > 0 \in \mathbb{R}$. |
 | Archimedean functor (`canonical-derivation-cheat-sheet.md` step 9) | $\tau : \mathbf{C} \to \mathrm{Vec}_\mathbb{R}$ | Codomain $\mathbb{R}$ is **axiomatic** to the functor definition, not derived. |
@@ -89,8 +89,8 @@ on whether the substrate admits Im($q_0$).
 
 ## 3. The 2.89 % L2 gap is bar-symmetric, not bar-asymmetric
 
-Per [`per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json)
-and [`m-p-borromean-verification-50dps.witness.json`](../../folio-assistant/computations/m-p-borromean-verification-50dps.witness.json):
+Per [`per-observable-100x-status.witness.json`](../../computations/per-observable-100x-status.witness.json)
+and [`m-p-borromean-verification-50dps.witness.json`](../../computations/m-p-borromean-verification-50dps.witness.json):
 
 | Observable | Prediction | CODATA | Relative gap |
 |---|---:|---:|---:|

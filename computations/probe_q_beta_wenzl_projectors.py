@@ -72,7 +72,7 @@ def main():
             "W_4_val": str(W4)
         }
     }
-    with open("folio-assistant/computations/q-beta-c3-wenzl-decomposition.witness.json", "w") as f:
+    with open("computations/q-beta-c3-wenzl-decomposition.witness.json", "w") as f:
         json.dump(witness, f, indent=2)
 
     return 0

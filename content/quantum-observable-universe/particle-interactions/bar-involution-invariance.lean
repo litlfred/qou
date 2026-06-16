@@ -196,7 +196,7 @@ theorem normal_form_bar_invariant_conditional
 /-! ## Empirical witness pointer
 
 Numerical bar-invariance test: at `q_0 ≈ 1.1097`, the Plancherel
-weights computed in `folio-assistant/computations/sdp-dual-without-demand.md`
+weights computed in `computations/sdp-dual-without-demand.md`
 satisfy `w_λ(q_0) = w_{λᵀ}(q_0)` to machine precision for every
 λ ⊢ n at n ≤ 9.  Bar-invariance under `q_0 ↦ 1/q_0` is verified
 indirectly by the same data: `[k]_q` is bar-invariant exactly,

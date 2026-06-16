@@ -3,7 +3,7 @@ name: compute-author
 roles: [collaborator, owner]
 description: >
   Pre-work briefing + durable patterns for anyone writing or modifying
-  compute scripts under `folio-assistant/computations/` or the Rust
+  compute scripts under `computations/` or the Rust
   crates under `tools/`. Read this BEFORE you write or change compute
   code — it covers precision discipline, Rust↔Python boundary cost,
   exact-arithmetic choices (BigInt vs BigRational vs sympy.Rational),
@@ -18,7 +18,7 @@ allowed-tools: Read Bash Grep Glob Edit Write Skill
 ## Role
 
 When a user (or you) is about to **author new compute** under
-`folio-assistant/computations/` (Python) or `tools/hecke-engine/`,
+`computations/` (Python) or `tools/hecke-engine/`,
 `tools/pyhecke-native/` (Rust), or modify existing compute scripts in
 a way that touches precision, performance, or canonical-derivation
 discipline — run this skill **before** any code change.
@@ -109,12 +109,12 @@ For the algorithmic side:
 
 | Source | What it gives you |
 |--------|-------------------|
-| `folio-assistant/computations/_precision.py` | `COMPUTE_DPS_DEFAULT = 50`, `OUTPUT_DPS_DEFAULT = 40`, `PRECISION_GUARD = 10` — the production precision floor |
-| `folio-assistant/computations/q_parameter.py` | `Q_50_DIGIT_STR` — the canonical 50-dps substrate value (always pass as STRING; never round to float) |
-| `folio-assistant/computations/codata_constants.py` | CAL-1 / CAL-2 / CAL-3 anchors; **never inline a CODATA literal** (P31) |
-| `folio-assistant/computations/lp_dual_solver.py` | canonical LP/SDP entry point — always route LP/SDP through this |
-| `folio-assistant/computations/markov_trace_canonical.py` | reference `tr_M_word` implementation (the sympy baseline) |
-| `folio-assistant/computations/laurent_q_trace.py` | reference Python LaurentQ implementation (PR #859) — match bit-for-bit when porting |
+| `computations/_precision.py` | `COMPUTE_DPS_DEFAULT = 50`, `OUTPUT_DPS_DEFAULT = 40`, `PRECISION_GUARD = 10` — the production precision floor |
+| `computations/q_parameter.py` | `Q_50_DIGIT_STR` — the canonical 50-dps substrate value (always pass as STRING; never round to float) |
+| `computations/codata_constants.py` | CAL-1 / CAL-2 / CAL-3 anchors; **never inline a CODATA literal** (P31) |
+| `computations/lp_dual_solver.py` | canonical LP/SDP entry point — always route LP/SDP through this |
+| `computations/markov_trace_canonical.py` | reference `tr_M_word` implementation (the sympy baseline) |
+| `computations/laurent_q_trace.py` | reference Python LaurentQ implementation (PR #859) — match bit-for-bit when porting |
 | `tools/hecke-engine/src/laurent_poly_q.rs` | existing Rust LaurentPoly (BigInt) — template for new types |
 | `tools/hecke-engine/src/tr_m_word_lq.rs` | Phase-2 Rust port style + PyO3 pattern (PR #859) |
 | `tools/pyhecke-native/src/lib.rs` | 20+ PyO3 bindings as reference patterns |
@@ -412,7 +412,7 @@ theorem ansatzΔ_refuted_deuteron :
 
 **Worked exemplar — Frobenius co-Casimir Δ_λ, refuted at the deuteron.**
 Numbers pinned from
-[`rho-k-h3a-co-casimir.witness.json`](../../../folio-assistant/computations/rho-k-h3a-co-casimir.witness.json)
+[`rho-k-h3a-co-casimir.witness.json`](../../../computations/rho-k-h3a-co-casimir.witness.json)
 (`allPassed: true`, 50 dps; Option B of
 [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](../../../docs/audits/2026-05-18-delta-lambda-gating-context.md)).
 The ansatz predicts a binding-density sum `+0.144959…` (m_e units); the

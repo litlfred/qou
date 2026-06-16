@@ -96,8 +96,8 @@ yields rel_std = **0.0066** (0.66%) across the 4 atoms with $\alpha \approx 9.46
 
 ## Witness and script
 
-- Script: [`folio-assistant/computations/delta_lambda_z4N_phase4.py`](../../folio-assistant/computations/delta_lambda_z4N_phase4.py)
-- Witness: `folio-assistant/computations/delta-lambda-z4N-phase4.witness.json` (3 assertions, all passed)
+- Script: [`computations/delta_lambda_z4N_phase4.py`](../../computations/delta_lambda_z4N_phase4.py)
+- Witness: `computations/delta-lambda-z4N-phase4.witness.json` (3 assertions, all passed)
 - Assertions:
   - `per_N_factor_matches_inv_z_to_4`: max rel.err. across T/D and ⁴He/³He ratios is 1.69% (tolerance 2.5%).
   - `two_factor_rel_std_below_phase3_baseline`: rel_std = 0.0066 (tolerance 0.1; Phase 3 baseline 1.398).

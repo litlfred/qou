@@ -195,7 +195,7 @@ waiting for the user to prompt. Walk the priority order:
    PR's scope (same chapter / same Python or Lean file).
 4. **Refresh stale sidecars + witnesses** (added 2026-06-03).
    The QA pipeline depends on `*.qa.json` sidecars and
-   `folio-assistant/computations/*.witness.json` files staying
+   `computations/*.witness.json` files staying
    in sync with the source they audit. Treat the following as
    actionable backlog whenever idle:
 
@@ -676,7 +676,7 @@ changed_blocks=$(git diff-tree --no-commit-id --name-only -r "$SHA" \
 
 # changed scripts
 changed_py=$(git diff-tree --no-commit-id --name-only -r "$SHA" \
-  | grep -E '^folio-assistant/computations/.*\.py$' | sort -u)
+  | grep -E '^computations/.*\.py$' | sort -u)
 
 # changed witness JSONs
 changed_witnesses=$(git diff-tree --no-commit-id --name-only -r "$SHA" \

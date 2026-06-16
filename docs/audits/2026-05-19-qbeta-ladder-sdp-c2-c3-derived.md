@@ -110,8 +110,8 @@ This audit gives partial validation of the general statement from `2026-05-19-qb
 
 ## Cross-references
 
-- [`folio-assistant/computations/qbeta/qbeta_decay_sdp_solver.py`](../../folio-assistant/computations/qbeta/qbeta_decay_sdp_solver.py) — the SDP solver implementation
-- [`folio-assistant/computations/qbeta/qbeta-decay-sdp-knot-operator.witness.json`](../../folio-assistant/computations/qbeta/qbeta-decay-sdp-knot-operator.witness.json) — witness with T_β coefficients + τ_M
+- [`computations/qbeta/qbeta_decay_sdp_solver.py`](../../computations/qbeta/qbeta_decay_sdp_solver.py) — the SDP solver implementation
+- [`computations/qbeta/qbeta-decay-sdp-knot-operator.witness.json`](../../computations/qbeta/qbeta-decay-sdp-knot-operator.witness.json) — witness with T_β coefficients + τ_M
 - [`docs/audits/2026-05-19-qbeta-ladder-knot-operator-general-statement.md`](2026-05-19-qbeta-ladder-knot-operator-general-statement.md) — the general statement (this audit's parent)
 - [`docs/audits/2026-05-19-qbeta-ladder-closure-path.md`](2026-05-19-qbeta-ladder-closure-path.md) — three-route closure roadmap
 - [`content/quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.md`](../../content/quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.md) — Fact 1–4 chain for c_3 derivation

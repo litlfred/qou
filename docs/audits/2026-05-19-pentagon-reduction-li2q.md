@@ -53,9 +53,9 @@ $$\mathrm{Li}_2^q(-|V_i V_j|) = 2 \,\mathrm{Li}_2^q(i\sqrt{|V_i V_j|}) \;-\; 2\,
 
 ## Implementation
 
-[`pentagon_reduction_li2q.py`](../../folio-assistant/computations/pentagon_reduction_li2q.py) implements (P) recursively: convergent arguments evaluate via the existing `li_2_q` series; out-of-radius arguments factor via the duplication form (P') and recurse. For atomic-braid pair products $|V_i V_j| \in [1.148, 1.185]$, a single pentagon iteration suffices.
+[`pentagon_reduction_li2q.py`](../../computations/pentagon_reduction_li2q.py) implements (P) recursively: convergent arguments evaluate via the existing `li_2_q` series; out-of-radius arguments factor via the duplication form (P') and recurse. For atomic-braid pair products $|V_i V_j| \in [1.148, 1.185]$, a single pentagon iteration suffices.
 
-[`pentagon-reduction-li2q.witness.json`](../../folio-assistant/computations/pentagon-reduction-li2q.witness.json) records per-atom T3 contributions and the resulting binding-energy estimates.
+[`pentagon-reduction-li2q.witness.json`](../../computations/pentagon-reduction-li2q.witness.json) records per-atom T3 contributions and the resulting binding-energy estimates.
 
 ## First-pass numerical results
 
@@ -132,8 +132,8 @@ The pentagon-reduction work has CLARIFIED that the issue isn't Li_2^q convergenc
 - [`pre-tau-vs-post-tau.md`](../../content/quantum-observable-universe/braids-and-knots/pre-tau-vs-post-tau.md) — the substrate-archimedean wall discipline.
 - [`q-dilogarithm.md`](../../content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm.md) — Li_2^q definition + pentagon identity.
 - [`q-dilogarithm-unique.md`](../../content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-unique.md) — uniqueness of Li_2^q.
-- [`binding_via_interface_knot.py`](../../folio-assistant/computations/binding_via_interface_knot.py) — PR #801 host script, T3 deferred.
-- [`pentagon_reduction_li2q.py`](../../folio-assistant/computations/pentagon_reduction_li2q.py) — first-pass implementation.
+- [`binding_via_interface_knot.py`](../../computations/binding_via_interface_knot.py) — PR #801 host script, T3 deferred.
+- [`pentagon_reduction_li2q.py`](../../computations/pentagon_reduction_li2q.py) — first-pass implementation.
 - [`2026-05-19-weight-factor-audit.md`](2026-05-19-weight-factor-audit.md) — weight-family catalogue + KLR-positivity diagnostic.
 
 ## What's proved vs what's a paper TODO

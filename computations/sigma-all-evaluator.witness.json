@@ -166,21 +166,21 @@
   "closed_form_precision_claim": "The closed-form evaluator has zero catastrophic cancellation (the (q-1)^A · (q+1)^A factors are extracted symbolically). Working precision = output precision, in O(log A) multiplications. Valid for any A ≥ 1 at any mpmath dps. Constant compute time per requested digit.",
   "pipeline_callers_updated": [
     {
-      "file": "folio-assistant/computations/full-derivation-verified.py",
+      "file": "computations/full-derivation-verified.py",
       "case": "A=1 free neutron",
       "before": "char_sum_n = sum_p - sum_n",
       "after": "char_sum_n = float(sigma_all_closed(1, mp.mpf(q0)))",
       "approx_line": 263
     },
     {
-      "file": "folio-assistant/computations/full-derivation-verified.py",
+      "file": "computations/full-derivation-verified.py",
       "case": "A=3 tritium ³H→³He",
       "before": "for config in cartesian(ch_names, repeat=3): total_3h += me_d - me_p",
       "after": "total_3h = float(sigma_all_closed(3, mp.mpf(q0)))",
       "approx_line": 277
     },
     {
-      "file": "folio-assistant/computations/full-derivation-verified.py",
+      "file": "computations/full-derivation-verified.py",
       "case": "A=6 ⁶He→⁶Li (Σ_all only; Σ_FP still enumerates)",
       "before": "for config in cartesian(ch_names, repeat=6): total_6he_all += dme",
       "after": "total_6he_all = float(sigma_all_closed(6, mp.mpf(q0)))",
@@ -189,20 +189,20 @@
   ],
   "pipeline_callers_intentionally_unwired": [
     {
-      "file": "folio-assistant/computations/frob_filter_cancellation_test.py",
+      "file": "computations/frob_filter_cancellation_test.py",
       "reason": "Test driver for the cancellation diagnostic itself — intentionally exercises the raw config-sum path so the f64 precision-budget crossover can be measured. Wiring this to the closed form would defeat the test."
     },
     {
-      "file": "folio-assistant/computations/sigma_all_symbolic_decay.py",
+      "file": "computations/sigma_all_symbolic_decay.py",
       "reason": "The symbolic-derivation reference. Per task: do NOT modify; this is the source of truth for the closed form."
     }
   ],
   "tests": {
-    "test_file": "folio-assistant/computations/test_sigma_all_evaluator.py",
+    "test_file": "computations/test_sigma_all_evaluator.py",
     "test_count": 11,
     "all_passing_as_of": "2026-05-03T10:30:54.366398+00:00"
   },
-  "evaluator_module": "folio-assistant/computations/sigma_all_evaluator.py",
+  "evaluator_module": "computations/sigma_all_evaluator.py",
   "audit_doc_reference": "docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines 683-769 (closed form + precision schedule)",
   "memo_doc_reference": "docs/audits/2026-05-03-frob-filter-evaluator-wired.md (this wiring task)",
   "engine": "python",

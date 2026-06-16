@@ -15,12 +15,12 @@ PR #1772 Chain 4 surveyed Kashiwara crystal invariants of partitions of n=3 (Ste
 
 **Bug:** Step 2 hard-coded `H_Q_SUBSTRATE = 0.0922502` for the ℏ_q value, giving a prefactor target of ≈ 6.47.
 
-**Correct formula:** ℏ_q = (q - 1) / q, per [`qbeta_residue_categorical_id_probe.py`](../../folio-assistant/computations/qbeta/qbeta_residue_categorical_id_probe.py) line 48. At q_proton ≈ 1.10998:
+**Correct formula:** ℏ_q = (q - 1) / q, per [`qbeta_residue_categorical_id_probe.py`](../../computations/qbeta/qbeta_residue_categorical_id_probe.py) line 48. At q_proton ≈ 1.10998:
 - ℏ_q = 0.09908 (not 0.0922502)
 - ℏ_q^15 ≈ 8.71 × 10⁻¹⁶
 - A / ℏ_q^15 ≈ **2.07** (not 6.47)
 
-**Impact:** Step 2's reported NEAR-1PCT for `cocharge_(1,1,1,1) = 6` was a bug artifact, NOT a single-anchor near-match. Caught by Step 3's cross-anchor diagnostic ([`qbeta_chain4_kashiwara_step3_cross_anchor.py`](../../folio-assistant/computations/qbeta/qbeta_chain4_kashiwara_step3_cross_anchor.py)).
+**Impact:** Step 2's reported NEAR-1PCT for `cocharge_(1,1,1,1) = 6` was a bug artifact, NOT a single-anchor near-match. Caught by Step 3's cross-anchor diagnostic ([`qbeta_chain4_kashiwara_step3_cross_anchor.py`](../../computations/qbeta/qbeta_chain4_kashiwara_step3_cross_anchor.py)).
 
 ## Diagnostic verdicts
 
@@ -80,4 +80,4 @@ Per CLAUDE.md "Before declaring 'open' math" §, every NEGATIVE result tightens 
 - PR #1760 (open) — Chain 1 (Q_β Habiro element) family γ PASS, α + β NEGATIVE; original Chain 4 pointer.
 - PR #1761 (merged) — general H_n(R, q) Lean lift of T_β = S·1.
 - [1ppQ master ledger](../coordination/1ppq-qbeta.md) — sessions log.
-- Existing residue search: [`qbeta_residue_categorical_id_probe.py`](../../folio-assistant/computations/qbeta/qbeta_residue_categorical_id_probe.py) — 38 candidates across 6 hypothesis families, all NEGATIVE (best near-match `[2]_q · ℏ_q^15 · Schwinger` at 2.93% miss).
+- Existing residue search: [`qbeta_residue_categorical_id_probe.py`](../../computations/qbeta/qbeta_residue_categorical_id_probe.py) — 38 candidates across 6 hypothesis families, all NEGATIVE (best near-match `[2]_q · ℏ_q^15 · Schwinger` at 2.93% miss).

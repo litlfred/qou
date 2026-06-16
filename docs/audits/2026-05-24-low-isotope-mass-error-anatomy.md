@@ -45,7 +45,7 @@ A single-knot VolDensity refinement cannot simultaneously fix p/n (where it woul
 
 ## Where the channels enter — and the hidden-fitting risk
 
-The canonical braid word per atom (per [`isotope_record_schema.py:190-272`](../../folio-assistant/computations/isotope_record_schema.py)) places **inter-nucleon Hecke generators** at positions `3k+2`. Their numerical (c, d) coefficients come from the Hecke quadratic:
+The canonical braid word per atom (per [`isotope_record_schema.py:190-272`](../../computations/isotope_record_schema.py)) places **inter-nucleon Hecke generators** at positions `3k+2`. Their numerical (c, d) coefficients come from the Hecke quadratic:
 
 | Channel | Crossing type | (c, d) at σ + d·𝟙 | Hecke meaning |
 |---------|---------------|--------------------|---------------|
@@ -55,7 +55,7 @@ The canonical braid word per atom (per [`isotope_record_schema.py:190-272`](../.
 
 **The (c, d) numerics are canonical** — they unfold the Hecke quadratic σ² = (q − q⁻¹)σ + 1, which is in Mathlib. **What is NOT canonical** is the structural CHOICE of channel assignment:
 
-> The rule "pp → σ (chirality +), nn → σ⁻¹ (chirality −), pn → σ_avg" is asserted in [`isotope_record_schema.py`](../../folio-assistant/computations/isotope_record_schema.py) lines 176-178 + `build_knot_operator_catalogue()` lines 248-262.
+> The rule "pp → σ (chirality +), nn → σ⁻¹ (chirality −), pn → σ_avg" is asserted in [`isotope_record_schema.py`](../../computations/isotope_record_schema.py) lines 176-178 + `build_knot_operator_catalogue()` lines 248-262.
 
 This rule **has no `prop:` content block formalising it**, no Lean theorem, and no categorical-derivation pointer beyond an informal CPT-symmetry argument. **It is the most concrete hidden-fitting candidate surfaced by this audit.**
 
@@ -77,7 +77,7 @@ Observations:
 
 The per-channel impacts are **not symmetric** (`pp` adds positive ~3%, `nn` adds negative ~1.2%, `pn` adds negative ~1.8%), which is consistent with the (c, d) = (1, 0) / (1, −h) / (1, −h/2) weights but the **sign pattern needs a categorical explanation** and currently doesn't have one.
 
-Quantitative regression is in [`low_isotope_sign_flip_diagnostic.py`](../../folio-assistant/computations/low_isotope_sign_flip_diagnostic.py) (`low-isotope-sign-flip-diagnostic.witness.json` once CI runs it).
+Quantitative regression is in [`low_isotope_sign_flip_diagnostic.py`](../../computations/low_isotope_sign_flip_diagnostic.py) (`low-isotope-sign-flip-diagnostic.witness.json` once CI runs it).
 
 ## Production-chain Lean-coverage matrix
 
@@ -90,8 +90,8 @@ Quantitative regression is in [`low_isotope_sign_flip_diagnostic.py`](../../foli
 | pp/pn/nn channel-assignment rule | every multi-nucleon | ❌ no `prop:` block | **MEDIUM** |
 | q₀ substrate value (CAL-2) | every script | ❌ numerical anchor | LOW (acknowledged CAL anchor) |
 | Hecke quadratic σ⁻¹ = σ − h | inter-nucleon weights | ✅ standard Hecke (Mathlib) | LOW |
-| Atom → knot assignment (D ↔ 6₂, T ↔ 8₁₁, ³He ↔ L6a4, ⁴He ↔ "magic A·8G shell") | [`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py) | ❌ census-derived (admittedly AME-driven for D, T, ³He per [`mass_table_ppb.py:18-21`](../../folio-assistant/computations/mass_table_ppb.py)) | **HIGH** |
-| Kashaev volume law `B = m_e · Vol(K)` | [`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py) | ❌ density rule ρ_F ∈ {m_e, 2m_e} pending formal justification per the script's own line 23 | **HIGH** |
+| Atom → knot assignment (D ↔ 6₂, T ↔ 8₁₁, ³He ↔ L6a4, ⁴He ↔ "magic A·8G shell") | [`mass_table_ppb.py`](../../computations/mass_table_ppb.py) | ❌ census-derived (admittedly AME-driven for D, T, ³He per [`mass_table_ppb.py:18-21`](../../computations/mass_table_ppb.py)) | **HIGH** |
+| Kashaev volume law `B = m_e · Vol(K)` | [`mass_table_ppb.py`](../../computations/mass_table_ppb.py) | ❌ density rule ρ_F ∈ {m_e, 2m_e} pending formal justification per the script's own line 23 | **HIGH** |
 
 ## ⁵Li / ⁶Li prediction gap
 
@@ -101,7 +101,7 @@ To wire ⁵Li / ⁶Li:
 1. Either find atom→knot assignments via census on Kashaev `B/m_e ≈ Vol`:
    - ⁶Li: target Vol ≈ 31.994 / 0.511 = **62.6** — needs a knot/link census in that range
    - ⁵Li (unstable resonance): ~26.328 / 0.511 = **51.5** — same
-2. Or extend the α-cluster rule below A=8 (deferred — α-cluster derivation `c_αα = m_e · Vol(7²_1)` is itself only partially proved per [`mass_table_ppb.py:23-26`](../../folio-assistant/computations/mass_table_ppb.py)).
+2. Or extend the α-cluster rule below A=8 (deferred — α-cluster derivation `c_αα = m_e · Vol(7²_1)` is itself only partially proved per [`mass_table_ppb.py:23-26`](../../computations/mass_table_ppb.py)).
 
 Deferred to a follow-up branch (`claude/wire-a5-a7-isotopes-<date>`). Filed as audit gap; not addressed by this PR.
 
@@ -117,10 +117,10 @@ No inappropriate substrate mixing was found in the production chain. The mixing 
 
 ## Top hidden-fitting candidates (ranked by load-bearing-ness)
 
-1. **🔴 atom → knot census assignments (D ↔ 6₂, T ↔ 8₁₁, ³He ↔ L6a4).** Explicitly admitted as AME-driven by [`mass_table_ppb.py:18-21`](../../folio-assistant/computations/mass_table_ppb.py). This is the most defensible existing CAL-4-equivalent in production.
-2. **🔴 Kashaev density rule `ρ_F ∈ {m_e, 2m_e}`.** Script itself flags this as pending formal justification ([`mass_table_ppb.py:23`](../../folio-assistant/computations/mass_table_ppb.py)).
-3. **🟠 pp/pn/nn channel-assignment convention.** The σ / σ⁻¹ / σ_avg choices in [`isotope_record_schema.py`](../../folio-assistant/computations/isotope_record_schema.py) lack a `prop:` block. The categorical CPT-symmetry argument is unproved.
-4. **🟠 ⁴He "magic A·8G shell" closure** ([`isotope_record_schema.py:186`](../../folio-assistant/computations/isotope_record_schema.py)). Labelled "magic" with no knot citation; biggest error magnitude (+5.87%).
+1. **🔴 atom → knot census assignments (D ↔ 6₂, T ↔ 8₁₁, ³He ↔ L6a4).** Explicitly admitted as AME-driven by [`mass_table_ppb.py:18-21`](../../computations/mass_table_ppb.py). This is the most defensible existing CAL-4-equivalent in production.
+2. **🔴 Kashaev density rule `ρ_F ∈ {m_e, 2m_e}`.** Script itself flags this as pending formal justification ([`mass_table_ppb.py:23`](../../computations/mass_table_ppb.py)).
+3. **🟠 pp/pn/nn channel-assignment convention.** The σ / σ⁻¹ / σ_avg choices in [`isotope_record_schema.py`](../../computations/isotope_record_schema.py) lack a `prop:` block. The categorical CPT-symmetry argument is unproved.
+4. **🟠 ⁴He "magic A·8G shell" closure** ([`isotope_record_schema.py:186`](../../computations/isotope_record_schema.py)). Labelled "magic" with no knot citation; biggest error magnitude (+5.87%).
 5. **🟡 The (1+ℏ_q³) 3-loop factor in flavor split** (PR #690). Substrate-Planck correction with partial Lean coverage.
 
 ## Recommended next actions
@@ -134,9 +134,9 @@ No inappropriate substrate mixing was found in the production chain. The mixing 
 
 - [`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`](2026-05-23-lambda-scale-canonical-unification.md) — 13-driver menu + Rule 14
 - [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) — PR #1080 framing
-- [`folio-assistant/computations/low_isotope_sign_flip_diagnostic.py`](../../folio-assistant/computations/low_isotope_sign_flip_diagnostic.py) — quantitative diagnostic
-- [`folio-assistant/computations/isotope_record_schema.py`](../../folio-assistant/computations/isotope_record_schema.py) — channel-assignment definitions
-- [`folio-assistant/computations/mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py) — Kashaev prediction rule + atom→knot census
+- [`computations/low_isotope_sign_flip_diagnostic.py`](../../computations/low_isotope_sign_flip_diagnostic.py) — quantitative diagnostic
+- [`computations/isotope_record_schema.py`](../../computations/isotope_record_schema.py) — channel-assignment definitions
+- [`computations/mass_table_ppb.py`](../../computations/mass_table_ppb.py) — Kashaev prediction rule + atom→knot census
 - PR [#1063](https://github.com/litlfred/qou/pull/1063) — Family A +2.89% gap audit (framing being challenged)
 - PR [#1080](https://github.com/litlfred/qou/pull/1080) — λ_scale absorbed into VolDensity (merged)
 - PR [#1089](https://github.com/litlfred/qou/pull/1089) — this PR (code-level cleanup + sign-flip diagnostic)

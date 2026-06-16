@@ -117,7 +117,7 @@ governed by the same reciprocity.
   (\sigma_0 \sigma_1^{-1})^3$ is the ratio of two instances of the
   master formula at the LP-active set $A^*(\mathcal{B}_3)$ selected by
   [confinement operator selection](#prop:confinement-operator-selection).
-  See `folio-assistant/computations/borromean-axial-coupling.py` for the
+  See `computations/borromean-axial-coupling.py` for the
   numerical instantiation.
 
 - **Corollary (raw conjugation traces are zero-information).**
@@ -135,11 +135,11 @@ governed by the same reciprocity.
 A correct numerical implementation of the master formula requires:
 
 1. **$G$, $G^{-1}$**: load from
-   `folio-assistant/computations/gram-matrix-dual.witness.json`
+   `computations/gram-matrix-dual.witness.json`
    (`gram_matrix`, `gram_inverse` fields).
 2. **Active set + shadow prices**: solve the operator-selection LP for
    the target bound state via
-   `folio-assistant/computations/lp_dual_solver.py::solve_operator_selection_lp`,
+   `computations/lp_dual_solver.py::solve_operator_selection_lp`,
    read `active_set` and `y_star`.
 3. **Observable coefficients $\langle O, b_j\rangle$**: compute the
    Markov trace $\mathrm{tr}_M(O \cdot b_j)$ for each active $j$.
@@ -151,4 +151,4 @@ A correct numerical implementation of the master formula requires:
 
 Any witness whose `description` claims to compute a bound-state
 observable but lacks these fields is flagged by
-`folio-assistant/computations/bound_state_observable_validator.py`.
+`computations/bound_state_observable_validator.py`.

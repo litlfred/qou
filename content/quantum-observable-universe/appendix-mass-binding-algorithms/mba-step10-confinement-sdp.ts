@@ -8,8 +8,8 @@ export default algorithm({
   ],
   computation: {
     engine: "python+numpy+cvxpy",
-    script: "folio-assistant/computations/confinement-operator-selection.py",
-    witness: "folio-assistant/computations/confinement-operator-selection.witness.json",
+    script: "computations/confinement-operator-selection.py",
+    witness: "computations/confinement-operator-selection.witness.json",
     status: "verified",
   },
   tags: [

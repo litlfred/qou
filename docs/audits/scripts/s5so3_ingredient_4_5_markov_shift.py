@@ -9,7 +9,7 @@ Uses the REAL pyhecke compute stack (not a re-implementation):
 
 Dependencies (sandbox): mpmath, numpy, sympy; tools/{qou-substrate,pyhecke,
 pyhecke-native}/python on sys.path.  Canonical home for this compute is
-folio-assistant/computations/ (absent in this sandbox -> sited under
+computations/ (absent in this sandbox -> sited under
 docs/audits/scripts/ as a falsification probe; see the s5so3 finding doc).
 
 VERDICT computed here: the Wedderburn-projector correction F(E,q0) named in

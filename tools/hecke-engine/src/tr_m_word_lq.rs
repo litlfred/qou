@@ -1,5 +1,5 @@
 //! Markov-axiom recursive ascent for the canonical Jones-Markov
-//! trace, ported from `folio-assistant/computations/laurent_q_trace.py`.
+//! trace, ported from `computations/laurent_q_trace.py`.
 //!
 //! Strategy #1 from
 //! `docs/audits/2026-05-20-markov-peel-bottleneck-profile.md`,
@@ -174,7 +174,7 @@ pub fn clear_cache() {
 ///         implementation exactly).
 /// `n_strands`: H_n strand count.
 ///
-/// Mirrors `folio-assistant/computations/laurent_q_trace.py
+/// Mirrors `computations/laurent_q_trace.py
 /// tr_M_word_lq` line-by-line. Phase-1+2 scope: empty / single-top /
 /// multi-top Case A / Case B. Case C raises (caller falls back to
 /// the sympy ocneanu path — same behaviour as Python).

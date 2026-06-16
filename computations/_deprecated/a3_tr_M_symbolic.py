@@ -14,7 +14,7 @@ than the n=6 case (~100x). For now we use the bridge y_lambda
 numerics; the symbolic infrastructure (y_lambda_symbolic) handles
 n=9 if given enough wall-clock time.
 
-Run:  python3 folio-assistant/computations/a3_tr_M_symbolic.py
+Run:  python3 computations/a3_tr_M_symbolic.py
 """
 from __future__ import annotations
 

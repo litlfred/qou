@@ -10,7 +10,7 @@ For each torus knot T_{m,n} in the building block table:
   5. Extract Q-value candidates
 
 Usage:
-    cd folio-assistant/computations && python3 knot-ops-on-6he.py
+    cd computations && python3 knot-ops-on-6he.py
 """
 import math
 import json

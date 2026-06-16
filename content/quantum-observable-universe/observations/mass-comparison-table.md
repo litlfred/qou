@@ -28,7 +28,7 @@ to six significant figures with $q = q_0$.
 
 The proton and neutron rows currently come from the **LO ρ_K
 assembly** which consumes $m_p$ and $m_n$ as CODATA inputs (per
-[`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json)).
+[`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json)).
 Per owner directive ("do not use LO — use full"), this
 is tautological by construction (the $|\mathrm{tr}_M|$ factor
 cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$,
@@ -78,7 +78,7 @@ exact tower-summed $E_0$ closes it (Workplan 2 Phase 2). The
 typed-crossings 6-term form gives a looser +0.747% prediction
 (0.7882 MeV) — kept in the witness only for cross-check, not used
 for production. Witness:
-[`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json).
+[`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
 
 *Light nuclei (from multi-body Skein).* All rows below come from
 the **LO ρ_K assembly** with CODATA $m_p$, $m_n$ inputs — same
@@ -95,7 +95,7 @@ See [Table 3](#tbl:mass-comparison-table-table3-data).
 
 † **LO output is constituent sum only.** Genuine FULL prediction
 not yet wired (see Workplan 0b §FULL chain status). Witness:
-[`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json).
+[`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json).
 
 **Notes.**  The substrate parameter $q$ is fixed by the
 muon--electron mass ratio (one free input).  Hadronic masses follow
@@ -115,7 +115,7 @@ predictions from $q$.  The genuine $q$-predictions are mass *ratios*
 ($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), $Q$-values
 ($\Delta\mathrm{net} \times E_0$), and half-life ratios via
 $\log_q(ft)$ spectroscopy.  The one external scaling ruler is
-$m_e = :val[m_e_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV (CODATA 2022 experimental input, not a
+$m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV (CODATA 2022 experimental input, not a
 QOU-derived value), which converts dimensionless $q$-ratios to
 physical MeV.  All "Source" column
 entries (CODATA, PDG, AME2020) refer to these external standards.

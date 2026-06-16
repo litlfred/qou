@@ -15,11 +15,11 @@ export default conjecture({
   ],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/n_sym_numerical_anchor.py",
+    script: "computations/n_sym_numerical_anchor.py",
     witness: [
-      "folio-assistant/computations/n-sym-numerical-anchor.witness.json",
-      "folio-assistant/computations/n-sym-goldstone-phase-space-probe.witness.json",
-      "folio-assistant/computations/n-sym-gram-determinant-probe.witness.json",
+      "computations/n-sym-numerical-anchor.witness.json",
+      "computations/n-sym-goldstone-phase-space-probe.witness.json",
+      "computations/n-sym-gram-determinant-probe.witness.json",
     ],
     status: "verified",
   },

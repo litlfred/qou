@@ -50,7 +50,7 @@ The resolution is interpretive:
 - The **$c_k$ ladder normalization** is a different object,
   namely $\mathfrak{Q}_\beta / [Q_A \cdot \cos(\alpha_{\text{eff}})]$, with
   $Q_A$ and $\alpha$ read from the operator-valued $N{=}3$ witness
-  (see [`qbeta_1ppq_achieved.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_1ppq_achieved.py)).
+  (see [`qbeta_1ppq_achieved.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_1ppq_achieved.py)).
 
 This proposition is therefore the algebraic obstruction that pins the
 gap and identifies the missing categorical input

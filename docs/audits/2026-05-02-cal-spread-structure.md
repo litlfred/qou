@@ -1,6 +1,6 @@
 # cal/m_e spread investigation — structural variable analysis
 
-**Pair:** [`per_braid_tower_hybrid.py`](../../folio-assistant/computations/per_braid_tower_hybrid.py)
+**Pair:** [`per_braid_tower_hybrid.py`](../../computations/per_braid_tower_hybrid.py)
 + jet-extension result memo
 [`2026-05-02-a3-jet-extension-result.md`](2026-05-02-a3-jet-extension-result.md).
 

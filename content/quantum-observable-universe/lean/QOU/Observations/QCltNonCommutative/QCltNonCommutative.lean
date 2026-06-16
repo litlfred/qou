@@ -23,7 +23,7 @@ namespace QOU.Observations.QCltNonCommutative
 
     Conjectural class — see [`conj:q-clt-non-commutative`](../../../quantum-observable-universe/observations/q-clt-non-commutative.md). -/
 class QCltNonCommutative where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Conjecture statement** (from manuscript):
 
       Let $(H_\infty(q), \mathrm{tr}_M)$ be the QOU non-commutative

@@ -2,7 +2,7 @@
 
 # ³H structural investigation — α\* = 0.424 anomaly
 
-**Source data.** `folio-assistant/computations/joint-tower-sdp-rust.witness.json`,
+**Source data.** `computations/joint-tower-sdp-rust.witness.json`,
 `per_atom_certificates[name = "tritium-3H"]`. Methodology tag:
 `manual-historical-volume-match` (the historical 8_11 ID flowed
 through to a 14-letter braid word in B_5).
@@ -43,7 +43,7 @@ genuinely indefinite at q_0.
 correct ³H knot. The α\* = 1 entries (proton, neutron, ³He) all
 agree with their historical IDs; the α\* < 1 entries (²H, ³H) do
 not. ²H is α\* = 0.546 with `markov_trace = 0` reported in
-[`atom-nf-symbolic-D.witness.json`](../../folio-assistant/computations/atom-nf-symbolic-D.witness.json),
+[`atom-nf-symbolic-D.witness.json`](../../computations/atom-nf-symbolic-D.witness.json),
 which is also strongly suggestive that 6_2 is wrong for ²H.
 
 **H2 — sign-convention bug at d_λ ≥ 4.** The 1d blocks pass and

@@ -26,8 +26,8 @@ export default conjecture({
   // conjecture's open status, not the witness script's correctness.
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/q_pinning_50_digit.py",
-    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    script: "computations/q_pinning_50_digit.py",
+    witness: "computations/q-pinning-50-digit.witness.json",
     status: "not_run",
   },
   authorNotes: [

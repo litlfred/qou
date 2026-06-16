@@ -14,7 +14,7 @@ The deuteron's canonical binding link is `L_H = σ_1²` (Hopf link)
 per the structural decomposition in
 [`conj-canonical-knot-id-sdp.md`](../../../mass-theory/conj-canonical-knot-id-sdp.md).
 The empirical SDP-feasibility probe
-[`binding_link_psd_feasibility_probe.py`](../../../../../folio-assistant/computations/binding_link_psd_feasibility_probe.py)
+[`binding_link_psd_feasibility_probe.py`](../../../../../computations/binding_link_psd_feasibility_probe.py)
 ran at H_3 and found `L_H = σ_1²` in Hoefsmit standard-(2,1) at `q_0`:
 
   min eigenvalue = +0.811653754... = `q_0⁻²` (10+ digit match)

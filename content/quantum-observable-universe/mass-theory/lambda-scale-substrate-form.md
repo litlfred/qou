@@ -52,5 +52,5 @@ $\lambda_{\mathrm{scale}}$-from-substrate derivation).
 
 ## Witness
 
-- [`lambda_scale_all_c_i_family_a.py`](../../folio-assistant/computations/lambda_scale_all_c_i_family_a.py) — the proved Family A closed form.
+- [`lambda_scale_all_c_i_family_a.py`](../../computations/lambda_scale_all_c_i_family_a.py) — the proved Family A closed form.
 - [`docs/audits/2026-05-18-lambda-scale-derivation-search.md`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md) — the falsified-form audit trail (moved out of the paper).

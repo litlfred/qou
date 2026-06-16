@@ -44,7 +44,7 @@ Proof: one-line `ring` identities over any `CommRing`.
 LaTeX label: `prop:qbeta-odd-parity-avatar-reduction`
 
 ## References
-- Companion compute: `folio-assistant/computations/qbeta/qbeta_odd_parity_avatar_reduction_probe.py`
+- Companion compute: `computations/qbeta/qbeta_odd_parity_avatar_reduction_probe.py`
 - Even-parity refutation: `qbeta_cosh_avatar_crossanchor_multicoeff_probe.py` (PR #1866)
 - Ladder N=2 rung (c_2 = −1): `prop:q-beta-categorical-precision-ladder`
 - Generating-function hypothesis: `docs/audits/2026-06-04-ck-generating-function-derivation-chain-scope.md`

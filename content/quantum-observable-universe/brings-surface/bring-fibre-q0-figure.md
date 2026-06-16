@@ -27,9 +27,9 @@ The merging sheets are drawn in matched line styles (solid + dashed),
 the isolated sheet in dotted.
 
 This figure is generated programmatically by
-[`bring_chiral_fibre_figure.py`](../../../folio-assistant/computations/bring_chiral_fibre_figure.py),
+[`bring_chiral_fibre_figure.py`](../../../computations/bring_chiral_fibre_figure.py),
 with the parameters and verified sample values recorded in
-[`bring-chiral-fibre-figure.witness.json`](../../../folio-assistant/computations/bring-chiral-fibre-figure.witness.json).
+[`bring-chiral-fibre-figure.witness.json`](../../../computations/bring-chiral-fibre-figure.witness.json).
 Formal math-book style (black ink on white, line styles only —
 color reserved for cases where line styles cannot disambiguate)
 per author directive.

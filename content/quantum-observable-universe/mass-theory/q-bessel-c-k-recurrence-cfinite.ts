@@ -9,8 +9,8 @@ export default proof({
   },
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/qbeta/qbeta_qbessel_contiguity_cfinite.py",
-    witness: "folio-assistant/computations/qbeta/qbeta-qbessel-contiguity-cfinite.witness.json",
+    script: "computations/qbeta/qbeta_qbessel_contiguity_cfinite.py",
+    witness: "computations/qbeta/qbeta-qbessel-contiguity-cfinite.witness.json",
     status: "verified",
   },
   authorNotes: [

@@ -44,8 +44,8 @@ export default proposition({
   ],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/shift_from_nf_basis.py",
-    witness: "folio-assistant/computations/shift-from-nf-basis.witness.json",
+    script: "computations/shift_from_nf_basis.py",
+    witness: "computations/shift-from-nf-basis.witness.json",
     status: "verified",
   },
   authorNotes: [

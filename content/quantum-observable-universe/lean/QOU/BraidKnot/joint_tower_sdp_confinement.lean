@@ -91,7 +91,7 @@ embeds via the strand-augmentation $H_{12} \hookrightarrow H_{18}$).
 A solution $(c_{\mathfrak{H}, w}(q_0))$ is a **structured certificate**
 of the canonical Hecke elements $\{T_w(\mathfrak{H})\}_{\mathfrak{H} \in \mathcal{R}}$
 together with the **GB-filtration certificate** and **jet-order log**
-([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json))
+([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json))
 on each
 
 […truncated; see manuscript for remainder…]

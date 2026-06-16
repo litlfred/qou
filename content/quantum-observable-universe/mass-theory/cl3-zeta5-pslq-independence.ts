@@ -10,9 +10,9 @@ export default proposition({
   },
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/cl3_zeta5_pslq_search.py",
+    script: "computations/cl3_zeta5_pslq_search.py",
     witness:
-      "folio-assistant/computations/cl3-zeta5-pslq-search.witness.json",
+      "computations/cl3-zeta5-pslq-search.witness.json",
     status: "verified",
   },
   uses: ["rem:b1-current-status"],

@@ -27,10 +27,10 @@ export default remark({
   cites: ["satula1997"],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/isospin_mass_tower_collapse.py",
+    script: "computations/isospin_mass_tower_collapse.py",
     witness: [
-      "folio-assistant/computations/branch-phase-fit-to-mass-tower.witness.json",
-      "folio-assistant/computations/isospin-mass-tower-collapse.witness.json",
+      "computations/branch-phase-fit-to-mass-tower.witness.json",
+      "computations/isospin-mass-tower-collapse.witness.json",
     ],
     status: "verified",
   },

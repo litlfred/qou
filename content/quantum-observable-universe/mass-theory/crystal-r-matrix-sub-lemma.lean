@@ -47,7 +47,7 @@ namespace QOU.BraidKnot
     The class abstracts the operator data as a function from
     (λ, μ, ν, interface-label) to an endomorphism slot; Sprint-2
     inhabitation supplies the matrix entries computed by
-    `folio-assistant/computations/a_operator/A_operator_extract_at_level.py`
+    `computations/a_operator/A_operator_extract_at_level.py`
     via bilinear-system inversion. -/
 class WenzlAOperator where
   /-- A^λ_{μν}(I): abstract slot for the (μ,ν)-block operator.

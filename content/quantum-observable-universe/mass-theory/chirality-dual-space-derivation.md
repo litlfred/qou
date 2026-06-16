@@ -126,5 +126,5 @@ channel is sufficient.*
 See [Table 3](#tbl:chirality-dual-space-derivation-table3-data).
 
 *Six of six. Computation infrastructure complete (scripts +
-witness files for all terms in `folio-assistant/computations/`).
+witness files for all terms in `computations/`).
 Paper-side completeness achieved.*

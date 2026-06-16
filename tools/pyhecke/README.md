@@ -1,10 +1,10 @@
 # pyhecke
 
-> *Part of the [QOU library stack](../https://github.com/litlfred/qou/blob/main/docs/ARCHITECTURE.md#two-axes-of-organisation-domain-vs-workflow). See the two-axis explanation for how this package fits relative to the in-repo `folio-assistant/computations/` clusters.*
+> *Part of the [QOU library stack](../https://github.com/litlfred/qou/blob/main/docs/ARCHITECTURE.md#two-axes-of-organisation-domain-vs-workflow). See the two-axis explanation for how this package fits relative to the in-repo `computations/` clusters.*
 
 Hecke algebra + Gram matrix + tower binding infrastructure for the QOU
 paper pipeline. Carve-out of the 3425-line
-`folio-assistant/computations/hecke_core.py` into a proper package.
+`computations/hecke_core.py` into a proper package.
 
 ## Scope (M1)
 
@@ -36,7 +36,7 @@ pytest
 
 ## Legacy compatibility
 
-`folio-assistant/computations/pyhecke.py` is a re-export shim so existing
+`computations/pyhecke.py` is a re-export shim so existing
 scripts using `sys.path.insert(…)` keep working unchanged.
 
 ## Milestones

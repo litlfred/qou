@@ -9,7 +9,7 @@
 
 Today's Q_β formalize-first chain shipped four sorry-free Lean gate classes (PR #1875 bar-even, PR #1889 radius-of-convergence, PR #1890 q=1 shadow + direction sanity, PR #1893 unified `BarEvenKernel` typeclass) plus a 7-step Δ_λ pre-flight checklist. The structural discipline is now established for the decay-side.
 
-The mass-side has an **established checklist tradition only for bar-evenness** (the existing [`bar_symmetry_three_candidates.py`](../../folio-assistant/computations/bar_symmetry_three_candidates.py) tests three `linking_weight` candidates against the Φ_q vs Li_2^q context-sorting rule). The other three §4 invariants — anchor-stability, q=1 classical-limit shadow, direction sanity — have **no mass-side analog yet**.
+The mass-side has an **established checklist tradition only for bar-evenness** (the existing [`bar_symmetry_three_candidates.py`](../../computations/bar_symmetry_three_candidates.py) tests three `linking_weight` candidates against the Φ_q vs Li_2^q context-sorting rule). The other three §4 invariants — anchor-stability, q=1 classical-limit shadow, direction sanity — have **no mass-side analog yet**.
 
 This audit closes that gap. It extends the bar-symmetry test to a unified **mass-theory formalize-first invariants probe** that runs all four §4 invariant checks on the three published `linking_weight` candidates.
 
@@ -18,7 +18,7 @@ This audit closes that gap. It extends the bar-symmetry test to a unified **mass
 | # | invariant | Q_β source | mass-theory analog |
 |---|---|---|---|
 | (a) | **Anchor-stable** | proton + muon cross-anchor swing < 1 ppm at u_substrate (PR #1889) | proton + muon swing of `linking_weight(q_0)` < 1% (registry §8 mass-side gate) |
-| (b) | **Bar-even** | `q ↦ q⁻¹` Taylor-even-in-t for the c_k ladder (PR #1875) | `linking_weight(q) = linking_weight(q⁻¹)` as a q-rational (existing test, [`bar_symmetry_three_candidates.py`](../../folio-assistant/computations/bar_symmetry_three_candidates.py)) |
+| (b) | **Bar-even** | `q ↦ q⁻¹` Taylor-even-in-t for the c_k ladder (PR #1875) | `linking_weight(q) = linking_weight(q⁻¹)` as a q-rational (existing test, [`bar_symmetry_three_candidates.py`](../../computations/bar_symmetry_three_candidates.py)) |
 | (c) | **q = 1 classical-limit shadow** | `c_2 → −1`, `c_3 → J_Hopf(1) = −2` (PR #1890 Track A) | `linking_weight(q → 1)` reproduces a known categorical integer or rational (e.g. `5/2` for Family A, from `(3·1² + 4 + 3·1⁻²)/4 = 10/4`) |
 | (d) | **Direction sanity** | `|F(q_0)|` within 10× of Q_β target ~0.998 (PR #1890 Track B) | `linking_weight(q_0)` in same order of magnitude as the empirical multiplier needed to close `m_p/m_e` (registry-level: ~2.46 from CODATA-implied near-match per PR #1850 audit) |
 
@@ -32,7 +32,7 @@ The three published `linking_weight` candidates (from the existing bar-symmetry 
 2. **via-Jones** `5/2 + 4·(tr_M(β_Borromean) − 1)` — Markov trace, bar-symmetric, ≈ 2.5328 at q_0
 3. **Bring color-tube** `1/(1 − h·q¹⁰)` (Φ_q-side) — Bar-asymmetric, ≈ 2.4619 at q_0
 
-The probe ([`mass_theory_formalize_first_invariants_probe.py`](../../folio-assistant/computations/mass_theory_formalize_first_invariants_probe.py)) tests each candidate against all four §4 invariants and reports a per-cell verdict.
+The probe ([`mass_theory_formalize_first_invariants_probe.py`](../../computations/mass_theory_formalize_first_invariants_probe.py)) tests each candidate against all four §4 invariants and reports a per-cell verdict.
 
 ### Anticipated results (pre-formalize-first prediction)
 
@@ -58,8 +58,8 @@ The probe is **diagnostic only** — it does NOT propose a new `linking_weight` 
 ## §5. Cross-references
 
 - **Q_β §4 invariant chain (this session):** PRs #1875, #1889, #1890, #1893
-- **Existing bar-symmetry test:** [`bar_symmetry_three_candidates.py`](../../folio-assistant/computations/bar_symmetry_three_candidates.py)
-- **linking_weight CODATA-implied near-match audit:** PR #1850 + the `_li_2_q_util.vol_density_borromean` docstring ([`_li_2_q_util.py`](../../folio-assistant/computations/_li_2_q_util.py))
+- **Existing bar-symmetry test:** [`bar_symmetry_three_candidates.py`](../../computations/bar_symmetry_three_candidates.py)
+- **linking_weight CODATA-implied near-match audit:** PR #1850 + the `_li_2_q_util.vol_density_borromean` docstring ([`_li_2_q_util.py`](../../computations/_li_2_q_util.py))
 - **Registry §3 (Q_β c_k canonicity gates):** [`ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md)
 - **Mass = Vol × Density formalization:** PR #1834 (merged) + PR #1871 (open, SU(2)/SO(3) density)
 - **§4(b) bar-even Lean lemma:** [`prop:q-beta-bar-even-kernel-invariant`](../../content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.md) (PR #1875)

@@ -113,12 +113,12 @@ Currently axiomatized as §3b-cond class `MarkovTraceDisjoint`. Replacing the ax
 | `docs/audits/2026-05-20-constit-factor-closure-chain.md` | audit doc | NEW (audit-only target for 5k.2 + 5l.1 witnesses) |
 | `docs/coordination/1ppb-categorical-chain.md` | coord ledger | UPDATED (Phase 5l + 5k.2 + 5l.1 + coordination rows) |
 | `docs/coordination/2026-05-20-phase-5l-combined-handover.md` | handover | NEW (this doc) |
-| `folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py` | script | NEW (Phase 5l verification) |
-| `folio-assistant/computations/rho-constit-equals-tau-M-proton-phase5l.witness.json` | witness | NEW (wired to prop block) |
-| `folio-assistant/computations/constit_factor_varying_q_phase5k2.py` | script | NEW (Phase 5k.2 falsification probe) |
-| `folio-assistant/computations/constit-factor-varying-q-phase5k2.witness.json` | witness | NEW (audit-only) |
-| `folio-assistant/computations/tau_M_proton_closed_form_phase5l1.py` | script | NEW (Phase 5l.1 symbolic probe) |
-| `folio-assistant/computations/tau-M-proton-closed-form-phase5l1.witness.json` | witness | NEW (audit-only) |
+| `computations/rho_constit_equals_tau_M_proton_phase5l.py` | script | NEW (Phase 5l verification) |
+| `computations/rho-constit-equals-tau-M-proton-phase5l.witness.json` | witness | NEW (wired to prop block) |
+| `computations/constit_factor_varying_q_phase5k2.py` | script | NEW (Phase 5k.2 falsification probe) |
+| `computations/constit-factor-varying-q-phase5k2.witness.json` | witness | NEW (audit-only) |
+| `computations/tau_M_proton_closed_form_phase5l1.py` | script | NEW (Phase 5l.1 symbolic probe) |
+| `computations/tau-M-proton-closed-form-phase5l1.witness.json` | witness | NEW (audit-only) |
 | `CLAUDE.md` | repo discipline | UPDATED (cheat-sheet cross-link at top) |
 
 ## Test plan

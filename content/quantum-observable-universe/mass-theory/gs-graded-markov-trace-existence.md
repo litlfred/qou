@@ -43,7 +43,7 @@ constructive `def` would require formalising the GS-filtration of
 $H_n(R, q)$ and the :refterm[descent]{#descent} of $\mathrm{tr}_M$ along its associated
 graded — this depends on Mathlib infrastructure for filtered
 algebras and is tracked downstream
-([audit](../../folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md)).*
+([audit](../../computations/AUDIT-gb-residue-opaque-declarations.md)).*
 
 **Why a conjecture and not a theorem.**
 *The narrative claim is rigorous over any commutative ring $R$ for which
@@ -65,6 +65,6 @@ value directly.*
 *The numerical values of $\mathrm{tr}_{M, \ell}(T_w)$ for the proton,
 neutron, and deuteron atoms are emitted by
 `markov_pipeline_cross_validator.py` and stored under
-`folio-assistant/computations/markov/markov-pipeline-cross-validation.witness.json`,
+`computations/markov/markov-pipeline-cross-validation.witness.json`,
 agreeing with the Habiro-side values to relative tolerance $\le$ $10^{-9}$
 across every available atom.*

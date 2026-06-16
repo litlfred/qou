@@ -220,8 +220,8 @@ Per CLAUDE.md no-7th-ansatz discipline:
 - `content/quantum-observable-universe/quantum-observable-universes/yekutieli-stokes-remark.md` — non-abelian Stokes derivation
 - `content/quantum-observable-universe/mass-theory/per-braid-mass-tower.md` — mass-tower formula with Φ_q
 - `content/quantum-observable-universe/information-theory/q-exponential-taylor.md` — q-exponential definition
-- `folio-assistant/computations/_phi_q_util.py` — Φ_q archimedean util (post-τ)
-- `folio-assistant/computations/_li_2_q_util.py` — Li_2^q util (pre-τ, binding context)
+- `computations/_phi_q_util.py` — Φ_q archimedean util (post-τ)
+- `computations/_li_2_q_util.py` — Li_2^q util (pre-τ, binding context)
 - PR #1616 — Im(q) fibre/observable framing in CLAUDE.md
 - PR #1620 — Hecke-natural form for sym(Δtr_M)
 - PR #1626 — complex c_3 fibre diagnostic

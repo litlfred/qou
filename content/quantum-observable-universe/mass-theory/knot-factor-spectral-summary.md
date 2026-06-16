@@ -18,6 +18,6 @@ $\chi_\lambda(\beta_\mathcal{K})$ for any braid word.  The knot
 factor is then a single q-deformed Wedderburn-weighted sum,
 bounded (though not unit-normalised) by Wedderburn completeness with
 no truncation.  Implementation: replace per-isotope
-hand-fits in `folio-assistant/computations/atomic_mass_pipeline.py`
+hand-fits in `computations/atomic_mass_pipeline.py`
 with direct evaluation of
 ([knot factor](#prop:knot-factor-spectral-form)).

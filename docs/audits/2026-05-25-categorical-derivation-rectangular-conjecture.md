@@ -72,6 +72,6 @@ This is the next probe in the categorical-derivation thread:
 
 ## Cross-references
 
-- [`folio-assistant/computations/crystal_basis.py`](../../folio-assistant/computations/crystal_basis.py) — Type-A crystal primitives (kashiwara_lower/raise, evac, demazure)
+- [`computations/crystal_basis.py`](../../computations/crystal_basis.py) — Type-A crystal primitives (kashiwara_lower/raise, evac, demazure)
 - [`docs/audits/2026-05-25-dominant-partition-nucleon-structure.md`](2026-05-25-dominant-partition-nucleon-structure.md) — empirical motivation (Probes 1, 3, 4, 4b)
 - [`CLAUDE.md` §7b](../../CLAUDE.md) — Type-B folding for chirality / CPT directive

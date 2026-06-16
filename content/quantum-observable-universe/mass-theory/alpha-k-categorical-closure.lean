@@ -33,7 +33,7 @@ namespace QOU.BraidKnot
          with CODATA-calibrated, instead of overshooting).
 -/
 class AlphaKCategoricalClosure (q : ℝ) : Type where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- Scalar residual of the existence claim: vanishes when the
       categorical $\alpha_k$ family admits a closed-form resummation
       $\mathcal{F}(\hbar_q^2)$ in $q$. -/
@@ -94,7 +94,7 @@ The candidate closed forms are:
   - **Symmetric q-dilogarithm:** $\mathcal{F}_{\mathrm{Li}_2^q}(x) = 1 + (-\mathrm{Li}_2^q(-x))$
 
 Numerical infrastructure (substrate-level evaluation at $q_0$):
-  - `folio-assistant/computations/derived_masses.py`
+  - `computations/derived_masses.py`
     `e_0_full_mev()` — geometric form
     `e_0_full_li2q_mev()` — symmetric Li_2^q form
     `_li2q_symmetric(z, q, terms=200)` — Li_2^q helper at 50 dps

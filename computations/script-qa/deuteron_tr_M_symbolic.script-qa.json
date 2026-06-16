@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/deuteron_tr_M_symbolic.py",
+  "script_path": "computations/deuteron_tr_M_symbolic.py",
   "language": "python",
   "source_hash": "2297f1ef74f5",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -132,7 +132,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/deuteron_tr_M_symbolic.py:93: `def conjugate_partition(…)` has 1 parameter without type annotation: shape — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/deuteron_tr_M_symbolic.py:93: `def conjugate_partition(…)` has 1 parameter without type annotation: shape — add `: type` (or `: Any` if the type genuinely is untyped)"
       },
       {
         "field_hash": {
@@ -149,7 +149,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/deuteron_tr_M_symbolic.py:93: `def conjugate_partition(…)` has 1 parameter without type annotation: shape — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/deuteron_tr_M_symbolic.py:93: `def conjugate_partition(…)` has 1 parameter without type annotation: shape — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -168,7 +168,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/deuteron_tr_M_symbolic.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/deuteron_tr_M_symbolic.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       },
       {
         "field_hash": {
@@ -185,7 +185,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/deuteron_tr_M_symbolic.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/deuteron_tr_M_symbolic.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -204,7 +204,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/deuteron_tr_M_symbolic.py:1: script `deuteron_tr_M_symbolic.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/deuteron_tr_M_symbolic.py:1: script `deuteron_tr_M_symbolic.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       },
       {
         "field_hash": {
@@ -221,7 +221,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/deuteron_tr_M_symbolic.py:1: script `deuteron_tr_M_symbolic.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/deuteron_tr_M_symbolic.py:1: script `deuteron_tr_M_symbolic.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [
@@ -272,7 +272,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/deuteron_tr_M_symbolic.py:110: script writes `.witness.json` (\"chi-deuteron-h6.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/deuteron_tr_M_symbolic.py:110: script writes `.witness.json` (\"chi-deuteron-h6.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       },
       {
         "field_hash": {
@@ -289,7 +289,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/deuteron_tr_M_symbolic.py:110: script writes `.witness.json` (\"chi-deuteron-h6.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/deuteron_tr_M_symbolic.py:110: script writes `.witness.json` (\"chi-deuteron-h6.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       }
     ],
     "compute_no_mpf_to_float_cast": [

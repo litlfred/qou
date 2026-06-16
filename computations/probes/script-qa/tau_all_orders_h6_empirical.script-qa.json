@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/probes/tau_all_orders_h6_empirical.py",
+  "script_path": "computations/probes/tau_all_orders_h6_empirical.py",
   "language": "python",
   "source_hash": "e53823f2e638",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -72,7 +72,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probes/tau_all_orders_h6_empirical.py:62: `def _trace(…)` has 1 parameter without type annotation: M — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/tau_all_orders_h6_empirical.py:79: `def trM_borromean(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/tau_all_orders_h6_empirical.py:92: `def f(…)` has 1 parameter without type annotation: hv — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/probes/tau_all_orders_h6_empirical.py:62: `def _trace(…)` has 1 parameter without type annotation: M — add `: type` (or `: Any` if the type genuinely is untyped) | computations/probes/tau_all_orders_h6_empirical.py:79: `def trM_borromean(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | computations/probes/tau_all_orders_h6_empirical.py:92: `def f(…)` has 1 parameter without type annotation: hv — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -91,7 +91,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probes/tau_all_orders_h6_empirical.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/probes/tau_all_orders_h6_empirical.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -110,7 +110,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probes/tau_all_orders_h6_empirical.py:1: script `tau_all_orders_h6_empirical.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/probes/tau_all_orders_h6_empirical.py:1: script `tau_all_orders_h6_empirical.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [

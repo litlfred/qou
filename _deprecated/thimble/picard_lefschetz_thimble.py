@@ -19,7 +19,7 @@ At each z_c, two color sheets merge and the prolonged SW differential
 is the steepest-descent contour of Re(S) from z_c.
 
 Usage:
-    python3 folio-assistant/computations/picard_lefschetz_thimble.py
+    python3 computations/picard_lefschetz_thimble.py
 """
 
 import sys

@@ -23,7 +23,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:on-p-modular-hecke`](../../../quantum-observable-universe/appendix-surreals/on-p-modular-hecke.md). -/
 class OnPModularHecke where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       [Hoefsmit-is-surreal-construction](#prop:hoefsmit-is-surreal-construction)

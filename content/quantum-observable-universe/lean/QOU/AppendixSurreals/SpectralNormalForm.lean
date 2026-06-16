@@ -23,7 +23,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:spectral-normal-form`](../../../quantum-observable-universe/appendix-surreals/spectral-normal-form.md). -/
 class SpectralNormalForm where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       Under the surreal lift $q = 1 + \varepsilon$

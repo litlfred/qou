@@ -21,8 +21,8 @@ export default proposition({
   ],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/probes/y_lambda_cyclotomic_factorization_probe.py",
-    witness: "folio-assistant/computations/probes/y-lambda-cyclotomic-factorization-probe.witness.json",
+    script: "computations/probes/y_lambda_cyclotomic_factorization_probe.py",
+    witness: "computations/probes/y-lambda-cyclotomic-factorization-probe.witness.json",
     status: "verified",
   },
 });

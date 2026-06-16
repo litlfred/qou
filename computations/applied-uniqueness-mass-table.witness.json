@@ -60,19 +60,19 @@
     },
     "sources": {
       "proton": {
-        "path": "folio-assistant/computations/markov-trace-assembly-proton.derivation.json",
+        "path": "computations/markov-trace-assembly-proton.derivation.json",
         "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]",
         "target_value": 1.0653062285923893,
         "canonical_source": "derivation_chain.TR_M_AT_Q0"
       },
       "neutron": {
-        "path": "folio-assistant/computations/markov-trace-assembly-neutron.derivation.json",
+        "path": "computations/markov-trace-assembly-neutron.derivation.json",
         "target": "tr_M(n, q_0)  [canonical Wenzl-bridge]",
         "target_value": 0.9232332299116371,
         "canonical_source": "derivation_chain.TR_M_AT_Q0"
       },
       "deuteron": {
-        "path": "folio-assistant/computations/markov-trace-assembly-deuteron.derivation.json",
+        "path": "computations/markov-trace-assembly-deuteron.derivation.json",
         "target": "tr_M(D, q_0)",
         "target_value": 0.3882864240747888,
         "canonical_source": "derivation_chain.TR_M_AT_Q0"

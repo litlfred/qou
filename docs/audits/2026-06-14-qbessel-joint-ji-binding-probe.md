@@ -142,7 +142,7 @@ split.
 ## Reproducibility
 
 ```bash
-cd folio-assistant/computations
+cd computations
 python3 binding_a3plus_joint_ji_combiner.py
 # Emits: binding-a3plus-joint-ji-combiner.witness.json
 ```

@@ -31,7 +31,7 @@ namespace QOU.Mathlib.ArchimedeanRealization
 
 /-- The QOU substrate parameter `q₀`.  Bound here to the canonical
     50-digit decimal expansion from
-    `folio-assistant/computations/full-twist-delta-n2-verification.witness.json::q_0`
+    `computations/full-twist-delta-n2-verification.witness.json::q_0`
     (proton-anchor re-pin, 2026-05-28; see
     `tools/qou-substrate/python/qou_substrate/constants.py::Q_50_DIGIT_STR`).
 

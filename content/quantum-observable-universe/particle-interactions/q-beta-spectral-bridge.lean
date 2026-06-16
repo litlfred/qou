@@ -121,7 +121,7 @@ of `log` on `[0, x]`. This is a standard analysis step.
 
 For the manuscript's purposes (the bridge identity is verified
 *numerically* at 50 dps in
-`folio-assistant/computations/q_beta_spectral_bridge_witness.py`),
+`computations/q_beta_spectral_bridge_witness.py`),
 the algebraic content is closed by the three theorems above; the
 Mathlib Taylor-bound chain is left as a structured open lemma.
 -/

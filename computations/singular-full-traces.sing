@@ -1,5 +1,5 @@
 // Full Markov trace for all 6 nuclei — parent AND daughter.
-// Run: Singular folio-assistant/computations/singular-full-traces.sing
+// Run: Singular computations/singular-full-traces.sing
 //
 // The Markov trace is ORDERING-INDEPENDENT (link invariant).
 // tr(N̄) = Π_i (z·a_i + b_i) — proven exact.

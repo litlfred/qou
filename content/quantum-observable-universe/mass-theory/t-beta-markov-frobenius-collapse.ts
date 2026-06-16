@@ -15,9 +15,9 @@ export default proposition({
   computation: {
     engine: "sympy",
     script:
-      "folio-assistant/computations/qbeta/qbeta_markov_trace_norm_probe.py",
+      "computations/qbeta/qbeta_markov_trace_norm_probe.py",
     witness:
-      "folio-assistant/computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+      "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
     status: "verified",
   },
   tags: [

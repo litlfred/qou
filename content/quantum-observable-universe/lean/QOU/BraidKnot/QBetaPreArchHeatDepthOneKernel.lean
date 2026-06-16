@@ -29,7 +29,7 @@ these lemmas back is UNGATED: per
 `QOU.BraidKnot.QBetaCKRecursionKernelConstraints` it must still produce a
 bar-odd leading coefficient `a₁ = -c₃` and survive the constant-depth-2
 `c₄` refutation. Gate evaluation happens in the Stage-B probe
-(`folio-assistant/computations/qbeta/`), not here.
+(`computations/qbeta/`), not here.
 
 ## References
 - `def:q-exponential`, `prop:q-exponential-taylor` (information-theory).

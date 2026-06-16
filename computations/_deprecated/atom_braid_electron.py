@@ -16,7 +16,7 @@ coefficients:
 where α = α_EM ≈ 0.00729... derived from q₀.
 
 Usage:
-    python3 folio-assistant/computations/atom_braid_electron.py
+    python3 computations/atom_braid_electron.py
 """
 
 import math, sys, time

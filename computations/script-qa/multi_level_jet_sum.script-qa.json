@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/multi_level_jet_sum.py",
+  "script_path": "computations/multi_level_jet_sum.py",
   "language": "python",
   "source_hash": "ddf2531261f1",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-22T18:27:38.070Z",
         "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
         "severity": "major",
-        "evidence": "folio-assistant/computations/multi_level_jet_sum.py:64: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/multi_level_jet_sum.py:69: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/multi_level_jet_sum.py:89: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/multi_level_jet_sum.py:121: bare float literal `1178995.5254` — wrap in `mpmath.mpf(\"1178995.5254\")` / `Decimal(\"1178995.5254\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/multi_level_jet_sum.py:122: bare float literal `938.272` — wrap in `mpmath.mpf(\"938.272\")` / `Decimal(\"938.272\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/multi_level_jet_sum.py:64: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/multi_level_jet_sum.py:69: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/multi_level_jet_sum.py:89: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/multi_level_jet_sum.py:121: bare float literal `1178995.5254` — wrap in `mpmath.mpf(\"1178995.5254\")` / `Decimal(\"1178995.5254\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/multi_level_jet_sum.py:122: bare float literal `938.272` — wrap in `mpmath.mpf(\"938.272\")` / `Decimal(\"938.272\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -38,7 +38,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/multi_level_jet_sum.py:64: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/multi_level_jet_sum.py:69: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/multi_level_jet_sum.py:89: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/multi_level_jet_sum.py:121: bare float literal `1178995.5254` — wrap in `mpmath.mpf(\"1178995.5254\")` / `Decimal(\"1178995.5254\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/multi_level_jet_sum.py:122: bare float literal `938.272` — wrap in `mpmath.mpf(\"938.272\")` / `Decimal(\"938.272\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/multi_level_jet_sum.py:64: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/multi_level_jet_sum.py:69: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/multi_level_jet_sum.py:89: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/multi_level_jet_sum.py:121: bare float literal `1178995.5254` — wrap in `mpmath.mpf(\"1178995.5254\")` / `Decimal(\"1178995.5254\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/multi_level_jet_sum.py:122: bare float literal `938.272` — wrap in `mpmath.mpf(\"938.272\")` / `Decimal(\"938.272\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -55,7 +55,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/multi_level_jet_sum.py:64: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/multi_level_jet_sum.py:69: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/multi_level_jet_sum.py:89: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/multi_level_jet_sum.py:121: bare float literal `1178995.5254` — wrap in `mpmath.mpf(\"1178995.5254\")` / `Decimal(\"1178995.5254\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/multi_level_jet_sum.py:122: bare float literal `938.272` — wrap in `mpmath.mpf(\"938.272\")` / `Decimal(\"938.272\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/multi_level_jet_sum.py:64: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/multi_level_jet_sum.py:69: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/multi_level_jet_sum.py:89: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/multi_level_jet_sum.py:121: bare float literal `1178995.5254` — wrap in `mpmath.mpf(\"1178995.5254\")` / `Decimal(\"1178995.5254\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/multi_level_jet_sum.py:122: bare float literal `938.272` — wrap in `mpmath.mpf(\"938.272\")` / `Decimal(\"938.272\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -138,7 +138,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/multi_level_jet_sum.py:54: `def mass_per_level(…)` has 1 parameter without type annotation: vols — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/multi_level_jet_sum.py:80: `def tower_sum(…)` has 1 parameter without type annotation: per_level_vols — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/multi_level_jet_sum.py:102: `def get_ilp_ground(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/multi_level_jet_sum.py:123: `def binding_flat_all_pairs(…)` has 3 parameters without type annotation: Z, N, E_0 — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/multi_level_jet_sum.py:54: `def mass_per_level(…)` has 1 parameter without type annotation: vols — add `: type` (or `: Any` if the type genuinely is untyped) | computations/multi_level_jet_sum.py:80: `def tower_sum(…)` has 1 parameter without type annotation: per_level_vols — add `: type` (or `: Any` if the type genuinely is untyped) | computations/multi_level_jet_sum.py:102: `def get_ilp_ground(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | computations/multi_level_jet_sum.py:123: `def binding_flat_all_pairs(…)` has 3 parameters without type annotation: Z, N, E_0 — add `: type` (or `: Any` if the type genuinely is untyped)"
       },
       {
         "field_hash": {
@@ -155,7 +155,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/multi_level_jet_sum.py:54: `def mass_per_level(…)` has 1 parameter without type annotation: vols — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/multi_level_jet_sum.py:80: `def tower_sum(…)` has 1 parameter without type annotation: per_level_vols — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/multi_level_jet_sum.py:102: `def get_ilp_ground(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/multi_level_jet_sum.py:123: `def binding_flat_all_pairs(…)` has 3 parameters without type annotation: Z, N, E_0 — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/multi_level_jet_sum.py:54: `def mass_per_level(…)` has 1 parameter without type annotation: vols — add `: type` (or `: Any` if the type genuinely is untyped) | computations/multi_level_jet_sum.py:80: `def tower_sum(…)` has 1 parameter without type annotation: per_level_vols — add `: type` (or `: Any` if the type genuinely is untyped) | computations/multi_level_jet_sum.py:102: `def get_ilp_ground(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | computations/multi_level_jet_sum.py:123: `def binding_flat_all_pairs(…)` has 3 parameters without type annotation: Z, N, E_0 — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -174,7 +174,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/multi_level_jet_sum.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/multi_level_jet_sum.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       },
       {
         "field_hash": {
@@ -191,7 +191,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/multi_level_jet_sum.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/multi_level_jet_sum.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -210,7 +210,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/multi_level_jet_sum.py:1: script `multi_level_jet_sum.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/multi_level_jet_sum.py:1: script `multi_level_jet_sum.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       },
       {
         "field_hash": {
@@ -227,7 +227,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/multi_level_jet_sum.py:1: script `multi_level_jet_sum.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/multi_level_jet_sum.py:1: script `multi_level_jet_sum.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [
@@ -278,7 +278,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/multi_level_jet_sum.py:104: script writes `.witness.json` (\"confinement-level-walk.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/multi_level_jet_sum.py:104: script writes `.witness.json` (\"confinement-level-walk.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       },
       {
         "field_hash": {
@@ -295,7 +295,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/multi_level_jet_sum.py:104: script writes `.witness.json` (\"confinement-level-walk.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/multi_level_jet_sum.py:104: script writes `.witness.json` (\"confinement-level-walk.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       }
     ],
     "compute_no_mpf_to_float_cast": [

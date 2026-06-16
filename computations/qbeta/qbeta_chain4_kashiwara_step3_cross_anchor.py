@@ -26,7 +26,7 @@ ANCHORS (50-dps):
   (Cross-anchor difference: 1.28e-8 in q itself)
 
 Canonical: ℏ_q = (q - 1) / q
-   per folio-assistant/computations/qbeta/qbeta_residue_categorical_id_probe.py
+   per computations/qbeta/qbeta_residue_categorical_id_probe.py
    line 48: `hbar_q = (q - 1) / q`
 
 EXPECTED OUTCOME if cocharge-of-(1,1,1,1) is a true hit:

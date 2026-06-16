@@ -9,7 +9,7 @@ also the **solver leg** of [`docs/plans/F-precision-lift-mpfr.md`](../../docs/pl
 specifically the §1b/SDP rung where `f64` becomes `FloatT`.
 Plan F's §1a (substrate q₀ at 50 dps) is already implemented via
 the `Q_MP`/`q_at(dps)`/`vol_4_1_at(dps)` HP API in
-[`folio-assistant/computations/q_parameter.py`](../../folio-assistant/computations/q_parameter.py).
+[`computations/q_parameter.py`](../../computations/q_parameter.py).
 
 ## Why precision is the bottleneck
 
@@ -490,7 +490,7 @@ identity anchor.  Report:
 
 **Witness output**: `joint-tower-sdp-{atom}-precision-comparison.witness.json`
 with both solutions side-by-side and the diff metrics.  Lives under
-`folio-assistant/computations/`.
+`computations/`.
 
 ### Tier T3 — H_18 (⁶Li): the precision-required regime
 
@@ -593,7 +593,7 @@ truncations + denominator histograms.  No CI gate (research mode).
    joint-tower-sdp -- --atom 6Li --precision 100`.
 
 3. **Witness staleness wiring**: extend
-   [`witness_staleness_tracker.py`](../../folio-assistant/computations/witness_staleness_tracker.py)
+   [`witness_staleness_tracker.py`](../../computations/witness_staleness_tracker.py)
    to invalidate the precision-comparison witnesses whenever any of
    the four SDP modules or the two MPFR helpers change.
 
@@ -811,7 +811,7 @@ Out of scope upstream (explicitly deferred to Phase 9+):
 
 Substrate-precision audit headline (PR #448): the antipattern
 `Q0 = mp.mpf(str(Q0_FLOAT))` appeared in **100 files** under
-`folio-assistant/computations/`, each silently capping its "50-dps"
+`computations/`, each silently capping its "50-dps"
 computation at f64 precision.  Plus the canonical 38-dps `Vol(4_1)`
 string was actually inaccurate past digit ~30.  After this work,
 every file uses `Q0 = Q_MP` / `vol_4_1_at(dps)` from `q_parameter`,

@@ -12,9 +12,9 @@ export default proposition({
     engine: "python",
     status: "verified",
     script:
-      "folio-assistant/computations/bring_trefoil_cinquefoil_channel.py",
+      "computations/bring_trefoil_cinquefoil_channel.py",
     witness: [
-      "folio-assistant/computations/bring-trefoil-cinquefoil-channel.witness.json",
+      "computations/bring-trefoil-cinquefoil-channel.witness.json",
     ],
   },
   uses: [

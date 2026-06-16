@@ -1,4 +1,4 @@
-"""Sweeps — cluster subdirectory of folio-assistant/computations/.
+"""Sweeps — cluster subdirectory of computations/.
 
 See [`docs/proposals/computations-subdirectory-refactor.md`](../../../docs/proposals/computations-subdirectory-refactor.md).
 """

@@ -1,8 +1,8 @@
 # E₀^λ "try-all": testing 5 substrate-derived χ^λ → M_λ maps (2026-06-01)
 
 **Branch:** `claude/e0-lambda-tryall-lean-2026-06-01`
-**Harness:** [`folio-assistant/computations/e0_lambda_tryall.py`](../../folio-assistant/computations/e0_lambda_tryall.py)
-**Witness:** `folio-assistant/computations/e0-lambda-tryall.witness.json`
+**Harness:** [`computations/e0_lambda_tryall.py`](../../computations/e0_lambda_tryall.py)
+**Witness:** `computations/e0-lambda-tryall.witness.json`
 **Sibling (do not touch):** `claude/e0-lambda-map-options-2026-06-01` (scoping doc)
 
 ## The precisely-delimited problem
@@ -82,7 +82,7 @@ electron as the real discriminator.)*
 
 ## Candidate results
 
-Run: `python3 folio-assistant/computations/e0_lambda_tryall.py`
+Run: `python3 computations/e0_lambda_tryall.py`
 (witness: `e0-lambda-tryall.witness.json`). Residuals are relative; proton
 is 0 by the pin.
 
@@ -167,7 +167,7 @@ scope for this probe and bordering Subgoal-2.
 
 ## Files
 
-- Harness: [`folio-assistant/computations/e0_lambda_tryall.py`](../../folio-assistant/computations/e0_lambda_tryall.py)
-- Witness: [`folio-assistant/computations/e0-lambda-tryall.witness.json`](../../folio-assistant/computations/e0-lambda-tryall.witness.json)
-- Anchor source (deprecated, read-only): `folio-assistant/computations/_deprecated/per_block_phi_q.py`
+- Harness: [`computations/e0_lambda_tryall.py`](../../computations/e0_lambda_tryall.py)
+- Witness: [`computations/e0-lambda-tryall.witness.json`](../../computations/e0-lambda-tryall.witness.json)
+- Anchor source (deprecated, read-only): `computations/_deprecated/per_block_phi_q.py`
 - Substrate χ caches consumed: `chi-neutron-h3-at-q0-50dps.witness.json`, `chi-proton-h3-at-q0-50dps.witness.json`

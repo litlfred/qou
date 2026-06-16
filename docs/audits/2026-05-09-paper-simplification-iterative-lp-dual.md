@@ -366,7 +366,7 @@ It **does**:
 - This audit:
   [`docs/audits/2026-05-09-paper-simplification-iterative-lp-dual.md`](2026-05-09-paper-simplification-iterative-lp-dual.md)
 - Probe (WIP):
-  [`folio-assistant/computations/alpha/alpha_5_jucys_murphy_central.py`](../../folio-assistant/computations/alpha/alpha_5_jucys_murphy_central.py)
+  [`computations/alpha/alpha_5_jucys_murphy_central.py`](../../computations/alpha/alpha_5_jucys_murphy_central.py)
 - Workplan v3 (operative on main):
   [`docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md`](2026-05-09-refocused-1ppb-workplan-v3.md)
 - Cited blocks (existing):

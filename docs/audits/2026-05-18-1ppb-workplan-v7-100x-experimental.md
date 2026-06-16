@@ -68,8 +68,8 @@ Predictions where 100× experimental is *above* the ~780 ppb CAL-2 floor:
   4.74 ppb. Current Borromean prediction at 254 ppb misses by 54× —
   closure path is λ_scale substrate-derivation, landed on main via
   PR #751 (commit `894c3db97`, 2026-05-18):
-  [`probe_workplan_0b_route_b_operator.py`](../../folio-assistant/computations/probe_workplan_0b_route_b_operator.py),
-  [`probe_c2_inflection_structure.py`](../../folio-assistant/computations/probe_c2_inflection_structure.py),
+  [`probe_workplan_0b_route_b_operator.py`](../../computations/probe_workplan_0b_route_b_operator.py),
+  [`probe_c2_inflection_structure.py`](../../computations/probe_c2_inflection_structure.py),
   [`2026-05-18-workplan-0b-routes-b-c-findings.md`](2026-05-18-workplan-0b-routes-b-c-findings.md).
 - **Binding energies for light atoms** (target 0.35–4.5 ppb) — gated by
   per-isotope Borromean-tower extension (Track A) and operator-valued

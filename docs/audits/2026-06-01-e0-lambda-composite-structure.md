@@ -35,7 +35,7 @@ Canonical (post-PR #1080, `docs/lambda-scale-absorbed-into-vol-density.md`):
 m(K) = m_e · VolDensity(K, q₀)
 ```
 
-`folio-assistant/computations/_li_2_q_util.py :: vol_density_borromean(q)` computes
+`computations/_li_2_q_util.py :: vol_density_borromean(q)` computes
 
 ```
 VolDensity(𝓑₃, q) = [ Vol(𝓑₃) / ℏ_q² ] · linking_weight_family_a(q)
@@ -136,7 +136,7 @@ computed independently, residuals reported raw.
 
 ## Verdict — **FORCED-BUT-MISSES** (and the product form is also NOT FORCED → latent-fit risk)
 
-Witness: `folio-assistant/computations/e0-lambda-composite.witness.json` (50 dps, ZERO free
+Witness: `computations/e0-lambda-composite.witness.json` (50 dps, ZERO free
 params, all inputs read from the GAP-A-4 verifier witness — no recomputation, no tuning).
 
 ### Raw numbers at q₀ = 1.10997858275 (h = 0.209060298796)
@@ -211,6 +211,6 @@ is already Lean-adjacent via the GAP-A-4 verifier; no new identity to formalize 
 - `docs/audits/2026-06-01-e0-lambda-substrate-derivation-options.md` — sibling option-ranking (Candidates 1–6, GAP-A-4 obstruction).
 - `docs/audits/2026-05-31-gap-a3-a4-feasibility-assessment.md` — GAP-A-4 H_3 impossibility theorem.
 - `docs/lambda-scale-absorbed-into-vol-density.md` — m(K) = m_e·VolDensity single-call framing.
-- `folio-assistant/computations/_li_2_q_util.py` — vol_density_borromean (production) + spectral_correction (exploratory composite).
-- `folio-assistant/computations/_deprecated/per_block_phi_q.py` — the fit_three_E0 (the thing to replace).
-- `folio-assistant/computations/rho-prefactor-structural-verifier.witness.json` — proton≡neutron≡he3 at H_3 (the falsification data).
+- `computations/_li_2_q_util.py` — vol_density_borromean (production) + spectral_correction (exploratory composite).
+- `computations/_deprecated/per_block_phi_q.py` — the fit_three_E0 (the thing to replace).
+- `computations/rho-prefactor-structural-verifier.witness.json` — proton≡neutron≡he3 at H_3 (the falsification data).

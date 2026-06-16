@@ -79,9 +79,9 @@ None proposes a "7th fit-based ansatz". The Δ_λ gate is respected.
 
 ## Concrete next-session deliverables
 
-1. ~~**`folio-assistant/computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py`**~~ — **DONE 2026-06-03** (Family α first-test). VERDICT: NEGATIVE. All 4 Wenzl-projector Markov trace conventions (JW, symmetric, antisymmetric, adjoint-like) fail at c_2 by 50%+ and c_3 by 100%+. The literal Family α formulation is REFUTED. Witness: `qbeta-wenzl-habiro-chain-alpha.witness.json`.
-2. ~~**`folio-assistant/computations/qbeta/qbeta_kashaev_habiro_chain_beta.py`**~~ — **DONE 2026-06-03** (Family β first-test). VERDICT: NEGATIVE. All 3 Kashaev-tower variants (standard q-Pochhammer, Bloch-Wigner D(z), Faddeev real-q L_q) fail by 100%+ at c_2 and c_3. Witness: `qbeta-kashaev-habiro-chain-beta.witness.json`.
-3. ~~**`folio-assistant/computations/qbeta/qbeta_sa_qa_chain_gamma.py`**~~ — **DONE 2026-06-03** (commit `8cbaf5c7ff`). Family γ canonical decomposition verified: Q_A and cos at q₀ are finite ⇒ structural singularity must live in Π_k(∞) tower.
+1. ~~**`computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py`**~~ — **DONE 2026-06-03** (Family α first-test). VERDICT: NEGATIVE. All 4 Wenzl-projector Markov trace conventions (JW, symmetric, antisymmetric, adjoint-like) fail at c_2 by 50%+ and c_3 by 100%+. The literal Family α formulation is REFUTED. Witness: `qbeta-wenzl-habiro-chain-alpha.witness.json`.
+2. ~~**`computations/qbeta/qbeta_kashaev_habiro_chain_beta.py`**~~ — **DONE 2026-06-03** (Family β first-test). VERDICT: NEGATIVE. All 3 Kashaev-tower variants (standard q-Pochhammer, Bloch-Wigner D(z), Faddeev real-q L_q) fail by 100%+ at c_2 and c_3. Witness: `qbeta-kashaev-habiro-chain-beta.witness.json`.
+3. ~~**`computations/qbeta/qbeta_sa_qa_chain_gamma.py`**~~ — **DONE 2026-06-03** (commit `8cbaf5c7ff`). Family γ canonical decomposition verified: Q_A and cos at q₀ are finite ⇒ structural singularity must live in Π_k(∞) tower.
 
 ## Combined Family α + β NEGATIVE — residue A pointer (2026-06-03)
 
@@ -143,7 +143,7 @@ the 15-candidate c_3 re-run):
 
 ### Next-session entry point — Chain 4
 
-File: `folio-assistant/computations/qbeta/qbeta_kashiwara_chain_4.py`
+File: `computations/qbeta/qbeta_kashiwara_chain_4.py`
 Test all 6 candidates above at proton-pinned q₀ + muon anchor. PASS if
 any matches (-1, -2.069, ...) within 10 ppm at both anchors. Witness
 emitting, Δ_λ-gate compliant (closed-form formulas, no fits).

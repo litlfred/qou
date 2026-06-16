@@ -43,7 +43,7 @@ without recomputing the σ_k matrices.
 
 ## Usage
 
-    cd folio-assistant/computations
+    cd computations
     python3 probe_option_e_h6_entry_point.py
 
 Emits: probe-option-e-h6-entry-point.witness.json

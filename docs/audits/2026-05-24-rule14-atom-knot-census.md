@@ -2,14 +2,14 @@
 
 **Date:** 2026-05-24
 **Branch:** `claude/post-1089-followups-2026-05-24` → PR [#1111](https://github.com/litlfred/qou/pull/1111)
-**Status:** ⏸️ **DEFERRED 2026-05-24** — owner decision: **wait for R5-full SDP solver** (option 3 of the §5 menu). The current census-derived assignments (D ↔ 6₂, T ↔ 8₁₁, ³He ↔ L6a4) are retained as **EXPLORATORY scaffolding** in [`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py) ATOM_ASSIGN; origin tags now carry the explicit `"hyp: census-assigned (EXPLORATORY pending R5-full SDP)"` marker. No `prop:` block authored — categorical derivation of the canonical (Z, N) → K functor deferred to the R5-full SDP solver landing.
+**Status:** ⏸️ **DEFERRED 2026-05-24** — owner decision: **wait for R5-full SDP solver** (option 3 of the §5 menu). The current census-derived assignments (D ↔ 6₂, T ↔ 8₁₁, ³He ↔ L6a4) are retained as **EXPLORATORY scaffolding** in [`mass_table_ppb.py`](../../computations/mass_table_ppb.py) ATOM_ASSIGN; origin tags now carry the explicit `"hyp: census-assigned (EXPLORATORY pending R5-full SDP)"` marker. No `prop:` block authored — categorical derivation of the canonical (Z, N) → K functor deferred to the R5-full SDP solver landing.
 
 Rule-14 escalation per [`docs/audits/2026-05-23-lambda-scale-canonical-unification.md §"Rule 14 — Author-escalation for off-menu coefficients"`](2026-05-23-lambda-scale-canonical-unification.md).
 **Parent audit:** [`docs/audits/2026-05-24-low-isotope-mass-error-anatomy.md`](2026-05-24-low-isotope-mass-error-anatomy.md) (item #1, 🔴 HIGH risk).
 
 ## §1. The issue
 
-The atom → knot map in [`folio-assistant/computations/mass_table_ppb.py:86-93`](../../folio-assistant/computations/mass_table_ppb.py) hardcodes three census-derived pairings:
+The atom → knot map in [`computations/mass_table_ppb.py:86-93`](../../computations/mass_table_ppb.py) hardcodes three census-derived pairings:
 
 ```python
 "2H":   {"rule": "kashaev", "knot": "6_2",  "rho_factor": 1, "origin": "hyp: census-assigned"},
@@ -17,11 +17,11 @@ The atom → knot map in [`folio-assistant/computations/mass_table_ppb.py:86-93`
 "3He":  {"rule": "kashaev", "knot": "L6a4", "rho_factor": 2, "origin": "hyp: census-assigned"},
 ```
 
-The script's own docstring ([`mass_table_ppb.py:18-21`](../../folio-assistant/computations/mass_table_ppb.py)) admits:
+The script's own docstring ([`mass_table_ppb.py:18-21`](../../computations/mass_table_ppb.py)) admits:
 
 > *"The atom→knot assignments for D, T, ³He were obtained by census search in `jsj_verification.py` — that IS a form of AME-driven fitting (we picked the knot whose volume is closest to B_AME/ρ)."*
 
-The selection procedure (see [`delta_lambda_jsj_phase3.py:14-21`](../../folio-assistant/computations/delta_lambda_jsj_phase3.py)) closes the canonical atomic braid word into a link, calls `snappy.simplify`, reads the hyperbolic volume, and accepts the knot whose `Vol_hyp(K)` minimises `|B_AME − ρ_F · m_e · Vol(K)|` across the SnapPy `HTLinkExteriors` / `OrientableCuspedCensus` enumeration. The choice of `ρ_F ∈ {m_e, 2m_e}` is itself a free binary picked to match. **This is empirical fitting** in the CLAUDE.md production-vs-exploratory sense: a coefficient selected by minimising a CODATA residual, with no substrate-derived rule producing the same answer.
+The selection procedure (see [`delta_lambda_jsj_phase3.py:14-21`](../../computations/delta_lambda_jsj_phase3.py)) closes the canonical atomic braid word into a link, calls `snappy.simplify`, reads the hyperbolic volume, and accepts the knot whose `Vol_hyp(K)` minimises `|B_AME − ρ_F · m_e · Vol(K)|` across the SnapPy `HTLinkExteriors` / `OrientableCuspedCensus` enumeration. The choice of `ρ_F ∈ {m_e, 2m_e}` is itself a free binary picked to match. **This is empirical fitting** in the CLAUDE.md production-vs-exploratory sense: a coefficient selected by minimising a CODATA residual, with no substrate-derived rule producing the same answer.
 
 Per CLAUDE.md §production-vs-exploratory and the Rule-14 escalation protocol (§"Rule 14 — Author-escalation for off-menu coefficients" of the 2026-05-23 canonical-unification audit), this cannot remain in the production mass-prediction pipeline without either (a) a derivation from one of the 13 categorical drivers, or (b) explicit owner authorisation under conjecture-conditional status (analogous to PR #895's canonical-Wedderburn adoption — see [`docs/audits/2026-05-24-family-a-gap-audit.md`](2026-05-24-family-a-gap-audit.md) for that precedent).
 
@@ -76,7 +76,7 @@ If a canonical (Z, N) → K functor lands:
 |---|--------|------|-------|-----------|
 | 1 | **Conjecture-conditional adoption** — accept the three census assignments as production with explicit owner authorisation (analogous to PR #895's canonical-Wedderburn move). Add a `conj:atom-knot-census-D-T-He3` block axiomatising the three pairings; mark `mass_table_ppb.py` rows as `conditional-on-conj`. | Low (1 content block + 1 commit). | Leaves the 🔴 risk visible in `conjectural-propagation-audit` output. | Unblocks Track-A downstream computations but does not solve the hidden-fitting concern; just makes it auditable. |
 | 2 | **Author a new content block proposing a canonical `(Z, N) → K` functor** along one of: (xii) Chern-Simons/WRT atom-as-state, (xiii) Kashiwara-crystal-to-Schubert-cell, or the R5-full SDP solver output once it lands. | Medium-high (new prop block + Lean stub + canonical justification). | Genuine categorical closure; supersedes the census. | Requires substantial mathematical R&D; (xii) and (xiii) are 🟡-candidate homes only — neither delivers a rule out-of-the-box. |
-| 3 | **Defer to R5-full SDP solver** ([`r5_full_canonical_knot_solver.py`](../../folio-assistant/computations/r5_full_canonical_knot_solver.py) Python prototype, Rust port pending). When R5-full lands per-atom canonical T_w, derive K as `Markov.close(T_w)` and replace the census table. | Low (waiting cost only); R5-full is already in the workplan. | Cleanest categorical path. The current PSD-cone ranking shows ³He ↔ L6a4 is already plausible; ²H ↔ 6₂ may *change* under R5-full. | Wait time uncertain; current Python prototype defers H_5+ atoms (T at H_9, ⁴He at H_12) to Rust. |
+| 3 | **Defer to R5-full SDP solver** ([`r5_full_canonical_knot_solver.py`](../../computations/r5_full_canonical_knot_solver.py) Python prototype, Rust port pending). When R5-full lands per-atom canonical T_w, derive K as `Markov.close(T_w)` and replace the census table. | Low (waiting cost only); R5-full is already in the workplan. | Cleanest categorical path. The current PSD-cone ranking shows ³He ↔ L6a4 is already plausible; ²H ↔ 6₂ may *change* under R5-full. | Wait time uncertain; current Python prototype defers H_5+ atoms (T at H_9, ⁴He at H_12) to Rust. |
 | 4 | **Defer to PR #1081's Task 3 (S_5 ↔ SO(3))** if the structural source of the per-isotope knot is the S_5 fibre action on Bring's surface (per [`docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md §3`](2026-05-24-h4-coefficient-source-trace-and-so3-gap.md)). The atom → knot would then be `(Z, N) → SO(3)-orbit → fibre-bundle-classifying knot`. | Low (waiting cost). | Could be the categorical home for the entire chain (matches (xii) WRT framing). | Speculative — needs an explicit construction Task 3 has not yet produced. |
 
 **Recommended pick (default if no other input): combine option 1 + option 3** — adopt as conjecture-conditional now (cheap, restores auditability), explicitly tagged to be superseded by R5-full output. This matches the PR #895 precedent (production adoption under conjecture status, with a named replacement path).
@@ -89,8 +89,8 @@ If a canonical (Z, N) → K functor lands:
 - [`docs/audits/2026-05-24-a5-a7-knot-census-candidates.md`](2026-05-24-a5-a7-knot-census-candidates.md) — sibling exploratory shape-probe for A ∈ {5, 6, 7}; explicitly flagged as "extends the hidden-fitting surface, owner-direction required".
 - [`docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md`](2026-05-24-h4-coefficient-source-trace-and-so3-gap.md) — S_3 ⊂ SO(3) gap; relevant to option 4.
 - [`docs/audits/2026-05-24-family-a-gap-audit.md`](2026-05-24-family-a-gap-audit.md) — PR #895 conjecture-conditional precedent.
-- [`folio-assistant/computations/mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py) — production script carrying the assignments (lines 18-21 docstring admission, lines 86-93 hardcoded table).
-- [`folio-assistant/computations/delta_lambda_jsj_phase3.py`](../../folio-assistant/computations/delta_lambda_jsj_phase3.py) — JSJ verification / census-search implementation.
+- [`computations/mass_table_ppb.py`](../../computations/mass_table_ppb.py) — production script carrying the assignments (lines 18-21 docstring admission, lines 86-93 hardcoded table).
+- [`computations/delta_lambda_jsj_phase3.py`](../../computations/delta_lambda_jsj_phase3.py) — JSJ verification / census-search implementation.
 - [`content/quantum-observable-universe/braids-and-knots/atom-knot-exists.md`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-exists.md) — canonical existence; does not pin K.
 - [`content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) §"Where the gaps actually are" #1 — R5-full SDP solver as the missing categorical step.
-- [`folio-assistant/computations/r5_full_canonical_knot_solver.py`](../../folio-assistant/computations/r5_full_canonical_knot_solver.py) — Python R5-full prototype.
+- [`computations/r5_full_canonical_knot_solver.py`](../../computations/r5_full_canonical_knot_solver.py) — Python R5-full prototype.

@@ -2,8 +2,8 @@
 He-4 operator-selection LP active set.
 
 LaTeX label:        prop:he4-channel-active-set
-Computational ref:  folio-assistant/computations/probe_he4_sdp_compositional.py
-Witness:            folio-assistant/computations/he4-sdp-compositional-probe.witness.json
+Computational ref:  computations/probe_he4_sdp_compositional.py
+Witness:            computations/he4-sdp-compositional-probe.witness.json
 Audit:              docs/audits/2026-05-15-three-pr-integration.md §F1 ⁴He
 
 For the ⁴He = (Z=2, N=2) bound state, the operator-selection LP

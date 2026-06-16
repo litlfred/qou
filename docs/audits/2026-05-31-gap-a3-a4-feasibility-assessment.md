@@ -77,7 +77,7 @@ endpoint, lands on the per-partition `Δ_λ(K)` profile.
 ## 2. What scaffold already exists (survey 2026-05-31)
 
 The Δ_λ / ρ / brane-tower problem is **heavily scaffolded** already — this is
-not a green field. Inventory of `folio-assistant/computations/`:
+not a green field. Inventory of `computations/`:
 
 | Component | File(s) | State |
 |---|---|---|
@@ -293,6 +293,6 @@ upstream that A-3 and A-4 silently presuppose.
 - [`docs/audits/2026-05-25-delta-lambda-K-dependence-reframing.md`](2026-05-25-delta-lambda-K-dependence-reframing.md) — Δ_λ(K) is canonical; ⛔ no global Δ_λ
 - [`content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.md`](../../content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.md) — GAP-A-4 conjecture
 - [`content/quantum-observable-universe/mass-theory/rho-k-h3a-refinement.md`](../../content/quantum-observable-universe/mass-theory/rho-k-h3a-refinement.md) — Δ_λ formal definition
-- `folio-assistant/computations/rho-prefactor-structural-verifier.witness.json` — GAP-A-4 H_3-impossibility (the §3.2 data)
-- `folio-assistant/computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json` — Option E §3.3 data
-- `folio-assistant/computations/brane-tower-isospin-diagnosis.witness.json` — GAP-A-3 Φ_q pathology (§3.1)
+- `computations/rho-prefactor-structural-verifier.witness.json` — GAP-A-4 H_3-impossibility (the §3.2 data)
+- `computations/option-e-multi-isotope-delta-lambda-probe-v3.witness.json` — Option E §3.3 data
+- `computations/brane-tower-isospin-diagnosis.witness.json` — GAP-A-3 Φ_q pathology (§3.1)

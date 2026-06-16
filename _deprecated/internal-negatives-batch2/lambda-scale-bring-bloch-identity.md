@@ -11,7 +11,7 @@ $\lambda_K^{\mathrm{scale}}$, status revised 2026-05-22).**
 >    instance was searched via PSLQ at 100 dps with maximum coefficient
 >    $10^{30}$ over a 52-knot basis through 11-crossing prime
 >    hyperbolic knots (Tiers 0–5;
->    [`bring_bloch_tier5_search_m_p.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring_bloch_tier5_search_m_p.py)
+>    [`bring_bloch_tier5_search_m_p.py`](https://github.com/litlfred/qou/blob/main/computations/bring_bloch_tier5_search_m_p.py)
 >    conclusion). **No integer relation was found** at any tier.
 >    Per the tier 5 conclusion: "consistent negative across 52
 >    hyperbolic-knot Bloch-Wigner values strengthens the case that
@@ -166,7 +166,7 @@ For the proton, $K^{\mathrm{closure}} = \mathcal{B}_3$ (Borromean
 rings, $\mathrm{Vol} = 8G$ where $G$ is Catalan's constant; the
 identity is exact via the Lobachevsky-Catalan relation
 $\Lambda(\pi/4) = G/2$, verified to $> 10^{-100}$ at 100 dps in
-[`borromean-volume-100dps.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/borromean-volume-100dps.witness.json)).
+[`borromean-volume-100dps.witness.json`](https://github.com/litlfred/qou/blob/main/computations/borromean-volume-100dps.witness.json)).
 
 Per the boxed identity, $\lambda_p^{\mathrm{scale}}$ is the
 Bloch-Wigner regulator value of the proton's Bring-decomposition
@@ -181,7 +181,7 @@ $$
 $$
 
 (numerical target from the CODATA closure
-[`m-p-borromean-verification-50dps.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/m-p-borromean-verification-50dps.witness.json)
+[`m-p-borromean-verification-50dps.witness.json`](https://github.com/litlfred/qou/blob/main/computations/m-p-borromean-verification-50dps.witness.json)
 under $\mathrm{Vol}(\mathcal{B}_3) = 8G$ exact). Equivalently,
 $\mathrm{Vol}(K_p^{\mathrm{eff}}) := \lambda_p^{\mathrm{scale}} \cdot 8G
 \approx 18.026$ MeV scale, the *effective* hyperbolic volume entering
@@ -221,7 +221,7 @@ decomposition therefore requires knots from Tier 1 (the ~30 prime
 3-bridge hyperbolic knots reachable via NF-product closures in
 $H_3(q_0)$) or Tier 2 (genus-4 embeddable hyperbolic knots through
 $H_8(q_0)$). Search witness:
-[`bring-bloch-tier0-search-m-p.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring-bloch-tier0-search-m-p.witness.json).
+[`bring-bloch-tier0-search-m-p.witness.json`](https://github.com/litlfred/qou/blob/main/computations/bring-bloch-tier0-search-m-p.witness.json).
 
 ## What the identity does NOT yet give
 
@@ -277,15 +277,15 @@ pure derivation of the integer coefficients $\{n_i^{(K)}\}$ is found
   $\mathrm{Vol}(\mathcal{B}_3) = 8G$ exact closes the m_p residual
   to $\sim 1$ ppb (literal-truncation of the 11-digit
   $\lambda_p^{\mathrm{scale}}$ snapshot). See
-  [`borromean-volume-propagation-to-m-p.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/borromean-volume-propagation-to-m-p.witness.json).
+  [`borromean-volume-propagation-to-m-p.witness.json`](https://github.com/litlfred/qou/blob/main/computations/borromean-volume-propagation-to-m-p.witness.json).
 
 ## Witness chain
 
-1. [`borromean-volume-100dps.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/borromean-volume-100dps.witness.json) ---
+1. [`borromean-volume-100dps.witness.json`](https://github.com/litlfred/qou/blob/main/computations/borromean-volume-100dps.witness.json) ---
    $\mathrm{Vol}(\mathcal{B}_3) = 8G$ exact at 100 dps.
-2. [`borromean-volume-propagation-to-m-p.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/borromean-volume-propagation-to-m-p.witness.json) ---
+2. [`borromean-volume-propagation-to-m-p.witness.json`](https://github.com/litlfred/qou/blob/main/computations/borromean-volume-propagation-to-m-p.witness.json) ---
    251 ppb m_p residual closes to $\sim 1$ ppb with exact Vol.
-3. [`m-p-borromean-verification-50dps.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/m-p-borromean-verification-50dps.witness.json) ---
+3. [`m-p-borromean-verification-50dps.witness.json`](https://github.com/litlfred/qou/blob/main/computations/m-p-borromean-verification-50dps.witness.json) ---
    production m_p verification under exact Vol.
-4. [`bring-bloch-tier0-search-m-p.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring-bloch-tier0-search-m-p.witness.json) ---
+4. [`bring-bloch-tier0-search-m-p.witness.json`](https://github.com/litlfred/qou/blob/main/computations/bring-bloch-tier0-search-m-p.witness.json) ---
    Tier 0 PSLQ search; negative result motivating Tier 1+.

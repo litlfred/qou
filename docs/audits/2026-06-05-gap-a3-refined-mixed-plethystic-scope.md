@@ -64,7 +64,7 @@ The probe requires:
 
 1. **`m_{1/2}(λ)` for partitions of `n = 3A`** — Schur-Weyl multiplicity of V_{1/2} in V_{1/2}^⊗n. For SU(2), only ≤2-row partitions contribute; this is the same closure as PR #1870 C1 (Specht dim `f^λ` for ≤2-row, 0 otherwise).
 2. **`m_1(λ)` for partitions of `n = 3A`** — Schur-Weyl multiplicity of V_1 in V_1^⊗(2(Z-1)) (for the proton, Z-1 = 0 ⇒ trivial channel). For larger atoms (Z ≥ 2), this is sl_3 Schur-Weyl, requiring ≤3-row partition contributions.
-3. **χ^λ(β_K) for higher-A atoms** — currently the cached witnesses cover only the deuteron (n=6, see [`chi-deuteron-h6-at-q0-50dps.witness.json`](../../folio-assistant/computations/chi-deuteron-h6-at-q0-50dps.witness.json)). Probes for ⁴He (n=12) would need new Hecke character extractions.
+3. **χ^λ(β_K) for higher-A atoms** — currently the cached witnesses cover only the deuteron (n=6, see [`chi-deuteron-h6-at-q0-50dps.witness.json`](../../computations/chi-deuteron-h6-at-q0-50dps.witness.json)). Probes for ⁴He (n=12) would need new Hecke character extractions.
 
 For the deuteron specifically (Z=1 ⇒ m_1 channel trivial), the mixed candidate collapses to `f^λ^4 · 1` = `f^λ^4` (restricted ≤2-row), which is the PR #1870 C1 channel **raised to the 4th power**. The deuteron test of the mixed candidate is therefore a one-line modification of the existing C1 probe — but only the deuteron alone does not test the genuine MIXED case (which requires Z ≥ 2).
 

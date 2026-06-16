@@ -88,7 +88,7 @@ Open scope per user direction 2026-05-25. New branch `claude/kashiwara-crystal-o
 
 1. **Lean scaffolding** for crystal-graph weight assignment at H_6 (deuteron).
    - Build on existing [`lusztig-canonical-basis-q-eq-1.lean`](../../content/quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.lean), [`kashiwara-jones-c4-categorical.lean`](../../content/quantum-observable-universe/braids-and-knots/kashiwara-jones-c4-categorical.lean).
-   - Replace `gram_matrix q = 0` stub in [`universal-ilp-algorithm.lean`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean) with the computed 6×6 Frobenius matrix from [`gram-matrix-dual.py`](../../folio-assistant/computations/gram-matrix-dual.py).
+   - Replace `gram_matrix q = 0` stub in [`universal-ilp-algorithm.lean`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean) with the computed 6×6 Frobenius matrix from [`gram-matrix-dual.py`](../../computations/gram-matrix-dual.py).
    - First crystal vertices computed for sl₃ level 6 (deuteron weight).
 
 2. **Audit doc**: `docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md` — frames the conjecture Δ_λ(K) = canonical-basis-trace sum precisely; identifies the categorical theorem needed.

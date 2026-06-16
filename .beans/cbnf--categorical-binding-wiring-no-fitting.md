@@ -60,7 +60,7 @@ ansätze, GAP-A-3/A-4, and the appendix alg: blocks; results to be folded in.)
   crystal). The (1+q)/2 must emerge from one of these as a structural identity.
 - Any operator-selection/LP compute MUST emit primal AND dual
   (`y0_star`, `y_star`, `active_set`, `duality_gap`) via
-  `folio-assistant/computations/lp_dual_solver.py`.
+  `computations/lp_dual_solver.py`.
 - Any binding/Δ_λ compute change MUST sync the matching `alg:` block under
   `appendix-mass-binding-algorithms/` in the same PR.
 

@@ -157,7 +157,7 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 ### P1.3a — BW vs Wenzl-bridge vs shadow-price equivalence — ✅ landed (verified)
 
 🟢 **Closed.** Symbolic verification in
-[`folio-assistant/computations/bw_wenzl_shadow_equivalence.py`](../../folio-assistant/computations/bw_wenzl_shadow_equivalence.py)
+[`computations/bw_wenzl_shadow_equivalence.py`](../../computations/bw_wenzl_shadow_equivalence.py)
 proves the three forms are NOT independent; they are the same
 $w_\lambda = \dim_q(\lambda)^2 / [n]_q!$ scaled by explicit
 factors of $h = q - q^{-1}$:
@@ -192,7 +192,7 @@ schema or content changes required.
      (`hook-weight-derivation`, `mass-coefficient-shadow-price`,
      `y-lambda-closed-form-wenzl-bridge`) as proofs of each scaling.
   4. Refers to
-     [`bw_wenzl_shadow_equivalence.py`](../../folio-assistant/computations/bw_wenzl_shadow_equivalence.py)
+     [`bw_wenzl_shadow_equivalence.py`](../../computations/bw_wenzl_shadow_equivalence.py)
      for symbolic verification.
 - **B**: nothing.
 - **S**: existing derivation blocks update their `uses[]` to point
@@ -296,7 +296,7 @@ cross-check, not the primary derivation.
   neutron/neutrino comparison error. There is nothing to fix on
   the algebraic side; the workplan task becomes a
   **consistency sweep**.
-- **D**: Grep `folio-assistant/computations/` for any script that
+- **D**: Grep `computations/` for any script that
   emits a numerical $m_\nu$ from a knot-Markov-trace path (rather
   than from the vacuum-drag formula
   $m_\nu \sim \mu_0\cdot(q-1)$). Any such script is buggy by the
@@ -305,7 +305,7 @@ cross-check, not the primary derivation.
 - **S**: zero compute scripts produce a knot-derived neutrino
   mass; vacuum-drag predictions are clearly labelled as such; the
   obsolete "10⁶ off" line in
-  [`DERIVATION-STATUS.md`](../../folio-assistant/computations/DERIVATION-STATUS.md)
+  [`DERIVATION-STATUS.md`](../../computations/DERIVATION-STATUS.md)
   is replaced (already done in this audit pass).
 - **E**: 0.5 day.
 
@@ -367,7 +367,7 @@ accuracy.
 the H_3 weights are the canonical $w_\lambda$ at $n=3$ but applied
 per-generator at H_{3A}. The correct H_{3A} formulation already
 exists in
-[`schur_weyl_symbolic.py`](../../folio-assistant/computations/schur_weyl_symbolic.py)
+[`schur_weyl_symbolic.py`](../../computations/schur_weyl_symbolic.py)
 (per-partition weights via $w_\lambda = s_\lambda(q,q^{-1})/H_q(\lambda)$)
 but isn't wired into the live mass tower. So P2.2 splits:
 
@@ -433,16 +433,16 @@ but isn't wired into the live mass tower. So P2.2 splits:
 
 ### P2.3 — Word-shortcut undo functions, levels 4–7 — ✅ DONE
 
-- **W**: §3·C, [INFRASTRUCTURE-AUDIT.md §Track B](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md).
+- **W**: §3·C, [INFRASTRUCTURE-AUDIT.md §Track B](../../computations/INFRASTRUCTURE-AUDIT.md).
   No `undo_to_quark` for shells, atoms, molecules.
 - **D**: ✅ Implemented in
-  [`folio-assistant/computations/confinement_shortcuts.py`](../../folio-assistant/computations/confinement_shortcuts.py).
+  [`computations/confinement_shortcuts.py`](../../computations/confinement_shortcuts.py).
   All 7 levels have `LevelWord`-derived classes (`MesonWord`,
   `NucleonWord`, `AtomWord`, `ShellWord`, `CrossShellWord`,
   `NeutralAtomWord`, `MoleculeWord`) with `undo_to_quark` methods
   producing crossings dicts at the quark level. Self-test
   exercises every level (run via
-  `python3 folio-assistant/computations/confinement_shortcuts.py`).
+  `python3 computations/confinement_shortcuts.py`).
 - **B**: unblocked.
 - **S**: ✅ Self-test passes for L1–L7 with non-trivial crossings
   emitted at each level (e.g. ¹⁶O shell at L4: 47 generators / 191
@@ -471,7 +471,7 @@ but isn't wired into the live mass tower. So P2.2 splits:
 ### P2.5 — Symbolic-in-$q$ everywhere, late $q_0$-substitution — 🟡 surveyed; Tier B kickoff landed
 
 **Tier B kickoff (2026-05-01):** helper module
-[`witness_polynomial.py`](../../folio-assistant/computations/witness_polynomial.py)
+[`witness_polynomial.py`](../../computations/witness_polynomial.py)
 + first exemplar (`bw_wenzl_shadow_equivalence.py`) migrated. Per
 [`2026-05-01-p2-5-tier-b-kickoff.md`](2026-05-01-p2-5-tier-b-kickoff.md):
 re-survey corrects target count from 110 to **81** scripts; remaining
@@ -499,7 +499,7 @@ re-survey corrects target count from 110 to **81** scripts; remaining
 - **E**: Tier B 1 day; Tier A multi-week after P2.2 lands.
 
 Reference example for the canonical late-substitution pattern:
-[`bw_wenzl_shadow_equivalence.py`](../../folio-assistant/computations/bw_wenzl_shadow_equivalence.py)
+[`bw_wenzl_shadow_equivalence.py`](../../computations/bw_wenzl_shadow_equivalence.py)
 (written for P1.3a).
 
 ### P2.6 — GS-filtration narrative — ✅ already landed
@@ -615,7 +615,7 @@ Reference example for the canonical late-substitution pattern:
 
 ### P4.1 — DERIVATION-STATUS.md refresh
 
-- **D**: Update [`folio-assistant/computations/DERIVATION-STATUS.md`](../../folio-assistant/computations/DERIVATION-STATUS.md)
+- **D**: Update [`computations/DERIVATION-STATUS.md`](../../computations/DERIVATION-STATUS.md)
   after each P1 / P2 task lands. Replace "ad hoc"/"approx" tags as
   derivations close.
 - **E**: 0.25 day per refresh.

@@ -5,22 +5,22 @@
 **Scope:** Compare every module under
 [`qou-mass/src/qou_mass/_internal/`](../../qou-mass/src/qou_mass/_internal/)
 against its sibling in
-[`folio-assistant/computations/`](../../folio-assistant/computations/)
+[`computations/`](../../computations/)
 and decide which vendored copies can be deprecated outright.
 
 ## Method
 
 For each `<name>.py` in `qou-mass/src/qou_mass/_internal/`:
 
-1. `cmp -s qou-mass/src/qou_mass/_internal/<name>.py folio-assistant/computations/<name>.py`
+1. `cmp -s qou-mass/src/qou_mass/_internal/<name>.py computations/<name>.py`
    to detect byte-identical copies.
 2. `diff` for divergence size when not identical.
 3. `grep -rl --include='*.py' -E "(from <name> import|import <name>\b)"
-   folio-assistant/computations/` to count folio-side importers of the
+   computations/` to count folio-side importers of the
    *module name* (this is how every folio script imports its sibling —
    confirmed below).
 
-Cross-check: `grep -rl "from qou_mass" folio-assistant/computations/`
+Cross-check: `grep -rl "from qou_mass" computations/`
 returned **zero hits**, and likewise for `import qou_mass`. No folio
 script consumes the `qou_mass` package — every importer uses the bare
 sibling name (`from _precision import set_compute_dps, fmt`, etc.).
@@ -120,7 +120,7 @@ counterpart.
   vendored copy).
 
 The qou-mass `_internal/` tree is entirely redundant with
-folio-assistant/computations/ as of this audit. P3 deprecation can
+computations/ as of this audit. P3 deprecation can
 proceed without folio-side refactor; only the qou-mass package
 itself needs editing (Stage 1 shim, then Stage 2 deletion).
 
@@ -145,6 +145,6 @@ byte-identical and have no folio-side `qou_mass` consumer to break.
 ## Source
 
 - Vendored copies: [`qou-mass/src/qou_mass/_internal/`](../../qou-mass/src/qou_mass/_internal/)
-- Authoritative originals: [`folio-assistant/computations/`](../../folio-assistant/computations/)
+- Authoritative originals: [`computations/`](../../computations/)
 - Package metadata: [`qou-mass/pyproject.toml`](../../qou-mass/pyproject.toml)
   (version `0.1.0a1`, Development Status `3 - Alpha`).

@@ -28,7 +28,7 @@ Discriminate the singularity of `g(u) = Σ c_k u^k` via three measurements, all 
 | Branch point order β | `c_k → C · k^(β−1) · u_subst^(−k)` | `(u_subst − u)^(−β) · h(u)` analytic h |
 | Essential (of g itself) | `c_k` grows faster than any geometric | `g` has exp(1/(u_subst−u)) singularity |
 
-**Test:** the c_2..c_10 already extracted ([`qbeta_decay_sdp_extended_ck.py`](../../folio-assistant/computations/qbeta/qbeta_decay_sdp_extended_ck.py)) suffice — the k=8,9,10 asymptote is already clean. (Extending to c_11..c_15 is NOT possible without postulating canonical forms per rung, which would be an ansatz fit — see the Step 1 method note in the audit.) Check:
+**Test:** the c_2..c_10 already extracted ([`qbeta_decay_sdp_extended_ck.py`](../../computations/qbeta/qbeta_decay_sdp_extended_ck.py)) suffice — the k=8,9,10 asymptote is already clean. (Extending to c_11..c_15 is NOT possible without postulating canonical forms per rung, which would be an ansatz fit — see the Step 1 method note in the audit.) Check:
 1. Is `c_k · u_subst^k` constant at large k? → simple pole.
 2. Is `c_k · u_subst^k / k^β` constant for some non-integer β? → branch point.
 3. Does the ratio grow super-geometrically? → essential.
@@ -47,7 +47,7 @@ Out-of-scope per CLAUDE.md "no production wiring before cross-anchor validation"
 
 If steps 1 + 2 converge on a categorical singularity-type + matching residue:
 
-- Replace the empirically-extracted c_3..c_10 in [`qbeta_ladder_verification_1ppq.py`](../../folio-assistant/computations/qbeta/qbeta_ladder_verification_1ppq.py) with the derived formula
+- Replace the empirically-extracted c_3..c_10 in [`qbeta_ladder_verification_1ppq.py`](../../computations/qbeta/qbeta_ladder_verification_1ppq.py) with the derived formula
 - Re-run the L1 dashboard `onepb-status-dashboard.witness.json` — should show the new derived tier
 - Append to `1ppq-qbeta.md` ledger
 - Reports tiered per the canonical-derivation-cheat-sheet TRUNCATION ORDER framing

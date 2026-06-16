@@ -17,8 +17,8 @@ touches the same trace recursion file.
 | `tr_m_atomic_mpfr` — end-to-end pipeline in Rust + MPFR | `tools/hecke-engine/src/tr_m_atomic_mpfr.rs` | 199 | 3 |
 | Cyclic-canonical cache key (Tier 1.C) | `tools/hecke-engine/src/tr_m_word_lq.rs` | +90 | 3 (added) |
 | PyO3 bindings `incremental_reduce_rust` + `tr_m_atomic_mpfr` | `tools/pyhecke-native/src/lib.rs` | +90 | — |
-| Python bridge `tr_M_atomic_rust_full` (single-call) | `folio-assistant/computations/markov/markov_peel_rust_bridge.py` | +85, -25 | — |
-| `--method laurent_q_rust` mass-table dispatch | `folio-assistant/computations/canonical_mass_table_extended.py` | +28 | — |
+| Python bridge `tr_M_atomic_rust_full` (single-call) | `computations/markov/markov_peel_rust_bridge.py` | +85, -25 | — |
+| `--method laurent_q_rust` mass-table dispatch | `computations/canonical_mass_table_extended.py` | +28 | — |
 
 Total: **153 hecke-engine library tests pass** (existing 106 + 47
 new for the Tier 1.A modules and Tier 1.C tests).  Builds clean

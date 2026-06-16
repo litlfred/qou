@@ -1,5 +1,5 @@
 // Ground-state Gröbner trace for all verification nuclei.
-// Run: Singular folio-assistant/computations/singular-all-nuclei.sing
+// Run: Singular computations/singular-all-nuclei.sing
 // No procs — flat script avoids ring scoping issues.
 
 LIB "freegb.lib";

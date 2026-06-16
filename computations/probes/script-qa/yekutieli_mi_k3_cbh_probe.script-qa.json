@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/probes/yekutieli_mi_k3_cbh_probe.py",
+  "script_path": "computations/probes/yekutieli_mi_k3_cbh_probe.py",
   "language": "python",
   "source_hash": "fea865b46fad",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -72,7 +72,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probes/yekutieli_mi_k3_cbh_probe.py:79: `def commutator(…)` has 2 parameters without type annotation: A, B — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/yekutieli_mi_k3_cbh_probe.py:84: `def cbh_log_product(…)` has 2 parameters without type annotation: generators, order — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/yekutieli_mi_k3_cbh_probe.py:109: `def bch2(…)` has 3 parameters without type annotation: A, B, ord — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/probes/yekutieli_mi_k3_cbh_probe.py:79: `def commutator(…)` has 2 parameters without type annotation: A, B — add `: type` (or `: Any` if the type genuinely is untyped) | computations/probes/yekutieli_mi_k3_cbh_probe.py:84: `def cbh_log_product(…)` has 2 parameters without type annotation: generators, order — add `: type` (or `: Any` if the type genuinely is untyped) | computations/probes/yekutieli_mi_k3_cbh_probe.py:109: `def bch2(…)` has 3 parameters without type annotation: A, B, ord — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -91,7 +91,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probes/yekutieli_mi_k3_cbh_probe.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/probes/yekutieli_mi_k3_cbh_probe.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -110,7 +110,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probes/yekutieli_mi_k3_cbh_probe.py:1: script `yekutieli_mi_k3_cbh_probe.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/probes/yekutieli_mi_k3_cbh_probe.py:1: script `yekutieli_mi_k3_cbh_probe.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [
@@ -146,7 +146,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "major",
-        "evidence": "folio-assistant/computations/probes/yekutieli_mi_k3_cbh_probe.py:382: script writes `.witness.json` (\"yekutieli-mi-k3-cbh-probe.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/probes/yekutieli_mi_k3_cbh_probe.py:382: script writes `.witness.json` (\"yekutieli-mi-k3-cbh-probe.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       }
     ],
     "compute_no_mpf_to_float_cast": [

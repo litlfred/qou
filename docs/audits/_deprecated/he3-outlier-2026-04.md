@@ -4,8 +4,8 @@
 
 **Date:** 2026-04-27
 **Branch:** `claude/he3-outlier`
-**Witness:** `folio-assistant/computations/low-isotope-mass-table.witness.json`
-**Feeder:** `folio-assistant/computations/sweeps/low_isotope_binding_sweep.py`
+**Witness:** `computations/low-isotope-mass-table.witness.json`
+**Feeder:** `computations/sweeps/low_isotope_binding_sweep.py`
   → consumed by `low_isotope_mass_table.py`
 
 ## Outlier

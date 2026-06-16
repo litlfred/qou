@@ -25,7 +25,7 @@ two crossings at the same generator interact strongly, while
 crossings at distant generators are nearly orthogonal.
 
 Usage:
-    python3 folio-assistant/computations/atom_frobenius_volume.py
+    python3 computations/atom_frobenius_volume.py
 """
 
 import math

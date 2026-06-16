@@ -119,7 +119,7 @@ factorization theorem.
 1. Compute $L_k$ seminormal eigenvalues $q^{2 c_T(k)}$ per SYT
  (already available via
  `hecke_characters.build_seminormal_matrices` in
- `folio-assistant/computations/hecke/hecke_characters.py`).
+ `computations/hecke/hecke_characters.py`).
 2. Build $\hat V_k^{\mathrm{JM}}$ via Plancherel-weighted sum
  over SYTs.
 3. Sum cell-pair Φ\_q contributions (all $\binom{n}{2}$ pairs,
@@ -132,7 +132,7 @@ Implementation is stubbed in the
 ## Empirical validation
 
 A first-pass implementation
-(`folio-assistant/computations/syt_cell_tower.py`) computes
+(`computations/syt_cell_tower.py`) computes
 $\hat V_k^{\mathrm{JM}}$ for $k = 1, \ldots, 3A$ on the atom braid
 word and assembles the tower of
 equation\~\ref{eq:syt-cell-tower}. Against the scalar all-pairs form

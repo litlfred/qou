@@ -44,7 +44,7 @@ same machinery and should return a_0 = 5/2, a_2 = 3/4, a_{4+} = 0.
 
 ## Cross-references
 
-- [`linking_weight_family_a`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/_li_2_q_util.py#L172) — production Family A (PROVED, h²-truncated)
+- [`linking_weight_family_a`](https://github.com/litlfred/qou/blob/main/computations/_li_2_q_util.py#L172) — production Family A (PROVED, h²-truncated)
 - [`docs/canonical-derivation-cheat-sheet.md §5`](https://github.com/litlfred/qou/blob/main/docs/canonical-derivation-cheat-sheet.md) — refinement routes
 - [PR #1272](https://github.com/litlfred/qou/pull/1272) — γγ̄ localisation (92% h² coefficient / 8% h⁴+ tower)
 - [PR #1276](https://github.com/litlfred/qou/pull/1276) — Bring + Faddeev h⁴ candidate

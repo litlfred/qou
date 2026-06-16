@@ -170,7 +170,7 @@ def main() -> int:
     EMPIRICAL_C3_MUON = mpf("-2.0097")    # muon-pin anchor
 
     # Load per-block data via WitnessBuilder so the drift detector
-    # (folio-assistant/computations/witness_dependency_drift.py) sees
+    # (computations/witness_dependency_drift.py) sees
     # the upstream hash. Per Copilot review on PR #1609.
     upstream_path = _pb.witness_path("qbeta-per-block-paper-closed-forms.witness.json", HERE)
     per_block_witness = builder.add_upstream(upstream_path)

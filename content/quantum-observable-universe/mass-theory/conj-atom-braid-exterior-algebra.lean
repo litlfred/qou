@@ -32,9 +32,9 @@ open (categorical proof would use Schur-Weyl duality + KLR
 diagrammatics).
 
 Ref: [manuscript] conj:atom-braid-exterior-algebra
-Ref: [manuscript] folio-assistant/computations/mass_at_3A_proper.py
+Ref: [manuscript] computations/mass_at_3A_proper.py
 Ref: [manuscript] tools/hecke-engine/src/gb_nf_reducer.rs (BraidLetter)
-Ref: [manuscript] folio-assistant/computations/joint-tower-sdp-rust.witness.json
+Ref: [manuscript] computations/joint-tower-sdp-rust.witness.json
 -/
 
 namespace QOU.BraidKnot.AtomBraidExteriorAlgebra

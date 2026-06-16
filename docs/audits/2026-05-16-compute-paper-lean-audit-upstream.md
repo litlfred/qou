@@ -1,16 +1,16 @@
 # Compute / Paper / Lean Coverage Audit
 
 **Date:** 2026-05-16
-**Scope:** Three compute scripts in `folio-assistant/computations/`.
+**Scope:** Three compute scripts in `computations/`.
 **Method:** Read each script in full, enumerate math claims, search
 `content/quantum-observable-universe/` for backing content blocks,
 inspect sibling `.lean` files for proof status.
 
 Files audited (all paths absolute):
 
-- `/home/user/qou/folio-assistant/computations/bw_chirality_isotopes.py` (305 lines)
-- `/home/user/qou/folio-assistant/computations/gb_filtration_jet_tracker.py` (545 lines)
-- `/home/user/qou/folio-assistant/computations/term5_v2_chirality.py` (153 lines)
+- `/home/user/qou/computations/bw_chirality_isotopes.py` (305 lines)
+- `/home/user/qou/computations/gb_filtration_jet_tracker.py` (545 lines)
+- `/home/user/qou/computations/term5_v2_chirality.py` (153 lines)
 
 ---
 

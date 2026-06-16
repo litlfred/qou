@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-24
 **Branch:** `claude/torus-knot-h-expansion-pattern-2026-05-24`
-**Script:** [`folio-assistant/computations/torus_knot_h_expansion_pattern.py`](../../folio-assistant/computations/torus_knot_h_expansion_pattern.py)
+**Script:** [`computations/torus_knot_h_expansion_pattern.py`](../../computations/torus_knot_h_expansion_pattern.py)
 **Witness:** `torus-knot-h-expansion-pattern.witness.json`
 **Status:** EXPLORATORY (audit-only). Closed forms are symbolically PROVED via sympy.
 
@@ -101,14 +101,14 @@ Per [`content/quantum-observable-universe/archimedean-universe/electroweak-higgs
 
 **CODATA m² ratio ≈ 1 : 1.29 : 2.42** (m_W ≈ 80.4 GeV, m_Z ≈ 91.2 GeV, m_H ≈ 125.1 GeV).
 
-The c_2 ratio does **not** reproduce CODATA — confirming q3's finding that torus-knot mass formulae cannot be the canonical `m(K) = m_e · VolDensity(K, q₀)` evaluated at h-order 2 alone (since the c_2 slice ignores higher h-orders, and since Vol(T(2,k)) = 0 for Seifert-fibered knots/links). The `c_{2j}` coefficients describe **h-curvature of the Markov trace**, not the physical mass directly. The mass for H/W/Z must derive via the Reshetikhin–Turaev chain (q2 probe, [`pentagon_rt_torus_knot_higgs_probe.py`](../../folio-assistant/computations/probes/pentagon_rt_torus_knot_higgs_probe.py)) or another route.
+The c_2 ratio does **not** reproduce CODATA — confirming q3's finding that torus-knot mass formulae cannot be the canonical `m(K) = m_e · VolDensity(K, q₀)` evaluated at h-order 2 alone (since the c_2 slice ignores higher h-orders, and since Vol(T(2,k)) = 0 for Seifert-fibered knots/links). The `c_{2j}` coefficients describe **h-curvature of the Markov trace**, not the physical mass directly. The mass for H/W/Z must derive via the Reshetikhin–Turaev chain (q2 probe, [`pentagon_rt_torus_knot_higgs_probe.py`](../../computations/probes/pentagon_rt_torus_knot_higgs_probe.py)) or another route.
 
 ## Algebraic proof (closes the sympy-verified identity to a theorem)
 
 The closed form `P_m(h) = (q^{2m+1} + q^{-(2m+1)}) / (2 [2]_q)` was stated and sympy-verified for `m = 1..6` in PR #1129; here is the algebraic chain that elevates "empirically verified for finitely many m" to "proved for all m ≥ 0".
 
 **Step 1 — Markov trace closed form for `T(2, 2m)`.**
-From the q3 audit ([`torus_knot_markov_trace_closed_form.py`](../../folio-assistant/computations/torus_knot_markov_trace_closed_form.py), commit `5418678c8`) via the Wedderburn decomposition `H_2(q) ≅ M_1 ⊕ M_1` with Schur elements `y_{(2)} = q² / [2]_q²`, `y_{(1,1)} = 1 / [2]_q²`:
+From the q3 audit ([`torus_knot_markov_trace_closed_form.py`](../../computations/torus_knot_markov_trace_closed_form.py), commit `5418678c8`) via the Wedderburn decomposition `H_2(q) ≅ M_1 ⊕ M_1` with Schur elements `y_{(2)} = q² / [2]_q²`, `y_{(1,1)} = 1 / [2]_q²`:
 
 ```
 tr_M(σ_1^k)  =  y_{(2)} · q^k  +  y_{(1,1)} · (-q^{-1})^k
@@ -227,7 +227,7 @@ The identity (6) is itself a folklore result; the Chebyshev / Fibonacci-polynomi
 
 ## Chebyshev / Fibonacci-polynomial duality with sibling derivation
 
-A sibling derivation landed on `main` shortly after this PR opened: [`binomial_pattern_chebyshev_derivation.py`](../../folio-assistant/computations/binomial_pattern_chebyshev_derivation.py) (commit `07ccc8e94`). It derives the same `c_{2j}(T(2,2m)) = C(m+j, 2j)/2` pattern via the **trigonometric** Chebyshev `T`-polynomial form
+A sibling derivation landed on `main` shortly after this PR opened: [`binomial_pattern_chebyshev_derivation.py`](../../computations/binomial_pattern_chebyshev_derivation.py) (commit `07ccc8e94`). It derives the same `c_{2j}(T(2,2m)) = C(m+j, 2j)/2` pattern via the **trigonometric** Chebyshev `T`-polynomial form
 
 ```
 T_{2m+1}(x) / x  =  Σ_{j=0}^m  C(m+j, 2j) · (4(x² − 1))^j        (Chebyshev form, x = cosh φ ∈ ℝ).
@@ -287,9 +287,9 @@ Any future RT-chain compute that derives W/Z/H masses must round-trip through th
 
 ## Cross-references
 
-- q3 (predecessor — established the Wedderburn closed form): [`torus_knot_markov_trace_closed_form.py`](../../folio-assistant/computations/torus_knot_markov_trace_closed_form.py), commit `5418678c8`
-- q2 (RT-chain probe — torus-knot mass route): [`pentagon_rt_torus_knot_higgs_probe.py`](../../folio-assistant/computations/probes/pentagon_rt_torus_knot_higgs_probe.py), commit `1e98c7391`
-- **W = √[2]_q probe (RETRACTED by jet-order check)** — downstream RT probe that used the `c_2` values from this audit as input to the RT-chain: [`rt_w_sqrt_quantum_two_probe.py`](../../folio-assistant/computations/probes/rt_w_sqrt_quantum_two_probe.py), commit `fcbe24c3a`. The substrate-point match was a jet-mixing coincidence; jet-order validation ([`rt_w_sqrt2_jet_order_validation.py`](../../folio-assistant/computations/rt_w_sqrt2_jet_order_validation.py), commit `aa11d2f06`) shows W/Z and W/H need either a different RT chain or a non-multiplicative W correction. The Z/H twist-count ratio `6/8 = 0.75` (vs SM 0.729) IS structurally genuine.
+- q3 (predecessor — established the Wedderburn closed form): [`torus_knot_markov_trace_closed_form.py`](../../computations/torus_knot_markov_trace_closed_form.py), commit `5418678c8`
+- q2 (RT-chain probe — torus-knot mass route): [`pentagon_rt_torus_knot_higgs_probe.py`](../../computations/probes/pentagon_rt_torus_knot_higgs_probe.py), commit `1e98c7391`
+- **W = √[2]_q probe (RETRACTED by jet-order check)** — downstream RT probe that used the `c_2` values from this audit as input to the RT-chain: [`rt_w_sqrt_quantum_two_probe.py`](../../computations/probes/rt_w_sqrt_quantum_two_probe.py), commit `fcbe24c3a`. The substrate-point match was a jet-mixing coincidence; jet-order validation ([`rt_w_sqrt2_jet_order_validation.py`](../../computations/rt_w_sqrt2_jet_order_validation.py), commit `aa11d2f06`) shows W/Z and W/H need either a different RT chain or a non-multiplicative W correction. The Z/H twist-count ratio `6/8 = 0.75` (vs SM 0.729) IS structurally genuine.
 - Electroweak triplet content block: [`archimedean-universe/electroweak-higgs-torus-link-triplet.md`](../../content/quantum-observable-universe/archimedean-universe/electroweak-higgs-torus-link-triplet.md)
 - Cheat sheet: [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
 - Absorption framing (for VolDensity — the canonical per-knot mass factor): [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)

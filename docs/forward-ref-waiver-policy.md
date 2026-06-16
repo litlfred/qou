@@ -19,9 +19,9 @@ connected scholarly paper. This document defines the six categories,
 which are waived, and why.
 
 Authoritative classifier:
-[`folio-assistant/computations/forward_ref_classifier.py`](../folio-assistant/computations/forward_ref_classifier.py).
+[`computations/forward_ref_classifier.py`](../computations/forward_ref_classifier.py).
 Run it to regenerate
-[`forward-ref-classification.witness.json`](../folio-assistant/computations/forward-ref-classification.witness.json).
+[`forward-ref-classification.witness.json`](../computations/forward-ref-classification.witness.json).
 
 ## Categories
 
@@ -36,7 +36,7 @@ Run it to regenerate
 
 ## Current counts
 
-Regenerate with `python3 folio-assistant/computations/forward_ref_classifier.py`.
+Regenerate with `python3 computations/forward_ref_classifier.py`.
 As of the policy's introduction:
 
 ```

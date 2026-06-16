@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/_deprecated/symbolic_k6_characters.py",
+  "script_path": "computations/_deprecated/symbolic_k6_characters.py",
   "language": "python",
   "source_hash": "efc0f9a4e5e1",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-22T18:27:38.070Z",
         "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/symbolic_k6_characters.py:366: bare `float(m_321.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/symbolic_k6_characters.py:375: bare `float(total_markov.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/symbolic_k6_characters.py:355: bare float literal `0.915965594177219015054603514932` — wrap in `mpmath.mpf(\"0.915965594177219015054603514932\")` / `Decimal(\"0.915965594177219015054603514932\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/symbolic_k6_characters.py:360: bare float literal `2.0` — wrap in `mpmath.mpf(\"2.0\")` / `Decimal(\"2.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/symbolic_k6_characters.py:379: bare float literal `1e-15` — wrap in `mpmath.mpf(\"1e-15\")` / `Decimal(\"1e-15\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/_deprecated/symbolic_k6_characters.py:366: bare `float(m_321.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/symbolic_k6_characters.py:375: bare `float(total_markov.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/symbolic_k6_characters.py:355: bare float literal `0.915965594177219015054603514932` — wrap in `mpmath.mpf(\"0.915965594177219015054603514932\")` / `Decimal(\"0.915965594177219015054603514932\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/symbolic_k6_characters.py:360: bare float literal `2.0` — wrap in `mpmath.mpf(\"2.0\")` / `Decimal(\"2.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/symbolic_k6_characters.py:379: bare float literal `1e-15` — wrap in `mpmath.mpf(\"1e-15\")` / `Decimal(\"1e-15\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -38,7 +38,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/symbolic_k6_characters.py:366: bare `float(m_321.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/symbolic_k6_characters.py:375: bare `float(total_markov.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/symbolic_k6_characters.py:355: bare float literal `0.915965594177219015054603514932` — wrap in `mpmath.mpf(\"0.915965594177219015054603514932\")` / `Decimal(\"0.915965594177219015054603514932\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/symbolic_k6_characters.py:360: bare float literal `2.0` — wrap in `mpmath.mpf(\"2.0\")` / `Decimal(\"2.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/symbolic_k6_characters.py:379: bare float literal `1e-15` — wrap in `mpmath.mpf(\"1e-15\")` / `Decimal(\"1e-15\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/_deprecated/symbolic_k6_characters.py:366: bare `float(m_321.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/symbolic_k6_characters.py:375: bare `float(total_markov.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/symbolic_k6_characters.py:355: bare float literal `0.915965594177219015054603514932` — wrap in `mpmath.mpf(\"0.915965594177219015054603514932\")` / `Decimal(\"0.915965594177219015054603514932\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/symbolic_k6_characters.py:360: bare float literal `2.0` — wrap in `mpmath.mpf(\"2.0\")` / `Decimal(\"2.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/symbolic_k6_characters.py:379: bare float literal `1e-15` — wrap in `mpmath.mpf(\"1e-15\")` / `Decimal(\"1e-15\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/symbolic_k6_characters.py:1: script lacks both a module docstring and ≥10% comment density (got 22/314 = 7.0%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/_deprecated/symbolic_k6_characters.py:1: script lacks both a module docstring and ≥10% comment density (got 22/314 = 7.0%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       }
     ],
     "variables_typed": [
@@ -93,7 +93,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/symbolic_k6_characters.py:39: `def __init__(…)` has 1 parameter without type annotation: dim — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/symbolic_k6_characters.py:43: `def __setitem__(…)` has 2 parameters without type annotation: key, val — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/symbolic_k6_characters.py:51: `def __getitem__(…)` has 1 parameter without type annotation: key — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/symbolic_k6_characters.py:56: `def eye(…)` has 1 parameter without type annotation: dim — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/symbolic_k6_characters.py:64: `def __mul__(…)` has 1 parameter without type annotation: other — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/_deprecated/symbolic_k6_characters.py:39: `def __init__(…)` has 1 parameter without type annotation: dim — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/symbolic_k6_characters.py:43: `def __setitem__(…)` has 2 parameters without type annotation: key, val — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/symbolic_k6_characters.py:51: `def __getitem__(…)` has 1 parameter without type annotation: key — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/symbolic_k6_characters.py:56: `def eye(…)` has 1 parameter without type annotation: dim — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/symbolic_k6_characters.py:64: `def __mul__(…)` has 1 parameter without type annotation: other — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -112,7 +112,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/symbolic_k6_characters.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/_deprecated/symbolic_k6_characters.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -148,7 +148,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/symbolic_k6_characters.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
+        "evidence": "computations/_deprecated/symbolic_k6_characters.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
       }
     ],
     "uses_library_framework_appropriately": [

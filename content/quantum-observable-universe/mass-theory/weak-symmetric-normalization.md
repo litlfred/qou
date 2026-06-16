@@ -96,7 +96,7 @@ fixes $k \in \{2, 3, 4\}$.
 
 ### Numerical evaluation (for cross-checks)
 
-At $q_0 \approx :val[q_0]{precision=6, witness=folio-assistant/computations/q-pinning-50-digit.witness.json}$ (50 dps):
+At $q_0 \approx :val[q_0]{precision=6, witness=computations/q-pinning-50-digit.witness.json}$ (50 dps):
 - $q^4 \approx 1.5170$
 - $q^6 \approx 1.8694$
 - $q^8 \approx 2.3035$

@@ -7,7 +7,7 @@ This file specialises the abstract `HoefsmitRepresentation`
 infrastructure of `QOU.Hecke.Hoefsmit` to the **staircase**
 partitions `ρ k = (k, k-1, …, 1)`, and records the canonical
 `β_EW Δ_I^minimal` braid word used by the Python pipeline
-(`folio-assistant/computations/staircase_ew_predictions.py`).
+(`computations/staircase_ew_predictions.py`).
 
 The pieces here are the Lean-side counterparts of the Python
 helpers `beta_ew_word` and the staircase shape used by

@@ -15,9 +15,9 @@ PRs #1684/#1691): the hypothesis that the 3-strand Borromean baryon
 natively at `n = 5` and there is **no vertical map** to construct — the
 keystone dissolves.
 **Compute:**
-[`native_5_strand_baryon.py`](../../folio-assistant/computations/native_5_strand_baryon.py),
+[`native_5_strand_baryon.py`](../../computations/native_5_strand_baryon.py),
 witness
-[`native-5-strand-baryon.witness.json`](../../folio-assistant/computations/native-5-strand-baryon.witness.json)
+[`native-5-strand-baryon.witness.json`](../../computations/native-5-strand-baryon.witness.json)
 (audit-only, 7 assertions pass; RAW Markov traces; `h⁴ = −3/4` is a
 **FALSIFICATION reference**, never a target).
 

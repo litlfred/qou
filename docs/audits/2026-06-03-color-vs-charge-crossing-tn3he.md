@@ -5,7 +5,7 @@ the **color-blind** averaged crossing `σ − h/2`. Two weighted refinements
 are candidates for the bond-type asymmetry that splits ³H (8.482 MeV) from
 ³He (7.718 MeV) — a **0.764 MeV ≈ 9.5 %** gap. This doc quantifies which one.
 
-Probe: [`binding_color_vs_charge_tn3he.py`](../../folio-assistant/computations/binding_color_vs_charge_tn3he.py)
+Probe: [`binding_color_vs_charge_tn3he.py`](../../computations/binding_color_vs_charge_tn3he.py)
 (witness `binding-color-vs-charge-tn3he.witness.json`). Zero fit; E₀ = CAL-3.
 
 ## The two candidate weightings

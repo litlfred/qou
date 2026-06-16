@@ -165,7 +165,7 @@ the substrate parameter $q_0$) reproduces the AME mass term
 without further corrections.
 
 **Empirical status (2026-05-09).** The companion witness
-[`alpha-5-jucys-murphy-central.witness.json`](folio-assistant/computations/alpha-5-jucys-murphy-central.witness.json)
+[`alpha-5-jucys-murphy-central.witness.json`](computations/alpha-5-jucys-murphy-central.witness.json)
 computes the $\ell = 5$ (height-6) sum at $A \in \{2, 3, 4\}$
 and reports a **relative spread of $\approx 482\%$** in the
 $1/[3A]_q!$-normalised quantity at $q_0$. This means the

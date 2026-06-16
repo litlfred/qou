@@ -16,9 +16,9 @@ export default proposition({
   computation: {
     engine: "sympy",
     script:
-      "folio-assistant/computations/qbeta/qbeta_bar_even_kernel_invariant_probe.py",
+      "computations/qbeta/qbeta_bar_even_kernel_invariant_probe.py",
     witness:
-      "folio-assistant/computations/qbeta/qbeta-bar-even-kernel-invariant-probe.witness.json",
+      "computations/qbeta/qbeta-bar-even-kernel-invariant-probe.witness.json",
     status: "verified",
   },
   tags: [

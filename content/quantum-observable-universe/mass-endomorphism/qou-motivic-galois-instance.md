@@ -18,7 +18,7 @@ after a finite number of terms.
 ## Construction (three steps)
 
 1. **Extraction**
-   ([`folio-assistant/computations/probes/habiro_frobenius_probe.py`](../../../folio-assistant/computations/probes/habiro_frobenius_probe.py)).
+   ([`computations/probes/habiro_frobenius_probe.py`](../../../computations/probes/habiro_frobenius_probe.py)).
    For each atom in
    `habiro-coefficients-atomic.witness.json` (proton, neutron,
    deuteron) and each prime $p \in \{2, 3, 5, 7, 11, 13\}$, evaluate

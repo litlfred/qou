@@ -24,7 +24,7 @@ $|y_\lambda(q_0) \cdot \chi_\lambda(T_w)|$ and $d_\lambda$ is the number
 of standard Young tableaux of shape $\lambda$ (hook-length formula).
 
 **Critical refinement (issue #604, deliverable 4 numerical evidence):** the
-B_3-level analysis (`folio-assistant/computations/rho_prefactor_structural_verifier.py`,
+B_3-level analysis (`computations/rho_prefactor_structural_verifier.py`,
 witness `rho-prefactor-structural-verifier.witness.json`) shows that
 **proton and ³He have identical χ_λ values in H_3(q_0)** — their
 braid words are mutual inverses ((σ_1 σ_2^{-1})^3 vs (σ_1^{-1} σ_2)^3),
@@ -67,7 +67,7 @@ namespace QOU.BraidKnot
     structure at the braid strand count (3) but distinct ρ — the
     embedding into H_{3(Z+N)} is what carries the multiplicity
     information.  Numerical evidence:
-    `folio-assistant/computations/rho-prefactor-structural-verifier.witness.json`
+    `computations/rho-prefactor-structural-verifier.witness.json`
     + `binding-k-solver.witness.json` (issue #604 deliverables 3 + 4). -/
 -- Ref: [manuscript] conj:rho-prefactor-structural
 -- Ref: [manuscript] prop:wedderburn-trace-identity

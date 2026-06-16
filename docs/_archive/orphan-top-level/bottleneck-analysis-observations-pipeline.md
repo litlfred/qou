@@ -1,7 +1,7 @@
 # Bottleneck Analysis: Physical Observations Expected-Value Pipeline
 
 **Date:** 2026-04-15
-**Scope:** `folio-assistant/computations/`, `tools/hecke-engine/`, `scripts/witness-audit.ts`
+**Scope:** `computations/`, `tools/hecke-engine/`, `scripts/witness-audit.ts`
 
 ## Pipeline Architecture
 

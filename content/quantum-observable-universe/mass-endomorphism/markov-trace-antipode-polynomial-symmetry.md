@@ -103,8 +103,8 @@ $\operatorname{tr}_M(\mathcal{B}_n) = (\dots) / (12 q^8 \cdot (q^4 + q^2 + 1))$.
 
 ## Witness
 
-- `folio-assistant/computations/poly_q_proof_probe.py` — sympy-exact verification.
-- `folio-assistant/computations/poly-q-proof.witness.json` — proof certificate.
+- `computations/poly_q_proof_probe.py` — sympy-exact verification.
+- `computations/poly-q-proof.witness.json` — proof certificate.
 
 ## References
 

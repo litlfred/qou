@@ -20,7 +20,7 @@ Usage:
 The output conforms to the ComputationWitness interface in
 folio-assistant/schemas/types.ts.
 
-@module folio-assistant/computations/witness_base
+@module computations/witness_base
 """
 
 import hashlib

@@ -3,7 +3,7 @@
 **Pair**: [`2026-05-01-math-framework-workplan.md`](2026-05-01-math-framework-workplan.md) §P2.5
 **Branch**: `claude/audit-math-framework-FXlp2`
 **Method**: Bulk grep over
-[`folio-assistant/computations/`](../../folio-assistant/computations/)
+[`computations/`](../../computations/)
 classifying scripts by sympy capability + early/late $q_0$ substitution.
 
 ## Headline
@@ -35,7 +35,7 @@ currently emit a polynomial-form. Full refactor is many weeks, not
 | `bw_wenzl_shadow_equivalence.py` (P1.3a) | ✅ | ✅ | Reference example: full symbolic + late substitution |
 
 **Live compute pipeline is purely numerical.** The mass tower's
-~99%-of-mass missing terms (per [`AUDIT-crt-k-level.md`](../../folio-assistant/computations/AUDIT-crt-k-level.md))
+~99%-of-mass missing terms (per [`AUDIT-crt-k-level.md`](../../computations/AUDIT-crt-k-level.md))
 *and* the symbolic-$q$ witness gap are both downstream of the same
 infrastructure decision: whether to keep mpmath direct or to pivot
 to **CRT polynomial reconstruction** (P2.2).
@@ -44,7 +44,7 @@ to **CRT polynomial reconstruction** (P2.2).
 
 `tower_binding_symbolic.py` already exists as the sympy version of
 the tower computation. Per
-[`INFRASTRUCTURE-AUDIT.md`](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md)
+[`INFRASTRUCTURE-AUDIT.md`](../../computations/INFRASTRUCTURE-AUDIT.md)
 §Track A: "sympy too slow → use CRT reconstruction of polynomial
 coefficients from mod-$p$ evaluations". Polynomial explosion at
 $A=4$ rules out direct symbolic computation.
@@ -80,7 +80,7 @@ pipeline) requires P2.2 first.
 
 ## Reference example for the canonical late-substitution pattern
 
-[`bw_wenzl_shadow_equivalence.py`](../../folio-assistant/computations/bw_wenzl_shadow_equivalence.py)
+[`bw_wenzl_shadow_equivalence.py`](../../computations/bw_wenzl_shadow_equivalence.py)
 (written for P1.3a) demonstrates the pattern:
 
 ```python

@@ -83,7 +83,7 @@ fns) rather than raw B_n generators, so adopting requires defining
 an evaluator(word) → fingerprint function appropriate to that
 abstraction (typically: trace + per-state-component invariants).
 
-@module folio-assistant/computations/klr_canonical_basis_filter
+@module computations/klr_canonical_basis_filter
 """
 from __future__ import annotations
 

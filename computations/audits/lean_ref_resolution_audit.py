@@ -41,7 +41,7 @@ under the claimed name somewhere reachable"; it does not certify the
 declaration is what the .md describes.
 
 Usage:
-    python3 folio-assistant/computations/lean_ref_resolution_audit.py [--strict]
+    python3 computations/lean_ref_resolution_audit.py [--strict]
 
 With --strict, exits non-zero if any non-ok class is observed
 (suitable for CI gating once the 305-hit baseline has been brought

@@ -72,8 +72,8 @@ The probe currently runs L_H = σ_1² in B_2 (extended to B_3 with trivial third
 
 ## Files
 
-- Probe: [`folio-assistant/computations/binding_link_psd_feasibility_probe.py`](../../folio-assistant/computations/binding_link_psd_feasibility_probe.py)
-- Witness: [`folio-assistant/computations/binding-link-psd-feasibility-probe.witness.json`](../../folio-assistant/computations/binding-link-psd-feasibility-probe.witness.json)
+- Probe: [`computations/binding_link_psd_feasibility_probe.py`](../../computations/binding_link_psd_feasibility_probe.py)
+- Witness: [`computations/binding-link-psd-feasibility-probe.witness.json`](../../computations/binding-link-psd-feasibility-probe.witness.json)
 
 ## Cross-references
 

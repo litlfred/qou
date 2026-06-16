@@ -35,7 +35,7 @@ empirical (CAL-4-fitted, per the caveat above).
 
 Usage
 -----
-    python3 folio-assistant/computations/mobius_limit_from_thimble.py
+    python3 computations/mobius_limit_from_thimble.py
 """
 
 import math

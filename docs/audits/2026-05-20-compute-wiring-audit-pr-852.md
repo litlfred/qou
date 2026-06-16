@@ -99,4 +99,4 @@ The mass pipeline + knot atlas + three-calibration discipline are wired correctl
 - 1 Stage-1 operator-valued mass-tower chain through A=3 + A=4 framework
 - 0 fitting / numerology / CAL-4 introductions
 
-Future audits: re-run `grep -rln "CAL-4\|CAL4\|curve_fit\|scipy.optimize" folio-assistant/computations/*.py | grep -v _deprecated` as a smoke test before merging mass-pipeline changes.
+Future audits: re-run `grep -rln "CAL-4\|CAL4\|curve_fit\|scipy.optimize" computations/*.py | grep -v _deprecated` as a smoke test before merging mass-pipeline changes.

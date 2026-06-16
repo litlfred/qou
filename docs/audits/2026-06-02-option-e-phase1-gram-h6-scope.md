@@ -24,11 +24,11 @@ attacks Gap 5 (the Frobenius pairing infrastructure) at the deuteron level.
 ## What's already on main (no work needed)
 
 - **Partition-basis Gram matrix** (diagonal in Wedderburn blocks):
-  `folio-assistant/computations/pyhecke_n_generic.py::gram_matrix_n(n, q)` — landed
+  `computations/pyhecke_n_generic.py::gram_matrix_n(n, q)` — landed
   2026-05-25 (PR #1251); replaces the H_3-hardcoded `pyhecke_native.gram_matrix(q)`.
   Size: $p(n) \times p(n)$ (11 × 11 for n=6, 30 × 30 for n=9, 77 × 77 for n=12).
 - **Per-block Hoefsmit seminormal matrices** (the σ_k actions per partition):
-  `folio-assistant/computations/hoefsmit_symbolic.py::build_seminormal_matrices_symbolic(shape)`
+  `computations/hoefsmit_symbolic.py::build_seminormal_matrices_symbolic(shape)`
   via `hecke_character_symbolic.hoefsmit_matrices_symbolic` — the per-block σ_k
   representation already generalises to any n.
 

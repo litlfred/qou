@@ -3,7 +3,7 @@
 > **Phase 1.2 update (2026-06-08, PR #1980 — Steps 1-3 done)**:
 > matrix-M substrate is PROVED to compute correct characters via the
 > μ_p-level factorisation. Implementation at
-> [`folio-assistant/computations/derived_chi_catalogue_matrix_m.py`](../../folio-assistant/computations/derived_chi_catalogue_matrix_m.py)
+> [`computations/derived_chi_catalogue_matrix_m.py`](../../computations/derived_chi_catalogue_matrix_m.py)
 > using sympy q-rational matrices (asymmetric natural form of Young's
 > seminormal basis — every entry stays in Q(q), no square roots).
 > **All 42/42 validation tests pass** (plus a numerical-vs-symbolic
@@ -118,7 +118,7 @@
 
 For an atom with Z protons, N neutrons, A = Z + N nucleons, the
 canonical braid word from
-[`mass_at_3A_proper.atom_braid_word_3A(Z, N)`](../../folio-assistant/computations/mass_at_3A_proper.py)
+[`mass_at_3A_proper.atom_braid_word_3A(Z, N)`](../../computations/mass_at_3A_proper.py)
 lays out as
 
 ```
@@ -333,7 +333,7 @@ In this PR:
 - `pyhecke_native.lr_coefficient(λ, μ, ν)` — already exposed (Rust
   kernel in `tools/hecke-engine/src/littlewood_richardson.rs`)
 - Disk cache framework
-  [`derived_chi_catalogue_mn_disk_cache.py`](../../folio-assistant/computations/derived_chi_catalogue_mn_disk_cache.py)
+  [`derived_chi_catalogue_mn_disk_cache.py`](../../computations/derived_chi_catalogue_mn_disk_cache.py)
   is ready to host the `ω_{μ_p, μ_n, λ}(q)` table once Phase 1.1
   derives it
 - The 715-cell catalogue is the **ground truth** for cross-validating
@@ -382,6 +382,6 @@ makes a previously-expensive computation cheap.
 - GIL release + batched-GP roadmap:
   [`docs/audits/2026-06-07-pyhecke-native-gil-release-patch.md`](2026-06-07-pyhecke-native-gil-release-patch.md)
 - Bar-symmetry empirical verification:
-  `folio-assistant/computations/derived_chi_catalogue_bar_symmetry_audit.py`
+  `computations/derived_chi_catalogue_bar_symmetry_audit.py`
   (witness: `derived-chi-catalogue-bar-symmetry-audit.witness.json`)
 - PR #1952 (this thread)

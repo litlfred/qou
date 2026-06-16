@@ -33,7 +33,7 @@ False positives:
 Emits `legacy-formula-audit.witness.json`.
 
 Usage:
-    python3 folio-assistant/computations/legacy_formula_audit.py [--strict]
+    python3 computations/legacy_formula_audit.py [--strict]
 """
 
 

@@ -236,8 +236,8 @@ Until that lands, the cache keeps c_3 labelled `codata-extracted`.
 
 ### Files in this round
 
-- `folio-assistant/computations/qbeta/qbeta_habiro_taylor_investigation.py`
-- `folio-assistant/computations/qbeta/qbeta-habiro-taylor-investigation.witness.json`
+- `computations/qbeta/qbeta_habiro_taylor_investigation.py`
+- `computations/qbeta/qbeta-habiro-taylor-investigation.witness.json`
 - Coordination comment on #1508: <https://github.com/litlfred/qou/pull/1508#issuecomment-4585528471>
 
 ### What's next on each side

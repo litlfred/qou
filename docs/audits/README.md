@@ -77,7 +77,7 @@ do **not** write an audit declaring an item "open" / "Open Math X" /
 
 1. `grep -rln <topic> docs/audits/`
 2. `grep -rln <topic> content/` (whole tree)
-3. `grep -rln <topic> folio-assistant/computations/`
+3. `grep -rln <topic> computations/`
 4. `docs/coordination/<theme>.md`
 
 Source files' status notes (`## Status`, `Open math`, `Phase 3

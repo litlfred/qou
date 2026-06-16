@@ -23,7 +23,7 @@ $$\{1, \sigma_0, \sigma_1, \sigma_0\sigma_1, \sigma_1\sigma_0, \sigma_0\sigma_1\
 3. *$\det G(q) \neq 0$ for $q > 0,\ q \neq 1$.*
 ## Numerical evaluation at the substrate
 
-Sympy-computed symbolic entries match `folio-assistant/computations/gram-matrix-dual.witness.json` at $q_0 \approx 1.110$ to max absolute difference $\approx 2.1 \times 10^{-16}$ across all 36 entries (see `gram-h3-symbolic-regression.witness.json` for the live value). The determinant at $u_0 = \sqrt{q_0}$ is $\det G(u_0) \approx -0.189205253071$ (one negative eigenvalue $\approx -0.855$ — Frobenius positivity is a genuine constraint, not an automatic property).
+Sympy-computed symbolic entries match `computations/gram-matrix-dual.witness.json` at $q_0 \approx 1.110$ to max absolute difference $\approx 2.1 \times 10^{-16}$ across all 36 entries (see `gram-h3-symbolic-regression.witness.json` for the live value). The determinant at $u_0 = \sqrt{q_0}$ is $\det G(u_0) \approx -0.189205253071$ (one negative eigenvalue $\approx -0.855$ — Frobenius positivity is a genuine constraint, not an automatic property).
 
 ## Role in the framework
 
@@ -35,5 +35,5 @@ The remaining $\det \neq 0$ proof (Phase 1b-2) reduces the entire Option E **Pha
 
 - [`def:universal-ilp-algorithm`](universal-ilp-algorithm.md) — consumer of this proposition
 - [`docs/audits/-option-e-crystal-weight-delta-lambda.md`](../../../docs/audits/-option-e-crystal-weight-delta-lambda.md) — full Phase 0/1/2/3/4 Option E workplan
-- [`folio-assistant/computations/gram-matrix-dual.py`](../../../folio-assistant/computations/gram-matrix-dual.py) — pyhecke numerical Gram (regression guard)
+- [`computations/gram-matrix-dual.py`](../../../computations/gram-matrix-dual.py) — pyhecke numerical Gram (regression guard)
 - [`tools/pyhecke/python/pyhecke/gram.py`](../../../tools/pyhecke/python/pyhecke/gram.py) — canonical NF basis + TR_M definition

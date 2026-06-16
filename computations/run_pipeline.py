@@ -53,7 +53,7 @@ Architecture:
     4. Run stale scripts in dependency order
     5. Regenerate hecke_startup_cache.json first if sources changed
 
-@module folio-assistant/computations/run_pipeline
+@module computations/run_pipeline
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir

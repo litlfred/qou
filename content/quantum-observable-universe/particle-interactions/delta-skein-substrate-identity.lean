@@ -78,7 +78,7 @@ def deltaSkeinTilde
 -- substrate Q_β = 0.78174… MeV:
 --   deltaSkeinTilde ≈ 0.0033943
 --   empirical       ≈ 0.0033908   (1 015 ppm agreement)
--- See folio-assistant/computations/m-baryon-volume-form.witness.json
+-- See computations/m-baryon-volume-form.witness.json
 -- for the 50-dps numerical certificate.
 
 end Borromean

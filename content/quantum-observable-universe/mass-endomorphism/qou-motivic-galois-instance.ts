@@ -18,9 +18,9 @@ export default definition({
   cites: ["habiro2002", "yekutieli2010", "tate1967"],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/probes/habiro_frobenius_probe.py",
+    script: "computations/probes/habiro_frobenius_probe.py",
     witness:
-      "folio-assistant/computations/probes/habiro-frobenius-probe.witness.json",
+      "computations/probes/habiro-frobenius-probe.witness.json",
     status: "verified",
   },
   lean: {

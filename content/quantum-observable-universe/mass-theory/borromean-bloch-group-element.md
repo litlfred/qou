@@ -110,7 +110,7 @@ Closing D16 ties $h^4$ to the K-theoretic structure of $K_3(\mathbb{C})$
 also closes the loop:
 
 - $r_2$ at order $h^0$ = $8G$ (the bare hyperbolic volume = production
-  $\mathrm{Vol}(\mathcal{B}_3)$ in [`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py)),
+  $\mathrm{Vol}(\mathcal{B}_3)$ in [`mass_table_ppb.py`](../../computations/mass_table_ppb.py)),
 - $r_2^{(2)}$ at order $h^4$ = $-6G$ (the Markov-trace coefficient),
 - $r_2^{(k)}$ at higher orders — the full Markov-trace closed form.
 

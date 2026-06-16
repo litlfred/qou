@@ -5,7 +5,7 @@ The force-carrier intertwining correspondence:
 
 LaTeX label: `prop:force-carrier-intertwining-correspondence`
 Computational evidence:
-  folio-assistant/computations/delta-q-decoration.witness.json
+  computations/delta-q-decoration.witness.json
 -/
 
 import Mathlib.Combinatorics.Composition

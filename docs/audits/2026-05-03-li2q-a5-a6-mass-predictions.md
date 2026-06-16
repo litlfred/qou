@@ -94,12 +94,12 @@ grow with A — it's smallest on ⁶Li (0.059 %).
 ```bash
 git fetch origin claude/categorical-mass-divergence-audit
 git show origin/claude/categorical-mass-divergence-audit:\
-folio-assistant/computations/li2q_six_term_probe.py > /tmp/probe.py
+computations/li2q_six_term_probe.py > /tmp/probe.py
 # Add to ATOMS list:
 #   ("5Li", 3, 2, 4669.151),
 #   ("6Li", 3, 3, 5603.052),
 # Add to top-of-file:
-#   sys.path.insert(0, '<repo>/folio-assistant/computations')
+#   sys.path.insert(0, '<repo>/computations')
 python3 /tmp/probe.py
 ```
 

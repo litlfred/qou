@@ -36,7 +36,7 @@ Anchor separation ≈ **1.28 × 10⁻⁸**, yet empirical `c_3` swings
 
 ## Result
 
-[`probes/qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py`](../../folio-assistant/computations/probes/qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py)
+[`probes/qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py`](../../computations/probes/qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py)
 
 | quantity | proton | muon |
 |----------|--------|------|

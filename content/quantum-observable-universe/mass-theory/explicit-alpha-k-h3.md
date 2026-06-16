@@ -90,7 +90,7 @@ $\square$
 Numerical evaluation at $q_0 \approx 1.110$ matches the symbolic
 forms above to $\sim 10^{-16}$; values are tabulated in the witness
 file
-([`alpha-k-jones-markov-h3.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/alpha-k-jones-markov-h3.witness.json)).
+([`alpha-k-jones-markov-h3.witness.json`](https://github.com/litlfred/qou/blob/main/computations/alpha-k-jones-markov-h3.witness.json)).
 
 ## Alternative derivation via Wenzl-bridge
 
@@ -165,7 +165,7 @@ is the Newton's-constant identification at the deep-tower stratum.
 
 ## Witness
 
-[`folio-assistant/computations/alpha/alpha_k_jones_markov_h3.py`](#)
+[`computations/alpha/alpha_k_jones_markov_h3.py`](#)
 implements the Jones-Markov linear system and the explicit Markov
 pairings. Produces witness `alpha-k-jones-markov-h3.witness.json`
 with $\alpha_2 = z^2$ verified to $10^{-17}$ and $\alpha_3 = h z^2 + z$

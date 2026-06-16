@@ -2,8 +2,8 @@
 Closed-form pole-order formula for torus-knot characters.
 
 LaTeX label:        prop:alpha-shift-torus-knot
-Computational ref:  folio-assistant/computations/alpha/alpha_shift_torus.py
-Witness:            folio-assistant/computations/alpha/alpha-shift-torus.witness.json
+Computational ref:  computations/alpha/alpha_shift_torus.py
+Witness:            computations/alpha/alpha-shift-torus.witness.json
 Audit:              docs/audits/2026-05-04-alpha-shift-torus-multiplicative-chain.md
 
 For T_{p,k} = closure of (σ_1 σ_2 ⋯ σ_{p-1})^k in B_p,
@@ -71,7 +71,7 @@ input.
 
 The instance is verified case-by-case for the test bench
 {(2,3), (2,5), (2,9), (3,4), (3,5), (3,7)} in
-folio-assistant/computations/alpha/alpha_shift_torus.py with all 14
+computations/alpha/alpha_shift_torus.py with all 14
 witness assertions passing.
 
 -- Ref: [manuscript] §round-19 of conj:e-hartree-categorical-derivation

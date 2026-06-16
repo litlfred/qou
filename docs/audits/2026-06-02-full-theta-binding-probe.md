@@ -1,7 +1,7 @@
 # Full-order θ_λ binding — the carrier is right, but y_λ is the wrong measure for A≥3 absolute
 
 **Date:** 2026-06-02
-**Probe:** [`probe_full_theta_binding.py`](../../folio-assistant/computations/probe_full_theta_binding.py)
+**Probe:** [`probe_full_theta_binding.py`](../../computations/probe_full_theta_binding.py)
 → `probe-full-theta-binding.witness.json`
 **Status:** EXPLORATORY; asserts the refutation. A≥3-absolute binding remains an
 open gate — but **sharply narrowed** by this result.

@@ -62,8 +62,8 @@ are:
 See [Table 1](#tbl:trm-hopf-sigma1-sq-closed-form-table1-data).
 
 verified numerically via
-[`probe_F_n_categorical_derivation.py`](folio-assistant/computations/probe_F_n_categorical_derivation.py)
-([witness](folio-assistant/computations/F-n-categorical-derivation-probe.witness.json),
+[`probe_F_n_categorical_derivation.py`](computations/probe_F_n_categorical_derivation.py)
+([witness](computations/F-n-categorical-derivation-probe.witness.json),
 2/2 assertions pass).
 
 ## Implication for the $\mathfrak{Q}_\beta$ precision-ladder
@@ -98,9 +98,9 @@ for the derivation status).
 1. The closed form $1 + (q-1) \cdot q^{-1/2}$ is the simplest
    nontrivial Markov-trace value in the framework and serves as a
    sanity check for all canonical-Markov implementations
-   ([`markov_peel.tr_M_atomic`](folio-assistant/computations/markov/markov_peel.py),
-   [`markov_weights_symbolic.tr_M_canonical`](folio-assistant/computations/markov/markov_weights_symbolic.py),
-   [`markov_trace_canonical.tr_M_word`](folio-assistant/computations/markov/markov_trace_canonical.py)).
+   ([`markov_peel.tr_M_atomic`](computations/markov/markov_peel.py),
+   [`markov_weights_symbolic.tr_M_canonical`](computations/markov/markov_weights_symbolic.py),
+   [`markov_trace_canonical.tr_M_word`](computations/markov/markov_trace_canonical.py)).
    All three produce identical output for $\sigma_1^2$ at $q = q_0$ to 50 dps.
 
 2. The binomial-coefficient closed form for the Taylor expansion is
@@ -113,7 +113,7 @@ for the derivation status).
    $H_n$ for $n \geq 2$ is consistent with the Markov property at
    property 3 of [`thm:jones-markov-trace`](#thm:jones-markov-trace),
    and is verified empirically across H_3, H_4, H_5, H_6 in
-   [`probe_F_n_categorical_derivation.py`](folio-assistant/computations/probe_F_n_categorical_derivation.py).
+   [`probe_F_n_categorical_derivation.py`](computations/probe_F_n_categorical_derivation.py).
 
 4. **Lean realisation (archimedean specialisation, §7c).** The
    propositional content above is the exact algebraic identity over the

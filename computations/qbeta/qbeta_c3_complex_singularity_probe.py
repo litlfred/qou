@@ -29,7 +29,7 @@ This is a FEASIBILITY / GEOMETRY probe, NOT a closure attempt: it pins the
 singularity geometry; it does not produce a categorical c_3 formula.
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_c3_complex_singularity_probe.py
+  python3 computations/qbeta/qbeta_c3_complex_singularity_probe.py
 Emits: qbeta-c3-complex-singularity-probe.witness.json
 """
 

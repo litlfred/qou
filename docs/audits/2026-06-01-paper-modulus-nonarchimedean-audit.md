@@ -95,8 +95,8 @@ as stated. Highest-priority refactor.
 
 ## Files
 
-- `folio-assistant/computations/paper_modulus_audit_nonarchimedean.py`
-- `folio-assistant/computations/paper-modulus-audit-nonarchimedean.witness.json`
+- `computations/paper_modulus_audit_nonarchimedean.py`
+- `computations/paper-modulus-audit-nonarchimedean.witness.json`
 - `docs/audits/2026-06-01-paper-modulus-nonarchimedean-audit.md` (this file)
 
 ## Methodology limitations

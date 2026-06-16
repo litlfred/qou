@@ -23,7 +23,7 @@ namespace QOU.QGeometricLanglands
 
     Conjectural class — see [`conj:q-oper-hecke`](../../../quantum-observable-universe/q-geometric-langlands/q-oper-hecke.md). -/
 class q_oper_hecke where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- Scalar residual encoding the conjecture's content (placeholder
       shape: refine to match the actual claim). -/
   residual : ℝ

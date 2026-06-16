@@ -12,7 +12,7 @@ closures of PR #639 (Type-B fold-depth fits D + T, fails ³He;
 4 simple 2-input rules also fail).
 
 The empirical finding (per
-`folio-assistant/computations/probe_phiq_per_partition_klambda.py`):
+`computations/probe_phiq_per_partition_klambda.py`):
 re-assigning `k_λ = 1` for the **maximum eigenvalue magnitude**
 partition per atom, with `k_λ = 2` for all other Wedderburn
 blocks, collapses all three atoms' brane-tower magnitudes to

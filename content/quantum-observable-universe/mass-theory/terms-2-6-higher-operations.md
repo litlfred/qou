@@ -117,7 +117,7 @@ NOT from HH cup products. Possible sources:*
 
 ***Option 2 (deformation cohomology) ruled out.***
 *Direct computation in
-`folio-assistant/computations/deformation_cohomology_s3.py`:*
+`computations/deformation_cohomology_s3.py`:*
 
 - *$\dim \mathrm{Der}(\mathbb{R}[S_3]) = 3 = \dim \mathrm{Inner}(\mathbb{R}[S_3])$*
 - *$HH^1(\mathbb{R}[S_3]) = 0$*

@@ -96,8 +96,8 @@ changed=$(git diff-tree --no-commit-id --name-only -r "$SHA")
 
 is_canonical_event=false
 
-# (i) Any change in folio-assistant/computations/
-echo "$changed" | grep -qE '^folio-assistant/computations/.*\.(py|json)$' && is_canonical_event=true
+# (i) Any change in computations/
+echo "$changed" | grep -qE '^computations/.*\.(py|json)$' && is_canonical_event=true
 
 # (ii) Content block .md/.ts of provable / definitional / remark kind
 echo "$changed" | grep -qE 'content/.*\.(md|ts)$' && {
@@ -129,7 +129,7 @@ number`, `rationalization`, `CODATA`, `tautolog`, `back-fit`,
 | `scientific-accuracy` | Any changed proposition/theorem block with numerical claims | Claim is derived, not justified; no rationalization |
 | `one-voice-audit` | Any changed block | Status leaks, work-tracker words that should be properly handled |
 | `ontologist` | Any new symbol introduced | Notation register compliance |
-| `compute_audit_scan` (full) | Session start + every 24h idle | Baseline scan over `folio-assistant/computations/` |
+| `compute_audit_scan` (full) | Session start + every 24h idle | Baseline scan over `computations/` |
 
 ## Slot D — §4c finding taxonomy
 
@@ -214,8 +214,8 @@ Per-violation template:
 **Compute side:**
 
 ```bash
-python3 folio-assistant/computations/canonical_derivation_pipeline_compliance.py
-jq '.recommended_next[]' folio-assistant/computations/canonical-derivation-pipeline-compliance.witness.json
+python3 computations/canonical_derivation_pipeline_compliance.py
+jq '.recommended_next[]' computations/canonical-derivation-pipeline-compliance.witness.json
 ```
 
 **Content side:**
@@ -237,7 +237,7 @@ find content -type f -name '*.ts' -print0 \
 
 | Invariant | Check |
 |-----------|-------|
-| No new free-floating CODATA literal | `python3 folio-assistant/computations/compute_audit_scan.py` reports no new P31 hits vs `origin/main` |
+| No new free-floating CODATA literal | `python3 computations/compute_audit_scan.py` reports no new P31 hits vs `origin/main` |
 | No new tautology without banner | New scripts/blocks that consume their own result either carry the LO tautology banner or are flagged in queue |
 | No new fourth-calibration script | `canonical_script_input_audit.py` over-count delta vs `origin/main` is ≤ 0 |
 | No new naked numerology | Any new numerical literal in proposition/theorem bodies uses `:val[…]` directive |
@@ -283,7 +283,7 @@ straight is to label them at authoring time.
 
 ### When to apply
 
-- **Probes**: every script under `folio-assistant/computations/`
+- **Probes**: every script under `computations/`
   that emits a witness with a structural claim (not just numerical
   data) must include these in the witness `description` or a new
   `probe_diagnostics` field.

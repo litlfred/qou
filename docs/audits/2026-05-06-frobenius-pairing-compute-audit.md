@@ -1,6 +1,6 @@
 # Frobenius-pairing compute audit (2026-05-06)
 
-**Scope.** Every Python script under `folio-assistant/computations/`
+**Scope.** Every Python script under `computations/`
 that touches `tr_M`, `markov_trace`, `mat_trace`, `tr_std`, or any
 "trace of a braid word" pattern.  The audit classifies each script
 into one of three buckets relative to the master formula
@@ -15,7 +15,7 @@ $$
 (`prop:confinement-frobenius-reciprocity`, added in this PR).
 
 **Driver.**
-[`folio-assistant/computations/audit_frobenius_pairing.py`](../../folio-assistant/computations/audit_frobenius_pairing.py).
+[`computations/audit_frobenius_pairing.py`](../../computations/audit_frobenius_pairing.py).
 Machine-readable report:
 [`docs/audits/frobenius-pairing-compute-audit.witness.json`](frobenius-pairing-compute-audit.witness.json).
 
@@ -35,7 +35,7 @@ Machine-readable report:
   $\langle O\rangle_T$.  Correct iff the witness exposes
   `gram_matrix`, `gram_inverse`, `lp_active_set`, `shadow_prices`
   (the four fields the new
-  [bound-state-observable validator](../../folio-assistant/computations/bound_state_observable_validator.py)
+  [bound-state-observable validator](../../computations/bound_state_observable_validator.py)
   enforces).
 
 - **(C) conjugation pattern $\mathrm{tr}_M(\beta\,X\,\beta^{-1})$.**
@@ -66,7 +66,7 @@ followed by `mat_trace(M_full_std)`, with `full_op` constructed
 elsewhere).  A 0-count for bucket (B) does **not** mean there are no
 observable-on-state computes — it means the conservative static pattern
 did not catch any cleanly.  The CI gate
-([`bound_state_observable_validator.py`](../../folio-assistant/computations/bound_state_observable_validator.py))
+([`bound_state_observable_validator.py`](../../computations/bound_state_observable_validator.py))
 provides the more important runtime check: any **witness** whose
 `description`/`computation` claims a bound-state observable must
 expose the four required fields, regardless of whether static analysis
@@ -77,7 +77,7 @@ flagged the script.
 ### 3.1 `borromean-axial-coupling.py` (g_A of the proton)
 
 Source:
-[`folio-assistant/computations/borromean-axial-coupling.py`](../../folio-assistant/computations/borromean-axial-coupling.py)
+[`computations/borromean-axial-coupling.py`](../../computations/borromean-axial-coupling.py)
 (lines 239–246, pre-fix).
 
 ```python
@@ -105,7 +105,7 @@ the present audit promotes that ad-hoc finding into a class-level
 diagnosis: any conjugation pattern is a red flag.
 
 **Witness state (pre-fix).**
-`folio-assistant/computations/borromean-axial-coupling.witness.json`
+`computations/borromean-axial-coupling.witness.json`
 lacks all four required fields:
 
 - `gram_matrix` ✗
@@ -115,9 +115,9 @@ lacks all four required fields:
 
 **Remediation.** Rewrite to instantiate the master formula
 (`prop:confinement-frobenius-reciprocity`) — load $G^{-1}$ from
-[`gram-matrix-dual.witness.json`](../../folio-assistant/computations/gram-matrix-dual.witness.json),
+[`gram-matrix-dual.witness.json`](../../computations/gram-matrix-dual.witness.json),
 load active set + shadow prices from
-[`lp_dual_solver.solve_operator_selection_lp`](../../folio-assistant/computations/lp_dual_solver.py),
+[`lp_dual_solver.solve_operator_selection_lp`](../../computations/lp_dual_solver.py),
 compute $g_A$ as the ratio of two dual pairings.  This is **Item 4b**
 of the workplan; the rewrite lands in this same PR.
 
@@ -126,7 +126,7 @@ of the workplan; the rewrite lands in this same PR.
 Static regex on script source missed several bound-state-observable
 computes; the **CI gate validator caught them at the witness level**.
 The validator scan
-([`bound_state_observable_validator.py`](../../folio-assistant/computations/bound_state_observable_validator.py))
+([`bound_state_observable_validator.py`](../../computations/bound_state_observable_validator.py))
 flagged the following 4 additional witnesses on the current branch:
 
 | Witness | Hint | Bucket (manual review) | Status |
@@ -162,7 +162,7 @@ hard-fail.
 
 ## 6. New CI gate
 
-[`folio-assistant/computations/bound_state_observable_validator.py`](../../folio-assistant/computations/bound_state_observable_validator.py)
+[`computations/bound_state_observable_validator.py`](../../computations/bound_state_observable_validator.py)
 walks every `*.witness.json` and flags entries whose `description`,
 `computation`, or `name` claims a **bound-state observable**
 (matching keywords `g_A`, `g_V`, `axial coupling`, `magnetic moment`,
@@ -192,9 +192,9 @@ $$
 **Three ingredients required**, all witnessable:
 
 1. $G$, $G^{-1}$ from
-   [`gram-matrix-dual.witness.json`](../../folio-assistant/computations/gram-matrix-dual.witness.json);
+   [`gram-matrix-dual.witness.json`](../../computations/gram-matrix-dual.witness.json);
 2. $A^*(T)$, $u^*$ from
-   [`lp_dual_solver.solve_operator_selection_lp`](../../folio-assistant/computations/lp_dual_solver.py);
+   [`lp_dual_solver.solve_operator_selection_lp`](../../computations/lp_dual_solver.py);
 3. $\langle O, b_j\rangle = \mathrm{tr}_M(O\,b_j)$ for $j \in A^*(T)$.
 
 **Red-flag pattern.** $\mathrm{tr}_M(\beta\,X\,\beta^{-1})$ is always

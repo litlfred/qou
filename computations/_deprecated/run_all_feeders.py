@@ -22,7 +22,7 @@ Usage:
     python3 run_all_feeders.py
     python3 run_all_feeders.py --rebuild  # delete cache first
 
-@module folio-assistant/computations/run_all_feeders
+@module computations/run_all_feeders
 """
 from __future__ import annotations
 import argparse

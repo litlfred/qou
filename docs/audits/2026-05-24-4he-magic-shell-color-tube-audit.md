@@ -10,13 +10,13 @@
 
 The 5-atom sign-flip diagnostic gives a linear fit `err_pct ≈ +2.975 − 2.226 · n_inter` with R² = 0.83. Substituting ⁴He's `n_inter = 3` (1 pp + 1 pn + 1 nn) predicts `−3.71%`. The **measured** ⁴He over-prediction is `+5.87%` — a Δ of ~9.6 percentage points. ⁴He breaks the trend hard.
 
-The closure label in [`isotope_record_schema.py:186`](../../folio-assistant/computations/isotope_record_schema.py):
+The closure label in [`isotope_record_schema.py:186`](../../computations/isotope_record_schema.py):
 ```
 (2, 2): "magic A·8G shell (no single knot)"
 ```
 — this is the only closure not pinned to a specific census knot. It uses the "magic" multiplier `A · 8·G` where `8·G = Vol(𝓑₃)` and `A = 4` for ⁴He.
 
-In [`mass_table_ppb.py:91-95`](../../folio-assistant/computations/mass_table_ppb.py):
+In [`mass_table_ppb.py:91-95`](../../computations/mass_table_ppb.py):
 ```python
 "4He":  {"rule": "magic", "A_units": 4, "rho_factor": 2,
          "origin": "framework: A·8G magic rule"},
@@ -27,7 +27,7 @@ Prediction: `B_pred(⁴He) = 2 · m_e · 4 · 8G = 29.9555... MeV` vs CODATA `28
 
 The cheat-sheet ([§"Bring color-tube weighted averaging"](../canonical-derivation-cheat-sheet.md)) records that each nucleon carries **3 quark color sheets**, and inter-nucleon averaging is naturally over **9 color-pair assignments + 1 diagonal = 10**.
 
-For ⁴He (Z=2, N=2), the color content per nucleon and the inter-nucleon arc structure (per [`isotope_record_schema.py:build_knot_operator_catalogue`](../../folio-assistant/computations/isotope_record_schema.py)):
+For ⁴He (Z=2, N=2), the color content per nucleon and the inter-nucleon arc structure (per [`isotope_record_schema.py:build_knot_operator_catalogue`](../../computations/isotope_record_schema.py)):
 
 | Arc | Channel | Nucleon-pair colors |
 |-----|---------|---------------------|

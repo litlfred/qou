@@ -10,7 +10,7 @@
 **Status:** CANONICAL — supersedes the binary "wire vs drop c_k" framing
 in all prior Q_β c_k audits.
 **Compute reference:**
-[`qbeta_ck_truncation_order_analysis.py`](../../folio-assistant/computations/qbeta/qbeta_ck_truncation_order_analysis.py)
+[`qbeta_ck_truncation_order_analysis.py`](../../computations/qbeta/qbeta_ck_truncation_order_analysis.py)
 → `qbeta-ck-truncation-order-analysis.witness.json`.
 
 ---
@@ -154,7 +154,7 @@ Before touching Q_β c_k wiring, confirm:
 
 ## Cross-references
 
-- Compute: [`qbeta_ck_truncation_order_analysis.py`](../../folio-assistant/computations/qbeta/qbeta_ck_truncation_order_analysis.py)
+- Compute: [`qbeta_ck_truncation_order_analysis.py`](../../computations/qbeta/qbeta_ck_truncation_order_analysis.py)
 - Paper: [`prop:q-beta-categorical-precision-ladder`](../../content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md)
 - α_EM Habiro precedent: PR #1511 (merged), `alpha_em_habiro_taylor_investigation.py`
 - Tiered cache: `qbeta-ck-cache.witness.json` (#1479)

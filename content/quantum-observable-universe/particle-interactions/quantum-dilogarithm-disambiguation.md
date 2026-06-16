@@ -27,13 +27,13 @@ that the conflation produced.*
 $-\mathrm{Li}_2^q(-|V|)$, not $\Phi_q(|V|)$**, on every per-generator
 amplitude. Two production compute paths follow this discipline:
 
-- [`canonical_plus_multibrane.py`](folio-assistant/computations/canonical_plus_multibrane.py)
+- [`canonical_plus_multibrane.py`](computations/canonical_plus_multibrane.py)
   with `tower_mode="li2q"` — the canonical mass tower.
-- [`paper_six_term_isotope_sweep.py`](folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py)
+- [`paper_six_term_isotope_sweep.py`](computations/sweeps/paper_six_term_isotope_sweep.py)
   using the symmetric q-dilogarithm series identity.
 
 The $\Phi_q$ product form survives in
-[`brane_tower_isospin_diagnosis.py`](folio-assistant/computations/brane_tower_isospin_diagnosis.py)
+[`brane_tower_isospin_diagnosis.py`](computations/brane_tower_isospin_diagnosis.py)
 **only as a diagnostic** — it documents the $\sim 10^5 \times$
 amplification at $|V| \to 1$ that originally produced the $-737$ MeV
 pathology, but the corrected mass formula does not use it.

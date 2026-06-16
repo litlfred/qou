@@ -151,7 +151,7 @@ This is the **silver-ratio Pell-Lucas test** for sector classification.
 
 After re-running the silver-ratio Pell-Lucas test via the
 authoritative classifier
-([`ck_sector_classifier.py`](../../../folio-assistant/computations/ck_sector_classifier.py)):
+([`ck_sector_classifier.py`](../../../computations/ck_sector_classifier.py)):
 
 | $k$ | Conjectured closed form | Silver-ratio value | Pell-Lucas clean? | Sector |
 |:---:|:-----------------------:|:------------------:|:----------------:|:------:|
@@ -357,7 +357,7 @@ $P_{\mathrm{avg}}^2$ algebra to the pentagon-coherence diagram.
 The algebraic identity for $\mathrm{Li}_2^q$ at $|z| \ge q$ via
 duplication $u = v = i\sqrt{|z|}$ is the categorical content of
 the pentagon and is on `main` in
-[`pentagon_reduction_li2q.py`](../../../folio-assistant/computations/pentagon_reduction_li2q.py)
+[`pentagon_reduction_li2q.py`](../../../computations/pentagon_reduction_li2q.py)
 + audit doc
 [`2026-05-19-pentagon-reduction-li2q.md`](../../../docs/audits/2026-05-19-pentagon-reduction-li2q.md).
 The post-$\tau$ $\log^2$ correction documented there closes the

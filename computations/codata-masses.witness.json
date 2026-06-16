@@ -45,7 +45,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "CODATA 2022 / AME 2020 proton, neutron, electron masses (MeV/c^2), re-exported from folio-assistant/computations/codata_constants.py so the values registry can pin Lean and Markdown literals via :leanval[m_e_MeV] / :leanval[m_p_MeV] / :leanval[m_n_MeV].",
+  "description": "CODATA 2022 / AME 2020 proton, neutron, electron masses (MeV/c^2), re-exported from computations/codata_constants.py so the values registry can pin Lean and Markdown literals via :leanval[m_e_MeV] / :leanval[m_p_MeV] / :leanval[m_n_MeV].",
   "contentBlock": "prop:three-calibration-inputs",
   "parameters": {
     "source": "CODATA 2022 (m_e, m_p); AME 2020 + Q_β (m_n)"
@@ -54,6 +54,6 @@
     "m_e_MeV": "0.51099895069",
     "m_p_MeV": "938.27208816",
     "m_n_MeV": "939.56542052",
-    "source_module": "folio-assistant/computations/codata_constants.py"
+    "source_module": "computations/codata_constants.py"
   }
 }

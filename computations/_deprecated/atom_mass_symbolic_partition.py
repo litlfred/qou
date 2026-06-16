@@ -11,7 +11,7 @@ where:
   Everything symbolic in q. Evaluated at q₀ at the end.
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_symbolic_partition.py
+    python3 computations/atom_mass_symbolic_partition.py
 """
 
 import math
@@ -380,7 +380,7 @@ if __name__ == "__main__":
         })
 
     # Write witness
-    wpath = Path('folio-assistant/computations/atom-mass-symbolic-partition.witness.json')
+    wpath = Path('computations/atom-mass-symbolic-partition.witness.json')
     wpath.write_text(json.dumps({'name': 'symbolic-partition-mass',
                                   'formula': 'M = M_free + α ln|Σ s_λ(c(q)) χ_λ(β)|',
                                   'results': witness}, indent=2))

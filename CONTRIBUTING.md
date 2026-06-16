@@ -99,8 +99,8 @@ Run validators locally before pushing:
 
 ```bash
 # Substrate-precision smoke
-python3 folio-assistant/computations/hyperbolic_volumes.py
-python3 folio-assistant/computations/codata_masses.py
+python3 computations/hyperbolic_volumes.py
+python3 computations/codata_masses.py
 
 # Content validation
 cd content && bun run validate

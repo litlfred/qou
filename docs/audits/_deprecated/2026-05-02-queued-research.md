@@ -36,7 +36,7 @@ trace, distinguishing braids whose underlying permutation cycle
 types coincide.
 
 **Effort**: 2–4 weeks. New module
-`folio-assistant/computations/hecke_character_q_deformed.py`. The
+`computations/hecke_character_q_deformed.py`. The
 existing `mn_character` function provides the q=1 base case for
 testing.
 
@@ -66,7 +66,7 @@ verify the count without enumeration, then sample-check $\kappa = 0$
 on a random subset.
 
 **Effort**: 1 day for the cron / CI setup; the script already exists
-(`folio-assistant/computations/magic-numbers-numerical-witness.py`).
+(`computations/magic-numbers-numerical-witness.py`).
 
 **Unblocks.** Final closure of MAG-1 numerical verification across
 all seven magic numbers.

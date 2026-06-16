@@ -213,5 +213,5 @@ is suggestive but not yet proven.
 - The golden ratio degeneration at $q = 1/\varphi^2$ holds
   (exact, from the $(s^2 + s - 1)$ factor).
 
-**Witness data**: see `folio-assistant/computations/elliptic-stability.json`
+**Witness data**: see `computations/elliptic-stability.json`
 for the full numerical computation at 100-digit precision.

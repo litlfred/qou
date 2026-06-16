@@ -31,7 +31,7 @@ S_5 ↔ SO(3) fiber action being formalised
 `[InterNucleonChannelColorTube]` as an `[Instance]` hypothesis.
 
 The substrate-pure realisation is already implemented in
-`folio-assistant/computations/closed_form_tau_M.py` under
+`computations/closed_form_tau_M.py` under
 `pn_convention="bring_color_weighted"` with the formula
 `f_pn = z - h · (1/2 - δ/4)` where `δ = Δm_{n-p}/M_N` is the
 substrate-pure flavor split (PROVED, PR #690/#942).

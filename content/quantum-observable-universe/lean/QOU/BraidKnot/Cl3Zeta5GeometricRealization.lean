@@ -23,7 +23,7 @@ namespace QOU.BraidKnot
 
     Conjectural class — see [`conj:cl3-zeta5-geometric-realization`](../../../quantum-observable-universe/braids-and-knots/cl3-zeta5-geometric-realization.md). -/
 class Cl3Zeta5GeometricRealization where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       **Conjecture (geometric realisation of the depth-3 Bring trilog

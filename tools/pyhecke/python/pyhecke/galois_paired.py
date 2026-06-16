@@ -1,7 +1,7 @@
 """Galois-pair short-circuit for paired Wedderburn-block characters.
 
 The closed-form identity (proved symbolically in
-`folio-assistant/computations/metallic_q_symbolic_galois_proofs.py`,
+`computations/metallic_q_symbolic_galois_proofs.py`,
 sorry-free Lean §3b-cond class `GaloisPairCharacterSum` in
 `QOU.AlgebraicSubstrate.MetallicLPIdentities`):
 

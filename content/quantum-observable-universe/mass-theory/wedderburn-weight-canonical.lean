@@ -20,12 +20,12 @@ closed form [wenzl1988]; on the self-conjugate stratum
 
 Off the self-conjugate stratum, `y_λ` and `tilde w_λ` are genuinely
 distinct weight families — the in-repo witness
-`folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json`
+`computations/probe-wedderburn-weight-scheme.witness.json`
 records `|y_λ / tilde w_λ|` ratios from ≈0.14 to ≈2.54 at q₀ for
 n ∈ {2, 3}.
 
 The BW/LP scaling ratios — verified symbolically in
-`folio-assistant/computations/_deprecated/bw_wenzl_shadow_equivalence.py`
+`computations/_deprecated/bw_wenzl_shadow_equivalence.py`
 for `λ = (2,2)` and `λ = (3,2,1)` (both self-conjugate) — are:
 
   β / C = -1/h        (all λ)

@@ -33,8 +33,8 @@ defaults to warn-only (``--strict`` to fail CI).
 
 Usage
 -----
-    python3 folio-assistant/computations/bound_state_observable_validator.py
-    python3 folio-assistant/computations/bound_state_observable_validator.py --strict
+    python3 computations/bound_state_observable_validator.py
+    python3 computations/bound_state_observable_validator.py --strict
 """
 from __future__ import annotations
 

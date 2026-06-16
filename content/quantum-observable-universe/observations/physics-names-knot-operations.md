@@ -18,7 +18,7 @@ See [Table](#tbl:physics-names-knot-operations-table-data).
 
 **How the table is generated.**
 
-*The discovery cache (`folio-assistant/computations/knot-operation-cache.json`,
+*The discovery cache (`computations/knot-operation-cache.json`,
 populated by SDP / shadow-price analysis on Hecke Wedderburn blocks)
 records each recurring categorical structure as a key.  The lookup
 `physics-names.json` maps cache keys to physics names at the current

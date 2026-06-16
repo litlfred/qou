@@ -32,7 +32,7 @@ The script does NOT prescribe a rule — it surfaces the data so that
 the structural rule can be conjectured from the multiplicities.
 
 Usage:
-    python3 folio-assistant/computations/rho_z_n_scan.py
+    python3 computations/rho_z_n_scan.py
 """
 from __future__ import annotations
 

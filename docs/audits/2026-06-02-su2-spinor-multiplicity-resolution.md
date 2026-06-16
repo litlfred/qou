@@ -12,9 +12,9 @@ too strong, since OV theory gives a canonical content-eigenbasis of the
 multiplicity space, and #1683's twist ladder assigns the baryon block (2,1) the
 spin `j = ½`.
 **Compute:**
-[`su2_spinor_multiplicity_resolution.py`](../../folio-assistant/computations/su2_spinor_multiplicity_resolution.py),
+[`su2_spinor_multiplicity_resolution.py`](../../computations/su2_spinor_multiplicity_resolution.py),
 witness
-[`su2-spinor-multiplicity-resolution.witness.json`](../../folio-assistant/computations/su2-spinor-multiplicity-resolution.witness.json)
+[`su2-spinor-multiplicity-resolution.witness.json`](../../computations/su2-spinor-multiplicity-resolution.witness.json)
 (audit-only, exact integer/rational SYT-chain combinatorics + RAW q-contents
 @ 60 dps at the substrate `q₀`, 11 assertions pass). **No tuning to h⁴ = −3/4,
 m_n − m_p, B_AME, spin, or hypercharge.** Every content and spin is computed
@@ -148,7 +148,7 @@ the spectra are simple. The answer sits squarely at (ii).
 
 The Borromean `h⁴ = −3/4` is an **invariant of the (2,1) block itself**
 (computed in
-[`borromean_h3_2_1_irrep_derivation.py`](../../folio-assistant/computations/borromean_h3_2_1_irrep_derivation.py)),
+[`borromean_h3_2_1_irrep_derivation.py`](../../computations/borromean_h3_2_1_irrep_derivation.py)),
 not a per-copy quantity. JM/spin select **which copy of the (2,1) block embeds**
 into a given `λ ⊢ 5`; they do not assign different `h⁴` values to different
 copies. There is therefore **no forced rule** by which a single selected copy
@@ -252,7 +252,7 @@ DERIVED, never fitted to `−3/4`.
   (PR #1672).
 - The (2,1) block h⁴ = −3/4 falsification reference:
   [`borromean-markov-trace-closed-form.md`](../../content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.md),
-  [`borromean_h3_2_1_irrep_derivation.py`](../../folio-assistant/computations/borromean_h3_2_1_irrep_derivation.py).
+  [`borromean_h3_2_1_irrep_derivation.py`](../../computations/borromean_h3_2_1_irrep_derivation.py).
 - Okounkov–Vershik / Jucys–Murphy seminormal form: standard (Okounkov–Vershik
   1996; Murphy 1981; Ram q-deformation) — the JM content tuple labels the GT
   basis uniquely.

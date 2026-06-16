@@ -22,7 +22,7 @@ piece:
   (merged) — δ_q decoration of the NF basis and the multiplicative
   chain
   $\alpha_{\mathrm{EM}}^{-1} = q \cdot [9]_q \cdot [10]_q = q \cdot \alpha_{\mathrm{shift}}(T_{2,9}) \cdot \alpha_{\mathrm{shift}}(T_{3,5})$
-  ([`alpha_em_shift_chain.py`](https://github.com/litlfred/qou/blob/claude/hecke-nf-shift-impl-0rNDy/folio-assistant/computations/alpha/alpha_em_shift_chain.py)).
+  ([`alpha_em_shift_chain.py`](https://github.com/litlfred/qou/blob/claude/hecke-nf-shift-impl-0rNDy/computations/alpha/alpha_em_shift_chain.py)).
 
 Both source branches were merged into `main` ahead of this work, so
 step 1 of the plan (`git merge --no-ff`) was a no-op; the
@@ -32,7 +32,7 @@ infrastructure all sits in `main` and this branch composes it.
 
 Per user mandate **NO FLOATS — 50-dps mpmath minimum** for every
 emitted numerical value. The new module
-[`folio-assistant/computations/compound_shift_nf.py`](https://github.com/litlfred/qou/blob/claude/hecke-nf-shift-impl-0rNDy/folio-assistant/computations/compound_shift_nf.py)
+[`computations/compound_shift_nf.py`](https://github.com/litlfred/qou/blob/claude/hecke-nf-shift-impl-0rNDy/computations/compound_shift_nf.py)
 implements:
 
 - **Shift values:** exact integers from the closed form
@@ -95,7 +95,7 @@ totals are all zero in this convention:
 | ⁶Li  | (3,3) | 118 | 118 | 0 | 0 | 0 |
 
 (Witness:
-[`compound-shift-nf.witness.json`](https://github.com/litlfred/qou/blob/claude/hecke-nf-shift-impl-0rNDy/folio-assistant/computations/compound-shift-nf.witness.json),
+[`compound-shift-nf.witness.json`](https://github.com/litlfred/qou/blob/claude/hecke-nf-shift-impl-0rNDy/computations/compound-shift-nf.witness.json),
 6/6 closed-form assertions pass.)
 
 This is the central observation: the (18, 21, 1) decomposition is
@@ -220,9 +220,9 @@ Per the plan but not landed this round (kept narrow to ship Phase 1):
   — δ_q decoration (AXKIA)
 - [`content/quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.md`](https://github.com/litlfred/qou/blob/claude/hecke-nf-shift-impl-0rNDy/content/quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.md)
   — α_EM chain
-- [`folio-assistant/computations/compound_shift_nf.py`](https://github.com/litlfred/qou/blob/claude/hecke-nf-shift-impl-0rNDy/folio-assistant/computations/compound_shift_nf.py)
+- [`computations/compound_shift_nf.py`](https://github.com/litlfred/qou/blob/claude/hecke-nf-shift-impl-0rNDy/computations/compound_shift_nf.py)
   — the implementation
-- [`folio-assistant/computations/compound-shift-nf.witness.json`](https://github.com/litlfred/qou/blob/claude/hecke-nf-shift-impl-0rNDy/folio-assistant/computations/compound-shift-nf.witness.json)
+- [`computations/compound-shift-nf.witness.json`](https://github.com/litlfred/qou/blob/claude/hecke-nf-shift-impl-0rNDy/computations/compound-shift-nf.witness.json)
   — emitted witness (50-dps mpmath)
 
 ## CAL discipline

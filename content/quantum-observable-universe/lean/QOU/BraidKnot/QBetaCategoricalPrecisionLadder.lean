@@ -26,7 +26,7 @@ N≥3 rungs (c_3 = J_Hopf, c_4, c_5, …) are STRUCTURAL NEAR-MATCHES at
 canonical q₀ (c_3 = J_Hopf is 3.35% off the empirical Taylor coefficient
 -2.0693), NOT Taylor-exact derivations — see
 `docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md` and
-`folio-assistant/computations/qbeta/qbeta-delta-tr-vs-formA.witness.json`.
+`computations/qbeta/qbeta-delta-tr-vs-formA.witness.json`.
 The c_3 identification is locked behind the conditional
 `QbetaC3StructuralFormClass` (§3b-cond) at the foot of this file;
 production wires nothing beyond c_2.
@@ -371,7 +371,7 @@ structure at its N=3 rung: the c_3 coefficient is the framework's
 structural prediction `J_Hopf(q=1) = -2`, the Q_β analog of `[Z₂]`.
 
 **DISCIPLINE (item-1 finding, 2026-05-30,
-`folio-assistant/computations/qbeta/qbeta-delta-tr-vs-formA.witness.json`).**
+`computations/qbeta/qbeta-delta-tr-vs-formA.witness.json`).**
 The c_3 = J_Hopf identification is a STRUCTURAL NEAR-MATCH, NOT a
 Taylor-exact derivation:
 

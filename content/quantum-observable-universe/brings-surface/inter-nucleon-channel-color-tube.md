@@ -3,7 +3,7 @@ canonical inter-nucleon Hecke channel assignment for the atomic
 braid word — currently realised as the uniform-flavor map
 $\mathrm{pp} \mapsto \sigma$, $\mathrm{nn} \mapsto \sigma^{-1}$,
 $\mathrm{pn} \mapsto \sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2$ in
-[`isotope_record_schema.py:65{-}70, 176{-}178`](../../folio-assistant/computations/isotope_record_schema.py) — is the
+[`isotope_record_schema.py:65{-}70, 176{-}178`](../../computations/isotope_record_schema.py) — is the
 **flavor-only projection** of a categorically-refined
 *color-tube weighted* assignment derived from the Bring color-tube
 structure on the quintic.
@@ -20,7 +20,7 @@ The atomic braid word (per [`prop:atom-knot-exists`](#prop:atom-knot-exists))
 places one inter-nucleon Hecke generator at every position $3k + 2$
 for each adjacent nucleon pair $k, k+1$ with $k = 0, \ldots, A - 2$
 (giving $A - 1$ inter-nucleon arcs total; matches
-[`isotope_record_schema.build_knot_operator_catalogue`](../../folio-assistant/computations/isotope_record_schema.py)
+[`isotope_record_schema.build_knot_operator_catalogue`](../../computations/isotope_record_schema.py)
 lines 248-262 and
 [`def:canonical-braid-interface-composition`](canonical-braid-interface-composition.md)).
 The current production assignment treats each such generator as a
@@ -81,7 +81,7 @@ mixed-flavor average).
 ## Why color-tube weighting is the load-bearing missing structure
 
 The low-isotope sign-flip diagnostic
-([`low-isotope-sign-flip-diagnostic.witness.json`](../../folio-assistant/computations/low-isotope-sign-flip-diagnostic.witness.json),
+([`low-isotope-sign-flip-diagnostic.witness.json`](../../computations/low-isotope-sign-flip-diagnostic.witness.json),
 PR [#1089](https://github.com/litlfred/qou/pull/1089))
 shows that the per-isotope error correlates with inter-nucleon arc
 **count** at $R^2 = 0.83$, not with the signed-h weight ($R^2 = 0.26$).
@@ -98,8 +98,8 @@ evidence that 10-fold color-tube averaging (9 color pairs + 1 diagonal)
 is the categorical structure behind the historical numerology.
 
 The probe scripts
-[`probe_pn_flavor_asymmetry.py`](../../folio-assistant/computations/probe_pn_flavor_asymmetry.py)
-and [`probe_per_sheet_flavor_nonin.py`](../../folio-assistant/computations/probe_per_sheet_flavor_nonin.py)
+[`probe_pn_flavor_asymmetry.py`](../../computations/probe_pn_flavor_asymmetry.py)
+and [`probe_per_sheet_flavor_nonin.py`](../../computations/probe_per_sheet_flavor_nonin.py)
 (referenced in the cheat-sheet, Phase 5q open finding) report that
 Scheme 4 (per-sheet PL integration on Bring's surface with quark-content
 weighting) reproduces $\Delta m_{n-p}$ to ${\sim}0.14\%$ — far better
@@ -145,12 +145,12 @@ then the instance carries an explicit `sorry` per CLAUDE.md §3b
 
 ## Consumers
 
-- [`isotope_record_schema.py`](../../folio-assistant/computations/isotope_record_schema.py)
+- [`isotope_record_schema.py`](../../computations/isotope_record_schema.py)
   — current uniform-flavor rule lives in
   `build_knot_operator_catalogue` lines 190-262
-- [`mass_table_comprehensive.py`](../../folio-assistant/computations/mass_table_comprehensive.py)
+- [`mass_table_comprehensive.py`](../../computations/mass_table_comprehensive.py)
   — would replace per-channel canonical-form labels with color-tube-weighted forms
-- [`closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py)
+- [`closed_form_tau_M.py`](../../computations/closed_form_tau_M.py)
   — currently raises `NotImplementedError` when invoked with
   `pn_convention="bring_color_weighted"`; this conjecture supplies
   the categorical infrastructure that, once formalised, lets that
@@ -173,7 +173,7 @@ then the instance carries an explicit `sorry` per CLAUDE.md §3b
 3. **${}^{4}\mathrm{He}$ magic-shell saturation.** Does the color-tube weighting
    saturate at $A = 4$ (filled-shell analogue), producing the
    $A \cdot 8G$ closure observed in
-   [`isotope_record_schema.py:186`](../../folio-assistant/computations/isotope_record_schema.py)?
+   [`isotope_record_schema.py:186`](../../computations/isotope_record_schema.py)?
    See [`docs/audits/-4he-magic-shell-color-tube-audit.md`](../../docs/audits/-4he-magic-shell-color-tube-audit.md).
 4. **Cross-check $\rho_F$ density rule.** Does color-tube weighting
    give a categorical reading of the Kashaev density factor
@@ -237,5 +237,5 @@ representation-theoretic level structure is unconditional; the
   [`MassVolDensity.lean`](../lean/QOU/Mass/MassVolDensity.lean) §6
   (`so3_adjoint_eq_chebyshev`)
 - Empirical probe scripts:
-  [`probe_pn_flavor_asymmetry.py`](../../folio-assistant/computations/probe_pn_flavor_asymmetry.py),
-  [`probe_per_sheet_flavor_nonin.py`](../../folio-assistant/computations/probe_per_sheet_flavor_nonin.py)
+  [`probe_pn_flavor_asymmetry.py`](../../computations/probe_pn_flavor_asymmetry.py),
+  [`probe_per_sheet_flavor_nonin.py`](../../computations/probe_per_sheet_flavor_nonin.py)

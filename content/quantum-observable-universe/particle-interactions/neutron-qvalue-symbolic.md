@@ -96,7 +96,7 @@ $$
 ## Numerical evaluation
 
 At $q_0 = 1.109978595554181\ldots$ (50 dps) (from $m_\mu/m_e$) and
-$m_e = :val[m_e_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} \pm 0.00000000015$ MeV (CODATA 2022):
+$m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json} \pm 0.00000000015$ MeV (CODATA 2022):
 
 $$
   \mathfrak{Q}_\beta

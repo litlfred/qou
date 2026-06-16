@@ -9,8 +9,8 @@ just-merged keystone audit
 definitions "off by ~5090×" and named the A-vs-B reconciliation as the precise
 missing input.
 
-**Compute:** [`volume_def_reconcile.py`](../../folio-assistant/computations/volume_def_reconcile.py),
-witness [`volume-def-reconcile.witness.json`](../../folio-assistant/computations/volume-def-reconcile.witness.json).
+**Compute:** [`volume_def_reconcile.py`](../../computations/volume_def_reconcile.py),
+witness [`volume-def-reconcile.witness.json`](../../computations/volume-def-reconcile.witness.json).
 Every number is RAW (q₀ from the canonical pinning witness, m_e from CODATA);
 nothing is tuned to m_p.
 
@@ -49,7 +49,7 @@ opposite sides of that wall.
 
 For 𝓑₃ this is the classical SnapPy value `Vol(𝓑₃) = 8·G = 7.32772…`
 (G = Catalan; Adams 1985). It is used verbatim in
-[`_li_2_q_util.vol_density_borromean`](../../folio-assistant/computations/_li_2_q_util.py)
+[`_li_2_q_util.vol_density_borromean`](../../computations/_li_2_q_util.py)
 as `vol_b3 = 8 * mp.catalan`, then `Geom_leading = Vol/ℏ_q²`.
 
 **Chain stage: POST-τ.** `Vol(K)` is already a real number in ℝ — it is the

@@ -13,7 +13,7 @@ Then the Skein polynomial is the PRODUCT of traced volumes,
 and the half-life comes from the ratio P_dau/P_par.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 t35-transfer-matrix.py
 """
 

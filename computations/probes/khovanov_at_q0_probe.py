@@ -17,7 +17,7 @@ Kh^red(unknot) = 1. The full (unreduced) polynomial is
 Kh(L) = (q + q^{-1}) · Kh^red(L).
 
 Run:
-    python3 folio-assistant/computations/khovanov_at_q0_probe.py
+    python3 computations/khovanov_at_q0_probe.py
 """
 from __future__ import annotations
 

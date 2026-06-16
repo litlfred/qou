@@ -18,7 +18,7 @@ targets are **GAP-A-3** (brane-tower level selection) and **GAP-A-4**
   K ∈ {p, n, D, T, ³He} (3 independent paths agree on PR #572 +
   this branch).
 - ⁴He per-λ chi cache as of 2026-05-09 (this session): saved at
-  [`folio-assistant/computations/chi-helium-4-h12-numeric.witness.json`](../../folio-assistant/computations/chi-helium-4-h12-numeric.witness.json).
+  [`computations/chi-helium-4-h12-numeric.witness.json`](../../computations/chi-helium-4-h12-numeric.witness.json).
   77 partitions of 12, |tr_M(⁴He)| = 0.0553483.
 - The Δ_λ derivation race PR (#613) compared 5 closure principles
   (Occam / co-Casimir / LP-shadow / Wenzl-bridge / Frobenius-pairing
@@ -95,8 +95,8 @@ Step-by-step plan:
 
 ### Useful files
 
-- [`mass_endomorphism.py`](../../folio-assistant/computations/mass_endomorphism.py) — level-0 V̂ + tower
-- [`canonical_tower.py`](../../folio-assistant/computations/canonical_tower.py) — alternative level-0 tower
+- [`mass_endomorphism.py`](../../computations/mass_endomorphism.py) — level-0 V̂ + tower
+- [`canonical_tower.py`](../../computations/canonical_tower.py) — alternative level-0 tower
 - [`recursive-brane-tower.md`](../../content/quantum-observable-universe/lifting-and-descent/recursive-brane-tower.md) — definition of A_{n+1} = J^1(A_n)
 - [`jet-prolongation.md`](../../content/quantum-observable-universe/lifting-and-descent/jet-prolongation.md) — the J^1 functor
 
@@ -178,7 +178,7 @@ RHS is way too big.
 - [`conj-rho-prefactor-structural.md`](../../content/quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.md)
 - [`atom-knot-mass-derivation.md`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)
 - [`derivation-audit-report.md` § GAP-A-4](../../content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md)
-- [`tr-m-q-hecke-seminormal.witness.json`](../../folio-assistant/computations/tr-m-q-hecke-seminormal.witness.json) — top-3 contributions per atom
+- [`tr-m-q-hecke-seminormal.witness.json`](../../computations/tr-m-q-hecke-seminormal.witness.json) — top-3 contributions per atom
 
 ## Joint GAP-A-3 + GAP-A-4 attack
 

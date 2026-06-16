@@ -77,21 +77,21 @@ def main():
     # Pipeline callers updated (file:line for each)
     callers_updated = [
         {
-            "file": "folio-assistant/computations/full-derivation-verified.py",
+            "file": "computations/full-derivation-verified.py",
             "case": "A=1 free neutron",
             "before": "char_sum_n = sum_p - sum_n",
             "after": "char_sum_n = float(sigma_all_closed(1, mp.mpf(q0)))",
             "approx_line": 263,
         },
         {
-            "file": "folio-assistant/computations/full-derivation-verified.py",
+            "file": "computations/full-derivation-verified.py",
             "case": "A=3 tritium ³H→³He",
             "before": "for config in cartesian(ch_names, repeat=3): total_3h += me_d - me_p",
             "after": "total_3h = float(sigma_all_closed(3, mp.mpf(q0)))",
             "approx_line": 277,
         },
         {
-            "file": "folio-assistant/computations/full-derivation-verified.py",
+            "file": "computations/full-derivation-verified.py",
             "case": "A=6 ⁶He→⁶Li (Σ_all only; Σ_FP still enumerates)",
             "before": "for config in cartesian(ch_names, repeat=6): total_6he_all += dme",
             "after": "total_6he_all = float(sigma_all_closed(6, mp.mpf(q0)))",
@@ -101,7 +101,7 @@ def main():
 
     callers_unwired = [
         {
-            "file": "folio-assistant/computations/frob_filter_cancellation_test.py",
+            "file": "computations/frob_filter_cancellation_test.py",
             "reason": (
                 "Test driver for the cancellation diagnostic itself — "
                 "intentionally exercises the raw config-sum path so the "
@@ -110,7 +110,7 @@ def main():
             ),
         },
         {
-            "file": "folio-assistant/computations/sigma_all_symbolic_decay.py",
+            "file": "computations/sigma_all_symbolic_decay.py",
             "reason": (
                 "The symbolic-derivation reference. Per task: do NOT "
                 "modify; this is the source of truth for the closed form."
@@ -168,13 +168,13 @@ def main():
         "pipeline_callers_intentionally_unwired": callers_unwired,
         "tests": {
             "test_file": (
-                "folio-assistant/computations/test_sigma_all_evaluator.py"
+                "computations/test_sigma_all_evaluator.py"
             ),
             "test_count": 11,
             "all_passing_as_of": datetime.now(timezone.utc).isoformat(),
         },
         "evaluator_module": (
-            "folio-assistant/computations/sigma_all_evaluator.py"
+            "computations/sigma_all_evaluator.py"
         ),
         "audit_doc_reference": (
             "docs/audits/2026-05-02-nv-frob-filter-conjectures.md "

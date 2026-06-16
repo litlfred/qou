@@ -11,7 +11,7 @@
 infrastructure-level view).
 
 This audit covers every compute artifact under
-[`folio-assistant/computations/`](../../folio-assistant/computations/)
+[`computations/`](../../computations/)
 plus the supporting CI gates, content-block wiring, and witness
 schema. The static P-pattern scanner findings are tabulated alongside
 new infrastructure-level findings.
@@ -58,8 +58,8 @@ P1–P30 cells in the companion workplan). Severity legend: 🔴 blocking, 🟡 
 
 ## 3. Per-pattern static scan (current)
 
-`python folio-assistant/computations/compute_audit_scan.py` →
-[`compute-audit-scan.witness.json`](../../folio-assistant/computations/compute-audit-scan.witness.json):
+`python computations/compute_audit_scan.py` →
+[`compute-audit-scan.witness.json`](../../computations/compute-audit-scan.witness.json):
 **245 files, 260 findings**.
 
 | Pattern | Hits | Δ since 2026-05-08 baseline | Group |
@@ -157,16 +157,16 @@ the user can triage.
 
 ```bash
 # Static P-pattern scan
-python folio-assistant/computations/compute_audit_scan.py
+python computations/compute_audit_scan.py
 
 # Pipeline staleness
-python folio-assistant/computations/run_pipeline.py --dry-run
+python computations/run_pipeline.py --dry-run
 
 # LP-dual coverage
-python folio-assistant/computations/lp_dual_witness_validator.py --list-wired
+python computations/lp_dual_witness_validator.py --list-wired
 
 # Bound-state observable coverage
-python folio-assistant/computations/bound_state_observable_validator.py
+python computations/bound_state_observable_validator.py
 
 # Wiring (orphan / audit / wired)
 bun run scripts/audit-wiring.ts --warn-only
@@ -225,7 +225,7 @@ computation hints).
 **No code duplicates with main.** The branch's work is purely
 compute-infrastructure; main's 4 PRs touched content blocks
 (braids-and-knots) and skills, with zero overlap on
-`folio-assistant/computations/`. No simplifications discovered;
+`computations/`. No simplifications discovered;
 no proofs to revisit.
 
 ### New 1ppb-improvement areas surfaced by this rebase
@@ -239,6 +239,6 @@ no proofs to revisit.
 | L5 | **Compound-β shell calibration** | #564 P8 | Implement `compound_beta_shell.py` chain-subtraction against AME 2020 Q-values. Drops shell residual contribution from ~5–15% to ~0.1%. |
 | L6 | **Quotient-braid `a(Z, N)` for `A ≥ 5`** | #564 P5' + #567's crystal proof | Replace placeholder `(1−h²)^(A−2)` with the column-rich crystal-R-matrix formula. Drops residual 10–30% → 1–3% on heavy atoms. |
 
-L1 and L2 are immediately tractable on `folio-assistant/computations/`
+L1 and L2 are immediately tractable on `computations/`
 (small witness emitters); L5 and L6 are research-grade. L3 is paper-
 side bookkeeping. L4 unblocks itself.

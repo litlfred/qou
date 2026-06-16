@@ -5,13 +5,13 @@
 direct symbolic Hoefsmit pole-order analysis:
 
 - **Proton** ($A = 1$, $H_3$): $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_p)) = 19 = 18 \cdot 1 + 21 \cdot 0 + 1$
-  ([`per_irrep_pole_proton_h3.py`](../../folio-assistant/computations/per_irrep_pole_proton_h3.py),
+  ([`per_irrep_pole_proton_h3.py`](../../computations/per_irrep_pole_proton_h3.py),
   witness:
-  [`per-irrep-pole-proton-h3.witness.json`](../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json)).
+  [`per-irrep-pole-proton-h3.witness.json`](../../computations/per-irrep-pole-proton-h3.witness.json)).
 - **Deuteron** ($A = 2$, $H_6$): $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_D)) = 40 = 18 \cdot 1 + 21 \cdot 1 + 1$
-  ([`per_irrep_pole_deuteron_h6.py`](../../folio-assistant/computations/per_irrep_pole_deuteron_h6.py),
+  ([`per_irrep_pole_deuteron_h6.py`](../../computations/per_irrep_pole_deuteron_h6.py),
   witness:
-  [`per-irrep-pole-deuteron-h6.witness.json`](../../folio-assistant/computations/per-irrep-pole-deuteron-h6.witness.json)).
+  [`per-irrep-pole-deuteron-h6.witness.json`](../../computations/per-irrep-pole-deuteron-h6.witness.json)).
 
 Both atoms match `prop:per-nucleon-shift-additive-linearity` exactly.
 
@@ -103,7 +103,7 @@ diagrammatic apparatus (Khovanov–Lauda 2009).
 
 ## Path A — concrete H_3 result (2026-05-09, verified)
 
-`folio-assistant/computations/per_irrep_pole_proton_h3.py`
+`computations/per_irrep_pole_proton_h3.py`
 implements Path A directly. Concrete output for the proton:
 
 ### Per-irrep table
@@ -120,7 +120,7 @@ Per-irrep maximizer: $\lambda = (2, 1)$ with q-pole order $11$.
 
 After summing $\mathrm{tr}_M(\beta_p) = \sum_\lambda y_\lambda(q) \cdot \chi^\lambda_q(\beta_p)$
 and substituting $q = u^2$ (per $D(u)$ convention from
-[`d_u_closed_form_proof.py`](../../folio-assistant/computations/d_u_closed_form_proof.py)
+[`d_u_closed_form_proof.py`](../../computations/d_u_closed_form_proof.py)
 line 18, $z = u/(1+u^2)$ at $q = u^2$):
 
 $$
@@ -133,11 +133,11 @@ $\mathrm{tr}_M(\beta_p)$ matches `prop:per-nucleon-shift-additive-linearity`
 exactly at $A = 1$.
 
 **Cross-confirmation (independent compute path).**
-[`shift_from_nf_basis.py`](../../folio-assistant/computations/shift_from_nf_basis.py),
+[`shift_from_nf_basis.py`](../../computations/shift_from_nf_basis.py),
 which extracts shift values from the Hecke normal-form basis
 expansion (a different algorithmic route than the seminormal trace
 above), records `shift_proton_h3 = 19` in
-[`shift-from-nf-basis.witness.json`](../../folio-assistant/computations/shift-from-nf-basis.witness.json)
+[`shift-from-nf-basis.witness.json`](../../computations/shift-from-nf-basis.witness.json)
 (assertion `shift_proton_h3_finite: computed=19, expected=19, passed=True`).
 Two independent symbolic methods — Hoefsmit seminormal pole-order
 (this PR) and NF-basis shift extraction (pre-existing) — agree
@@ -185,14 +185,14 @@ emerges at $A \ge 2$ (deuteron $= 18 + 21 + 1 = 40$).
 Three optimisations made the deuteron tractable in-session:
 
 1. **Cached symbolic $y_\lambda(q)$**: pre-existing
-   [`y-lambda-wenzl-bridge-symbolic-witness.json`](../../folio-assistant/computations/y-lambda-wenzl-bridge-symbolic-witness.json)
+   [`y-lambda-wenzl-bridge-symbolic-witness.json`](../../computations/y-lambda-wenzl-bridge-symbolic-witness.json)
    (n=2 through n=12) is loaded directly, bypassing the
    `solve_y_lambda(6)` symbolic bottleneck (>5 min via
    `sp.cancel` on rationals in q with half-integer powers).
 2. **Cached symbolic $\chi^\lambda_q(\beta_D)$**: first run
    computes the 11 `chi_lambda_symbolic` calls on the 23-crossing
    deuteron word (~131 s) and emits
-   [`chi-deuteron-h6.witness.json`](../../folio-assistant/computations/chi-deuteron-h6.witness.json);
+   [`chi-deuteron-h6.witness.json`](../../computations/chi-deuteron-h6.witness.json);
    subsequent runs are <1 s.
 3. **Per-term pole order**: $\mathrm{ord}_{u=0}(y_\lambda \cdot \chi^\lambda)$
    per partition, then take max. Avoids the `sp.together`

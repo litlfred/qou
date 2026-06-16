@@ -17,7 +17,7 @@ LaTeX label: `rem:picard-lefschetz-thimble`
 
 ## Witness
 
-- [picard-lefschetz-thimble.witness.json](../../../folio-assistant/computations/picard-lefschetz-thimble.witness.json)
+- [picard-lefschetz-thimble.witness.json](../../../computations/picard-lefschetz-thimble.witness.json)
   — full numerical Hessian + thimble + period data on the 6
   discriminant critical points of the color-tube cubic at `q = q₀`.
 -/

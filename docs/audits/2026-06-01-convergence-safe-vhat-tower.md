@@ -17,9 +17,9 @@ parameters. Or a clean negative. No fit, no tuning to m_p / B_AME;
 `Li_2^q(|V̂_0|) = +∞`, root-caused to the radius `|z| < q₀`).
 
 **Compute:**
-[`convergence_safe_vhat_tower.py`](../../folio-assistant/computations/convergence_safe_vhat_tower.py),
+[`convergence_safe_vhat_tower.py`](../../computations/convergence_safe_vhat_tower.py),
 witness
-[`convergence-safe-vhat-tower.witness.json`](../../folio-assistant/computations/convergence-safe-vhat-tower.witness.json).
+[`convergence-safe-vhat-tower.witness.json`](../../computations/convergence-safe-vhat-tower.witness.json).
 All values RAW @ 60 dps. The genuine std V̂_i are recomputed self-
 contained from the (a, b) Hoefsmit recurrence and cross-checked
 ∏V̂(proton) = 1.065306 (= canonical tr_M to 4e-6), p/n g0 split +14.17 %.

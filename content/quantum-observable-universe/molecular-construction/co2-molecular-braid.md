@@ -58,4 +58,4 @@ $$
 
 *The observed $CO_2$ structure is linear with $D_0 \approx
 16.56 \;\mathrm{eV}$ (total of both C=O bonds, each
-$\approx :val[d0_co2_double_ev]{precision=3, witness=folio-assistant/computations/molecular-experimental-refs.witness.json} \;\mathrm{eV}$).*
+$\approx :val[d0_co2_double_ev]{precision=3, witness=computations/molecular-experimental-refs.witness.json} \;\mathrm{eV}$).*

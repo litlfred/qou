@@ -15,8 +15,8 @@ export default remark({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/channel_product_mass.py",
-    witness: "folio-assistant/computations/channel-product-mass.witness.json",
+    script: "computations/channel_product_mass.py",
+    witness: "computations/channel-product-mass.witness.json",
     status: "verified",
   },
 });

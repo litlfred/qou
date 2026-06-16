@@ -306,7 +306,7 @@ The compute pipeline is layered into reusable packages so external researchers c
 | [`qou-substrate`](tools/qou-substrate/) | `tools/qou-substrate/` | Substrate parameter `q_0`, mpmath 50-dps precision discipline, `WitnessBuilder`. The 1.1k-LOC foundation — 7 in-repo direct importers (≈67 % transitive, via `pyhecke`). |
 | [`pyhecke`](tools/pyhecke/) | `tools/pyhecke/` | Hecke algebra, Gram matrix, Markov trace, tower binding. Primary domain library — 19 in-repo direct importers. |
 | [`pyhecke-native`](tools/pyhecke-native/) | `tools/pyhecke-native/` | PyO3 bindings into `hecke-engine` for Rust-accelerated Markov trace. 15 in-repo direct importers. |
-| [`qou-mass`](qou-mass/) | `qou-mass/` | High-level facade: `predict("4He")`, `compute_tr_M(Z, N)`, `canonical_braid(Z, N)`. Ships vendored per-Z shards; alpha (`v0.1.0a1`). Canonical wiring example: [`folio-assistant/computations/qou_mass_canonical_wiring_example.py`](folio-assistant/computations/qou_mass_canonical_wiring_example.py). |
+| [`qou-mass`](qou-mass/) | `qou-mass/` | High-level facade: `predict("4He")`, `compute_tr_M(Z, N)`, `canonical_braid(Z, N)`. Ships vendored per-Z shards; alpha (`v0.1.0a1`). Canonical wiring example: [`computations/qou_mass_canonical_wiring_example.py`](computations/qou_mass_canonical_wiring_example.py). |
 | [`witness-schema`](tools/witness-schema/) | `tools/witness-schema/` | Pydantic v2 models for the `*.witness.json` interchange format (Python). Also JSON Schema + Zod (TypeScript). |
 
 ### TypeScript / npm
@@ -337,7 +337,7 @@ The compute pipeline is layered into reusable packages so external researchers c
 | `folio-assistant/` | Platform: MCP server, auth, viewer, chat UI, simulators |
 | `folio-assistant/viewer/` | Paper viewer SPA + Pyodide cache |
 | `folio-assistant/simulators/` | Interactive HTML/WebGL visualizations |
-| `folio-assistant/computations/` | Python compute scripts + `*.witness.json` (in-repo Layer 3) |
+| `computations/` | Python compute scripts + `*.witness.json` (in-repo Layer 3) |
 | `qou-mass/` | `qou-mass` PyPI package — external-researcher facade (Layer 3 alt.) |
 | `tools/qou-substrate/` | `qou-substrate` PyPI package — q₀, precision, WitnessBuilder (Layer 2a) |
 | `tools/pyhecke/` | `pyhecke` PyPI package — Hecke/Gram/trace (Layer 2b) |

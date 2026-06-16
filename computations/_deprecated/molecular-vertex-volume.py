@@ -12,7 +12,7 @@ Multiple bonds = multiple trefoils (independent channels for σ/π).
 Molecules: H₂, CO (triple), CO₂ (2×double), CH₄, C₆H₆
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 molecular-vertex-volume.py
 """
 

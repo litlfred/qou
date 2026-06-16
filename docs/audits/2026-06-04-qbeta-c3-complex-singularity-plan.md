@@ -56,7 +56,7 @@ Inputs (published anchor values, from the falsification doc):
 docs/audits/
   2026-06-04-qbeta-c3-complex-singularity-plan.md      # this file
   2026-06-04-qbeta-c3-complex-singularity-verdict.md   # verdict
-folio-assistant/computations/qbeta/
+computations/qbeta/
   qbeta_c3_complex_singularity_probe.py
   qbeta-c3-complex-singularity-probe.witness.json      # auto-emitted
 ```

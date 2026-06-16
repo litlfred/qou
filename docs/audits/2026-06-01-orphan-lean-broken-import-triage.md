@@ -14,7 +14,7 @@ and `lake build QOU` never compiles them*.
 
 ## Method (authoritative)
 
-Classification uses `folio-assistant/computations/audits/lean-ref-resolution-audit.witness.json`,
+Classification uses `computations/audits/lean-ref-resolution-audit.witness.json`,
 which greps each block's `lean.ref` decl and records `sibling_declares`
 (the `.md`/`.ts` sibling `.lean` declares it) vs `lake_root_declares`
 (a copy under `lean/QOU/` declares it). The fuzzy last-component matcher

@@ -14,8 +14,8 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/rigid_monoidal_gap_invariance_check.py",
-    witness: "folio-assistant/computations/rigid-monoidal-gap-invariance.witness.json",
+    script: "computations/rigid_monoidal_gap_invariance_check.py",
+    witness: "computations/rigid-monoidal-gap-invariance.witness.json",
     status: "verified",
   },
   authorNotes: [

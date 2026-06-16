@@ -49,7 +49,7 @@ level — consistent with an unresolved correction in `c_αα` and/or the
 α-cluster pair-counting formula for $n_\alpha \neq 3, 4$.
 
 Witness:
-[`folio-assistant/computations/per-atom-rho-deviation.witness.json`](../../folio-assistant/computations/per-atom-rho-deviation.witness.json).
+[`computations/per-atom-rho-deviation.witness.json`](../../computations/per-atom-rho-deviation.witness.json).
 
 ---
 

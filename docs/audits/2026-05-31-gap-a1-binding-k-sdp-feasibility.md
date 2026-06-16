@@ -11,7 +11,7 @@ after #1591 / #1592 closed off the Hecke-character route.
 > Markov-fingerprint, **no `B_AME`**). But the per-isotope binding consumes
 > the mass-functor per-block component `M_λ(K)` (MeV), and `K`'s character
 > `χ^λ(K)` does not determine `M_λ(K)` — the only available map `χ^λ → M_λ`
-> ([`per_block_phi_q.fit_three_E0`](../../folio-assistant/computations/_deprecated/per_block_phi_q.py))
+> ([`per_block_phi_q.fit_three_E0`](../../computations/_deprecated/per_block_phi_q.py))
 > *fits* per-block energy scales `E₀^λ` to `{e⁻, p, n}`. The deuteron binding
 > equation is **1 equation in `p(6)=11` unknowns `Δ_λ`** (10-dim solution set),
 > underdetermined without an external `M_λ` source (≡ `B_AME`). So GAP-A-1's
@@ -127,8 +127,8 @@ on its PR. The scaffold above is all on `main`.
 > *character* `χ^λ(K)`, not the *mass* `M_λ(K)` the binding formula needs.
 > Fixing `M_λ(K)` from `K` is exactly the open Δ_λ(K) problem.
 
-Probe: [`gap_a1_binding_k_sdp_feasibility.py`](../../folio-assistant/computations/gap_a1_binding_k_sdp_feasibility.py)
-→ [`gap-a1-binding-k-sdp-feasibility.witness.json`](../../folio-assistant/computations/gap-a1-binding-k-sdp-feasibility.witness.json)
+Probe: [`gap_a1_binding_k_sdp_feasibility.py`](../../computations/gap_a1_binding_k_sdp_feasibility.py)
+→ [`gap-a1-binding-k-sdp-feasibility.witness.json`](../../computations/gap-a1-binding-k-sdp-feasibility.witness.json)
 (deuteron ²H, A=2, n₀=6). No parameter tuned to `B_AME`; `B_AME` used only for
 the final residual print.
 
@@ -164,7 +164,7 @@ all 11 of them at H₆(q₀); with `Δ_λ ≡ 0` the Schur–Weyl identity
 `M_λ(K)`, which `χ^λ(K)` does not determine.
 
 **The only map `χ^λ → M_λ` in the repo is a fit.**
-[`per_block_phi_q.py`](../../folio-assistant/computations/_deprecated/per_block_phi_q.py)
+[`per_block_phi_q.py`](../../computations/_deprecated/per_block_phi_q.py)
 (**deprecated**) gets per-block masses via `fit_three_E0` — a linear
 least-squares fit of three per-block energy scales `(E₀^sym, E₀^std, E₀^alt)`
 to `{e⁻, p, n}`. That is the circularity: to turn `K`'s character into a
@@ -232,5 +232,5 @@ directions (all *upstream* of GAP-A-1, none a 7th Δ_λ ansatz):
 - `docs/audits/2026-05-18-delta-lambda-gating-context.md` — the Δ_λ gate
 - `content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md` — GAP-A-1 conjecture
 - `content/quantum-observable-universe/mass-theory/rho-k-h3a-refinement.md` — Δ_λ formal definition
-- `folio-assistant/computations/binding_k_enumerator.py` — Formulation B search
+- `computations/binding_k_enumerator.py` — Formulation B search
 - `tools/pyhecke/python/pyhecke/lp_dual_solver.py` — SDP dual solver

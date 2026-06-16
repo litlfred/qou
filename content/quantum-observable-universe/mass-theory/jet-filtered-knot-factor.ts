@@ -21,8 +21,8 @@ export default conjecture({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/nf_transition_lifting.py",
-    witness: "folio-assistant/computations/nf-transition-lifting.witness.json",
+    script: "computations/nf_transition_lifting.py",
+    witness: "computations/nf-transition-lifting.witness.json",
     status: "experimental",
   },
 });

@@ -2,14 +2,14 @@
 
 > Partial cross-validation of the n−p Δa_m factorization pattern
 > against atomic-number-jump pairs. Sibling: full cross-pair probe
-> [`qbeta_habiro_cross_pair_factorization.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_cross_pair_factorization.py)
+> [`qbeta_habiro_cross_pair_factorization.py`](../../computations/qbeta/qbeta_habiro_cross_pair_factorization.py)
 > requires ³He / ⁴He Habiro coefficients that are not yet generated
-> (only p, n, D are in [`habiro-coefficients-atomic.witness.json`](../../folio-assistant/computations/habiro/habiro-coefficients-atomic.witness.json)).
+> (only p, n, D are in [`habiro-coefficients-atomic.witness.json`](../../computations/habiro/habiro-coefficients-atomic.witness.json)).
 > This audit uses the available 3 atoms to compute (D − p) and (D − n)
 > as the closest available "atomic-number step" comparisons.
 >
 > Branch: `claude/brave-mendel-FPxFl` (PR #1579).
-> Probe script: [`qbeta_habiro_cross_pair_quick_dp.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_cross_pair_quick_dp.py).
+> Probe script: [`qbeta_habiro_cross_pair_quick_dp.py`](../../computations/qbeta/qbeta_habiro_cross_pair_quick_dp.py).
 > Witness: `qbeta-habiro-cross-pair-quick-dp.witness.json`.
 
 ## TL;DR
@@ -53,7 +53,7 @@ For atomic-number-jump pairs (D − p) or (D − n), there is **no classical equ
 - P_8 identification (sibling): [`2026-05-31-qbeta-habiro-p8-identification.md`](2026-05-31-qbeta-habiro-p8-identification.md)
 - u^15 interpretation (sibling): [`2026-05-31-qbeta-habiro-depth15-interpretation.md`](2026-05-31-qbeta-habiro-depth15-interpretation.md)
 - Master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md) PROBE NEW
-- Full cross-pair design (blocked on ³He/⁴He): [`qbeta_habiro_cross_pair_factorization.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_cross_pair_factorization.py)
+- Full cross-pair design (blocked on ³He/⁴He): [`qbeta_habiro_cross_pair_factorization.py`](../../computations/qbeta/qbeta_habiro_cross_pair_factorization.py)
 
 ## Follow-up tasks
 

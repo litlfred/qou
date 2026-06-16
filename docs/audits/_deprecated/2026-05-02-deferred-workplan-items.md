@@ -41,7 +41,7 @@ that exceeds a single-session scope.
 
 ### 1. Compute pipeline infrastructure (P2.1–P2.5)
 
-Multi-week mechanical refactors of `folio-assistant/computations/`.
+Multi-week mechanical refactors of `computations/`.
 None can be closed in a single session because each requires
 running scripts, validating outputs, and iterating numerically.
 
@@ -102,7 +102,7 @@ blocks already correctly framed.
 ### 5. P0.1 follow-up — sweep heuristic refinement
 
 The wall-violation sweep
-([`wall_violations_sweep.py`](../../folio-assistant/computations/sweeps/wall_violations_sweep.py))
+([`wall_violations_sweep.py`](../../computations/sweeps/wall_violations_sweep.py))
 over-flags 3 hits in `atom-knot-mass-derivation-proof.md` because
 its triage heuristic doesn't recognise the
 "Post-Archimedean naming (borrowed, not part of derivation)"

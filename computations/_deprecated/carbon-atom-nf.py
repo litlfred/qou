@@ -31,7 +31,7 @@ them rather than re-declaring, so the GS-consistency audit below
 checks the shared constants.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 carbon-atom-nf.py [--audit-only]
 """
 

@@ -19,7 +19,7 @@ The two-channel mass split in
 
 **Channel 2 is wired to nothing.**
 
-- **No compute.** No script in `folio-assistant/computations/` computes
+- **No compute.** No script in `computations/` computes
   `m_qCLT_approx` or evaluates JSJ-volume-additivity → mass. The 23
   files matching `qclt|q_clt|jsj|blitvic` are exploratory probes
   (e.g. `delta_lambda_jsj_phase3.py`,
@@ -50,7 +50,7 @@ solver is research-scope. **But** the *leading* term does not need it.
 term `m_qCLT_leading(Z,N) = Z·m_p + N·m_n` needs only the framework's
 existing predicted nucleon masses — no volume solver — and the binding
 correction `B(Z,N)` is exactly the Δ_λ term (Item 2). Wired in
-[`m_qclt_approx.py`](../../folio-assistant/computations/m_qclt_approx.py)
+[`m_qclt_approx.py`](../../computations/m_qclt_approx.py)
 → witness `m-qclt-approx.witness.json` (3 assertions, all pass):
 
 - The binding-corrected channel `Z·m_p + N·m_n − B` reproduces the CODATA
@@ -86,9 +86,9 @@ gap (Subgoal-2, declined) and the binding model `B` for A > 8 (= Item 2).
 > The paragraphs below record the *original* data-limited precheck framing.
 
 The precheck **already ran**:
-[`delta_lambda_qlommel_recurrence_precheck.py`](../../folio-assistant/computations/delta_lambda_qlommel_recurrence_precheck.py)
+[`delta_lambda_qlommel_recurrence_precheck.py`](../../computations/delta_lambda_qlommel_recurrence_precheck.py)
 → witness
-[`delta_lambda_qlommel_recurrence_precheck.witness.json`](../../folio-assistant/computations/delta_lambda_qlommel_recurrence_precheck.witness.json).
+[`delta_lambda_qlommel_recurrence_precheck.witness.json`](../../computations/delta_lambda_qlommel_recurrence_precheck.witness.json).
 
 - Verdict: *"INCONCLUSIVE / DATA-LIMITED (no fit attempted, per the Δ_λ
   gate)… DECISIVE TEST GATED on extending the same-shape Δ_λ tower to
@@ -110,7 +110,7 @@ blocker.
 
 ## Item 1 — low-isotope mass-table re-witness: **canonical is timeout-degraded**
 
-[`low_isotope_mass_table.py`](../../folio-assistant/computations/low_isotope_mass_table.py)
+[`low_isotope_mass_table.py`](../../computations/low_isotope_mass_table.py)
 is a thin wrapper: it **projects** `A ≤ 3` rows out of the shared
 `canonical-mass-table-extended.witness.json`. The table should carry 5
 atoms — `LOW_ISOTOPE_ATOMS = ["p", "n", "D", "T", "3He"]`.

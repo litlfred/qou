@@ -29,7 +29,7 @@ Architecture:
 
 This eliminates redundant hecke_core initialization across 211 scripts.
 
-@module folio-assistant/computations/hecke_startup_cache
+@module computations/hecke_startup_cache
 """
 
 import hashlib

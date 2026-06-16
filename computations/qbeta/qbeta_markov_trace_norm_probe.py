@@ -45,7 +45,7 @@ References:
   - qbeta_per_block_symbolic.py — reused: Hoefsmit σ_i matrices, blocks.
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_markov_trace_norm_probe.py
+  python3 computations/qbeta/qbeta_markov_trace_norm_probe.py
 
 Will emit: qbeta-markov-trace-norm-probe.witness.json (5 assertions).
 """

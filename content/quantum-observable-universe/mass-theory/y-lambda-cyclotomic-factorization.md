@@ -125,7 +125,7 @@ partitions of $n$.
 
 ## Witness
 
-[`folio-assistant/computations/y_lambda_cyclotomic_factor.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y_lambda_cyclotomic_factor.py)
+[`computations/y_lambda_cyclotomic_factor.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_cyclotomic_factor.py)
 factors the Wenzl-bridge $y_\lambda$ over $\mathbb{Q}(\check{q})$ via sympy.
 Output: `y-lambda-cyclotomic-factor.witness.json` with explicit
 factored numerators and denominators for $n = 2, 3, 4$.

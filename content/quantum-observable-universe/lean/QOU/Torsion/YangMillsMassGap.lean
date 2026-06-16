@@ -23,7 +23,7 @@ namespace QOU.Torsion
 
     Conjectural class — see [`conj:yang-mills-mass-gap`](../../../quantum-observable-universe/models-of-qous/yang-mills-mass-gap.md). -/
 class YangMillsMassGap where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Conjecture statement** (from manuscript):
 
       Let $(\mathbf{C}, A, \tau)$ be a

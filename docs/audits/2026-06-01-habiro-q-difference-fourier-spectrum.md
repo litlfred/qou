@@ -1,7 +1,7 @@
 # Habiro q-difference equation — Fourier/root-of-unity spectrum of tr_M
 
 **Date:** 2026-06-01
-**Probe:** [`habiro_q_difference_fourier.py`](../../folio-assistant/computations/habiro/habiro_q_difference_fourier.py)
+**Probe:** [`habiro_q_difference_fourier.py`](../../computations/habiro/habiro_q_difference_fourier.py)
 → `habiro-q-difference-fourier.witness.json`
 **Goal arm:** 1ppQ-Q_β (`docs/coordination/1ppq-qbeta.md`)
 **Probe claim:** `probe-qbeta-habiro-element-search` — the **modular

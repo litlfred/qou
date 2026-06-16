@@ -181,4 +181,4 @@ The cleanest **structurally-defensible** statement that survives this audit:
 - [PR #1125](https://github.com/litlfred/qou/pull/1125) (sibling) — binomial pattern sympy proof
 - [`CategoricalHiggsIdempotent.lean`](../../content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/CategoricalHiggsIdempotent.lean) (refined this branch) — encodes v, g, g', λ structurally
 - [`TorusKnotMass.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/TorusKnotMass.lean) (new this branch) — encodes 143/171 + WZ_mass_ratio fields
-- [`rt_binomial_trace_evaluation_probe.py`](../../folio-assistant/computations/probes/rt_binomial_trace_evaluation_probe.py) — empirical measurement
+- [`rt_binomial_trace_evaluation_probe.py`](../../computations/probes/rt_binomial_trace_evaluation_probe.py) — empirical measurement

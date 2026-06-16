@@ -2,7 +2,7 @@ import { remark } from "../../schema/builders";
 
 /**
  * Wraps the live per-observable-100x precision dashboard
- * (folio-assistant/computations/per-observable-100x-status.witness.json,
+ * (computations/per-observable-100x-status.witness.json,
  * emitted by per_observable_100x_status.py).
  *
  * Purpose: declare the dashboard witness as a first-class artifact so
@@ -33,9 +33,9 @@ export default remark({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/per_observable_100x_status.py",
+    script: "computations/per_observable_100x_status.py",
     witness:
-      "folio-assistant/computations/per-observable-100x-status.witness.json",
+      "computations/per-observable-100x-status.witness.json",
     status: "verified",
     requires: ["mpmath"],
   },

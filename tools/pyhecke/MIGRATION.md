@@ -3,7 +3,7 @@
 After M2b (commit `f091636`), `pyhecke.gram` owns the authoritative
 definitions of the Gram matrix, NF basis, Wedderburn weights, and
 NF multiplication for H₃(q). This document lists the 17 scripts
-under `folio-assistant/computations/` that still carry local copies
+under `computations/` that still carry local copies
 of those primitives, and shows the precise import swap for each.
 
 **When to run each migration:** only after CI (`.github/workflows/
@@ -79,17 +79,17 @@ For every migrated script:
 
 ```bash
 # 1. Capture baseline witness
-cp folio-assistant/computations/${script_base}.witness.json /tmp/baseline.json
+cp computations/${script_base}.witness.json /tmp/baseline.json
 
 # 2. Apply the migration edit.
 
 # 3. Re-run the script
-cd folio-assistant/computations && python3 ${script}
+cd computations && python3 ${script}
 
 # 4. Diff the witness (ignoring timestamp + duration fields)
 diff <(jq 'del(.computedAt, .durationMs, .commitSha, .scriptCommitSha, .scriptHash)' /tmp/baseline.json) \
      <(jq 'del(.computedAt, .durationMs, .commitSha, .scriptCommitSha, .scriptHash)' \
-          folio-assistant/computations/${script_base}.witness.json)
+          computations/${script_base}.witness.json)
 # Empty diff = migration safe.
 ```
 
@@ -98,7 +98,7 @@ diff <(jq 'del(.computedAt, .durationMs, .commitSha, .scriptCommitSha, .scriptHa
 Every migration is a single import change. Revert is:
 
 ```bash
-git checkout HEAD~1 -- folio-assistant/computations/<script>
+git checkout HEAD~1 -- computations/<script>
 ```
 
 ## Phasing

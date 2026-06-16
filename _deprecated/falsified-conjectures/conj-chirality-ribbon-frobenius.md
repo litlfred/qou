@@ -131,7 +131,7 @@ The conjecture splits along **chirality class**:
   ($c = 0$), and the symmetric/antisymmetric terms with
   $c = \pm 3$ pair into $3(\chi^{(3)} - \chi^{(1,1,1)})$.  At $q_0$
   this formula reproduces the witness data
-  ([`chirality-avg-content-chiral.witness.json`](../../../folio-assistant/computations/chirality-avg-content-chiral.witness.json))
+  ([`chirality-avg-content-chiral.witness.json`](../../../computations/chirality-avg-content-chiral.witness.json))
   to machine precision:
 
   | Braid                          | $w$ | predicted $\langle c \rangle_\beta$ |
@@ -164,7 +164,7 @@ The conjecture splits along **chirality class**:
   (hook-length symmetry).  Self-conjugate $\lambda = \lambda^T$
   contribute $0$ to the numerator since $c(\lambda) = 0$ for
   self-conjugate partitions of $n$.  The witness
-  [`chirality-avg-content-atomic.witness.json`](../../../folio-assistant/computations/chirality-avg-content-atomic.witness.json)
+  [`chirality-avg-content-atomic.witness.json`](../../../computations/chirality-avg-content-atomic.witness.json)
   records the audited atomic values:
 
   | Atom | $H_n$ | writhe | $\langle c \rangle_\beta$ | $a_K$ (1st-order) |

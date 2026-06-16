@@ -36,7 +36,7 @@ After Tracks 1 + 3 jointly established that Φ_8² is convention-invariant and
 universal across atomic-step pairs (NOT strand-doubling), a follow-up probe
 tested the conjecture that Φ_8² arises from the `z(q)²` interface factor.
 
-**Probe:** [`folio-assistant/computations/probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py`](../../folio-assistant/computations/probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py)
+**Probe:** [`computations/probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py`](../../computations/probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py)
 **Audit:** [`docs/audits/2026-06-01-qbeta-habiro-phi8-squared-mechanism.md`](../audits/2026-06-01-qbeta-habiro-phi8-squared-mechanism.md)
 
 **Verdict: FROM-POCHHAMMER-BOUNDARY (not z(q)²).**

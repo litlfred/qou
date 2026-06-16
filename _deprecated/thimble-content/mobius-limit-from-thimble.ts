@@ -32,8 +32,8 @@ export default conjecture({
   },
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/mobius_limit_from_thimble.py",
-    witness: "folio-assistant/computations/mobius-limit-from-thimble.witness.json",
+    script: "computations/mobius_limit_from_thimble.py",
+    witness: "computations/mobius-limit-from-thimble.witness.json",
     status: "not_run",
     requires: ["sympy", "mpmath"],
   },

@@ -32,7 +32,7 @@ class SkeinShellCorrection : Prop where
 
 -- Ref: [manuscript] conj:skein-shell-correction
 instance skein_shell_correction_conjecture : SkeinShellCorrection where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   -- Gap: assumed conjectural (no rigorous derivation yet).
   -- Path: future inductive proof via HOMFLY iterated Skein
   -- resolution + induction on the number of closed sub-shells,

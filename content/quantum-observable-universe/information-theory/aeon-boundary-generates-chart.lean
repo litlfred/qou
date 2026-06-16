@@ -43,7 +43,7 @@ class AeonRecycling (V : Type*) : Prop where
     `sorry` is the unproved content per §3b-cond. -/
 -- Ref: [manuscript] conj:aeon-boundary-generates-chart
 instance aeon_recycling_conjecture (V : Type*) : AeonRecycling V where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   recycling_holds := sorry
 
 end QOU.AeonBoundary

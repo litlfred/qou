@@ -67,7 +67,7 @@ def dim_q_partition(lam: tuple, q: mp.mpf) -> mp.mpf:
     """dim_q(V_λ) = [n]_q! / Π_{x∈λ} [h(x)]_q (q-hook formula).
 
     Q=1-safe wrapper around the canonical ``dim_q_lambda`` in
-    ``folio-assistant/computations/murnaghan_nakayama.py`` — same
+    ``computations/murnaghan_nakayama.py`` — same
     formula, same hook-length input (``partition_utils.hook_lengths``),
     but routes through this module's q=1-safe ``q_number`` so probes
     exercising the classical limit don't trip 0/0.

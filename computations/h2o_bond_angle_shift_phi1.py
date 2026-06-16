@@ -59,7 +59,7 @@ import sys
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
-_ROOT = _HERE.parents[1]  # …/folio-assistant/computations → repo root
+_ROOT = _HERE.parents[1]  # …/computations → repo root
 for _p in (str(_HERE),
            str(_ROOT / "tools" / "pyhecke" / "python"),
            str(_ROOT / "tools" / "qou-substrate" / "python")):

@@ -252,7 +252,7 @@ closes the gap:*
  *product at this depth reduces* $\Phi_q(0.989)$ *from* $6.7 \times 10^5$
  *to* $46.5$ *for* $\mathrm{max\_grade}=2$ *(D's filtration depth).*
  *Empirical test in*
- [`probe_phiq_yekutieli_truncation.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_phiq_yekutieli_truncation.py):
+ [`probe_phiq_yekutieli_truncation.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe_phiq_yekutieli_truncation.py):
  *the free-minus-atom subtraction* $E_0 \cdot (\mathrm{tower}^{\mathrm{free}}_{\leq k_{\max}} - \mathrm{tower}^{\mathrm{atom}}_{\leq k_{\max}})$
  *gives* $B(D) \approx +1.74 \mathrm{MeV}$ *(error* $-22\%$*) but
  fails for* $T$ *(deeper filtration* $k_{\max}=9$ *gives* $B(T) \approx 1449 \mathrm{MeV}$, *grossly off).*

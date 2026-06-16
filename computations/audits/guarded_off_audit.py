@@ -33,7 +33,7 @@ Limitations:
 Emits `guarded-off-audit.witness.json`.
 
 Usage:
-    python3 folio-assistant/computations/guarded_off_audit.py [--strict]
+    python3 computations/guarded_off_audit.py [--strict]
 """
 
 

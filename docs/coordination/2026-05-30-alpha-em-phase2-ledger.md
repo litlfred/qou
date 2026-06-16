@@ -44,7 +44,7 @@ extensions identified") was: go DOWN to H_1, not UP to H_4/H_5.
 ```
 
 All α/(4π) PRs are SHALLOW additions under
-`folio-assistant/computations/` + `docs/coordination/` (and
+`computations/` + `docs/coordination/` (and
 `content/.../predicted-spectra/em-coupling-bring-zero-mode.{md,lean}`
 for #1508 + #1523).  **No file-level conflicts** across the seven PRs.
 

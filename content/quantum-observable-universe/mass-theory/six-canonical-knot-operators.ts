@@ -23,8 +23,8 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/reeb_flow_garside_closed_form_verification.py",
-    witness: "folio-assistant/computations/reeb-flow-garside-closed-form-verification.witness.json",
+    script: "computations/reeb_flow_garside_closed_form_verification.py",
+    witness: "computations/reeb-flow-garside-closed-form-verification.witness.json",
     status: "verified",
   },
 });

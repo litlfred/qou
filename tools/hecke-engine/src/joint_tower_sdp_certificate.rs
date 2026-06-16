@@ -2,7 +2,7 @@
 //!
 //! Production-scale Rust analogue of the design-spec certificate
 //! emitted by the Python proof-of-concept
-//! [`gb_filtration_jet_tracker.py`](../../../folio-assistant/computations/gb_filtration_jet_tracker.py).
+//! [`gb_filtration_jet_tracker.py`](../../../computations/gb_filtration_jet_tracker.py).
 //!
 //! Schema: matches `gb-filtration-jet-order.witness.json` (Python PoC)
 //! and `joint-tower-sdp-h3.witness.json` / `joint-tower-sdp-h6-h9.witness.json`

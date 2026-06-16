@@ -68,7 +68,7 @@ $\min(Z,N)$ (number of $T=0$ pn pairs) by $n_{pp} + n_{nn}$ (number
 of $T=1$ same-flavor pairs).
 
 Numerical evaluation at $q_0 = 1.109978595554181\ldots$ (50 dps) uses
-[`folio-assistant/computations/derived_only_formula.py`](#)
+[`computations/derived_only_formula.py`](#)
 (witness `derived-only-formula.witness.json`).
 $\square$
 

@@ -30,10 +30,10 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/d_from_scratch.py",
+    script: "computations/d_from_scratch.py",
     witness: [
-      "folio-assistant/computations/d-from-scratch.witness.json",
-      "folio-assistant/computations/unified-low-isotope-predictor.witness.json",
+      "computations/d-from-scratch.witness.json",
+      "computations/unified-low-isotope-predictor.witness.json",
     ],
     status: "not_run",
   },

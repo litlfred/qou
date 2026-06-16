@@ -162,7 +162,7 @@ toward closing the m_p chain — but the remaining 5.6 ppm residual
 is not yet attributable. Further R&D needed.
 
 Witness: planned at
-`folio-assistant/computations/lambda-scale-substrate-search.witness.json`
+`computations/lambda-scale-substrate-search.witness.json`
 (deferred to follow-up commit).
 
 ## Where could `5/2 − h²·G` come from?

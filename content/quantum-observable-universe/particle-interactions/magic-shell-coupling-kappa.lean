@@ -13,7 +13,7 @@ correction admits the closed categorical form
 where E₀ = m_e/(q(q-1)), h = q − q⁻¹, and [n]_q is the q-bracket.
 
 Verified numerically at q₀ in
-`folio-assistant/computations/probe_kappa_categorical_h7a_closed.py`
+`computations/probe_kappa_categorical_h7a_closed.py`
 to match the empirical PR #656 v6 fit within 0.035 %.
 
 LaTeX: `\label{prop:magic-shell-coupling-kappa}`

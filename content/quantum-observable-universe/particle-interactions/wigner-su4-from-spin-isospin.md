@@ -79,7 +79,7 @@ nucleons, and the $8G$ from the Borromean hyperbolic volume scale.
 ## Why this unlocks L3 wiring
 
 The current L3 prototype script
-[`prototype_gs_nf_shell_binding.py`](../../folio-assistant/computations/prototype_gs_nf_shell_binding.py)
+[`prototype_gs_nf_shell_binding.py`](../../computations/prototype_gs_nf_shell_binding.py)
 (PR [#1162](https://github.com/litlfred/qou/pull/1162)) uses
 ε_shell values derived from AME residuals because the framework
 lacks a categorical formula for "which $(Z, N)$ saturates which
@@ -171,7 +171,7 @@ BOTH D9 and D10 to be closed first.
    appropriate categorical multiplication.
 3. **Connect to L3 prototype**: replace ε_shell empirical estimates
    in
-   [`prototype_gs_nf_shell_binding.py`](../../folio-assistant/computations/prototype_gs_nf_shell_binding.py)
+   [`prototype_gs_nf_shell_binding.py`](../../computations/prototype_gs_nf_shell_binding.py)
    with categorical SU(4)-singlet projection coefficients per
    shell.
 4. **D11 to closed** once D9 and D10 are both closed AND the
@@ -184,11 +184,11 @@ BOTH D9 and D10 to be closed first.
 - Upstream D9: [`conj:isospin-from-canonical-bowtie`](isospin-from-canonical-bowtie.md)
 - Upstream D10: [`conj:spin-from-so3-fiber`](spin-from-so3-fiber.md)
 - L3 prototype:
-  [`prototype_gs_nf_shell_binding.py`](../../folio-assistant/computations/prototype_gs_nf_shell_binding.py)
+  [`prototype_gs_nf_shell_binding.py`](../../computations/prototype_gs_nf_shell_binding.py)
 - L3 closure-path audit:
   [`docs/audits/-magic-shell-gs-filtration-exploitation.md`](../../docs/audits/-magic-shell-gs-filtration-exploitation.md)
 - Magic A$\cdot$8G production rule:
-  [`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py)
+  [`mass_table_ppb.py`](../../computations/mass_table_ppb.py)
   `ATOM_ASSIGN["4He"]`
 - Color-tube infrastructure:
   [`color-tube-coordinates.md`](../archimedean-universe/color-tube-coordinates.md),

@@ -35,7 +35,7 @@ substrate-natural `z_* ∈ (0, 1)`, then `λ_p = 1/(1 − z_*)`, so
 
 ## Method
 
-Script: [`phi_q_functional_eq_spike.py`](../../folio-assistant/computations/phi_q_functional_eq_spike.py).
+Script: [`phi_q_functional_eq_spike.py`](../../computations/phi_q_functional_eq_spike.py).
 
 Three tests at dps = 80:
 
@@ -135,4 +135,4 @@ remaining genuinely-open directions (per cumulative audit):
 
 ## Witness
 
-[`folio-assistant/computations/phi-q-functional-eq-spike.witness.json`](../../folio-assistant/computations/phi-q-functional-eq-spike.witness.json)
+[`computations/phi-q-functional-eq-spike.witness.json`](../../computations/phi-q-functional-eq-spike.witness.json)

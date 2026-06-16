@@ -11,12 +11,12 @@ cheap decisive question to ask *before* building any q-Lommel `Δ_λ` closure is
 > Do the canonical `Δ_λ` values lie on **any** three-term recurrence orbit
 > `Δ_{ν+1} = b_ν Δ_ν − Δ_{ν-1}` with a smooth / substrate-shaped `b_ν`?
 
-- **Compute:** [`folio-assistant/computations/delta_lambda_qlommel_recurrence_precheck.py`](../../folio-assistant/computations/delta_lambda_qlommel_recurrence_precheck.py) → witness (4/4, no fit).
+- **Compute:** [`computations/delta_lambda_qlommel_recurrence_precheck.py`](../../computations/delta_lambda_qlommel_recurrence_precheck.py) → witness (4/4, no fit).
 
 ## Finding
 
 The canonical per-atom effective `Δ_λ`
-([`delta-lambda-canonical-residual.witness.json`](../../folio-assistant/computations/delta-lambda-canonical-residual.witness.json))
+([`delta-lambda-canonical-residual.witness.json`](../../computations/delta-lambda-canonical-residual.witness.json))
 covers only the four light nuclei — **three distinct mass-number levels**:
 
 | atom | A | Δ_λ |

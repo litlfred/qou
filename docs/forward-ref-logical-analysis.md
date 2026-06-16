@@ -21,8 +21,8 @@ The headline detangler metric is the **logical-defect count**, not the
 raw forward-ref count.
 
 Authoritative classifier:
-[`folio-assistant/computations/forward_ref_classifier.py`](../folio-assistant/computations/forward_ref_classifier.py)
-→ [`forward-ref-classification.witness.json`](../folio-assistant/computations/forward-ref-classification.witness.json).
+[`computations/forward_ref_classifier.py`](../computations/forward_ref_classifier.py)
+→ [`forward-ref-classification.witness.json`](../computations/forward-ref-classification.witness.json).
 
 ## Current state
 

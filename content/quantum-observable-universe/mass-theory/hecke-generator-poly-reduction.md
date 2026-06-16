@@ -79,4 +79,4 @@ The division-free reduction is formalised in
 factor list from the Hecke quadratic alone (the coefficient recursion is
 `QOU.Braiding.heckeAB`). The transfer-matrix character built on it is
 implemented and validated to the 50-digit floor in
-`folio-assistant/computations/chi_monotone_transfer.py`.
+`computations/chi_monotone_transfer.py`.

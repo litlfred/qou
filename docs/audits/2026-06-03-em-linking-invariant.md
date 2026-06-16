@@ -9,7 +9,7 @@ EM-linking *structure* is already derived, but the per-pair Coulomb
 categorical brane-separation / nuclear-charge-radius scale the framework
 does not yet supply. Any concrete value would be a CAL-4 fit to AME.
 
-Probe: [`em_linking_invariant_probe.py`](../../folio-assistant/computations/em_linking_invariant_probe.py)
+Probe: [`em_linking_invariant_probe.py`](../../computations/em_linking_invariant_probe.py)
 (witness `em-linking-invariant-probe.witness.json`, EXPLORATORY, RAW @ 40
 dps, 2 assertions pass). **No tuning to 0.7638 MeV, no coupling fit, no h^k.**
 
@@ -32,7 +32,7 @@ The EM-linking *structure* exists in the corpus today:
 | Markov **trace asymmetry** `tr_M(pp)−tr_M(nn)` | `0.16507` | same; Wenzl trace on `H₂(q)`, both Wedderburn blocks carry weight |
 | Coulomb/strong **ratio** `tanh(ln q₀)` | `0.10396` | `def:coulomb-charge` (q₀-only) |
 | α_EM Habiro lead `[2]_q` | `2.0109` | [`alpha-em-habiro-bar-involution`](../../content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.md) |
-| ³He binding-link volume `Vol(L6a4)=8G` | `7.3277` | [`binding_link_volumes.py`](../../folio-assistant/computations/binding_link_volumes.py) (= Borromean) |
+| ³He binding-link volume `Vol(L6a4)=8G` | `7.3277` | [`binding_link_volumes.py`](../../computations/binding_link_volumes.py) (= Borromean) |
 | ³H binding-link volume `Vol(8₁₁)` | `8.2863` | same |
 
 So the **per-pair EM-linking invariant DOES exist** as a *dimensionless*
@@ -106,7 +106,7 @@ by the length-scale conversion.
   twice in the corpus:
   - the `writhe → hypercharge Y` map is undefined (misses PDG by ~305× at
     the natural coupling c=1;
-    [`u1_hypercharge_assignment.py`](../../folio-assistant/computations/u1_hypercharge_assignment.py)),
+    [`u1_hypercharge_assignment.py`](../../computations/u1_hypercharge_assignment.py)),
     and
   - the Δ_λ per-partition closure (six ansätze failed; CLAUDE.md Δ_λ gate).
 
@@ -165,10 +165,10 @@ pattern as the other Wall-A items.
   trace asymmetry):
   [`2026-06-01-inter-nucleon-linked-channel.md`](2026-06-01-inter-nucleon-linked-channel.md).
 - The same-class `writhe → Y` obstruction:
-  [`u1_hypercharge_assignment.py`](../../folio-assistant/computations/u1_hypercharge_assignment.py),
+  [`u1_hypercharge_assignment.py`](../../computations/u1_hypercharge_assignment.py),
   [`2026-06-02-u1-hypercharge-assignment.md`](2026-06-02-u1-hypercharge-assignment.md).
 - The binding-link volumes (³He = L6a4 = Borromean = 8G; ³H = 8₁₁):
-  [`binding_link_volumes.py`](../../folio-assistant/computations/binding_link_volumes.py).
+  [`binding_link_volumes.py`](../../computations/binding_link_volumes.py).
 - Coulomb charge definition:
   [`def:coulomb-charge`](../../content/quantum-observable-universe/climax-volume-mass/coulomb-charge.md).
 - α_EM Habiro element (dimensionless — cannot supply the length scale):

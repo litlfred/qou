@@ -88,7 +88,7 @@ with `T_w` a joint-tower SDP solution in `H_{n_0}(q)` and
 **No fits. No calibration constants beyond `q_0` and `m_e`.**
 
 This audit classifies every existing Q / decay / B/A witness under
-`folio-assistant/computations/` as **categorical**, **partially
+`computations/` as **categorical**, **partially
 categorical**, or **fitted/empirical**, and lists the next step for
 each item that is not yet end-to-end categorical.
 
@@ -101,14 +101,14 @@ The new infrastructure landed in PR #442–#445 (commits
 |---:|---|:---:|---|
 | (1) | Categorical action `C ↻ 𝒮` | structural input | — |
 | (2) | Yekutieli finite slice ≡ Hecke σ²=hσ+1 (curvature 2-form at adjacent slices) | derivation, no analytic content | [`atom-knot-mass-derivation-proof.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.md) |
-| (3a) | GB-NF reducer + jet-order tracker | **wired** (Rust + Python) | [`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/gb-filtration-jet-order.witness.json) |
-| (3b) | Joint-tower SDP confinement at q_0 | **wired H_3/H_4**, **H_5 BUG** (Clarabel-rs) | [`joint-tower-sdp-rust.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/joint-tower-sdp-rust.witness.json), [`joint-tower-sdp-h3.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/joint-tower-sdp-h3.witness.json), [`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json) |
+| (3a) | GB-NF reducer + jet-order tracker | **wired** (Rust + Python) | [`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/gb-filtration-jet-order.witness.json) |
+| (3b) | Joint-tower SDP confinement at q_0 | **wired H_3/H_4**, **H_5 BUG** (Clarabel-rs) | [`joint-tower-sdp-rust.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/joint-tower-sdp-rust.witness.json), [`joint-tower-sdp-h3.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/joint-tower-sdp-h3.witness.json), [`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/joint-tower-sdp-h6-h9.witness.json) |
 | (4) | Wedderburn `H_n(q) ≅ ⊕_λ M_{d_λ}(ℚ(q))` | structural; semisimple at generic q | — |
-| (5a) | Wenzl-bridge `y_λ(q)` at 50 dps | **wired** | [`y-lambda-wenzl-witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/y-lambda-wenzl-witness.json) |
+| (5a) | Wenzl-bridge `y_λ(q)` at 50 dps | **wired** | [`y-lambda-wenzl-witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/y-lambda-wenzl-witness.json) |
 | (5b) | q-Murnaghan–Nakayama `χ_λ(T_w)` | **wired** (Python) | [`y-lambda-recipe-from-partition.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.md) + qmn scripts |
-| (5c) | Markov trace `tr_M(T_w) = Σ_λ y_λ χ_λ` | partially wired (used in `atom_mass_partition.py`) | [`canonical-mass-table.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/canonical-mass-table.witness.json) |
-| (6) | `M(𝔥) = ρ · tr_M(T_w) ∈ ℚ(q)`, ρ structural integer | **wired** (R3 PSD, R4 LR, R5min) | [`joint-tower-sdp-rust.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/joint-tower-sdp-rust.witness.json) |
-| (7) | Archimedean realization at `q = q_0`, `× m_e` | **wired** | [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass-table-ppb.witness.json) |
+| (5c) | Markov trace `tr_M(T_w) = Σ_λ y_λ χ_λ` | partially wired (used in `atom_mass_partition.py`) | [`canonical-mass-table.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/canonical-mass-table.witness.json) |
+| (6) | `M(𝔥) = ρ · tr_M(T_w) ∈ ℚ(q)`, ρ structural integer | **wired** (R3 PSD, R4 LR, R5min) | [`joint-tower-sdp-rust.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/joint-tower-sdp-rust.witness.json) |
+| (7) | Archimedean realization at `q = q_0`, `× m_e` | **wired** | [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/mass-table-ppb.witness.json) |
 
 **Bottom line.** The full categorical chain is wired for
 `{quark, electron, proton, neutron}` end-to-end (R5min α* verified),
@@ -121,40 +121,40 @@ H_5 SDP solver bug, or is using deprecated empirical methods.**
 
 | Witness | Atoms | Method | Class | Next step |
 |---|---|---|:---:|---|
-| [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass-table-ppb.witness.json) | D, T, ³He | `ρ · m_e · Vol(K)` with K **census-assigned** (6_2, 8_11, L6a4) | **partial** (knot id not yet derived) | rerun with GB-NF derived T_w at H_6 / H_9 |
-| [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass-table-ppb.witness.json) | ⁴He | magic-A `2·A·α`, `α = m_e · 8G` | **categorical** (derived) | — |
-| [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass-table-ppb.witness.json) | ⁸Be–⁴⁰Ca | α-cluster recursion `n_α · B(⁴He) + n_pairs · c_αα` | **categorical** (derived; residual ~5–20%) | derive `c_αα` correction terms from H_n₀ SDP |
+| [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/mass-table-ppb.witness.json) | D, T, ³He | `ρ · m_e · Vol(K)` with K **census-assigned** (6_2, 8_11, L6a4) | **partial** (knot id not yet derived) | rerun with GB-NF derived T_w at H_6 / H_9 |
+| [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/mass-table-ppb.witness.json) | ⁴He | magic-A `2·A·α`, `α = m_e · 8G` | **categorical** (derived) | — |
+| [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/mass-table-ppb.witness.json) | ⁸Be–⁴⁰Ca | α-cluster recursion `n_α · B(⁴He) + n_pairs · c_αα` | **categorical** (derived; residual ~5–20%) | derive `c_αα` correction terms from H_n₀ SDP |
 | `mass-table-ppb.witness.json` `atoms_no_assignment` | ⁶Li, ⁷Li, ⁹Be, ¹¹B, ¹⁴N, ¹⁹F | none yet | **OPEN** (family 4) | run H_18+ SDP with α + (light cluster) ansatz once Clarabel H_5 bug closed |
-| [`canonical-mass-table.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/canonical-mass-table.witness.json) | D, T, ³He, ⁴He | `tr_M(atom)/tr_M(free)` ratio with `E_0 = 0.782 MeV` | **fitted** | superseded — uses fixed `E_0` rather than `m_e · ρ` from SDP |
-| [`low-isotope-mass-table.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/low-isotope-mass-table.witness.json) | 1H–22Ne | `partial-shell:f=0.250/0.500/0.750` interpolation | **fitted** | replace with α + (light cluster) categorical T_w once derived |
-| [`binding-canonical.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/binding-canonical.witness.json) | various | older Markov-trace | **partial** | keep until SDP-derived versions land |
-| [`binding-ladder-catalog.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/binding-ladder-catalog.witness.json) | ⁴He–⁴⁰Ca | family-aware reference table | **categorical** (used by mass-table-ppb) | — |
-| [`comprehensive-low-isotope-table-v2.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/comprehensive-low-isotope-table-v2.witness.json) | various | older comprehensive table | **fitted** | drop or rebuild |
-| [`atom-mass-derived.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/atom-mass-derived.witness.json) | various | older derivation attempt | **fitted/partial** | drop or rebuild |
-| [`atom_mass_qou_calibration.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/atom_mass_qou_calibration.py) | various | explicit "calibration" script | **fitted** | superseded by mass-table-ppb canonical pipeline |
+| [`canonical-mass-table.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/canonical-mass-table.witness.json) | D, T, ³He, ⁴He | `tr_M(atom)/tr_M(free)` ratio with `E_0 = 0.782 MeV` | **fitted** | superseded — uses fixed `E_0` rather than `m_e · ρ` from SDP |
+| [`low-isotope-mass-table.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/low-isotope-mass-table.witness.json) | 1H–22Ne | `partial-shell:f=0.250/0.500/0.750` interpolation | **fitted** | replace with α + (light cluster) categorical T_w once derived |
+| [`binding-canonical.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/binding-canonical.witness.json) | various | older Markov-trace | **partial** | keep until SDP-derived versions land |
+| [`binding-ladder-catalog.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/binding-ladder-catalog.witness.json) | ⁴He–⁴⁰Ca | family-aware reference table | **categorical** (used by mass-table-ppb) | — |
+| [`comprehensive-low-isotope-table-v2.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/comprehensive-low-isotope-table-v2.witness.json) | various | older comprehensive table | **fitted** | drop or rebuild |
+| [`atom-mass-derived.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/atom-mass-derived.witness.json) | various | older derivation attempt | **fitted/partial** | drop or rebuild |
+| [`atom_mass_qou_calibration.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/atom_mass_qou_calibration.py) | various | explicit "calibration" script | **fitted** | superseded by mass-table-ppb canonical pipeline |
 
 ## Q-values — current witnesses, classified
 
 | Witness | Decays | Method | Class | Next step |
 |---|---|---|:---:|---|
-| [`branching-qvalues.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/branching-qvalues.witness.json) | n→p, ³H→³He, ⁶He→⁶Li | `\|S_FP\| · m_e` with **Frobenius-positivity filter** | **fitted** (filter activation threshold not derived) | replace with `Q = Q_n→p + B_d − B_p` from canonical chain |
-| [`branching-qvalue-chain.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/branching-qvalue-chain.witness.json) | n→p, ³H→³He, ⁶He→⁶Li | even/odd regime split + manual `+1` for n→p | **fitted** (regime split, manual offset) | same as above |
-| [`level1-qvalues.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/level1-qvalues.witness.json) | ³H, ¹⁴C, ⁶⁰Co, ⁹⁰Sr, ¹³⁷Cs, ²¹⁰Bi | quark-level log-ratio sum, no MeV closed form | **structural** (no calibration to MeV) | feed into Q via `tr_M(parent) − tr_M(daughter)` |
-| [`inverse-markov-qvalues.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/inverse-markov-qvalues.witness.json) | n→p, ³H→³He, ⁶He→⁶Li, ¹⁴C→¹⁴N | trace difference `(1/tr_par) − (1/tr_dau)` | **structural** (no Q in MeV) | rederive via canonical Markov trace differences |
-| [`free-neutron-decay.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/free-neutron-decay.witness.json) | n→p | full GB-NF reduction at H_3 + Borromean B_3 | **categorical** (structurally) | wire into Q-formula as `Q_n→p_categorical` |
-| [`markov-free-energy-qvalues.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/markov-free-energy-qvalues.witness.json) | various | Markov free-energy difference | **partial** | check for hidden calibration |
-| [`nf-qvalues.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/nf-qvalues.witness.json) | various | NF-form Q-value | **partial** | check for hidden calibration |
-| [`garside-irrep-qvalues.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/garside-irrep-qvalues.witness.json) | various | Garside-irrep | **partial** | check for hidden calibration |
+| [`branching-qvalues.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/branching-qvalues.witness.json) | n→p, ³H→³He, ⁶He→⁶Li | `\|S_FP\| · m_e` with **Frobenius-positivity filter** | **fitted** (filter activation threshold not derived) | replace with `Q = Q_n→p + B_d − B_p` from canonical chain |
+| [`branching-qvalue-chain.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/branching-qvalue-chain.witness.json) | n→p, ³H→³He, ⁶He→⁶Li | even/odd regime split + manual `+1` for n→p | **fitted** (regime split, manual offset) | same as above |
+| [`level1-qvalues.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/level1-qvalues.witness.json) | ³H, ¹⁴C, ⁶⁰Co, ⁹⁰Sr, ¹³⁷Cs, ²¹⁰Bi | quark-level log-ratio sum, no MeV closed form | **structural** (no calibration to MeV) | feed into Q via `tr_M(parent) − tr_M(daughter)` |
+| [`inverse-markov-qvalues.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/inverse-markov-qvalues.witness.json) | n→p, ³H→³He, ⁶He→⁶Li, ¹⁴C→¹⁴N | trace difference `(1/tr_par) − (1/tr_dau)` | **structural** (no Q in MeV) | rederive via canonical Markov trace differences |
+| [`free-neutron-decay.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/free-neutron-decay.witness.json) | n→p | full GB-NF reduction at H_3 + Borromean B_3 | **categorical** (structurally) | wire into Q-formula as `Q_n→p_categorical` |
+| [`markov-free-energy-qvalues.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/markov-free-energy-qvalues.witness.json) | various | Markov free-energy difference | **partial** | check for hidden calibration |
+| [`nf-qvalues.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/nf-qvalues.witness.json) | various | NF-form Q-value | **partial** | check for hidden calibration |
+| [`garside-irrep-qvalues.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/garside-irrep-qvalues.witness.json) | various | Garside-irrep | **partial** | check for hidden calibration |
 | `c-alpha-from-Q-beta-trace.witness.json` | — | extracts `c_α` from observed Q via fit | **fitted** | drop |
 
 ## Decay (half-life, rate) — current witnesses, classified
 
 | Witness | Nuclei | Method | Class | Next step |
 |---|---|---|:---:|---|
-| [`beta-decay-from-q.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/beta-decay-from-q.witness.json) | ³H, ¹⁴C, ⁶⁰Co, ⁹⁰Sr, ¹³⁷Cs, ²¹⁰Bi | `G_F` decomposed into `q`-factors × `μ_0` | **partial** (μ_0 is the only free parameter; `N_v` topological invariant **OPEN**) | derive `N_v` from brane tower structure |
-| [`beta-decay-energy-scale.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/beta-decay-energy-scale.witness.json) | various | energy-scale check | **structural** | — |
-| [`beta-decay-matrix.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/beta-decay-matrix.witness.json) | various | matrix elements | **partial** | check for fits |
-| [`groebner-beta-decay.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/groebner-beta-decay.py) | — | GB script for β-decay matrix elements | **categorical** (script only) | run + emit witness |
+| [`beta-decay-from-q.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/beta-decay-from-q.witness.json) | ³H, ¹⁴C, ⁶⁰Co, ⁹⁰Sr, ¹³⁷Cs, ²¹⁰Bi | `G_F` decomposed into `q`-factors × `μ_0` | **partial** (μ_0 is the only free parameter; `N_v` topological invariant **OPEN**) | derive `N_v` from brane tower structure |
+| [`beta-decay-energy-scale.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/beta-decay-energy-scale.witness.json) | various | energy-scale check | **structural** | — |
+| [`beta-decay-matrix.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/beta-decay-matrix.witness.json) | various | matrix elements | **partial** | check for fits |
+| [`groebner-beta-decay.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/groebner-beta-decay.py) | — | GB script for β-decay matrix elements | **categorical** (script only) | run + emit witness |
 
 ## Net categorical inventory (what's truly fit-free today)
 
@@ -192,7 +192,7 @@ forces
 
 >   `N_v = v / (E_× · μ_0) ≈ 246220 / (0.1045 · 1.6295) ≈ 1.4455 × 10⁶`
 
-— see [`beta-decay-from-q.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/beta-decay-from-q.witness.json) `G_F_decomposition.N_v_crossing_count`.
+— see [`beta-decay-from-q.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/beta-decay-from-q.witness.json) `G_F_decomposition.N_v_crossing_count`.
 
 **Interpretation.** `N_v` is the **effective crossing count of the
 weak scale** — the topological complexity (number of typed
@@ -297,7 +297,7 @@ where `Φ_q(z) = ∏_{k≥1}(1 − q^{-k}z)^{-1}` is the quantum dilogarithm,
 `V̂_i^{full}` is the additive Wedderburn-traced volume at generator `i`
 (purely algebraic in `q`, computed via Hecke crossing recursion).
 
-[`mass_endomorphism.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass_endomorphism.py) → `mass-endomorphism.witness.json`:
+[`mass_endomorphism.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/mass_endomorphism.py) → `mass-endomorphism.witness.json`:
 
 ```
 ELECTRON (1 generator, σ_1³ trefoil on 2 strands)
@@ -326,7 +326,7 @@ This is **categorical and pre-Archimedean** (everything is in
 
 #### Probe candidate 1 verdict — REVISED
 
-[`probe_proton_mass_scale.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_proton_mass_scale.py) wrongly classified candidate 1 (sub-tower
+[`probe_proton_mass_scale.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe_proton_mass_scale.py) wrongly classified candidate 1 (sub-tower
 depth) as NEGATIVE because it computed only the Markov trace
 `Σ_λ y_λ · χ_λ(T_w)` which gives `tr_M(T_w(p)) ≈ 1`. The right
 algebraic chain has **two more terms** beyond the bare trace:
@@ -343,7 +343,7 @@ single-generator and pair-generator blowups via `Φ_q`. With those,
 #### Remaining gaps (option B)
 
 - **1.84% residual on `m_p/m_e`**: a known open question; investigated in
-  [`electron_chiral_probe.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/electron_chiral_probe.py) and several other probes.
+  [`electron_chiral_probe.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/electron_chiral_probe.py) and several other probes.
 - **`m_n/m_e = 682`** vs CODATA 1839 — **63% off, sign of `Δm_{np}` flipped.**
   The neutron formula in `mass_endomorphism.py` uses `udd` quark content
   with `dd` pair coefficient `(1, -HA)` (i.e. `σ⁻¹`), giving
@@ -374,7 +374,7 @@ single-generator and pair-generator blowups via `Φ_q`. With those,
 
 The mass-endomorphism tower decomposes naturally into **GB-filtration
 orders**, each tracking a different level of categorical entanglement.
-[`entanglement_orders.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/entanglement_orders.py) computes all orders up to `n_gens` via:
+[`entanglement_orders.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/entanglement_orders.py) computes all orders up to `n_gens` via:
 
 >   `order_k = Σ_{S⊂{0..n_gens-1}, |S|=k} z^{2·span(S)} · Φ_q(|∏_{i∈S} V̂_i|)`
 
@@ -443,7 +443,7 @@ crossing in the proton's 11-crossing budget (currently 4-channel
 (iii) a finite truncation of `Φ_q(z) = ∏_k(1−q^{-k}z)^{-1}` at large
 `k` (currently 2000 iterations).
 
-**Witness:** [`entanglement-orders.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/entanglement-orders.witness.json) — the per-order
+**Witness:** [`entanglement-orders.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/entanglement-orders.witness.json) — the per-order
 contributions for `{p, n, D, T, ³He}` as of commit `bc981e4`.
 
 ## The 3-input calibration scheme (per `calibration-inputs.md`)
@@ -519,7 +519,7 @@ ascension via the pentagon identity of `Φ_q` (per [`mass-endomorphism-jet-tower
 
 ### What this means for `mass-table-ppb`
 
-[`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass-table-ppb.witness.json) currently uses `Vol_hyp(K)` for
+[`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/mass-table-ppb.witness.json) currently uses `Vol_hyp(K)` for
 all families. Under the 3-input scheme it should use:
 
 - Family 1 (D, T, ³He): the 4-tier formula above (Schur-Weyl + Frob
@@ -537,9 +537,9 @@ The errors are SIMILAR in magnitude, but the 4-tier formula is
 ### Concrete next steps (refined under 3-input scheme)
 
 1. **Re-emit `mass-table-ppb` using the 4-tier formula.** Existing
-   computations: [`light_isotope_sweep.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/sweeps/light_isotope_sweep.py),
-   [`bw_chirality_isotopes.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/bw_chirality_isotopes.py),
-   [`mass_formula_6term.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass_formula_6term.py).
+   computations: [`light_isotope_sweep.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/sweeps/light_isotope_sweep.py),
+   [`bw_chirality_isotopes.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/bw_chirality_isotopes.py),
+   [`mass_formula_6term.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/mass_formula_6term.py).
 2. **Investigate the 1.84% `m_p/m_e` residual** in the
    `mass-endomorphism-tower` (no-Q_β) convention. Truncation of
    `Φ_q` at 2000 iterations or finite Wedderburn precision.
@@ -622,9 +622,9 @@ pair does not change this; Q-value precision needs sub-ppm B-precision.
 
 ## Audit of 524 canonical compute scripts (2026-04-27)
 
-[`canonical_script_input_audit.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/audits/canonical_script_input_audit.py)
+[`canonical_script_input_audit.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/audits/canonical_script_input_audit.py)
 classified every Python compute script under
-`folio-assistant/computations/` for alignment with the paper's
+`computations/` for alignment with the paper's
 3-input scheme (`calibration-inputs.md`):
 
 | Bucket | Count | % |
@@ -642,7 +642,7 @@ both `m_p` and `m_n` from CODATA when the framework prescribes
 `m_n = m_p + Q_β`. This is a major alignment gap — the codebase has
 drifted from the paper's stated calibration scheme.
 
-**Witness:** [`canonical-script-input-audit.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/audits/canonical-script-input-audit.witness.json) (full per-script
+**Witness:** [`canonical-script-input-audit.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/audits/canonical-script-input-audit.witness.json) (full per-script
 classification table).
 
 ### How to migrate over-counting scripts
@@ -661,7 +661,7 @@ into alignment with the paper's stated 3-input framework.
 
 ## Probe finding: shell-self-duality FALSIFIED at atom level (2026-04-27)
 
-[`probe_atom_shell_self_duality.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_atom_shell_self_duality.py)
+[`probe_atom_shell_self_duality.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe_atom_shell_self_duality.py)
 tested whether `x_λ(β_atom) = x_{λ*}(β_atom)` for every Wedderburn
 partition pair `(λ, λ*)` of the atom braids (NO Vol_hyp, NO knot
 identification, NO census search — purely algebraic at q_0).
@@ -709,7 +709,7 @@ $$\chi_{\text{sym}}(\beta) \cdot \chi_{\text{alt}}(\beta) = (-1)^{\#(\beta)} \cd
 
 (per [`docs/chi-sym-alt-theorem.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/docs/chi-sym-alt-theorem.md), proved via factor-by-factor
 algebra) is implemented as `closed_form_prediction(A, H_A)` in
-[`chi_sym_alt_closed_form.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/chi_sym_alt_closed_form.py)
+[`chi_sym_alt_closed_form.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/chi_sym_alt_closed_form.py)
 and verified to **0.004%** against direct Hoefsmit on D, T, ³He, ⁴He.
 
 **Concrete compute improvements:**
@@ -766,7 +766,7 @@ redundant numerical evaluation (and cuts 2 sources of f64 error).
 
 ## Per-nucleon H_3 sub-tower probe (2026-04-27)
 
-[`probe_per_nucleon_self_duality.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_per_nucleon_self_duality.py)
+[`probe_per_nucleon_self_duality.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe_per_nucleon_self_duality.py)
 restricted the shell-self-duality test to the per-nucleon H_3
 sub-tower (instead of the atom-level H_{3A}):
 
@@ -797,8 +797,8 @@ relate it to the Kashaev intra-exactness condition.
 
 Per [`six-term-mass-formula-complete.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md), Term 6 is DERIVED via:
 
-- [`gb_residue_tower.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/gb_residue_tower.py) — **broken**: imports `markov_trace_three_channels` which is **never defined** anywhere in the codebase. Stale dependency.
-- [`habiro_residue_symbolic.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/habiro/habiro_residue_symbolic.py) — **works**. Emits exact residues of `Φ_q · tr_M` at primitive `n`-th roots of unity (`n=2, 3` give nonzero; `n=4, 5, 6` give no pole at primitive roots).
+- [`gb_residue_tower.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/gb_residue_tower.py) — **broken**: imports `markov_trace_three_channels` which is **never defined** anywhere in the codebase. Stale dependency.
+- [`habiro_residue_symbolic.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/habiro/habiro_residue_symbolic.py) — **works**. Emits exact residues of `Φ_q · tr_M` at primitive `n`-th roots of unity (`n=2, 3` give nonzero; `n=4, 5, 6` give no pole at primitive roots).
 
 Habiro witness output:
 
@@ -845,7 +845,7 @@ script reports two values per atom now:
 
 **Arith** is `Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B` — simple
 algebra, no chain. **Tower** is the same with `m_p_TOWER = 1869.85·m_e`
-(per [`mass-endomorphism.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass-endomorphism.witness.json)) and `m_n_TOWER = m_p_TOWER + Q_β`.
+(per [`mass-endomorphism.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/mass-endomorphism.witness.json)) and `m_n_TOWER = m_p_TOWER + Q_β`.
 
 The **~1.84% systematic offset** in the tower column is the
 mass-endomorphism tower's `m_p_pred / m_p_AME` residual. Every
@@ -945,14 +945,14 @@ should be re-evaluated.
 
 ### Update (2026-04-28): calibration-consistent Wenzl-Schur sweep
 
-Refactored [`light_isotope_sweep.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/sweeps/light_isotope_sweep.py) with a
+Refactored [`light_isotope_sweep.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/sweeps/light_isotope_sweep.py) with a
 `--convention {plancherel,wenzl-schur}` flag. Both modes use the
 same atomic braid words, the same E_0 calibration formula
 (`E_0 = 0.782 / |tr_n - tr_p|`), but **different per-λ weights**:
 
 - `plancherel` (legacy): `w_λ = dim_q² / [n]_q!`, contrib = `w_λ · χ_λ / dim_λ_classical`
 - `wenzl-schur` (canonical): `w_λ = y_λ` from
-  [`y-lambda-wenzl-witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/y-lambda-wenzl-witness.json) (100-dps closed-form), contrib = `y_λ · χ_λ`
+  [`y-lambda-wenzl-witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/y-lambda-wenzl-witness.json) (100-dps closed-form), contrib = `y_λ · χ_λ`
 
 Numerical sanity at A=1: tr_M(p, plancherel) = 0.7022, tr_M(p,
 wenzl-schur) = 1.0653, tr_M(p, habiro) = 2.1226. **All three differ.**
@@ -1059,7 +1059,7 @@ Paper-side (`knot-mass-formula-unified.md`) said the resolution is
    propagate into Term 4**. Lean theorem
    [`frobenius_codim_tau_invariant`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.lean)
    proves this. Numerical verification:
-   [`probe_term4_conventions.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_term4_conventions.py).
+   [`probe_term4_conventions.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe_term4_conventions.py).
 
 2. **Axis-1: per-3A is the genuine algebra.** When an isotope
    braid lives in `H_{3A}(R, q)`, the central idempotents are
@@ -1071,7 +1071,7 @@ Paper-side (`knot-mass-formula-unified.md`) said the resolution is
    ```
 
    Numerical values per
-   [`probe_term4_conventions.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_term4_conventions.py):
+   [`probe_term4_conventions.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe_term4_conventions.py):
 
    | atom | A | per-vortex 1·m_e·Σ_3 | per-A A·m_e·Σ_3 (CURRENT COMPUTE) | **per-3A m_e·Σ_{3A} (ALGEBRAIC)** |
    |---|---:|---:|---:|---:|
@@ -1110,7 +1110,7 @@ Paper-side (`knot-mass-formula-unified.md`) said the resolution is
 
 `mass_formula_6term.py` and `unified_low_isotope_predictor.py` have
 been migrated to consume `m_e · Σ_{λ⊢3A} 1/dim_q(λ)` from
-[`probe-term4-conventions.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe-term4-conventions.witness.json).
+[`probe-term4-conventions.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe-term4-conventions.witness.json).
 Both scripts now emit per-vortex (legacy), per-A (legacy), and
 **per-3A (canonical)** Term 4 values.
 
@@ -1193,7 +1193,7 @@ The +18.29% D residual under canonical Term 4 is from a 4-term sum
 | Source | ρ_D | ρ_T | ρ_³He |
 |---|---:|---:|---:|
 | Paper text "ρ=1 for ℓ ≤ 1" | 1 | 1 | 1 |
-| [`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json) `rho_factor` | **1** | **2** | **2** |
+| [`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/joint-tower-sdp-h6-h9.witness.json) `rho_factor` | **1** | **2** | **2** |
 | Empirical (Wenzl-Schur, paper formula → AME) | ~13 | ~660 | ~7.6 |
 
 The paper text says "ρ = 1 for ℓ ≤ 1 direct". The SDP witness gives
@@ -1208,7 +1208,7 @@ The SDP witness already exists with D's canonical structure:
 - T: n_0=5, braid=`[-1,2,-3,2,1,-3,-3,4,-3,-2,-3,-4,-3,2]`, knot=8_11, ρ=2
 - ³He: n_0=3, braid=`[-1,2,-1,2,-1,2]`, knot=L6a4, ρ=2
 
-[`probe_sdp_canonical_paper_formula.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_sdp_canonical_paper_formula.py)
+[`probe_sdp_canonical_paper_formula.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe_sdp_canonical_paper_formula.py)
 applies `B(H) = m_e · ρ · tr_M(T_w(H))` on these SDP-canonical
 words. **Result: paper formula fails on all three atoms by
 87-100%, regardless of Plancherel/Wenzl-Schur convention.**
@@ -1349,7 +1349,7 @@ SDP witness, since the simple ρ=1 rule covers only D.
 
 #### Item 4: Multi-term on SDP braid words
 
-[`probe_sdp_canonical_paper_formula.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_sdp_canonical_paper_formula.py)
+[`probe_sdp_canonical_paper_formula.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe_sdp_canonical_paper_formula.py)
 already records per-λ Plancherel and Wenzl-Schur breakdowns for
 the SDP braids. The new test (item 2) confirms multi-term is
 better but still 30-60% off without the brane tower.
@@ -1392,7 +1392,7 @@ derive from Hecke energy / cat action / Frobenius pairing / non-abelian
 Stokes / Wedderburn / Schur / finite Jones."
 
 Built a fully self-contained derivation tree at
-[`folio-assistant/computations/from_scratch/`](https://github.com/litlfred/qou/tree/claude/continue-pr-442-DJRWm/folio-assistant/computations/from_scratch)
+[`computations/from_scratch/`](https://github.com/litlfred/qou/tree/claude/continue-pr-442-DJRWm/computations/from_scratch)
 with NO dependencies on the existing compute infrastructure:
 
 **Chain steps** (each step traced + logged):
@@ -1415,13 +1415,13 @@ with NO dependencies on the existing compute infrastructure:
 (both fixed; would have caused similar errors in any independent
 re-derivation):
 
-1. **Hoefsmit off-diagonal formula** ([`hoefsmit_general.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/from_scratch/hoefsmit_general.py)):
+1. **Hoefsmit off-diagonal formula** ([`hoefsmit_general.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/from_scratch/hoefsmit_general.py)):
    the constraint from σ_i² = h σ_i + 1 is `bc = d_T · d_{sT} + 1`,
    NOT `h · α + 1 - α · α'`. The wrong formula gave reps that
    coincidentally produced correct trace at H_3 (where braid is
    automatic in 2×2) but failed at H_5.
 
-2. **Test elements for Markov-axiom y_λ** ([`wenzl_y_axiomatic.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/from_scratch/wenzl_y_axiomatic.py)):
+2. **Test elements for Markov-axiom y_λ** ([`wenzl_y_axiomatic.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/from_scratch/wenzl_y_axiomatic.py)):
    must use distinct conjugacy-class representatives. Earlier
    choice [4,4] and [3,4,3] duplicated cycle types of [] and [4],
    making the χ_λ matrix rank-deficient. Fixed to use one rep per
@@ -1695,7 +1695,7 @@ partition` is the canonical step (5).
 
 
 
-[`categorical_bypass_volmatch_demo.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/categorical_bypass_volmatch_demo.py) computes `B(𝔥)` directly from the
+[`categorical_bypass_volmatch_demo.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/categorical_bypass_volmatch_demo.py) computes `B(𝔥)` directly from the
 SDP-derived Wedderburn blocks via the canonical chain step (5)–(7):
 
 >   `B = m_e · ρ · Σ_λ y_λ(q_0) · χ_λ(T_w)`
@@ -1773,8 +1773,8 @@ B(𝔥)   = m_e · M(𝔥) | q = q_0
 
 **Coverage today.**
 
-- ✅ `quark, electron, proton, neutron` at H_2, H_3 — verified by [`joint-tower-sdp-rust.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/joint-tower-sdp-rust.witness.json).
-- ✅ `D` at H_6 (knot 6_2 in B_3) — cvxpy SDP feasibility verified ([`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json)). **Knot id is volume-match (manual-historical), not yet GB-NF derived from H_6 SDP search.**
+- ✅ `quark, electron, proton, neutron` at H_2, H_3 — verified by [`joint-tower-sdp-rust.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/joint-tower-sdp-rust.witness.json).
+- ✅ `D` at H_6 (knot 6_2 in B_3) — cvxpy SDP feasibility verified ([`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/joint-tower-sdp-h6-h9.witness.json)). **Knot id is volume-match (manual-historical), not yet GB-NF derived from H_6 SDP search.**
 - ✅ `³He` at H_9 (knot L6a4 in B_3) — cvxpy SDP feasibility verified, same caveat.
 - ⚠️ `³H` at H_9 (knot 8_11 in B_5) — structural cert only; PSD check **deferred to Rust** because `joint_tower_sdp_solver_v2.py` does not have `seminormal_mn` at H_5. Rust path blocked by the **Clarabel-rs H_5 algorithmic bug** (PR #444 `R5_5_BUG_REPORT.md`).
 - ✅ `⁴He` — magic-A formula derived; H_12 SDP not needed at this level.
@@ -1829,8 +1829,8 @@ predictions. Until then: layer 3 is structural-only.
 ## Concrete next steps (ranked)
 
 1. **Build `categorical_q_decay_ba_low_isotopes.py`** — feeder script that
-   pulls SDP outputs from [`joint-tower-sdp-rust.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/joint-tower-sdp-rust.witness.json) +
-   [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass-table-ppb.witness.json) and computes Q-values via
+   pulls SDP outputs from [`joint-tower-sdp-rust.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/joint-tower-sdp-rust.witness.json) +
+   [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/mass-table-ppb.witness.json) and computes Q-values via
    `Q_n→p + B_d − B_p`. Emits a single witness JSON with categorical Q
    for `{n→p, ³H→³He}` + B/A for `{D, T, ³He, ⁴He, ⁸Be–⁴⁰Ca}`.
 2. **Resolve Clarabel-rs H_5 bug** (PR #444 `R5_5_BUG_REPORT.md`) so the

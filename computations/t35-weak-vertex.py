@@ -18,7 +18,7 @@ Also computes:
   - Reduction log showing how many Hecke steps are needed
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 t35-weak-vertex.py
 
 Output:

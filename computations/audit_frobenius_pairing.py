@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Frobenius-pairing compute audit — classifies every script under
-``folio-assistant/computations/`` that touches a Markov trace
+``computations/`` that touches a Markov trace
 (``tr_M``, ``markov_trace``, or any "trace of a braid word" pattern)
 into one of three buckets, per the master formula
 
@@ -49,7 +49,7 @@ exposes the bound-state-observable fields.
 
 Usage
 -----
-    python3 folio-assistant/computations/audit_frobenius_pairing.py [--report PATH]
+    python3 computations/audit_frobenius_pairing.py [--report PATH]
 """
 from __future__ import annotations
 
@@ -217,7 +217,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--root",
-        default="folio-assistant/computations",
+        default="computations",
         help="Directory to scan",
     )
     args = parser.parse_args()

@@ -6,8 +6,8 @@
 **Branch:** `claude/categorical-mass-divergence-audit` (PR #534)
 **Refs:**
 - [`docs/audits/2026-05-04-sublemma-2-1-refined.md`](2026-05-04-sublemma-2-1-refined.md) — refined statement
-- [`folio-assistant/computations/sublemma_2_1_A_operator_extract.py`](../../folio-assistant/computations/sublemma_2_1_A_operator_extract.py)
-- [`folio-assistant/computations/probes/rho_k_markov_multiplicativity_probe.py`](../../folio-assistant/computations/probes/rho_k_markov_multiplicativity_probe.py)
+- [`computations/sublemma_2_1_A_operator_extract.py`](../../computations/sublemma_2_1_A_operator_extract.py)
+- [`computations/probes/rho_k_markov_multiplicativity_probe.py`](../../computations/probes/rho_k_markov_multiplicativity_probe.py)
 - [Wenzl 1988] *Hecke algebras of type $A_n$ and subfactors*, Inventiones Math. 92, 349–383
 - [Hoefsmit 1974] *Representations of Hecke algebras of finite groups with $BN$-pairs of classical type*, PhD thesis, UBC
 

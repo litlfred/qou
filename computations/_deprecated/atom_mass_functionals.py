@@ -85,7 +85,7 @@ object ≠ Jones polynomial of its closure.
 ═══════════════════════════════════════════════════════════════
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_functionals.py
+    python3 computations/atom_mass_functionals.py
 """
 
 import math

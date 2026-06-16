@@ -1,6 +1,6 @@
 //! Rule-loop reducer for `LaurentHeckeElement` — port of
 //! `reduce_laurent_rules`
-//! (`folio-assistant/computations/hecke_laurent_fast.py:119`).
+//! (`computations/hecke_laurent_fast.py:119`).
 //!
 //! Applies three rewriting rules to fixpoint:
 //!
@@ -223,7 +223,7 @@ pub fn incremental_reduce_from_state(
 }
 
 /// Incremental reduce — mirror of `incremental_reduced_element_fast`
-/// from `folio-assistant/computations/hecke_laurent_fast.py:219`.
+/// from `computations/hecke_laurent_fast.py:219`.
 ///
 /// Multiplies factors one at a time (via [`LaurentHeckeElement::Mul`])
 /// and reduces after each step (via [`reduce_laurent_rules`]).

@@ -60,7 +60,7 @@ SDP → Archimedean functor.
 
 1. **Radius of convergence of `Σ c_k u^k` = `u_substrate`** — `c_{k+1}/c_k →
    1/u_substrate ≈ 117.4` at k=8,9,10 ([PR #1713](https://github.com/litlfred/qou/pull/1713),
-   [`qbeta_singularity_type_probe.py`](../../folio-assistant/computations/qbeta/qbeta_singularity_type_probe.py)).
+   [`qbeta_singularity_type_probe.py`](../../computations/qbeta/qbeta_singularity_type_probe.py)).
 2. **Simple pole**, residue `A ≈ 1.804e-15` at `u = u_substrate`
    ([PR #1727](https://github.com/litlfred/qou/pull/1727)).
 3. **Pole is near-real at q₀**: imaginary distance `ε ≈ |c_3|/|dc_3/dq| ≈ 4.4e-7`
@@ -134,7 +134,7 @@ The following is a structural reading, consistent with the infra but unproven:
 ## Step 2 result (first cut at the kernel — done)
 
 Script:
-[`qbeta_ck_recurrence_first_cut.py`](../../folio-assistant/computations/qbeta/qbeta_ck_recurrence_first_cut.py)
+[`qbeta_ck_recurrence_first_cut.py`](../../computations/qbeta/qbeta_ck_recurrence_first_cut.py)
 · witness `qbeta-ck-recurrence-first-cut.witness.json`.
 
 - **No exact constant-coeff recurrence of order ≤ 4** fits `c_2…c_10` (Hankel
