@@ -17,9 +17,9 @@ constructible vs. genuinely open.
 ## The decisive structural fact: which Lie algebra a Sasakian Reeb computes
 
 A Reeb/Sasakian construction whose strand fibre is the **defining rep of its structure group $\mathrm{SU}(N)$**
-computes the Hecke Markov trace through **$U_q(\mathfrak{sl}_N)$ quantum Schur–Weyl** — it sees exactly the $S_5$
-blocks with $\mathrm{rows}(\lambda)\le N$. (Verified: `scripts/s5so3_ingredient4_two_sasakian_construction.py`,
-exit 0.)
+computes the Hecke Markov trace through **$U_q(\mathfrak{sl}_N)$ quantum Schur–Weyl** — it sees exactly the
+$H_5(q)$ Wedderburn blocks (indexed by partitions $\lambda\vdash5$) with $\mathrm{rows}(\lambda)\le N$.
+(Verified: `scripts/s5so3_ingredient4_two_sasakian_construction.py`, exit 0.)
 
 | structure group | invariant | blocks seen | electron $(3,1,1)$ | muon $(3,2)$ |
 |---|---|---|---|---|
@@ -66,6 +66,30 @@ This is now a sharply posed coupling problem, not a vague "construct the fibre m
 $\ell\leftrightarrow\lambda$ dictionary is the verified bridge, and the algebraic target is Ocneanu-forced. The
 remaining content is the *geometric existence of the coupling map* — contact/spin geometry over the Bring base,
 owner-gated and multi-session.
+
+### The STATIC coupling is Schur-forced; only the DYNAMICAL intertwining is open
+
+A further cut (verified — `scripts/s5so3_ingredient4_coupling_schur.py`, exit 0) splits the coupling into a
+**static** (representation) part and a **dynamical** (Reeb) part:
+
+- **Static part — FORCED by Schur.** The $A_5$-equivariant maps $V_\ell\to E_\lambda$ form a space of dimension
+  $\langle\chi_{V_\ell|A_5},\chi_{E_\lambda|A_5}\rangle_{A_5}$ (count of shared $A_5$-irreps). For both bridge
+  pairs this is **1**: electron $\langle T_1,\,T_1\oplus T_2\rangle=1$, muon $\langle H,\,H\rangle=1$. So the
+  static coupling is **unique up to scale** — the isotypic projection onto the shared irrep ($T_1$ for the
+  electron, $H$ for the muon). It is *forced*, not a free construction choice; and the scale (the $y_\lambda$
+  Markov weight) is itself Ocneanu-forced.
+- **Dynamical part — the genuine open object.** A static $A_5$-equivariant map always exists (Schur) and is
+  realized by the associated-bundle construction. What is **not** automatic is that the coupling **intertwine the
+  two Reeb flows** — the spin Hopf flow on $S^3$ and the colour Sasakian flow on $S^5$. That is a
+  contact-geometric condition: concretely, the spin-$\ell$ Reeb eigenvalue must **resonate** with the
+  colour-$\lambda$ Reeb eigenvalue. Constructing (or obstructing) this dynamical intertwining is the unbuilt core.
+
+> **Numerology guard.** No claim is made that this Reeb-eigenvalue resonance pins $q_0$ or any observable — that
+> would require the two eigenvalue spectra *derived* and *matched*, not a coincidence. The resonance is named as
+> the precise *form* of the open dynamical condition, not as a result.
+
+So the open object narrows once more: from "the spin–colour coupling" to specifically **the dynamical
+(Reeb-flow-intertwining) part of an otherwise Schur-forced static coupling**.
 
 ## Honest status (critical-distance)
 
