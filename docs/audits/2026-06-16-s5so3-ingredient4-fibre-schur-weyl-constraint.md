@@ -50,6 +50,23 @@ electron block $(3,1,1)$.
    "2I acts on ℂ²" with "the strands carry ℂ²" produces the false obstruction that the electron cannot exist.
    The geometric leg must thread **colour-ℂ³** strands over a **2I-symmetric divisor sphere**.
 
+## Numerology guard — the $\dim(3,1,1)=6=3\times2$ "colour ⊗ spin" lead is REFUTED
+
+The dimension coincidence $\dim(3,1,1)=6=3\times2$ invites reading the electron block as
+$\mathbb{C}^3_{\mathrm{colour}}\otimes\mathbb{C}^2_{\mathrm{spin}}$. Tested on **structure, not dimension**, it
+fails — decisively, on the **central character** (spin parity) of the $-1\in 2I$:
+
+- $(3,1,1)$ is a genuine $A_5$ rep, so the central $-1$ acts as $+1$.
+- colour $\mathbb{C}^3=T_1$ is also an $A_5$ rep → central char $+1$.
+- spin $\mathbb{C}^2$ is the faithful spinor → central $-1$ acts as $-1$.
+- hence $\mathbb{C}^3\otimes\mathbb{C}^2$ has central char $(+1)(-1)=-1 \ne +1$ — **the wrong spin parity**;
+  it does not even descend to $A_5$, so it **cannot** be $(3,1,1)$.
+
+Moreover, as an $A_5$ rep $(3,1,1)\!\downarrow\!A_5 = T_1\oplus T_2$ — a **direct sum** $3+3$ (the two
+chiralities), not a tensor $3\times2$. So the dim-6 match is **coincidence**: the 6 is chirality $T_1\oplus T_2$,
+not colour⊗spin. Verified (central-parity check) in the script. This is the kind of dimension-match-masquerading-
+as-structure the formalize-first/critical-distance discipline exists to catch.
+
 ## Net for the open problem
 
 The geometric-existence target is sharpened: a $2I$-equivariant Reeb realization on the Bring spin bundle whose
