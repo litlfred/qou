@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:binding-qbeta-complex-volume",
   title:
-    "Complex-volume unification: binding $\\mathfrak{B}$ and $\\beta$-decay $\\mathfrak{Q}_\\beta$ are $\\operatorname{Re}$/$\\operatorname{Im}$ of one $\\mathfrak{W}=E_0\\,\\mathcal{T}$",
+    "Complex-volume unification: binding $\\mathfrak{B}$ and $\\beta$-decay $\\mathfrak{Q}_\\beta$ are $\\operatorname{Re}$/$\\operatorname{Im}$ of one $\\mathfrak{W}=E_0(\\mathrm{tr}_M^{\\text{free}}-\\mathrm{tr}_M^{\\text{knot}})$",
   lean: {
     ref: "qou:QOU.MassEndomorphism.ComplexVolumeMatch",
     validation: "not_checked",
@@ -39,7 +39,7 @@ export default conjecture({
     {
       kind: "refined-framing",
       date: "2026-06-16",
-      body: "**The unification is definitional + proved; only the physical match is conjectural.** Define `𝔚 = E₀·𝒯 ∈ ℂ` with `𝒯(K) = τ_M^free(K) − τ_M^knot(K) = τ_M((Π_free−1)𝓜)` the free-projection defect on any confined knot K (no overloaded Δ; 'knot' not 'atom' — the nucleus is one instance), `𝔅 := Re 𝔚`, `𝔔_β := Im 𝔚`; then `𝔅 + i·𝔔_β = 𝔚` is a **theorem** (`QOU.MassEndomorphism.complex_volume_unification`, via `Complex.re_add_im`, sorry-free). The open content (the `ComplexVolumeMatch` class) is that the *measured* binding and Q_β equal these definitional Re/Im at one normalisation. **Fibre-level caveat:** `Im(q₀)=0` at the archimedean level — the complex structure is fibre-level; `𝔅, 𝔔_β` are real observable shadows (real-q Vol channel vs root-of-unity CS channel), exactly as `Vol` and `CS` are separately real. **Compute corroboration (this PR):** the bar-even net-route gives precision-ladder `c₂≈−8`, the bar-odd τ_M brane-tower gives `c₂=−1` — two real components of one complex c₂ ([Stage B verdict](../../../docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md)).",
+      body: "**The unification is definitional + proved; only the physical match is conjectural.** Define `𝔚 = E₀(tr_M^free − tr_M^knot) ∈ ℂ` on any confined knot K (tr_M = Markov trace per §7a, NOT the fibre functor τ; the difference tr_M^free − tr_M^knot = tr_M((Π_free−1)𝓜) is the free-projection defect — written as an explicit trace-difference, no overloaded Δ, no new trace-like symbol; 'knot' not 'atom' — the nucleus is one instance), `𝔅 := Re 𝔚`, `𝔔_β := Im 𝔚`; then `𝔅 + i·𝔔_β = 𝔚` is a **theorem** (`QOU.MassEndomorphism.complex_volume_unification`, via `Complex.re_add_im`, sorry-free). The open content (the `ComplexVolumeMatch` class) is that the *measured* binding and Q_β equal these definitional Re/Im at one normalisation. **Fibre-level caveat:** `Im(q₀)=0` at the archimedean level — the complex structure is fibre-level; `𝔅, 𝔔_β` are real observable shadows (real-q Vol channel vs root-of-unity CS channel), exactly as `Vol` and `CS` are separately real. **Compute corroboration (this PR):** the bar-even net-route gives precision-ladder `c₂≈−8`, the bar-odd tr_M brane-tower gives `c₂=−1` — two real components of one complex c₂ ([Stage B verdict](../../../docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md)).",
     },
     {
       kind: "note",

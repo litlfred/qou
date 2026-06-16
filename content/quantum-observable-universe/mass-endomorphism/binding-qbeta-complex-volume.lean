@@ -12,11 +12,11 @@ Complex-volume unification of mass-binding and β-decay
 
 Binding `𝔅` and the β-decay `𝔔_β` are the real and imaginary parts of a
 single complex fibre observable — the complexified mass-endomorphism
-convolution-defect `𝔚 = E₀·𝒯 ∈ ℂ` — the QOU analogue of the
+convolution-defect `𝔚 = E₀(tr_M^free − tr_M^knot) ∈ ℂ` — the QOU analogue of the
 Neumann–Zagier complex volume `Vol(K) + i·CS(K)`.
 
 Per the owner's observation ("in many ways this is definitional"), the
-unification is taken **definitionally**: `𝔚 := E₀·𝒯`,
+unification is taken **definitionally**: `𝔚 := E₀(tr_M^free − tr_M^knot)`,
 `𝔅 := Re 𝔚`, `𝔔_β := Im 𝔚`.  Then the unification
 `𝔅 + i·𝔔_β = 𝔚` is a **theorem** (`Complex.re_add_im`), sorry-free.
 The only conjectural content is the *physical match*: that the measured
@@ -58,7 +58,7 @@ end BarParity
 
 /-! ## The complex convolution-defect and the definitional unification -/
 
-/-- The complex fibre observable `𝔚 = E₀·𝒯 ∈ ℂ`. -/
+/-- The complex fibre observable `𝔚 = E₀(tr_M^free − tr_M^knot) ∈ ℂ`. -/
 noncomputable def fibreDefect (E0 : ℝ) (trDefect : ℂ) : ℂ := (E0 : ℂ) * trDefect
 
 /-- Binding `𝔅 := Re 𝔚` — the bar-even / volume channel. -/
@@ -80,13 +80,13 @@ theorem complex_volume_unification (E0 : ℝ) (trDefect : ℂ) :
 
 /-- The physical-match conjecture (CLAUDE.md §3b-cond class): the
     *measured* binding and `Q_β` of a composite `K` equal the
-    definitional Re/Im of `E₀·𝒯(K)` at a single normalisation.
+    definitional Re/Im of `𝔚(K)` at a single normalisation.
     This is the conjectural input; the unification theorem above is
     proved unconditionally. -/
 class ComplexVolumeMatch (K : Type*) where
   /-- substrate energy scale `E₀`. -/
   E0 : ℝ
-  /-- the complexified convolution-defect `𝒯(K) ∈ ℂ` (fibre-level). -/
+  /-- the complexified convolution-defect `(tr_M^free − tr_M^knot)(K) ∈ ℂ` (fibre-level). -/
   trDefect : ℂ
   /-- the experimentally measured binding energy. -/
   binding_measured : ℝ
