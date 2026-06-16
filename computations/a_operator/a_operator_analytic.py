@@ -377,7 +377,195 @@ def verify_chi_disjoint_reduction_exact(n_inner: int, n_block: int,
 
 
 # ──────────────────────────────────────────────────────────────────────
-# STEP 2 / STEP 3 — the bridge-generator deformation (the closure proper).
+# STEP 2 — operator-level A^λ_{ξν}(I) via exact seminormal matrices.
+#
+# A^λ_{ξν}(I) = Π_{ξν} ρ_λ(I) Π_{ξν}, the (ξ,ν)-isotypic block of the
+# seminormal interface-generator matrix. The isotypic projectors Π_{ξν}
+# = P^{(in)}_ξ · P^{(bl)}_ν are built from the central class-sums of the
+# two commuting H_3 factors (Lagrange spectral projectors — exact, no
+# eigensolve). Because the inner word W and block word β both commute
+# with Π_{ξν}, the decomposition
+#
+#   χ^λ(W·I·β) = Σ_{ξν} Tr[ ρ_λ(W)·(Π_{ξν} ρ_λ(I) Π_{ξν})·ρ_λ(β) ]
+#
+# is verifiable in the seminormal basis directly (no ρ_ξ⊗ρ_ν gauge
+# alignment needed for verification; that alignment is a downstream
+# basis-change to feed the combiner / match the fitted extract).
+# ──────────────────────────────────────────────────────────────────────
+
+def exact_seminormal_matrices(lam: tuple[int, ...], q_str: str,
+                              dps: int) -> tuple[list, int]:
+    """Exact mpmath seminormal matrices [ρ_λ(σ_1), …, ρ_λ(σ_{n-1})] (1-indexed
+    generators) and the dimension, via the native MPFR binding."""
+    sp = _pyn.seminormal_matrices_mpfr(list(lam), q_str, dps)  # per-gen sparse
+    if not sp:
+        return [], 0
+    dim = len(sp[0])
+    mats = []
+    for gen_rows in sp:
+        M = mp.zeros(dim, dim)
+        for i, row in enumerate(gen_rows):
+            for (j, s) in row:
+                M[i, j] = mp.mpf(s)
+        mats.append(M)
+    return mats, dim
+
+
+def _class_sum_C2(mats: list, a: int, b: int) -> "mp.matrix":
+    """Central class-sum C₂ = σ_a + σ_b + σ_a σ_b σ_a of the H_3 factor on
+    generators (a, b) (0-based indices into `mats`)."""
+    sa, sb = mats[a], mats[b]
+    return sa + sb + sa * sb * sa
+
+
+def _h3_class_sum_eigenvalues(q_str: str, dps: int) -> dict:
+    """Eigenvalue of the H_3 class-sum C₂ on each irrep ν ⊢ 3 (the scalar by
+    which the central C₂ acts), via e_ν = χ^ν(C₂)/d_ν using native characters.
+    C₂ = σ_1 + σ_2 + σ_1σ_2σ_1 (1-based gens → native words)."""
+    words = {"s1": [(1, 1)], "s2": [(1, 2)], "s1s2s1": [(1, 1), (1, 2), (1, 1)]}
+    ev = {}
+    for nu in partitions_of(3):
+        chi_sum = sum(mp.mpf(_pyn.chi_lambda_braid_mpfr(list(nu), w, q_str, dps))
+                      for w in words.values())
+        ev[nu] = chi_sum / partition_dim(nu)
+    return ev
+
+
+def _lagrange_projectors(C: "mp.matrix", eigenvalues: dict, dim: int) -> dict:
+    """Spectral projectors of the central matrix C with known distinct
+    eigenvalues {label: e}, via Lagrange interpolation
+    P_a = Π_{b≠a} (C - e_b I)/(e_a - e_b). Exact, no eigensolve."""
+    I = mp.eye(dim)
+    labels = list(eigenvalues)
+    projs = {}
+    for a in labels:
+        ea = eigenvalues[a]
+        P = mp.eye(dim)
+        for b in labels:
+            if b == a:
+                continue
+            eb = eigenvalues[b]
+            P = P * (C - eb * I) * (mp.mpf(1) / (ea - eb))
+        projs[a] = P
+    return projs
+
+
+def _trace(M: "mp.matrix") -> "mp.mpf":
+    return sum(M[i, i] for i in range(M.rows))
+
+
+def verify_operator_decomposition_exact(dps: int = 50) -> dict:
+    """Step 2 (deuteron, exact 1e-25): verify A^λ_{ξν}(I) = Π_{ξν} ρ_λ(I) Π_{ξν}
+    reconstructs χ^λ(W · I · β) for the pn interface, via
+
+      χ^λ(W·I·β) = Σ_{ξν} Tr[ ρ_λ(W) · (Π_{ξν} ρ_λ(I) Π_{ξν}) · ρ_λ(β) ].
+
+    H_6: inner gens σ_1,σ_2 (0-idx 0,1); bridge σ_3 (0-idx 2); block σ_4,σ_5
+    (0-idx 3,4). I_pn = σ_3 - (h/2)·1.
+    """
+    if not _HAVE_NATIVE:
+        return {"skipped": True, "reason": "pyhecke_native unavailable"}
+    mp.mp.dps = dps + 10
+    q = q0_mp(dps)
+    q_str = mp.nstr(q, dps)
+    h = q - 1 / q
+    n = 6
+    parts6 = partitions_of(n)
+
+    # H_3 class-sum eigenvalues (same for inner + block factors).
+    ev = _h3_class_sum_eigenvalues(q_str, dps)
+    evs = list(ev.values())
+    min_gap = min(abs(evs[i] - evs[j]) for i in range(len(evs))
+                  for j in range(i + 1, len(evs)))
+
+    # Test words: braid words on the inner H_3 (gens 0,1) and block H_3
+    # (gens 0,1 → applied at block offset). Use (sign, gen0) pure-braid form.
+    def braid_to_factors(braid, h):
+        out = []
+        for (s, g) in braid:
+            out.append((mp.mpf(1), mp.mpf(0) if s > 0 else -h, g))
+        return out
+
+    inner_braids = _braid_test_words(3)
+    block_braids = _braid_test_words(3)
+
+    def word_matrix(mats, factors):
+        dim = mats[0].rows
+        M = mp.eye(dim)
+        for (c, d, g) in factors:
+            M = M * (c * mats[g] + d * mp.eye(dim))
+        return M
+
+    max_abs = mp.mpf(0)
+    max_rel_wc = mp.mpf(0)
+    n_checks = 0
+    n_fail = 0
+    worst = None
+    rank_ok = True
+
+    for lam in parts6:
+        mats, dim = exact_seminormal_matrices(lam, q_str, dps)
+        if dim == 0:
+            continue
+        # Isotypic projectors from class-sums (inner gens 0,1; block gens 3,4).
+        C_in = _class_sum_C2(mats, 0, 1)
+        C_bl = _class_sum_C2(mats, 3, 4)
+        P_in = _lagrange_projectors(C_in, ev, dim)   # keyed by ξ ⊢ 3
+        P_bl = _lagrange_projectors(C_bl, ev, dim)   # keyed by ν ⊢ 3
+        # Bridge interface I_pn = σ_3 (0-idx 2) with d = -h/2.
+        I_iface = mats[2] - (h / 2) * mp.eye(dim)
+        # Π_{ξν} = P_in[ξ] · P_bl[ν]
+        Pi = {(xi, nu): P_in[xi] * P_bl[nu]
+              for xi in ev for nu in ev}
+        # Rank check: Σ tr(Π_{ξν}) = dim (partition of unity).
+        sum_tr = sum(_trace(Pi[k]) for k in Pi)
+        if abs(sum_tr - dim) > mp.mpf("1e-20"):
+            rank_ok = False
+
+        for wi in inner_braids:
+            fi = braid_to_factors(wi, h)
+            W = word_matrix(mats, fi)
+            for wb in block_braids:
+                # block gens shift by 3 (0-idx): block gen g → g+3.
+                fb = [(c, d, g + 3) for (c, d, g) in braid_to_factors(wb, h)]
+                B = word_matrix(mats, fb)
+                # Ground truth χ^λ(W · I · β):
+                full = W * I_iface * B
+                lhs = _trace(full)
+                # Operator decomposition Σ_{ξν} Tr[ W · (Π I Π) · β ]:
+                rhs = mp.mpf(0)
+                for k in Pi:
+                    A_block = Pi[k] * I_iface * Pi[k]
+                    rhs += _trace(W * A_block * B)
+                ad = abs(lhs - rhs)
+                rel = ad / max(abs(lhs), abs(rhs), mp.mpf("1e-40"))
+                ok = (ad < EXACT_TOL) or (rel < EXACT_TOL)
+                if ad > max_abs:
+                    max_abs = ad
+                if abs(lhs) > mp.mpf("1e-3") and rel > max_rel_wc:
+                    max_rel_wc = rel
+                if not ok:
+                    n_fail += 1
+                    if worst is None:
+                        worst = {"lambda": list(lam),
+                                 "abs_residual": mp.nstr(ad, 6)}
+                n_checks += 1
+    return {
+        "n": n, "dps": dps, "interface": "pn",
+        "construction": "A^λ_ξν(I) = Π_ξν ρ_λ(I) Π_ξν (class-sum projectors)",
+        "h3_classsum_min_eigen_gap": mp.nstr(min_gap, 6),
+        "partition_of_unity_ok": rank_ok,
+        "n_checks": n_checks, "n_fail": n_fail,
+        "max_absolute_residual": mp.nstr(max_abs, 8),
+        "max_relative_residual_wellcond": mp.nstr(max_rel_wc, 8),
+        "tolerance": mp.nstr(EXACT_TOL, 4),
+        "all_passed": (n_fail == 0) and rank_ok,
+        "worst_failure": worst,
+    }
+
+
+# ──────────────────────────────────────────────────────────────────────
+# STEP 2-gauge / STEP 3 — ρ_ξ⊗ρ_ν alignment + H_9 universality.
 # ──────────────────────────────────────────────────────────────────────
 
 def analytic_A_interface(lam: tuple[int, ...], xi: tuple[int, ...],
@@ -460,12 +648,25 @@ def main() -> int:
         if not exact_res["all_passed"]:
             print(f"       worst failure: {exact_res['worst_failure']}")
     print()
-    print("  [2 ] analytic A^λ_ξν(I≠1) bridge deformation : TODO(closure-b)")
+    print(f"  [2 ] operator A^λ_ξν(I_pn) = Π_ξν ρ_λ(I) Π_ξν, exact decomposition ...")
+    op_res = verify_operator_decomposition_exact(args.dps)
+    if op_res.get("skipped"):
+        print(f"       SKIP — {op_res['reason']}")
+    else:
+        print(f"       {'PASS' if op_res['all_passed'] else 'FAIL'} — "
+              f"{op_res['n_checks']} checks ({op_res['n_fail']} fail), "
+              f"partition-of-unity={op_res['partition_of_unity_ok']}, "
+              f"max abs residual = {op_res['max_absolute_residual']}")
+        if not op_res["all_passed"]:
+            print(f"       worst failure: {op_res['worst_failure']}")
+    print("  [2g] ρ_ξ⊗ρ_ν gauge alignment (feed combiner)  : TODO(closure-b)")
     print("  [3 ] H_9 universality                        : TODO(closure-b)")
     print()
 
     exact_ok = exact_res.get("skipped") or exact_res["all_passed"]
-    all_passed = dim_res["all_passed"] and chi_res["all_passed"] and exact_ok
+    op_ok = op_res.get("skipped") or op_res["all_passed"]
+    all_passed = (dim_res["all_passed"] and chi_res["all_passed"]
+                  and exact_ok and op_ok)
     print(f"  Preflight verdict: {'ALL PASS' if all_passed else 'FAILURES PRESENT'}")
 
     if args.emit_witness:
@@ -484,6 +685,7 @@ def main() -> int:
              .add_data("dimension_identity", dim_res)
              .add_data("chi_disjoint_reduction_f64", chi_res)
              .add_data("chi_disjoint_reduction_exact", exact_res)
+             .add_data("operator_decomposition_exact", op_res)
              .set_audit_only(
                  "docs/audits/2026-06-16-analytic-interface-operator-closure-b-design.md"))
         b.add_assertion(
@@ -501,6 +703,13 @@ def main() -> int:
                 computed=exact_res["all_passed"], expected=True, tolerance=0,
                 source="χ^λ(disjoint) = Σ c^λ_ξν χ^ξ χ^ν via pyhecke_native "
                        "MPFR seminormal characters at 50 dps (tol 1e-25)")
+        if not op_res.get("skipped"):
+            b.add_assertion(
+                name="operator_interface_decomposition_exact_1e-25",
+                computed=op_res["all_passed"], expected=True, tolerance=0,
+                source="χ^λ(W·I_pn·β) = Σ_ξν Tr[ρ_λ(W)·Π_ξν ρ_λ(I) Π_ξν·ρ_λ(β)] "
+                       "via exact MPFR seminormal matrices + class-sum projectors "
+                       "(tol 1e-25) — proves A^λ_ξν(I)=Π_ξν ρ_λ(I) Π_ξν")
         out = b.save()
         print(f"  Witness: {out.name}")
 

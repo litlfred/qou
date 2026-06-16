@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-16T04:36:52.930608+00:00",
-  "commitSha": "dd117f7d8bf9105a028ed3a700eb49a418c3d60a",
+  "computedAt": "2026-06-16T11:38:14.626811+00:00",
+  "commitSha": "255c2424034dd6cad7408abcc8a6c2c9349111dc",
   "assertions": [
     {
       "name": "dimension_identity_holds",
@@ -27,14 +27,22 @@
       "passed": true,
       "tolerance": 0,
       "source": "χ^λ(disjoint) = Σ c^λ_ξν χ^ξ χ^ν via pyhecke_native MPFR seminormal characters at 50 dps (tol 1e-25)"
+    },
+    {
+      "name": "operator_interface_decomposition_exact_1e-25",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "χ^λ(W·I_pn·β) = Σ_ξν Tr[ρ_λ(W)·Π_ξν ρ_λ(I) Π_ξν·ρ_λ(β)] via exact MPFR seminormal matrices + class-sum projectors (tol 1e-25) — proves A^λ_ξν(I)=Π_ξν ρ_λ(I) Π_ξν"
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 21,
   "computation": "a-operator-analytic-preflight",
   "scriptFile": "a_operator_analytic.py",
-  "scriptHash": "f9cf5de616fb",
-  "scriptCommitSha": "547bfa3ade8f204a7a2f9f45c844c674a493af6d",
+  "scriptHash": "5b78722187f7",
+  "scriptCommitSha": "0d384b798e2e7e8b372823f8910c884778002e83",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,6 +97,21 @@
       "n_fail": 0,
       "max_absolute_residual": "1.5599085e-49",
       "max_relative_residual_wellcond": "1.0066976e-48",
+      "tolerance": "1.0e-25",
+      "all_passed": true,
+      "worst_failure": null
+    },
+    "operator_decomposition_exact": {
+      "n": 6,
+      "dps": 50,
+      "interface": "pn",
+      "construction": "A^λ_ξν(I) = Π_ξν ρ_λ(I) Π_ξν (class-sum projectors)",
+      "h3_classsum_min_eigen_gap": "2.74213",
+      "partition_of_unity_ok": true,
+      "n_checks": 891,
+      "n_fail": 0,
+      "max_absolute_residual": "1.5083873e-49",
+      "max_relative_residual_wellcond": "1.5468294e-47",
       "tolerance": "1.0e-25",
       "all_passed": true,
       "worst_failure": null
