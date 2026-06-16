@@ -44,7 +44,8 @@ from q_parameter import Q as Q0  # noqa: E402
 CANONICAL_TRM_3HE = 0.2065408170207396
 DPS = 50
 PER_LAMBDA_CAP_S = 90.0  # skip a λ whose combiner SVD exceeds this
-DIM_CAP = 50  # pre-skip λ with dim(V_λ) > DIM_CAP (large-λ SVD → Rust follow-up)
+DIM_CAP = 28  # Python-feasible frontier: dim(V_λ)≤28 ≈ ≤8 min/λ; dim-42 (5,4) took
+              # 2.4 h (O(r^6) mpmath null-space SVD). dim>28 → Rust-kernel follow-up.
 
 
 def ops_to_factors(ops, h, gen_shift=0):
