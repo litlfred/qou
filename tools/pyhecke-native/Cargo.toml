@@ -12,6 +12,9 @@ crate-type = ["cdylib"]
 pyo3 = { version = "0.25", features = ["extension-module"] }
 nalgebra = { version = "0.33", default-features = false, features = ["std"] }
 hecke-engine = { path = "../hecke-engine" }
+# Direct dep so the mpfr bindings can name `rug::Float` (same 1.26 as
+# hecke-engine's optional dep — cargo unifies to one version).
+rug = "1.26"
 
 [features]
 # OFF by default — keeps the shipped wheel light and the build simple.
