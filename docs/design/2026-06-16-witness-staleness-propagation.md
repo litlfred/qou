@@ -149,7 +149,35 @@ A lint can enforce this going forward: warn when a producer reads a
 `*.witness.json` it does not record as an upstream (the dual of the
 q=111/100 ratchet). Deferred — not built here.
 
-## Recommended escalation order
+## Assertion-failure drain (#2 — triage of the production set)
+
+After fixing the gate's classifier (a `set_audit_only(doc)` witness
+serialises `auditOnly` as the doc-path *string*, not a bool — these were
+mis-bucketed as production), the count is **39 production / 22
+audit-only** (was 47/14). The 39 split three ways, and **most must NOT be
+"fixed" to pass**:
+
+1. **Genuinely-open-claim (~25)** — the assertion fails because the
+   framework claim is genuinely open: m_p/m_n/Δ_pn residuals,
+   `proton-mass-*`, `delta-lambda-*` (Δ_λ gate), `mmu-r9` (m_μ misses
+   963×), `qbeta-*`, `level-k-binding`. These correctly record open
+   problems; making them pass would be **fitting**. Drain = mark
+   `auditOnly` / restate as a *conditional* assertion (banner per §3b-cond),
+   NOT force a pass.
+2. **Audit-meta caught a real violation (~10)** — `content-block-label-audit`
+   (missing labels), `float64-leak-audit`, `hardcoded-literal-audit`,
+   `fitted-labelled-canonical-audit`, `cal4-disguise-hunt`,
+   `lean-ref-resolution-audit`, `onepb-status-dashboard`
+   (all_witnesses_present). Each is a genuine discipline finding — its own
+   investigation/PR.
+3. **Stale / cache drift (~4)** — `hadron-knot-table` (known),
+   `habiro-residue-a1` (cached_trM), `gram-h3-symbolic-regression`
+   (4.4e-8, actually audit-only), `tr-m-atom-via-transfer`. Drain =
+   regenerate (assertion-gated).
+
+So "draining" is mostly **reclassification + per-audit investigation**,
+not bulk passing — the gate's value is precisely separating honest-open
+from regression. The classifier fix (this PR) is the first drain step.
 
 1. Land the warn-mode CI step (visibility, no PR breakage).
 2. Drain self-staleness: regenerate the genuinely-wrong witnesses
