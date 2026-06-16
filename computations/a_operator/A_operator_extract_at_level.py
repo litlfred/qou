@@ -1,5 +1,20 @@
 """Infrastructural A^λ_{ξν}(I) extractor at arbitrary H_n level.
 
+.. note::
+   **STATUS (2026-06-16): the H_9+ extracts produced here are INERT in
+   production and SUPERSEDED.** The A≥3 path of
+   ``canonical_tr_m_via_branching.py`` returns the value via the lossless
+   fine-Bratteli transfer matrix (``tr_m_atom_via_transfer.tr_m_atom_zn``);
+   ``compute_chi_lambda_via_branching`` returns ``None`` for A≥3 *before* these
+   least-squares extracts are applied, so they feed no live mass/binding value.
+   They are also rank-deficient min-norm fits (suspect per
+   ``docs/audits/2026-06-16-unjustified-least-squares-fitting-audit.md``). The
+   correct, non-fitted replacement is the closed-form **categorical** interface
+   operator ``A^λ_{ξν}(I) = Π_{ξν} ρ_λ(I) Π_{ξν}``
+   (``a_operator_categorical.py`` / ``a_operator_gauge_align.py``, verified exact
+   at 1e-49). Only the H_6 deuteron extract is full-rank/correct and live (A=2).
+   See ``docs/audits/2026-06-16-wenzl-a3-wireup-scope-and-deflag.md``.
+
 Generalization of `sublemma_2_1_A_operator_extract_h9.py` (H_9-specific)
 and `sublemma_2_1_A_operator_extract.py` (H_6-specific) to handle ANY
 peel level needed by the operator-valued Wenzl branching combiner.
