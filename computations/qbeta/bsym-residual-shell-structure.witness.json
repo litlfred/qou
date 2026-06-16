@@ -1,0 +1,242 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-16T02:53:42.527485+00:00",
+  "commitSha": "235388581958a925f8553bc2d402b214e0c017e0",
+  "assertions": [
+    {
+      "name": "deuteron_over_binds_H1",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Δ_λ^sym(D) < 0.8: generic trace over-predicts the anomalously weakly-bound deuteron (pairing/halo)"
+    },
+    {
+      "name": "A3_clean_near_one_H2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "0.8 < Δ_λ^sym(T,³He) < 1.25: B_sym is clean on the non-anomalous A=3 nuclei"
+    },
+    {
+      "name": "4He_magic_under_binding_peak_H3",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Δ_λ^sym(⁴He) > max(³He, ⁶Li): doubly-magic shell closure binds more than the single-knot trace"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 374221,
+  "computation": "bsym-residual-shell-structure",
+  "scriptFile": "bsym_residual_shell_structure.py",
+  "scriptHash": "1e39559b4bbf",
+  "scriptCommitSha": "235388581958a925f8553bc2d402b214e0c017e0",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "EXPLORATORY: structure of the B_sym residual Δ_λ^sym=B_AME/B_sym (α=E₀ derived) across D..¹²C, the real target after the q₀⁵-vs-B_pred refutation. Tests: (H1) deuteron over-binds (Δ_λ^sym<1, pairing/halo), (H2) A=3 normal ≈1, (H3) doubly-magic ⁴He is a local under-binding peak (shell closure > single-knot trace), (H4) α-cluster signature across ⁸Be (2α) + ¹²C (3α). No fit; NOT wired. The DEFINITIVE H3 recurrence test (2nd magic point ¹⁶O, Z=N=8) is DEFERRED: tr_m_atom_zn enumerates all p(48)=147273 partitions, wall ~p^1.6 ≈ hours — installing the Rust engine does not lift this; the per-block branching combiner that would (no p(3A) enumeration) is A=2-only.",
+  "parameters": {
+    "E0_MeV": 4.185981,
+    "max_a": 12
+  },
+  "data": {
+    "rows": [
+      {
+        "label": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "doubly_magic": false,
+        "note": "pairing/halo anomaly",
+        "L": 0.92922,
+        "B_sym_MeV": 3.8897,
+        "B_AME_MeV": 2.2246,
+        "delta_lambda_sym": 0.5719,
+        "B_per_A_AME": 1.1123,
+        "wall_s": 0.59,
+        "n_partitions": null
+      },
+      {
+        "label": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "doubly_magic": false,
+        "note": "normal A=3",
+        "L": 2.1662,
+        "B_sym_MeV": 9.0677,
+        "B_AME_MeV": 8.4818,
+        "delta_lambda_sym": 0.9354,
+        "B_per_A_AME": 2.8273,
+        "wall_s": 0.02,
+        "n_partitions": null
+      },
+      {
+        "label": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "doubly_magic": false,
+        "note": "normal A=3",
+        "L": 1.62373,
+        "B_sym_MeV": 6.7969,
+        "B_AME_MeV": 7.718,
+        "delta_lambda_sym": 1.1355,
+        "B_per_A_AME": 2.5727,
+        "wall_s": 0.01,
+        "n_partitions": null
+      },
+      {
+        "label": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "doubly_magic": true,
+        "note": "doubly-magic (2,2)",
+        "L": 2.8607,
+        "B_sym_MeV": 11.9749,
+        "B_AME_MeV": 28.2957,
+        "delta_lambda_sym": 2.3629,
+        "B_per_A_AME": 7.0739,
+        "wall_s": 0.09,
+        "n_partitions": 77
+      },
+      {
+        "label": "5Li",
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "doubly_magic": false,
+        "note": "resonance",
+        "L": 3.55521,
+        "B_sym_MeV": 14.882,
+        "B_AME_MeV": 26.328,
+        "delta_lambda_sym": 1.7691,
+        "B_per_A_AME": 5.2656,
+        "wall_s": 0.45,
+        "n_partitions": null
+      },
+      {
+        "label": "6Li",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "doubly_magic": false,
+        "note": "non-magic",
+        "L": 4.79219,
+        "B_sym_MeV": 20.06,
+        "B_AME_MeV": 31.9941,
+        "delta_lambda_sym": 1.5949,
+        "B_per_A_AME": 5.3323,
+        "wall_s": 1.23,
+        "n_partitions": null
+      },
+      {
+        "label": "7Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "doubly_magic": false,
+        "note": "non-magic",
+        "L": 6.02917,
+        "B_sym_MeV": 25.238,
+        "B_AME_MeV": 39.244,
+        "delta_lambda_sym": 1.555,
+        "B_per_A_AME": 5.6063,
+        "wall_s": 3.6,
+        "n_partitions": null
+      },
+      {
+        "label": "8Be",
+        "Z": 4,
+        "N": 4,
+        "A": 8,
+        "doubly_magic": false,
+        "note": "2-alpha cluster",
+        "L": 6.72368,
+        "B_sym_MeV": 28.1452,
+        "B_AME_MeV": 56.4995,
+        "delta_lambda_sym": 2.0074,
+        "B_per_A_AME": 7.0624,
+        "wall_s": 9.83,
+        "n_partitions": 1575
+      },
+      {
+        "label": "9Be",
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "doubly_magic": false,
+        "note": "non-magic",
+        "L": 7.96065,
+        "B_sym_MeV": 33.3231,
+        "B_AME_MeV": 58.1648,
+        "delta_lambda_sym": 1.7455,
+        "B_per_A_AME": 6.4628,
+        "wall_s": 25.61,
+        "n_partitions": null
+      },
+      {
+        "label": "12C",
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "doubly_magic": false,
+        "note": "3-alpha cluster (alpha-conjugate, N=Z)",
+        "L": 10.58665,
+        "B_sym_MeV": 44.3155,
+        "B_AME_MeV": 92.1617,
+        "delta_lambda_sym": 2.0797,
+        "B_per_A_AME": 7.6801,
+        "wall_s": 332.78,
+        "n_partitions": 17977
+      }
+    ],
+    "deferred": [
+      {
+        "label": "16O",
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "n_3A": 48,
+        "doubly_magic": true,
+        "note": "doubly-magic (8,8) — 2nd magic point",
+        "n_partitions": 147273,
+        "reason": "feasibility wall: tr_m_atom_zn enumerates all p(48)=147273 partitions; wall ~p^1.6 projects to hours. Re-run with --max-a 16.",
+        "B_AME_MeV": 127.61931
+      }
+    ],
+    "hypotheses": {
+      "H1_deuteron_over_binds": true,
+      "H2_A3_clean_near_1": true,
+      "H3_4He_magic_under_binding_peak": true,
+      "H4_alpha_cluster_deltas": {
+        "8Be": 2.0074,
+        "12C": 2.0797
+      },
+      "deuteron_delta": 0.5719,
+      "4He_delta": 2.3629
+    },
+    "feasibility_wall": {
+      "compute_path": "tr_m_atom_via_transfer.tr_m_atom_zn (full p(3A) fine-Bratteli transfer matrix; lossless, no max_dim cap)",
+      "scaling": "wall ~ p(3A)^1.6 (empirical: ⁴He 0.09s @p77, ⁸Be ~11s @p1575)",
+      "16O_projection": "p(48)=147273 ≈ 93× ⁸Be → several hours; infeasible this session",
+      "rust_engine_note": "pyhecke_native 0.9.0 installed this session; it accelerates per-word reduction, NOT the p(3A) enumeration that dominates large-A. So the Rust install does NOT unlock ¹⁶O via this path.",
+      "real_blocker": "canonical_tr_m_via_branching (per-block combiner, no p(3A) enumeration) is end-to-end only for A=2; extending it to A>=3 is the genuine unlock for ¹⁶O."
+    },
+    "interpretation": "B_sym = generic hyperbolic binding; residual deviations are the SEMF pairing term (deuteron over-binding) below and shell-closure (⁴He doubly-magic under-binding) above; cleanest (~1) at A=3.",
+    "followup": "extend canonical_tr_m_via_branching to A>=3 so the 2nd doubly-magic ¹⁶O (8,8) becomes computable, then confirm H3 recurs at the next shell closure",
+    "discipline": "exploratory; derive-or-refute; no fit; NOT wired"
+  }
+}
