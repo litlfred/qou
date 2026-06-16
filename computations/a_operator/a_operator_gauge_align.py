@@ -94,7 +94,10 @@ def _nullspace(M: "mp.matrix", tol: "mp.mpf") -> list:
     for idx in range(n):
         sv = S[idx] if idx < len(S) else mp.mpf(0)
         if sv <= thresh:
-            null.append(V[idx, :].T)   # idx-th right singular vector as column
+            # idx-th right singular vector as a column. Build explicitly rather
+            # than slice (`V[idx, :].T`) — portable across mpmath versions
+            # whose matrix slicing support varies (Gemini review #2360).
+            null.append(mp.matrix([V[idx, j] for j in range(n)]))
     return null
 
 
@@ -135,7 +138,6 @@ def range_basis_and_restricted_gens(lam: tuple[int, ...], q_str: str,
     C_bl = aoa._class_sum_C2(mats, 3, 4)
     P_in = aoa._lagrange_projectors(C_in, ev, dim)
     P_bl = aoa._lagrange_projectors(C_bl, ev, dim)
-    I = mp.eye(dim)
     out = {}
     for xi in ev:
         for nu in ev:
@@ -215,6 +217,7 @@ def verify_isotypic_multiplicity_structure(dps: int = 50) -> dict:
     of multiplicity c** — which must equal the LR coefficient c^λ_{ξν}.
     """
     from lr_coefficients import get_lr_table
+    mp.mp.dps = dps + 10   # set precision floor before any mp.sqrt/pi/e constants
     q = aoa.q0_mp(dps)
     q_str = mp.nstr(q, dps)
     lr = get_lr_table(3, 3)
