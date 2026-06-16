@@ -5,9 +5,30 @@ status: in_progress
 type: task
 priority: normal
 created_at: 2026-06-16T02:14:00Z
-updated_at: 2026-06-16T02:14:00Z
+updated_at: 2026-06-16T02:50:00Z
 parent: qz9k
 ---
+
+## Result (2026-06-16) — state pinned + non-fit direction sharpened; pending human close
+
+Finding delivered:
+[`docs/audits/2026-06-16-categorical-binding-wiring-state-and-no-fit-direction.md`](../docs/audits/2026-06-16-categorical-binding-wiring-state-and-no-fit-direction.md).
+
+- **Wired vs exploratory pinned:** B_sym + B_magic + LP/SDP dual = production;
+  B_lin/B_qCLT + Option-E v9 (1+q)/2 = exploratory.
+- **(1+q)/2 is a REFUTED near-match** (PR #1707): "0.11%" was a stale muon-anchor
+  literal; at canonical q₀ it's +0.12% sign-flipped; 4 structural hypotheses killed;
+  only "matches" are tautologies. Stays un-wired, A=3 OPEN, **no v10 ansatz**. So this
+  bean does NOT re-attempt (1+q)/2.
+- **Non-fit direction = GAP-A-3** two-layer factorization Δ_λ(K)=A(K)·P_λ(K), A(K)
+  already derived (Phase-4 ≤2.5%), P_λ open (color/spin/normalization channels).
+- **Grounded structural observation (value-add):** since tr_M(β)=Σ_λ y_λ χ^λ(β)
+  (Frobenius), P_λ≡1 recovers A(K)·tr_M(β_K) exactly ⇒ P_λ is the per-partition
+  **deviation of binding from the flat mass/trace distribution**. Gives the §4 probe a
+  free baseline + a bar-even (λ↔λᵀ) admissibility constraint.
+- **No probe run** — §4 needs canonical χ^λ(β_D) at q₀ (same infra blocker as Hoefsmit
+  Stage B; no pyhecke_native) + plethystic-content wiring. Next step on infra-enabled
+  session. Appendix-sync contract recorded.
 
 ## Goal
 
