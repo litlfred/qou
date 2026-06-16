@@ -2,24 +2,22 @@ import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.Ring
 
 /-!
-# Q_β channel split — locating the binding/Q_β double-count
+# Q_β counit — internal bar-parity decomposition (NOT a binding double-count)
 
-Reconciles two framings of the nucleon `Q`-value:
+> **Correction (2026-06-16).** An earlier version of this file claimed the
+> bar-even part of the counit was "the channel #2346 books as binding," i.e.
+> a binding/Q_β **double-count**. That was wrong. The #2346 witness
+> `habiro-exact-qbeta` reports `Q_A = Im 𝔙 = 0.78364580… MeV`, which equals
+> the **full** counit `|ε(Δ)|·𝔈₀` to `2·10⁻¹⁶` (branch A): their `Im 𝔙` is
+> the *whole* counit value, **not** the bar-odd part alone. So there is **no
+> double-count** — the two framings agree, and the split below is an
+> *internal* decomposition of the counit, distinct from #2346's
+> binding/Q_β (Re/Im of the single-knot confinement defect) split.
 
-* **#2363 (counit):** `Q_β = ε(Δ)·𝔈₀` with `ε(Δ) = h²/2 − h` (`h = q − q⁻¹`);
-* **#2346 (complex volume):** `𝔙 = 𝔈₀·tr_M((Π_free−1)∘𝓜) ∈ ℂ`, with
-  `binding = Re 𝔙` (bar-even / `cosh`) and `Q_β = Im 𝔙` (bar-odd / `sinh`),
-  split by the bar-involution `σ : q ↦ q⁻¹`, i.e. `h ↦ −h`.
-
-The net difference `Δ` splits by bar-parity into a **vacuum** channel
-(`γ`-coefficient `h²/2`, bar-**even**) and a **crossing** channel
-(`σ`-coefficients summing to `−h`, bar-**odd**). #2346 assigns the
-bar-even channel to *binding* and the bar-odd channel to *Q_β*. But the
-#2363 counit `Q_β = ε(Δ)` uses the **full** sum `h²/2 − h` — it carries the
-bar-even vacuum channel that #2346 books as binding. That channel is the
-**double-count**: it cannot belong to both observables. Numerically it is
-exactly the piece that moves the prediction from `+11.86%` (bar-odd only)
-to `+0.17%` (full counit).
+The counit on the nucleon difference, `ε(Δ) = h²/2 − h` (`h = q − q⁻¹`),
+decomposes under the bar-involution `h ↦ −h` into a bar-even `h²/2` and a
+bar-odd `−h` part. These lemmas record that algebra. They do **not** assign
+the bar-even part to any other observable.
 
 Generic field; `h` free (CLAUDE.md §7c).
 -/
@@ -28,37 +26,32 @@ namespace QOU.Interactions.QBetaChannelSplit
 
 variable {R : Type*} [Field R]
 
-/-- Vacuum (`γ`) channel of the nucleon net difference — the bar-**even**
-    part, `h²/2`. #2346 books this as binding (`Re 𝔙`). -/
-def vacuumChannel (h : R) : R := h ^ 2 / 2
+/-- Bar-even part of the counit on the nucleon difference, `h²/2`. -/
+def barEven (h : R) : R := h ^ 2 / 2
 
-/-- Crossing (`σ`) channel — the bar-**odd** part, `−h`. #2346 books this as
-    `Q_β` (`Im 𝔙`). -/
-def crossingChannel (h : R) : R := -h
+/-- Bar-odd part of the counit on the nucleon difference, `−h`. -/
+def barOdd (h : R) : R := -h
 
-/-- The counit `ε(Δ) = h²/2 − h` is the sum of the two channels. -/
-theorem counit_split (h : R) :
-    h ^ 2 / 2 - h = vacuumChannel h + crossingChannel h := by
-  unfold vacuumChannel crossingChannel; ring
+/-- The counit `ε(Δ) = h²/2 − h` is the sum of its bar-even and bar-odd
+    parts. (Internal decomposition; both parts belong to the counit / `Q_β`,
+    per the branch-A resolution — see file header.) -/
+theorem counit_split (h : R) : h ^ 2 / 2 - h = barEven h + barOdd h := by
+  unfold barEven barOdd; ring
 
-/-- The vacuum channel is **bar-even**: invariant under `h ↦ −h`. -/
-theorem vacuum_bar_even (h : R) : vacuumChannel (-h) = vacuumChannel h := by
-  unfold vacuumChannel; ring
+/-- `barEven` is invariant under the bar-involution `h ↦ −h`. -/
+theorem barEven_invariant (h : R) : barEven (-h) = barEven h := by
+  unfold barEven; ring
 
-/-- The crossing channel is **bar-odd**: negated under `h ↦ −h`. -/
-theorem crossing_bar_odd (h : R) :
-    crossingChannel (-h) = - crossingChannel h := by
-  unfold crossingChannel; ring
+/-- `barOdd` is negated under the bar-involution `h ↦ −h`. -/
+theorem barOdd_anti (h : R) : barOdd (-h) = - barOdd h := by
+  unfold barOdd; ring
 
-/-- **The double-count, exactly.** The #2363 counit `Q_β` (the full
-    `ε(Δ) = h²/2 − h`) exceeds the bar-odd transition channel
-    (`#2346`'s `Im 𝔙`) by precisely the bar-even vacuum channel
-    `h²/2` — the quantity `#2346` independently books as binding
-    (`Re 𝔙`). So the two framings cannot both be right as stated:
-    the vacuum channel is attributed to *binding* and to *Q_β*
-    simultaneously. -/
-theorem double_count (h : R) :
-    (h ^ 2 / 2 - h) - crossingChannel h = vacuumChannel h := by
-  unfold vacuumChannel crossingChannel; ring
+/-- The bar-even remainder: `ε(Δ) − barOdd = barEven`. This is the internal
+    `h²/2` term; it is part of the counit `Q_β`, **not** a separate binding
+    contribution (the earlier "double-count" reading is refuted by the #2346
+    `Im 𝔙 = ` full-counit witness — see file header). -/
+theorem barEven_remainder (h : R) :
+    (h ^ 2 / 2 - h) - barOdd h = barEven h := by
+  unfold barEven barOdd; ring
 
 end QOU.Interactions.QBetaChannelSplit

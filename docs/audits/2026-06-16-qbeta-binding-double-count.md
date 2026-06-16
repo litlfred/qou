@@ -1,83 +1,63 @@
-# Q_β / binding double-count — the vacuum channel (2026-06-16)
+# Q_β / binding "double-count" — investigated and RETRACTED (2026-06-16)
 
-**Trigger.** Owner observation on PR #2363 ("we are double counting
-somewhere") while reconciling two framings of the nucleon `Q`-value:
+> **RESOLUTION (branch A — no double-count).** The double-count hypothesis
+> below was **tested and refuted**. #2346's witness
+> `computations/habiro/habiro-exact-qbeta.witness.json` reports
+> `Q_A = Im 𝔙 = 0.7836458028 MeV`, which equals the **full** counit
+> `|ε(Δ)|·𝔈₀` to `2·10⁻¹⁶`. So #2346's `Q_β = Im 𝔙` is the *whole* counit
+> value (+0.17%), **not** the bar-odd part alone (+11.86%). The two framings
+> **agree**; there is **no double-count**, and the #2363 counit `Q_β` headline
+> stands. The error was conflating the counit's *internal* bar-parity split
+> with #2346's *separate* Re/Im split of the single-knot confinement defect.
 
-* **#2363 (counit):** `Q_β = ε(Δ)·𝔈₀`, `ε(Δ) = h²/2 − h` (`h = q − q⁻¹`).
-* **#2346 (complex volume):** `𝔙 = 𝔈₀·tr_M((Π_free−1)∘𝓜) ∈ ℂ`, with
-  **binding `= Re 𝔙`** (bar-even/`cosh`) and **`Q_β = Im 𝔙`**
-  (bar-odd/`sinh`), split by the bar-involution `σ : q ↦ q⁻¹` (`h ↦ −h`).
+## What was hypothesised (and why it was wrong)
 
-## Where the double-count is
+Owner observation on PR #2363 ("we are double counting somewhere"), against
+two framings:
 
-The net difference `Δ` splits by **bar-parity** into two channels:
+* **#2363 (counit):** `Q_β = ε(Δ)·𝔈₀`, `ε(Δ) = h²/2 − h`.
+* **#2346 (complex volume):** `𝔙 = 𝔈₀·tr_M((Π_free−1)∘𝓜) ∈ ℂ`,
+  `binding = Re 𝔙`, `Q_β = Im 𝔙`, split by the bar-involution.
 
-| channel | NF support | value | parity (`h ↦ −h`) | #2346 books as |
-|---|---|---|---|---|
-| **vacuum** | `γ` (identity) | `+h²/2` | **even** (`cosh`/Re) | **binding** (`Re 𝔙`) |
-| **crossing** | `σ₀, σ₁` | `−h` | **odd** (`sinh`/Im) | **`Q_β`** (`Im 𝔙`) |
+The (incorrect) hypothesis was that #2346's `Im 𝔙` is the **bar-odd part of
+the same `Δ`** (`−h`, giving +11.86%), so the counit's bar-even `h²/2` would
+be a vacuum channel **double-booked** as binding. The bar-decomposition of
+the counit is real algebra — `ε(Δ) = (h²/2)_{even} + (−h)_{odd}`, machine-
+checked in
+[`qbeta_channel_split.lean`](../../content/quantum-observable-universe/lean/QOU/Interactions/qbeta_channel_split.lean)
+— but the **identification of `Im 𝔙` with the bar-odd part was unjustified**.
 
-The #2363 counit uses the **full** sum `ε(Δ) = h²/2 − h = vacuum + crossing`.
-So it carries the bar-**even vacuum channel** that #2346 independently books
-as **binding**. That `h²/2` is the **double-count**: it is attributed to
-binding *and* to `Q_β` at once. Machine-checked
-([`qbeta_channel_split.lean`](../../content/quantum-observable-universe/lean/QOU/Interactions/qbeta_channel_split.lean),
-`double_count`, sorry-free):
+## The test that settled it
 
-```
-(h²/2 − h) − crossingChannel h = vacuumChannel h        -- counit Q_β = bar-odd Q_β + vacuum
-vacuumChannel(−h) = vacuumChannel h                      -- vacuum is bar-EVEN
-crossingChannel(−h) = − crossingChannel h                -- crossing is bar-ODD
-```
+`#2346`'s `Im 𝔙` is **not** the bar-odd part of the `n−p` counit. Per
+`im-complex-volume-intro.md`, `Q_β = Im 𝔙` is the **transfer-matrix / Habiro
+`Q`-value chain** (the `sinh` channel of the **single-knot confinement
+defect** `(Π_free−1)∘𝓜`, a different object from `Δ = NF(n)−NF(p)`),
+evaluated at the substrate. Its witnessed value:
 
-## Why it matters numerically
-
-The double-counted vacuum channel is **exactly** the term that makes the
-counit `Q_β` match (`𝔈₀ = 4.186` MeV, CODATA `Q_β = 0.78233`):
-
-| `Q_β` from | value | vs CODATA |
+| quantity | value | source |
 |---|---|---|
-| crossing channel only (`bar-odd`, `Im 𝔙`) | `|−h|·𝔈₀ = 0.875` MeV | **+11.86%** |
-| **full counit** (`+ vacuum`) | `|h²/2 − h|·𝔈₀ = 0.784` MeV | **+0.17%** |
-| vacuum channel alone (the double-count) | `|h²/2|·𝔈₀ = 0.091` MeV | — |
+| `#2346` `Q_A = Im 𝔙` | `0.7836458028` MeV | `habiro-exact-qbeta.witness.json` |
+| `#2363` counit `|ε(Δ)|·𝔈₀` | `0.7836458028` MeV | this session |
+| difference | `2·10⁻¹⁶` MeV | — |
+| bar-odd-only `|−h|·𝔈₀` (the wrong guess) | `0.875` MeV (+11.86%) | refuted |
 
-The `+0.17%` headline match of the counit form is **not** the bar-odd
-transition value (`+11.86%`); it relies on adding the bar-even vacuum
-channel — the channel `#2346` assigns to binding.
+So `Im 𝔙 = ε(Δ)·𝔈₀` exactly. **Branch A.** The two Q_β framings are the same
+number to machine precision — complementary presentations (Form A counit ↔
+`Im 𝔙` of the confinement defect), related through the known
+Form-A/Form-B bridge, **not** a double-count.
 
-## Resolution branches (the vacuum channel has one home)
+## Consequences
 
-The vacuum `h²/2` belongs to exactly one observable. Two clean branches:
+- The `+0.17%` counit `Q_β` (#2363) and `Q_β = Im 𝔙` (#2346) **cross-validate**.
+- The counit's internal bar-split (`barEven`/`barOdd` in the Lean) is an
+  *internal* decomposition; it does **not** correspond to #2346's
+  binding/Q_β split (which is Re/Im of a different, confinement defect).
+- `#2346`'s binding (`Re 𝔙`) is the confinement-defect real part — a separate,
+  large quantity — and is **not** the counit's `h²/2`. No channel is shared.
+- The earlier owner comment flagging my `+0.17%` as "provisional / possibly a
+  double-count" is **withdrawn**; the headline stands.
 
-- **(A) vacuum ∈ Q_β.** The full counit `Q_β` (`+0.17%`) is correct, and
-  `#2346`'s `binding = Re 𝔙` **must exclude** the `γ` channel (else binding
-  double-counts it). Then `Q_β` is *not* purely the bar-odd `Im 𝔙`.
-- **(B) vacuum ∈ binding.** The bar-parity assignment (`#2346`) is correct:
-  `Q_β` = bar-odd crossing channel only (`+11.86%`), the vacuum `h²/2` is a
-  binding/static contribution, and the celebrated `+0.17%` counit match was
-  **partly a double-count** of the binding channel into `Q_β`.
-
-**Bar-parity is the cleaner categorical criterion** (it is an involution-
-canonical splitting, not a hand assignment), and under it branch (B) holds —
-which would **demote** the `+0.17%` counit result to a `+11.86%` bar-odd
-prediction plus a separately-booked vacuum/binding term. The empirical pull
-is the opposite (the full counit fits far better), so the physical question
-is whether the `γ`/vacuum content of the neutron (the `−HA·𝟙` correction
-from the `d`–`d` crossing, see `negative-debt-confinement.md`) is a
-**decay-transition** contribution (branch A) or a **static/binding**
-contribution (branch B).
-
-## Next step (test before declaring)
-
-Compute `#2346`'s `Im 𝔙 = Im(𝔈₀·tr_M((Π_free−1)∘𝓜))` numerically for the
-nucleon and compare:
-
-- if `Im 𝔙 = 0.875` MeV (+11.86%) → branch (B): the bar-odd channel is the
-  true `Q_β`, the counit over-counts the vacuum;
-- if `Im 𝔙 = 0.784` MeV (+0.17%) → branch (A): `Im 𝔙` already includes the
-  vacuum, `#2346`'s `Re/Im` split is not strict bar-parity, and the counit
-  and `Im 𝔙` agree.
-
-Until settled, neither "the `+0.17%` counit `Q_β`" (#2363) nor "binding `=
-Re 𝔙` over the full defect" (#2346) should be asserted as final — the
-vacuum channel is shared and one of them is over-counting.
+Recorded for the audit trail: the hypothesis was reasonable, formalize-first
+testing (compute `Im 𝔙`, compare) refuted it cheaply before it propagated
+into the paper.
