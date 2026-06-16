@@ -85,7 +85,9 @@ sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from codata_constants import M_E_MEV  # CODATA-2022 full precision
+from codata_constants import (  # CODATA-2022 full precision  # noqa: E402
+    M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION,
+)
 
 mp.mp.dps = 80
 
@@ -103,8 +105,8 @@ def main() -> int:
 
     # CODATA (Layer-2 substrate flavor-split per PR #942):
     M_E = M_E_MEV  # from codata_constants
-    M_P_CODATA = mp.mpf("938.27208816")
-    M_N_CODATA = mp.mpf("939.56542052")
+    M_P_CODATA = M_P_MEV_VALIDATION  # codata_constants registry
+    M_N_CODATA = M_N_MEV_VALIDATION  # codata_constants registry
     M_AVG_CODATA = (M_P_CODATA + M_N_CODATA) / 2
 
     bracket_2_q = Q0 + 1 / Q0

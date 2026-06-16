@@ -138,9 +138,11 @@ def main() -> int:
         "headline.  305 ppm empirical match unchanged."
     )
 
-    # CODATA cross-check: Δm/M_N ≈ 305 ppm
-    M_p_mev = mp.mpf("938.27208816")
-    M_n_mev = mp.mpf("939.56542052")
+    # CODATA cross-check: Δm/M_N ≈ 305 ppm. Masses from the codata_constants
+    # registry (no inline literals — CLAUDE.md P31). _path_bridge ran at import.
+    from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION
+    M_p_mev = M_P_MEV_VALIDATION
+    M_n_mev = M_N_MEV_VALIDATION
     M_avg = (M_p_mev + M_n_mev) / 2
     delta_m_over_M_N_codata = (M_n_mev - M_p_mev) / M_avg
     delta_m_over_M_N_codata_ppm = delta_m_over_M_N_codata * mp.mpf("1e6")

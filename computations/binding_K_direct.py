@@ -73,17 +73,23 @@ if str(HERE) not in sys.path:
 
 from _precision import set_compute_dps, fmt
 set_compute_dps()  # mp.mp.dps via QOU_COMPUTE_DPS (default 50)
-from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
+from codata_constants import (  # noqa: E402
+    M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION,
+    M_D_MEV_VALIDATION, M_T_MEV_VALIDATION, M_HE3_MEV_VALIDATION,
+    M_HE4_MEV_VALIDATION,
+)
 from witness_base import WitnessBuilder  # noqa: E402
 
 # Atom roster + CODATA total masses (MeV).  Binding = M_codata − (Z m_p + N m_n).
+# Masses routed through the codata_constants registry (CODATA 2022 validation
+# witness) — no inline CODATA literals (CLAUDE.md P31 / three-CAL purity).
 ATOMS = {
-    "p":   {"Z": 1, "N": 0, "M_MeV": "938.27208816"},
-    "n":   {"Z": 0, "N": 1, "M_MeV": "939.56542052"},
-    "D":   {"Z": 1, "N": 1, "M_MeV": "1875.61294257"},
-    "T":   {"Z": 1, "N": 2, "M_MeV": "2808.92113298"},
-    "3He": {"Z": 2, "N": 1, "M_MeV": "2808.39160743"},
-    "4He": {"Z": 2, "N": 2, "M_MeV": "3727.379378"},
+    "p":   {"Z": 1, "N": 0, "M_MeV": str(M_P_MEV_VALIDATION)},
+    "n":   {"Z": 0, "N": 1, "M_MeV": str(M_N_MEV_VALIDATION)},
+    "D":   {"Z": 1, "N": 1, "M_MeV": str(M_D_MEV_VALIDATION)},
+    "T":   {"Z": 1, "N": 2, "M_MeV": str(M_T_MEV_VALIDATION)},
+    "3He": {"Z": 2, "N": 1, "M_MeV": str(M_HE3_MEV_VALIDATION)},
+    "4He": {"Z": 2, "N": 2, "M_MeV": str(M_HE4_MEV_VALIDATION)},
 }
 
 ATOM_TO_TR_M_KEY = {
