@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-16T19:22:13.528170+00:00",
-  "commitSha": "39e6489ea4cd0401e55e32df3eeee55321f32a3c",
+  "computedAt": "2026-06-16T22:04:33.011911+00:00",
+  "commitSha": "37c8f97ec1e8e57e1dc9b325ab289bc3f46653b0",
   "assertions": [
     {
       "name": "no_i11_violations",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 12,
   "computation": "validation-as-input-audit",
   "scriptFile": "validation_as_input_audit.py",
-  "scriptHash": "b89c2c1838a9",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "f0906569020e",
+  "scriptCommitSha": "26992a303114097fb00aae3f7ba0bb2e9cb63772",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,7 @@
   "description": "I11 audit per local/compute-integration-watcher: scripts that import M_*_MEV_VALIDATION constants from codata_constants.py are classified by usage. The validation constants are tagged 'DO NOT USE AS PREDICTION INPUTS' in the source; using them outside `pred - VAL` / `abs(...)` / `expected=VAL` style comparison contexts is an I11 violation unless the script's docstring carries a CLASS-A acknowledged-anchor banner (typical for the M_N anchor pending Workplan-0b). Per-script classification surfaces the violation queue for follow-up.",
   "contentBlock": "I11 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_scripts": 50,
+    "total_scripts": 55,
     "validation_constants_in_scope": [
       "M_P_MEV_VALIDATION",
       "M_N_MEV_VALIDATION",
@@ -56,9 +56,9 @@
   },
   "data": {
     "by_result": {
-      "i11_violation": 39,
-      "imported_unused": 5,
-      "ok_comparison_only": 1,
+      "i11_violation": 34,
+      "ok_comparison_only": 10,
+      "imported_unused": 6,
       "ok_acknowledged_anchor": 5
     },
     "rows": [
@@ -69,17 +69,15 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          134
-        ],
-        "violation_lines": [
-          230,
-          231,
-          249,
+          134,
           252,
           319,
           320
         ],
-        "violation_count": 6,
+        "violation_lines": [
+          249
+        ],
+        "violation_count": 1,
         "result": "i11_violation"
       },
       {
@@ -88,27 +86,41 @@
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
+        "comparison_lines": [
           91,
           92
         ],
-        "violation_count": 2,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/binding_K_direct.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
-          "M_N_MEV_VALIDATION"
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
+        "comparison_lines": [
+          215,
+          216
+        ],
         "violation_lines": [
-          209,
-          210,
-          220
+          77,
+          78,
+          79,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          226
         ],
-        "violation_count": 3,
+        "violation_count": 10,
         "result": "i11_violation"
       },
       {
@@ -129,14 +141,14 @@
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
-          66,
+        "comparison_lines": [
           72,
-          84,
-          85
+          84
         ],
-        "violation_count": 4,
+        "violation_lines": [
+          66
+        ],
+        "violation_count": 1,
         "result": "i11_violation"
       },
       {
@@ -152,12 +164,7 @@
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
-          411
-        ],
-        "violation_count": 1,
-        "result": "i11_violation"
+        "result": "imported_unused"
       },
       {
         "path": "computations/catalan_binding.py",
@@ -179,12 +186,12 @@
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
+        "comparison_lines": [
           35
         ],
-        "violation_count": 1,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/derive_m_baryon_volume_form.py",
@@ -226,6 +233,18 @@
         "result": "i11_violation"
       },
       {
+        "path": "computations/deuteron_binding_plancherel_channel.py",
+        "validation_constants_imported": [
+          "M_D_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          59
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
         "path": "computations/gamma_gamma_pair_production_decomposition.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION"
@@ -256,12 +275,28 @@
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
+        "comparison_lines": [
           73
         ],
-        "violation_count": 1,
+        "violation_lines": [],
+        "violation_count": 0,
         "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "computations/lambda_scale_refinement_h4_correction_bring.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          108
+        ],
+        "violation_lines": [
+          89,
+          109
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
       },
       {
         "path": "computations/linking_weight_canonical_object_lwfix.py",
@@ -288,11 +323,9 @@
           162,
           163,
           166,
-          167,
-          223,
-          225
+          167
         ],
-        "violation_count": 6,
+        "violation_count": 4,
         "result": "i11_violation"
       },
       {
@@ -300,12 +333,13 @@
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
-          46,
+        "comparison_lines": [
           92
         ],
-        "violation_count": 2,
+        "violation_lines": [
+          46
+        ],
+        "violation_count": 1,
         "result": "i11_violation"
       },
       {
@@ -314,15 +348,32 @@
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
-          98,
-          99,
+        "comparison_lines": [
           194,
           195
         ],
-        "violation_count": 4,
+        "violation_lines": [
+          98,
+          99
+        ],
+        "violation_count": 2,
         "result": "i11_violation"
+      },
+      {
+        "path": "computations/m_sym_error_budget.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_P_MEV_VALIDATION_ERR",
+          "M_N_MEV_VALIDATION_ERR"
+        ],
+        "comparison_lines": [
+          71,
+          72
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/markov/markov_trace_axiomatic_multi_atom.py",
@@ -371,11 +422,26 @@
           94,
           95,
           97,
-          374,
-          375,
-          431
+          431,
+          432
         ],
-        "violation_count": 11,
+        "violation_count": 9,
+        "result": "i11_violation"
+      },
+      {
+        "path": "computations/meson_vol_density.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          59
+        ],
+        "violation_lines": [
+          50,
+          60
+        ],
+        "violation_count": 2,
         "result": "i11_violation"
       },
       {
@@ -421,8 +487,7 @@
           110,
           112,
           114,
-          120,
-          126
+          120
         ],
         "violation_lines": [
           39,
@@ -432,11 +497,10 @@
           43,
           44,
           102,
-          103,
           104,
-          105
+          122
         ],
-        "violation_count": 11,
+        "violation_count": 9,
         "result": "ok_acknowledged_anchor"
       },
       {
@@ -464,12 +528,12 @@
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
+        "comparison_lines": [
           93
         ],
-        "violation_count": 1,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/probe_flavor_dressed_mass_from_substrate_split.py",
@@ -477,16 +541,17 @@
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
-          55,
-          56,
+        "comparison_lines": [
           83,
           84,
           123,
           124
         ],
-        "violation_count": 6,
+        "violation_lines": [
+          55,
+          56
+        ],
+        "violation_count": 2,
         "result": "i11_violation"
       },
       {
@@ -549,13 +614,13 @@
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
+        "comparison_lines": [
           56,
           57
         ],
-        "violation_count": 2,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/probes/phi_q_regularization_probe.py",
@@ -587,13 +652,14 @@
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
-          73,
-          74,
+        "comparison_lines": [
           85
         ],
-        "violation_count": 3,
+        "violation_lines": [
+          73,
+          74
+        ],
+        "violation_count": 2,
         "result": "i11_violation"
       },
       {
@@ -601,12 +667,12 @@
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
+        "comparison_lines": [
           136
         ],
-        "violation_count": 1,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/q_beta_consistency_gap_diagnostic.py",
@@ -614,14 +680,15 @@
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
-          36,
-          37,
+        "comparison_lines": [
           60,
           61
         ],
-        "violation_count": 4,
+        "violation_lines": [
+          36,
+          37
+        ],
+        "violation_count": 2,
         "result": "i11_violation"
       },
       {
@@ -630,13 +697,13 @@
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
+        "comparison_lines": [
           69,
           70
         ],
-        "violation_count": 2,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/qbeta/qbeta_physics.py",
@@ -644,12 +711,12 @@
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
+        "comparison_lines": [
           73,
           74
         ],
-        "violation_count": 2,
+        "violation_lines": [],
+        "violation_count": 0,
         "result": "ok_acknowledged_anchor"
       },
       {
@@ -657,13 +724,14 @@
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
-        "violation_lines": [
-          124,
-          171,
+        "comparison_lines": [
           227
         ],
-        "violation_count": 3,
+        "violation_lines": [
+          124,
+          171
+        ],
+        "violation_count": 2,
         "result": "i11_violation"
       },
       {
@@ -755,6 +823,20 @@
         "result": "i11_violation"
       },
       {
+        "path": "computations/verify_isospin_bar_anomaly.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          144,
+          145
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
         "path": "computations/vhat_std_vs_full_tower_compare.py",
         "validation_constants_imported": [
           "M_P_MEV_VALIDATION",
@@ -774,14 +856,15 @@
           "M_P_MEV_VALIDATION",
           "M_N_MEV_VALIDATION"
         ],
-        "comparison_lines": [],
+        "comparison_lines": [
+          64
+        ],
         "violation_lines": [
           51,
           52,
-          64,
           65
         ],
-        "violation_count": 4,
+        "violation_count": 3,
         "result": "i11_violation"
       }
     ]

@@ -112,6 +112,16 @@ COMPARISON_LINE_INDICATORS = (
     "residual", "err", "delta", "diff",
 )
 
+# Recording / display context — storing the anchor for provenance or
+# printing it is NOT a computation input (refinement, 2026-06-16: these
+# were the dominant false-positive class). `add_parameter`/`add_data`/
+# `add_assertion` write the reference value into the witness JSON;
+# print/f-strings display it.
+RECORDING_INDICATORS = (
+    "add_parameter", "add_data", "add_assertion", "add_caveat",
+    ".nstr(", "print(", 'f"', "f'", "logging.", "logger.",
+)
+
 
 def _classify_script(path: Path) -> dict[str, Any] | None:
     """Audit one Python script for validation-constant usage."""
@@ -149,7 +159,11 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
         # classification — comments may explain the constant but
         # don't count as USE.
         code_part = re.sub(r"#.*$", "", line)
-        if any(v in code_part for v in found):
+        # Also strip string literals: the constant NAME appearing inside a
+        # quoted string (e.g. `"source": "... M_P_MEV_VALIDATION (reference)"`)
+        # is documentation, not a use (refinement, 2026-06-16).
+        code_no_str = re.sub(r'"[^"]*"|\'[^\']*\'', "", code_part)
+        if any(v in code_no_str for v in found):
             usage_lines.append((i, code_part))
 
     # The IMPORT line itself doesn't count as usage.
@@ -162,19 +176,52 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
         return row
 
     # Classify each non-import usage line.
+    # Two-step comparison (refinement, 2026-06-16): an anchor aliased to a
+    # local (`m_p = mp.mpf(str(M_P_MEV_VALIDATION))`) whose local is later
+    # used in a comparison is comparison-reference, not a derivation input.
+    # Collect pure-alias assignments (RHS is ONLY the anchor + conversions,
+    # no arithmetic), then mark those whose alias var appears in a comparison.
+    alias_vars: dict[str, int] = {}
+    for n, line in usage_lines:
+        am = re.match(r"\s*([A-Za-z_]\w*)\s*=\s*(.+)$", line)
+        if not am:
+            continue
+        lhs, rhs = am.group(1), am.group(2)
+        core = rhs
+        for v in found:
+            core = core.replace(v, "")
+        core = re.sub(r"(?:mpmath\.mpf|mp\.mpf|mpf|float|str|Decimal)\s*\(",
+                      "(", core)
+        core = re.sub(r"[()\s]", "", core)
+        if core == "":  # RHS was only the anchor wrapped in conversions
+            alias_vars[lhs] = n
+    compared_aliases: set[str] = set()
+    for line in lines:
+        for var in alias_vars:
+            if re.search(rf"\b{re.escape(var)}\b", line) and any(
+                ind in line for ind in COMPARISON_LINE_INDICATORS
+            ):
+                compared_aliases.add(var)
+
     violation_lines: list[int] = []
     comparison_lines: list[int] = []
     for n, line in usage_lines:
         if re.match(r"\s*(from|import)\b", line):
             continue
-        # Comparison-context hints?
-        is_comparison = (
+        # Comparison-context, recording/display, or two-step alias-to-comparison?
+        is_ok = (
             any(ind in line for ind in COMPARISON_LINE_INDICATORS)
             or any(
                 m.group(1) in found for m in COMPARISON_KW_PATTERN.finditer(line)
             )
+            or any(ind in line for ind in RECORDING_INDICATORS)
         )
-        if is_comparison:
+        if not is_ok:
+            am = re.match(r"\s*([A-Za-z_]\w*)\s*=", line)
+            if (am and am.group(1) in compared_aliases
+                    and alias_vars.get(am.group(1)) == n):
+                is_ok = True  # this is the alias-assignment; alias is compared
+        if is_ok:
             comparison_lines.append(n)
         else:
             violation_lines.append(n)
