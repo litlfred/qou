@@ -5,9 +5,29 @@ status: in_progress
 type: task
 priority: normal
 created_at: 2026-06-16T02:14:00Z
-updated_at: 2026-06-16T02:14:00Z
+updated_at: 2026-06-16T02:30:00Z
 parent: qz9k
 ---
+
+## Result (2026-06-16) — refuted against a fit (acceptance b); pending human close
+
+Tiered finding delivered:
+[`docs/audits/2026-06-16-koide-tau-forcing-assessment.md`](../docs/audits/2026-06-16-koide-tau-forcing-assessment.md).
+
+- **TIER A (fact):** Koide forces m_τ ≈ 1776.97 MeV (62 ppm vs PDG 1776.86) —
+  ~200× better than QOU's *own* structural attempt, which was exhaustively
+  falsified at 1.33% (`2026-06-03-m-tau-knot-prediction-falsification.md`).
+- **TIER B (verdict):** QOU derives no Z/3 generation democracy, no √m-amplitude,
+  no categorical 2/3 for generations. Forcing m_τ from Koide is a **CAL-4 import**,
+  not a derivation → out of scope for production.
+- **TIER C (open):** the non-fitting route to m_τ is Path A (derive ξ_ℓ(q)) per
+  `lepton-mass-tower-canonical.md`; Koide is at most an external check on a future
+  derived ξ_ℓ, never an input.
+- Corrected the first corpus-map agent's overstated "torus-Vol=0 dictionary
+  inconsistency": canonical conjecture uses the per-braid q-volume (nonzero on
+  torus braids; → hyperbolic vol only in Kashaev q→1 limit) and the electron is
+  the calibration unit, so its hyperbolic Vol never enters. The Vol=0 fact bites
+  only the SUPERSEDED Skein LO form.
 
 ## Goal
 
