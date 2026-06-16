@@ -3,6 +3,7 @@
   "description": "Sidecar QA audit to systematically review and mechanically update all expository literature. The objective is to purge the interpretation of 'q' as an abstract, unobservable background parameter and formally align it with its physical identity: the local fundamental mass ratio. Furthermore, the canonical calibration inputs (CAL 1, CAL 2, CAL 3) must be explicitly redefined as locally evolving fields over the spacetime grid.",
   "status": "pending",
   "scope": [
+    "content/quantum-observable-universe/introduction/",
     "content/quantum-observable-universe/information-theory/",
     "content/quantum-observable-universe/climax-volume-mass/",
     "content/quantum-observable-universe/mass-theory/",
@@ -11,17 +12,17 @@
   "review_criteria": [
     {
       "criterion_id": "C1_Q_IDENTITY",
-      "description": "Any description of q as a rigid global constant or invisible ether must be mechanically rewritten to state that q(p) is mathematically synonymous with the local mass ratio.",
+      "description": "Any description of q as a rigid global constant or invisible ether must be mechanically rewritten to explicitly declare that q is mathematically synonymous with the mass ratio.",
       "status": "pending"
     },
     {
-      "criterion_id": "C2_CAL_LOCALITY",
-      "description": "Ensure CAL 1 (m_e) and CAL 3 (Q_beta) are explicitly described as local physical fields derived from the topological trace evaluated at local q(p). They are not universal rigid constants.",
+      "criterion_id": "C2_3_CALIBRATION_POINTS",
+      "description": "Ensure the literature explicitly frames the framework around the '3 calibration points' (CAL 1 = m_e, CAL 2 = m_mu, CAL 3 = Q_beta) as local physical fields derived from the topological trace evaluated at local q(p). They must not be treated as universal rigid constants.",
       "status": "pending"
     },
     {
       "criterion_id": "C3_CAL2_VACUUM_LOCK",
-      "description": "Verify that derivations utilizing CAL 2 (m_mu/m_e) correctly identify this ratio as the empirical anchor that locks the vacuum expectation value q_0 ≈ 1.1097.",
+      "description": "Verify that derivations correctly identify the ratio CAL 2 / CAL 1 (m_mu/m_e) as the empirical anchor that locks the flat-space vacuum expectation value q_0 ≈ 1.1097.",
       "status": "pending"
     }
   ],
