@@ -1,13 +1,21 @@
 **Proposition (Three-calibration discipline).**
 *The QOU framework admits **categorically exactly three** external
-calibration inputs, aligning to three distinct (co)homological
-degrees of the substrate:*
+calibration inputs — the three real degrees of freedom of the first
+cohomology of Bring's curve, $H^1 = 2W$:*
 
-| Cohomological datum ($H^1 = 2W$) | Measured input | What it fixes | Source |
-| -------------------------------: | -------------- | ------------- | ------ |
-|       $W$-plane **scale** ($H^0$) | $m_e$          | the dimensional unit (scale) | CODATA (electron mass) |
-|     $W$-plane **modulus** ($H^1$) | $m_\mu$        | $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | CODATA (muon mass) |
-|        orthogonal class (no $H$-degree) | $m_\pi$  | the $\mathrm{Vol}(\mathrm{Hopf})=0$ meson scale (independent of $m_e, q_0$) | PDG (charged-pion mass) |
+| DOF of $H^1(\text{Bring}) = 2W$ | Measured input | What it fixes | Source |
+| ------------------------------- | -------------- | ------------- | ------ |
+| $W$-plane **scale**             | $m_e$          | the dimensional unit (scale) | CODATA (electron mass) |
+| $W$-plane **modulus**           | $m_\mu$        | $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | CODATA (muon mass) |
+| **orthogonal class** (meson sector) | $m_\pi$    | the $\mathrm{Vol}(\mathrm{Hopf})=0$ meson scale (independent of $m_e, q_0$) | PDG (charged-pion mass) |
+
+All three are the three real degrees of freedom of the single first
+cohomology $H^1(\text{Bring}) = 2W$ — **not** three distinct degrees
+$H^0/H^1/H^2$. The Hodge structure of shape $2W$ has exactly $2+1=3$
+real DOF (the rank-2 $W$-plane's scale and modulus, plus one orthogonal
+class), matching the three calibrations
+([calibration-cohomology-alignment](../mass-theory/calibration-cohomology-alignment.md),
+Lean witness `QOU.Mass.calibrations_eq_cohomology`).
 
 The three measured inputs are **three masses** $(m_e, m_\mu, m_\pi)$.
 $m_e$ sets the unit; since $q_0$ is dimensionless it is fixed by $m_\mu$
@@ -62,7 +70,7 @@ elsewhere in the paper:
    freedom of the Bring Hodge structure $H^1 = 2W$
    ([calibration-cohomology-alignment](../mass-theory/calibration-cohomology-alignment.md)).
    The rank-2 $W$-Hodge plane carries two invariants — a **scale**
-   (the $H^0$ prefactor, pinned by $m_e$) and a **modulus** (the
+   (the $h^0$ prefactor *channel*, pinned by $m_e$) and a **modulus** (the
    $\mathrm{SL}_2$ trace $\tau = 2\cosh\theta$, pinned by $q_0$ via
    the lepton ratio $m_\mu/m_e$). The meson sector — whose Hopf-link complement
    has $\mathrm{Vol}(\mathrm{Hopf}) = 0$, hence no geometric scale
