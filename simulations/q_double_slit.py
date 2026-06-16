@@ -15,7 +15,7 @@ wavelength = 500e-9  # de Broglie wavelength [m]
 
 VOL_K = 7.327724
 TORSION_NORM = 1.0
-Q_VALUES = [1.0, 1.05, 1.1097, 1.2, 1.5]
+M_MU_M_E_RATIOS = [1.0, 1.05, 1.1097, 1.2, 1.5] # q values (the mass ratios)
 OUTPUT_PATH = "simulations/q_double_slit_output.png"
 
 def load_isotope(z, a):
@@ -191,12 +191,12 @@ def run_simulation():
     isotope_data = load_isotope(z_material, a_material)
     print(f"Loaded material: {isotope_data.get('element', 'Unknown')} (Mass: {isotope_data['ame_reference'].get('atomic_mass_u', 'N/A')} u)")
     
-    fig, axes = plt.subplots(len(Q_VALUES), 1, figsize=(8, 12))
-    if len(Q_VALUES) == 1:
+    fig, axes = plt.subplots(len(M_MU_M_E_RATIOS), 1, figsize=(8, 12))
+    if len(M_MU_M_E_RATIOS) == 1:
         axes = [axes]
         
-    for i, q_0 in enumerate(Q_VALUES):
-        print(f"\n--- Simulating q-regime (initial q_0 = {q_0}) ---")
+    for i, q_0 in enumerate(M_MU_M_E_RATIOS):
+        print(f"\n--- Simulating q-regime (initial mass ratio q_0 = {q_0}) ---")
         
         # Initialize the non-rigid lattice with the specific local q_0 section
         lattice = DynamicSpacetimeLattice(isotope_data, initial_q=q_0)
@@ -207,7 +207,7 @@ def run_simulation():
         
         final_q_avg = np.mean(lattice.q_section)
         
-        print(f"  Final Avg q: {final_q_avg:.6f} (Evolved from {q_0})")
+        print(f"  Final Avg q (Mass Ratio): {final_q_avg:.6f} (Evolved from {q_0})")
         print(f"  Dynamic Phase State: {phase}")
         print(f"  Topological Winding: {winding:.4e}")
         print(f"  Topological Invariant Stable: {inv_stable}")
