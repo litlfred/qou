@@ -73,6 +73,19 @@ if str(HERE) not in sys.path:
 from char_fast import chi_lambda_fast_mp  # noqa: E402
 from lr_coefficients import get_lr_table, partitions_of  # noqa: E402
 
+try:
+    import pyhecke_native as _pyn  # exact MPFR seminormal characters
+    _HAVE_NATIVE = True
+except ImportError:  # pragma: no cover
+    _pyn = None
+    _HAVE_NATIVE = False
+
+# Exact cross-check bar at 50 dps (compute-author §1.1: 1e-25 minimum). Reachable
+# only via the native MPFR character path (`pyhecke_native.chi_lambda_braid_mpfr`),
+# which evaluates the Hoefsmit seminormal form at arbitrary precision — unlike
+# `char_fast.chi_lambda_fast_mp`, whose seminormal source entries are f64.
+EXACT_TOL = mp.mpf("1e-25")
+
 # LOSSY cross-check bar (f64-limited). `char_fast.chi_lambda_fast_mp` lambdifies
 # the seminormal generator matrices from f64-precision source entries
 # (`_cached_seminormal` is numpy/f64), so its effective precision is ~1e-14
@@ -259,6 +272,111 @@ def verify_chi_disjoint_reduction(n_inner: int, n_block: int,
 
 
 # ──────────────────────────────────────────────────────────────────────
+# Exact (1e-25) path — native MPFR seminormal characters.
+# ──────────────────────────────────────────────────────────────────────
+
+def _native_chi(lam: tuple[int, ...], braid: list[tuple[int, int]],
+                q_str: str, dps: int) -> mp.mpf:
+    """Exact χ^λ(braid) via pyhecke_native at `dps` digits.
+
+    `braid` is a list of (sign, gen0) with sign ∈ {+1,-1} (σ or σ⁻¹) and gen0
+    a 0-based generator index; the native API uses 1-based indices, so we add 1.
+    """
+    nat = [(int(s), int(g) + 1) for (s, g) in braid]
+    return mp.mpf(_pyn.chi_lambda_braid_mpfr(list(lam), nat, q_str, dps))
+
+
+def _braid_test_words(n: int) -> list[list[tuple[int, int]]]:
+    """Diverse *pure-braid* H_n test words (σ_g, σ_g⁻¹ and products only — no
+    averaged/Hecke factor, so the exact native braid-character path applies)."""
+    gens = list(range(n - 1))
+    words: list[list[tuple[int, int]]] = [[]]
+    for g in gens:
+        words.append([(1, g)])                 # σ_g
+        words.append([(-1, g)])                # σ_g⁻¹
+    for g in gens[:-1]:
+        words.append([(1, g), (1, g + 1)])     # σ_g σ_{g+1}
+        words.append([(1, g), (-1, g + 1)])    # σ_g σ_{g+1}⁻¹
+    if n >= 3:
+        words.append([(1, 0), (1, 1), (1, 0)])   # trefoil-like
+        words.append([(-1, 0), (1, 1), (-1, 0)])
+    return words
+
+
+def disjoint_braid(inner: list[tuple[int, int]], block: list[tuple[int, int]],
+                   n_inner: int) -> list[tuple[int, int]]:
+    """Disjoint product (I=identity): block gens shift by n_inner (0-based)."""
+    return list(inner) + [(s, g + n_inner) for (s, g) in block]
+
+
+def verify_chi_disjoint_reduction_exact(n_inner: int, n_block: int,
+                                        dps: int = 50) -> dict:
+    """Preflight step 1, EXACT (1e-25): the I=identity branching identity
+
+        χ^λ(W·β) == Σ_{ξ,ν} c^λ_{ξν} χ^ξ(W) χ^ν(β)
+
+    with every character evaluated by the native MPFR Hoefsmit kernel at `dps`
+    digits. Upgrades `verify_chi_disjoint_reduction` (f64) to the L1 floor.
+    """
+    if not _HAVE_NATIVE:
+        return {"skipped": True,
+                "reason": "pyhecke_native unavailable — build via "
+                          "`pip install ./tools/pyhecke-native` (compute-author §0.1)"}
+    mp.mp.dps = dps + 10
+    q = q0_mp(dps)
+    q_str = mp.nstr(q, dps)
+    n = n_inner + n_block
+    lr = get_lr_table(n_inner, n_block)
+    parts_outer = partitions_of(n)
+    parts_inner = partitions_of(n_inner)
+    parts_block = partitions_of(n_block)
+
+    inner_words = _braid_test_words(n_inner)
+    block_words = _braid_test_words(n_block)
+
+    max_abs = mp.mpf(0)
+    max_rel_wc = mp.mpf(0)
+    n_checks = 0
+    n_fail = 0
+    worst = None
+    for wi in inner_words:
+        chi_xi = {xi: _native_chi(xi, wi, q_str, dps) for xi in parts_inner}
+        for wb in block_words:
+            chi_nu = {nu: _native_chi(nu, wb, q_str, dps) for nu in parts_block}
+            full = disjoint_braid(wi, wb, n_inner)
+            for lam in parts_outer:
+                lhs = _native_chi(lam, full, q_str, dps)
+                rhs = mp.mpf(0)
+                for xi in parts_inner:
+                    for nu in parts_block:
+                        c = lr.get((xi, nu, lam), 0)
+                        if c:
+                            rhs += c * chi_xi[xi] * chi_nu[nu]
+                ad = abs(lhs - rhs)
+                rel = ad / max(abs(lhs), abs(rhs), mp.mpf("1e-40"))
+                ok = (ad < EXACT_TOL) or (rel < EXACT_TOL)
+                if ad > max_abs:
+                    max_abs = ad
+                if abs(lhs) > mp.mpf("1e-3") and rel > max_rel_wc:
+                    max_rel_wc = rel
+                if not ok:
+                    n_fail += 1
+                    if worst is None:
+                        worst = {"lambda": list(lam), "abs_residual": mp.nstr(ad, 6)}
+                n_checks += 1
+    return {
+        "n_inner": n_inner, "n_block": n_block, "n": n, "dps": dps,
+        "engine": "pyhecke_native MPFR (exact)",
+        "n_checks": n_checks, "n_fail": n_fail,
+        "max_absolute_residual": mp.nstr(max_abs, 8),
+        "max_relative_residual_wellcond": mp.nstr(max_rel_wc, 8),
+        "tolerance": mp.nstr(EXACT_TOL, 4),
+        "all_passed": n_fail == 0,
+        "worst_failure": worst,
+    }
+
+
+# ──────────────────────────────────────────────────────────────────────
 # STEP 2 / STEP 3 — the bridge-generator deformation (the closure proper).
 # ──────────────────────────────────────────────────────────────────────
 
@@ -329,12 +447,25 @@ def main() -> int:
           f"max rel (well-cond) = {chi_res['max_relative_residual_wellcond']}")
     if not chi_res["all_passed"]:
         print(f"       worst failure: {chi_res['worst_failure']}")
+
+    print(f"  [1x] χ^λ disjoint (I=identity) reduction EXACT (1e-25, native MPFR) ...")
+    exact_res = verify_chi_disjoint_reduction_exact(args.n_inner, args.n_block, args.dps)
+    if exact_res.get("skipped"):
+        print(f"       SKIP — {exact_res['reason']}")
+    else:
+        print(f"       {'PASS' if exact_res['all_passed'] else 'FAIL'} — "
+              f"{exact_res['n_checks']} checks ({exact_res['n_fail']} fail), "
+              f"max abs residual = {exact_res['max_absolute_residual']}, "
+              f"max rel (well-cond) = {exact_res['max_relative_residual_wellcond']}")
+        if not exact_res["all_passed"]:
+            print(f"       worst failure: {exact_res['worst_failure']}")
     print()
     print("  [2 ] analytic A^λ_ξν(I≠1) bridge deformation : TODO(closure-b)")
     print("  [3 ] H_9 universality                        : TODO(closure-b)")
     print()
 
-    all_passed = dim_res["all_passed"] and chi_res["all_passed"]
+    exact_ok = exact_res.get("skipped") or exact_res["all_passed"]
+    all_passed = dim_res["all_passed"] and chi_res["all_passed"] and exact_ok
     print(f"  Preflight verdict: {'ALL PASS' if all_passed else 'FAILURES PRESENT'}")
 
     if args.emit_witness:
@@ -351,7 +482,8 @@ def main() -> int:
              .add_parameter("n_block", args.n_block)
              .add_parameter("dps", args.dps)
              .add_data("dimension_identity", dim_res)
-             .add_data("chi_disjoint_reduction", chi_res)
+             .add_data("chi_disjoint_reduction_f64", chi_res)
+             .add_data("chi_disjoint_reduction_exact", exact_res)
              .set_audit_only(
                  "docs/audits/2026-06-16-analytic-interface-operator-closure-b-design.md"))
         b.add_assertion(
@@ -362,7 +494,13 @@ def main() -> int:
             name="chi_identity_reduction_f64",
             computed=chi_res["all_passed"], expected=True, tolerance=0,
             source="χ^λ(disjoint) = Σ c^λ_ξν χ^ξ χ^ν vs chi_lambda_fast_mp "
-                   "(f64-limited ~1e-14; exact 1e-25 path = closure-b step 2)")
+                   "(f64-limited ~1e-14)")
+        if not exact_res.get("skipped"):
+            b.add_assertion(
+                name="chi_identity_reduction_exact_1e-25",
+                computed=exact_res["all_passed"], expected=True, tolerance=0,
+                source="χ^λ(disjoint) = Σ c^λ_ξν χ^ξ χ^ν via pyhecke_native "
+                       "MPFR seminormal characters at 50 dps (tol 1e-25)")
         out = b.save()
         print(f"  Witness: {out.name}")
 
