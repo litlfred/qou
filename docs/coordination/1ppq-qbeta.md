@@ -487,6 +487,19 @@ full transition value. Notation: rebase #2363 onto #2346 once it lands, mirror
 **binding is also a transition** (constituents→bound = `Re 𝔙`), matching
 #2363's prediction that binding *and* Q_β are both transition observables.
 
+**RESOLVED (branch A, no double-count) — 2026-06-16.** Tested by computing
+#2346's actual `Im 𝔙` from `habiro-exact-qbeta.witness.json`:
+`Q_A = Im 𝔙 = 0.7836458028 MeV = |ε(Δ)|·𝔈₀` to `2·10⁻¹⁶`. So `Im 𝔙` is the
+**full** counit (+0.17%), **not** the bar-odd part (+11.86%). The framings
+**agree**; no double-count. The error in the flag above: `Im 𝔙` is the `sinh`
+channel of the **single-knot confinement defect** `(Π_free−1)∘𝓜`, a different
+object from `Δ = NF(n)−NF(p)` — its value is the whole counit, not `−h`. The
+counit's internal bar-split is **not** #2346's binding/Q_β Re/Im split.
+Outcome: `𝔔_β = Im 𝔙 = ε(Δ)·𝔈₀` is one observable in two presentations
+(cross-validated to machine precision). Retraction + branch-A audit:
+[`docs/audits/2026-06-16-qbeta-binding-double-count.md`](../audits/2026-06-16-qbeta-binding-double-count.md);
+owner notified ([comment](https://github.com/litlfred/qou/pull/2363#issuecomment-4724147020)).
+
 
 ## Cross-refs
 
