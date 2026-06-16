@@ -80,3 +80,35 @@ Owner is documented as "active" on this path per [`docs/audits/2026-05-30-l2-100
 - Operator-valued diagnosis: [`docs/audits/2026-05-17-structural-diagnosis-operator-valued.md`](../audits/2026-05-17-structural-diagnosis-operator-valued.md)
 - Binding-magic-A wireup: [`docs/audits/2026-05-31-binding-magic-A-wireup.md`](../audits/2026-05-31-binding-magic-A-wireup.md)
 - PR #1664 Bring extension audit: [`docs/audits/2026-06-01-bring-color-weighted-implementation-and-compute-audit.md`](../audits/2026-06-01-bring-color-weighted-implementation-and-compute-audit.md)
+
+## Update 2026-06-16 — closure path (b) operator construction implemented + verified (PR #2353)
+
+The operator-valued combiner's **interface operator `A^λ_{ξν}(I)` is now
+constructed analytically and verified exact**, on branch
+`claude/analytic-interface-operator-closure-b-2026-06-16` (PR #2353). This
+delivers the compute that the sibling workplan
+[`docs/workplans/2026-06-16-wenzl-branching-a3-unlock.md`](../workplans/2026-06-16-wenzl-branching-a3-unlock.md)
+(merged via `a9f5a79622`) scoped but explicitly deferred ("No compute landed —
+this container has no numpy/mpmath/pyhecke_native").
+
+**Consistent framing (no §6 conflict).** Both artifacts independently reach the
+same structural conclusion as closure path (b): `A^λ_{ξν}(I)` is **universal**
+(depends only on `(I, λ, ξ, ν)` via the seminormal/LR data, not on the inner
+braid word), so it must be built from representation theory, not least-squares
+fitted (the fit is rank-deficient at H₉⁺ → the 21–42 % A=3 error).
+
+**What #2353 proves (exact, 50 dps):**
+- `A^λ_{ξν}(I) = Π_{ξν} ρ_λ(I) Π_{ξν}` — the (ξ,ν)-isotypic block of the
+  seminormal interface-generator matrix; isotypic projectors from central `H_3`
+  class-sums (exact Lagrange spectral projectors).
+- Decomposition `χ^λ(W·I·β) = Σ_{ξν} Tr[ρ_λ(W)·(Π_{ξν} ρ_λ(I) Π_{ξν})·ρ_λ(β)]`
+  verified at the deuteron (H₆), pn interface: **891/891, residual ~1.5e-49**.
+- New exact-MPFR seminormal-matrix binding `pyhecke_native.seminormal_matrices_mpfr`
+  (validated: trace vs native χ ~1e-51, Hecke relation ~1e-50).
+
+**Remaining (PR #2353 follow-up):** the `ρ_ξ⊗ρ_ν` gauge alignment (a basis-change
+to feed the combiner) and H₉ universality — at which point
+`compute_chi_lambda_via_branching` (`canonical_tr_m_via_branching.py:263`, currently
+`return None` for A ≥ 3) closes, giving the polynomial-in-A speedup the workplan
+targets for the ¹⁶O feasibility wall. **Speedup to an already-validated value — not
+a production-value change, not wired, not a fit.**
