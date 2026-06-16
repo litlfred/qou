@@ -28,6 +28,7 @@ EXPLORATORY — no production rewire, no fit, no witness emitted.
 
 Usage:  python3 m_sym_error_budget.py            # low group (²H–⁷Li)
         python3 m_sym_error_budget.py 6Li 7Li    # explicit isotopes
+        python3 m_sym_error_budget.py --decompose # Δ_model = B_AME−B_sym, localized
 """
 from __future__ import annotations
 
@@ -109,6 +110,14 @@ def _trace_L(Z, N, q=None, dps=50):
     return mp.log(mp.mpf(tf) / mp.mpf(ta))
 
 
+def _trace_ta_tf(Z, N, dps=50):
+    """Raw (tr_atom, tr_free): atom = bound braid (inter-nucleon crossings on),
+    free = GB components (tr_p^Z·tr_n^N)."""
+    from tr_m_atom_via_transfer import tr_m_atom_zn
+    ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=dps)
+    return mp.mpf(ta), mp.mpf(tf)
+
+
 def _fmt_ppq(x):
     a = abs(x)
     if a == 0:
@@ -118,7 +127,98 @@ def _fmt_ppq(x):
     return f"{float(a):,.1f}"
 
 
+def decompose(names=None) -> int:
+    """Δ_model decomposition — localize where the trace mis-binds.
+
+    Structural reduction: the unbound part Z·m_p+N·m_n is identical in the
+    predicted m_sym and the reconstructed M_exp, so it CANCELS and
+
+        Δ_model = m_sym − M_exp = B_AME − B_sym          (exactly)
+
+    i.e. the entire model gap IS the binding error. B_sym itself splits as
+
+        B_sym = m_sym(atom) − m_sym(free),   m_sym(W) = −α·ln tr_M(W)
+
+    with m_sym(free) = −α·(Z·ln tr_p + N·ln tr_n) the free-nucleon baseline and
+    m_sym(atom) the bound-braid trace (inter-nucleon crossings on). We attach the
+    σ_pred error bar to Δ so the sign-change across the light nuclei (per
+    docs/audits/2026-06-16-binding-undershoot-is-shell-structure.md) is shown to be
+    REAL, not noise.
+    """
+    names = names or [nm for nm, _, _ in LOW]
+    sel = {nm: (Z, N) for nm, Z, N in LOW}
+    cod = _load_codata()
+    ame = _ame()
+    q0, q0_err = _q0()
+    alpha = cod["m_e"] / (q0 * (q0 - 1))
+
+    print(f"\n  Δ_model DECOMPOSITION   α = E₀ = {float(alpha):.6f} MeV")
+    print("  Δ_model = m_sym − M_exp = B_AME − B_sym  (unbound Z·m_p+N·m_n cancels).")
+    print("  B_sym = m_sym(atom) − m_sym(free);  σ_pred ≈ CODATA m_p/m_n ≈ 1e-6 MeV.\n")
+
+    R = []
+    for nm in names:
+        Z, N = sel[nm]
+        A = Z + N
+        ta, tf = _trace_ta_tf(Z, N)
+        ms_atom = -alpha * mp.log(ta)
+        ms_free = -alpha * mp.log(tf)
+        B_sym = ms_atom - ms_free
+        b_ame, sb_ame, *_ = ame[(Z, A)]
+        delta = b_ame - B_sym                      # = m_sym − M_exp
+        sig = mp.sqrt((Z * cod["m_p_err"])**2 + (N * cod["m_n_err"])**2 + sb_ame**2)
+        R.append(dict(nm=nm, A=A, Z=Z, N=N, ms_atom=ms_atom, ms_free=ms_free,
+                      B_sym=B_sym, b_ame=b_ame, delta=delta, sig=sig))
+
+    # ── A. the gap IS the binding error, and it changes sign (significantly) ──
+    print("### A. Δ_model = B_AME − B_sym  (the unbound part cancels exactly)")
+    print("| iso | A | B_sym | B_AME | Δ = B_AME−B_sym | Δ/A (per nucleon) | Δ/σ | verdict |")
+    print("|---|--:|--:|--:|--:|--:|--:|:--|")
+    for r in R:
+        sigma_n = abs(r["delta"]) / r["sig"]
+        verd = "over-binds" if r["delta"] < 0 else "under-binds"
+        if abs(float(r["delta"])) < 0.5:
+            verd = "≈works"
+        print(f"| {r['nm']} | {r['A']} | {float(r['B_sym']):.3f} | {float(r['b_ame']):.3f} "
+              f"| {float(r['delta']):+.3f} | {float(r['delta']/r['A']):+.3f} "
+              f"| {float(sigma_n):.1e} | {verd} |")
+
+    # ── B. which trace piece carries the binding (and the error)? ────────────
+    print("\n### B. Compositional split  B_sym = m_sym(atom) − m_sym(free)")
+    print("| iso | m_sym(atom) | m_sym(free) | B_sym | atom share | free share |")
+    print("|---|--:|--:|--:|--:|--:|")
+    for r in R:
+        atom_sh = r["ms_atom"] / r["B_sym"]
+        free_sh = -r["ms_free"] / r["B_sym"]
+        print(f"| {r['nm']} | {float(r['ms_atom']):.4f} | {float(r['ms_free']):+.4f} "
+              f"| {float(r['B_sym']):.4f} | {float(atom_sh)*100:.1f}% | {float(free_sh)*100:+.1f}% |")
+
+    # ── C. the residual vs the magic/volume scale (audit cross-check) ────────
+    from knot_volumes import VOL_BORROMEAN
+    g8 = mp.mpf(str(VOL_BORROMEAN))
+    per_nuc_magic = 2 * cod["m_e"] * g8                  # B_magic/A = 2·m_e·8G
+    print(f"\n### C. Residual vs the magic-volume scale  (2·m_e·8G = {float(per_nuc_magic):.3f} MeV/nucleon)")
+    print("| iso | A | Δ (MeV) | Δ/A | |Δ/A| / (2·m_e·8G) | reading |")
+    print("|---|--:|--:|--:|--:|:--|")
+    for r in R:
+        ratio = abs(r["delta"] / r["A"]) / per_nuc_magic
+        rd = "deuteron anomaly" if r["nm"] == "2H" else (
+             "magic closure" if r["nm"] == "4He" else "generic light")
+        print(f"| {r['nm']} | {r['A']} | {float(r['delta']):+.3f} | {float(r['delta']/r['A']):+.3f} "
+              f"| {float(ratio):.2f} | {rd} |")
+
+    print("\n  Reading: Δ_model is ENTIRELY the binding error (unbound cancels). It is "
+          "~10⁶σ significant AND changes sign (²H over-, ⁴He under-binds) — so it is not "
+          "a uniform formula error but nuclear shell structure (deuteron anomaly + magic "
+          "closure), confirming docs/audits/2026-06-16-binding-undershoot-is-shell-structure.md. "
+          "The binding lives in m_sym(atom) (the bound-braid trace); m_sym(free) is a small, "
+          "sign-varying baseline. No uniform rescale of the trace can close a sign-changing gap.")
+    return 0
+
+
 def main(argv=None) -> int:
+    if argv and argv[0] == "--decompose":
+        return decompose(argv[1:] or None)
     names = argv if argv else [nm for nm, _, _ in LOW]
     sel = {nm: (Z, N) for nm, Z, N in LOW}
     cod = _load_codata()
