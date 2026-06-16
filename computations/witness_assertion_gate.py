@@ -37,8 +37,14 @@ HERE = Path(__file__).resolve().parent
 
 def _is_audit_only(w: dict, name: str) -> bool:
     """A witness is exploratory/audit-only (failing assertions expected) if
-    it self-declares so, or its name marks it a probe/prototype."""
-    if w.get("auditOnly") is True or w.get("audit_only") is True:
+    it self-declares so, or its name marks it a probe/prototype.
+
+    NOTE: `set_audit_only(doc)` serialises `auditOnly` as the doc-path
+    STRING (not a bool), so a truthy string must count as audit-only too —
+    otherwise audit witnesses are mis-reported as actionable production
+    failures (which inflated the headline count)."""
+    ao = w.get("auditOnly", w.get("audit_only"))
+    if ao is True or (isinstance(ao, str) and ao.strip()):
         return True
     if w.get("auditOnlyDoc") or w.get("audit_only_doc"):
         return True
