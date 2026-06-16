@@ -90,6 +90,33 @@ CLAUDE.md, the 4 discipline skills, `three-calibration-inputs`,
   (low + sweep) re-run clean at α=E₀=4.186 MeV (convention is doc-only;
   compute unperturbed). Intent posted on #2355, #2295.
 
+## 𝔙 reorg + mass-endo phase investigation (2026-06-16 ~22:xx)
+
+- **Reorg merged.** `claude/complex-volume-one-voice-reorg-2026-06-16` (6 commits)
+  fast-forwarded into `gracious-lovelace` (ff-only; merge-base = HEAD). Chapters
+  now tell one 𝔙 story (mass-endo §complex-volume, mass-theory ladder→Re/Im,
+  observations β-decay→Im 𝔙, appendix-qvalues→Im 𝔙).
+- **Items 6 + 7 done** (commit `ce61e8e5`): `bar-parity-split.md` +
+  `substrate-cohomology-calibration-story.md` now name 𝔙=Re+iIm explicitly
+  (cross-linked to `conj:binding-qbeta-complex-volume`, added to
+  bar-parity-split `uses[]`); 3-col aspect|Re𝔙|Im𝔙 table in
+  `complex-volume-intro.md`.
+- **⚠ Validation gap:** `folio-assistant/` has **0 tracked files** on this
+  branch — `bun run validate` (Zod/constraints) and qa-sweep CANNOT run on this
+  checkout. Reorg `.ts` verified by `bun build` transpile only (passes modulo
+  the absent `schemas/builders` re-export). **Full validate must run in CI or
+  post-rebase on main.** Stale `section-title-audit.qa.json` key
+  (`sec:mass-algebraic-qbeta-ladder`) left for qa-sweep refresh (can't run here).
+- **Mass-endo phase investigation IN FLIGHT.** Owner asked: is mass = Re∘tr_M
+  and color/EM = Im? Corpus-grep refuted the ℤ/3 framing: color is **C₅**
+  (ζ=e^{2πi/5}, Bring resolvents), mass uses **|tr_M|** (modulus, not Re;
+  `mass-endomorphism-conjecture.md:84-90`), EM = **U(1) σ-backbone** distinct
+  from color, no SU(3). Owner chose "investigate C₅ vs U(1) phase first":
+  probe running on whether arg(tr_M) is a U(1) CS/framing phase (→ Im 𝔙 / EM)
+  or carries the C₅ character χ_ζ (→ color). Verdict → 
+  `docs/audits/2026-06-16-mass-trace-phase-c5-vs-u1.md`. NO color block written
+  until verdict (avoids injecting unsupported numerology per critical-distance).
+
 ## Coordinate sweep (2026-06-16 ~20:40, main +115)
 
 - **#2346 reviews:** none yet (`reviews=[]`) — nothing to triage.
