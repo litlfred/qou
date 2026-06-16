@@ -75,7 +75,7 @@ operator ladder `R(q) = Q_β(q)/[Q_A(q)·cos(α_eff(q))]` against
 surfaced **two concrete blockers** that confirm the "1–2 session" rating:
 
 1. **Wrong operator object (the q=1 test).** The placeholder
-   `Q_β(q) = E_0(q)·τ_M(T_β)(q)` with `E_0 = 1/(q(q−1))` **diverges** at
+   `Q_β(q) = E_0(q)·tr_M(T_β)(q)` with `E_0 = 1/(q(q−1))` **diverges** at
    `q=1`, but the true `Q_β(1) = Q_A(1) = 2·m_e` is **finite**. So the
    canonical `Q_β = |Δ(net)(q)|·E_0(q)` requires the GB-reduced
    `Δ(net)(q)` to carry a `(q−1)` **zero** cancelling the `E_0` pole.
@@ -111,7 +111,7 @@ Both blockers were then resolved and the probe **ran to completion**:
 
 **Finding:** the `|Δ(net)|·E₀` **net-route** (the *binding-like*
 `E₀·Δ(trace)` object) does **not** reproduce the canonical `c₂ = −1`,
-which lives in the τ_M **brane-tower** route. The two are
+which lives in the tr_M **brane-tower** route. The two are
 **parallel-but-distinct ladders** — same `E₀·Δ(trace)` template, different
 objects (and, per `substrate-cohomology-calibration-story`, conjugate
 bar-parities: binding/net = bar-even mass side, the Q_β brane-tower
