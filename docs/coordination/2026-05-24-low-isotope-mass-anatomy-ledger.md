@@ -123,3 +123,29 @@ Ranked by load-bearing-ness; per CLAUDE.md Rule 14, any h^k coefficient or weigh
   `Σ_λ y_λ χ^λ(β_D)·Vol_λ` for q-6j / JSJ-per-pair `Vol_λ` candidates vs D/T/³He/⁴He,
   no free params. Coordinate with Option E #1697/#1516 before authoring any prop block.
 - (Deferred) census/partial-shell → `deprecated/` move — coordinate with #1681 refactor.
+
+## 2026-06-16 — B_sym closed form + saturation (#2343) ↔ α-cluster frontier (#2349)
+
+- **#2343** (`claude/ecstatic-archimedes-7dkuiq`): low-isotope (²H–⁷Li) B_sym error
+  budget + decomposition. Tool `computations/m_sym_error_budget.py`
+  (`--decompose`/`--bonds`/`--rescore`). Audit
+  `docs/audits/2026-06-16-b-sym-linear-chain-closed-form.md`.
+  - **Closed form:** `B_sym = α·[(Z−1)L_pp + L_pn + (N−1)L_nn]`, exactly additive to
+    the 50-dps floor ⇒ the Markov trace carries **zero** cooperative binding; the
+    4-body α-unit is *entirely absent* (not under-weighted). Per-bond n-n>p-n>p-p.
+  - **Saturation:** chain `(A−1)` vs all-pairs `C(A,2)` — neither works (all-pairs
+    RMS 10.1→22.5 ↑, over-binds heavies); binding saturates ~linearly in A.
+    Residual `Δ = B_AME − B_sym` is 10⁵–10⁷σ real and **sign-changing** (D over,
+    ⁴He under) ⇒ shell structure, not a uniform/bond-count law.
+  - **Convergence with prior art (corpus-grep):** `derive_binding_chain_cooperative.py`
+    (signed-trace) is the sibling functor of this log-form chain — same structure,
+    same ⁴He residual; `observations/magic-numbers-from-q` already gives the shell
+    *positions* {2,8,20,28}. Only open lever = α-unit **magnitude** → α-cluster
+    recursion (⁴He as magic input, per #1706), **not** a 7th fit (Δ_λ gate).
+- **#2349** (`claude/lucid-curie-wmr42x`): same B_sym shell-structure problem, high
+  end — extends the residual probe to ¹²C (3α), establishes the ¹⁶O feasibility wall
+  (`tr_m_atom_zn` enumerates p(3A); ¹⁶O p(48)=147k infeasible; real unlock =
+  per-block `canonical_tr_m_via_branching` past A=2). AME witness + B_c12/B_o16.
+- **Relationship:** complementary, no file overlap. Intent posted on #2349
+  (cross-link audits → one low-closed-form→high-α-cluster story; AME C/O entries
+  auto-extend #2343's tool). No cherry-pick either way.
