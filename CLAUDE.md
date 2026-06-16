@@ -552,13 +552,13 @@ URLs.
 
 The QOU framework derives every observable (m_p, m_n, m_He, Q_β, B_AME, lifetimes) from **3 calibration inputs** — the canonical *mathematical* triple, **three measured masses**:
 
-| CAL | Measured input | What it fixes | (Co)homology |
-|-----|----------------|---------------|--------------|
-| CAL-1 | m_e | the dimensional unit (scale) | H⁰ — W-plane scale |
-| CAL-2 | m_μ | q₀ (via m_μ/m_e = Vol(4₁)/ℏ_q²) | H¹ — W-plane modulus |
+| CAL | Measured input | What it fixes | DOF of H¹(Bring) = 2W |
+|-----|----------------|---------------|------------------------|
+| CAL-1 | m_e | the dimensional unit (scale) | W-plane scale |
+| CAL-2 | m_μ | q₀ (via m_μ/m_e = Vol(4₁)/ℏ_q²) | W-plane modulus |
 | CAL-3 | m_π | the orthogonal meson scale | orthogonal class |
 
-The inputs are **three masses** (m_e, m_μ, m_π). m_e sets the unit; since q₀ is dimensionless it is fixed by m_μ *in that unit* — the ratio m_μ/m_e. The exact maps:
+All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-plane scale + modulus + one orthogonal class; 2+1=3) — **not** three distinct degrees H⁰/H¹/H² (per `calibration-cohomology-alignment`, Lean `QOU.Mass.calibrations_eq_cohomology`). The inputs are **three masses** (m_e, m_μ, m_π). m_e sets the unit; since q₀ is dimensionless it is fixed by m_μ *in that unit* — the ratio m_μ/m_e. The exact maps:
 
 - **q₀** ← CAL-1 + CAL-2:  `m_μ/m_e = Vol(4₁)/ℏ_q²`, `ℏ_q = 1 − q₀⁻¹`, `Vol(4₁) = 2Λ(π/3) ≈ 2.0299`  ⇒ invert for `q₀ ≈ 1.10998`.
 - **Q_β** (derived, not a calibration):  `Q_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³) ≈ 0.784 MeV` (0.17% vs CODATA) — the bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π; the neutron β-decay width `𝔇_β/τ_n` is Q_β's experimental face, **not** a third calibration.

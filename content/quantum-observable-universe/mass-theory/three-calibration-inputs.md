@@ -5,11 +5,15 @@ input is permitted — every other mass, Q-value, binding energy,
 coupling constant, mixing angle, and dimensionless ratio in the paper
 is a prediction.*
 
-| ID | Observable | Measurement | What it fixes | (Co)homology |
-|----|-----------|-------------|--------------|--------------|
-| **CAL-1** | $m_\mathfrak{e}$ | electron mass (Penning trap) | the dimensional unit (leptonic mass scale) | $H^0$ ($W$-plane scale) |
-| **CAL-2** | $m_\mu$ | muon mass (CODATA) | substrate $q_0$ via $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$, $\hbar_q = 1-q_0^{-1}$ | $H^1$ ($W$-plane modulus) |
+| ID | Observable | Measurement | What it fixes | DOF of $H^1 = 2W$ |
+|----|-----------|-------------|--------------|-------------------|
+| **CAL-1** | $m_\mathfrak{e}$ | electron mass (Penning trap) | the dimensional unit (leptonic mass scale) | $W$-plane scale |
+| **CAL-2** | $m_\mu$ | muon mass (CODATA) | substrate $q_0$ via $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$, $\hbar_q = 1-q_0^{-1}$ | $W$-plane modulus |
 | **CAL-3** | $m_\pi$ | charged-pion mass (PDG) | meson scale; independent of $(m_\mathfrak{e}, q_0)$ via $\mathrm{Vol}(\mathrm{Hopf})=0$ | orthogonal class |
+
+All three are the three real degrees of freedom of the single $H^1 = 2W$
+(rank-2 $W$-plane scale + modulus, plus one orthogonal class: $2+1=3$),
+**not** three distinct degrees $H^0/H^1/H^2$.
 
 The three measured inputs are **three masses** $(m_\mathfrak{e}, m_\mu, m_\pi)$;
 $m_\mathfrak{e}$ sets the unit, so $q_0$ (dimensionless) is fixed by $m_\mu$

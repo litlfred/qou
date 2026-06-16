@@ -304,10 +304,10 @@ inputs, per
 and
 [`prop:three-calibration-discipline`](../../../content/quantum-observable-universe/observations/three-calibration-discipline.md):
 
-| ID | Quantity | (Co)homology | Source |
-|----|----------|--------------|--------|
-| **CAL-1** | $m_e$ | $H^0$ | CODATA |
-| **CAL-2** | $m_\mu$ ($\to q_0$ via $m_\mu/m_e$) | $H^1$ | CODATA (phys-obs may anchor $q_0$ on $m_p/m_e$ for precision) |
+| ID | Quantity | DOF of $H^1 = 2W$ | Source |
+|----|----------|-------------------|--------|
+| **CAL-1** | $m_e$ | $W$-plane scale | CODATA |
+| **CAL-2** | $m_\mu$ ($\to q_0$ via $m_\mu/m_e$) | $W$-plane modulus | CODATA (phys-obs may anchor $q_0$ on $m_p/m_e$ for precision) |
 | **CAL-3** | $m_{\pi^\pm}$ (meson scale) | orthogonal class | PDG ($Q_\beta$ is *derived* from CAL-1+CAL-2, not CAL-3) |
 
 Every numerical observable in the paper must factor as

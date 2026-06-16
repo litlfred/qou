@@ -67,11 +67,13 @@ defines the rule it enforces.
 
 ### Three categorically allowed calibrations
 
-| ID | Quantity | (Co)homology | Wedderburn block | What it fixes |
-|----|----------|--------------|------------------|---------------|
-| **CAL-1** | $m_e$ (CODATA) | $H^0$ | std (2,1) | leptonic mass scale |
-| **CAL-2** | $m_\mu$ (CODATA) | $H^1$ | alt (1³) | substrate $q_0$ (via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$) |
+| ID | Quantity | DOF of $H^1 = 2W$ | Wedderburn block | What it fixes |
+|----|----------|-------------------|------------------|---------------|
+| **CAL-1** | $m_e$ (CODATA) | $W$-plane scale | std (2,1) | leptonic mass scale |
+| **CAL-2** | $m_\mu$ (CODATA) | $W$-plane modulus | alt (1³) | substrate $q_0$ (via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$) |
 | **CAL-3** | $m_{\pi^\pm} \approx 139.57$ MeV (PDG) | orthogonal class | sym (3) | meson / chiral scale ($\mathrm{Vol}(\mathrm{Hopf})=0$) |
+
+All three are the three real DOF of the single $H^1 = 2W$ (2 W-plane invariants + 1 orthogonal class), not three distinct degrees.
 
 These are **exhaustive**. A fourth dimensional input anywhere is
 a hard audit failure.
