@@ -64,6 +64,41 @@ import a_operator_analytic as aoa  # noqa: E402
 EXACT_TOL = mp.mpf("1e-25")
 
 
+def _kron(A: "mp.matrix", B: "mp.matrix") -> "mp.matrix":
+    """Kronecker product of two mpmath matrices."""
+    ra, ca = A.rows, A.cols
+    rb, cb = B.rows, B.cols
+    out = mp.zeros(ra * rb, ca * cb)
+    for i in range(ra):
+        for j in range(ca):
+            aij = A[i, j]
+            if aij == 0:
+                continue
+            for k in range(rb):
+                for l in range(cb):
+                    out[i * rb + k, j * cb + l] = aij * B[k, l]
+    return out
+
+
+def _nullspace(M: "mp.matrix", tol: "mp.mpf") -> list:
+    """Right null space of M: list of column vectors (mp.matrix n×1) spanning
+    {x : M x = 0}, via SVD (right singular vectors with ~0 singular value)."""
+    _U, S, V = mp.svd(M)          # M = U diag(S) V ; V is (n×n)
+    n = V.cols
+    smax = max(S) if len(S) else mp.mpf(1)
+    thresh = max(tol, smax * tol)
+    null = []
+    # Singular values S correspond to the first len(S) rows of V (V's rows are
+    # the right singular vectors). Rows beyond len(S) (if M has fewer rows than
+    # cols) are also null directions.
+    for idx in range(n):
+        sv = S[idx] if idx < len(S) else mp.mpf(0)
+        if sv <= thresh:
+            null.append(V[idx, :].T)   # idx-th right singular vector as column
+    return null
+
+
+
 def _orthonormal_range_basis(P: "mp.matrix", rank: int) -> "mp.matrix":
     """Orthonormal basis (dim×rank) of the column space of the idempotent P.
 
@@ -225,6 +260,167 @@ def verify_isotypic_multiplicity_structure(dps: int = 50) -> dict:
     }
 
 
+def gauge_aligned_A_combiner(lam: tuple[int, ...], q_str: str,
+                            dps: int) -> dict:
+    """Construct the combiner-ready A^λ_{μν}(I_pn) in standard ρ_μ⊗ρ_ν
+    coordinates, per (μ,ν) with c^λ_{μν} > 0 (deuteron H_6).
+
+    A^λ_{μν} = partial-trace over ℂ^c of (U⁻¹ Ĩ U), where:
+      - Ĩ = Qᵀ ρ_λ(I) Q is the interface restricted to range(Π_{μν});
+      - U: V_μ⊗V_ν⊗ℂ^c → range is an invertible intertwiner satisfying
+        ã_a U = U (ρ_μ(σ_a)⊗I_ν⊗I_c), b̃_b U = U (I_μ⊗ρ_ν(σ_b)⊗I_c),
+        found as a generic element of the null space of the vectorised
+        intertwiner constraints (no isometry needed — the combiner identity is
+        preserved under similarity). Target basis order: μ⊗ν⊗c (multiplicity
+        fastest).
+    """
+    q = mp.mpf(q_str)
+    h = q - 1 / q
+    mats, dim = aoa.exact_seminormal_matrices(lam, q_str, dps)
+    if dim == 0:
+        return {}
+    ev = aoa._h3_class_sum_eigenvalues(q_str, dps)
+    C_in = aoa._class_sum_C2(mats, 0, 1)
+    C_bl = aoa._class_sum_C2(mats, 3, 4)
+    P_in = aoa._lagrange_projectors(C_in, ev, dim)
+    P_bl = aoa._lagrange_projectors(C_bl, ev, dim)
+    I_iface = mats[2] - (h / 2) * mp.eye(dim)     # pn interface I = σ_2 − (h/2)·1
+    null_tol = mp.mpf("1e-30")
+    out = {}
+    for mu in ev:
+        rmu, _ = aoa.exact_seminormal_matrices(mu, q_str, dps)   # [σ_0,σ_1] H_3
+        d_mu = aoa.partition_dim(mu)
+        for nu in ev:
+            Pi = P_in[mu] * P_bl[nu]
+            r = int(mp.nint(aoa._trace(Pi)).real)
+            if r == 0:
+                continue
+            rnu, _ = aoa.exact_seminormal_matrices(nu, q_str, dps)
+            d_nu = aoa.partition_dim(nu)
+            c = r // (d_mu * d_nu)
+            Q = _orthonormal_range_basis(Pi, r)                 # dim×r
+            Itil = Q.T * I_iface * Q                            # r×r
+            atil = [Q.T * mats[0] * Q, Q.T * mats[1] * Q]
+            btil = [Q.T * mats[3] * Q, Q.T * mats[4] * Q]
+            # Target generators on V_μ⊗V_ν⊗ℂ^c (order μ⊗ν⊗c).
+            Ic, Imu, Inu = mp.eye(c), mp.eye(d_mu), mp.eye(d_nu)
+            R = [_kron(_kron(rmu[0], Inu), Ic), _kron(_kron(rmu[1], Inu), Ic),
+                 _kron(_kron(Imu, rnu[0]), Ic), _kron(_kron(Imu, rnu[1]), Ic)]
+            G = [atil[0], atil[1], btil[0], btil[1]]
+            # Vectorised constraint (I_r ⊗ G_k − R_kᵀ ⊗ I_r) vec(U) = 0.
+            Ir = mp.eye(r)
+            rows = []
+            for k in range(4):
+                rows.append(_kron(Ir, G[k]) - _kron(R[k].T, Ir))
+            M = mp.zeros(4 * r * r, r * r)
+            for bi, blk in enumerate(rows):
+                for i in range(r * r):
+                    for j in range(r * r):
+                        M[bi * r * r + i, j] = blk[i, j]
+            null = _nullspace(M, null_tol)
+            if len(null) == 0:
+                out[(mu, nu)] = {"error": "empty intertwiner null space"}
+                continue
+            # Generic invertible combination of null-space vectors → U.
+            coeffs = [mp.sqrt(2) + i + mp.pi * (i + 1) for i in range(len(null))]
+            vecU = mp.zeros(r * r, 1)
+            for z, v in zip(coeffs, null):
+                vecU += z * v
+            U = mp.zeros(r, r)
+            for i in range(r):
+                for j in range(r):
+                    # column-major vec (matches vec(AXB)=(Bᵀ⊗A)vec(X)): vecU[j*r+i]
+                    U[i, j] = vecU[j * r + i, 0]
+            Atil = U ** -1 * Itil * U               # similarity
+            # Partial trace over ℂ^c (fastest index): A[(a,b),(a',b')]
+            #   = Σ_t Atil[a*d_nu*c + b*c + t, a'*d_nu*c + b'*c + t]
+            dd = d_mu * d_nu
+            A = mp.zeros(dd, dd)
+            for a in range(d_mu):
+                for b in range(d_nu):
+                    for ap in range(d_mu):
+                        for bp in range(d_nu):
+                            s = mp.mpf(0)
+                            for t in range(c):
+                                s += Atil[a * d_nu * c + b * c + t,
+                                          ap * d_nu * c + bp * c + t]
+                            A[a * d_nu + b, ap * d_nu + bp] = s
+            out[(mu, nu)] = {"A": A, "c": c, "d_mu": d_mu, "d_nu": d_nu}
+    return out
+
+
+def verify_combiner_identity(dps: int = 50) -> dict:
+    """Step 2g (deuteron H_6, exact 1e-25): verify the gauge-aligned A_combiner
+    reproduces χ^λ via the SMALL H_3 reps —
+
+        χ^λ(β_1 · I_pn · β_2) = Σ_{μ,ν} Tr[ A^λ_{μν}(I) · (ρ_μ(β_1)⊗ρ_ν(β_2)) ]
+
+    with ρ_μ(β_1), ρ_ν(β_2) at H_3 (the speedup). Self-consistent (same
+    seminormal source on both sides)."""
+    q = aoa.q0_mp(dps)
+    q_str = mp.nstr(q, dps)
+    h = q - 1 / q
+
+    def braid_to_factors(braid):
+        return [(mp.mpf(1), mp.mpf(0) if s > 0 else -h, g) for (s, g) in braid]
+
+    def word_matrix(mats, factors):
+        d = mats[0].rows
+        Mm = mp.eye(d)
+        for (cc, dd, g) in factors:
+            Mm = Mm * (cc * mats[g] + dd * mp.eye(d))
+        return Mm
+
+    inner_braids = aoa._braid_test_words(3)
+    block_braids = aoa._braid_test_words(3)
+    parts3 = partitions_of(3)
+    max_abs = mp.mpf(0)
+    n_checks = 0
+    n_fail = 0
+    worst = None
+    rho3 = {p: aoa.exact_seminormal_matrices(p, q_str, dps)[0] for p in parts3}
+
+    for lam in partitions_of(6):
+        mats6, dim = aoa.exact_seminormal_matrices(lam, q_str, dps)
+        if dim == 0:
+            continue
+        I_iface = mats6[2] - (h / 2) * mp.eye(dim)
+        Acomb = gauge_aligned_A_combiner(lam, q_str, dps)
+        if any("error" in v for v in Acomb.values()):
+            return {"all_passed": False,
+                    "error": "intertwiner failed for λ=" + str(list(lam))}
+        for wi in inner_braids:
+            fi = braid_to_factors(wi)
+            W6 = word_matrix(mats6, fi)
+            rho_mu = {mu: word_matrix(rho3[mu], fi) for mu in parts3}
+            for wb in block_braids:
+                fb6 = [(cc, dd, g + 3) for (cc, dd, g) in braid_to_factors(wb)]
+                B6 = word_matrix(mats6, fb6)
+                lhs = aoa._trace(W6 * I_iface * B6)            # ground truth
+                fbl = braid_to_factors(wb)
+                rho_nu = {nu: word_matrix(rho3[nu], fbl) for nu in parts3}
+                rhs = mp.mpf(0)
+                for (mu, nu), info in Acomb.items():
+                    A = info["A"]
+                    K = _kron(rho_mu[mu], rho_nu[nu])          # (d_mu d_nu)²
+                    rhs += aoa._trace(A * K)
+                ad = abs(lhs - rhs)
+                if ad > max_abs:
+                    max_abs = ad
+                if not (ad < EXACT_TOL):
+                    n_fail += 1
+                    if worst is None:
+                        worst = {"lambda": list(lam), "abs_residual": mp.nstr(ad, 6)}
+                n_checks += 1
+    return {
+        "n_checks": n_checks, "n_fail": n_fail,
+        "max_absolute_residual": mp.nstr(max_abs, 8),
+        "tolerance": mp.nstr(EXACT_TOL, 4),
+        "all_passed": n_fail == 0,
+        "worst_failure": worst,
+    }
+
+
 def main() -> int:
     dps = 50
     print("=" * 78)
@@ -244,8 +440,21 @@ def main() -> int:
     for f in mres["failures"]:
         print(f"        FAIL {f}")
     print()
-    print("  TODO(closure-b): phase-aligned ladder → U → A_combiner (partial trace) → H_9.")
-    return 0 if (res["all_passed"] and mres["all_passed"]) else 1
+    cres = verify_combiner_identity(dps)
+    print(f"  [c] gauge-aligned A_combiner (standard ρ_μ⊗ρ_ν coords) — combiner identity:")
+    print(f"      χ^λ(β_1·I·β_2) = Σ_μν Tr[A^λ_μν·(ρ_μ(β_1)⊗ρ_ν(β_2))], ρ at H_3")
+    if cres.get("error"):
+        print(f"      → FAIL — {cres['error']}")
+    else:
+        print(f"      → {'PASS' if cres['all_passed'] else 'FAIL'} — "
+              f"{cres['n_checks']} checks ({cres['n_fail']} fail), "
+              f"max abs residual = {cres['max_absolute_residual']}")
+        if not cres["all_passed"]:
+            print(f"        worst: {cres['worst_failure']}")
+    print()
+    print("  TODO(closure-b): H_9 universality (A^λ_μν with μ⊢6, ν⊢3 → tr_M(T)/³He).")
+    return 0 if (res["all_passed"] and mres["all_passed"]
+                 and cres["all_passed"]) else 1
 
 
 if __name__ == "__main__":
