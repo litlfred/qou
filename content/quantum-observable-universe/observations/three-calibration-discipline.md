@@ -6,7 +6,7 @@ degrees of the substrate:*
 | Cohomological datum ($H^1 = 2W$) | Calibration                        | Role                                                       | Source                  |
 | -------------------------------: | ---------------------------------- | ---------------------------------------------------------- | ----------------------- |
 |       $W$-plane **scale** ($H^0$) | $m_e$ (electron mass)              | Sets the dimensional unit                                  | CODATA                  |
-|     $W$-plane **modulus** ($H^1$) | $m_p / m_e \approx 1836.153$       | Fixes the substrate parameter $q_0$                        | CODATA (proton ratio)   |
+|     $W$-plane **modulus** ($H^1$) | $m_\mu / m_e \approx 206.768$       | Fixes the substrate parameter $q_0$                        | CODATA (lepton ratio)   |
 | meson-sector **scale** (orthog.) | $m_\pi \approx 139.57\;\text{MeV}$ | Sets the $\mathrm{Vol}(\mathrm{Hopf})=0$ meson scale       | PDG (charged-pion mass) |
 
 *For every confined hadronic state $X$ the mass functional defined
@@ -29,9 +29,13 @@ $$
 (co)homological grading the observable $X$ supplies. Concretely:
 $a$ counts mass-scale insertions ($H^0$ — the $W$-plane scale), $c$
 counts meson-sector insertions (the orthogonal $m_\pi$ class; $c = 0$
-in the baryon sector), and $q_0$ is fixed by the proton ratio (the
-$H^1$ $W$-plane modulus). $Q_\beta$ is **derived** from $m_e$ and
-$q_0$, not a primitive calibration factor.*
+in the baryon sector), and $q_0$ is fixed by the lepton ratio
+$m_\mu/m_e$ (the $H^1$ $W$-plane modulus). $Q_\beta$ is **derived**
+from $m_e$ and $q_0$ — it is the bar-odd ($\sinh$) partner of the
+bar-even ($\cosh$) meson scale $m_\pi$ under the bar-involution
+$q \mapsto q^{-1}$
+([substrate cohomology calibration story](../mass-theory/substrate-cohomology-calibration-story.md)),
+not a primitive calibration factor.*
 
 ## Discussion
 
@@ -39,8 +43,8 @@ This proposition crystallises a discipline that is implicit
 elsewhere in the paper:
 
 1. **Three calibration inputs, no more, no less.** The QOU
-   framework reads three CODATA / PDG values ($m_e$, the proton
-   ratio $m_p/m_e$, and $m_\pi$) and spends them on three distinct
+   framework reads three CODATA / PDG values ($m_e$, the lepton
+   ratio $m_\mu/m_e$, and $m_\pi$) and spends them on three distinct
    (co)homological data of the substrate. Every other physical
    prediction in the paper is the product of these three with a
    $\mathbb{Q}(q_0)$-valued algebraic expression — a Markov trace,
@@ -52,21 +56,28 @@ elsewhere in the paper:
    The rank-2 $W$-Hodge plane carries two invariants — a **scale**
    (the $H^0$ prefactor, pinned by $m_e$) and a **modulus** (the
    $\mathrm{SL}_2$ trace $\tau = 2\cosh\theta$, pinned by $q_0$ via
-   the proton ratio). The meson sector — whose Hopf-link complement
+   the lepton ratio $m_\mu/m_e$). The meson sector — whose Hopf-link complement
    has $\mathrm{Vol}(\mathrm{Hopf}) = 0$, hence no geometric scale
    derivable from $(m_e, q_0)$ — contributes a third, **orthogonal**
    scale, pinned by $m_\pi$. The count $2 + 1 = 3$ matches the three
    calibrations exactly.
-3. **Overdetermination.** The $H^1$ modulus is itself
-   overdetermined: $q_0$ is pinned canonically by the proton ratio
-   $m_p/m_e$ (the most precise anchor; re-pinned 2026-05-28), and
-   can equally be fixed by $\alpha_{\mathrm{EM}}^{-1}$ or by tritium
-   $t_{1/2}$, which agree on $q_0$ to within 0.3% (per
+3. **Overdetermination (and the physical-observations anchor).** The
+   canonical $H^1$ modulus is pinned by the lepton ratio $m_\mu/m_e$
+   (it dimensionalises to $\mathrm{Vol}(4_1)$, the simplest hyperbolic
+   knot invariant), and is itself overdetermined: it can equally be
+   fixed by $\alpha_{\mathrm{EM}}^{-1}$ or by tritium $t_{1/2}$, which
+   agree on $q_0$ to within 0.3% (per
    [substrate-consistency window](#prop\:substrate-consistency-window)).
-   The muon ratio $m_\mu/m_e$ — the pre-2026-05-28 anchor — is now a
-   $9.5\sigma$ cross-check *prediction*, not a calibration. These all
-   re-determine the **same** $H^1$ datum: they are consistency
-   cross-checks, not additional calibrations.
+   In the **Physical-Observations** chapter one may instead anchor
+   $q_0$ on a *derived* quantity with smaller experimental error —
+   the proton ratio $m_p/m_e$ (0.06 ppb vs the muon ratio's 22 ppb;
+   the re-pin of 2026-05-28). This is a precision substitution within
+   the same overdetermined $H^1$ datum, **not** a change to the
+   canonical calibration: $m_\mu/m_e$ remains CAL-2; $m_p/m_e$ is the
+   numerical anchor, with $m_\mu/m_e$ then a $9.5\sigma$ cross-check
+   prediction (the $\mu$–$p$ substrate tension). They re-determine the
+   **same** $H^1$ datum — consistency cross-checks, not additional
+   calibrations.
 4. **Audit consequence.** Any content block or compute output that
    quotes a numerical mass / binding energy / Q-value not of the
    form $m_e^a m_\pi^c \cdot \text{rational}(q_0)$ has either (a)
