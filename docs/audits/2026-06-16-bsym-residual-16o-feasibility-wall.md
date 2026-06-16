@@ -106,3 +106,26 @@ H₉, H₁₂, … must be generated and cached) and is filed as the follow-up.
   `B_o16_MeV=127.61931` (AME2020 mass-excess derivation; comparison-only, **not**
   calibration inputs — no 4-CAL inflation).
 - `computations/bsym-residual-shell-structure.witness.json` — regenerated through ¹²C.
+
+## E. Sibling cross-links — one coherent low→high story
+
+This probe is the **high-A frontier** of a coordinated B_sym shell-structure study;
+two sibling audits work the same residual from the other ends:
+
+- **Low-isotope closed form** ([PR #2343](https://github.com/litlfred/qou/pull/2343),
+  `docs/audits/2026-06-16-b-sym-linear-chain-closed-form.md`). Establishes that
+  `B_sym` is **exactly** a linear-chain pairwise binding,
+  `B_sym = α·[(Z−1)·L_pp + L_pn + (N−1)·L_nn]`, additive to the 50-dps floor
+  (per-bond n-n 5.18 > p-n 3.89 > p-p 2.91 MeV).
+- **Shell-structure framing** (`docs/audits/2026-06-16-binding-undershoot-is-shell-structure.md`).
+
+**What the linear-chain result sharpens here.** Because the chain additivity is
+*exact*, the Markov trace carries **zero** cooperative many-body binding — the 4-body
+α-unit is *entirely absent* from `B_sym`, not merely under-weighted. So the elevated
+α-conjugate band in §A (⁴He 2.36, ⁸Be 2.01, ¹²C 2.08) is measuring precisely the
+**missing cooperative α-binding**, and there is no hidden cooperative term to recover
+on the low-isotope side. This refines the §A "honest nuance": the residual surplus is
+not a re-weighting artefact but the signature of physics the pairwise-exact trace
+structurally omits — consistent with the §6 convergence on the **α-cluster recursion
+(⁴He as magic input)** as the only non-fitted open lever (matching the #1706
+"only α-cluster ships" decision and the §C genuine-unlock direction here).
