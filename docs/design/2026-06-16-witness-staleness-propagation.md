@@ -33,8 +33,9 @@ Running `witness_dependency_drift.py` over 1640 witnesses:
 - **694 self-stale (42%)** — `scriptHash` ≠ current producer hash — that
   no CI check flags. (Caveat: some are cosmetic producer edits or
   regenerable caches; the point is *detectability*, not that all 694 are
-  numerically wrong. The hadron-knot-table witness — a genuine wrong one,
-  masking a binding regression — is one of the 694.)
+  numerically wrong. The hadron-knot-table witness — which advertises a
+  retired empirical-fit ⁴He binding the current categorical producer no
+  longer reproduces — is one of the 694.)
 
 ## The mechanism (build-system invalidation, two directions)
 
@@ -78,11 +79,15 @@ enough to start.
    (the 2026-05-16 adoption pattern). Prioritise the mass/binding chain
    consumers. A lint can warn when a producer reads another
    `*.witness.json` without recording it as an upstream.
-5. **Refresh can launder a regression** → on regenerate, **run the
-   witness's `assertions`**; block the refresh (and the PR) if
+5. **Stale witnesses can launder retired fits** → on regenerate, **run
+   the witness's `assertions`**; block the refresh (and the PR) if
    `allPassed` flips to false. This is the QA crux: staleness detection
-   alone is insufficient — the hadron He4 binding went 28.19 → 0.72 MeV
-   on regen; an assertion gate (`B(⁴He) ≈ 28 MeV`) would have stopped it.
+   alone is insufficient. The hadron ⁴He `B_MeV` is committed as 28.19
+   (≈ experiment, a *retired* empirical fit) but the current categorical
+   producer gives 0.72 (binding is the open Δ_λ problem). A stale witness
+   thus retroactively violates the no-fit discipline — assertions tied to
+   the framework's *actual* claim (what the categorical path produces, and
+   its distance from `B_AME`) keep a disavowed fit from sitting unflagged.
 6. **Runlist problem** (from 2026-05-16): the witness pipeline only
    re-runs a hardcoded script list, so most witnesses are never
    regenerated in CI. The DAG validator sidesteps this — it checks
