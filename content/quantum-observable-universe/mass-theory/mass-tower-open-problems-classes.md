@@ -34,10 +34,11 @@ extension.
 $h = q - q^{-1}$) is recorded as a paper-empirical ansatz; a numerical
 probe failed to match against eight candidate writhe-ribbon formulas.
 [`prop:chirality-writhe-ribbon-derivation`](#prop:chirality-writhe-ribbon-derivation)
-proposes a Kauffman-framing derivation. The class
-`ChiralityFactorClass` axiomatises that derivation: for every
-writhe $w(K)$ the first-order chiral factor is exactly
-$1 + w(K) \cdot h$.
+proposes a Kauffman-framing derivation. The strengthened class
+`ChiralityFactorClass` axiomatises that derivation: it asserts the
+existence of a function $a_K(h, w, \langle c \rangle)$ and an error term
+such that $a_K = 1 + w \cdot \langle c \rangle \cdot h + O(h^2)$,
+encoding the structural first-order Kauffman expansion.
 
 **Conditional theorem.** `chirality_factor_structural` — sorry-free
 reduction of the chirality ansatz to the class instance.
@@ -50,9 +51,10 @@ first pole of $\Phi_q$ at $z = q_0 \approx 1.11$
 ([`conj:brane-tower-z-habiro`](#conj:brane-tower-z-habiro)). Each
 summand is enormous and the analytic infinite-product diverges; two
 regularisations (Yekutieli finite-slice, $q$-Habiro completion) have
-been documented but neither uniformly closes the gap. The class
-`ZHabiroConvergenceClass` axiomatises a uniform bound on the
-regularised tower sum.
+been documented but neither uniformly closes the gap. The strengthened
+class `ZHabiroConvergenceClass` axiomatises a uniform bound on the
+regularised tower sum, formally asserting $\forall z < q_0, \sum \Phi_q(z) \leq M$
+for some $M < q_0$.
 
 **Conditional theorem.** `brane_tower_finite` — given the class,
 the brane-tower contribution is finite for every isotope-relevant
@@ -69,9 +71,10 @@ The coefficient $1/(4\pi)$ is currently a near-match (1.4% off) and
 may refine to $1/(2\pi[2]_q)$ or another $q$-correction, but its
 structural origin is conjecturally a multivariate polylogarithm
 regulator on a higher Bloch group $B_n(\mathbb{C})$, $n \geq 3$
-[`borel1974`, `bloch2000`]. The class `AlphaOver4PiClass`
+[`borel1974`, `bloch2000`]. The strengthened class `AlphaOver4PiClass`
 axiomatises the higher-Bloch-group origin of the next-order
-coefficient.
+coefficient by asserting the existence of a higher Bloch group type, a
+regulator, and an element mapping exactly to $\alpha/(4\pi)$.
 
 **Conditional theorem.** `alpha_over_4pi_structural` — given the
 class, the next-order coefficient is a regulator output, not an

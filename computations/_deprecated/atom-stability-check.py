@@ -31,6 +31,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent / "substrate"))
 from q_parameter import Q as q0, Q_INV as qi0, HA as h, q_int
 # z/NF_BASIS/TR_M now owned by pyhecke.gram (M2b inversion). Keep local
 # bootstrap for dev mode; the installed-pyhecke path is preferred.

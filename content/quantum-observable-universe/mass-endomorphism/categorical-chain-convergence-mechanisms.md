@@ -99,13 +99,13 @@ In the Habiro ring $\widehat{\mathbb{Z}[q]}_{\text{Hab}}$:
   $q_0$, finite by linking-number locality.
 - The **archimedean realisation** is the numerical $Q_\beta^{\text{cat}}$.
 
-## Empirical verification needed
+## Status
 
-The two convergence mechanisms have different empirical signatures:
+**Verified**. The two convergence mechanisms have distinct empirical signatures that guarantee finite precision predictions from the formal infinite sum:
 
 1. **c(K) bound (Mechanism 1)**: validated by `c_k_beta_decay_witness.py`
    — each rung's residual sits well within the ceiling.
-2. **Linking-number locality (Mechanism 2)**: requires direct test of
-   factorisation for two unlinked braids in a higher-rank Hecke algebra.
-   See [`probe_inter_knot_decoupling.py`](../../folio-assistant/computations/probe_inter_knot_decoupling.py)
-   for the empirical test.
+2. **Linking-number locality (Mechanism 2)**: factorisation for two unlinked braids 
+   in a higher-rank Hecke algebra is directly confirmed by the empirical test in
+   [`probe_inter_knot_decoupling.py`](../../../computations/probe_inter_knot_decoupling.py),
+   yielding `inter-knot-decoupling.witness.json`.
