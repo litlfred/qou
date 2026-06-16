@@ -316,9 +316,11 @@ def _emit_witness(records, qclt, obs, findings):
     }
     try:
         import sys
-        repo = Path(__file__).resolve().parents[1]
-        sys.path.insert(0, str(repo / "substrate"))
-        from witness_base import WitnessBuilder  # type: ignore
+        # substrate/ lives under computations/ (this file's dir), not the
+        # repo root — parents[1] was wrong (Gemini #2355).
+        here = Path(__file__).resolve().parent
+        sys.path.insert(0, str(here / "substrate"))
+        from witness_base import WitnessBuilder  # type: ignore  # noqa: E402
         wb = WitnessBuilder(
             name="sigma-f-electron-shell-chain",
             description=(

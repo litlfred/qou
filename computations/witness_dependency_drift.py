@@ -175,7 +175,7 @@ def _build_producer_index(roots: list[Path]) -> dict[str, list[Path]]:
         if not root.is_dir():
             continue
         for py in root.rglob("*.py"):
-            if "_deprecated" in py.parts or "/.lake/" in str(py):
+            if "_deprecated" in py.parts or ".lake" in py.parts:
                 continue
             index.setdefault(py.name, []).append(py)
     return index
