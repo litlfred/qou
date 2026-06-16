@@ -29,6 +29,8 @@ EXPLORATORY — no production rewire, no fit, no witness emitted.
 Usage:  python3 m_sym_error_budget.py            # low group (²H–⁷Li)
         python3 m_sym_error_budget.py 6Li 7Li    # explicit isotopes
         python3 m_sym_error_budget.py --decompose # Δ_model = B_AME−B_sym, localized
+        python3 m_sym_error_budget.py --bonds      # per-bond-type split of m_sym(atom)
+        python3 m_sym_error_budget.py --rescore     # bond-count topologies + magic vs B_AME
 """
 from __future__ import annotations
 
@@ -216,9 +218,159 @@ def decompose(names=None) -> int:
     return 0
 
 
+def _bond_b(alpha):
+    """Per-single-bond binding b_X = α·L_X for X ∈ {pp,pn,nn}, from the 2-nucleon
+    sub-braid log-suppression (same source as the dashboard's bond-type L)."""
+    out = {}
+    for key, (Z, N) in (("pp", (2, 0)), ("pn", (1, 1)), ("nn", (0, 2))):
+        ta, tf = _trace_ta_tf(Z, N)
+        out[key] = alpha * mp.log(tf / ta)
+    return out
+
+
+def bonds(names=None) -> int:
+    """Bond-type decomposition of m_sym(atom) — which crossing drives the binding.
+
+    The bound braid is a LINEAR CHAIN ordering ['p']·Z + ['n']·N with an
+    inter-nucleon crossing only between ADJACENT nucleons, so it carries exactly
+    (Z−1) p-p bonds, 1 p-n interface bond, (N−1) n-n bonds. Each crossing sits on
+    a distinct generator, so the trace factorizes and B_sym is EXACTLY additive:
+
+        B_sym = (Z−1)·b_pp + 1·b_pn + (N−1)·b_nn,   b_X = α·L_X.
+
+    This localizes the binding (and the ⁴He under-bind) to a TOPOLOGY undercount:
+    the chain has only (A−1) adjacent bonds, vs the C(A,2) actual pairwise bonds.
+    """
+    from math import comb
+    names = names or [nm for nm, _, _ in LOW]
+    sel = {nm: (Z, N) for nm, Z, N in LOW}
+    cod = _load_codata()
+    ame = _ame()
+    q0, _ = _q0()
+    alpha = cod["m_e"] / (q0 * (q0 - 1))
+    b = _bond_b(alpha)
+
+    print(f"\n  BOND-TYPE DECOMPOSITION   α = E₀ = {float(alpha):.6f} MeV")
+    print(f"  per-single-bond binding  b_pp = {float(b['pp']):.4f}  "
+          f"b_pn = {float(b['pn']):.4f}  b_nn = {float(b['nn']):.4f}  MeV   "
+          f"(n-n > p-n > p-p — chirality ordering)\n")
+
+    print("### A. Chain bonds vs actual pairwise bonds  (the topology undercount)")
+    print("| iso | A | chain pp/pn/nn | chain bonds (A−1) | all pairs C(A,2) | missing |")
+    print("|---|--:|:--:|--:|--:|--:|")
+    for nm in names:
+        Z, N = sel[nm]; A = Z + N
+        ch = (Z - 1, 1 if (Z and N) else 0, N - 1)
+        chain = sum(ch); allp = comb(A, 2)
+        print(f"| {nm} | {A} | {ch[0]}/{ch[1]}/{ch[2]} | {chain} | {allp} | {allp-chain} |")
+
+    print("\n### B. B_sym is EXACTLY the additive chain sum  (per-bond-type contribution)")
+    print("| iso | (Z−1)·b_pp | 1·b_pn | (N−1)·b_nn | Σ = B_sym (additive) | B_sym (exact trace) | match |")
+    print("|---|--:|--:|--:|--:|--:|:--:|")
+    for nm in names:
+        Z, N = sel[nm]
+        c_pp = (Z - 1) * b["pp"]; c_pn = b["pn"] if (Z and N) else mp.mpf(0)
+        c_nn = (N - 1) * b["nn"]
+        add = c_pp + c_pn + c_nn
+        L = _trace_L(Z, N); exact = alpha * L
+        ok = "✓" if abs(add - exact) < mp.mpf("1e-6") else f"Δ{float(add-exact):.1e}"
+        print(f"| {nm} | {float(c_pp):.3f} | {float(c_pn):.3f} | {float(c_nn):.3f} "
+              f"| {float(add):.4f} | {float(exact):.4f} | {ok} |")
+
+    print("\n### C. Which bond drives the ⁴He under-bind?")
+    print("| iso | A | B_sym (chain) | B_AME | Δ | dominant chain bond | reason for Δ |")
+    print("|---|--:|--:|--:|--:|:--|:--|")
+    for nm in names:
+        Z, N = sel[nm]; A = Z + N
+        contrib = {"p-p": (Z - 1) * b["pp"], "p-n": b["pn"] if (Z and N) else mp.mpf(0),
+                   "n-n": (N - 1) * b["nn"]}
+        dom = max(contrib, key=lambda k: contrib[k])
+        B = alpha * _trace_L(Z, N)
+        b_ame = ame[(Z, A)][0]
+        d = b_ame - B
+        why = ("single p-n bond too strong (deuteron anomaly)" if nm == "2H"
+               else f"chain misses {comb(A,2)-(A-1)} pairwise bonds (magic closure)"
+               if d > 1 else "chain ≈ actual topology")
+        print(f"| {nm} | {A} | {float(B):.3f} | {float(b_ame):.3f} | {float(d):+.3f} "
+              f"| {dom} ({float(contrib[dom]):.2f}) | {why} |")
+
+    print("\n  Reading: B_sym = α·[(Z−1)L_pp + L_pn + (N−1)L_nn] — a LINEAR-CHAIN binding, "
+          "exactly additive over the (A−1) adjacent bonds, with per-bond strength n-n>p-n>p-p. "
+          "So the ⁴He under-bind is NOT one bad crossing type: it is the chain topology "
+          "carrying (A−1) bonds where the real nucleus binds ~C(A,2) pairs (⁴He: 3 vs 6, "
+          "3 missing p-n). The ²H over-bind is the opposite end — a single p-n bond (3.89) "
+          "is stronger than the weakly-bound deuteron (2.22).")
+    return 0
+
+
+def rescore(names=None) -> int:
+    """Re-score bond-count topologies + the magic term against B_AME.
+
+    NOT a fit: α and the per-bond strengths b_pp/b_pn/b_nn are all DERIVED from
+    the trace at q₀; only the combinatorial bond COUNT (categorical topology)
+    changes. Forms scored:
+      B_chain    = (Z−1)b_pp + b_pn + (N−1)b_nn        (linear chain = exact B_sym)
+      B_allpairs = C(Z,2)b_pp + Z·N·b_pn + C(N,2)b_nn  (fully-connected topology)
+      B_magic    = 2·m_e·A·8G                          (⁴He magic closure, existing)
+    """
+    from math import comb, sqrt
+    names = names or [nm for nm, _, _ in LOW]
+    sel = {nm: (Z, N) for nm, Z, N in LOW}
+    cod = _load_codata()
+    ame = _ame()
+    q0, _ = _q0()
+    alpha = cod["m_e"] / (q0 * (q0 - 1))
+    b = _bond_b(alpha)
+    from knot_volumes import VOL_BORROMEAN
+    g8 = mp.mpf(str(VOL_BORROMEAN))
+
+    print(f"\n  RE-SCORE bond-count topologies + magic   α = E₀ = {float(alpha):.6f} MeV")
+    print("  All forms use the SAME derived per-bond b_pp/b_pn/b_nn; only the bond")
+    print("  COUNT (chain (A−1) vs all-pairs C(A,2)) or the magic term differs. No fit.\n")
+
+    print("### Binding B and accuracy ratio B_AME/B  (1.00 = perfect; >1 under-binds)")
+    print("| iso | A | B_AME | B_chain | B_allpairs | B_magic | "
+          "B_AME/chain | B_AME/allpairs | B_AME/magic |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|")
+    rows = []
+    for nm in names:
+        Z, N = sel[nm]; A = Z + N
+        B_chain = (Z - 1) * b["pp"] + (b["pn"] if (Z and N) else 0) + (N - 1) * b["nn"]
+        B_all = comb(Z, 2) * b["pp"] + Z * N * b["pn"] + comb(N, 2) * b["nn"]
+        B_mag = 2 * cod["m_e"] * A * g8 if (Z, N) == (2, 2) else None
+        b_ame = ame[(Z, A)][0]
+        r_ch, r_al = b_ame / B_chain, b_ame / B_all
+        r_mg = (b_ame / B_mag) if B_mag else None
+        rows.append((nm, A, b_ame, B_chain, B_all, B_mag, r_ch, r_al, r_mg))
+        print(f"| {nm} | {A} | {float(b_ame):.3f} | {float(B_chain):.3f} | {float(B_all):.3f} "
+              f"| {('%.3f'%float(B_mag)) if B_mag else '—':>7} | {float(r_ch):.3f} "
+              f"| {float(r_al):.3f} | {('%.3f'%float(r_mg)) if r_mg else '—':>6} |")
+
+    def rms(idx):
+        es = [float(r[2] - r[idx]) for r in rows if r[idx] is not None]
+        return sqrt(sum(e * e for e in es) / len(es)) if es else float("nan")
+    print(f"\n  RMS error (MeV) over the low isotopes:  "
+          f"chain = {rms(3):.2f}   all-pairs = {rms(4):.2f}   (lower = better)")
+    print("  (B_magic is ⁴He-only; B_AME/magic = 0.944 there — the single magic term)")
+    print("\n  Reading: all-pairs FIXES ⁴He (2.36→1.20) but badly OVER-binds the heavier "
+          "nuclei (⁶Li 0.54, ⁷Li 0.45), so RMS actually WORSENS (10.1→22.5). Reason: "
+          "C(A,2) grows quadratically while real nuclear binding SATURATES ~linearly in A "
+          "(≈ const · A). The chain's (A−1) linear scaling has the right A-dependence but "
+          "undershoots magic closures; all-pairs has the wrong (quadratic) scaling. So "
+          "NEITHER bond-count topology works — the residual is a sign-changing shell "
+          "correction, and only the explicit magic-volume term B_magic nails ⁴He (0.944). "
+          "Confirms: smooth (near-linear-in-A) trace + explicit shell terms, not a unified "
+          "bond-count law.")
+    return 0
+
+
 def main(argv=None) -> int:
     if argv and argv[0] == "--decompose":
         return decompose(argv[1:] or None)
+    if argv and argv[0] == "--bonds":
+        return bonds(argv[1:] or None)
+    if argv and argv[0] == "--rescore":
+        return rescore(argv[1:] or None)
     names = argv if argv else [nm for nm, _, _ in LOW]
     sel = {nm: (Z, N) for nm, Z, N in LOW}
     cod = _load_codata()
