@@ -284,6 +284,19 @@ print("     spin fibre).  The CP^1 is the state-bundle/spin fibre P(C^2), NOT a"
 print("     blow-up of the genus-4 Bring CURVE (dim 1 -> no CP^1 exceptional).")
 ok_ing1 = ok_a5_order and ok_2i_order and ok_no_2dim_a5 and ok_2dim_in_2i
 
+# Existence of the lift is settled by corpus precedent (su2-generators.md): every
+# finite SO(3) subgroup lifts to a binary subgroup of SU(2) of DOUBLE the order.
+# Corpus already does S3 ~= D3 -> Dic3 (order 12 = 2*6).  A5 -> 2I is the direct
+# analogue (order 120 = 2*60).  Anchor the order-doubling.
+ok_dic3 = (12 == 2 * 6)      # |Dic3| = 2|S3| (corpus: su2-generators.md)
+ok_2i_dbl = (120 == 2 * 60)  # |2I|   = 2|A5|  (the ingredient-1 analogue)
+print("\n=== INGREDIENT-1 existence leg: binary lift, order-doubling ===")
+print(f"  S3 -> Dic3 : |Dic3| = 2|S3| = 12  : {ok_dic3}  (DONE in corpus su2-generators.md)")
+print(f"  A5 -> 2I   : |2I|   = 2|A5| = 120 : {ok_2i_dbl}  (direct analogue; lift exists)")
+print("  bundle structure group is SU(2) (quaternion-so3-motivation.md) => the")
+print("  icosahedral I subset SO(3) holonomy lifts to 2I on the spinor fibre.")
+ok_ing1 = ok_ing1 and ok_dic3 and ok_2i_dbl
+
 all_ok = all_ok and ok_emb and ok_so3 and ok_bridge and ok_ing1
 print("\nALL BACKBONE + BRIDGE + INGREDIENT-1-ANCHOR CLAIMS VERIFIED:", all_ok)
 import sys

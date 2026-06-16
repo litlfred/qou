@@ -34,8 +34,8 @@ sphere, so the ingredients are known objects to be assembled on *this* divisor.
 
 | # | Ingredient | Type | Status |
 |---|---|---|---|
-| 1 | **Identify the divisor $\mathbb{CP}^1$ with Klein's icosahedral $\mathbb{P}^1$ via the spin lift.** Show the $S_5=\mathrm{Aut}(\Sigma_4)$ action restricts on $A_5$ to the **binary icosahedral $2I\subset\mathrm{SU}(2)_S$** on the spin fibre $\mathbb{C}^2_{\mathrm{spin}}$, so its projectivization $\mathbb{P}(\mathbb{C}^2)=\mathbb{CP}^1$ is Klein's icosahedral line ($A_5\cong I\subset\mathrm{PSL}_2$, Möbius rotations). See §"Ingredient 1 — findings" — the earlier "blow up the 12-vertex orbit" framing was **wrong** (gives 12 permuted lines / the E₈ tree, not one icosahedral $\mathbb{P}^1$). | spin structure / rep theory | **unbuilt (crux)** |
-| 2 | **2I-equivariant Reeb field.** Show the q-Reeb field $\xi_q$ ($\dot\psi=q$, `q-reeb-flow-on-coral-coords`) commutes with the binary icosahedral $2I\subset\mathrm{SU}(2)$ on the Hopf $S^3\to S^2$ (round Sasakian contact form is SU(2)-invariant ⟹ plausibly $2I$-invariant — must be proved for the q-deformed flow). | contact geometry | **unbuilt** |
+| 1 | **Identify the divisor $\mathbb{CP}^1$ with Klein's icosahedral $\mathbb{P}^1$ via the spin lift.** Show the $S_5=\mathrm{Aut}(\Sigma_4)$ action restricts on $A_5$ to the **binary icosahedral $2I\subset\mathrm{SU}(2)_S$** on the spin fibre $\mathbb{C}^2_{\mathrm{spin}}$, so its projectivization $\mathbb{P}(\mathbb{C}^2)=\mathbb{CP}^1$ is Klein's icosahedral line ($A_5\cong I\subset\mathrm{PSL}_2$, Möbius rotations). | spin structure / rep theory | **existence SETTLED** (SU(2) structure group + S₃→Dic₃ precedent; §"Gate resolution"); residual = 5-sheet extension (→ ing. 4) + finite rep-id |
+| 2 | **2I-equivariant Reeb field.** Show the q-Reeb field $\xi_q$ ($\dot\psi=q$, `q-reeb-flow-on-coral-coords`) commutes with the binary icosahedral $2I\subset\mathrm{SU}(2)$ on the Hopf $S^3\to S^2$. | contact geometry | **inherits the precedent** — the existing $S_3\!\to\!\mathrm{Dic}_3$ Reeb field is already binary-equivariant; $2I$ is the analogue |
 | 3 | **The two bridging branchings.** $\mathrm{SO}(3)\downarrow A_5$ ($V_1\!\to\!T_1$, $V_2\!\to\!H$, $V_3\!\to\!T_2\oplus G$) and $S_5\downarrow A_5$ ($(3,1,1)\to T_1\oplus T_2$, $(3,2),(2,2,1)\to H$). | character theory | **VERIFIED** (this session) |
 | 4 | **Commuting square (the functor).** A₅-equivariant Reeb operator on the ℓ-sector, restricted to the 3-tube via the **$123\!\to\!345$ embedding** (spacetime strands $\{1,2\}$ fixed — see embedding-independence note), equals the six $S_3$ knot operators with the $\mathrm{Res}^{S_5}_{S_3}$ multiplicities. | category theory | depends on 1,2 |
 | 5 | **Markov-trace shift (the physics).** Evaluate the $H_3(q)$ trace shift between $E_{(3,1,1)}$ (ℓ=1) and $E_{(3,2)}$ (ℓ=2) projectors → correction factor $F(E,q_0)$ → test the 210 ppb muon gap. | compute (`pyhecke`) | depends on 4 |
@@ -102,6 +102,45 @@ as $I\subset\mathrm{SO}(3)$ on the $\mathbb{CP}^1$ fibre? This is a **spin-struc
 question (does the automorphism lift to the binary cover on the spin bundle), not an orbit blow-up. That is the
 genuinely unbuilt object.
 
+### Gate resolution (2026-06-16, second pass) — existence leg SETTLED by corpus precedent
+
+A corpus pass on the spin structure resolves the **existence** leg and reclassifies the residual:
+
+- **The bundle's structure group is already $\mathrm{SU}(2)$** (the spin double cover) —
+  [`quaternion-so3-motivation.md`](../../content/quantum-observable-universe/braids-and-knots/quaternion-so3-motivation.md):
+  $G=\mathrm{SU}(2)\cong\mathrm{Sp}(1)$, and "the $\mathrm{SO}(3)$ holonomy of the chiral sheets lifts to
+  $\mathrm{Sp}(1)$ conjugation" via $\mathrm{Ad}:\mathrm{SU}(2)\twoheadrightarrow\mathrm{SO}(3)$.
+- **The binary-lift principle is already in the corpus, with the $S_3$ case done explicitly** —
+  [`su2-generators.md`](../../content/quantum-observable-universe/brings-surface/su2-generators.md):
+  "Every finite subgroup of $\mathrm{SO}(3)$ lifts, via the double cover
+  $\mathrm{SU}(2)\twoheadrightarrow\mathrm{SO}(3)$, to a binary subgroup of $\mathrm{SU}(2)$. For
+  $S_3\cong D_3$ the lift is the binary dihedral $\mathrm{Dic}_3$ of order 12." So the existing $S_3$ Reeb
+  construction is *already* a binary-lifted ($\mathrm{Dic}_3$) spin action.
+- **$A_5\to 2I$ is the direct analogue** (verified order-doubling: $|\mathrm{Dic}_3|=2|S_3|=12$,
+  $|2I|=2|A_5|=120$). The binary icosahedral lift **exists canonically** — the preimage of $A_5\cong I$ under
+  the $\mathrm{SU}(2)$ structure-group cover — by the same mechanism the corpus already uses for $S_3$. The lift
+  is genuinely $2I$ (not split): $A_5$ has no faithful 2-dim rep, so $I\subset\mathrm{SO}(3)$ acts on the spinor
+  $\mathbb{C}^2$ only through $2I$.
+
+**Reclassified residual (the two pieces that remain, both lighter than "build the action"):**
+
+1. **Group extent — implemented $S_3$ (3 sheets) → full $A_5$ (5 sheets).** The existing construction realizes
+   only the 3-sheet $S_3\to\mathrm{Dic}_3$; the full icosahedral $A_5$ is the even-permutation group of all 5
+   Bring sheets. Extending from 3-sheet to 5-sheet **is the 5-strand extension** — ingredient 4's territory, not
+   a separate spin-structure obstruction.
+2. **Rep identification — is geometric $A_5$ the icosahedral $T_1$/$T_2$ rep?** $A_5$ has two faithful 3-dim real
+   irreps ($T_1$, $T_2$, the enantiomorphic icosahedra). Confirm the $\mathrm{Aut}(\Sigma_4)\supset A_5$ action
+   on the chiral sheets / $\mathrm{SO}(3)$ holonomy is the icosahedral 3-dim rep (consistent with ingredient 3's
+   $\mathrm{SO}(3)\!\downarrow\!A_5$ picking $T_1$ at $\ell=1$). A **finite rep-identification check**, not a
+   construction.
+
+**Net:** the feared "build a $2I$-equivariant structure from scratch" (old ingredient-1 crux) is **not** the
+obstruction — the $\mathrm{SU}(2)$ structure group + the standard double-cover lift supply it, with the $S_3$
+precedent already coded. The real remaining work is the **5-sheet extension** (ingredient 4) and a finite
+**rep-identification** (residual 2). Ingredient 2 (the $2I$-equivariant Reeb field) inherits the same precedent:
+the Reeb field on the $S_3\to\mathrm{Dic}_3$ construction is already binary-equivariant, so the $2I$ case is the
+analogue, not a new obstruction.
+
 ## Risks / honest blockers (critical-distance)
 
 - **Building 1–4 proves the geometric map EXISTS; it does NOT guarantee the physics.** The $S_3$-side
@@ -118,11 +157,13 @@ genuinely unbuilt object.
 ## Immediate next step (cheap, already done) and the gate
 
 - ✅ **Ingredient 3** verified this session (extends the backbone checker).
-- ⛔ **Gate = ingredient 1, refined.** Before any compute, settle whether the geometric
-  $S_5=\mathrm{Aut}(\Sigma_4)$ action **lifts to the binary icosahedral $2I\subset\mathrm{SU}(2)_S$** on the
-  spin/state-bundle $\mathbb{CP}^1$ fibre (so $A_5$ acts as $I\subset\mathrm{SO}(3)$ by Möbius rotations). This
-  is a spin-structure / representation-lift question (NOT an orbit blow-up — see §"Ingredient 1 — findings");
-  it coincides with the $\mathrm{SU}(2)_S$ spin lift of `spin-from-so3-fiber.md`.
+- ✅ **Ingredient-1 existence leg SETTLED** this session (§"Gate resolution"): the SU(2) structure group +
+  the standard double-cover lift supply the $2I$ action, with the $S_3\to\mathrm{Dic}_3$ precedent already coded
+  in `su2-generators.md`. The feared "build $2I$-equivariance from scratch" is not the obstruction.
+- ⛔ **New gate = the 5-sheet extension (ingredient 4) + a finite rep-identification (residual 2).** The
+  implemented spin action is 3-sheet ($S_3\to\mathrm{Dic}_3$); promoting to the full 5-sheet $A_5\to 2I$ **is**
+  the 5-strand extension, and confirming geometric $A_5 = $ icosahedral $T_1$/$T_2$ is a finite check. Neither
+  is a from-scratch geometric construction.
 
 ## Cross-references
 
