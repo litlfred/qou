@@ -24,7 +24,7 @@ neutron$-$proton coefficient difference, in the NF basis
 $[\gamma,\sigma_0,\sigma_1,L_+,L_-,e^-]$:
 
 $$
-(n-p) \;=\; \big[\tfrac{h^2}{2},\,-\tfrac h2,\,-\tfrac h2,\,0,\,0,\,0\big].
+(n-p) \;=\; \big[\tfrac{h^2}{2},\,-\tfrac{h}{2},\,-\tfrac{h}{2},\,0,\,0,\,0\big].
 $$
 
 Note the leading $L_+$ term (coefficient $1$ in both) **cancels** in the
