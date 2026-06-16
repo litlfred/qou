@@ -15,6 +15,7 @@ wavelength = 500e-9  # de Broglie wavelength [m]
 
 VOL_K = 7.327724
 TORSION_NORM = 1.0
+Q0_VACUUM = 1.1097
 M_MU_M_E_RATIOS = [1.0, 1.05, 1.1097, 1.2, 1.5] # q values (the mass ratios)
 OUTPUT_PATH = "simulations/q_double_slit_output.png"
 
@@ -152,7 +153,10 @@ def simulate_transit(lattice, molecule, dt=1e-7, steps=200):
                 
                 # Back-reaction: lattice coordinate system is not rigid, it evolves
                 force_on_lattice_node = -force_vec
-                lattice.velocities[i] += (force_on_lattice_node / lattice.mass) * dt
+                
+                # The absolute inertial mass of the node shifts dynamically based on the local mass ratio q(p)
+                dynamic_mass_i = lattice.mass * (q_local / Q0_VACUUM)
+                lattice.velocities[i] += (force_on_lattice_node / dynamic_mass_i) * dt
                 
                 # The q section evolves locally from initial conditions due to interaction/gravity
                 q_evolution_rate = np.dot(force_vec, r_vec) * 1e12  # coupling coefficient
@@ -163,8 +167,9 @@ def simulate_transit(lattice, molecule, dt=1e-7, steps=200):
         # Advance lattice coordinates (structural evolution)
         lattice.nodes += lattice.velocities * dt
         
-        # Advance molecule trajectory
-        molecule.velocity += (force_on_molecule / lattice.mass) * dt
+        # Advance molecule trajectory with dynamically shifting effective mass
+        molecule_mass = lattice.mass * (np.mean(lattice.q_section) / Q0_VACUUM)
+        molecule.velocity += (force_on_molecule / molecule_mass) * dt
         molecule.center += molecule.velocity * dt
         trajectory.append(molecule.center.copy())
         
