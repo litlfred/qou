@@ -1,16 +1,16 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
-**Q_β cos-resummation theorem (conditional on [`prop:beta-decay-transfer-matrix`](#prop:beta-decay-transfer-matrix)).**
-*The single-wrap Form A closed-form prediction* $Q_\beta^A$
+**𝔔_β cos-resummation theorem (conditional on [`prop:beta-decay-transfer-matrix`](#prop:beta-decay-transfer-matrix)).**
+*The single-wrap Form A closed-form prediction* $\mathfrak{Q}_\beta^A$
 *admits a tighter symbolic refinement obtained by replacing the
 linear bridge correction* $(z-1)h/2$ *from*
 [`prop:q-beta-spectral-bridge`](#prop:q-beta-spectral-bridge)
 *with the classical cosine of half-argument:*
 
 $$
-  Q_\beta^{A,\mathrm{cos}}
+  \mathfrak{Q}_\beta^{A,\mathrm{cos}}
   \;:=\;
-  Q_\beta^A \cdot \cos\!\bigl(\tfrac{(z-1)\,h}{2}\bigr),
+  \mathfrak{Q}_\beta^A \cdot \cos\!\bigl(\tfrac{(z-1)\,h}{2}\bigr),
   \qquad
   z = \tfrac{1}{\sqrt q + 1/\sqrt q},
   \quad

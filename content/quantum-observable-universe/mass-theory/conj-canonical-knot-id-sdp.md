@@ -9,7 +9,7 @@ the same Hecke elements from first principles.
 ## Statement
 
 **Conjecture.**
-*Let $\mathfrak{E}_0$ be the hadronic energy scale fixed by $Q_\beta$
+*Let $\mathfrak{E}_0$ be the hadronic energy scale fixed by $\mathfrak{Q}_\beta$
 and let $q = q_0$ be the substrate parameter fixed by $m_\mu/m_e$.
 For each light nucleus $\mathfrak{H} \in \{{}^2\mathrm{H}, {}^3\mathrm{H}, {}^3\mathrm{He}\}$,
 the joint mass-tower confinement SDP*

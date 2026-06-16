@@ -64,7 +64,7 @@ notes that the partition-function structure is much more
 convention-robust than the cyclotomic prefactors: it is a property
 of the combinatorial counting at the $m = 8$ shell, not of the
 algebraic-expansion shape, so this finding is expected to survive
-the Phase 5q convention switch (cf. Track 1 of the Q_β Habiro
+the Phase 5q convention switch (cf. Track 1 of the 𝔔_β Habiro
 follow-up coordination ledger).
 
 ## Mathlib bridge
@@ -84,7 +84,7 @@ Table 1; Andrews, *The Theory of Partitions*, §1.1).
 - Sibling Lean identity (cyclotomic strand-doubling):
   [`cyclotomic-strand-doubling.md`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-followup-2026-06-01/content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.md)
 - Empirical source: [`qbeta_habiro_recursion_probe.py`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-followup-2026-06-01/folio-assistant/computations/probes/qbeta_habiro_recursion_probe.py)
-- Master Q_β coordination ledger:
+- Master 𝔔_β coordination ledger:
   [`docs/coordination/1ppq-qbeta.md`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-followup-2026-06-01/docs/coordination/1ppq-qbeta.md)
 - This tranche's coordination ledger:
   [`docs/coordination/2026-06-01-qbeta-habiro-followup.md`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-followup-2026-06-01/docs/coordination/2026-06-01-qbeta-habiro-followup.md)

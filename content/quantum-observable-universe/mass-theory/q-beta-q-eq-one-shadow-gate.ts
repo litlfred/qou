@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-beta-q-eq-one-shadow-gate",
   title:
-    "$Q_\\beta$ precision-ladder $\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\to -1$ (the structural N=2 anchor) and $c_3 \\to J_{\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED",
+    "$\\mathfrak{Q}_\\beta$ precision-ladder $\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\to -1$ (the structural N=2 anchor) and $c_3 \\to J_{\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED",
   lean: {
     ref: "qou:QOU.QBeta.QOneShadowGate.qbeta_q_eq_one_shadow_anchors",
     validation: "not_checked",

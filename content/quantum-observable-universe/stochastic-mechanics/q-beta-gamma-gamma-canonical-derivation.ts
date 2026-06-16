@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:q-beta-gamma-gamma-canonical-derivation",
   title:
-    "Story B selected as canonical $Q_\\beta$ interpretation by tracing the cat-action → Frobenius → Wedderburn → Wenzl bridge chain on canonical typed-$B_3$ braids; the $c_3 = -2$ Hopf-Jones identification is empirically observable at 112× residual reduction vs CODATA $Q_\\beta$ floor",
+    "Story B selected as canonical $\\mathfrak{Q}_\\beta$ interpretation by tracing the cat-action → Frobenius → Wedderburn → Wenzl bridge chain on canonical typed-$B_3$ braids; the $c_3 = -2$ Hopf-Jones identification is empirically observable at 112× residual reduction vs CODATA $\\mathfrak{Q}_\\beta$ floor",
   interprets: "prop:q-beta-categorical-precision-ladder",
   uses: ["rem:kashiwara-jones-alternation-interpretation"],
   cites: [

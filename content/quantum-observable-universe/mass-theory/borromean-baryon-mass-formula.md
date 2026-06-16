@@ -112,10 +112,10 @@ $$
 $$
 
 is independent of $\lambda_{\mathrm{scale}}$. Substituting the CODATA
-identity $m_n - m_p = Q_\beta + m_e$ and the CAL-2 normalisation
+identity $m_n - m_p = \mathfrak{Q}_\beta + m_e$ and the CAL-2 normalisation
 $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ gives a closed-form
 prediction for $\Delta S(n - p)$ that is verifiable against the
 direct Kauffman-bracket evaluation
 ([rem:delta-skein-substrate-identity](#rem:delta-skein-substrate-identity)).
-The 1 015 ppm agreement matches the $Q_\beta$ residual exactly; it
+The 1 015 ppm agreement matches the $\mathfrak{Q}_\beta$ residual exactly; it
 is not a free parameter.

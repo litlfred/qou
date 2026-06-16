@@ -7,7 +7,7 @@ mass-side gates simultaneously.*
 
 ## Why a parametric mass-side typeclass
 
-The $Q_\beta$ decay-side
+The $\mathfrak{Q}_\beta$ decay-side
 [`prop:q-beta-bar-even-kernel-typeclass`](q-beta-bar-even-kernel-typeclass.md)
 bundles the four $\S 4$ invariants for any candidate Habiro element
 $F(q)$. The **mass-side analog** is scoped operationally by the sympy
@@ -16,7 +16,7 @@ which runs a $4 \times 3$ verdict matrix on three published
 `linking_weight` candidates (Family A, via-Jones, Bring color-tube).
 
 This proposition ships the **Lean side** — parametric conditional
-classes mirroring the $Q_\beta$ pattern, plus a unified
+classes mirroring the $\mathfrak{Q}_\beta$ pattern, plus a unified
 `MassSideKernel` typeclass that any future `linking_weight`
 candidate is evaluated against as a single class-instance attempt.
 
@@ -44,7 +44,7 @@ For any candidate `linking_weight` function $w : \mathbb{R} \to \mathbb{R}$:
 > automatically satisfies the additive form within the same
 > threshold magnitude.
 
-The $\S 4(\mathrm{c})$ open gap is the **mass-side analog** of $Q_\beta$'s
+The $\S 4(\mathrm{c})$ open gap is the **mass-side analog** of $\mathfrak{Q}_\beta$'s
 decay-side $F(q)$ keystone — owner-gated multi-session research per
 the refuted-class registry.
 
@@ -56,7 +56,7 @@ candidate-specific values supplied at instantiation), then:
 
 1. `MassAnchorStableGateClass swing` holds (parametric anchor-stability)
 2. `MassDirectionSanityGateClass magnitude` holds (parametric direction sanity)
-3. $w$ admits the bar-even structural identity via the $Q_\beta$
+3. $w$ admits the bar-even structural identity via the $\mathfrak{Q}_\beta$
    `bar_even_test_n2` CommRing $R$ lemma
    ([`prop:q-beta-bar-even-kernel-invariant`](q-beta-bar-even-kernel-invariant.md))
 4. (When a registered anchor is set) `MassQOneShadowGateClass w (some a)`
@@ -72,7 +72,7 @@ exists.
 ## Use in the formalize-first checklist
 
 This typeclass operationalises the mass-side complement to the
-$Q_\beta$ 7-step $\Delta_\lambda$ pre-flight checklist
+$\mathfrak{Q}_\beta$ 7-step $\Delta_\lambda$ pre-flight checklist
 ([`docs/audits/2026-06-05-qbeta-formalize-first-gates-consolidation.md`](../../../docs/audits/2026-06-05-qbeta-formalize-first-gates-consolidation.md)
 $\S 3$). For any candidate $w(q)$:
 
@@ -107,7 +107,7 @@ mass-side categorical chain).
 ([`mass-side-kernel-formalize-first-gates.lean`](mass-side-kernel-formalize-first-gates.lean))
 — three parametric $\S 3\mathrm{b}$-cond conditional classes + one unified
 `MassSideKernel` typeclass + three lifting lemmas + one rejection
-lemma. Mirrors the $Q_\beta$ `BarEvenKernel` pattern.
+lemma. Mirrors the $\mathfrak{Q}_\beta$ `BarEvenKernel` pattern.
 
 **No sympy probe.** The mass-side $\S 4$ $4 \times 3$ verdict matrix
 is already in

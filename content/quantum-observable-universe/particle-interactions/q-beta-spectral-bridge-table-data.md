@@ -8,6 +8,6 @@
 | Actual bridge $\mathrm{A}/\mathrm{B}$ | $1.885432328677003$ |
 | Residual $\lvert$predicted $-$ actual$\rvert$ | $0.0124753$ |
 | $O(h^2)$ tolerance ($h^2$) | $0.0437062$ |
-| $Q_\beta^{\mathrm{A}} = \lvert\Delta(\mathrm{net})\rvert \cdot E_0$ | $0.783646$ MeV |
-| $Q_\beta^{\mathrm{B}} = \ln(1+zh) \cdot E_0 / z$ | $0.832395$ MeV |
-| $\lvert Q_\beta^{\mathrm{A}} - Q_\beta^{\mathrm{B}}\rvert$ | $0.0487$ MeV ($< h^2 E_0 = 0.183$ MeV) |
+| $\mathfrak{Q}_\beta^{\mathrm{A}} = \lvert\Delta(\mathrm{net})\rvert \cdot E_0$ | $0.783646$ MeV |
+| $\mathfrak{Q}_\beta^{\mathrm{B}} = \ln(1+zh) \cdot E_0 / z$ | $0.832395$ MeV |
+| $\lvert \mathfrak{Q}_\beta^{\mathrm{A}} - \mathfrak{Q}_\beta^{\mathrm{B}}\rvert$ | $0.0487$ MeV ($< h^2 E_0 = 0.183$ MeV) |

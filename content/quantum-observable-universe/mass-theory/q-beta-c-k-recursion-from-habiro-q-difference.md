@@ -30,8 +30,8 @@ $S$ pinned by the SDP constraint. The SDP strict-complementarity audit
 *direction* of the selector is $S$-independent and $q$-rational. The
 diagnostic
 [`prop:q-beta-over-e0-classical-vanishing`](q-beta-over-e0-classical-vanishing.md)
-showed the SDP-constraint scalar $S = Q_\beta/E_0$ is *not* the ladder
-normalization. Together these pin $F(q) = Q_\beta(q)/[Q_A(q) \cdot \cos(\alpha_{\mathrm{eff}}(q))]$
+showed the SDP-constraint scalar $S = \mathfrak{Q}_\beta/E_0$ is *not* the ladder
+normalization. Together these pin $F(q) = \mathfrak{Q}_\beta(q)/[Q_A(q) \cdot \cos(\alpha_{\mathrm{eff}}(q))]$
 as a single fibre-level Habiro object whose $q$-difference structure
 determines the $c_k$.
 
@@ -169,7 +169,7 @@ wired to production; $c_k$ stays cal-anchored.
 
 ## Literature — AJ-recurrence parent + a quantum-modularity remark
 
-This depth-$d$ recurrence is the $Q_\beta$-specialised image of the
+This depth-$d$ recurrence is the $\mathfrak{Q}_\beta$-specialised image of the
 **q-holonomic (AJ) recurrence** for quantum knot invariants \cite{garoufalidis2004}:
 the colored Jones $J_N(K;q)$ satisfies $\hat{A}(\hat{M},\hat{L};q)\,J_N = 0$ in
 the colour $N$ (with $\hat{M}J_N = q^N J_N$, $\hat{L}J_N = J_{N+1}$,

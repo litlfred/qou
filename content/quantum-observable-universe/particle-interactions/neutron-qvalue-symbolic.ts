@@ -14,7 +14,7 @@ export default proposition({
       date: "2026-05-24",
       body:
         "**Ansatz dependency flagged (PR #1127).** The relation " +
-        "$Q_\\beta = |\\Delta(\\mathrm{net})| \\cdot \\mathfrak{E}_0$ used in " +
+        "$\\mathfrak{Q}_\\beta = |\\Delta(\\mathrm{net})| \\cdot \\mathfrak{E}_0$ used in " +
         "this proposition is stated **\"by construction\"** in " +
         "[`pre-archimedean-derivation-chain.md`](../braids-and-knots/pre-archimedean-derivation-chain.md):391 " +
         "and is **not derived** from the canonical per-braid mass " +
@@ -29,7 +29,7 @@ export default proposition({
         "[`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md). " +
         "Until resolved, this block's claim **\"genuine prediction " +
         "from two leptonic inputs only\"** is **conditional on the " +
-        "ansatz** $Q_\\beta = |\\Delta(\\mathrm{net})| \\cdot \\mathfrak{E}_0$.",
+        "ansatz** $\\mathfrak{Q}_\\beta = |\\Delta(\\mathrm{net})| \\cdot \\mathfrak{E}_0$.",
     },
   ],
   tags: [

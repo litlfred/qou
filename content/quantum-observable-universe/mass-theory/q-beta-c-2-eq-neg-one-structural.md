@@ -1,7 +1,7 @@
-**Proposition.** *In the $Q_\beta$ precision-ladder factorisation*
+**Proposition.** *In the $\mathfrak{Q}_\beta$ precision-ladder factorisation*
 
 $$
-Q_\beta(q) \;=\; Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q))
+\mathfrak{Q}_\beta(q) \;=\; Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q))
   \cdot \prod_{k \ge 2} \bigl(1 + c_k \cdot u_{\text{ladder}}^k\bigr),
 \qquad u_{\text{ladder}} = b(q) \cdot \hbar_q^2,
 $$
@@ -17,7 +17,7 @@ the substrate value $q_0$ and of CODATA.*
 
 ## Proof (algebraic identity)
 
-The operator-valued $N{=}2$ correction to $Q_\beta$ (per the brane-tower
+The operator-valued $N{=}2$ correction to $\mathfrak{Q}_\beta$ (per the brane-tower
 truncation of [`probe_q_beta_operator_valued_N3.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe_q_beta_operator_valued_N3.py))
 is the factor $(1 - b^2 \cdot \hbar_q^4)$. With $u_{\text{ladder}} = b \cdot \hbar_q^2$,
 direct expansion gives
@@ -42,7 +42,7 @@ SDP and compared to the proved bar-even prediction. The present
 proposition strengthens that to a **structural identity**: $c_2$ is
 not extracted from data, it is the coefficient of $u_{\text{ladder}}^2$ in the
 exact algebraic factorisation of the categorical $N{=}2$ ladder
-correction. No fit, no CODATA-$Q_\beta$ input, no $q_0$-evaluation
+correction. No fit, no CODATA-$\mathfrak{Q}_\beta$ input, no $q_0$-evaluation
 required — the identity holds in any commutative ring.
 
 The corresponding sympy verification in
@@ -64,8 +64,8 @@ $$
 Q_{N=2}(q_0) \;\approx\; 0.78233441\;\text{MeV},
 $$
 
-within $5.6\,\text{ppm}$ of $Q_\beta^{\text{CODATA}} = 0.78233\;\text{MeV}$
-with **zero CODATA-$Q_\beta$ input**. The remaining $\sim 6\,\text{ppm}$
+within $5.6\,\text{ppm}$ of $\mathfrak{Q}_\beta^{\text{CODATA}} = 0.78233\;\text{MeV}$
+with **zero CODATA-$\mathfrak{Q}_\beta$ input**. The remaining $\sim 6\,\text{ppm}$
 is the categorical target for $c_3, c_4$ — see
 [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](q-beta-c-k-recursion-from-habiro-q-difference.md)
 for the recursion framework.
@@ -83,5 +83,5 @@ candidate matches structurally, $c_3$ becomes a second structural
 identity.
 
 This proposition is the $k = 2$ instance of that programme. Higher-$k$
-instances are the remaining open work toward CODATA-free $Q_\beta$ at
+instances are the remaining open work toward CODATA-free $\mathfrak{Q}_\beta$ at
 $1\,\text{ppQ}$.

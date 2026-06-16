@@ -98,11 +98,11 @@ decay channel is the **Chern–Simons** (imaginary, $\sinh$) part of the
   ([`rem:block-multiplicativity-v-free`](../mass-theory/block-multiplicativity-v-free.md));
   the $q$-deformed case is class-axiomatized (conjectural).
 - **Conjectural (the unification itself).** That the *physical* binding
-  and $Q_\beta$ are the Re/Im of the **same** $\mathfrak{V}$
+  and $\mathfrak{Q}_\beta$ are the Re/Im of the **same** $\mathfrak{V}$
   at a single normalization.
 - **Fibre-level caveat (STRICT).** At the **archimedean / observable**
   level $\operatorname{Im}(q_0)=0$
-  (`lusztig_q_0_imaginary_part_zero`): binding and $Q_\beta$ are both
+  (`lusztig_q_0_imaginary_part_zero`): binding and $\mathfrak{Q}_\beta$ are both
   *real* measured numbers. The complex structure is therefore
   **fibre-level** (pre-$\tau$): $\mathfrak{V}(q)$ is a complex object in
   the fibre, and $\mathfrak{E}_{\mathrm{bind}}$, $\mathfrak{Q}_\beta$ are its Re/Im
@@ -129,6 +129,6 @@ Conditional on the unification, the framework's mass/binding chapter and
 its $\beta$-decay chapter are **one derivation**: compute the complex
 convolution-defect $\mathfrak{V}(K) = \mathfrak{V}(K)$ once;
 its real part is every binding energy, its imaginary part is every
-$Q$-value. The "$0.17\%$ $Q_\beta$ residual" and the binding $\Delta_\lambda$
+$Q$-value. The "$0.17\%$ $\mathfrak{Q}_\beta$ residual" and the binding $\Delta_\lambda$
 gap become the *same* unclosed object — the imaginary and real parts of
 one complex volume — rather than two independent open problems.

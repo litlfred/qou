@@ -1,5 +1,5 @@
-**Proposition.** *In the $Q_\beta$ precision-ladder factorisation
-$Q_\beta(q) = Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q)) \cdot \prod_{k \ge 2}(1 + c_k u^k)$
+**Proposition.** *In the $\mathfrak{Q}_\beta$ precision-ladder factorisation
+$\mathfrak{Q}_\beta(q) = Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q)) \cdot \prod_{k \ge 2}(1 + c_k u^k)$
 with $u = b(q) \cdot \hbar_q^2$, any candidate Habiro element $F(q)$
 generating the ladder coefficients $c_k$ must satisfy the classical-limit
 shadows*

@@ -1,6 +1,6 @@
 ### The $q$-difference / root-of-unity viewpoint
 
-Several of the framework's $q$-deformed quantities — the $Q_\beta$
+Several of the framework's $q$-deformed quantities — the $\mathfrak{Q}_\beta$
 Habiro element, the $\alpha_{EM}$ next-order factor
 ([`prop:alpha-em-habiro-bar-involution`](#prop:alpha-em-habiro-bar-involution)),
 and the Markov trace itself — are analysed not through
@@ -37,13 +37,13 @@ root-of-unity spectra and residues are exact identities in the
 relevant cyclotomic field, independent of the eventual archimedean
 realisation.
 
-The duality between $\alpha_{EM}$ and $Q_\beta$ illustrates the method.
+The duality between $\alpha_{EM}$ and $\mathfrak{Q}_\beta$ illustrates the method.
 Both are Habiro elements with the *same* $q$-difference machinery, yet
 they are distinguished by a single modular datum: the $\alpha_{EM}$
 element $[2]_q(1-h^2\alpha)$ is a bar-involution fixed point with a
-**zero** at $\zeta_4$, while the $Q_\beta$ trace difference is *not* a
+**zero** at $\zeta_4$, while the $\mathfrak{Q}_\beta$ trace difference is *not* a
 bar fixed point and has a **pole** at $\zeta_4$. The cleanliness of the
 $\alpha_{EM}$ case — a polynomial, bar-fixed, with $q_0$-stable Taylor
 coefficients — is precisely why its next-order form was identifiable as
-a Habiro element, whereas the $Q_\beta$ analogue required the
+a Habiro element, whereas the $\mathfrak{Q}_\beta$ analogue required the
 additional cancellation of a bar-anti-invariant part.

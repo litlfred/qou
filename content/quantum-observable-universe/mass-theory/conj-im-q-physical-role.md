@@ -94,7 +94,7 @@ directly. The candidate roles are all in **non-mass observables**.
 - [`prop:rho-k-pair-gen-canonical-form`](conj-rho-k-pair-gen-canonical-form.md) —
   similarly Im(q)-robust at LO.
 - The complex-q machinery is **decoupled** from the mass-formula closure;
-  closing the Q_β residual or deriving F_ℓ does **not** require resolving
+  closing the 𝔔_β residual or deriving F_ℓ does **not** require resolving
   Im(q)'s role.
 
 ## Default value: Im(q) = 0

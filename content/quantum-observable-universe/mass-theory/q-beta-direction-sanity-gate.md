@@ -1,9 +1,9 @@
-**Proposition.** *In the $Q_\beta$ precision-ladder factorisation
-$Q_\beta(q) = Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q)) \cdot \prod_{k \ge 2}(1 + c_k u^k)$,
+**Proposition.** *In the $\mathfrak{Q}_\beta$ precision-ladder factorisation
+$\mathfrak{Q}_\beta(q) = Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q)) \cdot \prod_{k \ge 2}(1 + c_k u^k)$,
 any candidate Habiro element $F(q)$ generating the ladder must satisfy
 the direction-sanity invariant: $|F(q_0)|$ at the substrate anchor
 must be in the same order of magnitude as the target observable's
-ratio $Q_\beta^{\text{CODATA}} / [Q_A(q_0) \cdot \cos(\alpha_{\text{eff}}(q_0))]$.
+ratio $\mathfrak{Q}_\beta^{\text{CODATA}} / [Q_A(q_0) \cdot \cos(\alpha_{\text{eff}}(q_0))]$.
 A candidate predicting a magnitude differing by more than $10\times$
 is structurally REFUTED at the formalize-first level.*
 
@@ -35,7 +35,7 @@ paper, not in compute. This is the $\S 4(d)$ formalize-first gate.
 | (d) | **Direction sanity** | **this proposition** |
 
 With (d) formalized, the four-invariant set is complete; any future
-candidate $F(q)$ for the Q_β c_k Habiro element is evaluable as a
+candidate $F(q)$ for the 𝔔_β c_k Habiro element is evaluable as a
 Lean class-instance attempt rather than as a numerical fit.
 
 ## The target magnitude at $q_0$
@@ -43,7 +43,7 @@ Lean class-instance attempt rather than as a numerical fit.
 At the substrate $q_0 \approx 1.10998$:
 
 $$
-\frac{Q_\beta^{\text{CODATA}}}{Q_A(q_0) \cdot \cos(\alpha_{\text{eff}}(q_0))}
+\frac{\mathfrak{Q}_\beta^{\text{CODATA}}}{Q_A(q_0) \cdot \cos(\alpha_{\text{eff}}(q_0))}
 \;\approx\; \frac{0.78233\;\text{MeV}}{0.78371\;\text{MeV}}
 \;\approx\; 0.99824 \;\approx\; 1,
 $$

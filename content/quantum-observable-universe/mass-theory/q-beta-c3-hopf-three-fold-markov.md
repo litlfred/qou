@@ -4,7 +4,7 @@
 
 This proposition formalizes the Track C direction: **proving** the
 categorical identification $c_3 = J_{\text{Hopf}}(q=1) = -2$ in the
-$Q_\beta$ precision ladder, not just observing it empirically.
+$\mathfrak{Q}_\beta$ precision ladder, not just observing it empirically.
 
 ## Structural claim
 

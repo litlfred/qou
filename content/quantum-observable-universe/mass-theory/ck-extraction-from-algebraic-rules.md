@@ -2,7 +2,7 @@
 
 **$c_k$ extraction from four algebraic reduction rules on the typed-$\mathbf{B}_3$ word.**
 
-The $Q_\beta$ categorical precision ladder
+The $\mathfrak{Q}_\beta$ categorical precision ladder
 ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
 displays per-rung coefficients
 

@@ -6,7 +6,7 @@
 | $\sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2 = \sigma - h/2$ | averaged crossing | typed-$\mathbf{B}_n$ recipe |
 | $\sigma + \sigma^{-1}$ | symmetric crossing pair | self-conjugate Wedderburn |
 | $\mathrm{Li}_2^q(z) = \frac{1}{2}(\log\Phi_q + \log\Phi_{q^{-1}})$ | symmetric q-dilog | T2, T3 binding tower |
-| $\cos(\alpha - b\hbar_q^2/2)$ | phase factor at $N{=}1$ | master $Q_\beta$ formula |
+| $\cos(\alpha - b\hbar_q^2/2)$ | phase factor at $N{=}1$ | master $\mathfrak{Q}_\beta$ formula |
 | $\cosh(h)$ | hyperbolic-cosine of skein | per-Z gain $\alpha_Z \approx [3]_q^2 \cdot \cosh(h)$ |
 | Volume forms $\alpha \wedge d\alpha$ | contact volume | Reeb dynamics |
 | Unsigned linking $\lvert\mathrm{lk}\rvert$ | absolute linking | knot multiplicity |

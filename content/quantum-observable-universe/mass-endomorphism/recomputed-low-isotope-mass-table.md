@@ -77,18 +77,18 @@ See [Table 2](#tbl:recomputed-low-isotope-mass-table-table2-data).
 and $m_n$ are upstream inputs in this LO form; $0.000\%$ is a
 calibration tautology, not a prediction quality.
 
-### FULL Q_β prediction (framework, no CODATA mass injection)
+### FULL 𝔔_β prediction (framework, no CODATA mass injection)
 
 Per [`prop:neutron-qvalue-symbolic`](../particle-interactions/neutron-qvalue-symbolic.md)
 the framework predicts the β-decay Q-value using only CAL-1 ($m_e$)
-and CAL-2 ($q_0$) — no CAL-3 ($Q_\beta$) input, no CODATA $m_p$ or
+and CAL-2 ($q_0$) — no CAL-3 ($\mathfrak{Q}_\beta$) input, no CODATA $m_p$ or
 $m_n$ injection. CAL-3 becomes the **output**, not an input.
 
 The canonical closed form at single wrap:
 
 $$
 \boxed{
-Q_\beta^{\text{pred}} \;=\;
+\mathfrak{Q}_\beta^{\text{pred}} \;=\;
 \frac{m_e \cdot |q_0^2 - 2q_0 - 1| \cdot (q_0 + 1)}{2 q_0^3}
 \;\approx\; 0.7836 \text{ MeV}
 }
@@ -119,7 +119,7 @@ $m_e^{\mathrm{Hecke}}$ lift.
 An earlier draft used the typed-crossings 6-term decomposition
 ([`beta-decay-energy-scale.md`](../particle-interactions/beta-decay-energy-scale.md))
 with $|\Delta(\mathrm{net})| = 0.18829$ from the witness, giving
-$Q_\beta^{(\text{6-term})} = 0.7882$ MeV ($+0.747\%$). The
+$\mathfrak{Q}_\beta^{(\text{6-term})} = 0.7882$ MeV ($+0.747\%$). The
 single-wrap form is **4.46$\times$ tighter** because the $L_\pm$ and
 $e^-$ contributions, which exactly vanish in the symbolic
 single-wrap difference, picked up small asymmetric finite-size
@@ -180,10 +180,10 @@ the formula returns the input mass exactly. **This is a bug, not
 a feature**: the QOU framework admits exactly three calibration
 inputs ([three calibration inputs](three-calibration-inputs.md))
 — CAL-1 $= m_e$, CAL-2 $= m_\mu/m_e$ (fixes $q_0$),
-CAL-3 $= Q_\beta(n)$ (fixes hadronic scale $E_0$). $m_p$ and $m_n$
+CAL-3 $= \mathfrak{Q}_\beta(n)$ (fixes hadronic scale $E_0$). $m_p$ and $m_n$
 are **predictions** of the framework, derivable as
 $m_p = |\mathrm{tr}_M(p, q_0)| \cdot E_0$ and
-$m_n = m_p + Q_\beta + m_e$ per the 3-input convention recommended
+$m_n = m_p + \mathfrak{Q}_\beta + m_e$ per the 3-input convention recommended
 in [`neutron-gap-probes-round3.witness.json`](../../../folio-assistant/computations/neutron-gap-probes-round3.witness.json).
 The script-side migration is tracked as Workplan 0b
 (see [`docs/audits/-1ppb-workplan-update.md`](../../../docs/audits/-1ppb-workplan-update.md));

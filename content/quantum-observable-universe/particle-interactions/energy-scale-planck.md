@@ -38,8 +38,8 @@ negligible at the keV scale of β-decay observables.
 
 ## Calibration-cross-check (NOT used for predictions)
 
-A historical "calibrated $E_0$" definition used CAL-3 ($Q_\beta$)
-as input via $E_0^{(\text{cal})} = Q_\beta^{\text{CODATA}}
+A historical "calibrated $E_0$" definition used CAL-3 ($\mathfrak{Q}_\beta$)
+as input via $E_0^{(\text{cal})} = \mathfrak{Q}_\beta^{\text{CODATA}}
 / \lvert\Delta(\mathrm{net})\rvert \approx 4.155$ MeV. **This form
 is no longer used** in the prediction pipeline because it consumes
 CAL-3 as input rather than treating it as a prediction (per
@@ -48,7 +48,7 @@ CAL-3 as input rather than treating it as a prediction (per
 The 0.74% gap between the derived $E_0 \approx 4.186$ MeV and the
 cross-check $\approx 4.155$ MeV is the brane-tower truncation
 residual at $N=0$, identical to the +0.17% / +1.31 keV residual
-in $Q_\beta$ prediction. Per the structural bound
+in $\mathfrak{Q}_\beta$ prediction. Per the structural bound
 ([`per-braid-mass-tower.md`](#prop:per-braid-mass-tower)) this is
 $O(\hbar_q^2/(1 - \hbar_q^2)) \approx 1\%$ at $N=0$.
 
@@ -85,10 +85,10 @@ The free neutron decay $n \to p + e^- + \bar\nu_e$ is the
 simplest process that exercises a single Hecke step in the
 hadronic sector: one crossing change $\mathfrak{d} \to \mathfrak{u}$
 inside one nucleon, with no nuclear environment corrections.
-The Q-value $Q_\beta = 0.782$ MeV is the energy released by
+The Q-value $\mathfrak{Q}_\beta = 0.782$ MeV is the energy released by
 this single crossing change.  Dividing by the dimensionless
 Hecke NF difference $\lvert\Delta\mathrm{net}\rvert \approx 0.188$
-gives $E_0 = Q_\beta / \lvert\Delta\mathrm{net}\rvert \approx 4.179$ MeV.
+gives $E_0 = \mathfrak{Q}_\beta / \lvert\Delta\mathrm{net}\rvert \approx 4.179$ MeV.
 
 This is analogous to measuring the speed of light by timing
 the simplest electromagnetic process: we need one clean
@@ -105,7 +105,7 @@ three-calibration inputs
 |-------|:-----------:|--------------|---------------------|
 | $m_e$ | $H^0$ | The mass unit | $E_0/(c_q^2 \hbar_q)$ (the size) |
 | $m_\mu/m_e$ | $H^1$ | $q_0$ | The shape (dimensionless) |
-| $Q_\beta(n)$ | $H^2$ | The $\beta$-decay scale | $E_0$ in MeV |
+| $\mathfrak{Q}_\beta(n)$ | $H^2$ | The $\beta$-decay scale | $E_0$ in MeV |
 
 Once $q_0$ is fixed, $c_q$, $\hbar_q$, $t_P$, and $G_q$ are
 all determined.  The mass scale $E_0$ then sets the

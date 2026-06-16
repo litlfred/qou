@@ -58,11 +58,11 @@ $T_\beta = S \cdot 1$, with $\| T_\beta \|^2_\tau = S^2$. $\quad\blacksquare$
 
 ## Corollary — observable c_k invariance
 
-The Q_β production rule extracts the c_k Taylor coefficients from
+The 𝔔_β production rule extracts the c_k Taylor coefficients from
 $\tau_M(T_\beta)(q)$.  Under either norm choice — Euclidean L2 on
 coordinate-vector space $R^6$ (the SHAPE $\times$ S decomposition)
 or the canonical Markov–Frobenius norm above — the SDP **constraint**
-$\tau_M(T_\beta) = S = Q_\beta / E_0$ is satisfied identically.
+$\tau_M(T_\beta) = S = \mathfrak{Q}_\beta / E_0$ is satisfied identically.
 Therefore $\tau_M(T_\beta)(q) \equiv S(q)$ in both cases, and the
 c_k are **L2/Markov-invariant**:
 
@@ -78,7 +78,7 @@ but they agree on every **observable** because observables are
 extracted from the constraint, not from the operator's coordinate
 expansion.  The cross-anchor c_3 swing recorded in the
 [canonical-framing audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
-is therefore a property of $S(q) = Q_\beta(q) / E_0(q)$ itself —
+is therefore a property of $S(q) = \mathfrak{Q}_\beta(q) / E_0(q)$ itself —
 upstream of the SDP norm choice.
 
 ## Categorical reading

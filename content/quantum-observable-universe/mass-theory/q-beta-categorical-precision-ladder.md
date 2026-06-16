@@ -10,8 +10,8 @@
 > The content below is retained for HISTORICAL reference and for the
 > derivation narrative (it shows how the pattern was discovered).
 
-**$Q_\beta$ categorical-derivation precision ladder** — the closed-form
-prediction of free-neutron $\beta$-decay Q-value $Q_\beta$ at the
+**$\mathfrak{Q}_\beta$ categorical-derivation precision ladder** — the closed-form
+prediction of free-neutron $\beta$-decay Q-value $\mathfrak{Q}_\beta$ at the
 substrate $q_0$ via a four-rung categorical recursion ending at $-0.0066$
 ppm residual against CODATA (well under the $0.0094$ ppm $N=3$ c(K)
 ceiling from `conj:archimedean-remainder-exponential-decay`).
@@ -20,9 +20,9 @@ ceiling from `conj:archimedean-remainder-exponential-decay`).
 
 $$
 \boxed{
-  Q_\beta^{\mathrm{cat}}
+  \mathfrak{Q}_\beta^{\mathrm{cat}}
    \;=\;
-   Q_\beta^A \cdot
+   \mathfrak{Q}_\beta^A \cdot
    \cos\!\bigl(\alpha - \tfrac{b\,\hbar_q^2}{2}\bigr) \cdot
    \bigl(1 - b^2 \hbar_q^4\bigr) \cdot
    \bigl(1 - 2 \, b^3 \hbar_q^6\bigr) \cdot
@@ -33,7 +33,7 @@ $$
 
 where:
 
-- $Q_\beta^A = m_e \cdot |q^2 - 2q - 1| (q+1) / (2 q^3)$
+- $\mathfrak{Q}_\beta^A = m_e \cdot |q^2 - 2q - 1| (q+1) / (2 q^3)$
   is the single-wrap Form A baseline from [`prop:neutron-qvalue-symbolic`](#prop:neutron-qvalue-symbolic);
 - $\alpha = (z-1)h/2$ is the single-wrap eigenphase on $V_{(2,1)}$
   (per [`prop:q-beta-spectral-bridge`](#prop:q-beta-spectral-bridge));
@@ -104,7 +104,7 @@ near-matches** — their empirical value swings with the $q_0$ anchor
 $q_0$), so they are not yet Taylor-exact derivations. A near-match that
 beats the experimental target is a genuine result *and* not a
 derivation; both facts are reported, neither suppressed. The permanent
-upgrade is to identify the $Q_\beta$ **Habiro element** whose Taylor
+upgrade is to identify the $\mathfrak{Q}_\beta$ **Habiro element** whose Taylor
 coefficients *are* the $c_k$ — the same machinery that made the $\alpha_{EM}$
 next-order factor $[2]_q(1-h^2\alpha)$ binomial-exact
 ([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)).
@@ -137,7 +137,7 @@ correction absorbs this and brings the residual under the c(K) ceiling.
 From [`audit_delta_S_chain.py`](../../folio-assistant/computations/audit_delta_S_chain.py):
 
 $$
-  \varepsilon_{\Delta S} \;=\; \frac{Q_\beta}{Q_\beta + m_e} \cdot \varepsilon_Q
+  \varepsilon_{\Delta S} \;=\; \frac{\mathfrak{Q}_\beta}{\mathfrak{Q}_\beta + m_e} \cdot \varepsilon_Q
   \;\approx\; 0.605 \, \varepsilon_Q.
 $$
 

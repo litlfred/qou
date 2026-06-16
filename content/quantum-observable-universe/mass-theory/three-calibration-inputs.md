@@ -19,7 +19,7 @@ The three measured inputs are **three masses** $(m_\mathfrak{e}, m_\mu, m_\pi)$;
 $m_\mathfrak{e}$ sets the unit, so $q_0$ (dimensionless) is fixed by $m_\mu$
 *in that unit* — the ratio $m_\mu/m_\mathfrak{e}$.
 
-$Q_\beta$ (neutron $\beta$-decay, $\mathfrak{D}_\beta$) is **derived**
+$\mathfrak{Q}_\beta$ (neutron $\beta$-decay, $\mathfrak{D}_\beta$) is **derived**
 from CAL-1 + CAL-2, **not** a calibration — the bar-odd $\sinh$ partner
 of the bar-even $\cosh$ meson scale $m_\pi$. In the
 **Physical-Observations** layer $q_0$ may be numerically anchored on the
@@ -38,7 +38,7 @@ $H_3(R, q)$ ([three parameters from Wedderburn](#prop:three-parameters-wedderbur
 ## Statement
 
 For every numerical observable $\mathcal{O}$ in the paper —
-mass $\mathfrak{m}$, Q-value $Q_\beta$, binding $B(Z, N)$,
+mass $\mathfrak{m}$, Q-value $\mathfrak{Q}_\beta$, binding $B(Z, N)$,
 crossing energy $E_{\mathfrak{H}}$, coupling $\alpha$, mixing angle,
 shell parameter — there exists a $\mathbb{Q}(q_0)$-element
 $\hat{\mathcal{O}}(q_0) \in \mathbb{Z}[q_0^{\pm 1/2}]$ and integers
@@ -58,7 +58,7 @@ with $a + b \in \{0, 1\}$ (dimensionless, mass-scale, or energy-scale
 output) and $q_0$ fixed by CAL-2 ($m_\mu/m_e$). The two dimensional
 bridges are the calibration scales $m_e$ and $m_\pi$; the derived
 hadronic energy scale $\mathfrak{E}_0 = m_e/(q_0(q_0-1))$ and the
-derived $Q_\beta$ are $m_e^{1}\cdot\mathbb{Q}(q_0)$ expressions, not
+derived $\mathfrak{Q}_\beta$ are $m_e^{1}\cdot\mathbb{Q}(q_0)$ expressions, not
 independent factors.
 
 ## Allowed substitutions
@@ -73,11 +73,11 @@ independent factors.
       (single Planck-tick, CAL-1 + CAL-2 only),
     - $\mathfrak{E}_0^{\text{full}} = \mathfrak{E}_0^{(N=0)}/(1-\hbar_q^2) \approx 4.228$ MeV
       (tower-summed, CAL-1 + CAL-2 only),
-    - $\mathfrak{E}_0^{(\text{cal})} = Q_\beta(n)/|\Delta(\mathrm{net})| \approx 4.155$ MeV
+    - $\mathfrak{E}_0^{(\text{cal})} = \mathfrak{Q}_\beta(n)/|\Delta(\mathrm{net})| \approx 4.155$ MeV
       (CAL-3 cross-check via CODATA).
   See the [notation register](../notation/notation-register.md) energy
   row and the [collisions note](../notation/notation-collisions.md)
-  for the convention $\mathfrak{E}_0 \neq Q_\beta(n)$ (they differ by
+  for the convention $\mathfrak{E}_0 \neq \mathfrak{Q}_\beta(n)$ (they differ by
   the dimensionless factor $1/|\Delta(\mathrm{net})| \approx 5.31$).
 - $m_e$ enters as the unique dimensional bridge from $\mathbb{Q}(q_0)$
   to MeV.
@@ -100,7 +100,7 @@ The framework forbids:
   it may not be supplemented by independent fits to $m_e$, $m_\mu$,
   $m_\tau$, or any other mass.
 - *A second hadronic scale*. $m_{\pi^{\pm}}$ is CAL-3; the hadronic
-  energy scale $\mathfrak{E}_0$ and $Q_\beta(n)$ are both derived from
+  energy scale $\mathfrak{E}_0$ and $\mathfrak{Q}_\beta(n)$ are both derived from
   CAL-1 + CAL-2 and serve as cross-checks. Proton mass, neutron mass,
   and all nuclear binding energies must be derived from
   $\{m_e, q_0, m_{\pi^{\pm}}\}$, not introduced as inputs.
@@ -120,7 +120,7 @@ The calibration map is:
 |------------------|-------------|------|
 | $\mathrm{alt}$ ($\lambda = (1^3)$) | CAL-2: $m_\mu/m_e \mapsto q_0$ | Sets the deformation scale (alt is the "antisymmetric" / antimatter channel; $q_0 = 1$ collapses it). |
 | $\mathrm{std}$ ($\lambda = (2,1)$) | CAL-1: $m_e$ | Sets the leptonic mass quantum (std is the 2-dimensional "matter" channel where $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$). |
-| $\mathrm{sym}$ ($\lambda = (3)$) | CAL-3: $m_{\pi^{\pm}}$ | Sets the chiral / Goldstone scale (sym is the "all crossings positive" / hadronic channel). The pion mass is the pseudo-Goldstone boson of broken chiral $\mathrm{SU}(2)_A$; its mass encodes the chiral condensate $\langle\bar{q}q\rangle^{1/3} \approx 240\;\mathrm{MeV}$ which is absent from $(m_e, q_0)$. $Q_\beta(n)$ is **derived** from CAL-1 + CAL-2 via $Q_\beta = m_e \lvert q_0^2 - 2q_0 - 1\rvert(q_0+1)/(2q_0^3) \approx 0.784\;\mathrm{MeV}$ (0.17% miss) and serves as a cross-check, not an independent input. |
+| $\mathrm{sym}$ ($\lambda = (3)$) | CAL-3: $m_{\pi^{\pm}}$ | Sets the chiral / Goldstone scale (sym is the "all crossings positive" / hadronic channel). The pion mass is the pseudo-Goldstone boson of broken chiral $\mathrm{SU}(2)_A$; its mass encodes the chiral condensate $\langle\bar{q}q\rangle^{1/3} \approx 240\;\mathrm{MeV}$ which is absent from $(m_e, q_0)$. $\mathfrak{Q}_\beta(n)$ is **derived** from CAL-1 + CAL-2 via $\mathfrak{Q}_\beta = m_e \lvert q_0^2 - 2q_0 - 1\rvert(q_0+1)/(2q_0^3) \approx 0.784\;\mathrm{MeV}$ (0.17% miss) and serves as a cross-check, not an independent input. |
 
 This is the meaning of "aligned to (co)homology": the three
 calibrations correspond bijectively to the three irreducible
@@ -162,7 +162,7 @@ constrained by:
 1. **Dimensional analysis.** One dimensionless input ($m_\mu/m_e$)
    pins $q_0$; two dimensional inputs ($m_e$, $m_\pi$) pin the
    leptonic mass scale and the meson scale. The hadronic energy scale
-   $\mathfrak{E}_0$ (and hence $Q_\beta$) is **derived** from $m_e$
+   $\mathfrak{E}_0$ (and hence $\mathfrak{Q}_\beta$) is **derived** from $m_e$
    and $q_0$, not an independent input.
 
 2. **Precision.** $m_e$ has CODATA precision $2.9 \times 10^{-10}$;
@@ -185,7 +185,7 @@ gives every mass as $\mathfrak{m}(\varrho) = |\mathrm{tr}_M(\rho(\beta))|$
 with $\rho(\beta) \in H_n(R, q_0)$; multiplication by $m_e$ converts
 to MeV. For Q-values, the brane-tower correction in the hadronic
 sector is captured by the dimensionless factor
-$\hat{\mathcal{O}}(q_0)$, with $E_0 = Q_\beta(n)/|\Delta(\mathrm{net})|$
+$\hat{\mathcal{O}}(q_0)$, with $E_0 = \mathfrak{Q}_\beta(n)/|\Delta(\mathrm{net})|$
 providing the symbolic-to-numeric bridge for the hadronic energy
 scale.
 

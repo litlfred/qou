@@ -37,7 +37,7 @@ $$
    fixed point**.*
 2. *Proton and neutron single-wrap Markov traces become equal:
    $\mathrm{net}(p) = \mathrm{net}(n) = 1 - h/2 = 0$.*
-3. *Form A vanishes: $Q_\beta^A = m_e \cdot |q^2-2q-1|(q+1)/(2q^3) = 0$.*
+3. *Form A vanishes: $\mathfrak{Q}_\beta^A = m_e \cdot |q^2-2q-1|(q+1)/(2q^3) = 0$.*
 
 *The categorical interpretation: $q = 1 + \sqrt{2}$ is the
 **β-decay null point** — the substrate value at which proton and

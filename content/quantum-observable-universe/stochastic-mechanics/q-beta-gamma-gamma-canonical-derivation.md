@@ -1,6 +1,6 @@
-**$Q_\beta$ γγ canonical derivation: Story B selected by the cat-action / Frobenius / Wenzl chain.**
+**$\mathfrak{Q}_\beta$ γγ canonical derivation: Story B selected by the cat-action / Frobenius / Wenzl chain.**
 
-This content captures the current understanding of the $Q_\beta$
+This content captures the current understanding of the $\mathfrak{Q}_\beta$
 precision-ladder coefficients $c_k$, settling the Story A vs Story B
 ambiguity flagged in [`probe_q_beta_high_precision_ck.py`](../../folio-assistant/computations/probe_q_beta_high_precision_ck.py).
 
@@ -12,7 +12,7 @@ are determined by tracing through
 $$
 \text{cat-action} \;\to\; \text{Frobenius pairing} \;\to\;
 \text{Wedderburn} \;\to\; \text{Wenzl bridge} \;\to\;
-\tau_M(\text{typed }\beta) \;\to\; Q_\beta^{\text{cat}}
+\tau_M(\text{typed }\beta) \;\to\; \mathfrak{Q}_\beta^{\text{cat}}
 $$
 
 closely on the canonical typed-$B_3$ braids for proton and neutron.
@@ -81,7 +81,7 @@ At $q_0$ (computed bit-exactly at 50 dps):
 ### Step 7-9 — Precision-ladder identifications
 
 Categorical-chain reading of the $c_k$ coefficients in the
-$Q_\beta^{\text{cat}}$ precision ladder from
+$\mathfrak{Q}_\beta^{\text{cat}}$ precision ladder from
 [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder):
 
 | $k$ | $c_k$ | categorical source |
@@ -96,7 +96,7 @@ $Q_\beta^{\text{cat}}$ precision ladder from
 [`probe_q_beta_gamma_gamma_derivation.py`](../../folio-assistant/computations/probe_q_beta_gamma_gamma_derivation.py)
 runs the categorical-derivation chain end-to-end and observes:
 
-| precision-ladder rung | residual against CODATA $Q_\beta$ |
+| precision-ladder rung | residual against CODATA $\mathfrak{Q}_\beta$ |
 |---|---:|
 | Story B at N=1 only (Kashiwara $b$) | $+73.8$ ppm |
 | Story B at N=2 (+ Kashiwara $b^2$) | $+1.25$ ppm  $\leftarrow$ **above** $0.4$ ppm CODATA floor |
@@ -104,7 +104,7 @@ runs the categorical-derivation chain end-to-end and observes:
 | Story B at N=4 (+ mixed $c_4 = b^2 + \tfrac12$) | $+0.018$ ppm |
 
 The **N=2 $\to$ N=3 transition** reduces the residual by **112$\times$**. This
-reduction is **observable** above CODATA $Q_\beta$'s ~0.4 ppm
+reduction is **observable** above CODATA $\mathfrak{Q}_\beta$'s ~0.4 ppm
 measurement floor — so the categorical identification
 $c_3 = J_{\text{Hopf}}(q{=}1) = -2$ is **empirically validated**, not
 just an empirical fit.

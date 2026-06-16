@@ -130,7 +130,7 @@ $$
 $$
 
 The $n = 8$ closed sub-link provides extra parent stability,
-increasing $Q_\beta$ via the $Q^5$ phase-space factor.
+increasing $\mathfrak{Q}_\beta$ via the $Q^5$ phase-space factor.
 
 ---
 

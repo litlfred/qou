@@ -1,9 +1,9 @@
 **Proposition (Leading-bias correction identity).** *Let $\hat c_k$ denote
-the joint-fit numerical extraction of the $Q_\beta$ precision-ladder
+the joint-fit numerical extraction of the $\mathfrak{Q}_\beta$ precision-ladder
 coefficients at substrate $u_0 = b(q_0) \cdot \hbar_{q_0}^2$, and let
 $c_k^{\mathrm{alg}}$ denote the algebraic ladder coefficients
 (Taylor coefficients of the generating function $F(u)$ such that
-$Q_\beta / Q_A = F(u_0)$). If the extraction bias is leading-order
+$\mathfrak{Q}_\beta / Q_A = F(u_0)$). If the extraction bias is leading-order
 linear in $u_0$,*
 
 $$

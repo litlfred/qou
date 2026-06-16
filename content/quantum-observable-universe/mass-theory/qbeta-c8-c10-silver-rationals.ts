@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:qbeta-c8-c10-silver-rationals",
   title:
-    "Q_β c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2",
+    "𝔔_β c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2",
   tags: [
     "qbeta",
     "c-k",

@@ -10,7 +10,7 @@ constants are predictions.
 |-------|--------------|-------------|:-:|
 | $m_\mu / m_e = 206.7682830 \pm 0.0000045$ | Substrate parameter $q_0$ | Dimensionless ratio | $2.2 \times 10^{-8}$ |
 | $m_e = 0.51099895000 \pm 0.00000000015$ MeV | Leptonic mass scale | Electron mass | $2.9 \times 10^{-10}$ |
-| $Q_\beta(n) = 0.78233341 \pm 0.00000061$ MeV | Hadronic energy scale $E_0$ | Free neutron decay | $7.8 \times 10^{-7}$ |
+| $\mathfrak{Q}_\beta(n) = 0.78233341 \pm 0.00000061$ MeV | Hadronic energy scale $E_0$ | Free neutron decay | $7.8 \times 10^{-7}$ |
 
 The first input is a **dimensionless ratio** — it fixes $q_0$
 via the **leading-order substrate-truncation** of the canonical
@@ -36,7 +36,7 @@ the electron ($2.9 \times 10^{-10}$).
 > Wedderburn-graded expansion (LO + single-gen + pair-gen + ...).
 > Numerically the Skein formula closes $m_\mu/m_e = 206.77$ at
 > lepton level because operator-valued corrections are small for
-> leptons; the +0.17% Q_β residual flagged in
+> leptons; the +0.17% 𝔔_β residual flagged in
 > [`-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md)
 > is consistent with operator corrections becoming non-negligible
 > for hadronic observables. Re-derivation of $m_\mu/m_e$ from
@@ -74,7 +74,7 @@ calibrates $\mathfrak{E}_0$:
 $$
   \mathfrak{E}_0^{(\text{cal})}
   =
-  \frac{Q_\beta(n)}{|\Delta(\mathrm{net})|}
+  \frac{\mathfrak{Q}_\beta(n)}{|\Delta(\mathrm{net})|}
   =
   \frac{0.78233}{|h(h-2)/2|}
   \approx  4.179 \text{ MeV}
@@ -107,8 +107,8 @@ categorical-derivation review (Workplan 2 Phase 2).
 
 **Deeper fitting concern .** Above the
 tower-direction puzzle sits a more fundamental gap: the relation
-$Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$ used to
-derive the framework's $Q_\beta$ prediction is itself an **ansatz**,
+$\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$ used to
+derive the framework's $\mathfrak{Q}_\beta$ prediction is itself an **ansatz**,
 not derived from the canonical per-braid mass formula
 [`prop:per-braid-mass-tower`](#prop\:per-braid-mass-tower).
 The unweighted $\mathrm{net}$ sum is structurally different
@@ -117,7 +117,7 @@ match (single-tick form) could be (a) genuine truncation residual
 or (b) an artefact of $q_0 \approx 1.110$ arising from a
 wrong leading-order operator. Until this is resolved by direct
 per-braid computation or a theoretical derivation, **CAL-3 must
-remain an input** and claims of "Q_β derivable from CAL-1 + CAL-2"
+remain an input** and claims of "𝔔_β derivable from CAL-1 + CAL-2"
 are conditional on the unproved ansatz. Full audit:
 [`docs/audits/-q-beta-net-ansatz-fitting-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-q-beta-net-ansatz-fitting-finding.md).
 
@@ -159,9 +159,9 @@ all but three real parameters:
    but the hadronic sector's tower correction introduces a
    $0.17\%$ shift in the energy scale $E_0$ that is not captured
    by the algebraic expression $m_e/(q(q-1))$.  The free neutron
-   $Q_\beta$ calibrates this exactly.  The three inputs correspond
+   $\mathfrak{Q}_\beta$ calibrates this exactly.  The three inputs correspond
    to the three physical sectors: shape ($q$), leptonic size
-   ($m_e$), hadronic interaction strength ($Q_\beta$).
+   ($m_e$), hadronic interaction strength ($\mathfrak{Q}_\beta$).
 
 No further parameters exist because:
 - The knot-particle dictionary is **determined by $\chi = -6$**:
@@ -193,7 +193,7 @@ No further parameters exist because:
   (first prediction, by construction matches calibration input)
 - Proton mass: via Skein pair formula + dressed quark masses
   from Skein resolution tree (tractable computation)
-- Neutron mass: $m_n = m_p + Q_\beta$ (Hecke engine)
+- Neutron mass: $m_n = m_p + \mathfrak{Q}_\beta$ (Hecke engine)
 - Deuteron binding energy: $\Delta E_D \approx 2.224$ MeV
 - Beta decay Q-values: 6 benchmarks at 4.4% MAE
 - Nuclear shell structure and magic numbers

@@ -17,7 +17,7 @@ import { proposition } from "../../schema/builders";
  *
  * Combined with prop:flavor-split-substrate (canonically-derived
  * Hecke-skein flavor split), this gives a full m_p + m_n derivation
- * from only (m_e, m_μ, q_0) — CAL-3 (Q_β) becomes a DERIVED quantity,
+ * from only (m_e, m_μ, q_0) — CAL-3 (𝔔_β) becomes a DERIVED quantity,
  * not an input.
  *
  * Authoring history: split out 2026-06-01 from a previously-combined

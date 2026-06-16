@@ -142,7 +142,7 @@ The $Q$-value
 (log-ratio) form**:
 
 $$
-  Q_\beta^{\mathrm{B}}
+  \mathfrak{Q}_\beta^{\mathrm{B}}
   \;:=\;
   \ln \frac{P_{\mathrm{dau}}(q)}{P_{\mathrm{par}}(q)}
   \cdot \frac{E_0}{z}
@@ -160,16 +160,16 @@ map the eigenfunction observable $\ln V_{\mathrm{pp}}/V_{\mathrm{nn}}$
 onto MeV.
 
 Form B is **not a separate observable** from the NF-counit form
-$Q_\beta^{\mathrm{A}} = |\Delta(\mathrm{net})| \cdot E_0$ of
+$\mathfrak{Q}_\beta^{\mathrm{A}} = |\Delta(\mathrm{net})| \cdot E_0$ of
 [prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic);
 the two are basis-change equivalent at leading order, with the
 explicit bridge identity given in
 [prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge):
 
 $$
-  Q_\beta^{\mathrm{A}}
+  \mathfrak{Q}_\beta^{\mathrm{A}}
   \;=\;
-  Q_\beta^{\mathrm{B}} \cdot \bigl(1 + \tfrac{(z - 1)\,h}{2} + O(h^2)\bigr).
+  \mathfrak{Q}_\beta^{\mathrm{B}} \cdot \bigl(1 + \tfrac{(z - 1)\,h}{2} + O(h^2)\bigr).
 $$
 
 Form B is the natural basis for $N \geq 1$ brane-tower truncation

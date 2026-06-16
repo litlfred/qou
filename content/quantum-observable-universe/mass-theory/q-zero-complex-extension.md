@@ -47,7 +47,7 @@ into $\mathbf{Vec}_\mathbb{R}$.
 **CAL-4 caveat:** a complex $q_0$ with $\lvert q_0 \rvert > 1$ would require either:
 
 1. **A function** expressing $\mathrm{Im}(q_0)$ in terms of the
-   three existing calibrations $(m_e,\,m_\mu/m_e,\,Q_\beta)$ — *not*
+   three existing calibrations $(m_e,\,m_\mu/m_e,\,\mathfrak{Q}_\beta)$ — *not*
    a fourth calibration, which the
    [three-input discipline](#rem:calibration-inputs) forbids; or
 2. **A structural constraint** fixing $\mathrm{Im}(q_0)$ from

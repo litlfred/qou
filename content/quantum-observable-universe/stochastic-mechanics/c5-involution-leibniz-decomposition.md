@@ -29,7 +29,7 @@
 **Proposition ($c_5$ involution + Leibniz decomposition).**
 
 *Let $c_5(q)$ be the precision-ladder coefficient at rung $N=5$ in
-the $Q_\beta$ categorical formula
+the $\mathfrak{Q}_\beta$ categorical formula
 [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder).
 Then $c_5$ admits the categorical decomposition:*
 
@@ -150,7 +150,7 @@ averaging contributions are subdominant. □
 
 ## Categorical interpretation
 
-The framework's $Q_\beta$ predictions live in TWO distinct
+The framework's $\mathfrak{Q}_\beta$ predictions live in TWO distinct
 categorical sectors:
 
 1. **Pure-$\sigma$ sector** ($c_3, c_4, c_6, c_7$): contributions
@@ -166,7 +166,7 @@ categorical sectors:
 
 The two sectors are **independent categorical inputs**: pure-$\sigma$
 is the Hecke-generator action; bar-invariant fixed-point is the
-involution-projector action. Both are needed to reproduce $Q_\beta$
+involution-projector action. Both are needed to reproduce $\mathfrak{Q}_\beta$
 exactly via the precision ladder.
 
 ## Falsifiable prediction

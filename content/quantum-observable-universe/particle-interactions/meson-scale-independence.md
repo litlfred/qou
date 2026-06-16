@@ -33,7 +33,7 @@ each associated with a decay process:
 | **CAL-2** | $\mathfrak{D}_\beta$ | $h^2$ | neutron $\beta$-decay width ($\tau_n = \hbar / \mathfrak{D}_\beta$) |
 | **CAL-3** | $\mathfrak{D}_\pi$ | $h^3$ | pion decay width ($\tau_\pi = \hbar / \mathfrak{D}_\pi$) |
 
-CAL-2 determines $Q_\beta = m_n - m_p - m_\mathfrak{e}$ from the
+CAL-2 determines $\mathfrak{Q}_\beta = m_n - m_p - m_\mathfrak{e}$ from the
 neutron lifetime, which in turn fixes $q_0$ via the substrate
 identity.  CAL-3 determines $m_\pi$ from the pion lifetime, which
 fixes the meson mass scale.  All other masses (proton, neutron,

@@ -66,12 +66,12 @@ verified numerically via
 ([witness](folio-assistant/computations/F-n-categorical-derivation-probe.witness.json),
 2/2 assertions pass).
 
-## Implication for the $Q_\beta$ precision-ladder
+## Implication for the $\mathfrak{Q}_\beta$ precision-ladder
 
-The Q_β factorisation ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
+The 𝔔_β factorisation ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
 writes
 $$
-  Q_\beta \;=\; Q_A \cdot \cos\bigl(\alpha - b\hbar_q^2/2\bigr)
+  \mathfrak{Q}_\beta \;=\; Q_A \cdot \cos\bigl(\alpha - b\hbar_q^2/2\bigr)
               \cdot \prod_{n \geq 2} (1 + c_n \hbar_q^{2n})
 $$
 with claimed coefficients $c_2 = b^2$, $c_3 = -2 b^3$
@@ -83,7 +83,7 @@ See [Table 2](#tbl:trm-hopf-sigma1-sq-closed-form-table2-data).
 
 The mismatch proves the $F_n := 1 + c_n \hbar_q^{2n}$ are NOT
 extracted from the bare Markov trace of $\sigma_1^2$. They are a
-SEPARATE decomposition of $Q_\beta$ in which each factor must
+SEPARATE decomposition of $\mathfrak{Q}_\beta$ in which each factor must
 arise from a distinct categorical object $\mathcal{B}_n$ — for $F_3$
 specifically, the V_(2,2,2) Wedderburn-block projection inside
 Hoefsmit $V_{(2,1)} \otimes V_{(2,1)}$ embedded in $H_6$
@@ -130,4 +130,4 @@ for the derivation status).
    substrate-side and base-ring-agnostic.
 
 
-**Mathematical Novelty:** While the derivation itself follows a standard Hecke/Markov calculation, this closed form represents the simplest nontrivial derived Markov-trace in the framework. The value-driven finding that the bare-Markov $\epsilon^{2n}$ coefficients are *not* the $Q_\beta$ precision-ladder $c_n$ (meaning $F_n$ is a separate categorical decomposition) adds substantive novel mathematical content to the framework.
+**Mathematical Novelty:** While the derivation itself follows a standard Hecke/Markov calculation, this closed form represents the simplest nontrivial derived Markov-trace in the framework. The value-driven finding that the bare-Markov $\epsilon^{2n}$ coefficients are *not* the $\mathfrak{Q}_\beta$ precision-ladder $c_n$ (meaning $F_n$ is a separate categorical decomposition) adds substantive novel mathematical content to the framework.

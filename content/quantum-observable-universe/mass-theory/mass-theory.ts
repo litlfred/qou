@@ -136,7 +136,7 @@ export default chapter({
           ],
         }),
         section({
-          title: "The $Q_\\beta$ precision ladder",
+          title: "The $\\mathfrak{Q}_\\beta$ precision ladder",
           label: "sec:mass-algebraic-qbeta-ladder",
           blocks: [
             "q-beta-categorical-precision-ladder",

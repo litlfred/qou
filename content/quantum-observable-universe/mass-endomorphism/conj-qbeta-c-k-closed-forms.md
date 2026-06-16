@@ -1,4 +1,4 @@
-**Closed-form conjectures for the $Q_\beta$ precision-ladder coefficients $c_4, c_5, c_6, c_7$.**
+**Closed-form conjectures for the $\mathfrak{Q}_\beta$ precision-ladder coefficients $c_4, c_5, c_6, c_7$.**
 
 The framework PROVES $c_3 = J_{\text{Hopf}}(q{=}1) = -2$ via the
 2-strand sub-braid argument (Fact 3 of
@@ -28,7 +28,7 @@ The match quality degrades with $k$. The $c_7$ closed form has
 **signed relative error $|{-8} - 57.149|/57.149 \approx 114\%$**
 (magnitude-only error $|8 - 57.149|/57.149 \approx 86\%$). The
 conjecture is retained because the $N=7$
-correction's leverage on cumulative $Q_\beta$ residual is at the
+correction's leverage on cumulative $\mathfrak{Q}_\beta$ residual is at the
 $10^{-13}$ scale (any $c_7 \in [-100, +100]$ closes to within
 $10^{-4}$ ppb), so the actual numerical value is under-determined.
 
@@ -51,7 +51,7 @@ Three concrete routes (from
 
 ## Why these aren't decoration
 
-The current $Q_\beta$ categorical prediction (Form A $\cdot$ cos $\cdot$ $\prod$ rungs)
+The current $\mathfrak{Q}_\beta$ categorical prediction (Form A $\cdot$ cos $\cdot$ $\prod$ rungs)
 already meets the 7.8 ppb L2 target at $N=3$ (residual +6.02 ppb,
 within target). The c_4..c_7 corrections push residual to sub-ppb,
 which is **research-grade precision beyond the 100$\times$-experimental
@@ -82,5 +82,5 @@ Verified by `qbeta_decay_sdp_full_ck.py` (4 assertions pass).
 
 The "empirical c_k from `binding_q_target_sweep`" are NOT arbitrary
 fits — they're TAUTOLOGICALLY determined by the precision-ladder
-structure applied to CODATA $Q_\beta$. The conjectures here are
+structure applied to CODATA $\mathfrak{Q}_\beta$. The conjectures here are
 the **closed-form pattern interpretations** of those extracted values.

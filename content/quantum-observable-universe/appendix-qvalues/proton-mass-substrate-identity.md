@@ -80,7 +80,7 @@ nucleon masses from only $(m_e, m_\mu, q_0)$:
     $\approx 938.27186\,\mathrm{MeV}$ ($0.24\,\mathrm{ppm}$ residual)
   - $m_n = m_p \cdot (1 + X/(1 - X/2))$ where $X = \Delta m / M_N$
     $\approx 939.56354\,\mathrm{MeV}$ ($2.00\,\mathrm{ppm}$ residual)
-  - $Q_\beta := m_n - m_p - m_e$ is now DERIVED, not an input
+  - $\mathfrak{Q}_\beta := m_n - m_p - m_e$ is now DERIVED, not an input
     (matches CODATA to $-2113\,\mathrm{ppm}$, bottlenecked by $m_n$)
 
 The flavor-split $X$ is an $h^3$-leading quantity:
@@ -98,31 +98,31 @@ $h^4$: $-0.15\,\mathrm{MeV}$.
 The residual decomposition of $m_n$ (2.0 ppm) separates:
 $0.24\,\mathrm{ppm}$ from $F_{\mathrm{Bor}}$ (proton mass) and
 $1.76\,\mathrm{ppm}$ from $X$ (flavor-split formula). The
-$Q_\beta$ residual ($2113\,\mathrm{ppm}$) is dominated entirely
+$\mathfrak{Q}_\beta$ residual ($2113\,\mathrm{ppm}$) is dominated entirely
 by $X$.
 
 The QOU 3-calibration discipline reduces to **2 calibrations**
-$(m_e, m_\mu/m_e)$ for the baryon + $Q_\beta$ sector (or equivalently
+$(m_e, m_\mu/m_e)$ for the baryon + $\mathfrak{Q}_\beta$ sector (or equivalently
 $(m_e, q_0)$ via the muon-anchor identity $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$).
 
 ## Consistency gap: decay-rate cross-check
 
-The mass-derived $Q_\beta = m_n - m_p - m_e \approx 0.7807\,\mathrm{MeV}$
+The mass-derived $\mathfrak{Q}_\beta = m_n - m_p - m_e \approx 0.7807\,\mathrm{MeV}$
 differs from the N=3 categorical-ladder
-$Q_\beta \approx 0.78233\,\mathrm{MeV}$ by $2113\,\mathrm{ppm}$ — bottlenecked
+$\mathfrak{Q}_\beta \approx 0.78233\,\mathrm{MeV}$ by $2113\,\mathrm{ppm}$ — bottlenecked
 by the flavor-split's $0.10\%$ residual. Closing this gap
-would cohomologically prove the $q_0 \leftrightarrow Q_\beta$ relationship.
+would cohomologically prove the $q_0 \leftrightarrow \mathfrak{Q}_\beta$ relationship.
 
 A decay-width cross-check connects both derivations to experimental
 lifetimes via the Fermi theory:
 $\mathfrak{D}_\mu = G_F^2 \mathfrak{m}_\mu^5 / (192\pi^3)$ and
-$\mathfrak{D}_n \propto G_F^2 Q_\beta^5 f(Q_\beta/\mathfrak{m}_e)$,
+$\mathfrak{D}_n \propto G_F^2 \mathfrak{Q}_\beta^5 f(\mathfrak{Q}_\beta/\mathfrak{m}_e)$,
 where $\mathfrak{D}_K = \hbar / (\text{lifetime of } K)$ is the
 decay width in the paper's fraktur-observable convention (avoiding
 collision with $\tau$ = fibre functor and $\Gamma$ = sheaf sections).
 The ratio $\mathfrak{D}_\mu / \mathfrak{D}_n$ eliminates $G_F$ and
-provides a $Q_\beta$-independent consistency test: if both
-$\mathfrak{m}_\mu$ and $Q_\beta$ are substrate-derived, the lifetime
+provides a $\mathfrak{Q}_\beta$-independent consistency test: if both
+$\mathfrak{m}_\mu$ and $\mathfrak{Q}_\beta$ are substrate-derived, the lifetime
 ratio $\hbar/\mathfrak{D}_n \div \hbar/\mathfrak{D}_\mu$ should match
 CODATA ($\approx 4 \times 10^8$) from categorical invariants alone.
 

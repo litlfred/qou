@@ -2,7 +2,7 @@
 
 **Multi-link Jones values at $q = 1$ — Lean infrastructure for the $c_5 / c_6$ candidate investigation.**
 
-The $Q_\beta$ precision ladder
+The $\mathfrak{Q}_\beta$ precision ladder
 ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
 closed $c_1, c_2$ from Kashiwara ($b, b^2$), $c_3$ from
 $J_{\mathrm{Hopf}}(q{=}1) = -2$ at the 3-fold Markov closure, $c_4$

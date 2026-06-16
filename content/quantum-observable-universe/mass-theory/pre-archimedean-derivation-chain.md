@@ -318,14 +318,14 @@ $$
   \;\approx\; 4.186\;\mathrm{MeV}.
 $$
 
-2. **Hadronic calibration.**  From $Q_\beta$ and the symbolic NF difference:
+2. **Hadronic calibration.**  From $\mathfrak{Q}_\beta$ and the symbolic NF difference:
 
 $$
   \mathfrak{E}_0^{(\mathrm{had})}
   \;=\;
-  \frac{Q_\beta}{|\Delta(\mathrm{net})|}
+  \frac{\mathfrak{Q}_\beta}{|\Delta(\mathrm{net})|}
   \;=\;
-  \frac{Q_\beta}{|h(h-2)/2|}
+  \frac{\mathfrak{Q}_\beta}{|h(h-2)/2|}
   \;\approx\; 4.155\;\mathrm{MeV}.
 $$
 
@@ -417,7 +417,7 @@ $\alpha \approx [3]_q^2 \cdot \cosh(h)$ of
 
 ***
 
-## Step 11 — Beta-decay $Q$-values (symbolic, no calibration beyond $Q_\beta$)
+## Step 11 — Beta-decay $Q$-values (symbolic, no calibration beyond $\mathfrak{Q}_\beta$)
 
 Given $T_w^\mathfrak{H}$ and $T_w^{\mathfrak{H}'}$ for parent and
 daughter nuclei (related by one quark-flavor crossing change
@@ -441,7 +441,7 @@ $$
   \;\approx\; -0.1883,
 $$
 
-so $Q_\beta = |\Delta(\mathrm{net})| \times \mathfrak{E}_0$ **by construction
+so $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \times \mathfrak{E}_0$ **by construction
 (this is an ansatz, not derived from the per-braid mass formula
 [`prop:per-braid-mass-tower`](#prop\:per-braid-mass-tower); the
 unweighted $\mathrm{net}$ sum is not the same quantity as the

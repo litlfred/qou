@@ -1,5 +1,5 @@
-**Proposition.** *In the $Q_\beta$ precision-ladder factorisation
-$Q_\beta(q) = Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q)) \cdot \prod_{k \ge 2}(1 + c_k u^k)$
+**Proposition.** *In the $\mathfrak{Q}_\beta$ precision-ladder factorisation
+$\mathfrak{Q}_\beta(q) = Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q)) \cdot \prod_{k \ge 2}(1 + c_k u^k)$
 with $u = b(q) \cdot \hbar_q^2$, the log-correction generating function*
 
 $$
@@ -15,7 +15,7 @@ $$
 
 *Consequently, any candidate Habiro element $F(q)$ whose log-correction
 generating function has its nearest singularity elsewhere than
-$u_{\text{substrate}}$ is structurally REFUTED as a valid Q_β
+$u_{\text{substrate}}$ is structurally REFUTED as a valid 𝔔_β
 precision-ladder kernel.*
 
 ## Why this is the $\S 4(a)$ formalize-first gate

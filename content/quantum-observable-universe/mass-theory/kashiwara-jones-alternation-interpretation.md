@@ -1,5 +1,5 @@
 **Interpretation: the Kashiwara $\leftrightarrow$ Jones alternation in the
-$Q_\beta$ precision ladder.**
+$\mathfrak{Q}_\beta$ precision ladder.**
 
 The categorical-derivation precision ladder from
 [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)
@@ -83,9 +83,9 @@ to **distinct jet orders**:
 The precision ladder is essentially:
 
 $$
-  Q_\beta^{\text{cat}}
+  \mathfrak{Q}_\beta^{\text{cat}}
    \;=\;
-   Q_\beta^A \cdot \prod_{k \geq 1}
+   \mathfrak{Q}_\beta^A \cdot \prod_{k \geq 1}
      F_k\bigl(b,\, J_{\text{closure}_k}(q{=}1)\bigr)\,
      \hbar_q^{2k},
 $$

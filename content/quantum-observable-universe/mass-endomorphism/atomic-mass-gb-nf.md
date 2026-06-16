@@ -15,7 +15,7 @@
   calibration injection) tracked under
   [Workplan 0b](../../../docs/audits/-workplan-0b-script-rewire-handoff.md).
   The substrate-pure replacement is $m_{\mathfrak{n}} = m_{\mathfrak{p}}
-  + Q_\beta + m_e$ with $m_{\mathfrak{p}}$ from
+  + \mathfrak{Q}_\beta + m_e$ with $m_{\mathfrak{p}}$ from
   [`prop:lambda-scale-substrate-form`](lambda-scale-substrate-form.md)
   ($\lambda_{\mathrm{scale}} \approx 5/2 - h^2 G$, matching CODATA to
   ~5.4 ppm — currently *justification* at this precision per
@@ -25,7 +25,7 @@
   `derived` once the Borromean tower wiring is on-trunk.
 - **(six-term spectral)** consumes a proton-mass calibration to fix
   $E_0$ — also a **Class-A opt-out** until $E_0$ is independently
-  derived from CAL-3 ($Q_\beta(n)$). Substrate replacement candidate:
+  derived from CAL-3 ($\mathfrak{Q}_\beta(n)$). Substrate replacement candidate:
   $E_0 = m_e / (q_0(q_0 - 1))$ from
   [`prop:three-calibration-inputs`](three-calibration-inputs.md).
 

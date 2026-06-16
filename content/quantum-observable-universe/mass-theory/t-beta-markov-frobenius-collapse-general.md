@@ -18,7 +18,7 @@ This proposition **lifts** [`prop:t-beta-markov-frobenius-collapse`](t-beta-mark
 
 | Block | Setting | Used by |
 |-------|---------|---------|
-| `prop:t-beta-markov-frobenius-collapse` | substrate model ($A = R$, $\tau = \mathrm{id}$) | scalar Q_β identities |
+| `prop:t-beta-markov-frobenius-collapse` | substrate model ($A = R$, $\tau = \mathrm{id}$) | scalar 𝔔_β identities |
 | `prop:t-beta-markov-frobenius-collapse-general` (this block) | any unital $R$-algebra with normalised trace + PSD + non-deg | Hecke-algebra applications |
 
 ## Proof
@@ -43,7 +43,7 @@ $$
 
 This is the Markov-trace collapse of PR #1750 (substrate model) lifted to the genuine non-commutative Hecke algebra.
 
-The L2-Euclidean coordinate-norm picture (PR #1739: 6-channel $A_i x_i^{L2}$ SHAPE $\times$ S decomposition) and the Markov-Frobenius picture (this proposition: $T_\beta = S \cdot 1$) are **two different operators** inside $H_n(R, q)$ that **both reproduce the SDP constraint** $\tau_M(T_\beta) = S$. The observable $c_k$ Taylor coefficients of $Q_\beta(q)$ are L2/Markov-invariant: see [PR #1750](https://github.com/litlfred/qou/pull/1750) Step 4 diagnostic.
+The L2-Euclidean coordinate-norm picture (PR #1739: 6-channel $A_i x_i^{L2}$ SHAPE $\times$ S decomposition) and the Markov-Frobenius picture (this proposition: $T_\beta = S \cdot 1$) are **two different operators** inside $H_n(R, q)$ that **both reproduce the SDP constraint** $\tau_M(T_\beta) = S$. The observable $c_k$ Taylor coefficients of $\mathfrak{Q}_\beta(q)$ are L2/Markov-invariant: see [PR #1750](https://github.com/litlfred/qou/pull/1750) Step 4 diagnostic.
 
 ## References
 

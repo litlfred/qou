@@ -1,9 +1,9 @@
-The $Q_\beta$ categorical precision ladder writes the substrate prediction
+The $\mathfrak{Q}_\beta$ categorical precision ladder writes the substrate prediction
 for the neutron $\beta$-decay $Q$-value as a convergent product of
 correction rungs about a Form-A baseline,
 
 $$
-  Q_\beta(q) \;=\; Q_{\text{base}}(q) \cdot \prod_{k\geq 2}\bigl(1 + c_k\,u^k\bigr),
+  \mathfrak{Q}_\beta(q) \;=\; Q_{\text{base}}(q) \cdot \prod_{k\geq 2}\bigl(1 + c_k\,u^k\bigr),
   \qquad u \;=\; b\,\hbar_q^2 \;\approx\; 0.00852,
 $$
 
@@ -47,7 +47,7 @@ calibration-anchored.*
 
 The conjecture is the precise statement of what would close the gap. The
 expected route is the same machinery that resolved the analogous
-$\alpha_{\mathrm{EM}}$ next-order factor: identify the $Q_\beta$
+$\alpha_{\mathrm{EM}}$ next-order factor: identify the $\mathfrak{Q}_\beta$
 **Habiro element**, the $q$-series whose Taylor coefficients are the
 $c_k$. Such an element would make each $c_{k\geq 3}$ exact and
 anchor-independent, turn the per-rung magnitude $|c_{N+1}\,u^{N+1}|$ into a

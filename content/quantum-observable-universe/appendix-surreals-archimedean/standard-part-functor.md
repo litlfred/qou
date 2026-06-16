@@ -140,7 +140,7 @@ This mapping guarantees that the exact active-partition factorization and the Q-
 The scale $\alpha$ in the diagram is the canonical energy scale $\alpha = E_0 =
 \mathfrak{m}_e/\bigl(q_0(q_0-1)\bigr)$, the electron mass lifted by the substrate
 factor — a derived quantity, not a free parameter (in particular it is neither
-the neutron $\beta$-decay value $Q_\beta$ nor a deuteron-pinned fit). Writing the
+the neutron $\beta$-decay value $\mathfrak{Q}_\beta$ nor a deuteron-pinned fit). Writing the
 bond suppression $s(K) = 1 - \mathrm{tr}_M(W_{\mathrm{atom}})/\mathrm{tr}_M(W_{\mathrm{free}})$
 and the log-ratio $L(K) = \ln\bigl(\mathrm{tr}_M(W_{\mathrm{free}})/\mathrm{tr}_M(W_{\mathrm{atom}})\bigr)
 = -\ln(1-s)$, the exact algebraic trace is $B_{\mathrm{sym}} = \alpha\,L$; its

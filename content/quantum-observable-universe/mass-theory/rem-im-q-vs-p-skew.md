@@ -57,7 +57,7 @@ So:
 
 Quantitative consequences differ between the two mechanisms:
 
-1. **Resolving the +0.17% $Q_\beta$ residual**: this requires either
+1. **Resolving the +0.17% $\mathfrak{Q}_\beta$ residual**: this requires either
    (a) the missing P_skew content at real q (the P_skew channel
    that bar-projection discards), or (b) Im(q) $\ne$ 0 producing
    complex tr_M whose modulus closes the residual.

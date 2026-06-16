@@ -15,7 +15,7 @@ for the trefoil's crossing asymmetry that produces the observed
 $m_n > m_p$ ordering.
 
 The section also houses the Frobenius Gram matrix, the archimedean
-functor uniqueness theorem, the $Q_\beta$ categorical precision
+functor uniqueness theorem, the $\mathfrak{Q}_\beta$ categorical precision
 ladder, and the filtration bridges (Hecke bi-filtration,
 Galois--braid joint action, adelic substrate) that connect the
 algebraic mass machinery to the number-theoretic structure of
