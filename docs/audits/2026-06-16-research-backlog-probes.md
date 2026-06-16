@@ -206,6 +206,57 @@ argument (formalize-first). Reproducible: `h9_wedderburn_tractability`
 probe + the $\dim_q$ and Borromean-action tables above (exact sympy,
 braid- and Hecke-relation verified).
 
+### #7 where $\mathfrak{E}_0$ actually lives (corpus-grep result)
+
+The natural follow-up — "if not colour, does the flavour/spatial sector
+*derive* $\mathfrak{E}_0$?" — is answered by the corpus, not by new work.
+A corpus-grep (`grep -rn 4.155 content/`) finds $\mathfrak{E}_0$ **is
+already given a structural $N=0$ value**, in
+[`observations/epistemic-status-of-calibrations.md`](../../content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md)
+(CAL-3 section) and
+[`mass-theory/three-calibration-inputs.md`](../../content/quantum-observable-universe/mass-theory/three-calibration-inputs.md):
+
+$$
+\mathfrak{E}_0^{(N=0)} \;=\; \frac{m_e}{q_0\,(q_0-1)} \;=\; 4.18598\ \text{MeV}
+\qquad\text{vs}\qquad
+\mathfrak{E}_0^{(\text{cal})} = \frac{Q_\beta}{|\Delta(\mathrm{net})|} = 4.15494\ \text{MeV}
+\quad(+0.75\%).
+$$
+
+So $\mathfrak{E}_0$ is **not** a free 4th parameter and **not** colour: it
+is the **electron scale $m_e$ (CAL-1)** times a pure **substrate factor
+$1/(q_0(q_0-1))$**. The flavour sector enters the $Q_\beta$ relation only
+through $|\Delta(\mathrm{net})|$, the proton$-$neutron *surviving trace
+difference* — which, by the #7 result above, is exactly what the $(2,1)$
+standard channel carries (the only block whose braid action is
+non-scalar). The picture is internally consistent:
+
+| factor in $Q_\beta = |\Delta(\mathrm{net})|\cdot\mathfrak{E}_0$ | sector | status |
+|---|---|---|
+| $\mathfrak{E}_0 = m_e/(q_0(q_0-1))$ | electron $\times$ substrate | **derived** ($N=0$), $+0.75\%$ |
+| $|\Delta(\mathrm{net})|$ | flavour $u$–$d$ typing, $(2,1)$ channel | computed from $H_3$ NF |
+| colour $(1^3)$ | confinement | **factor $1$** (#7 above) |
+
+**The genuine open gap is therefore *not* the value of
+$\mathfrak{E}_0$** but two upstream items already logged in the corpus
+(so neither is newly "open"):
+
+1. the relation $Q_\beta = |\Delta(\mathrm{net})|\cdot\mathfrak{E}_0$ is
+   **postulated**, not derived from the canonical per-braid mass formula
+   (audit `-q-beta-net-ansatz-fitting-finding.md`);
+2. the $+0.75\%$ derived-vs-calibrated gap has **no discriminator** —
+   genuine $N=0$ truncation residual vs substrate artefact
+   (epistemic-status-of-calibrations.md, CAL-3).
+
+**This session's contribution to #7 is the negative half of that table:**
+a rigorous proof that colour resolution contributes a factor of exactly
+$1$ (trivial, Borromean, and entangled cases all closed), which *removes
+the competing "colour predicts $\mathfrak{E}_0$" hypothesis* and confirms
+the existing $m_e/(q_0(q_0-1))$ framing is where the scale lives. No new
+derivation of $\mathfrak{E}_0$ is proposed (corpus-grep discipline: it is
+already derived at $N=0$; re-deriving it would duplicate
+existing content).
+
 **Note:** the bean cites `beta-decay-energy-scale.witness.json`, which
 **does not exist** in `folio-assistant/computations/`. The $H_3$
 NF₊/NF₋ table in `negative-debt-confinement.md` is not currently backed by
