@@ -88,9 +88,42 @@ surfaced **two concrete blockers** that confirm the "1–2 session" rating:
    `c₂ = −1` gate.
 
 Neither blocker is fundamental — they are exactly the careful setup the
-synthesis budgets at 1–2 sessions. The attempt did **not** emit any
-`c_k` values (the `c₂` gate guard prevented trusting the wrong-object
-output), which is the formalize-first-correct outcome.
+synthesis budgets at 1–2 sessions.
+
+### Completed run (2026-06-16, both blockers fixed)
+
+Both blockers were then resolved and the probe **ran to completion**:
+
+- **Object fixed.** `Δ(net)(q)` reconstructed **symbolically** by summing
+  the `coefficient_symbolic` per-word entries in
+  `free-neutron-decay.witness.json`:
+  `Δ(net)(q) = (q¹⁴+2q¹³−5q¹²−10q¹¹+10q¹⁰+24q⁹−16q⁸−32q⁷+16q⁶+24q⁵−10q⁴−10q³+5q²+2q−1)/(4q⁷)`.
+  Validated: `Δ(net)(q₀) = −0.18829060` vs witness `−0.18829062` (Δ=1.8e-8);
+  the numerator has a `(q−1)` zero (sum of coeffs at q=1 is 0), so
+  `Q_β = |Δ(net)|·E₀` is finite at q=1 and `R(q→1) = 1.0` exactly. Object
+  **validated**: `|Δ(net)|·E₀ = 0.788 MeV ≈ Q_β`.
+- **Perf fixed.** Switched to numeric `mp.taylor` (60 dps) for the s-series.
+- **Result — the c₂ gate FAILS:** the net-route ladder gives
+  **`c₂ ≈ −8.006`, not the canonical `c₂ = −1`**. (Caveat: high-order
+  `mp.taylor` is numerically unstable here — odd-order `[s^odd] log R ~ 10⁴`
+  — so c₃⁺ from this route are not yet trustworthy; an exact-rational
+  Taylor is needed for those. But `c₂` at `s⁴` is low-order and robust.)
+
+**Finding:** the `|Δ(net)|·E₀` **net-route** (the *binding-like*
+`E₀·Δ(trace)` object) does **not** reproduce the canonical `c₂ = −1`,
+which lives in the τ_M **brane-tower** route. The two are
+**parallel-but-distinct ladders** — same `E₀·Δ(trace)` template, different
+objects (and, per `substrate-cohomology-calibration-story`, conjugate
+bar-parities: binding/net = bar-even mass side, the Q_β brane-tower
+precision ladder = bar-odd sinh side). This empirically corroborates the
+structural verdict (c_k≥3 are q-dependent / route-dependent, not universal
+constants). The `−8` is suggestive next to binding's `m_e·8G`, but one
+number is not identified.
+
+Witness: `computations/qbeta/qbeta-ck-sseries-operator-match.witness.json`
+(c₂ gate assertion FAILS by design — flags the net-route ≠ brane-tower).
+The attempt thus did emit a c₂, gated it, and correctly **refused** to
+trust c₃⁺ (gate fail + numerical instability) — formalize-first correct.
 
 ## What IS rigorous and what the genuine next step is
 

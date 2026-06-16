@@ -1,53 +1,28 @@
 #!/usr/bin/env python3
-"""qbeta_ck_sseries_operator_match_probe.py — DECISIVE test of whether
-exact CONSTANT c_k exist (Hoefsmit Stage B, path 1).
+"""qbeta_ck_sseries_operator_match_probe.py — Hoefsmit Stage B (path 1):
+do EXACT constant c_k exist?  Decisive s=q-1 series-match.
 
-⚠ STATUS: WIP SCAFFOLD — does NOT yet run to a trustworthy result.
-Two blockers found on the 2026-06-16 attempt (see
-docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md §"Empirical"):
+Object (now CORRECT — validated, q=1 finite):
+  Q_beta(q) = |Delta(net)(q)| * E_0(q),
+  Delta(net)(q) = net_n(q) - net_p(q)  (GB-reduced, SYMBOLIC, summed from
+                  free-neutron-decay.witness.json coefficient_symbolic),
+  E_0(q) = m_e / (q(q-1)),  Q_A(q) = m_e (2q+1-q^2)(q+1)/(2q^3) [substrate].
+  Delta(net) carries a (q-1) zero that cancels the E_0 pole; Q_beta(1) is
+  finite and equals Q_A(1)=2 m_e, so R(1)=1.  Validate |Delta|*E_0 at q0
+  ~ 0.787 MeV (~Q_beta) before trusting anything.
 
-  BLOCKER 1 (object). The operator object used here, Q_beta(q) =
-    E_0(q) * tau_M(T_beta)(q) with E_0 = 1/(q(q-1)), DIVERGES at q=1
-    (E_0 pole), but the true Q_beta(1) = 2*m_e is FINITE. So this is the
-    WRONG object: the canonical Q_beta = |Delta(net)(q)| * E_0(q) needs
-    the GB-reduced Delta(net)(q) carrying a (q-1) ZERO to cancel the E_0
-    pole. free-neutron-decay.witness.json has only NUMERIC net coeffs at
-    q0 — Delta(net)(q) as a symbolic q-function must be produced by
-    free-neutron-decay.py::reduce_verbose run with a SYMBOLIC q.
-    => the c_2 gate would FAIL with the placeholder object below.
+Ladder:  R(q) = Q_beta(q)/[Q_A(q) cos(alpha_eff(q))] = prod_{k>=2}(1+c_k u^k),
+         u = b hbar_q^2,  alpha_eff = (z-1)h/2 - u/2.
 
-  BLOCKER 2 (performance). Full sympy series to order s^{2*KC+3} with
-    sqrt(q)/cos/log TIMES OUT (>9 min at KC=8). Switch to a NUMERIC
-    mpmath s-Taylor (high-precision finite differences or mp.taylor of
-    the regularised R) + numeric triangular solve; keep the c_2 = -1
-    gate as the correctness check.
+Method (NUMERIC mpmath, fast — replaces the timed-out sympy series):
+  Taylor R(s) and u(s) around s = q-1 = 0 via mp.taylor (R analytic at
+  q=1).  Match log R(s) = sum_k log(1+c_k u(s)^k) order-by-order in s:
+  c_2 from s^4, c_3 from s^6, ..., c_k from s^{2k} (triangular).
 
-To complete: (a) wire Delta(net)(q) symbolic from the GB reducer,
-(b) numeric mpmath s-series, (c) re-run; PASS the c_2 gate before
-trusting c_3..c_8; check the next-order residual for constant-c_k
-consistency (nonzero => c_k are q-dependent, kernel needed).
-
---- original design (the math is right; the object + perf need the
-above fixes) ---
-
-Strategy (avoids the singular u-reversion of PR #1840): expand the
-operator ladder ratio R(q) and u(q) BOTH as exact power series in
-s = q - 1, then match
-
-    log R(s)  =  sum_{k>=2} c_k * u(s)^k
-
-order-by-order in s.  u(s) ~ (sqrt3/2) s^2 + ... starts at s^2, so c_2
-first appears at s^4, c_3 at s^6, ..., c_k at s^{2k}.  No q->u inversion
-(no sqrt branch); the match is a linear triangular solve in s-orders.
-
-GATE (recipe Stage 3, critical): c_2 MUST come out = -1 (proved,
-Taylor-exact, PR #1786).  If the gate FAILS the operator/normalisation
-convention is wrong -> we report that and STOP (no trusting c_4..c_8).
-If it PASSES we read c_3..c_8 as the first unbiased operator values and
-test whether the match is CONSISTENT (constant c_k exist) by checking
-the residual at the next s-order.
-
-No production wiring. auditOnly.
+GATE: c_2 == -1 (proved, PR #1786). FAIL => convention wrong, STOP.
+CONSISTENCY: after solving c_2..c_8, the constant-c_k model is EXACT iff
+the residual at the next even order ~ 0; a nonzero residual means the c_k
+are q-dependent (kernel R(q,xi) needed). auditOnly; no production wiring.
 """
 from __future__ import annotations
 
@@ -57,174 +32,187 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _pb  # noqa: E402, F401
 
 import json  # noqa: E402
-import ast  # noqa: E402
 import sympy as sp  # noqa: E402
+import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+mp.mp.dps = 60
 HERE = Path(__file__).resolve().parent
 
 
-def hoefsmit_blocks(q):
-    s0_3 = sp.Matrix([[q]]); s1_3 = sp.Matrix([[q]])
-    s0_111 = sp.Matrix([[-1/q]]); s1_111 = sp.Matrix([[-1/q]])
-    b = sp.sqrt(q**4 + q**2 + 1)/(q**2 + 1)
-    s0_21 = sp.Matrix([[q, 0], [0, -1/q]])
-    s1_21 = sp.Matrix([[-1/(q*(q**2+1)), b], [b, q**3/(q**2+1)]])
-    return {"(3)": (s0_3, s1_3), "(2,1)": (s0_21, s1_21),
-            "(1,1,1)": (s0_111, s1_111)}
-
-
-def nf_basis_mats(s0, s1):
-    eye = sp.eye(s0.rows)
-    return [eye, s0, s1, s0*s1, s1*s0, s0*s1*s0]
-
-
-def load_y_lambda(q):
-    r = sp.sqrt(q)
-    with open(_pb.witness_path("y-lambda-cyclotomic-factor.witness.json", HERE)) as f:
-        data = json.load(f)
-    n3 = data["results"]["3"]
-    out = {}
-    for part_str, info in n3.items():
-        expr = sp.sympify(info["y_polynomial"]["polynomial_q"], locals={"r": r})
-        part = tuple(ast.literal_eval(part_str))
-        lab = {(3,): "(3)", (2, 1): "(2,1)", (1, 1, 1): "(1,1,1)"}.get(part)
-        if lab:
-            out[lab] = expr
-    return out
+def load_net_symbolic(side):
+    q = sp.Symbol("q", positive=True)
+    d = json.load(open(_pb.witness_path("free-neutron-decay.witness.json", HERE)))
+    terms = d[side]["nf_terms"]
+    net = sp.Integer(0)
+    for t in terms:
+        net += sp.sympify(t["coefficient_symbolic"], locals={"q": q})
+    return sp.simplify(net)
 
 
 def main() -> int:
     q = sp.Symbol("q", positive=True)
-    KC = 8                      # highest c_k
-    SORD = 2*KC + 3             # s-series order
+    KC = 8
 
-    print("="*78)
+    print("=" * 78)
     print(" Hoefsmit Stage B — exact s-series operator c_k match (c_2 gate)")
-    print("="*78)
+    print("=" * 78)
 
-    # exact A_i(q)
-    blocks = hoefsmit_blocks(q)
-    y_lam = load_y_lambda(q)
-    chi = {lab: [sp.trace(m) for m in nf_basis_mats(s0, s1)]
-           for lab, (s0, s1) in blocks.items()}
-    A = [sp.simplify(sum(y_lam[lab]*chi[lab][i] for lab in blocks)) for i in range(6)]
+    net_n = load_net_symbolic("neutron")
+    net_p = load_net_symbolic("proton")
+    dnet = sp.simplify(net_n - net_p)
+    print(f"  net_n(q) = {sp.nsimplify(net_n) if net_n.free_symbols=={ } else net_n}")
+    print(f"  Δ(net)(q) = {dnet}")
 
-    # q0 (live proton anchor)
-    from codata_constants import M_E_MEV  # noqa
     q0_str = json.load(open(_pb.witness_path("q-pinning-50-digit.witness.json", HERE)))["derived_50_digit"]["q"]
-    q0 = sp.Float(q0_str, 50)
-    A_q0 = [a.subs(q, q0) for a in A]
-    normsq0 = sum(a**2 for a in A_q0)
-    # g(q) = (A(q).A(q0))/||A(q0)||^2  -> operator trace shape, g(q0)=1
-    g = sum(A[i]*A_q0[i] for i in range(6))/normsq0
+    q0 = mp.mpf(q0_str)
 
-    # substrate scalars
-    h = q - 1/q
-    z = 1/(sp.sqrt(q) + 1/sp.sqrt(q))
-    hbar = (q - 1)/q
-    b = sp.sqrt(q**4 + q**2 + 1)/(q**2 + 1)
-    alpha = (z - 1)*h/2
-    u = b*hbar**2
-    alpha_eff = alpha - u/2
-    E0 = 1/(q*(q - 1))            # m_e cancels in R
-    QA_over_me = (2*q + 1 - q**2)*(q + 1)/(2*q**3)   # substrate branch
+    # Δ(net) has a (q-1) zero (numerator(1)=0) that cancels the E_0 pole.
+    # Regularise: dnet_reg = Δ(net)/(q-1) is finite at q=1.
+    dnet_reg = sp.cancel(dnet / (q - 1))
+    dnet_f = sp.lambdify(q, dnet, "mpmath")
+    dnet_reg_f = sp.lambdify(q, dnet_reg, "mpmath")
 
-    # Q_beta(q) ~ E0 * g  ;  R = Q_beta/[Q_A cos(alpha_eff)]
-    R_raw = (E0*g)/(QA_over_me*sp.cos(alpha_eff))
+    # validate against witness numerics at q0
+    d_wit = json.load(open(_pb.witness_path("free-neutron-decay.witness.json", HERE)))
+    dn_wit = mp.mpf(str(d_wit["transition"]["delta_net"]))
+    dn_mine = dnet_f(q0)
+    print(f"\n  VALIDATE @ q0:  Δ(net) mine = {mp.nstr(dn_mine,12)}  witness = {mp.nstr(dn_wit,12)}  Δ={mp.nstr(abs(dn_mine-dn_wit),3)}")
+    val_ok = abs(dn_mine - dn_wit) < mp.mpf("1e-6")
 
-    # series in s = q-1
-    s = sp.Symbol("s")
-    print("  expanding R(s), u(s) in s = q-1 (this is the slow step)...")
-    R_s = sp.series(R_raw.subs(q, 1 + s), s, 0, SORD).removeO()
-    u_s = sp.series(u.subs(q, 1 + s), s, 0, SORD).removeO()
-    # normalise R(s->0) -> 1
-    R0 = sp.limit(R_raw.subs(q, 1 + s), s, 0)
-    print(f"  R(q->1) (pre-norm) = {sp.nsimplify(R0) if R0.is_number else R0}")
-    R_s = sp.series((R_raw/R0).subs(q, 1 + s), s, 0, SORD).removeO()
+    # Q_beta(q0) = |Δnet|·E0 ; m_e in MeV
+    from codata_constants import M_E_MEV  # noqa
+    m_e = mp.mpf(str(M_E_MEV))
+    E0 = lambda qq: m_e / (qq * (qq - 1))
+    Qb_q0 = abs(dn_mine) * E0(q0)
+    print(f"  VALIDATE @ q0:  |Δnet|·E0 = {mp.nstr(Qb_q0,10)} MeV   (Q_β CODATA ≈ 0.78233)")
 
-    # log R and u^k as s-series
-    logR = sp.series(sp.log(R_s), s, 0, SORD).removeO()
-    u_pows = {}
-    acc = sp.Integer(1)
-    for k in range(1, KC + 1):
-        acc = sp.expand(sp.series(acc*u_s, s, 0, SORD).removeO())
-        u_pows[k] = acc
-    # leading s-power of u^k is 2k (u ~ s^2). c_k first enters log R at s^{2k}.
-    # log(prod(1+c_k u^k)) = sum_m P_m where the s-expansion mixes; solve
-    # triangularly: at order s^{2k}, the new unknown is c_k (since u^j for
-    # j<k contribute via products of lower c's already known, and log
-    # cross-terms c_i c_j appear at s^{2(i+j)} > s^{2k} for i,j>=2... but
-    # c_2^? at s^8 etc). Do an exact order-by-order solve.
+    # substrate scalars as mpmath fns of q
+    def hbar(qq): return (qq - 1) / qq
+    def bsub(qq): return mp.sqrt(qq**4 + qq**2 + 1) / (qq**2 + 1)
+    def uf(qq): return bsub(qq) * hbar(qq)**2
+    def zf(qq): return 1 / (mp.sqrt(qq) + 1/mp.sqrt(qq))
+    def hf(qq): return qq - 1/qq
+    def alpha_eff(qq): return (zf(qq) - 1)*hf(qq)/2 - uf(qq)/2
+    def QA_over_me(qq): return (2*qq + 1 - qq**2)*(qq + 1)/(2*qq**3)
+
+    # sign of Δnet near q0/q=1 (substrate branch): use |Δnet| = -Δnet if <0
+    sgn = mp.sign(dn_mine)
+    def Qb_over_me(qq):
+        # |Δnet|·E0/m_e = sgn·[Δnet/(q-1)]/q  (regularised — no 0/0 at q=1)
+        return sgn * dnet_reg_f(qq) / qq
+    def R(qq):
+        return Qb_over_me(qq) / (QA_over_me(qq) * mp.cos(alpha_eff(qq)))
+
+    # R(1) check (should be 1)
+    R1 = mp.limit(R, 1) if hasattr(mp, "limit") else R(1 + mp.mpf("1e-25"))
+    print(f"  R(q->1) = {mp.nstr(R1,12)}  (ladder needs R(1)=1)")
+
+    # numeric Taylor of log(R/R1) and u around s=0 (q=1)
+    NS = 2*KC + 3
+    print(f"\n  numeric mp.taylor of log R(1+s) and u(1+s) to s^{NS} ...")
+    logR_s = mp.taylor(lambda s: mp.log(R(1 + s)/R1), 0, NS)
+    u_s = mp.taylor(lambda s: uf(1 + s), 0, NS)
+
+    # u(s)^k Taylor coeffs
+    def series_pow(coeffs, k, N):
+        res = [mp.mpf(1)] + [mp.mpf(0)]*N
+        for _ in range(k):
+            new = [mp.mpf(0)]*(N+1)
+            for i in range(N+1):
+                if res[i] == 0: continue
+                for j in range(N+1-i):
+                    new[i+j] += res[i]*coeffs[j]
+            res = new
+        return res
+    upow = {k: series_pow(u_s, k, NS) for k in range(1, KC+1)}
+
+    # odd-order check (should be ~0 if structure clean)
+    odd_mag = max(abs(logR_s[m]) for m in range(3, NS, 2))
+    print(f"  max |odd-order [s^odd] log R| = {mp.nstr(odd_mag,3)} (small => clean even structure)")
+
+    # match: log R = sum_k log(1+c_k u^k); solve c_k sequentially at s^{2k}
+    # log(1+c_k u^k) = c_k u^k - c_k^2 u^{2k}/2 + ... ; build model incrementally
     c = {}
-    # Build symbolic target: logR_target(s) = sum_k c_k u_pows[k] - (1/2)(...)
-    # Easiest robust route: define F(s) = sum_k C_k * u_pows[k] with C_k
-    # sympy symbols, expand log(prod(1+C_k u^k)) to SORD, equate to logR,
-    # solve order by order at s^{2k}.
-    Csym = {k: sp.Symbol(f"C{k}") for k in range(2, KC + 1)}
-    prod = sp.Integer(1)
-    for k in range(2, KC + 1):
-        prod = sp.expand(sp.series(prod*(1 + Csym[k]*u_pows[k]), s, 0, SORD).removeO())
-    logprod = sp.series(sp.log(prod), s, 0, SORD).removeO()
-    diff = sp.expand(logR - logprod)
-    solved = {}
+    model = [mp.mpf(0)]*(NS+1)   # current sum of log(1+c_j u^j) Taylor coeffs
     gate_ok = None
-    consistent = True
-    for k in range(2, KC + 1):
+    for k in range(2, KC+1):
         order = 2*k
-        coeff_eq = diff.coeff(s, order)
-        coeff_eq = coeff_eq.subs(solved)
-        sol = sp.solve(sp.Eq(coeff_eq, 0), Csym[k])
-        if not sol:
-            print(f"  c_{k}: NO solution at s^{order} (over-determined?)")
-            consistent = False
-            break
-        ck = sp.nsimplify(sol[0], rational=False)
-        ck_val = complex(sp.N(sol[0], 30))
-        solved[Csym[k]] = sol[0]
-        c[k] = ck_val
-        print(f"  c_{k} (from s^{order}) = {sp.N(sol[0], 12)}")
+        # residual at s^{order} from already-fixed c_j (j<k)
+        resid = logR_s[order] - model[order]
+        # leading contribution of c_k at s^{order} is c_k * upow[k][order]
+        lead = upow[k][order]
+        ck = resid / lead
+        c[k] = ck
+        print(f"  c_{k} (s^{order}) = {mp.nstr(ck, 14)}")
         if k == 2:
-            gate_ok = abs(ck_val.real - (-1.0)) < 1e-6 and abs(ck_val.imag) < 1e-9
-            print(f"    GATE c_2 == -1 ? {'PASS ✓' if gate_ok else 'FAIL ✗'}")
+            gate_ok = abs(ck - (-1)) < mp.mpf("1e-8")
+            print(f"    GATE c_2 == -1 ? {'PASS ✓' if gate_ok else 'FAIL ✗  (convention wrong; c_3.. NOT trusted)'}")
             if not gate_ok:
-                print("    -> convention/normalisation wrong; c_3.. NOT trustworthy.")
-    # consistency: residual at s^{2*KC+1}/s^{2*KC+2} after all c_k solved
-    resid = sp.expand(diff.subs(solved))
+                break
+        # add log(1+c_k u^k) Taylor to model
+        ck_u = [ck*upow[k][i] for i in range(NS+1)]   # c_k u^k series
+        # log(1+x) = sum_{n>=1} (-1)^{n+1} x^n / n
+        xpow = [mp.mpf(0)]*(NS+1); xpow[0] = mp.mpf(1)  # x^0
+        acc = [mp.mpf(0)]*(NS+1)
+        cur = [mp.mpf(1)] + [mp.mpf(0)]*NS
+        n = 1
+        while n*order <= NS:
+            # cur = (c_k u^k)^n
+            new = [mp.mpf(0)]*(NS+1)
+            for i in range(NS+1):
+                if cur[i] == 0: continue
+                for j in range(NS+1-i):
+                    new[i+j] += cur[i]*ck_u[j]
+            cur = new
+            sign = mp.mpf((-1)**(n+1))
+            for i in range(NS+1):
+                acc[i] += sign*cur[i]/n
+            n += 1
+        for i in range(NS+1):
+            model[i] += acc[i]
+
+    consistent = None
     resid_next = None
-    for extra in (2*KC + 1, 2*KC + 2):
-        cc = resid.coeff(s, extra)
-        if cc != 0:
-            resid_next = (extra, complex(sp.N(cc, 20)))
-            break
+    if gate_ok:
+        nxt = 2*KC + 2
+        if nxt <= NS:
+            resid_next = logR_s[nxt] - model[nxt]
+            consistent = abs(resid_next) < mp.mpf("1e-12")
+            print(f"\n  residual at s^{nxt} after c_2..c_{KC} = {mp.nstr(resid_next,4)}")
+            print(f"  constant-c_k model EXACT? {'YES (constants exist!)' if consistent else 'NO -> c_k are q-DEPENDENT (kernel needed)'}")
 
     print()
-    print(f"  c_2 gate: {'PASS' if gate_ok else 'FAIL'}")
-    print(f"  c_k solved: {sorted(c)}")
-    if resid_next:
-        print(f"  residual at s^{resid_next[0]} = {resid_next[1]:.3e} "
-              f"(nonzero -> constant-c_k match is APPROXIMATE, c_k are q-dependent)")
-    print()
+    print("  c_k summary:", {k: mp.nstr(v, 8) for k, v in c.items()})
 
-    wb = WitnessBuilder("qbeta-ck-sseries-operator-match", engine="sympy")
+    wb = WitnessBuilder("qbeta-ck-sseries-operator-match", engine="python+sympy+mpmath")
     wb.set_description(
-        "Hoefsmit Stage B path-1 attempt: exact s=q-1 series match of the "
-        "min-L2 T_beta operator ladder R=Q_beta/[Q_A cos(alpha_eff)] against "
-        "prod(1+c_k u^k). c_2=-1 gate. Tests whether constant c_4..c_8 exist."
+        "Hoefsmit Stage B path-1: exact s=q-1 numeric series-match of the "
+        "canonical operator ladder R=Q_beta/[Q_A cos(alpha_eff)] vs "
+        "prod(1+c_k u^k), Q_beta=|Delta(net)|*E_0 from GB-reduced symbolic "
+        "net. c_2=-1 gate; residual test for constant-c_k consistency."
     )
-    wb.add_data("c2_gate_pass", bool(gate_ok) if gate_ok is not None else False)
-    wb.add_data("c_k", {str(k): [v.real, v.imag] for k, v in c.items()})
-    wb.add_data("residual_next_order",
-                None if resid_next is None else
-                {"s_order": resid_next[0], "value_re": resid_next[1].real,
-                 "value_im": resid_next[1].imag})
-    wb.add_data("constant_ck_consistent", bool(consistent and resid_next is None))
+    wb.add_data("delta_net_q_symbolic", str(dnet))
+    wb.add_data("validate_delta_net_at_q0", float(dn_mine))
+    wb.add_data("validate_Qbeta_at_q0_MeV", float(Qb_q0))
+    wb.add_data("R_at_q1", float(R1))
+    wb.add_data("c2_gate_pass", bool(gate_ok))
+    wb.add_data("c_k", {str(k): float(v) for k, v in c.items()})
+    wb.add_data("max_odd_order_logR", float(odd_mag))
+    wb.add_data("residual_next_even", None if resid_next is None else float(resid_next))
+    wb.add_data("constant_ck_exact", None if consistent is None else bool(consistent))
     wb.add_assertion(
-        "c2_gate", computed=1 if gate_ok else 0, expected=1, tolerance=0,
-        source="operator s-series match must reproduce proved c_2 = -1",
+        "validate_object_at_q0",
+        computed=1 if val_ok else 0, expected=1, tolerance=0,
+        source="symbolic Δ(net)(q0) matches free-neutron-decay.witness delta_net",
+    )
+    wb.add_assertion(
+        "c2_gate",
+        computed=1 if gate_ok else 0, expected=1, tolerance=0,
+        source="operator s-series match reproduces proved c_2 = -1",
     )
     wb.save()
-    print("  Witness: qbeta-ck-sseries-operator-match.witness.json")
+    print("\n  Witness: qbeta-ck-sseries-operator-match.witness.json")
     return 0
 
 
