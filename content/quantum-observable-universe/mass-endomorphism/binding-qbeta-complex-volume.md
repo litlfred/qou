@@ -18,22 +18,28 @@ $\mathbb{V}(K) = \operatorname{Vol}(K) + i\,\mathrm{CS}(K)$.*
 ## The one object
 
 The mass endomorphism $\mathcal{M}$ acts on the **knot-convolved**
-(bound) braid word of a composite state. Let $\Pi_{\text{free}}$ be the
-**projection onto the factorized / simple** tensor
-$\mathfrak{p}^{Z}\otimes\mathfrak{n}^{N}$. The **convolution-defect**
-$\mathcal{T}$ is the part of $\mathcal{M}$ that does *not* survive that
-projection — a **projection defect**, not a generic difference (hence
-$\mathcal{T}$, not an overloaded $\Delta$):
+braid word of a **confined knot** $K$. Let $\Pi_{\text{free}}$ be the
+**projection onto the factorized / split** tensor — $K$'s constituents
+un-linked. The **convolution-defect** $\mathcal{T}(K)$ is the part of
+$\mathcal{M}$ that does *not* survive that projection — a **projection
+defect**, not a generic difference (hence $\mathcal{T}$, not an
+overloaded $\Delta$):
 
 $$
-  \mathcal{T}
+  \mathcal{T}(K)
   \;=\;
   \mathrm{tr}_M\big((\Pi_{\text{free}}-\mathbf{1})\,\mathcal{M}\big)
   \;=\;
-  \mathrm{tr}_M(W_{\text{free}}) - \mathrm{tr}_M(W_{\text{atom}})
+  \tau_M^{\text{free}}(K) - \tau_M^{\text{knot}}(K)
   \;=\;
-  \sum_\lambda y_\lambda\,\big(\chi^\lambda_{\text{free}} - \chi^\lambda_{\text{atom}}\big),
+  \sum_\lambda y_\lambda\,\big(\chi^\lambda_{\text{free}} - \chi^\lambda_{\text{knot}}\big),
 $$
+
+a statement on **any confined knot $K$**. The nuclear binding case — a
+nucleus is a confined nucleon knot, split tensor
+$\mathfrak{p}^{Z}\otimes\mathfrak{n}^{N}$ — is the physical instance
+$\tau_M^{\text{knot}} = \mathrm{tr}_M(W_{\text{atom}})$ of
+`binding_canonical`.
 
 the per-partition object of the canonical binding
 ([`prop:categorical-mass-markov`](#prop:categorical-mass-markov),
