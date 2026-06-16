@@ -10,7 +10,7 @@ $$
   \;:=\;
   S(\mathfrak{n}) - S(\mathfrak{p})
   \;=\;
-  \frac{Q_\beta + m_e}{m_e}
+  \frac{\mathfrak{Q}_\beta + m_e}{m_e}
   \;-\;
   \frac{\mathrm{Vol}(\mathcal{B}_3)}{\hbar_q^2}
   \cdot \bigl[\lambda_{\mathrm{scale}}(\mathfrak{n}) - \lambda_{\mathrm{scale}}(\mathfrak{p})\bigr].
@@ -24,16 +24,16 @@ $$
   \boxed{\;
     \Delta S(n - p)
     \;=\;
-    \frac{Q_\beta + m_e}{m_e}
+    \frac{\mathfrak{Q}_\beta + m_e}{m_e}
     \;=\;
     \frac{m_n - m_p}{m_e}
   \;}
 $$
 
 *— a closed-form prediction in $\{m_e, q_0\}$ via the substrate
-$Q_\beta$ Form A
+$\mathfrak{Q}_\beta$ Form A
 ([prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge))
-$Q_\beta^A(q_0) = m_e \cdot |q^2 - 2q - 1|(q+1)/(2q^3)$
+$\mathfrak{Q}_\beta^A(q_0) = m_e \cdot |q^2 - 2q - 1|(q+1)/(2q^3)$
 recorded in the
 [m-baryon-volume-form witness](https://github.com/litlfred/qou/blob/claude/neutron-mass-50dps-chain/folio-assistant/computations/m-baryon-volume-form.witness.json),
 with no calibration to the proton or neutron individually.*
@@ -60,23 +60,23 @@ witness*
 | Quantity | 50-dps value | Source |
 |----------|-------------|--------|
 | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ at $q_0$ | $746.4179\ldots$ | substrate compute |
-| $(Q_\beta + m_e)/m_e$ at $q_0$ | $2.53388\ldots$ | CAL-3 + CAL-1 ([rem:beta-decay-energy-scale](#rem:beta-decay-energy-scale)) |
+| $(\mathfrak{Q}_\beta + m_e)/m_e$ at $q_0$ | $2.53388\ldots$ | CAL-3 + CAL-1 ([rem:beta-decay-energy-scale](#rem:beta-decay-energy-scale)) |
 | $\widetilde{\Delta S}_{\mathrm{derived}}$ | $0.0033943\ldots$ | ratio |
 | $\widetilde{\Delta S}_{\mathrm{empirical}}$ | $0.0033908\ldots$ | $\lambda_p - \lambda_n$ from CODATA $m_p$, $m_n$ |
 | relative agreement | $1\,015$ ppm | — |
 
-## Why the 1 015 ppm residual is the same as $Q_\beta$'s
+## Why the 1 015 ppm residual is the same as $\mathfrak{Q}_\beta$'s
 
-The substrate $Q_\beta$ ansatz used in the compute witness predicts
-$Q_\beta(q_0) = 0.78174\ldots\;\mathrm{MeV}$ against the empirical
+The substrate $\mathfrak{Q}_\beta$ ansatz used in the compute witness predicts
+$\mathfrak{Q}_\beta(q_0) = 0.78174\ldots\;\mathrm{MeV}$ against the empirical
 CAL-3 value $0.78233341\ldots\;\mathrm{MeV}$
 ([rem:beta-decay-energy-scale](#rem:beta-decay-energy-scale)) —
 a $760$ ppm residual at the current $q_0$ pinning. The
 $\widetilde{\Delta S}$ relative error of $1\,015$ ppm is
 *the same residual*, dominated by:
 
-1. the symmetric $(Q_\beta+m_e)/m_e$ numerator (this residual is set
-   by the substrate $Q_\beta$ formula's $\sim 760$ ppm error at the
+1. the symmetric $(\mathfrak{Q}_\beta+m_e)/m_e$ numerator (this residual is set
+   by the substrate $\mathfrak{Q}_\beta$ formula's $\sim 760$ ppm error at the
    current $q_0$ pinning, plus the CAL-1 $m_e$ uncertainty floor of
    $\sim 3 \times 10^{-7}$);
 2. the choice of $\lambda_{\mathrm{scale}}(\mathfrak{p}) -
@@ -85,13 +85,13 @@ $\widetilde{\Delta S}$ relative error of $1\,015$ ppm is
 
 *The 1 015 ppm agreement is therefore* **not** *evidence for the
 common-scale conjecture per se: it is consistent with the existing
-$Q_\beta$ closure precision under that hypothesis. Falsification of
+$\mathfrak{Q}_\beta$ closure precision under that hypothesis. Falsification of
 the common-scale conjecture would require either:*
 
 - *direct closed-form derivation of
   $\lambda_{\mathrm{scale}}(\mathfrak{p}) \neq
   \lambda_{\mathrm{scale}}(\mathfrak{n})$ from the substrate, or*
-- *substrate-only refinement of $Q_\beta$ to* $\ll 100$ *ppm at $q_0$,
+- *substrate-only refinement of $\mathfrak{Q}_\beta$ to* $\ll 100$ *ppm at $q_0$,
   exposing a non-zero residual after the common-scale subtraction.*
 
 ## Substrate-only character
@@ -104,8 +104,8 @@ The derivation consumes exactly three substrate quantities:
 | $q_0$ | input (via $m_\mu/m_e$) | **CAL-2** |
 | $\mathrm{Vol}(\mathcal{B}_3)$ | Thurston topological invariant | — |
 
-*$Q_\beta$ enters via the substrate ansatz
-$Q_\beta(q_0) = m_e \cdot |q^2 - 2q - 1|(q+1)/(2q^3)$
+*$\mathfrak{Q}_\beta$ enters via the substrate ansatz
+$\mathfrak{Q}_\beta(q_0) = m_e \cdot |q^2 - 2q - 1|(q+1)/(2q^3)$
 evaluated in the
 [m-baryon-volume-form witness](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/m-baryon-volume-form.witness.json),
 which agrees with the CAL-3 empirical value

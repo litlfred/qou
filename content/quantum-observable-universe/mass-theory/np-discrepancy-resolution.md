@@ -13,8 +13,8 @@ the two nucleons.*
 
 *Per [`prop:three-calibration-discipline`](#prop:three-calibration-discipline)
 the three allowed calibrations are CAL-1 ($m_e$), CAL-2 ($q_0$),
-and CAL-3 ($Q_\beta$). The "no $\beta$-decay calibration" mode
-uses only CAL-1 + CAL-2, leaving $Q_\beta$ as a prediction.*
+and CAL-3 ($\mathfrak{Q}_\beta$). The "no $\beta$-decay calibration" mode
+uses only CAL-1 + CAL-2, leaving $\mathfrak{Q}_\beta$ as a prediction.*
 
 *The full mass-endomorphism tower at 50-dps symbolic
 ([`mass_endomorphism.py`](../../folio-assistant/computations/mass_endomorphism.py),
@@ -25,7 +25,7 @@ recomputed at 50 dps via sympy + mpmath, no float64):*
 | $m_{\mathfrak{p}}^{\mathrm{pred}}$ | $955.49$ MeV | $+1.84\%$ |
 | $m_{\mathfrak{n}}^{\mathrm{pred}}$ | $348.66$ MeV | $\mathbf{-62.89\%}$ |
 | $\Delta m^{\mathrm{pred}} = m_n - m_p$ | $-606.83$ MeV | wrong sign (target $+1.293$ MeV) |
-| $Q_\beta^{\mathrm{pred}}$ (from $\Delta m - m_e$) | $-607.34$ MeV | nonsensical |
+| $\mathfrak{Q}_\beta^{\mathrm{pred}}$ (from $\Delta m - m_e$) | $-607.34$ MeV | nonsensical |
 
 *Without $\beta$-calibration the neutron tower fails by factor
 ~2.7 because $\hat V_0^{\mathfrak{n}} = 0.7194$ (symbolic at 50
@@ -44,7 +44,7 @@ individual nucleon masses, sidestepping the per-nucleon pole-
 distance asymmetry:*
 
 $$
-  Q_\beta = |\Delta(\mathrm{net})| \cdot E_0
+  \mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot E_0
   = \frac{(2-h) \cdot h}{2} \cdot \frac{m_e}{q_0 (q_0 - 1)}
   \approx 0.7836 \;\mathrm{MeV}
 $$
@@ -65,7 +65,7 @@ truncation at $N \geq 1$ via the cyclotomic projection at
 substrate-derived $n_\star$
 ([`conj:brane-tower-z-habiro`](#conj:brane-tower-z-habiro)) —
 an open conjecture. The current best non-calibrated prediction
-remains the difference $Q_\beta = |\Delta(\mathrm{net})| \cdot E_0$.*
+remains the difference $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot E_0$.*
 
 - *Term 1 (descended $\mathrm{tr}_M$): $\mathrm{tr}_M(\mathcal{B}_p)
   \approx 1.065 > \mathrm{tr}_M(\mathcal{B}_n) \approx 0.923$.
@@ -89,14 +89,14 @@ remains the difference $Q_\beta = |\Delta(\mathrm{net})| \cdot E_0$.*
   $p$ and $n$ at $A = 1$. Cancels in $\Delta m$.*
 
 **The non-calibrated framework prediction.**
-*Per the three-calibration discipline, $Q_\beta$ is treated as a
+*Per the three-calibration discipline, $\mathfrak{Q}_\beta$ is treated as a
 **prediction** from CAL-1 + CAL-2, not as input. The cleanest
 non-calibrated form uses the NF-coefficient-sum DIFFERENCE
 directly (rather than computing per-nucleon masses and
 subtracting):*
 
 $$
-  Q_\beta = |\Delta(\mathrm{net})| \cdot E_0 \approx 0.7836\;\mathrm{MeV}
+  \mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot E_0 \approx 0.7836\;\mathrm{MeV}
 $$
 
 *vs CODATA $0.7823$ — $+0.17\%$ / $+1.31$ keV residual. The

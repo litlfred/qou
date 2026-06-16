@@ -100,7 +100,7 @@ When the canonical $f_2$ is derived:
 1. This conjecture promotes to a theorem.
 2. [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) §pair-gen status changes from "open" to "proved".
 3. Downstream conjectures (especially [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) which doesn't currently use pair-gen but will if extended to multi-strand leptons) get unblocked.
-4. The Q_β residual closure direction (Path A / Path B in [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)) becomes tractable.
+4. The 𝔔_β residual closure direction (Path A / Path B in [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)) becomes tractable.
 
 ## Cross-references
 

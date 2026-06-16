@@ -235,7 +235,7 @@ at $k = 3$.
 
 If true, this conjecture **closes the unified mass formula** to
 universal precision — all atomic binding energies follow from
-$(m_e, q_0, Q_\beta)$ + the three distinguished knots
+$(m_e, q_0, \mathfrak{Q}_\beta)$ + the three distinguished knots
 $\{K_1^*, K_2^*, K_3^* = 4_1\}$ (with $K_3^* = 4_1$ empirically
 resolved per ).
 

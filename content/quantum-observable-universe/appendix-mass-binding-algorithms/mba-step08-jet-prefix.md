@@ -9,7 +9,7 @@ at $q = q_0$ via the GS filtration of Step 7.*
   (output of Step 3, evaluated symbolically).*
 - *Target jet order $N \in \mathbb{N}$ (chosen by precision goal —
   default $N = \lceil \log_{10}(1/\varepsilon) / 2.07 \rceil - 1$
-  per CLAUDE.md "Q_β c_k truncation order").*
+  per CLAUDE.md "𝔔_β c_k truncation order").*
 
 ### Output
 
@@ -60,4 +60,4 @@ cross-check against the symbolic Taylor expansion.*
 *The jet-prefix truncation is the **gate** between symbolic
 ($q$-exact) compute and the archimedean evaluation at $q_0$. The
 choice of $N$ is precision-driven; see the $c_k$ truncation
-sidecar for the analogous truncation in the $Q_\beta$ ladder.*
+sidecar for the analogous truncation in the $\mathfrak{Q}_\beta$ ladder.*

@@ -39,8 +39,8 @@ $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mat
 which is **not yet wired** at the nucleon scale (Workplan 0b
 Phase 0b.4 + Workplan 2 + open Δ_λ derivation; see
 [handoff](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)).
-The $n$–$p$ splitting is a *consequence* of the FULL Q_β chain
-($Q_\beta + m_e \approx 1.293$ MeV) — see the framework prediction
+The $n$–$p$ splitting is a *consequence* of the FULL 𝔔_β chain
+($\mathfrak{Q}_\beta + m_e \approx 1.293$ MeV) — see the framework prediction
 panel after this table.
 
 See [Table 2](#tbl:mass-comparison-table-table2-data).
@@ -50,7 +50,7 @@ $n$-$p$ split rows read back the CODATA inputs because the LO
 formula collapses to $Z m_p + N m_n$ identically (no binding
 correction). FULL framework prediction below.
 
-#### FULL Q_β prediction (framework, no CODATA mass injection)
+#### FULL 𝔔_β prediction (framework, no CODATA mass injection)
 
 Per [`prop:neutron-qvalue-symbolic`](../../particle-interactions/neutron-qvalue-symbolic.md)
 the framework predicts the β-decay Q-value from CAL-1 ($m_e$) and
@@ -58,7 +58,7 @@ CAL-2 ($q_0$) only via the closed form:
 
 $$
 \boxed{
-Q_\beta^{\text{pred}} = \frac{m_e \cdot |q_0^2 - 2q_0 - 1| \cdot (q_0 + 1)}{2 q_0^3} \approx 0.7836 \text{ MeV}
+\mathfrak{Q}_\beta^{\text{pred}} = \frac{m_e \cdot |q_0^2 - 2q_0 - 1| \cdot (q_0 + 1)}{2 q_0^3} \approx 0.7836 \text{ MeV}
 }
 $$
 
@@ -68,7 +68,7 @@ between proton and neutron, so $\Delta(\mathrm{net}) = h(h-2)/2$
 with $h = q_0 - q_0^{-1}$, and the entire $Q$-value lives in the
 $\gamma + \sigma_0 + \sigma_1$ channels.
 
-The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = Q_\beta + m_e \approx 1.295$ MeV
+The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = \mathfrak{Q}_\beta + m_e \approx 1.295$ MeV
 (vs CODATA $1.293$, same $0.17\%$ framework error, no CODATA $m_n - m_p$
 input).
 
@@ -86,7 +86,7 @@ discipline caveat as the proton/neutron rows above. The $\Delta$
 column equals the CODATA binding energy by construction, not a
 genuine framework prediction. The FULL multi-body unified knot
 mass formula at $H_{3A}$ is not yet tractable beyond $A = 1$
-(the $n$-$p$ split through Q_β is the only mass-domain framework
+(the $n$-$p$ split through 𝔔_β is the only mass-domain framework
 prediction wired today; binding-energy predictions await closure
 of the open Δ_λ research question per
 [recomputed-low-isotope-mass-table.md:99](../braids-and-knots/recomputed-low-isotope-mass-table.md)).

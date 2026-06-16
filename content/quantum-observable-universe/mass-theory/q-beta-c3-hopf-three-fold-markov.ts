@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "Categorical derivation of $c_3 = J_{\\mathrm{Hopf}}(q=1) = -2$ in the $Q_\\beta$ precision ladder via 3-fold Markov closure → 2-strand sub-braid Hopf-link substructure → KL classical-limit decategorification",
+    "Categorical derivation of $c_3 = J_{\\mathrm{Hopf}}(q=1) = -2$ in the $\\mathfrak{Q}_\\beta$ precision ladder via 3-fold Markov closure → 2-strand sub-braid Hopf-link substructure → KL classical-limit decategorification",
   uses: ["rem:q-beta-gamma-gamma-canonical-derivation"],
   cites: [
     "jones1985",

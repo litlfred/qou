@@ -68,7 +68,7 @@ volumes).
 The $Q$-value for the transition $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!-\!1)$ is the mass difference:
 
 $$
-  Q_\beta
+  \mathfrak{Q}_\beta
   = 
   \frac{\Phi_q^{\mathrm{par}} - \Phi_q^{\mathrm{dau}}}{\hbar_q^2}
   = 

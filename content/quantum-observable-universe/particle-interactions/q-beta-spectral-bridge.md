@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark) — Q_β spectral bridge).**
+**Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark) — 𝔔_β spectral bridge).**
 
 *Let $\mathcal{B}_n$ be the canonical free-neutron braid word with single
 wrap $A = 1$, let $q = q_0$ be the substrate parameter, let
@@ -14,10 +14,10 @@ single-tick energy scale per
 [rem:energy-scale-planck](#rem:energy-scale-planck), and let*
 
 $$
-  Q_\beta^{\mathrm{A}} \;:=\;
+  \mathfrak{Q}_\beta^{\mathrm{A}} \;:=\;
   \lvert \Delta(\mathrm{net}) \rvert \cdot E_0
   \qquad
-  Q_\beta^{\mathrm{B}} \;:=\;
+  \mathfrak{Q}_\beta^{\mathrm{B}} \;:=\;
   \ln\!\frac{V_{\mathrm{pp}}}{V_{\mathrm{nn}}} \cdot \frac{E_0}{z}
 $$
 
@@ -29,7 +29,7 @@ respectively. Then both are finite-depth truncations of the same
 spectral decomposition and agree as*
 
 $$
-  \frac{Q_\beta^{\mathrm{A}}}{Q_\beta^{\mathrm{B}}}
+  \frac{\mathfrak{Q}_\beta^{\mathrm{A}}}{\mathfrak{Q}_\beta^{\mathrm{B}}}
   \;=\;
   1 \;+\; \frac{(z-1)\,h}{2} \;+\; O(h^2),
 $$
@@ -37,7 +37,7 @@ $$
 *with bridge identity*
 
 $$
-  Q_\beta^{\mathrm{A}}
+  \mathfrak{Q}_\beta^{\mathrm{A}}
   \;=\;
   \ln\!\frac{V_{\mathrm{pp}}}{V_{\mathrm{nn}}} \cdot \frac{E_0}{z}
   \cdot \Bigl(1 + \tfrac{(z-1)\,h}{2} + O(h^2)\Bigr).
@@ -46,7 +46,7 @@ $$
 *The remainder at depth $N$ in the brane-tower truncation satisfies*
 
 $$
-  \bigl\lvert Q_\beta^{(N)} - Q_\beta^{\mathrm{exact}} \bigr\rvert
+  \bigl\lvert \mathfrak{Q}_\beta^{(N)} - \mathfrak{Q}_\beta^{\mathrm{exact}} \bigr\rvert
   \;\le\;
   C(K) \cdot e^{-c(K)\,N}
 $$
@@ -93,12 +93,12 @@ $$
 $$
 
 *Ratio.* Forming the dimensionless ratio
-$Q_\beta^{\mathrm{A}} / Q_\beta^{\mathrm{B}}$ and dividing through
+$\mathfrak{Q}_\beta^{\mathrm{A}} / \mathfrak{Q}_\beta^{\mathrm{B}}$ and dividing through
 by $E_0$ cancels the $h$ in the leading term:
 
 $$
 \begin{aligned}
-\frac{Q_\beta^{\mathrm{A}}}{Q_\beta^{\mathrm{B}}}
+\frac{\mathfrak{Q}_\beta^{\mathrm{A}}}{\mathfrak{Q}_\beta^{\mathrm{B}}}
 &=
 \frac{h - h^2/2 + O(h^3)}
      {(z h - z^2 h^2 / 2 + O(h^3))\,/\,z} \\
@@ -110,7 +110,7 @@ $$
 \end{aligned}
 $$
 
-The intermediate identity $Q_\beta^{\mathrm{B}}/E_0 \cdot z = z h - (z h)^2/2 + O(h^3)$
+The intermediate identity $\mathfrak{Q}_\beta^{\mathrm{B}}/E_0 \cdot z = z h - (z h)^2/2 + O(h^3)$
 identifies the **dimensional content** of the $1/z$ factor: $z$
 appears in Form B because the eigenfunction basis is normalized to
 the Markov-traced volume (Form B's denominator $z$ in $E_0/z$),
@@ -122,7 +122,7 @@ filtration of the free-neutron sector $K \subset H_3(q)$ at
 $q = q_0$. By
 conj:archimedean-remainder-exponential-decay
 (applied to the q-dilogarithm tail in the brane-tower expansion),
-each finite-depth truncation $Q_\beta^{(N)}$ — whether assembled
+each finite-depth truncation $\mathfrak{Q}_\beta^{(N)}$ — whether assembled
 via Form A or Form B — incurs an error bounded by
 $C(K) \cdot e^{-c(K) N}$, with $C, c > 0$ structural constants of
 the free-neutron K-class. At $N = 0$ this gives the observed
@@ -133,9 +133,9 @@ $+1.31$ keV residual; at $N \geq 1$ the bound is sub-keV. $\square$
 The bridge formula
 
 $$
-  Q_\beta^{\mathrm{A}}
+  \mathfrak{Q}_\beta^{\mathrm{A}}
   \;=\;
-  Q_\beta^{\mathrm{B}} \cdot \bigl(1 + \tfrac{(z-1)\,h}{2} + O(h^2)\bigr)
+  \mathfrak{Q}_\beta^{\mathrm{B}} \cdot \bigl(1 + \tfrac{(z-1)\,h}{2} + O(h^2)\bigr)
 $$
 
 says that **Form A and Form B are not competing predictions but a
@@ -150,7 +150,7 @@ MeV.
 The exponential-remainder bound supplies the eigenfunction
 **dampening** principle (rendered explicit in
 conj:archimedean-remainder-exponential-decay):
-finite-depth truncations recover the exact $Q_\beta$ exponentially
+finite-depth truncations recover the exact $\mathfrak{Q}_\beta$ exponentially
 fast in GB depth $N$, which is why the single-wrap symbolic form
 (Form A at $N = 0$) already achieves $+0.168\%$ accuracy.
 ## Provenance
@@ -165,7 +165,7 @@ See [Table](#tbl:q-beta-spectral-bridge-table-data).
 
 The residual sits inside the $O(h^2)$ Taylor bound; the agreement
 is unconditional algebra modulo the bound. The MeV-level discrepancy
-between $Q_\beta^{\mathrm{A}}$ and $Q_\beta^{\mathrm{B}}$ is **not** a
+between $\mathfrak{Q}_\beta^{\mathrm{A}}$ and $\mathfrak{Q}_\beta^{\mathrm{B}}$ is **not** a
 prediction inconsistency — it is the same next-order correction
 $(z-1)h/2 \approx -0.052$ to the bridge ratio that the witness's
 first assertion bounds. Both forms agree with CODATA $0.7823$ MeV

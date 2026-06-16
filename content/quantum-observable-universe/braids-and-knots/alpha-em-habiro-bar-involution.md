@@ -21,10 +21,10 @@ The factor $H = [2]_q(1 - h^2\alpha)$ is the $\alpha_{EM}$ next-order
 Habiro element ([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)).
 Because $[2]_q = q + q^{-1}$ is manifestly bar-symmetric, $H$ lies
 **entirely** in the charge-conjugation-symmetric (bar-fixed) sector.
-This is the same sector that the analogous $Q_\beta$ scaling map must
+This is the same sector that the analogous $\mathfrak{Q}_\beta$ scaling map must
 occupy, and it is precisely the structural reason the $\alpha_{EM}$
 next-order form was identifiable as a Habiro element while the
-$Q_\beta$ analogue — whose trace difference is *not* a bar fixed point
+$\mathfrak{Q}_\beta$ analogue — whose trace difference is *not* a bar fixed point
 — required a separate cancellation analysis.
 
 The two special values are the lowest root-of-unity evaluations of
@@ -33,7 +33,7 @@ $\alpha/(4\pi)$, and $H(\zeta_2) = H(-1) = -2$ is the bar mode. The
 full root-of-unity spectrum of $H$ (exact in the cyclotomic field, with
 $\alpha$ kept formal) is recorded in the computational witness;
 $H(\zeta_4) = 0$, a modular **zero** that is the exact structural dual
-of the $Q_\beta$ Habiro element's modular **pole** at $\zeta_4$.
+of the $\mathfrak{Q}_\beta$ Habiro element's modular **pole** at $\zeta_4$.
 
 ## Lean structure
 
@@ -48,4 +48,4 @@ absorbs the sign). The special values `alphaEmHabiro_at_one` and
 involution-level, not archimedean.
 
 
-**Mathematical Novelty:** The proved facts are elementary, consisting of a ring-level observation regarding the bar-symmetry of $[2]_q(1-h^2 \alpha)$. The mathematical novelty and interesting framework content lie in the fibre-vs-observable framing and the realization that $\zeta_4=0$ is dual to the $Q_\beta$ pole.
+**Mathematical Novelty:** The proved facts are elementary, consisting of a ring-level observation regarding the bar-symmetry of $[2]_q(1-h^2 \alpha)$. The mathematical novelty and interesting framework content lie in the fibre-vs-observable framing and the realization that $\zeta_4=0$ is dual to the $\mathfrak{Q}_\beta$ pole.

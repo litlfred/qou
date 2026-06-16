@@ -18,7 +18,7 @@ table is the high-level index.
 | 9a | Mass identity $m(K) = m_e \cdot \mathrm{VolDensity}(K, q_0)$ | $\mathrm{Geom}$-universality; mass identity | `qou_mass.predict(atom)` | `per-observable-100x-status.witness.json` | conditional |
 | 9b | Per-isotope binding $B(K) = m_e \cdot \sum_\lambda y_\lambda\,\chi^\lambda\,\Delta_\lambda$ | binding-energy density ($\Delta_\lambda$ open) | `qou_mass.predict(atom, observable="binding_energy")` | `canonical-mass-table-242ppb.witness.json` | open |
 | 10 | Confinement SDP and canonical $T_w$ | operator-selection LP; LP–SDP duality | script `folio-assistant/computations/confinement-operator-selection.py` (Python solver shim: `pyhecke.lp_dual_solver`) | `confinement-operator-selection.witness.json` | derived |
-| 11 | $\beta$-decay $Q_\beta = Q_{\mathrm{base}} \cdot \prod_k (1 + c_k\,u^k)$ | $Q_\beta$ derivation; $c_k$ truncation order | script `folio-assistant/computations/q_beta_predicted.py` (CAL-3 pin: `build_cal_3_q_beta_witness.py`) | `cal-3-q-beta.witness.json` (CAL-3 pin), `q-beta-predicted.witness.json` (predictions) | derived |
+| 11 | $\beta$-decay $\mathfrak{Q}_\beta = Q_{\mathrm{base}} \cdot \prod_k (1 + c_k\,u^k)$ | $\mathfrak{Q}_\beta$ derivation; $c_k$ truncation order | script `folio-assistant/computations/q_beta_predicted.py` (CAL-3 pin: `build_cal_3_q_beta_witness.py`) | `cal-3-q-beta.witness.json` (CAL-3 pin), `q-beta-predicted.witness.json` (predictions) | derived |
 
 **Status legend.**
 *proved* (sorry-free Lean);

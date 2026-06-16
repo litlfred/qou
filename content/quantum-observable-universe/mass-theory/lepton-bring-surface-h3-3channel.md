@@ -134,7 +134,7 @@ Per [`prop:three-parameters-wedderburn`](three-parameters-wedderburn.md):
 
 - sym (highest weight, $+q$ only) $\leftrightarrow$ CAL-2 $q_0$ (substrate deformation)
 - std (mixed eigenvalues) $\leftrightarrow$ CAL-1 $m_e$ (mass scale)
-- alt (lowest weight, $-q^{-1}$ only) $\leftrightarrow$ CAL-3 $Q_\beta$ (interaction)
+- alt (lowest weight, $-q^{-1}$ only) $\leftrightarrow$ CAL-3 $\mathfrak{Q}_\beta$ (interaction)
 
 A natural conjecture maps the 3 lepton generations to the 3 H_3 channels
 respecting this lowest/highest-weight structure:

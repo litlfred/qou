@@ -16,11 +16,11 @@ parities carry the two observables:
   $\tau = \operatorname{tr} B$ of
   [`prop:sl2-prolongation-recurrence`](#prop:sl2-prolongation-recurrence) (the
   curvature-free transport, $(q+q^{-1})/2 = \cosh\lambda$);
-- **odd ($\sinh$, bar-antisymmetric)** — the $Q_\beta$ residue-A / $c_k$ ladder
+- **odd ($\sinh$, bar-antisymmetric)** — the $\mathfrak{Q}_\beta$ residue-A / $c_k$ ladder
   (the curvature defect, $(q-q^{-1})/2 = \sinh\lambda$), the bar-odd Habiro dual
   of $\alpha_{\mathrm{EM}}$.
 
-So binding (mass-average) and $\beta$-decay ($Q_\beta$) are **not two problems
+So binding (mass-average) and $\beta$-decay ($\mathfrak{Q}_\beta$) are **not two problems
 but one** — the even and odd parities of a single bar-graded element. Pinning
 either parity (the keystone $\tau$, or the $c_k$ kernel) constrains the other
 through the shared element. The Lean witnesses

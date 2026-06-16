@@ -36,7 +36,7 @@ $\lambda = \log q$: the symmetric $\cosh$ part is curvature-free transport and
 the antisymmetric $\sinh$ part is the curvature defect. Under the bar-involution
 $q \mapsto q^{-1}$ these are the even and odd parities of one element. The
 binding observables — masses and their averages — live on the $\cosh$, bar-even
-side, where the modulus $\tau$ sits; the $\beta$-decay observable $Q_\beta$ and
+side, where the modulus $\tau$ sits; the $\beta$-decay observable $\mathfrak{Q}_\beta$ and
 its precision coefficients live on the $\sinh$, bar-odd side. They are not two
 separate problems but the two parities of a single substrate element, so pinning
 one constrains the other.

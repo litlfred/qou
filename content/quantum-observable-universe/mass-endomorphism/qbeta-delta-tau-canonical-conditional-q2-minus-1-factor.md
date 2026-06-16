@@ -59,7 +59,7 @@ plus ring identity. $\square$
   `CanonicalMarkovWeightsH3` class).
 - Sibling on main:
   [`prop:q-beta-over-e0-classical-vanishing`](../mass-theory/q-beta-over-e0-classical-vanishing.md)
-  (different upstream object — $S(q) = Q_\beta/E_0$ — but also
+  (different upstream object — $S(q) = \mathfrak{Q}_\beta/E_0$ — but also
   vanishes at $q = 1$).
 - 1ppQ-Q$_\beta$ coordination ledger:
   [`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md).

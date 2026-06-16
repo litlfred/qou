@@ -1,8 +1,8 @@
-**Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark) — Q_β of free neutron $\beta^{-}$-decay).**
+**Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark) — 𝔔_β of free neutron $\beta^{-}$-decay).**
 The $Q$-value of free neutron $\beta^-$-decay
 $n \to p + e^- + \bar\nu_e$ is derived symbolically from
 the categorical three-calibration inputs $m_e$ ($H^0$) and $q_0$ ($H^1$,
-fixed by $m_\mu/m_e$) — $Q_\beta(n)$ ($H^2$) is the
+fixed by $m_\mu/m_e$) — $\mathfrak{Q}_\beta(n)$ ($H^2$) is the
 $\beta$-decay datum being predicted, not used as input
 ([three-calibration discipline](#prop:three-calibration-discipline)).
 
@@ -74,7 +74,7 @@ The energy scale $E_0 = m_e / (q_0(q_0 - 1))$
 dimensionless NF differences to MeV:
 
 $$
-  Q_\beta
+  \mathfrak{Q}_\beta
   =
   |\Delta(\mathrm{net})| \times E_0
   =
@@ -86,7 +86,7 @@ $$
 Substituting $h = q - q^{-1}$:
 
 $$
-  Q_\beta
+  \mathfrak{Q}_\beta
   =
   \frac{m_e \cdot (2 - h) \cdot h}{2q(q-1)}
   =
@@ -99,7 +99,7 @@ At $q_0 = 1.109978595554181\ldots$ (50 dps) (from $m_\mu/m_e$) and
 $m_e = :val[m_e_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} \pm 0.00000000015$ MeV (CODATA 2022):
 
 $$
-  Q_\beta
+  \mathfrak{Q}_\beta
   =
   0.7836 \text{ MeV}
   \qquad
@@ -115,11 +115,11 @@ approximation, while the exact tower-summed $E_0$ would
 absorb the $0.17\%$ residual.
 
 **This is a 2-input closed form *conditional on the ansatz*
-$Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$** (stated
+$\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$** (stated
 "by construction" in
 [`pre-archimedean-derivation-chain.md`](../braids-and-knots/pre-archimedean-derivation-chain.md):391,
 not derived from the canonical per-braid mass formula). No
-hadronic calibration (neutron mass, proton mass, or $Q_\beta$
+hadronic calibration (neutron mass, proton mass, or $\mathfrak{Q}_\beta$
 itself) is used in the closed form *given the ansatz*; the
 +0.17% match is empirical evidence for the ansatz but does
 not derive it. See
@@ -139,9 +139,9 @@ $z = 1/(\sqrt q + 1/\sqrt q)$, with explicit bridge identity in
 [prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge):
 
 $$
-  Q_\beta^{\mathrm{A}}
+  \mathfrak{Q}_\beta^{\mathrm{A}}
   \;=\;
-  Q_\beta^{\mathrm{B}} \cdot \Bigl(1 + \tfrac{(z-1)\,h}{2} + O(h^2)\Bigr).
+  \mathfrak{Q}_\beta^{\mathrm{B}} \cdot \Bigl(1 + \tfrac{(z-1)\,h}{2} + O(h^2)\Bigr).
 $$
 
 The two forms are **not competing predictions** — they are the same

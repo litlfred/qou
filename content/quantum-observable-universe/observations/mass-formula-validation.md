@@ -17,13 +17,13 @@ ratios only.
 ([energy scale and Planck time](#rem:energy-scale-planck)):
 $E_0 = m_e/(q_0(q_0 - 1)) = m_e \cdot c_q^2 \cdot \hbar_q \approx 4.186$ MeV.
 This agrees with the calibrated value
-$E_0^{(\mathrm{cal})} = Q_\beta/|\Delta\mathrm{net}| \approx 4.155$ MeV
+$E_0^{(\mathrm{cal})} = \mathfrak{Q}_\beta/|\Delta\mathrm{net}| \approx 4.155$ MeV
 to $0.75\%$. The residual is the brane-tower correction
 (single-level vs full-tower). Using the derived $E_0$, the
 neutron $Q$-value becomes a prediction:
-$Q_\beta = |\Delta\mathrm{net}| \times E_0 \approx 0.788$ MeV
+$\mathfrak{Q}_\beta = |\Delta\mathrm{net}| \times E_0 \approx 0.788$ MeV
 (CODATA: $0.782$ MeV, $0.75\%$ error). In this derivation
-the hadronic scale $E_0$ is itself derived from $Q_\beta(n)$;
+the hadronic scale $E_0$ is itself derived from $\mathfrak{Q}_\beta(n)$;
 the complete framework uses three calibration inputs
 ([calibration inputs](#rem:calibration-inputs)): $\mathrm{Vol}(4_1)$,
 $m_\mu/m_e$, and $m_e$.

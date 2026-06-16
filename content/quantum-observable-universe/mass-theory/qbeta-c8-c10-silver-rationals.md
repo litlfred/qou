@@ -1,7 +1,7 @@
-**Proposition (Q_β c_8, c_9, c_10 closed-form values at the silver ratio).**
+**Proposition (𝔔_β c_8, c_9, c_10 closed-form values at the silver ratio).**
 
 *At the silver ratio $q = 1 + \sqrt{2}$ where the Hoefsmit parameter takes
-the exact rational value $b^2 = 7/8$, the closed-form Q_β precision-ladder
+the exact rational value $b^2 = 7/8$, the closed-form 𝔔_β precision-ladder
 coefficients $c_8$, $c_9$, $c_10$ extend the documented Pell-Lucas
 $\sigma$-action pattern:*
 
@@ -24,7 +24,7 @@ fingerprint.*
 ## Why these values matter
 
 The Pell-Lucas-clean classification at the silver ratio is the
-**structural signal** for the Q_β c_k precision ladder. Per the
+**structural signal** for the 𝔔_β c_k precision ladder. Per the
 SDP-extraction script's own caveat, the c_k values extracted at the
 substrate anchor $q_0$ become noise-floor-dominated for $k \geq 8$;
 the silver ratio is where the algebraic structure is visible.

@@ -66,7 +66,7 @@ evaluation $\operatorname{tr}_M(\beta_K, q_0)$ is **exact** — a
 well-defined element of $\mathbb{Q}(q_0)$, not a truncated series.
 
 What this does **not** give is experiment-grade agreement with
-data. An observable such as $Q_\beta$ is
+data. An observable such as $\mathfrak{Q}_\beta$ is
 $m_e \cdot f(\operatorname{tr}_M(\beta_n), \operatorname{tr}_M(\beta_p),
 q_0)$, and the exact Habiro evaluation of that map lands at the
 substrate's *intrinsic* accuracy (improving once the derived low-order

@@ -193,7 +193,7 @@ finite-dimensional.
 
 [Chapter 11](#chap\:observations) confronts theory with experiment.
 We calibrate with CODATA values
-$(m_\mu / m_e,\ m_e,\ Q_\beta(n))$; the dimensionless ratio
+$(m_\mu / m_e,\ m_e,\ \mathfrak{Q}_\beta(n))$; the dimensionless ratio
 $m_\mu/m_e$ fixes the substrate parameter via the Skein mass
 relation
 

@@ -148,7 +148,7 @@ The leading-order computation predicts $t_{1/2} \approx 6690$ yr vs observed
 contribution to the half-life*: the leading-order computation does not resolve the $n = 8$ factorization, so it underestimates the decay
 rate. The shell correction $\delta E_{\mathrm{shell}}$ for the
 parent increases its binding energy (the $n = 8$ closed sub-link
-provides extra stability), which *increases* $Q_\beta$ relative to
+provides extra stability), which *increases* $\mathfrak{Q}_\beta$ relative to
 the leading-order prediction. The larger $Q$ gives a faster
 decay rate via $Q^5$:
 

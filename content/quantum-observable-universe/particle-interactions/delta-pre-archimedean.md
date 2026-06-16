@@ -1,5 +1,5 @@
 The proton/neutron *difference* observables — the β-decay Q-value
-$Q_\beta = \lvert\Delta(\mathrm{net})\rvert\cdot\mathfrak{E}_0$
+$\mathfrak{Q}_\beta = \lvert\Delta(\mathrm{net})\rvert\cdot\mathfrak{E}_0$
 ([neutron Q-value](#prop:neutron-qvalue-symbolic)) and the binding
 energy $B(K)$ — are computed in a definite **order of operations**: the
 categorical difference $\Delta = x_{\mathfrak n} - x_{\mathfrak p}$ is
@@ -40,7 +40,7 @@ following, and only the first two are theorems:
    — **no reality, no archimedean input**. It is *why* the bar
    involution, the $\sigma\leftrightarrow\sigma^{-1}$ reduction, and
    Type-B folding may be applied freely inside the difference
-   $\Delta(\mathrm{net})$ that defines $Q_\beta$ and inside the binding
+   $\Delta(\mathrm{net})$ that defines $\mathfrak{Q}_\beta$ and inside the binding
    tower.
 
 2. **PROVED (non-commutation of $\tau$).** A nonlinear functor does not
@@ -55,11 +55,11 @@ following, and only the first two are theorems:
 3. **EXPOSITORY CONVENTION (not a theorem).** *Which* order the paper
    uses for *which* observable is a modelling choice dictated by the
    physics, not forced by (1)–(2):
-   - **Difference observables** ($Q_\beta$, binding $B$) are computed
+   - **Difference observables** ($\mathfrak{Q}_\beta$, binding $B$) are computed
      **delta-then-archimedean**: form $\Delta(\mathrm{net})$ in the
      fibre, then apply $\tau$ once via $\cdot\,\mathfrak{E}_0$. This is
      the canonical chain of [neutron Q-value](#prop:neutron-qvalue-symbolic)
-     and the cheat-sheet step $Q_\beta = \lvert\Delta(\mathrm{net})\rvert
+     and the cheat-sheet step $\mathfrak{Q}_\beta = \lvert\Delta(\mathrm{net})\rvert
      \cdot\mathfrak{E}_0$. It keeps the fold discipline (1) available and
      keeps the imaginary parts of the archimedean tower cancelling in
      the difference.
@@ -70,12 +70,12 @@ following, and only the first two are theorems:
    The proton–neutron *mass split* $\Delta_{pn} = m_{\mathfrak n} -
    m_{\mathfrak p}$ may be read either way **only because** it sits at
    the boundary; the framework's *predicted* split goes through the
-   difference observable $Q_\beta$ (plus the electron: $Q_\beta =
+   difference observable $\mathfrak{Q}_\beta$ (plus the electron: $\mathfrak{Q}_\beta =
    \Delta_{pn} - m_e$), i.e. the delta-then-archimedean route.
 
 ## Why the order is forced for binding
 
-Folding/unfolding is the engine of the binding/$Q_\beta$ derivations
+Folding/unfolding is the engine of the binding/$\mathfrak{Q}_\beta$ derivations
 (Hecke reduction to normal form, bar-symmetric channel sorting). By (1)
 those folds commute with the pre-archimedean delta, so they are
 legitimate moves inside $\Delta(\mathrm{net})$. By (2) the *same* folds

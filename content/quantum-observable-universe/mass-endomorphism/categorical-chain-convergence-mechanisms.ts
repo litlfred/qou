@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "Convergence of $Q_\\beta^{\\text{cat}}$'s infinite product: per-knot c(K) brane-tower bound + inter-knot linking-number locality (Habiro-ring interpretation)",
+    "Convergence of $\\mathfrak{Q}_\\beta^{\\text{cat}}$'s infinite product: per-knot c(K) brane-tower bound + inter-knot linking-number locality (Habiro-ring interpretation)",
   uses: [
     "prop:q-beta-categorical-precision-ladder",
   ],

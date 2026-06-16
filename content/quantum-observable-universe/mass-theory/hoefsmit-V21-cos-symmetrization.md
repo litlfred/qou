@@ -111,5 +111,5 @@ and the existing `hecke_characters.build_seminormal_matrices` infrastructure):
 | Markov-symmetrized factor $\cos\alpha$ | $0.99863..$ |
 
 After symmetrization the V_(2,1) contribution combines with the 1-d
-contributions to give $Q_\beta = Q_\beta^A \cdot \cos((z-1)h/2)$ at
+contributions to give $\mathfrak{Q}_\beta = \mathfrak{Q}_\beta^A \cdot \cos((z-1)h/2)$ at
 the cos-resummation level (305 ppm residual against CODATA).

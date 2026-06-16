@@ -76,22 +76,22 @@ theory residual lands where it is least statistically significant.
 **Remark (formal vs. numerical calibration).** A subtlety separates
 the *formal* calibration input from the *numerical* anchor. The
 principled CAL-2 input is the neutron $\beta$-decay observable
-$\mathfrak{D}_\beta$ (equivalently $Q_\beta$): it fixes the substrate
+$\mathfrak{D}_\beta$ (equivalently $\mathfrak{Q}_\beta$): it fixes the substrate
 scale through the weak sector that the substrate identity governs, and
 is in that sense the *better*, more fundamental calibration. It is,
-however, a poor *numerical* pin for $q_0$. The $Q_\beta$ value is known
+however, a poor *numerical* pin for $q_0$. The $\mathfrak{Q}_\beta$ value is known
 only to $\approx 780\,\mathrm{ppb}$ — four orders of magnitude coarser
 than $m_p/m_e$ — and, being a small neutron–proton mass difference, it
 carries only modest sensitivity to $q$
-($\mathrm{d}\ln Q_\beta/\mathrm{d}\ln q \approx 11$), so its propagated
+($\mathrm{d}\ln \mathfrak{Q}_\beta/\mathrm{d}\ln q \approx 11$), so its propagated
 uncertainty is $\sigma(q_0) \approx 68\,\mathrm{ppb}$, against
 $\lesssim 1\,\mathrm{ppb}$ from a lepton or baryon mass ratio. The
-substrate identity for $Q_\beta$ moreover carries a $\approx 0.2\%$
+substrate identity for $\mathfrak{Q}_\beta$ moreover carries a $\approx 0.2\%$
 residual, which would displace $q_0$ by $\approx 185\,\mathrm{ppm}$ were
-$Q_\beta$ forced to its measured value. The framework therefore retains
+$\mathfrak{Q}_\beta$ forced to its measured value. The framework therefore retains
 $\mathfrak{D}_\beta$ as the *conceptual* CAL-2 and a consistency
 cross-check, while fixing the *numerical* value of $q_0$ from the most
-experimentally accurate ratio available — and reports $Q_\beta$ as a
+experimentally accurate ratio available — and reports $\mathfrak{Q}_\beta$ as a
 prediction tested against its measured value, not as the pin. The
 principled calibration and the precise calibration are different
 observables; the anchor is chosen for accuracy.

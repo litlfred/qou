@@ -63,7 +63,7 @@ Representation theory of the Iwahori–Hecke algebra and the Bring
 constraint $\chi = -6$ together fix the degrees of freedom:
 **exactly three** inputs are required — one dimensionless ratio
 ($m_\mu/m_e$), one leptonic mass scale ($m_e$), and one hadronic
-energy scale ($Q_\beta(n)$).  Every other mass, Q-value, binding
+energy scale ($\mathfrak{Q}_\beta(n)$).  Every other mass, Q-value, binding
 energy, and coupling constant is a prediction.  That so much
 structure follows from so little input is, as Wigner put it,
 "something bordering on the mysterious" \cite{wigner1960}.

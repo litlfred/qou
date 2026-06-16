@@ -1,7 +1,7 @@
-**Proposition.** *In the $Q_\beta$ precision-ladder factorisation*
+**Proposition.** *In the $\mathfrak{Q}_\beta$ precision-ladder factorisation*
 
 $$
-Q_\beta(q) \;=\; Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q))
+\mathfrak{Q}_\beta(q) \;=\; Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q))
   \cdot \prod_{k \ge 2} \bigl(1 + c_k \cdot u^k\bigr),
 \qquad u \;=\; b(q) \cdot \hbar_q^2,
 $$
@@ -57,15 +57,15 @@ chain), and $\hbar_q^4$ is even in $t$ to leading order
 $\hbar_q^4 = t^4 + O(t^5)$ — the odd-in-$t$ content sits at orders $t^5$
 and higher, which the bar-even ladder absorbs trivially). $\blacksquare$
 
-## Contrast: α_EM template vs Q_β trace-difference
+## Contrast: α_EM template vs 𝔔_β trace-difference
 
 | programme | kernel | bar-even? | scalar $c_k$ extraction |
 |---|---|---|---|
 | $\alpha_{\text{EM}}$ | $H(q) = [2]_q \cdot (1 - h^2 \alpha)$ | **yes** — $[2]_q = q + q^{-1}$ and $h^2 = (q - q^{-1})^2$ are manifest q-symmetric | **clean** |
-| $Q_\beta$ | trace-difference $T_\beta$ on the operator level | **no** — archimedean trace mixes odd-in-$t$ content (closed operator-level framing) | **singular at $u = 0$** |
+| $\mathfrak{Q}_\beta$ | trace-difference $T_\beta$ on the operator level | **no** — archimedean trace mixes odd-in-$t$ content (closed operator-level framing) | **singular at $u = 0$** |
 
 The bar-even discriminant explains the asymmetry structurally: $\alpha_{\text{EM}}$
-admits a scalar Habiro element because its kernel is bar-even; $Q_\beta$ does
+admits a scalar Habiro element because its kernel is bar-even; $\mathfrak{Q}_\beta$ does
 not, so its $c_k \ge 3$ requires the **operator-level grading** (the open
 [probe-B](https://github.com/litlfred/qou/blob/claude/qbeta-ck-habiro-operator-route-2026-06-04/docs/audits/2026-06-04-qbeta-ck-operator-route-kickoff.md)
 spec from the closed sibling analysis).

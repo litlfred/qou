@@ -42,7 +42,7 @@ import { proposition } from "../../schema/builders";
  *     refutation + reframing → formal acknowledged-CAL-4 status.
  *
  * NOT used as input to any production compute. The 3-calibration chain
- * (m_e, m_μ/m_e, Q_β) is the authoritative path; this block is a
+ * (m_e, m_μ/m_e, 𝔔_β) is the authoritative path; this block is a
  * historical record of the empirical 5.6 ppm near-form.
  */
 export default proposition({

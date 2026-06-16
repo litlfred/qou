@@ -1,6 +1,6 @@
-**Algorithm ($Q_\beta$ truncation ladder).**
+**Algorithm ($\mathfrak{Q}_\beta$ truncation ladder).**
 *Evaluate $\beta$-decay $Q$-values via the convergent series
-$Q_\beta = Q_{\mathrm{base}} \cdot \prod_{k = 2}^{N} (1 + c_k\, u^k)$
+$\mathfrak{Q}_\beta = Q_{\mathrm{base}} \cdot \prod_{k = 2}^{N} (1 + c_k\, u^k)$
 with $u = b \cdot \hbar_q^2 \approx 0.00852$, truncating at order
 $N$ chosen by the target precision.*
 
@@ -14,7 +14,7 @@ $N$ chosen by the target precision.*
 
 ### Output
 
-- *$Q_\beta \in \mathbb{R}$ in MeV.*
+- *$\mathfrak{Q}_\beta \in \mathbb{R}$ in MeV.*
 
 ### Algorithm
 
@@ -25,9 +25,9 @@ $N$ chosen by the target precision.*
 3. For k = 2, …, N:
    c_2 = -1                  (Taylor-exact, PROVED).
    c_k for k ≥ 3 are q_0-dependent NEAR-MATCHES (see CLAUDE.md
-     "Q_β c_k is a TRUNCATION ORDER, not a wire/un-wire gate").
+     "𝔔_β c_k is a TRUNCATION ORDER, not a wire/un-wire gate").
    Multiply Q_base by (1 + c_k · u^k).
-4. Return Q_β.
+4. Return 𝔔_β.
 ```
 
 ### Correctness conditions
@@ -64,7 +64,7 @@ used and the tiered $c_k$ classification.*
 
 ### Notes
 
-*Current L2 status: $Q_\beta$ at 164.0× miss vs target as of
+*Current L2 status: $\mathfrak{Q}_\beta$ at 164.0× miss vs target as of
 2026-05-31 (per the [precision-goals dashboard](../../../folio-assistant/computations/per-observable-100x-status.witness.json)).
 The Habiro-exact 5.7 ppb result was against the pre-re-pin
 muon-anchored $q_0$ and has not been refreshed since the

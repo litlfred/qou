@@ -60,7 +60,7 @@ sorry-free.
   $c_3 = -2$ is settled as a NEAR-MATCH with non-zero cross-anchor
   swing, NOT a Taylor-exact closure.
 - The f-map identification. The Habiro element scaling map
-  $f : \Delta\tau_M(\sqrt u) \mapsto Q_\beta(c_3 \text{ at } u^3)$
+  $f : \Delta\tau_M(\sqrt u) \mapsto \mathfrak{Q}_\beta(c_3 \text{ at } u^3)$
   remains the keystone of the 1ppQ closure.
 
 **Structural insight from the vanishing-at-1 theorem.** All three
@@ -144,7 +144,7 @@ main):
   — general depth-$d$ c_k ladder recursion (this PR's
   `ZRecursionCoeffs` is one specific candidate to instantiate).
 - [`QOU.QBeta.OverE0ClassicalVanishing.qbeta_over_e0_at_one_eq_zero`](../mass-theory/q-beta-over-e0-classical-vanishing.lean)
-  — proves $S(q) = Q_\beta/E_0$ vanishes at $q = 1$ (different
+  — proves $S(q) = \mathfrak{Q}_\beta/E_0$ vanishes at $q = 1$ (different
   upstream object from `delta_tau_M_canonical`, but same
   classical-point vanishing structure).
 

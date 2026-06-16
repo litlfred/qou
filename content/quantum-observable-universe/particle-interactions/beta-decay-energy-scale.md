@@ -15,11 +15,11 @@ The framework gives $\mathfrak{E}_0$ in two forms — a **single-Planck-tick**
 ($N=0$) value and a **tower-summed** ($N \to \infty$) geometric form —
 that differ by the brane-tower correction $1/(1-\hbar_q^2) \approx 1.0099$
 at $q_0 \approx 1.110$.  Both are derivable from CAL-1 ($m_e$) and CAL-2
-($q_0$) alone; CAL-3 ($Q_\beta(n)$) is the cross-check.  See the
+($q_0$) alone; CAL-3 ($\mathfrak{Q}_\beta(n)$) is the cross-check.  See the
 [notation register](../notation/notation-register.md) for the
 $\mathfrak{E}_0^{(N=0)}$ / $\mathfrak{E}_0^{\text{full}}$ symbol convention
 and the [collisions note](../notation/notation-collisions.md) for why
-$\mathfrak{E}_0$ is **not** $Q_\beta(n)$.
+$\mathfrak{E}_0$ is **not** $\mathfrak{Q}_\beta(n)$.
 
 ## Linearity
 
@@ -45,7 +45,7 @@ From CODATA 2022:
 **Derived energy scale — single-tick (Planck-tick) form, $\mathfrak{E}_0^{(N=0)}$.**
 The leading-order energy scale is derivable from the categorical
 three-calibration inputs $m_e$ ($H^0$) and $q_0$ ($H^1$) alone —
-$Q_\beta(n)$ ($H^2$) is the datum the framework predicts, not consumed
+$\mathfrak{Q}_\beta(n)$ ($H^2$) is the datum the framework predicts, not consumed
 here ([three-calibration discipline](#prop:three-calibration-discipline)):
 
 $$
@@ -161,7 +161,7 @@ $$
   Q_{\geq 2} = |\Delta(\ell \geq 2)| \times \mathfrak{E}_0
   = 0.11007 \times 4.155
   \approx 0.4573 \text{MeV}
-  =  58.5\% \text{of}Q_\beta.
+  =  58.5\% \text{of}\mathfrak{Q}_\beta.
 $$
 
 ## Energy scale scenarios
@@ -203,7 +203,7 @@ $\sigma_1$ dominance of the untyped computation.
 
 The $\gamma$ debt ($+0.424 \text{MeV}$) and $L_+$ shift
 ($+0.453 \text{MeV}$) together account for
-$0.877 \text{MeV}$ — more than $Q_\beta$.  The small
+$0.877 \text{MeV}$ — more than $\mathfrak{Q}_\beta$.  The small
 virtual terms ($\sigma_0, \sigma_1$) absorb the excess:
 
 $$
@@ -221,7 +221,7 @@ $$
 Beta decay pays down the neutron's leptonic debt.  With typed
 crossings, the process
 $\mathfrak{n} \to \mathfrak{p} + e^- + \bar\nu_e$
-releases $Q_\beta = 0.782 \text{MeV}$ because:
+releases $\mathfrak{Q}_\beta = 0.782 \text{MeV}$ because:
 
 1. The neutron's $L_+$ (Hopf link) coefficient is **negative**
    ($-0.010$) while the proton's is positive ($+0.099$).  This

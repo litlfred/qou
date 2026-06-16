@@ -166,7 +166,7 @@ crossing change at $\sigma_5$, give 7 modified crossings total.
 The $Q$-value is the sum of pair Skein differences at all 7:
 
 $$
-  Q_\beta
+  \mathfrak{Q}_\beta
   = 
   \sum_{k \in \text{modified}} \left(
     \mathcal{S}_{a_k b_k}^{\mathrm{par}}(q)

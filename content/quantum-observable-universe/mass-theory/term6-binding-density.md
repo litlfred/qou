@@ -116,7 +116,7 @@ Witness: [`Term6-scaling-heavy.witness.json`](../../../docs/audits/-Term6-scalin
 
 * The **values** $\alpha = 339.4$ MeV and $\beta = 1.14$ MeV
   are **calibrated** to the AME panel. A categorical derivation
-  predicting these from $q_0$ + $m_e$ + $Q_\beta$ alone is open;
+  predicting these from $q_0$ + $m_e$ + $\mathfrak{Q}_\beta$ alone is open;
   candidate expressions like
   $m_e \cdot [7]_q [8]_q [9]_q = 361.2$ MeV are within $7\%$ of
   the fit but outside the $\pm 3\%$ fit window

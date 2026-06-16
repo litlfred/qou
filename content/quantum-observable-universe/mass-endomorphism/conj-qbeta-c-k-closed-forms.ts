@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $Q_\\beta$ precision ladder: empirical pattern-matches to sub-percent residual; first-principles derivation open (Khovanov-Rozansky at finite $q$ or KLR canonical-basis trace)",
+    "Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\\mathfrak{Q}_\\beta$ precision ladder: empirical pattern-matches to sub-percent residual; first-principles derivation open (Khovanov-Rozansky at finite $q$ or KLR canonical-basis trace)",
   uses: ["rem:per-block-hopf-jones-absorption-pattern"],
   cites: [
     "khovanov2000",

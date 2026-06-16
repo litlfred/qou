@@ -12,6 +12,6 @@ The odd part is $\sigma$-anti: $\sigma(x - \sigma x) = \sigma x - x =
 -(x - \sigma x)$ (`oddPart_anti`). Hence the bar-even subspace ($\cosh$,
 $(q+q^{-1})/2$) and the bar-odd subspace ($\sinh$, $(q-q^{-1})/2$) are
 complementary, and any fibre element decomposes uniquely across them. The
-binding trace $\tau$ lives in the even subspace and the $Q_\beta$ residue in
+binding trace $\tau$ lives in the even subspace and the $\mathfrak{Q}_\beta$ residue in
 the odd subspace, so both are determined by the single element they jointly
 span. $\qquad\blacksquare$

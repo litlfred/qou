@@ -17,7 +17,7 @@ witness for the current per-row `pred_err`, `100x_target`, and
 (`total`, `beats_1x_count`, `beats_100x_count`). The framework
 currently meets the L2 $100\times$ target
 on 3 of 7 observables (the two anchored masses + the meson ratio
-$m_K/m_\pi$); the remaining four observables ($m_\mu$, $Q_\beta$,
+$m_K/m_\pi$); the remaining four observables ($m_\mu$, $\mathfrak{Q}_\beta$,
 $m_n$, $\Delta m_{pn}$) gate L2 closure. Re-run
 `per_observable_100x_status.py` for the live count.
 

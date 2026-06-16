@@ -79,12 +79,12 @@ The shell magnitude $y_{\mathrm{target}}$ is therefore a
 3. *the Hoefsmit character $\chi^{\lambda_{\mathrm{shell}}}(\mathcal{B}_K)$ of the atom braid,*
 4. *the canonical Markov trace $|\mathrm{tr}_M(\mathcal{B}_K)|$.*
 
-**No $Q_\beta$ or AME chain Q-values appear**. The
+**No $\mathfrak{Q}_\beta$ or AME chain Q-values appear**. The
 calibration anchors stay at the $\rho_K$ assembly level
 ($m_e$, $m_p$, $m_n$); the shell magnitude is a purely
 algebraic / categorical consequence of the staircase Wedderburn
 structure at the magic shell boundary. This respects the user's
-"I do NOT want to derive $Q_\beta$" stance: $Q_\beta$ is **not
+"I do NOT want to derive $\mathfrak{Q}_\beta$" stance: $\mathfrak{Q}_\beta$ is **not
 needed** for shell-magnitude derivation.*
 
 **Derivation.**
@@ -141,7 +141,7 @@ $$
 
 *is the desired closed form.* $\blacksquare$
 
-**Compatibility with the "no Q_β derivation" directive.**
+**Compatibility with the "no 𝔔_β derivation" directive.**
 
 *The corrected formula uses **only** categorical inputs computed
 from the substrate:*
@@ -155,8 +155,8 @@ from the substrate:*
 - *$|\mathrm{tr}_M(\mathcal{B}_K)|$ — canonical Markov trace per
  [`conj:gs-graded-markov-trace-existence`](#conj:gs-graded-markov-trace-existence).*
 
-*No Q_β, no AME chain manifold, no fitted parameters. The 780 ppb
-floor from CAL-2 (Q_β uncertainty) **does not apply** to this
+*No 𝔔_β, no AME chain manifold, no fitted parameters. The 780 ppb
+floor from CAL-2 (𝔔_β uncertainty) **does not apply** to this
 derivation — the shell magnitude is a purely categorical observable.*
 
 **Open** for $A_{\mathrm{magic}} \ge 8$.**

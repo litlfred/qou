@@ -1,6 +1,6 @@
 **Categorical-chain convergence: per-knot finite truncation + inter-knot linking-number locality.**
 
-The categorical-derivation precision ladder $Q_\beta^{\text{cat}}$ from
+The categorical-derivation precision ladder $\mathfrak{Q}_\beta^{\text{cat}}$ from
 [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)
 is formally an **infinite product** in the Habiro ring (cyclotomic-Pochhammer
 completion of $\mathbb{Z}[q]$). For any **single knot in isolation** —
@@ -39,14 +39,14 @@ $$
   \tau_M(K_1 \sqcup K_2) \;=\; \tau_M(K_1) \cdot \tau_M(K_2) \quad (\text{linking-trivial limit}).
 $$
 
-Their categorical-chain contributions are **additive in $\log Q_\beta^{\text{cat}}$**:
+Their categorical-chain contributions are **additive in $\log \mathfrak{Q}_\beta^{\text{cat}}$**:
 
 $$
-  \log Q_\beta^{\text{cat,full}}(K_1 \sqcup K_2)
+  \log \mathfrak{Q}_\beta^{\text{cat,full}}(K_1 \sqcup K_2)
    \;=\;
-   \log Q_\beta^{\text{cat}}(K_1)
+   \log \mathfrak{Q}_\beta^{\text{cat}}(K_1)
    \;+\;
-   \log Q_\beta^{\text{cat}}(K_2)
+   \log \mathfrak{Q}_\beta^{\text{cat}}(K_2)
    \;+\;
    O(\mathrm{lk}_{12}) .
 $$
@@ -61,10 +61,10 @@ prediction factorises:
 
 $$
 \boxed{
-  Q_\beta^{\text{cat,full}}
+  \mathfrak{Q}_\beta^{\text{cat,full}}
    \;=\;
    \prod_{\text{linked clusters } C}
-     \biggl[\prod_{K \in C} Q_\beta^{\text{cat}}(K)\biggr]
+     \biggl[\prod_{K \in C} \mathfrak{Q}_\beta^{\text{cat}}(K)\biggr]
    \;\cdot\;
    \prod_{\substack{(K_i, K_j) \\ \mathrm{lk} \neq 0}}
      (\text{cross-coupling factor}_{ij}) .
@@ -97,7 +97,7 @@ In the Habiro ring $\widehat{\mathbb{Z}[q]}_{\text{Hab}}$:
   the inverse limit $\varprojlim \mathbb{Z}[q]/((q;q)_n)$.
 - Per-knot evaluation projects to a Habiro residue at the substrate
   $q_0$, finite by linking-number locality.
-- The **archimedean realisation** is the numerical $Q_\beta^{\text{cat}}$.
+- The **archimedean realisation** is the numerical $\mathfrak{Q}_\beta^{\text{cat}}$.
 
 ## Status
 
