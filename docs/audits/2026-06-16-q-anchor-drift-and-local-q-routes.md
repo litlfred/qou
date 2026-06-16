@@ -134,10 +134,13 @@ a separate `ℝ`-valued `ArchimedeanSubstrateField (M)`** structure —
 living on the archimedean side of the substrate wall. *That* makes
 "`q(p)` is a real field" literally true while respecting the base-ring
 discipline (CLAUDE.md §7c). **Verdict:** valid, concrete, bounded; it
-both delivers the user's ask and fixes a compile break. Caveat: this
-sandbox has no Lean LSP/`lake` available, so the repair is
-type-correct-by-construction but **not build-verified** — flagged for a
-Lean-CI pass.
+both delivers the user's ask and fixes a compile break. **Build-verified
+2026-06-16:** restored the `lake-cache/qou-v4-24-0` oleans and ran
+`lean`-direct (manual `LEAN_PATH`, no `lake` re-resolve) — **exit 0,
+sorry-free** against real Mathlib + QOU oleans (Lean v4.24.0). The fix
+removes 3 dangling theorems from the categorical `R_q` structure and adds
+a provable `ℝ`-valued `ArchimedeanSubstrateField`; verified no downstream
+`.lean` referenced the removed members.
 
 ### Route 1 — "Fixed-point: does `∇_q² = (q−1)𝓕_q^intr` select q₀?" — ⚠ HALF-VALID (the stated condition does NOT select q₀)
 
