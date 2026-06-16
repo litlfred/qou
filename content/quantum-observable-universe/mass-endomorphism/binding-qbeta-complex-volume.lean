@@ -10,22 +10,22 @@ import Mathlib.Tactic.Ring
 Complex-volume unification of mass-binding and β-decay
 ([binding-qbeta-complex-volume.md](binding-qbeta-complex-volume.md)).
 
-Binding `𝔅` and the β-decay `𝔔_β` are the real and imaginary parts of a
+Binding `𝔈_bind` and the β-decay `𝔔_β` are the real and imaginary parts of a
 single complex fibre observable — the complexified mass-endomorphism
-convolution-defect `𝔚 = E₀·tr_M((Π_free−1)∘𝓜) ∈ ℂ` — the QOU analogue of the
+convolution-defect `𝔙 = E₀·tr_M((Π_free−1)∘𝓜) ∈ ℂ` — the QOU analogue of the
 Neumann–Zagier complex volume `Vol(K) + i·CS(K)`.
 
 Per the owner's observation ("in many ways this is definitional"), the
-unification is taken **definitionally**: `𝔚 := E₀·tr_M((Π_free−1)∘𝓜)` (𝓜 = mass endomorphism in 𝐂, Π_free = idempotent projector onto the factorized sub-object, tr_M = categorical Markov trace — no braid words),
-`𝔅 := Re 𝔚`, `𝔔_β := Im 𝔚`.  Then the unification
-`𝔅 + i·𝔔_β = 𝔚` is a **theorem** (`Complex.re_add_im`), sorry-free.
+unification is taken **definitionally**: `𝔙 := E₀·tr_M((Π_free−1)∘𝓜)` (𝓜 = mass endomorphism in 𝐂, Π_free = idempotent projector onto the factorized sub-object, tr_M = categorical Markov trace — no braid words),
+`𝔈_bind := Re 𝔙`, `𝔔_β := Im 𝔙`.  Then the unification
+`𝔈_bind + i·𝔔_β = 𝔙` is a **theorem** (`Complex.re_add_im`), sorry-free.
 The only conjectural content is the *physical match*: that the measured
 binding and Q_β equal these definitional Re/Im at one normalisation —
 axiomatised as the class `ComplexVolumeMatch` (CLAUDE.md §3b-cond).
 
 Fibre-level caveat: `Im(q₀)=0` at the archimedean level
 (`lusztig_q_0_imaginary_part_zero`); the complex structure is fibre-level
-and `𝔅, 𝔔_β` are real observable shadows under different archimedean
+and `𝔈_bind, 𝔔_β` are real observable shadows under different archimedean
 evaluations (real-q vs root-of-unity), exactly as `Vol` and `CS` are
 separately real.
 
@@ -58,17 +58,17 @@ end BarParity
 
 /-! ## The complex convolution-defect and the definitional unification -/
 
-/-- The complex fibre observable `𝔚 = E₀·tr_M((Π_free−1)∘𝓜) ∈ ℂ`. -/
+/-- The complex fibre observable `𝔙 = E₀·tr_M((Π_free−1)∘𝓜) ∈ ℂ`. -/
 noncomputable def fibreDefect (E0 : ℝ) (trDefect : ℂ) : ℂ := (E0 : ℂ) * trDefect
 
-/-- Binding `𝔅 := Re 𝔚` — the bar-even / volume channel. -/
+/-- Binding `𝔈_bind := Re 𝔙` — the bar-even / volume channel. -/
 noncomputable def binding (E0 : ℝ) (trDefect : ℂ) : ℝ := (fibreDefect E0 trDefect).re
-/-- β-decay `𝔔_β := Im 𝔚` — the bar-odd / Chern–Simons channel. -/
+/-- β-decay `𝔔_β := Im 𝔙` — the bar-odd / Chern–Simons channel. -/
 noncomputable def Qbeta (E0 : ℝ) (trDefect : ℂ) : ℝ := (fibreDefect E0 trDefect).im
 
 /-- **The complex-volume unification (definitional, PROVED, sorry-free).**
     Binding (Re) and β-decay (Im) reconstruct the one complex fibre
-    object `𝔚`: `𝔅 + i·𝔔_β = 𝔚`.  Mass and binding are no longer two
+    object `𝔙`: `𝔈_bind + i·𝔔_β = 𝔙`.  Mass and binding are no longer two
     stories — they are the two parities of one complex volume. -/
 theorem complex_volume_unification (E0 : ℝ) (trDefect : ℂ) :
     (binding E0 trDefect : ℂ) + (Qbeta E0 trDefect : ℂ) * Complex.I
@@ -80,7 +80,7 @@ theorem complex_volume_unification (E0 : ℝ) (trDefect : ℂ) :
 
 /-- The physical-match conjecture (CLAUDE.md §3b-cond class): the
     *measured* binding and `Q_β` of a composite `K` equal the
-    definitional Re/Im of `𝔚(K)` at a single normalisation.
+    definitional Re/Im of `𝔙(K)` at a single normalisation.
     This is the conjectural input; the unification theorem above is
     proved unconditionally. -/
 class ComplexVolumeMatch (K : Type*) where
@@ -92,13 +92,13 @@ class ComplexVolumeMatch (K : Type*) where
   binding_measured : ℝ
   /-- the experimentally measured β-decay `Q`-value. -/
   qbeta_measured : ℝ
-  /-- match hypothesis: measured binding `=` Re `𝔚`. -/
+  /-- match hypothesis: measured binding `=` Re `𝔙`. -/
   binding_match : binding_measured = binding E0 trDefect
-  /-- match hypothesis: measured `Q_β` `=` Im `𝔚`. -/
+  /-- match hypothesis: measured `Q_β` `=` Im `𝔙`. -/
   qbeta_match : qbeta_measured = Qbeta E0 trDefect
 
 /-- Under the physical-match class, the measured observables reconstruct
-    the complex defect: `𝔅_meas + i·𝔔_β,meas = 𝔚`.  Derived from the two
+    the complex defect: `𝔈_bind_meas + i·𝔔_β,meas = 𝔙`.  Derived from the two
     match hypotheses and the definitional unification — non-degenerate
     (the class carries the inputs; the theorem composes them). -/
 theorem measured_complex_volume {K : Type*} [c : ComplexVolumeMatch K] :
