@@ -47,6 +47,28 @@ The geometric reason is sharp: the icosahedral $A_5$ lives in the **spatial** $\
 (real rotations of $\mathbb{R}^3$), whereas the round colour Reeb is the **phase** $\mathrm{U}(1)\subset\mathrm{SU}(3)$ —
 a *different* circle, transverse to the real form where the $A_5$/spin structure sits.
 
+## Reframe — the obstruction is on the phase circles, NOT the generation selection
+
+A further check (verified, step 5) shows the obstruction does **not** block the generation coupling, because the
+spin Hopf Reeb is not the generation direction:
+
+- **The spin Hopf Reeb (overall phase $e^{i\phi}I$) is $\mathrm{Ad}$-trivial** — it maps to the identity in
+  $\mathrm{SO}(3)$ (and is not even in $\mathrm{SU}(2)$: $\det\ne1$). It is precisely the $\mu$-fibre, with **no
+  spatial $\mathrm{SO}(3)$ image**.
+- **Generation degree $\ell$ is a spatial datum.** $\ell$ is an $\mathrm{SO}(3)$ spherical-harmonic level on the
+  *base* $S^2 = S^3/\mathrm{Hopf}$ — governed by the **spatial** $\mathrm{SO}(3)$ (the non-central rotations),
+  not the phase.
+- **$\mu$'s spatial $\mathrm{SO}(3)$-equivariance carries the selection.** Since $\mu(gz)=\mathrm{Ad}(g)\mu(z)$,
+  the *same* $A_5\subset\mathrm{SO}(3)$ acts on the spin base $S^2$ and the colour $\mathbb{R}^3$ — so the
+  generation **selection** $\ell\mapsto\lambda$ is already realized by $\mu$'s spatial equivariance (the
+  $\ell$-harmonic and the $\lambda$-block share the same $A_5$-isotype, per the verified bridge + the Schur-forced
+  static coupling).
+
+So the transversality of step 4 is on the **contact phase circles** (spin Hopf phase / colour Sasakian phase),
+which are orthogonal to the generation direction; **it does not block the $\ell\mapsto\lambda$ selection.** What
+genuinely remains is the **Markov-trace weighting** — the contact/dynamical structure supplying the $y_\lambda$
+weights — which is where the colour Reeb must sit in the spatial $\mathrm{SO}(3)_{\mathrm{colour}}$.
+
 ## Resolution direction (next construction target, open)
 
 The coupling that intertwines both flows requires the **colour Reeb to lie in the spatial
@@ -59,9 +81,14 @@ precise next step — owner-gated, multi-session.
 
 - **Coupling map:** constructed (Hopf moment map $\mu$) — resolves parity, realizes the static coupling,
   intertwines the spin Reeb. This is real geometric progress: the coupling is no longer "unknown", it is $\mu$.
-- **Obstruction:** the *round-$S^5$* colour Reeb is transverse to $\mu$ — so the colour arena must be
-  $\mathrm{SU}(3)/\mathrm{SO}(3)$-homogeneous, not round $S^5$. The dynamical intertwining is now reduced to a
-  single, concretely-posed contact-geometry construction (the $\mathrm{SO}(3)_{\mathrm{colour}}$-Reeb Sasakian).
+- **Generation selection $\ell\mapsto\lambda$:** carried by $\mu$'s spatial $\mathrm{SO}(3)$-equivariance — the
+  same $A_5\subset\mathrm{SO}(3)$ on both sides. So the *selection* part of the fibre map is realized.
+- **Obstruction (phase circles only):** the *round-$S^5$* colour Reeb (phase) is transverse to $\mu$, but this is
+  the contact direction, **not** the generation direction (the Hopf Reeb is Ad-trivial). It does not block the
+  selection.
+- **Remaining (open):** the **Markov-trace weighting** ($y_\lambda$) — the contact/dynamical structure, which
+  requires the colour Reeb in the spatial $\mathrm{SO}(3)_{\mathrm{colour}}$ (an $\mathrm{SU}(3)/\mathrm{SO}(3)$-homogeneous
+  Sasakian, not round $S^5$). That is the single concretely-posed construction left.
 - No fit; the obstruction is a verified transversality, not a numerical near-miss.
 
 ## Cross-references
