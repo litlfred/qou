@@ -172,6 +172,7 @@ export default chapter({
         "neutron-qvalue-symbolic",
         "qbeta-counit-closed-form",
         "qbeta-counit-transition",
+        "qbeta-trace-counit-convergence",
         "delta-pre-archimedean",
         // Merged from the former auto-split "Transfer matrices and beta
         // decay : vs" (small base, strongly-related continuation — the
