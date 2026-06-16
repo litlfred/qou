@@ -37,8 +37,8 @@ sphere, so the ingredients are known objects to be assembled on *this* divisor.
 | 1 | **Identify the divisor $\mathbb{CP}^1$ with Klein's icosahedral $\mathbb{P}^1$ via the spin lift.** Show the $S_5=\mathrm{Aut}(\Sigma_4)$ action restricts on $A_5$ to the **binary icosahedral $2I\subset\mathrm{SU}(2)_S$** on the spin fibre $\mathbb{C}^2_{\mathrm{spin}}$, so $\mathbb{P}(\mathbb{C}^2)=\mathbb{CP}^1$ is Klein's icosahedral line ($A_5\cong I$, Möbius rotations). | spin structure / rep theory | **SETTLED** — existence (§"Gate resolution") + identification as icosahedral $T_1$ (§"Residual-2 RESOLVED") |
 | 2 | **2I-equivariant Reeb field.** Show the q-Reeb field $\xi_q$ ($\dot\psi=q$, `q-reeb-flow-on-coral-coords`) commutes with the binary icosahedral $2I\subset\mathrm{SU}(2)$ on the Hopf $S^3\to S^2$. | contact geometry | **inherits the precedent** — the existing $S_3\!\to\!\mathrm{Dic}_3$ Reeb field is already binary-equivariant; $2I$ is the analogue |
 | 3 | **The two bridging branchings.** $\mathrm{SO}(3)\downarrow A_5$ ($V_1\!\to\!T_1$, $V_2\!\to\!H$, $V_3\!\to\!T_2\oplus G$) and $S_5\downarrow A_5$ ($(3,1,1)\to T_1\oplus T_2$, $(3,2),(2,2,1)\to H$). | character theory | **VERIFIED** (this session) |
-| 4 | **Commuting square (the functor).** A₅-equivariant Reeb operator on the ℓ-sector, restricted to the 3-tube via the **$123\!\to\!345$ embedding** (spacetime strands $\{1,2\}$ fixed — see embedding-independence note), equals the six $S_3$ knot operators with the $\mathrm{Res}^{S_5}_{S_3}$ multiplicities. | category theory | depends on 1,2 |
-| 5 | **Markov-trace shift (the physics).** Evaluate the $H_3(q)$ trace shift between $E_{(3,1,1)}$ (ℓ=1) and $E_{(3,2)}$ (ℓ=2) projectors → correction factor $F(E,q_0)$ → test the 210 ppb muon gap. | compute (`pyhecke`) | depends on 4 |
+| 4 | **Commuting square (the functor).** A₅-equivariant Reeb operator on the ℓ-sector, restricted to the 3-tube via the **$123\!\to\!345$ embedding** (spacetime strands $\{1,2\}$ fixed — see embedding-independence note), equals the six $S_3$ knot operators with the $\mathrm{Res}^{S_5}_{S_3}$ multiplicities. | category theory | **algebraic leg CONCRETE** (Hecke-tower Bratteli = verified branching; Wedderburn projector traces computable in pyhecke); geometric leg (Reeb = this map) stays conjectural — see §"Ingredient 4+5 close-out" |
+| 5 | **Markov-trace shift (the physics).** Evaluate the $H_3(q)$ trace shift between $E_{(3,1,1)}$ (ℓ=1) and $E_{(3,2)}$ (ℓ=2) projectors → correction factor $F(E,q_0)$ → test the 210 ppb muon gap. | compute (`pyhecke`) | **REFUTED** for the named candidates — the projector correction overshoots 210 ppb by 6–8 orders (§"Ingredient 4+5 close-out") |
 
 ## Why each ingredient is necessary (not optional)
 
@@ -170,6 +170,47 @@ the implemented 3-sheet $S_3$ to the full 5-sheet $A_5$) and the **Markov-trace 
 empirical 210 ppb). Both ingredient-1 sub-pieces (existence of the $2I$ lift; identification as icosahedral $T_1$)
 are settled.
 
+## Ingredient 4+5 close-out (2026-06-16) — algebraic leg concrete; 210 ppb mechanism REFUTED
+
+Compute: [`scripts/s5so3_ingredient_4_5_markov_shift.py`](../audits/scripts/s5so3_ingredient_4_5_markov_shift.py)
+(real `pyhecke` stack: `q0`, `q_factorial`, and the figure-eight $4_1$ Wedderburn-projector traces
+`FIG8_R_311 / FIG8_R_32 / FIG8_R_41`).
+
+**Ingredient 4 — algebraic leg is concrete.** The Hecke-tower Bratteli restriction $H_5(q)\to H_3(q)$ at
+generic $q$ is box removal $=$ the verified $\mathrm{Res}^{S_5}_{S_3}$ branching; the muon block $(3,2)$ lacks
+exactly the $(1,1,1)$ alt block present in the electron $(3,1,1)$. The Wedderburn projectors $E_\lambda$ and
+their Markov traces are **computable** (the $4_1$ values below). What stays conjectural is only the *geometric*
+leg — that the $A_5$-equivariant Reeb flow **equals** this algebra map.
+
+**Ingredient 5 — the 210 ppb mechanism is REFUTED for the named candidates.** The bare
+$m_\mu=m_e\,\mathrm{Vol}(4_1)/\hbar_q^2$ is *already* good to **209.8 ppb** ($\approx 2.1\times10^{-7}$), so the
+proposed correction $\mathcal{F}(E_{(3,2)},q_0)$ must equal $1\pm 2\times10^{-7}$. Both candidates the
+operator-branching doc names are $O(1)$–$O(10)$:
+
+| Candidate $\mathcal{F}$ (doc) | value at $q_0$ | $\lvert\mathcal F-1\rvert$ | overshoot vs 210 ppb |
+|---|---|---|---|
+| #1 sign-block subtraction $1-W_{\mathrm{alt}}\chi^{(1,1,1)}$ ($\chi=1$ exact, $W_{\mathrm{alt}}=1/[3]_q!$) | $0.8366$ | $0.1634$ (16.3 %) | $\times\,7.8\times10^{5}$ (~5.9 orders) |
+| #2 channel-trace ratio $R_{(3,2)}/R_{(3,1,1)}$ ($4_1$ traces $-0.2119/-0.01416$) | $14.97$ | $13.97$ (1397 %) | $\times\,6.7\times10^{7}$ (~7.8 orders) |
+
+The structural identity ($\chi^{(1,1,1)}=1$ exact; $(1,1,1)$ **is** the electron–muon block) holds, but the
+**magnitude** of every natural Wedderburn-projector knob is 6–8 orders too large — multiplying the bare formula
+by any of them *destroys* the 210 ppb agreement rather than closing it. This **quantitatively confirms the
+synthesis §4 critical-distance flag** ("χ=1 necessary, not sufficient") and the 2026-06-13 doc's own §4 ("derive
+the analytic closure" — left open). The 210 ppb gap is better accounted for by the mechanical proton-anchor
+re-pin lever ($\Delta q_0\times$ lever, doc §1), not a categorical projector correction.
+
+**Net keystone status after this session:**
+- ✅ Geometry (ingredients 1–3): settled — $2I$ spin lift exists, geometric $A_5$ forced to icosahedral $T_1$,
+  $\mathrm{SO}(3)\!\downarrow\!A_5\!\uparrow\!S_5\!\downarrow\!S_3$ chain verified.
+- ◑ Ingredient 4: algebraic leg concrete + computable; **geometric leg (Reeb = the functor) remains the open
+  conjecture** — this is now the sole structural unknown.
+- ❌ Ingredient 5: the **named** projector mechanism does **not** close the 210 ppb muon gap (overshoots 6–8
+  orders). A correction at the $2\times10^{-7}$ scale, if one exists, is not any of the natural $H_n(q)$
+  Wedderburn-projector quantities.
+
+So `conj:s5-so3-fiber-action` is now sharply localized: the **geometric Reeb=functor identification** (ing. 4) is
+the open object; the muon-mass *physics* via Wedderburn projection (ing. 5) is refuted. No fit was introduced.
+
 ## Risks / honest blockers (critical-distance)
 
 - **Building 1–4 proves the geometric map EXISTS; it does NOT guarantee the physics.** The $S_3$-side
@@ -186,13 +227,13 @@ are settled.
 ## Immediate next step (cheap, already done) and the gate
 
 - ✅ **Ingredient 3** verified this session (extends the backbone checker).
-- ✅ **Ingredient 1 fully SETTLED** this session: existence leg (§"Gate resolution" — SU(2) structure group +
-  $S_3\to\mathrm{Dic}_3$ precedent supply the $2I$ lift) AND identification leg (§"Residual-2 RESOLVED" — the
-  geometric $A_5$ is forced to the icosahedral $T_1$, with $T_1/T_2$ = chirality, $S_5$-stable sum $(3,1,1)$).
-- ⛔ **New gate = ingredient 4 (the commuting square / 5-sheet extension).** Promote the implemented 3-sheet
-  $S_3\to\mathrm{Dic}_3$ Reeb construction to the full 5-sheet $A_5\to 2I$ and show the 3-tube restriction (the
-  $123\to345$ embedding) reproduces the $S_3$ knot operators per $\mathrm{Res}^{S_5}_{S_3}$. Then ingredient 5
-  (Markov-trace shift → 210 ppb), the only empirical unknown.
+- ✅ **Ingredients 1–3 settled; ingredient 4 algebraic leg concrete; ingredient 5 REFUTED** (§"Ingredient 4+5
+  close-out"). The muon-mass physics via Wedderburn projection overshoots 210 ppb by 6–8 orders — not a fit, a
+  falsification.
+- ⛔ **Sole remaining structural unknown = ingredient 4 geometric leg.** Prove the $A_5$-equivariant Reeb flow on
+  the spin-fibre $\mathbb{CP}^1$ **equals** the (now-concrete, computable) Hecke-tower restriction functor
+  $H_5(q)\to H_3(q)$ — i.e. discharge `GenerationBranchingFunctor.project` with the *geometric* map, not just the
+  algebraic target. Owner-gated, multi-session; **not** a numerical probe (ingredient 5 closed that route).
 
 ## Cross-references
 
