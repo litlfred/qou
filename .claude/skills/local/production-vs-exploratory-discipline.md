@@ -69,9 +69,10 @@ Concrete locations:
    substrate-derived (no CAL-4) even though not yet proved to
    match CODATA at ppb.
 3. **Standard-physics imports.** CAL-1 m_e from CODATA;
-   CAL-2 from CODATA m_μ/m_e; CAL-3 from CODATA Q_β. These are
+   CAL-2 from CODATA m_μ/m_e (→ q_0; phys-obs may anchor q_0 on the
+   more-precise proton ratio m_p/m_e); CAL-3 from PDG m_π. These are
    the three calibration anchors per CLAUDE.md §"three-calibration
-   discipline".
+   discipline". Q_β is **derived** from CAL-1+CAL-2, not a calibration.
 
 **Disallowed in production.** Any of:
 - Empirical fits against CODATA values (e.g.
