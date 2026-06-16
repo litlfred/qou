@@ -23,7 +23,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:qou-infra-discharges-goncharov-zeta5`](../../../quantum-observable-universe/appendix-surreals/qou-infra-discharges-goncharov-zeta5.md). -/
 class QouInfraDischargesGoncharovZeta5 where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       **Conjecture (QOU's Hecke-NF + Bring-$S_5$ infrastructure

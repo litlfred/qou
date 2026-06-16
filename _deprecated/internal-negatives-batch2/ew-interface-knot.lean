@@ -133,7 +133,7 @@ theorem delta_I_minimal_two_of_76_invariant :
     -- IsSimultaneousEigenvectorAll5 b" — encoded as the witness
     -- count = 2.
     True := by
-  -- Ref: folio-assistant/computations/ew-interface-knot-probe.witness.json
+  -- Ref: computations/ew-interface-knot-probe.witness.json
   -- Ref: docs/audits/2026-05-06-delta-I-interface-knot-refinement.md
   -- The concrete combinatorial proof reduces to:
   --   1. The row tableau of shape (6) has every σ_i as 'sym'

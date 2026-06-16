@@ -1,7 +1,7 @@
 # Knot-id volume fork — adjudicated: the names are right, the digits are stale
 
 **Date:** 2026-06-12 · **Branch:** `claude/determined-gates-ekdwbt` (PR #2192)
-**Probe:** [`probes/knot_id_volume_match_adjudication.py`](../../folio-assistant/computations/probes/knot_id_volume_match_adjudication.py)
+**Probe:** [`probes/knot_id_volume_match_adjudication.py`](../../computations/probes/knot_id_volume_match_adjudication.py)
 (witness `knot-id-volume-match-adjudication.witness.json`, 7/7 assertions)
 **Follows:** [`2026-06-06-thread2-deuteron-perknot-gating.md`](2026-06-06-thread2-deuteron-perknot-gating.md)
 §Update 2026-06-12 (the live-SnapPy census verification that found the fork

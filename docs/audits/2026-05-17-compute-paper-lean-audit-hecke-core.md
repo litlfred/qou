@@ -20,7 +20,7 @@ skipped per instructions.
 
 ---
 
-## 1. `folio-assistant/computations/substrate/hecke_core.py`  (3173 LOC)
+## 1. `computations/substrate/hecke_core.py`  (3173 LOC)
 
 Largest of the seven — canonical Hecke infrastructure for `H_3(q)`
 extended with partition-table machinery and per-generator atomic
@@ -103,7 +103,7 @@ GB-NF descent abstraction are formalized. **Three gaps**:
 
 ---
 
-## 2. `folio-assistant/computations/hecke/hecke_characters.py`  (493 LOC)
+## 2. `computations/hecke/hecke_characters.py`  (493 LOC)
 
 Hoefsmit-matrix character engine with f64 + MPFR + symbolic-q hooks.
 
@@ -136,7 +136,7 @@ every downstream binding/mass result.
 
 ---
 
-## 3. `folio-assistant/computations/hecke/hecke_character_symbolic.py`  (453 LOC)
+## 3. `computations/hecke/hecke_character_symbolic.py`  (453 LOC)
 
 Symbolic-in-q character via `sympy.Matrix`. Marked DEPRECATION-CANDIDATE
 but still imported.
@@ -158,7 +158,7 @@ The `__main__` block (lines 355–453) demonstrates the q-character distinguishe
 
 ---
 
-## 4. `folio-assistant/computations/hecke/hecke_3a_weights.py`  (314 LOC)
+## 4. `computations/hecke/hecke_3a_weights.py`  (314 LOC)
 
 Wedderburn weights at `$H_{3A}(q)$` (q-deformed Plancherel) — full enumeration over `$λ ⊢ 3A$`.
 
@@ -197,7 +197,7 @@ noted in #1.
 
 ---
 
-## 5. `folio-assistant/computations/hecke/hecke_wedderburn.py`  (258 LOC)
+## 5. `computations/hecke/hecke_wedderburn.py`  (258 LOC)
 
 `δ_q` Wedderburn decomposition: per-irrep `$χ_λ$` for any braid word.
 
@@ -233,7 +233,7 @@ makes `alpha_em_from_delta_q()` an empirical identity, not a derivation.
 
 ---
 
-## 6. `folio-assistant/computations/hecke/hecke_division.py`  (951 LOC)
+## 6. `computations/hecke/hecke_division.py`  (951 LOC)
 
 Instrumented Gröbner-Shirshov division algorithm in `$H_n(q)$`.
 Marked DEPRECATION-CANDIDATE but still live.
@@ -271,7 +271,7 @@ correctly but doesn't construct the algebra.
 
 ---
 
-## 7. `folio-assistant/computations/hecke/hecke_engine.py`  (358 LOC)
+## 7. `computations/hecke/hecke_engine.py`  (358 LOC)
 
 Hecke trace engine: factored Markov trace + e(I)/e(R) at converting generator, exact rational arithmetic with `q = 111/100`.
 

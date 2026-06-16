@@ -28,7 +28,7 @@ This script explores both findings:
      generators?
 
 OUTPUT:
-    folio-assistant/computations/qbeta-habiro-partition-followup.witness.json
+    computations/qbeta-habiro-partition-followup.witness.json
 """
 from __future__ import annotations
 

@@ -197,7 +197,7 @@ The `1/n²` framing-ladder family is realised by
 The DEEP CATEGORICAL CLAIM — that this family IS the T(2,n) cinquefoil
 framing factor at the substrate level, with the n=5 selection matching
 the muon's torus-knot assignment from
-[`lepton_t2n_torus_tower.py`](../../../../../folio-assistant/computations/lepton_t2n_torus_tower.py)
+[`lepton_t2n_torus_tower.py`](../../../../../computations/lepton_t2n_torus_tower.py)
 — is conjectural. It is captured by the `cinquefoil_framing_t25_origin`
 field of `UniversalHabiroStructure` below. -/
 theorem habiroT25_framing_family_exists (q : ℝ) :
@@ -294,7 +294,7 @@ level (T(2,5) cinquefoil) suggests a general family:
     habiroT_{n²}(q) := [3]_q / n²
 
 with the lepton T(2,n) assignments (per
-[`lepton_t2n_torus_tower.py`](../../../../../folio-assistant/computations/lepton_t2n_torus_tower.py)):
+[`lepton_t2n_torus_tower.py`](../../../../../computations/lepton_t2n_torus_tower.py)):
 
 | Lepton | Knot   | n | Factor      |
 |--------|--------|---|-------------|

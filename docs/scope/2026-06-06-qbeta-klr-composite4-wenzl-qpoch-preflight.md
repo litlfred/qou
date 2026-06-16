@@ -158,5 +158,5 @@ implicit ordering.
 - KLR program master scope (kickoff): [`2026-06-05-qbeta-residue-a-klr-crystal-kernel-scope.md`](2026-06-05-qbeta-residue-a-klr-crystal-kernel-scope.md).
 - KLR tranche 1 (merged): [`2026-06-06-qbeta-residue-habiro-dual-tau-eval.md`](2026-06-06-qbeta-residue-habiro-dual-tau-eval.md), PR #1911 `fbbba406165dc9cf3f7b8df71d295b737ef1aa0b`.
 - Φ₂ targets (cont. 14): [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md), `qbeta-cosh-phase-series-reframe-probe.witness.json`.
-- Wenzl chain α NEGATIVE (cont. 5): [`qbeta-wenzl-habiro-chain-alpha.witness.json`](../../folio-assistant/computations/qbeta-wenzl-habiro-chain-alpha.witness.json), [`qbeta_wenzl_habiro_chain_alpha.py`](../../folio-assistant/computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py).
+- Wenzl chain α NEGATIVE (cont. 5): [`qbeta-wenzl-habiro-chain-alpha.witness.json`](../../computations/qbeta-wenzl-habiro-chain-alpha.witness.json), [`qbeta_wenzl_habiro_chain_alpha.py`](../../computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py).
 - 4-search acceptance: [`2026-06-03-qbeta-residue-a-cal-anchored-acceptance.md`](../audits/2026-06-03-qbeta-residue-a-cal-anchored-acceptance.md).

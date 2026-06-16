@@ -38,7 +38,7 @@ $$
 with the joint-tower SDP convention $n_0 = 3 \cdot A$ used in
 [`prop:joint-tower-sdp-confinement`](#prop:joint-tower-sdp-confinement)
 and in
-[`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json)
+[`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/main/computations/joint-tower-sdp-h6-h9.witness.json)
 — `atomic_n_0 = 9` for ${}^{3}$H/${}^{3}$He.  See "Structural decomposition" below
 for the binding-K factorisation that motivates the $n_0 = 3 \cdot A$
 convention.)
@@ -79,7 +79,7 @@ ground truth agrees with the historical assignment.
 ## SDP witness evidence
 
 Numerical SDP witnesses (stored in
-`folio-assistant/computations/probe-sdp-canonical-paper-formula.witness.json`)
+`computations/probe-sdp-canonical-paper-formula.witness.json`)
 show that the multi-term mass formula reproduces the AME binding
 energies of $^2$H, $^3$H, $^3$He to within the claimed error bound
 when $T_w$ is set to these knot types.  The conjecture asserts that
@@ -89,9 +89,9 @@ residual.
 ## Partial closure
 
 The R5-full canonical-knot SDP solver prototype
-([`r5_full_canonical_knot_solver.py`](../../../folio-assistant/computations/r5_full_canonical_knot_solver.py),
+([`r5_full_canonical_knot_solver.py`](../../../computations/r5_full_canonical_knot_solver.py),
 witness
-[`r5-full-canonical-knot-solver.witness.json`](../../../folio-assistant/computations/r5-full-canonical-knot-solver.witness.json))
+[`r5-full-canonical-knot-solver.witness.json`](../../../computations/r5-full-canonical-knot-solver.witness.json))
 gave the first **substrate-only** check of this conjecture for the
 three light nuclei.  Result:
 
@@ -167,7 +167,7 @@ gated on the `SDPRankUniqueness` Mathlib gap (SDP optimal-face
 rank-deficiency).  See
 [`docs/audits/2026-06-13-strict-complementarity-sdp-uniqueness-attempt.md`](../../../docs/audits/2026-06-13-strict-complementarity-sdp-uniqueness-attempt.md)
 for the closeable/irreducible split and the
-[`r5-full-canonical-knot-solver.witness.json`](../../../folio-assistant/computations/r5-full-canonical-knot-solver.witness.json)
+[`r5-full-canonical-knot-solver.witness.json`](../../../computations/r5-full-canonical-knot-solver.witness.json)
 active-set data.
 
 ## Proof obligations
@@ -190,9 +190,9 @@ active-set data.
 ## Structural decomposition (issue #604, deliverables 3 + 4)
 
 The numerical evidence from
-[`folio-assistant/computations/r5-full-canonical-knot-solver.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/r5-full-canonical-knot-solver.witness.json)
+[`computations/r5-full-canonical-knot-solver.witness.json`](https://github.com/litlfred/qou/blob/main/computations/r5-full-canonical-knot-solver.witness.json)
 (deliverable 1) and
-[`rho-prefactor-structural-verifier.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho-prefactor-structural-verifier.witness.json)
+[`rho-prefactor-structural-verifier.witness.json`](https://github.com/litlfred/qou/blob/main/computations/rho-prefactor-structural-verifier.witness.json)
 (deliverable 4) shows that the canonical $T_w$ at the **braid strand
 count** alone does *not* uniquely identify the bound state — proton
 and ${}^{3}$He have Markov-equivalent braid words in $H_3(q_0)$ (mutual
@@ -215,7 +215,7 @@ uniqueness conjecture into:
 (a) **Constituent uniqueness** — each $T_w(\text{nucleon}_i)$ is the
     unique PSD-feasible canonical element at $H_3(q_0)$.  *Closed
     numerically* by the R5-minimal verifier
-    ([`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint_tower_sdp_solver_v2.py)).
+    ([`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/main/computations/joint_tower_sdp_solver_v2.py)).
 
 (b) **Binding-K uniqueness** — $K(\mathfrak{H}) \in H_{3 \cdot A}(q_0)$
     is the unique PSD-feasible Hecke element satisfying the joint-tower

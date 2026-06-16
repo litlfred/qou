@@ -123,5 +123,5 @@ passed across the WASM boundary to the SnapPy kernel as the
 Thurston gluing equations
 ([cusp-holonomy seeding](#conj:shared-denominator-cusp-holonomy)).
 The witness
-[q-pochhammer-seed.witness.json](../../../folio-assistant/computations/q-pochhammer-seed.witness.json)
+[q-pochhammer-seed.witness.json](../../../computations/q-pochhammer-seed.witness.json)
 records the seed extraction for a sample nucleon word.

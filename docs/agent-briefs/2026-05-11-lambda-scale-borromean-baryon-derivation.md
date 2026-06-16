@@ -30,7 +30,7 @@ interpretation but left $\lambda_{\text{scale}}$ undefined.
 
 ## Empirical state (the numbers you'll need)
 
-From [`derive_m_baryon_volume_form.py`](../../folio-assistant/computations/derive_m_baryon_volume_form.py)
+From [`derive_m_baryon_volume_form.py`](../../computations/derive_m_baryon_volume_form.py)
 (this brief's anchor script, 50-dps mpmath):
 
 | Quantity | Value at $q_0$ | Status |
@@ -201,7 +201,7 @@ Skein polynomial $Q(q_0)$ or a graded-Hecke-energy ratio. Start there.
 - PR #487 (`claude/knot-volumes-review-Pgt8o`) — introduced the
   Borromean-baryon block.
 - PR #640 (this branch) — Vol-form chain + audit + this brief.
-- [`derive_m_baryon_volume_form.py`](../../folio-assistant/computations/derive_m_baryon_volume_form.py)
+- [`derive_m_baryon_volume_form.py`](../../computations/derive_m_baryon_volume_form.py)
   — the script you'd extend / consume from.
 - [`docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md`](../audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md)
   — the analytical motivation.
@@ -244,7 +244,7 @@ The PR #487 agent replied with the following findings (paraphrased; ✓ direct, 
 ## Implications for the Borromean-baryon programme
 
 The Vol-form derivation in this branch
-([`derive_m_baryon_volume_form.py`](../../folio-assistant/computations/derive_m_baryon_volume_form.py))
+([`derive_m_baryon_volume_form.py`](../../computations/derive_m_baryon_volume_form.py))
 sits in the **Borromean / Vol-based** formalism. Under PR #487 agent
 finding #6, this formalism's "proton" and "neutron" predictions
 correspond to **different braid representatives** than the canonical

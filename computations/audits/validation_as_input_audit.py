@@ -1,6 +1,6 @@
 """I11 audit — CODATA `_VALIDATION` constants used as production inputs.
 
-`folio-assistant/computations/codata_constants.py` exposes a family
+`computations/codata_constants.py` exposes a family
 of `M_*_MEV_VALIDATION` constants (M_P, M_N, M_D, M_T, M_HE3, …)
 explicitly tagged in the source as "DO NOT USE AS PREDICTION INPUTS
 — retained only for `err = pred - M_X_VALIDATION` comparisons".
@@ -13,7 +13,7 @@ The I11 antipattern in `local/compute-integration-watcher` is:
   the comparison target, or multiplies it with a derived quantity.
 
 This audit walks every Python script under
-`folio-assistant/computations/`, looks for `_VALIDATION` imports,
+`computations/`, looks for `_VALIDATION` imports,
 and classifies the usage:
 
   - `ok_comparison_only`     — value only appears in `pred - ...`,
@@ -37,7 +37,7 @@ Emits `validation-as-input-audit.witness.json` with the per-script
 classification.
 
 Usage:
-    python3 folio-assistant/computations/validation_as_input_audit.py [--strict]
+    python3 computations/validation_as_input_audit.py [--strict]
 """
 
 

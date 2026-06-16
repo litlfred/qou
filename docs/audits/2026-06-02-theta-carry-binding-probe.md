@@ -1,7 +1,7 @@
 # Per-block θ_λ carry — absolute binding still open, but the signed difference is structural (no fit)
 
 **Date:** 2026-06-02
-**Probe:** [`probe_theta_carry_binding.py`](../../folio-assistant/computations/probe_theta_carry_binding.py)
+**Probe:** [`probe_theta_carry_binding.py`](../../computations/probe_theta_carry_binding.py)
 → `probe-theta-carry-binding.witness.json`
 **Status:** EXPLORATORY (production-vs-exploratory-discipline); asserts the
 refutation. Δ_λ / A≥3-absolute binding remains an open gate.

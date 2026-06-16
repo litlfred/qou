@@ -1,4 +1,4 @@
-"""Substrate — cluster subdirectory of folio-assistant/computations/.
+"""Substrate — cluster subdirectory of computations/.
 
 See [`docs/proposals/computations-subdirectory-refactor.md`](../../../docs/proposals/computations-subdirectory-refactor.md).
 """

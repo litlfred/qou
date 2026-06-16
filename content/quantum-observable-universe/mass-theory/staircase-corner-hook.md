@@ -26,10 +26,10 @@ $\beta_{\mathrm{EW}} \, \bowtie_K^{\mathrm{minimal}}$ on
 $V_{\rho_k}$ uses *exactly* this corner hook as the inverse
 exponent.  For $k = 3$ this gives the $q^{1/5}$ residual factor
 that closes the cot $\theta_W$ gap from $2.19\%$ to
-$0.13\%$ ([`folio-assistant/computations/close_321_weinberg_gap.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/close_321_weinberg_gap.py));
+$0.13\%$ ([`computations/close_321_weinberg_gap.py`](https://github.com/litlfred/qou/blob/main/computations/close_321_weinberg_gap.py));
 for $k = 4$ it predicts the $q^{1/7}$ residual scale empirically
 verified at relative error $0.14\%$ in the dim-$768$ spectrum
-([`staircase_ew_residual_conjecture.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/staircase_ew_residual_conjecture.py)).
+([`staircase_ew_residual_conjecture.py`](https://github.com/litlfred/qou/blob/main/computations/staircase_ew_residual_conjecture.py)).
 
 The Lean proof
 (`QOU.StaircaseCornerHook.staircase_corner_hook_eq_two_k_sub_one`)

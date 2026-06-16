@@ -126,7 +126,7 @@ compute* caps at A ≈ 4–5.
 Method 5's constraint rows come from the **Littlewood–Richardson
 branching** `H_{3A} ⊃ (H_3)^Z × (H_3)^N`, i.e. the iterated-LR formula
 already canonicalised in
-[`folio-assistant/computations/UNIVERSAL-BRANCHING-PLAN.md`](../../folio-assistant/computations/UNIVERSAL-BRANCHING-PLAN.md):
+[`computations/UNIVERSAL-BRANCHING-PLAN.md`](../../computations/UNIVERSAL-BRANCHING-PLAN.md):
 
     χ_free(λ) = Σ_{(μ_1,…,μ_A), μ_i ⊢ 3} c^λ_{μ_1,…,μ_A} · Π_i χ^{μ_i}(K_i)
 

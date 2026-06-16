@@ -23,7 +23,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:q-collatz`](../../../quantum-observable-universe/appendix-surreals/q-collatz-conjecture.md). -/
 class QCollatz where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- Scalar residual encoding the conjecture's content (placeholder
       shape: refine to match the actual claim). -/
   residual : ℝ

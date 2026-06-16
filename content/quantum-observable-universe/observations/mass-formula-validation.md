@@ -9,7 +9,7 @@ The 0.0000% entries are arithmetic checks, not predictions.
 The substrate parameter $q$ determines all dimensionless mass ratios
 ($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = :val[m_mu_over_e]{precision=6}$), but to convert
 these ratios into physical MeV we need one external input:
-$m_e = :val[m_e_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV (CODATA 2022). This is our **ruler** ---
+$m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV (CODATA 2022). This is our **ruler** ---
 it fixes the absolute energy scale. Without $m_e$, QOU predicts
 ratios only.
 

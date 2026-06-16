@@ -48,7 +48,7 @@ but not on $n$).*
 ## Empirical evidence (path (b) deliverable)
 
 The measurement script
-[`folio-assistant/computations/jet_tower_delta_max.py`](../../../folio-assistant/computations/jet_tower_delta_max.py)
+[`computations/jet_tower_delta_max.py`](../../../computations/jet_tower_delta_max.py)
 runs `unified_lift.unified_atom_binding` (which already computes
 `delta_n` per jet level — see `unified_lift.py` line 158) for
 $\mathrm{D}$, $\mathrm{T}$, $^3\mathrm{He}$ across

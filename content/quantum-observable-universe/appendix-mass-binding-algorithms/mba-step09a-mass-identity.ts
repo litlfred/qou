@@ -12,7 +12,7 @@ export default algorithm({
   computation: {
     engine: "python+mpmath",
     script: "qou-mass/src/qou_mass/api.py",
-    witness: "folio-assistant/computations/per-observable-100x-status.witness.json",
+    witness: "computations/per-observable-100x-status.witness.json",
     status: "verified",
   },
   tags: [

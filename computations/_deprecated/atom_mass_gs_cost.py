@@ -39,7 +39,7 @@ We also track:
   - Word length of unreduced braid vs NF
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_gs_cost.py
+    python3 computations/atom_mass_gs_cost.py
 """
 
 import math

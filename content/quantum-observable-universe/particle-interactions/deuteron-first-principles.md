@@ -5,7 +5,7 @@ using the full $H_6(R, q)$ Schur–Weyl sum
 over all $11$ partitions of $6$, with the paper's atomic-braid
 convention
 (`atomic_braid_to_crossings` in
-`folio-assistant/computations/hecke/hecke_character_symbolic.py`) and
+`computations/hecke/hecke_character_symbolic.py`) and
 the numerical Hoefsmit pipeline
 (`hecke_characters.build_seminormal_matrices`).*
 
@@ -49,7 +49,7 @@ a **known upstream diagnosis**, not a bug of the Schur–Weyl sum.*
 
 **Upstream context: $(5/2) \cdot m_e$ partition-sum discovery.**
 *Parallel work on the 1ppb branch
-(`folio-assistant/computations/residual_partition_sum.py`,
+(`computations/residual_partition_sum.py`,
 `tower_isotope_absolute.py`, `kerov_walk_verify.py`)
 established:*
 
@@ -108,7 +108,7 @@ neutron contribution, not the partition sum.  Paths forward:*
 **Upstream follow-up: paper's BW + chirality gives $0.5$–$0.9\%$.**
 
 *Subsequent upstream work
-(`folio-assistant/computations/bw_chirality_isotopes.py`,
+(`computations/bw_chirality_isotopes.py`,
 `pure_hecke_binding.py`) established two sharper findings:*
 
 1. *The **paper's own** figure-eight-BW formula with chirality
@@ -192,7 +192,7 @@ partitions.
 
 **Reference.**
 
-*Script: `folio-assistant/computations/deuteron_first_principles.py`.
+*Script: `computations/deuteron_first_principles.py`.
 Witness: `deuteron-first-principles.witness.json`.  Runtime: under
 a second (all partitions of $6$ with max $\dim = 16$, numerical).
 Reproducible with Python 3.11 + numpy + scipy.*

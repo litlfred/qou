@@ -21,7 +21,7 @@ This script:
  10. Writes witness JSON
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 deuterium-optimal-nf.py
 """
 

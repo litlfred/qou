@@ -12,7 +12,7 @@
 
 ## Context
 
-The framework's compute layer ([`codata_constants.py` line 22](../../folio-assistant/computations/substrate/codata_constants.py)) and content layer ([`three-calibration-inputs.md`](../../content/quantum-observable-universe/mass-theory/three-calibration-inputs.md)) both already declare `CAL-3 = m_π` (pion decay width → pion mass scale; replaces the older `CAL-3 = Q_β` framing). This session noticed the older framing via stale context, hunted for the "missing CAL-3", and produced two empirical probes that corroborate the canonical assignment from independent directions.
+The framework's compute layer ([`codata_constants.py` line 22](../../computations/substrate/codata_constants.py)) and content layer ([`three-calibration-inputs.md`](../../content/quantum-observable-universe/mass-theory/three-calibration-inputs.md)) both already declare `CAL-3 = m_π` (pion decay width → pion mass scale; replaces the older `CAL-3 = Q_β` framing). This session noticed the older framing via stale context, hunted for the "missing CAL-3", and produced two empirical probes that corroborate the canonical assignment from independent directions.
 
 ## Work items in this PR
 
@@ -33,7 +33,7 @@ The framework's compute layer ([`codata_constants.py` line 22](../../folio-assis
 
 ### Probe A — m_π Hecke prediction (negative)
 
-[`m_pi_hecke_prediction_probe.py`](../../folio-assistant/computations/probes/m_pi_hecke_prediction_probe.py)
+[`m_pi_hecke_prediction_probe.py`](../../computations/probes/m_pi_hecke_prediction_probe.py)
 tested ~100 candidate categorical formulas for m_π from (m_e, q_0,
 m_μ) alone, using the same Lean-proved building blocks that close
 m_p to 0.24 ppm under the substrate identity. **Best miss = 19,938 ppm**
@@ -45,7 +45,7 @@ information that (m_e, q_0) does not encode.
 
 ### Probe B — c_3 categorical derivation (negative)
 
-[`c_3_categorical_derivation_attempt.py`](../../folio-assistant/computations/c_3_categorical_derivation_attempt.py)
+[`c_3_categorical_derivation_attempt.py`](../../computations/c_3_categorical_derivation_attempt.py)
 tested 15 single-formula categorical candidates (bar-symmetrization,
 Hopf-Jones at q₀, Wedderburn-weighted block traces, Habiro binomial)
 against BOTH muon-pin and m_p-pin q₀ anchors. None match to ≤ 10 ppm

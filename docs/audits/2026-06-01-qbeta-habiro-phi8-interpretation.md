@@ -27,7 +27,7 @@
 > probe [`2026-05-31-qbeta-habiro-cross-pair-quick-dp.md`](2026-05-31-qbeta-habiro-cross-pair-quick-dp.md).
 >
 > Branch: `claude/brave-mendel-FPxFl` (PR #1579).
-> Probe script: [`folio-assistant/computations/probes/qbeta_habiro_phi8_interpretation_probe.py`](../../folio-assistant/computations/probes/qbeta_habiro_phi8_interpretation_probe.py).
+> Probe script: [`computations/probes/qbeta_habiro_phi8_interpretation_probe.py`](../../computations/probes/qbeta_habiro_phi8_interpretation_probe.py).
 > Witness: `qbeta-habiro-phi8-interpretation.witness.json`.
 
 ## TL;DR
@@ -77,7 +77,7 @@ The hypothesized pattern `A=k → A=k+1 atomic-step pair carries Φ_{2^{k+1}}` m
 | **(any A=k+1 − A=k)** | `Φ_{2^{k+1}}(u) = u^{2^k} + 1` | 2^k-strand B_{2^k} |
 | **Isospin mirror pairs** (³H/³He, ⁷Li/⁷Be, …) | `Φ_1·Φ_2 = u² − 1` (the n−p signature) | NOT Φ_8 — distinguishes isospin from atomic step |
 
-These are testable as soon as the per-isotope Habiro coefficients land (currently only p, n, D are in [`habiro-coefficients-atomic.witness.json`](../../folio-assistant/computations/habiro/habiro-coefficients-atomic.witness.json)).
+These are testable as soon as the per-isotope Habiro coefficients land (currently only p, n, D are in [`habiro-coefficients-atomic.witness.json`](../../computations/habiro/habiro-coefficients-atomic.witness.json)).
 
 ## Hypotheses ruled out
 

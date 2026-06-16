@@ -28,7 +28,7 @@
    for the missing tower data).
 
 3. **Derive-or-refute** (compute:
-   [`qlommel_delta_lambda_two_seed_test.py`](../../folio-assistant/computations/qbeta/qlommel_delta_lambda_two_seed_test.py),
+   [`qlommel_delta_lambda_two_seed_test.py`](../../computations/qbeta/qlommel_delta_lambda_two_seed_test.py),
    witness `qlommel-delta-lambda-two-seed.witness.json`, 3 assertions pass):
 
    | check | result |
@@ -49,7 +49,7 @@
 - **Does NOT** close to exact. Two pieces remain — both already flagged by the
   2026-06-09 residual audit as the admissible (non-fit) next step:
   1. **The exponent `10A−5 = 5(2A−1)` — slope now DERIVED from crossings**
-     ([`delta_lambda_exponent_from_crossings.py`](../../folio-assistant/computations/delta_lambda_exponent_from_crossings.py),
+     ([`delta_lambda_exponent_from_crossings.py`](../../computations/delta_lambda_exponent_from_crossings.py),
      witness `delta-lambda-exponent-from-crossings.witness.json`). Classifying
      `atom_braid_word_3A(Z,N)` by Hecke crossing type:
      `n_cross = 12A−1`, color-averaged p-n interfaces `= 2A+1`, and

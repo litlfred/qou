@@ -24,7 +24,7 @@
   {
     "id": "research-flavor-split-mn-dpn-refinement",
     "summary": "m_n / \u0394_pn flavor-split formula refinement (Hecke-skein X(q) intrinsic residual)",
-    "comment": "UPDATED 2026-06-01 (PR #1673 Probe 1): MULTIPLICATIVE-REFINEMENT FAMILY REFUTED at cross-anchor. mn_dpn_xq_cross_anchor_probe.py tested 14 candidate X\u00b7(factor) forms (\u03b1_em, h\u00b2, \u210f_q\u00b2, G, [2]_q-based; PR #1645 set + 3 new) at q_proton AND q_muon. ALL TIER 3 (refuted): residuals near-identical at both anchors (\u0394q \u2248 1.28e-8 cannot discriminate any multiplicative q-correction). Confirms the 0.10% intrinsic X(q) residual is NOT a multiplicative-refinement problem; needs a fibre-level Habiro element (parallel \u03b1_EM PR #1511's `[2]_q\u00b7(1-h\u00b2\u03b1)` pattern). NEW research direction: Habiro element identification for X(q) \u2014 same template as research-qbeta-habiro-element. Estimated 2-3 sessions (revised). Cross-refs: PR #1673 Probe 1; folio-assistant/computations/mn-dpn-xq-cross-anchor-probe.witness.json. | 2026-06-13: Derived exact topological mass split trace proportionality (q^3 - q^-3) and closed exact 0.128% residual via H4(q) alternating projection 1/[4]_q! and 1+hq vertex.",
+    "comment": "UPDATED 2026-06-01 (PR #1673 Probe 1): MULTIPLICATIVE-REFINEMENT FAMILY REFUTED at cross-anchor. mn_dpn_xq_cross_anchor_probe.py tested 14 candidate X\u00b7(factor) forms (\u03b1_em, h\u00b2, \u210f_q\u00b2, G, [2]_q-based; PR #1645 set + 3 new) at q_proton AND q_muon. ALL TIER 3 (refuted): residuals near-identical at both anchors (\u0394q \u2248 1.28e-8 cannot discriminate any multiplicative q-correction). Confirms the 0.10% intrinsic X(q) residual is NOT a multiplicative-refinement problem; needs a fibre-level Habiro element (parallel \u03b1_EM PR #1511's `[2]_q\u00b7(1-h\u00b2\u03b1)` pattern). NEW research direction: Habiro element identification for X(q) \u2014 same template as research-qbeta-habiro-element. Estimated 2-3 sessions (revised). Cross-refs: PR #1673 Probe 1; computations/mn-dpn-xq-cross-anchor-probe.witness.json. | 2026-06-13: Derived exact topological mass split trace proportionality (q^3 - q^-3) and closed exact 0.128% residual via H4(q) alternating projection 1/[4]_q! and 1+hq vertex.",
     "status": "done",
     "priority": "high",
     "origin": "user-2026-06-01",
@@ -101,7 +101,7 @@
       "completedAt": "2026-05-31",
       "completedBy": "claude/phi-q-spectral-combiner-2026-05-31",
       "verdict": "REFUTED for this specific candidate; combined Li_2^q \u00d7 spectral attack family still has untested variants but those are 7th-ansatz fit-trap territory",
-      "witness": "folio-assistant/computations/phi-q-spectral-combiner-probe.witness.json",
+      "witness": "computations/phi-q-spectral-combiner-probe.witness.json",
       "empirical_c3_proton": "-2.0693",
       "candidate_c3_proton": "-1.7975",
       "err_pct": 13.14,
@@ -126,7 +126,7 @@
       "research_grade": true,
       "pre_stated_failure_signature": "matches at q_proton but not at q_muon \u27f9 another near-match",
       "actual_failure_signature": "bar-symmetric replacement test \u2014 best bar-sym candidate at -5.05% vs v9 -0.0958%; v9 form is inherently bar-asymmetric (diff 0.1045 at q_proton)",
-      "witness": "folio-assistant/computations/option-e-v9-bar-symmetric-test-probe.witness.json"
+      "witness": "computations/option-e-v9-bar-symmetric-test-probe.witness.json"
     }
   },
   {
@@ -236,7 +236,7 @@
       "goal": "1ppq-qbeta",
       "research_grade": true,
       "follows_from": "research-phi-q-spectral-combiner (refuted PR #1609) + PR #1615 bar-decomposition",
-      "witness": "folio-assistant/computations/qbeta-delta-tr-bar-decomposition-probe.witness.json",
+      "witness": "computations/qbeta-delta-tr-bar-decomposition-probe.witness.json",
       "audit": "docs/audits/2026-06-01-delta-tr-m-bar-decomposition-structural-finding.md",
       "sym_closed_form_q": "\u2212(q\u22121)\u00b2(q+1)/(2q^(3/2))",
       "sym_pct_at_q_proton": 7.7,
@@ -247,7 +247,7 @@
   {
     "id": "research-boiling-freezing-temps-from-braid-hbond",
     "summary": "Review / derive boiling + freezing (melting) temperatures from the braid-weight + H-bond framework",
-    "comment": "QUEUED 2026-06-10 (user: 'queue to review boiling/freezing temps'). Extends the molecular-construction bond-angle program (prop:symmetric-block-domain-weight, q^\u2113 domain weights; CH4/NH3/H2O/C2H4 angles within 0.6\u00b0, H2S/H2Se via Bring 1/\u221a5) from single-molecule geometry to PHASE-TRANSITION observables. Boiling point ~ H-bond network cohesion energy per molecule; freezing/melting point ~ onset of the ordered (ice-like) H-bond lattice. Existing footholds: tetrahedral-hbond-directions (the 4 sp\u00b3 H-bond directions of water), ice-pauling-residual (Pauling residual entropy of ice), covalent-bond-shared-trefoil, h2o-bent-geometry. Open question: is the boiling/melting T a tr_M / binding-energy quantity (bar-symmetric Li_2^q sector) over the H-bond network braid, calibrated by the existing CAL inputs \u2014 i.e. derivable, not fitted? FIRST STEPS (formalize-first, no fitting): (1) corpus-grep boiling|freezing|melting|phase|latent|hydrogen-bond across content/ + folio-assistant/computations/ + docs/audits/ to see what exists; (2) identify whether T_boil/T_melt is an energy observable (MeV\u2192K via k_B) traceable to the substrate, or a network-statistical quantity needing a new combiner; (3) state the hypothesis class + the invariant it must satisfy BEFORE any numerical scan (per CLAUDE.md formalize-first). ANTI-PATTERN GUARD: do NOT fit a scale factor to reproduce 373 K / 273 K \u2014 boiling/freezing must trace to CAL-1/2/3 or be reported tier=open. Cross-refs: prop:bring-trefoil-cinquefoil-channel (this branch), conj:h2s-angle-s3-braid-holonomy.",
+    "comment": "QUEUED 2026-06-10 (user: 'queue to review boiling/freezing temps'). Extends the molecular-construction bond-angle program (prop:symmetric-block-domain-weight, q^\u2113 domain weights; CH4/NH3/H2O/C2H4 angles within 0.6\u00b0, H2S/H2Se via Bring 1/\u221a5) from single-molecule geometry to PHASE-TRANSITION observables. Boiling point ~ H-bond network cohesion energy per molecule; freezing/melting point ~ onset of the ordered (ice-like) H-bond lattice. Existing footholds: tetrahedral-hbond-directions (the 4 sp\u00b3 H-bond directions of water), ice-pauling-residual (Pauling residual entropy of ice), covalent-bond-shared-trefoil, h2o-bent-geometry. Open question: is the boiling/melting T a tr_M / binding-energy quantity (bar-symmetric Li_2^q sector) over the H-bond network braid, calibrated by the existing CAL inputs \u2014 i.e. derivable, not fitted? FIRST STEPS (formalize-first, no fitting): (1) corpus-grep boiling|freezing|melting|phase|latent|hydrogen-bond across content/ + computations/ + docs/audits/ to see what exists; (2) identify whether T_boil/T_melt is an energy observable (MeV\u2192K via k_B) traceable to the substrate, or a network-statistical quantity needing a new combiner; (3) state the hypothesis class + the invariant it must satisfy BEFORE any numerical scan (per CLAUDE.md formalize-first). ANTI-PATTERN GUARD: do NOT fit a scale factor to reproduce 373 K / 273 K \u2014 boiling/freezing must trace to CAL-1/2/3 or be reported tier=open. Cross-refs: prop:bring-trefoil-cinquefoil-channel (this branch), conj:h2s-angle-s3-braid-holonomy.",
     "status": "done",
     "priority": "medium",
     "origin": "user-2026-06-10",

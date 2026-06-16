@@ -56,7 +56,7 @@ AUDIT_WITNESS_NAME = "derivation-chain-audit.witness.json"
 # Repo root resolution: prefer the `QOU_REPO_ROOT` env var if set
 # (lets CI / external runners override the relative path).  Default
 # walks up from this file via `.git` discovery, falling back to
-# `HERE.parent.parent` (i.e. <repo>/folio-assistant/computations →
+# `HERE.parent.parent` (i.e. <repo>/computations →
 # <repo>) which is the standard layout.
 def _resolve_repo_root() -> Path:
     env_root = os.environ.get("QOU_REPO_ROOT")
@@ -158,7 +158,7 @@ def validate_chain(chain_path: Path) -> ChainResult:
                 script_path = REPO_ROOT / m.group(1)
                 if not script_path.exists():
                     # Dead-code sweep (commit 191bd9f5) moved retired
-                    # producers under folio-assistant/computations/_deprecated/.
+                    # producers under computations/_deprecated/.
                     # Accept the cited script if a copy exists there;
                     # provenance is preserved for future refresh.
                     deprecated_path = (

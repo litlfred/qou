@@ -22,7 +22,7 @@ export default proposition({
   computation: {
     engine: "python",
     script:
-      "folio-assistant/computations/_deprecated/bw_wenzl_shadow_equivalence.py",
+      "computations/_deprecated/bw_wenzl_shadow_equivalence.py",
     witness: "docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json",
     status: "verified",
   },

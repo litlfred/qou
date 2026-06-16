@@ -214,7 +214,7 @@ def audit() -> list[Finding]:
     return findings
 
 
-EXCEPTIONS_PATH = Path("folio-assistant/computations/audits/field-typeclass-audit.exceptions.json")
+EXCEPTIONS_PATH = Path("computations/audits/field-typeclass-audit.exceptions.json")
 
 
 def apply_exceptions(findings: list[Finding]) -> list[Finding]:
@@ -243,7 +243,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if any phantom/over-strong finding present")
-    ap.add_argument("--witness", default="folio-assistant/computations/audits/field-typeclass-audit.witness.json")
+    ap.add_argument("--witness", default="computations/audits/field-typeclass-audit.witness.json")
     args = ap.parse_args()
 
     findings = apply_exceptions(audit())

@@ -17,7 +17,7 @@ The valence channel per atom:
 Bond = inverse trefoil T(2,3)⁻¹ between valence channels.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 molecular-valence-channel.py
 """
 

@@ -121,7 +121,7 @@ Three CAL inputs ($m_e$, $m_p$, $m_n$ via $Q_\beta = m_n - m_p - m_e$),
 no derived $E_0$.
 
 Per the leading-order verification witness
-[`atomic-mass-via-rho-k.witness.json`](../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json),
+[`atomic-mass-via-rho-k.witness.json`](../../computations/atomic-mass-via-rho-k.witness.json),
 the LO ansatz alone gives:
 
 | atom | $|\operatorname{tr}_M|$ | $\rho_K^{\text{LO}}$ | M_pred (MeV) | LO err% | full-formula gap |
@@ -149,7 +149,7 @@ The ρ_K^full assembly does NOT need:
 - T2 / T3 tower terms (Markov-axiom or li2q),
 - T4 Frobenius codim,
 - T6 cyclotomic tail (now **diagnostic-only by design** — see
-  [`atomic_braid_mass_terms.t6_canonical_MeV`](../../folio-assistant/computations/atomic_braid_mass_terms.py)
+  [`atomic_braid_mass_terms.t6_canonical_MeV`](../../computations/atomic_braid_mass_terms.py)
   docstring: by Mittag-Leffler complementarity per
   [`AUDIT-DEEP-2026-05.md §3.3a`](../../AUDIT-DEEP-2026-05.md), T6's
   cyclotomic principal-part `pp_at_roots(u)` is one of THREE
@@ -201,8 +201,8 @@ limit gives a baseline for measuring how much linking matters.
 
 ### From PR #548 (Δ_n² verification computes)
 
-[`full_twist_delta_n2_verification.py`](../../folio-assistant/computations/full_twist_delta_n2_verification.py)
-and [`full_twist_root_of_unity_probe.py`](../../folio-assistant/computations/probes/full_twist_root_of_unity_probe.py)
+[`full_twist_delta_n2_verification.py`](../../computations/full_twist_delta_n2_verification.py)
+and [`full_twist_root_of_unity_probe.py`](../../computations/probes/full_twist_root_of_unity_probe.py)
 established a **structural finding** on
 [`conj:categorical-neutrality-saturated-shells`](../../content/quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.md):
 at magic n=2, the Δ_n²-invariant subspace is empty under generic-
@@ -218,7 +218,7 @@ they all fail/trivialise), this finding likely connects to
 
 ### From PR #548 (T1 modes sweep)
 
-[`atomic_braid_mass_table_modes_sweep.py`](../../folio-assistant/computations/atomic_braid_mass_table_modes_sweep.py)
+[`atomic_braid_mass_table_modes_sweep.py`](../../computations/atomic_braid_mass_table_modes_sweep.py)
 empirically established that **the legacy E₀ formula's gap was
 in tower terms, not T1**. With ρ_K replacing E₀, this analysis
 informs which T1 anchor representation to use — ρ_K's leading-
@@ -317,11 +317,11 @@ Each proposal below either:
 ### Proposal 1: empirical $\Delta_\lambda$ tabulation across atoms (in flight)
 
 **Status:** in flight on this branch as
-[`delta_lambda_empirical_tabulation.py`](../../folio-assistant/computations/delta_lambda_empirical_tabulation.py)
+[`delta_lambda_empirical_tabulation.py`](../../computations/delta_lambda_empirical_tabulation.py)
 + caching helpers
-[`y_lambda_at_q0_cache.py`](../../folio-assistant/computations/y_lambda_at_q0_cache.py)
+[`y_lambda_at_q0_cache.py`](../../computations/y_lambda_at_q0_cache.py)
 and
-[`chi_lambda_at_q0_cache.py`](../../folio-assistant/computations/chi_lambda_at_q0_cache.py).
+[`chi_lambda_at_q0_cache.py`](../../computations/chi_lambda_at_q0_cache.py).
 Coordinated with [PR #600](https://github.com/litlfred/qou/pull/600#issuecomment-4413090489).
 
 **Effort:** 1 PR, ~1 day (cached chi already exists; y_λ cache being
@@ -329,11 +329,11 @@ built in parallel).
 **Deliverable:** for each $K \in \{D, T, {}^3\!He, {}^4\!He\}$:
 
 1. Load $y_\lambda(q_0)$ from cached
-   [`y-lambda-at-q0.witness.json`](../../folio-assistant/computations/y-lambda-at-q0.witness.json)
+   [`y-lambda-at-q0.witness.json`](../../computations/y-lambda-at-q0.witness.json)
    (built once via parallel `multiprocessing.Pool`; eliminates the
    13-minute symbolic re-evaluation bottleneck).
 2. Load $\chi^\lambda(\beta_K)(q_0)$ from cached
-   [`chi-lambda-at-q0.witness.json`](../../folio-assistant/computations/chi-lambda-at-q0.witness.json)
+   [`chi-lambda-at-q0.witness.json`](../../computations/chi-lambda-at-q0.witness.json)
    (D / T / ³He) or `per_partition` table (⁴He).
 3. **Solve the underdetermined system**
    $\sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda = \Delta M / m_e$
@@ -342,7 +342,7 @@ built in parallel).
    - **(a) single-block**: $\Delta_\lambda \neq 0$ only for one
      $\lambda^*$, swept over all $\lambda \vdash 3A$. *(Overlaps
      with the existing Occam option in
-     [`rho_k_h3a_refinement.py`](../../folio-assistant/computations/rho_k_h3a_refinement.py);
+     [`rho_k_h3a_refinement.py`](../../computations/rho_k_h3a_refinement.py);
      reproduced here for cross-atom pattern check.)*
    - **(b) shell-supported**: $\Delta_\lambda \neq 0$ only for the
      "staircase" $\lambda_{\text{shell}}$ (per
@@ -406,7 +406,7 @@ verifying $\operatorname{ord}_{u=0}(\operatorname{tr}_M(\beta_{^4\!He}))
 = 18 \cdot 2 + 21 \cdot 2 + 1 = 79$, parallel to PR #572's proton
 ($H_3$, ord 19) and deuteron ($H_6$, ord 40) verifications. The
 ⁴He chi cache is already saved in
-[`chi-helium-4-h12-numeric.witness.json`](../../folio-assistant/computations/chi-helium-4-h12-numeric.witness.json)
+[`chi-helium-4-h12-numeric.witness.json`](../../computations/chi-helium-4-h12-numeric.witness.json)
 (per the GAP-A-3/A-4 guidance), so this is a per-term ord
 analysis, not a full χ recomputation.
 
@@ -431,7 +431,7 @@ data is available.
 
 **Note on T6:** the existing `t6_canonical_MeV` import already
 returns 0 by design (Mittag-Leffler complementarity, per
-[`atomic_braid_mass_terms.py`](../../folio-assistant/computations/atomic_braid_mass_terms.py)
+[`atomic_braid_mass_terms.py`](../../computations/atomic_braid_mass_terms.py)
 docstring). So part of the simplification — dropping the T6
 addition — is already in effect via the upstream module; the
 remaining work is to drop the T2/T3/T4 layer and switch the
@@ -439,8 +439,8 @@ formula to ρ_K^full.
 
 **Note on canonical-convention recipes (PR #615 batch 1):** the
 operator-valued canonical chains for p, n, D, ⁴He are now committed
-([`atomic-braid-recipe-{p,n,d,4he}-canonical.derivation.json`](../../folio-assistant/computations/atomic-braid-recipe-p-canonical.derivation.json)
-+ [`build_atomic_braid_recipe_canonical_chain.py`](../../folio-assistant/computations/build_atomic_braid_recipe_canonical_chain.py)).
+([`atomic-braid-recipe-{p,n,d,4he}-canonical.derivation.json`](../../computations/atomic-braid-recipe-p-canonical.derivation.json)
++ [`build_atomic_braid_recipe_canonical_chain.py`](../../computations/build_atomic_braid_recipe_canonical_chain.py)).
 The deprecation should adopt this canonical convention rather
 than my Strategy 3's ad-hoc `[1]*7+[2]*4` proton word. T/³He are
 not yet in the canonical chain (PR #615 batch 1 only covers
@@ -567,7 +567,7 @@ Active-branch awareness as of 2026-05-09 16:40 UTC:
 - GAP-A-3 + GAP-A-4 guidance: [`docs/audits/2026-05-09-gap-a-3-a-4-guidance.md`](2026-05-09-gap-a-3-a-4-guidance.md)
 - Path A verification (proton + deuteron): [`docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md`](2026-05-08-per-irrep-pole-18-21-research-note.md)
 - Conjecture closure tractability: [`docs/audits/2026-05-09-conjecture-closure-tractability.md`](2026-05-09-conjecture-closure-tractability.md)
-- T6 dissolution rationale: [`AUDIT-DEEP-2026-05.md` §3.3a](../../AUDIT-DEEP-2026-05.md) + [`atomic_braid_mass_terms.py:t6_canonical_MeV` docstring](../../folio-assistant/computations/atomic_braid_mass_terms.py)
-- Canonical recipe chains (PR #615): [`atomic-braid-recipe-{p,n,d,4he}-canonical.derivation.json`](../../folio-assistant/computations/atomic-braid-recipe-p-canonical.derivation.json) + [`build_atomic_braid_recipe_canonical_chain.py`](../../folio-assistant/computations/build_atomic_braid_recipe_canonical_chain.py)
+- T6 dissolution rationale: [`AUDIT-DEEP-2026-05.md` §3.3a](../../AUDIT-DEEP-2026-05.md) + [`atomic_braid_mass_terms.py:t6_canonical_MeV` docstring](../../computations/atomic_braid_mass_terms.py)
+- Canonical recipe chains (PR #615): [`atomic-braid-recipe-{p,n,d,4he}-canonical.derivation.json`](../../computations/atomic-braid-recipe-p-canonical.derivation.json) + [`build_atomic_braid_recipe_canonical_chain.py`](../../computations/build_atomic_braid_recipe_canonical_chain.py)
 - My superseded workplan: [`docs/audits/2026-05-05-markov-trace-axiomatic-workplan.md`](2026-05-05-markov-trace-axiomatic-workplan.md)
 - My contributing PRs: [#534](https://github.com/litlfred/qou/pull/534) (axiomatic Markov-trace closed form), [#547](https://github.com/litlfred/qou/pull/547) (recursive reducer + multi-atom anchor), [#548](https://github.com/litlfred/qou/pull/548) (Δ_n² verification + T1 modes sweep)

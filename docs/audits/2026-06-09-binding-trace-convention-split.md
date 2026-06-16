@@ -47,7 +47,7 @@ cross-check `tr_M(deuteron,q₀)=1.33178` exact) and **rejected**: deuteron
 `tr_M(q₀⁻¹)=0.00029` (tiny, q<1) → required Δ' = 11245 (underbinds). The
 `q→q⁻¹` bar is not the binding realization at any level (extends #1742's
 per-block bar negative to the trace). See
-[`atom_vhyp_bar_trace_test.py`](../../folio-assistant/computations/atom_vhyp_bar_trace_test.py).
+[`atom_vhyp_bar_trace_test.py`](../../computations/atom_vhyp_bar_trace_test.py).
 
 ## Reusable byproduct
 
@@ -62,7 +62,7 @@ reconciliation lands on.
 Corpus-grep settles it — the reconciliation is **already done in-repo**, and
 this session's binding objects were all **off-convention**:
 
-- **Canonical trace = C**: `folio-assistant/computations/markov/markov_trace_canonical.py::tr_M_element`
+- **Canonical trace = C**: `computations/markov/markov_trace_canonical.py::tr_M_element`
   (the deprecation pointer was right — it's in `markov/`). Confirmed by the
   canonical content block
   [`markov-axioms-primitive.md`](../../content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md)

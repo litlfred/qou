@@ -6,9 +6,9 @@ Shirshov] filtration/order"* + *"attack the Δ_λ(K) gate / energy-scale — kee
 track of active sets through knot operations as nucleons constructed."*
 
 Probes (PR #2089):
-[`gs_filtration_binding_components.py`](../../folio-assistant/computations/gs_filtration_binding_components.py)
+[`gs_filtration_binding_components.py`](../../computations/gs_filtration_binding_components.py)
 / `gs-filtration-binding-components.witness.json`, and
-[`delta_lambda_energy_scale_extensivity_probe.py`](../../folio-assistant/computations/delta_lambda_energy_scale_extensivity_probe.py)
+[`delta_lambda_energy_scale_extensivity_probe.py`](../../computations/delta_lambda_energy_scale_extensivity_probe.py)
 / `delta-lambda-energy-scale-extensivity.witness.json`.
 
 ## Setup — the binding trace, built nucleon-by-nucleon

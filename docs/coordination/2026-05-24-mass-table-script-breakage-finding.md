@@ -24,10 +24,10 @@ commit [`aac4f0050`](https://github.com/litlfred/qou/commit/aac4f0050)
 to `_deprecated/superseded/derive_m_p_hecke_path_a.py` — but the
 4 importers on the main path were not updated:
 
-- `folio-assistant/computations/derivation_chain.py:208`
-- `folio-assistant/computations/derive_m_p_hecke_full_tower_50dps.py`
-- `folio-assistant/computations/derive_m_n_hecke_path_a.py`
-- `folio-assistant/computations/derive_m_e_hecke_path_a.py`
+- `computations/derivation_chain.py:208`
+- `computations/derive_m_p_hecke_full_tower_50dps.py`
+- `computations/derive_m_n_hecke_path_a.py`
+- `computations/derive_m_e_hecke_path_a.py`
 
 All 4 are silently broken on `main` until someone invokes them.
 

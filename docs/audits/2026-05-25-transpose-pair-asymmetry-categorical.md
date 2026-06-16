@@ -88,6 +88,6 @@ This refined conjecture **explains** both:
 
 - [`docs/audits/2026-05-25-dominant-partition-nucleon-structure.md`](2026-05-25-dominant-partition-nucleon-structure.md) — empirical findings from Probes 1, 3, 4, 4b, 4c, 4d, 1b
 - [`docs/audits/2026-05-25-categorical-derivation-rectangular-conjecture.md`](2026-05-25-categorical-derivation-rectangular-conjecture.md) — superseded categorical framing
-- [`folio-assistant/computations/probe_4e_transpose_pair_asymmetry.py`](../../folio-assistant/computations/probe_4e_transpose_pair_asymmetry.py) — asymmetry quantification (will expand when scan completes)
+- [`computations/probe_4e_transpose_pair_asymmetry.py`](../../computations/probe_4e_transpose_pair_asymmetry.py) — asymmetry quantification (will expand when scan completes)
 - [`content/quantum-observable-universe/braids-and-knots/conj-psd-trace-orthogonality.md`](../../content/quantum-observable-universe/braids-and-knots/conj-psd-trace-orthogonality.md) — paper-level orthogonality conjecture
 - [`CLAUDE.md` §7b](../../CLAUDE.md) — Type-B folding directive

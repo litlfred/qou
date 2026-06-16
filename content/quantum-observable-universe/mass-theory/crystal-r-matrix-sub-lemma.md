@@ -90,11 +90,11 @@ unconditional structural lemmas
 
 ## Numerical verification (witness)
 
-[`folio-assistant/computations/crystal_pole_order.py`](../../../folio-assistant/computations/crystal_pole_order.py)
+[`computations/crystal_pole_order.py`](../../../computations/crystal_pole_order.py)
 computes the column-SYT pole-per-cycle for seven torus-knot
 interfaces $\{T_{(2, 1)}, T_{(2, 3)}, T_{(2, 5)}, T_{(2, 9)}, T_{(3, 4)}, T_{(3, 5)}, T_{(3, 7)}\}$
 plus six non-column $\lambda$ shapes for $n \in \{2, 3, 4\}$.
-[`crystal-pole-order.witness.json`](../../../folio-assistant/computations/crystal-pole-order.witness.json)
+[`crystal-pole-order.witness.json`](../../../computations/crystal-pole-order.witness.json)
 records 21 / 21 passing assertions, including the
 [AXKIA chain](alpha-em-categorical-trace.md) values
 $\alpha_{\mathrm{shift}}(T_{(2, 9)}) = 9$ and

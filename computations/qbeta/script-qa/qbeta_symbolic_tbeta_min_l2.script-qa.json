@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/qbeta/qbeta_symbolic_tbeta_min_l2.py",
+  "script_path": "computations/qbeta/qbeta_symbolic_tbeta_min_l2.py",
   "language": "python",
   "source_hash": "f09dc2352dc7",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "major",
-        "evidence": "folio-assistant/computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:227: bare `float(x_sym[i].subs({q: q0, S: S_num}))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:257: bare `float(a_coeffs_sym[k])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:316: bare `float(S_num)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:225: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:233: bare float literal `1e-9` — wrap in `mpmath.mpf(\"1e-9\")` / `Decimal(\"1e-9\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:227: bare `float(x_sym[i].subs({q: q0, S: S_num}))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:257: bare `float(a_coeffs_sym[k])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:316: bare `float(S_num)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:225: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:233: bare float literal `1e-9` — wrap in `mpmath.mpf(\"1e-9\")` / `Decimal(\"1e-9\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:80: `def hoefsmit_blocks(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:107: `def nf_basis_mats(…)` has 2 parameters without type annotation: s0, s1 — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:113: `def load_y_lambda_symbolic(…)` has 1 parameter without type annotation: r — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:80: `def hoefsmit_blocks(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:107: `def nf_basis_mats(…)` has 2 parameters without type annotation: s0, s1 — add `: type` (or `: Any` if the type genuinely is untyped) | computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:113: `def load_y_lambda_symbolic(…)` has 1 parameter without type annotation: r — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -93,7 +93,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -112,7 +112,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:1: script `qbeta_symbolic_tbeta_min_l2.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/qbeta/qbeta_symbolic_tbeta_min_l2.py:1: script `qbeta_symbolic_tbeta_min_l2.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [

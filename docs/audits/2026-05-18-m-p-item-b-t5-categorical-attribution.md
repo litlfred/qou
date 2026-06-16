@@ -396,7 +396,7 @@ canonical route**. The correct routes are:
   operator-selection LP/SDP dual extractor
   (`lp_dual_solver.solve_operator_selection_lp` or
   `solve_psd_operator_selection_sdp`,
-  [`folio-assistant/computations/lp_dual_solver.py`](../../folio-assistant/computations/lp_dual_solver.py))
+  [`computations/lp_dual_solver.py`](../../computations/lp_dual_solver.py))
   — already MPFR-50dps capable, already emits the required
   dual fields per CLAUDE.md §LP / SDP duals — and read off the
   chirality-active dual sum as in §7b.1.
@@ -451,9 +451,9 @@ variables** through the lens of the §7b.1 identification.
 *(Added 2026-05-18 after running `aK_via_lp_dual.py`.)*
 
 The B.1a prototype script
-[`folio-assistant/computations/aK_via_lp_dual.py`](../../folio-assistant/computations/aK_via_lp_dual.py)
+[`computations/aK_via_lp_dual.py`](../../computations/aK_via_lp_dual.py)
 emits the comparison witness
-[`a-K-via-lp-dual.witness.json`](../../folio-assistant/computations/a-K-via-lp-dual.witness.json)
+[`a-K-via-lp-dual.witness.json`](../../computations/a-K-via-lp-dual.witness.json)
 at q_0 50 dps for the six chi-cache atoms. The result surfaces a
 **structural inconsistency** between the narrative conjecture and
 the production code:
@@ -536,7 +536,7 @@ binding lives entirely in the chirality stratum at A ≥ 3.
 ## 7d. B.1a-rev.4 — full LP-dual extraction prototype: Wedderburn-block LP is degenerate
 
 The script
-[`aK_via_lp_dual_full.py`](../../folio-assistant/computations/aK_via_lp_dual_full.py)
+[`aK_via_lp_dual_full.py`](../../computations/aK_via_lp_dual_full.py)
 solves the operator-selection LP per
 [`prop:mass-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md)
 using the Wedderburn-block projector basis $\{\pi_\lambda : \lambda \vdash n\}$
@@ -598,11 +598,11 @@ needed.
 ## 7e. B.1a-rev.5 — full Hecke-basis LP at H_3 (proton, neutron): also degenerate
 
 The script
-[`aK_via_lp_dual_hecke_basis.py`](../../folio-assistant/computations/aK_via_lp_dual_hecke_basis.py)
+[`aK_via_lp_dual_hecke_basis.py`](../../computations/aK_via_lp_dual_hecke_basis.py)
 implements the recommended *path 1* from §7d: full Hecke-algebra
 basis at H_3 (proton, neutron) with the non-diagonal Frobenius
 Gram from
-[`gram-matrix-dual.witness.json`](../../folio-assistant/computations/gram-matrix-dual.witness.json)
+[`gram-matrix-dual.witness.json`](../../computations/gram-matrix-dual.witness.json)
 (6×6, $\det G \approx -0.36$ at $q_0$).
 
 Result (f64 prototype):

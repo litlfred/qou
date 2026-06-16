@@ -113,7 +113,7 @@ Full discipline:
 
 ## Numerical precision ladder
 
-Verified at $q_0$ via [`binding_q_target_sweep.py`](../../folio-assistant/computations/sweeps/binding_q_target_sweep.py) at 50 dps:
+Verified at $q_0$ via [`binding_q_target_sweep.py`](../../computations/sweeps/binding_q_target_sweep.py) at 50 dps:
 
 See [Table 2](#tbl:q-beta-categorical-precision-ladder-table2-data).
 
@@ -134,7 +134,7 @@ correction absorbs this and brings the residual under the c(K) ceiling.
 
 ## Implication for $\Delta S$ (n−p mass split, 1 ppb)
 
-From [`audit_delta_S_chain.py`](../../folio-assistant/computations/audit_delta_S_chain.py):
+From [`audit_delta_S_chain.py`](../../computations/audit_delta_S_chain.py):
 
 $$
   \varepsilon_{\Delta S} \;=\; \frac{\mathfrak{Q}_\beta}{\mathfrak{Q}_\beta + m_e} \cdot \varepsilon_Q

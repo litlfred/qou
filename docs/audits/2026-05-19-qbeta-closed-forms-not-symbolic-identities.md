@@ -92,4 +92,4 @@ Both are research-grade R&D.
 - [`docs/audits/2026-05-19-qbeta-ladder-closure-path.md`](2026-05-19-qbeta-ladder-closure-path.md) — three-route closure roadmap
 - [`docs/audits/2026-05-19-qbeta-ladder-knot-operator-general-statement.md`](2026-05-19-qbeta-ladder-knot-operator-general-statement.md) — general statement on knot operators
 - [`content/quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.md`](../../content/quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.md) — Fact 3 proof for c_3
-- [`folio-assistant/computations/qbeta/qbeta_decay_sdp_full_ck.py`](../../folio-assistant/computations/qbeta/qbeta_decay_sdp_full_ck.py) — full c_k extraction script
+- [`computations/qbeta/qbeta_decay_sdp_full_ck.py`](../../computations/qbeta/qbeta_decay_sdp_full_ck.py) — full c_k extraction script

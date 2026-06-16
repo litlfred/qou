@@ -37,12 +37,12 @@ which the atom's size (its $s$–$p$ promotion gap) controls. No angle is fitted
 
 | Molecule | Atom $(n)$ | $AX_nE_m$ | Bonds | Lones | Base $\theta_0$ | Predicted | Observed |
 |---|---|---|---|---|---|---|---|
-| $\mathrm{CH_4}$ | C $(2)$ | $AX_4E_0$ | $4\,\sigma\,(q)$ | — | sp$^3$ $109.47^\circ$ | $:val[predicted_ch4_deg]{precision=5, witness=folio-assistant/computations/molecular-angle-master-table.witness.json}^\circ$ | $109.5^\circ$ |
-| $\mathrm{NH_3}$ | N $(2)$ | $AX_3E_1$ | $3\,\sigma\,(q)$ | $e^-\,(q^3)$ | sp$^3$ $109.47^\circ$ | $:val[predicted_nh3_deg]{precision=5, witness=folio-assistant/computations/molecular-angle-master-table.witness.json}^\circ$ | $107.0^\circ$ |
-| $\mathrm{H_2O}$ | O $(2)$ | $AX_2E_2$ | $2\,\sigma\,(q)$ | $2\,e^-\,(q^3)$ | sp$^3$ $109.47^\circ$ | $:val[predicted_h2o_deg]{precision=5, witness=folio-assistant/computations/molecular-angle-master-table.witness.json}^\circ$ | $104.5^\circ$ |
-| $\mathrm{C_2H_4}$ | C $(2)$ | $AX_3$ | $\sigma^2\,(q^2){+}2\,\sigma\,(q)$ | — | sp$^2$ $120^\circ$ | $:val[predicted_c2h4_deg]{precision=5, witness=folio-assistant/computations/molecular-angle-master-table.witness.json}^\circ$ | $116.6^\circ$ |
-| $\mathrm{CO_2}$ | C $(2)$ | $AX_2$ | $2\,\sigma^2\,(q^2)$ | — | sp $180^\circ$ | $:val[predicted_co2_deg]{precision=5, witness=folio-assistant/computations/molecular-angle-master-table.witness.json}^\circ$ | $180.0^\circ$ |
-| $\mathrm{H_2S}$ | S $(3)$ | $AX_2E_2$ | $2\,\sigma\,(q)$ | $2\,e^-\,(q^3)$ | pure-$p$ $90^\circ$ | $:val[predicted_h2s_deg]{precision=5, witness=folio-assistant/computations/molecular-angle-master-table.witness.json}^\circ$ | $92.1^\circ$ |
+| $\mathrm{CH_4}$ | C $(2)$ | $AX_4E_0$ | $4\,\sigma\,(q)$ | — | sp$^3$ $109.47^\circ$ | $:val[predicted_ch4_deg]{precision=5, witness=computations/molecular-angle-master-table.witness.json}^\circ$ | $109.5^\circ$ |
+| $\mathrm{NH_3}$ | N $(2)$ | $AX_3E_1$ | $3\,\sigma\,(q)$ | $e^-\,(q^3)$ | sp$^3$ $109.47^\circ$ | $:val[predicted_nh3_deg]{precision=5, witness=computations/molecular-angle-master-table.witness.json}^\circ$ | $107.0^\circ$ |
+| $\mathrm{H_2O}$ | O $(2)$ | $AX_2E_2$ | $2\,\sigma\,(q)$ | $2\,e^-\,(q^3)$ | sp$^3$ $109.47^\circ$ | $:val[predicted_h2o_deg]{precision=5, witness=computations/molecular-angle-master-table.witness.json}^\circ$ | $104.5^\circ$ |
+| $\mathrm{C_2H_4}$ | C $(2)$ | $AX_3$ | $\sigma^2\,(q^2){+}2\,\sigma\,(q)$ | — | sp$^2$ $120^\circ$ | $:val[predicted_c2h4_deg]{precision=5, witness=computations/molecular-angle-master-table.witness.json}^\circ$ | $116.6^\circ$ |
+| $\mathrm{CO_2}$ | C $(2)$ | $AX_2$ | $2\,\sigma^2\,(q^2)$ | — | sp $180^\circ$ | $:val[predicted_co2_deg]{precision=5, witness=computations/molecular-angle-master-table.witness.json}^\circ$ | $180.0^\circ$ |
+| $\mathrm{H_2S}$ | S $(3)$ | $AX_2E_2$ | $2\,\sigma\,(q)$ | $2\,e^-\,(q^3)$ | pure-$p$ $90^\circ$ | $:val[predicted_h2s_deg]{precision=5, witness=computations/molecular-angle-master-table.witness.json}^\circ$ | $92.1^\circ$ |
 
 The second-row atoms (C, N, O — small $s$–$p$ gap) hybridise, so the
 $s$-channel is active and the domains take the **sp/sp$^2$/sp$^3$ base** by steric

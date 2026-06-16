@@ -30,7 +30,7 @@
 - [`content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.{md,ts}`](../../content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md) — item #2, `conj:inter-nucleon-channel-color-tube`
 
 ### Code changes
-- [`folio-assistant/computations/isotope_record_schema.py:178-194`](../../folio-assistant/computations/isotope_record_schema.py) — added NOTE pointing at the new conjecture block
+- [`computations/isotope_record_schema.py:178-194`](../../computations/isotope_record_schema.py) — added NOTE pointing at the new conjecture block
 
 ## Cross-PR coordination
 

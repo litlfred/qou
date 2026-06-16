@@ -60,7 +60,7 @@ weights $(w_s, w_d, w_a) = (q^2, (q^2+1)^2, q^2)/(q^4+4q^2+1)$:*
 
 $$
   D_0(H_2) = 4.4834 \;\text{eV}
-  \qquad (\text{observed: } :val[d0_h2_ev]{precision=4, witness=folio-assistant/computations/molecular-experimental-refs.witness.json} \;\text{eV}, \;
+  \qquad (\text{observed: } :val[d0_h2_ev]{precision=4, witness=computations/molecular-experimental-refs.witness.json} \;\text{eV}, \;
   {+}0.1\%)
 $$
 
@@ -68,7 +68,7 @@ $$
 
 $$
   D_0(C\text{-}C) = 3.21 \;\text{eV}
-  \qquad (\text{observed: } :val[d0_cc_ev]{precision=3, witness=folio-assistant/computations/molecular-experimental-refs.witness.json} \;\text{eV}, \;
+  \qquad (\text{observed: } :val[d0_cc_ev]{precision=3, witness=computations/molecular-experimental-refs.witness.json} \;\text{eV}, \;
   {-}10.9\%)
 $$
 

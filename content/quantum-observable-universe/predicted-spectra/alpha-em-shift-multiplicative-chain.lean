@@ -2,8 +2,8 @@
 Multiplicative-chain identity for the inverse fine-structure constant.
 
 LaTeX label:        prop:alpha-em-shift-multiplicative-chain
-Computational ref:  folio-assistant/computations/alpha/alpha_em_shift_chain.py
-Witness:            folio-assistant/computations/alpha/alpha-em-shift-multiplicative-chain.witness.json
+Computational ref:  computations/alpha/alpha_em_shift_chain.py
+Witness:            computations/alpha/alpha-em-shift-multiplicative-chain.witness.json
 
   α_EM⁻¹ = q · [α_shift(T_{2,9})]_q · [α_shift(T_{3,5})]_q
 

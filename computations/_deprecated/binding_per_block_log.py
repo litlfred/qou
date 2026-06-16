@@ -31,7 +31,7 @@ tightens the deuterium prediction from the aggregate 0.018% to the
 paper-claimed 0.008%.
 
 Usage:
-    python3 folio-assistant/computations/binding_per_block_log.py
+    python3 computations/binding_per_block_log.py
 """
 from __future__ import annotations
 

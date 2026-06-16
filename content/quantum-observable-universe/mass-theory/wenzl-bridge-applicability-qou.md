@@ -95,7 +95,7 @@ $\square$
    linear-system characterisation gives $y_\lambda$ at finite $n$;
    the Wenzl bridge gives the same $y_\lambda$ in closed form at
    every $n$, and the two characterisations agree by uniqueness
-   ([cross-check witness](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y-lambda-wenzl-vs-mpfr-cross-check.json)).
+   ([cross-check witness](https://github.com/litlfred/qou/blob/main/computations/y-lambda-wenzl-vs-mpfr-cross-check.json)).
 
 3. **Fractional rank $r$.**  The QOU substrate value $q_0 \approx
    1.1097$ has $X(q_0, z_0) = q^{2 r_0}$ with $r_0 \approx 2.5995$
@@ -110,7 +110,7 @@ $\square$
 The closed form has been verified against the linear-system
 witness at $n = 3, \ldots, 11$ (193 partitions) to MPFR 50-dps
 precision (max per-partition $|\Delta| \le 4 \times 10^{-51}$):
-[`y-lambda-wenzl-vs-mpfr-cross-check.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y-lambda-wenzl-vs-mpfr-cross-check.json).  Two independent
+[`y-lambda-wenzl-vs-mpfr-cross-check.json`](https://github.com/litlfred/qou/blob/main/computations/y-lambda-wenzl-vs-mpfr-cross-check.json).  Two independent
 computational paths (closed-form principal Schur specialisation;
 Hoefsmit linear-system inverse via the Rust `pyhecke_native`
 kernel) agree at the precision floor.

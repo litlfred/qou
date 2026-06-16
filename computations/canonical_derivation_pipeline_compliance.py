@@ -59,7 +59,7 @@ witness with:
 Usage
 -----
 
-    python folio-assistant/computations/canonical_derivation_pipeline_compliance.py
+    python computations/canonical_derivation_pipeline_compliance.py
 
 Audit-only: results live in
 ``docs/audits/2026-05-12-canonical-derivation-compute-review.md``.
@@ -367,7 +367,7 @@ def _contract_codata_reconciliation(recon: dict[str, Any]) -> dict[str, Any]:
 KNOWN_OPEN_CONFLICTS = [
     {
         "id": "TR_M_AT_Q0_vs_frobenius_proof",
-        "where": "folio-assistant/computations/derivation_chain.py:68-93",
+        "where": "computations/derivation_chain.py:68-93",
         "summary": (
             "Registry TR_M_AT_Q0 (Wenzl-bridge y_λ assembly) "
             "disagrees with Frobenius-selected τ_M (`from_scratch/` "
@@ -454,7 +454,7 @@ def _contract_witness_provenance(prov: dict[str, Any]) -> dict[str, Any]:
             "metric": "audit witness missing — run witness_provenance_audit.py",
             "status": "warn",
             "remediation": (
-                "Run `python3 folio-assistant/computations/"
+                "Run `python3 computations/"
                 "witness_provenance_audit.py` to emit the audit witness."
             ),
         }

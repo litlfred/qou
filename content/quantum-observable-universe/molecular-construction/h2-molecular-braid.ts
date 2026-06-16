@@ -20,10 +20,10 @@ export default definition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/hh-vertex-volume.py",
+    script: "computations/hh-vertex-volume.py",
     witness: [
-      "folio-assistant/computations/hh-trefoil-corrected.witness.json",
-      "folio-assistant/computations/hh-vertex-volume.witness.json",
+      "computations/hh-trefoil-corrected.witness.json",
+      "computations/hh-vertex-volume.witness.json",
     ],
     status: "experimental",
   },

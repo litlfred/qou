@@ -31,7 +31,7 @@ CONSTRAINTS / HONEST CAVEATS:
     needed.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 shell7_bb_stratum_test.py
 """
 from __future__ import annotations

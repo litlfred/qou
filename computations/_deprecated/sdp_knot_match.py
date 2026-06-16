@@ -49,7 +49,7 @@ A witness JSON records the full solution for each atom.
 
 Usage
 ─────
-    python3 folio-assistant/computations/sdp_knot_match.py [--atoms D,T,...]
+    python3 computations/sdp_knot_match.py [--atoms D,T,...]
 """
 from __future__ import annotations
 

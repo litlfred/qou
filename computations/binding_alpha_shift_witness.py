@@ -175,7 +175,7 @@ def build_witness() -> dict:
             "theorems (Phase 3 open math)."
         ),
         "computation": "B(A) = m_e · ρ_0 · α_shift(T(p_A, k_A))",
-        "generator": "folio-assistant/computations/binding_alpha_shift_witness.py",
+        "generator": "computations/binding_alpha_shift_witness.py",
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "inputs": {
             "m_e_MeV": M_E_MEV,
@@ -252,7 +252,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
         "--out",
-        default="folio-assistant/computations/binding-alpha-shift-witness.witness.json",
+        default="computations/binding-alpha-shift-witness.witness.json",
         help="Witness output path (default: alongside the script).",
     )
     ap.add_argument(

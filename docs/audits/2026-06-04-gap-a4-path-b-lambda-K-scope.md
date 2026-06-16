@@ -35,7 +35,7 @@ Inverting Path B at q₀:
 `λ(K) = m(K) · ℏ_q² / (m_e · Vol(K))`
 
 **Anchors used in this section** (so the numbers are reproducible):
-- `q₀` is the canonical substrate parameter `1.1099785827513808075916690956107688798744991218736` (50-dps; the value pinned in every chi-cache witness header, e.g. [`chi-proton-h3-at-q0-50dps.witness.json`](../../folio-assistant/computations/chi-proton-h3-at-q0-50dps.witness.json), and matching `substrate/q_parameter.py:Q_50_DIGIT_STR`).
+- `q₀` is the canonical substrate parameter `1.1099785827513808075916690956107688798744991218736` (50-dps; the value pinned in every chi-cache witness header, e.g. [`chi-proton-h3-at-q0-50dps.witness.json`](../../computations/chi-proton-h3-at-q0-50dps.witness.json), and matching `substrate/q_parameter.py:Q_50_DIGIT_STR`).
 - `Vol(K)` in the inverted formula `λ(K) = m(K)·ℏ_q²/(m_e·Vol(K))` is **specialised to `Vol(𝓑₃) = 8·G` (the proton's small-knot Borromean volume)** for every atom in the table below — this is the *uniform-Vol* convention production currently uses (`vol_density_borromean`); the table therefore measures the gap between empirical mass and the uniform formula, NOT a per-atom Path B closure (which would use per-knot Vol_hyp; see §3 note).
 
 Using PR #1816's data: `geom_uniform(q₀) = Vol(𝓑₃)/ℏ_q² ≈ 1890.51` so `m_e · Vol(𝓑₃)/ℏ_q² ≈ 966.05 MeV` per unit-λ (i.e. uniform `λ = 1` would predict every nucleon mass as 966.05 MeV). For the light series:
@@ -48,7 +48,7 @@ Using PR #1816's data: `geom_uniform(q₀) = Vol(𝓑₃)/ℏ_q² ≈ 1890.51` s
 | ³He | per-nucleon ≈ 936.13 | 0.9690 | ditto |
 | ⁴He | per-nucleon ≈ 931.84 | 0.9646 | ditto |
 
-The proton's empirical `λ(p) ≈ 0.971` is suggestively close to **1 − ε** with `ε ≈ 0.029` (≈ the +2.89 % gap noted in the `vol_density_borromean` docstring at [`folio-assistant/computations/_li_2_q_util.py`](../../folio-assistant/computations/_li_2_q_util.py), search for *"the 2.53 is a CODATA-implied-λ near-match that lands near λ = m_p / (m_e·Vol/ℏ²) ≈ 2.46"* — line numbers may drift but the docstring is the canonical reference). If λ(K) factors as `1 − ε(K)` with ε(K) a small substrate-derived perturbation, the per-atom Path B formula closes to leading order.
+The proton's empirical `λ(p) ≈ 0.971` is suggestively close to **1 − ε** with `ε ≈ 0.029` (≈ the +2.89 % gap noted in the `vol_density_borromean` docstring at [`computations/_li_2_q_util.py`](../../computations/_li_2_q_util.py), search for *"the 2.53 is a CODATA-implied-λ near-match that lands near λ = m_p / (m_e·Vol/ℏ²) ≈ 2.46"* — line numbers may drift but the docstring is the canonical reference). If λ(K) factors as `1 − ε(K)` with ε(K) a small substrate-derived perturbation, the per-atom Path B formula closes to leading order.
 
 **Note on the per-atom Path B re-derivation for A ≥ 2.** Path B's `m(K) = m_e · Vol(K) / ℏ_q² · λ(K)` was originally formulated for single-baryon masses (PR #751). For compound atoms (D / T / ³He / ⁴He), the Path B formulation needs `Vol(K)` to mean the *atomic-braid-closure* hyperbolic volume (matching Phase-4's `Vol_hyp` convention) rather than the small-knot Borromean volume. This re-formulation isn't yet on main — the §4 probe scopes its first step.
 

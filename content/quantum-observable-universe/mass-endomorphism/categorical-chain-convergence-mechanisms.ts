@@ -26,11 +26,11 @@ export default proposition({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/probe_inter_knot_decoupling.py",
+    script: "computations/probe_inter_knot_decoupling.py",
     witness: [
-      "folio-assistant/computations/c-k-beta-decay-bound.witness.json",
-      "folio-assistant/computations/inter-knot-decoupling.witness.json",
-      "folio-assistant/computations/q-beta-cat-per-factor-decomposition.witness.json",
+      "computations/c-k-beta-decay-bound.witness.json",
+      "computations/inter-knot-decoupling.witness.json",
+      "computations/q-beta-cat-per-factor-decomposition.witness.json",
     ],
     status: "experimental",
   },

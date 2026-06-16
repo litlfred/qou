@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-09. **Status:** structural connection established; exact
 ζ₅-residue normalisation open. **Compute:**
-[`h2s_bring_zeta5_chiral_residue.py`](../../folio-assistant/computations/h2s_bring_zeta5_chiral_residue.py).
+[`h2s_bring_zeta5_chiral_residue.py`](../../computations/h2s_bring_zeta5_chiral_residue.py).
 
 ## The question
 
@@ -91,7 +91,7 @@ This geometry is no longer audit-only — it is the provable scaffold
 which the H₂S conjecture now `uses`:
 
 - **Compute** —
-  [`bring_trefoil_cinquefoil_channel.py`](../../folio-assistant/computations/bring_trefoil_cinquefoil_channel.py)
+  [`bring_trefoil_cinquefoil_channel.py`](../../computations/bring_trefoil_cinquefoil_channel.py)
   (witness `bring-trefoil-cinquefoil-channel.witness.json`, 7 assertions): genera
   `g(T_{2,3})=1`, `g(T_{2,5})=2`, both `≤ g(Σ₄)=4`, distinct; the complete
   embeddable list; and the ℤ₅-orbit Gauss sum `g²=5`, `g=√5`.

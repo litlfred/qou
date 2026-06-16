@@ -10,10 +10,10 @@ $$
 $$
 
 *is the substrate-side anchor that fixes $q_0$. The
-[derive\_m\_baryon\_volume\_form](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/derive_m_baryon_volume_form.py)
+[derive\_m\_baryon\_volume\_form](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/derive_m_baryon_volume_form.py)
 script evaluates both sides at 50-decimal precision and records the
 residual in
-[`m-baryon-volume-form.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/m-baryon-volume-form.witness.json):*
+[`m-baryon-volume-form.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/m-baryon-volume-form.witness.json):*
 
 | Quantity | 50-dps value | Source |
 |----------|-------------|--------|

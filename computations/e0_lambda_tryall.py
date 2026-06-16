@@ -30,7 +30,7 @@ THE ANCHORS (falsification test, NOT fit target):
 HARD DISCIPLINE: no tuning to {e⁻,p,n} or B_AME. If all 5 fail, report that —
 no 6th fit (the Δ_λ gate already killed six).
 
-@module folio-assistant/computations/e0_lambda_tryall
+@module computations/e0_lambda_tryall
 """
 from __future__ import annotations
 

@@ -71,7 +71,7 @@ The instance uses:
   - stabilises proof: the function is constant in n, so trivially equal.
 
 The numerical implementation lives in
-`folio-assistant/computations/markov_peel.tr_M_atomic` (Python; uses
+`computations/markov_peel.tr_M_atomic` (Python; uses
 GS reduction + Markov-axiom recursive ascent). The Lean class
 instance here mirrors that semantic at the type level.
 

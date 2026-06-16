@@ -31,9 +31,9 @@ export default definition({
   computation: {
     engine: "python",
     script:
-      "folio-assistant/computations/a_operator/A_operator_extract_at_level.py",
+      "computations/a_operator/A_operator_extract_at_level.py",
     witness: [
-      "folio-assistant/computations/A-operator-extract-h9-pn.witness.json",
+      "computations/A-operator-extract-h9-pn.witness.json",
     ],
     status: "verified",
     requires: [],

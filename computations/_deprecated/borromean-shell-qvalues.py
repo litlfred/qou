@@ -20,7 +20,7 @@ The Borromean volume contribution:
   Borromean binding ≈ Vol(B_3) / hbar_q^2 (in mass units)
 
 Usage:
-    cd folio-assistant/computations && python3 borromean-shell-qvalues.py
+    cd computations && python3 borromean-shell-qvalues.py
 """
 import math
 import json

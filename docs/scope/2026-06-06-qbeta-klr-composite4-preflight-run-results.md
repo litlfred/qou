@@ -4,7 +4,7 @@
 
 ## Result
 
-[`qbeta_klr_composite4_preflight_run.py`](../../folio-assistant/computations/qbeta/qbeta_klr_composite4_preflight_run.py) computes `A_k = tr_M(p_k^JW) · Q_k` for `Q_k ∈ {(q;q)_k, Y_k}` at both anchors (mp 65-dps) and tests against the proved `c_2 = -1` target:
+[`qbeta_klr_composite4_preflight_run.py`](../../computations/qbeta/qbeta_klr_composite4_preflight_run.py) computes `A_k = tr_M(p_k^JW) · Q_k` for `Q_k ∈ {(q;q)_k, Y_k}` at both anchors (mp 65-dps) and tests against the proved `c_2 = -1` target:
 
 | anchor | `(q;q)_2` | `Y_2 = q^{-3/2}(q;q)_2` | `A_2 = tr_M(p_2^JW)·Y_2` | `A_2 / c_2_target` |
 |---|---|---|---|---|
@@ -49,5 +49,5 @@ So Composite 4 in either of its non-fit forms **cannot source c_2 = -1**, let al
 - Preflight SCOPE (PR #1914 — the prediction this RUN now resolves): [`2026-06-06-qbeta-klr-composite4-wenzl-qpoch-preflight.md`](2026-06-06-qbeta-klr-composite4-wenzl-qpoch-preflight.md).
 - Master KLR-infra roadmap: [`2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md`](2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md).
 - Proved `c_2 = -1` / `Φ₁ = √2`: PR #1887, ledger cont. 14.
-- Wenzl chain α NEGATIVE alone (cont. 5): [`qbeta_wenzl_habiro_chain_alpha.py`](../../folio-assistant/computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py), [`qbeta-wenzl-habiro-chain-alpha.witness.json`](../../folio-assistant/computations/qbeta/qbeta-wenzl-habiro-chain-alpha.witness.json).
-- Witness: [`qbeta-klr-composite4-preflight-run.witness.json`](../../folio-assistant/computations/qbeta/qbeta-klr-composite4-preflight-run.witness.json).
+- Wenzl chain α NEGATIVE alone (cont. 5): [`qbeta_wenzl_habiro_chain_alpha.py`](../../computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py), [`qbeta-wenzl-habiro-chain-alpha.witness.json`](../../computations/qbeta/qbeta-wenzl-habiro-chain-alpha.witness.json).
+- Witness: [`qbeta-klr-composite4-preflight-run.witness.json`](../../computations/qbeta/qbeta-klr-composite4-preflight-run.witness.json).

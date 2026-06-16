@@ -105,7 +105,7 @@ this provides the structural origin of the proton-neutron mass
 splitting at the Wedderburn formula level.
 
 **Witness**:
-[`folio-assistant/computations/wedderburn_3term_inter_only.py`](#)
+[`computations/wedderburn_3term_inter_only.py`](#)
 verifies the eigenvalue assignments numerically at $q_0$ and
 confirms that $\Phi_3 \approx 0$ for inter-nucleon-only chains in
 free $A=1$ nucleons (consistent with the $S$-eigenspace

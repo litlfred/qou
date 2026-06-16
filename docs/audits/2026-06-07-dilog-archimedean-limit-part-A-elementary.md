@@ -84,7 +84,7 @@ and the second factor is bounded and converges to $\mathrm{Li}_2(x)$, so
 the product converges to $\mathrm{Li}_2(x)$. $\qquad\blacksquare$
 
 **Numerical confirmation.** The witness
-[`folio-assistant/computations/dilog-archimedean-limit-partA.witness.json`](../../folio-assistant/computations/dilog-archimedean-limit-partA.witness.json)
+[`computations/dilog-archimedean-limit-partA.witness.json`](../../computations/dilog-archimedean-limit-partA.witness.json)
 (producer `dilog_archimedean_partA_witness.py`) evaluates
 $(1-q)\log\Phi_n(x;q)$ at $x\in\{0.2,0.5,0.8\}$ along $\varepsilon\in\{10^{-2},10^{-3},10^{-4}\}$
 with $n=\lceil 30/\varepsilon\rceil$. The absolute error falls by exactly

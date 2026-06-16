@@ -33,7 +33,7 @@ is the Wedderburn trace difference between the free (disjoint) and bound
 | **$B(d)$** | **$2.2289$ MeV** | vs AME $2.22452$ — **+0.19%** |
 
 Zero free parameters. Witness:
-[`binding-endomorphism-deuteron.witness.json`](../../folio-assistant/computations/binding-endomorphism-deuteron.witness.json).
+[`binding-endomorphism-deuteron.witness.json`](../../computations/binding-endomorphism-deuteron.witness.json).
 
 This confirms the existing
 [`prop:deuterium-derived-binding`](../../content/quantum-observable-universe/mass-theory/deuterium-derived-binding.md)
@@ -42,7 +42,7 @@ the mass formula.
 
 ## The binding link is atom-specific (SDP registry)
 
-The [binding-K SDP solver](../../folio-assistant/computations/binding-k-solver.witness.json)
+The [binding-K SDP solver](../../computations/binding-k-solver.witness.json)
 identifies the binding link $K_{\mathrm{bind}}$ per atom:
 
 | Atom | $A$ | $H_{3A}$ | Binding link $K_{\mathrm{bind}}$ |
@@ -99,7 +99,7 @@ heavier scales (10.55, 9.17, 31.03) await their binding-link volumes.
 An earlier note here flagged a 29 % gap between `binding_canonical`'s
 $\Delta\mathrm{tr}(d) = 0.5952$ and an $H_{3A}$-direct value $0.4241$,
 calling it an unresolved inconsistency. **This is now resolved**
-([`trace_convention_reconciliation.py`](../../folio-assistant/computations/trace_convention_reconciliation.py)):
+([`trace_convention_reconciliation.py`](../../computations/trace_convention_reconciliation.py)):
 the gap is purely a **$y_\lambda$ weight-scheme difference**, not a
 framework inconsistency.
 
@@ -124,8 +124,8 @@ apparent gap, not a real disagreement.
 is correct and stands. The A≥3 $-60\%$ failure of the single-link
 volume **persists in the correct Wenzl convention** — so it is the
 genuine open problem, not a convention artifact. Witnesses:
-[`trace-convention-reconciliation.witness.json`](../../folio-assistant/computations/trace-convention-reconciliation.witness.json),
-[`binding-per-bond-decomposition.witness.json`](../../folio-assistant/computations/binding-per-bond-decomposition.witness.json).
+[`trace-convention-reconciliation.witness.json`](../../computations/trace-convention-reconciliation.witness.json),
+[`binding-per-bond-decomposition.witness.json`](../../computations/binding-per-bond-decomposition.witness.json).
 
 ## Binding-link volumes (SnapPy, PR #1397)
 
@@ -168,7 +168,7 @@ no scale fit) gives:
 
 **Next:** an all-pairs braid (not the linear chain) is the topology
 to test — a genuine braid-structure question, not a rescaling.
-Witness: [`binding-multibond-wenzl.witness.json`](../../folio-assistant/computations/binding-multibond-wenzl.witness.json).
+Witness: [`binding-multibond-wenzl.witness.json`](../../computations/binding-multibond-wenzl.witness.json).
 
 ## CORRECTION: the all-pairs "−15%" was a summing artifact
 
@@ -180,7 +180,7 @@ Summing three independently-computed $H_6$ pair-traces is **not** a
 valid 3-nucleon trace. The physically correct object is the **joint
 $H_9$ trace** with all three nucleons mutually coupled (including the
 long-range nucleon₀–nucleon₂ bond). Computed directly
-([`binding_threebody_joint_trace.py`](../../folio-assistant/computations/binding_threebody_joint_trace.py)):
+([`binding_threebody_joint_trace.py`](../../computations/binding_threebody_joint_trace.py)):
 
 | Atom | joint-$H_9$ Δtr | $B$(joint) | err | (all-pairs *sum* was) |
 |------|------|------|------|------|
@@ -202,7 +202,7 @@ a missing-constructive-term artifact.
 
 ## Error source: Δtr is intensive, binding is extensive
 
-Diagnosed in [`binding_error_source.py`](../../folio-assistant/computations/binding_error_source.py).
+Diagnosed in [`binding_error_source.py`](../../computations/binding_error_source.py).
 The A≥3 undershoot has a single structural cause:
 
 | Atom | Δtr | $B_{\mathrm{cat}}$ | $B_{\mathrm{AME}}$ | clip |
@@ -248,12 +248,12 @@ The Δ_λ gating doc's "Update (2026-05-26): Δ_λ CLOSURE ACHIEVED, zero
 free parameters" was **overclaimed** and is retracted. The per-λ formula
 $B = m_e\,|\sum_\lambda y_\lambda\chi^\lambda\,\mathrm{sgn}(w_0)\,f^\lambda|$
 undershoots **every** light isotope
-([`delta-lambda-binding-full-evaluation.witness.json`](../../folio-assistant/computations/delta-lambda-binding-full-evaluation.witness.json):
+([`delta-lambda-binding-full-evaluation.witness.json`](../../computations/delta-lambda-binding-full-evaluation.witness.json):
 D −83 / T −78 / ³He −70 / ⁴He −89 %); `binding_energy_categorical_deuteron.py`
 reached AME only via `C_knot = 5.852 = B_AME/(m_e·|sum|)` — fitted. Also
 retracted: `mass-volume-factorization.md`'s "≤6.2% zero free parameters"
 (per-isotope (link, ρ∈{m_e,2m_e}) fit; companion
-[`rho-f-volume-binding-gap.witness.json`](../../folio-assistant/computations/rho-f-volume-binding-gap.witness.json)
+[`rho-f-volume-binding-gap.witness.json`](../../computations/rho-f-volume-binding-gap.witness.json)
 shows `matches_within_10pct: []`).
 
 ### The linear-truncation diagnosis (root cause)
@@ -272,7 +272,7 @@ the curvature 2-form $[F,F]$" — identified but unused in binding).
 
 ### Volume-difference: triple refutation at real q₀
 
-[`binding_volume_difference_probe.py`](../../folio-assistant/computations/probes/binding_volume_difference_probe.py)
+[`binding_volume_difference_probe.py`](../../computations/probes/binding_volume_difference_probe.py)
 tests $B=\rho\,[\mathrm{Vol}(\text{atom})-\mathrm{Vol}(\text{free})]$ with
 **derived** volumes (no census-knot fit): (A) $\log|\mathrm{tr}_M|$ — no
 derived ρ closes it; (B) cosh-inversion — all $|\mathrm{tr}_M|<2$
@@ -293,13 +293,13 @@ $\theta=\arccos(\chi_{(2,1)}/2)$, Kashaev limit = Vol(4₁) = the muon); the
 $\Delta\mathrm{tr}$ collapses this split and the *difference* cancels the
 common growth — why every scalar observable refuted.
 
-[`binding_reeb_phase_decomposition.py`](../../folio-assistant/computations/binding_reeb_phase_decomposition.py)
+[`binding_reeb_phase_decomposition.py`](../../computations/binding_reeb_phase_decomposition.py)
 keeps the per-rep split and finds the **first extensive observable**: the
 free growth-channel mass grows 16.5→93→153→1504 (D/T/³He/⁴He), collapsing
 to ~2 when bound; the q-Reeb phase shift $\Sigma|\Delta\theta|$ is also
 extensive.
 
-**The rotation-phase lead** ([`binding_rotation_phase_lead.py`](../../folio-assistant/computations/binding_rotation_phase_lead.py)):
+**The rotation-phase lead** ([`binding_rotation_phase_lead.py`](../../computations/binding_rotation_phase_lead.py)):
 the **Markov-weighted** phase
 $\rho_{\text{need}} = B_{\text{AME}}/\sum_\lambda y_\lambda\dim_\lambda|\Delta\theta_\lambda|$:
 
@@ -325,8 +325,8 @@ $(q\pm q^{-1})/2=\cosh/\sinh(\log q)$ and $q=\cosh(\log q)+\sinh(\log q)$
 
 Shell structure is **per-λ Wedderburn**, extractable from the canonical
 braid-word witnesses
-([`atom-chi-rust-*`](../../folio-assistant/computations/atom-chi-rust-d.witness.json),
-[`chi-lambda-he4-full-partition-table`](../../folio-assistant/computations/chi-lambda-he4-full-partition-table.witness.json)):
+([`atom-chi-rust-*`](../../computations/atom-chi-rust-d.witness.json),
+[`chi-lambda-he4-full-partition-table`](../../computations/chi-lambda-he4-full-partition-table.witness.json)):
 
 | Mechanism | Block | Statement |
 |-----------|-------|-----------|
@@ -398,7 +398,7 @@ crossings,
 $\hbar_q = 1-q^{-1}$, and $J_q^2(j) = [j]_q[j+1]_q$ with $j = n/2$ for
 $n = 3A$ strands ([`q-angular-momentum`](../../content/quantum-observable-universe/climax-volume-mass/q-angular-momentum.md)).
 Live evaluation
-([`binding-qhamiltonian-rotational-scale.witness.json`](../../folio-assistant/computations/binding-qhamiltonian-rotational-scale.witness.json)):
+([`binding-qhamiltonian-rotational-scale.witness.json`](../../computations/binding-qhamiltonian-rotational-scale.witness.json)):
 
 | atom | $j=n/2$ | $J_q^2$ | $E_{\mathrm{rot}}=\mu_0\hbar_q J_q^2$ | $B_{\mathrm{AME}}$ | err |
 |------|---------|---------|--------------------------------------|---------------------|-----|

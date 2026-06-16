@@ -48,15 +48,15 @@ inequality, and the Taylor-exactness of $c_2$.*
 ### Python API entry point
 
 *Canonical compute is the script
-[`folio-assistant/computations/q_beta_predicted.py`](../../../folio-assistant/computations/q_beta_predicted.py),
+[`computations/q_beta_predicted.py`](../../../computations/q_beta_predicted.py),
 which records each $c_k$ with its tier in the witness JSON.
 Higher-precision regenerations use
-[`build_cal_3_q_beta_witness.py`](../../../folio-assistant/computations/build_cal_3_q_beta_witness.py).*
+[`build_cal_3_q_beta_witness.py`](../../../computations/build_cal_3_q_beta_witness.py).*
 
 ### Witness contract
 
 *Canonical witness:
-[`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json).
+[`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
 **Must** record each $c_k$ alongside its tier. The 𝔔_β subdir
 ledger ([`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md))
 maintains the flip-flop history table; any wire/un-wire decision

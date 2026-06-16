@@ -22,7 +22,7 @@ This rules out the simplest version of Path 1 and motivates either:
 - Path 3: spectral sequence on Wedderburn-block stratification
 
 Run:
-    python3 folio-assistant/computations/qbeta_operator_identification_probe.py
+    python3 computations/qbeta_operator_identification_probe.py
 """
 from __future__ import annotations
 

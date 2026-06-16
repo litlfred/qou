@@ -199,7 +199,7 @@ lake build QOU
 # Must compile without errors (warnings/sorries ok in *.lean)
 
 # LP-dual witness validator — should stay clean
-python3 folio-assistant/computations/lp_dual_witness_validator.py
+python3 computations/lp_dual_witness_validator.py
 # Should report: OK — all flagged witnesses include LP dual.
 ```
 

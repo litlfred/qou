@@ -42,7 +42,7 @@ multi-dim coverage (operator residuals from the upstream
 extract).
 
 Usage:
-    python3 folio-assistant/computations/v_hat_to_chi_lambda_integrated.py
+    python3 computations/v_hat_to_chi_lambda_integrated.py
 """
 from __future__ import annotations
 

@@ -25,7 +25,7 @@ $$
 
 See [Table 1](#tbl:per-nucleon-shift-additive-linearity-table1-data).
 
-(Witness: [`per-nucleon-shift-derivation.witness.json`](../../folio-assistant/computations/per-nucleon-shift-derivation.witness.json),
+(Witness: [`per-nucleon-shift-derivation.witness.json`](../../computations/per-nucleon-shift-derivation.witness.json),
 5/5 assertions pass.  Cross-validated against
 `term6-residues-at-roots.witness.json` for ${}^{5}$Li.)
 
@@ -39,7 +39,7 @@ See [Table 2](#tbl:per-nucleon-shift-additive-linearity-table2-data).
 (11 from the nucleon's intrinsic structure
 + 1 from its incoming interface generator
 in
-[`mass_endomorphism.proton_cross`/`neutron_cross`](../../folio-assistant/computations/mass_endomorphism.py).)
+[`mass_endomorphism.proton_cross`/`neutron_cross`](../../computations/mass_endomorphism.py).)
 
 ### Proof
 
@@ -65,7 +65,7 @@ average. $\square$
 ### Generator-decomposition reading of (18, 21)
 
 Each new generator's DP-max contribution to the q=0 pole is 1
-([`dp_pole_probe.py`](../../folio-assistant/computations/dp_pole_probe.py)),
+([`dp_pole_probe.py`](../../computations/dp_pole_probe.py)),
 so DP-max increment per new nucleon is $12$. The actual pole
 increments are:
 - **per-new-proton:** pole $+9$ (cancellation $= 12 - 9 = 3$),
@@ -80,27 +80,27 @@ combination $18 + 21 + 1 = 40$ are verified by direct symbolic
 Hoefsmit pole-order analysis:
 
 - **Proton ($A = 1$, $H_3$):**
-  [`per_irrep_pole_proton_h3.py`](../../folio-assistant/computations/per_irrep_pole_proton_h3.py)
+  [`per_irrep_pole_proton_h3.py`](../../computations/per_irrep_pole_proton_h3.py)
   (witness:
-  [`per-irrep-pole-proton-h3.witness.json`](../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json))
+  [`per-irrep-pole-proton-h3.witness.json`](../../computations/per-irrep-pole-proton-h3.witness.json))
   computes $\chi^\lambda_q(\mathcal{B}_p)$ for each $\lambda \vdash 3$
   via the Hoefsmit seminormal, sums
   $\mathrm{tr}_M(\mathcal{B}_p) = \sum_\lambda y_\lambda(q) \chi^\lambda_q(\mathcal{B}_p)$
   with the canonical Wenzl Jones-Markov weights, substitutes $q = u^2$
   (per the $D(u)$ convention from
-  [`d_u_closed_form_proof.py`](../../folio-assistant/computations/d_u_closed_form_proof.py))
+  [`d_u_closed_form_proof.py`](../../computations/d_u_closed_form_proof.py))
   and reports $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\mathcal{B}_p)) = 19$,
   matching $18 \cdot 1 + 21 \cdot 0 + 1$ exactly.
 - **Deuteron ($A = 2$, $H_6$):**
-  [`per_irrep_pole_deuteron_h6.py`](../../folio-assistant/computations/per_irrep_pole_deuteron_h6.py)
+  [`per_irrep_pole_deuteron_h6.py`](../../computations/per_irrep_pole_deuteron_h6.py)
   (witness:
-  [`per-irrep-pole-deuteron-h6.witness.json`](../../folio-assistant/computations/per-irrep-pole-deuteron-h6.witness.json))
+  [`per-irrep-pole-deuteron-h6.witness.json`](../../computations/per-irrep-pole-deuteron-h6.witness.json))
   uses three optimisations to make the symbolic $H_6$ analysis
   tractable: (a) cached symbolic $y_\lambda(q)$ from
   `y-lambda-wenzl-bridge-symbolic-witness.json` (skips the >5 min
   `solve_y_lambda(6)` bottleneck), (b) cached symbolic
   $\chi^\lambda_q(\beta_D)$ in
-  [`chi-deuteron-h6.witness.json`](../../folio-assistant/computations/chi-deuteron-h6.witness.json)
+  [`chi-deuteron-h6.witness.json`](../../computations/chi-deuteron-h6.witness.json)
   (first-run ~131 s, then <1 s), (c) per-term
   $\mathrm{ord}_{u=0}(y_\lambda \cdot \chi^\lambda)$ analysis. The
   per-term maximum is **uniquely $40$ at $\lambda = (4, 1, 1)$**
@@ -162,7 +162,7 @@ exponent in the atomic Markov-trace denominator, providing:
 2. **Cross-validation gate.** Any atomic mass / binding pipeline
    that involves $D(u)$ can verify shift = 18Z + 21N + 1 as a
    structural invariant.
-3. **Pole-counting consumer.** [`dp_pole_probe.py`](../../folio-assistant/computations/dp_pole_probe.py)
+3. **Pole-counting consumer.** [`dp_pole_probe.py`](../../computations/dp_pole_probe.py)
    and downstream pole-counting analyses now have a closed-form
    target for the actual q-pole order of $\mathrm{tr}_M$ (= shift / 2,
    modulo half-integer cases).

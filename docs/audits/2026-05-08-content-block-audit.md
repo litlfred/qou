@@ -281,7 +281,7 @@ Severity: **C** = critical (proof / schema invalid as written),
 
 10. **Witness backing for observations predictions**: convert the
     15+ numerical claims to `:val[…]` directives and emit witness
-    files under `folio-assistant/computations/`. Use
+    files under `computations/`. Use
     `local/witnessed-values` skill.
 
 11. **Address remaining `proof-gap-audit` findings** in

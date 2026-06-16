@@ -43,7 +43,7 @@ to consume.
 
 **Overlap**: #635 migrates 5 graded-Mikusiński scripts to
 `WitnessBuilder.wrap_legacy`. Copilot's #637 review identified 7
-ADDITIONAL scripts in `folio-assistant/computations/` with the same
+ADDITIONAL scripts in `computations/` with the same
 missing-WitnessBuilder pattern.
 
 **Dependency**: #637 SHOULD consume #635's `wrap_legacy` pattern after
@@ -164,8 +164,8 @@ NONE — no new comment posted to #636. Reasons:
 If #636's R1 lands and renames `w_λ` (q-deformed) → `w̃_λ`,
 I will rename in:
 
-* `folio-assistant/computations/probe_beta_decay_residue_sum_h3.py:96`
-* `folio-assistant/computations/probe_q_beta_residue_per_nucleon.py` (analogous comment)
+* `computations/probe_beta_decay_residue_sum_h3.py:96`
+* `computations/probe_q_beta_residue_per_nucleon.py` (analogous comment)
 * `content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean`
   (gap #6 stub — already includes a coordination note)
 

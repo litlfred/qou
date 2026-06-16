@@ -192,7 +192,7 @@ lines):
 1. **Bring color-tube form `1/(1 − h·q^{10})` ≈ 2.4600** matches
    CODATA back-solve λ ≈ 2.4619 to **−670 ppm** — the closest
    substrate-pure form known
-   ([`lambda_scale_refinements_composed_predictions.py`](../../folio-assistant/computations/lambda_scale_refinements_composed_predictions.py)).
+   ([`lambda_scale_refinements_composed_predictions.py`](../../computations/lambda_scale_refinements_composed_predictions.py)).
 2. **q^{10} selectivity is sharp**: n=9 gives 12.6 % rel err, n=10
    gives 19 ppm, n=11 gives 19.1 % — the integer power 10 matches
    the categorical structure (9 color-pair assignments + 1 diagonal)
@@ -207,7 +207,7 @@ lines):
 `conj:s5-so3-fiber-action` formalised as a Lean class instance.
 Until then the production stays on Family A and `pn_convention =
 "bring_color_weighted"` in
-[`closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py)
+[`closed_form_tau_M.py`](../../computations/closed_form_tau_M.py)
 raises `NotImplementedError`.
 
 ## §3. What is only empirically fit / assumed zero / assumed symmetric
@@ -262,7 +262,7 @@ Follow-up probes on this branch (after the user picked Option A —
 derive h⁴ from the 13 categorical drivers + the h² concrete test):
 
 ### Probe 1: h² concrete test
-[`lambda_scale_h2_concrete_test.py`](../../folio-assistant/computations/lambda_scale_h2_concrete_test.py)
+[`lambda_scale_h2_concrete_test.py`](../../computations/lambda_scale_h2_concrete_test.py)
 — symbolic h-expansion (sympy) of the three candidate forms around
 h = 0 via the substitution `q = (h + √(h²+4))/2`. **Result**: Bring
 color-tube and canonical + Yekutieli are **categorically distinct**
@@ -284,7 +284,7 @@ The "+1·h⁴ residual" (α ≈ 1.011) sits **additively** on top of the
 Bring base, NOT inside Yekutieli.
 
 ### Probe 2: h⁴ from 13 canonical drivers
-[`h4_categorical_drivers_probe.py`](../../folio-assistant/computations/probes/h4_categorical_drivers_probe.py)
+[`h4_categorical_drivers_probe.py`](../../computations/probes/h4_categorical_drivers_probe.py)
 — tests 7 of the 13 drivers for which produces α ≈ 1.011 cleanly.
 **Two drivers converge on +1·h⁴ at leading order**:
 
@@ -304,7 +304,7 @@ the empirical α — both KLR positivity (smallest positive integer) and
 Faddeev iteration (1/(1−h⁴) ≈ 1 + h⁴ at leading order) agree.
 
 ### Probe 3: combined m_p, m_n prediction
-[`m_p_bring_plus_faddeev_h4_probe.py`](../../folio-assistant/computations/probes/m_p_bring_plus_faddeev_h4_probe.py)
+[`m_p_bring_plus_faddeev_h4_probe.py`](../../computations/probes/m_p_bring_plus_faddeev_h4_probe.py)
 — tests the combined form
 `linking_weight(q) = 1/(1 − h·q^{10}) + 1/(1 − h⁴) − 1` at q₀:
 
@@ -452,13 +452,13 @@ After "go" + "build more infra" + "please continue until it's completed" sequenc
 
 ## §6. Cross-references
 
-- Production formula: [`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
-- Numerical landscape: [`lambda_scale_refinements_composed_predictions.py`](../../folio-assistant/computations/lambda_scale_refinements_composed_predictions.py)
+- Production formula: [`m_p_borromean_verification_50dps.py`](../../computations/m_p_borromean_verification_50dps.py)
+- Numerical landscape: [`lambda_scale_refinements_composed_predictions.py`](../../computations/lambda_scale_refinements_composed_predictions.py)
 - Bring color-tube conjecture: [`inter-nucleon-channel-color-tube.md`](../../content/quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.md)
 - Faddeev pentagon spike: [`2026-05-22-faddeev-pentagon-operator-spike.md`](2026-05-22-faddeev-pentagon-operator-spike.md)
 - Yekutieli per-cell conjecture: [`2026-05-22-yekutieli-percell-conjecture-formalized.md`](2026-05-22-yekutieli-percell-conjecture-formalized.md)
 - 13-driver / Rule 14 menu: [`2026-05-23-lambda-scale-canonical-unification.md`](2026-05-23-lambda-scale-canonical-unification.md)
 - VolDensity bug-taxonomy: [`2026-05-25-vol-density-derivation-error-localization-and-klr-path.md`](2026-05-25-vol-density-derivation-error-localization-and-klr-path.md)
 - Δ_λ closure context: [`2026-05-25-delta-lambda-K-dependence-reframing.md`](2026-05-25-delta-lambda-K-dependence-reframing.md)
-- L2 100× dashboard: [`per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json)
+- L2 100× dashboard: [`per-observable-100x-status.witness.json`](../../computations/per-observable-100x-status.witness.json)
 - Cheat sheet: [`canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)

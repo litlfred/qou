@@ -77,7 +77,7 @@ The residual of +1.35% suggests an O(h) correction (where h = q - q⁻¹ ≈ 0.2
    classification table.
 
 2. **Compute Vol(K_p) explicitly via SnapPy.**
-   `folio-assistant/computations` has snappy/snappea integrations
+   `computations` has snappy/snappea integrations
    (`engine='snappea'` per `witness_base.py`). A targeted compute
    on the canonical proton braid closure.
 
@@ -127,7 +127,7 @@ identification uses Vol(B_3) (Borromean rings) with a multiplicative
 λ_scale, **not** a sum of figure-8 volumes.
 
 Verification at MPFR 50 dps via
-[`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py):
+[`m_p_borromean_verification_50dps.py`](../../computations/m_p_borromean_verification_50dps.py):
 
 | Particle | Formula | Pred MeV | CODATA MeV | Residual |
 |----------|---------|----------|------------|----------|

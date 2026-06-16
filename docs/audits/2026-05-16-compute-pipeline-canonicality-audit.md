@@ -69,7 +69,7 @@ $\operatorname{Binding}(K) = m_e \cdot \Sigma_\lambda y_\lambda(q) \chi^\lambda(
 ## 2  What's in the compute pipeline
 
 The main mass-table compute lives in
-[`paper_six_term_isotope_sweep.py`](../../folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py).
+[`paper_six_term_isotope_sweep.py`](../../computations/sweeps/paper_six_term_isotope_sweep.py).
 Two assembly paths:
 
 ### (a) `paper_six_term_mass(Z, N, ...)` — six-term form

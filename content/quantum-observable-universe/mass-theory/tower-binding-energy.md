@@ -13,7 +13,7 @@ and $A - 1$ generators in $H_A(q)$, with canonical Hecke element
 $T_w = \mathtt{atom\_braid\_word\_3A}(Z, N) \in H_{3A}(q_0)$ in
 Gröbner–Shirshov normal form
 ([def:atomic-braid](#def:atomic-braid),
-[`mass_at_3A_proper.atom_braid_word_3A`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/mass_at_3A_proper.py)).
+[`mass_at_3A_proper.atom_braid_word_3A`](https://github.com/litlfred/qou/blob/main/computations/mass_at_3A_proper.py)).
 The per-generator vertex volumes $\hat{V}_i^\lambda$ below are read
 off generator $i$ of $T_w$ in irrep $\lambda \in \{\mathrm{sym},
 \mathrm{std}, \mathrm{alt}\}$.  For each generator $i$

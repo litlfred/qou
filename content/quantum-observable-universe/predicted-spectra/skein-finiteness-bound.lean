@@ -61,12 +61,12 @@ noncomputable def qFactorial (q : ℝ) (n : ℕ) : ℝ :=
 /-- The critical condition: [A-1]_q! > [2]_q^{A-1}.
     At A = 5: [4]_q! > [2]_q⁴ for q = 1.110. -/
 -- Ref: [manuscript] §6/skein-finiteness-bound
--- Ref: folio-assistant/computations output: [4]! = 25.15 > [2]⁴ = 16.35
+-- Ref: computations output: [4]! = 25.15 > [2]⁴ = 16.35
 axiom q_factorial_exceeds_at_5 (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
     qFactorial q 4 > (qInt q 2) ^ 4
 
 /-- Below A = 5: [A-1]_q! ≤ [2]_q^{A-1}. -/
--- Ref: [manuscript] folio-assistant/computations output
+-- Ref: [manuscript] computations output
 axiom q_factorial_bounded_below_5 (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
     qFactorial q 3 < (qInt q 2) ^ 3
 

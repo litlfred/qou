@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/atomic_chirality_residue.py",
+  "script_path": "computations/atomic_chirality_residue.py",
   "language": "python",
   "source_hash": "122cfe91a00b",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-22T18:27:38.070Z",
         "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
         "severity": "major",
-        "evidence": "folio-assistant/computations/atomic_chirality_residue.py:54: bare `float(H_A)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atomic_chirality_residue.py:85: bare `float(c)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atomic_chirality_residue.py:85: bare `float(d)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atomic_chirality_residue.py:106: bare `float(dim_q(lam_t))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atomic_chirality_residue.py:152: bare `float(qfac(n))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/atomic_chirality_residue.py:54: bare `float(H_A)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/atomic_chirality_residue.py:85: bare `float(c)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/atomic_chirality_residue.py:85: bare `float(d)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/atomic_chirality_residue.py:106: bare `float(dim_q(lam_t))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/atomic_chirality_residue.py:152: bare `float(qfac(n))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       },
       {
         "field_hash": {
@@ -38,7 +38,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/atomic_chirality_residue.py:54: bare `float(H_A)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atomic_chirality_residue.py:85: bare `float(c)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atomic_chirality_residue.py:85: bare `float(d)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atomic_chirality_residue.py:106: bare `float(dim_q(lam_t))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atomic_chirality_residue.py:152: bare `float(qfac(n))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/atomic_chirality_residue.py:54: bare `float(H_A)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/atomic_chirality_residue.py:85: bare `float(c)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/atomic_chirality_residue.py:85: bare `float(d)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/atomic_chirality_residue.py:106: bare `float(dim_q(lam_t))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/atomic_chirality_residue.py:152: bare `float(qfac(n))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       },
       {
         "field_hash": {
@@ -55,7 +55,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/atomic_chirality_residue.py:54: bare `float(H_A)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atomic_chirality_residue.py:85: bare `float(c)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atomic_chirality_residue.py:85: bare `float(d)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atomic_chirality_residue.py:106: bare `float(dim_q(lam_t))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/atomic_chirality_residue.py:152: bare `float(qfac(n))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/atomic_chirality_residue.py:54: bare `float(H_A)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/atomic_chirality_residue.py:85: bare `float(c)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/atomic_chirality_residue.py:85: bare `float(d)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/atomic_chirality_residue.py:106: bare `float(dim_q(lam_t))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/atomic_chirality_residue.py:152: bare `float(qfac(n))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/atomic_chirality_residue.py:108: archimedean call `np.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
+        "evidence": "computations/atomic_chirality_residue.py:108: archimedean call `np.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
       },
       {
         "field_hash": {
@@ -91,7 +91,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/atomic_chirality_residue.py:108: archimedean call `np.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/`"
+        "evidence": "computations/atomic_chirality_residue.py:108: archimedean call `np.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/`"
       }
     ],
     "code_is_commented": [
@@ -110,7 +110,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/atomic_chirality_residue.py:1: script lacks both a module docstring and ≥10% comment density (got 24/252 = 9.5%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/atomic_chirality_residue.py:1: script lacks both a module docstring and ≥10% comment density (got 24/252 = 9.5%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       },
       {
         "field_hash": {
@@ -127,7 +127,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/atomic_chirality_residue.py:1: script lacks both a module docstring and ≥10% comment density (got 24/252 = 9.5%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/atomic_chirality_residue.py:1: script lacks both a module docstring and ≥10% comment density (got 24/252 = 9.5%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       }
     ],
     "variables_typed": [
@@ -146,7 +146,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/atomic_chirality_residue.py:58: `def signed_content(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/atomic_chirality_residue.py:67: `def is_chirality_cell(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/atomic_chirality_residue.py:72: `def atomic_braid_word(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/atomic_chirality_residue.py:93: `def _process(…)` has 1 parameter without type annotation: args — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/atomic_chirality_residue.py:58: `def signed_content(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | computations/atomic_chirality_residue.py:67: `def is_chirality_cell(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | computations/atomic_chirality_residue.py:72: `def atomic_braid_word(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | computations/atomic_chirality_residue.py:93: `def _process(…)` has 1 parameter without type annotation: args — add `: type` (or `: Any` if the type genuinely is untyped)"
       },
       {
         "field_hash": {
@@ -163,7 +163,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/atomic_chirality_residue.py:58: `def signed_content(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/atomic_chirality_residue.py:67: `def is_chirality_cell(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/atomic_chirality_residue.py:72: `def atomic_braid_word(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/atomic_chirality_residue.py:93: `def _process(…)` has 1 parameter without type annotation: args — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/atomic_chirality_residue.py:58: `def signed_content(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | computations/atomic_chirality_residue.py:67: `def is_chirality_cell(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | computations/atomic_chirality_residue.py:72: `def atomic_braid_word(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | computations/atomic_chirality_residue.py:93: `def _process(…)` has 1 parameter without type annotation: args — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -182,7 +182,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/atomic_chirality_residue.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/atomic_chirality_residue.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       },
       {
         "field_hash": {
@@ -199,7 +199,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/atomic_chirality_residue.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/atomic_chirality_residue.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -218,7 +218,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/atomic_chirality_residue.py:1: script `atomic_chirality_residue.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/atomic_chirality_residue.py:1: script `atomic_chirality_residue.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       },
       {
         "field_hash": {
@@ -235,7 +235,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/atomic_chirality_residue.py:1: script `atomic_chirality_residue.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/atomic_chirality_residue.py:1: script `atomic_chirality_residue.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [

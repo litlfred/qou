@@ -40,7 +40,7 @@ For each test compound β = β₁ ⋆ I ⋆ β₂:
 The witness emits BOTH primal and dual fields per CLAUDE.md
 §LP/SDP duals (so lp_dual_witness_validator.py recognises it).
 
-@module folio-assistant/computations/lp_confinement_nf_forcing
+@module computations/lp_confinement_nf_forcing
 """
 
 from __future__ import annotations

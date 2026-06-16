@@ -87,7 +87,7 @@ lines 162–183) **proves** that the brane-tower integral evaluates
 to $-\mathrm{Li}_2^q(-V)$ (symmetric q-dilogarithm), not
 $\Phi_q(V)$ (Faddeev quantum dilogarithm — empirically off by
 $10^6$ per
-[`kashaev-integration-identity.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/kashaev-integration-identity.witness.json)).
+[`kashaev-integration-identity.witness.json`](https://github.com/litlfred/qou/blob/main/computations/kashaev-integration-identity.witness.json)).
 At the substrate level (single Planck-tick variable $x = \hbar_q^2$)
 the bounded analog $\mathcal{F}_{\mathrm{Li}_2^q}(x)$ matches the
 geometric form $1 + x + O(x^2)$ at leading order and stays
@@ -105,7 +105,7 @@ is not a substrate-only computation.
 ## Numerical evidence (substrate level)
 
 Computed in
-[`folio-assistant/computations/derived_masses.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/derived_masses.py)
+[`computations/derived_masses.py`](https://github.com/litlfred/qou/blob/main/computations/derived_masses.py)
 at $q_0 \approx 1.110$:
 
 - $E_0^{(N=0)} \approx :val[E_0_N0_MeV]{precision=4}$ MeV — single Planck-tick (CAL-1 + CAL-2)

@@ -15,10 +15,10 @@ export default conjecture({
   cites: ["hoefsmit1974", "mathas1999"],
   computation: {
     engine: "numpy",
-    script: "folio-assistant/computations/staircase_ew_residual_conjecture.py",
+    script: "computations/staircase_ew_residual_conjecture.py",
     witness: [
-      "folio-assistant/computations/staircase-ew-residual-conjecture.witness.json",
-      "folio-assistant/computations/close-321-weinberg-gap.witness.json",
+      "computations/staircase-ew-residual-conjecture.witness.json",
+      "computations/close-321-weinberg-gap.witness.json",
     ],
     status: "verified",
   },

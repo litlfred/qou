@@ -5,8 +5,8 @@
 structurally"), the explicitly-designated next-session keystone.
 
 **Branch / PR:** `claude/option-e-derive-1plusq-over-2-2026-06-02` / #1707
-**Probe:** [`folio-assistant/computations/option_e_probe1_derive_1plusq_over_2.py`](../../folio-assistant/computations/option_e_probe1_derive_1plusq_over_2.py)
-**Witness:** `folio-assistant/computations/option-e-probe1-derive-1plusq-over-2.witness.json` (audit-only)
+**Probe:** [`computations/option_e_probe1_derive_1plusq_over_2.py`](../../computations/option_e_probe1_derive_1plusq_over_2.py)
+**Witness:** `computations/option-e-probe1-derive-1plusq-over-2.witness.json` (audit-only)
 
 ## VERDICT: **NEAR-MATCH (fit)** — with a STRUCTURAL-BUT-STALE staleness correction
 
@@ -28,7 +28,7 @@ Every factor EXCEPT `(1+q)/2` is derived: `m_π` (CAL-3), `ℏ_q = (q−1)/q` (s
 
 ## STEP 0 — staleness refresh (the published 0.11% is stale)
 
-The v9 source [`option_e_v9_all_symmetries.py`](../../folio-assistant/computations/option_e_v9_all_symmetries.py)
+The v9 source [`option_e_v9_all_symmetries.py`](../../computations/option_e_v9_all_symmetries.py)
 hardcodes `Q_0 = 1.1097090249` — the **pre-2026-05-28 muon-anchor** value (q0-repin
 staleness class). Refreshed at the current canonical proton q₀ = `1.1099785827513808`
 (`from q_parameter import q_at`):

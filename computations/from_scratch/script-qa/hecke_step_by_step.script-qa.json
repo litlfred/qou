@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/from_scratch/hecke_step_by_step.py",
+  "script_path": "computations/from_scratch/hecke_step_by_step.py",
   "language": "python",
   "source_hash": "079d072669a4",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -100,7 +100,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/from_scratch/hecke_step_by_step.py:1: script lacks both a module docstring and ≥10% comment density (got 16/199 = 8.0%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/from_scratch/hecke_step_by_step.py:1: script lacks both a module docstring and ≥10% comment density (got 16/199 = 8.0%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       },
       {
         "field_hash": {
@@ -134,7 +134,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/from_scratch/hecke_step_by_step.py:74: `def coxeter_length_of_word(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/from_scratch/hecke_step_by_step.py:107: `def expand_inverses(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/from_scratch/hecke_step_by_step.py:128: `def reduce_squares(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/from_scratch/hecke_step_by_step.py:74: `def coxeter_length_of_word(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped) | computations/from_scratch/hecke_step_by_step.py:107: `def expand_inverses(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped) | computations/from_scratch/hecke_step_by_step.py:128: `def reduce_squares(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped)"
       },
       {
         "field_hash": {
@@ -151,7 +151,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/from_scratch/hecke_step_by_step.py:74: `def coxeter_length_of_word(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/from_scratch/hecke_step_by_step.py:107: `def expand_inverses(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/from_scratch/hecke_step_by_step.py:128: `def reduce_squares(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/from_scratch/hecke_step_by_step.py:74: `def coxeter_length_of_word(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped) | computations/from_scratch/hecke_step_by_step.py:107: `def expand_inverses(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped) | computations/from_scratch/hecke_step_by_step.py:128: `def reduce_squares(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -170,7 +170,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/from_scratch/hecke_step_by_step.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/from_scratch/hecke_step_by_step.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       },
       {
         "field_hash": {
@@ -187,7 +187,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/from_scratch/hecke_step_by_step.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/from_scratch/hecke_step_by_step.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [

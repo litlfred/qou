@@ -354,7 +354,7 @@ def main() -> int:
 
     q = sp.Symbol("q", positive=True)
     derivation_self = (
-        "qou/folio-assistant/computations/derived_chi_catalogue_build.py "
+        "qou/computations/derived_chi_catalogue_build.py "
         "(this script; independent re-derivation cross-validating PR #1933 / T17)"
     )
 

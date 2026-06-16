@@ -43,7 +43,7 @@ Probes (all sympy symbolic):
      (Catalan-like? Fibonacci-like? signed binomial?)
 
 OUTPUT:
-    folio-assistant/computations/qbeta-habiro-p8-identification.witness.json
+    computations/qbeta-habiro-p8-identification.witness.json
 
 USAGE:
     python3 -u qbeta_habiro_p8_identification_probe.py 2>&1 | tee /tmp/p8_id.log
@@ -385,7 +385,7 @@ def categorical_family_match():
     # For type A_3 Hecke H_4(q), characters of irreducibles have degree
     # related to the Frame–Robinson–Thrall hook lengths.
     # χ^(2,2) and χ^(3,1) are common candidates; explicit forms in
-    # Hoefsmit basis live in folio-assistant/computations/.
+    # Hoefsmit basis live in computations/.
     # We do a quick check on dimension polynomials [n]_q!/Π[h(λ)_ij]_q
     # for λ ⊢ 4 — these are q-integers (Gaussian polynomials), and they
     # have specific u-form when u = q^{1/2}.

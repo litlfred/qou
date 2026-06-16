@@ -2,7 +2,7 @@
 
 **Status:** compute-optimization audit (exploratory; no production rewire
 here — this is the *plan* + the measurement). Probe + witness:
-[`low_isotopes_binding_sweep.py`](../../folio-assistant/computations/low_isotopes_binding_sweep.py)
+[`low_isotopes_binding_sweep.py`](../../computations/low_isotopes_binding_sweep.py)
 / `low-isotopes-binding-sweep.witness.json`.
 
 ## FINAL POSITION (owner directive 2026-06-10): NO truncation — only provable exact-0
@@ -124,7 +124,7 @@ not a law. (Recorded so it's not chased further as a closure.)
 
 1. **Prototype active-set-truncated binding** — sum `binding_canonical`
    over only the few-row λ; verify it reproduces full `tr_M` to ≥ 99%.
-   ✅ **DONE** ([`active_set_truncation_prototype.py`](../../folio-assistant/computations/active_set_truncation_prototype.py)):
+   ✅ **DONE** ([`active_set_truncation_prototype.py`](../../computations/active_set_truncation_prototype.py)):
    `rows(λ) ≤ 3` recovers **99.96% (D) / 99.91% (T)** of `tr_M` — i.e. a
    **~10⁻³ truncation error**, NOT exact. Per the precision caveat above
    this is **invalid at 1 ppQ** and is NOT a shippable truncation; it only

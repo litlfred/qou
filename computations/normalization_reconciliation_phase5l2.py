@@ -21,8 +21,8 @@ This probe evaluates the symbolic T(B_p, q) from 5l.1 at the 5 q values
 where 5l measured tr_M^3 numerically, and checks whether the ratio is
 q-independent.
 
-  Ref: folio-assistant/computations/tau_M_proton_closed_form_phase5l1.py
-  Ref: folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py
+  Ref: computations/tau_M_proton_closed_form_phase5l1.py
+  Ref: computations/rho_constit_equals_tau_M_proton_phase5l.py
   Ref: docs/audits/2026-05-20-constit-factor-closure-chain.md
 """
 from __future__ import annotations

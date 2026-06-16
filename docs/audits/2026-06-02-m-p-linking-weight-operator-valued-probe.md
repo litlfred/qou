@@ -84,8 +84,8 @@ Direction (2) is the substantive Subgoal-1 next step — the operator-valued pat
 
 ## Files
 
-- Probe: [`folio-assistant/computations/m_p_linking_weight_operator_valued_probe.py`](../../folio-assistant/computations/m_p_linking_weight_operator_valued_probe.py)
-- Witness: [`folio-assistant/computations/m-p-linking-weight-operator-valued-probe.witness.json`](../../folio-assistant/computations/m-p-linking-weight-operator-valued-probe.witness.json)
+- Probe: [`computations/m_p_linking_weight_operator_valued_probe.py`](../../computations/m_p_linking_weight_operator_valued_probe.py)
+- Witness: [`computations/m-p-linking-weight-operator-valued-probe.witness.json`](../../computations/m-p-linking-weight-operator-valued-probe.witness.json)
 
 ## Cross-references
 

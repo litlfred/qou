@@ -39,9 +39,9 @@ specialisations live in archimedean-evaluation modules.
 
 The numerical instances at the substrate `q_0 ∈ ℝ` come from the
 Python witness
-[`option-e-phase1-gram-h6.witness.json`](../../../../folio-assistant/computations/option-e-phase1-gram-h6.witness.json)
+[`option-e-phase1-gram-h6.witness.json`](../../../../computations/option-e-phase1-gram-h6.witness.json)
 (cross-checked at H_3 against the published NF-basis 6×6 Gram in
-[`option-e-phase1-h3-cross-check.witness.json`](../../../../folio-assistant/computations/option-e-phase1-h3-cross-check.witness.json):
+[`option-e-phase1-h3-cross-check.witness.json`](../../../../computations/option-e-phase1-h3-cross-check.witness.json):
 max residual 2.22e-16 over 21 unique NF Gram entries).
 
 ## Wedderburn-sum identity (the key cross-check)

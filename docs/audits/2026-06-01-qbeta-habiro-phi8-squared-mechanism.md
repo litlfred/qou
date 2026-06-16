@@ -2,8 +2,8 @@
 
 **Date:** 2026-06-01
 **Branch:** `claude/qbeta-habiro-followup-2026-06-01` (PR #1618)
-**Probe:** [`folio-assistant/computations/probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py`](../../folio-assistant/computations/probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py)
-**Witness:** [`folio-assistant/computations/probes/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json`](../../folio-assistant/computations/probes/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json)
+**Probe:** [`computations/probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py`](../../computations/probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py)
+**Witness:** [`computations/probes/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json`](../../computations/probes/qbeta-habiro-phi8-squared-from-z-squared-probe.witness.json)
 **Companion:** [`docs/audits/2026-06-01-qbeta-habiro-strand-doubling-FALSIFIED.md`](2026-06-01-qbeta-habiro-strand-doubling-FALSIFIED.md), [`docs/audits/2026-06-01-qbeta-habiro-phase5q-dn-convention-test.md`](2026-06-01-qbeta-habiro-phase5q-dn-convention-test.md)
 
 ## TL;DR

@@ -33,7 +33,7 @@ The Composite-3 ansatz has **no q-Pochhammer factor** at u². At every `u^k` run
 
 CLAUDE.md §7b's "σ-fixed crystals are bar-involution invariant" is *true* but *orthogonal to sign-negativity*: bar-invariance and sign-positivity are independent properties; folding does not introduce signs. **The 12-17 session cont. 9 Option D build is NOT authorised.**
 
-Probe + witness: [`qbeta_klr_composite3_preflight_run.py`](../../folio-assistant/computations/qbeta/qbeta_klr_composite3_preflight_run.py), [`qbeta-klr-composite3-preflight-run.witness.json`](../../folio-assistant/computations/qbeta/qbeta-klr-composite3-preflight-run.witness.json).
+Probe + witness: [`qbeta_klr_composite3_preflight_run.py`](../../computations/qbeta/qbeta_klr_composite3_preflight_run.py), [`qbeta-klr-composite3-preflight-run.witness.json`](../../computations/qbeta/qbeta-klr-composite3-preflight-run.witness.json).
 
 ---
 
@@ -72,7 +72,7 @@ Lusztig 1990's positivity theorem (canonical bases are positive integral bases) 
 
 So cont. 9 Option C's **natural reading** is fully refuted; the residual escape route is exotic-signed Lusztig variants, which is a separate research-grade scope item — not a 5-7 session build candidate.
 
-Probe + witness: [`qbeta_klr_lusztig_demazure_preflight_run.py`](../../folio-assistant/computations/qbeta/qbeta_klr_lusztig_demazure_preflight_run.py), [`qbeta-klr-lusztig-demazure-preflight-run.witness.json`](../../folio-assistant/computations/qbeta/qbeta-klr-lusztig-demazure-preflight-run.witness.json).
+Probe + witness: [`qbeta_klr_lusztig_demazure_preflight_run.py`](../../computations/qbeta/qbeta_klr_lusztig_demazure_preflight_run.py), [`qbeta-klr-lusztig-demazure-preflight-run.witness.json`](../../computations/qbeta/qbeta-klr-lusztig-demazure-preflight-run.witness.json).
 
 ---
 

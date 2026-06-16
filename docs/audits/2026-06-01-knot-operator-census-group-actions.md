@@ -12,9 +12,9 @@ both name as their single missing object, and (2) whether a
 **nonzero-writhe** operator (T(2,2m)) carries the U(1)_framing that the
 writhe-0 Borromean cannot.
 **Compute:**
-[`knot_operator_census_group_actions.py`](../../folio-assistant/computations/knot_operator_census_group_actions.py),
+[`knot_operator_census_group_actions.py`](../../computations/knot_operator_census_group_actions.py),
 witness
-[`knot-operator-census-group-actions.witness.json`](../../folio-assistant/computations/knot-operator-census-group-actions.witness.json)
+[`knot-operator-census-group-actions.witness.json`](../../computations/knot-operator-census-group-actions.witness.json)
 (audit-only, RAW @ 60 dps, 7 assertions pass). **No tuning to m_n−m_p,
 B_AME, spin, hypercharge, or any h^k.**
 

@@ -152,8 +152,8 @@ The Family A theorem stands as a positive structural finding.
 
 ## Witnesses
 
-- `folio-assistant/computations/lambda-scale-rd1-geometric.witness.json`
-- `folio-assistant/computations/lambda-scale-rd2-transcendental.witness.json`
-- `folio-assistant/computations/lambda-scale-rd3-hecke-levels.witness.json`
-- `folio-assistant/computations/lambda-scale-rd4-k-p-search.witness.json`
-- `folio-assistant/computations/lambda-scale-all-c-i-family-a.witness.json`
+- `computations/lambda-scale-rd1-geometric.witness.json`
+- `computations/lambda-scale-rd2-transcendental.witness.json`
+- `computations/lambda-scale-rd3-hecke-levels.witness.json`
+- `computations/lambda-scale-rd4-k-p-search.witness.json`
+- `computations/lambda-scale-all-c-i-family-a.witness.json`

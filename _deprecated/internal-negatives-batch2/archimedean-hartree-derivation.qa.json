@@ -774,7 +774,7 @@
         "reviewed_at": "2026-05-24T01:54:37.804Z",
         "reviewed_sha": "b1c68b51c25830f97394a032704091624fd39a68",
         "severity": "major",
-        "evidence": "folio-assistant/computations/hecke_core.py:1: computation script imports deprecated module: mass_endomorphism"
+        "evidence": "computations/hecke_core.py:1: computation script imports deprecated module: mass_endomorphism"
       }
     ],
     "voice-unicode-crash": [

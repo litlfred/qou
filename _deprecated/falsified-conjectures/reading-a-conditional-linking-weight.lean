@@ -14,7 +14,7 @@ with `-G` (Catalan's constant).
 
 At substrate q_0, this matches the m_p-anchored target to ~5.6 ppm
 (measured at mp.mpf 50 dps in
-[reading_a_residual_at_50dps.py](../../../folio-assistant/computations/reading_a_residual_at_50dps.py)).
+[reading_a_residual_at_50dps.py](../../../computations/reading_a_residual_at_50dps.py)).
 
 ## Why this is conjectural
 
@@ -35,7 +35,7 @@ requires a NEW categorical principle that:
 - Does not arise from any Σ_{λ⊢N} dim_q V_λ Wedderburn-sum form
   ([PR #701](https://github.com/litlfred/qou/pull/701) falsified 5 structural routes)
 - Does not arise from higher-N Wedderburn limit
-  ([Path C1 probe](../../../folio-assistant/computations/probes/higher_n_wedderburn_h2_drift_probe.py)
+  ([Path C1 probe](../../../computations/probes/higher_n_wedderburn_h2_drift_probe.py)
   shows h² coefficient grows factorially with N, drifts AWAY from -G)
 - Does not arise from the natural reading of the Yekutieli per-cell
   half-symmetric projection (audit
@@ -173,7 +173,7 @@ theorem m_p_pred_reading_a_factored
     to ~5.6 ppm at q_0.**
 
     This is a NUMERICAL claim (proved at 50 dps in
-    [reading_a_residual_at_50dps.py](../../../folio-assistant/computations/reading_a_residual_at_50dps.py))
+    [reading_a_residual_at_50dps.py](../../../computations/reading_a_residual_at_50dps.py))
     that is HARD to state directly in Lean without committing to
     specific numerical values of m_e, m_p, q_0, G, Vol(𝓑₃). The
     Lean-level theorem only encodes the ALGEBRAIC structure; the

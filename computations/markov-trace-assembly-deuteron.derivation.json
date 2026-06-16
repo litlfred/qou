@@ -118,7 +118,7 @@
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "kassel1995",
-      "notes": "script: folio-assistant/computations/hecke/hecke_character_symbolic.py function `q_character_on_braid_word(λ, β_D, q)` (called 11 times, once per partition of 6).  Cache: chi-deuteron-h6.witness.json.  SCRIPT_CITED until per-(λ, σ_i) Hoefsmit chains for n=6 ship (analogous to the existing hoefsmit-rep-21-{sigma1,sigma2} chains for n=3, but specialised to the partitions of 6).  Trivial and sign reps have closed-form expressions in (n_+, n_-, n_avg) and could be promoted to DERIVED in a follow-up."
+      "notes": "script: computations/hecke/hecke_character_symbolic.py function `q_character_on_braid_word(λ, β_D, q)` (called 11 times, once per partition of 6).  Cache: chi-deuteron-h6.witness.json.  SCRIPT_CITED until per-(λ, σ_i) Hoefsmit chains for n=6 ship (analogous to the existing hoefsmit-rep-21-{sigma1,sigma2} chains for n=3, but specialised to the partitions of 6).  Trivial and sign reps have closed-form expressions in (n_+, n_-, n_avg) and could be promoted to DERIVED in a follow-up."
     },
     {
       "name": "Finite-Jones Markov-trace assembly",

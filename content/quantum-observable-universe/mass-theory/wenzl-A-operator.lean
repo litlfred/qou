@@ -15,7 +15,7 @@ the combiner convergence (`prop:operator-valued-combiner-convergence`)
 accumulates its per-peel contributions.
 
 The canonical numerical realisation is the bilinear-system extract
-`folio-assistant/computations/a_operator/A_operator_extract_at_level.py`,
+`computations/a_operator/A_operator_extract_at_level.py`,
 whose witnesses `A-operator-extract-h{n}-{iface}.witness.json` carry the
 matrix entries.  This is a naming/structure block (no semantic claim
 beyond the existence of the operator data), so it introduces no `sorry`.

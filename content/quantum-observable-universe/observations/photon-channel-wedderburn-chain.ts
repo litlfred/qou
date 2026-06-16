@@ -7,9 +7,9 @@ export default remark({
   uses: ["thm:wedderburn-mass-formula"],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/sdp_gamma_gamma_to_qqbar.py",
+    script: "computations/sdp_gamma_gamma_to_qqbar.py",
     witness: [
-      "folio-assistant/computations/sdp-gamma-gamma-to-qqbar.witness.json",
+      "computations/sdp-gamma-gamma-to-qqbar.witness.json",
     ],
     status: "not_run",
   },

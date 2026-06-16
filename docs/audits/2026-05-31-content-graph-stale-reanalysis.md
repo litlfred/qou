@@ -97,7 +97,7 @@ regeneration.  Spot-checking shows they belong to compute axes that
 have not been touched recently (probe results, exploratory audits);
 their staleness is benign as long as no current block references them
 via `computation.witness`.  The witness-pipeline drift detector
-(implemented in `folio-assistant/computations/run_pipeline.py::_is_stale`)
+(implemented in `computations/run_pipeline.py::_is_stale`)
 identifies stale witnesses by comparing the witness `scriptHash` against
 the current script version and detecting q₀-shape drift.
 **Recommendation:** do not bulk-regenerate; let the pipeline's staleness
@@ -135,5 +135,5 @@ cd content && python3 pipeline/content-graph-analysis.py --json
 # Section-story audit (consumed by witness-pipeline.yml strict gate)
 bun run scripts/section-story-audit.ts
 # Witness drift detection (per existing CI)
-python3 folio-assistant/computations/compute_audit_scan.py
+python3 computations/compute_audit_scan.py
 ```

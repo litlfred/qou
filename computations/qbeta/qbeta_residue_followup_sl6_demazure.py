@@ -14,7 +14,7 @@ ANTI-PATTERN GUARDS: TIERED; no ansatz; cross-anchor before claim;
 ℏ_q from (q−1)/q; diagnostic-only.
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_residue_followup_sl6_demazure.py
+  python3 computations/qbeta/qbeta_residue_followup_sl6_demazure.py
 Emits: qbeta-residue-followup-sl6-demazure.witness.json
 """
 

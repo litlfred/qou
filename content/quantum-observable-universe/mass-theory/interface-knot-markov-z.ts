@@ -16,9 +16,9 @@ export default proposition({
   computation: {
     engine: "python",
     script:
-      "folio-assistant/computations/delta_lambda_fr_identity_phase5c.py",
+      "computations/delta_lambda_fr_identity_phase5c.py",
     witness:
-      "folio-assistant/computations/delta-lambda-fr-identity-phase5c.witness.json",
+      "computations/delta-lambda-fr-identity-phase5c.witness.json",
     status: "verified",
   },
   tags: [

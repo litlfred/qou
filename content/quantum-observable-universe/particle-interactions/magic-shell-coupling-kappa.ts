@@ -24,9 +24,9 @@ export default proposition({
   computation: {
     engine: "python",
     script:
-      "folio-assistant/computations/probe_kappa_categorical_h7a_closed.py",
+      "computations/probe_kappa_categorical_h7a_closed.py",
     witness:
-      "folio-assistant/computations/kappa-categorical-h7a-closed.witness.json",
+      "computations/kappa-categorical-h7a-closed.witness.json",
     status: "verified",
   },
 });

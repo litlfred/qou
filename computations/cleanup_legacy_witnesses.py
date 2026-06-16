@@ -9,12 +9,12 @@ Criteria (all must hold for a script to be moved to ``_deprecated/``):
 2. The witness is not marked ``auditOnly: true`` — those are
    deliberately unwired sidecars kept for audit reports.
 3. No other live (non-``_deprecated/``) ``*.py`` under
-   ``folio-assistant/computations/`` imports the script's module.
+   ``computations/`` imports the script's module.
 4. No markdown file under ``_audits/`` or ``docs/audits/`` cites the
    script filename, the witness filename, or the script stem.
 
 This mirrors the heuristic recorded in
-``folio-assistant/computations/_deprecated/README.md`` from the
+``computations/_deprecated/README.md`` from the
 original cleanup pass.
 
 Usage

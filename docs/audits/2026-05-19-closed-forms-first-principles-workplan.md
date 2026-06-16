@@ -112,7 +112,7 @@ $$
 | Task | Files | Effort |
 |---|---|---|
 | **1a. Author the closure form** as a content block — `prop:delta-lambda-categorical-closure` | `content/quantum-observable-universe/descartes-universe/delta-lambda-categorical-closure.{ts,md,lean}` | small |
-| **1b. Verification witness on deuteron** — compute $\Delta_\lambda(D)$ for $n = 6$ partitions via the formula, compare to empirical AME 2020 binding | `folio-assistant/computations/delta_lambda_categorical_verification.py` (new) + witness | medium |
+| **1b. Verification witness on deuteron** — compute $\Delta_\lambda(D)$ for $n = 6$ partitions via the formula, compare to empirical AME 2020 binding | `computations/delta_lambda_categorical_verification.py` (new) + witness | medium |
 | **1c. Update PR #777 status table** — document the closure form as the 7th candidate (categorical, not fit-based) | ledger update | tiny |
 
 ### Phase 2 — Extend coverage (follow-up PR)

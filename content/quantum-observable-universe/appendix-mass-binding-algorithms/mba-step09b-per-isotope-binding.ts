@@ -11,7 +11,7 @@ export default algorithm({
   computation: {
     engine: "python+mpmath",
     script: "qou-mass/src/qou_mass/api.py",
-    witness: "folio-assistant/computations/canonical-mass-table-242ppb.witness.json",
+    witness: "computations/canonical-mass-table-242ppb.witness.json",
     status: "experimental",
   },
   tags: [

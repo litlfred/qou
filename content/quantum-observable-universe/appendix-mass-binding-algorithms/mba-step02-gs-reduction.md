@@ -74,7 +74,7 @@ wheel from the builders above).*
 ### Witness contract
 
 *Canonical witness:
-[`hecke-core-symbolic-migration.witness.json`](../../../folio-assistant/computations/hecke-core-symbolic-migration.witness.json).
+[`hecke-core-symbolic-migration.witness.json`](../../../computations/hecke-core-symbolic-migration.witness.json).
 Records the input braid, the output basis-decomposition vector,
 the chosen $q$ evaluation, and a hash of the rewriter source for
 reproducibility. Per-particle assemblies are captured in

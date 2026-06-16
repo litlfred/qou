@@ -27,7 +27,7 @@ Mass: M = Z·m_p + N·m_n + Z·m_e + m_e × Φ₁
 Binding: E = (Φ₁_unbonded - Φ₁_bonded) × E_mol
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 unified-mass-molecular.py
 """
 

@@ -24,9 +24,9 @@ count $3A$ or the flavor content of the other blocks.*
 
 ### Empirical verification
 
-Computed via [`per_generator_V_hat_3A`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/folio-assistant/computations/mass_at_3A_proper.py)
+Computed via [`per_generator_V_hat_3A`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/computations/mass_at_3A_proper.py)
 on D, T, ${}^{3}$He at $H_6, H_9, H_9$ respectively (50 dps), as recorded in
-[`binding-via-interface-knot.witness.json`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/folio-assistant/computations/binding-via-interface-knot.witness.json):
+[`binding-via-interface-knot.witness.json`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/computations/binding-via-interface-knot.witness.json):
 
 | atom | proton block (gens 0, 1) | neutron block | matches D? |
 |---|---|---|:-:|
@@ -132,7 +132,7 @@ in microseconds for any $(Z, N)$ — bypassing the $H_{3A}$ character
 sum entirely beyond the one-time $H_6$ calibration of
 $\{v_p, v_n, |\hat V^{pp}_{\text{inter}}|, |\hat V^{nn}_{\text{inter}}|\}$.
 
-[`binding_block_multiplicative.py`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/folio-assistant/computations/binding_block_multiplicative.py)
+[`binding_block_multiplicative.py`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/computations/binding_block_multiplicative.py)
 applies this to 16 atoms (D $\to$ ${}^{56}$Fe) in $< 1$ s total, all signs correct;
 finer agreement awaits the $T_3$ pair-term closure (see
 [`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower)

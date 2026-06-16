@@ -10,8 +10,8 @@ export default proposition({
   uses: [],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/b_over_a_evaluator.py",
-    witness: "folio-assistant/computations/b-over-a.witness.json",
+    script: "computations/b_over_a_evaluator.py",
+    witness: "computations/b-over-a.witness.json",
     status: "verified",
     requires: ["mpmath"],
   },

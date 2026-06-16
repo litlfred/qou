@@ -370,7 +370,7 @@ recursion / Φ_q power series / Rogers pentagon**, NOT fit to close
 the CODATA residual.
 
 The h^4 refinement probe
-[`lambda_scale_refinement_h4_correction_bring.py`](../../folio-assistant/computations/lambda_scale_refinement_h4_correction_bring.py)
+[`lambda_scale_refinement_h4_correction_bring.py`](../../computations/lambda_scale_refinement_h4_correction_bring.py)
 was retired in commit `38afcf12` because its α = (3/4 + 1 − G)
 empirically fits to the CODATA m_p residual; the "+1" leading h^4
 coefficient has no canonical derivation.
@@ -394,10 +394,10 @@ coefficient has no canonical derivation.
 
 ## Witness / probe
 
-- [`lambda_scale_refinements_composed_predictions.py`](../../folio-assistant/computations/lambda_scale_refinements_composed_predictions.py)
+- [`lambda_scale_refinements_composed_predictions.py`](../../computations/lambda_scale_refinements_composed_predictions.py)
   — composes the three canonical-only options with the proved
   flavor-split from PR #942.
-- [`lambda_scale_refinement_h4_correction_bring.py`](../../folio-assistant/computations/lambda_scale_refinement_h4_correction_bring.py)
+- [`lambda_scale_refinement_h4_correction_bring.py`](../../computations/lambda_scale_refinement_h4_correction_bring.py)
   — RETIRED (empirical fitting); preserved as documented dead-end.
 
 ## Cross-references

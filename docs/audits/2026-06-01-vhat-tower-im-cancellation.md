@@ -18,9 +18,9 @@ ACCEPTED (converges, preserves p/n +18.9%); Φ_q / reciprocal / bar-sym
 refuted.
 
 **Compute:**
-[`vhat_tower_im_cancellation.py`](../../folio-assistant/computations/vhat_tower_im_cancellation.py),
+[`vhat_tower_im_cancellation.py`](../../computations/vhat_tower_im_cancellation.py),
 witness
-[`vhat-tower-im-cancellation.witness.json`](../../folio-assistant/computations/vhat-tower-im-cancellation.witness.json).
+[`vhat-tower-im-cancellation.witness.json`](../../computations/vhat-tower-im-cancellation.witness.json).
 All values RAW @ 60 dps via `WitnessBuilder.wrap_legacy` (I14 provenance).
 V̂_i recomputed self-contained from the (a, b) Hoefsmit recurrence;
 ∏V̂(proton) = 1.065306 (= canonical tr_M), p/n g0 split +14.17 %.
@@ -228,7 +228,7 @@ reflects that the electron-tower normalisation used here (figure-8 4₁
 braid, naive (σ₁σ₂⁻¹)² word) is a *placeholder* — `tower(K)/tower(e)` is
 O(1) for all three particles because all three towers are O(5). The
 absolute MeV scale comes from the full VolDensity / m_e chain
-([`_li_2_q_util.vol_density_borromean`](../../folio-assistant/computations/_li_2_q_util.py)),
+([`_li_2_q_util.vol_density_borromean`](../../computations/_li_2_q_util.py)),
 not from this dimensionless tower ratio. **No value here is tuned to
 938.27**; they are reported to show the projection does not magically
 produce the physical mass — consistent with the discipline that the raw

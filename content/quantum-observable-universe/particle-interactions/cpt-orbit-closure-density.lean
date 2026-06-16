@@ -142,7 +142,7 @@ contributes by itself in either case.
 The proposition above discharges the dichotomy
 `ρ_F ∈ {m_e, 2 m_e}` cleanly via this orbit count, with no per-
 link manual flag.  Empirical verification: see
-`folio-assistant/computations/det_pair_law.py`, which checks
+`computations/det_pair_law.py`, which checks
 `det ρ_λ(w) · det ρ_{λ^T}(w) = ±1` over generators —
 the bar-involution acting at the determinant level, and the
 strongest currently available shadow of the underlying

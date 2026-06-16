@@ -83,7 +83,7 @@ Table 1; Andrews, *The Theory of Partitions*, §1.1).
 
 - Sibling Lean identity (cyclotomic strand-doubling):
   [`cyclotomic-strand-doubling.md`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-followup-2026-06-01/content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.md)
-- Empirical source: [`qbeta_habiro_recursion_probe.py`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-followup-2026-06-01/folio-assistant/computations/probes/qbeta_habiro_recursion_probe.py)
+- Empirical source: [`qbeta_habiro_recursion_probe.py`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-followup-2026-06-01/computations/probes/qbeta_habiro_recursion_probe.py)
 - Master 𝔔_β coordination ledger:
   [`docs/coordination/1ppq-qbeta.md`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-followup-2026-06-01/docs/coordination/1ppq-qbeta.md)
 - This tranche's coordination ledger:

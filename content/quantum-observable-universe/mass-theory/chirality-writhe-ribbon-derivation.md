@@ -211,7 +211,7 @@ falsification here (for D) shows the specific form needs
 adjustment.*
 
 **Reference implementation.**
-*`folio-assistant/computations/ribbon_content_average.py` +
+*`computations/ribbon_content_average.py` +
 `ribbon-content-average.witness.json`.*
 
 **Variant sweep — all fail.**

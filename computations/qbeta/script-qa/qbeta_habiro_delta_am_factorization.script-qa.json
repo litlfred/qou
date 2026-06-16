@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/qbeta/qbeta_habiro_delta_am_factorization.py",
+  "script_path": "computations/qbeta/qbeta_habiro_delta_am_factorization.py",
   "language": "python",
   "source_hash": "2e6ceddc1b87",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "major",
-        "evidence": "folio-assistant/computations/qbeta/qbeta_habiro_delta_am_factorization.py:314: bare `float(sp.sympify(ratio).subs(u, u_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/qbeta/qbeta_habiro_delta_am_factorization.py:356: bare `float(total.subs(u, u_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/qbeta/qbeta_habiro_delta_am_factorization.py:314: bare `float(sp.sympify(ratio).subs(u, u_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/qbeta/qbeta_habiro_delta_am_factorization.py:356: bare `float(total.subs(u, u_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/qbeta/qbeta_habiro_delta_am_factorization.py:93: `def factor_str(…)` has 1 parameter without type annotation: expr — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/qbeta/qbeta_habiro_delta_am_factorization.py:99: `def factorize_diffs(…)` has 2 parameters without type annotation: sp.Poly], sp.Poly] — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/qbeta/qbeta_habiro_delta_am_factorization.py:370: `def deuteron_minus_pn(…)` has 3 parameters without type annotation: sp.Poly], sp.Poly], sp.Poly] — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/qbeta/qbeta_habiro_delta_am_factorization.py:93: `def factor_str(…)` has 1 parameter without type annotation: expr — add `: type` (or `: Any` if the type genuinely is untyped) | computations/qbeta/qbeta_habiro_delta_am_factorization.py:99: `def factorize_diffs(…)` has 2 parameters without type annotation: sp.Poly], sp.Poly] — add `: type` (or `: Any` if the type genuinely is untyped) | computations/qbeta/qbeta_habiro_delta_am_factorization.py:370: `def deuteron_minus_pn(…)` has 3 parameters without type annotation: sp.Poly], sp.Poly], sp.Poly] — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -93,7 +93,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/qbeta/qbeta_habiro_delta_am_factorization.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/qbeta/qbeta_habiro_delta_am_factorization.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -112,7 +112,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/qbeta/qbeta_habiro_delta_am_factorization.py:1: script `qbeta_habiro_delta_am_factorization.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/qbeta/qbeta_habiro_delta_am_factorization.py:1: script `qbeta_habiro_delta_am_factorization.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [

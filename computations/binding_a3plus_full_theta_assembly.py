@@ -45,7 +45,7 @@ NO fits at any step.
 
 ## Usage
 
-    cd folio-assistant/computations
+    cd computations
     python3 binding_a3plus_full_theta_assembly.py
 
 Emits: binding-a3plus-full-theta-assembly.witness.json

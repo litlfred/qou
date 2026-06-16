@@ -2,8 +2,8 @@
 
 **Date:** 2026-06-01
 **Branch:** `claude/qbeta-wenzl-habiro-keystone-2026-06-01`
-**Probe script:** [`folio-assistant/computations/probes/qbeta_wenzl_habiro_ansatz_probe.py`](../../folio-assistant/computations/probes/qbeta_wenzl_habiro_ansatz_probe.py)
-**Witness:** [`folio-assistant/computations/probes/qbeta-wenzl-habiro-ansatz-probe.witness.json`](../../folio-assistant/computations/probes/qbeta-wenzl-habiro-ansatz-probe.witness.json)
+**Probe script:** [`computations/probes/qbeta_wenzl_habiro_ansatz_probe.py`](../../computations/probes/qbeta_wenzl_habiro_ansatz_probe.py)
+**Witness:** [`computations/probes/qbeta-wenzl-habiro-ansatz-probe.witness.json`](../../computations/probes/qbeta-wenzl-habiro-ansatz-probe.witness.json)
 **Master ledger:** [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
 **Status:** **NEGATIVE** — no cyclotomic Wenzl factor `W(u)` × pair-specific `D(u)` ansatz reproduces both `c_2 = −1` (Taylor-exact, PROVED) AND `c_3 = −2.0693…` (cal-anchored) as a clean structural identity.
 

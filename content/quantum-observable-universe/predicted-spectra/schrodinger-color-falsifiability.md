@@ -144,9 +144,9 @@ the prediction. Two non-exclusive interpretations:
    $\hat{\eta}$ toward $\eta_{\mathrm{QOU}}$.
 
 The witness JSON
-[`schrodinger-color-falsifiability-fit.witness.json`](../../../folio-assistant/computations/schrodinger-color-falsifiability-fit.witness.json)
+[`schrodinger-color-falsifiability-fit.witness.json`](../../../computations/schrodinger-color-falsifiability-fit.witness.json)
 records the full fit, bootstrap, and assertion outcomes; the script
-[`schrodinger_color_falsifiability_fit.py`](../../../folio-assistant/computations/schrodinger_color_falsifiability_fit.py)
+[`schrodinger_color_falsifiability_fit.py`](../../../computations/schrodinger_color_falsifiability_fit.py)
 is reproducible from the LANL public release.
 
 **Connection to confinement.**

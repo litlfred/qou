@@ -55,7 +55,7 @@ theorem phaseSpace_at_one : phaseSpace 1 = 0 := by
 
 /-- Abstract context for the tau-leptonic-universality claim. -/
 class TauLeptonicContext where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- Electron rest mass (MeV). -/
   m_e : ℝ
   /-- Muon rest mass (MeV). -/

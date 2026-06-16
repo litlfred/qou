@@ -48,7 +48,7 @@ $$
 
 A tableau is **pure for $(\sigma_1, \sigma_3, \sigma_5)$** if all
 three of these generators act diagonally (no mixing). The
-[`hoefsmit-ew-cell-content.witness.json`](../../folio-assistant/computations/hoefsmit-ew-cell-content.witness.json)
+[`hoefsmit-ew-cell-content.witness.json`](../../computations/hoefsmit-ew-cell-content.witness.json)
 enumeration shows there are exactly **20 such pure tableaux**,
 distributed across the **eight** sym/alt eigenvalue patterns:
 
@@ -141,7 +141,7 @@ interface generator $\sigma_3$ in $H_6(q)$ for the deuteron.
  inter-nucleon interface generalised to gauge-boson couplings.
 - Recompute the Hoefsmit pure-pattern enumeration under
  $\beta_{\rm EW}(\bowtie_K)$; extend
- [`hoefsmit-ew-cell-content.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/hoefsmit-ew-cell-content.witness.json)
+ [`hoefsmit-ew-cell-content.witness.json`](https://github.com/litlfred/qou/blob/main/computations/hoefsmit-ew-cell-content.witness.json)
  to include $\sigma_2, \sigma_4$ in the eigenvalue analysis.
 - Re-derive $\mathrm{tr}_{\rm pure}(\beta_{\rm EW}(\bowtie_K))$
  symbolically.
@@ -260,7 +260,7 @@ content arithmetic — not the dimensionally-inconsistent uniform-
 weight expression.
 
 **Witness.**
-[`folio-assistant/computations/hoefsmit-ew-cell-content.witness.json`](../../folio-assistant/computations/hoefsmit-ew-cell-content.witness.json)
+[`computations/hoefsmit-ew-cell-content.witness.json`](../../computations/hoefsmit-ew-cell-content.witness.json)
 — enumerates standard Young tableaux of partitions of 6 with
 their $(\sigma_1, \sigma_3, \sigma_5)$ eigenvalue classes; reports
 pure-eigenspace counts and 8-pattern multiplicities.

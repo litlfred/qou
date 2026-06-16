@@ -158,10 +158,10 @@ local Lean verification became available.
 ## Cross-references
 
 - The probe computation:
-  [`folio-assistant/computations/qbeta/qbeta_c3_multiblock_recursion_attack.py`](../../../folio-assistant/computations/qbeta/qbeta_c3_multiblock_recursion_attack.py)
+  [`computations/qbeta/qbeta_c3_multiblock_recursion_attack.py`](../../../computations/qbeta/qbeta_c3_multiblock_recursion_attack.py)
   (witness `qbeta-c3-multiblock-recursion-attack.witness.json`).
 - The pre-archimedean recursion for $z$: 
-  [`folio-assistant/computations/qbeta/qbeta_prearchimedean_z_recursion.py`](../../../folio-assistant/computations/qbeta/qbeta_prearchimedean_z_recursion.py).
+  [`computations/qbeta/qbeta_prearchimedean_z_recursion.py`](../../../computations/qbeta/qbeta_prearchimedean_z_recursion.py).
 - The downstream c$_k$ conjectures:
   [`conj:qbeta-c-k-closed-forms`](#conj:qbeta-c-k-closed-forms)
   (axiomatised; conditional on the Habiro element identification).

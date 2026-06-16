@@ -51,7 +51,7 @@ $$
 This is a `ring` identity in any commutative ring containing $b$ and
 $\hbar_q$. Both factors are bar-even at the Taylor level: $b^2(q)$ is a
 manifest q-rational that satisfies $b^2(q^{-1}) = b^2(q)$ exactly
-(verified in the [`qbeta_symbolic_chain_alpha_b.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_symbolic_chain_alpha_b.py)
+(verified in the [`qbeta_symbolic_chain_alpha_b.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_symbolic_chain_alpha_b.py)
 chain), and $\hbar_q^4$ is even in $t$ to leading order
 ($\hbar_q = t - t^2 + O(t^3)$, so $\hbar_q^2 = t^2 - 2t^3 + O(t^4)$ and
 $\hbar_q^4 = t^4 + O(t^5)$ — the odd-in-$t$ content sits at orders $t^5$

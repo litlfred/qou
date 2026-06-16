@@ -32,7 +32,7 @@ quantum dilogarithm `Φ_q`.  A formal proof requires the analytic
 identification of `gradedMarkovTrace` and `residueAtRoot` (currently
 `noncomputable opaque`).  Empirical certification at machine
 precision is provided by
-`folio-assistant/computations/markov/markov_pipeline_cross_validator.py` —
+`computations/markov/markov_pipeline_cross_validator.py` —
 0.0 (proton) and 2.79e-16 (neutron) relative difference; see the .md
 sibling for details.
 

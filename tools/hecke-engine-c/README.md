@@ -1,6 +1,6 @@
 # hecke-engine-c
 
-> *Part of the [QOU library stack](../../docs/ARCHITECTURE.md#two-axes-of-organisation-domain-vs-workflow). See the two-axis explanation for how this package fits relative to the in-repo `folio-assistant/computations/` clusters.*
+> *Part of the [QOU library stack](../../docs/ARCHITECTURE.md#two-axes-of-organisation-domain-vs-workflow). See the two-axis explanation for how this package fits relative to the in-repo `computations/` clusters.*
 
 C-ABI bindings for [`hecke-engine`](../hecke-engine) via [cbindgen](https://github.com/mozilla/cbindgen). The universal lowest-common-denominator wrapper — consumed by anything that can call a C function.
 

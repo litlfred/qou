@@ -78,11 +78,11 @@ plan in workplan v5 §6 Q2.
 
 ## Files changed
 
-- `folio-assistant/computations/tr_m_wenzl_bridge_mpfr.py:261` —
+- `computations/tr_m_wenzl_bridge_mpfr.py:261` —
   `mp.dps` → `mp.mp.dps`.
-- `folio-assistant/computations/mass_formula_6term_mpfr_50dps.py:430` —
+- `computations/mass_formula_6term_mpfr_50dps.py:430` —
   assertion key update + per-rename comment.
-- `folio-assistant/computations/derive_m_p_hecke_path_a.py` — T2+T3
+- `computations/derive_m_p_hecke_path_a.py` — T2+T3
   now loaded (no KeyError); new `m_p_hecke_T1_T2_T3_T4_50dps` partial;
   T4 reads canonical `term4_frob_canonical_per_3A` field with legacy
   fallback; quarantine note rewritten.

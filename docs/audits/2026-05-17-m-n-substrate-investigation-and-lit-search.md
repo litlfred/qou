@@ -60,7 +60,7 @@ thimbles contribute, NOT a finite interval bound.
 
 So the **anti-thimble** (steepest-ASCENT) real-axis crossing
 determines the natural interval. I tested this on the QOU color-tube
-cubic in [`derive_a_thimble_intersection.py`](../../folio-assistant/computations/derive_a_thimble_intersection.py):
+cubic in [`derive_a_thimble_intersection.py`](../../computations/derive_a_thimble_intersection.py):
 
 | direction | from z_c | real-axis crossing |
 |---|---|---|
@@ -98,7 +98,7 @@ from z_c to infinity**, not on the real axis with a finite cutoff.
 ### Current m_n status
 
 The only "substrate-derived" m_n in compute infra is
-[`m_n_difference_formula.py`](../../folio-assistant/computations/m_n_difference_formula.py), which:
+[`m_n_difference_formula.py`](../../computations/m_n_difference_formula.py), which:
 
 ```
 Δm = ((q+q⁻¹)/(q^{1/2}+q^{-1/2})) · (μ_d − μ_u)

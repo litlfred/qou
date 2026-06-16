@@ -1,7 +1,7 @@
 # Audit: ρ_K mass-table predictions (PR #564, P4″ + P4ⁱᵛ)
 
 **Date:** 2026-05-08
-**Scope:** Pre-merge audit of [`atomic_mass_via_rho_k.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/folio-assistant/computations/atomic_mass_via_rho_k.py)
+**Scope:** Pre-merge audit of [`atomic_mass_via_rho_k.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/computations/atomic_mass_via_rho_k.py)
 landed on `claude/refactor-computation-framework-iCqhG` (PR #564),
 cited in the [1 ppb coordination ledger](../coordination/1ppb.md)
 as P4″ (commit `86aaeb51a`) + P4ⁱᵛ (commit `400c7961d`).
@@ -37,7 +37,7 @@ Calibration anchors (CAL inputs only — no derived `Q_β`):
 ## Witness data (rho-k path)
 
 Read from
-[`atomic-mass-via-rho-k.witness.json`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/folio-assistant/computations/atomic-mass-via-rho-k.witness.json):
+[`atomic-mass-via-rho-k.witness.json`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/computations/atomic-mass-via-rho-k.witness.json):
 
 | Atom | $Z$ | $N$ | $A$ | $|\mathrm{tr}_M|$ | ρ_K err (%) | Legacy E₀ err (%) | Improvement |
 |---|:-:|:-:|:-:|---:|---:|---:|---:|

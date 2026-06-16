@@ -31,7 +31,7 @@ accuracy, target $\sigma_{\mathrm{pred}} \leq \sigma_{\mathrm{exp}} / 100$).
 *Status flags* mirror the canonical derivation table: *proved*
 (sorry-free Lean), *derived* (categorical, no fit),
 *conditional* (conjecture-conditional), *open* (open gate).
-*Witness JSON* paths are relative to `folio-assistant/computations/`
+*Witness JSON* paths are relative to `computations/`
 unless stated otherwise.
 
 **Reading order.**

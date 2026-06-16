@@ -3,8 +3,8 @@
 # Compute Audit & Workplan — 2026-05-08
 
 **Skill:** [`local/compute-audit`](../../.claude/skills/local/compute-audit.md)
-**Scanner:** [`folio-assistant/computations/compute_audit_scan.py`](../../folio-assistant/computations/compute_audit_scan.py)
-**Witness:** [`folio-assistant/computations/compute-audit-scan.witness.json`](../../folio-assistant/computations/compute-audit-scan.witness.json)
+**Scanner:** [`computations/compute_audit_scan.py`](../../computations/compute_audit_scan.py)
+**Witness:** [`computations/compute-audit-scan.witness.json`](../../computations/compute-audit-scan.witness.json)
 
 The 30 patterns (P1–P30) are extracted from a 50-commit review of
 QOU compute landings 2026-04 → 2026-05; full catalogue and references
@@ -60,7 +60,7 @@ cites the matching pattern and a prior successful instance.
      with the `WitnessBuilder("foo", engine=...)` builder pattern.
    - Witnesses gain `scriptHash` + `scriptCommitSha` so
      `run_pipeline.py` can detect staleness.
-   - Reference: [`witness_base.py:136-330`](../../folio-assistant/computations/substrate/witness_base.py).
+   - Reference: [`witness_base.py:136-330`](../../computations/substrate/witness_base.py).
    - **Question that blocks autonomous sweep:** which witnesses are
      hand-curated reference values that should be flagged
      `set_audit_only(...)` vs which are computational outputs that
@@ -107,7 +107,7 @@ cites the matching pattern and a prior successful instance.
 
 8. **Numerical-q Hoefsmit callers — wire through `BlockCache`.**
    21 candidate files.  The `BlockCache` API in
-   [`syt_prefix_cache.py`](../../folio-assistant/computations/syt_prefix_cache.py)
+   [`syt_prefix_cache.py`](../../computations/syt_prefix_cache.py)
    uses `float`/`math.sqrt` arithmetic; **only** numerical-q callers
    can use it directly.  Symbolic-q callers must continue using
    `hoefsmit_matrices_symbolic`.  Per-file triage:
@@ -190,7 +190,7 @@ that hardcodes the top-level path.
 
 Resolved by adding **`WitnessBuilder.wrap_legacy(name, payload, *,
 script_path, ...)`** in
-[`folio-assistant/computations/substrate/witness_base.py`](../../folio-assistant/computations/substrate/witness_base.py).
+[`computations/substrate/witness_base.py`](../../computations/substrate/witness_base.py).
 The helper:
 
 - accepts an existing payload dict (the one a script is currently
@@ -251,7 +251,7 @@ in scope for autonomous landing.
 ## Re-running the audit
 
 ```bash
-python folio-assistant/computations/compute_audit_scan.py
+python computations/compute_audit_scan.py
 ```
 
 Findings change only when scripts change.  After each Tier-2/3/4

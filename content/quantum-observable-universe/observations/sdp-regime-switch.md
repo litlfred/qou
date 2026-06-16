@@ -77,7 +77,7 @@ formalisation and experimental comparison):
 
 $\square$
 
-**Witness.**  `folio-assistant/computations/sdp_cross_channel.py`
+**Witness.**  `computations/sdp_cross_channel.py`
 with `sdp_with_atom_observables(Z, N, partition_entries,
 pair_couplings)` using the `cvxpy` SDP solver; falls back to
 scalar LP if `cvxpy` unavailable.

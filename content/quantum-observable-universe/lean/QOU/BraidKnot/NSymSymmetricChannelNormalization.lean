@@ -23,7 +23,7 @@ namespace QOU.BraidKnot
 
     Conjectural class — see [`conj:n-sym-symmetric-channel-normalization`](../../../quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md). -/
 class NSymSymmetricChannelNormalization where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Conjecture statement** (from manuscript):
 
       The closed-form expression for $N_v$ in

@@ -116,7 +116,7 @@ def main():
             "h-content reduction, not the literal figure-8 Jones invariant."
         ),
         "computation": {"engine": "python+sympy",
-                        "script": "folio-assistant/computations/knot_factor_skein_verification.py"},
+                        "script": "computations/knot_factor_skein_verification.py"},
         "scriptCommitSha": git_sha(script_path),
         "scriptHash": fhash(script_path),
         "computedAt": datetime.now(timezone.utc).isoformat(),

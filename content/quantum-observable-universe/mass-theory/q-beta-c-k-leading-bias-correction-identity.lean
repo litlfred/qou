@@ -27,7 +27,7 @@
 
   Ref: [pr1786] https://github.com/litlfred/qou/pull/1786
        [pr1824] https://github.com/litlfred/qou/pull/1824
-       folio-assistant/computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py
+       computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py
 -/
 
 import Mathlib.Algebra.Ring.Defs

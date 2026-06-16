@@ -27,7 +27,7 @@ derivation, **not** a free parameter. The production hypothesis is
 **muon = 4_1 (figure-8 knot)** per `prop:skein-mass-relation`.
 
 Audit-probe Markov-trace data (from
-[`folio-assistant/computations/lepton_tower_probe_1_cinquefoil_muon.py`](../../folio-assistant/computations/lepton_tower_probe_1_cinquefoil_muon.py),
+[`computations/lepton_tower_probe_1_cinquefoil_muon.py`](../../computations/lepton_tower_probe_1_cinquefoil_muon.py),
 which is **audit-only, not production-wired** per its module
 docstring):
 

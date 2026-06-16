@@ -10,8 +10,8 @@ one dimension but wrong in another:
 
 | Variant | ³He vs ³H split? | cal/m_e spread vs AME |
 |---------|:----------------:|----------------------:|
-| **q=1 MN** ([per_braid_tower.py](../../folio-assistant/computations/per_braid_tower.py)) | ❌ identical | ✅ 1.06% |
-| **q-Hecke + (c, d)** ([per_braid_tower_q_hecke.py](../../folio-assistant/computations/per_braid_tower_q_hecke.py)) | ✅ 47.5% relative | 🔴 65.5% |
+| **q=1 MN** ([per_braid_tower.py](../../computations/per_braid_tower.py)) | ❌ identical | ✅ 1.06% |
+| **q-Hecke + (c, d)** ([per_braid_tower_q_hecke.py](../../computations/per_braid_tower_q_hecke.py)) | ✅ 47.5% relative | 🔴 65.5% |
 
 Neither is physically right by itself.
 

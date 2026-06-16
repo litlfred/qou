@@ -54,7 +54,7 @@ The roadmap above was executed across three merged PRs by one session
 `b₁/Area` + n=2 Habiro regroup). The **carrier-role table for the 6
 cohomological force-knots** (the "α_EM is the trefoil — what are the
 other 5?" question) is in
-`folio-assistant/computations/alpha_k_per_force_assembly.py` +
+`computations/alpha_k_per_force_assembly.py` +
 witness: `T_{2,3}` EM (trefoil) · `T_{2,5}` 2nd generation ·
 `T_{2,7}` charm/3rd generation · `T_{2,9}` strong (force-carrier,
 `(2,1,1)`, `h[9]_q`) · `T_{3,4}` Hopf-squared/top · `T_{3,5}`

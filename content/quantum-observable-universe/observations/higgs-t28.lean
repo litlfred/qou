@@ -46,7 +46,7 @@ class HiggsAsT28 : Prop where
 
 -- Ref: [manuscript] conj:higgs-t28
 instance higgs_t28_conjecture : HiggsAsT28 where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   t28_genus := sorry
   -- Ref: [manuscript]
   spans_three := sorry

@@ -24,8 +24,8 @@ export default remark({
   cites: ["pham1965", "seidel2008", "witten2011"],
   computation: {
     engine: "scipy",
-    script: "folio-assistant/computations/picard_lefschetz_thimble.py",
-    witness: "folio-assistant/computations/picard-lefschetz-thimble.witness.json",
+    script: "computations/picard_lefschetz_thimble.py",
+    witness: "computations/picard-lefschetz-thimble.witness.json",
     status: "verified",
     requires: ["numpy", "scipy"],
   },

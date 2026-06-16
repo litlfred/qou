@@ -13,9 +13,9 @@ export default definition({
   title: "Embeddable knot operator with geometric overlap weight",
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/embeddable_knot_operator.py",
+    script: "computations/embeddable_knot_operator.py",
     witness: [
-      "folio-assistant/computations/embeddable-knot-operator.witness.json",
+      "computations/embeddable-knot-operator.witness.json",
     ],
     status: "verified",
   },

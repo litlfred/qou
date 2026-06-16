@@ -14,7 +14,7 @@ Re-verified all claims in the table after PR #787 merged. **The systemic finding
 |---|---|---|
 | 11 propositions need wiring | **7** still need it; 4 have a `computation` field (but pointed at *different* live scripts — see below) | Reduce active revival list to 7 |
 | 2 of those 11 propositions exist as blocks (`prop:b-over-a-spectral-decomposition`, `prop:atomic-braid-mass`) | **Neither label exists in `content/`.** The closest blocks are `def:atomic-braid` (sibling, not a mass claim) and the 2-of-3 b/a-trio props (`prop:confined-knot-binding`, `prop:wigner-np-pairing`) | Drop the 2 phantom rows; the b/a trio is really a 2-prop pair |
-| ~30 deprecated scripts | **25 scripts total** — this count includes the 8 `build_*_chain.py` scripts attributed to `prop:full-pole-structure-mass-trace` (`build_alpha_k_h3_chains.py`, `build_atom_tr_M_chains.py`, `build_c_q_chain.py`, `build_hoefsmit_rep_chain.py`, `build_hoefsmit_rep_sigma2_chain.py`, `build_markov_trace_assembly_chain.py`, `build_schur_weyl_weight_chain.py`, `build_sigma_shell_chain.py`). All 25 are still in `folio-assistant/computations/_deprecated/`; none revived. | Original "~30" was approximate; precise count is **25** (not 25+8). |
+| ~30 deprecated scripts | **25 scripts total** — this count includes the 8 `build_*_chain.py` scripts attributed to `prop:full-pole-structure-mass-trace` (`build_alpha_k_h3_chains.py`, `build_atom_tr_M_chains.py`, `build_c_q_chain.py`, `build_hoefsmit_rep_chain.py`, `build_hoefsmit_rep_sigma2_chain.py`, `build_markov_trace_assembly_chain.py`, `build_schur_weyl_weight_chain.py`, `build_sigma_shell_chain.py`). All 25 are still in `computations/_deprecated/`; none revived. | Original "~30" was approximate; precise count is **25** (not 25+8). |
 
 ### Per-proposition wiring status (verified)
 
@@ -63,9 +63,9 @@ The two non-existent labels (`prop:atomic-braid-mass`, `prop:b-over-a-spectral-d
 
 ### Reality check — what landed on `main` since the catalog (2026-05-19 evening)
 
-Post-merge survey of every change to `folio-assistant/computations/`, `content/quantum-observable-universe/`, and `docs/` since PR #787 merged at `2026-05-19T04:52:44Z`:
+Post-merge survey of every change to `computations/`, `content/quantum-observable-universe/`, and `docs/` since PR #787 merged at `2026-05-19T04:52:44Z`:
 
-- **No `_deprecated/` revivals** — `git log origin/main -- folio-assistant/computations/_deprecated/` shows zero post-#787 changes. All 25 catalog scripts are exactly where they were when the catalog was written.
+- **No `_deprecated/` revivals** — `git log origin/main -- computations/_deprecated/` shows zero post-#787 changes. All 25 catalog scripts are exactly where they were when the catalog was written.
 - **No `computation` field added** to any of the 7 still-unwired propositions. Their `.ts` manifests are unmodified since #787 (verified with `git log <sha>..origin/main -- <ts>`).
 - **The 1ppb / Δ_λ thread was paused, now substantially advanced.** Per the [1ppb-categorical-chain ledger](../coordination/1ppb-categorical-chain.md), Phase 3 of PR #787 produced a hard categorical finding (Vol_hyp clusters by Z: Vol(D)=Vol(T)=12.776 ≠ Vol(³He)=Vol(⁴He)=12.554; N-direction is Seifert-fibered → contributes 0 to hyperbolic volume). **Phase 4 on this branch** ([audit doc](./2026-05-19-delta-lambda-phase4-z4N-closure.md), witness `delta-lambda-z4N-phase4.witness.json`) identifies the closure formula $\lvert\Delta_\lambda^*(K)\rvert \approx (\mathrm{Vol}_{\mathrm{hyp}}(K)/[8]_q) \cdot [3]_q^{2(Z-1)} \cdot (q^{1/2}+q^{-1/2})^{4N}$ with **max rel.err. 2.51% across the 4 atoms (zero fit parameters)**. The Seifert-piece contribution is identified as $(\dim_q V_{1/2})^{4N}$ — no per-JSJ-piece RT infrastructure needed; the per-N factor is a product of quantum dims that the existing QOU formalism (Hoefsmit, Hecke skein) already provides. **Priority #1's framing has shifted again**: the unified-mass-formula revival should now also test the Phase 4 closure factorisation against its depth-stratified output before declaring success or failure — a revival that reproduces the Phase 4 quantum-integer structure is far more credible than one that doesn't.
 - **The closed-forms thread continued on a different axis.** The qbeta-ladder closure path ([PR #804](https://github.com/litlfred/qou/pull/804) + follow-ups: `c7b91515`, `054a3d88`, `9b415626`) reached **c_2..c_3 fully derived via SDP-T_β framework (≤ 1.7%)** and formalised **c_4..c_7 as `conj:qbeta-c-k-closed-forms`** (empirical-fit closed forms, sub-ppt residuals, derivation OPEN). This is orthogonal to the deprecated-scripts catalog — the new binding scripts `binding_via_interface_knot.py` and `binding_q_target_sweep.py` are consumed by `q-beta-categorical-precision-ladder.md` and the new conjecture block, **not** by `prop:binding-scale-catalan`. They do **not** supersede `catalan_binding.py` / `binding_full_pipeline.py` / `binding_per_block_log.py`.
@@ -79,7 +79,7 @@ Post-merge survey of every change to `folio-assistant/computations/`, `content/q
 
 ## Systemic finding
 
-The orphan-witness cleanup in [PR #663](https://github.com/litlfred/qou/pull/663) (2026-05-17) moved 262 of 285 candidate scripts to `folio-assistant/computations/_deprecated/`. The criterion was "no live consumer in any `.ts` content block's `computation` field". A grep of the moved scripts reveals **many implement live paper propositions** but were swept up because the propositions' `.ts` manifests do NOT declare a `computation.script` / `computation.witness` field.
+The orphan-witness cleanup in [PR #663](https://github.com/litlfred/qou/pull/663) (2026-05-17) moved 262 of 285 candidate scripts to `computations/_deprecated/`. The criterion was "no live consumer in any `.ts` content block's `computation` field". A grep of the moved scripts reveals **many implement live paper propositions** but were swept up because the propositions' `.ts` manifests do NOT declare a `computation.script` / `computation.witness` field.
 
 This is a **systemic paper↔compute wiring gap**, not a single isolated case. Curated below: 11 propositions whose compute infrastructure was deprecated and which are reviveable by adding a `computation` field to the proposition's `.ts` manifest.
 
@@ -102,11 +102,11 @@ This is a **systemic paper↔compute wiring gap**, not a single isolated case. C
 | `prop:categorical-mass-markov` | `canonical_isospin_pyhecke.py`, `canonical_isospin_pyhecke_full_census.py`, `canonical_isospin_test.py` (3) | Markov-trace mass — multiple variants |
 
 **Total** (original count): ~30 deprecated scripts referencing ~11 live propositions.
-**Verified count** (2026-05-19 update): **25 deprecated scripts** referencing **11 real propositions** (the 11 original rows resolve to: 7 actionable single-prop rows + 4 wired-to-alternate (3 named directly + `prop:confined-knot-binding` reached via the b/a trio) + 1 true phantom (`prop:atomic-braid-mass`, no real backup). The other phantom (`prop:b-over-a-spectral-decomposition`) decomposes into the 2 real props `confined-knot-binding` (wired) + `wigner-np-pairing` (actionable).). All 25 scripts are still in `folio-assistant/computations/_deprecated/`; zero revivals have landed.
+**Verified count** (2026-05-19 update): **25 deprecated scripts** referencing **11 real propositions** (the 11 original rows resolve to: 7 actionable single-prop rows + 4 wired-to-alternate (3 named directly + `prop:confined-knot-binding` reached via the b/a trio) + 1 true phantom (`prop:atomic-braid-mass`, no real backup). The other phantom (`prop:b-over-a-spectral-decomposition`) decomposes into the 2 real props `confined-knot-binding` (wired) + `wigner-np-pairing` (actionable).). All 25 scripts are still in `computations/_deprecated/`; zero revivals have landed.
 
 ## Why they were deprecated
 
-Per the [`_deprecated/README.md`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/_deprecated/README.md), the cleanup criteria were:
+Per the [`_deprecated/README.md`](https://github.com/litlfred/qou/blob/main/computations/_deprecated/README.md), the cleanup criteria were:
 
 1. no content block consumes the witness (via `computation.witness` / `:val[...]` registry / `witness:` array)
 2. no audit doc cites the witness
@@ -134,7 +134,7 @@ The fix is **structural** (10-20 `.ts` manifest updates) not **methodological** 
 
 For the current `claude/closed-forms-first-principles` work, the most relevant revival is **`prop:unified-curvature-rank-mass-formula`** + its two scripts (`iterative_tower_unified_mass.py`, `strict_3cal_unified_mass.py`). The log-Δ empirical test (5.22× cross-atom variance) shows this is the right framework for the Δ_λ closure. A full revival requires:
 
-1. `git mv folio-assistant/computations/_deprecated/strict_3cal_unified_mass.py folio-assistant/computations/strict_3cal_unified_mass.py`
+1. `git mv computations/_deprecated/strict_3cal_unified_mass.py computations/strict_3cal_unified_mass.py`
 2. Add a `WitnessBuilder.set_audit_only(...)` or block-consumer hook to the script.
 3. Add `computation: { script: ..., witness: ... }` to `unified-curvature-rank-mass-formula.ts`.
 4. Run on D, T, ³He, ⁴He → emit witness → compare to AME.
@@ -172,8 +172,8 @@ If you are picking up this catalog to **actually revive** the deprecated-but-val
      uses: ["prop:plancherel-term-7-formulation"],
      computation: {
        engine: "mpmath",
-       script: "folio-assistant/computations/strict_3cal_unified_mass.py",
-       witness: "folio-assistant/computations/strict-3cal-unified-mass.witness.json",
+       script: "computations/strict_3cal_unified_mass.py",
+       witness: "computations/strict-3cal-unified-mass.witness.json",
        status: "not_run",
        requires: ["mpmath", "numpy"],
      },
@@ -183,11 +183,11 @@ If you are picking up this catalog to **actually revive** the deprecated-but-val
 3. **`git mv` the script + witness back from `_deprecated/`.**
 
    ```bash
-   git mv folio-assistant/computations/_deprecated/strict_3cal_unified_mass.py \
-          folio-assistant/computations/strict_3cal_unified_mass.py
+   git mv computations/_deprecated/strict_3cal_unified_mass.py \
+          computations/strict_3cal_unified_mass.py
    # Move the witness too if it exists in _deprecated/
-   git mv folio-assistant/computations/_deprecated/strict-3cal-unified-mass.witness.json \
-          folio-assistant/computations/strict-3cal-unified-mass.witness.json 2>/dev/null || true
+   git mv computations/_deprecated/strict-3cal-unified-mass.witness.json \
+          computations/strict-3cal-unified-mass.witness.json 2>/dev/null || true
    ```
 
 4. **Add a `set_audit_only` or block-consumer hook to the script** (if the witness builder pattern is missing). The script may already have a `WitnessBuilder.save()` call; verify it points to the witness filename in step 2.

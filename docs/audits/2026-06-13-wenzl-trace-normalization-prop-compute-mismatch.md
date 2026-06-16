@@ -41,10 +41,10 @@ fix was a genuine improvement over the uniform claim.
 ## 2. The residual mismatch at q≠1
 
 The mass pipeline's H_3 weights are produced by
-[`y_lambda_wenzl_bridge_numeric`](../../folio-assistant/computations/y_lambda_wenzl_bridge.py)
+[`y_lambda_wenzl_bridge_numeric`](../../computations/y_lambda_wenzl_bridge.py)
 (the **Wenzl Schur-principal specialization**, Path B of the 2026-05-05
 equivalence proof) and cached in
-[`y-lambda-at-q0.witness.json`](../../folio-assistant/computations/y-lambda-at-q0.witness.json).
+[`y-lambda-at-q0.witness.json`](../../computations/y-lambda-at-q0.witness.json).
 Comparing the live cache to the prop's closed forms:
 
 | λ | compute (Ocneanu/Wenzl-Schur), q=1 | prop closed form, q=1 | compute, q₀ (live cache) | prop closed form, q₀ |
@@ -83,14 +83,14 @@ For a 1-dimensional rep, `σ_i` acts by a scalar: `χ^{(3)}(β) = q^{w}` (trivia
   `y_(2,1)` enter. Moreover the **headline proton/neutron masses do not use
   the `y_λ·χ_λ` sum at all** — they use the Borromean mass-splitting closed
   form `Δm/M_N = ℏ_q²·h_q·[2]_q·(1+ℏ_q³)/3`
-  ([`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)).
+  ([`m_p_borromean_verification_50dps.py`](../../computations/m_p_borromean_verification_50dps.py)).
   So `m_p`, `m_n`, and the atomic-mass headline numbers are **independent of
   this split**.
 
 - **Where it bites:** `closed_form_tau_M(Z, N, q, τ_p, τ_n)` and the per-knot /
   hadron-knot tables
-  ([`per_knot_mass_table_demonstration.py`](../../folio-assistant/computations/per_knot_mass_table_demonstration.py),
-  [`hadron_knot_table.py`](../../folio-assistant/computations/hadron_knot_table.py))
+  ([`per_knot_mass_table_demonstration.py`](../../computations/per_knot_mass_table_demonstration.py),
+  [`hadron_knot_table.py`](../../computations/hadron_knot_table.py))
   evaluate `tr_M` on **writhe≠0** braids, where `χ^{(3)} = q^{w}` and
   `χ^{(1³)} = (-q^{-1})^{w}` differ and the individual `y_(3)` vs `y_(1³)`
   split *does* matter. Under the prop's Jones/TL weights these tables would
@@ -103,7 +103,7 @@ encode q=1 weight assumptions that are **wrong in both conventions** — i.e.
 they match neither the Jones/TL prop nor the full-Hecke compute, so they are
 fixable independently of the §5 adjudication:
 
-- [`borromean_h3_2_1_irrep_derivation.py`](../../folio-assistant/computations/borromean_h3_2_1_irrep_derivation.py)
+- [`borromean_h3_2_1_irrep_derivation.py`](../../computations/borromean_h3_2_1_irrep_derivation.py)
   (lines 226, 230–232): comments assert
   `y_(3) = y_(2,1) = y_(1,1,1) = 1/6` at q=1. This is a **w_λ ↔ y_λ
   conflation** (the exact notation hazard PR #2191 Finding 1 warned about):
@@ -111,7 +111,7 @@ fixable independently of the §5 adjudication:
   `(1/6, 2/3, 1/6)`, not uniform — and is **not** the Markov `y_λ`, which is
   `(1/2, 1/4, 0)` at q=1. (The comment is also internally inconsistent: all
   three `= 1/6` gives `Σ y_λ d_λ = 4/6 ≠ 1`.)
-- [`crystal_yekutieli_probes_abcd.py`](../../folio-assistant/computations/crystal_yekutieli_probes_abcd.py)
+- [`crystal_yekutieli_probes_abcd.py`](../../computations/crystal_yekutieli_probes_abcd.py)
   (lines 166, 169): assigns `1/(q + 1/q + 2)` to **both** `y_(3)` and
   `y_(1,1,1)`. But `1/(q + 1/q + 2) = 1/(q^{1/2} + q^{-1/2})^2` is the
   **`y_(2,1)` closed form** in the spinor `[2]` convention — it evaluates to
@@ -162,7 +162,7 @@ Recommendation: **(1)** — treat the compute as canonical and scope the prop.
 ## 6. Reproduction
 
 ```bash
-cd folio-assistant/computations
+cd computations
 # live canonical H_3 weights at q_0 (Wenzl-Schur):
 python3 - <<'PY'
 import json
@@ -206,7 +206,7 @@ prop/probe/doc hygiene that does not move a physical prediction.
 ## Files referenced
 
 - `content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights.md` (the prop, on `main` via `c2df3870`)
-- `folio-assistant/computations/y_lambda_wenzl_bridge.py` (`y_lambda_wenzl_bridge_numeric`)
-- `folio-assistant/computations/y-lambda-at-q0.witness.json` (live cache)
-- `folio-assistant/computations/closed_form_tau_M.py` (`compute_tau_M_nucleon_H3`, the consumer)
+- `computations/y_lambda_wenzl_bridge.py` (`y_lambda_wenzl_bridge_numeric`)
+- `computations/y-lambda-at-q0.witness.json` (live cache)
+- `computations/closed_form_tau_M.py` (`compute_tau_M_nucleon_H3`, the consumer)
 - `docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md` (Ocneanu canonical proof)

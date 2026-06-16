@@ -48,7 +48,7 @@ Additional tests in this probe:
       element separately (deeper structural test).
 
 OUTPUT:
-    folio-assistant/computations/qbeta-habiro-p8-deep.witness.json
+    computations/qbeta-habiro-p8-deep.witness.json
 """
 from __future__ import annotations
 

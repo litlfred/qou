@@ -71,7 +71,7 @@ $$
 
 The free-neutron $g_A = 1.2754(13)$ (PDG 2022) is currently:
 - **Not derived** in the QOU framework
-- Listed as "open computation" in [`folio-assistant/computations/beta-decay-from-q.py`](../../folio-assistant/computations/beta-decay-from-q.py) (lines 137 ff)
+- Listed as "open computation" in [`computations/beta-decay-from-q.py`](../../computations/beta-decay-from-q.py) (lines 137 ff)
 - Should categorically emerge from the **Borromean Skein-algebra trace** at $q_0$
 
 ### What's known

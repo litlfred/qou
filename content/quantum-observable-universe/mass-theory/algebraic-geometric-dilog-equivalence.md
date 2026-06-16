@@ -100,7 +100,7 @@ class instances. This matches the conjectural-class pattern used for
 
 The algebraic-geometric matching of poles to cusps for the simplest
 non-trivial case (the trefoil, $n = 3$) is recorded in
-[q-pochhammer-seed.witness.json](../../../folio-assistant/computations/q-pochhammer-seed.witness.json).
+[q-pochhammer-seed.witness.json](../../../computations/q-pochhammer-seed.witness.json).
 The witness reports the algebraic denominator zeros, the SnapPy-
 solved cusp shape parameters obtained by feeding those zeros as
 Newton–Raphson seeds, and the residual after one Newton step.

@@ -18,7 +18,7 @@
 > $\mathbb{Z}[q^{\pm 1}]$ for $|z| \ge q$ via duplication
 > $u = v = i\sqrt{|z|}$, plus the post-$\tau$ $\log_q^2$
 > correction, lives on `main` in
-> [`pentagon_reduction_li2q.py`](../../../folio-assistant/computations/pentagon_reduction_li2q.py)
+> [`pentagon_reduction_li2q.py`](../../../computations/pentagon_reduction_li2q.py)
 > with audit doc
 > [`-pentagon-reduction-li2q.md`](../../../docs/audits/-pentagon-reduction-li2q.md).
 > Cross-link: the *Pentagon coherence layer* of $c_5$'s
@@ -193,7 +193,7 @@ sub-braid combinatorics).
 This is testable by extending SDP-$T_\beta$ extraction to $k \geq 8$
 and checking whether c_8 has a $1/2$ fingerprint — the probe is
 queued in
-[`folio-assistant/computations/qbeta/qbeta_decay_sdp_extended_ck.py`](../../folio-assistant/computations/qbeta/qbeta_decay_sdp_extended_ck.py).
+[`computations/qbeta/qbeta_decay_sdp_extended_ck.py`](../../computations/qbeta/qbeta_decay_sdp_extended_ck.py).
 
 ## Discussion
 

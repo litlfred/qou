@@ -26,8 +26,8 @@ You are picking up the compute-optimization track for the **Quantum Observable U
 | 2 | [`2026-05-20-compute-optimization-roadmap.md`](2026-05-20-compute-optimization-roadmap.md) | 10 min | the master plan (PR #865) — tiers, projections, attack order |
 | 3 | [`2026-05-20-markov-peel-bottleneck-profile.md`](2026-05-20-markov-peel-bottleneck-profile.md) | 5 min | cProfile data + 4-strategy ranking that motivated #859 |
 | 4 | [`2026-05-20-rust-port-scoping-markov-peel.md`](2026-05-20-rust-port-scoping-markov-peel.md) | 10 min | initial scoping (Phase-1+2 done; you're doing Phase-3) |
-| 5 | [`laurent_q_trace.py`](../../folio-assistant/computations/laurent_q_trace.py) | 15 min | **reference implementation** you must match bit-for-bit |
-| 6 | [`hecke_laurent_fast.py`](../../folio-assistant/computations/hecke/hecke_laurent_fast.py) | 20 min | **THE FILE YOU'RE PORTING** for Tier 1.A — read every line |
+| 5 | [`laurent_q_trace.py`](../../computations/laurent_q_trace.py) | 15 min | **reference implementation** you must match bit-for-bit |
+| 6 | [`hecke_laurent_fast.py`](../../computations/hecke/hecke_laurent_fast.py) | 20 min | **THE FILE YOU'RE PORTING** for Tier 1.A — read every line |
 | 7 | [`tools/hecke-engine/src/tr_m_word_lq.rs`](../../tools/hecke-engine/src/tr_m_word_lq.rs) | 10 min | Phase-2 Rust template (style + PyO3 pattern) |
 | 8 | [`tools/hecke-engine/src/laurent_poly_q.rs`](../../tools/hecke-engine/src/laurent_poly_q.rs) | 10 min | existing BigInt LaurentPoly — your starting template (extend to BigRational) |
 
@@ -88,8 +88,8 @@ The Phase-2 Rust port (`tr_m_word_lq`) attacks the trace-assembly downstream. Bu
 | Rust (NEW) | `tools/hecke-engine/src/reduce_laurent.rs` | R1+R2+R3 fixpoint reducer |
 | Rust (MOD) | `tools/hecke-engine/src/lib.rs` | add three `pub mod` lines |
 | PyO3 (MOD) | `tools/pyhecke-native/src/lib.rs` | add `incremental_reduce_rust` binding |
-| Python (MOD) | `folio-assistant/computations/markov/markov_peel_rust_bridge.py` | add `tr_M_atomic_rust_full(Z, N, dps)` |
-| Python (MOD) | `folio-assistant/computations/canonical_mass_table_extended.py` | add `method="laurent_q_rust"` |
+| Python (MOD) | `computations/markov/markov_peel_rust_bridge.py` | add `tr_M_atomic_rust_full(Z, N, dps)` |
+| Python (MOD) | `computations/canonical_mass_table_extended.py` | add `method="laurent_q_rust"` |
 | Audit (NEW) | `docs/audits/2026-05-21-rust-laurent-q-reduce-results.md` | empirical results |
 
 ### §3.2 Algorithm — the three reduce rules
@@ -148,7 +148,7 @@ Add to `tools/pyhecke-native/src/lib.rs`:
 
 ```rust
 /// Reduce a Hecke-word product to canonical NF. Mirrors
-/// `folio-assistant/computations/hecke_laurent_fast.incremental_reduced_element_fast`.
+/// `computations/hecke_laurent_fast.incremental_reduced_element_fast`.
 ///
 /// `word`: `Vec<(i32, i32, u32)>` triples `(c_num, c_den, gen)` —
 ///   the rational coefficient `(c_num/c_den)` times σ_gen.
@@ -170,7 +170,7 @@ fn incremental_reduce_rust(
 ### §3.5 Cross-check pattern (REQUIRED before merge)
 
 ```python
-# folio-assistant/computations/markov/markov_peel_rust_bridge.py — new function
+# computations/markov/markov_peel_rust_bridge.py — new function
 def tr_M_atomic_rust_full(Z: int, N: int, dps: int = 50):
     """Full Rust path: Rust reduce → Rust tr_m_word_lq → mpmath eval."""
     from mass_at_3A_proper import atom_braid_word_3A
@@ -257,9 +257,9 @@ Run the ⁴He preflight (§4.2)
 
 | Step | File | Action |
 |------|------|--------|
-| 1 | `folio-assistant/computations/mass_at_3A_proper.py` | new `atom_braid_orbit_representative(Z, N)` |
-| 2 | `folio-assistant/computations/laurent_q_trace.py` | new `tr_M_atomic_orbit_lq(Z, N)` that calls the representative + multiplies by orbit size |
-| 3 | `folio-assistant/computations/canonical_mass_table_extended.py` | new `method="laurent_q_orbit"` or `--use-orbit` flag |
+| 1 | `computations/mass_at_3A_proper.py` | new `atom_braid_orbit_representative(Z, N)` |
+| 2 | `computations/laurent_q_trace.py` | new `tr_M_atomic_orbit_lq(Z, N)` that calls the representative + multiplies by orbit size |
+| 3 | `computations/canonical_mass_table_extended.py` | new `method="laurent_q_orbit"` or `--use-orbit` flag |
 | 4 | Cross-check | every benched atom: orbit-path vs full-path agree to 1e-25 |
 
 ### §4.5 Orbit sizes (for sanity-check)
@@ -333,7 +333,7 @@ The cyclic canonicalization must ONLY affect the cache key — NOT the recursion
 ### §6.1 Verify first
 
 ```bash
-cd folio-assistant/computations
+cd computations
 python3 -c "
 import markov_peel
 from markov_peel import _shifted_nucleon_nf
@@ -384,7 +384,7 @@ pip install --break-system-packages --force-reinstall \
     target/wheels/pyhecke_native-*-cp311-*.whl
 
 # 3. Python smoke test
-cd ../../folio-assistant/computations
+cd ../../computations
 python3 laurent_q_trace.py             # 6/6 self-check
 python3 markov_peel_rust_bridge.py     # cross-check
 

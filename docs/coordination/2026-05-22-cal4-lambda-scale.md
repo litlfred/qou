@@ -21,7 +21,7 @@ categorical identity, not the falsified `5/2 − h²·G` empirical fit).
 The Family A categorical identity is **already proved sorry-free**
 in both [`lambda-scale-substrate-form.lean`](../../content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.lean)
 and the Python verification
-[`lambda_scale_all_c_i_family_a.py`](../../folio-assistant/computations/lambda_scale_all_c_i_family_a.py):
+[`lambda_scale_all_c_i_family_a.py`](../../computations/lambda_scale_all_c_i_family_a.py):
 
 $$
   \lambda_A(q) \;:=\; \frac{1}{4} \sum_{\lambda \vdash 4} \dim_q V_\lambda

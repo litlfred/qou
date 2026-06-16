@@ -11,9 +11,9 @@ explicitly — the most standard candidate. This audit does, together with its
 adjoint (induction), the Markov tower H₃⊂H₄⊂H₅, and the icosahedral A₅ → 3-element-stabilizer
 restriction.
 **Compute:**
-[`h5_h3_functor_keystone.py`](../../folio-assistant/computations/h5_h3_functor_keystone.py),
+[`h5_h3_functor_keystone.py`](../../computations/h5_h3_functor_keystone.py),
 witness
-[`h5-h3-functor-keystone.witness.json`](../../folio-assistant/computations/h5-h3-functor-keystone.witness.json)
+[`h5-h3-functor-keystone.witness.json`](../../computations/h5-h3-functor-keystone.witness.json)
 (audit-only, exact integer/rational branching + RAW @ the canonical
 `compute_dps` for the substrate `z`, 17 assertions pass). **No tuning to h⁴=−3/4, m_n−m_p, B_AME, spin, or
 hypercharge.** Every multiplicity is computed FIRST from the branching rule;
@@ -261,7 +261,7 @@ no canonical scalar (h⁴) can be read off.
   [`2026-06-01-inter-nucleon-linked-channel.md`](2026-06-01-inter-nucleon-linked-channel.md) (PR #1678).
 - The falsification reference (h⁴ = −3/4 from the (2,1) block):
   [`borromean-markov-trace-closed-form.md`](../../content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.md),
-  [`borromean_h3_2_1_irrep_derivation.py`](../../folio-assistant/computations/borromean_h3_2_1_irrep_derivation.py).
+  [`borromean_h3_2_1_irrep_derivation.py`](../../computations/borromean_h3_2_1_irrep_derivation.py).
 - Markov (de)stabilization = vertical α_V:
   [`markov-moves-brane-tower.md`](../../content/quantum-observable-universe/braids-and-knots/markov-moves-brane-tower.md).
 - The Lean class still axiomatising the (now-proven-nonexistent-as-Hecke-functor) fiber map:

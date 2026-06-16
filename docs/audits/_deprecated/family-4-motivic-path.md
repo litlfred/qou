@@ -10,7 +10,7 @@ replaced by the motivic substrate / Habiro-Adelic chain in PR #455.
 
 ### Family-4 atoms (no knot assignments on main)
 
-`folio-assistant/computations/mass-table-ppb.witness.json`
+`computations/mass-table-ppb.witness.json`
 `atoms_no_assignment`:
 
 | sym | Z | N | A | B_AME (MeV) |
@@ -24,7 +24,7 @@ replaced by the motivic substrate / Habiro-Adelic chain in PR #455.
 
 ### What main already has
 
-`folio-assistant/computations/braid-registry/` has parent-braid
+`computations/braid-registry/` has parent-braid
 ground-state entries for every family-4 atom in the table above:
 
 - `li-6.json` — parent ordering `[0,1,0,1,1,0]` via exhaustive

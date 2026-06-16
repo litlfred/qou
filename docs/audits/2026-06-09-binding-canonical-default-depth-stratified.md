@@ -4,16 +4,16 @@
 
 **Default binding-energy compute** is the depth-stratified canonical chain via:
 
-- `folio-assistant/computations/binding_depth_stratified_rust.py` (preferred — Rust kernel for n ≥ 9)
-- `folio-assistant/computations/binding_depth_stratified_lr.py` (LR combiner — for A ≥ 4 via per-nucleon H_3 → H_{3A})
-- `folio-assistant/computations/binding_depth_stratified.py` (Python fallback)
+- `computations/binding_depth_stratified_rust.py` (preferred — Rust kernel for n ≥ 9)
+- `computations/binding_depth_stratified_lr.py` (LR combiner — for A ≥ 4 via per-nucleon H_3 → H_{3A})
+- `computations/binding_depth_stratified.py` (Python fallback)
 
 Witness JSONs (all on `main`):
-- [`binding-depth-stratified-rust.witness.json`](../../folio-assistant/computations/binding-depth-stratified-rust.witness.json) (6 atoms: D, T, ³He, ⁴He, ⁶Li, ⁷Li)
-- [`binding-depth-stratified-lr.witness.json`](../../folio-assistant/computations/binding-depth-stratified-lr.witness.json)
-- [`binding-depth-stratified.witness.json`](../../folio-assistant/computations/binding-depth-stratified.witness.json) (⁴He deferred)
-- [`binding-depth-stratified-selfconj.witness.json`](../../folio-assistant/computations/binding-depth-stratified-selfconj.witness.json)
-- [`binding-depth-stratified-knot-weighted.witness.json`](../../folio-assistant/computations/binding-depth-stratified-knot-weighted.witness.json)
+- [`binding-depth-stratified-rust.witness.json`](../../computations/binding-depth-stratified-rust.witness.json) (6 atoms: D, T, ³He, ⁴He, ⁶Li, ⁷Li)
+- [`binding-depth-stratified-lr.witness.json`](../../computations/binding-depth-stratified-lr.witness.json)
+- [`binding-depth-stratified.witness.json`](../../computations/binding-depth-stratified.witness.json) (⁴He deferred)
+- [`binding-depth-stratified-selfconj.witness.json`](../../computations/binding-depth-stratified-selfconj.witness.json)
+- [`binding-depth-stratified-knot-weighted.witness.json`](../../computations/binding-depth-stratified-knot-weighted.witness.json)
 
 ## What "canonical" means here
 
@@ -46,7 +46,7 @@ canonical-with-empirical-assignment
 **Correction (2026-06-09 within this session):** the `α_k`
 coefficients are **NOT empirical fits** — they are structurally
 defined constants (see
-[`binding_depth_stratified_rust.py:62-70`](../../folio-assistant/computations/binding_depth_stratified_rust.py)):
+[`binding_depth_stratified_rust.py:62-70`](../../computations/binding_depth_stratified_rust.py)):
 
 ```python
 def alpha_k(k: int) -> mp.mpf:
@@ -305,9 +305,9 @@ but the substitution is **surfaced**, not silent.
 
 ### 2. Standalone audit
 
-[`chi_witness_completeness_audit.py`](../../folio-assistant/computations/chi_witness_completeness_audit.py)
+[`chi_witness_completeness_audit.py`](../../computations/chi_witness_completeness_audit.py)
 walks every `chi-*-at-q0-*.witness.json` in
-`folio-assistant/computations/`, compares `len(by_partition)` to
+`computations/`, compares `len(by_partition)` to
 `p(n_strands)` from `PARTITION_COUNTS`, and produces
 `chi-witness-completeness-audit.witness.json` with an assertion
 that the incomplete count is 0. Run as part of the canonical /
@@ -364,7 +364,7 @@ constant lives at each depth k**, including:
 A genuine recursion `α_k = f(α_{k-1}, q, k)` derivable from the
 Wedderburn → Frobenius → GB filtration chain would CLOSE the
 remaining gap. The framework explicitly forbids per-isotope α_k
-tuning ([`binding_ladder_catalog.py:63`](../../folio-assistant/computations/binding_ladder_catalog.py)
+tuning ([`binding_ladder_catalog.py:63`](../../computations/binding_ladder_catalog.py)
 warning: α-ladder is fitted; per-isotope inconsistency was the
 falsification of the fitted route).
 
@@ -376,7 +376,7 @@ retuning. The infrastructure is already on main:
 
 | Component | File | State |
 |---|---|---|
-| Combiner | [`canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py) | A=2 end-to-end; A ≥ 3 returns `None` with diagnostic |
+| Combiner | [`canonical_tr_m_via_branching.py`](../../computations/canonical_tr_m_via_branching.py) | A=2 end-to-end; A ≥ 3 returns `None` with diagnostic |
 | A-operator extracts | `sublemma_2_1_A_operator_extract*.py` (H_6, H_9, H_12) | ✅ partial coverage; H_15 / H_18 missing |
 | Q-value chain | `branching-qvalue-chain.py` | ✅ |
 | Atom-level branching | `sublemma_2_1_deuteron_branching.py`, `sublemma_2_1_h12_he4_branching.py` | ✅ scripted |
@@ -404,8 +404,8 @@ fits over the H_3 inner-test family, NOT universal). Empirically:
 re-cover the existing A=2 work), pick one of:
 
 - **path 3 follow-up** ✅ **DONE (this PR)**: see
-  [`binding_combiner_markov_peel_fallback.py`](../../folio-assistant/computations/binding_combiner_markov_peel_fallback.py)
-  + [`binding-combiner-markov-peel-fallback.witness.json`](../../folio-assistant/computations/binding-combiner-markov-peel-fallback.witness.json).
+  [`binding_combiner_markov_peel_fallback.py`](../../computations/binding_combiner_markov_peel_fallback.py)
+  + [`binding-combiner-markov-peel-fallback.witness.json`](../../computations/binding-combiner-markov-peel-fallback.witness.json).
   Forms `B = E_0·(|tr_M^free| − |tr_M^atom|)` from the canonical
   markov_peel trace; succeeds for **every** A (D, T, ³He, ⁴He), with
   the A ≥ 3 atoms — the exact ones `canonical_tr_m_via_branching.py`
@@ -555,5 +555,5 @@ intertwiner determinacy empirically.
   — pairwise chain-sum captures 26 % of ⁴He
 - [`docs/audits/2026-06-02-he4-binding-canonical-vs-full-theta-design.md`](2026-06-02-he4-binding-canonical-vs-full-theta-design.md)
   — canonical magic-A `2·m_e·A·Vol(L6a4)` analysis + +5.87 % residual
-- [`binding_factor_f_decomposition.py`](../../folio-assistant/computations/binding_factor_f_decomposition.py)
+- [`binding_factor_f_decomposition.py`](../../computations/binding_factor_f_decomposition.py)
   — extracted f(Z, N) values + pairwise-bond model falsification

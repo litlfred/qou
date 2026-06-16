@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/hecke/hecke_laurent_fast.py",
+  "script_path": "computations/hecke/hecke_laurent_fast.py",
   "language": "python",
   "source_hash": "9b85762bc1b7",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "major",
-        "evidence": "folio-assistant/computations/hecke/hecke_laurent_fast.py:264: bare `float(_h_num)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/hecke/hecke_laurent_fast.py:264: bare `float(_h_num)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/hecke/hecke_laurent_fast.py:69: `def __init__(…)` has 1 parameter without type annotation: terms — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/hecke/hecke_laurent_fast.py:90: `def __mul__(…)` has 1 parameter without type annotation: other — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/hecke/hecke_laurent_fast.py:109: `def __add__(…)` has 1 parameter without type annotation: other — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/hecke/hecke_laurent_fast.py:129: `def reduce_laurent_rules(…)` has 3 parameters without type annotation: elem, max_iterations, hecke_a — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/hecke/hecke_laurent_fast.py:226: `def incremental_reduced_element_fast(…)` has 2 parameters without type annotation: word, max_iterations_per_step — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/hecke/hecke_laurent_fast.py:69: `def __init__(…)` has 1 parameter without type annotation: terms — add `: type` (or `: Any` if the type genuinely is untyped) | computations/hecke/hecke_laurent_fast.py:90: `def __mul__(…)` has 1 parameter without type annotation: other — add `: type` (or `: Any` if the type genuinely is untyped) | computations/hecke/hecke_laurent_fast.py:109: `def __add__(…)` has 1 parameter without type annotation: other — add `: type` (or `: Any` if the type genuinely is untyped) | computations/hecke/hecke_laurent_fast.py:129: `def reduce_laurent_rules(…)` has 3 parameters without type annotation: elem, max_iterations, hecke_a — add `: type` (or `: Any` if the type genuinely is untyped) | computations/hecke/hecke_laurent_fast.py:226: `def incremental_reduced_element_fast(…)` has 2 parameters without type annotation: word, max_iterations_per_step — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -93,7 +93,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/hecke/hecke_laurent_fast.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/hecke/hecke_laurent_fast.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [

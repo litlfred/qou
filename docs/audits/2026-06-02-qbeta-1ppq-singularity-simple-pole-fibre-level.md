@@ -25,7 +25,7 @@ with `u = b · ℏ_q² ≈ 0.00852` at q_0:
 
 ## Step 1 detail — singularity type
 
-`folio-assistant/computations/qbeta/qbeta_singularity_type_probe.py`
+`computations/qbeta/qbeta_singularity_type_probe.py`
 
 Loads c_2..c_10 from the canonical-pinned SDP extraction
 (`qbeta-decay-sdp-extended-ck.witness.json`) and runs three asymptotic discriminators on the k ≥ 8 tail (k < 8 is transient):
@@ -44,7 +44,7 @@ The probe initially attempted to extend the c_k extraction to c_11..c_15 via emp
 
 ## Step 2 detail — cross-anchor at q_muon
 
-`folio-assistant/computations/qbeta/qbeta_singularity_cross_anchor_probe.py`
+`computations/qbeta/qbeta_singularity_cross_anchor_probe.py`
 
 Computes `u_subst(q)` at both anchors via `q_muon_at()` (the m_μ/m_e-anchored q, in use until the 2026-05-28 re-pin) and `q_at()` (current m_p anchor):
 
@@ -124,5 +124,5 @@ The residue A is categorical-ID-OPEN at the closed-form level. The genuine attac
 - Master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
 - c_k truncation-order framing: [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
 - c_3 q_0-stability verdict: [`docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md`](2026-05-31-qbeta-c3-q0-stability-verdict.md)
-- Residue-ID probe: [`folio-assistant/computations/qbeta/qbeta_residue_categorical_id_probe.py`](../../folio-assistant/computations/qbeta/qbeta_residue_categorical_id_probe.py) + witness `qbeta-residue-categorical-id-probe.witness.json`
+- Residue-ID probe: [`computations/qbeta/qbeta_residue_categorical_id_probe.py`](../../computations/qbeta/qbeta_residue_categorical_id_probe.py) + witness `qbeta-residue-categorical-id-probe.witness.json`
 - α_em Habiro categorical ID (shared [2]_q·Schwinger shape): sibling PR #1521

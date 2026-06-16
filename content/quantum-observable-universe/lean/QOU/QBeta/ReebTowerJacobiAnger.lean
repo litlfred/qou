@@ -23,7 +23,7 @@ which is simultaneously:
 
 The bar-odd generating function `sinh(x sinh η) = 2 Σ_m J_{2m+1}(x) sinh((2m+1)η)`
 (verified numerically in
-`folio-assistant/computations/qbeta/qbeta_reeb_tower_jacobi_anger.py`) is the
+`computations/qbeta/qbeta_reeb_tower_jacobi_anger.py`) is the
 exact content of the scope doc's "Bessel-like" tag: a superposition of these
 odd-order tower terms with ordinary-Bessel weights.
 

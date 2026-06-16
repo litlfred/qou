@@ -29,7 +29,7 @@ export default proposition({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/probe_per_wedderburn_block_ck.py",
+    script: "computations/probe_per_wedderburn_block_ck.py",
     status: "experimental",
   },
   authorNotes: [

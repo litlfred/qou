@@ -43,7 +43,7 @@ From $q$ and $\mu_0$ alone:
 
 Four quantities are computable from $q$ in principle but have not
 yet been evaluated ($\alpha_{\mathrm{EM}}$ is now resolved).
-Witness computation scripts are in `folio-assistant/computations/`.
+Witness computation scripts are in `computations/`.
 
 1. **$N_v$ (weak scale crossing count).**
    The weak scale $v = N_v \cdot m_e/3$ sets
@@ -60,14 +60,14 @@ Witness computation scripts are in `folio-assistant/computations/`.
    The degree-$2$ operator average and Pauli projection are
    derived from the $H_3(q)$ representation theory of the
    embeddable torus knots on $\Sigma_4$.
-   Script: `folio-assistant/computations/qvalue-representation-theory.py`.
+   Script: `computations/qvalue-representation-theory.py`.
 
 3. **$g_A$ (axial coupling) from the Borromean color average.** RESOLVED.
    The $3$-fold color average of the half-Borromean braid
    $h_{ij} = \sigma_i^{-1}\sigma_j\sigma_i\sigma_j^{-1}$ gives:
    $g_A(q) = (5/3) \times |\mathrm{tr}_{\mathrm{std}}(\tfrac{1}{3} \sum h_{ij})| / |\mathrm{tr}_{\mathrm{sym}}(\tfrac{1}{3} \sum h_{ij})| \approx 1.277$ ($+0.1\%$ from PDG $1.2754$).
    The sum is over $3$ cyclic orderings of quark colors $(r,g,b)$.
-   Script: `folio-assistant/computations/borromean-axial-coupling.py`.
+   Script: `computations/borromean-axial-coupling.py`.
 
 4. **$\alpha_{\mathrm{EM}}$ (fine structure constant).** RESOLVED.
    The EM coupling projection
@@ -216,7 +216,7 @@ $$
 The $T_{3,5}$ braid $(\sigma_1\sigma_2)^5$ reduces to $6$ terms
 in $H_3(q)$ via $38$ Hecke steps and $18$ Yang–Baxter steps.
 The vertex ratio $|\mathcal{M}_{T_{3,5}}|^2 / |\mathcal{M}_{\mathrm{single}}|^2 \approx 0.890$ ($11\%$ reduction in transition amplitude).
-Witness: `folio-assistant/computations/t35-weak-vertex.witness.json`.
+Witness: `computations/t35-weak-vertex.witness.json`.
 
 ## Error budget
 

@@ -75,7 +75,7 @@ Per CLAUDE.md §3a (remark authoring convention): the figure itself is a `diagra
 
 ## Compute infrastructure to use
 
-- **Python**: `folio-assistant/computations/` is the conventional location for figure-generation scripts. New scripts go alongside (`bring_chiral_fibre_figure.py`, `affine_light_cone_figure.py`).
+- **Python**: `computations/` is the conventional location for figure-generation scripts. New scripts go alongside (`bring_chiral_fibre_figure.py`, `affine_light_cone_figure.py`).
 - **Parameter source**: `q_parameter.py` provides $q_0$, $h$, derived constants. Import from there; never hardcode.
 - **Witness emission**: each figure-generator emits a `.witness.json` with the parameters used (q value, branch point coordinates, sheet values at sample points) for reproducibility. This makes the figures auditable by `compute-integration-watcher`.
 - **CODATA / experimental constants**: for calibration inputs (e.g. $m_e$, $m_\mu/m_e$, $Q_\beta$), import from `experimental_constants.py` (the canonical module for upstream calibration inputs). `codata_constants.py` re-exports these and additionally provides `*_VALIDATION` names (e.g. `M_P_MEV_VALIDATION`) for **comparison only** — its module docstring explicitly warns against using its non-`*_VALIDATION` exports as upstream inputs to mass / binding predictions.
@@ -85,10 +85,10 @@ Per CLAUDE.md §3a (remark authoring convention): the figure itself is a `diagra
 | File | Purpose | New / modify |
 |------|---------|--------------|
 | `docs/workplans/2026-05-24-pr31-affine-light-cone-redo.md` | This workplan | **new** (committed in the workplan PR) |
-| `folio-assistant/computations/affine_light_cone_figure.py` | F1 generator | new (later commit) |
-| `folio-assistant/computations/reeb_dimension_figure.py` | F2 generator | new (later commit) |
-| `folio-assistant/computations/bring_chiral_fibre_figure.py` | F3 + F4 generator | new (later commit) |
-| `folio-assistant/computations/*.witness.json` | per-figure witnesses | new |
+| `computations/affine_light_cone_figure.py` | F1 generator | new (later commit) |
+| `computations/reeb_dimension_figure.py` | F2 generator | new (later commit) |
+| `computations/bring_chiral_fibre_figure.py` | F3 + F4 generator | new (later commit) |
+| `computations/*.witness.json` | per-figure witnesses | new |
 | `figures/affine-light-cone.{svg,pdf}` | F1 output | new |
 | `figures/reeb-dimension.{svg,pdf}` | F2 output | new |
 | `figures/bring-fibre-q0.{svg,pdf}` | F3 output | new |

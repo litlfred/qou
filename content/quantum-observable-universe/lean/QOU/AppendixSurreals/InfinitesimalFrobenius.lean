@@ -23,7 +23,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:infinitesimal-frobenius`](../../../quantum-observable-universe/appendix-surreals/infinitesimal-frobenius.md). -/
 class InfinitesimalFrobenius where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       The Frobenius axiom in

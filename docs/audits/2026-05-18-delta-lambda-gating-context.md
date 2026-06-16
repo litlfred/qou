@@ -163,8 +163,8 @@ testable across all light atoms.
 - [`docs/audits/2026-05-18-1ppb-workplan-v7-100x-experimental.md`](2026-05-18-1ppb-workplan-v7-100x-experimental.md) — current workplan
 - [`docs/audits/2026-05-09-mass-table-fitting-audit.md`](2026-05-09-mass-table-fitting-audit.md) — original Δ_λ closure-attempt summary
 - [`docs/precision-goals.md`](../precision-goals.md) — two-leg precision target
-- [`folio-assistant/computations/binding_K_direct.py`](../../folio-assistant/computations/binding_K_direct.py) — the binding formula (reports `delta_lambda_unavailable`)
-- [`folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json`](../../folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json) — 2-row stratum tabulation
+- [`computations/binding_K_direct.py`](../../computations/binding_K_direct.py) — the binding formula (reports `delta_lambda_unavailable`)
+- [`computations/delta-lambda-empirical-tabulation.witness.json`](../../computations/delta-lambda-empirical-tabulation.witness.json) — 2-row stratum tabulation
 - [`content/quantum-observable-universe/braids-and-knots/rho-k-h3a-refinement.md`](../../content/quantum-observable-universe/braids-and-knots/rho-k-h3a-refinement.md) — Δ_λ formal definition
 - [`content/quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.md`](../../content/quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.md) — GAP-A-4
 - [`content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md`](../../content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md) — GAP-A-3 / GAP-A-4

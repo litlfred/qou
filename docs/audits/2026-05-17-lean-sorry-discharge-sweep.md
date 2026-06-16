@@ -87,7 +87,7 @@ documented via witness files:
   numerically against MPFR Hoefsmit-matrix witness, max |Δ| ≈ 2.5×10⁻⁵¹
   over 191 samples.
 - `centralIdempotent_central_axiom` etc. — empirically verified via
-  `folio-assistant/computations/hecke/hecke_characters.py` per-irrep
+  `computations/hecke/hecke_characters.py` per-irrep
   matrices satisfying centrality.
 - `phi_q_at_zero` / `li2_q_at_zero` — empty product/sum conventions
   empirically trivial.

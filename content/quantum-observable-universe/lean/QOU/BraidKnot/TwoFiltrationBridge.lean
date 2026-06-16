@@ -23,7 +23,7 @@ namespace QOU.BraidKnot
 
     Conjectural class — see [`conj:two-filtration-bridge`](../../../quantum-observable-universe/braids-and-knots/two-filtration-bridge.md). -/
 class TwoFiltrationBridge where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Conjecture statement** (from manuscript):
 
       The substrate convolution Hopf algebra $\mathcal{H}_q$ carries

@@ -374,7 +374,7 @@ are correct by design, so flagging them produces only false positives.
    `cross-chapter-forward`) **only when the reader must RELY ON the
    target's content to follow the argument made here** — i.e. it is a
    **logical** forward reference. The authoritative discriminator is
-   [`folio-assistant/computations/forward_ref_classifier.py`](../../../folio-assistant/computations/forward_ref_classifier.py),
+   [`computations/forward_ref_classifier.py`](../../../computations/forward_ref_classifier.py),
    which tags every edge with a `severity`:
 
    - **`logical`** — BOTH source and target carry logical content

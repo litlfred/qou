@@ -45,9 +45,9 @@ export default proposition({
   },
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/crystal_pole_order.py",
+    script: "computations/crystal_pole_order.py",
     witness: [
-      "folio-assistant/computations/crystal-pole-order.witness.json",
+      "computations/crystal-pole-order.witness.json",
     ],
     status: "verified",
     requires: [],

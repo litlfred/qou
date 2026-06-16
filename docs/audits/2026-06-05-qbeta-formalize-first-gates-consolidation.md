@@ -51,7 +51,7 @@ Per CLAUDE.md §"Before declaring open math", check:
 ```bash
 grep -rln <topic> docs/audits/        # owner-authorised resolutions
 grep -rln <topic> content/            # whole tree, cross-chapter
-grep -rln <topic> folio-assistant/computations/  # implemented Python
+grep -rln <topic> computations/  # implemented Python
 ```
 
 If any of these hit, the work may already exist. Cite the prior result instead of re-deriving.
@@ -64,13 +64,13 @@ Open [`2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`](2026-06-04-qbeta
 
 State the candidate as a power series in `t = q − 1` or as `f(q, q⁻¹)`. Apply the bar-involution `q ↦ q⁻¹`. If `Δ := F(q, q⁻¹) − F(q⁻¹, q)` is non-zero identically (as an element of the ring), the candidate has odd-in-`t` content and **cannot** produce a clean integer-`u` ladder.
 
-**Tooling:** [`qbeta_bar_even_kernel_invariant_probe.py`](../../folio-assistant/computations/qbeta/qbeta_bar_even_kernel_invariant_probe.py) is the working template; copy + parameterize for new candidates.
+**Tooling:** [`qbeta_bar_even_kernel_invariant_probe.py`](../../computations/qbeta/qbeta_bar_even_kernel_invariant_probe.py) is the working template; copy + parameterize for new candidates.
 
 ### Step 4 — Radius-of-convergence check (§4(a), this PR Track 2)
 
 Compute the nearest pole of `g(u) = Σ c_k u^k` (the log-correction generating function). If `|u_pole − u_substrate| / u_substrate > 1e−6` (the established fibre-level tolerance from PR #1727), REJECT the candidate.
 
-**Tooling:** [`qbeta_radius_of_convergence_gate_probe.py`](../../folio-assistant/computations/qbeta/qbeta_radius_of_convergence_gate_probe.py) is the rational-function singularity locator with mpmath verification.
+**Tooling:** [`qbeta_radius_of_convergence_gate_probe.py`](../../computations/qbeta/qbeta_radius_of_convergence_gate_probe.py) is the rational-function singularity locator with mpmath verification.
 
 ### Step 5 — q = 1 classical-limit shadow (§4(c), TODO)
 

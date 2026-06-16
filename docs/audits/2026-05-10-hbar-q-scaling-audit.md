@@ -8,7 +8,7 @@ mismatches against the canonical content-block conventions.
 
 ## TL;DR
 
-Three distinct $E_0$ conventions co-exist in `folio-assistant/computations/`,
+Three distinct $E_0$ conventions co-exist in `computations/`,
 each with its own $\hbar_q$ scaling. **None are wrong** — each is the
 correct convention for a specific operator class — but **conflating
 them at consumer sites silently double-counts or omits $\hbar_q$
@@ -104,7 +104,7 @@ The `canonical_tower.py:446-528` and `hecke_core._canon` path is the **already-d
 
 2. **`atomic_braid_mass_table.py:441` 4th-calibration violation** remains tracked under Workplan 0b §5. Per owner directive, the back-fit $E_0 \approx 200$ MeV is to be replaced by a derived chain via `prop:operator-selection-lp` LP-dual shadow prices — separate work from the $\hbar_q$ audit.
 
-3. **Cross-script $E_0$ disagreement** (4.186 vs 0.7823 vs 200 MeV) is convention, not error — but a **single-source-of-truth registry** mapping each script's $E_0$ to its convention would prevent silent miscompositions. Candidate location: `folio-assistant/computations/derivation_chain.py` already aggregates similar constants; an `E_0_CONVENTIONS` dict there would surface the choice at every consumer.
+3. **Cross-script $E_0$ disagreement** (4.186 vs 0.7823 vs 200 MeV) is convention, not error — but a **single-source-of-truth registry** mapping each script's $E_0$ to its convention would prevent silent miscompositions. Candidate location: `computations/derivation_chain.py` already aggregates similar constants; an `E_0_CONVENTIONS` dict there would surface the choice at every consumer.
 
 4. **β-decay 0.168% / 1.31 keV residual** (post-`4649650f`) is consistent with the $\hbar_q^2$ structural bound at $N=0$ — **closing it requires the $N=1$ tower extension**, which is the open R&D in `brane-tower-z-habiro.md` (the level-selection rule $n_\star$). Not a scaling fix.
 

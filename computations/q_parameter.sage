@@ -2,7 +2,7 @@
 Canonical substrate parameter q for Sage scripts.
 
 Load in any .sage file with:
-    load("folio-assistant/computations/q_parameter.sage")
+    load("computations/q_parameter.sage")
 
 Sources:
     Vol(4_1) = 2.029883212819307  (SnapPy 3.3.2)

@@ -17,11 +17,11 @@ export default proposition({
   computation: {
     engine: "mpmath",
     script:
-      "folio-assistant/computations/borromean_markov_trace_h_expansion_50dps.py",
+      "computations/borromean_markov_trace_h_expansion_50dps.py",
     witness:
-      "folio-assistant/computations/borromean-markov-trace-h-expansion-50dps.witness.json",
+      "computations/borromean-markov-trace-h-expansion-50dps.witness.json",
     consumers: [
-      "folio-assistant/computations/mass_formula_6term_mpfr_50dps.py",
+      "computations/mass_formula_6term_mpfr_50dps.py",
     ],
     status: "verified",
   },

@@ -56,7 +56,7 @@ product.*
 
 **Remark on Yekutieli's "max_grade".**
 *The witness data
-[`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json)
+[`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/computations/joint-tower-sdp-h6-h9.witness.json)
 records a per-atom `max_grade` field labelled* $k_{\max}$. *This number
 is the maximal $k$ such that $T_w$ has nonzero $\lambda$-projection with
 $\dim_q V_\lambda \geq 2$, which is **distinct** from $k_\star(T_w)$
@@ -73,7 +73,7 @@ small-$k$ partition $\lambda$ sits at large GB-depth or vice versa.
 
 **Computed for tritium.** A direct YSN/Hoefsmit
 character computation
-([`probe_tritium_k_star.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/folio-assistant/computations/probe_tritium_k_star.py))
+([`probe_tritium_k_star.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/computations/probe_tritium_k_star.py))
 gives $\chi_\lambda(\rho(\mathrm{T_w})) \neq 0$ for **every**
 $\lambda \vdash 5$, so $\mathrm{supp}(\mathrm{T_w}) = \{\lambda : \lambda \vdash 5\}$
 and $k_\star(\mathrm{T_w}) = \max_{\lambda \vdash 5} \mathrm{maxhook}(\lambda) = 5$.
@@ -109,7 +109,7 @@ $k_{\max}$ in the witness.
 is $k_\star(\mathrm{T_w}) = 5$ (computed; full partition support of
 $\lambda \vdash 5$), and for D and ${}^3\mathrm{He}$ at most
 $k_\star \leq 3$ (since they live in $H_3$). The* uniform-$k$ *probe
-([`probe_phiq_uniform_k.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/folio-assistant/computations/probe_phiq_uniform_k.py))
+([`probe_phiq_uniform_k.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/computations/probe_phiq_uniform_k.py))
 shows the Frobenius-paired truncation is far from numerically closed:
 at $k = 2$ subtractive form, D errs $-22\%$, T errs $-39\%$,
 ${}^3\mathrm{He}$ overshoots $+134\%$; at $k = 5$ (the

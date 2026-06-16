@@ -50,7 +50,7 @@ Special cases:
   Distinct modes:    S=0,   E₀ = 2mₑ/net(e⁺)         ≈ 2.27 MeV
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 polarized-pair-production.py
 """
 

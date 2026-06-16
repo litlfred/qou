@@ -429,7 +429,7 @@ def cross_check_tr_M() -> dict:
 
 
 STRUCTURAL_FINDING = {
-    "source": "folio-assistant/computations/fresh_derivation_pn_true_sdp.py:1-26",
+    "source": "computations/fresh_derivation_pn_true_sdp.py:1-26",
     "claim": (
         "Per the framework's own SDP audit (commit history pre-dates "
         "this audit): 'Absolute m_p and m_n are NOT directly derivable "

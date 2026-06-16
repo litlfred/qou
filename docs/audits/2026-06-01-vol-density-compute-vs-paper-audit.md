@@ -5,8 +5,8 @@
 **Scope:** AUDIT ONLY. Does production `VolDensity(𝓑₃,q₀)` match the paper's
 forced per-block form? No fitting, no tuning to m_p/B_AME. Every number below
 is a RAW computed value, reported whether it matches or not.
-**Compute:** [`vol_density_compute_vs_paper_audit.py`](../../folio-assistant/computations/audits/vol_density_compute_vs_paper_audit.py),
-witness [`vol-density-compute-vs-paper-audit.witness.json`](../../folio-assistant/computations/audits/vol-density-compute-vs-paper-audit.witness.json).
+**Compute:** [`vol_density_compute_vs_paper_audit.py`](../../computations/audits/vol_density_compute_vs_paper_audit.py),
+witness [`vol-density-compute-vs-paper-audit.witness.json`](../../computations/audits/vol-density-compute-vs-paper-audit.witness.json).
 Cross-checked against the Rust-computed 50-dps witness
 `borromean-markov-trace-h-expansion-50dps.witness.json`.
 

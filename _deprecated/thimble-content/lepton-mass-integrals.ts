@@ -16,8 +16,8 @@ export default remark({
   uses: ["rem:generation-dependent-sw"],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/tau-lepton-nf.py",
-    witness: "folio-assistant/computations/tau-lepton-nf.witness.json",
+    script: "computations/tau-lepton-nf.py",
+    witness: "computations/tau-lepton-nf.witness.json",
     status: "verified",
   },
 });

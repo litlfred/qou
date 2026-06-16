@@ -146,9 +146,9 @@ Engine: hecke-engine 0.8.0
 | `tools/hecke-engine/checkpoint-*.json` | Resumable checkpoints |
 | `content/.../kummer-shell-closure.ts/md` | Kummer↔shell content |
 | `content/.../groebner-nf-computation.ts/md` | NF computation remark |
-| `folio-assistant/computations/pauli-witness.py` | Symbolic (Python) |
-| `folio-assistant/computations/transfer_matrix_6x6.py` | 6×6 analysis |
-| `folio-assistant/computations/isotope-abundance.py` | Abundance model |
+| `computations/pauli-witness.py` | Symbolic (Python) |
+| `computations/transfer_matrix_6x6.py` | 6×6 analysis |
+| `computations/isotope-abundance.py` | Abundance model |
 
 ### Modified files
 | File | Changes |

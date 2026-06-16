@@ -322,7 +322,7 @@ def main() -> int:
     w.add_data("lean_uniqueness_ref", lean_uniqueness_ref("neutron"))
 
     w.save()
-    print(f"\n✓ Witness: {Path('folio-assistant/computations/neutron-error-diagnostic.witness.json')}")
+    print(f"\n✓ Witness: {Path('computations/neutron-error-diagnostic.witness.json')}")
     return 0
 
 

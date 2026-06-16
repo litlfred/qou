@@ -23,7 +23,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:q-birch-swinnerton-dyer`](../../../quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.md). -/
 class QBirchSwinnertonDyer where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       **Conjecture ($q$-BSD).**

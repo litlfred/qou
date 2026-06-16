@@ -25,7 +25,7 @@ q₀ ≈ 1.11, never at 1. Route 1 executed honestly at the limit point
 program below.
 
 **Direct computation (2026-06-11).** The exploratory probe
-[`q1_mass_gap_probe.py`](../../folio-assistant/computations/q1_mass_gap_probe.py)
+[`q1_mass_gap_probe.py`](../../computations/q1_mass_gap_probe.py)
 (witness `q1-mass-gap-probe.witness.json`) evaluated the tower at
 q ∈ {q₀, …, 1.000001, 1}:
 

@@ -27,7 +27,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 # Path bridge — keeps flat-namespace imports (`from witness_base
 # import ...`) working from the new cluster subdirectory. See
-# folio-assistant/computations/_path_bridge.py for details.
+# computations/_path_bridge.py for details.
 sys.path.insert(0, str(HERE.parent))
 import _path_bridge  # noqa: F401, E402
 

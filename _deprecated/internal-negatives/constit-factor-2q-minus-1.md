@@ -12,7 +12,7 @@
 > proton's H_3 Markov trace — a structural identity derivable from
 > Wenzl's disjoint Markov-trace multiplicativity (Wenzl 1988 §1.7),
 > empirically verified at mpfr-50-dps precision ($\sim 10^{-50}$) across
-> the substrate window in [Phase 5l](../../../folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py).
+> the substrate window in [Phase 5l](../../../computations/rho_constit_equals_tau_M_proton_phase5l.py).
 >
 > The $(2q - 1)$ form below is now understood as a numerical
 > coincidence at $q_0$: $\mathrm{tr}_M^3(\mathcal{B}_p, q_0) \approx 1.2204$
@@ -24,7 +24,7 @@
 > result, but the **structural-form claim is superseded** by the
 > Phase 5l proposition.
 > ** Update 2026-05-20 (Phase 5k.2): GLOBAL FORM FALSIFIED.**
-> Phase 5k.2 (this PR, [`constit_factor_varying_q_phase5k2.py`](../../../folio-assistant/computations/constit_factor_varying_q_phase5k2.py))
+> Phase 5k.2 (this PR, [`constit_factor_varying_q_phase5k2.py`](../../../computations/constit_factor_varying_q_phase5k2.py))
 > directly measured $\rho_Z^{\mathrm{constit}}(q)$ at five $q$-values
 > across the substrate window using the same $y_\lambda$ / $\chi_\lambda$
 > pipeline as PR #819's Phase 5c.1. Result:
@@ -250,8 +250,8 @@ $(2q - 1)$ alone).
 
 ### Implementation reference
 
-- Script: [`folio-assistant/computations/constit_factor_and_volhyp_test.py`](../../../folio-assistant/computations/constit_factor_and_volhyp_test.py) (Phase 5g categorical scan)
-- Witness: `folio-assistant/computations/constit-factor-and-volhyp.witness.json` (results recorded; categorical-search assertion passes)
+- Script: [`computations/constit_factor_and_volhyp_test.py`](../../../computations/constit_factor_and_volhyp_test.py) (Phase 5g categorical scan)
+- Witness: `computations/constit-factor-and-volhyp.witness.json` (results recorded; categorical-search assertion passes)
 - Companion proposition: [`prop:interface-knot-markov-z`](#prop:interface-knot-markov-z) (interface factor $z$, exact)
 - Single-block companion: [`conj:alpha-cosh-h-z-step-correction`](#conj:alpha-cosh-h-z-step-correction) ($|\Delta_\lambda^*|$ level)
 - Audit: [`docs/audits/2026-05-20-phase5g-5h-5i-results.md`](../../../docs/audits/2026-05-20-phase5g-5h-5i-results.md) §5g

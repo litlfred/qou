@@ -22,7 +22,7 @@ The integer LP scans O_bond over all crossing operators of length n
 and finds feasible solutions at each n.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 molecular-frobenius-lp.py
 """
 

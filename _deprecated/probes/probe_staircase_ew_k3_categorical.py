@@ -73,7 +73,7 @@ The probe:
 
 Witness: `staircase-ew-k3-mpfr-spectral.witness.json`
 
-@module folio-assistant/computations/probe_staircase_ew_k3_categorical
+@module computations/probe_staircase_ew_k3_categorical
 """
 from __future__ import annotations
 

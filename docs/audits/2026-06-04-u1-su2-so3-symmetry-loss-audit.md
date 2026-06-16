@@ -50,9 +50,9 @@ SU(2). Formalised in `QOU/Mass/MassVolDensity.lean` §3 (parity) + §5
    `conj:s5-so3-fiber-action` class. Sharpen on paper first.
 
 ## Key files
-- `folio-assistant/computations/_li_2_q_util.py:172-197` — global linking_weight (SU(2) collapse site)
-- `folio-assistant/computations/vol_density_per_block_wiring.py` — RED discipline gate (per-block ≠ global)
-- `folio-assistant/computations/s5_so3_su2_u1_fiber_action.py` — the U(1)/SU(2)/SO(3)/S₅ fibre map
+- `computations/_li_2_q_util.py:172-197` — global linking_weight (SU(2) collapse site)
+- `computations/vol_density_per_block_wiring.py` — RED discipline gate (per-block ≠ global)
+- `computations/s5_so3_su2_u1_fiber_action.py` — the U(1)/SU(2)/SO(3)/S₅ fibre map
 - `content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.{md,lean}` — SO(3) stub (`chirality_sign=0`)
 - `content/quantum-observable-universe/lean/QOU/Mass/MassVolDensity.lean` §3/§5 — the U(1)↔SU(2) hyperbolic bridge (this session)
-- `folio-assistant/computations/vhat_tower_im_cancellation.py`, `four_unwired_theorems_regression.py:119` — U(1) Im(q)=0 archimedean projection (legitimate)
+- `computations/vhat_tower_im_cancellation.py`, `four_unwired_theorems_regression.py:119` — U(1) Im(q)=0 archimedean projection (legitimate)

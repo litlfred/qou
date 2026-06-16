@@ -54,7 +54,7 @@ namespace QOU.BraidKnot
     Markov-trace value it agrees on.  Different conventions vary
     `regularizer`; all share the same `markov_trace`. -/
 structure OperatorVolumeConvention (α : Type*) where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- The categorical Markov trace value τ(β_𝔥) — convention-
       INDEPENDENT (unique per Jones-Wenzl). -/
   markov_trace : α → ℝ

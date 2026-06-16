@@ -99,7 +99,7 @@ Hoefsmit matrix and Markov-symmetrized cos analog.
 ## Empirical anchor
 
 At $q_0$, the Hoefsmit V_(2,1) matrix entries (from
-[`probe_q_beta_per_irrep_cos.py`](../../folio-assistant/computations/probe_q_beta_per_irrep_cos.py)
+[`probe_q_beta_per_irrep_cos.py`](../../computations/probe_q_beta_per_irrep_cos.py)
 and the existing `hecke_characters.build_seminormal_matrices` infrastructure):
 
 | quantity | value at $q_0$ |

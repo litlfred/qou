@@ -18,7 +18,7 @@ candidates for Δ_λ closure at the deuteron (H_6, A=2).
 
 ## Upstream: `rho_w_crystal_vertex_trace.py` (already on main)
 
-`folio-assistant/computations/rho_w_crystal_vertex_trace.py` (landed
+`computations/rho_w_crystal_vertex_trace.py` (landed
 on main before this branch) implements the genuine per-vertex
 ρ_w := ⟨v_T|ρ_λ(β_K)|v_T⟩ from the Hoefsmit/Young seminormal
 representation, then computes `Δ_λ^{ρ_w}(K) = Σ_w n^w_λ · ρ_w(K)`
@@ -84,7 +84,7 @@ Otherwise CI stays green.
 
 ## Usage
 
-    cd folio-assistant/computations
+    cd computations
     python3 probe_option_e_phase2_crystal_vertex_candidates.py
 
 Emits: probe-option-e-phase2-crystal-vertex-candidates.witness.json

@@ -100,7 +100,7 @@ In priority order:
 ### Step 1 — Investigate Blocker B (engineering, ~3-5 days)
 
 This is the more tractable blocker.  Read
-`folio-assistant/computations/gb_filtration_jet_tracker.py`,
+`computations/gb_filtration_jet_tracker.py`,
 specifically the `reduce_braid` function and the
 `HeckeElement.apply_generator` method.  Add an averaged-crossing
 generator class.  Verify on the 4 canonical atom words (p, n, d,
@@ -167,27 +167,27 @@ crossing everywhere").
 To be done by the next agent:
 
 ```
-[ ] folio-assistant/computations/gb_filtration_jet_tracker.py
+[ ] computations/gb_filtration_jet_tracker.py
        — extend `HeckeElement` + `reduce_braid` for averaged crossings
        — verify GS grades match between canonical and legacy for {p, n, d, 4he}
-[ ] folio-assistant/computations/atomic_braid_gb_filtration_extension.py
+[ ] computations/atomic_braid_gb_filtration_extension.py
        — migrate `ATOMIC_BRAIDS` to canonical-convention words
        — regenerate witness; verify GS grade unchanged
        — drop the deprecation notice
-[ ] folio-assistant/computations/term7_alpha5_crystal_derivation.py
+[ ] computations/term7_alpha5_crystal_derivation.py
        — extend `crystal_chi_lambda` to handle averaged crossings
          (waits for Blocker A resolution)
        — migrate `ATOMS` table to canonical
        — regenerate witness; verify S_crystal numerics unchanged
-[ ] folio-assistant/computations/atomic-braid-recipe-4he.derivation.json
+[ ] computations/atomic-braid-recipe-4he.derivation.json
        — DELETE (superseded by ...-4he-canonical.derivation.json)
-[ ] folio-assistant/computations/build_atomic_braid_recipe_4he_chain.py
+[ ] computations/build_atomic_braid_recipe_4he_chain.py
        — DELETE (its only output is the chain above)
-[ ] folio-assistant/computations/term7-s-crystal-4he.derivation.json
+[ ] computations/term7-s-crystal-4he.derivation.json
        — DELETE (rebuild from the canonical term7 witness once A is closed)
-[ ] folio-assistant/computations/build_term7_s_crystal_4he_chain.py
+[ ] computations/build_term7_s_crystal_4he_chain.py
        — DELETE alongside the chain
-[ ] folio-assistant/computations/markov-trace-assembly-{neutron,deuteron}.derivation.json
+[ ] computations/markov-trace-assembly-{neutron,deuteron}.derivation.json
        — promote SCRIPT_CITED "atomic-braid-recipe-{n,d}" step to
          DERIVED, citing atomic-braid-recipe-{n,d}-canonical
 [ ] docs/audits/canonical-convention-migration-plan.md

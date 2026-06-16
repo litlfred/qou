@@ -32,8 +32,8 @@ import { conjecture } from "../../schema/builders";
  *
  * @see prop:operator-selection-lp — provides the LP/SDP framework
  * @see prop:alpha-shift-torus-knot — establishes α_shift(I) for torus interfaces
- * @see folio-assistant/computations/lp_confinement_nf_forcing.py — the probe
- * @see folio-assistant/computations/nh_basis_shift.py — baseline shift_NF table
+ * @see computations/lp_confinement_nf_forcing.py — the probe
+ * @see computations/nh_basis_shift.py — baseline shift_NF table
  * @see docs/audits/2026-05-04-nh-knots-confinement-shift.md — full audit
  */
 export default conjecture({
@@ -44,10 +44,10 @@ export default conjecture({
   uses: ["prop:alpha-shift-torus-knot"],
   computation: {
     engine: "scipy",
-    script: "folio-assistant/computations/lp_confinement_nf_forcing.py",
+    script: "computations/lp_confinement_nf_forcing.py",
     witness: [
-      "folio-assistant/computations/lp-confinement-nf-forcing.witness.json",
-      "folio-assistant/computations/nh-basis-shift.witness.json",
+      "computations/lp-confinement-nf-forcing.witness.json",
+      "computations/nh-basis-shift.witness.json",
     ],
     status: "verified",
     requires: ["scipy", "sympy", "numpy", "mpmath"],

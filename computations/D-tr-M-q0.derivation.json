@@ -48,7 +48,7 @@
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "kassel1995",
-      "notes": "script: folio-assistant/computations/schur_weyl_symbolic.py function `schur_weyl_weight(lam, q)`.  SCRIPT_CITED pending its own derivation chain."
+      "notes": "script: computations/schur_weyl_symbolic.py function `schur_weyl_weight(lam, q)`.  SCRIPT_CITED pending its own derivation chain."
     },
     {
       "name": "Categorical action B_6 → ⊕_λ M_{f_λ}",
@@ -63,7 +63,7 @@
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "kassel1995",
-      "notes": "script: folio-assistant/computations/hecke/hecke_character_symbolic.py Hoefsmit-matrix evaluation of σ_i.  SCRIPT_CITED."
+      "notes": "script: computations/hecke/hecke_character_symbolic.py Hoefsmit-matrix evaluation of σ_i.  SCRIPT_CITED."
     },
     {
       "name": "Atomic D braid word T_w(Z=1, N=1)",
@@ -77,7 +77,7 @@
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "manuscript:§Atomic-braid recipe",
-      "notes": "script: folio-assistant/computations/hecke/hecke_character_symbolic.py function `atomic_braid_to_crossings`.  SCRIPT_CITED — the atomic-braid recipe itself awaits formalisation."
+      "notes": "script: computations/hecke/hecke_character_symbolic.py function `atomic_braid_to_crossings`.  SCRIPT_CITED — the atomic-braid recipe itself awaits formalisation."
     },
     {
       "name": "Frobenius pairing — characters χ^λ_q(T_w)",
@@ -92,7 +92,7 @@
       "trust_basis": "script-cited",
       "jet_order": 0,
       "gb_filtration_level": 0,
-      "notes": "script: folio-assistant/computations/hecke/hecke_character_symbolic.py function `q_character_on_braid_word(braid_word, q)`. SCRIPT_CITED."
+      "notes": "script: computations/hecke/hecke_character_symbolic.py function `q_character_on_braid_word(braid_word, q)`. SCRIPT_CITED."
     },
     {
       "name": "Markov trace via finite-Jones formula",

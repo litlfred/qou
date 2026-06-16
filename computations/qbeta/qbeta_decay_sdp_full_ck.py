@@ -26,7 +26,7 @@ story: c_k for ALL k are determined by R(q_0) — a single number
 derived from CODATA Q_β + framework's Form A + cos correction.
 
 Run:
-    python3 folio-assistant/computations/qbeta_decay_sdp_full_ck.py
+    python3 computations/qbeta_decay_sdp_full_ck.py
 """
 from __future__ import annotations
 

@@ -6,8 +6,8 @@ export default remark({
   title: "Mass spectrum from $T_{m,n}$ generators and linking operations",
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/q_pinning_50_digit.py",
-    witness: ["folio-assistant/computations/q-pinning-50-digit.witness.json", "folio-assistant/computations/codata-masses.witness.json"],
+    script: "computations/q_pinning_50_digit.py",
+    witness: ["computations/q-pinning-50-digit.witness.json", "computations/codata-masses.witness.json"],
     status: "verified",
   },
   tags: [

@@ -23,7 +23,7 @@ namespace QOU.BraidKnot
 
     Conjectural class — see [`conj:jet-filtered-knot-factor`](../../../quantum-observable-universe/braids-and-knots/jet-filtered-knot-factor.md). -/
 class jet_filtered_knot_factor where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- Scalar residual encoding the conjecture's content (placeholder
       shape: refine to match the actual claim). -/
   residual : ℝ

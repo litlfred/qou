@@ -105,7 +105,7 @@ correction:
 ### Status of the c_3 = -2 categorical conjecture
 
 **ALREADY PROVED** — the probe
-[`probe_hopf_jones_c3_categorical.py`](../../folio-assistant/computations/probe_hopf_jones_c3_categorical.py)
+[`probe_hopf_jones_c3_categorical.py`](../../computations/probe_hopf_jones_c3_categorical.py)
 derives `c_3 = J_Hopf(q=1) = -2` from the V_(2,1) Hoefsmit
 seminormal Markov trace of σ_1².  3 assertions pass.  Verdict in
 the probe's own output: *"Story B confirmed: c_3 = J_Hopf(q=1)
@@ -191,7 +191,7 @@ extract; #4 closed for the one tractable case via #921).
 - [`docs/canonical-derivation-cheat-sheet.md §5`](../canonical-derivation-cheat-sheet.md) — migration backlog
 - [`docs/coordination/2026-05-22-cheat-sheet-manager.md`](../coordination/2026-05-22-cheat-sheet-manager.md) — cheat-sheet cluster ledger
 - [`docs/coordination/2026-05-23-cheat-sheet-fix-3-default-flip.md`](../coordination/2026-05-23-cheat-sheet-fix-3-default-flip.md) — recent PR #946 work
-- [`folio-assistant/computations/probe_family_a_variants.py`](../../folio-assistant/computations/probe_family_a_variants.py) — V_1 .. V_8 catalogue
-- [`folio-assistant/computations/q-beta-operator-valued-N3.witness.json`](../../folio-assistant/computations/q-beta-operator-valued-N3.witness.json) — 14-candidate Q_β empirical scan
+- [`computations/probe_family_a_variants.py`](../../computations/probe_family_a_variants.py) — V_1 .. V_8 catalogue
+- [`computations/q-beta-operator-valued-N3.witness.json`](../../computations/q-beta-operator-valued-N3.witness.json) — 14-candidate Q_β empirical scan
 - PR #916 — λ_scale alternatives F/G/H
 - PR #920 — cheat-sheet tracker (recommends V_7 refinement)

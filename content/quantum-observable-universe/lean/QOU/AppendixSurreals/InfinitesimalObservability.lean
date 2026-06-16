@@ -23,7 +23,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:infinitesimal-observability`](../../../quantum-observable-universe/appendix-surreals/infinitesimal-observability.md). -/
 class InfinitesimalObservability where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       The QOU observability axiom requires

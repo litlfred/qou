@@ -23,9 +23,9 @@ export default proposition({
   cites: ["wenzl1988"],
   computation: {
     engine: "numpy",
-    script: "folio-assistant/computations/probes/rho_k_markov_multiplicativity_probe.py",
+    script: "computations/probes/rho_k_markov_multiplicativity_probe.py",
     witness: [
-      "folio-assistant/computations/probes/rho-k-markov-multiplicativity.witness.json",
+      "computations/probes/rho-k-markov-multiplicativity.witness.json",
     ],
     status: "verified",
     requires: ["numpy", "sympy", "mpmath"],

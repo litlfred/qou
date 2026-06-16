@@ -8,8 +8,8 @@ P2.5.
 
 ## Sweep result (610 Python scripts)
 
-[`folio-assistant/computations/audits/p2_5_symbolic_q_audit.py`](../../folio-assistant/computations/audits/p2_5_symbolic_q_audit.py)
-triages every Python file under `folio-assistant/computations/`.
+[`computations/audits/p2_5_symbolic_q_audit.py`](../../computations/audits/p2_5_symbolic_q_audit.py)
+triages every Python file under `computations/`.
 
 | Category | Count | Share | Notes |
 |:---------|------:|------:|:------|
@@ -31,7 +31,7 @@ mechanical refactor = ~10 hours = 1.5 days**.
 ## Reference pattern (already in 40 scripts)
 
 Cleanest example:
-[`schur_weyl_mn_witness.py`](../../folio-assistant/computations/schur_weyl_mn_witness.py).
+[`schur_weyl_mn_witness.py`](../../computations/schur_weyl_mn_witness.py).
 The pattern is:
 
 ```python
@@ -67,29 +67,29 @@ The two key invariants:
 
 | Lines | Path |
 |------:|:-----|
-| 487 | [`garside-irrep-qvalues.py`](../../folio-assistant/computations/garside-irrep-qvalues.py) |
-| 468 | [`gram-matrix-dual.py`](../../folio-assistant/computations/gram-matrix-dual.py) |
-| 364 | [`probe_proton_mass_scale.py`](../../folio-assistant/computations/probe_proton_mass_scale.py) |
-| 358 | [`hecke_engine.py`](../../folio-assistant/computations/hecke/hecke_engine.py) |
-| 343 | [`electron-proton-skein-weight.py`](../../folio-assistant/computations/electron-proton-skein-weight.py) |
-| 327 | [`beta-decay-matrix.py`](../../folio-assistant/computations/beta-decay-matrix.py) |
-| 319 | [`t35-generator-volumes.py`](../../folio-assistant/computations/t35-generator-volumes.py) |
-| 300 | [`jet_tower_proton_explore.py`](../../folio-assistant/computations/jet_tower_proton_explore.py) |
-| 294 | [`level1_vhat_brane_tower.py`](../../folio-assistant/computations/level1_vhat_brane_tower.py) |
-| 288 | [`knot-operator-table.py`](../../folio-assistant/computations/knot-operator-table.py) |
-| 286 | [`hbar_vs_q_parametrization.py`](../../folio-assistant/computations/hbar_vs_q_parametrization.py) |
-| 270 | [`markov_convention_parallel.py`](../../folio-assistant/computations/markov_convention_parallel.py) |
-| 269 | [`mass_table_best.py`](../../folio-assistant/computations/mass_table_best.py) |
-| 264 | [`jet_level1_and_residual_search.py`](../../folio-assistant/computations/jet_level1_and_residual_search.py) |
-| 260 | [`p_n_error_isolate.py`](../../folio-assistant/computations/p_n_error_isolate.py) |
-| 252 | [`jet_level_geometric_series.py`](../../folio-assistant/computations/jet_level_geometric_series.py) |
-| 247 | [`probe_atom_shell_self_duality.py`](../../folio-assistant/computations/probe_atom_shell_self_duality.py) |
-| 245 | [`atomic_chirality_residue.py`](../../folio-assistant/computations/atomic_chirality_residue.py) |
-| 218 | [`explicit_alpha_k_h3.py`](../../folio-assistant/computations/explicit_alpha_k_h3.py) |
-| 218 | [`probe_per_nucleon_self_duality.py`](../../folio-assistant/computations/probe_per_nucleon_self_duality.py) |
+| 487 | [`garside-irrep-qvalues.py`](../../computations/garside-irrep-qvalues.py) |
+| 468 | [`gram-matrix-dual.py`](../../computations/gram-matrix-dual.py) |
+| 364 | [`probe_proton_mass_scale.py`](../../computations/probe_proton_mass_scale.py) |
+| 358 | [`hecke_engine.py`](../../computations/hecke/hecke_engine.py) |
+| 343 | [`electron-proton-skein-weight.py`](../../computations/electron-proton-skein-weight.py) |
+| 327 | [`beta-decay-matrix.py`](../../computations/beta-decay-matrix.py) |
+| 319 | [`t35-generator-volumes.py`](../../computations/t35-generator-volumes.py) |
+| 300 | [`jet_tower_proton_explore.py`](../../computations/jet_tower_proton_explore.py) |
+| 294 | [`level1_vhat_brane_tower.py`](../../computations/level1_vhat_brane_tower.py) |
+| 288 | [`knot-operator-table.py`](../../computations/knot-operator-table.py) |
+| 286 | [`hbar_vs_q_parametrization.py`](../../computations/hbar_vs_q_parametrization.py) |
+| 270 | [`markov_convention_parallel.py`](../../computations/markov_convention_parallel.py) |
+| 269 | [`mass_table_best.py`](../../computations/mass_table_best.py) |
+| 264 | [`jet_level1_and_residual_search.py`](../../computations/jet_level1_and_residual_search.py) |
+| 260 | [`p_n_error_isolate.py`](../../computations/p_n_error_isolate.py) |
+| 252 | [`jet_level_geometric_series.py`](../../computations/jet_level_geometric_series.py) |
+| 247 | [`probe_atom_shell_self_duality.py`](../../computations/probe_atom_shell_self_duality.py) |
+| 245 | [`atomic_chirality_residue.py`](../../computations/atomic_chirality_residue.py) |
+| 218 | [`explicit_alpha_k_h3.py`](../../computations/explicit_alpha_k_h3.py) |
+| 218 | [`probe_per_nucleon_self_duality.py`](../../computations/probe_per_nucleon_self_duality.py) |
 
 Full list of 41 early-substitution scripts in
-[`p2-5-symbolic-q-audit.witness.json`](../../folio-assistant/computations/p2-5-symbolic-q-audit.witness.json).
+[`p2-5-symbolic-q-audit.witness.json`](../../computations/p2-5-symbolic-q-audit.witness.json).
 
 ## Caveat: not every script can go fully symbolic
 
@@ -118,13 +118,13 @@ patterns the heuristic miscategorises:
 
 - **False positives**: scripts that already emit symbolic forms
   under different field names (e.g.,
-  [`schur_element_symmetrising.py`](../../folio-assistant/computations/schur_element_symmetrising.py)
+  [`schur_element_symmetrising.py`](../../computations/schur_element_symmetrising.py)
   emits `schur_element` strings — fully symbolic, no q-substitution
   needed). **Audit fix would be to broaden the heuristic; no code
   change needed.**
 - **Sympy-as-matrix-stepping-stone**: scripts like
-  [`std_matrix_trace_closed_form.py`](../../folio-assistant/computations/std_matrix_trace_closed_form.py)
-  and [`wedderburn_per_isotope.py`](../../folio-assistant/computations/wedderburn_per_isotope.py)
+  [`std_matrix_trace_closed_form.py`](../../computations/std_matrix_trace_closed_form.py)
+  and [`wedderburn_per_isotope.py`](../../computations/wedderburn_per_isotope.py)
   use `sympy.Symbol('q')` to *build* Hoefsmit seminormal matrices
   via `build_seminormal_matrices`, then immediately substitute
   $q_0$ to get numpy arrays for matrix-product trace. The
@@ -176,6 +176,6 @@ Total realistic scope: **~5 days mechanical work**, not 1 week.
 ## Reproducibility
 
 ```bash
-python3 folio-assistant/computations/audits/p2_5_symbolic_q_audit.py
-# → folio-assistant/computations/p2-5-symbolic-q-audit.witness.json
+python3 computations/audits/p2_5_symbolic_q_audit.py
+# → computations/p2-5-symbolic-q-audit.witness.json
 ```

@@ -9,7 +9,7 @@ lambda = lambda', and picks a canonical "dominant" representative
 "square-like" shape).
 
 Used to fill in row-vector predictions in
-folio-assistant/computations/double-magic-witnesses.json.
+computations/double-magic-witnesses.json.
 
 Usage:
     python3 enumerate_self_conjugate_partitions.py [n ...]

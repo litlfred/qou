@@ -17,7 +17,7 @@ ANTI-PATTERN GUARDS: TIERED; no fit; cross-anchor before claim;
 ℏ_q from (q-1)/q; diagnostic-only.
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_residue_followup_residual_2x.py
+  python3 computations/qbeta/qbeta_residue_followup_residual_2x.py
 Emits: qbeta-residue-followup-residual-2x.witness.json
 """
 

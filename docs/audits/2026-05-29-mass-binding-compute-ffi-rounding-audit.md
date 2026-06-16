@@ -289,7 +289,7 @@ Roadmap item 2 was implemented this session (PR #1440):
   toolchain) or an MPFR PSD eigensolver. Tracked as a follow-up; it needs
   a LAPACK-capable build env.
 
-- **Verification gate.** `folio-assistant/computations/clarabel_lp_crosscheck.py`
+- **Verification gate.** `computations/clarabel_lp_crosscheck.py`
   compares scipy LP, clarabel LP, and clarabel SDP on the dummy + random
   SPD-Gram LPs (objective, active set, strong duality). Run it in a
   scipy+numpy env before flipping any default backend.

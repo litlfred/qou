@@ -30,5 +30,5 @@ The result is **NEGATIVE**. This establishes that $\alpha_{em}$ is **NOT** the d
 Following the scaffold's anti-pattern guards, we must reconsider the Bring-zero-mode analog assumption's direct injection into the per-cell volume. The categorical structure likely requires deferring to the co-simplicial crossed-groupoid (`prop:cosimplicial-crossed-groupoid`) or Yekutieli triple structure, rather than a simplistic scalar weighting on the base tessellation.
 
 ## Deliverables
-- **Probe script:** `folio-assistant/computations/yekutieli_per_cell_alpha_em_derivation_probe.py`
-- **Witness:** `folio-assistant/computations/yekutieli-per-cell-alpha-em-derivation-probe.witness.json`
+- **Probe script:** `computations/yekutieli_per_cell_alpha_em_derivation_probe.py`
+- **Witness:** `computations/yekutieli-per-cell-alpha-em-derivation-probe.witness.json`

@@ -56,7 +56,7 @@ $\tilde w_\lambda$ holds **only** on the self-conjugate stratum. For
 non-self-conjugate $\lambda$, $y_\lambda$ is given by Wenzl's
 hook–content closed form [wenzl1988] and is, in general, distinct
 from $(-1)^{\kappa_\lambda} \tilde w_\lambda$ — see the
-[non-self-conjugate empirical witness](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json),
+[non-self-conjugate empirical witness](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/probe-wedderburn-weight-scheme.witness.json),
 which records $|y_\lambda / \tilde w_\lambda|$ ratios from $0.14$ to
 $2.54$ at $q_0$ for $n \in \{2, 3\}$, confirming the two are
 distinct weight families away from self-conjugate $\lambda$.*
@@ -167,7 +167,7 @@ For non-self-conjugate $\lambda$, $y_\lambda$ and $\tilde w_\lambda$ are
 **distinct**: $y_\lambda$ is given by Wenzl's content-distance
 closed form [wenzl1988] and is not, in general, a sign multiple of
 $\tilde w_\lambda$. The empirical witness
-[`probe-wedderburn-weight-scheme.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json)
+[`probe-wedderburn-weight-scheme.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/probe-wedderburn-weight-scheme.witness.json)
 records $|y_\lambda / \tilde w_\lambda|$ ratios ranging from $\approx 0.14$
 to $\approx 2.54$ at $q_0$ for $n \in \{2, 3\}$, confirming that
 Markov $y_\lambda$ and Wedderburn $\tilde w_\lambda$ are distinct weight

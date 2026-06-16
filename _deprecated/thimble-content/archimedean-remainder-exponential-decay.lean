@@ -188,7 +188,7 @@ The brane-tower expansion of the q-dilogarithm tail at the substrate
 parameter `q_0` gives a geometric upper bound on the truncation
 remainder, expressed via the Reeb-flow constant
 `ℏ_q := (q_0 - 1)/q_0`.  PR #639's
-[`c-k-beta-decay-bound.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/c-k-beta-decay-bound.witness.json)
+[`c-k-beta-decay-bound.witness.json`](https://github.com/litlfred/qou/blob/main/computations/c-k-beta-decay-bound.witness.json)
 proves the geometric form of the bound at 50 dps for the free-neutron
 Q_β operator, with bound table reaching 0.092 ppb at depth N=4 — the
 substrate-side path to 1 ppb.

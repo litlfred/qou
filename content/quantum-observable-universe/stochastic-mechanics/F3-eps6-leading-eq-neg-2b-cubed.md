@@ -17,7 +17,7 @@ $$
 }
 $$
 
-This is verified at sympy precision in [`probe_q_beta_cat_per_factor_decomposition.py`](../../folio-assistant/computations/probe_q_beta_cat_per_factor_decomposition.py)
+This is verified at sympy precision in [`probe_q_beta_cat_per_factor_decomposition.py`](../../computations/probe_q_beta_cat_per_factor_decomposition.py)
 with **algebraic equality** (no numerical rounding) — and now also in Lean
 [`F3-eps6-leading-eq-neg-2b-cubed.lean`](F3-eps6-leading-eq-neg-2b-cubed.lean).
 

@@ -21,7 +21,7 @@ the net shadow price.
 All from q₀ — no fitting.
 
 Usage:
-    cd folio-assistant/computations && python3 lp-constrained-6he.py
+    cd computations && python3 lp-constrained-6he.py
 """
 
 import math

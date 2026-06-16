@@ -41,7 +41,7 @@ GB/jet real-axis closed form ┘
 
 Usage
 -----
-    python3 folio-assistant/computations/sw_period_thimble_equivalence.py
+    python3 computations/sw_period_thimble_equivalence.py
 """
 
 from __future__ import annotations

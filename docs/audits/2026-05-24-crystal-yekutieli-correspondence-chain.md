@@ -221,7 +221,7 @@ A crystal-basis-to-tessellation correspondence does NOT need to pick a specific 
 
 **Are crystal-basis cells (algebraic) ↔ contributions to the SAME invariant that any geometric tessellation reproduces?**
 
-If yes, then the geometric carrier is just one realization; the algebraic computation suffices. This is what the framework's existing production path ([`alpha_k_jones_markov_h3.py`](../../folio-assistant/computations/alpha/alpha_k_jones_markov_h3.py)) already does: compute $\mathrm{tr}_M$ via the algebraic Wedderburn sum, with no geometric tessellation needed. **The geometric Yekutieli MI computation is a STRUCTURAL alternative used for h-coefficient extraction, not a separate physics input.**
+If yes, then the geometric carrier is just one realization; the algebraic computation suffices. This is what the framework's existing production path ([`alpha_k_jones_markov_h3.py`](../../computations/alpha/alpha_k_jones_markov_h3.py)) already does: compute $\mathrm{tr}_M$ via the algebraic Wedderburn sum, with no geometric tessellation needed. **The geometric Yekutieli MI computation is a STRUCTURAL alternative used for h-coefficient extraction, not a separate physics input.**
 
 ### Recast Path B closure question
 
@@ -269,7 +269,7 @@ $$\mathrm{tr}_M(w) = \sum_{\lambda \vdash 3} y_\lambda \cdot \chi^\lambda(w)$$
 
 The right-hand side has **3 terms** regardless of how complex $w$ is. The geometric Yekutieli MI computation of $\mathrm{tr}_M(w)$ would naively traverse all 4^k cells at level k, sum the cell contributions via CBH, then evaluate the trace. But the trace EVALUATES on the Wedderburn-block character, which is already encoded by 3 numbers per braid. So **the 4^k cells get summed up by the trace into 3 (in this case) block contributions** — automatically.
 
-This is why the framework's production path ([`alpha_k_jones_markov_h3.py`](../../folio-assistant/computations/alpha/alpha_k_jones_markov_h3.py)) doesn't need the geometric Yekutieli computation. It computes the 3 Wedderburn block characters directly and sums them — and gets the same answer.
+This is why the framework's production path ([`alpha_k_jones_markov_h3.py`](../../computations/alpha/alpha_k_jones_markov_h3.py)) doesn't need the geometric Yekutieli computation. It computes the 3 Wedderburn block characters directly and sums them — and gets the same answer.
 
 ### "Easy relation" — crystal bases as the natural per-braid coordinate
 
@@ -306,5 +306,5 @@ This is the framework's existing path. The crystal basis enters at step 2 (SYT l
 - [`docs/audits/2026-05-24-higgs-residual-research-path.md`](2026-05-24-higgs-residual-research-path.md) §3 Path B — research-grade closure
 - [`content/quantum-observable-universe/braids-and-knots/crystal-isospin-degeneracy.md`](../../content/quantum-observable-universe/braids-and-knots/crystal-isospin-degeneracy.md) — crystal-basis q→0 example in framework
 - [`content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md`](../../content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md) — the target h-expansion
-- [`folio-assistant/computations/alpha/alpha_k_jones_markov_h3.py`](../../folio-assistant/computations/alpha/alpha_k_jones_markov_h3.py) — existing algebraic Markov-trace computation
+- [`computations/alpha/alpha_k_jones_markov_h3.py`](../../computations/alpha/alpha_k_jones_markov_h3.py) — existing algebraic Markov-trace computation
 - PR [#1227](https://github.com/litlfred/qou/pull/1227) — Path B scaffold (this session)

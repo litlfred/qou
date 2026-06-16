@@ -1,9 +1,9 @@
 # Brundan–Kleshchev isomorphism — empirical-evidence dossier
 
 **Status.** Tracking audit. **Witness:**
-[`brundan-kleshchev-audit.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/audits/brundan-kleshchev-audit.witness.json).
+[`brundan-kleshchev-audit.witness.json`](https://github.com/litlfred/qou/blob/main/computations/audits/brundan-kleshchev-audit.witness.json).
 
-**Script.** [`brundan_kleshchev_audit.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/audits/brundan_kleshchev_audit.py).
+**Script.** [`brundan_kleshchev_audit.py`](https://github.com/litlfred/qou/blob/main/computations/audits/brundan_kleshchev_audit.py).
 
 The Brundan–Kleshchev theorem
 [brundankleshchev2009] states that the cyclotomic Hecke algebra
@@ -55,7 +55,7 @@ $q$-integer / Plancherel-weight definitions, or the CrystalGraph
 class fields:
 
 ```bash
-cd folio-assistant/computations
+cd computations
 python3 brundan_kleshchev_audit.py
 ```
 

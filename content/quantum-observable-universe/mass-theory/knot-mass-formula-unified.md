@@ -189,7 +189,7 @@ of $A$ independent $H_3$-blocks, which is**not** the algebra
 hosting an isotope braid.*
 
 *Numerical values per
-[`probe_term4_conventions.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_term4_conventions.py):*
+[`probe_term4_conventions.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/probe_term4_conventions.py):*
 
 | atom | $A$ | per-vortex $1{\cdot}m_e\Sigma_3$ | per-A $A{\cdot}m_e\Sigma_3$ | **per-$3A$ $m_e\Sigma_{3A}$ (algebraic)** |
 |---|---:|---:|---:|---:|
@@ -206,8 +206,8 @@ empirically a good approximation, but it is not the rigorous
 statement.*
 
 *Compute side: scripts that use $A \cdot m_e \cdot (2 + 1/[2]_q)$
-([`mass_formula_6term.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass_formula_6term.py),
-[`unified_low_isotope_predictor.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/unified_low_isotope_predictor.py))
+([`mass_formula_6term.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/mass_formula_6term.py),
+[`unified_low_isotope_predictor.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/unified_low_isotope_predictor.py))
 are using the per-A heuristic and need to be migrated to the
 per-$3A$ algebraic form before any "best prediction" claim.*
 
@@ -263,7 +263,7 @@ adds a **vortex-dependent chirality factor**
 $a_K \in \{1 + h,\; 1 - h^2,\; (1 - h^2)^2\}$ for $\{D, T, ^4\mathrm{He}\}$
 respectively — reflecting the knot type (chiral+, amphichiral,
 Borromean$\times$2). Upstream verification
-(`folio-assistant/computations/bw_chirality_isotopes.py`) gives
+(`computations/bw_chirality_isotopes.py`) gives
 $T: 0.505\%$ and $^3\mathrm{He}: 0.856\%$ agreement with AME
 using these factors.*
 

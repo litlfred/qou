@@ -8,7 +8,7 @@ P0.1.
 
 ## Sweep methodology
 
-[`folio-assistant/computations/sweeps/wall_violations_sweep.py`](../../folio-assistant/computations/sweeps/wall_violations_sweep.py)
+[`computations/sweeps/wall_violations_sweep.py`](../../computations/sweeps/wall_violations_sweep.py)
 greps every `*-proof.md` under
 `content/quantum-observable-universe/` for Archimedean / hyperbolic-
 volume markers (Mostow, Gromov, Thurston, hyperbolic Vol(K), SnapPy,
@@ -25,7 +25,7 @@ heuristically triaged as one of:
 Triage is conservative; the triage column is the input to manual
 review, not a verdict.
 
-Output: [`folio-assistant/computations/sweeps/wall-violations-sweep.witness.json`](../../folio-assistant/computations/sweeps/wall-violations-sweep.witness.json).
+Output: [`computations/sweeps/wall-violations-sweep.witness.json`](../../computations/sweeps/wall-violations-sweep.witness.json).
 
 ## Sweep result (149 proof files)
 
@@ -195,8 +195,8 @@ complete on this branch.
 ## Reproducibility
 
 ```bash
-python3 folio-assistant/computations/sweeps/wall_violations_sweep.py
-# → folio-assistant/computations/sweeps/wall-violations-sweep.witness.json
+python3 computations/sweeps/wall_violations_sweep.py
+# → computations/sweeps/wall-violations-sweep.witness.json
 ```
 
 The sweep is deterministic given the file set; rerun after any

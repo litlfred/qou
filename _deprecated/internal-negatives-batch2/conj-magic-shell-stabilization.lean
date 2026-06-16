@@ -588,7 +588,7 @@ theorem patternA_coupling_z_n_symmetry (Z N : ℕ) :
     discharge requires the underlying `delta_shell` to be substrate-
     derived consistent with the empirical residual. -/
 -- Ref: [manuscript] conj:magic-shell-stabilization §"Refined proof obligations (3)"
--- See folio-assistant/computations/probe_magic_shell_empirical_instantiation.py
+-- See computations/probe_magic_shell_empirical_instantiation.py
 axiom patternA_cross_decomposition (M : MagicShellStabilization) :
     ∀ (Z N : ℕ),
       M.delta_shell Z N

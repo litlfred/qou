@@ -36,10 +36,10 @@ Ranked by load-bearing-ness; per CLAUDE.md Rule 14, any h^k coefficient or weigh
 
 | Rank | Candidate | Location | Status |
 |------|-----------|----------|--------|
-| 🔴 | atom → knot census assignments (D↔6₂, T↔8₁₁, ³He↔L6a4) | [`mass_table_ppb.py:18-21`](../../folio-assistant/computations/mass_table_ppb.py) | explicit AME-driven by author admission |
-| 🔴 | Kashaev density rule `ρ_F ∈ {m_e, 2m_e}` | [`mass_table_ppb.py:23`](../../folio-assistant/computations/mass_table_ppb.py) | pending formal justification per script header |
-| 🟠 | pp/pn/nn channel-assignment convention | [`isotope_record_schema.py:176-178`](../../folio-assistant/computations/isotope_record_schema.py) | no `prop:` block; PR #1081 Task 3 may resolve |
-| 🟠 | ⁴He "magic A·8G shell" closure | [`isotope_record_schema.py:186`](../../folio-assistant/computations/isotope_record_schema.py) | labelled "magic"; biggest sign-flip magnitude (+5.87%) |
+| 🔴 | atom → knot census assignments (D↔6₂, T↔8₁₁, ³He↔L6a4) | [`mass_table_ppb.py:18-21`](../../computations/mass_table_ppb.py) | explicit AME-driven by author admission |
+| 🔴 | Kashaev density rule `ρ_F ∈ {m_e, 2m_e}` | [`mass_table_ppb.py:23`](../../computations/mass_table_ppb.py) | pending formal justification per script header |
+| 🟠 | pp/pn/nn channel-assignment convention | [`isotope_record_schema.py:176-178`](../../computations/isotope_record_schema.py) | no `prop:` block; PR #1081 Task 3 may resolve |
+| 🟠 | ⁴He "magic A·8G shell" closure | [`isotope_record_schema.py:186`](../../computations/isotope_record_schema.py) | labelled "magic"; biggest sign-flip magnitude (+5.87%) |
 | 🟡 | flavor-split (1+ℏ_q³) 3-loop factor | PR #690 / `_li_2_q_util.flavor_split_subleading` | partial Lean coverage |
 
 ## Lean-coverage matrix (production-chain ingredients)

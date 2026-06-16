@@ -229,7 +229,7 @@ sharp only when the operator-level $uv = q\,vu$ identity is
 established). Deferred behind P3.2.
 
 The empirical evidence in
-[`adjacent-vs-full-probe.witness.json`](../../folio-assistant/computations/adjacent-vs-full-probe.witness.json)
+[`adjacent-vs-full-probe.witness.json`](../../computations/adjacent-vs-full-probe.witness.json)
 already shows that the all-pairs set $\mathcal{P}_n = \{(i,j): i<j\}$
 empirically matches mass on light atoms with sub-1% error — i.e.,
 the bound is empirically sharp. A formal sharpness proof is
@@ -245,7 +245,7 @@ the open piece.
 ### Finding — compute prerequisite missing
 
 The relevant compute module
-[`folio-assistant/computations/multi-level-jet-sum.witness.json`](../../folio-assistant/computations/multi-level-jet-sum.witness.json)
+[`computations/multi-level-jet-sum.witness.json`](../../computations/multi-level-jet-sum.witness.json)
 self-reports:
 
 ```json

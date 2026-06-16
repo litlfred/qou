@@ -293,7 +293,7 @@ author/structural decisions (§2.C).
    [`local/compute-audit.md`](../../.claude/skills/local/compute-audit.md)
    updated with the P31 entry + remediation guidance.
 4. **P0.1 — Aggregator compliance witness**. New
-   [`canonical_derivation_pipeline_compliance.py`](../../folio-assistant/computations/canonical_derivation_pipeline_compliance.py)
+   [`canonical_derivation_pipeline_compliance.py`](../../computations/canonical_derivation_pipeline_compliance.py)
    joins four upstream audit witnesses (compute-audit-scan,
    canonical-script-input-audit, derivation-chain-audit,
    codata-reconciliation) into one current-state snapshot with a
@@ -319,7 +319,7 @@ author/structural decisions (§2.C).
 
 6. **P3.2 — Witness reproducibility byte-equality check (P32)**.
    New
-   [`witness_reproducibility_check.py`](../../folio-assistant/computations/witness_reproducibility_check.py)
+   [`witness_reproducibility_check.py`](../../computations/witness_reproducibility_check.py)
    with explicit registry of 11 (builder, output) pairs. Snapshots
    each `*.derivation.json`, re-runs its builder, byte-compares,
    and **auto-restores** the snapshot regardless of outcome (the
@@ -327,7 +327,7 @@ author/structural decisions (§2.C).
    added to `local/compute-audit.md`. Wired as 6th contract in
    the aggregator. **infra_score 0.40 → 0.50.**
 7. **Drift fix** to
-   [`build_markov_trace_assembly_neutron_chain.py:260`](../../folio-assistant/computations/build_markov_trace_assembly_neutron_chain.py)
+   [`build_markov_trace_assembly_neutron_chain.py:260`](../../computations/build_markov_trace_assembly_neutron_chain.py)
    — single-line update of the `target=` field to match the
    `[canonical Wenzl-bridge]` annotation that had been hand-edited
    into the committed JSON without a corresponding script update.

@@ -87,7 +87,7 @@ extends analytically.
 ## Comparison with the previous "open structural project"
 
 The earlier hand-derivation in
-[`y-lambda-clean-closed-forms.md`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y-lambda-clean-closed-forms.md)
+[`y-lambda-clean-closed-forms.md`](https://github.com/litlfred/qou/blob/main/computations/y-lambda-clean-closed-forms.md)
 recorded the $n = 2$ collapse $Z_2 = (1 - X)^2 / (1 - Q)^2$,
 flagged the $n \geq 3$ unsimplified sympy expressions as
 "degree $\sim 25$ polynomials", and listed the general identity as
@@ -116,7 +116,7 @@ work for the entire table.
 ## Numerical verification
 
 The companion script
-[`y_lambda_macdonald_telescope.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y_lambda_macdonald_telescope.py)
+[`y_lambda_macdonald_telescope.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_macdonald_telescope.py)
 
 1. Verifies $Z_n = ((1-X)/(1-Q))^n$ symbolically for $n = 0, \ldots, 6$
    (the difference reduces to $0$ via `sympy.cancel`).
@@ -132,7 +132,7 @@ The companion script
      \approx 2.5 \times 10^{-51}$ across 191 samples (limited only
    by the witness's 50-dps precision).
 
-Output: [`y-lambda-macdonald-telescope.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y-lambda-macdonald-telescope.witness.json).
+Output: [`y-lambda-macdonald-telescope.witness.json`](https://github.com/litlfred/qou/blob/main/computations/y-lambda-macdonald-telescope.witness.json).
 
 ## Crystal-basis interpretation
 

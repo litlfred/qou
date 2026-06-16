@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/audits/vol_density_compute_vs_paper_audit.py",
+  "script_path": "computations/audits/vol_density_compute_vs_paper_audit.py",
   "language": "python",
   "source_hash": "193c14c06b10",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -72,7 +72,7 @@
         "reviewed_at": "2026-06-04T18:25:47.308Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/audits/vol_density_compute_vs_paper_audit.py:63: `def fit_even_h_expansion(…)` has 3 parameters without type annotation: fn, max_order, samples — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/audits/vol_density_compute_vs_paper_audit.py:88: `def paper_J_borromean(…)` has 1 parameter without type annotation: q_str — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/audits/vol_density_compute_vs_paper_audit.py:111: `def paper_J_borromean_jones_norm(…)` has 1 parameter without type annotation: q_str — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/audits/vol_density_compute_vs_paper_audit.py:128: `def production_linking_weight(…)` has 1 parameter without type annotation: q_str — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/audits/vol_density_compute_vs_paper_audit.py:63: `def fit_even_h_expansion(…)` has 3 parameters without type annotation: fn, max_order, samples — add `: type` (or `: Any` if the type genuinely is untyped) | computations/audits/vol_density_compute_vs_paper_audit.py:88: `def paper_J_borromean(…)` has 1 parameter without type annotation: q_str — add `: type` (or `: Any` if the type genuinely is untyped) | computations/audits/vol_density_compute_vs_paper_audit.py:111: `def paper_J_borromean_jones_norm(…)` has 1 parameter without type annotation: q_str — add `: type` (or `: Any` if the type genuinely is untyped) | computations/audits/vol_density_compute_vs_paper_audit.py:128: `def production_linking_weight(…)` has 1 parameter without type annotation: q_str — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -91,7 +91,7 @@
         "reviewed_at": "2026-06-04T18:25:47.308Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/audits/vol_density_compute_vs_paper_audit.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/audits/vol_density_compute_vs_paper_audit.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -110,7 +110,7 @@
         "reviewed_at": "2026-06-04T18:25:47.308Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/audits/vol_density_compute_vs_paper_audit.py:1: script `vol_density_compute_vs_paper_audit.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/audits/vol_density_compute_vs_paper_audit.py:1: script `vol_density_compute_vs_paper_audit.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [

@@ -47,7 +47,7 @@ Two downstream blocks consume it:
 
 The matrix entries of $A^\lambda_{\mu\nu}(I)$ at the substrate $q_0$ are
 extracted by the bilinear-system solver
-[`a_operator/A_operator_extract_at_level.py`](../../../folio-assistant/computations/a_operator/A_operator_extract_at_level.py),
+[`a_operator/A_operator_extract_at_level.py`](../../../computations/a_operator/A_operator_extract_at_level.py),
 with per-level witnesses
 `A-operator-extract-h{n}-{iface}.witness.json`. The $\mathbf{H}_6$
 (deuteron) extract is full-rank; the $\mathbf{H}_{9+}$ extracts are

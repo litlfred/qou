@@ -23,7 +23,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:hahn-substrate`](../../../quantum-observable-universe/appendix-surreals/hahn-substrate.md). -/
 class HahnSubstrate where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       The substrate parameter $q \in \mathbb{R}_{>0}$ in QOU controls

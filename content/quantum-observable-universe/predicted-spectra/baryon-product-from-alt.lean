@@ -23,7 +23,7 @@ LaTeX label: `prop:baryon-product-from-alt`
 
 ## Witness
 
-- [baryon-product-from-alt.witness.json](../../../folio-assistant/computations/baryon-product-from-alt.witness.json)
+- [baryon-product-from-alt.witness.json](../../../computations/baryon-product-from-alt.witness.json)
   — pointwise + thimble-period numerical certificate of the Alt^3
   isotype identification.
 -/

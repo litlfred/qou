@@ -13,7 +13,7 @@ PSLQ period probe?
 ## Answer: NO — A is reliable to ≈ 4 significant figures only
 
 Script:
-[`qbeta_residue_a_precision_ceiling.py`](../../folio-assistant/computations/qbeta/qbeta_residue_a_precision_ceiling.py)
+[`qbeta_residue_a_precision_ceiling.py`](../../computations/qbeta/qbeta_residue_a_precision_ceiling.py)
 · witness `qbeta-residue-a-precision-ceiling.witness.json`.
 
 Notation: `x_k := c_k·u_subst^k`; `L := lim_k x_k ≈ 2.118e-13` (tail

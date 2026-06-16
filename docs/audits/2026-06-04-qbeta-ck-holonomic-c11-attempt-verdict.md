@@ -18,7 +18,7 @@ positive low-order fit would **predict c_11+** outright. This is a structural
 class test, not a free fit (compute-author §3.3).
 
 Probe:
-[`qbeta_ck_holonomic_recurrence_guess.py`](../../folio-assistant/computations/qbeta/qbeta_ck_holonomic_recurrence_guess.py).
+[`qbeta_ck_holonomic_recurrence_guess.py`](../../computations/qbeta/qbeta_ck_holonomic_recurrence_guess.py).
 
 ## Result
 
@@ -65,7 +65,7 @@ non-holonomic *or* free-rung extraction noise.
 
 The "blocked at the data level" verdict above has a precise, *information-
 theoretic* cause that subsumes this whole campaign. Probe:
-[`qbeta_ck_extraction_precision_floor.py`](../../folio-assistant/computations/qbeta/qbeta_ck_extraction_precision_floor.py).
+[`qbeta_ck_extraction_precision_floor.py`](../../computations/qbeta/qbeta_ck_extraction_precision_floor.py).
 
 The c_k are read off `R(u) = Q_β / (Q_A·cos α_eff) = ∏_k (1 + c_k·u^k)`. The
 *only* noisy input is the **measured** neutron Q-value (Q_A and cos α_eff are

@@ -8,7 +8,7 @@
 
 ## The gap
 
-[`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py) covers atoms via two rules:
+[`mass_table_ppb.py`](../../computations/mass_table_ppb.py) covers atoms via two rules:
 
 1. **Kashaev volume law** for `A ≤ 4` (D, T, ³He, ⁴He) — atom → census-assigned hyperbolic knot/link, `B_pred = ρ_F · m_e · Vol(K)`
 2. **α-cluster rule** for `A ≥ 8` (⁸Be, ¹²C, ¹⁶O, ²⁰Ne, ²⁴Mg, ⁴⁰Ca) — `B_pred = n_α · B(⁴He_derived) + n_pairs · c_αα`
@@ -39,7 +39,7 @@ These are **large hyperbolic volumes** — well outside the SnapPy "small knot" 
 - **Highly twisted prime knots** (cable knots of cable knots)
 - **Hyperbolic surfaces** rather than knot complements (less natural for the QOU framework)
 
-A census search over `SnapPy.HTLinkExteriors` or `OrientableCuspedCensus` for manifolds with hyperbolic volume in `[25, 80]` would surface candidates — **but** census search is the AME-driven path explicitly admitted as CAL-4-equivalent in [`mass_table_ppb.py:18-21`](../../folio-assistant/computations/mass_table_ppb.py) for D / T / ³He. Repeating that pattern for ⁵Li / ⁶Li / ⁷Li would extend the existing hidden-fitting risk rather than resolve it.
+A census search over `SnapPy.HTLinkExteriors` or `OrientableCuspedCensus` for manifolds with hyperbolic volume in `[25, 80]` would surface candidates — **but** census search is the AME-driven path explicitly admitted as CAL-4-equivalent in [`mass_table_ppb.py:18-21`](../../computations/mass_table_ppb.py) for D / T / ³He. Repeating that pattern for ⁵Li / ⁶Li / ⁷Li would extend the existing hidden-fitting risk rather than resolve it.
 
 ## Categorical paths (canonical, no fit)
 
@@ -82,7 +82,7 @@ This audit explicitly does NOT recommend any one path — that's owner judgement
 - Adds explicit `rule: "gap"` rows for ⁵Li, ⁶Li, ⁷Li in `mass_table_ppb.py:ATOM_ASSIGN`
 - Adds `predict()` handling for `"gap"` rule that returns a structured no-prediction record (with the target Vol values + audit-doc pointer)
 - Witness output `mass-table-ppb.witness.json` will now include explicit `B_pred: null, formula: "GAP — no atom→knot rule"` rows for these atoms
-- The `canonical-mass-table-extended.witness.json` downstream consumer (via [`canonical_mass_table_extended.py:262 lookup_b_pred_existing`](../../folio-assistant/computations/canonical_mass_table_extended.py)) will pick up `null` and surface it as the existing null `prediction_MeV_50dps` field, but now with the audit-doc pointer in the upstream witness chain
+- The `canonical-mass-table-extended.witness.json` downstream consumer (via [`canonical_mass_table_extended.py:262 lookup_b_pred_existing`](../../computations/canonical_mass_table_extended.py)) will pick up `null` and surface it as the existing null `prediction_MeV_50dps` field, but now with the audit-doc pointer in the upstream witness chain
 
 The numerical content of the framework is **unchanged**. The deliverable is **audit-trail visibility** for the missing rule.
 
@@ -91,5 +91,5 @@ The numerical content of the framework is **unchanged**. The deliverable is **au
 - Parent audit: [`2026-05-24-low-isotope-mass-error-anatomy.md`](2026-05-24-low-isotope-mass-error-anatomy.md)
 - Coordination ledger: [`docs/coordination/2026-05-24-low-isotope-mass-anatomy-ledger.md`](../coordination/2026-05-24-low-isotope-mass-anatomy-ledger.md)
 - PR [#1081](https://github.com/litlfred/qou/pull/1081) — supplier for Path 2 (S₅ ↔ SO(3) fiber action)
-- [`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py) — where the gap is now surfaced explicitly
-- [`isotope_record_schema.py`](../../folio-assistant/computations/isotope_record_schema.py) — where the closure topology dict `CANONICAL_CLOSURES` would need ⁵Li / ⁶Li / ⁷Li entries once a path is chosen
+- [`mass_table_ppb.py`](../../computations/mass_table_ppb.py) — where the gap is now surfaced explicitly
+- [`isotope_record_schema.py`](../../computations/isotope_record_schema.py) — where the closure topology dict `CANONICAL_CLOSURES` would need ⁵Li / ⁶Li / ⁷Li entries once a path is chosen

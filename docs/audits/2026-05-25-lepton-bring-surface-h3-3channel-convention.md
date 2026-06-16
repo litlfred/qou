@@ -126,8 +126,8 @@ This is conjectural; the actual SU(3) generation action on H_3 channels is not i
 ## Cross-references
 
 - Convention source: `tools/pyhecke/python/pyhecke/constants.py:156` (V_HAT_ELECTRON)
-- Compute infra: `folio-assistant/computations/per_generator_V_hat_general.py` (PR #1127)
-- T6 closure attempt: `folio-assistant/computations/t6_lepton_h3_3channel_convention.py` (this audit)
+- Compute infra: `computations/per_generator_V_hat_general.py` (PR #1127)
+- T6 closure attempt: `computations/t6_lepton_h3_3channel_convention.py` (this audit)
 - Lean theorem: `torus_knot_odd_reduction_exists` (PR #1127 `lepton-mass-tower-canonical.lean`)
 - Cohomological discipline: `prop:three-parameters-wedderburn` (canonical sym/std/alt ↔ CAL-2/1/3)
 - SUPERSEDED-ρ_q purge: `docs/audits/2026-05-24-superseded-rho-q-purge.md` (now understood as incomplete — implicit ρ_q remains)

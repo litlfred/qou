@@ -121,10 +121,10 @@ def main() -> int:
                     help="exit non-zero if any issues found")
     args = ap.parse_args()
 
-    # Scan the full folio-assistant/computations/ tree, not just audits/
+    # Scan the full computations/ tree, not just audits/
     # (the script's own directory). Per Copilot #1712 review: the
     # description says "Audits production scripts in
-    # folio-assistant/computations/", which is the PARENT of HERE since
+    # computations/", which is the PARENT of HERE since
     # the audit was moved under audits/ in a prior refactor.
     py_files = sorted(HERE.parent.rglob("*.py"))
     py_files = [
@@ -158,7 +158,7 @@ def main() -> int:
         engine="python",
     )
     w.set_description(
-        "Audits production scripts in folio-assistant/computations/ "
+        "Audits production scripts in computations/ "
         "for the CAL-4-disguised-as-canonical pattern: a hardcoded "
         "numerical literal at module level combined with a "
         "'substrate/canonical/derived' claim in the docstring, where "

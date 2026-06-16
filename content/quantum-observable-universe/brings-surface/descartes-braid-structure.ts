@@ -18,8 +18,8 @@ export default corollary({
   proofs: ["prf:descartes-braid-structure"],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/probes/archimedean_knot_eigenbasis_probe.py",
-    witness: "folio-assistant/computations/probes/archimedean-knot-eigenbasis-probe.witness.json",
+    script: "computations/probes/archimedean_knot_eigenbasis_probe.py",
+    witness: "computations/probes/archimedean-knot-eigenbasis-probe.witness.json",
     status: "verified",
   },
 });

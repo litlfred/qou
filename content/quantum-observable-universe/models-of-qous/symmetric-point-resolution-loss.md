@@ -48,4 +48,4 @@ $\mu_2$-vanishing clause of the
 is not an impoverished theory but an unresolved one.  Numerical
 verification at fifty digits, including the $5/18$ coefficient and the
 convention checks against the canonical pinning witness, is recorded in
-[`q1-mass-gap-probe.witness.json`](../../../folio-assistant/computations/q1-mass-gap-probe.witness.json).
+[`q1-mass-gap-probe.witness.json`](../../../computations/q1-mass-gap-probe.witness.json).

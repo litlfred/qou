@@ -2,7 +2,7 @@
 
 > **Note (2026-06-01):** `hecke_core_legacy.py` was moved out of this
 > directory because 9 live importers still depend on its symbols
-> (5 in `folio-assistant/computations/` + 4 in `tools/pyhecke/python/
+> (5 in `computations/` + 4 in `tools/pyhecke/python/
 > pyhecke/`). It now sits at `../hecke_core_legacy.py` with a
 > `DEPRECATION-CANDIDATE` banner, matching the convention used by the
 > 23 other still-live deprecated scripts mentioned below.
@@ -20,7 +20,7 @@ It also holds the **producing `.py` scripts** for those witnesses, when
 the script is not imported by any live (non-`_deprecated/`) code.  In a
 follow-on pass, 262 of the 285 candidate scripts were moved here
 alongside their witnesses; the remaining 23 candidate scripts are
-**kept in place** under `folio-assistant/computations/` with a
+**kept in place** under `computations/` with a
 `# DEPRECATION-CANDIDATE: ...` header comment, because they are still
 imported by live code and moving them would break the importer.  Those
 23 should be revisited when the live importer is itself retired or
@@ -44,7 +44,7 @@ the witness next to its script.
 
 ## Audit-wiring behavior
 
-`scripts/audit-wiring.ts` scans `folio-assistant/computations/*.witness.json`
+`scripts/audit-wiring.ts` scans `computations/*.witness.json`
 (glob without `**`), so witnesses in this `_deprecated/` subdirectory
 are excluded from every bucket (wired / audit-only / orphan).  This is
 intentional — the directory is the storage location for "intentionally
@@ -54,8 +54,8 @@ not part of the live wiring graph".
 
 To bring a deprecated witness back into the audit:
 
-1. `git mv folio-assistant/computations/_deprecated/<name>.witness.json
-   folio-assistant/computations/<name>.witness.json`
+1. `git mv computations/_deprecated/<name>.witness.json
+   computations/<name>.witness.json`
 2. Either:
    - add `"auditOnly": "docs/audits/<report>.md"` and `WitnessBuilder.set_audit_only(...)` in the producer, or
    - point a content block's `computation.witness` (or a `content/values/registry.ts` `witnessFile:`) at it.
@@ -64,7 +64,7 @@ Bulk deletion of this directory is owner-only.
 
 ## 2026-05-28 pass — orphan re-sweep
 
-Added `folio-assistant/computations/cleanup_legacy_witnesses.py` which
+Added `computations/cleanup_legacy_witnesses.py` which
 codifies the same four heuristics from the original sweep plus two
 guards added after the first dry-run produced false positives:
 
@@ -83,6 +83,6 @@ This pass moved **9 orphan scripts** + their `*.witness.json` sidecars
 into `_deprecated/`. Re-run the helper any time the orphan list
 appears to grow:
 
-    python3 folio-assistant/computations/cleanup_legacy_witnesses.py            # dry run
-    python3 folio-assistant/computations/cleanup_legacy_witnesses.py --apply --git
+    python3 computations/cleanup_legacy_witnesses.py            # dry run
+    python3 computations/cleanup_legacy_witnesses.py --apply --git
 

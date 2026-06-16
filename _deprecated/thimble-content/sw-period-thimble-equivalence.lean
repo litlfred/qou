@@ -26,7 +26,7 @@ remains a `conjecture` per CLAUDE.md §3b.
 
 ## Witness
 
-- [sw-period-thimble-equivalence.witness.json](../../../folio-assistant/computations/sw-period-thimble-equivalence.witness.json)
+- [sw-period-thimble-equivalence.witness.json](../../../computations/sw-period-thimble-equivalence.witness.json)
   — per-degree PLT vs GB/jet cross-validation for `k ∈ {0,1,2,3}`.
   A2.4 (`k = 1`, proton word) is verified empirically only.
 -/

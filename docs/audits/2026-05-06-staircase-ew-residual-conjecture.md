@@ -1,8 +1,8 @@
 # Staircase EW-residual conjecture — generalization confirmed for ρ_4
 
 **Date**: 2026-05-06
-**Script**: `folio-assistant/computations/staircase_ew_residual_conjecture.py`
-**Witness**: `folio-assistant/computations/staircase-ew-residual-conjecture.witness.json`
+**Script**: `computations/staircase_ew_residual_conjecture.py`
+**Witness**: `computations/staircase-ew-residual-conjecture.witness.json`
 **Status**: ✓ 7/7 assertions pass
 
 Tests the generalization conjecture from

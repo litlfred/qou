@@ -26,7 +26,7 @@
        [ram1991] Ram, "A Frobenius formula for the characters of
        the Hecke algebras", Invent. Math. 106 (1991) 461-488
        [stanley1999] Stanley, Enumerative Combinatorics Vol 2 §A1.3
-       [compute] folio-assistant/computations/substrate/lr_coefficients.py
+       [compute] computations/substrate/lr_coefficients.py
        [related] tools/pyhecke/python/pyhecke/skew_syt.py (PR #1515 —
                  skew SYT count, distinct from LR coefficient)
 -/

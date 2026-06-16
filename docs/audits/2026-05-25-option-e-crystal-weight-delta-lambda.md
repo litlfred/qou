@@ -43,16 +43,16 @@ Probe-2 (joint multi-atom) falsified the counter-framework "global Δ_λ" hypoth
 | Kashiwara Jones c_4 | [`kashiwara-jones-c4-categorical.lean`](../../content/quantum-observable-universe/braids-and-knots/kashiwara-jones-c4-categorical.lean) | ✓ Lean stub | extend to general level |
 | Crystal-basis path | [`crystal-bases-path-a.md`](../../content/quantum-observable-universe/braids-and-knots/crystal-bases-path-a.md) | ✓ computational path | tie to Δ_λ(K) extraction |
 | Crystal vertex enumeration | [`crystal-basis-resolves-mass-tower-open-problems.lean`](../../content/quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.lean) L70-94 | ✓ finite graph traversal stub | extend to per-atom Δ_λ |
-| Frobenius Gram matrix | [`gram-matrix-dual.py`](../../folio-assistant/computations/gram-matrix-dual.py) (pyhecke) | ✓ computed (numpy 6×6) | Lean formalisation |
+| Frobenius Gram matrix | [`gram-matrix-dual.py`](../../computations/gram-matrix-dual.py) (pyhecke) | ✓ computed (numpy 6×6) | Lean formalisation |
 | Frobenius Gram matrix (Lean, content-block sibling) | [`particle-interactions/gram-matrix-h3-symbolic.lean`](../../content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.lean) | ✓ **landed on main** — full symbolic 6×6, all 21 upper-triangle entries as Laurent polynomials in `u = √q`, sympy-computed, verified to 1e-16 against `gram-matrix-dual.witness.json` at q_0 | wiring to `gram_matrix q = 0` stub is the only remaining sub-task (see row below) |
 | Frobenius Gram matrix (Lake-built production) | [`lean/QOU/Archimedean/frobenius_gram_matrix.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/frobenius_gram_matrix.lean) | ✓ **landed on main** — full 6×6 over generic ring `R` (CLAUDE.md §7c compliant), with explicit Hoefsmit-seminormal entries `g₁₅, g₃₄, g₃₅, g₅₅` and symmetry/positivity theorems | use directly in Phase 2 |
 | Wire `gram_matrix q = 0` stub | [`universal-ilp-algorithm.lean`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean) L28-29 | ✗ still `= 0`; the production `gram_matrix` lives in `frobenius_gram_matrix.lean` so this content-block stub is mostly cosmetic | low-priority wiring; not blocking Phase 2 |
 | `gram_matrix(q)` PyO3 | [`pyhecke-native/src/lib.rs`](../../tools/pyhecke-native/src/lib.rs) | ✓ hardwired to H_3 (6×6) | generalise to H_n |
 | `gram_inverse(q)` PyO3 | [`pyhecke-native/src/lib.rs`](../../tools/pyhecke-native/src/lib.rs) | ✓ hardwired to H_3 | generalise to H_n |
 | `chi_lambda_braid(shape, word, q)` PyO3 | [`pyhecke-native/src/lib.rs`](../../tools/pyhecke-native/src/lib.rs) | ✓ n-strand (f64) | mpfr variant for substrate precision |
-| Per-atom χ caches | `folio-assistant/computations/chi-{D,T,³He,⁴He}-h{n}-at-q0-50dps.witness.json` | ✓ D, T, ³He complete | use directly for Phase 2 |
-| ⁴He full 77-partition χ table | [`chi-lambda-he4-full-partition-table.witness.json`](../../folio-assistant/computations/chi-lambda-he4-full-partition-table.witness.json) | ✓ landed on main (`30d5f19a1`, 2026-05-25) | re-run probe-4 ⁴He with full table |
-| Jones-Markov atlas (general H_n y_λ) | [`jones-markov-atlas`](../../folio-assistant/computations/) | ✓ landed on main (`814a7545b`, 2026-05-25); generic H_n y_λ solver via cycle-type Schur-orthogonality; verified Σ y_λ · dim_λ = 1 for A ≤ 4 | reuse for Phase 2 Wedderburn projection |
+| Per-atom χ caches | `computations/chi-{D,T,³He,⁴He}-h{n}-at-q0-50dps.witness.json` | ✓ D, T, ³He complete | use directly for Phase 2 |
+| ⁴He full 77-partition χ table | [`chi-lambda-he4-full-partition-table.witness.json`](../../computations/chi-lambda-he4-full-partition-table.witness.json) | ✓ landed on main (`30d5f19a1`, 2026-05-25) | re-run probe-4 ⁴He with full table |
+| Jones-Markov atlas (general H_n y_λ) | [`jones-markov-atlas`](../../computations/) | ✓ landed on main (`814a7545b`, 2026-05-25); generic H_n y_λ solver via cycle-type Schur-orthogonality; verified Σ y_λ · dim_λ = 1 for A ≤ 4 | reuse for Phase 2 Wedderburn projection |
 | H_4 Wedderburn atlas + H_3 vs H_{3A} legacy bug audit | [`c70707397`](https://github.com/litlfred/qou/commit/c70707397) (2026-05-24) | ✓ landed on main; bug is root cause of the 5.87% ⁴He gap | Phase 1 must NOT inherit the H_3-vs-H_{3A} legacy |
 | pyhecke-native multi-block χ_λ | [`8bb47b448`](https://github.com/litlfred/qou/commit/8bb47b448) (2026-05-25) | ✓ FIRST multi-block χ_λ measurement via tier-3 wiring | reuse for Phase 1 instead of authoring `chi_lambda_eval.py` from scratch |
 | pyhecke M3 public API | [`134c04fe5`](https://github.com/litlfred/qou/commit/134c04fe5) (2026-05-25) | ✓ atom/molecular/constants lazy-loaded | Phase 1 wrapper imports from public API |
@@ -163,7 +163,7 @@ design.
 
 #### PROBE 4 cheap-pass verdict (2026-06-02, PR #1516)
 
-**Upstream context.** [`rho_w_crystal_vertex_trace.py`](../../folio-assistant/computations/rho_w_crystal_vertex_trace.py)
+**Upstream context.** [`rho_w_crystal_vertex_trace.py`](../../computations/rho_w_crystal_vertex_trace.py)
 (on main; design doc [`2026-05-31-rho-w-crystal-vertex-trace-design.md`](2026-05-31-rho-w-crystal-vertex-trace-design.md)) already established the genuine
 per-vertex ρ_w := ⟨v_T|ρ_λ(β_K)|v_T⟩ via Hoefsmit/Young seminormal,
 and showed that the regular-multiplicity sum `Σ_w ρ_w(K) = χ^λ(β_K)`

@@ -23,7 +23,7 @@ ladder `Δ_λ` satisfies (◇) with the derived `b_ν`, then two seeds (e.g. D a
 PREDICT every heavier `Δ_λ` — with no fit (the gate forbids fitting `b_ν`, not
 testing a derived one). `Δ_predict_succ` packages that one-step prediction; the
 empirical derive-or-refute against ⁴He is the compute companion
-(`folio-assistant/computations/qbeta/qlommel_delta_lambda_two_seed_test.py`).
+(`computations/qbeta/qlommel_delta_lambda_two_seed_test.py`).
 
 Generic base ring `[Field K]` (`q`, `x` are formal fibre parameters; CLAUDE.md
 §7c). Sorry-free.

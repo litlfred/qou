@@ -2,7 +2,7 @@
 *Let $\beta \in H_3(R, q)$ be a confined nuclear braid
 ([atomic braid](#def:atomic-braid)) — typically
 $\beta = T_w = \mathtt{atom\_braid\_word\_3A}(Z, N)$
-([`mass_at_3A_proper.atom_braid_word_3A`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/mass_at_3A_proper.py))
+([`mass_at_3A_proper.atom_braid_word_3A`](https://github.com/litlfred/qou/blob/main/computations/mass_at_3A_proper.py))
 — built from crossing operators
 $c_k \sigma_{i_k} + d_k \cdot 1 \in H_3(R, q)$ at generators
 $\sigma_{i_k}$ with parameters $(c_k, d_k)$ (the $k$-th letter of

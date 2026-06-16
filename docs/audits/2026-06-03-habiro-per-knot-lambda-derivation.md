@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-03 (last update 2026-06-04)
 **Branch:** `claude/habiro-per-knot-lambda-derivation-2026-06-03`
-**Probe:** [`folio-assistant/computations/probes/per_knot_lambda_habiro_probe.py`](../../folio-assistant/computations/probes/per_knot_lambda_habiro_probe.py)
+**Probe:** [`computations/probes/per_knot_lambda_habiro_probe.py`](../../computations/probes/per_knot_lambda_habiro_probe.py)
 **Parent:** §6.8 of [`docs/audits/2026-06-03-1ppq-roadmap-reanalysis-and-geom-full-bridge-gap.md`](2026-06-03-1ppq-roadmap-reanalysis-and-geom-full-bridge-gap.md) (PR #1762)
 **Status:** EXPLORATORY. Two rigorous findings + one suggestive numerical lead (since retracted). No production path touched. No fit.
 
@@ -156,7 +156,7 @@ This is a valuable negative result: it kills the Habiro-resummation mirage befor
 
 The owner's crystal-basis redirect pointed at the quantum-dimension object (Finding 1), not the Habiro element. Pursuing that gives a clean, **zero-parameter** per-link selection rule.
 
-Probe: [`probes/per_knot_lambda_component_selection_rule.py`](../../folio-assistant/computations/probes/per_knot_lambda_component_selection_rule.py)
+Probe: [`probes/per_knot_lambda_component_selection_rule.py`](../../computations/probes/per_knot_lambda_component_selection_rule.py)
 
 ### The rule
 

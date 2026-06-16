@@ -134,5 +134,5 @@ The single near-miss (Candidate 2, `hecke-normal-form.md`) already cross-referen
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) — substrate → archimedean pipeline; KLR layer would sit between Hecke and Wedderburn.
 - CLAUDE.md §7b — Symmetric-crystal techniques (KLR / Kashiwara) authoring guidance.
 - CLAUDE.md §3b-cond — conditional-on-class exception for conjecture axiomatisation.
-- `folio-assistant/computations/binding_K_direct.py` — Δ_λ-gated binding formula.
-- `folio-assistant/computations/lp_dual_solver.py` — current LP/SDP infrastructure the dialog's "speedup" pitch would replace.
+- `computations/binding_K_direct.py` — Δ_λ-gated binding formula.
+- `computations/lp_dual_solver.py` — current LP/SDP infrastructure the dialog's "speedup" pitch would replace.

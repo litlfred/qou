@@ -4,10 +4,10 @@
 **Predecessors:**
 [`derivation-audit-2026-04-20.md`](../derivation-audit-2026-04-20.md),
 [`derivation-chain-mass-tower.md`](derivation-chain-mass-tower.md),
-[`computations/DERIVATION-STATUS.md`](../../folio-assistant/computations/DERIVATION-STATUS.md),
-[`computations/AUDIT-crt-k-level.md`](../../folio-assistant/computations/AUDIT-crt-k-level.md),
-[`computations/AUDIT-gb-residue-opaque-declarations.md`](../../folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md),
-[`computations/INFRASTRUCTURE-AUDIT.md`](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md).
+[`computations/DERIVATION-STATUS.md`](../../computations/DERIVATION-STATUS.md),
+[`computations/AUDIT-crt-k-level.md`](../../computations/AUDIT-crt-k-level.md),
+[`computations/AUDIT-gb-residue-opaque-declarations.md`](../../computations/AUDIT-gb-residue-opaque-declarations.md),
+[`computations/INFRASTRUCTURE-AUDIT.md`](../../computations/INFRASTRUCTURE-AUDIT.md).
 
 ## §0. Scope, methodology, archimedean wall
 
@@ -71,7 +71,7 @@ above**.
 | 10 | Wedderburn–Artin block decomposition $H_n(q) = \bigoplus_\lambda M_{f_\lambda}(\mathbb{Q}(q))$ | [wedderburn-mass-formula](../../content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.md), [wedderburn-bratteli-recursion](../../content/quantum-observable-universe/braids-and-knots/wedderburn-bratteli-recursion.md) | 🟢 mass formula, 🟡 recursion (2 sorries at higher levels per [derivation-chain-mass-tower](derivation-chain-mass-tower.md)) | none |
 | 11 | Schur–Weyl (Hecke ↔ $U_q(\mathfrak{sl}_2)$) — Hoefsmit seminormal form | [hoefsmit-scattering-pipeline](../../content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.md), [explicit-alpha-k-h3](../../content/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h3.md) | 🟢 derived (compute backbone — `hecke_characters.py`, `hoefsmit_witness.json`) | none |
 | 12 | Partitions of weight $\lambda \vdash k$ as Wedderburn block index | [wedderburn-mass-formula](../../content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.md), [three-parameters-wedderburn](../../content/quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md) | 🟢 (immediate from §10) | none |
-| 13 | Gröbner–Shirshov filtration $J^\bullet$ on $\mathbb{Q}(q)\langle\sigma_i\rangle / I_{\text{Hecke}}$ | [gb-spectral-sequence](../../content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.md), [graded-trace-residue-split](../../content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.md), [confinement-level-exists](../../content/quantum-observable-universe/braids-and-knots/confinement-level-exists.md) | 🟢 algebraic statement, 🟡 finite-collapse-at-$E_2$ axiomatic in [`folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md`](../../folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md) (`gradedMarkovTrace` and `residueAtRoot` are `noncomputable opaque`) | none |
+| 13 | Gröbner–Shirshov filtration $J^\bullet$ on $\mathbb{Q}(q)\langle\sigma_i\rangle / I_{\text{Hecke}}$ | [gb-spectral-sequence](../../content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.md), [graded-trace-residue-split](../../content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.md), [confinement-level-exists](../../content/quantum-observable-universe/braids-and-knots/confinement-level-exists.md) | 🟢 algebraic statement, 🟡 finite-collapse-at-$E_2$ axiomatic in [`computations/AUDIT-gb-residue-opaque-declarations.md`](../../computations/AUDIT-gb-residue-opaque-declarations.md) (`gradedMarkovTrace` and `residueAtRoot` are `noncomputable opaque`) | none |
 | 14 | "DB filtration" = descent/Bratteli filtration $A_{n+1} = A_n \otimes \Omega^1(A_n)$ | [brane-tower-levels](../../content/quantum-observable-universe/lifting-and-descent/brane-tower-levels.md), [direct-limit-algebra](../../content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.md) | 🟢 def, 🟡 *finiteness / cofinality* in some downstream invocations | **GAP 14a** — uniform `Δ_max` bound on per-level descent residue (line 112 of `derivation-audit-2026-04-20.md`) |
 | 15 | Jet order / categorical jet prolongation | [categorical-jet-prolongation](../../content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.md), [jet-prolongation-C](../../content/quantum-observable-universe/lifting-and-descent/jet-prolongation-C.md) | 🟢 def + proof | none |
 | 16 | Markov trace $\mathrm{tr}_M : H_n(q) \to \mathbb{Q}(q)$ — uniqueness, normalization, cyclicity, Markov property | [jones-markov-trace](../../content/quantum-observable-universe/braids-and-knots/jones-markov-trace.md), [markov-trace-frobenius-selection](../../content/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.md) | 🟢 (external citation: Jones–Ocneanu–Wenzl) | none |
@@ -136,12 +136,12 @@ additional input.
 
 ### §2·C — BW-formula coefficients (BW-8 + BW-11 RESOLVED)
 
-From [`DERIVATION-STATUS.md` lines 41–55](../../folio-assistant/computations/DERIVATION-STATUS.md):
+From [`DERIVATION-STATUS.md` lines 41–55](../../computations/DERIVATION-STATUS.md):
 
 | ID | Term | Coefficient | Status |
 |----|------|-------------|--------|
 | **BW-8** | Hook | $[3]_q [2]_q^2 \cdot m_e$ (q-hook product $H_q((2,2))$) | 🟢 **RESOLVED** — derived via the q-hook formula in [`prop:wigner-np-pairing`](../../content/quantum-observable-universe/braids-and-knots/wigner-np-pairing.md). Numerically equal to the previous "ad hoc" $|\beta_4|\cdot|\ln\lambda|$ form at $q_0$ (≈ 6.29 MeV); the q-integer form is the symbolic derivation. |
-| **BW-11** | pn corr | $(y_{(4,1)} + y_{(2,1,1,1)}) \cdot m_e$ via Wenzl-bridge at $n=5$ | 🟢 **RESOLVED** — closed form in $\mathbb{Z}[q^{\pm 1}]$ available via [`prop:y-lambda-recipe-from-partition`](../../content/quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.md) and the extended Wenzl-bridge witness ([`y_lambda_wenzl_bridge_extended.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge_extended.py), $n \leq 12$). Previous "approx" tag superseded. |
+| **BW-11** | pn corr | $(y_{(4,1)} + y_{(2,1,1,1)}) \cdot m_e$ via Wenzl-bridge at $n=5$ | 🟢 **RESOLVED** — closed form in $\mathbb{Z}[q^{\pm 1}]$ available via [`prop:y-lambda-recipe-from-partition`](../../content/quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.md) and the extended Wenzl-bridge witness ([`y_lambda_wenzl_bridge_extended.py`](../../computations/y_lambda_wenzl_bridge_extended.py), $n \leq 12$). Previous "approx" tag superseded. |
 
 🟢 **Status.** Both flags discharged by the cherry-picked Wenzl-bridge
 content (`y-lambda-recipe-from-partition`,
@@ -229,7 +229,7 @@ vs CODATA $137.035999084$ — residue **~6.7 ppb**, well within the
 
 | ID | Quantity | Status |
 |----|----------|--------|
-| **ALPHA-1** | $1/\alpha$ closed form | 🟢 PSLQ uniqueness witness: [`alpha-em-pslq-uniqueness.witness.json`](../../folio-assistant/computations/alpha/alpha-em-pslq-uniqueness.witness.json) |
+| **ALPHA-1** | $1/\alpha$ closed form | 🟢 PSLQ uniqueness witness: [`alpha-em-pslq-uniqueness.witness.json`](../../computations/alpha/alpha-em-pslq-uniqueness.witness.json) |
 | **ALPHA-2** | The "399-ppb" residual | 🟢 **Resolved.** Live closed form predicts $1/\alpha_{EM} = 137.035998166$ at 6.7 ppb of CODATA — within experimental uncertainty (21 ppb). Each factor $45$, $[3]_q$, $\delta_{CS}$, the $8q\,\delta_{CS}^2$ correction is forced by an upstream block (`exterior-square-borromean`, `force-carrier-bring-uniqueness`, `gram-determinant-plancherel-ratio`, genus-4 torus-knot enumeration). PSLQ uniqueness confirms no shorter rational combination matches. |
 
 🟢 **Action.** None — already at sub-CODATA-uncertainty
@@ -253,7 +253,7 @@ zero from a categorical perspective.
 
 | ID | Status |
 |----|--------|
-| **NU-1** | 🟢 Categorical prediction: $J_\nu = 1$, bare mass 0; observed mass = vacuum-drag correction. The previously circulating "wrong by 10⁶" claim ([DERIVATION-STATUS.md historical line 182](../../folio-assistant/computations/DERIVATION-STATUS.md)) was a neutron/neutrino confusion (comparing $m_\nu$ against $m_n$ ≈ 940 MeV) and is **withdrawn** in this audit pass. |
+| **NU-1** | 🟢 Categorical prediction: $J_\nu = 1$, bare mass 0; observed mass = vacuum-drag correction. The previously circulating "wrong by 10⁶" claim ([DERIVATION-STATUS.md historical line 182](../../computations/DERIVATION-STATUS.md)) was a neutron/neutrino confusion (comparing $m_\nu$ against $m_n$ ≈ 940 MeV) and is **withdrawn** in this audit pass. |
 
 🟢 **Action.** None on algebraic side. Any caller that treats the
 neutrino as a knot-derived mass is wrong by construction (unknot
@@ -285,13 +285,13 @@ sections. **No action needed.** See
 ## §3. Compute pipeline gaps — what must be wired to be 100%
 
 The user's directive: *"compute being 100% wired up"*. Concrete
-gaps from [`AUDIT-crt-k-level.md`](../../folio-assistant/computations/AUDIT-crt-k-level.md) and [`INFRASTRUCTURE-AUDIT.md`](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md):
+gaps from [`AUDIT-crt-k-level.md`](../../computations/AUDIT-crt-k-level.md) and [`INFRASTRUCTURE-AUDIT.md`](../../computations/INFRASTRUCTURE-AUDIT.md):
 
-### §3·A — `crt_markov.py` is std-channel only ([AUDIT-crt-k-level.md](../../folio-assistant/computations/AUDIT-crt-k-level.md))
+### §3·A — `crt_markov.py` is std-channel only ([AUDIT-crt-k-level.md](../../computations/AUDIT-crt-k-level.md))
 
 The CRT engine computes only the **standard** (2-dim) Wedderburn
 channel and only the **descended** term $|\Pi V_i^{\text{full}}|$.
-Per [AUDIT-crt-k-level.md line 37](../../folio-assistant/computations/AUDIT-crt-k-level.md):
+Per [AUDIT-crt-k-level.md line 37](../../computations/AUDIT-crt-k-level.md):
 
 > $\sum_i\Phi_q(|V_i^{\text{full}}|)$ — ✗ missing — **~99% of mass**
 > (per mass-endomorphism conj)
@@ -301,33 +301,33 @@ size of the missing tower. **The single largest compute fix.**
 
 ### §3·B — Wedderburn coverage at $H_{3A}(q)$
 
-[AUDIT-crt-k-level.md line 36](../../folio-assistant/computations/AUDIT-crt-k-level.md): "Wedderburn weights at $H_{3A}$ — ✗ uses $H_3$ weights — approximation". The
+[AUDIT-crt-k-level.md line 36](../../computations/AUDIT-crt-k-level.md): "Wedderburn weights at $H_{3A}$ — ✗ uses $H_3$ weights — approximation". The
 correct weights at level $3A$ require summing over **all** $\lambda
 \vdash 3A$. CRT polynomial reconstruction is the scalable path
-(per [INFRASTRUCTURE-AUDIT.md §Track A](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md)).
+(per [INFRASTRUCTURE-AUDIT.md §Track A](../../computations/INFRASTRUCTURE-AUDIT.md)).
 
-### §3·C — Word-shortcut undo functions ([INFRASTRUCTURE-AUDIT.md](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md))
+### §3·C — Word-shortcut undo functions ([INFRASTRUCTURE-AUDIT.md](../../computations/INFRASTRUCTURE-AUDIT.md))
 
 Levels 4 (shell), 5 (cross-shell), 6 (atom–electron), 7 (molecule)
 have **no** word shortcut and **no** undo-to-quark function. Until
 these exist, compute at A ≥ ~12 cannot be expanded to ground
 truth at level 2.
 
-### §3·D — Multi-level quadratic SDP ([INFRASTRUCTURE-AUDIT.md §Track C](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md))
+### §3·D — Multi-level quadratic SDP ([INFRASTRUCTURE-AUDIT.md §Track C](../../computations/INFRASTRUCTURE-AUDIT.md))
 
 `sdp_cross_channel.py` only handles level 3 (intra-nucleon adjacent
 pairs). Levels 4–7 cross-terms missing.
 
 ### §3·E — Symbolic-in-$q$ throughout
 
-[INFRASTRUCTURE-AUDIT.md §Track A](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md):
+[INFRASTRUCTURE-AUDIT.md §Track A](../../computations/INFRASTRUCTURE-AUDIT.md):
 all Markov / $V$ should be in $\mathbb{Z}[q^{\pm 1}]$ (sympy or CRT
 reconstruction), with $q_0$-substitution **only at the final step**.
 Currently the proton/neutron/atom paths substitute $q_0$ early.
 This is the single largest source of "fitted-feeling" numbers in
 the witness JSONs.
 
-### §3·F — GB-residue opaque axioms ([AUDIT-gb-residue-opaque-declarations.md](../../folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md))
+### §3·F — GB-residue opaque axioms ([AUDIT-gb-residue-opaque-declarations.md](../../computations/AUDIT-gb-residue-opaque-declarations.md))
 
 Six declarations (`gradedMarkovTrace`, `residueAtRoot`, the class
 field `spectral_decomposition`, `spectral_sum_finite`, the two
@@ -463,9 +463,9 @@ prediction at level $A$ requires:
 6. ❌ `crt_markov.py` covering **all** Wedderburn channels (sym +
    std + alt), at $H_{3A}$, with full $\Phi_q$-tower contribution
    beyond the descended term — currently std-only, descended-only
-   (~99% mass missing per [`AUDIT-crt-k-level.md`](../../folio-assistant/computations/AUDIT-crt-k-level.md)).
+   (~99% mass missing per [`AUDIT-crt-k-level.md`](../../computations/AUDIT-crt-k-level.md)).
 7. ❌ Word-shortcut undo functions for levels 4–7
-   ([INFRASTRUCTURE-AUDIT.md](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md)).
+   ([INFRASTRUCTURE-AUDIT.md](../../computations/INFRASTRUCTURE-AUDIT.md)).
 8. ❌ Symbolic-in-$q$ throughout, $q_0$-substitution only at final
    step.
 9. 🟢 **All non-calibration empirical/fitting flags resolved.**

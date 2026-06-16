@@ -17,7 +17,7 @@ LaTeX label: `prop:torus-knot-shell-binding`
 ## References
 - [manuscript] §6/torus-knot-shell-binding
 - [jones1987] https://doi.org/10.2307/1971403
-- Computation: folio-assistant/computations/qvalue-representation-theory.py
+- Computation: computations/qvalue-representation-theory.py
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with

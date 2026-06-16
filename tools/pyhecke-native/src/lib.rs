@@ -1659,7 +1659,7 @@ fn chi_lambda_all_partitions_mpfr(
 /// H_n(q), returned as a serialised ZHLaurent polynomial in (z, h)
 /// with BigInt-in-q^{1/2} coefficients.
 ///
-/// Mirrors `folio-assistant/computations/laurent_q_trace.py
+/// Mirrors `computations/laurent_q_trace.py
 /// tr_M_word_lq` exactly, but with BigInt arithmetic in Rust
 /// (no f64). Per CLAUDE.md §Precision goals L1 — every coefficient
 /// is exact; the Python caller evaluates at q₀ to mpmath.mpf at
@@ -1707,7 +1707,7 @@ fn tr_m_word_lq_clear_cache() {
 ///
 /// Tier 1.A of the compute-optimisation roadmap
 /// (`docs/audits/2026-05-20-compute-optimization-roadmap.md`): port
-/// of `folio-assistant/computations/hecke_laurent_fast.py`'s
+/// of `computations/hecke_laurent_fast.py`'s
 /// `incremental_reduced_element_fast` driver, addressing the 60-70%
 /// of wall on ⁶Li `tr_M_atomic` that the cProfile attributed to
 /// sympy `Rational` arithmetic inside the Python LaurentQ `__mul__`.

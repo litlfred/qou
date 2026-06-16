@@ -65,7 +65,7 @@ The agent's chain corresponds to "what the formula WOULD give if
 
 ### Alternative reading — agent might mean Picard-Lefschetz chain
 
-The Picard-Lefschetz formula in [`picard_lefschetz_thimble.py`](../../folio-assistant/computations/picard_lefschetz_thimble.py) does close numerically:
+The Picard-Lefschetz formula in [`picard_lefschetz_thimble.py`](../../computations/picard_lefschetz_thimble.py) does close numerically:
 
 ```
 m_p = Vol(𝔅_3) / ℏ_q² · A(q_0) · m_e   ≈   938.27 MeV   (6 ppm)
@@ -149,6 +149,6 @@ CAL-only (3-parameter).
 - [`docs/audits/2026-05-17-rho-vs-rho-K-paper-discrepancy.md`](2026-05-17-rho-vs-rho-K-paper-discrepancy.md)
 - [`docs/audits/2026-05-17-substrate-m-p-m-n-compute-audit.md`](2026-05-17-substrate-m-p-m-n-compute-audit.md)
 - [`docs/audits/2026-05-17-mu-u-mu-d-clarification-and-ell-1-investigation.md`](2026-05-17-mu-u-mu-d-clarification-and-ell-1-investigation.md)
-- [`folio-assistant/computations/probe_sdp_determines_pl_integration_limit.py`](../../folio-assistant/computations/probe_sdp_determines_pl_integration_limit.py)
-- [`folio-assistant/computations/probe_mu_q_ell_1_substrate.py`](../../folio-assistant/computations/probe_mu_q_ell_1_substrate.py)
+- [`computations/probe_sdp_determines_pl_integration_limit.py`](../../computations/probe_sdp_determines_pl_integration_limit.py)
+- [`computations/probe_mu_q_ell_1_substrate.py`](../../computations/probe_mu_q_ell_1_substrate.py)
 - `atomic-mass-gb-nf.md` line 71 (paper's own acknowledgment of open ρ_K)

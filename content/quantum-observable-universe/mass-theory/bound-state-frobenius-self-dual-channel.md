@@ -49,7 +49,7 @@ physical fact that $H_2$ has $J^{P} = 0^{+}$ ground state.
 ### Empirical signature in the witness
 
 At $q_0 \approx 1.110$
-([`delta-q-decoration.witness.json`](folio-assistant/computations/delta-q-decoration.witness.json)):
+([`delta-q-decoration.witness.json`](computations/delta-q-decoration.witness.json)):
 
 | $\lambda$ | $\chi_\lambda(\sigma_1\sigma_2\sigma_3)$ | $w_\lambda \cdot \chi_\lambda/f^\lambda$ |
 |---|---:|---:|

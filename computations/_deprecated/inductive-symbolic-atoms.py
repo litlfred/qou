@@ -21,7 +21,7 @@ Phase 3: Quark-level with quotient ideals
   - Apply I₁-I₇ to reduce toward n_terms = n_strands
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 inductive-symbolic-atoms.py
 """
 

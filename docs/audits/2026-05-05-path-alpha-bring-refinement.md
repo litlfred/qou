@@ -105,9 +105,9 @@ the witness data already records:
 
 | witness file | content |
 |--------------|---------|
-| [`gram-matrix-dual.witness.json`](../../folio-assistant/computations/gram-matrix-dual.witness.json) | Full $G^{-1}$ at $q_0$, plus dual coordinates of $\{e^+, d, \gamma, e^-\}$ |
-| [`knot-operator-table.witness.json`](../../folio-assistant/computations/knot-operator-table.witness.json) | NF decomposition $b_i \cdot \beta(T_{m,n}) \cdot b_j$ for $T_{m,n} \in \{T_{1,0}, T_{2,1}, T_{2,2}, T_{2,3}, T_{2,5}\}$ |
-| [`confinement-operator-selection.witness.json`](../../folio-assistant/computations/confinement-operator-selection.witness.json) | Per-particle (proton, neutron) candidate operator NF + crossing energy + demand profile |
+| [`gram-matrix-dual.witness.json`](../../computations/gram-matrix-dual.witness.json) | Full $G^{-1}$ at $q_0$, plus dual coordinates of $\{e^+, d, \gamma, e^-\}$ |
+| [`knot-operator-table.witness.json`](../../computations/knot-operator-table.witness.json) | NF decomposition $b_i \cdot \beta(T_{m,n}) \cdot b_j$ for $T_{m,n} \in \{T_{1,0}, T_{2,1}, T_{2,2}, T_{2,3}, T_{2,5}\}$ |
+| [`confinement-operator-selection.witness.json`](../../computations/confinement-operator-selection.witness.json) | Per-particle (proton, neutron) candidate operator NF + crossing energy + demand profile |
 
 The observed **channel-supply fingerprint** (count of NF basis
 pairs producing each output channel) shows monotone opening as
@@ -255,6 +255,6 @@ Six action items in **dependency order** with parallelizable phases:
 - Existing block (to refine):
   [`content/quantum-observable-universe/braids-and-knots/weak-spectral-completeness.md`](../../content/quantum-observable-universe/braids-and-knots/weak-spectral-completeness.md)
 - Witness inputs:
-  [`gram-matrix-dual.witness.json`](../../folio-assistant/computations/gram-matrix-dual.witness.json),
-  [`knot-operator-table.witness.json`](../../folio-assistant/computations/knot-operator-table.witness.json),
-  [`confinement-operator-selection.witness.json`](../../folio-assistant/computations/confinement-operator-selection.witness.json)
+  [`gram-matrix-dual.witness.json`](../../computations/gram-matrix-dual.witness.json),
+  [`knot-operator-table.witness.json`](../../computations/knot-operator-table.witness.json),
+  [`confinement-operator-selection.witness.json`](../../computations/confinement-operator-selection.witness.json)

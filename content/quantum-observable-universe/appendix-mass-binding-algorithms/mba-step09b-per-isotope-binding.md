@@ -69,7 +69,7 @@ B = p.value   # MeV
 *Binding-energy is selected by the `observable` keyword on the
 unified `predict()` entry point; there is no separate
 `binding_energy(...)` function. The mass-table sweep is the
-script [`canonical_mass_table_extended.py`](../../../folio-assistant/computations/canonical_mass_table_extended.py).
+script [`canonical_mass_table_extended.py`](../../../computations/canonical_mass_table_extended.py).
 Its `--method auto` routes per-atom over the mixed nucleon+composite
 set: free nucleons ($A < 2$) use the direct $H_3$ Hoefsmit path
 `laurent_q_rust` (pyhecke-native Rust + MPFR); composites ($A \geq 2$)
@@ -84,7 +84,7 @@ free nucleons and composites in one run.*
 ### Witness contract
 
 *Canonical witness:
-[`canonical-mass-table-242ppb.witness.json`](../../../folio-assistant/computations/canonical-mass-table-242ppb.witness.json).
+[`canonical-mass-table-242ppb.witness.json`](../../../computations/canonical-mass-table-242ppb.witness.json).
 Records per-isotope predicted $B(K)$, AME experimental anchor,
 the $\Delta_\lambda$ choice used, and a clear flag when
 $\Delta_\lambda$ is the open gate.*
@@ -100,7 +100,7 @@ observables. See [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](../..
 averaged crossing is **color-weighted**, $\sigma - h\,(1/2 - \delta/4)\cdot\mathbf{1}$
 with $\delta = $ `flavor_split_subleading`$(q_0)$ (the substrate
 $(m_n - m_p)/M_N$ flavor split), set in
-[`mass_at_3A_proper.atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py)
+[`mass_at_3A_proper.atom_braid_word_3A`](../../../computations/mass_at_3A_proper.py)
 (`pn_convention="bring_color_weighted"`). The p-p ($\sigma$) and
 n-n ($\sigma^{-1}$) interfaces are isospin-distinct and carry no
 extra color weight. The color shift is at the $\Delta m_{pn}$ scale
@@ -112,11 +112,11 @@ and [`docs/audits/2026-06-03-nuclear-a3-dpn-plan.md`](../../../docs/audits/2026-
 
 *Production wiring (atom-trace compute): the canonical color-weighted
 $\mathrm{tr}_M(\beta_{\text{atom}})$ feeding step 2b is assembled by
-[`tr_m_atom_via_transfer.tr_m_atom_zn`](../../../folio-assistant/computations/tr_m_atom_via_transfer.py),
+[`tr_m_atom_via_transfer.tr_m_atom_zn`](../../../computations/tr_m_atom_via_transfer.py),
 through which the binding consumers
-[`binding_canonical`](../../../folio-assistant/computations/binding_canonical.py)
+[`binding_canonical`](../../../computations/binding_canonical.py)
 (default path) and
-[`canonical_tr_m_via_branching`](../../../folio-assistant/computations/canonical_tr_m_via_branching.py)
+[`canonical_tr_m_via_branching`](../../../computations/canonical_tr_m_via_branching.py)
 ($A \geq 3$) now route — replacing the symbolic `tr_M_element` and
 the native `chi_lambda_all_partitions_mpfr` per-partition paths.
 Lossless (all $p(3A)$ partitions kept; the active-set truncation is a

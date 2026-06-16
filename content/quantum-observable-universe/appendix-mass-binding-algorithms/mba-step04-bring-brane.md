@@ -38,7 +38,7 @@ constants.*
 ### Python API entry point
 
 *The Bring constants are produced by the canonical script
-[`folio-assistant/computations/bring_chiral_fibre_figure.py`](../../../folio-assistant/computations/bring_chiral_fibre_figure.py),
+[`computations/bring_chiral_fibre_figure.py`](../../../computations/bring_chiral_fibre_figure.py),
 which emits the witness JSON consumed by every downstream step.
 The substrate parameter $q_0$ and its derived constants live in
 [`qou_substrate.constants`](../../../tools/qou-substrate/python/qou_substrate/constants.py).*
@@ -46,7 +46,7 @@ The substrate parameter $q_0$ and its derived constants live in
 ### Witness contract
 
 *Canonical witness:
-[`bring-chiral-fibre-figure.witness.json`](../../../folio-assistant/computations/bring-chiral-fibre-figure.witness.json).
+[`bring-chiral-fibre-figure.witness.json`](../../../computations/bring-chiral-fibre-figure.witness.json).
 Records the six torus-knot embeddings, their chirality, and the
 $S_5$ action.*
 

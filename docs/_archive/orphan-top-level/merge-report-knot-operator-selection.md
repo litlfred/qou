@@ -4,7 +4,7 @@
 
 - **94 commits** ahead of main
 - **69 new content files** (`.ts` + `.md` + `.lean` triples)
-- **52 new computation scripts** (Python witnesses under `folio-assistant/computations/`)
+- **52 new computation scripts** (Python witnesses under `computations/`)
 - **590 modified content files** (mostly `.md` prose edits and `.ts` manifest updates)
 
 ## New content blocks (this branch)

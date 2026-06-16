@@ -51,7 +51,7 @@ this gives a complete explicit construction of $Z(H_n(q))$.*
 > over $\mathrm{C}(n)$ (the union of contents across every $\mu$),
 > which is exactly the candidate set of joint JM eigenvalues across
 > all Wedderburn blocks.  Numerically verified to $\sim 10^{-50}$ in
-> [`explicit-central-idempotent-probe.witness.json`](../../../folio-assistant/computations/probes/explicit-central-idempotent-probe.witness.json):
+> [`explicit-central-idempotent-probe.witness.json`](../../../computations/probes/explicit-central-idempotent-probe.witness.json):
 > own-block residue $0$, off-block residue $0$, completeness
 > residue $0$ under the corrected scope; literal-scope off-block
 > residue $\approx 32$ at $q_0$ for $n = 3$.

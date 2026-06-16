@@ -96,8 +96,8 @@ be **derived, not fitted** to reproduce 373 K / 273 K (anti-pattern guard from
 
 ## Deliverables (this tranche)
 
-- `folio-assistant/computations/hbond_categorical_action.py` (+ witness): step 1–2.
-- `folio-assistant/computations/phase_transition_q_ideal_gas.py` (+ witness): step 3–4.
+- `computations/hbond_categorical_action.py` (+ witness): step 1–2.
+- `computations/phase_transition_q_ideal_gas.py` (+ witness): step 3–4.
 - A content block extending `prop:quantum-ideal-gas-law` to molecular phase
   transitions (proposition or remark, with Lean where provable), once the
   `S_q(H-bond)` map is in hand and the ratios validate.

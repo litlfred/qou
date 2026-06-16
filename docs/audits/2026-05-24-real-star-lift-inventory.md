@@ -60,10 +60,10 @@ typeclass conditions. CODATA stays in ℝ.
 ## 3. Substrate lift candidate inventory (concrete)
 
 A mechanical scan
-([`real_star_lift_candidate_scanner.py`](../../folio-assistant/computations/real_star_lift_candidate_scanner.py))
+([`real_star_lift_candidate_scanner.py`](../../computations/real_star_lift_candidate_scanner.py))
 across `content/quantum-observable-universe/` classifies every
 `.lean` file by lift eligibility. Witness:
-[`real-star-lift-candidates.witness.json`](../../folio-assistant/computations/real-star-lift-candidates.witness.json).
+[`real-star-lift-candidates.witness.json`](../../computations/real-star-lift-candidates.witness.json).
 
 | Bucket | Count | Definition |
 |---|---:|---|

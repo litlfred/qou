@@ -158,7 +158,7 @@ That is the next research target.
 
 ## Files modified by this audit's run
 
-- `folio-assistant/computations/y-lambda-wenzl-witness.json` —
+- `computations/y-lambda-wenzl-witness.json` —
   extended to n=2..30 (11 MB; raw 100-dps closed-form output)
-- `folio-assistant/computations/y-lambda-at-q0.witness.json` —
+- `computations/y-lambda-at-q0.witness.json` —
   extended to n=2..30 (7.7 MB; 50-dps production cache)

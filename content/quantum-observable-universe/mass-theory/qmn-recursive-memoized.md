@@ -67,7 +67,7 @@ n=21 vs $\sim 50$ TB for full seminormal.
 
 The current main has:
 
-- [`q_mn_canonical.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q_mn_canonical.py)
+- [`q_mn_canonical.py`](https://github.com/litlfred/qou/blob/main/computations/q_mn_canonical.py)
   — Halverson-Ram broken-strip q-MN for canonical $T_w$,
   $O(n^2)$ per $(\lambda, \mu)$.
 

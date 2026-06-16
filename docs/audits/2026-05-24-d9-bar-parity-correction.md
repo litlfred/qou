@@ -26,7 +26,7 @@ $$
 
 So `ℏ_q` is **mixed** (neither bar-sym nor bar-anti-sym), and `ℏ_q²` is also **mixed** (not bar-symmetric as claimed). The full product `ℏ_q² · h · [2]_q · (1 + ℏ_q³) / 3` evaluates as **mixed** under bar — NOT bar-anti-symmetric.
 
-Verified empirically by [`verify_isospin_bar_anomaly.py`](../../folio-assistant/computations/verify_isospin_bar_anomaly.py) at q₀:
+Verified empirically by [`verify_isospin_bar_anomaly.py`](../../computations/verify_isospin_bar_anomaly.py) at q₀:
 
 | Factor | Computed bar-parity (under q ↔ q⁻¹) |
 |--------|--------------------------------------|
@@ -56,7 +56,7 @@ The 305 ppm residue is the result of the **isospin** Z/2 swap acting on the cano
 | [`docs/audits/2026-05-24-isospin-categorical-source.md`](2026-05-24-isospin-categorical-source.md) §3 | merged in PR #1139 | replace four-factor "bar parity" decomposition with "isospin Z/2 parity"; remove the claim that ℏ_q² is bar-symmetric |
 | [`conj:isospin-from-canonical-bowtie`](../../content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md) | merged in PR #1162 | same correction; replace "bar-anti-symmetric residue" with "isospin-Z/2-anti-symmetric residue" or "h-leading residue under canonical isospin swap" |
 | [`docs/duality-tracker.md`](../duality-tracker.md) D9 row | merged in PR #1162 | update the closure-path description to refer to isospin Z/2 not bar |
-| [`_li_2_q_util.flavor_split_subleading`](../../folio-assistant/computations/_li_2_q_util.py) closed form | unchanged | The 305 ppm match is empirically correct; the FORM of the closed form is correct; only the bar-parity classification was wrong |
+| [`_li_2_q_util.flavor_split_subleading`](../../computations/_li_2_q_util.py) closed form | unchanged | The 305 ppm match is empirically correct; the FORM of the closed form is correct; only the bar-parity classification was wrong |
 
 ## §Slot J discipline self-validation
 
@@ -78,4 +78,4 @@ The flip side — wrongly claiming a quantity IS bar-anti-symmetric when it's ac
 - [`docs/audits/2026-05-24-isospin-categorical-source.md`](2026-05-24-isospin-categorical-source.md) — the doc this corrects
 - [`conj:isospin-from-canonical-bowtie`](../../content/quantum-observable-universe/braids-and-knots/isospin-from-canonical-bowtie.md) — the conj block this corrects
 - [`.claude/skills/local/canonical-watcher.md`](../../.claude/skills/local/canonical-watcher.md) §Slot J — the discipline rule this correction validates
-- [`verify_isospin_bar_anomaly.py`](../../folio-assistant/computations/verify_isospin_bar_anomaly.py) — the verification script that surfaced the bug
+- [`verify_isospin_bar_anomaly.py`](../../computations/verify_isospin_bar_anomaly.py) — the verification script that surfaced the bug

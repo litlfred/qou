@@ -126,7 +126,7 @@ expansion:
 ```
 
 Empirical verification per probe sequence:
-1. [`probe_q_beta_per_irrep_cos.py`](../../folio-assistant/computations/probe_q_beta_per_irrep_cos.py) — V_(2,1) character + KL decategorification.
-2. [`probe_q_beta_three_irrep_closed_form.py`](../../folio-assistant/computations/probe_q_beta_three_irrep_closed_form.py) — 1-d closed forms (rep-theory triviality).
-3. [`probe_q_beta_operator_valued_N1.py`](../../folio-assistant/computations/probe_q_beta_operator_valued_N1.py) — Kashiwara $\tilde f_1$ at N=1.
-4. [`probe_q_beta_operator_valued_N2.py`](../../folio-assistant/computations/probe_q_beta_operator_valued_N2.py) — geometric-tail N=2 (Macdonald-like).
+1. [`probe_q_beta_per_irrep_cos.py`](../../computations/probe_q_beta_per_irrep_cos.py) — V_(2,1) character + KL decategorification.
+2. [`probe_q_beta_three_irrep_closed_form.py`](../../computations/probe_q_beta_three_irrep_closed_form.py) — 1-d closed forms (rep-theory triviality).
+3. [`probe_q_beta_operator_valued_N1.py`](../../computations/probe_q_beta_operator_valued_N1.py) — Kashiwara $\tilde f_1$ at N=1.
+4. [`probe_q_beta_operator_valued_N2.py`](../../computations/probe_q_beta_operator_valued_N2.py) — geometric-tail N=2 (Macdonald-like).

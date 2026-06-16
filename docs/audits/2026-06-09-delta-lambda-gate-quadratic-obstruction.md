@@ -14,7 +14,7 @@ not a seventh fit ansatz (cf. CLAUDE.md "Δ_λ gate (Track A blocker)").
 > **route-specific to the H₃-local representation; it does NOT block the
 > canonical Δ_λ binding closure.** On the canonical (matrix-M) object the
 > required Δ is **mild** (O(1–10), per-nucleus), not 10^459 — see
-> [`atom_vhyp_closure_matrix_m.py`](../../folio-assistant/computations/atom_vhyp_closure_matrix_m.py)
+> [`atom_vhyp_closure_matrix_m.py`](../../computations/atom_vhyp_closure_matrix_m.py)
 > and its witness. The text below is retained as the (still-correct)
 > characterization of the *H₃-local route's* failure.
 
@@ -25,12 +25,12 @@ The per-isotope binding law is
 $$ B(K) = m_e \sum_\lambda y_\lambda\, \chi^\lambda(\beta_K)\, \Delta_\lambda(K). $$
 
 Using the overflow-free Wedderburn-block computation from the
-[SDP-v2 probe](../../folio-assistant/computations/all_nuclides_wedderburn_spectral_v2.py)
+[SDP-v2 probe](../../computations/all_nuclides_wedderburn_spectral_v2.py)
 (40-dps mpmath block images of `build_atom_nf`, all 3558 AME nuclides),
 this analysis
-([`delta_lambda_feed_analysis.py`](../../folio-assistant/computations/delta_lambda_feed_analysis.py),
+([`delta_lambda_feed_analysis.py`](../../computations/delta_lambda_feed_analysis.py),
 witness
-[`delta-lambda-feed-analysis.witness.json`](../../folio-assistant/computations/delta-lambda-feed-analysis.witness.json))
+[`delta-lambda-feed-analysis.witness.json`](../../computations/delta-lambda-feed-analysis.witness.json))
 characterizes the per-block χ_λ(a) against the AME binding B(A,Z) for the
 N = 3554 nuclei with A ≥ 2 and B > 0.
 

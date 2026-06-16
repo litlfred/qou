@@ -34,7 +34,7 @@
     "mpmath": "1.3.0",
     "clarabel": "0.11.1"
   },
-  "description": "I7 audit per local/compute-integration-watcher: every folio-assistant/computations/*.witness.json with a label-shaped `contentBlock` is cross-checked against the git-log mtime of its `.md` sibling.  A witness is stale if its `.md` was modified >7 days after the witness was last committed.  Operationalises the 86-hit I7 count from the 2026-05-18 idle sweep (PR #737).",
+  "description": "I7 audit per local/compute-integration-watcher: every computations/*.witness.json with a label-shaped `contentBlock` is cross-checked against the git-log mtime of its `.md` sibling.  A witness is stale if its `.md` was modified >7 days after the witness was last committed.  Operationalises the 86-hit I7 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I7 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "stale_threshold_days": 7,

@@ -40,7 +40,7 @@ USAGE:
         | tee /tmp/qbeta_delta_am.log
 
 Outputs:
-    folio-assistant/computations/qbeta-habiro-delta-am-factorization.witness.json
+    computations/qbeta-habiro-delta-am-factorization.witness.json
 """
 from __future__ import annotations
 

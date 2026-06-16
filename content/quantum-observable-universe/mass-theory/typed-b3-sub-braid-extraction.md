@@ -42,8 +42,8 @@ The single open axiom is:
 > case.
 
 This is **empirically verified** via two probe runs:
-- [`probe_q_beta_cat_per_factor_decomposition.py`](../../folio-assistant/computations/q-beta-cat-per-factor-decomposition.witness.json) — F_3's ε^6 leading coefficient is **exactly** $-3\sqrt{3}/4 = -2 \cdot b(1)^3$.
-- [`probe_q_beta_operator_valued_N3.py`](../../folio-assistant/computations/q-beta-operator-valued-N3.witness.json) — empirical residual after N=3 is $-0.0066$ ppm (112$\times$ tightening), validating the magnitude.
+- [`probe_q_beta_cat_per_factor_decomposition.py`](../../computations/q-beta-cat-per-factor-decomposition.witness.json) — F_3's ε^6 leading coefficient is **exactly** $-3\sqrt{3}/4 = -2 \cdot b(1)^3$.
+- [`probe_q_beta_operator_valued_N3.py`](../../computations/q-beta-operator-valued-N3.witness.json) — empirical residual after N=3 is $-0.0066$ ppm (112$\times$ tightening), validating the magnitude.
 
 The Lean discharge of this axiom requires:
 

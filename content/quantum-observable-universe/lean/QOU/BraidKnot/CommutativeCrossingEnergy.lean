@@ -11,7 +11,7 @@ import Mathlib.Tactic
 binding-scaling derivation.
 
 The Path A pipeline (commits `f9f25b5f`, `23e447dc`, the script
-`folio-assistant/computations/per_irrep_pole_atom.py`) performs a
+`computations/per_irrep_pole_atom.py`) performs a
 symbolic Hoefsmit pole-order analysis on the canonical Markov trace
 of the atomic braid $\beta_{Z,N}$, yielding the closed-form
 pole-order
@@ -57,7 +57,7 @@ substantial Hecke / representation-theory machinery beyond the
 present scope. The Path A pipeline (`per_irrep_pole_atom.py`)
 witnesses the value substrate-derivedly; the closed form below is
 its substrate-derived output. -/
--- Ref: [manuscript] folio-assistant/computations/per_irrep_pole_atom.py
+-- Ref: [manuscript] computations/per_irrep_pole_atom.py
 def ord_u_zero_trM (Z N : ℕ) : ℕ := 18 * Z + 21 * N + 1
 
 /-- **Path A pipeline closed-form** (GAP-B-1 closure, 2026-05-09):
@@ -77,8 +77,8 @@ $\leq 0.30\%$ across $Z = 1\ldots 20$, recorded in
 `rho-k-pair-gen-v2-wedderburn.witness.json`.
 
 **Theorem** (was previously an axiom). Discharged by `def` above. -/
--- Ref: [manuscript] folio-assistant/computations/per_irrep_pole_atom.py
--- Ref: [manuscript] folio-assistant/computations/rho-k-pair-gen-v2-wedderburn.witness.json
+-- Ref: [manuscript] computations/per_irrep_pole_atom.py
+-- Ref: [manuscript] computations/rho-k-pair-gen-v2-wedderburn.witness.json
 theorem ord_u_zero_trM_eq (Z N : ℕ) : ord_u_zero_trM Z N = 18 * Z + 21 * N + 1 := rfl
 
 /-- **Proton** ($Z=1$, $N=0$): $\mathrm{ord}_{u=0}(\mathrm{tr}_M) = 19$. -/

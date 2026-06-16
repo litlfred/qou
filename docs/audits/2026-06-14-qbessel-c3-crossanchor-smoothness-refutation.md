@@ -15,7 +15,7 @@ amplitude in the bar-odd Hahn–Exton / Jacobi–Anger object `sinh(x·sinh η)`
 the fixed-ℓ `sinh(ℓη)/u^k` f-map (PR #1887 swing-lock). No scan was run — a
 one-line structural bound prunes the whole real-`x` class (formalize-first).
 
-- **Probe:** [`folio-assistant/computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py`](../../folio-assistant/computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py)
+- **Probe:** [`computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py`](../../computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py)
   → `qbeta-qbessel-crossanchor-smoothness-refutation.witness.json` (5/5 assertions, 50 dps).
 
 ## The argument

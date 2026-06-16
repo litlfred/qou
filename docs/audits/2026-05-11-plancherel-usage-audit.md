@@ -52,7 +52,7 @@ The framework's three weight families, per user clarification:
 
 These three agree only at $q = 1$. At $q_0 \approx 1.1097$ they
 disagree by factors as large as 2.5× per the witness
-[`probe-wedderburn-weight-scheme.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json).
+[`probe-wedderburn-weight-scheme.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/probe-wedderburn-weight-scheme.witness.json).
 
 ---
 
@@ -133,7 +133,7 @@ asserts:
 In particular $|y_\lambda| = |w_\lambda|$ everywhere.
 
 The in-repo audit witness
-[`probe-wedderburn-weight-scheme.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json)
+[`probe-wedderburn-weight-scheme.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/probe-wedderburn-weight-scheme.witness.json)
 computes both at $q_0 \approx 1.1097$ and shows them genuinely
 distinct:
 
@@ -148,7 +148,7 @@ distinct:
 These ratios are not signs. $|y_\lambda| \neq |w_\lambda|$.
 
 The probe script's own description
-([`probe_wedderburn_weight_scheme.py:1–35`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/probe_wedderburn_weight_scheme.py))
+([`probe_wedderburn_weight_scheme.py:1–35`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/probe_wedderburn_weight_scheme.py))
 states this is exactly the suspected "hidden fitting" question:
 
 > The codebase uses TWO different Wedderburn weight schemes
@@ -157,7 +157,7 @@ states this is exactly the suspected "hidden fitting" question:
 > in the WEIGHT CHOICE.
 
 Another Python author independently flags the same conflict in
-[`hecke_3a_weights.py:146–162`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/hecke/hecke_3a_weights.py),
+[`hecke_3a_weights.py:146–162`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/hecke/hecke_3a_weights.py),
 explicitly warning:
 
 > This is the **symmetric Plancherel weight** [...], NOT the
@@ -182,10 +182,10 @@ $$\sum_\lambda d_\lambda \cdot y_\lambda = 1$$
 
 as "Plancherel completeness":
 
-- [`alpha_k_macdonald_closed_form.py:35,135,173,179`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/alpha/alpha_k_macdonald_closed_form.py) — function `plancherel_sum`, assertion `plancherel_completeness_n{n}`. The docstring at line 136 is internally correct ("must equal 1 by Markov-axiom (M3) `tr_M(1)=1`") but the public name is "plancherel".
-- [`y_lambda_symbolic_validate.py:13,151,338`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/y_lambda_symbolic_validate.py) — function `test_2_plancherel`.
-- [`y_lambda_wenzl_bridge.py:441`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/y_lambda_wenzl_bridge.py) — function `plancherel_sum_numeric`.
-- [`codata_reconciliation.py:226`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/codata_reconciliation.py) — comment "Plancherel completeness $\sum d_\lambda y_\lambda = 1$".
+- [`alpha_k_macdonald_closed_form.py:35,135,173,179`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/alpha/alpha_k_macdonald_closed_form.py) — function `plancherel_sum`, assertion `plancherel_completeness_n{n}`. The docstring at line 136 is internally correct ("must equal 1 by Markov-axiom (M3) `tr_M(1)=1`") but the public name is "plancherel".
+- [`y_lambda_symbolic_validate.py:13,151,338`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/y_lambda_symbolic_validate.py) — function `test_2_plancherel`.
+- [`y_lambda_wenzl_bridge.py:441`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/y_lambda_wenzl_bridge.py) — function `plancherel_sum_numeric`.
+- [`codata_reconciliation.py:226`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/codata_reconciliation.py) — comment "Plancherel completeness $\sum d_\lambda y_\lambda = 1$".
 
 This identity is the **Markov axiom (M3)** $\mathrm{tr}_M(1) = 1$
 applied to the Wedderburn decomposition $\mathrm{tr}_M = \sum_\lambda
@@ -232,19 +232,19 @@ Active call sites that compute or rely on a Plancherel-labelled weight:
 
 | Script | Formula used | Verdict |
 |--------|--------------|---------|
-| [`canonical_tower.py:147,490`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/canonical_tower.py) | $w_\lambda = \dim_q^2 / [n]_q!$ | Tower computation — per audit anchor should use classical Plancherel. Uses q-deformed; sums to $\neq 1$. |
-| [`canonical_plus_multibrane.py:88,103`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/canonical_plus_multibrane.py) | $w_\lambda = \dim_q^2 / [n]_q!$ | Same issue as above. |
-| [`chirality_avg_content.py:121`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/chirality_avg_content.py), [`chirality_avg_content_atomic.py:211,235,269`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/chirality_avg_content_atomic.py), [`chirality_avg_content_chiral.py:179`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/chirality_avg_content_chiral.py) | $\dim_q^2 / [n]_q!$ | Apply q-deformed weight inside an averaging ratio; check whether the ratio is invariant under the renormalisation that fixes $\sum = 1$. If not, the chirality average is biased by $\sim 1.51$ factor at $q_0, n=12$. |
-| [`close_321_weinberg_gap.py:255`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/close_321_weinberg_gap.py) | $d_q^2 / [n]_q!$ | Mass-formula evaluation at $(3,2,1)$ stratum; same issue. |
-| [`build_term7_s_crystal_4he_chain.py:127–139`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/build_term7_s_crystal_4he_chain.py) | $w_\lambda = f_\lambda^2 / n!$ (**classical**) | **Correct** for Plancherel. Aligns with `plancherel-weight-boundedness.md`. |
-| [`hecke_3a_weights.py:145–167`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/hecke/hecke_3a_weights.py) | $d_q^2 / [n]_q!$ | Returns the q-deformed weight but **docstring explicitly warns this is not Markov $y_\lambda$**. Honest. |
-| [`hecke_wedderburn.py:144`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/hecke/hecke_wedderburn.py), [`hoefsmit_symbolic.py:134`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/hoefsmit_symbolic.py), [`jet_knot_invariants.py:138`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/jet_knot_invariants.py) | $d_q^2 / [n]_q!$ | Same q-deformed weight; no normalisation guard. |
-| [`probe_wedderburn_weight_scheme.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/probe_wedderburn_weight_scheme.py) | Scheme A ($w$) vs Scheme B ($y$) | **Audit probe** that explicitly tests the conflict and produces the witness used in Finding C. |
-| [`probe_proton_with_wenzl_weights.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/probe_proton_with_wenzl_weights.py) | Wenzl $y_\lambda$ | Uses the right Markov family for the proton. |
-| [`alpha_k_macdonald_closed_form.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/alpha/alpha_k_macdonald_closed_form.py), [`y_lambda_symbolic_validate.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/y_lambda_symbolic_validate.py), [`y_lambda_wenzl_bridge.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/y_lambda_wenzl_bridge.py) | $\sum y_\lambda d_\lambda = 1$ called "Plancherel completeness" | **Misnamed but numerically valid**. Identity is Markov axiom M3 (Finding D). |
-| [`mass_at_3A_proper.py:115,303,405`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/mass_at_3A_proper.py) | `normalized_plancherel_weights_3A` rescales $d_q^2/[n]_q!$ to force $\sum = 1$ | **Marked DEPRECATED** — patch around the non-normalised q-deformed weight. The fact that a renormalisation was needed is itself the witness that q-deformed $\neq$ Plancherel. |
-| [`hecke_core.py:2622,2948,3063`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/substrate/hecke_core.py) | "LEGACY Plancherel-weighted form" | Multiple deprecated paths. |
-| [`light_isotope_sweep.py:97–177`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/sweeps/light_isotope_sweep.py) | `convention="plancherel"` (LEGACY) vs `"wenzl-schur"` | Explicitly exposes both conventions as a switch — already implements the distinction the canonical-weight block denies. |
+| [`canonical_tower.py:147,490`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/canonical_tower.py) | $w_\lambda = \dim_q^2 / [n]_q!$ | Tower computation — per audit anchor should use classical Plancherel. Uses q-deformed; sums to $\neq 1$. |
+| [`canonical_plus_multibrane.py:88,103`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/canonical_plus_multibrane.py) | $w_\lambda = \dim_q^2 / [n]_q!$ | Same issue as above. |
+| [`chirality_avg_content.py:121`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/chirality_avg_content.py), [`chirality_avg_content_atomic.py:211,235,269`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/chirality_avg_content_atomic.py), [`chirality_avg_content_chiral.py:179`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/chirality_avg_content_chiral.py) | $\dim_q^2 / [n]_q!$ | Apply q-deformed weight inside an averaging ratio; check whether the ratio is invariant under the renormalisation that fixes $\sum = 1$. If not, the chirality average is biased by $\sim 1.51$ factor at $q_0, n=12$. |
+| [`close_321_weinberg_gap.py:255`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/close_321_weinberg_gap.py) | $d_q^2 / [n]_q!$ | Mass-formula evaluation at $(3,2,1)$ stratum; same issue. |
+| [`build_term7_s_crystal_4he_chain.py:127–139`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/build_term7_s_crystal_4he_chain.py) | $w_\lambda = f_\lambda^2 / n!$ (**classical**) | **Correct** for Plancherel. Aligns with `plancherel-weight-boundedness.md`. |
+| [`hecke_3a_weights.py:145–167`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/hecke/hecke_3a_weights.py) | $d_q^2 / [n]_q!$ | Returns the q-deformed weight but **docstring explicitly warns this is not Markov $y_\lambda$**. Honest. |
+| [`hecke_wedderburn.py:144`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/hecke/hecke_wedderburn.py), [`hoefsmit_symbolic.py:134`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/hoefsmit_symbolic.py), [`jet_knot_invariants.py:138`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/jet_knot_invariants.py) | $d_q^2 / [n]_q!$ | Same q-deformed weight; no normalisation guard. |
+| [`probe_wedderburn_weight_scheme.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/probe_wedderburn_weight_scheme.py) | Scheme A ($w$) vs Scheme B ($y$) | **Audit probe** that explicitly tests the conflict and produces the witness used in Finding C. |
+| [`probe_proton_with_wenzl_weights.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/probe_proton_with_wenzl_weights.py) | Wenzl $y_\lambda$ | Uses the right Markov family for the proton. |
+| [`alpha_k_macdonald_closed_form.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/alpha/alpha_k_macdonald_closed_form.py), [`y_lambda_symbolic_validate.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/y_lambda_symbolic_validate.py), [`y_lambda_wenzl_bridge.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/y_lambda_wenzl_bridge.py) | $\sum y_\lambda d_\lambda = 1$ called "Plancherel completeness" | **Misnamed but numerically valid**. Identity is Markov axiom M3 (Finding D). |
+| [`mass_at_3A_proper.py:115,303,405`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/mass_at_3A_proper.py) | `normalized_plancherel_weights_3A` rescales $d_q^2/[n]_q!$ to force $\sum = 1$ | **Marked DEPRECATED** — patch around the non-normalised q-deformed weight. The fact that a renormalisation was needed is itself the witness that q-deformed $\neq$ Plancherel. |
+| [`hecke_core.py:2622,2948,3063`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/substrate/hecke_core.py) | "LEGACY Plancherel-weighted form" | Multiple deprecated paths. |
+| [`light_isotope_sweep.py:97–177`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/sweeps/light_isotope_sweep.py) | `convention="plancherel"` (LEGACY) vs `"wenzl-schur"` | Explicitly exposes both conventions as a switch — already implements the distinction the canonical-weight block denies. |
 
 ---
 
@@ -327,7 +327,7 @@ Either way the tautology should go.
 
 ### R6. Audit downstream callers for ratio invariance
 
-The four chirality scripts ([`chirality_avg_content*.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/)) compute
+The four chirality scripts ([`chirality_avg_content*.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/)) compute
 ratios $\sum w_\lambda \chi_\lambda c_\lambda / \sum w_\lambda
 \chi_\lambda$. Such ratios are invariant under the renormalisation
 $w_\lambda \to w_\lambda / Z$ that fixes the sum-to-1, so they may
@@ -344,9 +344,9 @@ needed to estimate the perturbation to downstream observables.
 ## Cross-references
 
 - Pattern catalogue: [`.claude/skills/local/compute-audit.md`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/.claude/skills/local/compute-audit.md) §P2.
-- In-repo audit witness: [`probe-wedderburn-weight-scheme.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json).
-- Honest in-script flag: [`hecke_3a_weights.py:146`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/hecke/hecke_3a_weights.py).
-- Convention switch already implemented: [`light_isotope_sweep.py:176`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/sweeps/light_isotope_sweep.py).
+- In-repo audit witness: [`probe-wedderburn-weight-scheme.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/probe-wedderburn-weight-scheme.witness.json).
+- Honest in-script flag: [`hecke_3a_weights.py:146`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/hecke/hecke_3a_weights.py).
+- Convention switch already implemented: [`light_isotope_sweep.py:176`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/sweeps/light_isotope_sweep.py).
 
 ---
 
@@ -421,7 +421,7 @@ the larger restructure (R3 / R6 deferred). Specifically:
 
 - [`wedderburn-weight-canonical.ts`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/content/quantum-observable-universe/braids-and-knots/wedderburn-weight-canonical.ts):
   - Title updated. `computation.script` path corrected from
-    `folio-assistant/computations/bw_wenzl_shadow_equivalence.py`
+    `computations/bw_wenzl_shadow_equivalence.py`
     to `…/computations/_deprecated/bw_wenzl_shadow_equivalence.py`
     (the script was already silently moved). `uses[]` now
     includes `prop:plancherel-weight-boundedness`. Tag
@@ -431,10 +431,10 @@ the larger restructure (R3 / R6 deferred). Specifically:
 
 Pure rename plus backward-compat alias:
 
-- [`alpha_k_macdonald_closed_form.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/alpha/alpha_k_macdonald_closed_form.py): `plancherel_sum` → `markov_m3_sum`; assertion name `plancherel_completeness_n{n}` → `markov_m3_completeness_n{n}`; module docstring updated.
-- [`y_lambda_wenzl_bridge.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/y_lambda_wenzl_bridge.py): `plancherel_sum_numeric` → `markov_m3_sum_numeric`.
-- [`y_lambda_symbolic_validate.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/y_lambda_symbolic_validate.py): `test_2_plancherel` → `test_2_markov_m3`; `DPS_PLANCHEREL` → `DPS_MARKOV_M3`; `TOL_PLANCHEREL` → `TOL_MARKOV_M3`; tolerance-table key `"plancherel"` → `"markov_m3"`; docstring updated.
-- [`codata_reconciliation.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/codata_reconciliation.py): assertion-name prefix accepts both old (`plancherel_completeness_n*`) and new (`markov_m3_completeness_n*`) during transition.
+- [`alpha_k_macdonald_closed_form.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/alpha/alpha_k_macdonald_closed_form.py): `plancherel_sum` → `markov_m3_sum`; assertion name `plancherel_completeness_n{n}` → `markov_m3_completeness_n{n}`; module docstring updated.
+- [`y_lambda_wenzl_bridge.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/y_lambda_wenzl_bridge.py): `plancherel_sum_numeric` → `markov_m3_sum_numeric`.
+- [`y_lambda_symbolic_validate.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/y_lambda_symbolic_validate.py): `test_2_plancherel` → `test_2_markov_m3`; `DPS_PLANCHEREL` → `DPS_MARKOV_M3`; `TOL_PLANCHEREL` → `TOL_MARKOV_M3`; tolerance-table key `"plancherel"` → `"markov_m3"`; docstring updated.
+- [`codata_reconciliation.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/codata_reconciliation.py): assertion-name prefix accepts both old (`plancherel_completeness_n*`) and new (`markov_m3_completeness_n*`) during transition.
 
 Backward-compat aliases keep pre-rename callers working until the
 next witness regeneration; mark for removal after the next CI run
@@ -460,9 +460,9 @@ refreshes the witness JSON.
 ### R6 closure — chirality scripts are ratio-invariant
 
 All three chirality scripts —
-[`chirality_avg_content.py:142–143`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/chirality_avg_content.py),
-[`chirality_avg_content_chiral.py:189–190`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/chirality_avg_content_chiral.py),
-[`chirality_avg_content_atomic.py:213–214, 235, 269–273`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/chirality_avg_content_atomic.py)
+[`chirality_avg_content.py:142–143`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/chirality_avg_content.py),
+[`chirality_avg_content_chiral.py:189–190`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/chirality_avg_content_chiral.py),
+[`chirality_avg_content_atomic.py:213–214, 235, 269–273`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/chirality_avg_content_atomic.py)
 — compute the chirality average as a **ratio**
 
 $$

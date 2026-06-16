@@ -74,7 +74,7 @@ The doubly-magic case is exactly this rectangular-spike limit.
 
 The substrate-determined prefactor for $^4_2\mathrm{He}$ is
 $\rho_F = 2$, sourced from the canonical
-[`binding-ladder-catalog.py`](../../folio-assistant/computations/binding_ladder_catalog.py)
+[`binding-ladder-catalog.py`](../../computations/binding_ladder_catalog.py)
 entry `2·m_e·4·Vol(L6a4)`. The categorical derivation of the integer
 $2$ — vs. $[2]_q$, $2\cos(\pi/3)$, or another natural candidate — is
 not closed in this proposition; the value is consumed as an input
@@ -83,9 +83,9 @@ hypothesis on the
 CLAUDE.md §3b-cond.
 ## Numerical witness
 
-[`folio-assistant/computations/binding_alpha_shift_witness.py`](../../folio-assistant/computations/binding_alpha_shift_witness.py)
+[`computations/binding_alpha_shift_witness.py`](../../computations/binding_alpha_shift_witness.py)
 emits a comparison witness showing the alpha-shift vs.
 magic-A predictions side-by-side for $A \in \{2, 3, 4\}$. The
 output JSON
-[`binding-alpha-shift-witness.witness.json`](../../folio-assistant/computations/binding-alpha-shift-witness.witness.json)
+[`binding-alpha-shift-witness.witness.json`](../../computations/binding-alpha-shift-witness.witness.json)
 quantifies the 80$\times$ gap closure for $^4_2\mathrm{He}$.

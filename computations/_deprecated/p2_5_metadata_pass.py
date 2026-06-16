@@ -43,7 +43,7 @@ numerical content. The pass is **idempotent**: re-running adds the
 annotation if missing, updates the audit-version stamp if present.
 
 Usage:
-    python3 folio-assistant/computations/p2_5_metadata_pass.py [--dry-run]
+    python3 computations/p2_5_metadata_pass.py [--dry-run]
 
 Refs:
   docs/audits/2026-05-02-p2-5-symbolic-q-audit.md

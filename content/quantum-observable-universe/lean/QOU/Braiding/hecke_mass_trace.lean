@@ -35,7 +35,7 @@ universe u
 /-- Abstract context for the `hecke_mass_trace` claim — typed against
     the existing `QOU.Hecke.MarkovTrace` infrastructure. -/
 class HeckeMassTraceContext where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- The coefficient ring `R`. -/
   R : Type u
   ringR : CommRing R

@@ -55,7 +55,7 @@ By Path C derivation, **the same acceptance applies to m_n and Δ_pn**:
 
 1. **Production wiring unchanged.** m_n + Δ_pn are still computed via
    Path C in
-   [`per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json).
+   [`per-observable-100x-status.witness.json`](../../computations/per-observable-100x-status.witness.json).
    No fitted form is wired; the 185.4× / 163.3× miss factors remain
    the honest production values.
 

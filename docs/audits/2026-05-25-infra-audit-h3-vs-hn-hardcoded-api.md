@@ -195,7 +195,7 @@ impractical; needs closed-form q-Schur principal specialisation
 
 - [`docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md`](2026-05-25-h3-vs-h3a-legacy-bug-audit.md) — sibling's original audit (commit `c70707397`)
 - `tools/pyhecke/python/pyhecke/atom.py:446-587` — the bug site + deprecation warning (commit `c5e4a575a`)
-- `folio-assistant/computations/mass_at_3A_proper.py` — canonical replacement (orphaned)
-- `folio-assistant/computations/pyhecke_jones_markov_atlas.py` — my generic-n atlas (Layer C bypass)
+- `computations/mass_at_3A_proper.py` — canonical replacement (orphaned)
+- `computations/pyhecke_jones_markov_atlas.py` — my generic-n atlas (Layer C bypass)
 - `tools/pyhecke-native/src/lib.rs` — Rust ABI surface (Layer B target)
 - PR [#1241](https://github.com/litlfred/qou/pull/1241) — sibling's pyhecke wire-up PR

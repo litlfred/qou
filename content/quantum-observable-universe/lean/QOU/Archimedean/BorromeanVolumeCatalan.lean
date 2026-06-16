@@ -9,7 +9,7 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral
 
 Formalises the Adams 1985 result `Vol(𝓑₃) = 8 · G` where `G` is
 Catalan's constant. This is the categorical Lean theorem that the
-production code (`folio-assistant/computations/m_p_borromean_verification_50dps.py`,
+production code (`computations/m_p_borromean_verification_50dps.py`,
 `_li_2_q_util.vol_density_borromean`) currently uses as a literal
 `mp.catalan` numerical value.
 
@@ -145,7 +145,7 @@ theorem regular_ideal_octahedron_volume :
 
     This is the categorical identity behind the production literal
     `vol_borromean ≈ 7.32772475341775` in
-    `folio-assistant/computations/_li_2_q_util.vol_density_borromean`
+    `computations/_li_2_q_util.vol_density_borromean`
     (where `mp.catalan ≈ 0.9159655942` is used).
 
     The narrative reference is the open problem
@@ -190,7 +190,7 @@ theorem vol_B3_numerical_bounds_via_catalan :
     This is the LEADING factor of the canonical mass formula
     `m(𝓑₃) = m_e · VolDensity(𝓑₃) = m_e · (8G/ℏ_q²) · linking_weight(q)`.
 
-    -- Ref: [manuscript] see `folio-assistant/computations/_li_2_q_util.vol_density_borromean`
+    -- Ref: [manuscript] see `computations/_li_2_q_util.vol_density_borromean`
             for the production implementation; this theorem is the
             categorical statement of its first factor. -/
 theorem geom_leading_eq_8G_over_hbar_q_sq (q : ℝ) (hq : q > 1) :

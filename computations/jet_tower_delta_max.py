@@ -22,7 +22,7 @@ Output: jet-tower-delta-max.witness.json
 Refs:
   - content/.../braids-and-knots/jet-tower-uniform-delta-max.md
   - content/.../braids-and-knots/jet-tower-convergence.md
-  - folio-assistant/computations/unified_lift.py
+  - computations/unified_lift.py
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir

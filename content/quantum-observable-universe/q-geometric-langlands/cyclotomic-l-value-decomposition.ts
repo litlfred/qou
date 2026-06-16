@@ -10,9 +10,9 @@ export default proposition({
   },
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/cl_n_l_value_decomposition.py",
+    script: "computations/cl_n_l_value_decomposition.py",
     witness:
-      "folio-assistant/computations/cl-n-l-value-decomposition.witness.json",
+      "computations/cl-n-l-value-decomposition.witness.json",
     status: "verified",
   },
   cites: ["bloch2000", "zagier1986"],

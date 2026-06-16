@@ -11,7 +11,7 @@ downstream files; full line-by-line audit is queued for follow-up.
 **`prop:atomic-mass-via-rho-k` is not a defined content block.**
 
 The script
-[`atomic_mass_via_rho_k.py`](../../folio-assistant/computations/atomic_mass_via_rho_k.py)
+[`atomic_mass_via_rho_k.py`](../../computations/atomic_mass_via_rho_k.py)
 references this label as its `contentBlock` field in the witness
 `atomic-mass-via-rho-k.witness.json`, but **no content block with
 this label exists** in

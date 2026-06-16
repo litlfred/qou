@@ -157,17 +157,17 @@ constructing the $H_n$ seminormal matrices.
 
 ## Witness
 
-[`folio-assistant/computations/markov/markov_trace_via_wenzl_lr.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov/markov_trace_via_wenzl_lr.py)
+[`computations/markov/markov_trace_via_wenzl_lr.py`](https://github.com/litlfred/qou/blob/main/computations/markov/markov_trace_via_wenzl_lr.py)
 is the Python entry point; the per-partition LR sum is dispatched to
 the Rust implementation in
 [`tools/hecke-engine/src/wenzl_lr.rs`](https://github.com/litlfred/qou/blob/main/tools/hecke-engine/src/wenzl_lr.rs)
 for cache locality at large $A$.
-[`folio-assistant/computations/cross_check_trM_wenzl_lr_1ppb.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/cross_check_trM_wenzl_lr_1ppb.py)
+[`computations/cross_check_trM_wenzl_lr_1ppb.py`](https://github.com/litlfred/qou/blob/main/computations/cross_check_trM_wenzl_lr_1ppb.py)
 verifies the bridge against the direct Hoefsmit path on $H_6$ (D, T)
 and the self-conjugate sub-stratum of $H_9$ ($^3\mathrm{He}$):
 per-partition $\chi^\nu$ agreement is at the machine-precision limit
 ($\sim 10^{-14}$ relative). The convention adapter
-[`folio-assistant/computations/wenzl_lr_convention_adapter.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wenzl_lr_convention_adapter.py)
+[`computations/wenzl_lr_convention_adapter.py`](https://github.com/litlfred/qou/blob/main/computations/wenzl_lr_convention_adapter.py)
 splits a $(Z, N)$ specification into the LR-compatible per-nucleon
 factor list and the interface residue and records the partition of
 the canonical word that this corollary strictly governs.

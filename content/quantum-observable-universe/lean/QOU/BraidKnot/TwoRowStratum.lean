@@ -2,8 +2,8 @@
 Two-row Wedderburn stratum Λ²(n) of the Hecke algebra H_n(q).
 
 LaTeX label:        def:two-row-stratum
-Companion script:   folio-assistant/computations/probe_he4_canonical_tr_m_fingerprint.py
-Companion script:   folio-assistant/computations/delta_lambda_2row_stratum_analysis.py
+Companion script:   computations/probe_he4_canonical_tr_m_fingerprint.py
+Companion script:   computations/delta_lambda_2row_stratum_analysis.py
 
   Λ²(n) := { λ ⊢ n : ℓ(λ) ≤ 2 } = { (n-k, k) : 0 ≤ k ≤ n/2 }
 

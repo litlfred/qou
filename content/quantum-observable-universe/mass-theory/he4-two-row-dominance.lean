@@ -2,8 +2,8 @@
 He-4 two-row stratum dominance.
 
 LaTeX label:        prop:he4-two-row-dominance
-Computational ref:  folio-assistant/computations/probe_he4_canonical_tr_m_fingerprint.py
-Witness:            folio-assistant/computations/he4-canonical-tr-m-block-fingerprint.witness.json
+Computational ref:  computations/probe_he4_canonical_tr_m_fingerprint.py
+Witness:            computations/he4-canonical-tr-m-block-fingerprint.witness.json
 Audit:              docs/audits/2026-05-15-three-pr-integration.md §F1 ⁴He
 
 For β_{⁴He} = canonical atomic braid word (mass_at_3A_proper.atom_braid_word_3A(2,2))

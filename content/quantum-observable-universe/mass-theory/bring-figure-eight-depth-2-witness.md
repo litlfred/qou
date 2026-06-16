@@ -20,9 +20,9 @@ $$
 ### Numerical witness (50-digit precision)
 
 Computed via `mpmath.polylog` at `mp.dps = 50` (script
-[`gb_depth_period_bring_fig8.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/gb_depth_period_bring_fig8.py),
+[`gb_depth_period_bring_fig8.py`](https://github.com/litlfred/qou/blob/main/computations/gb_depth_period_bring_fig8.py),
 witness
-[`gb-depth-period-bring-fig8.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/gb-depth-period-bring-fig8.witness.json)):
+[`gb-depth-period-bring-fig8.witness.json`](https://github.com/litlfred/qou/blob/main/computations/gb-depth-period-bring-fig8.witness.json)):
 
 $$
   2\,\mathrm{Cl}_2(\pi/3)

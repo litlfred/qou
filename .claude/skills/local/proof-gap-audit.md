@@ -220,7 +220,7 @@ math / questions / gaps"):
    often live in adjacent chapters (e.g.
    `brings-surface/inter-nucleon-channel-color-tube` answers a
    `mass-theory/` p/n question).
-3. `grep -rln <topic> folio-assistant/computations/` — implemented
+3. `grep -rln <topic> computations/` — implemented
    Python may already discharge the categorical content
    (e.g. `pn_convention="bring_color_weighted"` in
    `closed_form_tau_M.py`).

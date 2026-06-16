@@ -2,7 +2,7 @@
 
 **Trigger.** User-prioritised item 3 of the post-#1485 next-tranche queue ("L2 100× gaps for the missing 2 observables").
 
-**Source.** [`folio-assistant/computations/per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json).
+**Source.** [`computations/per-observable-100x-status.witness.json`](../../computations/per-observable-100x-status.witness.json).
 
 > **Refresh (2026-06-01, PR #1602).** The table below was first written
 > against the muon-pinned dashboard (`computedAt 2026-05-30`, commit

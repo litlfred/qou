@@ -41,7 +41,7 @@ class ShellThreadingEnergy : Prop where
 
 -- Ref: [manuscript] conj:shell-threading-energy
 instance shell_threading_energy_conjecture : ShellThreadingEnergy where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   smoothing_identification := sorry
 
 end QOU.ShellThreadingEnergy

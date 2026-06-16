@@ -104,7 +104,7 @@ captures the supersession verdict for posterity.
 
 ### Cross-refs
 
-- Witness: [`folio-assistant/computations/per-observable-100x-status.witness.json`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/folio-assistant/computations/per-observable-100x-status.witness.json)
+- Witness: [`computations/per-observable-100x-status.witness.json`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/computations/per-observable-100x-status.witness.json)
 - Precision goals: [`docs/precision-goals.md`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/docs/precision-goals.md)
 - CLAUDE.md §Precision goals: [`CLAUDE.md`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/CLAUDE.md)
 - Shared-root audit: [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md)

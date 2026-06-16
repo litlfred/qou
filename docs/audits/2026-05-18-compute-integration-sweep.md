@@ -721,7 +721,7 @@ Per skill §C, append to `docs/audits/compute-integration-question-queue.md` (gi
 
 - **Provable-block enumeration:** every `.ts` file in `content/quantum-observable-universe/**` whose `import` line is `proposition`, `theorem`, `lemma`, or `corollary` (558 hits).
 - **Lean status:** sibling-`.lean` file scan; sorry-count via regex `\bsorry\b`. Conjecture-class detection (CLAUDE.md §3b-cond) via `^class\s+`.
-- **Witness coverage:** every `folio-assistant/computations/*.witness.json` (481 files) parsed for a `contentBlock: "<label>"` field. 319 entries across 132 unique labels.
+- **Witness coverage:** every `computations/*.witness.json` (481 files) parsed for a `contentBlock: "<label>"` field. 319 entries across 132 unique labels.
 - **Production consumption:** grep of the 7 production-consumer scripts for either the block's label or one of its witness filenames. Producer relationship (a script writing the witness) also counts as consumption.
 - **I5 / I12:** extra cross-witness scan, distinct from the per-block sweep.
 - **I7 staleness:** witness `computedAt` (or file mtime) compared with sibling-`.md` mtime; >7 days = stale.

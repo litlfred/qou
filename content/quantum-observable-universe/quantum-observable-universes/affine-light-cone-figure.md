@@ -44,8 +44,8 @@ algebraic substrate's topology in the QOU framework
 ([archimedean-condition.md](../archimedean-universe/archimedean-condition.md)).
 
 This figure is generated programmatically by
-[`affine_light_cone_figure.py`](../../../folio-assistant/computations/affine_light_cone_figure.py),
+[`affine_light_cone_figure.py`](../../../computations/affine_light_cone_figure.py),
 with the parameters and verified sample values recorded in
-[`affine-light-cone-figure.witness.json`](../../../folio-assistant/computations/affine-light-cone-figure.witness.json).
+[`affine-light-cone-figure.witness.json`](../../../computations/affine-light-cone-figure.witness.json).
 Formal math-book style (black ink on white, line styles only, no
 gradient or decorative color) per author directive.

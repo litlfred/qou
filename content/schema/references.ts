@@ -5143,7 +5143,7 @@ export const references: CSLData[] = [
     author: [{ literal: "QOU project (litlfred/qou)" }],
     issued: { "date-parts": [[2026]] },
     URL: "https://github.com/litlfred/qou/pull/1786",
-    note: "Internal QOU pull request #1786. The bias-corrected value ĉ_k − ĉ_{k+1}·u equals c_alg(k) − c_alg(k+2)·u², recovering the algebraic ladder coefficient modulo an order-u² residual. Cited by q-beta-c-k-leading-bias-correction-identity.lean; empirical core in folio-assistant/computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py.",
+    note: "Internal QOU pull request #1786. The bias-corrected value ĉ_k − ĉ_{k+1}·u equals c_alg(k) − c_alg(k+2)·u², recovering the algebraic ladder coefficient modulo an order-u² residual. Cited by q-beta-c-k-leading-bias-correction-identity.lean; empirical core in computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py.",
   }),
 
   ref({

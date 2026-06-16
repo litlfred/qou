@@ -108,6 +108,6 @@ A closure CANDIDATE witness would misrepresent the state. The honest artifact is
 - [`docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md`](2026-05-25-option-e-crystal-weight-delta-lambda.md) — Option E scaffolding; `ρ_w` listed as NOT EXIST.
 - [`docs/audits/2026-05-30-klr-dialog-assessment.md`](2026-05-30-klr-dialog-assessment.md) — KLR/crystal relaunch criteria; "crystal" on the failed-ansatz list.
 - PR #1578 — isospin-mirror v9 `(1+q)/2` post-hoc-fit finding (same back-solve pattern as this doc's §3/v9).
-- Scripts: `folio-assistant/computations/option_e_v{6,7,8,9}*.py`. Fresh-run logs: `/tmp/opt-e-v{6,7,8,9}.log`.
+- Scripts: `computations/option_e_v{6,7,8,9}*.py`. Fresh-run logs: `/tmp/opt-e-v{6,7,8,9}.log`.
 - Witnesses (exploratory menu searches, not closure): `option-e-v{6,7,8,9}-*.witness.json`.
 - CLAUDE.md §7b (symmetric-crystal authoring guidance) + Δ_λ gate warning ("do not propose a seventh fit-based ansatz").

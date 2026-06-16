@@ -6,11 +6,11 @@ export default proposition({
     "Deuterium binding energy from the Markov trace volume integral",
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/q_pinning_50_digit.py",
+    script: "computations/q_pinning_50_digit.py",
     witness: [
-      "folio-assistant/computations/q-pinning-50-digit.witness.json",
-      "folio-assistant/computations/gram-matrix-dual.witness.json",
-      "folio-assistant/computations/binding-endomorphism-deuteron.witness.json",
+      "computations/q-pinning-50-digit.witness.json",
+      "computations/gram-matrix-dual.witness.json",
+      "computations/binding-endomorphism-deuteron.witness.json",
     ],
     status: "verified",
   },

@@ -36,7 +36,7 @@ checks at H_3.  Numerical evidence for (b) requires Hoefsmit at H_{3·A}
 (deferred); the framework for it is the R5-full prototype with the
 binding-K decomposition — see deliverable 4 witness for the structural
 finding driving this refinement
-(`folio-assistant/computations/rho-prefactor-structural-verifier.witness.json`).
+(`computations/rho-prefactor-structural-verifier.witness.json`).
 
 The class packages the uniqueness assertion; downstream conditional
 theorems may take it as an `[instance]` hypothesis and remain fully
@@ -252,8 +252,8 @@ theorem structurallyValidBinding_strand_count_lower_bound
 /-! ### Per-nucleus instances (issue #604, deliverables 3 + 4)
 
 Numerical evidence is recorded in
-`folio-assistant/computations/binding-k-solver.witness.json` AND
-`folio-assistant/computations/binding-k-enumerator.witness.json`.
+`computations/binding-k-solver.witness.json` AND
+`computations/binding-k-enumerator.witness.json`.
 
 Each instance below populates `bindingKWord` with the empirically-
 verified explicit braid word from the inter-nucleon enumerator search

@@ -94,7 +94,7 @@ combinatorics. $\blacksquare$
 
 Bit-exact at 50 dps for all atoms in $\{p, n, D, T, {}^{3}\mathrm{He}\}$
 ($n \in \{3, 5, 8\}$):
-[`q-beta-1d-irrep-universal-closed-form.witness.json`](../../folio-assistant/computations/q-beta-1d-irrep-universal-closed-form.witness.json).
+[`q-beta-1d-irrep-universal-closed-form.witness.json`](../../computations/q-beta-1d-irrep-universal-closed-form.witness.json).
 
 ## Role in the τ_M decomposition
 

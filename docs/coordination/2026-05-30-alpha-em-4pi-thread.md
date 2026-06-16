@@ -53,7 +53,7 @@ floor.
 ## Coordination classification
 
 **All 13 open PRs are independent additions** under
-`folio-assistant/computations/`:
+`computations/`:
 - Each adds 1 probe script + 1 witness JSON
 - No content blocks, no Lean files, no shared infrastructure modified
 - No file-level conflicts between PRs
@@ -155,7 +155,7 @@ Filtered active PRs not in this thread that touch related scope:
 
 **Implication:** the thread's 13 PRs can merge without triggering
 the canonical-derivation watcher or the content-block validator.
-They're additions under `folio-assistant/computations/` only.
+They're additions under `computations/` only.
 
 ## Next concrete steps (queued, not in any PR)
 

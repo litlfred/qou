@@ -13,8 +13,8 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/habiro/habiro_exact_mass_endomorphism.py",
-    witness: "folio-assistant/computations/habiro/habiro-exact-mass-endomorphism.witness.json",
+    script: "computations/habiro/habiro_exact_mass_endomorphism.py",
+    witness: "computations/habiro/habiro-exact-mass-endomorphism.witness.json",
     status: "experimental",
   },
 });

@@ -115,7 +115,7 @@ the QOU substrate without external calibration.
 
 **Empirical observation (uniform-$k$ sweep).** A
 uniform-depth probe
-([`probe_phiq_uniform_k.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/folio-assistant/computations/probe_phiq_uniform_k.py))
+([`probe_phiq_uniform_k.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/computations/probe_phiq_uniform_k.py))
 sweeping $k \in \{1, 2, 3, 4, 5, 6, 8, 10\}$ uniformly across
 $\{D, T, {}^3\mathrm{He}\}$ shows:
 
@@ -266,17 +266,17 @@ where $\mu_a^{(\lambda)}$ are the eigenvalues of $\rho_\lambda(\beta)$
 (complex, in general) and $\Phi_q^{[\leq k]}$ extends to a complex
 argument as the finite product $\prod_{j=1}^{k}(1 - q^{-j}\mu)^{-1}$.
 The implementation is
-[`probe_phiq_operator_valued.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_operator_valued.py)
-([witness](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-operator-valued.witness.json));
+[`probe_phiq_operator_valued.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe_phiq_operator_valued.py)
+([witness](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe-phiq-operator-valued.witness.json));
 it builds $\rho_\lambda(\beta)$ numerically from Hoefsmit seminormal
 matrices at $q_0$, computes eigenvalues via `numpy.linalg.eigvals`,
 applies $\Phi_q$ per eigenvalue, sums as the operator trace, and
 Wedderburn-weights with signed $y_\lambda(q_0)$ from the canonical
 Jones-Markov machinery
-([`wedderburn_jones_markov.y_lambda_at`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/wedderburn_jones_markov.py)).
+([`wedderburn_jones_markov.y_lambda_at`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/wedderburn_jones_markov.py)).
 
 **Three normalization properties handled correctly** (vs the earlier
-[`_avg_chi_over_classical_dim`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_avg_chi_over_classical_dim.py)
+[`_avg_chi_over_classical_dim`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe_phiq_avg_chi_over_classical_dim.py)
 variant, which used approximations on all three):
 
 1. **No per-irrep dimension denominator.** Replaced by the operator
@@ -351,12 +351,12 @@ The conjecture has two independent claims:
      final §).
 
 A historical Wedderburn-block-average variant
-([`probe_phiq_avg_chi_over_classical_dim.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_avg_chi_over_classical_dim.py))
+([`probe_phiq_avg_chi_over_classical_dim.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe_phiq_avg_chi_over_classical_dim.py))
 that used three approximations — classical $\dim V_\lambda$,
 $|\chi^\lambda|$ (abs), mean-of-eigenvalues — is preserved for
 audit purposes but superseded by the per-eigenvalue probe; its
 witness is
-[`probe-phiq-avg-chi-over-classical-dim.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-avg-chi-over-classical-dim.witness.json).
+[`probe-phiq-avg-chi-over-classical-dim.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe-phiq-avg-chi-over-classical-dim.witness.json).
 
 ### Multiplicity / Type-B-fold probe: also refuted
 
@@ -366,8 +366,8 @@ every $k$ pointed at the **multiplicity-refined** form as the
 surviving open thread. That probe is now done.
 
 **Probe.**
-[`probe_phiq_multiplicity_refined.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_multiplicity_refined.py)
-([witness](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-multiplicity-refined.witness.json))
+[`probe_phiq_multiplicity_refined.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe_phiq_multiplicity_refined.py)
+([witness](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe-phiq-multiplicity-refined.witness.json))
 tests four substrate-derived per-atom rules built from the
 per-generator near-pole multiplicity $m_{\max}(\mathfrak{H})$ and the
 Type-B-folded-crystal structure of $H_{3A}(q_0)$ (CLAUDE.md §7b):
@@ -380,7 +380,7 @@ $m_{\max}^T = 4$, $m_{\max}^{{}^3\mathrm{He}} = 5$.
 
 Each rule was evaluated in both the scalar tower and the
 per-eigenvalue operator-valued tower (using the spectra persisted in
-[`probe-phiq-operator-valued.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-operator-valued.witness.json)).
+[`probe-phiq-operator-valued.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe-phiq-operator-valued.witness.json)).
 
 ### Result — refuted, but with structural finding worth recording
 
@@ -444,8 +444,8 @@ intra-n blocks duplicated.
 
 ### Pair-knot composite operator + LP-dual confirmation
 
-[`probe_phiq_pair_knot_magic_shell.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_pair_knot_magic_shell.py)
-([witness](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-pair-knot-magic-shell.witness.json))
+[`probe_phiq_pair_knot_magic_shell.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe_phiq_pair_knot_magic_shell.py)
+([witness](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe-phiq-pair-knot-magic-shell.witness.json))
 replaces each magic-shell intra-block by a single composite term
 $\Phi_q(|\hat V_{\text{shell}}|)$ with
 $|\hat V_{\text{shell}}| = \prod_{i \in \text{shell}} |\hat V_i|$
@@ -460,7 +460,7 @@ CLAUDE.md "LP / SDP duals — first-class infra":
   approximation (full $\mathrm{tr}_M(\sigma_i \sigma_j)$ from
   Hoefsmit seminormal is a refinement).
 - Operator-selection LP solved via
-  [`lp_dual_solver.solve_operator_selection_lp`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/lp_dual_solver.py).
+  [`lp_dual_solver.solve_operator_selection_lp`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/lp_dual_solver.py).
 - **Strong duality verified** (gap = 0 to numerical precision) for
   all four atoms.
 
@@ -535,8 +535,8 @@ via the SDP lift (cvxpy / SCS) per CLAUDE.md "LP / SDP duals —
 first-class infra".
 
 The refined probe
-[`probe_phiq_pair_knot_markov_trace.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_pair_knot_markov_trace.py)
-([witness](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-pair-knot-markov-trace.witness.json))
+[`probe_phiq_pair_knot_markov_trace.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe_phiq_pair_knot_markov_trace.py)
+([witness](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe-phiq-pair-knot-markov-trace.witness.json))
 implements all three.  Scope: $D, T, {}^3\mathrm{He}$ (${}^{4}$He n=12
 seminormal compute ~10 min, deferred).
 

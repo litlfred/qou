@@ -91,5 +91,5 @@ This audit verifies the paper's foundational closed forms and identifies the LO 
 - [`content/quantum-observable-universe/braids-and-knots/chi-v3-closed-form-proof.md`](../../content/quantum-observable-universe/braids-and-knots/chi-v3-closed-form-proof.md) — Lean proof for V_(3)
 - [`content/quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.md`](../../content/quantum-observable-universe/braids-and-knots/q-beta-c3-hopf-three-fold-markov.md) — Fact 3 for c_3
 - [`content/quantum-observable-universe/braids-and-knots/per-wedderburn-block-c5-c6.md`](../../content/quantum-observable-universe/braids-and-knots/per-wedderburn-block-c5-c6.md) — per-block c_5, c_6 scaffolding
-- [`folio-assistant/computations/qbeta/qbeta_per_block_paper_closed_forms.py`](../../folio-assistant/computations/qbeta/qbeta_per_block_paper_closed_forms.py) — verification script
-- [`folio-assistant/computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json`](../../folio-assistant/computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json) — verification witness
+- [`computations/qbeta/qbeta_per_block_paper_closed_forms.py`](../../computations/qbeta/qbeta_per_block_paper_closed_forms.py) — verification script
+- [`computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json`](../../computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json) — verification witness

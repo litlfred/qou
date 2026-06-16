@@ -37,7 +37,7 @@ Limitations:
 Emits `float64-leak-audit.witness.json`.
 
 Usage:
-    python3 folio-assistant/computations/float64_leak_audit.py [--strict]
+    python3 computations/float64_leak_audit.py [--strict]
 """
 
 

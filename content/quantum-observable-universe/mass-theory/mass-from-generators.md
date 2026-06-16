@@ -106,7 +106,7 @@ of the three-component color-linked configuration, and
 $\Delta\mathcal{M}_{\mathrm{color}}$ encodes the cubic constraint
 from the color-tube fiber geometry.  The terminal resolution
 ([terminal resolution](#prop:terminal-resolution)) evaluates this
-to $:val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} \mathrm{MeV}$.
+to $:val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} \mathrm{MeV}$.
 
 **Step 5: The generative atomic chart.**
 Organizing by linking type and generator content, the mass spectrum

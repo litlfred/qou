@@ -376,7 +376,7 @@ def main() -> int:
     w = WitnessBuilder("noncanonical-reentry-audit", engine="python")
     w.set_description(
         "NEGATIVE-finding guard. AST-scans production compute "
-        "(folio-assistant/computations/, excluding _deprecated/, probes/, "
+        "(computations/, excluding _deprecated/, probes/, "
         "data/) and fails if any script imports, defines, or uses a PURGED "
         "non-canonical form. Registry: lambda_scale_yekutieli_extended "
         "(Yekutieli −G·h² correction, falsified PR #985/#1027), "

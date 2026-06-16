@@ -17,7 +17,7 @@ Chain:
 G_F still from CODATA (N_v open). Everything else from q.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 full-pipeline.py
 """
 

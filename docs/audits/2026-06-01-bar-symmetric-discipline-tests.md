@@ -118,10 +118,10 @@ audits / conclusions that warrant re-examination:
 
 ## Files
 
-- `folio-assistant/computations/probes/option_e_v9_bar_symmetric_test_probe.py`
-- `folio-assistant/computations/probes/option-e-v9-bar-symmetric-test-probe.witness.json`
-- `folio-assistant/computations/probes/he4_rho_f_bar_symmetric_audit_probe.py`
-- `folio-assistant/computations/probes/he4-rho-f-bar-symmetric-audit-probe.witness.json`
+- `computations/probes/option_e_v9_bar_symmetric_test_probe.py`
+- `computations/probes/option-e-v9-bar-symmetric-test-probe.witness.json`
+- `computations/probes/he4_rho_f_bar_symmetric_audit_probe.py`
+- `computations/probes/he4-rho-f-bar-symmetric-audit-probe.witness.json`
 - `docs/audits/2026-06-01-bar-symmetric-discipline-tests.md` (this file)
 
 ## Cross-refs

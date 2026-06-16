@@ -65,9 +65,9 @@ This probe:
      τ_M(T_β).  Reports HONESTLY whether S cancels.
 
 Ref: docs/canonical-derivation-cheat-sheet.md §"11. β-decay Q"
-Ref: folio-assistant/computations/lp_dual_solver.py (solve_operator_selection_lp)
-Ref: folio-assistant/computations/qbeta/qbeta_symbolic_tbeta_min_l2.py (PR #1739)
-Ref: folio-assistant/computations/qbeta/qbeta_decay_sdp_solver.py (min-L2 incumbent)
+Ref: computations/lp_dual_solver.py (solve_operator_selection_lp)
+Ref: computations/qbeta/qbeta_symbolic_tbeta_min_l2.py (PR #1739)
+Ref: computations/qbeta/qbeta_decay_sdp_solver.py (min-L2 incumbent)
 Ref: prop:operator-selection-lp (LP/SDP first-class-infra rule, CLAUDE.md)
 """
 from __future__ import annotations

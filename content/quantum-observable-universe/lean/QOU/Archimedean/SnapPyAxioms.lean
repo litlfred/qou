@@ -9,7 +9,7 @@
   SnapPy is a Python library; Lean cannot call it. The framework's
   production code (Python / mpmath at 50 dps) reads hyperbolic
   volumes from witness sidecars produced by
-  `folio-assistant/computations/snappy_*.py` scripts. To bring
+  `computations/snappy_*.py` scripts. To bring
   those values into Lean rigorously, we introduce **one axiom per
   manifold**, named after the SnapPy manifold notation. Each
   axiom declares the existence of the volume as a real number;
@@ -54,11 +54,11 @@ namespace QOU.Archimedean.SnapPyAxioms
     Borromean rings complement, denoted `𝓑₃` in the QOU framework.
 
     Producer witness:
-    `folio-assistant/computations/snappy-borromean-volume.witness.json`.
+    `computations/snappy-borromean-volume.witness.json`.
     Records the canonical value (Adams 1985: `Vol(L6a4) = 8·G`
     where G is Catalan's constant) at multiple precision tiers
     (15 / 30 / 50 / 100 / 200 dps). Independent cross-check via
-    `folio-assistant/computations/borromean_volume_100dps.py`
+    `computations/borromean_volume_100dps.py`
     (Lobachevsky integration at 100 dps).
 
     **Definitional bridge** (2026-06-07).  The closed-form

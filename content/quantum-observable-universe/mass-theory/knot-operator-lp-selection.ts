@@ -14,9 +14,9 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/wedderburn_pair_volumes.py",
+    script: "computations/wedderburn_pair_volumes.py",
     witness:
-      "folio-assistant/computations/wedderburn-pair-volumes.witness.json",
+      "computations/wedderburn-pair-volumes.witness.json",
     status: "verified",
   },
   tags: [

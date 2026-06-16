@@ -4,8 +4,8 @@
 //! emits the design-spec joint-tower-SDP certificate as JSON.
 //!
 //! Output schema matches the Python prototype:
-//!   - folio-assistant/computations/joint-tower-sdp-h3.witness.json
-//!   - folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json
+//!   - computations/joint-tower-sdp-h3.witness.json
+//!   - computations/joint-tower-sdp-h6-h9.witness.json
 //!
 //! Usage:
 //!   cargo run --release --bin joint-tower-sdp [-- --output path.json]
@@ -244,7 +244,7 @@ fn registry() -> Vec<RegistryEntry> {
         // ─── ℓ = 3  helium-4 (canonical atom_braid_word_3A(2,2)) ─
         //
         // 47-crossing braid on B_12 from
-        // `folio-assistant/computations/mass_at_3A_proper.py::atom_braid_word_3A(2, 2)`:
+        // `computations/mass_at_3A_proper.py::atom_braid_word_3A(2, 2)`:
         // 23 positive (σ_k), 9 averaged (σ_avg_k = σ_k − h/2),
         // 15 negative (σ_k^{-1} = σ_k − h). Native strand count = 12
         // (atomic n_0 = 3·A = 3·4 = 12).

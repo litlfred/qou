@@ -200,7 +200,7 @@ def build() -> DerivationChain:
         jet_order=0,
         gb_filtration_level=0,
         notes=(
-            "script: folio-assistant/computations/hecke_character_symbolic.py "
+            "script: computations/hecke_character_symbolic.py "
             "function `q_character_on_braid_word(λ, β_D, q)` (called "
             "11 times, once per partition of 6).  Cache: "
             "chi-deuteron-h6.witness.json.  SCRIPT_CITED until "

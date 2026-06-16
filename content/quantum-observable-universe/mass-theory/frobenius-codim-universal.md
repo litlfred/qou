@@ -303,7 +303,7 @@ ordering are documented in
 
 The generator that produces the per-partition $\dim_q$ table and
 the Lean source is
-[`folio-assistant/computations/phase5/phase5_n8_dim_q_table.py`](https://github.com/litlfred/qou/blob/claude/wire-applied-uniqueness-mass-table/folio-assistant/computations/phase5/phase5_n8_dim_q_table.py);
+[`computations/phase5/phase5_n8_dim_q_table.py`](https://github.com/litlfred/qou/blob/claude/wire-applied-uniqueness-mass-table/computations/phase5/phase5_n8_dim_q_table.py);
 the JSON output and per-partition factor signatures are committed
 under `phase5-n8-dim-q-table.json`.
 

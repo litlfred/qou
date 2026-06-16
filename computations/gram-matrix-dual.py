@@ -10,7 +10,7 @@ Computes:
   4. Demand profiles from negative NF coefficients
 
 Usage:
-    cd folio-assistant/computations && python3 gram-matrix-dual.py
+    cd computations && python3 gram-matrix-dual.py
 """
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json

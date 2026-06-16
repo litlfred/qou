@@ -52,7 +52,7 @@ Symbolically $(-2) \cdot (4b^2) = -8b^2$; at silver $(-2) \cdot
 
 These two identities are the **only** product hits in the closed-
 form set (verified by symbolic enumeration in
-[`probes/qbeta_c4_structural_product_identities.py`](../../folio-assistant/computations/probes/qbeta_c4_structural_product_identities.py)).
+[`probes/qbeta_c4_structural_product_identities.py`](../../computations/probes/qbeta_c4_structural_product_identities.py)).
 The c_5 averaging-resonance outlier and the c_2, c_7 seed values
 do not participate in the product algebra.
 

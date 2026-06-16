@@ -17,7 +17,7 @@ The comparison identifies which SEMF terms map to which QOU channels
 and where the residual ~3× accuracy gap originates.
 
 Usage:
-    python3 folio-assistant/computations/feynman_qou_comparison.py
+    python3 computations/feynman_qou_comparison.py
 """
 
 import math

@@ -5,8 +5,8 @@
 > pair-differences among {p, n, D, ³He, ⁴He}.
 >
 > Branch: `claude/qbeta-habiro-phi8-interference-2026-06-01` (PR #1625).
-> Probe: [`folio-assistant/computations/qbeta/qbeta_habiro_all_10_pairs_phi8_universality.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_all_10_pairs_phi8_universality.py)
-> Witness: [`folio-assistant/computations/qbeta/qbeta-habiro-all-10-pairs-phi8-universality.witness.json`](../../folio-assistant/computations/qbeta/qbeta-habiro-all-10-pairs-phi8-universality.witness.json)
+> Probe: [`computations/qbeta/qbeta_habiro_all_10_pairs_phi8_universality.py`](../../computations/qbeta/qbeta_habiro_all_10_pairs_phi8_universality.py)
+> Witness: [`computations/qbeta/qbeta-habiro-all-10-pairs-phi8-universality.witness.json`](../../computations/qbeta/qbeta-habiro-all-10-pairs-phi8-universality.witness.json)
 
 ## TL;DR
 

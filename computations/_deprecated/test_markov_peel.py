@@ -16,9 +16,9 @@ Tracked in #508; A ≥ 3 cases may fall back to the Ocneanu path
 until Phase 2 completes the Gröbner–Shirshov rewrite system.
 
 Run with:
-    python -m pytest folio-assistant/computations/test_markov_peel.py -v
+    python -m pytest computations/test_markov_peel.py -v
 or:
-    python folio-assistant/computations/test_markov_peel.py
+    python computations/test_markov_peel.py
 """
 from __future__ import annotations
 

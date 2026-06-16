@@ -4,13 +4,13 @@
 **Target:** the prefactor `ρ ∈ ℤ_{>0}` in
 `B_pred = ρ · (mass-carrier) · (knot invariant)` for the four
 census entries in
-[`folio-assistant/computations/low-isotope-mass-table.witness.json`](../../folio-assistant/computations/low-isotope-mass-table.witness.json).
+[`computations/low-isotope-mass-table.witness.json`](../../computations/low-isotope-mass-table.witness.json).
 The master proposition's "Where the gaps actually are" section
 specifies that ρ should come from "the multiplicity of T_w's SDP
 solution in the Wedderburn decomposition".
 
 Today
-[`folio-assistant/computations/sweeps/low_isotope_binding_sweep.py`](../../folio-assistant/computations/sweeps/low_isotope_binding_sweep.py)
+[`computations/sweeps/low_isotope_binding_sweep.py`](../../computations/sweeps/low_isotope_binding_sweep.py)
 hand-picks ρ ∈ {`m_e`, `2 m_e`} per row:
 
 | Entry | ρ today (hand-pick) | Comment |

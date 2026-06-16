@@ -46,7 +46,7 @@ wire (§8). Consistent with the c_3 [3]_q/25 rigidity finding and
 CLAUDE.md §"Im(q) at fibre vs observable level".
 
 Run:
-    python3 folio-assistant/computations/qbeta/qbeta_c6_c10_crossanchor_falsification.py
+    python3 computations/qbeta/qbeta_c6_c10_crossanchor_falsification.py
 """
 from __future__ import annotations
 

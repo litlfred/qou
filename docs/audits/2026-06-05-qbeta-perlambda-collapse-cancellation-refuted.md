@@ -1,6 +1,6 @@
 # Q_β residue-A — the per-λ collapse-cancellation hypothesis is REFUTED (heavy probe verdict)
 
-**Date:** 2026-06-05 · **Probe:** [`qbeta_perlambda_collapse_cancellation_probe.py`](../../folio-assistant/computations/qbeta/qbeta_perlambda_collapse_cancellation_probe.py) · **Witness:** `qbeta-perlambda-collapse-cancellation.witness.json` · **Follows:** PR #1895 (S2+S3 exploration, merged).
+**Date:** 2026-06-05 · **Probe:** [`qbeta_perlambda_collapse_cancellation_probe.py`](../../computations/qbeta/qbeta_perlambda_collapse_cancellation_probe.py) · **Witness:** `qbeta-perlambda-collapse-cancellation.witness.json` · **Follows:** PR #1895 (S2+S3 exploration, merged).
 
 ## What was tested
 

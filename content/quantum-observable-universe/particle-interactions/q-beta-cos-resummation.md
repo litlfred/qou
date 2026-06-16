@@ -19,7 +19,7 @@ $$
 
 *This refinement tightens the CODATA residual from* $+1677.5$ *ppm
 (Form A bare) to* $+305.7$ *ppm — a* $5.49\times$ *improvement —
-via* [`probe_q_beta_tightening_landscape.py`](../../folio-assistant/computations/probe_q_beta_tightening_landscape.py) *at*
+via* [`probe_q_beta_tightening_landscape.py`](../../computations/probe_q_beta_tightening_landscape.py) *at*
 $q_0 \approx 1.110$.
 
 ## Structural origin

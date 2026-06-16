@@ -57,7 +57,7 @@ Fitted parameters: **none**.
 ### Reproducibility
 
 The Python implementation is in
-`folio-assistant/computations/atom_mass_combined.py`.  The Rust
+`computations/atom_mass_combined.py`.  The Rust
 Gröbner–Shirshov engine
 ([reduction methods](#rem\:groebner-reduction-methods)) computes
 exact normal forms and $F_{\mathrm{Pauli}}$ certificates.  All

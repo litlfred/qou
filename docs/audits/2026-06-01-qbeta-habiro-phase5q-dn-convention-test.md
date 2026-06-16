@@ -2,8 +2,8 @@
 
 **Date:** 2026-06-01
 **Branch:** `claude/qbeta-habiro-followup-2026-06-01` (PR #1618)
-**Probe:** [`folio-assistant/computations/qbeta/qbeta_habiro_phase5q_dn_refactorize.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_phase5q_dn_refactorize.py)
-**Witness:** [`folio-assistant/computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json`](../../folio-assistant/computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json)
+**Probe:** [`computations/qbeta/qbeta_habiro_phase5q_dn_refactorize.py`](../../computations/qbeta/qbeta_habiro_phase5q_dn_refactorize.py)
+**Witness:** [`computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json`](../../computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json)
 **Companion:** [`docs/audits/2026-06-01-qbeta-habiro-phi16-phi32-prediction-blocked-convention.md`](2026-06-01-qbeta-habiro-phi16-phi32-prediction-blocked-convention.md) (the convention-blocker audit this resolves)
 
 ## TL;DR
@@ -158,9 +158,9 @@ the Φ_16 / Φ_32 prediction is decoupled from the witness availability.
   — the convention blocker this audit resolves at A=2.
 - [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
   — master ledger.
-- [`folio-assistant/computations/closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py)
+- [`computations/closed_form_tau_M.py`](../../computations/closed_form_tau_M.py)
   — Phase 5q canonical tr_M.
-- [`folio-assistant/computations/habiro/habiro_coefficients_atomic.py`](../../folio-assistant/computations/habiro/habiro_coefficients_atomic.py)
+- [`computations/habiro/habiro_coefficients_atomic.py`](../../computations/habiro/habiro_coefficients_atomic.py)
   — Habiro coefficient extraction (sequential cyclotomic division).
 - PR #1579 (commit `57b5fa2d3a`) — original (D − n) Φ_8² discovery
   in the habiro-witness convention.

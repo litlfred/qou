@@ -290,7 +290,7 @@ def main() -> int:
 
     derivation_ref = (
         "pyhecke_native.chi_q_via_gp (Geck-Pfeiffer + Hecke characters) on "
-        "atom_braid_word_3A from folio-assistant/computations/mass_at_3A_proper.py"
+        "atom_braid_word_3A from computations/mass_at_3A_proper.py"
     )
 
     total_cells_emitted = 0

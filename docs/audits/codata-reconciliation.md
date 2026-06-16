@@ -1,9 +1,9 @@
 # CODATA-2022 reconciliation
 
 **Status.** Tracking audit. **Witness:**
-[`codata-reconciliation.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/codata-reconciliation.witness.json).
+[`codata-reconciliation.witness.json`](https://github.com/litlfred/qou/blob/main/computations/codata-reconciliation.witness.json).
 
-**Script.** [`codata_reconciliation.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/codata_reconciliation.py).
+**Script.** [`codata_reconciliation.py`](https://github.com/litlfred/qou/blob/main/computations/codata_reconciliation.py).
 
 This audit consolidates QOU's primary mass / Q-value /
 geometric-volume predictions and compares each against the
@@ -42,7 +42,7 @@ $\mathrm{tr}_M(\text{atom NF}) \times E_0$ formula that is
 structurally wrong (gives +55% for hydrogen, negative for
 helium) because atomic mass is **additive** in its constituents,
 not multiplicative. This PR adds
-[`atom_mass_additive_baseline.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/atom_mass_additive_baseline.py)
+[`atom_mass_additive_baseline.py`](https://github.com/litlfred/qou/blob/main/computations/atom_mass_additive_baseline.py)
 with the correct constituent formula
 $Z M_p + N M_n + Z M_e$.  Hydrogen passes at 92.79 ppb (limited
 by AME2020's 3-decimal-place publication rounding to 938.783).
@@ -68,7 +68,7 @@ it is not a 1ppb gate.
 Re-run the script after any upstream prediction changes:
 
 ```bash
-cd folio-assistant/computations
+cd computations
 python3 codata_reconciliation.py
 ```
 
@@ -76,7 +76,7 @@ The witness is regenerated with current `assertions[]`,
 `max_non_anchor_delta_ppb`, and the full per-row table. The CI
 witness pipeline (`witness-pipeline.yml`) runs this script on every
 PR that modifies any compute script in
-`folio-assistant/computations/`.
+`computations/`.
 
 ## 1ppb readiness
 

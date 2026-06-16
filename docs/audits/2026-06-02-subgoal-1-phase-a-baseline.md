@@ -6,7 +6,7 @@
 
 ## Display bug found + fixed
 
-[`folio-assistant/computations/canonical_tr_m_via_branching.py:445`](../../folio-assistant/computations/canonical_tr_m_via_branching.py) truncated the verdict string to 30 characters via `verdict[:30]`. With `rel_err={float(rel):.2e}` producing strings like `"vs markov_peel rel_err=7.19e-10"` (length 31), the trailing `0` of `e-10` was clipped — so a passing **7.19e-10 (0.72 ppb)** match was rendered as the alarming-looking **7.19e-1 (72%)**.
+[`computations/canonical_tr_m_via_branching.py:445`](../../computations/canonical_tr_m_via_branching.py) truncated the verdict string to 30 characters via `verdict[:30]`. With `rel_err={float(rel):.2e}` producing strings like `"vs markov_peel rel_err=7.19e-10"` (length 31), the trailing `0` of `e-10` was clipped — so a passing **7.19e-10 (0.72 ppb)** match was rendered as the alarming-looking **7.19e-1 (72%)**.
 
 **Fix**: drop the `[:30]` slice (one-character edit). After the fix the verdict reads correctly as `vs markov_peel rel_err=7.19e-10` — full ppb-tight precision visible.
 

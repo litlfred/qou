@@ -13,7 +13,7 @@ verdict that the `/25` denominator is a **q-undeformed** constant.
 Uses only `mpmath` (no `pyhecke` / `q_parameter` / `witness_base` shims)
 so it runs in the web sandbox. The canonical q₀ (50 dps) and the
 cal-anchored c_3 are pinned as literals below — both verified against
-`folio-assistant/computations/qbeta/*.witness.json` on main.
+`computations/qbeta/*.witness.json` on main.
 
 ## Background
 

@@ -3,8 +3,8 @@
 **Date.** 2026-06-03
 **PR.** [#1739](https://github.com/litlfred/qou/pull/1739) (`claude/qbeta-habiro-recursion-and-bridge-2026-06-02`)
 **Supersedes.** [`2026-06-02-qbeta-pre-archimedean-status-and-bridge-instance.md`](2026-06-02-qbeta-pre-archimedean-status-and-bridge-instance.md) §"Step 1 — extract c_k from witnesses" (the bullet that was marked *partially done*)
-**Companion compute.** [`folio-assistant/computations/qbeta/qbeta_symbolic_tbeta_min_l2.py`](../../folio-assistant/computations/qbeta/qbeta_symbolic_tbeta_min_l2.py)
-**Companion witness.** [`qbeta-symbolic-tbeta-min-l2.witness.json`](../../folio-assistant/computations/qbeta/qbeta-symbolic-tbeta-min-l2.witness.json)
+**Companion compute.** [`computations/qbeta/qbeta_symbolic_tbeta_min_l2.py`](../../computations/qbeta/qbeta_symbolic_tbeta_min_l2.py)
+**Companion witness.** [`qbeta-symbolic-tbeta-min-l2.witness.json`](../../computations/qbeta/qbeta-symbolic-tbeta-min-l2.witness.json)
 
 ## Result
 
@@ -27,7 +27,7 @@ All ingredients in the *shape* are exact in $q$:
   matrices per Hecke block $\lambda \vdash 3$, reusing the existing
   `qbeta_per_block_symbolic.py` infrastructure.
 - $y_\lambda(q)$ — Schur-element cyclotomic forms from
-  [`y-lambda-cyclotomic-factor.witness.json`](../../folio-assistant/computations/y-lambda-cyclotomic-factor.witness.json).
+  [`y-lambda-cyclotomic-factor.witness.json`](../../computations/y-lambda-cyclotomic-factor.witness.json).
 - $\lVert A(q)\rVert^2$ — q-rational sum of squares.
 
 The *only* archimedean input is the scalar $S = Q_\beta(q_0)/E_0(q_0)$
@@ -36,7 +36,7 @@ The *only* archimedean input is the scalar $S = Q_\beta(q_0)/E_0(q_0)$
 ## Sanity at $q_0 \approx 1.10998$
 
 50-dps symbolic evaluation vs 64-bit numeric SDP witness
-[`qbeta-decay-sdp-knot-operator.witness.json`](../../folio-assistant/computations/qbeta/qbeta-decay-sdp-knot-operator.witness.json):
+[`qbeta-decay-sdp-knot-operator.witness.json`](../../computations/qbeta/qbeta-decay-sdp-knot-operator.witness.json):
 
 | Quantity | Max abs diff |
 |----------|--------------|

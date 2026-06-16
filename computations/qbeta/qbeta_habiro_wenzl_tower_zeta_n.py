@@ -66,7 +66,7 @@ USAGE
 
 OUTPUTS
 -------
-  folio-assistant/computations/qbeta-habiro-wenzl-tower-zeta-n.witness.json
+  computations/qbeta-habiro-wenzl-tower-zeta-n.witness.json
 
 Ref:
   docs/audits/2026-06-01-qbeta-habiro-wenzl-tower-zeta-n.md

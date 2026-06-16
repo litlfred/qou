@@ -19,7 +19,7 @@ The normal form N̄(p,n) is the RESULT of this construction.
 We verify it matches the direct computation.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 sequential-nucleus-builder.py
 """
 

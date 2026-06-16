@@ -107,8 +107,8 @@ Two complementary next steps, in priority order:
 - Φ_8 audit (subject of this test): [`2026-06-01-qbeta-habiro-phi8-interpretation.md`](2026-06-01-qbeta-habiro-phi8-interpretation.md)
 - Cross-pair audit (source of Φ_8²): [`2026-05-31-qbeta-habiro-cross-pair-quick-dp.md`](2026-05-31-qbeta-habiro-cross-pair-quick-dp.md)
 - Parent factorization (source of Φ_1·Φ_2 + P_8): [`2026-05-31-qbeta-habiro-delta-am-factorization.md`](2026-05-31-qbeta-habiro-delta-am-factorization.md)
-- Phase 5q canonical pipeline: `compute_tau_M_nucleon_H3` (in `folio-assistant/computations/`); search for definitions.
-- Habiro-witness convention: [`habiro-coefficients-atomic.witness.json`](../../folio-assistant/computations/habiro/habiro-coefficients-atomic.witness.json) (uses `include_inter=True`)
+- Phase 5q canonical pipeline: `compute_tau_M_nucleon_H3` (in `computations/`); search for definitions.
+- Habiro-witness convention: [`habiro-coefficients-atomic.witness.json`](../../computations/habiro/habiro-coefficients-atomic.witness.json) (uses `include_inter=True`)
 - Master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md) PROBE NEW
 
 ## Discipline note

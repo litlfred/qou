@@ -4,9 +4,9 @@
   "type": "module",
   "scripts": {
     "build": "bun run check-witnesses && bun run render-atlas:write && bun run pipeline/build.ts",
-    "check-witnesses": "cd .. && python3 folio-assistant/computations/witness_staleness_tracker.py check || (echo '[build] NOTE: stale witnesses detected — see folio-assistant/computations/witness-shas.json'; true)",
-    "render-atlas": "cd .. && python3 folio-assistant/computations/recursive_atom_knot_atlas_render.py 2>/dev/null || (echo '[build] NOTE: atlas render skipped (recursive_atom_knot_atlas_render.py moved to _deprecated/ in 191bd9f54; committed recursive-atom-knot-atlas.rendered.md remains the source of truth)' && true)",
-    "render-atlas:write": "cd .. && (python3 folio-assistant/computations/recursive_atom_knot_atlas_render.py > folio-assistant/computations/recursive-atom-knot-atlas.rendered.md 2>/dev/null || echo '[build] NOTE: atlas render-write skipped (script in _deprecated/); using committed rendered file')",
+    "check-witnesses": "cd .. && python3 computations/witness_staleness_tracker.py check || (echo '[build] NOTE: stale witnesses detected — see computations/witness-shas.json'; true)",
+    "render-atlas": "cd .. && python3 computations/recursive_atom_knot_atlas_render.py 2>/dev/null || (echo '[build] NOTE: atlas render skipped (recursive_atom_knot_atlas_render.py moved to _deprecated/ in 191bd9f54; committed recursive-atom-knot-atlas.rendered.md remains the source of truth)' && true)",
+    "render-atlas:write": "cd .. && (python3 computations/recursive_atom_knot_atlas_render.py > computations/recursive-atom-knot-atlas.rendered.md 2>/dev/null || echo '[build] NOTE: atlas render-write skipped (script in _deprecated/); using committed rendered file')",
     "validate": "bun run pipeline/validate.ts",
     "render": "bun run pipeline/render-latex.ts",
     "export-json": "bun run pipeline/export-json.ts",

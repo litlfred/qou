@@ -83,6 +83,6 @@ LO Hopf-Jones absorption ($-2$ or $-1$), modulated by the block's
 specific cyclotomic-factor structure (\Phi_4^2$ for 1D; $\Phi_8$ for 2D).
 
 Verified at $q_0$ via
-[`folio-assistant/computations/qbeta/qbeta_per_block_paper_closed_forms.py`](../../folio-assistant/computations/qbeta/qbeta_per_block_paper_closed_forms.py)
+[`computations/qbeta/qbeta_per_block_paper_closed_forms.py`](../../computations/qbeta/qbeta_per_block_paper_closed_forms.py)
 +
-[`qbeta-per-block-paper-closed-forms.witness.json`](../../folio-assistant/computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json).
+[`qbeta-per-block-paper-closed-forms.witness.json`](../../computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json).

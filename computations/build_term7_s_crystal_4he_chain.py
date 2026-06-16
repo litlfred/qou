@@ -189,7 +189,7 @@ def build() -> DerivationChain:
         gb_filtration_level=5,
         spectral_stratum="q = 0 (crystal limit)",
         notes=(
-            "script: folio-assistant/computations/term7_alpha5_crystal_derivation.py "
+            "script: computations/term7_alpha5_crystal_derivation.py "
             "(crystal_chi_lambda).  CONDITIONAL on "
             "`conj:crystal-graph-realization` per the witness's "
             "`conditional_on` field; closes when either the "
@@ -216,7 +216,7 @@ def build() -> DerivationChain:
         citation="manuscript:§atomic-braid-recipe",
         jet_order=0,
         notes=(
-            "script: folio-assistant/computations/atomic_braid_gb_filtration_extension.py.  "
+            "script: computations/atomic_braid_gb_filtration_extension.py.  "
             "Inherits the open `atomic_braid_recipe` frontier already "
             "noted in `DERIVATION-CHAIN-METHODOLOGY.md` (Open frontier "
             "item 1)."

@@ -12,7 +12,7 @@ Phase 0c: Full G⁻¹ action on demand profile
 Phase 1:  Verify selected operator reproduces known proton/neutron NFs
 
 Usage:
-    cd folio-assistant/computations && python3 confinement-operator-selection.py
+    cd computations && python3 confinement-operator-selection.py
 """
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json

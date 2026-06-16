@@ -28,7 +28,7 @@ References:
   - canonical-framing audit (2026-05-31) — the c_3 cross-anchor swing.
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_uw_reparam_probe.py
+  python3 computations/qbeta/qbeta_uw_reparam_probe.py
 
 Emits: qbeta-uw-reparam-probe.witness.json  (3 assertions).
 """

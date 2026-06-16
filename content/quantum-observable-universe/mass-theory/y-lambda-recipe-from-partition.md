@@ -185,7 +185,7 @@ in $O(p(n) \cdot \max \text{hooks})$ time.
 
 ## Code
 
-[`folio-assistant/computations/y_lambda_recipe_from_partition.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y_lambda_recipe_from_partition.py)
+[`computations/y_lambda_recipe_from_partition.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_recipe_from_partition.py)
 implements the full recipe end-to-end; takes a partition as input
 and returns $(P_\lambda, D_n)$ in $\sqrt q$ with cyclotomic
 denominator.

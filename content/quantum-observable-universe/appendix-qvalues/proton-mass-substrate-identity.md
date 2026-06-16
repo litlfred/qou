@@ -13,7 +13,7 @@ $$
 $$
 
 *to a residual of $0.24\,\mathrm{ppm}$ at $q = q_0$ (50-dps MPFR
-verified, [`m_p_substrate_identity_50dps.py`](../../../folio-assistant/computations/m_p_substrate_identity_50dps.py)).*
+verified, [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py)).*
 
 *Equivalently, factoring $12 = \dim V_{(2,1)} \cdot |S_3| = 2 \cdot 6$:*
 
@@ -160,7 +160,7 @@ $$
 The correction $(\alpha_{\mathrm{em}}/\pi) / \dim H_3 = (\alpha_{\mathrm{em}}/\pi) / 6$
 appeared at 0.054 ppm (vs the bare identity's 32 ppm residual to integer
 12) — a $600\times$ improvement, computed by
-[`ocneanu-12-em-correction-candidate`](../../../folio-assistant/computations/ocneanu_12_em_correction_candidate.py).
+[`ocneanu-12-em-correction-candidate`](../../../computations/ocneanu_12_em_correction_candidate.py).
 Both factors are structurally motivated: $(\alpha_{\mathrm{em}}/\pi)$
 appears in m_K/m_π's Bring zero-mode closure, and
 $1/\dim H_3$ is the Plancherel-mean normalization over the H_3
@@ -187,5 +187,5 @@ categorical derivation.
   — canonical Hecke-skein $\Delta m / M_N$ derivation
 - [`docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md`](../../../docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md)
   — the universal $-1/12$ leading-pole coefficient (200-dps verified)
-- [`m_p_substrate_identity_50dps.py`](../../../folio-assistant/computations/m_p_substrate_identity_50dps.py)
+- [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py)
   — production-grade compute script (50-dps MPFR)

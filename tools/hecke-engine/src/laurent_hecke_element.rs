@@ -1,7 +1,7 @@
 //! Hecke element with `LaurentRationalQ` coefficients.
 //!
 //! Port of `LaurentHeckeElement`
-//! (`folio-assistant/computations/hecke_laurent_fast.py`).  A
+//! (`computations/hecke_laurent_fast.py`).  A
 //! "Hecke element" is a formal `Q[q, q⁻¹]`-linear combination of
 //! words in the Hecke generators `σ_i`.  Internally, the same
 //! shape as `Q[q, q⁻¹][σ_1, …, σ_{n-1}] / ⟨braid + Hecke⟩` carries.
@@ -89,7 +89,7 @@ impl LaurentHeckeElement {
     ///   coefficient ring must be `Q[q, q⁻¹]`, not `Z[q, q⁻¹]`).
     ///
     /// Matches the float discriminator in
-    /// `folio-assistant/computations/markov_peel_rust_bridge.py`
+    /// `computations/markov_peel_rust_bridge.py`
     /// `_atomic_word_to_signed_gens`.
     pub fn crossing_factor(gen: i32, sign: i8) -> Self {
         let mut terms: BTreeMap<Vec<i32>, LaurentRationalQ> = BTreeMap::new();

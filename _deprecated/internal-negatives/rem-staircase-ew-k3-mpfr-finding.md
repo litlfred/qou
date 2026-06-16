@@ -8,12 +8,12 @@ $q^{1/(2k-1)}$.
 
 For $k = 3$ (the Weinberg-angle case), this prediction was previously
 verified at **float64 precision** to $0.13\%$ accuracy via
-[`close_321_weinberg_gap.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/close_321_weinberg_gap.py).
+[`close_321_weinberg_gap.py`](https://github.com/litlfred/qou/blob/main/computations/close_321_weinberg_gap.py).
 A natural question was whether the residual $0.13\%$ is float-precision
 noise (which would imply the conjecture is a closed-form identity)
 or a genuine correction.
 
-[`probe_staircase_ew_k3_categorical.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe_staircase_ew_k3_categorical.py)
+[`probe_staircase_ew_k3_categorical.py`](https://github.com/litlfred/qou/blob/main/computations/probe_staircase_ew_k3_categorical.py)
 re-does the spectral computation at **mpmath 50 dps**, building the
 $16 \times 16$ Hoefsmit $V_{(3,2,1)}$ matrices and the
 27-generator word image at that precision, and diagonalising via

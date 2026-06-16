@@ -31,25 +31,25 @@ $$\chi^\lambda_q(\beta) \;=\; \mathrm{tr}_{V_\lambda}\,\rho_\lambda(\beta), \qqu
 
 Both ingredients already live in the repo:
 
-- [`hecke_characters.build_seminormal_matrices(shape, q)`](../../folio-assistant/computations/hecke/hecke_characters.py)
+- [`hecke_characters.build_seminormal_matrices(shape, q)`](../../computations/hecke/hecke_characters.py)
   — Hoefsmit seminormal matrices $\rho_\lambda(\sigma_1), \ldots, \rho_\lambda(\sigma_{n-1})$ at $q$.
-- [`mass_at_3A_proper.chi_lambda_of_word(sigmas, dim, word)`](../../folio-assistant/computations/mass_at_3A_proper.py)
+- [`mass_at_3A_proper.chi_lambda_of_word(sigmas, dim, word)`](../../computations/mass_at_3A_proper.py)
   — $\mathrm{tr}\bigl(\prod_k (c_k \rho_\lambda(\sigma_{g_k}) + d_k I)\bigr)$ over the atomic-braid word.
-- [`mass_at_3A_proper.atom_braid_word_3A(Z, N)`](../../folio-assistant/computations/mass_at_3A_proper.py)
+- [`mass_at_3A_proper.atom_braid_word_3A(Z, N)`](../../computations/mass_at_3A_proper.py)
   — canonical $(c, d, \text{gen\_idx})$ word for atomic braids
   ($\beta_p \cdot I \cdot \beta_n$ structure with $I = \sigma_3 - \frac{h}{2} \cdot 1$ for the deuteron).
 
-Composing these: [`tr_m_q_hecke_seminormal.py`](../../folio-assistant/computations/tr_m_q_hecke_seminormal.py)
-+ [`wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal(Z, N, q_val)`](../../folio-assistant/computations/wedderburn_jones_markov.py)
+Composing these: [`tr_m_q_hecke_seminormal.py`](../../computations/tr_m_q_hecke_seminormal.py)
++ [`wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal(Z, N, q_val)`](../../computations/wedderburn_jones_markov.py)
 yield the partition sum
 
 $$\mathrm{tr}_M^{\text{q-Hecke}}(\beta) \;=\; \sum_{\lambda \vdash 3A} y_\lambda(q_0) \cdot \mathrm{tr}\,\rho_\lambda^{q_0}(\beta).$$
 
 ## Cross-check: closure verified at machine epsilon for all 5 low isotopes
 
-[`tr-m-q-hecke-seminormal.witness.json`](../../folio-assistant/computations/tr-m-q-hecke-seminormal.witness.json)
+[`tr-m-q-hecke-seminormal.witness.json`](../../computations/tr-m-q-hecke-seminormal.witness.json)
 compares against the canonical reducer reference
-([`atomic-tr-m-mpfr-50dps.witness.json`](../../folio-assistant/computations/atomic-tr-m-mpfr-50dps.witness.json),
+([`atomic-tr-m-mpfr-50dps.witness.json`](../../computations/atomic-tr-m-mpfr-50dps.witness.json),
 produced by `markov_trace_recursive`).
 
 **Final hybrid-precision result** (commit
@@ -88,7 +88,7 @@ result in ~62 s for the slowest atom.
 ~66 s total for 5 atoms (cached y_λ across atoms with the same n
 makes the second-atom-at-n=9 cost negligible). Compares favorably
 to PR #564's
-[`rho_k_h3a_refinement.py`](../../folio-assistant/computations/rho_k_h3a_refinement.py)
+[`rho_k_h3a_refinement.py`](../../computations/rho_k_h3a_refinement.py)
 (50-dps mpmath throughout: ~5–10 minutes for the same 5 atoms).
 The hybrid 30-dps + float64 approach is the recommended default
 for partition-sum tr_M consumers needing better than 1e-5
@@ -96,7 +96,7 @@ agreement; for binding-fraction $\Delta_\lambda$ analysis (#564's
 production path), use mpmath 50-dps throughout.
 
 **Note:** PR #564's
-[`rho_k_h3a_refinement.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/folio-assistant/computations/rho_k_h3a_refinement.py)
+[`rho_k_h3a_refinement.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/computations/rho_k_h3a_refinement.py)
 (commit
 [`c068550c`](https://github.com/litlfred/qou/commit/c068550c))
 implements the same closure with **mpmath at 50 dps**, achieving
@@ -143,8 +143,8 @@ gates this on every CI run.
 ## Cross-references
 
 - [`docs/audits/2026-05-08-p3-h-3a-divergence.md`](2026-05-08-p3-h-3a-divergence.md) — the weight-side fix (predecessor)
-- [`folio-assistant/computations/wedderburn_jones_markov.py`](../../folio-assistant/computations/wedderburn_jones_markov.py) — the module
-- [`folio-assistant/computations/tr_m_q_hecke_seminormal.py`](../../folio-assistant/computations/tr_m_q_hecke_seminormal.py) — the cross-check witness
-- [PR #564, `rho_k_h3a_refinement.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/folio-assistant/computations/rho_k_h3a_refinement.py) — production symbolic path
+- [`computations/wedderburn_jones_markov.py`](../../computations/wedderburn_jones_markov.py) — the module
+- [`computations/tr_m_q_hecke_seminormal.py`](../../computations/tr_m_q_hecke_seminormal.py) — the cross-check witness
+- [PR #564, `rho_k_h3a_refinement.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/computations/rho_k_h3a_refinement.py) — production symbolic path
 - [`prop:atomic-mass-gb-nf`](../../content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md)
 - [`prop:hecke-branching-trace-decomposition`](../../content/quantum-observable-universe/braids-and-knots/hecke-branching-trace-decomposition.md)

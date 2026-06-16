@@ -144,31 +144,31 @@
     "n_total": 11,
     "consumer_audit": [
       {
-        "script": "folio-assistant/computations/per_nucleon_shift_derivation.py",
+        "script": "computations/per_nucleon_shift_derivation.py",
         "role": "Closed-form empirical derivation (A=2..6 verified)",
         "currently_uses": "EMPIRICAL_TABLE",
         "recommendation": "Could ALSO record via_crystal value for A=2..6 cross-check; use via_crystal for A>=7 extrapolation."
       },
       {
-        "script": "folio-assistant/computations/d_u_closed_form_proof.py",
+        "script": "computations/d_u_closed_form_proof.py",
         "role": "Habiro-form denominator D(u) shift exponent",
         "currently_uses": "EMPIRICAL_CONJECTURE",
         "recommendation": "Replace empirical conjecture with shift_nf_atomic_via_crystal for categorical-derivation provenance."
       },
       {
-        "script": "folio-assistant/computations/markov/markov_peel.py",
+        "script": "computations/markov/markov_peel.py",
         "role": "Full atomic tr_M via Markov axiom ascent",
         "currently_uses": "NOT_DIRECT",
         "recommendation": "Doesn't directly use shift; tr_M values are independent. But D(u) factorization downstream uses shift; cite via_crystal as the categorical pole-order derivation."
       },
       {
-        "script": "folio-assistant/computations/atomic_braid_mass_table.py",
+        "script": "computations/atomic_braid_mass_table.py",
         "role": "Mass prediction table for atoms",
         "currently_uses": "NOT_DIRECT",
         "recommendation": "Mass = m_e · |τ_M| via tr_M_atomic; no direct shift consumption. But categorical provenance row could cite via_crystal as the derived shift exponent for D(u) downstream of mass."
       },
       {
-        "script": "folio-assistant/computations/low_isotope_mass_table.py",
+        "script": "computations/low_isotope_mass_table.py",
         "role": "Low-isotope mass table (PR #663)",
         "currently_uses": "NOT_DIRECT",
         "recommendation": "Same as atomic_braid_mass_table; cite via_crystal in derivation_inputs.shift_provenance field."

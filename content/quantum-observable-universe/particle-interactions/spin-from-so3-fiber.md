@@ -59,7 +59,7 @@ named on the flavour-to-sheet side in
 
 Per `conj:s5-so3-fiber-action` (PR
 [#1081](https://github.com/litlfred/qou/pull/1081) supplier — class
-scaffolded in [`S5SO3FiberAction.lean`](../../folio-assistant/computations/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean)):
+scaffolded in [`S5SO3FiberAction.lean`](../../computations/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean)):
 
 1. **The icosahedral lift is well-defined.** $S_5 \supset A_5 \cong I
    \subset \mathrm{SO}(3)$ provides a canonical map from $S_5$-orbits
@@ -136,7 +136,7 @@ class SpinFromSO3Fiber
 ## Open R&D
 
 1. **Compute prototype**: extend
-   [`probe_pn_flavor_asymmetry.py`](../../folio-assistant/computations/probe_pn_flavor_asymmetry.py)
+   [`probe_pn_flavor_asymmetry.py`](../../computations/probe_pn_flavor_asymmetry.py)
    from $S_3$-truncated PL integration to full $\mathrm{SO}(3)$
    spherical-harmonic decomposition on Bring's surface; verify
    $h^4 = -3/4$ at the $\ell = 2$ level.
@@ -158,7 +158,7 @@ class SpinFromSO3Fiber
 - Upstream class supplier:
   `conj:s5-so3-fiber-action`
   (PR [#1081](https://github.com/litlfred/qou/pull/1081),
-  [`S5SO3FiberAction.lean`](../../folio-assistant/computations/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean))
+  [`S5SO3FiberAction.lean`](../../computations/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean))
 - Sibling Cluster B item:
   [`conj:isospin-from-canonical-bowtie`](isospin-from-canonical-bowtie.md) (D9)
 - Color-tube structure on Bring's quintic:

@@ -447,7 +447,7 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
     wrong. See docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md.
 
     The CANONICAL replacement is:
-        folio-assistant/computations/mass_at_3A_proper.py
+        computations/mass_at_3A_proper.py
             per_generator_V_hat_3A(Z, N, weight_scheme="normalized_plancherel")
     which sums over all partitions of 3A with proper Wedderburn weights.
 

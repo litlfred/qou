@@ -4,7 +4,7 @@ pure-tower proton mass computed via the
 $q_0$, in Hecke units, converted to MeV via the electron-trefoil
 calibration and corrected by $(1 + [2]_q \hbar_q^2)$
 ([quantum Planck constant](#def:quantum-planck-constant)).
-Let $m_{\mathfrak{p}}^{\mathrm{CODATA}} \approx :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}\;\mathrm{MeV}$
+Let $m_{\mathfrak{p}}^{\mathrm{CODATA}} \approx :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json}\;\mathrm{MeV}$
 denote the experimental proton mass.
 
 **Derivation via the Frobenius co-Casimir.**
@@ -85,7 +85,7 @@ $1.2761$ MeV and the observed $1.2779$ MeV may come from:*
    at this precision.*
 
 **GB-filtration decomposition (witness).**
-*Script `folio-assistant/computations/frobenius_partition_sum.py`
+*Script `computations/frobenius_partition_sum.py`
 decomposes $\sum_\lambda 1/\dim_q(\lambda)$ by confinement
 filtration level $\ell(\lambda) = \mathrm{height}(\lambda) - 1$:*
 
@@ -195,6 +195,6 @@ See [Table 5](#tbl:partition-sum-proton-residual-table5-data).
 **Reference implementations.**
 *Scripts
 (both on branch `claude/1ppb-handover-docs-cyFlQ`):*
-- [residual_partition_sum.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/folio-assistant/computations/residual_partition_sum.py)
-- [tower_isotope_absolute.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/folio-assistant/computations/tower_isotope_absolute.py)
-- [kerov_walk_verify.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/folio-assistant/computations/kerov_walk_verify.py)
+- [residual_partition_sum.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/computations/residual_partition_sum.py)
+- [tower_isotope_absolute.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/computations/tower_isotope_absolute.py)
+- [kerov_walk_verify.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/computations/kerov_walk_verify.py)

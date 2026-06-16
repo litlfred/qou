@@ -14,7 +14,7 @@ Two parallel PRs working in adjacent layers of the Borromean / mass-derivation d
 
 | Axis | Overlap | Notes |
 |---|---|---|
-| Files | 0 | PR #1076 touches `.md` / `.ts` / `.lean` only; PR #1089 touches 6 `.py` files in `folio-assistant/computations/`. Zero shared files. |
+| Files | 0 | PR #1076 touches `.md` / `.ts` / `.lean` only; PR #1089 touches 6 `.py` files in `computations/`. Zero shared files. |
 | Dependency | 0 | Neither blocks the other. |
 | Cherry-pick | 0 | No commits worth cherry-picking either direction. |
 | Theme | adjacent | Both clean up the Borromean / mass-derivation domain — #1076 narrative + Lean encoding, #1089 production Python rename. Consistent framing. |

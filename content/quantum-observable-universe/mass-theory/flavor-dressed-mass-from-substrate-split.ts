@@ -19,8 +19,8 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/probe_flavor_dressed_mass_split.py",
-    witness: "folio-assistant/computations/flavor-dressed-mass-from-substrate-split.witness.json",
+    script: "computations/probe_flavor_dressed_mass_split.py",
+    witness: "computations/flavor-dressed-mass-from-substrate-split.witness.json",
     status: "verified",
   },
 });

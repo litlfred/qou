@@ -112,10 +112,10 @@ link/knot and the density $\rho \in \{m_e, 2m_e\}$; neither is yet
 derived (see "Why this is a conjecture", points 1–2). The choices are
 mutually **inconsistent**: D uses $6_2$ ($V=4.400$) whereas the
 binding-link census assigns D the Hopf link ($V=0$,
-[binding-link-volumes.witness.json](../../../folio-assistant/computations/binding-link-volumes.witness.json)),
+[binding-link-volumes.witness.json](../../../computations/binding-link-volumes.witness.json)),
 and ${}^3\mathrm{He}$ uses one Borromean copy ($8G$) while
 ${}^4\mathrm{He}$ uses four ($4\cdot 8G$). The companion probe
-[rho-f-volume-binding-gap.witness.json](../../../folio-assistant/computations/rho-f-volume-binding-gap.witness.json)
+[rho-f-volume-binding-gap.witness.json](../../../computations/rho-f-volume-binding-gap.witness.json)
 inverts $\rho_F\cdot V_{\mathrm{hyp}} = \Delta_{\mathrm{binding}}$ and
 finds **no** fixed link primitive reproduces the light-isotope bindings
 with $\rho \in \{m_e, 2m_e\}$ (`matches_within_10pct: []`; ${}^4$He

@@ -10,9 +10,9 @@ export default proposition({
   },
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/cl3_zeta5_orbit_sum.py",
+    script: "computations/cl3_zeta5_orbit_sum.py",
     witness:
-      "folio-assistant/computations/cl3-zeta5-orbit-sum.witness.json",
+      "computations/cl3-zeta5-orbit-sum.witness.json",
     status: "verified",
   },
   uses: ["prop:bring-trilog-imaginary-tate-rational"],

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """I14 audit — witness provenance completeness.
 
-Every `folio-assistant/computations/*.witness.json` MUST declare:
+Every `computations/*.witness.json` MUST declare:
 
   - `engine` (e.g. "mpmath", "python+snappy", "rust+mpmath",
     "markov_peel+mpmath") — what produced the value.

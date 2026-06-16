@@ -10,8 +10,8 @@ export default conjecture({
   },
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/mass_table_ppb.py",
-    witness: "folio-assistant/computations/mass-table-ppb.witness.json",
+    script: "computations/mass_table_ppb.py",
+    witness: "computations/mass-table-ppb.witness.json",
     status: "verified",
   },
   uses: [

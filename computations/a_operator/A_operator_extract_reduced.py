@@ -31,7 +31,7 @@ Output: `A-operator-extract-reduced.witness.json` per (λ,
 interface) operator residual + reduced-basis coefficient norms.
 
 Usage:
-    python3 folio-assistant/computations/A_operator_extract_reduced.py
+    python3 computations/A_operator_extract_reduced.py
 """
 from __future__ import annotations
 

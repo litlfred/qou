@@ -47,7 +47,7 @@ Status: quark-level computation for multi-nucleon nuclei requires the
   A ≤ 14 at NUCLEON level; quark-level isotopes are deferred.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 nf-qvalues.py
 Output:
     nf-qvalues.witness.json

@@ -61,7 +61,7 @@ fn markov_peel_rust(_py: Python, m: &PyModule) -> PyResult<()> {
 Python side:
 
 ```python
-# folio-assistant/computations/markov/markov_peel_rust_bridge.py
+# computations/markov/markov_peel_rust_bridge.py
 from markov_peel_rust import tr_M_atomic as _rust_tr_M_atomic
 from laurent_q_trace import ZHLaurent
 

@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/schur_weyl_symbolic.py",
+  "script_path": "computations/schur_weyl_symbolic.py",
   "language": "python",
   "source_hash": "b3d20400ed77",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -132,7 +132,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/schur_weyl_symbolic.py:57: `def partitions_of(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/schur_weyl_symbolic.py:62: `def _gen(…)` has 2 parameters without type annotation: n, max_part — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/schur_weyl_symbolic.py:74: `def q_integer(…)` has 2 parameters without type annotation: k, q — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/schur_weyl_symbolic.py:88: `def q_hook_product(…)` has 3 parameters without type annotation: partition, q, simplify — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/schur_weyl_symbolic.py:105: `def schur_at_two_vars(…)` has 3 parameters without type annotation: partition, q, simplify — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/schur_weyl_symbolic.py:57: `def partitions_of(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | computations/schur_weyl_symbolic.py:62: `def _gen(…)` has 2 parameters without type annotation: n, max_part — add `: type` (or `: Any` if the type genuinely is untyped) | computations/schur_weyl_symbolic.py:74: `def q_integer(…)` has 2 parameters without type annotation: k, q — add `: type` (or `: Any` if the type genuinely is untyped) | computations/schur_weyl_symbolic.py:88: `def q_hook_product(…)` has 3 parameters without type annotation: partition, q, simplify — add `: type` (or `: Any` if the type genuinely is untyped) | computations/schur_weyl_symbolic.py:105: `def schur_at_two_vars(…)` has 3 parameters without type annotation: partition, q, simplify — add `: type` (or `: Any` if the type genuinely is untyped)"
       },
       {
         "field_hash": {
@@ -149,7 +149,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/schur_weyl_symbolic.py:57: `def partitions_of(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/schur_weyl_symbolic.py:62: `def _gen(…)` has 2 parameters without type annotation: n, max_part — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/schur_weyl_symbolic.py:74: `def q_integer(…)` has 2 parameters without type annotation: k, q — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/schur_weyl_symbolic.py:88: `def q_hook_product(…)` has 3 parameters without type annotation: partition, q, simplify — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/schur_weyl_symbolic.py:105: `def schur_at_two_vars(…)` has 3 parameters without type annotation: partition, q, simplify — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/schur_weyl_symbolic.py:57: `def partitions_of(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | computations/schur_weyl_symbolic.py:62: `def _gen(…)` has 2 parameters without type annotation: n, max_part — add `: type` (or `: Any` if the type genuinely is untyped) | computations/schur_weyl_symbolic.py:74: `def q_integer(…)` has 2 parameters without type annotation: k, q — add `: type` (or `: Any` if the type genuinely is untyped) | computations/schur_weyl_symbolic.py:88: `def q_hook_product(…)` has 3 parameters without type annotation: partition, q, simplify — add `: type` (or `: Any` if the type genuinely is untyped) | computations/schur_weyl_symbolic.py:105: `def schur_at_two_vars(…)` has 3 parameters without type annotation: partition, q, simplify — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -168,7 +168,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/schur_weyl_symbolic.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/schur_weyl_symbolic.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       },
       {
         "field_hash": {
@@ -185,7 +185,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/schur_weyl_symbolic.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/schur_weyl_symbolic.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -268,7 +268,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/schur_weyl_symbolic.py:463: script writes `.witness.json` (\"schur-weyl-symbolic.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/schur_weyl_symbolic.py:463: script writes `.witness.json` (\"schur-weyl-symbolic.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       },
       {
         "field_hash": {
@@ -285,7 +285,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/schur_weyl_symbolic.py:463: script writes `.witness.json` (\"schur-weyl-symbolic.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/schur_weyl_symbolic.py:463: script writes `.witness.json` (\"schur-weyl-symbolic.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       }
     ],
     "compute_no_mpf_to_float_cast": [

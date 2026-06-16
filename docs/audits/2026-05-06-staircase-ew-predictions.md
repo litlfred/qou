@@ -2,8 +2,8 @@
 ## 2026-05-06 — ρ_4 degeneracy finding + hook-ratio derivation falsification
 
 **Branch**: `copilot/rebase-main-claude-weinberg-wedderburn-321`  
-**Script**: `folio-assistant/computations/staircase_ew_predictions.py`  
-**Witness**: `folio-assistant/computations/staircase-ew-predictions.witness.json`  
+**Script**: `computations/staircase_ew_predictions.py`  
+**Witness**: `computations/staircase-ew-predictions.witness.json`  
 **Predecessor**: `docs/audits/2026-05-06-close-321-weinberg-gap.md`
 
 ---

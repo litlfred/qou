@@ -19,9 +19,9 @@ export default proposition({
   computation: {
     engine: "sympy",
     script:
-      "folio-assistant/computations/qbeta/qbeta_c_k_recursion_scaffold.py",
+      "computations/qbeta/qbeta_c_k_recursion_scaffold.py",
     witness:
-      "folio-assistant/computations/qbeta/qbeta-c-k-recursion-scaffold.witness.json",
+      "computations/qbeta/qbeta-c-k-recursion-scaffold.witness.json",
     status: "experimental",
   },
   tags: [

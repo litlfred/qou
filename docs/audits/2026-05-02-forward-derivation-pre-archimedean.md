@@ -5,8 +5,8 @@
 **Predecessors:**
 [`2026-05-01-math-framework-deep-audit.md`](2026-05-01-math-framework-deep-audit.md) (line-by-line audit table),
 [`derivation-chain-mass-tower.md`](derivation-chain-mass-tower.md) (Lean-side chain),
-[`computations/DERIVATION-CHAIN-METHODOLOGY.md`](../../folio-assistant/computations/DERIVATION-CHAIN-METHODOLOGY.md) (compute methodology),
-[`computations/DERIVATION-STATUS.md`](../../folio-assistant/computations/DERIVATION-STATUS.md) (current numerical state).
+[`computations/DERIVATION-CHAIN-METHODOLOGY.md`](../../computations/DERIVATION-CHAIN-METHODOLOGY.md) (compute methodology),
+[`computations/DERIVATION-STATUS.md`](../../computations/DERIVATION-STATUS.md) (current numerical state).
 
 **What this document is.** A *forward* (rather than retrospective) walk
 through the algebraic-side derivation. Each step states (a) the
@@ -250,7 +250,7 @@ $\tau$-image identification).
   the Markov property preserves on closure.
 - **Riding-on:** Step 6 conjecture; Step 13 GS filtration.
 - **Compute backing:**
-  [`folio-assistant/computations/sdp_cross_channel.py`](../../folio-assistant/computations/sdp_cross_channel.py)
+  [`computations/sdp_cross_channel.py`](../../computations/sdp_cross_channel.py)
   implements the depth-2 cross-pair contribution (level-3 only —
   audit gap §3·D).
 - **AUDIT.** 🟢 (post-PR #500) — the algebraic JSJ now lives entirely
@@ -276,9 +276,9 @@ $\tau$-image identification).
   projectors of the Hecke quotient of the braid-group algebra.
 - **Riding-on:** Steps 1, 6.
 - **Compute backing:**
-  [`hecke_core.py`](../../folio-assistant/computations/substrate/hecke_core.py)
+  [`hecke_core.py`](../../computations/substrate/hecke_core.py)
   (H₃(q) NF multiplication),
-  [`hecke_characters.py`](../../folio-assistant/computations/hecke/hecke_characters.py)
+  [`hecke_characters.py`](../../computations/hecke/hecke_characters.py)
   (Hoefsmit seminormal matrices, k≤12+).
 - **AUDIT.** 🟢 The CS-side / TQFT path-integral interpretation
   lives at $\tau$ and is not used as a derivation input on the
@@ -304,8 +304,8 @@ $\tau$-image identification).
   H_n(q)$.
 - **Riding-on:** Step 9.
 - **Compute backing:**
-  [`atom-mass-complete-wedderburn.witness.json`](../../folio-assistant/computations/atom-mass-complete-wedderburn.witness.json),
-  [`atom_mass_partition.py`](../../folio-assistant/computations/atom_mass_partition.py).
+  [`atom-mass-complete-wedderburn.witness.json`](../../computations/atom-mass-complete-wedderburn.witness.json),
+  [`atom_mass_partition.py`](../../computations/atom_mass_partition.py).
 - **AUDIT.** 🟡 *Bratteli recursion at higher levels* — the
   Lean file `wedderburn-bratteli-recursion.lean` had 2 sorries at
   the time of the 2026-05-01 audit; **post-PR #500** these are
@@ -329,9 +329,9 @@ $\tau$-image identification).
   fact that $T_i$ permutes axial distances by 1.
 - **Riding-on:** Step 10.
 - **Compute backing:**
-  [`hoefsmit_witness.json`](../../folio-assistant/computations/hoefsmit_witness.json)
+  [`hoefsmit_witness.json`](../../computations/hoefsmit_witness.json)
   (191→1000+ partitions),
-  [`hoefsmit_witness.py`](../../folio-assistant/computations/hoefsmit_witness.py).
+  [`hoefsmit_witness.py`](../../computations/hoefsmit_witness.py).
 - **AUDIT.** 🟢 Derived (compute backbone). No fits.
 
 ### Step 12 — Partition weights as Wedderburn-block index
@@ -349,8 +349,8 @@ $\tau$-image identification).
   Hoefsmit-NF expansion of $\rho_\lambda$.
 - **Riding-on:** Steps 10–11.
 - **Compute backing:**
-  [`y_lambda_wenzl_bridge_extended.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge_extended.py),
-  [`y-lambda-clean-closed-forms.md`](../../folio-assistant/computations/y-lambda-clean-closed-forms.md).
+  [`y_lambda_wenzl_bridge_extended.py`](../../computations/y_lambda_wenzl_bridge_extended.py),
+  [`y-lambda-clean-closed-forms.md`](../../computations/y-lambda-clean-closed-forms.md).
 - **AUDIT.** 🟢 Derived. The previous "approx" tag on $y_{(4,1)} +
   y_{(2,1,1,1)}$ (BW-11) is **resolved** — closed form available
   at $n \leq 12$.
@@ -379,9 +379,9 @@ $\tau$-image identification).
 - **Riding-on:** Step 9 + the **finite-collapse-at-$E_2$ axiom**
   (`gradedMarkovTrace` and `residueAtRoot` are
   `noncomputable opaque` per
-  [`AUDIT-gb-residue-opaque-declarations.md`](../../folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md)).
+  [`AUDIT-gb-residue-opaque-declarations.md`](../../computations/AUDIT-gb-residue-opaque-declarations.md)).
 - **Compute backing:** symbolic-in-$q$ machinery in
-  [`hecke_characters.py`](../../folio-assistant/computations/hecke/hecke_characters.py)
+  [`hecke_characters.py`](../../computations/hecke/hecke_characters.py)
   (sparse, k≤12+).
 - **AUDIT.** 🟡 The *spectral-sequence existence* is now derived
   via the standard Hochschild route (post-update to
@@ -440,9 +440,9 @@ $\tau$-image identification).
   $y_\lambda$ pinned by Markov + cyclicity (Jones–Ocneanu–Wenzl).
 - **Riding-on:** Steps 10–12.
 - **Compute backing:**
-  [`hecke_core.py`](../../folio-assistant/computations/substrate/hecke_core.py)
+  [`hecke_core.py`](../../computations/substrate/hecke_core.py)
   Markov trace,
-  [`hoefsmit_witness.json`](../../folio-assistant/computations/hoefsmit_witness.json).
+  [`hoefsmit_witness.json`](../../computations/hoefsmit_witness.json).
 - **AUDIT.** 🟢 Classical theorem; no fits.
 
 ### Step 17 — All-pairs theorem for jet-tower mass
@@ -486,7 +486,7 @@ $\tau$-image identification).
 - **Riding-on:** Steps 4, 6 (motivic descent), 11, 16.
 - **Compute backing:**
   [`mass-formula-wedderburn-enumeration.lean`](../../content/quantum-observable-universe/braids-and-knots/mass-formula-wedderburn-enumeration.lean),
-  [`crt_markov.py`](../../folio-assistant/computations/crt_markov.py)
+  [`crt_markov.py`](../../computations/crt_markov.py)
   (the CRT engine).
 - **AUDIT.** 🟡 `conj:mass-endomorphism` claims the tower is a
   *single closed-form* $H_n(q)$ element. As of PR #500 the
@@ -562,7 +562,7 @@ Below: how each output sector consumes the chain.
   treats $N_v \approx 1.45\times 10^6$ (the **effective weak-scale
   crossing count**) as a topological invariant of the
   brane-tower. **In the current code path
-  ([`beta-decay-from-q.py`](../../folio-assistant/computations/beta-decay-from-q.py)
+  ([`beta-decay-from-q.py`](../../computations/beta-decay-from-q.py)
   lines 104–108) $N_v$ is read backward from the CODATA value of
   $v$ — not derived.** The script explicitly flags this as
   "OPEN COMPUTATION". This is the **single largest blocker** for
@@ -571,7 +571,7 @@ Below: how each output sector consumes the chain.
   every β-decay rate prediction. **Status: open research.**
 - **🔴 FROB-FILTER — NEW FLAG.** The
   *Frobenius-positivity filter* used in
-  [`branching-qvalues.witness.json`](../../folio-assistant/computations/branching-qvalues.witness.json)
+  [`branching-qvalues.witness.json`](../../computations/branching-qvalues.witness.json)
   switches between $\|\Sigma_{\rm all}\|$ (A=3 case) and
   $\|\Sigma_{\rm FP}\|$ (A=6 case). The activation threshold is
   **not categorically justified**; the witness explicitly lists
@@ -622,16 +622,16 @@ Below: how each output sector consumes the chain.
 - **🟡 LP cost vector seeding.** The k=6 branching LP itself is
   categorical (Frobenius reciprocity, Bratteli diagram). But the
   **cost vector** uses the magic-shell ladder via
-  [`qvalue-unified.py`](../../folio-assistant/computations/qvalue-unified.py)'s
+  [`qvalue-unified.py`](../../computations/qvalue-unified.py)'s
   `lp_shadow_price(Z, N)` function, which depends on magic-shell
   membership — that is, on `conj:homological-shell-condensation`.
   No AME mass data feeds the LP directly (no least-squares on
   masses), but the magic-ladder structure is the linchpin.
 - **🟠 Compute hygiene §3·E status.**
-  [`hecke_core.py`](../../folio-assistant/computations/substrate/hecke_core.py)
+  [`hecke_core.py`](../../computations/substrate/hecke_core.py)
   three-term formula (Volume / Coulomb / chirality) **still
   substitutes $q_0$ early into $[3]_q$, $H_A$** (lines 49–52).
-  [`exact_binding_per_operation.py`](../../folio-assistant/computations/exact_binding_per_operation.py)
+  [`exact_binding_per_operation.py`](../../computations/exact_binding_per_operation.py)
   maintains symbolic-in-$q$ at 100-dip mpmath precision; partition
   paths via Wenzl-bridge are fully symbolic. The early-q₀
   substitution in `hecke_core.py` is **the principal compute

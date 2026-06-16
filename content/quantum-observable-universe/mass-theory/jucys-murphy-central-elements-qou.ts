@@ -48,8 +48,8 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/probes/jucys_murphy_central_elements_qou_probe.py",
-    witness: "folio-assistant/computations/probes/jucys-murphy-central-elements-qou-probe.witness.json",
+    script: "computations/probes/jucys_murphy_central_elements_qou_probe.py",
+    witness: "computations/probes/jucys-murphy-central-elements-qou-probe.witness.json",
     status: "verified",
   },
 });

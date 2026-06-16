@@ -3,8 +3,8 @@
 **Date:** 2026-05-04
 **Branch:** `copilot/identify-multiplicative-chain`
 **Refs:**
-- [`folio-assistant/computations/alpha/alpha_shift_torus.py`](../../folio-assistant/computations/alpha/alpha_shift_torus.py)
-- [`folio-assistant/computations/alpha/alpha-shift-torus.witness.json`](../../folio-assistant/computations/alpha/alpha-shift-torus.witness.json)
+- [`computations/alpha/alpha_shift_torus.py`](../../computations/alpha/alpha_shift_torus.py)
+- [`computations/alpha/alpha-shift-torus.witness.json`](../../computations/alpha/alpha-shift-torus.witness.json)
 - [`prop:em-coupling-projection`](../../content/quantum-observable-universe/descartes-universe/em-coupling-projection.md)
 - [`prop:alpha-em-categorical-trace-ratio`](../../content/quantum-observable-universe/descartes-universe/alpha-em-categorical-trace-ratio.md)
 - [`prop:force-carrier-intertwining-correspondence`](../../content/quantum-observable-universe/braids-and-knots/force-carrier-intertwining-correspondence.md)
@@ -41,7 +41,7 @@ narrowed to
 > axial-distance configurations, **minus** within-partition (Hecke
 > σ²-reduction) and cross-partition (Ocneanu y_λ) cancellation.
 
-The DP probe ([`dp_pole_probe.py`](../../folio-assistant/computations/dp_pole_probe.py))
+The DP probe ([`dp_pole_probe.py`](../../computations/dp_pole_probe.py))
 implements the cycle-additive upper bound on the q=0 pole order and
 exposes the per-partition Δ_within / Δ_cross cancellation counts.
 
@@ -60,7 +60,7 @@ at q = 0 of a seminormal-trace expression**. We make this explicit:
 
 Empirically on the test bench (p, k) ∈ {(2, 3), (2, 5), (2, 9),
 (3, 4), (3, 5), (3, 7)} — symbolic Hoefsmit computation in
-[`alpha_shift_torus.py`](../../folio-assistant/computations/alpha/alpha_shift_torus.py):
+[`alpha_shift_torus.py`](../../computations/alpha/alpha_shift_torus.py):
 
 | (p, k) | maximizer λ | α_shift(T_{p,k}) | k(p−1) |
 |--------|-------------|-------------------|---------|
@@ -137,7 +137,7 @@ DP-pole-probe upper-bound machinery on the simplest possible input.
 
 ## Witness summary
 
-The witness [`alpha-shift-torus.witness.json`](../../folio-assistant/computations/alpha/alpha-shift-torus.witness.json)
+The witness [`alpha-shift-torus.witness.json`](../../computations/alpha/alpha-shift-torus.witness.json)
 records:
 
 - The full per-irrep symbolic χ_λ(β_{p,k}) ∈ ℚ(q) for each test

@@ -153,8 +153,8 @@ Each integral $\int_{\Sigma_r} F^r_A$ corresponds to the $E_\infty^{r,*}$
 contribution and to one of the six mass terms.*
 
 **Witness.**
-[`folio-assistant/computations/hecke_knot_ideal_tracker.py`](#) and
-[`folio-assistant/computations/knot_ideals_gb_jet_locations.py`](#)
+[`computations/hecke_knot_ideal_tracker.py`](#) and
+[`computations/knot_ideals_gb_jet_locations.py`](#)
 identify hyperbolic-knot ideals at specific GB positions for the
 proton and neutron braids.  The neutron's extra ideal at
 (GB depth 3, jet 1, std channel) — the $6_1$ knot — is the

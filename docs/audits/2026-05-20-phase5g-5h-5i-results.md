@@ -91,9 +91,9 @@ Tested five normalisation schemes on top of the K_3* = 4_1 baseline:
 
 ## Files
 
-- Script (5h): [`fr_pullback_cosh_h_test.py`](../../folio-assistant/computations/fr_pullback_cosh_h_test.py)
+- Script (5h): [`fr_pullback_cosh_h_test.py`](../../computations/fr_pullback_cosh_h_test.py)
 - Witness (5h): `fr-pullback-cosh-h.witness.json` (1 assertion passed; verdict "neutral")
-- Script (5g + 5i): [`constit_factor_and_volhyp_test.py`](../../folio-assistant/computations/constit_factor_and_volhyp_test.py)
+- Script (5g + 5i): [`constit_factor_and_volhyp_test.py`](../../computations/constit_factor_and_volhyp_test.py)
 - Witness (5g + 5i): `constit-factor-and-volhyp.witness.json` (1 assertion passed; results recorded)
 
 ## Cross-references

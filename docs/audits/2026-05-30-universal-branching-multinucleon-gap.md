@@ -3,7 +3,7 @@
 **Authored:** 2026-05-30
 **Branch:** `claude/track-b-skew-syt-count-2026-05-30` (PR [#1515](https://github.com/litlfred/qou/pull/1515))
 **Trigger:** Scoping Gap #2 ("inter-nucleon σ correction") of
-[`UNIVERSAL-BRANCHING-PLAN.md`](../../folio-assistant/computations/UNIVERSAL-BRANCHING-PLAN.md)
+[`UNIVERSAL-BRANCHING-PLAN.md`](../../computations/UNIVERSAL-BRANCHING-PLAN.md)
 revealed that the plan's "free baseline" formula is mathematically
 incorrect AND that the inter-nucleon σ machinery is already
 implemented in the canonical compute path.
@@ -11,12 +11,12 @@ implemented in the canonical compute path.
 ## Headline
 
 1. **Gap #2 is already implemented** in
-   [`canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py)
+   [`canonical_tr_m_via_branching.py`](../../computations/canonical_tr_m_via_branching.py)
    via the operator-valued Wenzl branching (Wenzl 1988), consuming
-   [`lr_coefficients.py`](../../folio-assistant/computations/substrate/lr_coefficients.py)
+   [`lr_coefficients.py`](../../computations/substrate/lr_coefficients.py)
    (Littlewood-Richardson coefficients) and the cached interface
    operators `A^λ_{ξν}(I)` extracted by
-   [`A_operator_extract_at_level.py`](../../folio-assistant/computations/a_operator/A_operator_extract_at_level.py).
+   [`A_operator_extract_at_level.py`](../../computations/a_operator/A_operator_extract_at_level.py).
    The plan doc lagged behind the implementation.
 
 2. **The plan's "free baseline" formula is wrong.** Replacing the
@@ -56,7 +56,7 @@ non-trivial operator `A^λ_{μ_i, μ_{i+1}}(I_{i,i+1})` on the tensor
 factor `V_{μ_i} ⊗ V_{μ_{i+1}}` for each interface, where
 `I_{i,i+1} ∈ {pp, pn, nn}` is the interface type. This is precisely
 sub-lemma 2.1 implemented in
-[`canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py)
+[`canonical_tr_m_via_branching.py`](../../computations/canonical_tr_m_via_branching.py)
 lines 1-25.
 
 ## Where my Gap #1 fits
@@ -78,7 +78,7 @@ nucleons" should not be implemented using this primitive**.
 
 ## Action items
 
-1. **Update [`UNIVERSAL-BRANCHING-PLAN.md`](../../folio-assistant/computations/UNIVERSAL-BRANCHING-PLAN.md)**
+1. **Update [`UNIVERSAL-BRANCHING-PLAN.md`](../../computations/UNIVERSAL-BRANCHING-PLAN.md)**
    to:
    - Mark Gap #2 closed (already implemented in
      `canonical_tr_m_via_branching.py` + `lr_coefficients.py`).
@@ -99,8 +99,8 @@ nucleons" should not be implemented using this primitive**.
 - Wenzl (1988), "Hecke algebras of type A_n and subfactors", Invent. Math. 92.
 - Stanley, *Enumerative Combinatorics Vol 2*, §7.10 (LR rule), §7.16 (skew SYT).
 - Existing canonical infra:
-  [`canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py),
-  [`lr_coefficients.py`](../../folio-assistant/computations/substrate/lr_coefficients.py),
-  [`A_operator_extract_at_level.py`](../../folio-assistant/computations/a_operator/A_operator_extract_at_level.py).
+  [`canonical_tr_m_via_branching.py`](../../computations/canonical_tr_m_via_branching.py),
+  [`lr_coefficients.py`](../../computations/substrate/lr_coefficients.py),
+  [`A_operator_extract_at_level.py`](../../computations/a_operator/A_operator_extract_at_level.py).
 - Formalized single-K statement:
   [`universal-braid-branching.lean`](../../content/quantum-observable-universe/mass-theory/universal-braid-branching.lean).

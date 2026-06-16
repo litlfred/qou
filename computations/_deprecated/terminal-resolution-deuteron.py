@@ -17,10 +17,10 @@ Each resolution path replaces each crossing with either:
 The mass of each fully-resolved link is Vol/hbar_q^2 (from SnapPy).
 The deuteron mass = weighted sum over all paths.
 
-Run: python3 folio-assistant/computations/terminal-resolution-deuteron.py
+Run: python3 computations/terminal-resolution-deuteron.py
 
 Time estimate: ~30 min (19683 SnapPy volume computations)
-Output: folio-assistant/computations/terminal-resolution-deuteron.witness.json
+Output: computations/terminal-resolution-deuteron.witness.json
 """
 
 import json

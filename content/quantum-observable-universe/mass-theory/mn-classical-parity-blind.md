@@ -8,7 +8,7 @@ cannot distinguish a proton from a neutron, because the two
 have identical permutation images.*
 
 **Computational evidence.**
-*Using `folio-assistant/computations/schur_weyl_mn_witness.py`:*
+*Using `computations/schur_weyl_mn_witness.py`:*
 
 See [Table](#tbl:mn-classical-parity-blind-table-data).
 
@@ -74,7 +74,7 @@ identified here closes the proton–neutron splitting gap and is
 the natural next iteration of the symbolic engine.*
 
 **Reference implementation.**
-*Script: `folio-assistant/computations/schur_weyl_mn_witness.py`.
+*Script: `computations/schur_weyl_mn_witness.py`.
 Uses `murnaghan_nakayama.py` (classical MN recursion) and
 `schur_weyl_symbolic.py` (global $H_{3A}$ sum with q symbolic).
 Witness file: `schur-weyl-mn.witness.json`.  Evaluation time: 

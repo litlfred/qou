@@ -223,7 +223,7 @@ def build() -> DerivationChain:
         jet_order=0,
         gb_filtration_level=0,
         notes=(
-            "script: folio-assistant/computations/mass_formula_6term_mpfr_50dps.py.  "
+            "script: computations/mass_formula_6term_mpfr_50dps.py.  "
             "SCRIPT_CITED — the per-term assembly into a single "
             "mass-cat-units value awaits its own derivation chain "
             "(open frontier: terms 2-6 individually need per-term "
@@ -249,7 +249,7 @@ def build() -> DerivationChain:
         citation="manuscript:§mass-endomorphism-tower",
         jet_order=0,
         notes=(
-            "script: folio-assistant/computations/mass_endomorphism.py + "
+            "script: computations/mass_endomorphism.py + "
             "proton_mass_tower_derivation.py.  SCRIPT_CITED — "
             "the T1+T2+T3+T4 assembly itself awaits its own derivation "
             "chain.  Phase A item (50 dps lift) on PR #476 brings each "
@@ -278,7 +278,7 @@ def build() -> DerivationChain:
         citation="manuscript:§mass-endomorphism-tower",
         jet_order=0,
         notes=(
-            "script: folio-assistant/computations/mass_endomorphism.py "
+            "script: computations/mass_endomorphism.py "
             "electron-tower path.  SCRIPT_CITED until an "
             "electron-tr-M-q0 chain ships.  "
             "**Precision note**: the stored `output_value` "

@@ -103,7 +103,7 @@ varied-generator braids; the residual wins require:
     A ≥ 8 where Rust is also viable)
 
 Cross-references:
-  - [`tr_m_wenzl_bridge_mpfr.py:_chi_lambda_of_word_mpf`](../../folio-assistant/computations/tr_m_wenzl_bridge_mpfr.py) — current dense×sparse inner loop
+  - [`tr_m_wenzl_bridge_mpfr.py:_chi_lambda_of_word_mpf`](../../computations/tr_m_wenzl_bridge_mpfr.py) — current dense×sparse inner loop
   - [`hecke-canonical-chi`](../../tools/hecke-engine/src/bin/hecke_canonical_chi.rs) — Rust kernel (cherry-picked from #683)
   - [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md) — defines σ_g eigenstructure
   - [`def:hoefsmit-seminormal-form`](../../content/quantum-observable-universe/braids-and-knots/) — partial eigendecomposition by construction

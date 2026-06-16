@@ -21,7 +21,7 @@ The LP should find that bonded Φ₁ < unbonded Φ₁ (more negative = more
 stable).
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 atom-stability-check.py
 """
 

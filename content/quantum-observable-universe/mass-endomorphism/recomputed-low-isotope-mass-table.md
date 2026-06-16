@@ -5,17 +5,17 @@ and the* $\rho_K$ *refinement infrastructure, **three independent production pat
 *at* $q = q_0$ *now agree to machine epsilon across* $\{p, n, D, T, ^{3}\mathrm{He}\}$:
 
 1. **Canonical Markov-axiom reducer** —
-   [`markov_trace_recursive.markov_trace_of_word`](../../../folio-assistant/computations/markov/markov_trace_recursive.py)
+   [`markov_trace_recursive.markov_trace_of_word`](../../../computations/markov/markov_trace_recursive.py)
    at mpfr 50-dps; reference values stored in
-   [`atomic-tr-m-mpfr-50dps.witness.json`](../../../folio-assistant/computations/atomic-tr-m-mpfr-50dps.witness.json).
+   [`atomic-tr-m-mpfr-50dps.witness.json`](../../../computations/atomic-tr-m-mpfr-50dps.witness.json).
 2. **Hybrid partition-sum** (this PR) — 30-dps sympy `Float`
    for $y_\lambda$ via Wenzl's Schur principal specialization,
    float64 for $\chi^\lambda_q$ via Hoefsmit seminormal matrices,
    per-`n` cache.  Module:
-   [`wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal`](../../../folio-assistant/computations/wedderburn_jones_markov.py);
-   driver: [`tr_m_q_hecke_seminormal.py`](../../../folio-assistant/computations/tr_m_q_hecke_seminormal.py).
+   [`wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal`](../../../computations/wedderburn_jones_markov.py);
+   driver: [`tr_m_q_hecke_seminormal.py`](../../../computations/tr_m_q_hecke_seminormal.py).
 3. **Symbolic partition-sum** — full 50-dps mpmath via
-   [`rho_k_h3a_refinement.py`](../../../folio-assistant/computations/rho_k_h3a_refinement.py),
+   [`rho_k_h3a_refinement.py`](../../../computations/rho_k_h3a_refinement.py),
    the production path for binding-fraction $\Delta_\lambda$ analysis.
 
 ## Cross-check (machine epsilon for all 5 atoms)
@@ -33,7 +33,7 @@ $$
 
 with $\mathcal{B}_K = \mathtt{atom\_braid\_word\_3A}(Z, N) \in H_{3A}(q)$
 the canonical 3A-strand atomic braid (β-decay-operator-unfolded form;
-see [`mass_at_3A_proper.atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py)),
+see [`mass_at_3A_proper.atom_braid_word_3A`](../../../computations/mass_at_3A_proper.py)),
 $y_\lambda$ the canonical Wenzl Markov weight (see
 [`prop:markov-trace-recursive-reducer`](markov-trace-recursive-reducer.md)),
 $\chi^\lambda$ the Hoefsmit q-character of the atomic braid, and
@@ -52,9 +52,9 @@ the $\Delta_\lambda$ correction; we therefore write the formula
 with constituent sum and binding side by side.
 
 Reference scripts:
-[`atomic_mass_via_rho_k.py`](../../../folio-assistant/computations/atomic_mass_via_rho_k.py)
+[`atomic_mass_via_rho_k.py`](../../../computations/atomic_mass_via_rho_k.py)
 (LO baseline, retained as reference);
-[`binding_K_direct.py`](../../../folio-assistant/computations/binding_K_direct.py)
+[`binding_K_direct.py`](../../../computations/binding_K_direct.py)
 (direct binding formulation; consumes $\Delta_\lambda$ from the
 in-flight derivation race in PRs #602 / #603 / #613).
 
@@ -69,7 +69,7 @@ calibration constants (tracked under
 The proton and neutron rows are **tautological** by construction.
 
 Witness:
-[`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json).
+[`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json).
 
 See [Table 2](#tbl:recomputed-low-isotope-mass-table-table2-data).
 
@@ -140,9 +140,9 @@ observable share reflects multi-wrap / finite-size structure
 absent from the single-wrap closed form.
 
 Witness:
-[`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json)
+[`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json)
 ( derived via
-[`derived_masses.q_beta_predicted_mev`](../../../folio-assistant/computations/derived_masses.py)).
+[`derived_masses.q_beta_predicted_mev`](../../../computations/derived_masses.py)).
 3 assertions pass: residual $<0.5\%$, residual $<2$ keV,
 single-wrap residual $<$ typed-crossings residual.
 
@@ -154,7 +154,7 @@ tautological by construction (the $|\mathrm{tr}_M|$ factor cancels
 exactly in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$,
 so $\mathcal{M}^{\mathrm{LO}}_\text{pred} = Z m_p + N m_n$); the
 Strategy-3 multi-term implementation in
-[`atomic_braid_mass_table.py`](../../../folio-assistant/computations/atomic_braid_mass_table.py)
+[`atomic_braid_mass_table.py`](../../../computations/atomic_braid_mass_table.py)
 has a known structural bug (multiplicative T1 base instead of
 additive LP active-set, per its own deprecation banner lines 24-46).
 Per owner directive, neither is the FULL framework
@@ -165,7 +165,7 @@ shadow-price closure ([`prop:operator-selection-lp`](operator-selection-lp.md))
 or Phase 2 50-dps $m_e^{\mathrm{Hecke}}$ lift lands.
 
 The accessors
-[`derived_masses.proton_mass_mev`](../../../folio-assistant/computations/derived_masses.py)
+[`derived_masses.proton_mass_mev`](../../../computations/derived_masses.py)
 and friends raise `NotImplementedError` with pointers to these
 blockers; consumers must NOT fall back to the LO or Strategy-3 forms.
 
@@ -174,7 +174,7 @@ blockers; consumers must NOT fall back to the LO or Strategy-3 forms.
 **1. The 0.000 % on $p$ and $n$ is a calibration-discipline
 violation, not a prediction.** The ρ_K leading-order ansatz used
 in this table consumes $m_p$ and $m_n$ as CODATA inputs (via
-[`folio-assistant/computations/substrate/codata_constants.py`](../../../folio-assistant/computations/substrate/codata_constants.py)),
+[`computations/substrate/codata_constants.py`](../../../computations/substrate/codata_constants.py)),
 so for $K = p$ ($Z = 1, N = 0$) and $K = n$ ($Z = 0, N = 1$)
 the formula returns the input mass exactly. **This is a bug, not
 a feature**: the QOU framework admits exactly three calibration
@@ -184,7 +184,7 @@ CAL-3 $= \mathfrak{Q}_\beta(n)$ (fixes hadronic scale $E_0$). $m_p$ and $m_n$
 are **predictions** of the framework, derivable as
 $m_p = |\mathrm{tr}_M(p, q_0)| \cdot E_0$ and
 $m_n = m_p + \mathfrak{Q}_\beta + m_e$ per the 3-input convention recommended
-in [`neutron-gap-probes-round3.witness.json`](../../../folio-assistant/computations/neutron-gap-probes-round3.witness.json).
+in [`neutron-gap-probes-round3.witness.json`](../../../computations/neutron-gap-probes-round3.witness.json).
 The script-side migration is tracked as Workplan 0b
 (see [`docs/audits/-1ppb-workplan-update.md`](../../../docs/audits/-1ppb-workplan-update.md));
 until it lands, the $0.000\%$ rows above are tautologies and the
@@ -202,7 +202,7 @@ from CODATA) is the territory of:
 
 - $\rho_K^{\text{full}}(Z, N) = \rho_K^{\mathrm{LO}}(Z, N) + (1/|\mathrm{tr}_M|)
   \cdot \sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda(K)$
-  ([`rho_k_h3a_refinement.py`](../../../folio-assistant/computations/rho_k_h3a_refinement.py)
+  ([`rho_k_h3a_refinement.py`](../../../computations/rho_k_h3a_refinement.py)
   on  deuteron-only proof-of-concept; closure error
   $2.7 \times 10^{-48}$ MeV by construction).
 - The per-block binding fractions $\Delta_\lambda(K)$ — currently
@@ -227,29 +227,29 @@ that controls the $u$-power in the $D(u)$ denominator
 ([`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md))
 is now categorically verified for the proton by direct symbolic
 Hoefsmit pole-order analysis
-([`per_irrep_pole_proton_h3.py`](../../../folio-assistant/computations/per_irrep_pole_proton_h3.py),
+([`per_irrep_pole_proton_h3.py`](../../../computations/per_irrep_pole_proton_h3.py),
 witness:
-[`per-irrep-pole-proton-h3.witness.json`](../../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json)):
+[`per-irrep-pole-proton-h3.witness.json`](../../../computations/per-irrep-pole-proton-h3.witness.json)):
 
 $$
   \mathrm{ord}_{u=0}\bigl(\mathrm{tr}_M(\mathcal{B}_p)\bigr) \;=\; 19 \;=\; 18 \cdot Z + 21 \cdot N + 1 \quad \text{at } (Z, N) = (1, 0).
 $$
 
 **Cross-confirmation:** the orthogonal computation in
-[`shift_from_nf_basis.py`](../../../folio-assistant/computations/shift_from_nf_basis.py)
+[`shift_from_nf_basis.py`](../../../computations/shift_from_nf_basis.py)
 (NF-basis decomposition, recorded in
-[`shift-from-nf-basis.witness.json`](../../../folio-assistant/computations/shift-from-nf-basis.witness.json))
+[`shift-from-nf-basis.witness.json`](../../../computations/shift-from-nf-basis.witness.json))
 independently reports `shift_proton_h3 = 19` — two independent
 symbolic methods agree exactly on the per-proton u-pole.
 
 **Multi-nucleon verification (deuteron):**
-[`per_irrep_pole_deuteron_h6.py`](../../../folio-assistant/computations/per_irrep_pole_deuteron_h6.py)
+[`per_irrep_pole_deuteron_h6.py`](../../../computations/per_irrep_pole_deuteron_h6.py)
 (witness:
-[`per-irrep-pole-deuteron-h6.witness.json`](../../../folio-assistant/computations/per-irrep-pole-deuteron-h6.witness.json))
+[`per-irrep-pole-deuteron-h6.witness.json`](../../../computations/per-irrep-pole-deuteron-h6.witness.json))
 extends Path A to $A = 2$ via three optimisations: cached
 symbolic $y_\lambda(q)$ for $n = 6$, auto-cached symbolic
 $\chi^\lambda_q(\beta_D)$
-([`chi-deuteron-h6.witness.json`](../../../folio-assistant/computations/chi-deuteron-h6.witness.json)),
+([`chi-deuteron-h6.witness.json`](../../../computations/chi-deuteron-h6.witness.json)),
 and per-term pole order. The per-term maximum is uniquely $40$
 at $\lambda = (4, 1, 1)$, so
 

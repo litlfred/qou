@@ -13,10 +13,10 @@ For each nucleus:
   5. Compute Q-value as ground-state energy difference
 
 Run:
-    sage folio-assistant/computations/sage-nuclear-braid.sage
+    sage computations/sage-nuclear-braid.sage
 
 Output:
-    folio-assistant/computations/sage-nuclear-braid.witness.json
+    computations/sage-nuclear-braid.witness.json
 
 Time estimate:
     A <= 6:  seconds
@@ -285,7 +285,7 @@ witness = {
     'results': results,
 }
 
-out_path = 'folio-assistant/computations/sage-nuclear-braid.witness.json'
+out_path = 'computations/sage-nuclear-braid.witness.json'
 with open(out_path, 'w') as f:
     json.dump(witness, f, indent=2, default=str)
 

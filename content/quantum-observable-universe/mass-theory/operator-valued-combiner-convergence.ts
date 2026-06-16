@@ -41,9 +41,9 @@ export default proposition({
   },
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/canonical_tr_m_via_branching.py",
+    script: "computations/canonical_tr_m_via_branching.py",
     witness: [
-      "folio-assistant/computations/canonical-mass-table-extended.witness.json",
+      "computations/canonical-mass-table-extended.witness.json",
     ],
     status: "verified",
     requires: [],

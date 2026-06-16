@@ -13,10 +13,10 @@ export default conjecture({
   cites: ["habiro2004"],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/term6_full_pole_sum.py",
+    script: "computations/term6_full_pole_sum.py",
     witness: [
-      "folio-assistant/computations/term6-full-pole-sum.witness.json",
-      "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      "computations/term6-full-pole-sum.witness.json",
+      "computations/q-pinning-50-digit.witness.json",
     ],
     status: "verified",
   },

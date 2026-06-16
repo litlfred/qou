@@ -124,7 +124,7 @@ to be validated, not a result. Harness:
 **Definition.** Different methods computing the same quantity at substrate
 q_0 must agree to at least 1 ppQ (10⁻¹⁵ relative, i.e. 10⁻⁶ ppb).
 
-**Configuration.** Controlled by `folio-assistant/computations/substrate/_precision.py`:
+**Configuration.** Controlled by `computations/substrate/_precision.py`:
 
 ```python
 COMPUTE_DPS_DEFAULT  = 65    # mpmath working precision (OUTPUT + GUARD)
@@ -214,7 +214,7 @@ residual is sub-σ_CAL CODATA input slop), not a framework prediction.
 > value Q_β(n) = 0.78233341(61) MeV (≈0.78 ppm, 779.7 ppb relative). The
 > earlier 640 ppm draft was based on a coarser AME quote (0.78232 ± 0.00050
 > MeV); that figure is **incorrect** at the precision we care about. See
-> [`folio-assistant/computations/cal-3-q-beta.witness.json`](../folio-assistant/computations/cal-3-q-beta.witness.json).
+> [`computations/cal-3-q-beta.witness.json`](../computations/cal-3-q-beta.witness.json).
 >
 > **Q_β Habiro-exact evaluation.** The Markov trace of the proton/neutron
 > braid words lives in the Habiro ring $\widehat{\mathbb{Z}[q]}$ and
@@ -274,14 +274,14 @@ reverted by the repo owner.
 
 ## Where measured
 
-Live snapshot: `folio-assistant/computations/per-observable-100x-status.witness.json`
+Live snapshot: `computations/per-observable-100x-status.witness.json`
 (produced by `per_observable_100x_status.py`). Re-run on every Borromean /
 calibration / formula change.
 
 Reproduce:
 
 ```bash
-python3 folio-assistant/computations/per_observable_100x_status.py
+python3 computations/per_observable_100x_status.py
 ```
 
 ## Distinction: compute precision ≠ absolute-prediction error
@@ -317,5 +317,5 @@ When working on a precision-affecting change:
 
 - [`docs/audits/2026-05-18-1ppb-workplan-v7-100x-experimental.md`](audits/2026-05-18-1ppb-workplan-v7-100x-experimental.md) — current workplan
 - [`docs/coordination/1ppb.md`](coordination/1ppb.md) — cross-PR coordination ledger
-- [`folio-assistant/computations/substrate/_precision.py`](../folio-assistant/computations/substrate/_precision.py) — compute precision infrastructure
-- [`folio-assistant/computations/per_observable_100x_status.py`](../folio-assistant/computations/per_observable_100x_status.py) — L2 status reporter
+- [`computations/substrate/_precision.py`](../computations/substrate/_precision.py) — compute precision infrastructure
+- [`computations/per_observable_100x_status.py`](../computations/per_observable_100x_status.py) — L2 status reporter

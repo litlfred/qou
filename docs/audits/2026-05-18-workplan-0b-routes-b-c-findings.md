@@ -124,6 +124,6 @@ The three routes converge on the same conclusion:
 
 ## Witnesses
 
-- [`probe_workplan_0b_routes_b_c.py`](../../folio-assistant/computations/probe_workplan_0b_mn_routes_b_c.py)
-- [`probe_workplan_0b_route_b_operator.py`](../../folio-assistant/computations/probe_workplan_0b_route_b_operator.py)
-- [`probe_workplan_0b_route_c_bring.py`](../../folio-assistant/computations/probe_workplan_0b_route_c_bring.py)
+- [`probe_workplan_0b_routes_b_c.py`](../../computations/probe_workplan_0b_mn_routes_b_c.py)
+- [`probe_workplan_0b_route_b_operator.py`](../../computations/probe_workplan_0b_route_b_operator.py)
+- [`probe_workplan_0b_route_c_bring.py`](../../computations/probe_workplan_0b_route_c_bring.py)

@@ -13,7 +13,7 @@ A trivial but pre-archimedean identity — it lives entirely in the substrate
 ring (no `ℝ`, no `π`); only `q − q⁻¹ ≠ 0` is needed for the division.
 Underlies `prop:alpha-em-categorical-trace-ratio`
 (`α_EM = h²/(q·δ_q(T_{2,9})·δ_q(T_{3,5}))`). Symbolic cross-check:
-`folio-assistant/computations/delta_q_h_bracket_identity.py`.
+`computations/delta_q_h_bracket_identity.py`.
 
 LaTeX label: `prop:alpha-basis-knot-delta-q`. **Ground ring**: a field `R`.
 -/

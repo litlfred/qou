@@ -31,7 +31,7 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/ck_sector_classifier.py",
+    script: "computations/ck_sector_classifier.py",
     status: "experimental",
   },
 });

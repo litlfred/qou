@@ -110,31 +110,31 @@
     },
     {
       "rule": "forbidden-r-W-use-ell",
-      "file": "folio-assistant/computations/g_a_g_action_derivation.py",
+      "file": "computations/g_a_g_action_derivation.py",
       "line": 136,
       "text": "#   r_W : [4]_q  \u2192  [5]_q     (one extra crossing in T(2,5))"
     },
     {
       "rule": "forbidden-r-W-use-ell",
-      "file": "folio-assistant/computations/gb_filtration_gauge_invariance_test.py",
+      "file": "computations/gb_filtration_gauge_invariance_test.py",
       "line": 53,
       "text": "r_W = mp.log(X) / mp.log(Q_W)"
     },
     {
       "rule": "forbidden-r-W-use-ell",
-      "file": "folio-assistant/computations/gb_filtration_gauge_invariance_test.py",
+      "file": "computations/gb_filtration_gauge_invariance_test.py",
       "line": 54,
       "text": "print(f\"Wenzl level r = log(X)/log(Q) = {float(r_W):.6f}  (X = Q^r = {float(X):.6f})\")"
     },
     {
       "rule": "forbidden-r-W-use-ell",
-      "file": "folio-assistant/computations/gb_filtration_gauge_invariance_test.py",
+      "file": "computations/gb_filtration_gauge_invariance_test.py",
       "line": 110,
       "text": "        s = schur_principal(lam, r_W, Q_W)"
     },
     {
       "rule": "forbidden-r-W-use-ell",
-      "file": "folio-assistant/computations/gb_filtration_gauge_invariance_test.py",
+      "file": "computations/gb_filtration_gauge_invariance_test.py",
       "line": 163,
       "text": "    \"r_W\": float(r_W),"
     }

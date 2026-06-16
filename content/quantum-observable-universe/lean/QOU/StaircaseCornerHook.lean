@@ -79,8 +79,8 @@ example : hCorner 6 = 11 := by decide
 
 For the empirical content and 7/7 witness assertions, see:
 
-* `folio-assistant/computations/staircase_ew_residual_conjecture.py`
-* `folio-assistant/computations/staircase-ew-residual-conjecture.witness.json`
+* `computations/staircase_ew_residual_conjecture.py`
+* `computations/staircase-ew-residual-conjecture.witness.json`
 * `docs/audits/2026-05-06-staircase-ew-residual-conjecture.md`
 
 Per `CLAUDE.md §3b-cond`, the conjecture is encoded as

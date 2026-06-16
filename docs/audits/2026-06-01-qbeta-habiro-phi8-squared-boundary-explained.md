@@ -11,8 +11,8 @@
 > Track 3 audit identifies the SECOND boundary as the **second
 > Wenzl-tower annihilator** at `[8]_q = 0`.
 >
-> Probe: [`folio-assistant/computations/qbeta/qbeta_habiro_phi8_squared_boundary_explained.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_phi8_squared_boundary_explained.py)
-> Witness: [`folio-assistant/computations/qbeta/qbeta-habiro-phi8-squared-boundary-explained.witness.json`](../../folio-assistant/computations/qbeta/qbeta-habiro-phi8-squared-boundary-explained.witness.json)
+> Probe: [`computations/qbeta/qbeta_habiro_phi8_squared_boundary_explained.py`](../../computations/qbeta/qbeta_habiro_phi8_squared_boundary_explained.py)
+> Witness: [`computations/qbeta/qbeta-habiro-phi8-squared-boundary-explained.witness.json`](../../computations/qbeta/qbeta-habiro-phi8-squared-boundary-explained.witness.json)
 
 ## TL;DR
 

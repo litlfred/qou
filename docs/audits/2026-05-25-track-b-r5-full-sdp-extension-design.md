@@ -17,7 +17,7 @@ the headline observable would do.
 
 ### R5-full prototype scope
 
-[`folio-assistant/computations/r5_full_canonical_knot_solver.py`](../../folio-assistant/computations/r5_full_canonical_knot_solver.py)
+[`computations/r5_full_canonical_knot_solver.py`](../../computations/r5_full_canonical_knot_solver.py)
 (860 LOC) currently covers exactly two atoms:
 
 | atom | strands `n_0` | knot | status |
@@ -28,12 +28,12 @@ the headline observable would do.
 | ⁴He | 12 (B_12 / H_12) | n/a | **NOT IN R5-FULL** — uses magic-A formula |
 
 The H_3 Hoefsmit seminormal block matrices are hardcoded inline
-([`hoefsmit_h3_blocks(q)`](../../folio-assistant/computations/r5_full_canonical_knot_solver.py),
+([`hoefsmit_h3_blocks(q)`](../../computations/r5_full_canonical_knot_solver.py),
 3 blocks: trivial (3), standard (2,1), sign (1,1,1) — 1+2+1 = 4 dims).
 
 ### ⁴He current formula
 
-[`magic_A_formula.py`](../../folio-assistant/computations/magic_A_formula.py)
+[`magic_A_formula.py`](../../computations/magic_A_formula.py)
 implements the *magic-A* shell-closure rule:
 
 ```
@@ -47,7 +47,7 @@ line 101). Refined to **+0.37%** with the `cosh(h)` α-derivation correction.
 
 ### α-cluster cascade for ⁴He → 7 atoms
 
-[`alpha_cluster_recursion.py`](../../folio-assistant/computations/alpha/alpha_cluster_recursion.py)
+[`alpha_cluster_recursion.py`](../../computations/alpha/alpha_cluster_recursion.py)
 extends ⁴He to six heavier α-chain atoms via:
 
 ```
@@ -110,7 +110,7 @@ recursion formula.)
 ### Phase B-1 — replace inline Hoefsmit with upstream Rust (H_3 → H_n generic)
 
 The inline
-[`hoefsmit_h3_blocks(q)`](../../folio-assistant/computations/r5_full_canonical_knot_solver.py)
+[`hoefsmit_h3_blocks(q)`](../../computations/r5_full_canonical_knot_solver.py)
 returns numpy arrays for 3 hardcoded blocks. Replace with calls
 to `pyhecke_native`:
 
@@ -221,7 +221,7 @@ the substrate calibration chain.
 **Scope:** Add `7²_1` to `R5_FULL_SUBSTRATE_REGISTRY` (still at
 H_3). The braid word `(σ_1⁻¹ σ_2 σ_1⁻¹ σ_2² σ_1⁻¹ σ_2²)` is already
 catalogued in
-[`knot_braid_database.py`](../../folio-assistant/computations/knot_braid_database.py)
+[`knot_braid_database.py`](../../computations/knot_braid_database.py)
 (PR #1263).
 
 ## Estimated headline outcomes
@@ -274,10 +274,10 @@ If Phases B-1, B-2, B-3 (Option γ + β), B-4 all land:
 
 ## Cross-references
 
-- [`folio-assistant/computations/r5_full_canonical_knot_solver.py`](../../folio-assistant/computations/r5_full_canonical_knot_solver.py)
-- [`folio-assistant/computations/magic_A_formula.py`](../../folio-assistant/computations/magic_A_formula.py)
-- [`folio-assistant/computations/alpha/alpha_cluster_recursion.py`](../../folio-assistant/computations/alpha/alpha_cluster_recursion.py)
+- [`computations/r5_full_canonical_knot_solver.py`](../../computations/r5_full_canonical_knot_solver.py)
+- [`computations/magic_A_formula.py`](../../computations/magic_A_formula.py)
+- [`computations/alpha/alpha_cluster_recursion.py`](../../computations/alpha/alpha_cluster_recursion.py)
 - [`docs/audits/2026-05-19-delta-lambda-phase5-alpha-derivation-progress.md`](2026-05-19-delta-lambda-phase5-alpha-derivation-progress.md) (the cosh(h) refinement)
 - [`docs/audits/2026-05-25-phase5q-closed-form-reconciliation.md`](2026-05-25-phase5q-closed-form-reconciliation.md) (closed-form path that subsumes Option α)
-- [`folio-assistant/computations/atomic_tr_m_helium4_canonical.py`](../../folio-assistant/computations/atomic_tr_m_helium4_canonical.py) (Option β realisation, PR #1269)
-- [`folio-assistant/computations/knot_braid_database.py`](../../folio-assistant/computations/knot_braid_database.py) (7²_1 catalogue, PR #1263)
+- [`computations/atomic_tr_m_helium4_canonical.py`](../../computations/atomic_tr_m_helium4_canonical.py) (Option β realisation, PR #1269)
+- [`computations/knot_braid_database.py`](../../computations/knot_braid_database.py) (7²_1 catalogue, PR #1263)

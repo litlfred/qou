@@ -51,7 +51,7 @@ mechanical proofs for Steps 1–3.
 
 ## Falsified inference: LP/SDP under-determination implication
 
-**Status:** the inference below was **FALSIFIED** by direct computation in [`atom_braid_active_partitions.py`](../../../folio-assistant/computations/atom_braid_active_partitions.py). All `p(n_0)` partitions have non-trivial `χ_λ(T_w)` — the claimed "active set $\leq n^* + 1$" prediction does NOT hold on the Wedderburn basis. See [`docs/audits/-exterior-algebra-lp-claim-falsified.md`](../../../docs/audits/-exterior-algebra-lp-claim-falsified.md) for the full retraction.
+**Status:** the inference below was **FALSIFIED** by direct computation in [`atom_braid_active_partitions.py`](../../../computations/atom_braid_active_partitions.py). All `p(n_0)` partitions have non-trivial `χ_λ(T_w)` — the claimed "active set $\leq n^* + 1$" prediction does NOT hold on the Wedderburn basis. See [`docs/audits/-exterior-algebra-lp-claim-falsified.md`](../../../docs/audits/-exterior-algebra-lp-claim-falsified.md) for the full retraction.
 
 **What's still valid:** the Pascal-row `C(n*, k)` filtration shape on the **NF basis** (permutation-indexed, ordered by Coxeter length) — the Rust solver's empirical finding from  stands.
 
@@ -101,9 +101,9 @@ A categorical proof would likely use:
 
 ## Cross-references
 
-- [`folio-assistant/computations/mass_at_3A_proper.py`](../../../folio-assistant/computations/mass_at_3A_proper.py) — canonical `atom_braid_word_3A` recipe
+- [`computations/mass_at_3A_proper.py`](../../../computations/mass_at_3A_proper.py) — canonical `atom_braid_word_3A` recipe
 - [`tools/hecke-engine/src/gb_nf_reducer.rs`](../../../tools/hecke-engine/src/gb_nf_reducer.rs) — `BraidLetter` + `right_mul_t_avg` (R5-full extension supporting σ_avg)
 - [`tools/hecke-engine/src/bin/joint_tower_sdp.rs`](../../../tools/hecke-engine/src/bin/joint_tower_sdp.rs) — joint-tower SDP solver (registry with 4 canonical-3A test atoms + $^4$He)
-- [`folio-assistant/computations/joint-tower-sdp-rust.witness.json`](../../../folio-assistant/computations/joint-tower-sdp-rust.witness.json) — observed filtration shapes
+- [`computations/joint-tower-sdp-rust.witness.json`](../../../computations/joint-tower-sdp-rust.witness.json) — observed filtration shapes
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — canonical mass formula that consumes this structure
 - [`prop:lepton-bring-surface-h3-3channel`](lepton-bring-surface-h3-3channel.md) — bring-surface analog for lepton sector

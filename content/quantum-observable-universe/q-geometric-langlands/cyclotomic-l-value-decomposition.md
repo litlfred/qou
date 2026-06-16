@@ -67,8 +67,8 @@ result, derived constructively. $\square$
 
 ### Numerical verification at 50 dps
 
-[`cl_n_l_value_decomposition.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/cl_n_l_value_decomposition.py),
-[witness](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/cl-n-l-value-decomposition.witness.json):
+[`cl_n_l_value_decomposition.py`](https://github.com/litlfred/qou/blob/main/computations/cl_n_l_value_decomposition.py),
+[witness](https://github.com/litlfred/qou/blob/main/computations/cl-n-l-value-decomposition.witness.json):
 
 | Quantity | Value (50 dps) |
 |---|---|

@@ -13,7 +13,7 @@ substrate $q$-deformation parameter $h = q_0 - q_0^{-1}$:
 
 $$
   E_{\mathrm{HB}} \;=\; h^2\, E_{\mathrm{cov}},
-  \qquad h^2 \approx :val[hbond_h_squared]{precision=4, witness=folio-assistant/computations/hbond-categorical-action.witness.json}.
+  \qquad h^2 \approx :val[hbond_h_squared]{precision=4, witness=computations/hbond-categorical-action.witness.json}.
 $$
 
 This $h^2$ — fixed entirely by the substrate $q_0$ — is the measured
@@ -43,7 +43,7 @@ input), and the latent heat $L = \mathfrak{S}_q^{(\partial)}$ follows with no fi
 
 | | $n_{\mathrm{HB}}$ | sp$^3$? | $L^{\mathrm{pred}}$ (kJ/mol) | $L^{\mathrm{obs}}$ | tier |
 |---|---|---|---|---|---|
-| $\mathrm{H_2O}$ | $2$ | yes | $:val[hbond_h2o_L_pred]{precision=1, witness=folio-assistant/computations/hbond-categorical-action.witness.json}$ | $40.7$ | near-match ($:val[hbond_h2o_err_pct]{precision=1, witness=folio-assistant/computations/hbond-categorical-action.witness.json}$) |
+| $\mathrm{H_2O}$ | $2$ | yes | $:val[hbond_h2o_L_pred]{precision=1, witness=computations/hbond-categorical-action.witness.json}$ | $40.7$ | near-match ($:val[hbond_h2o_err_pct]{precision=1, witness=computations/hbond-categorical-action.witness.json}$) |
 | $\mathrm{HF}$ | $1$ | yes | $24.7$ | $25.2$ | near-match ($1.9\%$) |
 | $\mathrm{H_2S}$ | $-$ | no (pure-$p$) | $0$ (H-bond off) | $18.7$ | dispersion |
 

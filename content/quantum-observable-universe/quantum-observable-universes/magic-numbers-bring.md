@@ -148,7 +148,7 @@ ways.
 
 This block closes audit `MAG-1` (the "magic numbers from Bring's
 surface — not derived" flag in
-[`DERIVATION-STATUS.md`](../../../folio-assistant/computations/DERIVATION-STATUS.md))
+[`DERIVATION-STATUS.md`](../../../computations/DERIVATION-STATUS.md))
 as a path-(b) deliverable: the algebraic claim is now stated
 explicitly, with the empirical match documented. The path-(a)
 proof is workplan **P1.4** and remains open.

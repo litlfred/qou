@@ -158,8 +158,8 @@ fast in GB depth $N$, which is why the single-wrap symbolic form
 This proposition was derived during the cycle-6/7 audit on 
 ([`docs/audits/-q-beta-form-A-vs-form-B-canonical-choice.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-q-beta-form-A-vs-form-B-canonical-choice.md))
 and verified numerically at 50 dps via
-[`q_beta_spectral_bridge_witness.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q_beta_spectral_bridge_witness.py)
-([`q-beta-spectral-bridge.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q-beta-spectral-bridge.witness.json)):
+[`q_beta_spectral_bridge_witness.py`](https://github.com/litlfred/qou/blob/main/computations/q_beta_spectral_bridge_witness.py)
+([`q-beta-spectral-bridge.witness.json`](https://github.com/litlfred/qou/blob/main/computations/q-beta-spectral-bridge.witness.json)):
 
 See [Table](#tbl:q-beta-spectral-bridge-table-data).
 

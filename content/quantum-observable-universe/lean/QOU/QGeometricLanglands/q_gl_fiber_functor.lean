@@ -23,7 +23,7 @@ namespace QOU.QGeometricLanglands
 
     Conjectural class — see [`conj:q-gl-fiber-functor`](../../../quantum-observable-universe/q-geometric-langlands/q-gl-fiber-functor.md). -/
 class q_gl_fiber_functor where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- Scalar residual encoding the conjecture's content (placeholder
       shape: refine to match the actual claim). -/
   residual : ℝ

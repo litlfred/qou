@@ -16,7 +16,7 @@ which derives the n − p splitting `μ_d − μ_u = M_N · S(q)` from
 the substrate parameter `q_0` and the universal nucleon-mass scale
 `M_N`.  **`M_N` itself is still anchored on CODATA** (specifically,
 `M_N = (m_p + m_n)/2` consumed via the `M_P_MEV_VALIDATION` /
-`M_N_MEV_VALIDATION` constants in `folio-assistant/computations/substrate/codata_constants.py`).
+`M_N_MEV_VALIDATION` constants in `computations/substrate/codata_constants.py`).
 
 This leaves a **CLASS-A acknowledged-stub** at the M_N anchor: the
 splitting is substrate-pure, but the scale isn't.  Your job is to
@@ -41,7 +41,7 @@ separate calibration).
    $m_e^a \cdot Q_\beta^c \cdot \hat{\mathcal{O}}(q_0)$.  M_N must
    factor this way too.
 4. **The probe** —
-   [`folio-assistant/computations/probe_flavor_dressed_mass_split.py`](../../folio-assistant/computations/probe_flavor_dressed_mass_split.py).
+   [`computations/probe_flavor_dressed_mass_split.py`](../../computations/probe_flavor_dressed_mass_split.py).
    See lines 9–22 for the explicit Class-A banner you are tasked
    with retiring.
 
@@ -76,7 +76,7 @@ The proton mass `m_p` already has structural pieces on main:
 
 If `m_p` reaches substrate-pure form, then per the framework's
 beta-decay relation (`Q_BETA_MEV = m_n − m_p − m_e` in
-`folio-assistant/computations/substrate/codata_constants.py`) the neutron
+`computations/substrate/codata_constants.py`) the neutron
 mass is `m_n = m_p + m_e + Q_β`, so
 
 ```
@@ -136,7 +136,7 @@ Whatever route lands, the derivation must satisfy:
    independent Skein resolution (or whichever upstream piece is
    itself still open).
 4. **Probe witness**: a `probe_M_N_substrate.py` script under
-   `folio-assistant/computations/` emitting
+   `computations/` emitting
    `M-N-substrate.witness.json` with three assertions:
    - `substrate_closure_vs_codata_within_X_pct` (X depends on
      route; aim for ≤ 1%)

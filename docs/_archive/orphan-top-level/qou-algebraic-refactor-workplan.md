@@ -123,7 +123,7 @@ only when:
   `KappaZeroImpliesSelfConjugate` (reverse, axiomatic — needs
   Young-lattice structure).
 - Numerical-witness file
-  [`folio-assistant/computations/double-magic-witnesses.json`](../folio-assistant/computations/double-magic-witnesses.json)
+  [`computations/double-magic-witnesses.json`](../computations/double-magic-witnesses.json)
   records falsifiable predictions ($\kappa_A = 0$, $\lambda_A$
   self-conjugate) for all seven double-magic isotopes including
   the matrix-evaluation-intractable $\{50, 82, 126\}$ shells.

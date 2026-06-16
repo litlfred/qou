@@ -9,7 +9,7 @@ extractor, the silver-ratio Pell-Lucas benchmark, and any future
 silver-ratio probe share one canonical `is_pell_lucas_clean`
 implementation — instead of each script reimplementing slightly-
 different acceptance rules. Per the Gemini review of
-`folio-assistant/computations/ck_sector_classifier.py` on PR #816.
+`computations/ck_sector_classifier.py` on PR #816.
 
 Public surface
 --------------

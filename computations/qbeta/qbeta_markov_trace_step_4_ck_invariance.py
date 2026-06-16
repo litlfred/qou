@@ -42,7 +42,7 @@ References:
   - 2026-05-31-qbeta-ck-truncation-order-canonical-framing.md.
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_markov_trace_step_4_ck_invariance.py
+  python3 computations/qbeta/qbeta_markov_trace_step_4_ck_invariance.py
 
 Emits: qbeta-markov-trace-step-4-ck-invariance.witness.json (>= 3
 assertions).

@@ -13,7 +13,7 @@ gives F_Pauli directly from the eigenvalue decomposition.
 All computations exact in q using sympy.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 transfer_matrix_6x6.py
 """
 

@@ -23,7 +23,7 @@ namespace QOU.Interactions.DoubleMagicDeltaI
 
     Conjectural class — see [`conj:double-magic-delta-i-bound`](../../../quantum-observable-universe/observations/double-magic-delta-i-bound.md). -/
 class DeltaIBoundConjecture where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- Scalar residual encoding the conjecture's content (placeholder
       shape: refine to match the actual claim). -/
   residual : ℝ

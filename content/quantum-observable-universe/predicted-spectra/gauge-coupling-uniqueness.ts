@@ -18,8 +18,8 @@ export default corollary({
   ],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/probes/gauge_coupling_uniqueness_probe.py",
-    witness: "folio-assistant/computations/probes/gauge-coupling-uniqueness-probe.witness.json",
+    script: "computations/probes/gauge_coupling_uniqueness_probe.py",
+    witness: "computations/probes/gauge-coupling-uniqueness-probe.witness.json",
     status: "verified",
   },
 });

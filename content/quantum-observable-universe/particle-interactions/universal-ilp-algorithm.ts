@@ -25,8 +25,8 @@ export default definition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/universal-ilp.py",
-    witness: "folio-assistant/computations/universal-ilp.witness.json",
+    script: "computations/universal-ilp.py",
+    witness: "computations/universal-ilp.witness.json",
     status: "verified",
   },
 });

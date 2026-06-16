@@ -1,7 +1,7 @@
 # Volume + Shell w_λ^(1) probe — path (b) result is structural
 
 **Pair:**
-[`volume_shell_w_lambda_level1_bb.py`](../../folio-assistant/computations/volume_shell_w_lambda_level1_bb.py)
+[`volume_shell_w_lambda_level1_bb.py`](../../computations/volume_shell_w_lambda_level1_bb.py)
 + witness
 [`2026-05-02-w-lambda-level1-bb.witness.json`](2026-05-02-w-lambda-level1-bb.witness.json).
 

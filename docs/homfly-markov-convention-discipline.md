@@ -2,7 +2,7 @@
 
 **Status:** authoritative convention reference. Cited by
 `docs/audits/2026-06-04-hidden-fitting-verification-gap-mass-binding-walkthrough.md`
-and `folio-assistant/computations/homflypt_reference_qa.py`.
+and `computations/homflypt_reference_qa.py`.
 
 This doc exists because the HOMFLY / Markov-trace normalisation has tripped
 **multiple agents repeatedly**. The failure is always the same shape: three

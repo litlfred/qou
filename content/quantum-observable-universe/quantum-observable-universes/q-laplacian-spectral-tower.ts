@@ -10,9 +10,9 @@ export default proposition({
   computation: {
     engine: "sympy",
     script:
-      "folio-assistant/computations/q_spectral_truncation_tower.py",
+      "computations/q_spectral_truncation_tower.py",
     witness:
-      "folio-assistant/computations/q-spectral-truncation-tower.witness.json",
+      "computations/q-spectral-truncation-tower.witness.json",
     status: "verified",
   },
   lean: {

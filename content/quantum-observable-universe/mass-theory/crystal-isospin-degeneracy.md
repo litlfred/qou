@@ -8,7 +8,7 @@ crossings in an atomic braid word.
 written in **signed-generator form**: each letter is $\sigma_i$ or
 $\sigma_i^{-1}$ for some $i$.  It does **not** automatically extend
 to the canonical convention of
-[`mass_at_3A_proper.atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py),
+[`mass_at_3A_proper.atom_braid_word_3A`](../../../computations/mass_at_3A_proper.py),
 which uses an operator-valued **dual-pairing interface**
 $\bowtie_K = \sigma_g - \frac{h}{2} \cdot \mathbf{1}$
 (the "averaged" crossing) between unlike-isospin nucleons,
@@ -100,7 +100,7 @@ weight $w_\lambda(q = 1) = (f^\lambda)^2 / (3A)!$ yields the claim.  $\square$
 **Conditional corollary (legacy disjoint-product convention).**
 *Suppose tritium and helium-3 are presented by the simplified
 disjoint-product words used by
-[`term7_alpha5_crystal_derivation.py`](../../../folio-assistant/computations/term7_alpha5_crystal_derivation.py)*
+[`term7_alpha5_crystal_derivation.py`](../../../computations/term7_alpha5_crystal_derivation.py)*
 
 $$
   \tilde\beta_T = \sigma_1\sigma_2\sigma_1^{-1}\sigma_4\sigma_5^{-1}\sigma_4
@@ -118,14 +118,14 @@ $$
 $$
 
 *matching the witness
-[`term7-alpha5-crystal-derivation.witness.json`](../../../folio-assistant/computations/term7-alpha5-crystal-derivation.witness.json)
+[`term7-alpha5-crystal-derivation.witness.json`](../../../computations/term7-alpha5-crystal-derivation.witness.json)
 which records both values to fifty decimal digits as
 $0.0020612874779541296$.*
 
 **Caveat — this corollary is *not* a statement about physical
 ${}^3\mathrm{H}$ vs.\ ${}^3\mathrm{He}$.** Under the canonical
 $\bowtie_K$-coupled convention
-[`mass_at_3A_proper.atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py),
+[`mass_at_3A_proper.atom_braid_word_3A`](../../../computations/mass_at_3A_proper.py),
 ${}^3\mathrm{H}$ has interface types $(pn{=}\bowtie_K,\;nn{=}\sigma^{-1})$
 while ${}^3\mathrm{He}$ has $(pp{=}\sigma,\;pn{=}\bowtie_K)$ — the
 words differ in *interface type*, not just generator signs, so the
@@ -137,14 +137,14 @@ artificially erases this isospin asymmetry.
 
 **Term 7 is isospin-blind at the crystal limit, even in the legacy
 disjoint-product convention.** The current
-[`term7_alpha5_crystal_derivation.py`](../../../folio-assistant/computations/term7_alpha5_crystal_derivation.py)
+[`term7_alpha5_crystal_derivation.py`](../../../computations/term7_alpha5_crystal_derivation.py)
 assigns *the same* crystal-side shell residual to T and to
 $^3\mathrm{He}$.  Experimentally
 $\mathfrak{m}({}^3\mathrm{H}) - \mathfrak{m}({}^3\mathrm{He})
 \approx 0.529\;\mathrm{MeV}$ and the 2-row Wedderburn dominance
 fractions differ ($84.04\%$ vs.\ $89.34\%$ at $q_0 \approx 1.110$;
 witness
-[`delta-lambda-2row-stratum.witness.json`](../../../folio-assistant/computations/delta-lambda-2row-stratum.witness.json)).
+[`delta-lambda-2row-stratum.witness.json`](../../../computations/delta-lambda-2row-stratum.witness.json)).
 The proposition derives the legacy-convention equality from a
 *specific* mechanism (Hecke skein at $q = 0$ collapses
 $\sigma_i \leftrightarrow \sigma_i^{-1}$ to the same SYT action).
@@ -204,9 +204,9 @@ persists in the canonical $\bowtie_K$-coupled convention at finite
 $q$.  Two follow-ups remain to bridge the two:
 
 1. **Migrate
-   [`term7_alpha5_crystal_derivation.py`](../../../folio-assistant/computations/term7_alpha5_crystal_derivation.py)
+   [`term7_alpha5_crystal_derivation.py`](../../../computations/term7_alpha5_crystal_derivation.py)
    to the canonical word
-   [`mass_at_3A_proper.atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py).**
+   [`mass_at_3A_proper.atom_braid_word_3A`](../../../computations/mass_at_3A_proper.py).**
    The script's hardcoded `ATOMS` list treats each nucleon as a
    disjoint 3-strand sub-word with no inter-nucleon coupling.  The
    canonical word emits triples $(c, d, g)$ with
@@ -260,7 +260,7 @@ $q$.  Two follow-ups remain to bridge the two:
 ## Connection to the 2-row decay observation
 
 The empirical 2-row Wedderburn dominance fractions tabulated in
-[`delta-lambda-2row-stratum.witness.json`](../../../folio-assistant/computations/delta-lambda-2row-stratum.witness.json)
+[`delta-lambda-2row-stratum.witness.json`](../../../computations/delta-lambda-2row-stratum.witness.json)
 decay non-monotonically with mass number $A$:
 
 See [Table](#tbl:crystal-isospin-degeneracy-table-data).
@@ -275,7 +275,7 @@ $\sigma_5 \leftrightarrow \sigma_5^{-1}$.
 **Scoping caveat.** The 2-row dominance fractions in the table
 are computed from the canonical $\bowtie_K$-coupled atomic braid
 words via
-[`global_wedderburn_sum_q_hecke_seminormal`](../../../folio-assistant/computations/wedderburn_jones_markov.py)
+[`global_wedderburn_sum_q_hecke_seminormal`](../../../computations/wedderburn_jones_markov.py)
 at $q = q_0$.  They are **physical** quantities.  The proposition
 above, by contrast, currently lives in the legacy disjoint-product
 convention, so it can only address the structural part of the
@@ -294,7 +294,7 @@ convention until the canonical $\bowtie_K$ migration completes
    differ only by signed-generator inversions, the
    $S_{\mathrm{crystal}}$ values match to within numerical precision
    (50 dps via
-   [`term7_alpha5_crystal_derivation.py`](../../../folio-assistant/computations/term7_alpha5_crystal_derivation.py)).*
+   [`term7_alpha5_crystal_derivation.py`](../../../computations/term7_alpha5_crystal_derivation.py)).*
 
 2. *Once the canonical $\bowtie_K$ extension is in place, the
    crystal-side prediction of the $T$–${}^3\mathrm{He}$ mass
@@ -313,5 +313,5 @@ convention until the canonical $\bowtie_K$ migration completes
    This shell-closure feature is expected to **persist** under the
    canonical migration: the height-$6$ Plancherel weight saturates
    at $A = 4$
-   ([term7 height-6 partition enumeration](../../../folio-assistant/computations/term7-height6-partition-enum.witness.json)),
+   ([term7 height-6 partition enumeration](../../../computations/term7-height6-partition-enum.witness.json)),
    and that fact is independent of the interface convention.*

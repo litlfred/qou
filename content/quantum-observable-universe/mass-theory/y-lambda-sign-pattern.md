@@ -35,12 +35,12 @@ $$
 $$
 
 is **infeasible** at $n = 4, 5, 6$ — empirically verified via
-[`y_lambda_sdp.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y_lambda_sdp.py).
+[`y_lambda_sdp.py`](https://github.com/litlfred/qou/blob/main/computations/y_lambda_sdp.py).
 The full sign pattern at $n \in \{2, \ldots, 6\}$ — including the
 sign-changing entries $y_{(1^4)} \approx -8.4 \times 10^{-4}$ at
 $n = 4$ and $y_{(2, 1^3)} \approx -9.3 \times 10^{-4}$ at $n = 5$
 — is recorded in
-[`y-lambda-jones-markov-witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y-lambda-jones-markov-witness.json).
+[`y-lambda-jones-markov-witness.json`](https://github.com/litlfred/qou/blob/main/computations/y-lambda-jones-markov-witness.json).
 
 The negative components are small in absolute value but
 non-negligible — they enter every $\alpha_k$ derivation and the

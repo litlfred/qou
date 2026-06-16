@@ -72,5 +72,5 @@ These propositions act at the **single-shell** level (the mass endomorphism Φ_n
 
 ## Probe script + witness
 
-- [`folio-assistant/computations/topic2_mirror_pair_phi8_boundary_scan.py`](../../folio-assistant/computations/topic2_mirror_pair_phi8_boundary_scan.py)
-- Witness: [`folio-assistant/computations/topic2-mirror-pair-phi8-boundary-scan.witness.json`](../../folio-assistant/computations/topic2-mirror-pair-phi8-boundary-scan.witness.json)
+- [`computations/topic2_mirror_pair_phi8_boundary_scan.py`](../../computations/topic2_mirror_pair_phi8_boundary_scan.py)
+- Witness: [`computations/topic2-mirror-pair-phi8-boundary-scan.witness.json`](../../computations/topic2-mirror-pair-phi8-boundary-scan.witness.json)

@@ -87,7 +87,7 @@ def tr_M_element_lq(lq_elem: LaurentHeckeElement, n: int) -> ZHLaurent:
 
 ## Phase-1 implementation results (2026-05-20)
 
-`folio-assistant/computations/laurent_q_trace.py` ships a Phase-1 implementation of Strategy #1 (`ZHLaurent` + `tr_M_word_lq` + `tr_M_element_lq` + `tr_M_atomic_lq`). Phase-1 scope: empty / single-top / multi-top Case A. Case B (braid relation with σ_{top-1} in segment) raises `NotImplementedError` and the caller falls back to the sympy path.
+`computations/laurent_q_trace.py` ships a Phase-1 implementation of Strategy #1 (`ZHLaurent` + `tr_M_word_lq` + `tr_M_element_lq` + `tr_M_atomic_lq`). Phase-1 scope: empty / single-top / multi-top Case A. Case B (braid relation with σ_{top-1} in segment) raises `NotImplementedError` and the caller falls back to the sympy path.
 
 **Empirical speedup** vs the current `markov_peel.tr_M_atomic` (production fast path) on the canonical atom set:
 

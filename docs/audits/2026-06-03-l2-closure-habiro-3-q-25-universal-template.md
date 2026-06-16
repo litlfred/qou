@@ -102,10 +102,10 @@ L2 met count would go from **3/7 → 7/7** — closing the entire L2 100× campa
 
 ## Cross-refs
 
-- m_μ R9 + V9 closure witness: `folio-assistant/computations/mmu-r9-two-rung-v2-probe.witness.json` (PR #1781)
-- Q_β c_3 3-rung closure witness: `folio-assistant/computations/qbeta-c3-three-rung-probe.witness.json` (this PR)
+- m_μ R9 + V9 closure witness: `computations/mmu-r9-two-rung-v2-probe.witness.json` (PR #1781)
+- Q_β c_3 3-rung closure witness: `computations/qbeta-c3-three-rung-probe.witness.json` (this PR)
 - m_μ Lean scaffolding: `content/quantum-observable-universe/lean/QOU/BraidKnot/MmuR9V9Closure.lean` (this PR)
-- L2 dashboard: `folio-assistant/computations/per-observable-100x-status.witness.json`
+- L2 dashboard: `computations/per-observable-100x-status.witness.json`
 - Q_β residue-A acceptance (PR #1770): `docs/audits/2026-06-03-qbeta-residue-a-cal-anchored-acceptance.md`
 - m_n + Δ_pn acceptance (PR #1781): `docs/audits/2026-06-03-m-n-delta-pn-qbeta-cal-anchored-acceptance.md`
 - KLR/crystal infra scope (PR #1770): `docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md`

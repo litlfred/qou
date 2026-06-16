@@ -72,7 +72,7 @@ Two q-evaluations per atom (q_0 + q_0^{-1}) × two braid words
 
 Three scripts on PR #1748's branch:
 
-1. [`chi_at_q_inv_via_native_mpfr.py`](../../folio-assistant/computations/chi_at_q_inv_via_native_mpfr.py)
+1. [`chi_at_q_inv_via_native_mpfr.py`](../../computations/chi_at_q_inv_via_native_mpfr.py)
    — driver that runs the Rust kernel at q_0^{-1} and persists to
    `chi-{atom}-h{n}-at-qinv-50dps.witness.json` (parallel naming
    to the existing `at-q0` witnesses).
@@ -81,7 +81,7 @@ Three scripts on PR #1748's branch:
      substitution.
    - **Status:** D + T + ³He generated; ⁴He in flight (~10 min).
 
-2. [`bar_pairing_binding_observable.py`](../../folio-assistant/computations/bar_pairing_binding_observable.py)
+2. [`bar_pairing_binding_observable.py`](../../computations/bar_pairing_binding_observable.py)
    — consumer that computes both `B_arch` and `B_bar` per atom
    using:
    - Rust kernel χ_λ at q_0 and q_0^{-1} (free + atomic)

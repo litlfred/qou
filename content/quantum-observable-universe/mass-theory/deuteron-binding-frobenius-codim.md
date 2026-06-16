@@ -71,7 +71,7 @@ What remains for the binding is the **excess** of the atomic-level
 Frobenius co-Casimir over the disconnected sum.
 
 Numerical evaluation in
-[`folio-assistant/computations/atomic_frobenius_codim.py`](#)
+[`computations/atomic_frobenius_codim.py`](#)
 (witness `atomic-frobenius-codim.witness.json`) reproduces the
 AME value to $+0.19\%$.  $\square$
 

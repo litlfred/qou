@@ -5,7 +5,7 @@ The framework PROVES $c_3 = J_{\text{Hopf}}(q{=}1) = -2$ via the
 [`prop:q-beta-c3-hopf-three-fold-markov`](#prop:q-beta-c3-hopf-three-fold-markov)).
 The higher-rung coefficients $c_4, c_5, c_6, c_7$ have **empirical
 closed forms** extracted from the SDP-$T_\beta$ framework (
-[`folio-assistant/computations/qbeta/qbeta_decay_sdp_full_ck.py`](../../folio-assistant/computations/qbeta/qbeta_decay_sdp_full_ck.py))
+[`computations/qbeta/qbeta_decay_sdp_full_ck.py`](../../computations/qbeta/qbeta_decay_sdp_full_ck.py))
 with sub-percent residuals, but **no first-principles categorical
 derivation is yet known**.
 

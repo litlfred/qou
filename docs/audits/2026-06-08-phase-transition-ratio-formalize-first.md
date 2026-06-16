@@ -136,5 +136,5 @@ task, not a numerical scan.
 
 The numbers in §3 come from a 12-line standalone script (q-integer +
 `asinh` inversion at $q_0$); to be promoted to a witnessed compute
-(`folio-assistant/computations/`) routed through `qou_substrate` for the
+(`computations/`) routed through `qou_substrate` for the
 canonical $q_0$ once §5 is resolved and the observable is final.

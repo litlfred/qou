@@ -3,7 +3,7 @@
 **Pair**: [`2026-05-01-math-framework-workplan.md`](2026-05-01-math-framework-workplan.md) §P1.3a
 **Branch**: `claude/audit-math-framework-FXlp2`
 **Tooling**:
-[`folio-assistant/computations/bw_wenzl_shadow_equivalence.py`](../../folio-assistant/computations/bw_wenzl_shadow_equivalence.py)
+[`computations/bw_wenzl_shadow_equivalence.py`](../../computations/bw_wenzl_shadow_equivalence.py)
 **Witness**:
 [`2026-05-01-p1-3a-bw-equivalence.witness.json`](2026-05-01-p1-3a-bw-equivalence.witness.json)
 

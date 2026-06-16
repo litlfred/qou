@@ -23,7 +23,7 @@ namespace QOU.BraidKnot
 
     Conjectural class — see [`conj:joint-galois-braid-action`](../../../quantum-observable-universe/braids-and-knots/joint-galois-braid-action.md). -/
 class JointGaloisBraidAction where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Conjecture statement** (from manuscript):
 
       Let $\mathcal{H}_q^{(n, K)}$ be the knot-indexed bi-filtration

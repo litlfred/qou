@@ -16,9 +16,9 @@ export default proposition({
   computation: {
     engine: "python",
     script:
-      "folio-assistant/computations/pentagon_reduction_li2q.py",
+      "computations/pentagon_reduction_li2q.py",
     witness:
-      "folio-assistant/computations/pentagon-reduction-li2q.witness.json",
+      "computations/pentagon-reduction-li2q.witness.json",
     status: "verified",
   },
   tags: [

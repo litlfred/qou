@@ -15,10 +15,10 @@ export default proposition({
   cites: [],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py",
+    script: "computations/sweeps/paper_six_term_isotope_sweep.py",
     witness: [
-      "folio-assistant/computations/sweeps/paper-six-term-isotope-sweep.witness.json",
-      "folio-assistant/computations/codata-masses.witness.json",
+      "computations/sweeps/paper-six-term-isotope-sweep.witness.json",
+      "computations/codata-masses.witness.json",
     ],
     status: "verified",
   },

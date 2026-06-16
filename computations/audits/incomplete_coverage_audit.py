@@ -15,7 +15,7 @@ The catalogue text in `local/compute-integration-watcher`:
   rows yet.  Fix: extend the producer's atom list; OR mark the
   consumer as a partial result with the missing atoms enumerated.
 
-This audit walks every `folio-assistant/computations/*.witness.json`,
+This audit walks every `computations/*.witness.json`,
 collects every `error_kind` field anywhere in the JSON tree,
 and surfaces a (witness, error_kind, count, sample-entries)
 report.
@@ -23,7 +23,7 @@ report.
 Emits `incomplete-coverage-audit.witness.json`.
 
 Usage:
-    python3 folio-assistant/computations/incomplete_coverage_audit.py [--strict]
+    python3 computations/incomplete_coverage_audit.py [--strict]
 """
 
 
@@ -150,7 +150,7 @@ def main() -> int:
         WitnessBuilder("incomplete-coverage-audit", engine="python")
         .set_description(
             "I13 audit per local/compute-integration-watcher: every "
-            "folio-assistant/computations/*.witness.json is walked for "
+            "computations/*.witness.json is walked for "
             "`error_kind` fields anywhere in the JSON tree.  Each hit "
             "records the per-entry failure mode + sibling fields (which "
             "typically identify the failing atom/partition/label), giving "

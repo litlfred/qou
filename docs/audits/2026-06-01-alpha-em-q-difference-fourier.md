@@ -1,7 +1,7 @@
 # α_EM Habiro element — q-difference / root-of-unity structure
 
 **Date:** 2026-06-01
-**Probe:** [`alpha_em_q_difference_fourier.py`](../../folio-assistant/computations/alpha/alpha_em_q_difference_fourier.py)
+**Probe:** [`alpha_em_q_difference_fourier.py`](../../computations/alpha/alpha_em_q_difference_fourier.py)
 → `alpha-em-q-difference-fourier.witness.json`
 **Goal arm:** α_EM canonical derivation.
 **Transfers:** the Q_β q-difference / Fourier / root-of-unity machinery

@@ -4,7 +4,7 @@ Algebraic identity:
 
 LaTeX label: `prop:alpha-em-categorical-trace-ratio`
 Computational verification (10⁻¹² precision at q_0):
-  folio-assistant/computations/delta-q-decoration.witness.json
+  computations/delta-q-decoration.witness.json
 -/
 
 import Mathlib.RingTheory.Polynomial.Basic

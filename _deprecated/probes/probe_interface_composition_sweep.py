@@ -30,7 +30,7 @@ Outputs structural infra for downstream:
 
 Witness: `canonical-braid-interface-composition.witness.json`
 
-@module folio-assistant/computations/probe_interface_composition_sweep
+@module computations/probe_interface_composition_sweep
 """
 from __future__ import annotations
 

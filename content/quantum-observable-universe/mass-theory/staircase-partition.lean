@@ -27,7 +27,7 @@ canonical for theorems, sanity examples (`ρ_3 = (3,2,1)`), and the
 ## References
 
 * Hoefsmit (1974), thesis, §III — staircase Specht modules.
-* `folio-assistant/computations/staircase_ew_predictions.py`
+* `computations/staircase_ew_predictions.py`
   — Python reference implementation of `beta_ew_word`.
 * `docs/audits/2026-05-06-staircase-ew-residual-conjecture.md`.
 

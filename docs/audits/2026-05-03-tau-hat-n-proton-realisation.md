@@ -121,11 +121,11 @@ into $\Omega^1$.
 
 | Module | Role |
 |---|---|
-| `folio-assistant/computations/substrate/hecke_core.py` (3155 lines) | YSN matrices for partitions; not a clean H_3 multiplication table. |
-| `folio-assistant/computations/hecke/hecke_symbolic.py` (905 lines) | Symbolic Hecke division (Gröbner-style). Does not give regular rep directly. |
-| `folio-assistant/computations/schur_weyl_q_hecke_v2.py` (294 lines) | Schur–Weyl q-Hecke, partition-indexed, not regular rep. |
-| `folio-assistant/computations/kahler_lift.py` (343 lines) | **Misleading name** — this is the Hoefsmit/Markov q-derivative lift, *not* the universal Kähler differential. |
-| `folio-assistant/computations/jet_lifted_hecke.py` (302 lines) | Jet lift via aggregated character traces; not the J^1 = A ⊗ Ω^1 functor. |
+| `computations/substrate/hecke_core.py` (3155 lines) | YSN matrices for partitions; not a clean H_3 multiplication table. |
+| `computations/hecke/hecke_symbolic.py` (905 lines) | Symbolic Hecke division (Gröbner-style). Does not give regular rep directly. |
+| `computations/schur_weyl_q_hecke_v2.py` (294 lines) | Schur–Weyl q-Hecke, partition-indexed, not regular rep. |
+| `computations/kahler_lift.py` (343 lines) | **Misleading name** — this is the Hoefsmit/Markov q-derivative lift, *not* the universal Kähler differential. |
+| `computations/jet_lifted_hecke.py` (302 lines) | Jet lift via aggregated character traces; not the J^1 = A ⊗ Ω^1 functor. |
 | `q_parameter.py` | Source of truth: `q₀ = 1 / (1 − √(Vol(4_1)/(m_μ/m_e)))`. |
 
 **Conclusion**: there is **no existing module** that builds Ω^1 as
@@ -178,9 +178,9 @@ not a logical claim. No conjectural propagation issues.
 
 ## Files
 
-- Witness JSON: [`folio-assistant/computations/tau-hat-n-proton-realisation.witness.json`](../../folio-assistant/computations/tau-hat-n-proton-realisation.witness.json)
+- Witness JSON: [`computations/tau-hat-n-proton-realisation.witness.json`](../../computations/tau-hat-n-proton-realisation.witness.json)
 - This memo: [`docs/audits/2026-05-03-tau-hat-n-proton-realisation.md`](2026-05-03-tau-hat-n-proton-realisation.md)
-- Script: [`folio-assistant/computations/tau_hat_n_proton_realisation.py`](../../folio-assistant/computations/tau_hat_n_proton_realisation.py)
+- Script: [`computations/tau_hat_n_proton_realisation.py`](../../computations/tau_hat_n_proton_realisation.py)
 - Source of truth (descent involution): [`content/quantum-observable-universe/lifting-and-descent/descent-involution.md`](../../content/quantum-observable-universe/lifting-and-descent/descent-involution.md)
 - Source of truth (descent retraction): [`content/quantum-observable-universe/lifting-and-descent/descent-lemma-proof.md`](../../content/quantum-observable-universe/lifting-and-descent/descent-lemma-proof.md)
 

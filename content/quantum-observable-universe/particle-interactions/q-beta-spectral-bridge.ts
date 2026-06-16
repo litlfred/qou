@@ -15,8 +15,8 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/gram-matrix-dual.py",
-    witness: "folio-assistant/computations/gram-matrix-dual.witness.json",
+    script: "computations/gram-matrix-dual.py",
+    witness: "computations/gram-matrix-dual.witness.json",
     status: "verified",
   },
   tags: [

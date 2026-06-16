@@ -23,7 +23,7 @@ namespace QOU.Archimedean
 
     Conjectural class — see [`conj:single-volume-irrationality`](../../../quantum-observable-universe/archimedean-universe/single-volume-irrationality.md). -/
 class SingleVolumeIrrationality where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       $$

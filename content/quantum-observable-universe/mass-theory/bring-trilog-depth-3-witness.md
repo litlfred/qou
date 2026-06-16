@@ -23,9 +23,9 @@ $$
 ### Numerical witness (50-digit precision)
 
 Computed via `mpmath.polylog` at `mp.dps = 50` (script
-[`bring_trilog_zeta5_depth_3.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring_trilog_zeta5_depth_3.py),
+[`bring_trilog_zeta5_depth_3.py`](https://github.com/litlfred/qou/blob/main/computations/bring_trilog_zeta5_depth_3.py),
 witness
-[`bring-trilog-zeta5-depth-3.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring-trilog-zeta5-depth-3.witness.json)):
+[`bring-trilog-zeta5-depth-3.witness.json`](https://github.com/litlfred/qou/blob/main/computations/bring-trilog-zeta5-depth-3.witness.json)):
 
 $$
   \mathrm{Re}\,\mathrm{Li}_3(\zeta_5)

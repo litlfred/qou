@@ -10,7 +10,7 @@ export default algorithm({
   computation: {
     engine: "rust",
     script: "tools/hecke-engine/src/gb_nf_reducer.rs",
-    witness: "folio-assistant/computations/hecke-core-symbolic-migration.witness.json",
+    witness: "computations/hecke-core-symbolic-migration.witness.json",
     status: "verified",
   },
   tags: [

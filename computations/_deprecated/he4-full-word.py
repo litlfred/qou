@@ -20,7 +20,7 @@ Each generator position has crossings with ALL positions to the right,
 not just the adjacent one. Mixed crossings (pn, np) contribute -h/2.
 
 Usage:
-    cd folio-assistant/computations && python3 he4-full-word.py
+    cd computations && python3 he4-full-word.py
 """
 import math
 import json

@@ -11,8 +11,8 @@
 
 | Goal | Status | Ledger | Active PRs |
 |------|--------|--------|------------|
-| **L1: 1 ppQ compute precision** | met (defaults per `qou_substrate.precision`; 10⁻⁵⁰-tier output truncation) | `folio-assistant/computations/onepb-status-dashboard.witness.json` | — |
-| **L2: per-observable 100× exp** | 3/7 met post-re-pin (m_p, m_e, m_K/m_π); m_μ is 209.8 ppb (NOT met — independent μ–p floor, not the Q_β chain) | `folio-assistant/computations/per-observable-100x-status.witness.json` | #1576 (m_K/m_π fix) |
+| **L1: 1 ppQ compute precision** | met (defaults per `qou_substrate.precision`; 10⁻⁵⁰-tier output truncation) | `computations/onepb-status-dashboard.witness.json` | — |
+| **L2: per-observable 100× exp** | 3/7 met post-re-pin (m_p, m_e, m_K/m_π); m_μ is 209.8 ppb (NOT met — independent μ–p floor, not the Q_β chain) | `computations/per-observable-100x-status.witness.json` | #1576 (m_K/m_π fix) |
 | **1 ppQ — Q_β only (achievable)** | open; c_2 Taylor-exact, c_3 q_0-dependent (NOT Taylor); c_4–c_7 §3b-cond classes locked (PR #1587); eigenphase ≠ f falsified at u¹ (PR #1602) | [`1ppq-qbeta.md`](docs/coordination/1ppq-qbeta.md) | #1602 |
 | **Δ_λ closure (Option-E)** | deuteron CLOSED; A=3 mirror pair at 0.11% near-match — (1+q)/2 NOT yet derived | [`option-e.md`](docs/coordination/option-e.md) | #1516 |
 | **α_EM canonical derivation** | RT Phase 3 + Schwinger; Habiro element `[2]_q·(1-h²α)` derived (PR #1511); Bring residue → resolvent | [`alpha-em.md`](docs/coordination/alpha-em.md) | #1505, #1521, #1549, #1552 |

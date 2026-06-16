@@ -259,7 +259,7 @@ infrastructure issue:
 The first two are symbolically different rational functions even
 though they agree at $q=1$. **Neither equals the textbook Jones
 polynomial** at any $q$. An equivalence script
-[`y_lambda_equivalence_proof.py`](../../folio-assistant/computations/y_lambda_equivalence_proof.py)
+[`y_lambda_equivalence_proof.py`](../../computations/y_lambda_equivalence_proof.py)
 exists on main but its claimed equivalence does **not** hold
 symbolically on H_2.
 

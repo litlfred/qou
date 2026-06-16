@@ -57,7 +57,7 @@ and confirmed numerically as an exact $q$-independent identity to
 $10^{-40}$. See
 [`docs/audits/2026-06-07-chebyshev-pairing-engine-proved.md`](../../../docs/audits/2026-06-07-chebyshev-pairing-engine-proved.md)
 and witness
-[`chebyshev-pairing-engine.witness.json`](../../../folio-assistant/computations/chebyshev-pairing-engine.witness.json).
+[`chebyshev-pairing-engine.witness.json`](../../../computations/chebyshev-pairing-engine.witness.json).
 The conjectural content of this block is therefore **not** the engine
 but how its sign-alternation *propagates* through the full
 Gröbner–Shirshov reduction of the quotient atom in $H_{Z+1}(q)$ to the

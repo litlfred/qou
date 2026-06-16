@@ -101,7 +101,7 @@ Candidate empirical invariants (need LR-fused per-block compute to verify):
 - The actual Wedderburn-block multiplicities of the canonical Hecke-algebra braid representations for the involved Z, N (require Rust LR bridge per-pair compute)
 - The number of "active" partitions λ with first-column ≤ 3 (level-2 Wenzl cutoff) for the pair-specific Markov-trace decomposition AFTER applying the saturated-shells contraction
 
-The right framework is **NOT** a closed-form formula in A — it's the per-block Wenzl-annihilator linear relation count from PR #1625's framing, mediated by per-pair Wedderburn-block content. The probe [`folio-assistant/computations/per_pair_wedderburn_enumeration.py`](../../folio-assistant/computations/per_pair_wedderburn_enumeration.py) lays out the data; full LR-fused χ_λ evaluation at q = ζ_8 per pair is research-grade and queued.
+The right framework is **NOT** a closed-form formula in A — it's the per-block Wenzl-annihilator linear relation count from PR #1625's framing, mediated by per-pair Wedderburn-block content. The probe [`computations/per_pair_wedderburn_enumeration.py`](../../computations/per_pair_wedderburn_enumeration.py) lays out the data; full LR-fused χ_λ evaluation at q = ζ_8 per pair is research-grade and queued.
 
 ## Implication for PR #1642 ledger
 
@@ -119,5 +119,5 @@ The pattern-fitting approach is structurally inadequate. The data should be inte
 
 - Mirror-pair-multiplicity-scaling audit (origin of original + refined formula): [`docs/audits/2026-06-01-qbeta-habiro-phi8-mirror-multiplicity-scaling.md`](2026-06-01-qbeta-habiro-phi8-mirror-multiplicity-scaling.md)
 - Level-2 SU(2) Wenzl identification (PR #1625): [`docs/audits/2026-06-01-qbeta-habiro-zeta8-categorical-witness.md`](2026-06-01-qbeta-habiro-zeta8-categorical-witness.md)
-- Mass-table infrastructure: [`folio-assistant/computations/_habiro_coefficient_extract.py`](../../folio-assistant/computations/_habiro_coefficient_extract.py)
-- This branch's extension script: [`folio-assistant/computations/extend_even_a_mirror_pair_test.py`](../../folio-assistant/computations/extend_even_a_mirror_pair_test.py)
+- Mass-table infrastructure: [`computations/_habiro_coefficient_extract.py`](../../computations/_habiro_coefficient_extract.py)
+- This branch's extension script: [`computations/extend_even_a_mirror_pair_test.py`](../../computations/extend_even_a_mirror_pair_test.py)

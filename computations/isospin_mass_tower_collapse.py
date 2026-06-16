@@ -15,7 +15,7 @@ ratios coincide.
 See content block: rem:commutative-crossing-energy.
 
 Usage:
-    python3 folio-assistant/computations/isospin_mass_tower_collapse.py
+    python3 computations/isospin_mass_tower_collapse.py
 """
 from __future__ import annotations
 

@@ -27,7 +27,7 @@ Anything that uses BOTH m_p AND m_n from CODATA over-counts the
 hadronic input UNLESS it also imports the substrate-splitting witness
 (in which case the m_p + m_n usage is for the M_N anchor only).
 
-Audit each Python script under folio-assistant/computations/ and
+Audit each Python script under computations/ and
 classify by which inputs it uses. Emits canonical-script-input-audit
 witness with per-script row.
 """
@@ -221,7 +221,7 @@ def main():
         WitnessBuilder("canonical-script-input-audit", engine="python")
         .set_description(
             "Audit of every Python computation script under "
-            "folio-assistant/computations/ for alignment with the "
+            "computations/ for alignment with the "
             "paper's 3-input canonical scheme (calibration-inputs.md): "
             "q_0 from m_μ/m_e, m_e, and Q_β(n). Flags scripts that "
             "use both m_p AND m_n from CODATA (over-counts hadronic "

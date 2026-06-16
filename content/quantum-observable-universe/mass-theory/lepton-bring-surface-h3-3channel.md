@@ -177,7 +177,7 @@ and possibly weak-isospin partner (neutrino).
 - [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — F_ℓ existence conjecture
 - [`rem:bar-involution`](bar-involution.md) — P_avg / P_skew projection (real-q mechanism)
 - Convention source: `tools/pyhecke/python/pyhecke/constants.py:156` (V_HAT_ELECTRON)
-- Compute infrastructure: `folio-assistant/computations/per_generator_V_hat_general.py` (generalises `per_generator_V_hat_3A`)
-- T6 closure attempt: `folio-assistant/computations/t6_lepton_h3_3channel_convention.py`
+- Compute infrastructure: `computations/per_generator_V_hat_general.py` (generalises `per_generator_V_hat_3A`)
+- T6 closure attempt: `computations/t6_lepton_h3_3channel_convention.py`
 - Audit: [`docs/audits/-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/-lepton-bring-surface-h3-3channel-convention.md)
 - SUPERSEDED ρ_q purge (now understood as incomplete): [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md)

@@ -12,8 +12,8 @@ factor `a_K` per atom.
 
 ## 1  Source
 
-- Witness: [`folio-assistant/computations/sweeps/paper-six-term-isotope-sweep.witness.json`](../../folio-assistant/computations/sweeps/paper-six-term-isotope-sweep.witness.json)
-- Generator: [`paper_six_term_isotope_sweep.py`](../../folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py) (commit `f25a90e3` + cherry-picks)
+- Witness: [`computations/sweeps/paper-six-term-isotope-sweep.witness.json`](../../computations/sweeps/paper-six-term-isotope-sweep.witness.json)
+- Generator: [`paper_six_term_isotope_sweep.py`](../../computations/sweeps/paper_six_term_isotope_sweep.py) (commit `f25a90e3` + cherry-picks)
 - Default `chirality_source = "v2"` (substrate-derived `τ(β · β_mirror⁻¹)` per
   [`prop:he4-two-row-dominance`](../../content/quantum-observable-universe/braids-and-knots/he4-two-row-dominance.md)
   conjecture context; library `term5_v2_chirality.aK_v2`).
@@ -85,8 +85,8 @@ hence larger `a_K`).
 
 The 1 ppb closure path has two structurally-linked precision gates,
 both quantified by the cherry-picked
-[`audit_delta_S_chain.py`](../../folio-assistant/computations/audit_delta_S_chain.py)
-+ [`delta-S-chain-audit.witness.json`](../../folio-assistant/computations/delta-S-chain-audit.witness.json)
+[`audit_delta_S_chain.py`](../../computations/audit_delta_S_chain.py)
++ [`delta-S-chain-audit.witness.json`](../../computations/delta-S-chain-audit.witness.json)
 finding:
 
 - **$\varepsilon_{\Delta S} = (Q_\beta / (Q_\beta + m_e)) \cdot \varepsilon_Q
@@ -97,8 +97,8 @@ finding:
   must tighten to $\varepsilon_Q \approx 0.0017$ ppm —
   **1700× tighter than current $+1677.54$ ppm**.
 
-[`probe_q_beta_tightening_landscape.py`](../../folio-assistant/computations/probe_q_beta_tightening_landscape.py)
-+ [`q-beta-tightening-landscape.witness.json`](../../folio-assistant/computations/q-beta-tightening-landscape.witness.json)
+[`probe_q_beta_tightening_landscape.py`](../../computations/probe_q_beta_tightening_landscape.py)
++ [`q-beta-tightening-landscape.witness.json`](../../computations/q-beta-tightening-landscape.witness.json)
 report a **5.49× tightening** by composing $Q_\beta$ with
 $\cos((z-1) \cdot h/2)$: residual drops from $+1677.5$ ppm to
 $+305.4$ ppm. This is the first positive structural identification
@@ -109,8 +109,8 @@ corrections.
 
 ## 6  Magic-shell coupling — substrate hypothesis (cherry-picked from #656)
 
-[`probe_a_minus_2_q_substrate.py`](../../folio-assistant/computations/probe_a_minus_2_q_substrate.py)
-+ [`a-minus-2-q-substrate-probe.witness.json`](../../folio-assistant/computations/a-minus-2-q-substrate-probe.witness.json)
+[`probe_a_minus_2_q_substrate.py`](../../computations/probe_a_minus_2_q_substrate.py)
++ [`a-minus-2-q-substrate-probe.witness.json`](../../computations/a-minus-2-q-substrate-probe.witness.json)
 + [`docs/audits/2026-05-15-a-minus-2-q-substrate-derivation.md`](2026-05-15-a-minus-2-q-substrate-derivation.md)
 extend this branch's F2 (H7a refuted at A=3) with three substrate-
 derivation candidates and their cross-anchor test:
@@ -122,7 +122,7 @@ derivation candidates and their cross-anchor test:
 | D-3 KLR-trace identity | Mathas/BK trace formula | Falsified (predicts universality) |
 
 The follow-on
-[`probe_interface_type_resolved_coupling.py`](../../folio-assistant/computations/probe_interface_type_resolved_coupling.py)
+[`probe_interface_type_resolved_coupling.py`](../../computations/probe_interface_type_resolved_coupling.py)
 localises the ³He proton-heavy anomaly to **pp-vs-nn interface
 asymmetry** (asymmetric hook eigenline products through the
 dominant antisymmetric column). The fit is exact at the three A=3

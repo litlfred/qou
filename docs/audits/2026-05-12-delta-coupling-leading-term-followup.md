@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-12
 **Branch:** `copilot/phase3-delta-coupling-leading-form`
-**Builds on:** PR #644 P3.A initial probe ([`delta_coupling_closed_form_probe.py`](../../folio-assistant/computations/probes/delta_coupling_closed_form_probe.py)),
+**Builds on:** PR #644 P3.A initial probe ([`delta_coupling_closed_form_probe.py`](../../computations/probes/delta_coupling_closed_form_probe.py)),
 [`2026-05-12-1ppb-implementation-plan.md` §Phase 3](2026-05-12-1ppb-implementation-plan.md),
 [`2026-05-11-1ppb-gap-narrowing-plan.md` §Path A](2026-05-11-1ppb-gap-narrowing-plan.md)
 **Author:** Copilot agent (Phase 3 follow-up handover)
@@ -32,9 +32,9 @@ have not yet landed on `main`.
 ## What was done
 
 A new probe script,
-[`folio-assistant/computations/probe_delta_coupling_leading_form.py`](../../folio-assistant/computations/probe_delta_coupling_leading_form.py),
+[`computations/probe_delta_coupling_leading_form.py`](../../computations/probe_delta_coupling_leading_form.py),
 emits witness
-[`delta-coupling-leading-form-probe.witness.json`](../../folio-assistant/computations/delta-coupling-leading-form-probe.witness.json)
+[`delta-coupling-leading-form-probe.witness.json`](../../computations/delta-coupling-leading-form-probe.witness.json)
 recording five hypotheses at 50 dps:
 
 | ID | Ansatz | Verdict at (2,2) |
@@ -106,8 +106,8 @@ At $q_0 = :val[q_0]{precision=6}\ldots$ and $m_e = :val[m_e_MeV]{precision=6}$ M
 
 ## Files touched (this PR)
 
-- `folio-assistant/computations/probe_delta_coupling_leading_form.py` — new probe script (mpmath 50 dps)
-- `folio-assistant/computations/delta-coupling-leading-form-probe.witness.json` — generated witness
+- `computations/probe_delta_coupling_leading_form.py` — new probe script (mpmath 50 dps)
+- `computations/delta-coupling-leading-form-probe.witness.json` — generated witness
 - `docs/audits/2026-05-12-delta-coupling-leading-term-followup.md` — this document
 
 ## Cross-references

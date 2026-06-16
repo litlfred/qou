@@ -8,7 +8,7 @@ import { proposition } from "../../schema/builders";
  *
  * Verified at A = 2..6 (D, T, ³He, ⁴He, ⁵Li, ⁶Li) via the
  * markov_peel symbolic pipeline. Witness:
- *   folio-assistant/computations/per-nucleon-shift-derivation.witness.json
+ *   computations/per-nucleon-shift-derivation.witness.json
  *
  * Closes the residual research question on
  * `claude/w3-w4-followups` (the per-nucleon coefficient origin),
@@ -31,8 +31,8 @@ export default proposition({
   uses: [],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/per_nucleon_shift_derivation.py",
-    witness: "folio-assistant/computations/per-nucleon-shift-derivation.witness.json",
+    script: "computations/per_nucleon_shift_derivation.py",
+    witness: "computations/per-nucleon-shift-derivation.witness.json",
     status: "verified",
     requires: ["numpy"],
   },

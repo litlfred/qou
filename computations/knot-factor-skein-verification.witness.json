@@ -4,7 +4,7 @@
   "description": "Bounded verification of Step 4 of conj:knot-factor-frobenius-pairing: the Skein product prod(1+sign(c)h) reproduces the canonical a_K column (1+h, 1-h^2, (1-h^2)^2) of nuclear-knot-classification; 1-h^2=4-[3]_q; and a_K is the h-content reduction, not the literal figure-8 Jones invariant.",
   "computation": {
     "engine": "python+sympy",
-    "script": "folio-assistant/computations/knot_factor_skein_verification.py"
+    "script": "computations/knot_factor_skein_verification.py"
   },
   "scriptCommitSha": "",
   "scriptHash": "7c04d6b35dfb",

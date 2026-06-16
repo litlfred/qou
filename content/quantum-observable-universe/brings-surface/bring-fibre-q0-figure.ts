@@ -21,8 +21,8 @@ export default diagram({
   meta: {
     file: "figures/bring-fibre-q0.pdf",
     altFile: "figures/bring-fibre-q0.svg",
-    generator: "folio-assistant/computations/bring_chiral_fibre_figure.py",
-    witness: "folio-assistant/computations/bring-chiral-fibre-figure.witness.json",
+    generator: "computations/bring_chiral_fibre_figure.py",
+    witness: "computations/bring-chiral-fibre-figure.witness.json",
     workplan: "docs/workplans/2026-05-24-pr31-affine-light-cone-redo.md",
   },
 });

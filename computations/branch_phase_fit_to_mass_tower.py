@@ -21,7 +21,7 @@ branch phases gives non-trivial commutative crossing weights.
 See content block: rem:commutative-crossing-energy.
 
 Usage:
-    python3 folio-assistant/computations/branch_phase_fit_to_mass_tower.py
+    python3 computations/branch_phase_fit_to_mass_tower.py
 """
 from __future__ import annotations
 

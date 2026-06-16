@@ -63,10 +63,10 @@
       }
     },
     "upstream_witnesses": [
-      "folio-assistant/computations/atom-chi-rust-d.witness.json",
-      "folio-assistant/computations/atom-chi-rust-t.witness.json",
-      "folio-assistant/computations/atom-chi-rust-3he.witness.json",
-      "folio-assistant/computations/atom-chi-rust-4he.witness.json"
+      "computations/atom-chi-rust-d.witness.json",
+      "computations/atom-chi-rust-t.witness.json",
+      "computations/atom-chi-rust-3he.witness.json",
+      "computations/atom-chi-rust-4he.witness.json"
     ],
     "baseline_variance_no_fr": 1.82,
     "per_knot": {

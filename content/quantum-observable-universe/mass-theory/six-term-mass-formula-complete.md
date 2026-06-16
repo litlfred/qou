@@ -238,7 +238,7 @@ $q_0$ that produces 700 MeV mirror-nucleus errors.  Restoring
 trace-invariance for T2/T3 at $q_0$ is an open derivation question.*
 
 *All computation scripts are present with witness JSON files
-in `folio-assistant/computations/`.  **Paper-side completeness
+in `computations/`.  **Paper-side completeness
 achieved for all six terms.***
 
 **Remaining items (refinements, not gaps).**

@@ -29,10 +29,10 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/probes/full_twist_root_of_unity_probe.py",
+    script: "computations/probes/full_twist_root_of_unity_probe.py",
     witness: [
-      "folio-assistant/computations/full-twist-delta-n2-verification.witness.json",
-      "folio-assistant/computations/probes/full-twist-root-of-unity-probe.witness.json",
+      "computations/full-twist-delta-n2-verification.witness.json",
+      "computations/probes/full-twist-root-of-unity-probe.witness.json",
     ],
     status: "experimental",
   },

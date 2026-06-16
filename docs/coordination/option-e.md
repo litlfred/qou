@@ -57,7 +57,7 @@ discipline.
 | **v9** | **+ (1+q)/2 correction** | **0.11% (stale) → +0.12% (canonical q₀, PR #1707)** | **NEAR-MATCH (fit) — PROBE 1 tested; structural derivation REFUTED; A=3 closure OPEN** |
 
 Each version's witness lives at
-`folio-assistant/computations/option-e-v{N}-*.witness.json`.
+`computations/option-e-v{N}-*.witness.json`.
 The witness commitSha pins which session produced the value.
 
 ## v9 canonical closure formula (NEAR-MATCH, not yet derived)
@@ -183,7 +183,7 @@ near-match. Do NOT wire as a derivation.
 - `docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md` — original Option-E motivation (Kashiwara crystal)
 - `docs/audits/2026-05-19-delta-lambda-phase4-z4N-closure.md` — early Z⊕N closure attempts
 - `docs/audits/2026-05-19-delta-lambda-thread-closure.md` — six-ansatz failure record
-- `folio-assistant/computations/option-e-v9-all-symmetries.witness.json` — v9 witness
-- `folio-assistant/computations/option_e_v9_all_symmetries.py` — v9 source
+- `computations/option-e-v9-all-symmetries.witness.json` — v9 witness
+- `computations/option_e_v9_all_symmetries.py` — v9 source
 - CLAUDE.md §Precision goals (L2 Δ_λ gate; Track A blocker; Subgoal-1 closure path)
 - `docs/coordination/1ppq-qbeta.md` — parallel flip-flop saga (c_k near-matches)

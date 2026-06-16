@@ -17,9 +17,9 @@ export default proposition({
   computation: {
     engine: "python",
     script:
-      "folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py",
+      "computations/rho_constit_equals_tau_M_proton_phase5l.py",
     witness:
-      "folio-assistant/computations/rho-constit-equals-tau-M-proton-phase5l.witness.json",
+      "computations/rho-constit-equals-tau-M-proton-phase5l.witness.json",
     status: "verified",
   },
   tags: [

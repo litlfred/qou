@@ -23,7 +23,7 @@ The Q-value = Σ_config w*_config × Δme_config × m_e
 where w* are the LP-optimal weights.
 
 Usage:
-    python3 folio-assistant/computations/unified-lp.py
+    python3 computations/unified-lp.py
 """
 
 import numpy as np

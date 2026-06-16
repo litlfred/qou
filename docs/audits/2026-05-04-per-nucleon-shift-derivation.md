@@ -1,8 +1,8 @@
 # Per-nucleon shift coefficient derivation: (18, 21, 1) decomposed
 
 **Branch.** `claude/improve-charge-precision-AXKIA` (post-PR #543 merge)
-**Witness.** [`per-nucleon-shift-derivation.witness.json`](../../folio-assistant/computations/per-nucleon-shift-derivation.witness.json)
-**Script.** [`per_nucleon_shift_derivation.py`](../../folio-assistant/computations/per_nucleon_shift_derivation.py)
+**Witness.** [`per-nucleon-shift-derivation.witness.json`](../../computations/per-nucleon-shift-derivation.witness.json)
+**Script.** [`per_nucleon_shift_derivation.py`](../../computations/per_nucleon_shift_derivation.py)
 
 ## Background
 
@@ -52,14 +52,14 @@ plus 1 from its incoming interface with the previously-last nucleon.
 | +neutron | +5 | +5 | +2 | **+12** | +10.5 | +1.5 | **+21** |
 
 (Empirical from
-[`per-nucleon-shift-derivation.witness.json`](../../folio-assistant/computations/per-nucleon-shift-derivation.witness.json),
+[`per-nucleon-shift-derivation.witness.json`](../../computations/per-nucleon-shift-derivation.witness.json),
 all 6 atomic transitions agree.)
 
 ### Decomposition of Δgenerator counts
 
 For per-new-proton (+12):
 - 6σ + 3σ⁻¹ + 2avg = 11 (proton's intrinsic structure; cf.
-  [`mass_endomorphism.py`](../../folio-assistant/computations/mass_endomorphism.py))
+  [`mass_endomorphism.py`](../../computations/mass_endomorphism.py))
 - +1σ from the interface contribution (proton's incoming p-p or p-n
   interface adds one σ-type generator)
 
@@ -72,7 +72,7 @@ For per-new-neutron (+12):
 
 Each new generator contributes **at most 1 to the pole order at q=0**
 (the DP-max bound from
-[`dp_pole_probe.py`](../../folio-assistant/computations/dp_pole_probe.py)).
+[`dp_pole_probe.py`](../../computations/dp_pole_probe.py)).
 With 12 new generators per nucleon, the DP-max increment is 12.
 
 The actual pole increment (per `EMPIRICAL_SHIFT / 2` differencing):
@@ -143,7 +143,7 @@ one-time +1 for the interface), the closed form is:
 **This is now categorically derived** from:
 
 1. Per-new-nucleon generator counts (rigorous, from
-   [`atomic_braid_to_crossings`](../../folio-assistant/computations/hecke/hecke_character_symbolic.py))
+   [`atomic_braid_to_crossings`](../../computations/hecke/hecke_character_symbolic.py))
 2. Per-generator DP-max pole contribution = 1 (rigorous, from the
    seminormal eigenvalue structure σ_i ↔ {q, −q⁻¹})
 3. Cancellation count per new-nucleon (3 for proton, 1.5 for neutron) —

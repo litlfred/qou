@@ -16,9 +16,9 @@ $w = q - 1$, to order 7:*
 | 7 | $-3665/81$ | catalogued from witness; formal proof deferred |
 
 *Source: SymPy computation in
-[`qbeta_c3_multiblock_recursion_attack.py`](../../../folio-assistant/computations/qbeta/qbeta_c3_multiblock_recursion_attack.py)
+[`qbeta_c3_multiblock_recursion_attack.py`](../../../computations/qbeta/qbeta_c3_multiblock_recursion_attack.py)
 (Step 2: Taylor expansion to 12 orders), serialised in
-[`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../folio-assistant/computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json)
+[`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json)
 under `taylor_coeffs_w_expansion`.*
 
 ## Honest scope
@@ -43,7 +43,7 @@ under `taylor_coeffs_w_expansion`.*
   linear recursion on $c_n$ exists, but extracting it is open work).
 
 **Why the witness values are reliable.** The SymPy script in
-[`qbeta_c3_multiblock_recursion_attack.py`](../../../folio-assistant/computations/qbeta/qbeta_c3_multiblock_recursion_attack.py)
+[`qbeta_c3_multiblock_recursion_attack.py`](../../../computations/qbeta/qbeta_c3_multiblock_recursion_attack.py)
 applies `sp.series(... w, 0, 12)` to the closed form
 
 $$
@@ -61,6 +61,6 @@ Lean theorems above (orders 0 and 1).
   [`prop:qbeta-per-block-chi-closed-forms`](qbeta-per-block-chi-closed-forms.md)
   (`delta_tau_M_surrogate` definition + order-0/order-1 proofs).
 - Witness JSON:
-  [`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../folio-assistant/computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json).
+  [`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json).
 - 1ppQ-Q$_\beta$ coordination ledger:
   [`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md).

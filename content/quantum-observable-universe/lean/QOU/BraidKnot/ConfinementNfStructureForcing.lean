@@ -27,7 +27,7 @@ class ConfinementNfStructureForcing where
 
       Let $\beta = \beta_1 \star I \star \beta_2 \in B_n$ be a compound
 braid where
-  -- Witness: folio-assistant/computations/none $I$ is a basis interface braid (e.g. a torus-knot
+  -- Witness: computations/none $I$ is a basis interface braid (e.g. a torus-knot
 generator). Let $A := \{\lambda \vdash n : y_\lambda^* > 0\}$ be the
 LP/SDP
 

@@ -18,7 +18,7 @@ the substrate value $q_0$ and of CODATA.*
 ## Proof (algebraic identity)
 
 The operator-valued $N{=}2$ correction to $\mathfrak{Q}_\beta$ (per the brane-tower
-truncation of [`probe_q_beta_operator_valued_N3.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe_q_beta_operator_valued_N3.py))
+truncation of [`probe_q_beta_operator_valued_N3.py`](https://github.com/litlfred/qou/blob/main/computations/probe_q_beta_operator_valued_N3.py))
 is the factor $(1 - b^2 \cdot \hbar_q^4)$. With $u_{\text{ladder}} = b \cdot \hbar_q^2$,
 direct expansion gives
 
@@ -46,7 +46,7 @@ correction. No fit, no CODATA-$\mathfrak{Q}_\beta$ input, no $q_0$-evaluation
 required — the identity holds in any commutative ring.
 
 The corresponding sympy verification in
-[`qbeta_symbolic_chain_alpha_b.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_symbolic_chain_alpha_b.py)
+[`qbeta_symbolic_chain_alpha_b.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_symbolic_chain_alpha_b.py)
 computes `sp.simplify((1 - b²·ℏ_q⁴) - (1 - u²))` and obtains
 **exactly $0$**.
 

@@ -44,7 +44,7 @@ sequential atom schedule is no slower than a concurrent one.
 
 Audit doc: docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md
 
-@module folio-assistant/computations/per_irrep_pole_atom
+@module computations/per_irrep_pole_atom
 """
 from __future__ import annotations
 

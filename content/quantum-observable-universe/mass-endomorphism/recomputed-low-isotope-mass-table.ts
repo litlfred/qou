@@ -35,23 +35,23 @@ export default remark({
   ],
   computation: {
     engine: "numpy",
-    script: "folio-assistant/computations/tr_m_q_hecke_seminormal.py",
+    script: "computations/tr_m_q_hecke_seminormal.py",
     witness: [
-      "folio-assistant/computations/tr-m-q-hecke-seminormal.witness.json",
-      "folio-assistant/computations/atomic-tr-m-mpfr-50dps.witness.json",
+      "computations/tr-m-q-hecke-seminormal.witness.json",
+      "computations/atomic-tr-m-mpfr-50dps.witness.json",
       // LP / SDP duals supplying shadow-price structure for the
       // operator-selection step that picks per-Wedderburn-block
       // contributions to the binding-energy ansatz. Per CLAUDE.md
       // (LP/SDP duals first-class infra) every operator-selection
       // compute must emit primal + dual; these three witnesses are
       // the dual companions to this mass-table block:
-      "folio-assistant/computations/rho-k-h3a-lp-dual.witness.json",
-      "folio-assistant/computations/rho-k-h3a-gg-trajectory.witness.json",
-      "folio-assistant/computations/binding-k-solver.witness.json",
+      "computations/rho-k-h3a-lp-dual.witness.json",
+      "computations/rho-k-h3a-gg-trajectory.witness.json",
+      "computations/binding-k-solver.witness.json",
       // Derived m_p witness consumed by low_isotope_mass_table.py
       // under the no-calibration rule (replaces the previous CODATA
       // hardcode of M_P_MEV).
-      "folio-assistant/computations/proton-mass-codata-50dps.witness.json",
+      "computations/proton-mass-codata-50dps.witness.json",
     ],
     status: "verified",
     requires: ["numpy", "sympy"],

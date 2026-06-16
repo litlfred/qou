@@ -1,7 +1,7 @@
 # The "embedded growth" is many-body α-cooperativity — the pairwise bond-sum's ceiling
 
 **Date:** 2026-06-02
-**Derivation:** [`derive_binding_chain_cooperative.py`](../../folio-assistant/computations/derive_binding_chain_cooperative.py)
+**Derivation:** [`derive_binding_chain_cooperative.py`](../../computations/derive_binding_chain_cooperative.py)
 → `derive-binding-chain-cooperative.witness.json`
 **Status:** DERIVATION (zero fit). The honest conclusion of the binding arc.
 

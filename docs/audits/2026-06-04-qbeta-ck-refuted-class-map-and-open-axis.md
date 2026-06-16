@@ -101,7 +101,7 @@ now refuted**; per #1850's synthesis, the production `linking_weight =
   (C8, PR #1841) and the trace-level Markov-stabilization (C12, PR #1850) both
   fail. The 2.53 multiplier is **CODATA-implied near-match** territory, not a
   derived categorical count — full provenance in #1850's synthesis and
-  the [`vol_density_borromean()`](../../folio-assistant/computations/_li_2_q_util.py)
+  the [`vol_density_borromean()`](../../computations/_li_2_q_util.py)
   docstring in `_li_2_q_util.py` (the "2.53 is a CODATA-implied-λ near-match"
   paragraph).
 - **Decay-side fibre Habiro element F(q) (open):** the keystone of §1, whose
@@ -190,5 +190,5 @@ sub-case is killed on paper rather than by an expensive scan:
 - **Shared root cause (Q_β / m_n / Δ_pn):** [`2026-05-30-l2-100x-status-3-failing-shared-root.md`](2026-05-30-l2-100x-status-3-failing-shared-root.md)
 - **H₃→H₄ literature import (named the trace-level lead):** [PR #1808](https://github.com/litlfred/qou/pull/1808) (doc `2026-06-04-h3-h4-jump-literature-import.md` lands when #1808 merges)
 - **H₃→H₄ jump consolidated negative (paper-topic deep-dive complement to this map):** [`2026-06-04-h3-h4-jump-both-axes-refuted.md`](2026-06-04-h3-h4-jump-both-axes-refuted.md) — closes 2 of the 5 #1762 attack options at the paper-topic level (mass-side `linking_weight_family_a` ≈ 2.53 is CODATA-implied near-match), while this map records the same outcome at the method-registry level (C8 + C12).
-- **Trace-level axis scope + refutation (C12):** [`2026-06-04-markov-stab-trace-axis-scope.md`](2026-06-04-markov-stab-trace-axis-scope.md), [`markov_stab_trace_axis_probe.py`](../../folio-assistant/computations/probes/markov_stab_trace_axis_probe.py), `markov-stab-trace-axis-probe.witness.json` (all merged via PR #1850)
+- **Trace-level axis scope + refutation (C12):** [`2026-06-04-markov-stab-trace-axis-scope.md`](2026-06-04-markov-stab-trace-axis-scope.md), [`markov_stab_trace_axis_probe.py`](../../computations/probes/markov_stab_trace_axis_probe.py), `markov-stab-trace-axis-probe.witness.json` (all merged via PR #1850)
 - **Refuted-class source PRs:** #1811, #1816, #1822, #1831, #1839, #1841, #1842, #1850 (all merged)

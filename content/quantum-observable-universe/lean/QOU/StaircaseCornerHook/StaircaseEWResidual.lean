@@ -23,7 +23,7 @@ namespace QOU.StaircaseCornerHook
 
     Conjectural class — see [`conj:staircase-ew-residual`](../../../quantum-observable-universe/braids-and-knots/staircase-ew-residual.md). -/
 class StaircaseEWResidual where
-  -- Witness: folio-assistant/computations/staircase-ew-residual-conjecture.witness.json
+  -- Witness: computations/staircase-ew-residual-conjecture.witness.json
   /-- Scalar residual encoding the conjecture's content (placeholder
       shape: refine to match the actual claim). -/
   residual : ℝ

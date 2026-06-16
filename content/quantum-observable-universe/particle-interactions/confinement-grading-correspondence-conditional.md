@@ -38,7 +38,7 @@ data into a single field.
 
 For every atomic knot $K$ at $k_{\max} \leq 7$, the LP/SDP active
 set $\{\lambda \mid y_\lambda^* > 0\}$ produced by
-[`confinement-operator-selection.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/confinement_operator_selection.py)
+[`confinement-operator-selection.py`](https://github.com/litlfred/qou/blob/main/computations/confinement_operator_selection.py)
 matches the KLR-graded support predicted by the conditional
 theorem.
 
@@ -51,9 +51,9 @@ theorem.
 | 7 | $3_1, 4_1, 5_{1,2}, 6_{1,2,3}, 7_{1,\ldots,7}$ | yes |
 
 Witnesses:
-[`lp-confinement-nf-forcing.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/lp-confinement-nf-forcing.witness.json),
-[`confined-knot-binding.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/confined-knot-binding.witness.json),
-[`confinement-operator-selection.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/confinement-operator-selection.witness.json).
+[`lp-confinement-nf-forcing.witness.json`](https://github.com/litlfred/qou/blob/main/computations/lp-confinement-nf-forcing.witness.json),
+[`confined-knot-binding.witness.json`](https://github.com/litlfred/qou/blob/main/computations/confined-knot-binding.witness.json),
+[`confinement-operator-selection.witness.json`](https://github.com/litlfred/qou/blob/main/computations/confinement-operator-selection.witness.json).
 
 These are *empirical evidence* for the upstream conjecture
 [`conj:crystal-graph-realization`](#conj:crystal-graph-realization),

@@ -45,7 +45,7 @@ Classifications:
 Emits `i2-probe-only-audit.witness.json`.
 
 Usage:
-    python3 folio-assistant/computations/i2_probe_only_audit.py [--strict]
+    python3 computations/i2_probe_only_audit.py [--strict]
 """
 
 

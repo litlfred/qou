@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/_deprecated/y_lambda_wenzl_bridge_numeric.py",
+  "script_path": "computations/_deprecated/y_lambda_wenzl_bridge_numeric.py",
   "language": "python",
   "source_hash": "a169289ac795",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -70,7 +70,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:1: script lacks both a module docstring and ≥10% comment density (got 7/171 = 4.1%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:1: script lacks both a module docstring and ≥10% comment density (got 7/171 = 4.1%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       }
     ],
     "variables_typed": [
@@ -89,7 +89,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:48: `def f_lambda(…)` has 1 parameter without type annotation: p — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:61: `def n_partition(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:65: `def hooks_contents(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:77: `def schur_principal_numeric(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:91: `def partitions(…)` has 2 parameters without type annotation: n, max_part — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:48: `def f_lambda(…)` has 1 parameter without type annotation: p — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:61: `def n_partition(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:65: `def hooks_contents(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:77: `def schur_principal_numeric(…)` has 1 parameter without type annotation: lam — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:91: `def partitions(…)` has 2 parameters without type annotation: n, max_part — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -108,7 +108,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -144,7 +144,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
+        "evidence": "computations/_deprecated/y_lambda_wenzl_bridge_numeric.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
       }
     ],
     "uses_library_framework_appropriately": [

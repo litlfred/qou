@@ -24,7 +24,7 @@ The bridge claim formalised by this script:
   α_EM⁻¹ = q · [α_shift(T_{2,9})]_q · [α_shift(T_{3,5})]_q
          = q · [9]_q · [10]_q.
 
-@module folio-assistant/computations/alpha_shift_torus
+@module computations/alpha_shift_torus
 """
 
 from __future__ import annotations

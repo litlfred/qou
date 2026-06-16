@@ -20,7 +20,7 @@ Operations recurring across different isotopes (e.g., T and ³He
 sharing a sign-pattern at depth 3) get observed in `discovered_in`
 multiple times → "multi-feeder ops".
 
-@module folio-assistant/computations/wedderburn_coarse_feeder
+@module computations/wedderburn_coarse_feeder
 """
 from __future__ import annotations
 import argparse

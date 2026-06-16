@@ -5,14 +5,14 @@ $$
 M_q = Z \cdot \mathfrak{m}_{\mathfrak{p}} + N \cdot \mathfrak{m}_{\mathfrak{n}} + Z \cdot \mathfrak{m}_e - (Z+N) \cdot (B/A)
 $$
 
-where $\mathfrak{m}_{\mathfrak{p}} \approx :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV, $\mathfrak{m}_{\mathfrak{n}} \approx :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV,
+where $\mathfrak{m}_{\mathfrak{p}} \approx :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV, $\mathfrak{m}_{\mathfrak{n}} \approx :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV,
 $\mathfrak{m}_e \approx 0.511$ MeV (rounded CODATA 2022). The observed mass $M_o$ uses
 full-precision constants. Both use identical $B/A$ from AME2020.
 
 **Important**: This formula recombines CODATA/AME2020 inputs ---
 it is **not** a prediction from $q$. The 0.0000% deviations below
 confirm arithmetic consistency, nothing more. The only external scaling
-parameter needed is $m_e = :val[m_e_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV (CODATA 2022), which
+parameter needed is $m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV (CODATA 2022), which
 serves as the **ruler** converting dimensionless $q$-derived ratios
 to physical MeV.
 
@@ -70,7 +70,7 @@ mass-derivation paths:
 
 1. **CODATA path**: $M_{\mathrm{CODATA}} = Z \cdot m_{\mathfrak{p}} + N \cdot m_{\mathfrak{n}} + Z \cdot m_e - B$
    using CODATA 2022 constituent masses ($m_{\mathfrak{p}} = 938.27208943$,
-   $m_{\mathfrak{n}} = 939.56542194$, $m_e = :val[m_e_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV).
+   $m_{\mathfrak{n}} = 939.56542194$, $m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV).
 
 2. **AME2020 path**: $M_{\mathrm{AME}} = A \cdot u + Z \cdot \Delta_H + N \cdot \Delta_n - B$
    using the atomic mass unit ($u = 931.49410242$ MeV), hydrogen mass

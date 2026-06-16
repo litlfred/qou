@@ -22,7 +22,7 @@ through this chain.
 This is the FULL correlated version — not the factorized a^Z · b^N.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 correlated_channel_mass.py
 """
 

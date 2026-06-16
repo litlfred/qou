@@ -3,7 +3,7 @@
 **Date.** 2026-05-31
 **Block.** [`conj:casimir-epsilon-vacuum`](../../content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md)
 **Builds on.** [`2026-05-31-casimir-xi-2-reconciliation.md`](2026-05-31-casimir-xi-2-reconciliation.md)
-**Witness.** [`casimir-n-unknot-construction.witness.json`](../../folio-assistant/computations/casimir-n-unknot-construction.witness.json)
+**Witness.** [`casimir-n-unknot-construction.witness.json`](../../computations/casimir-n-unknot-construction.witness.json)
 **Result.** A **conditional** construction of the N_⊙ mode-count functional. A
 principled selection criterion — **n-stability** — uniquely picks the bare
 disjoint-unknot count, which fixes **ξ_k = 0 at leading 1/d⁴ order** and

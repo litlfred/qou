@@ -19,8 +19,8 @@ both merged on 2026-04-27.
 |---|---|
 | Content `.ts` files added (incl. merged-in branches) | 1506 |
 | Content `.ts` files modified | 959 |
-| New witness JSONs in `folio-assistant/computations/` | 364 |
-| New Python feeders in `folio-assistant/computations/` | ~470 |
+| New witness JSONs in `computations/` | 364 |
+| New Python feeders in `computations/` | ~470 |
 | New Rust files in `tools/hecke-engine/src/` | 4 (1 production binary, 3 R5.5 diagnostics) |
 
 The very large `.ts` counts are inflated by long-running feature

@@ -33,7 +33,7 @@ recursive reducer `markov_trace_of_word` does not support the
 "averaged" crossing type (c·σ + d·I with d = -h/2) that the
 canonical interface requires.  For canonical |tr_M(deuteron)|, use:
 
-    folio-assistant/computations/atomic_tr_m_mpfr_50dps.py
+    computations/atomic_tr_m_mpfr_50dps.py
     → atomic-tr-m-mpfr-50dps.witness.json
 
 which uses tr_M_via_wenzl_bridge_mpfr.py + atom_braid_word_3A and
@@ -259,9 +259,9 @@ def main() -> int:
             "prop:markov-trace-axiomatic-closed-form",
         ],
         "reference_scripts": [
-            "folio-assistant/computations/markov_trace_recursive.py",
-            "folio-assistant/computations/markov_trace_atomic_proton_full.py",
-            "folio-assistant/computations/markov_trace_axiomatic_proton.py",
+            "computations/markov_trace_recursive.py",
+            "computations/markov_trace_atomic_proton_full.py",
+            "computations/markov_trace_axiomatic_proton.py",
         ],
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "q0": fmt(Q0_MP),

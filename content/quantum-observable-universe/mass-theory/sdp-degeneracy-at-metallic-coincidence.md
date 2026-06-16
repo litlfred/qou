@@ -37,7 +37,7 @@ identification of binding constraints, multiple optimal solutions
 returned.
 
 **Empirical verification.**  The n=2 LP active-set sweep
-(`folio-assistant/computations/two_quark_active_set_mahler_sweep.py`)
+(`computations/two_quark_active_set_mahler_sweep.py`)
 observed exactly this signature: below silver the active set was
 $\{0\}$ (row 1 tight), AT silver it was $\emptyset$ (degenerate),
 above silver it was $\{1\}$ (row 2 tight).  The degeneracy at silver

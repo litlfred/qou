@@ -23,7 +23,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:local-infinitesimal-field`](../../../quantum-observable-universe/appendix-surreals/local-infinitesimal-field.md). -/
 class LocalInfinitesimalField where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       The appendix so far treats the substrate parameter $q = 1 +

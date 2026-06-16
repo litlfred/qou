@@ -48,7 +48,7 @@ PSD-infeasibility, NOT by the single-term cost.  Productive directions:
 
 Ref: docs/audits/2026-06-02-subgoal-1-sdp-canonical-knot-run.md
 Ref: content/.../mass-theory/conj-canonical-knot-id-sdp.md
-Ref: folio-assistant/computations/subgoal-1-frobenius-co-casimir-validation.witness.json
+Ref: computations/subgoal-1-frobenius-co-casimir-validation.witness.json
 """
 from __future__ import annotations
 

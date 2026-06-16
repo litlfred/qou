@@ -43,7 +43,7 @@ cached per $(n, q)$ pair.*
 ### Python API entry point
 
 *Canonical compute is the script
-[`folio-assistant/computations/gb_filtration_jet_tracker.py`](../../../folio-assistant/computations/gb_filtration_jet_tracker.py);
+[`computations/gb_filtration_jet_tracker.py`](../../../computations/gb_filtration_jet_tracker.py);
 run it directly to emit the witness. The Rust implementation
 lives in [`tools/hecke-engine/`](../../../tools/hecke-engine/),
 called via `pyhecke_native` when the per-particle builders need
@@ -52,7 +52,7 @@ the filtered NF.*
 ### Witness contract
 
 *Canonical witness:
-[`gb-filtration-jet-order.witness.json`](../../../folio-assistant/computations/gb-filtration-jet-order.witness.json)
+[`gb-filtration-jet-order.witness.json`](../../../computations/gb-filtration-jet-order.witness.json)
 records the per-level filtration dimensions and the $d_2 = 0$
 certificate.*
 

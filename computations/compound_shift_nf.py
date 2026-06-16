@@ -15,7 +15,7 @@ view:
   • `claude/improve-charge-precision-AXKIA` (merged) — δ_q decoration
     and the multiplicative chain
     `α_EM⁻¹ = q · [9]_q · [10]_q = q · α_shift(T_{2,9}) · α_shift(T_{3,5})`
-    → see folio-assistant/computations/alpha_em_shift_chain.py.
+    → see computations/alpha_em_shift_chain.py.
 
 Public surface (mirrors the plan API):
 

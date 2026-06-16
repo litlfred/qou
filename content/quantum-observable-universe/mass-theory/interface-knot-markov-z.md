@@ -50,7 +50,7 @@ yields the boxed identity ($\star$).
 
 ### Empirical verification (4 atoms, 50-dps Rust kernel)
 
-Computed via [`delta_lambda_fr_identity_phase5c.py`](../../../folio-assistant/computations/delta_lambda_fr_identity_phase5c.py)
+Computed via [`delta_lambda_fr_identity_phase5c.py`](../../../computations/delta_lambda_fr_identity_phase5c.py)
 using `pyhecke_native` for full $\tau_M$ at $H_n$ for $n \in \{6, 9, 12\}$:
 
 | atom | $A$ | $p_+$ | $p_-$ | $\tau_M^{\mathrm{FULL}}/\tau_M^{\mathrm{CONSTIT}}$ | predicted $z^{p_+}(z-h)^{p_-}$ | rel. err. |
@@ -140,7 +140,7 @@ $$
 
 ### Implementation reference
 
-- Script: [`folio-assistant/computations/delta_lambda_fr_identity_phase5c.py`](../../../folio-assistant/computations/delta_lambda_fr_identity_phase5c.py)
-- Witness: `folio-assistant/computations/delta-lambda-fr-identity-phase5c.witness.json` (2 assertions; **Markov-axiom interface identity passes to $10^{-15}$ rel. err.**)
+- Script: [`computations/delta_lambda_fr_identity_phase5c.py`](../../../computations/delta_lambda_fr_identity_phase5c.py)
+- Witness: `computations/delta-lambda-fr-identity-phase5c.witness.json` (2 assertions; **Markov-axiom interface identity passes to $10^{-15}$ rel. err.**)
 - Cross-reference: `def:ew-interface-knot` (the canonical interface-knot definition).
 - Cross-reference: Phase 5c.1 audit doc covers the empirical extraction; this proposition is the categorical resolution.

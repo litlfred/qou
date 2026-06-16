@@ -3,13 +3,13 @@
 **Date**: 2026-05-08
 **Branch**: `claude/audit-content-blocks-hzjAf`
 **Skill**: `local/compute-audit`
-**Scanner**: `folio-assistant/computations/compute_audit_scan.py`
-**Witness**: `folio-assistant/computations/compute-audit-scan.witness.json`
+**Scanner**: `computations/compute_audit_scan.py`
+**Witness**: `computations/compute-audit-scan.witness.json`
 
 Companion to `2026-05-08-content-block-audit.md` — the content-block
 audit covered correctness/hygiene of `.ts/.md/.lean` triples; this
 audit covers Python compute scripts under
-`folio-assistant/computations/` against the 30 patterns
+`computations/` against the 30 patterns
 (P1–P16 correctness, P17–P30 performance) catalogued in the skill
 spec.
 

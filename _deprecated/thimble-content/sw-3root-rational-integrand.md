@@ -100,7 +100,7 @@ At $z = 0.1$:
 | Quantity | Value |
 |----------|-------|
 | Symbolic $-P(0.1)/D(0.1)$ | $-2.4900888950\ldots$ |
-| Production [`sw_3root_product_degree1(0.1)`](../../../folio-assistant/computations/picard_lefschetz_thimble.py) | $-2.4900888950\ldots$ |
+| Production [`sw_3root_product_degree1(0.1)`](../../../computations/picard_lefschetz_thimble.py) | $-2.4900888950\ldots$ |
 
 Match to machine precision.
 

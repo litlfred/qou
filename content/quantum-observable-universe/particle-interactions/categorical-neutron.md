@@ -70,7 +70,7 @@ $$
   2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q) + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q)
 $$
 
-At the CODATA value $q_0$: $\mathfrak{m}_{\mathfrak{n}}(q_0) \approx :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).  The
+At the CODATA value $q_0$: $\mathfrak{m}_{\mathfrak{n}}(q_0) \approx :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).  The
 proton--neutron mass splitting is
 
 $$

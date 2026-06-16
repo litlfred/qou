@@ -267,7 +267,7 @@ def load_shell_correction() -> dict[str, float]:
     """Load the L3 shell-correction ε_shell values from the prototype
     witness, if it exists.  Returns a dict atom_sym → ε_shell (MeV).
 
-    The prototype is `folio-assistant/computations/prototype_gs_nf_shell_binding.py`
+    The prototype is `computations/prototype_gs_nf_shell_binding.py`
     (PR #1162) which emits per-atom shell-binding corrections derived from
     the Gröbner-Shirshov normal-form shell-closure signature.  See
     `docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`

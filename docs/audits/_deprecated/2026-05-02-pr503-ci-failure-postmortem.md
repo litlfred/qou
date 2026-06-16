@@ -11,7 +11,7 @@ workflow ([`.github/workflows/witness-pipeline.yml`](../../.github/workflows/wit
 
 The **drift-check** step (witness-pipeline.yml lines 131–161) detected
 substantive drift in
-[`folio-assistant/computations/derivation-chain-audit.witness.json`](../../folio-assistant/computations/derivation-chain-audit.witness.json).
+[`computations/derivation-chain-audit.witness.json`](../../computations/derivation-chain-audit.witness.json).
 The drift survived the CI filter, which strips only timestamp /
 commit / hash / engine fields:
 
@@ -26,13 +26,13 @@ After filtering, the only surviving drift line was:
 +        "ew-higgs-sdp-probe.witness.json",
 ```
 
-i.e. the witness file [`ew-higgs-sdp-probe.witness.json`](../../folio-assistant/computations/probes/ew-higgs-sdp-probe.witness.json)
+i.e. the witness file [`ew-higgs-sdp-probe.witness.json`](../../computations/probes/ew-higgs-sdp-probe.witness.json)
 that was *introduced* in commit `713e990e` (the EW/Higgs SDP probe).
 
 ## Why the drift exists
 
-[`derivation_chain_validator.py`](../../folio-assistant/computations/derivation_chain_validator.py)
-walks every `*.witness.json` in `folio-assistant/computations/` and
+[`derivation_chain_validator.py`](../../computations/derivation_chain_validator.py)
+walks every `*.witness.json` in `computations/` and
 classifies each as one of:
 
 | Class | Definition |
@@ -71,14 +71,14 @@ Two acceptable resolutions, both followed:
 
 - **Pre-push checklist for witness-pipeline-touching commits.**
   Whenever a commit adds or modifies a `*.witness.json` or
-  `*.derivation.json` under `folio-assistant/computations/`, run
+  `*.derivation.json` under `computations/`, run
   the four validators **locally** before pushing:
 
   ```bash
-  python3 folio-assistant/computations/habiro/habiro_witness_validator.py
-  python3 folio-assistant/computations/markov/markov_substrate_realizer.py
-  python3 folio-assistant/computations/markov/markov_pipeline_cross_validator.py
-  python3 folio-assistant/computations/derivation_chain_validator.py
+  python3 computations/habiro/habiro_witness_validator.py
+  python3 computations/markov/markov_substrate_realizer.py
+  python3 computations/markov/markov_pipeline_cross_validator.py
+  python3 computations/derivation_chain_validator.py
   ```
 
   Then `git status` — if any `*.witness.json` got touched, commit
@@ -121,7 +121,7 @@ Two acceptable resolutions, both followed:
 - The fixed PR commits: f2b46970 (FROB-FILTER + Bring), 713e990e
   (SDP probe), [next] (audit witness + this postmortem).
 - The validator code:
-  [`derivation_chain_validator.py`](../../folio-assistant/computations/derivation_chain_validator.py)
+  [`derivation_chain_validator.py`](../../computations/derivation_chain_validator.py)
   (witness classification logic).
 - The drift check:
   [`witness-pipeline.yml`](../../.github/workflows/witness-pipeline.yml)

@@ -26,5 +26,5 @@ The result is **NEGATIVE**. While the value $1/6$ holds numerically, it originat
 Together with the Session A negative result, this establishes that the 54 ppb residual correction $( \alpha_{em}/\pi ) / \dim H_3$ cannot be integrated via standard, simple injections into the ideal octahedron per-cell coupling/normalisation. The derivation requires deeper categorical machinery—such as co-simplicial crossed groupoids—bypassing the simplistic Yekutieli structural guesses.
 
 ## Deliverables
-- **Probe script:** `folio-assistant/computations/yekutieli_per_cell_dim_h3_normalisation_probe.py`
-- **Witness:** `folio-assistant/computations/yekutieli-per-cell-dim-h3-normalisation-probe.witness.json`
+- **Probe script:** `computations/yekutieli_per_cell_dim_h3_normalisation_probe.py`
+- **Witness:** `computations/yekutieli-per-cell-dim-h3-normalisation-probe.witness.json`

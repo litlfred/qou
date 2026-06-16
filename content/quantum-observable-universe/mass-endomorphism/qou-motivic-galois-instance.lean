@@ -12,7 +12,7 @@ from the Habiro symbolic data via `habiro_frobenius_probe.py`.
 Per the queued-research roadmap §R6, the `MotivicGaloisCharacter`
 class is **fully determined** by the Habiro structure once the
 extraction map `Habiro → Frob_p ∈ Z[ζ_{2p}]` is written. The Python
-probe (`folio-assistant/computations/probes/habiro_frobenius_probe.py`)
+probe (`computations/probes/habiro_frobenius_probe.py`)
 implements the map for atoms {p, n, D} at primes {2, 3, 5, 7, 11, 13},
 emitting the witness `habiro-frobenius-probe.witness.json` with:
 

@@ -67,7 +67,7 @@ across the three h²-active channels — does it split equally
 
 ## Cross-references
 
-- [`_li_2_q_util.py:linking_weight_family_a`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/_li_2_q_util.py#L172) — production
+- [`_li_2_q_util.py:linking_weight_family_a`](https://github.com/litlfred/qou/blob/main/computations/_li_2_q_util.py#L172) — production
 - [PR #1272](https://github.com/litlfred/qou/pull/1272) γγ̄ decomposition — h² Reading-A
 - [PR #1276](https://github.com/litlfred/qou/pull/1276) Bring + Faddeev h⁴ candidate — channel-assignment open Q
 - [PR #1285](https://github.com/litlfred/qou/pull/1285) — markov_trace mpf precision fix

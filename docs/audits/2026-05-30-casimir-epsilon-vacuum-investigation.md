@@ -60,7 +60,7 @@ and look for a closed-form q-rational at `q = q₀ ≈ 1.110`.
    *forced by* this particular q-deformation.
 
 **Empirical witness.**
-[`casimir-q-zeta-probe.witness.json`](../../folio-assistant/computations/probes/casimir-q-zeta-probe.witness.json)
+[`casimir-q-zeta-probe.witness.json`](../../computations/probes/casimir-q-zeta-probe.witness.json)
 records the full search; assertion `best_match_within_one_percent_of_target`
 fires at 0.54% residue.
 
@@ -165,11 +165,11 @@ relevant to QOU is *not* Carlitz/KKW. Two possible follow-ups:
     through this family.
 
 Witness:
-[`casimir-carlitz-q-bernoulli-probe.witness.json`](../../folio-assistant/computations/probes/casimir-carlitz-q-bernoulli-probe.witness.json).
+[`casimir-carlitz-q-bernoulli-probe.witness.json`](../../computations/probes/casimir-carlitz-q-bernoulli-probe.witness.json).
 
 ### Extended Φ_q / Markov-trace / extended q-zeta probe (Route A2 + B)
 
-After Carlitz failed, ran [`casimir_phi_q_markov_probe.py`](../../folio-assistant/computations/probes/casimir_phi_q_markov_probe.py)
+After Carlitz failed, ran [`casimir_phi_q_markov_probe.py`](../../computations/probes/casimir_phi_q_markov_probe.py)
 to cover the audit's two follow-up directions in a single sweep:
 
 **Route A2 — extended q-zeta variants:**
@@ -226,12 +226,12 @@ What's left:
    Casimir experiment (~0.1%) could distinguish.
 
 Witness:
-[`casimir-phi-q-markov-probe.witness.json`](../../folio-assistant/computations/probes/casimir-phi-q-markov-probe.witness.json).
+[`casimir-phi-q-markov-probe.witness.json`](../../computations/probes/casimir-phi-q-markov-probe.witness.json).
 
 ### Macdonald-norm probe via arm-leg formula (Route A2, Cherednik proxy)
 
 After Carlitz, Φ_q, and Markov all failed, ran a **Macdonald-norm
-probe** ([`casimir_macdonald_probe.py`](../../folio-assistant/computations/probes/casimir_macdonald_probe.py))
+probe** ([`casimir_macdonald_probe.py`](../../computations/probes/casimir_macdonald_probe.py))
 implementing the arm-leg formula directly — the natural symmetric-
 function basis for Cherednik DAHA without needing the full
 Macdonald-operator action.
@@ -266,7 +266,7 @@ basis — the natural Cherednik DAHA primitive — does not yield
 `π²/720` at substrate `q_0` through any low-degree combination.**
 
 Witness:
-[`casimir-macdonald-probe.witness.json`](../../folio-assistant/computations/probes/casimir-macdonald-probe.witness.json).
+[`casimir-macdonald-probe.witness.json`](../../computations/probes/casimir-macdonald-probe.witness.json).
 
 ### Final tally (4 independent sweeps, all null)
 
@@ -285,7 +285,7 @@ at `q_0` recovers π²/720**.
 ### 5th sweep — comprehensive grid search (closest near-match, but fails classical limit)
 
 After the 4 structured routes all failed, ran a brute-force grid
-sweep ([`casimir_grid_sweep_probe.py`](../../folio-assistant/computations/probes/casimir_grid_sweep_probe.py))
+sweep ([`casimir_grid_sweep_probe.py`](../../computations/probes/casimir_grid_sweep_probe.py))
 over 44 substrate primitives — q-integers, ℏ_q, h_q, α_em,
 Vol(4_1), Vol(𝓑₃), Jones polynomials of small knots, log Φ_q(1),
 constants — searching all 2- and 3-term products/ratios with
@@ -342,7 +342,7 @@ All 10 share the same defect: they involve `ℏ_q` or `h_q` powers
 that vanish at q → 1, so they fail the classical Casimir limit.
 
 Witness:
-[`casimir-grid-sweep-probe.witness.json`](../../folio-assistant/computations/probes/casimir-grid-sweep-probe.witness.json).
+[`casimir-grid-sweep-probe.witness.json`](../../computations/probes/casimir-grid-sweep-probe.witness.json).
 
 ### 6th sweep — classical-limit-preserving q-factorial sweep (FINDING)
 
@@ -350,7 +350,7 @@ The 5 prior sweeps all suffered from the same defect: every
 sub-1% match involved `ℏ_q` or `h_q` powers, which vanish at
 `q → 1`, making the form incompatible with standard physics.
 
-This probe ([`casimir_q_factorial_probe.py`](../../folio-assistant/computations/probes/casimir_q_factorial_probe.py))
+This probe ([`casimir_q_factorial_probe.py`](../../computations/probes/casimir_q_factorial_probe.py))
 imposes the **classical-limit constraint** `C_q(q→1) = π²/720`
 explicitly and searches q-deformations satisfying it.
 
@@ -436,7 +436,7 @@ The probes ruled out specific candidate forms but did not produce
 a derivation. **Sub-problem 3 remains genuinely open.**
 
 Witness:
-[`casimir-q-factorial-probe.witness.json`](../../folio-assistant/computations/probes/casimir-q-factorial-probe.witness.json).
+[`casimir-q-factorial-probe.witness.json`](../../computations/probes/casimir-q-factorial-probe.witness.json).
 
 ### Other classical-limit-OK candidates tested
 
@@ -496,7 +496,7 @@ part — *modulo verifying Hoefsmit additivity*.
 
 ### Empirical probe — additivity established structurally
 
-[`casimir-hoefsmit-additivity-probe.witness.json`](../../folio-assistant/computations/probes/casimir-hoefsmit-additivity-probe.witness.json)
+[`casimir-hoefsmit-additivity-probe.witness.json`](../../computations/probes/casimir-hoefsmit-additivity-probe.witness.json)
 records:
 
 1. **Hyperbolic-volume additivity.** Vol is additive on disjoint

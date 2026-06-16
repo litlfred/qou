@@ -25,7 +25,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:vacuum-epsilon`](../../../quantum-observable-universe/appendix-surreals/vacuum-epsilon.md). -/
 class VacuumEpsilon where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       The Hoefsmit scattering pipeline assigns to each link $L$ a

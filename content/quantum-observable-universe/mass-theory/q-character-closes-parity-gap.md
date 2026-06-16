@@ -93,7 +93,7 @@ sympy, where $d = \dim S^\lambda = f^\lambda$:*
   at $A=2$) and up to $132$ at $A=4$; symbolic cost becomes
   prohibitive.  For $A \geq 2$ use the **numerical**
   Hoefsmit pipeline in
-  `folio-assistant/computations/hecke/hecke_characters.py`
+  `computations/hecke/hecke_characters.py`
   (well-tested, handles 2$\times$2 block $b^2$ sign with
   `sqrt(abs(b^2))` where the symbolic expression can turn
   negative off the unitary locus).*
@@ -115,14 +115,14 @@ MN-support on any single $v$.  Pruning to the MN-support at
 $A \geq 2$ produces a **biased** result and is not used.*
 
 **Reference implementation.**
-*Script: `folio-assistant/computations/hecke/hecke_character_symbolic.py`.
+*Script: `computations/hecke/hecke_character_symbolic.py`.
 Builds Hoefsmit matrices with `q` as sympy symbol, multiplies
 through atomic braid word, traces to extract $\chi^\lambda_q(\sigma_w)$.
 Witness: `hecke-character-symbolic.witness.json`.*
 
 **Next step.**
 *Apply the numerical pipeline in
-`folio-assistant/computations/hecke/hecke_characters.py` (full $H_{3A}$
+`computations/hecke/hecke_characters.py` (full $H_{3A}$
 Wedderburn sum) to $A = 2$ (deuteron) with all $11$ partitions of
 $6$, weighted by the exact symbolic $w_\lambda(q_0)$.  The
 numerical Hoefsmit handles the 2$\times$2 block $b^2$ sign robustly.

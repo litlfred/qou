@@ -59,9 +59,9 @@ export default remark({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/probe_staircase_ew_k3_categorical.py",
+    script: "computations/probe_staircase_ew_k3_categorical.py",
     witness:
-      "folio-assistant/computations/staircase-ew-k3-mpfr-spectral.witness.json",
+      "computations/staircase-ew-k3-mpfr-spectral.witness.json",
     status: "verified",
   },
   tags: [

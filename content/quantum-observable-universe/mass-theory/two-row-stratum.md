@@ -73,7 +73,7 @@ generally exits $\Lambda^2$).
 ## Empirical use
 
 The companion probe
-[`probe_he4_canonical_tr_m_fingerprint.py`](folio-assistant/computations/probe_he4_canonical_tr_m_fingerprint.py)
+[`probe_he4_canonical_tr_m_fingerprint.py`](computations/probe_he4_canonical_tr_m_fingerprint.py)
 computes the per-partition decomposition
 $c_\lambda := y_\lambda(q_0) \cdot \chi^\lambda_q(\beta_{^4\mathrm{He}})$
 across all 77 partitions of 12 and finds the two-row stratum
@@ -81,6 +81,6 @@ $\Lambda^2(12)$ carries $86.6\,\%$ of $\mathrm{tr}_M(\beta_{^4\mathrm{He}})$ —
 content of [`prop:he4-two-row-dominance`](#prop:he4-two-row-dominance).
 
 The earlier
-[`delta_lambda_2row_stratum_analysis.py`](folio-assistant/computations/delta_lambda_2row_stratum_analysis.py)
+[`delta_lambda_2row_stratum_analysis.py`](computations/delta_lambda_2row_stratum_analysis.py)
 established the same pattern across $\{D, T, {}^3\mathrm{He}, {}^4\mathrm{He}\}$:
 the dominant block per atom always lies in $\Lambda^2(3A)$.

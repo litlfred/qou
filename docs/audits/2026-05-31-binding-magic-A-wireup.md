@@ -16,7 +16,7 @@ For doubly-magic ⁴He (Z=N=2):
 | Formula | Predicted B(⁴He) | Experimental | Miss |
 |---|---:|---:|---:|
 | `binding-alpha-shift-extension` (α_shift via T(3,4)) | 5.93 MeV | 28.30 MeV | **−79%** (5× too small) |
-| [`magic_A_formula::magic_A_binding`](../../folio-assistant/computations/magic_A_formula.py) (ρ_F·m_e·A·8G, ρ_F=2) | 29.96 MeV | 28.30 MeV | **+5.9%** |
+| [`magic_A_formula::magic_A_binding`](../../computations/magic_A_formula.py) (ρ_F·m_e·A·8G, ρ_F=2) | 29.96 MeV | 28.30 MeV | **+5.9%** |
 
 Wiring the existing magic_A path through for the doubly-magic case
 closes the ⁴He gap by **13.5×** (|rel_err| from 0.7904 → 0.0587),
@@ -87,7 +87,7 @@ Three options, in order of scope:
 
 ### Option 1 — Witness-side dispatch (this PR's deliverable)
 
-Extend [`binding_alpha_shift_witness.py`](../../folio-assistant/computations/binding_alpha_shift_witness.py)
+Extend [`binding_alpha_shift_witness.py`](../../computations/binding_alpha_shift_witness.py)
 to compute and report **both** formulas for each candidate, with the
 doubly-magic predicate dispatching to `magic_A_formula`. The witness
 JSON now carries `B_predicted_magic_A_MeV` + `ratio_magic_A_over_exp`
@@ -110,7 +110,7 @@ B = ρ_F·m_e·A·8G predicts 29.956 MeV (+5.9% miss), closing the
 alpha_shift gap by **13.5×** (|rel_err| 0.7904 → 0.0587)."*
 
 The script dispatches to the canonical
-[`magic_A_formula.magic_A_binding`](../../folio-assistant/computations/magic_A_formula.py)
+[`magic_A_formula.magic_A_binding`](../../computations/magic_A_formula.py)
 rather than mirroring the formula locally; `VOL_BORROMEAN` is sourced
 from `knot_volumes` (mpmath 50dps) via that import chain.
 
@@ -255,11 +255,11 @@ bar decomposition.
 The actual closure path for A ≥ 3 single-magic binding (per the
 Bring-weighting probe negative result above) is the
 operator-valued Wenzl branching identity, implemented in
-[`canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py)
+[`canonical_tr_m_via_branching.py`](../../computations/canonical_tr_m_via_branching.py)
 +
-[`A_operator_extract_at_level.py`](../../folio-assistant/computations/a_operator/A_operator_extract_at_level.py)
+[`A_operator_extract_at_level.py`](../../computations/a_operator/A_operator_extract_at_level.py)
 +
-[`lr_coefficients.py`](../../folio-assistant/computations/substrate/lr_coefficients.py).
+[`lr_coefficients.py`](../../computations/substrate/lr_coefficients.py).
 Sub-lemma 2.1 of Wenzl (1988):
 
 $$
@@ -401,7 +401,7 @@ any item "open"):
 2. Search the full `content/` tree for related conjectures and
    propositions (especially in adjacent chapters — `brings-surface`,
    `observations`, `mass-theory` cross over).
-3. Search `folio-assistant/computations/` for related Python:
+3. Search `computations/` for related Python:
    `pn_convention`, `nu_sdp`, the topic keyword, etc.
 4. Cross-check the coordination ledger
    `docs/coordination/<theme>.md` for the topic.
@@ -417,7 +417,7 @@ in the framework:
 
 ### 1. Bring color-tube weighting — IMPLEMENTED
 
-[`folio-assistant/computations/closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py)
+[`computations/closed_form_tau_M.py`](../../computations/closed_form_tau_M.py)
 already implements `pn_convention="bring_color_weighted"` with the
 substrate-pure formula
 
@@ -443,7 +443,7 @@ four has exactly one pn arc. The **arc-composition asymmetry**
 between T (pn,nn) and ³He (pp,pn) is what drives the very different
 baseline values 0.115 vs 0.197 — that is the structural source of
 the f≈2.82 vs f≈2.45 spread reported in
-[`binding_shell_enhancement_derivation.py`](../../folio-assistant/computations/binding_shell_enhancement_derivation.py).
+[`binding_shell_enhancement_derivation.py`](../../computations/binding_shell_enhancement_derivation.py).
 
 ### 2. Quark color-sheet content — STATED in `conj:inter-nucleon-channel-color-tube`
 
@@ -484,10 +484,10 @@ T vs ³He f-spread?" — has been answered by the probe below.
 ### Bring weighting probe (this PR — answers the "does it close the spread?" question)
 
 The probe
-[`binding_bring_enhancement_compare.py`](../../folio-assistant/computations/binding_bring_enhancement_compare.py)
+[`binding_bring_enhancement_compare.py`](../../computations/binding_bring_enhancement_compare.py)
 re-runs the closed-form $\tau_M$ ratio at $q_0$ under both
 `strict_averaged` and `bring_color_weighted`. Output (witness:
-[`binding-bring-enhancement-compare.witness.json`](../../folio-assistant/computations/binding-bring-enhancement-compare.witness.json)):
+[`binding-bring-enhancement-compare.witness.json`](../../computations/binding-bring-enhancement-compare.witness.json)):
 
 | atom | arc-comp | $\tau_M$ strict | $\tau_M$ Bring | Δ (ppm) | $f$ strict | $f$ Bring |
 |---|---|---:|---:|---:|---:|---:|
@@ -503,16 +503,16 @@ re-runs the closed-form $\tau_M$ ratio at $q_0$ under both
 identical $f$-spread because the 180.9 ppm correction is uniform
 across the four single-pn-arc atoms — it cancels out of the T vs
 ³He ratio. The historical 15% T vs ³He $f$-spread reported by
-[`binding_shell_enhancement_derivation.py`](../../folio-assistant/computations/binding_shell_enhancement_derivation.py)
+[`binding_shell_enhancement_derivation.py`](../../computations/binding_shell_enhancement_derivation.py)
 arises at a different layer of the binding-formula path (the
 specific `binding_canonical` Δ-tr structure under m_e · Vol(𝓑₃)
 prefactor, not the closed-form-ratio); whatever closes it is **not**
 a scalar pn-weighting refinement on top of `closed_form_ratio`. The
 actual closure path is the **operator-valued Wenzl branching with
 full per-arc operator extracts**
-([`canonical_tr_m_via_branching.py`](../../folio-assistant/computations/canonical_tr_m_via_branching.py)
+([`canonical_tr_m_via_branching.py`](../../computations/canonical_tr_m_via_branching.py)
 +
-[`A_operator_extract_at_level.py`](../../folio-assistant/computations/a_operator/A_operator_extract_at_level.py)).
+[`A_operator_extract_at_level.py`](../../computations/a_operator/A_operator_extract_at_level.py)).
 
 This negative result is **valuable** — it eliminates a candidate
 scalar fix and pins the closure on the operator-valued branching
@@ -547,10 +547,10 @@ A ≥ 3 binding.
 ## References
 
 - [`binding-alpha-shift-extension.lean`](../../content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean) — the §3b-cond class that needs the dispatcher.
-- [`magic_A_formula.py`](../../folio-assistant/computations/magic_A_formula.py) — the doubly-magic formula `B = ρ_F·m_e·A·8G`.
-- [`binding_shell_enhancement_derivation.py`](../../folio-assistant/computations/binding_shell_enhancement_derivation.py) — prior shell-enhancement probe.
+- [`magic_A_formula.py`](../../computations/magic_A_formula.py) — the doubly-magic formula `B = ρ_F·m_e·A·8G`.
+- [`binding_shell_enhancement_derivation.py`](../../computations/binding_shell_enhancement_derivation.py) — prior shell-enhancement probe.
 - [`prop:diagrammatic-double-magic-lr-fusion`](../../content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.md) — LR-rigidity at double-magic.
 - [`rem:strutinsky-from-graded-trace`](../../content/quantum-observable-universe/observations/strutinsky-from-graded-trace.md) — Strutinsky decomposition is forced by graded-trace residue split.
-- [`magic-ladder-pattern-investigation.md`](../../folio-assistant/computations/magic-ladder-pattern-investigation.md) — confirms pure partition combinatorics doesn't pick out the magic ladder; the categorical input is required.
+- [`magic-ladder-pattern-investigation.md`](../../computations/magic-ladder-pattern-investigation.md) — confirms pure partition combinatorics doesn't pick out the magic ladder; the categorical input is required.
 - [Binding A=4 already-closed audit (2026-05-31)](2026-05-31-binding-alpha-shift-a4-status.md) — the precursor finding.
 - [Universal-branching multinucleon gap audit (2026-05-30)](2026-05-30-universal-branching-multinucleon-gap.md) — analogous "already-implemented" pattern (Track B Gap #2).

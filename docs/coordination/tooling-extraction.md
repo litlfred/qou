@@ -28,7 +28,7 @@ Master workplan: [`docs/workplans/2026-06-11-tooling-extraction-skills-migration
   (bigrational/MpfrFloat backend, BlockDiagPSDConeT), `[patch.crates-io]`
   in hecke-engine + pyhecke-native; 71/71 tests green with `clarabel-sdp`.
 - Consumer set: 221/778 compute scripts, choked through
-  `folio-assistant/computations/hecke_core.py` → Phase 4 repoints the shim.
+  `computations/hecke_core.py` → Phase 4 repoints the shim.
 - Skills/MCP: 80 .md + 24 .ts in `.claude/skills/local/`; design doc is the
   ARCHIVED `docs/_archive/orphan-top-level/FOLIO_MIGRATION_PLAN.md`
   (~5 generic skills move; domain skills stay) — Phase 5 revives it.

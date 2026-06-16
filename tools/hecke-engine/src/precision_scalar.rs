@@ -14,7 +14,7 @@
 //!  - the TypeScript Zod schema in
 //!    [`folio-assistant/schemas/precision-scalar.ts`](../../folio-assistant/schemas/precision-scalar.ts);
 //!  - the Python consumer
-//!    [`folio-assistant/computations/precision_scalar.py`](../../folio-assistant/computations/precision_scalar.py).
+//!    [`computations/precision_scalar.py`](../../computations/precision_scalar.py).
 //!
 //! Per workplan
 //! [`CLARABEL_PRECISION_PLAN.md`](../CLARABEL_PRECISION_PLAN.md) §S7.1.

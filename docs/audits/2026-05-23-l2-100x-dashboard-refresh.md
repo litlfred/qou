@@ -72,7 +72,7 @@ Summary: 2/6 beat 100×, 3/6 beat 1×.
 ## Cross-references
 
 - [`docs/precision-goals.md`](../precision-goals.md) — L1 vs L2 definitions
-- [`folio-assistant/computations/per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json) — refreshed witness (this PR)
+- [`computations/per-observable-100x-status.witness.json`](../../computations/per-observable-100x-status.witness.json) — refreshed witness (this PR)
 - [PR #942](https://github.com/litlfred/qou/pull/942) — flavor-split wire-up (the Δ_pn 35× improvement source)
 - [PR #944](https://github.com/litlfred/qou/pull/944) — H_12 Phase-1 (unblocks A=4 mass-tower)
 - [PR #966](https://github.com/litlfred/qou/pull/966) — cheat-sheet §5 close-out (all 5 items closed)

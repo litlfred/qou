@@ -13,8 +13,8 @@ following structural form. The progression of refutations
 |:---|:---:|:---|
 | Scalar-eigenvalue family (uniform $k$, GB grade, additive $\ell n_0 + k$) | **refuted** |  §"Closure: scalar-eigenvalue form$\ldots$" |
 | Per-eigenvalue operator-valued ($\Phi_q$ per $\mu_a^{(\lambda)}$, signed) | **refuted** at uniform $k$ |  §"Operator-valued probe" |
-| Type-B-folded-crystal depth ($\#\{\lambda \vdash 3A : \lambda = \lambda^T\}$) | **partial** — fits $D$ and $T$, fails ${}^3\mathrm{He}$ | [probe-phiq-type-b-fold-depth.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-phiq-type-b-fold-depth.witness.json) |
-| Type-B + scalar near-pole multiplicity $m$ (4 two-input rules) | **refuted** | [probe-phiq-multiplicity-refinement.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-phiq-multiplicity-refinement.witness.json) |
+| Type-B-folded-crystal depth ($\#\{\lambda \vdash 3A : \lambda = \lambda^T\}$) | **partial** — fits $D$ and $T$, fails ${}^3\mathrm{He}$ | [probe-phiq-type-b-fold-depth.witness.json](https://github.com/litlfred/qou/blob/main/computations/probe-phiq-type-b-fold-depth.witness.json) |
+| Type-B + scalar near-pole multiplicity $m$ (4 two-input rules) | **refuted** | [probe-phiq-multiplicity-refinement.witness.json](https://github.com/litlfred/qou/blob/main/computations/probe-phiq-multiplicity-refinement.witness.json) |
 
 ## Sharpened open form: per-partition $k_\lambda$
 
@@ -63,7 +63,7 @@ of the conjecture is:
 > retuning of the rule itself.*
 
 The empirical evidence
-([probe-phiq-per-partition-klambda.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-phiq-per-partition-klambda.witness.json))
+([probe-phiq-per-partition-klambda.witness.json](https://github.com/litlfred/qou/blob/main/computations/probe-phiq-per-partition-klambda.witness.json))
 shows that the rule
 
 $$
@@ -113,7 +113,7 @@ sensitive to $\lvert\mu\rvert$ as $k$ grows).
  alone (the four-tuple's $m$ is per-atom, not per-partition).
 * **Any partition-shape-only selector.** The Hoefsmit content
  spread $\Delta c_{\max}(\lambda)$ test
- ([probe-hoefsmit-content-selector.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-hoefsmit-content-selector.witness.json))
+ ([probe-hoefsmit-content-selector.witness.json](https://github.com/litlfred/qou/blob/main/computations/probe-hoefsmit-content-selector.witness.json))
  refutes content-spread argmax for all 3 atoms: empirical dominants
  $\{[2,2,1,1], [6,3], [5,4]\}$ have spreads $\{4, 6, 5\}$, while
  the partition-only argmax of spread is the single-row / single-
@@ -123,10 +123,10 @@ sensitive to $\lvert\mu\rvert$ as $k$ grows).
 
 The braid word $\beta_\mathfrak{H}$ that enters all of #639's
 per-partition compute (consumed via #638's
-[`probe_phiq_operator_valued.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_operator_valued.py))
+[`probe_phiq_operator_valued.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe_phiq_operator_valued.py))
 encodes the writhe **implicitly** through the signed
 $(c, d)$ Hecke coefficients of
-[`atom_braid_word_3A(Z, N)`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/mass_at_3A_proper.py):
+[`atom_braid_word_3A(Z, N)`](https://github.com/litlfred/qou/blob/main/computations/mass_at_3A_proper.py):
 
 | nucleon pair | $(c, d)$ | Hecke meaning | crossing sign |
 |---|---|---|---|
@@ -188,7 +188,7 @@ words $\beta_{T} \neq \beta_{{}^3\mathrm{He}}$ produce different
 SDP outputs even at the same $q_0$; the partition shape
 $\lambda \vdash n$ alone cannot resolve them. The empirical
 max-$\lvert\mu\rvert$ selector
-([probe-phiq-per-partition-klambda.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-phiq-per-partition-klambda.witness.json))
+([probe-phiq-per-partition-klambda.witness.json](https://github.com/litlfred/qou/blob/main/computations/probe-phiq-per-partition-klambda.witness.json))
 *is* the right shape — it reads the SDP-output eigenvalue spectrum
 directly. The remaining structural identification problem is to
 express this max-$\lvert\mu\rvert$ predicate as a **closed-form
@@ -275,7 +275,7 @@ that conjecture's "Status of $n_\star$" section.
  cycle 6 established that the SDP shadow-price hypothesis
 **cannot** be tested in the per-partition basis: by Wedderburn
 orthogonality, the off-diagonal Gram entries are identically zero
-([probe-off-diagonal-gram-wedderburn.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-off-diagonal-gram-wedderburn.witness.json) —
+([probe-off-diagonal-gram-wedderburn.witness.json](https://github.com/litlfred/qou/blob/main/computations/probe-off-diagonal-gram-wedderburn.witness.json) —
 110/110 partition pairs of $H_6$ confirmed zero). The SDP-with-
 diagonal-Gram reduces to the LP cost ranking, which we refuted
 for $D$ and ${}^3\mathrm{He}$.
@@ -283,7 +283,7 @@ for $D$ and ${}^3\mathrm{He}$.
 The genuine SDP refinement uses the **paper-canonical reduced
 braid-word basis** $\{\sigma_w : w \text{ reduced}\}$ of $H_n(q)$
 (per CLAUDE.md §7a Hecke–Skein convention). Witness:
-[probe-braid-word-basis-gram.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-braid-word-basis-gram.witness.json).
+[probe-braid-word-basis-gram.witness.json](https://github.com/litlfred/qou/blob/main/computations/probe-braid-word-basis-gram.witness.json).
 
 ### Empirical content at $H_3(q_0)$ — full $6 \times 6$ Gram
 
@@ -322,7 +322,7 @@ at $q_0 = 1.109978595554181\ldots$ (50 dps):
 
 ### Operator-selection LP in $\sigma_w$ basis
 
-Running [`solve_operator_selection_lp`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/lp_dual_solver.py)
+Running [`solve_operator_selection_lp`](https://github.com/litlfred/qou/blob/main/computations/lp_dual_solver.py)
 on the $H_3$ basis with $\mathbf{t}_w = \mathrm{tr}_M(\sigma_w)$
 and unit categorical target gives strong-duality with gap $5\times 10^{-17}$;
 the active set picks out the identity $e$ alone (since $\mathbf{t}_e = 1$
@@ -367,7 +367,7 @@ derivable, $(q_0, \beta)$-aware decomposition into per-cell weights.
 
 ### Per-cell weights for deuteron at $H_6(q_0)$
 
-[`probe_murphy_per_cell_weights.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe_murphy_per_cell_weights.py)
+[`probe_murphy_per_cell_weights.py`](https://github.com/litlfred/qou/blob/main/computations/probe_murphy_per_cell_weights.py)
 computes $w_{\lambda, S, T} = \lvert\langle v_S, \rho_\lambda(\beta_D) v_T\rangle\rvert$
 for all 720 cells of $H_6(q_0)$ (= $6!$, Wedderburn dimension check
 passes). Top-3 per-cell weights (y-weighted):
@@ -382,7 +382,7 @@ passes). Top-3 per-cell weights (y-weighted):
 $[5, 1]$ (and the per-partition rollup argmax is $[4, 2]$), neither
 of which is the empirical max-$\lvert\mu\rvert$ dominant
 $[2, 2, 1, 1]$ identified by
-[`probe_phiq_per_partition_klambda.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe_phiq_per_partition_klambda.py).
+[`probe_phiq_per_partition_klambda.py`](https://github.com/litlfred/qou/blob/main/computations/probe_phiq_per_partition_klambda.py).
 
 **Structural reason.** The two observables on $\rho_\lambda(\beta)$
 measure different things:

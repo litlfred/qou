@@ -7,7 +7,7 @@ budget), then write a research plan / sub-task breakdown"
 
 ## Audit finding (updated 2026-05-16 — first closure landed)
 
-The proton-mass chain ([`build_proton_mass_50dps_chain.py`](../../folio-assistant/computations/build_proton_mass_50dps_chain.py))
+The proton-mass chain ([`build_proton_mass_50dps_chain.py`](../../computations/build_proton_mass_50dps_chain.py))
 produces `m_p_pred = 0.5974 MeV` vs CODATA 938.272 MeV — a gap of
 **9 orders of magnitude**. The chain's own derivation.json marks the
 T1+T4 mass-endomorphism tower assembly as `SCRIPT_CITED`; this audit
@@ -20,12 +20,12 @@ Per the user's "do all" + "no floats, use 50 dps" + "no fitting"
 directives, this branch now ships a 50-dps MPFR-native producer for
 the per-generator volumes V̂_i^full of {electron, proton, neutron}:
 
-- **Producer**: [`terms_2_3_atom_per_gen_mpfr_50dps.py`](../../folio-assistant/computations/terms_2_3_atom_per_gen_mpfr_50dps.py)
+- **Producer**: [`terms_2_3_atom_per_gen_mpfr_50dps.py`](../../computations/terms_2_3_atom_per_gen_mpfr_50dps.py)
   (restored from `_deprecated/`, scoped to the A=1 single-nucleon
   case where the 2026-05-08 disjoint-product audit's convention
   ambiguity does **not** apply — no inter-nucleon interface)
-- **Output**: [`terms-2-3-atom-per-gen-mpfr-50dps.witness.json`](../../folio-assistant/computations/terms-2-3-atom-per-gen-mpfr-50dps.witness.json)
-- **Reader fix**: [`mass_formula_6term_mpfr_50dps._load_mpfr_native_volumes`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py)
+- **Output**: [`terms-2-3-atom-per-gen-mpfr-50dps.witness.json`](../../computations/terms-2-3-atom-per-gen-mpfr-50dps.witness.json)
+- **Reader fix**: [`mass_formula_6term_mpfr_50dps._load_mpfr_native_volumes`](../../computations/mass_formula_6term_mpfr_50dps.py)
   now accepts both flat (legacy) and WitnessBuilder-nested schemas
 
 With these in place, evaluating the mass-endomorphism tower at 50 dps
@@ -72,7 +72,7 @@ into the m_p prediction, but ~10^6 to the correct m_p MeV scale).
 
 ### Why M_P_HECKE = 2.341 instead of ~4000
 
-[`derive_m_p_hecke_path_a.py`](../../folio-assistant/computations/derive_m_p_hecke_path_a.py)
+[`derive_m_p_hecke_path_a.py`](../../computations/derive_m_p_hecke_path_a.py)
 line 126 makes the truncation explicit:
 
 ```python
@@ -110,12 +110,12 @@ For p and n, T2 and T3 are **explicitly zero with an error**:
 So the gap is **not** "the tower formula is wrong" or "the
 arithmetic is wrong at 50 dps" — it is "the proton and neutron rows
 were never wired into the MPFR-precision per-generator-volume table
-that [`mass_formula_6term_mpfr_50dps.py`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py)
+that [`mass_formula_6term_mpfr_50dps.py`](../../computations/mass_formula_6term_mpfr_50dps.py)
 consumes for T2+T3".
 
 ### Sanity check via the float64 path
 
-[`mass_endomorphism.atom_per_generator_volumes`](../../folio-assistant/computations/substrate/hecke_core.py)
+[`mass_endomorphism.atom_per_generator_volumes`](../../computations/substrate/hecke_core.py)
 *does* return per-generator volumes for proton (Z=1, N=0) at float64:
 
 ```python
@@ -190,7 +190,7 @@ Listed in dependency order. Each one is one-PR-sized.
 ### PR-X1 — MPFR per-generator volumes for {p, n, e}
 
 - **Producer**: extend
-  [`mass_formula_6term_mpfr_50dps.py`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py)'s
+  [`mass_formula_6term_mpfr_50dps.py`](../../computations/mass_formula_6term_mpfr_50dps.py)'s
   per-generator-volume lookup to include Z=1/N=0 (proton),
   Z=0/N=1 (neutron), and the electron's 2-strand single-generator
   atom.
@@ -216,7 +216,7 @@ Listed in dependency order. Each one is one-PR-sized.
 ### PR-X3 — Tighten `M_P_DERIVED_MAX_REL_DIFF` on the no-cal chain
 
 - After PR-X2 lands, lift the sanity threshold in
-  [`low_isotope_mass_table.py`](../../folio-assistant/computations/low_isotope_mass_table.py)
+  [`low_isotope_mass_table.py`](../../computations/low_isotope_mass_table.py)
   from 1 % to either 1 ppm or whatever precision rung PR-X2 closes
   to. ¹H row lifts from `derivation_pending` to genuinely
   `derived` (with a small residual reflecting the actual prediction
@@ -273,8 +273,8 @@ before continuing" — relevant landings:
 Producer mirroring the proton version, wired through the same MPFR
 @ 50 dps tower:
 
-- **Script**: [`derive_m_n_hecke_full_tower_50dps.py`](../../folio-assistant/computations/derive_m_n_hecke_full_tower_50dps.py)
-- **Output**: [`neutron-mass-full-tower-50dps.witness.json`](../../folio-assistant/computations/neutron-mass-full-tower-50dps.witness.json)
+- **Script**: [`derive_m_n_hecke_full_tower_50dps.py`](../../computations/derive_m_n_hecke_full_tower_50dps.py)
+- **Output**: [`neutron-mass-full-tower-50dps.witness.json`](../../computations/neutron-mass-full-tower-50dps.witness.json)
 - **Result**: m_n_pred = **347.96 MeV** vs CODATA 939.57 MeV;
   residual **−62.97 %**.
 
@@ -306,7 +306,7 @@ The challenge resolved the issue.  Findings:
 
 ### T5 IS categorical (q-integer-derived BW coefficients)
 
-[`bw_chirality_isotopes.py`](../../folio-assistant/computations/bw_chirality_isotopes.py)
+[`bw_chirality_isotopes.py`](../../computations/bw_chirality_isotopes.py)
 lines 71-78:
 
     λ_V    = 2·[2]_q·[7]_q · m_e          λ_C   = h·[6]_q · m_e
@@ -329,14 +329,14 @@ the electron.
 
 ### Categorical fix: derive A from GS normal form
 
-[`gb_filtration_jet_tracker.reduce_braid(name, n, word)`](../../folio-assistant/computations/gb_filtration_jet_tracker.py)
+[`gb_filtration_jet_tracker.reduce_braid(name, n, word)`](../../computations/gb_filtration_jet_tracker.py)
 runs the canonical Gröbner-Shirshov reducer on a braid word in
 H_n(q) and emits the filtration certificate — `{grade k: count of
 length-k Coxeter terms}` in the normal form.  This is a
 structural invariant of the braid; no nucleon-physics reference.
 
 Four candidate categorical A's per particle (probe:
-[`probe_derived_A_from_gs_normal_form.py`](../../folio-assistant/computations/probe_derived_A_from_gs_normal_form.py)):
+[`probe_derived_A_from_gs_normal_form.py`](../../computations/probe_derived_A_from_gs_normal_form.py)):
 
 | particle | braid word | H_n | A_max_grade | A_jet_steps | A_hecke_fires |
 |---|---|---|---|---|---|
@@ -372,7 +372,7 @@ non-trivial grade-1 element in S_2's Coxeter image.
 >         + B_shell(A(β), Z(β), N(β))   [if A(β) ≥ 4]
 >
 > with B_bulk / B_Zdep / B_shell as q-integer-derived BW
-> coefficients ([`bw_chirality_isotopes`](../../folio-assistant/computations/bw_chirality_isotopes.py)),
+> coefficients ([`bw_chirality_isotopes`](../../computations/bw_chirality_isotopes.py)),
 > is a **categorical functional of β alone**: no nucleon ledger
 > dependency, no fitting.
 
@@ -382,9 +382,9 @@ so and under prediction is okay because that hopefully will be
 picked up in the higher order Mass Tower."*
 
 Both
-[`derive_m_p_hecke_full_tower_50dps.py`](../../folio-assistant/computations/derive_m_p_hecke_full_tower_50dps.py)
+[`derive_m_p_hecke_full_tower_50dps.py`](../../computations/derive_m_p_hecke_full_tower_50dps.py)
 and
-[`derive_m_n_hecke_full_tower_50dps.py`](../../folio-assistant/computations/derive_m_n_hecke_full_tower_50dps.py)
+[`derive_m_n_hecke_full_tower_50dps.py`](../../computations/derive_m_n_hecke_full_tower_50dps.py)
 now derive A categorically from the GS normal form via
 `gb_filtration_jet_tracker.reduce_braid` of each particle's
 canonical braid word.  T5 uses the V2 Gram-matrix `a_K` factor +
@@ -416,7 +416,7 @@ correction `3Z + 1.5N − 1.5` decomposes from the 3-strand B₃
 braid relation + Ocneanu weights specific to nucleon sub-braids.
 The electron's H_2 trefoil has neither.
 
-[`term_6_habiro_residue_mp(A)`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py)
+[`term_6_habiro_residue_mp(A)`](../../computations/mass_formula_6term_mpfr_50dps.py)
 reads `term6-habiro-residue-mpfr-50dps.witness.json` keyed by A
 (nucleon count). The electron isn't a nucleon and has no per-A
 entry.
@@ -443,7 +443,7 @@ with ~77 partitions and d up to ~2310 for the largest irrep, the
 expected runtime is **~30–60 minutes per atom** — well beyond a
 single interactive session's budget. The y_λ cache for n=12 also
 needs to be regenerated (the existing mpmath cache tops out at
-n=11 per a comment in [`mass_formula_6term_mpfr_50dps.py:349`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py)).
+n=11 per a comment in [`mass_formula_6term_mpfr_50dps.py:349`](../../computations/mass_formula_6term_mpfr_50dps.py)).
 
 **Verdict**: B(⁴He+) closure is a **separate compute-heavy PR**
 following PR #666's branching-basis pattern with H_12 cache
@@ -499,14 +499,14 @@ A candidates, and T7 extension.
 
 ### 1. T6 (Habiro residue) — bridged, but leverage ≪ gap
 
-[`term6-residues-at-roots.witness.json`](../../folio-assistant/computations/term6-residues-at-roots.witness.json)
+[`term6-residues-at-roots.witness.json`](../../computations/term6-residues-at-roots.witness.json)
 on main has T6 values at q_0 (f64) for A ∈ {1, 2, 3, 4}.  The
 consumer
-[`term_6_habiro_residue_mp`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py)
+[`term_6_habiro_residue_mp`](../../computations/mass_formula_6term_mpfr_50dps.py)
 expects a different schema (`term6-habiro-residue-mpfr-50dps`
 keyed by ``A=k``).  New bridge:
 
-- [`term6_habiro_residue_mpfr_50dps_bridge.py`](../../folio-assistant/computations/term6_habiro_residue_mpfr_50dps_bridge.py)
+- [`term6_habiro_residue_mpfr_50dps_bridge.py`](../../computations/term6_habiro_residue_mpfr_50dps_bridge.py)
   reads the f64 source and re-emits in the 50-dps consumer schema.
 - 5 A-keyed rows produced (A=0 documented as gap for the
   electron's H_2 trefoil; A=1..4 from the upstream values).
@@ -523,7 +523,7 @@ ever lifts to ~ppm-level precision.
 ### 2. m_e_Hecke symmetry audit — chain is symmetric
 
 The current production chain
-[`derive_m_p_hecke_full_tower_50dps`](../../folio-assistant/computations/derive_m_p_hecke_full_tower_50dps.py)
+[`derive_m_p_hecke_full_tower_50dps`](../../computations/derive_m_p_hecke_full_tower_50dps.py)
 uses the **same** tower sum on both sides of the ratio
 m_p_hecke / m_e_hecke:
 
@@ -555,7 +555,7 @@ All candidates land within **±0.05 % of −1.50 %**.  The gap is
 ### 4. T7 (σ-shell α_5 S_crystal) extension to A=1 — research-scope
 
 The existing T7 producer
-[`term7_alpha5_crystal_derivation.py`](../../folio-assistant/computations/term7_alpha5_crystal_derivation.py)
+[`term7_alpha5_crystal_derivation.py`](../../computations/term7_alpha5_crystal_derivation.py)
 covers A ∈ {2, 3, 4} atoms.  Extension to A=1 (proton, neutron)
 or H_2 (electron) needs:
 

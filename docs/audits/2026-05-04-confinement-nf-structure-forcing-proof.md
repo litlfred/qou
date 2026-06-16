@@ -232,7 +232,7 @@ formula for the pole contribution of `ρ_λ(I)` in the
 axial distances of the interface generators.  For torus-knot
 interfaces `I = T_{p, k}`, this should reduce to the empirical
 formula `α_shift(T_{p, k}) = k(p − 1)` from
-[`alpha_shift_torus.py`](../../folio-assistant/computations/alpha/alpha_shift_torus.py)
+[`alpha_shift_torus.py`](../../computations/alpha/alpha_shift_torus.py)
 plus the LR multiplicity weighting.
 
 ---
@@ -264,9 +264,9 @@ plus the LR multiplicity weighting.
 
 - [`conj:confinement-nf-structure-forcing`](../../content/quantum-observable-universe/braids-and-knots/confinement-nf-structure-forcing.md)
 - [`prop:operator-selection-lp`](../../content/quantum-observable-universe/braids-and-knots/operator-selection-lp.md)
-- [`alpha_shift_torus.py`](../../folio-assistant/computations/alpha/alpha_shift_torus.py) — `α_shift(T_(p,k)) = k(p-1)`
-- [`nh_basis_shift.py`](../../folio-assistant/computations/nh_basis_shift.py) — NH-basis shift accounting
-- [`d_u_closed_form_proof.py`](../../folio-assistant/computations/d_u_closed_form_proof.py) — atomic-braid closed form
+- [`alpha_shift_torus.py`](../../computations/alpha/alpha_shift_torus.py) — `α_shift(T_(p,k)) = k(p-1)`
+- [`nh_basis_shift.py`](../../computations/nh_basis_shift.py) — NH-basis shift accounting
+- [`d_u_closed_form_proof.py`](../../computations/d_u_closed_form_proof.py) — atomic-braid closed form
 - [`docs/audits/2026-05-03-w3-habiro-unblocked.md`](2026-05-03-w3-habiro-unblocked.md) — atomic-braid context
 - Schrijver, *Theory of Linear and Integer Programming*, §7 — LP duality
 - Macdonald, *Symmetric Functions and Hall Polynomials*, §I.5 — LR rule

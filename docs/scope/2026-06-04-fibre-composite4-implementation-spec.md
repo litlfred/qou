@@ -7,7 +7,7 @@ specified, not executed.
 
 **Context (read first):**
 - Scope + corrected effort estimate: [`2026-06-04-habiro-fibre-composite4-mtau-scope.md`](2026-06-04-habiro-fibre-composite4-mtau-scope.md)
-- Reconnaissance result (self-contained probe): [`folio-assistant/computations/qbeta/qbeta_composite4_fibre_root_of_unity_probe.py`](../../folio-assistant/computations/qbeta/qbeta_composite4_fibre_root_of_unity_probe.py) (PR #1811)
+- Reconnaissance result (self-contained probe): [`computations/qbeta/qbeta_composite4_fibre_root_of_unity_probe.py`](../../computations/qbeta/qbeta_composite4_fibre_root_of_unity_probe.py) (PR #1811)
 - `/25` refutation: PR #1801 (`qbeta_rung1_div25_framing_squared_test.py`)
 - CLAUDE.md §"Im(q) at fibre vs observable", §"Q_β c_3 truncation order"
 
@@ -208,7 +208,7 @@ originally written chases the wrong knot and is retired.
 | c_3 ← cinquefoil T(2,5)? | **NO** | [`docs/audits/2026-06-03-l2-closure-habiro-3-q-25-universal-template.md`](../audits/2026-06-03-l2-closure-habiro-3-q-25-universal-template.md) — "NOT yet derived for Q_β" |
 | c_3 ← any single knot? | **NO — open** | [`docs/audits/2026-05-19-qbeta-ladder-knot-operator-general-statement.md`](../audits/2026-05-19-qbeta-ladder-knot-operator-general-statement.md) — knot-operator `T_β` unidentified |
 | structural source of c_3? | **Hopf link** (2-strand sub-braid windings) | [`q-beta-c3-hopf-three-fold-markov.md`](../../content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.md) — `c_3 = J_Hopf(q=1) = -2`, proven categorically (Facts 1–4) |
-| is `/25` a knot assignment? | **NO — fibre constant** `[5]_q²│_{q=1}` | [`qbeta_composite4_fibre_root_of_unity_probe.py`](../../folio-assistant/computations/qbeta/qbeta_composite4_fibre_root_of_unity_probe.py) (#1811) |
+| is `/25` a knot assignment? | **NO — fibre constant** `[5]_q²│_{q=1}` | [`qbeta_composite4_fibre_root_of_unity_probe.py`](../../computations/qbeta/qbeta_composite4_fibre_root_of_unity_probe.py) (#1811) |
 | is the real-q `[3]_q/25` form derived? | **NO — FALSIFIED** | [`docs/audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](../audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md) — rigid; swings **4.7M× less** than empirical c_3 |
 
 T(2,5) is the **muon** particle-knot (`lepton_t2n_torus_tower.py:6`;
@@ -244,7 +244,7 @@ live in the fibre, potentially complex).
    cross-anchor *swing* is the obstruction, and it is fibre-level.
 
 **First probe landed (this branch).**
-[`qbeta_c3_hopf_habiro_profile_probe.py`](../../folio-assistant/computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py)
+[`qbeta_c3_hopf_habiro_profile_probe.py`](../../computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py)
 wires the Step-3 machinery to the Hopf object: `classical_limit` recovers
 the proven `-2` (both framings); the symbolic identity
 `J_bal = -[2]_q = -quantum_int(4)/quantum_int(2)` holds;

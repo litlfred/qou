@@ -46,10 +46,10 @@ export default proposition({
   cites: ["wenzl1988", "hoefsmit1974"],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/mass_tower_operator_valued.py",
+    script: "computations/mass_tower_operator_valued.py",
     witness: [
-      "folio-assistant/computations/mass-tower-operator-valued.witness.json",
-      "folio-assistant/computations/sublemma-2-1-h9-tritium-branching-verify.witness.json",
+      "computations/mass-tower-operator-valued.witness.json",
+      "computations/sublemma-2-1-h9-tritium-branching-verify.witness.json",
     ],
     status: "verified",
     requires: ["mpmath", "numpy"],

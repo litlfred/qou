@@ -11,7 +11,7 @@ Writhe = algebraic crossing number = Σ exponents.
 For each (n, writhe) pair, find min-trace operator and compute binding.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 ch-bond-writhe-lp.py
 """
 

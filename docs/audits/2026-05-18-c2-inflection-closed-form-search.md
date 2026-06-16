@@ -10,7 +10,7 @@ $A(a)$ on the Bring/color-tube cubic.
 ## What's known numerically
 
 Numerical inflection finder
-[`folio-assistant/computations/probe_c2_general_and_energy.py`](../../folio-assistant/computations/probe_c2_general_and_energy.py)
+[`computations/probe_c2_general_and_energy.py`](../../computations/probe_c2_general_and_energy.py)
 locates the C2 inflection point at
 
 | Quantity | float64 value (scipy.integrate) |
@@ -155,12 +155,12 @@ Worth chasing if the identity holds at higher precision.
 ## Pointer files
 
 - Numerical finder:
-  [`probe_c2_general_and_energy.py`](../../folio-assistant/computations/probe_c2_general_and_energy.py)
+  [`probe_c2_general_and_energy.py`](../../computations/probe_c2_general_and_energy.py)
 - Cubic + thimble machinery:
-  [`picard_lefschetz_thimble.py`](../../folio-assistant/computations/picard_lefschetz_thimble.py)
+  [`picard_lefschetz_thimble.py`](../../computations/picard_lefschetz_thimble.py)
 - Substrate constants:
-  [`q_parameter.py`](../../folio-assistant/computations/substrate/q_parameter.py),
-  [`_li_2_q_util.load_q_50dps`](../../folio-assistant/computations/_li_2_q_util.py)
+  [`q_parameter.py`](../../computations/substrate/q_parameter.py),
+  [`_li_2_q_util.load_q_50dps`](../../computations/_li_2_q_util.py)
 - Sibling audit (Items A/B/C):
   [`2026-05-18-mp-chain-items-abc-findings.md`](2026-05-18-mp-chain-items-abc-findings.md)
 - Sibling audit (substrate flavor split):

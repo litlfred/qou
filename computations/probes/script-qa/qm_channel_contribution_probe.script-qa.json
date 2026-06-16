@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/probes/qm_channel_contribution_probe.py",
+  "script_path": "computations/probes/qm_channel_contribution_probe.py",
   "language": "python",
   "source_hash": "472568198dd2",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "major",
-        "evidence": "folio-assistant/computations/probes/qm_channel_contribution_probe.py:142: bare `float((m_H_W - m_H_measured) / m_H_measured * …)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probes/qm_channel_contribution_probe.py:143: bare `float((m_H_Z - m_H_measured) / m_H_measured * …)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probes/qm_channel_contribution_probe.py:168: bare `float((m_H_W_H1 - m_H_measured) / m_H_measured…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probes/qm_channel_contribution_probe.py:169: bare `float((m_H_Z_H1 - m_H_measured) / m_H_measured…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probes/qm_channel_contribution_probe.py:194: bare `float((m_H_W_H2 - m_H_measured) / m_H_measured…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/probes/qm_channel_contribution_probe.py:142: bare `float((m_H_W - m_H_measured) / m_H_measured * …)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probes/qm_channel_contribution_probe.py:143: bare `float((m_H_Z - m_H_measured) / m_H_measured * …)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probes/qm_channel_contribution_probe.py:168: bare `float((m_H_W_H1 - m_H_measured) / m_H_measured…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probes/qm_channel_contribution_probe.py:169: bare `float((m_H_Z_H1 - m_H_measured) / m_H_measured…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probes/qm_channel_contribution_probe.py:194: bare `float((m_H_W_H2 - m_H_measured) / m_H_measured…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probes/qm_channel_contribution_probe.py:103: `def P_m(…)` has 1 parameter without type annotation: m — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/qm_channel_contribution_probe.py:107: `def Q_m(…)` has 1 parameter without type annotation: m — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/qm_channel_contribution_probe.py:128: `def higgs_from_W_P_only(…)` has 1 parameter without type annotation: h_subs — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/qm_channel_contribution_probe.py:132: `def higgs_from_Z_P_only(…)` has 1 parameter without type annotation: h_subs — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/qm_channel_contribution_probe.py:157: `def R_m(…)` has 1 parameter without type annotation: m — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/probes/qm_channel_contribution_probe.py:103: `def P_m(…)` has 1 parameter without type annotation: m — add `: type` (or `: Any` if the type genuinely is untyped) | computations/probes/qm_channel_contribution_probe.py:107: `def Q_m(…)` has 1 parameter without type annotation: m — add `: type` (or `: Any` if the type genuinely is untyped) | computations/probes/qm_channel_contribution_probe.py:128: `def higgs_from_W_P_only(…)` has 1 parameter without type annotation: h_subs — add `: type` (or `: Any` if the type genuinely is untyped) | computations/probes/qm_channel_contribution_probe.py:132: `def higgs_from_Z_P_only(…)` has 1 parameter without type annotation: h_subs — add `: type` (or `: Any` if the type genuinely is untyped) | computations/probes/qm_channel_contribution_probe.py:157: `def R_m(…)` has 1 parameter without type annotation: m — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -93,7 +93,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probes/qm_channel_contribution_probe.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/probes/qm_channel_contribution_probe.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -112,7 +112,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probes/qm_channel_contribution_probe.py:1: script `qm_channel_contribution_probe.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/probes/qm_channel_contribution_probe.py:1: script `qm_channel_contribution_probe.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [
@@ -148,7 +148,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "major",
-        "evidence": "folio-assistant/computations/probes/qm_channel_contribution_probe.py:372: script writes `.witness.json` (\"qm-channel-contribution-probe.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/probes/qm_channel_contribution_probe.py:372: script writes `.witness.json` (\"qm-channel-contribution-probe.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       }
     ],
     "compute_no_mpf_to_float_cast": [

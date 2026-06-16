@@ -47,7 +47,7 @@ bias-corrected value equals $c_k^{\mathrm{alg}}$. $\blacksquare$
 
 ## Numerical confirmation at $q_0$
 
-The probe [`qbeta_ck_truncation_bias_correction_probe.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py)
+The probe [`qbeta_ck_truncation_bias_correction_probe.py`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py)
 applies this identity to the SDP-extracted $\hat c_k$ at the proton-pinned
 $q_0$:
 

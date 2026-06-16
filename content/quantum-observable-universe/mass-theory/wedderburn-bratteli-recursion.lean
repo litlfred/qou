@@ -107,7 +107,7 @@ def SatisfiesWedderburnBratteliRecursion {R : Type u} [Field R]
     `y e.lam = z · F · y e.mu` is satisfied vacuously since both
     sides reduce to 0. The intended Jones–Markov witness is
     constructed numerically in
-    `folio-assistant/computations/y-lambda-jones-markov-witness.json`
+    `computations/y-lambda-jones-markov-witness.json`
     (n=2..12) and symbolically in `y-lambda-symbolic-witness.json`;
     porting that construction into Lean (with the Hoefsmit seminormal
     eigenvalues + Markov property) is the meaningful next step.

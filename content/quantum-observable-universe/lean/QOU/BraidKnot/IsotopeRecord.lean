@@ -5,7 +5,7 @@ Released under MIT license. Authors: Claude (Anthropic).
 # IsotopeRecord — per-(Z, N) atomic record with knot-operator catalogue
 
 Lean mirror of the Python dataclass schema in
-[`isotope_record_schema.py`](../../../../folio-assistant/computations/isotope_record_schema.py).
+[`isotope_record_schema.py`](../../../../computations/isotope_record_schema.py).
 
 Per-isotope record carrying:
   - Atom identification (Z, N, A, n_strands)

@@ -33,9 +33,9 @@ $h_{\mathrm{corner}}(\rho_k) = 2k - 1$ is
   closes the $2.19\%$ cot $\theta_W$ discrepancy from the bare
   $\max^{+}/\!\operatorname{2nd-max}^{+}$ reading down to
   $0.13\%$ — see
-  [`close_321_weinberg_gap.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/close_321_weinberg_gap.py),
+  [`close_321_weinberg_gap.py`](https://github.com/litlfred/qou/blob/main/computations/close_321_weinberg_gap.py),
   witness
-  [`close-321-weinberg-gap.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/close-321-weinberg-gap.witness.json),
+  [`close-321-weinberg-gap.witness.json`](https://github.com/litlfred/qou/blob/main/computations/close-321-weinberg-gap.witness.json),
   audit
   [`docs/audits/-close-321-weinberg-gap.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-close-321-weinberg-gap.md).
 * $k = 4$ (dim $f^{\rho_4} = 768$): the top eigenvalue is
@@ -45,7 +45,7 @@ $h_{\mathrm{corner}}(\rho_k) = 2k - 1$ is
   via a **pairwise** ratio
   $e[254]/e[188] = 1.01357 \approx q^{1/7} = 1.01502$
   (relative error $0.14\%$) — see
-  [`staircase_ew_residual_conjecture.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/staircase_ew_residual_conjecture.py),
+  [`staircase_ew_residual_conjecture.py`](https://github.com/litlfred/qou/blob/main/computations/staircase_ew_residual_conjecture.py),
   audit
   [`docs/audits/-staircase-ew-residual-conjecture.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-staircase-ew-residual-conjecture.md).
 * $k = 2$ (dim $f^{\rho_2} = 2$): currently untestable — the

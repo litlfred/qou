@@ -37,7 +37,7 @@ type at H_{3A}.
 
 This file lays out the structural framework. The Python-side
 implementation is
-[`folio-assistant/computations/hecke_seminormal.py`](../../folio-assistant/computations/hecke_seminormal.py)
+[`computations/hecke_seminormal.py`](../../computations/hecke_seminormal.py)
 (landed in PR #502, R1.b commits) which carries the full
 arithmetic at q-rational precision.
 
@@ -108,7 +108,7 @@ indexed by partition `λ`. An instance asserts:
 The `.lean` file lays out the structural typeclass; substantive
 construction of the matrix entries lives downstream and is a
 research-grade follow-up. The Python-side implementation in
-`folio-assistant/computations/hecke_seminormal.py` carries the
+`computations/hecke_seminormal.py` carries the
 arithmetic.
 -/
 class HoefsmitRepresentation

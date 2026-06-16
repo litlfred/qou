@@ -20,7 +20,7 @@ the basis-knot decoration `δ_q(T_{2,k}) = h[k]_q` (`prop:alpha-basis-knot-delta
 A trivial but pre-archimedean identity — entirely in the substrate ring (no `ℝ`,
 no `π`); only `q − q⁻¹ ≠ 0` is needed for the division.  Same proof shape as the
 sorry-free 2-strand `deltaQ_eq_h_qbracket`, here at the writhe exponent.
-Symbolic cross-check: `folio-assistant/computations/rosso_jones_three_strand_delta_q.py`.
+Symbolic cross-check: `computations/rosso_jones_three_strand_delta_q.py`.
 
 LaTeX label: `prop:torus-knot-delta-q-writhe`. **Ground ring**: a field `R`.
 -/

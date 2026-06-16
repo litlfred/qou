@@ -18,7 +18,7 @@ import { proposition } from "../../schema/builders";
  * identity on the closed-form trace.
  *
  * Proved via sympy in
- * `folio-assistant/computations/poly_q_proof_probe.py`; the exactness
+ * `computations/poly_q_proof_probe.py`; the exactness
  * is symbolic, not numerical.
  */
 export default proposition({
@@ -31,8 +31,8 @@ export default proposition({
   cites: ["wenzl1988", "hoefsmit1974", "kassel1995"],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/poly_q_proof_probe.py",
-    witness: ["folio-assistant/computations/poly-q-proof.witness.json"],
+    script: "computations/poly_q_proof_probe.py",
+    witness: ["computations/poly-q-proof.witness.json"],
     status: "verified",
     requires: ["sympy"],
   },

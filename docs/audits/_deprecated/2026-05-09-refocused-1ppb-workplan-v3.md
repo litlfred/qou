@@ -14,8 +14,8 @@ This version supersedes v2 in light of four PRs merged on
 - **BlochGroup F quotient** constructed concretely; `pentagonSubgroup`
   built from constrained Rogers-form generators (not the
   over-permissive arbitrary 5-tuple set).
-- **Two PSLQ negative-result witnesses** ([Tier-0 atlas](../../folio-assistant/computations/tier-0-atlas-pslq-check.witness.json),
-  [Tier-1 hyperbolic 3-braid](../../folio-assistant/computations/tier-1-hyperbolic-3braid-pslq.witness.json))
+- **Two PSLQ negative-result witnesses** ([Tier-0 atlas](../../computations/tier-0-atlas-pslq-check.witness.json),
+  [Tier-1 hyperbolic 3-braid](../../computations/tier-1-hyperbolic-3braid-pslq.witness.json))
   pin the K-theoretic open question for `BringHyperbolicDecomposition`:
   small-coeff $\mathbb{Z}$-linear combinations of hyperbolic 3-braid
   Bloch-Wigner values do **not** span $2/(3\pi)$.
@@ -115,9 +115,9 @@ Ordered by yield × tractability:
    the elusive positive hit. **Half-day.**
 
 2. **Term 7 α_5 numerical fit** (compute): combine the partition
-   basis ([term7-height6-partition-enum.witness.json](../../folio-assistant/computations/term7-height6-partition-enum.witness.json))
+   basis ([term7-height6-partition-enum.witness.json](../../computations/term7-height6-partition-enum.witness.json))
    with the Hecke-character data from the tracker
-   ([gb-filtration-jet-order.witness.json](../../folio-assistant/computations/gb-filtration-jet-order.witness.json))
+   ([gb-filtration-jet-order.witness.json](../../computations/gb-filtration-jet-order.witness.json))
    plus Hoefsmit seminormal forms, fit α_5 against the AME
    residual. Inhabits `Term7ShellCorrectionClass` with magnitude
    (not just sign-witness). **1–2 days.**

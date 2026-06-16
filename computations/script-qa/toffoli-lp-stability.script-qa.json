@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/toffoli-lp-stability.py",
+  "script_path": "computations/toffoli-lp-stability.py",
   "language": "python",
   "source_hash": "c8f99c8fe2af",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-22T18:27:38.070Z",
         "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
         "severity": "major",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:40: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/toffoli-lp-stability.py:40: bare float literal `5.0` — wrap in `mpmath.mpf(\"5.0\")` / `Decimal(\"5.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/toffoli-lp-stability.py:40: bare float literal `2.0` — wrap in `mpmath.mpf(\"2.0\")` / `Decimal(\"2.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/toffoli-lp-stability.py:41: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/toffoli-lp-stability.py:42: bare float literal `1.1099785955541805` — wrap in `mpmath.mpf(\"1.1099785955541805\")` / `Decimal(\"1.1099785955541805\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/toffoli-lp-stability.py:40: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/toffoli-lp-stability.py:40: bare float literal `5.0` — wrap in `mpmath.mpf(\"5.0\")` / `Decimal(\"5.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/toffoli-lp-stability.py:40: bare float literal `2.0` — wrap in `mpmath.mpf(\"2.0\")` / `Decimal(\"2.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/toffoli-lp-stability.py:41: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/toffoli-lp-stability.py:42: bare float literal `1.1099785955541805` — wrap in `mpmath.mpf(\"1.1099785955541805\")` / `Decimal(\"1.1099785955541805\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -38,7 +38,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:40: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/toffoli-lp-stability.py:40: bare float literal `5.0` — wrap in `mpmath.mpf(\"5.0\")` / `Decimal(\"5.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/toffoli-lp-stability.py:40: bare float literal `2.0` — wrap in `mpmath.mpf(\"2.0\")` / `Decimal(\"2.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/toffoli-lp-stability.py:41: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/toffoli-lp-stability.py:42: bare float literal `1.1099785955541805` — wrap in `mpmath.mpf(\"1.1099785955541805\")` / `Decimal(\"1.1099785955541805\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/toffoli-lp-stability.py:40: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/toffoli-lp-stability.py:40: bare float literal `5.0` — wrap in `mpmath.mpf(\"5.0\")` / `Decimal(\"5.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/toffoli-lp-stability.py:40: bare float literal `2.0` — wrap in `mpmath.mpf(\"2.0\")` / `Decimal(\"2.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/toffoli-lp-stability.py:41: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/toffoli-lp-stability.py:42: bare float literal `1.1099785955541805` — wrap in `mpmath.mpf(\"1.1099785955541805\")` / `Decimal(\"1.1099785955541805\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -55,7 +55,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:40: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/toffoli-lp-stability.py:40: bare float literal `5.0` — wrap in `mpmath.mpf(\"5.0\")` / `Decimal(\"5.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/toffoli-lp-stability.py:40: bare float literal `2.0` — wrap in `mpmath.mpf(\"2.0\")` / `Decimal(\"2.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/toffoli-lp-stability.py:41: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/toffoli-lp-stability.py:42: bare float literal `1.1099785955541805` — wrap in `mpmath.mpf(\"1.1099785955541805\")` / `Decimal(\"1.1099785955541805\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/toffoli-lp-stability.py:40: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/toffoli-lp-stability.py:40: bare float literal `5.0` — wrap in `mpmath.mpf(\"5.0\")` / `Decimal(\"5.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/toffoli-lp-stability.py:40: bare float literal `2.0` — wrap in `mpmath.mpf(\"2.0\")` / `Decimal(\"2.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/toffoli-lp-stability.py:41: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/toffoli-lp-stability.py:42: bare float literal `1.1099785955541805` — wrap in `mpmath.mpf(\"1.1099785955541805\")` / `Decimal(\"1.1099785955541805\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:40: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/toffoli-lp-stability.py:58: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/toffoli-lp-stability.py:63: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/toffoli-lp-stability.py:118: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/toffoli-lp-stability.py:118: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
+        "evidence": "computations/toffoli-lp-stability.py:40: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | computations/toffoli-lp-stability.py:58: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | computations/toffoli-lp-stability.py:63: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | computations/toffoli-lp-stability.py:118: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | computations/toffoli-lp-stability.py:118: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
       },
       {
         "field_hash": {
@@ -91,7 +91,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:40: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | folio-assistant/computations/toffoli-lp-stability.py:58: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | folio-assistant/computations/toffoli-lp-stability.py:63: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | folio-assistant/computations/toffoli-lp-stability.py:118: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | folio-assistant/computations/toffoli-lp-stability.py:118: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/`"
+        "evidence": "computations/toffoli-lp-stability.py:40: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | computations/toffoli-lp-stability.py:58: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | computations/toffoli-lp-stability.py:63: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | computations/toffoli-lp-stability.py:118: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | computations/toffoli-lp-stability.py:118: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/`"
       }
     ],
     "code_is_commented": [
@@ -110,7 +110,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:1: script lacks both a module docstring and ≥10% comment density (got 16/201 = 8.0%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/toffoli-lp-stability.py:1: script lacks both a module docstring and ≥10% comment density (got 16/201 = 8.0%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       },
       {
         "field_hash": {
@@ -127,7 +127,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:1: script lacks both a module docstring and ≥10% comment density (got 16/201 = 8.0%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/toffoli-lp-stability.py:1: script lacks both a module docstring and ≥10% comment density (got 16/201 = 8.0%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       }
     ],
     "variables_typed": [
@@ -146,7 +146,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:54: `def toffoli_diagonal(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/toffoli-lp-stability.py:59: `def q_and_amplitude(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/toffoli-lp-stability.py:65: `def hecke_mul(…)` has 3 parameters without type annotation: t1, t2, ha — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/toffoli-lp-stability.py:75: `def reduce_nf(…)` has 2 parameters without type annotation: terms, ha — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/toffoli-lp-stability.py:113: `def gram_matrix(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/toffoli-lp-stability.py:54: `def toffoli_diagonal(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | computations/toffoli-lp-stability.py:59: `def q_and_amplitude(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | computations/toffoli-lp-stability.py:65: `def hecke_mul(…)` has 3 parameters without type annotation: t1, t2, ha — add `: type` (or `: Any` if the type genuinely is untyped) | computations/toffoli-lp-stability.py:75: `def reduce_nf(…)` has 2 parameters without type annotation: terms, ha — add `: type` (or `: Any` if the type genuinely is untyped) | computations/toffoli-lp-stability.py:113: `def gram_matrix(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped)"
       },
       {
         "field_hash": {
@@ -163,7 +163,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:54: `def toffoli_diagonal(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/toffoli-lp-stability.py:59: `def q_and_amplitude(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/toffoli-lp-stability.py:65: `def hecke_mul(…)` has 3 parameters without type annotation: t1, t2, ha — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/toffoli-lp-stability.py:75: `def reduce_nf(…)` has 2 parameters without type annotation: terms, ha — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/toffoli-lp-stability.py:113: `def gram_matrix(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/toffoli-lp-stability.py:54: `def toffoli_diagonal(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | computations/toffoli-lp-stability.py:59: `def q_and_amplitude(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped) | computations/toffoli-lp-stability.py:65: `def hecke_mul(…)` has 3 parameters without type annotation: t1, t2, ha — add `: type` (or `: Any` if the type genuinely is untyped) | computations/toffoli-lp-stability.py:75: `def reduce_nf(…)` has 2 parameters without type annotation: terms, ha — add `: type` (or `: Any` if the type genuinely is untyped) | computations/toffoli-lp-stability.py:113: `def gram_matrix(…)` has 1 parameter without type annotation: q — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -182,7 +182,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/toffoli-lp-stability.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       },
       {
         "field_hash": {
@@ -199,7 +199,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/toffoli-lp-stability.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -218,7 +218,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:1: script `toffoli-lp-stability.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/toffoli-lp-stability.py:1: script `toffoli-lp-stability.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       },
       {
         "field_hash": {
@@ -235,7 +235,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:1: script `toffoli-lp-stability.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/toffoli-lp-stability.py:1: script `toffoli-lp-stability.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [
@@ -286,7 +286,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:139: script writes `.witness.json` (\"toffoli-lp-stability.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/toffoli-lp-stability.py:139: script writes `.witness.json` (\"toffoli-lp-stability.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       },
       {
         "field_hash": {
@@ -303,7 +303,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:139: script writes `.witness.json` (\"toffoli-lp-stability.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/toffoli-lp-stability.py:139: script writes `.witness.json` (\"toffoli-lp-stability.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       }
     ],
     "compute_no_mpf_to_float_cast": [
@@ -322,7 +322,7 @@
         "reviewed_at": "2026-06-09T03:37:13.209Z",
         "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33",
         "severity": "critical",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:41: mpmath/sympy → float64 cast `float(mp.sqrt(5))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/toffoli-lp-stability.py:59: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/toffoli-lp-stability.py:64: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/toffoli-lp-stability.py:119: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/toffoli-lp-stability.py:119: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
+        "evidence": "computations/toffoli-lp-stability.py:41: mpmath/sympy → float64 cast `float(mp.sqrt(5))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/toffoli-lp-stability.py:59: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/toffoli-lp-stability.py:64: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/toffoli-lp-stability.py:119: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/toffoli-lp-stability.py:119: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
       },
       {
         "field_hash": {
@@ -339,7 +339,7 @@
         "reviewed_at": "2026-06-09T03:47:37.719Z",
         "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be",
         "severity": "critical",
-        "evidence": "folio-assistant/computations/toffoli-lp-stability.py:41: mpmath/sympy → float64 cast `float(mp.sqrt(5))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/toffoli-lp-stability.py:59: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/toffoli-lp-stability.py:64: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/toffoli-lp-stability.py:119: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/toffoli-lp-stability.py:119: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
+        "evidence": "computations/toffoli-lp-stability.py:41: mpmath/sympy → float64 cast `float(mp.sqrt(5))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/toffoli-lp-stability.py:59: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/toffoli-lp-stability.py:64: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/toffoli-lp-stability.py:119: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/toffoli-lp-stability.py:119: mpmath/sympy → float64 cast `float(mp.sqrt(q))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
       }
     ]
   }

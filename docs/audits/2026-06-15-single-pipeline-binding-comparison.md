@@ -3,7 +3,7 @@
 **Date:** 2026-06-15
 **Branch:** `claude/stoic-maxwell-qieqcv` (PR #2320)
 **Scope:** exploratory probe — no production rewire, no Δ_λ closure (no 7th ansatz).
-**Compute:** [`binding_single_pipeline_comparison.py`](../../folio-assistant/computations/binding_single_pipeline_comparison.py)
+**Compute:** [`binding_single_pipeline_comparison.py`](../../computations/binding_single_pipeline_comparison.py)
 → `binding-single-pipeline-comparison.witness.json`
 
 ## The coherence objection this resolves

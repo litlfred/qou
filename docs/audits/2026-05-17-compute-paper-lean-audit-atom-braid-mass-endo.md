@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-17
 **Scope:** Ten computation scripts in
-[`folio-assistant/computations/`](../../folio-assistant/computations/)
+[`computations/`](../../computations/)
 that carry the f64 reference for the proton–electron mass ratio
 (`mass_endomorphism.py`), the canonical 3A-strand atomic braid +
 H_{3A} Wedderburn-character per-generator volume
@@ -215,7 +215,7 @@ The integrated 6-term mass formula per `thm:knot-mass-formula-unified`:
   at q_0 and predicts the −737 MeV mirror-nucleus pathology that
   `brane_tower_isospin_diagnosis.py` then documents in full.
 - The `.ts` for the unified theorem points at
-  [`mass_formula_6term_mpfr_50dps.py`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py)
+  [`mass_formula_6term_mpfr_50dps.py`](../../computations/mass_formula_6term_mpfr_50dps.py)
   as the *current* canonical computation, demoting this file
   to a reference / fallback. (Witness:
   `mass-formula-6term-mpfr-50dps.witness.json`.)

@@ -1,4 +1,4 @@
-"""Qbeta — cluster subdirectory of folio-assistant/computations/.
+"""Qbeta — cluster subdirectory of computations/.
 
 See [`docs/proposals/computations-subdirectory-refactor.md`](../../../docs/proposals/computations-subdirectory-refactor.md).
 """

@@ -19,7 +19,7 @@ This file is the `qou` Lake package canonical Lean for content block
 introduced in [PR #1259](https://github.com/litlfred/qou/pull/1259).
 
 **Why this matters for 1ppb**: per the
-[1ppb status dashboard](../../../../../../folio-assistant/computations/per-observable-100x-status.witness.json),
+[1ppb status dashboard](../../../../../../computations/per-observable-100x-status.witness.json),
 q-Schur Plancherel is the convention used by `Q_β` at N=3 categorical,
 which is **the only observable currently meeting Subgoal-1**
 (6.02 ppb pred vs 7.80 ppb target). Formalising the closed-form

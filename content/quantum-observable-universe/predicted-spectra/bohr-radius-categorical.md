@@ -81,7 +81,7 @@ coefficient (from dressed crossings) and Coulomb coefficient (from
 bare crossings) appear as separately-identifiable monomials.
 
 **Concrete step:** rewrite
-[`compute_Phi1` in `h2-molecular-binding.py`](folio-assistant/computations/h2-molecular-binding.py)
+[`compute_Phi1` in `h2-molecular-binding.py`](computations/h2-molecular-binding.py)
 using `sympy` symbols, identify which monomials in the resulting
 $V_i(q)$ originate from dressed vs bare crossings, then test if
 the bound-state condition (LP optimum) corresponds to a balance

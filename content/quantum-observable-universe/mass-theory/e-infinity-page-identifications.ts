@@ -21,9 +21,9 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/atom_level_wedderburn_tower.py",
+    script: "computations/atom_level_wedderburn_tower.py",
     witness:
-      "folio-assistant/computations/atom-level-wedderburn-tower.witness.json",
+      "computations/atom-level-wedderburn-tower.witness.json",
     status: "verified",
     requires: ["mpmath", "numpy", "scipy"],
   },

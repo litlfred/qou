@@ -21,11 +21,11 @@ export default conjecture({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/probe_phiq_pair_knot_magic_shell.py",
+    script: "computations/probe_phiq_pair_knot_magic_shell.py",
     witness: [
-      "folio-assistant/computations/probe-phiq-pair-knot-magic-shell.witness.json",
-      "folio-assistant/computations/probe-phiq-pair-knot-markov-trace.witness.json",
-      "folio-assistant/computations/tr-m-he4-canonical.witness.json",
+      "computations/probe-phiq-pair-knot-magic-shell.witness.json",
+      "computations/probe-phiq-pair-knot-markov-trace.witness.json",
+      "computations/tr-m-he4-canonical.witness.json",
     ],
     status: "experimental",
   },

@@ -60,7 +60,7 @@ for lam in partitions_of(n):
 ### Witness contract
 
 *Canonical witness:
-[`wedderburn-lp-ew-wiring.witness.json`](../../../folio-assistant/computations/wedderburn-lp-ew-wiring.witness.json).
+[`wedderburn-lp-ew-wiring.witness.json`](../../../computations/wedderburn-lp-ew-wiring.witness.json).
 Records the per-partition $(d_\lambda, y_\lambda(q))$ table, the
 chosen $q$, and the upstream Hoefsmit cell-content table from
 `prop:hoefsmit-ew-cell-content` for cross-checking.*

@@ -21,7 +21,7 @@ WITHOUT fitting — the weights are constrained by:
 This is a linear program: minimize |Q_pred - Q_exp| over y_K.
 
 Usage:
-    cd folio-assistant/computations && python3 knot-operator-lp.py
+    cd computations && python3 knot-operator-lp.py
 """
 
 import json

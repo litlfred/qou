@@ -30,7 +30,7 @@ $\mathcal{J}_{z_c}$ is the steepest-descent contour of
 $\mathrm{Re}(S)$ emanating from $z_c$ along
 $\hat u = e^{-i\arg H(z_c)/2}$ where
 $H(z_c) = \partial^2 S/\partial z^2|_{z_c}$.  The witness
-[`picard-lefschetz-thimble.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/picard-lefschetz-thimble.witness.json)
+[`picard-lefschetz-thimble.witness.json`](https://github.com/litlfred/qou/blob/main/computations/picard-lefschetz-thimble.witness.json)
 records the numerical values; substrate $m_p$ closure is the
 algebraic statement, not a thimble integral
 ([`sw-period thimble equivalence`](#prop:sw-period-thimble-equivalence)).

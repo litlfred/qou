@@ -27,8 +27,8 @@ the atom's braid word, which is what distinguishes ${}^3\mathrm{He}$
 from $T$ at the same strand count.
 
 Witness:
-[`probe_phiq_type_b_fold_depth.py`](../../folio-assistant/computations/probe_phiq_type_b_fold_depth.py)
-→ [`probe-phiq-type-b-fold-depth.witness.json`](../../folio-assistant/computations/probe-phiq-type-b-fold-depth.witness.json).
+[`probe_phiq_type_b_fold_depth.py`](../../computations/probe_phiq_type_b_fold_depth.py)
+→ [`probe-phiq-type-b-fold-depth.witness.json`](../../computations/probe-phiq-type-b-fold-depth.witness.json).
 All 5 assertions pass.
 
 ## Setup

@@ -113,5 +113,5 @@ claim that can be argued narratively without high-precision compute.
 
 ## Witness
 
-- [`folio-assistant/computations/lambda_scale_proof_step5_skein_anchor.py`](../../folio-assistant/computations/lambda_scale_proof_step5_skein_anchor.py)
-- [`folio-assistant/computations/lambda-scale-proof-step5-skein-anchor.witness.json`](../../folio-assistant/computations/lambda-scale-proof-step5-skein-anchor.witness.json)
+- [`computations/lambda_scale_proof_step5_skein_anchor.py`](../../computations/lambda_scale_proof_step5_skein_anchor.py)
+- [`computations/lambda-scale-proof-step5-skein-anchor.witness.json`](../../computations/lambda-scale-proof-step5-skein-anchor.witness.json)

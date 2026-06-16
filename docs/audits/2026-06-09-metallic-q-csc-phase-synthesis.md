@@ -304,7 +304,7 @@ arithmetic at metallic q without mpmath / sympy overhead.
 ### 7.3 Per-eigenvalue SDP splitting via Galois
 
 **Status:** specified, not implemented; uncertain whether it wins in practice.
-**Where:** `folio-assistant/computations/lp_dual_solver.py`,
+**Where:** `computations/lp_dual_solver.py`,
 `tools/hecke-engine/src/bin/clarabel_*.rs`.
 **Change:** at metallic q, decompose the SDP cost `T = T₀ + δ_n · T₁`
 into rational + irrational parts and solve as coupled rational SDPs.

@@ -14,8 +14,8 @@ implicitly cites the other.
 
 | Function | Module | Formula |
 |---|---|---|
-| `tr_M_symbolic` | [`hoefsmit_symbolic.py`](../../folio-assistant/computations/hoefsmit_symbolic.py) | $\displaystyle \text{tr}_M(\beta) = \sum_\lambda \frac{\dim_q^2(\lambda)}{[n]_q!} \cdot \frac{\chi^\lambda(\beta)}{f^\lambda}$ |
-| `tr_M_canonical` | [`markov_weights_symbolic.py`](../../folio-assistant/computations/markov/markov_weights_symbolic.py) | $\displaystyle \text{tr}_M(\beta) = \sum_\lambda y_\lambda(q) \cdot \chi^\lambda(\beta)$, with $y_\lambda$ from Wenzl's Schur principal specialisation |
+| `tr_M_symbolic` | [`hoefsmit_symbolic.py`](../../computations/hoefsmit_symbolic.py) | $\displaystyle \text{tr}_M(\beta) = \sum_\lambda \frac{\dim_q^2(\lambda)}{[n]_q!} \cdot \frac{\chi^\lambda(\beta)}{f^\lambda}$ |
+| `tr_M_canonical` | [`markov_weights_symbolic.py`](../../computations/markov/markov_weights_symbolic.py) | $\displaystyle \text{tr}_M(\beta) = \sum_\lambda y_\lambda(q) \cdot \chi^\lambda(\beta)$, with $y_\lambda$ from Wenzl's Schur principal specialisation |
 
 The Wenzl $y_\lambda$ is the literature-standard Jones-Markov weight
 (Wenzl 1988); `dim_q^2/[n]_q!` is a different weight that gives the
@@ -55,8 +55,8 @@ the canonical Markov trace (per CLAUDE.md `thm:jones-markov-trace`),
 then every production script using `tr_M_symbolic` is computing the
 wrong invariant by 57–99% on the proton-like channel.
 
-Reproducible via [`probe_hopf_markov_trace_genuine.py`](../../folio-assistant/computations/probe_hopf_markov_trace_genuine.py)
-(σ_1² in H_2) and [`probe_c3_taylor_extraction.py`](../../folio-assistant/computations/probe_c3_taylor_extraction.py)
+Reproducible via [`probe_hopf_markov_trace_genuine.py`](../../computations/probe_hopf_markov_trace_genuine.py)
+(σ_1² in H_2) and [`probe_c3_taylor_extraction.py`](../../computations/probe_c3_taylor_extraction.py)
 (Taylor coefficients), both on this branch. The H_3 comparison table
 is reproduced by an inline script in this audit.
 
@@ -80,17 +80,17 @@ the framework's named Markov trace.
 
 Scripts calling **`tr_M_symbolic`** (Hoefsmit, ~15+ production scripts):
 
-- [`d_u_closed_form_proof.py`](../../folio-assistant/computations/d_u_closed_form_proof.py)
-- [`deuteron_tr_M_symbolic.py`](../../folio-assistant/computations/deuteron_tr_M_symbolic.py)
-- [`markov_trace_recursive.py`](../../folio-assistant/computations/markov/markov_trace_recursive.py)
-- [`markov_trace_axiomatic_multi_atom.py`](../../folio-assistant/computations/markov/markov_trace_axiomatic_multi_atom.py)
-- [`option_b_proton_mass_full_chain.py`](../../folio-assistant/computations/option_b_proton_mass_full_chain.py)
-- [`probe_neutron_gap_round2.py`](../../folio-assistant/computations/probe_neutron_gap_round2.py)
-- [`y_lambda_equivalence_proof.py`](../../folio-assistant/computations/y_lambda_equivalence_proof.py) (which claims equivalence)
+- [`d_u_closed_form_proof.py`](../../computations/d_u_closed_form_proof.py)
+- [`deuteron_tr_M_symbolic.py`](../../computations/deuteron_tr_M_symbolic.py)
+- [`markov_trace_recursive.py`](../../computations/markov/markov_trace_recursive.py)
+- [`markov_trace_axiomatic_multi_atom.py`](../../computations/markov/markov_trace_axiomatic_multi_atom.py)
+- [`option_b_proton_mass_full_chain.py`](../../computations/option_b_proton_mass_full_chain.py)
+- [`probe_neutron_gap_round2.py`](../../computations/probe_neutron_gap_round2.py)
+- [`y_lambda_equivalence_proof.py`](../../computations/y_lambda_equivalence_proof.py) (which claims equivalence)
 
 Scripts calling **`tr_M_canonical`** (Wenzl Jones-Markov):
 
-- [`markov_weights_symbolic.py`](../../folio-assistant/computations/markov/markov_weights_symbolic.py) (itself, demo only)
+- [`markov_weights_symbolic.py`](../../computations/markov/markov_weights_symbolic.py) (itself, demo only)
 
 CLAUDE.md §7a refers to:
 
@@ -197,7 +197,7 @@ requires a separate writhe-correction step that the PR didn't make.
 
 ## Implications for the 1-ppb mass program
 
-Per [`onepb_status_dashboard`](../../folio-assistant/computations/onepb_status_dashboard.py):
+Per [`onepb_status_dashboard`](../../computations/onepb_status_dashboard.py):
 
 - Layer 1 (LP-dual / GB-NF): unaffected — uses the per-partition
   $\chi^\lambda$ structure, not the Markov-trace weight.
@@ -376,8 +376,8 @@ should pick based on its output needs:
 - [PR #671 coordination ledger](../coordination/story-b-c3-c4-categorical.md)
 - CLAUDE.md §7a notation register (collision avoidance for the three
   partition-weight families)
-- [`probe_hopf_markov_trace_genuine.py`](../../folio-assistant/computations/probe_hopf_markov_trace_genuine.py) (reproduces the disagreement)
-- [`probe_c3_taylor_extraction.py`](../../folio-assistant/computations/probe_c3_taylor_extraction.py) (shows the 8% disagreement extends across Taylor coefficients)
+- [`probe_hopf_markov_trace_genuine.py`](../../computations/probe_hopf_markov_trace_genuine.py) (reproduces the disagreement)
+- [`probe_c3_taylor_extraction.py`](../../computations/probe_c3_taylor_extraction.py) (shows the 8% disagreement extends across Taylor coefficients)
 
 ## 2026-05-17 update — Production scope CORRECTED (much smaller than initially claimed)
 

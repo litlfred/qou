@@ -48,7 +48,7 @@ At the substrate parameter $q_0 = 1.109978595554181\ldots$ (50 dps):
 See [Table](#tbl:hecke-log-decomposition-table-data).
 
 The decomposition is verified to $10^{-50}$ via
-[`probe_delta_coupling_q_edgeworth.py`](folio-assistant/computations/probe_delta_coupling_q_edgeworth.py)
+[`probe_delta_coupling_q_edgeworth.py`](computations/probe_delta_coupling_q_edgeworth.py)
 and the substrate-derivation audit
 [`2026-05-17-delta-coupling-substrate-derivation.md`](../../../docs/audits/2026-05-17-delta-coupling-substrate-derivation.md).
 

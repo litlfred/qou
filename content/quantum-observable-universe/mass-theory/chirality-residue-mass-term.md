@@ -67,7 +67,7 @@ of the gluon-condensate vacuum.*
 
 *The q-deformed Wedderburn-weighted character contribution from
 chirality cells is computed in
-[`folio-assistant/computations/atomic_chirality_residue.py`](#).
+[`computations/atomic_chirality_residue.py`](#).
 For $\mathcal{T} = 1$ (total mass), the chirality contribution to the
 binding energy via $\alpha = m_e \cdot 8G$ is:*
 

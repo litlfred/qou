@@ -6,9 +6,9 @@
 [`docs/audits/2026-05-02-nv-frob-filter-conjectures.md`](2026-05-02-nv-frob-filter-conjectures.md),
 lines 129–159 (Refinement (a″), open candidate).
 **Witness:**
-[`folio-assistant/computations/nv1_candidate_a_doubleprime.witness.json`](../../folio-assistant/computations/nv1_candidate_a_doubleprime.witness.json)
+[`computations/nv1_candidate_a_doubleprime.witness.json`](../../computations/nv1_candidate_a_doubleprime.witness.json)
 **Script:**
-[`folio-assistant/computations/nv1_candidate_a_doubleprime.py`](../../folio-assistant/computations/nv1_candidate_a_doubleprime.py)
+[`computations/nv1_candidate_a_doubleprime.py`](../../computations/nv1_candidate_a_doubleprime.py)
 **Verdict:** **fail** (q-deformed Plancherel sum falsified).
 
 ---
@@ -187,8 +187,8 @@ reinforce the case for jumping straight to (b).
 ## 6. Files
 
 - Script:
-  [`folio-assistant/computations/nv1_candidate_a_doubleprime.py`](../../folio-assistant/computations/nv1_candidate_a_doubleprime.py)
+  [`computations/nv1_candidate_a_doubleprime.py`](../../computations/nv1_candidate_a_doubleprime.py)
 - Witness:
-  [`folio-assistant/computations/nv1_candidate_a_doubleprime.witness.json`](../../folio-assistant/computations/nv1_candidate_a_doubleprime.witness.json)
+  [`computations/nv1_candidate_a_doubleprime.witness.json`](../../computations/nv1_candidate_a_doubleprime.witness.json)
 - Source conjecture:
   [`docs/audits/2026-05-02-nv-frob-filter-conjectures.md`](2026-05-02-nv-frob-filter-conjectures.md)

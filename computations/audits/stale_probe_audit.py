@@ -1,6 +1,6 @@
 """I7 audit — witness staleness vs content-block `.md` modification time.
 
-For every `folio-assistant/computations/*.witness.json` with a
+For every `computations/*.witness.json` with a
 label-shaped `contentBlock` (matching `def:` / `thm:` / `prop:`
 / `lem:` / `cor:` / `conj:`), locates the corresponding
 `.md` content-block file and compares the git-log timestamp of
@@ -29,7 +29,7 @@ Failure modes classified:
                         territory; reported as info)
 
 Usage:
-    python3 folio-assistant/computations/stale_probe_audit.py [--strict]
+    python3 computations/stale_probe_audit.py [--strict]
 
 With --strict, exits non-zero if any `stale` entry is observed.
 Without --strict (default), returns 0 and reports the breakdown.
@@ -220,7 +220,7 @@ def main() -> int:
         WitnessBuilder("stale-probe-audit", engine="python")
         .set_description(
             "I7 audit per local/compute-integration-watcher: every "
-            "folio-assistant/computations/*.witness.json with a label-shaped "
+            "computations/*.witness.json with a label-shaped "
             "`contentBlock` is cross-checked against the git-log mtime of its "
             "`.md` sibling.  A witness is stale if its `.md` was modified "
             f">{STALE_DAYS_THRESHOLD} days after the witness was last "

@@ -10,14 +10,14 @@
 #   ./scripts/run-sage-witnesses.sh
 #
 # Output:
-#   folio-assistant/computations/sage-borromean-gA.witness.json
-#   folio-assistant/computations/sage-cgeom.witness.json
-#   folio-assistant/computations/sage-nuclear-braid.witness.json
+#   computations/sage-borromean-gA.witness.json
+#   computations/sage-cgeom.witness.json
+#   computations/sage-nuclear-braid.witness.json
 
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-COMP_DIR="$REPO_ROOT/folio-assistant/computations"
+COMP_DIR="$REPO_ROOT/computations"
 
 echo "═══════════════════════════════════════════════════════════"
 echo "QOU Sage witness computations"
@@ -70,6 +70,6 @@ echo
 ls -la "$COMP_DIR"/sage-*.witness.json 2>/dev/null || echo "(none found)"
 echo
 echo "To review results:"
-echo "  cat folio-assistant/computations/sage-borromean-gA.witness.json | python3 -m json.tool"
-echo "  cat folio-assistant/computations/sage-cgeom.witness.json | python3 -m json.tool"
+echo "  cat computations/sage-borromean-gA.witness.json | python3 -m json.tool"
+echo "  cat computations/sage-cgeom.witness.json | python3 -m json.tool"
 echo "═══════════════════════════════════════════════════════════"

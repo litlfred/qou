@@ -25,20 +25,20 @@ This doc summarises the scan that produced the per-flag findings in PR
 The Q_β value is **derived arithmetically** as `m_n − m_p − m_e`, so
 its uncertainty floor is propagated from CODATA m_n: ~783 ppb. Every
 E_0-dependent quantity inherits this floor (see
-[`e0-calibration-audit.witness.json`](../../folio-assistant/computations/audits/e0-calibration-audit.witness.json)).
+[`e0-calibration-audit.witness.json`](../../computations/audits/e0-calibration-audit.witness.json)).
 
 ## Latest canonical witness sources
 
 | Witness | computedAt | Status |
 |---------|-----------|--------|
-| [`atomic-mass-via-rho-k.witness.json`](../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json) | 2026-05-09 01:03 | fresh — ρ_K^LO mass-table (3 paths agree to 1e-13) |
-| [`tr-m-q-hecke-seminormal.witness.json`](../../folio-assistant/computations/tr-m-q-hecke-seminormal.witness.json) | 2026-05-09 00:16 | fresh — partition-sum / canonical-reducer agreement |
-| [`atomic-tr-m-mpfr-50dps.witness.json`](../../folio-assistant/computations/atomic-tr-m-mpfr-50dps.witness.json) | 2026-05-09 03:07 | fresh — anchor for all five {p, n, D, T, ³He} traces |
-| [`mass-table-ppb.witness.json`](../../folio-assistant/computations/mass-table-ppb.witness.json) | 2026-05-09 (regen) | Kashaev-law table; **flagged** — census-assigned knots |
-| [`low-isotope-mass-table.witness.json`](../../folio-assistant/computations/low-isotope-mass-table.witness.json) | 2026-05-09 (regen) | mass-excess table; same census-assignment caveat |
-| [`binding-canonical.witness.json`](../../folio-assistant/computations/binding-canonical.witness.json) | 2026-05-09 (regen) | Direction-1 canonical Markov binding |
-| [`codata-reconciliation.witness.json`](../../folio-assistant/computations/codata-reconciliation.witness.json) | 2026-05-09 01:07 | 0 ppb on all 5 anchor rows |
-| [`derivation-chain-audit.witness.json`](../../folio-assistant/computations/derivation-chain-audit.witness.json) | 2026-05-09 04:33 | walks every `*.derivation.json` |
+| [`atomic-mass-via-rho-k.witness.json`](../../computations/atomic-mass-via-rho-k.witness.json) | 2026-05-09 01:03 | fresh — ρ_K^LO mass-table (3 paths agree to 1e-13) |
+| [`tr-m-q-hecke-seminormal.witness.json`](../../computations/tr-m-q-hecke-seminormal.witness.json) | 2026-05-09 00:16 | fresh — partition-sum / canonical-reducer agreement |
+| [`atomic-tr-m-mpfr-50dps.witness.json`](../../computations/atomic-tr-m-mpfr-50dps.witness.json) | 2026-05-09 03:07 | fresh — anchor for all five {p, n, D, T, ³He} traces |
+| [`mass-table-ppb.witness.json`](../../computations/mass-table-ppb.witness.json) | 2026-05-09 (regen) | Kashaev-law table; **flagged** — census-assigned knots |
+| [`low-isotope-mass-table.witness.json`](../../computations/low-isotope-mass-table.witness.json) | 2026-05-09 (regen) | mass-excess table; same census-assignment caveat |
+| [`binding-canonical.witness.json`](../../computations/binding-canonical.witness.json) | 2026-05-09 (regen) | Direction-1 canonical Markov binding |
+| [`codata-reconciliation.witness.json`](../../computations/codata-reconciliation.witness.json) | 2026-05-09 01:07 | 0 ppb on all 5 anchor rows |
+| [`derivation-chain-audit.witness.json`](../../computations/derivation-chain-audit.witness.json) | 2026-05-09 04:33 | walks every `*.derivation.json` |
 
 ## Per-value flags
 

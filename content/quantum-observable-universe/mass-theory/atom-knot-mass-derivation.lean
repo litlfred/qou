@@ -130,7 +130,7 @@ def CategoricalMassInvariantFinite (T_w : Type*) : Prop := Nonempty T_w
     prop:e-infinity-page-identifications.
 
     Numerically verified for D, T, ³He via the from-scratch chain
-    in `folio-assistant/computations/from_scratch/` (Markov axiom
+    in `computations/from_scratch/` (Markov axiom
     derivation reproducing Wenzl-Schur tr_M to bit-precision).
 
     **Path to a stronger proof** (per CLAUDE.md §3b on substrate
@@ -228,7 +228,7 @@ theorem atom_knot_mass_derivation [h : AtomKnotMassDerivationConjecture]
     real-literal cert — we close each by `norm_num`.  These are
     `theorem`s, not `axiom`-instances.
 
-    Ref: `folio-assistant/computations/mass-table-ppb.witness.json`. -/
+    Ref: `computations/mass-table-ppb.witness.json`. -/
 
 private def witnessCert (name : String) (Z A : ℕ) (B_pred B_AME : ℝ)
     (err_ppb : ℤ) : MassDerivationCertificate :=

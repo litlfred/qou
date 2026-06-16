@@ -152,5 +152,5 @@ The Pentagon-relevant statement: **the Borromean's 8-cell ideal-octahedral decom
 - [`content/quantum-observable-universe/braids-and-knots/q-rogers-pentagon-archimedean.md`](../../content/quantum-observable-universe/braids-and-knots/q-rogers-pentagon-archimedean.md) — Pentagon archimedean refinement
 - [`content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md`](../../content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md) — exact tr_M closed form, h² = 0, h⁴ = -3/4
 - [`content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.ts`](../../content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.ts) — UV-commutation pentagon
-- [`folio-assistant/computations/pentagon_reduction_li2q.py`](../../folio-assistant/computations/pentagon_reduction_li2q.py) — Pentagon-as-algebraic-rewrite Python (384 lines, existing)
-- [`folio-assistant/computations/probes/pentagon_to_borromean_h4_probe.py`](../../folio-assistant/computations/probes/pentagon_to_borromean_h4_probe.py) — single-pair Pentagon → h⁴ test (this session, negative)
+- [`computations/pentagon_reduction_li2q.py`](../../computations/pentagon_reduction_li2q.py) — Pentagon-as-algebraic-rewrite Python (384 lines, existing)
+- [`computations/probes/pentagon_to_borromean_h4_probe.py`](../../computations/probes/pentagon_to_borromean_h4_probe.py) — single-pair Pentagon → h⁴ test (this session, negative)

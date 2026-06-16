@@ -11,7 +11,7 @@ paper to keep them disambiguated:
   for crossing energy.
 - **$\mathfrak{E}_0$ vs $Q_\beta(n)$** — two distinct hadronic-sector
   scalars that have been historically conflated in Python compute
-  scripts (see [`folio-assistant/computations/binding_canonical.py`](../../../folio-assistant/computations/binding_canonical.py)
+  scripts (see [`computations/binding_canonical.py`](../../../computations/binding_canonical.py)
   history). They are **not interchangeable**:
     - $\mathfrak{E}_0$ = **hadronic energy scale**, framework-derived as
       $\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV (CAL-1
@@ -199,7 +199,7 @@ paper to keep them disambiguated:
   D(\check{q})$ with $\check{q}$ the spinor rate above
   (the two were always numerically identical; the dual name was a
   literature-debt that produced a $5\times10^{38}$ error in
-  [`habiro_q_difference_fourier.py`](../../../folio-assistant/computations/habiro/habiro_q_difference_fourier.py)
+  [`habiro_q_difference_fourier.py`](../../../computations/habiro/habiro_q_difference_fourier.py)
   by silent substitution between Habiro $u$ and ladder $u$).
   **Discipline:** when a compute script uses BOTH the ladder step
   and either the LP shadow-price $u_\lambda$ or the (retired)

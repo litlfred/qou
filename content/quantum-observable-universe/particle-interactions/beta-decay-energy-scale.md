@@ -61,7 +61,7 @@ This is the electron rest energy per Planck time
 ([energy scale and Planck time](#rem:energy-scale-planck)).
 
 **Derived energy scale — tower-summed form, $\mathfrak{E}_0^{\text{full}}$.**
-The full brane-tower geometric series ([symbolic derivation](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q_beta_form_a_n1_extension.py#L32))
+The full brane-tower geometric series ([symbolic derivation](https://github.com/litlfred/qou/blob/main/computations/q_beta_form_a_n1_extension.py#L32))
 is
 
 $$
@@ -92,7 +92,7 @@ $$
 $$
 
 The values, computed from the witness
-[`q-beta-form-a-n1-extension.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q-beta-form-a-n1-extension.witness.json):
+[`q-beta-form-a-n1-extension.witness.json`](https://github.com/litlfred/qou/blob/main/computations/q-beta-form-a-n1-extension.witness.json):
 
 | Quantity | Value (MeV) | vs $\mathfrak{E}_0^{(\text{cal,symb})}$ |
 |----------|------------:|------------------------------:|

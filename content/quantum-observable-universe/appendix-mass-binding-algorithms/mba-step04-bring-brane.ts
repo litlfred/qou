@@ -8,8 +8,8 @@ export default algorithm({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/bring_chiral_fibre_figure.py",
-    witness: "folio-assistant/computations/bring-chiral-fibre-figure.witness.json",
+    script: "computations/bring_chiral_fibre_figure.py",
+    witness: "computations/bring-chiral-fibre-figure.witness.json",
     status: "verified",
   },
   tags: [

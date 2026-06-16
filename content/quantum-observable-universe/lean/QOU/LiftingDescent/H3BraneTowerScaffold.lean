@@ -9,7 +9,7 @@ import Mathlib.Data.Real.Basic
 Scaffold for a concrete `RecursiveBraneTower` instance at the
 `H_3(q_0)` (proton-scale) Hecke algebra.  The numerical realisation
 is in
-`folio-assistant/computations/tau_hat_n_proton_realisation.py` (PR
+`computations/tau_hat_n_proton_realisation.py` (PR
 #533): a 6-dim `level 0 = H_3(q_0)`, 30-dim `Ω¹(H_3(q_0))`, 180-dim
 `level 1 = H_3(q_0) ⊗ Ω¹(H_3(q_0))`, and a 180×180 idempotent
 `τ̂_0 = ℓ_0 ∘ 𝔡_1` with rank 6 (descended) and nullity 174 in End(A_0)
@@ -45,7 +45,7 @@ open scoped LinearMap
 
 /-- Substrate parameter `q_0`.  Bound here to the canonical 50-dps
     literal from
-    `folio-assistant/computations/full-twist-delta-n2-verification.witness.json`
+    `computations/full-twist-delta-n2-verification.witness.json`
     (`q_0` field), produced by the proton-anchor re-pin of 2026-05-28
     (`tools/qou-substrate/python/qou_substrate/constants.py::Q_50_DIGIT_STR`).
 

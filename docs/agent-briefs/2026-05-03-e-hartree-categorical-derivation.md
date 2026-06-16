@@ -33,7 +33,7 @@ identifications. If you can't derive it from category, mark it open.
 
 ### What's currently asserted (without categorical derivation)
 
-In `folio-assistant/computations/substrate/hecke_core.py:198`:
+In `computations/substrate/hecke_core.py:198`:
 
 ```python
 E_HARTREE_EV = 511000.0 * alpha_em**2   # Hartree energy (eV)
@@ -61,7 +61,7 @@ involution, or a Frobenius-pairing antisymmetry). The first non-zero
 contribution is at 2nd order, giving $\alpha^2$ scaling.
 
 Concretely: in the LP/SDP for binding (e.g. h2-lp-dual-binding, see
-`folio-assistant/computations/h2_lp_dual.py` if exists), expand the
+`computations/h2_lp_dual.py` if exists), expand the
 dual variable $y_{\text{cov}}$ in powers of $\alpha_{EM}$ around the
 bare/decoupled limit. Show:
 
@@ -83,9 +83,9 @@ content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.
 content/quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.md
 content/quantum-observable-universe/braids-and-knots/commutative-chirality-vanishes.md
 content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.md
-folio-assistant/computations/substrate/hecke_core.py        # E_HARTREE definition
-folio-assistant/computations/h2_lp_dual.py        # if exists
-folio-assistant/computations/co2-molecular-binding.py
+computations/substrate/hecke_core.py        # E_HARTREE definition
+computations/h2_lp_dual.py        # if exists
+computations/co2-molecular-binding.py
 ```
 
 The vanishing arguments (`commutative-chirality-vanishes.md`,

@@ -38,7 +38,7 @@ namespace QOU.Archimedean
 /-- Abstract context for the Rosso–Jones canonical inner product on
     the representation ring `R(H_r(q))` of the Iwahori–Hecke algebra. -/
 class HeckeRepRingContext (r : ℕ) where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- The Hecke parameter `q`. -/
   q : ℝ
   /-- `q ≠ 0` and `q ≠ 1` (generic position). -/

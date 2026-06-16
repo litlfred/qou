@@ -66,11 +66,11 @@ All at PSLQ tolerance 1e-10 to 1e-15, maxcoeff 10^5–10^8. The six-tier consist
 2. **Direct knot-operator-LP/SDP derivation** of `n_i^(p)` from the canonical proton Hecke element `𝓑_p` (replaces empirical PSLQ search).
 3. **q-dilog tower direct parametrisation** — bypass hyperbolic volumes; derive `λ_scale` from the bar-anti-symmetric `Li_2^q` tower at the substrate point. Listed as §7 #4 open frontier in [`2026-05-20-compute-wiring-audit-pr-852.md`](2026-05-20-compute-wiring-audit-pr-852.md).
 
-**Discipline note.** The paper's `prop:lambda-scale-bring-bloch-identity` states the identity sorry-free conditional on the existence of the integer multiset `n_i^(p)`. With six tiers exhausted, the conditional is currently empty — `λ_scale` remains a hardcoded literal `LAMBDA_PROTON_DOC = 2.4599527869` in [`m_p_borromean_verification_50dps.py:100`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py). The "CAL-4 in disguise" status documented in [`docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md`](2026-05-18-210x-scale-gap-root-cause-v2.md) (PR #879, merged) **stands**.
+**Discipline note.** The paper's `prop:lambda-scale-bring-bloch-identity` states the identity sorry-free conditional on the existence of the integer multiset `n_i^(p)`. With six tiers exhausted, the conditional is currently empty — `λ_scale` remains a hardcoded literal `LAMBDA_PROTON_DOC = 2.4599527869` in [`m_p_borromean_verification_50dps.py:100`](../../computations/m_p_borromean_verification_50dps.py). The "CAL-4 in disguise" status documented in [`docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md`](2026-05-18-210x-scale-gap-root-cause-v2.md) (PR #879, merged) **stands**.
 
 ## 3. (Z+N) extension audit — H_12 is the gate
 
-`mass_tower_operator_valued.py` currently verifies the operator-trace identity only at **A=2 (deuteron, H_6)**. Extension to A=4 (⁴He, H_12) is the next concrete task because it unblocks 14 of the 20 SUPERSEDED-importer scripts. Concrete blocker per [`sublemma_2_1_h12_helium_4_framework.py`](../../folio-assistant/computations/sublemma_2_1_h12_helium_4_framework.py):
+`mass_tower_operator_valued.py` currently verifies the operator-trace identity only at **A=2 (deuteron, H_6)**. Extension to A=4 (⁴He, H_12) is the next concrete task because it unblocks 14 of the 20 SUPERSEDED-importer scripts. Concrete blocker per [`sublemma_2_1_h12_helium_4_framework.py`](../../computations/sublemma_2_1_h12_helium_4_framework.py):
 
 The 3-interface ⁴He formula needs three extracted A-operator matrices:
 
@@ -96,7 +96,7 @@ H_12 requires 77 partitions with max dimension 462 (`λ=[4,4,4]`). Estimated com
 
 ## 4. L1 dashboard — GREEN
 
-[`folio-assistant/computations/onepb-status-dashboard.witness.json`](../../folio-assistant/computations/onepb-status-dashboard.witness.json) (computed 2026-05-20):
+[`computations/onepb-status-dashboard.witness.json`](../../computations/onepb-status-dashboard.witness.json) (computed 2026-05-20):
 
 | assertion | computed | expected | tolerance | passed |
 |---|---:|---:|---:|:---:|
@@ -167,9 +167,9 @@ Items 1–2 are mechanical and additive (no math content changes). Items 3–5 r
 - [`docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md`](2026-05-18-210x-scale-gap-root-cause-v2.md) — PR #879 (merged) — identifies `λ_scale` as CAL-4 in disguise.
 - [`docs/audits/2026-05-20-compute-wiring-audit-pr-852.md`](2026-05-20-compute-wiring-audit-pr-852.md) — 72-hr compute-wiring scan; this audit's companion.
 - [`docs/canonical-derivation-cheat-sheet.md §5`](../canonical-derivation-cheat-sheet.md) — Migration backlog (master).
-- [`folio-assistant/computations/onepb-status-dashboard.witness.json`](../../folio-assistant/computations/onepb-status-dashboard.witness.json) — L1 dashboard.
-- [`folio-assistant/computations/sublemma_2_1_h12_helium_4_framework.py`](../../folio-assistant/computations/sublemma_2_1_h12_helium_4_framework.py) — (Z+N) extension framework.
-- [`folio-assistant/computations/bring_bloch_tier{1..5}_search_m_p.py`](../../folio-assistant/computations/) — Bring-Bloch tier searches.
+- [`computations/onepb-status-dashboard.witness.json`](../../computations/onepb-status-dashboard.witness.json) — L1 dashboard.
+- [`computations/sublemma_2_1_h12_helium_4_framework.py`](../../computations/sublemma_2_1_h12_helium_4_framework.py) — (Z+N) extension framework.
+- [`computations/bring_bloch_tier{1..5}_search_m_p.py`](../../computations/) — Bring-Bloch tier searches.
 - [`docs/audits/2026-05-18-recursive-rho-xi-blocked-by-underdetermined-extracts.md`](2026-05-18-recursive-rho-xi-blocked-by-underdetermined-extracts.md) — H_9 rank-deficiency precedent for H_12 risk.
 
 ## Provenance

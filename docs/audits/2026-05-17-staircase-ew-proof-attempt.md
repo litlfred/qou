@@ -79,5 +79,5 @@ would make the conjecture proveable conditional on Hoefsmit-matrix
 concreteness.
 
 For documentation of the empirical content, see
-`folio-assistant/computations/staircase-ew-residual-conjecture.witness.json`
+`computations/staircase-ew-residual-conjecture.witness.json`
 and `docs/audits/2026-05-06-staircase-ew-residual-conjecture.md`.

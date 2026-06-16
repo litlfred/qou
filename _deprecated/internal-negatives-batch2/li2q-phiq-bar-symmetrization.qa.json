@@ -783,7 +783,7 @@
         "reviewed_at": "2026-05-24T01:54:37.804Z",
         "reviewed_sha": "b1c68b51c25830f97394a032704091624fd39a68",
         "severity": "major",
-        "evidence": "folio-assistant/computations/m_p_m_e_li2q.py:1: computation script contains SUPERSEDED/DEPRECATED marker | folio-assistant/computations/m_p_m_e_li2q.py:1: computation script imports deprecated module: mass_endomorphism"
+        "evidence": "computations/m_p_m_e_li2q.py:1: computation script contains SUPERSEDED/DEPRECATED marker | computations/m_p_m_e_li2q.py:1: computation script imports deprecated module: mass_endomorphism"
       }
     ],
     "voice-unicode-crash": [

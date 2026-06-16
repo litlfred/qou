@@ -29,7 +29,7 @@ $c_C(\lambda) \in \mathbb{Q}(q)$ given by:*
 *The depth-stratum coefficients $\alpha_\lambda(H_4) := \mathrm{tr}_M(r_\lambda)
 = y_\lambda \cdot \chi_\lambda(r_\lambda)$ evaluate at the substrate
 value $q_0 \approx 1.110$ to numerical values in
-[`wedderburn-orthogonal-r-3-h4.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wedderburn-orthogonal-r-3-h4.witness.json),
+[`wedderburn-orthogonal-r-3-h4.witness.json`](https://github.com/litlfred/qou/blob/main/computations/wedderburn-orthogonal-r-3-h4.witness.json),
 verified to numerical precision against the Hoefsmit character matrix
 and Jones-Markov $y_\lambda$ values (consistency residual $< 10^{-15}$).*
 
@@ -49,7 +49,7 @@ length-restricted (length-$k$ word) approach fails: at $H_4$ the 6
 length-3 reduced words collapse to just 2 conjugacy classes (3-cycle
 $+$ 4-cycle) — only a 2-dim space, insufficient to satisfy 4
 lower-depth orthogonality constraints (working note:
-`folio-assistant/computations/r-k-wedderburn-orthogonal-derivation-notes.md`).
+`computations/r-k-wedderburn-orthogonal-derivation-notes.md`).
 
 **Linear system.**  Let
 $M \in \mathbb{R}^{4 \times 5}$ have entries
@@ -69,9 +69,9 @@ uniquely determined.
 
 **Numerical evaluation at $q_0$.**  Hoefsmit characters computed via
 [seminormal matrices](#prop:hoefsmit-seminormal-form) (see
-`folio-assistant/computations/hecke/hecke_characters.py`); the $5 \times 5$
+`computations/hecke/hecke_characters.py`); the $5 \times 5$
 character matrix at $q_0$ is recorded in
-[`wedderburn-orthogonal-r-3-h4.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wedderburn-orthogonal-r-3-h4.witness.json).
+[`wedderburn-orthogonal-r-3-h4.witness.json`](https://github.com/litlfred/qou/blob/main/computations/wedderburn-orthogonal-r-3-h4.witness.json).
 
 **Sanity verification** — central character identity at every class:
 
@@ -145,7 +145,7 @@ $n = 5, \ldots, 12$ are also available via the
 
 ## Witness
 
-[`folio-assistant/computations/wedderburn_orthogonal_r_k.py`](#) —
+[`computations/wedderburn_orthogonal_r_k.py`](#) —
 implements the class-function basis construction, character
 evaluation via `build_seminormal_matrices`, and 4$\times$5 linear-system
 solve.  Output:

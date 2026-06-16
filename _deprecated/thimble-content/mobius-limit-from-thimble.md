@@ -6,7 +6,7 @@
 > derivation on commit `f86ea9d7a` (PL re-entry abscissa is
 > numerically $\sim z \approx 3.86$, an order of magnitude larger
 > than $a(q_0) \approx 0.388$ — witness
-> [`derive-a-thimble-intersection.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/derive-a-thimble-intersection.witness.json)
+> [`derive-a-thimble-intersection.witness.json`](https://github.com/litlfred/qou/blob/main/computations/derive-a-thimble-intersection.witness.json)
 > labels the $(4-q)/(4q+3)$ entry **"post-hoc"** in its own
 > output). The replacement "algebraic Galois data" framing below
 > sources the **constants** $\{4, 3\}$ in the Möbius matrix from
@@ -54,7 +54,7 @@ The cubic discriminant $\Delta(z) = -(16z^6 + 24z^5 + 35z^4 + 50z^3
 + 35z^2 + 24z + 16) \in \mathbb{Z}[z]$ is palindromic, so its six
 roots split into three orbits under
 $\langle z\mapsto\bar z, z\mapsto 1/z\rangle$. Numerically
-([`derive-a-thimble-intersection.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/derive-a-thimble-intersection.witness.json)),
+([`derive-a-thimble-intersection.witness.json`](https://github.com/litlfred/qou/blob/main/computations/derive-a-thimble-intersection.witness.json)),
 the orbits have $|z| = 0.943, 1.060, 1.000$; the innermost orbit
 $\mathcal{O}_{\mathrm{prin}} = \{z_c^\pm\}$ is the algebraic
 contour's principal locus.* $\square$
@@ -64,7 +64,7 @@ contour's principal locus.* $\square$
 1.110$; the m_p closure via
 ([sw-period thimble equivalence](#prop:sw-period-thimble-equivalence))
 matches CODATA to $0.0006\%$
-([`picard-lefschetz-thimble.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/picard-lefschetz-thimble.witness.json)).*
+([`picard-lefschetz-thimble.witness.json`](https://github.com/litlfred/qou/blob/main/computations/picard-lefschetz-thimble.witness.json)).*
 
 **Archimedean shadow.**
 *The Picard–Lefschetz reading — $a(q)$ as the steepest-descent

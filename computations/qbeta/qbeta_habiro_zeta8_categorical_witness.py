@@ -45,7 +45,7 @@ This probe executes four categorical candidate-checks:
 OUTPUT
 ======
 
-  folio-assistant/computations/qbeta-habiro-zeta8-categorical-witness.witness.json
+  computations/qbeta-habiro-zeta8-categorical-witness.witness.json
   docs/audits/2026-06-01-qbeta-habiro-zeta8-categorical-witness.md
 
 USAGE

@@ -103,7 +103,7 @@ class TypeBFoldingCPT (M : Type*) [BrCategory M] [Crystal M] where
 
 1. **Verify Type-B folding produces bar-invariant GS normal forms**
    numerically on the canonical atomic-braid catalogue
-   ([`isotope_record_schema.py`](../../folio-assistant/computations/isotope_record_schema.py)).
+   ([`isotope_record_schema.py`](../../computations/isotope_record_schema.py)).
 2. **Identify stable-matter crystal fixed points** for ${}^{2}\mathrm{H}$, ${}^{4}\mathrm{He}$
    (Wigner SU(4) supermultiplet — see [D11](wigner-su4-from-spin-isospin.md))
    and verify the prediction that these atoms correspond to folded-

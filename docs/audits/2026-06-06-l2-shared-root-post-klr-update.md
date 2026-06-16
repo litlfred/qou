@@ -71,5 +71,5 @@ The Phase 2 IwahoriHecke sprint referenced in the original audit (`57783eebb`) i
 - cont. 9 master infra roadmap: [`2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md`](../scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md).
 - KLR program kickoff scope: [`2026-06-05-qbeta-residue-a-klr-crystal-kernel-scope.md`](../scope/2026-06-05-qbeta-residue-a-klr-crystal-kernel-scope.md).
 - C-exotic Lusztig narrowing scope: [`2026-06-06-qbeta-klr-exotic-signed-lusztig-bounded-magnitude-scope.md`](../scope/2026-06-06-qbeta-klr-exotic-signed-lusztig-bounded-magnitude-scope.md).
-- m_μ Borromean formula source: [`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py).
+- m_μ Borromean formula source: [`m_p_borromean_verification_50dps.py`](../../computations/m_p_borromean_verification_50dps.py).
 - Master Q_β ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md) (cont. 18 follow-up).

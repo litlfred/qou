@@ -90,9 +90,9 @@ to it.  No CODATA literal flows into a prediction.
 ## See also
 
 - [`docs/lambda-scale-absorbed-into-vol-density.md`](../../docs/lambda-scale-absorbed-into-vol-density.md)
-- [`folio-assistant/computations/_li_2_q_util.py`](_li_2_q_util.py)
+- [`computations/_li_2_q_util.py`](_li_2_q_util.py)
   (`vol_density_borromean`, `linking_weight_family_a`, `borromean_markov_trace_h2`)
-- [`folio-assistant/computations/knot-operator-table.py`](knot-operator-table.py)
+- [`computations/knot-operator-table.py`](knot-operator-table.py)
   (γγ pair-production identification in NF basis)
 - [`docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md`](../../docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md)
   (Reading-A vs Reading-B framing)

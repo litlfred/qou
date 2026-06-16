@@ -81,11 +81,11 @@ Summing over $\lambda$ recovers the standard Markov trace.
 ### Computation
 
 A reusable Python implementation is available in
-[`folio-assistant/computations/delta_q_decoration.py`](folio-assistant/computations/delta_q_decoration.py),
+[`computations/delta_q_decoration.py`](computations/delta_q_decoration.py),
 using the seminormal Hoefsmit representation matrices from
-[`hecke_characters.py`](folio-assistant/computations/hecke/hecke_characters.py).
+[`hecke_characters.py`](computations/hecke/hecke_characters.py).
 The witness data
-[`delta-q-decoration.witness.json`](folio-assistant/computations/delta-q-decoration.witness.json)
+[`delta-q-decoration.witness.json`](computations/delta-q-decoration.witness.json)
 caches the per-irrep characters for $H_2, H_3, H_4$ NF bases and
 the force-carrier knots $T_{2,9}, T_{3,5}$.
 

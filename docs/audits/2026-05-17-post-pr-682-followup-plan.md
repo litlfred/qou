@@ -23,12 +23,12 @@
 ```bash
 # Tritium / ³He — each takes ~ minutes/partition × ~30 partitions
 # under 4 workers → 1-2 hr per atom of clock time.
-python3 folio-assistant/computations/per_irrep_pole_atom.py tritium --workers $(nproc)
-python3 folio-assistant/computations/per_irrep_pole_atom.py helium-3 --workers $(nproc)
+python3 computations/per_irrep_pole_atom.py tritium --workers $(nproc)
+python3 computations/per_irrep_pole_atom.py helium-3 --workers $(nproc)
 
 # ⁴He — H_12, 77 partitions, minutes-per-partition symbolic — hours of compute.
 # May want a Rust accelerator (see #681 Q5).
-python3 folio-assistant/computations/per_irrep_pole_atom.py helium-4 --workers $(nproc)
+python3 computations/per_irrep_pole_atom.py helium-4 --workers $(nproc)
 ```
 
 The script supports **incremental saves** — each completed partition
@@ -42,7 +42,7 @@ chi-cache path, not just p/n/D.
 
 ## 2. Habiro coefficient extension to T / ³He / ⁴He (Phase γ)
 
-**Source script:** `folio-assistant/computations/habiro/habiro_coefficients_atomic.py`
+**Source script:** `computations/habiro/habiro_coefficients_atomic.py`
 
 **Current coverage:** `habiro-coefficients-atomic.witness.json` covers
 A ∈ {1, 1, 2} (p, n, D); A ∈ {3, 3, 4} (T, ³He, ⁴He) are missing.
@@ -57,10 +57,10 @@ giving Path-3 (Habiro-tower) mass predictions alongside Path-2
 
 ## 3. m_p Item B — chirality T5 (governance-blocked)
 
-**Audit witness:** [`term5-aK-audit.witness.json`](../../folio-assistant/computations/audits/term5-aK-audit.witness.json)
+**Audit witness:** [`term5-aK-audit.witness.json`](../../computations/audits/term5-aK-audit.witness.json)
 covers V1/V2/V3/V4 for {p, n} and **V1 only** for {D, T, ³He}.
 
-**Audit script:** [`term5_aK_audit.py`](../../folio-assistant/computations/audits/term5_aK_audit.py)
+**Audit script:** [`term5_aK_audit.py`](../../computations/audits/term5_aK_audit.py)
 takes `--variants V1,V2,V3,V4` and `--atoms`. The script's own
 docstring notes:
 
@@ -84,7 +84,7 @@ to test whether the 2.2% gap holds across the V1 → V2 mirror
 re-interpretation, or whether one of the other variants closes it.
 
 ```bash
-python3 folio-assistant/computations/audits/term5_aK_audit.py \
+python3 computations/audits/term5_aK_audit.py \
     --atoms deuteron --variants V2
 ```
 

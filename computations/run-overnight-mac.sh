@@ -3,7 +3,7 @@
 # Uses incremental computation (k+1 builds on k)
 #
 # Usage:
-#   cd folio-assistant/computations
+#   cd computations
 #   nohup bash run-overnight-mac.sh > overnight.log 2>&1 &
 #   tail -f overnight.log
 

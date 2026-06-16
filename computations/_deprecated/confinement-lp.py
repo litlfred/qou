@@ -24,7 +24,7 @@ nucleon NF and verify it matches B₃.
 Also solves the DUAL LP to obtain shadow prices (demand prices).
 
 Usage:
-    cd folio-assistant/computations && python3 confinement-lp.py
+    cd computations && python3 confinement-lp.py
 """
 import json
 import numpy as np

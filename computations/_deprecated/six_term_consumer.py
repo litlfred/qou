@@ -44,7 +44,7 @@ requires the calibration + (Z·m_p + N·m_n - M) conversion pipeline,
 which is queued as Sprint A v5.
 
 Usage:
-  python folio-assistant/computations/six_term_consumer.py
+  python computations/six_term_consumer.py
 """
 from __future__ import annotations
 

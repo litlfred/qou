@@ -76,7 +76,7 @@ $\dim_q^2 / [n]_q!$ is correct.
 
 ### Empirical falsifications recorded
 
-[`binding_depth_stratified_knot_weighted.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/binding_depth_stratified_knot_weighted.py)
+[`binding_depth_stratified_knot_weighted.py`](https://github.com/litlfred/qou/blob/main/computations/binding_depth_stratified_knot_weighted.py)
 tested two simple empirical forms of "ideal restriction at low $k$" —
 *both falsified* on D, T, ${}^{3}$He, ${}^{4}$He:
 
@@ -190,9 +190,9 @@ A concrete computation requires:
  inside the atomic braid.
 3. $\chi^\lambda(4_1^{(n)})$ for each $\lambda \vdash n$ of depth 3 —
  computable via the Rust kernel
- ([`compute_atom_chi_rust.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/compute_atom_chi_rust.py))
+ ([`compute_atom_chi_rust.py`](https://github.com/litlfred/qou/blob/main/computations/compute_atom_chi_rust.py))
  or the symbolic Hoefsmit pipeline. The script
- [`fr_pullback_k3_test.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/fr_pullback_k3_test.py)
+ [`fr_pullback_k3_test.py`](https://github.com/litlfred/qou/blob/main/computations/fr_pullback_k3_test.py)
  (from ) carries this end-to-end with KnotInfo cross-validation.
 
 ### Lean formalisation

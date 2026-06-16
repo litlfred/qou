@@ -102,8 +102,8 @@ The `lepton_mass_ratio` sorry in `lepton-mass-tower-canonical.lean` remains corr
 - [`conj:lepton-mass-tower-canonical`](../../content/quantum-observable-universe/braids-and-knots/lepton-mass-tower-canonical.md) — F_ℓ conjecture (NOW genuinely confirmed as open)
 - [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](2026-05-24-superseded-rho-q-purge.md) — purge that motivated T6
 - [`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](2026-05-24-m-mu-over-m-e-operator-rederivation.md) — Phase 3 finding (direct |tr_M| ratio = 0.27)
-- New compute: `folio-assistant/computations/f_ell_derivation_via_per_braid_mass_tower.py`
-- New witness: `folio-assistant/computations/f-ell-derivation-via-per-braid-mass-tower.witness.json`
+- New compute: `computations/f_ell_derivation_via_per_braid_mass_tower.py`
+- New witness: `computations/f-ell-derivation-via-per-braid-mass-tower.witness.json`
 
 ## Next step for F_ℓ
 
@@ -116,7 +116,7 @@ The next session should:
 
 ## Followup (2026-05-25, PR #1253) — tau amphichiral q-bracket finding
 
-Per owner directive "tau is not torus knot; knot operator = symmetries → should be same as 1st gen. verify via SDP solutions" (where "same as 1st gen" was interpreted via muon = 4_1 amphichirality), [`folio-assistant/computations/probes/tau_amphichiral_sdp_probe.py`](../../folio-assistant/computations/probes/tau_amphichiral_sdp_probe.py) filtered SnapPy census to 12 amphichiral hyperbolic knots and tested q-bracket-corrected closures.
+Per owner directive "tau is not torus knot; knot operator = symmetries → should be same as 1st gen. verify via SDP solutions" (where "same as 1st gen" was interpreted via muon = 4_1 amphichirality), [`computations/probes/tau_amphichiral_sdp_probe.py`](../../computations/probes/tau_amphichiral_sdp_probe.py) filtered SnapPy census to 12 amphichiral hyperbolic knots and tested q-bracket-corrected closures.
 
 **Two candidates close to <1%** (both improving on PR #1250's torus-knot best of 1.33%):
 

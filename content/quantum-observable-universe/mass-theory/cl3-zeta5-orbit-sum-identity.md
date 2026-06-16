@@ -80,8 +80,8 @@ giving the boxed sum identity. $\square$
 
 ### Numerical verification at 50 dps
 
-[`cl3_zeta5_orbit_sum.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/cl3_zeta5_orbit_sum.py),
-[witness](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/cl3-zeta5-orbit-sum.witness.json):
+[`cl3_zeta5_orbit_sum.py`](https://github.com/litlfred/qou/blob/main/computations/cl3_zeta5_orbit_sum.py),
+[witness](https://github.com/litlfred/qou/blob/main/computations/cl3-zeta5-orbit-sum.witness.json):
 
 | Quantity | Value (50 dps) |
 |---|---|

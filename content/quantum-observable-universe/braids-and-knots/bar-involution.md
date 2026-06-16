@@ -164,7 +164,7 @@ alone — no `sorry`, no auxiliary `Field` instance needed (only
 
 ### Falsifiability: silver vs golden $c_5$ outlier
 
-`folio-assistant/computations/probes/qbeta_golden_ratio_fibonacci_probe.py`
+`computations/probes/qbeta_golden_ratio_fibonacci_probe.py`
 computes $c_k(q)$ for $k = 3..10$ at golden ratio $q = \varphi$
 ($b^2 = 4/5$ exact) and tests Fibonacci-Lucas-cleanness vs the
 silver-ratio Pell-Lucas test. Result (witness confirmed):

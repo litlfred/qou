@@ -8,7 +8,7 @@
 ## Purpose
 
 The parent gap audit identifies that
-[`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py)
+[`mass_table_ppb.py`](../../computations/mass_table_ppb.py)
 has no atom→knot rule for `A ∈ {5, 6, 7}`. This doc surveys the
 hyperbolic knot/link census (from memory of SnapPy's
 `HTLinkExteriors`, `OrientableCuspedCensus`, Rolfsen, Hoste–
@@ -203,7 +203,7 @@ in `mass_table_ppb.py:18–21`.
 ## Confidence statement
 
 Volumes for objects beyond the canonical anchors listed in
-[`knot_volumes.py`](../../folio-assistant/computations/substrate/knot_volumes.py)
+[`knot_volumes.py`](../../computations/substrate/knot_volumes.py)
 are **not** recalled with sufficient precision (better than 0.5)
 from memory. The "🟡 needs SnapPy census verification" markers
 above are honest gaps, not placeholders. Any next step in this
@@ -214,8 +214,8 @@ environment rather than rely on this scan.
 
 - Parent gap audit: [`2026-05-24-a5-a7-isotope-wiring-gap.md`](2026-05-24-a5-a7-isotope-wiring-gap.md)
 - Grandparent anatomy: [`2026-05-24-low-isotope-mass-error-anatomy.md`](2026-05-24-low-isotope-mass-error-anatomy.md)
-- Canonical knot-volume registry: [`folio-assistant/computations/substrate/knot_volumes.py`](../../folio-assistant/computations/substrate/knot_volumes.py)
-- Mass-table gap surface: [`folio-assistant/computations/mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py) lines 80–180
+- Canonical knot-volume registry: [`computations/substrate/knot_volumes.py`](../../computations/substrate/knot_volumes.py)
+- Mass-table gap surface: [`computations/mass_table_ppb.py`](../../computations/mass_table_ppb.py) lines 80–180
 - CLAUDE.md §7b — Demazure sub-crystals for resonances (the ⁵Li reading)
 - CLAUDE.md production-vs-exploratory discipline — why this is a shape-probe
 - PR [#1081](https://github.com/litlfred/qou/pull/1081) Task 3 — supplier for multi-knot VolDensity path

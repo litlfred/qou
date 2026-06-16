@@ -39,7 +39,7 @@ $$
   vs neutron); structurally derivable.
 - **`λ_scale` is currently hardcoded:** `LAMBDA_PROTON_DOC =
   mp.mpf("2.4599527869")` in
-  [`folio-assistant/computations/m_p_borromean_verification_50dps.py:100`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py).
+  [`computations/m_p_borromean_verification_50dps.py:100`](../../computations/m_p_borromean_verification_50dps.py).
   It was solved against CODATA `m_p` (a CAL-4 violation in
   disguise; see
   [`docs/audits/2026-05-18-210x-scale-gap-root-cause-v2.md`](../audits/2026-05-18-210x-scale-gap-root-cause-v2.md)).
@@ -69,7 +69,7 @@ search for this multiset via PSLQ has been run at 6 tiers:
 ≤ 11 crossings.
 
 Tier-search scripts:
-[`folio-assistant/computations/bring_bloch_tier{1..5}_search_m_p.py`](../../folio-assistant/computations/).
+[`computations/bring_bloch_tier{1..5}_search_m_p.py`](../../computations/).
 
 ## What "q-dilog tower direct parametrisation" means
 
@@ -138,9 +138,9 @@ algebraic locus: `z ∈ {q_0, 1/q_0, q_0², 1-q_0, -q_0, q_0·(q_0-1),
 1/(q_0(q_0-1)), q_0³, q_0/(q_0+1), ...}`. Run PSLQ against the
 target `λ_scale = 2.4599527869...` at 80–100 dps.
 
-**Compute kernel.** Use `folio-assistant/computations/li2q.py`
+**Compute kernel.** Use `computations/li2q.py`
 (or whichever script wraps Li_2^q in the framework — search via
-`grep -l li2q folio-assistant/computations/*.py`). MPFR 50 dps,
+`grep -l li2q computations/*.py`). MPFR 50 dps,
 PSLQ via `mpmath.pslq`.
 
 **Estimated cost.** Hours, similar to Bring-Bloch tier searches.
@@ -151,7 +151,7 @@ Same as Strategy A but with `Φ_q(w)` (bar-asymmetric). The
 mass-anchor context is the right side for `λ_scale` which
 multiplies the topological volume → mass scale.
 
-**Compute kernel.** `folio-assistant/computations/phi_q.py` or
+**Compute kernel.** `computations/phi_q.py` or
 similar; CMP per `Φ_q` definition in
 [`prop:mass-tower-operator-valued`](../../content/quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.md).
 
@@ -171,13 +171,13 @@ or different basis functions (`sinh`, `cosh(h)^n`).
 
 Compute `λ_scale` directly from the canonical proton Hecke
 element `𝓑_p` (canonical braid construction;
-[`folio-assistant/computations/canonical_braid_marshalling.py`](../../folio-assistant/computations/canonical_braid_marshalling.py))
+[`computations/canonical_braid_marshalling.py`](../../computations/canonical_braid_marshalling.py))
 via a knot-operator-LP/SDP problem. This bypasses PSLQ entirely:
 solve for the canonical structural object whose evaluation at
 q_0 yields `λ_scale`.
 
 **Compute kernel.** Extend
-[`folio-assistant/computations/lp_dual_solver.py`](../../folio-assistant/computations/lp_dual_solver.py)
+[`computations/lp_dual_solver.py`](../../computations/lp_dual_solver.py)
 with a `lambda_scale_from_braid_p` solver that takes 𝓑_p and the
 Vol(𝓑₃) topological invariant and produces `λ_scale` as an LP/SDP
 output.
@@ -338,7 +338,7 @@ are coincidences in the sense of PR #701).
 The Family A theorem (PR #701, on main via #888 / #895) proves
 that
 `λ_A(q) := (1/4) · Σ_{λ ⊢ 4} dim_q V_λ = 5/2 + (3/4)·h²` exactly
-([`lambda_scale_all_c_i_family_a.py`](../../folio-assistant/computations/lambda_scale_all_c_i_family_a.py))
+([`lambda_scale_all_c_i_family_a.py`](../../computations/lambda_scale_all_c_i_family_a.py))
 across the framework's substrate window. Per #895 this IS the
 framework-derived λ_scale; m_p prediction = 966 MeV, ~3 % off
 CODATA.
@@ -372,7 +372,7 @@ of PR #701, not a derivation):
 2026-05-22 post-/coordinate user challenge).** Among the
 Wedderburn sums tested, V_3 and V_4 land within ±0.3 % of
 Family A — but the follow-up probe
-[`lambda_scale_alt_h_v3_v4_substrate_probe.py`](../../folio-assistant/computations/lambda_scale_alt_h_v3_v4_substrate_probe.py)
+[`lambda_scale_alt_h_v3_v4_substrate_probe.py`](../../computations/lambda_scale_alt_h_v3_v4_substrate_probe.py)
 documents that their normalisations 5/48 and 1/48 are PINNED by
 the desired classical limit (5/2 at q = 1), not derived from a
 natural category-theoretic measure on H_4. They are
@@ -384,7 +384,7 @@ constant. V_3 and V_4 should NOT be presented as substrate-pure
 refinement candidates.
 
 **V_3/V_4 verdict.** Closed-negative. Witness:
-[`lambda-scale-alt-h-v3-v4-substrate-probe.witness.json`](../../folio-assistant/computations/lambda-scale-alt-h-v3-v4-substrate-probe.witness.json).
+[`lambda-scale-alt-h-v3-v4-substrate-probe.witness.json`](../../computations/lambda-scale-alt-h-v3-v4-substrate-probe.witness.json).
 
 **V_7 is a separate observation.** The quotient form
 `Σ dim_q V_λ / [4]_q` lands close to the retired CODATA target
@@ -430,7 +430,7 @@ system instead of a 1-equation fit.
 
 This was **Lead #1 from the PR #487 agent** in the 2026-05-11
 brief; never executed. Existing infra:
-[`skein_proton_canonical.py`](../../folio-assistant/computations/skein_proton_canonical.py)
+[`skein_proton_canonical.py`](../../computations/skein_proton_canonical.py)
 computes the Kauffman bracket for the canonical proton braid,
 but does not yet emit a per-orientation HOMFLYPT.
 
@@ -453,7 +453,7 @@ curvature 2-form integrated over the Borromean ribbon surface
 via Yekutieli non-abelian Stokes (cheat-sheet step 2).
 
 Already partially explored in
-[`lambda_scale_rd1_geometric.py`](../../folio-assistant/computations/lambda_scale_rd1_geometric.py)
+[`lambda_scale_rd1_geometric.py`](../../computations/lambda_scale_rd1_geometric.py)
 with the ansatz `Σ_geom = (3/4 + G)·h²`. The categorical
 derivation of the `(3/4 + G)` coefficient is the gap. If
 Yekutieli integration is computed structurally (not fit), it
@@ -461,7 +461,7 @@ should produce the empirical match WITHOUT introducing a 4th
 calibration constant.
 
 **Compute kernel.** New script under
-`folio-assistant/computations/lambda_scale_alt_i_yekutieli_curvature.py`
+`computations/lambda_scale_alt_i_yekutieli_curvature.py`
 that integrates the per-cell curvature 2-form on `𝓑_3`'s 8
 ideal octahedral cells. Each cell contributes
 `Λ(π/4) = G/2`; the total of 8 cells gives `8 · G/2 = 4G`
@@ -484,7 +484,7 @@ formalism; the Bloch class itself can be constructed directly.
 
 Procedure:
 1. Take the canonical 11-crossing proton braid
-   ([`canonical_braid_marshalling.py`](../../folio-assistant/computations/canonical_braid_marshalling.py),
+   ([`canonical_braid_marshalling.py`](../../computations/canonical_braid_marshalling.py),
    `atomic-braid-recipe-p`).
 2. Compute its braid closure as a knot or link in S³.
 3. Triangulate that closure via SnapPy.
@@ -527,7 +527,7 @@ Procedure:
 3. Use this to filter candidates from Strategies A/B/C/G/H.
 
 **Compute kernel.** Extend
-[`lambda_scale_proof_step5_skein_anchor.py`](../../folio-assistant/computations/lambda_scale_proof_step5_skein_anchor.py)
+[`lambda_scale_proof_step5_skein_anchor.py`](../../computations/lambda_scale_proof_step5_skein_anchor.py)
 to emit per-baryon closure targets.
 
 **Estimated cost.** 1 day, once Strategies F-H produce
@@ -720,8 +720,8 @@ point:
     `proton uud → (μ_u, μ_u, μ_d)`, `neutron udd → (μ_u, μ_d, μ_d)`),
     plausibly + diagonal averaging direction = **10**. Scheme 4
     (per-sheet PL integration on Bring's surface, recorded in
-    [`probe_pn_flavor_asymmetry.py`](../../folio-assistant/computations/probe_pn_flavor_asymmetry.py)
-    and [`probe_per_sheet_flavor_nonin.py`](../../folio-assistant/computations/probe_per_sheet_flavor_nonin.py))
+    [`probe_pn_flavor_asymmetry.py`](../../computations/probe_pn_flavor_asymmetry.py)
+    and [`probe_per_sheet_flavor_nonin.py`](../../computations/probe_per_sheet_flavor_nonin.py))
     empirically reproduces `Δm_{n-p}` to ~0.14 % of CODATA, an
     independent confirmation of the 10-fold color-pair structure.
 
@@ -762,7 +762,7 @@ point:
     substrate-natural principles:
     - **Canonical Wedderburn:** `(1/4) · Σ_{λ ⊢ 4} dim_q V_λ =
       5/2 + (3/4)h²`. Proved theorem in
-      [`lambda_scale_all_c_i_family_a.py`](../../folio-assistant/computations/lambda_scale_all_c_i_family_a.py)
+      [`lambda_scale_all_c_i_family_a.py`](../../computations/lambda_scale_all_c_i_family_a.py)
       + Lean; on production via PR #895.
     - **Yekutieli quadratic:** `−G = −Vol(𝓑_3)/8 =
       −(per-cell hyperbolic volume)`. Comes from non-abelian-Stokes
@@ -828,7 +828,7 @@ point:
     against CODATA.
 
     Witness:
-    [`lambda-scale-alt-i-yekutieli-percell-numerical.witness.json`](../../folio-assistant/computations/lambda-scale-alt-i-yekutieli-percell-numerical.witness.json).
+    [`lambda-scale-alt-i-yekutieli-percell-numerical.witness.json`](../../computations/lambda-scale-alt-i-yekutieli-percell-numerical.witness.json).
 
 ## Verification criteria
 
@@ -868,13 +868,13 @@ distinguish a structural identity from a numerical coincidence.
 3. **Do not silently switch q_0 conventions.** The substrate value
    is `Q_50_DIGIT_STR =
    "1.10997859555418057528159407960950937799328227995870"` in
-   [`folio-assistant/computations/substrate/q_parameter.py`](../../folio-assistant/computations/substrate/q_parameter.py).
+   [`computations/substrate/q_parameter.py`](../../computations/substrate/q_parameter.py).
    Any candidate must be evaluated at exactly this q_0.
 
 ## Deliverables (when this work is done)
 
 1. **Witness JSON** —
-   `folio-assistant/computations/lambda-scale-qdilog-direct.witness.json`
+   `computations/lambda-scale-qdilog-direct.witness.json`
    with the candidate expression, the numerical agreement at 50 dps,
    the q_0-locality check, and the universe-closure verification.
 2. **Production wire-up** — replace `LAMBDA_PROTON_DOC` literal in
@@ -906,11 +906,11 @@ distinguish a structural identity from a numerical coincidence.
   §7 — open frontier #4 (this work).
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
   §4 (Φ_q vs Li_2^q) and §5 #1 (Migration Backlog).
-- [`folio-assistant/computations/substrate/q_parameter.py`](../../folio-assistant/computations/substrate/q_parameter.py)
+- [`computations/substrate/q_parameter.py`](../../computations/substrate/q_parameter.py)
   — substrate q_0 canonical pin.
-- [`folio-assistant/computations/bring_bloch_tier{1..5}_search_m_p.py`](../../folio-assistant/computations/)
+- [`computations/bring_bloch_tier{1..5}_search_m_p.py`](../../computations/)
   — the exhausted Bring-Bloch path; use as PSLQ scaffolding template.
-- [`folio-assistant/computations/lp_dual_solver.py`](../../folio-assistant/computations/lp_dual_solver.py)
+- [`computations/lp_dual_solver.py`](../../computations/lp_dual_solver.py)
   — LP/SDP infrastructure for Strategy D.
 
 ## Why this work matters

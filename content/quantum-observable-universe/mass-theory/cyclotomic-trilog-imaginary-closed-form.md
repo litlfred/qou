@@ -143,7 +143,7 @@ as $n \to \infty$.  Decays like $1/n$, with leading coefficient $\pi^3/3$.
 - Related orbit-sum:
   [`prop:cyclotomic-cl3-orbit-sum-general`](#prop:cyclotomic-cl3-orbit-sum-general)
 - Numerical witness (verified at $n = 3, 4, 5, 6, 7, 10, 11, 12, 13$ at 50 dps):
-  [`cyclotomic-trilog-imaginary.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/cyclotomic-trilog-imaginary.witness.json)
+  [`cyclotomic-trilog-imaginary.witness.json`](https://github.com/litlfred/qou/blob/main/computations/cyclotomic-trilog-imaginary.witness.json)
 - Geometric realisation question:
   [`conj:cl3-zeta5-geometric-realization`](#conj:cl3-zeta5-geometric-realization)
 - Period ledger: [`rem:transcendental-accounting`](#rem:transcendental-accounting)

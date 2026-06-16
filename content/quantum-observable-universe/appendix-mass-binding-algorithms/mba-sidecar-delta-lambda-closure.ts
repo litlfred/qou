@@ -9,7 +9,7 @@ export default algorithm({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/option_e_v9_all_symmetries.py",
+    script: "computations/option_e_v9_all_symmetries.py",
     status: "experimental",
   },
   tags: [

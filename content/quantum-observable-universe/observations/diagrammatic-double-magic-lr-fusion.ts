@@ -14,9 +14,9 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/lr_fusion_self_conj_test.py",
+    script: "computations/lr_fusion_self_conj_test.py",
     witness:
-      "folio-assistant/computations/lr-fusion-self-conj-test.witness.json",
+      "computations/lr-fusion-self-conj-test.witness.json",
     status: "verified",
   },
   cites: [

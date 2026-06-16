@@ -1,8 +1,8 @@
 # ¹H mass calculation — per-row provenance trace
 
 **Branch**: `claude/isotope-mass-witness-data-x5lCh`
-**Witness**: [`hydrogen-qshuffle-compound.witness.json`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/hydrogen-qshuffle-compound.witness.json) (full-order `*_q` compound)
-**Comparison**: [`hydrogen-step-by-step.witness.json`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/hydrogen-step-by-step.witness.json) (LO additive)
+**Witness**: [`hydrogen-qshuffle-compound.witness.json`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/hydrogen-qshuffle-compound.witness.json) (full-order `*_q` compound)
+**Comparison**: [`hydrogen-step-by-step.witness.json`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/hydrogen-step-by-step.witness.json) (LO additive)
 
 Per owner: "do a second analysis of where the numbers are coming
 from in each row of the ¹H computation."
@@ -34,20 +34,20 @@ witness file, computation script, and any convention caveats.
 
 | i | source | V̂_i^full | provenance |
 |---|---|---:|---|
-| 0 | proton g₀ | 0.98900732 | [`terms-2-3-atom-per-gen-mpfr-50dps.witness.json`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/terms-2-3-atom-per-gen-mpfr-50dps.witness.json), `data.results[proton].wedderburn_vols[0].full` |
+| 0 | proton g₀ | 0.98900732 | [`terms-2-3-atom-per-gen-mpfr-50dps.witness.json`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/terms-2-3-atom-per-gen-mpfr-50dps.witness.json), `data.results[proton].wedderburn_vols[0].full` |
 | 1 | proton g₁ | 0.97107016 | same witness, `[1].full` |
 | 2 | boundary identity | 1.0 | computed in `hydrogen_qshuffle_compound.py` line 100 — no crossings between strands 3 and 4 in the disjoint *_q convolution |
 | 3 | electron g₀ | 0.59384900 | same witness, `data.results[electron].wedderburn_vols[0].full` |
 
 **Computation**: 0.989 × 0.971 × 1.0 × 0.594 = 0.5703
 
-**V̂_i upstream chain (one level deeper)**: each `wedderburn_vols[i]` is computed by [`additive_wedderburn_volumes`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/terms_2_3_atom_per_gen_mpfr_50dps.py#L61-L96) at lines 61-96 of `terms_2_3_atom_per_gen_mpfr_50dps.py`. The crossing chain for each particle comes from `build_particle_crossings(h)` at lines 175-219 of the same file:
+**V̂_i upstream chain (one level deeper)**: each `wedderburn_vols[i]` is computed by [`additive_wedderburn_volumes`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/terms_2_3_atom_per_gen_mpfr_50dps.py#L61-L96) at lines 61-96 of `terms_2_3_atom_per_gen_mpfr_50dps.py`. The crossing chain for each particle comes from `build_particle_crossings(h)` at lines 175-219 of the same file:
 
 - **Proton g₀**: 7 crossings = `[(1,0)·3 (B₃)] + [(1,0) (uu)] + [(1,-h/2) (ud)] + [(1,0)·2 (gluon)]`
 - **Proton g₁**: 4 crossings = `[(1,-h)·3 (B₃)] + [(1,-h/2) (ud)]`
 - **Electron g₀**: 3 crossings = `[(1,0)·3 (σ₁³ trefoil)]`
 
-Each crossing tuple `(c, d)` represents the Hecke element `c·σ + d·I`; chain accumulates `(a, b)` (std channel matrix iteration), `sp_` (sym channel scalar character `∏(c·q+d)`), `ap_` (alt channel scalar character `∏(-c·q⁻¹+d)`), then combines via Wedderburn weights from [`wedderburn_weights_n3`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/terms_2_3_atom_per_gen_mpfr_50dps.py#L138) (proton, n=3) or `wedderburn_weights_n2` (electron, n=2).
+Each crossing tuple `(c, d)` represents the Hecke element `c·σ + d·I`; chain accumulates `(a, b)` (std channel matrix iteration), `sp_` (sym channel scalar character `∏(c·q+d)`), `ap_` (alt channel scalar character `∏(-c·q⁻¹+d)`), then combines via Wedderburn weights from [`wedderburn_weights_n3`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/terms_2_3_atom_per_gen_mpfr_50dps.py#L138) (proton, n=3) or `wedderburn_weights_n2` (electron, n=2).
 
 **MeV conversion**: 0.5703 × 0.51099895 MeV/cat = 0.2914 MeV.
 
@@ -65,7 +65,7 @@ Each crossing tuple `(c, d)` represents the Hecke element `c·σ + d·I`; chain 
 | 3 | −0.59385 | −0.52355672 | +0.52355672 |
 | Σ | | | **2.96491336** |
 
-**Li_2^q definition**: `Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q)` where `[n]_q = (q^n − q^{-n})/(q − q^{-1})`. Implementation: [`_li_2_q_util.py`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/_li_2_q_util.py).
+**Li_2^q definition**: `Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q)` where `[n]_q = (q^n − q^{-n})/(q − q^{-1})`. Implementation: [`_li_2_q_util.py`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/_li_2_q_util.py).
 
 **Convention note**: radius of convergence is `|z| < q ≈ 1.110` (NOT `|z| < 1` — by ratio test, `|a_{n+1}/a_n| → |z|/q`). The bug-fix in this commit allows `Li_2^q(−1)` to evaluate finitely (it was returning `inf` before, breaking the boundary-gen contribution).
 
@@ -97,7 +97,7 @@ Each crossing tuple `(c, d)` represents the Hecke element `c·σ + d·I`; chain 
 
 **Formula**: `T4 = m_e · τ(C_dim_q) = m_e · Σ_{λ ⊢ 3A} 1/dim_q(λ)`
 
-**Source**: [`term4_frobenius_codim(A)`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py#L285) in `paper_six_term_isotope_sweep.py`. Per `thm:frobenius-codim-universal`.
+**Source**: [`term4_frobenius_codim(A)`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/sweeps/paper_six_term_isotope_sweep.py#L285) in `paper_six_term_isotope_sweep.py`. Per `thm:frobenius-codim-universal`.
 
 **A used**: A=1 (¹H has 1 nucleon). Partitions of 3·1 = 3 are `(3), (2,1), (1,1,1)`. Hook-length formula gives:
 - dim_q((3)) = [3]_q!/([3]_q·[2]_q·[1]_q) = 1
@@ -110,7 +110,7 @@ Hmm so T4_cat = τ(C_dim_q) = 1.636. Let me re-check: 1 + 1/[2]_q + 1 at q_0 ≈
 
 **HARD BREAK history (P1.C, 2026-05-12)**: the legacy form `A · m_e · (2 + 1/[2]_q)` was REMOVED — it overcounted at A=2 by 1.56×, A=3 by 2.95×, A=4 by 4.44×. The canonical form is per-3A directly.
 
-**Provenance**: read from [`proton-mass-full-tower-50dps.witness.json`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/proton-mass-full-tower-50dps.witness.json), `data.particles.proton.T4_Frobenius_50dps`. ¹H compound uses the proton's T4 (same A=1 nucleon count).
+**Provenance**: read from [`proton-mass-full-tower-50dps.witness.json`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/proton-mass-full-tower-50dps.witness.json), `data.particles.proton.T4_Frobenius_50dps`. ¹H compound uses the proton's T4 (same A=1 nucleon count).
 
 **Value**: 1.63628710 cat = 0.83614099 MeV.
 
@@ -118,7 +118,7 @@ Hmm so T4_cat = τ(C_dim_q) = 1.636. Let me re-check: 1 + 1/[2]_q + 1 at q_0 ≈
 
 **Formula**: `T5 = a_K · B_bulk + f_Zdep · B_Zdep + B_shell (if A≥4)`
 
-In MeV units; division by m_e gives cat-units. Per `_t5_cat_units_for(A, Z, N)` at [line 122 of `derive_m_p_hecke_full_tower_50dps.py`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/derive_m_p_hecke_full_tower_50dps.py#L122).
+In MeV units; division by m_e gives cat-units. Per `_t5_cat_units_for(A, Z, N)` at [line 122 of `derive_m_p_hecke_full_tower_50dps.py`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/derive_m_p_hecke_full_tower_50dps.py#L122).
 
 **A used**: A_max_grade = 2 (the proton's categorical A from max GS filtration grade). NOT A_nucleon. For ¹H compound, the categorical A is also 2 because the proton dominates the GS grade.
 
@@ -126,8 +126,8 @@ In MeV units; division by m_e gives cat-units. Per `_t5_cat_units_for(A, Z, N)` 
 
 | Sub-term | Source | Notes |
 |---|---|---|
-| a_K = aK_v2(1, 0) | [`term5_v2_chirality.aK_v2`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/term5_v2_chirality.py#L113) | V2 Gram-matrix chirality `τ(β·β_mirror⁻¹)` — substrate-derived |
-| B_bulk(2, 1, 0, sign) | [`bw_chirality_isotopes.B_bulk`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/bw_chirality_isotopes.py#L98) | Burnside–Wedderburn bulk |
+| a_K = aK_v2(1, 0) | [`term5_v2_chirality.aK_v2`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/term5_v2_chirality.py#L113) | V2 Gram-matrix chirality `τ(β·β_mirror⁻¹)` — substrate-derived |
+| B_bulk(2, 1, 0, sign) | [`bw_chirality_isotopes.B_bulk`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/bw_chirality_isotopes.py#L98) | Burnside–Wedderburn bulk |
 | f_Zdep · B_Zdep(2, 1, 0) | `bw_chirality_isotopes.B_Zdep`, `f_Zdep_scale = h · B2` | h·[2]_q² (line 85) |
 | B_shell | 0 (A<4) | shell only at A≥4 |
 
@@ -141,13 +141,13 @@ In MeV units; division by m_e gives cat-units. Per `_t5_cat_units_for(A, Z, N)` 
 
 **Formula**: `T6 = Σ residues at non-zero roots-of-unity of (Φ_q · tr_M)(u)` on the u-plane
 
-**Source**: [`term_6_habiro_residue_mp(A)`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/mass_formula_6term_mpfr_50dps.py#L304) reads from bridge witness [`term6-habiro-residue-mpfr-50dps.witness.json`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/term6-habiro-residue-mpfr-50dps.witness.json).
+**Source**: [`term_6_habiro_residue_mp(A)`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/mass_formula_6term_mpfr_50dps.py#L304) reads from bridge witness [`term6-habiro-residue-mpfr-50dps.witness.json`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/term6-habiro-residue-mpfr-50dps.witness.json).
 
 **A used**: A_nucleon = 1 (¹H has 1 proton). NOT A_categorical (=2). This is the KEY-CONVENTION CAVEAT documented inline in `derive_m_p_hecke_full_tower_50dps.py` (audit GAP #19, two-axis-A interpretation). The bridge is keyed `"A=1" → +1.92 MeV (proton's T6)`, `"A=2" → +109 MeV (deuteron's T6)`, etc. Looking up by A_nucleon avoids returning the deuteron's value for a free proton.
 
 **Bridge witness chain**:
-- Bridge written by [`bridge_term6_habiro_to_50dps.py`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/bridge_term6_habiro_to_50dps.py) (this PR)
-- Original source: [`term6_residues_at_roots.py`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/term6_residues_at_roots.py) — canonical T6 producer using Markov-peel partial-fraction split on u-plane (T6 dual-path GAP #14: also a legacy Schur-Weyl-weighted producer `term6_full_pole_sum.py` with explicit non-canonical caveat)
+- Bridge written by [`bridge_term6_habiro_to_50dps.py`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/bridge_term6_habiro_to_50dps.py) (this PR)
+- Original source: [`term6_residues_at_roots.py`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/term6_residues_at_roots.py) — canonical T6 producer using Markov-peel partial-fraction split on u-plane (T6 dual-path GAP #14: also a legacy Schur-Weyl-weighted producer `term6_full_pole_sum.py` with explicit non-canonical caveat)
 
 **Value**: 1.92113571 cat = 0.98169833 MeV (T6_MeV / m_e_MeV = 0.98170 / 0.511 = 1.921).
 
@@ -155,7 +155,7 @@ In MeV units; division by m_e gives cat-units. Per `_t5_cat_units_for(A, Z, N)` 
 
 **Formula**: `T7 = α_5 · S_crystal(A) = α_5 · Σ_{λ ⊢ 3A, ht(λ)≤6} w_λ · χ_λ(W_atom)|_{q=0}`
 
-**Why 0 for ¹H**: the producer [`term7_alpha5_crystal_derivation.py`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/folio-assistant/computations/term7_alpha5_crystal_derivation.py) only covers atoms `{D, ³He, T, ⁴He}` (A≥2 pure-Artin words). A=1 nucleons (proton, neutron) have Hecke-coefficient chains with **Wedderburn-middle (1, −h/2) ud-quark entries** that have **no q=0 limit** (h = q − q⁻¹ → −∞ at q=0). See audit GAPs #20-21.
+**Why 0 for ¹H**: the producer [`term7_alpha5_crystal_derivation.py`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/computations/term7_alpha5_crystal_derivation.py) only covers atoms `{D, ³He, T, ⁴He}` (A≥2 pure-Artin words). A=1 nucleons (proton, neutron) have Hecke-coefficient chains with **Wedderburn-middle (1, −h/2) ud-quark entries** that have **no q=0 limit** (h = q − q⁻¹ → −∞ at q=0). See audit GAPs #20-21.
 
 **Why partial fix was rejected**: extending ATOMS with pure-Artin SKELETONS (dropping the ud-middle entries) gave `S_crystal = 0` for all A=1 atoms — confirming T7 ≡ 0 even under skeleton interpretation. Owner rejected this approach 2026-05-17; correct fix is to GENERALISE `crystal_chi_lambda` to consume (c, d, gen) Hecke chains directly with q=0 limit evaluated as a finite ratio.
 

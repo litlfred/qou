@@ -55,9 +55,9 @@ import { proposition } from "../../schema/builders";
  *     (q-symmetric pairing magic shell).
  *
  * Witness:
- *   folio-assistant/computations/he4-canonical-tr-m-block-fingerprint.witness.json
+ *   computations/he4-canonical-tr-m-block-fingerprint.witness.json
  * Probe:
- *   folio-assistant/computations/probe_he4_canonical_tr_m_fingerprint.py
+ *   computations/probe_he4_canonical_tr_m_fingerprint.py
  * Audit:
  *   docs/audits/2026-05-15-three-pr-integration.md §F1 ⁴He
  */
@@ -68,8 +68,8 @@ export default proposition({
   uses: ["def:two-row-stratum"],
   computation: {
     engine: "scipy",
-    script: "folio-assistant/computations/probe_he4_canonical_tr_m_fingerprint.py",
-    witness: "folio-assistant/computations/he4-canonical-tr-m-block-fingerprint.witness.json",
+    script: "computations/probe_he4_canonical_tr_m_fingerprint.py",
+    witness: "computations/he4-canonical-tr-m-block-fingerprint.witness.json",
     status: "verified",
     requires: ["numpy", "scipy", "sympy", "mpmath"],
   },

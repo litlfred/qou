@@ -28,5 +28,5 @@ The result is **NEGATIVE**. This confirms that stitching simple per-cell terms (
 As predicted in the scaffold guards, the divergence at the muon anchor indicates that a fibre-level Habiro element is required (mirroring the parallel $\alpha_{EM}$ PR #1511 pattern). The structural derivation of the 54 ppb $m_p$ correction cannot rely on flat Yekutieli cell integration; it MUST incorporate the full co-simplicial crossed-groupoid structure and the Habiro elements that provide anchor-independent closures.
 
 ## Deliverables
-- **Probe script:** `folio-assistant/computations/yekutieli_mp_substrate_closure_probe.py`
-- **Witness:** `folio-assistant/computations/yekutieli-mp-substrate-closure-probe.witness.json`
+- **Probe script:** `computations/yekutieli_mp_substrate_closure_probe.py`
+- **Witness:** `computations/yekutieli-mp-substrate-closure-probe.witness.json`

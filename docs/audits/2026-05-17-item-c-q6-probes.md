@@ -15,8 +15,8 @@ witness:
 
 | Source | T6 at A=1 (proton) |
 |--------|-------------------|
-| [`term6-habiro-residue-mpfr-50dps.witness.json`](../../folio-assistant/computations/term6-habiro-residue-mpfr-50dps.witness.json) (canonical 50 dps) | **0.98169832816688179653645 MeV** |
-| [`mass-formula-6term-mpfr-50dps.witness.json`](../../folio-assistant/computations/mass-formula-6term-mpfr-50dps.witness.json) on main (aggregator output) | 0.68071547375114662431009 MeV |
+| [`term6-habiro-residue-mpfr-50dps.witness.json`](../../computations/term6-habiro-residue-mpfr-50dps.witness.json) (canonical 50 dps) | **0.98169832816688179653645 MeV** |
+| [`mass-formula-6term-mpfr-50dps.witness.json`](../../computations/mass-formula-6term-mpfr-50dps.witness.json) on main (aggregator output) | 0.68071547375114662431009 MeV |
 | The "T6 ~ 0.68" cited in #671 audit | matches the **stale** aggregator value, NOT the canonical residue |
 
 `term_6_habiro_residue_mp(A=1)` in

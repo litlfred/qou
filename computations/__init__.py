@@ -1,4 +1,4 @@
-"""folio-assistant/computations — root namespace for the QOU
+"""computations — root namespace for the QOU
 compute scripts.
 
 Phase 0 of the subdirectory refactor (see
@@ -16,11 +16,11 @@ in `_path_bridge.py`.
 Adding this file is a no-op for every existing import pattern in
 the repo:
 
-  • `python3 folio-assistant/computations/X.py` keeps working —
+  • `python3 computations/X.py` keeps working —
     Python prepends the script's dir to sys.path automatically.
   • `from X import Y` from a sibling script keeps working — that
     dir is already on sys.path from the run above.
-  • Tools that scan `folio-assistant/computations/*.py` (audit-
+  • Tools that scan `computations/*.py` (audit-
     wiring, witness-pipeline.yml, run-pipeline.py, …) keep
     finding every script; `__init__.py` doesn't change directory
     listing semantics.

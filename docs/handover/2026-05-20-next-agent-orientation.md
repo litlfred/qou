@@ -79,8 +79,8 @@ Do **not** skim. Each one assumes the prior reads landed.
 
 | Module | Purpose | When to use |
 |---|---|---|
-| [`folio-assistant/computations/closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py) | Closed-form `tr_M(𝓑_K)` from H_3 building blocks | Anywhere you'd otherwise call `chi_lambda_braid` over `partitions_of(3A)` to compute the scalar `tr_M`. 22.7M× faster at ⁴He. |
-| [`folio-assistant/computations/canonical_braid_marshalling.py`](../../folio-assistant/computations/canonical_braid_marshalling.py) | Centralised `(c, d, gen) → (sign, gen)` and `→ (gen, cross_type)` marshalling | Whenever you marshal an `atom_braid_word_3A` output for `chi_lambda_braid` or `q_character_on_braid_word`. **Do not re-implement** — Copilot will flag inline marshalling. |
+| [`computations/closed_form_tau_M.py`](../../computations/closed_form_tau_M.py) | Closed-form `tr_M(𝓑_K)` from H_3 building blocks | Anywhere you'd otherwise call `chi_lambda_braid` over `partitions_of(3A)` to compute the scalar `tr_M`. 22.7M× faster at ⁴He. |
+| [`computations/canonical_braid_marshalling.py`](../../computations/canonical_braid_marshalling.py) | Centralised `(c, d, gen) → (sign, gen)` and `→ (gen, cross_type)` marshalling | Whenever you marshal an `atom_braid_word_3A` output for `chi_lambda_braid` or `q_character_on_braid_word`. **Do not re-implement** — Copilot will flag inline marshalling. |
 
 ### 3.3 New documentation surfaces
 
@@ -105,8 +105,8 @@ Do **not** skim. Each one assumes the prior reads landed.
    `σ_avg = (σ + σ^{-1})/2 = σ - h/2·I`. The owner's intuition is that
    it should reflect the 3-color-tube structure (proton uud / neutron udd)
    weighted by quark mass. Empirical evidence in
-   [`probe_pn_flavor_asymmetry.py`](../../folio-assistant/computations/probe_pn_flavor_asymmetry.py)
-   and [`probe_per_sheet_flavor_nonin.py`](../../folio-assistant/computations/probe_per_sheet_flavor_nonin.py):
+   [`probe_pn_flavor_asymmetry.py`](../../computations/probe_pn_flavor_asymmetry.py)
+   and [`probe_per_sheet_flavor_nonin.py`](../../computations/probe_per_sheet_flavor_nonin.py):
    the sum-weighted scheme reproduces Δm_{n-p} to ~0.14% of CODATA.
    **Status: queued.** `closed_form_tau_M.py` exposes
    `pn_convention="bring_color_weighted"` as a placeholder that raises
@@ -128,7 +128,7 @@ Do **not** skim. Each one assumes the prior reads landed.
    and Hyp B (T at q², spread 81%) were refuted by the probe. The
    Wenzl-bridge symbolic implementation uses a deeper convention
    mismatch (likely a partition-structure-dependent y_λ normalization).
-   See [`normalization-reconciliation-phase5l2.witness.json`](../../folio-assistant/computations/normalization-reconciliation-phase5l2.witness.json).
+   See [`normalization-reconciliation-phase5l2.witness.json`](../../computations/normalization-reconciliation-phase5l2.witness.json).
 
 ### 4.2 Pipeline-discipline migration backlog (cheat sheet §5)
 
@@ -218,7 +218,7 @@ this is almost certainly the convention mismatch.
 
 ### 5.6 Witness drift on rebase
 
-`folio-assistant/computations/*.witness.json` files drift on rebase
+`computations/*.witness.json` files drift on rebase
 (`computedAt`, `commitSha`, `durationMs`, `files_scanned` change between
 runs). The `/prepare-merge` skill auto-resolves this. Don't try to
 hand-merge witness JSONs — re-run the four self-emitting validators

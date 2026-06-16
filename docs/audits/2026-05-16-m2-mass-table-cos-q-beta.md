@@ -108,7 +108,7 @@ specifically:
 
 ## 5  Witness
 
-[`folio-assistant/computations/m2-codata-vs-cos-q-beta.witness.json`](../../folio-assistant/computations/m2-codata-vs-cos-q-beta.witness.json)
+[`computations/m2-codata-vs-cos-q-beta.witness.json`](../../computations/m2-codata-vs-cos-q-beta.witness.json)
 records all 6 atoms × both Q_β modes with full per-term breakdown
 (binding T1, T2T3, T4, T5, T6 contributions; predicted vs CODATA;
 chirality factor a_K).

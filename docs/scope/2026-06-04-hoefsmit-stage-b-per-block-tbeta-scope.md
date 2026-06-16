@@ -39,7 +39,7 @@ harder, motivates the KLR/crystal upstream infra scope).
 
 ## Infra blocker
 
-The Python fallback in `folio-assistant/computations/hecke/hecke_characters.py::chi_lambda_braid` only supports `q_value == q_0`:
+The Python fallback in `computations/hecke/hecke_characters.py::chi_lambda_braid` only supports `q_value == q_0`:
 
 ```
 ValueError: chi_lambda_braid() Python fallback only supports q_value == q_0;
@@ -116,8 +116,8 @@ natural sequencing.
 
 ## References
 
-- Stage A producer: [`folio-assistant/computations/qbeta/qbeta_hoefsmit_tbeta_matrix_build_probe.py`](../../folio-assistant/computations/qbeta/qbeta_hoefsmit_tbeta_matrix_build_probe.py)
-- Cross-anchor c_3 inversion: [`folio-assistant/computations/qbeta/qbeta_utils.py::c3_target_at`](../../folio-assistant/computations/qbeta/qbeta_utils.py)
+- Stage A producer: [`computations/qbeta/qbeta_hoefsmit_tbeta_matrix_build_probe.py`](../../computations/qbeta/qbeta_hoefsmit_tbeta_matrix_build_probe.py)
+- Cross-anchor c_3 inversion: [`computations/qbeta/qbeta_utils.py::c3_target_at`](../../computations/qbeta/qbeta_utils.py)
 - Saturation context: [`docs/audits/2026-06-04-three-paths-refuted-roadmap-update.md`](../audits/2026-06-04-three-paths-refuted-roadmap-update.md)
 - Coordination ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
 - Rust kernel home: [`tools/pyhecke-native/`](../../tools/pyhecke-native/)

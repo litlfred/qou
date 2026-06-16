@@ -99,8 +99,8 @@ context.  No closure attempt.
 
 ## Cross-refs
 
-- `folio-assistant/computations/magic_A_formula.py`
-- `folio-assistant/computations/binding_ladder_catalog.py`
-- `folio-assistant/computations/binding_a3plus_arccosh_growth_split.py` (PR #1726)
+- `computations/magic_A_formula.py`
+- `computations/binding_ladder_catalog.py`
+- `computations/binding_a3plus_arccosh_growth_split.py` (PR #1726)
 - `docs/canonical-derivation-cheat-sheet.md` §9.3 line 411
 - `docs/audits/2026-06-02-binding-A3plus-full-theta-verdict.md` (PR #1726)

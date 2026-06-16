@@ -47,8 +47,8 @@ element [`prop:alpha-em-habiro-bar-involution`](#prop:alpha-em-habiro-bar-involu
 $H = [2]_q(1-h^2\alpha) = 2\cosh\lambda\,(1-h^2\alpha)$, is the **bar-even** next-order
 correction (a $\cosh$ carrier $\times$ $\sinh^2$ correction), opposite the bar-odd vdW.
 
-At $q_0$: $\cosh(2\lambda) \approx :val[vdw_cosh_2lambda]{precision=5, witness=folio-assistant/computations/vdw-pskew-sinh-probe.witness.json}$,
-and the bar-odd residual $\sinh(2\lambda)(e_+-e_-) \approx :val[vdw_bar_odd_residual]{precision=5, witness=folio-assistant/computations/vdw-pskew-sinh-probe.witness.json}$ (exact, no fit).
+At $q_0$: $\cosh(2\lambda) \approx :val[vdw_cosh_2lambda]{precision=5, witness=computations/vdw-pskew-sinh-probe.witness.json}$,
+and the bar-odd residual $\sinh(2\lambda)(e_+-e_-) \approx :val[vdw_bar_odd_residual]{precision=5, witness=computations/vdw-pskew-sinh-probe.witness.json}$ (exact, no fit).
 
 ## Narrowed probe
 

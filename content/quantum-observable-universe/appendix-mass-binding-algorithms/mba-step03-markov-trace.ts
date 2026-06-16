@@ -11,7 +11,7 @@ export default algorithm({
   computation: {
     engine: "python+mpmath",
     script: "qou-mass/src/qou_mass/api.py",
-    witness: "folio-assistant/computations/markov-free-energy-qvalues.witness.json",
+    witness: "computations/markov-free-energy-qvalues.witness.json",
     status: "verified",
   },
   tags: [

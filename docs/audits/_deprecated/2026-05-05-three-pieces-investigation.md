@@ -7,9 +7,9 @@
 **Refs:**
 - [`prop:rho-k-graded-expansion`](../../content/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md)
 - [`docs/audits/2026-05-05-kashaev-limit-pair-gen-investigation.md`](2026-05-05-kashaev-limit-pair-gen-investigation.md)
-- [`folio-assistant/computations/piece1_dimensional_bridge_probe.py`](../../folio-assistant/computations/piece1_dimensional_bridge_probe.py)
-- [`folio-assistant/computations/piece2_linked_cluster_probe.py`](../../folio-assistant/computations/piece2_linked_cluster_probe.py)
-- [`folio-assistant/computations/piece3_interface_vs_intra_probe.py`](../../folio-assistant/computations/piece3_interface_vs_intra_probe.py)
+- [`computations/piece1_dimensional_bridge_probe.py`](../../computations/piece1_dimensional_bridge_probe.py)
+- [`computations/piece2_linked_cluster_probe.py`](../../computations/piece2_linked_cluster_probe.py)
+- [`computations/piece3_interface_vs_intra_probe.py`](../../computations/piece3_interface_vs_intra_probe.py)
 - Sibling PR [#546](https://github.com/litlfred/qou/pull/546) — closed-form $\mathrm{tr}_M(p)$ with leading $-1/12$
 - Sibling PR [#545](https://github.com/litlfred/qou/pull/545) — Term-6 closed-form $A \geq 2$
 

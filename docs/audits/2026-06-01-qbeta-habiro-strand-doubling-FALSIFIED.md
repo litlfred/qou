@@ -24,14 +24,14 @@ The Φ_8 categorical interpretation in [`2026-06-01-qbeta-habiro-phi8-interpreta
 
 ## Evidence
 
-[`folio-assistant/computations/_helium_habiro_coefficient_extract.py`](../../folio-assistant/computations/_helium_habiro_coefficient_extract.py) extracted the Habiro coefficients for ³He (M=16) and ⁴He (M=20) via the Phase 5q closed forms:
+[`computations/_helium_habiro_coefficient_extract.py`](../../computations/_helium_habiro_coefficient_extract.py) extracted the Habiro coefficients for ³He (M=16) and ⁴He (M=20) via the Phase 5q closed forms:
 
 - `tr_M(³He, q) = τ_p² · τ_n · z(q)²`
 - `tr_M(⁴He, q) = τ_p² · τ_n² · z(q)² · (z − h)(q)`
 
 Witnesses:
-- [`habiro-coefficients-helium-3.witness.json`](../../folio-assistant/computations/habiro-coefficients-helium-3.witness.json)
-- [`habiro-coefficients-helium-4.witness.json`](../../folio-assistant/computations/habiro-coefficients-helium-4.witness.json)
+- [`habiro-coefficients-helium-3.witness.json`](../../computations/habiro-coefficients-helium-3.witness.json)
+- [`habiro-coefficients-helium-4.witness.json`](../../computations/habiro-coefficients-helium-4.witness.json)
 
 The cross-pair factorization on these witnesses gave:
 

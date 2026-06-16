@@ -95,7 +95,7 @@ $$
 $$
 
 The orbit-sum identity proved by the
-[`bring-trilog-zeta5-depth-3.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring-trilog-zeta5-depth-3.witness.json)
+[`bring-trilog-zeta5-depth-3.witness.json`](https://github.com/litlfred/qou/blob/main/computations/bring-trilog-zeta5-depth-3.witness.json)
 is the **Galois-invariant trace** of this $S_5$-action. The
 **Galois-non-invariant** components — individual $\mathrm{Li}_3(\zeta_5^k)$
 values — give a 4-dim $\mathbb{Q}$-vector space of depth-3 periods

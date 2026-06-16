@@ -18,8 +18,8 @@ not proof — that $X$ is irreducible.*
 
 ### PSLQ search results
 
-[`cl3_zeta5_pslq_search.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/cl3_zeta5_pslq_search.py),
-[witness](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/cl3-zeta5-pslq-search.witness.json):
+[`cl3_zeta5_pslq_search.py`](https://github.com/litlfred/qou/blob/main/computations/cl3_zeta5_pslq_search.py),
+[witness](https://github.com/litlfred/qou/blob/main/computations/cl3-zeta5-pslq-search.witness.json):
 
 | Search | Candidate basis | PSLQ relation found? |
 |---|---|---|

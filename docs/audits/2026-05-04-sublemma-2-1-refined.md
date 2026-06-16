@@ -21,8 +21,8 @@ that document gives the categorical proof of the **scalar form** of Sub-lemma 2.
 - [`docs/audits/2026-05-04-confinement-nf-structure-forcing-proof.md`](2026-05-04-confinement-nf-structure-forcing-proof.md) — original skeleton
 - [`docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md`](2026-05-04-sub-lemma-2-1-categorical-proof.md) — main's scalar-form proof (PR #539)
 - [`docs/audits/2026-05-04-sublemma-2-1-categorical-proof.md`](2026-05-04-sublemma-2-1-categorical-proof.md) — operator-valued proof (this branch)
-- [`folio-assistant/computations/sublemma_2_1_A_operator_extract.py`](../../folio-assistant/computations/sublemma_2_1_A_operator_extract.py) — operator-valued extraction
-- [`folio-assistant/computations/sublemma-2-1-A-operator-extract.witness.json`](../../folio-assistant/computations/sublemma-2-1-A-operator-extract.witness.json)
+- [`computations/sublemma_2_1_A_operator_extract.py`](../../computations/sublemma_2_1_A_operator_extract.py) — operator-valued extraction
+- [`computations/sublemma-2-1-A-operator-extract.witness.json`](../../computations/sublemma-2-1-A-operator-extract.witness.json)
 
 ## Empirical falsification of the scalar formula
 

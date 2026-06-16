@@ -46,7 +46,7 @@ use hecke_engine::seminormal_mpfr::chi_lambda_braid_mpfr;
 /// f64 representation of the substrate parameter `q_0` (calibrated
 /// per `prop:three-calibration-inputs`).  The canonical 50-dps
 /// decimal lives in
-/// `folio-assistant/computations/q_parameter.py::Q_50_DIGIT_STR`; this
+/// `computations/q_parameter.py::Q_50_DIGIT_STR`; this
 /// literal is the f64 truncation (Python `float(Q_50_DIGIT_STR)`).
 ///
 /// **Bug fix (2026-05-18, PR #725 Copilot review)**: the original
@@ -243,7 +243,7 @@ fn main() {
     let mpfr_tolerance = 1.0e-45_f64;
     let mpfr_dps = 50_u32;
     // Canonical 50-dps substrate q_0 from
-    // folio-assistant/computations/q_parameter.py::Q_50_DIGIT_STR
+    // computations/q_parameter.py::Q_50_DIGIT_STR
     // (fixed in PR #725 per Copilot review: prior `1.10977…` literal
     // was a typo, making cross-validation tautologically agree at
     // the wrong q.)

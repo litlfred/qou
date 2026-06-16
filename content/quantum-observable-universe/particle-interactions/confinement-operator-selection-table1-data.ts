@@ -6,8 +6,8 @@ export default table({
   tags: ["extracted-table"],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/confinement_operator_selection.py",
-    witness: "folio-assistant/computations/confinement-operator-selection.witness.json",
+    script: "computations/confinement_operator_selection.py",
+    witness: "computations/confinement-operator-selection.witness.json",
     status: "experimental",
   },
 });

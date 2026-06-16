@@ -115,11 +115,11 @@ full `tr_M` formalization (currently has `sorry`s).
 
 ## Cross-references
 
-- `folio-assistant/computations/mass_at_3A_proper.py:267` — root
+- `computations/mass_at_3A_proper.py:267` — root
   of the informal pattern
-- `folio-assistant/computations/substrate/hecke_core.py` — canonical braid
+- `computations/substrate/hecke_core.py` — canonical braid
   word definitions (`_PROTON_G0`, etc.)
-- `folio-assistant/computations/closed_form_tau_M.py` — Phase 5q
+- `computations/closed_form_tau_M.py` — Phase 5q
   closed form (already uses `𝓑_p` / `𝓑_n` notation)
 - `content/quantum-observable-universe/lean/QOU/AtomicMass.lean` —
   current Lean nucleon typing

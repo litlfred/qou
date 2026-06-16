@@ -51,7 +51,7 @@ the bar-conjugate pair on a single Type B crystal node corresponds to
 a CPT pair of QOU particles.  The empirical evidence is the
 $\det \rho_\lambda(w) \cdot \det \rho_{\lambda'}(w) = \pm 1$
 identity for every conjugate-partition pair $(\lambda, \lambda')$
-([conjugate-pair det law](folio-assistant/computations/det_pair_law.py));
+([conjugate-pair det law](computations/det_pair_law.py));
 this identity is the bar-involution acting on Wedderburn blocks and
 is the strongest available shadow of the conjecture without a full
 KLR-folding proof.*

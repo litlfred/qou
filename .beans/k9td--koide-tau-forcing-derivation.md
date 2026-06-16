@@ -39,7 +39,7 @@ own $(m_e, m_\mu, m_\tau)$ predictions land on $Q=2/3$.
 
 ## Corpus state (session start)
 
-`grep -rli koide` over `content/ docs/ folio-assistant/computations/`
+`grep -rli koide` over `content/ docs/ computations/`
 returns **ZERO** — this is **greenfield**. (Background Explore agent
 confirming/widening; results to be folded in.)
 

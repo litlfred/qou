@@ -3,7 +3,7 @@
 **Date:** 2026-05-06
 **Audit baseline:** HEAD `bd3fe56d` (after `audit-wiring.ts` registry-aware
 patch and the bulk move of 328 dead-exploratory probes into
-`folio-assistant/computations/_deprecated/`).
+`computations/_deprecated/`).
 
 ```
                  baseline    after registry/auditOnly patch    after deprecation move    after unwrap chains (this PR)
@@ -35,10 +35,10 @@ acknowledging the failure.
 
 | Witness | Assertion summary | Suggested action |
 |---|---|---|
-| [`chi-inter-and-nchir-rank`](../../folio-assistant/computations/_deprecated/chi-inter-and-nchir-rank.witness.json) | 3 assertions, 1 failed: "D: dominant-block rank vs paper n_chir" | Wire to a `prop:` for `n_chir`; if no such prop exists, demote to `audit-only` with a probe-report MD |
-| [`level-k-binding`](../../folio-assistant/computations/_deprecated/level-k-binding.witness.json) | 1/1 failed: "N≡N triple bond at k=3" | Likely paired with `molecular-binding-level-k`; investigate `level_k_binding.py` source |
-| [`molecular-binding-level-k`](../../folio-assistant/computations/_deprecated/molecular-binding-level-k.witness.json) | 1/1 failed: "k=3 single bond" | See above — both target the level-k molecular-binding prediction |
-| [`proton-neutron-mass-error`](../../folio-assistant/computations/_deprecated/proton-neutron-mass-error.witness.json) | 1/1 failed: "tower ratio m_n/m_p matches CODATA within 10%" | Cross-link to `categorical-proton g_A` audit (memory: borromean-axial-coupling.py:30-65); investigate if this is the same y_λ-weighted Markov-trace gap |
+| [`chi-inter-and-nchir-rank`](../../computations/_deprecated/chi-inter-and-nchir-rank.witness.json) | 3 assertions, 1 failed: "D: dominant-block rank vs paper n_chir" | Wire to a `prop:` for `n_chir`; if no such prop exists, demote to `audit-only` with a probe-report MD |
+| [`level-k-binding`](../../computations/_deprecated/level-k-binding.witness.json) | 1/1 failed: "N≡N triple bond at k=3" | Likely paired with `molecular-binding-level-k`; investigate `level_k_binding.py` source |
+| [`molecular-binding-level-k`](../../computations/_deprecated/molecular-binding-level-k.witness.json) | 1/1 failed: "k=3 single bond" | See above — both target the level-k molecular-binding prediction |
+| [`proton-neutron-mass-error`](../../computations/_deprecated/proton-neutron-mass-error.witness.json) | 1/1 failed: "tower ratio m_n/m_p matches CODATA within 10%" | Cross-link to `categorical-proton g_A` audit (memory: borromean-axial-coupling.py:30-65); investigate if this is the same y_λ-weighted Markov-trace gap |
 
 ## B. malformed (15) — body fails `JSON.parse`
 
@@ -94,7 +94,7 @@ content block was renamed without updating the witness.
 
 **Suggested action**: either fix the `contentBlock` field on the
 witness to match the real label, *and* add `computation.witness:
-"folio-assistant/computations/<name>.witness.json"` to the consumer
+"computations/<name>.witness.json"` to the consumer
 block; or drop the `contentBlock` claim and convert to `auditOnly`.
 
 ### C.2 — No content-block self-claim (8)
@@ -135,6 +135,6 @@ bun run scripts/audit-wiring.ts --out-dir /tmp/audit-out
 column -t -s$'\t' /tmp/audit-out/orphans.tsv
 ```
 
-Witnesses moved to `folio-assistant/computations/_deprecated/` are
+Witnesses moved to `computations/_deprecated/` are
 intentionally excluded from the audit glob (`*.witness.json` without
 `**/`); see `_deprecated/README.md` for the revival procedure.

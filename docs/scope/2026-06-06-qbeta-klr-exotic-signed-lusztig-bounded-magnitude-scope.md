@@ -28,7 +28,7 @@ For sl_3 / ω_1 / ℓ=2 there are only **2** Demazure characters (`w = s_1 s_2` 
 
 ### N2. cont. 11's 1281-sweep covers natural larger-λ Demazure atoms
 
-[`qbeta_composite_crossanchor_2factor_sweep.py`](../../folio-assistant/computations/qbeta/qbeta_composite_crossanchor_2factor_sweep.py)'s `build_atoms()` includes `Demazure(2,1) = 2·[3]_q` (the S_3 (2,1) partition character) and SYT-major-index `q + q²`. Combined under `{×, ÷, +, −}` over the full atom set (~20 atoms) it generated 1281 2-factor candidates including `D_w_atoms × (q;q)_k`. **All 1281 failed cross-anchor at 1 ppm.**
+[`qbeta_composite_crossanchor_2factor_sweep.py`](../../computations/qbeta/qbeta_composite_crossanchor_2factor_sweep.py)'s `build_atoms()` includes `Demazure(2,1) = 2·[3]_q` (the S_3 (2,1) partition character) and SYT-major-index `q + q²`. Combined under `{×, ÷, +, −}` over the full atom set (~20 atoms) it generated 1281 2-factor candidates including `D_w_atoms × (q;q)_k`. **All 1281 failed cross-anchor at 1 ppm.**
 
 So any exotic-signed-Lusztig variant that reduces to a signed linear combination of cont. 11's natural atoms × `(q;q)_k` is in the already-exhausted space.
 
@@ -63,6 +63,6 @@ Specifying such a convention IS a research project — Lusztig's positivity theo
 ## Cross-refs
 
 - Today's preflight closures: [`2026-06-06-qbeta-klr-composite4-preflight-run-results.md`](2026-06-06-qbeta-klr-composite4-preflight-run-results.md), [`2026-06-06-qbeta-klr-composite1-preflight-run-results.md`](2026-06-06-qbeta-klr-composite1-preflight-run-results.md), [`2026-06-06-qbeta-klr-composite3-and-lusztig-preflights-results.md`](2026-06-06-qbeta-klr-composite3-and-lusztig-preflights-results.md).
-- cont. 11 2-factor saturation: [`qbeta_composite_crossanchor_2factor_sweep.py`](../../folio-assistant/computations/qbeta/qbeta_composite_crossanchor_2factor_sweep.py).
+- cont. 11 2-factor saturation: [`qbeta_composite_crossanchor_2factor_sweep.py`](../../computations/qbeta/qbeta_composite_crossanchor_2factor_sweep.py).
 - Lusztig 1990 (positivity theorem): *Canonical bases arising from quantized enveloping algebras*, JAMS 3.
 - Ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md) (cont. 18 follow-up).

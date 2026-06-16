@@ -402,6 +402,6 @@ moving toward.
 - **#1224 / #1229** — Δ_λ closure synthesis + bar-invariance probe
 
 ### Compute / Lean
-- `folio-assistant/computations/substrate/q_parameter.py` — q_0 numerical pin
-- `folio-assistant/computations/y_lambda_wenzl_bridge.py` — Wenzl weights
+- `computations/substrate/q_parameter.py` — q_0 numerical pin
+- `computations/y_lambda_wenzl_bridge.py` — Wenzl weights
 - `content/quantum-observable-universe/braids-and-knots/figure-8-muon-mass-cross-check.lean` — Lean cross-check ("by construction")

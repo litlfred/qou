@@ -30,8 +30,8 @@ export default proposition({
   },
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/jet_gb_pl_correspondence.py",
-    witness: "folio-assistant/computations/jet-gb-pl-correspondence.witness.json",
+    script: "computations/jet_gb_pl_correspondence.py",
+    witness: "computations/jet-gb-pl-correspondence.witness.json",
     status: "not_run",
     requires: ["numpy"],
   },

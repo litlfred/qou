@@ -44,7 +44,7 @@ picard-lefschetz-thimble.witness.json (Π^(k))   ──┘
 
 Usage
 -----
-    python3 folio-assistant/computations/jet_gb_pl_correspondence.py
+    python3 computations/jet_gb_pl_correspondence.py
 """
 
 from __future__ import annotations

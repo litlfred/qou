@@ -22,7 +22,7 @@ The bond crossings insert at the generator BETWEEN the two atoms.
 Using 3-channel Wedderburn vertex volumes at each generator.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 h2-full-tower.py
 """
 
