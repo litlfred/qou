@@ -4,7 +4,7 @@ the real and imaginary parts of a single complex fibre observable — the
 complexified mass-endomorphism convolution-defect*
 
 $$
-  \mathfrak{W}(K)\;=\;E_0\cdot\mathcal{T}(K)
+  \mathfrak{W}(K)\;=\;E_0\big(\mathrm{tr}_M^{\,\text{free}}(K) - \mathrm{tr}_M^{\,\text{knot}}(K)\big)
   \;\in\;\mathbb{C},
   \qquad
   \mathfrak{B}(K) = \operatorname{Re}\mathfrak{W}(K),
@@ -20,25 +20,26 @@ $\mathbb{V}(K) = \operatorname{Vol}(K) + i\,\mathrm{CS}(K)$.*
 The mass endomorphism $\mathcal{M}$ acts on the **knot-convolved**
 braid word of a **confined knot** $K$. Let $\Pi_{\text{free}}$ be the
 **projection onto the factorized / split** tensor — $K$'s constituents
-un-linked. The **convolution-defect** $\mathcal{T}(K)$ is the part of
-$\mathcal{M}$ that does *not* survive that projection — a **projection
-defect**, not a generic difference (hence $\mathcal{T}$, not an
-overloaded $\Delta$):
+un-linked. The **convolution-defect** is the Markov-trace difference
+between the split and confined words — the part of $\mathcal{M}$ that
+does *not* survive that projection (a **projection defect**, written as
+the explicit difference of traces, *not* an overloaded $\Delta$ and
+*not* a new trace-like symbol):
 
 $$
-  \mathcal{T}(K)
+  \mathrm{tr}_M^{\,\text{free}}(K) - \mathrm{tr}_M^{\,\text{knot}}(K)
   \;=\;
   \mathrm{tr}_M\big((\Pi_{\text{free}}-\mathbf{1})\,\mathcal{M}\big)
-  \;=\;
-  \tau_M^{\text{free}}(K) - \tau_M^{\text{knot}}(K)
   \;=\;
   \sum_\lambda y_\lambda\,\big(\chi^\lambda_{\text{free}} - \chi^\lambda_{\text{knot}}\big),
 $$
 
-a statement on **any confined knot $K$**. The nuclear binding case — a
-nucleus is a confined nucleon knot, split tensor
+where $\mathrm{tr}_M$ is the Markov trace (CLAUDE.md §7a; the fibre
+functor $\tau$ is a *different* object — hence $\mathrm{tr}_M$, not
+$\tau_M$). This is a statement on **any confined knot $K$**; the nuclear
+binding case — a nucleus is a confined nucleon knot, split tensor
 $\mathfrak{p}^{Z}\otimes\mathfrak{n}^{N}$ — is the physical instance
-$\tau_M^{\text{knot}} = \mathrm{tr}_M(W_{\text{atom}})$ of
+$\mathrm{tr}_M^{\,\text{knot}} = \mathrm{tr}_M(W_{\text{atom}})$ of
 `binding_canonical`.
 
 the per-partition object of the canonical binding
@@ -71,14 +72,14 @@ That is exactly the structure of the complex volume:
 
 The mass/binding channel is the **volume** (real, $\cosh$) part; the
 decay channel is the **Chern–Simons** (imaginary, $\sinh$) part of the
-*same* $E_0\cdot\mathcal{T}$.
+*same* $\mathfrak{W}$.
 
 ## What is proved, and the fibre-level caveat
 
 - **Proved (algebra).** The bar-parity decomposition
   $\tfrac{q+q^{-1}}{2}\pm\tfrac{q-q^{-1}}{2} = q^{\pm1}$ holds over any
   field; the complex reconstruction $\mathfrak{B}+i\,\mathfrak{Q}_\beta
-  = E_0\,\mathcal{T}$ follows from the two projection
+  = \mathfrak{W}$ follows from the two projection
   hypotheses ([Lean](#conj:binding-qbeta-complex-volume),
   `QOU.MassEndomorphism.ComplexVolumeUnification`, 0 sorries).
 - **Proved (classical limit).** The free/factorized projection
@@ -87,7 +88,7 @@ decay channel is the **Chern–Simons** (imaginary, $\sinh$) part of the
   ([`rem:block-multiplicativity-v-free`](../mass-theory/block-multiplicativity-v-free.md));
   the $q$-deformed case is class-axiomatized (conjectural).
 - **Conjectural (the unification itself).** That the *physical* binding
-  and $Q_\beta$ are the Re/Im of the **same** $E_0\cdot\mathcal{T}$
+  and $Q_\beta$ are the Re/Im of the **same** $\mathfrak{W}$
   at a single normalization.
 - **Fibre-level caveat (STRICT).** At the **archimedean / observable**
   level $\operatorname{Im}(q_0)=0$
@@ -105,7 +106,7 @@ decay channel is the **Chern–Simons** (imaginary, $\sinh$) part of the
 The two channels really are distinct real components of one object: the
 $E_0\cdot|\Delta(\mathrm{net})|$ **net-route** (the bar-even, binding-like
 $E_0\cdot\Delta(\mathrm{tr})$) gives a precision-ladder $c_2 \approx -8.0$,
-whereas the canonical $c_2 = -1$ lives in the bar-odd $\tau_M$
+whereas the canonical $c_2 = -1$ lives in the bar-odd $\mathrm{tr}_M$
 **brane-tower** ladder
 ([`docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md`](../../../docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md),
 witness `qbeta-ck-sseries-operator-match`). Two different real $c_2$'s for
@@ -116,7 +117,7 @@ $c_2$ predict.
 
 Conditional on the unification, the framework's mass/binding chapter and
 its $\beta$-decay chapter are **one derivation**: compute the complex
-convolution-defect $\mathfrak{W}(K) = E_0\,\mathcal{T}(K)$ once;
+convolution-defect $\mathfrak{W}(K) = \mathfrak{W}(K)$ once;
 its real part is every binding energy, its imaginary part is every
 $Q$-value. The "$0.17\%$ $Q_\beta$ residual" and the binding $\Delta_\lambda$
 gap become the *same* unclosed object — the imaginary and real parts of
