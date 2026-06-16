@@ -93,6 +93,8 @@ export default chapter({
       blocks: [
         "complex-volume-intro",
         "binding-qbeta-complex-volume",
+        "color-spacetime-s5-factorization",
+        "mass-modulus-em-phase-color-grading",
       ],
     }),
 
