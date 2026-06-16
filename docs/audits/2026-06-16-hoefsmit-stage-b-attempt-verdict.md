@@ -157,6 +157,35 @@ Any `c_k≥3` wiring to production still requires owner approval + a passing
 `habiro-exact-qbeta` is a live reminder: a `c₃` tuned at muon-q₀ collapses
 to 0.168% at proton-q₀.
 
+## 2026-06-16 reframe via the complex-volume `𝔙` (supersedes the "anomaly" framing)
+
+The "two `c₂` values" reported above as a *route-dependence anomaly* are, under
+the complex-volume unification ([`conj:binding-qbeta-complex-volume`](../../content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.md),
+`𝔙 = E₀·tr_M((Π_free−1)∘𝓜)`, Re `𝔙` = binding, Im `𝔙` = `𝔔_β`), **expected,
+not anomalous**:
+
+- the **net-route** `c₂ ≈ −8` reads the **bar-even / Re `𝔙`** (binding) channel,
+- the **brane-tower** `c₂ = −1` reads the **bar-odd / Im `𝔙`** (`𝔔_β`) channel.
+
+Re and Im of one complex function have *different* Taylor coefficients — two
+`c₂` is what the unification predicts. The two "routes" are not rivals; they
+sample complementary parities of one `𝔙`. The search sharpens to: find a single
+complex `𝔙` reproducing **both** channels (net-route `c₂` on Re, brane-tower
+`c₂` on Im) at one normalisation — which also collapses the synthesis's two open
+keystones (kernel `R(q,ξ)` and element `F(q)`) into one complex-volume object.
+
+**Still open (does NOT follow from the reframe): are the per-channel `c_k`
+constants or q-functions?** Owner research direction (2026-06-16): perhaps the
+`c_k(q)` are genuinely **q-functions at the fibre level**, but a
+**non-degeneracy condition on the Markov pairing** (equivalently a `Vol = 1` /
+unit-normalisation of the categorical trace) **evaluates** them — pinning the
+q-function rungs to definite values at the substrate. This would reconcile
+"`c_k` are fibre q-functions" (the anchor-swing evidence) with "production wires
+definite `c₂ = −1`" (the pairing-normalised evaluation), and is the concrete
+shape the kernel-`R(q,ξ)` search should test: `R` is a q-function; the
+non-degenerate Markov pairing at `Vol = 1` is the evaluation map to the observed
+rungs. Not established — a direction, gated like the rest of the kernel work.
+
 ## Cross-references
 
 - [1ppQ keystone recipe](2026-06-04-qbeta-1ppq-keystone-exact-construction-recipe.md)
