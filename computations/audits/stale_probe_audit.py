@@ -116,6 +116,8 @@ def _audit_witness(path: Path,
         d = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeDecodeError, json.JSONDecodeError):
         return []
+    if not isinstance(d, dict):
+        return []  # some *.witness.json hold a top-level JSON array
 
     cb = d.get("contentBlock")
     if cb is None:
