@@ -25,6 +25,25 @@ Common thread: each corrected/sharpened a tempting-but-wrong path
 GAP-A-3 P_λ) are infra-gated (no pyhecke_native) + owner-gated — next steps
 recorded, not run. No fitting, no CAL-4, no production wire/un-wire.
 
+## Follow-up (2026-06-16) — user picked options 1+2+3
+
+Two more children added; the corpus-grep on options 2/3 produced a **redirect**
+(both turned out already-run / underdetermined):
+
+| Child | Verdict | Artifact |
+|-------|---------|----------|
+| `mtxi` m_τ Path A (opt 2) | **underdetermined** (ξ_ℓ unpublished; "FAR >50%"; constraints insufficient) → live framing is operator-valued ℓ=3 branching, gated on `conj:s5-so3-fiber-action` | shared synthesis doc |
+| `g3pl` GAP-A-3 binding (opt 3) | **already run + axis closed** (spin channel refuted PR #1870; 22 GAP-A-4 closures) → do NOT re-run; same keystone | shared synthesis doc |
+
+Synthesis: `docs/audits/2026-06-16-mtau-and-binding-converge-on-s5so3-keystone.md`
+— m_τ + binding Δ_λ + mass λ(K) are **one problem**: the open S₅↔SO(3) geometric
+fibre map (`conj:s5-so3-fiber-action`). Plus a critical-distance flag on the
+2026-06-13 §5 "closes" overstatement, and a link of its "(1,1,1,1) sign-block"
+c_k idea to `qkhc` Stage C (must clear the formalize-first gate).
+
+Option 1 (`/prepare-merge` PR #2345) running last over the whole tranche; merge
+held for explicit owner "merge it".
+
 Consolidated work-plan from user request (2026-06-16): "work on beans"
 1. `k9td` — koide-tau-forcing-derivation
 2. `qkhc` — qbeta-kernel-hunt-stage-c
