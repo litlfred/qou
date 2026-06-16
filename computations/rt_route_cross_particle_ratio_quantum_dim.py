@@ -46,7 +46,7 @@ mp.mp.dps = 50
 
 # Constants
 Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
-M_E_MEV = mpf("0.510998950")
+from codata_constants import M_E_MEV  # noqa: E402 — CODATA-2022 full precision (no literal)
 
 # SM mass measurements (PDG 2022)
 M_W_GEV = mpf("80.379")

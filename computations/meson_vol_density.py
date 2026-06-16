@@ -42,15 +42,22 @@ q0 = mpf(Q_50_DIGIT_STR)
 qi = 1/q0
 h_q = q0 - qi
 hbar_q = 1 - qi  # ℏ_q = (q-1)/q
-m_e = mpf('0.51099895069')
+# Masses routed through the codata_constants registry — no inline CODATA
+# literals (CLAUDE.md P31 / three-CAL purity). _path_bridge (above) puts
+# substrate/ on sys.path so `codata_constants` resolves.
+from codata_constants import (  # noqa: E402
+    M_E_MEV, M_PI_PM_MEV_VALIDATION, M_K_PM_MEV_VALIDATION,
+    M_P_MEV_VALIDATION, M_N_MEV_VALIDATION,
+)
+m_e = M_E_MEV
 
 # ── CAL-3: pion mass ─────────────────────────────────────────────
-M_PI = mpf('139.57039')  # MeV, PDG 2024
+M_PI = M_PI_PM_MEV_VALIDATION  # PDG charged-pion mass
 
 # ── PDG targets (validation, not inputs) ─────────────────────────
-M_K  = mpf('493.677')
-M_P  = mpf('938.27208816')
-M_N  = mpf('939.56542052')
+M_K  = M_K_PM_MEV_VALIDATION
+M_P  = M_P_MEV_VALIDATION
+M_N  = M_N_MEV_VALIDATION
 
 # ══════════════════════════════════════════════════════════════════
 #  BARYON GEOM (existing, for reference)
