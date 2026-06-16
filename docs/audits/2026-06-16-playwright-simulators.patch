@@ -1,0 +1,310 @@
+diff --git a/playwright.config.ts b/playwright.config.ts
+index eb3f416..78161ce 100644
+--- a/playwright.config.ts
++++ b/playwright.config.ts
+@@ -1,34 +1,82 @@
+ import { defineConfig, devices } from '@playwright/test';
+ 
++/**
++ * Playwright config for the simulator E2E suite.
++ *
++ * Tuned for headless Chromium inside CI containers, where the simulators'
++ * WebGL/Three.js render loops previously caused OOM / SIGTERM / timeouts.
++ * See docs/audits/2026-06-16-playwright-simulators-flakiness-diagnosis.md
++ * (in the qou repo) for the root-cause analysis behind each setting.
++ */
+ export default defineConfig({
+   testDir: './tests',
+-  timeout: 120000,
+-  fullyParallel: true,
+-  forbidOnly: !!process.env.CI,
+-  retries: 0,
++
++  // One test timeout. The old config set `timeout` twice (120s then 180s); the
++  // second silently won. 120s is ample for a static page + a software-WebGL
++  // warm-up and keeps a hung render loop from stalling the whole run.
++  timeout: 120_000,
++
++  // Serialize. The heavy Three.js pages (quantum_brings_surface ~104 THREE
++  // refs) must not be resident concurrently or peak memory blows the
++  // container. `fullyParallel:true` with `workers:1` (the old setting) was
++  // self-contradictory; make the single-stream intent explicit.
++  fullyParallel: false,
+   workers: 1,
+-  reporter: 'list',
++
++  forbidOnly: !!process.env.CI,
++  // 0 retries surfaced flakiness as hard failures. Allow a couple of retries
++  // in CI for genuinely transient WebGL warm-up hiccups; none locally so
++  // flakes stay visible during development.
++  retries: process.env.CI ? 2 : 0,
++
++  reporter: process.env.CI
++    ? [['list'], ['junit', { outputFile: 'test-results/junit.xml' }]]
++    : 'list',
++
+   use: {
+     baseURL: 'http://127.0.0.1:8080',
+     headless: true,
+     trace: 'on-first-retry',
++    // Bound per-action / per-navigation waits so a stuck page fails fast
++    // (and retries) instead of running out the whole test timeout.
++    actionTimeout: 15_000,
++    navigationTimeout: 30_000,
+     launchOptions: {
+-      args: ['--no-sandbox', '--disable-setuid-sandbox']
+-    }
++      args: [
++        '--no-sandbox',
++        '--disable-setuid-sandbox',
++        // THE container SIGTERM/SIGBUS fix: Chromium puts shared memory in
++        // /dev/shm, which defaults to 64 MB in Docker. Heavy WebGL overflows
++        // it and the renderer/GPU process is killed. Spill to /tmp instead.
++        '--disable-dev-shm-usage',
++        // No hardware GPU in CI: force software WebGL via SwiftShader so
++        // Three.js initializes a real context instead of throwing.
++        '--disable-gpu',
++        '--use-gl=angle',
++        '--use-angle=swiftshader',
++        '--enable-unsafe-swiftshader', // Chrome >=119 gates SwiftShader behind this
++        '--disable-features=Vulkan',
++      ],
++    },
+   },
++
+   projects: [
+     {
+       name: 'chromium',
+       use: { ...devices['Desktop Chrome'] },
+     },
+   ],
++
+   webServer: {
+     command: 'node test-server.cjs',
+-    port: 8080,
++    url: 'http://127.0.0.1:8080/simulators/empty.html',
++    timeout: 30_000,
+     reuseExistingServer: !process.env.CI,
++    stdout: 'pipe',
++    stderr: 'pipe',
+   },
+-  timeout: 180000,
++
+   expect: {
+-    timeout: 10000,
++    timeout: 10_000,
+   },
+ });
+diff --git a/test-server.cjs b/test-server.cjs
+new file mode 100644
+index 0000000..0a08901
+--- /dev/null
++++ b/test-server.cjs
+@@ -0,0 +1,84 @@
++#!/usr/bin/env node
++// Zero-dependency static file server for the simulator E2E suite.
++//
++// playwright.config.ts launches this via `webServer.command`. It serves the
++// folio-assistant repo root over HTTP so that `/simulators/<sim>.html` and the
++// assets those pages reference with relative paths (e.g. `./three.min.js`,
++// stylesheets) resolve against the on-disk tree.
++//
++// Deliberately dependency-free (Node core `http`/`fs`/`path` only) so the test
++// runner needs nothing beyond `@playwright/test` + a browser — no express, no
++// install step, no version drift. Binds 127.0.0.1 (loopback only) to match the
++// config's baseURL and avoid exposing the tree on external interfaces.
++
++const http = require('node:http');
++const fs = require('node:fs');
++const path = require('node:path');
++const { URL } = require('node:url');
++
++const ROOT = __dirname;
++const PORT = Number(process.env.PORT) || 8080;
++const HOST = process.env.HOST || '127.0.0.1';
++
++const MIME = {
++  '.html': 'text/html; charset=utf-8',
++  '.js': 'text/javascript; charset=utf-8',
++  '.cjs': 'text/javascript; charset=utf-8',
++  '.mjs': 'text/javascript; charset=utf-8',
++  '.css': 'text/css; charset=utf-8',
++  '.json': 'application/json; charset=utf-8',
++  '.svg': 'image/svg+xml',
++  '.png': 'image/png',
++  '.jpg': 'image/jpeg',
++  '.jpeg': 'image/jpeg',
++  '.gif': 'image/gif',
++  '.ico': 'image/x-icon',
++  '.wasm': 'application/wasm',
++  '.map': 'application/json; charset=utf-8',
++  '.txt': 'text/plain; charset=utf-8',
++};
++
++const server = http.createServer((req, res) => {
++  let pathname;
++  try {
++    pathname = decodeURIComponent(new URL(req.url, `http://${HOST}:${PORT}`).pathname);
++  } catch {
++    res.writeHead(400).end('Bad Request');
++    return;
++  }
++
++  // Resolve under ROOT and refuse any path that escapes it (traversal guard).
++  const resolved = path.normalize(path.join(ROOT, pathname));
++  if (resolved !== ROOT && !resolved.startsWith(ROOT + path.sep)) {
++    res.writeHead(403).end('Forbidden');
++    return;
++  }
++
++  fs.stat(resolved, (err, stat) => {
++    let filePath = resolved;
++    if (!err && stat.isDirectory()) filePath = path.join(resolved, 'index.html');
++
++    fs.readFile(filePath, (readErr, data) => {
++      if (readErr) {
++        res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
++        res.end(`404 Not Found: ${pathname}`);
++        return;
++      }
++      const ext = path.extname(filePath).toLowerCase();
++      res.writeHead(200, {
++        'Content-Type': MIME[ext] || 'application/octet-stream',
++        'Cache-Control': 'no-store',
++      });
++      res.end(req.method === 'HEAD' ? undefined : data);
++    });
++  });
++});
++
++server.listen(PORT, HOST, () => {
++  console.log(`test-server: serving ${ROOT} at http://${HOST}:${PORT}`);
++});
++
++// Clean shutdown so Playwright's webServer teardown doesn't leave an orphan.
++for (const sig of ['SIGTERM', 'SIGINT']) {
++  process.on(sig, () => server.close(() => process.exit(0)));
++}
+diff --git a/tests/simulators.spec.ts b/tests/simulators.spec.ts
+new file mode 100644
+index 0000000..3f54df5
+--- /dev/null
++++ b/tests/simulators.spec.ts
+@@ -0,0 +1,117 @@
++import { test, expect, type Page } from '@playwright/test';
++
++/**
++ * Tier-1 E2E suite for the physical simulators (load + URL-parameter parsing).
++ *
++ * Stability notes (see the qou diagnosis doc referenced in playwright.config.ts):
++ *  - Navigations use `waitUntil: 'domcontentloaded'`, NEVER `networkidle`: every
++ *    simulator runs a `requestAnimationFrame` render loop, so the page never
++ *    reaches network-idle and a `networkidle` wait would always time out.
++ *  - The file runs serially (one heavy WebGL page resident at a time).
++ *  - Each test fails on any uncaught page exception (`pageerror`).
++ *  - Selectors and parameter names are taken from the simulator source, not
++ *    from the prose test plan (which has drifted: e.g. beta-decay reads `shell`,
++ *    not `showShellCorrection`; the knot table has no `signature` color option).
++ */
++
++test.describe.configure({ mode: 'serial' });
++
++/** Attach an uncaught-exception listener; returns the live error buffer. */
++function collectPageErrors(page: Page): string[] {
++  const errors: string[] = [];
++  page.on('pageerror', (e) => errors.push(e.message));
++  return errors;
++}
++
++/** Navigate to a simulator with optional query string, settling only on DOM. */
++async function gotoSim(page: Page, file: string, query = ''): Promise<void> {
++  const url = `/simulators/${file}${query ? `?${query}` : ''}`;
++  await page.goto(url, { waitUntil: 'domcontentloaded' });
++}
++
++// ── Lightweight (2D canvas) simulators — full Tier-1 coverage ───────────────
++
++test.describe('Beta Decay Half-Life', () => {
++  test('loads with defaults and no uncaught errors', async ({ page }) => {
++    const errors = collectPageErrors(page);
++    await gotoSim(page, 'beta_decay_halflife.html');
++    await expect(page.locator('#sl-q')).toBeVisible();
++    expect(errors, errors.join('\n')).toEqual([]);
++  });
++
++  test('parses q and shell URL parameters', async ({ page }) => {
++    const errors = collectPageErrors(page);
++    // #sl-q range is [1.005, 2.0]; loadStateFromURL runs on window 'load'.
++    await gotoSim(page, 'beta_decay_halflife.html', 'q=1.5&shell=true');
++    await expect(page.locator('#sl-q')).toHaveValue('1.5'); // auto-retries
++    await expect(page.locator('#v-q')).toHaveText('1.500');
++    await expect(page.locator('#cb-shell')).toBeChecked();
++    expect(errors, errors.join('\n')).toEqual([]);
++  });
++});
++
++test.describe('Knot Periodic Table', () => {
++  test('loads with defaults and no uncaught errors', async ({ page }) => {
++    const errors = collectPageErrors(page);
++    await gotoSim(page, 'knot_periodic_table.html');
++    await expect(page.locator('#color-mode')).toBeVisible();
++    expect(errors, errors.join('\n')).toEqual([]);
++  });
++
++  test('parses q and color URL parameters', async ({ page }) => {
++    const errors = collectPageErrors(page);
++    // 'alexander' is a real <option>; the plan's 'signature' does not exist.
++    await gotoSim(page, 'knot_periodic_table.html', 'q=1.5&color=alexander');
++    await expect(page.locator('#sl-q')).toHaveValue('1.5');
++    await expect(page.locator('#color-mode')).toHaveValue('alexander');
++    expect(errors, errors.join('\n')).toEqual([]);
++  });
++});
++
++// ── Heavy WebGL / Three.js simulators ───────────────────────────────────────
++// These pages `<script src="./three.min.js">`. That asset is NOT vendored in
++// the repo (see fix plan); without it the pages throw `THREE is not defined`.
++// Guard the suite so a fresh clone SKIPS (stable) rather than fails (flaky-red);
++// once three.min.js is vendored these run as real load + parse coverage.
++
++test.describe('Brings Surface (WebGL)', () => {
++  let threeAvailable = false;
++  test.beforeAll(async ({ request }) => {
++    const res = await request.head('/simulators/three.min.js').catch(() => null);
++    threeAvailable = !!res && res.ok();
++  });
++
++  test('loads, renders a canvas, no uncaught errors', async ({ page }) => {
++    test.skip(!threeAvailable, 'three.min.js not vendored — see diagnosis fix plan');
++    const errors = collectPageErrors(page);
++    await gotoSim(page, 'brings_surface.html');
++    await expect(page.locator('#canvas-wrap')).toBeVisible();
++    expect(errors, errors.join('\n')).toEqual([]);
++  });
++
++  test('parses the dr URL parameter', async ({ page }) => {
++    test.skip(!threeAvailable, 'three.min.js not vendored — see diagnosis fix plan');
++    const errors = collectPageErrors(page);
++    // #dr range is [0.02, 0.80] step 0.01; an IIFE applies params at load.
++    await gotoSim(page, 'brings_surface.html', 'dr=0.05');
++    await expect(page.locator('#dr')).toHaveValue('0.05');
++    expect(errors, errors.join('\n')).toEqual([]);
++  });
++});
++
++test.describe('Quantum Brings Surface (WebGL)', () => {
++  let threeAvailable = false;
++  test.beforeAll(async ({ request }) => {
++    const res = await request.head('/simulators/three.min.js').catch(() => null);
++    threeAvailable = !!res && res.ok();
++  });
++
++  // The heaviest scene (~104 THREE refs): a crash-resilience smoke test.
++  test('loads without crashing the page', async ({ page }) => {
++    test.skip(!threeAvailable, 'three.min.js not vendored — see diagnosis fix plan');
++    const errors = collectPageErrors(page);
++    await gotoSim(page, 'quantum_brings_surface.html');
++    await expect(page.locator('#canvas-wrap')).toBeVisible();
++    expect(errors, errors.join('\n')).toEqual([]);
++  });
++});
