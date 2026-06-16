@@ -23,8 +23,13 @@ import sys
 PARTS5 = [(5,), (4, 1), (3, 2), (3, 1, 1), (2, 2, 1), (2, 1, 1, 1), (1, 1, 1, 1, 1)]
 
 
-def hook_dim(lam, n):
-    """dim of the S_n irrep lambda (hook-length formula)."""
+def hook_dim(lam, **kwargs):
+    """dim of the S_n irrep lambda (hook-length formula); n = sum(lam)."""
+    if "n" in kwargs:
+        raise AssertionError(
+            "hook_dim's 'n' parameter is removed (n = sum(lam) is redundant); drop it."
+        )
+    n = sum(lam)
     prod = 1
     for i, row in enumerate(lam):
         for j in range(row):
@@ -56,7 +61,7 @@ def report(d):
     for lam in PARTS5:
         rows = len(lam)
         g = gld_dim(lam, d)
-        s = hook_dim(lam, 5)
+        s = hook_dim(lam)
         if g > 0:
             hosted.append(lam)
             total += s * g

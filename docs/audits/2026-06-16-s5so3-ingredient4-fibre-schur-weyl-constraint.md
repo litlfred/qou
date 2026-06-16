@@ -30,8 +30,9 @@ so an $S_5$ irrep $\lambda$ appears on the 5-strand fibre **iff** $\mathrm{rows}
 
 (Dimension counts close: $1\!\cdot\!6+4\!\cdot\!4+5\!\cdot\!2=32$; $\sum=243$ for $d=3$.)
 
-On the **spinor** ℂ² the Hecke algebra acts through its **Temperley–Lieb** quotient (sl₂ Schur-Weyl), which
-**annihilates every ≥3-row partition** — in particular the electron block $(3,1,1)$.
+On the **spinor** $\mathbb{C}^2$ the Hecke algebra acts through its **Temperley–Lieb** quotient
+($\mathfrak{sl}_2$ Schur-Weyl), which **annihilates every $\ge 3$-row partition** — in particular the
+electron block $(3,1,1)$.
 
 ## What this forces for ingredient 4
 
