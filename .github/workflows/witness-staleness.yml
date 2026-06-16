@@ -1,0 +1,40 @@
+# Witness-staleness — warn-mode CI surface.
+#
+# Runs the dependency-drift + self-staleness validator and prints the
+# report to the job log + step summary. WARN-MODE: never fails the build
+# (`|| true`) so it surfaces the backlog without red-walling PRs. Escalate
+# to `--self-strict` / `--strict` once the backlog drains (see
+# docs/design/2026-06-16-witness-staleness-propagation.md §closure).
+#
+# NOTE: this branch predates the CI reorg on `main`. At merge, reconcile
+# with `main`'s witness-pipeline rather than duplicating this job.
+name: witness-staleness
+
+on:
+  pull_request:
+    paths:
+      - "**/*.witness.json"
+      - "computations/**/*.py"
+      - "tools/**/*.py"
+      - ".github/workflows/witness-staleness.yml"
+  workflow_dispatch: {}
+
+jobs:
+  staleness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Witness staleness report (warn-only)
+        run: |
+          # stdlib-only validator; no pip install needed.
+          python3 computations/witness_dependency_drift.py | tee /tmp/staleness.txt || true
+          {
+            echo '## Witness staleness (warn-mode)';
+            echo '```';
+            head -20 /tmp/staleness.txt;
+            echo '```';
+            echo '_Upstream drift fails the gate once escalated to `--strict`; self-staleness is warn-only until the backlog drains. See `docs/design/2026-06-16-witness-staleness-propagation.md`._';
+          } >> "$GITHUB_STEP_SUMMARY"
