@@ -147,24 +147,45 @@ def _classify_line_context(lines: list[str], idx: int) -> str:
     return "violation"
 
 
-def _triple_quoted_line_set(text: str) -> set[int]:
-    """0-based line indices that fall inside a triple-quoted string block.
+def _blank_triple_quoted(text: str) -> str:
+    """Return `text` with triple-quoted-string and comment CONTENT replaced
+    by spaces, preserving newlines/columns (line numbers unchanged). Single-
+    and double-quoted strings (incl. f-strings) are LEFT INTACT so the
+    f-string precision patterns still match.
 
-    Toggles state on each line with an odd count of triple-quote markers;
-    the opening line and every line through the close are marked. Good
-    enough to suppress `float(` matches inside multi-line docstrings (the
-    dominant I8 false-positive class) without a full tokenizer."""
-    inside: set[int] = set()
-    in_block = False
-    for i, line in enumerate(text.splitlines()):
-        if in_block:
-            inside.add(i)
-        toggles = len(re.findall(r'"""|\'\'\'', line))
-        if toggles % 2 == 1:
-            if not in_block:
-                inside.add(i)  # opening line carries string content
-            in_block = not in_block
-    return inside
+    Uses Python's tokenizer so it is robust to every edge case the simpler
+    regex/toggle approaches missed — single-line `\"\"\"...\"\"\"`, an
+    unbalanced `\"\"\"` inside a comment, etc. (Gemini #2379). Falls back to
+    a regex blank only if the source does not tokenize."""
+    import io
+    import tokenize as _tok
+
+    def _is_triple(s: str) -> bool:
+        body = s.lstrip("rbfRBFuU")
+        return body.startswith('"""') or body.startswith("'''")
+
+    try:
+        toks = list(_tok.generate_tokens(io.StringIO(text).readline))
+    except (_tok.TokenError, IndentationError, SyntaxError, ValueError):
+        return re.sub(r'"""[\s\S]*?"""|\'\'\'[\s\S]*?\'\'\'',
+                      lambda m: re.sub(r"[^\n]", " ", m.group(0)), text)
+
+    grid = [list(line) for line in text.splitlines(keepends=True)]
+    for tok in toks:
+        if tok.type == _tok.COMMENT or (
+            tok.type == _tok.STRING and _is_triple(tok.string)
+        ):
+            (sr, sc), (er, ec) = tok.start, tok.end
+            for r in range(sr, er + 1):
+                ri = r - 1
+                if ri >= len(grid):
+                    continue
+                c0 = sc if r == sr else 0
+                c1 = ec if r == er else len(grid[ri])
+                for c in range(c0, min(c1, len(grid[ri]))):
+                    if grid[ri][c] != "\n":
+                        grid[ri][c] = " "
+    return "".join("".join(r) for r in grid)
 
 
 def _classify_script(path: Path) -> dict[str, Any] | None:
@@ -192,27 +213,26 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
     }
 
     lines = text.splitlines()
-    # Lines inside a triple-quoted string (docstring / multi-line string)
-    # are documentation, not code — a `float(` there is a false positive
-    # (refinement, 2026-06-16: the dominant I8 FP class was `float(q)` etc.
-    # appearing in docstrings like markov_trace_for_knot / snappy_borromean).
-    docstring_lines = _triple_quoted_line_set(text)
+    # Scan a copy with triple-quoted-string CONTENT blanked, so a `float(`
+    # inside a docstring (the dominant I8 false-positive class) is not
+    # matched — covers both multi-line and single-line `"""..."""` strings.
+    # f-strings (single/double quoted) are preserved so their precision
+    # patterns still match. Snippets/context use the ORIGINAL lines.
+    scan_lines = _blank_triple_quoted(text).splitlines()
     hits: list[dict[str, Any]] = []
 
     for i, line in enumerate(lines):
-        if i in docstring_lines:
-            continue
-        # Strip comments first
-        code_part = re.sub(r"#.*$", "", line)
+        # Strip comments first (use the docstring-blanked variant for matching).
+        scan_part = re.sub(r"#.*$", "", scan_lines[i]) if i < len(scan_lines) else ""
         for label, rx in ANTIPATTERN_RX:
-            if rx.search(code_part):
+            if rx.search(scan_part):
                 # Classify in context.
                 ctx = _classify_line_context(lines, i)
                 hits.append({
                     "line_number": i + 1,
                     "pattern": label,
                     "context": ctx,
-                    "code_snippet": code_part.strip()[:120],
+                    "code_snippet": re.sub(r"#.*$", "", line).strip()[:120],
                 })
 
     row["hit_count"] = len(hits)

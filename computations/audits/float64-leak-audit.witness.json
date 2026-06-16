@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-16T22:14:41.410034+00:00",
-  "commitSha": "1f4600305a109d9c8230ac8a7d20ed164d192e00",
+  "computedAt": "2026-06-16T22:20:41.879400+00:00",
+  "commitSha": "f7f2e5b8be96513db6eafb2c9788d57b056c8e3e",
   "assertions": [
     {
       "name": "no_i8_violations",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "float64-leak-audit",
   "scriptFile": "float64_leak_audit.py",
-  "scriptHash": "1b62ab40a983",
-  "scriptCommitSha": "e3b41d8797ffdca247bde4685e428ff04e4ca4a5",
+  "scriptHash": "6e63fca6604b",
+  "scriptCommitSha": "f7f2e5b8be96513db6eafb2c9788d57b056c8e3e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
