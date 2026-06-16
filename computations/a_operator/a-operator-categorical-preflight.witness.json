@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-16T16:25:52.733068+00:00",
-  "commitSha": "c54104dad7ced7dc93a64ae9c3592b7eccab7f9b",
+  "computedAt": "2026-06-16T17:44:46.156620+00:00",
+  "commitSha": "7dd28a8dc3bd742c37906e9780af14866da224ce",
   "assertions": [
     {
       "name": "dimension_identity_holds",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
-  "computation": "a-operator-analytic-preflight",
-  "scriptFile": "a_operator_analytic.py",
-  "scriptHash": "efa94deec7b9",
-  "scriptCommitSha": "bc2b5f555c282c90a4678586c10c773674b991d0",
+  "durationMs": 24,
+  "computation": "a-operator-categorical-preflight",
+  "scriptFile": "a_operator_categorical.py",
+  "scriptHash": "aa0db682111e",
+  "scriptCommitSha": "unknown",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -56,8 +56,8 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Closure-b preflight for the analytic interface operator A^λ_{ξν}(I): the I=identity reduction A^λ_{ξν}(1)=c^λ_{ξν}·1 (Wenzl LR-scalar limit) cross-checked at 50 dps against the seminormal ground truth, plus the restriction-dimension identity. Steps 2-3 (bridge deformation, H_9 universality) are scaffolded TODO(closure-b).",
-  "auditOnly": "docs/audits/2026-06-16-analytic-interface-operator-closure-b-design.md",
+  "description": "Closure-b preflight for the categorical interface operator A^λ_{ξν}(I): the I=identity reduction A^λ_{ξν}(1)=c^λ_{ξν}·1 (Wenzl LR-scalar limit) cross-checked at 50 dps against the seminormal ground truth, plus the restriction-dimension identity. Steps 2-3 (bridge deformation, H_9 universality) are scaffolded TODO(closure-b).",
+  "auditOnly": "docs/audits/2026-06-16-categorical-interface-operator-closure-b-design.md",
   "parameters": {
     "n_inner": 3,
     "n_block": 3,

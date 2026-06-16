@@ -1,7 +1,7 @@
-"""Analytic interface operator A^λ_{ξν}(I) — closure path (b), prototype.
+"""Categorical interface operator A^λ_{ξν}(I) — closure path (b), prototype.
 
 Replaces the least-squares *fitted* A^λ_{ξν}(I) of
-`A_operator_extract_at_level.py` with an *analytic* construction that is
+`A_operator_extract_at_level.py` with an *categorical* construction that is
 universal by construction (no test-word dependence), so the operator-valued
 Wenzl branching combiner closes for A ≥ 3.
 
@@ -40,14 +40,14 @@ is the *bridge-generator deformation* of that LR scalar.
     STRUCTURAL identity at ~1e-14; the exact 1e-25 verification is step 2.
   - PREFLIGHT STEP 1b — `verify_dimension_identity`: d_λ = Σ c^λ_{ξν} d_ξ d_ν.
     RUNNABLE.
-  - STEP 2 — `analytic_A_interface` (deuteron, bridge ≠ 1): TODO(closure-b).
+  - STEP 2 — `categorical_A_interface` (deuteron, bridge ≠ 1): TODO(closure-b).
   - STEP 3 — H_9 universality: TODO(closure-b).
 
 This file changes NO production path — the combiner still routes A≥3 through the
 lossless fine-Bratteli transfer matrix. It establishes the verified spec the
 remaining closure-b work implements against.
 
-Design: docs/audits/2026-06-16-analytic-interface-operator-closure-b-design.md
+Design: docs/audits/2026-06-16-categorical-interface-operator-closure-b-design.md
 """
 from __future__ import annotations
 
@@ -193,7 +193,7 @@ def verify_chi_disjoint_reduction(n_inner: int, n_block: int,
 
     cross-checked against the seminormal ground truth `chi_lambda_fast_mp`
     (which evaluates χ^λ directly at H_{n_inner+n_block}). This is
-    `A^λ_{ξν}(1) = c^λ_{ξν}·1` — the LR-scalar limit of the analytic interface
+    `A^λ_{ξν}(1) = c^λ_{ξν}·1` — the LR-scalar limit of the categorical interface
     operator — verified end-to-end. LOSSY: `chi_lambda_fast_mp` is f64-limited
     at the source (see PREFLIGHT_TOL_ABS note), so this validates the STRUCTURAL
     identity at ~1e-14, not at the 1e-25 L1 floor.
@@ -561,10 +561,10 @@ def verify_operator_decomposition_exact(dps: int = 50) -> dict:
 # STEP 2-gauge / STEP 3 — ρ_ξ⊗ρ_ν alignment + H_9 universality.
 # ──────────────────────────────────────────────────────────────────────
 
-def analytic_A_interface(lam: tuple[int, ...], xi: tuple[int, ...],
+def categorical_A_interface(lam: tuple[int, ...], xi: tuple[int, ...],
                          nu: tuple[int, ...], interface: str,
                          n_inner: int, dps: int = 50):
-    """TODO(closure-b): the analytic interface operator A^λ_{ξν}(I), I ≠ 1.
+    """TODO(closure-b): the categorical interface operator A^λ_{ξν}(I), I ≠ 1.
 
     Spec (what this MUST return): the (d_ξ·d_ν)×(d_ξ·d_ν) matrix
 
@@ -590,7 +590,7 @@ def analytic_A_interface(lam: tuple[int, ...], xi: tuple[int, ...],
     raise NotImplementedError(
         "closure-b step 2: bridge-generator deformation not yet implemented; "
         "preflight 1 (I=identity reduction) passes — see "
-        "docs/audits/2026-06-16-analytic-interface-operator-closure-b-design.md"
+        "docs/audits/2026-06-16-categorical-interface-operator-closure-b-design.md"
     )
 
 
@@ -605,7 +605,7 @@ def main() -> int:
     args = parser.parse_args()
 
     print("=" * 84)
-    print("  Analytic interface operator A^λ_{ξν}(I) — closure-b preflight")
+    print("  Categorical interface operator A^λ_{ξν}(I) — closure-b preflight")
     print("=" * 84)
     print(f"  H_{args.n_inner} × H_{args.n_block} → H_{args.n_inner + args.n_block}"
           f"   (abs tol={mp.nstr(PREFLIGHT_TOL_ABS, 4)}, "
@@ -664,9 +664,9 @@ def main() -> int:
 
     if args.emit_witness:
         from witness_base import WitnessBuilder
-        b = (WitnessBuilder("a-operator-analytic-preflight", engine="mpmath")
+        b = (WitnessBuilder("a-operator-categorical-preflight", engine="mpmath")
              .set_description(
-                 "Closure-b preflight for the analytic interface operator "
+                 "Closure-b preflight for the categorical interface operator "
                  "A^λ_{ξν}(I): the I=identity reduction A^λ_{ξν}(1)=c^λ_{ξν}·1 "
                  "(Wenzl LR-scalar limit) cross-checked at 50 dps against the "
                  "seminormal ground truth, plus the restriction-dimension "
@@ -680,7 +680,7 @@ def main() -> int:
              .add_data("chi_disjoint_reduction_exact", exact_res)
              .add_data("operator_decomposition_exact", op_res)
              .set_audit_only(
-                 "docs/audits/2026-06-16-analytic-interface-operator-closure-b-design.md"))
+                 "docs/audits/2026-06-16-categorical-interface-operator-closure-b-design.md"))
         b.add_assertion(
             name="dimension_identity_holds",
             computed=dim_res["all_passed"], expected=True, tolerance=0,

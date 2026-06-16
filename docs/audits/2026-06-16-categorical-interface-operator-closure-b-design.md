@@ -1,4 +1,4 @@
-# Analytic interface operator `A^λ_{ξν}(I)` — closure path (b) design + prototype
+# Categorical interface operator `A^λ_{ξν}(I)` — closure path (b) design + prototype
 
 **Date:** 2026-06-16
 **Branch:** `claude/analytic-interface-operator-closure-b-2026-06-16`
@@ -102,7 +102,7 @@ production infra. The prototype scaffold implements this first.
 
 The fitted $A$ failed at $A\ge3$ because least-squares cannot recover a
 $(d_\xi d_\nu)^2$-entry generator block from $\mathcal O(\text{tens})$ of
-$\mathbf H_3$ test-word equations. The analytic $A$ has **no test-word
+$\mathbf H_3$ test-word equations. The categorical $A$ has **no test-word
 dependence** — it is a fixed compression of a fixed generator matrix, identical
 for any inner family (single nucleon, deuteron, triton, …). Constructing it once
 per $(\lambda,\xi,\nu)$ makes the combiner correct at every $A$, subject only to
@@ -131,9 +131,9 @@ traced away.
 
 The deuteron is the full-rank anchor: its $\mathbf H_6$ fitted extract is
 verified end-to-end against `markov_peel` at $7\times10^{-15}$, so it is the
-ground truth for the analytic construction.
+ground truth for the categorical construction.
 
-1. **`I=identity` reduction** — **DONE (exact, 1e-25).** Analytic
+1. **`I=identity` reduction** — **DONE (exact, 1e-25).** Categorical
    $A^\lambda_{\xi\nu}(\mathbb1)$ equals $c^\lambda_{\xi\nu}\mathbb1$ for every
    $\lambda\vdash6$, verified via the character identity
    $\chi^\lambda(W\!\cdot\!\beta)=\sum c^\lambda_{\xi\nu}\chi^\xi(W)\chi^\nu(\beta)$,
@@ -161,7 +161,7 @@ ground truth for the analytic construction.
    binding is missing). Until that lands, the operator construction can be
    *prototyped* at f64 against the full-rank H₆ fitted extract (mirroring the
    step-1 f64→exact pattern).
-2. **Deuteron analytic $A$** — **DONE (exact, 1e-25).** Constructed
+2. **Deuteron categorical $A$** — **DONE (exact, 1e-25).** Constructed
    $A^\lambda_{\xi\nu}(I)=\Pi_{\xi\nu}\,\rho_\lambda(I)\,\Pi_{\xi\nu}$ from the
    exact MPFR seminormal matrices (new binding
    `pyhecke_native.seminormal_matrices_mpfr`), with the isotypic projectors
@@ -188,19 +188,19 @@ ground truth for the analytic construction.
    basis-change, **not** a structural unknown.
 
 3. **$\mathbf H_9$ universality** (the payoff): construct $A^\lambda_{\xi\nu}$ at
-   $\mathbf H_9$ analytically and reconstruct $\operatorname{tr}_M$(T), (³He)
+   $\mathbf H_9$ in closed form and reconstruct $\operatorname{tr}_M$(T), (³He)
    matching the transfer-matrix reference at $1e\text{-}25$ — the case the fitted
    extract misses by $21$–$42\%$.
 
 A precision note carried from compute-author §1: the existing fitter runs in
-**numpy f64**. The analytic construction must be carried in **mpmath /
+**numpy f64**. The categorical construction must be carried in **mpmath /
 exact rational** to meet the L1 floor; f64 is acceptable only for the scaffold's
 `I=identity` integer cross-check (where $A=c\,\mathbb1$ has integer entries).
 
 ## Scope of this PR
 
 - This design document (the structural finding + algorithm + verification plan).
-- A runnable scaffold [`computations/a_operator/a_operator_analytic.py`](../../computations/a_operator/a_operator_analytic.py)
+- A runnable scaffold [`computations/a_operator/a_operator_categorical.py`](../../computations/a_operator/a_operator_categorical.py)
   implementing **preflight step 1** (the `I=identity` reduction to
   $c^\lambda_{\xi\nu}\mathbb1$, cross-checked against the LR table) with a
   witness emission. Steps 2–3 are scaffolded with explicit `TODO(closure-b)`
