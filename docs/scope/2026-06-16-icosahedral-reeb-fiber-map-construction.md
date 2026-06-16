@@ -34,7 +34,7 @@ sphere, so the ingredients are known objects to be assembled on *this* divisor.
 
 | # | Ingredient | Type | Status |
 |---|---|---|---|
-| 1 | **A₅-invariant orbit blow-up.** Blow up the icosahedral 12-vertex (or 20-/30-) A₅-orbit on the divisor sphere, NOT a single brane point — a single point's stabilizer kills most of $A_5$. The exceptional locus then carries $A_5$ as Klein's rotation action $I\subset\mathrm{SO}(3)$ on $\mathcal{S}_p\cong\mathbb{CP}^1$. | algebraic geometry | **unbuilt (crux)** |
+| 1 | **Identify the divisor $\mathbb{CP}^1$ with Klein's icosahedral $\mathbb{P}^1$ via the spin lift.** Show the $S_5=\mathrm{Aut}(\Sigma_4)$ action restricts on $A_5$ to the **binary icosahedral $2I\subset\mathrm{SU}(2)_S$** on the spin fibre $\mathbb{C}^2_{\mathrm{spin}}$, so its projectivization $\mathbb{P}(\mathbb{C}^2)=\mathbb{CP}^1$ is Klein's icosahedral line ($A_5\cong I\subset\mathrm{PSL}_2$, Möbius rotations). See §"Ingredient 1 — findings" — the earlier "blow up the 12-vertex orbit" framing was **wrong** (gives 12 permuted lines / the E₈ tree, not one icosahedral $\mathbb{P}^1$). | spin structure / rep theory | **unbuilt (crux)** |
 | 2 | **2I-equivariant Reeb field.** Show the q-Reeb field $\xi_q$ ($\dot\psi=q$, `q-reeb-flow-on-coral-coords`) commutes with the binary icosahedral $2I\subset\mathrm{SU}(2)$ on the Hopf $S^3\to S^2$ (round Sasakian contact form is SU(2)-invariant ⟹ plausibly $2I$-invariant — must be proved for the q-deformed flow). | contact geometry | **unbuilt** |
 | 3 | **The two bridging branchings.** $\mathrm{SO}(3)\downarrow A_5$ ($V_1\!\to\!T_1$, $V_2\!\to\!H$, $V_3\!\to\!T_2\oplus G$) and $S_5\downarrow A_5$ ($(3,1,1)\to T_1\oplus T_2$, $(3,2),(2,2,1)\to H$). | character theory | **VERIFIED** (this session) |
 | 4 | **Commuting square (the functor).** A₅-equivariant Reeb operator on the ℓ-sector, restricted to the 3-tube via the **$123\!\to\!345$ embedding** (spacetime strands $\{1,2\}$ fixed — see embedding-independence note), equals the six $S_3$ knot operators with the $\mathrm{Res}^{S_5}_{S_3}$ multiplicities. | category theory | depends on 1,2 |
@@ -60,6 +60,48 @@ sphere, so the ingredients are known objects to be assembled on *this* divisor.
 - **5 (trace):** the only ingredient that touches the empirical target; everything above is
   structure.
 
+## Ingredient 1 — findings (2026-06-16): the $\mathbb{CP}^1$ is the spin fibre, action lifts to $2I$
+
+A first pass at the gate (corpus + structural reasoning, anchored in the verifier's
+INGREDIENT-1 block) sharpened ingredient 1 and **corrected two framing errors**:
+
+1. **The $\mathbb{CP}^1$ is the spin / state-bundle fibre, NOT a blow-up of the Bring curve.**
+   [`fivefold-symmetry.md`](../../content/quantum-observable-universe/brings-surface/fivefold-symmetry.md)
+   establishes $\Sigma_4$ is a **genus-4 curve** (complex dim 1), $\mathrm{Aut}=S_5$. You cannot get a
+   $\mathbb{CP}^1$ exceptional divisor by blowing up a point on a curve ($\mathbb{P}^{1-1}=\mathbb{P}^0=$
+   a point). The $\mathbb{CP}^1$ is the **state-bundle fibre** $\mathcal{S}=P\times_G\mathbb{CP}^1$
+   (QOU archimedean tuple, CLAUDE.md §7) $=\mathbb{P}(\mathbb{C}^2_{\mathrm{spin}})$, on which
+   $\mathrm{SU}(2)_S$ spin acts. The `exceptional-divisor-reeb-intro` "blow up a point $p\to\mathbb{CP}^1$"
+   must be read as the projectivized spin fibre over $p$. This locates *where* the icosahedral $S^2$ lives.
+
+2. **"Blow up the 12-vertex orbit" (my earlier ingredient-1 text) was geometrically wrong.** Blowing up a
+   12-point $A_5$-orbit gives 12 permuted $\mathbb{P}^1$'s; resolving the quotient singularity
+   $\mathbb{C}^2/2I$ gives the **E₈ tree of 8 $\mathbb{P}^1$'s** (McKay). Neither is a single
+   $\mathbb{P}^1$ with icosahedral *rotation*. The correct target is **Klein's icosahedral $\mathbb{P}^1$**
+   — $A_5\cong I\subset\mathrm{PSL}_2(\mathbb{C})$ acting by Möbius rotations, **intrinsic**, no orbit
+   blow-up.
+
+3. **The action must go through the BINARY icosahedral $2I$ (verified anchor).** $A_5$ has irrep dims
+   $\{1,3,3,4,5\}$ ($\sum d^2=60$) — **no faithful 2-dim rep**, so $A_5$ cannot act on the spinor
+   $\mathbb{C}^2$. The rotation $I\subset\mathrm{SO}(3)=\mathrm{PSU}(2)$ on $S^2=\mathbb{P}^1$ lifts to the
+   **binary icosahedral $2I\subset\mathrm{SU}(2)$** (order 120, dims $\{1,2,2,3,3,4,4,5,6\}$, $\sum d^2=120$,
+   the E₈ McKay irreps) on $\mathbb{C}^2$. So the icosahedral fibre action **is** the spin $\mathrm{SU}(2)_S$
+   lift of [`spin-from-so3-fiber.md`](../../content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.md)
+   — the same lift, not two. Globally $S^3/2I=$ the Poincaré homology sphere $=$ link of the E₈ singularity,
+   constraining the Reeb/Hopf-bundle topology.
+
+4. **Consistent with the standing 3-vs-5-strand caution.** `spin-from-so3-fiber.md` and the 2026-06-01
+   audit already flag that the 5-strand icosahedral side and the 3-strand $H_3$ Borromean side are
+   "different representation rings with no canonical map." The verified $\mathrm{Res}^{S_5}_{S_3}$ backbone
+   + bridge **is** the proposed canonical map (restriction); it addresses the caution but stays a candidate
+   until ingredient 4 (the commuting square) is built. No contradiction.
+
+**Refined gate (go/no-go for ingredient 1):** does the geometric $S_5=\mathrm{Aut}(\Sigma_4)$ action **lift to
+$2I\subset\mathrm{SU}(2)_S$** on the spin/state-bundle fibre over the brane point, so that $A_5\subset S_5$ acts
+as $I\subset\mathrm{SO}(3)$ on the $\mathbb{CP}^1$ fibre? This is a **spin-structure / representation-lift**
+question (does the automorphism lift to the binary cover on the spin bundle), not an orbit blow-up. That is the
+genuinely unbuilt object.
+
 ## Risks / honest blockers (critical-distance)
 
 - **Building 1–4 proves the geometric map EXISTS; it does NOT guarantee the physics.** The $S_3$-side
@@ -76,9 +118,11 @@ sphere, so the ingredients are known objects to be assembled on *this* divisor.
 ## Immediate next step (cheap, already done) and the gate
 
 - ✅ **Ingredient 3** verified this session (extends the backbone checker).
-- ⛔ **Gate = ingredient 1.** Before any compute, settle whether the icosahedral 12-vertex orbit
-  blow-up retains $A_5$ as rotations on $\mathcal{S}_p$. This is a Klein-icosahedral / Bring-curve
-  algebraic-geometry question, not a numerical probe.
+- ⛔ **Gate = ingredient 1, refined.** Before any compute, settle whether the geometric
+  $S_5=\mathrm{Aut}(\Sigma_4)$ action **lifts to the binary icosahedral $2I\subset\mathrm{SU}(2)_S$** on the
+  spin/state-bundle $\mathbb{CP}^1$ fibre (so $A_5$ acts as $I\subset\mathrm{SO}(3)$ by Möbius rotations). This
+  is a spin-structure / representation-lift question (NOT an orbit blow-up — see §"Ingredient 1 — findings");
+  it coincides with the $\mathrm{SU}(2)_S$ spin lift of `spin-from-so3-fiber.md`.
 
 ## Cross-references
 
@@ -86,4 +130,6 @@ sphere, so the ingredients are known objects to be assembled on *this* divisor.
 - [`2026-06-13-s5-so3-fiber-action-functor-resolution.md`](../audits/2026-06-13-s5-so3-fiber-action-functor-resolution.md) — the candidate functor $\mathrm{Res}^{S_5}_{S_3}$
 - [`2026-06-16-mtau-and-binding-converge-on-s5so3-keystone.md`](../audits/2026-06-16-mtau-and-binding-converge-on-s5so3-keystone.md) — the synthesis (single open object)
 - [`exceptional-divisor-reeb-intro.md`](../../content/quantum-observable-universe/mass-theory/exceptional-divisor-reeb-intro.md) — the existing S₃-side Reeb construction
+- [`spin-from-so3-fiber.md`](../../content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.md) — `conj:s5-so3-fiber-action` spin SU(2)_S lift (= ingredient 1's $2I$ lift)
+- [`fivefold-symmetry.md`](../../content/quantum-observable-universe/brings-surface/fivefold-symmetry.md) — $\Sigma_4$ is a genus-4 *curve*, Aut $=S_5$ (the dimension fact behind finding 1)
 - `content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean` — the keystone scaffold (open `partition_to_rotation`)
