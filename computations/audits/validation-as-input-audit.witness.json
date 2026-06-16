@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-16T22:59:40.651395+00:00",
-  "commitSha": "1d636d98aa8c570d1e4b38a79e07d3b77c3f3fdf",
+  "computedAt": "2026-06-16T23:02:54.687239+00:00",
+  "commitSha": "a962bf5ab9372bb4ca1f133a4e50b18ba99fc75b",
   "assertions": [
     {
       "name": "no_i11_violations",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 64,
+  "durationMs": 13,
   "computation": "validation-as-input-audit",
   "scriptFile": "validation_as_input_audit.py",
-  "scriptHash": "4e967722358d",
-  "scriptCommitSha": "f84eacfb540964cb95c6221eedc003e716a86fc9",
+  "scriptHash": "a06717f9f779",
+  "scriptCommitSha": "a962bf5ab9372bb4ca1f133a4e50b18ba99fc75b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -56,8 +56,8 @@
   },
   "data": {
     "by_result": {
-      "i11_violation": 34,
-      "ok_comparison_only": 10,
+      "i11_violation": 19,
+      "ok_comparison_only": 25,
       "imported_unused": 6,
       "ok_acknowledged_anchor": 5
     },
@@ -115,12 +115,9 @@
           216
         ],
         "violation_lines": [
-          77,
-          78,
-          79,
           226
         ],
-        "violation_count": 4,
+        "violation_count": 1,
         "result": "i11_violation"
       },
       {
@@ -130,10 +127,9 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          61,
           403
         ],
-        "violation_count": 2,
+        "violation_count": 1,
         "result": "i11_violation"
       },
       {
@@ -145,11 +141,9 @@
           72,
           84
         ],
-        "violation_lines": [
-          66
-        ],
-        "violation_count": 1,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/build_proton_mass_50dps_chain.py",
@@ -173,12 +167,9 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [],
-        "violation_lines": [
-          46,
-          47
-        ],
-        "violation_count": 2,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/definitive_q0_shift_for_mp.py",
@@ -213,11 +204,9 @@
           "M_P_MEV_VALIDATION"
         ],
         "comparison_lines": [],
-        "violation_lines": [
-          140
-        ],
-        "violation_count": 1,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/derived_masses.py",
@@ -263,12 +252,9 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [],
-        "violation_lines": [
-          274,
-          275
-        ],
-        "violation_count": 2,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/hydrogen_step_by_step.py",
@@ -292,10 +278,9 @@
           108
         ],
         "violation_lines": [
-          89,
           109
         ],
-        "violation_count": 2,
+        "violation_count": 1,
         "result": "i11_violation"
       },
       {
@@ -305,11 +290,8 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [],
-        "violation_lines": [
-          56,
-          57
-        ],
-        "violation_count": 2,
+        "violation_lines": [],
+        "violation_count": 0,
         "result": "ok_acknowledged_anchor"
       },
       {
@@ -320,12 +302,10 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          162,
-          163,
           166,
           167
         ],
-        "violation_count": 4,
+        "violation_count": 2,
         "result": "i11_violation"
       },
       {
@@ -336,11 +316,9 @@
         "comparison_lines": [
           92
         ],
-        "violation_lines": [
-          46
-        ],
-        "violation_count": 1,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/m_p_substrate_identity_50dps.py",
@@ -352,12 +330,9 @@
           194,
           195
         ],
-        "violation_lines": [
-          98,
-          99
-        ],
-        "violation_count": 2,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/m_sym_error_budget.py",
@@ -421,12 +396,10 @@
           97
         ],
         "violation_lines": [
-          52,
-          53,
           431,
           432
         ],
-        "violation_count": 4,
+        "violation_count": 2,
         "result": "i11_violation"
       },
       {
@@ -439,10 +412,9 @@
           59
         ],
         "violation_lines": [
-          50,
           60
         ],
-        "violation_count": 2,
+        "violation_count": 1,
         "result": "i11_violation"
       },
       {
@@ -464,12 +436,9 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [],
-        "violation_lines": [
-          109,
-          110
-        ],
-        "violation_count": 2,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/per_observable_100x_status.py",
@@ -493,15 +462,9 @@
           120
         ],
         "violation_lines": [
-          39,
-          40,
-          41,
-          42,
-          43,
-          44,
           122
         ],
-        "violation_count": 7,
+        "violation_count": 1,
         "result": "ok_acknowledged_anchor"
       },
       {
@@ -548,12 +511,9 @@
           123,
           124
         ],
-        "violation_lines": [
-          55,
-          56
-        ],
-        "violation_count": 2,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/probes/option_a_vol_per_knot_light_series.py",
@@ -573,16 +533,9 @@
           248,
           255
         ],
-        "violation_lines": [
-          97,
-          98,
-          99,
-          100,
-          101,
-          102
-        ],
-        "violation_count": 6,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/probes/path_b_defect_binding_probe.py",
@@ -591,12 +544,9 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [],
-        "violation_lines": [
-          88,
-          89
-        ],
-        "violation_count": 2,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/probes/path_b_habiro_mass_probe.py",
@@ -605,12 +555,9 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [],
-        "violation_lines": [
-          94,
-          95
-        ],
-        "violation_count": 2,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/probes/phase2a_flavor_split_higher_order_probe.py",
@@ -659,12 +606,9 @@
         "comparison_lines": [
           85
         ],
-        "violation_lines": [
-          73,
-          74
-        ],
-        "violation_count": 2,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/proton_mu_mass_ratio_substrate_identity.py",
@@ -688,12 +632,9 @@
           60,
           61
         ],
-        "violation_lines": [
-          36,
-          37
-        ],
-        "violation_count": 2,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/qbeta/qbeta_1ppq_achieved.py",
@@ -771,8 +712,6 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          45,
-          46,
           60,
           61,
           62,
@@ -780,7 +719,7 @@
           64,
           65
         ],
-        "violation_count": 8,
+        "violation_count": 6,
         "result": "i11_violation"
       },
       {
@@ -804,11 +743,8 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [],
-        "violation_lines": [
-          1186,
-          1187
-        ],
-        "violation_count": 2,
+        "violation_lines": [],
+        "violation_count": 0,
         "result": "ok_acknowledged_anchor"
       },
       {
@@ -820,11 +756,9 @@
         "comparison_lines": [
           48
         ],
-        "violation_lines": [
-          40
-        ],
-        "violation_count": 1,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/verify_isospin_bar_anomaly.py",
@@ -847,12 +781,9 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [],
-        "violation_lines": [
-          41,
-          42
-        ],
-        "violation_count": 2,
-        "result": "i11_violation"
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
       },
       {
         "path": "computations/volume_def_reconcile.py",
@@ -864,11 +795,9 @@
           64
         ],
         "violation_lines": [
-          51,
-          52,
           65
         ],
-        "violation_count": 3,
+        "violation_count": 1,
         "result": "i11_violation"
       }
     ]

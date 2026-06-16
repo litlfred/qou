@@ -159,6 +159,19 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
 
     # Walk usage lines (any line containing one of the constants).
     lines = text.splitlines()
+    # Track multi-line `from … import (…)` continuation lines — the names
+    # listed across them are imports, not uses, but they don't start with
+    # `from`/`import` so the single-line skip misses them (refinement,
+    # 2026-06-16: the import-continuation false-positive class).
+    import_cont: set[int] = set()
+    _in_import_paren = False
+    for i, line in enumerate(lines, start=1):
+        if _in_import_paren:
+            import_cont.add(i)
+            if ")" in line:
+                _in_import_paren = False
+        elif re.match(r"\s*(from|import)\b", line) and "(" in line and ")" not in line:
+            _in_import_paren = True
     usage_lines: list[tuple[int, str]] = []
     for i, line in enumerate(lines, start=1):
         # Strip Python comments (# ...) from the line for
@@ -212,7 +225,7 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
     violation_lines: list[int] = []
     comparison_lines: list[int] = []
     for n, line in usage_lines:
-        if re.match(r"\s*(from|import)\b", line):
+        if re.match(r"\s*(from|import)\b", line) or n in import_cont:
             continue
         # Comparison-context, recording/display, or two-step alias-to-comparison?
         is_ok = (
