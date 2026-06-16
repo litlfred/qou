@@ -49,6 +49,19 @@ to the true-candidate subset; only then review that (much smaller) set for
 real hidden calibration. Do **not** mass-edit 39 scripts — most are not
 violations.
 
+**Update (refinement landed, PR #i11-audit-refine):** three precise
+exclusions added — recording context (`add_parameter`/`print`/…),
+two-step alias comparisons, and a string-literal matching bug (the
+constant *name* inside a quoted string counted as a use). Result:
+**i11_violation 39 → 34**, with 21 scripts now correctly sub-classified
+(10 `ok_comparison_only`, 5 acknowledged, 6 `imported_unused`). A long
+tail of FPs remains (dict-roster recordings like
+`ATOMS = {… "M_MeV": str(M_X_VALIDATION) …}`, used in `B = M_codata −
+pred` comparisons) — fully robust classification needs **AST-based
+dataflow** (does the anchor flow into a *predicted* quantity vs only into
+comparison/recording?), a scoped larger follow-up. The substring-level
+refinement takes the safe wins without over-suppressing real violations.
+
 ## I8 — float64-leak (16, MEDIUM)
 
 16 substrate-pure-banner scripts cast `float()` on a derived `mpf` (or
