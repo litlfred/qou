@@ -11,9 +11,12 @@ are the three real degrees of freedom of the Bring Hodge structure
 `H^1 = 2W` (see `prop:calibration-cohomology-alignment`):
 
 * `m_e` — the **scale** of the rank-2 `W`-Hodge plane (`h^0` prefactor);
-* `q_0` — the **modulus** of that plane (`SL₂` trace `2cosh θ`), fixed
-  by the proton ratio `m_p/m_e` (re-pinned 2026-05-28; the muon ratio
-  `m_μ/m_e` is now a `9.5σ` cross-check prediction, not the anchor);
+* `q_0` — the **modulus** of that plane (`SL₂` trace `2cosh θ`), the
+  canonical CAL-2, fixed by the lepton ratio `m_μ/m_e` (which
+  dimensionalises to `Vol(4_1)`). In the Physical-Observations layer
+  `q_0` may be numerically anchored on the more-precise proton ratio
+  `m_p/m_e` (re-pin 2026-05-28) — a precision substitution, not a
+  change to the canonical calibration;
 * `m_π` — the **scale** of the `Vol(Hopf)=0` meson sector, an
   *orthogonal* class independent of `(m_e, q_0)` because the Hopf-link
   complement has zero hyperbolic volume.
@@ -74,8 +77,8 @@ structure HadronicState where
     (`prop:calibration-cohomology-alignment`):
 
     - `m_e` is the **scale** of the rank-2 `W`-Hodge plane.
-    - `q_0` is the **modulus** of that plane, fixed by the proton
-      ratio `m_p/m_e`.
+    - `q_0` is the **modulus** of that plane, the canonical CAL-2,
+      fixed by the lepton ratio `m_μ/m_e`.
     - `m_π` is the **scale** of the `Vol(Hopf)=0` meson sector — an
       orthogonal class independent of `(m_e, q_0)`.
 
@@ -89,7 +92,8 @@ class ThreeCalibrationDiscipline (State : Type u) where
   /-- Positivity of the mass scale. -/
   m_e_pos : 0 < m_e
   /-- CAL-2: dimensionless substrate parameter (the modulus of the
-      `W`-Hodge plane), fixed by the proton mass ratio `m_p / m_e`. -/
+      `W`-Hodge plane), fixed by the lepton mass ratio `m_μ / m_e`
+      (Physical-Observations may numerically anchor on `m_p / m_e`). -/
   q_0 : ℝ
   /-- `q_0 > 1` (positivity / non-degenerate substrate). -/
   q_0_pos : 1 < q_0
