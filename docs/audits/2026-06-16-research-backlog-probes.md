@@ -13,7 +13,7 @@ Reproducible compute:
 | Item | Block | Verdict |
 |------|-------|---------|
 | #1 | `cl3-zeta5-geometric-realization` | **smallest-viable-step is ill-posed** (refuted) |
-| #7 | `negative-debt-confinement` | **tractable, but the literal colour-resolution is trace-invisible** (colour singlet $\dim_q = 1$) — prunes the "9-strand = 3×colour" route |
+| #7 | `negative-debt-confinement` | **route closed**: tractable, but colour resolution is trace-invisible (singlet $\dim_q=1$) and the entanglement escape is blocked by confinement (1-dim colour block) — $\mathfrak{E}_0$ cannot come from colour |
 | #6 | `gram-matrix-h3-symbolic` | **deferral confirmed correct** (brute-force re-checked) |
 | #4 | `bigbang-heatdeath` | speculative metaphor; no action (math already correct) |
 
@@ -110,12 +110,6 @@ independent structural principle (color-singlet closure + the existing
 $u$–$d$ crossing-typing of the $H_3$ model) **first**, then compute
 $\mathrm{tr}_M$ and check $\mathfrak{E}_0$ as a genuine prediction.
 
-**Note:** the bean cites `beta-decay-energy-scale.witness.json`, which
-**does not exist** in `folio-assistant/computations/`. The $H_3$
-NF₊/NF₋ table in `negative-debt-confinement.md` is not currently backed by
-a committed witness; producing one is a prerequisite for the 9-strand
-comparison.
-
 ### #7 next step — the literal color-resolution is trace-invisible
 
 Carrying out the principled construction the author approved (resolve
@@ -154,22 +148,69 @@ contrast the standard channel $\dim_q(2,1) = q + q^{-1} = [2]_q \approx
 The only way to make the 9-strand trace carry $\mathfrak{E}_0$-fixing
 information is to **break the colour$\otimes$flavour factorisation** —
 entangle the colour and flavour braidings so the closure is no longer a
-pure $(1^3)$ projector. But that entanglement is precisely a new modeling
-input with new degrees of freedom, i.e. the fitting hazard the
-critical-distance license flags. So:
+pure $(1^3)$ projector. This "entanglement escape" is scoped below.
 
-- the 9-strand direction is **compute-tractable** (P7 above), **but**
-- in its clean, principled form it is **trace-invisible** and predicts
-  nothing, **and**
-- any non-trivial variant injects free parameters (colour–flavour
-  entanglement) that would have to be fixed independently to count as a
-  prediction rather than a fit.
+### #7 entanglement escape — closed by confinement (1-dim colour block)
 
-This does not close item #7, but it **prunes the literal "9-strand =
-3×colour" route**: the quantum dimension of the baryon colour singlet is
-$1$, so colour resolution alone cannot supply the energy scale.
-Reproducible: `h9_wedderburn_tractability` probe + the $\dim_q$ table
-above (exact sympy).
+One refinement is needed first: a 1-dim block is *not* automatically
+trace-invisible for a **non-trivial** colour braid. On a 1-dim irrep each
+generator $\sigma_i$ acts as a *scalar eigenvalue*, so a non-trivial
+colour word (e.g. the Borromean closure $(\sigma_1\sigma_2^{-1})^3$ the
+bean invokes) could in principle contribute a $q$-power, not $1$. We check
+it.
+
+Action of the **Borromean colour word $(\sigma_1\sigma_2^{-1})^3$** on each
+$H_3(q)$ irrep (explicit 2-dim seminormal rep, braid relation residual
+$=0$, Hecke relation $(\sigma-q)(\sigma+q^{-1})=0$ verified):
+
+| colour block | physical role | $(\sigma_1\sigma_2^{-1})^3$ acts as |
+|--------------|---------------|--------------------------------------|
+| $(3)$ trivial | — | scalar $\mathbf{1}$ |
+| $(1^3)$ sign | **baryon colour singlet** | scalar $\mathbf{1}$ |
+| $(2,1)$ standard | colour **octet** (non-singlet) | **non-scalar**, $\operatorname{tr} = -q^6+3q^4-3q^2+4-3q^{-2}+3q^{-4}-q^{-6} \approx 1.994$ at $q_0$ |
+
+On **both** 1-dim blocks the Borromean word is the scalar $1$ — by
+**eigenvalue cancellation**: each $\sigma$ contributes its eigenvalue $e$,
+each $\sigma^{-1}$ contributes $e^{-1}$, and the balanced word
+$(\sigma\sigma^{-1})^3$ collapses to $e^0=1$ regardless of $q$ or of which
+eigenvalue ($q$ on $(3)$, $-q^{-1}$ on $(1^3)$). This is robust to *any*
+crossing-balanced colour word, and a colour-singlet closure is balanced.
+
+> **Verdict (#7 entanglement escape — CLOSED).** Colour **confinement**
+> forces the baryon colour sector into the 1-dimensional sign irrep
+> $(1^3)$. On a 1-dim block every colour braid acts as a *scalar*, and the
+> balanced (Borromean) colour word acts as exactly $1$. The only block
+> where the colour braid carries non-trivial trace information is the 2-dim
+> standard $(2,1)$ — the colour **octet**, which confinement strictly
+> forbids a baryon to occupy. So colour–flavour entanglement is **neither**
+> an independent structural fix **nor** a tunable free parameter for
+> $\mathfrak{E}_0$: the 1-dimensionality of the confined colour singlet
+> closes *both* doors.
+
+**Net result for #7.** The "9-strand $=$ 3×colour predicts
+$\mathfrak{E}_0$" hypothesis is **closed as a viable route**:
+
+- trivial colour (identity): factor $1$ (trace-invisible),
+- Borromean colour closure: still factor $1$ on the $(1^3)$ singlet
+  (eigenvalue cancellation),
+- colour–flavour entanglement: blocked — confinement pins colour to a
+  1-dim irrep, whose scalar action carries no $\mathfrak{E}_0$ knob.
+
+$\mathfrak{E}_0$ therefore **cannot** come from colour resolution; it must
+originate in the flavour/spatial sector (the existing $H_3$ $u$–$d$ typing
++ spatial braiding) or from genuinely new structure. This still does not
+*derive* $\mathfrak{E}_0$ — it remains a CAL-style calibration — but it
+removes the entire colour-resolution programme from its roadmap, replacing
+a multi-day $H_9$ compute with a one-line representation-theoretic
+argument (formalize-first). Reproducible: `h9_wedderburn_tractability`
+probe + the $\dim_q$ and Borromean-action tables above (exact sympy,
+braid- and Hecke-relation verified).
+
+**Note:** the bean cites `beta-decay-energy-scale.witness.json`, which
+**does not exist** in `folio-assistant/computations/`. The $H_3$
+NF₊/NF₋ table in `negative-debt-confinement.md` is not currently backed by
+a committed witness; producing one is a prerequisite for any future
+$\mathfrak{E}_0$ comparison.
 
 ---
 
