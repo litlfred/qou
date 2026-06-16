@@ -94,6 +94,17 @@ enough to start.
    recorded-vs-current hashes *without* re-running producers, so it
    covers every witness, on every PR, cheaply.
 
+## Assertion gate (#4 — shipped as `witness_assertion_gate.py`)
+
+The value complement to staleness. Scans every witness for
+`allPassed == false`, separating **production** (actionable) from
+**audit-only/exploratory** (failing assertions are expected — an honest
+open gap). Current corpus: **47 production witnesses with failing
+assertions**, 14 audit-only. On the regenerate path this blocks a refresh
+whose `allPassed` flips false (so a regeneration can't launder a
+regression or keep a retired fit). `--strict` exits 1 on production
+failures.
+
 ## Minimal first step (shipped on this PR)
 
 - Fixed + extended `witness_dependency_drift.py` (self-staleness +
