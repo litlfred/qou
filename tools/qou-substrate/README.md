@@ -26,7 +26,7 @@ Pyodide-loadable via `micropip.install("qou-substrate")` — no native code.
 from qou_substrate import Q, HA, q_int, set_compute_dps, fmt, WitnessBuilder
 
 # Substrate constants (float, bit-stable across installs)
-print(Q)                # 1.1099785955...   the substrate parameter
+print(Q)                # 1.1099785827...   the substrate parameter (proton-anchored)
 print(HA)               # q - q^-1
 print(q_int(9))         # quantum integer [9]_q
 
