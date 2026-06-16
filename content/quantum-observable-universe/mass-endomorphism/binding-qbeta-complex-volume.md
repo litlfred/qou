@@ -123,12 +123,23 @@ witness `qbeta-ck-sseries-operator-match`). Two different real $c_2$'s for
 the two parities are exactly what Re/Im components of one complex
 $c_2$ predict.
 
-## Consequence — one story
+## Consequence — one story, and one proof
 
 Conditional on the unification, the framework's mass/binding chapter and
 its $\beta$-decay chapter are **one derivation**: compute the complex
-convolution-defect $\mathfrak{V}(K) = \mathfrak{V}(K)$ once;
-its real part is every binding energy, its imaginary part is every
-$Q$-value. The "$0.17\%$ $\mathfrak{Q}_\beta$ residual" and the binding $\Delta_\lambda$
-gap become the *same* unclosed object — the imaginary and real parts of
-one complex volume — rather than two independent open problems.
+defect $\mathfrak{V}(K)$ once; its real part is every binding energy, its
+imaginary part is every $Q$-value. The "$0.17\%$ $\mathfrak{Q}_\beta$
+residual" and the binding $\Delta_\lambda$ gap become the *same* unclosed
+object — the imaginary and real parts of one defect — rather than two
+independent open problems.
+
+**Proof economy.** Because $\operatorname{Re}$ and $\operatorname{Im}$
+are $\mathbb{R}$-linear, any relation proved for the *complex*
+$\mathfrak{V}$ (with real coefficients) descends to **both** binding
+($\operatorname{Re}$) and $\mathfrak{Q}_\beta$ ($\operatorname{Im}$) from
+a *single* proof — the two bar-even/bar-odd arguments collapse into one.
+Formalised: `reIm_descent` (a complex identity is two real identities) and
+`recurrence_reIm_descent` (a complex three-term `𝔙`-recurrence with real
+multiplier yields the binding and $\mathfrak{Q}_\beta$ recurrences at once
+— the `c_k`-ladder mechanism), both sorry-free in
+[`QOU.MassEndomorphism`](binding-qbeta-complex-volume.lean).

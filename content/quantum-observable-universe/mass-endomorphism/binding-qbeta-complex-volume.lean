@@ -76,6 +76,33 @@ theorem complex_volume_unification (E0 : ℝ) (trDefect : ℂ) :
   unfold binding Qbeta
   exact Complex.re_add_im _
 
+/-! ## Re/Im descent — one proof on `𝔙` covers binding AND `𝔔_β` at once
+
+The payoff of the unification. Because `Complex.re` and `Complex.im` are
+ℝ-linear, any relation proved for the *complex* `𝔙` (with real
+coefficients) descends **simultaneously** to its real part (binding,
+`𝔈_bind = Re 𝔙`) and imaginary part (`𝔔_β = Im 𝔙`) — a single complex
+proof replaces the two separate bar-even/bar-odd arguments. -/
+
+/-- A complex identity descends to its real and imaginary parts at once:
+    one complex equation `=` two real equations. -/
+theorem reIm_descent {z w : ℂ} (h : z = w) :
+    z.re = w.re ∧ z.im = w.im :=
+  ⟨congrArg Complex.re h, congrArg Complex.im h⟩
+
+/-- **Recurrence descent — the `c_k`-ladder mechanism.** A complex
+    three-term recurrence with a *real* multiplier `c` (e.g. the `𝔙`-tower
+    `𝔙_{k+1} = c·𝔙_k − 𝔙_{k−1}`) yields the **binding** (Re) and **`𝔔_β`**
+    (Im) recurrences from the *single* complex proof — prove the ladder once
+    on `𝔙`, read off both observable channels. -/
+theorem recurrence_reIm_descent (Vp Vk Vm : ℂ) (c : ℝ)
+    (h : Vp = (c : ℂ) * Vk - Vm) :
+    (Vp.re = c * Vk.re - Vm.re) ∧ (Vp.im = c * Vk.im - Vm.im) := by
+  subst h
+  refine ⟨?_, ?_⟩
+  · simp [Complex.sub_re, Complex.mul_re, Complex.ofReal_re, Complex.ofReal_im]
+  · simp [Complex.sub_im, Complex.mul_im, Complex.ofReal_re, Complex.ofReal_im]
+
 /-! ## Physical-match conjecture (the only open content) -/
 
 /-- The physical-match conjecture (CLAUDE.md §3b-cond class): the
