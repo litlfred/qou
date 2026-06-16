@@ -5,10 +5,11 @@ the colour side to be SU(3), with A_5 acting DIRECTLY (no binary cover).
 
 A Reeb/Sasakian construction whose strand fibre carries the defining rep of its
 structure group SU(N) computes the Hecke Markov trace through the U_q(sl_N)
-Schur-Weyl duality -- i.e. it sees exactly the S_5 blocks with <= N rows
-(quantum Schur-Weyl).  This script encodes:
+Schur-Weyl duality -- i.e. it sees exactly the H_5(q) Wedderburn blocks (indexed
+by partitions lambda |- 5) with <= N rows (quantum Schur-Weyl).  This script
+encodes:
 
-  * structure group SU(N) -> per-strand C^N -> blocks with rows(lambda) <= N
+  * structure group SU(N) -> per-strand C^N -> H_5(q) blocks with rows(lambda) <= N
   * SU(2) Hopf S^3 (the existing exceptional-divisor Reeb): sl_2 / Jones / <=2
     rows -> electron (3,1,1) ABSENT.
   * SU(3) Sasakian S^5 (colour): sl_3 / colour HOMFLY / <=3 rows -> electron
@@ -21,7 +22,6 @@ Schur-Weyl duality -- i.e. it sees exactly the S_5 blocks with <= N rows
 
 No external deps.
 """
-from math import factorial
 import sys
 
 PARTS5 = [(5,), (4, 1), (3, 2), (3, 1, 1), (2, 2, 1), (2, 1, 1, 1), (1, 1, 1, 1, 1)]
@@ -29,19 +29,8 @@ ELECTRON = (3, 1, 1)
 MUON = (3, 2)
 
 
-def hook_dim(lam):
-    n = sum(lam)
-    prod = 1
-    for i, row in enumerate(lam):
-        for j in range(row):
-            arm = row - j - 1
-            leg = sum(1 for k in range(i + 1, len(lam)) if lam[k] > j)
-            prod *= (arm + leg + 1)
-    return factorial(n) // prod
-
-
 def blocks_seen(N):
-    """S_5 blocks a SU(N)-Sasakian Reeb construction sees (rows <= N)."""
+    """H_5(q) Wedderburn blocks a SU(N)-Sasakian Reeb construction sees (rows <= N)."""
     return [lam for lam in PARTS5 if len(lam) <= N]
 
 
