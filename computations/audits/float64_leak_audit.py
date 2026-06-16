@@ -210,7 +210,14 @@ def main() -> int:
 
     rows: list[dict[str, Any]] = []
     total_substrate_scripts = 0
-    for py in sorted(HERE.glob("*.py")):
+    # Scan the whole compute tree (HERE.parent = computations/), not just
+    # this audit's own dir. Pre-reorg this script lived in the compute dir
+    # and scanned its siblings via HERE.glob; after the move to
+    # computations/audits/ that glob saw only 2 files (a vacuous green).
+    # Walk computations/ recursively, skipping _deprecated.
+    for py in sorted((HERE.parent).rglob("*.py")):
+        if "_deprecated" in py.parts:
+            continue
         if py.name.startswith("_"):
             continue
         if py.name == "float64_leak_audit.py":

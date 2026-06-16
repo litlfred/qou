@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T06:31:02.633276+00:00",
-  "commitSha": "c4dffb015789e9617ce335c4b7a6c0b865bc7517",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-16T19:17:57.521077+00:00",
+  "commitSha": "cecd4921a6996ca81d902a444a04aebf3efa7832",
   "assertions": [
     {
       "name": "no_i8_violations",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13,
+  "durationMs": 10,
   "computation": "float64-leak-audit",
   "scriptFile": "float64_leak_audit.py",
-  "scriptHash": "c80f32b0fb3f",
-  "scriptCommitSha": "7ed5bd92a83eb3187638d475d54804ab137b5e7b",
+  "scriptHash": "33ec2116134d",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,26 +27,27 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
   },
   "description": "I8 audit per local/compute-integration-watcher: scripts whose docstrings claim substrate-pure / canonical / 50-dps precision are scanned for float64 leaks — `np.float64(...)`, `float(...)` casts on derived mpf values, f-string precision clipping, and `==` comparison on mpf values. Antipattern shapes are matched against the four catalogue items. False-positive guards: lines inside builder `add_data` / `add_parameter` / `add_assertion` calls are classified as `ok_witness_emit` (final-step JSON serialization is expected); lines followed within 3 by `mp.mpf(str(...))` re-wrap are `false_positive_candidate`.",
   "contentBlock": "I8 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "substrate_banner_scripts_total": 46
+    "substrate_banner_scripts_total": 55
   },
   "data": {
     "by_result": {
-      "ok_with_display_or_fp": 5,
-      "ok_no_leaks": 29,
-      "i8_violation": 12
+      "ok_with_display_or_fp": 6,
+      "ok_no_leaks": 33,
+      "i8_violation": 16
     },
     "rows": [
       {
-        "path": "folio-assistant/computations/atomic_tr_m_helium4_canonical.py",
+        "path": "computations/atomic_tr_m_helium4_canonical.py",
         "substrate_banner": true,
         "hit_count": 5,
         "violation_count": 0,
@@ -57,31 +58,31 @@
         "false_positive_count": 0,
         "hits": [
           {
-            "line_number": 126,
+            "line_number": 128,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "print(f\"\\n      wall time (H_3 baseline):     {t_h3:.4f}s\")"
           },
           {
-            "line_number": 127,
+            "line_number": 129,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "print(f\"      wall time (closed form ⁴He):   {t_closed:.6f}s\")"
           },
           {
-            "line_number": 128,
+            "line_number": 130,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "print(f\"      total:                          {t_h3 + t_closed:.4f}s\")"
           },
           {
-            "line_number": 158,
+            "line_number": 160,
             "pattern": "float_cast",
             "context": "ok_witness_emit",
             "code_snippet": "w.add_data(\"abs_tau_4he_float\", float(abs_tau_4he))"
           },
           {
-            "line_number": 175,
+            "line_number": 177,
             "pattern": "float_cast",
             "context": "ok_witness_emit",
             "code_snippet": "computed=float(abs_tau_4he),"
@@ -90,7 +91,7 @@
         "result": "ok_with_display_or_fp"
       },
       {
-        "path": "folio-assistant/computations/borromean_markov_trace_h_expansion_50dps.py",
+        "path": "computations/audits/fitted_labelled_canonical_audit.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -103,7 +104,83 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/c_alpha_alpha_categorical_via_jones_markov.py",
+        "path": "computations/audits/guarded_off_audit.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/bar_pairing_binding_observable.py",
+        "substrate_banner": true,
+        "hit_count": 6,
+        "violation_count": 3,
+        "display_count": 1,
+        "comparison_count": 2,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 145,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"[{atom}] {kind}@{q_tag} done in {elapsed:.2f}s\", flush=True)"
+          },
+          {
+            "line_number": 276,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "\"B_arch_MeV\": float(B_arch),"
+          },
+          {
+            "line_number": 277,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "\"B_bar_MeV\": float(B_bar),"
+          },
+          {
+            "line_number": 278,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "\"AME_MeV\": float(ame),"
+          },
+          {
+            "line_number": 279,
+            "pattern": "float_cast",
+            "context": "ok_comparison",
+            "code_snippet": "\"err_arch_pct\": float(err_arch * 100),"
+          },
+          {
+            "line_number": 280,
+            "pattern": "float_cast",
+            "context": "ok_comparison",
+            "code_snippet": "\"err_bar_pct\": float(err_bar * 100),"
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "computations/borromean_markov_trace_h_expansion_50dps.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/c_alpha_alpha_categorical_via_jones_markov.py",
         "substrate_banner": true,
         "hit_count": 4,
         "violation_count": 0,
@@ -114,25 +191,25 @@
         "false_positive_count": 0,
         "hits": [
           {
-            "line_number": 127,
+            "line_number": 128,
             "pattern": "float_cast",
             "context": "ok_display",
             "code_snippet": "print(f\"  m_e = {float(M_E_MEV):.10f} MeV\")"
           },
           {
-            "line_number": 127,
+            "line_number": 128,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "print(f\"  m_e = {float(M_E_MEV):.10f} MeV\")"
           },
           {
-            "line_number": 137,
+            "line_number": 138,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "print(f\"      wall: {t_wenzl*1000:.2f} ms\")"
           },
           {
-            "line_number": 146,
+            "line_number": 147,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "print(f\"      wall: {t_qschur*1000:.2f} ms\")"
@@ -141,10 +218,10 @@
         "result": "ok_with_display_or_fp"
       },
       {
-        "path": "folio-assistant/computations/canonical_mass_table_extended.py",
+        "path": "computations/canonical_mass_table_extended.py",
         "substrate_banner": true,
-        "hit_count": 6,
-        "violation_count": 2,
+        "hit_count": 7,
+        "violation_count": 3,
         "display_count": 4,
         "comparison_count": 0,
         "noqa_count": 0,
@@ -152,37 +229,43 @@
         "false_positive_count": 0,
         "hits": [
           {
-            "line_number": 326,
+            "line_number": 248,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "tr_mp, wall, err = compute_tr_m_via_branching(Z, N, q_val=float(Q_FLOAT))"
+          },
+          {
+            "line_number": 361,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "return float(x)"
           },
           {
-            "line_number": 400,
+            "line_number": 432,
             "pattern": "float_cast",
             "context": "ok_display",
             "code_snippet": "paper_floor_dps = float(-mp.log10(mp.mpf(paper_floor_ppb) * mp.mpf(\"1e-9\")))"
           },
           {
-            "line_number": 413,
+            "line_number": 445,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "f\"(~{paper_floor_dps:.1f} dps; CAL-2 propagation)\")"
           },
           {
-            "line_number": 500,
+            "line_number": 532,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "ref = float(v) if v is not None else None"
           },
           {
-            "line_number": 549,
+            "line_number": 581,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "pred_str = f\"{pred:.4f}\" if pred is not None else \"—\""
           },
           {
-            "line_number": 550,
+            "line_number": 582,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "ame_str = f\"{ref:.4f}\" if ref is not None else \"—\""
@@ -191,7 +274,133 @@
         "result": "i8_violation"
       },
       {
-        "path": "folio-assistant/computations/closed_form_tau_M.py",
+        "path": "computations/canonical_tr_m_via_branching.py",
+        "substrate_banner": true,
+        "hit_count": 8,
+        "violation_count": 5,
+        "display_count": 2,
+        "comparison_count": 1,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 115,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "q_val = float(Q_FLOAT)"
+          },
+          {
+            "line_number": 151,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "word.append((1.0, -float(h_val), int(gen)))"
+          },
+          {
+            "line_number": 153,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "word.append((1.0, -float(h_val) / 2, int(gen)))"
+          },
+          {
+            "line_number": 193,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "q_val = float(Q_FLOAT)"
+          },
+          {
+            "line_number": 359,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "q_val = float(Q_FLOAT)"
+          },
+          {
+            "line_number": 399,
+            "pattern": "float_cast",
+            "context": "ok_comparison",
+            "code_snippet": "q_arg = (None if abs(float(q_val) - float(Q_FLOAT)) < 1e-30"
+          },
+          {
+            "line_number": 504,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "verdict = f\"vs markov_peel rel_err={float(rel):.2e}\""
+          },
+          {
+            "line_number": 504,
+            "pattern": "fstring_precision_e",
+            "context": "ok_display",
+            "code_snippet": "verdict = f\"vs markov_peel rel_err={float(rel):.2e}\""
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "computations/chi_at_q_inv_via_native_mpfr.py",
+        "substrate_banner": true,
+        "hit_count": 3,
+        "violation_count": 2,
+        "display_count": 1,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 124,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "q_inv_f = float(mp.mpf(q_inv))"
+          },
+          {
+            "line_number": 134,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"[{atom}] DONE: {len(rust_out)} partitions in {elapsed:.2f}s\","
+          },
+          {
+            "line_number": 144,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "f\"λ ⊢ {n}, evaluated at q = q_0^{{-1}} ≈ {q_inv_f:.6f} at \""
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "computations/chi_cd_mpfr.py",
+        "substrate_banner": true,
+        "hit_count": 3,
+        "violation_count": 3,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 51,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "h_f = float(h)"
+          },
+          {
+            "line_number": 55,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "cf, df = float(c), float(d)"
+          },
+          {
+            "line_number": 72,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "if abs(df - float(expected_d)) > _TOL:"
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "computations/closed_form_tau_M.py",
         "substrate_banner": true,
         "hit_count": 1,
         "violation_count": 1,
@@ -202,7 +411,7 @@
         "false_positive_count": 0,
         "hits": [
           {
-            "line_number": 351,
+            "line_number": 352,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "h_val = float(Q0 - 1 / Q0)"
@@ -211,141 +420,141 @@
         "result": "i8_violation"
       },
       {
-        "path": "folio-assistant/computations/constit_factor_residual_phase5k.py",
+        "path": "computations/constit_factor_residual_phase5k.py",
         "substrate_banner": true,
-        "hit_count": 52,
-        "violation_count": 24,
-        "display_count": 24,
+        "hit_count": 47,
+        "violation_count": 16,
+        "display_count": 27,
         "comparison_count": 2,
         "noqa_count": 0,
         "witness_emit_count": 2,
         "false_positive_count": 0,
         "hits": [
           {
-            "line_number": 87,
+            "line_number": 89,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"h_k_value\": float(h_k),"
           },
           {
-            "line_number": 88,
+            "line_number": 90,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"c_estimate\": float(c_estimate),"
           },
           {
-            "line_number": 89,
+            "line_number": 91,
             "pattern": "float_cast",
             "context": "ok_comparison",
             "code_snippet": "\"rel_to_residual\": float(h_k / abs(residual)) if residual != 0 else float(\"inf\"),"
           },
           {
-            "line_number": 92,
+            "line_number": 94,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"rho_measured\": float(rho_meas),"
           },
           {
-            "line_number": 93,
+            "line_number": 95,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"predicted_2q_minus_1\": float(predicted),"
           },
           {
-            "line_number": 94,
+            "line_number": 96,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"residual\": float(residual),"
           },
           {
-            "line_number": 95,
+            "line_number": 97,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"rel_err\": float(rel_err),"
           },
           {
-            "line_number": 96,
+            "line_number": 98,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"h_at_q0\": float(h),"
           },
           {
-            "line_number": 100,
+            "line_number": 102,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "((k, abs(abs(float(powers[f\"h^{k}\"][\"c_estimate\"])) - 1.0))"
           },
           {
-            "line_number": 110,
+            "line_number": 112,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "f\"{result['rho_measured']:.10f}\")"
           },
           {
-            "line_number": 112,
+            "line_number": 114,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "f\"{result['predicted_2q_minus_1']:.10f}\")"
           },
           {
-            "line_number": 116,
+            "line_number": 118,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "f\"{result['rel_err']*100:.4f}%\")"
           },
           {
-            "line_number": 118,
+            "line_number": 120,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "f\"{result['h_at_q0']:.6f}\")"
           },
           {
-            "line_number": 163,
+            "line_number": 165,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"h\": float(h),"
           },
           {
-            "line_number": 164,
+            "line_number": 166,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"h_squared\": float(h ** 2),"
           },
           {
-            "line_number": 165,
+            "line_number": 167,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"h_cubed\": float(h ** 3),"
           },
           {
-            "line_number": 166,
+            "line_number": 168,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"h_to_4\": float(h ** 4),"
           },
           {
-            "line_number": 167,
+            "line_number": 169,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_display",
             "code_snippet": "\"h_to_5\": float(h ** 5),"
           },
           {
-            "line_number": 168,
+            "line_number": 170,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_display",
             "code_snippet": "\"cosh_h\": float(cosh_h),"
           },
           {
-            "line_number": 169,
+            "line_number": 171,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_display",
             "code_snippet": "\"cosh_log_q\": float(cosh_log_q),"
           }
         ],
         "result": "i8_violation"
       },
       {
-        "path": "folio-assistant/computations/delta_lambda_categorical_verification.py",
+        "path": "computations/delta_lambda_categorical_verification.py",
         "substrate_banner": true,
         "hit_count": 10,
         "violation_count": 2,
@@ -356,61 +565,61 @@
         "false_positive_count": 0,
         "hits": [
           {
-            "line_number": 251,
+            "line_number": 253,
             "pattern": "float_cast",
             "context": "ok_witness_emit",
             "code_snippet": "str(k): {\"re\": float(v.real), \"im\": float(v.imag),"
           },
           {
-            "line_number": 252,
+            "line_number": 254,
             "pattern": "float_cast",
             "context": "ok_witness_emit",
             "code_snippet": "\"abs\": float(abs(v))}"
           },
           {
-            "line_number": 284,
+            "line_number": 286,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"error_relative\": float(err_rel),"
           },
           {
-            "line_number": 285,
+            "line_number": 287,
             "pattern": "float_cast",
             "context": "ok_witness_emit",
             "code_snippet": "\"error_ppm\": float(err_rel * 1e6),"
           },
           {
-            "line_number": 310,
+            "line_number": 312,
             "pattern": "float_cast",
             "context": "ok_witness_emit",
             "code_snippet": "computed=float(tr_M_check),"
           },
           {
-            "line_number": 311,
+            "line_number": 313,
             "pattern": "float_cast",
             "context": "ok_witness_emit",
             "code_snippet": "expected=float(tr_M),"
           },
           {
-            "line_number": 326,
+            "line_number": 328,
             "pattern": "float_cast",
             "context": "ok_witness_emit",
             "code_snippet": "computed=float(mp.mpf(results[best_map][\"B_D_predicted_MeV\"])),"
           },
           {
-            "line_number": 327,
+            "line_number": 329,
             "pattern": "float_cast",
             "context": "ok_witness_emit",
             "code_snippet": "expected=float(B_D_AME_MEV),"
           },
           {
-            "line_number": 328,
+            "line_number": 330,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "tolerance=float(B_D_AME_MEV) * 0.01,"
           },
           {
-            "line_number": 364,
+            "line_number": 366,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "print(f\"    k = {k}: |{r:.6f}| = {abs(r):.6f}\")"
@@ -419,7 +628,7 @@
         "result": "i8_violation"
       },
       {
-        "path": "folio-assistant/computations/demazure_sub_crystal_h5_h6_h7_prescreen.py",
+        "path": "computations/demazure_sub_crystal_h5_h6_h7_prescreen.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -432,7 +641,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/dirac_yekutieli_combinations_50dps.py",
+        "path": "computations/dirac_yekutieli_combinations_50dps.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -445,7 +654,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/family_a_per_partition_h_decomposition_50dps.py",
+        "path": "computations/family_a_per_partition_h_decomposition_50dps.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -458,7 +667,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/audits/fitted_labelled_canonical_audit.py",
+        "path": "computations/h4_form_AB_cross_anchor_stability.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -471,141 +680,322 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/probes/vol_density_borromean_h4_probe.py",
+        "path": "computations/h4_residual_vs_fine_structure_50dps.py",
         "substrate_banner": true,
-        "hit_count": 44,
-        "violation_count": 10,
-        "display_count": 29,
-        "comparison_count": 5,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/implied_c2_closed_form_search_50dps.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/implied_h2_coefficient_audit_50dps.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/isotope_record_schema.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/markov/markov_trace_for_knot.py",
+        "substrate_banner": true,
+        "hit_count": 4,
+        "violation_count": 3,
+        "display_count": 1,
+        "comparison_count": 0,
         "noqa_count": 0,
         "witness_emit_count": 0,
         "false_positive_count": 0,
         "hits": [
           {
-            "line_number": 127,
+            "line_number": 115,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "Equivalent to `pn.trace_weights_n_q_schur(2, float(q))` at f64,"
+          },
+          {
+            "line_number": 265,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "mp.mpf at requested dps (default) or Python float (f64 mode)."
+          },
+          {
+            "line_number": 286,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "return _markov_trace_f64(knot_name, float(q), convention)"
+          },
+          {
+            "line_number": 296,
             "pattern": "float_cast",
             "context": "ok_display",
-            "code_snippet": "print(f\"50-dps mpmath; Q_0 = {Q_0}; h(Q_0) = {float(h_of_q(Q_0)):.10f}\")"
-          },
-          {
-            "line_number": 127,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"50-dps mpmath; Q_0 = {Q_0}; h(Q_0) = {float(h_of_q(Q_0)):.10f}\")"
-          },
-          {
-            "line_number": 135,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"c_4 solved (slope → 0 at δ = 0.01):  c_4 = {float(c_4_solved):.10f}\")"
-          },
-          {
-            "line_number": 135,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"c_4 solved (slope → 0 at δ = 0.01):  c_4 = {float(c_4_solved):.10f}\")"
-          },
-          {
-            "line_number": 157,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"      val = {float(val):+.6f}, diff = {float(diff):+.6f}, rel = {float(rel_diff)*100:+.2f}%\")"
-          },
-          {
-            "line_number": 159,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"\\nCLOSEST: {closest_match}  (rel diff {float(closest_diff)*100:.2f}%)\")"
-          },
-          {
-            "line_number": 159,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"\\nCLOSEST: {closest_match}  (rel diff {float(closest_diff)*100:.2f}%)\")"
-          },
-          {
-            "line_number": 166,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  δ = {float(delta):.4f}: slope = {float(s):+.3e} ppm/q\")"
-          },
-          {
-            "line_number": 166,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  δ = {float(delta):.4f}: slope = {float(s):+.3e} ppm/q\")"
-          },
-          {
-            "line_number": 167,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "slopes_at_solved.append({\"delta\": float(delta), \"slope_ppm_per_q\": float(s)})"
-          },
-          {
-            "line_number": 174,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  linking_weight(q_0) = {float(lw_at_q0):.6f}\")"
-          },
-          {
-            "line_number": 174,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  linking_weight(q_0) = {float(lw_at_q0):.6f}\")"
-          },
-          {
-            "line_number": 175,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  m_p_pred           = {float(m_p_pred_solved):.4f} MeV\")"
-          },
-          {
-            "line_number": 175,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  m_p_pred           = {float(m_p_pred_solved):.4f} MeV\")"
-          },
-          {
-            "line_number": 176,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  gap vs CODATA      = {float(gap_pct_solved):+.3f}%\")"
-          },
-          {
-            "line_number": 187,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  linking_weight(q_0) = {float(lw_struct_q0):.6f}\")"
-          },
-          {
-            "line_number": 187,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  linking_weight(q_0) = {float(lw_struct_q0):.6f}\")"
-          },
-          {
-            "line_number": 188,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  m_p_pred           = {float(m_p_pred_struct):.4f} MeV\")"
-          },
-          {
-            "line_number": 188,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  m_p_pred           = {float(m_p_pred_struct):.4f} MeV\")"
-          },
-          {
-            "line_number": 189,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  gap vs CODATA      = {float(gap_pct_struct):+.3f}%\")"
+            "code_snippet": "q_f64 = float(q_mpf)"
           }
         ],
         "result": "i8_violation"
       },
       {
-        "path": "folio-assistant/computations/probes/geom_leading_alt_q_locality_probe.py",
+        "path": "computations/markov/markov_trace_h4_natural_elements_prescreen.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/meson_habiro_c3_categorical_search.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/meson_habiro_c4_truncation_reexam.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/mu_substrate_tension_audit_100dps.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/normalization_reconciliation_phase5l2.py",
+        "substrate_banner": true,
+        "hit_count": 27,
+        "violation_count": 3,
+        "display_count": 23,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 1,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 53,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "float (~16 dps truncation); the un-truncated 50-dps q-strings live"
+          },
+          {
+            "line_number": 126,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  q = {float(q_val):.7f}:\")"
+          },
+          {
+            "line_number": 126,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  q = {float(q_val):.7f}:\")"
+          },
+          {
+            "line_number": 127,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    tr_M^3(𝓑_p, q)  = {float(tau_canonical):.16f}\")"
+          },
+          {
+            "line_number": 127,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    tr_M^3(𝓑_p, q)  = {float(tau_canonical):.16f}\")"
+          },
+          {
+            "line_number": 128,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    T(B_p, q)       = {float(T_at_q):.16f}  ratio_A = {float(tau_canonical/T_at_q):.10f}\")"
+          },
+          {
+            "line_number": 128,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    T(B_p, q)       = {float(T_at_q):.16f}  ratio_A = {float(tau_canonical/T_at_q):.10f}\")"
+          },
+          {
+            "line_number": 129,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    T(B_p, q^2)     = {float(T_at_qsq):.16f}  ratio_B = {float(tau_canonical/T_at_qsq):.10f}\")"
+          },
+          {
+            "line_number": 129,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    T(B_p, q^2)     = {float(T_at_qsq):.16f}  ratio_B = {float(tau_canonical/T_at_qsq):.10f}\")"
+          },
+          {
+            "line_number": 132,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "\"q\": float(q_val),"
+          },
+          {
+            "line_number": 133,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "\"ratio\": float(tau_canonical / T_at_q),"
+          },
+          {
+            "line_number": 138,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "\"q\": float(q_val),"
+          },
+          {
+            "line_number": 139,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "\"ratio\": float(tau_canonical / T_at_qsq),"
+          },
+          {
+            "line_number": 152,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    min  = {float(r_min):.16f}\")"
+          },
+          {
+            "line_number": 152,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    min  = {float(r_min):.16f}\")"
+          },
+          {
+            "line_number": 153,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    max  = {float(r_max):.16f}\")"
+          },
+          {
+            "line_number": 153,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    max  = {float(r_max):.16f}\")"
+          },
+          {
+            "line_number": 154,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    mean = {float(r_mean):.16f}\")"
+          },
+          {
+            "line_number": 154,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    mean = {float(r_mean):.16f}\")"
+          },
+          {
+            "line_number": 155,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    relative spread = {float(rel_spread):.4e}\")"
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "computations/nv1_candidate_a_doubleprime.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/ocneanu_12_em_correction_candidate.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/ocneanu_12_route_reexam.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/probes/geom_leading_alt_q_locality_probe.py",
         "substrate_banner": true,
         "hit_count": 16,
         "violation_count": 11,
@@ -616,97 +1006,97 @@
         "false_positive_count": 0,
         "hits": [
           {
-            "line_number": 158,
+            "line_number": 170,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"delta\": float(delta),"
           },
           {
-            "line_number": 159,
+            "line_number": 171,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"slope_ppm_per_q\": float(s),"
           },
           {
-            "line_number": 160,
+            "line_number": 172,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"abs_slope_ppm_per_q\": float(abs(s)),"
           },
           {
-            "line_number": 170,
+            "line_number": 182,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"geom_leading_at_q0\": float(gl_q0),"
           },
           {
-            "line_number": 171,
+            "line_number": 183,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"lw_target_at_q0\": float(target_q0),"
           },
           {
-            "line_number": 172,
+            "line_number": 184,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"lw_family_a_at_q0\": float(lw_a_q0),"
           },
           {
-            "line_number": 173,
+            "line_number": 185,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"gap_target_minus_family_a_ppm_at_q0\": float(gap_ppm),"
           },
           {
-            "line_number": 174,
+            "line_number": 186,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"m_p_pred_MeV_with_family_a_lw\": float(m_p),"
           },
           {
-            "line_number": 175,
+            "line_number": 187,
             "pattern": "float_cast",
             "context": "ok_comparison",
             "code_snippet": "\"relative_error_pct\": float(rel_err * 100),"
           },
           {
-            "line_number": 178,
+            "line_number": 190,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"max_abs_slope_ppm_per_q\": float(max_abs_slope),"
           },
           {
-            "line_number": 184,
+            "line_number": 196,
             "pattern": "float_cast",
             "context": "ok_display",
             "code_snippet": "print(f\"50-dps mpmath; Q_0 = {Q_0}; tolerance = {float(TOLERANCE_PPM_PER_Q)} ppm/q\")"
           },
           {
-            "line_number": 211,
+            "line_number": 223,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "print(f\"  Geom_leading(q_0) = {r['geom_leading_at_q0']:.4f}\")"
           },
           {
-            "line_number": 212,
+            "line_number": 224,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "print(f\"  LW_target(q_0)    = {r['lw_target_at_q0']:.6f}\")"
           },
           {
-            "line_number": 214,
+            "line_number": 226,
             "pattern": "fstring_precision_f",
             "context": "ok_display",
             "code_snippet": "print(f\"  m_p_pred          = {r['m_p_pred_MeV_with_family_a_lw']:.4f} MeV \""
           },
           {
-            "line_number": 254,
+            "line_number": 266,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"tolerance_ppm_per_q\": float(TOLERANCE_PPM_PER_Q),"
           },
           {
-            "line_number": 255,
+            "line_number": 267,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "\"sweep_deltas\": [float(d) for d in SWEEP_DELTAS],"
@@ -715,7 +1105,7 @@
         "result": "i8_violation"
       },
       {
-        "path": "folio-assistant/computations/audits/guarded_off_audit.py",
+        "path": "computations/probes/higher_n_wedderburn_h2_drift_probe.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -728,7 +1118,275 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/h4_form_AB_cross_anchor_stability.py",
+        "path": "computations/probes/qbeta_operator_identification_probe.py",
+        "substrate_banner": true,
+        "hit_count": 24,
+        "violation_count": 0,
+        "display_count": 24,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 86,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"b = {float(b):.6f},  b² = {float(b_sq):.6f}\")"
+          },
+          {
+            "line_number": 86,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"b = {float(b):.6f},  b² = {float(b_sq):.6f}\")"
+          },
+          {
+            "line_number": 87,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"ℏ_q² = {float(hbar_q_sq):.4e}\")"
+          },
+          {
+            "line_number": 87,
+            "pattern": "fstring_precision_e",
+            "context": "ok_display",
+            "code_snippet": "print(f\"ℏ_q² = {float(hbar_q_sq):.4e}\")"
+          },
+          {
+            "line_number": 89,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"σ_1 = diag({float(sig1[0, 0]):.6f}, {float(sig1[1, 1]):.6f})\")"
+          },
+          {
+            "line_number": 89,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"σ_1 = diag({float(sig1[0, 0]):.6f}, {float(sig1[1, 1]):.6f})\")"
+          },
+          {
+            "line_number": 90,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"σ_2 entries: {[float(sig2[i, j]) for i in range(2) for j in range(2)]}\")"
+          },
+          {
+            "line_number": 101,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"{k:>2} {float(tr_v):>14.6f} {float(ratio):>20.4e}\")"
+          },
+          {
+            "line_number": 108,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  tr(σ_1·σ_2)        = {float(trace(sig12)):.6f}\")"
+          },
+          {
+            "line_number": 108,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  tr(σ_1·σ_2)        = {float(trace(sig12)):.6f}\")"
+          },
+          {
+            "line_number": 109,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  tr(σ_2·σ_1)        = {float(trace(sig21)):.6f}\")"
+          },
+          {
+            "line_number": 109,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  tr(σ_2·σ_1)        = {float(trace(sig21)):.6f}\")"
+          },
+          {
+            "line_number": 110,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  tr(σ_1·σ_2·σ_1)    = {float(trace(sig12 * sig1)):.6f}\")"
+          },
+          {
+            "line_number": 110,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  tr(σ_1·σ_2·σ_1)    = {float(trace(sig12 * sig1)):.6f}\")"
+          },
+          {
+            "line_number": 111,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  tr((σ_1·σ_2)^2)    = {float(trace(sig12 * sig12)):.6f}\")"
+          },
+          {
+            "line_number": 111,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  tr((σ_1·σ_2)^2)    = {float(trace(sig12 * sig12)):.6f}\")"
+          },
+          {
+            "line_number": 113,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "f\"{float(trace(sig12 * sig12 * sig12)):.6f}\")"
+          },
+          {
+            "line_number": 113,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "f\"{float(trace(sig12 * sig12 * sig12)):.6f}\")"
+          },
+          {
+            "line_number": 122,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  α = (z-1)·h/2     = {float(alpha):.6f}\")"
+          },
+          {
+            "line_number": 122,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  α = (z-1)·h/2     = {float(alpha):.6f}\")"
+          }
+        ],
+        "result": "ok_with_display_or_fp"
+      },
+      {
+        "path": "computations/probes/vol_density_borromean_h4_probe.py",
+        "substrate_banner": true,
+        "hit_count": 44,
+        "violation_count": 10,
+        "display_count": 29,
+        "comparison_count": 5,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 139,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"50-dps mpmath; Q_0 = {Q_0}; h(Q_0) = {float(h_of_q(Q_0)):.10f}\")"
+          },
+          {
+            "line_number": 139,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"50-dps mpmath; Q_0 = {Q_0}; h(Q_0) = {float(h_of_q(Q_0)):.10f}\")"
+          },
+          {
+            "line_number": 147,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"c_4 solved (slope → 0 at δ = 0.01):  c_4 = {float(c_4_solved):.10f}\")"
+          },
+          {
+            "line_number": 147,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"c_4 solved (slope → 0 at δ = 0.01):  c_4 = {float(c_4_solved):.10f}\")"
+          },
+          {
+            "line_number": 169,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"      val = {float(val):+.6f}, diff = {float(diff):+.6f}, rel = {float(rel_diff)*100:+.2f}%\")"
+          },
+          {
+            "line_number": 171,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"\\nCLOSEST: {closest_match}  (rel diff {float(closest_diff)*100:.2f}%)\")"
+          },
+          {
+            "line_number": 171,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"\\nCLOSEST: {closest_match}  (rel diff {float(closest_diff)*100:.2f}%)\")"
+          },
+          {
+            "line_number": 178,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  δ = {float(delta):.4f}: slope = {float(s):+.3e} ppm/q\")"
+          },
+          {
+            "line_number": 178,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  δ = {float(delta):.4f}: slope = {float(s):+.3e} ppm/q\")"
+          },
+          {
+            "line_number": 179,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "slopes_at_solved.append({\"delta\": float(delta), \"slope_ppm_per_q\": float(s)})"
+          },
+          {
+            "line_number": 186,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  linking_weight(q_0) = {float(lw_at_q0):.6f}\")"
+          },
+          {
+            "line_number": 186,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  linking_weight(q_0) = {float(lw_at_q0):.6f}\")"
+          },
+          {
+            "line_number": 187,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  m_p_pred           = {float(m_p_pred_solved):.4f} MeV\")"
+          },
+          {
+            "line_number": 187,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  m_p_pred           = {float(m_p_pred_solved):.4f} MeV\")"
+          },
+          {
+            "line_number": 188,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  gap vs CODATA      = {float(gap_pct_solved):+.3f}%\")"
+          },
+          {
+            "line_number": 199,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  linking_weight(q_0) = {float(lw_struct_q0):.6f}\")"
+          },
+          {
+            "line_number": 199,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  linking_weight(q_0) = {float(lw_struct_q0):.6f}\")"
+          },
+          {
+            "line_number": 200,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  m_p_pred           = {float(m_p_pred_struct):.4f} MeV\")"
+          },
+          {
+            "line_number": 200,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  m_p_pred           = {float(m_p_pred_struct):.4f} MeV\")"
+          },
+          {
+            "line_number": 201,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  gap vs CODATA      = {float(gap_pct_struct):+.3f}%\")"
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "computations/q_dirac_h5_lift_and_refinements_50dps.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -741,7 +1399,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/h4_residual_vs_fine_structure_50dps.py",
+        "path": "computations/q_dirac_linking_weight_extended_50dps.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -754,7 +1412,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/substrate/hecke_core_symbolic.py",
+        "path": "computations/q_dirac_linking_weight_probe_50dps.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -767,7 +1425,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/probes/higher_n_wedderburn_h2_drift_probe.py",
+        "path": "computations/q_dirac_vs_empirical_dominant_lambda.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -780,7 +1438,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/implied_c2_closed_form_search_50dps.py",
+        "path": "computations/qbeta/qbeta_c3_jhopf_q0_vs_q1_comparison.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -793,7 +1451,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/implied_h2_coefficient_audit_50dps.py",
+        "path": "computations/qbeta/qbeta_c3_multiblock_recursion_attack.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -806,7 +1464,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/isotope_record_schema.py",
+        "path": "computations/qbeta/qbeta_chain4_kashiwara_step3_cross_anchor.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -819,7 +1477,528 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/substrate/knot_volumes.py",
+        "path": "computations/qbeta/qbeta_ck_extraction_precision_floor.py",
+        "substrate_banner": true,
+        "hit_count": 7,
+        "violation_count": 0,
+        "display_count": 5,
+        "comparison_count": 2,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 137,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    {k:>2} {float(abs(ck[k])):>14.4g} {float(uk):>11.3e} \""
+          },
+          {
+            "line_number": 138,
+            "pattern": "float_cast",
+            "context": "ok_comparison",
+            "code_snippet": "f\"{float(term):>11.3e} {float(sig_ck):>11.3e} \""
+          },
+          {
+            "line_number": 139,
+            "pattern": "float_cast",
+            "context": "ok_comparison",
+            "code_snippet": "f\"{float(rel_unc):>11.3e}  {'YES' if det else 'no'}\")"
+          },
+          {
+            "line_number": 167,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    σ(c_4)/|c_4| per anchor      = {float(rel_unc_c4):.3e}\")"
+          },
+          {
+            "line_number": 167,
+            "pattern": "fstring_precision_e",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    σ(c_4)/|c_4| per anchor      = {float(rel_unc_c4):.3e}\")"
+          },
+          {
+            "line_number": 168,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    independent anchors needed   = (that)²  ≈ {float(n_anchors_c4):.3e}\")"
+          },
+          {
+            "line_number": 168,
+            "pattern": "fstring_precision_e",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    independent anchors needed   = (that)²  ≈ {float(n_anchors_c4):.3e}\")"
+          }
+        ],
+        "result": "ok_with_display_or_fp"
+      },
+      {
+        "path": "computations/qbeta/qbeta_decay_sdp_extended_ck.py",
+        "substrate_banner": true,
+        "hit_count": 7,
+        "violation_count": 0,
+        "display_count": 1,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 6,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 372,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "f\"c_{k}\": float(v) for k, v in c_k.items()"
+          },
+          {
+            "line_number": 422,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "computed=float(abs(c_k[8])),"
+          },
+          {
+            "line_number": 423,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "expected=float(abs(c_k[8])),"
+          },
+          {
+            "line_number": 429,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "computed=float(abs(c_k[9])),"
+          },
+          {
+            "line_number": 430,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "expected=float(abs(c_k[9])),"
+          },
+          {
+            "line_number": 436,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "computed=float(abs(c_k[10])),"
+          },
+          {
+            "line_number": 437,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "expected=float(abs(c_k[10])),"
+          }
+        ],
+        "result": "ok_with_display_or_fp"
+      },
+      {
+        "path": "computations/qbeta/qbeta_decay_sdp_full_ck.py",
+        "substrate_banner": true,
+        "hit_count": 17,
+        "violation_count": 2,
+        "display_count": 7,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 8,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 98,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"{2:>2} {float(c_k[2]):>16.10f} {-1:>16.4f} {'(by definition)':>20}\")"
+          },
+          {
+            "line_number": 103,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"{3:>2} {float(c_k[3]):>16.10f} {-2:>16.4f} {'(J_Hopf at q=1)':>20}\")"
+          },
+          {
+            "line_number": 109,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"{4:>2} {float(c_k[4]):>16.10f} {float(-2 * b**4):>16.4f} {'-1.143537':>20}\")"
+          },
+          {
+            "line_number": 114,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"{5:>2} {float(c_k[5]):>16.10f} {float(-(b**2 + mpf(1)/2)):>16.4f} {'-1.222913':>20}\")"
+          },
+          {
+            "line_number": 119,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"{6:>2} {float(c_k[6]):>16.10f} {float(4 * b**2):>16.4f} {'+3.497562':>20}\")"
+          },
+          {
+            "line_number": 124,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"{7:>2} {float(c_k[7]):>16.10f} {float(-8):>16.4f} {'+57.149':>20}\")"
+          },
+          {
+            "line_number": 155,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "w.add_data(\"c_k_extracted\", {f\"c_{k}\": float(v) for k, v in c_k.items()})"
+          },
+          {
+            "line_number": 159,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "\"c_4\": f\"c_3·b⁴ = -2·b⁴ = {float(-2*b**4):.6f}\","
+          },
+          {
+            "line_number": 159,
+            "pattern": "fstring_precision_f",
+            "context": "ok_witness_emit",
+            "code_snippet": "\"c_4\": f\"c_3·b⁴ = -2·b⁴ = {float(-2*b**4):.6f}\","
+          },
+          {
+            "line_number": 160,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "\"c_5\": f\"-(b² + 1/2) = {float(-(b**2 + mpf(1)/2)):.6f}\","
+          },
+          {
+            "line_number": 160,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "\"c_5\": f\"-(b² + 1/2) = {float(-(b**2 + mpf(1)/2)):.6f}\","
+          },
+          {
+            "line_number": 161,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "\"c_6\": f\"c_3²·b² = 4·b² = {float(4*b**2):.6f}\","
+          },
+          {
+            "line_number": 161,
+            "pattern": "fstring_precision_f",
+            "context": "ok_witness_emit",
+            "code_snippet": "\"c_6\": f\"c_3²·b² = 4·b² = {float(4*b**2):.6f}\","
+          },
+          {
+            "line_number": 172,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "computed=float(abs(c_k[4] - mpf(\"-1.143537\"))),"
+          },
+          {
+            "line_number": 179,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "computed=float(abs(c_k[5] - mpf(\"-1.222913\"))),"
+          },
+          {
+            "line_number": 186,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "computed=float(abs(c_k[6] - mpf(\"3.497562\"))),"
+          },
+          {
+            "line_number": 193,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "computed=float(abs(c_k[7] - mpf(\"57.149243\"))),"
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "computations/qbeta/qbeta_habiro_q_difference_recurrence_probe.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/qbeta/qbeta_residue_a_precision_ceiling.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/reading_a_redistribution_hypotheses_50dps.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/reading_a_residual_at_50dps.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/rho_constit_equals_tau_M_proton_phase5l.py",
+        "substrate_banner": true,
+        "hit_count": 19,
+        "violation_count": 1,
+        "display_count": 16,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 2,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 71,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "h_val = float(Q0 - 1 / Q0)"
+          },
+          {
+            "line_number": 88,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "h_val = float(Q0 - 1 / Q0)"
+          },
+          {
+            "line_number": 127,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "\"q\": float(q_val),"
+          },
+          {
+            "line_number": 128,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "\"tau_M_proton_H3\": float(tau_p_H3),"
+          },
+          {
+            "line_number": 130,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "\"rho_Z_constit\": float(rho),"
+          },
+          {
+            "line_number": 132,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "\"diff\": float(diff),"
+          },
+          {
+            "line_number": 133,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "\"rel_err\": float(rel_err),"
+          },
+          {
+            "line_number": 137,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    tr_M^3(𝓑_p, q)  = {float(tau_p_H3):.16f}\")"
+          },
+          {
+            "line_number": 137,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    tr_M^3(𝓑_p, q)  = {float(tau_p_H3):.16f}\")"
+          },
+          {
+            "line_number": 138,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    ρ_Z^constit(q) = {float(rho):.16f}\")"
+          },
+          {
+            "line_number": 138,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    ρ_Z^constit(q) = {float(rho):.16f}\")"
+          },
+          {
+            "line_number": 139,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    |diff|         = {abs(float(diff)):.4e}\")"
+          },
+          {
+            "line_number": 139,
+            "pattern": "fstring_precision_e",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    |diff|         = {abs(float(diff)):.4e}\")"
+          },
+          {
+            "line_number": 140,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    rel.err.       = {float(rel_err):.4e}\")"
+          },
+          {
+            "line_number": 140,
+            "pattern": "fstring_precision_e",
+            "context": "ok_display",
+            "code_snippet": "print(f\"    rel.err.       = {float(rel_err):.4e}\")"
+          },
+          {
+            "line_number": 155,
+            "pattern": "fstring_precision_e",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  Max rel.err. across {len(results)} q-points: {max_rel_err:.4e}\")"
+          },
+          {
+            "line_number": 168,
+            "pattern": "fstring_precision_e",
+            "context": "ok_display",
+            "code_snippet": "print(f\"\\n  ✗ Identity NOT confirmed (rel.err {max_rel_err:.2e} \""
+          },
+          {
+            "line_number": 186,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "builder.add_data(\"max_rel_err\", float(max_rel_err))"
+          },
+          {
+            "line_number": 189,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "computed=float(max_rel_err),"
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "computations/sigma_all_evaluator.py",
+        "substrate_banner": true,
+        "hit_count": 8,
+        "violation_count": 0,
+        "display_count": 7,
+        "comparison_count": 1,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 301,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "got_f = float(got)"
+          },
+          {
+            "line_number": 309,
+            "pattern": "fstring_precision_e",
+            "context": "ok_comparison",
+            "code_snippet": "assert max_rel < 1e-14, f\"closed form mismatch (max rel err {max_rel:.2e})\""
+          },
+          {
+            "line_number": 310,
+            "pattern": "fstring_precision_e",
+            "context": "ok_display",
+            "code_snippet": "print(f\"\\nMax relative error vs symbolic table: {max_rel:.2e}  (passes 1e-14)\")"
+          },
+          {
+            "line_number": 319,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  A={A} → A={A+2}: ratio = {mp.nstr(got, 20)}  rel err = {float(rel):.2e}\")"
+          },
+          {
+            "line_number": 319,
+            "pattern": "fstring_precision_e",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  A={A} → A={A+2}: ratio = {mp.nstr(got, 20)}  rel err = {float(rel):.2e}\")"
+          },
+          {
+            "line_number": 322,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"\\nDecay rate γ(q_0) = {float(gamma):.6f} (audit predicts ≈ 1.357)\")"
+          },
+          {
+            "line_number": 322,
+            "pattern": "fstring_precision_f",
+            "context": "ok_display",
+            "code_snippet": "print(f\"\\nDecay rate γ(q_0) = {float(gamma):.6f} (audit predicts ≈ 1.357)\")"
+          },
+          {
+            "line_number": 327,
+            "pattern": "fstring_precision_e",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  A={A:>3}, target={tgt:.0e} → {req}\")"
+          }
+        ],
+        "result": "ok_with_display_or_fp"
+      },
+      {
+        "path": "computations/snappy_borromean_volume.py",
+        "substrate_banner": true,
+        "hit_count": 4,
+        "violation_count": 1,
+        "display_count": 2,
+        "comparison_count": 1,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 103,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "SnapPy 3.2.0+ returns a Python float (Manifold.volume()) or a"
+          },
+          {
+            "line_number": 183,
+            "pattern": "float_cast",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  |snappy − 8·G| (max tier) = {float(delta):.3e}\")"
+          },
+          {
+            "line_number": 183,
+            "pattern": "fstring_precision_e",
+            "context": "ok_display",
+            "code_snippet": "print(f\"  |snappy − 8·G| (max tier) = {float(delta):.3e}\")"
+          },
+          {
+            "line_number": 184,
+            "pattern": "float_cast",
+            "context": "ok_comparison",
+            "code_snippet": "snappy_canonical_agreement = float(delta) < 10 ** (-(max(PRECISION_TIERS) - 5))"
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "computations/substrate/hecke_core_symbolic.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "display_count": 0,
+        "comparison_count": 0,
+        "noqa_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "computations/substrate/knot_volumes.py",
         "substrate_banner": true,
         "hit_count": 8,
         "violation_count": 8,
@@ -836,43 +2015,43 @@
             "code_snippet": "`float(mpf)` — round-trip safe to ~17 digits, sufficient for"
           },
           {
-            "line_number": 169,
+            "line_number": 185,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "VOL_4_1_F64       = float(VOL_4_1_MPF)"
           },
           {
-            "line_number": 170,
+            "line_number": 186,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "VOL_BORROMEAN_F64 = float(VOL_BORROMEAN_MPF)"
           },
           {
-            "line_number": 171,
+            "line_number": 187,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "VOL_7_SQ_1_F64    = float(VOL_7_SQ_1_MPF)"
           },
           {
-            "line_number": 172,
+            "line_number": 188,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "VOL_5_2_F64       = float(VOL_5_2_MPF)"
           },
           {
-            "line_number": 173,
+            "line_number": 189,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "VOL_6_2_F64       = float(VOL_6_2_MPF)"
           },
           {
-            "line_number": 174,
+            "line_number": 190,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "VOL_8_11_F64      = float(VOL_8_11_MPF)"
           },
           {
-            "line_number": 175,
+            "line_number": 191,
             "pattern": "float_cast",
             "context": "violation",
             "code_snippet": "CATALAN_G_F64     = float(CATALAN_G_MPF)"
@@ -881,45 +2060,7 @@
         "result": "i8_violation"
       },
       {
-        "path": "folio-assistant/computations/markov/markov_trace_for_knot.py",
-        "substrate_banner": true,
-        "hit_count": 4,
-        "violation_count": 3,
-        "display_count": 1,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [
-          {
-            "line_number": 103,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "Equivalent to `pn.trace_weights_n_q_schur(2, float(q))` at f64,"
-          },
-          {
-            "line_number": 253,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "mp.mpf at requested dps (default) or Python float (f64 mode)."
-          },
-          {
-            "line_number": 274,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "return _markov_trace_f64(knot_name, float(q), convention)"
-          },
-          {
-            "line_number": 284,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "q_f64 = float(q_mpf)"
-          }
-        ],
-        "result": "i8_violation"
-      },
-      {
-        "path": "folio-assistant/computations/markov/markov_trace_h4_natural_elements_prescreen.py",
+        "path": "computations/symmetrizer_eigenvalue_verification_50dps.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
@@ -932,857 +2073,7 @@
         "result": "ok_no_leaks"
       },
       {
-        "path": "folio-assistant/computations/meson_habiro_c3_categorical_search.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/meson_habiro_c4_truncation_reexam.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/mu_substrate_tension_audit_100dps.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/normalization_reconciliation_phase5l2.py",
-        "substrate_banner": true,
-        "hit_count": 27,
-        "violation_count": 3,
-        "display_count": 23,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 1,
-        "false_positive_count": 0,
-        "hits": [
-          {
-            "line_number": 52,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "float (~16 dps truncation); the un-truncated 50-dps q-strings live"
-          },
-          {
-            "line_number": 125,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  q = {float(q_val):.7f}:\")"
-          },
-          {
-            "line_number": 125,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  q = {float(q_val):.7f}:\")"
-          },
-          {
-            "line_number": 126,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    tr_M^3(𝓑_p, q)  = {float(tau_canonical):.16f}\")"
-          },
-          {
-            "line_number": 126,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    tr_M^3(𝓑_p, q)  = {float(tau_canonical):.16f}\")"
-          },
-          {
-            "line_number": 127,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    T(B_p, q)       = {float(T_at_q):.16f}  ratio_A = {float(tau_canonical/T_at_q):.10f}\")"
-          },
-          {
-            "line_number": 127,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    T(B_p, q)       = {float(T_at_q):.16f}  ratio_A = {float(tau_canonical/T_at_q):.10f}\")"
-          },
-          {
-            "line_number": 128,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    T(B_p, q^2)     = {float(T_at_qsq):.16f}  ratio_B = {float(tau_canonical/T_at_qsq):.10f}\")"
-          },
-          {
-            "line_number": 128,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    T(B_p, q^2)     = {float(T_at_qsq):.16f}  ratio_B = {float(tau_canonical/T_at_qsq):.10f}\")"
-          },
-          {
-            "line_number": 131,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "\"q\": float(q_val),"
-          },
-          {
-            "line_number": 132,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "\"ratio\": float(tau_canonical / T_at_q),"
-          },
-          {
-            "line_number": 137,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "\"q\": float(q_val),"
-          },
-          {
-            "line_number": 138,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "\"ratio\": float(tau_canonical / T_at_qsq),"
-          },
-          {
-            "line_number": 151,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    min  = {float(r_min):.16f}\")"
-          },
-          {
-            "line_number": 151,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    min  = {float(r_min):.16f}\")"
-          },
-          {
-            "line_number": 152,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    max  = {float(r_max):.16f}\")"
-          },
-          {
-            "line_number": 152,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    max  = {float(r_max):.16f}\")"
-          },
-          {
-            "line_number": 153,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    mean = {float(r_mean):.16f}\")"
-          },
-          {
-            "line_number": 153,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    mean = {float(r_mean):.16f}\")"
-          },
-          {
-            "line_number": 154,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    relative spread = {float(rel_spread):.4e}\")"
-          }
-        ],
-        "result": "i8_violation"
-      },
-      {
-        "path": "folio-assistant/computations/nv1_candidate_a_doubleprime.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/ocneanu_12_em_correction_candidate.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/ocneanu_12_route_reexam.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/q_dirac_h5_lift_and_refinements_50dps.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/q_dirac_linking_weight_extended_50dps.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/q_dirac_linking_weight_probe_50dps.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/q_dirac_vs_empirical_dominant_lambda.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/qbeta/qbeta_c3_jhopf_q0_vs_q1_comparison.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/qbeta/qbeta_decay_sdp_extended_ck.py",
-        "substrate_banner": true,
-        "hit_count": 7,
-        "violation_count": 0,
-        "display_count": 1,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 6,
-        "false_positive_count": 0,
-        "hits": [
-          {
-            "line_number": 356,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "f\"c_{k}\": float(v) for k, v in c_k.items()"
-          },
-          {
-            "line_number": 406,
-            "pattern": "float_cast",
-            "context": "ok_witness_emit",
-            "code_snippet": "computed=float(abs(c_k[8])),"
-          },
-          {
-            "line_number": 407,
-            "pattern": "float_cast",
-            "context": "ok_witness_emit",
-            "code_snippet": "expected=float(abs(c_k[8])),"
-          },
-          {
-            "line_number": 413,
-            "pattern": "float_cast",
-            "context": "ok_witness_emit",
-            "code_snippet": "computed=float(abs(c_k[9])),"
-          },
-          {
-            "line_number": 414,
-            "pattern": "float_cast",
-            "context": "ok_witness_emit",
-            "code_snippet": "expected=float(abs(c_k[9])),"
-          },
-          {
-            "line_number": 420,
-            "pattern": "float_cast",
-            "context": "ok_witness_emit",
-            "code_snippet": "computed=float(abs(c_k[10])),"
-          },
-          {
-            "line_number": 421,
-            "pattern": "float_cast",
-            "context": "ok_witness_emit",
-            "code_snippet": "expected=float(abs(c_k[10])),"
-          }
-        ],
-        "result": "ok_with_display_or_fp"
-      },
-      {
-        "path": "folio-assistant/computations/qbeta/qbeta_decay_sdp_full_ck.py",
-        "substrate_banner": true,
-        "hit_count": 17,
-        "violation_count": 2,
-        "display_count": 7,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 8,
-        "false_positive_count": 0,
-        "hits": [
-          {
-            "line_number": 82,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"{2:>2} {float(c_k[2]):>16.10f} {-1:>16.4f} {'(by definition)':>20}\")"
-          },
-          {
-            "line_number": 87,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"{3:>2} {float(c_k[3]):>16.10f} {-2:>16.4f} {'(J_Hopf at q=1)':>20}\")"
-          },
-          {
-            "line_number": 93,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"{4:>2} {float(c_k[4]):>16.10f} {float(-2 * b**4):>16.4f} {'-1.143537':>20}\")"
-          },
-          {
-            "line_number": 98,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"{5:>2} {float(c_k[5]):>16.10f} {float(-(b**2 + mpf(1)/2)):>16.4f} {'-1.222913':>20}\")"
-          },
-          {
-            "line_number": 103,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"{6:>2} {float(c_k[6]):>16.10f} {float(4 * b**2):>16.4f} {'+3.497562':>20}\")"
-          },
-          {
-            "line_number": 108,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"{7:>2} {float(c_k[7]):>16.10f} {float(-8):>16.4f} {'+57.149':>20}\")"
-          },
-          {
-            "line_number": 139,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "w.add_data(\"c_k_extracted\", {f\"c_{k}\": float(v) for k, v in c_k.items()})"
-          },
-          {
-            "line_number": 143,
-            "pattern": "float_cast",
-            "context": "ok_witness_emit",
-            "code_snippet": "\"c_4\": f\"c_3·b⁴ = -2·b⁴ = {float(-2*b**4):.6f}\","
-          },
-          {
-            "line_number": 143,
-            "pattern": "fstring_precision_f",
-            "context": "ok_witness_emit",
-            "code_snippet": "\"c_4\": f\"c_3·b⁴ = -2·b⁴ = {float(-2*b**4):.6f}\","
-          },
-          {
-            "line_number": 144,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "\"c_5\": f\"-(b² + 1/2) = {float(-(b**2 + mpf(1)/2)):.6f}\","
-          },
-          {
-            "line_number": 144,
-            "pattern": "fstring_precision_f",
-            "context": "violation",
-            "code_snippet": "\"c_5\": f\"-(b² + 1/2) = {float(-(b**2 + mpf(1)/2)):.6f}\","
-          },
-          {
-            "line_number": 145,
-            "pattern": "float_cast",
-            "context": "ok_witness_emit",
-            "code_snippet": "\"c_6\": f\"c_3²·b² = 4·b² = {float(4*b**2):.6f}\","
-          },
-          {
-            "line_number": 145,
-            "pattern": "fstring_precision_f",
-            "context": "ok_witness_emit",
-            "code_snippet": "\"c_6\": f\"c_3²·b² = 4·b² = {float(4*b**2):.6f}\","
-          },
-          {
-            "line_number": 156,
-            "pattern": "float_cast",
-            "context": "ok_witness_emit",
-            "code_snippet": "computed=float(abs(c_k[4] - mpf(\"-1.143537\"))),"
-          },
-          {
-            "line_number": 163,
-            "pattern": "float_cast",
-            "context": "ok_witness_emit",
-            "code_snippet": "computed=float(abs(c_k[5] - mpf(\"-1.222913\"))),"
-          },
-          {
-            "line_number": 170,
-            "pattern": "float_cast",
-            "context": "ok_witness_emit",
-            "code_snippet": "computed=float(abs(c_k[6] - mpf(\"3.497562\"))),"
-          },
-          {
-            "line_number": 177,
-            "pattern": "float_cast",
-            "context": "ok_witness_emit",
-            "code_snippet": "computed=float(abs(c_k[7] - mpf(\"57.149243\"))),"
-          }
-        ],
-        "result": "i8_violation"
-      },
-      {
-        "path": "folio-assistant/computations/probes/qbeta_operator_identification_probe.py",
-        "substrate_banner": true,
-        "hit_count": 24,
-        "violation_count": 0,
-        "display_count": 24,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [
-          {
-            "line_number": 74,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"b = {float(b):.6f},  b² = {float(b_sq):.6f}\")"
-          },
-          {
-            "line_number": 74,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"b = {float(b):.6f},  b² = {float(b_sq):.6f}\")"
-          },
-          {
-            "line_number": 75,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"ℏ_q² = {float(hbar_q_sq):.4e}\")"
-          },
-          {
-            "line_number": 75,
-            "pattern": "fstring_precision_e",
-            "context": "ok_display",
-            "code_snippet": "print(f\"ℏ_q² = {float(hbar_q_sq):.4e}\")"
-          },
-          {
-            "line_number": 77,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"σ_1 = diag({float(sig1[0, 0]):.6f}, {float(sig1[1, 1]):.6f})\")"
-          },
-          {
-            "line_number": 77,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"σ_1 = diag({float(sig1[0, 0]):.6f}, {float(sig1[1, 1]):.6f})\")"
-          },
-          {
-            "line_number": 78,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"σ_2 entries: {[float(sig2[i, j]) for i in range(2) for j in range(2)]}\")"
-          },
-          {
-            "line_number": 89,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"{k:>2} {float(tr_v):>14.6f} {float(ratio):>20.4e}\")"
-          },
-          {
-            "line_number": 96,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  tr(σ_1·σ_2)        = {float(trace(sig12)):.6f}\")"
-          },
-          {
-            "line_number": 96,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  tr(σ_1·σ_2)        = {float(trace(sig12)):.6f}\")"
-          },
-          {
-            "line_number": 97,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  tr(σ_2·σ_1)        = {float(trace(sig21)):.6f}\")"
-          },
-          {
-            "line_number": 97,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  tr(σ_2·σ_1)        = {float(trace(sig21)):.6f}\")"
-          },
-          {
-            "line_number": 98,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  tr(σ_1·σ_2·σ_1)    = {float(trace(sig12 * sig1)):.6f}\")"
-          },
-          {
-            "line_number": 98,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  tr(σ_1·σ_2·σ_1)    = {float(trace(sig12 * sig1)):.6f}\")"
-          },
-          {
-            "line_number": 99,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  tr((σ_1·σ_2)^2)    = {float(trace(sig12 * sig12)):.6f}\")"
-          },
-          {
-            "line_number": 99,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  tr((σ_1·σ_2)^2)    = {float(trace(sig12 * sig12)):.6f}\")"
-          },
-          {
-            "line_number": 101,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "f\"{float(trace(sig12 * sig12 * sig12)):.6f}\")"
-          },
-          {
-            "line_number": 101,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "f\"{float(trace(sig12 * sig12 * sig12)):.6f}\")"
-          },
-          {
-            "line_number": 110,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  α = (z-1)·h/2     = {float(alpha):.6f}\")"
-          },
-          {
-            "line_number": 110,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  α = (z-1)·h/2     = {float(alpha):.6f}\")"
-          }
-        ],
-        "result": "ok_with_display_or_fp"
-      },
-      {
-        "path": "folio-assistant/computations/reading_a_redistribution_hypotheses_50dps.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/reading_a_residual_at_50dps.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py",
-        "substrate_banner": true,
-        "hit_count": 19,
-        "violation_count": 1,
-        "display_count": 16,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 2,
-        "false_positive_count": 0,
-        "hits": [
-          {
-            "line_number": 69,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "h_val = float(Q0 - 1 / Q0)"
-          },
-          {
-            "line_number": 86,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "h_val = float(Q0 - 1 / Q0)"
-          },
-          {
-            "line_number": 125,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "\"q\": float(q_val),"
-          },
-          {
-            "line_number": 126,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "\"tau_M_proton_H3\": float(tau_p_H3),"
-          },
-          {
-            "line_number": 128,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "\"rho_Z_constit\": float(rho),"
-          },
-          {
-            "line_number": 130,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "\"diff\": float(diff),"
-          },
-          {
-            "line_number": 131,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "\"rel_err\": float(rel_err),"
-          },
-          {
-            "line_number": 135,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    tr_M^3(𝓑_p, q)  = {float(tau_p_H3):.16f}\")"
-          },
-          {
-            "line_number": 135,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    tr_M^3(𝓑_p, q)  = {float(tau_p_H3):.16f}\")"
-          },
-          {
-            "line_number": 136,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    ρ_Z^constit(q) = {float(rho):.16f}\")"
-          },
-          {
-            "line_number": 136,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    ρ_Z^constit(q) = {float(rho):.16f}\")"
-          },
-          {
-            "line_number": 137,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    |diff|         = {abs(float(diff)):.4e}\")"
-          },
-          {
-            "line_number": 137,
-            "pattern": "fstring_precision_e",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    |diff|         = {abs(float(diff)):.4e}\")"
-          },
-          {
-            "line_number": 138,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    rel.err.       = {float(rel_err):.4e}\")"
-          },
-          {
-            "line_number": 138,
-            "pattern": "fstring_precision_e",
-            "context": "ok_display",
-            "code_snippet": "print(f\"    rel.err.       = {float(rel_err):.4e}\")"
-          },
-          {
-            "line_number": 153,
-            "pattern": "fstring_precision_e",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  Max rel.err. across {len(results)} q-points: {max_rel_err:.4e}\")"
-          },
-          {
-            "line_number": 166,
-            "pattern": "fstring_precision_e",
-            "context": "ok_display",
-            "code_snippet": "print(f\"\\n  ✗ Identity NOT confirmed (rel.err {max_rel_err:.2e} \""
-          },
-          {
-            "line_number": 184,
-            "pattern": "float_cast",
-            "context": "ok_witness_emit",
-            "code_snippet": "builder.add_data(\"max_rel_err\", float(max_rel_err))"
-          },
-          {
-            "line_number": 187,
-            "pattern": "float_cast",
-            "context": "ok_witness_emit",
-            "code_snippet": "computed=float(max_rel_err),"
-          }
-        ],
-        "result": "i8_violation"
-      },
-      {
-        "path": "folio-assistant/computations/sigma_all_evaluator.py",
-        "substrate_banner": true,
-        "hit_count": 8,
-        "violation_count": 0,
-        "display_count": 7,
-        "comparison_count": 1,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [
-          {
-            "line_number": 300,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "got_f = float(got)"
-          },
-          {
-            "line_number": 308,
-            "pattern": "fstring_precision_e",
-            "context": "ok_comparison",
-            "code_snippet": "assert max_rel < 1e-14, f\"closed form mismatch (max rel err {max_rel:.2e})\""
-          },
-          {
-            "line_number": 309,
-            "pattern": "fstring_precision_e",
-            "context": "ok_display",
-            "code_snippet": "print(f\"\\nMax relative error vs symbolic table: {max_rel:.2e}  (passes 1e-14)\")"
-          },
-          {
-            "line_number": 318,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  A={A} → A={A+2}: ratio = {mp.nstr(got, 20)}  rel err = {float(rel):.2e}\")"
-          },
-          {
-            "line_number": 318,
-            "pattern": "fstring_precision_e",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  A={A} → A={A+2}: ratio = {mp.nstr(got, 20)}  rel err = {float(rel):.2e}\")"
-          },
-          {
-            "line_number": 321,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"\\nDecay rate γ(q_0) = {float(gamma):.6f} (audit predicts ≈ 1.357)\")"
-          },
-          {
-            "line_number": 321,
-            "pattern": "fstring_precision_f",
-            "context": "ok_display",
-            "code_snippet": "print(f\"\\nDecay rate γ(q_0) = {float(gamma):.6f} (audit predicts ≈ 1.357)\")"
-          },
-          {
-            "line_number": 326,
-            "pattern": "fstring_precision_e",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  A={A:>3}, target={tgt:.0e} → {req}\")"
-          }
-        ],
-        "result": "ok_with_display_or_fp"
-      },
-      {
-        "path": "folio-assistant/computations/snappy_borromean_volume.py",
-        "substrate_banner": true,
-        "hit_count": 4,
-        "violation_count": 1,
-        "display_count": 2,
-        "comparison_count": 1,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [
-          {
-            "line_number": 102,
-            "pattern": "float_cast",
-            "context": "violation",
-            "code_snippet": "SnapPy 3.2.0+ returns a Python float (Manifold.volume()) or a"
-          },
-          {
-            "line_number": 182,
-            "pattern": "float_cast",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  |snappy − 8·G| (max tier) = {float(delta):.3e}\")"
-          },
-          {
-            "line_number": 182,
-            "pattern": "fstring_precision_e",
-            "context": "ok_display",
-            "code_snippet": "print(f\"  |snappy − 8·G| (max tier) = {float(delta):.3e}\")"
-          },
-          {
-            "line_number": 183,
-            "pattern": "float_cast",
-            "context": "ok_comparison",
-            "code_snippet": "snappy_canonical_agreement = float(delta) < 10 ** (-(max(PRECISION_TIERS) - 5))"
-          }
-        ],
-        "result": "i8_violation"
-      },
-      {
-        "path": "folio-assistant/computations/symmetrizer_eigenvalue_verification_50dps.py",
-        "substrate_banner": true,
-        "hit_count": 0,
-        "violation_count": 0,
-        "display_count": 0,
-        "comparison_count": 0,
-        "noqa_count": 0,
-        "witness_emit_count": 0,
-        "false_positive_count": 0,
-        "hits": [],
-        "result": "ok_no_leaks"
-      },
-      {
-        "path": "folio-assistant/computations/yekutieli_natural_reading_precision_floor_check.py",
+        "path": "computations/yekutieli_natural_reading_precision_floor_check.py",
         "substrate_banner": true,
         "hit_count": 0,
         "violation_count": 0,
