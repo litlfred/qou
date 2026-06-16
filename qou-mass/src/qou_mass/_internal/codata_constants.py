@@ -17,8 +17,14 @@ binding energy in the paper is a prediction.
 | ID    | Quantity              | Module export        | Source witness                          |
 |-------|----------------------|----------------------|------------------------------------------|
 | CAL-1 | m_e                  | M_E_MEV              | (hardcoded — framework's only direct mass anchor) |
-| CAL-2 | m_μ / m_e            | (in q_parameter.py)  | q-pinning-50-digit.witness.json:calibration_inputs |
-| CAL-3 | Q_β(n)               | Q_BETA_MEV           | cal-3-q-beta.witness.json               |
+| CAL-2 | m_μ / m_e (→ q₀)     | (in q_parameter.py)  | q-pinning-50-digit.witness.json:calibration_inputs (phys-obs may anchor q₀ on m_p/m_e for precision) |
+| CAL-3 | m_π                  | (not yet exported)   | charged-pion mass (PDG) — orthogonal meson scale |
+
+Note (convention, 2026-06-16): the canonical CAL-3 is ``m_π``. ``Q_β`` is
+**derived** from CAL-1 + CAL-2 (the bar-odd ``sinh`` partner of ``m_π``);
+``Q_BETA_MEV`` below is loaded as a validation/convenience anchor (and is
+used by the ``m_n = m_p + Q_β + m_e`` chain) pending in-package derivation
+of ``Q_β`` from ``m_e`` and ``q₀`` — a tracked compute reconciliation.
 
 `m_p`, `m_n`, `m_D`, `m_T`, `m_3He`, `m_4He` are **predictions** of
 the framework. They are exposed below for **validation only** —
@@ -93,9 +99,12 @@ def _load_mpf(witness_path: Path, dotted_key: str) -> mp.mpf:
 M_E_MEV = mp.mpf("0.51099895")
 M_E_MEV_ERR = mp.mpf("0.00000000015")
 
-# ── CAL-3: free-neutron β-decay Q-value (legitimate calibration) ─
-# Loaded from cal-3-q-beta.witness.json. Fixes hadronic energy scale
-# E_0 via E_0 = Q_β(n) / |Δ(net)| with Δ(net) = h(h-2)/2 from the
+# ── DERIVED Q_β (NOT a calibration; canonical CAL-3 is m_π) ──────
+# Per the 2026-06-16 convention, Q_β is DERIVED from CAL-1+CAL-2
+# (bar-odd sinh partner of the meson scale m_π). Loaded here from
+# cal-3-q-beta.witness.json as a validation/convenience anchor for the
+# hadronic energy scale E_0 via E_0 = Q_β(n) / |Δ(net)| with
+# Δ(net) = h(h-2)/2 from the
 # symbolic NF difference between neutron and proton.
 Q_BETA_MEV = _load_mpf(_CAL3_WITNESS, "data.Q_beta_n_MeV")
 Q_BETA_MEV_ERR = _load_mpf(_CAL3_WITNESS, "data.Q_beta_n_MeV_err")

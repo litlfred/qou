@@ -1,11 +1,15 @@
 The three-calibration discipline
 ([`prop:three-calibration-discipline`](#prop:three-calibration-discipline))
-names $m_e$, $m_\mu/m_e$, $Q_\beta$ as the framework's external CODATA
-inputs and maps them bijectively to three cohomological degrees
-($H^0$, $H^1$, $H^2$). This remark unpacks the *epistemic status*
-of each input — distinguishing what is genuinely calibrated from
-what is structurally derived from canonical cohomology but recorded
-*as if* calibrated.
+names $m_e$, $m_\mu/m_e$, $m_\pi$ as the framework's external CODATA/PDG
+inputs and maps them bijectively to three cohomological data of the
+Bring Hodge structure $H^1 = 2W$ ($W$-plane scale, $W$-plane modulus,
+and the orthogonal $\mathrm{Vol}(\mathrm{Hopf})=0$ meson class). This
+remark unpacks the *epistemic status* of each input — distinguishing
+what is genuinely calibrated from what is structurally derived from
+canonical cohomology but recorded *as if* calibrated. ($Q_\beta$ is
+**derived** from CAL-1 + CAL-2, not a calibration; the §"CAL-3"
+section below treats it as the *derived* hadronic observable, the
+bar-odd $\sinh$ partner of the meson scale $m_\pi$.)
 
 The remark **does not** propose a 4th calibration input, a fit, or
 a numerological substitution. The forbidden clauses of
@@ -60,9 +64,15 @@ research-grade workplan tracks candidate derivation paths
 (spectral collapse, K-theoretic period, Bring $\chi = -6$
 fixed-point, categorical endomorphism fixed-point).
 
-## CAL-3 ($Q_\beta$) — conditional net-ansatz
+## CAL-3 ($m_\pi$) and the derived $Q_\beta$ — conditional net-ansatz
 
-CAL-3 fixes the hadronic energy scale $\mathfrak{E}_0$ via
+**CAL-3 is $m_\pi$** (the charged-pion mass — the orthogonal
+$\mathrm{Vol}(\mathrm{Hopf})=0$ meson scale, genuinely independent of
+$(m_e, q_0)$). $Q_\beta$ below is the **derived** hadronic observable
+(bar-odd $\sinh$ partner of $m_\pi$), **not** the third calibration;
+its derivation status is what this section assesses.
+
+The derived $Q_\beta$ fixes the hadronic energy scale $\mathfrak{E}_0$ via
 $Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$. Per sibling
  and audit
 [`-q-beta-net-ansatz-fitting-finding`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md):
@@ -88,8 +98,9 @@ $Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$. Per sibling
 | CAL | Pinned quantity | Cohomological derivation candidate | Status |
 |---|---|---|---|
 | CAL-1 | $m_e$ in MeV | $\mathrm{Li}_2(q^{-2}) / \hbar_q^2$ for the natural-units value | **unit-choice + derived**; the unit choice itself is real |
-| CAL-2 | $q_0$ via $m_\mu/m_e$ | $\mathrm{Vol}(4_1) = 2\Lambda(\pi/3)$ on the cohomology side; $q_0$ un-derived | **open** (re-opened, weeks-of-research workplan) |
-| CAL-3 | $\mathfrak{E}_0$ via $Q_\beta$ | Khovanov-Rozansky cohomology strata of the link projection | **open**) |
+| CAL-2 | $q_0$ via $m_\mu/m_e$ (phys-obs: $m_p/m_e$) | $\mathrm{Vol}(4_1) = 2\Lambda(\pi/3)$ on the cohomology side; $q_0$ un-derived | **open** (re-opened, weeks-of-research workplan) |
+| CAL-3 | $m_\pi$ (meson scale; orthogonal class) | independent of $(m_e,q_0)$ via $\mathrm{Vol}(\mathrm{Hopf})=0$ | **genuine independent input** |
+| *(derived)* | $\mathfrak{E}_0$ via $Q_\beta$ | Khovanov-Rozansky cohomology strata of the link projection | **open** (derivation status of $Q_\beta$, not a CAL) |
 
 ## What this remark does NOT do
 

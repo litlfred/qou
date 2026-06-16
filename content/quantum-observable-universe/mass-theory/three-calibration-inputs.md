@@ -5,11 +5,19 @@ input is permitted — every other mass, Q-value, binding energy,
 coupling constant, mixing angle, and dimensionless ratio in the paper
 is a prediction.*
 
-| ID | Observable | Measurement | What it fixes | Jet order |
-|----|-----------|-------------|--------------|-----------|
-| **CAL-1** | $m_\mathfrak{e}$ | electron mass (Penning trap) | leptonic mass scale | $h^0$ |
-| **CAL-2** | $\mathfrak{D}_\beta$ | neutron $\beta$-decay width ($\tau_n$) | substrate $q_0$ via $Q_\beta \to$ substrate identity | $h^2$ |
-| **CAL-3** | $\mathfrak{D}_\pi$ | pion decay width ($\tau_\pi$) | meson mass scale $m_\pi$; independent of $(m_\mathfrak{e}, q_0)$ | $h^3$ |
+| ID | Observable | Measurement | What it fixes | (Co)homology |
+|----|-----------|-------------|--------------|--------------|
+| **CAL-1** | $m_\mathfrak{e}$ | electron mass (Penning trap) | leptonic mass scale | $H^0$ ($W$-plane scale) |
+| **CAL-2** | $m_\mu/m_\mathfrak{e}$ | muon–electron mass ratio (CODATA) | substrate $q_0$ ($= \mathrm{Vol}(4_1)/\hbar_q^2$) | $H^1$ ($W$-plane modulus) |
+| **CAL-3** | $m_\pi$ | charged-pion mass (PDG) | meson scale; independent of $(m_\mathfrak{e}, q_0)$ via $\mathrm{Vol}(\mathrm{Hopf})=0$ | orthogonal class |
+
+$Q_\beta$ (neutron $\beta$-decay, $\mathfrak{D}_\beta$) is **derived**
+from CAL-1 + CAL-2, **not** a calibration — the bar-odd $\sinh$ partner
+of the bar-even $\cosh$ meson scale $m_\pi$. In the
+**Physical-Observations** layer $q_0$ may be numerically anchored on the
+more-precise proton ratio $m_p/m_\mathfrak{e}$ (re-pin 2026-05-28; the
+muon ratio is then a $9.5\sigma$ cross-check), a precision substitution
+within the same $H^1$ datum — not a fourth calibration.
 
 *The three inputs are independent: one dimensionless ratio plus two
 dimensional scales. They align to the three (co)homological degrees
@@ -35,11 +43,15 @@ $$
   \cdot
   m_e^{\,a}
   \cdot
-  Q_\beta(n)^{\,b}
+  m_\pi^{\,b}
 $$
 
 with $a + b \in \{0, 1\}$ (dimensionless, mass-scale, or energy-scale
-output) and $q_0$ fixed by CAL-2.
+output) and $q_0$ fixed by CAL-2 ($m_\mu/m_e$). The two dimensional
+bridges are the calibration scales $m_e$ and $m_\pi$; the derived
+hadronic energy scale $\mathfrak{E}_0 = m_e/(q_0(q_0-1))$ and the
+derived $Q_\beta$ are $m_e^{1}\cdot\mathbb{Q}(q_0)$ expressions, not
+independent factors.
 
 ## Allowed substitutions
 
@@ -140,13 +152,18 @@ external measurements pin the three parameters is conventional but
 constrained by:
 
 1. **Dimensional analysis.** One dimensionless input ($m_\mu/m_e$)
-   pins $q_0$; two dimensional inputs ($m_e$, $Q_\beta(n)$) pin
-   the leptonic mass scale and hadronic energy scale.
+   pins $q_0$; two dimensional inputs ($m_e$, $m_\pi$) pin the
+   leptonic mass scale and the meson scale. The hadronic energy scale
+   $\mathfrak{E}_0$ (and hence $Q_\beta$) is **derived** from $m_e$
+   and $q_0$, not an independent input.
 
 2. **Precision.** $m_e$ has CODATA precision $2.9 \times 10^{-10}$;
-   $m_\mu/m_e$ has $2.2 \times 10^{-8}$ (limited by $m_\mu$); free
-   neutron $Q_\beta$ has $7.8 \times 10^{-7}$. Each is among the
-   most precisely measured quantities in its sector.
+   $m_\mu/m_e$ has $2.2 \times 10^{-8}$ (limited by $m_\mu$); $m_\pi$
+   has PDG precision $\sim 2 \times 10^{-6}$. Each is among the
+   most precisely measured quantities in its sector. In the
+   Physical-Observations layer $q_0$ may instead be anchored on the
+   proton ratio $m_p/m_e$ ($6 \times 10^{-11}$), the most precise
+   anchor available.
 
 3. **Naturality.** The electron is the simplest charged lepton; the
    $m_\mu/m_e$ ratio dimensionalises to $\mathrm{Vol}(4_1)$, the
