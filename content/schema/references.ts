@@ -5671,6 +5671,88 @@ export const references: CSLData[] = [
 
   // ── Rolfsen 1976 — already covered by rolfsen (re-keyed) ──────
 
+  // ── Classical antecedents of the involutive (Re/Im, modulus/phase)
+  //    reading of observables — cited from
+  //    mass-endomorphism/mass-modulus-em-phase-color-grading.md
+  //    (zagier2010 already present above) ───────────────────────────
+  ref({
+    id: "frobenius-schur1906",
+    type: "article-journal",
+    title:
+      "Über die reellen Darstellungen der endlichen Gruppen",
+    author: [
+      { family: "Frobenius", given: "G." },
+      { family: "Schur", given: "I." },
+    ],
+    "container-title":
+      "Sitzungsberichte der Königlich Preußischen Akademie der Wissenschaften zu Berlin",
+    page: "186-208",
+    issued: { "date-parts": [[1906]] },
+    note: "Frobenius-Schur indicator: the involution χ ↦ χ(g⁻¹) sorts irreps real/quaternionic/complex. No DOI (1906 Sitzungsberichte).",
+  }),
+  ref({
+    id: "takesaki1970",
+    type: "book",
+    title:
+      "Tomita's Theory of Modular Hilbert Algebras and its Applications",
+    author: [{ family: "Takesaki", given: "M." }],
+    "collection-title": "Lecture Notes in Mathematics",
+    volume: "128",
+    publisher: "Springer-Verlag",
+    "publisher-place": "Berlin, Heidelberg",
+    issued: { "date-parts": [[1970]] },
+    DOI: "10.1007/BFb0065832",
+  }),
+  ref({
+    id: "weil1958",
+    type: "book",
+    title: "Introduction à l'étude des variétés kählériennes",
+    author: [{ family: "Weil", given: "André" }],
+    publisher: "Hermann",
+    "publisher-place": "Paris",
+    issued: { "date-parts": [[1958]] },
+    note: "Source of the Weil operator on a polarised Hodge structure (the complex structure packaging real periods). No DOI (Hermann monograph).",
+  }),
+  ref({
+    id: "gamow1928",
+    type: "article-journal",
+    title: "Zur Quantentheorie des Atomkernes",
+    author: [{ family: "Gamow", given: "G." }],
+    "container-title": "Zeitschrift für Physik",
+    volume: "51",
+    issue: "3-4",
+    page: "204-212",
+    issued: { "date-parts": [[1928]] },
+    DOI: "10.1007/BF01343196",
+  }),
+  ref({
+    id: "breit-wigner1936",
+    type: "article-journal",
+    title: "Capture of Slow Neutrons",
+    author: [
+      { family: "Breit", given: "G." },
+      { family: "Wigner", given: "E." },
+    ],
+    "container-title": "Physical Review",
+    volume: "49",
+    issue: "7",
+    page: "519-531",
+    issued: { "date-parts": [[1936]] },
+    DOI: "10.1103/PhysRev.49.519",
+  }),
+  ref({
+    id: "kronig1926",
+    type: "article-journal",
+    title: "On the theory of dispersion of X-rays",
+    author: [{ family: "Kronig", given: "R. de L." }],
+    "container-title": "Journal of the Optical Society of America",
+    volume: "12",
+    issue: "6",
+    page: "547-557",
+    issued: { "date-parts": [[1926]] },
+    DOI: "10.1364/JOSA.12.000547",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
