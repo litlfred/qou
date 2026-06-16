@@ -112,18 +112,53 @@ numerical or experimental artifact. So a *uniform* rescale (volume normalization
 colored-Jones, complex-q) provably cannot close it — consistent with the sibling
 audit's Option-3 conclusion.
 
-## 5. Conclusion (joins the sibling audit)
+## 5. Exact additivity ⇒ the chain carries *zero* cooperative binding
 
-`B_sym` is, in closed form, a **linear-chain spanning binding**: a fixed (A−1)
-adjacent bonds with fixed chirality-ordered per-bond strengths. This pins the two
-failure modes — the deuteron over-bind (single p-n quantum) and the ⁴He
-under-bind (chain misses pairs + magic closure) — as opposite ends of one
-structure, and shows that **no bond-count topology** (chain or all-pairs) closes
-the gap, because the residual is **nuclear saturation + shell structure**, not a
-counting choice. The framework's "smooth categorical term + explicit shell
-corrections (B_magic first)" treatment is therefore the right shape; the next
-lever is a **categorically-derived saturation/shell term**, *not* a 7th uniform
-or bond-count ansatz (CLAUDE.md Δ_λ gate).
+A consequence of the §1 verification worth stating on its own: because the
+additive chain sum equals the exact 3A-strand trace **to the 50-dps floor**, the
+Markov trace adds **no** many-body cooperative binding beyond the independent
+per-bond terms. The 3A-strand trace entangles all strands through the Hecke
+algebra, but the *binding* it produces is exactly the (A−1)-bond chain sum — the
+4-body α-unit is **entirely absent**, not merely under-weighted. This refines the
+sibling audit's wording ("B_sym already contains all many-body correlations"):
+the trace is full-rank, but its **binding** is pairwise-chain-exact, so the
+cooperative α-residual must come from elsewhere.
+
+## 6. Prior art + what is actually open
+
+This finding is the **log-form sibling** of an existing derivation, and the
+corpus already supplies two of the three pieces a "categorical shell term" needs:
+
+- **Saturation (nearest-neighbour chain) — already derived, twice.**
+  [`derive_binding_chain_cooperative.py`](../../computations/derive_binding_chain_cooperative.py)
+  reaches the same linear-chain structure with the **signed-trace** standard part
+  `B_xy = E₀·(tr_free − tr_atom)` (b_pp = 2.38, b_pn = 2.49, b_nn = 2.53 MeV);
+  this audit's **log** standard part `B_sym = α·ln(tr_free/tr_atom)` (b_pp = 2.91,
+  b_pn = 3.89, b_nn = 5.18) is a different functor of the same trace. Both are
+  exactly additive over the (A−1) chain bonds and both leave the ⁴He 4-body
+  residual (20.9 MeV signed / 16.3 MeV log) as the irreducible cooperative term.
+  The agreement across two standard-part functors is strong evidence the
+  chain/saturation structure is real, not an artifact of one form.
+- **Shell-closure positions — already derived from q₀.**
+  [`observations/magic-numbers-from-q.md`](../../content/quantum-observable-universe/observations/magic-numbers-from-q.md):
+  the Wedderburn-weighted signal Φ(Z) = Σ_k Σ_{λ⊢k} w_λ ln|χ_λ(Z)| has a forward
+  second difference δ²Φ that **peaks at {2, 8, 20, 28}** — the magic numbers, with
+  no empirical list. So the categorical framework already says *where* the closures
+  are.
+- **The genuinely open piece — the cooperative α-unit MAGNITUDE.** What neither
+  the chain nor `magic-numbers-from-q` supplies is the *MeV magnitude* of the
+  4-body α-binding (the ~16–21 MeV ⁴He residual). The sibling audit showed the
+  required count `k = B_AME / (m_e·8G)` is the binding curve itself — **no clean
+  combinatorial count** — so any closed form for the magnitude that is tuned to the
+  data is a fit, blocked by the CLAUDE.md Δ_λ gate.
+
+**Conclusion.** `B_sym` is a closed-form linear-chain (saturation) binding; its
+two misses are opposite ends of that one structure; the shell *positions* are
+already categorical (δ²Φ). The only open lever is the cooperative **α-unit
+magnitude**, and it must come from a **derivation** (the α-cluster recursion that
+treats ⁴He's 4-body binding as the magic input — recommended by both the
+chain-cooperative file and the sibling audit), **not** a 7th uniform / bond-count /
+fitted ansatz.
 
 ## References
 
@@ -135,5 +170,10 @@ or bond-count ansatz (CLAUDE.md Δ_λ gate).
 - `computations/mass_binding_dashboard.py` — the engine (`/dashboard-low`).
 - `computations/mass_at_3A_proper.py::atom_braid_word_3A` — the linear-chain braid
   word (the `['p']·Z + ['n']·N` adjacency this audit reads off).
+- [`computations/derive_binding_chain_cooperative.py`](../../computations/derive_binding_chain_cooperative.py)
+  — the **signed-trace** sibling derivation of the same chain (this audit is its
+  log-form analogue); identifies the ⁴He residual as the irreducible 4-body α-unit.
+- [`content/quantum-observable-universe/observations/magic-numbers-from-q.md`](../../content/quantum-observable-universe/observations/magic-numbers-from-q.md)
+  — magic numbers {2,8,20,28} from q₀ via δ²Φ (the categorical shell *positions*).
 - `computations/magic_A_formula.py` — `B_magic` (the working ⁴He shell correction).
 - PR #2343 — the error-budget + decomposition tool.
