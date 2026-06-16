@@ -383,6 +383,50 @@ def gauge_aligned_A_combiner_general(lam: tuple[int, ...], n_inner: int,
     return out
 
 
+def gauge_aligned_A_combiner_general_rust(lam: tuple[int, ...], n_inner: int,
+                                          n_block: int, q_str: str, dps: int = 50):
+    """Rust-backed drop-in for `gauge_aligned_A_combiner_general` — delegates each
+    `(μ,ν)` block to the merged `pyhecke_native.gauge_aligned_a_combiner_mpfr`
+    (closure-b Rust port, PR #2376), resolving the O(r⁶) pure-mpmath wall that
+    forces a `dim(V_λ)` cap on the pure-Python version. Identical return format
+    `{(μ,ν): {"A","c","d_mu","d_nu"}}` and identical pn interface
+    (`I = σ_{n_inner-1} − h/2`), so callers swap the import and lift the cap.
+
+    Requires the native wheel (`pip install -e tools/pyhecke-native`); raises a
+    clear ImportError otherwise.
+    """
+    try:
+        import pyhecke_native as pn
+    except ImportError as e:  # pragma: no cover
+        raise ImportError(
+            "gauge_aligned_A_combiner_general_rust needs pyhecke_native "
+            "(pip install -e tools/pyhecke-native) — the Rust combiner from "
+            "PR #2376") from e
+    from lr_coefficients import lr_coef
+    q = mp.mpf(q_str)
+    h = q - 1 / q
+    d_pn = mp.nstr(-h / 2, dps + 5)
+    ev_in = _classsum_eigenvalues(n_inner, q_str, dps)
+    ev_bl = _classsum_eigenvalues(n_block, q_str, dps)
+    p_in, p_bl = partitions_of(n_inner), partitions_of(n_block)
+    eig_in = [mp.nstr(ev_in[p], dps + 5) for p in p_in]
+    eig_bl = [mp.nstr(ev_bl[p], dps + 5) for p in p_bl]
+    out = {}
+    for mu in p_in:
+        for nu in p_bl:
+            R = pn.gauge_aligned_a_combiner_mpfr(
+                list(lam), n_inner, list(mu), list(nu),
+                eig_in, mp.nstr(ev_in[mu], dps + 5),
+                eig_bl, mp.nstr(ev_bl[nu], dps + 5), d_pn, q_str, dps)
+            if not R:
+                continue
+            A = mp.matrix([[mp.mpf(x) for x in row] for row in R])
+            out[(mu, nu)] = {"A": A, "c": lr_coef(mu, nu, lam),
+                             "d_mu": aoa.partition_dim(mu),
+                             "d_nu": aoa.partition_dim(nu)}
+    return out
+
+
 def gauge_aligned_A_combiner(lam: tuple[int, ...], q_str: str,
                             dps: int) -> dict:
     """Construct the combiner-ready A^λ_{μν}(I_pn) in standard ρ_μ⊗ρ_ν
