@@ -28,8 +28,12 @@ for sub in ("tools/qou-substrate/python", "tools/pyhecke/python", "tools/pyhecke
 try:
     from pyhecke import atom
     import pyhecke.constants as c
-except Exception as e:  # pragma: no cover
+except ImportError as e:  # pragma: no cover
+    atom = None
+    c = None
     print(f"SKIP: pyhecke unavailable ({type(e).__name__}: {e}).")
+    if os.environ.get("CI"):
+        sys.exit(1)   # do NOT silently pass in CI where deps are expected
     sys.exit(0)
 
 DIM_SU3 = 8        # dim SU(3)
@@ -68,5 +72,6 @@ print("  Neither is settled in-session: this is genuine differential geometry.")
 assert dim_quot == 5 and dim_quot % 2 == 1, "SU(3)/SO(3) must be 5-dim odd"
 assert abs(weights[(3, 1, 1)] - 0.294669) < 1e-5, "electron-block weight drift"
 assert abs(weights[(3, 2)] - 0.207542) < 1e-5, "muon-block weight drift"
+assert abs(weights[(2, 2, 1)] - 0.207542) < 1e-5, "conjugate muon-block weight drift"
 print("\nWEIGHTING COMPATIBILITY + FORCED-TARGET ASSERTIONS VERIFIED.")
 sys.exit(0)
