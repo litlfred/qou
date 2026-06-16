@@ -817,28 +817,21 @@ fn seminormal_matrices_mpfr(
         .collect()
 }
 
-/// **Transposition class-sum `C = Σ_{i<j∈[lo,hi]} ρ_λ(T_{(i,j)})` at MPFR
-/// precision** — central in the `H_k` factor on (0-based) strands `[lo,hi]`.
-///
-/// Returns the dense `dim×dim` matrix as decimal strings. Its Lagrange spectral
-/// projectors are the `(μ,ν)`-isotypic projectors `Π` of the categorical
-/// interface-operator combiner (closure-b Rust port — first increment). The
-/// class-sum separates all 11 `H_6` irreps at the substrate q₀ (min eigen-gap
-/// 1.15), so the projectors are well-defined. `T_{(i,j)} = σ_{j-1}…σ_{i+1} σ_i
-/// σ_{i+1}…σ_{j-1}` (0-based generators).
-#[pyfunction]
-#[pyo3(signature = (shape, strand_lo, strand_hi, q_str, dps=50))]
-fn transposition_class_sum_mpfr(
-    shape: Vec<usize>,
+/// Dense transposition class-sum `C = Σ_{i<j∈[lo,hi]} ρ_λ(T_{(i,j)})` on V_λ at
+/// MPFR precision (private; shared by the class-sum and Lagrange-projector
+/// bindings). Returns `(C, dim)` or an error message on out-of-range strands.
+/// `T_{(i,j)} = σ_{j-1}…σ_{i+1} σ_i σ_{i+1}…σ_{j-1}` (0-based generators).
+fn class_sum_dense(
+    shape: &[usize],
     strand_lo: usize,
     strand_hi: usize,
-    q_str: String,
+    q_str: &str,
     dps: u32,
-) -> PyResult<Vec<Vec<String>>> {
+) -> Result<(Vec<Vec<Float>>, usize), String> {
     let prec = seminormal_mpfr::dps_to_bits(dps);
-    let sparse = seminormal_mpfr::seminormal_matrices_mpfr(&shape, &q_str, dps);
+    let sparse = seminormal_mpfr::seminormal_matrices_mpfr(shape, q_str, dps);
     if sparse.is_empty() {
-        return Ok(Vec::new());
+        return Ok((Vec::new(), 0));
     }
     let dim = sparse[0].len();
     // Dense generator matrices ρ_λ(σ_{g+1}) for 0-based generator g.
@@ -846,15 +839,14 @@ fn transposition_class_sum_mpfr(
         .iter()
         .map(|sp| dense_la_mpfr::sparse_to_dense_mpfr(sp, dim, prec))
         .collect();
-    // Bounds check: the transposition word for strands [i,j] uses generators up
-    // to j-1, so the largest generator index reached is strand_hi-1; it must be
-    // < gens.len() (= n-1). Out-of-range strands would panic on gens[g].
+    // The transposition word for strands [i,j] uses generators up to j-1, so the
+    // largest generator index reached is strand_hi-1; it must be < gens.len()
+    // (= n-1). Out-of-range strands would panic on gens[g].
     if strand_lo > strand_hi || strand_hi > gens.len() {
-        return Err(pyo3::exceptions::PyValueError::new_err(format!(
-            "transposition_class_sum_mpfr: invalid strand range [{}, {}] for \
-             {} generators (max strand index is {})",
+        return Err(format!(
+            "invalid strand range [{}, {}] for {} generators (max strand index is {})",
             strand_lo, strand_hi, gens.len(), gens.len()
-        )));
+        ));
     }
     let ident: Vec<Vec<Float>> = (0..dim)
         .map(|i| (0..dim)
@@ -866,7 +858,6 @@ fn transposition_class_sum_mpfr(
         .collect();
     for i in strand_lo..=strand_hi {
         for j in (i + 1)..=strand_hi {
-            // word gens (0-based): (i+1..j).rev() ++ [i] ++ (i+1..j)
             let mut word: Vec<usize> = ((i + 1)..j).rev().collect();
             word.push(i);
             word.extend((i + 1)..j);
@@ -881,11 +872,102 @@ fn transposition_class_sum_mpfr(
             }
         }
     }
-    Ok(acc.iter()
+    Ok((acc, dim))
+}
+
+/// **Transposition class-sum `C` at MPFR precision** — central in the `H_k`
+/// factor on (0-based) strands `[lo,hi]`. Returns the dense `dim×dim` matrix as
+/// decimal strings. Its Lagrange spectral projectors are the `(μ,ν)`-isotypic
+/// projectors `Π` of the categorical interface-operator combiner (closure-b Rust
+/// port). The class-sum separates all 11 `H_6` irreps at the substrate q₀ (min
+/// eigen-gap 1.15), so the projectors are well-defined.
+#[pyfunction]
+#[pyo3(signature = (shape, strand_lo, strand_hi, q_str, dps=50))]
+fn transposition_class_sum_mpfr(
+    shape: Vec<usize>,
+    strand_lo: usize,
+    strand_hi: usize,
+    q_str: String,
+    dps: u32,
+) -> PyResult<Vec<Vec<String>>> {
+    let (c_mat, _dim) = class_sum_dense(&shape, strand_lo, strand_hi, &q_str, dps)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(
+            format!("transposition_class_sum_mpfr: {e}")))?;
+    Ok(c_mat.iter()
         .map(|row| row.iter()
             .map(|v| v.to_string_radix(10, Some(dps as usize)))
             .collect())
         .collect())
+}
+
+/// **Lagrange isotypic spectral projectors** `P_a = Π_{b≠a} (C − e_b·I)/(e_a − e_b)`
+/// of the transposition class-sum `C` on V_λ — one per eigenvalue in
+/// `eigenvalues` (decimal strings; the distinct central-character values
+/// `e_μ = χ^μ(C)/d_μ` of the irreps μ present in `Res_{H_k} V_λ`). Returns one
+/// dense projector per input eigenvalue, as decimal-string matrices. The inputs
+/// must be the distinct eigenvalues actually present on V_λ (the q₀ class-sum
+/// separates all H_6 irreps, so they are distinct). Closure-b Rust port —
+/// increment 2 (the isotypic projectors `Π_{μν} = P_μ^{(in)} · P_ν^{(bl)}`).
+#[pyfunction]
+#[pyo3(signature = (shape, strand_lo, strand_hi, eigenvalues, q_str, dps=50))]
+fn lagrange_projectors_mpfr(
+    shape: Vec<usize>,
+    strand_lo: usize,
+    strand_hi: usize,
+    eigenvalues: Vec<String>,
+    q_str: String,
+    dps: u32,
+) -> PyResult<Vec<Vec<Vec<String>>>> {
+    let prec = seminormal_mpfr::dps_to_bits(dps);
+    let (c_mat, dim) = class_sum_dense(&shape, strand_lo, strand_hi, &q_str, dps)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(
+            format!("lagrange_projectors_mpfr: {e}")))?;
+    if dim == 0 {
+        return Ok(Vec::new());
+    }
+    // Parse the eigenvalues at MPFR precision.
+    let mut evs: Vec<Float> = Vec::with_capacity(eigenvalues.len());
+    for s in &eigenvalues {
+        match Float::parse(s) {
+            Ok(p) => evs.push(Float::with_val(prec, p)),
+            Err(_) => return Err(pyo3::exceptions::PyValueError::new_err(
+                format!("lagrange_projectors_mpfr: bad eigenvalue {:?}", s))),
+        }
+    }
+    let mut out: Vec<Vec<Vec<String>>> = Vec::with_capacity(evs.len());
+    for a in 0..evs.len() {
+        // P = I
+        let mut p: Vec<Vec<Float>> = (0..dim)
+            .map(|i| (0..dim)
+                .map(|j| Float::with_val(prec, if i == j { 1 } else { 0 }))
+                .collect())
+            .collect();
+        for b in 0..evs.len() {
+            if b == a {
+                continue;
+            }
+            let denom = Float::with_val(prec, &evs[a]) - &evs[b];
+            // term = (C − e_b·I) / (e_a − e_b)
+            let term: Vec<Vec<Float>> = (0..dim)
+                .map(|i| (0..dim)
+                    .map(|j| {
+                        let mut v = Float::with_val(prec, &c_mat[i][j]);
+                        if i == j {
+                            v -= &evs[b];
+                        }
+                        Float::with_val(prec, &v / &denom)
+                    })
+                    .collect())
+                .collect();
+            p = dense_la_mpfr::dense_dense_mul_mpfr(&p, &term, prec);
+        }
+        out.push(p.iter()
+            .map(|row| row.iter()
+                .map(|v| v.to_string_radix(10, Some(dps as usize)))
+                .collect())
+            .collect());
+    }
+    Ok(out)
 }
 
 /// Matrix-M block-restricted χ^λ at substrate q.
@@ -1082,6 +1164,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(seminormal_matrices_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(transposition_class_sum_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(lagrange_projectors_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_via_matrix_m_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
