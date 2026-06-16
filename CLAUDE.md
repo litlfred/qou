@@ -550,15 +550,19 @@ URLs.
 
 **Authoritative cross-link**: [`docs/canonical-derivation-cheat-sheet.md`](docs/canonical-derivation-cheat-sheet.md).
 
-The QOU framework derives every observable (m_p, m_n, m_He, Q_β, B_AME, lifetimes) from **3 calibration inputs** — each a physical measurement (mass or decay width):
+The QOU framework derives every observable (m_p, m_n, m_He, Q_β, B_AME, lifetimes) from **3 calibration inputs** — the canonical *mathematical* triple, each a physical measurement (mass or mass ratio):
 
-| CAL | Observable | Measurement | Jet order |
-|-----|-----------|-------------|-----------|
-| CAL-1 | m_e | electron mass (Penning trap) | h⁰ |
-| CAL-2 | 𝔇_β → Q_β → q₀ | neutron β-decay width (τ_n) | h² |
-| CAL-3 | 𝔇_π → m_π | pion decay width (τ_π) | h³ |
+| CAL | Observable | Measurement | (Co)homology |
+|-----|-----------|-------------|--------------|
+| CAL-1 | m_e | electron mass (Penning trap) | H⁰ — W-plane scale |
+| CAL-2 | m_μ/m_e → q₀ | muon–electron mass ratio (CODATA) | H¹ — W-plane modulus |
+| CAL-3 | m_π | charged-pion mass (PDG) | orthogonal meson class |
 
-Q_β is **derived** from CAL-1 + CAL-2 via the substrate identity; m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0). The derivation chain:
+Q_β is **derived** from CAL-1 + CAL-2 via the substrate identity (`Q_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³)`, 0.17% miss — the bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π); the neutron β-decay width `𝔇_β/τ_n` is Q_β's experimental face, **not** a third calibration. m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
+
+> **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.06 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
+
+The derivation chain:
 
 ```
 substrate q_0 → 𝐂 categorical action → Yekutieli non-abelian Stokes → 𝐇_n(q) Hecke
