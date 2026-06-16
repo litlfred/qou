@@ -297,7 +297,73 @@ print("  bundle structure group is SU(2) (quaternion-so3-motivation.md) => the")
 print("  icosahedral I subset SO(3) holonomy lifts to 2I on the spinor fibre.")
 ok_ing1 = ok_ing1 and ok_dic3 and ok_2i_dbl
 
-all_ok = all_ok and ok_emb and ok_so3 and ok_bridge and ok_ing1
+# ============================================================================
+# RESIDUAL-2: is the geometric A5 action the icosahedral T1 rep?  Three checks,
+# all forced by representation theory:
+#  (a) the ONLY 3-dim A5 irreps are T1, T2 -> any faithful A5 -> SO(3) (acting on
+#      the 3-dim chiral-sheet / spin R^3) is necessarily the icosahedral rep.
+#  (b) S5 FUSES the two 5-cycle A5-classes (an odd permutation conjugates a
+#      5-cycle to its A5-non-conjugate square), so S5\A5 swaps chi(C5)<->chi(C5^2)
+#      i.e. swaps T1<->T2.  That swap IS chirality (enantiomorphic icosahedra);
+#      the S5-stable object is T1 (+) T2 = (3,1,1).
+#  (c) the A5 PERMUTATION rep on the 5 sheets = A (+) G (4-dim standard), NOT T1.
+#      So the geometric rotation rep (T1) is a DIFFERENT rep from sheet-permutation.
+# ============================================================================
+print("\n=== RESIDUAL-2: geometric A5 = icosahedral T1 rep (forced) ===")
+three_dim = [k for k, v in A5_IRREPS.items() if v[0] == 3]
+ok_only_3dim = (sorted(three_dim) == ["T1", "T2"])
+print(f"  (a) 3-dim A5 irreps = {sorted(three_dim)} -> faithful A5->SO(3) is icosahedral: {ok_only_3dim}")
+
+# (b) 5-cycle class fusion under S5 (permutation computation on {0..4})
+def compose(p, q):  # (p after q)
+    return tuple(p[q[i]] for i in range(len(q)))
+def inv(p):
+    r = [0]*len(p)
+    for i, v in enumerate(p): r[v] = i
+    return tuple(r)
+def parity(p):
+    seen=set(); ev=0
+    for i in range(len(p)):
+        if i in seen: continue
+        L=0; c=i
+        while c not in seen:
+            seen.add(c); c=p[c]; L+=1
+        ev += L-1
+    return ev % 2
+ALL5 = list(itertools.permutations(range(5)))
+A5 = [p for p in ALL5 if parity(p) == 0]
+def conj_class(x, grp):
+    return frozenset(compose(compose(g, x), inv(g)) for g in grp)
+c5 = (1, 2, 3, 4, 0)            # the 5-cycle (0 1 2 3 4)
+c5sq = compose(c5, c5)          # its square (another 5-cycle)
+clsA = conj_class(c5, A5); clsAsq = conj_class(c5sq, A5)
+clsS = conj_class(c5, ALL5)
+ok_split = (clsA != clsAsq and len(clsA) == 12 and len(clsAsq) == 12)
+ok_fuse = (clsS == clsA | clsAsq and len(clsS) == 24)
+print(f"  (b) A5 splits 5-cycles into two classes of 12: {ok_split}; "
+      f"S5 fuses them (24): {ok_fuse} -> S5\\A5 swaps T1<->T2 = chirality")
+
+# (c) A5 permutation rep on 5 points: chi_perm(g) = #fixed points
+PERM_CHAR = {  # on (E, C5, C5^2, C3, C2)
+    "E": 5, "C5": 0, "C5^2": 0, "C3": 2, "C2": 1,
+}
+def decompose_perm():
+    out = {}
+    for name, chi in A5_IRREPS.items():
+        s = 0.0
+        for (cname, size, _), c in zip(A5_CLASSES, chi):
+            s += size * PERM_CHAR[cname] * c
+        m = round(s / 60)
+        if m: out[name] = m
+    return out
+perm_dec = decompose_perm()
+ok_perm = (perm_dec == {"A": 1, "G": 1})
+print(f"  (c) A5 perm rep on 5 sheets = {perm_dec} (= A (+) G, NOT T1): {ok_perm}")
+ok_res2 = ok_only_3dim and ok_split and ok_fuse and ok_perm
+print(f"  => geometric SO(3)-holonomy rep is forced to be icosahedral T1/T2,")
+print(f"     T1/T2 = the two chiralities (S5-stable sum = (3,1,1)): {ok_res2}")
+
+all_ok = all_ok and ok_emb and ok_so3 and ok_bridge and ok_ing1 and ok_res2
 print("\nALL BACKBONE + BRIDGE + INGREDIENT-1-ANCHOR CLAIMS VERIFIED:", all_ok)
 import sys
 sys.exit(0 if all_ok else 1)
