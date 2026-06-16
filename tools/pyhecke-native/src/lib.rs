@@ -839,9 +839,21 @@ fn class_sum_dense(
         .iter()
         .map(|sp| dense_la_mpfr::sparse_to_dense_mpfr(sp, dim, prec))
         .collect();
-    // The transposition word for strands [i,j] uses generators up to j-1, so the
-    // largest generator index reached is strand_hi-1; it must be < gens.len()
-    // (= n-1). Out-of-range strands would panic on gens[g].
+    let c = class_sum_from_gens(&gens, dim, strand_lo, strand_hi, prec)?;
+    Ok((c, dim))
+}
+
+/// Transposition class-sum from *pre-built* dense generator matrices — avoids
+/// re-deriving the (expensive) seminormal matrices when several class-sums of
+/// the same λ are needed (e.g. inner + block in the combiner). `T_{(i,j)} =
+/// σ_{j-1}…σ_{i+1} σ_i σ_{i+1}…σ_{j-1}` (0-based generators).
+fn class_sum_from_gens(
+    gens: &[Vec<Vec<Float>>],
+    dim: usize,
+    strand_lo: usize,
+    strand_hi: usize,
+    prec: u32,
+) -> Result<Vec<Vec<Float>>, String> {
     if strand_lo > strand_hi || strand_hi > gens.len() {
         return Err(format!(
             "invalid strand range [{}, {}] for {} generators (max strand index is {})",
@@ -872,7 +884,7 @@ fn class_sum_dense(
             }
         }
     }
-    Ok((acc, dim))
+    Ok(acc)
 }
 
 /// **Transposition class-sum `C` at MPFR precision** — central in the `H_k`
@@ -1164,10 +1176,13 @@ fn gauge_aligned_a_combiner_mpfr(
             "gauge_aligned_a_combiner_mpfr: λ={:?} has {} generators, need ≥ {}",
             lam, gens.len(), n - 1)));
     }
-    // Isotypic projectors Π_{μν} = P_μ^(in) · P_ν^(bl).
-    let (c_in, _) = class_sum_dense(&lam, 0, n_inner - 1, &q_str, dps)
+    // Isotypic projectors Π_{μν} = P_μ^(in) · P_ν^(bl). Reuse the λ generator
+    // matrices already built above for both class-sums — avoids re-deriving the
+    // (expensive) seminormal matrices ~3× per call (seminormal caching, #2380
+    // follow-up).
+    let c_in = class_sum_from_gens(&gens, dim, 0, n_inner - 1, prec)
         .map_err(|e| pyo3::exceptions::PyValueError::new_err(format!("a_combiner: {e}")))?;
-    let (c_bl, _) = class_sum_dense(&lam, n_inner, n - 1, &q_str, dps)
+    let c_bl = class_sum_from_gens(&gens, dim, n_inner, n - 1, prec)
         .map_err(|e| pyo3::exceptions::PyValueError::new_err(format!("a_combiner: {e}")))?;
     let ein: Vec<Float> = inner_eigs.iter().map(|s| parse_f(s)).collect::<PyResult<_>>()?;
     let ebl: Vec<Float> = block_eigs.iter().map(|s| parse_f(s)).collect::<PyResult<_>>()?;
