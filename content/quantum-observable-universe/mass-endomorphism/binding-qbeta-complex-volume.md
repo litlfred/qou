@@ -4,7 +4,7 @@ the real and imaginary parts of a single complex fibre observable — the
 complexified mass-endomorphism convolution-defect*
 
 $$
-  \mathfrak{W}(K)\;=\;E_0\big(\mathrm{tr}_M(W_{\text{free}}) - \mathrm{tr}_M(W_{\text{knot}})\big)
+  \mathfrak{W}(K)\;=\;E_0\,\mathrm{tr}_M\big((\Pi_{\text{free}} - \mathbf{1})\circ\mathcal{M}\big)
   \;\in\;\mathbb{C},
   \qquad
   \mathfrak{B}(K) = \operatorname{Re}\mathfrak{W}(K),
@@ -17,53 +17,45 @@ $\mathbb{V}(K) = \operatorname{Vol}(K) + i\,\mathrm{CS}(K)$.*
 
 ## The one object
 
-There is **one** Markov trace $\mathrm{tr}_M : H_n(q) \to \mathbb{Q}(q)$
-(CLAUDE.md §7a; the fibre functor $\tau$ is a *different* object — hence
-$\mathrm{tr}_M$, never $\tau_M$). What varies is the **braid word** fed
-to it. For a confined knot $K$, both words live in the *same* Hecke
-algebra $H_n(q)$:
+Categorically — **no braid words**. For a confined knot $K$:
 
-- $W_{\text{free}}$ — the **split / factorized** word ($K$'s
-  constituents un-linked; its trace *multiplies* over components),
-- $W_{\text{knot}}$ — the **linked / confined** word (the
-  knot-convolved braid).
+- $\mathcal{M} = \mathcal{M}(K) \in \operatorname{End}_{\mathbf{C}}(X_K)$
+  is the **mass endomorphism** of the object $X_K$ representing $K$ in
+  the rigid monoidal category $\mathbf{C}$;
+- $\mathrm{tr}_M : \operatorname{End}_{\mathbf{C}}(X_K) \to k$ is the
+  categorical **Markov trace** (the closed/categorical trace; CLAUDE.md
+  §7a — the fibre functor $\tau$ is a *different* object, never
+  $\tau_M$);
+- $\Pi_{\text{free}} \in \operatorname{End}_{\mathbf{C}}(X_K)$ is the
+  **idempotent projector** ($\Pi_{\text{free}}^2 = \Pi_{\text{free}}$)
+  onto the **factorized sub-object**
+  $X_K \twoheadrightarrow X_1 \otimes \cdots \otimes X_c$ — the
+  constituents un-linked (the categorical projection onto the split
+  tensor: the *same* R-matrix braiding with the inter-constituent
+  confining crossings dropped).
 
-They differ by the **inter-constituent (confining) crossings** — the
-*same* R-matrix $\sigma_i \mapsto R$ applied at the linking crossings
-that $W_{\text{free}}$ lacks (one R-matrix, two words — not two
-R-matrices). Equivalently, `free` is the trace **composed with a
-projection**: $\mathrm{tr}_M(W_{\text{free}}) = \mathrm{tr}_M(\Pi_{\text{free}}\,\mathcal{M})$,
-where $\Pi_{\text{free}}$ is the idempotent projection of $H_n(q)$ onto
-the **parabolic (Young) subalgebra**
-$H_{n_1}(q)\otimes\cdots\otimes H_{n_c}(q)$ of the constituents — the
-categorical projection onto the factorized tensor / conditional
-expectation onto the split-word subalgebra (no inter-constituent
-braiding); and $W_{\text{knot}} = \mathcal{M}$ is the un-projected mass
-endomorphism. The **convolution-defect** is their Markov-trace
-difference; since $\mathrm{tr}_M$ is linear it is the trace of the
-single **confinement element** $\mathcal{M} - \Pi_{\text{free}}\mathcal{M}$ —
-the part of $\mathcal{M}$ that does *not* survive $\Pi_{\text{free}}$ (a
-**projection defect**, written as an explicit trace-difference — *not*
-an overloaded $\Delta$, *not* a new trace-like symbol):
+The **convolution-defect** is the categorical trace of the part of
+$\mathcal{M}$ that does *not* survive $\Pi_{\text{free}}$ — a
+**projection defect** (no words, no overloaded $\Delta$, no new
+trace-like symbol):
 
 $$
-  \mathrm{tr}_M(W_{\text{free}}) - \mathrm{tr}_M(W_{\text{knot}})
+  \mathrm{tr}_M\big((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M}\big)
   \;=\;
-  \mathrm{tr}_M\big((\Pi_{\text{free}}-\mathbf{1})\,\mathcal{M}\big)
+  \mathrm{tr}_M(\Pi_{\text{free}}\circ\mathcal{M}) - \mathrm{tr}_M(\mathcal{M})
   \;=\;
-  \sum_\lambda y_\lambda\,\big(\chi^\lambda_{\text{free}} - \chi^\lambda_{\text{knot}}\big).
+  \sum_\lambda y_\lambda\,\big(\chi^\lambda(\Pi_{\text{free}}\mathcal{M}) - \chi^\lambda(\mathcal{M})\big),
 $$
-
-This is a statement on **any confined knot $K$**; the nuclear binding
-case — a nucleus is a confined nucleon knot, split tensor
-$\mathfrak{p}^{Z}\otimes\mathfrak{n}^{N}$ — is the physical instance
-$\mathrm{tr}_M(W_{\text{knot}}) = \mathrm{tr}_M(W_{\text{atom}})$ of
-`binding_canonical`.
 
 the per-partition object of the canonical binding
 ([`prop:categorical-mass-markov`](#prop:categorical-mass-markov),
-`binding_canonical`). Read over $\mathbb{C}$ it carries **one bit more
-information than either observable alone**: its two bar-parities.
+`binding_canonical`). This is a statement on **any confined knot $K$**;
+the nuclear binding case — a nucleus is a confined nucleon knot,
+factorized sub-object $\mathfrak{p}^{Z}\otimes\mathfrak{n}^{N}$ — is the
+physical instance $\mathrm{tr}_M(\mathcal{M}) = \mathrm{tr}_M(W_{\text{atom}})$
+of `binding_canonical`. Read over $\mathbb{C}$ the defect carries **one
+bit more information than either observable alone**: its two
+bar-parities.
 
 ## Why Re/Im is forced — the bar-parity = the complexification
 

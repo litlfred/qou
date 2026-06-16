@@ -12,11 +12,11 @@ Complex-volume unification of mass-binding and β-decay
 
 Binding `𝔅` and the β-decay `𝔔_β` are the real and imaginary parts of a
 single complex fibre observable — the complexified mass-endomorphism
-convolution-defect `𝔚 = E₀(tr_M(W_free) − tr_M(W_knot)) ∈ ℂ` — the QOU analogue of the
+convolution-defect `𝔚 = E₀·tr_M((Π_free−1)∘𝓜) ∈ ℂ` — the QOU analogue of the
 Neumann–Zagier complex volume `Vol(K) + i·CS(K)`.
 
 Per the owner's observation ("in many ways this is definitional"), the
-unification is taken **definitionally**: `𝔚 := E₀(tr_M(W_free) − tr_M(W_knot))`,
+unification is taken **definitionally**: `𝔚 := E₀·tr_M((Π_free−1)∘𝓜)` (𝓜 = mass endomorphism in 𝐂, Π_free = idempotent projector onto the factorized sub-object, tr_M = categorical Markov trace — no braid words),
 `𝔅 := Re 𝔚`, `𝔔_β := Im 𝔚`.  Then the unification
 `𝔅 + i·𝔔_β = 𝔚` is a **theorem** (`Complex.re_add_im`), sorry-free.
 The only conjectural content is the *physical match*: that the measured
@@ -58,7 +58,7 @@ end BarParity
 
 /-! ## The complex convolution-defect and the definitional unification -/
 
-/-- The complex fibre observable `𝔚 = E₀(tr_M(W_free) − tr_M(W_knot)) ∈ ℂ`. -/
+/-- The complex fibre observable `𝔚 = E₀·tr_M((Π_free−1)∘𝓜) ∈ ℂ`. -/
 noncomputable def fibreDefect (E0 : ℝ) (trDefect : ℂ) : ℂ := (E0 : ℂ) * trDefect
 
 /-- Binding `𝔅 := Re 𝔚` — the bar-even / volume channel. -/
@@ -86,7 +86,7 @@ theorem complex_volume_unification (E0 : ℝ) (trDefect : ℂ) :
 class ComplexVolumeMatch (K : Type*) where
   /-- substrate energy scale `E₀`. -/
   E0 : ℝ
-  /-- the complexified convolution-defect `(tr_M(W_free) − tr_M(W_knot))(K) ∈ ℂ` (fibre-level). -/
+  /-- the complexified convolution-defect `tr_M((Π_free−1)∘𝓜)(K) ∈ ℂ` (fibre-level). -/
   trDefect : ℂ
   /-- the experimentally measured binding energy. -/
   binding_measured : ℝ
