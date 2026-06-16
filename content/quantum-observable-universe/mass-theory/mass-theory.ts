@@ -136,9 +136,11 @@ export default chapter({
           ],
         }),
         section({
-          title: "The $\\mathfrak{Q}_\\beta$ precision ladder",
-          label: "sec:mass-algebraic-qbeta-ladder",
+          title:
+            "Complex-volume precision ladder: $\\operatorname{Re}(\\mathfrak{V})$ \\& $\\operatorname{Im}(\\mathfrak{V})$",
+          label: "sec:mass-algebraic-complex-volume-ladder",
           blocks: [
+            "complex-volume-ladder-intro",
             "q-beta-categorical-precision-ladder",
             "q-beta-c3-hopf-three-fold-markov",
             "ck-extraction-from-algebraic-rules",
