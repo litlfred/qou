@@ -68,11 +68,13 @@ Concrete locations:
    to CODATA — owner authorized this swap because the form is
    substrate-derived (no CAL-4) even though not yet proved to
    match CODATA at ppb.
-3. **Standard-physics imports.** CAL-1 m_e from CODATA;
-   CAL-2 from CODATA m_μ/m_e (→ q_0; phys-obs may anchor q_0 on the
-   more-precise proton ratio m_p/m_e); CAL-3 from PDG m_π. These are
-   the three calibration anchors per CLAUDE.md §"three-calibration
-   discipline". Q_β is **derived** from CAL-1+CAL-2, not a calibration.
+3. **Standard-physics imports.** Three measured masses: CAL-1 m_e,
+   CAL-2 m_μ, CAL-3 m_π. m_e from CODATA (the unit); m_μ from CODATA
+   fixes q_0 via m_μ/m_e (phys-obs may anchor q_0 on the more-precise
+   proton ratio m_p/m_e); m_π from PDG (the orthogonal meson scale).
+   These are the three calibration anchors per CLAUDE.md
+   §"three-calibration discipline". Q_β is **derived** from
+   CAL-1+CAL-2, not a calibration.
 
 **Disallowed in production.** Any of:
 - Empirical fits against CODATA values (e.g.

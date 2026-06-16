@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:three-calibration-discipline",
   title:
-    "Three-calibration discipline ($m_e$, $m_\\mu/m_e$, $m_\\pi$) aligned to (co)homological data",
+    "Three-calibration discipline ($m_e$, $m_\\mu$, $m_\\pi$) aligned to (co)homological data",
   tags: [
     "calibration",
     "dimensional-analysis",

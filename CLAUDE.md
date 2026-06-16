@@ -550,15 +550,20 @@ URLs.
 
 **Authoritative cross-link**: [`docs/canonical-derivation-cheat-sheet.md`](docs/canonical-derivation-cheat-sheet.md).
 
-The QOU framework derives every observable (m_p, m_n, m_He, Q_β, B_AME, lifetimes) from **3 calibration inputs** — the canonical *mathematical* triple, each a physical measurement (mass or mass ratio):
+The QOU framework derives every observable (m_p, m_n, m_He, Q_β, B_AME, lifetimes) from **3 calibration inputs** — the canonical *mathematical* triple, **three measured masses**:
 
-| CAL | Observable | Measurement | (Co)homology |
-|-----|-----------|-------------|--------------|
-| CAL-1 | m_e | electron mass (Penning trap) | H⁰ — W-plane scale |
-| CAL-2 | m_μ/m_e → q₀ | muon–electron mass ratio (CODATA) | H¹ — W-plane modulus |
-| CAL-3 | m_π | charged-pion mass (PDG) | orthogonal meson class |
+| CAL | Measured input | What it fixes | (Co)homology |
+|-----|----------------|---------------|--------------|
+| CAL-1 | m_e | the dimensional unit (scale) | H⁰ — W-plane scale |
+| CAL-2 | m_μ | q₀ (via m_μ/m_e = Vol(4₁)/ℏ_q²) | H¹ — W-plane modulus |
+| CAL-3 | m_π | the orthogonal meson scale | orthogonal class |
 
-Q_β is **derived** from CAL-1 + CAL-2 via the substrate identity (`Q_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³)`, 0.17% miss — the bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π); the neutron β-decay width `𝔇_β/τ_n` is Q_β's experimental face, **not** a third calibration. m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
+The inputs are **three masses** (m_e, m_μ, m_π). m_e sets the unit; since q₀ is dimensionless it is fixed by m_μ *in that unit* — the ratio m_μ/m_e. The exact maps:
+
+- **q₀** ← CAL-1 + CAL-2:  `m_μ/m_e = Vol(4₁)/ℏ_q²`, `ℏ_q = 1 − q₀⁻¹`, `Vol(4₁) = 2Λ(π/3) ≈ 2.0299`  ⇒ invert for `q₀ ≈ 1.10998`.
+- **Q_β** (derived, not a calibration):  `Q_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³) ≈ 0.784 MeV` (0.17% vs CODATA) — the bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π; the neutron β-decay width `𝔇_β/τ_n` is Q_β's experimental face, **not** a third calibration.
+
+m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
 
 > **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.06 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
 

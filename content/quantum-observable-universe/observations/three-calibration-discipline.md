@@ -3,11 +3,19 @@
 calibration inputs, aligning to three distinct (co)homological
 degrees of the substrate:*
 
-| Cohomological datum ($H^1 = 2W$) | Calibration                        | Role                                                       | Source                  |
-| -------------------------------: | ---------------------------------- | ---------------------------------------------------------- | ----------------------- |
-|       $W$-plane **scale** ($H^0$) | $m_e$ (electron mass)              | Sets the dimensional unit                                  | CODATA                  |
-|     $W$-plane **modulus** ($H^1$) | $m_\mu / m_e \approx 206.768$       | Fixes the substrate parameter $q_0$                        | CODATA (lepton ratio)   |
-| meson-sector **scale** (orthog.) | $m_\pi \approx 139.57\;\text{MeV}$ | Sets the $\mathrm{Vol}(\mathrm{Hopf})=0$ meson scale       | PDG (charged-pion mass) |
+| Cohomological datum ($H^1 = 2W$) | Measured input | What it fixes | Source |
+| -------------------------------: | -------------- | ------------- | ------ |
+|       $W$-plane **scale** ($H^0$) | $m_e$          | the dimensional unit (scale) | CODATA (electron mass) |
+|     $W$-plane **modulus** ($H^1$) | $m_\mu$        | $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | CODATA (muon mass) |
+|        orthogonal class (no $H$-degree) | $m_\pi$  | the $\mathrm{Vol}(\mathrm{Hopf})=0$ meson scale (independent of $m_e, q_0$) | PDG (charged-pion mass) |
+
+The three measured inputs are **three masses** $(m_e, m_\mu, m_\pi)$.
+$m_e$ sets the unit; since $q_0$ is dimensionless it is fixed by $m_\mu$
+*relative to that unit* — i.e. by the ratio $m_\mu/m_e$ through the
+figure-eight identity $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ with
+$\hbar_q = 1 - q_0^{-1}$ (inverted for $q_0 \approx 1.10998$); $m_\pi$
+sets the orthogonal meson scale. $Q_\beta$ is **derived** from
+$m_e, q_0$ (see below), not a fourth input.
 
 *For every confined hadronic state $X$ the mass functional defined
 by the algebraic-side chain
@@ -133,7 +141,13 @@ At each step:
   class supplies the single meson scale $m_\pi$, independent of
   $(m_e, q_0)$ (the Hopf-link complement has zero hyperbolic volume).
   $Q_\beta$, by contrast, is **derived** from $m_e$ and $q_0$ via the
-  substrate identity: the :refterm[descent]{#descent} obstruction
+  substrate identity
+  $$
+    Q_\beta \;=\; m_e\,\frac{\lvert q_0^2 - 2q_0 - 1\rvert\,(q_0+1)}{2\,q_0^{3}}
+    \;\approx\; 0.784\ \text{MeV}\quad(0.17\%\text{ vs CODATA}),
+  $$
+  the bar-odd ($\sinh$) partner of the bar-even ($\cosh$) meson scale
+  $m_\pi$: the :refterm[descent]{#descent} obstruction
   class
   ([motivic-perpetual-obstruction](#conj\:motivic-perpetual-obstruction))
   is normalised by the already-fixed scales, not by a fourth input.
