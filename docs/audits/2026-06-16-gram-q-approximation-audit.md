@@ -85,3 +85,26 @@ h(q₀) = q₀ − q₀⁻¹ = 0.20906032 ;  h(111/100) = 2321/11100 = 0.2090991
 
 The 0.2090991 vs 0.20906032 gap (≈ 3.9e-5) is exactly h(1.11) − h(q₀) —
 a q difference, not a reduction error.
+
+## Blast-radius verdict (2026-06-16)
+
+Per the owner's "audit whether the exact path feeds precision-critical
+production" directive:
+
+| Consumer | q used | Precision-critical? | Verdict |
+|----------|--------|---------------------|---------|
+| **L1/L2 precision pipeline** (`mass_binding_dashboard.py` → `q_parameter.Q`; `mass_table_comprehensive.py` → `Q_50_DIGIT_STR`) | **q₀** (true) | yes — the headline goals | **CLEAN** — uses q₀, never 1.11 |
+| `build_atom_nf_exact` / `nf_channel_exact` (atom.py exact path) | 111/100 | — | **No production call sites** (re-exported but uncalled); dead in production |
+| `hadron_knot_table.py` (`HeckeEngine(111,100)`) → `hadron-knot-table.witness.json` | 111/100 | appendix illustration (B_MeV @ 4 dp) | **Only live exposure**; appendix knot table, NOT a precision-goal claim. ~2e-4 q error ⇒ sub-keV on few-MeV binding. |
+
+**Bottom line:** no precision-critical production value is at the wrong
+q. The 111/100 approximation is confined to (a) a dead exact-rational
+atom path and (b) the appendix `hadron-knot-table` witness. The headline
+L1/L2 precision goals are unaffected.
+
+**Optional low-priority follow-up:** repoint `hadron_knot_table.py` at
+q₀ (`HeckeEngine(q=q0)` instead of `HeckeEngine(111, 100)`) and
+regenerate `hadron-knot-table.witness.json`, so the appendix table sits
+at the canonical substrate. Trivial code change, but it regenerates a
+production witness (sidecar/hash refresh) — left for an owner-approved
+follow-up rather than bundled here.
