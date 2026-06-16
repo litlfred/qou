@@ -65,6 +65,33 @@ swings ⇒ c_k≥3 are q-functions) eliminates the entire "extract c₄..c₈
 constants" search before spending a multi-session H₄/H₅ symbolic compute on
 an object that the analysis shows does not exist as posed.
 
+## Empirical follow-up (2026-06-16) — the s-series compute attempt
+
+After the structural verdict, the decisive in-budget compute was
+attempted: the `s = q−1` series-match (no singular u-reversion) of the
+operator ladder `R(q) = Q_β(q)/[Q_A(q)·cos(α_eff(q))]` against
+`∏(1+c_k u^k)`, with the `c₂ = −1` gate
+(`computations/qbeta/qbeta_ck_sseries_operator_match_probe.py`, WIP). It
+surfaced **two concrete blockers** that confirm the "1–2 session" rating:
+
+1. **Wrong operator object (the q=1 test).** The placeholder
+   `Q_β(q) = E_0(q)·τ_M(T_β)(q)` with `E_0 = 1/(q(q−1))` **diverges** at
+   `q=1`, but the true `Q_β(1) = Q_A(1) = 2·m_e` is **finite**. So the
+   canonical `Q_β = |Δ(net)(q)|·E_0(q)` requires the GB-reduced
+   `Δ(net)(q)` to carry a `(q−1)` **zero** cancelling the `E_0` pole.
+   `free-neutron-decay.witness.json` stores only **numeric** net coeffs
+   at `q₀` — `Δ(net)(q)` as a symbolic q-function must be produced by
+   running `free-neutron-decay.py::reduce_verbose` with a **symbolic** q.
+2. **Performance.** Full `sympy` series to `s^{2·8+3}` with
+   `sqrt(q)/cos/log` **times out (>9 min)**. The match must use a
+   **numeric mpmath s-Taylor** + numeric triangular solve, keeping the
+   `c₂ = −1` gate.
+
+Neither blocker is fundamental — they are exactly the careful setup the
+synthesis budgets at 1–2 sessions. The attempt did **not** emit any
+`c_k` values (the `c₂` gate guard prevented trusting the wrong-object
+output), which is the formalize-first-correct outcome.
+
 ## What IS rigorous and what the genuine next step is
 
 - **Rigorous, validated:** `c₂ = −1` is the exact, q-independent operator
