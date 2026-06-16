@@ -6,4 +6,18 @@ The single block **Complex-volume unification: binding $\mathfrak{E}_{\mathrm{bi
 
 The consequence reframes the rest of the mass and $\beta$-decay narrative: one computes $\mathfrak{V}(K)$ once; its real part is every binding energy (developed in the algebraic and physical faces of **Mass Analysis**), its imaginary part is every $Q$-value (the $\mathfrak{Q}_\beta$ precision ladder and the Q-value appendix). The two channels are not two stories but one complex object on its two parities.
 
+The two real shadows of $\mathfrak{V}$ line up aspect-by-aspect:
+
+| aspect | real part $\operatorname{Re}\mathfrak{V}$ | imaginary part $\operatorname{Im}\mathfrak{V}$ |
+|---|---|---|
+| **observable** | binding energy $\mathfrak{E}_{\mathrm{bind}}$ | $\beta$-decay $Q$-value $\mathfrak{Q}_\beta$ |
+| **bar-parity** | bar-even ($\sigma$-fixed, $x+\sigma x$) | bar-odd ($\sigma$-anti, $x-\sigma x$) |
+| **eigenvalue function** | $\tfrac{q+q^{-1}}{2}=\cosh\lambda$ | $\tfrac{q-q^{-1}}{2}=\sinh\lambda$ |
+| **archimedean evaluation** | real $q$ (hyperbolic) | root-of-unity $q$ ($\cosh\!\to\!\cos$, $\sinh\!\to\! i\sin$) |
+| **Neumann–Zagier analogue** | $\operatorname{Vol}(K)$ | $\mathrm{CS}(K)$ |
+| **physical character** | strong / stable / confining | weak / unstable / anti-binding |
+| **open number** | binding $\Delta_\lambda$ gap | $\mathfrak{Q}_\beta$ $c_k$ residual |
+
+Closing either column is expected to close the other: they are the real and imaginary parts of the *same* unclosed defect.
+
 _(draft.)_

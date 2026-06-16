@@ -39,7 +39,12 @@ binding observables — masses and their averages — live on the $\cosh$, bar-e
 side, where the modulus $\tau$ sits; the $\beta$-decay observable $\mathfrak{Q}_\beta$ and
 its precision coefficients live on the $\sinh$, bar-odd side. They are not two
 separate problems but the two parities of a single substrate element, so pinning
-one constrains the other.
+one constrains the other. That single element is the **complex volume**
+$\mathfrak{V}$ ([`conj:binding-qbeta-complex-volume`](../mass-endomorphism/binding-qbeta-complex-volume.md)):
+its bar-even part is $\operatorname{Re}\mathfrak{V} = \mathfrak{E}_{\mathrm{bind}}$
+(the mass/binding channel) and its bar-odd part is
+$\operatorname{Im}\mathfrak{V} = \mathfrak{Q}_\beta$ (the decay channel), the QOU
+analogue of the Neumann--Zagier $\operatorname{Vol} + i\,\mathrm{CS}$.
 
 This is the whole shape of the theory in one breath: a rigid cohomology fixes
 the structure; three units — a scale, a modulus, and an orthogonal scale — are
