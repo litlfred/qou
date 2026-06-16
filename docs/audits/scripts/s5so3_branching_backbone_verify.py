@@ -8,9 +8,10 @@ No external deps. Uses the symmetric-group branching rule:
 Restriction S5 -> S3 = two successive single-box removals.
 Dimension via the hook-length formula.
 """
-from math import factorial
+import itertools
+import sys
 from collections import Counter
-from functools import reduce
+from math import factorial, sin, sqrt, pi
 
 
 def removable_corners(lam):
@@ -118,9 +119,6 @@ all_ok = ok_32 and ok_311 and ok_diff
 # every class function (hence every irreducible character) restricts the same.
 # We check the cycle-type-multiset equality directly (no character table).
 # ============================================================================
-import itertools
-
-
 def cycle_type_in_s5(perm_on_pts, pts, n=5):
     img = {i: i for i in range(1, n + 1)}
     img.update(perm_on_pts)
@@ -157,8 +155,6 @@ print("   it must fix the spacetime strands, i.e. use the {3,4,5} embedding.)")
 # theta is sin((2ell+1)theta/2)/sin(theta/2).  Decompose against the A5
 # character table.  Expected: ell=1->T1, ell=2->H, ell=3->T2 (+) G.
 # ============================================================================
-from math import sin, sqrt, pi
-
 PHI = (1 + sqrt(5)) / 2
 # A5 (icosahedral I) conjugacy classes: (size, rotation angle)
 A5_CLASSES = [
@@ -317,26 +313,43 @@ print(f"  (a) 3-dim A5 irreps = {sorted(three_dim)} -> faithful A5->SO(3) is ico
 # (b) 5-cycle class fusion under S5 (permutation computation on {0..4})
 def compose(p, q):  # (p after q)
     return tuple(p[q[i]] for i in range(len(q)))
+
+
 def inv(p):
-    r = [0]*len(p)
-    for i, v in enumerate(p): r[v] = i
+    r = [0] * len(p)
+    for i, v in enumerate(p):
+        r[v] = i
     return tuple(r)
+
+
 def parity(p):
-    seen=set(); ev=0
+    seen = set()
+    ev = 0
     for i in range(len(p)):
-        if i in seen: continue
-        L=0; c=i
+        if i in seen:
+            continue
+        L = 0
+        c = i
         while c not in seen:
-            seen.add(c); c=p[c]; L+=1
-        ev += L-1
+            seen.add(c)
+            c = p[c]
+            L += 1
+        ev += L - 1
     return ev % 2
+
+
 ALL5 = list(itertools.permutations(range(5)))
 A5 = [p for p in ALL5 if parity(p) == 0]
+
+
 def conj_class(x, grp):
     return frozenset(compose(compose(g, x), inv(g)) for g in grp)
+
+
 c5 = (1, 2, 3, 4, 0)            # the 5-cycle (0 1 2 3 4)
 c5sq = compose(c5, c5)          # its square (another 5-cycle)
-clsA = conj_class(c5, A5); clsAsq = conj_class(c5sq, A5)
+clsA = conj_class(c5, A5)
+clsAsq = conj_class(c5sq, A5)
 clsS = conj_class(c5, ALL5)
 ok_split = (clsA != clsAsq and len(clsA) == 12 and len(clsAsq) == 12)
 ok_fuse = (clsS == clsA | clsAsq and len(clsS) == 24)
@@ -354,7 +367,8 @@ def decompose_perm():
         for (cname, size, _), c in zip(A5_CLASSES, chi):
             s += size * PERM_CHAR[cname] * c
         m = round(s / 60)
-        if m: out[name] = m
+        if m:
+            out[name] = m
     return out
 perm_dec = decompose_perm()
 ok_perm = (perm_dec == {"A": 1, "G": 1})
@@ -365,5 +379,4 @@ print(f"     T1/T2 = the two chiralities (S5-stable sum = (3,1,1)): {ok_res2}")
 
 all_ok = all_ok and ok_emb and ok_so3 and ok_bridge and ok_ing1 and ok_res2
 print("\nALL BACKBONE + BRIDGE + INGREDIENT-1-ANCHOR CLAIMS VERIFIED:", all_ok)
-import sys
 sys.exit(0 if all_ok else 1)
