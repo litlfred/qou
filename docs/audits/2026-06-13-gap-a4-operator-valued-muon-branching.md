@@ -10,7 +10,8 @@
 > at the ppb/ppq level are exact subtractions of 1-dimensional boundary blocks"* (§5.0) and that this *"closes"*
 > CCR-9/CCR-10 (§5.2) and the *"1ppq gaps"* (§5.3) is **quantitatively false**: a $(1,1,1)$-block subtraction is
 > an $O(10\%)$ effect, not a ppb effect. At $q_0$, $W_{\mathrm{alt}}\,\chi^{(1,1,1)}=1/[3]_q!\approx 0.163$
-> (16.3 %), and the figure-eight channel ratio $R_{(3,2)}/R_{(3,1,1)}\approx 14.97$ (1397 %) — **6–8 orders of
+> (16.3 %), and the figure-eight channel ratio $R_{(3,2)}/R_{(3,1,1)}\approx 14.97$ — a relative shift
+> $|F-1|\approx 13.97$, i.e. **+1397 %** — **6–8 orders of
 > magnitude too large** to be the 210 ppb muon gap. The bare $m_e\,\mathrm{Vol}(4_1)/\hbar_q^2$ is already good
 > to 209.8 ppb, so multiplying by either projector correction *destroys* that agreement. The named Wedderburn-
 > projector mechanism therefore does **not** close the 210 ppb (or any ppb/ppq) gap. Verified compute + tiering:
