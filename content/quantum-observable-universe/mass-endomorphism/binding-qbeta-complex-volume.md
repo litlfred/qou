@@ -4,12 +4,12 @@ the real and imaginary parts of a single complex fibre observable — the
 complexified mass-endomorphism convolution-defect*
 
 $$
-  \mathfrak{W}(K)\;=\;E_0\,\mathrm{tr}_M\big((\Pi_{\text{free}} - \mathbf{1})\circ\mathcal{M}\big)
+  \mathfrak{V}(K)\;=\;E_0\,\mathrm{tr}_M\big((\Pi_{\text{free}} - \mathbf{1})\circ\mathcal{M}\big)
   \;\in\;\mathbb{C},
   \qquad
-  \mathfrak{B}(K) = \operatorname{Re}\mathfrak{W}(K),
+  \mathfrak{E}_{\mathrm{bind}}(K) = \operatorname{Re}\mathfrak{V}(K),
   \quad
-  \mathfrak{Q}_\beta(K) = \operatorname{Im}\mathfrak{W}(K),
+  \mathfrak{Q}_\beta(K) = \operatorname{Im}\mathfrak{V}(K),
 $$
 
 *the QOU analogue of the Neumann–Zagier complex volume
@@ -78,18 +78,18 @@ That is exactly the structure of the complex volume:
 | | real part (bar-even, $\cosh$, real $q$) | imaginary part (bar-odd, $\sinh$, root-of-unity $q$) |
 |---|---|---|
 | **Neumann–Zagier** | $\operatorname{Vol}(K)$ (hyperbolic) | $\mathrm{CS}(K)$ (Chern–Simons) |
-| **QOU** | $\mathfrak{B}(K)$ — **binding / mass** | $\mathfrak{Q}_\beta(K)$ — **$\beta$-decay** |
+| **QOU** | $\mathfrak{E}_{\mathrm{bind}}(K)$ — **binding / mass** | $\mathfrak{Q}_\beta(K)$ — **$\beta$-decay** |
 
 The mass/binding channel is the **volume** (real, $\cosh$) part; the
 decay channel is the **Chern–Simons** (imaginary, $\sinh$) part of the
-*same* $\mathfrak{W}$.
+*same* $\mathfrak{V}$.
 
 ## What is proved, and the fibre-level caveat
 
 - **Proved (algebra).** The bar-parity decomposition
   $\tfrac{q+q^{-1}}{2}\pm\tfrac{q-q^{-1}}{2} = q^{\pm1}$ holds over any
-  field; the complex reconstruction $\mathfrak{B}+i\,\mathfrak{Q}_\beta
-  = \mathfrak{W}$ follows from the two projection
+  field; the complex reconstruction $\mathfrak{E}_{\mathrm{bind}}+i\,\mathfrak{Q}_\beta
+  = \mathfrak{V}$ follows from the two projection
   hypotheses ([Lean](#conj:binding-qbeta-complex-volume),
   `QOU.MassEndomorphism.ComplexVolumeUnification`, 0 sorries).
 - **Proved (classical limit).** The free/factorized projection
@@ -98,14 +98,14 @@ decay channel is the **Chern–Simons** (imaginary, $\sinh$) part of the
   ([`rem:block-multiplicativity-v-free`](../mass-theory/block-multiplicativity-v-free.md));
   the $q$-deformed case is class-axiomatized (conjectural).
 - **Conjectural (the unification itself).** That the *physical* binding
-  and $Q_\beta$ are the Re/Im of the **same** $\mathfrak{W}$
+  and $Q_\beta$ are the Re/Im of the **same** $\mathfrak{V}$
   at a single normalization.
 - **Fibre-level caveat (STRICT).** At the **archimedean / observable**
   level $\operatorname{Im}(q_0)=0$
   (`lusztig_q_0_imaginary_part_zero`): binding and $Q_\beta$ are both
   *real* measured numbers. The complex structure is therefore
-  **fibre-level** (pre-$\tau$): $\mathfrak{W}(q)$ is a complex object in
-  the fibre, and $\mathfrak{B}$, $\mathfrak{Q}_\beta$ are its Re/Im
+  **fibre-level** (pre-$\tau$): $\mathfrak{V}(q)$ is a complex object in
+  the fibre, and $\mathfrak{E}_{\mathrm{bind}}$, $\mathfrak{Q}_\beta$ are its Re/Im
   **shadows under different archimedean evaluations** (real-$q$ vs
   root-of-unity). There is no "complex mass" — there is one complex
   *fibre* object with two real observable shadows, exactly as
@@ -127,7 +127,7 @@ $c_2$ predict.
 
 Conditional on the unification, the framework's mass/binding chapter and
 its $\beta$-decay chapter are **one derivation**: compute the complex
-convolution-defect $\mathfrak{W}(K) = \mathfrak{W}(K)$ once;
+convolution-defect $\mathfrak{V}(K) = \mathfrak{V}(K)$ once;
 its real part is every binding energy, its imaginary part is every
 $Q$-value. The "$0.17\%$ $Q_\beta$ residual" and the binding $\Delta_\lambda$
 gap become the *same* unclosed object — the imaginary and real parts of
