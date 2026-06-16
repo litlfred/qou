@@ -90,7 +90,7 @@ Do not re-litigate per-knot production flips against this gate.
             ┌─────────────────────────────────────────┐
             │  3 calibration inputs (only)            │
             │   m_e ─── leptonic scale (CAL-1)        │
-            │   m_μ/m_e ─── fixes q_0 (CAL-2)        │
+            │   m_p/m_e ─── fixes q_0 (CAL-2)        │
             │   m_π ─── chiral/Goldstone scale (CAL-3)│
             │   [Q_β derived from CAL-1+CAL-2]       │
             └─────────────────────────────────────────┘
@@ -344,7 +344,7 @@ The forward work has shifted from §5 mechanics to scientific closure:
 
 ## 8. The "everything is derivation, not fit" discipline (CLAUDE-facing)
 
-**The 3-calibration rule** is strict: only $m_e$, $m_\mu/m_e$, $m_\pi$ may be calibrated against experiment. $Q_\beta$ is **derived** from CAL-1 + CAL-2 via $Q_\beta = m_e |q_0^2 - 2q_0 - 1|(q_0+1)/(2q_0^3)$ (0.17% miss). Everything else MUST derive from these three via the chain above.
+**The 3-calibration rule** is strict: only $m_e$, $m_p/m_e$, $m_\pi$ may be calibrated against experiment. CAL-2 fixes $q_0$ from the proton ratio $m_p/m_e$ (re-pinned 2026-05-28; the muon ratio $m_\mu/m_e$ is now a $9.5\sigma$ cross-check prediction, not the anchor — see `docs/audits/2026-05-28-mu-p-tension-substrate-floor.md`). $Q_\beta$ is **derived** from CAL-1 + CAL-2 via $Q_\beta = m_e |q_0^2 - 2q_0 - 1|(q_0+1)/(2q_0^3)$ (0.17% miss). Everything else MUST derive from these three via the chain above.
 
 **Common pitfalls** (look for these in code review):
 - Hardcoded literal values where a categorical derivation exists → **discipline violation**. Example: `LAMBDA_PROTON_DOC = 2.4599527869` should derive from `prop:lambda-scale-bring-bloch-identity`.
