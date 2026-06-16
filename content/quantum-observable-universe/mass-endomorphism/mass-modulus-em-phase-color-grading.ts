@@ -17,4 +17,14 @@ export default remark({
     "chern-simons",
     "interpretation",
   ],
+  cites: [
+    "neumann-zagier1985",
+    "kashaev1997",
+    "murakami-murakami2001",
+    "witten1989",
+    "witten2011",
+    "reshetikhin1991",
+    "zagier2010",
+    "faddeev1994",
+  ],
 });

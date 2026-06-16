@@ -58,3 +58,32 @@ substrate-to-archimedean wall. The structural content of
 — the faithful $S_2\times S_3\hookrightarrow S_5$ embedding, the orthogonality
 of the two sectors, and the divisibility rigidity — is generic and needs no
 such realization.
+
+## Relation to the literature
+
+The individual ingredients are classical. That the imaginary partner of a
+hyperbolic volume is a Chern–Simons invariant is the Neumann–Zagier complex
+volume \cite{neumann-zagier1985}; that the colored-Jones asymptotics realize
+this complex volume at roots of unity is the volume conjecture
+\cite{kashaev1997, murakami-murakami2001}. That the Jones polynomial is a
+Chern–Simons expectation value, with the framing dependence the source of the
+$U(1)$ phase, is Witten \cite{witten1989}, made precise as the ribbon /
+framing anomaly of Reshetikhin–Turaev \cite{reshetikhin1991}; the
+complexified continuation of the phase is Witten \cite{witten2011}, and the
+bar-involution structure of the root-of-unity asymptotics is the
+quantum-modularity of Zagier \cite{zagier2010}. The quantum dilogarithm that
+controls the asymptotics is Faddeev–Kashaev \cite{faddeev1994}.
+
+Read against this body of work, two of the present identifications are
+recombination and two are specific to the framework. The reading
+*modulus / argument $=$ volume / Chern–Simons*, and the placement of the
+argument as a $U(1)$ framing phase, restate the cited results. The
+identification of the **modulus with mass** $\lVert\mathrm{tr}_M\rVert$, and
+of **color with the $S_3\subset S_5$ representation grading of the Bring
+quintic's Galois group**, are the framework's own; the literature offers the
+nearby but distinct $A_5$ / $S_5$ flavor and modular-flavor symmetries rather
+than this trace-algebra grading. The contribution here is the
+group-theoretic statement that these three readings are orthogonal sectors
+of one trace object — and the rigidity that bars the continuous phase from
+being the discrete color charge.
+
