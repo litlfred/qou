@@ -17,6 +17,7 @@ VERDICT computed here: the Wedderburn-projector correction F(E,q0) named in
 by 6-8 orders of magnitude.  Ingredient 4's algebraic leg is concrete; ingredient
 5 (the 210 ppb physics) is REFUTED for the named candidates.
 """
+import math
 import os
 import sys
 
@@ -41,7 +42,7 @@ q0 = float(c.q0)
 qf3 = float(atom.q_factorial(3))        # [3]_q! at q0
 W_alt = 1.0 / qf3                       # H3 Plancherel weight of the 1-dim alt (1,1,1) block
 W_sym = 1.0 / qf3
-W_std = float(ph.atom.q_dimension((2, 1))) ** 2 / qf3 if hasattr(atom, "q_dimension") else None
+W_std = float(atom.q_dimension((2, 1))) ** 2 / qf3 if hasattr(atom, "q_dimension") else None
 
 f311 = float(ph.FIG8_R_311)             # 4_1 trace, electron block (3,1,1)
 f32 = float(ph.FIG8_R_32)               # 4_1 trace, muon block (3,2)
@@ -78,7 +79,7 @@ over_signblock = shift_signblock / TARGET_PPB
 print()
 print("  Candidate F #1 — sign-block subtraction (doc 5.2): F = 1 - W_alt*chi^(1,1,1)")
 print(f"    chi^(1,1,1)(beta_Bor) = {chi_111:.0f} (exact);  |1-F| = W_alt = {shift_signblock:.5f} (16.3%)")
-print(f"    vs target {TARGET_PPB:.2e}  ->  OVERSHOOT x {over_signblock:,.0f}  (~{__import__('math').log10(over_signblock):.1f} orders)")
+print(f"    vs target {TARGET_PPB:.2e}  ->  OVERSHOOT x {over_signblock:,.0f}  (~{math.log10(over_signblock):.1f} orders)")
 
 # Candidate F #2 (doc's named 'normalized quantum-dimension / channel ratio'):
 #   F = R_32 / R_311  (muon channel trace / electron channel trace).
@@ -88,7 +89,7 @@ over_ratio = shift_ratio / TARGET_PPB
 print()
 print("  Candidate F #2 — channel-trace ratio (doc 3): F = R_32 / R_311")
 print(f"    R_32/R_311 = {ratio:.6f}  ->  |F-1| = {shift_ratio:.4f} ({shift_ratio*100:.0f}%)")
-print(f"    vs target {TARGET_PPB:.2e}  ->  OVERSHOOT x {over_ratio:,.0f}  (~{__import__('math').log10(over_ratio):.1f} orders)")
+print(f"    vs target {TARGET_PPB:.2e}  ->  OVERSHOOT x {over_ratio:,.0f}  (~{math.log10(over_ratio):.1f} orders)")
 
 print()
 print("  VERDICT: both named candidates for the Wedderburn correction F(E,q0) are")
