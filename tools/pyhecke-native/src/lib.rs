@@ -1134,6 +1134,13 @@ fn gauge_aligned_a_combiner_mpfr(
 ) -> PyResult<Vec<Vec<String>>> {
     let prec = seminormal_mpfr::dps_to_bits(dps);
     let n_block: usize = nu.iter().sum();
+    // Guard against usize underflow in `n_inner-1` / `n_block-1` below
+    // (Gemini review #2376). The combiner is only meaningful for ≥1 strand
+    // per factor anyway.
+    if n_inner == 0 || n_block == 0 {
+        return Err(pyo3::exceptions::PyValueError::new_err(
+            "gauge_aligned_a_combiner_mpfr: n_inner and n_block must be > 0"));
+    }
     let n = n_inner + n_block;
     let parse_f = |s: &str| -> PyResult<Float> {
         match Float::parse(s) {
@@ -1169,9 +1176,12 @@ fn gauge_aligned_a_combiner_mpfr(
     let p_mu = lagrange_one(&c_in, &ein, &mu_e, prec);
     let p_nu = lagrange_one(&c_bl, &ebl, &nu_e, prec);
     let pi = dense_la_mpfr::dense_dense_mul_mpfr(&p_mu, &p_nu, prec);
-    // Range basis B (dim×r): pivot columns of Π via RREF of Πᵀ.
+    // Range basis B (dim×r): the pivot columns of RREF(Π) are exactly the
+    // linearly independent columns of Π that span its column space (range).
+    // RREF(Πᵀ) would give independent ROWS of Π — wrong for a non-symmetric
+    // oblique projector (Gemini review #2376).
     let tol = Float::with_val(prec, 1e-30);
-    let (_rr, pivots) = dense_la_mpfr::rref_mpfr(&transpose_mpfr(&pi, prec), prec, &tol);
+    let (_rr, pivots) = dense_la_mpfr::rref_mpfr(&pi, prec, &tol);
     let r = pivots.len();
     if r == 0 {
         return Ok(Vec::new());
@@ -1210,6 +1220,16 @@ fn gauge_aligned_a_combiner_mpfr(
     // Standard ρ_μ (H_{n_inner}), ρ_ν (H_{n_block}).
     let smu = seminormal_mpfr::seminormal_matrices_mpfr(&mu, &q_str, dps);
     let snv = seminormal_mpfr::seminormal_matrices_mpfr(&nu, &q_str, dps);
+    // The intertwiner indexes rmu[0..n_inner-1] and rnv[0..n_block-1]; guard
+    // against OOB if the generator lists are short (Gemini review #2376).
+    if n_inner > 1 && smu.len() < n_inner - 1 {
+        return Err(pyo3::exceptions::PyValueError::new_err(format!(
+            "a_combiner: μ={:?} has {} generators, need {}", mu, smu.len(), n_inner - 1)));
+    }
+    if n_block > 1 && snv.len() < n_block - 1 {
+        return Err(pyo3::exceptions::PyValueError::new_err(format!(
+            "a_combiner: ν={:?} has {} generators, need {}", nu, snv.len(), n_block - 1)));
+    }
     let d_mu = if smu.is_empty() { 1 } else { smu[0].len() };
     let d_nu = if snv.is_empty() { 1 } else { snv[0].len() };
     if d_mu * d_nu == 0 || r % (d_mu * d_nu) != 0 {
