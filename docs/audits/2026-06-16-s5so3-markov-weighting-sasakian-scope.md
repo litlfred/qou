@@ -20,7 +20,7 @@ Across this session's merged PRs the geometric leg of `conj:s5-so3-fiber-action`
 **The single remaining open piece is the Markov-trace WEIGHTING** $y_\lambda$ — the geometric origin of the
 Ocneanu/Plancherel weights of $H_n(q)$.
 
-## Forced target (verified — `scripts/s5so3_ingredient4_markov_weighting_facts.py`, exit 0)
+## Forced target (verified — `docs/audits/scripts/s5so3_ingredient4_markov_weighting_facts.py`, exit 0)
 
 The weighting is **not** free: it is the Ocneanu/Plancherel measure $W_\lambda = d_q(\lambda)^2/[n]_q!$. At $q_0$
 for $n=5$:
@@ -71,4 +71,4 @@ done. No fit was introduced anywhere in the arc.
 - [`2026-06-16-s5so3-hopf-coupling-and-reeb-obstruction.md`](2026-06-16-s5so3-hopf-coupling-and-reeb-obstruction.md) — selection realized by μ; phase-Reeb obstruction; reframe
 - [`2026-06-16-s5so3-two-sasakian-construction-attempt.md`](2026-06-16-s5so3-two-sasakian-construction-attempt.md) — the two Sasakian sides
 - siblings #2371 / #2369 / #2372 — the A≥3 operator-branching compute that produces the $W_\lambda$ algebraically
-- `scripts/s5so3_ingredient4_markov_weighting_facts.py` — forced target + compatibility (exit 0)
+- `docs/audits/scripts/s5so3_ingredient4_markov_weighting_facts.py` — forced target + compatibility (exit 0)
