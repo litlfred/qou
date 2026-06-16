@@ -366,10 +366,6 @@ def _q0_50dps_str() -> str:
         return Q_50_DIGIT_STR
 
 
-def _frac_to_mpf(f: Fraction) -> "_mp.mpf":
-    return _mp.mpf(f.numerator) / _mp.mpf(f.denominator)
-
-
 def z_mp(dps: int = _GRAM_MP_DPS) -> "_mp.mpf":
     """z = 1/(q^½ + q^−½) at 50-dps mpmath (irrational; no float64)."""
     with _mp.workdps(dps):
@@ -393,34 +389,71 @@ def tr_m_mp(dps: int = _GRAM_MP_DPS) -> list:
                 +(hh * z_ ** 2 + z_)]
 
 
+def _hm_mp(nf, c, d, gen, h_mp):
+    """mpmath left-fold NF × (c·σ_gen + d·I), at the TRUE substrate q_0.
+
+    Same structure-constant tables as the float64 `hm`, but with all
+    coefficients in `mpmath.mpf` and `h = q_0 − q_0⁻¹` evaluated at the
+    true 50-dps substrate q_0 (NOT the 111/100 rational of `hm_exact`).
+    """
+    r = [_mp.mpf(0)] * 6
+    if gen == 0:
+        tables = [
+            (0, [(1, c), (0, d)]),
+            (1, [(1, c * h_mp), (0, c), (1, d)]),
+            (2, [(3, c), (2, d)]),
+            (3, [(3, c * h_mp), (2, c), (3, d)]),
+            (4, [(5, c), (4, d)]),
+            (5, [(5, c * h_mp), (4, c), (5, d)]),
+        ]
+    else:
+        tables = [
+            (0, [(2, c), (0, d)]),
+            (1, [(4, c), (1, d)]),
+            (2, [(2, c * h_mp), (0, c), (2, d)]),
+            (3, [(5, c), (3, d)]),
+            (4, [(4, c * h_mp), (1, c), (4, d)]),
+            (5, [(5, c * h_mp), (3, c), (5, d)]),
+        ]
+    for si, tgts in tables:
+        if nf[si] == 0:
+            continue
+        for ti, co in tgts:
+            r[ti] += nf[si] * co
+    return r
+
+
+def _nf_of_word_mp(word, h_mp):
+    nf = [_mp.mpf(1)] + [_mp.mpf(0)] * 5
+    for g in word:
+        nf = _hm_mp(nf, _mp.mpf(1), _mp.mpf(0), g, h_mp)
+    return nf
+
+
 def gram_matrix_mp(dps: int = _GRAM_MP_DPS) -> list:
     """6×6 Gram matrix G_{ij} = tr_M(b_i·b_j) at 50-dps mpmath — NO float64.
 
-    The NF of the product word b_i·b_j is computed *exactly* in ℚ
-    (`nf_of_word(..., exact=True)`, the verified left-fold `hm` structure
-    constants); only the Markov weights `tr_m_mp` (which carry the
-    irrational z) are numerical, at 50 dps.  Returns a list-of-lists of
-    `mpmath.mpf`.
+    Computed entirely at the TRUE substrate q_0 (Q_50_DIGIT_STR): the NF
+    of the product word b_i·b_j is built by the left-fold `_hm_mp` with
+    h = q_0 − q_0⁻¹ at 50 dps, and contracted with the 50-dps Markov
+    weights `tr_m_mp` (which carry the irrational z).  Returns a
+    list-of-lists of `mpmath.mpf`.
 
-    PRECISION-vs-LEGACY note: this matches the rigorous left-fold NF to
-    machine precision, but it DIVERGES from the legacy float64 `G`
-    (built via `_build_gram`/`_reduce_nf`) by ~1e-5 on the 19/36 entries
-    whose product needs the full braid reduction (every σ/L/e⁻ pairing).
-    The legacy `_reduce_nf` greedy word-rewriting does not reach the true
-    H_3(q) normal form on those words — e.g. NF(e⁻·e⁻) = [1,h,h,h²,h²,
-    h³+h] (σ₀-coeff h = 2321/11100), which `_reduce_nf` gets wrong.  This
-    accessor is therefore both float64-free AND more correct than `G`;
-    fixing the legacy `G` itself is deferred (high blast radius: 19
-    importers + downstream mass/binding values).
+    This is the float64-free analogue of the canonical `G`: it agrees with
+    `G` to ~1e-15 (both are at q_0).  Do NOT confuse with the
+    `nf_of_word(..., exact=True)` / `hm_exact` Fraction path, which uses
+    the *approximate* rational q = 111/100 (≈ 2e-4 from q_0) — see the
+    `gram.py` 111/100-approximation audit note.
     """
     with _mp.workdps(dps):
+        q = _mp.mpf(_q0_50dps_str())
+        h_mp = q - 1 / q
         trm = tr_m_mp(dps)
         Gm = [[_mp.mpf(0)] * 6 for _ in range(6)]
         for i in range(6):
             for j in range(6):
-                nf = nf_of_word(NF_BASIS[i] + NF_BASIS[j], exact=True)
-                Gm[i][j] = +_mp.fsum(_frac_to_mpf(nf[k]) * trm[k]
-                                     for k in range(6))
+                nf = _nf_of_word_mp(NF_BASIS[i] + NF_BASIS[j], h_mp)
+                Gm[i][j] = +_mp.fsum(nf[k] * trm[k] for k in range(6))
         return Gm
 
 
