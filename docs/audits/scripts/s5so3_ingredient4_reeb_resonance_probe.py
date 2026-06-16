@@ -95,10 +95,9 @@ print("     guard, the 2-point coincidences are NOT reported as a result.")
 # Assertions encode the (negative) finding.
 assert content_sum((3, 1, 1)) == 0 and content_sum((3, 2)) == 2
 assert content_sum((4, 1)) == 5
-# both 2-pt fits fail at ell=3:
-assert 1 * (1 - 1) == 0 and 2 * (2 - 1) == 2          # they agree at ell=1,2
-assert (1 * 0) != (2 * 1) or True                      # (sanity)
+# both 2-pt fits agree at ell=1,2 but fail at ell=3:
+assert 1 * (1 - 1) == 0 and 2 * (2 - 1) == 2          # agree at ell=1,2
 tau_cs = [content_sum(b) for b in BRIDGE[3]]
-assert (1 * 2) not in tau_cs and (2 * 2) not in tau_cs  # ell(ell-1)=6, 2(ell-1)=4 absent
+assert (3 * 2) not in tau_cs and (2 * 2) not in tau_cs  # ell(ell-1)=6, 2(ell-1)=4 absent
 print("\nNO-RESONANCE (numerology-guard) ASSERTIONS VERIFIED.")
 sys.exit(0)
