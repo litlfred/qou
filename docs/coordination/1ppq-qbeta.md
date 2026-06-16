@@ -440,6 +440,36 @@ closure is refuted — this is fibre-level structure). **Coordination:** intent
 posted on #1839 (c_k kernel — function-level form), #2078 (binding Δ_λ — q-Lommel
 tower lead + no-7th-fit gate), #1762 (1ppQ roadmap — q-Bessel route status).
 
+## 2026-06-16 — Q_β Path A: counit (transition) vs Markov-trace (mass) (PR #2363)
+
+**Result.** The free-neutron relation `Q_β = |Δ(net)|·𝔈₀` is the **Frobenius
+counit** `ε` of the nucleon NF difference, categorically distinct from the
+**Markov trace** `tr_M` the per-braid mass tower is built on. The two agree on
+the nucleon difference *only* at the trivial loop `z=1` (`ε = tr_M|_{z=1}`;
+gap `ε − tr_M = h(z−1)`); at the substrate `z = 1/(√q+1/√q) ≈ 0.5`, `tr_M`
+gives Q_β ~2× low (−56%) while the counit gives +0.17%. With `𝔈₀ =
+m_e·c_q²·ℏ_q^E = m_e/(q(q−1))` the **per-Hecke-step energy**, Q_β reads as
+*(reduction-count diff) × (energy/step)* — a transition observable dual to
+the static-mass trace (trace = pair-with-unit `𝟙`; counit = pair-with-integral
+`ω = G⁻¹𝟙`).
+
+**Resolves** the 2026-05-24 net-ansatz "(a) leading-order vs (b) fitting?"
+worry in a third way: the counit is the *correct functional for a transition*,
+and the +0.17% is the `N=0` consistency between the two functionals (same
+residual as the 0.74% `𝔈₀` derived-vs-cal gap), not a fit. **Open:** the
+convergence leg — proving the trace mass-difference `m(n)−m(p)−m_e` converges
+to `ε(Δ)·𝔈₀` with +0.17% as the `N=0` remainder.
+
+**Artifacts.** Audit docs `2026-06-16-q-beta-net-ansatz-path-a-counit-vs-trace.md`
++ `2026-06-16-q-beta-path-a-counit-transition-resolution.md`; verified Lean
+`QOU/Interactions/qbeta_counit_vs_trace.lean` + `qbeta_energy_scale.lean`
+(generic field, sorry-free); paper blocks `prop:qbeta-counit-closed-form` +
+`rem:qbeta-counit-transition`. **Coordination:** intent posted on #2106
+(Hoefsmit Stage B — counit closes the net-ansatz functional type), #2347
+(Markov-M3 Lean — orthogonal; counit is the trace-dual), #2346 (q-anchor —
+#2363 is q₀-anchor-agnostic, generic-`q` Lean, no conflict with deferred
+q₀-selection). #2127 (Habiro/QA plumbing) — silent pass.
+
 ## Cross-refs
 
 - CLAUDE.md §Precision goals (L1 / L2 / Subgoal-1 / Subgoal-2)
