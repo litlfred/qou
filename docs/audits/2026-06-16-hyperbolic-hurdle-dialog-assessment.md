@@ -273,7 +273,7 @@ hyperbolic-volume compute nowhere.
 - [`docs/audits/2026-05-25-track-b-r5-full-sdp-extension-design.md`](2026-05-25-track-b-r5-full-sdp-extension-design.md) — Track B R5-full design; α-cluster cascade; Subgoal-1 leverage.
 - [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md) — Track A vs Track B split; why Track B (recursive $\rho_\xi$) is the non-$\Delta_\lambda$-gated path.
 - [`computations/canonical_tr_m_via_branching.py`](../../computations/canonical_tr_m_via_branching.py) — the operator-valued Wenzl branching combiner (the concrete "addition theorem").
-- [`computations/lr_coefficients.py`](../../computations/lr_coefficients.py) — $q$-Littlewood–Richardson table `get_lr_table` (the $c^\lambda_{\xi\nu}$).
+- [`computations/substrate/lr_coefficients.py`](../../computations/substrate/lr_coefficients.py) — $q$-Littlewood–Richardson table `get_lr_table` (the $c^\lambda_{\xi\nu}$).
 - [`content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.md`](../../content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.md) — Borromean observable content block.
 - CLAUDE.md §7b — Symmetric-crystal techniques; non-symmetric Macdonald under $\tau$; recurrent dilog/Bloch–Wigner failure mode.
 - CLAUDE.md "Critical framing — mass formula" — why $m=m_e\cdot\operatorname{Vol}(K)\cdot\rho(K)/\hbar_q^2$ has no separable $m_0$.
