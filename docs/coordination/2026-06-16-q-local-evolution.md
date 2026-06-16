@@ -49,8 +49,43 @@
    (diagram says `m_π`, CLAUDE.md table neutron); `qou-substrate/README.md:29`
    prints the muon `q₀`.
 
+## ⚠ CORRECTION (owner, 2026-06-16 ~04:30) — convention is MUON-canonical
+
+The earlier "Owner resolution: 3rd CAL = m_π, Q_β derived, **q₀ proton-anchored**"
+was **half-corrected by the owner**. The corrected, authoritative convention is
+**two-layer**:
+
+- **Canonical *mathematical* triple = `(m_e, m_μ/m_e → q₀, m_π)`** — CAL-2 is the
+  **muon** lepton ratio (it dimensionalises to `Vol(4₁)`), **not** proton.
+- **`Q_β` is derived** (bar-odd `sinh` partner of the bar-even `cosh` meson scale
+  `m_π` — the symbolic Q_β↔m_π relation is the cosh/sinh bar-parity split,
+  `substrate-cohomology-calibration-story`). CAL-3 = `m_π` is *forced* (m_π
+  independent via `Vol(Hopf)=0`; `Q_β = f(m_e,q₀)`).
+- **Proton `m_p/m_e` is a Physical-Observations precision anchor only** (0.06 vs
+  22 ppb; live `q_at`, re-pin 2026-05-28) — a precision substitution within the
+  same H¹ datum, **not** the canonical CAL-2.
+
+The prior commits (proton-canonical migration of the discipline block + cheat-sheet)
+were **reverted** to muon-canonical, and the convention was propagated across
+CLAUDE.md, the 4 discipline skills, `three-calibration-inputs`,
+`epistemic-status-of-calibrations`, and the two `codata_constants.py` docstrings.
+
+## Scope map (added 2026-06-16)
+
+| PR / branch | Relationship | Action |
+|---|---|---|
+| [#2355](https://github.com/litlfred/qou/pull/2355) `youthful-faraday` (σ_F math/observed split) | overlap — shares math-vs-observed philosophy + q₀ precision | intent posted; aligned vocabulary to "canonical math vs physical-observations" |
+| [#2295](https://github.com/litlfred/qou/pull/2295) `gallant-volta` (Lean two-layer drift / proof-objects regen) | overlap — I edited block-sibling `three-calibration-discipline.lean` (one of its 408 sibling-only refs; was broken on main, now lean-direct verified) | intent posted; flagged as resolved-not-stale for their relink |
+
 ## Log
 
 - 2026-06-16 02:3x — PR #2346 opened; audit + route 4 author-notes +
   route 3 verified Lean repair landed; routes 1/2 scope doc; intent on
   #1556, #2345. Gemini at daily quota on #2346 (no review until reset).
+- 2026-06-16 ~03:4x — Task 1 (prose migration) + Task 4 (cheat-sheet) done
+  PROTON-canonical (pushed) — **superseded by the correction below.**
+- 2026-06-16 ~04:30 — Owner correction: MUON-canonical, proton = phys-obs
+  anchor. Reverted + propagated convention across CLAUDE.md + 4 skills +
+  3 content blocks + 2 compute docstrings (commits A/B/C). Dashboards
+  (low + sweep) re-run clean at α=E₀=4.186 MeV (convention is doc-only;
+  compute unperturbed). Intent posted on #2355, #2295.
