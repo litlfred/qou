@@ -97,8 +97,8 @@ $\le 216$ — entirely feasible with the existing `pyhecke` /
 `hecke-engine` infrastructure (the same route already used at $H_3$).
 
 > **Reframe:** #7 is **not** blocked by compute scale. The real gate is
-> *defining* the color-resolved 9-strand nucleon braid word (3 quarks ×
-> 3 colors, closing to a 9-strand Borromean link) and the
+> *defining* the colour-resolved 9-strand nucleon braid word (3 quarks ×
+> 3 colours, closing to a 9-strand Borromean link) and the
 > energy-extraction map from its trace to $\mathfrak{E}_0$.
 
 That definition is a **modeling decision**, not a calculation — and a
@@ -106,20 +106,20 @@ load-bearing one: inventing a 9-strand word and then "predicting"
 $\mathfrak{E}_0 \approx 4.155$ MeV from it would be exactly the post-hoc
 fit the three-calibration discipline and the critical-distance license
 warn against. The honest path is to fix the braid word from an
-independent structural principle (color-singlet closure + the existing
+independent structural principle (colour-singlet closure + the existing
 $u$–$d$ crossing-typing of the $H_3$ model) **first**, then compute
 $\mathrm{tr}_M$ and check $\mathfrak{E}_0$ as a genuine prediction.
 
-### #7 next step — the literal color-resolution is trace-invisible
+### #7 next step — the literal colour-resolution is trace-invisible
 
 Carrying out the principled construction the author approved (resolve
-each quark into a 3-strand color bundle; close on the baryon
-color-singlet; keep the $u$–$d$ flavor typing), a structural obstruction
+each quark into a 3-strand colour bundle; close on the baryon
+colour-singlet; keep the $u$–$d$ flavour typing), a structural obstruction
 appears **before** any braid word need be written down.
 
-A baryon is a color singlet: totally **antisymmetric** in the three
-quark colors ($\varepsilon_{abc}$), i.e. the **$(1^3)$** irrep of the
-color $H_3(q)$. If the 9 strands factor as colour $\otimes$ flavour
+A baryon is a colour singlet: totally **antisymmetric** in the three
+quark colours ($\varepsilon_{abc}$), i.e. the **$(1^3)$** irrep of the
+colour $H_3(q)$. If the 9 strands factor as colour $\otimes$ flavour
 (the clean, freedom-free reading of "tensor each quark with its colour
 bundle"), the Markov trace factorises and the colour contribution is the
 **quantum dimension of the closed colour channel**:
