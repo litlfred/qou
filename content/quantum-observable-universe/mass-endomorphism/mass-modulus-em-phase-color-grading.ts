@@ -26,5 +26,12 @@ export default remark({
     "reshetikhin1991",
     "zagier2010",
     "faddeev1994",
+    "jones1985",
+    "frobenius-schur1906",
+    "takesaki1970",
+    "weil1958",
+    "gamow1928",
+    "breit-wigner1936",
+    "kronig1926",
   ],
 });
