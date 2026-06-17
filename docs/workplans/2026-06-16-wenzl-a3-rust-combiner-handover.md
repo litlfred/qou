@@ -160,16 +160,50 @@ The intertwiner is solved by vectorising to an `r²×r²` null space → **O(r�
 memory / O(r⁶) time**, an *algorithmic* complexity Rust cannot change. For r=64,
 `M` ≈ 8·64⁴ ≈ 5.4 GB → OOM.
 
-### The fix (sketch)
+### The fix — precise algorithm (cyclic-vector construction, O(r³), no r²×r² matrix)
 
-Avoid materialising the `r²×r²` system. `range(Π_{μν})` is `(V_μ⊗V_ν)^{⊕c}`;
-decompose it **per factor**: first under the inner H₃-action (μ-isotypic, the
-`d_μ`-dim structure via the inner generators' eigenstructure on range), then the
-block H₃-action (ν), leaving the multiplicity ℂ^c. Build `U` as a tensor of the
-two **smaller** per-factor intertwiners → **O(r³)** instead of O(r⁶), and no `r²`
-matrix. This is the genuine unlock for the 4 λ (and would speed up all λ).
-Verify against the per-block combiner identity at 1e-25 (§5 of #2360's design doc
-has the structure).
+The current `combiner_block` builds `M = stack(I_r⊗g̃ − Rᵀ⊗I_r)` and takes its
+null space — O(r⁴) mem / O(r⁶) time. Replace it with this, which never forms an
+`r²`-sized matrix:
+
+`U: V_μ⊗V_ν⊗ℂ^c → range(Π)` is determined by its images of the `c` *cyclic*
+target vectors `v_k = e^μ_0 ⊗ e^ν_0 ⊗ f_k` (k=1..c). Because
+`E^μ_{a0}⊗E^ν_{b0}·v_k = e^μ_a⊗e^ν_b⊗f_k` (the target matrix units map the
+reference to every basis vector), once `w_k := U(v_k)` is fixed,
+```
+U(e^μ_a⊗e^ν_b⊗f_k) = (h^μ_{a0} · h^ν_{b0})|_range · w_k
+```
+where `h^μ_{a0} ∈ H_{n_inner}`, `h^ν_{b0} ∈ H_{n_block}` are the **Hecke-algebra
+preimages of the standard seminormal matrix units** (`ρ_μ(h^μ_{a0}) =
+|e^μ_a⟩⟨e^μ_0|`), applied to `range` via the *restricted* generators `g̃`.
+
+Steps (per `(μ,ν)`, all O(r³) or smaller):
+1. **Matrix-unit preimages** (depends only on μ, ν — cache across λ/blocks):
+   solve `ρ_μ(h) = |e_a⟩⟨e_0|` for `h^μ_{a0}` in the H_{n_inner} group algebra.
+   Pick `d_μ²` reduced words `T_w`, form the `d_μ² × d_μ²` matrix
+   `[vec ρ_μ(T_w)]`, invert once; then `h^μ_{a0} = Σ_w coeff·T_w`. Same for ν
+   (H_3, ≤ 36-dim). These are λ-independent → compute once and reuse for every λ.
+2. **Build `H^μ_{a0}|_range`** = `Σ_w coeff^{a0}_w · (Π-restricted product of g̃ for word w)` — an r×r matrix, O(r³) per (a). Same for `H^ν_{b0}`.
+3. **Cyclic images `w_k`:** the joint subspace `{w : (inner is in 0-weight) ∧ (block in 0-weight)}` = `range(E^μ_{00}|_range · E^ν_{00}|_range)`, dim `c`. Take any basis `{w_1..w_c}` (e.g. pivot columns of that projector — RREF, O(r³)).
+4. **Assemble `U`:** column `(a,b,k)` = `H^μ_{a0}|_range · H^ν_{b0}|_range · w_k`. O(d_μ d_ν c · r²) = O(r³).
+5. `A_combiner = partial-trace_{ℂ^c}(U⁻¹ Ĩ U)` (unchanged).
+
+**Where it goes:** inside `combiner_block` (lib.rs), replacing the
+`targets`/`m_rows`/`nullspace_mpfr`/`vec_u` block (steps after `itil`). The
+preimage solve (step 1) is a new helper, keyed by partition, computed once.
+
+**Risks / gotchas:** (a) gauge — `h^μ_{a0}` must use the SAME standard
+seminormal `ρ_μ` that the combiner pairs `A` against (consistency, not a fixed
+external convention — see §6.6 of this doc and the per-block §6 #2376 note);
+(b) the H_{n_inner} preimage solve needs `d_μ²` linearly-independent `ρ_μ(T_w)`
+(generic reduced words suffice; verify the `d_μ²×d_μ²` matrix is invertible);
+(c) verify against the per-block combiner identity at 1e-25 on a small λ FIRST,
+then the 4 r=64 λ. Correctness is **gated** by that identity — a bug wastes
+effort but cannot ship wrong.
+
+**Expected payoff:** clears all 4 r=64 λ (no `r²` matrix → no OOM) AND speeds up
+every λ (O(r³) vs O(r⁶)) — so this is BOTH the 4-λ unlock and the real speedup
+that Task A could not deliver.
 
 ---
 
