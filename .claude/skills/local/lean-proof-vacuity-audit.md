@@ -85,6 +85,34 @@ Agent judges intent.
 A non-trivial statement is closed by `decide`/`native_decide`, trusting the
 kernel/compiler evaluator instead of proving structure. `native_decide` adds
 `Lean.ofReduceBool` to the axiom set — an integrity concern in its own right.
+The runnable scanner (below) flags **only `native_decide`**; a plain `decide`
+on a small decidable goal (`(-1:ℤ)^6 = 1`, `seifertGenus_T2 11 = 5`) is
+idiomatic and not a defect.
+
+### 6. Axiom that is a candidate to prove — `proof-no-provable-axiom`
+
+An `axiom` carrying **no bibliographic `-- Ref:` justification** (and no
+`[cite]` / DOI / URL in its docstring) asserts content with nothing backing
+it — it should either be **proved** (converted to a `theorem`) or **cited**
+(marked a genuine external input). This is the dual of `proof-no-axiom-growth`
+(which guards against *adding* axioms): this guards against *leaving provable
+or unjustified content as a global axiom*.
+
+```lean
+axiom my_identity (x : R) : f x = g x          -- no -- Ref:, looks provable → flag
+```
+
+Tiers (agent-confirmed):
+
+- **provable** — Mathlib or a short argument discharges it ⇒ prove it (recipe-1).
+- **legitimate-but-uncited** — a genuine external/substrate input (deep theorem,
+  opaque postulated construction) ⇒ add a `-- Ref:` (recipe-3), do NOT pretend
+  to prove it.
+- **conditional input** — belongs as a `[Class]` hypothesis on downstream
+  consumers (recipe-2 / §3b-cond) rather than a global axiom.
+
+Do **not** flag an axiom that already carries a `-- Ref:` / citation — resting
+on a cited upstream result is sound.
 
 ## Why `proof-statement-integrity` misses all of these
 
@@ -176,6 +204,17 @@ projecting it. That converts a *visible* gap (`sorry`) into an *invisible* one.
 
 ## Detection heuristic (candidate grep → agent confirmation)
 
+0. **Runnable scanner (preferred).** `bun run
+   content/pipeline/lean-vacuity-axiom-audit.ts` walks every `.lean` (library
+   trees + content-block siblings), strips comments/docstrings, and emits a
+   witness JSON (`docs/audits/<date>-lean-vacuity-axiom-audit.json`) keyed by
+   path, with one entry per category (#1–#6 above). It exempts sibling-stub
+   *shadows* (real formalisation resolvable via `lean.ref` / docstring) and
+   field *compositions* that derive. `--write-sidecars` upserts
+   `reviewer.kind="script"` candidate entries on the owning blocks' `.qa.json`.
+   This replaces the manual grep below in environments where the migrated
+   `qa-sweep.ts` / `qa-criteria-registry.ts` are unavailable.
+
 1. **Cheap candidate filter** (regex):
    - proof body `:=\s*\w+\.\w+\s*$`, `:=\s*⟨[^⟩]*\.\w+[^⟩]*⟩`, `:= by\s+exact\s+\w+\.\w+`, `:= ctx\.`, `:= d\.`, `:= h\.`
    - conclusion `: True`, `: .* = .*` where both sides identical, `holds : Prop`
@@ -199,7 +238,8 @@ Mirrors the existing `proof-statement-integrity` model (Agent-checked,
 | `proof-no-trivial-true` | active | #2 tautological conclusion |
 | `proof-no-false-premise` | active | #3 vacuously true |
 | `proof-no-unused-hypotheses` | active | #4 weakened statement |
-| `proof-no-decide-masking` | active | #5 evaluator masking |
+| `proof-no-decide-masking` | active | #5 evaluator masking (`native_decide`) |
+| `proof-no-provable-axiom` | active | #6 uncited / provable axiom |
 
 **Minimal wiring (per Agent-A recon):**
 
@@ -234,8 +274,15 @@ marks the entry `needs-agent`; the agent then fills the verdict.
 
 ## Current audit findings
 
-See `docs/audits/2026-06-14-lean-vacuous-proof-audit.md` for the live list. As of
-2026-06-14: **12 HIGH-confidence self-assuming-projection instances** (6 from the
-batch commit `e138518a`, 6 independent); `gauge-coupling-uniqueness` already
+See `docs/audits/2026-06-14-lean-vacuous-proof-audit.md` for the original list. As
+of 2026-06-14: **12 HIGH-confidence self-assuming-projection instances** (6 from
+the batch commit `e138518a`, 6 independent); `gauge-coupling-uniqueness` already
 superseded with a genuine proof; 6 legitimate conditional-class proofs correctly
 excluded.
+
+2026-06-17 (`docs/audits/2026-06-17-lean-vacuity-axiom-audit.md`, full corpus
+scan via the runnable scanner): 197 candidates / 178 files — 130 trivial-true (48
+genuine `placeholder-true` gaps, 73 `conclusion-True`, 9 reflexive), 22
+self-assuming-projection, 31 `native_decide`, 9 false-premise, **5
+`proof-no-provable-axiom`** (all `LinearJSJVolume`, resolved to cited inputs:
+`[thurston1978]` / `[manuscript]`). 39 sibling-stub shadows exempted.
