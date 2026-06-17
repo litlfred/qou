@@ -222,7 +222,7 @@ function stripCommentLines(src: string): string[] {
 
 const PROVABLE_KINDS = /^(theorem|lemma|proposition|corollary|example)\b/;
 const DECL_START =
-  /^\s*(?:@\[[^\]]*\]\s*)?(?:private\s+|protected\s+|noncomputable\s+|nonrec\s+|scoped\s+)*(theorem|lemma|proposition|corollary|example|def|abbrev|instance|axiom|structure|class)\s+([A-Za-z_][\w'.]*)/;
+  /^\s*(?:@\[[^\]]*\]\s*)?(?:private\s+|protected\s+|noncomputable\s+|nonrec\s+|scoped\s+|partial\s+|unsafe\s+)*(theorem|lemma|proposition|corollary|example|def|abbrev|instance|axiom|structure|class)\s+([A-Za-z_][\w'.]*)/;
 
 interface Decl {
   kind: string;
@@ -446,7 +446,7 @@ function detectFalsePremise(d: Decl): Hit | undefined {
   if (!PROVABLE_KINDS.test(d.kind)) return undefined;
   const body = d.body;
   if (
-    /\babsurd\b[^\n]*\bby\s+(norm_num|decide|simp|omega)\b/.test(body) ||
+    /\babsurd\b[\s\S]*?\bby\s+(norm_num|decide|simp|omega)\b/.test(body) ||
     /\bNat\.not_lt_zero\b/.test(body) ||
     /\(by\s+(norm_num|omega)\)\.elim\b/.test(body)
   ) {
@@ -465,7 +465,7 @@ function detectProvableAxiom(d: Decl, rawLines: string[]): Hit | undefined {
   const window = above + "\n" + rawLines[d.startLine - 1];
   const hasRef = /--\s*Ref:/i.test(window);
   const hasCitation =
-    /\[[a-zA-Z][\w:+-]*\d{0,4}[a-z]?\]/.test(window) ||
+    /\[[a-zA-Z0-9][\w:+-]*\d{0,4}[a-z]?\]/.test(window) ||
     /doi\.org|arxiv\.org|https?:\/\//i.test(window);
   if (hasRef || hasCitation) return undefined;
   const h = mk(d, "proof-no-provable-axiom", "uncited-axiom", false);
@@ -678,6 +678,12 @@ function writeSidecars(
       const catHits = hits.filter((h) => h.category === cat && !h.exempt);
       const result: QaCriterionEntry["result"] =
         catHits.length > 0 ? "fail" : "pass";
+      // Dedup: drop this script's prior entries for the criterion so a
+      // re-run REPLACES rather than accumulates them (Gemini, PR #2428).
+      if (report.criteria[cat])
+        report.criteria[cat] = report.criteria[cat].filter(
+          (e) => !(e.reviewer.kind === "script" && e.reviewer.id === SCRIPT_REL),
+        );
       // On a full scan, record only real findings (fail). A `pass` is only
       // meaningful as systematic coverage, which a full scan over flagged-
       // only blocks does not give; write passes solely for a targeted
