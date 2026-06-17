@@ -9,6 +9,25 @@ m_τ (lepton tower), GAP-A-3 binding Δ_λ, and GAP-A-4 mass λ(K).
 problem**. Everything combinatorial / representation-theoretic / algebraic is done or refuted; no fit
 was introduced anywhere.
 
+> **⚠ Corrections (2026-06-16, late session) — the "OPEN" row + the colour-arena framing are superseded.**
+> Three findings (mine + sibling) refine the open object below; read them over the "Current state" table:
+> - **No finite colour-SU(3) arena** (#2406, reconciling sibling #2389). The "colour ℂ³ ✅ forced" row is a
+>   *lower* bound only (spinor ℂ² can't host the electron). The full production trace needs **>3-row** blocks
+>   too (SU_q(3)/colour-ℂ³ misses 3.4% @⁴He) — it is the **full Hecke / Wenzl principal specialization**
+>   `s_λ(1,q,q²,…)`, *not* a finite ℂ^N. So there is **no finite colour-SU(3) Sasakian arena**.
+> - **SU(3)/SO(3) (Wu-manifold) arena ruled out** (#2398): the spacetime SO(3) is the *isotropy* and has no
+>   continuous centralizer in SU(3) (Schur) — no spacetime-fixing Reeb exists there. ⇒ **spacetime ⊥ colour**
+>   (= corpus `S5 = S2×S3`), confirmed.
+> - **`W_λ` is the q-Plancherel measure, NOT the production trace weight** (sibling `e269ca12ea`); the production
+>   weight is the Wenzl principal specialization. So the "OPEN: W_λ via SU(3)/SO(3) Sasakian" row's *both* the
+>   arena and the weight are corrected.
+>
+> **Corrected open object:** does the **full-Hecke principal-specialization trace** (infinite-variable,
+> intrinsically `p(3A)`-dimensional) admit *any* geometric realization whose index reproduces the canonical
+> Markov weights? A finite-dimensional Sasakian is ruled out. The Δ_λ magnitude×chirality decomposition and the
+> PROBE-4 prune (abstract `H_n(q)`) are unaffected. Audits: `2026-06-16-{keystone-arena-is-full-hecke-not-su3,
+> keystone-wu-manifold-reeb-obstruction}.md`; sibling `2026-06-16-s5-s3-symmetry-review-and-suq3-trace-question.md`.
+
 ## Current state
 
 | Layer | Status |
@@ -52,6 +71,8 @@ is its *geometric origin*.
 | 2026-06-16 | #2370 | canonical coupling = Hopf moment map μ; round-S⁵ colour Reeb transverse; **selection realized by μ** |
 | 2026-06-16 | #2373 | Markov-weighting scope: forced `W_λ` + Wu-manifold Sasakian handoff |
 | 2026-06-16 | #2369 (sibling) | coordination note: A≥3 `tr_M` compute = algebraic realization of the open weighting |
+| 2026-06-16 | #2398 | **derive-attempt:** SU(3)/SO(3) Wu-manifold arena ruled out — spacetime-fixed Schur-centralizer obstruction ⇒ spacetime ⊥ colour |
+| 2026-06-16 | #2406 | **correction:** no finite colour-SU(3) arena — production trace is full-Hecke principal specialization, not SU_q(3) ≤3-row (reconciles sibling #2389) |
 
 ## Key artifacts
 
