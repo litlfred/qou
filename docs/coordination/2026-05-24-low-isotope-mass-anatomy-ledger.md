@@ -169,3 +169,39 @@ Ranked by load-bearing-ness; per CLAUDE.md Rule 14, any h^k coefficient or weigh
     `m_atom` now all-A) and **#2371** (Wenzl A≥3 — binding factorizes, but the
     general per-λ trace still needs the combiner; no overstep). No file overlap
     with any sibling; no cherry-pick. Gemini quota-limited (24 h) on #2405.
+
+## 2026-06-17 — Δ_λ master-formula route: full derive-or-refute arc (#2417)
+
+Continues the #2405 binding thread. **#2417**
+(`claude/delta-lambda-bring-quadratic-2026-06-17`) systematically refuted the
+simple Δ_λ-closure attempts and *narrowed* the gate to a precise statement.
+Cross-ref `docs/coordination/option-e.md` (Δ_λ master ledger).
+
+- **Master-formula / LP (𝓑₃ selection).** The min-action operator-selection LP
+  returns the trivial `tr_M=0` state, not `𝓑₃`: the objective `Σ t_i x_i`
+  **coincides** with the `i=0` Frobenius row (`b₀=γ` ⇒ `G_{0j}=t_j`), so min-action
+  saturates the identity. Root = the **indefinite Gram** (eig −0.855 from
+  `tr_M(e⁻)=z³`; `prop:confinement-lp` §caveat: `𝓑₃` is only a *local* min).
+  Fix-1 (decouple objective from `i=0`) tested → REFUTED (1a neg obj −3.64; 1b
+  unbounded). Audits: `…master-formula-active-set-redesign.md`.
+- **Bring quadratic.** The `h₂=σb+rg` color quadric (indefinite sig (2,2)) + the
+  non-abelian-Stokes curvature exist; `𝓑₃`'s Stokes h²-action = **3/16** exactly
+  (refutes that script's κ=−Catalan). But no 1-1 NF↔color(W-plane) map ⇒ "`𝓑₃`
+  minimizes a Bring quadratic at z₀" has **no realization**. Audit:
+  `…bring-surface-b3-selection-quadratic.md`.
+- **Chirality-Δ_λ binding wired all-A.** Threaded the *proved* `Δ_λ=sgn(w₀^{S_λ'})
+  ·dim` (keystone #1305 / `585ca846d7`) through the #2405 all-A χ^λ transfer.
+  Cross-check D=0.380 ✓, but undershoots ≤⁴He → **divergent overshoot ≥⁶Li**
+  (bare `dim` explodes).
+- **Magnitude-variant sweep `{1, sgn, dim, dim_q}`.** NONE tracks AME — the trace
+  *decays* with A (`1`/`sgn`), any dim-like weight *explodes* (`dim`/`dim_q`). The
+  **linear** functional `Σ_λ y_λ χ^λ Δ_λ` is refuted at the **A-scaling** level;
+  the functional with correct A-scaling is the **LOG** one (`B_sym`, #2405,
+  additive chain, ~2× AME). Audit: `…chirality-delta-lambda-binding-sweep.md`.
+- **Net.** sign=chirality (**proved/closed**); linear-Δ_λ functional=**refuted**;
+  the cooperative α-term is a **correction to the log chain B_sym** — the open
+  Δ_λ-gate / α-unit magnitude (no-fit). Remaining non-fit directions (research-
+  scale): **α-cluster recursion** (⁴He magic input) or the **operator-valued
+  PROBE-2 `A^λ_{ξν}(I)` combiner** (`wenzl-a3-intertwiner-or3`, "the A≥4 unlock"
+  — an *operator* magnitude, exactly what the scalar-magnitude refutation says is
+  needed).
