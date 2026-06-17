@@ -51,9 +51,13 @@ theorem staircaseList_sum (k : ℕ) :
   induction k with
   | zero       => simp [staircaseList]
   | succ k ih  =>
-    simp [staircaseList, ih]
-    -- (k+1) + k(k+1)/2 = (k+1)(k+2)/2
-    omega
+    simp only [staircaseList, List.sum_cons, ih]
+    -- (k+1) + k(k+1)/2 = (k+1)(k+2)/2 ; omega can't do the nonlinear
+    -- product, so fold (k+1) into the division and close the numerator
+    -- equality with ring.
+    rw [Nat.add_comm (k + 1), ← Nat.add_mul_div_left _ _ (by norm_num : 0 < 2)]
+    congr 1
+    ring
 
 /-- Every part of the staircase is positive. -/
 theorem staircaseList_positive (k : ℕ) :
@@ -83,8 +87,8 @@ theorem staircaseList_sorted (k : ℕ) :
   induction k with
   | zero      => simp [staircaseList]
   | succ k ih =>
-    simp [staircaseList]
-    refine List.Sorted.cons ?_ ih
+    rw [staircaseList, List.sorted_cons]
+    refine ⟨?_, ih⟩
     intro p hp
     -- Every p ∈ staircaseList k is ≤ k ≤ k+1
     exact Nat.le_succ_of_le (staircaseList_le k p hp)
