@@ -380,52 +380,53 @@ theorem PartitionOf5.electron_block :
 def binaryIcosahedralIrrepDims : List ℕ := [1, 2, 3, 4, 5, 6, 4, 2, 3]
 
 /-- 2I has exactly 9 irreps (= number of affine E₈ nodes). -/
-theorem binaryIcosahedral_num_irreps : binaryIcosahedralIrrepDims.length = 9 := by
-  native_decide
+theorem binaryIcosahedral_num_irreps : binaryIcosahedralIrrepDims.length = 9 := rfl
 
 /-- |2I| = 120 by Burnside: Σ dim² over the 9 irreps = 1+4+9+16+25+36+16+4+9 = 120.
     (Matches |S₅| = 120, but 2I ≇ S₅ — see `spin_Z2_ne_sign_Z2`.) -/
 theorem binaryIcosahedral_order_eq_120 :
-    (binaryIcosahedralIrrepDims.map (· ^ 2)).sum = 120 := by
-  native_decide
+    (binaryIcosahedralIrrepDims.map (· ^ 2)).sum = 120 := by decide
 
 /-- The affine E₈ marks sum to the Coxeter number h(E₈) = 30
     (= dual Coxeter number h∨(E₈), E₈ being simply-laced). -/
 theorem affineE8_marks_sum_eq_coxeter_30 :
-    binaryIcosahedralIrrepDims.sum = 30 := by
-  native_decide
+    binaryIcosahedralIrrepDims.sum = 30 := by decide
 
 /-- |2I| = 4 · h(E₈): the order of the McKay group is four times the
     Coxeter number (120 = 4 · 30). -/
 theorem order_2I_eq_four_times_coxeter :
     binaryIcosahedralIrrepDims.map (· ^ 2) |>.sum =
-      4 * binaryIcosahedralIrrepDims.sum := by
-  native_decide
+      4 * binaryIcosahedralIrrepDims.sum := by decide
 
 /-- dim E₈ = 248 = rank · (h + 1) = 8 · 31, with rank = 8 and Coxeter h = 30. -/
 theorem e8_dim_eq_rank_times_h_plus_one :
-    (248 : ℕ) = 8 * (30 + 1) := by
-  native_decide
+    (248 : ℕ) = 8 * (30 + 1) := by decide
 
-/-! ## A₅ branching anchors (SO(3) ↓ A₅ and S₅ ↓ A₅ dimension splits) -/
+/-! ## A₅ branching anchors (SO(3) ↓ A₅ and S₅ ↓ A₅ irrep content) -/
 
-/-- **SO(3) ↓ A₅ low-ℓ splits** (V_ℓ has dim 2ℓ+1).  V₁ → T₁ (dim 3);
-    V₂ → H (dim 5); V₃ → T₂ ⊕ G (dim 3 + 4 = 7).  Confirms the dimension
-    bookkeeping of `icosBranchingMult` at ℓ = 1, 2, 3. -/
-theorem so3_to_a5_dim_splits :
-    (3 : ℕ) = 3 ∧               -- V₁ = T₁
-    (5 : ℕ) = 5 ∧               -- V₂ = H
-    (2 * 3 + 1 : ℕ) = 3 + 4 := by  -- V₃ = T₂ ⊕ G
-  native_decide
+/-- **SO(3) ↓ A₅ irrep content at low ℓ.**  Read directly off
+    `icosBranchingMult` against the irrep ordering [A, T₁, T₂, G, H]
+    (= `IcosahedralIrrepDims` [1,3,3,4,5]): the angular-momentum levels
+    restrict as V₁ → T₁, V₂ → H, V₃ → T₂ ⊕ G.  This states *which* A₅
+    irreps occur (not just the dimension bookkeeping already in
+    `icos_branching_dim_check`): V₃'s dim-7 splits as the dim-3 T₂ plus the
+    dim-4 G, the first level where two distinct icosahedral irreps co-occur. -/
+theorem so3_to_a5_irrep_content :
+    icosBranchingMult 1 = [0, 1, 0, 0, 0] ∧   -- V₁ = T₁
+    icosBranchingMult 2 = [0, 0, 0, 0, 1] ∧   -- V₂ = H
+    icosBranchingMult 3 = [0, 0, 1, 1, 0] := by  -- V₃ = T₂ ⊕ G
+  decide
 
-/-- **S₅ ↓ A₅ on the self-conjugate (3,1,1) block.**  The dim-6 irrep V_(3,1,1)
-    is the unique self-conjugate S₅ irrep that splits under restriction to A₅
-    into two distinct dim-3 irreps T₁ ⊕ T₂ (6 = 3 + 3) — the chirality pair
-    swapped by the S₅∖A₅ parity (cf. `PartitionOf5.electron_block`,
-    `restrictsToA5Irrep .threeOneOne = true`). -/
+/-- **S₅ ↓ A₅ on the self-conjugate (3,1,1) block.**  V_(3,1,1) is
+    self-conjugate (`conjugate` fixes it), restricts non-trivially to A₅
+    (`restrictsToA5Irrep = true`), and its dim 6 splits as the chirality
+    pair T₁ ⊕ T₂ (3 + 3) swapped by the S₅∖A₅ parity.  The self-conjugacy
+    (= invariance under the sign-twist) is exactly the structural reason
+    the block carries the chirality (cf. `PartitionOf5.electron_block`). -/
 theorem s5_to_a5_electron_block_splits :
-    PartitionOf5.threeOneOne.dim = 3 + 3 ∧
-    PartitionOf5.threeOneOne.conjugate = PartitionOf5.threeOneOne := by
-  native_decide
+    PartitionOf5.threeOneOne.conjugate = PartitionOf5.threeOneOne ∧
+    PartitionOf5.threeOneOne.restrictsToA5Irrep = true ∧
+    PartitionOf5.threeOneOne.dim = 3 + 3 := by
+  decide
 
 end QOU.BraidsAndKnots
