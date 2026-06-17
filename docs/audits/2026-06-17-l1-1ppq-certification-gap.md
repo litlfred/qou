@@ -61,14 +61,25 @@ Two regressions, both downstream of recently-merged `main` changes:
    `pn_convention="bring_color_weighted"`, owner directive 2026-06-01,
    δ = `_avg_color_delta()`). Every nucleus with a p-n bridge raises.
 
-2. **proton/neutron 8.4e-8 mismatch.** The committed p/n values are
-   float64-correct (match Hoefsmit at 2.5e-16) and were produced by an *earlier*
-   correct producer; the current producer yields values 8.4e-8 off. The likely
-   cause is the q-parameterised-braid-word core refactor
-   (`nucleon_gen_chains(q=…)`, stages merged on `main` 2026-06-17) changing the
-   intra-nucleon crossing constants, so `crossing_from_cd`'s **float-tolerance
-   template matching** now silently maps a crossing to the wrong σ-template
-   (no crash, wrong value).
+2. **proton/neutron 8.4e-8 mismatch — a trace change, NOT a classification
+   bug.** The committed p/n values are float64-correct (match Hoefsmit at
+   2.5e-16) and were produced by an *earlier* producer; the current producer
+   yields values 8.4e-8 off. A direct check **rules out** the crossing-template
+   mechanism: every distinct `(c,d)` in `atom_braid_word_3A(1,0)` classifies
+   cleanly against the four templates —
+   `(1,0)→σ`, `(1,−h/2)→averaged`, `(1,−h)→σ⁻¹` — with no UNKNOWN and no
+   mis-match. So `crossing_from_cd` is **not** silently picking a wrong template.
+   The 8.4e-8 is therefore a genuine **trace discrepancy**: the current
+   `atom_braid_word_3A` + peel pipeline yields a proton trace 8.4e-8 away from
+   the value stored in *both* the Hoefsmit (`atomic-tr-m-mpfr-50dps`) and peel
+   witnesses. The most probable origin is the just-merged q-parameterised
+   `nucleon_gen_chains(q=…)` refactor (stages on `main` 2026-06-17) changing the
+   intra-nucleon **word** (hence the true trace), leaving both witnesses stale.
+   **This crosses into the q-param refactor's domain** — whether a ~8.4e-8
+   proton-trace change is intended (more precise word) or a regression is a
+   question for that work, not this L1 audit. Flagged here for coordination;
+   the committed witnesses should be regenerated once the current word is
+   confirmed canonical.
 
 So the committed peel witness is **doubly unreproducible**: the p/n entries
 predate the q-param regression, and the nuclei entries predate the
