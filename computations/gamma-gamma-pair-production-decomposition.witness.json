@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-25T23:24:06.166373+00:00",
-  "commitSha": "11121107853bec33be4b06ca38a4b0bfdddddfa7",
+  "computedAt": "2026-06-17T02:23:44.064457+00:00",
+  "commitSha": "c29eabb9a8e6462461585180b21786c6fc272825",
   "assertions": [
     {
       "name": "family_a_disagrees_jones_at_h2_corrected",
@@ -41,31 +41,38 @@
   "durationMs": 15,
   "computation": "gamma-gamma-pair-production-decomposition",
   "scriptFile": "gamma_gamma_pair_production_decomposition.py",
-  "scriptHash": "e9c19b91510b",
-  "scriptCommitSha": "122e6e1a7e5a298f129d4efde3bc122f7b6ac8f5",
+  "scriptHash": "1ffa7dac1b3b",
+  "scriptCommitSha": "5cfb7290f012aabde041238bd27bc3504da79486",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "γγ̄ pair-production decomposition of β_Bor = (σ₀σ₁⁻¹)³ at each Gröbner-Shirshov filtration order (h-power).  Compares PROVED Family A linking_weight (which terminates at h²) against the Markov-trace-via-Jones-polynomial route (all orders in h) and against the CODATA-anchor target.  Localises whether the 2.89% VolDensity(𝓑₃) gap enters at h² (Reading-A hypothesis: +3/4 h² should be −G h²) or at h⁴⁺ (q-dilog tower hypothesis: Family A truncates higher-order corrections). Audit-only — no CODATA value flows into a prediction; the anchor inversion is for target reconstruction only.",
   "auditOnly": "docs/audits/2026-05-25-non-abelian-stokes-reading-a-exploration.md",
   "parameters": {
-    "q0": "1.1099785955541805",
-    "h0": "0.20906032198987941007",
+    "q0": "1.1099785955573347",
+    "h0": "0.20906032199559362613",
     "borromean_braid_word": "(σ₀·σ₁⁻¹)³",
     "gamma_gamma_bar_factors": 3,
     "max_h_order": 8
   },
   "data": {
     "point_eval_at_q0": {
-      "family_a": "2.5327796636728840423",
-      "via_jones": "2.4942486527902805033",
-      "exact_anchor": "2.4599527843613171539",
-      "delta_exact_minus_family_a": "-0.072826879311566888401",
-      "delta_jones_minus_family_a": "-0.038531010882603538976",
-      "delta_exact_minus_jones": "-0.034295868428963349425"
+      "family_a": "2.5327796636746759661",
+      "via_jones": "2.4942486527896501532",
+      "exact_anchor": "2.4599527844884376143",
+      "delta_exact_minus_family_a": "-0.072826879186238351746",
+      "delta_jones_minus_family_a": "-0.038531010885025812922",
+      "delta_exact_minus_jones": "-0.034295868301212538824"
     },
     "h_order_decomposition": [
       {
@@ -115,13 +122,13 @@
       }
     ],
     "gap_localisation": {
-      "family_a_at_q0": "2.5327796636728840423",
-      "jones_at_q0_lean_correct": "2.4942486527902805033",
-      "codata_anchor_target": "2.4599527843613171539",
-      "family_a_residual_signed": "-0.072826879311566888401",
-      "jones_residual_signed": "-0.034295868428963349425",
-      "family_a_residual_abs": "0.072826879311566888401",
-      "jones_residual_abs": "0.034295868428963349425",
+      "family_a_at_q0": "2.5327796636746759661",
+      "jones_at_q0_lean_correct": "2.4942486527896501532",
+      "codata_anchor_target": "2.4599527844884376143",
+      "family_a_residual_signed": "-0.072826879186238351746",
+      "jones_residual_signed": "-0.034295868301212538824",
+      "family_a_residual_abs": "0.072826879186238351746",
+      "jones_residual_abs": "0.034295868301212538824",
       "fraction_of_fa_gap_closed_by_jones": "52.907678",
       "interpretation": "Family A (Wedderburn dim sum on H_4) and Jones (H_3 Markov trace of β_Bor, Lean-proved closed form via [2]_q² normalisation) DISAGREE at h² coefficient: Family A's +3/4 vs Jones's 0.  Both are independently Lean-proved theorems about DIFFERENT mathematical objects.  Numerically, the Lean-correct Jones value lands ~47% closer to the CODATA-anchor target than Family A — suggesting the actual `linking_weight` may be the H_3 Markov trace, not the H_4 Wedderburn dim sum.  Open question: which is the categorically-correct `linking_weight`?  The simple bridge `linking_weight = 5/2 + 4·(tr_M − 1)` is itself a hack (forces tr_M(q=1)=1 to equal Family A's 5/2 by adding a constant)."
     }
