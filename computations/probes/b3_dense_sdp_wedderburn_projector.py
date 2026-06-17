@@ -77,10 +77,7 @@ for p in (str(ROOT), str(ROOT / "substrate"), str(PYHECKE)):
 import numpy as np  # noqa: E402
 from pyhecke.gram import NF_NAMES, TR_M  # noqa: E402
 
-G = np.array(json.loads((ROOT / 'gram-matrix-dual.witness.json').read_text())['gram_matrix'], float)
-t = np.asarray(TR_M, float)
-gamma = np.array([1.0, 0.0, 0.0, 0.0, 0.0, 0.0])              # identity channel e_0
-B3 = np.array([0.998, -0.0095, 0.0091, 0.046, -0.044, 0.0])   # NF(𝓑₃), prop value
+gamma = np.array([1.0, 0.0, 0.0, 0.0, 0.0, 0.0])              # identity channel e_0 (pure constant)
 
 
 def unit(v):
@@ -106,37 +103,42 @@ def dense_sdp_select(T: np.ndarray) -> np.ndarray:
     return v if v @ gamma >= 0 else -v
 
 
-print("\n  DENSE WEDDERBURN-PROJECTOR SDP — 𝓑₃-selection (closed form, the unbuilt object)\n")
-print(f"  eigs(G)  = {np.round(np.linalg.eigvalsh(G), 3)}  (1 negative, indefinite)")
-print(f"  NF(𝓑₃)   = {(np.linalg.norm(gamma * (B3 @ gamma)) / np.linalg.norm(B3)) * 100:.1f}% γ "
-      "(the identity channel)")
-print("  redundancy: <π_λ,Φ>=tr(π_λΦ)>=0 (π_λ PSD) and 2x2 pair-PSD are implied by Φ>=0")
-print(f"  𝓑₃≈γ Markov cost t_gamma={t[0]:.3f}=max(t) (identity = MAX cost); "
-      f"mesonic L± cost={t[3]:.3f}=min(t)\n")
-print(f"  {'cost operator T (non-fitted)':<34}{'min-eigvec':<11}{'cost t':>8}"
-      f"{'full-cos->B3':>14}{'is B3?':>8}")
-print("  " + "-" * 75)
+def main() -> int:
+    G = np.array(json.loads((ROOT / 'gram-matrix-dual.witness.json').read_text())['gram_matrix'], float)
+    t = np.asarray(TR_M, float)
+    B3 = np.array([0.998, -0.0095, 0.0091, 0.046, -0.044, 0.0])   # NF(𝓑₃), prop value
 
-for name, T in [
-    ("diag(t)  [Markov-trace weight]", np.diag(t)),
-    ("G        [q-Laplacian / Gram]", G),
-    ("G^-1     [Gram resolvent]", np.linalg.inv(G)),
-    ("-(G - lmax.I) [resolvent inv.]", -(G - np.max(np.linalg.eigvalsh(G)) * np.eye(6))),
-]:
-    v = dense_sdp_select(T)
-    i = int(np.argmax(np.abs(v)))
-    fc = cos(v, B3)
-    print(f"  {name:<34}{NF_NAMES[i]:<11}{t[i]:>8.3f}{fc:>14.3f}"
-          f"{('YES' if abs(fc) > 0.9 else 'no'):>8}")
+    print("\n  DENSE WEDDERBURN-PROJECTOR SDP — 𝓑₃-selection (closed form, the unbuilt object)\n")
+    print(f"  eigs(G)  = {np.round(np.linalg.eigvalsh(G), 3)}  (1 negative, indefinite)")
+    print(f"  NF(𝓑₃)   = {(np.linalg.norm(gamma * (B3 @ gamma)) / np.linalg.norm(B3)) * 100:.1f}% γ "
+          "(the identity channel)")
+    print("  redundancy: <π_λ,Φ>=tr(π_λΦ)>=0 (π_λ PSD) and 2x2 pair-PSD are implied by Φ>=0")
+    print(f"  𝓑₃≈γ Markov cost t_gamma={t[0]:.3f}=max(t) (identity = MAX cost); "
+          f"mesonic L± cost={t[3]:.3f}=min(t)\n")
+    print(f"  {'cost operator T (non-fitted)':<34}{'min-eigvec':<11}{'cost t':>8}"
+          f"{'full-cos->B3':>14}{'is B3?':>8}")
+    print("  " + "-" * 75)
 
-# The ONLY cost operator that selects 𝓑₃ is one built FROM 𝓑₃ = a fit.
-T_fit = -np.outer(unit(B3), unit(B3))
-v_fit = dense_sdp_select(T_fit)
-print("  " + "-" * 75)
-print(f"  {'-B3.B3^T  [FITTED to the answer]':<34}{NF_NAMES[int(np.argmax(np.abs(v_fit)))]:<11}"
-      f"{'(n/a)':>8}{cos(v_fit, B3):>14.3f}{'YES(fit)':>8}")
+    for name, T in [
+        ("diag(t)  [Markov-trace weight]", np.diag(t)),
+        ("G        [q-Laplacian / Gram]", G),
+        ("G^-1     [Gram resolvent]", np.linalg.inv(G)),
+        ("-(G - lmax.I) [resolvent inv.]", -(G - np.max(np.linalg.eigvalsh(G)) * np.eye(6))),
+    ]:
+        v = dense_sdp_select(T)
+        i = int(np.argmax(np.abs(v)))
+        fc = cos(v, B3)
+        print(f"  {name:<34}{NF_NAMES[i]:<11}{t[i]:>8.3f}{fc:>14.3f}"
+              f"{('YES' if abs(fc) > 0.9 else 'no'):>8}")
 
-print("""
+    # The ONLY cost operator that selects 𝓑₃ is one built FROM 𝓑₃ = a fit.
+    T_fit = -np.outer(unit(B3), unit(B3))
+    v_fit = dense_sdp_select(T_fit)
+    print("  " + "-" * 75)
+    print(f"  {'-B3.B3^T  [FITTED to the answer]':<34}{NF_NAMES[int(np.argmax(np.abs(v_fit)))]:<11}"
+          f"{'(n/a)':>8}{cos(v_fit, B3):>14.3f}{'YES(fit)':>8}")
+
+    print("""
   VERDICT: the dense Wedderburn-projector SDP collapses (closed form) to
   "select the min-eigenvector of the cost operator T". 𝓑₃ is 99.8% γ = the
   identity = the MAX-cost channel (t_gamma=1.0). A cost-MINIMIZING PSD program
@@ -149,3 +151,8 @@ print("""
   ground state of any non-fitted continuous cost. Confirms #2433 (1); bounds
   the operator-cumulant route (#2430). Derive-or-refute: REFUTED (no fit).
 """)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
