@@ -86,7 +86,6 @@ theorem exchange_coulomb_relation (q m_e : ℝ) (hq : q_int q 2 ≠ 0) :
     lambda_C q m_e * q_int q 3 := by
   unfold lambda_ex lambda_C
   field_simp
-  ring
 
 -- ── Seven-term binding energy ──────────────────────────────────
 
@@ -115,7 +114,9 @@ noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
 
 -- ── Conjecture class (CLAUDE.md §3b-cond axiomatisation) ───────
 
-/-- **Conjecture class.** An instance asserts the existence of:
+/- **Conjecture class** (plain comment: the doc-comment below documents
+   `IsAMEValue`; this block documents `class QIntegerMassFormula`).
+   An instance asserts the existence of:
     (i) the magic-proximity function `f_magic : ℕ → ℝ` peaking at
         {2, 8, 20, 28, 50, 82, 126},
     (ii) a CODATA-accuracy bound: for every (Z, N) with binding
@@ -169,10 +170,11 @@ theorem fits_AME_conditional [inst : QIntegerMassFormula]
 
 
 /-- **Faithful instance.** Carries the conjecture as an explicit sorry. -/
-instance canonical : QIntegerMassFormula where
+noncomputable instance canonical : QIntegerMassFormula where
   f_magic := fun _ => 0
   tolerance := 1 / 100
   tolerance_bound := ⟨by norm_num, by norm_num⟩
   fits_AME := sorry
+    -- Ref: [manuscript] conj:q-integer-mass-formula (§3b-cond conjectural field)
 
 end QOU.Interactions
