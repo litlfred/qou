@@ -1116,6 +1116,173 @@ fn lagrange_one(
     p
 }
 
+/// Per-`(μ,ν)` block orchestration of the gauge-aligned combiner, factored out
+/// of `gauge_aligned_a_combiner_mpfr` so the per-block binding and the
+/// all-blocks binding (`gauge_aligned_a_combiner_all_blocks_mpfr`) share one
+/// implementation (single source of truth). Consumes the **pre-built** λ
+/// generator matrices `gens` (dimension `dim`) and the **cached** isotypic
+/// projectors `p_mu`/`p_nu` (Lagrange spectral projectors of the inner/block
+/// transposition class-sums), plus the parsed interface coefficient `d_coef`.
+/// Builds the range basis `B` of `range(Π = p_μ p_ν)` (pivot columns of
+/// RREF(Π)), the restricted generators `B⁺σB`, the intertwiner `U` (null space
+/// of `I⊗g̃ − Rᵀ⊗I`), and returns `A = partial-trace_{ℂ^c}(U⁻¹ Ĩ U)` in standard
+/// `V_μ⊗V_ν` coordinates. `Ok(None)` ⇔ the block is empty (`rank Π = 0`, i.e.
+/// `c^λ_{μν}=0`).
+#[allow(clippy::too_many_arguments)]
+fn combiner_block(
+    gens: &[Vec<Vec<Float>>],
+    dim: usize,
+    p_mu: &[Vec<Float>],
+    p_nu: &[Vec<Float>],
+    mu: &[usize],
+    nu: &[usize],
+    n_inner: usize,
+    n_block: usize,
+    d_coef: &Float,
+    q_str: &str,
+    dps: u32,
+    prec: u32,
+) -> Result<Option<Vec<Vec<Float>>>, String> {
+    let pi = dense_la_mpfr::dense_dense_mul_mpfr(p_mu, p_nu, prec);
+    // Range basis B (dim×r): the pivot columns of RREF(Π) are exactly the
+    // linearly independent columns of Π that span its column space (range).
+    // RREF(Πᵀ) would give independent ROWS of Π — wrong for a non-symmetric
+    // oblique projector (Gemini review #2376).
+    let tol = Float::with_val(prec, 1e-30);
+    let (_rr, pivots) = dense_la_mpfr::rref_mpfr(&pi, prec, &tol);
+    let r = pivots.len();
+    if r == 0 {
+        return Ok(None);
+    }
+    let b_mat: Vec<Vec<Float>> = (0..dim)
+        .map(|i| pivots.iter().map(|&c| Float::with_val(prec, &pi[i][c])).collect())
+        .collect();
+    // Left inverse B⁺ = (BᵀB)⁻¹ Bᵀ (r×dim).
+    let bt = transpose_mpfr(&b_mat, prec);
+    let btb = dense_la_mpfr::dense_dense_mul_mpfr(&bt, &b_mat, prec);
+    let btb_inv = dense_la_mpfr::inverse_mpfr(&btb, prec, &tol)
+        .ok_or_else(|| "a_combiner: BᵀB singular".to_string())?;
+    let bplus = dense_la_mpfr::dense_dense_mul_mpfr(&btb_inv, &bt, prec);
+    let restrict = |g: &[Vec<Float>]| -> Vec<Vec<Float>> {
+        let gb = dense_la_mpfr::dense_dense_mul_mpfr(g, &b_mat, prec);
+        dense_la_mpfr::dense_dense_mul_mpfr(&bplus, &gb, prec)
+    };
+    // Restricted generators g̃ = B⁺ σ B.
+    let inner_g: Vec<Vec<Vec<Float>>> = (0..n_inner - 1).map(|a| restrict(&gens[a])).collect();
+    let block_g: Vec<Vec<Vec<Float>>> =
+        (0..n_block - 1).map(|b| restrict(&gens[n_inner + b])).collect();
+    // Ĩ = B⁺ (σ_{n_inner-1} + d·I) B.
+    let i_dense: Vec<Vec<Float>> = (0..dim)
+        .map(|i| (0..dim)
+            .map(|j| {
+                let mut v = Float::with_val(prec, &gens[n_inner - 1][i][j]);
+                if i == j {
+                    v += d_coef;
+                }
+                v
+            })
+            .collect())
+        .collect();
+    let itil = restrict(&i_dense);
+    // Standard ρ_μ (H_{n_inner}), ρ_ν (H_{n_block}).
+    let smu = seminormal_mpfr::seminormal_matrices_mpfr(mu, q_str, dps);
+    let snv = seminormal_mpfr::seminormal_matrices_mpfr(nu, q_str, dps);
+    // The intertwiner indexes rmu[0..n_inner-1] and rnv[0..n_block-1]; guard
+    // against OOB if the generator lists are short (Gemini review #2376).
+    if n_inner > 1 && smu.len() < n_inner - 1 {
+        return Err(format!(
+            "a_combiner: μ={:?} has {} generators, need {}", mu, smu.len(), n_inner - 1));
+    }
+    if n_block > 1 && snv.len() < n_block - 1 {
+        return Err(format!(
+            "a_combiner: ν={:?} has {} generators, need {}", nu, snv.len(), n_block - 1));
+    }
+    let d_mu = if smu.is_empty() { 1 } else { smu[0].len() };
+    let d_nu = if snv.is_empty() { 1 } else { snv[0].len() };
+    if d_mu * d_nu == 0 || r % (d_mu * d_nu) != 0 {
+        return Err(format!(
+            "a_combiner: rank {} not divisible by d_μ·d_ν = {}·{}", r, d_mu, d_nu));
+    }
+    let c = r / (d_mu * d_nu);
+    let rmu: Vec<Vec<Vec<Float>>> =
+        smu.iter().map(|sp| dense_la_mpfr::sparse_to_dense_mpfr(sp, d_mu, prec)).collect();
+    let rnv: Vec<Vec<Vec<Float>>> =
+        snv.iter().map(|sp| dense_la_mpfr::sparse_to_dense_mpfr(sp, d_nu, prec)).collect();
+    let (i_r, i_dmu, i_dnu, i_c) =
+        (eye_mpfr(r, prec), eye_mpfr(d_mu, prec), eye_mpfr(d_nu, prec), eye_mpfr(c, prec));
+    // Target generators R = ρ_μ(σ)⊗I_ν⊗I_c (inner) / I_μ⊗ρ_ν(σ)⊗I_c (block).
+    let mut targets: Vec<Vec<Vec<Float>>> = Vec::new();
+    let mut restricted: Vec<&Vec<Vec<Float>>> = Vec::new();
+    for a in 0..n_inner - 1 {
+        let k = dense_la_mpfr::kron_mpfr(
+            &dense_la_mpfr::kron_mpfr(&rmu[a], &i_dnu, prec), &i_c, prec);
+        targets.push(k);
+        restricted.push(&inner_g[a]);
+    }
+    for b in 0..n_block - 1 {
+        let k = dense_la_mpfr::kron_mpfr(
+            &dense_la_mpfr::kron_mpfr(&i_dmu, &rnv[b], prec), &i_c, prec);
+        targets.push(k);
+        restricted.push(&block_g[b]);
+    }
+    // Intertwiner constraint M: stack (I_r ⊗ g̃ − Rᵀ ⊗ I_r).
+    let r2 = r * r;
+    let mut m_rows: Vec<Vec<Float>> = Vec::with_capacity(targets.len() * r2);
+    for (rk, gk) in targets.iter().zip(restricted.iter()) {
+        let lhs = dense_la_mpfr::kron_mpfr(&i_r, gk, prec);
+        let rhs = dense_la_mpfr::kron_mpfr(&transpose_mpfr(rk, prec), &i_r, prec);
+        for row in 0..r2 {
+            let diff: Vec<Float> = (0..r2)
+                .map(|col| Float::with_val(prec, &lhs[row][col] - &rhs[row][col]))
+                .collect();
+            m_rows.push(diff);
+        }
+    }
+    let null = dense_la_mpfr::nullspace_mpfr(&m_rows, prec, &tol);
+    if null.is_empty() {
+        return Err("a_combiner: empty intertwiner null space".to_string());
+    }
+    // Generic invertible combination → U (column-major reshape vecU[j*r+i]).
+    let mut vec_u: Vec<Float> = (0..r2).map(|_| Float::with_val(prec, 0)).collect();
+    for (k, v) in null.iter().enumerate() {
+        let coeff = Float::with_val(prec, (k as u32) + 2).sqrt()
+            + Float::with_val(prec, (k as u32) + 1);
+        for idx in 0..r2 {
+            vec_u[idx] = Float::with_val(prec, &vec_u[idx] + &(Float::with_val(prec, &coeff * &v[idx])));
+        }
+    }
+    let u_mat: Vec<Vec<Float>> = (0..r)
+        .map(|i| (0..r).map(|j| Float::with_val(prec, &vec_u[j * r + i])).collect())
+        .collect();
+    let u_inv = dense_la_mpfr::inverse_mpfr(&u_mat, prec, &tol)
+        .ok_or_else(|| "a_combiner: U singular".to_string())?;
+    // Ã = U⁻¹ Ĩ U.
+    let atil = dense_la_mpfr::dense_dense_mul_mpfr(
+        &dense_la_mpfr::dense_dense_mul_mpfr(&u_inv, &itil, prec), &u_mat, prec);
+    // A = partial-trace over ℂ^c (basis μ⊗ν⊗c, multiplicity fastest).
+    let dd = d_mu * d_nu;
+    let mut a_out: Vec<Vec<Float>> = (0..dd)
+        .map(|_| (0..dd).map(|_| Float::with_val(prec, 0)).collect())
+        .collect();
+    for am in 0..d_mu {
+        for bm in 0..d_nu {
+            for ap in 0..d_mu {
+                for bp in 0..d_nu {
+                    let mut s = Float::with_val(prec, 0);
+                    for t in 0..c {
+                        let ri = am * d_nu * c + bm * c + t;
+                        let ci = ap * d_nu * c + bp * c + t;
+                        s += &atil[ri][ci];
+                    }
+                    a_out[am * d_nu + bm][ap * d_nu + bp] = s;
+                }
+            }
+        }
+    }
+    Ok(Some(a_out))
+}
+
+
 /// **Gauge-aligned categorical interface operator `A^λ_{μν}(I)`** in standard
 /// `V_μ⊗V_ν` coordinates, at MPFR precision — the speedup combiner matrix
 /// (closure-b Rust port, increment 3b). One whole-compute PyO3 call per
@@ -1190,145 +1357,121 @@ fn gauge_aligned_a_combiner_mpfr(
     let nu_e = parse_f(&block_target)?;
     let p_mu = lagrange_one(&c_in, &ein, &mu_e, prec);
     let p_nu = lagrange_one(&c_bl, &ebl, &nu_e, prec);
-    let pi = dense_la_mpfr::dense_dense_mul_mpfr(&p_mu, &p_nu, prec);
-    // Range basis B (dim×r): the pivot columns of RREF(Π) are exactly the
-    // linearly independent columns of Π that span its column space (range).
-    // RREF(Πᵀ) would give independent ROWS of Π — wrong for a non-symmetric
-    // oblique projector (Gemini review #2376).
-    let tol = Float::with_val(prec, 1e-30);
-    let (_rr, pivots) = dense_la_mpfr::rref_mpfr(&pi, prec, &tol);
-    let r = pivots.len();
-    if r == 0 {
+    let d_coef = parse_f(&interface_d)?;
+    match combiner_block(
+        &gens, dim, &p_mu, &p_nu, &mu, &nu, n_inner, n_block, &d_coef, &q_str, dps, prec,
+    )
+    .map_err(|e| pyo3::exceptions::PyValueError::new_err(e))?
+    {
+        Some(a) => Ok(mat_to_strings(&a, dps)),
+        None => Ok(Vec::new()),
+    }
+}
+
+/// **All-`(μ,ν)`-blocks gauge-aligned combiner** for a fixed `λ` — the real
+/// speedup over calling `gauge_aligned_a_combiner_mpfr` once per `(μ,ν)`. Builds
+/// the λ seminormal generators and both transposition class-sums (`C_in`,
+/// `C_bl`) **once**, caches the isotypic projectors `P_μ`/`P_ν` per partition,
+/// and loops `(μ,ν)` internally through `combiner_block` (compute-author §2.1:
+/// whole-λ compute per PyO3 call, not per block). `inner_parts` are all
+/// μ⊢n_inner and `block_parts` all ν⊢n_block; `inner_eigs`/`block_eigs` are
+/// their transposition class-sum eigenvalues (the full spectra — also the
+/// per-partition Lagrange targets, so each must be passed for the projector
+/// denominators to be complete). Returns `(μ, ν, A)` for every non-empty block
+/// (`c^λ_{μν}>0`); empty blocks are omitted. The multiplicity `c = c^λ_{μν}` is
+/// recomputed by the caller (LR rule).
+#[pyfunction]
+#[pyo3(signature = (lam, n_inner, n_block, inner_parts, inner_eigs,
+                    block_parts, block_eigs, interface_d, q_str, dps=50))]
+#[allow(clippy::too_many_arguments)]
+fn gauge_aligned_a_combiner_all_blocks_mpfr(
+    lam: Vec<usize>,
+    n_inner: usize,
+    n_block: usize,
+    inner_parts: Vec<Vec<usize>>,
+    inner_eigs: Vec<String>,
+    block_parts: Vec<Vec<usize>>,
+    block_eigs: Vec<String>,
+    interface_d: String,
+    q_str: String,
+    dps: u32,
+) -> PyResult<Vec<(Vec<usize>, Vec<usize>, Vec<Vec<String>>)>> {
+    let prec = seminormal_mpfr::dps_to_bits(dps);
+    if n_inner == 0 || n_block == 0 {
+        return Err(pyo3::exceptions::PyValueError::new_err(
+            "gauge_aligned_a_combiner_all_blocks_mpfr: n_inner and n_block must be > 0"));
+    }
+    if inner_parts.len() != inner_eigs.len() {
+        return Err(pyo3::exceptions::PyValueError::new_err(
+            "gauge_aligned_a_combiner_all_blocks_mpfr: inner_parts/inner_eigs length mismatch"));
+    }
+    if block_parts.len() != block_eigs.len() {
+        return Err(pyo3::exceptions::PyValueError::new_err(
+            "gauge_aligned_a_combiner_all_blocks_mpfr: block_parts/block_eigs length mismatch"));
+    }
+    for p in &inner_parts {
+        if p.iter().sum::<usize>() != n_inner {
+            return Err(pyo3::exceptions::PyValueError::new_err(format!(
+                "gauge_aligned_a_combiner_all_blocks_mpfr: inner part {:?} != n_inner={}", p, n_inner)));
+        }
+    }
+    for p in &block_parts {
+        if p.iter().sum::<usize>() != n_block {
+            return Err(pyo3::exceptions::PyValueError::new_err(format!(
+                "gauge_aligned_a_combiner_all_blocks_mpfr: block part {:?} != n_block={}", p, n_block)));
+        }
+    }
+    let n = n_inner + n_block;
+    let parse_f = |s: &str| -> PyResult<Float> {
+        match Float::parse(s) {
+            Ok(p) => Ok(Float::with_val(prec, p)),
+            Err(_) => Err(pyo3::exceptions::PyValueError::new_err(
+                format!("gauge_aligned_a_combiner_all_blocks_mpfr: bad number {:?}", s))),
+        }
+    };
+    // λ seminormal generator matrices (dense) — built ONCE for all blocks.
+    let sparse = seminormal_mpfr::seminormal_matrices_mpfr(&lam, &q_str, dps);
+    if sparse.is_empty() {
         return Ok(Vec::new());
     }
-    let b_mat: Vec<Vec<Float>> = (0..dim)
-        .map(|i| pivots.iter().map(|&c| Float::with_val(prec, &pi[i][c])).collect())
+    let dim = sparse[0].len();
+    let gens: Vec<Vec<Vec<Float>>> = sparse
+        .iter()
+        .map(|sp| dense_la_mpfr::sparse_to_dense_mpfr(sp, dim, prec))
         .collect();
-    // Left inverse B⁺ = (BᵀB)⁻¹ Bᵀ (r×dim).
-    let bt = transpose_mpfr(&b_mat, prec);
-    let btb = dense_la_mpfr::dense_dense_mul_mpfr(&bt, &b_mat, prec);
-    let btb_inv = dense_la_mpfr::inverse_mpfr(&btb, prec, &tol)
-        .ok_or_else(|| pyo3::exceptions::PyValueError::new_err("a_combiner: BᵀB singular"))?;
-    let bplus = dense_la_mpfr::dense_dense_mul_mpfr(&btb_inv, &bt, prec);
-    let restrict = |g: &[Vec<Float>]| -> Vec<Vec<Float>> {
-        let gb = dense_la_mpfr::dense_dense_mul_mpfr(g, &b_mat, prec);
-        dense_la_mpfr::dense_dense_mul_mpfr(&bplus, &gb, prec)
-    };
-    // Restricted generators g̃ = B⁺ σ B.
-    let inner_g: Vec<Vec<Vec<Float>>> = (0..n_inner - 1).map(|a| restrict(&gens[a])).collect();
-    let block_g: Vec<Vec<Vec<Float>>> =
-        (0..n_block - 1).map(|b| restrict(&gens[n_inner + b])).collect();
-    // Ĩ = B⁺ (σ_{n_inner-1} + d·I) B.
+    if gens.len() + 1 < n {
+        return Err(pyo3::exceptions::PyValueError::new_err(format!(
+            "gauge_aligned_a_combiner_all_blocks_mpfr: λ={:?} has {} generators, need ≥ {}",
+            lam, gens.len(), n - 1)));
+    }
+    // Both transposition class-sums — built ONCE (depend only on λ, n_inner).
+    let c_in = class_sum_from_gens(&gens, dim, 0, n_inner - 1, prec)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(format!("a_combiner: {e}")))?;
+    let c_bl = class_sum_from_gens(&gens, dim, n_inner, n - 1, prec)
+        .map_err(|e| pyo3::exceptions::PyValueError::new_err(format!("a_combiner: {e}")))?;
+    let ein: Vec<Float> = inner_eigs.iter().map(|s| parse_f(s)).collect::<PyResult<_>>()?;
+    let ebl: Vec<Float> = block_eigs.iter().map(|s| parse_f(s)).collect::<PyResult<_>>()?;
+    // Cache the isotypic projectors once per μ / ν (Lagrange spectral projectors).
+    let p_mu_cache: Vec<Vec<Vec<Float>>> =
+        ein.iter().map(|t| lagrange_one(&c_in, &ein, t, prec)).collect();
+    let p_nu_cache: Vec<Vec<Vec<Float>>> =
+        ebl.iter().map(|t| lagrange_one(&c_bl, &ebl, t, prec)).collect();
     let d_coef = parse_f(&interface_d)?;
-    let i_dense: Vec<Vec<Float>> = (0..dim)
-        .map(|i| (0..dim)
-            .map(|j| {
-                let mut v = Float::with_val(prec, &gens[n_inner - 1][i][j]);
-                if i == j {
-                    v += &d_coef;
-                }
-                v
-            })
-            .collect())
-        .collect();
-    let itil = restrict(&i_dense);
-    // Standard ρ_μ (H_{n_inner}), ρ_ν (H_{n_block}).
-    let smu = seminormal_mpfr::seminormal_matrices_mpfr(&mu, &q_str, dps);
-    let snv = seminormal_mpfr::seminormal_matrices_mpfr(&nu, &q_str, dps);
-    // The intertwiner indexes rmu[0..n_inner-1] and rnv[0..n_block-1]; guard
-    // against OOB if the generator lists are short (Gemini review #2376).
-    if n_inner > 1 && smu.len() < n_inner - 1 {
-        return Err(pyo3::exceptions::PyValueError::new_err(format!(
-            "a_combiner: μ={:?} has {} generators, need {}", mu, smu.len(), n_inner - 1)));
-    }
-    if n_block > 1 && snv.len() < n_block - 1 {
-        return Err(pyo3::exceptions::PyValueError::new_err(format!(
-            "a_combiner: ν={:?} has {} generators, need {}", nu, snv.len(), n_block - 1)));
-    }
-    let d_mu = if smu.is_empty() { 1 } else { smu[0].len() };
-    let d_nu = if snv.is_empty() { 1 } else { snv[0].len() };
-    if d_mu * d_nu == 0 || r % (d_mu * d_nu) != 0 {
-        return Err(pyo3::exceptions::PyValueError::new_err(format!(
-            "a_combiner: rank {} not divisible by d_μ·d_ν = {}·{}", r, d_mu, d_nu)));
-    }
-    let c = r / (d_mu * d_nu);
-    let rmu: Vec<Vec<Vec<Float>>> =
-        smu.iter().map(|sp| dense_la_mpfr::sparse_to_dense_mpfr(sp, d_mu, prec)).collect();
-    let rnv: Vec<Vec<Vec<Float>>> =
-        snv.iter().map(|sp| dense_la_mpfr::sparse_to_dense_mpfr(sp, d_nu, prec)).collect();
-    let (i_r, i_dmu, i_dnu, i_c) =
-        (eye_mpfr(r, prec), eye_mpfr(d_mu, prec), eye_mpfr(d_nu, prec), eye_mpfr(c, prec));
-    // Target generators R = ρ_μ(σ)⊗I_ν⊗I_c (inner) / I_μ⊗ρ_ν(σ)⊗I_c (block).
-    let mut targets: Vec<Vec<Vec<Float>>> = Vec::new();
-    let mut restricted: Vec<&Vec<Vec<Float>>> = Vec::new();
-    for a in 0..n_inner - 1 {
-        let k = dense_la_mpfr::kron_mpfr(
-            &dense_la_mpfr::kron_mpfr(&rmu[a], &i_dnu, prec), &i_c, prec);
-        targets.push(k);
-        restricted.push(&inner_g[a]);
-    }
-    for b in 0..n_block - 1 {
-        let k = dense_la_mpfr::kron_mpfr(
-            &dense_la_mpfr::kron_mpfr(&i_dmu, &rnv[b], prec), &i_c, prec);
-        targets.push(k);
-        restricted.push(&block_g[b]);
-    }
-    // Intertwiner constraint M: stack (I_r ⊗ g̃ − Rᵀ ⊗ I_r).
-    let r2 = r * r;
-    let mut m_rows: Vec<Vec<Float>> = Vec::with_capacity(targets.len() * r2);
-    for (rk, gk) in targets.iter().zip(restricted.iter()) {
-        let lhs = dense_la_mpfr::kron_mpfr(&i_r, gk, prec);
-        let rhs = dense_la_mpfr::kron_mpfr(&transpose_mpfr(rk, prec), &i_r, prec);
-        for row in 0..r2 {
-            let diff: Vec<Float> = (0..r2)
-                .map(|col| Float::with_val(prec, &lhs[row][col] - &rhs[row][col]))
-                .collect();
-            m_rows.push(diff);
-        }
-    }
-    let null = dense_la_mpfr::nullspace_mpfr(&m_rows, prec, &tol);
-    if null.is_empty() {
-        return Err(pyo3::exceptions::PyValueError::new_err(
-            "a_combiner: empty intertwiner null space"));
-    }
-    // Generic invertible combination → U (column-major reshape vecU[j*r+i]).
-    let mut vec_u: Vec<Float> = (0..r2).map(|_| Float::with_val(prec, 0)).collect();
-    for (k, v) in null.iter().enumerate() {
-        let coeff = Float::with_val(prec, (k as u32) + 2).sqrt()
-            + Float::with_val(prec, (k as u32) + 1);
-        for idx in 0..r2 {
-            vec_u[idx] = Float::with_val(prec, &vec_u[idx] + &(Float::with_val(prec, &coeff * &v[idx])));
-        }
-    }
-    let u_mat: Vec<Vec<Float>> = (0..r)
-        .map(|i| (0..r).map(|j| Float::with_val(prec, &vec_u[j * r + i])).collect())
-        .collect();
-    let u_inv = dense_la_mpfr::inverse_mpfr(&u_mat, prec, &tol)
-        .ok_or_else(|| pyo3::exceptions::PyValueError::new_err("a_combiner: U singular"))?;
-    // Ã = U⁻¹ Ĩ U.
-    let atil = dense_la_mpfr::dense_dense_mul_mpfr(
-        &dense_la_mpfr::dense_dense_mul_mpfr(&u_inv, &itil, prec), &u_mat, prec);
-    // A = partial-trace over ℂ^c (basis μ⊗ν⊗c, multiplicity fastest).
-    let dd = d_mu * d_nu;
-    let mut a_out: Vec<Vec<Float>> = (0..dd)
-        .map(|_| (0..dd).map(|_| Float::with_val(prec, 0)).collect())
-        .collect();
-    for am in 0..d_mu {
-        for bm in 0..d_nu {
-            for ap in 0..d_mu {
-                for bp in 0..d_nu {
-                    let mut s = Float::with_val(prec, 0);
-                    for t in 0..c {
-                        let ri = am * d_nu * c + bm * c + t;
-                        let ci = ap * d_nu * c + bp * c + t;
-                        s += &atil[ri][ci];
-                    }
-                    a_out[am * d_nu + bm][ap * d_nu + bp] = s;
-                }
+    let mut out: Vec<(Vec<usize>, Vec<usize>, Vec<Vec<String>>)> = Vec::new();
+    for (i, mu) in inner_parts.iter().enumerate() {
+        for (j, nu) in block_parts.iter().enumerate() {
+            let block = combiner_block(
+                &gens, dim, &p_mu_cache[i], &p_nu_cache[j], mu, nu,
+                n_inner, n_block, &d_coef, &q_str, dps, prec,
+            )
+            .map_err(|e| pyo3::exceptions::PyValueError::new_err(
+                format!("a_combiner (μ={:?}, ν={:?}): {e}", mu, nu)))?;
+            if let Some(a) = block {
+                out.push((mu.clone(), nu.clone(), mat_to_strings(&a, dps)));
             }
         }
     }
-    Ok(mat_to_strings(&a_out, dps))
+    Ok(out)
 }
 
 /// Matrix-M block-restricted χ^λ at substrate q.
@@ -1530,6 +1673,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(mat_nullspace_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(mat_inverse_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(gauge_aligned_a_combiner_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(gauge_aligned_a_combiner_all_blocks_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_via_matrix_m_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
