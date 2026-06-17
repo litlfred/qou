@@ -39,15 +39,41 @@ time, `O(d_ξ²)` memory) and then uses only its diagonal.
 Both are exact (same arithmetic, reorganised) and verifiable against the direct
 build + the `chi_young` combiner identity to 50 dps.
 
-## Plan / status
-- [ ] `rho_xi_diagonal.py` — sparse full-matrix builder (A≤5) + diagonal-only
-      builder (A=6, O(d) memory).
-- [ ] Verify at A=4 (λ⊢12, the `_self_test` combiner identity) — diag-only +
-      sparse reproduces `chi_young` to `<1e-25`; sparse == dense `prod`.
-- [ ] Confirm diag-only `trace_A_kron` == full `trace_A_kron` (validates the
-      block-diagonal-in-`V_ξ` structure numerically).
-- [ ] Measure speedup; honestly scope the A=6 large-ξ time wall (the genuine
-      Rust-engine / research-scale piece).
+## Results (verified, A=4, ξ⊢9, d_ξ≤216 — `rho_xi_diagonal_verify.py`)
+
+- [x] `rho_xi_diagonal.py` — sparse generators built directly (`O(d)` per gen,
+      no `d×d` materialization); `rho_word_full_sparse` (A≤5) +
+      `rho_word_diag` (`O(d)` memory). **Rust-free** (pure-Python
+      `young_seminormal` rule — no `pyhecke_native` wheel).
+- [x] **Exact:** `max|full_sparse − dense| = 1.6e-61`,
+      `max|diag − dense.diagonal| = 2.3e-61` (to the 60-dps floor).
+- [x] **Combiner identity (diag-only) vs `chi_young`:** `8.1e-49 < 1e-25` ✓ —
+      the whole A=4 combiner reproduces the independent character using only
+      `diag(ρ_ξ)`.
+- [x] **Block-diagonal-in-`V_ξ` confirmed numerically:** diag-only `trace_A_kron`
+      == full `trace_A_kron` to `6.2e-61` — the off-diagonal inner index truly
+      never contributes, so only `diag(ρ_ξ)` is needed.
+- [x] **Speedup** (all ξ⊢9, 5-crossing inner word): dense `prod` `138.2 s` →
+      sparse full `8.0 s` (**17×**) → diagonal `1.67 s` (**83×**).
+
+| ρ_ξ build | time | vs dense | memory |
+|---|--:|--:|--|
+| dense `prod` (current cross-check) | 138.2 s | 1× | `O(d²)` |
+| `rho_word_full_sparse` | 8.0 s | 17× | `O(d²)` |
+| `rho_word_diag` (diagonal-only) | 1.67 s | **83×** | **`O(d)`** |
+
+## A=6 scoping (honest)
+
+The diagonal-only builder is `O(d²·|W|)` time, `O(d)` memory. The memory win
+removes the `d×d` storage wall, so the bulk of ξ⊢15 (the smaller-dim blocks) and
+all of A=5 become feasible. The **largest** ξ⊢15 block (`d_ξ ≤ 2.9·10⁵`) stays
+**time**-bound — `O(d²·|W|) ≈ 10¹¹` mpf-ops at 50 dps is still infeasible in pure
+mpmath. Fully closing the biggest A=6 block needs either the Rust seminormal
+kernel (`pyhecke_native`, which the original used) or a contraction-only scheme
+that never iterates all `d` columns — the genuine research-scale piece (and the
+wall the wiring sibling #2371 is stalled on). This PR removes the memory wall and
+gives a constant + memory speedup; it does not by itself make the largest A=6
+block tractable.
 
 ## Honest framing
 Per the main-merged bond-dimension verdict `χ_eff(k)=p(3k)` and the #2441 closure
