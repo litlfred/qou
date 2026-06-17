@@ -49,7 +49,15 @@ needs. The geometric closure `B ≈ m_e·Vol(D)·ρ/ℏ_q²` with one constant `
 2. **Volume instability already visible:** ³H reads `Vol = 12.47` here vs
    `14.65` in the 2026-06-13 audit (~17% run-to-run, from the degenerate
    triangulation) — but even the *most* favourable re-reading does not collapse
-   the 2.36× spread.
+   the 2.36× spread. This jitter was **reproduced live** while re-running the
+   probe during the 2026-06-17 prepare-merge: ³H flipped between `Vol = 12.47`
+   (`k = 0.680`) and `Vol = 14.65` (`k = 0.579`) across runs, **yet the headline
+   spread stayed `2.358`** — because the spread is `k_max/k_min`, whose extrema
+   are ²H (`0.365`, min) and ⁴He (`0.861`, max), both stable; ³H and ³He are
+   *interior* `k`, so their non-determinism cannot move the spread. The committed
+   witness records the modal ³H reading (`12.47`). That a putative "geometric
+   binding law" rests on a volume the triangulation cannot pin to better than
+   ~17% is itself evidence against a *precision* closure.
 3. **Consistent with the H1 refutation**
    ([`2026-06-13-9b-h1-exponent-location-refuted.md`]): the per-nucleon
    increment is carried by the **experimental** `B_AME(A)` curve, not by any
