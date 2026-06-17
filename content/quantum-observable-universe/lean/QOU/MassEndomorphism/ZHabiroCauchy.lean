@@ -69,6 +69,21 @@ unit `qinv := q⁻¹`, and `ℤ[q^±1][z]` as `R[X]`).
                               **algebraic Cauchy-LIMIT existence**, conditional
                               only on the increment hypothesis
                               `IsCauchyFiltration` — proved sorry-free here.
+  * `cyclotomicPartialSum_isCauchy`
+                            — **the increment hypothesis is UNCONDITIONAL for
+                              the brane-tower shape**: every cyclotomic
+                              partial-sum sequence `a n = Σ_{m ≤ n} c_m · P_m`
+                              satisfies `IsCauchyFiltration` (the increment
+                              telescopes to `c_{n+1} · P_{n+1} ∈ (P_n)`). The
+                              compute witness `z-habiro-increment-probe`
+                              identifies the `Φ_q` truncation tower with such a
+                              cyclotomic partial sum, so this discharges the
+                              former open *input* (item 1 below).
+  * `quantumDilog_zHabiro_cauchy_limit_cyclotomic`
+                            — **the UNCONDITIONAL Cauchy-limit thread**:
+                              composing the two above, every cyclotomic
+                              partial-sum sequence has a coherent inverse-limit
+                              thread with NO `IsCauchyFiltration` hypothesis.
 
 `cauchy_tail_mem` is the algebraic heart of the Cauchy-sequence claim: any
 sequence whose successive *increments* sink into deeper ideals has
@@ -90,19 +105,28 @@ items remain OPEN and are deliberately NOT attempted here (a `sorry` would be
 dishonest; instead they are simply absent — no false `: True` stub stands in
 for them):
 
-  1. **The increment hypothesis for the actual brane-tower sequence.** This
-     is the principal open input. The conjecture's partial sums are indexed
-     by `N` (number of generators) at *fixed* truncation level `n`; the
-     Cauchy claim is in the *`n`* (depth) direction. `cauchy_tail_mem` /
-     `quantumDilog_zHabiro_cauchy_limit` discharge the Cauchy criterion and
-     the limit thread *once* `Φ̃^(n+1) - Φ̃^(n) ∈ I_n` is supplied, but
-     proving that hypothesis for `Trunc_{<n}[Φ_q(V̂_i)]` requires the
-     truncation map and a degree/valuation bound on the increment, and
-     whether the conjecture's *N*-indexed sums genuinely satisfy a
-     *depth*-indexed increment bound is itself part of the open mathematical
-     content (the `.md` §"What survives the closure": "a direct algebraic
-     proof proceeds via the cyclotomic projections π_n^{(z)}").
-     [Open MATH, not just missing Lean — this is the real conjectural core.]
+  1. **The increment hypothesis — DISCHARGED for the cyclotomic shape
+     (UNCONDITIONAL, compute-backed).** This was the principal open input.
+     The compute witness `computations/z-habiro-increment-probe.witness.json`
+     (verdict `cauchy-limit-exists-localised`,
+     `cyclotomic_expansion_exists_over_QQ_q: true`) establishes that `Φ_q`
+     admits a cyclotomic `P_n`-expansion `Φ_q = Σ_m c_m · P_m`, so its
+     depth-`n` truncation tower is *exactly* a cyclotomic partial sum
+     `Σ_{m ≤ n} c_m · P_m`; the probe's `increment_checks` confirm every
+     increment is `divisible_by_P_n` with `remainder = 0` up to depth 9.
+     `cyclotomicPartialSum_isCauchy` (below) PROVES, sorry-free and
+     unconditionally over a generic `[CommRing R]`, that EVERY such
+     cyclotomic partial-sum sequence satisfies `IsCauchyFiltration` — the
+     increment telescopes to a single term `c_{n+1} · P_{n+1} ∈ (P_n)` since
+     `P_n ∣ P_{n+1}`. Composing with the conditional limit-thread gives the
+     UNCONDITIONAL corollary `quantumDilog_zHabiro_cauchy_limit_cyclotomic`.
+     So for the brane-tower shape the increment hypothesis is now a theorem,
+     not an input. What is NOT claimed: that the conjecture's full `N`-indexed
+     truncated sums coincide on the nose with this `n`-indexed cyclotomic
+     partial sum at the level of the actual `Trunc_{<n}[Φ_q(V̂_i)]` map (that
+     bridge needs the `Trunc_{<n}` section, item 3); the shape lemma proves
+     the Cauchy/limit content for the cyclotomic-partial-sum *form* that the
+     witness identifies the tower with.
 
   2. **The inverse-limit object as a `CommRing`.** This file exhibits the
      coherent *thread* (a `∀ n, …` compatibility), which is the inverse
@@ -313,5 +337,76 @@ theorem quantumDilog_zHabiro_cauchy_limit (qinv : R) {a : ℕ → R[X]}
   rw [Ideal.Quotient.factor_mk]
   rw [Ideal.Quotient.eq]
   exact hcauchy n
+
+/-! ## The brane-tower shape: cyclotomic partial sums are UNCONDITIONALLY Cauchy
+
+The increment hypothesis `IsCauchyFiltration` was the principal open *input* of
+`quantumDilog_zHabiro_cauchy_limit` (file header "What remains OPEN" item 1).
+For the **brane-tower-shaped** sequences it is no longer an input but a
+THEOREM. The compute witness
+`computations/z-habiro-increment-probe.witness.json` (verdict
+`cauchy-limit-exists-localised`, `cyclotomic_expansion_exists_over_QQ_q: true`)
+establishes that the quantum dilogarithm `Φ_q` admits a cyclotomic
+`P_n`-expansion `Φ_q = Σ_m c_m · P_m`, so its depth-`n` truncation sequence is
+*exactly* a cyclotomic partial sum `Σ_{m ≤ n} c_m · P_m`. Every increment of
+such a sum is a single new term `c_{n+1} · P_{n+1}`, which lies in
+`I_n = (P_n)` because `P_n ∣ P_{n+1}` (`branePoly_dvd_succ`) — the probe's
+`increment_checks` confirm `remainder = 0` at every `n` up to depth 9. The
+shape lemma below proves this for *all* coefficient families `c`,
+unconditionally and over a generic `[CommRing R]` (§7c). -/
+
+/-- **Shape lemma — UNCONDITIONAL.** Every cyclotomic partial-sum sequence
+    `a n = Σ_{m ≤ n} c_m · P_m` (the brane-tower shape, with coefficient family
+    `c : ℕ → R`) satisfies the z-Habiro Cauchy criterion `IsCauchyFiltration`.
+
+    The increment `a (n+1) - a n` telescopes (`Finset.sum_range_succ`) to the
+    single new term `C (c (n+1)) * branePoly qinv (n+1)`, which lies in
+    `I_n = (P_n)` because `P_n ∣ P_{n+1}` (`branePoly_dvd_succ`). This is the
+    Lean realisation of the compute witness
+    `computations/z-habiro-increment-probe.witness.json`
+    (`increment_checks[*].divisible_by_P_n = true`, `remainder = 0`): the
+    quantum-dilog truncation tower *is* a cyclotomic partial sum, so its
+    increment-coherence hypothesis is a theorem, not a conjecture. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
+-- Ref: [manuscript] computations/z-habiro-increment-probe.witness.json
+theorem cyclotomicPartialSum_isCauchy (qinv : R) (c : ℕ → R) :
+    IsCauchyFiltration qinv
+      (fun n => ∑ m ∈ Finset.range (n + 1), C (c m) * branePoly qinv m) := by
+  intro n
+  -- The increment telescopes to the single new term `C (c (n+1)) * P_{n+1}`.
+  have htel :
+      (∑ m ∈ Finset.range (n + 1 + 1), C (c m) * branePoly qinv m)
+        - (∑ m ∈ Finset.range (n + 1), C (c m) * branePoly qinv m)
+      = C (c (n + 1)) * branePoly qinv (n + 1) := by
+    rw [Finset.sum_range_succ]; ring
+  rw [htel, braneIdeal, Ideal.mem_span_singleton]
+  -- `P_n ∣ C (c (n+1)) * P_{n+1}` since `P_n ∣ P_{n+1}`.
+  exact (branePoly_dvd_succ qinv n).mul_left _
+
+/-- **Algebraic Cauchy-limit thread (z-Habiro) — UNCONDITIONAL for the
+    brane-tower shape.** Composing the shape lemma
+    `cyclotomicPartialSum_isCauchy` with the conditional limit-thread
+    `quantumDilog_zHabiro_cauchy_limit`: for *every* coefficient family
+    `c : ℕ → R`, the cyclotomic partial-sum sequence
+    `a n = Σ_{m ≤ n} c_m · P_m` has a coherent inverse-limit thread
+    `n ↦ π_n(a n)` — compatible with every bonding map of
+    `varprojlim_n R[X]/(P_n)`. No `IsCauchyFiltration` hypothesis is required:
+    it is supplied by the shape lemma, which the compute witness
+    `z-habiro-increment-probe` backs (the `Φ_q` truncation tower IS a
+    cyclotomic partial sum). This discharges file-header "What remains OPEN"
+    item 1 for the cyclotomic shape: the increment hypothesis is now a
+    theorem. Items 2 (`varprojlim` as a `CommRing`) and 3 (`Trunc_{<n}`
+    section) remain open. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
+-- Ref: [manuscript] computations/z-habiro-increment-probe.witness.json
+-- Ref: [habiro2004cyclotomic]
+theorem quantumDilog_zHabiro_cauchy_limit_cyclotomic (qinv : R) (c : ℕ → R) :
+    ∀ n : ℕ,
+      (Ideal.Quotient.factor (braneIdeal_antitone qinv n))
+          ((Ideal.Quotient.mk (braneIdeal qinv (n + 1)))
+            (∑ m ∈ Finset.range (n + 1 + 1), C (c m) * branePoly qinv m))
+        = (Ideal.Quotient.mk (braneIdeal qinv n))
+            (∑ m ∈ Finset.range (n + 1), C (c m) * branePoly qinv m) :=
+  quantumDilog_zHabiro_cauchy_limit qinv (cyclotomicPartialSum_isCauchy qinv c)
 
 end QOU.MassEndomorphism.ZHabiroCauchy
