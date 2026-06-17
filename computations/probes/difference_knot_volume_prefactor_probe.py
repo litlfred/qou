@@ -67,17 +67,21 @@ def _volume_and_struct(braid):
     if not braid:
         return 0, mp.mpf(0), "empty", 0
     M = snappy.Link(braid_closure=braid).exterior()
-    M.simplify(); M.simplify()
+    M.simplify()
+    M.simplify()
     cusps = M.num_cusps()
     try:
         # str() on SnapPy's Number preserves the full high_precision() digits
         # (≈64 dps here); float() would truncate to f64 and defeat the call.
-        Mhp = M.high_precision(); vol = mp.mpf(str(Mhp.volume())); sol = Mhp.solution_type()
-    except Exception:
-        vol = mp.mpf(str(M.volume())); sol = M.solution_type()
+        Mhp = M.high_precision()
+        vol = mp.mpf(str(Mhp.volume()))
+        sol = Mhp.solution_type()
+    except Exception:  # noqa: BLE001
+        vol = mp.mpf(str(M.volume()))
+        sol = M.solution_type()
     try:
         n_tets = M.canonical_retriangulation().num_tetrahedra()
-    except Exception as e:  # noqa: BLE001
+    except Exception:  # noqa: BLE001
         n_tets = -1
     return cusps, vol, sol, n_tets
 
@@ -131,7 +135,8 @@ def main() -> int:
 
     w.add_data("rows", rows)
     w.add_data("k_spread_max_over_min", str(spread))
-    w.add_data("k_min", str(kmin)); w.add_data("k_max", str(kmax))
+    w.add_data("k_min", str(kmin))
+    w.add_data("k_max", str(kmax))
     w.add_data("rho_implied_per_atom", [str(r) for r in rho_implied])
     w.add_assertion(
         "constant_prefactor_holds_within_10pct",

@@ -1,8 +1,8 @@
 {
   "engine": "snappea",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-06-17T14:04:22.671406+00:00",
-  "commitSha": "94d887a3829154a765e356c42ec0bc80009b0ed2",
+  "computedAt": "2026-06-17T15:56:11.868386+00:00",
+  "commitSha": "9c8272edadcf5990b9394700b12a1c5ab5a556b6",
   "assertions": [
     {
       "name": "constant_prefactor_holds_within_10pct",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 508,
+  "durationMs": 442,
   "computation": "difference-knot-volume-prefactor",
   "scriptFile": "difference_knot_volume_prefactor_probe.py",
-  "scriptHash": "3c69fcb080e2",
-  "scriptCommitSha": "94d887a3829154a765e356c42ec0bc80009b0ed2",
+  "scriptHash": "17618fcfc179",
+  "scriptCommitSha": "19e60a6bd3ae52db08ac7cb457ca55a636046f8b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
