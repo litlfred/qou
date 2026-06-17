@@ -1,9 +1,21 @@
 The Borromean braid $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ is not
-asserted as the confinement operator — it is **selected** by the
-minimum-action principle
-([knot operator selection](#prop:knot-operator-selection))
-acting on the $6 \times 6$ Gram matrix
-([Frobenius Gram matrix](#prop:frobenius-gram-matrix)).
+asserted as the confinement operator — it is **selected** by a
+**topological** principle. Confinement means *no proper subset of the
+three quarks can be isolated*; equivalently, the braid closure is a
+**Brunnian** link (every two-component sublink is the unlink), and
+$\mathcal{B}_3$ is the crossing-minimal such link.
+
+This selection lives on **braid/link space**, not on the
+$6\times 6$ Frobenius Gram matrix
+([Frobenius Gram matrix](#prop:frobenius-gram-matrix)): a
+*minimum-action* (minimum-eigenvalue) functional on that matrix does
+**not** select $\mathcal{B}_3$. Because $\mathrm{NF}(\mathcal{B}_3)$ is
+$\approx 99.8\%$ the identity $\gamma$ — the maximum-cost channel — any
+cost-*minimising* operator-space program selects instead the
+smallest-cost **mesonic** channel $L_\pm$ (a two-strand pairwise object,
+not a three-quark confinement). The Gram/Markov-trace data below is a
+**consistency check** on the topologically selected $\mathcal{B}_3$, not
+its selector.
 
 ## Three unconfined quarks are unstable
 
@@ -48,18 +60,26 @@ See [Table 1](#tbl:confinement-operator-selection-table1-data).
 **Naive ranking** (minimise demand channels, then $\mathfrak{E}_\times$) selects
 $L_+$ — but $L_+$ gives $\mathrm{net} \approx 1.22$, far from the
 physical proton mass.  $L_+$ is a pairwise (mesonic) binding; it does
-not confine three quarks.
+not confine three quarks.  This is precisely the channel an operator-space
+cost-minimisation falls into, and precisely what the **Brunnian
+constraint excludes**: a two-strand sublink is not Brunnian.
 
-**Net-constrained ranking** ($|\Delta\mathrm{net}|$ closest to target
-$\approx :val[confinement_B3_net_proton]{precision=4}$) uniquely selects $\mathcal{B}_3$:
+**Topological selection (primary).** Among three-strand braid closures,
+$\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ is the *crossing-minimal
+nontrivial Brunnian* link — its closure has three components, all three
+pairwise linking numbers vanish, yet every two-component sublink is the
+unlink (removing any one quark frees the other two). No braid of fewer
+than six crossings is nontrivially Brunnian. This selection uses **no
+physical input**.
 
-See [Table 2](#tbl:confinement-operator-selection-table2-data).
-
-The identity has slightly lower trace ($0.415$ vs $0.420$) but
-fails to confine: unconfined quarks retain their demand profile
-unchanged.  $\mathcal{B}_3$ is the **unique operator that matches the
-physical net AND provides topological confinement** (Borromean =
-no subset of quarks can be isolated).
+**Net consistency check.** The topologically selected $\mathcal{B}_3$ is
+then confirmed against the physical data: its $|\Delta\mathrm{net}|$ is
+closest (target $\approx :val[confinement_B3_net_proton]{precision=4}$)
+among the candidates, and it confines (the identity has slightly lower
+trace, $0.415$ vs $0.420$, but leaves the quark demand profile
+unchanged). See [Table 2](#tbl:confinement-operator-selection-table2-data).
+This match is a *consistency check* on the topological selection, not the
+selector itself.
 
 ## Beta decay emerges from the confined demand
 
@@ -94,3 +114,17 @@ interaction ($\mathcal{B}_3$ confinement) washes out the electromagnetic
 initial conditions.
 
 **Witness**: `confinement-operator-selection.witness.json`.
+
+**Selection-principle support.** The topological selection is verified by
+`computations/probes/b3_brunnian_selection_scope.py` (the closure of
+$(\sigma_0\sigma_1^{-1})^3$ is a nontrivial six-crossing Brunnian
+three-link — pure braid, all pairwise linking numbers $0$, every
+two-sublink the unlink) and
+`computations/probes/b3_brunnian_minimality_enumeration.py` (enumerating
+all pure three-braids of word length $\le 6$: no nontrivial Brunnian link
+below six crossings, and at six crossings the minimal Brunnian links all
+carry the Borromean signature). The refutation of the operator-space
+*minimum-action* selector is recorded in
+`computations/probes/b3_dense_sdp_wedderburn_projector.py` (the dense
+Wedderburn-projector SDP collapses to the minimum-eigenvector of the cost
+operator, which is the mesonic $L_\pm$, never $\mathcal{B}_3$).
