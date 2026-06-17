@@ -5,11 +5,21 @@
 **Status:** structural result connecting the Δ_λ closure (Option-E) to the s5-so3 keystone; verified, no fit.
 **Discipline:** formalize-first.
 
+> **⚠ Correction (2026-06-16, post-merge).** The word "closed" in the title/§Statement is **wrong** and is
+> retracted. Running the canonical compute (`computations/binding_energy_categorical_deuteron.py`) shows the
+> per-λ **sum** `Σ_λ y_λ χ^λ(β_D) Δ_λ` with `Δ_λ = sgn·dim` gives `B(D)=0.380 MeV`, **−82.9 %** off AME — it does
+> **not** close the deuteron. The deuteron binding is closed separately by **`E₀×q⁻¹` (+0.91 %)**,
+> `E₀=m_e/(q₀(q₀−1))` (PR #1367). **What stands:** `Δ_λ=sgn·dim` is the *proved categorical per-block factor*
+> (PR #1305), and its **magnitude×chirality decomposition** + the explanation of the PROBE-4 positivity prune are
+> unaffected — they are statements about the Δ_λ *factor*, not a closure of the binding energy. Full cross-check:
+> [`2026-06-16-deuteron-closure-crosscheck-and-correction.md`](2026-06-16-deuteron-closure-crosscheck-and-correction.md).
+> Read "Δ_λ closure" below as "Δ_λ *structural factor*".
+
 ## Statement
 
-The deuteron Δ_λ is **closed** by the structural form
-$$\Delta_\lambda = \mathrm{sgn}(w_0^{S_{\lambda'}})\cdot\dim(V_\lambda).$$
-This note makes the reading **"magnitude = Wedderburn, sign = chirality"** precise and ties it to the merged
+`Δ_λ = sgn(w₀^{S_λ'})·dim(V_λ)` is the proved categorical **per-block factor** of the binding formula (it does
+**not** by itself close the deuteron — see the correction banner above). This note makes the reading
+**"magnitude = Wedderburn, sign = chirality"** precise and ties it to the merged
 s5-so3 keystone (where the icosahedral chirality is the $S_5\setminus A_5$ parity swapping $T_1\leftrightarrow T_2$).
 
 ## Magnitude = Wedderburn (chirality-invariant)
