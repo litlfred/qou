@@ -37,10 +37,15 @@ from witness_base import WitnessBuilder  # noqa: E402
 from binding_canonical import binding_canonical  # noqa: E402
 from q_beta_substrate_prediction import q_beta_substrate  # noqa: E402
 from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
+from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 
 # substrate inputs (CAL-1 m_e, CAL-2 q₀) — pure canonical, no fit
 from q_parameter import Q as Q0  # noqa: E402
 from codata_constants import M_E_MEV as _ME  # noqa: E402
+
+# canonical energy scale α = E₀ = m_e/(q₀(q₀−1)) ≈ 4.186 MeV (derived,
+# the dashboard scale) — distinct from binding_canonical's Q_β multiplier.
+_E0 = float(_ME) / (float(Q0) * (float(Q0) - 1.0))
 
 # bound states to package (Re channel needs the bound-knot trace → A small)
 ISOTOPES = [("2H", 1, 1), ("3H", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
@@ -51,19 +56,31 @@ B_AME = {"2H": 2.224566, "3H": 8.481821, "3He": 7.718058, "4He": 28.295673}
 
 def complex_volume(Z: int, N: int):
     """𝔙 = 𝔈_bind + i·𝔔_β for the (Z,N) bound knot. Im is the single
-    n→p β-decay Q-value (the bar-odd partner of the bar-even binding)."""
-    bc = binding_canonical(Z, N, use_transfer=True, use_closed_form=False)
-    re = float(bc["B_MeV"])                              # binding  (Re)
-    im = q_beta_substrate(float(Q0), float(_ME))         # Q_β       (Im)
+    n→p β-decay Q-value (the bar-odd partner of the bar-even binding).
+
+    Re uses the magnitude-correct **log-trace** form (the exact
+    standard-part / archimedean realization)
+        𝔈_bind = E₀·ln(tr_free / tr_atom),   E₀ = m_e/(q₀(q₀−1)),
+    so |𝔙| and arg 𝔙 are physical (Re-dominated). The earlier
+    linear-defect form E₀·(tr_free−tr_atom) (binding_canonical, Q_β-scaled)
+    is retained as `re_linear_MeV` for comparison — it under-predicts 5–40×
+    and is NOT used for the polar quantities."""
+    ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
+    ta, tf = float(ta), float(tf)
+    re = _E0 * math.log(tf / ta)                         # binding (Re) — log-trace
+    re_lin = float(binding_canonical(
+        Z, N, use_transfer=True, use_closed_form=False)["B_MeV"])
+    im = q_beta_substrate(float(Q0), float(_ME))         # Q_β     (Im)
     mod = math.hypot(re, im)                             # |𝔙| (mass-modulus)
     arg = math.atan2(im, re)                             # arg 𝔙 (EM phase)
     return {
         "re_binding_MeV": re,
+        "re_linear_MeV": re_lin,
         "im_qbeta_MeV": im,
         "modulus_MeV": mod,
         "arg_rad": arg,
-        "tr_M_atom": bc.get("tr_M_atom"),
-        "tr_M_free": bc.get("tr_M_free"),
+        "tr_M_atom": ta,
+        "tr_M_free": tf,
     }
 
 
@@ -80,18 +97,21 @@ def main() -> int:
     im_pred = rows[0][3]["im_qbeta_MeV"]
     im_err = abs(im_pred - qbeta_codata) / qbeta_codata
 
-    print("\n  COMPLEX-VOLUME WITNESS  𝔙 = 𝔈_bind + i·𝔔_β")
-    print(f"  q₀ = {float(Q0):.10f}   Im(q₀)=0 ⇒ Re,Im both real (fibre caveat)\n")
-    print("| iso | Re 𝔙 = binding (MeV) | B_AME | Re err | Im 𝔙 = Q_β (MeV) | |𝔙| | arg 𝔙 (rad) |")
-    print("|---|--:|--:|--:|--:|--:|--:|")
+    print("\n  COMPLEX-VOLUME WITNESS  𝔙 = 𝔈_bind + i·𝔔_β   (Re = log-trace binding)")
+    print(f"  q₀ = {float(Q0):.10f}   E₀ = {_E0:.4f} MeV   "
+          f"Im(q₀)=0 ⇒ Re,Im both real (fibre caveat)\n")
+    print("| iso | Re 𝔙 = binding (MeV) | B_AME | Re err | Im 𝔙 = Q_β (MeV) | |𝔙| | arg 𝔙 (rad) | (re_linear) |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|")
     for name, Z, N, cv, b_ame, re_err in rows:
         print(f"| {name} | {cv['re_binding_MeV']:.4f} | {b_ame:.4f} "
               f"| {re_err*100:.2f}% | {cv['im_qbeta_MeV']:.6f} "
-              f"| {cv['modulus_MeV']:.4f} | {cv['arg_rad']:.5f} |")
+              f"| {cv['modulus_MeV']:.4f} | {cv['arg_rad']:.5f} "
+              f"| {cv['re_linear_MeV']:.4f} |")
     print(f"\n  Im channel: Q_β,pred = {im_pred:.6f} MeV vs CODATA "
           f"{qbeta_codata:.6f} MeV  (err {im_err*100:.3f}%)")
-    print("  Re channel: canonical binding defect E₀·(tr_free − tr_atom), "
-          "binding_canonical.")
+    print("  Re channel: log-trace binding E₀·ln(tr_free/tr_atom) (magnitude-"
+          "correct); re_linear = E₀·(tr_free−tr_atom) shown for comparison "
+          "(under-predicts 5–40×). arg 𝔙 now Re-dominated (physical).")
 
     w = WitnessBuilder(
         "complex-volume-unification",
@@ -117,6 +137,7 @@ def main() -> int:
     for name, Z, N, cv, b_ame, re_err in rows:
         w.add_data(f"V_{name}", {
             "re_binding_MeV": cv["re_binding_MeV"],
+            "re_linear_MeV": cv["re_linear_MeV"],
             "im_qbeta_MeV": cv["im_qbeta_MeV"],
             "modulus_MeV": cv["modulus_MeV"],
             "arg_rad": cv["arg_rad"],

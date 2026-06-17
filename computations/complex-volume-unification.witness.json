@@ -1,15 +1,15 @@
 {
   "engine": "complex_volume_witness.py",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-17T00:25:10.045752+00:00",
-  "commitSha": "72bd5664bdcfc02e2bcf229d75dc648b017900c7",
+  "computedAt": "2026-06-17T00:32:33.595856+00:00",
+  "commitSha": "70e86e48c38b1eb40bd254cfc3cf18b4e841e45f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 26,
   "computation": "complex-volume-unification",
   "scriptFile": "complex_volume_witness.py",
-  "scriptHash": "5fa6b58060ac",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9ae0a62f532c",
+  "scriptCommitSha": "d54a879585ebf23db93b4a2b920a3da439e80440",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,36 +35,40 @@
     "im_qbeta_rel_err": "0.0016775378381187862",
     "fibre_caveat": "Im(q_0)=0; complex structure is fibre-level (pre-tau)",
     "V_2H": {
-      "re_binding_MeV": 0.46562053307966456,
+      "re_binding_MeV": 3.8896910158702775,
+      "re_linear_MeV": 0.46562053307966456,
       "im_qbeta_MeV": 0.7836458038973217,
-      "modulus_MeV": 0.9115389332284555,
-      "arg_rad": 1.0346730102477977,
+      "modulus_MeV": 3.967845378150191,
+      "arg_rad": 0.19880608982176332,
       "B_AME_MeV": 2.224566,
-      "re_rel_err": 0.7906915177703585
+      "re_rel_err": 0.7485167964763814
     },
     "V_3H": {
-      "re_binding_MeV": 0.6289593275726819,
+      "re_binding_MeV": 9.067657718257513,
+      "re_linear_MeV": 0.6289593275726819,
       "im_qbeta_MeV": 0.7836458038973217,
-      "modulus_MeV": 1.0048336089654644,
-      "arg_rad": 0.8944679881765997,
+      "modulus_MeV": 9.101456874667974,
+      "arg_rad": 0.08620787930651225,
       "B_AME_MeV": 8.481821,
-      "re_rel_err": 0.9258461918056651
+      "re_rel_err": 0.06906968659884624
     },
     "V_3He": {
-      "re_binding_MeV": 0.6580817054490814,
+      "re_binding_MeV": 6.79688573083869,
+      "re_linear_MeV": 0.6580817054490814,
       "im_qbeta_MeV": 0.7836458038973217,
-      "modulus_MeV": 1.0233143588422138,
-      "arg_rad": 0.872271764843258,
+      "modulus_MeV": 6.841911749214869,
+      "arg_rad": 0.11478800155181801,
       "B_AME_MeV": 7.718058,
-      "re_rel_err": 0.9147348069360088
+      "re_rel_err": 0.11935285652962319
     },
     "V_4He": {
-      "re_binding_MeV": 0.7134609550767699,
+      "re_binding_MeV": 11.974852433319972,
+      "re_linear_MeV": 0.7134609550767699,
       "im_qbeta_MeV": 0.7836458038973217,
-      "modulus_MeV": 1.0597769955914953,
-      "arg_rad": 0.8322441879045329,
+      "modulus_MeV": 12.000466305346436,
+      "arg_rad": 0.06534777898827247,
       "B_AME_MeV": 28.295673,
-      "re_rel_err": 0.9747855103118852
+      "re_rel_err": 0.5767956311440278
     }
   }
 }
