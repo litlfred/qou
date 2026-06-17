@@ -58,15 +58,16 @@ the owning blocks' `.qa.json`.
 
 ## Run results (2026-06-17)
 
-Initial scan: **197** candidates across **178** files. After resolving the 5
-`proof-no-provable-axiom` (cited — see below): **192** candidates across **177**
-files; **39** exempt shadows (1754 `.lean` scanned).
+Initial scan: 197 candidates / 178 files. After resolving the 5
+`proof-no-provable-axiom` (cited — see below) and applying the Gemini PR-review
+fixes (multi-line `absurd` recall): **196** candidates across **181** files; **39**
+exempt shadows (1754 `.lean` scanned).
 
 | criterion | candidates |
 |---|---|
 | `proof-no-trivial-true` | 130 (73 `conclusion-True`, 48 `placeholder-true`, 9 `reflexive-tautology`) |
 | `proof-no-self-assuming-projection` | 22 (13 field-projection, 9 tuple-projection) |
-| `proof-no-false-premise` | 9 |
+| `proof-no-false-premise` | 13 |
 | `proof-no-decide-masking` (`native_decide`) | 31 |
 | `proof-no-provable-axiom` | **5 → 0 (resolved this PR)** |
 

@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-06-17T13:12:17.794Z",
+  "generated": "2026-06-17T13:15:35.601Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 1754,
-  "files_flagged": 177,
-  "total_defects": 192,
+  "files_flagged": 181,
+  "total_defects": 196,
   "total_exempt": 39,
   "categories": {
     "proof-no-trivial-true": 130,
-    "proof-no-false-premise": 9,
+    "proof-no-false-premise": 13,
     "proof-no-self-assuming-projection": 22,
     "proof-no-decide-masking": 31
   },
@@ -389,6 +389,16 @@
         "severity": "major"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean": [
+      {
+        "line": 499,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem HyperbolicVolumeIndependence.implies_single_irrational",
+        "decl": "HyperbolicVolumeIndependence.implies_single_irrational",
+        "severity": "major"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/ThreeSubstantiveMathlibFillers.lean": [
       {
         "line": 151,
@@ -530,6 +540,16 @@
         "pattern": "conclusion-True",
         "snippet": "theorem li2q_unique_from_ftc (q : ℝ) (hq : 1 < q) :",
         "decl": "li2q_unique_from_ftc",
+        "severity": "major"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/MassGapKeystone.lean": [
+      {
+        "line": 204,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem substrateGap_of_uniform_gapValue",
+        "decl": "substrateGap_of_uniform_gapValue",
         "severity": "major"
       }
     ],
@@ -757,6 +777,16 @@
         "severity": "major"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/CategoricalReeb/SixCanonicalKnotOperators.lean": [
+      {
+        "line": 71,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem boundaryPerm_bijective (β : CanonicalBraid) :",
+        "decl": "boundaryPerm_bijective",
+        "severity": "major"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean": [
       {
         "line": 153,
@@ -919,6 +949,16 @@
         "snippet": "theorem List.prod_eq_of_perm {α : Type*} [CommMonoid α]",
         "decl": "List.prod_eq_of_perm",
         "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/MathlibExt/PosSemidefTraceZero.lean": [
+      {
+        "line": 81,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero",
+        "decl": "Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero",
+        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Molecular/benzene_threading_emergence.lean": [
