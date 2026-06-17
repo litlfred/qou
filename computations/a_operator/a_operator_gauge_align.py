@@ -419,19 +419,20 @@ def gauge_aligned_A_combiner_general_rust(lam: tuple[int, ...], n_inner: int,
         p_in, p_bl = partitions_of(n_inner), partitions_of(n_block)
         eig_in = [mp.nstr(ev_in[p], sig) for p in p_in]
         eig_bl = [mp.nstr(ev_bl[p], sig) for p in p_bl]
+        # ONE all-blocks call per λ (builds the λ seminormal + both class-sums
+        # once and loops (μ,ν) internally) — the ~10× speedup over the former
+        # per-(μ,ν) call that rebuilt them each time.
+        blocks = pn.gauge_aligned_a_combiner_all_blocks_mpfr(
+            list(lam), n_inner, n_block,
+            [list(p) for p in p_in], eig_in,
+            [list(p) for p in p_bl], eig_bl, d_pn, q_str, dps)
         out = {}
-        for mu in p_in:
-            for nu in p_bl:
-                R = pn.gauge_aligned_a_combiner_mpfr(
-                    list(lam), n_inner, list(mu), list(nu),
-                    eig_in, mp.nstr(ev_in[mu], sig),
-                    eig_bl, mp.nstr(ev_bl[nu], sig), d_pn, q_str, dps)
-                if not R:
-                    continue
-                A = mp.matrix([[mp.mpf(x) for x in row] for row in R])
-                out[(mu, nu)] = {"A": A, "c": lr_coef(mu, nu, lam),
-                                 "d_mu": aoa.partition_dim(mu),
-                                 "d_nu": aoa.partition_dim(nu)}
+        for mu_l, nu_l, R in blocks:
+            mu, nu = tuple(mu_l), tuple(nu_l)
+            A = mp.matrix([[mp.mpf(x) for x in row] for row in R])
+            out[(mu, nu)] = {"A": A, "c": lr_coef(mu, nu, lam),
+                             "d_mu": aoa.partition_dim(mu),
+                             "d_nu": aoa.partition_dim(nu)}
     return out
 
 
