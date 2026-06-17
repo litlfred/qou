@@ -349,7 +349,7 @@ def compute_tau_M_nucleon_H3(
     else:
         raise ValueError(f"nucleon must be 'p' or 'n', got {nucleon!r}")
 
-    h_val = float(Q0 - 1 / Q0)
+    h_val = float(Q0 - 1 / Q0)  # noqa: I8 — sign-classification param for marshal_to_chi_lambda_braid (matched vs d within eps=1e-10), not a precision coefficient
     chain_with_gens = (
         [(c, d, 0) for c, d in g0]
         + [(c, d, 1) for c, d in g1]

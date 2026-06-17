@@ -67,7 +67,7 @@ def compute_tau_M_constit(Z: int, N: int, q_val: mp.mpf,
     that module for the (c, d) → (sign, gen) convention).
     """
     word = atom_braid_word_3A(Z, N, include_inter=False)
-    h_val = float(Q0 - 1 / Q0)  # h at the substrate point — defines word
+    h_val = float(Q0 - 1 / Q0)  # h at the substrate point — defines word  # noqa: I8 — sign-classification param for marshal_to_chi_lambda_braid (matched vs d within eps=1e-10), not a precision coefficient
     word_m = marshal_to_chi_lambda_braid(word, h_val)
     n = 3 * (Z + N)
     # Pass q as a string to avoid f64 quantization; use mpfr_50dps
