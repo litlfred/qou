@@ -962,61 +962,142 @@ theorem braneMonic_coords_unique [Nontrivial R] (qinv : R) (d : ℕ → R) :
     · subst heq; exact htop
     · exact ih hrest m (Nat.lt_succ_iff.mp hlt)
 
-/-- **Existence of cyclotomic coordinates (the monic basis spans).** Every
-    polynomial `p` of `natDegree ≤ n` is a combination
-    `∑_{m ≤ n} d_m · g_m` of the monic z-Habiro partial products, with the
-    coordinates `d_m` drawn from the SAME base ring `R`. Proved by descending on
-    the top degree: subtract `C (p.coeff n) · g_n` (which, `g_n` monic, cancels
-    the degree-`n` coefficient) to reduce to `natDegree ≤ n-1`, recurse.
+/-! ## The `Φ_q` identification — cyclotomic base change + per-level Euler truncation
 
-    Combined with `braneMonic_coords_unique`, the monic products `g_0, …, g_n`
-    are a BASIS of the polynomials of degree `≤ n`: the cyclotomic coordinate
-    map is a bijection `R[X]_{≤ n} ≅ R^{n+1}` that stays within `R`. Applied to
-    the depth-`n` truncation of `Φ_q` over the cyclotomic localisation (where
-    the Euler `eulerCoeff` live), this is the algebraic content of "the `c_n`
-    exist, uniquely, in the localised ring" — item 2(i)'s base-ring half. The
-    remaining (analytic) half is the identification with the analytic `Φ_q`. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"What survives the closure"
--- Ref: [manuscript] def:z-habiro-ring §"Cyclotomic projections"
-theorem braneMonic_coords_exist [Nontrivial R] (qinv : R) :
-    ∀ (n : ℕ) (p : R[X]), p.natDegree ≤ n →
-      ∃ d : ℕ → R, p = ∑ m ∈ Finset.range (n + 1), C (d m) * braneMonic qinv m := by
-  intro n
-  induction n with
+This section (consolidated from PR #2434) attacks item 2(i) via the genuine
+**monomial (Euler) truncation** of `Φ_q` and a triangular base change, giving the
+per-level `Φ_q`-identification. The generic base-change lemmas `cyclo_repr_exists`
+/ `cyclo_sum_coeff_top` subsume the brane-tower-specific spanning/uniqueness
+facts (they hold for any monic degree-graded family). -/
+
+/-- **Triangular base change (existence).** For a monic, degree-graded family
+    `g : ℕ → R[X]` (`(g m).degree = m`), every polynomial of degree `< n` is an
+    `R`-linear combination of `g 0, …, g (n-1)` (i.e. `{g m}_{m<n}` spans
+    `Polynomial.degreeLT R n`). Proved by induction, peeling the top coefficient
+    against the monic `g (n-1)`. The brane-tower family `braneMonic qinv` is such
+    a family, so this gives the existence of cyclotomic coordinates. -/
+-- Ref: [manuscript] def:z-habiro-ring §"Trunc_{<n}"
+theorem cyclo_repr_exists (g : ℕ → R[X]) (hmon : ∀ m, (g m).Monic)
+    (hdeg : ∀ m, (g m).degree = m) (n : ℕ) (f : R[X]) (hf : f.degree < n) :
+    ∃ c : ℕ → R, f = ∑ m ∈ Finset.range n, C (c m) * g m := by
+  induction n generalizing f with
   | zero =>
-    intro p hp
-    refine ⟨fun _ => p.coeff 0, ?_⟩
-    rw [Finset.sum_range_one, braneMonic_zero, mul_one]
-    exact eq_C_of_natDegree_le_zero hp
+    rw [Nat.cast_zero, Nat.WithBot.lt_zero_iff, degree_eq_bot] at hf
+    exact ⟨fun _ => 0, by simp [hf]⟩
   | succ n ih =>
-    intro p hp
-    have hgnd : (braneMonic qinv (n + 1)).natDegree = n + 1 :=
-      natDegree_eq_of_degree_eq_some (braneMonic_degree qinv (n + 1))
-    set c := p.coeff (n + 1) with hc
-    set q := p - C c * braneMonic qinv (n + 1) with hq
-    have hqdeg : q.natDegree ≤ n := by
-      rw [natDegree_le_iff_coeff_eq_zero]
-      intro k hk
-      rw [hq, coeff_sub, coeff_C_mul]
-      rcases Nat.lt_or_ge (n + 1) k with hgt | hle
-      · have h1 : p.coeff k = 0 := coeff_eq_zero_of_natDegree_lt (lt_of_le_of_lt hp hgt)
-        have h2 : (braneMonic qinv (n + 1)).coeff k = 0 :=
-          coeff_eq_zero_of_natDegree_lt (by rw [hgnd]; exact hgt)
+    set a := f.coeff n with ha
+    have hdegn : (g n).degree = (n : WithBot ℕ) := hdeg n
+    have hgnat : (g n).natDegree = n := natDegree_eq_of_degree_eq_some hdegn
+    have hcoeffn : (g n).coeff n = 1 := by
+      have := (hmon n).coeff_natDegree; rwa [hgnat] at this
+    have hlt : (f - C a * g n).degree < n := by
+      rw [degree_lt_iff_coeff_zero]
+      intro m hm
+      rw [coeff_sub, coeff_C_mul]
+      rcases eq_or_lt_of_le hm with hmn | hmn
+      · rw [← hmn, hcoeffn, mul_one, ha, sub_self]
+      · have h1 : f.coeff m = 0 := coeff_eq_zero_of_degree_lt
+          (lt_of_lt_of_le hf (by exact_mod_cast Nat.succ_le_of_lt hmn))
+        have h2 : (g n).coeff m = 0 := coeff_eq_zero_of_degree_lt
+          (by rw [hdegn]; exact_mod_cast hmn)
         rw [h1, h2, mul_zero, sub_zero]
-      · have hke : k = n + 1 := le_antisymm hle hk
-        subst hke
-        rw [braneMonic_coeff_self qinv (n + 1), mul_one, ← hc, sub_self]
-    obtain ⟨d', hd'⟩ := ih q hqdeg
-    refine ⟨Function.update d' (n + 1) c, ?_⟩
+    obtain ⟨c, hc⟩ := ih (f - C a * g n) hlt
+    refine ⟨Function.update c n a, ?_⟩
     rw [Finset.sum_range_succ]
-    have hlow :
-        (∑ m ∈ Finset.range (n + 1),
-            C (Function.update d' (n + 1) c m) * braneMonic qinv m)
-          = ∑ m ∈ Finset.range (n + 1), C (d' m) * braneMonic qinv m := by
-      refine Finset.sum_congr rfl (fun m hm => ?_)
-      have hmne : m ≠ n + 1 := by have := Finset.mem_range.mp hm; omega
-      rw [Function.update_of_ne hmne]
-    rw [hlow, Function.update_self, ← hd', hq]
-    ring
+    have hsum : ∑ m ∈ Finset.range n, C (Function.update c n a m) * g m
+        = ∑ m ∈ Finset.range n, C (c m) * g m := by
+      apply Finset.sum_congr rfl
+      intro m hmem
+      rw [Function.update_of_ne (Finset.mem_range.mp hmem).ne]
+    rw [hsum, Function.update_self, ← hc]; ring
+
+/-- A cyclotomic-basis combination has degree `< n`: each summand `C (c m) * g m`
+    has degree `≤ m < n`. -/
+theorem cyclo_sum_degree_lt (g : ℕ → R[X]) (hdeg : ∀ m, (g m).degree ≤ m)
+    (n : ℕ) (c : ℕ → R) :
+    (∑ m ∈ Finset.range n, C (c m) * g m).degree < n := by
+  induction n with
+  | zero => simp [degree_zero]
+  | succ n ih =>
+    rw [Finset.sum_range_succ]
+    apply lt_of_le_of_lt (degree_add_le _ _)
+    rw [max_lt_iff]
+    refine ⟨lt_trans ih (by exact_mod_cast Nat.lt_succ_self n), ?_⟩
+    calc (C (c n) * g n).degree ≤ (C (c n)).degree + (g n).degree := degree_mul_le _ _
+      _ ≤ 0 + n := add_le_add degree_C_le (hdeg n)
+      _ = n := by simp
+      _ < (n + 1 : ℕ) := by exact_mod_cast Nat.lt_succ_self n
+
+/-- **Top-coefficient extraction (uniqueness core).** For a monic degree-graded
+    family `g`, the coefficient of `∑_{m ≤ n} C (c m) g m` at degree `n` is
+    exactly `c n` — the lower terms have degree `< n` and `g n` is monic. Hence
+    the cyclotomic coefficients are uniquely recoverable (the base change is
+    triangular with unit diagonal, hence injective). -/
+theorem cyclo_sum_coeff_top (g : ℕ → R[X]) (hmon : ∀ m, (g m).Monic)
+    (hdeg : ∀ m, (g m).degree = m) (n : ℕ) (c : ℕ → R) :
+    (∑ m ∈ Finset.range (n + 1), C (c m) * g m).coeff n = c n := by
+  rw [Finset.sum_range_succ, coeff_add]
+  have hlow : (∑ m ∈ Finset.range n, C (c m) * g m).coeff n = 0 :=
+    coeff_eq_zero_of_degree_lt (cyclo_sum_degree_lt g (fun m => le_of_eq (hdeg m)) n c)
+  have hgnat : (g n).natDegree = n := natDegree_eq_of_degree_eq_some (hdeg n)
+  have hcoeffn : (g n).coeff n = 1 := by
+    have := (hmon n).coeff_natDegree; rwa [hgnat] at this
+  rw [hlow, coeff_C_mul, hcoeffn, mul_one, zero_add]
+
+/-- The **Euler truncation tower** `Φ̃_q^{(n)} := ∑_{m ≤ n} b_m z^m`, the genuine
+    degree-`≤ n` monomial truncation of `Φ_q`, with `b_m = eulerCoeff` the Euler
+    coefficients. This is `conj:brane-tower-z-habiro`'s `Trunc_{<n}[Φ_q]` in the
+    monomial basis, over generic `R`. -/
+noncomputable def eulerTrunc (qinv : R) (n : ℕ) : R[X] :=
+  ∑ m ∈ Finset.range (n + 1), C (eulerCoeff qinv m) * X ^ m
+
+/-- `eulerTrunc qinv n` has degree `< n + 1`. -/
+theorem eulerTrunc_degree_lt (qinv : R) (n : ℕ) :
+    (eulerTrunc qinv n).degree < (n + 1 : ℕ) := by
+  refine cyclo_sum_degree_lt (fun m => X ^ m) (fun m => ?_) (n + 1) (eulerCoeff qinv)
+  exact (degree_X_pow_le m).trans (by exact_mod_cast le_refl m)
+
+/-- **Per-level `Φ_q` identification (sorry-free).** Under `IsUnit qinv` and
+    `Nontrivial R`, the Euler truncation `Φ̃_q^{(n)} = ∑_{m ≤ n} b_m z^m` equals a
+    brane-tower cyclotomic partial sum `∑_{m ≤ n} C(c_m) · P_m`. Hence the genuine
+    `Trunc_{<(n+1)}[Φ_q]` is a level of a brane-tower limit. The `c` here depends
+    on `n` (per-level base change); a level-INDEPENDENT `c` is supplied by the
+    q-difference recurrence (`eulerCoeff_unique` + `zHabiroLimit_eq_euler`)
+    conditional on the functional equation. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
+-- Ref: [manuscript] computations/z-habiro-increment-probe.witness.json
+-- Ref: [habiro2004cyclotomic]
+theorem eulerTrunc_eq_cyclotomic [Nontrivial R] (qinv : R) (hq : IsUnit qinv)
+    (n : ℕ) :
+    ∃ c : ℕ → R,
+      eulerTrunc qinv n
+        = ∑ m ∈ Finset.range (n + 1), C (c m) * branePoly qinv m := by
+  obtain ⟨d, hd⟩ := cyclo_repr_exists (braneMonic qinv) (braneMonic_monic qinv)
+    (fun m => braneMonic_degree qinv m) (n + 1) (eulerTrunc qinv n)
+    (eulerTrunc_degree_lt qinv n)
+  refine ⟨fun m => d m * Ring.inverse (braneUnit qinv m), ?_⟩
+  rw [hd]
+  apply Finset.sum_congr rfl
+  intro m _
+  simp only []
+  rw [branePoly_eq_unit_mul_braneMonic qinv hq m]
+  have hu : Ring.inverse (braneUnit qinv m) * braneUnit qinv m = 1 :=
+    Ring.inverse_mul_cancel _ (braneUnit_isUnit qinv hq m)
+  rw [← mul_assoc, ← C_mul, mul_assoc (d m), hu, mul_one]
+
+/-- **The brane-tower limit reproduces the Euler truncation tower of `Φ_q`
+    (sorry-free).** For each `n` there is a cyclotomic family `c` with the `n`-th
+    coordinate of `zHabiroLimit qinv c` equal to `π_n(Φ̃_q^{(n)})` — the abstract
+    inverse-limit element literally carries the quantum dilogarithm's truncation
+    data, level by level. The level-independent coherent `c` is the residual
+    closed (conditionally) by `zHabiroLimit_eq_euler`. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
+theorem zHabiroLimit_coord_eq_eulerTrunc [Nontrivial R] (qinv : R) (hq : IsUnit qinv)
+    (n : ℕ) :
+    ∃ c : ℕ → R,
+      (zHabiroLimit qinv c : ∀ n, R[X] ⧸ braneIdeal qinv n) n
+        = (Ideal.Quotient.mk (braneIdeal qinv n)) (eulerTrunc qinv n) := by
+  obtain ⟨c, hc⟩ := eulerTrunc_eq_cyclotomic qinv hq n
+  exact ⟨c, by rw [zHabiroLimit_coe_apply, hc]⟩
 
 end QOU.MassEndomorphism.ZHabiroCauchy
