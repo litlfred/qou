@@ -123,6 +123,44 @@ def tr_m_atom(atom: str, *, dps: int = 50):
     return tr_m_atom_zn(Z, N, dps=dps)
 
 
+def tr_m_atom_multi_q(Z: int, N: int, qs, *, m_pp: int = 1, m_pn: int = 1,
+                      m_nn: int = 1, dps: int = 50):
+    """tr_M(atom), tr_M(free) at EACH q in `qs` — the multi-q entry point for
+    the N-grid particle-dynamics simulators (owner directive 2026-06-17).
+
+    Returns `{q: (tr_M_atom, tr_M_free)}`. The q-parameterised core
+    (`atom_braid_word_3A(q=…)`) makes every `q` valid; the per-q transfer
+    (χ^λ at q + Jones–Markov y_λ at q) is inherent and is looped here. The
+    structural braid pattern is q-independent, so this is the correct place
+    to add cross-q caching (partition enumeration / fine-Bratteli structure)
+    if a simulator sweep needs it — the numerics that vary with q are only
+    `h`, `δ`, the σ-eigenvalues `{q,−q⁻¹}`, and `y_λ`."""
+    out = {}
+    for qj in qs:
+        ta, tf, _, _ = tr_m_atom_zn(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+                                    q=qj, dps=dps)
+        out[qj] = (ta, tf)
+    return out
+
+
+def tr_m_bar_norm(Z: int, N: int, *, include_free: bool = True, dps: int = 50):
+    """Bar-norm mass-modulus ‖tr_M‖ = √(tr_M(q₀)·tr_M(q₀⁻¹)) — the bar-even,
+    Chern–Simons-cancelled (volume-extracting) modulus
+    (`conj:binding-qbeta-complex-volume`, `rem:mass-modulus-em-phase-color-grading`).
+
+    Computed through the canonical q-parameterised path (supersedes the
+    `atom_word_q_retarget` bolt-on of PR #2397). Returns
+    `(‖tr_a‖, ‖tr_f‖)` (or just `‖tr_a‖` if `include_free=False`)."""
+    q0 = mp.mpf(str(Q0)); qi = mp.mpf(1) / q0
+    ta0, tf0, _, _ = tr_m_atom_zn(Z, N, q=q0, dps=dps)
+    tai, tfi, _, _ = tr_m_atom_zn(Z, N, q=qi, dps=dps)
+    bar_a = mp.sqrt(ta0 * tai) if ta0 * tai > 0 else None
+    if not include_free:
+        return bar_a
+    bar_f = mp.sqrt(tf0 * tfi) if tf0 * tfi > 0 else None
+    return bar_a, bar_f
+
+
 def main() -> int:
     atoms = sys.argv[1:] or ["D", "T", "3He", "4He", "6Li", "7Li"]
     mp.mp.dps = 50

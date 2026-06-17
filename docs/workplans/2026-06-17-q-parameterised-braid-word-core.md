@@ -70,16 +70,21 @@ This is what an N-grid simulator sweeping `q` over a lattice calls.
 
 ## Staging
 
-1. **Stage 1 (this PR start):** template layer + `nucleon_gen_chains(q=None)`
-   parameterised, additive; `_PROTON_G0`/`_NEUTRON_G0` (precomputed at q₀)
-   byte-identical. Regression test added.
-2. **Stage 2:** thread `q` through `atom_gen_chains` →
-   `atom_braid_word_3A` → `tr_m_atom_zn`; verify `tr_M(q₀)` unchanged and
-   `tr_M(q₀⁻¹)` now computes (matches the #2397 retarget values).
-3. **Stage 3:** `tr_M_multi_q` API + supersede the #2397 retarget bolt-on
-   (re-point the bar-norm witness at the core path; close #2397 as superseded).
+1. **Stage 1 — DONE** (`ed4569b7`): `nucleon_gen_chains(q=None)` parameterised,
+   additive; `q=None` byte-identical to `_PROTON_G0`/`_NEUTRON_G0`. Regression
+   test `test_nucleon_gen_chains_q_param.py`.
+2. **Stage 2 — DONE** (`b0861118`): threaded `q` through `atom_braid_word_3A`
+   → `tr_m_atom_zn`. Verified: word `q=None` vs `q=q₀` max|Δd|=1.4e-17;
+   `tr_M^atom(D)` at q₀ = 0.38835728 (canonical #2080, UNCHANGED);
+   `tr_M^atom(D)` at q₀⁻¹ = 0.0077684065 — now computes, matches #2397.
+3. **Stage 3 — DONE**: `tr_m_atom_multi_q(Z,N,qs)` (the simulator N-grid entry
+   point) + `tr_m_bar_norm` (‖tr_M‖ via the canonical path). Bar-norm
+   ‖tr_a‖(D)=0.0549265 matches #2397. Regression `test_tr_m_atom_q_param.py`.
+   **#2397 is now superseded** — its retarget bolt-on is no longer needed;
+   close it (or rebase it to a thin re-export) once this lands.
 4. **Stage 4 (follow-up):** opportunistic consumer migration to the template
-   word where it buys multi-q; not required (q=None keeps them working).
+   word where it buys multi-q; not required (q=None keeps the ~124 consumers
+   working unchanged).
 
 ## Out of scope / parked
 
