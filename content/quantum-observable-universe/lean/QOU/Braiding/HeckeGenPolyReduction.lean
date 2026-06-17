@@ -1,4 +1,5 @@
 import QOU.Hecke.Algebra
+import Mathlib.Tactic.Module
 
 /-!
 # QOU.Braiding.HeckeGenPolyReduction — single-generator Hecke polynomial
