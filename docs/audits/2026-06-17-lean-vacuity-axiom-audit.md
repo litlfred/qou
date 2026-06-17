@@ -94,7 +94,7 @@ conditional-class-degenerate, 5 LEGIT (scanner false positives)**.
 |---|---|---|---|
 | `braids-and-knots/r-matrix-braiding-structure.lean:75` | `r_matrix_braiding_structure` | VACUOUS-CIRCULAR | 1 — instantiate R, prove YBE (or cite Drinfeld) |
 | `braids-and-knots/r-matrix-braiding-structure.lean:90` | `braid_rep_from_R_check` | VACUOUS-CIRCULAR | 1 — derive braid reln from YBE |
-| `lean/QOU/MassDerivation.lean:73` | `topological_mass_formula` | VACUOUS-CIRCULAR | 1 — define `mass := vol/ℏ²`, don't assert |
+| `lean/QOU/MassDerivation.lean:73` | `topological_mass_formula` | **FALSE-POSITIVE** | none — `mass_eq` is *derived* upstream (`ArchimedeanMassFormula.mass_eq_vol_div_h_q_sq` is a `theorem` from the proved decomposition); this is a terminal interface accessor |
 | `fluid-dynamics/acoustic-horizon-conditions.lean:98` | `acoustic_horizon_regularity` | COND-CLASS-DEGEN | 2 — derive from inputs |
 | `fluid-dynamics/discrete-vortex-spectrum.lean:91` | `discrete_vortex_spectrum` | COND-CLASS-DEGEN | 2 |
 | `lean/QOU/Archimedean/AxialCoupling.lean:166` | `sym_trace_ordering_independent` | COND-CLASS-DEGEN | 2 |
@@ -115,14 +115,39 @@ conditional-class-degenerate, 5 LEGIT (scanner false positives)**.
 | `mass-theory/confinement-nf-partial-proof.lean:109` | `strong_duality` | **LEGIT-COMPOSITION** | none (cited external LP fact, consumed downstream) |
 | `mass-theory/he4-two-row-dominance.lean:102` | `dominant_in_two_row_stratum` | **LEGIT-COMPOSITION** | none (constructor-composition of 2 sub-properties) |
 
-**Recipe-1/2 (genuine proof / restructure)** items are real defects but require a
-Lean build to verify the rewrite (the Mathlib cache is not restored in this
-environment), so they are **deferred to a follow-up drain**, not rushed in blind.
-**Recipe-4** items (the 3 `SubstrateEWHypotheses` empirical near-matches +
-`deuterium_derived_binding`) are **claim changes that touch mass/binding
-derivations** — they require owner sign-off AND the mass-binding appendix sync,
-and are NOT auto-committed. The **5 LEGIT** rows are scanner false positives:
-their sidecars get an agent `pass` entry (the script→agent precision layer).
+### Drain assessment (Lean cache restored 2026-06-17)
+
+With the `lake-cache/qou-v4-24-0` oleans restored (`lean`-direct verification
+available; 2951 mathlib oleans), per-decl tracing shows the flagged set is **not
+a set of quick recipe-1 wins** — it splits into:
+
+- **False positives (trace upstream before "fixing"):** `topological_mass_formula`
+  — `mass_eq` is a `theorem` *derived* from the proved decomposition in
+  `ArchimedeanMassFormula`; the flagged decl is a terminal interface accessor, not
+  a self-assuming projection. (Lesson: the discriminator must follow class/struct
+  fields to their upstream definition; a field set from a *derived theorem* is
+  legit.)
+- **Atomic cited results encoded as conditional-class projections:** `r_matrix`
+  ×2 (YBE / braid relation over an *opaque* `V3`/`comp`, no instance). YBE for
+  U_q(su2) is a true cited theorem (Drinfeld 1985, Kassel Ch. VIII) but **atomic**
+  — there are no sub-hypotheses to derive from, so a non-degenerate §3b-cond
+  restructure means *formalizing YBE* (research-grade), and the decl is the
+  block's `lean.ref` target (cannot be deleted). Honest options: formalize, or
+  accept as a cited conditional restatement.
+- **Atomic empirical conjectures, already honest scaffolds:** the 3
+  `SubstrateEWHypotheses` (and `deuterium_derived_binding`) are **library-only
+  `.lean` with no owning content block**, already documented OPEN / §3b-cond with
+  no instance + `-- Ref:`. **Recipe-4 (demote block kind) is not applicable** (no
+  block to demote); the only change is research-grade derivation or unilaterally
+  deleting the author's scaffold theorems.
+- **5 LEGIT** rows are scanner false positives (no change).
+
+**Conclusion:** the genuine defects are research-grade formalizations or
+already-honest atomic scaffolds — not sloppy circular proofs. The honest path is
+to **merge the audit infrastructure (#2428) and pursue the drain as a scoped,
+build-backed follow-up**, decl-by-decl, rather than rushing unverifiable rewrites
+or deleting deliberate §3b-cond scaffolds. The one committed Lean change
+(`LinearJSJVolume.lean` axiom citations) verified `lean`-direct **exit 0**.
 
 Scanner recall note: the sub-agent found `knot_factor_spectral_derivation:70`
 (sibling of the flagged `plancherelWeight_sum_eq_one:61`) is the same pattern but
