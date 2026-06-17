@@ -11,6 +11,14 @@
 # encode lives in
 # `.claude/skills/local/lean-environment-setup.md` and
 # `docs/coordination/2026-06-08-lean-cache-architecture.md`.
+#
+# PRIMARY Lean path: the `paper-assistant` (folio-assistant) MCP server
+# in `.mcp.json` exposes `lean_setup` / `lean_build` (Lean + Mathlib
+# baked into ghcr.io/litlfred/qou/paper-assistant). Prefer those when the
+# MCP server is connected. THESE scripts are the non-MCP fallback for
+# sandboxes where the paper-assistant / lean-lsp MCP is unavailable
+# (e.g. a fresh web-session container): restore the olean cache from the
+# `lake-cache/*` orphan branch and verify with `lean`-direct.
 
 # ── REPO_ROOT (prefer git; fall back to this file's location) ─────────
 if command -v git >/dev/null 2>&1 \
