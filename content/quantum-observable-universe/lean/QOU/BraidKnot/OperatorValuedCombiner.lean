@@ -149,10 +149,8 @@ theorem combinerValue_prod_form
     have h : W.combinerValue (k + 2 + 1)
         = W.lrWeight (k + 2) * W.combinerValue (k + 2) :=
       W.branching_recursion (k + 2) (by omega)
-    have eidx : k + 1 + 2 = k + 2 + 1 := by omega
-    rw [eidx, h, ih, Finset.prod_range_succ]
-    have hk : 2 + k = k + 2 := by omega
-    rw [hk]
+    rw [show k + 1 + 2 = k + 2 + 1 by omega, h, ih,
+        Finset.prod_range_succ, add_comm 2 k]
     ring
 
 end WenzlAOperator
