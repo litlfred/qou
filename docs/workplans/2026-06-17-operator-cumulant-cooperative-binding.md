@@ -5,6 +5,19 @@
 **principled** operator-magnitude derivation. **Discipline:** formalize-first;
 no fit, no production rewire.
 
+> **Status (2026-06-17): route gated, then closed — recorded as a conceptual
+> result, not an open plan.** The operator-cumulant idea below is sound (the
+> cooperativity must live in the connected operator non-factorization, invisible
+> to the scalar trace per #2405). But realizing `Δ_coop` for a bound state first
+> requires selecting `𝓑₃` as the confinement operator, and
+> [`2026-06-17-delta-lambda-two-remaining-directions-closed.md`](../audits/2026-06-17-delta-lambda-two-remaining-directions-closed.md)
+> (merged #2433) shows **no continuous variational principle selects the Borromean
+> signature** (signature-cos ≈ 0 for every candidate). So the build plan below is
+> **not actionable** until the genuine dense Wedderburn-projector SDP is
+> implemented (the one open compute lever that, if it selects the Borromean
+> signature, unlocks this route). Do **not** re-open the unchecked boxes as a
+> quick task — the lever is bounded, not pending.
+
 ## The conceptual advance — *where* the cooperativity must live
 
 The whole arc (LP → quadratic → Bring → chirality → scalar-magnitude variants)
