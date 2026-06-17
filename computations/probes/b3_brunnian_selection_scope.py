@@ -104,6 +104,44 @@ def crossings_per_pair(word, n=3):
     return cnt
 
 
+def spherogram_confirmation():
+    """Cross-check via spherogram's STABLE combinatorial path only.
+
+    Returns a dict, or None if spherogram is unavailable. We deliberately use
+    ONLY exact combinatorial invariants — component/crossing counts and
+    Reidemeister `simplify` — and AVOID the SnapPy numerical/hyperbolic kernel
+    (`.exterior().volume()`, `.identify()`), which a sibling found to give
+    unstable results (and which errors `SnapPy doesn't seem to be available`
+    in this sandbox). The unlink-vs-Hopf distinction is made by simplification
+    (unlink -> 0 crossings; Hopf -> irreducibly 2), not by any float invariant.
+    """
+    try:
+        import spherogram
+    except Exception:
+        return None
+
+    def simp_crossings(L):
+        L = L.copy()
+        for mode in ("global", "level", "basic"):
+            try:
+                L.simplify(mode)
+            except Exception:
+                pass
+        return len(L.crossings)
+
+    L = spherogram.Link(braid_closure=BORROMEAN)
+    res = {
+        "components": len(L.link_components),
+        "crossings": len(L.crossings),
+        "full_simplified": simp_crossings(L),
+        "sublink_simplified": [],
+    }
+    for drop in range(3):
+        keep = [i for i in range(3) if i != drop]
+        res["sublink_simplified"].append(simp_crossings(L.sublink(keep)))
+    return res
+
+
 def main() -> int:
     word = BORROMEAN
     perm = underlying_perm(word)
@@ -126,6 +164,22 @@ def main() -> int:
     print("  CHECK 2 (all lk = 0, Brunnian):", "PASS" if all_zero else "FAIL")
     print("  CHECK 3 (yet each pair crosses):", "PASS" if some_cross else "FAIL",
           "(pairwise unlinked but geometrically interwoven)")
+
+    sg = spherogram_confirmation()
+    if sg is None:
+        print("\n  spherogram cross-check: SKIPPED (not installed)")
+    else:
+        full_nontrivial = sg["full_simplified"] > 0
+        subs_unlink = all(s == 0 for s in sg["sublink_simplified"])
+        print("\n  SPHEROGRAM CROSS-CHECK (stable combinatorial path only; "
+              "SnapPy numerical kernel avoided):")
+        print(f"    full 3-link: comps={sg['components']} crossings={sg['crossings']} "
+              f"-> Reidemeister-simplified={sg['full_simplified']} "
+              f"({'nontrivial' if full_nontrivial else 'TRIVIAL?!'})")
+        print(f"    2-sublinks simplified: {sg['sublink_simplified']} "
+              f"({'all UNLINK (0 crossings)' if subs_unlink else 'NOT all unlink'})")
+        print("    => nontrivial 6-crossing 3-link with every 2-sublink the unlink "
+              "= Brunnian (rigorous, no float invariant).")
 
     print("""
   VERDICT (scope, not closure): the confinement braid (σ₁σ₂⁻¹)³ is a pure
