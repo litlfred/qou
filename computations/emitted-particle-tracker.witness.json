@@ -1,15 +1,15 @@
 {
   "engine": "emitted_particle_tracker.py",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-17T02:28:58.849687+00:00",
-  "commitSha": "a64f1bf908fcbf2eb4c3c25262bbe61a1dd988d8",
+  "computedAt": "2026-06-17T02:42:14.462163+00:00",
+  "commitSha": "c6b1455e40979190b08851bd5e665716558fcd88",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 20,
   "computation": "emitted-particle-tracker",
   "scriptFile": "emitted_particle_tracker.py",
-  "scriptHash": "beb2f859f323",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "44c4b7caccdc",
+  "scriptCommitSha": "725c0d93bc16287570ded18934f7d41ff53a8071",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,6 +39,7 @@
       "tr_qinv": 0.06824145930949503,
       "retained_MeV": 2.3725044642029527,
       "emitted_MeV": 2.0868470238871284,
+      "emitted_multilink_MeV": 0.0,
       "delta_emitted_MeV": 2.0868470238871284
     },
     "step_D": {
@@ -51,6 +52,7 @@
       "tr_qinv": 0.007768406519664677,
       "retained_MeV": 0.8290872564760174,
       "emitted_MeV": 0.7965688557238311,
+      "emitted_multilink_MeV": 1.235020124393203,
       "delta_emitted_MeV": -1.2902781681632973
     },
     "step_3He": {
@@ -63,6 +65,7 @@
       "tr_qinv": 0.00026470338915575924,
       "retained_MeV": 0.43292090140030337,
       "emitted_MeV": 0.43181285808830117,
+      "emitted_multilink_MeV": 1.7592944602964535,
       "delta_emitted_MeV": -0.36475599763552996
     },
     "step_4He": {
@@ -75,6 +78,7 @@
       "tr_qinv": 3.5344088359558784e-05,
       "retained_MeV": 0.11593866619723676,
       "emitted_MeV": 0.11579071652099525,
+      "emitted_multilink_MeV": 1.9084623973470445,
       "delta_emitted_MeV": -0.3160221415673059
     },
     "step_6Li": {
@@ -87,6 +91,7 @@
       "tr_qinv": 1.6080576869993932e-07,
       "retained_MeV": 0.016516281964380704,
       "emitted_MeV": 0.01651560883451596,
+      "emitted_multilink_MeV": 1.9747263927502836,
       "delta_emitted_MeV": -0.09927510768647929
     },
     "step_7Li": {
@@ -99,6 +104,7 @@
       "tr_qinv": 2.147132802411181e-08,
       "retained_MeV": 0.0044259501321395585,
       "emitted_MeV": 0.004425860253572107,
+      "emitted_multilink_MeV": 1.833958331161393,
       "delta_emitted_MeV": -0.012089748580943855
     }
   }
