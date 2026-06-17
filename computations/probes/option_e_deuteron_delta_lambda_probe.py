@@ -49,9 +49,11 @@ def main() -> int:
     mp.dps = 50
 
     repo_root = Path(__file__).resolve().parent.parent.parent
+    # Witness lives under computations/ (moved out of folio-assistant/
+    # in the 2026-06-02 cluster reorg; the old folio-assistant path is
+    # stale).
     chi_path = (
         repo_root
-        / "folio-assistant"
         / "computations"
         / "chi-deuteron-h6-at-q0-50dps.witness.json"
     )

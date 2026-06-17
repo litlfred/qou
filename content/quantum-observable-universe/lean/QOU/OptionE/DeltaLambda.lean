@@ -27,8 +27,15 @@ where:
   position in the crystal
 
 The substantive content of Option E is the **specific choice** of
-`weight_k` and `value` such that the resulting Δ_λ closes the AME
-binding energies.
+`weight_k` and `value` for which the resulting Δ_λ is *intended* to
+close the AME binding energies. Closure is an **open target**, not an
+achieved result: the per-λ weighted sum `B_pred` currently undershoots
+the deuteron by ≈ −82.9 % under the canonical Option E weights (see the
+2026-06-16 Option-E deuteron correction). This file states the
+framework signature only; it makes no claim that any concrete weight
+function closes the AME data. `DeuteronVerification.lean` carries the
+closure predicate `closes_within_10pct` as a *hypothesis*, with no
+proved closure instance.
 
 ## Path-D mass prediction
 
