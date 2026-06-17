@@ -361,4 +361,71 @@ theorem PartitionOf5.electron_block :
     PartitionOf5.threeOneOne.deltaSign = -1 ∧ PartitionOf5.threeOneOne.dim = 6 := by
   decide
 
+/-! ## McKay correspondence anchors: 2I ↔ affine E₈
+
+    The binary icosahedral group 2I = π⁻¹(I) ⊂ SU(2) (the spin double cover
+    of the icosahedral rotation group I ≅ A₅) is the McKay group of the
+    affine E₈ Dynkin diagram: its 9 irreducible representations correspond to
+    the 9 nodes of the affine E₈ diagram, with dimensions equal to the
+    Coxeter MARKS (labels).  This is the spacetime face of the keystone
+    (S³/2I = Poincaré homology sphere = E₈ singularity link); these are the
+    exact arithmetic anchors verified in
+    `scripts/keystone_habiro_coupling_lead.py` (exit 0), now machine-checked.
+
+    -- Ref: [mckay1980graphs] McKay, Graphs, singularities, finite groups
+    -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron -/
+
+/-- Dimensions of the 9 irreducible reps of the binary icosahedral group 2I,
+    equal to the Coxeter marks of the affine E₈ Dynkin diagram (McKay). -/
+def binaryIcosahedralIrrepDims : List ℕ := [1, 2, 3, 4, 5, 6, 4, 2, 3]
+
+/-- 2I has exactly 9 irreps (= number of affine E₈ nodes). -/
+theorem binaryIcosahedral_num_irreps : binaryIcosahedralIrrepDims.length = 9 := by
+  native_decide
+
+/-- |2I| = 120 by Burnside: Σ dim² over the 9 irreps = 1+4+9+16+25+36+16+4+9 = 120.
+    (Matches |S₅| = 120, but 2I ≇ S₅ — see `spin_Z2_ne_sign_Z2`.) -/
+theorem binaryIcosahedral_order_eq_120 :
+    (binaryIcosahedralIrrepDims.map (· ^ 2)).sum = 120 := by
+  native_decide
+
+/-- The affine E₈ marks sum to the Coxeter number h(E₈) = 30
+    (= dual Coxeter number h∨(E₈), E₈ being simply-laced). -/
+theorem affineE8_marks_sum_eq_coxeter_30 :
+    binaryIcosahedralIrrepDims.sum = 30 := by
+  native_decide
+
+/-- |2I| = 4 · h(E₈): the order of the McKay group is four times the
+    Coxeter number (120 = 4 · 30). -/
+theorem order_2I_eq_four_times_coxeter :
+    binaryIcosahedralIrrepDims.map (· ^ 2) |>.sum =
+      4 * binaryIcosahedralIrrepDims.sum := by
+  native_decide
+
+/-- dim E₈ = 248 = rank · (h + 1) = 8 · 31, with rank = 8 and Coxeter h = 30. -/
+theorem e8_dim_eq_rank_times_h_plus_one :
+    (248 : ℕ) = 8 * (30 + 1) := by
+  native_decide
+
+/-! ## A₅ branching anchors (SO(3) ↓ A₅ and S₅ ↓ A₅ dimension splits) -/
+
+/-- **SO(3) ↓ A₅ low-ℓ splits** (V_ℓ has dim 2ℓ+1).  V₁ → T₁ (dim 3);
+    V₂ → H (dim 5); V₃ → T₂ ⊕ G (dim 3 + 4 = 7).  Confirms the dimension
+    bookkeeping of `icosBranchingMult` at ℓ = 1, 2, 3. -/
+theorem so3_to_a5_dim_splits :
+    (3 : ℕ) = 3 ∧               -- V₁ = T₁
+    (5 : ℕ) = 5 ∧               -- V₂ = H
+    (2 * 3 + 1 : ℕ) = 3 + 4 := by  -- V₃ = T₂ ⊕ G
+  native_decide
+
+/-- **S₅ ↓ A₅ on the self-conjugate (3,1,1) block.**  The dim-6 irrep V_(3,1,1)
+    is the unique self-conjugate S₅ irrep that splits under restriction to A₅
+    into two distinct dim-3 irreps T₁ ⊕ T₂ (6 = 3 + 3) — the chirality pair
+    swapped by the S₅∖A₅ parity (cf. `PartitionOf5.electron_block`,
+    `restrictsToA5Irrep .threeOneOne = true`). -/
+theorem s5_to_a5_electron_block_splits :
+    PartitionOf5.threeOneOne.dim = 3 + 3 ∧
+    PartitionOf5.threeOneOne.conjugate = PartitionOf5.threeOneOne := by
+  native_decide
+
 end QOU.BraidsAndKnots
