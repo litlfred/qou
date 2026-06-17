@@ -1,15 +1,15 @@
 {
   "engine": "complex_volume_witness.py",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-17T00:32:33.595856+00:00",
-  "commitSha": "70e86e48c38b1eb40bd254cfc3cf18b4e841e45f",
+  "computedAt": "2026-06-17T00:45:59.533931+00:00",
+  "commitSha": "0bb6006d7ec8312772df21df715277801072f743",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 25,
   "computation": "complex-volume-unification",
   "scriptFile": "complex_volume_witness.py",
-  "scriptHash": "9ae0a62f532c",
-  "scriptCommitSha": "d54a879585ebf23db93b4a2b920a3da439e80440",
+  "scriptHash": "a828be2f16c1",
+  "scriptCommitSha": "d77957e70002dd8708cc18e7bf3987ee7371a703",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,12 @@
       "modulus_MeV": 3.967845378150191,
       "arg_rad": 0.19880608982176332,
       "B_AME_MeV": 2.224566,
-      "re_rel_err": 0.7485167964763814
+      "re_rel_err": 0.7485167964763814,
+      "tr_M_atom_q0": 0.38835727614609034,
+      "tr_M_atom_q0_inv": null,
+      "mass_mod_usual": 0.38835727614609034,
+      "mass_mod_bar": null,
+      "bar_vs_usual_ratio": null
     },
     "V_3H": {
       "re_binding_MeV": 9.067657718257513,
@@ -50,7 +55,12 @@
       "modulus_MeV": 9.101456874667974,
       "arg_rad": 0.08620787930651225,
       "B_AME_MeV": 8.481821,
-      "re_rel_err": 0.06906968659884624
+      "re_rel_err": 0.06906968659884624,
+      "tr_M_atom_q0": 0.10407109805763905,
+      "tr_M_atom_q0_inv": null,
+      "mass_mod_usual": 0.10407109805763905,
+      "mass_mod_bar": null,
+      "bar_vs_usual_ratio": null
     },
     "V_3He": {
       "re_binding_MeV": 6.79688573083869,
@@ -59,7 +69,12 @@
       "modulus_MeV": 6.841911749214869,
       "arg_rad": 0.11478800155181801,
       "B_AME_MeV": 7.718058,
-      "re_rel_err": 0.11935285652962319
+      "re_rel_err": 0.11935285652962319,
+      "tr_M_atom_q0": 0.20657852845158098,
+      "tr_M_atom_q0_inv": null,
+      "mass_mod_usual": 0.20657852845158098,
+      "mass_mod_bar": null,
+      "bar_vs_usual_ratio": null
     },
     "V_4He": {
       "re_binding_MeV": 11.974852433319972,
@@ -68,7 +83,12 @@
       "modulus_MeV": 12.000466305346436,
       "arg_rad": 0.06534777898827247,
       "B_AME_MeV": 28.295673,
-      "re_rel_err": 0.5767956311440278
+      "re_rel_err": 0.5767956311440278,
+      "tr_M_atom_q0": 0.055358443400238766,
+      "tr_M_atom_q0_inv": null,
+      "mass_mod_usual": 0.055358443400238766,
+      "mass_mod_bar": null,
+      "bar_vs_usual_ratio": null
     }
   }
 }

@@ -65,13 +65,36 @@ def complex_volume(Z: int, N: int):
     linear-defect form E₀·(tr_free−tr_atom) (binding_canonical, Q_β-scaled)
     is retained as `re_linear_MeV` for comparison — it under-predicts 5–40×
     and is NOT used for the polar quantities."""
+    import mpmath as mp
     ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
+    # bar-involution conjugate trace: tr̆_M = tr_M(q₀⁻¹). The principled
+    # mass-modulus is the BAR-NORM ‖tr_M‖² = tr_M(q₀)·tr_M(q₀⁻¹) (bar-even,
+    # the cosh / binding channel), NOT the usual |tr_M(q₀)|² = tr_M(q₀)².
+    # They coincide on the unit circle (where conjugation = bar-involution)
+    # and DIFFER at the real anchor q₀ (q̄₀=q₀≠q₀⁻¹).
     ta, tf = float(ta), float(tf)
+    mass_mod_usual = abs(ta)                             # |tr_M(q₀)|
+    # bar-norm tr_M(q₀)·tr_M(q₀⁻¹) needs tr_M re-lifted at q₀⁻¹. The canonical
+    # color-weighted atom word BAKES q₀ into its crossing values, so it cannot
+    # re-lift at q⁻¹ (a q-parameterised word builder is required — see
+    # tr_m_atom_via_transfer docstring). Guarded: the bar-norm is the
+    # principled mass-modulus but is not yet computable for this convention.
+    ta_i = None
+    mass_mod_bar = None
+    try:
+        q_inv = mp.mpf(1) / mp.mpf(str(Q0))
+        ta_i_mp, _, _, _ = tr_m_atom_zn(Z, N, q=q_inv, dps=50)
+        ta_i = float(ta_i_mp)
+        bar_prod = ta * ta_i
+        mass_mod_bar = math.sqrt(bar_prod) if bar_prod > 0 else None
+    except Exception:
+        ta_i = None
+        mass_mod_bar = None
     re = _E0 * math.log(tf / ta)                         # binding (Re) — log-trace
     re_lin = float(binding_canonical(
         Z, N, use_transfer=True, use_closed_form=False)["B_MeV"])
     im = q_beta_substrate(float(Q0), float(_ME))         # Q_β     (Im)
-    mod = math.hypot(re, im)                             # |𝔙| (mass-modulus)
+    mod = math.hypot(re, im)                             # |𝔙| (usual)
     arg = math.atan2(im, re)                             # arg 𝔙 (EM phase)
     return {
         "re_binding_MeV": re,
@@ -81,6 +104,11 @@ def complex_volume(Z: int, N: int):
         "arg_rad": arg,
         "tr_M_atom": ta,
         "tr_M_free": tf,
+        "tr_M_atom_qinv": ta_i,
+        "mass_mod_usual": mass_mod_usual,
+        "mass_mod_bar": mass_mod_bar,
+        "bar_vs_usual_ratio": (mass_mod_bar / mass_mod_usual)
+        if (mass_mod_bar and mass_mod_usual) else None,
     }
 
 
@@ -107,6 +135,21 @@ def main() -> int:
               f"| {re_err*100:.2f}% | {cv['im_qbeta_MeV']:.6f} "
               f"| {cv['modulus_MeV']:.4f} | {cv['arg_rad']:.5f} "
               f"| {cv['re_linear_MeV']:.4f} |")
+    print("\n  Mass-modulus: usual |tr_M(q₀)| vs bar-norm √(tr_M(q₀)·tr_M(q₀⁻¹))")
+    print("  (bar-even; the principled |·|. Coincide on |q|=1; differ at real q₀.)")
+    print("| iso | tr_M(q₀) | tr_M(q₀⁻¹) | |tr_M| usual | bar-norm | bar/usual |")
+    print("|---|--:|--:|--:|--:|--:|")
+    for name, Z, N, cv, b_ame, re_err in rows:
+        ti, bn, rt = cv["tr_M_atom_qinv"], cv["mass_mod_bar"], cv["bar_vs_usual_ratio"]
+        ti_s = f"{ti:.6f}" if ti is not None else "n/a*"
+        bn_s = f"{bn:.6f}" if bn is not None else "n/a*"
+        rt_s = f"{rt:.4f}" if rt is not None else "—"
+        print(f"| {name} | {cv['tr_M_atom']:.6f} | {ti_s} "
+              f"| {cv['mass_mod_usual']:.6f} | {bn_s} | {rt_s} |")
+    print("  *bar-norm not computable here: the color-weighted word bakes q₀ "
+          "and cannot re-lift at q⁻¹ (needs a q-parameterised word builder — "
+          "the follow-up).")
+
     print(f"\n  Im channel: Q_β,pred = {im_pred:.6f} MeV vs CODATA "
           f"{qbeta_codata:.6f} MeV  (err {im_err*100:.3f}%)")
     print("  Re channel: log-trace binding E₀·ln(tr_free/tr_atom) (magnitude-"
@@ -143,6 +186,11 @@ def main() -> int:
             "arg_rad": cv["arg_rad"],
             "B_AME_MeV": b_ame,
             "re_rel_err": re_err,
+            "tr_M_atom_q0": cv["tr_M_atom"],
+            "tr_M_atom_q0_inv": cv["tr_M_atom_qinv"],
+            "mass_mod_usual": cv["mass_mod_usual"],
+            "mass_mod_bar": cv["mass_mod_bar"],
+            "bar_vs_usual_ratio": cv["bar_vs_usual_ratio"],
         })
     w.save()
     print("\n  witness written: complex-volume-unification.witness.json")
