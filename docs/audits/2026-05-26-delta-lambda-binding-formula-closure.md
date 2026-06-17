@@ -37,8 +37,16 @@ the interface operator — already computed, not a separate parameter.
 ## Binding status (2026-05-28, post-retraction)
 
 The binding energy scale is E₀ = m_e/(q₀(q₀−1)) ≈ 4.186 MeV.
-The **deuteron** binds at +0.91% via E₀×q⁻¹ (single-isotope scale,
-PR #1367). This is the only honestly-closed light nucleus.
+The **deuteron is NOT honestly closed** (corrected 2026-06-17,
+`2026-06-17-deuteron-closure-overclaim-corrected.md`). The "+0.91% via
+E₀×q⁻¹" claim is unsubstantiated: no current compute reproduces it
+(E₀×q⁻¹ = 3.771 MeV, +69.5%). The bare Σ-formula gives 0.380 MeV (−82.9%),
+and the apparent closure is that value × a **fitted single-isotope constant
+C_knot = 5.852** back-solved to hit AME (`binding_energy_categorical_deuteron.py:99`
+states it: "FITTED deficit ratio, not a derived geometric layer; Δ_λ gate
+remains open"). Best parameter-free prediction: interface-knot +T3 = 1.526 MeV
+(−31%). **No light nucleus is honestly closed** (Δ_λ directions blocked, main
+`1f08f61a`).
 
 > **RETRACTED (PR #1386).** The per-knot extension to ³He/⁴He
 > reported in PR #1383 (³He −0.1%, ⁴He −1.1%, and the ratio
@@ -53,7 +61,7 @@ PR #1367). This is the only honestly-closed light nucleus.
 
 | Atom | H_n | Status |
 |------|-----|--------|
-| D | H_6 | **+0.91%** via E₀×q⁻¹ (PR #1367) |
+| D | H_6 | NOT closed — "+0.91% via E₀×q⁻¹" unsubstantiated; bare Σ −82.9%, best (interface+T3) −31% (see 2026-06-17 correction) |
 | T | H_9 | not derived (retracted fit removed) |
 | ³He | H_9 | not derived (retracted fit removed) |
 | ⁴He | H_12 | not derived (retracted fit removed) |
@@ -68,7 +76,7 @@ rescaling the trace difference by hand-chosen factors.
 - PR #1305 (merged): sign rule + dim weight proofs
 - PR #1296 (merged): 4-atom cross-validation, Wenzl y_λ for H_9/H_12
 - PR #1292 (merged): CAL-3 = m_π, meson/lepton dictionary
-- PR #1367 (merged): deuteron binding at +0.91% via E₀×q⁻¹; meson tower
+- PR #1367 (merged): deuteron binding claimed +0.91% via E₀×q⁻¹ — **unsubstantiated, corrected 2026-06-17** (no compute reproduces 2.24; it was Σ×fitted C_knot); meson tower
 - PR #1372 (merged): Habiro correction product 9495→7.8 ppm
 - PR #1378 (merged): m_p at 0.39 ppQ (d₇=J³=−8), 6/6 beat 100×
 - PR #1386 (merged): **retraction** of per-knot q-factorial fitting
@@ -81,7 +89,7 @@ rescaling the trace difference by hand-chosen factors.
 
 | Atom | B_pred (MeV) | B_AME (MeV) | Error | Source |
 |------|-------------|-------------|-------|--------|
-| D    | 2.24        | 2.22        | +0.91% | #1367: E₀×q⁻¹ (single scale) |
+| D    | 1.53 (best) | 2.22        | −31%   | interface-knot+T3; "2.24/+0.91% via E₀×q⁻¹" unsubstantiated (no compute reproduces it) — 2026-06-17 correction |
 
 ³He/⁴He per-knot results RETRACTED (#1386, see banner above).
 
