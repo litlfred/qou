@@ -58,27 +58,37 @@ def main() -> int:
     print("\n  EMITTED-PARTICLE TRACKER — iterative knot build")
     print(f"  E₀ = {float(E0):.4f} MeV;  emitted = E₀·|bar-odd tr|, "
           f"retained = E₀·bar-even tr  (bar-involution q↦q⁻¹)\n")
-    print("| step | A | γγ̄ vertices | retained E (MeV) | emitted E (MeV) | Δemitted/step |")
-    print("|---|--:|--:|--:|--:|--:|")
+    print("| step | A | γγ̄ vertices | retained E (MeV) | emitted E (MeV) | multi-link emit (MeV) | Δemitted/step |")
+    print("|---|--:|--:|--:|--:|--:|--:|")
     rows = []
     prev_emit = mp.mpf(0)
     for name, Z, N in SEQUENCE:
-        ta0, _, _, _ = tr_m_atom_zn(Z, N, q=q0)
-        tai, _, _, _ = tr_m_atom_zn(Z, N, q=qi)
+        ta0, tf0, _, _ = tr_m_atom_zn(Z, N, q=q0)
+        tai, tfi, _, _ = tr_m_atom_zn(Z, N, q=qi)
         bar_even = (ta0 + tai) / 2
         bar_odd = (ta0 - tai) / 2
         retained = E0 * bar_even
         emitted = E0 * abs(bar_odd)
+        # MULTI-LINK (inter-nucleon) emission: bar-odd of the binding defect
+        # (tr_free − tr_atom). The free word is the un-linked product
+        # tr_p^Z·tr_n^N; the defect is purely the inter-nucleon linking, and
+        # its bar-odd part is the γγ̄ radiated specifically by binding the
+        # nucleons together (zero for A=1 — no interfaces).
+        defect0 = tf0 - ta0
+        defecti = tfi - tai
+        emitted_multilink = E0 * abs((defect0 - defecti) / 2)
         d_emit = emitted - prev_emit
         nv = _gamma_vertices(Z, N)
         rows.append({
             "name": name, "Z": Z, "N": N, "A": Z + N, "gamma_vertices": nv,
             "tr_q0": float(ta0), "tr_qinv": float(tai),
             "retained_MeV": float(retained), "emitted_MeV": float(emitted),
+            "emitted_multilink_MeV": float(emitted_multilink),
             "delta_emitted_MeV": float(d_emit),
         })
         print(f"| {name} | {Z+N} | {nv} | {float(retained):.3f} "
-              f"| {float(emitted):.3f} | {float(d_emit):+.3f} |")
+              f"| {float(emitted):.3f} | {float(emitted_multilink):.3f} "
+              f"| {float(d_emit):+.3f} |")
         prev_emit = emitted
 
     print("\n  Reading: 'retained' (bar-even / cosh) is the volume/binding "
