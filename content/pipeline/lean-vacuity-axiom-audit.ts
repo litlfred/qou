@@ -678,6 +678,11 @@ function writeSidecars(
       const catHits = hits.filter((h) => h.category === cat && !h.exempt);
       const result: QaCriterionEntry["result"] =
         catHits.length > 0 ? "fail" : "pass";
+      // On a full scan, record only real findings (fail). A `pass` is only
+      // meaningful as systematic coverage, which a full scan over flagged-
+      // only blocks does not give; write passes solely for a targeted
+      // `--only` re-audit of a single criterion.
+      if (result !== "fail" && !onlyCat) continue;
       const entry: QaCriterionEntry = {
         field_hash: { lean: fieldHash.lean },
         result,
