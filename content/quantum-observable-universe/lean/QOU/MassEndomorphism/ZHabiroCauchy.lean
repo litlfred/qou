@@ -1,5 +1,7 @@
 import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.Algebra.Polynomial.Degree.Definitions
+import Mathlib.Algebra.Polynomial.Degree.Lemmas
+import Mathlib.Algebra.Polynomial.Div
 import Mathlib.RingTheory.Ideal.Span
 import Mathlib.RingTheory.Ideal.Operations
 import Mathlib.RingTheory.Ideal.Quotient.Operations
@@ -105,6 +107,32 @@ unit `qinv := q⁻¹`, and `ℤ[q^±1][z]` as `R[X]`).
                               `varprojlim`" — `def:z-habiro-ring`'s universal-
                               element claim, for the cyclotomic shape,
                               unconditionally over generic `[CommRing R]`.
+  * `braneMonic` / `truncSection`
+                            — **the `Trunc_{<n}` section (former open item 3),
+                              under `IsUnit qinv`.** `branePoly qinv n` has
+                              degree `n` with leading coefficient
+                              `(-1)^n qinv^{n(n+1)/2}`, a unit when `qinv` is;
+                              `braneMonic qinv n` is its canonical *monic*
+                              associate (`branePoly_eq_unit_mul_braneMonic`,
+                              `braneIdeal_eq_span_braneMonic`). `truncSection`
+                              sends a class to its unique degree-`< n`
+                              representative `p %ₘ g_n` (division-with-remainder
+                              against the monic `g_n`), proved well-defined
+                              (`modByMonic_well_defined`), a genuine section of
+                              `mk` (`mk_truncSection`), and landing in degrees
+                              `< n` (`degree_truncSection_lt`). This is the
+                              canonical degree-`< n` representative identifying
+                              `R[X]/(P_n)` with the literal `Trunc_{<n}[Φ_q]`.
+  * `truncSection_zHabiroLimit`
+                            — **the bridge to the literal truncations.** The
+                              `Trunc_{<n}` section applied to the `n`-th
+                              coordinate of `zHabiroLimit qinv c` returns the
+                              genuine degree-`< n` truncation
+                              `(Σ_{m ≤ n} c_m · P_m) %ₘ g_n` — the literal
+                              `Trunc_{<n}` of the brane-tower partial sum that
+                              the conjecture's `Φ̃^(N)` truncates to. This
+                              connects the abstract inverse-limit threads to the
+                              conjecture's stated truncations.
 
 `cauchy_tail_mem` is the algebraic heart of the Cauchy-sequence claim: any
 sequence whose successive *increments* sink into deeper ideals has
@@ -174,24 +202,34 @@ for them):
      existence of the completion ring or of an algebraic limit element, both of
      which are now sorry-free.
 
-  3. **`Trunc_{<n}` as the canonical section — STILL OPEN.** The
-     unique-degree-`< n` representative map `R[X]/(P_n) → R[X]` ("evaluation in
-     the quotient is finite"). The *projections* `R[X]/(P_{n+1}) → R[X]/(P_n)`
-     are already used here (`Ideal.Quotient.factor`); the *section* needs `P_n`
-     to be a non-zero-divisor with unit leading coefficient — true when `qinv`
-     is a unit (e.g. over a field with `qinv ≠ 0`), since `P_n` has leading
-     coefficient `(-1)ⁿ qinv^(n(n+1)/2)` — but the division-with-remainder API
-     (`Polynomial.modByMonic` for a monic associate of `P_n`) is genuine
-     infrastructure and is NOT wired in this file. Deliberately left open rather
-     than faked with a `sorry`-bearing `theorem` or a `: True` stub.
+  3. **`Trunc_{<n}` as the canonical section — DISCHARGED under `IsUnit qinv`.**
+     The unique-degree-`< n` representative map `R[X]/(P_n) → R[X]` is now wired
+     (`truncSection`, below). The *projections* `R[X]/(P_{n+1}) → R[X]/(P_n)`
+     were already used here (`Ideal.Quotient.factor`); the *section* needs `P_n`
+     to have a unit leading coefficient — true precisely when `qinv` is a unit,
+     since `P_n` has leading coefficient `(-1)ⁿ qinv^(n(n+1)/2)`. We realise it
+     via the monic associate `g_n := braneMonic qinv n` (an explicit product of
+     monic linear factors `X - C(q^k)`, with `braneIdeal qinv n = (g_n)` by
+     `braneIdeal_eq_span_braneMonic`) and `Polynomial.modByMonic`:
+     `truncSection qinv hq n` sends a class to `p %ₘ g_n`, proved well-defined
+     (`modByMonic_well_defined`), a genuine section of `mk` (`mk_truncSection`),
+     and of degree `< n` (`degree_truncSection_lt`). The bridge
+     `truncSection_zHabiroLimit` identifies the `n`-th coordinate of
+     `zHabiroLimit` with the literal degree-`< n` truncation
+     `(Σ_{m ≤ n} c_m · P_m) %ₘ g_n`. Hypothesis used: `IsUnit qinv` (the weakest
+     that works — §7c; *not* a field, *not* `ℝ`), plus `Nontrivial R` for the
+     degree statements only. All sorry-free.
 
 This split is deliberate per the task's honesty directive: the filtration
 algebra, the Cauchy criterion, the conditional limit-thread, the brane-tower
-increment hypothesis (item 1), AND the completion ring + algebraic limit
-element (item 2) are real and sorry-free; the genuinely-remaining gaps are
-identifying the specific `Φ_q` coefficients over the correct (cyclotomically
-localised) base ring and the `Trunc_{<n}` section (item 3). The conjecture is
-NOT claimed fully closed.
+increment hypothesis (item 1), the completion ring + algebraic limit element
+(item 2), AND the `Trunc_{<n}` section (item 3, under `IsUnit qinv`) are real
+and sorry-free. The conjecture is **NOT** claimed fully closed: the SOLE
+remaining algebraic gap is item 2(i) — identifying the abstract limit element
+`zHabiroLimit qinv c` with the ACTUAL `Φ_q` by pinning the specific cyclotomic
+coefficients `c_n` over the correct (cyclotomically localised) base ring, where
+the probe `z-habiro-increment-probe` shows the `c_n` live. The `Trunc_{<n}`
+truncation map itself is now concrete.
 
 ## References
 
@@ -549,5 +587,214 @@ theorem zHabiroLimit_coe_apply (qinv : R) (c : ℕ → R) (n : ℕ) :
       = (Ideal.Quotient.mk (braneIdeal qinv n))
           (∑ m ∈ Finset.range (n + 1), C (c m) * branePoly qinv m) :=
   rfl
+
+/-! ## The `Trunc_{<n}` section — the canonical degree-`< n` representative
+
+This section discharges file-header "What remains OPEN" item 3: the
+**`Trunc_{<n}` section** `R[X] ⧸ (P_n) → R[X]` giving each class its unique
+representative of degree `< n`. This is the bridge from the abstract
+inverse-limit threads above to the LITERAL truncations `Trunc_{<n}[Φ_q]` of
+the conjecture's statement.
+
+**Mechanism.** `branePoly qinv n` has `z`-degree `n` with leading coefficient
+`(-1)^n qinv^{n(n+1)/2}` — a *unit* exactly when `qinv` is a unit. Over such a
+base the quotient `R[X] ⧸ (P_n)` is free of rank `n`, with the degree-`< n`
+polynomials as a section. We realise the section concretely via
+division-with-remainder against the **monic associate** `g_n = braneMonic qinv n`
+(`Polynomial.modByMonic`): the canonical representative is `p ↦ p %ₘ g_n`.
+
+**Hypothesis.** `IsUnit qinv` (the weakest hypothesis that works — §7c; we do
+*not* specialise to `ℝ`, and we use `IsUnit qinv` rather than `[Field R]` so
+the section holds over e.g. `ℤ[q^±1]`-localisations where `qinv` is a unit but
+the ring is not a field). The single archimedean-free `Nontrivial R` is used
+only for the degree statements (`braneMonic_degree`, `degree_truncSection_lt`),
+where it ensures each linear factor `X - C(q^k)` has degree `1`. -/
+
+/-- The **monic** z-Habiro partial product
+    `g_n := ∏_{k=1}^n (X - C(Ring.inverse (qinv^k)))`. Each factor is monic
+    (`monic_X_sub_C`), so the product is monic of degree `n`
+    (`braneMonic_monic`, `braneMonic_degree`). Under `IsUnit qinv` this is the
+    canonical monic associate of `branePoly qinv n`
+    (`branePoly_eq_unit_mul_braneMonic`), used as the modulus for the
+    degree-`< n` division-with-remainder section of `Trunc_{<n}`. -/
+noncomputable def braneMonic (qinv : R) : ℕ → R[X]
+  | 0 => 1
+  | (n + 1) => braneMonic qinv n * (X - C (Ring.inverse (qinv ^ (n + 1))))
+
+@[simp] theorem braneMonic_zero (qinv : R) : braneMonic qinv 0 = 1 := rfl
+
+theorem braneMonic_succ (qinv : R) (n : ℕ) :
+    braneMonic qinv (n + 1)
+      = braneMonic qinv n * (X - C (Ring.inverse (qinv ^ (n + 1)))) := rfl
+
+/-- `g_n` is monic — a product of monic linear factors `X - C(q^k)`. -/
+theorem braneMonic_monic (qinv : R) (n : ℕ) : (braneMonic qinv n).Monic := by
+  induction n with
+  | zero => simp [braneMonic]
+  | succ n ih => rw [braneMonic_succ]; exact ih.mul (monic_X_sub_C _)
+
+/-- The unit by which `branePoly` and its monic associate `braneMonic` differ:
+    `u_n := ∏_{k=1}^n (-(qinv^k))`. Under `IsUnit qinv` it is a unit
+    (`braneUnit_isUnit`); it is the leading coefficient of `branePoly qinv n`,
+    namely `(-1)^n qinv^{n(n+1)/2}`. -/
+noncomputable def braneUnit (qinv : R) : ℕ → R
+  | 0 => 1
+  | (n + 1) => braneUnit qinv n * (-(qinv ^ (n + 1)))
+
+/-- `u_n` is a unit whenever `qinv` is — a product of units `-(qinv^k)`. -/
+theorem braneUnit_isUnit (qinv : R) (hq : IsUnit qinv) (n : ℕ) :
+    IsUnit (braneUnit qinv n) := by
+  induction n with
+  | zero => simp [braneUnit]
+  | succ n ih => rw [braneUnit]; exact ih.mul ((hq.pow (n + 1)).neg)
+
+/-- **`branePoly` is a unit multiple of its monic associate.** Under
+    `IsUnit qinv`, `branePoly qinv n = C (u_n) * braneMonic qinv n` with
+    `u_n := braneUnit qinv n` a unit, because each factor factors as
+    `1 - C(qinv^{k}) · X = C(-(qinv^{k})) · (X - C((qinv^{k})⁻¹))`
+    (using `Ring.mul_inverse_cancel` since `qinv^k` is a unit). -/
+theorem branePoly_eq_unit_mul_braneMonic (qinv : R) (hq : IsUnit qinv) (n : ℕ) :
+    branePoly qinv n = C (braneUnit qinv n) * braneMonic qinv n := by
+  induction n with
+  | zero => simp [branePoly, braneMonic, braneUnit]
+  | succ n ih =>
+    rw [branePoly, braneMonic_succ, braneUnit, ih, C_mul]
+    have hfac : (1 - C (qinv ^ (n + 1)) * X)
+        = C (-(qinv ^ (n + 1))) * (X - C (Ring.inverse (qinv ^ (n + 1)))) := by
+      have h : qinv ^ (n + 1) * Ring.inverse (qinv ^ (n + 1)) = 1 :=
+        Ring.mul_inverse_cancel _ (hq.pow (n + 1))
+      rw [mul_sub, ← C_mul]
+      have hneg : -(qinv ^ (n + 1)) * Ring.inverse (qinv ^ (n + 1)) = -1 := by
+        rw [neg_mul, h]
+      rw [hneg]; simp [C_neg]; ring
+    rw [hfac]; ring
+
+/-- **The z-Habiro filtration ideal is generated by the monic associate.**
+    `braneIdeal qinv n = (g_n)` for `g_n = braneMonic qinv n`, because the
+    generator `branePoly qinv n` differs from `g_n` by the unit `C (u_n)`
+    (`Ideal.span_singleton_mul_left_unit`). So the modulus for the
+    degree-`< n` section may be taken to be the *monic* `g_n` while the ideal
+    of the completion chain (`braneIdeal`, `def:z-habiro-ring`) is unchanged. -/
+theorem braneIdeal_eq_span_braneMonic (qinv : R) (hq : IsUnit qinv) (n : ℕ) :
+    braneIdeal qinv n = Ideal.span {braneMonic qinv n} := by
+  rw [braneIdeal, branePoly_eq_unit_mul_braneMonic qinv hq n]
+  exact Ideal.span_singleton_mul_left_unit ((braneUnit_isUnit qinv hq n).map C) _
+
+/-- **Well-definedness of the degree-`< n` representative.** If
+    `p ≡ p' (mod braneIdeal qinv n)` then `p %ₘ g_n = p' %ₘ g_n`: the ideal is
+    `(g_n)` (monic associate), so `g_n ∣ (p - p')`, hence
+    `(p - p') %ₘ g_n = 0` (`modByMonic_eq_zero_iff_dvd`); `sub_modByMonic`
+    distributes `%ₘ` over the difference. This is the descent condition that
+    makes `truncSection` well-defined on the quotient. -/
+theorem modByMonic_well_defined (qinv : R) (hq : IsUnit qinv) (n : ℕ)
+    {p p' : R[X]} (h : p - p' ∈ braneIdeal qinv n) :
+    p %ₘ braneMonic qinv n = p' %ₘ braneMonic qinv n := by
+  rw [braneIdeal_eq_span_braneMonic qinv hq n, Ideal.mem_span_singleton] at h
+  have hz : (p - p') %ₘ braneMonic qinv n = 0 :=
+    (modByMonic_eq_zero_iff_dvd (braneMonic_monic qinv n)).mpr h
+  rw [sub_modByMonic] at hz
+  exact sub_eq_zero.mp hz
+
+/-- **The `Trunc_{<n}` section** `R[X] ⧸ (P_n) → R[X]`: the canonical
+    degree-`< n` representative of a class, given by division-with-remainder
+    `p ↦ p %ₘ g_n` against the monic associate `g_n = braneMonic qinv n`
+    (`Polynomial.modByMonic`). Well-defined by `modByMonic_well_defined`.
+
+    This discharges file-header "What remains OPEN" item 3 — the canonical
+    degree-`< n` section identifying `R[X]/(P_n)` with the truncations
+    `Trunc_{<n}[Φ_q]` that the conjecture's `Φ̃^(N)` uses. Hypothesis:
+    `IsUnit qinv` (so `P_n` has a unit leading coefficient, hence a monic
+    associate). -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
+-- Ref: [manuscript] def:z-habiro-ring §"Cyclotomic projections"
+-- Ref: [habiro2004cyclotomic]
+noncomputable def truncSection (qinv : R) (hq : IsUnit qinv) (n : ℕ) :
+    (R[X] ⧸ braneIdeal qinv n) → R[X] :=
+  fun x => Quotient.liftOn' x (· %ₘ braneMonic qinv n) (by
+    intro a b h
+    rw [Submodule.quotientRel_def] at h
+    exact modByMonic_well_defined qinv hq n h)
+
+/-- The section on a class `mk p` is the canonical remainder `p %ₘ g_n`. -/
+theorem truncSection_mk (qinv : R) (hq : IsUnit qinv) (n : ℕ) (p : R[X]) :
+    truncSection qinv hq n (Ideal.Quotient.mk (braneIdeal qinv n) p)
+      = p %ₘ braneMonic qinv n := rfl
+
+/-- **`truncSection` is a genuine section of `Ideal.Quotient.mk`.**
+    `mk ∘ truncSection = id`: the chosen degree-`< n` representative
+    `p %ₘ g_n` lands in the same class as `p`, because
+    `g_n ∣ (p %ₘ g_n - p)` (`modByMonic_add_div`). So `truncSection` picks a
+    representative in each fibre of the projection. -/
+theorem mk_truncSection (qinv : R) (hq : IsUnit qinv) (n : ℕ)
+    (x : R[X] ⧸ braneIdeal qinv n) :
+    Ideal.Quotient.mk (braneIdeal qinv n) (truncSection qinv hq n x) = x := by
+  induction x using Quotient.inductionOn' with
+  | h p =>
+    show Ideal.Quotient.mk (braneIdeal qinv n)
+        (truncSection qinv hq n (Ideal.Quotient.mk (braneIdeal qinv n) p))
+      = Ideal.Quotient.mk (braneIdeal qinv n) p
+    rw [truncSection_mk, Ideal.Quotient.eq,
+      braneIdeal_eq_span_braneMonic qinv hq n, Ideal.mem_span_singleton]
+    refine ⟨-(p /ₘ braneMonic qinv n), ?_⟩
+    have h := modByMonic_add_div p (braneMonic_monic qinv n)
+    rw [mul_neg, eq_neg_iff_add_eq_zero]
+    linear_combination h
+
+/-- The degree of the monic associate `g_n` is exactly `n`
+    (`Monic.degree_mul` + `degree_X_sub_C`). `Nontrivial R` ensures each linear
+    factor `X - C(q^k)` has degree `1`. -/
+theorem braneMonic_degree [Nontrivial R] (qinv : R) (n : ℕ) :
+    (braneMonic qinv n).degree = n := by
+  induction n with
+  | zero => simp [braneMonic]
+  | succ n ih =>
+    rw [braneMonic_succ,
+      (monic_X_sub_C (Ring.inverse (qinv ^ (n + 1)))).degree_mul, ih,
+      degree_X_sub_C, ← Nat.cast_one, ← Nat.cast_add]
+
+/-- **The section lands in degrees `< n`.** `(truncSection … x).degree < n`:
+    the chosen representative `p %ₘ g_n` has degree strictly below
+    `deg g_n = n` (`degree_modByMonic_lt`, `g_n` monic of degree `n`). This is
+    the defining property of the canonical degree-`< n` representative — the
+    literal `Trunc_{<n}` of `def:z-habiro-ring`. -/
+theorem degree_truncSection_lt [Nontrivial R] (qinv : R) (hq : IsUnit qinv)
+    (n : ℕ) (x : R[X] ⧸ braneIdeal qinv n) :
+    (truncSection qinv hq n x).degree < n := by
+  induction x using Quotient.inductionOn' with
+  | h p =>
+    show (truncSection qinv hq n
+        (Ideal.Quotient.mk (braneIdeal qinv n) p)).degree < n
+    rw [truncSection_mk]
+    have hlt := degree_modByMonic_lt p (braneMonic_monic qinv n)
+    rwa [braneMonic_degree qinv n] at hlt
+
+/-! ## Bridge: the brane-tower limit's `n`-th coordinate IS a literal `Trunc_{<n}`
+
+Composing `truncSection` with the inverse-limit element `zHabiroLimit`
+identifies the `n`-th coordinate of the brane-tower Cauchy limit with the
+GENUINE degree-`< n` truncation of the depth-`n` partial sum
+`Σ_{m ≤ n} c_m · P_m` — i.e. the literal `Trunc_{<n}` the conjecture's
+`Φ̃^(N)` truncates to. This closes the bridge from the abstract inverse-limit
+threads (`zHabiroLimit`) to the literal truncations of the conjecture's
+statement (file-header item 3 / `def:z-habiro-ring`'s `Trunc_{<n}`). -/
+
+/-- **The brane-tower limit, truncated to degree `< n`, is the literal
+    `Trunc_{<n}` of the partial sum.** Applying the `Trunc_{<n}` section to the
+    `n`-th coordinate of `zHabiroLimit qinv c` returns the genuine degree-`< n`
+    truncation `(Σ_{m ≤ n} c_m · P_m) %ₘ g_n` of the brane-tower partial sum.
+
+    This is the literal "`Trunc_{<n}` of the brane-tower partial sum" of
+    `conj:brane-tower-z-habiro` §"Statement": the abstract inverse-limit
+    coordinate (`zHabiroLimit_coe_apply`) and the concrete degree-`< n`
+    representative (`truncSection`) agree. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
+-- Ref: [manuscript] def:z-habiro-ring §"Trunc_{<n}"
+theorem truncSection_zHabiroLimit (qinv : R) (hq : IsUnit qinv)
+    (c : ℕ → R) (n : ℕ) :
+    truncSection qinv hq n
+        ((zHabiroLimit qinv c : ∀ n, R[X] ⧸ braneIdeal qinv n) n)
+      = (∑ m ∈ Finset.range (n + 1), C (c m) * branePoly qinv m)
+          %ₘ braneMonic qinv n := by
+  rw [zHabiroLimit_coe_apply, truncSection_mk]
 
 end QOU.MassEndomorphism.ZHabiroCauchy
