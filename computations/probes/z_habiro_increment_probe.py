@@ -69,22 +69,21 @@ def P(n: int):
 
 def is_laurent_in_q(expr) -> bool:
     """True iff expr ∈ ℤ[q, q^{-1}] (Laurent poly): denominator is a
-    monomial q^k (a unit), numerator a polynomial in q with integer
-    coeffs."""
+    monomial q^k (a unit), and after clearing it the result is a
+    polynomial in q with integer coefficients."""
     e = sp.cancel(sp.together(expr))
     num, den = sp.fraction(e)
-    den = sp.expand(den)
-    # denominator must be a monomial c * q^k
-    dpoly = sp.Poly(den, q)
+    dpoly = sp.Poly(sp.expand(den), q)
+    # denominator must be a single monomial c·q^k (a unit ±q^k)
     if len(dpoly.monoms()) != 1:
         return False
-    # numerator: polynomial in q after clearing the q^k; check integer coeffs
-    cleared = sp.expand(num / den * sp.Poly(den, q).LC())  # strip unit
-    # simpler: e * q^k should be a polynomial with integer coeffs
     k = dpoly.monoms()[0][0]
+    # clearing the q^k leaves a poly iff expr ∈ ℤ[q^±1]; integer coeffs check
+    # the constant c is ±1 (non-±1 constants surface as non-integer coeffs).
     test = sp.expand(e * q ** k)
-    tp = sp.Poly(test, q)
-    if not tp.is_polynomial():
+    try:
+        tp = sp.Poly(test, q)
+    except sp.PolynomialError:
         return False
     return all(c.is_integer for c in tp.all_coeffs())
 
@@ -100,13 +99,12 @@ def main() -> int:
 
     # Basis P_0..P_M (degree n in z); triangular change of basis.
     Pn = [sp.expand(P(n)) for n in range(M + 1)]
-    lead = [sp.cancel(sp.Poly(Pn[n], z).coeff_monomial(z ** n)) for n in range(M + 1)]
+    lead = [sp.cancel(Pn[n].coeff(z, n)) for n in range(M + 1)]
 
     c = [None] * (M + 1)
     rem = sp.expand(phi)
     for n in range(M, -1, -1):
-        rp = sp.Poly(rem, z)
-        top = sp.cancel(rp.coeff_monomial(z ** n))
+        top = sp.cancel(rem.coeff(z, n))
         c[n] = sp.cancel(top / lead[n])
         rem = sp.expand(rem - c[n] * Pn[n])
 
@@ -142,8 +140,8 @@ def main() -> int:
     incr_rows = []
     for n in range(M):
         incr = sp.expand(c[n + 1] * Pn[n + 1])
-        quo, r = sp.div(sp.Poly(incr, z), sp.Poly(Pn[n], z))
-        r = sp.simplify(r.as_expr())
+        quo, r = sp.div(incr, Pn[n], z)
+        r = sp.cancel(r)
         ok = (r == 0)
         incr_ok = incr_ok and ok
         incr_rows.append({"n": n, "divisible_by_P_n": bool(ok),
