@@ -89,7 +89,7 @@ theorem bring_group_homology_ratio_exact :
   field_simp
   ring
 
-/-- **Phase-1 wiring (2026-05-30).**  Reference to the Bloch-Wigner
+/- **Phase-1 wiring (2026-05-30).**  Reference to the Bloch-Wigner
     unit-circle function `D(e^{iθ}) = Cl_2 θ` defined in the
     Mathlib filler at
     `predicted-spectra/bloch-wigner-mathlib-filler.lean`
