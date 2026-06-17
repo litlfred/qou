@@ -82,13 +82,16 @@ float noise*, not certifying precision. Rules:
 2. **dps headroom.** `_precision.COMPUTE_DPS_DEFAULT = 50` gives ~35
    digits of headroom below 1 ppQ — adequate. Raise via
    `QOU_COMPUTE_DPS=<n>` when bounding higher-order residuals.
-3. **The L1 cross-method gate must be tightened 1 ppb → 1 ppQ** once all
-   methods are float-clean. As of 2026-05-29, `cross_check_trM_1ppb.py`
-   still gates at 1 ppb because the `markov_peel` *fast path* computes in
-   float64 (`cf, df = float(c), float(d)`; `h_num = float(_h_num)`) and
-   only agrees with the true-mpf methods (Hoefsmit, chi-cache, Habiro)
-   to ~2.7×10⁻¹⁶. Fix = route peel through the exact `use_fast=False`
-   sympy path (or an mpf path), then drop the gate to 1 ppQ.
+3. **The L1 cross-method gate is now tightened to 1 ppQ** (resolved; was the
+   open item below). `cross_check_trM_1ppb.py` gates the three FLOAT-CLEAN
+   methods (Hoefsmit, chi-cache, Habiro) at `TOLERANCE_PPQ = 1e-15` and the
+   witness passes (`all_atoms_within_1ppQ`, `allPassed=True`). The fix was
+   *structural separation* rather than de-floating peel: the `markov_peel` fast
+   path's float64 residual (`~2.7×10⁻¹⁶`) is held at a **separate** looser
+   `TOLERANCE_PEEL = 1e-12` as an INDEPENDENT cross-check and is explicitly NOT
+   folded into the 1 ppQ certification (see the `cross_check_trM_1ppb.py`
+   docstring: *"the gate is now 1 ppQ"*). So L1 is certified at 1 ppQ via the
+   float-clean methods; peel remains a float-tolerance independent check.
 
 ### Bounding `σ_theory` vs derivation order N
 
