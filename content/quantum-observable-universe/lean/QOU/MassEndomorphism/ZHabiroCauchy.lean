@@ -797,4 +797,119 @@ theorem truncSection_zHabiroLimit (qinv : R) (hq : IsUnit qinv)
           %ₘ braneMonic qinv n := by
   rw [zHabiroLimit_coe_apply, truncSection_mk]
 
+/-! ## The cyclotomic coefficients `c_n`: which ring, and uniqueness
+
+This section advances file-header "What remains OPEN" item 2(i) — pinning
+WHICH coefficients `c_n` and over WHICH base ring `zHabiroLimit qinv c`'s
+coefficient family `c` must be drawn from to reproduce the ACTUAL `Φ_q`.
+
+**Which ring (the cyclotomic localisation).** The compute witness
+`computations/z-habiro-increment-probe.witness.json` (verdict
+`cauchy-limit-exists-localised`) establishes that the power-series
+coefficients of `Φ_q` are the closed Euler form
+`b_n = [z^n] Φ_q = q^{-n} / ∏_{j=1}^n (1 - q^{-j})`, and that the cyclotomic
+coordinates `c_n` (obtained from the `b_n` by the unit-leading-coefficient
+triangular change of basis to the `P_m`) are NOT integral over `ℤ[q^±1]`:
+their denominators are products of the cyclotomic factors `(1 - q^{-j})`.
+So the `c_n` live in `ℤ[q^±1]` localised at the multiplicative set generated
+by `{1 - q^{-j} : j ≥ 1}` — `Φ_q`'s poles at `z = q^k` are exactly the
+obstruction to integrality. `eulerCoeff` below realises the `b_n` in any base
+ring where those factors are units (the localised ring).
+
+**Uniqueness.** `braneMonic_coords_unique` proves the monic z-Habiro partial
+products `g_0, …, g_n` are linearly independent (strictly increasing degrees,
+each monic), so the cyclotomic coordinates of any element are UNIQUE — the
+algebraic backbone of "pinning the `c_n`": there is at most one family `c`
+realising a given truncation tower.
+
+What remains genuinely OPEN (not closed here): the analytic↔algebraic
+identification proving the specific localised family `c_n = ` (coordinates of
+the Euler `b_n`) IS the family whose `zHabiroLimit` equals the analytic `Φ_q`.
+That bridge is item 2(i) and is deliberately not faked. -/
+
+/-- **The Euler series coefficient** `b_n = [z^n] Φ_q = q^{-n} / ∏_{j=1}^n (1 - q^{-j})`,
+    realised in a base ring `R` where the cyclotomic factors `1 - qinv^j` are
+    units (the cyclotomic localisation of `ℤ[q^±1]`). Written with `qinv = q⁻¹`
+    and `Ring.inverse` for the cyclotomic denominators; over the localisation
+    these inverses are genuine. This is the closed Euler form the compute
+    witness `z-habiro-increment-probe` uses (`series_coeff_formula`). -/
+-- Ref: [manuscript] computations/z-habiro-increment-probe.witness.json
+-- Ref: [habiro2004cyclotomic]
+noncomputable def eulerCoeff (qinv : R) (n : ℕ) : R :=
+  qinv ^ n * ∏ j ∈ Finset.range n, Ring.inverse (1 - qinv ^ (j + 1))
+
+@[simp] theorem eulerCoeff_zero (qinv : R) : eulerCoeff qinv 0 = 1 := by
+  simp [eulerCoeff]
+
+/-- Recurrence `b_{n+1} = b_n · q^{-1} · (1 - q^{-(n+1)})⁻¹` — the depth step of
+    the Euler coefficients (the cyclotomic denominator gains one factor). -/
+theorem eulerCoeff_succ (qinv : R) (n : ℕ) :
+    eulerCoeff qinv (n + 1)
+      = eulerCoeff qinv n * qinv * Ring.inverse (1 - qinv ^ (n + 1)) := by
+  unfold eulerCoeff
+  rw [Finset.prod_range_succ, pow_succ]
+  ring
+
+/-- The top coefficient of the monic associate `g_n`: it is `1` (monic of
+    degree `n`). Used for the linear-independence / uniqueness argument. -/
+theorem braneMonic_coeff_self [Nontrivial R] (qinv : R) (n : ℕ) :
+    (braneMonic qinv n).coeff n = 1 := by
+  have hd : (braneMonic qinv n).natDegree = n :=
+    natDegree_eq_of_degree_eq_some (braneMonic_degree qinv n)
+  have h := (braneMonic_monic qinv n).coeff_natDegree
+  rwa [hd] at h
+
+/-- The `n`-th coefficient of `g_m` vanishes when `m < n` (degree `m < n`). -/
+theorem braneMonic_coeff_eq_zero_of_lt [Nontrivial R] (qinv : R) {m n : ℕ}
+    (h : m < n) : (braneMonic qinv m).coeff n = 0 := by
+  apply coeff_eq_zero_of_degree_lt
+  rw [braneMonic_degree qinv m]
+  exact_mod_cast h
+
+/-- **Uniqueness of cyclotomic coordinates (linear independence of the monic
+    basis).** If `∑_{m ≤ n} d_m · g_m = 0` then every `d_m = 0`: the monic
+    z-Habiro partial products `g_0, …, g_n` (strictly increasing degrees, each
+    monic) are linearly independent over `R`. Hence the cyclotomic coordinates
+    of any polynomial are UNIQUE — the algebraic backbone of "pinning the
+    `c_n`": at most one coefficient family realises a given truncation tower.
+    Proved by descending on the top degree: the `X^n`-coefficient of the sum is
+    `d_n` (only `g_n` reaches degree `n`, and it is monic), forcing `d_n = 0`,
+    then recursing on the lower sum. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"What survives the closure"
+-- Ref: [manuscript] def:z-habiro-ring §"Cyclotomic projections"
+theorem braneMonic_coords_unique [Nontrivial R] (qinv : R) (d : ℕ → R) :
+    ∀ n : ℕ, (∑ m ∈ Finset.range (n + 1), C (d m) * braneMonic qinv m) = 0 →
+      ∀ m, m ≤ n → d m = 0 := by
+  intro n
+  induction n with
+  | zero =>
+    intro h m hm
+    have hm0 : m = 0 := Nat.le_zero.mp hm
+    subst hm0
+    have hco := congrArg (fun p => p.coeff 0) h
+    simpa [Finset.sum_range_one, coeff_C_mul, braneMonic_coeff_self qinv 0,
+      coeff_zero] using hco
+  | succ n ih =>
+    intro h m hm
+    rw [Finset.sum_range_succ] at h
+    -- The lower sum has degree ≤ n, so its (n+1)-coefficient vanishes.
+    have hScoeff :
+        (∑ k ∈ Finset.range (n + 1), C (d k) * braneMonic qinv k).coeff (n + 1) = 0 := by
+      rw [finset_sum_coeff]
+      refine Finset.sum_eq_zero (fun k hk => ?_)
+      rw [coeff_C_mul, braneMonic_coeff_eq_zero_of_lt qinv (Finset.mem_range.mp hk), mul_zero]
+    -- Top coefficient of the whole sum is d (n+1) (only g_{n+1} reaches degree n+1).
+    have htop : d (n + 1) = 0 := by
+      have hco := congrArg (fun p => p.coeff (n + 1)) h
+      simp only [coeff_add, hScoeff, coeff_C_mul, braneMonic_coeff_self qinv (n + 1),
+        coeff_zero, zero_add, mul_one] at hco
+      exact hco
+    -- With d (n+1) = 0 the top term drops, so the lower sum is 0; recurse.
+    have hrest : (∑ k ∈ Finset.range (n + 1), C (d k) * braneMonic qinv k) = 0 := by
+      rw [htop, map_zero, zero_mul, add_zero] at h
+      exact h
+    rcases Nat.eq_or_lt_of_le hm with heq | hlt
+    · subst heq; exact htop
+    · exact ih hrest m (Nat.lt_succ_iff.mp hlt)
+
 end QOU.MassEndomorphism.ZHabiroCauchy
