@@ -878,6 +878,28 @@ theorem eulerCoeff_unique (qinv : R) (b : ℕ → R)
   | zero => rw [h0, eulerCoeff_zero]
   | succ n ih => rw [hrec, ih, eulerCoeff_succ]
 
+/-- **Conditional closure of item 2(i): the z-Habiro limit is the localised
+    Euler element.** GIVEN that a cyclotomic coefficient family `c` satisfies the
+    normalisation `c 0 = 1` and the q-difference recurrence
+    `c_{n+1} = c_n · q^{-1} · (1 - q^{-(n+1)})⁻¹` — exactly the coefficient form
+    of the analytic functional equation `(1 - z)·Φ_q(qz) = Φ_q(z)` (see
+    `QOU.MassEndomorphism.PhiQConvergence.quantumDilog_functional_eq`) together
+    with `Φ_q(0) = 1` — the z-Habiro Cauchy limit `zHabiroLimit qinv c` coincides
+    with `zHabiroLimit qinv (eulerCoeff qinv)`, the specific element built from
+    the localised Euler coefficients.
+
+    This closes the WHICH-FAMILY / base-ring half of `conj:brane-tower-z-habiro`
+    item 2(i), conditional only on the functional equation: any limit whose
+    coefficients obey the q-difference recurrence IS the localised-Euler limit
+    (by `eulerCoeff_unique`). The sole remaining input is the analytic functional
+    equation itself (the `tprod` reindex in `PhiQConvergence`). -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"What survives the closure"
+theorem zHabiroLimit_eq_euler (qinv : R) (c : ℕ → R)
+    (h0 : c 0 = 1)
+    (hrec : ∀ n, c (n + 1) = c n * qinv * Ring.inverse (1 - qinv ^ (n + 1))) :
+    zHabiroLimit qinv c = zHabiroLimit qinv (eulerCoeff qinv) := by
+  rw [eulerCoeff_unique qinv c h0 hrec]
+
 /-- The top coefficient of the monic associate `g_n`: it is `1` (monic of
     degree `n`). Used for the linear-independence / uniqueness argument. -/
 theorem braneMonic_coeff_self [Nontrivial R] (qinv : R) (n : ℕ) :

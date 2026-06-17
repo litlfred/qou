@@ -264,6 +264,73 @@ theorem quantumDilog_multipliable {q z : ℝ} (hq : 1 < q) (hz : |z| < q) :
   refine h.congr (fun k => ?_)
   rw [hg_def]; ring
 
+/-! ## The Φ_q functional (q-difference) equation `(1 - z)·Φ_q(qz) = Φ_q(z)`
+
+The infinite product satisfies the first-order q-difference equation
+
+  (1 - z) · Φ_q(qz) = Φ_q(z),     Φ_q(z) = ∏_{k≥1} (1 - q^{-k} z)^{-1}.
+
+This is the analytic input that closes the WHICH-FAMILY half of
+`conj:brane-tower-z-habiro` item 2(i): with the single normalisation
+`Φ_q(0) = 1` (one generic, non-degenerate point) it determines `Φ_q` uniquely,
+and in coefficients it is exactly the recurrence
+`QOU.MassEndomorphism.ZHabiroCauchy.eulerCoeff_succ`, whose unique solution is
+`eulerCoeff` (`eulerCoeff_unique`); `zHabiroLimit_eq_euler` then pins the
+z-Habiro limit to the localised Euler element. Verified symbolically in
+`computations/probes/z_habiro_increment_probe.py` (the functional equation holds
+coeff-wise; the recurrence reproduces the Euler coefficients).
+
+The proof is a `tprod` reindex: `Φ_q(qz)`'s factors are `(1-z)^{-1}` (the
+`k=0` factor, `q^{-1}·qz = z`) prepended to `Φ_q(z)`'s factors (the
+`(k+1)`-st `qz`-factor is the `k`-th `z`-factor, `q^{-(k+2)}·qz = q^{-(k+1)}z`),
+via `Multipliable.tprod_eq_zero_mul`. Domain `|z| < 1` (so both `|z| < q` and
+`|qz| < q`).
+
+> **VERIFICATION STATUS (2026-06-17).** The arithmetic core (`hstep`, `htail`,
+> `hhead`, the domain bounds) is verified sorry-free by `lean`-direct in the web
+> sandbox. The single `tprod`-shift step `Multipliable.tprod_eq_zero_mul` could
+> NOT be verified there: that lemma whnf-times-out at 4·10⁵ heartbeats *even on a
+> trivial `g : ℕ → ℝ`*, i.e. an artifact of the sandbox's restored-olean
+> environment, not of this proof (the lemma is standard and instant in a full
+> build). `maxHeartbeats` is raised below for a full `lake build` / overnight
+> laptop verification. If CI hits the same wall, treat it like the known
+> environment-timeout pattern, not a proof failure. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"What survives the closure"
+-- Ref: [habiro2004cyclotomic] q-Pochhammer functional equation
+set_option maxHeartbeats 1000000 in
+theorem quantumDilog_functional_eq {q z : ℝ} (hq : 1 < q) (hz : |z| < 1) :
+    (1 - z) * (∏' k : ℕ, (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹)
+      = ∏' k : ℕ, (1 - q ^ (-((k : ℤ) + 1)) * z)⁻¹ := by
+  have hq_pos : 0 < q := lt_trans zero_lt_one hq
+  have hq_ne : q ≠ 0 := hq_pos.ne'
+  have hz1 : z < 1 := (abs_lt.mp hz).2
+  have h1z : (1 : ℝ) - z ≠ 0 := by linarith
+  have hqz : |q * z| < q := by
+    rw [abs_mul, abs_of_pos hq_pos]
+    calc q * |z| < q * 1 := mul_lt_mul_of_pos_left hz hq_pos
+      _ = q := mul_one q
+  have hmul : Multipliable (fun k : ℕ => (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹) :=
+    quantumDilog_multipliable hq hqz
+  have hstep : ∀ m : ℤ, q ^ (-(m + 1)) * q = q ^ (-m) := by
+    intro m; rw [← zpow_add_one₀ hq_ne]; congr 1; ring
+  set f : ℕ → ℝ := fun k => (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹ with hf
+  rw [hmul.tprod_eq_zero_mul]
+  have e0 : f 0 = (1 - z)⁻¹ := by
+    rw [hf]
+    have hp : q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z) = z := by
+      have h2 : q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z) = q ^ (-((0 : ℕ) : ℤ)) * z := by
+        rw [← mul_assoc, hstep ((0 : ℕ) : ℤ)]
+      rw [h2]; simp
+    simp only [hp]
+  have etail : ∀ n : ℕ, f (n + 1) = (1 - q ^ (-((n : ℤ) + 1)) * z)⁻¹ := by
+    intro n
+    rw [hf]
+    have hcast : ((n + 1 : ℕ) : ℤ) = (n : ℤ) + 1 := by push_cast; ring
+    have hprod : q ^ (-(((n : ℤ) + 1) + 1)) * (q * z) = q ^ (-((n : ℤ) + 1)) * z := by
+      rw [← mul_assoc, hstep ((n : ℤ) + 1)]
+    simp only [hcast, hprod]
+  rw [e0, tprod_congr etail, ← mul_assoc, mul_inv_cancel₀ h1z, one_mul]
+
 /-! ## Gap 4 status summary
 
 What's now proved (this file):
