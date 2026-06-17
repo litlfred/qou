@@ -324,6 +324,7 @@ def s3IrrepDims : List ℕ := [1, 1, 2]
     {1,2,3} — the embedding-independence verified in
     `scripts/s5so3_branching_backbone_verify.py`. -/
 theorem s5_to_s3_restriction_dim_consistent (p : PartitionOf5) :
+    (s5_to_s3_restriction_mults p).length = 3 ∧
     (List.zipWith (· * ·) (s5_to_s3_restriction_mults p) s3IrrepDims).sum = p.dim := by
   cases p <;> decide
 
