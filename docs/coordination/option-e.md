@@ -34,9 +34,16 @@ re-discover already-tried directions.
 | **A=4 (⁴He)** | NOT derived | various probes 2026-05-25 thread | requires multi-nucleon extension of the v9 mirror-pair formula |
 | **A ≥ 5 (⁶Li, etc.)** | NOT derived | — | depends on lower-A closures |
 
-**Reading:** the deuteron is closed by a STRUCTURAL formula
-(`B(D) = m_e × |Σ_λ y_λ · χ^λ(β_D) · sgn(w_0^{S_{λ'}}) · f^λ|` with
-`f^λ = dim(V_λ)`, the regular-rep dimension). The A=3 mirror pair is
+**Reading (corrected 2026-06-16):** the deuteron is closed by **`E₀×q⁻¹`
+(+0.91%)**, `E₀ = m_e/(q₀(q₀−1))` (PR #1367). The per-block **Δ_λ Σ-formula**
+`B = m_e × |Σ_λ y_λ · χ^λ(β_D) · sgn(w_0^{S_{λ'}}) · f^λ|` (with `f^λ=dim(V_λ)`,
+the proved categorical factor) is a SEPARATE object that **does NOT close** the
+deuteron — it gives `B(D)=0.380 MeV`, **−82.9%** off AME (verified by running
+`computations/binding_energy_categorical_deuteron.py`; the closing C_knot=5.852
+was a fitted deficit ratio, retracted PR #1386). Earlier prose here (and PR #2386)
+conflated the two; the §Status row "+0.91% via E₀×q⁻¹" is the correct closure.
+Cross-check: `docs/audits/2026-06-16-deuteron-closure-crosscheck-and-correction.md`.
+The A=3 mirror pair is
 near-matched but not closed. **Critical:** the v9 (1+q)/2 factor was
 selected from a substrate-candidate list, NOT derived. Treat as
 near-match per CLAUDE.md "Don't propose a seventh fit-based ansatz"
@@ -175,6 +182,10 @@ near-match. Do NOT wire as a derivation.
 | 2026-06-02 | Claude / `claude/option-e-phase2-gram-probe-2026-05-30` (PR #1516) | **PROBE 4 (cheap pass)** — test single-vertex KL candidate rules for Δ_λ closure at H_6/deuteron, mirroring PR #1709's "cheap proxy first" strategy. Also extends Phase 2 entry-point probe H_3 → H_6 consuming #1697's just-merged Gram. | **VERDICT: ALL FOUR SINGLE-VERTEX CANDIDATES REFUTED** (miss ≥ 66%): A χ^λ(w_0) 99.83%, B \|χ^λ(w_0)\| 120.73%, C sgn·dim_λ 66.47%, D peak \|ρ_λ(w_0) diag\| 117.46%. Symmetric to #1709's geometric Vol_λ refutation. Remaining in-Option-E direction: full `n^w_λ` enumeration across multiple vertices (extend `kazhdan_lusztig.py` past n ≤ 4 cap to S_6). Otherwise: pivot to GAP-A-3/A-4. Witness: `probe-option-e-phase2-crystal-vertex-candidates.witness.json`. |
 
 | 2026-06-16 | Claude / `claude/option-e-probe4-kl-positivity-prune-2026-06-16` | Formalize-first prune of PROBE 4 (the remaining in-Option-E path) before committing to the S_6 KL extension | **PRUNED.** Target Δ_λ=sgn·dim is mixed-sign (verified n=3,6); KL multiplicities are non-negative (KL positivity) ⇒ a Σ_w n^w_λ·X_w sum supplies at most \|Δ_λ\|=dim (already f^λ), never the chirality sign. PROBE 4 not a new closure mechanism; de-prioritise the S_6 KL extension. Frontier = PROBE 2 (A=4 interface), sibling cluster #2369/#2371/#2372. No fit. Audit `2026-06-16-option-e-probe4-kl-positivity-prune.md`. |
+| 2026-06-16 | Claude / `...probe4-kl-engine-validation` (PR #2381) | Engine-verify the PROBE-4 prune on real KL data | Located the KL engine at `computations/kazhdan_lusztig.py`; KL positivity at S_4 confirmed (all 576 P_{x,w} coeffs ≥0; 6 non-trivial = q+1) → prune now engine-verified, not theorem-cited. |
+| 2026-06-16 | Claude / `...delta-lambda-sign-chirality` (PR #2386) | Decompose the Δ_λ per-block factor | Δ_λ = sgn(w₀^{S_λ'})·dim = **magnitude (Wedderburn dim, chirality-invariant) × chirality sign** (= transpose = sign-twist = keystone's T₁↔T₂ parity; self-conj (3,1,1) ↔ A₅-split). Explains the PROBE-4 prune (sign exogenous). **NOTE (corrected #2388-era):** this is the Δ_λ *factor* structure, NOT a deuteron closure — see next row. |
+| 2026-06-16 | Claude / `...deuteron-closure-crosscheck` (this PR) | Run the canonical deuteron compute; reconcile closure framing | **CORRECTION.** `binding_energy_categorical_deuteron.py` → B(D)=0.380 MeV, **−82.9%** off: the Δ_λ Σ-formula does NOT close the deuteron. The closure is **E₀×q⁻¹ (+0.91%)** (PR #1367), a separate object. Corrected #2386 (banner) + the §Status "Reading" prose (above) which had conflated the two. No math retracted — the chirality decomposition + PROBE-4 prune stand. Audit `2026-06-16-deuteron-closure-crosscheck-and-correction.md`. |
+| 2026-06-16 | Claude / (infra) | doc-currency | Compute path `folio-assistant/computations/` → `computations/` swept (3675 files, PR #2388); the canonical compute is qou-top-level `computations/`. |
 
 ## Cross-refs
 
