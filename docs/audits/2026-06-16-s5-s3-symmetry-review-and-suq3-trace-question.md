@@ -46,9 +46,21 @@ trace? **No** — measured contribution of the truncated (>row) tail to `tr_M`:
 The ≤3-row restriction misses by **0.2 → 1.1 → 3.4 %, growing with A** — orders of
 magnitude above the 50-dps / 1-ppQ floor, and worse than the rejected active-set
 10⁻³ truncation. **So QOU genuinely requires the full Hecke trace; the SU_q(3)
-colour quotient is not a valid production approximation.** Combined with the corpus
-(no derivation exists), the status is: the full-Hecke choice is *empirically forced*
-but *not yet derived* — a documented gap, not a free optimization.
+colour quotient is not a valid production approximation.**
+
+### Gap FILLED — the full-Hecke choice is principled, not arbitrary
+
+The `y_λ` are the **Wenzl principal Schur specialization** `s_λ(1, q, q², …)`
+(`wedderburn_jones_markov.py:7,63` → `schur_principal_symbolic`) — the **canonical
+Jones–Markov trace** on the Hecke tower `H_n(q)` (the unique Markov trace, Wenzl
+1988). The *principal* (infinite-variable) specialization is **nonzero for every λ
+by construction** — there is no row cutoff. The SU_q(3) "colour" trace would be the
+**finite 3-variable** specialization `s_λ(1, q, q²)`, which *is* zero for >3-row λ —
+but that is a **structurally different trace functional**, not a truncation or
+approximation of the canonical one. So the question "why full Hecke not SU_q(3)" is
+resolved: QOU uses *the* canonical Markov trace; restricting to ≤3 rows would change
+the functional (a different physical theory), not optimize this one. The `p(3A)`
+wall is therefore intrinsic to the canonical Jones–Markov trace itself.
 
 ## C. Verdict on "unexplored symmetries"
 
@@ -60,17 +72,28 @@ It is a block-level functor, not a spectrum truncation, and the one quotient tha
 stands: exact `tr_M` is intrinsically `O(p(3A))`; heavy nuclei use the A→∞ q-CLT
 extrapolation.
 
-## D. The lead worth keeping (NOT a sector reduction — a physics observation)
+## D. The binding lead — tested and REFUTED
 
-The >3-row missing fraction **grows monotonically with A** (0.2 → 1.1 → 3.4 %) and is
-percent-scale — the same order as **nuclear binding** (B/M ~ 0.1–1 %). This suggests
-the **≤3-row (colour) sectors carry the free-nucleon-sum mass, and the >3-row
-sectors carry the cooperative many-body content** (binding) — consistent with the
-#2343/#2349 finding that B_sym is pairwise-chain-exact and the cooperative α-binding
-lives *outside* the leading structure. This is a **derive-or-refute research lead**
-on where binding lives in the Wedderburn decomposition, **not** a computational
-shortcut (the >3-row sectors are needed, not prunable). Flagging for the binding
-program; out of scope for the (now-closed) bond-dimension wall question.
+The >3-row missing fraction grows with A (0.2 → 1.1 → 3.4 %), percent-scale like
+nuclear binding, suggesting the >3-row sectors might *be* the cooperative many-body
+binding (≤3-row = free-nucleon mass, >3-row = binding). **Tested directly and
+refuted:** row-decomposing the **free** nucleon reference (atom braid with
+`include_inter=False`, i.e. no inter-nucleon coupling = no binding) shows the free
+product carries **as much or more** >3-row content than the bound atom:
+
+| atom | atom >3-row frac | free >3-row frac |
+|---|---|---|
+| D | 0.216 % | 0.081 % |
+| ³He | 1.15 % | 1.82 % |
+| ⁴He | 3.36 % | **7.47 %** |
+
+The free reference (zero binding) already populates >3-row sectors — more than the
+bound atom at ⁴He. So the >3-row content is **not** a binding signature; it is
+intrinsic to the per-nucleon braid representation (each H₃ block fused into H_{3A}
+generates >3-row partitions regardless of inter-nucleon coupling). The "binding
+lives in >colour sectors" hypothesis is **false**. (This also independently
+re-confirms §B: even a free nucleon needs the full-row trace — SU_q(3) restriction
+fails for the free mass too, consistent with the canonical-Markov-trace resolution.)
 
 ## Files reviewed
 
