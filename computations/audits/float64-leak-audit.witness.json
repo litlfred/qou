@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-17T00:48:36.337813+00:00",
-  "commitSha": "e6a6cbf10471aba2d18d64dd81690b70c1859fbc",
+  "computedAt": "2026-06-17T02:35:40.231804+00:00",
+  "commitSha": "f15381c3d284bfef701effbdcc3656d5ec3047d8",
   "assertions": [
     {
       "name": "no_i8_violations",
@@ -41,9 +41,9 @@
   },
   "data": {
     "by_result": {
-      "ok_no_leaks": 35,
-      "ok_with_display_or_fp": 12,
-      "i8_violation": 9
+      "ok_no_leaks": 36,
+      "ok_with_display_or_fp": 13,
+      "i8_violation": 7
     },
     "rows": [
       {
@@ -416,21 +416,21 @@
         "path": "computations/closed_form_tau_M.py",
         "substrate_banner": true,
         "hit_count": 1,
-        "violation_count": 1,
+        "violation_count": 0,
         "display_count": 0,
         "comparison_count": 0,
-        "noqa_count": 0,
+        "noqa_count": 1,
         "witness_emit_count": 0,
         "false_positive_count": 0,
         "hits": [
           {
             "line_number": 352,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "h_val = float(Q0 - 1 / Q0)"
           }
         ],
-        "result": "i8_violation"
+        "result": "ok_no_leaks"
       },
       {
         "path": "computations/constit_factor_residual_phase5k.py",
@@ -1761,23 +1761,23 @@
         "path": "computations/rho_constit_equals_tau_M_proton_phase5l.py",
         "substrate_banner": true,
         "hit_count": 19,
-        "violation_count": 1,
-        "display_count": 11,
+        "violation_count": 0,
+        "display_count": 10,
         "comparison_count": 0,
-        "noqa_count": 0,
+        "noqa_count": 2,
         "witness_emit_count": 7,
         "false_positive_count": 0,
         "hits": [
           {
             "line_number": 71,
             "pattern": "float_cast",
-            "context": "ok_display",
+            "context": "ok_noqa",
             "code_snippet": "h_val = float(Q0 - 1 / Q0)"
           },
           {
             "line_number": 88,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "h_val = float(Q0 - 1 / Q0)"
           },
           {
@@ -1883,7 +1883,7 @@
             "code_snippet": "computed=float(max_rel_err),"
           }
         ],
-        "result": "i8_violation"
+        "result": "ok_with_display_or_fp"
       },
       {
         "path": "computations/sigma_all_evaluator.py",

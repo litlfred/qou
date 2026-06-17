@@ -94,7 +94,7 @@ def compute_tr_M_decomposition(Z: int, N: int, include_inter: bool,
     word_tuples = atom_braid_word_3A(Z, N, include_inter=include_inter)
     # Convert (c, d, gen_idx) → (sign, gen_1indexed) for chi_lambda_braid
     word_marshalled = []
-    h_val = float(Q0 - 1 / Q0)
+    h_val = float(Q0 - 1 / Q0)  # noqa: I8 — sign-classification param for marshal_to_chi_lambda_braid (matched vs d within eps=1e-10), not a precision coefficient
     for c, d, g in word_tuples:
         cf = float(c)
         df = float(d)

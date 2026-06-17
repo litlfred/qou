@@ -68,7 +68,7 @@ def marshal_intra(chain_g0, chain_g1, h_val: float):
 def compute_tau_M_proton_H3(q_val: mp.mpf, dps: int = 50) -> mp.mpf:
     """tr_M^3(𝓑_p, q) at H_3.  The proton H_3 braid is intra-only:
     g0 chain + g1 chain, no atomic embedding."""
-    h_val = float(Q0 - 1 / Q0)
+    h_val = float(Q0 - 1 / Q0)  # noqa: I8 — sign-classification param for marshal_to_chi_lambda_braid (matched vs d within eps=1e-10), not a precision coefficient
     word = marshal_intra(_PROTON_G0, _PROTON_G1, h_val)
     q_str = mp.nstr(q_val, dps, strip_zeros=False)
     total = mp.mpf(0)
@@ -85,7 +85,7 @@ def compute_tau_M_constit(Z: int, N: int, q_val: mp.mpf,
     """tr_M(𝓑_constit_K, q) for atom K = (Z, N), no interface generators.
 
     Per Gemini PR #854 review: braid marshalling centralized."""
-    h_val = float(Q0 - 1 / Q0)
+    h_val = float(Q0 - 1 / Q0)  # noqa: I8 — sign-classification param for marshal_to_chi_lambda_braid (matched vs d within eps=1e-10), not a precision coefficient
     word = atom_braid_word_3A(Z, N, include_inter=False)
     word_m = marshal_to_chi_lambda_braid(word, h_val)
     n = 3 * (Z + N)
