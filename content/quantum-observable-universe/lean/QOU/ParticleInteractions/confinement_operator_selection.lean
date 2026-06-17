@@ -42,11 +42,13 @@ accumulates the signed crossing count per unordered strand pair (`= 2·lk`), and
 `crossingCounts` the unsigned count. For the Borromean braid `(σ₀σ₁⁻¹)³` both are
 proved by `decide`: every pairwise linking number vanishes (the Brunnian
 *signature* — a necessary condition for Brunnian) while every pair still crosses
-twice (geometrically interwoven). This replaces the *axiomatized* signature with
-a machine-checked fact; the full Brunnian property (each 2-sublink is the
-*unknot/unlink*, not merely `lk = 0`) and crossing-minimality remain axiomatized
-in the classes below — they need unknot recognition / the finite enumeration
-(`computations/probes/b3_brunnian_*`), beyond core Lean. -/
+twice (geometrically interwoven). Moreover `borromean_sublinks_trivial` proves
+the **full Brunnian property's decidable core**: deleting any strand leaves a
+2-braid trivial in `B₂ ≅ ℤ` (exponent sum 0), hence each 2-sublink closes to the
+unlink — no general unknot recognition needed, because `B₂` is free abelian on
+one generator. Only **crossing-minimality** (the finite enumeration,
+`computations/probes/b3_brunnian_minimality_enumeration.py`) now remains
+witnessed-not-proved; it is the lone axiomatized field of the classes below. -/
 namespace BraidModel
 
 /-- A 3-braid letter: generator index (`0`/`1`) and sign (`true` = positive). -/
@@ -103,6 +105,36 @@ theorem borromean_linking_signature : signedCrossings borromean = (0, 0, 0) := b
 /-- **Geometric nontriviality** (machine-proved): every pair of strands crosses
     twice — pairwise unlinked (`lk = 0`) yet interwoven, the Borromean hallmark. -/
 theorem borromean_crossing_counts : crossingCounts borromean = (2, 2, 2) := by
+  decide
+
+/-- The 2-braid induced on the surviving strands by deleting strand `k`, as the
+    list of signed crossings between the two survivors. Since `B₂ ≅ ℤ` (one
+    generator), this 2-braid is determined up to braid equivalence by its
+    exponent sum (`b2class`). -/
+def deleteStrand (k : Nat) (w : List Letter) : List Int :=
+  (w.foldl (fun (st : Pos × List Int) L =>
+      let (pos, out) := st
+      let (p0, p1, p2) := pos
+      let s : Int := if L.2 then 1 else -1
+      match L.1 with
+      | 0 => ((p1, p0, p2), if p0 = k ∨ p1 = k then out else out ++ [s])
+      | _ => ((p0, p2, p1), if p1 = k ∨ p2 = k then out else out ++ [s]))
+    ((0, 1, 2), ([] : List Int))).2
+
+/-- `B₂ ≅ ℤ` class (exponent sum) of the induced 2-braid after deleting strand `k`. -/
+def b2class (k : Nat) (w : List Letter) : Int := (deleteStrand k w).foldl (· + ·) 0
+
+/-- **Brunnian property — decidable core, machine-proved.** Deleting any one of
+    the three strands from the Borromean braid leaves a 2-braid that is trivial
+    in `B₂ ≅ ℤ` (exponent sum `0`; concretely each induced word is `σ σ⁻¹`).
+    Because `B₂` is free abelian on one generator, exponent-sum-`0` is exactly
+    triviality, so each 2-sublink closure is the 2-component **unlink** — i.e.
+    removing any quark frees the other two. This proves the *full* Brunnian
+    property modulo the textbook facts `B₂ ≅ ℤ` and "a trivial 2-braid closes to
+    the unlink"; only crossing-minimality (the finite enumeration,
+    `b3_brunnian_minimality_enumeration.py`) remains witnessed-not-proved. -/
+theorem borromean_sublinks_trivial :
+    b2class 0 borromean = 0 ∧ b2class 1 borromean = 0 ∧ b2class 2 borromean = 0 := by
   decide
 
 end BraidModel
