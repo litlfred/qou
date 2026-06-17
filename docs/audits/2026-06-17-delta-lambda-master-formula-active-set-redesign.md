@@ -189,11 +189,22 @@ the trivial state out — normalise by *trace* (`tr_M(Φ)=n_target`) instead of 
 coefficient-sum net, or add `tr_M(Φ)≥ε`; (3) local-min selection (min |λ| vertex)
 per the caveat — matches the prop literally, least principled.
 
-**Deeper caveat (critical-distance):** even fixed, the min-action principle as
-written does **not** uniquely select `𝓑₃` — the indefinite Gram from
-`tr_M(e⁻)=z³` means the trivial massless state always undercuts it. So the
-master-formula route is gated on a *sounder confinement-LP formulation*, not a
-code tweak. Recorded as the real open item for this route.
+**Fix (1) tested 2026-06-17 — REFUTED** (`/tmp/fix1_test.py`: baseline + 1a + 1b
+on the live 6×6 Gram). Decoupling the objective from the `i=0` row just exposes
+the indefinite Gram's negative eigenvalue: **(1a)** zero the identity cost /
+minimise `Σ_{i≥1} t_i x_i` → obj = **−3.64 (negative, unphysical action)**;
+**(1b)** drop the `i=0` positivity row → obj = **−1.2×10⁶, unbounded** (`x*` runs
+to the −M bound). Neither selects `𝓑₃`. So the discrepancy is **not** the
+objective/constraint coincidence per se — it is the **indefinite Frobenius Gram**
+(eig ≈ −0.956 from `tr_M(e⁻)=z³`): a linear program over an indefinite form is
+the wrong tool (LP finds *global* optima; `𝓑₃` is only *local*).
+
+**Deeper caveat (critical-distance), now confirmed:** the min-action *LP* cannot
+uniquely select `𝓑₃` by any constraint tweak. The route is gated on a sounder
+formulation — fix (2) (trace-normalise / floor `tr_M ≥ ε`), fix (3) (local-min
+vertex selection), or the prop's own **quadratic** extension (`min x^T G x` over
+the indefinite `G`) / a non-LP selection principle. This is the real open item
+for the master-formula route; it is **not** a one-line code change.
 
 ## 5. Cross-links
 
