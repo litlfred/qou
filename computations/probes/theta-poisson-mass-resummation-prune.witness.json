@@ -1,0 +1,76 @@
+{
+  "computation": "theta-poisson-mass-resummation-prune",
+  "description": "Prune probe: framework Markov-trace MASS observables (fixed n) are NOT theta-shaped \u2014 their q-exponent supports are content/hook-based (dense, non-quadratic gaps), so direct Poisson/theta resummation does not apply. The theta self-duality (positive control) lives only in a quadratic-lattice sum. Bridge to root-of-unity requires reindexing the whole H_n(q) tower, not the fixed-n observable.",
+  "criterion": "theta_compatible = (sorted exponent support has constant positive second difference, i.e. lies on {a n^2 + b n + c}); needs >= 4 points.",
+  "objects": {
+    "proton_J_numerator": {
+      "support": [
+        0,
+        7,
+        8,
+        10,
+        11,
+        18
+      ],
+      "gaps": [
+        7,
+        1,
+        2,
+        1,
+        7
+      ],
+      "theta_compatible": false
+    },
+    "neutron_J_numerator": {
+      "support": [
+        0,
+        1,
+        2,
+        9,
+        11,
+        18,
+        19,
+        20
+      ],
+      "gaps": [
+        1,
+        1,
+        7,
+        2,
+        7,
+        1,
+        1
+      ],
+      "theta_compatible": false
+    },
+    "trefoil_jones": {
+      "support": [
+        -4,
+        -3,
+        -1
+      ],
+      "gaps": [
+        1,
+        2
+      ],
+      "theta_compatible": null
+    },
+    "theta_truncation_control": {
+      "support": [
+        0,
+        1,
+        4,
+        9,
+        16
+      ],
+      "gaps": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "theta_compatible": true
+    }
+  },
+  "verdict": "REFUTED for fixed-n mass observables; theta structure confined to the control (quadratic lattice). Poisson/theta bridge is NOT a fixed-n resummation."
+}
