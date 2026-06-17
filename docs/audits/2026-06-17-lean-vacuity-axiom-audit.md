@@ -84,16 +84,49 @@ All in [`lean/QOU/BraidsKnots/LinearJSJVolume.lean`](../../content/quantum-obser
 `m(K) = m_e · Vol(K) · ρ(K) / ℏ_q²`. These uncited axioms are prime
 prove-or-cite candidates — addressed in this PR.
 
-### `proof-no-self-assuming-projection` — triage required
+### `proof-no-self-assuming-projection` — agent triage (all 22 adjudicated)
 
-Many carry `[ctx : …Context]` / `[h : Class]` binders — the §3b-cond
-conditional-class shape, which is **legit when the proof derives** and a
-**defect when it bare-projects the conclusion field** (§3b-cond item 5,
-non-degeneracy). Known prior verdicts to respect:
-`MostowRigidity.mass_rigidity_of_mostow` and `MassGap.yangMillsMassGap_construction`
-were assessed false-positive / ∃-repackaging (CLAUDE.md §7d U4) — confirm before
-touching. The remainder (`q-beta-*`, `he4-*`, `SubstrateEWHypotheses`,
-`r-matrix-braiding-structure`, …) need the per-decl discriminator.
+A sub-agent applied the legit-vs-anti discriminator per-decl (reading each
+structure/class field's TYPE). Verdict: **3 VACUOUS-CIRCULAR, 14
+conditional-class-degenerate, 5 LEGIT (scanner false positives)**.
+
+| file:line | decl | verdict | recipe |
+|---|---|---|---|
+| `braids-and-knots/r-matrix-braiding-structure.lean:75` | `r_matrix_braiding_structure` | VACUOUS-CIRCULAR | 1 — instantiate R, prove YBE (or cite Drinfeld) |
+| `braids-and-knots/r-matrix-braiding-structure.lean:90` | `braid_rep_from_R_check` | VACUOUS-CIRCULAR | 1 — derive braid reln from YBE |
+| `lean/QOU/MassDerivation.lean:73` | `topological_mass_formula` | VACUOUS-CIRCULAR | 1 — define `mass := vol/ℏ²`, don't assert |
+| `fluid-dynamics/acoustic-horizon-conditions.lean:98` | `acoustic_horizon_regularity` | COND-CLASS-DEGEN | 2 — derive from inputs |
+| `fluid-dynamics/discrete-vortex-spectrum.lean:91` | `discrete_vortex_spectrum` | COND-CLASS-DEGEN | 2 |
+| `lean/QOU/Archimedean/AxialCoupling.lean:166` | `sym_trace_ordering_independent` | COND-CLASS-DEGEN | 2 |
+| `lean/QOU/BraidKnot/LevelSufficiency.lean:104` | `LevelSufficiency` | COND-CLASS-DEGEN | 2 |
+| `lean/QOU/BraidKnot/SubstrateEWHypotheses.lean:119` | `g_eq_pi_h_substrate_hypothesis` | COND-CLASS-DEGEN | **4 — owner sign-off (empirical, OPEN)** |
+| `lean/QOU/BraidKnot/SubstrateEWHypotheses.lean:139` | `v_ratio_eq_log_S3_hypothesis` | COND-CLASS-DEGEN | **4 — owner sign-off (empirical, OPEN)** |
+| `lean/QOU/BraidKnot/SubstrateEWHypotheses.lean:160` | `scalar_gauge_ratio_eq_six_fifths_hypothesis` | COND-CLASS-DEGEN | **4 — owner sign-off (empirical, OPEN)** |
+| `lean/QOU/BraidKnot/knot_factor_spectral_derivation.lean:61` | `plancherelWeight_sum_eq_one` | COND-CLASS-DEGEN | 2 — derive Wedderburn sum |
+| `lean/QOU/ParticleInteractions/atomic_lp_stability.lean:51` | `atomic_lp_stability` | COND-CLASS-DEGEN | 2 (LP dichotomy from solves) |
+| `lean/QOU/ParticleInteractions/corrected_markov_trace.lean:40` | `corrected_markov_trace` | COND-CLASS-DEGEN | 2 — compute tr_M(trefoil) |
+| `lean/QOU/ParticleInteractions/deuterium_derived_binding.lean:128` | `deuterium_derived_binding` | COND-CLASS-DEGEN | **4 — owner sign-off (binding-energy claim)** |
+| `mass-theory/he4-channel-active-set.lean:308` | `he4_class_is_feasible_solution` | COND-CLASS-DEGEN (mild bridge) | 2 / accept |
+| `mass-theory/q-beta-q-eq-one-shadow-gate.lean:79` | `qbeta_q_eq_one_shadow_anchors` | COND-CLASS-DEGEN (mild gate) | 2 / accept as named gate |
+| `mass-theory/q-beta-bar-even-kernel-typeclass.lean:115` | `bar_even_kernel_implies_q_one_shadow` | COND-CLASS-DEGEN (mild lift) | 2 / accept as lifting lemma |
+| `lean/QOU/Encounter/MostowRigidity.lean:153` | `mass_rigidity_of_mostow` | **LEGIT-EXISTENTIAL** | none (∃-repackaging, §7d U4) |
+| `lean/QOU/Torsion/MassGap.lean:241` | `yangMillsMassGap_construction` | **LEGIT-EXISTENTIAL** | none (witness-packaging) |
+| `lean/QOU/MathlibExt.lean:134` | `List.prod_eq_of_perm` | **LEGIT-COMPOSITION** | none (applies Mathlib `Perm.prod_eq`; scanner over-match on `h.field`) |
+| `mass-theory/confinement-nf-partial-proof.lean:109` | `strong_duality` | **LEGIT-COMPOSITION** | none (cited external LP fact, consumed downstream) |
+| `mass-theory/he4-two-row-dominance.lean:102` | `dominant_in_two_row_stratum` | **LEGIT-COMPOSITION** | none (constructor-composition of 2 sub-properties) |
+
+**Recipe-1/2 (genuine proof / restructure)** items are real defects but require a
+Lean build to verify the rewrite (the Mathlib cache is not restored in this
+environment), so they are **deferred to a follow-up drain**, not rushed in blind.
+**Recipe-4** items (the 3 `SubstrateEWHypotheses` empirical near-matches +
+`deuterium_derived_binding`) are **claim changes that touch mass/binding
+derivations** — they require owner sign-off AND the mass-binding appendix sync,
+and are NOT auto-committed. The **5 LEGIT** rows are scanner false positives:
+their sidecars get an agent `pass` entry (the script→agent precision layer).
+
+Scanner recall note: the sub-agent found `knot_factor_spectral_derivation:70`
+(sibling of the flagged `plancherelWeight_sum_eq_one:61`) is the same pattern but
+was NOT flagged — a known recall gap to tighten in a follow-up.
 
 ## Drain plan (priority order)
 

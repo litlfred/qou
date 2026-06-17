@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/he4-channel-active-set.lean"
   },
   "source_hashes": {
-    "md": "aadcdecd60ce",
-    "ts": "9c24cbaec5b5",
-    "lean": "dce3504356ed"
+    "md": "1be7a568148f",
+    "ts": "549906e06cc8",
+    "lean": "840d90872266"
   },
   "criteria": {
     "voice-status-leak": [
@@ -3556,6 +3556,24 @@
         "reviewed_at": "2026-06-15T13:25:43.317Z",
         "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
         "notes": "Placeholder stub is unformalised."
+      },
+      {
+        "field_hash": {
+          "lean": "840d90872266"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-theory/he4-channel-active-set.lean:308 [tuple-projection] theorem he4_class_is_feasible_solution [h : HasHe4ChannelActiveSet] :",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "bbdd1b3cd73d",
+          "script_commit_sha": "af67b28e1f2fa71f23c4127511e74668646878e6"
+        },
+        "reviewed_at": "2026-06-17T13:20:50.844Z",
+        "reviewed_sha": "af67b28e1f2fa71f23c4127511e74668646878e6",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "proof-no-trivial-true": [
@@ -3639,5 +3657,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T13:25:43.317Z"
+  "updated_at": "2026-06-17T13:20:50.844Z"
 }
