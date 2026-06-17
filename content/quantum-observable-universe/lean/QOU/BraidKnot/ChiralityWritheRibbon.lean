@@ -1,5 +1,9 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Int.Basic
+import Mathlib.Data.List.Basic
+import Mathlib.Data.List.Zip
+import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Tactic
 import Mathlib.Topology.Algebra.Module.Basic
 
 /-!
@@ -78,12 +82,14 @@ structure HeckeCharValue where
 class RibbonTwistEigenvalue (q : ℝ) where
   /-- `q > 0` (substrate regime). -/
   q_pos : 0 < q
-  /-- The eigenvalue of `θ_n^{w/2}` on `V_λ` is `q^{w · κ_λ}`. -/
+  /-- The eigenvalue of `θ_n^{w}` on `V_λ` is `q^{2w·κ_λ}` (Kauffman framing:
+      the ribbon twist acts as `q^{2κ_λ}`, so a writhe-`w` framing change
+      multiplies channel `λ` by `q^{2w·κ_λ}`). -/
   framing_eigenvalue : ℤ → ℤ → ℝ  -- writhe → kappa → eigenvalue
-  /-- The eigenvalue formula: `θ_n^{w/2}|_{V_λ} = q^{w·κ_λ}`. -/
+  /-- The eigenvalue formula: `θ_n^{w}|_{V_λ} = q^{2w·κ_λ}`. -/
   framing_formula :
     ∀ (w kappa : ℤ),
-      framing_eigenvalue w kappa = q ^ (w * kappa)
+      framing_eigenvalue w kappa = q ^ (2 * w * kappa)
 
 /-! ## §3  Chirality factor as a Wedderburn-weighted ratio -/
 
@@ -142,6 +148,29 @@ theorem log_q_first_order (q : ℝ) (hq : 0 < q)
     have h2 : (q - q⁻¹) ^ 2 ≠ 0 := pow_ne_zero _ h
     linarith [div_mul_cancel₀ (q ^ (2 * κ) - 1 - ↑κ * (q - q⁻¹)) h2]
 
+/-- Helper: a zipWith whose body is a 3-term sum splits into three sums. -/
+private theorem sum_zipWith_add3 {A B : Type*} (f g k : A → B → ℝ) :
+    ∀ (l1 : List A) (l2 : List B),
+      (List.zipWith (fun a b => f a b + g a b + k a b) l1 l2).sum
+        = (List.zipWith f l1 l2).sum + (List.zipWith g l1 l2).sum
+          + (List.zipWith k l1 l2).sum
+  | [], _ => by simp
+  | _, [] => by simp
+  | a :: l1, b :: l2 => by
+      simp only [List.zipWith_cons_cons, List.sum_cons, sum_zipWith_add3 f g k l1 l2]
+      ring
+
+/-- Helper: a constant pulls out of a zipWith sum. -/
+private theorem sum_zipWith_const_mul {A B : Type*} (c : ℝ) (f : A → B → ℝ) :
+    ∀ (l1 : List A) (l2 : List B),
+      (List.zipWith (fun a b => c * f a b) l1 l2).sum
+        = c * (List.zipWith f l1 l2).sum
+  | [], _ => by simp
+  | _, [] => by simp
+  | a :: l1, b :: l2 => by
+      simp only [List.zipWith_cons_cons, List.sum_cons, sum_zipWith_const_mul c f l1 l2]
+      ring
+
 /-- **Main proposition — writhe-linearisation of the chirality factor.**
 
     Let `β ∈ B_n` be a braid with writhe `w = w(β)`.  Let
@@ -149,9 +178,10 @@ theorem log_q_first_order (q : ℝ) (hq : 0 < q)
     `⟨c⟩_β = Σ_λ w_λ χ^λ(β) κ_λ / Σ_λ w_λ χ^λ(β)` be the
     character-weighted average Jucys–Murphy content.  Then
 
-      `a_K(β) = 1 + w · h · ⟨c⟩_β + O(h²)`.
+      `a_K(β) = 1 + w · h · ⟨c⟩_β + O(h²)`,
 
-    In particular, the chirality factor is **linear in `h`** and
+    and the first-order coefficient `c_avg` is **exactly** `⟨c⟩_β`
+    (not the vacuous 0): the chirality factor is **linear in `h`** and
     **linear in the writhe** to first order. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
@@ -172,41 +202,61 @@ theorem chirality_writhe_ribbon
       (List.zipWith (fun ch cv => ch.weight * cv.val)
         channels chars).sum ≠ 0) :
     ∃ (c_avg R : ℝ),
-      chiralityFactor (q := q) channels chars writhe h_len
+      -- c_avg is the character-weighted average Jucys–Murphy content ⟨κ⟩_β,
+      -- NOT the vacuous 0 — this is the substance of the linearisation.
+      c_avg = (List.zipWith (fun ch cv => ch.weight * cv.val * (ch.kappa : ℝ))
+                  channels chars).sum
+              / (List.zipWith (fun ch cv => ch.weight * cv.val) channels chars).sum
+      ∧ chiralityFactor (q := q) channels chars writhe h_len
         = 1 + (writhe : ℝ) * (q - q⁻¹) * c_avg
             + R * (q - q⁻¹) ^ 2 := by
-  -- We exhibit c_avg = 0, taking R either as 0 (when q = 1) or the
-  -- algebraic residual (chiralityFactor − 1) / h² (when h ≠ 0).
-  set a := chiralityFactor (q := q) channels chars writhe h_len with ha_def
-  by_cases hh : q - q⁻¹ = 0
-  · -- ── Case q = 1 ──────────────────────────────────────────────────
-    -- Deduce q = 1 from q > 0 and q - q⁻¹ = 0.
+  set h := q - q⁻¹ with hh
+  set U := (List.zipWith (fun ch cv => ch.weight * cv.val) channels chars).sum with hUdef
+  set Kw := (List.zipWith (fun ch cv => ch.weight * cv.val * (ch.kappa : ℝ))
+              channels chars).sum with hKw
+  -- chiralityFactor with the framing eigenvalue resolved to q^{2·w·κ}.
+  have hcf : chiralityFactor (q := q) channels chars writhe h_len
+      = (List.zipWith (fun ch cv => ch.weight * cv.val * q ^ (2 * writhe * ch.kappa))
+          channels chars).sum / U := by
+    simp only [chiralityFactor, RT.framing_formula, ← hUdef]
+  refine ⟨Kw / U, ?_⟩
+  by_cases hcase : h = 0
+  · -- q = 1: every framing eigenvalue is 1, so chiralityFactor = 1; h = 0
+    -- kills the linear and remainder terms.  R = 0.
     have hq1 : q = 1 := by
-      -- q > 0, q - q⁻¹ = 0 ⟹ q = q⁻¹ ⟹ q·q = 1.  Then q > 0 ⟹ q = 1.
-      have heq : q = q⁻¹ := by linarith
+      have heq : q = q⁻¹ := by simp only [hh] at hcase; linarith
       have hqq : q * q = 1 := by nth_rw 2 [heq]; exact mul_inv_cancel₀ (ne_of_gt RT.q_pos)
-      have h_le : q ≤ 1 := by nlinarith [sq_nonneg (q - 1)]
-      have h_ge : 1 ≤ q := by
-        have key := mul_le_mul_of_nonneg_left h_le (le_of_lt RT.q_pos)
-        rw [mul_one] at key; linarith
-      linarith
-    -- All framing eigenvalues are 1 when q = 1.
-    have hfe : ∀ (w k : ℤ), RT.framing_eigenvalue w k = 1 := fun w k => by
-      rw [RT.framing_formula, hq1]; simp
-    -- Therefore twisted = untwisted, so chiralityFactor = 1.
-    have ha1 : a = 1 := by
-      simp only [ha_def, chiralityFactor]
-      have heq : List.zipWith (fun ch cv => ch.weight * cv.val * RT.framing_eigenvalue writhe ch.kappa)
-            channels chars =
-          List.zipWith (fun ch cv => ch.weight * cv.val) channels chars := by
-        simp_rw [hfe, mul_one]
-      rw [heq, div_self h_denom]
-    exact ⟨0, 0, by simp [ha1, hh]⟩
-  · -- ── General case: h ≠ 0, choose c_avg = 0, R = (a - 1) / h² ────
-    refine ⟨0, (a - 1) / (q - q⁻¹) ^ 2, ?_⟩
-    have h2 : (q - q⁻¹) ^ 2 ≠ 0 := pow_ne_zero _ hh
-    rw [mul_zero, add_zero, div_mul_cancel₀ _ h2]
-    ring
+      nlinarith [sq_nonneg (q - 1), RT.q_pos]
+    have hfun : (fun (ch : WedderburnChannel) (cv : HeckeCharValue) =>
+                  ch.weight * cv.val * q ^ (2 * writhe * ch.kappa))
+              = (fun ch cv => ch.weight * cv.val) := by
+      funext ch cv; simp [hq1]
+    exact ⟨0, rfl, by rw [hcf, hfun, div_self h_denom, hcase]; ring⟩
+  · -- h ≠ 0: per-channel q^{2wκ} = 1 + (wκ)h + R_κ h² (explicit residual).
+    have h2 : h ^ 2 ≠ 0 := pow_ne_zero _ hcase
+    refine ⟨(List.zipWith (fun ch cv =>
+        ch.weight * cv.val
+          * ((q ^ (2 * writhe * ch.kappa) - 1 - (writhe : ℝ) * (ch.kappa : ℝ) * h) / h ^ 2))
+        channels chars).sum / U, rfl, ?_⟩
+    have hfun2 : (fun (ch : WedderburnChannel) (cv : HeckeCharValue) =>
+                    ch.weight * cv.val * q ^ (2 * writhe * ch.kappa))
+        = (fun ch cv => (ch.weight * cv.val)
+            + (h * (writhe : ℝ)) * (ch.weight * cv.val * (ch.kappa : ℝ))
+            + h ^ 2 * (ch.weight * cv.val
+                * ((q ^ (2 * writhe * ch.kappa) - 1 - (writhe : ℝ) * (ch.kappa : ℝ) * h) / h ^ 2))) := by
+      funext ch cv; field_simp; ring
+    have hsplit :
+        (List.zipWith (fun ch cv => ch.weight * cv.val * q ^ (2 * writhe * ch.kappa))
+          channels chars).sum
+          = U + h * ((writhe : ℝ) * Kw)
+            + h ^ 2 * ((List.zipWith (fun ch cv =>
+                ch.weight * cv.val
+                  * ((q ^ (2 * writhe * ch.kappa) - 1 - (writhe : ℝ) * (ch.kappa : ℝ) * h) / h ^ 2))
+                channels chars).sum) := by
+      rw [hfun2, sum_zipWith_add3, sum_zipWith_const_mul, sum_zipWith_const_mul, ← hUdef, ← hKw]
+      ring
+    rw [hcf, hsplit]
+    field_simp
 
 /-! ## §5  Amphichiral case (sanity check) -/
 
@@ -227,9 +277,9 @@ theorem chirality_writhe_zero
     ∃ (R : ℝ),
       chiralityFactor (q := q) channels chars 0 h_len
         = 1 + R * (q - q⁻¹) ^ 2 := by
-  obtain ⟨c_avg, R, h⟩ :=
+  obtain ⟨c_avg, R, _, heq⟩ :=
     chirality_writhe_ribbon q 0 channels chars h_len h_denom
-  exact ⟨R, by simpa using h⟩
+  exact ⟨R, by simpa using heq⟩
 
 /-! ## §6  Empirical multiplicative crossing rule (conjectured) -/
 
