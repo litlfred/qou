@@ -4,6 +4,7 @@ import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Topology.Algebra.InfiniteSum.Ring
 import Mathlib.Algebra.Order.AbsoluteValue.Basic
 import Mathlib.Analysis.Normed.Group.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Summable
 import Mathlib.Tactic
 
 /-!
@@ -79,10 +80,10 @@ theorem summable_q_inv_geometric {q : ℝ} (hq : 1 < q) :
     funext k
     -- Step 1: normalize (k : ℤ) + 1 = ((k+1 : ℕ) : ℤ) for zpow_natCast.
     have key_cast : (((k : ℤ) + 1)) = ((k + 1 : ℕ) : ℤ) := by push_cast; ring
-    -- Step 2: rewrite q^(-(k+1)) = (q^(k+1))⁻¹ = (q * q^k)⁻¹.
+    -- Step 2: rewrite q^(-(k+1)) = (q^(k+1))⁻¹ = (q^k * q)⁻¹.
     rw [key_cast, zpow_neg, zpow_natCast, pow_succ]
-    -- Goal becomes: (q * q^k)⁻¹ = (1/q) * (1/q)^k
-    rw [mul_inv, ← one_div, ← one_div, ← inv_pow, ← one_div]
+    -- Goal becomes: (q^k * q)⁻¹ = (1/q) * (1/q)^k — pure field arithmetic.
+    rw [mul_inv, ← inv_pow]
     ring
   rw [heq]
   exact h_geom.mul_left (1 / q)
@@ -130,7 +131,7 @@ theorem quantumDilog_factors_nonzero
   have hz_pos_factor : 0 < q ^ (-((k : ℤ) + 1)) := zpow_pos hq_pos _
   -- Step 1: q^(-(k+1)) · |z| < q^(-(k+1)) · q
   have step1 : q ^ (-((k : ℤ) + 1)) * |z| < q ^ (-((k : ℤ) + 1)) * q :=
-    (mul_lt_mul_left hz_pos_factor).mpr hz
+    (mul_lt_mul_iff_of_pos_left hz_pos_factor).mpr hz
   -- Step 2: q^(-(k+1)) · q = q^(-k).
   have step2 : q ^ (-((k : ℤ) + 1)) * q = q ^ (-(k : ℤ)) := by
     have : (q : ℝ) ^ (-((k : ℤ) + 1)) * q ^ (1 : ℤ) = q ^ (-((k : ℤ) + 1) + 1) :=
@@ -154,8 +155,114 @@ theorem quantumDilog_factors_nonzero
   have prod_eq_one : q ^ (-((k : ℤ) + 1)) * z = 1 := by linarith
   have abs_eq_one : |q ^ (-((k : ℤ) + 1)) * z| = 1 := by
     rw [prod_eq_one]; exact abs_one
-  rw [abs_mul, abs_zpow, abs_of_pos hq_pos] at abs_eq_one
+  rw [abs_mul, abs_of_pos hz_pos_factor] at abs_eq_one
   linarith
+
+/-! ## Φ_q multipliability (the convergence half of Gap 4)
+
+We now upgrade the two facts above (geometric summability + non-vanishing
+of factors) to the statement that the infinite product actually
+`Multipliable`s.  The mechanism is Mathlib's
+`Real.multipliable_one_add_of_summable`: if `Summable g` then
+`Multipliable (fun k => 1 + g k)`.
+
+We apply it twice:
+
+  * with `g k = -(q^{-(k+1)} z)` to get `Multipliable (fun k => 1 - q^{-(k+1)} z)`
+    (the *denominator* product);
+  * with `g k = (1 - q^{-(k+1)} z)⁻¹ - 1` to get
+    `Multipliable (fun k => (1 - q^{-(k+1)} z)⁻¹)` (the actual `Φ_q` product).
+
+For the second application we need `Summable g`.  Writing
+`a k = q^{-(k+1)} z`, we have `g k = a k / (1 - a k)`, and since
+`|a k| ≤ |z|/q < 1` the denominator is bounded below by `c := 1 - |z|/q > 0`,
+so `|g k| ≤ |a k| / c`, summable by comparison with the geometric series.
+-/
+
+-- Ref: [habiro2004cyclotomic] §2 q-Pochhammer convergence; std analysis
+/-- The terms `a k = q^{-(k+1)} z` are summable for `1 < q` (any `z`).
+    This is the geometric summability repackaged in the `* z` form used
+    by the multipliability proofs below. -/
+theorem summable_quantumDilog_terms {q z : ℝ} (hq : 1 < q) :
+    Summable (fun k : ℕ => q ^ (-((k : ℤ) + 1)) * z) :=
+  (summable_q_inv_geometric hq).mul_right z
+
+/-- The denominator product `∏ (1 - q^{-(k+1)} z)` is `Multipliable`. -/
+-- Ref: [manuscript] prop:beta-decay-energy-scale §"calibration cross-check"
+theorem quantumDilog_denom_multipliable {q z : ℝ} (hq : 1 < q) :
+    Multipliable (fun k : ℕ => 1 - q ^ (-((k : ℤ) + 1)) * z) := by
+  have hsum : Summable (fun k : ℕ => -(q ^ (-((k : ℤ) + 1)) * z)) :=
+    (summable_quantumDilog_terms (z := z) hq).neg
+  have h := Real.multipliable_one_add_of_summable hsum
+  -- `1 + (-(a k)) = 1 - a k`
+  simpa [sub_eq_add_neg] using h
+
+/-- **Brane-tower convergence half of Gap 4.**
+    For `1 < q` and `|z| < q`, the q-dilogarithm / q-Pochhammer product
+
+      Φ_q(z) = ∏_{k≥1} (1 - q^{-k} z)^{-1}
+
+    is `Multipliable` — i.e. it converges to a well-defined non-zero real.
+    Each factor is non-zero by `quantumDilog_factors_nonzero`, and the
+    inverse-factor terms are summable by comparison with the geometric
+    series, so `Real.multipliable_one_add_of_summable` applies. -/
+-- Ref: [manuscript] prop:beta-decay-energy-scale §"calibration cross-check"
+-- Ref: [habiro2004cyclotomic] q-Pochhammer convergence
+theorem quantumDilog_multipliable {q z : ℝ} (hq : 1 < q) (hz : |z| < q) :
+    Multipliable (fun k : ℕ => (1 - q ^ (-((k : ℤ) + 1)) * z)⁻¹) := by
+  have hq_pos : 0 < q := lt_trans zero_lt_one hq
+  have hq_ne : q ≠ 0 := hq_pos.ne'
+  -- `c = 1 - |z|/q` is a positive lower bound for every denominator.
+  have hzq_lt_one : |z| / q < 1 := (div_lt_one hq_pos).mpr hz
+  set c : ℝ := 1 - |z| / q with hc_def
+  have hc_pos : 0 < c := by rw [hc_def]; linarith
+  -- For each `k`, `|a k| ≤ |z| / q`, hence `1 - a k ≥ c > 0`.
+  have hden_ge : ∀ k : ℕ, c ≤ 1 - q ^ (-((k : ℤ) + 1)) * z := by
+    intro k
+    have hpow_pos : 0 < q ^ (-((k : ℤ) + 1)) := zpow_pos hq_pos _
+    -- `q^(-(k+1)) ≤ q^(-1) = 1/q`  (since `-(k+1) ≤ -1` and `q ≥ 1`)
+    have hpow_le : q ^ (-((k : ℤ) + 1)) ≤ q ^ (-1 : ℤ) :=
+      zpow_le_zpow_right₀ hq.le (by omega)
+    have hq_inv_eq : q ^ (-1 : ℤ) = 1 / q := by
+      rw [zpow_neg_one, one_div]
+    have hpow_le' : q ^ (-((k : ℤ) + 1)) ≤ 1 / q := by
+      rw [← hq_inv_eq]; exact hpow_le
+    -- `a k = q^(-(k+1)) z ≤ q^(-(k+1)) |z| ≤ (1/q) |z| = |z|/q`
+    have hak_le : q ^ (-((k : ℤ) + 1)) * z ≤ |z| / q := by
+      calc q ^ (-((k : ℤ) + 1)) * z
+          ≤ q ^ (-((k : ℤ) + 1)) * |z| := by
+            apply mul_le_mul_of_nonneg_left (le_abs_self z) hpow_pos.le
+        _ ≤ (1 / q) * |z| := by
+            apply mul_le_mul_of_nonneg_right hpow_le' (abs_nonneg z)
+        _ = |z| / q := by ring
+    rw [hc_def]; linarith
+  -- Define the deviation `g k = (1 - a k)⁻¹ - 1` and prove its summability.
+  set g : ℕ → ℝ := fun k => (1 - q ^ (-((k : ℤ) + 1)) * z)⁻¹ - 1 with hg_def
+  have hsumg : Summable g := by
+    -- comparison: `|g k| ≤ (1/c) * |a k|`
+    have hbound : ∀ k : ℕ, ‖g k‖ ≤ (1 / c) * ‖q ^ (-((k : ℤ) + 1)) * z‖ := by
+      intro k
+      have hden_pos : 0 < 1 - q ^ (-((k : ℤ) + 1)) * z := lt_of_lt_of_le hc_pos (hden_ge k)
+      have hden_ne : (1 - q ^ (-((k : ℤ) + 1)) * z) ≠ 0 := hden_pos.ne'
+      -- `g k = a k / (1 - a k)`
+      have hgk : g k = (q ^ (-((k : ℤ) + 1)) * z) / (1 - q ^ (-((k : ℤ) + 1)) * z) := by
+        rw [hg_def]; field_simp; ring
+      rw [hgk, Real.norm_eq_abs, abs_div]
+      rw [abs_of_pos hden_pos]
+      rw [div_le_iff₀ hden_pos]
+      rw [one_div, ← div_eq_inv_mul, Real.norm_eq_abs]
+      rw [div_mul_eq_mul_div, le_div_iff₀ hc_pos]
+      -- goal: |a k| * c ≤ |a k| * (1 - a k)
+      apply mul_le_mul_of_nonneg_left (hden_ge k) (abs_nonneg _)
+    -- `(1/c) • |a|` is summable, so `g` is summable by comparison.
+    have hsum_abs : Summable (fun k : ℕ => (1 / c) * ‖q ^ (-((k : ℤ) + 1)) * z‖) :=
+      ((summable_quantumDilog_terms (z := z) hq).norm).mul_left (1 / c)
+    exact Summable.of_norm_bounded hsum_abs hbound
+  -- Apply the one-add multipliability criterion.
+  have h := Real.multipliable_one_add_of_summable hsumg
+  -- `1 + g k = (1 - a k)⁻¹`
+  refine h.congr (fun k => ?_)
+  rw [hg_def]; ring
 
 /-! ## Gap 4 status summary
 
@@ -166,12 +273,26 @@ What's now proved (this file):
   * `quantumDilog_factors_nonzero` — each factor (1 - q^{-k} z)
     is non-zero in the domain (closed via zpow_pos + zpow_add₀
     + inv_le_one_of_one_le₀)
+  * `summable_quantumDilog_terms` — Σ q^{-(k+1)} z converges
+    (geometric summability in the `* z` form)
+  * `quantumDilog_denom_multipliable` — the denominator product
+    ∏ (1 - q^{-(k+1)} z) is `Multipliable`
+    (via `Real.multipliable_one_add_of_summable` on `-(q^{-(k+1)} z)`)
+  * **`quantumDilog_multipliable`** — the Φ_q product
+    ∏ (1 - q^{-(k+1)} z)^{-1} is `Multipliable` for 1 < q, |z| < q.
+    This is the **convergence half of Gap 4**: combining the
+    geometric summability with the uniform lower bound
+    1 - q^{-(k+1)} z ≥ 1 - |z|/q > 0 on the factors, the deviation
+    terms g k = (1 - q^{-(k+1)} z)^{-1} - 1 are summable by
+    comparison with the geometric series, and
+    `Real.multipliable_one_add_of_summable` upgrades this to
+    multipliability of the inverse-factor product.
 
-What this implies (Mathlib chain, not done here):
+What this gives:
 
-  * `Multipliable (fun k => (1 - q^{-k} z)^{-1})` by combining
-    log-summability with the non-vanishing of factors
-  * `Φ_q(z) = ∏' k, ...` is a well-defined positive real
+  * `Φ_q(z) = ∏' k, (1 - q^{-(k+1)} z)^{-1}` is now a well-defined
+    real (the `∏'` no longer collapses to Mathlib's 1-fallback,
+    since the family is genuinely `Multipliable`).
 
 What's still OPEN (Gap 5, separate file):
 
