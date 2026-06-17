@@ -61,7 +61,7 @@ the owning blocks' `.qa.json`.
 Initial scan: 197 candidates / 178 files. After resolving the 5
 `proof-no-provable-axiom` (cited — see below) and applying the Gemini PR-review
 fixes (multi-line `absurd` recall): **196** candidates across **181** files; **39**
-exempt shadows (1754 `.lean` scanned).
+exempt shadows (1755 `.lean` scanned).
 
 | criterion | candidates |
 |---|---|
