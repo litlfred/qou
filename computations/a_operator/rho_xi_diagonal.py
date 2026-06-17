@@ -112,3 +112,53 @@ def rho_word_diag(xi, q_str: str, dps: int, word):
             v = w
         diag[a] = v[a]
     return diag, d
+
+
+def combiner_value_streaming(blocks, RB, word, q_str: str, dps: int):
+    """χ-combiner `Σ_{ξ,ν} Tr[A^{ξν}·(ρ_ξ(word)⊗ρ_ν)]` — contraction-only, streamed.
+
+    Because `A^λ_{ξν}` is block-diagonal in `V_ξ`, the contraction reduces to
+    `Σ_ξ Σ_a v_a · diag(ρ_ξ(word))[a]` with `v_a = Σ_ν Σ_{b,b'} A^{ξν}_{a,b,b'}
+    ρ_ν[b',b]` a precomputed scalar per inner-basis index `a`. Each
+    `diag(ρ_ξ)[a]` is produced one column at a time and consumed immediately, so
+    `ρ_ξ` is never materialised — `O(d_ξ)` memory (the only form that fits the
+    largest A=6 blocks). `blocks = {(ξ,ν): A}`, `RB = {ν: ρ_ν(block)}` (small).
+
+    Exactly the diagonal-only contraction of `interface_blocks` reorganised; same
+    arithmetic, `O(Σ_ξ d_ξ²·|word|)` time (the irreducible cost — see the cost
+    probe). No fit.
+    """
+    from collections import defaultdict
+    by_xi = defaultdict(list)
+    for (xi, nu), A in blocks.items():
+        by_xi[xi].append((nu, A))
+
+    total = mp.mpf(0)
+    rev = list(reversed(word))
+    for xi, nus in by_xi.items():
+        nz, d = sparse_generators(xi, q_str, dps)
+        # v[a] = Σ_ν Σ_{b,b'} A^{ξν}[a·d_ν+b, a·d_ν+b'] · ρ_ν[b',b]
+        v = [mp.mpf(0)] * d
+        for (nu, A) in nus:
+            d_nu = RB[nu].rows
+            for a in range(d):
+                s = mp.mpf(0)
+                for b in range(d_nu):
+                    for bp in range(d_nu):
+                        s += A[a * d_nu + b, a * d_nu + bp] * RB[nu][bp, b]
+                v[a] += s
+        # stream: diag(ρ_ξ(word))[a] = (ρ_ξ(word)·e_a)[a], one column at a time
+        for a in range(d):
+            if v[a] == 0:
+                continue
+            vec = [mp.mpf(0)] * d
+            vec[a] = mp.mpf(1)
+            for (c, dc, g) in rev:
+                w = [dc * vec[i] for i in range(d)]
+                for (i, j, val) in nz[g]:
+                    vj = vec[j]
+                    if vj != 0:
+                        w[i] += c * val * vj
+                vec = w
+            total += v[a] * vec[a]
+    return total
