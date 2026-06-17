@@ -328,6 +328,19 @@ theorem s5_to_s3_restriction_dim_consistent (p : PartitionOf5) :
     (List.zipWith (· * ·) (s5_to_s3_restriction_mults p) s3IrrepDims).sum = p.dim := by
   cases p <;> decide
 
+/-- **S₃-rotation branching dimension-consistency** (the analog of
+    `icos_branching_dim_check` for the `s3RotBranchingMult` table, which until
+    now carried only the `s3_std_appears_at_ell1_and_ell2` spot-check).  For
+    each angular-momentum level ℓ ≤ 4, the S₃⊂SO(3) rotation-subgroup
+    multiplicities partition the full dimension `2ℓ+1`:
+    `Σ_μ (mult of μ in V_ℓ↓S₃) · dim(μ) = 2ℓ+1`.  The `length = 3` conjunct
+    guards `List.zipWith` against silent truncation (cf. #2431). -/
+theorem s3rot_branching_dim_check :
+    ∀ ℓ ∈ [0, 1, 2, 3, 4],
+      (s3RotBranchingMult ℓ).length = 3 ∧
+      (List.zipWith (· * ·) (s3RotBranchingMult ℓ) s3IrrepDims).sum = 2 * ℓ + 1 := by
+  decide
+
 /-! ## Δ_λ chirality decomposition (per-block binding factor)
 
     Per `docs/audits/2026-06-16-option-e-delta-lambda-sign-chirality.md` (#2386):
