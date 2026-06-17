@@ -33,9 +33,13 @@ $$
   a_K = \prod_{\text{pn crossings } c}(1 + \mathrm{sign}(c)\cdot h).
 $$
 
-The structural first-order result is proved below (with one `sorry` for
-the Hecke-algebra ribbon identity); the multiplicative rule is stated as
-a conjecture.
+The structural first-order result is proved below **sorry-free**: the
+chirality factor's first-order coefficient is the character-weighted average
+content `⟨c⟩_β` (`chirality_writhe_ribbon`).  The only categorical input is
+the ribbon-twist eigenvalue, axiomatized as the class
+`RibbonTwistEigenvalue.framing_formula` (`Θ_λ = q^{2w·κ_λ}`, a standard
+Jones–Ocneanu fact).  The empirical multiplicative pn-crossing rule is a
+separate conjecture.
 
 LaTeX label: `prop:chirality-writhe-ribbon-derivation`
 
