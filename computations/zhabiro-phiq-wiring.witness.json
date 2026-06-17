@@ -1,0 +1,61 @@
+{
+  "computation": "zhabiro-phiq-wiring",
+  "kind": "exploratory-probe",
+  "content_block": "conj:brane-tower-z-habiro",
+  "engine": "mpmath",
+  "dps": 60,
+  "q0": "1.10997859555733471989976322048",
+  "q0_source": "qou_substrate.constants.q_at (proton pin)",
+  "depth_N": 12,
+  "result": {
+    "eulerCoeff_recurrence_max_abs_err": "6.37237e-57",
+    "eulerTrunc_eq_cyclotomic_max_abs_err": "1.89587e-51",
+    "brane_z_hbar_q_squared": "0.00981718851398598439370648689405",
+    "phi_q_convergent": "1.09359787465522567937089990684",
+    "n0_to_phi_correction": "0.0935978746552256793708999068381",
+    "n0_to_phi_correction_pct": "9.35978746552",
+    "cross_check_ok": true
+  },
+  "euler_coeffs_b_m": [
+    "1.0",
+    "9.09267839739482608",
+    "43.4930852043099339",
+    "145.791018609688298",
+    "384.931951515630024",
+    "853.135358787670268",
+    "1651.85835232795639",
+    "2871.41936497794615",
+    "4570.46679384805672",
+    "6761.19404690047772",
+    "9403.79131586255961",
+    "12410.540053781126",
+    "15657.4590878136015"
+  ],
+  "cyclotomic_coeffs_c_m": [
+    "159726.464654024161",
+    "-2920009.41279911999",
+    "25371586.4870524751",
+    "-136658371.350151194",
+    "503617694.749237424",
+    "-1329543817.40747432",
+    "2567215377.71228599",
+    "-3641816853.10160968",
+    "3758412720.50608001",
+    "-2747217774.50363772",
+    "1348303531.31838607",
+    "-398535612.34934175",
+    "53611801.8873177849"
+  ],
+  "_provenance": {
+    "series_coeff_formula": "b_m = q^-m / prod_{j=1}^m (1 - q^-j)",
+    "lean_refs": [
+      "QOU.MassEndomorphism.ZHabiroCauchy.eulerCoeff",
+      "QOU.MassEndomorphism.ZHabiroCauchy.eulerCoeff_succ",
+      "QOU.MassEndomorphism.ZHabiroCauchy.eulerCoeff_unique",
+      "QOU.MassEndomorphism.ZHabiroCauchy.eulerTrunc_eq_cyclotomic",
+      "QOU.MassEndomorphism.ZHabiroCauchy.zHabiroLimit_coord_eq_eulerTrunc",
+      "QOU.MassEndomorphism.PhiQConvergence.quantumDilog_functional_eq"
+    ],
+    "wiring_status": "entry-point: numerical bridge + cross-checks; production mass-table rewire is the next step"
+  }
+}
