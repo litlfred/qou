@@ -1138,87 +1138,106 @@ fn col0_matrix_units(
     let tol = Float::with_val(prec, 1e-30);
     let ngen = rho.len();
     let d2 = d * d;
-    // BFS over generator words; collect ρ(T_w) (d×d). ρ is irreducible so its
-    // image spans all of M_d (Burnside); grow the pool one BFS wave at a time
-    // and stop as soon as RREF finds d² words with independent ρ-images. (A
-    // fixed word-count cap can fall short because the Hecke relation
-    // σ²=(q−q⁻¹)σ+1 collapses many short words to the same image.)
-    let mut words: Vec<Vec<usize>> = vec![vec![]];
-    let mut rhos: Vec<Vec<Vec<Float>>> = vec![eye_mpfr(d, prec)];
-    let mut frontier = 0usize;
-    let mut depth = 0usize;
-    let mut feat: Vec<Vec<Float>> = Vec::new();
-    let mut piv: Vec<usize> = Vec::new();
-    let max_depth = 2 * d + 6;
-    loop {
-        let end = words.len();
-        for wi in frontier..end {
-            for g in 0..ngen {
-                let mut nw = words[wi].clone();
-                nw.push(g);
-                let nr = dense_la_mpfr::dense_dense_mul_mpfr(&rhos[wi], &rho[g], prec);
-                words.push(nw);
-                rhos.push(nr);
-            }
-        }
-        frontier = end;
-        depth += 1;
-        let n = words.len();
-        // feat: d² × n, column w = vec(ρ(T_w)) with feature index f = i·d+j.
-        feat = (0..d2)
-            .map(|f| {
-                let (i, j) = (f / d, f % d);
-                (0..n).map(|w| Float::with_val(prec, &rhos[w][i][j])).collect()
-            })
-            .collect();
-        // Pivot columns of RREF(feat) = a maximal set of words with independent
-        // ρ-images; ρ surjects onto M_d so a full set of d² exists.
-        let (_rr, p) = dense_la_mpfr::rref_mpfr(&feat, prec, &tol);
-        piv = p;
-        if piv.len() == d2 || depth >= max_depth || end == words.len() {
-            break;
-        }
-    }
-    if piv.len() != d2 {
-        return Err(format!(
-            "col0_matrix_units: {} independent words at depth {}, need d²={}",
-            piv.len(), depth, d2));
-    }
-    // V (d²×d²) = ρ-images of the pivot words; invert once.
-    let vmat: Vec<Vec<Float>> = (0..d2)
-        .map(|f| piv.iter().map(|&w| Float::with_val(prec, &feat[f][w])).collect())
-        .collect();
-    let vinv = dense_la_mpfr::inverse_mpfr(&vmat, prec, &tol)
-        .ok_or_else(|| "col0_matrix_units: V singular".to_string())?;
-    // g̃-image of each pivot word (r×r).
-    let gt_piv: Vec<Vec<Vec<Float>>> = piv
-        .iter()
-        .map(|&w| {
-            let mut m = eye_mpfr(r, prec);
-            for &g in &words[w] {
-                m = dense_la_mpfr::dense_dense_mul_mpfr(&m, &g_tilde[g], prec);
-            }
-            m
-        })
-        .collect();
-    // M^_a = Σ_j (V⁻¹·e_{a·d})_j · g̃_{piv[j]} = Σ_j vinv[j][a·d] · gt_piv[j].
-    let mut units: Vec<Vec<Vec<Float>>> = Vec::with_capacity(d);
-    for a in 0..d {
-        let mut ma: Vec<Vec<Float>> =
-            (0..r).map(|_| (0..r).map(|_| Float::with_val(prec, 0)).collect()).collect();
-        for j in 0..d2 {
-            let cj = Float::with_val(prec, &vinv[j][a * d]);
-            if cj.is_zero() {
-                continue;
-            }
-            for row in 0..r {
-                for col in 0..r {
-                    ma[row][col] = Float::with_val(prec,
-                        &ma[row][col] + &(Float::with_val(prec, &cj * &gt_piv[j][row][col])));
+    // Greedy independent-set closure (memory-safe; the wave-based BFS that kept
+    // every word's ρ matrix grew the pool ×ngen per wave and OOM'd at d=16).
+    // Maintain ≤ d² kept words whose vec(ρ) are independent, with a running
+    // row-echelon basis to test independence in O(d⁴) space. ρ is irreducible
+    // ⇒ its image is all of M_d (Burnside), and the kept set is built by closure
+    // under right-multiplication by the generators, so it reaches dim = d².
+    let vecof = |m: &[Vec<Float>]| -> Vec<Float> {
+        let mut v = Vec::with_capacity(d2);
+        for i in 0..d { for j in 0..d { v.push(Float::with_val(prec, &m[i][j])); } }
+        v
+    };
+    // (pivot_col, reduced_row) pairs; reduced_row has a unit pivot.
+    let mut basis: Vec<(usize, Vec<Float>)> = Vec::new();
+    // Reduce v against basis; return Some(reduced) if independent (nonzero
+    // residual with a fresh pivot), else None.
+    let try_reduce = |v: &[Float], basis: &[(usize, Vec<Float>)]| -> Option<(usize, Vec<Float>)> {
+        let mut w: Vec<Float> = v.iter().map(|x| Float::with_val(prec, x)).collect();
+        for (pc, row) in basis {
+            if !w[*pc].is_zero() {
+                let f = Float::with_val(prec, &w[*pc]);
+                for k in 0..d2 {
+                    w[k] = Float::with_val(prec, &w[k] - &(Float::with_val(prec, &f * &row[k])));
                 }
             }
         }
-        units.push(ma);
+        let mut piv = None;
+        for k in 0..d2 {
+            if w[k].clone().abs() > tol { piv = Some(k); break; }
+        }
+        piv.map(|pc| {
+            let inv = Float::with_val(prec, 1) / Float::with_val(prec, &w[pc]);
+            for k in 0..d2 { w[k] = Float::with_val(prec, &w[k] * &inv); }
+            (pc, w)
+        })
+    };
+    let mut keep_words: Vec<Vec<usize>> = Vec::new();
+    let mut keep_rhos: Vec<Vec<Vec<Float>>> = Vec::new();
+    // Seed with the identity (empty word, ρ = I).
+    {
+        let id = eye_mpfr(d, prec);
+        let (pc, row) = try_reduce(&vecof(&id), &basis).unwrap();
+        basis.push((pc, row));
+        keep_words.push(vec![]);
+        keep_rhos.push(id);
+    }
+    let mut frontier = 0usize;
+    loop {
+        let end = keep_rhos.len();
+        if end >= d2 || frontier >= end { break; }
+        for wi in frontier..end {
+            for g in 0..ngen {
+                if keep_rhos.len() >= d2 { break; }
+                let nr = dense_la_mpfr::dense_dense_mul_mpfr(&keep_rhos[wi], &rho[g], prec);
+                if let Some((pc, row)) = try_reduce(&vecof(&nr), &basis) {
+                    basis.push((pc, row));
+                    let mut nw = keep_words[wi].clone();
+                    nw.push(g);
+                    keep_words.push(nw);
+                    keep_rhos.push(nr);
+                }
+            }
+            if keep_rhos.len() >= d2 { break; }
+        }
+        frontier = end;
+    }
+    if keep_rhos.len() != d2 {
+        return Err(format!(
+            "col0_matrix_units: closure found {} independent words, need d²={}",
+            keep_rhos.len(), d2));
+    }
+    // V (d²×d²) = vec(ρ) of the kept words (columns); invert once.
+    let vmat: Vec<Vec<Float>> = (0..d2)
+        .map(|f| {
+            let (i, j) = (f / d, f % d);
+            (0..d2).map(|w| Float::with_val(prec, &keep_rhos[w][i][j])).collect()
+        })
+        .collect();
+    let vinv = dense_la_mpfr::inverse_mpfr(&vmat, prec, &tol)
+        .ok_or_else(|| "col0_matrix_units: V singular".to_string())?;
+    // M^_a = Σ_j vinv[j][a·d] · g̃_{word_j}. Stream g̃-images (one r×r at a time)
+    // and accumulate into the d output units, so the d²·r² gt-array never
+    // materialises (the second OOM source at r=64).
+    let mut units: Vec<Vec<Vec<Float>>> = (0..d)
+        .map(|_| (0..r).map(|_| (0..r).map(|_| Float::with_val(prec, 0)).collect()).collect())
+        .collect();
+    for j in 0..d2 {
+        let mut gj = eye_mpfr(r, prec);
+        for &g in &keep_words[j] {
+            gj = dense_la_mpfr::dense_dense_mul_mpfr(&gj, &g_tilde[g], prec);
+        }
+        for a in 0..d {
+            let cj = Float::with_val(prec, &vinv[j][a * d]);
+            if cj.is_zero() { continue; }
+            for row in 0..r {
+                for col in 0..r {
+                    units[a][row][col] = Float::with_val(prec,
+                        &units[a][row][col] + &(Float::with_val(prec, &cj * &gj[row][col])));
+                }
+            }
+        }
     }
     Ok(units)
 }
