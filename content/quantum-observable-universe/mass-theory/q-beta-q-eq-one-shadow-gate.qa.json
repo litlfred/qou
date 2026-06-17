@@ -8,8 +8,8 @@
     "lean": "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.lean"
   },
   "source_hashes": {
-    "md": "1b604ea7afc4",
-    "ts": "072841e0e17a",
+    "md": "ab7fb6ff237a",
+    "ts": "ce3265f713a2",
     "lean": "fba7942a4894"
   },
   "criteria": {
@@ -3307,6 +3307,24 @@
         "reviewed_at": "2026-06-15T13:25:43.317Z",
         "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "lean": "fba7942a4894"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.lean:79 [tuple-projection] theorem qbeta_q_eq_one_shadow_anchors",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "bbdd1b3cd73d",
+          "script_commit_sha": "af67b28e1f2fa71f23c4127511e74668646878e6"
+        },
+        "reviewed_at": "2026-06-17T13:20:50.844Z",
+        "reviewed_sha": "af67b28e1f2fa71f23c4127511e74668646878e6",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "proof-no-trivial-true": [
@@ -3390,5 +3408,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T13:25:43.317Z"
+  "updated_at": "2026-06-17T13:20:50.844Z"
 }

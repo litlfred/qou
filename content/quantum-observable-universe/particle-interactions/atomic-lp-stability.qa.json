@@ -2706,6 +2706,24 @@
         "reviewed_at": "2026-06-15T13:25:43.317Z",
         "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "lean": "af5de5939adb"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_lp_stability.lean:51 [field-projection] theorem atomic_lp_stability [ctx : AtomicLPStabilityContext] :",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "bbdd1b3cd73d",
+          "script_commit_sha": "af67b28e1f2fa71f23c4127511e74668646878e6"
+        },
+        "reviewed_at": "2026-06-17T13:20:50.844Z",
+        "reviewed_sha": "af67b28e1f2fa71f23c4127511e74668646878e6",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "proof-no-trivial-true": [
@@ -2789,5 +2807,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T13:25:43.317Z"
+  "updated_at": "2026-06-17T13:20:50.844Z"
 }
