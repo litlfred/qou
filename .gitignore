@@ -53,6 +53,7 @@ _site/
 
 # Lean build artifacts (all paper packages + root workspace)
 .lake/
+.lake-build.lock
 lake-packages/
 content/*/lean/.lake/
 content/*/lean/lake-packages/
