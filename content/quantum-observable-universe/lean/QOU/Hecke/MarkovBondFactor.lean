@@ -1,4 +1,6 @@
 import QOU.Hecke.MarkovTrace
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Abel
 
 /-!
 # QOU.Hecke.MarkovBondFactor — the per-bond trace factor `tr_M(c·σ + d) = c·z + d`
