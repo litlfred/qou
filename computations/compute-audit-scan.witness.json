@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-17T12:59:56.679877+00:00",
-  "commitSha": "39aaeda843e0ef51d54f85bc7c31084f2d8af5f5",
+  "computedAt": "2026-06-17T13:11:05.302829+00:00",
+  "commitSha": "41f407ea55a7f4fe2197b335b035dbd6245f1134",
   "assertions": [],
   "allPassed": true,
   "durationMs": 10,
@@ -543,7 +543,7 @@
       {
         "pattern": "P31",
         "file": "binding_observe_last.py",
-        "line": 86,
+        "line": 72,
         "snippet": "CODATA literal \"0.78233\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
