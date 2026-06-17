@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 
 /-!
@@ -69,5 +70,66 @@ theorem shifted_sum {R : Type*} [Ring R] (c : ColorTubeCoordinates R) :
     c.σ + c.r + c.g + c.b = (c.w₁ + c.w₂ + c.w₃ + c.w₄) - 4 * c.z := by
   rw [c.σ_eq, c.r_eq, c.g_eq, c.b_eq]
   ring
+
+/-! ## Color-tube invariants and the Bring constraint variety
+
+The C₅-equivariant invariants of `aggregate-color-quantities.md` and the
+shifted quadric / cubic constraints of `color-tube-constraints.md`. These are
+polynomial identities over a commutative ring — the resolvent coordinates
+commute, so `[CommRing R]` and the formal variable for the C₅ character
+`χ_ζ` suffice (no archimedean input; §7c). Formalising them lets the color
+quadric `h₂` and cubic `h₃` be consumed in compute against a machine-checked
+constraint contract. -/
+
+/-- First power sum `p₁(c) = σ + r + g + b`. -/
+def ColorTubeCoordinates.p1 {R : Type*} [CommRing R]
+    (c : ColorTubeCoordinates R) : R :=
+  c.σ + c.r + c.g + c.b
+
+/-- Hermitian quadric `h₂(c) = σ·b + r·g`
+    ([`aggregate-color-quantities`](aggregate-color-quantities.md)). -/
+def ColorTubeCoordinates.h2 {R : Type*} [CommRing R]
+    (c : ColorTubeCoordinates R) : R :=
+  c.σ * c.b + c.r * c.g
+
+/-- Hermitian cubic `h₃(c) = σ²·g + b²·r + r²·σ + g²·b`. -/
+def ColorTubeCoordinates.h3 {R : Type*} [CommRing R]
+    (c : ColorTubeCoordinates R) : R :=
+  c.σ ^ 2 * c.g + c.b ^ 2 * c.r + c.r ^ 2 * c.σ + c.g ^ 2 * c.b
+
+/-- **Spacetime recovery** (`eq:spacetime-recovery`). The Lagrange `z = S/D`
+    relation `z·(χ_ζ − z) = p₁(c) + 4z` rearranges to the quadratic
+    `z² − (χ_ζ − 4)·z + p₁(c) = 0` determining the spacetime coordinate. -/
+-- Ref: [manuscript] Chapter 5, §Color tube constraints
+theorem spacetime_recovery {R : Type*} [CommRing R]
+    (c : ColorTubeCoordinates R) (χ : R)
+    (h : c.z * (χ - c.z) = c.p1 + 4 * c.z) :
+    c.z ^ 2 - (χ - 4) * c.z + c.p1 = 0 := by
+  linear_combination -h
+
+/-- **Shifted quadric — equivalent forms** (`eq:shifted-quadric`).
+    `h₂(c) + z·p₁(c) + 2z² = 0` iff `σ·b + r·g = −z(σ+r+g+b) − 2z²`. -/
+-- Ref: [manuscript] Chapter 5, §Color tube constraints
+theorem shifted_quadric_iff {R : Type*} [CommRing R]
+    (c : ColorTubeCoordinates R) :
+    c.h2 + c.z * c.p1 + 2 * c.z ^ 2 = 0 ↔
+      c.σ * c.b + c.r * c.g
+        = -c.z * (c.σ + c.r + c.g + c.b) - 2 * c.z ^ 2 := by
+  unfold ColorTubeCoordinates.h2 ColorTubeCoordinates.p1
+  constructor <;> intro h <;> linear_combination h
+
+/-- **Reduced cubic** (`eq:reduced-cubic`). Eliminating `h₂` via the shifted
+    quadric turns the shifted cubic
+    `h₃ + z(p₁² − 2h₂) + 3z²p₁ + 4z³ = 0` into
+    `h₃ + z·p₁² + 5z²p₁ + 8z³ = 0`. The elimination is the ring combination
+    `reduced = shifted_cubic + 2z·shifted_quadric`. -/
+-- Ref: [manuscript] Chapter 5, §Color tube constraints
+theorem reduced_cubic_of_shifted {R : Type*} [CommRing R]
+    (c : ColorTubeCoordinates R)
+    (hquad : c.h2 + c.z * c.p1 + 2 * c.z ^ 2 = 0)
+    (hcubic : c.h3 + c.z * (c.p1 ^ 2 - 2 * c.h2)
+                + 3 * c.z ^ 2 * c.p1 + 4 * c.z ^ 3 = 0) :
+    c.h3 + c.z * c.p1 ^ 2 + 5 * c.z ^ 2 * c.p1 + 8 * c.z ^ 3 = 0 := by
+  linear_combination hcubic + 2 * c.z * hquad
 
 end QOU.Brings
