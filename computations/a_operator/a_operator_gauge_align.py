@@ -385,10 +385,14 @@ def gauge_aligned_A_combiner_general(lam: tuple[int, ...], n_inner: int,
 
 def gauge_aligned_A_combiner_general_rust(lam: tuple[int, ...], n_inner: int,
                                           n_block: int, q_str: str, dps: int = 50):
-    """Rust-backed drop-in for `gauge_aligned_A_combiner_general` — delegates each
-    `(μ,ν)` block to the merged `pyhecke_native.gauge_aligned_a_combiner_mpfr`
-    (closure-b Rust port, PR #2376), resolving the O(r⁶) pure-mpmath wall that
-    forces a `dim(V_λ)` cap on the pure-Python version. Identical return format
+    """Rust-backed drop-in for `gauge_aligned_A_combiner_general` — delegates the
+    whole λ in **one** PyO3 call to
+    `pyhecke_native.gauge_aligned_a_combiner_all_blocks_mpfr`, which builds the λ
+    seminormal generators + both transposition class-sums once, caches the
+    isotypic projectors P_μ/P_ν, and loops `(μ,ν)` internally (closure-b Rust
+    port; all-blocks speedup over the per-`(μ,ν)` `gauge_aligned_a_combiner_mpfr`
+    of PR #2376). Resolves the O(r⁶) pure-mpmath wall that forces a `dim(V_λ)`
+    cap on the pure-Python version. Identical return format
     `{(μ,ν): {"A","c","d_mu","d_nu"}}` and identical pn interface
     (`I = σ_{n_inner-1} − h/2`), so callers swap the import and lift the cap.
 
@@ -419,19 +423,21 @@ def gauge_aligned_A_combiner_general_rust(lam: tuple[int, ...], n_inner: int,
         p_in, p_bl = partitions_of(n_inner), partitions_of(n_block)
         eig_in = [mp.nstr(ev_in[p], sig) for p in p_in]
         eig_bl = [mp.nstr(ev_bl[p], sig) for p in p_bl]
+        # One whole-λ PyO3 call: the Rust fn builds the λ seminormal + both
+        # class-sums once, caches P_μ/P_ν, and loops (μ,ν) internally — vs the
+        # old per-(μ,ν) call that rebuilt those shared parts |p_in|·|p_bl| times.
+        blocks = pn.gauge_aligned_a_combiner_all_blocks_mpfr(
+            list(lam), n_inner, n_block,
+            [list(p) for p in p_in], eig_in,
+            [list(p) for p in p_bl], eig_bl,
+            d_pn, q_str, dps)
         out = {}
-        for mu in p_in:
-            for nu in p_bl:
-                R = pn.gauge_aligned_a_combiner_mpfr(
-                    list(lam), n_inner, list(mu), list(nu),
-                    eig_in, mp.nstr(ev_in[mu], sig),
-                    eig_bl, mp.nstr(ev_bl[nu], sig), d_pn, q_str, dps)
-                if not R:
-                    continue
-                A = mp.matrix([[mp.mpf(x) for x in row] for row in R])
-                out[(mu, nu)] = {"A": A, "c": lr_coef(mu, nu, lam),
-                                 "d_mu": aoa.partition_dim(mu),
-                                 "d_nu": aoa.partition_dim(nu)}
+        for mu_l, nu_l, R in blocks:
+            mu, nu = tuple(mu_l), tuple(nu_l)
+            A = mp.matrix([[mp.mpf(x) for x in row] for row in R])
+            out[(mu, nu)] = {"A": A, "c": lr_coef(mu, nu, lam),
+                             "d_mu": aoa.partition_dim(mu),
+                             "d_nu": aoa.partition_dim(nu)}
     return out
 
 
