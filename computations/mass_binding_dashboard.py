@@ -8,13 +8,18 @@ the fine-Bratteli path); B_AME comes from the vendored AME2020 table
 probe `binding_single_pipeline_comparison.py` (PR #2320); see the appendix
 `standard-part-functor.md` for the form definitions.
 
-Feasibility: the trace forms (B_sym / B_qCLT-uniform) need the full
-per-knot trace `tr_M(W_atom)`, whose partition sum p(3A) explodes with A, so they
-are computed only when `n = 3A ≤ --max-strands` (default 21, i.e. A ≤ 7; each
-≲ 3 s). The factorized q-CLT and the ⁴He magic volume are cheap (combinatorics +
-three fixed 2-nucleon sub-braid ratios) and are shown across the whole sweep as
-the A→∞ extrapolation — which is also where the method's breakdown beyond the
-light nuclei is meant to be visible, NOT a validated prediction.
+Feasibility: `B_sym` is the EXACT log-ratio binding, but it no longer needs the
+full per-knot trace `tr_M(W_atom)` (whose partition sum p(3A) explodes — ¹²C
+5.5 min, ¹⁶O hours; the wall is intrinsically O(p(3A)), commit 61abcca9). The
+atom word is a monotone braid with one inter-nucleon crossing per distinct
+generator, so the log-binding factorizes over the (A−1) adjacency bonds:
+`B_sym = α[(Z−1)L_pp + L_pn + (N−1)L_nn]` (audit 2026-06-16-b-sym-linear-chain-
+closed-form.md), built from the same three 2-nucleon `Lbond` constants the
+q-CLT already uses. So `B_sym` (and `m_sym_atom`) are now computed for EVERY
+isotope from a closed form; the exact p(3A) trace is still run when
+`n = 3A ≤ --max-strands` (default 21, A ≤ 7) purely to VALIDATE the chain
+(|chain − exact| ≈ 1e-13). The factorized q-CLT and ⁴He magic volume remain the
+cruder A→∞ extrapolations shown alongside for comparison.
 
 EXPLORATORY presentation tool — no production rewire, no fit, no witness emitted
 (the canonical witness is the probe's). α = E₀ throughout.
@@ -124,34 +129,52 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
     # components, so m_sym(free) = Z·msp + N·msn for ANY A (no bound-knot trace).
     msp, msn = nucleon_msym
     m_sym_free = Z * msp + N * msn
-    # ---- forms that DO need the bound-knot trace tr_M(W_atom) ---------------
-    #   (the p(3A) partition sum explodes → capped at n ≤ max_strands)
-    B_sym = m_sym_atom = E_retained = E_emitted = E_multilink = B_sym_ent = None
+    # ---- B_sym closed form: the EXACT linear chain (all A, no p(3A) sweep) --
+    #   The atom word ['p']·Z+['n']·N places exactly ONE inter-nucleon crossing
+    #   per DISTINCT generator (monotone word), so the log-binding factorizes
+    #   over the (A−1) adjacency bonds — (Z−1) p-p, 1 p-n interface, (N−1) n-n:
+    #       B_sym = α[(Z−1)L_pp + L_pn + (N−1)L_nn]
+    #   with L_X the single-bond log-suppression already in Lbond. Verified ≡
+    #   the exact p(3A) trace to the 50-dps floor through ¹²C (audit
+    #   2026-06-16-b-sym-linear-chain-closed-form.md). So B_sym — and
+    #   m_sym_atom = B_sym + m_sym_free — are available for EVERY isotope:
+    #   ¹⁶O/⁴⁰Ca/⁵⁶Fe instant, with NO exact-trace wall (which 61abcca9 showed
+    #   is intrinsically O(p(3A)): ¹²C 5.5 min, ¹⁶O hours).
+    b_pp, b_pn, b_nn = (alpha * Lbond["pp"], alpha * Lbond["pn"],
+                        alpha * Lbond["nn"])
+    pn_term = b_pn if (Z >= 1 and N >= 1) else 0.0
+    B_sym = (Z - 1) * b_pp + pn_term + (N - 1) * b_nn
+    m_sym_atom = B_sym + m_sym_free               # B_sym = m_sym_atom − m_sym_free
+    # ---- exact p(3A) trace (capped) — VALIDATOR of the chain + the bar-
+    #   involution entanglement split. Computed only when n=3A ≤ max_strands;
+    #   |chain − exact| ≈ 1e-13.
+    B_sym_exact = chain_resid = None
+    E_retained = E_emitted = E_multilink = B_sym_ent = None
     if n <= max_strands:
         from tr_m_atom_via_transfer import tr_m_atom_zn
         import mpmath as _mp
         from q_parameter import Q as _Q0
         ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
         ta, tf = float(ta), float(tf)
-        B_sym = alpha * math.log(tf / ta)
-        m_sym_atom = -alpha * math.log(ta)           # B_sym = m_sym_atom − m_sym_free
-        # entanglement: bar-involution (q↦q⁻¹) split via the q-parameterised
-        # core. bar-even (cosh) = RETAINED binding/volume; bar-odd (sinh) =
-        # EMITTED/radiated (Chern–Simons / γγ̄) channel.
+        B_sym_exact = alpha * math.log(tf / ta)
+        chain_resid = abs(B_sym - B_sym_exact)
+        # entanglement (sibling d5f247b40d/23a0019e7f): bar-involution (q↦q⁻¹)
+        # split — bar-even (cosh) = RETAINED binding/volume; bar-odd (sinh) =
+        # EMITTED/radiated (Chern–Simons / γγ̄). E_multilink = bar-odd of the
+        # inter-nucleon binding defect (tr_free−tr_atom); B_sym_ent augments the
+        # chain binding with the radiated inter-nucleon energy.
         ta_i, tf_i, _, _ = tr_m_atom_zn(Z, N, q=_mp.mpf(1) / _mp.mpf(str(_Q0)), dps=50)
         ta_i, tf_i = float(ta_i), float(tf_i)
         E_retained = alpha * (ta + ta_i) / 2.0
         E_emitted = alpha * abs(ta - ta_i) / 2.0
-        # multi-link (inter-nucleon) emission = bar-odd of the binding defect
-        # (tr_free − tr_atom); 0 for A=1. The entanglement-augmented binding
-        # adds this radiated inter-nucleon energy to the log-trace binding.
         defect0, defecti = tf - ta, tf_i - ta_i
         E_multilink = alpha * abs((defect0 - defecti) / 2.0)
         B_sym_ent = B_sym + E_multilink
     return {"name": name, "Z": Z, "N": N, "A": A, "n": n, "B_AME": bame,
             "sigma_AME": sigma_ame,
             "n_pp": n_pp, "n_pn": n_pn, "n_nn": n_nn,
-            "B_sym": B_sym, "B_qCLT": B_qCLT,
+            "B_sym": B_sym, "B_sym_exact": B_sym_exact, "chain_resid": chain_resid,
+            "B_qCLT": B_qCLT,
             "B_qCLT_fac": B_fac, "B_base": B_base, "B_chir": B_chir,
             "B_magic": B_magic, "E_retained": E_retained, "E_emitted": E_emitted,
             "E_multilink": E_multilink, "B_sym_ent": B_sym_ent,
@@ -204,9 +227,10 @@ def main(argv=None) -> int:
     print(f"\n  MASS-BINDING DASHBOARD [{title}]   α = E₀ = {E0:.4f} MeV"
           f"   (bond-type L: pp={Lbond['pp']:.3f} pn={Lbond['pn']:.3f} "
           f"nn={Lbond['nn']:.3f})")
-    print(f"  exact-trace forms (sym, m_sym atom) need the bound-knot trace → "
-          f"shown for n=3A ≤ {args.max_strands} (A ≤ {args.max_strands // 3}); "
-          f"qCLT/fac/magic + m_sym(free) are combinatorial → all A.\n")
+    print(f"  B_sym/m_sym_atom: EXACT closed-form linear chain → all A; the "
+          f"p(3A) trace is run for n=3A ≤ {args.max_strands} (A ≤ "
+          f"{args.max_strands // 3}) only to validate the chain. "
+          f"qCLT/fac/magic + m_sym(free): combinatorial → all A.\n")
 
     # 1. BINDING  (B_AME ± experimental 1σ from AME2020)
     print("### Binding  B (MeV)   [σ_exp = AME2020 experimental 1σ]")
@@ -218,6 +242,17 @@ def main(argv=None) -> int:
         print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_fmt(s,11,6)} "
               f"| {_fmt(s_ppm,11,3)} | {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT'])} "
               f"| {_fmt(r['B_qCLT_fac'])} | {_fmt(r['B_magic'])} |")
+
+    # 1b. chain ≡ exact-trace validation (rows where the p(3A) trace is feasible)
+    val = [(r["name"], r["chain_resid"]) for r in rows
+           if r["chain_resid"] is not None]
+    if val:
+        mx = max(v[1] for v in val)
+        print(f"\n  B_sym closed-form chain ≡ exact p(3A) trace: max|Δ| = "
+              f"{mx:.1e} MeV over {{{', '.join(v[0] for v in val)}}} "
+              f"(n=3A ≤ {args.max_strands}; float64 dashboard noise — the chain "
+              f"≡ trace to the 50-dps floor through ¹²C, audit "
+              f"2026-06-16-b-sym-linear-chain-closed-form.md). Chain used for all A.")
 
     # 2. ERROR  B_AME / B_model, alongside the experimental precision and the
     #    best form's deviation measured in experimental σ (how far past the
@@ -291,15 +326,18 @@ def main(argv=None) -> int:
     # 5. COMPOSITIONAL B_sym (atom GB-braid mass − free GB-component masses).
     #   m_sym(free) is combinatorial (all A); m_sym(atom) needs the bound trace.
     print("\n### Compositional B_sym  (m_sym(W) = −α·ln tr_M(W); free = GB components)")
-    print("| iso | A | m_sym(free comps) | m_sym(atom) | B_sym = atom−free |")
-    print("|---|--:|--:|--:|--:|")
+    print("| iso | A | m_sym(free comps) | m_sym(atom) | B_sym (chain) | Δ vs exact trace |")
+    print("|---|--:|--:|--:|--:|--:|")
     for r in rows:
+        resid = (f"{r['chain_resid']:.1e}" if r["chain_resid"] is not None
+                 else "—  (no trace)")
         print(f"| {r['name']} | {r['A']} | {r['m_sym_free']:>8.3f} "
-              f"| {_fmt(r['m_sym_atom'],8,3)} | {_fmt(r['B_sym'],8,3)} |")
+              f"| {_fmt(r['m_sym_atom'],8,3)} | {_fmt(r['B_sym'],8,3)} | {resid:>16} |")
 
-    print("\n  Forms: B_sym=α·ln(tr_free/tr_atom) · "
-          "B_qCLT=α·(A−1)·ℓ̄(D) · B_qCLT_fac=α·(A−1)·⟨bond-type L⟩ · "
-          "B_magic=2·m_e·A·8G (⁴He). Defn: standard-part-functor.md.")
+    print("\n  Forms: B_sym=α·ln(tr_free/tr_atom)=α[(Z−1)L_pp+L_pn+(N−1)L_nn] "
+          "(exact linear chain, all A) · B_qCLT=α·(A−1)·ℓ̄(D) · "
+          "B_qCLT_fac=α·(A−1)·⟨bond-type L⟩ · B_magic=2·m_e·A·8G (⁴He). "
+          "Defn: standard-part-functor.md.")
     return 0
 
 
