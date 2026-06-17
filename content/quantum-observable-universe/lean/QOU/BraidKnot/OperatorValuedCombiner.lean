@@ -1,5 +1,6 @@
 import Mathlib.Tactic
 import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import QOU.BraidKnot.CrystalRMatrixSubLemma
 import QOU.BraidKnot.CrystalGraphRealization
 
@@ -123,6 +124,36 @@ theorem operator_valued_combiner_convergence
     rw [h]
     rw [ih]
     rfl
+
+/-- **Product-form convergence (conditional)** — the explicit telescoped form of
+    `operator_valued_combiner_convergence`.  The `A = m + 2` combiner value is the
+    deuteron base case `combinerValue 2` multiplied by the running product of the
+    Littlewood–Richardson weights `lrWeight (2 + j)`, `j = 0, …, m - 1`.  This is
+    exactly the boxed product equation displayed in
+    `prop:operator-valued-combiner-convergence`
+    (`cv(2 + m) = (∏_{j=0}^{m-1} w(2 + j)) · cv(2)`); the companion theorem
+    `operator_valued_combiner_convergence` states the same accumulation in the
+    recursive `iteratedCombinerValue` form.  Fully Lean-verified modulo the
+    `[WenzlAOperator R q]` instance hypothesis (the §3b-cond conjecture). -/
+-- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988)
+theorem combinerValue_prod_form
+    {R : Type u} [CommRing R] {q : R}
+    [CrystalGraphRealization R q]
+    [W : WenzlAOperator R q] :
+    ∀ m : ℕ, W.combinerValue (m + 2)
+      = (∏ j ∈ Finset.range m, W.lrWeight (2 + j)) * W.combinerValue 2 := by
+  intro m
+  induction m with
+  | zero => simp
+  | succ k ih =>
+    have h : W.combinerValue (k + 2 + 1)
+        = W.lrWeight (k + 2) * W.combinerValue (k + 2) :=
+      W.branching_recursion (k + 2) (by omega)
+    have eidx : k + 1 + 2 = k + 2 + 1 := by omega
+    rw [eidx, h, ih, Finset.prod_range_succ]
+    have hk : 2 + k = k + 2 := by omega
+    rw [hk]
+    ring
 
 end WenzlAOperator
 
