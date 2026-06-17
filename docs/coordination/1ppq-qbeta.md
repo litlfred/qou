@@ -38,6 +38,26 @@ unchanged below — keystone remains the Habiro element identification
 (scaling map `f: Δtr_M(√u) ↦ Q_β(c_3 at u³)`; live work in sibling
 PR #1739 pre-archimedean recursion + bridge instance).
 
+> **Ohtsuki-invariant exposition framing (2026-06-16, PR #2413) — EXPOSITION ONLY,
+> not a new derivation/proof/wiring.** Near `q=1` (the `q₀` regime) a Habiro-ring
+> element has a canonical **Ohtsuki (perturbative) expansion** whose coefficients
+> *are* the Ohtsuki invariants. So the `c_k` ladder is, conceptually, the Ohtsuki
+> series of the Q_β Habiro element — which reframes "is `c_k` fundamental / Taylor-
+> exact / wired?" as "what is the `k`-th Ohtsuki invariant?", a *determined* object,
+> dissolving the flip-flop framing. It also **bridges to the s5-so3 keystone**: that
+> keystone's full-Hecke trace is a Habiro element in the *same ring*, and its
+> spacetime partner is `WRT(S³/2I)` = the **Lawrence–Zagier quantum modular form**
+> (keystone audit `2026-06-16-keystone-habiro-coupling-lead-and-ck-exposition.md`).
+> **Honest status (answering "Lean-proved & wirable?"):** **NO on both for `c_3+`.**
+> Only **`c_2`** is Taylor-exact, (independently) Lean-supported, and **wired**;
+> `c_3..c_7` stay NOT-derived (near-match / CAL-anchored) and **not wirable as
+> derivations** — blocked on the open **"Q_β Habiro element search"** (PROBE NEW
+> below, the actual blocker). The `c_k = Ohtsuki-invariants` identification is **not
+> itself Lean-proved** (the existing `QBeta*`/`habiro-*` Lean files formalize the
+> *ladder* + Habiro–Pochhammer *bridges*, not "the `c_k` are the Ohtsuki invariants
+> of a constructed element"). This note eases *exposition* and unifies the two goals;
+> it changes no value and adds no wiring.
+
 | Coefficient | Status | Evidence | Open question |
 |-------------|--------|----------|---------------|
 | **c_2** | **Taylor-exact (derived)** ✓ | `f4930df95` ("honest c_k bar — only Taylor-exact c_2 wired") | none |
