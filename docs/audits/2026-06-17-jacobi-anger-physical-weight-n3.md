@@ -91,3 +91,42 @@ Following the chain to nail what the n→∞ convergence gate actually needs:
 
 So the n=3 physical-weight result here is the **furthest the gate can be advanced
 without the H≥6 T_β selector** — and it pins exactly what unblocks the rest.
+
+## CRITICAL-DISTANCE FINDING — the tower object is FIT-derived (2026-06-17)
+
+Tracing the provenance of `χ_λ(Δ_{T_β})` (the n=3 `chi_block`, hence this whole
+tower test) shows it is built on a **min-norm empirical fit**, not a first-
+principles object:
+
+- `qbeta_per_block_symbolic.py:101-105` computes `χ_λ(T_β)(q)` by loading
+  `T_beta_nf_coefficients` from `qbeta-decay-sdp-knot-operator.witness.json`.
+- `qbeta_decay_sdp_solver.py:90-94` sets that `T_β` as the **min-L2-norm**
+  solution `x* = (n_target/(t·t))·t` of the single scalar constraint
+  `t·x = Q_β/E_0` — i.e. `T_β ∝ t` (the Markov-trace vector). The script
+  flags it (lines 20-24): *"the cleanest form of T_β that reproduces Q_β…
+  Path 3 would derive T_β from the typed-crossings braid structure rather than
+  from a min-norm SDP — that would give T_β as a first-principles object rather
+  than an empirical fit."*
+
+**Consequence.** The bar-odd sector tested here is the c₃ near-match/fit sector,
+and "extend the SDP selector to H₆/H₉" extends a fit. A fit-tower converging to
+q-Bessel would be *suggestive* but would **not close the keystone** (fit ≠
+derivation); a non-convergence would show the keystone needs the first-principles
+object. Report TIERED, fit-caveat explicit.
+
+### Two forward paths (precise specs)
+
+**Path A — extend the min-norm fit to H₆/H₉ (TIERED, fit-caveated).**
+The NF/GS basis of `H_n` is `{T_w : w ∈ S_n}` (dim `n!`): 6 at H₃, **720 at H₆,
+362 880 at H₉**. For level n: enumerate reduced words `w∈S_n`; per word compute
+`τ_M(T_w)(q)` (Markov trace) and `χ_λ(T_w)(q)=tr ρ_λ(T_w)` (seminormal) as
+functions of q; form `T_β=(n_target/(t·t))·t`, `χ_λ(T_β)=Σ_w x*_w χ_λ(T_w)`;
+then `physical_W`/`solve_single_x` (this PR) apply. H₆ is feasible (720 words,
+d_λ≤16); **H₉ symbolic is likely infeasible** (362 880 words) — needs a
+trace-contraction closed form for `Σ_w τ_M(T_w)ρ_λ(T_w)` first.
+
+**Path B — first-principles Δ_{T_β} (the real keystone, open even at H₃).**
+Derive the β-decay selector from the typed-crossings braid structure (Path 3 of
+the SDP-solver roadmap), so `Δ_{T_β}` is a canonical braid element, not a
+min-norm fit. Only then does the tower-convergence test bear on the keystone
+rather than on the fit. This is the honest keystone-closing direction.
