@@ -161,8 +161,7 @@ $\sim 2.3$.*
    pure-tower formula misses.*
 3. *Every isotope binding ($^2$H, $^3$H, $^3$He, $^4$He, ...)
    inherits the neutron tower failure through its neutron
-   components — explaining the $-55\%$ deuteron residual in
-   ([deuteron first principles](#rem:deuteron-first-principles)).*
+   components.*
 
 **Deuteron-gap and $q$-variant probes.**
 *Two upstream probes tested closed-form corrections against the

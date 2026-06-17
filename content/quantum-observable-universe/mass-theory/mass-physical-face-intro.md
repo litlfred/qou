@@ -10,10 +10,7 @@ seven-term atomic mass formula
 prediction to nuclei with $q$-integer coefficients.
 
 Binding energies derive from the three-channel brane tower
-([tower binding](#prop:tower-binding-energy)), with the deuterium
-binding energy
-([deuterium binding](#prop:deuterium-derived-binding)) as the
-first non-trivial test.  The mass table for $Z = 1$--$20$
+([tower binding](#prop:tower-binding-energy)).  The mass table for $Z = 1$--$20$
 ([mass table](#rem:mass-table-z1-20)) collects all predictions
 against CODATA/AME data.
 

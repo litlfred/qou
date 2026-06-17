@@ -158,12 +158,7 @@ $$
 
 *The Frobenius piece $m_e \cdot (2 + 1/[2]_q) \approx 1.276\;\mathrm{MeV}$
 matches the observed proton tower residual to $0.14\%$
-([proton residual](#prop:partition-sum-proton-residual)).
-The same $n = 3$ Frobenius piece also closes the deuteron
-binding gap to $3.9\%$
-([deuteron first principles](#rem:deuteron-first-principles)),
-consistent with the per-vortex (not per-atom-partition)
-character of the Frobenius correction.*
+([proton residual](#prop:partition-sum-proton-residual)).*
 
 *For a general isotope braid ($n = 3A$):*
 

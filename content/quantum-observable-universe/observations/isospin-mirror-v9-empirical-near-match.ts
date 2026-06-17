@@ -7,7 +7,6 @@ export default remark({
   interprets: "rem:option-e-isospin-test",
   uses: [
     "rem:option-e-isospin-test",
-    "lem:deuteron-binding-energy",
   ],
   tags: [
     "option-e",

@@ -9,7 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "rem:deuteron-first-principles",
     "rem:np-discrepancy-resolution",
   ],
   tags: [
