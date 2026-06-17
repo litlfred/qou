@@ -201,7 +201,6 @@ export default chapter({
         "brane-tower-z-habiro-table9-data",
         "brane-tower-z-habiro-table10-data",
         "brane-tower-z-habiro-table11-data",
-        "per-partition-k-lambda-rule",
       ],
     }),
 
