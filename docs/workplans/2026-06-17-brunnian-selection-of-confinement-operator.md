@@ -52,14 +52,26 @@ So "no quark subset isolable" is a **crisp, input-free** constraint: satisfied b
 the operator-space SDP fell into. The Brunnian constraint is exactly the
 feasible-set restriction the dense-SDP lacked.
 
+**Spherogram cross-check (stable, kernel-free).** The probe also confirms via
+spherogram's exact combinatorial path: the closure of `(σ₁σ₂⁻¹)³` is a 3-component
+6-crossing link that **stays at 6 crossings** under Reidemeister `simplify`
+(nontrivial), while **every 2-sublink simplifies to 0 crossings** (the unlink) —
+a rigorous Brunnian proof, distinguishing the unlink from the Hopf link (which
+stays irreducibly at 2) without any float invariant. **The SnapPy numerical
+kernel (`.exterior().volume()`, `.identify()`) is deliberately avoided** — a
+sibling reported unstable results from it, and it errors `SnapPy doesn't seem to
+be available` in this sandbox. Only exact combinatorial invariants are used.
+
 ## What remains open (honest)
 
-1. **The crossing-minimal ⇒ Borromean step is a literature citation, not
-   re-derived.** Borromean = unique 6-crossing Brunnian link is standard
-   (Rolfsen, *Knots and Links*; Brunnian-link classification). A Lean/compute
-   formalization would enumerate Brunnian 3-braids by crossing number and confirm
-   uniqueness at 6 — a finite but nontrivial knot-tabulation task (needs SnapPy or
-   a braid-enumeration engine, neither wired here).
+1. **The candidate is now PROVEN Brunnian + nontrivial at 6 crossings**
+   (spherogram, stable path) — but **uniqueness over ALL Brunnian 3-links** (that
+   Borromean is *the* crossing-minimal one) is still a literature citation
+   (Rolfsen; Brunnian classification), not re-derived. Closing it needs an
+   enumeration of Brunnian 3-braids by crossing number confirming uniqueness at 6
+   — a finite combinatorial task (braid-word enumeration + the same stable
+   simplify-based Brunnian test; **must not** rely on the SnapPy hyperbolic
+   kernel, per the instability note above).
 2. **Braid-word vs link non-uniqueness.** "Minimal Brunnian 3-link" pins the
    *link* (Borromean) uniquely, but the *braid word* only up to Markov moves;
    `(σ₁σ₂⁻¹)³` is the canonical minimal-length representative. Fine for selecting
