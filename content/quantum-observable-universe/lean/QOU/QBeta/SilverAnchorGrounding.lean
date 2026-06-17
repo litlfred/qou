@@ -12,12 +12,22 @@ but never derived:
 
 1. **The silver locus is the Q_A decay-prefactor zero.** The substrate-branch
    `Q_A` numerator factor `2q + 1 − q²` equals `−(q² − 2q − 1)`, so it vanishes
-   exactly on the silver locus. Hence `F = Q_β / [Q_A · cos α_eff]` has its
-   **pole** there — this is the "categorical derivation of `Q_A·cos α_eff`'s
-   zero" direction flagged as productive in
-   `QOU.QBeta.RationalCoeffRecurrence`. That pole is the dominant
-   `1/u_substrate` characteristic root of the `c_k` C-finite recurrence
-   (`RationalCoeffRecurrence.pole_reciprocal_is_char_root`).
+   exactly on the silver locus. The *true* `Q_β = |Δ(net)|·E₀` uses the
+   GB-reduced trefoil coefficient, and `Δ(net)(1+√2) = 82216 + 58136·√2 ≠ 0`
+   (`(q²−2q−1) ∤ Δ(net)`; verified in
+   `computations/qbeta/qbeta_silver_pole_subdominant_probe.py`), so the `Q_A`
+   zero is *not* cancelled and `F = Q_β / [Q_A · cos α_eff]` has a **genuine
+   pole** there — the "categorical derivation of `Q_A·cos α_eff`'s zero"
+   direction flagged as productive in `QOU.QBeta.RationalCoeffRecurrence`.
+   **This pole is subdominant, not the dominant root.** In the substrate
+   variable it sits at `u_silver = u(1+√2) ≈ 0.321`, giving characteristic root
+   `1/u_silver ≈ 3.12` (`RationalCoeffRecurrence.pole_reciprocal_is_char_root`),
+   **not** the dominant tail ratio `1/u_substrate ≈ 117.4`
+   (`prop:q-beta-radius-of-convergence-gate`, PR #1727; `u_substrate ≈ 0.0085 <
+   u_silver`). The dominant pole is closer to `0` and comes from a *non-`Q_A`*
+   source — so the silver/`Q_A` zero pins one *subdominant* root of the kernel's
+   minimal denominator, and prunes the search for the dominant root (it is not
+   the `Q_A` zero).
 
 2. **Hoefsmit `b² = 7/8` at that same locus.** With the Hoefsmit value
    `b² = (q⁴ + q² + 1)/(q² + 1)²`, the silver relation forces
@@ -25,11 +35,11 @@ but never derived:
    rationals in `QOU.QBeta.Cn_at_silver` (PR #1793) take `b² = 7/8` as a
    *premise*; this file derives it from the silver definition.
 
-So the silver ratio is **one locus playing two roles**: the `Q_A` zero (the
-F-pole fixing the `c_k` tail's characteristic root) and the `b² = 7/8` point
-grounding the silver rungs. The algebraic content is the factorisation
-`q⁴ − 6q² + 1 = (q² − 2q − 1)(q² + 2q − 1)` — the silver factor and its
-bar-conjugate.
+So the silver ratio is **one locus playing two roles**: a `Q_A` zero giving a
+*subdominant* F-pole (char root `≈ 3.12`, not the dominant `≈ 117.4`) and the
+`b² = 7/8` point grounding the silver rungs. The algebraic content is the
+factorisation `q⁴ − 6q² + 1 = (q² − 2q − 1)(q² + 2q − 1)` — the silver factor
+and its bar-conjugate.
 
 Pure algebra from `q² = 2q + 1`; stated over a generic `CommRing` per
 CLAUDE.md §7c (no `ℝ`, no `√2` needed). The field form is added only for the

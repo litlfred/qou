@@ -87,9 +87,22 @@ cross-referenced so they are never conflated again.
   *derived* from the silver relation `q² − 2q − 1 = 0` (it was a **premise** in
   `Cn_at_silver`), via `8(q⁴+q²+1) = 7(q²+1)²` with cofactor `(q²+2q−1)`; and the
   same locus is proved to be the **`Q_A` decay-prefactor zero** (`2q+1−q² =
-  −(q²−2q−1)`), i.e. the F-pole fixing the `c_k` recurrence's dominant
-  `1/u_substrate` characteristic root. This grounds the structural signal and the
-  "categorical derivation of `Q_A·cos α_eff`'s zero" direction
+  −(q²−2q−1)`).
+- **(2026-06-17, correction — PR #2445 dominance claim) the silver/`Q_A` pole
+  is GENUINE but SUBDOMINANT.** PR #2445 originally called it "the F-pole fixing
+  the *dominant* `1/u_substrate ≈ 117.4` root." Re-checked: the *true*
+  `Q_β = |Δ(net)|·E₀` uses the GB-reduced trefoil coefficient, and
+  `Δ(net)(1+√2) = 82216 + 58136√2 ≠ 0` while `Q_A(1+√2) = 0`, so `F` has a
+  **genuine** pole at silver (an earlier check that used the cheat-sheet
+  closed-form `Q_β ≈ Q_A` was *circular* — it gave `F = 1/cos`, trivially
+  regular). **But** `u_silver = u(1+√2) ≈ 0.321 → char root ≈ 3.12`, which is
+  **subdominant**: the dominant tail root `117.4 = 1/u_substrate`
+  (`u_substrate ≈ 0.0085 < u_silver`; `prop:q-beta-radius-of-convergence-gate`,
+  PR #1727) comes from a **non-`Q_A`** source. So the silver/`Q_A` zero pins one
+  *subdominant* root of the kernel's minimal denominator and prunes the dominant
+  root search (it is not the `Q_A` zero). Evidence:
+  `computations/qbeta/qbeta-silver-pole-subdominant.witness.json`. This grounds
+  the "categorical derivation of `Q_A·cos α_eff`'s zero" direction
   (`RationalCoeffRecurrence`); it does **not** change any rung's empirical tier.
 - c_4 in the 1ppQ-achieved witness is a **CODATA-residual fit**, and separately
   flagged as a **normalisation artifact**.
