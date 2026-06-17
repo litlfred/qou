@@ -26,8 +26,11 @@ Test: k_i = B_AME_i / Vol(D_i) for D / T / ³He / ⁴He.
 `canonical_retriangulation` (works in SnapPy 3.3.2 WITHOUT Sage, unlike the
 2026-06-13 probe's environment) records the canonical-cell / tet structure.
 
-Binding arithmetic in mpmath (NO FLOAT); SnapPy volume is its native f64 — fine
-for a ~1% constant-prefactor test. Exploratory; no fit; promotes nothing.
+Binding arithmetic in mpmath (NO FLOAT); the volume comes from SnapPy's
+`high_precision()` Number (≈64 dps, str()-preserved into mp.mpf — no f64
+truncation) — far more than the ~1% a constant-prefactor test needs. The volume
+is non-rigorous (numerically-solved shapes, not Sage interval-verified), but the
+precision is extended, not f64. Exploratory; no fit; promotes nothing.
 """
 from __future__ import annotations
 
@@ -67,9 +70,11 @@ def _volume_and_struct(braid):
     M.simplify(); M.simplify()
     cusps = M.num_cusps()
     try:
-        Mhp = M.high_precision(); vol = mp.mpf(repr(float(Mhp.volume()))); sol = Mhp.solution_type()
+        # str() on SnapPy's Number preserves the full high_precision() digits
+        # (≈64 dps here); float() would truncate to f64 and defeat the call.
+        Mhp = M.high_precision(); vol = mp.mpf(str(Mhp.volume())); sol = Mhp.solution_type()
     except Exception:
-        vol = mp.mpf(repr(float(M.volume()))); sol = M.solution_type()
+        vol = mp.mpf(str(M.volume())); sol = M.solution_type()
     try:
         n_tets = M.canonical_retriangulation().num_tetrahedra()
     except Exception as e:  # noqa: BLE001
