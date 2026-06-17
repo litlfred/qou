@@ -38,6 +38,26 @@ productive directions are #1876 §4-2 (additive `S(K)`) and §4-4
 | [#1883](https://github.com/litlfred/qou/pull/1883) | merged | Cross-isotope extrapolation REFUTED (>1000 % worst rel_err) → ³He numerology CONFIRMED |
 | [#1886](https://github.com/litlfred/qou/pull/1886) | merged | T1 — additive `S(K)` sub-leading REFUTED under uniform-λ (100× swing across light series) |
 
+## Status — cont. 2 (2026-06-17)
+
+The parallel **Δ_λ-route** arc (#2405 / #2417 / #2426 / #2430 / #2433) closed
+its last two levers, and one of them touches this ledger:
+
+- **Dense Wedderburn-projector SDP closed structurally** (the
+  `claude/delta-lambda-open-levers-2026-06-17` branch,
+  [`docs/audits/2026-06-17-wedderburn-sdp-structural-bound.md`](../audits/2026-06-17-wedderburn-sdp-structural-bound.md)).
+  The `confinement-sdp.md` program reduces to `min⟨T,Φ⟩ s.t. Φ⪰0, trΦ=c` with
+  block-constant diagonal `T = μ_λ`; the per-block / 2×2-pair constraints are
+  redundant, and the optimum is a degenerate min-cost **face** (at `q₀`,
+  `μ_[2,1]=μ_[1,1,1]<μ_[3]` ⇒ 5-of-6-dim) that selects no unique operator and
+  excludes the trivial block — so it cannot select `𝓑₃`.
+- **GAP-A-3 stale-claim correction.** #2433 listed GAP-A-3 as a "non-refuted"
+  lever; per this ledger it is **already refuted** (#1868 scope + #1870 5/5
+  `P_λ` channels; part of the 18-closure saturating chain). The audit above
+  records the correction so the route is not re-opened. The only nominally-open
+  GAP-A thread remains **T3** (Path-B-specific `λ(K)` formulation, scope landed,
+  probe follow-up open).
+
 ## Cross-axis hub
 
 The step-9 binding closure ledger
