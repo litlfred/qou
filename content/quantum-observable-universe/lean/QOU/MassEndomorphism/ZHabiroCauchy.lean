@@ -2,6 +2,8 @@ import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.Algebra.Polynomial.Degree.Definitions
 import Mathlib.RingTheory.Ideal.Span
 import Mathlib.RingTheory.Ideal.Operations
+import Mathlib.RingTheory.Ideal.Quotient.Operations
+import Mathlib.Algebra.Ring.Subring.Basic
 import Mathlib.Tactic
 
 /-!
@@ -84,6 +86,25 @@ unit `qinv := q⁻¹`, and `ℤ[q^±1][z]` as `R[X]`).
                               composing the two above, every cyclotomic
                               partial-sum sequence has a coherent inverse-limit
                               thread with NO `IsCauchyFiltration` hypothesis.
+  * `ZHabiroCompletion`     — **the completion ring as a concrete `CommRing`**:
+                              the inverse limit `varprojlim_n R[X]/(P_n)`,
+                              realised as the `Subring` of compatible threads in
+                              the product `Π n, R[X] ⧸ I_n`. `Subring.toCommRing`
+                              endows it with a `CommRing` instance. This
+                              packages `def:z-habiro-ring`'s cyclotomic
+                              completion as a genuine algebraic object (former
+                              open item 2).
+  * `zHabiroLimit`          — **the brane-tower Cauchy limit AS AN ELEMENT** of
+                              `ZHabiroCompletion`: for any coefficient family
+                              `c`, the cyclotomic partial-sum tower's coherent
+                              thread, packaged as an honest element of the
+                              completion ring (the `Subring` membership proof IS
+                              `quantumDilog_zHabiro_cauchy_limit_cyclotomic`).
+                              This turns "the coherent thread exists" into "the
+                              limit exists as an algebraic element of
+                              `varprojlim`" — `def:z-habiro-ring`'s universal-
+                              element claim, for the cyclotomic shape,
+                              unconditionally over generic `[CommRing R]`.
 
 `cauchy_tail_mem` is the algebraic heart of the Cauchy-sequence claim: any
 sequence whose successive *increments* sink into deeper ideals has
@@ -128,32 +149,49 @@ for them):
      the Cauchy/limit content for the cyclotomic-partial-sum *form* that the
      witness identifies the tower with.
 
-  2. **The inverse-limit object as a `CommRing`.** This file exhibits the
-     coherent *thread* (a `∀ n, …` compatibility), which is the inverse
-     system's data, but does not package `varprojlim_n R[X]/(P_n)` as a
-     concrete `CommRing` with its universal property. Mathlib has
-     `Mathlib.RingTheory.AdicCompletion` for the *`I`-adic* (`Iⁿ`) chain,
-     but the z-Habiro chain is **cyclotomic** (`I_n = (P_n)` with
-     `P_{n+1} = P_n · (1 - q^{-(n+1)} z)`), NOT the powers `(P_1)ⁿ` of a
-     single ideal, so `AdicCompletion` does not apply off-the-shelf; the
-     correct fit is a filtered (linearly-topologised) completion, which
-     Mathlib lacks a ready completeness instance for. Building it is the
-     parallel of Habiro's own `\widehat{ℤ[q]}` construction.
-     [Infrastructure gap: cyclotomic (non-`Iⁿ`) completion ring.]
+  2. **The inverse-limit object as a `CommRing` — DISCHARGED.** This was an
+     open item: the file used to exhibit only the coherent *thread* (a
+     `∀ n, …` compatibility) without naming the object it lives in. It is now
+     packaged: `ZHabiroCompletion qinv` (below) realises
+     `varprojlim_n R[X]/(P_n)` as the `Subring` of compatible threads inside
+     the product `Π n, R[X] ⧸ I_n`, and `Subring.toCommRing` endows it with a
+     `CommRing` instance. `zHabiroLimit qinv c` then exhibits the brane-tower
+     cyclotomic Cauchy limit as a genuine **element** of that ring (membership
+     witness = `quantumDilog_zHabiro_cauchy_limit_cyclotomic`). Mathlib's
+     `AdicCompletion` is for the *`I`-adic* (`Iⁿ`) chain and does NOT apply —
+     the z-Habiro chain is **cyclotomic** (`I_{n+1} = (P_n · (1 - q^{-(n+1)}z))`,
+     NOT the powers `(P_1)ⁿ`) — so we build the inverse limit directly as the
+     equalizer-style subobject, which is the right fit and needs no completeness
+     instance. What is NOT yet done (the genuinely-remaining algebraic gaps):
+       (i) **identifying this element with the ACTUAL `Φ_q`.** `zHabiroLimit`
+           is parametrised by an abstract coefficient family `c : ℕ → R`;
+           pinning down the *specific* cyclotomic coefficients `c_n` of `Φ_q`
+           requires a base `R` in which the cyclotomic factors are units — the
+           probe `z-habiro-increment-probe` shows the `c_n` live in the
+           cyclotomic LOCALISATION of `ℤ[q^±1]`, not the integral ring.
+       (ii) the `Trunc_{<n}` literal-`N`-sum bridge (item 3 below).
+     These are about *which* element and *which* base ring, not about the
+     existence of the completion ring or of an algebraic limit element, both of
+     which are now sorry-free.
 
-  3. **`Trunc_{<n}` as the canonical section.** The unique-degree-`< n`
-     representative map `R[X]/(P_n) → R[X]` ("evaluation in the quotient is
-     finite"). The *projections* `R[X]/(P_{n+1}) → R[X]/(P_n)` are already
-     used here (`Ideal.Quotient.factor`); the *section* needs `P_n` to be a
-     non-zero-divisor with unit leading coefficient — true here since `P_n`
-     has leading coefficient `(-1)ⁿ qinv^(n(n+1)/2)`, a unit — but the
-     division-with-remainder API for it is not wired in this file.
+  3. **`Trunc_{<n}` as the canonical section — STILL OPEN.** The
+     unique-degree-`< n` representative map `R[X]/(P_n) → R[X]` ("evaluation in
+     the quotient is finite"). The *projections* `R[X]/(P_{n+1}) → R[X]/(P_n)`
+     are already used here (`Ideal.Quotient.factor`); the *section* needs `P_n`
+     to be a non-zero-divisor with unit leading coefficient — true when `qinv`
+     is a unit (e.g. over a field with `qinv ≠ 0`), since `P_n` has leading
+     coefficient `(-1)ⁿ qinv^(n(n+1)/2)` — but the division-with-remainder API
+     (`Polynomial.modByMonic` for a monic associate of `P_n`) is genuine
+     infrastructure and is NOT wired in this file. Deliberately left open rather
+     than faked with a `sorry`-bearing `theorem` or a `: True` stub.
 
 This split is deliberate per the task's honesty directive: the filtration
-algebra, the Cauchy criterion, AND the conditional limit-thread are real and
-sorry-free; the brane-tower-specific increment input (the genuine open math),
-the completion-ring packaging, and the `Trunc_{<n}` section are the named
-remaining gaps.
+algebra, the Cauchy criterion, the conditional limit-thread, the brane-tower
+increment hypothesis (item 1), AND the completion ring + algebraic limit
+element (item 2) are real and sorry-free; the genuinely-remaining gaps are
+identifying the specific `Φ_q` coefficients over the correct (cyclotomically
+localised) base ring and the `Trunc_{<n}` section (item 3). The conjecture is
+NOT claimed fully closed.
 
 ## References
 
@@ -408,5 +446,108 @@ theorem quantumDilog_zHabiro_cauchy_limit_cyclotomic (qinv : R) (c : ℕ → R) 
         = (Ideal.Quotient.mk (braneIdeal qinv n))
             (∑ m ∈ Finset.range (n + 1), C (c m) * branePoly qinv m) :=
   quantumDilog_zHabiro_cauchy_limit qinv (cyclotomicPartialSum_isCauchy qinv c)
+
+/-! ## The completion ring `varprojlim_n R[X]/(P_n)` as a concrete `CommRing`
+
+The previous declarations exhibit the inverse-limit *thread* — a `∀ n, …`
+compatibility — without naming the object the thread lives in. We now package
+the cyclotomic inverse limit `varprojlim_n R[X]/(P_n)` as a genuine `CommRing`:
+the **subring of compatible threads** inside the product `Π n, R[X] ⧸ I_n`.
+
+This discharges file-header "What remains OPEN" item 2. Mathlib's
+`AdicCompletion` is for the `I`-adic chain `(Iⁿ)`; the z-Habiro chain is
+cyclotomic (`I_{n+1} = (P_n · (1 - q^{-(n+1)}z))`, *not* `(P_1)ⁿ`), so it does
+not apply off-the-shelf. We instead build the inverse limit directly as the
+equalizer-style subobject of the product, which `Subring` endows with a
+`CommRing` instance for free. A compatible thread is precisely an element of
+`varprojlim` because the bonding maps `Ideal.Quotient.factor` are ring
+homomorphisms, so the compatibility predicate is closed under `*, +, 1, 0,
+neg`. -/
+
+/-- **The z-Habiro completion ring** `varprojlim_n R[X]/(P_n)`, realised as the
+    subring of *compatible threads* in the product `Π n, R[X] ⧸ braneIdeal qinv n`.
+
+    A family `x : Π n, R[X] ⧸ I_n` is a thread of the inverse system iff every
+    bonding map `factor_{n+1→n} : R[X]/I_{n+1} → R[X]/I_n` carries `x (n+1)` to
+    `x n`. The carrier is that compatibility set; closure under the ring
+    operations is immediate because each `Ideal.Quotient.factor (…)` is a
+    `RingHom` (`map_mul`, `map_add`, `map_one`, `map_zero`, `map_neg`).
+
+    `Subring.toCommRing` (the product is commutative, so the subring is too)
+    supplies the `CommRing` instance — the z-Habiro completion is a `CommRing`.
+    This is the inverse-limit object of `def:z-habiro-ring`'s cyclotomic
+    completion `varprojlim_n ℤ[q^±1][z]/(P_n)`, modelled over generic
+    `[CommRing R]` (§7c). -/
+-- Ref: [manuscript] def:z-habiro-ring §"Statement"
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"What survives the closure"
+-- Ref: [habiro2004cyclotomic]
+noncomputable def ZHabiroCompletion (qinv : R) :
+    Subring (∀ n, R[X] ⧸ braneIdeal qinv n) where
+  carrier := { x | ∀ n, Ideal.Quotient.factor (braneIdeal_antitone qinv n) (x (n + 1)) = x n }
+  mul_mem' {x y} hx hy n := by
+    simp only [Pi.mul_apply, map_mul, hx n, hy n]
+  one_mem' n := by
+    simp only [Pi.one_apply, map_one]
+  add_mem' {x y} hx hy n := by
+    simp only [Pi.add_apply, map_add, hx n, hy n]
+  zero_mem' n := by
+    simp only [Pi.zero_apply, map_zero]
+  neg_mem' {x} hx n := by
+    simp only [Pi.neg_apply, map_neg, hx n]
+
+/-- The z-Habiro completion ring is commutative — it is a subring of the
+    commutative product ring `Π n, R[X] ⧸ I_n`. (Recorded explicitly so
+    downstream code can `inferInstance` a `CommRing (ZHabiroCompletion qinv)`.) -/
+noncomputable instance (qinv : R) : CommRing (ZHabiroCompletion qinv) :=
+  (ZHabiroCompletion qinv).toCommRing
+
+/-- Membership in the completion ring is *exactly* thread-compatibility. -/
+theorem mem_ZHabiroCompletion (qinv : R) (x : ∀ n, R[X] ⧸ braneIdeal qinv n) :
+    x ∈ ZHabiroCompletion qinv ↔
+      ∀ n, Ideal.Quotient.factor (braneIdeal_antitone qinv n) (x (n + 1)) = x n :=
+  Iff.rfl
+
+/-! ## The brane-tower Cauchy limit AS AN ELEMENT of the completion ring
+
+This is the conjecture's `def:z-habiro-ring` "universal element" claim for the
+cyclotomic shape: turning "the coherent thread exists" into "the limit exists
+as an *algebraic element* of `varprojlim`". The membership proof IS the
+unconditional cyclotomic limit theorem
+`quantumDilog_zHabiro_cauchy_limit_cyclotomic`. -/
+
+/-- **The brane-tower cyclotomic Cauchy limit, AS AN ELEMENT of the z-Habiro
+    completion ring.**
+
+    For any coefficient family `c : ℕ → R`, the cyclotomic partial-sum tower
+    `a n = Σ_{m ≤ n} c_m · P_m` has, by `cyclotomicPartialSum_isCauchy`, a
+    coherent inverse-limit thread `n ↦ π_n(a n)`. This packages that thread as
+    a genuine element of `ZHabiroCompletion qinv` — the algebraic Cauchy LIMIT
+    of the brane-tower truncation tower, living *inside* the completion ring,
+    UNCONDITIONALLY and over generic `[CommRing R]` (§7c).
+
+    The compatibility witness (the `Subring` membership proof) is exactly
+    `quantumDilog_zHabiro_cauchy_limit_cyclotomic qinv c`. This is the
+    "limit exists as an algebraic element" content of `conj:brane-tower-z-habiro`
+    / `def:z-habiro-ring`, compute-backed by
+    `computations/z-habiro-increment-probe.witness.json` (the `Φ_q` truncation
+    tower IS a cyclotomic partial sum). -/
+-- Ref: [manuscript] def:z-habiro-ring §"Statement" (universal element)
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Statement"
+-- Ref: [manuscript] computations/z-habiro-increment-probe.witness.json
+-- Ref: [habiro2004cyclotomic]
+noncomputable def zHabiroLimit (qinv : R) (c : ℕ → R) : ZHabiroCompletion qinv :=
+  ⟨fun n => (Ideal.Quotient.mk (braneIdeal qinv n))
+              (∑ m ∈ Finset.range (n + 1), C (c m) * branePoly qinv m),
+   quantumDilog_zHabiro_cauchy_limit_cyclotomic qinv c⟩
+
+/-- The `n`-th component of the brane-tower limit element is the cyclotomic
+    projection `π_n(Σ_{m ≤ n} c_m · P_m)` of the depth-`n` partial sum — the
+    "value of the limit at level `n`". A projection-compatibility lemma making
+    the limit element's coordinates explicit. -/
+theorem zHabiroLimit_coe_apply (qinv : R) (c : ℕ → R) (n : ℕ) :
+    (zHabiroLimit qinv c : ∀ n, R[X] ⧸ braneIdeal qinv n) n
+      = (Ideal.Quotient.mk (braneIdeal qinv n))
+          (∑ m ∈ Finset.range (n + 1), C (c m) * branePoly qinv m) :=
+  rfl
 
 end QOU.MassEndomorphism.ZHabiroCauchy
