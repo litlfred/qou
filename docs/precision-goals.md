@@ -20,7 +20,7 @@
 
 | Leg | Target | Status |
 |-----|--------|--------|
-| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **met** — `_precision.py` default is 65 dps compute / 50 dps serialization (10⁻⁵⁰ absolute truncation; relative varies by observable magnitude); `onepb-status-dashboard` reports Layer 2 max_rel_delta = 0.0 across 8 atoms |
+| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **NOT certified (2026-06-17)** — exact methods *exist* (`_precision.py` default 65 dps compute / 50 dps serialization), but the live L1 cross-check (`cross_check_trM_1ppb.py`) reports **4/6 atoms divergent / FAILURES**: the `markov_peel` atomic witness is float64-limited (~2.5e-16, stale producer) and the extended-Habiro nuclei path diverges ~1e-7. Even the two float-clean methods (Hoefsmit, chi-cache) agree only at ~2.5e-16 (float64 ε) on the atomic traces. See [`audits/2026-06-17-l1-1ppq-certification-gap.md`](audits/2026-06-17-l1-1ppq-certification-gap.md). The 3-strand closed-form χ anchor *does* hold at 4e-50. |
 | **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **anchors only** — 2/7 meet, both calibration anchors (m_e, m_p); **0 of 5 genuine predictions** meet (m_μ, Q_β, m_n, Δ_pn, m_K/m_π all miss). The de-fitted, post-re-pin honest state. |
 
 Both legs apply. Hitting L1 alone is not sufficient; hitting L2 alone is not
