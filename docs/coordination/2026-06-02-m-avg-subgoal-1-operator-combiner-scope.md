@@ -112,3 +112,42 @@ to feed the combiner) and H₉ universality — at which point
 `return None` for A ≥ 3) closes, giving the polynomial-in-A speedup the workplan
 targets for the ¹⁶O feasibility wall. **Speedup to an already-validated value — not
 a production-value change, not wired, not a fit.**
+
+---
+
+## 2026-06-17 — Task B intertwiner + recursion-kernel A-operator (PR #2403)
+
+**Task B (merge-ready, #2403).** The O(r⁶)-time / O(r⁴)-memory null-space
+intertwiner inside `combiner_block` (`tools/pyhecke-native/src/lib.rs`) is
+replaced by an **O(r³) cyclic-vector construction** (`col0_matrix_units`), plus
+a bounded greedy-closure fix that resolved an intermittent r=64 OOM. All 4
+previously-OOM r=64 λ⊢9 — `(4,3,2)`, `(3,3,2,1)`, `(4,2,2,1)`, `(4,3,1,1)` —
+now complete (residuals 2.0e-51…7.8e-50 vs the 1e-25 gate, ~50 s each, 164 MB
+peak); the r=64 build dropped 16m49s → ~52s. So **all 30 λ⊢9 are feasible** —
+the speedup §4 of the handover noted Task A could not deliver alone.
+
+**Recursion-kernel A-operator (in progress, #2403) — extends past n=9.** Two new
+walls block the full-seminormal combiner at A=4 (λ⊢12): the `Π ρ_λ(I) Π` ambient
+needs ρ_λ at d_λ⊢12 ≤ 7700, and `col0_matrix_units` on the inner ξ⊢9 (d≤216) is
+O(d⁶). Both are sidestepped by building `A^λ_{ξν}(I)` directly in the **Young/GT
+standard-tableau basis**. Structural result (verified): the bridge generator's
+ξ→ξ block is **diagonal** in that basis (its off-diagonal partner always changes
+the inner shape ξ), hence `A^λ_{ξν}` is **block-diagonal in the V_ξ index** and
+assembles from SYT(ξ)×SkewSYT(λ/ξ) — **no d_λ ambient, no null-space
+intertwiner**; only a tiny (≤3-dim) block-S₃ change-of-basis aligns to standard
+ρ_ν. Validated: reproduces the verified Rust combiner at λ⊢9 (max |Δ| 5e-50) and
+satisfies the combiner identity at λ⊢12 / A=4 (1e-49 on (10,2),(11,1),(7,5)).
+
+**Intrinsic ceiling (honest framing, no §6 conflict).** Per the main-merged
+verdict `χ_eff(k)=p(3k) exactly — the p(3A) wall is intrinsic`, the recursion
+kernel **cannot beat the fine-Bratteli transfer asymptotically**. Its value is
+(a) making the operator-valued combiner *run* at A=4+ as an independent
+cross-check of the transfer, (b) preserving the A-operator's structural /
+shadow-price content the scalar transfer discards, (c) a constant-factor win.
+Validated against the transfer at 1e-25 — speedup-to-an-already-validated-value,
+not a production-value change, not a fit.
+
+**Coordination.** Intent posted on #2371 (recursion-wiring — owns the ³He/atomic
+assembly; consumes this kernel) and #2392 (exciting-rubin — Task A all-blocks;
+shares `combiner_block`, mechanical rebase expected). Division of labour: #2371
+owns assembly/wiring, #2403 owns the combiner kernel.
