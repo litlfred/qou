@@ -149,3 +149,23 @@ Ranked by load-bearing-ness; per CLAUDE.md Rule 14, any h^k coefficient or weigh
 - **Relationship:** complementary, no file overlap. Intent posted on #2349
   (cross-link audits → one low-closed-form→high-α-cluster story; AME C/O entries
   auto-extend #2343's tool). No cherry-pick either way.
+
+## 2026-06-17 — B_sym closed form wired into the dashboard (#2405)
+
+- **#2405** (`claude/tender-brahmagupta-17txfq`): bottleneck analysis of the
+  "m_sym heavy at ¹⁶O" complaint + the wiring follow-up to #2343/#2349.
+  - **Bottleneck:** the heavy step is the Frobenius/Markov pairing
+    `Σ_{λ⊢3A} y_λ χ^λ` over p(3A) Wedderburn blocks (the categorical-action
+    pairing). Live 8Be profile: ~70 % mpmath arith, ~14 % Python overhead.
+    Exact wall ¹⁶O ~1.8 h, ⁴⁰Ca ~century. Measured gmpy2 lever only ~1.3× at
+    50 dps (not 3–8×). Confirms `61abcca9` (wall intrinsic, χ_eff=p(3k)).
+  - **Wiring:** `mass_binding_dashboard._row` now fills `B_sym`/`m_sym_atom`
+    for ALL A from the #2343 closed-form chain (exact p(3A) trace kept as the
+    A≤7 validator, max|Δ| float64 noise). ¹⁶O…⁵⁶Fe instant. Audit
+    `docs/audits/2026-06-17-bsym-p3a-bottleneck-and-closed-form-wiring.md`.
+  - **Discipline:** compute-speed only; B_sym under-binds ~2× (the α/shell
+    accuracy gap = Δ_λ, unchanged). Exploratory; no production rewire, no fit.
+  - **Coordination:** intent posted on **#2348** (atom→electron consumer — its
+    `m_atom` now all-A) and **#2371** (Wenzl A≥3 — binding factorizes, but the
+    general per-λ trace still needs the combiner; no overstep). No file overlap
+    with any sibling; no cherry-pick. Gemini quota-limited (24 h) on #2405.
