@@ -164,6 +164,37 @@ correctness gap that also explains the stuck `g_A = 1.0`.
 q₀ — same q₀-repin class as the borromean witness — a ~1e-8 inconsistency,
 harmless here but worth a refresh when the route is next touched.)
 
+## 4b. Resolution of the discrepancy — the objective IS a constraint (documented)
+
+Reading the solver + both props resolves §4a: **not a solver bug.**
+`tools/pyhecke/python/pyhecke/lp_dual_solver.py:327-341` implements
+`prop:operator-selection-lp` exactly (`min Σ t_i x_i` s.t. `Σx_i=n_target`,
+`Gx≥0`, `x≥−M`). The degeneracy is structural:
+
+- **The objective coincides with the `i=0` Frobenius constraint.** Since
+  `b_0 = γ` (identity), `G_{0j} = tr_M(γ·b_j) = tr_M(b_j) = t_j`, so
+  `(Gx)_0 = Σ_j t_j x_j = the objective`. The `i=0` positivity row is literally
+  "objective ≥ 0", so minimising drives `tr_M(Φ)→0`, saturating exactly the
+  identity channel ⇒ `active={γ}`, `obj≈0`. Matches the solver bit-for-bit.
+- **The prop documents this.**
+  [`prop:confinement-lp`](../../content/quantum-observable-universe/particle-interactions/confinement-lp.md)
+  §"Caveat: 𝓑₃ is a local minimum": the corrected trace `tr_M(e⁻)=z³` makes the
+  Gram **indefinite** (eigenvalue ≈ −0.956), so "**the LP has a global minimum at
+  tr_M=0 (massless confined state); 𝓑₃ is a local minimum.**" The solver returns
+  the global min; `𝓑₃` (obj 0.998, active `{σ_0,L_-}`) is only local.
+
+**Fix (ranked):** (1) decouple objective from the `i=0` row — minimise the
+*off-identity* action `Σ_{i≥1} t_i x_i` (or drop the redundant row); (2) floor
+the trivial state out — normalise by *trace* (`tr_M(Φ)=n_target`) instead of the
+coefficient-sum net, or add `tr_M(Φ)≥ε`; (3) local-min selection (min |λ| vertex)
+per the caveat — matches the prop literally, least principled.
+
+**Deeper caveat (critical-distance):** even fixed, the min-action principle as
+written does **not** uniquely select `𝓑₃` — the indefinite Gram from
+`tr_M(e⁻)=z³` means the trivial massless state always undercuts it. So the
+master-formula route is gated on a *sounder confinement-LP formulation*, not a
+code tweak. Recorded as the real open item for this route.
+
 ## 5. Cross-links
 
 - [`prop:confinement-frobenius-reciprocity`](../../content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md) — the master formula.
