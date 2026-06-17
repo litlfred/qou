@@ -28,7 +28,11 @@ need to be built (and is that a fit risk)?
 ## Plan
 
 1. **Triage** the `A^λ_{ξν}(I)` API + the `a_operator_gauge_align` infra +
-   feasibility (A=2,3,4 vs the r=64 λ⊢9 OOM wall). [running]
+   feasibility (A=2,3,4). Note: #2403's O(r³) intertwiner already **cleared** its
+   `r=64` λ⊢9 OOM bottleneck (the 4 affected λ now run ~50 s), where `r` is the
+   combiner's **inner-tensor dimension** (#2403's "inner×block | r" table) —
+   **not** `dim(V_λ⊢9)`, whose max is 216 (at `(4,3,1,1)`,`(4,2,2,1)`); the four
+   `r=64` λ have `dim = 168/216`. So feasibility looks favourable for A≤4. [running]
 2. **Coordinate** with the sibling PR that owns the kernel (`wenzl-a3-intertwiner-or3`)
    — post intent; the kernel is not yet on main.
 3. **Resolve the key question** — is an operator-magnitude binding formula
