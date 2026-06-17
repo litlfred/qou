@@ -55,6 +55,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import ast
 import json
 import re
 import sys
@@ -149,10 +150,14 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
         "validation_constants_imported": found,
     }
 
-    # Check the module docstring for an anchor banner.
-    # The docstring is the leading `"""..."""` of the module.
-    docstring_match = re.search(r'^"""(.*?)"""', text, re.DOTALL)
-    docstring = docstring_match.group(1) if docstring_match else ""
+    # Check the module docstring for an anchor banner. Use ast.get_docstring
+    # (not a `^"""` regex) so a shebang or leading `#` comments before the
+    # docstring don't defeat detection — that bug was silently dropping the
+    # CLASS-A banners that scripts like binding_K_direct.py already carry.
+    try:
+        docstring = ast.get_docstring(ast.parse(text)) or ""
+    except SyntaxError:
+        docstring = ""
     has_banner = any(
         re.search(p, docstring, re.IGNORECASE) for p in ANCHOR_BANNER_PATTERNS
     )

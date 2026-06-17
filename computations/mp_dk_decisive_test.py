@@ -2,6 +2,10 @@
 """mp_dk_decisive_test.py — are the m_p brane-tower d_k stable
 derivations or stale-q₀ near-matches? (item 2 of 'fo 1 and 2')
 
+CLASS-A acknowledged-anchor (Workplan-0b): M_P_MEV_VALIDATION builds the
+`m_p_codata / m_e` comparison TARGET this decisive test scores against,
+never a prediction input. Verified 2026-06-17 (I11 adjudication).
+
 CONTEXT. The deep audit (docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-
 audit.md, body — now superseded by its addendum) claimed the proton
 brane-tower coefficients are categorical derivations:

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-16T23:02:54.687239+00:00",
-  "commitSha": "a962bf5ab9372bb4ca1f133a4e50b18ba99fc75b",
+  "computedAt": "2026-06-17T00:32:55.503282+00:00",
+  "commitSha": "69562b7a9c65c05f03e15b92bef34f7ea649b2e4",
   "assertions": [
     {
       "name": "no_i11_violations",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13,
+  "durationMs": 74,
   "computation": "validation-as-input-audit",
   "scriptFile": "validation_as_input_audit.py",
-  "scriptHash": "a06717f9f779",
-  "scriptCommitSha": "a962bf5ab9372bb4ca1f133a4e50b18ba99fc75b",
+  "scriptHash": "89ff32cbb954",
+  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -56,10 +56,10 @@
   },
   "data": {
     "by_result": {
-      "i11_violation": 19,
-      "ok_comparison_only": 25,
+      "ok_acknowledged_anchor": 22,
+      "ok_comparison_only": 17,
       "imported_unused": 6,
-      "ok_acknowledged_anchor": 5
+      "i11_violation": 10
     },
     "rows": [
       {
@@ -69,16 +69,17 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          134,
-          252,
-          319,
-          320
+          139,
+          257,
+          324,
+          325
         ],
         "violation_lines": [
-          249
+          4,
+          254
         ],
-        "violation_count": 1,
-        "result": "i11_violation"
+        "violation_count": 2,
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/audit_delta_S_chain.py",
@@ -92,7 +93,7 @@
         ],
         "violation_lines": [],
         "violation_count": 0,
-        "result": "ok_comparison_only"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/binding_K_direct.py",
@@ -118,7 +119,7 @@
           226
         ],
         "violation_count": 1,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/binding_canonical.py",
@@ -130,7 +131,7 @@
           403
         ],
         "violation_count": 1,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/borromean_volume_propagation_to_m_p.py",
@@ -206,7 +207,7 @@
         "comparison_lines": [],
         "violation_lines": [],
         "violation_count": 0,
-        "result": "ok_comparison_only"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/derived_masses.py",
@@ -219,7 +220,7 @@
           122
         ],
         "violation_count": 1,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/deuteron_binding_plancherel_channel.py",
@@ -240,10 +241,11 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          216
+          3,
+          221
         ],
-        "violation_count": 1,
-        "result": "i11_violation"
+        "violation_count": 2,
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/habiro/habiro_exact_mass_endomorphism.py",
@@ -254,7 +256,7 @@
         "comparison_lines": [],
         "violation_lines": [],
         "violation_count": 0,
-        "result": "ok_comparison_only"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/hydrogen_step_by_step.py",
@@ -306,7 +308,7 @@
           167
         ],
         "violation_count": 2,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/m_p_spectral_corrected_50dps.py",
@@ -332,7 +334,7 @@
         ],
         "violation_lines": [],
         "violation_count": 0,
-        "result": "ok_comparison_only"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/m_sym_error_budget.py",
@@ -415,7 +417,7 @@
           60
         ],
         "violation_count": 1,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/mp_dk_decisive_test.py",
@@ -424,10 +426,11 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          64
+          5,
+          68
         ],
-        "violation_count": 1,
-        "result": "i11_violation"
+        "violation_count": 2,
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/neutron_error_diagnostic.py",
@@ -438,7 +441,7 @@
         "comparison_lines": [],
         "violation_lines": [],
         "violation_count": 0,
-        "result": "ok_comparison_only"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/per_observable_100x_status.py",
@@ -481,10 +484,11 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          81
+          3,
+          85
         ],
-        "violation_count": 1,
-        "result": "i11_violation"
+        "violation_count": 2,
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/phase5/phase2c_derive_correction_tower.py",
@@ -513,7 +517,7 @@
         ],
         "violation_lines": [],
         "violation_count": 0,
-        "result": "ok_comparison_only"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/probes/option_a_vol_per_knot_light_series.py",
@@ -546,7 +550,7 @@
         "comparison_lines": [],
         "violation_lines": [],
         "violation_count": 0,
-        "result": "ok_comparison_only"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/probes/path_b_habiro_mass_probe.py",
@@ -557,7 +561,7 @@
         "comparison_lines": [],
         "violation_lines": [],
         "violation_count": 0,
-        "result": "ok_comparison_only"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "computations/probes/phase2a_flavor_split_higher_order_probe.py",
