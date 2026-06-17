@@ -104,12 +104,15 @@ def tr_m_atom_zn(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     y_q = Q0 if q is None else q
     y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, y_q).items()}
     t0 = time.time()
+    # q-parameterised core: build the word AT q (q=None → q₀, byte-identical),
+    # so q≠q₀ (e.g. q₀⁻¹, simulator N-grids) re-lifts cleanly instead of
+    # raising "unrecognised crossing".
     chi_atom = chi_all_lambda_reduced_block(
         atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
-                           include_inter=True), n, q=q)
+                           include_inter=True, q=q), n, q=q)
     chi_free = chi_all_lambda_reduced_block(
         atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
-                           include_inter=False), n, q=q)
+                           include_inter=False, q=q), n, q=q)
     wall = time.time() - t0
     return _trM(chi_atom, y), _trM(chi_free, y), chi_atom, wall
 
