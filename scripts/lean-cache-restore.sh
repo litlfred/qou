@@ -49,7 +49,10 @@ if [ ! -s "$tgz" ]; then
   echo "lean-cache-restore: no 'lake-oleans.tgz.part*' blobs on $branch." >&2
   exit 1
 fi
-tar xzf "$tgz" -C "$REPO_ROOT"
+tar xzf "$tgz" -C "$REPO_ROOT" || {
+  echo "lean-cache-restore: tar extraction failed (exit $?)." >&2
+  exit 1
+}
 lean_mathlib_url_fix
 
 count=$(find "$REPO_ROOT/.lake/packages/mathlib" -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')

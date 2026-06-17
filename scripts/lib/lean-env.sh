@@ -44,12 +44,13 @@ lean_toolchain_slug() {
 #    All dependency olean dirs under .lake/packages, plus the workspace
 #    and QOU-package build dirs (so files importing `QOU.*` resolve).
 lean_leanpath() {
-  local lp
+  local lp full
   lp=$(find "$REPO_ROOT/.lake/packages" -maxdepth 5 -type d \
          -path '*/.lake/build/lib/lean' 2>/dev/null | tr '\n' ':')
-  printf '%s%s:%s' "$lp" \
-    "$REPO_ROOT/.lake/build/lib/lean" \
-    "$LEAN_DIR/.lake/build/lib/lean"
+  full="${lp}${REPO_ROOT}/.lake/build/lib/lean:${LEAN_DIR}/.lake/build/lib/lean"
+  # Strip leading/trailing/duplicate colons: an empty LEAN_PATH segment
+  # makes Lean also search the cwd (module-resolution conflicts).
+  printf '%s' "$full" | sed -e 's/^:*//' -e 's/:*$//' -e 's/::*/:/g'
 }
 
 # ── lean_mathlib_url_fix — restore the canonical mathlib origin URL ───
