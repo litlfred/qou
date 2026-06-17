@@ -17,6 +17,20 @@ no fit, no production rewire.
 > implemented (the one open compute lever that, if it selects the Borromean
 > signature, unlocks this route). Do **not** re-open the unchecked boxes as a
 > quick task — the lever is bounded, not pending.
+>
+> **Update (2026-06-17): the last lever is now CLOSED.** The genuine dense
+> Wedderburn-projector SDP was implemented via its **closed form**
+> ([`2026-06-17-b3-dense-sdp-lever-closed.md`](../audits/2026-06-17-b3-dense-sdp-lever-closed.md),
+> [`computations/probes/b3_dense_sdp_wedderburn_projector.py`](../../computations/probes/b3_dense_sdp_wedderburn_projector.py)).
+> Its "richer" constraints (`⟨π_λ,Φ⟩≥0`, 2×2 pair-PSD) are redundant given `Φ⪰0`,
+> so it collapses to `min⟨T,Φ⟩ s.t. Φ⪰0, trΦ=n` = **select the min-eigenvector of
+> the cost operator `T`**. 𝓑₃ is 99.8% γ (the identity = the MAX Markov-trace
+> cost), so a cost-minimizing program selects the smallest-cost **mesonic L±**
+> (full-cos ≈ 0.05 to 𝓑₃) — never 𝓑₃. The only `T` selecting 𝓑₃ is `−𝓑₃𝓑₃ᵀ` (a
+> fit). **𝓑₃-selection ⟺ a fitted cost operator.** This route's gate is therefore
+> **structural, not pending** — the operator-cumulant build (steps 1–4) stays
+> closed. The remaining non-refuted directions are research-scale (GAP-A-3, or
+> promoting the discrete topological criterion *into* the selection program).
 
 ## The conceptual advance — *where* the cooperativity must live
 
