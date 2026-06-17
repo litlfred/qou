@@ -54,7 +54,9 @@ SWEEP = [("2H", 1, 1), ("4He", 2, 2),
 
 
 def _ame_table():
-    """(Z, A) → total binding energy (MeV) from the vendored AME2020 table."""
+    """(Z, A) → (total binding energy MeV, experimental 1σ MeV) from the
+    vendored AME2020 table. σ_B = binding_energy_per_A_unc_keV × A (the
+    per-nucleon uncertainty scales with A for the total)."""
     d = json.loads((HERE / "data" / "ame2020.json").read_text())
     entries = d["entries"] if isinstance(d, dict) and "entries" in d else d
     rows = entries.values() if isinstance(entries, dict) else entries
@@ -62,7 +64,9 @@ def _ame_table():
     for r in rows:
         b = r.get("binding_energy_total_keV")
         if b is not None:
-            out[(r["Z"], r["A"])] = b / 1000.0
+            unc_perA = r.get("binding_energy_per_A_unc_keV") or 0.0
+            sigma = unc_perA * r["A"] / 1000.0          # total σ_B in MeV
+            out[(r["Z"], r["A"])] = (b / 1000.0, sigma)
     return out
 
 
@@ -99,7 +103,9 @@ def _nucleon_msym(alpha):
 def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
     A = Z + N
     n = 3 * A
-    bame = ame.get((Z, A))
+    bame_t = ame.get((Z, A))
+    bame = bame_t[0] if bame_t else None
+    sigma_ame = bame_t[1] if bame_t else None
     # ---- cheap forms (any A): factorized q-CLT + ⁴He magic volume -----------
     n_pp, n_pn, n_nn = comb(Z, 2), Z * N, comb(N, 2)
     sigma_L = n_pp * Lbond["pp"] + n_pn * Lbond["pn"] + n_nn * Lbond["nn"]
@@ -128,6 +134,7 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
         B_sym = alpha * math.log(tf / ta)
         m_sym_atom = -alpha * math.log(ta)           # B_sym = m_sym_atom − m_sym_free
     return {"name": name, "Z": Z, "N": N, "A": A, "n": n, "B_AME": bame,
+            "sigma_AME": sigma_ame,
             "n_pp": n_pp, "n_pn": n_pn, "n_nn": n_nn,
             "B_sym": B_sym, "B_qCLT": B_qCLT,
             "B_qCLT_fac": B_fac, "B_base": B_base, "B_chir": B_chir,
@@ -185,25 +192,38 @@ def main(argv=None) -> int:
           f"shown for n=3A ≤ {args.max_strands} (A ≤ {args.max_strands // 3}); "
           f"qCLT/fac/magic + m_sym(free) are combinatorial → all A.\n")
 
-    # 1. BINDING
-    print("### Binding  B (MeV)")
-    print("| iso | A | B_AME | B_sym | B_qCLT | B_qCLT_fac | B_magic |")
-    print("|---|--:|--:|--:|--:|--:|--:|")
+    # 1. BINDING  (B_AME ± experimental 1σ from AME2020)
+    print("### Binding  B (MeV)   [σ_exp = AME2020 experimental 1σ]")
+    print("| iso | A | B_AME | σ_exp (MeV) | σ_exp (ppm) | B_sym | B_qCLT | B_qCLT_fac | B_magic |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
-        print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} "
-              f"| {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT'])} | {_fmt(r['B_qCLT_fac'])} "
-              f"| {_fmt(r['B_magic'])} |")
+        s = r["sigma_AME"]
+        s_ppm = (s / r["B_AME"] * 1e6) if (s and r["B_AME"]) else None
+        print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_fmt(s,11,6)} "
+              f"| {_fmt(s_ppm,11,3)} | {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT'])} "
+              f"| {_fmt(r['B_qCLT_fac'])} | {_fmt(r['B_magic'])} |")
 
-    # 2. ERROR  B_AME / B
+    # 2. ERROR  B_AME / B_model, alongside the experimental precision and the
+    #    best form's deviation measured in experimental σ (how far past the
+    #    100× L2 target each form sits).
     print("\n### Error  (B_AME / B_model; 1.00 = perfect, >1 under-binds)")
-    print("| iso | A | sym | qCLT | qCLT_fac | magic |")
-    print("|---|--:|--:|--:|--:|--:|")
+    print("| iso | A | sym | qCLT | qCLT_fac | magic | σ_exp (ppm) | best dev / σ_exp |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         e = {k: _err(r["B_AME"], r[k]) for k in
              ("B_sym", "B_qCLT", "B_qCLT_fac", "B_magic")}
+        s = r["sigma_AME"]
+        s_ppm = (s / r["B_AME"] * 1e6) if (s and r["B_AME"]) else None
+        # best model = smallest |B_AME − B_model|; report its deviation in σ_exp
+        cand = [r[k] for k in ("B_sym", "B_qCLT", "B_qCLT_fac", "B_magic") if r[k]]
+        best_dev_sigma = None
+        if cand and s and r["B_AME"]:
+            best = min(cand, key=lambda b: abs(b - r["B_AME"]))
+            best_dev_sigma = abs(best - r["B_AME"]) / s
         print(f"| {r['name']} | {r['A']} | {_fmt(e['B_sym'],6)} "
               f"| {_fmt(e['B_qCLT'],6)} | {_fmt(e['B_qCLT_fac'],6)} "
-              f"| {_fmt(e['B_magic'],6)} |")
+              f"| {_fmt(e['B_magic'],6)} | {_fmt(s_ppm,11,3)} "
+              f"| {_fmt(best_dev_sigma,16,3) if best_dev_sigma else _fmt(None,16)} |")
 
     # 3. MASS  M = Z*m_p + N*m_n - B
     from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
