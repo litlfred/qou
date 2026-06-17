@@ -1116,6 +1116,113 @@ fn lagrange_one(
     p
 }
 
+/// Column-0 seminormal matrix units `|e_a⟩⟨e_0|⊗I` on `range` (r×r), for
+/// `a=0..d-1`, of the H_k factor whose **restricted** generators are `g_tilde`
+/// (acting as `ρ(σ_i)⊗I` on range) and whose **standard** seminormal generators
+/// are `rho` (d×d). This is the O(r³) intertwiner primitive (handover Task B):
+/// it expresses each matrix unit `|e_a⟩⟨e_0|` as a Hecke-algebra combination
+/// `Σ_w c^a_w T_w` (preimage under the surjection `ρ: H_k ↠ M_d`), then applies
+/// the SAME combination to `range` via `g_tilde` — yielding `|e_a⟩⟨e_0|⊗I`
+/// without ever forming an r²×r² system. The standard `rho` fixes the gauge.
+fn col0_matrix_units(
+    g_tilde: &[Vec<Vec<Float>>],
+    rho: &[Vec<Vec<Float>>],
+    d: usize,
+    r: usize,
+    prec: u32,
+) -> Result<Vec<Vec<Vec<Float>>>, String> {
+    if d == 1 {
+        // ρ is the trivial/sign 1-dim rep: |e_0⟩⟨e_0|⊗I = I_r.
+        return Ok(vec![eye_mpfr(r, prec)]);
+    }
+    let tol = Float::with_val(prec, 1e-30);
+    let ngen = rho.len();
+    let d2 = d * d;
+    // BFS over generator words; collect ρ(T_w) (d×d). ρ is irreducible so its
+    // image spans all of M_d (Burnside); grow the pool one BFS wave at a time
+    // and stop as soon as RREF finds d² words with independent ρ-images. (A
+    // fixed word-count cap can fall short because the Hecke relation
+    // σ²=(q−q⁻¹)σ+1 collapses many short words to the same image.)
+    let mut words: Vec<Vec<usize>> = vec![vec![]];
+    let mut rhos: Vec<Vec<Vec<Float>>> = vec![eye_mpfr(d, prec)];
+    let mut frontier = 0usize;
+    let mut depth = 0usize;
+    let mut feat: Vec<Vec<Float>> = Vec::new();
+    let mut piv: Vec<usize> = Vec::new();
+    let max_depth = 2 * d + 6;
+    loop {
+        let end = words.len();
+        for wi in frontier..end {
+            for g in 0..ngen {
+                let mut nw = words[wi].clone();
+                nw.push(g);
+                let nr = dense_la_mpfr::dense_dense_mul_mpfr(&rhos[wi], &rho[g], prec);
+                words.push(nw);
+                rhos.push(nr);
+            }
+        }
+        frontier = end;
+        depth += 1;
+        let n = words.len();
+        // feat: d² × n, column w = vec(ρ(T_w)) with feature index f = i·d+j.
+        feat = (0..d2)
+            .map(|f| {
+                let (i, j) = (f / d, f % d);
+                (0..n).map(|w| Float::with_val(prec, &rhos[w][i][j])).collect()
+            })
+            .collect();
+        // Pivot columns of RREF(feat) = a maximal set of words with independent
+        // ρ-images; ρ surjects onto M_d so a full set of d² exists.
+        let (_rr, p) = dense_la_mpfr::rref_mpfr(&feat, prec, &tol);
+        piv = p;
+        if piv.len() == d2 || depth >= max_depth || end == words.len() {
+            break;
+        }
+    }
+    if piv.len() != d2 {
+        return Err(format!(
+            "col0_matrix_units: {} independent words at depth {}, need d²={}",
+            piv.len(), depth, d2));
+    }
+    // V (d²×d²) = ρ-images of the pivot words; invert once.
+    let vmat: Vec<Vec<Float>> = (0..d2)
+        .map(|f| piv.iter().map(|&w| Float::with_val(prec, &feat[f][w])).collect())
+        .collect();
+    let vinv = dense_la_mpfr::inverse_mpfr(&vmat, prec, &tol)
+        .ok_or_else(|| "col0_matrix_units: V singular".to_string())?;
+    // g̃-image of each pivot word (r×r).
+    let gt_piv: Vec<Vec<Vec<Float>>> = piv
+        .iter()
+        .map(|&w| {
+            let mut m = eye_mpfr(r, prec);
+            for &g in &words[w] {
+                m = dense_la_mpfr::dense_dense_mul_mpfr(&m, &g_tilde[g], prec);
+            }
+            m
+        })
+        .collect();
+    // M^_a = Σ_j (V⁻¹·e_{a·d})_j · g̃_{piv[j]} = Σ_j vinv[j][a·d] · gt_piv[j].
+    let mut units: Vec<Vec<Vec<Float>>> = Vec::with_capacity(d);
+    for a in 0..d {
+        let mut ma: Vec<Vec<Float>> =
+            (0..r).map(|_| (0..r).map(|_| Float::with_val(prec, 0)).collect()).collect();
+        for j in 0..d2 {
+            let cj = Float::with_val(prec, &vinv[j][a * d]);
+            if cj.is_zero() {
+                continue;
+            }
+            for row in 0..r {
+                for col in 0..r {
+                    ma[row][col] = Float::with_val(prec,
+                        &ma[row][col] + &(Float::with_val(prec, &cj * &gt_piv[j][row][col])));
+                }
+            }
+        }
+        units.push(ma);
+    }
+    Ok(units)
+}
+
 /// Per-`(μ,ν)` categorical interface operator `A^λ_{μν}(I)` as a dense matrix,
 /// from **pre-built shared data** (λ dense generators + the two class-sums) so
 /// the all-blocks driver builds the expensive seminormal/class-sums once and
@@ -1198,49 +1305,37 @@ fn combiner_block(
         smu.iter().map(|sp| dense_la_mpfr::sparse_to_dense_mpfr(sp, d_mu, prec)).collect();
     let rnv: Vec<Vec<Vec<Float>>> =
         snv.iter().map(|sp| dense_la_mpfr::sparse_to_dense_mpfr(sp, d_nu, prec)).collect();
-    let (i_r, i_dmu, i_dnu, i_c) =
-        (eye_mpfr(r, prec), eye_mpfr(d_mu, prec), eye_mpfr(d_nu, prec), eye_mpfr(c, prec));
-    let mut targets: Vec<Vec<Vec<Float>>> = Vec::new();
-    let mut restricted: Vec<&Vec<Vec<Float>>> = Vec::new();
-    for a in 0..n_inner - 1 {
-        let k = dense_la_mpfr::kron_mpfr(
-            &dense_la_mpfr::kron_mpfr(&rmu[a], &i_dnu, prec), &i_c, prec);
-        targets.push(k);
-        restricted.push(&inner_g[a]);
+    // Cyclic-vector intertwiner U (O(r³); NO r²×r² null space — handover Task B).
+    // Column-0 matrix units on range: |e_a⟩⟨e_0|⊗I (inner), I⊗|e_b⟩⟨e_0|⊗I (block).
+    let mu_units = col0_matrix_units(&inner_g, &rmu, d_mu, r, prec)?;
+    let nu_units = col0_matrix_units(&block_g, &rnv, d_nu, r, prec)?;
+    // Joint 0-weight space = range(M^μ_0 · M^ν_0), dim c; its pivot columns are
+    // the cyclic images w_k of e^μ_0⊗e^ν_0⊗f_k.
+    let p0 = dense_la_mpfr::dense_dense_mul_mpfr(&mu_units[0], &nu_units[0], prec);
+    let (_p0r, p0piv) = dense_la_mpfr::rref_mpfr(&p0, prec, &tol);
+    if p0piv.len() != c {
+        return Err(format!("joint 0-weight dim {} != multiplicity c={}", p0piv.len(), c));
     }
-    for b in 0..n_block - 1 {
-        let k = dense_la_mpfr::kron_mpfr(
-            &dense_la_mpfr::kron_mpfr(&i_dmu, &rnv[b], prec), &i_c, prec);
-        targets.push(k);
-        restricted.push(&block_g[b]);
-    }
-    let r2 = r * r;
-    let mut m_rows: Vec<Vec<Float>> = Vec::with_capacity(targets.len() * r2);
-    for (rk, gk) in targets.iter().zip(restricted.iter()) {
-        let lhs = dense_la_mpfr::kron_mpfr(&i_r, gk, prec);
-        let rhs = dense_la_mpfr::kron_mpfr(&transpose_mpfr(rk, prec), &i_r, prec);
-        for row in 0..r2 {
-            let diff: Vec<Float> = (0..r2)
-                .map(|col| Float::with_val(prec, &lhs[row][col] - &rhs[row][col]))
-                .collect();
-            m_rows.push(diff);
+    // U column (a·d_ν·c + b·c + k) = M^μ_a · M^ν_b · w_k  (multiplicity fastest).
+    let mut u_mat: Vec<Vec<Float>> =
+        (0..r).map(|_| (0..r).map(|_| Float::with_val(prec, 0)).collect()).collect();
+    for a in 0..d_mu {
+        for b in 0..d_nu {
+            let mab = dense_la_mpfr::dense_dense_mul_mpfr(&mu_units[a], &nu_units[b], prec);
+            for (k, &pc) in p0piv.iter().enumerate() {
+                let col = a * d_nu * c + b * c + k;
+                for row in 0..r {
+                    let mut s = Float::with_val(prec, 0);
+                    for t in 0..r {
+                        if !mab[row][t].is_zero() {
+                            s += &(Float::with_val(prec, &mab[row][t] * &p0[t][pc]));
+                        }
+                    }
+                    u_mat[row][col] = s;
+                }
+            }
         }
     }
-    let null = dense_la_mpfr::nullspace_mpfr(&m_rows, prec, &tol);
-    if null.is_empty() {
-        return Err("empty intertwiner null space".to_string());
-    }
-    let mut vec_u: Vec<Float> = (0..r2).map(|_| Float::with_val(prec, 0)).collect();
-    for (k, v) in null.iter().enumerate() {
-        let coeff = Float::with_val(prec, (k as u32) + 2).sqrt()
-            + Float::with_val(prec, (k as u32) + 1);
-        for idx in 0..r2 {
-            vec_u[idx] = Float::with_val(prec, &vec_u[idx] + &(Float::with_val(prec, &coeff * &v[idx])));
-        }
-    }
-    let u_mat: Vec<Vec<Float>> = (0..r)
-        .map(|i| (0..r).map(|j| Float::with_val(prec, &vec_u[j * r + i])).collect())
-        .collect();
     let u_inv = dense_la_mpfr::inverse_mpfr(&u_mat, prec, &tol)
         .ok_or_else(|| "U singular".to_string())?;
     let atil = dense_la_mpfr::dense_dense_mul_mpfr(
