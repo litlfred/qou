@@ -308,6 +308,26 @@ theorem restriction_functor_yields_h4_irrep :
     (s5_to_s3_restriction_mults .threeTwo).get! 2 = 2 := by
   native_decide
 
+/-- Dimensions of the 3 irreps of S_3, in the order
+    [(3) trivial, (1,1,1) sign, (2,1) standard]. -/
+def s3IrrepDims : List ℕ := [1, 1, 2]
+
+/-- **Restriction dimension-consistency (the branching backbone).**  For every
+    partition λ ⊢ 5, restricting V_λ to S_3 preserves total dimension:
+    `Σ_μ (mult of μ in V_λ↓S_3) · dim(μ) = dim(V_λ)`.  This is the dimension
+    bookkeeping that the S_5 → S_3 restriction functor `Res^{S_5}_{S_3}` must
+    satisfy (a vector space keeps its dimension on restriction, only its
+    decomposition changes), verifying `s5_to_s3_restriction_mults` against
+    `PartitionOf5.dim` across all 7 blocks.  Because the count depends only on
+    the conjugacy class of the S_3 ⊂ S_5 subgroup, it is identical for the
+    spacetime-frame-fixing embedding {1,2,3}↦{3,4,5} and the naive {1,2,3}↦
+    {1,2,3} — the embedding-independence verified in
+    `scripts/s5so3_branching_backbone_verify.py`. -/
+theorem s5_to_s3_restriction_dim_consistent (p : PartitionOf5) :
+    ((List.zip (s5_to_s3_restriction_mults p) s3IrrepDims).map
+      (fun q => q.1 * q.2)).sum = p.dim := by
+  cases p <;> decide
+
 /-! ## Δ_λ chirality decomposition (per-block binding factor)
 
     Per `docs/audits/2026-06-16-option-e-delta-lambda-sign-chirality.md` (#2386):
