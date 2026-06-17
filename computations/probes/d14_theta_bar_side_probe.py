@@ -34,7 +34,7 @@ mp.mp.dps = 40
 
 def tau_from_nome(q):
     """Solve q = exp(2 pi i tau) for tau (principal branch)."""
-    return mp.log(q) / (2 * mp.pi * 1j)
+    return mp.log(q) / (2 * mp.pi * mp.j)
 
 
 def descartes_nome():
@@ -45,14 +45,20 @@ def descartes_nome():
     # On the arc tau = exp(i phi), phi in (pi/3, pi/2], Klein-j is real and
     # monotone 0 -> 1728.  Bisect for kleinj = j.  NB mpmath.kleinj uses the
     # j(i)=1 normalization (returns j/1728), so scale by 1728 to compare.
-    f = lambda phi: 1728 * mp.kleinj(mp.e ** (1j * phi)).real - j
-    lo, hi = float(mp.pi / 3) + 1e-9, float(mp.pi / 2)
+    # Keep lo/hi/phi as mpf throughout (mp.pi and mp.mpf are full precision)
+    # and use mp.exp(mp.j*phi) for high-precision complex exponentiation, so
+    # tau_E / nome are accurate to mp.mp.dps rather than 53-bit double.
+    f = lambda phi: 1728 * mp.kleinj(mp.exp(mp.j * phi)).real - j
+    lo, hi = mp.pi / 3 + mp.mpf("1e-9"), mp.pi / 2
+    tol = mp.mpf(10) ** -mp.mp.dps  # tolerance tied to the working precision
     for _ in range(200):
+        if hi - lo < tol:
+            break
         mid = (lo + hi) / 2
         (lo, hi) = (mid, hi) if f(mid) < 0 else (lo, mid)
-    phi = mp.mpf((lo + hi) / 2)
-    tau_E = mp.e ** (1j * phi)
-    return j, tau_E, mp.e ** (-2 * mp.pi * mp.im(tau_E))
+    phi = (lo + hi) / 2
+    tau_E = mp.exp(mp.j * phi)
+    return j, tau_E, mp.exp(-2 * mp.pi * mp.im(tau_E))
 
 
 def run(q0=mp.mpf("1.10998")):  # substrate value (cheat-sheet); verdict is q0-robust
