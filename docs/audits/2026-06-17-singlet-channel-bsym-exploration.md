@@ -157,6 +157,34 @@ scalar collapse truncates. The e₋ probe is superseded by this reframe and was
 removed (its algebraic split $1-\sigma=(1-q)e_+ +(1+q^{-1})e_-$ and the
 $e_++e_-\equiv\mathrm{atom}$ identity are recorded in §3 above).
 
+## 6c. observe-last probe result — additive phase REFUTED; residual is per-object q₀⁵
+
+[`binding_observe_last.py`](../../computations/binding_observe_last.py) (witness
+`binding-observe-last.witness.json`) executes the §6b observe-last collapse and
+compares it to production observe-early `B_pred = Q_β·(|tr_free|−|tr_atom|)`
+(Q_β = 0.78233 MeV, CAL-3 — **not** E₀ = 4.186). Preflight: reproduces the
+residual-audit table to 4e−5, and `e_pred = log_{q0}(B_AME/B_pred)` =
+14.99 / 24.93 / 23.60 / 35.27 ≈ 10A−5 ✓ (data + weights + scale validated).
+
+**The additive observe-last `B_late = Q_β·Σ_λ y_λ(θ_λ^free − θ_λ^atom)` is
+refuted:** it is small, **negative**, and **shrinks** with A
+(−0.067, −0.014, −0.008, −0.0015 MeV for D/T/³He/⁴He; growth-only variant
+likewise tiny). The residual it must reproduce is the **opposite** — large,
+positive, **growing** (q₀¹⁵ → q₀³⁵, i.e. ×4.8 → ×39 on B_pred). The Jensen gap
+of the per-block phase sum is not the residual.
+
+**Formalize-first prune (the real structural reading).** The residual factorises
+$$ q_0^{10A-5} = q_0^{5(2A-1)} = \underbrace{(q_0^{5})^{A}}_{\text{nucleons}}\cdot\underbrace{(q_0^{5})^{A-1}}_{\text{interfaces}}, $$
+a **per-object multiplicative q₀⁵** (one factor per nucleon + one per inter-
+nucleon bond, the §6b "additive over bonds" — but additive *in the exponent*).
+An additive phase sum (bounded, O(1)/block, → 0 as the trace concentrates)
+**cannot** produce a factor geometric in A. So **any observe-last closure that
+recovers the residual must be exponential / per-object-multiplicative**, not an
+additive phase sum. The observe-last *infrastructure* (carry per-λ θ to step 9)
+is correct; the additive *collapse* is the wrong one. The open step is unchanged
+from the 9b workplan H1: derive **q₀⁵ per chain object** from the jet/crossing
+bookkeeping of `W_free` vs `W_atom` (12 crossings/nucleon, +1/interface).
+
 ## 7. Verdict so far
 
 The B_sym lever is **real but already-identified and stuck**. The honest
