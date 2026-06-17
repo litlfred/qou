@@ -45,9 +45,13 @@ That is the non-fit target the arc was missing. It says: the α-binding is the
 1. **Pull the kernel.** `A^λ_{ξν}(I)` = `computations/a_operator/a_operator_recursive.py::interface_blocks()`
    (sibling `wenzl-a3-intertwiner-or3` / `f393badec0`; not on main). Cherry-pick
    or coordinate-merge; it runs A≤4 self-contained.
-2. **Construct the multi-interface product.** ⁴He's `(2,2)` chain has bonds
-   `{pp, pn, nn}` (3 interfaces). Compose the interface operators along the chain
-   (the operator analogue of `tr_atom = Π tr_bond`).
+2. **Construct the multi-interface product.** ⁴He's `(2,2)` chain in the
+   **canonical strand order `['p']·Z + ['n']·N = p-p-n-n`** (fixed by the
+   production `atom_braid_word_3A`, #2405 — the ordering is load-bearing: a
+   permutation like `p-n-p-n` would give bonds `{pn, np, pn}` and a different
+   product) has the 3 adjacent-bond interfaces `{pp, pn, nn}`. Compose the
+   interface operators along that chain (the operator analogue of
+   `tr_atom = Π tr_bond`).
 3. **Extract the connected part** `Δ_coop = product − Π(factorized)` (the cumulant
    / non-commutator content).
 4. **Derive-or-refute.** Does `Δ_coop`, scaled by the *existing* `E₀`/`m_e`
@@ -63,6 +67,37 @@ That is the non-fit target the arc was missing. It says: the α-binding is the
   constant = a fit = blocked (CAL-4 / three-calibration discipline).
 - If the magnitude needs a free multiplier to match AME, that is a **refutation**
   (per the deuteron `C_knot` retraction), not a result.
+
+## Caveat — extracting a *scalar* from Δ_coop routes back through the LP gate
+
+A formalize-first check before building: since #2405 forces the scalar trace to
+factorize exactly, **`Tr(Δ_coop) = 0`** — the cumulant operator is nonzero but
+**traceless in the binding observable**. So a *scalar* binding (MeV) cannot be a
+trace of `Δ_coop`; it needs a **non-trace functional**. The principled (non-fit)
+one is the **master-formula expectation** on the bound state `T=𝓑₃`:
+`⟨Δ_coop⟩_T = Σ_{i,j∈A*} u_i (G⁻¹)_{ij} ⟨Δ_coop,b_j⟩`
+([`prop:confinement-frobenius-reciprocity`](../../content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md))
+— **not** an ad-hoc norm/eigenvalue (those are the fit-risk).
+
+But `⟨·⟩_T` needs the **LP active set**, which #2417/#2426 left **OPEN** (the
+indefinite-Gram `𝓑₃`-selection problem: the min-action LP returns the trivial
+`tr_M=0` vertex, not `𝓑₃`). **So option 3 routes back through the LP-selection
+gate.** The map is now complete and the three Δ_λ-route opens are revealed to be
+**one interconnected problem**:
+
+> **(i) LP `𝓑₃`-selection** (the bound state / active set) ⊗
+> **(ii) the cumulant operator `Δ_coop`** (where cooperativity lives) ⊗
+> **(iii) the master-formula scalar `⟨Δ_coop⟩_T`** (the non-fit MeV).
+
+(ii) is now identified; (iii) is the principled extraction; both are gated on
+(i), the indefinite-Gram selection. **Closing (i) closes all three.**
+
+**Implication for path choice.** The **α-cluster recursion (option 2)** is the
+**non-trace / geometric** route (`B_magic = m_e·Vol·ρ`, ⁴He as magic input) —
+it **sidesteps the entire trace ⊗ operator ⊗ LP web** above. So if the operator
+route stays gated on the open LP selection, option 2 is the cleaner path to a
+non-fit α-magnitude. (Recorded so the operator build isn't pursued blind into
+the LP wall.)
 
 ## Status
 
