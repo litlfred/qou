@@ -308,4 +308,57 @@ theorem restriction_functor_yields_h4_irrep :
     (s5_to_s3_restriction_mults .threeTwo).get! 2 = 2 := by
   native_decide
 
+/-! ## Δ_λ chirality decomposition (per-block binding factor)
+
+    Per `docs/audits/2026-06-16-option-e-delta-lambda-sign-chirality.md` (#2386):
+    the Option-E per-partition binding factor Δ_λ decomposes as
+      Δ_λ = (icosahedral chirality sign) × (Wedderburn magnitude),
+    where the magnitude is the irrep dimension dim V_λ and the chirality sign is
+    sgn(w₀^{S_{λ'}}) ∈ {±1} — the longest-element sign of the conjugate
+    partition's Young subgroup, realizing the T₁/T₂ chirality swap under the
+    S₅∖A₅ parity (= the conjugate/transpose sign-twist).
+
+    These are UNCONDITIONAL finite facts (they do NOT depend on
+    `BringFiberAction`); they pin the sign/magnitude split of the binding
+    factor.  Caveat (per #2386 correction): this split is the magnitude×sign
+    structure of Δ_λ, not a closure of the deuteron binding energy — the
+    Σ_λ y_λ χ^λ Δ_λ formula undershoots (the deuteron closes via E₀·q⁻¹).
+    The Lean below proves only the structural decomposition. -/
+
+/-- Δ_λ chirality sign = sgn(w₀^{S_{λ'}}) ∈ {±1}, computed per partition. -/
+def PartitionOf5.deltaSign : PartitionOf5 → ℤ
+  | .five          => 1
+  | .fourOne       => -1
+  | .threeTwo      => 1
+  | .threeOneOne   => -1
+  | .twoTwoOne     => 1
+  | .twoOneOneOne  => 1
+  | .onesFive      => 1
+
+/-- The per-block binding factor Δ_λ = chirality sign × Wedderburn magnitude. -/
+def PartitionOf5.deltaLambda (p : PartitionOf5) : ℤ := p.deltaSign * (p.dim : ℤ)
+
+/-- Chirality is ±1 (deltaSign² = 1). -/
+theorem PartitionOf5.deltaSign_sq_one (p : PartitionOf5) : p.deltaSign ^ 2 = 1 := by
+  cases p <;> decide
+
+/-- **Magnitude = Wedderburn dim**: |Δ_λ| = dim V_λ, i.e. (Δ_λ)² = (dim V_λ)². -/
+theorem PartitionOf5.binding_magnitude_eq_dim (p : PartitionOf5) :
+    p.deltaLambda ^ 2 = (p.dim : ℤ) ^ 2 := by
+  cases p <;> decide
+
+/-- **Mixed-sign** (the PROBE-4 KL-positivity-prune premise at n=5): both
+    chirality signs occur, so no nonnegative (Kazhdan–Lusztig) weight can
+    supply the sign — the chirality must come from the parity twist, not a
+    positive combination of dimensions. -/
+theorem PartitionOf5.deltaSign_mixed :
+    (∃ p : PartitionOf5, p.deltaSign = 1) ∧ (∃ p : PartitionOf5, p.deltaSign = -1) :=
+  ⟨⟨.five, rfl⟩, ⟨.fourOne, rfl⟩⟩
+
+/-- The electron block (3,1,1) is chirality-odd (deltaSign = -1), magnitude 6
+    (self-conjugate partition; the T₁/T₂ split that carries the chirality). -/
+theorem PartitionOf5.electron_block :
+    PartitionOf5.threeOneOne.deltaSign = -1 ∧ PartitionOf5.threeOneOne.dim = 6 := by
+  decide
+
 end QOU.BraidsAndKnots
