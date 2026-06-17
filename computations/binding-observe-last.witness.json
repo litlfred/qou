@@ -1,0 +1,117 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-17T11:48:09.824742+00:00",
+  "commitSha": "3e683d91d204cfbbdea78859053e637c4234a376",
+  "assertions": [
+    {
+      "name": "B_pred_matches_residual_audit_table",
+      "computed": 4.083335133988282e-05,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "E₀·(|tr_free|−|tr_atom|) vs 2026-06-09 residual audit"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 52,
+  "computation": "binding-observe-last",
+  "scriptFile": "binding_observe_last.py",
+  "scriptHash": "38cb5b58c796",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "observe-EARLY (step-5 scalar collapse, B_pred=E₀·(tr_free−tr_atom)) vs observe-LAST (per-block q-Reeb phase θ_λ first, B_late=E₀·Σ_λ y_λ(θ_λ^free−θ_λ^atom)); tests whether the Jensen gap log(Σ)≠Σ(log) reproduces the residual Δ_λ≈q₀^(10A−5) (§6b reframe). Per-λ χ from atom-chi-rust witnesses; y_λ from wedderburn_jones_markov. NO FLOAT, 50 dps. Exploratory.",
+  "contentBlock": "rem:observe-last-jensen-gap",
+  "parameters": {
+    "compute_dps": "70"
+  },
+  "data": {
+    "q_0": "1.1099785955573347",
+    "atoms": [
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "B_pred": "0.4656204543696548037373396384846246695522735581833634488465101978138364",
+        "B_AME": "2.2245662",
+        "law_10A_5": 15,
+        "e_pred_residual_exponent": "14.98883853709269990816610176265014640676008116964363850416951417711744",
+        "B_late_signed": "-0.06646073455167617889673731492957076268439075506086866181100058150390325",
+        "e_late": "nan",
+        "g_late_over_pred": "nan",
+        "B_late_growth_only": "-0.05528995195230728233500860254952721909441237139745339057063872307968165",
+        "e_late_growth": "nan",
+        "preflight_B_pred_resid": "0.00002045436965480373733963848462466955227355818336344884651019781383636175",
+        "n_blocks": 11,
+        "n_growth_blocks": 3
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "B_pred": "0.6289591666486601171801389923822161218180238862776911207804615188100257",
+        "B_AME": "8.4817962",
+        "law_10A_5": 25,
+        "e_pred_residual_exponent": "24.93380235498911337192513938050389562537128221175134539309951415501785",
+        "B_late_signed": "-0.01438104446562488395756229610260255056786684936041589964211896844408651",
+        "e_late": "nan",
+        "g_late_over_pred": "nan",
+        "B_late_growth_only": "-0.009127903317080098359753089930112166829644712377523503678020275644033295",
+        "e_late_growth": "nan",
+        "preflight_B_pred_resid": "0.00004083335133988281986100761778387818197611372230887921953848118997431706",
+        "n_blocks": 30,
+        "n_growth_blocks": 4
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "B_pred": "0.6580815399178434424922056544890966985631688082853528060125745794653847",
+        "B_AME": "7.71804132",
+        "law_10A_5": 25,
+        "e_pred_residual_exponent": "23.59564675748101304747556198528069833152099650487553309111280639304279",
+        "B_late_signed": "-0.008318035571804906513697882915914548778902589105019068498320005824832589",
+        "e_late": "nan",
+        "g_late_over_pred": "nan",
+        "B_late_growth_only": "-0.004325783134869458015227831979905504332808458331005202890887253656769372",
+        "e_late_growth": "nan",
+        "preflight_B_pred_resid": "0.00001846008215655750779434551090330143683119171464719398742542053461529256",
+        "n_blocks": 30,
+        "n_growth_blocks": 5
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "B_pred": "0.7134607125562078438731318554514957293485179038874453732004587733930331",
+        "B_AME": "28.2956624",
+        "law_10A_5": 35,
+        "e_pred_residual_exponent": "35.27228879749101139670982629399551923883703920524106999217109053046149",
+        "B_late_signed": "-0.001469212537425508415334246607657205380164105320639010933657642103621773",
+        "e_late": "nan",
+        "g_late_over_pred": "nan",
+        "B_late_growth_only": "-0.001125306007664538581431998276784860106006098616903852946826365057042291",
+        "e_late_growth": "nan",
+        "preflight_B_pred_resid": "0.0000392874437921561268681445485042706514820961125546267995412266069669481",
+        "n_blocks": 77,
+        "n_growth_blocks": 9
+      }
+    ],
+    "verdict_hint": "compare e_late / e_lateG to 0 and g_late to 10A−5 per atom"
+  }
+}
