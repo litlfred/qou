@@ -28,21 +28,26 @@ re-discover already-tried directions.
 
 | Sub-goal | Status | Evidence | Open question |
 |----------|--------|----------|---------------|
-| **Deuteron Δ_λ closure** | **CLOSED** (+0.91% via E₀ × q⁻¹) | PR #1367, audit `2026-05-26-delta-lambda-binding-formula-closure.md` | none — the only honestly-closed light nucleus |
+| **Deuteron Δ_λ closure** | **NOT closed** (corrected 2026-06-17) — "+0.91% via E₀×q⁻¹" unsubstantiated: E₀×q⁻¹=3.771 (+69.5%), bare Σ=0.380 (−82.9%), apparent closure was Σ×fitted C_knot=5.852; best parameter-free = interface-knot+T3, −31% | `2026-06-17-deuteron-closure-overclaim-corrected.md` | the Δ_λ assembly gate (main `1f08f61a`: both directions blocked) |
 | **Per-nucleon binding (T, ³He, ⁴He, ⁶Li+)** | NOT derived | retraction PR #1386 documents the backhanded-fit attempt | structural derivation required |
 | **A=3 mirror pair (T − ³He)** | NEAR-MATCH at 0.11% | v9 commit `30c5393b7` | is `(1+q)/2` correction Taylor-exact / structurally-derived, or another near-match? |
 | **A=4 (⁴He)** | NOT derived | various probes 2026-05-25 thread | requires multi-nucleon extension of the v9 mirror-pair formula |
 | **A ≥ 5 (⁶Li, etc.)** | NOT derived | — | depends on lower-A closures |
 
-**Reading (corrected 2026-06-16):** the deuteron is closed by **`E₀×q⁻¹`
-(+0.91%)**, `E₀ = m_e/(q₀(q₀−1))` (PR #1367). The per-block **Δ_λ Σ-formula**
-`B = m_e × |Σ_λ y_λ · χ^λ(β_D) · sgn(w_0^{S_{λ'}}) · f^λ|` (with `f^λ=dim(V_λ)`,
-the proved categorical factor) is a SEPARATE object that **does NOT close** the
-deuteron — it gives `B(D)=0.380 MeV`, **−82.9%** off AME (verified by running
-`computations/binding_energy_categorical_deuteron.py`; the closing C_knot=5.852
-was a fitted deficit ratio, retracted PR #1386). Earlier prose here (and PR #2386)
-conflated the two; the §Status row "+0.91% via E₀×q⁻¹" is the correct closure.
-Cross-check: `docs/audits/2026-06-16-deuteron-closure-crosscheck-and-correction.md`.
+**Reading (corrected 2026-06-17 — the deuteron is NOT closed):** the prior
+"closed by `E₀×q⁻¹` (+0.91%)" reading was itself wrong. Re-verified, no compute
+reproduces the claimed 2.24 / +0.91%: the *stated* `E₀×q⁻¹` (E₀=4.186) gives
+**3.771 MeV, +69.5%**; the per-block **Δ_λ Σ-formula**
+`B = m_e × |Σ_λ y_λ · χ^λ(β_D) · sgn(w_0^{S_{λ'}}) · f^λ|` (f^λ=dim(V_λ)) gives
+`B(D)=0.380 MeV`, **−82.9%**; and the apparent "closure" was that Σ value × a
+**fitted single-isotope constant C_knot=5.852** back-solved to AME
+(`binding_energy_categorical_deuteron.py:99` itself labels C_knot "FITTED …
+not a derived layer; Δ_λ gate remains open"). Best **parameter-free** deuteron
+prediction = interface-knot+T3 = **1.526 MeV (−31%)**. So the deuteron is NOT
+honestly closed, and no light nucleus is (Δ_λ directions blocked, main
+`1f08f61a`). Cross-checks:
+`docs/audits/2026-06-17-deuteron-closure-overclaim-corrected.md`,
+`docs/audits/2026-06-16-deuteron-closure-crosscheck-and-correction.md`.
 The A=3 mirror pair is
 near-matched but not closed. **Critical:** the v9 (1+q)/2 factor was
 selected from a substrate-candidate list, NOT derived. Treat as
@@ -198,6 +203,7 @@ near-match. Do NOT wire as a derivation.
 | 2026-06-16 | Claude / (infra) | doc-currency | Compute path `folio-assistant/computations/` → `computations/` swept (3675 files, PR #2388); the canonical compute is qou-top-level `computations/`. |
 | 2026-06-17 | Claude / `...keystone-lean-delta-lambda-chirality` (PR #2416) | Lean-prove the Δ_λ magnitude×chirality split | **LANDED (sorry-free).** `S5SO3FiberAction.lean`: `deltaSign`/`deltaLambda`, `deltaSign_sq_one`, `binding_magnitude_eq_dim` (|Δ_λ|=dim), `deltaSign_mixed` (the PROBE-4 prune premise), `electron_block`. Verified core-only (lean v4.24.0, exit 0); Mathlib build CI-deferred. The PROBE-4 KL-positivity prune now rests on a machine-checked mixed-sign fact. No fit, no compute rewire. |
 | 2026-06-17 | Claude / `...keystone-lean-mckay-e8-anchors` (PR #2424) | Lean-prove the McKay 2I↔E₈ + A₅-branching anchors | **LANDED (sorry-free).** `binaryIcosahedralIrrepDims` (affine E₈ marks) with Σdim²=120, Σmarks=h(E₈)=30, \|2I\|=4·h, dimE₈=248=8·31; `so3_to_a5_dim_splits`; `s5_to_a5_electron_block_splits` (6=3+3, T₁⊕T₂). Pins the spacetime-face arithmetic behind the chirality split. Verified core-only (exit 0). |
+| 2026-06-17 | Claude / `...deuteron-closure-overclaim-fix` | Re-verify the deuteron "closure" claim (row 2026-06-16 above asserted "+0.91% via E₀×q⁻¹ is the correct closure") | **CORRECTION — the deuteron is NOT closed.** No compute reproduces 2.24/+0.91%: stated E₀×q⁻¹ (E₀=4.186)=3.771 (+69.5%); Σ-formula=0.380 (−82.9%); the apparent closure was Σ×**fitted** C_knot=5.852 (the compute itself labels it fitted, gate open). Best parameter-free = interface-knot+T3 = 1.526 (−31%). The 2026-06-16 "Reading" + Status row were themselves wrong (kept E₀×q⁻¹ as "correct closure"); both fixed. No light nucleus honestly closed (Δ_λ blocked, main `1f08f61a`). Audit `2026-06-17-deuteron-closure-overclaim-corrected.md`. |
 
 ## Cross-refs
 
