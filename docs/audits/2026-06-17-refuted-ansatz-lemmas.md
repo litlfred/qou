@@ -60,6 +60,40 @@ The sign-flip at `k=2` (smallest depth including the Hecke quadratic
 slice `σ²=(q−q⁻¹)σ+1`) is recorded as a structural observation, not a
 closure.
 
+**Operator-valued per-eigenvalue probe** (`probe_phiq_operator_valued.py`):
+Φ_q applied per eigenvalue of `ρ_λ(β)` in each Hecke irrep, operator-traced
+and Wedderburn-weighted by signed `y_λ`. D finds a near-AME value at `k=1`
+(−6.87 %) and T at `k=2` (−8.00 %), but ³He never gets within 50 % at any
+uniform `k ∈ {1..10}`, and the (D,T) sweet spots are at *different* `k` —
+no single uniform `k` closes all three (per-atom retuning is the excluded
+signature). **Refuted.**
+
+**Pair-knot magic-shell probe** (`probe_phiq_pair_knot_magic_shell.py`):
+collapse each magic intra-block to a composite `Φ_q(|V̂_shell|)`. ⁴He at
+−19.4 % is the closest any probed form came to uniform closure, but
+collapse alone does not close the sample (³He still +219 %), and the
+extracted shell corrections break `Z=2`/`N=2` symmetry under the
+product-volume convention: `Δ_shell(Z=2) = −16.88 MeV` vs
+`Δ_shell(N=2) = +22.38 MeV` (opposite signs, 1.326× magnitude). **Refuted
+as formulated** — but it surfaced the kept structural findings (LP-dual
+pair-knot selection at closed shells; the `1.326×` asymmetry is a
+product-volume artifact, with Z↔N symmetry exact at the Markov-trace level).
+
+**Pair-knot Markov-trace refinement** (`probe_phiq_pair_knot_markov_trace.py`,
+full Frobenius Gram + SDP): LP+SDP confirm strong duality but the refined
+tower still does not close the sample; ³He is a structural deficit of the
+brane-tower formula at the `A=3` / `n_0=9` regime, not an operator-volume
+choice. **Refuted.**
+
+**The six probed `n⋆` families, all refuted** (combined in the sibling
+`brane-tower-z-habiro.lean` as `nStar_all_probed_forms_refuted`):
+scalar uniform-`k`; scalar `ℓ·n_0+k`; per-eigenvalue operator-valued;
+multiplicity / Type-B-folded-crystal; pair-knot product-volume; pair-knot
+Markov-trace (full Gram + SDP). The two **structural findings** that
+survive (LP-dual pair-knot selection at closed shells; Z↔N isospin
+symmetry) are kept in the paper as gates (brane-tower `.md`
+§"Structural finding…").
+
 **Convergence half (the provable part).** Independent of `n⋆`, the
 analytic statement that the brane tower `Φ_q(z) = ∏_{k≥1}(1−q^{-k}z)^{-1}`
 is a well-defined positive real is being formalized in
