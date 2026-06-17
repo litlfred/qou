@@ -83,9 +83,9 @@ division-free identity `hoefsmit_bSq_numerator_silver` by the nonzero `(q²+1)²
 gives the literal Hoefsmit ratio used by the silver-rung values. The denominator
 nonvanishing holds at `q = 1+√2` (there `q²+1 = 2+2√2 ≠ 0`). -/
 theorem hoefsmit_bSq_eq_at_silver {K : Type*} [Field K] [CharZero K] (q : K)
-    (hsilver : q ^ 2 - 2 * q - 1 = 0) (hden : (q ^ 2 + 1) ^ 2 ≠ 0) :
+    (hsilver : q ^ 2 - 2 * q - 1 = 0) (hden : q ^ 2 + 1 ≠ 0) :
     (q ^ 4 + q ^ 2 + 1) / (q ^ 2 + 1) ^ 2 = 7 / 8 := by
-  rw [div_eq_div_iff hden (by norm_num : (8 : K) ≠ 0)]
+  rw [div_eq_div_iff (pow_ne_zero 2 hden) (by norm_num : (8 : K) ≠ 0)]
   linear_combination (q ^ 2 + 2 * q - 1) * hsilver
 
 end QOU.QBeta
