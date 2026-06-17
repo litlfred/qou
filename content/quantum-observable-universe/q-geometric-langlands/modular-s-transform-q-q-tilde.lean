@@ -87,6 +87,17 @@ theorem bar_image_in_upper_half {q₀ : ℝ} (hq₀ : 1 < q₀) {τ₀ : ℂ}
     nlinarith [mul_inv_cancel₀ (ne_of_gt hpos), inv_pos.mpr hpos]
   exact real_value_in_disk_in_upper_half (inv_pos.mpr hpos) hlt1 hτ
 
+/-- **The modular `S`-transform preserves the convergent (bar) domain (proved).**
+The D14 map `S : τ ↦ -1/τ` keeps `Im τ > 0`, i.e. the theta-convergent
+upper-half-plane branch — the bar-side branch on which the substrate enters via
+its image `q₀⁻¹` (see `bar_image_in_upper_half`) — is `S`-stable.  So the D14
+duality is a well-defined self-map of the domain where the theta sector
+converges, not a map off it. -/
+theorem s_image_in_upper_half (τ : ℂ) (hτ : 0 < τ.im) : 0 < (-1 / τ).im := by
+  have hτ0 : τ ≠ 0 := by rintro rfl; simp at hτ
+  rw [neg_div, one_div, Complex.neg_im, Complex.inv_im, neg_div, neg_neg]
+  exact div_pos hτ (Complex.normSq_pos.mpr hτ0)
+
 /-- **CONJECTURE (D14, §3b-cond axiomatisation).**  Modular $S$-transform
 $q \leftrightarrow \tilde q = \exp(2\pi i/\tau)$ for Hecke-parameter analytic
 continuation.
