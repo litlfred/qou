@@ -156,7 +156,7 @@ class H3WedderburnReassembly where
     pulled from `option-e-phase1-h3-cross-check.witness.json` (Python
     cross-check), with the floating-point bound encoded here so Lean
     downstream consumers see the precision tag. -/
-instance : H3WedderburnReassembly where
+noncomputable instance : H3WedderburnReassembly where
   max_residual_eps := (222 : ℝ) * 10 ^ (-18 : ℤ)
   residual_below_ppq := by
     show (222 : ℝ) * 10 ^ (-18 : ℤ) ≤ (1 : ℝ) * 10 ^ (-15 : ℤ)
