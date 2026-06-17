@@ -63,3 +63,31 @@ that actually appear in `tr_M = Σ_λ y_λ χ^λ`), at n=3:
 - Bessel here is the **ordinary** `J_ν` of the Jacobi–Anger identity (the proved
   `q→1` backbone, `ReebTowerJacobiAnger.lean`); the Hahn–Exton q-Bessel refinement at
   finite q is the next layer once the ordinary-J tower convergence is settled.
+
+## The decisive tower test — precise requirement + blocker (2026-06-17)
+
+Following the chain to nail what the n→∞ convergence gate actually needs:
+
+- The n=3 `chi_block_{3,21,111}` are `χ_λ(Δ_{T_β})(q)` — the per-Wedderburn-block
+  characters of the **T_β operator-selected element** over H₃ (Hoefsmit seminormal;
+  `QBetaPerBlockChiClosedForms.lean`, source witness
+  `qbeta-per-block-paper-closed-forms.witness.json`). T_β is the SDP shape-collapse
+  selector (`T_β = S·1`, `qbeta_decay_sdp_solver.py`), not a single generator —
+  hence the bar-odd orders {1,3,5} at n=3.
+
+- The tower-convergence test therefore requires `χ_λ(Δ_{T_β})` for **λ⊢6 and λ⊢9**:
+  weight by `y_λ(q₀)`, bar-odd-decompose into `sinh(ℓη)` (orders up to 11, 17), and
+  re-run the single-x over-determination check. The keystone holds iff the residual
+  shrinks monotonically (6.8% at n=3 → … → 0).
+
+- **Blocker (corpus-verified):** there is **no H₆/H₉ per-block selector character**
+  in the corpus — `Δ_{T_β}` is defined only at H₃ (the n=6 hits are all
+  `computations/_deprecated/`). Producing `χ_λ(Δ_{T_β})` at H₆/H₉ requires **extending
+  the T_β operator-selection (SDP shape-collapse) to those levels** — genuine
+  keystone-level work (the SDP selector at higher H_n), not a mechanical character
+  evaluation. This is the precise spec for the next tranche: extend
+  `qbeta_decay_sdp_solver` to H₆/H₉, emit `χ_λ(Δ_{T_β})` per λ, then this script's
+  `physical_W` + `solve_single_x` apply unchanged.
+
+So the n=3 physical-weight result here is the **furthest the gate can be advanced
+without the H≥6 T_β selector** — and it pins exactly what unblocks the rest.
