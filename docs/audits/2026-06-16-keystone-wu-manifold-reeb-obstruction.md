@@ -38,6 +38,26 @@ out and fixes the basepoint) with an *acting* symmetry.** The resolution directi
   (regular vs irregular Sasakian on a specific 5-manifold + an equivariant-index computation), **multi-session,
   not derivable in-session** without geometry tooling/references.
 
+## Stronger obstruction — imposing "spacetime fixed under the 123→345 embedding"
+
+The frame correction (S₃↪S₅ as `123→345`, spacetime strands fixed) sharpens this decisively. The icosahedral
+`SO(3)` here is the **spacetime rotation** of the 3 colour sheets (`spin-from-so3-fiber.md`), embedded in colour
+`SU(3)` via the irreducible **T₁ (vector) rep**. A Reeb that **fixes spacetime** must **commute** with this
+`SO(3)`. But by **Schur's lemma**, the commutant of an irreducible rep is scalars — so the centralizer of
+`SO(3)(T₁)` in `SU(3)` is **finite (Z/3)**, and **no continuous `U(1) ⊂ SU(3)` commutes with the spacetime
+`SO(3)`** (verified: the commutant of `so(3)` on `ℂ³` is 1-dimensional).
+
+**Consequence:** a spacetime-fixing Reeb does **not exist in `SU(3)` at all**. So `SU(3)/SO(3)` is the **wrong
+arena** once the spacetime-fixed constraint is imposed: the irreducibly-embedded spacetime `SO(3)` leaves no room
+for a spacetime-fixing Reeb. **Spacetime (the `2I`-spin divisor sphere `ℙ(ℂ²)`) and colour (the `SU(3)` strands)
+must be *independent factors*, not a quotient** — the Reeb is then a colour `U(1)⊂SU(3)` acting *trivially* on
+the spacetime `ℂ²` (fixing spacetime automatically). This **reinforces the two-distinct-spaces theme** already
+forced by Schur–Weyl (#2364: colour-ℂ³ not spin-ℂ²) and the Hopf-coupling reframe (#2370: spin Hopf Reeb is the
+fibre, not a generation direction).
+
+So the answer to "are you using spacetime-fixed under S₃→S₅?" is: it was **not** imposed before, and imposing it
+**rules out the SU(3)/SO(3) arena** and redirects to an *independent* spacetime⊥colour factorization.
+
 ## Honest verdict on "derive the keystone geometry"
 
 Full derivation is **not** achievable in-session — it is the irreducible research core. But the attempt was not

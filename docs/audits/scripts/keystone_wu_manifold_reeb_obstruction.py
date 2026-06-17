@@ -49,4 +49,45 @@ assert dim_quot == 5 and dim_quot % 2 == 1
 isotropy_reeb_impossible = True   # SO(2) ⊂ isotropy vanishes at o, Reeb is nowhere-zero
 assert isotropy_reeb_impossible
 print("\nWU-MANIFOLD REEB-OBSTRUCTION (scope-doc correction) RECORDED.")
+
+# ============================================================================
+# STRONGER obstruction (spacetime-fixed under the 123->345 S3->S5 embedding):
+# the icosahedral SO(3) here is the SPACETIME rotation of the 3 colour sheets
+# (spin-from-so3-fiber.md), embedded in colour SU(3) via the irreducible T1
+# (vector) rep.  A Reeb that FIXES spacetime must COMMUTE with this SO(3).  But
+# by Schur, the commutant of an irreducible rep is scalars -> the centralizer of
+# SO(3)(T1) in SU(3) is FINITE (Z/3), so NO continuous U(1) ⊂ SU(3) commutes with
+# the spacetime SO(3).  => a spacetime-fixing Reeb does NOT exist in SU(3) at all.
+# ============================================================================
+import numpy as np
+import numpy.linalg as la
+
+Lx = np.array([[0, 0, 0], [0, 0, -1], [0, 1, 0]], float)
+Ly = np.array([[0, 0, 1], [0, 0, 0], [-1, 0, 0]], float)
+Lz = np.array([[0, -1, 0], [1, 0, 0], [0, 0, 0]], float)
+I3 = np.eye(3)
+
+
+def comm_map(L):
+    return np.kron(L.T, I3) - np.kron(I3, L)   # vec([M,L])
+
+
+A = np.vstack([comm_map(Lx), comm_map(Ly), comm_map(Lz)])
+null_dim = int(np.sum(la.svd(A, compute_uv=False) < 1e-9))
+print()
+print("=" * 70)
+print("Spacetime-fixed constraint (123->345): is there a U(1)⊂SU(3) fixing SO(3)?")
+print("=" * 70)
+print(f"  dim commutant of so(3)-on-C^3 (T1, irreducible) in M(3,C) = {null_dim} (scalars)")
+print("  => centralizer of spacetime SO(3) in SU(3) is FINITE (Z/3); NO continuous")
+print("     U(1) commutes with it.  A spacetime-FIXING Reeb cannot live in SU(3).")
+print("  => SU(3)/SO(3) is the WRONG arena once spacetime-fixed is imposed: the")
+print("     spacetime SO(3) (irreducible in colour SU(3)) leaves no room for a")
+print("     spacetime-fixing Reeb.  Spacetime (2I-spin divisor ℙ(C^2)) and colour")
+print("     (SU(3) strands) must be INDEPENDENT factors, not a quotient -- the Reeb")
+print("     is a colour U(1) acting TRIVIALLY on the spacetime C^2 (automatic when")
+print("     they are separate). Reinforces the two-distinct-spaces theme (#2364/#2370).")
+
+assert null_dim == 1, "commutant of irreducible SO(3) on C^3 must be scalars (Schur)"
+print("\nSPACETIME-FIXED CENTRALIZER OBSTRUCTION VERIFIED (no U(1)⊂SU(3) fixes SO(3)).")
 sys.exit(0)
