@@ -1,0 +1,70 @@
+{
+  "engine": "complex_volume_witness.py",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-17T00:25:10.045752+00:00",
+  "commitSha": "72bd5664bdcfc02e2bcf229d75dc648b017900c7",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 28,
+  "computation": "complex-volume-unification",
+  "scriptFile": "complex_volume_witness.py",
+  "scriptHash": "5fa6b58060ac",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "𝔙 = 𝔈_bind + i·𝔔_β: binding (Re) and β-decay Q-value (Im) as the two real archimedean shadows of one complex fibre object (conj:binding-qbeta-complex-volume). Im(q₀)=0 ⇒ both real; complex structure is fibre-level. Re via binding_canonical, Im via q_beta_substrate_prediction; pure-canonical (m_e, q₀). Packaging only — that both descend from one fibre 𝔙 is the open conjecture, not proved here (no binding/Q_β double-count: main cdc2d867 branch A).",
+  "contentBlock": "conj:binding-qbeta-complex-volume",
+  "parameters": {
+    "q_0": 1.1099785955573347,
+    "m_e_MeV": 0.51099895069,
+    "Q_beta_codata_MeV": 0.7823334100000222
+  },
+  "data": {
+    "im_qbeta_pred_MeV": "0.7836458038973217",
+    "im_qbeta_rel_err": "0.0016775378381187862",
+    "fibre_caveat": "Im(q_0)=0; complex structure is fibre-level (pre-tau)",
+    "V_2H": {
+      "re_binding_MeV": 0.46562053307966456,
+      "im_qbeta_MeV": 0.7836458038973217,
+      "modulus_MeV": 0.9115389332284555,
+      "arg_rad": 1.0346730102477977,
+      "B_AME_MeV": 2.224566,
+      "re_rel_err": 0.7906915177703585
+    },
+    "V_3H": {
+      "re_binding_MeV": 0.6289593275726819,
+      "im_qbeta_MeV": 0.7836458038973217,
+      "modulus_MeV": 1.0048336089654644,
+      "arg_rad": 0.8944679881765997,
+      "B_AME_MeV": 8.481821,
+      "re_rel_err": 0.9258461918056651
+    },
+    "V_3He": {
+      "re_binding_MeV": 0.6580817054490814,
+      "im_qbeta_MeV": 0.7836458038973217,
+      "modulus_MeV": 1.0233143588422138,
+      "arg_rad": 0.872271764843258,
+      "B_AME_MeV": 7.718058,
+      "re_rel_err": 0.9147348069360088
+    },
+    "V_4He": {
+      "re_binding_MeV": 0.7134609550767699,
+      "im_qbeta_MeV": 0.7836458038973217,
+      "modulus_MeV": 1.0597769955914953,
+      "arg_rad": 0.8322441879045329,
+      "B_AME_MeV": 28.295673,
+      "re_rel_err": 0.9747855103118852
+    }
+  }
+}
