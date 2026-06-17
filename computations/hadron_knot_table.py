@@ -53,16 +53,55 @@ from witness_base import WitnessBuilder
 _z = 1.0 / (Q**0.5 + Q_INV**0.5)
 _Z2 = _z * _z
 
-# Reusable engine for per-generator traced volumes.
-# NOTE: q = 111/100 = 1.11 is the legacy rational approximation (~2e-4 off
-# the true substrate q0 = 1.1099786). It is a deliberate TRACTABILITY choice
-# for this exact-Fraction engine: at q0 = 11099786/10000000 the q^k
-# denominators (10^7k) make products of traced volumes thousand-digit
-# Fractions and the table non-terminating. This appendix table is NOT
-# precision-critical (see docs/audits/2026-06-16-gram-q-approximation-audit.md);
-# the float/mpmath q0 path (pyhecke build_atom_nf / atom_per_generator_volumes)
-# is the route if a q0-accurate volume table is ever needed.
-_HE = HeckeEngine(111, 100)
+# ── q0 canonical per-generator volumes (mpmath, true substrate) ──────────
+# Use the TRUE substrate q0, not the legacy 111/100 (~2e-4 off). The
+# exact-Fraction HeckeEngine cannot run at q0 (q0^k denominators 10^7k blow
+# up the Fractions; the table never terminates), so this mpmath port mirrors
+# HeckeRational.V_full at q0 — verified vs the rational engine to ~2e-4 (the
+# genuine q-gap). _HE is retained ONLY for the q-independent ground-state
+# ordering. See docs/audits/2026-06-16-gram-q-approximation-audit.md.
+mp.dps = 50
+_Q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+_QI0 = 1 / _Q0
+_HA0 = _Q0 - _QI0
+_z_q0 = 1 / (mp.sqrt(_Q0) + mp.sqrt(_QI0))
+_HE = HeckeEngine(111, 100)  # ground-state ordering only (q-independent)
+
+
+def _crossing_q0(ti, tj):
+    if ti == 1 and tj == 1:
+        return mp.mpf(1), mp.mpf(0)
+    if ti == 0 and tj == 0:
+        return mp.mpf(1), -_HA0
+    return mp.mpf(1), -_HA0 / 2
+
+
+def _traced_volume_q0(gi, ordering):
+    M00, M01, M10, M11 = mp.mpf(1), mp.mpf(0), mp.mpf(0), mp.mpf(1)
+    for j in range(gi + 1, len(ordering)):
+        c, d = _crossing_q0(ordering[gi], ordering[j])
+        t00 = c * _HA0 + d
+        M00, M01, M10, M11 = (M00 * t00 + M01 * c, M00 * c + M01 * d,
+                              M10 * t00 + M11 * c, M10 * c + M11 * d)
+    return _z_q0 * M10 + M11
+
+
+def _v_full_all_q0(ordering):
+    """Per-generator Wedderburn-weighted V̂_i^full at the true q0 (mpmath)."""
+    n2 = _Q0 ** 2 + 2 + _QI0 ** 2
+    den = n2 + 2
+    w_sym, w_std, w_alt = mp.mpf(1) / den, n2 / den, mp.mpf(1) / den
+    out = []
+    for i in range(len(ordering) - 1):
+        lam_sym = mp.mpf(1)
+        lam_alt = mp.mpf(1)
+        for j in range(i + 1, len(ordering)):
+            c, d = _crossing_q0(ordering[i], ordering[j])
+            lam_sym *= c * _Q0 + d
+            lam_alt *= -c * _QI0 + d
+        out.append(w_sym * lam_sym + w_std * _traced_volume_q0(i, ordering)
+                   + w_alt * lam_alt)
+    return out
 
 
 # ── Atoms to compute ─────────────────────────────────────────────
@@ -111,7 +150,8 @@ def compute_per_generator_volumes(Z, N):
         return [], [], 0.0, 0.0
 
     ordering, method = _HE.ground_state_ordering(Z, N)
-    V_list = [float(v) for v in _HE.qr.V_full_all(ordering)]
+    # V_full at the true substrate q0 (mpmath), not the legacy 111/100.
+    V_list = _v_full_all_q0(ordering)
 
     cross_sum = 0.0
     for i in range(len(V_list) - 1):
@@ -145,7 +185,7 @@ def compute_atom(name, Z, N, quarks=None):
 
     # Per-generator traced volumes + cross-channel (mass-tower sum 3)
     ordering, V_list, cross_sum, delta_xchan = compute_per_generator_volumes(Z, N)
-    V_rounded = [round(v, 12) for v in V_list]
+    V_rounded = [round(float(v), 12) for v in V_list]  # compute mpf@q0; serialize float
 
     return {
         "name": name,
