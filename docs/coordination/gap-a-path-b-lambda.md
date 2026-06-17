@@ -54,9 +54,17 @@ its last two levers, and one of them touches this ledger:
 - **GAP-A-3 stale-claim correction.** #2433 listed GAP-A-3 as a "non-refuted"
   lever; per this ledger it is **already refuted** (#1868 scope + #1870 5/5
   `P_λ` channels; part of the 18-closure saturating chain). The audit above
-  records the correction so the route is not re-opened. The only nominally-open
-  GAP-A thread remains **T3** (Path-B-specific `λ(K)` formulation, scope landed,
-  probe follow-up open).
+  records the correction so the route is not re-opened.
+- **T3 stale-row correction.** This ledger's T3 task row still read "scope
+  landed; probe follow-up open" — also stale. The probe was built
+  (`computations/probes/gap_a4_T3_mass_pochhammer_probe.py`) and ran **NEGATIVE**
+  (R4, [#1897](https://github.com/litlfred/qou/pull/1897); 4 bar-symmetric
+  q-Pochhammer candidates refuted, worst −98% at the P3 Markov-trace ratio;
+  `2026-06-05-gap-a4-final-retrospective.md §2`). So **no nominally-open
+  per-atom-`λ(K)` numerical thread remains.** The one genuinely-open *direction*
+  is the owner-gated `conj:s5-so3-fiber-action` geometric fibre map (categorical
+  research — partition-of-5 ↦ A₅ rotation on Bring — NOT a numerical `λ(K)`
+  search; "no 7th fit ansatz").
 
 ## Cross-axis hub
 
@@ -107,4 +115,4 @@ The two intersect on: (a) the per-knot Vol(K) convention (T2 here ≡ C2 there),
 |---|---|---|
 | T1 | Probe #1876 §4 direction 2 — additive `S(K)` sub-leading form | **closed NEGATIVE** ([#1886](https://github.com/litlfred/qou/pull/1886) merged) |
 | T2 | Probe #1876 §4 direction 4 — per-knot `Vol(K)` convention for compound atoms (cross-link with [#1871](https://github.com/litlfred/qou/pull/1871), [#1784](https://github.com/litlfred/qou/pull/1784)) | **closed NEGATIVE** ([#1891](https://github.com/litlfred/qou/pull/1891) merged); all 3 conventions REFUTED, best swing +132 % |
-| T3 | Derive `λ(K)` from a Path B-specific formulation (NOT a Phase-4 transplant; per #1876 O2) | **scope landed** ([`2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md`](../audits/2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md)); probe follow-up open |
+| T3 | Derive `λ(K)` from a Path B-specific formulation (NOT a Phase-4 transplant; per #1876 O2) | **closed NEGATIVE** ([#1897](https://github.com/litlfred/qou/pull/1897)); R4 — 4 bar-symmetric q-Pochhammer candidates REFUTED (worst −98% at the P3 Markov-trace ratio; `2026-06-05-gap-a4-final-retrospective.md §2`). Scope: [`2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md`](../audits/2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md) |

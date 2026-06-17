@@ -135,21 +135,29 @@ shows this is **stale**:
 
 So there is **no fresh GAP-A-3 scope to open** — re-deriving it would repeat the
 already-closed `P_λ(K)` route (the precise anti-pattern the STRICT corpus-grep
-"before declaring open" rule guards against). The single *nominally*-open thread
-on that ledger is **T3** — *derive `λ(K)` from a Path-B-specific formulation
-(not a Phase-4 transplant)* — whose scope landed
-([`2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md`](2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md))
-with a probe follow-up open, and which is itself heavily constrained by the
-18-closure saturating chain.
+"before declaring open" rule guards against).
+
+**T3 is also closed (second stale-row correction).** The ledger's T3 task row
+read *"scope landed; probe follow-up open"* — but the probe was built
+(`computations/probes/gap_a4_T3_mass_pochhammer_probe.py`) and ran **NEGATIVE**
+(R4, [#1897](https://github.com/litlfred/qou/pull/1897); 4 bar-symmetric
+q-Pochhammer candidates refuted, worst −98 % at the P3 Markov-trace ratio;
+`2026-06-05-gap-a4-final-retrospective.md §2`). So **no nominally-open per-atom
+`λ(K)` numerical thread remains** on the GAP-A axis. The one genuinely-open
+*direction* is the owner-gated `conj:s5-so3-fiber-action` geometric fibre map
+(partition-of-5 ↦ A₅ rotation on Bring) — categorical research, not a numerical
+search; "no 7th fit ansatz."
 
 ### Net for the Δ_λ-route arc
 
 With this PR the arc is **fully bounded**: sign = chirality (proved);
 scalar/trace functional (refuted #2417); operator-cumulant (gated on `𝓑₃`,
 #2430); continuous `𝓑₃`-selection (refuted #2433 + **dense SDP closed
-structurally here**); α-cluster (fit-blocked #2433); **GAP-A-3 (already refuted
-#1868/#1870)**. No continuous/per-partition lever survives; `𝓑₃`-selection rests
-on the external topological criterion the corpus already uses.
+structurally here**); α-cluster (fit-blocked #2433); **GAP-A-3 (refuted
+#1868/#1870)**; **T3 (refuted #1897)**. No continuous/per-partition lever
+survives; `𝓑₃`-selection rests on the external topological criterion the corpus
+already uses, and the only live *direction* (the `s5-so3-fiber-action` geometric
+fibre map) is owner-gated categorical research, not a numerical search.
 
 ## Cross-links
 - [`2026-06-17-delta-lambda-two-remaining-directions-closed.md`](2026-06-17-delta-lambda-two-remaining-directions-closed.md) (#2433) — the lever this closes structurally.
