@@ -192,15 +192,8 @@ export default chapter({
       blocks: [
         "hoefsmit-convergence-construction-per-partition-k-intro",
         "brane-tower-z-habiro-table2-data",
-        "brane-tower-z-habiro-table3-data",
-        "brane-tower-z-habiro-table4-data",
-        "brane-tower-z-habiro-table5-data",
-        "brane-tower-z-habiro-table6-data",
         "brane-tower-z-habiro-table7-data",
         "brane-tower-z-habiro-table8-data",
-        "brane-tower-z-habiro-table9-data",
-        "brane-tower-z-habiro-table10-data",
-        "brane-tower-z-habiro-table11-data",
       ],
     }),
 
