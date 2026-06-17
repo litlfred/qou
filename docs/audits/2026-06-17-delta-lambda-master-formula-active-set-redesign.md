@@ -120,6 +120,40 @@ operator the master-formula prop names, made concrete.
 Either outcome is decisive and parameter-free — exactly the formalize-first
 "cheap and decisive" test the discipline calls for before any wider build.
 
+## 4a. H₃ probe result (2026-06-17) — the blocker is the degenerate LP active set
+
+Ran the §4 first step:
+[`computations/probes/delta_lambda_master_formula_h3_probe.py`](../../computations/probes/delta_lambda_master_formula_h3_probe.py)
+(existing 6×6 H₃ Gram + LP; `O = C_q` both readings). Result — **decisive, and it
+relocates the gate**:
+
+- **LP active set for the proton = [0]** (identity `γ` only), shadow `u*=[1]` —
+  the *same* degeneracy as the g_A v1 (`g_A=1.0`).
+- **Consequence:** with `|A*|=1` at the identity, the master formula collapses to
+  `⟨O⟩_T = (G⁻¹)₀₀ · tr_M(O)` — a constant rescaling of `tr_M(O)` that is **blind
+  to the bound-state braid 𝓑_K**. Measured `master ≈ 3.00 × raw` *uniformly* for
+  `O ∈ {1, C_q^{SU(2)}, C_q^{JM}}` (collapse "fails" only by that flat factor —
+  no braid-dependent structure).
+- **Root cause:** `solve_operator_selection_lp` is called with `t = TR_M` (the
+  **universal** Markov-trace vector) and `n_target=1` — it does **not** take the
+  specific braid `𝓑_K` as input. So the active set + shadow prices are
+  **bound-state-independent**, and the master formula carries no per-knot
+  information in this v1. (Same call in `borromean-axial-coupling.py:101-104`.)
+
+**Verdict (relocates §3 obstacle #2 to the front):** the gate for the *entire*
+master-formula route — binding **and** g_A — is making the operator-selection LP
+**bound-state-dependent**: the cost vector `t` must encode the target braid
+(e.g. `t_i = tr_M(𝓑_K · b_i)`, the per-channel overlap of `𝓑_K`), not the
+universal `TR_M`. Until the active set is non-degenerate, the route is a blind
+constant rescaling and **cannot** supply cooperative binding — and the `O=H`
+(q-Casimir) choice and the H₆ Gram are both **downstream** of this gate, not
+worth building first. This is the cheap-and-decisive formalize-first outcome:
+one H₃ probe re-pointed a multi-hour H₆ build at the actual upstream blocker.
+
+(Aside: the committed `gram-matrix-dual.witness.json` is itself stale at the old
+q₀ — same q₀-repin class as the borromean witness — a ~1e-8 inconsistency,
+harmless here but worth a refresh when the route is next touched.)
+
 ## 5. Cross-links
 
 - [`prop:confinement-frobenius-reciprocity`](../../content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md) — the master formula.
