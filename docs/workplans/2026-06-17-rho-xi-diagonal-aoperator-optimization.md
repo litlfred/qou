@@ -82,6 +82,21 @@ gated), this is **validation/optimization infra** — it makes the *independent*
 A≥4 cross-check feasible and removes a memory wall; it does **not** change any
 production number or unlock new physics. No fit, nothing rewired.
 
+## Wiring status — NOT wired (gated on a Lean proof of block-diagonality)
+
+The diagonal-only contraction is correct **iff** `A^λ_{ξν}` is block-diagonal in
+`V_ξ`. That structural claim is currently a rigorous argument
+([`a_operator_recursive.py`](../../computations/a_operator/a_operator_recursive.py)
+docstring) **numerically confirmed to `6.2e-61`** (this probe) — but it is **not
+Lean-proved**: the A-operator's only Lean is the `WenzlAOperator` §3b-cond
+*conjecture* class (instance-less), modelling the *scalar* `combinerValue`
+recursion only, not the matrix `A^λ_{ξν}` or its block structure. Per the owner's
+gate (*wire only if 100 % Lean-proved*), the diagonal-only builder is therefore
+**kept as a verified standalone module, NOT swapped into the production /
+cross-check hot path.** Wiring is unblocked once block-diagonality is formalised —
+itself research-grade (the reason the A-operator is a conjecture class). The
+module + this verification stand as the exact, ready optimisation.
+
 ## Cross-links
 - [`a_operator_recursive.py`](../../computations/a_operator/a_operator_recursive.py) — `interface_blocks` (A block-diagonal in V_ξ).
 - [`a_operator_recursive_he4_crosscheck.py`](../../computations/a_operator/a_operator_recursive_he4_crosscheck.py) — the direct-`ρ_ξ` consumer this optimizes.
