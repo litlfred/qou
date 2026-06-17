@@ -1,27 +1,22 @@
 #!/usr/bin/env python3
-"""Chirality-Δ_λ binding sweep — wire the PROVED Δ_λ=sgn·dim through the all-A
-χ^λ transfer (EXPLORATORY).
+"""Chirality-Δ_λ binding sweep — magnitude-variant test (EXPLORATORY).
 
-Wires together two pieces that were never connected:
-  • the PROVED categorical per-block factor (keystone S5SO3FiberAction.lean,
-    PR #1305; audit 2026-06-16-delta-lambda-sign-is-icosahedral-chirality.md):
-        Δ_λ = sgn(w₀^{S_λ'}) · dim(V_λ)
-    — magnitude = Wedderburn dim, sign = icosahedral chirality (−1)^{Σ C(λ'_c,2)};
-  • the all-A fine-Bratteli χ^λ transfer (PR #2405, tr_m_atom_via_transfer)
-    which gives χ^λ(β_atom) for EVERY isotope at q₀, no p(3A) wall.
+#2405 + keystone wiring established that the PROVED factor Δ_λ=sgn(w₀^{S_λ'})·dim
+gives a binding B=m_e·|Σ_λ y_λ χ^λ Δ_λ| that UNDERSHOOTS ≤⁴He then DIVERGES into
+overshoot at A≥6 — the bare dim(V_λ) magnitude grows combinatorially. The sign
+side (chirality) is proved/fine; the MAGNITUDE side (bare dim) is the failure.
 
-The categorical binding (binding_energy_categorical_deuteron.py, PR #1307):
-    B(K) = m_e · |Σ_{λ⊢3A} y_λ · χ^λ(β_atom) · Δ_λ|
+This tests the obvious bounded-magnitude candidates across A (D…⁷Li):
+  • Δ_λ = 1          → B = m_e·|tr_M| (raw trace; reference)
+  • Δ_λ = sgn        → sign-twist only, NO dim (the Markov weight y_λ already
+                       carries a quantum-dimension normalisation, so dropping
+                       the bare dim should stay bounded; V_λ⊗sgn≅V_{λ'})
+  • Δ_λ = sgn·dim    → the PROVED factor (diverges; baseline)
+  • Δ_λ = sgn·dim_q  → quantum dimension [n]_q!/Π[hook]_q at q₀ (q-deformed)
 
-was only ever evaluated for the DEUTERON (loaded from a precomputed witness;
-B(D)=0.380 MeV, −82.9 % vs AME — the Δ_λ gate is OPEN, the deficit is NOT a
-derived layer). This script EXTENDS that exact formula to D…⁷Li using the
-transfer χ^λ, to see HOW the chirality-Δ_λ binding tracks AME across the chain
-(uniform undershoot? does the chirality sign structure do anything?).
-
-DISCIPLINE: derive-or-refute; the formula is the FORMALIZED one (no C_knot fit).
-Known to undershoot the deuteron; this quantifies it across A + exposes the
-per-λ sign structure. No production rewire, no fit. Cross-check: D ≈ 0.380.
+Goal: which magnitude keeps the binding sum BOUNDED across A, and does any track
+AME? Derive-or-refute; the formulae are categorical (no C_knot fit), not wired.
+Cross-check: Δ=sgn·dim at D must reproduce 0.380 MeV.
 """
 from __future__ import annotations
 
@@ -45,9 +40,9 @@ from codata_constants import M_E_MEV                     # noqa: E402
 
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2),
       "6Li": (3, 3), "7Li": (3, 4)}
+_Q = mp.mpf(str(q0))
 
 
-# ── the PROVED Δ_λ = sgn(w₀^{S_λ'})·dim factor (option_e_delta_lambda_sign_chirality.py) ──
 def transpose(lam):
     return tuple(sum(1 for r in lam if r > c) for c in range(lam[0])) if lam else ()
 
@@ -64,15 +59,38 @@ def hook_dim(lam) -> int:
 
 
 def delta_sign(lam) -> int:
-    """sgn(w₀^{S_λ'}) = Π_cols (−1)^{C(λ'_c,2)} — transpose-determined chirality."""
+    """sgn(w₀^{S_λ'}) = Π_cols (−1)^{C(λ'_c,2)} — the proved chirality sign."""
     s = 1
     for b in transpose(lam):
         s *= (-1) ** (b * (b - 1) // 2)
     return s
 
 
-def delta_lambda(lam) -> int:
-    return delta_sign(lam) * hook_dim(lam)
+def qint(k: int) -> mp.mpf:
+    return (_Q**k - _Q**(-k)) / (_Q - 1 / _Q)
+
+
+def dim_q(lam) -> mp.mpf:
+    """quantum dimension f^λ_q = [n]_q!/Π_cells[hook]_q (q-hook-length, q₀)."""
+    n = sum(lam)
+    num = mp.mpf(1)
+    for k in range(1, n + 1):
+        num *= qint(k)
+    den = mp.mpf(1)
+    for i, row in enumerate(lam):
+        for j in range(row):
+            arm = row - j - 1
+            leg = sum(1 for k in range(i + 1, len(lam)) if lam[k] > j)
+            den *= qint(arm + leg + 1)
+    return num / den
+
+
+VARIANTS = [
+    ("1(raw)",   lambda lam: mp.mpf(1)),
+    ("sgn",      lambda lam: mp.mpf(delta_sign(lam))),
+    ("sgn·dim",  lambda lam: mp.mpf(delta_sign(lam) * hook_dim(lam))),
+    ("sgn·dimq", lambda lam: mp.mpf(delta_sign(lam)) * dim_q(lam)),
+]
 
 
 def _ame_binding():
@@ -92,44 +110,52 @@ def main() -> int:
     m_e = mp.mpf(M_E_MEV)
     ame = _ame_binding()
     print("=" * 96)
-    print(" Chirality-Δ_λ binding sweep:  B(K) = m_e·|Σ_λ y_λ χ^λ(β_atom) sgn(w₀^{S_λ'}) dim(V_λ)|")
-    print(" (the PROVED Δ_λ=sgn·dim factor × the all-A χ^λ transfer; EXPLORATORY, no fit)")
+    print(" Chirality-Δ_λ binding — magnitude-variant test:  B = m_e·|Σ_λ y_λ χ^λ(β_atom) Δ_λ|")
+    print(" (EXPLORATORY, no fit; sign=proved chirality, vary the MAGNITUDE)")
     print("=" * 96)
-    print(f" m_e={float(m_e):.6f} MeV, q₀={float(q0):.10f}\n")
-    print(f"  {'iso':<5}{'A':>3}{'n':>4}{'#λ':>5}{'Σ_λ yχΔ':>16}{'B_pred':>11}"
-          f"{'B_AME':>10}{'ratio':>8}{'#sgn+':>7}{'#sgn-':>7}")
-    print("  " + "-" * 92)
-    rows = []
+    print(f" m_e={float(m_e):.6f}, q₀={float(q0):.8f}\n")
+
+    # precompute χ^λ, y_λ per atom (the expensive part — once)
+    data = {}
     for atom, (Z, N) in ZN.items():
         n = 3 * (Z + N)
-        tA, tF, chi_atom, wall = tr_m_atom_zn(Z, N)
+        _, _, chi_atom, _ = tr_m_atom_zn(Z, N)
         y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, q0).items()}
-        terms = []
-        npos = nneg = 0
-        for lam in chi_atom:
-            dl = delta_lambda(lam)
-            if delta_sign(lam) > 0:
-                npos += 1
-            else:
-                nneg += 1
-            terms.append(y[lam] * chi_atom[lam] * dl)
-        S = mp.fsum(terms)
-        B = m_e * abs(S)
+        data[atom] = (Z, N, n, chi_atom, y)
+
+    # B_pred per variant
+    print("  B_pred (MeV):")
+    print(f"  {'iso':<5}{'A':>3}{'B_AME':>9}" + "".join(f"{v[0]:>12}" for v in VARIANTS))
+    print("  " + "-" * 80)
+    BP = {}
+    for atom, (Z, N, n, chi_atom, y) in data.items():
         bame = ame.get((Z, Z + N))
-        ratio = (bame / float(B)) if (bame and float(B) > 0) else None
-        rows.append((atom, n, float(S), float(B), bame, ratio))
-        print(f"  {atom:<5}{Z+N:>3}{n:>4}{len(chi_atom):>5}{mp.nstr(S,8):>16}"
-              f"{float(B):>11.4f}{(bame if bame else 0):>10.4f}"
-              f"{(ratio if ratio else 0):>8.2f}{npos:>7}{nneg:>7}")
-    # cross-check vs the deuteron-only compute (binding_energy_categorical_deuteron.py)
-    bD = next(r[3] for r in rows if r[0] == "D")
-    print("\n  cross-check D: B_pred =", f"{bD:.4f}",
-          "MeV vs the deuteron-only compute 0.380 MeV →",
-          "MATCH" if abs(bD - 0.380) < 0.02 else f"DIFF (convention?) Δ={bD-0.380:+.3f}")
-    print("\n  reading: ratio = B_AME/B_pred (>1 = undershoot). The formula is the"
-          " PROVED Δ_λ=sgn·dim;\n  it is known to undershoot the deuteron — this"
-          " shows whether the undershoot is uniform across A\n  and what the"
-          " per-λ chirality-sign split (#sgn±) looks like. No fit, not wired.")
+        line = f"  {atom:<5}{Z+N:>3}{(bame or 0):>9.3f}"
+        BP[atom] = {}
+        for vname, vfn in VARIANTS:
+            S = mp.fsum(y[lam] * chi_atom[lam] * vfn(lam) for lam in chi_atom)
+            B = float(m_e * abs(S))
+            BP[atom][vname] = B
+            line += f"{B:>12.4f}"
+        print(line)
+
+    print("\n  ratio AME/B_pred  (1.00 = match; ≫1 under; ≪1 over; — = no AME):")
+    print(f"  {'iso':<5}{'A':>3}" + "".join(f"{v[0]:>12}" for v in VARIANTS))
+    print("  " + "-" * 71)
+    for atom, (Z, N, n, chi_atom, y) in data.items():
+        bame = ame.get((Z, Z + N))
+        line = f"  {atom:<5}{Z+N:>3}"
+        for vname, _ in VARIANTS:
+            B = BP[atom][vname]
+            r = (bame / B) if (bame and B > 0) else None
+            line += f"{(f'{r:.3f}' if r else '—'):>12}"
+        print(line)
+
+    bD = BP["D"]["sgn·dim"]
+    print(f"\n  cross-check: Δ=sgn·dim at D = {bD:.4f} MeV vs deuteron-only 0.380 →",
+          "MATCH" if abs(bD - 0.380) < 0.02 else f"DIFF Δ={bD-0.380:+.3f}")
+    print("  reading: does any magnitude stay BOUNDED across A (no ⁶Li/⁷Li blow-up)"
+          " and track AME?\n  Derive-or-refute; categorical formulae, no fit, not wired.")
     return 0
 
 

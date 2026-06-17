@@ -52,13 +52,46 @@ piece is **exactly** the interface-operator-corrected magnitude (not the sign,
 which is proved, and not a global `C_knot` fit, which the deuteron retraction
 already rejected).
 
+## Magnitude-variant test (2026-06-17) — all four refuted; the LINEAR functional is wrong for A-scaling
+
+Swept four magnitudes in `B = m_e·|Σ_λ y_λ χ^λ Δ_λ|` (sign = the proved
+chirality throughout):
+
+| Δ_λ | D | T | ³He | ⁴He | ⁶Li | ⁷Li | behaviour |
+|---|--:|--:|--:|--:|--:|--:|---|
+| `1` (raw \|tr_M\|) | 0.20 | 0.05 | 0.11 | 0.03 | 0.004 | 0.001 | **decays → 0** |
+| `sgn` | 0.05 | 0.03 | 0.03 | 0.005 | 0.0003 | 0.0001 | **decays → 0** |
+| `sgn·dim` (proved) | 0.38 | 1.91 | 2.34 | 3.04 | 131 | 421 | **diverges** |
+| `sgn·dim_q` | 0.40 | 2.50 | 3.10 | 5.83 | 1721 | 17692 | **diverges harder** |
+| **B_AME** | 2.22 | 8.48 | 7.72 | 28.3 | 32.0 | 39.2 | ~linear in A |
+
+(B_pred in MeV; cross-check `sgn·dim` at D = 0.380 ✓.) **None tracks AME.** The
+two unweighted/`sgn` forms make the bare trace `Σ_λ y_λ χ^λ` **decay** with A
+(wrong direction); the two dim-weighted forms **diverge** (`dim_q` at `q₀>1`
+worse than bare `dim`). There is no Goldilocks magnitude among the natural
+categorical candidates: the trace shrinks, any dim-like weight explodes.
+
+**Structural verdict (sharper than §Net below):** the *linear* functional
+`Σ_λ y_λ χ^λ Δ_λ` cannot reproduce AME's ~linear-in-A binding with **any**
+simple sign×magnitude. The functional with the **correct A-scaling is the LOG**
+one — `B_sym = α·ln(tr_free/tr_atom)` (PR #2405), the exact additive (A−1)-bond
+chain, which *does* grow ~linearly and lands within ~2× of AME. So the
+cooperative α-term should be sought as a **correction to the log chain B_sym**,
+**not** via the linear-Δ_λ sum, which is refuted at the A-scaling level (not just
+the magnitude). This also reframes the PROBE-2 "interface-operator magnitude":
+no per-block scalar magnitude rescues the *linear* functional — the issue is the
+functional form, not just the weight.
+
 ## Net
 
-The proved `Δ_λ = sgn·dim` factor is real, but as an all-A **binding sum** it is
-refuted (divergent overshoot ≥⁶Li). The Δ_λ gate's open lever is sharpened to a
-single target: a **magnitude** weight `w_λ` replacing bare `dim(V_λ)` that does
-not diverge — the quantum-dimension / interface-operator data PROBE-2 is after.
-Sign = chirality (closed); magnitude = open. No fit, not wired.
+The proved `Δ_λ = sgn·dim` factor is real (and the sign side is closed), but the
+all-A binding **sum** is refuted twice over: as `sgn·dim` it diverges (≥⁶Li), and
+across the full magnitude family `{1, sgn, dim, dim_q}` **none** tracks AME's
+A-scaling. The categorical binding with the right A-scaling is the **log** form
+(`B_sym`, #2405), not the linear `Σ_λ y_λ χ^λ Δ_λ`. So: sign = chirality
+(closed); the linear-Δ_λ functional = refuted for the bulk; the cooperative
+α-term is a correction to the **log chain**, the genuinely open piece (Δ_λ-gate /
+α-unit magnitude, which the discipline blocks from fitting). No fit, not wired.
 
 ## Cross-links
 - [`2026-06-16-delta-lambda-sign-is-icosahedral-chirality.md`](2026-06-16-delta-lambda-sign-is-icosahedral-chirality.md) — the proved sgn·dim decomposition + PROBE-2 template.
