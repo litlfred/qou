@@ -145,6 +145,17 @@ def main() -> int:
     A = [i for i, v in enumerate(yv) if abs(v) > 1e-9] or list(range(6))
     print(f"  LP active set A* = {A}  ({[NF_NAMES[i] for i in A]}); "
           f"shadow u* = {[round(float(yv[i]),4) for i in A]}")
+    # ── LP-solver vs prop:operator-selection-lp discrepancy ──
+    # The prop claims the proton optimum is 𝓑_3 (objective tr_M(𝓑_3)≈0.998,
+    # active set {σ_0, L_-} — TWO channels). The solver returns a degenerate
+    # vertex (active {γ}, objective≈0): it finds LOWER action than 𝓑_3, so it
+    # does NOT reproduce the prop's confinement selection.
+    prot0 = proton_braid_terms()
+    trM_p0 = mp.fsum(y[lam] * chi_vec(prot0)[lam] for lam in PARTS3)
+    print(f"  LP-vs-prop: solver primal_obj = {float(lp.primal_obj):.4e}  "
+          f"(active {[NF_NAMES[i] for i in A]})  vs  prop 𝓑_3 objective "
+          f"tr_M(𝓑_3) = {mp.nstr(trM_p0,6)} (active {{σ_0, L_-}}). "
+          f"{'⚠ solver finds lower-action degenerate vertex → does NOT select 𝓑_3' if float(lp.primal_obj) < float(trM_p0)-1e-3 else 'matches'}")
 
     def master(obs):   # ⟨O⟩_T = Σ_{i,j∈A*} u_i (G⁻¹)_{ij} ⟨O,b_j⟩
         u = yv[A]

@@ -134,21 +134,31 @@ relocates the gate**:
   to the bound-state braid 𝓑_K**. Measured `master ≈ 3.00 × raw` *uniformly* for
   `O ∈ {1, C_q^{SU(2)}, C_q^{JM}}` (collapse "fails" only by that flat factor —
   no braid-dependent structure).
-- **Root cause:** `solve_operator_selection_lp` is called with `t = TR_M` (the
-  **universal** Markov-trace vector) and `n_target=1` — it does **not** take the
-  specific braid `𝓑_K` as input. So the active set + shadow prices are
-  **bound-state-independent**, and the master formula carries no per-knot
-  information in this v1. (Same call in `borromean-axial-coupling.py:101-104`.)
+- **Root cause — the LP solver does not reproduce its own prop.**
+  [`prop:operator-selection-lp`](../../content/quantum-observable-universe/mass-theory/operator-selection-lp.md)
+  is explicit: the cost is `t_i = tr_M(b_i)` (universal, **by design** — feeding
+  the braid was the wrong guess), and bound states are distinguished by
+  `n_target` (proton ≈ 1.000, neutron ≈ 0.811). The prop claims the proton
+  optimum is **`𝓑_3` with active set `{σ_0, L_-}`** (two channels, objective
+  `tr_M(𝓑_3) ≈ 0.998`). But the live solver returns a **degenerate vertex**:
+  `active = {γ}`, `primal_obj = 1.1e-10 ≈ 0` — it finds *lower* action than `𝓑_3`,
+  so it does **not** select the Borromean braid. (Same call in
+  `borromean-axial-coupling.py:101-104`; same degeneracy ⇒ `g_A = 1.0`.) The
+  general operator-selection LP as implemented evidently lacks the constraint(s)
+  that `prop:confinement-lp` uses to pin `𝓑_3` as the unique vertex — it admits
+  a near-zero-action operator the confinement LP must be excluding.
 
 **Verdict (relocates §3 obstacle #2 to the front):** the gate for the *entire*
-master-formula route — binding **and** g_A — is making the operator-selection LP
-**bound-state-dependent**: the cost vector `t` must encode the target braid
-(e.g. `t_i = tr_M(𝓑_K · b_i)`, the per-channel overlap of `𝓑_K`), not the
-universal `TR_M`. Until the active set is non-degenerate, the route is a blind
-constant rescaling and **cannot** supply cooperative binding — and the `O=H`
-(q-Casimir) choice and the H₆ Gram are both **downstream** of this gate, not
-worth building first. This is the cheap-and-decisive formalize-first outcome:
-one H₃ probe re-pointed a multi-hour H₆ build at the actual upstream blocker.
+master-formula route — binding **and** g_A — is **making the LP reproduce its
+prop's confinement selection** (`𝓑_3`, active `{σ_0, L_-}`), i.e. fixing the
+`solve_operator_selection_lp` / `prop:confinement-lp` constraint mismatch so the
+active set is non-degenerate. It is **not** the cost vector (that is correctly
+`TR_M`), **not** the `O=H` choice, and **not** the H₆ Gram — those are all
+downstream. Until the LP selects `𝓑_3`, the master formula is a blind constant
+rescaling (`master ≈ 3.00×raw` for every `O`) and cannot supply cooperative
+binding. This is the cheap-and-decisive formalize-first outcome: one H₃ probe
+re-pointed a multi-hour H₆ build at the actual upstream blocker — an LP-solver
+correctness gap that also explains the stuck `g_A = 1.0`.
 
 (Aside: the committed `gram-matrix-dual.witness.json` is itself stale at the old
 q₀ — same q₀-repin class as the borromean witness — a ~1e-8 inconsistency,
