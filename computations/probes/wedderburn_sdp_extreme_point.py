@@ -133,7 +133,11 @@ def main() -> int:
     runs = {}
     for name, cons in (("without extra", base),
                        ("WITH extra", base + extra)):
-        cp.Problem(obj, cons).solve(solver=cp.SCS, verbose=False)
+        prob = cp.Problem(obj, cons)
+        prob.solve(solver=cp.SCS, verbose=False)
+        if prob.status not in (cp.OPTIMAL, cp.OPTIMAL_INACCURATE) or Phi.value is None:
+            raise RuntimeError(
+                f"SDP solver failed for '{name}': status={prob.status}")
         phi = np.asarray(Phi.value)
         occ = occupancy(phi, pis)
         runs[name] = {
