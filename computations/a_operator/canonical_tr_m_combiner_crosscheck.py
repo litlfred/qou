@@ -50,27 +50,28 @@ from lr_coefficients import partitions_of  # noqa: E402
 
 
 def _word_matrix(mats, word):
-    M = mp.eye(mats[0].rows)
+    dim = mats[0].rows
+    eye = mp.eye(dim)
+    M = eye
     for (c, d, g) in word:
-        M = M * (mp.mpf(c) * mats[g] + mp.mpf(d) * mp.eye(mats[0].rows))
+        M = M * (mp.mpf(c) * mats[g] + mp.mpf(d) * eye)
     return M
 
 
 def _trace_A_kron(A, RWx, RBn, d_mu, d_nu):
-    # Tr[A · kron(RWx, RBn)] = Σ_{a,b,a',b'} A[a·d_ν+b, a'·d_ν+b'] RWx[a',a] RBn[b',b]
-    s = mp.mpf(0)
-    for a in range(d_mu):
-        for ap in range(d_mu):
-            rwa = RWx[ap, a]
-            if rwa == 0:
+    # Tr[A · kron(RWx, RBn)]. Build K = RWx ⊗ RBn by d_ν×d_ν block-slice
+    # assignment, then trace A·K via row/column slice dot products — both
+    # O((d_μ·d_ν)²), with mpmath's vectorised row ops as the constant rather
+    # than a pure-Python d_μ²d_ν² inner loop.
+    N = d_mu * d_nu
+    K = mp.matrix(N, N)
+    for i in range(d_mu):
+        for j in range(d_mu):
+            val = RWx[i, j]
+            if val == 0:
                 continue
-            for b in range(d_nu):
-                for bp in range(d_nu):
-                    rbb = RBn[bp, b]
-                    if rbb == 0:
-                        continue
-                    s += A[a * d_nu + b, ap * d_nu + bp] * rwa * rbb
-    return s
+            K[i * d_nu:(i + 1) * d_nu, j * d_nu:(j + 1) * d_nu] = val * RBn
+    return sum(((A[i, 0:N] * K[0:N, i])[0, 0] for i in range(N)), mp.mpf(0))
 
 
 def tr_m_via_combiner(Z: int, N: int, dps: int = 50) -> dict:
