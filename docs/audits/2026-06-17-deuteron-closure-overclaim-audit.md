@@ -56,26 +56,42 @@ identities, and that a genuine topological prediction of the deuteron
 binding remains open (Option E undershoots ≈ −82.9 %). Theorem
 statements were left intact (they are correct as identities).
 
-### 3. `computations/probes/option_e_deuteron_delta_lambda_probe.py` — stale path (FIXED) + schema drift (BLOCKER)
+### 3. `computations/probes/option_e_deuteron_delta_lambda_probe.py` — stale paths + schema drift (FIXED, re-run)
 
-- **Path (fixed):** the probe loaded
-  `folio-assistant/computations/chi-deuteron-h6-at-q0-50dps.witness.json`,
-  a path that broke in the 2026-06-02 cluster reorg (computations moved
-  out of `folio-assistant/`). Repointed to `computations/...`.
-- **Schema drift (residual blocker):** even with the path fixed, the
-  probe crashes with `KeyError: 'dim'`. The current
+- **Stale paths (fixed):** the probe loaded its χ^λ witness and wrote its
+  output under `folio-assistant/computations/...`, paths that broke in the
+  2026-06-02 cluster reorg (computations moved out of `folio-assistant/`).
+  Repointed both to `computations/...`.
+- **Schema drift (fixed):** the current
   `chi-deuteron-h6-at-q0-50dps.witness.json` `by_partition` entries carry
-  only `{partition, chi_lambda}`; the probe expects `{partition, dim,
-  y_lambda, chi_lambda, contribution}`. The probe was written against an
-  older witness format.
+  only `{partition, chi_lambda}` (slimmed in the native-Rust χ^λ
+  refactor); the probe expected `{partition, dim, y_lambda, chi_lambda,
+  contribution}`. Rather than invent the missing fields, the probe now
+  joins `y_λ(q_0)` from the **canonical cache**
+  `y-lambda-at-q0.witness.json` (producer `y_lambda_at_q0_cache.py`),
+  computes the rep dimension `dim` via the standard **hook-length
+  formula**, and forms `contribution = y_λ · χ^λ`. No audited number is
+  fabricated — every input traces to canonical infra.
 
-Because reconstructing `y_λ` / `dim` / `contribution` to force a re-run
-would risk fabricating the very number under audit, the −82.9 % figure
-was **not** freshly reproduced this session; it stands as documented in
-the 2026-06-16 Option-E deuteron correction. The probe is now
-path-correct but remains blocked on the witness schema mismatch — filed
-as a follow-up (regenerate the witness with the full schema, or adapt
-the probe to compute `y_λ`/`dim` from the partition).
+**Re-run (2026-06-17):** the probe is now runnable end-to-end and
+**re-confirms non-closure**. None of the 7 candidate Δ_λ rules closes the
+deuteron AME binding within 10 %:
+
+| rule | rel. error |
+|------|-----------:|
+| `largest_minus_one` (best) | 65.6 % |
+| `n_minus_length_over_n` | 93.6 % |
+| `uniform_minus_one` | 91.1 % |
+| `depth_inverse_length` | 94.4 % |
+| `dim_inverse` | 96.6 % |
+| `depth_inverse_largest` | 98.1 % |
+| `sign_alternating` | 105.7 % |
+
+These ad-hoc probe rules are even further from closure than the canonical
+Option E weights (≈ −82.9 % undershoot); the conclusion is the same in
+both: **the deuteron binding does not close from these Δ_λ choices.** The
+residual blocker noted earlier is resolved — the closure retest is once
+again reproducible.
 
 ## Net
 
