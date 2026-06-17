@@ -186,6 +186,7 @@ function stripCommentLines(src: string): string[] {
   const lines = src.split("\n");
   const out: string[] = [];
   let depth = 0;
+  let inString = false;
   for (const line of lines) {
     let res = "";
     let i = 0;
@@ -203,6 +204,20 @@ function stripCommentLines(src: string): string[] {
           res += " ";
           i++;
         }
+      } else if (inString) {
+        // Inside a string literal: preserve content verbatim so a `--`
+        // or `/-` inside the string is NOT mistaken for a comment.
+        if (line.startsWith('\\"', i) || line.startsWith("\\\\", i)) {
+          res += line.slice(i, i + 2);
+          i += 2;
+        } else if (line[i] === '"') {
+          inString = false;
+          res += '"';
+          i++;
+        } else {
+          res += line[i];
+          i++;
+        }
       } else if (line.startsWith("/-", i)) {
         depth++;
         res += "  ";
@@ -210,6 +225,10 @@ function stripCommentLines(src: string): string[] {
       } else if (line.startsWith("--", i)) {
         res += " ".repeat(line.length - i);
         break;
+      } else if (line[i] === '"') {
+        inString = true;
+        res += '"';
+        i++;
       } else {
         res += line[i];
         i++;
@@ -563,7 +582,7 @@ function readManifest(
     /export\s+default\s+(definition|theorem|lemma|proposition|corollary|conjecture|example|remark|proof|prose|equation|diagram|simulator)\s*\(/,
   );
   if (!kindMatch) return undefined;
-  const labelMatch = src.match(/\blabel\s*:\s*"([^"]+)"/);
+  const labelMatch = src.match(/\blabel\s*:\s*["']([^"']+)["']/);
   if (!labelMatch) return undefined;
   const refMatch = src.match(/ref:\s*["']([^"']+)["']/);
   return { kind: kindMatch[1], label: labelMatch[1], ref: refMatch?.[1] };
