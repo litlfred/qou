@@ -82,6 +82,15 @@ cross-referenced so they are never conflated again.
   upstream SDP-extraction docstring already records q₀ leverage as
   noise-dominated for k ≥ 8 (ratios 10³–10⁷×). The closed forms are the
   STRUCTURAL signal at the silver ratio, not a q₀ precision claim.
+- **(2026-06-17) The silver anchor is now Lean-grounded**
+  (`QOU.QBeta.SilverAnchorGrounding`, sorry-free, PR #2445): `b² = 7/8` is
+  *derived* from the silver relation `q² − 2q − 1 = 0` (it was a **premise** in
+  `Cn_at_silver`), via `8(q⁴+q²+1) = 7(q²+1)²` with cofactor `(q²+2q−1)`; and the
+  same locus is proved to be the **`Q_A` decay-prefactor zero** (`2q+1−q² =
+  −(q²−2q−1)`), i.e. the F-pole fixing the `c_k` recurrence's dominant
+  `1/u_substrate` characteristic root. This grounds the structural signal and the
+  "categorical derivation of `Q_A·cos α_eff`'s zero" direction
+  (`RationalCoeffRecurrence`); it does **not** change any rung's empirical tier.
 - c_4 in the 1ppQ-achieved witness is a **CODATA-residual fit**, and separately
   flagged as a **normalisation artifact**.
 - The `[3]_q/25` building block is **shared** with the m_μ V9 closure (a real,
