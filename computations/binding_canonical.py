@@ -363,6 +363,91 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     }
 
 
+def binding_observe_last(Z: int, N: int, *, dps: int = 50):
+    """**Observe-LAST binding variant (DIAGNOSTIC — not a production closure).**
+
+    Sibling to `binding_canonical` (observe-EARLY: the step-5 scalar collapse
+    `B_pred = Q_β·(tr_free − tr_atom)`).  This variant carries the per-Wedderburn-
+    block q-Reeb phase `θ_λ` to a τ-LAST collapse (step 9), per the observe-last
+    reframe (`docs/audits/2026-06-17-singlet-channel-bsym-exploration.md` §6b/§6c):
+
+        θ_λ^X = arccos(χ_λ^X/d_λ)        (|·|≤1, rotation channel)
+              | arccosh(|χ_λ^X/d_λ|)     (growth channel)
+        B_observe_last = Q_β · Σ_λ y_λ (θ_λ^free − θ_λ^atom)        [additive]
+
+    **STATUS (read before consuming).** The additive collapse above is *refuted*
+    as the binding-residual mechanism: small, negative, and SHRINKS with A,
+    whereas the documented residual `Δ_λ(K)=B_AME/B_pred ≈ q₀^(10A−5)=q₀^(5(2A−1))`
+    is large, positive, and GROWS with A.  A bounded additive phase sum cannot be
+    geometric in A; the residual is a **per-object multiplicative q₀⁵** (one factor
+    per nucleon + one per inter-nucleon bond), whose categorical derivation from
+    the `W_free`/`W_atom` jet–crossing bookkeeping is OPEN (9b workplan H1;
+    research-grade Subgoal-2 — must NOT be closed by a fit ansatz, Δ_λ gate).
+    This function exposes the observe-last *carrier infrastructure* (the per-λ θ
+    vector the canonical step-5 trace collapses), NOT a wired binding closure.
+    `residual_law_*` is the EMPIRICAL near-match shown for reference only and is
+    deliberately NOT applied to produce a binding number.
+
+    NO FLOAT (owner ruling 2026-06-09): all mpmath at the 50-dps floor; values
+    returned as full-precision decimal strings.
+    """
+    import mpmath as mp
+    import math as _math
+    from reduced_block_kernel import chi_all_lambda_reduced_block
+    from wedderburn_jones_markov import y_lambda_at
+
+    if mp.mp.dps < dps:
+        mp.mp.dps = dps
+    n = 3 * (Z + N)
+    A = Z + N
+    qb = mp.mpf(str(_Q_BETA_N))
+    q0v = mp.mpf(str(q0))
+
+    def _dim(lam):
+        nn = sum(lam); num = _math.factorial(nn); den = 1
+        for i in range(len(lam)):
+            for j in range(lam[i]):
+                arm = lam[i] - j - 1
+                leg = sum(1 for r in range(i + 1, len(lam)) if lam[r] > j)
+                den *= arm + leg + 1
+        return num // den
+
+    def _theta(chi, d):
+        r = chi / d
+        return mp.acos(r) if abs(r) <= 1 else mp.acosh(abs(r))
+
+    y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, q0).items()}
+    chi_atom = chi_all_lambda_reduced_block(
+        atom_braid_word_3A(Z, N, include_inter=True), n)
+    chi_free = chi_all_lambda_reduced_block(
+        atom_braid_word_3A(Z, N, include_inter=False), n)
+    parts = list(y.keys())
+    tr_atom = mp.fsum(y[l] * chi_atom.get(l, mp.mpf(0)) for l in parts)
+    tr_free = mp.fsum(y[l] * chi_free.get(l, mp.mpf(0)) for l in parts)
+    B_pred = qb * (abs(tr_free) - abs(tr_atom))                 # observe-early
+
+    dim = {l: mp.mpf(_dim(list(l))) for l in parts}
+    th = {l: (_theta(chi_free.get(l, mp.mpf(0)), dim[l]),
+              _theta(chi_atom.get(l, mp.mpf(0)), dim[l])) for l in parts}
+    B_late = qb * mp.fsum(y[l] * (th[l][0] - th[l][1]) for l in parts)  # REFUTED
+
+    resid_exp = 5 * (2 * A - 1)            # 10A−5 = per-object (A nucleons + A−1 bonds)
+    return {
+        "Z": Z, "N": N, "A": A, "n_strands": n,
+        "Q_beta_n_MeV": str(qb),
+        "B_pred_observe_early_MeV": str(B_pred),
+        "B_observe_last_additive_MeV": str(B_late),    # refuted: small/neg/shrinks
+        "per_lambda_theta": {str(list(l)): {"theta_free": str(th[l][0]),
+                                            "theta_atom": str(th[l][1])}
+                             for l in parts},
+        "residual_law_exponent_10A_5": resid_exp,      # reference only (NOT applied)
+        "residual_law_factor_q0pow": str(q0v ** resid_exp),
+        "status": "DIAGNOSTIC: additive observe-last refuted; per-object q₀⁵ "
+                  "closure OPEN (held); carrier infra for the 9b H1 derivation. "
+                  "NOT a production binding closure.",
+    }
+
+
 if __name__ == "__main__":
     # AME 2020 binding-energy comparison targets imported from the
     # central codata_constants registry (validation-only; not CAL inputs).
