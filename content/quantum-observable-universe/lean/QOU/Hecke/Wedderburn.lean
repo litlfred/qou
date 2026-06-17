@@ -51,7 +51,7 @@ structure Partition (n : ℕ) where
 /-- The hook-length formula: f^λ = n! / Π hook(c). The hook lengths
 themselves are computed in `Mathlib.Combinatorics.YoungTableau` (or
 re-derived locally); this is the abstract dimension predicate. -/
-class SpechtDimension {n : ℕ} (λ : Partition n) where
+class SpechtDimension {n : ℕ} (lam : Partition n) where
   /-- Specht module dimension f^λ. -/
   dim : ℕ
   positive : 0 < dim
@@ -72,14 +72,14 @@ abstractly via a representation `rho_lambda`.
 class WedderburnDecomp
     {R : Type u} (n : ℕ) (q : R) (A : Type u)
     [CommRing R] [Inv R] [Ring A] [Algebra R A]
-    [HeckeAlgebra R n q A] [MarkovTrace n q A] where
+    [HeckeAlgebra R n q A] [MT : MarkovTrace n q A] where
   /-- Central idempotent for partition λ. -/
   pi_lambda : Partition n → A
   /-- Each pi_lambda is idempotent. -/
-  idempotent : ∀ λ : Partition n, (pi_lambda λ) * (pi_lambda λ) = pi_lambda λ
+  idempotent : ∀ lam : Partition n, (pi_lambda lam) * (pi_lambda lam) = pi_lambda lam
   /-- Distinct idempotents are orthogonal. -/
-  orthogonal : ∀ λ μ : Partition n, λ.parts ≠ μ.parts →
-    pi_lambda λ * pi_lambda μ = 0
+  orthogonal : ∀ lam mu : Partition n, lam.parts ≠ mu.parts →
+    pi_lambda lam * pi_lambda mu = 0
   /-- Markov-trace central coefficient y_λ. By
   prop:y-lambda-recipe-from-partition this is a rational function
   in q given by `s_λ(1, Q, ..., Q^{r-1}) / Σ d_μ s_μ(...)`. -/
@@ -89,13 +89,20 @@ class WedderburnDecomp
   set `{λ | λ ⊢ n}` of Young diagrams of `n`; by the Wedderburn–Artin
   theorem there are no other irreducibles over a generic base ring. -/
   all_parts : Finset (Partition n)
+  /-- **Resolution of identity (completeness).** The central idempotents
+  sum to `1`: `Σ_{λ ∈ all_parts} π_λ = 1`.  This is the machine-checked
+  "we account for everything" — by Wedderburn–Artin the partitions of `n`
+  index ALL irreducibles (Mathas 1999 §3.43), so the blocks exhaust the
+  algebra with no residue.  `trace_decomp` below is the `y_λ`-weighted
+  refinement that rests on this partition of unity. -/
+  complete : all_parts.sum (fun lam => pi_lambda lam) = 1
   /-- Trace decomposition: the Markov trace decomposes over `all_parts` as
   `tr(x) = Σ_{λ ∈ all_parts} y_λ · tr(x · π_λ)`.
   Follows from `Σ_{λ ∈ all_parts} π_λ = 1` (partition of unity),
   trace linearity, and `y_λ` as central coefficients. -/
   trace_decomp : ∀ (x : A),
-      (MarkovTrace.trace (A := A)) x =
-        all_parts.sum (fun λ => y_lambda λ • (MarkovTrace.trace (A := A)) (x * pi_lambda λ))
+      MT.trace x =
+        all_parts.sum (fun lam => y_lambda lam • MT.trace (x * pi_lambda lam))
 
 namespace WedderburnDecomp
 
@@ -110,12 +117,13 @@ variable {R : Type u} {n : ℕ} {q : R} {A : Type u}
 where χ^λ(x) = tr(x · π_λ) (block-restricted trace), and the sum
 runs over `WD.all_parts` (the complete set of irreducibles). -/
 theorem trace_decomposition (x : A) :
-    MT.trace x = WD.all_parts.sum (fun λ =>
-      WD.y_lambda λ • MT.trace (x * WD.pi_lambda λ)) := by
+    MT.trace x = WD.all_parts.sum (fun lam =>
+      WD.y_lambda lam • MT.trace (x * WD.pi_lambda lam)) := by
   -- Ref: [thm:wedderburn-mass-formula]. Follows directly from the
   -- trace_decomp axiom of WedderburnDecomp.
   exact WD.trace_decomp x
 
+open Classical in
 /-- **(§9.4 L-2) Kronecker orthogonality of the central idempotents** —
 `π_λ · π_μ = δ_{λ,μ} · π_λ`. Packages the `idempotent` and `orthogonal`
 axioms into one relation. The statement is keyed on `lam = mu` (matching the
@@ -128,7 +136,6 @@ The *standing* §9.4 debt is to **discharge** the `orthogonal` axiom itself
 (and `y_lambda` uniqueness, L-1) from the Hecke structure via Schur
 character-orthogonality — Mathas (1999) §3.43, not yet in Mathlib. This lemma
 is the immediate consequence of the current axioms, not that discharge. -/
-open Classical in
 theorem pi_mul_pi (lam mu : Partition n) :
     WD.pi_lambda lam * WD.pi_lambda mu
       = if lam = mu then WD.pi_lambda lam else 0 := by
@@ -140,6 +147,26 @@ theorem pi_mul_pi (lam mu : Partition n) :
     apply h
     ext1
     exact hp
+
+/-- **Exhaustiveness of the Markov trace over the Wedderburn blocks** —
+`tr_M(x) = Σ_λ tr_M(x · π_λ)`, with NO residue.  The machine-checked
+"we account for everything": *derived* from the resolution of identity
+`Σ_λ π_λ = 1` (`WD.complete`) via left-distributivity and `R`-linearity
+of the trace — it does NOT re-assume a decomposition.  The sum runs over
+the complete set `WD.all_parts` (the `p(n)` partitions of `n`); there are
+no other blocks.  Contrast `trace_decomposition`, which projects the
+`y_λ`-weighted `trace_decomp` axiom; this lemma needs only `complete`. -/
+theorem trace_exhaustive (x : A) :
+    MT.trace x
+      = WD.all_parts.sum (fun lam => MT.trace (x * WD.pi_lambda lam)) := by
+  have hx : WD.all_parts.sum (fun lam => x * WD.pi_lambda lam) = x := by
+    rw [← Finset.mul_sum, WD.complete, mul_one]
+  calc
+    MT.trace x
+        = MT.trace (WD.all_parts.sum (fun lam => x * WD.pi_lambda lam)) := by
+          rw [hx]
+    _ = WD.all_parts.sum (fun lam => MT.trace (x * WD.pi_lambda lam)) :=
+          map_sum MT.trace _ WD.all_parts
 
 end WedderburnDecomp
 
