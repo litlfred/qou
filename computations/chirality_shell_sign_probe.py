@@ -80,14 +80,21 @@ def main() -> int:
           "trace-weighted option-e chirality parity ⟨sgn⟩ does NOT track the "
           "empirical net (D: −0.26 vs +1, wrong even in sign; T/³He/⁴He: "
           "−0.5..−0.2 vs 0). So the empirical chirality is NOT the Wedderburn "
-          "transpose-parity δ_sign. The ONLY rule matching all 4 is the naive "
-          "Z·N mod 2 (parity of the number of np pairs) — but that is a "
-          "4-point pattern fit, NOT a shell derivation (numerology risk per "
-          "the critical-distance discipline). Verdict: the per-nucleus "
-          "chirality signs are NOT yet derivable from the framework's "
-          "structural chirality sign; they remain a physical np-spin-pairing "
-          "input. ⁶Li/⁷Li are recorded as the falsifiable ZN-mod-2 predictions "
-          "(net 1, 0) for whenever a 5th empirical chirality datum lands.")
+          "transpose-parity δ_sign. Corroborated by a full corpus audit: the "
+          "production signs are a HARDCODED (Z,N) lookup table "
+          "(paper_six_term_isotope_sweep.py:1260, alternating [+1,−1,…], "
+          "net=L mod 2) — not derived on the Python or Lean side; and the one "
+          "structural bridge (ribbon eigenvalue) is refuted (#2422 + an "
+          "8-variant >20% sweep). The signs remain a physical np-spin-pairing "
+          "input.")
+    print("\n  DISCRIMINATOR — ⁶Li settles it. The hardcoded table gives ⁶Li "
+          "net 0 (alternating, L=6 even). But ⁶Li's ground state is J=1 "
+          "(deuteron-like — an unpaired ³S₁ np pair), so a STRUCTURAL "
+          "(unpaired-spin-1-pair / Wigner-SU(4)) rule predicts net +1, like the "
+          "deuteron; ZN mod 2 = 1 agrees with that +1, against the table's 0. "
+          "⁶Li's experimental J=1 favors the structural +1 ⇒ the hardcoded "
+          "table is likely WRONG at ⁶Li. ⁶Li net chirality is the decisive, "
+          "falsifiable test of structural-vs-hardcoded.")
     return 0
 
 
