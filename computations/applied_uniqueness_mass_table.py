@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: numerical-only Phase 1 mass-table wiring.
 """
+CLASS-A acknowledged-anchor (Workplan-0b): M_P/M_N_MEV_VALIDATION here build
+the AME comparison REFERENCE (`ame_nucleus_mass_mev = Z·m_p + N·m_n − B_AME`
+and the `m_ref` CODATA targets), never a prediction input. Verified
+2026-06-17 (I11 adjudication).
+
 ═══════════════════════════════════════════════════════════════════
 PARALLEL CHAIN (2026-05-23): not a consumer of the substrate
 flavor-split.

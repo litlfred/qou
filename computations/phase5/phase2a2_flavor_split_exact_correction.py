@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 """
+CLASS-A acknowledged-anchor (Workplan-0b): M_N_MEV_VALIDATION feeds
+`X_target_from_mn` — the TARGET X-value the reconstruction is fitted to
+hit, never a prediction input. Verified 2026-06-17 (I11 adjudication).
+
 Phase 2a₂: exact flavor-split correction via multi-point rational
 function reconstruction.
 

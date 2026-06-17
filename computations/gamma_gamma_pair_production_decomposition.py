@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """
+CLASS-A acknowledged-anchor (Workplan-0b): M_P_MEV_VALIDATION here is the
+inverse TARGET — `linking_weight_exact_via_anchor` solves backward for the
+linking weight that would make m_p hit CODATA ("what to hit"); no CODATA
+value flows into a prediction. Verified 2026-06-17 (I11 adjudication).
+
 gamma_gamma_pair_production_decomposition.py — γγ̄ pair-production
 decomposition of the Borromean braid β_Bor at each Gröbner-Shirshov
 filtration order, localising where the 2.89% VolDensity residual enters.
