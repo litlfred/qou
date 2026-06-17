@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-17T11:48:09.824742+00:00",
-  "commitSha": "3e683d91d204cfbbdea78859053e637c4234a376",
+  "computedAt": "2026-06-17T13:10:16.909404+00:00",
+  "commitSha": "b2e3a803b2de91345855fccd5945898b6537bd79",
   "assertions": [
     {
       "name": "B_pred_matches_residual_audit_table",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 52,
+  "durationMs": 45,
   "computation": "binding-observe-last",
   "scriptFile": "binding_observe_last.py",
-  "scriptHash": "38cb5b58c796",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c56a11c9eebf",
+  "scriptCommitSha": "c27071818c9232f0064f623aafcc4606f3de18c8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
