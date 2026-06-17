@@ -637,7 +637,7 @@ theorem braneMonic_monic (qinv : R) (n : ℕ) : (braneMonic qinv n).Monic := by
     `u_n := ∏_{k=1}^n (-(qinv^k))`. Under `IsUnit qinv` it is a unit
     (`braneUnit_isUnit`); it is the leading coefficient of `branePoly qinv n`,
     namely `(-1)^n qinv^{n(n+1)/2}`. -/
-noncomputable def braneUnit (qinv : R) : ℕ → R
+def braneUnit (qinv : R) : ℕ → R
   | 0 => 1
   | (n + 1) => braneUnit qinv n * (-(qinv ^ (n + 1)))
 
