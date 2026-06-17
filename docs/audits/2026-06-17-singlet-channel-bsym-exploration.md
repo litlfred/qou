@@ -185,6 +185,31 @@ is correct; the additive *collapse* is the wrong one. The open step is unchanged
 from the 9b workplan H1: derive **q₀⁵ per chain object** from the jet/crossing
 bookkeeping of `W_free` vs `W_atom` (12 crossings/nucleon, +1/interface).
 
+## 6d. formalize-first sharpening of the q₀⁵ target — and the STOP
+
+Per-object crossing counts of `atom_braid_word_3A` (compute, this session):
+`free_cr = 11A`, `atom_cr = 12A−1 = 11A + (A−1)`, interfaces `= A−1`, intra/nucleon
+`= 11` (constant). So the residual exponent factorises **not per-crossing** but
+**per chain object**:
+$$ 5(2A-1) = \underbrace{5A}_{\text{per nucleon}} + \underbrace{5(A-1)}_{\text{per interface bond}}. $$
+Check: D `5·2+5·1=15` ✓, T `5·3+5·2=25` ✓, ⁴He `5·4+5·3=35` ✓; ³He 23.60 vs 25 is
+the −1.4 proton-rich deviation ⇒ the per-nucleon factor is **Z-dependent** (p ≠ n).
+
+**Target sharpened:** derive a **q₀⁵ per nucleon** + a **q₀⁵ per interface bond**
+(the latter Z-dependent). The exponent "5" is the open quantity.
+
+**Formalize-first STOP (no wide search).** This is not a fresh lever. The
+41-commit triage (Q1 verdict,
+[`2026-06-17-parked-residual-and-detq-framing.md`]) places the per-nucleon
+exactness shortfall as **plausibly the standing CAL-4 VolDensity(𝓑₃)
+categorical-exactness gap** (research-grade Subgoal-2; eight structural searches
+failed; the coordination ledger declined a substrate q₀-derivation; the Δ_λ gate
+forbids a fit ansatz). Confirming that the per-isotope `q₀⁵`-per-object factor IS
+the per-nucleon CAL-4 gap is itself open, but either way the "5" derivation sits
+behind the gated wall. Honest deliverables this session: the sharpening above +
+the observe-last **carrier infra** (§6c, `binding_canonical.binding_observe_last`,
+DIAGNOSTIC). The "5" derivation is **held** (option 3) — not faked.
+
 ## 7. Verdict so far
 
 The B_sym lever is **real but already-identified and stuck**. The honest
