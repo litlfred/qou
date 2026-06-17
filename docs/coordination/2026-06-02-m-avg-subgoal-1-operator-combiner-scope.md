@@ -151,3 +151,23 @@ not a production-value change, not a fit.
 assembly; consumes this kernel) and #2392 (exciting-rubin — Task A all-blocks;
 shares `combiner_block`, mechanical rebase expected). Division of labour: #2371
 owns assembly/wiring, #2403 owns the combiner kernel.
+
+### ⁴He end-to-end validation (A=4, PR #2403)
+
+The recursion kernel reproduces the production binding observable at A=4
+(`a_operator/a_operator_recursive_he4_crosscheck.py`), peeling the last nucleon
+off the canonical `atom_braid_word_3A(2,2)` (n-n bridge, `I = σ₈ − h·1`):
+
+- **(a) per-λ, airtight** — combiner χ^λ vs direct `chi_young` on the *same* ⁴He
+  word (8 λ⊢12, d≤120): **max |Δ| = 2.4e-47** ≪ 1e-25.
+- **(b) end-to-end tr_M** — `Σ_λ y_λ χ^λ` (all 77 λ⊢12) vs the fine-Bratteli
+  transfer: tr_M_comb = 0.0553584434002387**77**, tr_M_transfer =
+  0.0553584434002387**646**, **rel = 2.2e-16** (float64 floor of the atom
+  word's stored constants; the per-λ-vs-transfer gap 6.2e-15 is that convention
+  floor — (a) confirms the kernel itself is exact).
+
+Validates the operator-valued combiner as an **independent A≥4 cross-check** of
+the transfer — not a replacement (p(3A) verdict). Wiring target: closure path
+(b) at `canonical_tr_m_via_branching.py:263` (`return None` → operator-form A),
+retiring the rank-deficient fitted H_9+ extracts. That wiring + its MBA-appendix
+sync is a **separate follow-up PR** (keeps #2403 a clean kernel deliverable).
