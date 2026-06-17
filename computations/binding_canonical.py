@@ -392,9 +392,9 @@ def binding_observe_last(Z: int, N: int, *, dps: int = 50):
     returned as full-precision decimal strings.
     """
     import mpmath as mp
-    import math as _math
     from reduced_block_kernel import chi_all_lambda_reduced_block
     from wedderburn_jones_markov import y_lambda_at
+    from hecke_characters import specht_dim
 
     if mp.mp.dps < dps:
         mp.mp.dps = dps
@@ -402,15 +402,6 @@ def binding_observe_last(Z: int, N: int, *, dps: int = 50):
     A = Z + N
     qb = mp.mpf(str(_Q_BETA_N))
     q0v = mp.mpf(str(q0))
-
-    def _dim(lam):
-        nn = sum(lam); num = _math.factorial(nn); den = 1
-        for i in range(len(lam)):
-            for j in range(lam[i]):
-                arm = lam[i] - j - 1
-                leg = sum(1 for r in range(i + 1, len(lam)) if lam[r] > j)
-                den *= arm + leg + 1
-        return num // den
 
     def _theta(chi, d):
         r = chi / d
@@ -426,7 +417,7 @@ def binding_observe_last(Z: int, N: int, *, dps: int = 50):
     tr_free = mp.fsum(y[l] * chi_free.get(l, mp.mpf(0)) for l in parts)
     B_pred = qb * (abs(tr_free) - abs(tr_atom))                 # observe-early
 
-    dim = {l: mp.mpf(_dim(list(l))) for l in parts}
+    dim = {l: mp.mpf(specht_dim(l)) for l in parts}
     th = {l: (_theta(chi_free.get(l, mp.mpf(0)), dim[l]),
               _theta(chi_atom.get(l, mp.mpf(0)), dim[l])) for l in parts}
     B_late = qb * mp.fsum(y[l] * (th[l][0] - th[l][1]) for l in parts)  # REFUTED

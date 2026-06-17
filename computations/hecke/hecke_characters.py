@@ -610,6 +610,21 @@ def dim_q(shape):
     return qfac(n) / math.prod(q_int(hk) for hk in young_hooks(shape))
 
 
+def specht_dim(shape):
+    """Integer Specht-module dimension `f^λ = #SYT(λ) = n! / ∏ hook(c)`
+    (hook-length formula) — the `q → 1` specialisation of `dim_q`.
+
+    Centralised here (next to `young_hooks` / `dim_q`, reusing the single
+    `young_hooks` implementation) so binding / observe-last consumers share
+    one hook-length routine instead of re-deriving it (Gemini review, PR
+    #2408). Accepts any iterable partition (tuple or list)."""
+    n = sum(shape)
+    d = math.factorial(n)
+    for hk in young_hooks(shape):
+        d //= hk
+    return d
+
+
 # ════════════════════════════════════════════════════════════════════
 # v3 mass functions removed 2026-05-03 — see audit
 #   docs/audits/2026-05-03-categorical-mass-divergence-audit.md
