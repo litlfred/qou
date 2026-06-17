@@ -30,7 +30,6 @@ from __future__ import annotations
 import _path_bridge  # noqa: F401, E402
 import sys
 import json
-import math
 from pathlib import Path
 
 import mpmath as mp  # noqa: E402
@@ -43,26 +42,13 @@ set_compute_dps()
 
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from hecke_characters import specht_dim  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 ATOMS = [("2H", 1, 1, "atom-chi-rust-d.witness.json"),
          ("3H", 1, 2, "atom-chi-rust-t.witness.json"),
          ("3He", 2, 1, "atom-chi-rust-3he.witness.json"),
          ("4He", 2, 2, "atom-chi-rust-4he.witness.json")]
-
-
-def dim_sn(lam):
-    """f^λ = dim(S^λ) via the hook-length formula."""
-    n = sum(lam)
-    num = math.factorial(n)
-    den = 1
-    for i in range(len(lam)):
-        for j in range(lam[i]):
-            arm = lam[i] - j - 1
-            leg = sum(1 for r in range(i + 1, len(lam)) if lam[r] > j)
-            den *= arm + leg + 1
-    return num // den
 
 
 def load_chi(fname, cfg):
@@ -117,7 +103,7 @@ def main() -> int:
         ca = load_chi(fname, "atom")
         y = y_lambda_at(n, q0)
         parts = list(cf.keys())
-        dim = {lam: mp.mpf(dim_sn(list(lam))) for lam in parts}
+        dim = {lam: mp.mpf(specht_dim(lam)) for lam in parts}
 
         # observe-EARLY: scalar trace then difference (residual-audit B_pred)
         tr_free = mp.fsum(y[lam] * cf[lam] for lam in parts)
