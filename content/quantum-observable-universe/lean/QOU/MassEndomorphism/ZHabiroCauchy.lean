@@ -850,6 +850,34 @@ theorem eulerCoeff_succ (qinv : R) (n : ℕ) :
   rw [Finset.prod_range_succ, pow_succ]
   ring
 
+/-- **Uniqueness from the first-order q-difference recurrence.** The Euler
+    coefficients are the UNIQUE sequence with `b 0 = 1` obeying the depth
+    recurrence `b_{n+1} = b_n · q^{-1} · (1 - q^{-(n+1)})⁻¹`.
+
+    This is the coefficient form of the analytic-bridge mechanism: `Φ_q` is the
+    unique solution of its first-order q-difference equation
+    `(1 - z)·Φ_q(qz) = Φ_q(z)` together with the single normalisation
+    `Φ_q(0) = 1` — evaluation at the one generic (non-degenerate) point `z = 0`
+    plus the functional equation (which relates the two points `z` and `qz`)
+    pins every coefficient. The coefficient recurrence above is exactly that
+    functional equation read off `[z^n]` (`b_m = b_{m-1}·q^{m-1}/(q^m-1)`, and
+    `q^m-1 = q^m(1-q^{-m})` is a unit times a cyclotomic factor, so the whole
+    sequence stays in the cyclotomic localisation). Hence identifying the
+    abstract `zHabiroLimit` coefficient family with the actual `Φ_q` reduces to
+    checking these two hypotheses — the genuinely-analytic residue being only
+    that the analytic `Φ_q` satisfies the functional equation
+    (`QOU.MassEndomorphism.PhiQConvergence`). -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"What survives the closure"
+-- Ref: [manuscript] computations/z-habiro-increment-probe.witness.json
+theorem eulerCoeff_unique (qinv : R) (b : ℕ → R)
+    (h0 : b 0 = 1)
+    (hrec : ∀ n, b (n + 1) = b n * qinv * Ring.inverse (1 - qinv ^ (n + 1))) :
+    b = eulerCoeff qinv := by
+  funext n
+  induction n with
+  | zero => rw [h0, eulerCoeff_zero]
+  | succ n ih => rw [hrec, ih, eulerCoeff_succ]
+
 /-- The top coefficient of the monic associate `g_n`: it is `1` (monic of
     degree `n`). Used for the linear-independence / uniqueness argument. -/
 theorem braneMonic_coeff_self [Nontrivial R] (qinv : R) (n : ℕ) :
