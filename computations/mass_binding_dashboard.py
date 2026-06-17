@@ -126,19 +126,27 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
     m_sym_free = Z * msp + N * msn
     # ---- forms that DO need the bound-knot trace tr_M(W_atom) ---------------
     #   (the p(3A) partition sum explodes → capped at n ≤ max_strands)
-    B_sym = m_sym_atom = None
+    B_sym = m_sym_atom = E_retained = E_emitted = None
     if n <= max_strands:
         from tr_m_atom_via_transfer import tr_m_atom_zn
+        import mpmath as _mp
+        from q_parameter import Q as _Q0
         ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
         ta, tf = float(ta), float(tf)
         B_sym = alpha * math.log(tf / ta)
         m_sym_atom = -alpha * math.log(ta)           # B_sym = m_sym_atom − m_sym_free
+        # entanglement: bar-involution (q↦q⁻¹) split of the atom trace via the
+        # q-parameterised core. bar-even (cosh) = RETAINED binding/volume;
+        # bar-odd (sinh) = EMITTED/radiated (Chern–Simons / γγ̄) channel.
+        ta_i = float(tr_m_atom_zn(Z, N, q=_mp.mpf(1) / _mp.mpf(str(_Q0)), dps=50)[0])
+        E_retained = alpha * (ta + ta_i) / 2.0
+        E_emitted = alpha * abs(ta - ta_i) / 2.0
     return {"name": name, "Z": Z, "N": N, "A": A, "n": n, "B_AME": bame,
             "sigma_AME": sigma_ame,
             "n_pp": n_pp, "n_pn": n_pn, "n_nn": n_nn,
             "B_sym": B_sym, "B_qCLT": B_qCLT,
             "B_qCLT_fac": B_fac, "B_base": B_base, "B_chir": B_chir,
-            "B_magic": B_magic,
+            "B_magic": B_magic, "E_retained": E_retained, "E_emitted": E_emitted,
             "m_sym_atom": m_sym_atom, "m_sym_free": m_sym_free}
 
 
@@ -239,6 +247,18 @@ def main(argv=None) -> int:
         mfac = mu - r["B_qCLT_fac"]
         print(f"| {r['name']} | {r['A']} | {mu:>9.1f} | {_fmt(mame,9,1)} "
               f"| {_fmt(msym,9,1)} | {mqclt:>9.1f} | {mfac:>9.1f} |")
+
+    # 3b. ENTANGLEMENT  (bar-involution q↦q⁻¹ split of the atom trace, via the
+    #     q-parameterised core): bar-even (cosh) = retained binding/volume;
+    #     bar-odd (sinh) = emitted/radiated Chern–Simons / γγ̄ channel.
+    print("\n### Entanglement  (E₀·bar-even = retained binding/volume, E₀·|bar-odd| = emitted γγ̄ channel)")
+    print("| iso | A | retained E (MeV) | emitted E (MeV) | emitted/retained |")
+    print("|---|--:|--:|--:|--:|")
+    for r in rows:
+        er, ee = r.get("E_retained"), r.get("E_emitted")
+        ratio = (ee / er) if (er and ee and er != 0) else None
+        print(f"| {r['name']} | {r['A']} | {_fmt(er,8,3)} | {_fmt(ee,8,3)} "
+              f"| {_fmt(ratio,8,4)} |")
 
     # 4. COLOUR-WEIGHTING decomposition (B_qCLT_fac = baseline + p↔n chirality)
     print("\n### Colour-weighting  (B_qCLT_fac = isospin-symmetric baseline + p↔n chirality)")
