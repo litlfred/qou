@@ -210,6 +210,21 @@ behind the gated wall. Honest deliverables this session: the sharpening above +
 the observe-last **carrier infra** (§6c, `binding_canonical.binding_observe_last`,
 DIAGNOSTIC). The "5" derivation is **held** (option 3) — not faked.
 
+**Explore-4 result (corpus-grep) — closes NEGATIVE.** The trace route is not
+merely gated but already **refuted**:
+[`2026-06-13-9b-h1-exponent-location-refuted.md`] decomposed
+`ord(Δ_λ) = ord(B_AME) − ord(B_pred)` and found the framework trace `ord(B_pred)`
+drifts only +1.2…+2.9 per nucleon (decaying to 0), while the **+11.5…+12.8
+per-nucleon increment is carried by the experimental curve `ord(B_AME)`**. So the
+"5"/10A−5 is **experimental-side**, not trace/crossing-count bookkeeping —
+deriving it ≡ deriving `B_AME(A)` itself (Track-A); fitted-adjacent near-match
+tier (2 integer params; 3 compliant points + ³He outlier). The `2A−1`
+chain-object count IS geometrically real (difference-link cusp count,
+[`2026-06-13-difference-knot-jsj-classification.md`]) but the per-object weight is
+the **Sage-blocked per-piece JSJ volume**. Consistent with §6c: any *trace*
+collapse (early or late) cannot recover the residual, because the A-dependence is
+not on the trace side. **No trace-derivable "5"; the q₀⁵ route is closed.**
+
 ## 7. Verdict so far
 
 The B_sym lever is **real but already-identified and stuck**. The honest
