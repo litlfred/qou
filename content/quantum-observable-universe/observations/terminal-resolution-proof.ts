@@ -6,7 +6,6 @@ export default proof({
   uses: [
     "prop:skein-generation",
     "prf:knot-volumes-verification",
-    "lem:deuteron-binding-energy",
   ],
   lean: { ref: "qou:QOU.HadronicMass.terminal_resolution_hadronic_mass",
     validation: "leanok",

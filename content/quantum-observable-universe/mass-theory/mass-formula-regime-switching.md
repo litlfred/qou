@@ -178,9 +178,7 @@ through the Hecke eigenvalues $(q, -q^{-1})$.*
 
 *Add a scope note: "The $a_K$ chirality factor applies to
 isotopes in the Borromean / $4_1$ topology ($A \geq 3$). For
-$A = 2$ (satellite-knot topology), the formula does not apply;
-use the Schur–Weyl direct computation
-([deuteron first principles](#rem:deuteron-first-principles))."*
+$A = 2$ (satellite-knot topology), the formula does not apply."*
 
 **Unification via dominant-term selection.**
 
