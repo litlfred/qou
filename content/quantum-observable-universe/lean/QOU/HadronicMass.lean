@@ -83,7 +83,19 @@ noncomputable def deuteron_mass_MeV : ℝ := 1875.61294500
     Propagated uncertainty: ± 0.00000076 MeV. -/
 noncomputable def binding_energy_CODATA : ℝ := 2.22456637
 
-/-- QOU-predicted binding energy from the Skein polynomial in MeV. -/
+/-- Deuteron binding-energy **anchor** (MeV), `2.224`, used as the
+    binding term in the Row-3 mass-deficit identity below.
+
+    Honesty note (2026-06-17): this value is the experimental binding
+    `(m_p + m_n) − m_D = 2.22456637 MeV` rounded to 4 significant
+    figures — it is **not** an independent categorical/Skein-polynomial
+    prediction. The categorical per-λ Δ_λ sum (Option E) does *not*
+    reproduce it: it undershoots the deuteron by ≈ −82.9 % (see the
+    2026-06-16 Option-E deuteron correction and
+    `QOU.OptionE.DeltaLambda`). Closure of the deuteron binding from
+    topology remains an open target. The theorems below that consume
+    this constant are therefore consistency identities, not
+    predictions. -/
 noncomputable def binding_energy_QOU : ℝ := 2.224
 
 /-- Electron mass energy equivalent in MeV/c².
@@ -248,9 +260,13 @@ theorem proton_neutron_mass_difference :
     `m_D = 938.27208943 + 939.56542194 − 2.224 = 1875.61351137 MeV`
     NIST CODATA 2022: 1875.61294500(58) MeV → residual 0.567 keV.
 
-    The `L₆` topology represents the proton-neutron bound state;
-    the binding energy is the Skein polynomial variation at the
-    nuclear-scale crossing.
+    The `L₆` topology represents the proton-neutron bound state.
+
+    Honesty note (2026-06-17): the binding term `binding_energy_QOU`
+    here is the *experimental* mass deficit rounded to 4 sig figs (see
+    its docstring), so `row3_deuteron_matches_CODATA` below is a
+    mass-deficit consistency identity `m_p + m_n − B_exp ≈ m_D`, **not**
+    an independent topological prediction of the deuteron mass.
 
     Ref: Manuscript Table "Terminal Resolution of Hadronic Mass", Row 3. -/
 noncomputable def deuteron_topological : ℝ :=
@@ -278,16 +294,22 @@ theorem row3_deuteron_matches_CODATA :
 
 /-! ### Row 4: Binding Energy — Δ Skein Polynomial -/
 
-/-- **Row 4 — Binding Energy**: The deuteron binding energy is computed
-    as the Skein polynomial variation `Δ` at the nuclear crossing,
-    yielding 2.224 MeV.
+/-- **Row 4 — Binding Energy**: recovers the binding anchor
+    `binding_energy_QOU = 2.224 MeV` as the mass deficit
+    `(m_p + m_n) − m_D`.
 
     NIST CODATA 2022 (derived): 2.22456637(76) MeV.
-    Discrepancy: 0.00056637 MeV ≈ 0.567 keV (within experimental
-    precision of the topological calculation).
+    Discrepancy vs the 4-sig-fig anchor: 0.00056637 MeV ≈ 0.567 keV.
 
-    The Skein polynomial variation is:
-    `ΔE = (m_p + m_n) − m_D`
+    Honesty note (2026-06-17): `row4_binding_from_skein` is an
+    **algebraic identity** — since `deuteron_topological` is *defined*
+    as `m_p + m_n − binding_energy_QOU`, the statement
+    `(m_p + m_n) − deuteron_topological = binding_energy_QOU` holds by
+    `ring` for any value of the anchor. It does **not** compute the
+    binding from the Skein polynomial; the anchor is the experimental
+    deficit (see `binding_energy_QOU`). A genuine topological prediction
+    of the deuteron binding remains open (Option E undershoots by
+    ≈ −82.9 %).
 
     Ref: Manuscript Table "Terminal Resolution of Hadronic Mass", Row 4. -/
 theorem row4_binding_from_skein :
