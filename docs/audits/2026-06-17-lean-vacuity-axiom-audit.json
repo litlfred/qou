@@ -1,17 +1,16 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-06-17T12:57:33.546Z",
+  "generated": "2026-06-17T13:12:17.794Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 1754,
-  "files_flagged": 178,
-  "total_defects": 197,
+  "files_flagged": 177,
+  "total_defects": 192,
   "total_exempt": 39,
   "categories": {
     "proof-no-trivial-true": 130,
     "proof-no-false-premise": 9,
     "proof-no-self-assuming-projection": 22,
-    "proof-no-decide-masking": 31,
-    "proof-no-provable-axiom": 5
+    "proof-no-decide-masking": 31
   },
   "flagged": {
     "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.lean": [
@@ -755,48 +754,6 @@
         "pattern": "conclusion-True",
         "snippet": "theorem atlas_entry_uniqueness_works_for_any_A (A : ℕ) :",
         "decl": "atlas_entry_uniqueness_works_for_any_A",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidsKnots/LinearJSJVolume.lean": [
-      {
-        "line": 10,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom AtomicKnot (Z N : ℕ) : Type",
-        "decl": "AtomicKnot",
-        "severity": "major"
-      },
-      {
-        "line": 16,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom Vol (K : Type) : ℝ",
-        "decl": "Vol",
-        "severity": "major"
-      },
-      {
-        "line": 21,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom Vol_p : ℝ",
-        "decl": "Vol_p",
-        "severity": "major"
-      },
-      {
-        "line": 22,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom Vol_n : ℝ",
-        "decl": "Vol_n",
-        "severity": "major"
-      },
-      {
-        "line": 31,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom JSJ_volume_additivity (Z N : ℕ) :",
-        "decl": "JSJ_volume_additivity",
         "severity": "major"
       }
     ],

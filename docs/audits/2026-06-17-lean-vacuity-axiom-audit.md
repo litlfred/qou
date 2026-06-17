@@ -58,8 +58,9 @@ the owning blocks' `.qa.json`.
 
 ## Run results (2026-06-17)
 
-Scanned **1754** `.lean`; **197** defect candidates across **178** files; **39**
-exempt shadows.
+Initial scan: **197** candidates across **178** files. After resolving the 5
+`proof-no-provable-axiom` (cited — see below): **192** candidates across **177**
+files; **39** exempt shadows (1754 `.lean` scanned).
 
 | criterion | candidates |
 |---|---|
@@ -67,7 +68,7 @@ exempt shadows.
 | `proof-no-self-assuming-projection` | 22 (13 field-projection, 9 tuple-projection) |
 | `proof-no-false-premise` | 9 |
 | `proof-no-decide-masking` (`native_decide`) | 31 |
-| `proof-no-provable-axiom` | 5 |
+| `proof-no-provable-axiom` | **5 → 0 (resolved this PR)** |
 
 ### `proof-no-provable-axiom` — all 5 (the actionable new category)
 
