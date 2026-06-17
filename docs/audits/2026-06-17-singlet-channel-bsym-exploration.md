@@ -117,7 +117,47 @@ B_sym. That is the open sub-problem.
    Outcome is informative either way — confirm revives the path; refute is a
    formalize-the-refutation candidate (compute-author §3.4).
 
-## 6. Verdict so far
+## 6b. The real gap: Σ_λ does not commute with the archimedean functor τ (observe-last)
+
+The completeness question ("how do we know there aren't more terms? use rep
+theory / cohomology") resolves cleanly, and it **retires the additive-sum
+framing** (`m_sym + entanglement + h2 + antisymm`) entirely:
+
+1. **Trace-channel completeness is a theorem.** $\sum_{\lambda\vdash n} z_\lambda
+   = \mathbf 1$ (resolution of identity; $H_n(q_0)$ split semisimple). So
+   $\mathrm{tr}_M = \sum_\lambda y_\lambda\chi^\lambda$ is exhaustive — exactly
+   $p(n)$ channels, no more. The complete per-block carrier is the **q-Reeb
+   phase** $\theta_\lambda=\arccos(\chi^\lambda/d_\lambda)$ (one per block).
+2. **Input completeness is cohomological.** $H^1(\text{Bring})=2W \Rightarrow$ 3
+   real calibration DOF (no 4th calibration). Different theorem, different half.
+3. **The "extra terms" are early-collapse re-slices, not additions.**
+   entanglement (bar-odd), antisymm (e₋), h2 (h-order) are all *gradings of the
+   one complete trace*; they overlap → summing double-counts. e₋ in particular
+   is the same early-collapse mistake as the scalar trace (project a channel
+   *before* observing).
+4. **The genuine gap is a non-commutation.** τ (step 9) is K-linear + monoidal,
+   so it commutes with $\sum_\lambda$ and $\prod$ — **but** Kashaev
+   $\mathrm{tr}_M\sim\exp(\mathrm{Vol})$ makes τ exponential, and
+   $\log(\sum_\lambda)\neq\sum_\lambda\log$. Production collapses $\theta_\lambda$
+   into the scalar $\mathrm{tr}_M$ at **step 5**, *before* τ at step 9. That is
+   exact at A=2 (linearization) and lossy at A≥3. The lost content is the
+   documented residual $\Delta_\lambda(K)\approx q_0^{\,10A-5}$ (D exact to 0.01;
+   [residual audit](2026-06-09-delta-lambda-canonical-residual.md)).
+
+**Fix = observe-last** (cheat-sheet §9.3): carry the full per-λ $\theta_\lambda$
+vector (rotation $\arccos$ + growth $\mathrm{arccosh}$) through the GB/jet tower
+and let τ collapse it *last*. The un-collapsed carrier is already emitted by
+[`binding_reeb_phase_decomposition.py`](../../computations/binding_reeb_phase_decomposition.py).
+The closure is **additive over inter-nucleon bonds**, not a per-block density to
+multiply ([intensive-vs-extensive reframing](2026-06-09-delta-lambda-canonical-residual.md)).
+
+**So the answer to "are we missing a factor?":** yes — not a new term, but the
+non-linear (exp/log) part of τ acting on the per-block phases that the step-5
+scalar collapse truncates. The e₋ probe is superseded by this reframe and was
+removed (its algebraic split $1-\sigma=(1-q)e_+ +(1+q^{-1})e_-$ and the
+$e_++e_-\equiv\mathrm{atom}$ identity are recorded in §3 above).
+
+## 7. Verdict so far
 
 The B_sym lever is **real but already-identified and stuck**. The honest
 contribution here is to (1) formalize the mechanism rigorously and (2)
