@@ -43,6 +43,39 @@ need to be built (and is that a fit risk)?
    **α-cluster recursion** (⁴He magic input) as the other sanctioned non-fit
    direction.
 
-## Status
+## Status — triage complete: a research-level open, NOT a wiring
 
-Opened; triage running. Findings + the resolved scope below as they land.
+- **`A^λ_{ξν}(I)` entry point:**
+  `computations/a_operator/a_operator_recursive.py::interface_blocks(lam, n_inner,
+  n_block, q_str, d_coef)` → `{(ξ,ν): {A, c, d_μ, d_ν}}`. On sibling `f393badec0`
+  (**not** on main); self-contained (no Rust dep); runs **A≤4 (H₁₂)** at
+  ~0.01–0.02 s/partition. **Feasibility favourable for A≤4** (the OOM wall is the
+  combiner inner-dim `r`, already cleared — see §Plan 1, not `dim(V_λ)`).
+- **Confirmed (the gating question, answered):** `A^λ_{ξν}(I)` is a χ^λ
+  **reconstruction** kernel (same `tr_M`, faster route), **NOT a binding
+  magnitude**. So an operator-magnitude *binding functional* must be
+  **constructed**, not wired.
+- **Candidates exist but no formula:** `2026-05-17-structural-diagnosis-operator-valued.md`
+  floated `‖A^λ_{ξν}(I)‖_F` / `Tr[A^λ_{ξν}(I)]` (and found the operator correction's
+  Frobenius norm 3.603 > scalar 3.517 — non-scalar blocks matter for χ^λ). But
+  **no binding formula is defined**, and choosing among norm/trace variants to
+  match AME is a **fit-risk** — the same trap as the refuted scalar variants,
+  with more knobs.
+- **A-scaling caveat (decisive):** the operator binding is still the **linear**
+  functional `Σ_λ y_λ χ^λ A^op`; its entries grow with A (like `dim`), so it
+  likely **inherits the #2417 divergence** unless the functional specifically
+  tames the growth. The functional with correct A-scaling is the **log** one
+  (`B_sym`). The operator route does **not** automatically fix this.
+- **α-cluster fallback:** all in `computations/_deprecated/` — needs
+  reconstruction.
+
+**Verdict.** Both sanctioned directions (operator-magnitude *construction*;
+α-cluster *revival*) are research-level opens requiring substantial new build;
+the most direct operator path (norm/trace) is fit-risk **and** likely inherits
+the A-scaling failure. There is **no ready-to-wire component**. Disciplined
+recommendation: do **not** run a norm/trace fit-search (rainbow-chasing). The
+genuine non-fit paths are (a) a **principled** operator-magnitude *derivation*
+that provably fixes the linear-functional A-scaling, or (b) reviving the
+**α-cluster recursion** (⁴He magic input, #1706-sanctioned), or (c) **parking**
+with the gate now precisely characterized (which is itself a complete, honest
+outcome of the LP→quadratic→Bring→chirality→magnitude→operator arc). Owner call.
