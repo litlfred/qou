@@ -219,6 +219,28 @@ The conjecture has two independent claims:
    well-defined positive real on $|z| < q$ — is formalized in
    `QOU.MassEndomorphism.PhiQConvergence`.
 
+   The algebraic Cauchy/limit infrastructure is formalized sorry-free in
+   `QOU.MassEndomorphism.ZHabiroCauchy` (filtration, increment-coherence
+   core, the cyclotomic completion ring `ZHabiroCompletion` as a
+   `CommRing`, and the limit element `zHabiroLimit`). The **sole remaining
+   algebraic gap** is *which* coefficient family $c_n$ reproduces the
+   actual $\Phi_q$ and *over which ring*. This is now characterized: the
+   power-series coefficients are the closed Euler form
+   $b_n = [z^n]\Phi_q = q^{-n}/\prod_{j=1}^n(1-q^{-j})$, and the cyclotomic
+   coordinates $c_n$ (the triangular change of basis into the $P_m$) are
+   **not** integral over $\mathbb{Z}[q^{\pm1}]$ — their denominators are
+   products of the cyclotomic factors $(1-q^{-j})$, so they live in the
+   **localisation** $S^{-1}\mathbb{Z}[q^{\pm1}]$ at
+   $S = \langle 1-q^{-j} : j\geq 1\rangle$ (the compute witness
+   `z-habiro-increment-probe`, verdict `cauchy-limit-exists-localised`:
+   $\Phi_q$'s poles at $z=q^k$ are the integrality obstruction). The Lean
+   `eulerCoeff` realises the $b_n$ in that localised ring, and
+   `braneMonic_coords_unique` proves the cyclotomic coordinates are
+   **unique** (the monic $g_m$ are linearly independent). What is **not**
+   yet closed — and is not faked — is the analytic$\leftrightarrow$algebraic
+   identification that this localised Euler family is the $c$ whose
+   `zHabiroLimit` equals the analytic $\Phi_q$.
+
 2. **$n_\star$ existence claim** — refuted across every probed form
    (above). The block kind remains `conjecture` because the algebraic
    Cauchy-limit half is still open.
