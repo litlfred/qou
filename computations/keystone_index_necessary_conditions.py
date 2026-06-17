@@ -6,7 +6,10 @@ q-Plancherel weights  W_λ = d_q(λ)²/[n]_q!.  Before building it, verify the
 NECESSARY conditions any valid index must satisfy (formalize-first pruning) — see
 docs/audits/2026-06-16-keystone-index-necessary-conditions.md.
 
-  C1 normalization  Σ_λ W_λ   (≈0.982 at q0, NOT 1 — open catch: [n]_q! vs Σd_q²)
+  C1 normalization  Σ_λ W_λ   (≈0.982 at q0 — W_λ is NOT a probability measure;
+                               expected, since the quantum dim d_q has no sum rule:
+                               Σ d_λ²=n! holds for ORDINARY dims, not d_q. Only open
+                               item: normalization convention d_q²/[n]! vs d_q²/Σd_q²)
   C2 conjugation    W_λ = W_λ' (EXACT — forces the chirality involution)
   C3 positivity     W_λ > 0    (genuine, not signed/virtual index)
 """
