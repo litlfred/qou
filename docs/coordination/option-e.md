@@ -151,6 +151,16 @@ near-match. Do NOT wire as a derivation.
     PROBE 2 (A=4 interface operator), the sibling A≥3 cluster's scope
     (#2369/#2371/#2372). Audit:
     `docs/audits/2026-06-16-option-e-probe4-kl-positivity-prune.md`.
+  - **(2026-06-17, PR #2416) PRUNE PREMISE NOW LEAN-PROVED.** The
+    mixed-sign premise behind the positivity prune is machine-checked
+    sorry-free: `PartitionOf5.deltaSign_mixed` (both ±1 occur) +
+    `PartitionOf5.binding_magnitude_eq_dim` (|Δ_λ|² = dim²) in
+    `QOU/BraidsAndKnots/S5SO3FiberAction.lean`. So the prune now rests on a
+    Lean fact, not just a Python check: a non-negative (KL) weight sum can
+    supply the magnitude |Δ_λ|=dim but never the mixed chirality sign. The
+    McKay 2I↔E₈ + A₅-branching anchors behind the chirality pairing are
+    likewise Lean-proved (PR #2424). No new closure mechanism — theory-ledger
+    tightening only.
 
 ## Anti-patterns (DO NOT repeat)
 
@@ -186,6 +196,8 @@ near-match. Do NOT wire as a derivation.
 | 2026-06-16 | Claude / `...delta-lambda-sign-chirality` (PR #2386) | Decompose the Δ_λ per-block factor | Δ_λ = sgn(w₀^{S_λ'})·dim = **magnitude (Wedderburn dim, chirality-invariant) × chirality sign** (= transpose = sign-twist = keystone's T₁↔T₂ parity; self-conj (3,1,1) ↔ A₅-split). Explains the PROBE-4 prune (sign exogenous). **NOTE (corrected #2388-era):** this is the Δ_λ *factor* structure, NOT a deuteron closure — see next row. |
 | 2026-06-16 | Claude / `...deuteron-closure-crosscheck` (this PR) | Run the canonical deuteron compute; reconcile closure framing | **CORRECTION.** `binding_energy_categorical_deuteron.py` → B(D)=0.380 MeV, **−82.9%** off: the Δ_λ Σ-formula does NOT close the deuteron. The closure is **E₀×q⁻¹ (+0.91%)** (PR #1367), a separate object. Corrected #2386 (banner) + the §Status "Reading" prose (above) which had conflated the two. No math retracted — the chirality decomposition + PROBE-4 prune stand. Audit `2026-06-16-deuteron-closure-crosscheck-and-correction.md`. |
 | 2026-06-16 | Claude / (infra) | doc-currency | Compute path `folio-assistant/computations/` → `computations/` swept (3675 files, PR #2388); the canonical compute is qou-top-level `computations/`. |
+| 2026-06-17 | Claude / `...keystone-lean-delta-lambda-chirality` (PR #2416) | Lean-prove the Δ_λ magnitude×chirality split | **LANDED (sorry-free).** `S5SO3FiberAction.lean`: `deltaSign`/`deltaLambda`, `deltaSign_sq_one`, `binding_magnitude_eq_dim` (|Δ_λ|=dim), `deltaSign_mixed` (the PROBE-4 prune premise), `electron_block`. Verified core-only (lean v4.24.0, exit 0); Mathlib build CI-deferred. The PROBE-4 KL-positivity prune now rests on a machine-checked mixed-sign fact. No fit, no compute rewire. |
+| 2026-06-17 | Claude / `...keystone-lean-mckay-e8-anchors` (PR #2424) | Lean-prove the McKay 2I↔E₈ + A₅-branching anchors | **LANDED (sorry-free).** `binaryIcosahedralIrrepDims` (affine E₈ marks) with Σdim²=120, Σmarks=h(E₈)=30, \|2I\|=4·h, dimE₈=248=8·31; `so3_to_a5_dim_splits`; `s5_to_a5_electron_block_splits` (6=3+3, T₁⊕T₂). Pins the spacetime-face arithmetic behind the chirality split. Verified core-only (exit 0). |
 
 ## Cross-refs
 
