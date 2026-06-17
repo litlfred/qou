@@ -283,7 +283,7 @@ def markov_trace_for_knot(
         )
 
     if precision == "f64":
-        return _markov_trace_f64(knot_name, float(q), convention)
+        return _markov_trace_f64(knot_name, float(q), convention)  # noqa: I8 — explicit f64-mode path (precision=="f64" branch)
     return _markov_trace_mpf(knot_name, q, convention, dps)
 
 

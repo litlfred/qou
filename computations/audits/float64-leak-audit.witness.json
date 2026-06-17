@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-16T22:20:41.879400+00:00",
-  "commitSha": "f7f2e5b8be96513db6eafb2c9788d57b056c8e3e",
+  "computedAt": "2026-06-17T00:48:36.337813+00:00",
+  "commitSha": "e6a6cbf10471aba2d18d64dd81690b70c1859fbc",
   "assertions": [
     {
       "name": "no_i8_violations",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 9,
+  "durationMs": 16,
   "computation": "float64-leak-audit",
   "scriptFile": "float64_leak_audit.py",
-  "scriptHash": "6e63fca6604b",
-  "scriptCommitSha": "f7f2e5b8be96513db6eafb2c9788d57b056c8e3e",
+  "scriptHash": "8a877a0fe286",
+  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,9 +41,9 @@
   },
   "data": {
     "by_result": {
-      "ok_no_leaks": 34,
-      "ok_with_display_or_fp": 11,
-      "i8_violation": 11
+      "ok_no_leaks": 35,
+      "ok_with_display_or_fp": 12,
+      "i8_violation": 9
     },
     "rows": [
       {
@@ -748,17 +748,17 @@
         "path": "computations/markov/markov_trace_for_knot.py",
         "substrate_banner": true,
         "hit_count": 2,
-        "violation_count": 1,
+        "violation_count": 0,
         "display_count": 1,
         "comparison_count": 0,
-        "noqa_count": 0,
+        "noqa_count": 1,
         "witness_emit_count": 0,
         "false_positive_count": 0,
         "hits": [
           {
             "line_number": 286,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "return _markov_trace_f64(knot_name, float(q), convention)"
           },
           {
@@ -768,7 +768,7 @@
             "code_snippet": "q_f64 = float(q_mpf)"
           }
         ],
-        "result": "i8_violation"
+        "result": "ok_with_display_or_fp"
       },
       {
         "path": "computations/markov/markov_trace_h4_natural_elements_prescreen.py",
@@ -1996,57 +1996,57 @@
         "path": "computations/substrate/knot_volumes.py",
         "substrate_banner": true,
         "hit_count": 7,
-        "violation_count": 7,
+        "violation_count": 0,
         "display_count": 0,
         "comparison_count": 0,
-        "noqa_count": 0,
+        "noqa_count": 7,
         "witness_emit_count": 0,
         "false_positive_count": 0,
         "hits": [
           {
             "line_number": 185,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "VOL_4_1_F64       = float(VOL_4_1_MPF)"
           },
           {
             "line_number": 186,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "VOL_BORROMEAN_F64 = float(VOL_BORROMEAN_MPF)"
           },
           {
             "line_number": 187,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "VOL_7_SQ_1_F64    = float(VOL_7_SQ_1_MPF)"
           },
           {
             "line_number": 188,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "VOL_5_2_F64       = float(VOL_5_2_MPF)"
           },
           {
             "line_number": 189,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "VOL_6_2_F64       = float(VOL_6_2_MPF)"
           },
           {
             "line_number": 190,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "VOL_8_11_F64      = float(VOL_8_11_MPF)"
           },
           {
             "line_number": 191,
             "pattern": "float_cast",
-            "context": "violation",
+            "context": "ok_noqa",
             "code_snippet": "CATALAN_G_F64     = float(CATALAN_G_MPF)"
           }
         ],
-        "result": "i8_violation"
+        "result": "ok_no_leaks"
       },
       {
         "path": "computations/symmetrizer_eigenvalue_verification_50dps.py",
