@@ -141,8 +141,6 @@ export default chapter({
         "flavor-split-substrate",
         "flavor-split-substrate-proof",
         "dressed-quark-numerology-at-q0",
-        "deuteron-binding-energy",
-        "deuteron-binding-energy-proof",
         // Phase 7 orphan reconnection (2026-05-25):
         "m-tau-knot-prediction",
       ],

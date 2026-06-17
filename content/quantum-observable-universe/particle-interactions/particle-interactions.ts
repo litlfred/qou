@@ -140,8 +140,6 @@ export default chapter({
 
         "hydrogen-derived-nf-table1-data",
         "hydrogen-derived-nf-table2-data",
-        "deuterium-derived-nf",
-        "deuterium-derived-binding-table-data",
         "helium4-derived-nf",
         "li6-derived-nf",
         "li6-derived-nf-table-data",
@@ -402,11 +400,6 @@ export default chapter({
       label: "sec:beta-stability-closure",
       blocks: [
         "intro-beta-stability-closure",
-        "deuteron-first-principles",
-        "deuteron-first-principles-table1-data",
-        "deuteron-first-principles-table2-data",
-        "deuteron-first-principles-table3-data",
-        "deuteron-first-principles-table4-data",
         "energy-scale-planck",
         "skein-binding-lagrangian",
         "beta-stability",
