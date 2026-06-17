@@ -34,6 +34,37 @@ import sys
 from mass_binding_dashboard import (  # noqa: E402
     _constants, _bond_type_L, _nucleon_msym, _ame_table, _row, GROUPS,
 )
+from math import factorial  # noqa: E402
+
+# ── option-e Δ_λ = sgn(w0^{S_λ'}) · dim(V_λ)  (main 6d68481e, q-independent) ──
+# replicated verbatim from docs/audits/scripts/option_e_delta_lambda_sign_chirality.py
+
+
+def _hook_dim(lam):
+    n = sum(lam)
+    prod = 1
+    for i, row in enumerate(lam):
+        for j in range(row):
+            arm = row - j - 1
+            leg = sum(1 for k in range(i + 1, len(lam)) if lam[k] > j)
+            prod *= (arm + leg + 1)
+    return factorial(n) // prod
+
+
+def _transpose(lam):
+    return tuple(sum(1 for r in lam if r > c) for c in range(lam[0])) if lam else ()
+
+
+def _delta_sign(lam):
+    s = 1
+    for b in _transpose(lam):
+        s *= (-1) ** (b * (b - 1) // 2)
+    return s
+
+
+def _delta_lambda(lam):
+    """option-e closure: Δ_λ = sgn(w0^{S_λ'}) · dim(V_λ)."""
+    return _delta_sign(lam) * _hook_dim(lam)
 
 
 def _cv(xs):
@@ -98,7 +129,63 @@ def main() -> int:
           "factor linearises the residual — the per-partition Δ_λ programme "
           "(GAP-A-3/4; deuteron closure main 6d68481e) is confirmed needed, "
           "not a global per-A rescale.")
+
+    _test_option_e_delta_lambda(me)
     return 0
+
+
+def _test_option_e_delta_lambda(me: float) -> None:
+    """Does the option-e closure Δ_λ = sgn(w0^{S_λ'})·dim(V_λ) recover the
+    A=3,4 binding, or only the deuteron (its closure anchor)?
+
+    Builds the per-partition Δ_λ-weighted binding in two natural conventions
+    B_Δ = m_e · Σ_λ y_λ · X_λ · Δ_λ, with X_λ = χ^λ_atom (gate form) and
+    X_λ = χ^λ_free − χ^λ_atom (defect form), at q₀. Compares to AME. The
+    deuteron is the closure anchor (match expected); A=3,4 are the genuine
+    out-of-sample test of whether sign·dim generalises."""
+    import mpmath as mp
+    from wedderburn_jones_markov import y_lambda_at
+    from reduced_block_kernel import chi_all_lambda_reduced_block
+    from mass_at_3A_proper import atom_braid_word_3A
+    from q_parameter import Q as Q0
+
+    iso = [("2H", 1, 1), ("3H", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
+    b_ame = {"2H": 2.224566, "3H": 8.481821, "3He": 7.718058, "4He": 28.295673}
+
+    print("\n### option-e Δ_λ = sgn(w0^{S_λ'})·dim(V_λ) — does it recover A=3,4?")
+    print("  B_Δ = m_e·Σ_λ y_λ X_λ Δ_λ;  X_λ = χ^λ_atom (gate) | χ^λ_free−χ^λ_atom (defect)")
+    print("| iso | A | B_AME | B_Δ atom | err atom | B_Δ defect | err defect |")
+    print("|---|--:|--:|--:|--:|--:|--:|")
+    for name, Z, N in iso:
+        n = 3 * (Z + N)
+        y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, Q0).items()}
+        chi_a = chi_all_lambda_reduced_block(
+            atom_braid_word_3A(Z, N, include_inter=True), n)
+        chi_f = chi_all_lambda_reduced_block(
+            atom_braid_word_3A(Z, N, include_inter=False), n)
+        s_atom = mp.mpf(0)
+        s_def = mp.mpf(0)
+        for lam, ca in chi_a.items():
+            dl = _delta_lambda(tuple(lam))
+            yl = y.get(tuple(lam), mp.mpf(0))
+            s_atom += yl * ca * dl
+            s_def += yl * (chi_f.get(tuple(lam), mp.mpf(0)) - ca) * dl
+        b_atom = float(mp.mpf(str(me)) * s_atom)
+        b_def = float(mp.mpf(str(me)) * s_def)
+        ba = b_ame[name]
+        ea = abs(b_atom - ba) / ba
+        ed = abs(b_def - ba) / ba
+        print(f"| {name} | {Z+N} | {ba:.4f} | {b_atom:.4f} | {ea*100:.1f}% "
+              f"| {b_def:.4f} | {ed*100:.1f}% |")
+    print("  Reading: the sign·dim Δ_λ does NOT reproduce AME in either natural "
+          "convention — and the DEUTERON itself misses (atom 117%, defect 45%), "
+          "though it is the closure's own anchor. So the canonical closure "
+          "(docs/audits/2026-05-26-delta-lambda-binding-formula-closure.md) uses a "
+          "normalisation / partition basis NOT captured by B = m_e·Σ_λ y_λ χ^λ Δ_λ "
+          "in these two readings. Net: option-e fixes the per-partition Δ_λ "
+          "VALUES (magnitude=dim, sign=chirality) but the binding ASSEMBLY "
+          "(which χ, which weights, normalisation) is the still-open part — a "
+          "concrete next-step target, not a drop-in across isotopes.")
 
 
 if __name__ == "__main__":
