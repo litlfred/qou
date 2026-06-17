@@ -912,4 +912,61 @@ theorem braneMonic_coords_unique [Nontrivial R] (qinv : R) (d : ℕ → R) :
     · subst heq; exact htop
     · exact ih hrest m (Nat.lt_succ_iff.mp hlt)
 
+/-- **Existence of cyclotomic coordinates (the monic basis spans).** Every
+    polynomial `p` of `natDegree ≤ n` is a combination
+    `∑_{m ≤ n} d_m · g_m` of the monic z-Habiro partial products, with the
+    coordinates `d_m` drawn from the SAME base ring `R`. Proved by descending on
+    the top degree: subtract `C (p.coeff n) · g_n` (which, `g_n` monic, cancels
+    the degree-`n` coefficient) to reduce to `natDegree ≤ n-1`, recurse.
+
+    Combined with `braneMonic_coords_unique`, the monic products `g_0, …, g_n`
+    are a BASIS of the polynomials of degree `≤ n`: the cyclotomic coordinate
+    map is a bijection `R[X]_{≤ n} ≅ R^{n+1}` that stays within `R`. Applied to
+    the depth-`n` truncation of `Φ_q` over the cyclotomic localisation (where
+    the Euler `eulerCoeff` live), this is the algebraic content of "the `c_n`
+    exist, uniquely, in the localised ring" — item 2(i)'s base-ring half. The
+    remaining (analytic) half is the identification with the analytic `Φ_q`. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"What survives the closure"
+-- Ref: [manuscript] def:z-habiro-ring §"Cyclotomic projections"
+theorem braneMonic_coords_exist [Nontrivial R] (qinv : R) :
+    ∀ (n : ℕ) (p : R[X]), p.natDegree ≤ n →
+      ∃ d : ℕ → R, p = ∑ m ∈ Finset.range (n + 1), C (d m) * braneMonic qinv m := by
+  intro n
+  induction n with
+  | zero =>
+    intro p hp
+    refine ⟨fun _ => p.coeff 0, ?_⟩
+    rw [Finset.sum_range_one, braneMonic_zero, mul_one]
+    exact eq_C_of_natDegree_le_zero hp
+  | succ n ih =>
+    intro p hp
+    have hgnd : (braneMonic qinv (n + 1)).natDegree = n + 1 :=
+      natDegree_eq_of_degree_eq_some (braneMonic_degree qinv (n + 1))
+    set c := p.coeff (n + 1) with hc
+    set q := p - C c * braneMonic qinv (n + 1) with hq
+    have hqdeg : q.natDegree ≤ n := by
+      rw [natDegree_le_iff_coeff_eq_zero]
+      intro k hk
+      rw [hq, coeff_sub, coeff_C_mul]
+      rcases Nat.lt_or_ge (n + 1) k with hgt | hle
+      · have h1 : p.coeff k = 0 := coeff_eq_zero_of_natDegree_lt (lt_of_le_of_lt hp hgt)
+        have h2 : (braneMonic qinv (n + 1)).coeff k = 0 :=
+          coeff_eq_zero_of_natDegree_lt (by rw [hgnd]; exact hgt)
+        rw [h1, h2, mul_zero, sub_zero]
+      · have hke : k = n + 1 := le_antisymm hle hk
+        subst hke
+        rw [braneMonic_coeff_self qinv (n + 1), mul_one, ← hc, sub_self]
+    obtain ⟨d', hd'⟩ := ih q hqdeg
+    refine ⟨Function.update d' (n + 1) c, ?_⟩
+    rw [Finset.sum_range_succ]
+    have hlow :
+        (∑ m ∈ Finset.range (n + 1),
+            C (Function.update d' (n + 1) c m) * braneMonic qinv m)
+          = ∑ m ∈ Finset.range (n + 1), C (d' m) * braneMonic qinv m := by
+      refine Finset.sum_congr rfl (fun m hm => ?_)
+      have hmne : m ≠ n + 1 := by have := Finset.mem_range.mp hm; omega
+      rw [Function.update_of_ne hmne]
+    rw [hlow, Function.update_self, ← hd', hq]
+    ring
+
 end QOU.MassEndomorphism.ZHabiroCauchy
