@@ -64,14 +64,19 @@ be available` in this sandbox. Only exact combinatorial invariants are used.
 
 ## What remains open (honest)
 
-1. **The candidate is now PROVEN Brunnian + nontrivial at 6 crossings**
-   (spherogram, stable path) — but **uniqueness over ALL Brunnian 3-links** (that
-   Borromean is *the* crossing-minimal one) is still a literature citation
-   (Rolfsen; Brunnian classification), not re-derived. Closing it needs an
-   enumeration of Brunnian 3-braids by crossing number confirming uniqueness at 6
-   — a finite combinatorial task (braid-word enumeration + the same stable
-   simplify-based Brunnian test; **must not** rely on the SnapPy hyperbolic
-   kernel, per the instability note above).
+1. **Minimality is now WITNESSED in the 3-braid setting** (was a literature
+   citation). [`b3_brunnian_minimality_enumeration.py`](../../computations/probes/b3_brunnian_minimality_enumeration.py)
+   enumerates every pure 3-braid of word length `2..6` and tests
+   nontrivial-Brunnian by the stable simplify path: **no nontrivial Brunnian
+   below 6 crossings** (lengths 3, 5 have zero pure braids — odd words can't be
+   pure; lengths 2, 4 yield none), and at length 6 exactly **4** braids are
+   nontrivial-Brunnian, **all** carrying the Borromean signature (3 components,
+   all pairwise linking numbers 0). So crossing-minimal nontrivial Brunnian =
+   Borromean = closure of `(σ₁σ₂⁻¹)³`. **Residual scope:** this is minimality
+   *among 3-braid closures* (the framework's 3-quark setting) — not the full
+   link-theoretic uniqueness over all links (not every link is a closed 3-braid);
+   that remains the literature result (Rolfsen). The SnapPy hyperbolic kernel was
+   never invoked (instability note above).
 2. **Braid-word vs link non-uniqueness.** "Minimal Brunnian 3-link" pins the
    *link* (Borromean) uniquely, but the *braid word* only up to Markov moves;
    `(σ₁σ₂⁻¹)³` is the canonical minimal-length representative. Fine for selecting
