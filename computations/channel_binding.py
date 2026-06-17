@@ -209,6 +209,76 @@ def B_pauli_ch(Z: int, N: int, route: Route = "numeric",
     return channel_binding(Z, N, PAULI_MAP, route, dps)
 
 
+# ── Generalization: per-channel WEIGHTS, and the k-body → λ lift ───────
+#
+# The pick-one channel assignment (``channel_map``) is the degenerate
+# case of a per-bond WEIGHTING over the three channels.  More generally a
+# bond carries a weight on each Hecke channel set by its spin-isospin
+# Young symmetry (Pauli):
+#
+#     B(K) = E₀ · Σ_bonds n_bond · Σ_ch w(bond, ch) · bond_E_factor(ch)
+#
+# **This is the n=2 special case of the framework's per-isotope formula.**
+# The two 2-nucleon Hecke channels (symmetric ``+q``, alternating
+# ``−q⁻¹``) ARE the two irreps of S₂.  For a k-nucleon cluster they
+# generalize to the partitions ``λ ⊢ k`` — the Wedderburn blocks of
+# H_k(q) — and the weighted sum becomes
+#
+#     B(K) = m_e · Σ_{λ ⊢ 3A} y_λ · χ^λ(β_K) · Δ_λ(K)        (per-isotope)
+#
+# i.e. ``Δ_λ`` is the k-body generalization of the per-channel weight
+# ``w(bond, ch)``.  The Pauli–Young structural claim is that ``Δ_λ`` is
+# the spin-isospin Young-symmetry (Pauli) projection onto λ.  Filling in
+# those weights for k ≥ 3 IS the open Δ_λ problem (gated; see
+# CLAUDE.md §"Δ_λ gate").  This library generalizes the STRUCTURE
+# (arbitrary per-bond/per-λ channel weights); the specific Pauli–Young
+# weights for k ≥ 3 are research-grade and NOT asserted here.
+
+#: A weighting over the three channels, per bond type.  ``ChannelWeights``
+#: maps bond -> {channel: weight}.  Missing channels default to 0.
+ChannelWeights = dict  # dict[str, dict[Channel, float | sp.Expr]]
+
+#: The Pauli pick-one assignment expressed as weights (B_pauli_ch).
+PAULI_WEIGHTS: ChannelWeights = {
+    "pp": {"alt": 1}, "nn": {"alt": 1}, "pn": {"std": 1},
+}
+
+#: The current production kernel as weights (all-standard).
+STANDARD_WEIGHTS: ChannelWeights = {
+    "pp": {"std": 1}, "nn": {"std": 1}, "pn": {"std": 1},
+}
+
+
+def weighted_channel_binding(Z: int, N: int, weights: ChannelWeights | None = None,
+                             route: Route = "numeric", dps: int = _DEFAULT_DPS):
+    """B(K) [MeV] for an arbitrary per-bond-type channel **weighting**
+    (the generalization of :func:`channel_binding`'s pick-one map).
+
+    ``weights[bond][channel]`` weights that channel's binding factor; the
+    per-channel factor is ``log(1/f)`` when the channel binds (0<f<1 at
+    q₀) and 0 otherwise.  :data:`PAULI_WEIGHTS` reproduces
+    :func:`B_pauli_ch`; :data:`STANDARD_WEIGHTS` the production kernel.
+    Downstream consumers supply their own (e.g. a Pauli–Young projection)
+    — this is the n=2 hook for the general ``Δ_λ`` weighting.
+    """
+    w = weights or PAULI_WEIGHTS
+    cnt = bond_counts(Z, N)
+    with mp.workdps(dps):
+        e0 = E0(dps)
+        total = mp.mpf(0)
+        for bond in ("pp", "pn", "nn"):
+            if cnt[bond] == 0:
+                continue
+            fch = bond_channels(bond, "numeric", dps)
+            bond_sum = mp.mpf(0)
+            for ch, wt in (w.get(bond, {}) or {}).items():
+                f = fch[ch]
+                factor = mp.log(1 / f) if (0 < f < 1) else mp.mpf(0)
+                bond_sum += mp.mpf(str(wt)) * factor
+            total += cnt[bond] * bond_sum
+        return e0 * total
+
+
 # ── qCLT route (preserved) ────────────────────────────────────────────
 
 def qclt_binding(Z: int, N: int, colour_weighted: bool = True,
