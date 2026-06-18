@@ -78,7 +78,21 @@ also informs A0 (the higher-tower braid should inherit the same derivation).
 ## Status
 
 - [x] #2453 reconciliation merged (n=3 baseline 6.8%, object corrected to first-principles).
-- [ ] A0 — corpus-ground the level-6 proton/neutron braid embedding (formalize-first).
-- [ ] A1 — typed-braid χ_λ compute at λ⊢6.
-- [ ] A2 — run the n=6 gate; report residual vs 6.8% (TIERED).
-- [ ] Path B — substrate derivation of the uud/udd crossing model.
+- [x] **A0 — DONE: the level-6 braid is an OPEN construction (formalize-first PRUNE).**
+  Verdict + evidence in [`docs/audits/2026-06-18-keystone-n6-gate-a0-braid-construction-open.md`](../audits/2026-06-18-keystone-n6-gate-a0-braid-construction-open.md):
+  the corpus defines `𝓑_p`, `𝓑_n` only at H₃; the framework's "brane tower" is
+  the categorical jet-prolongation tower and/or the z-Habiro Φ_q mass/binding
+  tower (level-selection `n_⋆` refuted in six forms; Cauchy-limit open) — **neither
+  is a strand/crossing tower of `χ_λ(𝓑_n − 𝓑_p)`**. Higher sinh orders come from
+  more crossings (Laurent degree), not more strands; the candidate constructions
+  (Markov stabilization / higher-A atomic assembly / jet lift) each fail to supply
+  the level-6 object canonically. **The n=6 scan is pruned** — inventing a braid
+  would be an ungrounded ansatz.
+- [~] A1 — typed-braid χ_λ compute at λ⊢6: **BLOCKED on A0** (no canonical braid).
+- [~] A2 — run the n=6 gate: **BLOCKED on A1**.
+- [ ] Path B — substrate derivation of the uud/udd crossing model (now the
+  load-bearing direction: a substrate-derived crossing structure is what would
+  canonically dictate how the braid extends, closing A0 from first principles).
+- [ ] Open structural question surfaced by A0: are the §4a bar-odd q-Bessel tower
+  (Q_β) and the z-Habiro Φ_q tower (mass/binding) the same construction? If so,
+  q-Bessel contiguity ↔ z-Habiro Cauchy-limit constrain each other.
