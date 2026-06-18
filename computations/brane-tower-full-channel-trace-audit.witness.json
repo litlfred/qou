@@ -1,10 +1,10 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-18T15:50:37.010520+00:00",
+  "computedAt": "2026-06-18T15:55:22.434270+00:00",
   "computation": "brane-tower-full-channel-trace-audit",
   "scriptFile": "brane_tower_full_channel_trace_audit.py",
-  "scriptHash": "6fb18879cb77",
+  "scriptHash": "78fae8e5e688",
   "contentBlock": "prop:mass-endomorphism-tower",
   "description": "Channel-level audit of the brane-tower per-generator argument. Decomposes |V\u0302_i| into std/sym/alt H_3 channels and records: (1) the genuine localized Jones\u2013Markov trace Vol_q^({i}) = std channel = 1.146 > q\u2080 for proton \u03c3\u2080 (the divergent one); (2) the bounded |V\u0302_i^full| is the REGULAR-representation trace (Wedderburn\u2013Artin w_\u03bb=d_\u03bb\u00b2/|S_3|), forced by the mass being a left-mult endomorphism trace (def:hecke-mass-element); (3) \u220fstd = Jones\u2013Markov tr_M exactly while \u220ffull is ~10% off \u2014 the descended term labeled 'base-level Markov trace' is computed in the regular-rep convention; (4) a weight-convention discrepancy (classical d_\u03bb\u00b2/|S_3| in atom-mass-full-hecke.md vs q-deformed (dim_q)\u00b2/[3]_q! in the production code). Documentation/consistency audit only \u2014 no mass table is rewired.",
   "parameters": {
