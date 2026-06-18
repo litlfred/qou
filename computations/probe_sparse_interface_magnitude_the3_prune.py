@@ -51,7 +51,8 @@ CHI = {"tritium": "chi-tritium-h9-at-q0-50dps.witness.json",
 
 
 def load(fname):
-    d = json.load(open(HERE / fname))
+    with open(HERE / fname, "r", encoding="utf-8") as fh:
+        d = json.load(fh)
     return {tuple(r["partition"]): {"y": mp.mpf(r["y_lambda"]),
                                     "chi": mp.mpf(r["chi_lambda"])}
             for r in d["by_partition"]}
