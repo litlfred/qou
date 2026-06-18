@@ -444,6 +444,49 @@ const CONCLUSION_FIELD =
 const DERIVES =
   /\b(trans|Iff\.intro|linarith|nlinarith|obtain|rcases|calc|rw\b|simp\b|mpr|mp\b|constructor|refine|apply)\b/;
 
+/**
+ * The conclusion at the *type-ascription* colon — the FIRST top-level `:`
+ * (binders are always bracketed, so the first depth-0 `:` separates them from
+ * the conclusion). Unlike `conclusionOf` (last top-level `:`), this is robust
+ * to a conclusion that itself contains a binder colon, e.g. `∃ n : ℕ, …` —
+ * where last-colon would wrongly slice off everything before the `∃`'s colon.
+ */
+function conclusionTypeAscription(sig: string): string {
+  let depth = 0;
+  for (let i = 0; i < sig.length; i++) {
+    const c = sig[i];
+    if (c === "(" || c === "[" || c === "{" || c === "⦃") depth++;
+    else if (c === ")" || c === "]" || c === "}" || c === "⦄") depth--;
+    else if (c === ":" && depth === 0 && sig[i + 1] !== "=" && sig[i - 1] !== ":")
+      return sig.slice(i + 1).trim();
+  }
+  return "";
+}
+
+/**
+ * True when the conclusion's *top-level* connective is `↔`. Balanced
+ * parenthesised groups are stripped first, so a `↔` nested inside a conjunct
+ * (e.g. `… ∧ (a ↔ b)`) does NOT count — only an iff that is the whole
+ * conclusion. A tuple-projection `⟨ctx.fwd, ctx.bwd⟩` of such a conclusion is
+ * the *legitimate* `§3b-cond` pattern: it derives the iff from its two
+ * direction fields (the anonymous `Iff.intro`), so the class carries the two
+ * implications, not the conclusion. The `DERIVES` filter above misses the
+ * anonymous constructor, hence this explicit exemption.
+ */
+function topLevelIff(concl: string): boolean {
+  let s = concl;
+  let prev = "";
+  while (prev !== s) {
+    prev = s;
+    s = s.replace(/\([^()]*\)/g, "");
+  }
+  return s.includes("↔") && !s.includes("∧");
+}
+
+/** A two-field anonymous tuple `⟨a.x, b.y⟩` — the arity of `Iff.intro`. */
+const TWO_FIELD_TUPLE =
+  /^⟨\s*[a-z][\w']*\.[A-Za-z_][\w']*\s*,\s*[a-z][\w']*\.[A-Za-z_][\w']*\s*⟩$/;
+
 function detectSelfAssuming(d: Decl): Hit | undefined {
   if (!PROVABLE_KINDS.test(d.kind)) return undefined;
   const body = d.body.trim();
@@ -464,6 +507,18 @@ function detectSelfAssuming(d: Decl): Hit | undefined {
   if (!pat) return undefined;
   if (pat !== "tuple-projection" && field && !CONCLUSION_FIELD.test(field))
     return undefined;
+  // Precision: exempt a two-field tuple-projection that derives a top-level
+  // `↔` from its direction fields — the legitimate conditional-class pattern
+  // (`q_bkm_criterion`, `ns_obstruction_tower`), not a self-assuming defect.
+  if (
+    pat === "tuple-projection" &&
+    TWO_FIELD_TUPLE.test(body) &&
+    topLevelIff(conclusionTypeAscription(d.sig))
+  ) {
+    const h = mk(d, "proof-no-self-assuming-projection", pat, true);
+    h.exempt_reason = "legitimate iff-from-directions conditional-class";
+    return h;
+  }
   return mk(d, "proof-no-self-assuming-projection", pat, false);
 }
 
