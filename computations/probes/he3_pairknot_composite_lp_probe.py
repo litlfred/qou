@@ -122,11 +122,10 @@ def main() -> int:
     dHe_cited = mp.mpf(str(cc_d["derived_coulomb_dHe_MeV"]))
     dHe_recomputed = ratio_tanh * B_pp                  # ratio·B_pp at CURRENT q0
     dHe_drift = abs(dHe_recomputed - dHe_cited)
-    # The cited charge-coulomb witness predates the 2026-05-28 proton-anchor q0
-    # re-pin: its stored ratio = tanh(ln q0) is 0.10396371005 vs the current
-    # 0.10396372147 (~1.1e-8), so its dHe drifts ~2.6e-8. My fresh recompute is
-    # at the CURRENT q0; the two are consistent MODULO that re-pin drift (a
-    # stale-witness flag, surfaced below), and the 31% fraction is robust to it.
+    # Guard against a stale cited witness: tolerance 1e-6 absorbs a q0-repin
+    # drift between witnesses computed at different times. The charge-coulomb
+    # witness was refreshed at the current q0 in PR #2478 (drift now ~1e-17); if
+    # a future re-pin makes it drift again (>1e-10) cc_witness_stale re-fires.
     dHe_consistent = dHe_drift < mp.mpf("1e-6")
     cc_witness_stale = dHe_drift > mp.mpf("1e-10")
 
@@ -181,8 +180,8 @@ def main() -> int:
         {"name": "pairknot_coulomb_consistent_modulo_qrepin",
          "computed": 1 if dHe_consistent else 0, "expected": 1, "tolerance": 0,
          "note": f"ratio·B_pp reproduces charge_coulomb_tn3he_derived dHe (Q_pp=+1) "
-                 f"to {mp.nstr(dHe_drift, 3)} — the residual is the q0-repin drift "
-                 f"(cited witness predates 2026-05-28; stale-witness flag below)"},
+                 f"to {mp.nstr(dHe_drift, 3)} at current q0 "
+                 f"(witness refreshed in PR #2478)"},
         {"name": "pairknot_correct_sign_vs_spurious",
          "computed": 1 if pairknot_correct_sign else 0, "expected": 1, "tolerance": 0,
          "note": "composite Coulomb reduces ³He (right sign), opposite to the "
@@ -253,9 +252,12 @@ def main() -> int:
             "charge_coulomb_witness_qrepin_drift": mp.nstr(dHe_drift, 6),
             "charge_coulomb_witness_stale": cc_witness_stale,
             "stale_note": (
-                "charge-coulomb-tn3he-derived.witness.json stored ratio/dHe drift "
-                "~1e-8 from current q0 (tanh ln q0): it predates the 2026-05-28 "
-                "proton-anchor re-pin. Refresh recommended; 31% conclusion robust."
+                "charge-coulomb-tn3he-derived.witness.json is STALE (drift "
+                f"{mp.nstr(dHe_drift, 3)} > 1e-10 from current q0; predates the "
+                "2026-05-28 re-pin) — refresh recommended."
+                if cc_witness_stale else
+                "charge-coulomb-tn3he-derived.witness.json is current (drift "
+                f"{mp.nstr(dHe_drift, 3)}); refreshed in PR #2478."
             ),
         },
         "assertions": assertions,
