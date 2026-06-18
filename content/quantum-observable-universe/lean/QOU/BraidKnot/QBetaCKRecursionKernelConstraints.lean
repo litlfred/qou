@@ -28,6 +28,13 @@ lemmas **constrain** it without deriving it:
      fitted `c_4 ≈ -0.972` (companion probe);
   6. `a_1` is bar-odd (inherits `c_3`'s bar-antisymmetry, the #1887 Reeb-sinh
      parity wall) — pruning the kernel search to bar-odd leading coefficients.
+  7. **C13 refutation (PR #2465):** the #1622 mode→ladder bridge, with the
+     ladder seeded *linearly* from the even-in-ℏ part of `Δtr_M`, cannot
+     produce `c_3 = -2`. Its two principled seedings give `c_3 = -100/(77 b)`
+     (raw) and `c_3 = -175/(144 b)` (#1602 bar-even projection); each reaches
+     the `J_Hopf(1) = -2` target only at a *specific* `b`, and the two required
+     values differ (`50/77 ≠ 175/288`), so no single `b` lets the bridge hit
+     `-2`. The surviving `f` is non-linear in `Δtr_M`.
 
 LaTeX label: `prop:qbeta-ck-recursion-kernel-constraints`
 
@@ -35,6 +42,8 @@ LaTeX label: `prop:qbeta-ck-recursion-kernel-constraints`
 - Phase reframe: PR #1887 (`QBetaReebSinhParity`, `cos(Φ(u))`).
 - c_k recursion block (open kernel): `prop:q-beta-c-k-recursion-from-habiro-q-difference`.
 - c_2 = -1: PR #1602 (bar-even constraint).
+- C13 bridge refutation: PR #2465 (`habiro_mode_to_ladder_bridge.py` +
+  `habiro-mode-to-ladder-bridge.witness.json`); refuted-class map row C13.
 -/
 
 namespace QOU.BraidKnot
@@ -85,5 +94,36 @@ theorem ck_a1_bar_odd (c₃ a₁ : ℝ → ℝ)
     (hdef : ∀ η, a₁ η = -c₃ η) (hodd : ∀ η, c₃ (-η) = -c₃ η) (η : ℝ) :
     a₁ (-η) = -a₁ η := by
   rw [hdef, hodd, hdef]
+
+/-- **C13 (raw seeding) — the bridge `c₃ = -100/(77 b)` hits `-2` only at
+`b = 50/77`.** The #1622 mode→ladder bridge seeded by the raw even-in-ℏ part of
+`Δtr_M`, scale-fixed to `c₂ = -1`, yields `c₃ = -100/(77 b)` (PR #2465 witness).
+Forcing it to the `J_Hopf(1) = -2` target pins `b`. -/
+theorem bridge_c3_raw_requires_b (b : ℝ) (hb : b ≠ 0)
+    (h : -100 / (77 * b) = -2) : b = 50 / 77 := by
+  rw [div_eq_iff (mul_ne_zero (by norm_num) hb)] at h
+  linarith
+
+/-- **C13 (#1602 bar-even seeding) — the bridge `c₃ = -175/(144 b)` hits `-2`
+only at `b = 175/288`.** Same bridge with the bar-even projection of `Δtr_M`. -/
+theorem bridge_c3_bareven_requires_b (b : ℝ) (hb : b ≠ 0)
+    (h : -175 / (144 * b) = -2) : b = 175 / 288 := by
+  rw [div_eq_iff (mul_ne_zero (by norm_num) hb)] at h
+  linarith
+
+/-- **C13 inconsistency — the two seedings need different `b`.** `50/77 ≠
+175/288`, so the raw and bar-even seedings cannot both reach `-2` at one `b`. -/
+theorem bridge_c3_seedings_inconsistent : (50 : ℝ) / 77 ≠ 175 / 288 := by
+  norm_num
+
+/-- **C13 refutation — the `Δtr_M`-seeded linear bridge cannot produce
+`c₃ = -2`.** If both principled seedings reached `-2` at a single `b`, then
+`b = 50/77` and `b = 175/288` simultaneously — impossible. Hence the mode→ladder
+`f` is non-linear in `Δtr_M` (refuted-class map row C13, PR #2465). -/
+theorem bridge_cannot_reach_c3_target (b : ℝ) (hb : b ≠ 0)
+    (hraw : -100 / (77 * b) = -2) (hbar : -175 / (144 * b) = -2) : False := by
+  have h1 := bridge_c3_raw_requires_b b hb hraw
+  have h2 := bridge_c3_bareven_requires_b b hb hbar
+  rw [h1] at h2; norm_num at h2
 
 end QOU.BraidKnot
