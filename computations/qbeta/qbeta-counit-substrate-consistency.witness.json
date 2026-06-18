@@ -1,0 +1,87 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-18T03:04:13.685741+00:00",
+  "commitSha": "a3e568203b14c0680d2e177338c660dca9c6fa08",
+  "assertions": [
+    {
+      "name": "counit_eps_E0_eq_closed_form",
+      "computed": "0.78364580283916750846234267701103080941422750033728",
+      "expected": "0.78364580283916750846234267701103080941422750033728",
+      "passed": true,
+      "tolerance": 1e-40,
+      "unit": "MeV",
+      "source": "Lean Qbeta_closed (qbeta_energy_scale.lean)"
+    },
+    {
+      "name": "counit_residual_pct",
+      "computed": 0.16775364855854852,
+      "expected": 0.17,
+      "passed": true,
+      "tolerance": 0.02,
+      "unit": "percent",
+      "source": "PR #2363 audit (+0.17 %)"
+    },
+    {
+      "name": "trace_substrate_residual_pct",
+      "computed": -55.83855192757535,
+      "expected": -56.0,
+      "passed": true,
+      "tolerance": 1.0,
+      "unit": "percent",
+      "source": "PR #2363 audit (−56 %)"
+    },
+    {
+      "name": "counit_residual_within_N0_bound",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "ℏ_q²/(1−ℏ_q²) ≈ 1 % truncation bound"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-counit-substrate-consistency",
+  "scriptFile": "qbeta_counit_substrate_consistency.py",
+  "scriptHash": "ba8fc62391d9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Q_β counit/trace consistency at the proton-anchored substrate q₀: reproduces the merged PR #2363 +0.17 % counit and −56 % trace signatures at the live anchor (confirming non-staleness), and pins the N=0 truncation remainder bound O(ℏ_q²/(1−ℏ_q²)) ≈ 1 % that the open convergence leg must respect.",
+  "auditOnly": "docs/audits/2026-06-18-qbeta-counit-substrate-consistency.md",
+  "parameters": {
+    "dps": 50,
+    "anchor": "proton (m_p/m_e identity, re-pin 2026-05-28)",
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "m_e_MeV": "0.51099895",
+    "codata_qbeta_MeV": "0.78233341"
+  },
+  "data": {
+    "h": "0.20906032199559367898186263646596735026162330164748",
+    "hbar_q_sq": "0.0098171885139859843937064868940494814450996405846074",
+    "E0_MeV": "4.1859808219305764288450475107229242858863715528435",
+    "z_substrate": "0.4993203340335612717689663862757371401611757978999",
+    "eps_reduction_content": "-0.18720721287914302387274009369416583442845242570514",
+    "trM_at_z_substrate": "-0.082534960695553057490991629395296851719133299900801",
+    "gap_eps_minus_trM": "-0.10467225218358996638174846429886898270931912580434",
+    "counit_qbeta_MeV": "0.78364580283916750846234267701103080941422750033728",
+    "trace_qbeta_MeV": "0.3454897626103790076241354637280895883856897782928",
+    "counit_residual_pct": 0.16775364855854852,
+    "trace_residual_pct": -55.83855192757535,
+    "N0_truncation_bound_pct": 0.9914521238005402,
+    "E0_derived_vs_cal_gap_pct": 0.16775364855854852
+  },
+  "caveats": [
+    "N=0 only. The counit value ε(Δ)·𝔈₀ is built from the N=0 neutron−proton normal-form difference; its +0.17 % deviation from CODATA is the N=0 truncation remainder, NOT a fit. The open convergence leg (prove the full per-braid mass-tower difference m(n)−m(p)−m_e → ε(Δ)·𝔈₀, remainder ≤ O(ℏ_q²/(1−ℏ_q²))) is unproved here and is the named structural target — this witness only pins its invariant.",
+    "The −56 % trace value is the WRONG functional (Markov trace, a static-loop mass), not a truncation error — it documents why the counit, not the trace, is the correct transition functional (merged PR #2363)."
+  ]
+}
