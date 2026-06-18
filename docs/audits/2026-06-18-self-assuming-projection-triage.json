@@ -1,0 +1,1642 @@
+{
+ "audit": "self-assuming-projection-triage",
+ "predecessor_pr": 2462,
+ "predecessor_witness": "docs/audits/2026-06-17-lean-vacuity-axiom-audit.json",
+ "generated": "2026-06-18",
+ "method": "read-only structural triage of the 201 proof-no-self-assuming-projection candidates; field-projections degenerate by typing argument; tuple-projections split by top-level-iff-from-directions heuristic + hand verification",
+ "totals": {
+  "candidates": 201,
+  "degenerate": 199,
+  "degenerate_field": 114,
+  "degenerate_tuple_split": 85,
+  "legitimate": 2
+ },
+ "legitimate": [
+  {
+   "tree": "FluidDynamics",
+   "file": "QOU/FluidDynamics/ns_obstruction_tower.lean",
+   "line": 46,
+   "decl": "ns_obstruction_tower",
+   "pattern": "tuple-projection",
+   "verdict": "LEGIT"
+  },
+  {
+   "tree": "FluidDynamics",
+   "file": "QOU/FluidDynamics/q_bkm_criterion.lean",
+   "line": 69,
+   "decl": "q_bkm_criterion",
+   "pattern": "tuple-projection",
+   "verdict": "LEGIT"
+  }
+ ],
+ "candidates": [
+  {
+   "tree": "content",
+   "file": "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.lean",
+   "line": 75,
+   "decl": "r_matrix_braiding_structure",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "content",
+   "file": "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.lean",
+   "line": 90,
+   "decl": "braid_rep_from_R_check",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "content",
+   "file": "content/quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.lean",
+   "line": 98,
+   "decl": "acoustic_horizon_regularity",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "content",
+   "file": "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.lean",
+   "line": 91,
+   "decl": "discrete_vortex_spectrum",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "AlgebraicSubstrate",
+   "file": "QOU/AlgebraicSubstrate/JointGaloisBraidDischarged.lean",
+   "line": 35,
+   "decl": "joint_action_discharged",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "AlgebraicSubstrate",
+   "file": "QOU/AlgebraicSubstrate/JointGaloisBraidFigure8.lean",
+   "line": 36,
+   "decl": "figure_8_joint_action",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "AlgebraicSubstrate",
+   "file": "QOU/AlgebraicSubstrate/TwoFiltrationBridgeGeneral.lean",
+   "line": 37,
+   "decl": "bridge_map_general",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "AlgebraicSubstrate",
+   "file": "QOU/AlgebraicSubstrate/TwoFiltrationBridgeSmallCases.lean",
+   "line": 36,
+   "decl": "bridge_small_cases",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "AlgebraicSubstrate",
+   "file": "QOU/AlgebraicSubstrate/collatz_contact_boundary.lean",
+   "line": 97,
+   "decl": "collatz_contact_boundary",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "AlgebraicSubstrate",
+   "file": "QOU/AlgebraicSubstrate/collatz_no_cycles.lean",
+   "line": 101,
+   "decl": "collatz_no_cycles",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "AlgebraicSubstrate",
+   "file": "QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean",
+   "line": 54,
+   "decl": "qou_obstruction_reduction",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "AppendixSurreals",
+   "file": "QOU/AppendixSurreals/B1Figure8RowTheorem.lean",
+   "line": 29,
+   "decl": "b1_figure_8_row",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "AppendixSurreals",
+   "file": "QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean",
+   "line": 28,
+   "decl": "b1_hyperbolic_rows",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "AppendixSurreals",
+   "file": "QOU/AppendixSurreals/B1SoftSharpnessTheorem.lean",
+   "line": 31,
+   "decl": "b1_soft_sharpness",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "AppendixSurreals",
+   "file": "QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean",
+   "line": 28,
+   "decl": "b1_torus_knot_rows",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "AppendixSurreals",
+   "file": "QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean",
+   "line": 34,
+   "decl": "depth_2_identification",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/AxialCoupling.lean",
+   "line": 166,
+   "decl": "sym_trace_ordering_independent",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/PauliWitness/witness_12C.lean",
+   "line": 60,
+   "decl": "witness_12C",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/PauliWitness/witness_4He.lean",
+   "line": 54,
+   "decl": "witness_4He",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/PauliWitness/witness_8Be.lean",
+   "line": 59,
+   "decl": "witness_8Be",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/archimedean_braid_structure.lean",
+   "line": 76,
+   "decl": "descartes_braid_structure",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/archimedean_hartree_derivation.lean",
+   "line": 70,
+   "decl": "archimedean_hartree_derivation",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/beta_decay_transfer_matrix.lean",
+   "line": 126,
+   "decl": "beta_decay_transfer_matrix",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/bohr_radius_categorical.lean",
+   "line": 57,
+   "decl": "bohr_radius_categorical",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/borromean_hopf_energy_crossover.lean",
+   "line": 130,
+   "decl": "borromean_hopf_energy_crossover",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/em_coupling_projection.lean",
+   "line": 99,
+   "decl": "em_coupling_projection",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/eos_borromean_cfl.lean",
+   "line": 165,
+   "decl": "eos_borromean_cfl",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/genus_filtration_ideal.lean",
+   "line": 106,
+   "decl": "genus_filtration_ideal",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/genus_maximal_descent.lean",
+   "line": 53,
+   "decl": "genus_maximal_descent",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/gram_weighted_qvalue.lean",
+   "line": 139,
+   "decl": "gram_weighted_qvalue",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/knot_operator_selection.lean",
+   "line": 83,
+   "decl": "knot_operator_selection",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/nuclear_spin_parity.lean",
+   "line": 48,
+   "decl": "nuclear_spin_parity",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/parity_violation_skein.lean",
+   "line": 116,
+   "decl": "parity_violation_skein",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/reidemeister_action_table.lean",
+   "line": 162,
+   "decl": "reidemeister_action_table",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/shell_structure_eigenvalues.lean",
+   "line": 172,
+   "decl": "shell_structure_eigenvalues",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/skein_finiteness_bound.lean",
+   "line": 130,
+   "decl": "skein_finiteness_bound",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/skein_polynomial_transfer_matrix.lean",
+   "line": 113,
+   "decl": "skein_polynomial_transfer_matrix",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/skew_poisson_integration.lean",
+   "line": 69,
+   "decl": "skew_poisson_integration",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Archimedean",
+   "file": "QOU/Archimedean/torus_knot_shell_binding.lean",
+   "line": 121,
+   "decl": "torus_knot_shell_binding",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ArchimedeanUniverse",
+   "file": "QOU/ArchimedeanUniverse/brings_euler_characteristic.lean",
+   "line": 49,
+   "decl": "brings_euler_characteristic",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "ArchimedeanUniverse",
+   "file": "QOU/ArchimedeanUniverse/brings_riemann_hurwitz.lean",
+   "line": 51,
+   "decl": "brings_riemann_hurwitz",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "ArchimedeanUniverse",
+   "file": "QOU/ArchimedeanUniverse/heisenberg_commutator.lean",
+   "line": 61,
+   "decl": "heisenberg_commutator",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "ArchimedeanUniverse",
+   "file": "QOU/ArchimedeanUniverse/mi_sw_cartan_reduction.lean",
+   "line": 47,
+   "decl": "mi_sw_cartan_reduction",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BaryonWeight",
+   "file": "QOU/BaryonWeight/beta4_hook.lean",
+   "line": 64,
+   "decl": "beta4_hook",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/AtomKnot/unique.lean",
+   "line": 82,
+   "decl": "unique",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/Cl3Zeta5PslqIndependence.lean",
+   "line": 37,
+   "decl": "pslq_independence",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/HeckeBaerStarGeneric/hecke_baer_star_generic.lean",
+   "line": 108,
+   "decl": "hecke_baer_star_generic",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/KnotIndexedConvolutionGrid.lean",
+   "line": 35,
+   "decl": "grid_placement",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/KnotOperatorEnergy/unique.lean",
+   "line": 84,
+   "decl": "unique",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/LevelSufficiency.lean",
+   "line": 104,
+   "decl": "LevelSufficiency",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/QHeckeSeminormalCharacterClosure.lean",
+   "line": 33,
+   "decl": "character_closure_holds",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/SixTermPerDerivationWeights/binding_assembly.lean",
+   "line": 47,
+   "decl": "binding_assembly",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/SubstrateEWHypotheses.lean",
+   "line": 119,
+   "decl": "g_eq_pi_h_substrate_hypothesis",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/SubstrateEWHypotheses.lean",
+   "line": 139,
+   "decl": "v_ratio_eq_log_S3_hypothesis",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/SubstrateEWHypotheses.lean",
+   "line": 160,
+   "decl": "scalar_gauge_ratio_eq_six_fifths_hypothesis",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/UnstableAtom/decay_channel.lean",
+   "line": 105,
+   "decl": "decay_channel",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/algebraic_quantum_volume_specialization.lean",
+   "line": 62,
+   "decl": "algebraic_quantum_volume_specialization",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/chirality_frobenius_self_pairing.lean",
+   "line": 40,
+   "decl": "chirality_frobenius_self_pairing",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/confined_knot_binding.lean",
+   "line": 59,
+   "decl": "confined_knot_binding",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/e_infinity_identifications.lean",
+   "line": 83,
+   "decl": "e_infinity_identifications",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/frobenius_antipode_unifies.lean",
+   "line": 39,
+   "decl": "frobenius_antipode_unifies",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/hoefsmit_scattering_pipeline.lean",
+   "line": 133,
+   "decl": "hoefsmit_scattering_pipeline",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/jet_prefix_gb_filtration.lean",
+   "line": 40,
+   "decl": "jet_prefix_gb_filtration",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/joint_tower_sdp_confinement.lean",
+   "line": 103,
+   "decl": "joint_tower_sdp_confinement",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/knot_factor_spectral_derivation.lean",
+   "line": 61,
+   "decl": "plancherelWeight_sum_eq_one",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/knot_factor_spectral_derivation.lean",
+   "line": 70,
+   "decl": "knot_factor_spectral_derivation",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/knot_mass_unified.lean",
+   "line": 87,
+   "decl": "knot_mass_unified",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/mass_formula_regime_switching.lean",
+   "line": 97,
+   "decl": "mass_formula_regime_switching",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/schur_weyl_mass_decomposition.lean",
+   "line": 57,
+   "decl": "schur_weyl_mass_decomposition",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/six_term_mass_formula_complete.lean",
+   "line": 43,
+   "decl": "six_term_mass_formula_complete",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/sorting_color_energy.lean",
+   "line": 43,
+   "decl": "sorting_color_energy",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/spectral_sequence_h3_explicit.lean",
+   "line": 56,
+   "decl": "spectral_sequence_h3_explicit",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/terms_2_6_higher_operations.lean",
+   "line": 64,
+   "decl": "terms_2_6_higher_operations",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/volume_perturbation.lean",
+   "line": 57,
+   "decl": "volume_perturbation",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/wedderburnWeightCanonical.lean",
+   "line": 93,
+   "decl": "wedderburnWeightCanonical",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/wedderburn_trace_identity.lean",
+   "line": 50,
+   "decl": "wedderburn_trace_identity",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidKnot",
+   "file": "QOU/BraidKnot/wigner2_coefficient.lean",
+   "line": 115,
+   "decl": "wigner2_coefficient",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Braiding",
+   "file": "QOU/Braiding/beta_stability.lean",
+   "line": 43,
+   "decl": "beta_stability",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Braiding",
+   "file": "QOU/Braiding/fermion_boson_knot_link.lean",
+   "line": 51,
+   "decl": "fermion_boson_knot_link",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Braiding",
+   "file": "QOU/Braiding/hecke_mass_trace.lean",
+   "line": 88,
+   "decl": "hecke_mass_trace",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Braiding",
+   "file": "QOU/Braiding/mobius_energy.lean",
+   "line": 49,
+   "decl": "mobius_energy",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Braiding",
+   "file": "QOU/Braiding/r_matrix_braiding_structure.lean",
+   "line": 48,
+   "decl": "r_matrix_braiding_structure",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Braiding",
+   "file": "QOU/Braiding/reidemeister_mass_invariance.lean",
+   "line": 46,
+   "decl": "reidemeister_mass_invariance",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Braiding",
+   "file": "QOU/Braiding/skein_crossing_asymmetry.lean",
+   "line": 46,
+   "decl": "skein_crossing_asymmetry",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidsAndKnots",
+   "file": "QOU/BraidsAndKnots/demazure_fiber_markov_trace.lean",
+   "line": 97,
+   "decl": "demazure_fiber_markov_trace",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidsAndKnots",
+   "file": "QOU/BraidsAndKnots/ew_interface_knot.lean",
+   "line": 67,
+   "decl": "ew_interface_knot",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidsAndKnots",
+   "file": "QOU/BraidsAndKnots/explicit_alpha_k_h4.lean",
+   "line": 42,
+   "decl": "explicit_alpha_k_h4",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidsAndKnots",
+   "file": "QOU/BraidsAndKnots/qmn_recursive_memoized.lean",
+   "line": 67,
+   "decl": "qmn_recursive_memoized",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidsAndKnots",
+   "file": "QOU/BraidsAndKnots/wedderburn_bratteli_recursion.lean",
+   "line": 63,
+   "decl": "wedderburn_bratteli_recursion",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidsAndKnots",
+   "file": "QOU/BraidsAndKnots/wenzl_qmn_synergy.lean",
+   "line": 99,
+   "decl": "wenzl_qmn_synergy",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidsAndKnots",
+   "file": "QOU/BraidsAndKnots/y_lambda_recipe_from_partition.lean",
+   "line": 47,
+   "decl": "y_lambda_recipe_from_partition",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidsKnots",
+   "file": "QOU/BraidsKnots/RamifiedDiscFusion.lean",
+   "line": 42,
+   "decl": "RamifiedDiscFusion",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "BraidsKnots",
+   "file": "QOU/BraidsKnots/mobius_frobenius_kernel.lean",
+   "line": 53,
+   "decl": "mobius_frobenius_kernel",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidsKnots",
+   "file": "QOU/BraidsKnots/nsi_q_deformed_kernel.lean",
+   "line": 58,
+   "decl": "nsi_q_deformed_kernel",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidsKnots",
+   "file": "QOU/BraidsKnots/skein_mass_from_linking.lean",
+   "line": 65,
+   "decl": "skein_mass_from_linking",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "BraidsKnots",
+   "file": "QOU/BraidsKnots/tmli_constituent_composite_agreement.lean",
+   "line": 45,
+   "decl": "tmli_constituent_composite_agreement",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Brings",
+   "file": "QOU/Brings/brings_is_qou.lean",
+   "line": 65,
+   "decl": "brings_is_qou",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Brings",
+   "file": "QOU/Brings/coral_elliptic.lean",
+   "line": 48,
+   "decl": "coral_elliptic",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "CategoricalReeb",
+   "file": "QOU/CategoricalReeb/ofWeightDecomposition.lean",
+   "line": 58,
+   "decl": "ofWeightDecomposition",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "CommutativeQOU",
+   "file": "QOU/CommutativeQOU/u1EquivariantReduction.lean",
+   "line": 79,
+   "decl": "u1EquivariantReduction",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Descent",
+   "file": "QOU/Descent/descended_level_zero.lean",
+   "line": 43,
+   "decl": "descended_level_zero",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Encounter",
+   "file": "QOU/Encounter/MostowRigidity.lean",
+   "line": 153,
+   "decl": "mass_rigidity_of_mostow",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Experimental",
+   "file": "QOU/Experimental/local_substrate_q.lean",
+   "line": 42,
+   "decl": "local_substrate_q",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Experimental",
+   "file": "QOU/Experimental/terminal_resolution.lean",
+   "line": 45,
+   "decl": "terminal_resolution",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "FeynmanPathIntegrals",
+   "file": "QOU/FeynmanPathIntegrals/markov_identification.lean",
+   "line": 63,
+   "decl": "markov_identification",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "FluidDynamics",
+   "file": "QOU/FluidDynamics/acoustic_horizon_conditions.lean",
+   "line": 45,
+   "decl": "acoustic_horizon_conditions",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "FluidDynamics",
+   "file": "QOU/FluidDynamics/core_levi_form.lean",
+   "line": 68,
+   "decl": "core_levi_form",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "FluidDynamics",
+   "file": "QOU/FluidDynamics/discrete_vortex_spectrum.lean",
+   "line": 71,
+   "decl": "discrete_vortex_spectrum",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "FluidDynamics",
+   "file": "QOU/FluidDynamics/helicity_conservation.lean",
+   "line": 70,
+   "decl": "helicity_conservation",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "FluidDynamics",
+   "file": "QOU/FluidDynamics/kelvin_dispersion_derivation.lean",
+   "line": 50,
+   "decl": "kelvin_dispersion_derivation",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "FluidDynamics",
+   "file": "QOU/FluidDynamics/ns_obstruction_tower.lean",
+   "line": 46,
+   "decl": "ns_obstruction_tower",
+   "pattern": "tuple-projection",
+   "verdict": "LEGIT"
+  },
+  {
+   "tree": "FluidDynamics",
+   "file": "QOU/FluidDynamics/q_bkm_criterion.lean",
+   "line": 69,
+   "decl": "q_bkm_criterion",
+   "pattern": "tuple-projection",
+   "verdict": "LEGIT"
+  },
+  {
+   "tree": "FluidDynamics",
+   "file": "QOU/FluidDynamics/q_ns_wellposedness.lean",
+   "line": 74,
+   "decl": "q_ns_wellposedness",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "FluidDynamics",
+   "file": "QOU/FluidDynamics/quantum_peter_weyl.lean",
+   "line": 40,
+   "decl": "quantum_peter_weyl",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "FluidDynamics",
+   "file": "QOU/FluidDynamics/root_of_unity_truncation.lean",
+   "line": 70,
+   "decl": "root_of_unity_truncation",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "FluidDynamics",
+   "file": "QOU/FluidDynamics/vorticity_lower_bound.lean",
+   "line": 50,
+   "decl": "vorticity_lower_bound",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "FrobeniusHopfData",
+   "file": "QOU/FrobeniusHopfData/frobeniusForm.lean",
+   "line": 69,
+   "decl": "frobeniusForm",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "HadronicMass",
+   "file": "QOU/HadronicMass/deuteron_binding_energy.lean",
+   "line": 49,
+   "decl": "deuteron_binding_energy",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "HadronicMass",
+   "file": "QOU/HadronicMass/nucleon_borromean_topology.lean",
+   "line": 52,
+   "decl": "nucleon_borromean_topology",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "HadronicMass",
+   "file": "QOU/HadronicMass/pair_skein_mass_formula.lean",
+   "line": 59,
+   "decl": "pair_skein_mass_formula",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "HyperellipticQuintic",
+   "file": "QOU/HyperellipticQuintic/minimal_z5_classification.lean",
+   "line": 85,
+   "decl": "minimal_z5_classification",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Information",
+   "file": "QOU/Information/p_bandwidth_bound.lean",
+   "line": 73,
+   "decl": "p_bandwidth_bound",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Information",
+   "file": "QOU/Information/photon_threading_mass.lean",
+   "line": 61,
+   "decl": "photon_threading_mass",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Information",
+   "file": "QOU/Information/reeb_operations_per_planck.lean",
+   "line": 80,
+   "decl": "reeb_operations_per_planck",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Information",
+   "file": "QOU/Information/toffoli_transfer_matrix.lean",
+   "line": 84,
+   "decl": "toffoli_transfer_matrix",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Interactions",
+   "file": "QOU/Interactions/UniversalILP.lean",
+   "line": 48,
+   "decl": "UniversalILP",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Interactions",
+   "file": "QOU/Interactions/confinementUniversality.lean",
+   "line": 64,
+   "decl": "confinementUniversality",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Interactions",
+   "file": "QOU/Interactions/inductiveGBReduction.lean",
+   "line": 82,
+   "decl": "inductiveGBReduction",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Interactions",
+   "file": "QOU/Interactions/nucleon_ordering_factorization.lean",
+   "line": 84,
+   "decl": "nucleon_ordering_factorization",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "LiftingDescent",
+   "file": "QOU/LiftingDescent/jp_categorical_jet.lean",
+   "line": 45,
+   "decl": "jp_categorical_jet",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "LiftingDescent",
+   "file": "QOU/LiftingDescent/tm_descended_is_holonomy.lean",
+   "line": 39,
+   "decl": "tm_descended_is_holonomy",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "LiftingDescent",
+   "file": "QOU/LiftingDescent/tm_dilogarithm_evaluation.lean",
+   "line": 51,
+   "decl": "tm_dilogarithm_evaluation",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "LiftingDescent",
+   "file": "QOU/LiftingDescent/tm_eigenspace_decomp.lean",
+   "line": 43,
+   "decl": "tm_eigenspace_decomp",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "LiftingDescent",
+   "file": "QOU/LiftingDescent/tm_transient_localisation.lean",
+   "line": 43,
+   "decl": "tm_transient_localisation",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Machinery",
+   "file": "QOU/Machinery/LambdaScaleAbsorbed.lean",
+   "line": 71,
+   "decl": "no_separate_lambda_scale",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "QOU",
+   "file": "QOU/MassDerivation.lean",
+   "line": 73,
+   "decl": "topological_mass_formula",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "QOU",
+   "file": "QOU/MathlibExt.lean",
+   "line": 134,
+   "decl": "List.prod_eq_of_perm",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Molecular",
+   "file": "QOU/Molecular/benzene_threading_emergence.lean",
+   "line": 58,
+   "decl": "benzene_threading_emergence",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Molecular",
+   "file": "QOU/Molecular/ch4_lp_dual_binding.lean",
+   "line": 75,
+   "decl": "ch4_lp_dual_binding",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Molecular",
+   "file": "QOU/Molecular/co2_lp_dual_binding.lean",
+   "line": 72,
+   "decl": "co2_lp_dual_binding",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Molecular",
+   "file": "QOU/Molecular/co_lp_dual_binding.lean",
+   "line": 77,
+   "decl": "co_lp_dual_binding",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Molecular",
+   "file": "QOU/Molecular/h2_lp_dual_binding.lean",
+   "line": 51,
+   "decl": "h2_lp_dual_binding",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Molecular",
+   "file": "QOU/Molecular/shell_filling_rule.lean",
+   "line": 85,
+   "decl": "shell_filling_rule",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Observations",
+   "file": "QOU/Observations/QPlancherelAsymptoticSkeleton.lean",
+   "line": 71,
+   "decl": "QPlancherelAsymptoticSkeleton",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Observations",
+   "file": "QOU/Observations/SDPRegimeSwitch.lean",
+   "line": 85,
+   "decl": "SDPRegimeSwitch",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Observations",
+   "file": "QOU/Observations/brane_tower_q_laplacian_decay.lean",
+   "line": 61,
+   "decl": "brane_tower_q_laplacian_decay",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Observations",
+   "file": "QOU/Observations/centered_hecke_variance_positive.lean",
+   "line": 49,
+   "decl": "centered_hecke_variance_positive",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Observations",
+   "file": "QOU/Observations/strangelet_crossing_energy.lean",
+   "line": 67,
+   "decl": "strangelet_crossing_energy",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Observations",
+   "file": "QOU/Observations/substrate_consistency_window.lean",
+   "line": 48,
+   "decl": "substrate_consistency_window",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/PerNucleonChannelDecomposition.lean",
+   "line": 52,
+   "decl": "PerNucleonChannelDecomposition",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/SpectatorNormalization.lean",
+   "line": 47,
+   "decl": "SpectatorNormalization",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/atomic_lp_stability.lean",
+   "line": 51,
+   "decl": "atomic_lp_stability",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/atomic_nf_witness.lean",
+   "line": 102,
+   "decl": "atomic_nf_witness",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean",
+   "line": 81,
+   "decl": "confinement_frobenius_reciprocity",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/confinement_operator_selection.lean",
+   "line": 65,
+   "decl": "confinement_operator_selection",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/corrected_markov_trace.lean",
+   "line": 40,
+   "decl": "corrected_markov_trace",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/demand_stability.lean",
+   "line": 60,
+   "decl": "demand_stability",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/deuterium_derived_binding.lean",
+   "line": 128,
+   "decl": "deuterium_derived_binding",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/four_term_pair_nucleon.lean",
+   "line": 54,
+   "decl": "four_term_pair_nucleon",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/frobenius_positivity_filter.lean",
+   "line": 68,
+   "decl": "frobenius_positivity_filter",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/ground_state_ordering.lean",
+   "line": 62,
+   "decl": "ground_state_ordering",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/lp_dual_stability.lean",
+   "line": 93,
+   "decl": "lp_dual_stability",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/mass_categorical_descent.lean",
+   "line": 61,
+   "decl": "mass_categorical_descent",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/neutron_qvalue_symbolic.lean",
+   "line": 61,
+   "decl": "neutron_qvalue_symbolic",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/operator_selection_lp.lean",
+   "line": 102,
+   "decl": "operator_selection_lp",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/parity_regime_selection.lean",
+   "line": 76,
+   "decl": "parity_regime_selection",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/transfer_matrix_identities.lean",
+   "line": 57,
+   "decl": "transfer_matrix_identities",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "ParticleInteractions",
+   "file": "QOU/ParticleInteractions/tritium_qvalue_symbolic.lean",
+   "line": 41,
+   "decl": "tritium_qvalue_symbolic",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "QuantumObservableUniverse",
+   "file": "QOU/QuantumObservableUniverse/exists_axiom_1_frobenius.lean",
+   "line": 42,
+   "decl": "exists_axiom_1_frobenius",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "QuantumObservableUniverse",
+   "file": "QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean",
+   "line": 38,
+   "decl": "exists_axiom_2_observability",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "QuantumObservableUniverse",
+   "file": "QOU/QuantumObservableUniverse/exists_axiom_3_chern.lean",
+   "line": 45,
+   "decl": "exists_axiom_3_chern",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "QuantumObservableUniverse",
+   "file": "QOU/QuantumObservableUniverse/exists_axiom_4_volume.lean",
+   "line": 49,
+   "decl": "exists_axiom_4_volume",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "QuantumObservableUniverse",
+   "file": "QOU/QuantumObservableUniverse/fai_projector_coadjoint_orbit.lean",
+   "line": 50,
+   "decl": "fai_projector_coadjoint_orbit",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "QuantumObservableUniverse",
+   "file": "QOU/QuantumObservableUniverse/observation_energy.lean",
+   "line": 68,
+   "decl": "observation_energy",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "TopologicalMass",
+   "file": "QOU/TopologicalMass/cat_descended_is_base_mass.lean",
+   "line": 40,
+   "decl": "cat_descended_is_base_mass",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "TopologicalMass",
+   "file": "QOU/TopologicalMass/cat_eigenspace_decomposition.lean",
+   "line": 45,
+   "decl": "cat_eigenspace_decomposition",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "TopologicalMass",
+   "file": "QOU/TopologicalMass/cat_transient_localises_blowup.lean",
+   "line": 46,
+   "decl": "cat_transient_localises_blowup",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Torsion",
+   "file": "QOU/Torsion/KnotParticleGeneration.lean",
+   "line": 45,
+   "decl": "KnotParticleGeneration",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Torsion",
+   "file": "QOU/Torsion/MassGap.lean",
+   "line": 241,
+   "decl": "yangMillsMassGap_construction",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Torsion",
+   "file": "QOU/Torsion/antiparticle_crossing_reversal.lean",
+   "line": 66,
+   "decl": "antiparticle_crossing_reversal",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "Torsion",
+   "file": "QOU/Torsion/brane_boundary_structure.lean",
+   "line": 55,
+   "decl": "brane_boundary_structure",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Torsion",
+   "file": "QOU/Torsion/mass_decomposition_categorical.lean",
+   "line": 51,
+   "decl": "mass_decomposition_categorical",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Torsion",
+   "file": "QOU/Torsion/neutron_proton_splitting.lean",
+   "line": 70,
+   "decl": "neutron_proton_splitting",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "Torsion",
+   "file": "QOU/Torsion/weak_equiv_invariance.lean",
+   "line": 47,
+   "decl": "weak_equiv_invariance",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "WedderburnMass",
+   "file": "QOU/WedderburnMass/chirality_residue_mass_term.lean",
+   "line": 52,
+   "decl": "chirality_residue_mass_term",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "WedderburnMass",
+   "file": "QOU/WedderburnMass/confinement_categorical.lean",
+   "line": 64,
+   "decl": "confinement_categorical",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "WedderburnMass",
+   "file": "QOU/WedderburnMass/curvature_rank_gb_stratification.lean",
+   "line": 58,
+   "decl": "curvature_rank_gb_stratification",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "WedderburnMass",
+   "file": "QOU/WedderburnMass/exterior_square_borromean.lean",
+   "line": 43,
+   "decl": "exterior_square_borromean",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "QOU",
+   "file": "QOU/orbital_fourier_decomposition.lean",
+   "line": 119,
+   "decl": "orbital_fourier_decomposition",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "QOU",
+   "file": "QOU/q_gl_obstruction_calc.lean",
+   "line": 60,
+   "decl": "q_gl_obstruction_calc",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "QOU",
+   "file": "QOU/qou_canonical_action.lean",
+   "line": 102,
+   "decl": "qou_canonical_action",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "QOU",
+   "file": "QOU/variational_equations.lean",
+   "line": 104,
+   "decl": "variational_equations",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "content",
+   "file": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.lean",
+   "line": 50,
+   "decl": "jp_categorical_jet",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "content",
+   "file": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean",
+   "line": 79,
+   "decl": "algebraic_geometric_equivalence",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "content",
+   "file": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean",
+   "line": 109,
+   "decl": "strong_duality",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "content",
+   "file": "content/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
+   "line": 308,
+   "decl": "he4_class_is_feasible_solution",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "content",
+   "file": "content/quantum-observable-universe/mass-theory/he4-two-row-dominance.lean",
+   "line": 102,
+   "decl": "dominant_in_two_row_stratum",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "content",
+   "file": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean",
+   "line": 115,
+   "decl": "bar_even_kernel_implies_q_one_shadow",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "content",
+   "file": "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.lean",
+   "line": 79,
+   "decl": "qbeta_q_eq_one_shadow_anchors",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  },
+  {
+   "tree": "content",
+   "file": "content/quantum-observable-universe/predicted-spectra/gauge-coupling-uniqueness.lean",
+   "line": 22,
+   "decl": "gauge_coupling_uniqueness",
+   "pattern": "field-projection",
+   "verdict": "degenerate(field)"
+  },
+  {
+   "tree": "content",
+   "file": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean",
+   "line": 38,
+   "decl": "FrobeniusHopfData.frobeniusForm_exists",
+   "pattern": "tuple-projection",
+   "verdict": "degenerate(tuple-split)"
+  }
+ ]
+}
