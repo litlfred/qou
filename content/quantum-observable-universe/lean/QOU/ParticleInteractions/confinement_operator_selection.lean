@@ -46,9 +46,14 @@ twice (geometrically interwoven). Moreover `borromean_sublinks_trivial` proves
 the **full Brunnian property's decidable core**: deleting any strand leaves a
 2-braid trivial in `B₂ ≅ ℤ` (exponent sum 0), hence each 2-sublink closes to the
 unlink — no general unknot recognition needed, because `B₂` is free abelian on
-one generator. Only **crossing-minimality** (the finite enumeration,
-`computations/probes/b3_brunnian_minimality_enumeration.py`) now remains
-witnessed-not-proved; it is the lone axiomatized field of the classes below. -/
+one generator. **Crossing-minimality** at `n = 3` is now also machine-proved, by
+`native_decide`, in `QOU.Knots.TL.borromean_crossing_minimal`
+(`../Knots/KauffmanTL3.lean`): enumerating every 3-braid word of length `< 6`,
+none is simultaneously Brunnian (the `B₂` test above) and nontrivial (the
+writhe-normalised Kauffman/`TL₃` bracket = Jones invariant), while the Borromean
+`(σ₁σ₂⁻¹)³` at length 6 is — cross-checking the Python enumeration oracle. So the
+general-`n` `is_minimal_brunnian` field below remains an abstraction, but its
+`n = 3` (baryon) instance is a closed Lean proof, not merely witnessed. -/
 namespace BraidModel
 
 /-- A 3-braid letter: generator index (`0`/`1`) and sign (`true` = positive). -/
