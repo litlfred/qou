@@ -1,0 +1,90 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-18T03:17:08.313957+00:00",
+  "computation": "he3-brane-tower-structural-gap",
+  "scriptFile": "he3_brane_tower_structural_gap.py",
+  "scriptHash": "f6a018f22526",
+  "contentBlock": "conj:brane-tower-z-habiro",
+  "description": "Isolates the \u00b3He structural deficit of the per-generator brane-tower binding formula using the PRODUCTION \u2212Li\u2082^q(\u2212z) form (bounded) + exact production |V\u0302_i^full|. The tower sum is monotone in proton near-pole count (\u00b3He>T), but \u00b3He is the less-bound mirror member (B_AME: \u00b3He<T) \u2014 so the per-generator tower has the wrong Z-ordering at A=3. Structural, not a \u03a6_q artifact (li2q is bounded).",
+  "parameters": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "tower_form": "\u2212Li\u2082^q(\u2212|V\u0302_i^full|) (production li2q)",
+    "near_pole_threshold": "0.9"
+  },
+  "data": {
+    "atoms": {
+      "deuteron": {
+        "Z": 1,
+        "N": 1,
+        "n_near_pole_gens": 3,
+        "tower_neg_li2q": "3.392619344776145",
+        "per_gen_terms": [
+          "0.8154112386",
+          "0.8028940917",
+          "0.2485605265",
+          "0.7197556237",
+          "0.8059978643"
+        ],
+        "B_AME_MeV": 2.224566
+      },
+      "tritium": {
+        "Z": 1,
+        "N": 2,
+        "n_near_pole_gens": 4,
+        "tower_neg_li2q": "5.072062510847275",
+        "per_gen_terms": [
+          "0.8154112386",
+          "0.8028940917",
+          "0.2485605265",
+          "0.7197556237",
+          "0.8059978643",
+          "0.153689678",
+          "0.7197556237",
+          "0.8059978643"
+        ],
+        "B_AME_MeV": 8.481798
+      },
+      "helium3": {
+        "Z": 2,
+        "N": 1,
+        "n_near_pole_gens": 5,
+        "tower_neg_li2q": "5.350376846775356",
+        "per_gen_terms": [
+          "0.8154112386",
+          "0.8028940917",
+          "0.3394521717",
+          "0.8154112386",
+          "0.8028940917",
+          "0.2485605265",
+          "0.7197556237",
+          "0.8059978643"
+        ],
+        "B_AME_MeV": 7.718043
+      }
+    },
+    "structural_diagnosis": {
+      "tower_He3_gt_T": true,
+      "tower_He3_minus_T": "0.2783143359",
+      "B_He3_lt_T_AME": true,
+      "B_T_minus_He3_AME_MeV": 0.763755,
+      "near_pole_He3": 5,
+      "near_pole_T": 4,
+      "tower_ordering_opposes_binding": true
+    }
+  },
+  "cross_checks": {
+    "tower_He3_gt_T": true,
+    "tower_He3_minus_T": "0.2783143359",
+    "B_He3_lt_T_AME": true,
+    "B_T_minus_He3_AME_MeV": 0.763755,
+    "near_pole_He3": 5,
+    "near_pole_T": 4,
+    "tower_ordering_opposes_binding": true
+  },
+  "allPassed": true,
+  "provenance": [
+    "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
+    "AME2020"
+  ]
+}
