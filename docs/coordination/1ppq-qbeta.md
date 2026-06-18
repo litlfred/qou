@@ -522,6 +522,37 @@ Outcome: `𝔔_β = Im 𝔙 = ε(Δ)·𝔈₀` is one observable in two presenta
 owner notified ([comment](https://github.com/litlfred/qou/pull/2363#issuecomment-4724147020)).
 
 
+## 2026-06-18 — counit convergence-leg invariant pinned at live q₀ + block reconciliation (PR #2469)
+
+**Scope.** Transition-side (counit) follow-on to the merged Path-A framing
+(#2363) — **orthogonal** to the active static-mass c_k frontier (#2106 Hoefsmit
+Stage B, #1839 residue kernel, #2453/#2460 Jacobi–Anger/Φ_q). No c_k, no fit,
+no production wiring.
+
+**Result.** Re-evaluated the counit/trace functionals at the *live*
+proton-anchored `q₀ = 1.10997859…` (50 dps,
+`computations/qbeta/qbeta_counit_substrate_consistency.py`, witness
+`qbeta-counit-substrate-consistency`). Reproduces **both** merged signatures at
+the live anchor — counit `|ε(Δ)·𝔈₀| = 0.78365 MeV` (**+0.168 %**, right tool)
+and trace `|tr_M(Δ)|_{z_sub}·𝔈₀| = 0.34549 MeV` (**−55.84 %**, wrong tool),
+`z_sub = √q/(q+1) = 0.49932` — **confirming the +0.17 % counit value is current,
+not stale** (re-pin 2026-05-28).
+
+**Convergence-leg invariant (formalize-first).** The +0.17 % counit residual is
+the `N=0` truncation remainder, bounded by the falsifiable
+`O(ℏ_q²/(1−ℏ_q²)) = 0.9915 %` at q₀ (observed `0.168 % ⊂ 0.99 %` ✓). This is the
+invariant the open `conj:qbeta-trace-counit-convergence` must respect; closing it
+still needs a *closed evaluation of the tower-summed* trace difference (the trace
+term is the wrong functional — −56 % — so it is functional-consistency, not a
+perturbative limit). Audit:
+[`docs/audits/2026-06-18-qbeta-counit-substrate-consistency.md`](../audits/2026-06-18-qbeta-counit-substrate-consistency.md).
+
+**Block fix.** The merged `conj:qbeta-trace-counit-convergence` `.md`+`.lean`
+quoted the `N=0` trace term as `≈ 0.49 MeV (~259 %)`; the canonical functional
+`tr_M(Δ)=h²/2−h·z` at `z_sub` gives `0.345 MeV (−56 %, ~2.3× low)` — matching
+#2363's own "~2× low, −56 %" and the witness. Corrected the prose/docstring
+(conjecture statement, Lean class, conditional corollary unchanged).
+
 ## Cross-refs
 
 - CLAUDE.md §Precision goals (L1 / L2 / Subgoal-1 / Subgoal-2)
