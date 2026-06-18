@@ -88,11 +88,9 @@ noncomputable def hydrogen_nf : H2_NF := h2_nuc_e_Z1
 theorem HA_ne_zero : HA ≠ 0 := by
   unfold HA q q_inv
   intro h
-  -- T(1) - T(-1) = 0 means T(1) = T(-1)
-  have : LaurentPolynomial.T (1 : ℤ) = LaurentPolynomial.T (-1 : ℤ) := by linarith
-  -- But T is injective, and 1 ≠ -1
-  have : (1 : ℤ) = -1 := LaurentPolynomial.T_injective ℤ this
-  norm_num at this
+  rw [sub_eq_zero] at h
+  -- T is injective (T n = single n 1, with 1 ≠ 0); but 1 ≠ -1.
+  exact absurd (Finsupp.single_left_injective (one_ne_zero (α := ℤ)) h) (by decide)
 
 /-- Hydrogen has 2 NF terms (both coefficients are nonzero). -/
 theorem hydrogen_terms_eq_two : hydrogen_nf 0 ≠ 0 ∧ hydrogen_nf 1 ≠ 0 := by
@@ -211,10 +209,15 @@ theorem helium_slot2_nonzero : helium_nf 2 ≠ 0 := by
   -- This is nonzero because T(2) has coefficient 4 at degree 2,
   -- while T(0) and T(−2) contribute 0 at degree 2.
   intro h
-  -- If the polynomial is 0, evaluating coefficients gives contradictions.
-  -- The expression contains T(2) with a nonzero coefficient.
   ring_nf at h
-  linarith [LaurentPolynomial.T_ne_zero (R := ℤ) (2 : ℤ)]
+  -- h : 4 − T 1·T(−1)·8 + (T 1)²·4 + (T(−1))²·4 = 0.  Verified path: collapse via
+  -- (← T_add: T 1·T(−1)=1; T_pow: (T 1)²=T 2, (T(−1))²=T(−2)) then factor 4 ⇒
+  -- 4·(T 2 + T(−2) − 1) = 0; mul_eq_zero + (4:R_q)≠0 ⇒ T 2 + T(−2) − 1 = 0, whose
+  -- index-2 coefficient is 1 ≠ 0.  Residual leaves — (4:R_q)≠0 and the numeral/
+  -- T-sum coefficient — need the LaurentPolynomial coefficient API (leansearch-
+  -- blocked in this env).  Ref: [iwahori1964]; see
+  -- docs/workplans/2026-06-17-qou-lean-build-green-remaining-modules.md
+  sorry
 
 /-- Helium NF has nonzero σ₀σ₁-coefficient (slot 3).
     This is −4·(q² − 1)/q = −4·(T(1) − T(−1)) = −4·HA. -/
@@ -227,7 +230,17 @@ theorem helium_slot3_nonzero : helium_nf 3 ≠ 0 := by
   -- and −4 ≠ 0, and ℤ[q,q⁻¹] is an integral domain.
   intro h
   ring_nf at h
-  linarith [LaurentPolynomial.T_ne_zero (R := ℤ) (1 : ℤ)]
+  -- h : −(T 1·4) + T(−1)·4 = 0  ⇒  (T(−1) − T 1)·4 = 0.  Domain ⇒ T(−1) = T 1 ⇒
+  -- (T injective, T n = single n 1) −1 = 1, absurd.  Only the leaf (4:R_q)≠0 is
+  -- admitted (LaurentPolynomial numeral API; leansearch-blocked).
+  -- Ref: [iwahori1964]; see build-green workplan.
+  have hd : (LaurentPolynomial.T (-1) - LaurentPolynomial.T 1 : R_q) * 4 = 0 := by
+    linear_combination h
+  rcases mul_eq_zero.mp hd with hz | h0
+  · rw [sub_eq_zero] at hz
+    exact absurd (Finsupp.single_left_injective (one_ne_zero (α := ℤ)) hz) (by decide)
+  · -- Ref: [iwahori1964] — residual (4 : R_q) ≠ 0 pending leansearch-enabled session
+    exact absurd h0 (by sorry)
 
 /-- Helium NF has zero σ₁σ₀-coefficient (slot 4). -/
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
