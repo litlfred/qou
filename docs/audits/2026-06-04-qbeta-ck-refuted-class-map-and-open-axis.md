@@ -73,6 +73,7 @@ member of a `REFUTED` class, do not re-run it.**
 | C10 | **Khovanov–Rozansky `sl_N`** import for the H₃→H₄ `+1` | **REFUTES (wrong axis)** — its `+1` is gauge rank N, the transverse axis; importing it misleads | literature import (PR #1808) |
 | C11 | **Volume conjecture** as the strand-count limit | **SILENT** — limit parameter is color N / root-of-unity order, not strand count | literature import (PR #1808) |
 | C12 | **Trace-level Markov-stabilization** (`Ind_{H₃}^{H₄}` under `tr_M`; M1 identity-trace + M2 `z^{±k}` renormalised; mass-side axis) | **REFUTED** — `z(q₀)=0.4993 < 1 < linking_weight=2.5328` (direction obstruction); `tr_M(1_{H₄}) = Σ_{λ⊢4} y_λ f^λ = 1` exactly, not 2.53 (M1); no exact `z^{±k}·(clean H₃)` coincidence (M2); `z⁻¹ = q^½+q^{-½}` irrational | sibling probe — PR #1850 (merged `e43d071d`), formalize-first prediction confirmed |
+| C13 | **#1622 mode→ladder bridge with a `Δtr_M`-seeded *linear/bar-even* `f`** (change of variable `u=√q ↦ u_L=b·ℏ_q²`, seed `1+N·Σ_{k≥2}(a_{2k}/b^k)u_L^k`, scale `N` fixing `c_2=−1`) | **REFUTED** — both seeds give a *constant* (anchor-stable) `c_3` far from `−2`: raw even-in-ℏ `c_3=−100/(77b)≈−1.497` (25% off), #1602 bar-even `c_3=−175/(144b)≈−1.401` (30% off); `c_4` off 65–87%. `c_2=−1` only as a scale-fix, not independently derived. The bridge IS now executed; the surviving `f` is **non-linear** in `Δtr_M`. | PR #2465 — `habiro_mode_to_ladder_bridge.py` + `habiro-mode-to-ladder-bridge.witness.json`; formalize-first gate (the bridge had to be formal/anchor-independent, and is) |
 
 **Reading.** The real-q axis (C1–C4), the constant-kernel axis (C5), the
 Pell-Lucas-into-free-rungs axis (C6), the SDP-extraction axis (C7), the
@@ -83,6 +84,13 @@ legitimate diagnostic). C10–C11 are literature dead-ends for the H₃→H₄ j
 now refuted**; per #1850's synthesis, the production `linking_weight =
 (1/4)·Σ_{λ⊢4} dim_q ≈ 2.53` is best read as a **CODATA-implied near-match**
 (landing near `λ = m_p/(m_e·Vol/ℏ²) ≈ 2.46`), not a derived categorical count.
+
+**C13 (2026-06-18)** closes the *decay-side* bridge method at its simplest
+seedings: the #1622 mode→ladder change of variable is now **executed**, and a
+`Δtr_M`-seeded **linear / bar-even** `f` does **not** reproduce `c_3` (gives a
+constant `≈ −1.4…−1.5`, not `−2`). The bridge itself is sound and the exact
+even-in-ℏ data is now pinned (§3 forward constraint); what survives is a
+**non-linear** `f`, still fibre-level and open.
 
 ---
 
@@ -116,6 +124,20 @@ now refuted**; per #1850's synthesis, the production `linking_weight =
 
 The §1 invariants for any F(q) candidate (fibre-level, anchor-stable,
 bar-even, integer `q=1` shadow) stand unchanged.
+
+> **New forward constraint (2026-06-18, PR #2465 / C13).** The #1622 bridge
+> is now **executed**, yielding the **exact, anchor-independent ℏ_q-Taylor
+> series of `Δtr_M`** (about `q=1`):
+> `a_n = [ℏ^n]Δtr_M = −5/4, −13/8, −33/16, −77/32, −177/64, −25/8,
+> −891/256, −3923/1024, −4277/1024, …` Because `u_L = b·ℏ_q²`, the
+> **even-in-ℏ** coefficients `a_4, a_6, a_8` are the *only* `Δtr_M` data
+> feeding the integer rungs `c_2, c_3, c_4`; the **odd-in-ℏ** `a_1, a_3, …`
+> are the half-integer bar-odd remainder `f` must cancel (the √u→u² lift;
+> makes PR #1602's `−√3/12·u¹` class exact). Any surviving `f` must map this
+> fixed even-in-ℏ data onto the empirical `c_k` **non-linearly** — the
+> linear and bar-even-projection seedings are refuted (C13). Note
+> `bar-even (u↦1/u) ≠ even-in-ℏ` parity: two independent constraints, both
+> binding.
 
 ---
 
