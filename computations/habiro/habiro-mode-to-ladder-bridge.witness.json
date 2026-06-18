@@ -1,0 +1,132 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-18T03:03:48.956183+00:00",
+  "commitSha": "76b691a5e6b798d7dcfb7136c0a3a2d19eb49fa8",
+  "assertions": [
+    {
+      "name": "both_candidates_scale_fix_solvable",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Both principled f-candidates (raw even-in-ℏ; #1602 bar-even) admit a scale N fixing c_2 = −1 — the bridge is well-defined. Neither reproduces c_3 = −2 (a: −1.497, b: −1.401), so the Δtr_M-seeded linear/bar-even f is REFUTED (new C13 row)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1699,
+  "computation": "habiro-mode-to-ladder-bridge",
+  "scriptFile": "habiro_mode_to_ladder_bridge.py",
+  "scriptHash": "1e2187407e27",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Executes the PR #1622 open bridge: the change of variable u=√q ↦ u_L=b·ℏ_q² that reads the ladder c_k off the exact Δtr_M mode decomposition. Δtr_M expressed in ℏ_q is an ordinary power series; u_L=b·ℏ² makes even-in-ℏ rungs the integer-u_L ladder (G_k=a_2k/b^k, anchor-independent constants — the only non-C1-refuted path) and odd-in-ℏ rungs the bar-odd half-integer remainder. Peels c_2..c_4 with c_2=−1 fixing the scale; contrasts the anchor-independent formal coefficients against the naive real-q analytic control (predicted C1-refuted). Exact symbolic; tiered; no fit; no wiring.",
+  "contentBlock": "prop:q-beta-categorical-precision-ladder",
+  "data": {
+    "delta_trM": {
+      "numerator": "-u**10 - 2*u**9 - u**8 - 2*u**6 + 4*u**5 + 2*u**4 + u**2 - 2*u + 1",
+      "denominator": "4*u**4*(u**2 + 1)"
+    },
+    "hbar_series": {
+      "a_1": "-5/4",
+      "a_2": "-13/8",
+      "a_3": "-33/16",
+      "a_4": "-77/32",
+      "a_5": "-177/64",
+      "a_6": "-25/8",
+      "a_7": "-891/256",
+      "a_8": "-3923/1024",
+      "a_9": "-4277/1024"
+    },
+    "bar_split_matches_parity": {
+      "even_proj_eq_even_in_hbar": false,
+      "odd_proj_eq_odd_in_hbar": false,
+      "odd_remainder_a1": "-5/4",
+      "odd_remainder_a3": "-33/16",
+      "note": "odd-in-ℏ rungs are the bar-odd half-integer-u_L remainder (PR #1602's −√3/12·u¹ class); the ladder is the even part."
+    },
+    "candidate_a_raw_even": {
+      "c_symbolic": {
+        "c_2": "-1",
+        "c_3": "-100/(77*b)",
+        "c_4": "-3923/(2464*b**2)"
+      },
+      "c_numeric": {
+        "c_2": "-1.00000000000000000000000000000",
+        "c_3": "-1.49691695381643613739854909583",
+        "c_4": "-2.11521476470687473541995680791"
+      },
+      "scale_N": "32*b**2/77"
+    },
+    "candidate_b_bareven": {
+      "c_symbolic": {
+        "c_2": "-1",
+        "c_3": "-175/(144*b)",
+        "c_4": "-539/(384*b**2)"
+      },
+      "c_numeric": {
+        "c_2": "-1.00000000000000000000000000000",
+        "c_3": "-1.40076083004697756607260062960",
+        "c_4": "-1.86480921020540024947180022514"
+      },
+      "scale_N": "8*b**2/9"
+    },
+    "comparison_tiers": {
+      "candidate_a_raw_even": {
+        "c_2": {
+          "bridge": "-1.00000000000000000000000000000",
+          "stated": "-1.00000000000000000000000000000",
+          "rel_to_stated": "0",
+          "tier": "derived"
+        },
+        "c_3": {
+          "bridge": "-1.49691695381643613739854909583",
+          "stated": "-2.00000000000000000000000000000",
+          "rel_to_stated": "0.251541523091781931300725452087",
+          "tier": "refuted"
+        },
+        "c_4": {
+          "bridge": "-2.11521476470687473541995680791",
+          "stated": "-1.13312094258794909885709826968",
+          "rel_to_stated": "0.866715798117638941399409785044",
+          "tier": "refuted"
+        }
+      },
+      "candidate_b_bareven": {
+        "c_2": {
+          "bridge": "-1.00000000000000000000000000000",
+          "stated": "-1.00000000000000000000000000000",
+          "rel_to_stated": "0",
+          "tier": "derived"
+        },
+        "c_3": {
+          "bridge": "-1.40076083004697756607260062960",
+          "stated": "-2.00000000000000000000000000000",
+          "rel_to_stated": "0.299619584976511216963699685200",
+          "tier": "refuted"
+        },
+        "c_4": {
+          "bridge": "-1.86480921020540024947180022514",
+          "stated": "-1.13312094258794909885709826968",
+          "rel_to_stated": "0.645728306765153559879762603209",
+          "tier": "refuted"
+        }
+      }
+    },
+    "verdict": "REFUTED — neither principled f-candidate reproduces c_3; gate stays open, exact ℏ-series is the new constraint on f",
+    "anchor_stability": {
+      "bridge_ck_are_constants": true,
+      "note": "Bridge c_k are formal-series constants (no q₀ enters) ⇒ anchor-independent by construction — the non-C1-refuted path. The empirical c_3 swing (proton −2.069 / muon −2.010) is the higher-rung truncation, not a c_3 ambiguity."
+    }
+  }
+}
