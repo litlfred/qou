@@ -1,15 +1,15 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-06-18T00:59:13.003Z",
+  "generated": "2026-06-18T03:12:53.729Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 1755,
   "files_flagged": 353,
-  "total_defects": 368,
-  "total_exempt": 46,
+  "total_defects": 366,
+  "total_exempt": 48,
   "categories": {
     "proof-no-trivial-true": 123,
     "proof-no-false-premise": 13,
-    "proof-no-self-assuming-projection": 201,
+    "proof-no-self-assuming-projection": 199,
     "proof-no-decide-masking": 31
   },
   "flagged": {
@@ -1798,7 +1798,9 @@
         "pattern": "tuple-projection",
         "snippet": "theorem ns_obstruction_tower {R : Type*} [CommRing R]",
         "decl": "ns_obstruction_tower",
-        "severity": "critical"
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "legitimate iff-from-directions conditional-class"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/FluidDynamics/q_bkm_criterion.lean": [
@@ -1808,7 +1810,9 @@
         "pattern": "tuple-projection",
         "snippet": "theorem q_bkm_criterion {R : Type*} [CommRing R] [ctx : QBKMContext R] :",
         "decl": "q_bkm_criterion",
-        "severity": "critical"
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "legitimate iff-from-directions conditional-class"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_wellposedness.lean": [

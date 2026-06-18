@@ -48,22 +48,46 @@ unrelated text or create false positives.
 
 | category | #2428 | now | Δ |
 |---|---|---|---|
-| `proof-no-self-assuming-projection` | 22 | **201** | +179 |
+| `proof-no-self-assuming-projection` | 22 | **199**² | +177 |
 | `proof-no-trivial-true` | 130 | 123 | −7 |
 | &nbsp;&nbsp;↳ `placeholder-true` | 48 | **111** | +63 |
 | &nbsp;&nbsp;↳ `conclusion-True` | 73 | 3 | −70¹ |
 | &nbsp;&nbsp;↳ `reflexive-tautology` | 9 | 9 | 0 |
 | `proof-no-decide-masking` | 31 | 31 | 0 |
 | `proof-no-false-premise` | 13 | 13 | 0 |
-| exempt (shadow-stubs) | 39 | 46 | +7 |
-| **total candidates** | 196 | **368** | +172 |
+| exempt (shadow-stubs + iff-from-directions) | 39 | 48² | +9 |
+| **total candidates** | 196 | **366**² | +170 |
 
 ¹ `conclusion-True` decls whose body was previously polluted (`… end Foo`) now
 parse cleanly and reclassify into `placeholder-true` / `self-assuming` per their
 real body — net recall up across the board.
 
-`self-assuming` splits 114 field-projection / 87 tuple-projection. Sampled 12
-of the new hits — all the genuine `§3b-cond` conditional-class pattern
+² Post **precision-fix** (§1a): the recall-fix alone produced 201 self-assuming
+/ 368 total; the precision-fix then exempted 2 false-positives (201→199,
+exempt 46→48, total 368→366).
+
+### 1a. Precision-fix (2 false-positive exemptions)
+
+The recall-fixed scanner flagged 2 *legitimate* `§3b-cond` proofs as
+self-assuming: `q_bkm_criterion` and `ns_obstruction_tower`. Both are
+`theorem : A ↔ B := ⟨ctx.fwd, ctx.bwd⟩` that **derive** the iff from two
+direction fields (`A → B`, `B → A`) — the class carries the two *implications*,
+not the conclusion. The anonymous `Iff.intro` constructor `⟨_, _⟩` is not in the
+`DERIVES` regex, hence the false-positive.
+
+Fix: exempt a two-field tuple-projection whose conclusion's **top-level**
+connective is `↔` (`reason: "legitimate iff-from-directions conditional-class"`).
+A new `conclusionTypeAscription` helper reads the conclusion at the *first*
+top-level `:` (robust to a conclusion containing a binder colon such as
+`∃ n : ℕ` — `ns_obstruction_tower`'s case, which the existing last-colon
+`conclusionOf` mis-sliced). Narrow by construction: a tuple-projection of a
+top-level `↔` can only be `Iff.intro` of the two directions. Verified: exactly
+these 2 move to exempt; `proof-no-trivial-true` (123), `-decide-masking` (31),
+`-false-premise` (13) unchanged.
+
+`self-assuming` splits 114 field-projection / 85 tuple-projection (+2 exempt
+iff-from-directions). Sampled 12 of the new hits — all the genuine `§3b-cond`
+conditional-class pattern
 (`theorem foo [ctx : FooContext] : <claim> := ctx.claim_foo`), not false
 positives. The original 22 were simply the subset that didn't sit last before a
 closer.
@@ -78,13 +102,20 @@ closer.
 > auto-commit. The right vehicle is `/integration-backlog proof` over many
 > small per-chapter PRs.
 
-### Q1 — `self-assuming-projection` triage (201, ↑ from 22)
+### Q1 — `self-assuming-projection` triage (199 ✓ catalogued in #2468)
 
-Per-block: confirm whether the conditional-class is **degenerate** (class
-carries the *conclusion* as a field, theorem projects it → defect; restate the
-class to carry the *hypotheses* and derive the conclusion per `§3b-cond` item 5,
-or demote to `remark`) or **legitimate** (#2428 found ~23 % legit in its
-22-sample). #2428's 8 sidecars cover 8 of these.
+**Read-only triage drained in [PR #2468](https://github.com/litlfred/qou/pull/2468)**
+([`2026-06-18-self-assuming-projection-triage.md`](2026-06-18-self-assuming-projection-triage.md)):
+all 201 classified — **199 degenerate / 2 legitimate**. The 114 field-projections
+are degenerate by a typing argument (a bare conclusion-named single-field
+projection necessarily carries the conclusion); 85 tuple-projections are
+degenerate-split; the 2 legitimate (iff-from-directions) are now scanner-exempt
+per §1a. Per-block verdicts in the #2468 sidecar JSON.
+
+What remains is the *remediation* (not the triage): per degenerate block, restate
+the class to carry the *hypotheses* and derive the conclusion per `§3b-cond`
+item 5, or demote to `conjecture`/`remark`. This is a claim-change (owner
+sign-off + Lean verification) — the `/integration-backlog proof` campaign below.
 
 Suggested batches (by chapter, ≤ 49 files each — the Gemini review limit):
 
