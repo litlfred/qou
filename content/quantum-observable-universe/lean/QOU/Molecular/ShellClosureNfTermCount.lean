@@ -83,16 +83,74 @@ This has 2 nonzero terms. -/
 /-- Hydrogen atom NF: (−HA)·𝟏 + 1·σ₀. -/
 noncomputable def hydrogen_nf : H2_NF := h2_nuc_e_Z1
 
+/-! ## §3a  Nonzero certificates in `R_q = ℤ[q, q⁻¹]`
+
+`R_q` is an integral domain of characteristic zero.  Two facts drive the
+NF-term-count proofs: every `T n` is a unit (hence nonzero), and a Laurent
+polynomial that clears — after multiplying by a unit `T k` — to a nonzero
+ordinary polynomial under the injective ring map `Polynomial.toLaurent` is
+itself nonzero. -/
+
+/-- `(4 : R_q) ≠ 0`: the injective ring map `Polynomial.toLaurent` carries
+the nonzero constant `4 : ℤ[X]` to `4 : R_q`. -/
+theorem four_ne_zero_Rq : (4 : R_q) ≠ 0 := by
+  intro h
+  have h2 : (4 : Polynomial ℤ) = 0 :=
+    Polynomial.toLaurent_injective (by simp only [map_ofNat, map_zero]; exact h)
+  norm_num at h2
+
+/-- `T 2 − 1 = toLaurent(X² − 1) ≠ 0`. -/
+theorem T2_sub_one_ne_zero : (LaurentPolynomial.T 2 - 1 : R_q) ≠ 0 := by
+  have e : (LaurentPolynomial.T 2 - 1 : R_q) = Polynomial.toLaurent (Polynomial.X ^ 2 - 1) := by
+    rw [map_sub, map_one, map_pow, Polynomial.toLaurent_X, pow_two, ← LaurentPolynomial.T_add]
+    norm_num
+  rw [e, Ne, map_eq_zero_iff _ Polynomial.toLaurent_injective]
+  intro hP
+  have h0 := congrArg (Polynomial.eval 0) hP
+  simp at h0
+
+/-- `T 4 − T 2 + 1 = toLaurent(X⁴ − X² + 1) ≠ 0`. -/
+theorem T4_sub_T2_add_one_ne_zero :
+    (LaurentPolynomial.T 4 - LaurentPolynomial.T 2 + 1 : R_q) ≠ 0 := by
+  have p2 : (LaurentPolynomial.T 1 : R_q) ^ 2 = LaurentPolynomial.T 2 := by
+    rw [LaurentPolynomial.T_pow]; norm_num
+  have p4 : (LaurentPolynomial.T 1 : R_q) ^ 4 = LaurentPolynomial.T 4 := by
+    rw [LaurentPolynomial.T_pow]; norm_num
+  have e : (LaurentPolynomial.T 4 - LaurentPolynomial.T 2 + 1 : R_q)
+      = Polynomial.toLaurent (Polynomial.X ^ 4 - Polynomial.X ^ 2 + 1) := by
+    rw [map_add, map_sub, map_pow, map_pow, map_one, Polynomial.toLaurent_X, p2, p4]
+  rw [e, Ne, map_eq_zero_iff _ Polynomial.toLaurent_injective]
+  intro hP
+  have h0 := congrArg (Polynomial.eval 0) hP
+  simp at h0
+
 /-- HA = q − q⁻¹ is nonzero in ℤ[q, q⁻¹]. -/
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem HA_ne_zero : HA ≠ 0 := by
-  unfold HA q q_inv
-  intro h
-  -- T(1) - T(-1) = 0 means T(1) = T(-1)
-  have : LaurentPolynomial.T (1 : ℤ) = LaurentPolynomial.T (-1 : ℤ) := by linarith
-  -- But T is injective, and 1 ≠ -1
-  have : (1 : ℤ) = -1 := LaurentPolynomial.T_injective ℤ this
-  norm_num at this
+  -- HA = T(−1)·(T 2 − 1): a unit times a nonzero element of the integral domain R_q.
+  have hfac : HA = LaurentPolynomial.T (-1) * (LaurentPolynomial.T 2 - 1) := by
+    unfold HA q q_inv
+    rw [mul_sub, mul_one, ← LaurentPolynomial.T_add]; norm_num
+  rw [hfac]
+  exact mul_ne_zero (LaurentPolynomial.isUnit_T (-1)).ne_zero T2_sub_one_ne_zero
+
+/-- `HA² + 1 ≠ 0`.  Clearing by the unit `T(−2)` reduces this to `T 4 − T 2 + 1 ≠ 0`. -/
+-- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
+theorem HA_sq_add_one_ne_zero : (HA ^ 2 + 1 : R_q) ≠ 0 := by
+  have hHA : HA = LaurentPolynomial.T (-1) * (LaurentPolynomial.T 2 - 1) := by
+    unfold HA q q_inv; rw [mul_sub, mul_one, ← LaurentPolynomial.T_add]; norm_num
+  have hsq : (LaurentPolynomial.T (-1) : R_q) ^ 2 = LaurentPolynomial.T (-2) := by
+    rw [LaurentPolynomial.T_pow]; norm_num
+  have hT22 : (LaurentPolynomial.T (-2) : R_q) * LaurentPolynomial.T 2 = 1 := by
+    rw [← LaurentPolynomial.T_add]; norm_num [LaurentPolynomial.T_zero]
+  have hT4 : (LaurentPolynomial.T (-2) : R_q) * LaurentPolynomial.T 4 = LaurentPolynomial.T 2 := by
+    rw [← LaurentPolynomial.T_add]; norm_num
+  have hfac : (HA ^ 2 + 1 : R_q)
+      = LaurentPolynomial.T (-2) * (LaurentPolynomial.T 4 - LaurentPolynomial.T 2 + 1) := by
+    rw [hHA, mul_pow, hsq]
+    linear_combination (LaurentPolynomial.T 2 - 1) * hT22 - hT4
+  rw [hfac]
+  exact mul_ne_zero (LaurentPolynomial.isUnit_T (-2)).ne_zero T4_sub_T2_add_one_ne_zero
 
 /-- Hydrogen has 2 NF terms (both coefficients are nonzero). -/
 theorem hydrogen_terms_eq_two : hydrogen_nf 0 ≠ 0 ∧ hydrogen_nf 1 ≠ 0 := by
@@ -205,29 +263,27 @@ theorem helium_slot1_zero : helium_nf 1 = 0 := by
     This is 4·(q⁴ − q² + 1)/q² = 4·T(2) − 4 + 4·T(−2). -/
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_slot2_nonzero : helium_nf 2 ≠ 0 := by
-  unfold helium_nf helium_step3 helium_step2 helium_step1
-  unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
-  -- After unfolding, the expression is 4·T(2) − 4·T(0) + 4·T(−2)
-  -- This is nonzero because T(2) has coefficient 4 at degree 2,
-  -- while T(0) and T(−2) contribute 0 at degree 2.
-  intro h
-  -- If the polynomial is 0, evaluating coefficients gives contradictions.
-  -- The expression contains T(2) with a nonzero coefficient.
-  ring_nf at h
-  linarith [LaurentPolynomial.T_ne_zero (R := ℤ) (2 : ℤ)]
+  -- Unfolding the H₃ operations (keeping HA folded) reduces helium_nf 2 to the
+  -- HA-polynomial 4·(HA² + 1) — i.e. 4·(q⁴ − q² + 1)/q² since q² + q⁻² = HA² + 2.
+  have hval : helium_nf 2 = 4 * (HA ^ 2 + 1) := by
+    unfold helium_nf helium_step3 helium_step2 helium_step1
+    unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2
+    ring
+  rw [hval]
+  exact mul_ne_zero four_ne_zero_Rq HA_sq_add_one_ne_zero
 
 /-- Helium NF has nonzero σ₀σ₁-coefficient (slot 3).
     This is −4·(q² − 1)/q = −4·(T(1) − T(−1)) = −4·HA. -/
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_slot3_nonzero : helium_nf 3 ≠ 0 := by
-  unfold helium_nf helium_step3 helium_step2 helium_step1
-  unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
-  -- After unfolding, the expression is −4·(T(1) − T(−1))
-  -- This is nonzero because T(1) ≠ T(−1) (T is injective, 1 ≠ −1)
-  -- and −4 ≠ 0, and ℤ[q,q⁻¹] is an integral domain.
-  intro h
-  ring_nf at h
-  linarith [LaurentPolynomial.T_ne_zero (R := ℤ) (1 : ℤ)]
+  -- Unfolding the H₃ operations (keeping HA folded) reduces helium_nf 3 to the
+  -- HA-polynomial −(4·HA) — i.e. −4·(q² − 1)/q = −4·HA.
+  have hval : helium_nf 3 = -(4 * HA) := by
+    unfold helium_nf helium_step3 helium_step2 helium_step1
+    unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2
+    ring
+  rw [hval]
+  exact neg_ne_zero.mpr (mul_ne_zero four_ne_zero_Rq HA_ne_zero)
 
 /-- Helium NF has zero σ₁σ₀-coefficient (slot 4). -/
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
