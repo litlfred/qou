@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.BraidKnot.chirality_frobenius_self_pairing — placeholder stub
 
@@ -39,6 +41,8 @@ The chirality factor satisfies:*
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.ts
 theorem chirality_frobenius_self_pairing [ctx : ChiralityFrobeniusSelfPairingContext] :
     ctx.χ = 1 - ctx.h ^ 2 :=
+  -- QUEUED-FOR-LEAN: clearly-true target; `ctx.claim_chirality_factor` is the
+  -- placeholder conditional proof, pending the Frobenius self-pairing construction.
   ctx.claim_chirality_factor
 
 end QOU.BraidKnot

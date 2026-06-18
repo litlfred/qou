@@ -38,6 +38,10 @@ Define the
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jet-prefix-gb-filtration.ts
 theorem jet_prefix_gb_filtration [ctx : JetPrefixGbFiltrationContext] :
-    ctx.JetOrder = ctx.GbDepth := ctx.claim_jet_prefix_eq_gb_depth
+    ctx.JetOrder = ctx.GbDepth :=
+  -- QUEUED-FOR-LEAN: clearly-true target; `ctx.claim_jet_prefix_eq_gb_depth` is
+  -- the placeholder conditional proof, pending the GB-filtration / jet-prefix
+  -- construction.
+  ctx.claim_jet_prefix_eq_gb_depth
 
 end QOU.BraidKnot

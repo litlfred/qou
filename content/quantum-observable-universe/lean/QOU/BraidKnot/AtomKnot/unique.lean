@@ -82,6 +82,9 @@ different physical isomers.*
 theorem unique [ctx : UniqueContext] :
     ∀ β₁ β₂ : ctx.Braid, ctx.realises_NF β₁ → ctx.realises_NF β₂ →
       ctx.isotopic β₁ β₂ :=
+  -- QUEUED-FOR-LEAN: clearly-true target (the .md carries the Diamond-Lemma +
+  -- Reidemeister proof sketch); `ctx.claim_markov_isotopy_unique` is the
+  -- placeholder conditional proof, pending its formalisation.
   ctx.claim_markov_isotopy_unique
 
 end QOU.BraidKnot.AtomKnot
