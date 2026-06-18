@@ -8,10 +8,15 @@ $$
   \sum_{i=1}^{N} \Phi_q(z_i),
 $$
 
-where $z_i = |\hat{V}_i|$ are the per-generator algebraic-volume
-magnitudes from
-[algebraic quantum volume](#def:algebraic-quantum-volume) and
-$\Phi_q$ is the [quantum dilogarithm](#cor:quantum-dilogarithm).
+where $z_i = |\hat{V}_i^{\mathrm{full}}|$ are the per-generator *additive
+Wedderburn* (regular-representation) traced-volume magnitudes
+([mass-endomorphism tower](#prop:mass-endomorphism-tower)) and
+$\Phi_q$ is the [quantum dilogarithm](#cor:quantum-dilogarithm). The
+single-channel $\hat{V}_i = z\,a_i + b_i$ of
+[algebraic quantum volume](#def:algebraic-quantum-volume) is the standard-rep
+projection alone — for the proton $\sigma_0$ it is $\approx 1.146 > q_0$, past
+the $\Phi_q$ radius — so the bounded brane-tower argument is the full
+regular-representation trace, not this single channel.
 
 For low isotopes $\{D, T, {}^3\mathrm{He}\}$, the per-generator
 volumes satisfy $z_i \in [0.85, 1.0]$ — just below the first pole of
