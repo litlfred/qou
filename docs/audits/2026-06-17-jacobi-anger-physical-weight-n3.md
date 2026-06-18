@@ -64,69 +64,115 @@ that actually appear in `tr_M = Σ_λ y_λ χ^λ`), at n=3:
   `q→1` backbone, `ReebTowerJacobiAnger.lean`); the Hahn–Exton q-Bessel refinement at
   finite q is the next layer once the ordinary-J tower convergence is settled.
 
-## The decisive tower test — precise requirement + blocker (2026-06-17)
+## The decisive tower test — precise requirement + blocker (2026-06-17; object-ID corrected 2026-06-18)
+
+> **Object-identification corrected 2026-06-18** — see the CORRECTED section below.
+> The `chi_block` are the **explicit `χ_λ(𝓑_n − 𝓑_p)`** typed-braid difference
+> (Lean-proved closed forms), **not** the SDP-selector `Δ_{T_β}`. The requirement +
+> blocker below are restated accordingly.
 
 Following the chain to nail what the n→∞ convergence gate actually needs:
 
-- The n=3 `chi_block_{3,21,111}` are `χ_λ(Δ_{T_β})(q)` — the per-Wedderburn-block
-  characters of the **T_β operator-selected element** over H₃ (Hoefsmit seminormal;
-  `QBetaPerBlockChiClosedForms.lean`, source witness
-  `qbeta-per-block-paper-closed-forms.witness.json`). T_β is the SDP shape-collapse
-  selector (`T_β = S·1`, `qbeta_decay_sdp_solver.py`), not a single generator —
-  hence the bar-odd orders {1,3,5} at n=3.
+- The n=3 `chi_block_{3,21,111}` are `χ_λ(𝓑_n − 𝓑_p)(q)` — the per-Wedderburn-block
+  characters of the **explicit typed-`B₃` neutron-minus-proton braid difference**
+  (Hoefsmit seminormal; `chi-per-irrep-cyclotomic-closed-forms.lean`, source witness
+  `qbeta-per-block-paper-closed-forms.witness.json`; `qbeta_utils.chi_block_*`). These
+  are first-principles Lean-proved closed forms, **not** the min-norm SDP selector
+  `T_β` of `qbeta_decay_sdp_solver.py`. The bar-odd orders {1,3,5} at n=3 are the
+  Laurent degrees of those closed forms.
 
-- The tower-convergence test therefore requires `χ_λ(Δ_{T_β})` for **λ⊢6 and λ⊢9**:
+- The tower-convergence test therefore requires `χ_λ(𝓑_n − 𝓑_p)` for **λ⊢6 and λ⊢9**:
   weight by `y_λ(q₀)`, bar-odd-decompose into `sinh(ℓη)` (orders up to 11, 17), and
   re-run the single-x over-determination check. The keystone holds iff the residual
   shrinks monotonically (6.8% at n=3 → … → 0).
 
-- **Blocker (corpus-verified):** there is **no H₆/H₉ per-block selector character**
-  in the corpus — `Δ_{T_β}` is defined only at H₃ (the n=6 hits are all
-  `computations/_deprecated/`). Producing `χ_λ(Δ_{T_β})` at H₆/H₉ requires **extending
-  the T_β operator-selection (SDP shape-collapse) to those levels** — genuine
-  keystone-level work (the SDP selector at higher H_n), not a mechanical character
-  evaluation. This is the precise spec for the next tranche: extend
-  `qbeta_decay_sdp_solver` to H₆/H₉, emit `χ_λ(Δ_{T_β})` per λ, then this script's
-  `physical_W` + `solve_single_x` apply unchanged.
+- **Blocker (corpus-verified):** there is **no H₆/H₉ `χ_λ(𝓑_n − 𝓑_p)`** in the
+  corpus — the explicit proton/neutron braids are defined only at H₃ (the n=6 hits
+  are all `computations/_deprecated/`). Producing them at H₆/H₉ requires **embedding
+  the typed-crossings braids `𝓑_p`, `𝓑_n` at brane-tower levels 6, 9** (first-
+  principles braid construction), then evaluating `χ_λ` per Wedderburn block — not a
+  mechanical character evaluation, but **not** "extend the SDP fit" either. Then this
+  script's `physical_W` + `solve_single_x` (and the harness's `bar_odd_coeffs`) apply
+  unchanged.
 
 So the n=3 physical-weight result here is the **furthest the gate can be advanced
-without the H≥6 T_β selector** — and it pins exactly what unblocks the rest.
+without the H≥6 typed proton/neutron braids** — and it pins exactly what unblocks
+the rest.
 
-## CRITICAL-DISTANCE FINDING — the tower object is FIT-derived (2026-06-17)
+## ~~CRITICAL-DISTANCE FINDING — the tower object is FIT-derived~~ — CORRECTED (2026-06-18)
 
-Tracing the provenance of `χ_λ(Δ_{T_β})` (the n=3 `chi_block`, hence this whole
-tower test) shows it is built on a **min-norm empirical fit**, not a first-
-principles object:
+> **This section's original claim was a MISATTRIBUTION; struck through and
+> corrected below.** The original 2026-06-17 text asserted the §4a tower object
+> is the min-norm SDP fit `T_β ∝ t`. That is wrong: it traced the wrong script.
+> The reconciliation work (`qbeta_jacobi_anger_tower_general.py`, 2026-06-18)
+> established the correct provenance.
 
-- `qbeta_per_block_symbolic.py:101-105` computes `χ_λ(T_β)(q)` by loading
-  `T_beta_nf_coefficients` from `qbeta-decay-sdp-knot-operator.witness.json`.
-- `qbeta_decay_sdp_solver.py:90-94` sets that `T_β` as the **min-L2-norm**
-  solution `x* = (n_target/(t·t))·t` of the single scalar constraint
-  `t·x = Q_β/E_0` — i.e. `T_β ∝ t` (the Markov-trace vector). The script
-  flags it (lines 20-24): *"the cleanest form of T_β that reproduces Q_β…
-  Path 3 would derive T_β from the typed-crossings braid structure rather than
-  from a min-norm SDP — that would give T_β as a first-principles object rather
-  than an empirical fit."*
+### What was claimed (2026-06-17, INCORRECT)
 
-**Consequence.** The bar-odd sector tested here is the c₃ near-match/fit sector,
-and "extend the SDP selector to H₆/H₉" extends a fit. A fit-tower converging to
-q-Bessel would be *suggestive* but would **not close the keystone** (fit ≠
-derivation); a non-convergence would show the keystone needs the first-principles
-object. Report TIERED, fit-caveat explicit.
+The note traced `χ_λ(Δ_{T_β})` → `qbeta_per_block_symbolic.py:101-105` (which
+loads `T_beta_nf_coefficients` from `qbeta-decay-sdp-knot-operator.witness.json`)
+→ `qbeta_decay_sdp_solver.py` min-L2 solution `T_β ∝ t`, and concluded the §4a
+tower object is an empirical fit.
 
-### Two forward paths (precise specs)
+### What is actually true (2026-06-18, CORRECTED)
 
-**Path A — extend the min-norm fit to H₆/H₉ (TIERED, fit-caveated).**
-The NF/GS basis of `H_n` is `{T_w : w ∈ S_n}` (dim `n!`): 6 at H₃, **720 at H₆,
-362 880 at H₉**. For level n: enumerate reduced words `w∈S_n`; per word compute
-`τ_M(T_w)(q)` (Markov trace) and `χ_λ(T_w)(q)=tr ρ_λ(T_w)` (seminormal) as
-functions of q; form `T_β=(n_target/(t·t))·t`, `χ_λ(T_β)=Σ_w x*_w χ_λ(T_w)`;
-then `physical_W`/`solve_single_x` (this PR) apply. H₆ is feasible (720 words,
-d_λ≤16); **H₉ symbolic is likely infeasible** (362 880 words) — needs a
-trace-contraction closed form for `Σ_w τ_M(T_w)ρ_λ(T_w)` first.
+The §4a bar-odd data does **not** come from the min-norm `χ_λ(T_β)`. Both the
+committed unit-weighted run (`qbeta_reeb_tower_jacobi_anger.py`) and the
+physical-weight run (`qbeta_reeb_tower_jacobi_anger_physical_weight.py`) take
+their per-block characters from `qbeta_utils.chi_block_{3,21,111}` /
+`qbeta_per_block_paper_closed_forms.py`, which are the **explicit
+`χ_λ(𝓑_n − 𝓑_p)`** — the typed-`B₃` neutron-minus-proton braid difference
+(`𝓑_p` uud, `𝓑_n` udd), with closed forms
 
-**Path B — first-principles Δ_{T_β} (the real keystone, open even at H₃).**
-Derive the β-decay selector from the typed-crossings braid structure (Path 3 of
-the SDP-solver roadmap), so `Δ_{T_β}` is a canonical braid element, not a
-min-norm fit. Only then does the tower-convergence test bear on the keystone
-rather than on the fit. This is the honest keystone-closing direction.
+```
+χ_(3)(𝓑_n−𝓑_p)     = -(q²+1)²(q²-1)/(4q)
+χ_(2,1)(𝓑_n−𝓑_p)   = -(q⁴+1)(q²-1)/(4q³)
+χ_(1,1,1)(𝓑_n−𝓑_p) = -(q²+1)²(q²-1)/(4q⁵)
+```
+
+that are **Lean-proved sorry-free** (`chi-per-irrep-cyclotomic-closed-forms.lean`,
+`field_simp + ring`; content block `chi-per-irrep-cyclotomic-closed-forms.md`).
+Their bar-odd sinh-decomposition gives the `BAR_ODD_COEFFS` `{(3):{3:-¼,5:-¼},
+(2,1):{1:½,3:-½}, (1,1,1):{3:-¼,5:-¼}}` exactly (verified symbolically in
+`qbeta_jacobi_anger_tower_general.bar_odd_coeffs`). The min-norm `χ_λ(T_β)` (a
+*different* object in `qbeta_per_block_symbolic.py`) has q₀-dependent numeric
+coefficients, **not** these clean rationals — confirming the two are distinct and
+that the §4a test uses the explicit braids, not the fit.
+
+**Corrected consequence.** The §4a tower object is **first-principles** (the
+explicit typed-crossings proton/neutron braids; Lean-proved closed forms), *not*
+a min-norm fit. The remaining honest caveat is one level deeper: the typed-
+crossing assignments themselves (uud = 6σ+3σ⁻¹+2 avg; udd = 5σ+4σ⁻¹+2 avg) are a
+*braid model* of the flavour content, not derived from the substrate — but that is
+categorically different from an L2 fit to reproduce Q_β (the braids are built from
+the flavour structure, not fitted to the answer). So a converging tower **would**
+bear on the keystone (it tests a first-principles object), not merely on a fit.
+
+## Reconciliation — general harness reproduces 6.8% (2026-06-18)
+
+`qbeta_jacobi_anger_tower_general.py` previously used the WRONG object — the
+min-norm autocorrelation `Σ_w t_w·τ_M(T_w)(q)` (= `τ_M(T_β)` for `T_β∝t`,
+*y-varying*) — and did not reproduce 6.8%. It now builds the correct §4a object:
+the proved `χ_λ(𝓑_n−𝓑_p)` closed forms, bar-odd-decomposed symbolically, weighted
+by `y_λ(q₀)` **frozen** at the substrate anchor (§4a's `Σ_ℓ w_ℓ sinh(ℓη)` form
+requires η-independent `w_ℓ`, which forces frozen y). It reproduces the
+physical-weight residual **0.0683508** and `x* ≈ 4.5249` at **both** anchors
+(swing 1.8e-9), with the symbolically-derived `BAR_ODD_COEFFS` asserted equal to
+the hardcoded set. The two harnesses now compute the same object.
+
+### Two forward paths (precise specs, corrected)
+
+**Path A — extend the first-principles `χ_λ(𝓑_n−𝓑_p)` to λ⊢6,9 (TIERED).**
+The blocker is *not* "extend the SDP fit". It is: produce `χ_λ(𝓑_n−𝓑_p)` at
+λ ⊢ 6, 9 by embedding the typed-crossings proton/neutron braids `𝓑_p`, `𝓑_n` at
+brane-tower levels 6, 9, then `bar_odd_coeffs` + `physical_W` + `single_x_residual`
+apply unchanged (y stays frozen at q₀). No such higher-tower braid (nor proved
+closed form) exists in the corpus today, and the typed-braid character infra is in
+`computations/_deprecated/` — so reviving/extending it is the genuine work. The
+general-n Markov-trace machinery (`validate_markov_infra`, via `pyhecke_native`) is
+validated and ready to consume those braids once they exist.
+
+**Path B — first-principles substrate-derivation of the typed-crossing braid
+model.** Deeper than Path A: derive the uud/udd crossing assignments themselves
+from the substrate (rather than taking them as the flavour braid model). This is
+the level at which the remaining (model-not-fit) caveat above would close.
