@@ -43,14 +43,17 @@ Run: `python3 -u aoperator_a5_crosscheck.py 2>&1 | tee /tmp/a5.log`  (minutes).
 """
 from __future__ import annotations
 
+import datetime
 import json
 import pickle
+import subprocess
 import sys
 import time
 from pathlib import Path
 
 import mpmath as mp
 import numpy as np
+import scipy
 import scipy.sparse as sp
 
 HERE = Path(__file__).resolve().parents[1]               # computations/
@@ -323,7 +326,8 @@ def main() -> int:
             eta = el / done * (len(lams) - done) if done else 0
             print(f"   λ {done}/{len(lams)}  elapsed {el:.0f}s  ETA {eta:.0f}s", flush=True)
             CHI_CKPT.write_text(json.dumps({str(k): v for k, v in chi_comb.items()}))
-    print(f"[A5] combiner all-λ χ (float64): {time.time()-t0:.0f}s", flush=True)
+    comb_secs = time.time() - t0
+    print(f"[A5] combiner all-λ χ (float64): {comb_secs:.0f}s", flush=True)
 
     worst = max(abs(chi_comb[k] - chi_ref[k]) for k in chi_comb)
     denom = max(abs(chi_ref[k]) for k in chi_ref) or 1.0
@@ -339,6 +343,51 @@ def main() -> int:
     print(f"[A5] |Δtr_M|={abs(trM_comb-trM_ref):.2e}  rel={rel:.2e}"
           f"   {'OK — combiner reproduces transfer at A=5 (float64)' if rel < 1e-5 else 'CHECK'}",
           flush=True)
+
+    assertions = [
+        {"name": "a4_fast_vs_chi_young", "computed": float(worst_fy), "expected": 0.0,
+         "passed": bool(worst_fy < 1e-6), "tolerance": 1e-6,
+         "source": "A4: float64 regrouped combiner vs exact young_seminormal.chi_young "
+                   "(small-d λ⊢12) on the real ⁴He word — validates the fast path."},
+        {"name": "a4_fast_vs_orig_combiner", "computed": float(worst_fo), "expected": 0.0,
+         "passed": bool(worst_fo < 1e-6), "tolerance": 1e-6,
+         "source": "A4: float64 regrouped combiner vs the original mpmath interface_blocks "
+                   "combiner — confirms the regrouping is the same arithmetic."},
+        {"name": "a5_per_lambda_max_abs_diff", "computed": float(worst), "expected": 0.0,
+         "passed": bool(worst / denom < 1e-8), "tolerance": float(denom * 1e-8),
+         "source": f"A5 ⁵He: max over all {len(chi_comb)} λ⊢15 of |χ_comb − χ_transfer| "
+                   f"(rel to max|χ| = {worst/denom:.2e}) at λ={argworst}."},
+        {"name": "a5_trM_combiner_vs_transfer", "computed": float(rel), "expected": 0.0,
+         "passed": bool(rel < 1e-5), "tolerance": 1e-5,
+         "source": f"A5 ⁵He: relative |Δtr_M| between the operator combiner and the "
+                   f"fine-Bratteli transfer (tr_M = Σ_λ y_λ χ^λ = {trM_ref:.10g})."},
+    ]
+    try:
+        sha = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=str(HERE)).decode().strip()
+    except Exception:
+        sha = "unknown"
+    witness = {
+        "engine": "numpy/scipy float64 (combiner + diag ρ_ξ); mpmath 50 dps "
+                  "(ν-alignment + fine-Bratteli transfer reference)",
+        "engineVersion": f"numpy {np.__version__}, scipy {scipy.__version__}, "
+                         f"mpmath {mp.__version__}",
+        "computedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "commitSha": sha,
+        "description": "A=5 (⁵He) end-to-end operator-combiner cross-check vs the "
+                       "production fine-Bratteli transfer (contraction-only diag ρ_ξ).",
+        "q0": q_str,
+        "trM_combiner": float(trM_comb),
+        "trM_transfer": float(trM_ref),
+        "n_lambda": int(len(chi_comb)),
+        "combiner_seconds": float(comb_secs),
+        "assertions": assertions,
+        "allPassed": bool(all(a["passed"] for a in assertions)),
+        "auditOnly": True,
+    }
+    wpath = Path(__file__).with_suffix("").as_posix() + ".witness.json"
+    Path(wpath).write_text(json.dumps(witness, indent=2))
+    print(f"[A5] witness → {wpath}  allPassed={witness['allPassed']}", flush=True)
     return 0
 
 

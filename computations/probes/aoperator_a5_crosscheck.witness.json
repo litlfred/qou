@@ -1,0 +1,48 @@
+{
+  "engine": "numpy/scipy float64 (combiner + diag \u03c1_\u03be); mpmath 50 dps (\u03bd-alignment + fine-Bratteli transfer reference)",
+  "engineVersion": "numpy 2.4.6, scipy 1.17.1, mpmath 1.3.0",
+  "computedAt": "2026-06-18T16:02:46.072631+00:00",
+  "commitSha": "050bd2e268150faef8e0e29b2a3bcc8eb4c58b48",
+  "description": "A=5 (\u2075He) end-to-end operator-combiner cross-check vs the production fine-Bratteli transfer (contraction-only diag \u03c1_\u03be).",
+  "q0": "1.1099785955573347198997632204832250266562084087802",
+  "trM_combiner": 0.01483482681455812,
+  "trM_transfer": 0.014834826814558139,
+  "n_lambda": 176,
+  "combiner_seconds": 10.9671049118042,
+  "assertions": [
+    {
+      "name": "a4_fast_vs_chi_young",
+      "computed": 1.4210854715202004e-14,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "A4: float64 regrouped combiner vs exact young_seminormal.chi_young (small-d \u03bb\u22a212) on the real \u2074He word \u2014 validates the fast path."
+    },
+    {
+      "name": "a4_fast_vs_orig_combiner",
+      "computed": 1.7763568394002505e-15,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "A4: float64 regrouped combiner vs the original mpmath interface_blocks combiner \u2014 confirms the regrouping is the same arithmetic."
+    },
+    {
+      "name": "a5_per_lambda_max_abs_diff",
+      "computed": 1.8900436771218665e-12,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1.9177226142192887e-06,
+      "source": "A5 \u2075He: max over all 176 \u03bb\u22a215 of |\u03c7_comb \u2212 \u03c7_transfer| (rel to max|\u03c7| = 9.86e-15) at \u03bb=(6, 4, 3, 2)."
+    },
+    {
+      "name": "a5_trM_combiner_vs_transfer",
+      "computed": 1.2862946412706902e-15,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-05,
+      "source": "A5 \u2075He: relative |\u0394tr_M| between the operator combiner and the fine-Bratteli transfer (tr_M = \u03a3_\u03bb y_\u03bb \u03c7^\u03bb = 0.01483482681)."
+    }
+  ],
+  "allPassed": true,
+  "auditOnly": true
+}
