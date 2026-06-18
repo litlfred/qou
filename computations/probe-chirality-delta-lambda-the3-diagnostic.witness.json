@@ -1,0 +1,67 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-18T03:11:33.792712+00:00",
+  "commitSha": "861a74ba8cc1315b100b4ab48d03aaf7c7212d27",
+  "assertions": [
+    {
+      "name": "no_proved_sign_magnitude_hits_the3_differential",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "DIAGNOSTIC: PROVED Δ_λ=sgn·dim linear diff = 0.43603871 MeV vs target 0.7638 (sign correct: True); no enumerated magnitude variant lands on target — consistent with the closed 18-saturation chain."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "probe-chirality-delta-lambda-the3-diagnostic",
+  "scriptFile": "probe_chirality_delta_lambda_the3_diagnostic.py",
+  "scriptHash": "f9a10d0a42dd",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "DIAGNOSTIC (not a fit): the PROVED chirality weight Δ_λ=sgn(w₀^{S_λ'})·dim and its enumerated magnitude variants (sgn, sgn·dim, sgn·dimq) evaluated on the sharp T/³He same-n differential B_T−B_³He=+0.7638 MeV, in both the linear (Δ_λ-closure) and |·| (chirality-binding-sweep) models. The proved SIGN can reach the + differential sign; no proved-sign magnitude hits the target. Δ_λ remains open (GAP-A-3/A-4); per-partition numerical search closed (18-saturation chain), open frontier is owner-gated categorical.",
+  "parameters": {
+    "n_strands": 9
+  },
+  "data": {
+    "target_diff_mev": "0.7638",
+    "target_diff_me": "1.49471931198419",
+    "by_variant": {
+      "1(raw)": {
+        "diff_lin_mev": "-0.052371623",
+        "diff_abs_mev": "-0.052371623",
+        "lin_over_target": "-0.0685672",
+        "lin_sign_correct": false
+      },
+      "sgn": {
+        "diff_lin_mev": "0.0052463482",
+        "diff_abs_mev": "-0.0052463482",
+        "lin_over_target": "0.00686875",
+        "lin_sign_correct": true
+      },
+      "sgn·dim": {
+        "diff_lin_mev": "0.43603871",
+        "diff_abs_mev": "-0.43603871",
+        "lin_over_target": "0.570881",
+        "lin_sign_correct": true
+      },
+      "sgn·dimq": {
+        "diff_lin_mev": "0.59564671",
+        "diff_abs_mev": "-0.59564671",
+        "lin_over_target": "0.779846",
+        "lin_sign_correct": true
+      }
+    },
+    "proved_sign_reaches_positive_diff": true
+  }
+}
