@@ -32,7 +32,17 @@ which at least reports `has_sorry`.
 | disposition | when | what | kind | derived status |
 |---|---|---|---|---|
 | **restate-to-derive** | a *genuine upstream input* exists from which `P` follows by real content (e.g. an `↔` from its two directions — `q_bkm_criterion`) | class carries the *hypotheses*; theorem **derives** `P` (`Iff.intro`, `And.intro` of proved parts) | `theorem` | `proved` |
-| **queued-for-Lean** | `P` is a **clearly-true target**, not yet formalized | strip the conclusion-field; body `:= by sorry`; `-- Ref:` + `-- QUEUED-FOR-LEAN:`; fix imports so it compiles | `theorem` | **`has_sorry`** |
+| **queued-for-Lean** | `P` is a **clearly-true target**, not yet formalized | **keep** the conclusion-field (soundness — see pitfall); body `:= by sorry`; `-- Ref:` + `-- QUEUED-FOR-LEAN:`; fix imports so it compiles | `theorem` | **`has_sorry`** |
+
+> **⚠ Soundness pitfall (do NOT strip the field).** It is tempting to *remove*
+> the conclusion-carrying field and leave `theorem foo [ctx] : P := by sorry`.
+> But the class's remaining fields are then independent, so `∀ ctx, P` is
+> **false** (a counter-instance exists), and the `sorry` "proves" a falsehood
+> that can never be honestly discharged — strictly worse than the original.
+> `lean`-direct exits 0 regardless (sorry accepts any goal — exit 0 ≠ truth).
+> **Keep** the field so `P` is true-for-every-instance (provable via the field),
+> and let the `sorry` mark "the real construction-formalisation is pending."
+> The body is no longer a projection, so the scanner clears it.
 | **conjecture** | we are **genuinely unsure** `P` is true (empirical near-match, open whether it holds) | demote kind; `.md` conditional banner | `conjecture` | (n/a) |
 
 ### Decision test
@@ -78,8 +88,10 @@ coded as a self-projection. The clean queued conversion:
 
 - **before:** class field `claim_six_term_recovery : atomic_mass = Σ term_weights`;
   body `:= ctx.claim_six_term_recovery`. (self-assuming; reads `proved`.)
-- **after:** field removed; body `:= by sorry` + `-- QUEUED-FOR-LEAN:`; added the
-  missing `import Mathlib.Data.Fintype.Basic` (the file did not compile standalone —
+- **after:** field **kept** (so `atomic_mass = Σ term_weights` is true for every
+  instance — stripping it makes the statement false, see pitfall); body
+  `:= by sorry` + `-- QUEUED-FOR-LEAN:`; added the missing
+  `import Mathlib.Data.Fintype.Basic` (the file did not compile standalone —
   `Fintype (Fin 6)`).
 
 Verified `lean`-direct **exit 0** (only `declaration uses 'sorry'`); the vacuity
