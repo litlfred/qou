@@ -1,5 +1,6 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Data.Real.Basic
+import Mathlib.Data.Fintype.Basic
 
 /-!
 # QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly — placeholder stub
@@ -29,10 +30,6 @@ class BindingAssemblyContext where
   /-- The six per-derivation weighted contributions (one per spectral-
       sequence term). -/
   term_weights : Fin 6 → ℝ
-  /-- Manuscript claim — atomic-mass recovery: the atomic mass is the
-      sum of the six per-derivation weighted contributions. -/
-  claim_six_term_recovery :
-    atomic_mass = (Finset.univ.sum (fun i : Fin 6 => term_weights i))
 
 /-- **Proposition statement** (from manuscript):
 
@@ -45,7 +42,10 @@ by
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-per-derivation-weights.ts
 theorem binding_assembly [ctx : BindingAssemblyContext] :
-    ctx.atomic_mass = (Finset.univ.sum (fun i : Fin 6 => ctx.term_weights i)) :=
-  ctx.claim_six_term_recovery
+    ctx.atomic_mass = (Finset.univ.sum (fun i : Fin 6 => ctx.term_weights i)) := by
+  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-per-derivation-weights.ts
+  -- QUEUED-FOR-LEAN: clearly-true formalization target; the six-term recovery
+  -- is the manuscript claim, pending the per-derivation weight construction.
+  sorry
 
 end QOU.BraidKnot.SixTermPerDerivationWeights
