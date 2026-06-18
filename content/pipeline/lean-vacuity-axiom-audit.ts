@@ -270,7 +270,26 @@ function splitDecls(origLines: string[], codeLines: string[]): Decl[] {
   for (let s = 0; s < starts.length; s++) {
     const { i, kind, name } = starts[s];
     const end = s + 1 < starts.length ? starts[s + 1].i : codeLines.length;
-    const text = codeLines.slice(i, end).join("\n");
+    // The slice runs to the next decl start, which sweeps in any trailing
+    // top-level structural lines (a `namespace`/`section` `end` closer,
+    // `open`, `variable`, …) that belong to no declaration. Drop them so
+    // they do not pollute the body of the last decl before a closer —
+    // otherwise a `:= ctx.claim_field` projection body reads as
+    // `ctx.claim_field … end QOU.Foo` and the self-assuming / trivial-true
+    // body regexes miss it (recall gap, e.g. knot_factor_spectral_derivation:70).
+    const declLines = codeLines.slice(i, end);
+    while (declLines.length > 1) {
+      const last = declLines[declLines.length - 1];
+      if (
+        /^\s*$/.test(last) ||
+        /^\s*(end|namespace|section|open|variable|universe|attribute|set_option)\b/.test(
+          last,
+        )
+      )
+        declLines.pop();
+      else break;
+    }
+    const text = declLines.join("\n");
     const asgn = text.indexOf(":=");
     const sig = asgn >= 0 ? text.slice(0, asgn) : text;
     const body = asgn >= 0 ? text.slice(asgn + 2) : "";
