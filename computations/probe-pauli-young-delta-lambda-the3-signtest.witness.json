@@ -1,0 +1,452 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-18T02:56:03.351501+00:00",
+  "commitSha": "a3e568203b14c0680d2e177338c660dca9c6fa08",
+  "assertions": [
+    {
+      "name": "wigner_su4_delta_lambda_misses_the3_differential",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "EXPECTED NEGATIVE: Wigner-SU(4) Δ_λ=dimGL4 gives -45.019 for (B_T−B_³He)/m_e vs target 1.49472; non-negative cone is unbounded so a free fit exists, but the principled Wigner-SU(4) weight is not it."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "probe-pauli-young-delta-lambda-the3-signtest",
+  "scriptFile": "probe_pauli_young_delta_lambda_the3_signtest.py",
+  "scriptHash": "ab87d48ac91f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "EXPLORATORY: decisive T/³He same-n sign test for the Pauli-Young / Wigner-SU(4) Δ_λ projection proposed in PR #2461. A spin-isospin Young-symmetry multiplicity is Δ_λ≥0; the T/³He differential (B_T−B_³He)/m_e=+1.4947 is the entire same-n binding split. Reports the v_λ=y_λ·Δχ_λ sign census (whether any non-negative Δ_λ can reach the +sign) and the concrete Δ_λ=dim GL(4)-irrep(λ) evaluation. Δ_λ remains open (GAP-A-3/A-4).",
+  "parameters": {
+    "n_strands": 9,
+    "n_partitions": 30
+  },
+  "data": {
+    "target_diff": "1.49471931198419",
+    "max_y_drift": "0.0",
+    "sign_census": {
+      "positive": 10,
+      "negative": 20,
+      "zero": 0
+    },
+    "v_max": "0.0002240894214467118",
+    "v_min": "-0.02744263226143126",
+    "diff_uniform": "-0.1024887102786878",
+    "diff_wigner_su4_dimGL4": "-45.01904747822457",
+    "nonneg_family_can_reach_target_sign": true,
+    "sup_over_nonnegative_cone": "+inf",
+    "by_partition": [
+      {
+        "partition": [
+          9
+        ],
+        "nrows": 1,
+        "y_lambda": "0.0065546402",
+        "delta_chi": "-0.81670943",
+        "v_lambda": "-0.0053532365",
+        "dim_gl4": 220
+      },
+      {
+        "partition": [
+          8,
+          1
+        ],
+        "nrows": 2,
+        "y_lambda": "0.0073063023",
+        "delta_chi": "-2.8273819",
+        "v_lambda": "-0.020657707",
+        "dim_gl4": 440
+      },
+      {
+        "partition": [
+          7,
+          2
+        ],
+        "nrows": 2,
+        "y_lambda": "0.0062689455",
+        "delta_chi": "-4.3775516",
+        "v_lambda": "-0.027442632",
+        "dim_gl4": 540
+      },
+      {
+        "partition": [
+          7,
+          1,
+          1
+        ],
+        "nrows": 3,
+        "y_lambda": "0.0014725458",
+        "delta_chi": "-2.2498826",
+        "v_lambda": "-0.0033130553",
+        "dim_gl4": 280
+      },
+      {
+        "partition": [
+          6,
+          3
+        ],
+        "nrows": 2,
+        "y_lambda": "0.0044564425",
+        "delta_chi": "-5.8973106",
+        "v_lambda": "-0.026281025",
+        "dim_gl4": 480
+      },
+      {
+        "partition": [
+          6,
+          2,
+          1
+        ],
+        "nrows": 3,
+        "y_lambda": "0.001579791",
+        "delta_chi": "-3.4433433",
+        "v_lambda": "-0.0054397628",
+        "dim_gl4": 420
+      },
+      {
+        "partition": [
+          6,
+          1,
+          1,
+          1
+        ],
+        "nrows": 4,
+        "y_lambda": "-0.00012632451",
+        "delta_chi": "1.0207754",
+        "v_lambda": "-0.00012894896",
+        "dim_gl4": 56
+      },
+      {
+        "partition": [
+          5,
+          4
+        ],
+        "nrows": 2,
+        "y_lambda": "0.0022956143",
+        "delta_chi": "-3.2711979",
+        "v_lambda": "-0.0075094088",
+        "dim_gl4": 280
+      },
+      {
+        "partition": [
+          5,
+          3,
+          1
+        ],
+        "nrows": 3,
+        "y_lambda": "0.0011123786",
+        "delta_chi": "-4.7076913",
+        "v_lambda": "-0.0052367351",
+        "dim_gl4": 360
+      },
+      {
+        "partition": [
+          5,
+          2,
+          2
+        ],
+        "nrows": 3,
+        "y_lambda": "0.00035942352",
+        "delta_chi": "0.623469",
+        "v_lambda": "0.00022408942",
+        "dim_gl4": 160
+      },
+      {
+        "partition": [
+          5,
+          2,
+          1,
+          1
+        ],
+        "nrows": 4,
+        "y_lambda": "-0.00013919036",
+        "delta_chi": "1.8847835",
+        "v_lambda": "-0.00026234369",
+        "dim_gl4": 84
+      },
+      {
+        "partition": [
+          5,
+          1,
+          1,
+          1,
+          1
+        ],
+        "nrows": 5,
+        "y_lambda": "2.6781219e-5",
+        "delta_chi": "0.56565729",
+        "v_lambda": "1.5148992e-5",
+        "dim_gl4": 0
+      },
+      {
+        "partition": [
+          4,
+          4,
+          1
+        ],
+        "nrows": 3,
+        "y_lambda": "0.00039454295",
+        "delta_chi": "-0.87116947",
+        "v_lambda": "-0.00034371377",
+        "dim_gl4": 140
+      },
+      {
+        "partition": [
+          4,
+          3,
+          2
+        ],
+        "nrows": 3,
+        "y_lambda": "0.00026682698",
+        "delta_chi": "-1.6224554",
+        "v_lambda": "-0.00043291486",
+        "dim_gl4": 140
+      },
+      {
+        "partition": [
+          4,
+          3,
+          1,
+          1
+        ],
+        "nrows": 4,
+        "y_lambda": "-8.4345801e-5",
+        "delta_chi": "1.6845707",
+        "v_lambda": "-0.00014208647",
+        "dim_gl4": 60
+      },
+      {
+        "partition": [
+          4,
+          2,
+          2,
+          1
+        ],
+        "nrows": 4,
+        "y_lambda": "-3.6784059e-5",
+        "delta_chi": "4.351395",
+        "v_lambda": "-0.00016006197",
+        "dim_gl4": 36
+      },
+      {
+        "partition": [
+          4,
+          2,
+          1,
+          1,
+          1
+        ],
+        "nrows": 5,
+        "y_lambda": "2.7423647e-5",
+        "delta_chi": "0.1251967",
+        "v_lambda": "3.4333501e-6",
+        "dim_gl4": 0
+      },
+      {
+        "partition": [
+          4,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "nrows": 6,
+        "y_lambda": "-7.16894e-6",
+        "delta_chi": "-1.3881946",
+        "v_lambda": "9.9518841e-6",
+        "dim_gl4": 0
+      },
+      {
+        "partition": [
+          3,
+          3,
+          3
+        ],
+        "nrows": 3,
+        "y_lambda": "3.0103761e-5",
+        "delta_chi": "-1.8539076",
+        "v_lambda": "-5.580959e-5",
+        "dim_gl4": 20
+      },
+      {
+        "partition": [
+          3,
+          3,
+          2,
+          1
+        ],
+        "nrows": 4,
+        "y_lambda": "-1.8045059e-5",
+        "delta_chi": "0.72472422",
+        "v_lambda": "-1.3077691e-5",
+        "dim_gl4": 20
+      },
+      {
+        "partition": [
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "nrows": 5,
+        "y_lambda": "1.098133e-5",
+        "delta_chi": "1.2167448",
+        "v_lambda": "1.3361476e-5",
+        "dim_gl4": 0
+      },
+      {
+        "partition": [
+          3,
+          2,
+          2,
+          2
+        ],
+        "nrows": 4,
+        "y_lambda": "-1.4609845e-6",
+        "delta_chi": "3.2358128",
+        "v_lambda": "-4.7274723e-6",
+        "dim_gl4": 4
+      },
+      {
+        "partition": [
+          3,
+          2,
+          2,
+          1,
+          1
+        ],
+        "nrows": 5,
+        "y_lambda": "6.4638822e-6",
+        "delta_chi": "1.271165",
+        "v_lambda": "8.2166606e-6",
+        "dim_gl4": 0
+      },
+      {
+        "partition": [
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "nrows": 6,
+        "y_lambda": "-6.0631111e-6",
+        "delta_chi": "-2.1783818",
+        "v_lambda": "1.3207771e-5",
+        "dim_gl4": 0
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "nrows": 7,
+        "y_lambda": "2.0022506e-6",
+        "delta_chi": "0.13596323",
+        "v_lambda": "2.7223246e-7",
+        "dim_gl4": 0
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "nrows": 5,
+        "y_lambda": "2.1027753e-7",
+        "delta_chi": "1.9906383",
+        "v_lambda": "4.185865e-7",
+        "dim_gl4": 0
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "nrows": 6,
+        "y_lambda": "-9.3649818e-7",
+        "delta_chi": "-1.3934791",
+        "v_lambda": "1.3049906e-6",
+        "dim_gl4": 0
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "nrows": 7,
+        "y_lambda": "1.0702141e-6",
+        "delta_chi": "-0.41397128",
+        "v_lambda": "-4.4303792e-7",
+        "dim_gl4": 0
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "nrows": 8,
+        "y_lambda": "-5.0355402e-7",
+        "delta_chi": "0.80357896",
+        "v_lambda": "-4.0464541e-7",
+        "dim_gl4": 0
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "nrows": 9,
+        "y_lambda": "8.6936653e-8",
+        "delta_chi": "-0.23350296",
+        "v_lambda": "-2.0299965e-8",
+        "dim_gl4": 0
+      }
+    ]
+  }
+}
