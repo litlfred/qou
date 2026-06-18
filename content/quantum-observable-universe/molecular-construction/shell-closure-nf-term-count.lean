@@ -102,7 +102,7 @@ theorem four_ne_zero_Rq : (4 : R_q) ≠ 0 := by
 /-- `T 2 − 1 = toLaurent(X² − 1) ≠ 0`. -/
 theorem T2_sub_one_ne_zero : (LaurentPolynomial.T 2 - 1 : R_q) ≠ 0 := by
   have e : (LaurentPolynomial.T 2 - 1 : R_q) = Polynomial.toLaurent (Polynomial.X ^ 2 - 1) := by
-    rw [map_sub, map_one, map_pow, Polynomial.toLaurent_X, pow_two, ← LaurentPolynomial.T_add]
+    rw [map_sub, map_one, map_pow, Polynomial.toLaurent_X, LaurentPolynomial.T_pow]
     norm_num
   rw [e, Ne, map_eq_zero_iff _ Polynomial.toLaurent_injective]
   intro hP
@@ -112,13 +112,10 @@ theorem T2_sub_one_ne_zero : (LaurentPolynomial.T 2 - 1 : R_q) ≠ 0 := by
 /-- `T 4 − T 2 + 1 = toLaurent(X⁴ − X² + 1) ≠ 0`. -/
 theorem T4_sub_T2_add_one_ne_zero :
     (LaurentPolynomial.T 4 - LaurentPolynomial.T 2 + 1 : R_q) ≠ 0 := by
-  have p2 : (LaurentPolynomial.T 1 : R_q) ^ 2 = LaurentPolynomial.T 2 := by
-    rw [LaurentPolynomial.T_pow]; norm_num
-  have p4 : (LaurentPolynomial.T 1 : R_q) ^ 4 = LaurentPolynomial.T 4 := by
-    rw [LaurentPolynomial.T_pow]; norm_num
   have e : (LaurentPolynomial.T 4 - LaurentPolynomial.T 2 + 1 : R_q)
       = Polynomial.toLaurent (Polynomial.X ^ 4 - Polynomial.X ^ 2 + 1) := by
-    rw [map_add, map_sub, map_pow, map_pow, map_one, Polynomial.toLaurent_X, p2, p4]
+    rw [map_add, map_sub, map_pow, map_pow, map_one, Polynomial.toLaurent_X, LaurentPolynomial.T_pow]
+    norm_num
   rw [e, Ne, map_eq_zero_iff _ Polynomial.toLaurent_injective]
   intro hP
   have h0 := congrArg (Polynomial.eval 0) hP
