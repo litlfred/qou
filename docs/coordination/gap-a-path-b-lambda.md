@@ -66,6 +66,38 @@ its last two levers, and one of them touches this ledger:
   research — partition-of-5 ↦ A₅ rotation on Bring — NOT a numerical `λ(K)`
   search; "no 7th fit ansatz").
 
+## Status — cont. 3 (2026-06-18)
+
+Two findings from the T/³He same-`n` differential test
+([#2466](https://github.com/litlfred/qou/pull/2466),
+[`docs/audits/2026-06-18-pauli-young-delta-lambda-the3-refutation.md`](../audits/2026-06-18-pauli-young-delta-lambda-the3-refutation.md)):
+
+- **Pauli-Young / Wigner-SU(4) Δ_λ closed — the 19th no-fit closure.** The
+  spin-isospin Young-symmetry projection proposed in
+  [#2461](https://github.com/litlfred/qou/pull/2461) is a multiplicity
+  (`Δ_λ ≥ 0`); on the sharp T/³He split `(B_T−B_³He)/m_e = +1.4947` the concrete
+  `Δ_λ = dim GL(4)(λ)` gives **−45** (wrong sign, ~30×). An isospin-*symmetric*
+  projection cannot supply the isospin-*breaking* split (the `h=q−q⁻¹` anomaly,
+  `2026-05-24-isospin-categorical-source.md`). Also **not novel** —
+  `wigner-su4-from-spin-isospin.md` + `schur-weyl-mass-decomposition.ts` already
+  carry it (a too-narrow corpus-grep in #2461). The saturation chain is now 19.
+- **Proved chirality sign is consistent with the T/³He split (structural plus).**
+  Diagnostic (not a fit) on the *existing* proved weight
+  `Δ_λ = sgn(w₀^{S_λ'})·dim` + its enumerated magnitude variants: the proved
+  **sign gets the differential sign RIGHT** (`sgn·dim → +0.436` MeV = 57 % of
+  target; `sgn·dimq → +0.596` = 78 %; undershoot, matching #2405's per-atom
+  result), unlike the refuted non-negative projection. The residual is a pure
+  **magnitude** question on an otherwise sign-correct structure; the **linear**
+  binding model reproduces the T/³He ordering, the `|·|` model does not. This
+  reaffirms the cont. 2 steer: the open frontier is the **owner-gated categorical
+  `s5-so3-fiber` magnitude/Vol question, NOT a numerical magnitude fit** — a new
+  fitted magnitude would be the gated 19th→20th ansatz.
+- **Refinement of the 2026-06-02 necessary condition.** Direct `v_λ` sign census
+  is 10+/20−, so the non-negative *cone* is **not** sign-blocked (correcting "a
+  positive per-block volume cannot reproduce even the sign"); the obstruction is
+  that the *principled symmetric shape* is wrong, and any sign-correct
+  non-negative weight is a free fit.
+
 ## Cross-axis hub
 
 The step-9 binding closure ledger
