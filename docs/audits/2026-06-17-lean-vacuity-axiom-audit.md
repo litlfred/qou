@@ -6,6 +6,13 @@
 **Scanner:** [`content/pipeline/lean-vacuity-axiom-audit.ts`](../../content/pipeline/lean-vacuity-axiom-audit.ts)
 **Witness:** [`2026-06-17-lean-vacuity-axiom-audit.json`](2026-06-17-lean-vacuity-axiom-audit.json)
 
+> **Recall-fix supersession (2026-06-18, [PR #2462](https://github.com/litlfred/qou/pull/2462)).**
+> A `splitDecls` parser fix closed a body-extraction recall gap: the live
+> `self-assuming-projection` count is now **201** (was 22 below), and the
+> witness JSON has been refreshed to 368 total candidates. The triage in this
+> doc covers the original 22; the root cause + expanded drain queue are in
+> [`2026-06-18-lean-vacuity-recall-fix-and-drain-queue.md`](2026-06-18-lean-vacuity-recall-fix-and-drain-queue.md).
+
 ## Scope
 
 Extends the `lean-proof-vacuity-audit` from an agent-only / grep-heuristic
@@ -149,9 +156,14 @@ build-backed follow-up**, decl-by-decl, rather than rushing unverifiable rewrite
 or deleting deliberate §3b-cond scaffolds. The one committed Lean change
 (`LinearJSJVolume.lean` axiom citations) verified `lean`-direct **exit 0**.
 
-Scanner recall note: the sub-agent found `knot_factor_spectral_derivation:70`
-(sibling of the flagged `plancherelWeight_sum_eq_one:61`) is the same pattern but
-was NOT flagged — a known recall gap to tighten in a follow-up.
+Scanner recall note (**CLOSED 2026-06-18, [PR #2462](https://github.com/litlfred/qou/pull/2462)**):
+the sub-agent found `knot_factor_spectral_derivation:70` (sibling of the flagged
+`plancherelWeight_sum_eq_one:61`) is the same pattern but was NOT flagged. Root
+cause was a `splitDecls` body-extraction bug that swept the trailing
+`end <Namespace>` closer into the last decl's body, breaking the projection
+regex's `\s*$` anchor for every last-decl-before-a-closer. The fix lifted recall
+from **22 → 201** self-assuming candidates; see
+[`2026-06-18-lean-vacuity-recall-fix-and-drain-queue.md`](2026-06-18-lean-vacuity-recall-fix-and-drain-queue.md).
 
 ## Drain plan (priority order)
 
