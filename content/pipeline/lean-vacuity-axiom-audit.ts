@@ -43,6 +43,20 @@
  *   proof-no-trivial-true            — conclusion is `True` / a tautology
  *   proof-no-self-assuming-projection— body returns a conclusion-typed field verbatim
  *   proof-no-false-premise           — hypothesis is impossible (vacuously true)
+ *
+ * Fix-guidance for `proof-no-self-assuming-projection` (per the disposition
+ * rubric, docs/audits/2026-06-18-self-assuming-disposition-rubric.md) — decide
+ * per block, in order:
+ *   1. RESTATE-TO-DERIVE — if a genuine upstream input exists from which the
+ *      conclusion follows (e.g. an `↔` from its two directions), carry the
+ *      *hypotheses* and derive (already exempted when the body uses Iff.intro
+ *      etc.). Stays a proved `theorem`.
+ *   2. QUEUED-FOR-LEAN — if the conclusion is a clearly-true target not yet
+ *      formalised, strip the conclusion-field and use an honest
+ *      `:= by sorry` + `-- Ref:` + `-- QUEUED-FOR-LEAN:` (→ derived status
+ *      `has_sorry`, NOT a demotion). The scanner already accepts honest sorry.
+ *   3. CONJECTURE — only if the truth is genuinely in doubt: demote
+ *      `theorem → conjecture` (a claim-change → owner sign-off).
  *   proof-no-decide-masking          — closed by `native_decide` (adds Lean.ofReduceBool)
  *   proof-no-provable-axiom          — internal `axiom` with no `-- Ref:` (prove or cite)
  *
