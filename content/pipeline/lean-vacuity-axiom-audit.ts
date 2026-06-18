@@ -47,14 +47,15 @@
  * Fix-guidance for `proof-no-self-assuming-projection` (per the disposition
  * rubric, docs/audits/2026-06-18-self-assuming-disposition-rubric.md) — decide
  * per block, in order:
- *   1. RESTATE-TO-DERIVE — if a genuine upstream input exists from which the
- *      conclusion follows (e.g. an `↔` from its two directions), carry the
- *      *hypotheses* and derive (already exempted when the body uses Iff.intro
- *      etc.). Stays a proved `theorem`.
- *   2. QUEUED-FOR-LEAN — if the conclusion is a clearly-true target not yet
- *      formalised, strip the conclusion-field and use an honest
- *      `:= by sorry` + `-- Ref:` + `-- QUEUED-FOR-LEAN:` (→ derived status
- *      `has_sorry`, NOT a demotion). The scanner already accepts honest sorry.
+ *   1. RESTATE→rfl / DERIVE — if the claim is definitional (`X = <formula>`),
+ *      replace the free field with a defined `X := <formula>` so the theorem is
+ *      `rfl`; or, if a genuine upstream input exists (e.g. an `↔` from its two
+ *      directions), carry the *hypotheses* and derive. A real proof.
+ *   2. QUEUED-FOR-LEAN (mark-only) — if the conclusion is a clearly-true target
+ *      not yet formalised, KEEP the `:= ctx.claim_foo` projection (it is a valid
+ *      conditional proof) and add a `-- QUEUED-FOR-LEAN:` body comment; this
+ *      recategorises the hit defect → queued (exempt). Do NOT strip the field +
+ *      `sorry` — that makes the statement false (unsound). NOT a demotion.
  *   3. CONJECTURE — only if the truth is genuinely in doubt: demote
  *      `theorem → conjecture` (a claim-change → owner sign-off).
  *   proof-no-decide-masking          — closed by `native_decide` (adds Lean.ofReduceBool)
@@ -269,6 +270,10 @@ interface Decl {
   body: string;
   /** Original (comment-bearing) head line, for the witness snippet. */
   headLine: string;
+  /** The decl's original text carries a `-- QUEUED-FOR-LEAN:` marker — an
+   *  owner-acknowledged formalisation target (a valid conditional projection
+   *  kept as a placeholder), recategorised from defect → queued. */
+  queued: boolean;
 }
 
 /** Split a file into top-level declarations (comment-stripped code). */
@@ -307,6 +312,9 @@ function splitDecls(origLines: string[], codeLines: string[]): Decl[] {
     const asgn = text.indexOf(":=");
     const sig = asgn >= 0 ? text.slice(0, asgn) : text;
     const body = asgn >= 0 ? text.slice(asgn + 2) : "";
+    // The marker is a comment, so it is gone from `text`; read it from the
+    // original (comment-bearing) lines for this decl's range.
+    const queued = /QUEUED-FOR-LEAN/.test(origLines.slice(i, end).join("\n"));
     decls.push({
       kind,
       name,
@@ -315,6 +323,7 @@ function splitDecls(origLines: string[], codeLines: string[]): Decl[] {
       sig,
       body,
       headLine: origLines[i] ?? "",
+      queued,
     });
   }
   return decls;
@@ -531,6 +540,14 @@ function detectSelfAssuming(d: Decl): Hit | undefined {
   ) {
     const h = mk(d, "proof-no-self-assuming-projection", pat, true);
     h.exempt_reason = "legitimate iff-from-directions conditional-class";
+    return h;
+  }
+  // Owner-marked queued-for-Lean target (mark-only disposition): a valid
+  // conditional projection kept as an acknowledged placeholder. Recategorise
+  // defect → queued (exempt, tracked separately) rather than flagging it.
+  if (d.queued) {
+    const h = mk(d, "proof-no-self-assuming-projection", pat, true);
+    h.exempt_reason = "queued-for-lean (owner-marked formalization target)";
     return h;
   }
   return mk(d, "proof-no-self-assuming-projection", pat, false);

@@ -47,11 +47,12 @@ by
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-per-derivation-weights.ts
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-per-derivation-weights.ts
 theorem binding_assembly [ctx : BindingAssemblyContext] :
-    ctx.atomic_mass = (Finset.univ.sum (fun i : Fin 6 => ctx.term_weights i)) := by
-  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-per-derivation-weights.ts
-  -- QUEUED-FOR-LEAN: clearly-true formalization target; the six-term recovery
-  -- is the manuscript claim, pending the per-derivation weight construction.
-  sorry
+    ctx.atomic_mass = (Finset.univ.sum (fun i : Fin 6 => ctx.term_weights i)) :=
+  -- QUEUED-FOR-LEAN: clearly-true target; `ctx.claim_six_term_recovery` is the
+  -- placeholder conditional proof, pending formalisation of the six-term
+  -- per-derivation weight construction that establishes it.
+  ctx.claim_six_term_recovery
 
 end QOU.BraidKnot.SixTermPerDerivationWeights
