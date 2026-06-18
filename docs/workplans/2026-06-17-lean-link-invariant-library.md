@@ -113,6 +113,27 @@ both **`decide`, AXIOM-FREE**:
   (`jones (4₁)/δ` is exactly the figure-eight Jones polynomial).
 - `figure_eight_knot_nontrivial`: `jones (4₁) ≠ jones (unknot)` (`δ·V(4₁) ≠ δ`).
 
+## Brick 4 (DONE) — library validation: the trefoil knot `3₁` (a chiral knot)
+
+Completing the library's knot ladder (unknot → trefoil → figure-eight → Borromean),
+the trefoil `3₁ = T(3,2) = closure of (σ₁σ₂)²` — the all-positive `(3,2)` torus knot,
+a 1-component 3-braid closure — is the third validation target. Two new theorems in
+[`KauffmanTL3.lean`](../../content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
+both **`decide`, AXIOM-FREE**:
+
+- `trefoil_jones`: `jones (3₁ closure) = δ · V(3₁)` with
+  `V(3₁) = -A⁻¹⁶ + A⁻¹² + A⁻⁴` (classically `t = A⁻⁴` ↦ `-t⁴ + t³ + t`). A second
+  **exact polynomial identity against a literature invariant** — and the first on a
+  *chiral* knot: unlike the amphichiral figure-eight, `V(3₁) ≠ V(mirror 3₁)`
+  (`-t⁻⁴+t⁻³+t⁻¹`), so the bracket is shown to track handedness. The chirality the
+  all-positive `(σ₁σ₂)²` selects in this convention (`σᵢ ↦ A·1 + A⁻¹·eᵢ`, `t = A⁻⁴`)
+  is `-t⁴+t³+t`, verified against the `#eval` oracle before asserting.
+- `trefoil_knot_nontrivial`: `jones (3₁) ≠ jones (unknot)` (`δ·V(3₁) ≠ δ`).
+
+As with `figure_eight_jones`, the identity is proved by transitivity through two
+value lemmas (`jones_trefoil_value`, `delta_mul_jonesTrefoil`) — a single combined
+`decide` exceeds the elaboration heartbeat budget.
+
 ## Follow-ups (post-merge)
 
 - **qa-sweep sidecar refresh — `prop:confinement-operator-selection`.** #2455
