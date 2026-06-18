@@ -32,34 +32,66 @@ This is the invariant the `B₂`-exponent-sum test could not provide. (`decide`
 takes ~45 s on the single degree-28 reduction — acceptable for one theorem;
 brick 2's enumeration will need `native_decide`, see below.)
 
-## Brick 2 (next) — crossing-minimality by enumerate-then-assert
+## Brick 2 (DONE, this PR) — crossing-minimality by enumerate-then-assert
 
-The plan the author described, now concrete and tractable because `TL₃` is tiny:
+`theorem QOU.Knots.TL.borromean_crossing_minimal` in
+[`KauffmanTL3.lean`](../../content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
+proved by **`native_decide`** (axioms `Lean.ofReduceBool` + `Lean.trustCompiler`).
+It enumerates **every** 3-braid word of length `< 6` over `{σ₁^±, σ₂^±}` and asserts:
 
-1. **Python oracle** (`computations/probes/b3_brunnian_minimality_enumeration.py`,
-   already merged): enumerates pure 3-braids of word length `≤ 6` and confirms no
-   nontrivial Brunnian below 6 crossings, Borromean at 6.
-2. **Lean assertion:** enumerate the same finite set in Lean; for each, the
-   Brunnian test is the `B₂` exponent-sum (decidable, brick from #2455) and the
-   *nontriviality* test is `bracket ≠ (unlink bracket)` (brick 1). `decide` the
-   minimality statement over the finite set.
-   - **Performance:** ~4096 length-6 words × a degree-≈28 bracket each is far too
-     slow for kernel `decide` (45 s × thousands). Brick 2 will use
-     **`native_decide`** (compiled evaluation) — this adds the
-     `Lean.ofReduceBool` axiom, which must be **documented** in the theorem's
-     docstring and the axiom audit. This is the honest cost of the
-     "assert in Lean" route for a computation of this size; it trusts the Lean
-     compiler (the same trust as the Python oracle), not a hand-waved step.
-   - Cross-check: the `native_decide` verdict must match the Python enumeration
-     (both are the trusted-compiler oracle; agreement is the audit).
+1. the Borromean `(σ₁σ₂⁻¹)³` is pure, Brunnian, nontrivial and has word-length 6;
+2. no word of length `< 6` is simultaneously Brunnian and nontrivial.
+
+Two decidable invariants combine, both already in the library:
+
+- **Brunnian** = every 2-sublink trivial = each deleted-strand 2-braid has
+  `B₂ ≅ ℤ` exponent sum `0` (`b2class`, re-implemented from #2455 in the
+  `{σ₁,σ₂}` indexing this file uses).
+- **Nontrivial** = the **writhe-normalised** Kauffman bracket — the Jones
+  invariant `(-A³)^(-w)·⟨·⟩`, a genuine ambient-isotopy invariant — differs from
+  the 3-unlink's `δ³`. Normalisation was *essential*: the unnormalised bracket
+  (brick 1) shifts by `(-A³)^±1` under R1, so a *trivial* braid of nonzero writhe
+  would spuriously read "nontrivial"; only the Borromean (writhe 0) was safe
+  unnormalised. Jones-nontrivial ⇒ genuinely nontrivial (the converse can fail,
+  which only makes the lower bound safer — it never over-counts).
+
+**Per-length breakdown** (`#eval`, reproducing the Python oracle's table and
+proving the theorem is non-vacuous):
+
+| len | pure | pure+Brunnian | nontrivial-Brunnian |
+|----:|-----:|--------------:|--------------------:|
+| 0 | 1 | 1 | 0 |
+| 2 | 8 | 4 | 0 |
+| 4 | 96 | 28 | 0 |
+| 6 | 1408 | 248 | **4** (the Borromean family) |
+
+The **28 Brunnian-but-trivial** words at length 4 are the load-bearing check: there
+*are* Brunnian braids below 6 crossings, but the Jones invariant certifies every
+one of them trivial, so none counts. At length 6 exactly **4** words are
+nontrivial-Brunnian — `(σ₁σ₂⁻¹)³` and its sign/mirror variants, all
+Borromean-signature — matching the oracle. The `native_decide` verdict (minimal
+`= 6`) **agrees with** the Python enumeration
+(`b3_brunnian_minimality_enumeration.py`); the agreement is the audit.
+
+- **Performance:** ~1365 words below length 6 (+ the length-6 witness check), each
+  a Laurent-polynomial bracket — far beyond kernel `decide` (brick 1's *single*
+  bracket took ~45 s), so `native_decide` (compiled) is required. It trusts the
+  Lean compiler (the same trust class as the Python oracle), documented in the
+  theorem docstring and the axiom audit. Whole-file `lean`-direct check: ~36 s.
 
 ## Honest scope
 
 - Brick 1 is a **genuine, axiom-free** machine proof that the Borromean rings are
   a nontrivial link — the previously-missing invariant.
-- Full crossing-minimality (brick 2) will be **`native_decide`-backed** (one
-  documented axiom), not kernel-`decide` — the finite computation is too large
-  for the kernel. This is exactly the author's enumerate-then-assert pattern.
+- Full crossing-minimality (brick 2) is **`native_decide`-backed** (axioms
+  `Lean.ofReduceBool` + `Lean.trustCompiler`), not kernel-`decide` — the finite
+  computation is too large for the kernel. This is exactly the author's
+  enumerate-then-assert pattern; the verdict cross-checks the Python oracle.
+- Scope is **3-braid closures** (the framework's 3-quark setting) and **braid-word
+  crossing number**, not full link-theoretic uniqueness over all links; and
+  nontriviality is the Jones invariant — a *sufficient* (not complete) certificate,
+  which only strengthens the lower bound. The literature uniqueness (Borromean =
+  the unique 6-crossing Brunnian link, Rolfsen) is unchanged.
 - None of this touches binding *magnitude* (still research-grade). It completes
   the *selection-principle* formalisation: confinement = crossing-minimal
   nontrivial Brunnian, now with both the triviality (B₂) and nontriviality
