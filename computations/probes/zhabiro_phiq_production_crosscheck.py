@@ -33,7 +33,6 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))            # computations/
 sys.path.insert(0, str(HERE))                   # computations/probes/
-mp.mp.dps = 50
 
 from _phi_q_util import phi_q  # production Φ_q  # noqa: E402
 from zhabiro_phiq_wiring import (  # the merged Lean-bridge helpers  # noqa: E402
@@ -41,6 +40,10 @@ from zhabiro_phiq_wiring import (  # the merged Lean-bridge helpers  # noqa: E40
     cyclotomic_coeffs,
     P_eval,
 )
+
+# Set precision AFTER imports: zhabiro_phiq_wiring sets mp.dps on import, so
+# pinning it here makes the precision deterministic (and matches the witness).
+mp.mp.dps = 60
 
 try:
     sys.path.insert(0, str(HERE.parent.parent / "tools" / "qou-substrate" / "python"))
@@ -82,12 +85,16 @@ def main() -> int:
         #      Increase D until the partial sum matches production phi_q, or cap.
         partial = mp.mpf(0)
         bm = mp.mpf(1)            # b_0 = 1
+        z_pow = mp.mpf(1)        # z^D, maintained incrementally
+        q_pow = mp.mpf(1)        # q^{-D}, maintained incrementally
         matched_D = None
         for D in range(0, 600):
             if D > 0:
+                q_pow *= q_inv
                 # recurrence b_D = b_{D-1} · q^{-1} · (1 - q^{-D})^{-1}
-                bm = bm * q_inv * (1 - q ** (-D)) ** (-1)
-            partial += bm * z ** D
+                bm = bm * q_inv * (1 - q_pow) ** (-1)
+                z_pow *= z
+            partial += bm * z_pow
             if abs(partial - prod) < mp.mpf(10) ** (-12):
                 matched_D = D
                 break
