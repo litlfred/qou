@@ -119,7 +119,7 @@ documented on the **Q_β side** (the block above + the whole 2026-06-14 audit cl
 `brane-tower-z-habiro.md` → **no matches**. A reader of the brane-tower block has no
 pointer to the fact that its binding Δ_λ ladder *is* the q-Lommel order recurrence
 (`QLommelOrderRecurrence.lean`), nor to the refuted joint lever. A one-paragraph
-cross-reference on the brane-tower block closes this asymmetry (companion commit).
+cross-reference on the brane-tower block closes this asymmetry (tracked as a follow-up).
 
 ## 6. Cross-references
 
