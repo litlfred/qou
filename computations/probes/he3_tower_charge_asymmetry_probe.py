@@ -168,7 +168,8 @@ def main() -> int:
         ],
     }
     out = self_path.parent.parent / "he3-tower-charge-asymmetry.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n",
+                   encoding="utf-8")
     print(f"\nwrote {out}   allPassed={all_passed}")
     return 0 if all_passed else 1
 
