@@ -176,6 +176,7 @@ export default chapter({
         "habiro-ring",
         "habiro-expansion-atomic",
         "z-habiro-ring",
+        "quantum-dilog-convergence",
         "brane-tower-z-habiro",
         "brane-tower-z-habiro-table1-data",
         // Re-homed from the trace/operator collection: the Hoefsmit extended-

@@ -94,13 +94,21 @@ survive (LP-dual pair-knot selection at closed shells; Z↔N isospin
 symmetry) are kept in the paper as gates (brane-tower `.md`
 §"Structural finding…").
 
-**Convergence half (the provable part).** Independent of `n⋆`, the
-analytic statement that the brane tower `Φ_q(z) = ∏_{k≥1}(1−q^{-k}z)^{-1}`
-is a well-defined positive real is being formalized in
-[`PhiQConvergence.lean`](../../content/quantum-observable-universe/lean/QOU/MassEndomorphism/PhiQConvergence.lean)
-(`summable_q_inv_geometric` + `quantumDilog_factors_nonzero` proved;
-`Multipliable` in progress). This is the part of the conjecture that
-*can* be promoted to a theorem; the `n⋆` half remains open.
+**Convergence half (now PROVED — promoted to a theorem).** Independent of
+`n⋆`, the analytic statement that the brane tower
+`Φ_q(z) = ∏_{k≥1}(1−q^{-k}z)^{-1}` is a well-defined positive real on
+`|z| < q` is **proved sorry-free** in
+[`PhiQConvergence.lean`](../../content/quantum-observable-universe/lean/QOU/MassEndomorphism/PhiQConvergence.lean):
+`summable_q_inv_geometric` + `quantumDilog_factors_nonzero` +
+`quantumDilog_denom_multipliable` + **`quantumDilog_multipliable`** (the
+Multipliable statement, via `Real.multipliable_one_add_of_summable`). This
+is now promoted to the proposition
+[`prop:quantum-dilog-convergence`](../../content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.md)
+(2026-06-18). The `n⋆` half remains open/refuted. NB the convergence
+theorem does **not** wire to the production mass table: at the physical
+`z = |V̂_i| < 1` the product is convergent but enormous, so the canonical
+tower uses the bounded `−Li₂^q` form — see
+[`2026-06-18-zhabiro-physical-z-pin-and-wiring-verdict.md`](2026-06-18-zhabiro-physical-z-pin-and-wiring-verdict.md).
 
 ## Reclassified as gates — KEPT in the paper
 
