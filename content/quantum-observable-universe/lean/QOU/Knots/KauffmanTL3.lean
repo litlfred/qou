@@ -268,5 +268,63 @@ theorem borromean_crossing_minimal :
     wordsBelow6.all (fun w => !nontrivialBrunnian w) = true := by
   native_decide
 
+/-! ## Library validation + reuse — the figure-eight knot `4₁`
+
+The Kauffman/`TL₃` bracket is not Borromean-specific: applied to *any* 3-braid
+closure it computes the Jones invariant. The figure-eight knot
+`4₁ = closure of (σ₁σ₂⁻¹)²` is the natural cross-check — it is the
+**q₀-calibration knot** (`m_μ/m_e = Vol(4₁)/ℏ_q²`, `Vol(4₁) = 2Λ(π/3)`,
+canonical-derivation cheat-sheet CAL-2), and as a 1-component closure of a
+length-4 3-braid it is directly in range. Reproducing its *exact* Jones
+polynomial validates the bracket against a literature invariant — a stronger
+check than brick 1's Borromean nontriviality, which only compared two brackets
+for inequality. -/
+
+/-- The figure-eight knot `4₁`, as the closure of the 3-braid `(σ₁σ₂⁻¹)²` (its
+    underlying permutation is a 3-cycle, so the closure is a single component —
+    a knot). -/
+def figureEight : List (Nat × Bool) := [(1, true), (2, false), (1, true), (2, false)]
+
+/-- The figure-eight Jones polynomial `V(4₁) = A⁸ - A⁴ + 1 - A⁻⁴ + A⁻⁸`
+    (Kauffman `A`-variable; the substitution `t = A⁻⁴` recovers the classical
+    `t⁻² - t⁻¹ + 1 - t + t²`). -/
+def jonesFigureEight : LP := ⟨-8, [1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0, 1]⟩
+
+set_option maxRecDepth 100000 in
+/-- `δ · V(4₁)` in fully reduced form, `-A¹⁰ - A⁻¹⁰` (small-`LP` arithmetic). -/
+theorem delta_mul_jonesFigureEight :
+    LP.mul delta jonesFigureEight =
+      ⟨-10, [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1]⟩ := by
+  decide
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 400000 in
+/-- The bracket reduction of the figure-eight closure: `jones (4₁) = -A¹⁰ - A⁻¹⁰`. -/
+theorem jones_figureEight_value :
+    jones figureEight =
+      ⟨-10, [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1]⟩ := by
+  decide
+
+/-- **The link library reproduces the known figure-eight Jones polynomial**
+    (machine-proved, AXIOM-FREE): `jones (4₁ closure) = δ · V(4₁)` with
+    `V(4₁) = A⁸ - A⁴ + 1 - A⁻⁴ + A⁻⁸`. An *exact polynomial identity* against a
+    literature invariant — a stronger validation of the Kauffman/`TL₃` bracket
+    than brick 1's Borromean nontriviality (which only compared two brackets for
+    inequality). The `δ` is the 1-component normalisation (`jones (unknot) = δ`);
+    the reduced invariant `jones (4₁) / δ = V(4₁)`. Since `4₁` is the
+    q₀-calibration knot (`m_μ/m_e = Vol(4₁)/ℏ_q²`), this exercises the library on a
+    framework-central knot. (Proved by transitivity through the two value lemmas:
+    a single `decide` on the combined `jones`+`δ·V` reduction exceeds even a
+    1 M-heartbeat elaboration budget, so the two reductions are kept separate.) -/
+theorem figure_eight_jones : jones figureEight = LP.mul delta jonesFigureEight :=
+  jones_figureEight_value.trans delta_mul_jonesFigureEight.symm
+
+set_option maxRecDepth 100000 in
+/-- **The figure-eight is a nontrivial knot** (machine-proved, AXIOM-FREE): its
+    Jones polynomial `δ·V(4₁)` differs from the unknot's `δ` (the closure of the
+    3-cycle braid `σ₁σ₂`), because `V(4₁) ≠ 1`. -/
+theorem figure_eight_knot_nontrivial :
+    jones figureEight ≠ jones [(1, true), (2, true)] := by decide
+
 end TL
 end QOU.Knots
