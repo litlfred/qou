@@ -114,10 +114,16 @@ def neg_li2q_neg(z: mp.mpf, terms: int = 100000) -> mp.mpf:
     """Production tower term −Li₂^q(−z) = Σ (−1)^{n+1} z^n/(n·[n]_q). +inf if |z|≥q₀."""
     if abs(z) >= Q0:
         return mp.inf
+    # Maintain q^n, q^-n iteratively (O(terms) multiplications) instead of
+    # calling q_int(n) — which re-does Q0**n / QI**n each step, O(terms)
+    # arbitrary-precision exponentiations (Gemini review, PR #2481).
     total, zn, sign = mp.mpf(0), mp.mpf(1), 1
+    q0_n, qi_n, denom_factor = mp.mpf(1), mp.mpf(1), Q0 - QI
     for n in range(1, terms + 1):
         zn *= z
-        term = sign * zn / (n * q_int(n))
+        q0_n *= Q0
+        qi_n *= QI
+        term = (sign * zn * denom_factor) / (n * (q0_n - qi_n))  # 1/[n]_q
         total += term
         sign = -sign
         if abs(term) < mp.mpf(10) ** (-mp.mp.dps - 5):
