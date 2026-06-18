@@ -1,0 +1,58 @@
+{
+  "computation": "zhabiro-phiq-production-crosscheck",
+  "kind": "exploratory-probe",
+  "content_block": "conj:brane-tower-z-habiro",
+  "engine": "mpmath",
+  "dps": 60,
+  "q0": "1.10997859555733471989976322048",
+  "q0_source": "qou_substrate.constants.q_at (proton pin)",
+  "depth_N": 16,
+  "result": {
+    "euler_converges_to_production": true,
+    "euler_vs_cyclotomic_ok": true,
+    "max_euler_vs_cyclo_abs": "3.63848e-47",
+    "cross_check_ok": true,
+    "physical_z_note": "production \u03a6_q argument is |V\u0302_i^full| = |tr_M(\u03c3_i)|-type per-generator sub-trace (< q for convergence), per per-braid-mass-tower.md \u2014 NOT the scalar \u210f_q\u00b2."
+  },
+  "samples": [
+    {
+      "z": "0.05",
+      "phi_q_prod": "1.584291186008778",
+      "euler_converges_to_prod_at_depth": 12,
+      "abs_euler_vs_cyclo_fixedN": "1.368e-49"
+    },
+    {
+      "z": "0.2",
+      "phi_q_prod": "6.772418436000384",
+      "euler_converges_to_prod_at_depth": 23,
+      "abs_euler_vs_cyclo_fixedN": "4.266e-49"
+    },
+    {
+      "z": "0.5",
+      "phi_q_prod": "189.1038786451678",
+      "euler_converges_to_prod_at_depth": 52,
+      "abs_euler_vs_cyclo_fixedN": "7.206e-49"
+    },
+    {
+      "z": "0.8",
+      "phi_q_prod": "13774.96355312692",
+      "euler_converges_to_prod_at_depth": 130,
+      "abs_euler_vs_cyclo_fixedN": "1.254e-47"
+    },
+    {
+      "z": "1.0",
+      "phi_q_prod": "901387.4653645892",
+      "euler_converges_to_prod_at_depth": 418,
+      "abs_euler_vs_cyclo_fixedN": "3.638e-47"
+    }
+  ],
+  "_provenance": {
+    "production_phi_q": "computations/_phi_q_util.py::phi_q",
+    "lean_refs": [
+      "QOU.MassEndomorphism.ZHabiroCauchy.eulerCoeff",
+      "QOU.MassEndomorphism.ZHabiroCauchy.eulerTrunc_eq_cyclotomic",
+      "QOU.MassEndomorphism.ZHabiroCauchy.zHabiroLimit_coord_eq_eulerTrunc"
+    ],
+    "wiring_status": "production \u03a6_q \u2261 Lean eulerCoeff/cyclotomic identification CERTIFIED at q_0; next: route per-generator |V\u0302_i^full| magnitudes through the canonical mass table + dashboards."
+  }
+}
