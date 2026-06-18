@@ -134,13 +134,21 @@ limit. Full per-candidate rows in the [sidecar JSON](2026-06-18-self-assuming-pr
 `claim_*`-named field/conjunct projections dominate, so a batch is mostly the
 same mechanical restate — but each is a **claim-change** (§5).
 
-## 4. Recommended scanner precision-fix (belongs on #2462, not here)
+## 4. Scanner precision-fix — ✅ landed in #2462
+
+> **Update (2026-06-18):** implemented and **merged** in #2462 (the scanner is
+> modified there, so the fix lives with it rather than diverging a `main`-forked
+> branch). The scanner now exempts a two-field tuple-projection whose
+> conclusion's top-level connective is `↔` with
+> `exempt_reason: "legitimate iff-from-directions conditional-class"`; both cases
+> are auto-exempt and the live counts are **199 self-assuming / 48 exempt**. This
+> §4 records the original recommendation and its resolution.
 
 The 2 legitimate cases are scanner false-positives: the `DERIVES` filter misses
 the anonymous `Iff.intro` constructor `⟨ctx.fwd, ctx.bwd⟩` for a **top-level
 `↔`** conclusion. A precision-fix — exempt a tuple-projection whose conclusion's
-top-level connective is `↔` and whose two fields are the directions — would clear
-both and prevent the pattern recurring. Because the scanner lives on
+top-level connective is `↔` and whose two fields are the directions — clears
+both and prevents the pattern recurring. Because the scanner lives on
 **#2462** (modified there by the recall fix), this change belongs on that branch,
 not on a branch forked from `main` (which would diverge the scanner). It is
 flagged here as a one-line follow-up; this triage branch deliberately does **not**
