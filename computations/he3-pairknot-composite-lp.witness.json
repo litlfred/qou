@@ -1,10 +1,10 @@
 {
   "engine": "scipy+mpmath",
   "engineVersion": "mpmath 1.3.0; numpy 2.4.6",
-  "computedAt": "2026-06-18T13:22:15.280502+00:00",
+  "computedAt": "2026-06-18T15:50:57.930791+00:00",
   "computation": "he3-pairknot-composite-lp",
   "scriptFile": "he3_pairknot_composite_lp_probe.py",
-  "scriptHash": "ad692300aaf4",
+  "scriptHash": "9c92dcc8c9db",
   "contentBlock": "def:coulomb-charge",
   "auditOnly": true,
   "auditDoc": "docs/audits/2026-06-18-he3-tower-charge-asymmetry-and-pairknot.md",
@@ -66,15 +66,15 @@
     "coulomb_ratio_residual": "1.67048e-52",
     "pp_pairknot": {
       "Q_pp": 1,
-      "B_pp_strong_MeV": "2.28608797688",
-      "coulomb_reduction_MeV": "0.237670213672",
-      "fraction_of_split_covered": "0.311168090576",
+      "B_pp_strong_MeV": "2.28608808887",
+      "coulomb_reduction_MeV": "0.237670225315",
+      "fraction_of_split_covered": "0.311168139978",
       "cited_from": "charge-coulomb-tn3he-derived.witness.json"
     },
     "spurious_tower_asymmetry_MeV": "1.16501847427",
-    "charge_coulomb_witness_qrepin_drift": "2.60898e-8",
-    "charge_coulomb_witness_stale": true,
-    "stale_note": "charge-coulomb-tn3he-derived.witness.json stored ratio/dHe drift ~1e-8 from current q0 (tanh ln q0): it predates the 2026-05-28 proton-anchor re-pin. Refresh recommended; 31% conclusion robust."
+    "charge_coulomb_witness_qrepin_drift": "2.10788e-17",
+    "charge_coulomb_witness_stale": false,
+    "stale_note": "charge-coulomb-tn3he-derived.witness.json is current (drift 2.11e-17); refreshed in PR #2478."
   },
   "assertions": [
     {
@@ -96,7 +96,7 @@
       "computed": 1,
       "expected": 1,
       "tolerance": 0,
-      "note": "ratio·B_pp reproduces charge_coulomb_tn3he_derived dHe (Q_pp=+1) to 2.61e-8 — the residual is the q0-repin drift (cited witness predates 2026-05-28; stale-witness flag below)"
+      "note": "ratio·B_pp reproduces charge_coulomb_tn3he_derived dHe (Q_pp=+1) to 2.11e-17 at current q0 (witness refreshed in PR #2478)"
     },
     {
       "name": "pairknot_correct_sign_vs_spurious",

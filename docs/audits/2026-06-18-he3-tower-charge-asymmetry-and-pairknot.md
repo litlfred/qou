@@ -113,14 +113,16 @@ open item; it does not close it.**
 > magnitude by fitting to 0.764 MeV is a **forbidden CAL-4 fit** (Δ_λ gate). The
 > tractable canonical route is the analytical `C_λ·S_λ` factorisation at H_6.
 
-## Side finding — stale witness (flagged, not fixed here)
+## Side finding — stale witness (found AND refreshed in this PR)
 
 [`charge-coulomb-tn3he-derived.witness.json`](../../computations/charge-coulomb-tn3he-derived.witness.json)
-stores `ratio = tanh(ln q₀) = 0.10396371005`, which differs from the current
-value `0.10396372147` by `~1.1e-8`; its `dHe` drifts `~2.6e-8`. The witness
-**predates the 2026-05-28 proton-anchor q₀ re-pin** and should be refreshed
-(re-run the producer). The 31% conclusion is robust to the drift. Recorded here
-as a QA follow-up; refreshing it is out of scope for this exploratory PR.
+was found **stale**: it stored `ratio = tanh(ln q₀) = 0.10396371005`, differing
+from the current value `0.10396372147` by `~1.1e-8` (`dHe` drift `~2.6e-8`) — it
+**predated the 2026-05-28 proton-anchor q₀ re-pin**. It has been **refreshed in
+this PR** (re-ran the producer at current q₀: `ratio = 0.10396372146`,
+`dHe = 0.237670225`, `B_pp = 2.286 MeV`, 31.1% / 3.21× unchanged); D3 now cites
+it with drift `2.1e-17`. The probe retains a generic `cc_witness_stale` guard
+that re-fires on any future re-pin drift.
 
 ## Discipline checklist
 
