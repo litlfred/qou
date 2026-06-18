@@ -106,6 +106,19 @@ Two findings from the T/³He same-`n` differential test
   (`[5,1,1,1,1]`) carries 0.1 % of the trace. ⇒ the magnitude is **irreducibly
   multi-block**; single-dominant-block concentration cannot respect the mirror.
   ([`2026-06-18-sparse-interface-magnitude-the3-prune.md`](../audits/2026-06-18-sparse-interface-magnitude-the3-prune.md)).
+- **Quantum dimension `dim_q` killed by bounded-across-A — the last chirality-invariant
+  magnitude candidate is closed.** The A-tower sweep
+  (`probes/chirality_delta_lambda_binding_sweep.py`, `sgn·dimq` column) shows `dim_q`
+  diverges at A≥6 just like `dim` — and *worse*: `B_pred` overshoots AME by 54× at ⁶Li
+  and 451× at ⁷Li (13×/42× worse than `dim`), because at `q₀=1.110>1` each `[k]_q≈q^{k-1}`
+  blows up. The signed sum does not rescue it. So the magnitude box row "bounded across A"
+  reads `dim ✗, dim_q ✗`: **no combinatorial-dimension chirality-invariant weight survives
+  bounded + multi-block**. The bounded `sgn`/raw candidates undershoot catastrophically
+  (`sgn` at ⁷Li is 666,000× too small). The target is squeezed to an *intermediate-growth*
+  (≈ linear-in-A) chirality-invariant multi-block object — the owner-gated categorical
+  **bounded geometric `Vol`** (`s5-so3-fiber`), not a numerical weight; a fitted one is the
+  gated 20th ansatz.
+  ([`2026-06-18-dimq-bounded-across-a-prune.md`](../audits/2026-06-18-dimq-bounded-across-a-prune.md)).
 
 ## Cross-axis hub
 
