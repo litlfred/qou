@@ -97,6 +97,35 @@ Borromean-signature — matching the oracle. The `native_decide` verdict (minima
   nontrivial Brunnian, now with both the triviality (B₂) and nontriviality
   (Kauffman/TL₃) invariants in Lean.
 
+## Brick 3 (DONE) — library validation + reuse: the figure-eight knot `4₁`
+
+The Kauffman/`TL₃` bracket is reusable for *any* 3-braid closure. The figure-eight
+`4₁ = closure of (σ₁σ₂⁻¹)²` is the natural reuse target — the **q₀-calibration
+knot** (`m_μ/m_e = Vol(4₁)/ℏ_q²`, CAL-2). Two new theorems in
+[`KauffmanTL3.lean`](../../content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
+both **`decide`, AXIOM-FREE**:
+
+- `figure_eight_jones`: `jones (4₁ closure) = δ · V(4₁)` with
+  `V(4₁) = A⁸ - A⁴ + 1 - A⁻⁴ + A⁻⁸`. This is an **exact polynomial identity
+  against a literature invariant** — a stronger bracket validation than brick 1's
+  Borromean nontriviality (which only compared two brackets for inequality). It
+  retroactively confirms the brick 1/2 bracket is the genuine Jones invariant
+  (`jones (4₁)/δ` is exactly the figure-eight Jones polynomial).
+- `figure_eight_knot_nontrivial`: `jones (4₁) ≠ jones (unknot)` (`δ·V(4₁) ≠ δ`).
+
+## Follow-ups (post-merge)
+
+- **qa-sweep sidecar refresh — `prop:confinement-operator-selection`.** #2455
+  changed the block's `.md`/`.ts`/`.lean`; its
+  [`confinement-operator-selection.qa.json`](../../content/quantum-observable-universe/particle-interactions/confinement-operator-selection.qa.json)
+  sidecar still carries the pre-#2455 `source_hashes`
+  (`md a7e748cdc000`, `ts 6c77b7d17276`, `lean f8db5d74c684`, last reviewed
+  2026-05-27) and now reads **stale**. Refresh with
+  `bun run content/pipeline/qa-sweep.ts content/quantum-observable-universe/particle-interactions/confinement-operator-selection.md`
+  (or `/integration-audit voice` to batch the axis). **Could not run in the
+  sparse remote checkout** — `content/pipeline/` + `folio-assistant/schemas/` are
+  absent here — so this is a full-checkout / CI follow-up.
+
 ## Cross-links
 - `content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_operator_selection.lean` — the Brunnian signature + sublink-triviality (`decide`, axiom-free).
 - `computations/probes/b3_brunnian_minimality_enumeration.py` — the Python enumeration oracle.
