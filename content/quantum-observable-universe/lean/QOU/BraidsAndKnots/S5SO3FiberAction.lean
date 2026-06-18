@@ -110,6 +110,52 @@ theorem A5_order_eq_60 :
     (a5_dims.map (· ^ 2)).sum = 60 := by
   native_decide
 
+/-! ## The five A₅ irreps — the CORRECTED domain of the fiber map
+
+    Per `docs/audits/2026-06-13-bring-fiber-action-falsification.md`: the
+    geometric fiber map's domain is the FIVE irreps of A₅ (≅ I), NOT the
+    seven partitions of S₅.  Conjugate S₅-partitions restrict to the *same*
+    A₅ irrep (the sign character is trivial on A₅); the self-conjugate
+    (3,1,1) splits into the chirality pair T₁ ⊕ T₂.  This 1+1+1+2 = 5 count
+    matches the 5 conjugacy classes of A₅ (character-table duality), which
+    the falsified 7-partition map could not reach (7 partitions ↦ 4
+    conjugation orbits ↦ at most 4 classes). -/
+
+/-- The five irreducible representations of A₅ ≅ I (dims 1, 3, 3, 4, 5):
+    A (trivial), the chirality pair T₁/T₂ (both dim 3), G (dim 4), H (dim 5). -/
+inductive A5Irrep where
+  | A | T₁ | T₂ | G | H
+  deriving DecidableEq, Repr
+
+/-- All five A₅ irreps. -/
+def A5Irrep.allList : List A5Irrep := [.A, .T₁, .T₂, .G, .H]
+
+/-- Dimension of each A₅ irrep. -/
+def A5Irrep.dim : A5Irrep → ℕ
+  | .A => 1 | .T₁ => 3 | .T₂ => 3 | .G => 4 | .H => 5
+
+/-- A₅ has exactly five irreps — equal to its number of conjugacy classes
+    (the character-table duality the fiber map realizes). -/
+theorem A5Irrep.card_eq_five : A5Irrep.allList.length = 5 := rfl
+
+/-- The A₅ irrep each S₅ partition restricts to (its chirality
+    representative).  Conjugate partitions share an irrep; the self-conjugate
+    (3,1,1) is sent to its T₁ representative (the T₁ ⊕ T₂ chirality split is
+    recorded in `s5_to_a5_electron_block_splits`). -/
+def PartitionOf5.toA5Irrep : PartitionOf5 → A5Irrep
+  | .five         => .A   | .onesFive     => .A
+  | .fourOne      => .G   | .twoOneOneOne => .G
+  | .threeTwo     => .H   | .twoTwoOne    => .H
+  | .threeOneOne  => .T₁
+
+/-- **Corrected conjugate-compatibility** (replaces the falsified geometric
+    angle sign-flip `angle(λ') = -angle(λ)`): conjugate S₅-partitions restrict
+    to the SAME A₅ irrep, hence share a fiber.  The sign-twist lives on the
+    Wedderburn/S₅ side, not as a geometric orientation reversal. -/
+theorem PartitionOf5.conjugate_same_a5_irrep (p : PartitionOf5) :
+    p.conjugate.toA5Irrep = p.toA5Irrep := by
+  cases p <;> rfl
+
 /-! ## The Bring's surface fiber-action map — conditional class -/
 
 /-- A rotation in SO(3) about a given axis, by a given angle. -/
@@ -130,68 +176,66 @@ structure IcosahedralRotation where
   -- 12-vertex configuration.  Encoded as a class hypothesis below.
   deriving Inhabited
 
-/-- **Class: fiber action of A_5 on Bring's surface.**
+/-- **Class: fiber action of A₅ on Bring's surface (corrected domain).**
 
-    The conjectural content: at each point p ∈ Bring's quintic
-    surface Σ_4, the partition-wise Wedderburn fibers (one for each
-    partition of 5) admit a canonical map to icosahedral SO(3)
-    rotations, such that the map respects the A_5 ↔ I isomorphism.
+    The conjectural content: the icosahedral action on Bring's quintic
+    surface Σ₄ induces a fiber map from the five A₅ irreps to icosahedral
+    SO(3) rotations, realizing the A₅ irrep ↔ conjugacy-class duality.
 
-    Per CLAUDE.md §3b-cond, this is encoded as a class instance
-    field; downstream theorems consume it via [Instance].
+    This corrects the falsified `S₅-partition → rotation` map.  Per
+    `docs/audits/2026-06-13-bring-fiber-action-falsification.md`, the prior
+    7-partition domain made `respects_conjugate` (a geometric angle
+    sign-flip `angle(λ') = -angle(λ)`) and `hits_five_conjugacy_classes`
+    *mutually unsatisfiable* (orbit counting: 7 partitions ↦ 4 conjugation
+    orbits ↦ at most 4 classes), and the placeholder `: True` + trivial
+    instance discharged the class vacuously.  The corrected domain is the
+    FIVE A₅ irreps (`A5Irrep`); the false sign-flip is replaced by the
+    theorem `PartitionOf5.conjugate_same_a5_irrep` (conjugate partitions
+    share a fiber — derived, not axiomatised).
 
-    This class corresponds to the open structural step in
-    `docs/audits/2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md`
-    §4 task 4.4. -/
+    Per CLAUDE.md §3b-cond the conjectural geometric map is a class field;
+    downstream results consume it via `[BringFiberAction]`.  The field
+    `five_distinct_classes` is SUBSTANTIVE — a constant map fails injectivity
+    — so the class is **not** vacuously satisfiable.  The explicit map
+    (which A₅ irrep ↦ which icosahedral rotation, from Bring's quintic
+    automorphism group) is the open, owner-gated step
+    `conj:s5-so3-fiber-action`; no global instance is provided, so downstream
+    theorems are genuinely conditional on it.
+
+    -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron (Bring) -/
 class BringFiberAction where
-  /-- The fiber map: partition of 5 → icosahedral rotation (parameterised
-      by a base point on Bring's surface; here we abstract over the
-      point to a single representative map). -/
-  partition_to_rotation : PartitionOf5 → IcosahedralRotation
-  /-- The map respects the A_5 / I correspondence: conjugate
-      partitions map to inverse rotations (= sign-twist on the
-      Wedderburn side ↔ orientation reversal on the SO(3) side). -/
-  respects_conjugate :
-    ∀ p : PartitionOf5,
-      (partition_to_rotation p.conjugate).asSO3.angle =
-        -(partition_to_rotation p).asSO3.angle
-  /-- The five A_5 irreps (per `restrictsToA5Irrep`) correspond to
-      the five conjugacy classes of icosahedral rotations:
-      identity, 2-fold, 3-fold, 5-fold (twice).  This statement
-      requires the surjective image of `partition_to_rotation`
-      restricted to A_5-irreps to hit exactly 5 distinct rotation
-      orders.  Encoded as a placeholder for the structural theorem;
-      proof requires the explicit map. -/
-  hits_five_conjugacy_classes : True   -- placeholder; refine
+  /-- The conjectural geometric fiber map on the corrected (A₅-irrep) domain:
+      each A₅ irrep ↦ an icosahedral rotation, induced by Bring's quintic. -/
+  irrepToRotation : A5Irrep → IcosahedralRotation
+  /-- **Substantive** (de-vacuifying, replacing the prior `: True`): the five
+      A₅ irreps realize five DISTINCT icosahedral conjugacy classes — five
+      distinct rotation angles.  A constant map fails injectivity, so this
+      cannot be discharged vacuously (the falsified trivial instance is
+      rejected). -/
+  five_distinct_classes :
+    Function.Injective (fun r : A5Irrep => (irrepToRotation r).asSO3.angle)
 
-/-- **Default instance (trivial):** the constant map sending every
-    partition to the identity rotation.  This satisfies the class's
-    minimal conditions vacuously; it is NOT the geometric fiber map.
-    Real instances will derive `partition_to_rotation` from the
-    Bring surface's automorphism group structure. -/
-noncomputable instance : BringFiberAction where
-  partition_to_rotation _ := { asSO3 := { axis_x := 0, axis_y := 0, axis_z := 1, angle := 0 } }
-  respects_conjugate _ := by simp
-  hits_five_conjugacy_classes := trivial
+/-- **Main statement (scaffold).** The S₅↔SO(3) fiber action on Bring's
+    surface gives a map from partition-wise Wedderburn data (S₅ irreps) to
+    icosahedral spatial rotations (I ⊂ SO(3)), preserving the conjugation
+    structure.
 
-/-- **Main statement (scaffold).** The S_5↔SO(3) fiber action on
-    Bring's surface gives a map from partition-wise Wedderburn data
-    (S_5 irreps) to icosahedral spatial rotations (I ⊂ SO(3)),
-    preserving the conjugation structure.
+    The combinatorial half (dim² = 120, conjugation involutive) holds
+    unconditionally.  Under the conjectural `BringFiberAction` the fiber map
+    additionally *identifies conjugate partitions* (same A₅ irrep ⇒ same
+    rotation) — the corrected replacement for the falsified angle sign-flip,
+    so the `[BringFiberAction]` hypothesis is genuinely used (not decorative).
 
-    Scope (2026-05-24, scaffold-only): proves the combinatorial half
-    via PartitionOf5.conjugate_involutive + dim² = 120.  The
-    geometric realization (specific A_5 ↔ I map) is encoded as the
-    BringFiberAction class.
-
-    Closure of this scaffold requires the explicit BringFiberAction
-    instance derived from Bring's quintic surface automorphism group.
-    Tracked as queued task 4.4 in
-    `docs/audits/2026-05-24-family-a-gap-audit.md` §4. -/
-theorem s5_so3_fiber_action_scaffold [BringFiberAction] :
+    Closure of the open half requires the explicit `BringFiberAction` instance
+    derived from Bring's quintic surface automorphism group (owner-gated step
+    `conj:s5-so3-fiber-action`). -/
+theorem s5_so3_fiber_action_scaffold [bfa : BringFiberAction] :
     (PartitionOf5.allList.map (fun p => p.dim ^ 2)).sum = 120 ∧
-    (∀ p : PartitionOf5, p.conjugate.conjugate = p) := by
-  exact ⟨total_dim_squared_eq_120, PartitionOf5.conjugate_involutive⟩
+    (∀ p : PartitionOf5, p.conjugate.conjugate = p) ∧
+    (∀ p : PartitionOf5,
+      bfa.irrepToRotation p.conjugate.toA5Irrep = bfa.irrepToRotation p.toA5Irrep) :=
+  ⟨total_dim_squared_eq_120, PartitionOf5.conjugate_involutive,
+   fun p => by rw [PartitionOf5.conjugate_same_a5_irrep]⟩
 
 /-! ## Derived facts (sorry-free) from the icosahedral character analysis
 
