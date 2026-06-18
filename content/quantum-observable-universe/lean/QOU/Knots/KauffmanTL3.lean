@@ -326,5 +326,63 @@ set_option maxRecDepth 100000 in
 theorem figure_eight_knot_nontrivial :
     jones figureEight ≠ jones [(1, true), (2, true)] := by decide
 
+/-! ## Library validation + reuse — the trefoil knot `3₁`
+
+The third validation target completes the library's knot ladder
+(unknot → trefoil → figure-eight). The trefoil `3₁ = T(3,2) = closure of (σ₁σ₂)²`
+is the simplest nontrivial knot — the `(3,2)` torus knot, here the closure of the
+all-positive 3-braid `(σ₁σ₂)²` (its underlying permutation is a 3-cycle, so the
+closure is a single component). Reproducing its exact Jones polynomial is a second
+literature cross-check of the bracket and the first on a *chiral* knot: the trefoil
+is not amphichiral (unlike the figure-eight, brick 3), and the Jones polynomial
+detects this — `V(3₁) ≠ V(mirror 3₁)`. -/
+
+/-- The trefoil knot `3₁`, as the closure of the all-positive 3-braid `(σ₁σ₂)²`
+    — the `(3,2)` torus knot (its underlying permutation is a 3-cycle, so the
+    closure is a single component, a knot). -/
+def trefoil : List (Nat × Bool) := [(1, true), (2, true), (1, true), (2, true)]
+
+/-- The trefoil Jones polynomial `V(3₁) = -A⁻¹⁶ + A⁻¹² + A⁻⁴` in the Kauffman
+    `A`-variable (the substitution `t = A⁻⁴` gives the classical `-t⁴ + t³ + t`).
+    This is the chirality the all-positive braid `(σ₁σ₂)²` selects in this
+    convention; the mirror trefoil has `-t⁻⁴ + t⁻³ + t⁻¹`. The asymmetry
+    `V(3₁) ≠ V(mirror)` is the Jones polynomial detecting trefoil handedness. -/
+def jonesTrefoil : LP := ⟨-16, [-1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1]⟩
+
+set_option maxRecDepth 100000 in
+/-- `δ · V(3₁)` in fully reduced form, `A⁻¹⁸ - A⁻¹⁰ - A⁻⁶ - A⁻²` (small-`LP`
+    arithmetic). -/
+theorem delta_mul_jonesTrefoil :
+    LP.mul delta jonesTrefoil =
+      ⟨-18, [1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1]⟩ := by
+  decide
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 400000 in
+/-- The bracket reduction of the trefoil closure: `jones (3₁) = A⁻¹⁸ - A⁻¹⁰ - A⁻⁶ - A⁻²`. -/
+theorem jones_trefoil_value :
+    jones trefoil =
+      ⟨-18, [1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1]⟩ := by
+  decide
+
+/-- **The link library reproduces the known trefoil Jones polynomial**
+    (machine-proved, AXIOM-FREE): `jones (3₁ closure) = δ · V(3₁)` with
+    `V(3₁) = -A⁻¹⁶ + A⁻¹² + A⁻⁴` (classically `-t⁴ + t³ + t`). A second exact
+    polynomial identity against a literature invariant — now for a *chiral* knot,
+    complementing the amphichiral figure-eight (brick 3) and the Borromean link
+    (bricks 1–2). The `δ` is the 1-component normalisation (`jones (unknot) = δ`);
+    the reduced invariant `jones (3₁) / δ = V(3₁)`. (Proved by transitivity through
+    the two value lemmas, as in `figure_eight_jones`: a single `decide` on the
+    combined `jones`+`δ·V` reduction exceeds the elaboration heartbeat budget.) -/
+theorem trefoil_jones : jones trefoil = LP.mul delta jonesTrefoil :=
+  jones_trefoil_value.trans delta_mul_jonesTrefoil.symm
+
+set_option maxRecDepth 100000 in
+/-- **The trefoil is a nontrivial knot** (machine-proved, AXIOM-FREE): its Jones
+    polynomial `δ·V(3₁)` differs from the unknot's `δ` (the closure of the 3-cycle
+    braid `σ₁σ₂`), because `V(3₁) ≠ 1`. -/
+theorem trefoil_knot_nontrivial :
+    jones trefoil ≠ jones [(1, true), (2, true)] := by decide
+
 end TL
 end QOU.Knots
