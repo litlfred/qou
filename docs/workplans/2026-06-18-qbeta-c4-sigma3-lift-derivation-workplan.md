@@ -102,6 +102,46 @@ Research mapped the categorical specifier. The σ₃-lift is **not** a free choi
 rule (§3a.4) gives an anchor-stable `c₄` matching the bias-corrected empirical →
 closure (owner escalation); else → refuted-class row + the rule is wrong.
 
+## 3b. 𝔙 complex-volume review (owner steer, 2026-06-18) — re-targets the compute, RETRACTS §3a.4
+
+Owner asked whether the complex-volume `𝔙` perspective helps. **It does — decisively** — and it
+**retracts §3a.4** (which was built on a superseded form). Findings:
+
+1. **The c_k ladder is the Im leg of the fibre-level COMPLEX `𝔙(q)`.**
+   [`complex-volume-ladder-intro.md`](../../content/quantum-observable-universe/mass-theory/complex-volume-ladder-intro.md):
+   `𝔔_β = Im 𝔙` (bar-odd, sinh), `𝔈_bind = Re 𝔙` (bar-even, cosh); the ladder
+   `𝔔_β = 𝔔_base·∏(1+c_k u_L^k)` is *"the Im leg of one complex-volume expansion whose Re leg is the
+   binding ladder,"* and the `c_k` are *"Taylor coefficients of the fibre-level complex `𝔙(q)`."*
+   This is **exactly** the fibre-level complex-analytic object the refuted-class map §1 required —
+   and it **explains C13**: a real-q *trace* (`Δtr_M`) cannot be the complex `𝔙`, so the #2465 bridge
+   was bound to fail. The cross-anchor near-match is one complex coefficient read along its two
+   parities.
+
+2. **RETRACT §3a.4 (twice).** (a) The `Σ_{|S|≤2} z^{|S|} Vol_q^{(S)}` form is the **SUPERSEDED**
+   `ρ_q` ansatz of `prop:mass-endomorphism-tower` (top-of-file banner: "do NOT use for production");
+   the corrected form is the operator-valued graded expansion
+   [`prop:rho-k-graded-expansion`](../../content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.md).
+   (b) The bar-odd leg is **NOT** `Li_2^q`: `_li_2_q_util.py` documents `Li_2^q` as **bar-invariant**
+   (bar-even) — it is the **Re/binding** leg (the `T₃ = −z²Σ Li_2^q(−|V̂ᵢV̂ⱼ|)` term). The bar-odd
+   `Q_β` (Im) leg uses **`Φ_q` (Faddeev, bar-asymmetric)** — the cheat-sheet's `Φ_q`-vs-`Li_2^q`
+   context-sorting.
+
+3. **The Q_β c₄ compute IS the merged Φ_q line.** The bar-odd/Im leg is `Φ_q` — exactly what
+   `e451d436` (`zhabiro_phiq_wiring.py`) computes. So Stage-C's `c₄` and the Φ_q line are the **same
+   object**; the production argument of `Φ_q` is the generator norm `z = |V̂ᵢ^full|`
+   (`wedderburn_pair_volumes.py` / `atom_per_generator_volumes`), **not** the Markov subset-weight
+   `1/(q^{½}+q^{−½})` (correction to the prior commit's z claim — there are two distinct `z`'s).
+
+4. **Unification (to verify):** `Q_β c₄` (Im/`Φ_q`) and the binding pair-gen correction
+   (Re/`Li_2^q`, *also open* per `prop:rho-k-graded-expansion` "pair-gen piece (open)") are the two
+   parities of one open `𝔙` pair-term — closing one informs the other.
+
+**Re-targeted decisive compute:** the bar-odd `Φ_q` pair-gen term of `𝔙` for the decay braid, at the
+production generator-norm `z = |V̂ᵢ^full|`, Im leg → `c₄`, anchor-stability first. This is the **open
+frontier of the active Φ_q line** — coordinate with it (hand over the `𝔙`-leg-sorting + the
+binding-unification), do not duplicate. The pair-gen functional form is open for *both* legs, so a
+first-principles closure is the shared blocker; running the simple form would fit it.
+
 ## 4. Honest forecast
 
 Closure odds this session are **modest** — this is the open keystone after ~12
