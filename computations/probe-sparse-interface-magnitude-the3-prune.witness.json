@@ -1,0 +1,401 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-18T03:40:23.605803+00:00",
+  "commitSha": "9961af72fc1402e14da28f0589707aad939d5697",
+  "assertions": [
+    {
+      "name": "sparse_common_dominant_block_prune",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "FORMALIZE-FIRST: dominant T block [6, 3] carries 34% of |trace|, char-ratio 0.6329 vs AME 1.099 (MISS); common-dominant=True. H_sparse common-dominant REFUTED/partial — see verdict."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "probe-sparse-interface-magnitude-the3-prune",
+  "scriptFile": "probe_sparse_interface_magnitude_the3_prune.py",
+  "scriptHash": "b493ed353b28",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "FORMALIZE-FIRST PRUNE of the sparse interface-operator magnitude hypothesis (binding concentrates on one dominant Wedderburn block per atom). Parameter-free T/³He mirror test: if the dominant block is common then B_T/B_³He = |χ^{λ*}(β_T)|/|χ^{λ*}(β_³He)| (Δ,y cancel). Tests every n=9 block's character ratio vs AME 1.0990 + trace dominance. No fit. Δ_λ magnitude open (GAP-A-3).",
+  "parameters": {
+    "ame_binding_ratio": "1.09896346204",
+    "ratio_tol": 0.02
+  },
+  "data": {
+    "trM_T": "0.1040521067420518",
+    "trM_He3": "0.2065408170207396",
+    "top_block_T": {
+      "partition": [
+        6,
+        3
+      ],
+      "abs_share": "0.33660795",
+      "char_ratio": "0.632903177811"
+    },
+    "dominant_common": true,
+    "dominant_ratio_hits_ame": false,
+    "ratio_hit_blocks": [
+      [
+        5,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "by_partition": [
+      {
+        "partition": [
+          9
+        ],
+        "char_ratio": "0.658781817",
+        "T_abs_share": "0.076780561",
+        "He3_abs_share": "0.069947137"
+      },
+      {
+        "partition": [
+          8,
+          1
+        ],
+        "char_ratio": "0.5694995056",
+        "T_abs_share": "0.20301458",
+        "He3_abs_share": "0.21394106"
+      },
+      {
+        "partition": [
+          7,
+          2
+        ],
+        "char_ratio": "0.4215380415",
+        "T_abs_share": "0.14856385",
+        "He3_abs_share": "0.21151279"
+      },
+      {
+        "partition": [
+          7,
+          1,
+          1
+        ],
+        "char_ratio": "0.3468430859",
+        "T_abs_share": "0.0063382612",
+        "He3_abs_share": "0.01096724"
+      },
+      {
+        "partition": [
+          6,
+          3
+        ],
+        "char_ratio": "0.6329031778",
+        "T_abs_share": "0.33660795",
+        "He3_abs_share": "0.31918859"
+      },
+      {
+        "partition": [
+          6,
+          2,
+          1
+        ],
+        "char_ratio": "2.188625772",
+        "T_abs_share": "0.074410075",
+        "He3_abs_share": "0.020404244"
+      },
+      {
+        "partition": [
+          6,
+          1,
+          1,
+          1
+        ],
+        "char_ratio": "0.5020733941",
+        "T_abs_share": "0.00096592883",
+        "He3_abs_share": "0.0011546176"
+      },
+      {
+        "partition": [
+          5,
+          4
+        ],
+        "char_ratio": "0.5749060299",
+        "T_abs_share": "0.075447192",
+        "He3_abs_share": "0.078760141"
+      },
+      {
+        "partition": [
+          5,
+          3,
+          1
+        ],
+        "char_ratio": "0.3058426486",
+        "T_abs_share": "0.017140605",
+        "He3_abs_share": "0.033634762"
+      },
+      {
+        "partition": [
+          5,
+          2,
+          2
+        ],
+        "char_ratio": "0.9376168252",
+        "T_abs_share": "0.025021002",
+        "He3_abs_share": "0.016015465"
+      },
+      {
+        "partition": [
+          5,
+          2,
+          1,
+          1
+        ],
+        "char_ratio": "0.7601773949",
+        "T_abs_share": "0.0061776155",
+        "He3_abs_share": "0.0048771508"
+      },
+      {
+        "partition": [
+          5,
+          1,
+          1,
+          1,
+          1
+        ],
+        "char_ratio": "1.103240224",
+        "T_abs_share": "0.0012026252",
+        "He3_abs_share": "0.00065421496"
+      },
+      {
+        "partition": [
+          4,
+          4,
+          1
+        ],
+        "char_ratio": "1.50163379",
+        "T_abs_share": "0.0076436289",
+        "He3_abs_share": "0.0030548918"
+      },
+      {
+        "partition": [
+          4,
+          3,
+          2
+        ],
+        "char_ratio": "0.8124311218",
+        "T_abs_share": "0.013930082",
+        "He3_abs_share": "0.010290285"
+      },
+      {
+        "partition": [
+          4,
+          3,
+          1,
+          1
+        ],
+        "char_ratio": "0.6896907764",
+        "T_abs_share": "0.0023460532",
+        "He3_abs_share": "0.0020414733"
+      },
+      {
+        "partition": [
+          4,
+          2,
+          2,
+          1
+        ],
+        "char_ratio": "0.3327835759",
+        "T_abs_share": "0.00059307379",
+        "He3_abs_share": "0.0010695648"
+      },
+      {
+        "partition": [
+          4,
+          2,
+          1,
+          1,
+          1
+        ],
+        "char_ratio": "1.034453325",
+        "T_abs_share": "0.00076581393",
+        "He3_abs_share": "0.00044429623"
+      },
+      {
+        "partition": [
+          4,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "char_ratio": "0.2887408419",
+        "T_abs_share": "1.656431e-5",
+        "He3_abs_share": "3.4429079e-5"
+      },
+      {
+        "partition": [
+          3,
+          3,
+          3
+        ],
+        "char_ratio": "0.8360123025",
+        "T_abs_share": "0.0021136625",
+        "He3_abs_share": "0.0015173412"
+      },
+      {
+        "partition": [
+          3,
+          3,
+          2,
+          1
+        ],
+        "char_ratio": "0.7536916274",
+        "T_abs_share": "0.00029728364",
+        "He3_abs_share": "0.00023672144"
+      },
+      {
+        "partition": [
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "char_ratio": "1.564964701",
+        "T_abs_share": "0.00027495593",
+        "He3_abs_share": "0.00010544326"
+      },
+      {
+        "partition": [
+          3,
+          2,
+          2,
+          2
+        ],
+        "char_ratio": "7.753129964",
+        "T_abs_share": "3.1107714e-5",
+        "He3_abs_share": "2.4079712e-6"
+      },
+      {
+        "partition": [
+          3,
+          2,
+          2,
+          1,
+          1
+        ],
+        "char_ratio": "1.602313459",
+        "T_abs_share": "0.00016238491",
+        "He3_abs_share": "6.0821687e-5"
+      },
+      {
+        "partition": [
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "char_ratio": "0.9298729521",
+        "T_abs_share": "4.7276993e-5",
+        "He3_abs_share": "3.0513112e-5"
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "char_ratio": "0.9429062496",
+        "T_abs_share": "3.3399908e-5",
+        "He3_abs_share": "2.1258715e-5"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "char_ratio": "1.298930389",
+        "T_abs_share": "1.3512212e-5",
+        "He3_abs_share": "6.2431078e-6"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "char_ratio": "1.374565172",
+        "T_abs_share": "3.5577117e-5",
+        "He3_abs_share": "1.553337e-5"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "char_ratio": "1.281705123",
+        "T_abs_share": "1.4974754e-5",
+        "He3_abs_share": "7.0118374e-6"
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "char_ratio": "1.432418665",
+        "T_abs_share": "9.95785e-6",
+        "He3_abs_share": "4.1721112e-6"
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "char_ratio": "1.51795325",
+        "T_abs_share": "4.4196568e-7",
+        "He3_abs_share": "1.7473923e-7"
+      }
+    ],
+    "h_sparse_common_dominant_supported": false
+  }
+}

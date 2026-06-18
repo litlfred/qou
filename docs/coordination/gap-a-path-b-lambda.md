@@ -97,6 +97,15 @@ Two findings from the T/³He same-`n` differential test
   positive per-block volume cannot reproduce even the sign"); the obstruction is
   that the *principled symmetric shape* is wrong, and any sign-correct
   non-negative weight is a free fit.
+- **Sparse interface-operator magnitude refuted (parameter-free).** The
+  "binding concentrates on one dominant Wedderburn block" magnitude reading
+  ([`binding-formula-closure`](../audits/2026-05-26-delta-lambda-binding-formula-closure.md)
+  §"LP-dual single partition") fails the T/³He mirror ratio: the trace is *not*
+  sparse (top block `[6,3]` only 34 %), the common dominant block's character
+  ratio is 0.633 vs AME 1.099, and the *only* block with ratio ≈1.099
+  (`[5,1,1,1,1]`) carries 0.1 % of the trace. ⇒ the magnitude is **irreducibly
+  multi-block**; single-dominant-block concentration cannot respect the mirror.
+  ([`2026-06-18-sparse-interface-magnitude-the3-prune.md`](../audits/2026-06-18-sparse-interface-magnitude-the3-prune.md)).
 
 ## Cross-axis hub
 
