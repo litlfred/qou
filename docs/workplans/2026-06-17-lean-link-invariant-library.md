@@ -134,6 +134,51 @@ As with `figure_eight_jones`, the identity is proved by transitivity through two
 value lemmas (`jones_trefoil_value`, `delta_mul_jonesTrefoil`) — a single combined
 `decide` exceeds the elaboration heartbeat budget.
 
+## Brick 5 (DONE) — library validation: the Hopf link (first multi-component named link)
+
+Bricks 3–4 validated *knots* (1-component); brick 5 extends the bracket to a genuine
+multi-component **link** against a literature Jones polynomial. The **Hopf link** —
+the closure of `σ₁²` — is the framework's **CAL-3 / `m_π`** object (`Vol(Hopf) = 0`,
+the meson scale). Four new theorems in
+[`KauffmanTL3.lean`](../../content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
+all **`decide`, AXIOM-FREE** (`#print axioms`: *does not depend on any axioms*):
+
+- `hopf_link_jones`: `jones (σ₁² closure) = δ² · V(Hopf)` with `V(Hopf) = -A⁻² - A⁻¹⁰`
+  (`t = A⁻⁴`: `-t^{1/2} - t^{5/2}`). The **first named multi-component link** validated
+  against a literature invariant — bricks 1–2 only proved the Borromean bracket *differed*
+  from the unlink's (`≠`), never reproduced a *known* `V` (`=`).
+- `hopf_link_nontrivial`: `jones (hopf) ≠ jones (unlink₃)` (`δ²·V(Hopf) ≠ δ³`).
+- value lemmas `jones_hopf_value`, `delta_sq_mul_jonesHopf`.
+
+**Honest scope.** A 3-braid closure always carries the third strand, and `σ₁²` leaves
+`σ₂` untouched, so its closure is **Hopf ⊔ split-unknot** (3 components), not the bare
+2-component Hopf link — unavoidable in `TL₃`. The split unknot contributes exactly one
+`δ`; of the two `δ` factors, one is that split unknot, one the 1-component normalisation,
+and the residue `jones (hopf) / δ² = V(Hopf)` is the genuine 2-component Hopf-link Jones
+polynomial. The quark–antiquark (2-strand) + spectator reading is the framework-natural
+presentation. The Hopf link is also chiral (`V(Hopf) ≠ V(mirror)`); the all-positive
+`σ₁²` selects this handedness.
+
+## Brick 6 (DONE) — library validation: the `(3,4)` torus knot `8₁₉`
+
+Completing the ladder with a higher-crossing knot. `8₁₉ = T(3,4) = closure of (σ₁σ₂)⁴`
+(permutation a 3-cycle ⇒ single component). At 8 crossings and Jones span `20` it is the
+**widest reduction in the ladder** — a stress-test of the kernel-`decide` bracket compute
+(~70 s, `maxHeartbeats 2000000`) — and a third *chiral* cross-check. Theorems in
+[`KauffmanTL3.lean`](../../content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean),
+all **`decide`, AXIOM-FREE**:
+
+- `torus819_jones`: `jones (8₁₉ closure) = δ · V(8₁₉)` with
+  `V(8₁₉) = -A⁻³² + A⁻²⁰ + A⁻¹²` (`t = A⁻⁴`: `-t⁸ + t⁵ + t³`). This is the closed-form
+  torus-knot Jones polynomial `V(T(m,n)) = t^{(m-1)(n-1)/2}(1 - t^{m+1} - t^{n+1} + t^{m+n})
+  / (1 - t²)` at `(3,4)`, reducing to `t³(1 + t² - t⁵)`.
+- `torus819_knot_nontrivial`: `jones (8₁₉) ≠ jones (unknot)` (`δ·V(8₁₉) ≠ δ`).
+- value lemmas `jones_torus819_value`, `delta_mul_jonesTorus819`.
+
+The library knot/link ladder is now **unknot → trefoil `3₁` → figure-eight `4₁` →
+Hopf link → 8₁₉ → Borromean** — every rung an exact literature cross-check (knots) or
+nontriviality + literature `V` (links), all axiom-free `decide`.
+
 ## Follow-ups (post-merge)
 
 - **qa-sweep sidecar refresh — `prop:confinement-operator-selection`.** #2455
