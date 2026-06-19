@@ -26,6 +26,7 @@
 import Mathlib.Data.Fintype.Basic
 import Mathlib.Algebra.BigOperators.Group.List
 import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
 
 namespace QOU.BraidsAndKnots
 
@@ -317,6 +318,68 @@ theorem spin_Z2_ne_sign_Z2 :
     let s5AbelianizationOrder : ℕ := 2                  -- sign character
     binaryIcosahedralAbelianizationOrder ≠ s5AbelianizationOrder := by
   native_decide
+
+/-! ## The Hopf moment map μ — the canonical spin→colour coupling
+
+    Per `docs/audits/2026-06-16-s5so3-hopf-coupling-and-reeb-obstruction.md`
+    (PR #2370): the unique natural A₅-equivariant coupling of the spin fibre
+    ℂ²_spin to the colour ℝ³ ⊂ ℂ³_colour is the **Hopf moment map**
+      μ(z) = (z†σ_x z, z†σ_y z, z†σ_z z),
+    i.e. the SU(2) ↠ SO(3) vector map (equivalently the Hopf fibration
+    S³ → S²).  In real coordinates z = (a + b·i, c + d·i) ∈ ℂ² the three real
+    components are μ = (2(ac + bd), 2(ad − bc), a² + b² − c² − d²).
+
+    Two UNCONDITIONAL ring identities (they do NOT depend on `BringFiberAction`)
+    capture what makes μ the canonical coupling:
+
+    * `hopfMoment_spin_parity` — μ is **even** (`μ(−z) = μ(z)`): the central
+      `−1 ∈ 2I` (spinor negation) acts trivially on the colour image, so the
+      quadratic μ bridges the *odd* spinor (central `−1 ↦ −1`) to the *even*
+      colour real form ℝ³ — the parity mismatch that blocks any *linear*
+      ℂ² → ℂ³ coupling (audit property 1).  This is the constructive complement
+      to `spin_Z2_ne_sign_Z2`: the spin ℤ₂ is a genuine ℤ₂, yet acts trivially
+      on μ's colour image.
+    * `hopfMoment_normSq` — `‖μ(z)‖² = (‖z‖²)²`: μ carries the spin 3-sphere
+      onto the colour 2-sphere (the Hopf fibration S³ → S²).  That S² base is
+      where the SO(3) angular-momentum level ℓ lives, so μ's spatial
+      SO(3)-equivariance is what carries the ℓ ↦ λ generation selection
+      (audit §"Reframe — the obstruction is on the phase circles").
+
+    Stated over a generic `CommRing` (the formulas are polynomial; R = ℝ
+    recovers the geometric moment map).  These formalize the *selection* leg of
+    `conj:s5-so3-fiber-action` that PR #2370 established; the remaining open leg
+    is the Markov-trace weighting (the y_λ), owner-gated.
+
+    -- Ref: [manuscript] docs/audits/2026-06-16-s5so3-hopf-coupling-and-reeb-obstruction.md (PR #2370)
+    -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron -/
+section HopfMomentMap
+variable {R : Type*} [CommRing R]
+
+/-- The Hopf moment map in real coordinates.  For a spinor
+    `z = (a + b·i, c + d·i) ∈ ℂ²`, `μ(z) = (z†σ_x z, z†σ_y z, z†σ_z z) ∈ ℝ³`
+    has components `(2(ac + bd), 2(ad − bc), a² + b² − c² − d²)`. -/
+def hopfMoment (a b c d : R) : R × R × R :=
+  (2 * (a * c + b * d), 2 * (a * d - b * c), a ^ 2 + b ^ 2 - c ^ 2 - d ^ 2)
+
+/-- **Spin-parity resolution.** μ is even: `μ(−z) = μ(z)`.  The central
+    `−1 ∈ 2I` (spinor negation) acts trivially on the colour image, bridging
+    the odd spinor to the even colour ℝ³ — the geometric resolution of the
+    parity obstruction (PR #2370 property 1).  Complements `spin_Z2_ne_sign_Z2`. -/
+theorem hopfMoment_spin_parity (a b c d : R) :
+    hopfMoment (-a) (-b) (-c) (-d) = hopfMoment a b c d := by
+  simp only [hopfMoment, Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring⟩
+
+/-- **Hopf fibration norm identity.** `‖μ(z)‖² = (‖z‖²)²`: μ carries the spin
+    3-sphere onto the colour 2-sphere (the Hopf fibration S³ → S²).  The S²
+    base carries the SO(3) angular-momentum level ℓ whose spatial
+    equivariance realizes the ℓ ↦ λ selection. -/
+theorem hopfMoment_normSq (a b c d : R) :
+    (hopfMoment a b c d).1 ^ 2 + (hopfMoment a b c d).2.1 ^ 2
+      + (hopfMoment a b c d).2.2 ^ 2 = (a ^ 2 + b ^ 2 + c ^ 2 + d ^ 2) ^ 2 := by
+  simp only [hopfMoment]; ring
+
+end HopfMomentMap
 
 /-! ## The S_5 → S_3 Restriction Functor (GAP-A-4 Functor Resolution)
 
