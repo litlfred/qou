@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import Mathlib.Algebra.BigOperators.Group.List
+import Mathlib.Algebra.BigOperators.Group.List.Basic
 
 /-!
 # QOU.Molecular.symmetric_block_domain_weight — trivial-rep domain weight = q^(word length)
