@@ -92,6 +92,26 @@ def main() -> int:
           f"{mp.nstr(contrib[top]/trM*100,4)}% of tr_M")
     print(f"Blocks for 90% of tr_M: {n90}/{len(chi)};  for 99%: {n99}/{len(chi)}")
 
+    # Row-count aggregation — the connection to #2406 (a finite colour-SU(N)
+    # arena = partitions with ≤ N rows; #2406: colour-ℂ³ (≤3-row) misses 3.4%
+    # @⁴He). Reports how much of tr_M each row-count shell carries.
+    from collections import defaultdict
+    byrows: dict = defaultdict(lambda: mp.mpf(0))
+    for lam in contrib:
+        byrows[len(lam)] += contrib[lam]
+    print("\ntr_M share by #rows of λ (finite colour-SU(N) arena = ≤N rows):")
+    cumr = mp.mpf(0)
+    rowshare = {}
+    for r in sorted(byrows):
+        sh = byrows[r] / trM * 100
+        cumr += sh
+        rowshare[r] = float(sh)
+        print(f"  {r}-row: {mp.nstr(sh,4):>9}%   (≤{r}-row cum {mp.nstr(cumr,6)}%)")
+    le2 = sum(rowshare.get(r, 0.0) for r in (1, 2))
+    le3 = le2 + rowshare.get(3, 0.0)
+    print(f"  ⇒ ≤2-row (SU(2)/TL shadow): {le2:.3f}%;  ≤3-row (colour ℂ³): "
+          f"{le3:.3f}%;  ≥4-row (beyond ℂ³): {100 - le3:.3f}%")
+
     witness = {
         "engine": "mpmath",
         "engineVersion": f"mpmath {mp.__version__}",
@@ -107,6 +127,10 @@ def main() -> int:
         "dominant_share_pct": float(contrib[top] / trM * 100),
         "blocks_for_90pct": n90,
         "blocks_for_99pct": n99,
+        "share_by_rowcount_pct": {int(r): rowshare[r] for r in rowshare},
+        "le2row_pct": float(le2),
+        "le3row_pct": float(le3),
+        "ge4row_pct": float(100 - le3),
         "ranking": rows,
         "auditOnly": True,
     }
