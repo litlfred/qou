@@ -553,6 +553,40 @@ quoted the `N=0` trace term as `≈ 0.49 MeV (~259 %)`; the canonical functional
 #2363's own "~2× low, −56 %" and the witness. Corrected the prose/docstring
 (conjecture statement, Lean class, conditional corollary unchanged).
 
+## 2026-06-19 — keystone-tower triage: holomorphy gate CLOSED (negative); options 2/3 re-confirmed (PR #2493)
+
+**Scope.** The stalled keystone-tower triage ("do 1 2 3"). Corpus-grep first: options
+2 & 3 already have built-and-run compute on `main` — so this is *close the open
+option 1, verify + fold-in 2 & 3*, not a rebuild. No c_k, no fit, no wiring, no tier
+change.
+
+**Option 1 — holomorphy gate → CLOSED (negative).** The one residual the 2026-06-18
+[separation verdict](../audits/2026-06-18-qbeta-qbessel-vs-zhabiro-binding-tower-separation.md)
+did not address (it argues argument-vs-order, never holomorphy): *if `𝔙 = Vol + i·CS`
+is holomorphic, doesn't Cauchy–Riemann force the binding (Re) and Q_β (Im) channels to
+cross-constrain — giving a CR route to the below-floor `c₄` from the better-determined
+binding side?* **No**, on four grounds: (a) the `i` is the bar-involution / target `ℂ`,
+not source-holomorphy — the Lean unification is `Complex.re_add_im` over a `CommRing`;
+(b) the two channels are read at different archimedean loci (real-`q` vs root-of-unity);
+(c) observable `q₀ ∈ ℝ` (`lusztig_q_0_imaginary_part_zero`) ⇒ no holomorphic disk;
+(d) even granting fibre holomorphy, CR acts in the q/argument direction (the `c_k` side),
+orthogonal to the binding `Δ_λ` *order*-tower. ⇒ **the both-legs-via-CR program does NOT
+revive; the separation survives; `c₄` stays gated on the σ₃-lift / kernel `R`.** A
+formalize-first prune (forecloses a tempting multi-session CR attack). Lean core added:
+`re_im_independent` (`binding-qbeta-complex-volume.lean`, sorry-free, lean-direct exit 0).
+Audit: [`2026-06-19-qbeta-complex-volume-holomorphy-no-cr-cross-constraint.md`](../audits/2026-06-19-qbeta-complex-volume-holomorphy-no-cr-cross-constraint.md).
+
+**Option 3 — mode→ladder bridge: CONFIRMED REFUTED (C13).** Re-ran
+`habiro_mode_to_ladder_bridge.py` (witness fresh): candidate-a `c₃≈−1.497`, candidate-b
+`c₃≈−1.401`, neither −2. Residual handed to the kernel search = exact even-in-ℏ `Δtr_M`
+ladder `a₂=−13/8, a₄=−77/32, a₆=−25/8, a₈=−3923/1024`.
+
+**Option 2 — Hoefsmit Stage-C: foundation RE-VALIDATED; σ₃-lift still open.** Re-ran
+`qbeta_h4_tower_branching_preflight.py` (both assertions pass; H₃⊂H₄ branching to
+5.6e-52). σ₃-lift Λ remains the open keystone — actively on **#2474**, which this
+session handed the option-1 finding (the lift must come from the decay Im-channel
+content; no binding-side CR shortcut).
+
 ## Cross-refs
 
 - CLAUDE.md §Precision goals (L1 / L2 / Subgoal-1 / Subgoal-2)
