@@ -480,7 +480,7 @@ set_option maxRecDepth 100000 in
 set_option maxHeartbeats 2000000 in
 /-- The bracket reduction of the `8₁₉` closure (a length-8 3-braid — the heaviest
     kernel-`decide` reduction in the ladder, ~70 s):
-    `jones (8₁₉) = A⁻³⁴ + A⁻³⁰ - A⁻¹⁸ - A⁻¹⁴ - A⁻¹⁰ - A⁻⁶`. -/
+    `jones (8₁₉) = A⁻³⁴ + A⁻³⁰ - A⁻²² - A⁻¹⁸ - A⁻¹⁴ - A⁻¹⁰`. -/
 theorem jones_torus819_value :
     jones torus819 =
       ⟨-34, [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1]⟩ := by
