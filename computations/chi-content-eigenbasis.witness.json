@@ -1,0 +1,90 @@
+{
+  "name": "chi-content-eigenbasis",
+  "description": "Rewrites the Lean-proved χ_λ(𝓑_n−𝓑_p) H₃ relations in the content/twist eigenbasis so the structure is evident. The full twist Δ² acts on V_λ as the proved ribbon eigenvalue θ_λ=q^{2c(λ)} (c=content sum ∈ {3,0,−3}); the framing-summed tower is a 3-pole rational χ_λ/(1−t·q^{2c}) with poles at the twist eigenvalues; the bar-odd q-integer shape depends only on |c(λ)| (conjugate blocks (3),(1,1,1) share −¼([3]_q+[5]_q); (2,1) is ½([1]_q−[3]_q)); so the §4a single-x failure is a content-graded multi-mode object, not one q-Bessel. Exact symbolic re-expression of proved relations; nothing wired.",
+  "auditOnly": true,
+  "probe": true,
+  "eigenbasis": "content / twist (Jucys–Murphy content c(λ); full-twist ribbon eigenvalue θ_λ=q^{2c}, Lean-proved in QOU/BraidKnot/ChiralityWritheRibbon.lean)",
+  "twist_eigenvalues": {
+    "[3]": "q^6",
+    "[2, 1]": "q^0",
+    "[1, 1, 1]": "q^-6"
+  },
+  "framing_generating_function": {
+    "form": "Σ_m t^m θ_λ^m χ_λ = χ_λ / (1 − t·q^{2c(λ)})",
+    "per_block": {
+      "[3]": {
+        "pole_at_t": "q^-6",
+        "content": 3,
+        "chi": "(-q**6 - q**4 + q**2 + 1)/(4*q)"
+      },
+      "[2, 1]": {
+        "pole_at_t": "q^0",
+        "content": 0,
+        "chi": "(-q**6 + q**4 - q**2 + 1)/(4*q**3)"
+      },
+      "[1, 1, 1]": {
+        "pole_at_t": "q^6",
+        "content": -3,
+        "chi": "(-q**6 - q**4 + q**2 + 1)/(4*q**5)"
+      }
+    },
+    "poles_at_twist_eigenvalues": true
+  },
+  "bar_odd_q_integer_shape": {
+    "[3]": {
+      "3": "-1/4",
+      "5": "-1/4"
+    },
+    "[2, 1]": {
+      "1": "1/2",
+      "3": "-1/2"
+    },
+    "[1, 1, 1]": {
+      "3": "-1/4",
+      "5": "-1/4"
+    }
+  },
+  "bar_odd_depends_only_on_abs_content": true,
+  "distinct_abs_content_frequencies": [
+    0,
+    3
+  ],
+  "reading": "The content/twist eigenbasis makes the proved relations evident: conjugation = content reflection c→−c, the framing tower = a 3-pole rational at the twist eigenvalues, and the bar-odd tower is a |content|-graded multi-mode object — which is exactly why the §4a single-x q-Bessel test was structurally doomed.",
+  "assertions": [
+    {
+      "name": "twist_eigenvalue_q_2c",
+      "computed": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "name": "framing_multiplicativity",
+      "computed": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "name": "three_distinct_content_poles",
+      "computed": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "name": "conjugate_blocks_share_bar_odd_shape",
+      "computed": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "name": "multi_mode_explains_single_x_failure",
+      "computed": true,
+      "expected": true,
+      "ok": true
+    }
+  ],
+  "witness": {
+    "scriptCommitSha": "",
+    "scriptHash": "226a87090ce5",
+    "producer": "computations/probes/chi_content_eigenbasis_probe.py"
+  }
+}
