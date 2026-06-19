@@ -141,13 +141,29 @@ Lean chip, and *not* an opening for a fit (Δ_λ gate).
   (Hecke → `E_q(2)` contraction) — research-grade; no Lean chip remains.
 - **A — H₆/H₉ typed braid construction.** Scoped upstream in
   `2026-06-17-jacobi-anger-physical-weight-n3.md` (T_beta selector +
-  tower-convergence test spec + H≥6 hand-off). The n=3 machinery exists
-  (`atom_braid_word_3A`, `chi_lambda_of_word`, Hoefsmit seminormal matrices);
-  n=6 lives only in deprecated probes. The concrete next step is to generalize
-  `atom_braid_word_3A` → `atom_braid_word_nA` with Hecke-tower ascent and run
-  the tower-convergence test — **multi-session compute**, not a chip.
+  tower-convergence test spec + H≥6 hand-off). **Corpus-grep (2026-06-19)
+  corrects an earlier draft of this paragraph that claimed "n=6 lives only in
+  deprecated probes":** the H₆ deuteron compute is already on `main` at
+  production precision — free-word χ_λ at q₀ *and* q⁻¹ and bound χ_λ at 50 dps
+  (`chi-deuteron-free-h6-at-q0-50dps`, `chi-deuteron-h6-at-q0-50dps`; landed
+  PR #1742/#1748), the symbolic bound characters (`chi-deuteron-h6`), the full
+  Littlewood–Richardson bound↔free bridge factor ω
+  (`derived_chi_catalogue_bridge_factor_deuteron.py`), and the H6→H9
+  joint-tower SDP (`joint-tower-sdp-h6-h9`). The `atom_braid_word_3A(1,1)`
+  word *is* the 6-strand deuteron (3 strands × A=2), so no `_nA` generalization
+  is needed for A=2. A float64 re-probe added earlier this session
+  (`h6-deuteron-chi-lambda`) duplicated the 50-dps bound witness at inferior
+  precision (≈1e-4 disagreement over the 23-crossing word, float64 being
+  inadequate there) and is **removed** — its "first live" claim was a
+  corpus-grep miss. The genuine open item is **not the H₆ characters but the
+  Δ_λ closure itself** (the per-partition binding weights), which STATUS.md
+  records as research-gated (deuteron "closure" overclaim corrected c27667d4;
+  no light nucleus honestly closed) and which CLAUDE.md explicitly fences
+  against a seventh fit-based ansatz.
 
 **Conclusion.** The session-sized formalize-first work on this axis is done
-(items 4, B, and this reconciliation). A and C require a dedicated
-multi-session compute effort (A) or a research derivation (C); neither admits
-a one-session Lean addition without either duplicating main or fitting.
+(items 4, B, and this reconciliation). C requires a research derivation
+(categorical `R` from the Hecke → `E_q(2)` contraction); A's H₆ compute
+already exists on `main` at production precision, so A's only remaining work
+is the research-gated Δ_λ closure. Neither admits a one-session Lean/compute
+addition without either duplicating main or fitting.
