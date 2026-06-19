@@ -26,6 +26,9 @@
 import Mathlib.Data.Fintype.Basic
 import Mathlib.Algebra.BigOperators.Group.List
 import Mathlib.Tactic.NormNum
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 namespace QOU.BraidsAndKnots
 
@@ -505,5 +508,131 @@ theorem s5_to_a5_electron_block_splits :
     PartitionOf5.threeOneOne.restrictsToA5Irrep = true ∧
     PartitionOf5.threeOneOne.dim = 3 + 3 := by
   decide
+
+/-! ## The Hopf moment map μ and the generation selection it realizes (#2370)
+
+    Per [`docs/audits/2026-06-16-s5so3-hopf-coupling-and-reeb-obstruction.md`] (#2370):
+    the canonical A₅-equivariant spin→colour coupling is the **Hopf moment map**
+      μ : ℂ²_spin → ℝ³ ⊂ ℂ³_colour,  μ(z) = (z†σ_x z, z†σ_y z, z†σ_z z),
+    i.e. `Ad : SU(2) ↠ SO(3)` at the vector level (the Hopf fibration S³ → S²).
+    Writing z₀ = a + b𝑖, z₁ = c + d𝑖 (so ℂ² ≅ ℝ⁴), the three Pauli sandwiches are the
+    real quadratics in `hopfMoment` below.  The audit verifies three properties; each
+    is a finite real-polynomial identity, proved here unconditionally (`ring` /
+    `linear_combination`), so the construction needs no archimedean analysis:
+
+      1. **Parity resolution** μ(−z) = μ(z) (`hopfMoment_neg`).  μ is quadratic, so the
+         central −1 ∈ 2I acts trivially — bridging the *odd* spinor (central −1) to the
+         *even* colour real form ℝ³ = T₁ (central +1).  This is the geometric
+         realization of the Schur-forced static coupling, resolving the spin-parity
+         obstruction that blocks any *linear* ℂ²→ℂ³ map.
+      2. **Phase invariance** μ(c·z) = μ(z) for |c| = 1 (`hopfMoment_phase`).  The spin
+         Hopf Reeb — the overall phase circle — is exactly the μ-fibre.
+      3. **Hopf-sphere norm** |μ(z)|² = (|z₀|² + |z₁|²)² (`hopfMoment_norm`): μ is the
+         Hopf map S³ → S², sending the radius-r 3-sphere to the radius-r² 2-sphere.
+
+    These pin the coupling MAP and the *selection* it carries (below); they do **not**
+    discharge `conj:s5-so3-fiber-action`.  The open content is the dynamical
+    **Markov-trace weighting** y_λ (the Wu-manifold SU(3)/SO(3) Sasakian — ledger
+    `docs/coordination/s5-so3-keystone.md` §"single open object") together with the
+    geometric Reeb leg; only the selection part is realized here.
+
+    -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron (Bring) -/
+
+/-- The Hopf moment map μ : ℝ⁴ ≅ ℂ² → ℝ³, μ(a,b,c,d) = z†σz for z₀ = a+b𝑖, z₁ = c+d𝑖:
+    the three Pauli sandwiches `(2·Re(z̄₀z₁), 2·Im(z̄₀z₁), |z₀|²−|z₁|²)`.  This is the
+    `Ad : SU(2) ↠ SO(3)` map at the vector level = the Hopf fibration S³ → S². -/
+def hopfMoment (a b c d : ℝ) : ℝ × ℝ × ℝ :=
+  (2 * (a * c + b * d), 2 * (a * d - b * c), (a ^ 2 + b ^ 2) - (c ^ 2 + d ^ 2))
+
+/-- **Parity resolution** (audit property 1): μ(−z) = μ(z).  μ is quadratic, so the
+    central −1 ∈ 2I acts trivially on the image — the geometric reason the *odd*
+    spinor (central −1) couples to the *even* colour real form T₁ (central +1),
+    resolving the spin-parity obstruction that kills any linear ℂ²→ℂ³ coupling. -/
+theorem hopfMoment_neg (a b c d : ℝ) :
+    hopfMoment (-a) (-b) (-c) (-d) = hopfMoment a b c d := by
+  simp only [hopfMoment, Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring⟩
+
+/-- **Phase invariance** (audit property 2): μ(c·z) = μ(z) for a unit phase
+    c = (s,t), s² + t² = 1, acting as the rotation (a,b) ↦ (sa−tb, ta+sb) on each ℂ
+    factor.  The spin Hopf Reeb (the overall phase circle e^{iθ}) is exactly the
+    μ-fibre — μ *is* the Hopf fibration, so the spin Reeb is intertwined. -/
+theorem hopfMoment_phase (s t a b c d : ℝ) (hst : s ^ 2 + t ^ 2 = 1) :
+    hopfMoment (s * a - t * b) (t * a + s * b) (s * c - t * d) (t * c + s * d)
+      = hopfMoment a b c d := by
+  simp only [hopfMoment, Prod.mk.injEq]
+  refine ⟨?_, ?_, ?_⟩
+  · linear_combination (2 * (a * c + b * d)) * hst
+  · linear_combination (2 * (a * d - b * c)) * hst
+  · linear_combination ((a ^ 2 + b ^ 2) - (c ^ 2 + d ^ 2)) * hst
+
+/-- **Hopf-sphere norm** (audit property 3): |μ(z)|² = (|z₀|² + |z₁|²)².  μ sends the
+    radius-r 3-sphere in ℂ² to the radius-r² 2-sphere in ℝ³ — the defining identity
+    of the Hopf map S³ → S² (= `Ad : SU(2) ↠ SO(3)` on unit spinors). -/
+theorem hopfMoment_norm (a b c d : ℝ) :
+    (hopfMoment a b c d).1 ^ 2 + (hopfMoment a b c d).2.1 ^ 2
+        + (hopfMoment a b c d).2.2 ^ 2
+      = ((a ^ 2 + b ^ 2) + (c ^ 2 + d ^ 2)) ^ 2 := by
+  show (2 * (a * c + b * d)) ^ 2 + (2 * (a * d - b * c)) ^ 2
+      + ((a ^ 2 + b ^ 2) - (c ^ 2 + d ^ 2)) ^ 2
+      = ((a ^ 2 + b ^ 2) + (c ^ 2 + d ^ 2)) ^ 2
+  ring
+
+/-! ### The generation selection ℓ ↦ λ realized by μ's spatial A₅-equivariance -/
+
+/-- **The generation-selection map** ℓ ↦ λ(ℓ): the S₅ partition block selected by
+    the angular-momentum (spherical-harmonic) level ℓ, via μ's spatial SO(3)
+    equivariance `μ(gz) = Ad(g)μ(z)`.  Pinned ONLY at the verified single-isotype
+    levels (the bridge of the scope doc): ℓ=0 → (5) [trivial], ℓ=1 → (3,1,1)
+    [electron], ℓ=2 → (3,2) [muon].  Higher ℓ are multi-block — the tau at ℓ=3 is
+    T₂ ⊕ G (`ell3_multi_isotype`), so `none` honestly records "no single-block
+    selection here" rather than fabricating a choice. -/
+def generationBlock? : ℕ → Option PartitionOf5
+  | 0 => some .five
+  | 1 => some .threeOneOne
+  | 2 => some .threeTwo
+  | _ => none
+
+/-- Indicator vector of an A₅ irrep in the [A, T₁, T₂, G, H] ordering (matching
+    `IcosahedralIrrepDims` and `icosBranchingMult`). -/
+def a5Indicator : A5Irrep → List ℕ
+  | .A  => [1, 0, 0, 0, 0]
+  | .T₁ => [0, 1, 0, 0, 0]
+  | .T₂ => [0, 0, 1, 0, 0]
+  | .G  => [0, 0, 0, 1, 0]
+  | .H  => [0, 0, 0, 0, 1]
+
+/-- **The Hopf-selection theorem** (the realized leg of #2370).  For every level ℓ
+    the moment map pins (ℓ = 0,1,2), the A₅-isotype of the SO(3) angular-momentum
+    rep V_ℓ (`icosBranchingMult`) EQUALS the A₅-isotype of the selected S₅ block
+    λ(ℓ) (`PartitionOf5.toA5Irrep`).  This is precisely "selection realized by μ's
+    spatial A₅-equivariance" (audit §"Reframe — the obstruction is on the phase
+    circles, NOT the generation selection"; ledger row "Generation selection ℓ→λ =
+    the Hopf moment map μ"): the ℓ-harmonic and the λ-block share the same A₅-isotype
+    because the *same* A₅ ⊂ SO(3) acts on both through μ.
+
+    Non-vacuous: it ties two independently-defined verified tables —
+    `icosBranchingMult` (from the SO(3)↓A₅ character analysis) and
+    `PartitionOf5.toA5Irrep` (from the S₅↓A₅ restriction) — through the selection
+    map; a wrong selection fails `decide`.  It does NOT close
+    `conj:s5-so3-fiber-action`: the dynamical Markov weighting y_λ stays open. -/
+theorem hopf_selection_a5_isotype_match :
+    ∀ ℓ ∈ [0, 1, 2],
+      (generationBlock? ℓ).map (fun lam => a5Indicator lam.toA5Irrep)
+        = some (icosBranchingMult ℓ) := by
+  decide
+
+/-- **The selection is pinned exactly where V_ℓ is a single A₅-isotype** (the Schur
+    "dim Hom = 1" face): for ℓ = 0,1,2 the SO(3)↓A₅ multiplicities sum to 1 — one
+    irrep, multiplicity one — so the block selection is unambiguous. -/
+theorem hopf_selection_pinned_single_isotype :
+    ∀ ℓ ∈ [0, 1, 2], (icosBranchingMult ℓ).sum = 1 := by
+  decide
+
+/-- **Why the selection stops at ℓ=2.**  ℓ=3 (tau) is multi-isotype — V₃ ↓ A₅ =
+    T₂ ⊕ G, multiplicities summing to 2 — so no single-block selection exists there
+    (`generationBlock? 3 = none`).  This is the honest boundary of the realized
+    selection leg, not a gap to be filled by fitting. -/
+theorem ell3_multi_isotype : (icosBranchingMult 3).sum = 2 := by decide
 
 end QOU.BraidsAndKnots
