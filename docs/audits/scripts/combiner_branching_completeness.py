@@ -110,6 +110,7 @@ def check_lr_crosscheck():
     print("\nLR cross-check  (every lambda has c^lambda_{xi,nu} > 0 for some child):")
     for (n_inner, n_block) in SPLITS:
         n = n_inner + n_block
+        split_ok = True
         for lam in partitions_of(n):
             found = any(
                 lr_coef(xi, nu, lam) > 0
@@ -117,10 +118,11 @@ def check_lr_crosscheck():
                 for nu in partitions_of(n_block)
             )
             if not found:
-                ok = False
+                split_ok = False
                 print(f"     NO LR child for lambda={lam} at split ({n_inner},{n_block})")
-        print(f"     split ({n_inner},{n_block}) -> {n}: every block has an LR child : "
-              f"{ok if n == n_inner + n_block else ok}")
+        if not split_ok:
+            ok = False
+        print(f"     split ({n_inner},{n_block}) -> {n}: every block has an LR child : {split_ok}")
     return ok
 
 
