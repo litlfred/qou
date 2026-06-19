@@ -62,6 +62,7 @@ def main():
     import sympy as sp
     from hoefsmit_symbolic import chi_lambda_symbolic, Q
     from canonical_braid_crossings import atom_canonical_crossings
+    from qbeta_bar_odd import bar_odd  # centralized Laurent/bar-odd helper
 
     PARTS = [(3,), (2, 1), (1, 1, 1)]
     DIM = {(3,): 1, (2, 1): 2, (1, 1, 1): 1}
@@ -74,21 +75,6 @@ def main():
     bn = atom_canonical_crossings(0, 1, include_inter=False)
     chi0 = {lam: sp.cancel(chi_lambda_symbolic(lam, bn) - chi_lambda_symbolic(lam, bp))
             for lam in PARTS}
-
-    def laurent(e):
-        e = sp.cancel(sp.together(e))
-        num, den = sp.fraction(e)
-        dp = sp.Poly(sp.expand(den), Q)
-        md, cd = dp.monoms()[0][0], dp.coeffs()[0]
-        npy = sp.Poly(sp.expand(num), Q)
-        return {m[0] - md: sp.nsimplify(c / cd)
-                for m, c in zip(npy.monoms(), npy.coeffs())}
-
-    def bar_odd(e):
-        c = laurent(e)
-        ks = sorted({abs(k) for k in c if k != 0})
-        return {k: (c.get(k, 0) - c.get(-k, 0)) for k in ks
-                if k > 0 and (c.get(k, 0) - c.get(-k, 0)) != 0}
 
     assertions = []
 
@@ -130,7 +116,7 @@ def main():
 
     # 4 — bar-odd shape depends only on |c(λ)|; conjugate blocks share it
     log("=== 4. bar-odd q-integer shape depends only on |c(λ)| ===")
-    baro = {lam: bar_odd(chi0[lam]) for lam in PARTS}
+    baro = {lam: bar_odd(chi0[lam], Q) for lam in PARTS}
     for lam in PARTS:
         log(f"  λ={lam!s:10s} c={content(lam):+d}  bar-odd (coeff of [k]_q) = "
             f"{ {k: str(v) for k, v in baro[lam].items()} }")

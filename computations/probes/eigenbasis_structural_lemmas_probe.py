@@ -59,6 +59,7 @@ def main():
     from hoefsmit_symbolic import chi_lambda_symbolic, Q
     from canonical_braid_crossings import atom_canonical_crossings
     from hecke_characters import partitions_of
+    from qbeta_bar_odd import laurent_coeffs  # centralized Laurent helper
 
     def conjugate(lam):
         if not lam:
@@ -109,9 +110,7 @@ def main():
         bp = atom_canonical_crossings(A, 0, include_inter=False)
         L = len(bp)
         e = sp.cancel(chi_lambda_symbolic((n,), bp))
-        num, den = sp.fraction(sp.together(e))
-        md = sp.Poly(sp.expand(den), Q).monoms()[0][0]
-        exps = [m[0] - md for m in sp.Poly(sp.expand(num), Q).monoms()]
+        exps = list(laurent_coeffs(e, Q).keys())
         par = {x % 2 for x in exps}
         ok = (par == {L % 2})
         lemma1_ok = lemma1_ok and ok

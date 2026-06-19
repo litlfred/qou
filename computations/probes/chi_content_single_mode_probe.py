@@ -38,28 +38,10 @@ def main():
 
     from hoefsmit_symbolic import chi_lambda_symbolic, Q
     from canonical_braid_crossings import atom_canonical_crossings
-    try:
-        from qou_substrate.constants import q_at
-    except Exception:  # pragma: no cover
-        from substrate.qou_substrate.constants import q_at  # type: ignore
+    from qbeta_bar_odd import bar_odd  # centralized Laurent/bar-odd helper
 
     bp1 = atom_canonical_crossings(1, 0, include_inter=False)
     bn1 = atom_canonical_crossings(0, 1, include_inter=False)
-
-    def laurent(e):
-        e = sp.cancel(sp.together(e))
-        num, den = sp.fraction(e)
-        dp = sp.Poly(sp.expand(den), Q)
-        md, cd = dp.monoms()[0][0], dp.coeffs()[0]
-        npy = sp.Poly(sp.expand(num), Q)
-        return {m[0] - md: sp.cancel(c / cd)
-                for m, c in zip(npy.monoms(), npy.coeffs())}
-
-    def bar_odd(e):
-        c = laurent(e)
-        ks = sorted({abs(k) for k in c if k != 0})
-        return {k: sp.cancel(c.get(k, 0) - c.get(-k, 0)) for k in ks
-                if k > 0 and sp.cancel(c.get(k, 0) - c.get(-k, 0)) != 0}
 
     def to_mpf(v):
         return mpf(str(sp.N(sp.re(v), 38)))
@@ -73,7 +55,7 @@ def main():
                       - chi_lambda_symbolic((2, 1), bp1 * k))
         if not d.is_rational_function(Q):
             all_rational = False
-        bo = bar_odd(d)
+        bo = bar_odd(d, Q)
         W = {o: to_mpf(v) for o, v in bo.items()}
         odd = sorted(o for o in W if o % 2 == 1)
         rec = {"k": k, "n_odd_orders": len(odd)}
