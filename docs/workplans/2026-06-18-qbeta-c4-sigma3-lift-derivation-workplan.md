@@ -142,10 +142,60 @@ frontier of the active Φ_q line** — coordinate with it (hand over the `𝔙`-
 binding-unification), do not duplicate. The pair-gen functional form is open for *both* legs, so a
 first-principles closure is the shared blocker; running the simple form would fit it.
 
-## 4. Honest forecast
+## 3c. Step-2 VERDICT (c₄ attempt, 2026-06-19) — underdetermined; blocked on `conj:rho-k-pair-gen-canonical-form`
 
-Closure odds this session are **modest** — this is the open keystone after ~12
-refuted classes, and `Λ` may prove underdetermined by current categorical
-content (in which case the honest deliverable is *that*, sharply stated, not a
-fitted `Λ`). The value is a principled attempt that either closes `c₄` or pins
-exactly what categorical input is missing.
+Acting on the owner directive "attempt the Φ_q bar-odd pair-gen c₄ now"
+(coordinated with §2's consolidate directive). The corpus-grep checklist
+(STRICT) resolves the attempt **without any new compute** — and the no-compute
+outcome is itself the discipline working, not a shortcut:
+
+**Finding — the c₄ closure reduces to an already-tracked open conjecture.**
+The §3b re-target ("bar-odd `Φ_q` pair-gen term … Im leg → `c₄`") lands on the
+**pair-gen functional form** `f_2(q, V̂_i, V̂_j)`, which is already a named,
+tracked open object:
+[`conj:rho-k-pair-gen-canonical-form`](../../content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md)
+(promoting the "pair-gen piece (open)" subsection of
+[`prop:rho-k-graded-expansion`](../../content/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.md)).
+
+**Why no non-fitting compute can close it this session:**
+
+1. **The simple forms are already refuted.** The naive log-additive
+   `α z² Σ ln|V_iV_j|` and the Wedderburn-decomposed form (correct
+   `w_sym/w_std/w_alt` weights, naive functional) both **degrade** accuracy
+   across `Z=1..20` — recorded in `rho-k-pair-gen-extension.witness.json`,
+   with the prior probes now under `computations/_deprecated/`. Re-running a
+   simple form is re-treading refuted ground (a fit, gated).
+2. **The expected form is `−z²·Li₂^q`, but its derivation is PENDING.** The
+   six-term `T₃ = −z² Σ Li₂^q(−|V̂_iV̂_j|)` (`thm:knot-mass-formula-unified`,
+   Kashaev limit) is the *believed-correct* `f_2` per the conjecture's evidence
+   table, but the Kashaev-limit derivation — parallel to the **proved**
+   single-gen `α Σ ln|V̂_i|` → `T₂` — has **not** been completed. Without it,
+   asserting `f_2` is invention (the workplan §3 step-1 "do not invent a rule").
+3. **Both parities share this one blocker (the §2 + §3b unification, now
+   sharpened).** `Li₂^q` is bar-**even** (`_li_2_q_util.py`) ⇒ the **Re/binding**
+   leg; the **Q_β c₄** is the bar-**odd** **Im/`Φ_q`** partner. They are the two
+   parities of the *same* open `f_2` pair-term. ⇒ **the Kashaev-limit derivation
+   of `f_2` closes BOTH the Q_β Im/`Φ_q` leg and the binding Re/`Li₂^q` leg
+   simultaneously.** This is not two open problems — it is one.
+
+**Tiered status of the c₄ attempt:** `underdetermined` (not `near-match`, not
+`fitted`, not `refuted`). The precise missing categorical input is the
+**Kashaev-limit / `O(ℏ_q)` derivation of the pair-gen functional `f_2`**
+(equivalently: the explicit closed-form mass element `Φ_mass(W)` of
+[`conj:mass-endomorphism`](../../content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.md) at pair level). c₄ is **not Lean-closable** and **not numerically closable** without it.
+
+**Consolidation + handoff (the §2 directive, executed):** the `𝔙`-leg-sorting
+(Im=`Φ_q`/Q_β, Re=`Li₂^q`/binding) and the both-legs-one-`f_2` unification are
+recorded here and handed to the active **Φ_q / z-Habiro line** (PR #2475,
+production `z = |V̂_i^full|` pin) and to `conj:rho-k-pair-gen-canonical-form` as
+the shared blocker. Stage-C does **not** fork a fresh probe; it converges on the
+Φ_q line. No production wiring; no registry tier change.
+
+## 4. Honest forecast — discharged
+
+Closure odds this session were **modest** — this is the open keystone after ~12
+refuted classes, and `Λ` proved underdetermined by current categorical
+content. The honest deliverable is *that*, sharply stated (§3c): c₄ is blocked
+on the pending Kashaev-limit derivation of `conj:rho-k-pair-gen-canonical-form`,
+which is one object with two parities (Q_β Im / binding Re). A principled
+attempt that pins exactly the missing categorical input — not a fitted `Λ`.
