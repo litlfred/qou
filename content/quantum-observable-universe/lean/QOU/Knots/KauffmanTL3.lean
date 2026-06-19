@@ -352,7 +352,10 @@ def trefoil : List (Nat × Bool) := [(1, true), (2, true), (1, true), (2, true)]
     `V(3₁) ≠ V(mirror)` is the Jones polynomial detecting trefoil handedness. -/
 def jonesTrefoil : LP := ⟨-16, [-1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1]⟩
 
-set_option maxRecDepth 100000 in
+section Trefoil
+
+set_option maxRecDepth 100000
+
 /-- `δ · V(3₁)` in fully reduced form, `A⁻¹⁸ - A⁻¹⁰ - A⁻⁶ - A⁻²` (small-`LP`
     arithmetic). -/
 theorem delta_mul_jonesTrefoil :
@@ -360,7 +363,6 @@ theorem delta_mul_jonesTrefoil :
       ⟨-18, [1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1]⟩ := by
   decide
 
-set_option maxRecDepth 100000 in
 set_option maxHeartbeats 400000 in
 /-- The bracket reduction of the trefoil closure: `jones (3₁) = A⁻¹⁸ - A⁻¹⁰ - A⁻⁶ - A⁻²`. -/
 theorem jones_trefoil_value :
@@ -380,12 +382,13 @@ theorem jones_trefoil_value :
 theorem trefoil_jones : jones trefoil = LP.mul delta jonesTrefoil :=
   jones_trefoil_value.trans delta_mul_jonesTrefoil.symm
 
-set_option maxRecDepth 100000 in
 /-- **The trefoil is a nontrivial knot** (machine-proved, AXIOM-FREE): its Jones
     polynomial `δ·V(3₁)` differs from the unknot's `δ` (the closure of the 3-cycle
     braid `σ₁σ₂`), because `V(3₁) ≠ 1`. -/
 theorem trefoil_knot_nontrivial :
     jones trefoil ≠ jones [(1, true), (2, true)] := by decide
+
+end Trefoil
 
 /-! ## Library validation — the Hopf link (the first multi-component named link)
 
@@ -419,14 +422,16 @@ def jonesHopf : LP := ⟨-10, [-1, 0, 0, 0, 0, 0, 0, 0, -1]⟩
     `delta_sq_mul_jonesHopf` and `jones_hopf_value` (avoids duplicating the literal). -/
 def jonesHopfReduced : LP := ⟨-14, [-1, 0, 0, 0, -2, 0, 0, 0, -2, 0, 0, 0, -2, 0, 0, 0, -1]⟩
 
-set_option maxRecDepth 100000 in
+section Hopf
+
+set_option maxRecDepth 100000
+
 /-- `δ² · V(Hopf)` fully reduced. The two `δ` factors are the split unknot of the
     3-braid closure (`Hopf ⊔ unknot`) and the 1-component normalisation. -/
 theorem delta_sq_mul_jonesHopf :
     LP.mul (LP.mul delta delta) jonesHopf = jonesHopfReduced := by
   decide
 
-set_option maxRecDepth 100000 in
 /-- The bracket reduction of the Hopf (`⊔ unknot`) closure:
     `jones (hopf) = -A⁻¹⁴ - 2A⁻¹⁰ - 2A⁻⁶ - 2A⁻² - A²`. -/
 theorem jones_hopf_value :
@@ -447,12 +452,13 @@ theorem jones_hopf_value :
 theorem hopf_link_jones : jones hopf = LP.mul (LP.mul delta delta) jonesHopf :=
   jones_hopf_value.trans delta_sq_mul_jonesHopf.symm
 
-set_option maxRecDepth 100000 in
 /-- **The Hopf link is nontrivial** (machine-proved, AXIOM-FREE): the `σ₁²` closure
     (`Hopf ⊔ unknot`) has Jones polynomial differing from the 3-component unlink's
     `δ³`, so the Hopf sublink is genuinely linked (a nonzero linking number, here
     visible as `V(Hopf) ≠ δ`). -/
 theorem hopf_link_nontrivial : jones hopf ≠ jones unlink3 := by decide
+
+end Hopf
 
 /-! ## Library validation — the `(3,4)` torus knot `8₁₉`
 
@@ -481,13 +487,15 @@ def jonesTorus819 : LP :=
 def jonesTorus819Reduced : LP :=
   ⟨-34, [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1]⟩
 
-set_option maxRecDepth 100000 in
+section Torus819
+
+set_option maxRecDepth 100000
+
 /-- `δ · V(8₁₉)` fully reduced. -/
 theorem delta_mul_jonesTorus819 :
     LP.mul delta jonesTorus819 = jonesTorus819Reduced := by
   decide
 
-set_option maxRecDepth 100000 in
 set_option maxHeartbeats 2000000 in
 /-- The bracket reduction of the `8₁₉` closure (a length-8 3-braid — the heaviest
     kernel-`decide` reduction in the ladder, ~70 s):
@@ -506,12 +514,12 @@ theorem jones_torus819_value :
 theorem torus819_jones : jones torus819 = LP.mul delta jonesTorus819 :=
   jones_torus819_value.trans delta_mul_jonesTorus819.symm
 
-set_option maxRecDepth 100000 in
 set_option maxHeartbeats 2000000 in
 /-- **`8₁₉` is a nontrivial knot** (machine-proved, AXIOM-FREE): its Jones
     polynomial `δ·V(8₁₉)` differs from the unknot's `δ`, because `V(8₁₉) ≠ 1`. -/
 theorem torus819_knot_nontrivial :
     jones torus819 ≠ jones [(1, true), (2, true)] := by decide
 
+end Torus819
 end TL
 end QOU.Knots
