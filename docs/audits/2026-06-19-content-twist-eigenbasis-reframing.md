@@ -69,6 +69,26 @@ represent a `|content|`-graded superposition of two modes. The 6.84% single-x
 over-determination residual is the residue of forcing a 2-mode object through a
 1-mode template — not numerical noise, and not refutable by a better `x`.
 
+### 2.5 Chip tried — even a single content mode is not single-x q-Bessel
+**Compute:** [`chi_content_single_mode_probe.py`](../../computations/probes/chi_content_single_mode_probe.py).
+The natural follow-up to §2.4 is to *isolate* one content mode and ask whether it
+alone is a clean single-x q-Bessel. The only H₃ block with internal tower structure
+is the `c=0` mode `(2,1)` (dim 2); the dim-1 blocks `(3),(1,1,1)` give frozen
+two-order monomials under the winding `β^k`. Its bar-odd coefficients are rational,
+but its single-x over-determination residual does **not** shrink:
+
+| k | #odd orders | single-x residual (max over ≥5) |
+|---|---|---|
+| 3 | 12 | 480% |
+| 5 | 24 | 606% |
+| 7 | 35 | 186% |
+| 9 | 46 | 240% |
+
+So the §4a single-x failure is **not merely multi-mode mixing**: even one isolated
+content mode is not single-x q-Bessel under the winding tower. The discrete
+strand / winding / framing tower variables tried so far are not the q-Bessel
+contraction parameter (or the bar-odd object is not single-x q-Bessel at all).
+
 ## 3. Reading (TIERED)
 
 1. **The eigenbasis rewrite makes the proved structure evident.** Content `c(λ)` is the
@@ -76,11 +96,15 @@ over-determination residual is the residue of forcing a 2-mode object through a
    (`3 − ⅔c`, proved), the twist eigenvalue (`q^{2c}`, proved), the conjugation action
    (`c → −c`), and the framing pole location (`t = q^{−2c}`). The bar-odd *shape* is
    content-blind (depends only on `|c|`); the content is pure grading.
-2. **It explains the §4a failure constructively.** Not "the keystone is wrong" but "the
-   single-x ansatz was the wrong template": the object is content-graded / multi-mode.
-   The productive next chip is a **content-graded** special-function fit — e.g. one
-   `x_{|c|}` per `|content|` class, or a theta/Macdonald object whose modes are indexed
-   by content — rather than a single q-Bessel.
+2. **It reframes the §4a failure — and the failure is deeper than mode-mixing.** The
+   eigenbasis first suggested "the single-x ansatz mixes content modes" (§2.4); but
+   isolating one content mode (§2.5) shows it *too* fails single-x (480–606% residual).
+   So across every tower direction now tried — strand and winding (PR #2496), framing
+   (§2.2), and single-content-winding (§2.5) — the bar-odd object is **not a single-x
+   q-Bessel**. The honest status: the n=3 6.84% near-match does not extend; the discrete
+   tower variables are not the q-Bessel contraction parameter. A genuine identification,
+   if one exists, must come from the *continuous* `E_q(2)` contraction limit, not these
+   discrete braid towers.
 3. **Nothing wired; nothing newly claimed.** Every relation here is an exact symbolic
    re-expression of an already-proved H₃ identity. `c₃`/Q_β stay cal-anchored.
 
@@ -89,7 +113,10 @@ over-determination residual is the residue of forcing a 2-mode object through a
 - **Grounded in proof.** The organizing eigenvalue `θ_λ=q^{2c}` is Lean-proved
   (`ChiralityWritheRibbon.lean`); the closed forms it reorganizes are Lean-proved.
 - **No fit, nothing wired, TIERED**; no content/`.ts`/`.lean` touched.
-- **Open chip (carried forward):** a content-graded multi-mode fit at n=3 (two `x_{|c|}`),
-  and whether the even-length-increment requirement from #2496 can be met by an
-  embedding that keeps the *same* content-pole at each level (a same-`c` tower) rather
-  than the content-separating full twist.
+- **Open chip (carried forward):** with every *discrete* braid-tower direction now
+  refuted for single-x q-Bessel (strand, winding, framing, single-content), the live
+  lead is the **continuous `E_q(2)` contraction** the q-Bessel actually comes from —
+  i.e. test whether the bar-odd matrix coefficient matches a Hahn–Exton q-Bessel
+  `J_ν^{(HE)}(·;q)` (the genuine q-deformed object), rather than the ordinary `J_ν`
+  of the Jacobi–Anger backbone, before attempting any `lim spectrum = q-Bessel zeros`
+  Lean.
