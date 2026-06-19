@@ -18,7 +18,7 @@ the [target clarification](2026-06-16-keystone-plancherel-target-clarification.m
 | **C3** | **Positivity** `W_λ > 0` ∀λ | holds (min 7.6e-3 at n=5) | any *signed/virtual* index (must be a genuine dimension/L²-index) |
 | **C4** | **d_q² block signature** `W_λ = d_q(λ)²/[n]_q!` = (q-dim End V_λ)/(q-dim H_n) | by definition | any index reproducing only *eigenvalues/labels*, not block *dimensions* |
 | **C5** | **Classical limit** `W_λ →_{q→1} d_λ²/n!` (classical S_n Plancherel) | Σ→1 at q=1 | any q-deformation degenerating to the wrong measure |
-| **C6** | **Full support** — all `p(n)` partitions, no selection rule | verified (bond-dim audit) | any index with vanishing sectors |
+| **C6** | **Full support** — all `p(n)` partitions, no selection rule | verified (bond-dim audit); **quantitative teeth (#2500):** the colour-`ℂ^N`-missed block count is unbounded + monotone in `A` (`ColourArenaBlockCount.lean`, sorry-free) ⇒ **no finite-`N` arena**, so the index must carry **all `p(3A)`** blocks; combiner non-degeneracy (`CombinerBranchingCompleteness.lean`) confirms every block is reached | any index with vanishing sectors, **and any finite-dimensional (finite-`N` colour) Sasakian** |
 | **C7** | **Boothby–Wang** — dim SU(3)/SO(3)=5 odd; χ(Wu)=0 | met (ledger) | non-regular-Sasakian-compatible structures |
 
 ## What the constraints buy
