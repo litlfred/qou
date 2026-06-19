@@ -14,7 +14,7 @@ the [target clarification](2026-06-16-keystone-plancherel-target-clarification.m
 | # | Constraint | Status at q₀ | Prunes |
 |---|---|---|---|
 | **C1** | **Normalization** — total `Σ_λ W_λ` | **≈ 0.982 (n=5) — `W_λ` is *not* a probability measure (expected; `d_q` has no sum rule)** | fixes the index total; not a defect — see below |
-| **C2** | **Conjugation symmetry** `W_λ = W_{λ'}` | **EXACT** (max diff 0.0) | any index lacking a transpose/chirality (Z/2) involution |
+| **C2** | **Conjugation symmetry** `W_λ = W_{λ'}` | **EXACT** (max diff 0.0); **facets formalized (#2500):** `KeystoneChiralityInvolution.lean` — content negates under transpose (chirality atom), electron `(3,1,1)` self-conjugate (chirality fixed point), `[2]↔[1,1]` flip | any index lacking a transpose/chirality (Z/2) involution |
 | **C3** | **Positivity** `W_λ > 0` ∀λ | holds (min 7.6e-3 at n=5) | any *signed/virtual* index (must be a genuine dimension/L²-index) |
 | **C4** | **d_q² block signature** `W_λ = d_q(λ)²/[n]_q!` = (q-dim End V_λ)/(q-dim H_n) | by definition | any index reproducing only *eigenvalues/labels*, not block *dimensions* |
 | **C5** | **Classical limit** `W_λ →_{q→1} d_λ²/n!` (classical S_n Plancherel) | Σ→1 at q=1 | any q-deformation degenerating to the wrong measure |
