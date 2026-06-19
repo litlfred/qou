@@ -3,7 +3,7 @@
 **Date:** 2026-06-19
 **Scope:** read-only audit of the H₆ deuteron "item-A" compute artifacts on
 `main`, plus reconciliation of the Δ_λ "Option E" framing between the
-coordination ledger and CLAUDE.md. Nothing wired; no compute changed; CLAUDE.md
+coordination ledger and `CLAUDE.md`. Nothing wired; no compute changed; `CLAUDE.md`
 not edited.
 **Follows:** the #2485 merge (first live H₆ deuteron χ_λ) and the sibling
 𝓑_n−𝓑_p parity-obstruction work
@@ -26,7 +26,7 @@ are `computations/probes/` investigations — unwired **by design**, not a findi
 
 | Witness | Recorded provenance | Verdict |
 |---|---|---|
-| `derived-chi-catalogue-bridge-factor-omega` | scriptHash `6497bfb59a26` | **STALE** — producer `derived_chi_catalogue_bridge_factor_deuteron.py` now hashes `f9a3152cf53d`; the producer content changed since the witness was generated. Re-run to confirm the ω table is current. |
+| `derived-chi-catalogue-bridge-factor-omega` | `scriptHash` `6497bfb59a26` | **STALE** — producer `derived_chi_catalogue_bridge_factor_deuteron.py` now hashes `f9a3152cf53d`; the producer content changed since the witness was generated. Re-run to confirm the ω table is current. |
 | `chi-deuteron-free-h6-at-q0-50dps` | none (carries `_provenance` but no `scriptHash` / `scriptCommitSha` / `computedAt`) | **un-trackable** — invisible to the witness-pipeline staleness detector |
 | `joint-tower-sdp-h6-h9` | `computedAt` only (2026-06-02), no `scriptHash` / `scriptCommitSha` | **un-trackable** |
 
@@ -45,7 +45,7 @@ are `computations/probes/` investigations — unwired **by design**, not a findi
 
 ## 3. Option E framing reconciliation (Δ_λ gate)
 
-CLAUDE.md §"Δ_λ gate" lists the productive directions as "GAP-A-3 / GAP-A-4 …
+`CLAUDE.md` §"Δ_λ gate" lists the productive directions as "GAP-A-3 / GAP-A-4 …
 and **Option E (Kashiwara crystal)**." The
 [`option-e.md`](../coordination/option-e.md) ledger shows this specific framing
 is **partially stale**:
@@ -63,13 +63,13 @@ is **partially stale**:
   overclaim, corrected 2026-06-17; v9 `(1+q)/2` is a near-match **fit**
   (structural derivation refuted, PROBE 1 / PR #1707).
 
-**Suggested CLAUDE.md refinement (owner decision — NOT applied here):** reword
+**Suggested `CLAUDE.md` refinement (owner decision — NOT applied here):** reword
 "Option E (Kashiwara crystal)" so it reflects that the crystal / KL-weight
 sub-mechanism is pruned, and the live Option-E frontier is the **A=4 interface
 operator (PROBE 2)**. Left to the owner per the read-only scope of this audit.
 
 ## Discipline
 
-- Read-only audit; no compute changed, nothing wired, CLAUDE.md not edited.
+- Read-only audit; no compute changed, nothing wired, `CLAUDE.md` not edited.
 - Corpus-grep verified: the Option E verdict is read directly from
   `option-e.md` and its cited audits, not relayed second-hand.
