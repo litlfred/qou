@@ -97,6 +97,29 @@ theorem complex_volume_unification (E0 : ℝ) (trDefect : ℂ) :
   unfold binding Qbeta
   exact Complex.re_add_im _
 
+/-- **The definitional unification imposes NO cross-constraint between the
+    channels.** Every pair `(a, b)` of real values is realised as `(Re 𝔙, Im 𝔙)`
+    for some `𝔙`, so knowing the unification `𝔙 = 𝔈_bind + i·𝔔_β`
+    (`complex_volume_unification`, i.e. `Complex.re_add_im`) constrains binding
+    given `𝔔_β` — or vice versa — **not at all**.
+
+    This is the formal core of the holomorphy-closure audit
+    (`docs/audits/2026-06-19-qbeta-complex-volume-holomorphy-no-cr-cross-constraint.md`):
+    `re_add_im` is a **real-linear reconstruction**, not a Cauchy–Riemann
+    constraint. `Re` and `Im` are independent real degrees of freedom of one
+    complex number. A *holomorphic* `𝔙(q)` would tie them via CR — but the audit
+    shows no such holomorphy is available where the cross-constraint was hoped
+    for: the `i` is the bar-involution / target `ℂ` (the proofs above live over a
+    `CommRing` with involution, not over a holomorphic source), the two channels
+    are read at different archimedean loci (real-`q` vs root-of-unity), and at
+    the observable level `Im(q₀) = 0` (`lusztig_q_0_imaginary_part_zero`) so
+    there is no holomorphic disk at all. Hence the keystone-tower separation
+    (Q_β `c_k` argument-ladder vs binding `Δ_λ` order-tower) survives: `𝔙`
+    unifies the two legs as one fibre object with two real shadows, NOT as a
+    holomorphic cross-constraint. -/
+theorem re_im_independent (a b : ℝ) : ∃ z : ℂ, z.re = a ∧ z.im = b :=
+  ⟨⟨a, b⟩, rfl, rfl⟩
+
 /-! ## Descent — one proof on `𝔙` covers binding AND `𝔔_β`
 
 The "prove once, read off both channels" payoff is the **generic**
