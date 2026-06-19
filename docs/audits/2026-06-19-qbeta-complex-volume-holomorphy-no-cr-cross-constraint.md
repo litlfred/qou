@@ -197,7 +197,43 @@ vs the order-recurrence `two_root_geometric`
 - Records, for the keystone-tower triage, that **Option 1 (holomorphy gate) is
   CLOSED with a negative verdict** — the both-legs-via-CR program does not revive.
 
-## 6. Cross-references
+## 6. Tranche status — options 2 & 3 (verified in this container, not rebuilt)
+
+The keystone-tower triage's other two "ways in" already have built-and-run
+compute on `main` (corpus-grep before re-doing). Both were re-run here to confirm
+state; neither witness changed (both fresh).
+
+**Option 3 — mode→ladder bridge: CONFIRMED REFUTED (C13).**
+[`habiro_mode_to_ladder_bridge.py`](../../computations/habiro/habiro_mode_to_ladder_bridge.py)
+re-run (wall 1.5 s, witness unchanged): the two principled `f`-candidates
+(raw even-in-ℏ; #1602 bar-even projection) both admit the `c₂ = −1` scale-fix but
+**neither reproduces `c₃ = −2`** — candidate-a `c₃ = −100/(77b) ≈ −1.497`,
+candidate-b `c₃ = −175/(144b) ≈ −1.401` (recorded as **C13** in the
+[refuted-class map](2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md)). The
+**concrete residual the bridge hands the kernel search** is the *exact even-in-ℏ
+ladder* of `Δtr_M` — `a₂ = −13/8`, `a₄ = −77/32`, `a₆ = −25/8`,
+`a₈ = −3923/1024` — anchor-independent rationals the surviving kernel `f` must
+reproduce (and the linear / bar-even seedings demonstrably do not). This ties to
+option 1: the bridge reads the **bar-odd / Im channel** (the `c_k` argument-ladder);
+its failure is *not* repaired by anything on the binding/Re side (no CR bridge —
+§2).
+
+**Option 2 — Hoefsmit Stage-C σ₃-lift: foundation RE-VALIDATED, lift still open.**
+[`qbeta_h4_tower_branching_preflight.py`](../../computations/habiro/qbeta_h4_tower_branching_preflight.py)
+re-run (wall 0.1 s, both assertions pass): the H₄ Hoefsmit seminormal reps satisfy
+Hecke + braid + far-commutation (all `λ⊢4`), and the H₃⊂H₄ branching
+`χ^μ(w) = Σ_{λ↗μ} χ^λ(w)` holds on all six σ₃-free decay words to max rel err
+`5.6e-52`. σ₃-gating therefore stands: a σ₃-free element carries no new H₄ DOF, so
+`c₄` is gated on the **open categorical σ₃-lift `Λ ∈ H₄`** (Stage C, multi-session,
+*do-not-fit*). **This option-1 closure sharpens the Stage-C specification:** the
+σ₃-lift must be **derived from the decay (`Im`-channel) categorical content** — the
+free-neutron-decay confinement defect / the brane-tower `N→N+1` map — and **cannot
+be borrowed from the better-determined binding (`Re`) side via Cauchy–Riemann**,
+because no such CR bridge exists (§2). The active derivation lives on sibling
+**PR #2474** (`qbeta-c4-stage-c-sigma3-lift`); this tranche hands it the finding
+rather than building a competing lift.
+
+## 7. Cross-references
 
 - [`2026-06-18-qbeta-qbessel-vs-zhabiro-binding-tower-separation.md`](2026-06-18-qbeta-qbessel-vs-zhabiro-binding-tower-separation.md) — the argument-vs-order separation this doc reconciles with §8
 - [`2026-06-10-qbeta-ck-state-of-play-synthesis.md` §8](2026-06-10-qbeta-ck-state-of-play-synthesis.md) — the complex-volume `𝔙` unification
