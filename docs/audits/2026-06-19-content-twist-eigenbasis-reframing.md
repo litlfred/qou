@@ -108,7 +108,41 @@ contraction parameter (or the bar-odd object is not single-x q-Bessel at all).
 3. **Nothing wired; nothing newly claimed.** Every relation here is an exact symbolic
    re-expression of an already-proved H₃ identity. `c₃`/Q_β stay cal-anchored.
 
-## 4. Discipline
+## 4. Gaps the eigenbasis closes (owner question: "can we prove gaps with this?")
+
+Yes — for the **structural** gaps that #2496 and §2 above established only *numerically*.
+Because the organizing eigenvalue `θ_λ=q^{2c}` is **Lean-proved**, the eigenbasis
+promotes three verified-only observations to rigorous, Lean-formalizable lemmas
+(all verified exact-symbolic at n=3,6[,9]:
+[`eigenbasis_structural_lemmas_probe.py`](../../computations/probes/eigenbasis_structural_lemmas_probe.py),
+witness [`eigenbasis-structural-lemmas.witness.json`](../../computations/eigenbasis-structural-lemmas.witness.json)):
+
+- **L1 — order-parity = word-length parity.** `χ_λ(β)` has all Laurent exponents
+  `≡ L (mod 2)`, `L` = number of typed crossings. *Proof:* every Hoefsmit crossing
+  factor (`σ_i`; `σ_i − h·I`, `h=q−q⁻¹`) has odd Laurent degree, so a product of `L`
+  of them has degree `≡ L (mod 2)`, preserved by the trace. ∎ This makes the **#2496
+  parity obstruction a theorem**: the nucleon word has odd length 11, so any
+  integer-multiple tower (`11·index`) alternates parity.
+- **L2 — bar-involution ↔ conjugation duality.** `χ_λ(𝓑_n−𝓑_p)(1/q) = (−1)^L·χ_{λ'}(q)`
+  for every `λ ⊢ n` (verified: sign uniform `−1` at n=3, `+1` at n=6 = `(−1)^A=(−1)^L`,
+  tying the sign to L1). *Proof skeleton:* the Hecke bar involution `q ↦ q⁻¹` swaps the
+  seminormal eigenvalues `q ↔ −q⁻¹`, i.e. the `V_λ ≅ V_{λ'}` intertwiner — the bar
+  involution **is** content reflection `c(λ') = −c(λ)`. ∎ Generalizes the H₃-only proved
+  case `χ_(1,1,1)=χ_(3)/q⁴` and **proves the conjugation invariant** verified this session.
+- **L3 — framing generating function.** `Σ_m t^m χ_λ(β·Δ^{2m}) = χ_λ(β)/(1−t·q^{2c(λ)})`,
+  a one-line corollary of centrality + the proved `θ_λ=q^{2c}`.
+
+**What it does NOT close — the per-isotope Δ_λ binding gate.** Content-statistic ansätze
+for `Δ_λ` are already refuted (GAP-A-3 / Kashiwara `c(λ)`); a content-based `Δ_λ` would
+be a *seventh fitted ansatz* and is out of scope. The eigenbasis **reorganizes proved
+structure** — it does not manufacture a binding closure. Stating this boundary is part of
+the answer.
+
+**Lean follow-up:** formalize L1, L2 in `QOU/BraidKnot` and L3 as a corollary of
+`RibbonTwistEigenvalue`. Blocked this session only by the firewalled Lean toolchain
+(`release.lean-lang.org`); the proofs above are complete modulo transcription.
+
+## 5. Discipline
 
 - **Grounded in proof.** The organizing eigenvalue `θ_λ=q^{2c}` is Lean-proved
   (`ChiralityWritheRibbon.lean`); the closed forms it reorganizes are Lean-proved.
