@@ -290,14 +290,16 @@ def figureEight : List (Nat × Bool) := [(1, true), (2, false), (1, true), (2, f
     `t⁻² - t⁻¹ + 1 - t + t²`). -/
 def jonesFigureEight : LP := ⟨-8, [1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0, 1]⟩
 
-set_option maxRecDepth 100000 in
+section FigureEight
+
+set_option maxRecDepth 100000
+
 /-- `δ · V(4₁)` in fully reduced form, `-A¹⁰ - A⁻¹⁰` (small-`LP` arithmetic). -/
 theorem delta_mul_jonesFigureEight :
     LP.mul delta jonesFigureEight =
       ⟨-10, [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1]⟩ := by
   decide
 
-set_option maxRecDepth 100000 in
 set_option maxHeartbeats 400000 in
 /-- The bracket reduction of the figure-eight closure: `jones (4₁) = -A¹⁰ - A⁻¹⁰`. -/
 theorem jones_figureEight_value :
@@ -319,12 +321,13 @@ theorem jones_figureEight_value :
 theorem figure_eight_jones : jones figureEight = LP.mul delta jonesFigureEight :=
   jones_figureEight_value.trans delta_mul_jonesFigureEight.symm
 
-set_option maxRecDepth 100000 in
 /-- **The figure-eight is a nontrivial knot** (machine-proved, AXIOM-FREE): its
     Jones polynomial `δ·V(4₁)` differs from the unknot's `δ` (the closure of the
     3-cycle braid `σ₁σ₂`), because `V(4₁) ≠ 1`. -/
 theorem figure_eight_knot_nontrivial :
     jones figureEight ≠ jones [(1, true), (2, true)] := by decide
+
+end FigureEight
 
 /-! ## Library validation + reuse — the trefoil knot `3₁`
 
