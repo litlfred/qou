@@ -147,7 +147,7 @@ frontier is an order-direction (A) object.**
   is foreclosed: (b)+(c) remove any observable CR; (d) shows fibre CR, even if it
   holds, reaches only the q-variation of binding at a fixed knot, not the `Δ_λ`
   order-tower. `c₄` stays gated where the corpus already puts it: the **σ₃-lift**
-  (Stage C, §[option 2]) / the **fibre-level kernel `R(q,ξ)`** (the keystone).
+  (Stage C, §6) / the **fibre-level kernel `R(q,ξ)`** (the keystone).
 - **The unification is preserved, correctly scoped.** `𝔙` *is* the right
   bookkeeping — one fibre object, two real shadows, "prove once / read both
   channels" (`invol_descent`, `recurrence_invol_descent`). What it is **not** is a
