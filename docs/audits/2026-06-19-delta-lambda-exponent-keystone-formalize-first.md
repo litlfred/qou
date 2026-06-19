@@ -145,8 +145,9 @@ Lean chip, and *not* an opening for a fit (Δ_λ gate).
   corrects an earlier draft of this paragraph that claimed "n=6 lives only in
   deprecated probes":** the H₆ deuteron compute is already on `main` at
   production precision — free-word χ_λ at q₀ *and* q⁻¹ and bound χ_λ at 50 dps
-  (`chi-deuteron-free-h6-at-q0-50dps`, `chi-deuteron-h6-at-q0-50dps`; landed
-  PR #1742/#1748), the symbolic bound characters (`chi-deuteron-h6`), the full
+  (`chi-deuteron-free-h6-at-q0-50dps`, `chi-deuteron-free-h6-at-qinv-50dps`,
+  `chi-deuteron-h6-at-q0-50dps`; landed PR #1742/#1748), the symbolic bound
+  characters (`chi-deuteron-h6`), the full
   Littlewood–Richardson bound↔free bridge factor ω
   (`derived_chi_catalogue_bridge_factor_deuteron.py`), and the H6→H9
   joint-tower SDP (`joint-tower-sdp-h6-h9`). The `atom_braid_word_3A(1,1)`
