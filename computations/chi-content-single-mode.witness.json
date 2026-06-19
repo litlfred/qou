@@ -1,0 +1,48 @@
+{
+  "name": "chi-content-single-mode",
+  "description": "Isolates the c=0 (2,1)-block (the only H₃ block with internal tower structure) and tests whether its winding tower fits a single-x q-Bessel. Bar-odd coefficients are rational, but the single-x over-determination residual does NOT shrink (≈480% k=3, 606% k=5, 186% k=7, erratic). So the §4a single-x failure is not merely multi-mode mixing — even one content mode is not single-x q-Bessel under the winding tower. NEGATIVE; nothing wired; TIERED.",
+  "auditOnly": true,
+  "probe": true,
+  "block": "(2,1), content c=0 (self-conjugate central mode)",
+  "tower_variable": "winding iterate β^k (k odd, parity preserved)",
+  "bar_odd_coefficients_rational": true,
+  "single_mode_tower": [
+    {
+      "k": 1,
+      "n_odd_orders": 2,
+      "single_x": null,
+      "res_max": null
+    },
+    {
+      "k": 3,
+      "n_odd_orders": 12,
+      "single_x": "5.96169004",
+      "res_max": "4.8007"
+    },
+    {
+      "k": 5,
+      "n_odd_orders": 24,
+      "single_x": "-5.69851102",
+      "res_max": "6.06018"
+    },
+    {
+      "k": 7,
+      "n_odd_orders": 35,
+      "single_x": "6.138951013",
+      "res_max": "1.85735"
+    },
+    {
+      "k": 9,
+      "n_odd_orders": 46,
+      "single_x": "-6.223815026",
+      "res_max": "2.39975"
+    }
+  ],
+  "converges_to_single_x_q_bessel": false,
+  "reading": "The single-x q-Bessel identification fails even for an isolated content mode; the discrete strand/winding/framing tower variables are not the q-Bessel contraction parameter (or the bar-odd object is not single-x q-Bessel). Combined with PR #2496, the single-x §4a template is refuted across every tower direction tried.",
+  "witness": {
+    "scriptCommitSha": "",
+    "scriptHash": "cf80bc53893d",
+    "producer": "computations/probes/chi_content_single_mode_probe.py"
+  }
+}
