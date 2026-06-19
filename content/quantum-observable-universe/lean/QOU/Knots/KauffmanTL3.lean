@@ -411,20 +411,23 @@ def hopf : List (Nat × Bool) := [(1, true), (1, true)]
     all-positive `σ₁²` selects this handedness (the mirror Hopf has `-A² - A¹⁰`). -/
 def jonesHopf : LP := ⟨-10, [-1, 0, 0, 0, 0, 0, 0, 0, -1]⟩
 
+/-- `δ² · V(Hopf)` fully bracket-reduced — the Jones polynomial of the `σ₁²`
+    closure (`Hopf ⊔ unknot`): `-A⁻¹⁴ - 2A⁻¹⁰ - 2A⁻⁶ - 2A⁻² - A²`. Shared by
+    `delta_sq_mul_jonesHopf` and `jones_hopf_value` (avoids duplicating the literal). -/
+def jonesHopfReduced : LP := ⟨-14, [-1, 0, 0, 0, -2, 0, 0, 0, -2, 0, 0, 0, -2, 0, 0, 0, -1]⟩
+
 set_option maxRecDepth 100000 in
 /-- `δ² · V(Hopf)` fully reduced. The two `δ` factors are the split unknot of the
     3-braid closure (`Hopf ⊔ unknot`) and the 1-component normalisation. -/
 theorem delta_sq_mul_jonesHopf :
-    LP.mul (LP.mul delta delta) jonesHopf =
-      ⟨-14, [-1, 0, 0, 0, -2, 0, 0, 0, -2, 0, 0, 0, -2, 0, 0, 0, -1]⟩ := by
+    LP.mul (LP.mul delta delta) jonesHopf = jonesHopfReduced := by
   decide
 
 set_option maxRecDepth 100000 in
 /-- The bracket reduction of the Hopf (`⊔ unknot`) closure:
     `jones (hopf) = -A⁻¹⁴ - 2A⁻¹⁰ - 2A⁻⁶ - 2A⁻² - A²`. -/
 theorem jones_hopf_value :
-    jones hopf =
-      ⟨-14, [-1, 0, 0, 0, -2, 0, 0, 0, -2, 0, 0, 0, -2, 0, 0, 0, -1]⟩ := by
+    jones hopf = jonesHopfReduced := by
   decide
 
 /-- **The link library reproduces the known Hopf-link Jones polynomial**
@@ -469,11 +472,16 @@ def torus819 : List (Nat × Bool) :=
 def jonesTorus819 : LP :=
   ⟨-32, [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1]⟩
 
+/-- `δ · V(8₁₉)` fully bracket-reduced — the Jones polynomial of the `(σ₁σ₂)⁴`
+    closure: `A⁻³⁴ + A⁻³⁰ - A⁻²² - A⁻¹⁸ - A⁻¹⁴ - A⁻¹⁰`. Shared by
+    `delta_mul_jonesTorus819` and `jones_torus819_value` (avoids duplicating the literal). -/
+def jonesTorus819Reduced : LP :=
+  ⟨-34, [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1]⟩
+
 set_option maxRecDepth 100000 in
 /-- `δ · V(8₁₉)` fully reduced. -/
 theorem delta_mul_jonesTorus819 :
-    LP.mul delta jonesTorus819 =
-      ⟨-34, [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1]⟩ := by
+    LP.mul delta jonesTorus819 = jonesTorus819Reduced := by
   decide
 
 set_option maxRecDepth 100000 in
@@ -482,8 +490,7 @@ set_option maxHeartbeats 2000000 in
     kernel-`decide` reduction in the ladder, ~70 s):
     `jones (8₁₉) = A⁻³⁴ + A⁻³⁰ - A⁻²² - A⁻¹⁸ - A⁻¹⁴ - A⁻¹⁰`. -/
 theorem jones_torus819_value :
-    jones torus819 =
-      ⟨-34, [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1]⟩ := by
+    jones torus819 = jonesTorus819Reduced := by
   decide
 
 /-- **The link library reproduces the known `8₁₉` Jones polynomial**
