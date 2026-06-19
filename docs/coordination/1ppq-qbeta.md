@@ -553,6 +553,37 @@ quoted the `N=0` trace term as `≈ 0.49 MeV (~259 %)`; the canonical functional
 #2363's own "~2× low, −56 %" and the witness. Corrected the prose/docstring
 (conjecture statement, Lean class, conditional corollary unchanged).
 
+## 2026-06-19 — §4a single-x q-Bessel REFUTED across all discrete towers; content/twist eigenbasis reframing + 3 gap-closing lemmas (PRs #2496, #2502)
+
+**Scope.** Transition-side (Reeb-tower / Jacobi–Anger §4a) follow-on — the §4a
+single-x q-Bessel identification of the bar-odd `χ_λ(𝓑_n−𝓑_p)` tower. No c_k, no
+fit, no production wiring; all `auditOnly`/`probe`; TIERED.
+
+**Negative — single-x q-Bessel does not extend.** The 6.84 % n=3 near-match was
+tested against every natural discrete tower variable and fails to converge in all:
+- **strand tower** (n=3A): parity obstruction — bar-odd order-parity alternates
+  odd/even with A, odd-order test is 0/0 at n=6 ([#2496](https://github.com/litlfred/qou/pull/2496));
+- **winding iterate** β^k: parity = k mod 2; odd-k residual diverges
+  (6.84 %→no-soln→~100 %→erratic);
+- **framing tower** Δ^{2m}: separates orders by content into a gapped cluster
+  (`W₅=0`), §4a undefined;
+- **single content mode** (c=0 (2,1)-block): residual 480/606/186/240 %
+  ([#2502](https://github.com/litlfred/qou/pull/2502)).
+Live lead now the **continuous E_q(2) contraction** (Hahn–Exton q-Bessel), not
+discrete braid towers (n=3 HE-vs-ordinary too thin to decide — 3 orders).
+
+**Positive — content/twist eigenbasis makes the proved relations evident.**
+Anchored on the Lean-proved ribbon eigenvalue `θ_λ=q^{2c(λ)}`: framing GF is a
+3-pole rational `χ_λ/(1−t·q^{2c})`; bar-odd shape depends only on `|c(λ)|`; the
+single-x failure is a `|content|`-graded multi-mode object. Audit:
+[`docs/audits/2026-06-19-content-twist-eigenbasis-reframing.md`](../audits/2026-06-19-content-twist-eigenbasis-reframing.md).
+
+**Gap-closing.** The eigenbasis promotes three verified-only facts to rigorous
+lemmas (exact-symbolic; Lean follow-up): **L1** order-parity = word-length parity
+(⇒ the #2496 parity obstruction is a theorem); **L2** `χ_λ(1/q)=(−1)^L·χ_{λ'}(q)`
+(⇒ the conjugation invariant); **L3** the framing 3-pole GF. **Does NOT** close the
+Δ_λ binding gate (content-statistic refuted, GAP-A-3 — out of scope).
+
 ## Cross-refs
 
 - AGENTS.md §Precision goals (L1 / L2 / Subgoal-1 / Subgoal-2)
