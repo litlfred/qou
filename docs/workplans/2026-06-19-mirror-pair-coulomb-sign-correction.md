@@ -76,6 +76,7 @@ expected to be a scoping / partial / negative result, **not** a fit.
 
 - [x] `computations/probes/mirror_pair_coulomb_sign_correction.py` + witness —
   sign correct for all 4 mirror pairs (A=3,7,11,13); magnitude 31–47% (open)
-- [ ] EM-linking invariant derivation-attempt probe + witness (formalize-first)
-- [ ] Audit doc recording the general sign result + the invariant verdict
+- [x] EM-linking invariant derivation-attempt probe + witness (formalize-first)
+  — H0 (constant invariant) structurally refuted; scoped to A-dependent object
+- [x] Audit doc recording the general sign result + the invariant verdict
 - [x] PR #2487 opened (Gemini review addressed)
