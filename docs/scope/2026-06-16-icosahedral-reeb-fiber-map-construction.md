@@ -255,6 +255,35 @@ Ocneanu trace. This is contact + spin geometry on the Bring surface, owner-gated
 genuine remaining content of `conj:s5-so3-fiber-action`. Everything algebraic/combinatorial around it
 (ingredients 1–3, the algebraic leg of 4) is now settled.
 
+## Lean formalization of the realized selection μ-leg (2026-06-19)
+
+The **selection** sub-part of ingredient 4 — the part
+[`2026-06-16-s5so3-hopf-coupling-and-reeb-obstruction.md`](../audits/2026-06-16-s5so3-hopf-coupling-and-reeb-obstruction.md)
+(#2370) §"Reframe" showed is *realized* by μ's spatial $A_5$-equivariance (as opposed to the
+still-open dynamical weighting) — is now formalized in
+[`S5SO3FiberAction.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean):
+
+- **The Hopf moment map $\mu:\mathbb{R}^4\cong\mathbb{C}^2\to\mathbb{R}^3$** (`hopfMoment`, the three Pauli
+  sandwiches $=\mathrm{Ad}:\mathrm{SU}(2)\twoheadrightarrow\mathrm{SO}(3)$ at the vector level), with the
+  audit's three properties proved **unconditionally** (`ring` / `linear_combination`, no archimedean
+  analysis): parity resolution $\mu(-z)=\mu(z)$ (`hopfMoment_neg` — the central $-1\in 2I$ acts trivially,
+  bridging the odd spinor to the even colour $T_1$), phase invariance $\mu(c\cdot z)=\mu(z)$ for $|c|=1$
+  (`hopfMoment_phase` — the spin Hopf Reeb is the $\mu$-fibre), and the Hopf-sphere norm
+  $|\mu(z)|^2=(|z_0|^2+|z_1|^2)^2$ (`hopfMoment_norm` — $\mu$ is the Hopf map $S^3\to S^2$).
+- **The generation-selection theorem** `hopf_selection_a5_isotype_match`: for the moment-map-pinned
+  levels $\ell=0,1,2$ the $A_5$-isotype of $V_\ell$ (`icosBranchingMult`) equals the $A_5$-isotype of the
+  selected $S_5$ block $\lambda(\ell)$ (`PartitionOf5.toA5Irrep`) — the shared-isotype identity μ's spatial
+  equivariance forces, tying two independently-verified character tables through the selection map.
+  Companions: `hopf_selection_pinned_single_isotype` (the selection is pinned exactly where $V_\ell$ is a
+  single isotype — the Schur $\dim\mathrm{Hom}=1$ face) and `ell3_multi_isotype` ($\ell=3$ is $T_2\oplus G$,
+  multi-block — the honest boundary; `generationBlock? 3 = none`).
+
+**Scope (honest).** This formalizes only the *realized selection* μ-leg. It does **not** discharge
+`conj:s5-so3-fiber-action` — the open content remains the dynamical **Markov-trace weighting** $y_\lambda$
+(the geometric origin of the Ocneanu weights — ledger §"single open object") and the 5-strand geometric
+Reeb existence (ingredient 4's geometric leg). No fit introduced; all six declarations are sorry-free
+(verified by `lean`-direct against the restored olean cache).
+
 ## Risks / honest blockers (critical-distance)
 
 - **Building 1–4 proves the geometric map EXISTS; it does NOT guarantee the physics.** The $S_3$-side

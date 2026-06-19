@@ -37,7 +37,7 @@ was introduced anywhere.
 | Algebraic functor target (Bratteli = box removal; Ocneanu trace) | ✅ forced |
 | Strand fibre = colour ℂ³ (Schur–Weyl: spinor ℂ² kills the electron (3,1,1)) | ✅ forced |
 | Static coupling `V_ℓ→E_λ` (Schur: dim Hom = 1) | ✅ forced |
-| **Generation selection ℓ→λ = the Hopf moment map μ** (spatial SO(3)-equivariance) | ✅ **realized** |
+| **Generation selection ℓ→λ = the Hopf moment map μ** (spatial SO(3)-equivariance) | ✅ **realized** (Lean: `hopf_selection_a5_isotype_match` + μ map properties) |
 | 210 ppb muon mechanism (Wedderburn-projector correction) | ❌ refuted (6–8 orders too coarse) |
 | colour⊗spin = (3,1,1) dim-6 shortcut | ❌ refuted (spin-parity mismatch) |
 | Reeb-eigenvalue resonance | ❌ refuted (no parameter-free ≥3-anchor match) |
@@ -81,6 +81,7 @@ is its *geometric origin*.
 | 2026-06-17 | (this PR) | **Lean (full Mathlib):** z-Habiro `braneMonic_coords_exist` — monic basis spans `R[X]_{≤n}`; with #2442's uniqueness, cyclotomic coordinates are a bijection `R[X]_{≤n} ≅ R^{n+1}` staying in the localised `R` (item 2(i) base-ring half) |
 | 2026-06-17 | (coord note) | **z-Habiro on main is ORTHOGONAL to the keystone coupling — do not conflate.** The z-Habiro Lean work (#2417-era: `ZHabiroCompletion`, `zHabiroLimit`, `cyclotomicPartialSum_isCauchy`) builds the **z-side** completion `varprojlim ℤ[q^±1][z]/(P_n)` for the quantum-dilog Φ_q truncation tower. The keystone coupling is the **q-side** Habiro element (full-Hecke Markov trace = WRT(S³/2I) = Lawrence–Zagier). These are parallel-but-independent completions; bridging them needs a simultaneous (q,z)-bicompletion, which the z-Habiro file itself flags "construction open." No fit-free Lean bridge exists yet — forcing one is the unfalsifiable correspondence-chain the Habiro lead (`2026-06-16-keystone-habiro-coupling-lead-and-ck-exposition.md`) explicitly refused. The keystone coupling stays OPEN. |
 | 2026-06-18 | #2480 | **Lean (formalization fix):** de-vacuify `BringFiberAction` — remove the provably-false `respects_conjugate` (angle sign-flip) + vacuous `hits_five_conjugacy_classes : True` + trivial instance; correct the fibre-map domain to the 5 A₅ irreps (new `A5Irrep` + `conjugate_same_a5_irrep`), substantive `five_distinct_classes`. Per `2026-06-13-bring-fiber-action-falsification.md`. Formalization correction, **not** a closure — the geometric map stays open. |
+| 2026-06-19 | (this PR) | **Lean (the realized μ-leg of #2370):** formalize the Hopf moment map μ + the generation selection it carries. `hopfMoment` (the three Pauli sandwiches = `Ad:SU(2)↠SO(3)` at vector level) with parity `μ(−z)=μ(z)`, phase `μ(c·z)=μ(z)` (\|c\|=1), and Hopf-norm `\|μ\|²=(\|z₀\|²+\|z₁\|²)²` — all `ring`/`linear_combination`, sorry-free. The **selection theorem** `hopf_selection_a5_isotype_match`: V_ℓ's A₅-isotype (`icosBranchingMult`) = the selected block λ(ℓ)'s (`toA5Irrep`) for ℓ=0,1,2; `hopf_selection_pinned_single_isotype` (Schur dim Hom=1 face) + `ell3_multi_isotype` (ℓ=3 = T₂⊕G, the honest boundary). **Selection only** — the dynamical Markov weighting y_λ stays the single open object; **not** a closure of `conj:s5-so3-fiber-action`. |
 
 ## Key artifacts
 
