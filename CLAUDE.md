@@ -655,9 +655,18 @@ fibre, LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov)
 have all failed on the deuteron. **Do not propose a seventh fit-
 based ansatz** — the three-calibration discipline review will catch
 it. The productive directions are GAP-A-3 / GAP-A-4 (categorical
-brane-tower level selection / ρ general rule) and Option E (Kashiwara
-crystal). Full context:
-[`docs/audits/2026-05-18-delta-lambda-gating-context.md`](docs/audits/2026-05-18-delta-lambda-gating-context.md).
+brane-tower level selection / ρ general rule) and the A=4 interface
+operator (Option E **PROBE 2**). Option E's Kashiwara-crystal /
+KL-weight sub-path (**PROBE 4**) is **pruned**: the target
+Δ_λ = sgn·dim is mixed-sign but KL multiplicities are non-negative
+(KL positivity), so a Σ_w n^w_λ·X_w sum supplies at most |Δ_λ| = dim,
+never the chirality sign — engine-verified (PR #2381), mixed-sign
+premise Lean-proved sorry-free (`S5SO3FiberAction.lean`, PR #2416).
+Full context:
+[`docs/audits/2026-05-18-delta-lambda-gating-context.md`](docs/audits/2026-05-18-delta-lambda-gating-context.md),
+the [`option-e.md`](docs/coordination/option-e.md) ledger, and the
+[`2026-06-19 item-A wiring / staleness / Option-E reconciliation`](docs/audits/2026-06-19-item-a-wiring-staleness-option-e-reconciliation.md)
+audit.
 
 **Where to check status:**
 

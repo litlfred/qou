@@ -3,8 +3,8 @@
 **Date:** 2026-06-19
 **Scope:** read-only audit of the H₆ deuteron "item-A" compute artifacts on
 `main`, plus reconciliation of the Δ_λ "Option E" framing between the
-coordination ledger and `CLAUDE.md`. Nothing wired; no compute changed; `CLAUDE.md`
-not edited.
+coordination ledger and `CLAUDE.md`. Nothing wired; no compute changed. The
+§3 Option-E `CLAUDE.md` refinement was owner-approved and is applied in this PR.
 **Follows:** the #2485 merge (first live H₆ deuteron χ_λ) and the sibling
 𝓑_n−𝓑_p parity-obstruction work
 ([`2026-06-19-bn-bp-brane-tower-parity-obstruction.md`](2026-06-19-bn-bp-brane-tower-parity-obstruction.md)).
@@ -63,13 +63,14 @@ is **partially stale**:
   overclaim, corrected 2026-06-17; v9 `(1+q)/2` is a near-match **fit**
   (structural derivation refuted, PROBE 1 / PR #1707).
 
-**Suggested `CLAUDE.md` refinement (owner decision — NOT applied here):** reword
-"Option E (Kashiwara crystal)" so it reflects that the crystal / KL-weight
-sub-mechanism is pruned, and the live Option-E frontier is the **A=4 interface
-operator (PROBE 2)**. Left to the owner per the read-only scope of this audit.
+**`CLAUDE.md` refinement (owner-approved; applied in this PR):** the §"Δ_λ gate"
+sentence is reworded so "Option E (Kashiwara crystal)" reflects that the crystal /
+KL-weight sub-mechanism (PROBE 4) is pruned, and the live Option-E frontier is the
+**A=4 interface operator (PROBE 2)**.
 
 ## Discipline
 
-- Read-only audit; no compute changed, nothing wired, `CLAUDE.md` not edited.
+- Audit findings are read-only; no compute changed, nothing wired. The §3
+  `CLAUDE.md` refinement was owner-approved and applied in this PR.
 - Corpus-grep verified: the Option E verdict is read directly from
   `option-e.md` and its cited audits, not relayed second-hand.
