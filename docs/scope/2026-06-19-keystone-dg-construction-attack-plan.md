@@ -67,7 +67,8 @@ line specifically (unlike the refuted Reeb-eigenvalue resonance):
   quantum-dimension-squared / `|S_{0λ}|²`-type object, so C4 is structurally
   aligned with WRT (the refuted Reeb resonance matched eigenvalues — the wrong
   invariant).
-- **C6 — full support, all `p(3A)` blocks, no finite-`N`.** WRT colored by *all*
+- **C6 — full support, all `p(n)` blocks (`= p(3A)` for a mass-`A` nucleus, since
+  the nucleus braid is on `n = 3A` strands), no finite-`N`.** WRT colored by *all*
   `H_n(q)` irreps has full support by construction (PR #2500 gives this teeth).
 - **C2 — chirality involution `λ↔λ'` (forced).** Geometric candidate:
   orientation reversal / complex conjugation on `S³/2I`. Facets formalized in
