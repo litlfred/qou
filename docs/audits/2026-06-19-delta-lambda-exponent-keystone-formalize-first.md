@@ -98,3 +98,27 @@ compute** (fit `B_sym` vs `B_lin` per chain-site) and confirm whether it is
 `5`, `1.4`, or `A`-dependent, *before* chasing the complex-q / Kashaev
 `exp(Vol)` mechanism for "why 5". Until that lands, the keystone stays a
 conjecture; the arithmetic core is the only part that formalizes.
+
+## Connection to the canonical order recurrence (separation verdict, 142deb16)
+
+The binding Δ_λ ladder is the **order** recurrence (C-finite, constant-`b`),
+proved and Lean-distinguished from the Q_β `c_k` **argument** recurrence in
+`docs/audits/2026-06-18-qbeta-qbessel-vs-zhabiro-binding-tower-separation.md`
+(Lean: `QOU/QBeta/QLommelOrderRecurrence.lean` vs
+`QBesselContiguityRecurrence.lean`). Its three-term form is
+
+    a(n+2) = b · a(n+1) − a(n),   b = q₀¹⁰ + q₀⁻¹⁰.
+
+**The exponent `10` in `b` is exactly item B's slope-10-per-nucleon**
+(`σ + σ⁻¹ = 10A − 2`): the crossing-count bookkeeping formalized here is the
+generator of the *same* `q₀¹⁰` that drives the canonical C-finite order
+recurrence. This is a consistency check, not a new claim — the per-*nucleon*
+10 is on firm ground (crossing count ⇒ recurrence constant), and it is the
+per-*site* split into `5 + 5` (and the magnitude) that remains open/contested.
+
+**Scope caution (from the separation verdict).** Do **not** reach for the Q_β
+`c_k` argument recurrence to close the binding exponent: the joint J+I lever
+was tested and **refuted** (2026-06-14 NO-GO; ³He +17.4% → +117.9%). Q_β and
+binding share an analytic home (Hahn–Exton q-Bessel, `E_q(2)` contraction
+limit) but are **separate recurrences**; the binding keystone is the Option-E
+route, not a Q_β cross-constraint.
