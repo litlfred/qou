@@ -17,7 +17,7 @@ The diagnosis's "open question for the branch" (audit §"Where the fix must
 live", lines 77–82) is precisely this tranche's task:
 
 > Does replacing the duplicated proton per-generator pair with the
-> pair-knot composite, plus an explicit Z(Z−1) Coulomb term, restore the
+> pair-knot composite, plus an explicit Z(Z−1)/2 Coulomb term, restore the
 > correct mirror ordering without per-atom retuning?
 
 ## What this tranche delivers
@@ -36,7 +36,7 @@ content, wired across *all* mirror pairs (not just A=3):
 
 - **(b) Explicit Z(Z−1)/2 Coulomb term.** The `C(Z,2) = Z(Z−1)/2` proton pairs
   each contribute the **derived** per-pair Coulomb reduction `ratio·B_pp`
-  (`def:coulomb-charge`, `Q_pp=+1`, `ratio = tanh(ln q₀) = (q₀²−1)/(q₀²+1)`
+  (`def:coulomb-charge`, `Q_pp=+1`, `ratio = tanh(ln q₀) = (q₀²−1)/(q₀²+1)`,
   Lean-proved; the 31%-covered value of `charge_coulomb_tn3he_derived.py`). The
   `Z(Z−1)/2` count is **pure combinatorics — no fit**; only the per-pair
   *magnitude* carries the known-open residual.
@@ -74,7 +74,8 @@ expected to be a scoping / partial / negative result, **not** a fit.
 
 ## Deliverables checklist
 
-- [ ] `computations/probes/mirror_pair_coulomb_sign_correction.py` + witness
+- [x] `computations/probes/mirror_pair_coulomb_sign_correction.py` + witness —
+  sign correct for all 4 mirror pairs (A=3,7,11,13); magnitude 31–47% (open)
 - [ ] EM-linking invariant derivation-attempt probe + witness (formalize-first)
 - [ ] Audit doc recording the general sign result + the invariant verdict
-- [ ] PR with Gemini + Copilot review
+- [x] PR #2487 opened (Gemini review addressed)

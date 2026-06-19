@@ -1,0 +1,105 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-19T15:50:06.279666+00:00",
+  "computation": "mirror-pair-coulomb-sign-correction",
+  "scriptFile": "mirror_pair_coulomb_sign_correction.py",
+  "scriptHash": "92852d70c23c",
+  "contentBlock": "def:coulomb-charge",
+  "auditOnly": true,
+  "auditDoc": "docs/workplans/2026-06-19-mirror-pair-coulomb-sign-correction.md",
+  "description": "General mirror-pair Coulomb sign-correction. The per-generator brane-tower has an inverted Z-ordering (predicts the proton-richer mirror member MORE bound). Wiring two fit-free changes — composite pair-knot replacement (removes the spurious E₀·Δtower≈1.165 MeV over-count, restores Z↔N Markov isospin symmetry) + an explicit Z(Z−1)/2 Coulomb term (C(Z,2) proton pairs × the DERIVED per-pair reduction ratio·B_pp, def:coulomb-charge, ratio=tanh(ln q₀); count is combinatorics, magnitude cited from charge-coulomb-tn3he-derived) — restores the correct ordering for EVERY mirror pair with no per-atom retuning. SIGN closed (derived+combinatorial, no fit); MAGNITUDE open (A=3: 31%, residual is the forbidden-to-fit EM-linking invariant). EXPLORATORY; closes the sign bug, not the magnitude.",
+  "parameters": {
+    "q_0_50dps": "1.1099785955573347",
+    "per_pair_coulomb_unit_MeV": "0.237670225314853041078773435698",
+    "per_pair_unit_note": "ratio·B_pp; B_pp is the A=3 H_6 diproton bond, used as a uniform per-pair estimate for A>3 (A>3 rows are right-SIGN predictions only)",
+    "coulomb_ratio_tanh_ln_q0": "0.103963721464829673514789682719",
+    "coulomb_ratio_q_rational": "0.103963721464829673514789682719"
+  },
+  "data": {
+    "mirror_pairs": [
+      {
+        "A": 3,
+        "pair": "3H/3He",
+        "delta_proton_pairs": 1,
+        "delta_coulomb_MeV": "0.23767023",
+        "ame_split_MeV": "0.763755",
+        "fraction_covered": "0.311186",
+        "sign_correct": true,
+        "scope": "A=3 in-model"
+      },
+      {
+        "A": 7,
+        "pair": "7Li/7Be",
+        "delta_proton_pairs": 3,
+        "delta_coulomb_MeV": "0.71301068",
+        "ame_split_MeV": "1.644108",
+        "fraction_covered": "0.433676",
+        "sign_correct": true,
+        "scope": "sign-pred (B_pp=A=3 unit)"
+      },
+      {
+        "A": 11,
+        "pair": "11B/11C",
+        "delta_proton_pairs": 5,
+        "delta_coulomb_MeV": "1.1883511",
+        "ame_split_MeV": "2.765169",
+        "fraction_covered": "0.429757",
+        "sign_correct": true,
+        "scope": "sign-pred (B_pp=A=3 unit)"
+      },
+      {
+        "A": 13,
+        "pair": "13C/13N",
+        "delta_proton_pairs": 6,
+        "delta_coulomb_MeV": "1.4260214",
+        "ame_split_MeV": "3.00284",
+        "fraction_covered": "0.474891",
+        "sign_correct": true,
+        "scope": "sign-pred (B_pp=A=3 unit)"
+      }
+    ],
+    "B_pp_strong_MeV": "2.286088088865263",
+    "spurious_overcount_removed_MeV": "1.16501847427",
+    "per_pair_coulomb_drift_vs_cited": "2.10788e-17",
+    "all_sign_correct": true,
+    "a3_fraction_covered": "0.311186"
+  },
+  "assertions": [
+    {
+      "name": "coulomb_ratio_q_rational_exact_50dps",
+      "computed": 1,
+      "expected": 1,
+      "tolerance": 0,
+      "note": "tanh(ln q₀) == (q₀²−1)/(q₀²+1) to <1e-40 (Lean-proved prop:coulomb-strong-ratio-q-rational)"
+    },
+    {
+      "name": "per_pair_coulomb_consistent_with_cited",
+      "computed": 1,
+      "expected": 1,
+      "tolerance": 0,
+      "note": "ratio·B_pp reproduces charge_coulomb_tn3he_derived dHe to 2.11e-17 (cited, not re-derived)"
+    },
+    {
+      "name": "mirror_ordering_sign_correct_all_pairs",
+      "computed": 1,
+      "expected": 1,
+      "tolerance": 0,
+      "note": "Z(Z−1)/2 Coulomb reduces the proton-richer member for every mirror pair → correct ordering, no per-atom retuning"
+    },
+    {
+      "name": "magnitude_open_partial_not_closed",
+      "computed": 1,
+      "expected": 1,
+      "tolerance": 0,
+      "note": "A=3 covers 31.12% — order-right, partial; residual is the open (forbidden-to-fit) brane-pairing invariant"
+    }
+  ],
+  "allPassed": true,
+  "provenance": [
+    "charge-coulomb-tn3he-derived.witness.json (per-pair Coulomb, B_pp — cited)",
+    "he3-tower-charge-asymmetry.witness.json (spurious Δtower removed)",
+    "def:coulomb-charge, prop:coulomb-strong-ratio-q-rational (Lean-proved ratio)",
+    "AME2020 mirror-pair binding energies (comparison only)"
+  ]
+}
