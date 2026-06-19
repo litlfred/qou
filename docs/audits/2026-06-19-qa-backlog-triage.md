@@ -99,3 +99,61 @@ Re-run discipline (long-compute logging):
 - **Witness drain: executable but substantive + large** — needs an owner
   decision on scope (single value-drift probe vs. batch refresh) before
   burning compute or committing mass-value changes.
+
+## Update (2026-06-19, later) — one root cause; cross-references; probe result
+
+A sweep of in-flight QA PRs shows both backlog axes trace to **one root
+cause** and are already partly characterized — so manual nibbling is the
+wrong instrument.
+
+- **Root cause: the witness-pipeline / QA CI is billing-blocked.** The CI
+  step that would auto-regenerate witnesses and re-sweep sidecars fails in
+  ~3 s on every PR (the documented GitHub-Actions billing outage,
+  CLAUDE.md §"CI billing failures"). Both axes drift with nothing to
+  refresh them; no manual cadence keeps up.
+
+- **Witness drift is verified non-substantive — [PR #1878](https://github.com/litlfred/qou/pull/1878).**
+  A detector hashing producers as `WitnessBuilder` does found ~681/1022
+  witnesses with `scriptHash` drift; re-running showed the change is a
+  `precisionMetadata` default bump (`65/50/15 → 70/60/10`) + a new
+  `environment` block — schema/config, **not** math. A bounded 3-witness
+  refresh confirmed data unchanged (or sub-assertion-threshold numeric).
+  **Hazard (from #1878):** several mass producers (`d_from_scratch`,
+  `b_over_a_evaluator`, `probe_1b_li6_orthogonality`) fail/time-out on
+  re-run yet write *partial* witnesses — never commit those. Audit:
+  `docs/audits/2026-06-05-witness-metadata-drift-audit.md`.
+
+- **Helium4 post-2026-06-17 probe — BLOCKED on the Rust kernel.** Re-running
+  `atomic_tr_m_helium4_canonical.py` this session raised
+  `NotImplementedError: precision=mpfr_50dps requires the Rust kernel
+  (pyhecke_native)` — the canonical `tr_M` path needs `pyhecke-native`
+  (`maturin build` in `tools/pyhecke-native/`), absent in this env. The
+  producer errored *before* rewriting the witness, so a naïve old-vs-new
+  diff reads "identical" (a false negative — nothing was recomputed). The
+  post-06-17 value-drift question is therefore **not** independently
+  confirmed here; it rests on #1878's verified benign characterization of
+  the drift class until the Rust kernel is available.
+
+- **Sidecar tooling is a subsystem, not 2 files (Finding 1, refined).**
+  `qa-staleness.ts` imports `./qa-utils` (`hashBlockFiles`, `walkBlocks`,
+  `loadQaReport`, `summariseFreshness`) + `./qa-criteria-registry`
+  (criterion registry + per-axis watcher lists); `qa-sweep.ts` additionally
+  pulls the criterion checkers, the rater-rubric framework (#1939), and
+  `schemas/block-qa.ts`. Landing it is a subsystem port, and
+  [PR #1928](https://github.com/litlfred/qou/pull/1928) shows the refresh
+  is "red by design" (surfaces 17 pre-existing criticals). The tooling is
+  entangled across stale/conflicted PRs — #1928 (469 files, base 900+
+  commits behind) and [#2187](https://github.com/litlfred/qou/pull/2187)
+  (supersedes #1918/#1941; notes 933-commit / 2147-`.qa.json` drift) — so
+  it cannot be landed unilaterally without stepping on in-flight work.
+
+### Recommended owner decision
+
+1. **Restore Actions billing** — the single fix that lets CI auto-regen
+   both axes; everything else is symptomatic nibbling.
+2. **Or designate one canonical QA-tooling PR** to land the `qa-*.ts`
+   subsystem (with the 17 criticals triaged), superseding the stale ones,
+   rather than re-deriving on a fresh branch.
+
+Witness re-runs and sidecar sweeps below the CI fix are low-leverage
+(benign drift per #1878) and risk partial-witness commits.
