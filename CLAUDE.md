@@ -80,16 +80,31 @@ governs assessment.
 ## Agent work-plan policy (STRICT)
 
 Every session must run from a **prioritized work-plan** maintained
-via the TodoWrite tool. The plan is the agent's source of truth for
-"what next" — not the user's last message, not the most recently
-mentioned file.
+as **beans** — the [`beans`](https://github.com/hmans/beans) CLI
+flat-file issue tracker (data under `.beans/`; install via
+[`scripts/install-beans.sh`](scripts/install-beans.sh)). See
+[`.claude/skills/local/todo-manager.md`](.claude/skills/local/todo-manager.md)
+and [`.claude/skills/local/bean-coordination.md`](.claude/skills/local/bean-coordination.md).
+The plan is the agent's source of truth for "what next" — not the
+user's last message, not the most recently mentioned file.
 
-1. **Start a todo list at session start.** As soon as you have
+> **Migration note (2026-06-19).** Beans **supersede** the older
+> `TodoWrite`-tool / `todos/*.json` work-plan mechanism. Wherever this
+> document still says *"TodoWrite list"* / *"todo list"* below, read it
+> as *"create / maintain beans"* (`beans create "<title>" --type task`,
+> `beans update <id> --status in-progress|completed`). The
+> `beans ≠ sidecars` rule holds: QA / `.qa.json` / `.witness.json`
+> queues are **not** converted into beans. (Part of the qou side of
+> the Folio-Assistant Infrastructure Migration — the `miga` epic.)
+
+1. **Start a bean list at session start.** As soon as you have
    enough context (after reading the user's first request, the
-   SessionStart hooks, and the current branch / PR state), draft a
-   TodoWrite list with the requested work decomposed into concrete
-   tasks. If the request is one trivial task, you may skip — but
-   any time there are ≥ 2 distinct steps, draft the list.
+   SessionStart hooks, and the current branch / PR state), create a
+   session milestone bean plus child task beans decomposing the
+   requested work (`beans create "Session: <branch/goal>" --type
+   milestone`; one `--type task` per concrete step). If the request
+   is one trivial task, you may skip — but any time there are ≥ 2
+   distinct steps, create the beans.
 
 2. **Queue, do not pivot.** When a new request, review comment, or
    sibling-PR ask arrives mid-session, **append** it to the plan in
@@ -780,7 +795,7 @@ When a user request arrives, route to the right skill(s):
 | "q usage / q regime / fixed q_0 leak / Real.sqrt q without 0 < q / archimedean leak / |q| > 1 vs q > 1 / root of unity undeclared / chapter regime mismatch / q symbolic vs numerical / per-block q audit" | `local/q-usage-watcher` (per-block q-regime detector + chapter-mismatch flagger; emits sidecar entries under `q-usage-*` criteria) | reader |
 | "/integration-watch q-usage / q" | `local/integration-watch` (dispatcher → q-usage-watcher child) | reader |
 | "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `content/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/schemas/block-qa.ts` (schema) | collaborator |
-| "session todos / work plan / what's left / track progress" | `local/todo-manager` (session work-plan, TodoWrite) | reader |
+| "session todos / work plan / what's left / track progress / beans" | `local/todo-manager` (session work-plan via the `beans` CLI) + `local/bean-coordination` | reader |
 | "process feedback / review todos / triage open feedback" | `local/todo-review` (content-feedback triage) | reader |
 | "prepare merge auto / auto merge / resolve and merge / ship it" | `local/prepare-merge-auto` (full autonomous merge pipeline: coordinate siblings → prepare-merge → resolve comments → merge) | collaborator |
 | "socratic steering / steer vs gap / known-answer question / intuition seed / tenuous identification / coactive / α-informative / interaction registers" | `local/symbiotic-interaction` (three-register author-input protocol + arc-metrics spec) | reader |
@@ -2089,7 +2104,8 @@ tool rather than silently failing.
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
 | `uploads/` | Document intake pipeline (raw PDFs, scans, WHO guidelines → content objects) |
-| `todos/` | Work-tracking TodoItems, gitignored (external to paper content) |
+| `.beans/` | **Session work-plans as beans** — the [`beans`](https://github.com/hmans/beans) CLI flat-file issue tracker (install via `scripts/install-beans.sh`). Agent work-plan source of truth; see `.claude/skills/local/todo-manager.md` |
+| `todos/` | Legacy work-tracking queues (`*-queue.json`), gitignored; being migrated into `.beans/` per the Folio-Assistant Infrastructure Migration (`miga` epic) |
 | `docs/` | Planning documents, migration plans, dependency graphs |
 | `scripts/` | Setup and health-check scripts (Lean MCP, etc.) |
 | `lean-mcp.config.json` | MCP server config (domain, image, auth, ports) |
