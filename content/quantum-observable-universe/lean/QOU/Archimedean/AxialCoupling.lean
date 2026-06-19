@@ -188,17 +188,32 @@ theorem std_trace_braid_dependent :
   --                     = -q_inv_from_t + (t + t_inv) * 1 = -t⁻² + t + t⁻¹
   -- Differ at the T(2) coefficient (LHS: 1, RHS: 0).
   refine ⟨stdRep3_gen0, stdRep3_gen1, ?_⟩
+  -- Reduce both cleared traces to Laurent `T`-monomials.  The off-diagonal
+  -- entry `M 1 0` is `0` for σ₀ and `1` for σ₁, so `markov_denom * (M 1 0)`
+  -- collapses by `mul_zero` / `mul_one` — there is no genuine convolution.
+  have hA : tracedVolCleared stdRep3_gen0 = LaurentPolynomial.T 2 := by
+    unfold tracedVolCleared stdRep3_gen0 markov_denom q_from_t t t_inv
+    simp only [Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one,
+      mul_zero, add_zero]
+    rw [← LaurentPolynomial.T_add]; norm_num
+  have hB : tracedVolCleared stdRep3_gen1
+      = LaurentPolynomial.T 1 + LaurentPolynomial.T (-1) - LaurentPolynomial.T (-2) := by
+    unfold tracedVolCleared stdRep3_gen1 markov_denom q_inv_from_t t t_inv
+    simp only [Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one, mul_one]
+    rw [← LaurentPolynomial.T_add]; norm_num; abel
+  rw [hA, hB]
   intro h
-  -- Extract LaurentPolynomial.T(2) coefficient from both sides
-  have hcoef := congr_arg (fun f => LaurentPolynomial.coeff f 2) h
-  simp only [tracedVolCleared, stdRep3_gen0, stdRep3_gen1,
-        markov_denom, q_from_t, q_inv_from_t, t, t_inv,
-        Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one,
-        Matrix.head_cons, Matrix.head_fin_const,
-        LaurentPolynomial.coeff_add, LaurentPolynomial.coeff_mul,
-        LaurentPolynomial.coeff_T, mul_zero, add_zero,
-        zero_mul, zero_add] at hcoef
-  -- After simp, hcoef should reduce to 1 = 0 (or similar numeric contradiction)
+  -- Extract the `T²` coefficient (Finsupp application at index `2`):
+  -- the LHS has coefficient `1`, the RHS has coefficient `0`.
+  have eT : ∀ k : ℤ,
+      (LaurentPolynomial.T k : R_t) 2 = (if k = 2 then (1 : ℤ) else 0) := by
+    intro k
+    show (Finsupp.single k (1 : ℤ)) 2 = _
+    rw [Finsupp.single_apply]
+  have hcoef := congr_arg (fun f : R_t => f 2) h
+  dsimp only at hcoef
+  rw [Finsupp.sub_apply, Finsupp.add_apply] at hcoef
+  simp only [eT] at hcoef
   norm_num at hcoef
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
 
