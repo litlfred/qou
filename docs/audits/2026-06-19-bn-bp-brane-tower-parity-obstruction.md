@@ -123,6 +123,53 @@ cannot create odd orders from even-order components). The §4a single-x solve
    single-trace binding `B≈0.47 MeV` under-predicts AME 2.225 — expected; the per-
    isotope Δ_λ closure is the separate open frontier (CLAUDE.md §"Δ_λ gate").
 
+## Winding iterate (item 2): the parity-preserving candidate, also refuted
+
+**Compute:** [`bn_minus_bp_winding_iterate_probe.py`](../../computations/probes/bn_minus_bp_winding_iterate_probe.py)
+(witness [`bn-minus-bp-winding-iterate.witness.json`](../../computations/bn-minus-bp-winding-iterate.witness.json)).
+
+The natural next candidate is the **single-nucleon winding iterate** `β^k` on the same
+3 strands — `β_p^k = atom_canonical_crossings(1,0,…)` concatenated `k` times, `β_n^k`
+likewise. It stays in H₃ (`λ ⊢ 3` only) and raises the Laurent degree with `k`, so it
+*can* reach high orders {7,9,11,…} without leaving the 3-strand setting.
+
+**The root cause, now exact.** The Hoefsmit seminormal factors are degree-±1 in `q`,
+so `χ_λ(word)` has Laurent-exponent parity `= (word length) mod 2`. The nucleon word
+has **odd length (11 crossings)**, so:
+
+| construction | length | parity of orders |
+|---|---|---|
+| winding `β^k` (H₃) | `11k` | `k mod 2` — alternates |
+| A-nucleon strand tower (n=3A) | `11A` | `A mod 2` — alternates |
+
+So **both** towers alternate parity for the *same* reason: an odd-length base word
+repeated an integer number of times flips parity every step. This unifies the §3
+obstruction with the winding case — it is not specific to "more nucleons", it is the
+crossing-count parity.
+
+**The odd-k subtower does not converge.** Restricting to odd `k` (where parity *is*
+preserved, orders odd and filling {1,3,5,7,…}) gives the honest §4a convergence test.
+The single-x over-determination residual does **not** shrink:
+
+| k | word length | §4a single-x residual (max over orders ≥5) |
+|---|---|---|
+| 1 | 11 | 6.84% |
+| 3 | 33 | **no single-x solution** near the Bessel ratios |
+| 5 | 55 | ~100% |
+| 7 | 77 | erratic (3426%) |
+
+A genuine Hahn–Exton q-Bessel tower would shrink monotonically toward 0. This is a
+clean **refutation** of the winding iterate as the §4a object.
+
+**Combined verdict.** The §4a keystone's two most natural first-principles
+embeddings — the A-nucleon strand tower and the single-nucleon winding tower — are
+**both refuted**, under one root cause (odd base-word length ⇒ parity alternation). A
+valid odd-parity-preserving tower would need **even-length** increments that still
+inject new odd-degree content — which neither integer-repeat construction provides.
+This neither closes nor refutes the §4a keystone itself (the *true* embedding, if any,
+is neither of these two), but it removes the two obvious candidates and pins the
+structural condition any survivor must meet.
+
 ## Discipline
 
 - **Formalize-first.** The bar-involution + order-parity invariants were extracted
