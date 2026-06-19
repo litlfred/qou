@@ -70,10 +70,6 @@ def main():
     def content(lam):
         return sum(j - i for i, r in enumerate(lam) for j in range(r))
 
-    def conjugate(lam):
-        return tuple(sorted((sum(1 for r in lam if r > j) for j in range(lam[0])),
-                            reverse=True))
-
     bp = atom_canonical_crossings(1, 0, include_inter=False)
     bn = atom_canonical_crossings(0, 1, include_inter=False)
     chi0 = {lam: sp.cancel(chi_lambda_symbolic(lam, bn) - chi_lambda_symbolic(lam, bp))
