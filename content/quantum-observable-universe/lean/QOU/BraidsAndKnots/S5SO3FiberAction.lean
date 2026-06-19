@@ -24,7 +24,7 @@
   -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron (Bring)
 -/
 import Mathlib.Data.Fintype.Basic
-import Mathlib.Algebra.BigOperators.Group.List
+import Mathlib.Algebra.BigOperators.Group.List.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
@@ -475,7 +475,7 @@ theorem affineE8_marks_sum_eq_coxeter_30 :
 /-- |2I| = 4 · h(E₈): the order of the McKay group is four times the
     Coxeter number (120 = 4 · 30). -/
 theorem order_2I_eq_four_times_coxeter :
-    binaryIcosahedralIrrepDims.map (· ^ 2) |>.sum =
+    (binaryIcosahedralIrrepDims.map (· ^ 2)).sum =
       4 * binaryIcosahedralIrrepDims.sum := by decide
 
 /-- dim E₈ = 248 = rank · (h + 1) = 8 · 31, with rank = 8 and Coxeter h = 30. -/
