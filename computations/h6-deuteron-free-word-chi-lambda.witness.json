@@ -1,0 +1,180 @@
+{
+  "name": "h6-deuteron-free-word-chi-lambda",
+  "description": "First live H_6 FREE-word per-partition characters χ_λ of the deuteron (atom_braid_word_3A(1,1, include_inter=False), 6 strands) — the free reference deferred by the #2485 bound probe. Pairs bound/free χ_λ, the per-partition binding difference Δχ_λ, and the Wenzl-weighted single-trace tr_M difference. Audit datum; the single-trace B under-predicts (Δ_λ gate is the open frontier). Nothing wired.",
+  "auditOnly": true,
+  "probe": true,
+  "substrate": {
+    "q0": 1.1099785955573347,
+    "h": 0.20906032199559366,
+    "q0_pin": "proton (canonical)"
+  },
+  "word": {
+    "isotope": "deuteron",
+    "Z": 1,
+    "N": 1,
+    "A": 2,
+    "strands": 6,
+    "generators": 5,
+    "n_crossings_bound": 23,
+    "n_crossings_free": 22,
+    "pn_convention_bound": "bring_color_weighted",
+    "free_word_convention_independent": true
+  },
+  "validation": {
+    "sum_dim_squared": 720,
+    "expected_factorial_6": 720,
+    "ok": true
+  },
+  "calibration": {
+    "E_0_MeV": 0.78233341,
+    "B_D_AME_MeV": 2.224573
+  },
+  "markov_trace": {
+    "tr_M_bound": 0.3883572761460915,
+    "tr_M_free": 0.983526199175535,
+    "delta_tr_M_free_minus_bound": 0.5951689230294435,
+    "B_pred_single_trace_MeV": 0.46562053307965207,
+    "note": "single-trace B under-predicts AME; audit only, not wired"
+  },
+  "characters": [
+    {
+      "partition": [
+        6
+      ],
+      "dim": 1,
+      "chi_bound": 1.5598703894496868,
+      "chi_free": 1.5513065472337153,
+      "delta_chi_bound_minus_free": 0.008563842215971507,
+      "y_lambda": 0.05918772109163174
+    },
+    {
+      "partition": [
+        5,
+        1
+      ],
+      "dim": 5,
+      "chi_bound": 3.2163183129049093,
+      "chi_free": 5.931212307694445,
+      "delta_chi_bound_minus_free": -2.714893994789536,
+      "y_lambda": 0.05896068354593311
+    },
+    {
+      "partition": [
+        4,
+        2
+      ],
+      "dim": 9,
+      "chi_bound": 1.674396294914676,
+      "chi_free": 9.005914729334615,
+      "delta_chi_bound_minus_free": -7.331518434419939,
+      "y_lambda": 0.04028438790125638
+    },
+    {
+      "partition": [
+        4,
+        1,
+        1
+      ],
+      "dim": 10,
+      "chi_bound": -0.4698052805942211,
+      "chi_free": 5.365996631622274,
+      "delta_chi_bound_minus_free": -5.835801912216494,
+      "y_lambda": 0.010133462518969929
+    },
+    {
+      "partition": [
+        3,
+        3
+      ],
+      "dim": 5,
+      "chi_bound": 4.249403234101269,
+      "chi_free": 4.626008968873892,
+      "delta_chi_bound_minus_free": -0.3766057347726228,
+      "y_lambda": 0.014120874264455371
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1
+      ],
+      "dim": 16,
+      "chi_bound": -1.9722722295913309,
+      "chi_free": 7.625585650861786,
+      "delta_chi_bound_minus_free": -9.597857880453116,
+      "y_lambda": 0.007318453556334671
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "dim": 10,
+      "chi_bound": -0.4901261535718473,
+      "chi_free": -1.917634081717743,
+      "delta_chi_bound_minus_free": 1.4275079281458958,
+      "y_lambda": -0.0006853090066213158
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2
+      ],
+      "dim": 5,
+      "chi_bound": -3.497294918858933,
+      "chi_free": 3.747959290170749,
+      "delta_chi_bound_minus_free": -7.245254209029682,
+      "y_lambda": 0.0007731866279680458
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "dim": 9,
+      "chi_bound": -0.8196551950717713,
+      "chi_free": 0.8442343372914587,
+      "delta_chi_bound_minus_free": -1.6638895323632301,
+      "y_lambda": -0.00034205182747287707
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dim": 5,
+      "chi_bound": 2.1552554572415152,
+      "chi_free": -2.2304680843487157,
+      "delta_chi_bound_minus_free": 4.385723541590231,
+      "y_lambda": 9.863560383539689e-05
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "dim": 1,
+      "chi_bound": -0.6768766091476581,
+      "chi_free": 0.673256868530573,
+      "delta_chi_bound_minus_free": -1.3501334776782312,
+      "y_lambda": -1.2437991483744833e-05
+    }
+  ],
+  "witness": {
+    "scriptCommitSha": "",
+    "scriptHash": "c13171c72fb0",
+    "producer": "computations/probes/h6_deuteron_free_word_chi_lambda_probe.py"
+  }
+}
