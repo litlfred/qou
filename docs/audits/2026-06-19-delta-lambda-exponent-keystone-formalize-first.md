@@ -122,3 +122,32 @@ was tested and **refuted** (2026-06-14 NO-GO; ³He +17.4% → +117.9%). Q_β and
 binding share an analytic home (Hahn–Exton q-Bessel, `E_q(2)` contraction
 limit) but are **separate recurrences**; the binding keystone is the Option-E
 route, not a Q_β cross-constraint.
+
+## Items A and C — corpus-frontier status (corpus-grep checked)
+
+The two distinct open keystones (per the separation verdict) were checked
+against the corpus before claiming any new chip. **At the formalize-first
+level both are already at the frontier**; the remainder is research-grade /
+multi-session compute that the corpus explicitly gates — not a session-sized
+Lean chip, and *not* an opening for a fit (Δ_λ gate).
+
+- **C — Q_β kernel `R(q,ξ)`.** The formalizable layer is **already complete on
+  main**: `QOU/QBeta/QBesselContiguityRecurrence.lean` proves the contiguity ⟹
+  closed-form coefficients (`qbessel_coeff_closed_form`), names the ratio
+  (`qbesselRatio`), distinguishes q-holonomic from the C-finite degeneration,
+  gives the second-order recurrence, and characterizes the kernel `R` of
+  `F(qξ)=R·F(ξ)` as *an operator, not a rational degeneration*. The genuinely
+  open part is the **categorical derivation** of `R` from the substrate
+  (Hecke → `E_q(2)` contraction) — research-grade; no Lean chip remains.
+- **A — H₆/H₉ typed braid construction.** Scoped upstream in
+  `2026-06-17-jacobi-anger-physical-weight-n3.md` (T_beta selector +
+  tower-convergence test spec + H≥6 hand-off). The n=3 machinery exists
+  (`atom_braid_word_3A`, `chi_lambda_of_word`, Hoefsmit seminormal matrices);
+  n=6 lives only in deprecated probes. The concrete next step is to generalize
+  `atom_braid_word_3A` → `atom_braid_word_nA` with Hecke-tower ascent and run
+  the tower-convergence test — **multi-session compute**, not a chip.
+
+**Conclusion.** The session-sized formalize-first work on this axis is done
+(items 4, B, and this reconciliation). A and C require a dedicated
+multi-session compute effort (A) or a research derivation (C); neither admits
+a one-session Lean addition without either duplicating main or fitting.
