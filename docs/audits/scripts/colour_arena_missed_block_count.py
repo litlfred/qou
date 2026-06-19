@@ -22,7 +22,7 @@ theorem.  THIS script establishes the part that IS a theorem: the
   PROVABLE (this script + the Lean file ColourArenaBlockCount.lean):
     (B1) row-bound          s_lambda(N vars)=0  <=>  rows(lambda) > N
     (B2) injection bound    #missed(n, N)  >=  p(n - N - 1)
-         via  mu  |->  (column of height N+1) ++ mu
+         via  mu  |->  mu ++ (1,)*(N+1)   (append N+1 unit rows; canonical)
     (B3) monotone in n      #missed(n, N)  <=  #missed(n+1, N)
          via  lambda |-> add one box to row 1
     (B4) unbounded growth   #missed(n, N) -> infinity   (from B2, p -> infinity)
@@ -113,9 +113,17 @@ def check_row_bound():
 # (B2) injection  mu |-> prependColumn(N, mu) = (1,)*(N+1) + mu
 #      lands in missed(|mu|+N+1, N) and is injective => #missed >= p(n-N-1)
 # --------------------------------------------------------------------------
-def prepend_column(N, mu):
-    """Prepend a first column of height N+1: rows become rows(mu)+N+1 > N."""
-    return tuple([1] * (N + 1) + list(mu))
+def append_unit_rows(N, mu):
+    """Append N+1 unit rows (extend column 1 downward by N+1 boxes): rows become
+    rows(mu) + (N+1) > N.
+
+    CANONICAL (weakly-decreasing): mu is a weakly-decreasing partition with every
+    part >= 1, so its last part >= 1 = the appended 1's, and `mu + [1]*(N+1)`
+    stays weakly-decreasing -- a valid partition tuple (the prior `[1]*(N+1) + mu`
+    form produced the correct *multiset* in non-canonical order; flagged by Gemini
+    review on PR #2500).  This matches the Lean witness `mu ++ replicate (N+1) 1`
+    in ColourArenaBlockCount.lean."""
+    return tuple(list(mu) + [1] * (N + 1))
 
 
 def check_injection_bound(N_vals, n_max):
@@ -124,10 +132,14 @@ def check_injection_bound(N_vals, n_max):
         for n in range(N + 1, n_max + 1):
             # build the injected image from all partitions of n-(N+1)
             src = list(partitions(n - (N + 1)))
-            img = [prepend_column(N, mu) for mu in src]
-            # each image is a partition of n with > N rows
+            img = [append_unit_rows(N, mu) for mu in src]
+            valid = set(partitions(n))  # canonical weakly-decreasing partitions
+            # each image must be a VALID (canonical) partition of n with > N rows
             for lam in img:
                 assert sum(lam) == n, (lam, n)
+                if lam not in valid:
+                    ok = False
+                    print(f"    IMG not a valid partition: N={N} lam={lam}")
                 if rows(lam) <= N:
                     ok = False
                     print(f"    IMG not missed: N={N} lam={lam}")
