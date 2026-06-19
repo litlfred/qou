@@ -1,0 +1,59 @@
+{
+  "name": "eigenbasis-structural-lemmas",
+  "description": "Three structural lemmas the content/twist eigenbasis closes (verified exact-symbolic; Lean formalization is the follow-up): L1 order-parity = word-length parity (makes the #2496 parity obstruction a theorem); L2 bar-involution↔conjugation duality χ_λ(1/q)=−χ_{λ'}(q) for all n (generalizes the H₃-only proved case, ⇒ the conjugation invariant); L3 framing GF = χ_λ/(1−t·q^{2c}) three-pole rational (corollary of the proved ribbon eigenvalue θ_λ=q^{2c}). Does NOT close the Δ_λ binding gate (content-statistic ansätze refuted; out of scope).",
+  "auditOnly": true,
+  "probe": true,
+  "anchored_on_proved": "θ_λ=q^{2c(λ)} (ribbon eigenvalue, QOU/BraidKnot/ChiralityWritheRibbon.lean, Lean sorry-free)",
+  "lemmas": {
+    "L1_order_parity": "χ_λ(β) Laurent exponents ≡ (word length) mod 2; proof: Hoefsmit crossing factors are odd Laurent degree.",
+    "L2_conjugation_duality": "χ_λ(𝓑_n−𝓑_p)(1/q) = ε_λ·χ_{λ'}(q), ε_λ∈{±1}, ∀λ⊢n; proof: bar involution q↦q⁻¹ = V_λ≅V_{λ'} intertwiner (sign ε_λ per block; uniformly −1 at n=3).",
+    "L3_framing_gf": "Σ_m t^m χ_λ(β·Δ^{2m}) = χ_λ(β)/(1−t·q^{2c(λ)}); proof: centrality + geometric sum on θ_λ=q^{2c}."
+  },
+  "L2_per_block_signs": {
+    "3": {
+      "[3]": -1,
+      "[2, 1]": -1,
+      "[1, 1, 1]": -1
+    },
+    "6": {
+      "[6]": 1,
+      "[5, 1]": 1,
+      "[4, 2]": 1,
+      "[4, 1, 1]": 1,
+      "[3, 3]": 1,
+      "[3, 2, 1]": 1,
+      "[3, 1, 1, 1]": 1,
+      "[2, 2, 2]": 1,
+      "[2, 2, 1, 1]": 1,
+      "[2, 1, 1, 1, 1]": 1,
+      "[1, 1, 1, 1, 1, 1]": 1
+    }
+  },
+  "does_not_close": "per-isotope Δ_λ binding gate (content-statistic refuted, GAP-A-3; a content-based Δ_λ would be a 7th fitted ansatz).",
+  "assertions": [
+    {
+      "name": "lemma2_conjugation_duality_up_to_sign",
+      "computed": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "name": "lemma1_order_parity_equals_word_length_parity",
+      "computed": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "name": "lemma3_framing_gf_three_pole_rational",
+      "computed": true,
+      "expected": true,
+      "ok": true
+    }
+  ],
+  "lean_followup": "formalize L1–L3 as lemmas in QOU/BraidKnot (L1, L2) and as a one-line corollary of RibbonTwistEigenvalue (L3); blocked this session by firewalled Lean toolchain (release.lean-lang.org).",
+  "witness": {
+    "scriptCommitSha": "",
+    "scriptHash": "c63f8e856d2c",
+    "producer": "computations/probes/eigenbasis_structural_lemmas_probe.py"
+  }
+}
