@@ -38,23 +38,6 @@ def log(msg):
     print(f"[{time.time() - t0:6.1f}s] {msg}", flush=True)
 
 
-def partitions_of(n):
-    """All partitions of n as weakly-decreasing tuples."""
-    if n == 0:
-        return [()]
-    out = []
-
-    def rec(remaining, maxpart, prefix):
-        if remaining == 0:
-            out.append(tuple(prefix))
-            return
-        for p in range(min(remaining, maxpart), 0, -1):
-            rec(remaining - p, p, prefix + [p])
-
-    rec(n, n, [])
-    return out
-
-
 # β-decay Q-value calibration E₀ (free-neutron), per prop:categorical-mass-markov.
 E_0_MEV = 0.78233341
 B_D_AME_MEV = 2.224573  # AME2020 deuteron binding (audit comparison only)
@@ -69,6 +52,10 @@ def main():
     from pyhecke.syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
     from mass_at_3A_proper import atom_braid_word_3A, chi_lambda_of_word
     from wedderburn_jones_markov import y_lambda_at
+    # Canonical shared partition enumerator (centralized; per Gemini review on
+    # #2496 — no duplicated local helper). mass_at_3A_proper above triggers
+    # _path_bridge, putting computations/hecke on the path.
+    from hecke_characters import partitions_of  # noqa: E402
 
     # Deuteron: Z=1, N=1 ⇒ A=2 ⇒ 3A = 6 strands ⇒ generators σ_0..σ_4.
     word_bound = atom_braid_word_3A(1, 1, include_inter=True)
@@ -78,7 +65,7 @@ def main():
         f"crossings on {n_gens} generators (H_6)")
 
     cache = BlockCache(q0, h)
-    lambdas = partitions_of(6)
+    lambdas = list(partitions_of(6))
     y6 = {tuple(k): float(v) for k, v in y_lambda_at(6, q0).items()}
     log(f"{len(lambdas)} partitions of 6; canonical Wenzl y_λ loaded")
 
