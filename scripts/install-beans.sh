@@ -30,6 +30,9 @@ if ! command -v go >/dev/null 2>&1; then
 fi
 
 mkdir -p "$BIN_DIR"
+# `go install` requires GOBIN to be an ABSOLUTE path; resolve it so a relative
+# BEANS_BIN_DIR (e.g. "bin") does not make the install fail.
+BIN_DIR="$(cd "$BIN_DIR" && pwd)"
 echo "Installing $BEANS_PKG into $BIN_DIR ..."
 GOBIN="$BIN_DIR" go install "$BEANS_PKG"
 
@@ -47,7 +50,12 @@ else
 fi
 
 # Quick smoke test when run from the repo root with a .beans/ dir present.
-if [ -d .beans ] && command -v beans >/dev/null 2>&1; then
+# Fall back to the freshly-installed binary if BIN_DIR is not on PATH yet.
+if [ -d .beans ]; then
   echo "--- beans check ---"
-  beans check || true
+  if command -v beans >/dev/null 2>&1; then
+    beans check || true
+  elif [ -x "$BIN_DIR/beans" ]; then
+    "$BIN_DIR/beans" check || true
+  fi
 fi
