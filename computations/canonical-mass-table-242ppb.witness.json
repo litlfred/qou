@@ -1,8 +1,12 @@
 {
   "computation": "canonical-mass-table-242ppb",
-  "description": "Full mass table using 242-ppb canonical nucleon masses. Binding: D +23%, T +6%, 3He +13%, 4He +3.6%, 6Li +4.8%, 7Li +3.9%, 9Be +3.5%, 10B +3.9%, 12C +3.3%. Massive improvement over Family A (79-99% off). Error dominated by nucleon systematic \u00d7 M/B amplification.",
+  "description": "Per-isotope light-nucleus binding B(K) via the canonical Jones-Markov trace, with nucleon masses from the substrate identity (m_p) + Path C (m_n = m_p + Q_beta + m_e). DE-STALED 2026-06-18 (PR #2483; scope doc docs/scope/2026-06-18-qbeta-habiro-pde-binding-jet-exponent-scope.md item 4): (1) The per-isotope BINDING is Delta_lambda-OPEN (Track-A blocker; six closure ansaetze refuted on the deuteron). The +3.3%..+23% errors below ARE the open Delta_lambda gate, NOT a 242-ppb result. (2) The legacy '242 ppb' in the filename/id was the SUPERSEDED muon-pin m_p floor; at the canonical proton-pin q0 the nucleon masses are anchor-level (m_p ~0.0004 ppb), so nucleon precision is NOT the binding error source -- the percent-level Delta_lambda gap dwarfs the sub-ppm nucleon repin shift, so these errors are essentially insensitive to the muon->proton repin. (3) Provenance: hand-authored orphan, no producer script (provenance-audit flags missing engine/scriptFile/commitSha). Regeneration from computations/canonical_mass_table_extended.py at the canonical q0 with a real WitnessBuilder is the pending ideal; NOT done here (owner default 2026-06-18: de-stale in place, do not regenerate or delete).",
   "data": {
-    "nucleon_source": "substrate identity + Path C (242 ppb)",
+    "nucleon_source": "substrate identity (m_p, anchor-level at canonical q0) + Path C (m_n = m_p + Q_beta + m_e); binding values are muon-pin-era",
+    "delta_lambda_status": "open",
+    "delta_lambda_note": "Track-A blocker; no Delta_lambda closure wired. The binding column is the structural trace-difference prediction WITHOUT per-partition Delta_lambda, so the +3.3%..+23% errors are the open gate, not a precision result.",
+    "q0_anchor_note": "binding values were computed in the muon-pin era; the '242 ppb' framing is superseded by the canonical proton-pin (m_p ~0.0004 ppb). Errors are Delta_lambda-dominated and insensitive to the repin.",
+    "provenance": "hand-authored; no producer script; pending regeneration from canonical_mass_table_extended.py",
     "binding": {
       "D": {
         "B_pred": 2.735,
