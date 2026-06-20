@@ -40,8 +40,8 @@ object is the production trace weight `y_λ` (the nuclear-mass-trace weight — 
 distinct object from the geometric-index target `W_λ`; see the three-weight
 table in the necessary-conditions doc). At q₀:
 
-$$ y_{(3,2)} = 0.06172,\quad y_{(3,1,1)} = 0.01677,\quad
-   \frac{y_{(3,2)}}{y_{(3,1,1)}} = 3.6813. $$
+$$ y_{(3,2)} \approx 0.06172,\quad y_{(3,1,1)} \approx 0.01677,\quad
+   \frac{y_{(3,2)}}{y_{(3,1,1)}} \approx 3.6813 \quad\text{(ratio from unrounded values).} $$
 
 ## The magnitude separation (the actionable point)
 
