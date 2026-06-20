@@ -57,10 +57,11 @@ sys.path.insert(0, str(HERE / "substrate"))
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_MU_MEV_VALIDATION  # noqa: E402 (codata sweep)
 
 # CODATA 2022 anchors (comparison targets only; never fit inputs)
 M_E_MEV = "0.51099895069"        # CAL-1 anchor, q_0-independent
-M_MU_MEV = "105.6583755"         # comparison target only
+M_MU_MEV = str(M_MU_MEV_VALIDATION)  # comparison target only (codata_constants registry)
 M_MU_OVER_M_E = "206.7682830"    # CODATA ratio (comparison only)
 
 
