@@ -38,8 +38,10 @@ numbers.
 | `A_dependence_forces_complete` | the thesis (A-dependence ⇒ not chain) |
 
 `chain_binding_A_independent` is proved by `simp` (the chain count is `1` for any
-`Z,N ≥ 1`); `complete_pn_strictMono_N` by `ring`/`omega` (`Z·(N+1) = Z·N + Z` and
-`0 < Z`); `A_dependence_forces_complete` is the contrapositive — a differing p-n
+`Z,N ≥ 1`); `complete_pn_strictMono_N` by the term proof
+`Nat.mul_lt_mul_of_pos_left (Nat.lt_succ_self N) hZ` (strict monotonicity of
+left-multiplication by a positive `Z`; `completePnBonds` unfolds definitionally
+to `Z * ·`); `A_dependence_forces_complete` is the contrapositive — a differing p-n
 count between two nuclei contradicts the chain's forced equality, so the chain
 cannot host an `A`-dependent Pauli binding. The complete graph is the parameter-free
 topology that does (`complete_pn_strictMono_N`).
