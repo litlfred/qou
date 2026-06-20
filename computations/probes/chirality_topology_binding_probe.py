@@ -166,7 +166,7 @@ def main() -> int:
         "discipline": "EXPLORATORY — derive-or-refute, zero free parameters, no production rewire.",
     }
     out = HERE.parent / "chirality-topology-binding.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    out.write_text(json.dumps(witness, indent=2) + "\n")
     print(f"\n  witness: {out}")
     return 0
 
