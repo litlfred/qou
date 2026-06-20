@@ -117,6 +117,7 @@ import QOU.QBeta.RationalCoeffRecurrence
 import QOU.QBeta.SilverAnchorGrounding
 import QOU.QBeta.ReebTowerJacobiAnger
 import QOU.QBeta.QBesselContiguityRecurrence
+import QOU.QBeta.QBesselBarCovariance
 import QOU.QBeta.QCasoratianAbel
 import QOU.QBeta.QLommelOrderRecurrence
 -- Concrete H₃(q) Markov-trace functional (NF model: linearity, cyclicity,
