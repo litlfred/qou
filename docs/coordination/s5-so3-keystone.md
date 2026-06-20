@@ -58,6 +58,18 @@ is its *geometric origin*.
    is an A₅ rep (central +1), ℂ³⊗ℂ² has central −1. dim-6 = chirality T₁⊕T₂, not a tensor.
 3. **Reeb-eigenvalue resonance** — the ℓ=1,2 content matches (`c(λ)=ℓ(ℓ−1)`) are non-unique and fail at ℓ=3
    (tau, multi-block). No parameter-free ≥3-anchor resonance.
+4. **Cyclotomic-Galois / `Li₃(ζ₅)` period as a keystone "falsifier"** — recorded 2026-06-20 after a fresh
+   agent (`claude/kind-ptolemy-acladr`) independently re-derived the cyclotomic-Galois / fifth-root-of-unity
+   period angle and mis-aimed it at the keystone coupling as a falsifier. That angle lives on the **period /
+   z-Habiro axis**, which the 2026-06-17 sessions-log note flags as **orthogonal to the keystone coupling — "do
+   not conflate"**: the z-side completion `varprojlim ℤ[q^±1][z]/(P_n)` (quantum-dilog Φ_q tower) is parallel-
+   but-independent of the q-side Habiro/full-Hecke Markov trace. Forcing the period↔knot bridge is exactly the
+   **unfalsifiable correspondence-chain the Habiro lead refused**
+   ([`2026-06-16-keystone-habiro-coupling-lead-and-ck-exposition.md`](../audits/2026-06-16-keystone-habiro-coupling-lead-and-ck-exposition.md)).
+   Inoculation for the next agent: a period-axis cyclotomic-Galois result is **not** an s5-so3 keystone
+   constraint; the keystone's single open object is the q-Plancherel-measure geometric-realization problem
+   (below), not a period identity. Verify the axis (period/z vs coupling/q) before treating any Galois fact as
+   keystone-bearing.
 
 ## Sessions log
 
