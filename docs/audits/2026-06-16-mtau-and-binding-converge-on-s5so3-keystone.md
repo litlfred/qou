@@ -1,5 +1,25 @@
 # m_τ Path A + categorical binding both reduce to the s5-so3 keystone (redirect)
 
+> **⚠ CORRECTION (2026-06-16, supersedes the "functor is open" framing below).**
+> Where this doc calls the keystone functor "open / awaiting", that is **stale**.
+> The functor was **identified** as the symmetric-group restriction
+> `Res^{S₅}_{S₃}`
+> ([`2026-06-13-s5-so3-fiber-action-functor-resolution.md`](2026-06-13-s5-so3-fiber-action-functor-resolution.md)),
+> and its **combinatorial backbone is Lean-proved sorry-free** on `main`:
+> `s5_to_s3_restriction_dim_consistent` (`cases p <;> decide`) and
+> `restriction_functor_yields_h4_irrep` (`native_decide`) in
+> [`S5SO3FiberAction.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean),
+> with an independent branching verifier
+> ([`docs/audits/scripts/s5so3_branching_backbone_verify.py`](scripts/s5so3_branching_backbone_verify.py))
+> and the per-block check that the Borromean `h⁴` lives **exclusively** in the
+> H₃(q) `(2,1)` block
+> ([`scripts/borromean_per_block_h4_localization.py`](scripts/borromean_per_block_h4_localization.py)).
+> **What remains OPEN is only the q-deformed closure**: the `E_{(3,2)}` vs
+> `E_{(3,1,1)}` projector shift at `q₀` and whether it reproduces the 210 ppb
+> muon tension (resolution-doc §4; needs `pyhecke_native`). Read every "open
+> functor" mention below as "open *q-deformed evaluation* of the identified
+> functor".
+
 > **Beans.** [`mtxi`](../../.beans/mtxi--mtau-path-a-operator-branching.md) (option 2, m_τ),
 > [`g3pl`](../../.beans/g3pl--gap-a3-binding-converges-s5so3.md) (option 3, binding) — parent `qz9k`.
 > **Discipline.** Corpus-grep (done — this redirect *is* the result of it): both tasks turn out
