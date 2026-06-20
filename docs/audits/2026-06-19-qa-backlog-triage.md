@@ -112,27 +112,34 @@ wrong instrument.
   CLAUDE.md §"CI billing failures"). Both axes drift with nothing to
   refresh them; no manual cadence keeps up.
 
-- **Witness drift is verified non-substantive — [PR #1878](https://github.com/litlfred/qou/pull/1878).**
-  A detector hashing producers as `WitnessBuilder` does found ~681/1022
-  witnesses with `scriptHash` drift; re-running showed the change is a
-  `precisionMetadata` default bump (`65/50/15 → 70/60/10`) + a new
-  `environment` block — schema/config, **not** math. A bounded 3-witness
-  refresh confirmed data unchanged (or sub-assertion-threshold numeric).
-  **Hazard (from #1878):** several mass producers (`d_from_scratch`,
-  `b_over_a_evaluator`, `probe_1b_li6_orthogonality`) fail/time-out on
-  re-run yet write *partial* witnesses — never commit those. Audit:
-  `docs/audits/2026-06-05-witness-metadata-drift-audit.md`.
-
-- **Helium4 post-2026-06-17 probe — BLOCKED on the Rust kernel.** Re-running
-  `atomic_tr_m_helium4_canonical.py` this session raised
-  `NotImplementedError: precision=mpfr_50dps requires the Rust kernel
-  (pyhecke_native)` — the canonical `tr_M` path needs `pyhecke-native`
-  (`maturin build` in `tools/pyhecke-native/`), absent in this env. The
-  producer errored *before* rewriting the witness, so a naïve old-vs-new
-  diff reads "identical" (a false negative — nothing was recomputed). The
-  post-06-17 value-drift question is therefore **not** independently
-  confirmed here; it rests on #1878's verified benign characterization of
-  the drift class until the Rust kernel is available.
+- **Witness drift splits into TWO classes — only one is benign.**
+  - *Class 1 (2026-06-05) — benign,* verified by
+    [PR #1878](https://github.com/litlfred/qou/pull/1878): a detector
+    hashing producers as `WitnessBuilder` does found ~681/1022 witnesses
+    with `scriptHash` drift; re-running showed the change is a
+    `precisionMetadata` default bump (`65/50/15 → 70/60/10`) + a new
+    `environment` block — schema/config, **not** math (data unchanged or
+    sub-assertion-threshold). Hazard (from #1878): several mass producers
+    (`d_from_scratch`, `b_over_a_evaluator`, `probe_1b_li6_orthogonality`)
+    fail/time-out on re-run yet write *partial* witnesses — never commit
+    those. Audit: `docs/audits/2026-06-05-witness-metadata-drift-audit.md`.
+  - *Class 2 (2026-06-17 workplan touch) — SUBSTANTIVE,* shown this session
+    by building `pyhecke-native` 0.9.0 (`maturin build --release`, 39 s) and
+    re-running `atomic_tr_m_helium4_canonical.py` with the real kernel. The
+    `tau` values **changed at the 8th significant figure**:
+    `tau_p 1.220362889·0866930 → ·1122446`, `tau_n 1.194862425772554 →
+    ·799856`, `tau_4he 0.1538719675·41095 → ·51499` — Δ ≈ **2–7×10⁻⁸
+    relative**, far above the 10⁻¹⁵ compute floor (not precision
+    truncation), plus a new `lean_uniqueness_ref` field and a 15×
+    H₃-baseline slowdown (0.31 s → 4.8 s). The producer was **created** in
+    the big 2026-06-18 commit `ad8bfc54` ("brick 2 … n=3 minimality
+    Lean-proved"; 1236 insertions across producer + `closed_form_tau_M` +
+    `hecke_characters`), so the committed witness (2026-05-25) predates it
+    and carries **stale values**. Assertions pass only because tolerance is
+    0.1. **The regenerated witness was NOT committed** — a mass-value change
+    needs owner review (is `ad8bfc54` canonical or WIP?) + dashboard reruns
+    + appendix sync (CLAUDE.md §Precision goals). The other 06-17-touched
+    witnesses may carry the same substantive class.
 
 - **Sidecar tooling is a subsystem, not 2 files (Finding 1, refined).**
   `qa-staleness.ts` imports `./qa-utils` (`hashBlockFiles`, `walkBlocks`,
@@ -155,5 +162,7 @@ wrong instrument.
    subsystem (with the 17 criticals triaged), superseding the stale ones,
    rather than re-deriving on a fresh branch.
 
-Witness re-runs and sidecar sweeps below the CI fix are low-leverage
-(benign drift per #1878) and risk partial-witness commits.
+Sidecar sweeps below the CI fix are low-leverage. Witness re-runs are
+**not** uniformly benign: Class-1 (06-05) is, but Class-2 (06-17 producer
+touches) carries substantive 2–7×10⁻⁸ value drift (helium4 kernel-verified
+this session) and needs owner review before any batch refresh.
