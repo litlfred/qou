@@ -5,12 +5,33 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-06-20T11:30:00Z
-updated_at: 2026-06-20T11:30:00Z
+updated_at: 2026-06-20T12:10:00Z
 parent: qz9k
 ---
 
 Owner-seeded exploration (2026-06-20): "2nd kind has a quadratic action that can be used in
 mass/binding as corrections." Queued, NOT started.
+
+## Corpus-grep finding (2026-06-20) — LARGELY FORECLOSED; do NOT run a fresh binding probe
+
+Before starting, corpus-grep (per CLAUDE.md "Before declaring open" + critical-distance) found the
+q-Bessel→binding direction is already tested and retired:
+
+- **`2026-06-14-qbessel-joint-ji-binding-probe.md`: NO-GO.** The joint rotation⊕growth (J_ν⊕I_ν)
+  q-Bessel binding combiner degrades the data-complete A≥3 cases (³He +17.4%→+117.9%, 6.8×). Growth
+  channel ≈0; data prefers collapsed `|Δθ|` magnitude. PR #2279's q-Bessel "is not load-bearing for
+  binding." Productive directions remain GAP-A-3/A-4 (Option E) + ⁴He JSJ volume.
+- **The "quadratic action" already exists** as the content-Casimir `μ_λ = ℏ_q² Σ [c]_q[c+1]_q`
+  (quadratic in cell content), wired into `prop:q-heat-kernel-peter-weyl` as the heat-kernel
+  *eigenvalue*. So the quadratic structure is present and accounted for — not a new binding term.
+- **One untested sliver:** the literal 2nd-kind (Neumann Y_ν, singular) solution, distinct from the
+  J/I pair tested. Prior strongly negative (every q-Bessel binding lever refuted).
+
+**Disposition:** does NOT warrant a fresh binding probe (would re-walk the NO-GO). If revisited, it
+must be a *tower-level* (n→∞) object per the 2026-06-14-lead4 redirect, NOT a finite-n binding fit,
+and clear the full formalize-first gate below. Recorded in
+`docs/audits/2026-06-20-keystone-qheatkernel-resolves-precheck-qbessel-foreclosed.md`. Owner closes
+(humans close beans per CLAUDE.md §4a).
 
 ## The idea
 

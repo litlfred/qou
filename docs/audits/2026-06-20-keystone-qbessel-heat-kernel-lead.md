@@ -1,5 +1,14 @@
 # q-heat-kernel / q-Bessel as the keystone geometric realization — lead + precheck (2026-06-20)
 
+> **⚠ Corrected same day by [`2026-06-20-keystone-qheatkernel-resolves-precheck-qbessel-foreclosed.md`](2026-06-20-keystone-qheatkernel-resolves-precheck-qbessel-foreclosed.md).**
+> Corpus-grep after this doc was written shows: (1) the correct object for the **finite-n** keystone
+> is the **compact** `prop:q-heat-kernel-peter-weyl`, NOT the non-compact q-Bessel/E_q(2) this doc
+> points at (q-Bessel = the n→∞ tower); (2) the precheck's "P1 sub-normalization" is a normalizer
+> artifact — the heat-kernel partition function `Z(0)=Σd_λ²` is the correct normalizer and
+> `d_λ²/Z(0)` sums to 1 exactly (`[n]_q!` was wrong); (3) the q-Bessel→binding direction is NO-GO
+> (`2026-06-14-qbessel-joint-ji-binding-probe`). Read the correction doc; this lead's *object choice*
+> is superseded, though the heat-kernel framing it raised is correct.
+
 **Branch:** `claude/kind-ptolemy-acladr`
 **Status:** LEAD (not a closure). Owner-seeded direction + one formalize-first precheck.
 **Discipline:** corpus-grep first (the q-Bessel infra already exists); formalize-first
