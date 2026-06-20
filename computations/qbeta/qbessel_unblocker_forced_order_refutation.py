@@ -49,7 +49,7 @@ import json
 import math
 import pathlib
 
-from mpmath import mp, mpf, qp, fabs, acos, acosh
+from mpmath import mp, mpf, fabs
 
 mp.dps = 40
 Q0 = mpf("1.10997858")
@@ -78,7 +78,7 @@ def g2_powerseries_singular_at(nu, q, K=30):
 
 
 def main():
-    d = json.loads(DEU.read_text())
+    d = json.loads(DEU.read_text(encoding="utf-8"))
     free = {tuple(e["partition"]): mpf(e["chi_lambda"]) for e in d["data"]["free"]["by_partition"]}
 
     print("Unblocker refutation — the forced q-Bessel order is the Neumann log-resonance")
