@@ -1,0 +1,69 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-20T13:12:32.216558+00:00",
+  "commitSha": "9ee02fe4f78f1c1b119e4bd1920f7e2cd407e9c8",
+  "assertions": [
+    {
+      "name": "level_A_r2_in_forbidden_gap",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "r_2^emp = 2 must lie in the Hahn–Exton forbidden gap (0, q²/(q³−1)) at q₀ (no real ν reproduces it)."
+    },
+    {
+      "name": "level_B_shadow_prediction_refuted",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "q=1 shadow: ν pinned from r_2 must mispredict r_3 by > 5% (single-ν Hahn–Exton shadow excluded)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "qbeta-hahn-exton-kernel-test",
+  "scriptFile": "qbeta_hahn_exton_kernel_test.py",
+  "scriptHash": "ef6f541cac45",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Q_β Stage-C: tests the trivial-kernel hypothesis that the c_k ladder IS the Hahn–Exton q-Bessel family for some single order ν, normalization-free via ratios, at the substrate anchor q₀ (forbidden-gap analysis) and the q=1 classical-Bessel shadow (pin-ν-predict-next). EXPLORATORY; records the refuted kernel class C14, proposes no c_k value, no fit.",
+  "auditOnly": "docs/audits/2026-06-20-qbeta-hahn-exton-kernel-test.md",
+  "parameters": {
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "r2_emp": "2.0",
+    "r3_emp": "0.485785"
+  },
+  "data": {
+    "discipline": "EXPLORATORY",
+    "production_wired": false,
+    "level_A_q0": {
+      "forbidden_gap_hi": "3.352050868214605751389666139055572870795290116165638108887346854461088",
+      "r2_emp_in_forbidden_gap": true,
+      "q_nu_plus_3_needed": "-0.6760254341073028756948330695277864353976450580828190544436734272305441",
+      "real_nu_exists": false
+    },
+    "level_B_shadow": {
+      "nu_pinned_from_r2": "-3.166666666666666666666666666666666666666666666666666666666666666666667",
+      "r3_shadow_predicted": "-0.3",
+      "r3_empirical": "0.485785",
+      "relative_error": "-1.617557149767901437878897042930514528031948289881326101052934940354272",
+      "sign_flip": true,
+      "refuted": true
+    },
+    "refuted_class": "C14 — trivial-kernel Hahn–Exton identification",
+    "verdict": "REFUTED — trivial-kernel Hahn–Exton identification excluded at BOTH levels. Level A: r_2^emp = +2.0000 lies in the structurally forbidden gap (0, 3.3521) of the Hahn–Exton ratio at q₀ — reproducing it would require q^(ν+3) = -0.6760 < 0, impossible for real ν. Level B: pinning ν = -3.1667 from the q=1 shadow r_2 and predicting r_3 gives -0.3000 vs empirical +0.4858 (sign-flipped, rel err -161.8%). CONCLUSION: the bare Hahn–Exton ratio is NOT the Q_β kernel — a NON-trivial kernel R(q,ξ) is required (consistent with the OPEN-keystone status in the registry). Recorded as refuted class C14 (trivial-kernel Hahn–Exton identification). No c_k value proposed, no fit."
+  }
+}
