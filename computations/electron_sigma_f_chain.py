@@ -2,6 +2,16 @@
 """
 σ_F(Z) electron-dressing chain — canonical confinement-SDP dual (diagnostic).
 
+NOTE (cross-check / superseded-by). The canonical, more rigorous version of
+this computation is `computations/sigma_f_electron_shell_chain.py` on main
+(50-dps mpmath throughout, with the closed-form Wedderburn LP dual — no f64).
+This script is retained as an INDEPENDENT cvxpy/Clarabel cross-check of the
+same claim-1 monotonicity + claim-2 multiplicity, not as the canonical path;
+prefer the mpmath version for any production use. Both agree: σ_F is monotone
+and the bare categorical operator does NOT reproduce the noble-gas peaks (the
+2n²/Madelung shell-capacity derivation is open — see
+docs/audits/2026-06-16-2n2-shell-capacity-derivation-gap.md).
+
 Implements the **dual** of the confinement SDP (prop:confinement-sdp) at the
 atom-electron level (level 6), which the canonical `pyhecke.sdp` dispatcher
 still carries only as a skeleton and the deprecated `multi_level_sdp.py`

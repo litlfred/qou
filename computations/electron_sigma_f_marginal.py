@@ -2,6 +2,13 @@
 """
 σ_F vs its marginal — resolving the shell-closure-stability inconsistency.
 
+Cross-ref: consistent with `computations/sigma_f_electron_shell_chain.py` on
+main (the canonical 50-dps σ_F chain), which independently finds the categorical
+2n² cumulative [2,10,28,60,…] ≠ the noble gases [2,10,18,36,…] and caveats that
+σ_F does not support the noble-gas mechanism. This script's distinct point: the
+quantity that *does* peak is the marginal Δσ_F, and even it needs the 2n²/Madelung
+INPUT to land on the noble gases (case (a) vs the every-2 of the bare T_γe, case (b)).
+
 prop:shell-closure-stability states two things about the SAME σ_F(Z):
   claim 1 — σ_F is monotone NON-DECREASING in Z;
   claim 2 — σ_F attains a STRICT LOCAL MAXIMUM at noble-gas Z.

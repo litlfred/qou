@@ -2,6 +2,11 @@
 """
 Electron-shell SDP "capacity" — formalize-first demo (diagnostic; no fit, no witness).
 
+Cross-ref: the canonical σ_F dressing-chain compute is
+`computations/sigma_f_electron_shell_chain.py` on main (50-dps mpmath +
+closed-form Wedderburn dual). This script's distinct contribution is the §1
+raw-Gram "capacity" *artifact* and why it is the excluded interlacing branch.
+
 The owner's idea: "put an electron on an isotope, keep adding electrons until the
 confinement SDP won't solve — that's the capacity." This script checks that idea
 against the canonical mechanism BEFORE trusting any number, and the result is a
