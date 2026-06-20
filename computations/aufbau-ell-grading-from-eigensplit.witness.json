@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-20T12:39:29.325695+00:00",
-  "commitSha": "d31442f4a754e1b67a887aba49fb52e4c679ec7c",
+  "computedAt": "2026-06-20T12:44:59.442701+00:00",
+  "commitSha": "3242a1187f8359aa71b237d23f57f8633ec6ba45",
   "assertions": [
     {
       "name": "lambda_plus_eq_q",
@@ -24,8 +24,8 @@
   "durationMs": 5,
   "computation": "aufbau-ell-grading-from-eigensplit",
   "scriptFile": "aufbau_ell_grading_from_eigensplit.py",
-  "scriptHash": "9484ab0c3be9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b95994c8ed45",
+  "scriptCommitSha": "3242a1187f8359aa71b237d23f57f8633ec6ba45",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
