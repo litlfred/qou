@@ -70,3 +70,5 @@ license + three-calibration discipline:
 Either (a) a tiered finding doc establishing whether Koide can be a canonical
 QOU constraint, with the structural hook (or its absence) made explicit; or
 (b) a refutation that closes the question against a fit. NO fitted $m_\tau$.
+
+TRIAGE VERDICT (2026-06-20, session intelligent-pasteur): REFUTED — Q=2/3 is a CAL-4 fit, NOT a categorical derivation. Three required ingredients all absent: (1) no Z/3 generation orbit (leptons are a braid tower in increasing H_n(q), not a cyclic orbit), (2) no √m-amplitude democracy, (3) the 2/3 ratio nowhere attaches to lepton generations. Already documented in docs/audits/2026-06-16-koide-tau-forcing-assessment.md. Koide can serve only as a post-hoc consistency check on a future DERIVED ξ_ℓ (Path A, operator-valued ℓ=3 branching), never as an input. The bean's question ("constraint or fit?") is ANSWERED: fit. Real m_τ route (Path A) is blocked on the conj:s5-so3-fiber-action q-closure (bean s5bb).
