@@ -261,3 +261,42 @@ the stalled discussion; coordinate + extend the comparison to the neutral atom.
   live "add electrons until infeasible" capacity demo — current scratch gave wrong
   capacities (H=5). Screening (`Z_eff`) is the open e-Hartree magnitude piece;
   eV-scale, never reaches the mass residual. Accuracy moves only on B_sym (#2078/#2325).
+
+### 2026-06-16/20 continuation — σ_F dual + shell-closure fixes (PR #2348)
+
+Scope expanded from the Level-6 mass diagnostic into the electron-shell /
+confinement-SDP domain. Added: the confinement-SDP **dual** σ_F at level 6
+(`electron_sigma_f_chain.py`; claim-1 monotonicity, gap≈1e-9); the SDP-capacity
+formalize-first correction (`electron_shell_sdp_capacity.py` — "add until
+infeasible" is wrong; σ_F monotone, raw-Gram is the excluded interlacing branch);
+the marginal-Δσ_F demo (`electron_sigma_f_marginal.py`).
+
+**Content corrections (owner-authorised "please resolve"):**
+- Resolved a real inconsistency in `prop:shell-closure-stability` — claim 1
+  (σ_F non-decreasing) vs claim 2 (σ_F strict local max) are contradictory; fixed
+  to "marginal Δσ_F = I₁ peaks; σ_F monotone" across the prop, its interprets
+  remark, and both `.lean` docstrings. Lean theorems were already the consistent
+  pair (monotone + μ≥2) — prose-only.
+- Softened the unsupported 2n²-"from-Hecke-dimension" overclaim in
+  `electron-shell-braid-capacity.md` (contradicted `electron-shells-hopf` open
+  problem 1).
+- Removed the vacuous shadowing stub `particle-interactions/shell-closure-stability.lean`
+  (σ_F≡0) so the ref resolves to the real `QOU.BraidKnot.ShellClosureStability`.
+
+**2n² diagnosis (genuinely open):** `2n² = 2·Σ(2ℓ+1)`; the 2×2 T_γe supplies the
+spin "2" but not the orbital n² — that needs an absent SO(4)/Runge-Lenz accidental
+degeneracy. QOU's V_ℓ reps are spent on lepton generations (s5-so3), not radial
+shells. Emergent shell peaks blocked on this; not faked.
+[`2026-06-16-2n2-shell-capacity-derivation-gap.md`](../audits/2026-06-16-2n2-shell-capacity-derivation-gap.md).
+
+**Watch state (corrected):** origin/main advanced **~479 commits** over the 4-day
+session (was 0 at session start). No main commit touched my edited content files;
+my 4 new scripts are collision-free; the only both-sides change is **this ledger**
+(benign append, resolve by keeping both). Rebase needed at `/prepare-merge` time.
+#2348 CI: 0 check-runs (Actions-billing pattern). Background Explore triage of
+siblings + s5-so3 main drift dispatched.
+
+### Next concrete task
+- Rebase #2348 onto current main at merge time (only the ledger append conflicts).
+- Open research: derive the SO(4)/Runge-Lenz n²-bundling, or accept 2n² as a
+  topological input — the blocker for emergent shell peaks (not a model tweak).
