@@ -62,6 +62,19 @@ parent: qz9k
 > stays real; its use as a parameter-free binding correction is refuted. qbk2 binding
 > direction CLOSED; owner closes the bean (§4a).
 
+> **REOPENED 2026-06-20 by owner Reeb-flow steer (PR pending).**
+> ([`docs/audits/2026-06-20-qbessel-reeb-flow-radial-argument.md`](../docs/audits/2026-06-20-qbessel-reeb-flow-radial-argument.md),
+> `computations/qbeta/qbessel_reeb_flow_radial_forced.py`). Owner: "did you use the Reeb
+> bundle? there is a rotational flow on knot operations." #2538-R2 was incomplete — the
+> Reeb FLOW supplies the radial datum: the rotation/growth split IS the angular/radial
+> split (growth `θ_λ=arccosh` is a flow length, RADIAL). So `x_λ=θ_λ` is substrate-FORCED
+> (no map freedom) and with `ν_λ=dim-1` BOTH order+argument are fixed ⇒ #2536's decisive
+> 63%-swing obstruction is RESOLVED. Classical first pass (deuteron): (F) forced YES, (S)
+> survives free→atom YES (δ=-0.172≠0), (C) scale ~25× small (crude: uniform weights +
+> classical q→1 Bessel + large-order ν=15 suppression). Honest status: FORCED + SURVIVING,
+> scale OPEN. Next forced test: q-deformed Hahn-Exton log-Neumann Y_ν(x;q) + real y_λ
+> weights (NOT a tuned prefactor). #2538 "closed" was premature; direction LIVE again.
+
 Owner-seeded exploration (2026-06-20): "2nd kind has a quadratic action that can be used in
 mass/binding as corrections." Queued, NOT started.
 
