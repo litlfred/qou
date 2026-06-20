@@ -79,44 +79,46 @@ SDP under a *guessed* definition would produce a number that cannot be checked
 against the known anchors — the exact rainbow the formalize-first discipline
 forbids.
 
-## Update — a candidate definition, validated on the B₃ atoms (D, ³He)
+## Update — a per-block-PSD count was tested, and REFUTED by T (8_11) at H₅
 
-Taking the formalize-first first step (pin a definition, validate against known
-anchors *before* any H₁₂ compute), one concrete parameter-free rule **reproduces
-the confirmed values** on the two atoms whose canonical braid is in B₃ (so the H₃
-Hoefsmit seminormal is available in pure Python):
+Taking the formalize-first first step (pin a candidate definition, validate against
+**all** known anchors before any ⁴He compute), one concrete parameter-free rule was
+tested:
 
-> **ν_SDP(K_w) = #{ λ ⊢ n, λ ≠ (n) : ρ_λ(T_w) lies in the PSD cone }**
-> (symmetric part `(M+Mᵀ)/2 ⪰ 0`; the trivial rep `(n)` is **excluded** because
-> `ρ_(n)(T_w) = q^{writhe} > 0` is always positive — never an informative
-> confinement channel).
+> **candidate:  ν_SDP(K_w) = #{ λ ⊢ n, λ ≠ (n) : ρ_λ(T_w) lies in the PSD cone }**
+> (symmetric part `(M+Mᵀ)/2 ⪰ 0`; the trivial rep `(n) = q^{writhe} > 0` is always
+> positive, so it is excluded — equivalently "(#PSD blocks) − 1", the two readings
+> being identical since the trivial rep is *always* PSD).
 
-Probe [`computations/probes/he_nu_sdp_definition_b3_validation.py`](../../computations/probes/he_nu_sdp_definition_b3_validation.py)
-· witness `he-nu-sdp-definition-b3-validation.witness.json` (`numpy`; H₃ Hoefsmit
-inlined from `joint_tower_sdp_solver_v2.py`):
+Computed in the **canonical orthogonal Hoefsmit seminormal form**
+([`hoefsmit_numpy.hoefsmit_matrices_numpy`](../../computations/hoefsmit_numpy.py),
+the principled basis where `ρ_λ(σ_i)` is symmetric) for **all three** confirmed
+atoms — including T (8_11) at H₅, the first out-of-sample test at a new strand
+count. Probe
+[`computations/probes/he_nu_sdp_psd_count_test.py`](../../computations/probes/he_nu_sdp_psd_count_test.py)
+· witness `he-nu-sdp-psd-count-test.witness.json`:
 
-| atom | knot | writhe | (3) triv | (2,1) std sym-eigs | (1,1,1) sign | non-triv PSD | **ν_pred** | ν_canon |
-|------|------|-------:|---------|--------------------|--------------|-------------:|-----------:|--------:|
-| D | 6_2 | +2 | +1.232 PSD *(excl)* | `[−0.89, +0.03]` → **not PSD** | +0.812 PSD | {(1,1,1)} | **1** | 1 ✓ |
-| ³He | L6a4 | 0 | +1.000 PSD *(excl)* | `[+0.98, +1.01]` → PSD | +1.000 PSD | {(2,1),(1,1,1)} | **2** | 2 ✓ |
+| atom | knot | n | non-trivial PSD blocks | ν_pred | ν_canon |
+|------|------|--:|------------------------|-------:|--------:|
+| D | 6_2 | 3 | {(1,1,1)} | 1 | 1 ✓ |
+| ³He | L6a4 | 3 | {(2,1), (1,1,1)} | 2 | 2 ✓ |
+| **T** | **8_11** | **5** | **{(1,1,1,1,1)} only** | **1** | **2 ✗** |
 
-The discriminating block is the **std (2,1)** rep: indefinite for D (→ ν=1), PSD
-for ³He (→ ν=2). The naive *total* PSD count (2, 3) does **not** match; excluding
-the always-positive trivial rep does.
+**Verdict: REFUTED.** The rule reproduces the two B₃ atoms but **fails the
+out-of-sample H₅ atom T**: only the fully-antisymmetric sign rep `(1⁵)` is PSD; all
+five higher-dimensional non-trivial blocks `(4,1), (3,2), (3,1,1), (2,2,1),
+(2,1,1,1)` are indefinite (min sym-eigenvalues `−1.03, −0.83, −1.19, −1.36, −1.32`),
+giving `ν_pred = 1 ≠ 2`. The 2-point B₃ agreement was coincidental. (A consistency
+note retired: "exclude trivial" and "(#PSD) − 1" are *identical*, not two readings —
+the trivial rep is `q^{writhe} > 0` for any braid, hence always PSD.)
 
-**Honest caveat (2-point validation).** D and ³He are the only confirmed atoms in
-B₃. On these two points the rule coincides with "(#PSD blocks) − 1" (the trivial
-rep is always PSD, so the two readings are identical here). The **discriminator**
-is the third confirmed atom **T (8_11, ν=2), which is in B₅** and needs the H₅
-Hoefsmit seminormal (deferred to the Rust crate) to tell the two readings apart.
-Applying the rule to ⁴He needs Hoefsmit at H₁₂ (p(12)=77 blocks). This probe does
-**not** extrapolate ⁴He — it pins + validates the definition on what is computable
-today, and gives the ⁴He computation a concrete, falsifiable recipe (count
-non-trivial PSD blocks of `ρ_λ(T_w(⁴He))`).
-
-This upgrades the open item from *"no operational definition exists"* to *"a
-candidate definition validated on 2/3 confirmed atoms; T@H₅ is the discriminator,
-then ⁴He@H₁₂."*
+**Implication.** ν_SDP is **not** a per-block PSD sign test on `ρ_λ(T_w)`. The actual
+object is the **operator-selection SDP** (objective `t` + Frobenius Gram `G` + target
+`n_target`, per `lp_dual_solver.solve_psd_operator_selection_sdp`), whose saturating
+set is the multiplicity — not a per-block sign count. No per-atom `(t, G, n_target)`
+spec reproducing `1, 2, 2` exists in the corpus. So the core finding above stands and
+is **sharpened**: the obvious per-block-PSD shortcut is now explicitly refuted, and
+pinning ν_SDP requires reconstructing the per-atom operator-selection SDP itself.
 
 ## Net
 
