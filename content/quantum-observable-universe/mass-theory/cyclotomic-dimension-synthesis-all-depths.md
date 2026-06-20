@@ -144,7 +144,6 @@ The framework's cyclotomic depth structure is **fully characterised**.
 ### Cross-references
 
 - Special case $n = 3$: [`prop:cyclotomic-depth3-dimension-synthesis`](#prop:cyclotomic-depth3-dimension-synthesis)
-- Special case $n = 5$, $K = 5$: round-12  [`prop:cl3-zeta5-pslq-independence`](#prop:cl3-zeta5-pslq-independence)
 - Tate-rationality (Step 2): [`prop:jonquiere-cyclotomic-tate-rationality`](#prop:jonquiere-cyclotomic-tate-rationality)
 - Orbit-sum (Step 3): [`prop:cyclotomic-orbit-sum-all-depths`](#prop:cyclotomic-orbit-sum-all-depths)
 - Borel rank: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)

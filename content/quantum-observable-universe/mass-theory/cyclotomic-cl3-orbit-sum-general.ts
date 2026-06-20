@@ -17,7 +17,6 @@ export default proposition({
   },
   uses: [
     "prop:cyclotomic-trilog-imaginary-closed-form",
-    "prop:cl3-zeta5-pslq-independence",
   ],
   cites: ["bloch2000", "zagier1986"],
   tags: [

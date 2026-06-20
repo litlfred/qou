@@ -189,6 +189,5 @@ Concretely:
 - Theorem B: [`prop:cyclotomic-cl3-orbit-sum-general`](#prop:cyclotomic-cl3-orbit-sum-general)
 - Theorem C: [`prop:two-filtration-bridge-general`](#prop:two-filtration-bridge-general)
 - Borel partial discharge: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
-- $K = 5$ baseline: [`prop:cl3-zeta5-pslq-independence`](#prop:cl3-zeta5-pslq-independence)
 - Period ledger: [`rem:transcendental-accounting`](#rem:transcendental-accounting)
 - B1 current-status synthesis: [`rem:b1-current-status`](#rem:b1-current-status)

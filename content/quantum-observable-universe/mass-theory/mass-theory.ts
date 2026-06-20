@@ -548,7 +548,6 @@ export default chapter({
         "bring-trilog-depth-3-witness",
         "bring-trilog-imaginary-tate-rational",
         "cl3-zeta5-orbit-sum-identity",
-        "cl3-zeta5-pslq-independence",
         "cyclotomic-trilog-imaginary-closed-form",
         "cyclotomic-trilog-imaginary-closed-form-table-data",
         "cyclotomic-cl3-orbit-sum-general",

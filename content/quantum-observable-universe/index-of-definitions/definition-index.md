@@ -543,7 +543,6 @@
 | [prop:diagrammatic-double-magic-lr-fusion](#prop:diagrammatic-double-magic-lr-fusion) | Proposition (diagrammatic double-magic): LR-fusion rigidity at $Z, N \in \mathfrak{M}$ | Ch 13 | `qou:QOU.LRFusion.DoubleMagicConjecture` |
 | [prop:partition-sum-proton-residual](#prop:partition-sum-proton-residual) | Proton tower residual = $m_e \cdot \mathrm{tr}_M(C_{\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$ | Ch 10 | `qou:QOU.BraidKnot.proton_tower_residual_frobenius` |
 | [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower) | Proton--electron mass ratio from the $\Phi_q$ tower | Ch 10 | `qou:QOU.MassEndomorphism.proton_electron_ratio` |
-| [prop:cl3-zeta5-pslq-independence](#prop:cl3-zeta5-pslq-independence) | PSLQ certifies Cl$_3$(2$\pi$/5) $-$ Cl$_3$(4$\pi$/5) is independent of standard depth-3 periods up to coefficient norm 10$^8$ | Ch 10 | `qou:QOU.BraidKnot.Cl3Zeta5PslqIndependence.pslq_independence` |
 | [conj:q-aubin-lions](#conj:q-aubin-lions) | q-deformed Aubin--Lions lemma: compactness of the solution family as $q \to 1$ | Ch 16 | `qou:QOU.FluidDynamics.QAubinLions` |
 | [prop:mass-categorical-descent](#prop:mass-categorical-descent) | QOU mass formula as descent decomposition of the mass endomorphism | Ch 10 | `qou:QOU.ParticleInteractions.mass_categorical_descent` |
 | [prop:vertex-algebra-relations](#prop:vertex-algebra-relations) | QU and QUO axioms as relations on Hecke generators | Ch 9 | `qou:QOU.VertexAlgebra.descartes_genus` |

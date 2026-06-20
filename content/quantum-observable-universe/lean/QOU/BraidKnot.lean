@@ -8,7 +8,6 @@ import QOU.BraidKnot.CyclotomicDimensionSynthesisAllDepths
 import QOU.BraidKnot.QHeckeSeminormalCharacterClosure
 import QOU.BraidKnot.BringTrilogImaginaryTateRational
 import QOU.BraidKnot.Cl3Zeta5OrbitSum
-import QOU.BraidKnot.Cl3Zeta5PslqIndependence
 import QOU.BraidKnot.KnotIndexedConvolutionGrid
 import QOU.BraidKnot.ConfinedParticle
 import QOU.BraidKnot.ConfinementCategory
