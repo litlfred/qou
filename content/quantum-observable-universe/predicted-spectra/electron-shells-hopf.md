@@ -40,14 +40,26 @@ $2s$ shell.
 
 The conjecture is that the shell capacities $2n^2$ are
 determined by the **maximum number of trefoils that form a
-closed sub-Hopf link** at linking level $n$:
+closed sub-Hopf link** at linking level $n$ (the **open**
+shell-capacity problem of this remark — not yet derived):
 
-| Shell $n$ | Capacity $2n^2$ | Cumulative | Noble gas | Closed sub-link |
-|----------:|----------------:|-----------:|-----------|----------------|
-| 1 | 2 | 2 | He | $T_{2,3} \oplus T_{2,3}$ |
-| 2 | 8 | 10 | Ne | $8 \cdot T_{2,3}$ (Hopf $8$-chain) |
-| 3 | 18 | 28 | Ni | $18 \cdot T_{2,3}$ |
-| 4 | 32 | 60 | Nd | $32 \cdot T_{2,3}$ |
+| Shell $n$ | Capacity $2n^2$ | Cumulative | Pure-$2n^2$ closure | Closed sub-link |
+|----------:|----------------:|-----------:|---------------------|----------------|
+| 1 | 2 | 2 | He (= noble) | $T_{2,3} \oplus T_{2,3}$ |
+| 2 | 8 | 10 | Ne (= noble) | $8 \cdot T_{2,3}$ (Hopf $8$-chain) |
+| 3 | 18 | 28 | Ni (**not** noble) | $18 \cdot T_{2,3}$ |
+| 4 | 32 | 60 | Nd (**not** noble) | $32 \cdot T_{2,3}$ |
+
+**Caveat — the pure-$2n^2$ closures are not the chemical noble gases.**
+The cumulative pure-$2n^2$ count $[2, 10, 28, 60, \ldots]$ is the closed-shell
+sequence of a *pure-Coulomb* atom; the chemical noble gases
+$[2, 10, 18, 36, 54, 86]$ instead follow the **Madelung / $n+\ell$ (Aufbau)**
+ordering produced by electron–electron screening.  The two agree only at He and
+Ne; from $n = 3$ they diverge (Ni, Nd are not inert).  Reproducing the noble
+gases therefore needs *both* the $2n^2$ derivation (open problem 1 below) *and* a
+categorical screening / Madelung mechanism (absent).  The noble-gas
+identifications in this remark are thus a **target, not an established
+consequence**.
 
 The noble gases (He, Ne, Ar, Kr, Xe, Rn) are the atoms
 whose electron cloud is a **union of closed sub-links**:
