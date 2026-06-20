@@ -1,13 +1,24 @@
 ---
 # qbk2
 title: 'EXPLORE: q-Bessel 2nd-kind "quadratic action" as a mass/binding correction term'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-06-20T11:30:00Z
-updated_at: 2026-06-20T11:30:00Z
+updated_at: 2026-06-20T12:30:00Z
 parent: qz9k
 ---
+
+> **GATE RUN 2026-06-20 (PR pending).** Formalize-first gate executed
+> ([`docs/audits/2026-06-20-qbessel-second-kind-quadratic-action-gate.md`](../docs/audits/2026-06-20-qbessel-second-kind-quadratic-action-gate.md),
+> `computations/qbeta/qbessel_second_kind_quadratic_action_gate.py`, ALL PASSED).
+> Result: the 2nd-kind solution `g₂ = w^{-ν}Σd_k w^k` is parameter-free (q-Casoratian
+> q-Abel `D·w^ν = const`, gate 1 ✓) but `~w^{-ν}`-SINGULAR at the substrate origin, so
+> regularity EXCLUDES it from the on-shell regular-rep binding sum — the 2nd-kind
+> "quadratic action" correction is **identically zero on-shell**, non-trivial only
+> off-shell (q-Bessel resolvent `G ~ g₁(x_<)g₂(x_>)/D` with the `-w` source). PRUNES the
+> on-shell binding scan. Any continuation must be off-shell (resolvent + explicit
+> source) and still clear the cross-anchor gate. Owner closes (§4a).
 
 Owner-seeded exploration (2026-06-20): "2nd kind has a quadratic action that can be used in
 mass/binding as corrections." Queued, NOT started.
