@@ -61,7 +61,9 @@ The H₃ inputs (mpfr Borromean characters, f64 Markov weights):
 
 2. **The entire Model-A split is the antisymmetric (1,1,1) sign channel**
    (χ = 1, h-**independent**), present in the electron block (3,1,1) and absent
-   in the muon block (3,2), at the ~1.46×10⁻² level.
+   in the muon block (3,2). Its size is 2.27×10⁻² in absolute terms (the
+   isolated (1,1,1) term) and ~1.46×10⁻² as a *relative* split
+   ($\Delta T / T_e \approx 1.459\%$).
 
 3. **Both well-posed objects are 4–7 orders of magnitude too large** to *be*
    the 210 ppb shift (Model A ~6.9×10⁴× too large; Model B ~1.3×10⁷× too large),

@@ -49,7 +49,8 @@ def main() -> int:
     print(f"pyhecke_native v{ph.__version__}  |  q_0 = {Q0}  |  dps = {DPS}\n")
 
     # --- H_3 Markov weights and Borromean per-block characters (mpfr chars) ---
-    y3 = dict(zip(H3, ph.trace_weights_n(3, Q0)))
+    y3 = dict(zip([tuple(p) for p in ph.partitions_of(3)],
+                  ph.trace_weights_n(3, Q0)))
     chi = {nu: float(ph.chi_lambda_braid_mpfr(list(nu), BORROMEAN, str(Q0), DPS))
            for nu in H3}
     print("H_3 Markov weights y_ν and Borromean characters χ_ν:")
