@@ -81,8 +81,9 @@ todos/*
 # EXCEPTION: per-goal coordination queues are committed so multiple agents
 # can see the same queue. Pattern: todos/<goal>-queue.json
 !todos/*-queue.json
-# …but the agent-drain queue is a pure runtime artifact (regenerated on
-# every run; changes every time) — re-ignore it despite the exception.
+# The agent-drain queue moved to .beans/qa-agent-drain-queue.json — a
+# tracked bulk-JSON coordination queue (beans ≠ sidecars). The legacy
+# todos/ path is re-ignored for any old-invocation stragglers.
 todos/qa-agent-drain-queue.json
 # Stray queue artifact when a pipeline script is run with cwd=content/
 content/todos/
