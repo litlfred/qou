@@ -32,6 +32,7 @@ Output: `q-beta-operator-valued-N3.witness.json`.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
@@ -58,7 +59,7 @@ def _q_0_50dps() -> mp.mpf:
 def main() -> int:
     q = _q_0_50dps()
     m_e = mp.mpf(str(M_E_MEV))
-    Q_AME = mp.mpf("939.5654205240") - mp.mpf("938.27208816") - m_e
+    Q_AME = mp.mpf("939.5654205240") - mp.mpf(M_P_MEV_VALIDATION) - m_e
     Q_A = m_e * mp.fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
     h = q - 1 / q
     z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))

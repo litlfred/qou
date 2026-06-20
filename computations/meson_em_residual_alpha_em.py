@@ -19,6 +19,7 @@ residual.
 """
 from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_K_PM_MEV_VALIDATION, M_PI_PM_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import sys
 import time
 from pathlib import Path
@@ -63,8 +64,8 @@ def main():
     # ---------------------------------------------------------------
     # Meson scales (PDG, MeV)
     # ---------------------------------------------------------------
-    m_pi_pm = mp.mpf("139.57039")
-    m_K_pm  = mp.mpf("493.677")
+    m_pi_pm = mp.mpf(M_PI_PM_MEV_VALIDATION)
+    m_K_pm  = mp.mpf(M_K_PM_MEV_VALIDATION)
     f_pi    = mp.mpf("92.07")    # pion decay constant (PDG)
     Lambda_chi = mp.mpf("1000")  # chiral scale ~ 4π·f_pi ~ 1 GeV
     chiral_cond_cuberoot = mp.mpf("240")  # ⟨q̄q⟩^(1/3) ~ 240 MeV

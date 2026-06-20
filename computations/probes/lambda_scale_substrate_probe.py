@@ -30,6 +30,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import M_K_PM_MEV_VALIDATION, M_MU_MEV_VALIDATION, M_PI_PM_MEV_VALIDATION  # noqa: E402 (codata sweep)
 del _sys, _Path, _bridge
 
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
@@ -73,8 +74,8 @@ M_SIGMA_0 = mp.mpf("1192.642")
 M_SIGMA_MINUS = mp.mpf("1197.449")
 M_LAMBDA = mp.mpf("1115.683")
 # Mesons (for cross-checks if needed)
-M_PION = mp.mpf("139.57039")
-M_K = mp.mpf("493.677")
+M_PION = mp.mpf(M_PI_PM_MEV_VALIDATION)
+M_K = mp.mpf(M_K_PM_MEV_VALIDATION)
 
 # Targets
 LAM_P = (M_P / M_E) * HBAR_Q**2 / VOL_B3_LIT
@@ -237,7 +238,7 @@ def main() -> int:
     # ── Probe 7: Try the muon (CAL-2 sanity) ──────────────────
     # For muon: m_μ/m_e = Vol(4_1)/ℏ_q² (no λ_scale, no Skein)
     # If we forced the same formula structure:
-    lam_mu_implied = (mp.mpf("105.6583755") / M_E) * HBAR_Q**2 / VOL_41
+    lam_mu_implied = (mp.mpf(M_MU_MEV_VALIDATION) / M_E) * HBAR_Q**2 / VOL_41
     p7 = {
         "muon_check": "m_μ/m_e = Vol(4_1)/ℏ_q² × λ_μ + S(μ)",
         "lambda_mu_target": mp.nstr(lam_mu_implied, 25),

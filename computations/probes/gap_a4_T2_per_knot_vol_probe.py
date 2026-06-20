@@ -37,6 +37,7 @@ import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: F401
+from codata_constants import M_D_MEV_VALIDATION, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION, M_T_MEV_VALIDATION  # noqa: E402 (codata sweep)
 del _sys, _Path, _bridge
 
 from pathlib import Path
@@ -54,10 +55,10 @@ COMPUTE_DIR = HERE.parent
 Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
 
 M_E_MEV = mp.mpf("0.51099895069")
-M_P_MEV = mp.mpf("938.27208816")
-M_N_MEV = mp.mpf("939.56542052")
-M_D_MEV = mp.mpf("1875.61294257")
-M_T_MEV = mp.mpf("2808.92113298")
+M_P_MEV = mp.mpf(M_P_MEV_VALIDATION)
+M_N_MEV = mp.mpf(M_N_MEV_VALIDATION)
+M_D_MEV = mp.mpf(M_D_MEV_VALIDATION)
+M_T_MEV = mp.mpf(M_T_MEV_VALIDATION)
 M_HE3_MEV = mp.mpf("2808.39160743")
 M_HE4_MEV = mp.mpf("3727.37941")
 
