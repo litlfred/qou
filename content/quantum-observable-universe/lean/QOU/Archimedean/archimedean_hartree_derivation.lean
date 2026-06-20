@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Archimedean.archimedean_hartree_derivation — placeholder stub
 
@@ -28,13 +30,13 @@ class ArchimedeanHartreeDerivationContext where
   /-- The molecular-binding categorical input `Φ_1(M) : ℝ`. -/
   Phi_M : ℝ
   /-- The archimedean realisation of `Φ_1(M)`. -/
-  ρ_∞_Phi_M : ℝ
+  rho_inf_Phi_M : ℝ
   /-- Manuscript boxed identity:
-      `ρ_∞(Φ_1(M)) = Φ_1(M) · m_e · c² · α_EM² · (q + q⁻¹)⁻²` —
+      `rho_inf(Φ_1(M)) = Φ_1(M) · m_e · c² · α_EM² · (q + q⁻¹)⁻²` —
       the Hartree-energy prefactor times the molecular `(q + q⁻¹)⁻²`
       factor. -/
   claim_archimedean_factorisation :
-    ρ_∞_Phi_M = Phi_M * m_e * c ^ 2 * α_EM ^ 2 * (q + q⁻¹) ^ (-(2 : ℤ))
+    rho_inf_Phi_M = Phi_M * m_e * c ^ 2 * α_EM ^ 2 * (q + q⁻¹) ^ (-(2 : ℤ))
 
 /-- **Proposition statement** (from manuscript):
 
@@ -68,9 +70,9 @@ the Hartree energy.*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.ts
 theorem archimedean_hartree_derivation [ctx : ArchimedeanHartreeDerivationContext] :
-    ctx.ρ_∞_Phi_M
+    ctx.rho_inf_Phi_M
       = ctx.Phi_M * ctx.m_e * ctx.c ^ 2 * ctx.α_EM ^ 2
-        * (ctx.q + ctx.q⁻¹) ^ (-(2 : ℤ)) :=
-  ctx.claim_archimedean_factorisation
+        * (ctx.q + ctx.q⁻¹) ^ (-(2 : ℤ)) := by
+  refine ctx.claim_archimedean_factorisation
 
 end QOU.Archimedean

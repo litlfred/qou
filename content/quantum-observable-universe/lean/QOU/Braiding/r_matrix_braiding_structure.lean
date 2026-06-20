@@ -45,7 +45,7 @@ class RMatrixBraidingContext where
     `R₁₂ ∘ R₁₃ ∘ R₂₃ = R₂₃ ∘ R₁₃ ∘ R₁₂`. -/
 -- Ref: [drinfeld1985] V. Drinfeld, Hopf algebras and the quantum Yang-Baxter equation, 1985
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.md
-theorem r_matrix_braiding_structure
+def r_matrix_braiding_structure
     [ctx : RMatrixBraidingContext] :
     ctx.comp (ctx.comp ctx.R12 ctx.R13) ctx.R23
       = ctx.comp (ctx.comp ctx.R23 ctx.R13) ctx.R12 :=

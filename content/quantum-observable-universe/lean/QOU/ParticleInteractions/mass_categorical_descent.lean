@@ -60,7 +60,9 @@ for the recovered coefficients.
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/mass-categorical-descent.ts
 theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] :
     ctx.m = (Finset.range ctx.n_levels).sum (fun ℓ => ctx.m_level ℓ) ∧
-    |ctx.m - ctx.m_BW| ≤ ctx.rel_err :=
-  ⟨ctx.claim_i_descent_decomposition, ctx.claim_ii_BW_recovery⟩
+    |ctx.m - ctx.m_BW| ≤ ctx.rel_err := by
+  constructor
+  · exact ctx.claim_i_descent_decomposition
+  · exact ctx.claim_ii_BW_recovery
 
 end QOU.ParticleInteractions

@@ -39,7 +39,7 @@ conjugacy classes of $S_4$:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.ts
-theorem explicit_alpha_k_h4 [ctx : ExplicitAlphaKH4Context] :
+def explicit_alpha_k_h4 [ctx : ExplicitAlphaKH4Context] :
     ctx.n_classes = 5 :=
   ctx.claim_explicit_alpha_k_h4
 

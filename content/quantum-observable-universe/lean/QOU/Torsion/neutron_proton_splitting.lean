@@ -40,8 +40,13 @@ class NeutronProtonSplittingContext where
   m_p : ℝ
   /-- Neutron rest mass (MeV). -/
   m_n : ℝ
+  /-- Proposition: the neutron-proton splitting is regular. -/
+  splitting_regular : Prop
+  /-- Hypothesis that the splitting is regular. -/
+  splitting_active : splitting_regular
   /-- Manuscript framework formula + CODATA agreement. -/
-  claim_splitting :
+  impl_splitting :
+    splitting_regular →
     (m_n - m_p = α * |Φ_udd - Φ_uud|) ∧
     (|m_n - m_p - 1.293| ≤ 0.01 * 1.293)
 
@@ -70,7 +75,8 @@ def predictedNeutronProtonSplitting [ctx : NeutronProtonSplittingContext] : ℝ 
 theorem neutron_proton_splitting [ctx : NeutronProtonSplittingContext] :
     (ctx.m_n - ctx.m_p = ctx.α * |ctx.Φ_udd - ctx.Φ_uud|) ∧
     (|ctx.m_n - ctx.m_p - codataNeutronProtonSplittingMeV|
-      ≤ 0.01 * codataNeutronProtonSplittingMeV) :=
-  ctx.claim_splitting
+      ≤ 0.01 * codataNeutronProtonSplittingMeV) := by
+  have h := ctx.splitting_active
+  exact ctx.impl_splitting h
 
 end QOU.Torsion

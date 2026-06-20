@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import Mathlib.Data.Real.StarOrdered
 import QOU.MathlibExt.SDP
 import QOU.MathlibExt.SDPEmptyConstraints
 import QOU.MathlibExt.SDPRealUniqueness

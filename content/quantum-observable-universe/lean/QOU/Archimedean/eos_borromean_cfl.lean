@@ -172,8 +172,8 @@ theorem eos_borromean_cfl [ctx : EosBorromeanCflContext] :
       (5 * ctx.M_D)) * (3 * ctx.n_B) ^ ((5 : ℝ) / 3) +
       3 * ctx.Δ_CFL ^ 2 * ctx.μ_q ^ 2 / Real.pi ^ 2 ∧
     ctx.P_D / ctx.P_B = (ctx.M_B / ctx.M_D) * (3 : ℝ) ^ ((5 : ℝ) / 3) +
-      3 * ctx.Δ_CFL ^ 2 * ctx.μ_q ^ 2 / (Real.pi ^ 2 * ctx.P_B) :=
-  ⟨ctx.claim_i_borromean_eos, ctx.claim_ii_cfl_eos,
-   ctx.claim_iii_stiffness_ratio⟩
+      3 * ctx.Δ_CFL ^ 2 * ctx.μ_q ^ 2 / (Real.pi ^ 2 * ctx.P_B) := by
+  refine ⟨ctx.claim_i_borromean_eos, ctx.claim_ii_cfl_eos,
+          ctx.claim_iii_stiffness_ratio⟩
 
 end QOU.Archimedean

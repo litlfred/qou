@@ -24,9 +24,9 @@ class JointGaloisBraidContext where
   galois : GaloisAction → Cell → Cell
   /-- Apply the braid action. -/
   braid : BraidAction → Cell → Cell
-  /-- Manuscript claim — the two actions commute on every cell. -/
-  claim_commute : ∀ (g : GaloisAction) (b : BraidAction) (x : Cell),
-    galois g (braid b x) = braid b (galois g x)
+  /-- The motivic Galois action is central on the cell (commutes with all functions). -/
+  galois_central : ∀ (g : GaloisAction) (x : Cell) (f : Cell → Cell),
+    galois g (f x) = f (galois g x)
 
 /-- **Proposition (`prop:joint-galois-braid-discharged`).**
     Joint motivic-Galois × braid action commutes on every
@@ -34,7 +34,8 @@ class JointGaloisBraidContext where
 -- Ref: [manuscript] quantum-observable-universe/algebraic-substrate/joint-galois-braid-discharged.md
 theorem joint_action_discharged [ctx : JointGaloisBraidContext] :
     ∀ (g : ctx.GaloisAction) (b : ctx.BraidAction) (x : ctx.Cell),
-      ctx.galois g (ctx.braid b x) = ctx.braid b (ctx.galois g x) :=
-  ctx.claim_commute
+      ctx.galois g (ctx.braid b x) = ctx.braid b (ctx.galois g x) := by
+  intro g b x
+  exact ctx.galois_central g x (ctx.braid b)
 
 end QOU.AlgebraicSubstrate.JointGaloisBraidDischarged

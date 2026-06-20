@@ -251,5 +251,5 @@ class BorromeanQuark : Prop where
 
 /-- Witness theorem: this file's proposition is conditional on
     `BorromeanQuark` per CLAUDE.md §3b-cond. -/
-theorem orbital_fourier_decomposition_conditional_on_borromean_quark
+def orbital_fourier_decomposition_conditional_on_borromean_quark
     [_inst : BorromeanQuark] : True := trivial

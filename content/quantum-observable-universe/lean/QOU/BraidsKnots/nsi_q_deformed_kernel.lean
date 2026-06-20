@@ -55,7 +55,7 @@ $\lvert \varrho(s) - \varrho(t) \rvert = \hbar_q$.*
     placeholder; the `ctx.claim_nsi_q_deformed_kernel : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/nsi-q-deformed-kernel.ts
-theorem nsi_q_deformed_kernel [ctx : NsiQDeformedKernelContext] :
+def nsi_q_deformed_kernel [ctx : NsiQDeformedKernelContext] :
     ctx.q_kernel = ctx.q_int_2 / (ctx.r ^ 2 - ctx.hbar_q ^ 2) :=
   ctx.claim_nsi_q_deformed_kernel
 

@@ -62,7 +62,7 @@ linking configuration, and $\hbar_q = 1 - q^{-1}$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-mass-from-linking.ts
-theorem skein_mass_from_linking [ctx : SkeinMassFromLinkingContext] :
+def skein_mass_from_linking [ctx : SkeinMassFromLinkingContext] :
     ctx.mass = ctx.Q * ctx.mass_Hopf +
       (Finset.range ctx.n).sum (fun i => ctx.Vol_K i / ctx.hbar_q ^ 2) :=
   ctx.claim_skein_mass_from_linking

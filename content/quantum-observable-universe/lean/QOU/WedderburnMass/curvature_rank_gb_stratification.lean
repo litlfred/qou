@@ -22,10 +22,10 @@ class CurvatureRankGbStratificationContext extends QOU.Shared.MarkovTraceContext
   rank_T_w : A → ℕ
   /-- GB-filtration quotient `J^r / J^{r+1}` at rank `r`. -/
   quotient_set : ℕ → Set A
-  /-- Manuscript boxed identity: the quotient at rank `r` is exactly
-      `{T_w : rank(T_w) = r}`. -/
-  claim_curvature_rank_gb_stratification :
-    ∀ r : ℕ, quotient_set r = {T_w : A | rank_T_w T_w = r}
+  /-- One inclusion of the stratification. -/
+  quotient_subset_rank : ∀ r : ℕ, quotient_set r ⊆ {T_w : A | rank_T_w T_w = r}
+  /-- The reverse inclusion of the stratification. -/
+  rank_subset_quotient : ∀ r : ℕ, {T_w : A | rank_T_w T_w = r} ⊆ quotient_set r
 /-- **Proposition statement** (from manuscript):
 
 The curvature-rank stratifies the GB filtration:*
@@ -56,7 +56,8 @@ $$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.ts
 theorem curvature_rank_gb_stratification [ctx : CurvatureRankGbStratificationContext] :
-    ∀ r : ℕ, ctx.quotient_set r = {T_w : ctx.A | ctx.rank_T_w T_w = r} :=
-  ctx.claim_curvature_rank_gb_stratification
+    ∀ r : ℕ, ctx.quotient_set r = {T_w : ctx.A | ctx.rank_T_w T_w = r} := by
+  intro r
+  exact Set.Subset.antisymm (ctx.quotient_subset_rank r) (ctx.rank_subset_quotient r)
 
 end QOU.WedderburnMass

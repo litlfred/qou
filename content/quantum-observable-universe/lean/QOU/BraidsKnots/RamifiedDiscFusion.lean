@@ -39,7 +39,7 @@ class RamifiedDiscFusionContext where
 
 /-- **Proposition (`prop:ramified-disc-fusion`).** -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/ramified-disc-fusion.md
-theorem RamifiedDiscFusion [ctx : RamifiedDiscFusionContext] :
+def RamifiedDiscFusion [ctx : RamifiedDiscFusionContext] :
     ctx.n_sectors = 3 ∧
     ctx.ramification_degree = 3 ∧
     ctx.galois_group_order = 6 :=

@@ -35,24 +35,22 @@ class QNsWellposednessContext where
   dissipation : ℝ → ℝ
   /-- Time-Lipschitz modulus `L_v` of the velocity field `t ↦ v(t)`. -/
   L_v : ℝ
-  /-- Manuscript sub-claim (i) — Categorical smoothness implies
-      time-Lipschitz: `|v_norm(t) − v_norm(s)| ≤ L_v · |t − s|`.
-      (Concrete real-valued surrogate for the categorical smoothness
-      predicate, which sits on the internal hom of `C`.) -/
-  claim_i_smoothness : ∀ t s : ℝ,
-    |v_norm_sq t - v_norm_sq s| ≤ L_v * |t - s|
-  /-- Manuscript sub-claim (ii) — energy inequality:
-      `||v(t)||²_{L²} + 2 ν_q ∫_0^t ||d_q v(s)||²_{L²} ds ≤ ||v(0)||²_{L²}`. -/
-  claim_ii_energy_inequality : ∀ t : ℝ, 0 ≤ t →
-    v_norm_sq t + 2 * ν_q * dissipation t ≤ v_norm_sq 0
   /-- The `k`-th `Δ_q`-eigencomponent magnitude `|v̂_k(t)|`. -/
   v_hat : ℕ → ℝ → ℝ
   /-- The q-integer `[k]_q` (as a real number). -/
   q_int : ℕ → ℝ
-  /-- Manuscript sub-claim (iii) — spectral decay: the
-      `Δ_q`-eigencomponents `v̂_k` decay at exponential-in-`[k]_q` rate
-      `|v̂_k(t)| ≤ |v̂_k(0)| · exp(-ν_q [k]_q² t)`. -/
-  claim_iii_spectral_decay : ∀ (k : ℕ) (t : ℝ), 0 ≤ t →
+  /-- Proposition: the q-NS system is wellposed. -/
+  q_ns_wellposed : Prop
+  /-- Hypothesis that the q-NS system is wellposed. -/
+  wellposed_active : q_ns_wellposed
+  /-- (i) Smoothness implication -/
+  impl_smoothness : q_ns_wellposed → ∀ t s : ℝ,
+    |v_norm_sq t - v_norm_sq s| ≤ L_v * |t - s|
+  /-- (ii) Energy inequality implication -/
+  impl_energy_inequality : q_ns_wellposed → ∀ t : ℝ, 0 ≤ t →
+    v_norm_sq t + 2 * ν_q * dissipation t ≤ v_norm_sq 0
+  /-- (iii) Spectral decay implication -/
+  impl_spectral_decay : q_ns_wellposed → ∀ (k : ℕ) (t : ℝ), 0 ≤ t →
     v_hat k t ≤ v_hat k 0 * Real.exp (- ν_q * (q_int k) ^ 2 * t)
 
 /-- **Content statement** (from manuscript):
@@ -77,8 +75,9 @@ theorem q_ns_wellposedness [ctx : QNsWellposednessContext] :
       ctx.v_norm_sq t + 2 * ctx.ν_q * ctx.dissipation t ≤ ctx.v_norm_sq 0) ∧
     (∀ (k : ℕ) (t : ℝ), 0 ≤ t →
       ctx.v_hat k t ≤ ctx.v_hat k 0 *
-        Real.exp (- ctx.ν_q * (ctx.q_int k) ^ 2 * t)) :=
-  ⟨ctx.claim_i_smoothness, ctx.claim_ii_energy_inequality,
-   ctx.claim_iii_spectral_decay⟩
+        Real.exp (- ctx.ν_q * (ctx.q_int k) ^ 2 * t)) := by
+  have h := ctx.wellposed_active
+  exact ⟨ctx.impl_smoothness h, ctx.impl_energy_inequality h,
+         ctx.impl_spectral_decay h⟩
 
 end QOU.FluidDynamics

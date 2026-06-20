@@ -296,7 +296,7 @@ structure ClassicalLimitDegeneration where
   /-- (1) At q = 1, T² = 1 (symmetric group relation). -/
   symmetric_degeneration :
     hecke_q.q = 1 →
-    ∀ (i : Fin (n - 1)),
+    ∀ (i : Fin (hecke_q.n - 1)),
     hecke_q.mul (hecke_q.T i) (hecke_q.T i) = hecke_q.one
   /-- (2) ℏ_q = 1 - q⁻¹ → 0 as q → 1. -/
   planck_limit : ∀ (ε : ℝ), 0 < ε →

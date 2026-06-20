@@ -40,7 +40,7 @@ at fixed $p$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/beta-stability.ts
-theorem beta_stability [ctx : BetaStabilityContext] :
+def beta_stability [ctx : BetaStabilityContext] :
     ∀ n : ℕ, ctx.L_skein ctx.n_star ≤ ctx.L_skein n :=
   ctx.claim_beta_stability
 

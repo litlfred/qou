@@ -2924,11 +2924,11 @@
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
           "version": "v1",
-          "script_hash": "bbdd1b3cd73d",
-          "script_commit_sha": "af67b28e1f2fa71f23c4127511e74668646878e6"
+          "script_hash": "3d6da1d6f221",
+          "script_commit_sha": "59988482014b44b7f22be60f49df38000c2228c2"
         },
-        "reviewed_at": "2026-06-17T13:20:50.844Z",
-        "reviewed_sha": "af67b28e1f2fa71f23c4127511e74668646878e6",
+        "reviewed_at": "2026-06-20T11:45:15.347Z",
+        "reviewed_sha": "e451d436f3729e99f9df9615b034a95ad2fa8407",
         "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
@@ -3013,5 +3013,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-17T13:20:50.844Z"
+  "updated_at": "2026-06-20T11:45:15.347Z"
 }

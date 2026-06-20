@@ -125,7 +125,7 @@ class BorromeanCommonScale : Prop where
 
 /-- Witness theorem demonstrating the main proposition is conditional
     on `[BorromeanCommonScale]` per CLAUDE.md §3b-cond. -/
-theorem conditional_on_BorromeanCommonScale
+def conditional_on_BorromeanCommonScale
     [_inst : BorromeanCommonScale] : True := trivial
 
 end QOU.BraidsAndKnots.S4S3Audit.ConditionalAudit

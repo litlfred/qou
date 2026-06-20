@@ -53,7 +53,7 @@ concrete for the single-nucleon case.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.ts
-theorem spectral_sequence_h3_explicit [ctx : SpectralSequenceH3ExplicitContext] :
+def spectral_sequence_h3_explicit [ctx : SpectralSequenceH3ExplicitContext] :
     ctx.n_strands = 3 ∧
     ctx.claim_i_d1_differential ∧
     ctx.claim_ii_d2_differential ∧

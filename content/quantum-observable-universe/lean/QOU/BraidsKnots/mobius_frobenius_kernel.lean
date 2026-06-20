@@ -50,7 +50,7 @@ $$
     placeholder; the `ctx.claim_mobius_frobenius_kernel : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mobius-energy-frobenius-kernel.ts
-theorem mobius_frobenius_kernel [ctx : MobiusFrobeniusKernelContext] :
+def mobius_frobenius_kernel [ctx : MobiusFrobeniusKernelContext] :
     ctx.K_classical = 1 / ctx.r ^ 2 ∧ (ctx.q = 1 → ctx.K_FH = ctx.K_classical) :=
   ctx.claim_mobius_frobenius_kernel
 

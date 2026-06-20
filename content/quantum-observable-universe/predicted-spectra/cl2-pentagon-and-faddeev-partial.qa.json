@@ -3088,6 +3088,24 @@
         "reviewed_at": "2026-06-15T13:25:43.317Z",
         "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
         "notes": "Goal or proof is trivial/vacuous."
+      },
+      {
+        "field_hash": {
+          "lean": "43fb9bbfdac7"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean:86 [placeholder-true] theorem faddeev_kashaev_consistency_at_zero",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "3d6da1d6f221",
+          "script_commit_sha": "59988482014b44b7f22be60f49df38000c2228c2"
+        },
+        "reviewed_at": "2026-06-20T11:45:15.347Z",
+        "reviewed_sha": "e451d436f3729e99f9df9615b034a95ad2fa8407",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "proof-no-false-premise": [
@@ -3151,5 +3169,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T13:25:43.317Z"
+  "updated_at": "2026-06-20T11:45:15.347Z"
 }

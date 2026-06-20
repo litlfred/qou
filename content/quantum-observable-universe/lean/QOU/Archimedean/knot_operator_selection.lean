@@ -1,4 +1,6 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Real.Basic
+
 
 /-!
 # QOU.Archimedean.knot_operator_selection — placeholder stub
@@ -36,7 +38,7 @@ class KnotOperatorSelectionContext where
       equals the sum of isotypic contributions
       `tr(Φ) = Σ_λ d_λ(q) · tr(Φ_λ)`. -/
   claim_i_spectral_decomposition :
-    tr_Phi = (Finset.range n_partitions).sum (fun λ => tr_Phi_lambda λ)
+    tr_Phi = (Finset.range n_partitions).sum (fun l => tr_Phi_lambda l)
   /-- Pair-production action value `S(γ₁, γ₂)`. -/
   action_pair : ℝ
   /-- Sum of per-channel contributions `Σ_λ d_λ · tr_λ(...)`. -/
@@ -82,14 +84,14 @@ states.*
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/knot-operator-selection.ts
 theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] :
     ctx.tr_Phi = (Finset.range ctx.n_partitions).sum
-                   (fun λ => ctx.tr_Phi_lambda λ) ∧
+                   (fun l => ctx.tr_Phi_lambda l) ∧
     ctx.action_pair = ctx.channel_sum ∧
     ctx.pairing_kernel_dim = 0 ∧
     (∀ Φ_alt : ctx.CategoricalObj → ctx.CategoricalObj,
-      ctx.is_on_shell Φ_alt → ctx.action_Phi ≤ ctx.action_alt Φ_alt) :=
-  ⟨ctx.claim_i_spectral_decomposition,
-   ctx.claim_ii_multichannel_pair_production,
-   ctx.claim_iii_frobenius_demand_supply,
-   ctx.claim_iv_minimum_action_selection⟩
+      ctx.is_on_shell Φ_alt → ctx.action_Phi ≤ ctx.action_alt Φ_alt) := by
+  refine ⟨ctx.claim_i_spectral_decomposition,
+          ctx.claim_ii_multichannel_pair_production,
+          ctx.claim_iii_frobenius_demand_supply,
+          ctx.claim_iv_minimum_action_selection⟩
 
 end QOU.Archimedean

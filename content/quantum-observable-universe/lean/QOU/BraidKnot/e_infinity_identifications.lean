@@ -80,7 +80,7 @@ derivation status per term.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.ts
-theorem e_infinity_identifications [ctx : EInfinityIdentificationsContext] :
+def e_infinity_identifications [ctx : EInfinityIdentificationsContext] :
     ctx.m_total =
       (Finset.range ctx.n_pages).sum (fun p => ctx.page_pairing p) +
       ctx.ribbon_closure + ctx.frobenius_co_casimir ∧

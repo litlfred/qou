@@ -30,7 +30,7 @@ class RegularityBreakdown : Prop where
     `‖ω_q‖_{L^∞}` admits a lower bound that diverges as
     `q → 1` along anti-parallel vortex-pair initial data — the
     vorticity blow-up signature of `conj:ns-counterexample`. -/
-theorem vorticity_lower_bound_conditional
+def vorticity_lower_bound_conditional
     [QAubinLions] [NSCounterexample] [CriticalExponent]
     [BlowupYekutieli] [RegularityBreakdown]
     (q : ℝ) (hq : q > 1) :

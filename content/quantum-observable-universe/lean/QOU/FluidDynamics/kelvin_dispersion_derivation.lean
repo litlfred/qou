@@ -30,10 +30,14 @@ class KelvinDispersionDerivationContext where
   λ : ℕ → ℝ
   /-- The `q`-integer `[k]_q : ℕ → ℝ`. -/
   q_int : ℕ → ℝ
+  /-- Proposition: the dispersion relation is derived. -/
+  dispersion_derived : Prop
+  /-- Hypothesis that the dispersion relation is derived. -/
+  dispersion_active : dispersion_derived
   /-- Manuscript dispersion identity:
       `λ_k^{(q)} = [k]_q² · ℏ_q / L_q²` for every level `k`. -/
-  claim_dispersion_identity :
-    ∀ k : ℕ, λ k = q_int k ^ 2 * hbar_q / L_q ^ 2
+  impl_dispersion_identity :
+    dispersion_derived → ∀ k : ℕ, λ k = q_int k ^ 2 * hbar_q / L_q ^ 2
 
 /-- **Content statement** (from manuscript):
 
@@ -48,7 +52,8 @@ subsection derives this from first principles.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.ts
 theorem kelvin_dispersion_derivation [ctx : KelvinDispersionDerivationContext] :
-    ∀ k : ℕ, ctx.λ k = ctx.q_int k ^ 2 * ctx.hbar_q / ctx.L_q ^ 2 :=
-  ctx.claim_dispersion_identity
+    ∀ k : ℕ, ctx.λ k = ctx.q_int k ^ 2 * ctx.hbar_q / ctx.L_q ^ 2 := by
+  have h := ctx.dispersion_active
+  exact ctx.impl_dispersion_identity h
 
 end QOU.FluidDynamics

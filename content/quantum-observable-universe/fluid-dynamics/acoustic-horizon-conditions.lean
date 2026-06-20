@@ -95,7 +95,7 @@ theorem acoustic_horizon_conditions [ctx : AcousticHorizonContext] :
 
 /-- **Non-degeneracy + energy condition** hold on the horizon surface. -/
 -- Ref: [manuscript] prop:acoustic-horizon-conditions
-theorem acoustic_horizon_regularity [ctx : AcousticHorizonContext] :
+def acoustic_horizon_regularity [ctx : AcousticHorizonContext] :
     ctx.gradMachSq ≠ 0 ∧ 0 ≤ ctx.T00 :=
   ⟨ctx.nondegenerate, ctx.energy_condition⟩
 

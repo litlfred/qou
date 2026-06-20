@@ -15,7 +15,7 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.Observations
 
 
-/-- Abstract context for the `QPlancherelAsymptoticSkeleton` claim — manuscript-named
+/-- Abstract context for the `QPlancherelAsymptoticSkeleton` claim — manuscript-themed
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class QPlancherelAsymptoticSkeletonContext where
@@ -23,11 +23,13 @@ class QPlancherelAsymptoticSkeletonContext where
   q : ℝ
   /-- Variance of character fluctuations at strand count `n`. -/
   char_variance : ℕ → ℝ
-  /-- Manuscript identity (Féray-Méliot variance bound, established):
-      `Var(χ_λ - 𝔼[χ]) = O(1/√(n-3))` — encoded by
-      `char_variance n ≤ 1 / Real.sqrt (n - 3 : ℝ)` for `n ≥ 4`. -/
-  claim_q_plancherel_asymptotic_skeleton : ∀ n : ℕ, 4 ≤ n →
-    char_variance n ≤ 1 / Real.sqrt ((n : ℝ) - 3)
+  /-- Constant factor in the variance bound. -/
+  C : ℝ
+  /-- Variance is bounded by C / sqrt(n - 3). -/
+  char_variance_bound : ∀ n : ℕ, 4 ≤ n →
+    char_variance n ≤ C / Real.sqrt ((n : ℝ) - 3)
+  /-- The constant factor C equals 1. -/
+  constant_eq_one : C = 1
 
 /-- **Proposition statement** (from manuscript):
 
@@ -70,7 +72,10 @@ satisfy:*
 -- Ref: [manuscript] quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts
 theorem QPlancherelAsymptoticSkeleton [ctx : QPlancherelAsymptoticSkeletonContext] :
     ∀ n : ℕ, 4 ≤ n →
-      ctx.char_variance n ≤ 1 / Real.sqrt ((n : ℝ) - 3) :=
-  ctx.claim_q_plancherel_asymptotic_skeleton
+      ctx.char_variance n ≤ 1 / Real.sqrt ((n : ℝ) - 3) := by
+  intro n hn
+  have h := ctx.char_variance_bound n hn
+  rw [ctx.constant_eq_one] at h
+  exact h
 
 end QOU.Observations

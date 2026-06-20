@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "c113e79fa763",
-    "ts": "bee2793311b3",
+    "ts": "3c6d28f1995c",
     "lean": "293675a5a868"
   },
   "criteria": {
@@ -3139,6 +3139,24 @@
         "reviewed_at": "2026-06-15T13:25:43.317Z",
         "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
         "notes": "Placeholder stub is unformalised."
+      },
+      {
+        "field_hash": {
+          "lean": "293675a5a868"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/lean/QOU/BraidKnot/e_infinity_identifications.lean:83 [tuple-projection] theorem e_infinity_identifications [ctx : EInfinityIdentificationsContext] :",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "3d6da1d6f221",
+          "script_commit_sha": "59988482014b44b7f22be60f49df38000c2228c2"
+        },
+        "reviewed_at": "2026-06-20T11:45:15.347Z",
+        "reviewed_sha": "e451d436f3729e99f9df9615b034a95ad2fa8407",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "proof-no-trivial-true": [
@@ -3222,5 +3240,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T13:25:43.317Z"
+  "updated_at": "2026-06-20T11:45:15.347Z"
 }

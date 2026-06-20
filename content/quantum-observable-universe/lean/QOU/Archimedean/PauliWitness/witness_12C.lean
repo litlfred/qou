@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Archimedean.PauliWitness.witness_12C — placeholder stub
 
@@ -8,6 +10,8 @@ The full Lean statement is pending; this stub exists so the
 `lean.ref` URI `qou:QOU.Archimedean.PauliWitness.witness_12C` resolves to a real declaration in the `qou`
 Lake package.
 -/
+
+
 
 namespace QOU.Archimedean.PauliWitness
 
@@ -59,7 +63,7 @@ braid configuration.
 -- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-12c.ts
 theorem witness_12C [ctx : Witness12CContext] :
     ctx.Z = 6 ∧ ctx.N = 6 ∧ ctx.pre_reduction_terms = 479001600 ∧
-    ctx.net_terms = 12 ∧ |ctx.F_Pauli - 0.129| < 0.005 :=
-  ctx.claim_witness_12C
+    ctx.net_terms = 12 ∧ |ctx.F_Pauli - 0.129| < 0.005 := by
+  refine ctx.claim_witness_12C
 
 end QOU.Archimedean.PauliWitness

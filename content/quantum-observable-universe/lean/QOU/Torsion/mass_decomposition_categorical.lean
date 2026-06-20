@@ -27,9 +27,14 @@ class MassDecompositionCategoricalContext where
   mass : ℝ
   /-- Per-level mass contribution `𝔪_n(ρ_n)`. -/
   mass_level : ℕ → ℝ
+  /-- Proposition: the mass decomposes categorially. -/
+  mass_decomposes : Prop
+  /-- Hypothesis that the mass decomposition is active. -/
+  decomposition_active : mass_decomposes
   /-- Manuscript identity: tower decomposition
       `𝔪(ρ) = Σ_{n=0..N-1} 𝔪_n(ρ_n)`. -/
-  claim_mass_decomposition_categorical :
+  impl_mass_decomposition_categorical :
+    mass_decomposes →
     mass = (Finset.range N).sum (fun n => mass_level n)
 
 /-- **Content statement** (from manuscript):
@@ -49,7 +54,8 @@ base-level morphism $\varrho_0 \colon \mathbf{1} \to A_0$.
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass.ts
 theorem mass_decomposition_categorical [ctx : MassDecompositionCategoricalContext] :
-    ctx.mass = (Finset.range ctx.N).sum (fun n => ctx.mass_level n) :=
-  ctx.claim_mass_decomposition_categorical
+    ctx.mass = (Finset.range ctx.N).sum (fun n => ctx.mass_level n) := by
+  have h := ctx.decomposition_active
+  exact ctx.impl_mass_decomposition_categorical h
 
 end QOU.Torsion

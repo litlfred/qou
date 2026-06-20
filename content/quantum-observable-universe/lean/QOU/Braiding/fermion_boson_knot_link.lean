@@ -48,7 +48,7 @@ torus family on the Bring's surface:
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/fermion-boson-knot-link.ts
-theorem fermion_boson_knot_link [ctx : FermionBosonKnotLinkContext] :
+def fermion_boson_knot_link [ctx : FermionBosonKnotLinkContext] :
     (∀ n : ℕ, 1 ≤ n → (ctx.is_knot n ↔ Odd n)) ∧
     (∀ n : ℕ, 1 ≤ n → (ctx.is_link n ↔ Even n)) ∧
     (∀ n : ℕ, 1 ≤ n →

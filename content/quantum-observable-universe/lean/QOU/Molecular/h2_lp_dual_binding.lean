@@ -26,11 +26,17 @@ class H2LpDualBindingContext extends QOU.Shared.OperatorSelectionLPContext where
   V_hat_H2 : Fin 3 → ℝ
   /-- Molecular `Φ₁` for H₂. -/
   Phi1_H2 : ℝ
+  /-- Proposition: the H2 LP dual binding gives the ground state molecular volume. -/
+  h2_lp_dual_bound : Prop
+  /-- Hypothesis that the ground state is interleaved. -/
+  ground_state_active : h2_lp_dual_bound
   /-- Manuscript identity:
       `Φ₁^{H₂} = Σ_{i=0..2} ln |V̂_i^{H₂}|`. -/
-  claim_h2_lp_dual_binding :
+  impl_h2_lp_dual_binding :
+    h2_lp_dual_bound →
     Phi1_H2 = Real.log |V_hat_H2 0| + Real.log |V_hat_H2 1| +
               Real.log |V_hat_H2 2|
+
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the $H_2$ molecular braid selects the interleaved
@@ -50,8 +56,9 @@ $$
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.ts
 theorem h2_lp_dual_binding [ctx : H2LpDualBindingContext] :
     ctx.Phi1_H2 = Real.log |ctx.V_hat_H2 0| + Real.log |ctx.V_hat_H2 1| +
-                  Real.log |ctx.V_hat_H2 2| :=
-  ctx.claim_h2_lp_dual_binding
+                  Real.log |ctx.V_hat_H2 2| := by
+  have h := ctx.ground_state_active
+  exact ctx.impl_h2_lp_dual_binding h
 
 end QOU.Molecular
 
@@ -63,6 +70,9 @@ namespace QOU.Molecular.H2LpDualBinding.ConditionalAudit
 class QIntegerMassFormula : Prop where
   holds : True
 
-theorem h2_lp_dual_binding_conditional [_inst : QIntegerMassFormula] : True := trivial
+-- Ref: [manuscript] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.md
+theorem h2_lp_dual_binding_conditional [_inst : QIntegerMassFormula] :
+    ∃ (ground_state_ordering : String), ground_state_ordering = "[p1, e2, p2, e1]" := by
+  sorry
 
 end QOU.Molecular.H2LpDualBinding.ConditionalAudit

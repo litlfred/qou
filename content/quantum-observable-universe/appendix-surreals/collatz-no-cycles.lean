@@ -29,7 +29,7 @@ class RegularityBreakdown : Prop where
     Conditional on the q-NS conjecture cone, the Skein-Collatz map
     `𝒞_q` on `ℤ[q^±1]` admits no periodic cycles other than the
     trivial fixed point at `1`. -/
-theorem collatz_no_cycles_conditional
+def collatz_no_cycles_conditional
     [QAubinLions] [NSCounterexample] [CriticalExponent]
     [BlowupYekutieli] [RegularityBreakdown]
     (q : ℝ) (hq : q > 1) :

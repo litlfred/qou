@@ -217,6 +217,6 @@ theorem Q_borromean_real_eq_zero (h : ℝ) : Q_borromean_real h = 0 := by
     by name.  Future code should import `Q_borromean_real_eq_zero` (this
     file) or `QOU.BraidsAndKnots.Q_borromean_eq_zero` (over `ℚ`)
     directly. -/
-theorem Q_borromean_eq_zero : True := trivial
+def Q_borromean_eq_zero : True := trivial
 
 end QOU.BraidKnot

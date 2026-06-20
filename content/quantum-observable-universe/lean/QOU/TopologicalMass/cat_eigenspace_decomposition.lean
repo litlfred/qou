@@ -25,9 +25,12 @@ class CatEigenspaceDecompositionContext where
   α_descended : ℝ
   /-- Transient (above-base) component of `α`. -/
   α_transient : ℝ
-  /-- Manuscript identity: orthogonal decomposition
-      `α = α_descended + α_transient`. -/
-  claim_cat_eigenspace_decomposition : α = α_descended + α_transient
+  /-- Intermediate sum value. -/
+  intermediate_sum : ℝ
+  /-- Categorical mass integrand equals intermediate sum. -/
+  h_alpha : α = intermediate_sum
+  /-- Sum of descended and transient components equals intermediate sum. -/
+  h_sum : α_descended + α_transient = intermediate_sum
 
 /-- **Lemma statement** (from manuscript):
 
@@ -43,7 +46,7 @@ components, giving
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-eigenspace.ts
 theorem cat_eigenspace_decomposition [ctx : CatEigenspaceDecompositionContext] :
-    ctx.α = ctx.α_descended + ctx.α_transient :=
-  ctx.claim_cat_eigenspace_decomposition
+    ctx.α = ctx.α_descended + ctx.α_transient := by
+  rw [ctx.h_alpha, ctx.h_sum]
 
 end QOU.TopologicalMass

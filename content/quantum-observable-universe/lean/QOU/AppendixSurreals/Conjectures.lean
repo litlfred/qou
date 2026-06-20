@@ -55,6 +55,8 @@ current small base.
 
 namespace QOU.AppendixSurreals
 
+open Classical SurrealField Polynomial
+
 universe u
 
 variable (K : Type u) [SurrealField K]
@@ -242,10 +244,11 @@ theorem classicalLimit_of_tendsto {f : ℝ → ℝ} {x L : ℝ}
     (h : Filter.Tendsto f (nhdsWithin x {x}ᶜ) (nhds L)) :
     classicalLimit f x = L := by
   unfold classicalLimit
-  rw [dif_pos ⟨L, h⟩]
+  have h_exists : ∃ L, Filter.Tendsto f (nhdsWithin x {x}ᶜ) (nhds L) := ⟨L, h⟩
+  rw [dif_pos h_exists]
   -- ℝ is densely ordered without endpoints, so `nhdsWithin x {x}ᶜ`
   -- is non-trivial; uniqueness of limits then pins the choice.
-  exact tendsto_nhds_unique (Classical.choose_spec ⟨L, h⟩) h
+  exact tendsto_nhds_unique (Classical.choose_spec h_exists) h
 
 /-- The classical limit of a constant function is the constant. -/
 theorem classicalLimit_const (c x : ℝ) :
@@ -311,7 +314,7 @@ class ClassicalLimitIsStandardPart where
 class ArchimedeanIsStandardPart where
   /-- Essential surjectivity of the QOU standard-part functor. -/
   essentially_surjective :
-    ∀ (Q : QOU_Real), ∃ (SQ : QOU_Surreal K), QOU_StandardPart K SQ = Q
+    ∀ (Q : QOU_Real.{u}), ∃ (SQ : QOU_Surreal K), QOU_StandardPart K SQ = Q
 
 /-- **Conjecture: infinitesimal Frobenius axiom admits non-trivial
     solutions.**
@@ -388,21 +391,21 @@ records the gap.
     conjunct is provable for *any* `SQ` via
     `qou_standardPart_image_exists` and so was not part of the
     conjectural kernel.  It has been removed. -/
-class VacuumEpsilon where
+class VacuumEpsilon' where
   /-- Existence of a QOU with vacuum-energy exactly `ε`. -/
   exists_epsilon_vacuum :
     ∃ (SQ : QOU_Surreal K),
       QOU_VacuumEnergy SQ = epsilonSurreal K
 
-/-- The original (wider) form of `VacuumEpsilon` follows from the
+/-- The original (wider) form of `VacuumEpsilon'` follows from the
     narrowed conjecture together with the trivial standard-part
     lemma. -/
-theorem VacuumEpsilon.exists_epsilon_vacuum_with_st_image
-    [VacuumEpsilon K] :
+theorem VacuumEpsilon'.exists_epsilon_vacuum_with_st_image
+    [VacuumEpsilon' K] :
     ∃ (SQ : QOU_Surreal K),
       QOU_VacuumEnergy SQ = epsilonSurreal K
       ∧ ∃ (Q : QOU_Real), QOU_StandardPart K SQ = Q := by
-  obtain ⟨SQ, hSQ⟩ := VacuumEpsilon.exists_epsilon_vacuum (K := K)
+  obtain ⟨SQ, hSQ⟩ := VacuumEpsilon'.exists_epsilon_vacuum (K := K)
   exact ⟨SQ, hSQ, qou_standardPart_image_exists K SQ⟩
 
 /-- **Conjecture: Big Bang and heat-death as named-surreal evaluations.**
@@ -481,7 +484,7 @@ class KashaevSurreal where
     the irreducible kernel is just the inhabitation of `Knot`
     (the conjecture that knots can be denoted at all in the
     surreal-coefficient setting), recorded here. -/
-class JonesBirthday where
+class JonesBirthday (K : Type u) [SurrealField K] where
   /-- The conjectural kernel: `Knot` is inhabited.
       The strict-refinement content of the prose is not yet
       formalisable in the current placeholder vocabulary; see the
@@ -556,23 +559,23 @@ theorem c_q_eq_omega_at_one_plus_epsilon :
   unfold epsilonSurreal
   exact inv_inv (omegaSurreal K)
 
-/-- **Conditional consequence of `VacuumEpsilon`.** If the conjecture
+/-- **Conditional consequence of `VacuumEpsilon'`.** If the conjecture
     holds, the vacuum-energy of the witnessing QOU is non-zero (it
     equals the canonical infinitesimal `ε`, which is non-zero in
     every `SurrealField`). -/
-theorem VacuumEpsilon.vacuum_energy_ne_zero [VacuumEpsilon K] :
+theorem VacuumEpsilon'.vacuum_energy_ne_zero [VacuumEpsilon' K] :
     ∃ (SQ : QOU_Surreal K), QOU_VacuumEnergy SQ ≠ 0 := by
-  obtain ⟨SQ, hSQ⟩ := VacuumEpsilon.exists_epsilon_vacuum (K := K)
+  obtain ⟨SQ, hSQ⟩ := VacuumEpsilon'.exists_epsilon_vacuum (K := K)
   refine ⟨SQ, ?_⟩
   rw [hSQ]
   exact epsilonSurreal_ne_zero K
 
-/-- **Conditional consequence of `VacuumEpsilon`.** The vacuum
+/-- **Conditional consequence of `VacuumEpsilon'`.** The vacuum
     energy of the witnessing QOU is infinitesimal. -/
-theorem VacuumEpsilon.vacuum_energy_isInfinitesimal [VacuumEpsilon K] :
+theorem VacuumEpsilon'.vacuum_energy_isInfinitesimal [VacuumEpsilon' K] :
     ∃ (SQ : QOU_Surreal K),
       SurrealField.IsInfinitesimal (QOU_VacuumEnergy SQ) := by
-  obtain ⟨SQ, hSQ⟩ := VacuumEpsilon.exists_epsilon_vacuum (K := K)
+  obtain ⟨SQ, hSQ⟩ := VacuumEpsilon'.exists_epsilon_vacuum (K := K)
   refine ⟨SQ, ?_⟩
   rw [hSQ]
   exact epsilonSurreal_isInfinitesimal K
@@ -599,11 +602,10 @@ theorem HahnSubstrate.qou_real_inhabited
     the surreal QOU type is inhabited whenever the archimedean one
     is. -/
 theorem ArchimedeanIsStandardPart.qou_surreal_of_qou_real
-    [ArchimedeanIsStandardPart K] :
-    Nonempty QOU_Real → Nonempty (QOU_Surreal K) := by
+    [ctx : ArchimedeanIsStandardPart K] :
+    Nonempty QOU_Real.{u} → Nonempty (QOU_Surreal K) := by
   rintro ⟨Q⟩
-  obtain ⟨SQ, _⟩ :=
-    ArchimedeanIsStandardPart.essentially_surjective (K := K) Q
+  obtain ⟨SQ, _⟩ := ctx.essentially_surjective Q
   exact ⟨SQ⟩
 
 /-- **Conditional consequence of `InfinitesimalFrobenius`.** The
@@ -683,15 +685,15 @@ theorem Nimbers.card_eq_pow (p n : ℕ) :
     `OnPModularHecke` conjecture, and is provable without any class
     instance because both placeholder types are `Fin (p^n)`. -/
 theorem OnPModularHecke.card_cells_eq_card_nimbers (p n : ℕ) :
-    Fintype.card (KazhdanLusztigCells p n) = Fintype.card (Nimbers p n) := by
-  rw [KazhdanLusztigCells.card_eq_pow, Nimbers.card_eq_pow]
+    Fintype.card (KazhdanLusztigCells p n) = Fintype.card (Nimbers p n) :=
+  rfl
 
 /-- **Special case: `p = 2`.**  In the abelian case (Sprague–Grundy
     nim arithmetic at `p = 2`, modular Hecke at `q = -1`), both sides
     have cardinality `2^n`. -/
 theorem OnPModularHecke.card_eq_two_pow (n : ℕ) :
-    Fintype.card (KazhdanLusztigCells 2 n) = 2 ^ n := by
-  rw [KazhdanLusztigCells.card_eq_pow]
+    Fintype.card (KazhdanLusztigCells 2 n) = 2 ^ n :=
+  Fintype.card_fin (2 ^ n)
 
 /-! ### Provable implications and equivalences between conjectures
 
@@ -720,12 +722,12 @@ theorem HahnSubstrate.of_bigBangHeatDeath [BigBangHeatDeath K] :
     HahnSubstrate K :=
   ⟨BigBangHeatDeath.qou_surreal_inhabited (K := K)⟩
 
-/-- `VacuumEpsilon K` strengthens `BigBangHeatDeath K`: a witness
+/-- `VacuumEpsilon' K` strengthens `BigBangHeatDeath K`: a witness
     of the vacuum-energy conjecture is, in particular, a witness of
     the inhabitation conjecture. -/
-theorem BigBangHeatDeath.of_vacuumEpsilon [VacuumEpsilon K] :
+theorem BigBangHeatDeath.of_vacuumEpsilon [VacuumEpsilon' K] :
     BigBangHeatDeath K := by
-  obtain ⟨SQ, _⟩ := VacuumEpsilon.exists_epsilon_vacuum (K := K)
+  obtain ⟨SQ, _⟩ := VacuumEpsilon'.exists_epsilon_vacuum (K := K)
   exact ⟨⟨SQ⟩⟩
 
 /-- `InfinitesimalObservability K` strengthens `BigBangHeatDeath K`. -/
@@ -747,9 +749,9 @@ theorem BigBangHeatDeath.of_infinitesimalFrobenius
     `ArchimedeanIsStandardPart` does not on its own imply
     inhabitation of either type — it is a "transport" hypothesis. -/
 theorem BigBangHeatDeath.of_archimedeanIsStandardPart_and_qou_real
-    [ArchimedeanIsStandardPart K] (hQ : Nonempty QOU_Real) :
+    [ArchimedeanIsStandardPart K] (hQ : Nonempty QOU_Real.{u}) :
     BigBangHeatDeath K :=
-  ⟨ArchimedeanIsStandardPart.qou_surreal_of_qou_real (K := K) hQ⟩
+  ⟨ArchimedeanIsStandardPart.qou_surreal_of_qou_real K hQ⟩
 
 /-- A `KashaevSurreal K` instance witnesses every knot's volume
     asymptotic and therefore, in particular, exhibits a complex
@@ -769,12 +771,12 @@ The proximity relation `IsClose` (from `StandardPart`) gives a clean
 way to state the "infinitesimally close to a real reference value"
 half of each conjecture. -/
 
-/-- **Conditional consequence of `VacuumEpsilon`.** The vacuum energy
+/-- **Conditional consequence of `VacuumEpsilon'`.** The vacuum energy
     of the witnessing QOU is close to `0`. -/
-theorem VacuumEpsilon.vacuum_energy_isClose_zero [VacuumEpsilon K] :
+theorem VacuumEpsilon'.vacuum_energy_isClose_zero [VacuumEpsilon' K] :
     ∃ (SQ : QOU_Surreal K),
       IsClose (QOU_VacuumEnergy SQ) (0 : K) := by
-  obtain ⟨SQ, hinf⟩ := VacuumEpsilon.vacuum_energy_isInfinitesimal (K := K)
+  obtain ⟨SQ, hinf⟩ := VacuumEpsilon'.vacuum_energy_isInfinitesimal (K := K)
   refine ⟨SQ, ?_⟩
   unfold IsClose
   rw [sub_zero]
@@ -890,9 +892,9 @@ instance BigBangHeatDeath.instProvable : BigBangHeatDeath K :=
 instance HahnSubstrate.instProvable : HahnSubstrate K :=
   ⟨⟨(0 : K)⟩⟩
 
-/-- The narrow kernel of `VacuumEpsilon` is provable: pick `ε`
+/-- The narrow kernel of `VacuumEpsilon'` is provable: pick `ε`
     itself as the witness. -/
-instance VacuumEpsilon.instProvable : VacuumEpsilon K :=
+instance VacuumEpsilon'.instProvable : VacuumEpsilon' K :=
   ⟨⟨epsilonSurreal K, rfl⟩⟩
 
 /-- The narrow kernel of `InfinitesimalFrobenius` is provable: pick
@@ -903,6 +905,7 @@ instance InfinitesimalFrobenius.instProvable : InfinitesimalFrobenius K := by
   refine ⟨⟨1 + epsilonSurreal K, ?_, ?_⟩⟩
   · -- 1 + ε ≠ 1 because ε ≠ 0.
     intro h
+    unfold QOU_FrobeniusPairing at h
     have : epsilonSurreal K = 0 := by linarith
     exact epsilonSurreal_ne_zero K this
   · -- (1 + ε) - 1 = ε which is infinitesimal.

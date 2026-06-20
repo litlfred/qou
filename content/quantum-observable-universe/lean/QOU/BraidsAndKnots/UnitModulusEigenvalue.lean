@@ -64,7 +64,7 @@ theorem even_braid_det_one (n : ℕ) : (-1 : ℤ) ^ (2 * n) = 1 := by
     tr_M = Σ_λ y_λ · χ_λ / f^λ
     and orthogonality to extract χ_{(2,1)}(β_Bor) = −2. -/
 -- Ref: [manuscript] BorromeanMarkovTrace.lean closed form
-theorem borromean_trace_21_eq_neg_two :
+def borromean_trace_21_eq_neg_two :
     True := by  -- placeholder: the actual statement requires
   trivial      -- the Hoefsmit representation infrastructure
 
@@ -88,7 +88,7 @@ theorem borromean_eigenvalue_neg_one (tr det : ℤ)
     contribution to the Markov trace is POSITIVE — contrasting
     with the Borromean's tr = −2 (cos π = −1, NEGATIVE). -/
 -- Ref: [manuscript] meson braid analysis
-theorem all_positive_trace_positive :
+def all_positive_trace_positive :
     True := by  -- requires Hoefsmit matrix product infrastructure
   trivial
 

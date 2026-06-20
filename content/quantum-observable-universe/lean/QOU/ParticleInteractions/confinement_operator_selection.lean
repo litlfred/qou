@@ -157,17 +157,16 @@ class BrunnianConfinement where
   crossings : (n : Nat) → Braid n → Nat
   /-- The selected confinement braid on `n` strands, when one exists. -/
   confine : (n : Nat) → Option (Braid n)
-  /-- (G1, existence dichotomy) a nontrivial Brunnian braid — hence a confined
-      state — exists iff `n ≥ 3` (Brunnian links require ≥ 3 components).
-      `n = 2` (mesons) has none; the baryon/meson split is structural. -/
-  exists_iff_three_le :
-    ∀ n, (∃ b : Braid n, confine n = some b) ↔ 3 ≤ n
-  /-- (G2, selection) the selected braid is nontrivial Brunnian and
-      crossing-minimal among all nontrivial Brunnian `n`-braids. -/
-  is_minimal_brunnian :
-    ∀ n (b : Braid n), confine n = some b →
-      Nontrivial n b ∧ Brunnian n b ∧
-      (∀ b' : Braid n, Nontrivial n b' → Brunnian n b' → crossings n b ≤ crossings n b')
+  /-- Confinement exists only if n >= 3. -/
+  exists_impl_three_le : ∀ n, (∃ b : Braid n, confine n = some b) → 3 ≤ n
+  /-- Confinement exists if n >= 3. -/
+  three_le_impl_exists : ∀ n, 3 ≤ n → (∃ b : Braid n, confine n = some b)
+  /-- The selected confinement braid is nontrivial. -/
+  is_nontrivial : ∀ n (b : Braid n), confine n = some b → Nontrivial n b
+  /-- The selected confinement braid is Brunnian. -/
+  is_brunnian : ∀ n (b : Braid n), confine n = some b → Brunnian n b
+  /-- The selected confinement braid is crossing-minimal among Brunnian ones. -/
+  is_minimal : ∀ n (b : Braid n), confine n = some b → ∀ b' : Braid n, Nontrivial n b' → Brunnian n b' → crossings n b ≤ crossings n b'
 
 /-- The `n = 3` (baryon) specialisation: the confinement operator is the
     Borromean braid `𝓑₃ = (σ₀σ₁⁻¹)³` in the Hecke algebra `H₃(q)`. -/
@@ -197,8 +196,11 @@ theorem confinement_operator_selection [ctx : BorromeanConfinement] :
         (∀ b' : ctx.Braid n, ctx.Nontrivial n b' → ctx.Brunnian n b' →
             ctx.crossings n b ≤ ctx.crossings n b')) ∧
     ctx.B3 = ctx.borromean_word ∧
-    (∃ b : ctx.Braid 3, ctx.confine 3 = some b ∧ ctx.rep b = ctx.B3) :=
-  ⟨ctx.exists_iff_three_le, ctx.is_minimal_brunnian,
-   ctx.borromean_identity, ctx.confine_three⟩
+    (∃ b : ctx.Braid 3, ctx.confine 3 = some b ∧ ctx.rep b = ctx.B3) := by
+  refine ⟨?_, ?_, ctx.borromean_identity, ctx.confine_three⟩
+  · intro n
+    exact ⟨ctx.exists_impl_three_le n, ctx.three_le_impl_exists n⟩
+  · intro n b hb
+    exact ⟨ctx.is_nontrivial n b hb, ctx.is_brunnian n b hb, ctx.is_minimal n b hb⟩
 
 end QOU.ParticleInteractions

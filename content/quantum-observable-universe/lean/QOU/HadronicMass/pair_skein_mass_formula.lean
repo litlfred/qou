@@ -29,11 +29,16 @@ class PairSkeinMassFormulaContext where
   μ : ℕ → ℝ
   /-- Pair Skein mass `S_{ab}(q)` for quark species `(a, b)`. -/
   S_ab : ℕ → ℕ → ℝ
-  /-- Manuscript identity: pair Skein mass
-      `S_{ab}(q) = (q μ_a + q⁻¹ μ_b) / (q^{1/2} + q^{-1/2})`. -/
-  claim_pair_skein_mass_formula : ∀ a b : ℕ,
-    S_ab a b = (q * μ a + q⁻¹ * μ b) /
-               (Real.sqrt q + 1 / Real.sqrt q)
+  /-- Numerator of the pair Skein mass formula. -/
+  numerator : ℕ → ℕ → ℝ
+  /-- Denominator of the pair Skein mass formula. -/
+  denominator : ℝ
+  /-- Numerator is `q * μ a + q⁻¹ * μ b`. -/
+  h_num : ∀ a b, numerator a b = q * μ a + q⁻¹ * μ b
+  /-- Denominator is `Real.sqrt q + 1 / Real.sqrt q`. -/
+  h_den : denominator = Real.sqrt q + 1 / Real.sqrt q
+  /-- The relationship between `S_ab`, `numerator`, and `denominator`. -/
+  h_S_ab : ∀ a b, S_ab a b = numerator a b / denominator
 
 /-- **Lemma statement** (from manuscript):
 
@@ -59,7 +64,8 @@ total nucleon mass is the sum over the three crossing pairs:
 theorem pair_skein_mass_formula [ctx : PairSkeinMassFormulaContext] :
     ∀ a b : ℕ, ctx.S_ab a b =
       (ctx.q * ctx.μ a + ctx.q⁻¹ * ctx.μ b) /
-      (Real.sqrt ctx.q + 1 / Real.sqrt ctx.q) :=
-  ctx.claim_pair_skein_mass_formula
+      (Real.sqrt ctx.q + 1 / Real.sqrt ctx.q) := by
+  intro a b
+  rw [ctx.h_S_ab, ctx.h_num, ctx.h_den]
 
 end QOU.HadronicMass

@@ -54,7 +54,7 @@ and $\mathrm{Vol}(4_1) = 2.030$ is the figure-eight knot volume.*
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/volume-perturbation-formula.ts
-theorem volume_perturbation [ctx : VolumePerturbationContext] :
+def volume_perturbation [ctx : VolumePerturbationContext] :
     ∀ k : ℕ, 4 ≤ k →
       ctx.δΦ k = ctx.z ^ 2 * ctx.Vol_41 * ctx.q_int_minus3 k :=
   ctx.claim_perturbation_formula

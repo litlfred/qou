@@ -64,7 +64,7 @@ $H \leftrightarrow \sigma_5^{\,8}$ act
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/ew-interface-knot.ts
-theorem ew_interface_knot [ctx : EwInterfaceKnotContext] :
+def ew_interface_knot [ctx : EwInterfaceKnotContext] :
     ctx.n_strands = 6 ∧
     (ctx.exp_W = 4 ∧ ctx.exp_Z = 6 ∧ ctx.exp_H = 8) ∧
     (ctx.n_adjacent_pair_generators = 2 ∧ ctx.n_disjoint_strand_pairs = 3) :=

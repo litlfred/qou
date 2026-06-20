@@ -24,9 +24,10 @@ class ExistsAxiom1FrobeniusContext where
   h : A → ℝ
   /-- Frobenius pairing `(a, b) ↦ h(a · b)` induced map `A → A^∨`. -/
   pairing_map : A → A_dual
-  /-- Manuscript identity (axiom 1 — Haar Frobenius): the
-      pairing is non-degenerate, i.e. `pairing_map` is bijective. -/
-  claim_exists_axiom_1_frobenius : Function.Bijective pairing_map
+  /-- The Frobenius pairing map is injective. -/
+  pairing_inj : Function.Injective pairing_map
+  /-- The Frobenius pairing map is surjective. -/
+  pairing_surj : Function.Surjective pairing_map
 
 /-- **Lemma statement** (from manuscript):
 
@@ -40,7 +41,7 @@ axiom~(1) of [quantum observable universe](#def:quantum-observable-universe).
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.ts
 theorem exists_axiom_1_frobenius [ctx : ExistsAxiom1FrobeniusContext] :
-    Function.Bijective ctx.pairing_map :=
-  ctx.claim_exists_axiom_1_frobenius
+    Function.Bijective ctx.pairing_map := by
+  exact ⟨ctx.pairing_inj, ctx.pairing_surj⟩
 
 end QOU.QuantumObservableUniverse

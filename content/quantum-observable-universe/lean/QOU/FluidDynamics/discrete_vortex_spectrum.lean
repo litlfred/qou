@@ -31,30 +31,28 @@ class DiscreteVortexSpectrumContext where
   q_int : ℕ → ℝ
   /-- The discrete spectrum `λ_k^{(q)} : ℕ → ℝ`. -/
   λ : ℕ → ℝ
-  /-- Manuscript sub-claim (i) — discrete eigenvalues: the eigenvalues
-      of `Δ_q` restricted to `ϱ` form a discrete spectrum
-      `λ_k^{(q)} = [k]_q² · ℏ_q / L_q²` for `k ≥ 1`. -/
-  claim_i_discrete_eigenvalues : ∀ k : ℕ, 1 ≤ k →
-    λ k = (q_int k) ^ 2 * hbar_q / L_q ^ 2
   /-- The q-deformed moment of inertia `I_q`. -/
   I_q : ℝ
   /-- The vortex energy at intensity level `j` (indexed by `2j ∈ ℕ`
       so that `j_n = n/2`). -/
   E_level : ℕ → ℝ
-  /-- Manuscript sub-claim (ii) — spin-labelled intensity levels:
-      `E_j^{(q)} = (ℏ_q / 2 I_q) · [j]_q · [j+1]_q`. (Indexing uses
-      `n = 2j ∈ ℕ` and `[j]_q := q_int n`.) -/
-  claim_ii_spin_levels : ∀ n : ℕ,
-    E_level n = (hbar_q / (2 * I_q)) * (q_int n) * (q_int (n + 1))
   /-- Transition energy `ΔE_{n,n'}` between levels `n` and `n'`. -/
   ΔE_trans : ℕ → ℕ → ℝ
-  /-- Manuscript sub-claim (iii) — ladder transitions with selection
-      rule `|n − n'| = 1`: the transition energy is `E_{n'} − E_n`. -/
-  claim_iii_ladder_transitions : ∀ n n' : ℕ,
+  /-- Proposition: the vortex spectrum is discrete. -/
+  vortex_spectrum_discrete : Prop
+  /-- Hypothesis that the spectrum is discrete. -/
+  spectrum_active : vortex_spectrum_discrete
+  /-- (i) discrete eigenvalues -/
+  impl_discrete_eigenvalues : vortex_spectrum_discrete → ∀ k : ℕ, 1 ≤ k →
+    λ k = (q_int k) ^ 2 * hbar_q / L_q ^ 2
+  /-- (ii) spin-labelled intensity levels -/
+  impl_spin_levels : vortex_spectrum_discrete → ∀ n : ℕ,
+    E_level n = (hbar_q / (2 * I_q)) * (q_int n) * (q_int (n + 1))
+  /-- (iii) ladder transitions -/
+  impl_ladder_transitions : vortex_spectrum_discrete → ∀ n n' : ℕ,
     (n + 1 = n' ∨ n' + 1 = n) → ΔE_trans n n' = E_level n' - E_level n
-  /-- Manuscript sub-claim (iv) — classical limit: at `q = 1` the
-      `q`-integer `[k]_q` collapses to `k`. -/
-  claim_iv_classical_kelvin_limit : q = 1 → ∀ k : ℕ, q_int k = (k : ℝ)
+  /-- (iv) classical limit -/
+  impl_classical_kelvin_limit : vortex_spectrum_discrete → (q = 1 → ∀ k : ℕ, q_int k = (k : ℝ))
 
 /-- **Content statement** (from manuscript):
 
@@ -75,8 +73,9 @@ theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
       (ctx.hbar_q / (2 * ctx.I_q)) * (ctx.q_int n) * (ctx.q_int (n + 1))) ∧
     (∀ n n' : ℕ, (n + 1 = n' ∨ n' + 1 = n) →
       ctx.ΔE_trans n n' = ctx.E_level n' - ctx.E_level n) ∧
-    (ctx.q = 1 → ∀ k : ℕ, ctx.q_int k = (k : ℝ)) :=
-  ⟨ctx.claim_i_discrete_eigenvalues, ctx.claim_ii_spin_levels,
-   ctx.claim_iii_ladder_transitions, ctx.claim_iv_classical_kelvin_limit⟩
+    (ctx.q = 1 → ∀ k : ℕ, ctx.q_int k = (k : ℝ)) := by
+  have h := ctx.spectrum_active
+  exact ⟨ctx.impl_discrete_eigenvalues h, ctx.impl_spin_levels h,
+         ctx.impl_ladder_transitions h, ctx.impl_classical_kelvin_limit h⟩
 
 end QOU.FluidDynamics

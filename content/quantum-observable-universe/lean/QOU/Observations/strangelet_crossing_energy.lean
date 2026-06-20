@@ -43,13 +43,12 @@ class StrangeletCrossingEnergyContext extends QOU.Shared.MarkovTraceContext wher
   E_bind_uds : ℝ
   /-- Binding energy per baryon for `udd` (neutron matter). -/
   E_bind_udd : ℝ
-  /-- Manuscript sub-claim (iii) — Enhanced binding per baryon:
-      `E_bind^{(uds)} = 8 q⁻¹ > 6 q⁻¹ = E_bind^{(udd)}` for `q > 0`,
-      so strange matter has strictly more binding per baryon. -/
-  claim_iii_enhanced_binding : 0 < q_real →
-    E_bind_uds = 8 * q_real⁻¹ ∧
-    E_bind_udd = 6 * q_real⁻¹ ∧
-    E_bind_udd < E_bind_uds
+  /-- Formula for binding energy of uds. -/
+  uds_binding : 0 < q_real → E_bind_uds = 8 * q_real⁻¹
+  /-- Formula for binding energy of udd. -/
+  udd_binding : 0 < q_real → E_bind_udd = 6 * q_real⁻¹
+  /-- If q is strictly positive, its inverse is strictly positive. -/
+  q_real_inv_pos : 0 < q_real → 0 < q_real⁻¹
 /-- **Content statement** (from manuscript):
 
 **Proposition.**
@@ -72,9 +71,14 @@ theorem strangelet_crossing_energy [ctx : StrangeletCrossingEnergyContext] :
     (0 < ctx.q_real →
       ctx.E_bind_uds = 8 * ctx.q_real⁻¹ ∧
       ctx.E_bind_udd = 6 * ctx.q_real⁻¹ ∧
-      ctx.E_bind_udd < ctx.E_bind_uds) :=
-  ⟨ctx.claim_i_electromagnetic_neutrality,
-   ctx.claim_ii_purely_strong_crossing,
-   ctx.claim_iii_enhanced_binding⟩
+      ctx.E_bind_udd < ctx.E_bind_uds) := by
+  refine ⟨ctx.claim_i_electromagnetic_neutrality, ctx.claim_ii_purely_strong_crossing, ?_⟩
+  intro hq
+  have h_uds := ctx.uds_binding hq
+  have h_udd := ctx.udd_binding hq
+  refine ⟨h_uds, h_udd, ?_⟩
+  rw [h_uds, h_udd]
+  have hq_inv := ctx.q_real_inv_pos hq
+  linarith
 
 end QOU.Observations

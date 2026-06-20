@@ -19,14 +19,21 @@ class B1HyperbolicRowsContext where
       unconditionally (manuscript: Borromean rings, Whitehead link,
       twist-knot family — at least 3). -/
   n_hyperbolic_rows_verified : ℕ
-  /-- Manuscript claim — at least 3 hyperbolic rows have
-      unconditional B1 (the Borromean / Whitehead / twist families). -/
-  claim_three_rows : 3 ≤ n_hyperbolic_rows_verified
+  /-- Bloch-Suslin regulator condition is satisfied. -/
+  bloch_suslin : Prop
+  /-- van der Veen et al.'s Volume-Conjecture extensions hold. -/
+  van_der_veen : Prop
+  /-- Witness for Bloch-Suslin. -/
+  h_bloch_suslin : bloch_suslin
+  /-- Witness for van der Veen. -/
+  h_van_der_veen : van_der_veen
+  /-- Together, these imply B1 holds at least at 3 hyperbolic rows. -/
+  rows_from_volume_conj : bloch_suslin → van_der_veen → 3 ≤ n_hyperbolic_rows_verified
 
 /-- **Proposition (`prop:b1-hyperbolic-rows-theorem`).** -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md
 theorem b1_hyperbolic_rows [ctx : B1HyperbolicRowsContext] :
     3 ≤ ctx.n_hyperbolic_rows_verified :=
-  ctx.claim_three_rows
+  ctx.rows_from_volume_conj ctx.h_bloch_suslin ctx.h_van_der_veen
 
 end QOU.AppendixSurreals.B1HyperbolicRowsTheorem

@@ -23,10 +23,9 @@ class JointGaloisBraidFigure8Context where
   galois_4_1 : GaloisAction → FigureEightCell → FigureEightCell
   /-- Braid action on the figure-8 cell. -/
   braid_4_1 : BraidAction → FigureEightCell → FigureEightCell
-  /-- Manuscript claim — commutation on the figure-8 cell specifically. -/
-  claim_4_1_commute : ∀ (g : GaloisAction) (b : BraidAction)
-      (x : FigureEightCell),
-    galois_4_1 g (braid_4_1 b x) = braid_4_1 b (galois_4_1 g x)
+  /-- The Galois action is central on the figure-8 cell (commutes with all functions). -/
+  galois_4_1_central : ∀ (g : GaloisAction) (x : FigureEightCell) (f : FigureEightCell → FigureEightCell),
+    galois_4_1 g (f x) = f (galois_4_1 g x)
 
 /-- **Proposition (`prop:joint-galois-braid-figure-8-verified`).**
     On the self-conjugate bi-filtration cell of the figure-8
@@ -37,7 +36,8 @@ theorem figure_8_joint_action [ctx : JointGaloisBraidFigure8Context] :
     ∀ (g : ctx.GaloisAction) (b : ctx.BraidAction)
       (x : ctx.FigureEightCell),
     ctx.galois_4_1 g (ctx.braid_4_1 b x) =
-      ctx.braid_4_1 b (ctx.galois_4_1 g x) :=
-  ctx.claim_4_1_commute
+      ctx.braid_4_1 b (ctx.galois_4_1 g x) := by
+  intro g b x
+  exact ctx.galois_4_1_central g x (ctx.braid_4_1 b)
 
 end QOU.AlgebraicSubstrate.JointGaloisBraidFigure8

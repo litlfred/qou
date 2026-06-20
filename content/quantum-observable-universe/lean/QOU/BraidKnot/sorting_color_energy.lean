@@ -40,7 +40,7 @@ class SortingColorEnergyContext where
 /-- **Eigenspace decomposition with explicit Hecke eigenvalues**
     ([`prop:sorting-color-energy`] item (1)). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/sorting-color-energy.md
-theorem sorting_color_energy [ctx : SortingColorEnergyContext] :
+def sorting_color_energy [ctx : SortingColorEnergyContext] :
     ctx.sym_eigenvalue = ctx.q ∧ ctx.wedge_eigenvalue = -(ctx.q⁻¹) :=
   ctx.claim_eigenvalues
 

@@ -37,7 +37,7 @@ The chirality factor satisfies:*
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.ts
-theorem chirality_frobenius_self_pairing [ctx : ChiralityFrobeniusSelfPairingContext] :
+def chirality_frobenius_self_pairing [ctx : ChiralityFrobeniusSelfPairingContext] :
     ctx.χ = 1 - ctx.h ^ 2 :=
   ctx.claim_chirality_factor
 

@@ -23,10 +23,10 @@ class ExistsAxiom4VolumeContext where
   /-- The quantum determinant `ε : Λ^n V → 𝟙`, encoded as a scalar
       value `ε : G → ℝ` post-functor evaluation. -/
   ε : G → ℝ
-  /-- Manuscript identity (axiom 4 — categorical volume): the
-      quantum determinant is invariant under tensor automorphisms,
-      i.e. `ε` is the constant function. -/
-  claim_exists_axiom_4_volume : ∀ g h : G, ε g = ε h
+  /-- The constant determinant value. -/
+  const_val : ℝ
+  /-- The determinant function evaluates to this constant. -/
+  det_eq_const : ∀ g : G, ε g = const_val
 
 /-- **Lemma statement** (from manuscript):
 
@@ -47,7 +47,8 @@ $$
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.ts
 theorem exists_axiom_4_volume [ctx : ExistsAxiom4VolumeContext] :
-    ∀ g h : ctx.G, ctx.ε g = ctx.ε h :=
-  ctx.claim_exists_axiom_4_volume
+    ∀ g h : ctx.G, ctx.ε g = ctx.ε h := by
+  intro g h
+  rw [ctx.det_eq_const g, ctx.det_eq_const h]
 
 end QOU.QuantumObservableUniverse

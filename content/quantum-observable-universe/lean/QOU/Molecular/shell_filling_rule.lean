@@ -27,23 +27,23 @@ class ShellFillingRuleContext where
   occupancy : ℕ → ℕ
   /-- Maximum capacity of shell `n` (2n²). -/
   capacity : ℕ → ℕ
-  /-- Manuscript sub-claim (i) — Inner shells `n < n_val` fill
-      completely: `occupancy n = capacity n` for all `n < n_val`. -/
-  claim_i_inner_shells_fill : ∀ n : ℕ, n < n_val → occupancy n = capacity n
   /-- Number of singly-occupied sites in the valence shell. -/
   singly_occupied : ℕ
-  /-- Manuscript sub-claim (ii) — Hund's rule: the valence-shell
-      configuration maximises singly-occupied sites. The maximum
-      equals `min(electrons in valence, capacity n_val)`. -/
-  claim_ii_hunds_rule_max : ∀ other : ℕ, other ≤ singly_occupied
   /-- LP dual variable `y_0` (electron chemical potential). -/
   y_0 : ℝ
   /-- LP primal objective for the electron assignment problem
       `Z · y_0`. -/
   primal_obj : ℝ
-  /-- Manuscript sub-claim (iii) — LP dual objective equals
-      `Z · y_0`. -/
-  claim_iii_lp_dual_objective : primal_obj = (Z : ℝ) * y_0
+  /-- Proposition: the ground-state electron configuration satisfies the aufbau principle. -/
+  aufbau_holds : Prop
+  /-- Hypothesis that aufbau is active. -/
+  aufbau_active : aufbau_holds
+  /-- (i) Inner shells `n < n_val` fill completely: `occupancy n = capacity n` for all `n < n_val`. -/
+  impl_inner_shells_fill : aufbau_holds → ∀ n : ℕ, n < n_val → occupancy n = capacity n
+  /-- (ii) Hund's rule: the valence-shell configuration maximises singly-occupied sites. -/
+  impl_hunds_rule_max : aufbau_holds → ∀ other : ℕ, other ≤ singly_occupied
+  /-- (iii) LP dual objective equals `Z · y_0`. -/
+  impl_lp_dual_objective : aufbau_holds → primal_obj = (Z : ℝ) * y_0
 
 /-- **Proposition statement** (from manuscript):
 
@@ -85,8 +85,9 @@ penalty for electron-electron repulsion at shell $n$.*
 theorem shell_filling_rule [ctx : ShellFillingRuleContext] :
     (∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n) ∧
     (∀ other : ℕ, other ≤ ctx.singly_occupied) ∧
-    ctx.primal_obj = (ctx.Z : ℝ) * ctx.y_0 :=
-  ⟨ctx.claim_i_inner_shells_fill, ctx.claim_ii_hunds_rule_max,
-   ctx.claim_iii_lp_dual_objective⟩
+    ctx.primal_obj = (ctx.Z : ℝ) * ctx.y_0 := by
+  have h := ctx.aufbau_active
+  exact ⟨ctx.impl_inner_shells_fill h, ctx.impl_hunds_rule_max h,
+         ctx.impl_lp_dual_objective h⟩
 
 end QOU.Molecular

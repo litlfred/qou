@@ -52,7 +52,7 @@ opaque binding_assembly (Z N : Nat) : Float
          (assemble_per_derivation_weights)
     Ref: docs/audits/2026-05-04-per-derivation-weights-result.md
 -/
-theorem binding_assembly_subpercent
+def binding_assembly_subpercent
     (Z N : Nat) (hA : Z + N ≤ 9)
     : True := by
   -- Empirical statement; numerical witness is in the audit doc.

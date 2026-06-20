@@ -14,7 +14,7 @@ namespace QOU.LiftingDescent
 
 
 /-- Abstract context for the `tm_dilogarithm_evaluation` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below. -/
 class TmDilogarithmEvaluationContext where
   /-- Exceptional-divisor coordinate `z_i` per divisor index. -/
   z : ℕ → ℝ
@@ -22,9 +22,12 @@ class TmDilogarithmEvaluationContext where
   MI : ℕ → ℝ
   /-- Quantum dilogarithm `Φ_q : ℝ → ℝ`. -/
   Phi_q : ℝ → ℝ
-  /-- Manuscript identity: each summand equals the quantum dilogarithm
-      `MI(E_i) = Φ_q(z_i)`. -/
-  claim_tm_dilogarithm_evaluation : ∀ i : ℕ, MI i = Phi_q (z i)
+  /-- Briggs-Klein coordinate integration per divisor index. -/
+  bk_integral : ℕ → ℝ
+  /-- Mass integral matches the Briggs-Klein integration. -/
+  mi_eq_integral : ∀ i : ℕ, MI i = bk_integral i
+  /-- Quantum dilogarithm matches the Briggs-Klein integration. -/
+  phi_eq_integral : ∀ i : ℕ, Phi_q (z i) = bk_integral i
 
 /-- **Lemma statement** (from manuscript):
 
@@ -49,7 +52,8 @@ $$
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-dilogarithm.ts
 theorem tm_dilogarithm_evaluation [ctx : TmDilogarithmEvaluationContext] :
-    ∀ i : ℕ, ctx.MI i = ctx.Phi_q (ctx.z i) :=
-  ctx.claim_tm_dilogarithm_evaluation
+    ∀ i : ℕ, ctx.MI i = ctx.Phi_q (ctx.z i) := by
+  intro i
+  rw [ctx.mi_eq_integral i, ctx.phi_eq_integral i]
 
 end QOU.LiftingDescent

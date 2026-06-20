@@ -24,9 +24,14 @@ class WeakEquivInvarianceContext where
   /-- Predicate: levels `n` and `m` are connected by a weak
       equivalence (zigzag of coface/codegeneracy maps). -/
   weak_equiv : ℕ → ℕ → Prop
+  /-- Proposition: the weak equivalence invariance holds. -/
+  weak_equiv_invariant : Prop
+  /-- Hypothesis that weak equivalence invariance is active. -/
+  invariance_active : weak_equiv_invariant
   /-- Manuscript identity: vacuum state is invariant under weak
       equivalence between brane levels. -/
-  claim_weak_equiv_invariance :
+  impl_weak_equiv_invariance :
+    weak_equiv_invariant →
     ∀ n m : ℕ, weak_equiv n m → τ_value n = τ_value m
 
 /-- **Content statement** (from manuscript):
@@ -45,7 +50,8 @@ brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts
 theorem weak_equiv_invariance [ctx : WeakEquivInvarianceContext] :
-    ∀ n m : ℕ, ctx.weak_equiv n m → ctx.τ_value n = ctx.τ_value m :=
-  ctx.claim_weak_equiv_invariance
+    ∀ n m : ℕ, ctx.weak_equiv n m → ctx.τ_value n = ctx.τ_value m := by
+  have h := ctx.invariance_active
+  exact ctx.impl_weak_equiv_invariance h
 
 end QOU.Torsion

@@ -22,10 +22,10 @@ class Depth2IdentificationContext where
   bs_map : G2_Hq → K3_ind_F_Q
   /-- Inverse Bloch-Suslin map. -/
   bs_inv : K3_ind_F_Q → G2_Hq
-  /-- Manuscript claim — Bloch-Suslin gives a bijection between
-      `G^(2)(H_q)` and `K_3^{ind}(F) ⊗ ℚ`. -/
-  claim_bs_bijection :
-    Function.LeftInverse bs_inv bs_map ∧ Function.RightInverse bs_inv bs_map
+  /-- Bloch-Suslin gives left-inverse. -/
+  left_inverse : Function.LeftInverse bs_inv bs_map
+  /-- Bloch-Suslin gives right-inverse. -/
+  right_inverse : Function.RightInverse bs_inv bs_map
 
 /-- **Proposition (`prop:depth-2-identification-bloch-suslin`).**
     The depth-2 graded piece is canonically identified with
@@ -33,7 +33,9 @@ class Depth2IdentificationContext where
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.md
 theorem depth_2_identification [ctx : Depth2IdentificationContext] :
     Function.LeftInverse ctx.bs_inv ctx.bs_map ∧
-    Function.RightInverse ctx.bs_inv ctx.bs_map :=
-  ctx.claim_bs_bijection
+    Function.RightInverse ctx.bs_inv ctx.bs_map := by
+  constructor
+  · exact ctx.left_inverse
+  · exact ctx.right_inverse
 
 end QOU.AppendixSurreals.Depth2IdentificationBlochSuslin

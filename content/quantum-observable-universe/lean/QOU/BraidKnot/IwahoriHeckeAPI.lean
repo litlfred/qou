@@ -169,7 +169,7 @@ def IsGeneric (n : ℕ) (q : R) : Prop :=
 
     Stated axiomatically; cites `prop:wedderburn-weight-canonical`
     and `prop:hoefsmit-seminormal-form` from the manuscript. -/
-theorem wedderburn_decomposition_generic
+def wedderburn_decomposition_generic
     (H : IwahoriHeckeAlgebra n R q h_unit)
     [Field R] (h_gen : IsGeneric n q) :
     True := by

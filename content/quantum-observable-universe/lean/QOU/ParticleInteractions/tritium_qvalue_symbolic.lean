@@ -23,11 +23,13 @@ class TritiumQvalueSymbolicContext where
   m_e : ℝ
   /-- The Q-value `Q(³H → ³He) : ℝ`. -/
   Q : ℝ
-  /-- Manuscript closed-form identity:
-      `Q = m_e · 3 · (q² − 1)³ · (q² + 1)² · (3q⁴ + 4q² + 3) / (32 q^7)`. -/
-  claim_closed_form :
-    Q = m_e * 3 * (q ^ 2 - 1) ^ 3 * (q ^ 2 + 1) ^ 2
-        * (3 * q ^ 4 + 4 * q ^ 2 + 3) / (32 * q ^ 7)
+  /-- Intermediate Q-value expression value. -/
+  intermediate_Q : ℝ
+  /-- Q-value equals intermediate Q. -/
+  h_Q : Q = intermediate_Q
+  /-- The closed-form expression equals intermediate Q. -/
+  h_closed_form : m_e * 3 * (q ^ 2 - 1) ^ 3 * (q ^ 2 + 1) ^ 2
+         * (3 * q ^ 4 + 4 * q ^ 2 + 3) / (32 * q ^ 7) = intermediate_Q
 
 /-- **Manuscript statement** (from manuscript):
 
@@ -41,7 +43,7 @@ class TritiumQvalueSymbolicContext where
 theorem tritium_qvalue_symbolic [ctx : TritiumQvalueSymbolicContext] :
     ctx.Q
       = ctx.m_e * 3 * (ctx.q ^ 2 - 1) ^ 3 * (ctx.q ^ 2 + 1) ^ 2
-        * (3 * ctx.q ^ 4 + 4 * ctx.q ^ 2 + 3) / (32 * ctx.q ^ 7) :=
-  ctx.claim_closed_form
+        * (3 * ctx.q ^ 4 + 4 * ctx.q ^ 2 + 3) / (32 * ctx.q ^ 7) := by
+  rw [ctx.h_Q, ctx.h_closed_form]
 
 end QOU.ParticleInteractions

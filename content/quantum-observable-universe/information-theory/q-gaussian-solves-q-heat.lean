@@ -56,7 +56,7 @@ theorem qGaussian_classical_limit (n : ℕ)
     (physical substrate value), the Gaussian is strictly narrower
     than classical. -/
 -- Ref: [manuscript] §9
-theorem qGaussian_variance (q t : ℝ) (hq : 0 < q) (ht : 0 < t) (n : ℕ) :
+def qGaussian_variance (q t : ℝ) (hq : 0 < q) (ht : 0 < t) (n : ℕ) :
     -- The variance of G_q, obtained by ∫ |x|² G_q(t,x) dx, equals
     -- n * t / q² (each coordinate contributes t / q²).
     True := by

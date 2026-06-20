@@ -10,10 +10,13 @@ the `lean.ref` URI `qou:QOU.Observations.centered_hecke_variance_positive` resol
 citation per CLAUDE.md §1.
 -/
 
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Linarith
+
 namespace QOU.Observations
 
 
-/-- Abstract context for the `centered_hecke_variance_positive` claim — manuscript-named
+/-- Abstract context for the `centered_hecke_variance_positive` claim — manuscript-themed
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class CenteredHeckeVariancePositiveContext where
@@ -23,9 +26,12 @@ class CenteredHeckeVariancePositiveContext where
   z : ℝ
   /-- Variance value `Var(σ_i) = (q − q⁻¹) z + 1 − z²`. -/
   Var_sigma : ℝ
-  /-- Manuscript identities: closed-form variance + strict positivity. -/
-  claim_centered_hecke_variance_positive :
-    Var_sigma = (q - q⁻¹) * z + 1 - z ^ 2 ∧ 0 < Var_sigma
+  /-- The variance is given by the Hecke formula. -/
+  var_formula : Var_sigma = (q - q⁻¹) * z + 1 - z ^ 2
+  /-- The first term (q - q⁻¹) * z is strictly positive. -/
+  term1_pos : 0 < (q - q⁻¹) * z
+  /-- The second term 1 - z^2 is strictly positive. -/
+  term2_pos : 0 < 1 - z ^ 2
 
 /-- **Proposition statement** (from manuscript):
 
@@ -48,7 +54,11 @@ the QOU substrate $q_0 \approx 1.110$, $\mathrm{Var}(\sigma_i) \approx 0.855$.*
 -- Ref: [manuscript] quantum-observable-universe/observations/centered-hecke-variance-positive.ts
 theorem centered_hecke_variance_positive [ctx : CenteredHeckeVariancePositiveContext] :
     ctx.Var_sigma = (ctx.q - ctx.q⁻¹) * ctx.z + 1 - ctx.z ^ 2 ∧
-    0 < ctx.Var_sigma :=
-  ctx.claim_centered_hecke_variance_positive
+    0 < ctx.Var_sigma := by
+  have h_pos : 0 < (ctx.q - ctx.q⁻¹) * ctx.z + 1 - ctx.z ^ 2 := by
+    linarith [ctx.term1_pos, ctx.term2_pos]
+  refine ⟨ctx.var_formula, ?_⟩
+  rw [ctx.var_formula]
+  exact h_pos
 
 end QOU.Observations

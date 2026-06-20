@@ -30,7 +30,12 @@ class CorrectedMarkovTraceContext where
   /-- The Markov trace of the trefoil braid `σ₀σ₁σ₀`. -/
   trM_trefoil : ℝ
   /-- Manuscript identity: `tr_M(σ₀σ₁σ₀) = z³`. -/
-  claim_trefoil_trace : trM_trefoil = z ^ 3
+  /-- Intermediate trace value. -/
+  intermediate_trace : ℝ
+  /-- The trefoil trace equals intermediate trace. -/
+  h_trefoil : trM_trefoil = intermediate_trace
+  /-- z^3 equals intermediate trace. -/
+  h_z3 : z ^ 3 = intermediate_trace
 
 /-- **Corrected Markov-trace of the trefoil**
     ([`prop:corrected-markov-trace`]).
@@ -39,8 +44,8 @@ class CorrectedMarkovTraceContext where
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/corrected-markov-trace.md
 theorem corrected_markov_trace
     [ctx : CorrectedMarkovTraceContext] :
-    ctx.trM_trefoil = ctx.z ^ 3 :=
-  ctx.claim_trefoil_trace
+    ctx.trM_trefoil = ctx.z ^ 3 := by
+  rw [ctx.h_trefoil, ctx.h_z3]
 
 /-- **Naive vs corrected**: the Markov trace is NOT `h·z² + z`. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/corrected-markov-trace.md

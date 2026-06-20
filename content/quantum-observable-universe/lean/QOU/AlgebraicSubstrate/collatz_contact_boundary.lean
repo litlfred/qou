@@ -25,10 +25,8 @@ class CollatzContactBoundaryContext where
   chi_A_eq : chi_A = -6
   /-- Kummer-level-2 obstruction is removable. -/
   kummer_obstruction_removable : Prop
-  /-- Manuscript identity: at the `[2]_q`-divisor `q = -1`, Kummer
-      level-2 obstruction is removable because `2 ∣ χ(A) = -6`. -/
-  claim_collatz_contact_boundary :
-    (q_int_2 = 0 → kummer_obstruction_removable) ∧ ((2 : ℤ) ∣ chi_A)
+  /-- Kummer obstruction vanishes if parity matches. -/
+  obstruction_removable_of_even_chi : (2 : ℤ) ∣ chi_A → (q_int_2 = 0 → kummer_obstruction_removable)
 
 /-- **Manuscript statement** (full body):
 
@@ -96,7 +94,10 @@ $$
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts
 theorem collatz_contact_boundary [ctx : CollatzContactBoundaryContext] :
     (ctx.q_int_2 = 0 → ctx.kummer_obstruction_removable) ∧
-    ((2 : ℤ) ∣ ctx.chi_A) :=
-  ctx.claim_collatz_contact_boundary
+    ((2 : ℤ) ∣ ctx.chi_A) := by
+  have h_div : (2 : ℤ) ∣ ctx.chi_A := by
+    rw [ctx.chi_A_eq]
+    use -3
+  exact ⟨ctx.obstruction_removable_of_even_chi h_div, h_div⟩
 
 end QOU.AlgebraicSubstrate

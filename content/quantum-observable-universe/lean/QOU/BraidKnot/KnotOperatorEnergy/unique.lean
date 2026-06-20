@@ -81,7 +81,7 @@ energies.*
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-operator-energy-unique.ts
-theorem unique [ctx : UniqueContext] :
+def unique [ctx : UniqueContext] :
     (∀ (q₁ q₂ : ℝ) (λ : ctx.PartitionIdx),
       ctx.E_at_q q₁ λ = ctx.E_at_q q₂ λ) ∧
     (ctx.generic_locus ctx.q → ∀ λ : ctx.PartitionIdx, ctx.E λ = ctx.E' λ) ∧

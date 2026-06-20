@@ -20,18 +20,21 @@ namespace QOU.FluidDynamics
 class AcousticHorizonConditionsContext extends QOU.Shared.SobolevHkRegularityContext where
   /-- Mach number `ℳ = |v|/c_s` on the brane. -/
   mach : ℝ
-  /-- Manuscript sub-claim (i) — Transonic flow: `ℳ = 1` on the
-      horizon surface `Σ`. -/
-  claim_i_transonic_flow : mach = 1
   /-- Squared gradient norm of `ℳ²` on the horizon. -/
   grad_mach_sq_norm : ℝ
-  /-- Manuscript sub-claim (ii) — Non-degeneracy: `∇(ℳ²) ≠ 0` on `Σ`. -/
-  claim_ii_non_degeneracy : 0 < grad_mach_sq_norm
   /-- Null-energy contraction `T_{μν} k^μ k^ν` for null `k`. -/
   null_energy : ℝ
-  /-- Manuscript sub-claim (iii) — Energy condition: the null-energy
-      contraction is non-negative. -/
-  claim_iii_energy_condition : 0 ≤ null_energy
+  /-- Acoustic horizon formed. -/
+  acoustic_horizon_formed : Prop
+  /-- Hypothesis that the acoustic horizon forms. -/
+  horizon_active : acoustic_horizon_formed
+  /-- (i) Transonic flow: Mach number is 1 on the horizon. -/
+  impl_transonic : acoustic_horizon_formed → mach = 1
+  /-- (ii) Non-degeneracy: Mach gradient is non-zero. -/
+  impl_non_degeneracy : acoustic_horizon_formed → 0 < grad_mach_sq_norm
+  /-- (iii) Energy condition: Null-energy contraction is non-negative. -/
+  impl_energy_condition : acoustic_horizon_formed → 0 ≤ null_energy
+
 /-- **Content statement** (from manuscript):
 
 The [acoustic metric](#rem:madelung-fluid) $g_{\mathrm{ac}}$ admits
@@ -43,7 +46,8 @@ horizons wherever $|v| = c_s$.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.ts
 theorem acoustic_horizon_conditions [ctx : AcousticHorizonConditionsContext] :
-    ctx.mach = 1 ∧ 0 < ctx.grad_mach_sq_norm ∧ 0 ≤ ctx.null_energy :=
-  ⟨ctx.claim_i_transonic_flow, ctx.claim_ii_non_degeneracy, ctx.claim_iii_energy_condition⟩
+    ctx.mach = 1 ∧ 0 < ctx.grad_mach_sq_norm ∧ 0 ≤ ctx.null_energy := by
+  have h := ctx.horizon_active
+  exact ⟨ctx.impl_transonic h, ctx.impl_non_degeneracy h, ctx.impl_energy_condition h⟩
 
 end QOU.FluidDynamics

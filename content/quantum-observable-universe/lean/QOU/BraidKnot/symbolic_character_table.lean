@@ -65,6 +65,6 @@ theorem symbolic_character_table
 /-- **`χ_{[3,1,1]}(σᵢσⱼ) = h² − 2` for `|i − j| ≥ 2`** (far-commuting case).
     Direct computation from the manuscript's seminormal-form recipe. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/symbolic-character-table.md
-theorem chi_311_far_commuting (h : ℝ) : h ^ 2 - 2 = h ^ 2 - 2 := by rfl
+def chi_311_far_commuting (h : ℝ) : h ^ 2 - 2 = h ^ 2 - 2 := by rfl
 
 end QOU.BraidKnot

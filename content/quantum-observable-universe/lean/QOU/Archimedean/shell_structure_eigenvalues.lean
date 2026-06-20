@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Archimedean.shell_structure_eigenvalues — placeholder stub
 
@@ -20,17 +22,17 @@ namespace QOU.Archimedean
 class ShellStructureEigenvaluesContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- Eigenvalue `λ_+` of the photon-electron transfer matrix `T_γe`. -/
-  λ_plus : ℝ
-  /-- Eigenvalue `λ_−` of `T_γe`. -/
-  λ_minus : ℝ
+  /-- Eigenvalue `lambda_plus` of the photon-electron transfer matrix `T_γe`. -/
+  lambda_plus : ℝ
+  /-- Eigenvalue `lambda_minus` of `T_γe`. -/
+  lambda_minus : ℝ
   /-- Manuscript sub-claim (i): the characteristic polynomial of
       `T_γe = T_pp` is `λ² − (q − q⁻¹) λ − 1`; equivalently the
       eigenvalues satisfy `λ_± · λ_∓ = -1` (Vieta product). -/
-  claim_i_char_poly_product : λ_plus * λ_minus = -1
+  claim_i_char_poly_product : lambda_plus * lambda_minus = -1
   /-- Manuscript sub-claim (ii): the sum of eigenvalues is `q − q⁻¹`
       (Vieta sum). -/
-  claim_ii_eigenvalue_sum : λ_plus + λ_minus = q - q⁻¹
+  claim_ii_eigenvalue_sum : lambda_plus + lambda_minus = q - q⁻¹
   /-- Matrix-power entries `(T^n)_{i j}` of `T_γe` (indexed
       `i j ∈ {0, 1}`). -/
   T_power_11 : ℕ → ℝ
@@ -40,10 +42,10 @@ class ShellStructureEigenvaluesContext where
       `(T^n)_{21} = (λ_+^n − λ_−^n) / (λ_+ − λ_−)` and
       `(T^n)_{11} = (λ_+^{n+1} − λ_−^{n+1}) / (λ_+ − λ_−)`. -/
   claim_iii_chebyshev_second_kind : ∀ n : ℕ,
-    T_power_11 n = (λ_plus ^ (n + 1) - λ_minus ^ (n + 1)) /
-      (λ_plus - λ_minus) ∧
-    T_power_21 n = (λ_plus ^ n - λ_minus ^ n) /
-      (λ_plus - λ_minus)
+    T_power_11 n = (lambda_plus ^ (n + 1) - lambda_minus ^ (n + 1)) /
+      (lambda_plus - lambda_minus) ∧
+    T_power_21 n = (lambda_plus ^ n - lambda_minus ^ n) /
+      (lambda_plus - lambda_minus)
   /-- The Markov parameter `z = 1/(q^{1/2} + q^{-1/2})`. -/
   z : ℝ
   /-- The Markov-traced volume `V̂(n, q)`. -/
@@ -170,15 +172,15 @@ $$
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/shell-structure-eigenvalues.ts
 theorem shell_structure_eigenvalues [ctx : ShellStructureEigenvaluesContext] :
-    ctx.λ_plus * ctx.λ_minus = -1 ∧
-    ctx.λ_plus + ctx.λ_minus = ctx.q - ctx.q⁻¹ ∧
+    ctx.lambda_plus * ctx.lambda_minus = -1 ∧
+    ctx.lambda_plus + ctx.lambda_minus = ctx.q - ctx.q⁻¹ ∧
     (∀ n : ℕ,
-      ctx.T_power_11 n = (ctx.λ_plus ^ (n + 1) - ctx.λ_minus ^ (n + 1)) /
-        (ctx.λ_plus - ctx.λ_minus) ∧
-      ctx.T_power_21 n = (ctx.λ_plus ^ n - ctx.λ_minus ^ n) /
-        (ctx.λ_plus - ctx.λ_minus)) ∧
-    (∀ n : ℕ, ctx.V_hat n = ctx.z * ctx.T_power_11 n + ctx.T_power_21 n) :=
-  ⟨ctx.claim_i_char_poly_product, ctx.claim_ii_eigenvalue_sum,
-   ctx.claim_iii_chebyshev_second_kind, ctx.claim_iv_traced_volume⟩
+      ctx.T_power_11 n = (ctx.lambda_plus ^ (n + 1) - ctx.lambda_minus ^ (n + 1)) /
+        (ctx.lambda_plus - ctx.lambda_minus) ∧
+      ctx.T_power_21 n = (ctx.lambda_plus ^ n - ctx.lambda_minus ^ n) /
+        (ctx.lambda_plus - ctx.lambda_minus)) ∧
+    (∀ n : ℕ, ctx.V_hat n = ctx.z * ctx.T_power_11 n + ctx.T_power_21 n) := by
+  refine ⟨ctx.claim_i_char_poly_product, ctx.claim_ii_eigenvalue_sum,
+          ctx.claim_iii_chebyshev_second_kind, ctx.claim_iv_traced_volume⟩
 
 end QOU.Archimedean

@@ -59,7 +59,7 @@ QOU-internal derivation; the other two are*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.ts
-theorem algebraic_quantum_volume_specialization [ctx : AlgebraicQuantumVolumeSpecializationContext] :
+def algebraic_quantum_volume_specialization [ctx : AlgebraicQuantumVolumeSpecializationContext] :
     ctx.z_0 = 1 / (Real.sqrt ctx.q_0 + 1 / Real.sqrt ctx.q_0) ∧
     (∀ β : ctx.Braid, ∃ c : ℝ, ctx.Vol_q_at_q0 β = c * ctx.J_K β) ∧
     (∀ β : ctx.Braid, ∃ c : ℝ, ctx.Vol_q_at_q0 β = c * ctx.Δ_K β) :=

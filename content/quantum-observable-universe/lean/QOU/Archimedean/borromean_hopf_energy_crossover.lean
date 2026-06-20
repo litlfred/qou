@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Archimedean.borromean_hopf_energy_crossover — placeholder stub
 
@@ -130,8 +132,8 @@ $$
 theorem borromean_hopf_energy_crossover [ctx : BorromeanHopfEnergyCrossoverContext] :
     ctx.M_B = 2 * ctx.V_B / ((ctx.q - 1) / ctx.q) ^ 2 ∧
     ctx.M_D = ctx.q + ctx.q⁻¹ ∧
-    (ctx.diquark_favoured ↔ |ctx.E_D| > |ctx.E_B|) :=
-  ⟨ctx.claim_i_borromean_mass, ctx.claim_ii_diquark_mass,
-   ctx.claim_iii_crossover⟩
+    (ctx.diquark_favoured ↔ |ctx.E_D| > |ctx.E_B|) := by
+  refine ⟨ctx.claim_i_borromean_mass, ctx.claim_ii_diquark_mass,
+          ctx.claim_iii_crossover⟩
 
 end QOU.Archimedean

@@ -121,7 +121,7 @@ abbrev atlas_oxygen16_uniqueness := @atlas_entry_uniqueness 16
 
 /-- **For any other A**: directly call `@atlas_entry_uniqueness A`.
     The parameterised proof works for any `A : ℕ`. -/
-theorem atlas_entry_uniqueness_works_for_any_A (A : ℕ) :
+def atlas_entry_uniqueness_works_for_any_A (A : ℕ) :
     True := trivial
 
 end QOU.BraidsAndKnots

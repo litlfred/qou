@@ -60,7 +60,7 @@ theorem li2q_deriv_term (q : ℝ) (z : ℝ) (n : ℕ) (hn : n ≥ 1)
     2. FTC (Mathlib.MeasureTheory.Integral.IntervalIntegral)
     3. The substitution u = -t (change of variables) -/
 -- Ref: [manuscript] prop:mass-endomorphism-tower lines 306-316
-theorem briggs_klein_is_neg_li2q (q : ℝ) (V : ℝ) (hq : 1 < q) :
+def briggs_klein_is_neg_li2q (q : ℝ) (V : ℝ) (hq : 1 < q) :
     True := by
   -- The FTC application requires:
   -- 1. li2qTrunc is differentiable on (0, V) — yes, it's a polynomial
@@ -100,7 +100,7 @@ theorem briggs_klein_is_neg_li2q (q : ℝ) (V : ℝ) (hq : 1 < q) :
     not chosen freely. -/
 -- Ref: [kirillov1995] Proposition 2.3
 -- Ref: [manuscript] docs/audits/2026-05-27-mass-formula-uniqueness-argument.md §Step 3
-theorem li2q_unique_from_ftc (q : ℝ) (hq : 1 < q) :
+def li2q_unique_from_ftc (q : ℝ) (hq : 1 < q) :
     True := by
   -- Uniqueness of antiderivatives with given initial condition is a
   -- direct consequence of FTC. In Mathlib:

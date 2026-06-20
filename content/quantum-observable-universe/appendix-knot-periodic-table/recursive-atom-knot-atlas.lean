@@ -179,7 +179,7 @@ theorem atlas_witness_derived : AtlasIsWitnessDerived := by
     The principled best-precision claim awaits SDP-on-full-mass-tower
     with GB filtration and jet-order tracking (see
     `principled_path_for_atom_knot` below). -/
-theorem li7_provisional_volume_match : True := by
+def li7_provisional_volume_match : True := by
   trivial  -- Ref: methodology-deprecation.witness.json §particles[12]
            -- ("7Li", method = "deprecated-volume-match").
            -- The 4001 ppb residual is striking but unverified.

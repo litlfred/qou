@@ -105,9 +105,9 @@ theorem atomic_nf_witness [ctx : AtomicNfWitnessContext] :
                 ctx.Phi_1_electron p) ∧
     (∀ k : ℕ, ctx.gb_converges k) ∧
     (∀ a : ℕ, a ≤ 9 → ctx.NF_no_strip a) ∧
-    ctx.F_Pauli = |ctx.trAlt / ctx.net| :=
-  ⟨ctx.claim_i_global_min_ordering, ctx.claim_ii_greedy_electron_placement,
-   ctx.claim_iii_gb_convergence, ctx.claim_iv_NF_accumulation,
-   ctx.claim_v_certificate_definition⟩
+    ctx.F_Pauli = |ctx.trAlt / ctx.net| := by
+  refine ⟨ctx.claim_i_global_min_ordering, ctx.claim_ii_greedy_electron_placement,
+          ctx.claim_iii_gb_convergence, ctx.claim_iv_NF_accumulation,
+          ctx.claim_v_certificate_definition⟩
 
 end QOU.ParticleInteractions

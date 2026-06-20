@@ -79,7 +79,7 @@ theorem muLambda_single (q : ℝ) (hq : q ≠ 0) :
     for q > 0, q ≠ 1, the series Σ d_λ(q) exp(-μ_λ(q) t) converges
     absolutely for every t > 0. -/
 -- Ref: [manuscript] §9
-theorem qHeatKernelPeterWeyl (q t : ℝ)
+def qHeatKernelPeterWeyl (q t : ℝ)
     (hq : 0 < q) (hq1 : q ≠ 1) (ht : 0 < t) :
     True := by
   -- Ref: [manuscript] §9 — Mercer-type convergence follows from

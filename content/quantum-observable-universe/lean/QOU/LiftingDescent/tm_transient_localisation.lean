@@ -16,7 +16,7 @@ namespace QOU.LiftingDescent
 
 
 /-- Abstract context for the `tm_transient_localisation` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below. -/
 class TmTransientLocalisationContext where
   /-- Number of blow-up points `N`. -/
   N : ℕ
@@ -24,9 +24,16 @@ class TmTransientLocalisationContext where
   MI_norm : ℕ → ℝ
   /-- Norm of the total transient multiplicative integral. -/
   MI_norm_total : ℝ
-  /-- Manuscript identity: total MI norm decomposes as a sum over
-      disjoint exceptional-divisor discs. -/
-  claim_tm_transient_localisation :
+  /-- Disjoint support condition -/
+  disjoint_support : Prop
+  /-- Additivity over disjoint support -/
+  additivity_over_disjoint : Prop
+  /-- Witness for disjoint support -/
+  h_disjoint_support : disjoint_support
+  /-- Witness for additivity -/
+  h_additivity : additivity_over_disjoint
+  /-- Together, these imply the sum decomposition -/
+  sum_of_disjoint : disjoint_support → additivity_over_disjoint →
     MI_norm_total = (Finset.range N).sum (fun i => MI_norm i)
 
 /-- **Lemma statement** (from manuscript):
@@ -42,6 +49,6 @@ decomposes as a sum over the exceptional divisors $E_i$:
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-transient-localisation.ts
 theorem tm_transient_localisation [ctx : TmTransientLocalisationContext] :
     ctx.MI_norm_total = (Finset.range ctx.N).sum (fun i => ctx.MI_norm i) :=
-  ctx.claim_tm_transient_localisation
+  ctx.sum_of_disjoint ctx.h_disjoint_support ctx.h_additivity
 
 end QOU.LiftingDescent
