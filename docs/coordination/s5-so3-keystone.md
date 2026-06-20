@@ -120,3 +120,24 @@ is its *geometric origin*.
 - Synthesis: [`2026-06-16-mtau-and-binding-converge-on-s5so3-keystone.md`](../audits/2026-06-16-mtau-and-binding-converge-on-s5so3-keystone.md)
 - Construction program: [`docs/scope/2026-06-16-icosahedral-reeb-fiber-map-construction.md`](../scope/2026-06-16-icosahedral-reeb-fiber-map-construction.md)
 - Sibling A≥3 compute cluster: #2369 / #2371 / #2372 (produces `W_λ` algebraically)
+
+## qbk2 q-Bessel "quadratic action" binding direction — FORECLOSED (2026-06-20, double-sourced)
+
+Two independent routes agree the q-Bessel 2nd-kind "quadratic action" is **not** the
+binding mechanism:
+
+- **#2521** (session 01Q34jUc): retired via the `2026-06-14` joint-J⊕I combiner (³He
+  +17.4%→+117.9% NO-GO); the legitimate "quadratic action" is the content-Casimir `μ_λ`
+  already wired into `prop:q-heat-kernel-peter-weyl`; the precheck "P1 fail" is a
+  normalizer artifact (`Z(0)=Σd²`, not `[n]_q!`).
+- **#2549** (this session, fresh rigorous arc #2530→#2549): forced `y_λ` Markov weighting
+  collapses the rigorous reduction-of-order correction from `2.23×` (unweighted) to
+  **1–6%** of `B(D)` (~20–80× too small). Refuted by its own forced weighting.
+
+**Convergent negative** (different methods) ⇒ do not re-walk the q-Bessel binding probe.
+**Machinery that stands** (additive, from #2549): the resonance-free reduction-of-order
+2nd-solution construction + sorry-free Lean lemma `QOU/QBeta/QCasoratianAbel.lean`
+(q-Casoratian/Abel law, axioms `[propext, Quot.sound]` only). The C(n) defect closed
+form `−n(n−1)(2n−13)/144` (#2527) is the falsifiable sub-leading target for the
+*geometric* W_λ index continuation (#2503/#2524/#2488). bean `qbk2` carries both notes;
+owner closes.

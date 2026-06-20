@@ -151,3 +151,29 @@ Owner closes (humans close beans per AGENTS.md §4a).
 > solution — unsolved); (ii) PV-vs-rigorous-Y_n (L'Hôpital ν→n) unjustified. Two open
 > constructions gate any claim. Reeb-flow argument (forced, surviving) stands; scale
 > plausible but not honestly closed. No fit; nothing wired.
+
+> **RIGOROUS (reduction-of-order) + LEAN (2026-06-20, PR #2549).** Resolved BOTH #2547
+> gates with one construction: reduction of order recovers g2 from g1 + Casoratian
+> (Jackson sum), resonance-free, finite at every integer order INCLUDING the ν=0
+> confluent case. Self-checks pass (L[g2]~1e-30, Cas=w^-ν). Deuteron δ_rig=9.72,
+> ratio 2.23× B(D)/m_e, un-dominated (25%), dim=1 finite, cross-anchor 5.9%. Progression:
+> #2545 6.16 (proxy artifact) → #2547 1.27 (PV dim≥2 only) → #2549 2.23 (rigorous, all
+> blocks). LEAN: QOU/QBeta/QCasoratianAbel.lean (casoratian_abel + qbessel_casoratian_qabel,
+> the q-Abel backbone, sorry-free, generic CommRing) — a q-Bessel MACHINERY lemma, NOT a
+> binding claim. Honest: strongest evidence yet that the direction is real (rigorous,
+> on-scale ~2×, proxy-free) but NOT established — remaining gap needs real y_λ Markov
+> weights + bar-parity (and cross-anchor 5.9% is a modest flag). 2.23→1 must come from
+> forced y_λ, NOT a tuned prefactor. No fit; nothing wired.
+
+> **GAP-NARROWING = DEFLATION (2026-06-20, forced y_λ weights).** Applied the canonical
+> Markov weights y_lambda_at to the rigorous #2549 correction (binding sum is
+> m_e Σ y_λ χ_λ Δ_λ; y_λ substrate-fixed → no knob). The 2.23× COLLAPSES: (A) Σ y·ΔG =
+> -0.013×, (B) Σ y·χ·ΔG = -0.056× — both ~1-6% of B(D), i.e. ~20-80× TOO SMALL. The
+> Markov measure concentrates on low blocks ([6],[5,1], y≈0.059, small ΔG) while the
+> large-ΔG blocks driving the unweighted 2.23× carry tiny weight (y≈0.007). So the
+> on-scale appearance (#2545/#2547/#2549) was an UNWEIGHTED-sum artifact. VERDICT: the
+> q-Bessel "quadratic action" does NOT supply the binding correction — refuted as a
+> binding mechanism by its own forced weighting (no fit could close 20-80× without
+> abandoning the forced weights). STANDS: Reeb-flow radial (forced, real), reduction-of-
+> order construction (rigorous), QCasoratianAbel.lean (sorry-free machinery). DOES NOT
+> STAND: the physics/binding claim. Honest end of the binding thread. No fit; nothing wired.
