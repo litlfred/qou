@@ -374,16 +374,37 @@ theorem gramMatrix_det_ne_zero_conditional
     its meaningful domain and is exactly what lets `field_simp` clear the
     denominators in any future proof.
 
-    **Why still `sorry` (empirical finding, 2026-06-20).** A brute-force
-    `Matrix.det_succ_row_zero` expansion + `field_simp; ring` is not viable
-    here: even the preliminary step of rewriting `gramMatrix u` as a `!!`
-    literal times out at the default 200 000 heartbeats (≈3.5 min wall,
-    `isDefEq`/`whnf`), and the degree-44 determinant identity is far
-    heavier. The factorization is sympy-verified at 50 dps; a genuine Lean
-    proof needs a *structural* argument (clear per-row denominators so the
-    determinant is over polynomial entries, then `ring`), not `ring` on the
-    full rational expansion. Witness:
-    `computations/gram-h3-det-factorization.witness.json`. -/
+    **Why still `sorry` (empirical findings, 2026-06-20).** Two routes
+    were measured and both exceed any shippable compute budget:
+
+    1. *Rational brute force.* A `Matrix.det_succ_row_zero` expansion +
+       `field_simp; ring` over the rational entries is not viable — even
+       rewriting `gramMatrix u` as a `!!` literal times out at the default
+       200 000 heartbeats (≈3.5 min wall, `isDefEq`/`whnf`).
+
+    2. *Structural (denominator-cleared) route — identified, symbolically
+       verified, still not closable.* Scaling each row `i` by the lcm
+       `L_i` of that row's denominators turns the matrix polynomial-entried;
+       since `det(diag(L)·G) = (∏ L_i)·det G` with `∏ L_i = u^18 (u²+1)^12`,
+       the identity reduces to the *polynomial* `ring` goal
+       `det(M) = -num · u^8` (deg 52, 45 terms; `num` the deg-44
+       factored numerator). sympy (Berkowitz) confirms this exactly — see
+       `row_cleared_structural_route` in the witness, with the 36 cleared
+       entries and the `L` vector recorded for transcription. **But the
+       Lean bottleneck is the cofactor *expansion*, not `ring`:**
+       `simp [Matrix.det_succ_row_zero, Fin.sum_univ_succ, …]` on even a
+       *moderate* dense 6×6 exhausts 16 000 000 heartbeats before reaching
+       `ring`, and the real degree-16-entry matrix exceeds 20 000 000 simp
+       steps / 50 000 000 heartbeats. Mathlib has no `det_fin_six`, so
+       there is no controlled expansion lemma; the reduced gap is therefore
+       a *tactic-capability* gap (an efficient explicit-6×6-determinant
+       decision procedure), not a mathematical one.
+
+    The factorization is sympy-verified at 50 dps and the row-cleared
+    reduction is recorded reproducibly in the witness. Witness:
+    `computations/gram-h3-det-factorization.witness.json`
+    (`row_cleared_structural_route`, assertion
+    `row_cleared_det_equals_minus_num_times_u8`). -/
 theorem gramMatrix_det_eq_factorization (u : ℝ) (hu : u ≠ 0) :
     (gramMatrix u).det =
       -(detFactor1 u * detFactor2 u
