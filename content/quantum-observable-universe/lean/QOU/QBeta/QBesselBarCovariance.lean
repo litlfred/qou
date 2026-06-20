@@ -4,9 +4,12 @@ Copyright (c) 2026 litlfred. All rights reserved.
 # Bar-covariance of the Hahn–Exton q-Bessel coefficient ratio (Q_β `c_k` ladder)
 
 A formalize-first **structural constraint** for the Q_β kernel hunt (bean `qkhc`,
-Stage C — `docs/scope/2026-06-16-qbeta-kernel-hunt-stage-c-scope.md`). It certifies
-one of the four invariants any fibre-level kernel candidate must satisfy: **invariant
-(b), bar-evenness under `q ↦ q⁻¹`** (`refuted-class-map §4`).
+Stage C — `docs/scope/2026-06-16-qbeta-kernel-hunt-stage-c-scope.md`). It computes the
+exact way the coefficient ratio breaks under `q ↦ q⁻¹`, and so **corroborates the
+sibling bar-parity prune** (main commits `e73d42bf` / `27e45c68`,
+`docs/audits/2026-06-20-qbeta-barparity-criterion-2b-prune.md`): criterion 2(b),
+"impose bar-evenness on the `c_k` ladder", is **retired**, because the ladder is
+bar-*covariant* with a nonzero twist, not bar-invariant.
 
 The Hahn–Exton q-Bessel argument recurrence (★), proved in
 `QOU/QBeta/QBesselContiguityRecurrence.lean`, is
@@ -19,14 +22,18 @@ governs the whole ladder. This file proves that under the **bar involution**
 
     ρ_k(q⁻¹, a⁻¹) = (a q) · ρ_k(q, a)        (a q = q^{ν+2}).
 
-**Why it matters for the kernel hunt.** Bar-evenness of the `c_k` ladder (invariant
-(b)) is, term-by-term, a `k`-dependent condition; this lemma collapses it to a
-**single** `k`-independent normalisation `a q = q^{ν+2}`. So a candidate kernel either
-has the right global twist (and is bar-even up to one constant) or is killed on paper
-— no per-`k` anchor sweep needed. This complements the *numerical* bar-parity gate
-(`qbeta_chain_d_bar_parity_gate.py`, which refuted Type-B) with the *structural*
-covariance the gate rests on. It is a **necessary-condition** lemma — NOT the kernel
-construction (that stays owner-gated multi-session research) and NOT a `c_k` value.
+**Why it matters for the kernel hunt (corroboration, not certification).** The twist
+factor `a q = q^{ν+2}` is **≠ 1** (it would equal 1 only at the unphysical order
+`ν = −2`). A bar-*even* ladder would need `ρ_k(q⁻¹,a⁻¹) = ρ_k(q,a)`, i.e. twist `= 1`;
+the lemma shows the twist is a fixed nonzero `q^{ν+2}` instead. So bar-evenness is
+**structurally obstructed** — exactly the sibling's conclusion that "bar-oddness is
+irreducible" and "criterion 2(b) cannot be imposed in the variable `u`". The twist can
+be formally absorbed by a rescaling `μ = q^{(ν+2)/2}`, but that breaks the canonical
+`c₂ = −1` anchor (consistent with the sibling: the bar-asymmetry is not a removable
+normalisation). This is the **algebraic backbone** the *numerical* bar-parity gate
+(`qbeta_chain_d_bar_parity_gate.py`, which refuted Type-B) rests on. It is a
+necessary-condition / no-go-corroboration lemma — NOT the kernel construction (that
+stays owner-gated multi-session research) and NOT a `c_k` value.
 
 Generic base ring `[Field K]` — `q`, `a` are formal fibre parameters, no archimedean
 structure (CLAUDE.md §7c). Sorry-free.
@@ -53,8 +60,9 @@ noncomputable def heckeCoeffRatio (k : ℕ) (q a : K) : K :=
 Under the bar involution `q ↦ q⁻¹`, `a ↦ a⁻¹`, the ratio `ρ_k` transforms by the
 `k`-independent twist `a q` (`= q^{ν+2}`):  `ρ_k(q⁻¹, a⁻¹) = (a q) · ρ_k(q, a)`.
 
-This is the structural backbone of invariant (b) (bar-evenness): the whole `c_k`
-ladder's `q ↦ q⁻¹` behaviour is a single global twist, not a `k`-by-`k` condition. -/
+The twist `q^{ν+2} ≠ 1` is the structural **obstruction** to bar-evenness of the `c_k`
+ladder: bar-evenness would require twist `= 1`. This corroborates the sibling
+bar-parity prune (criterion 2(b) retired — bar-oddness is irreducible). -/
 theorem heckeCoeffRatio_bar_covariance (k : ℕ) (q a : K)
     (hq : q ≠ 0) (ha : a ≠ 0)
     (h1 : (1 : K) - q ^ (k + 1) ≠ 0) (h2 : (1 : K) - a * q ^ k ≠ 0) :
