@@ -66,6 +66,14 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
+# Centralized partition utilities (single source of truth) — avoids
+# re-deriving hook lengths / Specht dim / transpose locally per
+# partition_utils' "replaces the 20+ ad-hoc copies" mandate.
+from partition_utils import (  # noqa: E402
+    hook_lengths,  # noqa: F401 — re-exported for any downstream importer
+    dim_lambda,
+    conjugate_partition as transpose,
+)
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
@@ -93,32 +101,6 @@ def partitions_of(n: int) -> list[tuple[int, ...]]:
     return out
 
 
-def transpose(lam: tuple[int, ...]) -> tuple[int, ...]:
-    if not lam:
-        return ()
-    return tuple(sum(1 for r in lam if r >= c) for c in range(1, max(lam) + 1))
-
-
-def hook_lengths(lam: tuple[int, ...]) -> list[int]:
-    hooks: list[int] = []
-    L = len(lam)
-    for i in range(L):
-        for j in range(lam[i]):
-            arm = lam[i] - 1 - j
-            leg = sum(1 for k in range(i + 1, L) if lam[k] > j)
-            hooks.append(arm + leg + 1)
-    return hooks
-
-
-def ordinary_dim(lam: tuple[int, ...]) -> int:
-    import math
-    n = sum(lam)
-    prod = 1
-    for h in hook_lengths(lam):
-        prod *= h
-    return math.factorial(n) // prod
-
-
 def q_number_sym(n: int, q: sp.Expr) -> sp.Expr:
     if n == 0:
         return sp.Integer(0)
@@ -129,11 +111,11 @@ def q_number_sym(n: int, q: sp.Expr) -> sp.Expr:
 
 
 def C1_sl2_schur_weyl(lam):
-    return ordinary_dim(lam) if len(lam) <= 2 else 0
+    return dim_lambda(lam) if len(lam) <= 2 else 0
 
 
 def C2_sl3_schur_weyl(lam):
-    return ordinary_dim(lam) if len(lam) <= 3 else 0
+    return dim_lambda(lam) if len(lam) <= 3 else 0
 
 
 def C3_sl2_qdim(lam, q_0):

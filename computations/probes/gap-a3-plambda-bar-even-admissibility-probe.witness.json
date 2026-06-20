@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-20T11:59:44.536749+00:00",
-  "commitSha": "5be38c4b646d0c27cdf297ea1ce3c5c51f939953",
+  "computedAt": "2026-06-20T12:17:17.458461+00:00",
+  "commitSha": "0b1161e311ac36385b9c1f4f835ca055697c4cf7",
   "assertions": [
     {
       "name": "row_count_channels_bar_inadmissible",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 66,
+  "durationMs": 48,
   "computation": "gap-a3-plambda-bar-even-admissibility-probe",
   "scriptFile": "gap_a3_plambda_bar_even_admissibility_probe.py",
-  "scriptHash": "9c93ae0e9409",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7df21a5b8501",
+  "scriptCommitSha": "0b1161e311ac36385b9c1f4f835ca055697c4cf7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
