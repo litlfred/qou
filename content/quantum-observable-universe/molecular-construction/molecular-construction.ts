@@ -53,6 +53,7 @@ export default chapter({
       blocks: [
         "electron-shells-intro",
         "electron-shell-braid-capacity",
+        "shell-capacity-self-square",
         "shell-filling-rule",
         "shell-filling-rule-table-data",
         "valence-from-braid",
