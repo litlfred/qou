@@ -199,7 +199,7 @@ def main() -> int:
         raise RuntimeError(f"missing y_λ/χ^λ for {missing}; refresh n=6 caches.")
 
     A_D = _phase4_amplitude_D(q_0)
-    tr_M = sum(y[p] * chi[p] for p in parts6)
+    tr_M = mp.fsum(y[p] * chi[p] for p in parts6)
     target = (-B_D_MEV / M_E_MEV) / A_D
 
     print("=" * 78)
@@ -218,7 +218,7 @@ def main() -> int:
         admissible = all(abs(vals[p] - vals[transpose(p)]) < mp.mpf("1e-40")
                          for p in parts6)
         all_admissible = all_admissible and admissible
-        S = sum(y[p] * chi[p] * vals[p] for p in parts6)
+        S = mp.fsum(y[p] * chi[p] * vals[p] for p in parts6)
         rel = (S - target) / target if target != 0 else mp.mpf("inf")
         verdict = _verdict(rel) if code != "T0" else (
             f"SCALE c*={float(target / tr_M):+.4f} (control)")
