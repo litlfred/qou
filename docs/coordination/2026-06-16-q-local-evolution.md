@@ -156,3 +156,23 @@ AGENTS.md, the 4 discipline skills, `three-calibration-inputs`,
   #2285 (production mass-tables). All touch mass/binding/Markov content with
   roman `Q_β`; recommend they rebase onto #2346 after it lands. #2295 (Lean
   two-layer drift) already has intent re: the repaired `three-calibration-discipline.lean`.
+
+## Continuation session (2026-06-16, branch `claude/q-cal-basis-migration-2026-06-16`)
+
+A parallel session asked for follow-up tasks 1 (prose migration), 2 (germ
+prop), 4 (stale-doc) on the merged-#2346 base. Coordination outcome:
+
+- **Task 1 SUPERSEDED.** The comprehensive calibration migration + the
+  **owner's MUON-canonical correction** (above) already landed on main. My
+  draft was *proton-canonical* (the wrong direction); skipped the cherry-pick
+  rather than clobber the better muon-canonical version. No inconsistency to
+  escalate — same conclusion (m_π = CAL-3, Q_β derived), their two-layer
+  framing is more faithful ("q is the ratio" canonical + proton precision).
+- **Task 4 split.** Cheat-sheet CAL-2 proton edit **reverted** (contradicts
+  muon-canonical). README code-example value fixed muon→proton (it prints the
+  live `q_at` number, still proton-anchored 1.1099785827) — kept.
+- **Task 2 DONE + verified.** New `prop:germ-commutator-q-curvature`
+  (`QOU.LocalQ.ObservationParallelogram`): `[δq₁,δq₂]=F_q` + agree-iff-flat +
+  antisymmetry, self-contained sorry-free Lean (lean-direct exit 0, v4.24.0),
+  wired into the chapter manifest. Realises Route 2a from the scope doc.
+- Carried in a **new PR** (not reopening merged #2346).
