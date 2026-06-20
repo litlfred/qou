@@ -58,3 +58,17 @@ exhausted by #2349 + #2510 + #2546. The remaining "~57" are classes 1–4 (mostl
 non-routable). Recommend re-scoping fvxq: the easy mechanical tail is done;
 class-4 needs an atomic↔nuclear registry decision (add atomic-mass exports?) and
 class-3 needs the 3-cal input-discipline fix — both are NOT mechanical.
+
+## RECONCILIATION (PR #2540 ↔ #2546, 2026-06-20)
+
+PR #2540 (branch intelligent-pasteur) routed ~57 probe/phase5/ocneanu files
+in parallel with #2546's triage. #2546's class-1–4 analysis above SUPERSEDES
+#2540's simpler "just route the probes" framing. #2540 matched only the EXACT
+hardcoded literals (e.g. nuclear 1875.61294257, NOT atomic 1876.124), so it
+did NOT hit the class-4 atomic↔nuclear semantic trap, and each route was
+verified `mpf(M_X_MEV_VALIDATION) == mpf("<literal>")` True in its container.
+Open risk per #2546 class-4: witness-loaded M_P/M_N_MEV_VALIDATION may carry
+more digits than the 938.27208816/939.56542052 literals on main/CI ⇒ #2540's
+p/n probe routes could be a precision-BUMP, not strictly value-preserving.
+ACTION (post-rebase): re-verify every #2540-routed literal against main's
+witness state; revert any p/n route where registry != literal.
