@@ -24,8 +24,12 @@ NO-GO per 2026-06-14-qbessel-joint-ji-binding-probe).
 Balanced quantum integers [m] = (q^m - q^-m)/(q - q^-1) (q->1/q symmetric, so
 the Plancherel measure is conjugation-symmetric W_λ = W_{λ'}, the Hodge-star
 hallmark an equivariant index must respect).
+
+(Self-contained audit verifier: the q-integer / q-dim helpers below are
+intentionally duplicated from keystone_qbessel_plancherel_precheck.py so this
+script runs in isolation for independent reproducibility — not factored into a
+shared module.)
 """
-import math
 
 q0 = 1.10997858  # proton-pinned substrate q_0
 
@@ -83,11 +87,10 @@ precheck_sum = Z0 / fact                   # = the precheck's 0.98222
 
 print(f"q_0 = {q0}   n = {n}   [5]_q! = {fact:.6f}\n")
 print(f"{'lambda':<14}{'d_q^2':>12}{'mu_lambda':>12}{'d^2/[n]!':>12}{'d^2/Z(0)':>12}")
-tot_old = tot_new = 0.0
+tot_new = 0.0
 for lam in PARTS_5:
     old = d2[lam] / fact          # precheck normalizer [n]!  (sub-normalized)
     new = d2[lam] / Z0            # heat-kernel normalizer Z(0)  (probability)
-    tot_old += old
     tot_new += new
     print(f"{str(lam):<14}{d2[lam]:>12.5f}{mu_lambda(list(lam), q0):>12.5f}"
           f"{old:>12.6f}{new:>12.6f}")
