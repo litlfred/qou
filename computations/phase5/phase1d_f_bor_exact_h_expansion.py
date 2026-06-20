@@ -133,10 +133,9 @@ def main():
     import mpmath as mp
     mp.mp.dps = 50
     from q_parameter import Q_50_DIGIT_STR
+    from codata_constants import M_E_MEV as m_e, M_MU_MEV_VALIDATION as m_mu  # registry (no literals)
     q0 = mp.mpf(Q_50_DIGIT_STR)
     h0 = q0 - 1/q0
-    m_mu = mp.mpf("105.6583755")
-    m_e = mp.mpf("0.51099895")
 
     print(f"\n  h₀ = {mp.nstr(h0, 15)}")
     print(f"  h₀² = {mp.nstr(h0**2, 15)}")
