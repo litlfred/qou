@@ -153,3 +153,16 @@ Owner closes (humans close beans per CLAUDE.md §4a).
 > on-scale ~2×, proxy-free) but NOT established — remaining gap needs real y_λ Markov
 > weights + bar-parity (and cross-anchor 5.9% is a modest flag). 2.23→1 must come from
 > forced y_λ, NOT a tuned prefactor. No fit; nothing wired.
+
+> **GAP-NARROWING = DEFLATION (2026-06-20, forced y_λ weights).** Applied the canonical
+> Markov weights y_lambda_at to the rigorous #2549 correction (binding sum is
+> m_e Σ y_λ χ_λ Δ_λ; y_λ substrate-fixed → no knob). The 2.23× COLLAPSES: (A) Σ y·ΔG =
+> -0.013×, (B) Σ y·χ·ΔG = -0.056× — both ~1-6% of B(D), i.e. ~20-80× TOO SMALL. The
+> Markov measure concentrates on low blocks ([6],[5,1], y≈0.059, small ΔG) while the
+> large-ΔG blocks driving the unweighted 2.23× carry tiny weight (y≈0.007). So the
+> on-scale appearance (#2545/#2547/#2549) was an UNWEIGHTED-sum artifact. VERDICT: the
+> q-Bessel "quadratic action" does NOT supply the binding correction — refuted as a
+> binding mechanism by its own forced weighting (no fit could close 20-80× without
+> abandoning the forced weights). STANDS: Reeb-flow radial (forced, real), reduction-of-
+> order construction (rigorous), QCasoratianAbel.lean (sorry-free machinery). DOES NOT
+> STAND: the physics/binding claim. Honest end of the binding thread. No fit; nothing wired.
