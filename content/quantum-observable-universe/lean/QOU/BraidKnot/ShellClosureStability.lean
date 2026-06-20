@@ -8,13 +8,19 @@ import QOU.Interactions.ConfinementSDP
 
 Along the dressing chain `P_bare → P^(1) → ⋯ → P^(Z_max)` in the
 confinement category, the Frobenius stability index
-`σ_F := n_target · y₀*(P, q)` is non-decreasing and attains strict
-local maxima at noble-gas `Z ∈ {2, 10, 18, 36, 54, 86}`. At these
-`Z` the dressed particle is a local terminal object of the dressing
-sub-diagram: binding multiplicity `μ(S_Z, q) ≥ 2` means any
-outgoing dressing requires breaking multiple tight dual blocks of
-the confinement SDP simultaneously, exceeding the EM coupling at
-generic `q`.
+`σ_F := n_target · y₀*(P, q)` is non-decreasing (claim 1). Its
+marginal increment `Δσ_F(Z) = σ_F(P^(Z)) − σ_F(P^(Z-1))` — the
+ionisation gap `I₁(Z)` — attains strict local maxima at noble-gas
+`Z ∈ {2, 10, 18, 36, 54, 86}` (claim 2), where binding multiplicity
+`μ(S_Z, q) ≥ 2`; the monotone `σ_F` itself has no interior local
+maximum. At these `Z` the dressed particle is a local terminal object
+of the dressing sub-diagram: any outgoing dressing requires breaking
+multiple tight dual blocks of the confinement SDP simultaneously,
+exceeding the EM coupling at generic `q`.
+
+(The two `ShellClosureStability` theorem groups formalise exactly the
+consistent content — claim 1 `monotone` and claim 2 `μ ≥ 2` — and do
+*not* assert a local maximum of `σ_F`.)
 
 Claim (1) follows from SDP-relaxation monotonicity under the
 cabling-induced primal/dual lift — not Cauchy eigenvalue

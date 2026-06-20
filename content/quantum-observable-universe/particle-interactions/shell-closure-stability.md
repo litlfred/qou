@@ -39,10 +39,16 @@ minimum-action Markov-trace weight of the confined operator.  Then:*
    non-decreasing in $Z$ along the dressing chain for every
    $q$ in the generic locus.*
 
-2. ***Local maxima at noble-gas $Z$:** $\sigma_F(P^{(Z)}, q)$ attains
-   a strict local maximum at $Z \in \mathcal{Z}_{\mathrm{noble}} =
-   \{2, 10, 18, 36, 54, 86\}$.  At these values, the binding
-   multiplicity satisfies $\mu(S_Z, q) \ge 2$.*
+2. ***Local maxima of the marginal gain at noble-gas $Z$:** the
+   **marginal stability gain**
+   $\Delta\sigma_F(Z) := \sigma_F(P^{(Z)}, q) - \sigma_F(P^{(Z-1)}, q)$
+   — the per-electron dressing gap — attains a strict local maximum at
+   $Z \in \mathcal{Z}_{\mathrm{noble}} = \{2, 10, 18, 36, 54, 86\}$, and
+   the binding multiplicity satisfies $\mu(S_Z, q) \ge 2$ there.  It is
+   $\Delta\sigma_F$, not $\sigma_F$ itself, that peaks: $\sigma_F$ is
+   monotone non-decreasing by claim (1), so it has no interior local
+   maximum.  The simultaneous tightness of $\mu \ge 2$ dual blocks is the
+   spectral-gap jump that makes the marginal gain a local maximum.*
 
 3. ***Terminality:** For every $Z \in \mathcal{Z}_{\mathrm{noble}}$,
    $P^{(Z)}$ is a **local terminal object** of the dressing
@@ -120,7 +126,10 @@ Gram matrix has a rank-$\mu$ dual kernel; by
 [confinement-topological](#prop:confinement-topological) the
 corresponding Frobenius form is non-degenerate on the complementary
 subspace, and its minimum eigenvalue strictly exceeds the
-single-block value — establishing the local maximum.*
+single-block value.  This shell-boundary spectral-gap jump is exactly
+the strict local maximum of the marginal gain $\Delta\sigma_F$ (and the
+$\mu \ge 2$ multiplicity); $\sigma_F$ itself stays monotone by
+claim (1).*
 
 *Claim (3).  An outgoing dressing
 $\mathrm{dress}_{S'}: P^{(Z)} \to P'$ with
@@ -150,10 +159,12 @@ terminality barrier.*
 
 **Corollary (ionisation energy peaks).**
 *The first-ionisation energy $I_1(Z)$ is the Markov-trace
-gap from $P^{(Z)}$ to $P^{(Z-1)} + e^-$.  By
+gap from $P^{(Z)}$ to $P^{(Z-1)} + e^-$ — i.e. exactly the marginal
+stability gain $\Delta\sigma_F(Z)$ of claim (2), by
 [confinement-topological](#prop:confinement-topological) and the
-dual shadow-price structure, $I_1(Z)$ is proportional to
-$\sigma_F(P^{(Z)}, q)$.  The local-maxima statement of claim (2)
-predicts the observed peaks of $I_1$ at $Z \in
-\mathcal{Z}_{\mathrm{noble}}$, recovering the classical
-periodic-table structure from the confinement SDP.*
+dual shadow-price structure (not $\sigma_F(P^{(Z)}, q)$ itself, which
+is monotone).  The local-maxima statement of claim (2) then predicts
+the observed peaks of $I_1$ at $Z \in \mathcal{Z}_{\mathrm{noble}}$ —
+and the troughs immediately after, at the alkali metals $Z = 3, 11,
+19, 37, 55, 87$ — recovering the classical periodic-table structure
+from the confinement SDP.*
