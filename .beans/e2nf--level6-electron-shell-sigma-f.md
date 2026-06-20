@@ -66,12 +66,17 @@ low-isotope-mass-anatomy ledger before adopting this bean.
       crossing for every orbital) ⇒ closed shells stay at pure-2n² [2,10,28,60],
       NOT the noble gases [2,10,18,36]. Falsified "SDP+canonical-T_ee ⇒ Madelung".
       Audit 2026-06-20-madelung-from-sdp-falsifiable-test.md.
-- [ ] **Remaining open (well-localised): ℓ-PENETRATION.** Where does the
-      ℓ-graded electron-electron coupling live — how does an orbital's ℓ modulate
-      its T_ee coupling to the inner core? Closures move off 2n² ONLY with +c·ℓ
-      screening, and tuning c = fitting. This single categorical input is what
-      stands between the (free) SDP optimiser and the periodic-table ordering.
-      (Capacity 2n² = the separate self-square result, done.)
+- [x] **STRUCTURAL try done (3', 2026-06-20).** screening ∝ [2ℓ+1]_q (angular
+      q-dim, canonical T_ee weight, NO tuning) DOES rise with ℓ — right
+      penetration DIRECTION — but OVERSHOOTS ~10× (s·[3]_q≈0.76 vs radial
+      spacing≈0.09) ⇒ ℓ-dominated order [8,26,46,60], not n+ℓ. So the structure
+      supplies BOTH ingredients but not the Madelung BALANCE.
+- [ ] **Remaining open, sharpened: the radial:angular SCALE BALANCE** (the
+      4s/3d near-degeneracy). Not "is there ℓ-penetration" (there is, via the
+      q-dim) but "why is the radial:angular ratio the n+ℓ one" — QOU's T_ee is
+      ~8× too strong for the delicate near-degeneracy. Pinning the ratio to hit
+      [2,10,18,36] = fitting. This near-degenerate balance is the single
+      un-derived input behind the periodic-table ORDERING. (Capacity 2n² done.)
 
 ## Notes
 
