@@ -65,3 +65,16 @@ Canonical ν(T)=2. The 2-point B₃ agreement was coincidental. ("exclude trivia
 (t, G, n_target), no per-atom spec reproducing 1,2,2 in corpus. #2552 finding
 sharpened. Probe: computations/probes/he_nu_sdp_psd_count_test.py (REFUTED, exit 0).
 No fit, no forced ⁴He number.
+
+## Option 2 (operator-selection SDP active-set) ALSO blocked (2026-06-20)
+
+Checked deuteron_real_sdp.py (the genuine per-atom SDP: P_λ projectors, t_λ=y_λχ^λ,
+G=diag(tr_M P_λ), n_target=tr_M β_D). Recorded witness:
+- frobenius_gram_indefinite=True, strong_duality_holds=False, well_posed=False —
+  bare program UNBOUNDED at q₀ (negative-norm forbidden blocks).
+- active_set = 7 blocks (positive-norm subspace), NOT ν=1. Bounded only after
+  choosing 1 of 6 Phase-B encodings; canonical doesn't close binding (Δ_λ gate).
+So "ν_SDP = SDP active-set" gives 7≠1 for D. BOTH operational definitions fail
+(PSD-count→1,2,1; SDP-active→7). ν_SDP has NO computable definition reproducing
+1,2,2 — values are manual. ρ_F=2 for ⁴He unconfirmable; task not well-posed without
+a derivation of ν_SDP. No fit. FINAL landing for the ν_SDP line.

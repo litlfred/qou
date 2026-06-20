@@ -120,6 +120,45 @@ spec reproducing `1, 2, 2` exists in the corpus. So the core finding above stand
 is **sharpened**: the obvious per-block-PSD shortcut is now explicitly refuted, and
 pinning ν_SDP requires reconstructing the per-atom operator-selection SDP itself.
 
+## Update 2 — the operator-selection SDP active-set is ALSO not ν_SDP
+
+The refutation above pointed to the **operator-selection SDP** (objective `t` +
+Frobenius Gram `G` + target) as the place ν_SDP "should" live. That route was then
+checked against the existing per-atom SDP,
+[`computations/deuteron_real_sdp.py`](../../computations/deuteron_real_sdp.py)
+(witness `deuteron-real-sdp.witness.json`), which assembles the genuine deuteron
+SDP: `operators = P_λ` (Wedderburn projectors, λ⊢6), `t_λ = y_λ·χ^λ(β_D)`,
+`G = diag(tr_M(P_λ))`, `n_target = tr_M(β_D)`. Recorded result:
+
+- `frobenius_gram_indefinite = True`; `strong_duality_holds = False`;
+  `real_sdp_well_posed_without_constraints = False`. **The bare program is
+  unbounded at q₀** — the Markov q-trace is not positive-definite, so some blocks
+  carry negative q-trace norm (forbidden channels `(3,1,1,1), (2,2,1,1), (1⁶)`).
+- The active set on the (positive-norm) subspace is **7 blocks**
+  `{(6),(5,1),(4,2),(4,1,1),(3,3),(2,2,2),(2,1,1,1,1)}` — i.e. the count of
+  non-forbidden blocks, **not** ν_SDP(D) = 1.
+- A bounded program needs one of **six** Phase-B constraint encodings; the
+  canonical (LR-branching) one is feasible but "does **not** yet reproduce the
+  deuteron binding — that closure is the open Δ_λ gate."
+
+So "ν_SDP = operator-selection-SDP active-set size" gives **7 ≠ 1** for D, and is
+encoding-dependent. **Both** natural operational definitions therefore fail:
+
+| candidate definition | D | ³He | T | canonical | verdict |
+|----------------------|--:|----:|--:|-----------|---------|
+| #non-trivial PSD blocks of ρ_λ(T_w) | 1 | 2 | **1** | 1, 2, 2 | refuted by T |
+| operator-selection SDP active-set | **7** | — | — | 1, 2, 2 | unbounded/encoding-dependent |
+| (manual-historical-volume-match) | 1 | 2 | 2 | — | the only source |
+
+**Conclusion.** ν_SDP has **no computable operational definition in the corpus**
+that reproduces the confirmed 1, 2, 2 — the values are manual. The `ρ_F = ν_SDP`
+identity is formal; ν_SDP itself is hand-assigned. Consequently `ρ_F = 2` for ⁴He
+**cannot be confirmed** by the existing SDP machinery (nor by the obvious per-block
+shortcut), and remains a manual extrapolation. Inventing a third definition to hit
+`2` would be fitting (the discipline forbids it). The owner-authorized "verify
+ν_SDP(⁴He) = 2" task is, honestly, **not currently well-posed** — the prerequisite
+is a derivation of ν_SDP that recovers D/T/³He without hand-assignment.
+
 ## Net
 
 - **No fit, no forced ⁴He number.** The honest state: ν_SDP is uncomputed for
