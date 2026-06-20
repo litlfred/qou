@@ -4,7 +4,6 @@ import QOU.MassDerivation
 import QOU.KnotRegistry
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
-import QOU.HadronicMass.BSymChainAdditive
 
 /-!
 # QOU.HadronicMass — Terminal Resolution of Hadronic Mass

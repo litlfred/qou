@@ -162,20 +162,26 @@ fitted ansatz.
 
 ## Lean formalization (2026-06-20)
 
-The §1 additivity is now a sorry-free Lean theorem:
-[`QOU.HadronicMass.b_sym_chain_additive`](../../content/quantum-observable-universe/lean/QOU/HadronicMass/BSymChainAdditive.lean)
-(+ the α-scaled corollary `b_sym_chain_additive_scaled`). It states the
-*structural* content honestly: **given** the multiplicative trace
-factorisation `tr_atom = tr_free · ∏ (tr_X/tr_free)^{n_X}` (the
-distinct-generator fact verified to the 50-dps floor in §1), the
-log-binding `log(tr_free/tr_atom)` is the additive chain sum
-`n_pp·L_pp + n_pn·L_pn + n_nn·L_nn` with `n_X = (Z−1, 1, N−1)`. The proof
-is pure `Real.log` algebra (`log_div`, `log_mul`, `log_pow`); it depends
-on **no open conjecture** — the factorisation is the explicit hypothesis,
-the additivity is derived. This addresses bean `6z40`: it does **not**
+The §1 additivity is a sorry-free Lean theorem in
+[`QOU.BraidKnot.BsymLinearChain`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/BsymLinearChain.lean)
+(`chain_num_bonds`, `chain_count_pp/pn/nn`, `chain_binding_sum`,
+`Bsym_closed_form`, `Bsym_deuteron`; see
+[`2026-06-20-bsym-linear-chain-additivity-lean.md`](2026-06-20-bsym-linear-chain-additivity-lean.md)).
+It states the *structural* content honestly: **given** the per-bond
+factorisation (the distinct-generator fact verified to the 50-dps floor
+in §1), the binding is the count-weighted additive chain sum
+`α·[(Z−1)L_pp + L_pn + (N−1)L_nn]` (and the deuteron is the single p-n
+bond). It depends on **no open conjecture** — the factorisation is the
+explicit structural input. This addresses bean `6z40`: it does **not**
 claim "B_sym is a theorem" (B_sym is a *definition* + an empirical
 binding claim, the latter still gated by the Δ_λ saturation residual of
 §5–§6); it formalises only the conjecture-free additivity structure.
+
+*Optional follow-up:* an ℝ-specialised `Real.log`-of-product lemma that
+*discharges* the per-bond factorisation from the multiplicative trace
+ratio (`log(tr_free/tr_atom) = Σ counts · log(tr_free/tr_X)`) would
+connect the abstract `L : Bond → R` of `BsymLinearChain` to the actual
+trace; it belongs next to that module.
 
 ## References
 
