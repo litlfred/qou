@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-05T00:42:19.622714+00:00",
-  "commitSha": "b188853843b2a8ac02515745490b758582956fc9",
+  "computedAt": "2026-06-20T11:47:00.226683+00:00",
+  "commitSha": "6ecb0fd1eddc3e25c56d4284aa8fe66690a3839d",
   "assertions": [
     {
       "name": "proton_uniform_lw_overshoots_lambda_emp_by_2_89_pct",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 50,
+  "durationMs": 63,
   "computation": "gap-a4-L1-light-series-probe",
   "scriptFile": "gap_a4_L1_light_series_probe.py",
-  "scriptHash": "099f02dac611",
-  "scriptCommitSha": "b188853843b2a8ac02515745490b758582956fc9",
+  "scriptHash": "cdd46e032300",
+  "scriptCommitSha": "f89ec89aee3363048fc11bf0e6942b14ab5c0b22",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,6 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -164,36 +162,36 @@
         "Z": 2,
         "N": 2,
         "vol_K": "12.554",
-        "m_K_MeV": "3727.37941",
-        "lambda_empirical": "5.704118099338655458972658236663258352508827894118960296821277286847039",
+        "m_K_MeV": "3727.3794066",
+        "lambda_empirical": "5.704118094135535678431876486595309674149015202410708670243647774966374",
         "L1a_uniform_lw": {
           "prediction": "2.5327796563993914920515145017580412323261604705351",
-          "relative_error": "-0.5559734892773264983785358415436437547976689822915199093026920844108123",
+          "relative_error": "-0.5559734888722992736790833998371214663800841960119515158186048698450315",
           "verdict": "REFUTED"
         },
         "L1b_phase4_reexpression": {
           "prediction": "56.59000667492673523776721247006896181490439640170928774199545601611819",
-          "relative_error": "8.920903755742341796654782204179614121411983722151275832689757216345287",
+          "relative_error": "8.920903764791882798517107111682970260765154341989390129394510017440288",
           "verdict": "REFUTED"
         },
         "L1c_phase4_carriers": {
           "prediction": "6072.5185415646717165463123409645093850163186044534",
-          "relative_error": "1063.584995578673097920585578566265193900492644453535855157576302817394",
+          "relative_error": "1063.584996549754544193093010337616915550931635549740778623931622766261",
           "verdict": "REFUTED"
         }
       }
     ],
     "worst_relative_error_L1a": {
       "atom": "4He",
-      "rel_err": "-0.5559734892773264983785358415436437547976689822915199093026920844108123"
+      "rel_err": "-0.5559734888722992736790833998371214663800841960119515158186048698450315"
     },
     "worst_relative_error_L1b": {
       "atom": "4He",
-      "rel_err": "8.920903755742341796654782204179614121411983722151275832689757216345287"
+      "rel_err": "8.920903764791882798517107111682970260765154341989390129394510017440288"
     },
     "worst_relative_error_L1c": {
       "atom": "4He",
-      "rel_err": "1063.584995578673097920585578566265193900492644453535855157576302817394"
+      "rel_err": "1063.584996549754544193093010337616915550931635549740778623931622766261"
     },
     "synthesis_verdict": "All three candidates REFUTED (worst-rel ≥ 25 %). The per-atom Path B λ(K) is NOT a simple substrate combination of linking_weight_family_a and the Phase-4 carriers. GAP-A-4 needs a richer derivation route (e.g. a brane-tower formula that's separately tuned for the Path B mass-equation rather than the Δ_λ binding-energy equation)."
   }
