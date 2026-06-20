@@ -161,11 +161,12 @@ from codata_constants import (  # noqa: E402
     M_E_MEV as _M_E_MEV,
     M_P_MEV_VALIDATION as _M_P_MEV_VALIDATION,
     M_N_MEV_VALIDATION as _M_N_MEV_VALIDATION,
+    M_MU_MEV_VALIDATION as _M_MU_MEV_VALIDATION,
 )
 M_E_CODATA_MEV = _M_E_MEV
 M_P_CODATA_MEV = _M_P_MEV_VALIDATION
 M_N_CODATA_MEV = _M_N_MEV_VALIDATION
-M_MU_CODATA_MEV = mp.mpf("105.6583755")  # CODATA muon (validation; no MeV-registry export yet)  # noqa: P31
+M_MU_CODATA_MEV = _M_MU_MEV_VALIDATION  # CODATA muon (validation; codata_constants registry)
 
 # VolDensity(𝓑₃, q) — the canonical per-knot Geom evaluation
 # (PR #1080, commit `3daeb1b4` on 2026-05-24).  Single Geom call
