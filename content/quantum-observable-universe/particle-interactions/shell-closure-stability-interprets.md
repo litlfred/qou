@@ -5,8 +5,9 @@ the periodic table:*
 
 1. ***Periodicity.***  *Dressing
    $\mathrm{dress}_{S_Z}: P^{(Z-1)} \to P^{(Z)}$ traces a chain in
-   the confinement category, and the Frobenius stability index
-   $\sigma_F(P^{(Z)}, q)$ is piecewise-monotone with local maxima
+   the confinement category.  The Frobenius stability index
+   $\sigma_F(P^{(Z)}, q)$ is monotone non-decreasing, but its
+   **marginal increment** $\Delta\sigma_F(Z) = I_1(Z)$ has local maxima
    at $Z \in \{2, 10, 18, 36, 54, 86\}$ — exactly the noble-gas
    atomic numbers.  The spacing 2, 8, 8, 18, 18, 32 between
    consecutive maxima is the periodic-table row length; this
@@ -29,8 +30,9 @@ the periodic table:*
 
 3. ***Ionisation-energy peaks.***  *The first ionisation energy
    $I_1(Z) = \mathrm{tr}_M(P^{(Z)}) - \mathrm{tr}_M(P^{(Z-1)}) -
-   \mathrm{tr}_M(e^-)$ is proportional to $\sigma_F(P^{(Z)}, q)$ via
-   the dual shadow-price structure.  The local-maxima statement
+   \mathrm{tr}_M(e^-)$ is the **marginal increment** $\Delta\sigma_F(Z)$
+   via the dual shadow-price structure (not $\sigma_F(P^{(Z)}, q)$
+   itself, which is monotone).  The local-maxima statement
    [prop:shell-closure-stability](#prop:shell-closure-stability),
    claim (2) predicts the observed peaks of $I_1(Z)$ at
    noble-gas $Z$ and the troughs immediately after ($Z = 3, 11, 19,
