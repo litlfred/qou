@@ -56,26 +56,74 @@ from pathlib import Path
 import mpmath as mp
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parent.parent
 sys.path.insert(0, str(HERE))
-sys.path.insert(0, str(ROOT / "docs" / "audits" / "scripts"))
 
 # Reuse the canonical channel construction (PR #2461/#2481) — q₀, E₀, the std channel.
+# Same-directory module under computations/probes/, so a plain import is stable.
 from hecke_channel_binding_probe import channels, BONDS, E0, Q0, h, z  # noqa: E402
-
-# Reuse the gate's W_λ emitter exactly as merged in PR #2525 (no re-implementation):
-# qdim / qfact / partitions / Z are the gate primitives; W_λ = d_q² / [n]_q!.
-from keystone_wlambda_Z_defect_n_scaling import (  # noqa: E402
-    Z as gate_Z,
-    partitions as gate_partitions,
-    qdim as gate_qdim,
-    qfact as gate_qfact,
-)
 
 mp.mp.dps = 50
 
 AME_D = mp.mpf("2.224566")          # AME2020 B(²H), the only bound 2-nucleon system
 STD_REP_N3 = (2, 1)                  # standard rep at n=3 = the pn std-channel block
+
+
+# ── The gate's W_λ emitter, inlined for self-containment ─────────────────────
+# W_λ = d_q(λ)² / [n]_q!  with balanced quantum integers and the q-hook-length
+# formula. This is the SAME q-Plancherel weight the Step-1 gate emits
+# (`docs/audits/scripts/keystone_wlambda_Z_defect_n_scaling.py`, PR #2525) — a
+# textbook identity, inlined here rather than imported so this probe does NOT
+# couple a computations/ probe to an audit one-off script (no canonical shared
+# qdim module exists; see the audit script for the same formula).
+
+def _qint(m, q):
+    return mp.mpf(m) if q == 1 else (q ** m - q ** (-m)) / (q - q ** (-1))
+
+
+def gate_qfact(n, q):
+    r = mp.mpf(1)
+    for k in range(1, n + 1):
+        r *= _qint(k, q)
+    return r
+
+
+def _conjugate(lam):
+    if not lam:
+        return ()
+    m = max(lam)
+    return tuple(sum(1 for r in lam if r > c) for c in range(m))
+
+
+def _hooks(lam):
+    lamp = _conjugate(lam)
+    hs = []
+    for i, row in enumerate(lam):
+        for j in range(row):
+            hs.append((row - (j + 1)) + (lamp[j] - (i + 1)) + 1)
+    return hs
+
+
+def gate_qdim(lam, q):
+    denom = mp.mpf(1)
+    for hk in _hooks(lam):
+        denom *= _qint(hk, q)
+    return gate_qfact(sum(lam), q) / denom
+
+
+def gate_partitions(n, mx=None):
+    if mx is None:
+        mx = n
+    if n == 0:
+        yield ()
+        return
+    for first in range(min(n, mx), 0, -1):
+        for rest in gate_partitions(n - first, first):
+            yield (first,) + rest
+
+
+def gate_Z(n, q):
+    fact = gate_qfact(n, q)
+    return sum(gate_qdim(lam, q) ** 2 / fact for lam in gate_partitions(n))
 
 # Substrate flavour split δ = Δm_{n−p}/M_N for the Bring-color-weighted convention.
 M_P = mp.mpf("938.27208943")
