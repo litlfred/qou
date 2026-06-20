@@ -91,3 +91,56 @@ null**.
 |---|---|---|
 | **Capacity** `2n²` | Gap 1 | done — self-square `[n]_q² = Σ[2ℓ+1]_q` of one cosh-parity element |
 | **Ordering** (noble gases) | Gap 2 | SDP optimizer free; eigenvalue split **does not** derive penetration (wrong-sign ℓ-grading, this probe); ℓ-penetration is the one remaining categorical input, now sign-localized |
+
+---
+
+## Follow-up — the involution / anti-chirality correction (2026-06-20)
+
+**Prompt (owner):** *"are you using involution / anti-chirality?"* — **No**,
+and that was the hole. The first probe collapsed to eigenvalue **magnitudes**
+`q^{n−2ℓ}`, discarding (i) the `(−1)^ℓ` sign of `λ_- = −q⁻¹` (the
+antisymmetric / **anti-chiral** channel marker, §7a) and (ii) the
+bar-involution `q ↦ q⁻¹` entirely. So `a = −2` is a verdict on the **bar-even
+magnitude only**.
+
+**The involution-symmetric object.** The bar-even Markov closing weight
+`[2ℓ+1]_q` (invariant under `q ↦ q⁻¹`; the *same* object that gives the
+capacity) **rises with ℓ**: `[1], [3]_q, [5]_q, … = 1, 3.04, 5.22, 7.63`.
+That is the **correct penetration sign** (high-ℓ screened more → fills later),
+the opposite of the magnitude key.
+
+**Hartree-pinned test** (`computations/aufbau_ell_penetration_hartree_pinned.py`,
+witness `aufbau-ell-penetration-hartree-pinned.witness.json`). Model with **no
+free parameter**: `E(n,ℓ) = −Ry/n² + ε·([2ℓ+1]_q − 1)`, `ε` pinned to the
+derived Hartree scale `E_HARTREE_EV = 27.211 eV` (the e–e Coulomb integral *is*
+the Hartree scale, so `ε/Ry = 2` is physical, not fitted).
+
+| ε | fill order (first 10) | closures |
+|---|---|---|
+| 0 | 1s 2s 2p 3s 3p 3d 4s 4p 4d 4f | `[2,10,28,60]` baseline |
+| **Hartree-pinned (`ε/Ry=2`)** | **1s 2s 3s 4s 5s 6s 7s 2p 3p 4p** | `[2,4,6,14,…]` — **catastrophic overshoot** |
+
+- **Right sign, wrong functional form.** At the physical Hartree coupling the
+  flat `[2ℓ+1]_q` term *dominates* the `1/n²` ladder → all `ns` fill before any
+  `np` (manifest in the fill order, detector-independent). An ε-scan finds **no
+  coupling** that lands `[2,10,18,36]`: the same flat ε that pushes 3d above 4s
+  *also* over-splits 2s–2p (spurious Be=4 closure). A flat (n-independent)
+  ℓ-screening structurally cannot fit both the small 2s–2p split and the large
+  3d–4s reorder — because their difference *is* the n-dependence of penetration.
+
+**What this settles.** Penetration factorizes:
+
+> **penetration = `[2ℓ+1]_q` (angular — bar-even, involution-symmetric,
+> derived, *correct sign*) × overlap(n) (radial core-overlap envelope ~`1/n³`,
+> *still open*).**
+
+The involution fixes the **angular** half for free with the right sign; the
+remaining Gap-2 input is the **radial core-overlap envelope**, not the angular
+weight. This supersedes the first probe's "wrong sign" framing: the wrong sign
+was an artifact of dropping the involution; with it restored, the sign is
+correct and the open piece is sharpened to the radial structure.
+
+*Caveat:* the closure sets above use a gap-detection detector (gap_factor 1.6×
+median); the 1/n² ladder's shrinking gaps make it under-report high closures,
+so the verdict rests on the **fill orders** (detector-independent), not the
+precise closure sets.
