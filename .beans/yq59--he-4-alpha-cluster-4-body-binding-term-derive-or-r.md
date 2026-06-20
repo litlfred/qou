@@ -53,3 +53,15 @@ Probe: computations/probes/he_nu_sdp_definition_b3_validation.py (exit 0).
 CAVEAT: 2 points, both B₃ — coincides with (#PSD−1) here. T (8_11, B₅) at H₅ is
 the discriminator; ⁴He needs H₁₂. No fit, no forced ⁴He number.
 Upgrades open item: no-definition → candidate validated 2/3, T@H₅ discriminates.
+
+## Per-block-PSD ν_SDP candidate REFUTED by T (8_11) at H₅ (2026-06-20)
+
+Out-of-sample test in the canonical orthogonal Hoefsmit form: the candidate
+ν_SDP = #{non-trivial PSD Wedderburn blocks of ρ_λ(T_w)} gives D=1✓, ³He=2✓ but
+T=1✗ (only the (1⁵) sign rep PSD; all 5 higher-dim non-triv blocks indefinite).
+Canonical ν(T)=2. The 2-point B₃ agreement was coincidental. ("exclude trivial" ≡
+"(#PSD)−1" identically — trivial = q^writhe>0 always PSD; no two readings.)
+⇒ ν_SDP is NOT a per-block PSD sign test; needs the operator-selection SDP
+(t, G, n_target), no per-atom spec reproducing 1,2,2 in corpus. #2552 finding
+sharpened. Probe: computations/probes/he_nu_sdp_psd_count_test.py (REFUTED, exit 0).
+No fit, no forced ⁴He number.
