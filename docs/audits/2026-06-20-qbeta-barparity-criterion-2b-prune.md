@@ -83,5 +83,22 @@ filter. Instead:
 A constraint on `R(q,ξ)`, not a value — within the qkhc discipline (nothing
 wired; `c_k` stay cal-anchored).
 
+## Follow-up — the closed-form `Q_β` is bar-mixed too (parity is a *fibre* statement)
+
+Testing the natural next step ("anchor the parity on `Q_β`") symbolically: the
+closed-form `Q_β` core `(q²−2q−1)(q+1)/q³ = 1 − q⁻¹ − 3q⁻² − q⁻³` is **bar-MIXED**
+(neither bar-odd nor bar-even; the `|·|` variant likewise). So the *literal*
+archimedean closed form is **not** bar-definite — the "`Q_β` = bar-odd `sinh`
+partner" statement is about its **structural origin** (`sinh` vs the `cosh` meson
+scale), not a bar-parity of the evaluated closed form.
+
+**Net:** bar-parity is **not a clean archimedean filter at any level** — neither on
+`F(q)` in `u` (criterion 2b, refuted above) nor on the closed-form `Q_β`. If the
+bar-involution constrains the kernel, it does so at the **fibre level** (formal-`q`,
+pre-archimedean), consistent with CLAUDE.md's *"c_k live in the FIBRE … Im(q)
+unconstrained at the fibre, Im(q₀)=0 only at the archimedean evaluation"* framing.
+This is the disciplined place to mount any future bar-symmetry argument — on the
+formal-`q` Habiro element, not the archimedean `Q_β(q₀)` or the real-`u` ladder.
+
 *Caveat.* This isolates the `Π(1+c_k u^k)` factor; the `cos(α_eff)` and `Q_A`
 factors carry their own bar-parity and a full accounting must include them.
