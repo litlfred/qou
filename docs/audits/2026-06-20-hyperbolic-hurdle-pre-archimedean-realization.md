@@ -266,7 +266,32 @@ canonically — the 2026-06-01 "normalisation = fit" warning still binds, and
 mode) as the thing to avoid. The Step-1 weight gate is the right falsifiable
 discipline.
 
-### 6.2 The cyclotomic-Galois constraint — already pruning the open payload
+### 6.2 The cyclotomic-Galois constraint — period-axis only (CORRECTED)
+
+> **⚠ Correction (2026-06-20, after rebasing onto current `main`; per the s5-so3
+> ledger [`docs/coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md)).**
+> This section as first drafted **overstated** the Galois angle. Three corrections,
+> all from the live ledger:
+> 1. **Target superseded.** The `partition→rotation` map below was *falsified and
+>    de-vacuified* (#2480, 2026-06-13/18); the open Lean object is now
+>    `irrepToRotation` on the A₅-irrep domain.
+> 2. **`W_λ = d_q²/[n]_q!` is the q-Plancherel measure, NOT the production weight**
+>    (#2406, `e269ca12ea`) — so §6.1's "#2503 Step-1 weight gate" framing *and* the
+>    "cheaper falsifier" claim below are both moot.
+> 3. **Wrong axis (the load-bearing error).** The single open object is now a
+>    *differential-geometry* problem: does the **full-Hecke principal-specialization**
+>    trace admit any geometric realization of the Ocneanu weights (finite-dim
+>    Sasakian ruled out). The cyclotomic-Galois / $\mathrm{Li}_3(\zeta_5)$ reduction
+>    below lives on the **period / z-Habiro axis** (the m_τ / Goncharov bi-filtration
+>    side), which the ledger's 2026-06-17 note calls **orthogonal to the keystone
+>    coupling — "do not conflate"** — and flags forcing that period↔knot bridge as
+>    *the unfalsifiable correspondence-chain the Habiro lead refused.*
+>
+> **What survives:** only the number-theoretic fact — the depth-3 period content
+> over $\mathbb{Q}(\zeta_5)$ reduces to one generator. That is real, but it is a fact
+> about the **m_τ period axis**, **not** a falsifier for the keystone's open
+> object. The original text is kept below for the audit trail; read it as
+> superseded.
 
 The open payload (the partition→A₅-rotation map) carries a symmetry the corpus
 already names *and has already exploited*: the joint motivic-Galois × braid
