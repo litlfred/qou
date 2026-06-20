@@ -48,10 +48,6 @@ from hecke_channel_binding_probe import channels, BONDS, E0, Q0  # noqa: E402
 
 mp.mp.dps = 50
 
-# CODATA-2022 nucleon masses (validation-only, for the mass column).
-M_P = mp.mpf("938.27208943")
-M_N = mp.mpf("939.56542194")
-
 # Low isotopes (closed form ⇒ no feasibility wall; extend freely).
 NUC = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2),
        "6Li": (3, 3), "7Li": (3, 4)}
