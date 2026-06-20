@@ -14,23 +14,11 @@
           },
           {
             "type": "command",
-            "command": "./scripts/setup-lean-toolchain.sh"
+            "command": "./scripts/setup-lean-toolchain.sh >\"${TMPDIR:-/tmp}/qou-setup-lean.log\" 2>&1"
           },
           {
             "type": "command",
-            "command": "./scripts/session-status.sh"
-          },
-          {
-            "type": "command",
-            "command": "./scripts/open-folio-assistant.sh"
-          },
-          {
-            "type": "command",
-            "command": "./scripts/lean-build-bg.sh &"
-          },
-          {
-            "type": "command",
-            "command": "./scripts/watch-main-prompt.sh"
+            "command": "./scripts/lean-build-bg.sh >\"${TMPDIR:-/tmp}/qou-lean-build-bg.log\" 2>&1 &"
           },
           {
             "type": "command",
@@ -41,32 +29,12 @@
     ],
     "PostToolUse": [
       {
-        "matcher": "Edit|Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "./scripts/render-on-change.sh"
-          }
-        ]
-      },
-      {
         "matcher": "Bash",
         "hooks": [
           {
             "type": "agent",
             "prompt": "Check if the Bash command in $ARGUMENTS was a 'git push' or a 'git checkout -b' / 'git switch -c' (a new branch was created or pushed). If it was a successful git push: find the open PR number for the current branch in litlfred/qou using mcp__github__list_pull_requests, subscribe to PR activity using mcp__github__subscribe_pr_activity, AND if any other open PRs in litlfred/qou were updated in the last 24h (sibling PRs), invoke the /coordinate slash command (skill: local/coordinate) so this session posts intent + scope on the relevant siblings and triages review comments on its own PR. If it was a 'git checkout -b' / 'git switch -c' on a non-main branch and origin/main is not already being watched in this session, invoke the /watch skill in branch:main mode. If neither, do nothing.",
             "timeout": 45
-          }
-        ]
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "./scripts/greeting-task-selection.sh",
-            "timeout": 5
           }
         ]
       }

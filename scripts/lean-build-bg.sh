@@ -8,8 +8,8 @@
 #   4. lake build (compile QOU project)
 #   5. On failure: retry with exponential backoff (10s, 30s, 90s, 270s)
 #
-# Writes status to /tmp/qou-lean-build-status.json for session-status.sh
-# and the editor skill to consume. Status values:
+# Writes status to /tmp/qou-lean-build-status.json for the editor skill +
+# lean-environment-setup to consume. Status values:
 #   unavailable  — lean not installed or content/quantum-observable-universe/lean/ missing
 #   updating     — running lake update
 #   caching      — running lake exe cache get

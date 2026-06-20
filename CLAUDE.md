@@ -2056,11 +2056,17 @@ To extract the deploy infrastructure for another repo, copy `deploy/`,
 
 ### Session-start hook
 
-A `SessionStart` hook in `.claude/settings.json` runs `scripts/session-status.sh`
-at the beginning of every session. It sources `scripts/lib/lean-env.sh` for
-shared Lean environment detection. If Lean is not available and the user's
-request requires Lean, the editor skill will suggest the `lean_setup` MCP
-tool rather than silently failing.
+`SessionStart` hooks in `.claude/settings.json` run, in order:
+`setup-elan-symlinks.sh` + `setup-lean-toolchain.sh` (Lean toolchain setup —
+output redirected to `${TMPDIR:-/tmp}/qou-setup-lean.log`), `lean-build-bg.sh`
+(background build; output to `${TMPDIR:-/tmp}/qou-lean-build-bg.log`, status to
+`/tmp/qou-lean-build-status.json`), and `session-start-coord-sweep.sh` (surfaces
+the active bean work-plan + sibling-PR coordination). The Lean scripts source
+`scripts/lib/lean-env.sh` for shared environment detection and exit quietly when
+`release.lean-lang.org` is firewalled, so a sandbox without Lean does not flood
+the session transcript. If Lean is unavailable and the request requires it, the
+editor skill suggests the `lean_setup` MCP tool rather than silently failing.
+
 
 ## Project structure
 

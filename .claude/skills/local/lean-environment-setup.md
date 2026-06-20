@@ -44,7 +44,8 @@ on the PATH and enables Lean tools automatically.
 
 ## When to Use This Skill
 
-- At session start when `session-status.sh` reports Lean as unavailable
+- At session start when the Lean build status (`/tmp/qou-lean-build-status.json`,
+  written by `setup-lean-toolchain.sh` / `lean-build-bg.sh`) reports Lean as unavailable
 - When paper-assistant Lean tools fail with "No such file or directory: 'lake'"
 - When a user says "set up Lean" or "install Lean"
 
