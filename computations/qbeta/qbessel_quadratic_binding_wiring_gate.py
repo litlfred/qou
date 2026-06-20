@@ -91,6 +91,8 @@ def casoratian(w, nu, q):
 
 
 def G(w, nu, q):
+    if w == 0:                          # analytic coincidence limit (PR #2533)
+        return 1 / (q ** (-nu) - 1)
     return g1(w, nu, q) * g2(w, nu, q) / casoratian(w, nu, q)
 
 
@@ -133,7 +135,6 @@ NU_RULES = {
 
 def correction_sum(free, atom, q, arg_map, nu_rule):
     """Sum_lambda [G(w_atom) - G(w_free)] with uniform weights (sign/scale probe)."""
-    tot = mpf(0)
     terms = []
     for lam in free:
         d = dim_sn(list(lam))
@@ -148,8 +149,9 @@ def correction_sum(free, atom, q, arg_map, nu_rule):
         except Exception:
             dG = mpf("nan")
         growth = fabs(rf) > 1 or fabs(ra) > 1
-        tot += dG
         terms.append((lam, nu, growth, dG))
+    valid = [t[3] for t in terms if t[3] == t[3]]   # drop nan
+    tot = fsum(valid) if len(valid) == len(terms) else mpf("nan")
     return tot, terms
 
 
@@ -171,6 +173,9 @@ def main():
             print(f"{nname:<12}{aname:<16}{mp.nstr(s0, 8):>16}{mp.nstr(smu, 8):>16}")
 
     finite = [v for v in vals if v == v]  # drop nan
+    if not finite:
+        print("  No finite correction sums computed (all NaN — e.g. integer-nu resonance).")
+        return 1
     smin, smax = min(finite), max(finite)
     signs = set(int(mp.sign(v)) for v in finite if v != 0)
     spread = (fabs(smax - smin) / (fabs(smax) + fabs(smin))) if (smax != 0 or smin != 0) else mpf(0)
