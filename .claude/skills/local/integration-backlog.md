@@ -222,14 +222,14 @@ When multiple axes are requested:
    pause: AskUserQuestion "Axis X complete. Continue to next, or
    pause?".
 
-## Persistence — `todos/integration-backlog-ledger.md`
+## Persistence — `.beans/integration-backlog-ledger.md`
 
 Per `local/integration-watcher §0a` (work-plan policy) and
 `local/coordinate §0a` (ledger discipline), every batch decision
 and merge outcome is appended to:
 
 ```
-todos/integration-backlog-ledger.md
+.beans/integration-backlog-ledger.md
 ```
 
 Entry format:

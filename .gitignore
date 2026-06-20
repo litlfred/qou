@@ -88,6 +88,11 @@ todos/qa-agent-drain-queue.json
 # Stray queue artifact when a pipeline script is run with cwd=content/
 content/todos/
 
+# Bean work-plan (.beans/ is tracked). Watcher *-queue.json are tracked
+# bulk-JSON coordination queues; watcher *-ledger.md are local runtime
+# event logs — keep them gitignored (matching the prior todos/ semantics).
+.beans/*-ledger.md
+
 # Local agent state (per-machine, not shared)
 .claude/local-state/
 .claude/worktrees/

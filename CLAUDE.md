@@ -161,10 +161,10 @@ user's last message, not the most recently mentioned file.
       authoritative source; `mcp__github__pull_request_read get`
       gives the body's test-plan items.
    3. **Integration-watcher requirements** — the active watchers'
-      queue items (`todos/proof-integration-watcher-queue.json`,
-      `todos/canonical-watcher-queue.json`,
-      `todos/compute-integration-watcher-queue.json`,
-      `todos/detangler-integration-watcher-queue.json`). Prefer
+      queue items (`.beans/proof-integration-watcher-queue.json`,
+      `.beans/canonical-watcher-queue.json`,
+      `.beans/compute-integration-watcher-queue.json`,
+      `.beans/detangler-integration-watcher-queue.json`). Prefer
       items whose `block_or_script` overlaps the current PR's
       scope (e.g. the same chapter or the same Python/Lean file).
    4. **Refresh stale sidecars + witnesses** (added 2026-06-03).
