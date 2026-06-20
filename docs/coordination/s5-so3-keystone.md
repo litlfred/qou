@@ -70,6 +70,12 @@ is its *geometric origin*.
    constraint; the keystone's single open object is the q-Plancherel-measure geometric-realization problem
    (below), not a period identity. Verify the axis (period/z vs coupling/q) before treating any Galois fact as
    keystone-bearing.
+   **Twice-demonstrated recurrence (strengthened 2026-06-20, PR #2506 / bean `wlk9`).** A *second*, independent
+   agent (`claude/tender-darwin-sw4zo1`, the #2506 hyperbolic-hurdle audit) re-derived the identical
+   cyclotomic-Galois / `Li₃(ζ₅)` angle from scratch and again mis-aimed it at the keystone as a falsifier — with
+   no knowledge of the #2517 record (it was 475 commits stale). Two agents re-walking the same dead end within
+   one day is exactly the recurrence the canonical-no-negative-result discipline exists to stop; treat this item
+   as high-priority inoculation, not a one-off footnote.
 
 ## Sessions log
 
@@ -96,6 +102,7 @@ is its *geometric origin*.
 | 2026-06-20 | #2519 | **Probe (no fit):** the (2,1)/h⁴ cancellation is **robust to q-deformation**. Generic-q Hecke branching H₃⊂H₅ carries classical multiplicities → `χ_μ^H5(β)=Σ m·χ` exactly (max |Δ|=8.9e-16) and `χ_(3,1,1)−χ_(3,2)=χ_(1,1,1)=1` identically, h-indep up to h⁴≈0.9. Closes the q-deformed-Wenzl escape #2516 left at the **character** level — only surviving μ/e asymmetry is the O(1) `W`/`y` block-weight ratio (#2488 frontier). |
 | 2026-06-20 | #2516 | **Probe (no fit):** ran the functor-resolution §4 object via `pyhecke_native` (built in-sandbox, #2511) — the H₃ Borromean Markov-trace shift between muon `E_(3,2)` and electron `E_(3,1,1)` projectors via the classical `S₅→S₃` branchings. The h⁴-bearing `(2,1)` block enters both with the **same** multiplicity 2 (classical, q-indep) → **cancels exactly** in the μ/e difference (6.9e-18). Classical-multiplicity baseline is **null**; residual split is the `(1,1,1)` sign channel (h-indep, ~1.5e-2). Sharpens the W_λ frontier (#2488): the q-deformed `W_λ = d_q(λ)²/[n]_q!` weights are **necessary**, not optional — pure multiplicity counting cannot produce a generation shift. |
 | 2026-06-20 | #2517 | **Lead + inoculation:** (a) §Refutations item 4 — cyclotomic-Galois / `Li₃(ζ₅)` period is period-axis, NOT a keystone falsifier; (b) **q-heat-kernel / q-Bessel(2nd-kind) geometric-realization lead** — precheck found `W_λ=d_q²/[n]!` is **sub-normalized** (`Z=0.98222` at q_0, P1 fail; symmetry P2 + audit P3 pass); the mass defect `1−Z` is the geometric quantity to explain. Bridges the existing q-Bessel infra (2026-06-13) to the keystone target. `2026-06-20-keystone-qbessel-heat-kernel-lead.md` + `scripts/keystone_qbessel_plancherel_precheck.py`. NOT a closure. |
+| 2026-06-20 | (this PR) | **Inoculation + corpus trace:** (a) §Refutations item 4 strengthened — the cyclotomic-Galois falsifier was re-walked a **second** time independently (`claude/tender-darwin`, #2506), now a twice-demonstrated recurrence; (b) pieces-1–3 corpus-object trace consolidated into [`docs/audits/2026-06-20-s5so3-pieces-1-3-corpus-trace.md`](../audits/2026-06-20-s5so3-pieces-1-3-corpus-trace.md) — every settled ingredient mapped to its verified `.md`/`.lean`/checker source. No new math; reporting only. |
 | 2026-06-18 | #2480 | **Lean (formalization fix):** de-vacuify `BringFiberAction` — remove the provably-false `respects_conjugate` (angle sign-flip) + vacuous `hits_five_conjugacy_classes : True` + trivial instance; correct the fibre-map domain to the 5 A₅ irreps (new `A5Irrep` + `conjugate_same_a5_irrep`), substantive `five_distinct_classes`. Per `2026-06-13-bring-fiber-action-falsification.md`. Formalization correction, **not** a closure — the geometric map stays open. |
 
 ## Key artifacts
