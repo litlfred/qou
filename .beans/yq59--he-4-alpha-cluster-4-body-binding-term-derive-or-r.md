@@ -41,3 +41,15 @@ remains" framing is STALE (corpus-grep discipline):
 
 Audit: docs/audits/2026-06-20-he4-nu-sdp-not-computed-definition-gate.md.
 No fit, no forced number. ρ_F less settled than the magic-A wireup states.
+
+## Candidate ν_SDP definition VALIDATED on B₃ atoms (2026-06-20)
+
+Took the formalize-first first step. Candidate operational definition:
+  ν_SDP = #{ λ≠(n) : ρ_λ(T_w) PSD }  (exclude always-positive trivial rep).
+Reproduces BOTH confirmed B₃ atoms: D→1 (only sign PSD; std (2,1) indefinite
+[−0.89,+0.03]), ³He→2 (std+sign PSD). Naive total PSD count (2,3) does NOT match;
+excluding trivial does. Discriminator block = std (2,1).
+Probe: computations/probes/he_nu_sdp_definition_b3_validation.py (exit 0).
+CAVEAT: 2 points, both B₃ — coincides with (#PSD−1) here. T (8_11, B₅) at H₅ is
+the discriminator; ⁴He needs H₁₂. No fit, no forced ⁴He number.
+Upgrades open item: no-definition → candidate validated 2/3, T@H₅ discriminates.

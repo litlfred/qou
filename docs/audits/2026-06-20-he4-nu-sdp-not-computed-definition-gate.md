@@ -79,6 +79,45 @@ SDP under a *guessed* definition would produce a number that cannot be checked
 against the known anchors — the exact rainbow the formalize-first discipline
 forbids.
 
+## Update — a candidate definition, validated on the B₃ atoms (D, ³He)
+
+Taking the formalize-first first step (pin a definition, validate against known
+anchors *before* any H₁₂ compute), one concrete parameter-free rule **reproduces
+the confirmed values** on the two atoms whose canonical braid is in B₃ (so the H₃
+Hoefsmit seminormal is available in pure Python):
+
+> **ν_SDP(K_w) = #{ λ ⊢ n, λ ≠ (n) : ρ_λ(T_w) lies in the PSD cone }**
+> (symmetric part `(M+Mᵀ)/2 ⪰ 0`; the trivial rep `(n)` is **excluded** because
+> `ρ_(n)(T_w) = q^{writhe} > 0` is always positive — never an informative
+> confinement channel).
+
+Probe [`computations/probes/he_nu_sdp_definition_b3_validation.py`](../../computations/probes/he_nu_sdp_definition_b3_validation.py)
+· witness `he-nu-sdp-definition-b3-validation.witness.json` (`numpy`; H₃ Hoefsmit
+inlined from `joint_tower_sdp_solver_v2.py`):
+
+| atom | knot | writhe | (3) triv | (2,1) std sym-eigs | (1,1,1) sign | non-triv PSD | **ν_pred** | ν_canon |
+|------|------|-------:|---------|--------------------|--------------|-------------:|-----------:|--------:|
+| D | 6_2 | +2 | +1.232 PSD *(excl)* | `[−0.89, +0.03]` → **not PSD** | +0.812 PSD | {(1,1,1)} | **1** | 1 ✓ |
+| ³He | L6a4 | 0 | +1.000 PSD *(excl)* | `[+0.98, +1.01]` → PSD | +1.000 PSD | {(2,1),(1,1,1)} | **2** | 2 ✓ |
+
+The discriminating block is the **std (2,1)** rep: indefinite for D (→ ν=1), PSD
+for ³He (→ ν=2). The naive *total* PSD count (2, 3) does **not** match; excluding
+the always-positive trivial rep does.
+
+**Honest caveat (2-point validation).** D and ³He are the only confirmed atoms in
+B₃. On these two points the rule coincides with "(#PSD blocks) − 1" (the trivial
+rep is always PSD, so the two readings are identical here). The **discriminator**
+is the third confirmed atom **T (8_11, ν=2), which is in B₅** and needs the H₅
+Hoefsmit seminormal (deferred to the Rust crate) to tell the two readings apart.
+Applying the rule to ⁴He needs Hoefsmit at H₁₂ (p(12)=77 blocks). This probe does
+**not** extrapolate ⁴He — it pins + validates the definition on what is computable
+today, and gives the ⁴He computation a concrete, falsifiable recipe (count
+non-trivial PSD blocks of `ρ_λ(T_w(⁴He))`).
+
+This upgrades the open item from *"no operational definition exists"* to *"a
+candidate definition validated on 2/3 confirmed atoms; T@H₅ is the discriminator,
+then ⁴He@H₁₂."*
+
 ## Net
 
 - **No fit, no forced ⁴He number.** The honest state: ν_SDP is uncomputed for
