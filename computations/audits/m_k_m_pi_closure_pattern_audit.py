@@ -116,8 +116,10 @@ def main() -> int:
 
     # PDG-anchored m_K/m_π:
     # m_K± = 493.677 MeV, m_π± = 139.57039 MeV  →  m_K/m_π = 3.5371
-    m_k_pdg = mp.mpf("493.677")
-    m_pi_pdg = mp.mpf("139.57039")
+    from codata_constants import (  # registry (no inline literal)
+        M_K_PM_MEV_VALIDATION as m_k_pdg,
+        M_PI_PM_MEV_VALIDATION as m_pi_pdg,
+    )
     ratio_pdg_sq = (m_k_pdg / m_pi_pdg) ** 2
     pred_sq = base + em_term
     print(f"\n[Closure check]")
