@@ -135,6 +135,7 @@ import QOU.Archimedean.BorromeanQuark
 import QOU.Interactions.QIntegerMassFormula
 import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Molecular.PalindromicityOrbitalType
+import QOU.Molecular.ShellCapacitySelfSquare
 import QOU.Molecular.ShellClosureNfTermCount
 
 import QOU.Conjectures.ShellTransitionKnot
