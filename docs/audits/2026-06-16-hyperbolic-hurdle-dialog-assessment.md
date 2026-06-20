@@ -268,6 +268,7 @@ hyperbolic-volume compute nowhere.
 
 ## Cross-references
 
+- [`docs/coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md) §Refutations item 4 — the **period / z-Habiro axis** (cyclotomic-Galois, `Li₃(ζ₅)`) is orthogonal to the q-side keystone coupling; a period identity is not a keystone constraint. Same archimedean-re-register trap this audit flags for the `sech`/separation pitch — check the axis (period/z vs coupling/q) before treating any Galois fact as keystone-bearing.
 - [`docs/audits/2026-05-30-klr-dialog-assessment.md`](2026-05-30-klr-dialog-assessment.md) — sibling dialog assessment; same "archimedean re-register of a categorical mechanism" failure mode; trefoil-non-hyperbolic point.
 - [`docs/audits/2026-05-18-recursive-rho-xi-blocked-by-underdetermined-extracts.md`](2026-05-18-recursive-rho-xi-blocked-by-underdetermined-extracts.md) — why the $A\ge3$ interface extracts are rank-deficient; closure paths (a)/(b)/(c)/(d).
 - [`docs/audits/2026-05-25-track-b-r5-full-sdp-extension-design.md`](2026-05-25-track-b-r5-full-sdp-extension-design.md) — Track B R5-full design; α-cluster cascade; Subgoal-1 leverage.
