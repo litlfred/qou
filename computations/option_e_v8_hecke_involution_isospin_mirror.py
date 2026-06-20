@@ -34,7 +34,7 @@ from mpmath import mpf, mp, fabs, acos
 
 
 M_E_MEV = mpf("0.51099895069")
-M_PI_MEV = mpf("139.57039")
+M_PI_MEV = mpf("139.57039")  # standalone probe: no substrate import (intentional)
 Q_0 = mpf("1.1097090249")
 
 H_Q = 1 - 1 / Q_0

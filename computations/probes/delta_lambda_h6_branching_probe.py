@@ -43,6 +43,7 @@ del _sys, _Path, _bridge
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json, time
 from q_parameter import Q_50_DIGIT_STR
+from codata_constants import M_P_MEV_VALIDATION, M_PI_PM_MEV_VALIDATION
 from pathlib import Path
 from mpmath import mp, mpf, fabs
 
@@ -100,8 +101,8 @@ PARTS_6 = [(6,), (5,1), (4,2), (4,1,1), (3,3), (3,2,1),
 # The coefficients from the probe:
 # A = [[y·χ_meson for each λ], [y·χ_proton for each λ]]
 # b = [m_π/m_e, m_p/m_e]
-m_pi = mpf('139.57039')
-m_p = mpf('938.27208816')
+m_pi = mpf(M_PI_PM_MEV_VALIDATION)
+m_p = mpf(M_P_MEV_VALIDATION)
 
 # H_3 y·χ products (from witnesses)
 yc_meson = {'sym': mpf('0.776872'), 'std': mpf('0.337804'), 'alt': mpf('0.012162')}

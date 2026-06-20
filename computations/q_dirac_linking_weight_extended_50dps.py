@@ -35,6 +35,7 @@ compare to CODATA 938.27208816 MeV.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import sys
 from pathlib import Path
 
@@ -234,7 +235,7 @@ def main():
             vol_b3 = 8 * G
             geom_leading = vol_b3 / hbar_q ** 2
             m_p_pred = m_e * geom_leading * lw_at_q0
-            m_p_codata = mp.mpf("938.27208816")
+            m_p_codata = mp.mpf(M_P_MEV_VALIDATION)
             ppm = (m_p_pred - m_p_codata) / m_p_codata * 1e6
             print(f"    m_p prediction (at a_2_norm = {mp.nstr(r['a_2_norm'], 8)}): "
                   f"{mp.nstr(m_p_pred, 12)} MeV ({mp.nstr(ppm, 6)} ppm)")
