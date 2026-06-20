@@ -266,6 +266,51 @@ canonically — the 2026-06-01 "normalisation = fit" warning still binds, and
 mode) as the thing to avoid. The Step-1 weight gate is the right falsifiable
 discipline.
 
+### 6.2 The cyclotomic-Galois constraint — already pruning the open payload
+
+The open payload (the partition→A₅-rotation map) carries a symmetry the corpus
+already names *and has already exploited*: the joint motivic-Galois × braid
+action ([`conj:joint-galois-braid-action`](../../content/quantum-observable-universe/mass-theory/joint-galois-braid-action.md)).
+Since A₅'s natural field is $\mathbb{Q}(\zeta_5)$, the cyclotomic Galois group
+$\mathrm{Gal}(\mathbb{Q}(\zeta_5)/\mathbb{Q})\cong(\mathbb{Z}/5)^\times\cong\mathbb{Z}/4$
+acts on the Bring depth-3 cell, permuting $\{\mathrm{Li}_3(\zeta_5^k)\}$ as the
+$(\mathbb{Z}/5)^\times$ orbit, while the braid $B_5$ (via $S_5$ on Bring) permutes
+the same four values — the two actions conjecturally commute.
+
+**The constraint (a falsifiable, finite test).** Any candidate partition→rotation
+map must be $(\mathbb{Z}/5)^\times$-equivariant: $\sigma_a:\zeta_5\mapsto\zeta_5^a$
+on the period side must intertwine with the $S_5/A_5$ permutation on the cell
+side. This converts "is the map canonical or a fit?" — a transcendence question —
+into non-vanishing of $G_{\mathrm{mot}}\rtimes B_n$-invariants, a
+representation-theoretic one (`joint-galois-braid-action` §significance-3).
+
+**The corpus has already run it — and it prunes the open content to ONE number.**
+[`cl3_zeta5_orbit_sum.py`](../../computations/cl3_zeta5_orbit_sum.py) (witness
+`cl3-zeta5-orbit-sum.witness.json`, 50 dps) establishes:
+
+- the Galois *trace* $\sum_{k=1}^4 \mathrm{Li}_3(\zeta_5^k)=-\tfrac{24}{25}\zeta(3)$
+  is the classical Tate line (already external, from $K_5(\mathbb{Z})$);
+- so the 2-dim Borel-rank space $K_5^{\mathrm{ind}}(\mathbb{Q}(\zeta_5))\otimes\mathbb{Q}$
+  collapses to a single **genuinely-new** depth-3 generator: the Galois-*antisymmetric*
+  combination $\mathrm{Cl}_3(2\pi/5)-\mathrm{Cl}_3(4\pi/5)\approx 0.955$ (the
+  $\zeta_5\leftrightarrow\zeta_5^2$ eigenvector).
+
+**Consequence for the keystone.** The map's *entire* open depth-3 content is now a
+single real number, isolated by the Galois automorphism. A candidate is falsified
+unless its non-trivial output reproduces exactly this Galois-antisymmetric
+generator. This is **cheaper and sharper than #2503's WRT Step-1 gate** — a finite
+cyclotomic character computation (already witnessed), not an infinite-dimensional
+WRT$(S^3/2I)$ build — and the two are complementary falsifiers (Galois-type here;
+per-block weight at #2503): a candidate must pass both.
+
+**Production status.** Depth-3 $\zeta_5$ is **keystone-gating (exploratory), not
+production.** The canonical mass/binding/isotope chain is depth-2 (volume $=$
+$\mathrm{Li}_2$ / Bloch–Wigner; cf. `_li_2_q_util.py`) and consumes no
+$\mathrm{Li}_3$/$\zeta(3)$/$\zeta_5$ term. The Galois machinery becomes
+production-relevant only *when the keystone closes* — at which point it feeds
+m_τ / GAP-A-3 binding, the observables currently gated on this payload. Its present
+job is to **prune** that open payload (which it is doing: $2\!\to\!1$ dim).
+
 ---
 
 ## 7. Recommendation
@@ -315,5 +360,8 @@ discipline.
   14/14; functor $=\mathrm{Res}^{S_5}_{S_3}$), **#2503** (DG-construction attack
   via WRT$(S^3/2I)$ / Lawrence–Zagier, gate reversed 2026-06-19), **#2500**
   (block-count necessary conditions, finite-dim ruled out).
+- [`conj:joint-galois-braid-action`](../../content/quantum-observable-universe/mass-theory/joint-galois-braid-action.md)
+  + [`cl3_zeta5_orbit_sum.py`](../../computations/cl3_zeta5_orbit_sum.py) — the
+  cyclotomic-Galois constraint on the keystone map (§6.2) and its 50-dps witness.
 - CLAUDE.md §7b (symmetric-crystal / Macdonald authoring guidance), §7c (base
   ring), §3b-cond (conditional-class formalization).
