@@ -155,6 +155,22 @@ if [ ! -d "$elan_toolchain_dir" ] || [ -z "$(ls -A "$elan_toolchain_dir" 2>/dev/
     fi
 fi
 
+# Functional probe: a toolchain dir can be non-empty yet the `lean` shim
+# still unusable (broken/partial install). Run `lean --version` once; if it
+# fails AND release.lean-lang.org is unreachable, bail cleanly instead of
+# letting lake update / cache get / build each retry against the firewalled
+# release server. `timeout` is guarded behind `has timeout` so systems
+# without it (macOS, minimal containers) fall back to a bare `lean --version`
+# rather than mis-reading exit 127 as a broken toolchain.
+lean_probe=(lean --version)
+has timeout && lean_probe=(timeout 15 "${lean_probe[@]}")
+if ! "${lean_probe[@]}" >/dev/null 2>&1; then
+    if ! curl -sfI --max-time 5 https://release.lean-lang.org > /dev/null 2>&1; then
+        write_status "unavailable" "Lean toolchain present but unusable and release.lean-lang.org unreachable (sandbox egress?)" "check" 0
+        exit 0
+    fi
+fi
+
 cd "$LEAN_DIR"
 
 # ── Step 0: local mathlib redirect (if configured) ──────────────
@@ -191,7 +207,7 @@ while [ $ATTEMPT -le $MAX_RETRIES ]; do
     BUILD_START=$(date +%s)
     export BUILD_START
 
-    if lake build 2>&1 | tee "$LOG_DIR/qou-lake-build.log"; then
+    if lake build > "$LOG_DIR/qou-lake-build.log" 2>&1; then
         print_timing_report "$LOG_DIR/qou-lake-build.log"
         write_status "ready" "Lean MCP ready (build succeeded)" "done" $ATTEMPT
         exit 0
