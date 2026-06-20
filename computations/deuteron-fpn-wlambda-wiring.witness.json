@@ -1,0 +1,34 @@
+{
+  "computation": "deuteron-fpn-wlambda-wiring",
+  "kind": "exploratory-probe",
+  "description": "Wires the owner-gated deuteron f_pn = 0.588 magnitude against the keystone Step-1 W_\u03bb = d_q\u00b2/[n]_q! gate. Extracts f_pn (required / std) and the gate's W_(2,1) at n=3 (the pn std-channel block), reports the falsifiable bracket. Reuses hecke_channel_binding_probe (channel) and keystone_wlambda_Z_defect_n_scaling (W_\u03bb emitter, PR #2525). No fit.",
+  "engine": "mpmath",
+  "dps": 50,
+  "q0": "1.1099785955573347198997632204832250266562084087802",
+  "E0_MeV": "4.1859808275828909142898761858172327622517686975159",
+  "ame_B_deuteron_MeV": "2.224566",
+  "f_pn_required": "0.58776243266346022831955909687677931384456770453334",
+  "f_pn_std_channel": "0.39479017303576443227803506804275346503036414707611",
+  "E_std_channel_MeV": "3.8904541925104567676017797137532969458838066443391",
+  "gate_Wlambda_n3": {
+    "(3,)": "0.1633832273395816925522253108682946519752219996745",
+    "(2, 1)": "0.66067377234802625540747175676965352962546626411232",
+    "(1, 1, 1)": "0.1633832273395816925522253108682946519752219996745"
+  },
+  "gate_Z3": "0.98744022702718964051192237850624283357591026346132",
+  "pn_block": "(2, 1)",
+  "f_pn_pred_from_gate_Wlambda": "0.66067377234802625540747175676965352962546626411232",
+  "E_pred_from_gate_Wlambda_MeV": "1.7350685312547037265589166627609516088114153250484",
+  "miss_f_pct_vs_required": "12.404899604448426511449279914704350476969716863305",
+  "miss_E_pct_vs_AME": "22.004178286699350499876530399145199161930222567081",
+  "bracket_fstd_lt_freq_lt_W21": true,
+  "verdict": "REFUTE (naive direct-weight map): the algebraic W_\u03bb the gate emits under-binds (W_(2,1)=0.661, E=1.74) while the std channel over-binds (0.395, E=3.89); the required f_pn=0.58776 (E=2.2246) is strictly bracketed between them. The magnitude stays owner-gated to the GEOMETRIC W_\u03bb realization (WRT(S\u00b3/2I)), for which this is now a sharp, second binding-side falsifiable target alongside the m_\u03c4 tower: any index reproducing W_\u03bb must land f_pn in (0.395, 0.661) and at 0.58776.",
+  "discipline": "EXPLORATORY \u2014 derive-or-refute, zero free parameters, no production rewire.",
+  "refs": [
+    "PR #2503 (DG attack plan + f_pn wiring offer)",
+    "PR #2507 (chirality \u00d7 topology binding; f_pn=0.588 localization)",
+    "PR #2525 (W_\u03bb Z(n) defect gate emitter)",
+    "docs/audits/2026-06-20-chirality-forces-complete-graph-topology.md",
+    "docs/coordination/s5-so3-keystone.md"
+  ]
+}
