@@ -109,3 +109,21 @@ Either (a) a derive-or-refute structural statement: the 2nd-kind term IS / IS NO
 cross-anchor-stable, bar-correct correction (TIERED report); or (b) a clean refutation on the same
 footing as the f-map. No fit, no 7th ansatz, nothing wired to production without owner sign-off.
 Owner closes (humans close beans per CLAUDE.md §4a).
+
+---
+
+> **REOPENED + q-DEFORMED SCALE (2026-06-20, owner Reeb-flow steer).**
+> Owner: "did you use the Reeb bundle? there is a rotational flow on knot operations."
+> The unblocker refutation (#2538) was INCOMPLETE — the Reeb FLOW supplies the radial
+> datum: growth `θ_λ=arccosh(|r|)` is a flow length (radial), so `x_λ=θ_λ` is
+> substrate-FORCED (#2541, PR merged) ⇒ #2536's 63%-swing obstruction RESOLVED;
+> correction forced + surviving but ~25× small at the classical first pass.
+> q-DEFORMED scale test (#2545): Hahn-Exton `J_ν(x;q)` ≠ classical at fixed x, so done
+> in the #2533 `G_q` convention — `|δ_q|/(B(D)/m_e)=6.16` vs classical 0.04 (~150× q-
+> enhancement, into the binding ballpark, cross-anchor stable 3.3%). BUT critical-distance
+> diagnostics DISQUALIFY it as forced: 43% swing under the ±0.5 half-integer proxy + 64%
+> single-block domination by a dim=1 block at unphysical ν=−0.5. Status: PROMISING LEAD,
+> proxy-limited — SUGGESTIVE not established. GATING next step: the genuine integer-order
+> log-Neumann `Y_n` (ν→n limit, no ±0.5 proxy) + real `y_λ` weights + bar-parity. Matching
+> B(D) by choosing the offset/prefactor would be a fit. No fit; nothing wired. (Direction
+> is LIVE again; #2538 "closed" was premature.)
