@@ -67,3 +67,33 @@ So Gap-2 is now localized one notch finer than the #2531 synthesis: from "the
 ℓ-coefficient `a`" to **"the open (`λ₊^ℓ`) vs loop-trace (`λ₊^{2ℓ}`) reading of
 the angular channel"** — a `√`/half-dimension question the Frobenius pairing
 poses but does not settle.
+
+## ⚠ Correction (2026-06-20, same day) — the `√`-q-dim bridge is REFUTED at `q₀`
+
+Caveat 2 above proposed the `2ℓ+1 → ℓ` "half" = `√`-quantum-dimension as the
+bridge to `a=+1`. **Tested at the real `q₀` and refuted**
+([`aufbau_eigenvalue_channel.py`](../../computations/aufbau_eigenvalue_channel.py),
+`√`-q-dim section): the `a = q-power` framework assumed `[2ℓ+1]_q ~ q^{2ℓ}`
+(large-q), but **`q₀ ≈ 1.11` is near 1**, where `[2ℓ+1]_q ≈ 2ℓ+1` (classical).
+There `½ln[2ℓ+1]_q ≈ 0.56` (ℓ=1) **≫** the radial spacing `lnq₀ ≈ 0.10`, so the
+`√`-q-dim screening is **ℓ-dominated** (`1s 2s 3s 4s … 2p 3p …`) — **not** Aufbau.
+The full q-dim is the same. So the "half/`√`" was a large-q artifact; it is **not**
+the bridge.
+
+**What survives:** the *only* object that reproduces the Aufbau order is the
+**exact dominant-eigenvalue power `λ₊^ℓ = q₀^ℓ`** (matches through 4s<3d, …; a
+benign 4d/5p `K=6` tie aside) — and it is **not** the `√`-q-dim. So "use the
+Frobenius pairing's dominant eigenvalue" still points at the right object, but
+the *derivation* of "angular `ℓ` enters as `λ₊^ℓ` (ℓ open dominant-transfer
+steps)" is **not** supplied by the q-dim or its root — those overshoot at `q₀`.
+
+**Honest net (and a pattern worth recording):** every attempt this session to
+*derive* the `a=+1` angular weight from a cleaner categorical object — the q-dim
+loop-trace (a=+2), its `√` (refuted here) — **overshoots at the physical `q₀`**.
+The exact `λ₊^ℓ` works but rests on the un-derived "angular = ℓ λ₊-steps"
+reading. Gap-2 (ordering) is therefore **genuinely open**: the duality/Perron
+lever names the right eigenvalue (`λ₊`) and the right order (Aufbau), but no
+categorical object tested *forces* the `λ₊^ℓ` (open) reading over the
+overshooting trace. This is consistent with Madelung being semi-empirical even
+in standard QM — and three structural-derivation attempts (eigensplit a=−2;
+q-dim a=+2; `√`-q-dim) have now each been ruled out by sign or overshoot.

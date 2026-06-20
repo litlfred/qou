@@ -83,6 +83,30 @@ def main() -> int:
     print("    POSITIONS (np/(n+1)s are K-tied; gaps need actual energies). And")
     print("    'ℓ = ℓ λ₊-steps' is the conditional reading the duality must FORCE")
     print("    (vs the loop-trace C); Perron-dominance makes it leading, not proven.")
+
+    # ── √-q-dim test at the REAL q₀ (refutes the "half-dimension" bridge) ──────
+    import math
+    lnq = math.log(q0)
+    def qint(m): return (q0 ** m - q0 ** (-m)) / (q0 - qi0)
+    def real_order(ang):
+        seq = sorted(ORB, key=lambda o: (o[0] * lnq + ang(o[1]), o[0]))
+        div = next((i for i in range(len(seq)) if seq[i] != ref[i]), None)
+        return seq, ("MATCHES ✓" if div is None else
+                     f"diverges #{div}: {seq[div][0]}{LET[seq[div][1]]} vs {ref[div][0]}{LET[ref[div][1]]}")
+    print("\n### √-q-dim test at the REAL q₀ (is the '2ℓ+1→ℓ half' the bridge?)")
+    print(f"  q₀={q0:.4f} is NEAR 1 ⇒ [2ℓ+1]_q≈2ℓ+1 (classical), NOT q^{{2ℓ}}.")
+    print(f"  radial n·lnq₀ (n=1..4) = {[round(n*lnq,3) for n in range(1,5)]}")
+    for lab, ang in [
+        ("λ₊^ℓ = q₀^ℓ      (ang=ℓ·lnq₀)", lambda l: l * lnq),
+        ("√-q-dim          (ang=½ln[2ℓ+1]_q)", lambda l: 0.5 * math.log(qint(2 * l + 1))),
+        ("q-dim loop-trace (ang=ln[2ℓ+1]_q)", lambda l: math.log(qint(2 * l + 1))),
+    ]:
+        seq, verd = real_order(ang)
+        print(f"    {lab}:  {' '.join(f'{n}{LET[l]}' for n,l in seq[:8])}  → {verd}")
+    print("  ⇒ √-q-dim REFUTED at q₀: ½ln[2ℓ+1]_q≈0.56 (ℓ=1) ≫ radial 0.10 ⇒")
+    print("    ℓ-dominated, not Aufbau. The '√/half' was a large-q artifact. ONLY")
+    print("    the exact λ₊^ℓ (dominant-eigenvalue power) gives Aufbau — and it is")
+    print("    NOT the √-q-dim; why angular=λ₊^ℓ stays the un-derived reading.")
     return 0
 
 
