@@ -42,6 +42,23 @@ is never `beans create`-d per finding.
   discover the system. A migration note redirects all remaining "TodoWrite"
   mentions to bean commands.
 
+## Additional qou-side work (2026-06-20, owner override of the items 3–5 deferral)
+
+The owner directed pulling the *systemic* enforcement into qou now (interim),
+rather than waiting on the folio-assistant migration. Landed on this PR:
+
+- **SessionStart beans surface** — created `scripts/session-status.sh` (the hook
+  was already wired in `.claude/settings.json` but the script was missing — a
+  silent no-op). It prints the active beans (`beans list`) + the anti-stall
+  directive at every session start. qou-side interim form of **item 5**; uses
+  `beans list` because `beans prime` outputs empty in this CLI version.
+- **qa-drain writer repointed** (qou half of **item 4**) —
+  `content/pipeline/qa-agent-drain-queue.ts` default `--out` moved `todos/` →
+  `.beans/qa-agent-drain-queue.json` (tracked bulk JSON).
+
+Interim only — folio-assistant still owns the generic/permanent versions
+(items 1–3, 5) per the `miga` "qou = physics-only" goal.
+
 ## Tasks for folio-assistant (in priority order)
 
 ### 1. Own the authoritative generic `bean-coordination` skill
@@ -63,13 +80,18 @@ The deployed assistant must have `beans` on `PATH`. Add the `go install` (or a
 prebuilt binary copy) to `.github/docker/Dockerfile.lean-mcp` (or wherever the
 assistant image is built) so beans is baked in like the Lean oleans.
 **Acceptance:** `beans list` works inside the running MCP container.
+(Confirmed 2026-06-20: there is **no Dockerfile in the qou repo** —
+`**/Dockerfile*` matches nothing — so this is wholly folio-assistant's and
+cannot be done qou-side.)
 
 ### 4. Repoint the `todos/` → `.beans/` runtime readers (the data migration)
 The legacy `todos/*.json` queues are still read by **runtime code** that lives
 in / is owned by the platform layer. These must be repointed before the queue
 JSON is physically relocated, or the readers break:
 - the MCP server `/api/todos` route + `/todos` HTML dashboard,
-- `content/pipeline/qa-agent-drain-queue.ts`,
+- `content/pipeline/qa-agent-drain-queue.ts` — **done 2026-06-20** (default
+  `--out` repointed `todos/` → `.beans/`); no other code reads the `todos/`
+  path (verified),
 - the `check-todos.sh` SessionStart hook (if still present).
 
 Note the `beans ≠ sidecars` rule: the **watcher** queues
@@ -89,6 +111,9 @@ into the SessionStart hook (or the assistant's system-prompt assembly) so every
 session is primed with current bean instructions automatically — instead of
 relying on a static skill doc. (In this sandbox `beans prime` returned empty;
 confirm the installed version populates it, or pin a version that does.)
+**qou interim done 2026-06-20:** `scripts/session-status.sh` surfaces
+`beans list` + the directive at SessionStart; folio-assistant still owns the
+permanent `beans prime` wiring.
 **Acceptance:** a fresh session is primed with the bean instructions + current
 bean list without manual `beans list`.
 
