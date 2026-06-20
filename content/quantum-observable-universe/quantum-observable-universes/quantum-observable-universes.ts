@@ -326,6 +326,7 @@ export default chapter({
         "observation-energy-proof",
         "two-observer-parallelogram",
         "germ-commutator-q-curvature",
+        "q-harmonic-flow",
         "observation-fermion-action",
       ],
     }),
