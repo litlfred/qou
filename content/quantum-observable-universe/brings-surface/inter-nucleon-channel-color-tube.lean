@@ -9,12 +9,12 @@ The §3b-cond class axiomatisation lives at
 under the `qou` Lake package (file pending; class structure
 sketched in the `.md` "Lean axiomatisation (sketch)" section).
 The class instance is the **conjectural witness** (sorry =
-conjecture per CLAUDE.md §3b), not a missing proof; downstream
+conjecture per AGENTS.md §3b), not a missing proof; downstream
 theorems take `[InterNucleonChannelColorTube]` as an explicit `[Instance]`
 hypothesis.
 
 This stub satisfies the lean-ref sibling-resolution rule
-(CLAUDE.md §0a step 1) for the `.ts` manifest's
+(AGENTS.md §0a step 1) for the `.ts` manifest's
 `lean.ref = "qou:QOU.BraidsAndKnots.InterNucleonChannelColorTube"`.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/inter-nucleon-channel-color-tube.ts
@@ -91,7 +91,7 @@ def chirality_sign (_p : NucleonColorPair) : Int :=
     The class is *inhabited* by the S_5/SO(3) fiber data once
     `S5SO3FiberAction` lands as a class (see
     `S5SO3FiberAction.lean`); until then the instance carries
-    an explicit `sorry` per CLAUDE.md §3b ("class is inhabited"
+    an explicit `sorry` per AGENTS.md §3b ("class is inhabited"
     policy).
 
     Open-question follow-ups (§"Open questions" of the `.md`):

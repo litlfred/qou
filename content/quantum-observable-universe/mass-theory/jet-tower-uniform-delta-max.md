@@ -1,4 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 The brane-tower convergence proposition
 ([prop:jet-tower-convergence](#prop\:jet-tower-convergence))
@@ -87,7 +87,7 @@ coming entirely from the $\hbar_q^{2n}$ prefactor.
 
 ## What the conjecture commits to
 
-Per CLAUDE.md §3b, the formal status of `prop:jet-tower-convergence`
+Per AGENTS.md §3b, the formal status of `prop:jet-tower-convergence`
 is **conditional** on this conjecture: any provable result that
 quotes the geometric tail bound
 
@@ -135,7 +135,7 @@ empirical motivation citable.
 
 ## Discussion
 
-**Status: conjectural** under CLAUDE.md §3b, with strong empirical
+**Status: conjectural** under AGENTS.md §3b, with strong empirical
 support at $n = 1, 2, 3$ for D, T, ${}^{3}$He via `jet_tower_delta_max.py`.
 The downstream cone of this conjecture includes
 [prop:jet-tower-convergence](#prop\:jet-tower-convergence) — but

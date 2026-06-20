@@ -63,7 +63,7 @@ Two purely algebraic identities at the symbolic level, each closed by
 Stated over real $q > 0$ (the substrate-anchor regime).  Both
 identities are q-rational, fibre-level, with the c=1 case true
 for ALL $q > 0$ — an infinite set of constraints, not one point.
-CLAUDE.md §7c-compliant.
+AGENTS.md §7c-compliant.
 
 ## Cross-references
 

@@ -16,7 +16,7 @@ $n \in \mathbb{N}$ write
 * $H_n(q)$ for the Iwahori–Hecke algebra at parameter $q$, generated
  by $\sigma_1, \dots, \sigma_{n-1}$ subject to the braid relations
  and $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$
- ([CLAUDE.md §7a](../../../CLAUDE.md));
+ ([AGENTS.md §7a](../../../AGENTS.md));
 * $\Delta_n^2 = (\sigma_1 \sigma_2 \cdots \sigma_{n-1})^n
   \in Z(B_n)$ for the **full-twist** generator of the centre of the
  braid group, mapped under the Hecke quotient to the central
@@ -125,7 +125,7 @@ operator-correction with correlation $+0.74$ to the AME residual
 
 ## Discussion
 
-**Status: conjectural** under CLAUDE.md §3b. Numerical witnesses at
+**Status: conjectural** under AGENTS.md §3b. Numerical witnesses at
 $k = 3, \dots, 10$ are supportive but not a proof; the conjecture
 asserts the saturation condition for all $n \in \mathfrak{M}$
 including $\{50, 82, 126\}$ where matrix-evaluation is unavailable.

@@ -41,7 +41,7 @@ at x = ℏ_q.
 Mixed candidate = W_λ · K_λ, plus ratios W_λ / K_λ, conjugate-pair
 products W_λ · W_{λ'}, and ℏ_q-normalised forms.
 
-ANTI-PATTERN GUARDS (CLAUDE.md):
+ANTI-PATTERN GUARDS (AGENTS.md):
   - TIERED reporting; NO ansatz at NEAR-FUZZY or coarser.
   - Cross-anchor BEFORE structural claim (proton + muon targets emitted).
   - ℏ_q from (q − 1)/q, never hard-coded.

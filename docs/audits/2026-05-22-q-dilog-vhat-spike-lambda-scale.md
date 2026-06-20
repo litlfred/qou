@@ -143,7 +143,7 @@ non-tested basis element would not be caught).
 ## Recommendation
 
 Track as a third consistent-negative tier. The remaining productive
-research directions per CLAUDE.md cheat-sheet Migration Backlog #1
+research directions per AGENTS.md cheat-sheet Migration Backlog #1
 are:
 
 1. **Extend $|\hat V_S|$ to higher Hecke levels** — the

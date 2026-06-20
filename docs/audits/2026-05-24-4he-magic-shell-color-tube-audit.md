@@ -90,7 +90,7 @@ Concrete check: does the color-tube saturation contribute exactly `(2 m_e · 4 �
 
 The S₅ ↔ SO(3) fiber action on Bring's surface (PR #1081 Task 3, queued) gives the categorical source for the 3 quark color sheets per nucleon: the SO(3) fiber dimension over the S₅-acted Bring quintic is 3 generically (`SO(3) ≅ SU(2)/Z_2`, three-dimensional rotation group). The 10-fold color-tube averaging follows naturally from `5 × 3 / 3 + 1 = 6` (S₅ orbits modulo SO(3) fiber + diagonal) — but the exact count `10` needs derivation.
 
-The ⁴He shell saturation is conditional on the S₅ ↔ SO(3) class being formalised in Lean (PR #1081 Task 3). Until that lands, the saturation claim is **conjecture-conditional** per CLAUDE.md §3b-cond.
+The ⁴He shell saturation is conditional on the S₅ ↔ SO(3) class being formalised in Lean (PR #1081 Task 3). Until that lands, the saturation claim is **conjecture-conditional** per AGENTS.md §3b-cond.
 
 ## Recommended actions
 

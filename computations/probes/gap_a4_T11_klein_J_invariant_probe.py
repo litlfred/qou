@@ -217,7 +217,7 @@ def test_h_deformation_open() -> dict:
     print(f"  Classical setup is now firm (T11a-c above).  But the")
     print(f"  q-deformation is the icosahedral analogue of the Eisenstein")
     print(f"  series under SL_2(ℤ) — NOT closed-form expressible in this")
-    print(f"  scaffold's scope.  Per formalize-first discipline (CLAUDE.md")
+    print(f"  scaffold's scope.  Per formalize-first discipline (AGENTS.md")
     print(f"  'no 7th ansatz'), no h-coefficient candidate is proposed here.")
     print()
     print(f"  Concrete follow-up: implement the q-Klein invariants via")
@@ -233,7 +233,7 @@ def test_h_deformation_open() -> dict:
         "scaffold_only": True,
         "h_coefficient_derivation_proposed": False,
         "formalize_first_discipline": (
-            "No h-coefficient candidate proposed.  Per CLAUDE.md "
+            "No h-coefficient candidate proposed.  Per AGENTS.md "
             "no-7th-ansatz rule, the icosahedral q-deformation is a "
             "concrete bounded computation but exceeds this scaffold's "
             "scope.  Defer to a dedicated probe series."

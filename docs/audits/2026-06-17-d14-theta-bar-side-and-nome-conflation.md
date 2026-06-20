@@ -29,7 +29,7 @@ $\mathbb{C}/(\mathbb{Z}+\tau\mathbb{Z})$, $q=e^{2\pi i\tau}$. The framework
 already conjectures a modular $S$-transform $\tau\mapsto-1/\tau$ (D14), so the
 JTP is the natural bridge: the classical theta functional equation
 $\vartheta(-1/\tau)=\sqrt{-i\tau}\,\vartheta(\tau)$ *is* the D14 transform.
-Before pursuing that, the formalize-first discipline (CLAUDE.md §3.3) demands
+Before pursuing that, the formalize-first discipline (AGENTS.md §3.3) demands
 the prunable invariants. Two fall out immediately, both $q_0$-robust.
 
 ## Finding A — theta converges only on the bar image $q_0^{-1}$

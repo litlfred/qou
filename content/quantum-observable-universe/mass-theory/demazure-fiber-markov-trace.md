@@ -17,7 +17,7 @@ element $w_0$, $D_{w_0}(\lambda) = s_\lambda(x_1, \ldots, x_n)$
 recovers the Schur polynomial; at intermediate $w$, the Demazure
 character $D_w(\lambda)$ is the character of a sub-crystal of
 $\mathrm{Cryst}(V_\lambda)$ — an "incomplete topological state" in
-the sense of CLAUDE.md §7b item 3. Define the Demazure-fiber
+the sense of AGENTS.md §7b item 3. Define the Demazure-fiber
 Markov-trace functional*
 
 $$
@@ -120,7 +120,7 @@ blocks, indexed by Bruhat-comparable Weyl elements.
 
 ## Crystal-basis shortcut
 
-This is shortcut #3 from CLAUDE.md §7b: replace the manual
+This is shortcut #3 from AGENTS.md §7b: replace the manual
 Hecke-energy LP functional with Kashiwara weight-lattice
 projection. Resonance widths become structural Demazure
 multiplicities, not heuristic cutoffs. The shadow-price ordering

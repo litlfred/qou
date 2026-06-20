@@ -21,7 +21,7 @@ braid → H₃ → partitions of 3 (NOT H₄ / partitions of 4).  The paper's
 per-block factor for 𝓑₃ is the canonical H₃ Markov trace
 tr_M(β_K) = Σ_λ y_λ χ_λ, loaded from the chi-cache witnesses.
 
-## The discipline gate (CLAUDE.md production-vs-exploratory)
+## The discipline gate (AGENTS.md production-vs-exploratory)
 
 Does `m_e · [Vol/ℏ_q²] · tr_M(K)` reproduce production's
 `m_e · [Vol/ℏ_q²] · linking_weight` AT ALL ORDERS with NO fudge?

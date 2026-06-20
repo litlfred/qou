@@ -2,7 +2,7 @@
 # Magic-shell stabilization term `Δ_shell(Z, N)` (conjecture class)
 
 This file axiomatizes `conj:magic-shell-stabilization` as a Lean
-`class` following the §3b conditional-class pattern from CLAUDE.md.
+`class` following the §3b conditional-class pattern from AGENTS.md.
 
 **Conjecture (informal):** The brane-tower binding formula
 `B(𝔥) = m_e · ρ · (|tr_M(T_w)| + tower(𝔥) + σ_{3A})` admits a
@@ -493,7 +493,7 @@ theorem cross_coupling_mirror_symmetry
 -- derived `MagicShellStabilization` IS additive under this
 -- canonical zero-coupling pick.
 --
--- Per CLAUDE.md §3b-cond, the `sorry` in a class canonical instance
+-- Per AGENTS.md §3b-cond, the `sorry` in a class canonical instance
 -- IS allowed — it encodes the conjectural axiom.  Downstream
 -- conditional theorems carrying `[Cross : MagicShellCrossCoupling]`
 -- as an explicit hypothesis are unconditional Lean theorems

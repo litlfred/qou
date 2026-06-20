@@ -135,6 +135,6 @@
     ],
     "min_abs_err_pct": 0.7439065421854162,
     "verdict": "ALL 16 CANDIDATES REFUTED at compute precision. Closest match -2 * cosh(h) * cosh(hbar_q) at +0.7439% — far from the 10⁻⁵⁰ compute precision a Taylor-exact candidate would need to satisfy. The empirical c_3 deviation does NOT cleanly factor through any natural q-hyperbolic correction.",
-    "anti_pattern_guard": "DO NOT wire any of these candidates. The 0.7-0.9% best matches are 'interesting' but well within the 8th-ansatz fit-trap zone. Per CLAUDE.md no-7th-ansatz discipline."
+    "anti_pattern_guard": "DO NOT wire any of these candidates. The 0.7-0.9% best matches are 'interesting' but well within the 8th-ansatz fit-trap zone. Per AGENTS.md no-7th-ansatz discipline."
   }
 }

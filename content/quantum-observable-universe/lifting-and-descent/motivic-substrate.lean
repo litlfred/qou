@@ -20,7 +20,7 @@ completion.
 
 This class is axiomatised: an instance carries the substrate data
 plus a place-compatibility axiom.  Any `sorry` in an instance is to
-be read as a **substrate axiom** (CLAUDE.md §3b), not as a missing
+be read as a **substrate axiom** (AGENTS.md §3b), not as a missing
 proof.
 
 Out of scope here: mixed motives, Bloch–Kato exact sequences,
@@ -124,7 +124,7 @@ class MotivicSubstrate
       components in a designated integral subring — requires the
       auxiliary integral-subring data `Integral : ∀ v, Subring
       (Target v)` and is supplied as a `sorry`-axiom in concrete
-      instances of an extension class (CLAUDE.md §3b).
+      instances of an extension class (AGENTS.md §3b).
 
       Ref: [tate1967]. -/
   nonarchimedean_nontrivial :

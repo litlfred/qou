@@ -444,7 +444,7 @@ refreshes the witness JSON.
 
 - [`content/quantum-observable-universe/notation/notation-register.md`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/content/quantum-observable-universe/notation/notation-register.md): three new entries in the Braids-and-Knots register — `$w_\lambda$` (classical Plancherel), `$\tilde w_\lambda$` (q-deformed Wedderburn-block), `$\dim_q(\lambda)$` (quantum dimension). Jones–Markov entry strengthened to flag the three-family distinction.
 - [`content/quantum-observable-universe/notation/notation-collisions.md`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/content/quantum-observable-universe/notation/notation-collisions.md): new bullet codifying the three-family rule, the Wenzl-bridge self-conjugate restriction, and the bare-vs-tilde $w$ convention.
-- [`CLAUDE.md §7aa`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/CLAUDE.md): summary table mirrors the register; collisions bullet added.
+- [`AGENTS.md §7aa`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/AGENTS.md): summary table mirrors the register; collisions bullet added.
 
 ### Recommendations status
 

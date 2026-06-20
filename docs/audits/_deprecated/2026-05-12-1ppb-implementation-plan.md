@@ -395,7 +395,7 @@ canonical-basis dim count). Anchor: $\Delta_{\mathrm{coupling}}(2,2)
 **Status:** **DELEGATED to Lean agent.** See companion handover
 document [`2026-05-12-lean-handover.md`](2026-05-12-lean-handover.md).
 
-## 4  Anti-patterns (per CLAUDE.md three-cal discipline)
+## 4  Anti-patterns (per AGENTS.md three-cal discipline)
 
 - ❌ **Calibrate** $\Delta_{\mathrm{shell}}$ or $\Delta_{\mathrm{coupling}}$ to AME — this is fitting, not predicting.
 - ❌ **Add** ad-hoc per-atom corrections that don't trace to substrate data.

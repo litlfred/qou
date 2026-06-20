@@ -95,7 +95,7 @@ class HeckeWedderburn (n : ℕ) (q : ℝ) : Type where
 generators `σ_i` modulo R1-R3 is the substantive R&D content. The
 classes here provide the **hooks** downstream consumers can take
 as `[Instance]` hypotheses, and the explicit-residual pattern
-ensures non-vacuous content per CLAUDE.md §3b-cond / Gemini PR #672
+ensures non-vacuous content per AGENTS.md §3b-cond / Gemini PR #672
 review.
 
 Per-n discharges (n=3 explicit matrices via the swap-fix from

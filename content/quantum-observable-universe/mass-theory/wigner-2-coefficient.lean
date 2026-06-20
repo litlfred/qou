@@ -17,7 +17,7 @@ The proof has two parts:
 namespace QOU.BraidKnot
 
 /-- Seminormal diagonal entry: a_ρ = h/(1 - q^{-2ρ}).
-    Archimedean specialisation per CLAUDE.md §7c — q : ℝ throughout
+    Archimedean specialisation per AGENTS.md §7c — q : ℝ throughout
     this block (sibling .md narrative carries the §7c banner). -/
 noncomputable def a_rho (q : ℝ) (h : ℝ) (ρ : ℤ) : ℝ :=
   h / (1 - q ^ (-2 * ρ))

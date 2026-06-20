@@ -30,7 +30,7 @@ export default paper({
     // (latex/preamble.tex) defines `\pp` = `p` (the p-adic / finite-field
     // prime), and all content uses it that way ($\mathbb{F}_\pp$,
     // $\mathbb{Q}_\pp$, $v_\pp$). Re-emitting `\newcommand{\pp}{\mathfrak{p}}`
-    // here both contradicts CLAUDE.md §7aa (proton is `\mathfrak{p}`, never
+    // here both contradicts AGENTS.md §7aa (proton is `\mathfrak{p}`, never
     // `\pp`) and triggered a fatal "Command \pp already defined" in the
     // pdflatex compile. The proton is written `\mathfrak{p}` directly.
     nn:    { tex: "\\mathfrak{n}",  unicode: "𝔫" },

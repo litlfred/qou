@@ -159,7 +159,7 @@ Lean chip, and *not* an opening for a fit (Δ_λ gate).
   corpus-grep miss. The genuine open item is **not the H₆ characters but the
   Δ_λ closure itself** (the per-partition binding weights), which STATUS.md
   records as research-gated (deuteron "closure" overclaim corrected c27667d4;
-  no light nucleus honestly closed) and which CLAUDE.md explicitly fences
+  no light nucleus honestly closed) and which AGENTS.md explicitly fences
   against a seventh fit-based ansatz.
 
 **Conclusion.** The session-sized formalize-first work on this axis is done

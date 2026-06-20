@@ -45,7 +45,7 @@ ingredients are derived structural counts; nothing here is fitted.*
 DISCIPLINE NOTE: f remains AME-extracted at this stage. The Z·N match is a
 derived-candidate lead — the next step is to *derive* both the Z·N factor
 (from the inter-nucleon braid-interface count, A-1=Z·N+(Z+N-1) when Z,N≥1)
-and the shell-closure bonus (Demazure crystal closure, CLAUDE.md §7b),
+and the shell-closure bonus (Demazure crystal closure, AGENTS.md §7b),
 without empirically fitting either. NO coefficient is wired to production.
 """
 from __future__ import annotations

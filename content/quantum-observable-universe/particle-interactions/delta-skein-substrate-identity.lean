@@ -2,7 +2,7 @@
 -- Substrate identity for the proton-neutron Skein difference.
 -- Conditional on conj:borromean-baryon-mass-formula via the
 -- BorromeanCommonScale class hypothesis
--- (CLAUDE.md §3b-cond conditional-class exception).
+-- (AGENTS.md §3b-cond conditional-class exception).
 --
 -- This file states the substrate identity ΔS(n − p) = (Q_β + m_e)/m_e
 -- as a Lean lemma that holds whenever the common-scale class is in

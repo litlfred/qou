@@ -3,7 +3,7 @@
 Formalize-first probes against the four open items in
 `.beans/paper-todos.json` that the author prioritized this session
 (items #7, #6, #4, #1 in the session triage table). Each probe was run
-**before** committing to any wide/expensive search, per CLAUDE.md
+**before** committing to any wide/expensive search, per AGENTS.md
 *"Formalize-first probe discipline"*.
 
 Reproducible compute:
@@ -57,7 +57,7 @@ onto this basis. So:
 > is no Cl₃/ζ(3) signal to read off torus-knot CS, because torus knots
 > carry no hyperbolic weight-3 period.
 
-This matches the standing CLAUDE.md warning (KLR/crystal audit,
+This matches the standing AGENTS.md warning (KLR/crystal audit,
 2026-05-30): *"Bloch–Wigner / dilog-transcendence arguments on the
 trefoil (non-hyperbolic → D(z) = 0)"* — the same degeneracy at weight 2,
 here re-confirmed at weight 3.

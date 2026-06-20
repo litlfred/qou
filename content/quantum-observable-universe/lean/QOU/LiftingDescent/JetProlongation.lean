@@ -82,7 +82,7 @@ would be the algebra `End_C(A_n)`; here we keep it abstract so the
 typeclass is reusable for both the categorical brane tower and the
 algebraic Hecke-chain instantiation.
 
-Per CLAUDE.md §3b, this is a structural typeclass; substantive
+Per AGENTS.md §3b, this is a structural typeclass; substantive
 proofs at instances are deferred until concrete chains are wired
 up. The fields encode the **algebraic content** of the chain
 (idempotent decomposition, retraction identity); category-level

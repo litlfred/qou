@@ -154,4 +154,4 @@ empirical input.  Uniqueness of $\tau_M$ as the non-degenerate
 Frobenius form on $H_n(R, q)$ is axiomatised via the
 `MarkovTraceUniqueness` class in the Lean file (citing Jones 1987 /
 Wenzl 1988); downstream Lean results are sorry-free **conditional on
-the class instance** per CLAUDE.md §3b-cond.
+the class instance** per AGENTS.md §3b-cond.

@@ -32,5 +32,5 @@ None.
 
 ## Next concrete task
 1. Resolve PR #1076 CI failure (`validate` failing without log-accessible diagnostic).
-2. Once CI green, perform rebase-merge of #1076 per CLAUDE.md §Branch+PR rule 7.
+2. Once CI green, perform rebase-merge of #1076 per AGENTS.md §Branch+PR rule 7.
 3. Continue any post-merge follow-up (hedging sweep batch 2 if requested).

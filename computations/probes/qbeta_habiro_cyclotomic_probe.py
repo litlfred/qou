@@ -16,7 +16,7 @@ coefficients** `c_k` of
     𝔔_β(q) = 𝔔_base(q) · ∏_{k≥2} (1 + c_k · u^k),    u = b · ℏ_q²,
 
 documented (per `docs/coordination/ck-dk-canonical-registry.md §3`,
-CLAUDE.md §"Q_β c_k is a TRUNCATION ORDER", and the canonical-framing
+AGENTS.md §"Q_β c_k is a TRUNCATION ORDER", and the canonical-framing
 audit `docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-
 framing.md`) as the "permanent fix" path: identify a FIBRE-LEVEL Habiro
 element `F(q) ∈ Habiro ring` (the `(q;q)_n = ∏_{j=1}^n (1−q^j)`
@@ -24,7 +24,7 @@ cyclotomic completion of ℤ[q^±1]) whose archimedean evaluation
 reproduces the c_k ladder — in parallel with the α_EM Habiro element
 `[2]_q · (1 − h²α)` (PR #1511, merged).
 
-KEY DISTINCTION (CLAUDE.md §"Im(q) at fibre vs observable level"):
+KEY DISTINCTION (AGENTS.md §"Im(q) at fibre vs observable level"):
 the right question is NOT "is there a real formula c_3 = f(q_0_real)?"
 (refuted — `dc_3/dq ≈ 4.6e6`, falsification audit
 `2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`).
@@ -367,7 +367,7 @@ def main() -> int:
                 "as a clean integral OR cyclotomically-localised q-Habiro element "
                 "while c_3 lacks a q-rational representative. A genuine fibre-level "
                 "Habiro element for Q_β, if one exists, must be complex-analytic / "
-                "root-of-unity (per CLAUDE.md §Im(q) fibre vs observable), NOT a "
+                "root-of-unity (per AGENTS.md §Im(q) fibre vs observable), NOT a "
                 "real-q rational or Laurent element — which is exactly the class "
                 "this exact-ℚ(q) probe (and the z-probe machinery) can certify, and "
                 "it does not exist there."

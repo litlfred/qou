@@ -110,4 +110,4 @@ Filename doesn't match any pattern. Each needs a manual look at the module docst
 
 - [PR #1091](https://github.com/litlfred/qou/pull/1091) — `references` metadata schema (merged 2026-05-24)
 - [PR #1110](https://github.com/litlfred/qou/pull/1110) — `respects_archimedean_wall` probe/audit exemption (parallel pattern)
-- CLAUDE.md §7c — substrate-vs-archimedean wall (informs the infra bucket criteria)
+- AGENTS.md §7c — substrate-vs-archimedean wall (informs the infra bucket criteria)

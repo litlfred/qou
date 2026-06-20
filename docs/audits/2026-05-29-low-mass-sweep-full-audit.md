@@ -156,7 +156,7 @@ overcounting) and the non-production Habiro-endomorphism m_n (−55%).
    not census.** This is the single blocker stopping the canonical
    Σ y_λ·χ^λ pipeline from extending. Replace census knots
    6₂/8₁₁/L6a4 with SDP-selected braid words (the gated "R5-full SDP
-   solver"). Do not add a 7th fit (CLAUDE.md Δ_λ gate).
+   solver"). Do not add a 7th fit (AGENTS.md Δ_λ gate).
 3. **Consolidate the four pipelines to one canonical consumer.**
    Make `canonical-trace` authoritative; mark the others
    downstream/deprecated. Stop `canonical_mass_table_extended` from

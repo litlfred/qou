@@ -78,5 +78,5 @@ Items that would belong in such a queue:
 - PR #1511 (merged) — α_EM Habiro element `[2]_q · (1-h²α)` (the structural template)
 - `docs/audits/2026-05-30-qbeta-habiro-derivation-gap-plan.md` — Q_β analog plan
 - `docs/coordination/1ppq-qbeta.md` — sibling c_k saga
-- CLAUDE.md §Precision goals — L2 / Subgoal-1 / Subgoal-2 framing
-- CLAUDE.md §Rendering Hecke-Skein convention §7a — Iwahori-Hecke H_n(q) notation
+- AGENTS.md §Precision goals — L2 / Subgoal-1 / Subgoal-2 framing
+- AGENTS.md §Rendering Hecke-Skein convention §7a — Iwahori-Hecke H_n(q) notation

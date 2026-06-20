@@ -18,7 +18,7 @@ P_λ ≡ 1 recovers A(K)·tr_M(β_K) exactly, so **P_λ is the per-partition
 deviation of binding from the flat trace distribution**, subject to a
 **bar-even (λ ↔ λᵀ) admissibility constraint**: the bar involution
 q ↦ q⁻¹ sends χ^λ ↦ χ^{λᵀ}, so any P_λ realised by a real, bar-symmetric
-(Im q = 0 at the archimedean anchor; CLAUDE.md §"Im(q) at fibre vs
+(Im q = 0 at the archimedean anchor; AGENTS.md §"Im(q) at fibre vs
 observable level") categorical deviation must satisfy P_λ = P_{λᵀ}.
 
 THE NARROWING (formalize-first — the invariant prunes the class):

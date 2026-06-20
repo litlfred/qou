@@ -120,11 +120,11 @@ namespace QOU.BraidsAndKnots.S4S3Audit.ConditionalAudit
     package sibling for the canonical declaration. -/
 class BorromeanCommonScale : Prop where
   /-- Conjecture content is the class instance (sorry = conjecture
-      per CLAUDE.md §3b). -/
+      per AGENTS.md §3b). -/
   holds : True
 
 /-- Witness theorem demonstrating the main proposition is conditional
-    on `[BorromeanCommonScale]` per CLAUDE.md §3b-cond. -/
+    on `[BorromeanCommonScale]` per AGENTS.md §3b-cond. -/
 theorem conditional_on_BorromeanCommonScale
     [_inst : BorromeanCommonScale] : True := trivial
 

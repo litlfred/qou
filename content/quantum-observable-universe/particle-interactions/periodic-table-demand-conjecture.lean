@@ -9,7 +9,7 @@ isotope `(Z*, N*)` is the unique minimizer of the demand magnitude
 `|dem(A(Z, N))|`. With three subsidiary conjectures on magic
 numbers, shell closure, and drip lines.
 
-Per `CLAUDE.md §3b-cond`, the main claim and each sub-claim are
+Per `AGENTS.md §3b-cond`, the main claim and each sub-claim are
 encoded as opaque Props and bundled into a class; the canonical
 -- Ref: [manuscript]
 instance carries `sorry` per claim.
@@ -46,7 +46,7 @@ opaque NobleGasShellClosureHolds : Prop
 opaque DripLinesFromDemandDivergenceHolds : Prop
 
 /-- **Periodic-table demand conjecture** (axiomatised as a class
-    per CLAUDE.md §3b-cond). Main claim + three sub-claims.
+    per AGENTS.md §3b-cond). Main claim + three sub-claims.
     Downstream blocks may take `[PeriodicTableDemand]` as a class
     hypothesis. -/
 class PeriodicTableDemand : Prop where

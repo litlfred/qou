@@ -18,7 +18,7 @@ production's `linking_weight`, the mass-bridge propagation of both, and the
 quantified answer to "how much of the +2.89% does restoring the per-block sum
 recover?".
 
-**Prior art consulted (corpus-grep checklist, CLAUDE.md):** the H₄ index choice
+**Prior art consulted (corpus-grep checklist, AGENTS.md):** the H₄ index choice
 is already documented — `lambda-scale-substrate-form.md` records
 `λ_A = (1/4)Σ_{λ⊢4} dim_q V_λ` as a **"PSLQ-style empirical fit (no categorical
 derivation)" / acknowledged-CAL-4**, falsified as a categorical derivation by

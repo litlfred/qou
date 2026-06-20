@@ -160,7 +160,7 @@ from KLR / Markov-trace primitives. Before any §3b-cond
 Pattern-A/B Lean promotion of
 `MagicShellCrossCoupling.canonicalCrossCoupling`, a substrate
 derivation of the quantum-integer prefactor is required (per
-CLAUDE.md §3b-cond requirement 1: class fields encode the
+AGENTS.md §3b-cond requirement 1: class fields encode the
 conjecture's content with one `sorry` per conjecture).
 
 ## Coordination-ledger updates needed

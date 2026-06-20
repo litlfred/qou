@@ -23,7 +23,7 @@ Three empirical facts to explain:
 2. **The (A,A,A) rectangle is *uniquely* dominant** — other rectangles ((9,9), 9-row (2,...,2)) and almost-rectangles ((8,8,2), (5,5,5,3)) are less obstructive.
 3. **The depth scales steeply with A** — roughly 4.8× from A=4 to A=6, much faster than the d_λ ratio (87,516 / 462 ≈ 189), suggesting it's an *intrinsic* eigenvalue scale, not a dimension artifact.
 
-## Type-B fold framework (CLAUDE.md §7b)
+## Type-B fold framework (AGENTS.md §7b)
 
 The Cartan datum of `sl_n` folds to Type B via the diagram involution. The folded crystal is a *symmetric crystal*:
 - B(λ) for the Type-A `sl_{3A}` crystal lives over the lattice with `(3A − 1)` simple roots
@@ -50,7 +50,7 @@ Predictions of the Type-B framework:
 ## What this audit DOES
 
 - Cites the empirical pattern that demands a categorical explanation
-- Frames the Type-B fold as the natural categorical machinery (per CLAUDE.md §7b)
+- Frames the Type-B fold as the natural categorical machinery (per AGENTS.md §7b)
 - Lists three concrete predictions (P1)–(P3) that follow from the fold structure
 - Identifies what would need to be computed (bar-invariant tableau count for (4,4,4), (3,3,3,3), (6,6,6), (3,3,3,3,3,3))
 
@@ -74,4 +74,4 @@ This is the next probe in the categorical-derivation thread:
 
 - [`computations/crystal_basis.py`](../../computations/crystal_basis.py) — Type-A crystal primitives (kashiwara_lower/raise, evac, demazure)
 - [`docs/audits/2026-05-25-dominant-partition-nucleon-structure.md`](2026-05-25-dominant-partition-nucleon-structure.md) — empirical motivation (Probes 1, 3, 4, 4b)
-- [`CLAUDE.md` §7b](../../CLAUDE.md) — Type-B folding for chirality / CPT directive
+- [`AGENTS.md` §7b](../../AGENTS.md) — Type-B folding for chirality / CPT directive

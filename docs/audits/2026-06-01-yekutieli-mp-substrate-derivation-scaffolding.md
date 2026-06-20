@@ -3,7 +3,7 @@
 **Date:** 2026-06-01
 **Status:** SCAFFOLD ONLY — multi-session research direction, NOT a closure attempt.
 **Triggered by:** user 2026-06-01 "1 2 3 4" — item 3 of session probe list.
-**Queue item:** `research-yekutieli-substrate-derivation-mp` (`todos/research-queue.json`).
+**Queue item:** `research-yekutieli-substrate-derivation-mp` (`.beans/research-queue.json`).
 
 ## Goal
 
@@ -143,4 +143,4 @@ If Sessions A+B+C close:
 - `prop:bring-zero-mode-substrate`
 - `conj:per-cell-curvature-extraction`
 - `docs/coordination/1ppq-mass.md`
-- `todos/research-queue.json` → `research-yekutieli-substrate-derivation-mp`
+- `.beans/research-queue.json` → `research-yekutieli-substrate-derivation-mp`

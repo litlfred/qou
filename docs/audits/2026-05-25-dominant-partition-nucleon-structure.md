@@ -116,7 +116,7 @@ Per [`probe_4_li6_rectangular_python.py`](../../computations/probe_4_li6_rectang
 
 **Three structural findings:**
 
-1. **Both rectangular partitions are deeply non-PSD** — min_eig ≈ −96, the transpose pair is *nearly tied* (within 0.8% of each other). The bar-involution structure (CLAUDE.md §7b Type B folding) surfaces strongly: both rectangle shapes carry comparable PSD obstruction.
+1. **Both rectangular partitions are deeply non-PSD** — min_eig ≈ −96, the transpose pair is *nearly tied* (within 0.8% of each other). The bar-involution structure (AGENTS.md §7b Type B folding) surfaces strongly: both rectangle shapes carry comparable PSD obstruction.
 
 2. **Obstruction depth scales steeply with A:** ⁴He (4,4,4) min_eig = −20 → ⁶Li (6,6,6) min_eig = −96. Roughly 4.8× deeper at A=6 vs A=4. If extrapolation holds, α*(¹²C) << α*(⁶Li).
 

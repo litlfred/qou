@@ -50,7 +50,7 @@ not a separate surface assumption.
 The QOU framework works over a **categorical coefficient ring
 $R$** (typically $\mathbb{Z}[q, q^{-1}]$ or its localization
 $R = \mathbb{Q}(q)$ — see
-[Hecke-Skein convention §7a](https://github.com/litlfred/qou/blob/main/CLAUDE.md)),
+[Hecke-Skein convention §7a](https://github.com/litlfred/qou/blob/main/AGENTS.md)),
 **not** the real numbers. The eigenvalue analysis in
 [`prop:even-twist-torus-link-psd-feasibility`](../../content/quantum-observable-universe/descartes-universe/electroweak-higgs-torus-link-triplet.md)
 states $\sigma_1^{2k}$ has block eigenvalues $(q^{2k}, q^{-2k})$.
@@ -81,13 +81,13 @@ and
 blocks, both of which state eigenvalue expressions over an
 unspecified $q$-domain and silently use $q_0$-specific values.
 The
-[Hecke-Skein convention §7a](https://github.com/litlfred/qou/blob/main/CLAUDE.md)
+[Hecke-Skein convention §7a](https://github.com/litlfred/qou/blob/main/AGENTS.md)
 is generic in $q \in R$; per-block statements must inherit this
 generality.
 
 ## 3. LP/SDP selection of operators per confinement
 
-The existing infra ([CLAUDE.md §LP/SDP duals — first-class infra](https://github.com/litlfred/qou/blob/main/CLAUDE.md))
+The existing infra ([AGENTS.md §LP/SDP duals — first-class infra](https://github.com/litlfred/qou/blob/main/AGENTS.md))
 mandates that every operator-selection compute emit primal +
 dual variables. The Gram-inverse basis on $H_3(q)$ supplies the
 **dual basis** for knot operators:

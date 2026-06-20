@@ -16,7 +16,7 @@
   the alpha-shift formula (prop:binding-alpha-shift-extension)
   which misses ⁴He by -79%.
 
-  Per CLAUDE.md §3b-cond: the categorical derivation of ρ_F = 2
+  Per AGENTS.md §3b-cond: the categorical derivation of ρ_F = 2
   is axiomatised as a class hypothesis; the formula is a
   rigorous-conditional theorem modulo that class.
 

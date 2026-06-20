@@ -120,11 +120,11 @@ namespace QOU.BraidKnot.HoefsmitPipeline.ConditionalAudit
     package sibling for the canonical declaration. -/
 class HyperbolicVolumeIndependence : Prop where
   /-- Conjecture content is the class instance (sorry = conjecture
-      per CLAUDE.md §3b). -/
+      per AGENTS.md §3b). -/
   holds : True
 
 /-- Witness theorem demonstrating the main proposition is conditional
-    on `[HyperbolicVolumeIndependence]` per CLAUDE.md §3b-cond. -/
+    on `[HyperbolicVolumeIndependence]` per AGENTS.md §3b-cond. -/
 theorem conditional_on_HyperbolicVolumeIndependence
     [_inst : HyperbolicVolumeIndependence] : True := trivial
 

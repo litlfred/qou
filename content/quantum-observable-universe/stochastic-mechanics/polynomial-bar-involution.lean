@@ -275,7 +275,7 @@ end QOU.BraidKnot.PolynomialBarInvolution.ArbitraryOdd
 
 /-! ## Pre-archimedean generic versions (over `CommRing R`)
 
-Per CLAUDE.md §7c (Base ring convention), the bar-symmetry of
+Per AGENTS.md §7c (Base ring convention), the bar-symmetry of
 even-power polynomial truncations is **algebraic**, not analytic
 — it holds over any commutative ring `R`, no `Field`/`ℝ` needed.
 This section provides the **pre-archimedean generic** versions of

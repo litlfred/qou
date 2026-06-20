@@ -12,7 +12,7 @@
   lemma).  Step (3) — bar-invariance of folded normal forms — is
   conditional on conj:symmetric-crystal-pair-production
   (axiomatised here as the class `SymmetricCrystalPairProduction n`,
-  per CLAUDE.md §3b-cond) and has no `sorry` in its proof body.
+  per AGENTS.md §3b-cond) and has no `sorry` in its proof body.
 
   Refs: prop:bar-involution-invariance (this block),
         prop:cpt-orbit-closure-density,
@@ -161,7 +161,7 @@ theorem plancherel_weight_transpose_eq
 The third invariance — that any Hecke normal form produced by the
 symmetric-crystal pair-production engine is bar-invariant — is
 conditional on conj:symmetric-crystal-pair-production.  We
-axiomatise that conjecture as a class (per CLAUDE.md §3b-cond)
+axiomatise that conjecture as a class (per AGENTS.md §3b-cond)
 and the theorem below has no `sorry` in its proof body. -/
 
 /-- The Hecke normal form carrier (from `hecke-normal-form.lean`). -/

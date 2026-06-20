@@ -314,7 +314,7 @@ is timed out.
 
 ## 6.  Output style
 
-Match user-accessibility note in CLAUDE.md:
+Match user-accessibility note in AGENTS.md:
 
 - One sentence per commit / event by default
 - Numbered choices when integration is non-obvious

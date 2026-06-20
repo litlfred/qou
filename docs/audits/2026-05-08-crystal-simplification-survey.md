@@ -100,7 +100,7 @@ This documents that *two independent audit paths* (numerical witness
 math changes; pure provenance.
 
 **Decision:** **defer** even this one-line update to a follow-up
-PR — the existing citations are CLAUDE.md §1-compliant and the
+PR — the existing citations are AGENTS.md §1-compliant and the
 addition is cosmetic.
 
 ## Verdict on option 6 (Lean simplification pass)

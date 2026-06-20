@@ -139,7 +139,7 @@ lists them alongside the convention-dependent files.
 > weights — no change. No compute or mass numbers changed.
 
 The mismatch is a genuine fork that the framework's own naming does not
-settle — CLAUDE.md §7a calls the trace "the Jones polynomial" (suggesting TL,
+settle — AGENTS.md §7a calls the trace "the Jones polynomial" (suggesting TL,
 `y_(1³)=0`), yet the entire validated compute pipeline + the 2026-05-05 proof
 use the full-Hecke Ocneanu trace (`y_(1³)≠0`). Two coherent resolutions:
 

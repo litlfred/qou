@@ -68,7 +68,7 @@ noncomputable def telescopeRHS (n : ℕ) (Q X : ℝ) : ℝ :=
     specialisation `p_1 ↦ (1 − q^r)/(1 − q)` and `X = Q^r` yields the
     telescope identity for the Wenzl-bridge normalisation.
 
-    Recorded as an axiom (per CLAUDE.md §3b-cond pattern) since the
+    Recorded as an axiom (per AGENTS.md §3b-cond pattern) since the
     proof depends on the regular-representation Frobenius identity,
     which is a deep Mathlib gap pending the symmetric-functions and
     Schur-element infrastructure.  Symbolically verified for `n = 0,

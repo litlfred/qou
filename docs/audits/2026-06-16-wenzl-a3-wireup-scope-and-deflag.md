@@ -87,7 +87,7 @@ speedup needs a Rust kernel.
 3. **Recursion kernel** — `compute_chi_lambda_via_branching` for A≥3: peel one H₃ block per level, computing the inner `ρ_μ(W_inner)` recursively (which the `_build_rho_recursive` placeholder named in the current Python `return None` stub references), cost `Σ_level Σ_{μ,ν} dim(μ)·dim(ν)` ≪ `p(3A)`.
 4. **PyO3 binding + production wiring** — route A≥3 in `canonical_tr_m_via_branching.py` through the Rust operator-branching, replacing the transfer fallback once cross-validated.
 
-### Discipline gates (per CLAUDE.md)
+### Discipline gates (per AGENTS.md)
 - **No-regression:** cross-validate the Rust combiner against the transfer matrix at **1e-25** for every atom D…⁶Li before wiring; run both precision dashboards (L1 `onepb-status-dashboard`, L2 `per-observable-100x-status`) and report deltas (must not regress).
 - **MBA-appendix sync:** the A≥3 combiner realises Steps 9–11 of the canonical chain → update the matching `alg:`-block in `appendix-mass-binding-algorithms/` in the same PR.
 - **Speedup-only, not a value change:** the A≥3 `tr_M` value is already validated; this changes the *route*, not the number. No fit, no fourth calibration.

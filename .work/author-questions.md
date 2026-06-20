@@ -216,7 +216,7 @@ Suggested ordering by manuscript-importance × Lean-ease:
 
 ## Q5 — `axiom` vs `class+instance` for the §3b conjecture witnesses?
 
-CLAUDE.md §3b prescribes `class C where … ; noncomputable instance
+AGENTS.md §3b prescribes `class C where … ; noncomputable instance
 : C := by sorry`. But many of the new conjecture-class fields are
 specific equations (`residual = 0`); these could equally be
 `axiom C_residual_zero : residual = 0`. The `axiom` form is more

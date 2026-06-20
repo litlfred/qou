@@ -4,7 +4,7 @@
 **Branch:** `claude/sleepy-carson-Lj3RA`
 **Trigger:** long external AI dialog re-pitching Khovanov-Lauda-Rouquier (KLR) algebras + Kashiwara crystal bases as (i) a compute-speedup for Gröbner-Shirshov reduction, (ii) a positivity-by-construction layer, (iii) the closure for Δ_λ via Option E.
 **Audience:** anyone evaluating whether the dialog content should land in the paper, the Lean formalization, or the compute pipeline.
-**Bottom-line up front:** ~60% textbook-accurate; ~70% already encoded in CLAUDE.md §7b; ~10% genuine new leverage. The load-bearing claims (compute speedup, dilog-transcendence uniqueness on the electron knot, Δ_λ resolution) do not survive contact with the framework. The proof-simplification audit (below) **finds 0/6 candidates that would meaningfully shorten** existing proofs.
+**Bottom-line up front:** ~60% textbook-accurate; ~70% already encoded in AGENTS.md §7b; ~10% genuine new leverage. The load-bearing claims (compute speedup, dilog-transcendence uniqueness on the electron knot, Δ_λ resolution) do not survive contact with the framework. The proof-simplification audit (below) **finds 0/6 candidates that would meaningfully shorten** existing proofs.
 
 ## What the dialog proposed
 
@@ -50,7 +50,7 @@
 
 6. **Non-abelian anyons everywhere on S¹** overstates: anyon non-abelianness requires specific levels (Ising k=2, Fibonacci k=3, etc.). Our substrate `q_0 ≈ 1.1097` isn't on the unit circle anyway.
 
-### What is already in CLAUDE.md §7b (dialog is rediscovering)
+### What is already in AGENTS.md §7b (dialog is rediscovering)
 
 The three "structural shortcuts" the dialog spends pages on are already authoring guidance in §7b:
 
@@ -63,7 +63,7 @@ The dialog's "new propositions" map almost 1-to-1 onto these existing entries.
 ### What is genuine new leverage (small)
 
 - **Positivity-as-free-theorem framing.** If a thin KLR layer is ever added to the Lean formalization, the Markov-trace coefficient positivity becomes automatic (dim Hom ≥ 0) rather than a per-block lemma. Clean, not load-bearing — current positivity arguments in the paper are not bottlenecks.
-- **Option E direction reinforcement.** Listed productive in CLAUDE.md alongside GAP-A-3 / GAP-A-4. The dialog reinforces the direction but does not advance it. Relaunch criteria are recorded below.
+- **Option E direction reinforcement.** Listed productive in AGENTS.md alongside GAP-A-3 / GAP-A-4. The dialog reinforces the direction but does not advance it. Relaunch criteria are recorded below.
 
 ## Option E (Kashiwara crystal Δ_λ closure) — status & relaunch criteria
 
@@ -85,8 +85,8 @@ Per the retraction:
 1. **Per-partition derivation, not single-nucleon.** Take seriously that Δ_λ varies non-trivially across λ ⊢ 3A; do not reduce to single-nucleon scaffolding.
 2. **q-independent / categorical.** Do not absorb q-dependent corrections; those live inside χ^λ via the interface operator.
 3. **Joint GAP-A-3 / GAP-A-4 progress.** Per the gating doc: GAP-A-3 (brane-tower level selector) and Δ_λ are the same problem; resolving GAP-A-4 (`conj:rho-prefactor-structural`) co-resolves Δ_λ. A bare crystal attempt that ignores these conjectures is doomed to recapitulate the prior failure.
-4. **Conditional-on-class formalization** (CLAUDE.md §3b-cond). If a candidate categorical Δ_λ rule is identified, axiomatise it as a Lean class (cf. PR `86fec9f5` wrapping `slater_strict_complementarity_kernel_axiom` as a class) so the downstream binding theorems remain rigorous-conditional rather than fit-anchored.
-5. **No 7th fit-based ansatz.** Per CLAUDE.md Δ_λ gate warning — the three-calibration discipline review catches numerological fits.
+4. **Conditional-on-class formalization** (AGENTS.md §3b-cond). If a candidate categorical Δ_λ rule is identified, axiomatise it as a Lean class (cf. PR `86fec9f5` wrapping `slater_strict_complementarity_kernel_axiom` as a class) so the downstream binding theorems remain rigorous-conditional rather than fit-anchored.
+5. **No 7th fit-based ansatz.** Per AGENTS.md Δ_λ gate warning — the three-calibration discipline review catches numerological fits.
 
 ### Recommendation
 
@@ -122,7 +122,7 @@ Two structural reasons the dialog's "simpler proofs" pitch lands empty for QOU a
 
 ### What this leaves
 
-The CLAUDE.md §7b shortcuts (Type B folding, KLR → KL classical limit, Demazure resonances) remain a sound **authoring guide for new work** — for any *future* proof that would otherwise have to construct positivity by hand, the §7b guidance still applies. They yield **no measurable shortening of the proofs already on disk.**
+The AGENTS.md §7b shortcuts (Type B folding, KLR → KL classical limit, Demazure resonances) remain a sound **authoring guide for new work** — for any *future* proof that would otherwise have to construct positivity by hand, the §7b guidance still applies. They yield **no measurable shortening of the proofs already on disk.**
 
 The single near-miss (Candidate 2, `hecke-normal-form.md`) already cross-references the crystal-graph engine alternative; if the compute pipeline ever ports `groebner-shirshov-engine` to a crystal-traversal backend, the proof side will not need changes.
 
@@ -133,7 +133,7 @@ The single near-miss (Candidate 2, `hecke-normal-form.md`) already cross-referen
 - [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) — why `m = m_e · VolDensity(K, q_0)` is single-eval; no separate `m_0`.
 - [`docs/precision-goals.md`](../precision-goals.md) — L1 / L2 precision targets the Δ_λ closure would help reach.
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) — substrate → archimedean pipeline; KLR layer would sit between Hecke and Wedderburn.
-- CLAUDE.md §7b — Symmetric-crystal techniques (KLR / Kashiwara) authoring guidance.
-- CLAUDE.md §3b-cond — conditional-on-class exception for conjecture axiomatisation.
+- AGENTS.md §7b — Symmetric-crystal techniques (KLR / Kashiwara) authoring guidance.
+- AGENTS.md §3b-cond — conditional-on-class exception for conjecture axiomatisation.
 - `computations/binding_K_direct.py` — Δ_λ-gated binding formula.
 - `computations/lp_dual_solver.py` — current LP/SDP infrastructure the dialog's "speedup" pitch would replace.

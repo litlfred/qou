@@ -13,7 +13,7 @@ Conjectural regularity breakdown: the q → 1 classical limit of the q-NS flow i
 
 ## Status
 
-Class-axiomatised per CLAUDE.md §3b-cond. The conjecture sits in
+Class-axiomatised per AGENTS.md §3b-cond. The conjecture sits in
 the residual §3b-violator cone identified in
 [`AUDIT-DEEP-2026-05.md`](../../../../AUDIT-DEEP-2026-05.md) §1A
 (P1.b sweep). Class declaration here lets downstream
@@ -36,7 +36,7 @@ namespace QOU.FluidDynamics
 
     Encodes the conjectural content as a Lean type-class so that
     downstream theorems can take `[RegularityBreakdown]` as an explicit
-    hypothesis (CLAUDE.md §3b-cond).  Concrete instances either
+    hypothesis (AGENTS.md §3b-cond).  Concrete instances either
     prove the conjecture or supply a `sorry` (read as conjecture).
 
     Ref: [manuscript] §Regularity breakdown at q = 1: the classical limit as a phase transition, `conj:regularity-breakdown` -/

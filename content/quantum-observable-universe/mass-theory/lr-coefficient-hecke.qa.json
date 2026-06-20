@@ -2641,7 +2641,7 @@
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/lr-coefficient-hecke.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "content/quantum-observable-universe/mass-theory/lr-coefficient-hecke.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per AGENTS.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -2679,7 +2679,7 @@
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/mass-theory/lr-coefficient-hecke.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "content/quantum-observable-universe/mass-theory/lr-coefficient-hecke.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per AGENTS.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [

@@ -64,13 +64,13 @@ Per atom K, the framework formula gives **1 equation in p(3A) unknowns** for Δ_
 
 **Closure requires a structural constraint** on Δ_λ(K). The viable directions:
 
-1. **Per-atom bar-invariance** (probe-1 form) — Δ_λ(K) = Δ_{λ^T}(K). Reduces unknowns by ~½. ✓ canonical (Type-B fold, CLAUDE.md §7b).
+1. **Per-atom bar-invariance** (probe-1 form) — Δ_λ(K) = Δ_{λ^T}(K). Reduces unknowns by ~½. ✓ canonical (Type-B fold, AGENTS.md §7b).
 
 2. **Per-atom dominant pin from GAP-A-4** — Δ_{λ*}(K) = round(dim_q(λ*)) for the dominant partition. ✗ falsified for D (probe-3).
 
 3. **Crystal-weight assignment (Option E)** — Δ_λ(K) = Σ_w n^w_λ · ρ_w(K) where ρ_w is the canonical-basis trace and n^w_λ are Kazhdan–Lusztig multiplicities. Open conjecture (`conj:crystal-graph-realization`, `conj:kazhdan-lusztig-classical-limit`).
 
-4. **Per-atom polynomial in (Z, N, |β_K|, dim_q(λ))** — fit-style. ✗ excluded per CLAUDE.md anti-pattern.
+4. **Per-atom polynomial in (Z, N, |β_K|, dim_q(λ))** — fit-style. ✗ excluded per AGENTS.md anti-pattern.
 
 ## Probe-4 (this branch) — per-atom Δ_λ(K) sweep
 

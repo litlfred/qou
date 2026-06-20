@@ -7,7 +7,7 @@ import Mathlib.Tactic
 # SDP multiplicity ρ from the dominant Wedderburn summand (conjecture class)
 
 This file axiomatizes `conj:rho-prefactor-structural` as a Lean `class`
-following the §3b conditional-class pattern from CLAUDE.md.
+following the §3b conditional-class pattern from AGENTS.md.
 
 **Conjecture (informal):** The SDP multiplicity $\rho(\mathfrak{H})$
 appearing in the mass formula equals the quantum dimension of the dominant
@@ -102,7 +102,7 @@ class RhoPrefactorStructural (Z N : ℕ) (q : ℝ) where
 /-! ### Per-particle instances (issue #604, deliverables 3 + 4)
 
 Numerical evidence is recorded in `binding-k-solver.witness.json` and
-`rho-prefactor-structural-verifier.witness.json`.  Per CLAUDE.md §3b-cond,
+`rho-prefactor-structural-verifier.witness.json`.  Per AGENTS.md §3b-cond,
 each instance below records:
 
   * the atomic mass number `A`

@@ -25,7 +25,7 @@ allowed-tools: Read Edit Bash Grep Glob
 >
 > **Discipline (generalises the corpus-grep / formalize-first rules):** when a
 > tool or environment operation fails, FIRST
-> `grep -ri "<error keyword>" .claude/skills/ CLAUDE.md docs/` (e.g. `release.lean-lang.org`,
+> `grep -ri "<error keyword>" .claude/skills/ AGENTS.md docs/` (e.g. `release.lean-lang.org`,
 > `cache get 403`, `insteadOf`, `elan toolchain`) **before** declaring the
 > capability unavailable. Only after the documented workarounds are tried and
 > hit a *hard* network block may you fall back to a rigorous hand-audit — and
@@ -187,7 +187,7 @@ GitHub Actions billing-blocked, etc.), `lake exe cache get` returns
 failures), and `lean_diagnostic_messages` MCP times out at 60 s
 because no prebuilt oleans are available.
 
-The CLAUDE.md "Local Mathlib cache" section documents the *intent*
+The AGENTS.md "Local Mathlib cache" section documents the *intent*
 that the build tools auto-detect a clone at `../mathlib4`, but in
 practice the auto-detection requires manual git redirect setup when
 elan / cache hosts are network-restricted.

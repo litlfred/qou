@@ -423,7 +423,7 @@ def vol_density_per_block(
               via `canonical_tr_m_via_chi_cache.canonical_tr_m`.
     q, q_inv: substrate parameter and its inverse.
 
-    Per CLAUDE.md production-vs-exploratory discipline: this is a
+    Per AGENTS.md production-vs-exploratory discipline: this is a
     DERIVATION (restores the paper's formula), not a fit.  NO fudge
     factor is applied; if the resulting m(K) disagrees with the
     legacy shortcut, that discrepancy is REPORTED, never tuned away.

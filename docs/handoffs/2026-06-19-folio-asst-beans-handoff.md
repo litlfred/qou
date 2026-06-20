@@ -42,23 +42,22 @@ and the *script* together.
 
 ## 3. Current state on `main` (2026-06-20) — read before touching anything
 
-**`todos/` — 4 tracked files remain:**
+**`todos/` — 1 tracked file remains** (after the goal-queue relocation):
 
 | File | Class | Disposition |
 |------|-------|-------------|
-| `todos/1ppq-qbeta-queue.json` | work-plan goal queue | may become beans |
-| `todos/lean-discharge-queue.json` | work-plan goal queue | may become beans |
-| `todos/research-queue.json` | work-plan goal queue | may become beans |
 | `todos/qa-q-CAL-1-2-3-audit.json` | QA sidecar | stays bulk JSON (`beans ≠ sidecars`) |
 
-The 3 goal queues are referenced by `coordinate.md` / `STATUS.md` via **live markdown links** —
-repoint the docs and relocate the files in the same change or the links break. The
-`content-todos.ts` TodoItem store also stays at `todos/` (CLAUDE.md §4a).
+The 3 work-plan goal queues (`1ppq-qbeta-queue`, `lean-discharge-queue`, `research-queue`) were
+**relocated `todos/` → `.beans/` as bulk JSON** (`git mv` + a mechanical repoint of all readers,
+including the live `STATUS.md` links) — they stay bulk JSON per `beans ≠ sidecars`, **not** exploded
+into per-item beans. The `content-todos.ts` TodoItem store stays at `todos/` (AGENTS.md §4a).
 
-**`.beans/*.json` — 8 tracked bulk-JSON queues:** the 4 relocated watcher queues
+**`.beans/*.json` — 11 tracked bulk-JSON queues:** the 4 relocated watcher queues
 (`canonical-/compute-integration-/detangler-integration-/proof-integration-watcher-queue.json`)
 + `paper-todos.json`, `qa-agent-drain-queue.json`, `simulator-qa-sidecar-queue.json`,
-`status-section-audit.json`.
+`status-section-audit.json` + the 3 work-plan goal queues relocated from `todos/`
+(`1ppq-qbeta-queue.json`, `lean-discharge-queue.json`, `research-queue.json`).
 
 **Absent from the qou checkout (wholly folio-assistant scope):** the MCP `/api/todos` route +
 `/todos` dashboard (no `todos/` reader under `folio-assistant/src/`), `check-todos.sh`, and any
@@ -71,9 +70,9 @@ Dockerfile.
   `$HOME/.local/bin`). Verified in a fresh cloud sandbox.
 - Repaired `.claude/skills/local/bean-coordination.md` (was a stub pointing at a non-resolvable
   folio-assistant path).
-- Wired beans into CLAUDE.md discovery surfaces (work-plan policy, skill-routing, project-structure).
+- Wired beans into AGENTS.md discovery surfaces (work-plan policy, skill-routing, project-structure).
 - **Relocated the 4 watcher queues** `todos/` → `.beans/` (`git mv`) + repointed **38 doc
-  references** across the integration-watcher skill family, `.claude/commands/*`, and CLAUDE.md.
+  references** across the integration-watcher skill family, `.claude/commands/*`, and AGENTS.md.
   Verified **no `*.ts` code reads the watcher-queue paths** — so this did *not* touch `/api/todos`.
 - Repointed `content/pipeline/qa-agent-drain-queue.ts` default `--out` → `.beans/`.
 
@@ -123,8 +122,9 @@ always has it. (No Dockerfile exists in qou — this is wholly yours.)
 qou-side is **done** (§4). What remains is platform-layer or needs an owner decision:
 - **MCP `/api/todos` route + `/todos` dashboard** — repoint the reader *before* relocating the
   `content-todos.ts` store, or the route 500s.
-- **The 3 work-plan goal queues** (`1ppq-qbeta`, `lean-discharge`, `research`) — convert to beans
-  or relocate as bulk JSON; repoint their `coordinate.md` / `STATUS.md` links in the same change.
+- **The 3 work-plan goal queues** (`1ppq-qbeta`, `lean-discharge`, `research`) — **done:** relocated
+  `todos/` → `.beans/` as bulk JSON, with a mechanical repoint of all readers incl. the live
+  `STATUS.md` links (kept bulk JSON per `beans ≠ sidecars`, not exploded into per-item beans).
 - **The 1 QA sidecar** (`qa-q-CAL-1-2-3-audit.json`) — keep as bulk JSON; never `beans create`.
 **Acceptance:** `todos/` holds only the TodoItem store (or is removed if that moves too); every
 reader resolves against `.beans/`; `/api/todos` still serves; `coordinate.md` / `STATUS.md` links live.
@@ -152,6 +152,6 @@ agent-harness hooks are folio-assistant-owned and synced.
 
 When folio-assistant lands §5.1–§5.6, update qou's `.claude/skills/local/bean-coordination.md`
 ownership note and close the tracking beans (`j8el`, `bmwh`, `17ht`, `kpzd` finalize-workflows,
-`d9nu` repo-cleanup). **Do not delete qou's remaining `todos/` files** (the 3 goal queues, the QA
-sidecar, the `content-todos.ts` store) until §5.4's readers are confirmed repointed — the goal queues
-are still linked from `coordinate.md` / `STATUS.md`.
+`d9nu` repo-cleanup). The 3 goal queues are now relocated to `.beans/` with readers repointed
+(§5.4); **do not delete qou's remaining `todos/` files** (the QA sidecar `qa-q-CAL-1-2-3-audit.json`
+and the `content-todos.ts` store) until their own readers are confirmed repointed.

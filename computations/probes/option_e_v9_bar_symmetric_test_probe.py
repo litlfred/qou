@@ -32,7 +32,7 @@ VERDICTS:
     near-match — confirms it's NOT a structural derivation. The 0.11%
     closure was anchor-coincidental.
 
-DISCIPLINE: this probe is DIAGNOSTIC. Per CLAUDE.md, do NOT use the
+DISCIPLINE: this probe is DIAGNOSTIC. Per AGENTS.md, do NOT use the
 result to WIRE a new factor; report the verdict honestly.
 """
 from __future__ import annotations

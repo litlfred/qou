@@ -111,6 +111,6 @@ across all A** via a single non-fitted object.
 - **Parent: cheat sheet §9.3** + binding-endomorphism audit.
 - **Adjacent: PR #1714** (KL scaffold) — *parked*; not on the
   critical path for this work but useful infrastructure for
-  CLAUDE.md §7b shortcuts later.
+  AGENTS.md §7b shortcuts later.
 - **Adjacent: PR #1719** (PROBE 4 closure) — *closed without
   merge*; refutation reference only.

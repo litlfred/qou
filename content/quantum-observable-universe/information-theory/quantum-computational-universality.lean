@@ -26,7 +26,7 @@ The conjecture has four sub-claims:
    `c² − 1` coefficients, the factored form `∏_i V̂_i(q)`
    compresses to `O(c)` factors.
 
-Per `CLAUDE.md §3b-cond`, each sub-claim is encoded as a class
+Per `AGENTS.md §3b-cond`, each sub-claim is encoded as a class
 -- Ref: [freedman2003]
 field whose body is `sorry` — each `sorry` IS the conjecture's
 corresponding part, not missing proof.
@@ -73,7 +73,7 @@ opaque DescentDecompositionHolds (n : ℕ) : Prop
 opaque InformationContentHolds (c : ℕ) : Prop
 
 /-- **Quantum computational universality conjecture** (axiomatised
-    as a class per CLAUDE.md §3b-cond). Each field corresponds to
+    as a class per AGENTS.md §3b-cond). Each field corresponds to
     one of the four sub-claims; downstream blocks may take
     `[QuantumComputationalUniversality]` as a class hypothesis. -/
 class QuantumComputationalUniversality : Prop where

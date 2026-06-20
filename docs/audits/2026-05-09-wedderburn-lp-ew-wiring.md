@@ -86,7 +86,7 @@ and compute the **full H_(3·A) Wedderburn Frobenius Gram** on the
 pair-operator algebra (no diagonal proxy, no rank-3 H_3-channel
 projection). Report primal_obj, dual_obj, y_0_star, y_star,
 active_set per
-[CLAUDE.md](https://github.com/litlfred/qou/blob/main/CLAUDE.md)
+[AGENTS.md](https://github.com/litlfred/qou/blob/main/AGENTS.md)
 "LP/SDP duals — first-class infra" mandate.
 
 **(B) Try to close the 2.19% Weinberg gap.** The (3,2,1)

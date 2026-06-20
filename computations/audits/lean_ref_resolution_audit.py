@@ -2,7 +2,7 @@
 
 For every content-block `.ts` with a `lean.ref` URI of the form
 `<package>:<Decl.Path>`, attempts the same resolution the export
-pipeline performs (per CLAUDE.md §0a):
+pipeline performs (per AGENTS.md §0a):
 
   1. Sibling lookup     — `<paperDir>/<chapter>/<rootName>.lean`
   2. Lake-root lookup   — `<lakeRoot>/<Decl/Path>.lean`

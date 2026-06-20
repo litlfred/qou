@@ -12,7 +12,7 @@
 ```
 F(u) = Σ_{T ∈ B_{Type-B fold}(λ)} q^{c(T)} · u^{|T|}
 ```
-σ-fixed subset of the sl_n Kashiwara crystal under the Dynkin automorphism σ (CLAUDE.md §7b: "Type-B folding for chirality / CPT").
+σ-fixed subset of the sl_n Kashiwara crystal under the Dynkin automorphism σ (AGENTS.md §7b: "Type-B folding for chirality / CPT").
 
 ### Concrete result (sl_4 → C_2 folding, ω_2)
 σ-fixed 2-subsets at |T|=2 under σ = (1↔4, 2↔3): **{1,4}** and **{2,3}**. So `[u²]F = q^3 + q^3 = 2q^3`.
@@ -31,7 +31,7 @@ The Composite-3 ansatz has **no q-Pochhammer factor** at u². At every `u^k` run
 - Positive q-powers at q > 0 are positive ⇒ `[u^k]F > 0` at **every** k.
 - Target `c_k < 0` for k = 2, 3, 4 at q₀ — **mismatch at every rung**.
 
-CLAUDE.md §7b's "σ-fixed crystals are bar-involution invariant" is *true* but *orthogonal to sign-negativity*: bar-invariance and sign-positivity are independent properties; folding does not introduce signs. **The 12-17 session cont. 9 Option D build is NOT authorised.**
+AGENTS.md §7b's "σ-fixed crystals are bar-involution invariant" is *true* but *orthogonal to sign-negativity*: bar-invariance and sign-positivity are independent properties; folding does not introduce signs. **The 12-17 session cont. 9 Option D build is NOT authorised.**
 
 Probe + witness: [`qbeta_klr_composite3_preflight_run.py`](../../computations/qbeta/qbeta_klr_composite3_preflight_run.py), [`qbeta-klr-composite3-preflight-run.witness.json`](../../computations/qbeta/qbeta-klr-composite3-preflight-run.witness.json).
 

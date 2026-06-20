@@ -21,7 +21,7 @@
   mechanism-start.md`, in EMPIRICAL TENSION: the literal q₀^{5(2A−1)}
   exponent overpredicts the measured B_sym/B_lin ratio by 3×→145× and the
   exponent that actually fits is ≈ 1.4 per site, not 5. It is therefore
-  recorded below as a `conjecture` (sorry = conjecture, per CLAUDE.md §3b),
+  recorded below as a `conjecture` (sorry = conjecture, per AGENTS.md §3b),
   NOT a theorem, with the magnitude caveat in its docstring.
 
   Audit: docs/audits/2026-06-19-delta-lambda-exponent-keystone-formalize-first.md

@@ -439,7 +439,7 @@ DEEP categorical claims (that those existence witnesses ARE the
 Markov-trace operator and cinquefoil framing respectively) remain
 conjectural. This class captures the deep claims as opaque marker
 fields (no constructive content yet) so downstream theorems can carry
-them as hypotheses per CLAUDE.md §3b-cond. -/
+them as hypotheses per AGENTS.md §3b-cond. -/
 
 /-- Conditional class axiomatizing the two open categorical claims:
 

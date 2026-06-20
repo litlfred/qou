@@ -52,7 +52,7 @@ export default conjecture({
     status: "verified",
     requires: ["scipy", "sympy", "numpy", "mpmath"],
   },
-  // No Lean stub: this is a conjecture (CLAUDE.md §3b).
+  // No Lean stub: this is a conjecture (AGENTS.md §3b).
   tags: [
     "tier:S",
     "conjecture",

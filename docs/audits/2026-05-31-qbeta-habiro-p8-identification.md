@@ -79,4 +79,4 @@ This symmetry is a STRUCTURAL FINGERPRINT — any categorical object that produc
   - [`u^15` interpretation](2026-05-31-qbeta-habiro-depth15-interpretation.md) (braid-pair first-disagreement fingerprint)
   - `(u−1)(u+1) = Φ_1·Φ_2` (classical-limit kill, identified in parent audit)
 - Master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md) PROBE NEW
-- Per CLAUDE.md flip-flop discipline: do NOT promote a numerical near-match to "P_8 IS X categorically" without coefficient-level structural agreement.
+- Per AGENTS.md flip-flop discipline: do NOT promote a numerical near-match to "P_8 IS X categorically" without coefficient-level structural agreement.

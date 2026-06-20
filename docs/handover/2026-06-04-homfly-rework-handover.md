@@ -10,7 +10,7 @@ A request to "surface a buried docstring admission and walk the mass/binding
 pipeline" grew into a **verified fix** of the HOMFLY engine. The PR is
 self-contained (docs + 4 compute files), rebased clean on main, local QA green,
 reference gate **5/5**. CI is red but it is **GitHub Actions billing** (every
-run finishes in ~4 s, jobs never start — see CLAUDE.md billing rule). Do **not**
+run finishes in ~4 s, jobs never start — see AGENTS.md billing rule). Do **not**
 diagnose CI red as a code problem here.
 
 ## What landed (7 commits)

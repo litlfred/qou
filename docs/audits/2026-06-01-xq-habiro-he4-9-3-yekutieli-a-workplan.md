@@ -18,7 +18,7 @@ Three follow-on probes against PR #1673's verdicts:
 
 - Item 2: probe MUST report TIER (`proved-candidate`/`near-match`/`refuted`)
   + evaluate at q_proton AND q_muon. Habiro element lives at the fibre
-  level (per CLAUDE.md Im(q) framing). Use qLambert_single_term
+  level (per AGENTS.md Im(q) framing). Use qLambert_single_term
   (main commit 58308c24a) as building block where applicable.
 - Item 3: NO new substrate constant. Compute per-block A^(9,3)_{ξν}(I)
   extract; verdict is binary (matches required ρ_F or doesn't).
@@ -42,4 +42,4 @@ Three follow-on probes against PR #1673's verdicts:
 - PR #1511 — α_EM `[2]_q·(1-h²α)` Habiro element (template)
 - `docs/audits/2026-06-01-yekutieli-mp-substrate-derivation-scaffolding.md`
 - `docs/coordination/1ppq-mass.md`
-- `todos/research-queue.json`
+- `.beans/research-queue.json`

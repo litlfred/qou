@@ -33,7 +33,7 @@ WHAT THIS PROBE ESTABLISHES (exact-ish at 50 dps; NO fit, NO c_4 value):
      rung is gated on the OPEN length-4 σ₃-lift, not extractable from any A=1 /
      σ₃-free object (consistent with C12 + the C13 refutation).
 
-DISCIPLINE (CLAUDE.md §7b, refuted-class map, formalize-first): this is the
+DISCIPLINE (AGENTS.md §7b, refuted-class map, formalize-first): this is the
 forward-pruning preflight, not a c_4 extraction.  It validates the foundation
 and pins the open question; it does NOT propose a σ₃-lift (that would be
 fitting).  No production wiring; no registry change.

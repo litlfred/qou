@@ -169,7 +169,7 @@ Phase 1 + Phase 2 partial delivery on PR #631
   [`prop:graded-hecke-energy-truncation-bound`](../../content/quantum-observable-universe/braids-and-knots/graded-hecke-energy-truncation-bound.md)
   proves $P_K(q)$ has at most $\ell(K, q_0) + 1$ nonzero grades
   conditional on the GS-filtration descent
-  (CLAUDE.md §3b-cond conditional class). Companion script
+  (AGENTS.md §3b-cond conditional class). Companion script
   `graded_hecke_energy_probe.py` stratifies the canonical
   Wenzl-bridge $|\mathrm{tr}_M(\beta_K, q_0)|$ per partition by
   content-sum grade and reports cumulative convergence. Empirical

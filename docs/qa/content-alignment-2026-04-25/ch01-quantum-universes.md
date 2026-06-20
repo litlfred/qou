@@ -160,7 +160,7 @@ Phrases checked:
 
 ---
 
-## Notational alignment (CLAUDE.md §7aa STRICT)
+## Notational alignment (AGENTS.md §7aa STRICT)
 
 ### Categories: $\mathbf{C}$ vs. $\mathcal{C}$
 

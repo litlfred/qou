@@ -1826,7 +1826,7 @@ fn chi_lambda_all_partitions_f64(
 ///
 /// Returns `Vec<(partition, chi_decimal_string)>`. The caller is
 /// expected to load each chi via `mpmath.mpf(decimal_string)` to
-/// preserve precision. Per CLAUDE.md §Precision goals L1 (50-dps
+/// preserve precision. Per AGENTS.md §Precision goals L1 (50-dps
 /// compute floor), this is the production path for categorical
 /// identities; the f64 variant exists for speed-only use cases
 /// where structural-zero distinction is not required.
@@ -1873,7 +1873,7 @@ fn chi_lambda_all_partitions_mpfr(
 ///
 /// Mirrors `computations/laurent_q_trace.py
 /// tr_M_word_lq` exactly, but with BigInt arithmetic in Rust
-/// (no f64). Per CLAUDE.md §Precision goals L1 — every coefficient
+/// (no f64). Per AGENTS.md §Precision goals L1 — every coefficient
 /// is exact; the Python caller evaluates at q₀ to mpmath.mpf at
 /// production dps.
 ///
@@ -1967,7 +1967,7 @@ fn incremental_reduce_rust(
 /// `n_strands`: `3·A` (where `A = Z + N`).
 /// `q_str`: substrate parameter as a decimal string.
 /// `dps`: working precision in decimal places (default 50,
-/// CLAUDE.md §Precision goals L1 floor).
+/// AGENTS.md §Precision goals L1 floor).
 ///
 /// Returns: one decimal-string-encoded MPFR value at full precision.
 /// Python caller does `mpmath.mpf(result_str)`.

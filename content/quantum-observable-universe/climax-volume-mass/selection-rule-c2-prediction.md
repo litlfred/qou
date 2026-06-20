@@ -55,7 +55,7 @@ Stated over real $q > 0$ (substrate-anchor regime).  The closed form
 $(q+1)^2/(3q)$ is a Laurent rational in $\mathbb{Z}[q, q^{-1}]$ — fibre-level
 construction.  At $q = q_0$ it evaluates to $\approx 1.337$.  No $|q|=1$
 step; both $q$ and $q^{-1}$ are real positive at any real $q > 0$.
-CLAUDE.md §7c-compliant.
+AGENTS.md §7c-compliant.
 
 ## Cross-references
 

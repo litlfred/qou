@@ -20,7 +20,7 @@ This file:
   empirically for k=3 (cot θ_W gap closure to 0.13%) and k=4 (rel.err
   0.14%) in `staircase_ew_residual_conjecture.py`.
 
-Per `CLAUDE.md §3b`, an unproved staircase EW-residual claim must be
+Per `AGENTS.md §3b`, an unproved staircase EW-residual claim must be
 either kind `conjecture` or a provable kind under the conditional-class
 exception (a `class` instance whose `sorry` axiomatises the claim).
 We choose the latter so downstream results may state conditional
@@ -83,7 +83,7 @@ For the empirical content and 7/7 witness assertions, see:
 * `computations/staircase-ew-residual-conjecture.witness.json`
 * `docs/audits/2026-05-06-staircase-ew-residual-conjecture.md`
 
-Per `CLAUDE.md §3b-cond`, the conjecture is encoded as
+Per `AGENTS.md §3b-cond`, the conjecture is encoded as
 
 * an opaque `Prop`-valued declaration `StaircaseEWSpectralContent k`
   (one axiom; cannot be discharged by `trivial`); and
@@ -183,7 +183,7 @@ scale `q^(1/(2k-1))` is realised as a β_EW eigenvalue ratio on `V_{ρ k}`
 (empirically verified at k=3 rel.err 0.13 %, k=4 rel.err 0.14 % in
 `staircase_ew_residual_conjecture.py`).
 
-Per `CLAUDE.md §3b-cond` we provide **no global instance** (which would
+Per `AGENTS.md §3b-cond` we provide **no global instance** (which would
 require a `sorry`): downstream theorems take
 `[StaircaseEWResidual q (canonicalScale q)]` as an explicit instance
 hypothesis and carry the "conditional on `conj:staircase-ew-residual`"

@@ -46,7 +46,7 @@ The user's "tracks/rods" check (per session-policy §4 idle-trigger queue):
 ## What's already deferred (won't be done this session)
 
 - **T10** Path A theoretical derivation — 1-2 days analytical, multi-session
-- **T11** Lean 123-file substrate-lift batch — needs `lake build` per CLAUDE.md §0 (`lake exe cache get && lake build`); no toolchain in container; deferred
+- **T11** Lean 123-file substrate-lift batch — needs `lake build` per AGENTS.md §0 (`lake exe cache get && lake build`); no toolchain in container; deferred
 - **T6** wiring canonical forms in production compute consumers — depends on T3 outcome (what IS canonical for leptons?)
 
 ## Queue status after this session (2026-05-24 end-of-burst)

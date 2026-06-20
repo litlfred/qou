@@ -7,7 +7,7 @@ import Mathlib.Tactic
 # Normal form of the Hecke mass element (conjecture class)
 
 This file axiomatizes `conj:mass-element-nf` as a Lean `class`
-following the §3b conditional-class pattern from CLAUDE.md.
+following the §3b conditional-class pattern from AGENTS.md.
 
 **Conjecture (informal):** For any particle with braid representative
 $\beta \in H_3(R, q)$, the Hecke mass element $\Phi_{\mathrm{mass}}(\beta)$

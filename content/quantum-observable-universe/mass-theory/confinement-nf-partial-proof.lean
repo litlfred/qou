@@ -14,7 +14,7 @@ The conjecture has three claims:
 
 Theorems T1 and T3 follow from standard LP theory (complementary
 slackness + finite-dim strong duality), here axiomatised as the
-`HasFiniteLPDuality` class hypothesis (CLAUDE.md §3b-cond
+`HasFiniteLPDuality` class hypothesis (AGENTS.md §3b-cond
 conditional-class exception) — Mathlib does not yet ship an
 LP-duality library; when it does, populate the class instance and
 the rest of the file is unchanged.  Theorem T2 reduces to
@@ -86,7 +86,7 @@ QOU operator-selection LP needs from standard LP theory.  These are
 *not* QOU-specific — they hold for any bounded + feasible finite-dim
 LP.  Mathlib does not (as of writing) ship an LP-duality library;
 this class axiomatises the two facts so the downstream theorems can
-take them as explicit `[Instance]` hypotheses (CLAUDE.md §3b-cond
+take them as explicit `[Instance]` hypotheses (AGENTS.md §3b-cond
 pattern), making `theorem_1_…` and `theorem_3_…` rigorous-conditional
 results awaiting a Mathlib LP-duality port.
 
@@ -105,7 +105,7 @@ class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where
     ∀ (μ : lp.Λ), (μ ∈ lp.active_set) ↔ lp.tight μ
 
 /-- Strong duality theorem (now a class-conditional invocation).
-Conditional on `[HasFiniteLPDuality lp]` per CLAUDE.md §3b-cond. -/
+Conditional on `[HasFiniteLPDuality lp]` per AGENTS.md §3b-cond. -/
 theorem strong_duality (lp : OperatorSelectionLP)
     [lpd : HasFiniteLPDuality lp] :
     lp.duality_gap = 0 :=
@@ -119,7 +119,7 @@ theorem theorem_3_strong_duality (lp : OperatorSelectionLP)
   strong_duality lp
 
 /-- Complementary slackness theorem (class-conditional invocation).
-Conditional on `[HasFiniteLPDuality lp]` per CLAUDE.md §3b-cond. -/
+Conditional on `[HasFiniteLPDuality lp]` per AGENTS.md §3b-cond. -/
 theorem complementary_slackness (lp : OperatorSelectionLP)
     [lpd : HasFiniteLPDuality lp] (λ : lp.Λ) :
     (λ ∈ lp.active_set) ↔ lp.tight λ :=
@@ -137,7 +137,7 @@ theorem theorem_1_maximizer_in_active_set (lp : OperatorSelectionLP)
 interface generator's seminormal action.  The mathematical content
 is in docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md;
 here it is encoded as a class so Theorem 2 can take it as a
-hypothesis (CLAUDE.md §3b-cond pattern). -/
+hypothesis (AGENTS.md §3b-cond pattern). -/
 class HasBranchingBlockLemma (lp : OperatorSelectionLP) : Type where
   /-- The pole-order bound that Sub-lemma 2.1 establishes:
   for any `λ`, the q=0 pole order of `χ^λ(β)` is bounded by the

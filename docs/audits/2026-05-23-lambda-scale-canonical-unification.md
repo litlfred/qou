@@ -254,7 +254,7 @@ source of higher-order coefficients.
 
 ### (xiii) Crystal-graph / Kashiwara q → 0 limit
 
-Per CLAUDE.md §7b, KLR canonical bases at q → 0 reduce to crystal
+Per AGENTS.md §7b, KLR canonical bases at q → 0 reduce to crystal
 graphs (Kashiwara). The crystal structure is fully combinatorial
 (no q dependence), and the q-deformation back from q → 0 to
 q = q_0 gives explicit h^k expansions of crystal-basis matrix
@@ -324,7 +324,7 @@ The author may then either:
 - Direct the agent to wait until the underlying categorical
   derivation lands.
 
-This rule supplements the existing CLAUDE.md three-calibration
+This rule supplements the existing AGENTS.md three-calibration
 discipline (no CAL-4 fits) and the `Δ_λ gate` anti-pattern. It
 makes the escalation step explicit and traceable: every h^k
 coefficient in the framework is either (a) derivable from a named

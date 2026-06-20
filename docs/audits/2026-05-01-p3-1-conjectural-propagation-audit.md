@@ -6,7 +6,7 @@
 [`content/pipeline/conjectural-propagation-audit.ts`](../../content/pipeline/conjectural-propagation-audit.ts)
 walks every block manifest, builds the `uses[]` graph, and reports
 every `theorem`/`proposition`/`lemma`/`corollary` whose transitive
-cone touches a `conj:` label (per CLAUDE.md §3b STRICT propagation
+cone touches a `conj:` label (per AGENTS.md §3b STRICT propagation
 rule).
 **Witness**: [`2026-05-01-p3-1-conjectural-propagation.witness.json`](2026-05-01-p3-1-conjectural-propagation.witness.json).
 
@@ -60,7 +60,7 @@ the actually-novel conjectural content lives.
 
 ### Observation 3 — definitions transmit the propagation
 
-Per CLAUDE.md §3b clarification, definitions DO transmit propagation
+Per AGENTS.md §3b clarification, definitions DO transmit propagation
 to downstream provable blocks (even though definitions themselves are
 not subject to the demotion rule). Many of the 260 violators reach
 their conjectural ancestor via a definition (e.g.
@@ -69,7 +69,7 @@ their conjectural ancestor via a definition (e.g.
 
 ## Policy decision (user input requested)
 
-CLAUDE.md §3b STRICT propagation, applied mechanically, would demote
+AGENTS.md §3b STRICT propagation, applied mechanically, would demote
 260 blocks. Three options:
 
 ### Option A — Mass demotion (strict §3b)

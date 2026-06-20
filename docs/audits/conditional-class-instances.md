@@ -2,7 +2,7 @@
 
 Five class-axiomatised conjectural inputs in
 `particle-interactions/` and `braids-and-knots/` follow the
-CLAUDE.md §3b-cond pattern: each isolates a single conjecture as
+AGENTS.md §3b-cond pattern: each isolates a single conjecture as
 a Lean class with one `sorry`-instance, and downstream conditional
 theorems have no `sorry` in their proof bodies.  This audit tracks
 the discharge path for each instance — what it would take to

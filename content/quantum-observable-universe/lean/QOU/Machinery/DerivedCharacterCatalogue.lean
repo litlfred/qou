@@ -71,7 +71,7 @@ Mirrors `derived_chi_catalogue.Tier`. Captures the source of a
 catalogue cell. Only `derived` cells are safe to consume as
 predictions. -/
 
-/-- Three provenance tiers per CLAUDE.md `tier` discipline. -/
+/-- Three provenance tiers per AGENTS.md `tier` discipline. -/
 inductive Tier where
   | derived : Tier        -- structural derivation, safe to consume
   | calAnchored : Tier    -- extracted from CODATA, circular

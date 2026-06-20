@@ -71,7 +71,7 @@ structure ReebEpsilon (C : Type u) [Category.{v} C] [MonoidalCategory C]
     The connection to the surreal `1/ω` is made in
     `QOU.AppendixSurreals.StandardPart`.
 
-    Encoded as an empty marker `Prop` class per CLAUDE.md §3b: the
+    Encoded as an empty marker `Prop` class per AGENTS.md §3b: the
     archimedean-smallness statement `n · ε < λ · 𝟙` requires the
     Frobenius-pairing operator order on `End(A)`, which lives at a
     different layer of the formalisation.  Downstream theorems

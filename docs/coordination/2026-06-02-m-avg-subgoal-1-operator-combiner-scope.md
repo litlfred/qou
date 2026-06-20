@@ -60,7 +60,7 @@ This branch picks up Subgoal-1 from where the 2026-05-31 binding-magic-A-wireup 
 
 ## What this branch does NOT attempt
 
-- New ansatz fits (forbidden per CLAUDE.md §"Δ_λ gate")
+- New ansatz fits (forbidden per AGENTS.md §"Δ_λ gate")
 - Switching from H₄ to H₃ as the linking-weight basis (REGRESSES m_p by −57% per `linking_weight_canonical_object_lwfix.py`)
 - Re-introducing `λ_scale` as a separate object (purged 2026-05-23, see `lambda-scale-absorbed-into-vol-density.md`)
 - Subgoal-2 (research-grade < CAL-2 floor) — explicitly out of scope per the L2-100× audit

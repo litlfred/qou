@@ -169,7 +169,7 @@ Whatever route lands, the derivation must satisfy:
   the `claude/iw-<TYPE>-<STUB>` convention from PR #722.
 - One PR per route attempt (don't pre-bundle attempted-and-failed
   routes).  Falsified attempts become `rem:*-falsified` blocks
-  per CLAUDE.md §3a/§3b.
+  per AGENTS.md §3a/§3b.
 - Coordinate with PR #696 author (this session) on the M_N
   CLASS-A banner retirement; the probe docstring at lines 9–22
   is updated once the substrate derivation lands.
@@ -195,7 +195,7 @@ Workplan-0b/M_N is **closed** when:
 - Subscribe to PR #696's discussion if reopening that PR's audit.
 - Open coordination comment on any in-flight `derive_m_p_*` /
   `atomic_mass_via_rho_k.py` PR — your route A overlap will need
-  cherry-pick coordination per CLAUDE.md `local/coordinate` §3.
+  cherry-pick coordination per AGENTS.md `local/coordinate` §3.
 - Use the integration-watcher branch convention
   (`claude/iw-compute-...`) for any spawned sub-PRs (Lean stub,
   probe wiring) so they're discoverable via the

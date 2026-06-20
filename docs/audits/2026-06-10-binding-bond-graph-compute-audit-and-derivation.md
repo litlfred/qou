@@ -155,6 +155,6 @@ not re-chased.
 and `trace_bond_pair_factorizes` (`tr_M((c₁σ_i+d₁)(c₂σ_j+d₂)) =
 (c₁z+d₁)(c₂z+d₂)`, i<j — the two-bond factorization), both proved from the
 existing `MarkovTrace` class fields (generic `CommRing R`, no archimedean
-structure — per CLAUDE.md §7c). The general A-bond product needs the
+structure — per AGENTS.md §7c). The general A-bond product needs the
 cross-level Markov axiom the class does not yet carry (same gap as
 `markov_trace_unique`); the compute witness covers it numerically to 1.1e-15.

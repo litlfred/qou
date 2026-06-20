@@ -8,7 +8,7 @@ The α_EM next-order factor is the **Habiro element**
 
 This file formalises the **fibre-level** structural facts about `H`
 that hold over a *generic commutative ring* — i.e. with `q` a formal
-variable and **no reality or archimedean assumption** (per CLAUDE.md
+variable and **no reality or archimedean assumption** (per AGENTS.md
 "Im(q) at fibre vs observable level", the Habiro element lives at the
 fibre/categorical level where the operative symmetry is the bar
 involution `q ↦ q⁻¹`, not a reality constraint).

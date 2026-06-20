@@ -199,7 +199,7 @@ A concrete computation requires:
 
 [`qou:QOU.BraidKnot.depth_stratified_frobenius_reciprocity`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/BraidKnot/DepthStratifiedFrobeniusReciprocity.lean)
 axiomatises the FR refinement as a class hypothesis (per
-CLAUDE.md §3b-cond). Downstream theorems depending on the
+AGENTS.md §3b-cond). Downstream theorems depending on the
 FR-corrected mass formula consume this class as an explicit
 `[Instance]` hypothesis. The classical-limit case ($k = 0, 1, 2, 3$
 at $q = 1$) reduces to standard Frobenius reciprocity for $S_n$ —

@@ -9,7 +9,7 @@ import QOU.Archimedean.HyperbolicVolumeTranscendence
 The class `HyperbolicVolumeIndependence` itself (field `no_relation`)
 is declared in `QOU.Archimedean.HyperbolicVolumeTranscendence` §7,
 where the volumes `vol_4_1`, `vol_5_2`, `vol_B3` live.  This file
-holds only the **global conjectural witness**: per CLAUDE.md §3b the
+holds only the **global conjectural witness**: per AGENTS.md §3b the
 `sorry` in the instance below *is* the open conjecture, not a missing
 proof.  Downstream theorems that want the conditional form bind
 `[HyperbolicVolumeIndependence]` explicitly per §3b-cond.

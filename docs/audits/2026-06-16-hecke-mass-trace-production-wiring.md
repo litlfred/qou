@@ -18,7 +18,7 @@ Hecke mass element,
 $$ \mathfrak{m}(\varrho_\beta) = \bigl\lvert \mathrm{tr}_M(\Phi_{\mathrm{mass}}(\beta)) \bigr\rvert, \qquad \bigl\lvert \mathrm{tr}_M(\Phi_{\mathrm{mass}}(\beta)) \bigr\rvert = \frac{\mathrm{Vol}(K_\beta)}{\hbar_q^{2}}. $$
 
 This is the single-knot face of the canonical mass formula
-`m(K) = m_e · Vol(K)·ρ(K)/ℏ_q²` (CLAUDE.md): the proposition fixes the
+`m(K) = m_e · Vol(K)·ρ(K)/ℏ_q²` (AGENTS.md): the proposition fixes the
 `|tr_M| = Vol/ℏ²` leg; the `m_e·ρ` factors are the archimedean dressing.
 
 ## 2. Lean state (sorry-free, but shallow)

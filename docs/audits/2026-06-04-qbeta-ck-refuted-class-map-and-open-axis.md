@@ -13,9 +13,9 @@ next session narrows its probe instead of re-running a refuted class.
 > deriving the c_k / the ladder element is still alive?"* (method-level). Both
 > are needed: the registry stops re-deriving a refuted *value*; this map stops
 > re-running a refuted *method*. It is the backward-pruning corpus-grep
-> discipline (CLAUDE.md §"Before declaring open") applied to the **search
+> discipline (AGENTS.md §"Before declaring open") applied to the **search
 > space**, and the forward-pruning formalize-first discipline
-> (CLAUDE.md §"Formalize-first probe discipline") applied to **what to run
+> (AGENTS.md §"Formalize-first probe discipline") applied to **what to run
 > next**.
 
 ---
@@ -39,7 +39,7 @@ Only **c_2 = −1** is canonical (Taylor-exact, anchor-stable). Every c_k≥3 is
    (`dc_3/dq ≈ 4.6×10⁶`; swing 4.7M× smaller than the empirical c_3) — so a
    genuine `F(q)`, if it exists, is **complex-analytic / root-of-unity** at the
    fibre level, **never** a real-q formula in `q₀`
-   (CLAUDE.md §"Im(q) at fibre vs observable level"; registry §3 c_3 row;
+   (AGENTS.md §"Im(q) at fibre vs observable level"; registry §3 c_3 row;
    falsification audit
    [`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md)).
 2. **Anchor-stability is the canonicity gate.** Registry §8: a coefficient is
@@ -116,7 +116,7 @@ even-in-ℏ data is now pinned (§3 forward constraint); what survives is a
   kernel `R(q,ξ)` is non-constant q-rational (C5 ruled out constants) and whose
   evaluation is root-of-unity / complex-analytic (C1–C4 ruled out real-q). This
   is **not** a trace identity over real q at a real anchor; it is a
-  fibre-level (formal/cyclotomic) q-series object per CLAUDE.md
+  fibre-level (formal/cyclotomic) q-series object per AGENTS.md
   §"Im(q) at fibre vs observable level". **The previous framing that called the
   mass-side trace identity and the decay-side fibre element "two facets of one
   question" is too strong** — they were two candidate mechanisms; only one
@@ -151,7 +151,7 @@ bar-even, integer `q=1` shadow) stand unchanged.
 > intended; the gate killed the class on the structural invariant, not on a
 > wide numeric search. Apply the same shape to any future F(q) candidate.
 
-Per CLAUDE.md §"Formalize-first probe discipline", state the invariant the
+Per AGENTS.md §"Formalize-first probe discipline", state the invariant the
 surviving class must satisfy **before** launching a probe, so a refuted
 sub-case is killed on paper rather than by an expensive scan:
 

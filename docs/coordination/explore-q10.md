@@ -107,7 +107,7 @@ sitting symmetrically about the q^{10} balance point.
 ## Anti-patterns (do not)
 
 - Do NOT fit a 7th-order ansatz to close the 19 ppm gap. Per
-  CLAUDE.md, `Δ_λ` gate fit-bans apply: any closed-form must
+  AGENTS.md, `Δ_λ` gate fit-bans apply: any closed-form must
   carry categorical justification, not curve-fitting.
 - Do NOT pivot to PSLQ over h-powers — PR #909 stage 2 owns
   that work. Coordinate via the comment on #909.

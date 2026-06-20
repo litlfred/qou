@@ -37,7 +37,7 @@ remark.
 
 ### Lean axiomatisation
 
-Per `CLAUDE.md` §3b ("Lean formalization of conjectures"), KVC is
+Per `AGENTS.md` §3b ("Lean formalization of conjectures"), KVC is
 encoded in Lean as a **typeclass**
 
 ```

@@ -75,7 +75,7 @@ class KashaevDensityEqualsSDPMultiplicity
       kashaev_density_prefactor K = nu_sdp K
 ```
 
-per CLAUDE.md §3b ("class is inhabited"); the only `sorry` is the
+per AGENTS.md §3b ("class is inhabited"); the only `sorry` is the
 class instance, which closes when R5-full canonical knot solver
 produces certified $\nu_{\mathrm{SDP}}$ values.
 

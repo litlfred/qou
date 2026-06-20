@@ -168,7 +168,7 @@ The four sections below extend the per-block χ_λ formalization in
 the directions named in the README's "What this proposition does NOT
 establish" list — three are tractable in pure `ring`/`field_simp`,
 one (the canonical √q-bearing Δτ_M) is conditional on a class
-axiomatising the canonical Wenzl–Markov weights per CLAUDE.md §3b-cond.
+axiomatising the canonical Wenzl–Markov weights per AGENTS.md §3b-cond.
 
 The fifth extension (z-recursion as a `class` per §3b-cond) follows
 in the next section.
@@ -368,7 +368,7 @@ theorem markov_parameter_symmetric_form (q : ℝ) (hq : 0 < q) :
 
 This class axiomatises the canonical Wenzl–Markov weights `y_λ(q)`
 for the n=3 Hecke algebra. Each field encodes a property the canonical
-weights satisfy. Following CLAUDE.md §3b-cond, this class is the
+weights satisfy. Following AGENTS.md §3b-cond, this class is the
 single point of conjectural input that downstream conditional
 theorems (e.g. `delta_tau_M_canonical_vanish_at_one`) consume as
 an `[Instance]` hypothesis.

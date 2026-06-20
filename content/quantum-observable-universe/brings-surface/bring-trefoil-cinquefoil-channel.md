@@ -1,4 +1,4 @@
-*Lean sibling: $\mathbb{N}$ genus combinatorics and $\mathbb{C}$ for $\zeta_5$ (CLAUDE.md §7c — the Gauss sum is the archimedean specialisation; the embedding combinatorics stay over $\mathbb{N}$).*
+*Lean sibling: $\mathbb{N}$ genus combinatorics and $\mathbb{C}$ for $\zeta_5$ (AGENTS.md §7c — the Gauss sum is the archimedean specialisation; the embedding combinatorics stay over $\mathbb{N}$).*
 
 **Proposition (trefoil $+$ cinquefoil channel).** *In Bring's genus-$4$ Seifert
 fibre $\Sigma_4$ — whose automorphism group is $\mathrm{Aut}(B) = S_5$, permuting

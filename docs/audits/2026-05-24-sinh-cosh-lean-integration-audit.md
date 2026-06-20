@@ -28,7 +28,7 @@ Sibling commit `d4d640ce7` ("lean+audit: items 1-4 — Pythagorean/tanh ladder L
 | `EM_channel_ratio_monotone` | `m < m' ⇒ EM_channel_ratio m < EM_channel_ratio m'` | sibling derivation (via `Real.tanh_lt_tanh + nlinarith`) |
 | `Q_borromean_eq_zero : True := trivial` | placeholder for `Q_𝓑₃ = 0` | placeholder; full statement deferred |
 
-This is the **Archimedean image** of the algebraic-side identities (which live in `ℚ(q)` per PR #1165 §"Algebraic-side identities"). The Lean formalization implicitly works at the Archimedean realization `q = e^η`; a future pre-Archimedean (over `[CommRing R]` per CLAUDE.md §7c) version would carry the `<n>_q` and `[n]_q` q-brackets as Lean functions returning values in a generic ring.
+This is the **Archimedean image** of the algebraic-side identities (which live in `ℚ(q)` per PR #1165 §"Algebraic-side identities"). The Lean formalization implicitly works at the Archimedean realization `q = e^η`; a future pre-Archimedean (over `[CommRing R]` per AGENTS.md §7c) version would carry the `<n>_q` and `[n]_q` q-brackets as Lean functions returning values in a generic ring.
 
 ## What this PR fixes
 

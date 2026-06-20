@@ -133,7 +133,7 @@ Do **not** flag these legitimate patterns:
   fields or **applies lemmas** to *derive* the conclusion — `Iff.intro h.fwd
   h.bwd`, `h.step1.trans h.step2`, `by rw [h.a]; exact h.b`, `by linarith
   [h.x, h.y]`. The class fields encode *hypotheses*; the theorem *derives*. This
-  is exactly CLAUDE.md §3b-cond item 5's required shape. Verified exemplar:
+  is exactly AGENTS.md §3b-cond item 5's required shape. Verified exemplar:
   `QOU/FluidDynamics/q_bkm_criterion.lean`.
 - **Honest named axiom with `-- Ref:`** for a genuine external input (e.g.
   `em_spectral_completeness_axiom`, Jones 1987), where downstream theorems
@@ -160,7 +160,7 @@ silently bless a bare `: True`:
 
 - **Shadow** — the ref's decl-path resolves to a real library decl. The stub is
   pure shadowing: **delete it** (the block then resolves to the real proof). Do
-  NOT exempt. See the **no-shadowing-stubs** directive in CLAUDE.md §0a.
+  NOT exempt. See the **no-shadowing-stubs** directive in AGENTS.md §0a.
 - **Genuine placeholder** — no library formalisation exists. The block is an
   *unformalised* proposition asserting `: True` — **flag it** (honest fix: state
   the real proposition with `sorry` + `-- Ref:`, or demote to `conjecture`).
@@ -266,7 +266,7 @@ marks the entry `needs-agent`; the agent then fills the verdict.
    Recipe-4 (demote to conjecture) items are claim changes — list them for owner
    sign-off, don't auto-demote.
 3. **Drain:** fix file-by-file (or small directory batches), microcommit per
-   CLAUDE.md branch+PR policy, verify each with `lean`-direct against the
+   AGENTS.md branch+PR policy, verify each with `lean`-direct against the
    restored `lake-cache/qou-<toolchain-slug>` oleans (per
    `lean-environment-setup.md`).
 4. **Backfill sidecars:** run `qa-sweep --only <criterion>` on the drained blocks

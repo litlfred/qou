@@ -6,7 +6,7 @@
 *Osterwalder–Schrader reflection positivity from the Reeb ℤ/2*.
 
 The §3b-cond class axiomatisation lives here. The class instance is the
-**conjectural witness** (sorry = conjecture per CLAUDE.md §3b), not a
+**conjectural witness** (sorry = conjecture per AGENTS.md §3b), not a
 missing proof. Downstream theorems combining this class with the
 surreal mass-gap bound (`rem:yang-mills-surreal-bound`) take
 `[OSReflectionPositivity]` as an explicit `[Instance]` hypothesis to

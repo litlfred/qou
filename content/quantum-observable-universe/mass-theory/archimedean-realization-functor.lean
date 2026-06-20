@@ -40,7 +40,7 @@ structure ArchimedeanRealizationFunctor where
     Archimedean realisation uniqueness theorem (uniqueness-theorems-
     backlog.md item 5).
 
-    Per CLAUDE.md §3b-cond: structural uniqueness immediate from the
+    Per AGENTS.md §3b-cond: structural uniqueness immediate from the
     `compat_integer` axiom carried by the structure itself; no
     additional class needed. -/
 theorem archimedean_realize_determined

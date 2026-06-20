@@ -13,7 +13,7 @@ This Lean file follows the QOU.Infra.Polylogarithm pattern:
 - Concrete `noncomputable def` for Rogers's α, β substitutions
   and the log² correction term (verified arithmetic).
 - `class` hypothesis for the q ≠ 1 substantive content
-  (per CLAUDE.md §3b-cond).
+  (per AGENTS.md §3b-cond).
 - Default instance discharging the q = 1 substitution algebra.
 
 Ref: [rogers1907] On Function Sum Theorems Connected with Σ x^n/n^2
@@ -82,7 +82,7 @@ theorem rogersLogCorrection_symmetric (u v : ℝ) :
     proposed extension; the conjectural content is encoded in the
     class field.
 
-    Per CLAUDE.md §3b-cond, downstream theorems consume the class
+    Per AGENTS.md §3b-cond, downstream theorems consume the class
     via [Instance]. -/
 class QRogersAnalyticContinuation where
   /-- The (u, v, q) configurations where the q-Rogers identity

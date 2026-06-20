@@ -104,7 +104,7 @@ H_12 requires 77 partitions with max dimension 462 (`λ=[4,4,4]`). Estimated com
 | `lp_max_duality_gap` | 0 | 0.0 | 1e-09 | ✅ |
 | `markov_trace_max_rel_delta` | 0.0 | 0.0 | 1e-09 | ✅ |
 
-L1 1-ppb cross-method agreement is **trivially met** per CLAUDE.md §Precision goals: the production stack runs at 50 dps compute / 40 dps output (`_precision.py`). The dashboard confirms this empirically across all 10 indexed witnesses, with zero LP duality gap and zero relative delta between the Hoefsmit and `markov_peel` paths for the Markov trace cross-check.
+L1 1-ppb cross-method agreement is **trivially met** per AGENTS.md §Precision goals: the production stack runs at 50 dps compute / 40 dps output (`_precision.py`). The dashboard confirms this empirically across all 10 indexed witnesses, with zero LP duality gap and zero relative delta between the Hoefsmit and `markov_peel` paths for the Markov trace cross-check.
 
 **No L1 regressions to chase.** The next compute-precision work is structural (closing CAL-4) and speed (Rust wiring), not raw precision.
 
@@ -149,7 +149,7 @@ Per direct scan of production scripts, the 10 largest opportunities (with curren
 
 **Companion guidance** from existing audit infra:
 - `compute-audit-scan.witness.json` queue items track `sympy.simplify → LaurentQ` migration (mechanical; partial).
-- CLAUDE.md `compute-author` mandates MPFR ≥ 50 dps; float64 should be near-zero in production.
+- AGENTS.md `compute-author` mandates MPFR ≥ 50 dps; float64 should be near-zero in production.
 - Cheat-sheet §5 Migration Backlog #3+#4 (Rust LR adapter wire-up + closed-form `tr_M(𝓑_K)` refactor) overlap with priorities 1–4 above.
 
 ## Action queue (priority order)

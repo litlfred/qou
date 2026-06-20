@@ -251,7 +251,7 @@ def main() -> int:
     print(f"  " + "-" * 70)
     print(f"  Paper |tr_M(NF_GS(β_p))| = 1.0653, substrate |tr_M(β_p)| = 1.6443")
     print(f"  Ratio: 1.6443/1.0653 = 1.5435")
-    print(f"  This is approximately Σ tilde_w_λ ≈ 1.51 at n=12 per CLAUDE.md")
+    print(f"  This is approximately Σ tilde_w_λ ≈ 1.51 at n=12 per AGENTS.md")
     print(f"  → Suggests paper uses NF_GS-reduced form (shorter braid word)")
     print(f"    that gives a different |tr_M| value.  My substrate uses the")
     print(f"    DIRECT Hoefsmit trace of the FULL braid word — not the NF_GS")

@@ -27,7 +27,7 @@ This script assembles and solves the **real** deuteron SDP at H_6
 
 The solve routes through the canonical dual-emitting entry point
 `pyhecke.lp_dual_solver.solve_operator_selection_lp` /
-`solve_psd_operator_selection_sdp` (CLAUDE.md §LP/SDP duals — first-class
+`solve_psd_operator_selection_sdp` (AGENTS.md §LP/SDP duals — first-class
 infra). The dual shadow prices `y_star` identify the **active demand
 channels** — the Wedderburn blocks the deuteron bound state actually
 saturates ("most receptive sub-braids").
@@ -413,7 +413,7 @@ def main() -> int:
             "n_target": n_target,
             "tr_M_beta_D": tr_M_beta_D,
             "tr_M_rel_err_vs_witness": tr_M_rel_err,
-            # ---- primal + dual (CLAUDE.md §LP/SDP duals — required fields) ----
+            # ---- primal + dual (AGENTS.md §LP/SDP duals — required fields) ----
             "lp": lp_d,
             "sdp": sdp_d,
             "y0_star": lp_d.get("y0_star"),
@@ -460,7 +460,7 @@ def main() -> int:
                 "consumes the experimental binding and is a validation anchor "
                 "only; encoding 6 is fitted; encoding 2 is an un-vetted ansatz. "
                 "The canonical encoding does NOT yet reproduce the deuteron "
-                "binding — that closure is the open Δ_λ gate (CLAUDE.md); "
+                "binding — that closure is the open Δ_λ gate (AGENTS.md); "
                 "production reports the honest canonical result, not a fit."
             ),
             # ---- scope markers ----

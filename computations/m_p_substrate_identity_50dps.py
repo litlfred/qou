@@ -97,6 +97,7 @@ from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_P_MEV_VALIDATION,
     M_N_MEV_VALIDATION,
+    M_MU_MEV_VALIDATION,
 )
 
 
@@ -154,7 +155,7 @@ def main():
     from q_parameter import vol_4_1_at  # noqa: E402
     hbar_q_sq = ((q - 1) / q) ** 2
     m_mu = m_e * vol_4_1_at(50) / hbar_q_sq          # muon FORMULA (pure-q)
-    m_mu_measured = mpf("105.6583755")               # CODATA — 9.5σ cross-check
+    m_mu_measured = mpf(M_MU_MEV_VALIDATION)         # CODATA — 9.5σ cross-check (registry)
     m_mu_over_m_e = m_mu / m_e
 
     # ── PREDICTIONS ────────────────────────────────────────────────

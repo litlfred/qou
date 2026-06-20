@@ -79,7 +79,7 @@ prove `S(y⋆)` PosDef. Two routes:
    bound emitted as a witness field). This **avoids G3's B–V axiom**. Requires the
    witness to record `dualSlack` (or its eigenvalues) — **add this to
    `r5_full_canonical_knot_solver.py`'s emitted witness** (LP/SDP dual discipline,
-   CLAUDE.md §"LP / SDP duals").
+   AGENTS.md §"LP / SDP duals").
 2. **Boundary route (fallback).** If `S(y⋆)` is only PSD (not PosDef — boundary
    optimum), invoke `strict_complementarity_unique_axiom` (gate **G3**, currently an
    axiom). Then the result is conditional on that axiom.

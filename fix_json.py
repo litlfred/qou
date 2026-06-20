@@ -1,6 +1,6 @@
 import json
 
-with open('todos/research-queue.json', 'r') as f:
+with open('.beans/research-queue.json', 'r') as f:
     queue = json.load(f)
 
 for item in queue:
@@ -18,6 +18,6 @@ for item in queue:
         item['completedBy'] = 'Agent'
         item['verdict'] = 'Triaged 12 open PRs. Merged canonical walkthrough (#1505) and ledger (#1495) into main. Confirmed the main canonical branch is alpha-em-habiro-bar-involution. The remaining open PRs (e.g. Phase 1-4 Schwinger RT) are the stalled 57ppb piece and remain open research. Refuted PRs are noted for closure.'
 
-with open('todos/research-queue.json', 'w') as f:
+with open('.beans/research-queue.json', 'w') as f:
     json.dump(queue, f, indent=2)
 

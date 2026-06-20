@@ -26,7 +26,7 @@ Public surface (mirrors the plan API):
     compound_shift(Z, N, dps=50) -> CompoundShiftResult
     verify_alpha_em_chain(dps=50) -> dict
 
-Strict primal/dual separation (per CLAUDE.md LP/SDP infra rule):
+Strict primal/dual separation (per AGENTS.md LP/SDP infra rule):
   NF coefficients c_b(q) live in the **primal** basis; LP shadow
   prices y_*[i] live in the **dual** basis, related by the Gram
   inverse from gram-matrix-dual.py.  Never mix.
@@ -36,7 +36,7 @@ oracle — but every reported numerical value is recomputed in mpmath
 at the requested precision (default 50 dps) using a high-precision
 linear solve restricted to the active basis.
 
-CLAUDE.md three-calibration discipline: uses only q_0 (CAL-2).
+AGENTS.md three-calibration discipline: uses only q_0 (CAL-2).
 No m_e, Q_β, AME, or experimental data enters.
 
 Witness: compound-shift-nf.witness.json
@@ -711,7 +711,7 @@ def main(dps: int = 50) -> int:
                 "nf_coefficients": [_mpstr(c, 50)
                                     for c in row.nf_coefficients],
                 "categorical_mass": _mpstr(row.categorical_mass, 50),
-                # LP fields (per CLAUDE.md LP/SDP infra rule).  Values
+                # LP fields (per AGENTS.md LP/SDP infra rule).  Values
                 # are 50-dps mpmath strings; consumers parse with
                 # mp.mpf(...).
                 "y0_star": _mpstr(row.lp_y0_star, 50),

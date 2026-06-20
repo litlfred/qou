@@ -108,7 +108,7 @@ theorem fr_weight_normalised
       (provable in principle via Mathlib's Representation.induced;
       pending Specht-module API).
 
-    Per CLAUDE.md §3b-cond, downstream theorems consume the
+    Per AGENTS.md §3b-cond, downstream theorems consume the
     class via [Instance]. -/
 class DepthStratifiedFrobeniusReciprocity where
   knot_ideal_at_k : (k : ℕ) → k ≤ 3 → DistinguishedKnotIdeal k

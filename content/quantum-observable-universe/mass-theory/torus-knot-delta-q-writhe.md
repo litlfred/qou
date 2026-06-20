@@ -1,4 +1,4 @@
-*Lean sibling: a field $R$ carrying the $q$-data (CLAUDE.md §7c); the identity is purely algebraic, pre-archimedean.*
+*Lean sibling: a field $R$ carrying the $q$-data (AGENTS.md §7c); the identity is purely algebraic, pre-archimedean.*
 
 **Proposition (writhe exponent of the torus-knot $\delta_q$ decoration).** *For the
 torus knot $T_{m,p}$ — the closure of the standard positive braid

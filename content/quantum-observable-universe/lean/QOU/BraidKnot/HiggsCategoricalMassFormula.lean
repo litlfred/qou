@@ -28,7 +28,7 @@ Empirical match: -0.67% from m_W anchor; +0.44% from m_Z anchor.
 
 ## Honest status
 
-Per CLAUDE.md §3b-cond: this is a class-conditional encoding of the
+Per AGENTS.md §3b-cond: this is a class-conditional encoding of the
 empirically-validated formula. The `sorry` represents the OPEN
 categorical derivation, NOT a missing Lean tactic. The 0.5% residual
 deviation is consistent with higher-order corrections (h^6, h^8) not

@@ -56,7 +56,7 @@ if that factor is a small rational (or matches a known categorical
 invariant such as Z + N − 2) on multiple anchors; cross-anchor
 consistency is reported separately.
 
-This is a DIAGNOSTIC PROBE, NOT a fit.  Per CLAUDE.md three-cal
+This is a DIAGNOSTIC PROBE, NOT a fit.  Per AGENTS.md three-cal
 discipline, calibrating Δ_coupling to AME is forbidden — this script
 identifies which closed form the structural derivation should target,
 not which one to tune.

@@ -45,7 +45,7 @@ archimedean_agreement :
 ```
 
 *on `HabiroResidueSumEquivalence`.  Each instance supplies it as a
-substrate axiom (`sorry` per CLAUDE.md §3b), backed by the empirical
+substrate axiom (`sorry` per AGENTS.md §3b), backed by the empirical
 cross-pipeline witness.*
 
 **Why a conjecture and not a theorem.**

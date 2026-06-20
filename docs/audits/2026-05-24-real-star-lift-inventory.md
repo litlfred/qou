@@ -124,7 +124,7 @@ working through batches of ~5-10 files per commit:
 
 1. Open each CANDIDATE file; identify the `(q : ℝ) (hq : ...)` declarations.
 2. Replace with `{R : Type*} [Field R] (q : R) (hq : IsUnit q)` —
-   or weaker / stronger per the typeclass cheat-sheet (CLAUDE.md §7c).
+   or weaker / stronger per the typeclass cheat-sheet (AGENTS.md §7c).
 3. Run `lake build` on the affected paper package to verify no regressions.
 4. If proof body uses ordering tactic on $q$: STOP, this is a false-positive
    CANDIDATE — promote to MIXED and skip.
@@ -219,7 +219,7 @@ appears in the proof body; (b) no `linarith` on $q > 1$; (c) no
 `norm_num` on a CODATA value. If all three are clean, replace the
 signature `(q : ℝ) (hq : 1 < q)` with `{R : Type*} [Field R] (q : R)
 (hq : IsUnit q)` (or weaker, per the typeclass cheat-sheet at the
-top of [CLAUDE.md §7c](../../CLAUDE.md)).
+top of [AGENTS.md §7c](../../AGENTS.md)).
 
 **A3 architecture sketch** (separate branch):
 
@@ -275,7 +275,7 @@ companion audit).
 
 ## See also
 
-- [`CLAUDE.md` §7c](../../CLAUDE.md) — Base ring convention
+- [`AGENTS.md` §7c](../../AGENTS.md) — Base ring convention
 - [`docs/audits/2026-05-24-q-zero-reality-audit.md`](2026-05-24-q-zero-reality-audit.md) — sibling audit (q_0 reality)
 - [`docs/audits/2026-05-24-q-beta-droppability-cohomology.md`](2026-05-24-q-beta-droppability-cohomology.md) — sibling audit (Q_β droppability)
 - [`content/quantum-observable-universe/notation/notation-collisions.md`](../../content/quantum-observable-universe/notation/notation-collisions.md) — base-ring convention + new $\|q\| > 1$ note

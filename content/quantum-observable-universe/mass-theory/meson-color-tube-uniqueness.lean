@@ -112,7 +112,7 @@ instance : MesonForceCarrierPair where
     is **uniquely determined** by the substrate q-character function
     at the two pole orders 3 and 4.
 
-    Per CLAUDE.md §3b-cond: the *form* of the factorisation is
+    Per AGENTS.md §3b-cond: the *form* of the factorisation is
     fixed (3 · 4 in the q-character, via the proved α_shift
     formula); the per-character function `qChar` is the open
     parameter (the `[n]_q` closed form is standard from

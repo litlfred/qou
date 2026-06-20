@@ -13,7 +13,7 @@ This is a CONJECTURE: the closed form (2q - 1) matches empirically
 to 0.033 %, which is conjecturally an O(h^4) higher-order term but
 not yet proven exact.  The class `ConstitFactor2qMinus1`
 axiomatises the identity at the substrate point in the
-§3b-cond pattern (see CLAUDE.md §3b-cond).  Downstream theorems
+§3b-cond pattern (see AGENTS.md §3b-cond).  Downstream theorems
 consuming `[ConstitFactor2qMinus1]` derive unconditional Lean
 theorems modulo this single conjectural input.
 

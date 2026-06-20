@@ -48,7 +48,7 @@ after a finite number of terms.
    for the QOU substrate. The `frobenius_at` field maps each prime
    to its extracted Frobenius eigenvalue; the
    `almost_everywhere_nontrivial` field is a substrate axiom
-   (CLAUDE.md §3b) backed by the numerical witness for primes
+   (AGENTS.md §3b) backed by the numerical witness for primes
    $\leq 13$.
 
 ## Per-cell summary (from witness)

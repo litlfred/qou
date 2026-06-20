@@ -46,7 +46,7 @@ The `recursive-on-⁴He` atlas tag IS the user's "build each atom recursively fr
 **What**: define `linking_weight(K)` for arbitrary atomic K such that:
 - `linking_weight(𝓑₃) = λ_A = 5/2 + 3h²/4` (production's H_4 Family-A; reproduces m_p at +2.89%)
 - `linking_weight(K_atom)` generalises across atoms A ≥ 2 in a way that's:
-  - derived (NOT a fit), per CLAUDE.md Δ_λ gate
+  - derived (NOT a fit), per AGENTS.md Δ_λ gate
   - tested against the muon (4_1) anchor exactly
   - tested against AME atomic masses
 

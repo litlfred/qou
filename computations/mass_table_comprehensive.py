@@ -28,7 +28,7 @@ infrastructure:
 
 Emits: mass-table-comprehensive.witness.json
 
-Per CLAUDE.md "Long-compute logging discipline": periodic progress
+Per AGENTS.md "Long-compute logging discipline": periodic progress
 lines with wall + ETA.
 """
 from __future__ import annotations

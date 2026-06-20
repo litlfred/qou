@@ -155,7 +155,7 @@ This is the **formalize-first discipline** in action:
   forbids. The probes are designed to REFUTE rather than fit, so
   every "fail" is a derivation route closed.
 
-- **No 6th ansatz.** Per CLAUDE.md's Δ_λ-gate rule and "do not
+- **No 6th ansatz.** Per AGENTS.md's Δ_λ-gate rule and "do not
   propose a 7th fit-based ansatz" guidance, the next move is NOT
   to invent a 6th candidate functor that gives −3/4 by tuning.
   The right move is to characterise the OPEN OBJECT structurally

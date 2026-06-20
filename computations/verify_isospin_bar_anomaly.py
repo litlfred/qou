@@ -139,7 +139,7 @@ def main() -> int:
     )
 
     # CODATA cross-check: Δm/M_N ≈ 305 ppm. Masses from the codata_constants
-    # registry (no inline literals — CLAUDE.md P31). _path_bridge ran at import.
+    # registry (no inline literals — AGENTS.md P31). _path_bridge ran at import.
     from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION
     M_p_mev = M_P_MEV_VALIDATION
     M_n_mev = M_N_MEV_VALIDATION

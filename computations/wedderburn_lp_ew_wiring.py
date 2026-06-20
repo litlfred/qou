@@ -13,7 +13,7 @@ Two deliverables in one witness:
     Concrete numerical instance: solve the LP/SDP-dual program for the
     EW-sector operator selection with Wedderburn pair amplitudes
     |V̂_i V̂_j|_Wedd as the supply matrix.  Report primal_obj, dual_obj,
-    y_0_star, y_star, active_set per CLAUDE.md "LP/SDP duals —
+    y_0_star, y_star, active_set per AGENTS.md "LP/SDP duals —
     first-class infra" mandate.
 
 (B) TRY  to close the 2.19% Weinberg gap by extending the Δ_I word

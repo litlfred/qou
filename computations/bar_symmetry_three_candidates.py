@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Bar-symmetry test for the three linking_weight candidates.
 
-Per CLAUDE.md "Critical framing — do NOT treat λ_scale as a separate
+Per AGENTS.md "Critical framing — do NOT treat λ_scale as a separate
 object" + the canonical-derivation cheat sheet §4 "Φ_q (Faddeev) vs
 Li_2^q (Rogers) — context sorting":
 

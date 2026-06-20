@@ -29,7 +29,7 @@ keep the same shape with `R`-modules replaced by
 `Mathlib.CategoryTheory.GradedObject` machinery.
 
 LaTeX label: substrate axiom `S-spectral-sequence-collapse`
-(CLAUDE.md §3b — class axiomatisation).
+(AGENTS.md §3b — class axiomatisation).
 -/
 
 namespace QOU.Mathlib.SpectralSequence

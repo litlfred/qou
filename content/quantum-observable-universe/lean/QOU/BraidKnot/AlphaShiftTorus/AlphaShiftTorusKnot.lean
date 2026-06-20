@@ -16,7 +16,7 @@ Conjecturally (verified at the test bench (p,k) ∈ {(2,3), (2,5),
   • The maximizer is V_{(1^p)}.
   • α_shift(T_{p,k}) = k(p-1).
 
-Following the convention in CLAUDE.md §3b-cond (conditional class
+Following the convention in AGENTS.md §3b-cond (conditional class
 exception), the proposition is axiomatized as a Lean class
 `HasAlphaShiftTorus` whose instance encodes the witness-verified
 closed form. Downstream propositions (e.g.
@@ -64,7 +64,7 @@ def alphaShift (p k : ℕ) : ℕ := k * (p - 1)
 For each `CoprimePair`, an instance asserts:
   alphaShift c.p c.k = c.k * (c.p - 1)
 
-Per CLAUDE.md §3b-cond, downstream theorems may take this class as an
+Per AGENTS.md §3b-cond, downstream theorems may take this class as an
 explicit hypothesis to obtain conditional results that are
 otherwise fully verified by Lean modulo this single axiomatised
 input.

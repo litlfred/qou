@@ -98,7 +98,7 @@ closer.
 > requires `lake build` / `lean`-direct verification, and the Lean toolchain is
 > unavailable in this sandbox (elan cannot fetch from `release.lean-lang.org`).
 > (b) Items 2–3 demote/restate `theorem` claims, which per the #2428 skill's
-> recipe-4 and CLAUDE.md is a **claim-change requiring owner sign-off**, not an
+> recipe-4 and AGENTS.md is a **claim-change requiring owner sign-off**, not an
 > auto-commit. The right vehicle is `/integration-backlog proof` over many
 > small per-chapter PRs.
 

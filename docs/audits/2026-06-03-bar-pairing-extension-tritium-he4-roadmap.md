@@ -23,7 +23,7 @@ established the deuteron finding:
 PR #1748 ships exactly that kernel. This roadmap commissions
 the cross-isotope extension.
 
-## q-usage discipline (per CLAUDE.md §7c, §q-usage)
+## q-usage discipline (per AGENTS.md §7c, §q-usage)
 
 The bar-pairing `χ(q_0) · χ(q_0^{-1})` evaluates the Wedderburn
 character at TWO points:

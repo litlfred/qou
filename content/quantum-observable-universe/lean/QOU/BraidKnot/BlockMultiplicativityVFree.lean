@@ -92,7 +92,7 @@ theorem blockFactorProduct_neutron
       Specht-module branching).
 
     Downstream theorems consume the class via [Instance] per
-    CLAUDE.md §3b-cond. -/
+    AGENTS.md §3b-cond. -/
 class BlockMultiplicativityVFree (R : Type*) [CommSemiring R] where
   v_p : R
   v_n : R

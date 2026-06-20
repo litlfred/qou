@@ -150,7 +150,7 @@ def swap_tableau(T: dict[int, tuple[int, int]], i: int) -> dict[int, tuple[int, 
 # ----------------------------------------------------------------------------
 # Hoefsmit / Young seminormal representation of H_n(q) — closed form.
 # ----------------------------------------------------------------------------
-# Convention (matches CLAUDE.md §7a Hecke relation (σ−q)(σ+q⁻¹)=0):
+# Convention (matches AGENTS.md §7a Hecke relation (σ−q)(σ+q⁻¹)=0):
 #   For a SYT basis {v_T}, generator σ_i acts:
 #     • i, i+1 same row     →  σ_i v_T = q · v_T
 #     • i, i+1 same column  →  σ_i v_T = −q⁻¹ · v_T

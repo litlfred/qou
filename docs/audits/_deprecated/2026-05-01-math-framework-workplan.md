@@ -525,12 +525,12 @@ Reference example for the canonical late-substitution pattern:
 
 ---
 
-## P3 — Resolve / classify open conjectures (CLAUDE.md §3b propagation)
+## P3 — Resolve / classify open conjectures (AGENTS.md §3b propagation)
 
 ### P3.1 — Conjectural-propagation sweep
 
 - **W**: §5 of audit. Many `conj:` blocks have downstream
-  `theorem`/`proposition` cones; per CLAUDE.md §3b, downstream
+  `theorem`/`proposition` cones; per AGENTS.md §3b, downstream
   blocks must be `conjecture` not `theorem`.
 - **D**: Run `local/proof-gap-audit` skill (§I conjectural
   propagation) over the paper. Demote any provable block whose

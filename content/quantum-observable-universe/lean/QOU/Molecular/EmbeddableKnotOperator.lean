@@ -10,7 +10,7 @@ axis: axial (σ-type) channels have `w = 1`; transverse (π-type) channels
 have `w < 1`. The embedded binding contribution is `baseBinding * w`, and
 the binding of a composite is the overlap-weighted sum.
 
-Archimedean specialisation over ℝ (CLAUDE.md §7c): bindings and weights
+Archimedean specialisation over ℝ (AGENTS.md §7c): bindings and weights
 are real energies, with the ordering hypotheses `0 < w` and `w ≤ 1`.
 -/
 import Mathlib.Analysis.InnerProductSpace.PiL2

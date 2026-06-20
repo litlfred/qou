@@ -71,7 +71,7 @@ noncomputable def canonicalResolvent
     canonical resolvent form to behave as a genuine reciprocal
     (rather than the total-but-degenerate `0⁻¹ = 0` branch of `Field`).
 
-    Per CLAUDE.md §3b-cond: closes the resolvent-form question by
+    Per AGENTS.md §3b-cond: closes the resolvent-form question by
     *naming* the pole non-vanishing as the substantive contour-
     integral output; closing the class instance for a specific
     (n, q) requires either:

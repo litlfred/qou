@@ -308,7 +308,7 @@ the Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$
 **Note**: `$\sigma_i$` is the standard knot-theory notation for the
 Hecke generator. The same symbol denotes the braid-group generator in
 `$B_n$` and its image in `$H_n(q)$`; context disambiguates (the Hecke
-relation only holds for the latter). See CLAUDE.md §7a.
+relation only holds for the latter). See AGENTS.md §7a.
 
 ### Fibre functor: `$\omega$` for the canonical fibre functor
 
@@ -430,7 +430,7 @@ inline math works — but the `inl()` function's `$`-parser must correctly
 track brace depth to find the closing `$`. Escaped braces `\{` and `\}`
 must be skipped (they don't change nesting depth).
 
-**Authoring rule**: Multi-line inline math is valid per CLAUDE.md §2.
+**Authoring rule**: Multi-line inline math is valid per AGENTS.md §2.
 No source change needed. If rendering fails, the bug is in the viewer's
 parser (see `inl()` function in `viewer/index.html`).
 

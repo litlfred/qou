@@ -11,7 +11,7 @@ This probe tests the UNTESTED combination: a Li_2^q-derived per-block
 measure μ_λ replacing y_λ in the per-block sum. By construction,
 Σ μ_λ = 1 (curing mech #6's normalization defect).
 
-DISCIPLINE (per CLAUDE.md "Don't propose a seventh fit-based ansatz"):
+DISCIPLINE (per AGENTS.md "Don't propose a seventh fit-based ansatz"):
 the probe pre-states its failure-mode signature. If the candidate
 matches empirical c_3 at q_proton anchor but NOT at q_muon
 cross-check anchor, declare another near-match (mechanism #7). Do

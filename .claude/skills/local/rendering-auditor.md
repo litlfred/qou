@@ -92,7 +92,7 @@ cd content && bun run pipeline/validate-tex.ts <paper>/<chapter>/<block>.md
 
 ## Pass 2: Notation Consistency
 
-**Tools**: Grep, glossary.json, references.ts, CLAUDE.md notation register
+**Tools**: Grep, glossary.json, references.ts, AGENTS.md notation register
 **Speed**: Medium (cross-reference lookups)
 
 ### Checks
@@ -100,9 +100,9 @@ cd content && bun run pipeline/validate-tex.ts <paper>/<chapter>/<block>.md
 | Check | Severity | How |
 |-------|----------|-----|
 | All math symbols used are defined in the paper or glossary | **warning** | Extract symbols from math AST, cross-ref against glossary.json and notation remarks |
-| Notation register compliance (CLAUDE.md §7aa) | **error** | Verify font register: fraktur for particles/energy/mass, bold for categories, calligraphic for bundles, etc. |
+| Notation register compliance (AGENTS.md §7aa) | **error** | Verify font register: fraktur for particles/energy/mass, bold for categories, calligraphic for bundles, etc. |
 | No notation collisions | **error** | Check for `$c$` used as charm (should be `$\mathfrak{c}$`), `$E$` standalone (forbidden), `$\gamma$` for vortex (should be `$\varrho$`), `$m$` for categorical mass (should be `$\mathfrak{m}$`) |
-| Hecke-Skein convention (CLAUDE.md §7a) | **error** | Hecke generator is `$\sigma_i$` (not `$T$`); same symbol serves braid generator in $B_n$ and its image in $H_n(q)$. Jones polynomial is `$J_K(q)$` not `$V_K(t)$` |
+| Hecke-Skein convention (AGENTS.md §7a) | **error** | Hecke generator is `$\sigma_i$` (not `$T$`); same symbol serves braid generator in $B_n$ and its image in $H_n(q)$. Jones polynomial is `$J_K(q)$` not `$V_K(t)$` |
 | Category notation uses bold `$\mathbf{C}$` | **error** | Flag calligraphic `$\mathcal{C}$` for categories (reserved for sheaves/bundles) |
 | Fibre functor is `$\tau$` | **warning** | Flag `$\omega$` or `$U$` used as fibre functor |
 | QOU tuple is `$(\mathbf{C}, \theta, G, \mathcal{S})$` | **warning** | Flag deprecated 5-tuple `$(M, \theta, G, P, E)$` |
@@ -119,7 +119,7 @@ cd content && bun run pipeline/validate-tex.ts <paper>/<chapter>/<block>.md
 2. From each math node, extract macro names (`\commandname`) and single-letter
    variables (Latin and Greek)
 3. Cross-reference each against:
-   - The notation register in CLAUDE.md §7aa (font/register compliance)
+   - The notation register in AGENTS.md §7aa (font/register compliance)
    - `glossary.json` (term is defined)
    - The block's `uses[]` dependencies (symbol comes from a referenced block)
    - Standard LaTeX/amsmath commands (no check needed for `\frac`, `\int`, etc.)

@@ -33,7 +33,7 @@ LaTeX label: `rem:per-partition-k-lambda-rule`
 
 ## Conjectural status
 
-Per CLAUDE.md §3b: this is a structural axiom. The OPEN content
+Per AGENTS.md §3b: this is a structural axiom. The OPEN content
 is the **structural** existence of the rule (substrate-derivable,
 not per-atom retuned). This file does not close the conjecture;
 it makes the propositional content checkable.
@@ -85,7 +85,7 @@ def candidateRule
     error `eps`, given `phiProj` computed via per-partition
     truncation.
 
-    Per CLAUDE.md §3b: `phiProj` is an EXPLICIT input (not ∃-bound).
+    Per AGENTS.md §3b: `phiProj` is an EXPLICIT input (not ∃-bound).
     Caller must produce a concrete numerical value from the
     operator-valued brane tower under the rule. -/
 def PerPartitionRecovery

@@ -65,7 +65,7 @@ Extend [`kazhdan_lusztig.py`](../../computations/substrate/kazhdan_lusztig.py) p
 
 ### 3. Sidecar staleness sweep — half session (idle backlog)
 
-Per CLAUDE.md §"5-minute idle trigger" + the new `## Refresh stale sidecars + witnesses` rule (added 2026-06-03 to CLAUDE.md): walk the cone of files I authored or modified across the past week's sessions; verify each `*.qa.json` sidecar has current `source_hashes` + `criteria.<crit>[-1].reviewer.script_hash`. Refresh up to 10 sidecars in one commit.
+Per AGENTS.md §"5-minute idle trigger" + the new `## Refresh stale sidecars + witnesses` rule (added 2026-06-03 to AGENTS.md): walk the cone of files I authored or modified across the past week's sessions; verify each `*.qa.json` sidecar has current `source_hashes` + `criteria.<crit>[-1].reviewer.script_hash`. Refresh up to 10 sidecars in one commit.
 
 **Rationale:** Aligns with the QA-cluster surge on main; defensive maintenance.
 
@@ -78,8 +78,8 @@ Per [`2026-06-07-lake-cache-restore-discipline.md`](../coordination/2026-06-07-l
 ## What I should NOT pick up
 
 - **Wenzl operator-valued combiner-convergence (gap #4 of #1543's scope).** Parked pending upstream KLR. Re-pitching this without owner direction would burn a session.
-- **Demazure-Lusztig variant for Q_β c_3.** Already refuted at the preflight stage (Composite 1 sign-flip at u²); proposing a v2 would violate CLAUDE.md §"Precision goals" no-new-ansatz rule.
-- **A new "Open Math X" framing on anything.** The corpus-grep discipline I installed should catch this; verify any "open" claim against the checklist (CLAUDE.md §"Before declaring 'open'").
+- **Demazure-Lusztig variant for Q_β c_3.** Already refuted at the preflight stage (Composite 1 sign-flip at u²); proposing a v2 would violate AGENTS.md §"Precision goals" no-new-ansatz rule.
+- **A new "Open Math X" framing on anything.** The corpus-grep discipline I installed should catch this; verify any "open" claim against the checklist (AGENTS.md §"Before declaring 'open'").
 
 ## Coordination
 

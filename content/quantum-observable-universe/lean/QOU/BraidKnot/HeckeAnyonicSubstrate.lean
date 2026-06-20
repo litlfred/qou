@@ -14,7 +14,7 @@ full particle spectrum is realised as `H_n(R, q)`-modules, and the
 class fields encode the structural content (braid action, Hecke
 quadratic, observation-functor compatibility).  Downstream theorems
 take the class as `[HeckeAnyonicSubstrate q]` and are conditional on
-the conjecture per CLAUDE.md §3b-cond.
+the conjecture per AGENTS.md §3b-cond.
 
 LaTeX: `\label{conj:hecke-anyonic-substrate}`
 

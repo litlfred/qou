@@ -166,7 +166,7 @@
     "is_localised_q_habiro_element": false,
     "verdict": "refuted-c3-not-q-rational",
     "permanent_fix_viable": false,
-    "honest_read": "The documented 'Q_\u03b2 Habiro element permanent fix' is NOT viable as a clean integral OR cyclotomically-localised q-Habiro element while c_3 lacks a q-rational representative. A genuine fibre-level Habiro element for Q_\u03b2, if one exists, must be complex-analytic / root-of-unity (per CLAUDE.md \u00a7Im(q) fibre vs observable), NOT a real-q rational or Laurent element \u2014 which is exactly the class this exact-\u211a(q) probe (and the z-probe machinery) can certify, and it does not exist there."
+    "honest_read": "The documented 'Q_\u03b2 Habiro element permanent fix' is NOT viable as a clean integral OR cyclotomically-localised q-Habiro element while c_3 lacks a q-rational representative. A genuine fibre-level Habiro element for Q_\u03b2, if one exists, must be complex-analytic / root-of-unity (per AGENTS.md \u00a7Im(q) fibre vs observable), NOT a real-q rational or Laurent element \u2014 which is exactly the class this exact-\u211a(q) probe (and the z-probe machinery) can certify, and it does not exist there."
   },
   "_provenance": {
     "mirrors": "computations/probes/z_habiro_increment_probe.py",

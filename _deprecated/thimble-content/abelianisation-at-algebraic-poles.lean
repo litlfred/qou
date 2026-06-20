@@ -3,7 +3,7 @@
 
 The conjecture: at each τ_arch-image of a q-Pochhammer denominator
 zero, the nonabelian multiplicative integral abelianises to the
-prolonged Seiberg-Witten differential.  Class-based per CLAUDE.md
+prolonged Seiberg-Witten differential.  Class-based per AGENTS.md
 §3b.
 
 -- Ref: [manuscript] conj:abelianisation-at-algebraic-poles

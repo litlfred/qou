@@ -19,7 +19,7 @@ signal (+18.9%). Candidate 2 ACCEPTED. The SINGLE remaining gate:
     is the archimedean observable mass m = m_e · (tower) REAL?
 
 The continued value carries Im ≈ 0.657 per generator with |V̂| > q₀.
-Per CLAUDE.md "Im(q) at fibre vs observable level": imaginary parts are
+Per AGENTS.md "Im(q) at fibre vs observable level": imaginary parts are
 LEGITIMATE at the fibre level (formal q, pre-τ), but the ARCHIMEDEAN
 observable (post-τ, at q₀) MUST be real (Im(q₀)=0 is an archimedean
 constraint, `lusztig_q_0_imaginary_part_zero`,
@@ -42,7 +42,7 @@ real" — a fit):
   (d) (+i0)+(−i0) branch average = Re (discontinuity is 2i·Im) — is
       averaging the two branches canonical, or a choice?
 
-DISCIPLINE (CLAUDE.md production-vs-exploratory): taking Re/|·|/avg is
+DISCIPLINE (AGENTS.md production-vs-exploratory): taking Re/|·|/avg is
 ONLY valid if the τ-functor STRUCTURALLY dictates it. "The mass must be
 real" is CIRCULAR/a fit unless the functor independently requires it.
 No tuning to m_p=938.27 / CODATA. {e-, p, n} are the falsification

@@ -56,7 +56,7 @@ compatibility constraint** between Bring shells.
 
 ## Discussion
 
-**Conjecture** (CLAUDE.md §3b axiom-class).
+**Conjecture** (AGENTS.md §3b axiom-class).
 
 - **Forward direction** ($\Delta i \leq 1 \Rightarrow$ LR-fusion
   compatible): conjectural; relies on the LR-rigidity of adjacent

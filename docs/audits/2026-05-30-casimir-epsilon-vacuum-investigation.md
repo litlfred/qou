@@ -403,7 +403,7 @@ The reasoning above is template substitution:
 - Got a number that's close to the target with correct classical
   limit and called it a "derivation".
 
-This is the same kind of move that CLAUDE.md's Δ_λ context warns
+This is the same kind of move that AGENTS.md's Δ_λ context warns
 against:
 
 > "Do not propose a seventh fit-based ansatz — the three-
@@ -583,7 +583,7 @@ but it does narrow the appeal to a single matching condition.
 These routes are speculative — they identify *where* the proof
 might land, not *what* the proof is. Including them in the
 conjecture's `.md` would dilute the conjecture statement with
-investigation noise. Per CLAUDE.md "Author notes vs. scholarly
+investigation noise. Per AGENTS.md "Author notes vs. scholarly
 prose" (§4d), this is exactly the kind of material that belongs
 in an audit doc, not in the paper's narrative prose.
 

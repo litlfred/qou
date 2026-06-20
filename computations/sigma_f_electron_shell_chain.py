@@ -19,7 +19,7 @@ What it computes (all at 50-dps mpmath):
       price), y_star (per-channel shadow prices y_λ), active_set
       (argmax-weight = saturated blocks), with strong-duality structural
       gap 0.  This is the categorical LP dual in closed form — emitting
-      it fixes the primal-only anti-pattern (CLAUDE.md LP/SDP first-class
+      it fixes the primal-only anti-pattern (AGENTS.md LP/SDP first-class
       dual) without any f64 LP solve.  μ = |active_set| is the active
       multiplicity / categorical degeneracy of claim 2.
 
@@ -35,7 +35,7 @@ OBSERVED (Part E, strictly separate — never fed back into the math):
   2n^2 cumulative shell closures [2,10,28,60,110,182].
 
 Findings are reported AS COMPUTED, including where they refute the prop's
-stated mechanism (critical-distance license, CLAUDE.md).
+stated mechanism (critical-distance license, AGENTS.md).
 """
 from __future__ import annotations
 

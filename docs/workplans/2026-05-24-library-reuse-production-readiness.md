@@ -150,7 +150,7 @@ None of it has any dependency on the Rust core. None of it is currently publishe
 
 | Module | LOC | Used by | What it owns |
 |--------|-----|---------|--------------|
-| `lp_dual_solver.py` | ~? | 14 scripts | The canonical LP+dual entry point cited by the CLAUDE.md "LP/SDP duals — first-class infra" rule |
+| `lp_dual_solver.py` | ~? | 14 scripts | The canonical LP+dual entry point cited by the AGENTS.md "LP/SDP duals — first-class infra" rule |
 | `laurent_q.py` | ~? | 15 scripts | `LaurentQ` — sparse O(1) Laurent-poly arithmetic in `q` (alternative to `sympy.Poly`) |
 | `syt_prefix_cache.py` | ~? | 6 scripts | `BlockCache` — Hoefsmit SYT-prefix memoization |
 
@@ -183,7 +183,7 @@ These are **library-quality candidates that currently live in scripts/** — the
 ### Secondary upstream nodes (lower leverage, still worth packaging)
 
 1. **`hecke_core.py`** — 67-script orchestrator; the bridge between substrate + Hecke math. Finishing the `pyhecke` carve-out makes the whole `pyhecke` package coherent.
-2. **`lp_dual_solver.py`** — the CLAUDE.md-mandated LP-duality entry point; should live in `pyhecke` (or its own micro-package).
+2. **`lp_dual_solver.py`** — the AGENTS.md-mandated LP-duality entry point; should live in `pyhecke` (or its own micro-package).
 3. **`laurent_q.py`** — 10× faster than `sympy.Poly` for the q-only case; a clean stand-alone library.
 
 ---
@@ -315,7 +315,7 @@ This is where the v1 plan needs the biggest restructure. The **substrate-infra t
 |---|------|-----|
 | **2a** | **Promote `witness_base.py` + `_precision.py` + `q_parameter.py` into a `qou-substrate` Python package** (new home: `tools/qou-substrate/`). Publish to PyPI. Re-export back into `computations/` for backwards compat. | The 57% leverage move. Once this is a package, all 306 scripts get the same versioned `WitnessBuilder`. Pyodide ships it. Non-Python consumers see a stable JSON schema. |
 | **2b** | **Finish the `pyhecke` M1 carve-out** — pull the remaining shared math out of `computations/substrate/hecke_core.py` (3,183 LOC, 67 importers) into `pyhecke` submodules. Convert script imports. | Makes `pyhecke` self-contained, removes the brittle `_legacy.py` sys.path hack, lets `pyhecke.gram` import cleanly in Pyodide. |
-| **2c** | **Move `lp_dual_solver.py`, `laurent_q.py`, `syt_prefix_cache.py` into `pyhecke` as submodules.** Add CLAUDE.md xref. | These are library-quality already; living in `computations/` blocks reuse. |
+| **2c** | **Move `lp_dual_solver.py`, `laurent_q.py`, `syt_prefix_cache.py` into `pyhecke` as submodules.** Add AGENTS.md xref. | These are library-quality already; living in `computations/` blocks reuse. |
 | **2d** | **WASM `hecke-engine`** — feature-gate `rug`/GMP behind `#[cfg(feature = "mpfr")]`; add `dashu` or `astro-float` as pure-Rust fallback; `wasm-pack build` → publish `@qou/hecke-engine` to npm. | Unblocks browser-side Hecke compute. |
 | **2e** | **Pyodide integration** — verify `pyhecke` + `qou-substrate` both load in Pyodide; documentation + smoke test. | The "consume QOU in a browser" story. |
 | **2f** | **Release infra:** `release-please` (Option A from v1 §3) for the workspace; CHANGELOG per package. | Required before any of the above can ship a 1.0. |

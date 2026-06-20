@@ -39,10 +39,10 @@ context.  Without coordination they will:
 has all the answers; they look to the author for clarification on
 inconsistencies, and they cherry-pick from each other.
 
-## Workflow rule reminder (from CLAUDE.md §Branch + PR workflow)
+## Workflow rule reminder (from AGENTS.md §Branch + PR workflow)
 
 This skill assumes you've already created a branch + opened a PR for
-the work tranche being coordinated. Per CLAUDE.md (STRICT, supersedes
+the work tranche being coordinated. Per AGENTS.md (STRICT, supersedes
 default "no auto-PR" guidance for this repo): **always create a
 branch and open a PR at the start of every work tranche** — ASAP, and
 **never ask the user "want me to open the PR?"** Branch + PR creation
@@ -514,7 +514,7 @@ The remaining rules are minimal:
 
 2. **One-voice still applies.** Whatever you keep from the source
    should read as your own work; rewrite voice / framing if the
-   sibling's tone clashes (CLAUDE.md voice rules don't relax just
+   sibling's tone clashes (AGENTS.md voice rules don't relax just
    because the source was a different agent).
 
 3. **You may diverge.** If you adapt the cherry-picked file —
@@ -665,7 +665,7 @@ Workflow:
 2. **Post intent** on the sibling PR (this skill §3) so the sibling
    sees you're also working it.
 3. **Ask the user** with `AskUserQuestion` whether to keep both
-   threads or have one stand down. Include rich context per CLAUDE.md
+   threads or have one stand down. Include rich context per AGENTS.md
    §User accessibility — quote what each agent is doing, what method,
    what's been found, cost of running both.
 4. **If user says one stands down**, the standing-down agent appends
@@ -737,6 +737,6 @@ goal (the binding-closure cluster). Apply when you hold the flag.
 5. **Billing-CI is noise — do not let it derail coordination.** This
    cluster's CI failed setup-phase (≤5 s, simultaneous, no logs) on every
    push all session while local `validate`/`lake env lean` stayed green.
-   Recognise the billing signature (CLAUDE.md "CI billing failures"),
+   Recognise the billing signature (AGENTS.md "CI billing failures"),
    note `[skip-ci: billing]`, and keep working; never re-diagnose it as a
    code problem or pause the cluster for it.

@@ -15,7 +15,7 @@ Conjectural Plancherel completeness: the three torus-knot idempotents T(2,4), T(
 
 ## Status
 
-Class-axiomatised per CLAUDE.md §3b-cond. The conjecture sits in
+Class-axiomatised per AGENTS.md §3b-cond. The conjecture sits in
 the residual §3b-violator cone identified in
 [`AUDIT-DEEP-2026-05.md`](../../../../AUDIT-DEEP-2026-05.md) §1A
 (P1.b sweep). Class declaration here lets downstream
@@ -56,7 +56,7 @@ class WeakSpectralCompleteness where
   weak_spectral_completeness_holds : completenessIndex = 1
 
 /-- **Structural skeleton** of `conj:weak-spectral-completeness`
-    (kept for `uses` cone bookkeeping under §3b-cond — see CLAUDE.md).
+    (kept for `uses` cone bookkeeping under §3b-cond — see AGENTS.md).
     A `WeakSpectralCompleteness R EWModule` instance implies the
     skeleton via the writhe assignment `4, 6, 8`. -/
 class WeakSpectralCompletenessSkeleton : Prop where

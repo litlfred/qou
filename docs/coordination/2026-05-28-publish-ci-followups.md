@@ -20,7 +20,7 @@
   fi
   ```
 - [ ] **Decide on `.gitmodules`.** Either the repo intentionally has no submodules (current state — confirm and document in `CONTRIBUTING.md`) or it should — in which case create `.gitmodules` and re-add the correct entries. The current "tracked-as-gitlink but no `.gitmodules`" state is the bug-prone middle ground we just exited.
-- [ ] **Local-build parity reminder.** The user explicitly flagged "i thought you did local build". Future Copilot sessions touching CI should run the equivalent commands locally before committing — at minimum `cd content && bun run pipeline/build.ts ... --generate-main --main-out ../main.tex` to confirm `main.tex` lands at the repo root. Add a short note to `CLAUDE.md` / agent setup steps.
+- [ ] **Local-build parity reminder.** The user explicitly flagged "i thought you did local build". Future Copilot sessions touching CI should run the equivalent commands locally before committing — at minimum `cd content && bun run pipeline/build.ts ... --generate-main --main-out ../main.tex` to confirm `main.tex` lands at the repo root. Add a short note to `AGENTS.md` / agent setup steps.
 
 ## Out of scope / open question
 

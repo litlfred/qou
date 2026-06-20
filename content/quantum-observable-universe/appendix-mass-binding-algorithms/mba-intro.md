@@ -59,7 +59,7 @@ file moved; and (iii) the *Algorithm* / *Correctness* /
 *Python API* subsections of the `.md` body if the algorithm
 signature or its correctness conditions changed.
 
-The enforcement points are listed in CLAUDE.md
+The enforcement points are listed in AGENTS.md
 ("Mass-and-Binding-Algorithms appendix sync — STRICT") and the
 relevant agent skills: `local/coordinate.md §2-bis`,
 `local/compute-author.md §8`, `local/compute-audit.md`

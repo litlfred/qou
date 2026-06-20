@@ -14,14 +14,14 @@ A type-level scaffold for the KLR algebra `R(Γ)` over a quiver `Γ`:
 - Generators `e_i` (idempotents), `x_j` (dot generators), `T_k` (crossings)
 - Class for "categorifies the negative half U⁻_q(g) of a quantum group"
 
-Per CLAUDE.md §7b (Symmetric-crystal techniques) the KLR ↔ KL bases
+Per AGENTS.md §7b (Symmetric-crystal techniques) the KLR ↔ KL bases
 decategorification is the categorical bridge to classical statistics;
 that's the consumer for path D.
 
 ## Cross-refs
 
 - Audit: [`docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md`](../../../../../docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md)
-- CLAUDE.md §7b (KLR / Kashiwara symmetric-crystal techniques)
+- AGENTS.md §7b (KLR / Kashiwara symmetric-crystal techniques)
 - `KashiwaraCrystalBasic.lean` (canonical-basis side)
 -/
 

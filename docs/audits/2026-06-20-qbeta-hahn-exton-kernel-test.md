@@ -9,7 +9,7 @@ EXPLORATORY — no fit, no production rewire, proposes no c_k value.
 
 Stage C's open object is the kernel `R(q,ξ)` of the q-difference equation
 `F(qξ) = R(q,ξ)·F(ξ)` whose Habiro element `F(q)` generates the c_k ladder; only
-`c_2 = −1` is canonical, and the c_k live in the fibre (CLAUDE.md §"Im(q) at fibre
+`c_2 = −1` is canonical, and the c_k live in the fibre (AGENTS.md §"Im(q) at fibre
 vs observable level"). The Hahn–Exton q-Bessel coefficients satisfy the exact
 first-order q-holonomic recurrence (`QBesselContiguityRecurrence.lean`), with
 ratio

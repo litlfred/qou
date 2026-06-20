@@ -50,10 +50,10 @@ from hecke_symbolic import (
 )
 from mass_at_3A_proper import atom_braid_word_3A
 from experimental_constants import Q_NEUTRON_MEV as _Q_BETA_N
-from q_parameter import Q as q0, HA as h_q  # canonical aliases per CLAUDE.md §7
+from q_parameter import Q as q0, HA as h_q  # canonical aliases per AGENTS.md §7
 from witness_base import WitnessBuilder  # noqa: E402
 # AME 2020 binding-energy comparison targets + proton mass (validation-only,
-# NOT calibration inputs — per CLAUDE.md §"Canonical derivation chain" the
+# NOT calibration inputs — per AGENTS.md §"Canonical derivation chain" the
 # 3 calibrations are CAL-1 m_e, CAL-2 𝔇_β, CAL-3 𝔇_π; these AME values
 # are used ONLY for the err = pred - AME_B_* comparison in the __main__
 # print loop below). Added via PR #1105 (codata_constants AME extension).

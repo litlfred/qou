@@ -16,7 +16,7 @@ empirical probe `ew_couplings_substrate_derivation_probe.py`
   2. v_ratio = log(6)     (v_framework / v_SM = log|S_3|;  -0.50%)
   3. 171/143 = 6/5        (scalar/gauge factor ratio = |knot-op basis|/|H_4 blocks|; +0.35%)
 
-Per CLAUDE.md §3b-cond, these are class-conditional theorems:
+Per AGENTS.md §3b-cond, these are class-conditional theorems:
 downstream consumers take `[TorusKnotMass]` and
 `[CategoricalHiggsIdempotent]` as instance hypotheses.
 
@@ -42,7 +42,7 @@ meanings in the existing framework:
 
   - 5 = |partitions of 4| = 5 Wedderburn blocks at H_4
         ((4), (3,1), (2,2), (2,1,1), (1,1,1,1))
-        per CLAUDE.md §7a (Hecke convention)
+        per AGENTS.md §7a (Hecke convention)
 
 These are concrete cardinalities the Lean scaffolds can reference.
 -/

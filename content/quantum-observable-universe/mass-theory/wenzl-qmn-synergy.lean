@@ -118,7 +118,7 @@ class WenzlQMNCrossValidation
     = z ^ length w
 
 /-- **Cross-validation identity** (class-conditional invocation,
-    per CLAUDE.md §3b-cond): `Σ_λ y_λ · χ_λ(T_w) = z^ℓ(w)`.
+    per AGENTS.md §3b-cond): `Σ_λ y_λ · χ_λ(T_w) = z^ℓ(w)`.
     The identity is FALSE on the trivial concrete model (where
     `chi_qMN ≡ 0`), so it must be class-axiomatised; downstream
     callers supplying a genuine Hecke representation discharge

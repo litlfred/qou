@@ -254,7 +254,7 @@ pub fn solve_canonical_t_w(
         svec_per_block_per_var.push(per_var);
     }
 
-    // CLAUDE.md / repo guideline: don't silently use a buggy solver.
+    // AGENTS.md / repo guideline: don't silently use a buggy solver.
     // Clarabel-rs has a documented PSD-cone correctness bug at d ≥ 4
     // (R5_5_BUG_REPORT.md).  If any block exceeds d=3 we abort early
     // with a status string indicating the unsupported regime, rather
@@ -448,7 +448,7 @@ pub fn solve_canonical_t_w(
     let status = solver.solution.status;
     let solver_status = format!("{:?}", status);
     let iterations = solver.solution.iterations;
-    // CLAUDE.md rule: fail explicitly on non-success.  When the solver
+    // AGENTS.md rule: fail explicitly on non-success.  When the solver
     // returns Infeasible / MaxIterations / NumericalError / etc, the x
     // vector is not meaningful — return an empty c_solved with the
     // status string so callers can detect failure rather than process

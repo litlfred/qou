@@ -31,7 +31,7 @@ embedding and reports a clean structural negative.
 
 ## The embedding — committed a priori (no scan-to-fit)
 
-Per the formalize-first discipline (CLAUDE.md §"Formalize-first probe discipline"),
+Per the formalize-first discipline (AGENTS.md §"Formalize-first probe discipline"),
 one principled embedding is committed **before** any residual is seen — there is no
 scan over embeddings selecting the one that converges (that would be fitting the
 embedding):
@@ -121,7 +121,7 @@ cannot create odd orders from even-order components). The §4a single-x solve
    H₆ is now materialised alongside the #2485 bound χ_λ (bound values reproduce #2485
    exactly), with the per-partition `Δχ_λ` and Wenzl-weighted single-trace tr_M. The
    single-trace binding `B≈0.47 MeV` under-predicts AME 2.225 — expected; the per-
-   isotope Δ_λ closure is the separate open frontier (CLAUDE.md §"Δ_λ gate").
+   isotope Δ_λ closure is the separate open frontier (AGENTS.md §"Δ_λ gate").
 
 ## Winding iterate (item 2): the parity-preserving candidate, also refuted
 

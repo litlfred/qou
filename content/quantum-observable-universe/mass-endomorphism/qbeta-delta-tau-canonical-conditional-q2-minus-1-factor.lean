@@ -10,7 +10,7 @@ import QOU.BraidKnot.QBetaPerBlockChiClosedForms
 /-!
 # QOU.BraidKnot.DeltaTauMCanonicalConditional
 
-**Conditional theorem (§3b-cond, CLAUDE.md):** Under the
+**Conditional theorem (§3b-cond, AGENTS.md):** Under the
 `CanonicalMarkovWeightsH3` class hypothesis, the canonical
 $\Delta\tau_M^{\text{can}}(q) = \sum_\lambda y_\lambda(q) \cdot \chi_\lambda(q)$
 factors $(q^2 - 1)$ for $q > 0$.

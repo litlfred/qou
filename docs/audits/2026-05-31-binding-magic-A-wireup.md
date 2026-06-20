@@ -145,7 +145,7 @@ The block triple ships:
     `Or.inl rfl`
   - `theorem two_regime_dispatch_exists` — non-trivial existence
 
-Per CLAUDE.md §3b-cond: the formula is a rigorous-conditional
+Per AGENTS.md §3b-cond: the formula is a rigorous-conditional
 theorem — fully verified by Lean modulo the single class hypothesis
 `MagicABindingFormula`. The class field `formula` discharges
 definitionally for any concrete (Z, N) instance; the categorical

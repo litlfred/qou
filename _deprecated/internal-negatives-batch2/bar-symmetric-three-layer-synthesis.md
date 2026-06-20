@@ -1,4 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 **Proposition (bar-symmetric three-layer synthesis — conjectural).**
 
@@ -156,7 +156,7 @@ EVEN) extracts the bar-symmetric projection.
 
 ## What's provable vs conjectural — Lean infrastructure
 
-Per CLAUDE.md §3b-cond (conditional-class exception), the Lean
+Per AGENTS.md §3b-cond (conditional-class exception), the Lean
 sibling [`QOU.BraidKnot.BarSymmetricThreeLayerSynthesis`](bar-symmetric-three-layer-synthesis.lean)
 **carves out the provable algebraic content** from the conjectural
 unification:

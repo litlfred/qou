@@ -8,7 +8,7 @@ proof status.
 reference-only for upstream dependencies (delegated to parallel
 audit agent, see ``2026-05-16-compute-paper-lean-audit-upstream.md``).
 
-**Honest scope statement (per CLAUDE.md "no fitting / no
+**Honest scope statement (per AGENTS.md "no fitting / no
 calibration / no numerology")**: a literal "every line of every
 computation" audit covers ~440 Python files × ~500 lines avg =
 ~220K lines, infeasible in one session. This audit covers the
@@ -39,7 +39,7 @@ at end).
 
 - **PROVEN** — math claim has a Lean declaration with no `sorry`
 - **PROVEN-CONDITIONAL** — Lean has a `sorry` carrying a
-  `-- Ref:` citation, per CLAUDE.md §1 (legit research gap with
+  `-- Ref:` citation, per AGENTS.md §1 (legit research gap with
   bibliographic backing)
 - **BACKED** — content block (.md / .ts) documents the claim; Lean
   declaration may or may not exist
@@ -123,7 +123,7 @@ threshold + the upstream-witness selection logic.
 |---|---|---|---|---|
 | `M_P_DERIVED_MAX_REL_DIFF = 1e-9` (L131-142) | The framework's 1 ppb target for m_p closure | Three-cal discipline doc: [`three-calibration-inputs.md`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md). The 1 ppb gate is the framework's stated precision goal. | n/a | **BACKED** (configuration, not math) |
 | Source selection (L146-167) | Prefer `proton-mass-full-tower-50dps.witness.json` over Path A; fall back if missing | Wiring; no math claim | n/a | **STANDARD** |
-| Pending classification (L172-189) | If \|rel_diff\| > threshold, m_p = `derivation_pending`; honest reporting per CLAUDE.md no-cal rule | CLAUDE.md three-cal discipline | n/a | **STANDARD** |
+| Pending classification (L172-189) | If \|rel_diff\| > threshold, m_p = `derivation_pending`; honest reporting per AGENTS.md no-cal rule | AGENTS.md three-cal discipline | n/a | **STANDARD** |
 | `_derived_binding` (L237-258) | Strategy A binding: B(K) = ρ · m_e · Vol(K) for census knots | `prop:atomic-mass-via-rho-k` (if exists). The pure-strategy-A (no fit) restriction is per the audit. | Lean status TBD | **BACKED** (restricted to strategy A; no fit) |
 | `predict_row` (L289-340) | Mass formula M(K) = A·u + Δ(K), Δ(K) = Z·Δ_H + N·Δ_n − B(K) | Atomic-mass identity; standard | n/a | **STANDARD** |
 | `main` (L343-503) | Witness emission + stats | No new math | n/a | **STANDARD** |
@@ -205,7 +205,7 @@ Covers `bw_chirality_isotopes.py`, `gb_filtration_jet_tracker.py`,
    framework claim shipped by this PR. Currently a "Proposition
    sketch" in the audit doc; needs:
    - Content block (`.ts` + `.md`)
-   - Lean stub (per CLAUDE.md §3, may carry a `sorry` with
+   - Lean stub (per AGENTS.md §3, may carry a `sorry` with
      `-- Ref:` to the audit doc)
    - Empirical witness already exists
      ([`probe-derived-A-from-gs-normal-form.witness.json`](../../computations/probe-derived-A-from-gs-normal-form.witness.json))

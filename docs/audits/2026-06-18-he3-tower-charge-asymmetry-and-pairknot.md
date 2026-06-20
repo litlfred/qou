@@ -129,7 +129,7 @@ that re-fires on any future re-pin drift.
 - No fit, no fourth calibration; the only derived inputs are `q₀` (substrate),
   `m_e` (CAL-1), and the already-derived `def:coulomb-charge` structure.
 - LP-dual fields (`y0_star`/`y_star`/`active_set`/`primal`/`dual`/`gap`) emitted
-  per CLAUDE.md §LP/SDP duals.
+  per AGENTS.md §LP/SDP duals.
 - Probes are `_probe`-suffixed and `auditOnly`; no production mass table is
   rewired (the z-Habiro brane tower is non-production per #2467).
 - Builds on the existing Coulomb cluster (does not duplicate it); the new content

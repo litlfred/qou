@@ -186,7 +186,7 @@ end QOU.BraidKnot.TorusKnotMass
 **conjectures** awaiting categorical derivation.
 
 The `sorry`s represent the OPEN structural derivations (a, b, c above),
-not gaps in lower-level Lean reasoning. Per CLAUDE.md §3b-cond, these
+not gaps in lower-level Lean reasoning. Per AGENTS.md §3b-cond, these
 are class-conditional hypotheses; downstream theorems take them as
 instance hypotheses.
 

@@ -153,7 +153,7 @@ print()
 
 
 # ══════════════════════════════════════════════════════════════
-# §2b. Canonical operator-selection LP dual (CLAUDE.md LP/SDP mandate)
+# §2b. Canonical operator-selection LP dual (AGENTS.md LP/SDP mandate)
 # ══════════════════════════════════════════════════════════════
 # Route the molecular Frobenius operator-selection through the canonical
 # solver so the witness carries BOTH the primal coefficients AND the dual

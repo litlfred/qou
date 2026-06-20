@@ -16,7 +16,7 @@
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "Per-file inventory of QOU Lean files classified by lift eligibility under CLAUDE.md §7c base-ring discipline. CANDIDATE = ℝ-specialized signature `(q : ℝ)` present, but no archimedean tactic in the file body (Real.sqrt, Real.rpow, Real.cos/sin/cosh/exp/log/pi, CODATA literals). Such files can be refactored to `{R : Type*} [Field R] (q : R) (hq : IsUnit q)` or `[NormedField R] (hq : 1 < ‖q‖)`. ARCHIMEDEAN = at least one archimedean tactic present; the evidence list records which. ALREADY_GENERIC = §7c-compliant already. MIXED = both signatures present (refactor on a per-declaration basis). OTHER = no q-parameter at all.",
+  "description": "Per-file inventory of QOU Lean files classified by lift eligibility under AGENTS.md §7c base-ring discipline. CANDIDATE = ℝ-specialized signature `(q : ℝ)` present, but no archimedean tactic in the file body (Real.sqrt, Real.rpow, Real.cos/sin/cosh/exp/log/pi, CODATA literals). Such files can be refactored to `{R : Type*} [Field R] (q : R) (hq : IsUnit q)` or `[NormedField R] (hq : 1 < ‖q‖)`. ARCHIMEDEAN = at least one archimedean tactic present; the evidence list records which. ALREADY_GENERIC = §7c-compliant already. MIXED = both signatures present (refactor on a per-declaration basis). OTHER = no q-parameter at all.",
   "contentBlock": "prop:q-zero-complex-extension",
   "auditOnly": "docs/audits/2026-05-24-real-star-lift-inventory.md",
   "parameters": {

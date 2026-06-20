@@ -90,7 +90,7 @@ A future paper on motivic Galois structure of the QOU substrate is
 the natural extension target.
 
 **Lean axiomatization.** The substrate is axiomatized as a Lean
-`class` (per CLAUDE.md §3b) with fields encoding $K_0(\mathrm{Var}_k)$,
+`class` (per AGENTS.md §3b) with fields encoding $K_0(\mathrm{Var}_k)$,
 $\mathbb{L}$, the localization $\widehat{\mathcal{M}}$, and the family
 of realization functors. The `sorry` in any concrete instance is
 understood as a substrate axiom, not a missing proof; downstream

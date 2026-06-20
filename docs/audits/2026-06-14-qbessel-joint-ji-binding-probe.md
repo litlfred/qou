@@ -6,7 +6,7 @@ combining the rotation (arccos / `J_ν`) and growth (arccosh / `I_ν`)
 channels *jointly* per the q-Bessel structure, rather than summing
 `|Δθ_λ|` magnitudes — moves the data-complete A≥3 cases (³He, T) toward
 closure. **This is a refutation/characterization probe, not a 7th fit
-ansatz** (cf. CLAUDE.md "Δ_λ gate (Track A blocker)").
+ansatz** (cf. AGENTS.md "Δ_λ gate (Track A blocker)").
 
 ## Why this probe exists (wire-check synthesis, 2026-06-14)
 

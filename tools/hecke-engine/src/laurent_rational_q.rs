@@ -21,7 +21,7 @@
 //! Both types coexist in the same crate so module boundaries can
 //! convert between them when needed.
 //!
-//! Per CLAUDE.md §Precision goals L1 (50-dps compute floor): every
+//! Per AGENTS.md §Precision goals L1 (50-dps compute floor): every
 //! coefficient is an exact `BigRational`; no `f64` anywhere in the
 //! arithmetic kernel.
 

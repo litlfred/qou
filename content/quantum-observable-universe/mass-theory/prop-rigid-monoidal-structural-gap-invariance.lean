@@ -7,7 +7,7 @@ import Mathlib.Tactic
 # Rigid monoidal structural-gap invariance
 
 Lean axiomatization of `prop:rigid-monoidal-structural-gap-invariance`
-following the §3b conditional-class pattern from CLAUDE.md.
+following the §3b conditional-class pattern from AGENTS.md.
 
 **Unification of PR #638 closure findings (1)–(3).**  The three
 load-bearing positive findings of the brane-tower `n_⋆`
@@ -22,7 +22,7 @@ refutation —
 — are consequences of a single categorical fact: the brane-tower
 formula factors through the canonical Markov trace τ on the
 **rigid monoidal Type-B-folded Hecke category**
-`Rep(SU_q(2))` (CLAUDE.md §7b).  The categorical τ is **unique**
+`Rep(SU_q(2))` (AGENTS.md §7b).  The categorical τ is **unique**
 (Jones 1985, Wenzl 1988) and **convention-independent**.
 
 This file axiomatizes the unification as a class with structural
@@ -213,7 +213,7 @@ Hecke quadratic relation. -/
     `categorical_trace ≡ 0`.  The `sorry` in
     `convention_factorisation` is the **§3b-cond conjectural input**:
     Layer-1 Jones-Wenzl uniqueness of the categorical Markov trace
-    τ on `H_n(q)` (Jones 1985, Wenzl 1988).  Per CLAUDE.md §3b-cond,
+    τ on `H_n(q)` (Jones 1985, Wenzl 1988).  Per AGENTS.md §3b-cond,
     this `sorry` is allowed — it encodes the conjectural axiom; all
     downstream theorems carrying `[R : RigidMonoidalStructuralGapInvariance α]`
     as an explicit hypothesis are unconditional Lean theorems
@@ -299,7 +299,7 @@ Hecke quadratic relation. -/
     `categorical_trace ≡ 0`.  The `sorry` in
     `convention_factorisation` is the **§3b-cond conjectural input**:
     Layer-1 Jones-Wenzl uniqueness of the categorical Markov trace
-    τ on `H_n(q)` (Jones 1985, Wenzl 1988).  Per CLAUDE.md §3b-cond,
+    τ on `H_n(q)` (Jones 1985, Wenzl 1988).  Per AGENTS.md §3b-cond,
     this `sorry` is allowed — it encodes the conjectural axiom; all
     downstream theorems carrying `[R : RigidMonoidalStructuralGapInvariance α]`
     as an explicit hypothesis are unconditional Lean theorems

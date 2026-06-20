@@ -82,7 +82,7 @@ import mpmath as mp
 import sympy as sp
 
 
-# 50-dps numerical specialization for any q0 checks (per CLAUDE.md compute-author)
+# 50-dps numerical specialization for any q0 checks (per AGENTS.md compute-author)
 mp.mp.dps = 65
 
 

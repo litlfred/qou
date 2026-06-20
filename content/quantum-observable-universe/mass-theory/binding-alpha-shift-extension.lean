@@ -81,7 +81,7 @@ end CandidateForceCarrierKnots
     Reeb coupling pinned by the deuteron (≈ 14.7 MeV/rad per
     `binding_rotation_phase_lead.py`).
 
-    Per CLAUDE.md §3b-cond: the binding closure is gated on the
+    Per AGENTS.md §3b-cond: the binding closure is gated on the
     **per-rep Reeb phase axiom** (substrate identity) and the
     **force-carrier knot identification** (Phase 3 open math).  -/
 class BindingPerRepReebPhase {R : Type u} [Field R]
@@ -114,7 +114,7 @@ class BindingForceCarrierKnot
     two binding evaluators sharing the same substrate parameters
     (m_e, ρ_0, knot identification) agree pointwise.
 
-    Per CLAUDE.md §3b-cond: sorry-free conditional on the two
+    Per AGENTS.md §3b-cond: sorry-free conditional on the two
     classes.  Phase 3 (the actual `(p_A, k_A)` identification) is
     research-grade and deferred.
 

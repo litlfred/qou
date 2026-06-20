@@ -40,7 +40,7 @@ The Lean module axiomatises the principal-specialisation identity as
 the class `StanleyHookTelescope`; the proposition's theorem
 `macdonald_hook_telescope` carries this class as an explicit
 `[Instance]` hypothesis and is discharged by `telescope_holds`.
-This follows CLAUDE.md §3b-cond (conditional-on-class). The
+This follows AGENTS.md §3b-cond (conditional-on-class). The
 `wenzlNormalizationOfShape` value is kept `opaque` so the class
 field captures substantive (non-tautological) mathematical content.
 
@@ -145,7 +145,7 @@ the multiplicity $f_\lambda$ is the dimension of the corresponding
 KLR canonical-basis component. The telescope is thus the
 **decategorified Kashiwara crystal count** for the regular
 representation — exactly the symmetric-crystal shortcut flagged in
-the project's authoring guidance (CLAUDE.md §7b, item 2: "decategorifying
+the project's authoring guidance (AGENTS.md §7b, item 2: "decategorifying
 KLR canonical basis to KL basis of $S_n$"). The previous
 hand-rolled sympy approach reinvented this combinatorial count
 without naming the crystal structure; naming it removes the

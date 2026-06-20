@@ -37,7 +37,7 @@ proposition. That is the audit flag.
 ## 1. Two patterns — one sound, one not
 
 The repo legitimately uses the **§3b-cond conditional-class** pattern
-(CLAUDE.md §3b-cond; tracked in
+(AGENTS.md §3b-cond; tracked in
 [`docs/uniqueness-theorems-backlog.md`](../uniqueness-theorems-backlog.md)
 and [`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](2026-06-03-lean-3b-cond-class-sorries-catalog.md)).
 It is important to separate it from the pattern this audit flags.
@@ -170,7 +170,7 @@ prediction **is** the measurement.
 This answers the calibration test directly: the values do **not** reduce
 to the three sanctioned calibrations (CAL-1 `m_e`, CAL-2 `Q_β/τ_n`,
 CAL-3 `m_π`). The absolute proton mass from `q₀` is the framework's
-**open mass-gap** (CLAUDE.md "2.89% m_p gap"), so a genuine derivation
+**open mass-gap** (AGENTS.md "2.89% m_p gap"), so a genuine derivation
 does not exist yet — and proton mass is not itself a legal calibration
 input (that would be CAL-4). The file's docstring claim *"derived from
 the topological mass formula at q ≈ 1.1097, externally verified"* is
@@ -377,4 +377,4 @@ rg '(Hadron|QResolvent|QDilogarithm|CategoricalLaplace|QHeatEquation|FrobeniusHo
 
 - [`docs/uniqueness-theorems-backlog.md`](../uniqueness-theorems-backlog.md) — owner-tracked canonical-X uniqueness backlog (the 5 *physics-canonical* items; the 15 here are the *categorical-apparatus* remainder, not in that list).
 - [`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](2026-06-03-lean-3b-cond-class-sorries-catalog.md) — the 194 *sound* conditional-class sorries (Pattern A; do **not** conflate with §2).
-- CLAUDE.md §3b-cond — the conditional-class exception that makes Pattern A sound.
+- AGENTS.md §3b-cond — the conditional-class exception that makes Pattern A sound.

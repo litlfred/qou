@@ -224,7 +224,7 @@ def main() -> int:
             "n_target_proton": mp.nstr(n_target, 50),
             "nf_basis": list(NF_NAMES),
         },
-        # LP/SDP dual fields (CLAUDE.md §LP/SDP duals — first-class infra)
+        # LP/SDP dual fields (AGENTS.md §LP/SDP duals — first-class infra)
         "y0_star": res.y0_star,
         "y_star": y_star,
         "active_set": list(res.active_set),

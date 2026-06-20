@@ -4,7 +4,7 @@
 
 The repo has **33 `.lean` files containing `sorry`**, totalling **50
 tactic-position sorries**. **All 50 carry proper `-- Ref:` citations
-per CLAUDE.md §1** — the §1 bibliographic-citation gap is closed
+per AGENTS.md §1** — the §1 bibliographic-citation gap is closed
 repo-wide.
 
 The remaining substantive question is: how many of those 50 can be
@@ -15,7 +15,7 @@ conjectures by design)?
 
 | Category | Files | Sorries | Closeable in scope? | Notes |
 |---|---:|---:|---|---|
-| §3b-cond class conjecture | 14 | 26 | **No (by design)** | The `sorry` IS the conjecture per CLAUDE.md §3b-cond. Closing requires owner-level math on the underlying open problem (e.g. Witten κ Gram-determinant, Bring color-tube weighted derivation, gluon-octet identity). |
+| §3b-cond class conjecture | 14 | 26 | **No (by design)** | The `sorry` IS the conjecture per AGENTS.md §3b-cond. Closing requires owner-level math on the underlying open problem (e.g. Witten κ Gram-determinant, Bring color-tube weighted derivation, gluon-octet identity). |
 | UGB Buchberger / PBW | 7 | 7 | **Hard** | Research-level work to formalise Buchberger's algorithm + PBW corollary in Lean 4. Out of scope for this session. |
 | Other (UGB Introduction + mass-theory + mass-endomorphism) | 9 | 11 | **Mixed** | Mostly §3b-cond scaffolds (mass-theory inside PR #1445 scope); some need substantive proof work. |
 | Hyperbolic-geometric | 2 | 5 | **Tractable (1 file)** | `BorromeanVolumeCatalan.lean` has 4 sorries with explicit proof sketches (Lobachevsky-Catalan + Adams 1985). Closing requires Mathlib infrastructure axioms + `norm_num` on long rational sums (heavy heartbeats but mechanical). `kashaev-volume-conjecture.lean` is §3b-cond. |
@@ -25,7 +25,7 @@ conjectures by design)?
 
 ### §3b-cond class conjecture (26 sorries — closed by design)
 
-These are conjectures axiomatised via Lean classes per CLAUDE.md
+These are conjectures axiomatised via Lean classes per AGENTS.md
 §3b-cond. Each `sorry` instance represents an open conjecture; the
 downstream theorems that consume the class hypothesis are
 sorry-free (rigorous-conditional).
@@ -71,7 +71,7 @@ is research-level work, not closeable in a single session.
 + `field_simp; ring`. 6×6 symbolic determinant on Bring's
 substrate. Plausible but heavy compute.
 
-## What's CLAUDE.md-§1-compliant?
+## What's AGENTS.md-§1-compliant?
 
 100%. Every one of the 50 sorries has `-- Ref:` within ≤ 12
 preceding lines (typical: ≤ 5).
@@ -80,7 +80,7 @@ preceding lines (typical: ≤ 5).
 
 The phrase is ambiguous:
 
-1. **Citation compliance** (per CLAUDE.md §1): **already 100% done**
+1. **Citation compliance** (per AGENTS.md §1): **already 100% done**
    repo-wide as of this audit.
 2. **Closing §3b-cond conjectures**: **not in scope** — those
    sorries represent open math by design and stay until the

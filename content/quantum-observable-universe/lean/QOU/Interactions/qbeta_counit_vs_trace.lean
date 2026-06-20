@@ -24,7 +24,7 @@ These lemmas pin the precise relation between the two: they coincide
 exactly at the trivial loop `z = 1`, and differ by `h·(z − 1)` otherwise.
 
 All statements hold over an arbitrary field (the substrate→archimedean
-wall is not crossed: no ordering, no `Real.sqrt`). See CLAUDE.md §7c.
+wall is not crossed: no ordering, no `Real.sqrt`). See AGENTS.md §7c.
 -/
 
 namespace QOU.Interactions.QBetaCounitTrace

@@ -36,7 +36,7 @@ Kashiwara derivation of Q_β truncated at k=2 (per
 
 ## Sandbox compute capability (correction for future agents)
 
-CLAUDE.md implies the compute stack is unavailable in the web sandbox ("mpmath
+AGENTS.md implies the compute stack is unavailable in the web sandbox ("mpmath
 IS [pip-installable]" by contrast). **That is too pessimistic.** Verified
 2026-06-13 in this environment:
 
@@ -65,8 +65,8 @@ that was previously assumed gated.
 1. **Phase 2 — Q_β k=3 closure** (highest leverage: closes Q_β + m_n + Δ_pn).
    Gated on the Option-E Kashiwara cell-content recurrence — research-grade,
    and subject to the c_k truncation-order canonical framing + no-fitting
-   discipline (CLAUDE.md). Not a mechanical task.
+   discipline (AGENTS.md). Not a mechanical task.
 2. **Phase 1 — per-nucleus real SDP** is now runnable in-sandbox, but the
    deuteron closure is the **Δ_λ gate**: encoding 5 (LR-branching, canonical)
    is feasible but does not reproduce the binding; encoding 2 (color-flavor) is
-   infeasible. Per CLAUDE.md, do **not** add a fitted 7th ansatz.
+   infeasible. Per AGENTS.md, do **not** add a fitted 7th ansatz.

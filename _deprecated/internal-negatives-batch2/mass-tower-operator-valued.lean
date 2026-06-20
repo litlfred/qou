@@ -27,7 +27,7 @@ block of ρ_λ(I) in the LR basis, generalising the two-factor
 `HeckeBranchingAlgebra` (proved in `hecke-branching-trace-decomposition.md`)
 to the (Z+N)-factor parabolic chain.
 
-Status (per CLAUDE.md §3b-cond conditional-class pattern):
+Status (per AGENTS.md §3b-cond conditional-class pattern):
   * The boxed identity is PROVED at the two-factor case via
     `prop:hecke-branching-trace-decomposition` (Wenzl 1988 + Hoefsmit 1974).
   * The k-factor iteration is structural induction over the parabolic

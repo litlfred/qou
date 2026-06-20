@@ -53,7 +53,7 @@ The atom→knot rule is the **same selection one level up**: which
 ## Discipline guardrails
 
 - **No census, no fit.** The braid word must be SDP-selected; ν_SDP
-  from the active set. A 7th fitted ansatz is forbidden (CLAUDE.md
+  from the active set. A 7th fitted ansatz is forbidden (AGENTS.md
   Δ_λ gate).
 - Validate the SDP against D/T/³He (knowns) before trusting A=5,6,7.
 - The binding scale stays E₀ = m_e/(q₀(q₀−1)) (CAL-1+CAL-2); no new
@@ -193,7 +193,7 @@ pairs (+47%).** Doubly-magic ⁴He (7.07 MeV/nucleon vs D's 1.11) binds
 
 **Barrier-1 redirect:** derive f from the **shell/magic closure** of
 (Z,N), not pairwise bonds — i.e. the Demazure sub-crystal closure level
-(CLAUDE.md §7b: "Demazure sub-crystals for resonances/shells") combined
+(AGENTS.md §7b: "Demazure sub-crystals for resonances/shells") combined
 with the #1417 Coulomb channel for the proton-pair split. f is **not**
 fittable from 4 points (would be a forbidden ansatz); the next derived
 lead is the crystal-closure count, validated against the AME-extracted
@@ -278,7 +278,7 @@ The remaining derivation pieces are: (a) identify which combinatorial
 object on the canonical word β(Z,N) **actually** counts to Z·N (NOT the
 adjacent-interface count `A−1 = Z+N−1`, which equals Z·N only at A≤3 and
 diverges from it at ⁴He+; see correction below); (b) derive the
-doubly-magic doubling from the Demazure crystal closure (CLAUDE.md
+doubly-magic doubling from the Demazure crystal closure (AGENTS.md
 §7b); (c) the Coulomb κ already has a derived form via #1417's sinh
 channel. Probe: `binding_factor_f_pair_count.py`, witness
 `binding-factor-f-pair-count`.

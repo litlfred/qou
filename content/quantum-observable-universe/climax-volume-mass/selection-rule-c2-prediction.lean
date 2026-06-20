@@ -20,7 +20,7 @@
 # LaTeX label: `prop:selection-rule-c2-prediction`
 # Cross-reference: `prop:selection-rule-anchors-c1-c3` (the proved anchors).
 #
-# CLAUDE.md §7c compliant: stated over ℝ for the substrate-anchor regime;
+# AGENTS.md §7c compliant: stated over ℝ for the substrate-anchor regime;
 # the identity is q-rational at fibre level.
 -/
 

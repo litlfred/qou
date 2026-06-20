@@ -114,7 +114,7 @@ characters $\chi_\lambda$. They differ only in $y_\lambda$:
 
 The Wenzl-bridge value on the joint word matches `binding_canonical`'s
 factorized closed form to 11 digits ($3\times10^{-12}$, full mpf — no
-float64), so `binding_canonical` *is* the Wenzl convention. Per CLAUDE.md,
+float64), so `binding_canonical` *is* the Wenzl convention. Per AGENTS.md,
 **the mass/binding chain uses Wenzl JM** (the Plancherel scheme is for
 the torus-knot lepton tower). The `binding_per_bond_decomposition.py`
 probe erroneously used Plancherel weights — that was the source of the

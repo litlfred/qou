@@ -121,7 +121,7 @@ Before running any sweep it MUST clear:
 Either (a) a derive-or-refute structural statement: the 2nd-kind term IS / IS NOT a
 cross-anchor-stable, bar-correct correction (TIERED report); or (b) a clean refutation on the same
 footing as the f-map. No fit, no 7th ansatz, nothing wired to production without owner sign-off.
-Owner closes (humans close beans per CLAUDE.md §4a).
+Owner closes (humans close beans per AGENTS.md §4a).
 
 ---
 
@@ -140,6 +140,17 @@ Owner closes (humans close beans per CLAUDE.md §4a).
 > log-Neumann `Y_n` (ν→n limit, no ±0.5 proxy) + real `y_λ` weights + bar-parity. Matching
 > B(D) by choosing the offset/prefactor would be a fit. No fit; nothing wired. (Direction
 > is LIVE again; #2538 "closed" was premature.)
+
+> **INTEGER-ORDER PROXY-FREE TEST (2026-06-20, PR pending).** #2545's 6× was a
+> resonance-POLE artifact: G_q has a SIMPLE POLE at every forced integer ν≥1 (Neumann
+> resonance) AND a CONFLUENT double-root at ν=0 (dim=1; indicial roots coincide,
+> Casoratian→0). The ν±0.5 proxy sat 0.5 from these. Proxy-free PV (finite part of the
+> antisymmetric pole, ε→0 convergent) on the dim≥2 blocks: δ_PV=5.52, ratio 1.27× B(D),
+> un-dominated (31.6%), cross-anchor stable (0.76%) — ON scale, encouraging. BUT NOT
+> established: (i) the dim=1 CONFLUENT blocks diverge (need the ν=0 confluent log
+> solution — unsolved); (ii) PV-vs-rigorous-Y_n (L'Hôpital ν→n) unjustified. Two open
+> constructions gate any claim. Reeb-flow argument (forced, surviving) stands; scale
+> plausible but not honestly closed. No fit; nothing wired.
 
 > **RIGOROUS (reduction-of-order) + LEAN (2026-06-20, PR #2549).** Resolved BOTH #2547
 > gates with one construction: reduction of order recovers g2 from g1 + Casoratian

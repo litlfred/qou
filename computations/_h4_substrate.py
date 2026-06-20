@@ -20,7 +20,7 @@ import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules mo
 import mpmath as mp
 
 # Acknowledged-anchor constants from the central registries
-# (consistent with repo convention; see CLAUDE.md §Acknowledged-anchor
+# (consistent with repo convention; see AGENTS.md §Acknowledged-anchor
 # banner). Masses use the mpf-typed codata_2022_source registry (more
 # recent CODATA 2022 values + includes muon). α_em uses
 # experimental_constants.ALPHA_EM_INV (which has the canonical CODATA

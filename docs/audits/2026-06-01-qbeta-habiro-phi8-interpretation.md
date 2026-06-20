@@ -110,7 +110,7 @@ The Q_β Habiro element's overall form should be **a product of cyclotomic facto
 - P_8(u) identification: [`2026-05-31-qbeta-habiro-p8-identification.md`](2026-05-31-qbeta-habiro-p8-identification.md)
 - u^15 interpretation: [`2026-05-31-qbeta-habiro-depth15-interpretation.md`](2026-05-31-qbeta-habiro-depth15-interpretation.md)
 - Master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md) PROBE NEW
-- CLAUDE.md §7a (Hecke-Skein convention), §7b (symmetric-crystal techniques)
+- AGENTS.md §7a (Hecke-Skein convention), §7b (symmetric-crystal techniques)
 
 ## Open follow-ups
 

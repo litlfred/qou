@@ -91,7 +91,7 @@ class GeomYekutieliAlignmentContext (R : Type*) [CommRing R] where
     Together these encode the paper's per-block formula
     `m(K) = m_e · Geom(K) · Σ_λ w_λ χ_λ(β_K)/dim λ`.  The proof is
     purely from the class fields — the conjectural content is the
-    instance (the holonomy↔trM identification), per CLAUDE.md §3b. -/
+    instance (the holonomy↔trM identification), per AGENTS.md §3b. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 -- Ref: [manuscript] §5.14, prop:hoefsmit-scattering-pipeline (Stage 3–4)
 theorem geom_yekutieli_per_block_alignment {R : Type*} [CommRing R]

@@ -69,7 +69,7 @@ When authoring the `.ts` manifest for a new block, set
 `lean: { ref: "<pkg>:<Decl>" }` (never the legacy `decl:` / `file:`
 shape).  Use `<pkg>` from `LEAN_PACKAGES` in
 `folio-assistant/schemas/lean-packages.ts` (`qou`, `ugb`, `fred2005`,
-…).  See CLAUDE.md §0a for the URI grammar and §0b for the rebase
+…).  See AGENTS.md §0a for the URI grammar and §0b for the rebase
 workflow.
 
 ## When to Use This Skill
@@ -199,7 +199,7 @@ published reference exists, use `[manuscript]` and cite the chapter/section.
 This is enforced by the axiom report's Theoretical Gap Report (§8).
 
 **§3b-cond carve-out.** Class-body sorries are NOT missing proofs — they
-are conjectural inputs per CLAUDE.md §3b-cond, permanent by design.
+are conjectural inputs per AGENTS.md §3b-cond, permanent by design.
 The catalogue
 [`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](../../../docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md)
 lists **194 classes / 219 class-body sorries** as of 2026-06-04
@@ -212,7 +212,7 @@ Only `theorem | lemma | def | instance` body sorries need `-- Ref:`.
 
 ## Base ring convention — generic `R` vs archimedean `ℝ` (STRICT)
 
-Per **CLAUDE.md §7c**: every Lean declaration that holds in a generic
+Per **AGENTS.md §7c**: every Lean declaration that holds in a generic
 commutative ring must be stated over a **type variable**, never silently
 specialised to `ℝ`. The archimedean wall is the structural cut:
 
@@ -626,7 +626,7 @@ content/<paper>/<chapter>/
    formalized first (dependency DAG ordering)
 3. **Write/update the sibling `.lean` file** in `content/<paper>/<chapter>/`
 4. **Update the `.ts` manifest**: set `lean.ref` to the package-qualified
-   URI `"<pkg>:<Decl.Path>"` (per CLAUDE.md §0a; legacy `lean.decl` /
+   URI `"<pkg>:<Decl.Path>"` (per AGENTS.md §0a; legacy `lean.decl` /
    `lean.file` shape is removed)
 5. **Run validation**: `bun run content/pipeline/validate.ts` to check
    cross-references and constraint rules

@@ -6,7 +6,7 @@ import Mathlib.Algebra.Field.Defs
 
 Conjectural canonical form of the pair-gen piece in the graded
 ρ_K expansion. Promotes `prop:rho-k-graded-expansion` §pair-gen
-"open work" section to an explicit conjecture per CLAUDE.md §3b
+"open work" section to an explicit conjecture per AGENTS.md §3b
 conjectural propagation discipline.
 
 The canonical pair-gen functional `f_2(q, V_i, V_j)` is expected
@@ -19,7 +19,7 @@ Ref: [manuscript] prop:rho-k-graded-expansion
 Ref: [manuscript] thm:knot-mass-formula-unified
 Ref: [manuscript] docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md
 
-Generic over `[Field R]` per CLAUDE.md §7c base-ring discipline.
+Generic over `[Field R]` per AGENTS.md §7c base-ring discipline.
 -/
 
 namespace QOU.BraidKnot.RhoKPairGenCanonicalForm

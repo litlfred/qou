@@ -27,7 +27,7 @@ contributions derive from independent substrate-natural principles.
 The Yekutieli term is **load-bearing-conjectural**: the explicit
 cell-↔-half-sym-projection bijection at H_4 is open.  This script
 is therefore opt-in / probe-grade, NOT a production replacement
-for `m_p_borromean_verification_50dps.py`.  Per CLAUDE.md §3b-cond
+for `m_p_borromean_verification_50dps.py`.  Per AGENTS.md §3b-cond
 (conditional-class exception), the Lean wiring of the Yekutieli
 extension would carry the bijection as a class instance.
 

@@ -65,7 +65,7 @@ The binding-energy gap $|B_{\mathrm{pred}}(K) - B_{\mathrm{AME}}(K)|$ lives in t
 
 1. Categorical refinement of the framework should focus on the **low-row partitions**, not the rectangular Schur-Weyl partner.
 2. The PSD-dominant block is the structural "obstruction fingerprint" but does NOT carry the residual mass deficit.
-3. The Δ_λ-gating problem (per CLAUDE.md "Precision goals" section) is concretely about which low-row 2-row partitions contribute to the cancellation/imbalance of $\mathrm{tr}_M$.
+3. The Δ_λ-gating problem (per AGENTS.md "Precision goals" section) is concretely about which low-row 2-row partitions contribute to the cancellation/imbalance of $\mathrm{tr}_M$.
 
 ## What this conjecture does NOT claim
 

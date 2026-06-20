@@ -10,7 +10,7 @@ asymptotic limit
 
 extracted in Step 1 of PR #1727 from the simple-pole signature, sampled
 only at k = 8, 9, 10 (the c_k beyond 10 require an ansatz fit, forbidden
-per CLAUDE.md). The c_k are already 50 dps — so the limiter is the
+per AGENTS.md). The c_k are already 50 dps — so the limiter is the
 ASYMPTOTIC CONVERGENCE, not the arithmetic precision.
 
 This script quantifies the achievable precision honestly:

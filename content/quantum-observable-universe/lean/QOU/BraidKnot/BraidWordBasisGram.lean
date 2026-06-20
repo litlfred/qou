@@ -7,7 +7,7 @@ import Mathlib.Tactic
 Encodes the structural finding from PR #639 cycle 7
 (`probe_braid_word_basis_gram.py`): the Gram matrix
 `G_wv = tr_M(σ_w · σ_v)` in the paper-canonical reduced-braid-word
-basis of `H_n(q)` (per CLAUDE.md §7a Hecke–Skein convention) is
+basis of `H_n(q)` (per AGENTS.md §7a Hecke–Skein convention) is
 **not diagonal**.
 
 This is in contrast to the per-partition basis, where Wedderburn

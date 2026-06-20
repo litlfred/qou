@@ -119,7 +119,7 @@ If any review comment requires a judgment call (ambiguous intent,
 architectural decision, multiple valid approaches), use
 `AskUserQuestion` with:
 
-- **Rich context** per CLAUDE.md user-accessibility rules:
+- **Rich context** per AGENTS.md user-accessibility rules:
   - Quote the exact comment + file path + line number
   - Show the current code vs proposed change (preview)
   - State trade-offs for each option
@@ -138,7 +138,7 @@ all escalated questions):
 1. Run `bun run validate` one final time.
 2. Check CI status via `mcp__github__pull_request_read get_check_runs`.
 3. If all green: merge via `mcp__github__merge_pull_request` with
-   `merge_method: "merge"` (default per CLAUDE.md — preserves
+   `merge_method: "merge"` (default per AGENTS.md — preserves
    structured commits).
 4. **CRITICAL:** DO NOT DELETE THE BRANCH EVER! If using the GitHub CLI, DO NOT pass `--delete-branch`. If using the GitHub API, ensure the branch is preserved.
 5. Report the merge SHA + URL.

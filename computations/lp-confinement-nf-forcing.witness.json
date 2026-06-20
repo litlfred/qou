@@ -43,7 +43,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Probe of the conjecture (CLAUDE.md / step 5 of the multiplicative-chain plan): for compound braids β = β₁ ⋆ I ⋆ β₂ on B_n, the LP/SDP active set A = {λ : y_λ* > 0} from prop:operator-selection-lp (i) is strictly smaller than n! (confinement), (ii) contains the Wedderburn maximizer of shift_NF(β), and (iii) bounds the deviation shift_NF(β) − α_shift(I) by the LP duality gap. Per CLAUDE.md §LP/SDP duals, the witness emits BOTH primal and dual fields.",
+  "description": "Probe of the conjecture (AGENTS.md / step 5 of the multiplicative-chain plan): for compound braids β = β₁ ⋆ I ⋆ β₂ on B_n, the LP/SDP active set A = {λ : y_λ* > 0} from prop:operator-selection-lp (i) is strictly smaller than n! (confinement), (ii) contains the Wedderburn maximizer of shift_NF(β), and (iii) bounds the deviation shift_NF(β) − α_shift(I) by the LP duality gap. Per AGENTS.md §LP/SDP duals, the witness emits BOTH primal and dual fields.",
   "contentBlock": "conj:confinement-nf-structure-forcing",
   "data": {
     "compounds": [

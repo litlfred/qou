@@ -60,7 +60,7 @@ Topics 2 + 3 share infrastructure (per-atom Vol via SnapPy from PR #1698, per-at
 
 Intent comments to be posted on each.
 
-## Out of scope (forbidden per CLAUDE.md)
+## Out of scope (forbidden per AGENTS.md)
 
 - New ansatz fits for either linking_weight or Δ_λ (Δ_λ gate discipline — 6 ansätze refuted).
 - Reintroducing `λ_scale` as a separate object (purged 2026-05-23).

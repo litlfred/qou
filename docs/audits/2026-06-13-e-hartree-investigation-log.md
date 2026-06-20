@@ -9,7 +9,7 @@ results, the candidate mechanisms (A–D) with their gaps, and the honest
 how each candidate mechanism was ruled out or sharpened, with all
 supporting data tables (Tables 1–13) — lives here, out of the scholarly
 prose, per the one-voice convention (no work-tracking journals in paper
-content; CLAUDE.md §canonical-no-negative-result-in-paper).
+content; AGENTS.md §canonical-no-negative-result-in-paper).
 
 The body below is the verbatim pre-condense content of the block as of
 commit `40ef96c0` / main; `#tbl:…` and `#…` anchors point at the paper

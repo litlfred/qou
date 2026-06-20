@@ -17,7 +17,7 @@
 ## Key findings
 
 - **Anchor drift (3-way):** live compute is **proton-anchored** (`m_p/m_e`,
-  re-pin 2026-05-28 `01c18125`); paper blocks still say muon; CLAUDE.md
+  re-pin 2026-05-28 `01c18125`); paper blocks still say muon; AGENTS.md
   table says neutron. `m_μ/m_e` is now a 9.5σ prediction.
 - **3rd-CAL fork:** paper blocks say `Q_β`; cheat-sheet diagram says
   `m_π` (`Q_β` derived). **Owner resolution:** 3rd CAL = `m_π`, `Q_β`
@@ -46,7 +46,7 @@
 3. **Route 1a** probe (`‖(q-1)𝓕_q^intr‖(q)` critical point) — owner-gated
    (re-opened substrate-q₀ derivation), needs `pyhecke_native`.
 4. **Stale-doc cleanup:** cheat-sheet §1 internal CAL-3 inconsistency
-   (diagram says `m_π`, CLAUDE.md table neutron); `qou-substrate/README.md:29`
+   (diagram says `m_π`, AGENTS.md table neutron); `qou-substrate/README.md:29`
    prints the muon `q₀`.
 
 ## ⚠ CORRECTION (owner, 2026-06-16 ~04:30) — convention is MUON-canonical
@@ -67,7 +67,7 @@ was **half-corrected by the owner**. The corrected, authoritative convention is
 
 The prior commits (proton-canonical migration of the discipline block + cheat-sheet)
 were **reverted** to muon-canonical, and the convention was propagated across
-CLAUDE.md, the 4 discipline skills, `three-calibration-inputs`,
+AGENTS.md, the 4 discipline skills, `three-calibration-inputs`,
 `epistemic-status-of-calibrations`, and the two `codata_constants.py` docstrings.
 
 ## Scope map (added 2026-06-16)
@@ -85,7 +85,7 @@ CLAUDE.md, the 4 discipline skills, `three-calibration-inputs`,
 - 2026-06-16 ~03:4x — Task 1 (prose migration) + Task 4 (cheat-sheet) done
   PROTON-canonical (pushed) — **superseded by the correction below.**
 - 2026-06-16 ~04:30 — Owner correction: MUON-canonical, proton = phys-obs
-  anchor. Reverted + propagated convention across CLAUDE.md + 4 skills +
+  anchor. Reverted + propagated convention across AGENTS.md + 4 skills +
   3 content blocks + 2 compute docstrings (commits A/B/C). Dashboards
   (low + sweep) re-run clean at α=E₀=4.186 MeV (convention is doc-only;
   compute unperturbed). Intent posted on #2355, #2295.
@@ -144,7 +144,7 @@ CLAUDE.md, the 4 discipline skills, `three-calibration-inputs`,
   *wide* changes that will conflict with siblings on rebase:
   1. **`Q_β → 𝔔_β` migration** (~138 content `.md`/`.ts` files; `.lean` keeps
      the `Q_β` identifier).
-  2. **Calibration convention** sweep (CLAUDE.md + 4 skills + calibration
+  2. **Calibration convention** sweep (AGENTS.md + 4 skills + calibration
      blocks: muon-canonical CAL-2, `m_π` CAL-3, `Q_β` derived).
   Plus the **`𝔙` complex-volume unification** (binding = Re, `𝔔_β` = Im).
 - **Intent posted:** [#2363](https://github.com/litlfred/qou/pull/2363#issuecomment-4723802115)

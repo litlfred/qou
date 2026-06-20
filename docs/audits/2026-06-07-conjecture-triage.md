@@ -2,7 +2,7 @@
 
 **Scope.** All 137 `kind: "conjecture"` content blocks in
 `content/quantum-observable-universe/`. Each was triaged against the
-CLAUDE.md *"Before declaring open"* corpus-grep checklist — searching
+AGENTS.md *"Before declaring open"* corpus-grep checklist — searching
 `docs/audits/`, `content/`, `computations/`, and
 `docs/coordination/` for an owner-authorised resolution, a witness
 that already realises the claim, or a coordination ledger that closed
