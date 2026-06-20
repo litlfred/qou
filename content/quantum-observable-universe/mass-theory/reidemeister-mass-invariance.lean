@@ -147,6 +147,6 @@ class BorromeanQuark : Prop where
   holds : True
 
 /-- Witness theorem: this file's proposition is conditional on
-    `BorromeanQuark` per AGENTS.md §3b-cond. -/
-theorem reidemeister_mass_invariance_conditional_on_borromean_quark
+    `BorromeanQuark` per CLAUDE.md §3b-cond. -/
+def reidemeister_mass_invariance_conditional_on_borromean_quark
     [_inst : BorromeanQuark] : True := trivial

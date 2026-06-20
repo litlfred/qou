@@ -90,7 +90,7 @@ theorem T35_braid_word_length : torusBraidWordLength 3 5 = 10 := by
 -- Ref: [manuscript] §6/box-braid-irreducibility
 -- Ref: [manuscript] §6/force-knot-identification
 /-- The γγ → νν̄ process contains T(3,5) as sub-topology. -/
-theorem photon_neutrino_requires_T35 :
+def photon_neutrino_requires_T35 :
     True := trivial
 
 /-- **Box braid irreducibility**: the γγ → νν̄ box requires

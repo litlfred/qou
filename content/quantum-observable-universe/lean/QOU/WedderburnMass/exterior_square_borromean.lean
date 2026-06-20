@@ -41,7 +41,7 @@ acting via the standard projection).  Then the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts
-theorem exterior_square_borromean [ctx : ExteriorSquareBorromeanContext] :
+def exterior_square_borromean [ctx : ExteriorSquareBorromeanContext] :
     ctx.dim_ext_sq = 45 ∧ ctx.dim_V_9_1 = 9 ∧ ctx.dim_V_8_1_1 = 36 ∧
     ctx.dim_ext_sq = ctx.dim_V_9_1 + ctx.dim_V_8_1_1 := by
   refine ⟨ctx.dim_ext_sq_eq, ctx.dim_V_9_1_eq, ctx.dim_V_8_1_1_eq, ?_⟩

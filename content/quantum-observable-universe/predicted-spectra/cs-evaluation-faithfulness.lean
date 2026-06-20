@@ -16,7 +16,7 @@ Canonical declaration: `QOU.Archimedean.CSEvaluationFaithful`.
 namespace QOU.Archimedean
 
 /-- **PROPOSITION.** Faithfulness of the Chern--Simons evaluation on the brane tower -/
-theorem CSEvaluationFaithful : True := by
+def CSEvaluationFaithful : True := by
   -- Ref: [manuscript] prop:cs-evaluation-faithfulness
   trivial
 

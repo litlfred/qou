@@ -56,7 +56,7 @@ elements of $A = H_n(R, q)$ survive as physical observables, and
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-categorical.ts
-theorem confinement_categorical [ctx : ConfinementCategoricalContext] :
+def confinement_categorical [ctx : ConfinementCategoricalContext] :
     ctx.E_infinity_00 = (Finset.range ctx.n_blocks).sum
                           (fun λ => ctx.e_block λ) ∧
     (∀ x : ctx.A, ctx.integral x = ctx.integral (ctx.pi_centre x)) ∧

@@ -41,7 +41,7 @@ structure MassCoefficientShadowPrice where
     Wedderburn-Artin weight and tr(σ)/dim is the per-generator
     trace in the seminormal basis.  For self-conjugate
     partitions, tr(σ)/dim = h/2. -/
-theorem mass_coefficient_shadow_price_factorization
+def mass_coefficient_shadow_price_factorization
     (sp : MassCoefficientShadowPrice) :
     True := by trivial
 

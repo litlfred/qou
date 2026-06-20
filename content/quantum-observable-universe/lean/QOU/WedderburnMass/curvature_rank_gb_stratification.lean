@@ -55,7 +55,7 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.ts
-theorem curvature_rank_gb_stratification [ctx : CurvatureRankGbStratificationContext] :
+def curvature_rank_gb_stratification [ctx : CurvatureRankGbStratificationContext] :
     ∀ r : ℕ, ctx.quotient_set r = {T_w : ctx.A | ctx.rank_T_w T_w = r} := by
   intro r
   exact Set.Subset.antisymm (ctx.quotient_subset_rank r) (ctx.rank_subset_quotient r)

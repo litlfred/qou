@@ -148,7 +148,7 @@ theorem figure_eight_reduction
 /-- **CONJECTURE (Im(q) invariance at LO).** The lepton mass ratio
     via modulus projection is invariant under q ↦ q̄ at leading order.
     Statement-only; full proof requires complex extension + explicit F_ℓ. -/
-theorem lepton_mass_ratio_im_q_invariance_at_LO
+def lepton_mass_ratio_im_q_invariance_at_LO
     (ℓ : LeptonType) :
     True := by
   trivial

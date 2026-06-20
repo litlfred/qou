@@ -81,7 +81,7 @@ Then:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/toffoli-transfer-matrix.ts
-theorem toffoli_transfer_matrix [ctx : ToffoliTransferMatrixContext] :
+noncomputable def toffoli_transfer_matrix [ctx : ToffoliTransferMatrixContext] :
     (∀ k : ℕ × ℕ, ctx.P_flip k = ctx.c k * ctx.Phi) ∧
     (∀ k : ℕ × ℕ, ctx.V_hat_1 k = ctx.z_real) ∧
     ctx.P_7_6 = ctx.Phi ∧

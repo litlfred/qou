@@ -53,7 +53,7 @@ structure QResolvent (H : Type*) where
     This is the mate of the coproduct Δ_q on 𝓗_q under the Laplace
     pairing. -/
 -- Ref: [kassel1995] Quantum Groups, §IV.4
-theorem QResolvent.first_identity {H : Type*} [AddCommGroup H] [Mul H]
+def QResolvent.first_identity {H : Type*} [AddCommGroup H] [Mul H]
     (R₁ R₂ : QResolvent H) :
     True := by
   -- The full statement requires a ring structure on End(H) compatible

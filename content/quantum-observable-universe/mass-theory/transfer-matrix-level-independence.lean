@@ -104,6 +104,6 @@ namespace QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit
 class CrystalGraphRealization : Prop where
   holds : True
 
-theorem transfer_matrix_level_conditional [_inst : CrystalGraphRealization] : True := trivial
+def transfer_matrix_level_conditional [_inst : CrystalGraphRealization] : True := trivial
 
 end QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit

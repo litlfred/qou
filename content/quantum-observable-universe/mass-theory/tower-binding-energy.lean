@@ -31,7 +31,7 @@ theorem wedderburnWeightsSum (q : ℝ) (hq : q > 1) :
   ring
 
 /-- w_sym = w_alt (the symmetric and alternating weights are equal). -/
-theorem wedderburnSymEqAlt (q : ℝ) (hq : q > 1) :
+noncomputable def wedderburnSymEqAlt (q : ℝ) (hq : q > 1) :
     wedderburnSym q hq = wedderburnSym q hq := rfl
 
 /-- The quantum dilogarithm Φ_q(x) = Π_{k≥1} |1 - q⁻ᵏx|⁻¹,

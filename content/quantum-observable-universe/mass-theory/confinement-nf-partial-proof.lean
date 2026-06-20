@@ -105,8 +105,8 @@ class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where
     ∀ (μ : lp.Λ), (μ ∈ lp.active_set) ↔ lp.tight μ
 
 /-- Strong duality theorem (now a class-conditional invocation).
-Conditional on `[HasFiniteLPDuality lp]` per AGENTS.md §3b-cond. -/
-theorem strong_duality (lp : OperatorSelectionLP)
+Conditional on `[HasFiniteLPDuality lp]` per CLAUDE.md §3b-cond. -/
+def strong_duality (lp : OperatorSelectionLP)
     [lpd : HasFiniteLPDuality lp] :
     lp.duality_gap = 0 :=
   lpd.strong_duality_holds

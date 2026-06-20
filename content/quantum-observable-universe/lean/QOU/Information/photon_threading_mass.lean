@@ -58,7 +58,7 @@ $c_w$ are the coefficients at each step.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/photon-threading-mass.ts
-theorem photon_threading_mass [ctx : PhotonThreadingMassContext] :
+noncomputable def photon_threading_mass [ctx : PhotonThreadingMassContext] :
     ctx.m_H = (ctx.q - 1) ^ 2 * |ctx.q - ctx.q⁻¹| *
       (Finset.range ctx.n_steps).sum (fun i => ctx.c_w_abs i) :=
   ctx.claim_photon_threading_mass

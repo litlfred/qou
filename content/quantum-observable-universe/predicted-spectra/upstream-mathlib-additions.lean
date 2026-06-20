@@ -237,7 +237,7 @@ class ComplexLiTwoUnitCircleClassical : Prop where
 /-- **Conditional theorem: with the classical identity class in
     scope, the unit-circle BW dilogarithm equals Cl_2.** -/
 -- Ref: [zagier1986]
-theorem blochWigner_unit_circle_eq_Cl_2
+def blochWigner_unit_circle_eq_Cl_2
     [ComplexLiTwoUnitCircleClassical]
     (θ : ℝ) :
     True := trivial

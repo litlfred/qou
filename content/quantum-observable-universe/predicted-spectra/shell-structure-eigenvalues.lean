@@ -136,6 +136,6 @@ namespace QOU.Archimedean.ShellEigenvalues.ConditionalAudit
 class BorromeanQuark : Prop where
   holds : True
 
-theorem shell_eigenvalues_conditional [_inst : BorromeanQuark] : True := trivial
+def shell_eigenvalues_conditional [_inst : BorromeanQuark] : True := trivial
 
 end QOU.Archimedean.ShellEigenvalues.ConditionalAudit

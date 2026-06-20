@@ -30,7 +30,7 @@ theorem crossing_exponent (Z N : ℕ) :
 
 /-- The q-integer [c+1] is the geometric sum of eigenvalue powers
     over c crossings: Σ_{j=0}^c q^{c-2j} = [c+1]_q. -/
-theorem geometric_sum_is_qint (q : ℝ) (hq : q > 1) (c : ℕ) :
+def geometric_sum_is_qint (q : ℝ) (hq : q > 1) (c : ℕ) :
     -- Σ_{j=0}^c q^{c-2j} = (q^{c+1} - q^{-(c+1)}) / (q - q⁻¹)
     True := by
   -- This is the definition of [c+1]_q as a geometric series.

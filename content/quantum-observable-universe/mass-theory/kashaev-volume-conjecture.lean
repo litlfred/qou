@@ -103,7 +103,7 @@ end QOU.Kashaev
     muon mass formula m_μ/m_e = Vol(4₁)/ℏ_q². -/
 -- Ref: [thurston1978] Thurston's geometry and topology of three-manifolds — hyperbolic structure on figure-eight complement
 -- Ref: [kashaev1997] — original volume conjecture
-theorem figure_eight_volume_from_vc (q : ℝ) [VolumeConjecture q] :
+def figure_eight_volume_from_vc (q : ℝ) [VolumeConjecture q] :
     True :=
   trivial
 
@@ -112,7 +112,7 @@ theorem figure_eight_volume_from_vc (q : ℝ) [VolumeConjecture q] :
     enters the proton mass formula via the Borromean Markov trace. -/
 -- Ref: [adams1985hyperbolic] — hyperbolic volume of Borromean rings
 -- Ref: [manuscript] lean/QOU/Archimedean/BorromeanVolumeCatalan.lean
-theorem borromean_volume_from_vc (q : ℝ) [VolumeConjecture q] :
+def borromean_volume_from_vc (q : ℝ) [VolumeConjecture q] :
     True :=
   trivial
 

@@ -49,6 +49,6 @@ namespace QOU.BraidKnot.WignerCoefficient.ConditionalAudit
 class QIntegerMassFormula : Prop where
   holds : True
 
-theorem wigner_coefficient_conditional [_inst : QIntegerMassFormula] : True := trivial
+def wigner_coefficient_conditional [_inst : QIntegerMassFormula] : True := trivial
 
 end QOU.BraidKnot.WignerCoefficient.ConditionalAudit

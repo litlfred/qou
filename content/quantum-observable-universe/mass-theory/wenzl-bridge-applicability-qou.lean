@@ -62,7 +62,7 @@ class MarkovTraceFamilyOneDim (R : Type*) (q z : R) where
     functor agrees with the Wenzl-bridge closed form
     `y_λ = s_{λ, r}(Q) / Σ_µ d_µ · s_{µ, r}(Q)` for `Q = q²`,
     `r` solved from `q · z = Q^r(1 - Q)/(1 - Q^r)`. -/
-theorem wenzl_bridge_applicability_qou
+def wenzl_bridge_applicability_qou
     {R : Type*} (q z : R) (n : ℕ)
     [SchurWeylSetup R q n]
     [FibreFunctorMarkovTrace R q z n]
@@ -80,7 +80,7 @@ theorem wenzl_bridge_applicability_qou
     `y_λ` weights are uniquely determined and equal the Wenzl-bridge
     formula — no fitting parameter beyond `q` and the
     `tr_M(1) = 1` normalisation. -/
-theorem y_lambda_unique_in_qou
+def y_lambda_unique_in_qou
     {R : Type*} (q z : R) (n : ℕ)
     [SchurWeylSetup R q n]
     [FibreFunctorMarkovTrace R q z n]

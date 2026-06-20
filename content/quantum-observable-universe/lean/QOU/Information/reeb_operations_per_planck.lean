@@ -77,7 +77,7 @@ $\square$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/reeb-operations-per-planck.ts
-theorem reeb_operations_per_planck [ctx : ReebOperationsPerPlanckContext] :
+def reeb_operations_per_planck [ctx : ReebOperationsPerPlanckContext] :
     (ctx.n_R = ctx.t_P ∧ ctx.t_P = ctx.q_real / (ctx.q_real - 1) ∧
      ctx.t_P = 1 / ctx.hbar_q) ∧
     (0 < ctx.hbar_q ∧ ctx.hbar_q < 1) ∧

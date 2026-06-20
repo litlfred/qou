@@ -273,7 +273,7 @@ theorem wenzl_bridge_unique (q : ℝ) :
     Jones-Markov coefficient computed directly from the linear-system
     solve to machine precision (≤ 10⁻¹⁶) across all 270 partitions
     of `n = 2, ..., 12`. -/
-theorem y_lambda_bridge_numerical_agreement : True := by
+def y_lambda_bridge_numerical_agreement : True := by
   trivial  -- Empirical witness:
            -- gb-filtration-gauge-invariance.witness.json (n ≤ 9)
            -- y-lambda-wenzl-bridge-symbolic-witness.json (n ≤ 12)

@@ -61,7 +61,7 @@ substrate perturbation $\delta q$.  Then:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/observation-energy.ts
-theorem observation_energy [ctx : ObservationEnergyContext] :
+noncomputable def observation_energy [ctx : ObservationEnergyContext] :
     (ctx.hbar (ctx.q + ctx.δq) - ctx.hbar ctx.q =
        ctx.δq / (ctx.q * (ctx.q + ctx.δq)) ∧
      0 < ctx.δq / (ctx.q * (ctx.q + ctx.δq))) ∧

@@ -59,7 +59,7 @@ structure QOUCanonicalAction (C : Type u) [CategoryTheory.Category.{v} C]
     structure into the Frobenius–Ricci scalar (gravity) and the
     q-Yang–Mills density (gauge). -/
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
-theorem qou_canonical_action_dirac_sq
+noncomputable def qou_canonical_action_dirac_sq
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C)
@@ -76,7 +76,7 @@ theorem qou_canonical_action_dirac_sq
     ambiguity is a single scalar λ ∈ R×. -/
 -- Ref: [manuscript] §2, Proposition: Canonical action
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
-theorem qou_canonical_action_unique_up_to_scalar
+noncomputable def qou_canonical_action_unique_up_to_scalar
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C)

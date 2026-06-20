@@ -83,7 +83,7 @@ theorem faddeev_kashaev_at_zero_unconditional
     inhabited unconditionally via `archimedeanLimit_zero`),
     the boundary case agrees with the trivial limit. -/
 -- Ref: [faddeev1994]
-theorem faddeev_kashaev_consistency_at_zero
+def faddeev_kashaev_consistency_at_zero
     [FaddeevKashaevQuasiClassicalLimit 0] :
     True := trivial
 

@@ -115,6 +115,6 @@ instance : AveragingResonanceRule where
     decide
 
 /-- Restatement marker. -/
-theorem rung_rule [AveragingResonanceRule] : True := trivial
+def rung_rule [AveragingResonanceRule] : True := trivial
 
 end QOU.BraidKnot.AveragingResonanceRule

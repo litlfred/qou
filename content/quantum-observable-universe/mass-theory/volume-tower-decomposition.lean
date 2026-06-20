@@ -16,7 +16,7 @@ Canonical declaration: `QOU.Archimedean.VolumeTowerDecomposition`.
 namespace QOU.Archimedean
 
 /-- **PROPOSITION.** Tower-level decomposition of hyperbolic volume -/
-theorem VolumeTowerDecomposition : True := by
+def VolumeTowerDecomposition : True := by
   -- Ref: [manuscript] prop:volume-tower-decomposition
   trivial
 

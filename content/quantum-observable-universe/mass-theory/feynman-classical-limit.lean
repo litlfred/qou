@@ -36,6 +36,6 @@ namespace QOU.FeynmanClassicalLimit.ConditionalAudit
 class ClassicalLimitStpart : Prop where
   holds : True
 
-theorem feynman_classical_limit_g3_conditional [_inst : ClassicalLimitStpart] : True := trivial
+def feynman_classical_limit_g3_conditional [_inst : ClassicalLimitStpart] : True := trivial
 
 end QOU.FeynmanClassicalLimit.ConditionalAudit

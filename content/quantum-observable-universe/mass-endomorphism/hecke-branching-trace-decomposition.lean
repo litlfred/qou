@@ -45,7 +45,7 @@ class HeckeBranchingTraceDecomposition (q : ℝ) where
 /-- Restatement marker: `branch_trace` is the proposition
     `prop:hecke-branching-trace-decomposition` named in the .ts manifest.
     Conditional on the class above per §3b-cond. -/
-theorem branch_trace {q : ℝ} [HeckeBranchingTraceDecomposition q] : True := by
+def branch_trace {q : ℝ} [HeckeBranchingTraceDecomposition q] : True := by
   -- Ref: [wenzl1988] semisimplicity of H_n(q) in the Wenzl-positivity regime
   -- Ref: [ram1991] Ram's Frobenius character formula for Hecke algebras (the explicit Murnaghan–Nakayama-type rule for tr A^λ_{μν})
   -- Ref: [hoefsmit1974] Hoefsmit seminormal basis

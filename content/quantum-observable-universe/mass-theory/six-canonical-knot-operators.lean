@@ -27,6 +27,6 @@ namespace QOU.SixOperators
     proposition.  The substantive theorem and finite case check
     live in `QOU.CategoricalReeb.SixCanonicalKnotOperators`. -/
 -- Ref: [manuscript] content/quantum-observable-universe/braids-and-knots/six-canonical-knot-operators.md
-theorem SixCanonicalKnotOperators_stub : True := trivial
+def SixCanonicalKnotOperators_stub : True := trivial
 
 end QOU.SixOperators

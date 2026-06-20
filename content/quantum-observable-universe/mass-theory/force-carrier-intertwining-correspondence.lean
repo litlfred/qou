@@ -38,7 +38,7 @@ For now this is a stated proposition with computational backing.
 -- Ref: [manuscript] §round-18 of conj:e-hartree-categorical-derivation
 sorry
 -/
-theorem force_carrier_intertwining_correspondence
+def force_carrier_intertwining_correspondence
     (n p q : ℕ) (hp : p ≤ n) (hq : Nat.gcd p q = 1) :
     True := by
   trivial

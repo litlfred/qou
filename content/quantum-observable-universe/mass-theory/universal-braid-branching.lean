@@ -55,7 +55,7 @@ theorem universal_braid_branching (q : ℝ) (hq : q > 1)
 /-- The Chebyshev identity for traces of SL(2) powers:
     tr(M³) = t³ - 3t where t = tr(M).
     Used to derive the Borromean character from the figure-eight. -/
-theorem chebyshev_sl2_cube (t : ℝ) :
+noncomputable def chebyshev_sl2_cube (t : ℝ) :
     -- For M ∈ SL(2) with tr(M) = t:
     -- M satisfies Cayley-Hamilton: M² = t·M - I
     -- So M³ = t·M² - M = t(tM-I) - M = (t²-1)M - tI

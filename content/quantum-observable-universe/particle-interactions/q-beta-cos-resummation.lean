@@ -192,6 +192,6 @@ namespace QOU.ParticleInteractions.QBetaCos.ConditionalAudit
 class BorromeanQuark : Prop where
   holds : True
 
-theorem q_beta_cos_conditional [_inst : BorromeanQuark] : True := trivial
+def q_beta_cos_conditional [_inst : BorromeanQuark] : True := trivial
 
 end QOU.ParticleInteractions.QBetaCos.ConditionalAudit

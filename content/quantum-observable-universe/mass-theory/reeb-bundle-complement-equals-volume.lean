@@ -24,6 +24,6 @@ namespace QOU.ReebBundleComplementEqualsVolume
     file documents the Reeb-bundle framing of the same
     equality. -/
 -- Ref: [manuscript] content/quantum-observable-universe/braids-and-knots/reeb-bundle-complement-equals-volume.md
-theorem ReebBundleComplementEqualsVolume_stub : True := trivial
+def ReebBundleComplementEqualsVolume_stub : True := trivial
 
 end QOU.ReebBundleComplementEqualsVolume

@@ -54,7 +54,7 @@ theorem garside_crossing_count (A : ℕ) (_hA : 2 ≤ A) :
 
 /-- The typed Garside element has the standard Garside element Δ_A
     as its leading term (highest degree-lex word). -/
-theorem typed_garside_leading_term
+def typed_garside_leading_term
     (ord : NuclearOrdering) (hlen : 2 ≤ ord.length) :
     True := by  -- placeholder for the statement about leading term
   -- Ref: [manuscript] Definition def:typed-garside-element
@@ -65,7 +65,7 @@ theorem typed_garside_leading_term
 /-- For the pure proton ordering [p, p, ..., p], all crossings are pp type
     with d = 0, so the typed Garside element equals the standard Garside
     element Δ_A. -/
-theorem pure_proton_garside_is_standard
+def pure_proton_garside_is_standard
     (A : ℕ) (hA : 2 ≤ A) :
     True := by  -- placeholder; conclusion is the literal `True`,
                  -- pending substantive Garside infrastructure.
