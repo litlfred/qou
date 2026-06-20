@@ -125,7 +125,8 @@ def main() -> int:
     # Tolerance is f64-limited: trace_weights_n returns f64-precision weights,
     # so the residual floors at ~1e-15 even though chi^lambda is full MPFR.
     lift_ok = resid < mp.mpf("1e-12")
-    assert lift_ok, "lift self-check FAILED: tr_5 != tr_3"
+    if not lift_ok:
+        raise RuntimeError(f"lift self-check FAILED: tr_5 != tr_3 (residual {resid})")
 
     # ---- operator-valued branching: muon (3,2) vs electron (3,1,1) ----
     ymu, cmu = blocks[(3, 2)]

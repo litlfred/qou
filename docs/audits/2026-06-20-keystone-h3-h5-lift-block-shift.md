@@ -79,7 +79,7 @@ lift re-derives the Borromean invariant, not a re-normalization.
 
 **H₅ block-resolved contributions of the lifted Borromean:**
 
-| λ ⊢ 5 | dim Sᵏ | y_λ⁽⁵⁾ | χ^λ(β) | y·χ |
+| λ ⊢ 5 | dim S^λ | y_λ⁽⁵⁾ | χ^λ(β) | y·χ |
 |---|---|---|---|---|
 | (5) | 1 | 0.118148 | 1.00000 | 0.118148 |
 | (4,1) | 4 | 0.109379 | 3.99419 | 0.436878 |
