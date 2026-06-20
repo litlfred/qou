@@ -61,6 +61,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import M_MU_MEV_VALIDATION  # noqa: E402 (codata sweep)
 del _sys, _Path, _bridge
 
 import sys
@@ -173,7 +174,7 @@ def main():
     # ── 5. Numerical verification ───────────────────────────────
     print()
     q0 = mp.mpf(Q_50_DIGIT_STR)
-    m_mu = mp.mpf("105.6583755")
+    m_mu = mp.mpf(M_MU_MEV_VALIDATION)
     m_e = mp.mpf("0.51099895")
     h0 = q0 - 1/q0
     trM = abs((4 + h0**2 - 3*h0**4 - h0**6) / (h0**2 + 4))

@@ -39,6 +39,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
@@ -46,8 +47,8 @@ COMPUTE_DIR = HERE.parent
 Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
 
 M_E_MEV = mp.mpf("0.51099895069")
-M_P_MEV = mp.mpf("938.27208816")
-M_N_MEV = mp.mpf("939.56542052")
+M_P_MEV = mp.mpf(M_P_MEV_VALIDATION)  # CODATA validation (codata_constants registry)
+M_N_MEV = mp.mpf(M_N_MEV_VALIDATION)  # CODATA validation (codata_constants registry)
 M_HE3_MEV = mp.mpf("2808.39160743")
 VOL_BORROMEAN_8G = mp.mpf("7.32772475341775212043682811945907288619319499425")
 VOL_PHASE4_Z2 = mp.mpf("12.554")

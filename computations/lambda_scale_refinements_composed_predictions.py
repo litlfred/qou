@@ -51,6 +51,7 @@ Witness: lambda-scale-refinements-composed-predictions.witness.json
 """
 from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import sys
 from pathlib import Path
 
@@ -80,8 +81,8 @@ def main() -> int:
 
     # CODATA values (for comparison only — never injected as substrate)
     M_E_CODATA = M_E_MEV  # CAL-1; only true calibration input here  # from codata_constants
-    M_P_CODATA = mp.mpf("938.27208816")
-    M_N_CODATA = mp.mpf("939.56542052")
+    M_P_CODATA = mp.mpf(M_P_MEV_VALIDATION)
+    M_N_CODATA = mp.mpf(M_N_MEV_VALIDATION)
     M_AVG_CODATA = (M_P_CODATA + M_N_CODATA) / 2
 
     # Layer-1 scale-factor candidates

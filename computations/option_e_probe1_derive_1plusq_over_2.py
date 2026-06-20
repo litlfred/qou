@@ -31,6 +31,7 @@ Output: option-e-probe1-derive-1plusq-over-2.witness.json
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_PI_PM_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import json
 import math
 import sys
@@ -46,7 +47,7 @@ from q_parameter import q_at, q_muon_at  # noqa: E402
 DPS = 50
 mp.mp.dps = DPS
 
-M_PI_MEV = mp.mpf("139.57039")           # CAL-3 pion mass (input)
+M_PI_MEV = mp.mpf(M_PI_PM_MEV_VALIDATION)           # CAL-3 pion mass (input)
 STALE_Q0 = mp.mpf("1.1097090249")        # the v9 hardcoded muon-anchor literal
 
 # AME binding energies (MeV) — same source as the v9 script.
