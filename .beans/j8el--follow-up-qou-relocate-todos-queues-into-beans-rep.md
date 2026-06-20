@@ -1,11 +1,11 @@
 ---
 # j8el
 title: 'FOLLOW-UP (qou): relocate todos/ queues into .beans/ + repoint readers'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-06-19T17:44:29Z
-updated_at: 2026-06-19T17:44:29Z
+updated_at: 2026-06-20T00:53:48Z
 parent: 5gw5
 ---
 
