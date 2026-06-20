@@ -64,16 +64,18 @@ COMPUTE_DIR = HERE.parent
 # Canonical 50-dps q₀
 Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 
-# CODATA 2022 nucleon + light-atom masses (MeV).  These mirror
-# `substrate/codata_constants.py` validation values; pinned here as
-# constants so the probe is self-contained.
-M_E_MEV = mp.mpf("0.51099895069")
-M_P_MEV = mp.mpf(M_P_MEV_VALIDATION)
-M_N_MEV = mp.mpf(M_N_MEV_VALIDATION)
-M_D_MEV = mp.mpf(M_D_MEV_VALIDATION)
-M_T_MEV = mp.mpf(M_T_MEV_VALIDATION)
-M_HE3_MEV = mp.mpf("2808.39160743")
-M_HE4_MEV = mp.mpf("3727.37941")
+# CODATA-2022 / AME-2020 nucleon + light-atom masses (MeV), routed
+# through the canonical registry (I9 — no hardcoded literals). See
+# substrate/codata_constants.py + audits/hardcoded_literal_audit.py.
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    M_P_MEV_VALIDATION as M_P_MEV,
+    M_N_MEV_VALIDATION as M_N_MEV,
+    M_D_MEV_VALIDATION as M_D_MEV,
+    M_T_MEV_VALIDATION as M_T_MEV,
+    M_HE3_MEV_VALIDATION as M_HE3_MEV,
+    M_HE4_MEV_VALIDATION as M_HE4_MEV,
+)
 
 # Per-knot hyperbolic volumes.  p/n: Borromean 8·G; D/T: Phase-4 JSJ
 # Z=1 value 12.776; ³He/⁴He: Phase-4 JSJ Z=2 value 12.554.
