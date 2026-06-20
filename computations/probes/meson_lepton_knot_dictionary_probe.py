@@ -34,18 +34,32 @@ from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
 from mpmath import mp, mpf, fabs
 
+# CODATA/PDG masses that are in the canonical registry routed through
+# codata_constants (I9 — no hardcoded literals). Quark + remaining meson
+# masses below are PDG-only (not registered) and stay as literals.
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    M_MU_MEV_VALIDATION,
+    M_PI_PM_MEV_VALIDATION,
+    M_PI_0_MEV_VALIDATION,
+    M_K_PM_MEV_VALIDATION,
+    M_K_0_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
+    M_N_MEV_VALIDATION,
+)
+
 mp.dps = 50
 
 # ---------- substrate ----------
 q0 = mpf(Q_50_DIGIT_STR)
 h_q = q0 - 1/q0
-m_e_MeV = mpf('0.51099895069')  # CODATA 2022
+m_e_MeV = M_E_MEV  # CODATA 2022 (canonical registry)
 
 # ---------- PDG 2024 masses (MeV) ----------
 PDG = {
     # leptons
-    'e':     mpf('0.51099895069'),
-    'mu':    mpf(M_MU_MEV_VALIDATION),
+    'e':     M_E_MEV,
+    'mu':    M_MU_MEV_VALIDATION,
     'tau':   mpf('1776.86'),
     # light quarks (MS-bar at 2 GeV)
     'u':     mpf('2.16'),
@@ -55,17 +69,17 @@ PDG = {
     'b':     mpf('4180'),
     't':     mpf('172760'),
     # light mesons
-    'pi_pm': mpf(M_PI_PM_MEV_VALIDATION),
-    'pi_0':  mpf('134.9768'),
-    'K_pm':  mpf(M_K_PM_MEV_VALIDATION),
-    'K_0':   mpf('497.611'),
+    'pi_pm': M_PI_PM_MEV_VALIDATION,
+    'pi_0':  M_PI_0_MEV_VALIDATION,
+    'K_pm':  M_K_PM_MEV_VALIDATION,
+    'K_0':   M_K_0_MEV_VALIDATION,
     'eta':   mpf('547.862'),
     'rho':   mpf('775.26'),
     'omega': mpf('782.66'),
     'phi':   mpf('1019.461'),
     # nucleons
-    'p':     mpf(M_P_MEV_VALIDATION),
-    'n':     mpf(M_N_MEV_VALIDATION),
+    'p':     M_P_MEV_VALIDATION,
+    'n':     M_N_MEV_VALIDATION,
 }
 
 # ---------- H_2(q) Hecke algebra: sigma_1^n normal form ----------

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-20T11:47:50.223328+00:00",
-  "commitSha": "6ecb0fd1eddc3e25c56d4284aa8fe66690a3839d",
+  "computedAt": "2026-06-20T11:52:19.241763+00:00",
+  "commitSha": "4afcf0ced96694ec61e0d6572dd1922c79a305c2",
   "assertions": [
     {
       "name": "no_hardcoded_registry_matches",
@@ -37,13 +37,13 @@
     "registry_constants_in_scope": 26,
     "relative_error_tolerance": "1e-6",
     "magnitude_window_MeV": "[0.0001, 1e6]",
-    "total_scripts_with_hits": 264,
-    "i9_violation_count": 249,
+    "total_scripts_with_hits": 263,
+    "i9_violation_count": 248,
     "ok_acknowledged_anchor_count": 15
   },
   "data": {
     "by_result": {
-      "i9_violation": 249,
+      "i9_violation": 248,
       "ok_acknowledged_anchor": 15
     },
     "rows": [
@@ -341,87 +341,6 @@
             "registry_value": "0.78233341",
             "rel_err": "0.0",
             "snippet": "\"observed_MeV\": \"0.78233341\","
-          }
-        ],
-        "has_class_a_banner": false,
-        "result": "i9_violation"
-      },
-      {
-        "path": "computations/probes/meson_lepton_knot_dictionary_probe.py",
-        "imported_codata_names": [],
-        "hit_count": 9,
-        "hits": [
-          {
-            "line_number": 26,
-            "literal": "0.51099895069",
-            "matches_constant": "M_E_MEV",
-            "registry_value": "0.51099895069",
-            "rel_err": "0.0",
-            "snippet": "m_e_MeV = mpf('0.51099895069')"
-          },
-          {
-            "line_number": 31,
-            "literal": "0.51099895069",
-            "matches_constant": "M_E_MEV",
-            "registry_value": "0.51099895069",
-            "rel_err": "0.0",
-            "snippet": "'e':     mpf('0.51099895069'),"
-          },
-          {
-            "line_number": 32,
-            "literal": "105.6583755",
-            "matches_constant": "M_MU_MEV_VALIDATION",
-            "registry_value": "105.6583755",
-            "rel_err": "0.0",
-            "snippet": "'mu':    mpf('105.6583755'),"
-          },
-          {
-            "line_number": 42,
-            "literal": "139.57039",
-            "matches_constant": "M_PI_PM_MEV_VALIDATION",
-            "registry_value": "139.57039",
-            "rel_err": "0.0",
-            "snippet": "'pi_pm': mpf('139.57039'),"
-          },
-          {
-            "line_number": 43,
-            "literal": "134.9768",
-            "matches_constant": "M_PI_0_MEV_VALIDATION",
-            "registry_value": "134.9768",
-            "rel_err": "0.0",
-            "snippet": "'pi_0':  mpf('134.9768'),"
-          },
-          {
-            "line_number": 44,
-            "literal": "493.677",
-            "matches_constant": "M_K_PM_MEV_VALIDATION",
-            "registry_value": "493.677",
-            "rel_err": "0.0",
-            "snippet": "'K_pm':  mpf('493.677'),"
-          },
-          {
-            "line_number": 45,
-            "literal": "497.611",
-            "matches_constant": "M_K_0_MEV_VALIDATION",
-            "registry_value": "497.611",
-            "rel_err": "0.0",
-            "snippet": "'K_0':   mpf('497.611'),"
-          },
-          {
-            "line_number": 51,
-            "literal": "938.27208816",
-            "matches_constant": "M_P_MEV_VALIDATION",
-            "registry_value": "938.27208816",
-            "rel_err": "0.0",
-            "snippet": "'p':     mpf('938.27208816'),"
-          },
-          {
-            "line_number": 52,
-            "literal": "939.56542052",
-            "matches_constant": "M_N_MEV_VALIDATION",
-            "registry_value": "939.56542052",
-            "rel_err": "0.0",
-            "snippet": "'n':     mpf('939.56542052'),"
           }
         ],
         "has_class_a_banner": false,
