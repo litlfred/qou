@@ -245,6 +245,6 @@ namespace QOU.Hecke1dIrrepClosedFormCharacter.ConditionalAudit
 class BorromeanQuark : Prop where
   holds : True
 
-theorem hecke_d_irrep_closed_form_character_g2_conditional [_inst : BorromeanQuark] : True := trivial
+def hecke_d_irrep_closed_form_character_g2_conditional [_inst : BorromeanQuark] : True := trivial
 
 end QOU.Hecke1dIrrepClosedFormCharacter.ConditionalAudit

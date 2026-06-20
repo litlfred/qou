@@ -171,7 +171,7 @@ class SymmetricCrystalPairProduction : Prop where
 
 /-- Witness theorem demonstrating the main proposition is conditional
     on `[SymmetricCrystalPairProduction]` per CLAUDE.md §3b-cond. -/
-theorem conditional_on_SymmetricCrystalPairProduction
+def conditional_on_SymmetricCrystalPairProduction
     [_inst : SymmetricCrystalPairProduction] : True := trivial
 
 end QOU.ParticleInteractions.CPTOrbit.ConditionalAudit

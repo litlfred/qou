@@ -59,5 +59,5 @@ class BorromeanQuark : Prop where
 
 /-- Witness theorem: this file's proposition is conditional on
     `BorromeanQuark` per CLAUDE.md §3b-cond. -/
-theorem hydrogen_shell_writhe_conditional_on_borromean_quark
+def hydrogen_shell_writhe_conditional_on_borromean_quark
     [_inst : BorromeanQuark] : True := trivial

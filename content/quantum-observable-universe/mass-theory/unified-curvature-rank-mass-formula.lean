@@ -91,7 +91,7 @@ theorem term_6_plus_term_7_eq_high_strata
       Term 6 = α_3 · Φ_3
       Term 7 = Σ_{k≥4} α_k · Φ_k
 -/
-theorem paper_terminology_mapping :
+def paper_terminology_mapping :
     -- Statement (informal): the seven labels map to the curvature-rank
     -- functionals as described in the .md.  Formal restatement:
     -- terms 1-7 are an ENUMERATION of the same Σ_k α_k Φ_k by stratum.

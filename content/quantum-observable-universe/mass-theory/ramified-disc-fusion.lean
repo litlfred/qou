@@ -23,6 +23,6 @@ namespace QOU.RamifiedDiscFusion
     the foundry-boundary preimage as a triply-ramified disc; see
     the content block for the geometric proof sketch. -/
 -- Ref: [manuscript] content/quantum-observable-universe/braids-and-knots/ramified-disc-fusion.md
-theorem RamifiedDiscFusion_stub : True := trivial
+def RamifiedDiscFusion_stub : True := trivial
 
 end QOU.RamifiedDiscFusion

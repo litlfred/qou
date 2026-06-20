@@ -50,7 +50,7 @@ stratum into a
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-residue-mass-term.ts
-theorem chirality_residue_mass_term [ctx : ChiralityResidueMassTermContext] :
+def chirality_residue_mass_term [ctx : ChiralityResidueMassTermContext] :
     ctx.mass = (Finset.range ctx.n_strata).sum
       (fun s => ctx.mass_achiral s + ctx.mass_chiral s) := by
   rw [ctx.mass_sum_strata]

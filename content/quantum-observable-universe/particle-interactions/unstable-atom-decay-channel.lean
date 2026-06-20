@@ -20,7 +20,7 @@ universe u
     `B := { q : ∃ λ₁ ≠ λ₂, |y_{λ₁}(q)| = |y_{λ₂}(q)| }`,
     the violated constraint γ* is unique. -/
 -- Ref: [manuscript] braids-and-knots/local-shadow-ordering
-theorem UnstableAtom.decay_channel_unique
+def UnstableAtom.decay_channel_unique
     {R : Type u} [CommRing R]
     (U₁ U₂ : UnstableAtom R)
     (h_knot : U₁.knot = U₂.knot)

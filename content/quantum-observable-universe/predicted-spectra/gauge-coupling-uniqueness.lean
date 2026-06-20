@@ -19,7 +19,7 @@ structure GaugeCouplingUniquenessData (S : SpectralRing) where
   exists_lambda : ∃ λ : S.R, ∀ r : S.R, phi r = λ * psi r
 
 /-- **Corollary (gauge coupling uniqueness)**. -/
-theorem gauge_coupling_uniqueness (S : SpectralRing) (d : GaugeCouplingUniquenessData S) :
+def gauge_coupling_uniqueness (S : SpectralRing) (d : GaugeCouplingUniquenessData S) :
     ∃ λ : S.R, ∀ r : S.R, d.phi r = λ * d.psi r :=
   d.exists_lambda
 

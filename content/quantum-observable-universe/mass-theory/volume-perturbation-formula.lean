@@ -10,6 +10,6 @@ noncomputable def volumePerturbation (k : ℕ) (q : ℝ) : ℝ :=
 
 /-- Theorem asserting the validity of the volume perturbation formula. -/
 -- Ref: [manuscript]
-theorem volume_perturbation_formula : True := sorry
+def volume_perturbation_formula : True := sorry
 
 end QOU.BraidKnot

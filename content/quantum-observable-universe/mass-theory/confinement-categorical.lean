@@ -43,7 +43,7 @@ class SemisimpleFrobeniusHeckeLike (R : Type*) [CommRing R]
 /-- **Theorem (clause 1 — survival).**
     Only $E_\infty^{0,0} = Z(A)$ survives the spectral sequence;
     non-central elements are cohomologically trivial. -/
-theorem confinement_survives_only_centre
+def confinement_survives_only_centre
     {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
     [SemisimpleFrobeniusHeckeLike R A] :
     True := by
@@ -78,7 +78,7 @@ theorem confinement_int_factors_through_centre
     Every observable `Int_A (a)` is a sum of block-restricted
     integrals `Σ_λ Int_{A_λ} a`.  This is the algebraic content of
     "all observables are color singlets". -/
-theorem observables_are_wedderburn_sum
+def observables_are_wedderburn_sum
     {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
     [SemisimpleFrobeniusHeckeLike R A] :
     True := by

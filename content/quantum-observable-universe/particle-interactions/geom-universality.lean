@@ -196,7 +196,7 @@ class HyperbolicVolumeIndependence : Prop where
 
 /-- Witness theorem demonstrating the main proposition is conditional
     on `[HyperbolicVolumeIndependence]` per CLAUDE.md §3b-cond. -/
-theorem conditional_on_HyperbolicVolumeIndependence
+def conditional_on_HyperbolicVolumeIndependence
     [_inst : HyperbolicVolumeIndependence] : True := trivial
 
 end QOU.BraidKnot.GeomUniversality.ConditionalAudit

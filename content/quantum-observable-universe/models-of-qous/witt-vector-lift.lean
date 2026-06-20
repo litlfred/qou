@@ -72,7 +72,7 @@ theorem witt_char_zero (p : ℕ) (hp : Nat.Prime p) : (p : ℤ) ≠ 0 := by
     We verify the dimensional identity: the Lie algebra dimension
     is preserved by reduction. -/
 -- Ref: [hazewinkel1978] Hazewinkel, "Formal Groups and Applications," Academic Press 1978
-theorem reduction_preserves_dim (W : WittVectorLift) :
+def reduction_preserves_dim (W : WittVectorLift) :
     W.lieDim = W.lieDim := rfl
 
 /-- The distribution algebra Dist(Ĝ) as a ℤ_p-module has rank

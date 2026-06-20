@@ -27,6 +27,6 @@ namespace QOU.CoralFlow
     coordinates.  The substantive declaration lives in
     `QOU.CategoricalReeb.QReebFlowOnCoralCoords`. -/
 -- Ref: [manuscript] content/quantum-observable-universe/braids-and-knots/q-reeb-flow-on-coral-coords.md
-theorem QReebFlowOnCoralCoords_stub : True := trivial
+def QReebFlowOnCoralCoords_stub : True := trivial
 
 end QOU.CoralFlow

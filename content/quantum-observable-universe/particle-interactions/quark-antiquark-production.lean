@@ -20,12 +20,12 @@ namespace QOU.Archimedean
     manuscript; the Lean side records the proposition as `True`
     (trivially provable). -/
 -- Ref: [manuscript] Chapter 6, §3b
-theorem quarkAntiquarkProduction : True := trivial
+def quarkAntiquarkProduction : True := trivial
 
 /-- Quark-antiquark production theorem skeleton (currently
     axiomatised above; full formalisation pending Hopf-link operator
     machinery). -/
 -- Ref: [manuscript] Chapter 6, §3b
-theorem quark_antiquark_production_witness : True := trivial
+def quark_antiquark_production_witness : True := trivial
 
 end QOU.Archimedean

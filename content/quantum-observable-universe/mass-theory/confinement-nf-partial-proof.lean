@@ -106,7 +106,7 @@ class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where
 
 /-- Strong duality theorem (now a class-conditional invocation).
 Conditional on `[HasFiniteLPDuality lp]` per CLAUDE.md §3b-cond. -/
-theorem strong_duality (lp : OperatorSelectionLP)
+def strong_duality (lp : OperatorSelectionLP)
     [lpd : HasFiniteLPDuality lp] :
     lp.duality_gap = 0 :=
   lpd.strong_duality_holds

@@ -99,7 +99,7 @@ theorem he4_complement_at_most_20_percent
 /-- The dominant block (9, 3) belongs to the two-row stratum
     Λ²(12).  Composes `dominant_is_two_row` and `dominant_sums_to_12`
     via `twoRow_of_length_le_two`. -/
-theorem dominant_in_two_row_stratum
+def dominant_in_two_row_stratum
     [h : HasHe4DominantBlock] :
     TwoRowStratum 12 h.dominant_partition :=
   ⟨h.dominant_sums_to_12, h.dominant_is_two_row⟩

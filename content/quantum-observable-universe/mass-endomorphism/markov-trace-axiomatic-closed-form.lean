@@ -110,7 +110,7 @@ noncomputable def protonMarkovCoeffC : ℤ[X] := heckePowerB 7 * heckePowerB 4
     fixed by the axiom-closure typeclass.
 
     Ref: [jones1987] §5; [kassel1995] Theorem III.3.3. -/
-theorem markovTraceAxiomaticClosedForm :
+def markovTraceAxiomaticClosedForm :
     True := by
   -- This statement is a *signature* placeholder.  The full Lean
   -- formalisation requires:

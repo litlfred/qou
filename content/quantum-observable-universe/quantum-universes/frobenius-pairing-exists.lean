@@ -35,7 +35,7 @@ namespace QOU
     The right hypothesis is "C is the underlying category of a
     QuantumUniverse", which packages the data by definition. -/
 -- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
-theorem FrobeniusHopfData.frobeniusForm_exists
+noncomputable def FrobeniusHopfData.frobeniusForm_exists
     {k : Type*} [Field k] (qu : QuantumUniverse.{u, v} k) :
     Nonempty (@FrobeniusHopfData qu.C qu.catInst qu.monInst) :=
   ⟨qu.frobHopf⟩

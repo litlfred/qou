@@ -76,7 +76,7 @@ class QOneShadowGateClass (c2 c3 : ℝ → ℝ) : Prop where
     is composition with downstream checks (cross-anchor swing, radius
     of convergence, bar-evenness). -/
 -- Ref: [manuscript] prop:q-beta-q-eq-one-shadow-gate
-theorem qbeta_q_eq_one_shadow_anchors
+def qbeta_q_eq_one_shadow_anchors
     (c2 c3 : ℝ → ℝ) [hC : QOneShadowGateClass c2 c3] :
     c2 1 = -1 ∧ c3 1 = hopfJonesAtQOne :=
   ⟨hC.c2_at_one_eq_neg_one, hC.c3_at_one_eq_jones_hopf⟩

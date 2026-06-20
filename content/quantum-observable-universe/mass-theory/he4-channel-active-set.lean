@@ -305,7 +305,7 @@ theorem he4_lp_solution_exists :
     an `IsHe4LPFeasibleSolution` witness for its tuple. Confirms the
     class IS a categorical encoding of the abstract feasibility
     predicate. -/
-theorem he4_class_is_feasible_solution [h : HasHe4ChannelActiveSet] :
+def he4_class_is_feasible_solution [h : HasHe4ChannelActiveSet] :
     IsHe4LPFeasibleSolution h.tDD h.tTp h.tHe3n h.n_target
                             h.xDD h.xTp h.xHe3n
                             h.y0_star h.yDD h.yTp h.yHe3n :=

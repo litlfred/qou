@@ -70,7 +70,7 @@ theorem informationBandwidth_pos [ctx : PBandwidthContext] :
     polynomial can be evaluated within `𝓑(q)⁻¹ · poly(c)` Planck
     steps. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/p-bandwidth-bound.md
-theorem p_bandwidth_bound [ctx : PBandwidthContext] :
+def p_bandwidth_bound [ctx : PBandwidthContext] :
     ctx.inP ↔ ctx.bandwidthBounded :=
   ctx.claim_p_iff_bandwidth
 

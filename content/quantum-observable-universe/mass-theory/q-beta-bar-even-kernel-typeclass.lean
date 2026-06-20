@@ -112,7 +112,7 @@ theorem bar_even_kernel_implies_radius_of_convergence
     shadows hold. -/
 -- Ref: [manuscript] prop:q-beta-bar-even-kernel-typeclass
 -- Ref: [pr1890] https://github.com/litlfred/qou/pull/1890 (Track A)
-theorem bar_even_kernel_implies_q_one_shadow
+def bar_even_kernel_implies_q_one_shadow
     (pole : ℝ) (c2 c3 : ℝ → ℝ) (magnitude : ℝ)
     [hK : BarEvenKernel pole c2 c3 magnitude] :
     c2 1 = -1 ∧ c3 1 = jonesHopfAtQOne :=

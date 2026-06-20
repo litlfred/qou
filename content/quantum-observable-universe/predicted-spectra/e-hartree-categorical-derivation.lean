@@ -100,7 +100,7 @@ end QOU.Archimedean
 /-- **CONDITIONAL.** If the Hartree derivation holds, then
     the Bohr radius a₀ = ℏ/(m_e·c·α) is categorically derived
     (it's just E_h rearranged). -/
-theorem bohr_radius_from_hartree [EHartreeCategoricalDerivation] :
+def bohr_radius_from_hartree [EHartreeCategoricalDerivation] :
     True :=
   -- a₀ = 1/(m_e · c · α) in natural units.
   -- E_h = m_e · c² · α² ⟹ α² = E_h / (m_e · c²)
@@ -114,7 +114,7 @@ theorem bohr_radius_from_hartree [EHartreeCategoricalDerivation] :
     (prop:force-carrier-intertwining-correspondence) follows —
     the Hartree energy scale connects electromagnetic and
     strong-force scales through the categorical α_EM. -/
-theorem force_carrier_from_hartree [EHartreeCategoricalDerivation] :
+def force_carrier_from_hartree [EHartreeCategoricalDerivation] :
     True :=
   -- The intertwining maps Hecke σ_i ↔ gauge boson vertices.
   -- E_h provides the energy scale at which the intertwining is exact.

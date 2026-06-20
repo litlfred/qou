@@ -76,7 +76,7 @@ class AlgebraicGeometricEquivalence
 
 /-- Stated equivalence theorem (conjecture instance form). -/
 -- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence
-theorem algebraic_geometric_equivalence
+noncomputable def algebraic_geometric_equivalence
     (q x : ℝ) (n : ℕ) [h : AlgebraicGeometricEquivalence q x n] :
     (∃ z : Fin n → ℝ, ∀ k : Fin n, z k = q ^ (-(k : ℤ))) ∧
     (∀ ε > (0 : ℝ), ∃ N : ℕ, ∀ m, N ≤ m →

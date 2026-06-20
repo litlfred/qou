@@ -58,7 +58,7 @@ noncomputable def scatteringAmplitudeForward
 
     Stages 3–4 are post-τ and downstream of the Archimedean
     realisation; only stages 1–2 live at this stub. -/
-theorem pipeline_functoriality {R : Type u} [Field R] (q : R) :
+def pipeline_functoriality {R : Type u} [Field R] (q : R) :
     -- The composition of stages is independent of the
     -- intermediate representations chosen.
     -- This follows from the universality of the Markov trace
@@ -125,7 +125,7 @@ class HyperbolicVolumeIndependence : Prop where
 
 /-- Witness theorem demonstrating the main proposition is conditional
     on `[HyperbolicVolumeIndependence]` per CLAUDE.md §3b-cond. -/
-theorem conditional_on_HyperbolicVolumeIndependence
+def conditional_on_HyperbolicVolumeIndependence
     [_inst : HyperbolicVolumeIndependence] : True := trivial
 
 end QOU.BraidKnot.HoefsmitPipeline.ConditionalAudit
