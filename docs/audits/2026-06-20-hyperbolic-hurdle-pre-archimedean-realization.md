@@ -131,6 +131,12 @@ $$
 \mathrm{cv}(2{+}m)=\Bigl(\textstyle\prod_{j=0}^{m-1}w(2{+}j)\Bigr)\mathrm{cv}(2).
 $$
 
+Here $\mathrm{cv}(A)=\chi^\lambda_A$ and the weights $w(A)$ are scalar
+character/weight values in the *commutative* ring $R$ — the non-commutativity of
+the underlying operators $A^\lambda_{\mu\nu}(I)$ is discharged by the trace in §3
+— so the product is order-independent (the proposition holds over any
+commutative $R$).
+
 That is
 [`prop:operator-valued-combiner-convergence`](../../content/quantum-observable-universe/mass-theory/operator-valued-combiner-convergence.md):
 the addition theorem applied recursively **is** "express the multi-center
@@ -178,7 +184,7 @@ ties two programs to one open conjecture:
 | Frontier | Hecke branching | Fusion combinatorics (known) | Open payload |
 |---|---|---|---|
 | **Nucleon tower / mass** | $\mathbf{H}_{n_1}\otimes\mathbf{H}_{n_2}\hookrightarrow\mathbf{H}_{n_1+n_2}$ | LR coefficients $c^\lambda_{\mu\nu}$ | universal $A^\lambda_{\mu\nu}(I)$ at $\mathbf{H}_{9+}$ — `conj:crystal-graph-realization` |
-| **Generation + binding $P_\lambda$** | $\mathbf{H}_5\to\mathbf{H}_3$ restriction | $S_5\!\downarrow\!S_3$ multiplicities (e.g. the $(2,1)$ irrep appears with multiplicity **exactly 2** in both electron $\ell{=}1$ block $(3,1,1)$ and muon $\ell{=}2$ block $(3,2)$) | the partition→rotation map — `conj:s5-so3-fiber-action` |
+| **Generation + binding $P_\lambda$** | $\mathbf{H}_5\to\mathbf{H}_3$ restriction | $\mathbf{H}_5\!\downarrow\!\mathbf{H}_3$ multiplicities (e.g. the $(2,1)$ irrep appears with multiplicity **exactly 2** in both electron $\ell{=}1$ block $(3,1,1)$ and muon $\ell{=}2$ block $(3,2)$) | the partition→rotation map — `conj:s5-so3-fiber-action` |
 
 The second frontier is the **s5-so3 keystone**: the geometric fibre map
 $S_5\supset A_5\cong I\subset SO(3)$ realizing each partition-of-5 as an
