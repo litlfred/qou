@@ -29,3 +29,21 @@ Finding: [`docs/audits/2026-06-16-s5so3-keystone-backbone-verified.md`](../docs/
 - **Link to qkhc**: C3 confirms the q=1 χ^{(1,1,1)}(β_Bor)=1; but the c_k sign-block lead must still
   reproduce the q-holonomic argument recurrence + clear refuted-class C12 — necessary, not sufficient.
 - **No q-deformed probe run** (pyhecke_native + owner gated).
+
+## Repurpose (2026-06-16, after rebase onto +468 main commits)
+
+Rebasing surfaced that **siblings already did the backbone** in the 468 commits:
+a near-identical script `docs/audits/scripts/s5so3_branching_backbone_verify.py`,
+sorry-free Lean (`s5_to_s3_restriction_dim_consistent` `cases p <;> decide`;
+`restriction_functor_yields_h4_irrep` `native_decide`), and a sibling audit doc.
+Per owner pick (repurpose + keep C3), PR #2504 was slimmed:
+- **Deleted** my duplicate `s5so3_branching_backbone_verify.py` + witness + the
+  `2026-06-16-s5so3-keystone-backbone-verified.md` finding doc (all duplicated main).
+- **Kept** the one additive bit as `docs/audits/scripts/borromean_per_block_h4_localization.py`
+  (per-block H₃(q): χ^{(3)}=χ^{(1,1,1)}=1 ⇒ h⁴ lives **exclusively** in (2,1)); cites the
+  sibling branching script + T15 + the Lean.
+- **Fixed** the corpus contradiction: added a correction banner to the merged synthesis doc
+  `2026-06-16-mtau-and-binding-converge-on-s5so3-keystone.md` (its "functor open" framing was
+  stale — the functor is IDENTIFIED + backbone Lean-proved on main; only the q-deformed
+  closure is open).
+- Confirmed (independent cross-check, no contradiction) the sibling backbone is correct.
