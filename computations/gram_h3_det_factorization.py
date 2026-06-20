@@ -107,6 +107,75 @@ def factorize_det(G: sp.Matrix, u: sp.Symbol) -> dict:
     }
 
 
+def row_cleared_decomposition(G: sp.Matrix, u: sp.Symbol) -> dict:
+    """Row-lcm structural route for a future Lean det proof.
+
+    The brute-force Lean route — expand `(gramMatrix u).det` over the
+    *rational* entries via `Matrix.det_succ_row_zero` + `field_simp; ring`
+    — is infeasible: the cofactor expansion of a dense 6×6 exhausts the
+    `simp` heartbeat/step budget *before* `ring` is even reached (measured
+    2026-06-20: a moderate dense 6×6 polynomial det runs past 16M
+    heartbeats; the real degree-16-entry matrix past 50M / 20M steps).
+    Mathlib has no `det_fin_six`.
+
+    The viable route is *structural*: scale each row `i` by the lcm `L_i`
+    of that row's denominators so the matrix becomes polynomial-entried,
+    then the determinant identity is a polynomial `ring` goal (no
+    division). This function emits the exact data that route needs:
+
+      - `L` — the six row multipliers (lcm of each row's denominators),
+      - `entries` — the 36 cleared polynomial entries `M[i,j] = L_i·G[i,j]`,
+      - the verified identity `det(M) = -num · u^8`, where `num` is the
+        degree-44 factored numerator and `det(G) = -num/(u^10 (u²+1)^12)`.
+
+    Since `det(diag(L)·G) = (∏ L_i)·det(G)` and `∏ L_i = u^18 (u²+1)^12`,
+    we get `det(M) = -num · u^18 (u²+1)^12 / (u^10 (u²+1)^12) = -num · u^8`.
+    A future Lean proof discharges `gramMatrix_det_eq_factorization` by
+    (1) `Matrix.det` of `diag(L)·G` = `(∏L)·det G` and (2) this polynomial
+    identity — only step (2)'s 6×6 polynomial det remains open, and it is
+    far lighter than the rational expansion.
+    """
+    L = [
+        (u**2 + 1) ** 2,
+        u**2 * (u**2 + 1) ** 2,
+        u**2 * (u**2 + 1) ** 2,
+        u**4 * (u**2 + 1) ** 2,
+        u**4 * (u**2 + 1) ** 2,
+        u**6 * (u**2 + 1) ** 2,
+    ]
+    M = sp.zeros(6, 6)
+    for i in range(6):
+        for j in range(6):
+            M[i, j] = sp.expand(sp.cancel(L[i] * G[i, j]))
+    all_poly = all(
+        sp.cancel(M[i, j]).is_polynomial(u) for i in range(6) for j in range(6)
+    )
+    det_M = sp.Poly(M.det(method="berkowitz"), u)
+    num = sp.expand(
+        -(
+            (u - 1) * (u + 1) * (u**3 + u - 1) ** 5 * (u**3 + u**2 + 1) ** 5
+            * (u**6 - u**5 + u**4 - u**3 + 2 * u**2 - u + 1)
+            * (u**6 + u**5 + 2 * u**4 + u**3 + u**2 + u + 1)
+        )
+    )
+    target = sp.Poly(sp.expand(num * u**8), u)
+    matches = (det_M - target).is_zero
+    return {
+        "row_multipliers_L": [str(sp.factor(x)) for x in L],
+        "prod_L": str(sp.factor(sp.prod(L))),  # u^18 (u²+1)^12
+        "cleared_entries": [
+            [str(M[i, j]) for j in range(6)] for i in range(6)
+        ],
+        "all_entries_polynomial": bool(all_poly),
+        "det_M_degree_in_u": det_M.degree(),
+        "det_M_num_terms": len(det_M.terms()),
+        "max_entry_degree_in_u": max(
+            sp.Poly(M[i, j], u).degree() for i in range(6) for j in range(6)
+        ),
+        "det_M_equals_minus_num_times_u8": bool(matches),
+    }
+
+
 def positive_real_roots_of_numerator(
     u: sp.Symbol,
 ) -> list[tuple[str, float]]:
@@ -221,6 +290,14 @@ def main() -> int:
     for k, v in cert.items():
         print(f"  {k:<20}: {v}")
 
+    print("\nRow-cleared structural route (for a future Lean det proof):")
+    rc = row_cleared_decomposition(G, u)
+    print(f"  all cleared entries polynomial: {rc['all_entries_polynomial']}")
+    print(f"  det(M) degree {rc['det_M_degree_in_u']}, "
+          f"{rc['det_M_num_terms']} terms, max entry deg "
+          f"{rc['max_entry_degree_in_u']}")
+    print(f"  det(M) == -num·u^8 : {rc['det_M_equals_minus_num_times_u8']}")
+
     # Witness (builder already constructed at start of main)
     w.set_audit_only(
         "docs/audits/2026-05-25-gram-h3-det-second-root-correctness-finding.md",
@@ -238,6 +315,16 @@ def main() -> int:
                                        for n, r in pos_roots])
     w.add_data("numerical_sign_table", sign)
     w.add_data("positivity_certificate_for_u_gt_one", cert)
+    w.add_data("row_cleared_structural_route", rc)
+    w.add_assertion(
+        name="row_cleared_det_equals_minus_num_times_u8",
+        computed=rc["det_M_equals_minus_num_times_u8"],
+        expected=True,
+        tolerance=0,
+        source="Berkowitz det of row-lcm-cleared polynomial matrix; the "
+               "reduced (polynomial-entry) gap for a future Lean discharge "
+               "of gramMatrix_det_eq_factorization",
+    )
     w.add_assertion(
         name="numerator_has_exactly_two_positive_real_roots",
         computed=len(pos_roots),
