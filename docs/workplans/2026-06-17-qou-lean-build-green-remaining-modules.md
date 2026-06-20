@@ -7,6 +7,33 @@ repaired in #2443. This session cleared the **mechanically-fixable** ones
 **remaining hard tail** so a focused session (with a live LSP for goal states)
 starts warm.
 
+## Status (2026-06-20): all five hard-tail modules GREEN ✅
+
+Every module in the "remaining hard tail" below has since been repaired and
+verified `lean`-direct EXIT 0 (sorry-free):
+
+| Module | Landed via | Verified |
+|--------|-----------|----------|
+| `Archimedean/AxialCoupling` | `eff26583` (on `main`) | lean-direct |
+| `FeynmanPathIntegrals` | `4c29034c` (on `main`) | lean-direct |
+| `BraidKnot/NucleusEmptySDPUniqueness` | `244508f0` (on `main`) | lean-direct |
+| `Archimedean/PauliWitness/Witness12B` | `32af0018` (on `main`) | lean-direct (>400s → 21s) |
+| `Molecular/ShellClosureNfTermCount` | already on `main` (normalize-then-extract proofs in place) | lean-direct EXIT 0, 2026-06-20 |
+
+The first four were cleared by a build-green session whose commits merged to
+`main` (a parallel session produced an equivalent set; the duplicate PR #2484
+was closed as superseded). `ShellClosureNfTermCount` — the one module this doc
+flagged as needing real proof work — was found **already repaired on `main`**:
+`helium_slot2_nonzero` uses the recommended `helium_nf 2 = 4·(HA²+1)` normalize-
+then-`mul_ne_zero` strategy, `helium_slot3_nonzero` reduces to `−(4·HA)`, and
+`HA_ne_zero` factors as `T(−1)·(T 2 − 1)` — no nonexistent `coeff`/`T_ne_zero`
+API and no `linarith`-on-`≠` remain. Confirmed EXIT 0 via lean-direct against
+the restored `lake-cache/qou-v4-24-0` olean cache on 2026-06-20.
+
+**Whole-library status is NOT confirmed green** — see the sandbox caveat at the
+end of this doc. The five *named* hard modules are done; whether anything past
+them in build order is red requires a CI build, which the sandbox cannot run.
+
 ## Already fixed (verified lean-direct EXIT 0)
 - #2443 (merged): `PlancherelWeightBoundedness`, `KnotFactorSpectralDerivation`
 - #2450: `EmCouplingBringZeroMode`, `GramSeminormalBlock`, `QIntegerMassFormula`,
@@ -88,13 +115,39 @@ starts warm.
   Try `set_option maxHeartbeats`, profile with `lean_profile_proof`, or
   restructure the slow proof/`decide`.
 
-## Recommended order for the next session
-1. `ShellClosure` `HA_ne_zero` + `slot3` (tractable coeff extraction) → then the
-   `slot2` normalize-then-extract.
-2. `AxialCoupling` (same coeff-extraction technique, plus the convolution).
-3. `FeynmanPathIntegrals` (LSP type diagnosis).
-4. `NucleusEmptySDPUniqueness` (hard).
-5. `Witness12B` (perf).
+## Completion record (2026-06-20)
 
-Re-run `lake build QOU` after each batch — fixing earlier modules unblocks the
-build to reveal any further breakage past module ~3360.
+All five hard-tail modules listed above are repaired and verified `lean`-direct
+EXIT 0 (sorry-free). The recommended order this doc proposed for "the next
+session" was overtaken by events: four modules landed on `main` via build-green
+sessions, and `ShellClosureNfTermCount` was found already repaired. Nothing in
+the named tail remains.
+
+## Sandbox caveat — `lake build QOU` wipes the restored cache (do NOT use it here)
+
+The closing advice above ("re-run `lake build QOU` after each batch") **cannot be
+followed in the web/cloud sandbox**, and attempting it is destructive. Confirmed
+2026-06-20: running `lake build QOU` against a tree that has the
+`lake-cache/qou-v4-24-0` oleans restored triggers
+
+```
+info: mathlib: URL has changed; deleting '…/.lake/packages/mathlib' and cloning again
+info: mathlib: cloning https://github.com/leanprover-community/mathlib4
+```
+
+i.e. lake **deletes the restored Mathlib oleans** (2951 → a handful) and starts a
+from-source rebuild (~40 min, network-flaky). The "URL has changed" is lake
+comparing the manifest's Mathlib remote against the cache's clone origin.
+
+**Consequences for whole-library verification:**
+- Determining whether any of the 778 QOU modules *past* the five named ones is
+  red is **not tractable in-sandbox** — there is no cache-preserving full build.
+- Use **CI** (`lean_ci.yml` does the authoritative `lake build`) for the
+  whole-library green/red answer, or a dedicated from-source build session.
+- For single-file checks, keep using **lean-direct** against the restored cache
+  (`LEAN_PATH=… ~/.elan/toolchains/lean-v4.24.0/bin/lean <file>`), invoking the
+  **toolchain binary directly** to bypass the elan proxy (the proxy hits the
+  firewalled `release.lean-lang.org` and fails — see `lean-environment-setup.md`).
+- To stop a runaway build use `pkill -x lake` / `pkill -x lean` (exact name).
+  Do **not** `pkill -f <pattern>` with a string that appears in your own shell
+  command line — it self-kills (exit 144).
