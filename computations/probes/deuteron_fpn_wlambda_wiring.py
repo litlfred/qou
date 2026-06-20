@@ -77,6 +77,24 @@ mp.mp.dps = 50
 AME_D = mp.mpf("2.224566")          # AME2020 B(²H), the only bound 2-nucleon system
 STD_REP_N3 = (2, 1)                  # standard rep at n=3 = the pn std-channel block
 
+# Substrate flavour split δ = Δm_{n−p}/M_N for the Bring-color-weighted convention.
+M_P = mp.mpf("938.27208943")
+M_N_ = mp.mpf("939.56542194")
+M_N_MEAN = (M_P + M_N_) / 2
+DELTA = (M_N_ - M_P) / M_N_MEAN
+
+
+def bring_color_weighted_fpn():
+    """The PRODUCTION Bring-color-weighted pn factor (not the abstract std channel).
+
+    `f_pn = z − h·(½ − δ/4)`, `z = √q/(q+1)`, `δ = Δm_{n−p}/M_N` — the substrate-pure
+    realisation documented at `closed_form_tau_M.py::pn_convention="bring_color_weighted"`
+    and `prearchimedean_bond_factor.py`, and named in the inter-nucleon-channel-color-tube
+    Lean block. This is the Bring-color leg; it still rides `z = √q/(q+1)`, NOT the
+    coral-fibre coordinate `z₀ = √q − 1/√q` where the open *geometric* W_λ lives.
+    """
+    return z - h * (mp.mpf(1) / 2 - DELTA / 4)
+
 
 def gate_W(lam, q):
     """The gate's q-Plancherel weight W_λ = d_q(λ)² / [n]_q! (n = |λ|)."""
@@ -154,8 +172,29 @@ def main() -> int:
     print(f"      miss vs required f_pn = {mp.nstr(pred['miss_f_pct'], 4)}%   "
           f"miss vs AME binding = {mp.nstr(pred['miss_E_pct'], 4)}%")
 
+    # ---- [2b] Bring-coordinate cross-check (NOT just the algebraic weight) ---
+    f_bring = bring_color_weighted_fpn()
+    E_bring = E0 * mp.log(1 / f_bring)
+    z0_coral = mp.sqrt(Q0) - 1 / mp.sqrt(Q0)         # Bring coral-fibre coordinate
+    kappa_b3 = mp.mpf(3) / 16                          # Yekutieli Stokes h²-action of 𝓑₃
+    trM_b3 = mp.mpf("1.00673")                         # tr_M(𝓑₃,q₀) (Yekutieli extraction)
+    print("\n  [2b] Bring-coordinate cross-check (does the GEOMETRY land 0.588, "
+          "not just the algebraic W_λ?):")
+    print(f"      bond-factor coordinate   z = √q/(q+1)        = {mp.nstr(z, 8)}  "
+          "(what every f = c·z + d factor uses)")
+    print(f"      coral-fibre coordinate   z₀ = √q − 1/√q      = {mp.nstr(z0_coral, 8)}  "
+          "(where the OPEN geometric W_λ lives — UNUSED by any f_pn compute)")
+    print(f"      Bring-color-weighted f_pn = z − h(½ − δ/4)   = {mp.nstr(f_bring, 8)}  "
+          f"→ E = {mp.nstr(E_bring, 7)} MeV  (δ = {mp.nstr(DELTA, 4)}; over-binds)")
+    print(f"      Yekutieli Stokes 𝓑₃: h²-action κ = 3/16 = {mp.nstr(kappa_b3, 6)}, "
+          f"tr_M(𝓑₃,q₀) = {mp.nstr(trM_b3, 6)} (an ACTION/trace > 1, not a per-bond f<1)")
+    print("      ⇒ the production Bring-color convention gives 0.395 — the SAME lower")
+    print("        bracket as the abstract std channel (δ-split ~0.001 is negligible);")
+    print("        no available compute, algebraic OR Bring-coordinate, lands 0.588.")
+
     # ---- falsifiable verdict ------------------------------------------------
     brackets = (f_std < f_required < pred["f_pn_pred"])
+    bring_on_lower_bracket = abs(f_bring - f_std) < mp.mpf("0.01")
     print("\n  [4] VERDICT (falsifiable, derive-or-refute):")
     print(f"      bracket  f_std < f_required < W_(2,1)  :  "
           f"{mp.nstr(f_std, 6)} < {mp.nstr(f_required, 6)} < "
@@ -198,6 +237,27 @@ def main() -> int:
         "miss_f_pct_vs_required": str(pred["miss_f_pct"]),
         "miss_E_pct_vs_AME": str(pred["miss_E_pct"]),
         "bracket_fstd_lt_freq_lt_W21": bool(brackets),
+        "bring_coordinate_crosscheck": {
+            "z_markov_bond_factor": str(z),
+            "z0_coral_fibre": str(z0_coral),
+            "f_pn_bring_color_weighted": str(f_bring),
+            "E_bring_MeV": str(E_bring),
+            "delta_flavour_split": str(DELTA),
+            "yekutieli_b3_stokes_kappa": str(kappa_b3),
+            "trM_b3_q0": str(trM_b3),
+            "bring_color_on_lower_bracket": bool(bring_on_lower_bracket),
+            "note": (
+                "The PRODUCTION Bring-color-weighted convention (f_pn=z−h(½−δ/4), "
+                "closed_form_tau_M.py::bring_color_weighted) gives 0.39486 — the same "
+                "lower bracket as the abstract std channel (δ-split negligible). It "
+                "rides z=√q/(q+1), NOT the coral-fibre z₀=√q−1/√q (0.10439) where the "
+                "open geometric W_λ lives. The genuine Bring-surface geometric object "
+                "that DOES exist (Yekutieli non-abelian Stokes h²-action of 𝓑₃, "
+                "κ=3/16, tr_M(𝓑₃,q₀)=1.00673) is an action/trace >1, not a per-bond "
+                "suppression. So no available compute — algebraic OR Bring-coordinate "
+                "— lands 0.588; it remains the open coral-fibre (z₀) geometric W_λ."
+            ),
+        },
         "verdict": (
             "REFUTE (naive direct-weight map): the algebraic W_λ the gate emits "
             "under-binds (W_(2,1)=0.661, E=1.74) while the std channel over-binds "

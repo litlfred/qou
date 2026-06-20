@@ -57,6 +57,37 @@ f_std   <   f_required   <   W_(2,1)
 
 equivalently `E(W_(2,1)) < E_AME < E(std)` — `1.7351 < 2.2246 < 3.8905`.
 
+## Bring-coordinate cross-check (not just the algebraic weight)
+
+The wiring above rides the *algebraic* q-Plancherel weight and the abstract
+standard channel. The geometric question — *does Bring's surface land 0.588?* —
+has real compute infrastructure at the Borromean (`𝓑₃`) level, so the probe also
+records it:
+
+| Bring-coordinate object | value | role |
+|---|---:|---|
+| bond-factor coordinate `z = √q/(q+1)` | 0.49932 | what every `f = c·z + d` factor uses |
+| coral-fibre coordinate `z₀ = √q − 1/√q` | 0.10439 | where the **open** geometric `W_λ` lives — **unused** by any `f_pn` compute |
+| Bring-color-weighted `f_pn = z − h(½ − δ/4)` | 0.39486 | production convention (`closed_form_tau_M.py::bring_color_weighted`); E = 3.890 MeV; `δ = 0.00138` |
+| Yekutieli Stokes `𝓑₃`: `κ = 3/16` | 0.18750 | non-abelian-Stokes h²-action of the Borromean braid |
+| `tr_M(𝓑₃, q₀)` | 1.00673 | Borromean Markov trace — an action/trace **> 1**, not a per-bond `f < 1` |
+
+Two honest conclusions:
+
+1. **The production Bring-color-weighted convention also gives 0.395** — the *same*
+   lower bracket as the abstract std channel (the `δ` flavour split is ~0.001,
+   negligible). So the lower bracket is the full production+Bring-color answer, not
+   an artefact of using the bare std channel. This robustly confirms the corpus
+   statement "no substrate channel lands 0.588".
+2. **No available compute — algebraic OR Bring-coordinate — lands 0.588.** The
+   bond factor rides `z = √q/(q+1)`, *not* the coral-fibre `z₀ = √q − 1/√q ≈ 0.104`
+   where `q₀` is geometrically fixed (`H¹(Bring) = 2W`) and where the geometric
+   `W_λ` would live. The genuine Bring-surface geometric object that *does* exist
+   (the Yekutieli `𝓑₃` Stokes h²-action) is an *action/trace*, not a per-bond
+   suppression `< 1`. The magnitude `0.588` therefore remains gated to the **open
+   coral-fibre (`z₀`) geometric `W_λ` realization** — exactly the owner-gated DG
+   construction of #2503.
+
 ## Verdict
 
 - **REFUTE the naive direct-weight map.** Setting `f_pn := W_(2,1)` (the gate's
