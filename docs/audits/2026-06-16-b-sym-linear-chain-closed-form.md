@@ -160,6 +160,23 @@ treats ⁴He's 4-body binding as the magic input — recommended by both the
 chain-cooperative file and the sibling audit), **not** a 7th uniform / bond-count /
 fitted ansatz.
 
+## Lean formalization (2026-06-20)
+
+The §1 additivity is now a sorry-free Lean theorem:
+[`QOU.HadronicMass.b_sym_chain_additive`](../../content/quantum-observable-universe/lean/QOU/HadronicMass/BSymChainAdditive.lean)
+(+ the α-scaled corollary `b_sym_chain_additive_scaled`). It states the
+*structural* content honestly: **given** the multiplicative trace
+factorisation `tr_atom = tr_free · ∏ (tr_X/tr_free)^{n_X}` (the
+distinct-generator fact verified to the 50-dps floor in §1), the
+log-binding `log(tr_free/tr_atom)` is the additive chain sum
+`n_pp·L_pp + n_pn·L_pn + n_nn·L_nn` with `n_X = (Z−1, 1, N−1)`. The proof
+is pure `Real.log` algebra (`log_div`, `log_mul`, `log_pow`); it depends
+on **no open conjecture** — the factorisation is the explicit hypothesis,
+the additivity is derived. This addresses bean `6z40`: it does **not**
+claim "B_sym is a theorem" (B_sym is a *definition* + an empirical
+binding claim, the latter still gated by the Δ_λ saturation residual of
+§5–§6); it formalises only the conjecture-free additivity structure.
+
 ## References
 
 - [`2026-06-16-binding-undershoot-is-shell-structure.md`](2026-06-16-binding-undershoot-is-shell-structure.md)
