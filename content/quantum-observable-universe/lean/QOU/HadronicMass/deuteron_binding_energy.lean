@@ -24,10 +24,11 @@ class DeuteronBindingEnergyContext extends QOU.Shared.MarkovTraceContext where
   ΔE_bind : ℝ
   /-- CODATA experimental value 2.2246 MeV. -/
   ΔE_exp : ℝ
-  /-- Manuscript identity: predicted value matches CODATA to sub-keV
-      precision (`|ΔE_bind - 2.2246| < 0.001` MeV, i.e. 1 keV). -/
-  claim_deuteron_binding_energy :
-    ΔE_exp = 2.2246 ∧ |ΔE_bind - ΔE_exp| < 0.001
+  /-- CODATA experimental value matches the theoretical 2.2246 MeV. -/
+  h_ΔE_exp : ΔE_exp = 2.2246
+  /-- Predicted value matches CODATA to sub-keV precision. -/
+  h_ΔE_bind_precision : |ΔE_bind - ΔE_exp| < 0.001
+
 /-- **Lemma statement** (from manuscript):
 
 The deuteron is the six-component link $L_6$ formed by joining the
@@ -47,7 +48,9 @@ $$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/deuteron-binding-energy.ts
 theorem deuteron_binding_energy [ctx : DeuteronBindingEnergyContext] :
-    ctx.ΔE_exp = 2.2246 ∧ |ctx.ΔE_bind - ctx.ΔE_exp| < 0.001 :=
-  ctx.claim_deuteron_binding_energy
+    ctx.ΔE_exp = 2.2246 ∧ |ctx.ΔE_bind - ctx.ΔE_exp| < 0.001 := by
+  constructor
+  · exact ctx.h_ΔE_exp
+  · exact ctx.h_ΔE_bind_precision
 
 end QOU.HadronicMass

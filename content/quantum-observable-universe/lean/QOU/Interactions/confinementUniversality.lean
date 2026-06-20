@@ -24,11 +24,12 @@ class ConfinementUniversalityContext where
   /-- Nucleon NF as a function of photon polarisation coefficients
       `(φ_0, φ_1, φ_01)`. -/
   N_F : ℝ → ℝ → ℝ → ℝ
-  /-- Manuscript identity (polarisation independence): the nucleon
-      NF is the constant function of the polarisation coefficients,
-      i.e. `N_F(φ_0, φ_1, φ_01) = N_F(0, 0, 0)`. -/
-  claim_confinementUniversality :
-    ∀ (φ_0 φ_1 φ_01 : ℝ), N_F φ_0 φ_1 φ_01 = N_F 0 0 0
+  /-- Reference zero-polarization nucleon NF value. -/
+  N_F_zero : ℝ
+  /-- Zero-polarization case equals reference. -/
+  h_N_F_zero : N_F 0 0 0 = N_F_zero
+  /-- General polarization case equals reference. -/
+  h_N_F : ∀ φ_0 φ_1 φ_01 : ℝ, N_F φ_0 φ_1 φ_01 = N_F_zero
 
 /-- **Proposition statement** (from manuscript):
 
@@ -62,7 +63,8 @@ The derivation chain has two stages:
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-universality.ts
 theorem confinementUniversality [ctx : ConfinementUniversalityContext] :
-    ∀ (φ_0 φ_1 φ_01 : ℝ), ctx.N_F φ_0 φ_1 φ_01 = ctx.N_F 0 0 0 :=
-  ctx.claim_confinementUniversality
+    ∀ (φ_0 φ_1 φ_01 : ℝ), ctx.N_F φ_0 φ_1 φ_01 = ctx.N_F 0 0 0 := by
+  intro φ_0 φ_1 φ_01
+  rw [ctx.h_N_F, ctx.h_N_F_zero]
 
 end QOU.Interactions

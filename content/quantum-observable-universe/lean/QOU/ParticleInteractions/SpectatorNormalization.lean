@@ -27,10 +27,12 @@ class SpectatorNormalizationContext where
   spectator_p : ℕ
   /-- Number of spectator neutrons (always `N − 1` for `β⁻` decay). -/
   spectator_n : ℕ
-  /-- Manuscript sub-claim — spectator counts:
-      `converting = 1`, `spectator_p = Z`, `spectator_n = N − 1`. -/
-  claim_spectator_counts :
-    converting = 1 ∧ spectator_p = Z ∧ spectator_n = N - 1
+  /-- Exactly one neutron converts to a proton in beta decay. -/
+  h_converting : converting = 1
+  /-- Spectator protons equals Z. -/
+  h_spectator_p : spectator_p = Z
+  /-- Spectator neutrons equals N - 1. -/
+  h_spectator_n : spectator_n = N - 1
 
 /-- **Content statement** (from manuscript):
 
@@ -45,7 +47,7 @@ $N - 1$ neutrons are spectators.
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/spectator-normalization.ts
 theorem SpectatorNormalization [ctx : SpectatorNormalizationContext] :
-    ctx.converting = 1 ∧ ctx.spectator_p = ctx.Z ∧ ctx.spectator_n = ctx.N - 1 :=
-  ctx.claim_spectator_counts
+    ctx.converting = 1 ∧ ctx.spectator_p = ctx.Z ∧ ctx.spectator_n = ctx.N - 1 := by
+  refine ⟨ctx.h_converting, ctx.h_spectator_p, ctx.h_spectator_n⟩
 
 end QOU.ParticleInteractions

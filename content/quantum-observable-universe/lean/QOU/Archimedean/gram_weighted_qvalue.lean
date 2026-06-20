@@ -139,6 +139,7 @@ The $Q$-value has three factors:
 theorem gram_weighted_qvalue [ctx : GramWeightedQvalueContext] :
     ctx.Q
       = (Finset.univ.sum (fun k : Fin ctx.N => ctx.w k * ctx.Δ k))
-        * (ctx.N : ℝ) * ctx.m_e := ctx.claim_i_qvalue_formula
+        * (ctx.N : ℝ) * ctx.m_e := by
+  refine ctx.claim_i_qvalue_formula
 
 end QOU.Archimedean

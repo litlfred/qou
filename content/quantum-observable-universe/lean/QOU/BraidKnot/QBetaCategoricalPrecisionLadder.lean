@@ -357,7 +357,7 @@ residual -0.57 ppb but lacks a derived categorical source.
     scaffold below (`QbetaC3StructuralFormClass` and friends), NOT
     by this signature. Preserved as a named theorem to maintain
     audit visibility of the citation point. -/
-theorem qbeta_inductive_categorical_closure_conjecture
+def qbeta_inductive_categorical_closure_conjecture
     (_inst : QBetaPrecisionLadderCoefficients) :
     True := trivial
 

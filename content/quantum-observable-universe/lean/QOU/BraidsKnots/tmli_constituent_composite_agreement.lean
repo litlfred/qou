@@ -42,7 +42,7 @@ of $H_N(q)$, so
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/tmli-constituent-composite-agreement.ts
-theorem tmli_constituent_composite_agreement [ctx : TmliConstituentCompositeAgreementContext] :
+def tmli_constituent_composite_agreement [ctx : TmliConstituentCompositeAgreementContext] :
     ctx.constituent_product = ctx.composite_trace :=
   ctx.claim_tmli_constituent_composite_agreement
 

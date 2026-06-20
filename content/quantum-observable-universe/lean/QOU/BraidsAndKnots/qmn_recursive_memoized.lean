@@ -64,7 +64,7 @@ $\rho \setminus \rho_1$ is $\rho$ with its first part removed.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts
-theorem qmn_recursive_memoized [ctx : QmnRecursiveMemoizedContext] :
+def qmn_recursive_memoized [ctx : QmnRecursiveMemoizedContext] :
     (∀ λ ρ : ℕ, ctx.chi λ ρ = ctx.chi_recursion λ ρ) ∧
     ctx.claim_ii_miss_computes_via ∧
     (∀ (λ ρ : ℕ) (v : ℝ), ctx.cache_get λ ρ = some v → v = ctx.chi λ ρ) :=

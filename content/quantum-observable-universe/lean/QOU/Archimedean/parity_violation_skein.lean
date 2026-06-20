@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Archimedean.parity_violation_skein — placeholder stub
 
@@ -20,10 +22,11 @@ class ParityViolationSkeinContext where
   q : ℝ
   /-- The Hecke-eigenvalues on the symmetric / antisymmetric channels
       `(S²V, Λ²V)`. -/
-  λ_sym λ_alt : ℝ
+  lambda_sym : ℝ
+  lambda_alt : ℝ
   /-- Manuscript sub-claim (i): Hecke eigenvalues `(λ_sym, λ_alt) =
       (q, −q⁻¹)`. -/
-  claim_i_hecke_eigenvalues : λ_sym = q ∧ λ_alt = - q⁻¹
+  claim_i_hecke_eigenvalues : lambda_sym = q ∧ lambda_alt = - q⁻¹
   /-- The Skein-mirror invariance predicate `parityInvariant : Prop`. -/
   parityInvariant : Prop
   /-- Manuscript sub-claim (ii): Skein-mirror invariance is equivalent
@@ -114,11 +117,11 @@ $\mathcal{P}:
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/parity-violation-skein.ts
 theorem parity_violation_skein [ctx : ParityViolationSkeinContext] :
-    (ctx.λ_sym = ctx.q ∧ ctx.λ_alt = - ctx.q⁻¹) ∧
+    (ctx.lambda_sym = ctx.q ∧ ctx.lambda_alt = - ctx.q⁻¹) ∧
     (ctx.parityInvariant ↔ ctx.q = ctx.q⁻¹) ∧
-    ctx.q ≠ 1 :=
-  ⟨ctx.claim_i_hecke_eigenvalues,
-   ctx.claim_ii_skein_mirror_iff_eigenvalue_eq,
-   ctx.claim_iii_q_ne_one_on_substrate⟩
+    ctx.q ≠ 1 := by
+  refine ⟨ctx.claim_i_hecke_eigenvalues,
+          ctx.claim_ii_skein_mirror_iff_eigenvalue_eq,
+          ctx.claim_iii_q_ne_one_on_substrate⟩
 
 end QOU.Archimedean

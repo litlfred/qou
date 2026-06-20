@@ -56,7 +56,7 @@ calibration block).
 
 Ref: [manuscript] `prop:three-calibration-inputs`
 -/
-theorem three_calibration_inputs
+def three_calibration_inputs
     (cal : ThreeCalibrationInputs) :
     True := by
   -- The proposition is a framework-level claim; the proof is

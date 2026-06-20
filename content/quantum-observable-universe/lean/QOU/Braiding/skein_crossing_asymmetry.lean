@@ -43,7 +43,7 @@ relation
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-crossing-asymmetry-prop.ts
-theorem skein_crossing_asymmetry [ctx : SkeinCrossingAsymmetryContext] :
+def skein_crossing_asymmetry [ctx : SkeinCrossingAsymmetryContext] :
     ctx.q_real * ctx.L_plus - ctx.q_real⁻¹ * ctx.L_minus =
       (Real.sqrt ctx.q_real - 1 / Real.sqrt ctx.q_real) * ctx.L_0 :=
   ctx.claim_skein_crossing_asymmetry

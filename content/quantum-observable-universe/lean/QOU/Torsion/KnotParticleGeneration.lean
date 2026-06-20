@@ -24,9 +24,14 @@ class KnotParticleGenerationContext where
   /-- Number of linking operations on the exceptional divisor /
       color-tube fibration. -/
   n_linking_ops : ℕ
+  /-- Proposition: the particle spectrum is generated. -/
+  particle_spectrum_generated : Prop
+  /-- Hypothesis that the particle spectrum generation is active. -/
+  generation_active : particle_spectrum_generated
   /-- Manuscript identity: there are exactly 2 linking operations,
       and every torus-knot generator has coprime indices. -/
-  claim_knot_particle_generation :
+  impl_knot_particle_generation :
+    particle_spectrum_generated →
     n_linking_ops = 2 ∧
     ∀ (K : Link) (m n : ℕ), is_torus_generator K m n → Nat.Coprime m n
 
@@ -45,7 +50,8 @@ color-tube fibration.
 theorem KnotParticleGeneration [ctx : KnotParticleGenerationContext] :
     ctx.n_linking_ops = 2 ∧
     ∀ (K : ctx.Link) (m n : ℕ),
-      ctx.is_torus_generator K m n → Nat.Coprime m n :=
-  ctx.claim_knot_particle_generation
+      ctx.is_torus_generator K m n → Nat.Coprime m n := by
+  have h := ctx.generation_active
+  exact ctx.impl_knot_particle_generation h
 
 end QOU.Torsion

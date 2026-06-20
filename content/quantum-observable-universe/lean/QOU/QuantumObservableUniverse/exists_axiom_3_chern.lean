@@ -22,9 +22,10 @@ class ExistsAxiom3ChernContext where
   c_1 : ℝ
   /-- Second categorical Chern class `c_2(Ad(A))`. -/
   c_2 : ℝ
-  /-- Manuscript identity (axiom 3 — vanishing categorical Chern
-      classes): `c_1 = 0 ∧ c_2 = 0`. -/
-  claim_exists_axiom_3_chern : c_1 = 0 ∧ c_2 = 0
+  /-- First Chern class vanishes. -/
+  c_1_eq_zero : c_1 = 0
+  /-- Second Chern class vanishes. -/
+  c_2_eq_zero : c_2 = 0
 
 /-- **Lemma statement** (from manuscript):
 
@@ -43,7 +44,7 @@ into the ribbon twist.
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-3.ts
 theorem exists_axiom_3_chern [ctx : ExistsAxiom3ChernContext] :
-    ctx.c_1 = 0 ∧ ctx.c_2 = 0 :=
-  ctx.claim_exists_axiom_3_chern
+    ctx.c_1 = 0 ∧ ctx.c_2 = 0 := by
+  exact ⟨ctx.c_1_eq_zero, ctx.c_2_eq_zero⟩
 
 end QOU.QuantumObservableUniverse

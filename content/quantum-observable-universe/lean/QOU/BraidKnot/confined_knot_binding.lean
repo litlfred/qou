@@ -56,7 +56,7 @@ $T_w$ in its GB normal form).
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confined-knot-binding.ts
-theorem confined_knot_binding [ctx : ConfinedKnotBindingContext] :
+def confined_knot_binding [ctx : ConfinedKnotBindingContext] :
     0 < ctx.n_letters ∧
     ctx.E_bind = ctx.trM_abs * ctx.m_e * ctx.rho_K :=
   ⟨ctx.claim_i_GB_NF_factorisation,

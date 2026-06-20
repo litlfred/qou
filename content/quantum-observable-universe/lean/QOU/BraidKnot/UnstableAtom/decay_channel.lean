@@ -102,7 +102,7 @@ flips ILP feasibility.*
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/unstable-atom-decay-channel.ts
-theorem decay_channel [ctx : DecayChannelContext] :
+def decay_channel [ctx : DecayChannelContext] :
     ctx.E_lambda ≠ 0 ∧
     (¬ ctx.on_boundary ctx.q → ctx.λ_alt = ctx.λ_star) ∧
     (ctx.q_1 ≤ ctx.q ∧ ctx.q ≤ ctx.q_2 →

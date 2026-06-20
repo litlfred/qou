@@ -105,7 +105,7 @@ annihilator $\mathrm{An
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-baer-star-generic.ts
-theorem hecke_baer_star_generic [ctx : HeckeBaerStarGenericContext] :
+def hecke_baer_star_generic [ctx : HeckeBaerStarGenericContext] :
     (∀ λ : ctx.PartitionIdx, ctx.mul (ctx.e λ) (ctx.e λ) = ctx.e λ) ∧
     (∀ λ : ctx.PartitionIdx,
       ctx.star (ctx.e λ) = ctx.e (ctx.conj_partition λ)) ∧

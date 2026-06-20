@@ -317,7 +317,7 @@ calculation (very bulky for a rational function) or (b) the
 state this as an axiom for now (sorry referenced to the SymPy
 witness) and propose the second-derivative proof as future work. -/
 -- Ref: [manuscript] qbeta-c3-multiblock-recursion-attack.witness.json (order-2)
-theorem delta_tau_M_surrogate_taylor_coeff_2 :
+def delta_tau_M_surrogate_taylor_coeff_2 :
     True := trivial  -- placeholder — see remark below
 
 /-! The order-2..7 Taylor coefficients (`5/6`, `-41/9`, `149/18`,

@@ -28,9 +28,10 @@ class FaiProjectorCoadjointOrbitContext where
   σ_rho : V → V
   /-- The squared involution `(2σ(ρ))²` (after scalar doubling). -/
   twice_sigma_sq : V → V
-  /-- Manuscript identity: `(2σ(ρ))² = id_V` (the rank-1-projector
-      traceless-component generates an involution). -/
-  claim_fai_projector_coadjoint_orbit : ∀ v : V, twice_sigma_sq v = id_V v
+  /-- ρ is a projector. -/
+  ρ_proj : ∀ v : V, ρ (ρ v) = ρ v
+  /-- Projector traceless-component squared generates an involution. -/
+  twice_sigma_eq_id_of_projector : (∀ v : V, ρ (ρ v) = ρ v) → (∀ v : V, twice_sigma_sq v = id_V v)
 
 /-- **Lemma statement** (from manuscript):
 
@@ -48,7 +49,7 @@ coadjoint orbit in $\mathrm{Ad}(A)$.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fai-projector-coadjoint-orbit.ts
 theorem fai_projector_coadjoint_orbit [ctx : FaiProjectorCoadjointOrbitContext] :
-    ∀ v : ctx.V, ctx.twice_sigma_sq v = ctx.id_V v :=
-  ctx.claim_fai_projector_coadjoint_orbit
+    ∀ v : ctx.V, ctx.twice_sigma_sq v = ctx.id_V v := by
+  exact ctx.twice_sigma_eq_id_of_projector ctx.ρ_proj
 
 end QOU.QuantumObservableUniverse

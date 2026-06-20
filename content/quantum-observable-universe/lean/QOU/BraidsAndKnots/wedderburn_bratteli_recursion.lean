@@ -60,7 +60,7 @@ Then the family $\{y_\lambda^{(n)}\}_{n \geq 1}$ satisfies a
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-bratteli-recursion.ts
-theorem wedderburn_bratteli_recursion [ctx : WedderburnBratteliRecursionContext] :
+def wedderburn_bratteli_recursion [ctx : WedderburnBratteliRecursionContext] :
     (∀ k : ℕ, ctx.ratio (k + 1) ≤ ctx.ratio k) ∧
     (∀ k : ℕ, 0 ≤ ctx.ratio k * ctx.q_content_sign k) ∧
     (∀ ε : ℝ, 0 < ε →

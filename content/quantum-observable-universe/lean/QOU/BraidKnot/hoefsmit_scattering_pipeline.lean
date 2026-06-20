@@ -130,7 +130,7 @@ $\chi_\lambda(\beta)$ is determined by Young's lattice path c
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.ts
-theorem hoefsmit_scattering_pipeline [ctx : HoefsmitScatteringPipelineContext] :
+def hoefsmit_scattering_pipeline [ctx : HoefsmitScatteringPipelineContext] :
     ctx.hoefsmit_nnz_per_row ≤ 2 ∧
     ctx.J_K = (Finset.range ctx.n_partitions).sum
       (fun λ => ctx.w_lambda λ * ctx.chi_lambda λ / ctx.dim_lambda λ) ∧

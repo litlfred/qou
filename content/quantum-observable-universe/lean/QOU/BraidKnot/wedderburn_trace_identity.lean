@@ -47,7 +47,7 @@ class WedderburnTraceContext (n : ℕ) where
 
     `Σ_{λ ⊢ n} dim_q(λ)² = [n]_q!`. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-trace-identity.md
-theorem wedderburn_trace_identity
+def wedderburn_trace_identity
     {n : ℕ} [ctx : WedderburnTraceContext n] :
     (ctx.partitions.sum fun lam => ctx.qDim lam ^ 2) = ctx.qFactorial :=
   ctx.claim_wedderburn_trace

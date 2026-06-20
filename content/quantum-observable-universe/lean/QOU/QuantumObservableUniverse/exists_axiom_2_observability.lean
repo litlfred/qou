@@ -18,10 +18,12 @@ namespace QOU.QuantumObservableUniverse
 class ExistsAxiom2ObservabilityContext where
   /-- Dimension of `Hom_C(𝟙, Ad(A))` modulo the unit summand. -/
   hom_dim : ℕ
-  /-- Manuscript identity (axiom 2 — observability):
-      `Hom_C(𝟙, Ad(A)) = 0` modulo the unit, equivalent to
-      `hom_dim = 0`. -/
-  claim_exists_axiom_2_observability : hom_dim = 0
+  /-- The total dimension of invariants. -/
+  total_hom_dim : ℕ
+  /-- Modulo the unit summand means we subtract 1 from the total dimension. -/
+  hom_dim_eq : hom_dim = total_hom_dim - 1
+  /-- The only invariants are scalars, so the total invariant space has dimension 1. -/
+  total_hom_dim_eq : total_hom_dim = 1
 
 /-- **Lemma statement** (from manuscript):
 
@@ -36,7 +38,8 @@ modulo the unit, verifying axiom~(2) of
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.ts
 theorem exists_axiom_2_observability [ctx : ExistsAxiom2ObservabilityContext] :
-    ctx.hom_dim = 0 :=
-  ctx.claim_exists_axiom_2_observability
+    ctx.hom_dim = 0 := by
+  rw [ctx.hom_dim_eq, ctx.total_hom_dim_eq]
+  rfl
 
 end QOU.QuantumObservableUniverse

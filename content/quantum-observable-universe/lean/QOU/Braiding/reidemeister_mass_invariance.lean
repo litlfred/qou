@@ -43,7 +43,7 @@ class ReidemeisterMassInvarianceContext where
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/reidemeister-mass-invariance.ts
-theorem reidemeister_mass_invariance [ctx : ReidemeisterMassInvarianceContext] :
+def reidemeister_mass_invariance [ctx : ReidemeisterMassInvarianceContext] :
     ∀ K : ctx.CategoricalObj,
       ctx.mass (ctx.R_I K) = ctx.mass K ∧
       ctx.mass (ctx.R_II K) = ctx.mass K ∧

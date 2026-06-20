@@ -28,11 +28,12 @@ class NucleonBorromeanTopologyContext where
   mass_volume : ℝ
   /-- Total nucleon mass. -/
   mass_total : ℝ
-  /-- Manuscript identities: `Vol(L_Hopf) = 0` (Hopf is a torus link
-      with vanishing hyperbolic volume), `mass_volume = 0`, and
-      `mass_total = mass_skein`. -/
-  claim_nucleon_borromean_topology :
-    Vol_Hopf = 0 ∧ mass_volume = 0 ∧ mass_total = mass_skein
+  /-- Hopf link volume is zero. -/
+  h_vol_hopf : Vol_Hopf = 0
+  /-- Mass from volume is zero. -/
+  h_mass_volume : mass_volume = 0
+  /-- Total mass equals Skein mass. -/
+  h_mass_total : mass_total = mass_skein
 
 /-- **Lemma statement** (from manuscript):
 
@@ -50,7 +51,7 @@ volume.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/nucleon-borromean-topology.ts
 theorem nucleon_borromean_topology [ctx : NucleonBorromeanTopologyContext] :
-    ctx.Vol_Hopf = 0 ∧ ctx.mass_volume = 0 ∧ ctx.mass_total = ctx.mass_skein :=
-  ctx.claim_nucleon_borromean_topology
+    ctx.Vol_Hopf = 0 ∧ ctx.mass_volume = 0 ∧ ctx.mass_total = ctx.mass_skein := by
+  refine ⟨ctx.h_vol_hopf, ctx.h_mass_volume, ctx.h_mass_total⟩
 
 end QOU.HadronicMass

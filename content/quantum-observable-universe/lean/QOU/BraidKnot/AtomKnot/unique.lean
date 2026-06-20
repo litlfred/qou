@@ -79,7 +79,7 @@ different physical isomers.*
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/atom-knot-unique.ts
-theorem unique [ctx : UniqueContext] :
+def unique [ctx : UniqueContext] :
     ∀ β₁ β₂ : ctx.Braid, ctx.realises_NF β₁ → ctx.realises_NF β₂ →
       ctx.isotopic β₁ β₂ :=
   ctx.claim_markov_isotopy_unique

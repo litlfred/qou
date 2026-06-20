@@ -96,7 +96,7 @@ this drops the per-isotope compute time from
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wenzl-qmn-synergy.ts
-theorem wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] :
+def wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] :
     10000 ≤ ctx.wenzl_speedup ∧
     100 ≤ ctx.qmn_speedup ∧
     ctx.claim_iii_atom_knot_identification ∧

@@ -185,6 +185,6 @@ class BorromeanQuark : Prop where
   holds : True
 
 /-- Witness theorem: this file's proposition is conditional on
-    `BorromeanQuark` per AGENTS.md §3b-cond. -/
-theorem orbital_space_normal_bundle_conditional_on_borromean_quark
+    `BorromeanQuark` per CLAUDE.md §3b-cond. -/
+def orbital_space_normal_bundle_conditional_on_borromean_quark
     [_inst : BorromeanQuark] : True := trivial

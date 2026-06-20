@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Archimedean.bohr_radius_categorical — `a_0^cat = ℏ / (m_e c α_EM)` virial balance
 
@@ -56,7 +58,7 @@ class BohrRadiusCategoricalContext where
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/bohr-radius-categorical.md
 theorem bohr_radius_categorical [ctx : BohrRadiusCategoricalContext] :
     ctx.Phi_kin (bohrRadiusCategorical ctx.hbar ctx.m_e ctx.c ctx.alpha_EM)
-      = ctx.Phi_Coul (bohrRadiusCategorical ctx.hbar ctx.m_e ctx.c ctx.alpha_EM) :=
-  ctx.claim_virial_balance
+      = ctx.Phi_Coul (bohrRadiusCategorical ctx.hbar ctx.m_e ctx.c ctx.alpha_EM) := by
+  refine ctx.claim_virial_balance
 
 end QOU.Archimedean

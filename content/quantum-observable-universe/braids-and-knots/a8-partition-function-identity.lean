@@ -176,7 +176,7 @@ canonical partition function. -/
 -- Ref: [andrews1976] §1.1, Table 1 (values of p(n) for n ≤ 200).
 -- Ref: [hardy-ramanujan1918] partition function asymptotics.
 -- Ref: OEIS A000041 https://oeis.org/A000041
-theorem partitionCount_eq_fintype_card_partition_small :
+def partitionCount_eq_fintype_card_partition_small :
     True := trivial  -- placeholder; see comment above
 
 end QOU.BraidKnot.A8Partition

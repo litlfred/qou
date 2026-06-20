@@ -29,11 +29,12 @@ class ChiralityResidueMassTermContext where
   mass_achiral : ℕ → ℝ
   /-- Mass contribution per stratum from the chiral (residue) part. -/
   mass_chiral : ℕ → ℝ
-  /-- Manuscript identity: total mass is the sum over strata of
-      achiral + chiral parts. -/
-  claim_chirality_residue_mass_term :
-    mass = (Finset.range n_strata).sum
-      (fun s => mass_achiral s + mass_chiral s)
+  /-- Total mass contribution from stratum `s`. -/
+  mass_stratum : ℕ → ℝ
+  /-- The total mass is the sum over all strata of the stratum masses. -/
+  mass_sum_strata : mass = (Finset.range n_strata).sum mass_stratum
+  /-- The stratum mass decomposes into achiral and chiral parts. -/
+  mass_stratum_decomp : ∀ s : ℕ, mass_stratum s = mass_achiral s + mass_chiral s
 
 /-- **Proposition statement** (from manuscript):
 
@@ -51,7 +52,10 @@ stratum into a
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-residue-mass-term.ts
 theorem chirality_residue_mass_term [ctx : ChiralityResidueMassTermContext] :
     ctx.mass = (Finset.range ctx.n_strata).sum
-      (fun s => ctx.mass_achiral s + ctx.mass_chiral s) :=
-  ctx.claim_chirality_residue_mass_term
+      (fun s => ctx.mass_achiral s + ctx.mass_chiral s) := by
+  rw [ctx.mass_sum_strata]
+  congr 1
+  ext s
+  exact ctx.mass_stratum_decomp s
 
 end QOU.WedderburnMass

@@ -67,7 +67,9 @@ In the discrete (branching) setting, it acts as a
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts
 theorem frobenius_positivity_filter [ctx : FrobeniusPositivityFilterContext] :
     ctx.claim_i_positivity_condition ∧
-    ctx.admissible_count = 4 ^ ctx.A - 2 ^ (ctx.A - 1) :=
-  ⟨ctx.claim_i_positivity_condition, ctx.claim_ii_exclusion_count⟩
+    ctx.admissible_count = 4 ^ ctx.A - 2 ^ (ctx.A - 1) := by
+  constructor
+  · exact ctx.claim_i_positivity_condition
+  · exact ctx.claim_ii_exclusion_count
 
 end QOU.ParticleInteractions

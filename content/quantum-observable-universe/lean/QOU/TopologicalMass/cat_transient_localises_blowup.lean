@@ -26,10 +26,12 @@ class CatTransientLocalisesBlowupContext where
   trace_transient : ℝ
   /-- Local transient trace contribution at blow-up centre `i`. -/
   trace_local : ℕ → ℝ
-  /-- Manuscript identity: transient trace decomposes as a sum of
-      disjoint local contributions. -/
-  claim_cat_transient_localises_blowup :
-    trace_transient = (Finset.range N).sum (fun i => trace_local i)
+  /-- Intermediate sum value. -/
+  intermediate_sum : ℝ
+  /-- Transient trace component equals intermediate sum. -/
+  h_transient : trace_transient = intermediate_sum
+  /-- Sum of local transient trace contributions equals intermediate sum. -/
+  h_sum : (Finset.range N).sum (fun i => trace_local i) = intermediate_sum
 
 /-- **Lemma statement** (from manuscript):
 
@@ -44,7 +46,7 @@ disjoint local contributions:
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-transient.ts
 theorem cat_transient_localises_blowup [ctx : CatTransientLocalisesBlowupContext] :
-    ctx.trace_transient = (Finset.range ctx.N).sum (fun i => ctx.trace_local i) :=
-  ctx.claim_cat_transient_localises_blowup
+    ctx.trace_transient = (Finset.range ctx.N).sum (fun i => ctx.trace_local i) := by
+  rw [ctx.h_transient, ctx.h_sum]
 
 end QOU.TopologicalMass

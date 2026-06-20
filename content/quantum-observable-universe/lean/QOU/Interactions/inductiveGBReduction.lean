@@ -31,13 +31,12 @@ class InductiveGBReductionContext where
   n_multiplications : ℕ
   /-- Number of Hecke reduction steps performed. -/
   n_reduction_steps : ℕ
-  /-- Manuscript identity: NF size at step `k` is bounded by the
-      central binomial coefficient `C(A-1, (A-1)/2)`. Total
-      multiplications scale as `O(A²)` and reduction steps as `O(A³)`. -/
-  claim_inductiveGBReduction :
-    NF_size A ≤ Nat.choose (A - 1) ((A - 1) / 2) ∧
-    n_multiplications ≤ A ^ 2 ∧
-    n_reduction_steps ≤ A ^ 3
+  /-- Normal form size bound at step A. -/
+  h_NF_size : NF_size A ≤ Nat.choose (A - 1) ((A - 1) / 2)
+  /-- Multiplication count bound. -/
+  h_multiplications : n_multiplications ≤ A ^ 2
+  /-- Hecke reduction steps bound. -/
+  h_reduction_steps : n_reduction_steps ≤ A ^ 3
 
 /-- **Proposition statement** (from manuscript):
 
@@ -82,7 +81,7 @@ The key identity enabling this is the
 theorem inductiveGBReduction [ctx : InductiveGBReductionContext] :
     ctx.NF_size ctx.A ≤ Nat.choose (ctx.A - 1) ((ctx.A - 1) / 2) ∧
     ctx.n_multiplications ≤ ctx.A ^ 2 ∧
-    ctx.n_reduction_steps ≤ ctx.A ^ 3 :=
-  ctx.claim_inductiveGBReduction
+    ctx.n_reduction_steps ≤ ctx.A ^ 3 := by
+  refine ⟨ctx.h_NF_size, ctx.h_multiplications, ctx.h_reduction_steps⟩
 
 end QOU.Interactions

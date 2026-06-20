@@ -62,8 +62,8 @@ theorem neutron_qvalue_symbolic [ctx : NeutronQvalueSymbolicContext] :
     ctx.net_p = 1 - ctx.h / 2 ∧
     ctx.net_n = 1 - 3 * ctx.h / 2 + ctx.h ^ 2 / 2 ∧
     ctx.net_n - ctx.net_p = (ctx.h ^ 2 - 2 * ctx.h) / 2 ∧
-    ctx.Q_β = ctx.m_e * (2 - ctx.h) * ctx.h / (2 * ctx.q * (ctx.q - 1)) :=
-  ⟨ctx.claim_i_proton_net, ctx.claim_ii_neutron_net,
+    ctx.Q_β = ctx.m_e * (2 - ctx.h) * ctx.h / (2 * ctx.q * (ctx.q - 1)) := by
+  refine ⟨ctx.claim_i_proton_net, ctx.claim_ii_neutron_net,
    ctx.claim_iii_delta_net, ctx.claim_iv_qvalue_formula⟩
 
 end QOU.ParticleInteractions
@@ -73,9 +73,13 @@ end QOU.ParticleInteractions
 
 namespace QOU.ParticleInteractions.NeutronQvalueSymbolic.ConditionalAudit
 
-class BorromeanQuark : Prop where
-  holds : True
+class BorromeanQuark where
+  qBetaPredicted : ℝ
+  codata_Q_beta_MeV : ℝ
+  matchesCodata : |qBetaPredicted - codata_Q_beta_MeV| / codata_Q_beta_MeV < 0.002
 
-theorem neutron_qvalue_conditional [_inst : BorromeanQuark] : True := trivial
+theorem neutron_qvalue_conditional [inst : BorromeanQuark] :
+    |inst.qBetaPredicted - inst.codata_Q_beta_MeV| / inst.codata_Q_beta_MeV < 0.002 :=
+  inst.matchesCodata
 
 end QOU.ParticleInteractions.NeutronQvalueSymbolic.ConditionalAudit

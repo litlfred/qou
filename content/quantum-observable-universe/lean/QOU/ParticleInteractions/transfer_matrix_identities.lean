@@ -56,7 +56,7 @@ $[2]_q = q + q^{-1}$.
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/transfer-matrix-identities.ts
 theorem transfer_matrix_identities [ctx : TransferMatrixIdentitiesContext] :
     (ctx.T_pp_T_nn_00 = 1 ∧ ctx.T_pp_T_nn_11 = 1) ∧
-    ctx.T_pn_sq_00 = 1 + ctx.h ^ 2 / 4 :=
-  ⟨ctx.claim_i_inverse_product, ctx.claim_ii_T_pn_squared⟩
+    ctx.T_pn_sq_00 = 1 + ctx.h ^ 2 / 4 := by
+  refine ⟨ctx.claim_i_inverse_product, ctx.claim_ii_T_pn_squared⟩
 
 end QOU.ParticleInteractions

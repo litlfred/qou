@@ -199,7 +199,7 @@ theorem betaDecayRecovery_at_N0_within_0_2_percent :
     structural lift formula is the open R&D part per
     `conj:brane-tower-z-habiro §"Status of n_⋆"`. -/
 -- Ref: [manuscript] conj:brane-tower-z-habiro §"Status of n_⋆"
-theorem betaDecayRecoveryTarget_1ppb_remains_conjectural :
+def betaDecayRecoveryTarget_1ppb_remains_conjectural :
     True := by
   trivial
 

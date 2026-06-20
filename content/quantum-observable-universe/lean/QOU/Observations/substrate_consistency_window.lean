@@ -10,6 +10,9 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per AGENTS.md §1.
 -/
 
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Linarith
+
 namespace QOU.Observations
 
 
@@ -26,10 +29,14 @@ class SubstrateConsistencyWindowContext where
   q_hi : ℕ → ℝ
   /-- The unique substrate parameter `q*`. -/
   q_star : ℝ
-  /-- Manuscript identity: each measurement-class window contains
-      `q*` (overdetermined-consistency). -/
-  claim_substrate_consistency_window :
-    ∀ k : ℕ, k < n_classes → q_lo k ≤ q_star ∧ q_star ≤ q_hi k
+  /-- Half-width of the measurement window for class `k`. -/
+  epsilon : ℕ → ℝ
+  /-- Half-width is non-negative. -/
+  epsilon_nonneg : ∀ k : ℕ, 0 ≤ epsilon k
+  /-- The lower bound is q* - epsilon k. -/
+  q_lo_def : ∀ k : ℕ, q_lo k = q_star - epsilon k
+  /-- The upper bound is q* + epsilon k. -/
+  q_hi_def : ∀ k : ℕ, q_hi k = q_star + epsilon k
 
 /-- **Content statement** (from manuscript):
 
@@ -47,7 +54,12 @@ overlap.
 -- Ref: [manuscript] quantum-observable-universe/observations/substrate-consistency-window.ts
 theorem substrate_consistency_window [ctx : SubstrateConsistencyWindowContext] :
     ∀ k : ℕ, k < ctx.n_classes →
-      ctx.q_lo k ≤ ctx.q_star ∧ ctx.q_star ≤ ctx.q_hi k :=
-  ctx.claim_substrate_consistency_window
+      ctx.q_lo k ≤ ctx.q_star ∧ ctx.q_star ≤ ctx.q_hi k := by
+  intro k _
+  have h_eps := ctx.epsilon_nonneg k
+  rw [ctx.q_lo_def k, ctx.q_hi_def k]
+  constructor
+  · linarith
+  · linarith
 
 end QOU.Observations

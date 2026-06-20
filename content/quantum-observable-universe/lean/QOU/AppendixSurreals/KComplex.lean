@@ -100,7 +100,7 @@ theorem KComplex.I_mul_I :
     KComplex.mul (KComplex.I K) (KComplex.I K)
       = (-(1 : K), (0 : K)) := by
   unfold KComplex.mul KComplex.I
-  refine Prod.ext ?_ ?_ <;> · simp; ring
+  refine Prod.ext ?_ ?_ <;> · simp; try ring
 
 /-! ### Conjugate identities -/
 
@@ -114,7 +114,7 @@ theorem KComplex.conj_conj (z : KComplex K) :
 theorem KComplex.mul_conj (z : KComplex K) :
     KComplex.mul z (KComplex.conj z) = (KComplex.normSq z, 0) := by
   unfold KComplex.mul KComplex.conj KComplex.normSq
-  refine Prod.ext ?_ ?_ <;> · simp; ring
+  refine Prod.ext ?_ ?_ <;> · simp; try ring
 
 /-! ### Norm-squared identities -/
 

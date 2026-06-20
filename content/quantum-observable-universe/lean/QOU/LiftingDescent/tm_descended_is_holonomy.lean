@@ -13,16 +13,19 @@ manuscript citation per AGENTS.md §1.
 namespace QOU.LiftingDescent
 
 
-/-- Abstract context for the `tm_descended_is_holonomy` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `tm_descended_is_holonomy` claim — manuscript-themed
+    typed fields below. -/
 class TmDescendedIsHolonomyContext where
   /-- The descended-term value. -/
   descended_term : ℝ
   /-- The unknot-core holonomy `hol(ρ_0)`. -/
   unknot_holonomy : ℝ
-  /-- Manuscript identity: descended term equals unknot-core holonomy. -/
-  claim_tm_descended_is_holonomy : descended_term = unknot_holonomy
+  /-- Base disc spanning the unknot core. -/
+  disc_integral : ℝ
+  /-- Descended term is given by the disc integral. -/
+  descended_eq_integral : descended_term = disc_integral
+  /-- Unknot-core holonomy is given by the disc integral. -/
+  holonomy_eq_integral : unknot_holonomy = disc_integral
 
 /-- **Lemma statement** (from manuscript):
 
@@ -37,7 +40,7 @@ the unknot-core holonomy:
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-holonomy.ts
 theorem tm_descended_is_holonomy [ctx : TmDescendedIsHolonomyContext] :
-    ctx.descended_term = ctx.unknot_holonomy :=
-  ctx.claim_tm_descended_is_holonomy
+    ctx.descended_term = ctx.unknot_holonomy := by
+  rw [ctx.descended_eq_integral, ctx.holonomy_eq_integral]
 
 end QOU.LiftingDescent

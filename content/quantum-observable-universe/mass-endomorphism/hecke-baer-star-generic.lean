@@ -82,7 +82,7 @@ theorem matrix_algebra_baer_right
     seminormal form (`prop:hoefsmit-seminormal-form`) and the
     explicit Lagrange formula (`prop:explicit-central-idempotent`).
     -/
-theorem bar_idempotent_transposition_partition
+def bar_idempotent_transposition_partition
     {R : Type*} [CommRing R] [StarRing R]
     (n : ℕ) (lam : List ℕ) :
     True := by

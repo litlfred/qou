@@ -36,7 +36,7 @@ class FrobeniusAntipodeContext where
 /-- **Frobenius antipode is the σ↦σ⁻¹ anti-homomorphism**
     ([`prop:frobenius-antipode-unifies-chirality-and-tower`]). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.md
-theorem frobenius_antipode_unifies
+def frobenius_antipode_unifies
     [ctx : FrobeniusAntipodeContext] :
     (∀ i, ctx.S (ctx.sigma i) = ctx.sigma_inv i) ∧
     (∀ a b, ctx.S (ctx.mul a b) = ctx.mul (ctx.S b) (ctx.S a)) :=

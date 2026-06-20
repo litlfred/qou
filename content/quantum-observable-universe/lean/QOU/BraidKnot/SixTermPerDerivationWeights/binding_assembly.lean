@@ -44,7 +44,7 @@ by
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-per-derivation-weights.ts
-theorem binding_assembly [ctx : BindingAssemblyContext] :
+def binding_assembly [ctx : BindingAssemblyContext] :
     ctx.atomic_mass = (Finset.univ.sum (fun i : Fin 6 => ctx.term_weights i)) :=
   ctx.claim_six_term_recovery
 

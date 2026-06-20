@@ -145,7 +145,7 @@ theorem q_commutation_grade_one
     Signature uses `2 * deg x = 1` (i.e. `deg x = 1/2`); we encode
     this in ℕ-grading by tracking `2·deg` as a single integer.
 -/
-theorem q_commutation_grade_one_half
+def q_commutation_grade_one_half
     {R : Type*} [CommRing R] (q : R)
     {A : Type*} [Ring A] [Algebra R A]
     [calc_inst : WoronowiczLeftCalculus R q A]
@@ -270,7 +270,7 @@ class StandardHeckeWoronowicz
     All deferred; the algebraic skeleton is the chained pentagon
     above.
 -/
-theorem pentagon_ascension_under_woronowicz
+def pentagon_ascension_under_woronowicz
     {R : Type*} [CommRing R] (q : R)
     {A : Type*} [Ring A] [Algebra R A]
     [WoronowiczLeftCalculus R q A] :

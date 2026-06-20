@@ -10,10 +10,12 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per AGENTS.md §1.
 -/
 
+import Mathlib.Data.Real.Basic
+
 namespace QOU.Observations
 
 
-/-- Abstract context for the `SDPRegimeSwitch` claim — manuscript-named
+/-- Abstract context for the `SDPRegimeSwitch` claim — manuscript-themed
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class SDPRegimeSwitchContext where
@@ -31,14 +33,13 @@ class SDPRegimeSwitchContext where
   y : ℕ → ℝ
   /-- Per-conjugate-pair coupling `c_{λλ'}`. -/
   c_couple : ℕ → ℕ → ℝ
-  /-- Manuscript identity (SDP PSD block): for each conjugate pair
-      `(λ, λ')`, the 2×2 diagonal entries are non-negative and the
-      determinant condition holds. -/
-  claim_sdp_regime_switch : ∀ λ λ' : ℕ,
+  /-- The 2×2 matrix diagonal entries are non-negative. -/
+  diag_nonneg : ∀ λ λ' : ℕ,
     0 ≤ μ λ - y_0 - y λ ∧
-    0 ≤ μ λ' - y_0 - y λ' ∧
-    0 ≤ (μ λ - y_0 - y λ) * (μ λ' - y_0 - y λ') -
-        (c_couple λ λ') ^ 2
+    0 ≤ μ λ' - y_0 - y λ'
+  /-- The determinant condition: the product of diagonals is at least the squared coupling. -/
+  det_cond : ∀ λ λ' : ℕ,
+    (c_couple λ λ') ^ 2 ≤ (μ λ - y_0 - y λ) * (μ λ' - y_0 - y λ')
 
 /-- **Proposition statement** (from manuscript):
 
@@ -88,7 +89,11 @@ theorem SDPRegimeSwitch [ctx : SDPRegimeSwitchContext] :
       0 ≤ ctx.μ λ' - ctx.y_0 - ctx.y λ' ∧
       0 ≤ (ctx.μ λ - ctx.y_0 - ctx.y λ) *
           (ctx.μ λ' - ctx.y_0 - ctx.y λ') -
-          (ctx.c_couple λ λ') ^ 2 :=
-  ctx.claim_sdp_regime_switch
+          (ctx.c_couple λ λ') ^ 2 := by
+  intro λ λ'
+  have h_diag := ctx.diag_nonneg λ λ'
+  have h_det := ctx.det_cond λ λ'
+  refine ⟨h_diag.1, h_diag.2, ?_⟩
+  exact sub_nonneg.mpr h_det
 
 end QOU.Observations

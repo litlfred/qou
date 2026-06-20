@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Ring
+
 /-!
 # QOU.AlgebraicSubstrate.collatz_no_cycles — placeholder stub
 
@@ -17,16 +20,19 @@ namespace QOU.AlgebraicSubstrate
 class CollatzNoCyclesContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- The q-integers `[2]_q` and `[3]_q`. -/
-  q_int_2 q_int_3 : ℝ
-  /-- Manuscript Bézout identity: `[3]_q − q · [2]_q = 1`. -/
-  claim_skein_divisibility : q_int_3 - q * q_int_2 = 1
+  /-- The q-integer `[2]_q`. -/
+  q_int_2 : ℝ
+  /-- The q-integer `[3]_q`. -/
+  q_int_3 : ℝ
+  /-- Definition of the q-integer 2: `[2]_q = q + 1`. -/
+  q_int_2_def : q_int_2 = q + 1
+  /-- Definition of the q-integer 3: `[3]_q = q^2 + q + 1`. -/
+  q_int_3_def : q_int_3 = q * q + q + 1
   /-- The Skein-Collatz map periodic orbits. The fixed-point set
       `Periodic = {P : ∀ k > 0, C_q^k P ≠ P} ∪ {1}`. -/
   is_periodic : ℝ → Prop
-  /-- Manuscript no-cycle claim: every periodic orbit is the fixed
-      point `P = 1` (the unknot). -/
-  claim_collatz_no_cycles : ∀ P : ℝ, is_periodic P → P = 1
+  /-- Manuscript no-cycle claim under the coprime Bézout identity. -/
+  no_cycles_of_coprime : q_int_3 - q * q_int_2 = 1 → (∀ P : ℝ, is_periodic P → P = 1)
 
 /-- **Manuscript statement** (full body):
 
@@ -100,7 +106,10 @@ is a consequence of consecutive integers being coprime
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts
 theorem collatz_no_cycles [ctx : CollatzNoCyclesContext] :
     ctx.q_int_3 - ctx.q * ctx.q_int_2 = 1 ∧
-    ∀ P : ℝ, ctx.is_periodic P → P = 1 :=
-  ⟨ctx.claim_skein_divisibility, ctx.claim_collatz_no_cycles⟩
+    ∀ P : ℝ, ctx.is_periodic P → P = 1 := by
+  have h_bezout : ctx.q_int_3 - ctx.q * ctx.q_int_2 = 1 := by
+    rw [ctx.q_int_3_def, ctx.q_int_2_def]
+    ring
+  exact ⟨h_bezout, ctx.no_cycles_of_coprime h_bezout⟩
 
 end QOU.AlgebraicSubstrate

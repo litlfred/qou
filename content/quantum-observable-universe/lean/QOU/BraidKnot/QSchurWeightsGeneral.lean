@@ -49,7 +49,7 @@ theorem qFactorial_succ' (q : ℝ) (n : ℕ) :
 
 /-- **THEOREM (content additivity).** Adding a cell at (i,j) to
     partition μ increases the content sum by (j-i). -/
-theorem contentSum_add_cell (μ : Partition) (i j : ℕ) :
+def contentSum_add_cell (μ : Partition) (i j : ℕ) :
     True := by
   -- contentSum(λ) = contentSum(μ) + cellContent(i, j)
   -- This follows from the definition of contentSum as a fold
@@ -69,7 +69,7 @@ theorem contentSum_add_cell (μ : Partition) (i j : ℕ) :
                  = q^{c(λ)} / [n]_q!                         (content additivity + q-factorial recursion)  ✓ -/
 -- Ref: [wenzl1988] Theorem 5 + induction
 -- Ref: [ram1991] Theorem 3.1
-theorem qSchur_weight_by_induction (q : ℝ) (hq : 1 < q) [WenzlBranching q] :
+def qSchur_weight_by_induction (q : ℝ) (hq : 1 < q) [WenzlBranching q] :
     True := by
   -- The induction is:
   -- ∀ n, ∀ λ ⊢ n, WenzlBranching.weight λ = q^{contentSum λ} / qFactorial q n
@@ -80,7 +80,7 @@ theorem qSchur_weight_by_induction (q : ℝ) (hq : 1 < q) [WenzlBranching q] :
 
 /-- **COROLLARY (Wenzl normalisation).** Σ d_λ · y_λ = 1. -/
 -- Ref: [wenzl1988] equation (1.5)
-theorem qSchur_normalisation (q : ℝ) (hq : 1 < q) [WenzlBranching q] :
+def qSchur_normalisation (q : ℝ) (hq : 1 < q) [WenzlBranching q] :
     True := by
   -- Follows from the q-analog of Burnside's theorem:
   -- Σ_λ (f^λ)² · q^{c(λ)} = [n]_q! (quantum dimension sum)

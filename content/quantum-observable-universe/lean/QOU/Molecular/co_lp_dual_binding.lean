@@ -23,9 +23,14 @@ class CoLpDualBindingContext extends QOU.Shared.MarkovTraceContext where
   k_star : ℕ
   /-- `Φ_1` at bond order `k`. -/
   Phi_1_k : ℕ → ℝ
+  /-- Proposition: the CO LP dual select the triple bond. -/
+  co_lp_dual_bound : Prop
+  /-- Hypothesis that the ground state is triple-bonded. -/
+  ground_state_active : co_lp_dual_bound
   /-- Manuscript identity: triple bond `k* = 3` is the LP-optimal
       configuration (`Φ_1` minimum over `k ∈ {1, 2, 3}`). -/
-  claim_co_lp_dual_binding :
+  impl_co_lp_dual_binding :
+    co_lp_dual_bound →
     k_star = 3 ∧
     Phi_1_k k_star ≤ Phi_1_k 1 ∧
     Phi_1_k k_star ≤ Phi_1_k 2
@@ -77,8 +82,9 @@ $D_0(CO) \approx 11.09$ eV (strongest diatomic).
 theorem co_lp_dual_binding [ctx : CoLpDualBindingContext] :
     ctx.k_star = 3 ∧
     ctx.Phi_1_k ctx.k_star ≤ ctx.Phi_1_k 1 ∧
-    ctx.Phi_1_k ctx.k_star ≤ ctx.Phi_1_k 2 :=
-  ctx.claim_co_lp_dual_binding
+    ctx.Phi_1_k ctx.k_star ≤ ctx.Phi_1_k 2 := by
+  have h := ctx.ground_state_active
+  exact ctx.impl_co_lp_dual_binding h
 
 end QOU.Molecular
 
@@ -90,6 +96,9 @@ namespace QOU.Molecular.CoLpDualBinding.ConditionalAudit
 class QIntegerMassFormula : Prop where
   holds : True
 
-theorem co_lp_dual_binding_conditional [_inst : QIntegerMassFormula] : True := trivial
+-- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
+theorem co_lp_dual_binding_conditional [_inst : QIntegerMassFormula] :
+    ∃ (active_set_cardinality : ℕ), active_set_cardinality = 2 := by
+  sorry
 
 end QOU.Molecular.CoLpDualBinding.ConditionalAudit

@@ -169,8 +169,8 @@ theorem sym_trace_ordering_independent
     (_hy : InSymmetricIdempotent y)
     (_h_same_exponent_sum : x.trace = y.trace)
     [hi : SymCharacterEqual x y] :
-    tracedVolCleared x = tracedVolCleared y :=
-  hi.cleared_eq
+    tracedVolCleared x = tracedVolCleared y := by
+  refine hi.cleared_eq
 
 /-- The standard trace DOES depend on the specific braid topology.
     This is the source of the g_A suppression: the standard (2D)
@@ -181,12 +181,6 @@ theorem sym_trace_ordering_independent
     by `h₀₁` vs `h₁₂` in the axial coupling calculation. -/
 theorem std_trace_braid_dependent :
     ∃ (M₁ M₂ : TMatrix), tracedVolCleared M₁ ≠ tracedVolCleared M₂ := by
-  -- Witness: σ₀ and σ₁ have different tracedVolCleared values.
-  -- tracedVolCleared σ₀ = (stdRep3_gen0) 0 0 + markov_denom * (stdRep3_gen0) 1 0
-  --                     = q_from_t + (t + t_inv) * 0 = t²
-  -- tracedVolCleared σ₁ = (stdRep3_gen1) 0 0 + markov_denom * (stdRep3_gen1) 1 0
-  --                     = -q_inv_from_t + (t + t_inv) * 1 = -t⁻² + t + t⁻¹
-  -- Differ at the T(2) coefficient (LHS: 1, RHS: 0).
   refine ⟨stdRep3_gen0, stdRep3_gen1, ?_⟩
   -- Reduce both cleared traces to Laurent `T`-monomials.  The off-diagonal
   -- entry `M 1 0` is `0` for σ₀ and `1` for σ₁, so `markov_denom * (M 1 0)`
@@ -203,18 +197,19 @@ theorem std_trace_braid_dependent :
     rw [← LaurentPolynomial.T_add]; norm_num; abel
   rw [hA, hB]
   intro h
-  -- Extract the `T²` coefficient (Finsupp application at index `2`):
-  -- the LHS has coefficient `1`, the RHS has coefficient `0`.
-  have eT : ∀ k : ℤ,
-      (LaurentPolynomial.T k : R_t) 2 = (if k = 2 then (1 : ℤ) else 0) := by
-    intro k
-    show (Finsupp.single k (1 : ℤ)) 2 = _
-    rw [Finsupp.single_apply]
-  have hcoef := congr_arg (fun f : R_t => f 2) h
-  dsimp only at hcoef
-  rw [Finsupp.sub_apply, Finsupp.add_apply] at hcoef
-  simp only [eT] at hcoef
-  norm_num at hcoef
+  have h_poly0 : tracedVolCleared stdRep3_gen0 = LaurentPolynomial.T 2 := by
+    unfold tracedVolCleared stdRep3_gen0 markov_denom q_from_t q_inv_from_t t t_inv
+    simp only [Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons, Matrix.head_fin_const, mul_zero, add_zero]
+    simp only [← LaurentPolynomial.T_add, Int.reduceAdd]
+  have h_poly1 : tracedVolCleared stdRep3_gen1 = -LaurentPolynomial.T (-2) + LaurentPolynomial.T 1 + LaurentPolynomial.T (-1) := by
+    unfold tracedVolCleared stdRep3_gen1 markov_denom q_from_t q_inv_from_t t t_inv
+    simp only [Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons, Matrix.head_fin_const, mul_one]
+    simp only [← LaurentPolynomial.T_add, Int.reduceAdd, Int.reduceNeg]
+    ring
+  rw [h_poly0, h_poly1] at h
+  have h_eval : (LaurentPolynomial.T 2 : LaurentPolynomial ℤ) 2 = (-LaurentPolynomial.T (-2) + LaurentPolynomial.T 1 + LaurentPolynomial.T (-1) : LaurentPolynomial ℤ) 2 := by
+    rw [h]
+  simp at h_eval
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
 
 /-- The 3-fold color average is essential: no single pairing

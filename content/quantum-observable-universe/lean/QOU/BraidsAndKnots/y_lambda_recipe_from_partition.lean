@@ -44,7 +44,7 @@ denominator.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.ts
-theorem y_lambda_recipe_from_partition [ctx : YLambdaRecipeFromPartitionContext] :
+def y_lambda_recipe_from_partition [ctx : YLambdaRecipeFromPartitionContext] :
     ∀ λ : ℕ, ctx.denom λ ≠ 0 ∧ ctx.y_lambda λ = ctx.num λ / ctx.denom λ :=
   ctx.claim_y_lambda_recipe_from_partition
 

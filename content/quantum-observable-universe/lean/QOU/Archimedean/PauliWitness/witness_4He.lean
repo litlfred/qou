@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Archimedean.PauliWitness.witness_4He — placeholder stub
 
@@ -53,7 +55,7 @@ transfer matrix cannot resolve.
 -- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-4he.ts
 theorem witness_4He [ctx : Witness4HeContext] :
     ctx.Z = 2 ∧ ctx.N = 2 ∧ ctx.net_terms = 12 ∧
-    |ctx.F_Pauli - 0.812| < 0.005 :=
-  ctx.claim_witness_4He
+    |ctx.F_Pauli - 0.812| < 0.005 := by
+  refine ctx.claim_witness_4He
 
 end QOU.Archimedean.PauliWitness

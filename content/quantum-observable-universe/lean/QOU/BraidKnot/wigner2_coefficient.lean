@@ -112,7 +112,7 @@ of shape $\lambda$.  Under this involution:
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wigner-2-coefficient.ts
-theorem wigner2_coefficient [ctx : Wigner2CoefficientContext] :
+def wigner2_coefficient [ctx : Wigner2CoefficientContext] :
     (∀ λ : ctx.PartitionIdx, ctx.per_gen_trace λ = ctx.h / 2) ∧
     (∀ λ : ctx.PartitionIdx, ctx.C_λ λ = ctx.w_λ λ * ctx.h / 2) :=
   ⟨ctx.claim_i_per_generator_trace, ctx.claim_ii_BW_closed_form⟩

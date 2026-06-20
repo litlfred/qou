@@ -94,7 +94,7 @@ principal specialisation $x_i \mapsto q^{i-1}$.  Then:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/demazure-fiber-markov-trace.ts
-theorem demazure_fiber_markov_trace [ctx : DemazureFiberMarkovTraceContext] :
+def demazure_fiber_markov_trace [ctx : DemazureFiberMarkovTraceContext] :
     (∀ λ : ℕ, ctx.T_Dem λ ctx.w_0 = ctx.y_lambda λ) ∧
     ctx.claim_ii_bruhat_order_structural ∧
     (Finset.range ctx.n_partitions).sum

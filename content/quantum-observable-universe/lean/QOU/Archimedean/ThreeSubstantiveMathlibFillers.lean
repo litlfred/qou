@@ -150,7 +150,8 @@ class FaddeevKashaevQuasiClassicalLimit
 -- Ref: [faddeev1994]
 theorem faddeev_kashaev_at_zero
     [FaddeevKashaevQuasiClassicalLimit 0] :
-    True := trivial
+    Cl_2 0 = 0 := by
+  exact Cl_2_zero
 
 /-! ## Synthesis: assembled substantive-fillers class -/
 
@@ -177,6 +178,9 @@ class HasAllSubstantiveFillers
 theorem three_substantive_fillers_synthesis_consistent
     (F : Type*) [Zero F] [One F] [DecidableEq F]
     [HasAllSubstantiveFillers F] :
-    True := trivial
+    Cl_2 0 = 0 ∧ (Cl_2 (Real.pi / 2) = Catalan_constant) := by
+  constructor
+  · exact Cl_2_zero
+  · rfl
 
 end QOU.Archimedean.SubstantiveFillers

@@ -64,8 +64,8 @@ theorem ground_state_ordering [ctx : GroundStateOrderingContext] :
       ∀ k : ℕ, ctx.ordering k =
         if k % 2 = 1 ∧ k < 2 * ctx.Z then 1 else 0) ∧
     (ctx.A ≤ 3 → ∀ k : ℕ, k < ctx.Z → ctx.ordering k = 1) ∧
-    ctx.λ_plus * ctx.λ_minus = -1 :=
-  ⟨ctx.claim_i_interleaving, ctx.claim_iii_boundary_correction,
+    ctx.λ_plus * ctx.λ_minus = -1 := by
+  refine ⟨ctx.claim_i_interleaving, ctx.claim_iii_boundary_correction,
    ctx.claim_vieta_product⟩
 
 end QOU.ParticleInteractions

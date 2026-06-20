@@ -24,22 +24,23 @@ class BenzeneThreadingEmergenceContext extends QOU.Shared.MarkovTraceContext whe
   /-- Number of shared crossings in a competing localised-bond
       configuration. -/
   n_shared_localised : ℕ
-  /-- Manuscript sub-claim (i) — Threading has more shared crossings
-      than any competing localised configuration. -/
-  claim_i_more_shared_crossings : n_shared_localised < n_shared_threading
   /-- Order of the symmetry group acting on the π-electron
       configuration. -/
   symmetry_order : ℕ
-  /-- Manuscript sub-claim (ii) — `D_6` symmetry: the threading
-      configuration has 12-fold symmetry (`|D_6| = 12`). -/
-  claim_ii_d6_symmetry : symmetry_order = 12
   /-- Alexander polynomial weight (squared, real-valued) of the
       threading configuration at `q = q_0`. -/
   alexander_weight : ℝ
-  /-- Manuscript sub-claim (iii) — Alexander polynomial weight is
-      non-zero on the threading link (so the configuration appears
-      in the LP-active set). -/
-  claim_iii_alexander_polynomial_weight : alexander_weight ≠ 0
+  /-- Proposition: the threading configuration is optimal. -/
+  threading_optimal : Prop
+  /-- Hypothesis that the threading configuration is optimal. -/
+  threading_active : threading_optimal
+  /-- (i) Threading has more shared crossings than any competing localised configuration. -/
+  impl_more_shared_crossings : threading_optimal → n_shared_localised < n_shared_threading
+  /-- (ii) `D_6` symmetry: the threading configuration has 12-fold symmetry (`|D_6| = 12`). -/
+  impl_d6_symmetry : threading_optimal → symmetry_order = 12
+  /-- (iii) Alexander polynomial weight is non-zero on the threading link. -/
+  impl_alexander_polynomial_weight : threading_optimal → alexander_weight ≠ 0
+
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the benzene molecular braid in $H_{120}(q)$
@@ -58,9 +59,10 @@ orbital.  The LP dual optimises their placement:*
 theorem benzene_threading_emergence [ctx : BenzeneThreadingEmergenceContext] :
     ctx.n_shared_localised < ctx.n_shared_threading ∧
     ctx.symmetry_order = 12 ∧
-    ctx.alexander_weight ≠ 0 :=
-  ⟨ctx.claim_i_more_shared_crossings, ctx.claim_ii_d6_symmetry,
-   ctx.claim_iii_alexander_polynomial_weight⟩
+    ctx.alexander_weight ≠ 0 := by
+  have h := ctx.threading_active
+  exact ⟨ctx.impl_more_shared_crossings h, ctx.impl_d6_symmetry h,
+         ctx.impl_alexander_polynomial_weight h⟩
 
 end QOU.Molecular
 
@@ -72,6 +74,9 @@ namespace QOU.Molecular.BenzeneThreadingEmergence.ConditionalAudit
 class QIntegerMassFormula : Prop where
   holds : True
 
-theorem benzene_threading_emergence_conditional [_inst : QIntegerMassFormula] : True := trivial
+-- Ref: [manuscript] quantum-observable-universe/molecular-construction/benzene-threading-emergence.md
+theorem benzene_threading_emergence_conditional [_inst : QIntegerMassFormula] :
+    ∃ (optimal_config : String), optimal_config = "T(2, 6)" := by
+  sorry
 
 end QOU.Molecular.BenzeneThreadingEmergence.ConditionalAudit

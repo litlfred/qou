@@ -275,10 +275,22 @@ end InterLevelLift
 with downstream code that hypothesised against this name during
 PR #506). New code should hypothesise against `InterLevelLift`
 instead. -/
-theorem pentagon_inter_level_placeholder (n : ℕ) :
-    True := by
+theorem pentagon_inter_level_placeholder
+    {R : Type u} [CommRing R]
+    {EndAlg : ℕ → Type v}
+    [∀ n, AddCommGroup (EndAlg n)] [∀ n, Module R (EndAlg n)]
+    [∀ n, Mul (EndAlg n)] {q : R}
+    [IL : InterLevelLift R EndAlg q]
+    (n : ℕ) (i j k : Generator n) (x : EndAlg n)
+    (h_transient : ∀ R_q : EndAlg (n + 1),
+      descendedPart (R := R) (EndAlg := EndAlg) n R_q = R_q →
+      R_q = 0) :
+    (IL.liftOperator n i x) * (IL.liftOperator n j x) *
+      (IL.liftOperator n k x) =
+    q • ((IL.liftOperator n k x) *
+          ((IL.liftOperator n i x) * (IL.liftOperator n j x))) := by
   -- Ref: [manuscript] superseded by InterLevelLift.pentagon_inter_level_on_transient.
-  trivial
+  sorry
 
 end JetChain
 

@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/lean/QOU/Archimedean.lean"
   },
   "source_hashes": {
-    "md": "724761230205",
-    "ts": "eee6fb5a41f6",
-    "lean": "aa6c1dcf0f25"
+    "md": "02a2170fc181",
+    "ts": "0f5bea7691a6",
+    "lean": "2ca8d48a16a3"
   },
   "criteria": {
     "voice-status-leak": [
@@ -2995,7 +2995,27 @@
         "severity": "major",
         "evidence": "content/quantum-observable-universe/predicted-spectra/bohr-radius-categorical.md:279: status-section-header: ### Status"
       }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "lean": "2ca8d48a16a3"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/lean/QOU/Archimedean/bohr_radius_categorical.lean:57 [field-projection] theorem bohr_radius_categorical [ctx : BohrRadiusCategoricalContext] :",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "3d6da1d6f221",
+          "script_commit_sha": "59988482014b44b7f22be60f49df38000c2228c2"
+        },
+        "reviewed_at": "2026-06-20T11:45:15.347Z",
+        "reviewed_sha": "e451d436f3729e99f9df9615b034a95ad2fa8407",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-20T11:45:15.347Z"
 }

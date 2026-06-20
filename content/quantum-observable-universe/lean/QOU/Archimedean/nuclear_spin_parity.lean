@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Archimedean.nuclear_spin_parity — `J ∈ ℤ ⟺ A ∈ 2ℤ`
 
@@ -46,7 +48,7 @@ class NucleusLike where
     `J ∈ ℤ` ⟺ `A` even (and `J ∈ ℤ + 1/2` ⟺ `A` odd). -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/nuclear-spin-parity.md
 theorem nuclear_spin_parity [n : NucleusLike] :
-    n.twoJ % 2 = (n.Z + n.N) % 2 :=
-  n.claim_spin_parity
+    n.twoJ % 2 = (n.Z + n.N) % 2 := by
+  refine n.claim_spin_parity
 
 end QOU.Archimedean

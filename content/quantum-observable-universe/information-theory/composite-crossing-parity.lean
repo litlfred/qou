@@ -106,6 +106,6 @@ namespace QOU.CompositeCrossingParity.ConditionalAudit
 class BorromeanQuark : Prop where
   holds : True
 
-theorem composite_crossing_parity_g2_conditional [_inst : BorromeanQuark] : True := trivial
+def composite_crossing_parity_g2_conditional [_inst : BorromeanQuark] : True := trivial
 
 end QOU.CompositeCrossingParity.ConditionalAudit

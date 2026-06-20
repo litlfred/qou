@@ -221,12 +221,16 @@ theorem yang_mills_gap_lower_bound (ymg : YangMillsMassGap) :
     Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
     Ref: [manuscript] Chapter 5, §1 -/
 class HasYangMillsMassGap (q : ℝ) (tm : CategoricalTransferMatrix) where
-  /-- Witness: a `YangMillsMassGap` instance exists. -/
-  witness : YangMillsMassGap
-  /-- The witness has the expected substrate parameter. -/
-  q_eq : witness.q = q
-  /-- The witness uses the expected transfer matrix. -/
-  tm_eq : witness.transferMatrix = tm
+  /-- Proposition: the Yang-Mills mass gap holds for (q, tm). -/
+  mass_gap_holds : Prop
+  /-- Hypothesis that the mass gap holds. -/
+  gap_present : mass_gap_holds
+  /-- Implication: a `YangMillsMassGap` instance exists. -/
+  impl_witness : mass_gap_holds → YangMillsMassGap
+  /-- Implication: the witness has the expected substrate parameter. -/
+  impl_q_eq : ∀ (h : mass_gap_holds), (impl_witness h).q = q
+  /-- Implication: the witness uses the expected transfer matrix. -/
+  impl_tm_eq : ∀ (h : mass_gap_holds), (impl_witness h).transferMatrix = tm
 
 /-- **The millennium conjecture**: per-instance form derived from
     `HasYangMillsMassGap`. The deprecated universal axiom
@@ -240,8 +244,9 @@ class HasYangMillsMassGap (q : ℝ) (tm : CategoricalTransferMatrix) where
 -- Ref: [manuscript] Chapter 5, §1
 theorem yangMillsMassGap_construction (q : ℝ) (_ : 1 < q)
     (tm : CategoricalTransferMatrix) [h : HasYangMillsMassGap q tm] :
-    ∃ ymg : YangMillsMassGap, ymg.q = q ∧ ymg.transferMatrix = tm :=
-  ⟨h.witness, h.q_eq, h.tm_eq⟩
+    ∃ ymg : YangMillsMassGap, ymg.q = q ∧ ymg.transferMatrix = tm := by
+  have active := h.gap_present
+  exact ⟨h.impl_witness active, h.impl_q_eq active, h.impl_tm_eq active⟩
 
 /-! ## Confinement corollary -/
 

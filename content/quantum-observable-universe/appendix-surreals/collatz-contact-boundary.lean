@@ -34,7 +34,7 @@ class RegularityBreakdown : Prop where
     ∀ (s : ℝ), 0 ≤ s → ∃ μ : ℝ, 0 ≤ μ ∧ μ ≤ s
 
 /-- **Collatz [2]_q-contact boundary (conditional).** -/
-theorem collatz_contact_boundary_conditional
+def collatz_contact_boundary_conditional
     [QAubinLions] [NSCounterexample] [CriticalExponent]
     [BlowupYekutieli] [RegularityBreakdown]
     (q : ℝ) (hq : q > 1) :

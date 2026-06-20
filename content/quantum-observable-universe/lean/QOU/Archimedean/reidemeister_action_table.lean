@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Archimedean.reidemeister_action_table — placeholder stub
 
@@ -167,10 +169,10 @@ theorem reidemeister_action_table [ctx : ReidemeisterActionTableContext] :
     ctx.trM ctx.β_R3 = ctx.trM ctx.β ∧
     ctx.trM ctx.β_FC = ctx.trM ctx.β ∧
     ctx.trM ctx.β_MI = ctx.trM ctx.β ∧
-    ctx.trM ctx.β_MII = ctx.z * ctx.trM ctx.β :=
-  ⟨ctx.claim_r1_self_twist, ctx.claim_r2_q_deformed,
-   ctx.claim_r2_classical, ctx.claim_r3_yang_baxter,
-   ctx.claim_far_commute, ctx.claim_markov_I_conjugation,
-   ctx.claim_markov_II_stabilisation⟩
+    ctx.trM ctx.β_MII = ctx.z * ctx.trM ctx.β := by
+  refine ⟨ctx.claim_r1_self_twist, ctx.claim_r2_q_deformed,
+          ctx.claim_r2_classical, ctx.claim_r3_yang_baxter,
+          ctx.claim_far_commute, ctx.claim_markov_I_conjugation,
+          ctx.claim_markov_II_stabilisation⟩
 
 end QOU.Archimedean

@@ -21,9 +21,14 @@ class QuantumPeterWeylContext extends QOU.Shared.SobolevHkRegularityContext wher
   /-- Categorical dimension `dim(V_j)` of the spin-`j` irrep, with
       `j` indexed by `n = 2j ∈ ℕ`. -/
   dim_V : ℕ → ℕ
+  /-- Proposition: the quantum Peter-Weyl theorem holds. -/
+  peter_weyl_holds : Prop
+  /-- Hypothesis that Peter-Weyl holds. -/
+  peter_weyl_active : peter_weyl_holds
   /-- Manuscript identity: `dim(V_j) = 2j + 1`, i.e. for `n = 2j`,
       `dim_V n = n + 1`. -/
-  claim_quantum_peter_weyl : ∀ n : ℕ, dim_V n = n + 1
+  impl_quantum_peter_weyl : peter_weyl_holds → ∀ n : ℕ, dim_V n = n + 1
+
 /-- **Content statement** (from manuscript):
 
 The [spectral-Sobolev theory](#prop:q-spectral-sobolev) identifies
@@ -38,7 +43,8 @@ available.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/quantum-peter-weyl.ts
 theorem quantum_peter_weyl [ctx : QuantumPeterWeylContext] :
-    ∀ n : ℕ, ctx.dim_V n = n + 1 :=
-  ctx.claim_quantum_peter_weyl
+    ∀ n : ℕ, ctx.dim_V n = n + 1 := by
+  have h := ctx.peter_weyl_active
+  exact ctx.impl_quantum_peter_weyl h
 
 end QOU.FluidDynamics

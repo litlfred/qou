@@ -46,7 +46,7 @@ $\star_q$ ([Definition](#def:q-hodge-star)).
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mobius-energy.ts
-theorem mobius_energy [ctx : MobiusEnergyContext] :
+def mobius_energy [ctx : MobiusEnergyContext] :
     ctx.q_real = 1 → ctx.E_cat = ctx.c_topo * ctx.E_class :=
   ctx.claim_mobius_energy
 

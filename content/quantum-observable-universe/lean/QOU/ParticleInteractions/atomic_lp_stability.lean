@@ -37,9 +37,10 @@ class AtomicLPStabilityContext where
   bareAnnihilatorExists : Prop
   /-- The Markov-normalised annihilator existence predicate (dressed). -/
   dressedAnnihilatorExists : Prop
-  /-- Manuscript LP-stability dichotomy: bare H admits an annihilator
-      but 𝓑₃-dressed H does not. -/
-  claim_lp_dichotomy : bareAnnihilatorExists ∧ ¬ dressedAnnihilatorExists
+  /-- Bare hydrogen admits a normalized annihilator. -/
+  h_bare : bareAnnihilatorExists
+  /-- Dressed hydrogen does not admit a normalized annihilator. -/
+  h_dressed : ¬ dressedAnnihilatorExists
 
 /-- **Bare hydrogen LP-unstable, 𝓑₃-dressed stable**
     ([`prop:atomic-lp-stability`]).
@@ -49,8 +50,10 @@ class AtomicLPStabilityContext where
     ratio shifts `0.537 → 0.352`). -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-lp-stability.md
 theorem atomic_lp_stability [ctx : AtomicLPStabilityContext] :
-    ctx.bareAnnihilatorExists ∧ ¬ ctx.dressedAnnihilatorExists :=
-  ctx.claim_lp_dichotomy
+    ctx.bareAnnihilatorExists ∧ ¬ ctx.dressedAnnihilatorExists := by
+  constructor
+  · exact ctx.h_bare
+  · exact ctx.h_dressed
 
 /-- The bare and dressed annihilation ratios are distinct. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-lp-stability.md

@@ -27,26 +27,21 @@ class ConfinementCategoricalContext extends QOU.Shared.MarkovTraceContext where
   e_block : ℕ → ℝ
   /-- Total `E_∞^{0,0}` contribution. -/
   E_infinity_00 : ℝ
-  /-- Manuscript sub-claim (i) — Survival: `E_∞^{0,0} = Z(A) =
-      ⊕_λ R·e_λ` (center decomposes into block sum). -/
-  claim_i_survival_page_contributions :
+  /-- Survival: centre decomposes into block sum. -/
+  survival_page :
     E_infinity_00 = (Finset.range n_blocks).sum (fun λ => e_block λ)
   /-- Frobenius integral evaluated on an arbitrary algebra element. -/
   integral : A → ℝ
   /-- Projector onto the center of `A`. -/
   pi_centre : A → A
-  /-- Manuscript sub-claim (ii) — Trace factorization: the Frobenius
-      integral equals the integral after centre projection. -/
-  claim_ii_trace_factorization_frobenius :
+  /-- Trace factorization: Frobenius integral equals the integral after centre projection. -/
+  trace_factorization :
     ∀ x : A, integral x = integral (pi_centre x)
   /-- Predicate "`x : A` is a physical observable" — survives the
       GB-filtration spectral sequence collapse. -/
   observable : A → Prop
-  /-- Manuscript sub-claim (iii) — Observables are central: every
-      physical observable is fixed by the centre projector
-      (`pi_centre x = x`), which is the categorical statement of color
-      confinement. -/
-  claim_iii_observables_wedderburn_residues : ∀ x : A,
+  /-- Observables are central: every physical observable is fixed by the centre projector. -/
+  observables_central : ∀ x : A,
     observable x → pi_centre x = x
 /-- **Proposition statement** (from manuscript):
 
@@ -65,9 +60,7 @@ theorem confinement_categorical [ctx : ConfinementCategoricalContext] :
     ctx.E_infinity_00 = (Finset.range ctx.n_blocks).sum
                           (fun λ => ctx.e_block λ) ∧
     (∀ x : ctx.A, ctx.integral x = ctx.integral (ctx.pi_centre x)) ∧
-    (∀ x : ctx.A, ctx.observable x → ctx.pi_centre x = x) :=
-  ⟨ctx.claim_i_survival_page_contributions,
-   ctx.claim_ii_trace_factorization_frobenius,
-   ctx.claim_iii_observables_wedderburn_residues⟩
+    (∀ x : ctx.A, ctx.observable x → ctx.pi_centre x = x) := by
+  exact ⟨ctx.survival_page, ctx.trace_factorization, ctx.observables_central⟩
 
 end QOU.WedderburnMass

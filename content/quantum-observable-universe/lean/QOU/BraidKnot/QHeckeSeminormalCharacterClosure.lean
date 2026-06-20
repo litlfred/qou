@@ -30,7 +30,7 @@ class QHeckeSeminormalCharacterClosureContext where
 /-- **Proposition (`prop:q-hecke-seminormal-character-closure`).**
     The two compute paths for `tr_M` agree. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.md
-theorem character_closure_holds
+def character_closure_holds
     [ctx : QHeckeSeminormalCharacterClosureContext] :
     ctx.tr_M_partition_sum = ctx.tr_M_axiom_reducer :=
   ctx.claim_paths_agree

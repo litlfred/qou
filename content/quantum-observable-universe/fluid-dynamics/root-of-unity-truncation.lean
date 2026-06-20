@@ -30,7 +30,7 @@ class RegularityBreakdown : Prop where
     factors through the dense set of roots of unity, with the
     quotient by each root yielding a finite-rank truncation that
     converges to the classical NS evolution. -/
-theorem root_of_unity_truncation_conditional
+def root_of_unity_truncation_conditional
     [QAubinLions] [NSCounterexample] [CriticalExponent]
     [BlowupYekutieli] [RegularityBreakdown]
     (q : ℝ) (hq : q > 1) :

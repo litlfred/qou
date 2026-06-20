@@ -90,7 +90,7 @@ hook–content closed form:*
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-weight-canonical.ts
-theorem wedderburnWeightCanonical [ctx : WedderburnWeightCanonicalContext] :
+def wedderburnWeightCanonical [ctx : WedderburnWeightCanonicalContext] :
     (∀ λ : ctx.PartitionIdx, ctx.β λ = -(1/2) * ctx.w_tilde λ) ∧
     (∀ λ : ctx.PartitionIdx,
       ctx.C λ = (1/2) * (ctx.q - ctx.q⁻¹) * ctx.w_tilde λ) :=

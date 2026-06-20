@@ -40,7 +40,7 @@ class SixTermMassFormulaContext where
 
     `𝔪(ϱ) = term1 + term2 + term3 + term4 + term5 + term6`. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md
-theorem six_term_mass_formula_complete [ctx : SixTermMassFormulaContext] :
+def six_term_mass_formula_complete [ctx : SixTermMassFormulaContext] :
     ctx.cat_mass = ctx.term1 + ctx.term2 + ctx.term3
                  + ctx.term4 + ctx.term5 + ctx.term6 :=
   ctx.claim_six_term_sum

@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Archimedean.PauliWitness.witness_8Be — placeholder stub
 
@@ -58,7 +60,7 @@ relative amplitude than in neighbouring stable nuclei.
 -- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts
 theorem witness_8Be [ctx : Witness8BeContext] :
     ctx.Z = 4 ∧ ctx.N = 4 ∧ ctx.pre_reduction_terms = 5040 ∧
-    ctx.net_terms = 8 ∧ |ctx.F_Pauli - 0.368| < 0.005 :=
-  ctx.claim_witness_8Be
+    ctx.net_terms = 8 ∧ |ctx.F_Pauli - 0.368| < 0.005 := by
+  refine ctx.claim_witness_8Be
 
 end QOU.Archimedean.PauliWitness

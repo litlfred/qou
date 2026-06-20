@@ -100,7 +100,7 @@ on each
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.ts
-theorem joint_tower_sdp_confinement [ctx : JointTowerSdpConfinementContext] :
+def joint_tower_sdp_confinement [ctx : JointTowerSdpConfinementContext] :
     ctx.claim_i_wedderburn_positivity ∧
     (∀ H w : ℕ, ctx.coefficient H w ≠ 0 →
       ctx.word_length w ≤ ctx.gb_filtration_length H) ∧

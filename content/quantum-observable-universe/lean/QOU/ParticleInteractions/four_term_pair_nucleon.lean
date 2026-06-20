@@ -54,8 +54,8 @@ three independent $\gamma\gamma$ pair productions using the full
 theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :
     ctx.n_proton_color_combinations = 4 ∧
     ctx.n_neutron_color_combinations = 4 ∧
-    (ctx.pair_count = 3 ∧ ctx.photon_terms = 4) :=
-  ⟨ctx.claim_i_proton_derivation, ctx.claim_ii_neutron_derivation,
+    (ctx.pair_count = 3 ∧ ctx.photon_terms = 4) := by
+  refine ⟨ctx.claim_i_proton_derivation, ctx.claim_ii_neutron_derivation,
    ctx.claim_iii_counts⟩
 
 end QOU.ParticleInteractions

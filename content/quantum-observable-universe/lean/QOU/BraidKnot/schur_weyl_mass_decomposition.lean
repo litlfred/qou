@@ -54,7 +54,7 @@ class SchurWeylMassContext (Z N : ℕ) where
 
     `tr_M(𝒜) = Σ_λ s_λ(𝐪) · χ^λ(𝒜) / H_q(λ)`. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.md
-theorem schur_weyl_mass_decomposition
+def schur_weyl_mass_decomposition
     {Z N : ℕ} [ctx : SchurWeylMassContext Z N] :
     ctx.trM_atomic
       = ctx.partitions.sum

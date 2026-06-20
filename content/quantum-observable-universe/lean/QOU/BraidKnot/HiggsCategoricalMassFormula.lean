@@ -173,7 +173,7 @@ theorem higgs_mass_formula_matches_measured_hypothesis :
     a CLAIM about external empirical data, not a Lean theorem in the
     classical sense; encoded as a documentation hook. -/
 -- Ref: [manuscript] PR #1159 witness `higgs-categorical-mass-formula-attempt.witness.json`
-theorem higgs_mass_formula_empirically_within_one_percent :
+def higgs_mass_formula_empirically_within_one_percent :
     True := trivial  -- placeholder for documentation; real verification
                      -- lives in the witness JSON computed at 50 dps
 

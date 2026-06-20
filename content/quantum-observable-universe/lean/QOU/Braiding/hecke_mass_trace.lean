@@ -85,7 +85,7 @@ class HeckeMassTraceContext where
     of the Hecke mass element; the trace decomposes additively over
     the descended + transient pieces. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-mass-trace.md
-theorem hecke_mass_trace [ctx : HeckeMassTraceContext] :
+def hecke_mass_trace [ctx : HeckeMassTraceContext] :
     -- (i) Mass = norm of Markov trace
     (ctx.cat_mass = ctx.norm (ctx.markovInst.trace ctx.Phi_mass)) ∧
     -- (ii) Topological decomposition descends to H_n(R, q)

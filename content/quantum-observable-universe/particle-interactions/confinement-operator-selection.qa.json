@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_operator_selection.lean"
   },
   "source_hashes": {
-    "md": "a7e748cdc000",
-    "ts": "6c77b7d17276",
-    "lean": "f8db5d74c684"
+    "md": "94183f7d93f2",
+    "ts": "e23cc3d0f3e7",
+    "lean": "6b21bd0482bd"
   },
   "criteria": {
     "voice-status-leak": [
@@ -2695,6 +2695,24 @@
         "reviewed_at": "2026-06-15T13:25:43.317Z",
         "reviewed_sha": "ba054a5f36280a14538808c396d021e8fefbdf67",
         "notes": "Placeholder stub is unformalised."
+      },
+      {
+        "field_hash": {
+          "lean": "6b21bd0482bd"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_operator_selection.lean:193 [tuple-projection] theorem confinement_operator_selection [ctx : BorromeanConfinement] :",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "3d6da1d6f221",
+          "script_commit_sha": "59988482014b44b7f22be60f49df38000c2228c2"
+        },
+        "reviewed_at": "2026-06-20T11:45:15.347Z",
+        "reviewed_sha": "e451d436f3729e99f9df9615b034a95ad2fa8407",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "proof-no-trivial-true": [
@@ -2778,5 +2796,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-15T13:25:43.317Z"
+  "updated_at": "2026-06-20T11:45:15.347Z"
 }
