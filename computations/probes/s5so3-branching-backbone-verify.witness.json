@@ -1,10 +1,10 @@
 {
   "computation": "s5so3-branching-backbone-verify",
   "engine": "python+sympy",
-  "computedAt": "2026-06-19T23:55:01.658940+00:00",
+  "computedAt": "2026-06-20T00:03:15.268624+00:00",
   "description": "Combinatorial backbone of the conj:s5-so3-fiber-action keystone: verifies the Res^{S5}_{S3} branchings, the (1,1,1) sign-block difference, the S5->A5 icosahedral branching (l=1->T1 in (3,1,1); l=2->H in (3,2)/(2,2,1)), and that the Borromean h^4 coefficient lives exclusively in the H3(q) (2,1) block. q=1/classical backbone only; the q-deformed projector shift + 210 ppb evaluation stay OPEN (resolution-doc section 4).",
   "scriptFile": "s5so3_branching_backbone_verify.py",
-  "scriptHash": "fb604e06ef69",
+  "scriptHash": "05d9771c6998",
   "assertions": [
     {
       "name": "C1_branch_3_2_to_S3",

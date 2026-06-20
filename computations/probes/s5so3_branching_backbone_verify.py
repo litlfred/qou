@@ -38,11 +38,21 @@ Self-checking: character-table orthogonality + Hecke/braid relation checks.
 import json
 import datetime
 import hashlib
+import sys as _sys
+from pathlib import Path
+
 import sympy as sp
+
+# Reuse the canonical hook-length dimension from the shared module instead of
+# re-implementing it (computations/murnaghan_nakayama.py::dim_specht = f^λ).
+_sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from murnaghan_nakayama import dim_specht  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
 # C1 — iterated removable-box branching rule  S_n -> S_{n-1}
+# (these two helpers are the probe-specific branching computation; the general
+#  hook-length dimension is reused from the shared module via dim_specht.)
 # ---------------------------------------------------------------------------
 def remove_one_box(part):
     """All partitions of n-1 obtained by removing a single removable corner."""
@@ -72,22 +82,7 @@ def restrict_S5_to_S3(part5):
     return lvl3
 
 
-def dim_Sn(part):
-    """Hook-length formula dimension of the S_n irrep V_part."""
-    n = sum(part)
-    # build Young diagram hook lengths
-    rows = list(part)
-    cols = [0] * (rows[0])
-    for r in rows:
-        for c in range(r):
-            cols[c] += 1
-    prod = 1
-    for i, r in enumerate(rows):
-        for j in range(r):
-            arm = r - 1 - j
-            leg = cols[j] - 1 - i
-            prod *= (arm + leg + 1)
-    return sp.factorial(n) // prod
+# (S_n irrep dimension f^λ is the shared `dim_specht`, imported above.)
 
 
 # ---------------------------------------------------------------------------
@@ -200,8 +195,8 @@ def main():
         ("C1_branch_3_2_to_S3", r32 == exp32, exp32, r32),
         ("C1_branch_3_1_1_to_S3", r311 == exp311, exp311, r311),
         ("C1_difference_is_sign_block_1_1_1", diff == {(1, 1, 1): 1}, {"(1,1,1)": 1}, {str(k): v for k, v in diff.items()}),
-        ("C1_dim_check_3_2", sum(dim_Sn(p) * m for p, m in r32.items()) == dim_Sn((3, 2)), int(dim_Sn((3, 2))), int(sum(dim_Sn(p) * m for p, m in r32.items()))),
-        ("C1_dim_check_3_1_1", sum(dim_Sn(p) * m for p, m in r311.items()) == dim_Sn((3, 1, 1)), int(dim_Sn((3, 1, 1))), int(sum(dim_Sn(p) * m for p, m in r311.items()))),
+        ("C1_dim_check_3_2", sum(dim_specht(p) * m for p, m in r32.items()) == dim_specht((3, 2)), int(dim_specht((3, 2))), int(sum(dim_specht(p) * m for p, m in r32.items()))),
+        ("C1_dim_check_3_1_1", sum(dim_specht(p) * m for p, m in r311.items()) == dim_specht((3, 1, 1)), int(dim_specht((3, 1, 1))), int(sum(dim_specht(p) * m for p, m in r311.items()))),
     ]
 
     # ---- C2
@@ -232,7 +227,7 @@ def main():
         print(f"[{'PASS' if ok else 'FAIL'}] {name}  expected={exp} got={got}")
     print(f"\nALL PASSED: {all_passed}")
 
-    src = open(__file__).read()
+    src = Path(__file__).read_text(encoding="utf-8")
     witness = {
         "computation": "s5so3-branching-backbone-verify",
         "engine": "python+sympy",
@@ -264,9 +259,9 @@ def main():
             "tension (GapA4MuonMass)?",
         ],
     }
-    with open("computations/probes/s5so3-branching-backbone-verify.witness.json", "w") as f:
-        json.dump(witness, f, indent=2)
-    print("witness -> computations/probes/s5so3-branching-backbone-verify.witness.json")
+    witness_path = Path(__file__).parent / "s5so3-branching-backbone-verify.witness.json"
+    witness_path.write_text(json.dumps(witness, indent=2), encoding="utf-8")
+    print(f"witness -> {witness_path}")
     return 0 if all_passed else 1
 
 
