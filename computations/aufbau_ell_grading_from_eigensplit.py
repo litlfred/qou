@@ -132,7 +132,7 @@ def main() -> int:
         ("Madelung reference",     1, lambda n, l: n + l),
         ("EIGENSPLIT structural",  -2, lambda n, l: n - 2 * l),
     ]
-    sub = lambda n, l: f"{n}{'spdfghi'[l]}"
+    sub = lambda n, l: f"{n}{'spdfghi'[l]}" if l < 7 else f"{n}[{l}]"
     print("  | model | a (l-coeff) | fill order (first 10) | group closures | matches |")
     print("  |---|---:|---|---|---|")
     results = {}
