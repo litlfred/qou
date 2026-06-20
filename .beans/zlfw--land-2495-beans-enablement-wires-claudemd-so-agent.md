@@ -1,11 +1,11 @@
 ---
 # zlfw
 title: 'Land #2495 — beans enablement (wires CLAUDE.md so agents discover beans)'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-06-19T22:48:01Z
-updated_at: 2026-06-20T00:02:16Z
+updated_at: 2026-06-20T00:57:34Z
 parent: jox2
 ---
 
