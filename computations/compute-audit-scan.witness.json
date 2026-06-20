@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-17T13:11:05.302829+00:00",
-  "commitSha": "41f407ea55a7f4fe2197b335b035dbd6245f1134",
+  "computedAt": "2026-06-20T19:03:36.732087+00:00",
+  "commitSha": "17d23d15ba45bd938cf9ec052359429b321bb786",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8a602c238718",
-  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,13 +19,13 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "scipy": "1.17.1",
+    "mpmath": "1.4.1"
   },
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 893,
+    "files_scanned": 904,
     "patterns": [
       "P15",
       "P16",
@@ -36,11 +36,11 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 116,
-      "P16": 223,
+      "P15": 118,
+      "P16": 231,
       "P21": 24,
       "P30": 138,
-      "P31": 60
+      "P31": 54
     },
     "top_files": [
       {
@@ -116,6 +116,13 @@
         ]
       },
       {
+        "file": "channel_binding.py",
+        "count": 8,
+        "patterns": [
+          "P16"
+        ]
+      },
+      {
         "file": "derived_chi_catalogue_build.py",
         "count": 8,
         "patterns": [
@@ -150,14 +157,6 @@
         "count": 7,
         "patterns": [
           "P16"
-        ]
-      },
-      {
-        "file": "frobenius_partition_sum.py",
-        "count": 7,
-        "patterns": [
-          "P16",
-          "P30"
         ]
       }
     ],
@@ -611,13 +610,6 @@
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
-        "pattern": "P31",
-        "file": "build_six_term_substrate_model_b.py",
-        "line": 114,
-        "snippet": "CODATA literal \"938.27208816\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
         "pattern": "P30",
         "file": "bw_chirality_isotopes.py",
         "line": 1,
@@ -674,6 +666,62 @@
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
+        "pattern": "P16",
+        "file": "channel_binding.py",
+        "line": 138,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "channel_binding.py",
+        "line": 138,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "channel_binding.py",
+        "line": 138,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "channel_binding.py",
+        "line": 200,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "channel_binding.py",
+        "line": 231,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "channel_binding.py",
+        "line": 239,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "channel_binding.py",
+        "line": 279,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "channel_binding.py",
+        "line": 280,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
         "pattern": "P30",
         "file": "chebyshev_pairing_engine_witness.py",
         "line": 1,
@@ -693,13 +741,6 @@
         "line": 1,
         "snippet": "Hoefsmit construction without BlockCache",
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
-      },
-      {
-        "pattern": "P31",
-        "file": "compound_binding_via_differences.py",
-        "line": 81,
-        "snippet": "CODATA literal \"938.27208816\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P30",
@@ -1255,13 +1296,6 @@
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
-        "pattern": "P31",
-        "file": "dirac_yekutieli_combinations_50dps.py",
-        "line": 258,
-        "snippet": "CODATA literal \"938.27208816\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
         "pattern": "P30",
         "file": "e0_lambda_composite.py",
         "line": 1,
@@ -1689,6 +1723,20 @@
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
+        "pattern": "P15",
+        "file": "gram_h3_det_factorization.py",
+        "line": 149,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "gram_h3_det_factorization.py",
+        "line": 151,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
         "pattern": "P21",
         "file": "gram_matrix_seminormal_n.py",
         "line": 1,
@@ -1820,13 +1868,6 @@
         "line": 190,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P31",
-        "file": "inter_nucleon_linked_channel.py",
-        "line": 63,
-        "snippet": "CODATA literal \"938.27208816\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P30",
@@ -2397,22 +2438,8 @@
       },
       {
         "pattern": "P31",
-        "file": "mass_formula_6term_mpfr_50dps.py",
-        "line": 542,
-        "snippet": "CODATA literal \"938.27208816\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
-        "pattern": "P31",
         "file": "mass_sweep_bar_sym_h2_coefficient_hunt.py",
         "line": 83,
-        "snippet": "CODATA literal \"0.51099895\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
-        "pattern": "P31",
-        "file": "mass_table_l1_full_crosscheck.py",
-        "line": 29,
         "snippet": "CODATA literal \"0.51099895\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
