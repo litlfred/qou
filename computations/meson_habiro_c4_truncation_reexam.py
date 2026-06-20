@@ -72,6 +72,7 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import M_PI_PM_MEV_VALIDATION, M_K_PM_MEV_VALIDATION  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -84,8 +85,8 @@ def main() -> int:
     print("=" * 78)
 
     # PDG anchors (per audit 2026-05-29)
-    m_K = mp.mpf("493.677")
-    m_pi = mp.mpf("139.57039")
+    m_K = M_K_PM_MEV_VALIDATION
+    m_pi = M_PI_PM_MEV_VALIDATION
     target = m_K / m_pi  # = 3.5371...
     print(f"\nq_0 = {Q_50_DIGIT_STR}")
     print(f"target m_K/m_π = {mp.nstr(target, 18)}")

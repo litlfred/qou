@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:34:32.074109+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-20T17:26:27.831964+00:00",
+  "commitSha": "2f5bc7a59ac22181d0d336141a9ec4df85e76ea1",
   "assertions": [
     {
       "name": "correction_tower_converges",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 10,
   "computation": "phase2a2-flavor-split-exact-correction",
   "scriptFile": "phase2a2_flavor_split_exact_correction.py",
-  "scriptHash": "155ffc815300",
-  "scriptCommitSha": "0686a96d211338bf33b6749e9ddb66f18ec18969",
+  "scriptHash": "1fb77effd59e",
+  "scriptCommitSha": "f89ec89aee3363048fc11bf0e6942b14ab5c0b22",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +26,10 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.11.15",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Reconstructs the exact flavor-split correction tower: X = X_leading · (1 + ℏ_q³ + c₄ℏ⁴ + c₅ℏ⁵ + ...) where ℏ_q = (q-1)/q is the substrate Planck constant. Identifies the coefficient c₄ and checks for rational structure.",
   "contentBlock": "prop:flavor-split-substrate"

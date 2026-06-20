@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T01:24:34.810173+00:00",
-  "commitSha": "05a642f98b1293126d8066ab04875df87a0e1487",
+  "computedAt": "2026-06-20T17:26:28.017787+00:00",
+  "commitSha": "2f5bc7a59ac22181d0d336141a9ec4df85e76ea1",
   "assertions": [
     {
       "name": "em_correction_candidate_evaluated",
@@ -14,36 +14,34 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "ocneanu-12-em-correction-candidate",
   "scriptFile": "ocneanu_12_em_correction_candidate.py",
-  "scriptHash": "4f76a8435605",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7db651d401d1",
+  "scriptCommitSha": "f89ec89aee3363048fc11bf0e6942b14ab5c0b22",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
   "description": "Tier=near-match candidate for the 32 ppm Ocneanu '12' residual: k_predicted = 12 − (α_em/π)/dim H_3 closes to 0.17% at q_0 (600× improvement over bare integer 12). Both factors structurally motivated (Bring zero-mode + Plancherel) — but NOT derived. Open categorical work needed before any wiring.",
   "parameters": {
-    "q_50dps": "1.1099785827513808075916690956107688798744991218736"
+    "q_50dps": "1.1099785955573347198997632204832250266562084087802"
   },
   "data": {
-    "k_required": "11.99961221517308362635959",
+    "k_required": "11.99955517162342283144208",
     "em_correction_value": "0.000387136577583418700789365",
     "k_predicted": "11.99961286342241658129921",
-    "residual_to_k_required_ppb": "54.0225235058",
-    "improvement_over_bare_12": "598.203202383",
-    "verdict": "NEAR-MATCH (tier=near-match): k = 12 − (α_em/π)/dim H_3 closes k_required to 0.0540225 ppm — a 598.203× improvement over the bare integer 12 (32 ppm). Both factors are structurally motivated: (α_em/π) is the standard EM prefactor from m_K/m_π's Bring zero-mode closure (PR #1442), and 1/dim H_3 = 1/|S_3| = 1/6 is the natural Plancherel normalization. NOT yet a derivation — the Bring-projection argument that pins the (3q²−1)/(2q²) shape in m_K/m_π hasn't been applied to the proton-mass identity. Open follow-up: derive (α_em/π)/dim H_3 from a Bring zero-mode analog. CRITICAL guard: do not promote this to production without the derivation — per production-vs-exploratory-discipline, the 0.17% precision is below the structural-identity threshold (1 ppm) but above the empirical-fit threshold (1%); it remains a tier=near-match that warrants categorical work, not wiring.",
+    "residual_to_k_required_ppb": "4807.82813768",
+    "improvement_over_bare_12": "7.71042651357",
+    "verdict": "NEAR-MATCH (tier=near-match): k = 12 − (α_em/π)/dim H_3 closes k_required to 4.80783 ppm — a 7.71043× improvement over the bare integer 12 (32 ppm). Both factors are structurally motivated: (α_em/π) is the standard EM prefactor from m_K/m_π's Bring zero-mode closure (PR #1442), and 1/dim H_3 = 1/|S_3| = 1/6 is the natural Plancherel normalization. NOT yet a derivation — the Bring-projection argument that pins the (3q²−1)/(2q²) shape in m_K/m_π hasn't been applied to the proton-mass identity. Open follow-up: derive (α_em/π)/dim H_3 from a Bring zero-mode analog. CRITICAL guard: do not promote this to production without the derivation — per production-vs-exploratory-discipline, the 0.17% precision is below the structural-identity threshold (1 ppm) but above the empirical-fit threshold (1%); it remains a tier=near-match that warrants categorical work, not wiring.",
     "tier": "near-match"
   }
 }
