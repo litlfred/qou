@@ -1,8 +1,29 @@
-# 2n² / noble-gas derivation — item-2 verdict: accept as input (two symmetries short)
+# 2n² / noble-gas derivation — item-2 verdict (SUPERSEDED — see synthesis)
 
 **Date:** 2026-06-20
 **Branch:** `claude/zealous-hypatia-05xyp9` (PR #2348, bean `e2nf`)
 **Class:** research verdict (formalize-first) + content correction.
+**Status:** **SUPERSEDED** by
+[`2026-06-20-electron-shell-program-synthesis.md`](2026-06-20-electron-shell-program-synthesis.md)
+— retained as the record of the (now-wrong) "accept-as-input" verdict.
+
+## ⚠⚠ STRICT supersession (2026-06-20, owner directive) — capacity DERIVED; ordering NOT accepted
+
+This document's verdict — "shell capacities **and** the noble-gas closures are
+**empirical / topological inputs**" — is **superseded on both counts**:
+
+1. **Capacity `2n²` is DERIVED** (not an input). It is the `q=1` self-square of
+   the single bar-even angular `q`-dimension, `2[n]_q²|_{q=1} = 2n²` with
+   `[n]_q² = Σ_{ℓ<n}[2ℓ+1]_q` (`shell_capacity_chebyshev_bridge.py`), and the
+   integer specialisation `Σ_{ℓ<n}(2ℓ+1)=n²` is now **sorry-free Lean**
+   ([`QOU.Molecular.shell_capacity_self_square`](../../content/quantum-observable-universe/lean/QOU/Molecular/ShellCapacitySelfSquare.lean),
+   content block [`prop:shell-capacity-self-square`](../../content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.md)).
+   No second compact `SU(2)` (per the banner below).
+2. **Ordering (Madelung/Aufbau) is OPEN — to be DERIVED, NOT accepted as a
+   semi-empirical input** (owner directive, STRICT). The derivation target is the
+   `λ₊^ℓ` dominant-channel topological reading (synthesis §4); three structural
+   candidates are ruled out. The "empirical input" / "accept-as-input" language
+   below no longer represents the position and must not be cited as current.
 
 ## ⚠ Owner correction (2026-06-20) — no second *compact* SU(2); the unification is the complex volume 𝔙
 

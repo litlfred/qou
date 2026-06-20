@@ -5,7 +5,7 @@ status: in_progress
 type: task
 priority: normal
 created_at: 2026-06-16T02:16:00Z
-updated_at: 2026-06-20T03:00:00Z
+updated_at: 2026-06-20T23:40:00Z
 ---
 
 Branch `claude/zealous-hypatia-05xyp9` → PR #2348. Picked up a stalled
@@ -32,14 +32,28 @@ low-isotope-mass-anatomy ledger before adopting this bean.
   genuinely open — 2×2 T_γe gives spin-2, not the orbital n²; needs an absent
   SO(4)/Runge-Lenz degeneracy; softened the unsupported overclaim.
 - Removed a vacuous shadowing Lean stub (no-shadowing-stubs).
+- **(2026-06-20) Consolidated synthesis + Lean-to-paper.**
+  - `docs/audits/2026-06-20-electron-shell-program-synthesis.md`: one clean
+    summary of the whole arc (capacity derived / σ_F monotone / e-Hartree
+    conditional / ordering OPEN-to-derive, not accepted — STRICT).
+  - **Lean-proved the PROVABLE gap** (capacity self-square), sorry-free:
+    `QOU.Molecular.shell_capacity_self_square` + `orbital_n_squared`
+    (`Σ_{ℓ<n}(2ℓ+1)=n²`, `Σ 2(2ℓ+1)=2n²`; induction, std Mathlib). Wired into
+    `QOU.lean`. **Put in paper**: `prop:shell-capacity-self-square` block
+    (molecular-construction §2, after `electron-shell-braid-capacity`).
+  - Scrubbed "semi-empirical / accept-as-input" residuals (aufbau audit, the
+    2n²-noble-gas verdict audit, this bean) per the STRICT directive.
+  - ⚠ Lean build + content-validate are CI-gated (elan + pipeline absent
+    locally); proofs are textbook-safe but UNVERIFIED here — subscription
+    surfaces any CI failure.
 
 ## Open
 
 - [x] Rebase #2348 onto current main — done 2026-06-20: 15 commits replayed onto
       current main (0 behind); only the ledger both-appended (kept both);
       force-pushed-with-lease.
-- [x] Research item resolved as a VERDICT (not a derivation): 2n² + the noble
-      gases are **accept-as-input** — the framework is *two symmetries short*
+- [x] **(SUPERSEDED)** Earlier verdict said 2n² + noble gases are
+      **accept-as-input** — the framework is *two symmetries short*
       (an SO(4)/Runge-Lenz degeneracy for the orbital n²; a categorical
       screening/Madelung mechanism for the noble-gas ordering — both absent).
       Pure-2n² closes at [2,10,28,60] ≠ noble [2,10,18,36]. Audit
@@ -100,8 +114,10 @@ low-isotope-mass-anatomy ledger before adopting this bean.
       λ₊^ℓ works but rests on the un-derived "angular = ℓ λ₊-open-transfer-steps"
       reading; no categorical object tested FORCES it over the overshooting
       trace. Duality/Perron names the right eigenvalue (λ₊) + order (Aufbau) but
-      doesn't force the reading. Consistent with Madelung being semi-empirical.
-      (Capacity Gap-1: 2n² self-square, essentially derived.)
+      doesn't force the reading. **STRICT (owner): NOT accepted as semi-empirical
+      input — stays an OPEN derivation target** (the λ₊^ℓ topological reading).
+      Madelung's standard-QM fragility (Cr,Cu,Pd) is why it's HARD, not a licence.
+      (Capacity Gap-1: 2n² self-square, derived + Lean-proved this PR.)
 
 ## Notes
 
