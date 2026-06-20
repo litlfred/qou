@@ -911,7 +911,7 @@ When you encounter a `sorry` in a `.lean` file:
    after 2026-06-03. Regenerate the catalog (see methodology
    below).
 4. **For non-class sorries**, check the lean-discharge queue
-   (`todos/lean-discharge-queue.json`) for an existing item; if
+   (`.beans/lean-discharge-queue.json`) for an existing item; if
    none, the sorry may be a candidate for triage once the
    cache-host blocker is resolved.
 
@@ -958,7 +958,7 @@ for f in glob.glob('content/quantum-observable-universe/lean/QOU/**/*.lean', rec
 
 ## Cross-refs
 
-- [`todos/lean-discharge-queue.json`](../../todos/lean-discharge-queue.json) — work queue (10 items, all blocked on `infra-lean-cache-host-bypass`)
+- [`.beans/lean-discharge-queue.json`](../../.beans/lean-discharge-queue.json) — work queue (10 items, all blocked on `infra-lean-cache-host-bypass`)
 - [`docs/audits/2026-06-03-lean-axiom-tractability-triage.md`](2026-06-03-lean-axiom-tractability-triage.md) — companion: which **axioms** are tractable (77 total, 6 tractable)
 - [`docs/audits/2026-06-03-proof-objects-json-extractor-broken.md`](2026-06-03-proof-objects-json-extractor-broken.md) — why the gh-pages manifest has been stale 45 days
 - [CLAUDE.md §3b-cond](../../CLAUDE.md) — the formal definition of the conditional-class exception

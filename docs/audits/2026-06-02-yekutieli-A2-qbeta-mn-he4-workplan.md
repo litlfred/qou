@@ -33,4 +33,4 @@ C → D → A → B → E
 - PR #1673 (merged) — refuted multiplicative X(q) + reframed (4,4,4)
 - PR #1662 (merged) — bar-symmetric discipline
 - `docs/audits/2026-06-01-yekutieli-mp-substrate-derivation-scaffolding.md`
-- `todos/research-queue.json`
+- `.beans/research-queue.json`

@@ -7,7 +7,7 @@
 ## Scope
 
 Three probes targeting open high-priority research queue items
-(`todos/research-queue.json`) + coordination on PR #1640:
+(`.beans/research-queue.json`) + coordination on PR #1640:
 
 | # | Goal | Queue item | Probe deliverable |
 |---|------|------------|-------------------|

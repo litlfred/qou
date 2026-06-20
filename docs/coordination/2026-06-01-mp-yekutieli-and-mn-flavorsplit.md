@@ -4,7 +4,7 @@ Branch: `claude/mp-yekutieli-and-mn-flavorsplit-2026-06-01`
 
 Per author 2026-06-01 direction to focus on **items 1 + 3** from the
 1ppQ-on-mass next-step menu. Items 2 (Δ_λ Option E) and 4 (m_K/m_π
-meta-apply-m_μ) are queued for later in `todos/research-queue.json`.
+meta-apply-m_μ) are queued for later in `.beans/research-queue.json`.
 
 ## Item 1 — m_p Yekutieli substrate-derivation
 
@@ -156,7 +156,7 @@ floor as currently formulated.
 - merged PR #1628 (Yekutieli volume-join verdict: (C) genuinely-open, (B) production-wrong)
 - audit [`2026-05-25-non-abelian-stokes-reading-a-exploration.md`](../audits/2026-05-25-non-abelian-stokes-reading-a-exploration.md)
 - audit [`2026-05-29-meson-mK-mpi-residual-derivation-attempt.md`](../audits/2026-05-29-meson-mK-mpi-residual-derivation-attempt.md)
-- queue [`todos/research-queue.json`](../../todos/research-queue.json) entries:
+- queue [`.beans/research-queue.json`](../../.beans/research-queue.json) entries:
   `research-yekutieli-substrate-derivation-mp`, `research-flavor-split-mn-dpn-refinement`
 
 ## 2026-06-04 — formalization attack opened (#1834)

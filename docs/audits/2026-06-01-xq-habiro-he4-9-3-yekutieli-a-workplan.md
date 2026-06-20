@@ -42,4 +42,4 @@ Three follow-on probes against PR #1673's verdicts:
 - PR #1511 — α_EM `[2]_q·(1-h²α)` Habiro element (template)
 - `docs/audits/2026-06-01-yekutieli-mp-substrate-derivation-scaffolding.md`
 - `docs/coordination/1ppq-mass.md`
-- `todos/research-queue.json`
+- `.beans/research-queue.json`

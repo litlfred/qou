@@ -25,9 +25,9 @@
 
 | Queue | Purpose | Items |
 |-------|---------|-------|
-| [`todos/1ppq-qbeta-queue.json`](todos/1ppq-qbeta-queue.json) | Per-goal 1ppQ-Q_β work | 6 (3 done, 1 in_progress, 2 blocked) |
-| [`todos/lean-discharge-queue.json`](todos/lean-discharge-queue.json) | Mechanical Lean sorry discharge (NOT §3b-cond) | 8 items + 1 registry of permanent sorries |
-| [`todos/research-queue.json`](todos/research-queue.json) | Research-grade open items across goals | 7 items (Q_β Habiro, Φ_q×spectral, (1+q)/2, multi-nucleon A=4, atom→knot A≥5, fibre/observable doc, q_0 declined) |
+| [`.beans/1ppq-qbeta-queue.json`](.beans/1ppq-qbeta-queue.json) | Per-goal 1ppQ-Q_β work | 6 (3 done, 1 in_progress, 2 blocked) |
+| [`.beans/lean-discharge-queue.json`](.beans/lean-discharge-queue.json) | Mechanical Lean sorry discharge (NOT §3b-cond) | 8 items + 1 registry of permanent sorries |
+| [`.beans/research-queue.json`](.beans/research-queue.json) | Research-grade open items across goals | 7 items (Q_β Habiro, Φ_q×spectral, (1+q)/2, multi-nucleon A=4, atom→knot A≥5, fibre/observable doc, q_0 declined) |
 
 ## Active sessions
 

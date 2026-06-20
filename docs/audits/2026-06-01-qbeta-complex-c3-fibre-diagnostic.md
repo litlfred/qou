@@ -148,5 +148,5 @@ Per CLAUDE.md no-7th-ansatz discipline:
   eigenspaces, not complex Re/Im)
 - `docs/audits/2026-05-31-qbeta-bridge-narrowing.md` — 7 mechanisms ruled out
 - `docs/audits/2026-05-30-qbeta-recursive-pair-rules-and-habiro-pde.md` — q-difference equation framing
-- `todos/research-queue.json` — `research-qbeta-habiro-element-search`
+- `.beans/research-queue.json` — `research-qbeta-habiro-element-search`
   remains the keystone; this probe refines its scope
