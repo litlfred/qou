@@ -16,10 +16,11 @@ allowed-tools: Read Edit Bash Grep Glob
 > On **any** Lean env/tool failure — `lean_run_code`/LSP "no valid project
 > path", `leansearch` SSL error, `lake exe cache get` 403, `elan toolchain
 > install` SSL/`failed to parse release data`, empty `~/.elan/toolchains/`,
-> `lake build` timeout — **do NOT conclude "Lean is unavailable."** Two of
-> these (cache-403, toolchain-host-firewalled) have **documented workarounds
-> in this very file** (§"Mathlib cache 403 fallback" + §"Web-sandbox
-> addendum"). The recurring failure mode is *agents re-deriving these
+> `lake build` timeout — **do NOT conclude "Lean is unavailable."** Several of
+> these (cache-403, toolchain-host-firewalled, leansearch/loogle SSL) have
+> **documented workarounds in this very file** (§"Mathlib cache 403 fallback"
+> + §"Web-sandbox addendum" + §"Offline Mathlib search"). The recurring
+> failure mode is *agents re-deriving these
 > workarounds — or giving up — instead of grepping for them.*
 >
 > **Discipline (generalises the corpus-grep / formalize-first rules):** when a
@@ -127,9 +128,42 @@ What agents **cannot** do without Lean:
 
 - Type-check proofs
 - Get goal states at positions
-- Search Mathlib (leansearch, loogle)
+- Search Mathlib via the hosted leansearch/loogle services — but the
+  **offline grep substitute** below works with or without Lean (see
+  *Offline Mathlib search*)
 - Verify axiom dependencies
 - Get autocompletions or hover info
+
+### Offline Mathlib search — when hosted leansearch/loogle are SSL-blocked
+
+In the Claude Code web sandbox the hosted search services
+(`loogle.lean-lang.org`, `leansearch.net`) fail with
+`SSL: CERTIFICATE_VERIFY_FAILED` (self-signed cert in the proxy chain), so
+the `lean_loogle` / `lean_leansearch` MCP tools error out. Use these
+**offline** substitutes — they need no network:
+
+1. **Grep the Mathlib source** (closest analogue to a loogle name/substring
+   search; works *with or without* Lean installed). The full source ships
+   with any clone and with the `lake-cache/*` restore — ~7 000 `.lean` files
+   under `.lake/packages/mathlib/Mathlib/`:
+   ```bash
+   grep -rn "theorem det_succ_row_zero" .lake/packages/mathlib/Mathlib/
+   grep -rn "det_fin" .lake/packages/mathlib/Mathlib/LinearAlgebra/Matrix/
+   ```
+2. **`lean_local_search` (MCP)** — offline; searches declarations in the
+   current project + imported modules (once a file is loaded).
+3. **`lean_hover_info` / `lean_declaration_file` (MCP)** — offline once a
+   file is loaded; type signature / source of a known name.
+
+**Why not run loogle locally?** loogle is a Lean exe that imports and indexes
+*all* of Mathlib, so it needs Mathlib oleans for **its own** toolchain.
+loogle HEAD pins a newer toolchain (e.g. `v4.30.0-rc1`) than the repo cache
+(`v4.24.0`), and `lake exe cache get` is network-blocked here — so standing
+up local loogle means a from-source Mathlib rebuild (~30–60 min) that
+**cannot reuse** the `lake-cache/*` oleans (they are Mathlib-commit-pinned;
+even a v4.24 loogle commit would need the repo's *exact* Mathlib commit).
+Not worth it for ad-hoc search — the grep route answers the same questions
+in seconds.
 
 ## Troubleshooting
 
