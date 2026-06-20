@@ -365,6 +365,8 @@ theorem gramMatrix_det_ne_zero_conditional
     exact neg_lt_zero.mpr (div_pos h_num_pos h_denom_pos)
   exact ne_of_lt h_quot_neg
 
+set_option maxHeartbeats 400000000 in
+set_option maxRecDepth 16000 in
 /-- **THEOREM (PROVED, 2026-06-20).** For `u ≠ 0`, the symbolic
     `Matrix.det` of `gramMatrix u` equals the witness-derived factorization.
 
@@ -390,8 +392,6 @@ theorem gramMatrix_det_ne_zero_conditional
     the witness `computations/gram-h3-det-factorization.witness.json`
     (`row_cleared_structural_route`, assertion
     `row_cleared_det_equals_minus_num_times_u8`). -/
-set_option maxHeartbeats 400000000 in
-set_option maxRecDepth 16000 in
 theorem gramMatrix_det_eq_factorization (u : ℝ) (hu : u ≠ 0) :
     (gramMatrix u).det =
       -(detFactor1 u * detFactor2 u
@@ -403,9 +403,12 @@ theorem gramMatrix_det_eq_factorization (u : ℝ) (hu : u ≠ 0) :
   -- denominators (`hu : u ≠ 0`, `u² + 1 > 0`), and close by `ring`.
   have h1 : (u ^ 2 + 1) ≠ 0 := by positivity
   rw [gramMatrix, Matrix.det_fin_six]
-  simp only [Matrix.of_apply, gramEntry, detFactor1, detFactor2, detFactor3,
-    detFactor4, detFactor5, detFactor6]
+  -- Reduce only the LHS entries first, clear denominators, then expand the
+  -- (polynomial, denominator-free) `detFactor` definitions just before `ring`
+  -- so `field_simp` operates on the smaller expression (per PR #2529 review).
+  simp only [Matrix.of_apply, gramEntry]
   field_simp
+  simp only [detFactor1, detFactor2, detFactor3, detFactor4, detFactor5, detFactor6]
   ring
 
 /-- **THEOREM (FULL DISCHARGE of `gramMatrix_det_ne_zero`).**
