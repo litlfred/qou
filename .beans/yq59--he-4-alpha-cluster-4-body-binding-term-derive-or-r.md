@@ -24,3 +24,20 @@ Corpus already settles the question:
 - **Open piece = n=4 body-order jet / SW-period residue** (`docs/coordination/2026-06-05-step9-binding-closure.md`) — owner-gated research frontier, fit-trap-prone.
 
 **DECISION: hold.** No honest non-fit deliverable without explicit owner direction.
+
+## n=4 ρ_F finding (2026-06-20) — open item RECLASSIFIED: definition, not compute
+
+Scoped attempt at ν_SDP(⁴He) found the audit chain's "only numerical verification
+remains" framing is STALE (corpus-grep discipline):
+- **No solver computes ν_SDP for any atom.** D/T/³He = 1,2,2 are HARDCODED
+  ("manual-historical-volume-match" in joint_tower_sdp_solver_v2.py); the H₃
+  sdp_feasibility check is a per-block boolean, not a multiplicity producer.
+  The Rust witness rho_factor = 0,1,1 ≠ canonical 1,2,2 (different, unvalidated).
+- **Extrapolated ⁴He=2 not uniquely forced:** max(Z,N)→2, A−1→3 both fit the
+  confirmed 1,2,2 (T,³He both A=3); they diverge exactly at ⁴He.
+- **Real gate:** pin an operational ν_SDP definition (saturating SDP active-set
+  count) that REPRODUCES D/³He=1,2 at H₃, THEN extend to ⁴He (H₁₂ Hoefsmit, the
+  1-2-session Rust extension). Do NOT run H₁₂ on a guessed definition (rainbow).
+
+Audit: docs/audits/2026-06-20-he4-nu-sdp-not-computed-definition-gate.md.
+No fit, no forced number. ρ_F less settled than the magic-A wireup states.
