@@ -20,7 +20,7 @@ docstrings.  After fixing the script, the actual numbers are:
 | Axioms | 1 | **0** |
 
 The 12 remaining sorries are **all** cited and **all** correctly
-sit inside conjecture-class instances (CLAUDE.md §3b axiom-class
+sit inside conjecture-class instances (AGENTS.md §3b axiom-class
 pattern).  No new proof obligation needs a citation, and there
 are no genuine `axiom` declarations on `main`.
 
@@ -67,7 +67,7 @@ Five surgical fixes to `extractSorries` / `extractAxioms`:
 ## Inventory of the 12 (cited) sorries
 
 All twelve sit inside conjecture-class `instance` bodies (the
-`Pattern 3.3` / §3b-cond shape from CLAUDE.md), with `Ref:`
+`Pattern 3.3` / §3b-cond shape from AGENTS.md), with `Ref:`
 pointing either to a published citation or to a `manuscript`
 tag plus an audit doc.  No action needed.
 
@@ -159,7 +159,7 @@ content shape and are intentionally deferred:
    `partitionZ1N2` / `partitionZ2N1` and drop the `(sorry :
    Partition n)` placeholders?**  This is a real proof-design
    choice (the "right" partitions depend on which atomic-braid
-   convention QOU adopts), and CLAUDE.md says agents must not
+   convention QOU adopts), and AGENTS.md says agents must not
    invent definitions for ambiguous cases.
 
 ## Reproduction

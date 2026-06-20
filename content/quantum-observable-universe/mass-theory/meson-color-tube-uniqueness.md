@@ -34,7 +34,7 @@ meson analogue of:
 ## Lean structure
 
 The uniqueness is staged via the [§3b-cond conditional-class
-pattern](../../../CLAUDE.md):
+pattern](../../../AGENTS.md):
 
 - `MesonGMORFactorization R mK2_over_mpi2 qChar m n` — substrate
   axiom that $m_K^2 / m_\pi^2 (q) = [m]_q \cdot [n]_q$ at the

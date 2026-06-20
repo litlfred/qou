@@ -42,7 +42,7 @@ The miss factors cluster tightly in the 160–180× band — a single underlying
 
 ## Closure path
 
-This is **not a Lean discharge or single-session foreground task.** The Δ_λ gate (per `CLAUDE.md §Precision goals → Δ_λ gate`) explicitly bars another fit-based ansatz; six closure ansätze (Frobenius co-Casimir, Demazure-fibre, LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov) have all failed on the deuteron. The productive directions are:
+This is **not a Lean discharge or single-session foreground task.** The Δ_λ gate (per `AGENTS.md §Precision goals → Δ_λ gate`) explicitly bars another fit-based ansatz; six closure ansätze (Frobenius co-Casimir, Demazure-fibre, LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov) have all failed on the deuteron. The productive directions are:
 
 1. **GAP-A-3 / GAP-A-4** — categorical brane-tower level selection / ρ general rule.
 2. **Option E** — Kashiwara crystal extension of the τ_M derivation to k ≥ 3 with canonical (non-fitted) rung-selection rule, displacing the current k=2 truncation. See [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md).
@@ -51,7 +51,7 @@ Both are research-grade, multi-session, and currently active under the Phase 2 I
 
 ## Scope-of-this-audit
 
-Audit only — no scripts re-run, no witnesses regenerated, no math advanced. Documents the **shared root cause** of the three failing observables so future agents stop pattern-matching on "two observables" (per `CLAUDE.md`) and recognise this as a single Q_β-derivation gap with two propagated derivatives.
+Audit only — no scripts re-run, no witnesses regenerated, no math advanced. Documents the **shared root cause** of the three failing observables so future agents stop pattern-matching on "two observables" (per `AGENTS.md`) and recognise this as a single Q_β-derivation gap with two propagated derivatives.
 
 ## Sub-goal placement
 
@@ -62,6 +62,6 @@ Audit only — no scripts re-run, no witnesses regenerated, no math advanced. Do
 
 The active Phase 2 IwahoriHecke sprint (sibling commits `57783eebb`, etc.) is the direct vehicle for Option E (Kashiwara crystal extension). Any new branch attacking the Q_β k=3 rung-selection should coordinate with that sprint via the `coordinate.md` skill — overlap at `lean/QOU/IwahoriHecke/*.lean` is near-certain.
 
-## Status update for CLAUDE.md §Precision goals
+## Status update for AGENTS.md §Precision goals
 
-The current section states "4/6 met". Actual current status is **4/7 met** (`m_p`, `m_μ`, `m_e`, `m_K/m_π`) — the discrepancy is the `m_K/m_π` meson ratio addition after `CLAUDE.md` was last refreshed. **Follow-up:** quick `CLAUDE.md` refresh PR to update the count + add a sentence pointing readers to this audit doc for the shared-root-cause analysis.
+The current section states "4/6 met". Actual current status is **4/7 met** (`m_p`, `m_μ`, `m_e`, `m_K/m_π`) — the discrepancy is the `m_K/m_π` meson ratio addition after `AGENTS.md` was last refreshed. **Follow-up:** quick `AGENTS.md` refresh PR to update the count + add a sentence pointing readers to this audit doc for the shared-root-cause analysis.

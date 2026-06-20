@@ -63,7 +63,7 @@ itself isn't a simple q-correction either.
 
 ## Anti-pattern guard
 
-Per CLAUDE.md no-7th-ansatz discipline (carrying over):
+Per AGENTS.md no-7th-ansatz discipline (carrying over):
 
 - ❌ DO NOT wire any of these candidates because their err is in the
   "interesting" 1% zone. None close at compute precision.

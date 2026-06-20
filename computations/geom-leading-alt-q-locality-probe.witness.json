@@ -1,7 +1,7 @@
 {
   "compute": "geom_leading_alt_q_locality_probe",
   "description": "Alternative `Geom_leading` functional forms probed for q-locality, holding linking weight fixed at Family A (5/2 + 3h\u00b2/4). Tests whether the q-locality failure is architecturally robust or curable by a functional swap.",
-  "interpretation_note": "Per CLAUDE.md three-calibration discipline, this probe does NOT propose production wiring of any variant. Even if a variant passed, it would need separate categorical justification before being eligible for canonical promotion.",
+  "interpretation_note": "Per AGENTS.md three-calibration discipline, this probe does NOT propose production wiring of any variant. Even if a variant passed, it would need separate categorical justification before being eligible for canonical promotion.",
   "parameters": {
     "M_E_MEV": "0.51099895",
     "M_P_CODATA_MEV": "938.27208816",

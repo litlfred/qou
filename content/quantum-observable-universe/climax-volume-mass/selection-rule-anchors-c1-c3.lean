@@ -23,7 +23,7 @@
 #
 # LaTeX label: `prop:selection-rule-anchors-c1-c3`
 #
-# CLAUDE.md §7c compliant: stated over ℝ for the substrate-anchor regime;
+# AGENTS.md §7c compliant: stated over ℝ for the substrate-anchor regime;
 # both halves are polynomial identities in q over a Field.
 -/
 

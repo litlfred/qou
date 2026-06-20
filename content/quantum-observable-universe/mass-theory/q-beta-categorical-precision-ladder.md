@@ -59,7 +59,7 @@ The categorical primitives are **two**:
 
 The doc's earlier $c_4 = b^2 + 1/2$ form is superseded; the audit shows it was 9.5% off the empirical value, while $c_3 \cdot b^4$ matches to 0.9%.
 
-The KL decategorification (CLAUDE.md §7b) governs the appearance of
+The KL decategorification (AGENTS.md §7b) governs the appearance of
 classical-limit Jones values: the mass observable lives in the KL
 classical limit of the Hecke / quantum-group representation theory, so
 Jones invariants enter at $q = 1$ rather than at substrate $q_0$.

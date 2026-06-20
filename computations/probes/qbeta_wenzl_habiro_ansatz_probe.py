@@ -212,7 +212,7 @@ def main() -> int:
         "D(u) collapses to a clean closed form (small denominators, "
         "categorically-recognisable algebraic structure) or remains a "
         "generic Taylor series (which would be just refactoring without "
-        "categorical content). Per CLAUDE.md flip-flop history: numerical "
+        "categorical content). Per AGENTS.md flip-flop history: numerical "
         "near-match ≠ structural derivation. This probe demands exact "
         "polynomial identity for c_2 = -1 first, then asks whether c_3 "
         "emerges naturally from the same Wenzl factor."

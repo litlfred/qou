@@ -14,7 +14,7 @@ This file axiomatises the **per-SYT-eigenline content** of
 `QOU.BraidKnot.CrystalGraphRealization`) into a smaller class
 `CrystalEigenlineSignBlind R` that captures only the single fact
 this proposition needs — that on every SYT eigenline, the q=0
-actions of σ_i and σ_i⁻¹ agree.  Per CLAUDE.md §3b-cond, this
+actions of σ_i and σ_i⁻¹ agree.  Per AGENTS.md §3b-cond, this
 `theorem` lives downstream of a conjecture but preserves its
 provable kind by carrying `[CrystalEigenlineSignBlind R]` as an
 explicit class hypothesis.  The implication

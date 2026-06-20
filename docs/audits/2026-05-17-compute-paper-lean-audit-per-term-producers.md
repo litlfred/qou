@@ -295,7 +295,7 @@ cumulative `ht(λ) ≤ 6` reading lives in `term7_alpha5_crystal_derivation.py`.
 The naming convention `w_λ` here matches the "q-deformed Wedderburn-block
 weight" in
 [`wedderburn-weight-canonical.md`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/wedderburn-weight-canonical.md)
-— and note that `wedderburn-weight-canonical.md` carries a CLAUDE.md
+— and note that `wedderburn-weight-canonical.md` carries a AGENTS.md
 register flag: the q-deformed weight should be written `tilde w_λ`
 with a tilde to disambiguate from the classical Plancherel measure
 `w_λ`. The producer uses plain `w_λ` in its docstring and JSON —
@@ -400,7 +400,7 @@ content-bearing zero, so both sides reduce to 0 via `zero_mul`).
 The two uniqueness layers (`wenzl_bridge_unique_definitional` =
 rfl-discharge, `wenzl_bridge_unique_categorical` = conditional on
 `MarkovTraceFamilyOneDim` class) are correctly structured per
-CLAUDE.md §3b-cond. `y_lambda_bridge_numerical_agreement : True :=
+AGENTS.md §3b-cond. `y_lambda_bridge_numerical_agreement : True :=
 trivial` is a witness-pointer placeholder.
 
 **Summary.** Math claims are correctly stated and numerically

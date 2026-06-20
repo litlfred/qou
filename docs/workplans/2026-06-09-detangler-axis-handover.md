@@ -20,7 +20,7 @@ axis (cross-chapter forward references). Written after the quark-sector move
   untouched).
 - **Lean** sandbox network-blocks `release.lean-lang.org`; restore prebuilt
   oleans from the `lake-cache/qou-v4-24-0` orphan branch
-  (CLAUDE.md §"Mathlib cache 403 fallback"). The quark move is Lean-safe
+  (AGENTS.md §"Mathlib cache 403 fallback"). The quark move is Lean-safe
   regardless (`.lean` siblings travelled; QOU Lake package is independent of
   chapter dirs, so `lean.ref` sibling-resolution holds).
 

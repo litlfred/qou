@@ -38,7 +38,7 @@ hash-fresh.
    "LP dual"; `cvxpy` is an optional import that falls back when
    absent, and there is no `linprog`/`clarabel` solve. The witnesses
    only assert "binding positive." This is a direct violation of
-   CLAUDE.md §"LP / SDP duals — first-class infra."
+   AGENTS.md §"LP / SDP duals — first-class infra."
 
 2. **Four referenced witnesses do not exist (HIGH/MED).**
    `co-molecular-binding.witness.json`,
@@ -149,7 +149,7 @@ direct `grep` instead. Witness freshness checked by recomputing the
 (`appendix-mass-binding-algorithms/`) **does not reference any
 molecular block or script** (only `mba-step10-confinement-sdp.md`
 matched on the generic "LP" hint, unrelated to Ch 12). So per
-CLAUDE.md §"🟧 Mass-and-Binding-Algorithms appendix sync," the
+AGENTS.md §"🟧 Mass-and-Binding-Algorithms appendix sync," the
 molecular binding compute is outside the contract — flag for the
 LP/SDP-dual sidecar (`mba-sidecar-lp-sdp-dual-emission.md`) once the
 duals are wired.

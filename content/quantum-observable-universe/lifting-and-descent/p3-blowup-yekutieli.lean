@@ -14,7 +14,7 @@ Conjectural blowup mechanism: NS finite-time blowup is the obstruction to Yekuti
 
 ## Status
 
-Class-axiomatised per CLAUDE.md §3b-cond. The conjecture sits in
+Class-axiomatised per AGENTS.md §3b-cond. The conjecture sits in
 the residual §3b-violator cone identified in
 [`AUDIT-DEEP-2026-05.md`](../../../../AUDIT-DEEP-2026-05.md) §1A
 (P1.b sweep). Class declaration here lets downstream

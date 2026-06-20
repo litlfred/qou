@@ -1,4 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU and let
 $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor

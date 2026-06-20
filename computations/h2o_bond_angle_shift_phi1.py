@@ -51,7 +51,7 @@ magnitude.  Converting the trace excess into the energy coefficient b,
 and then into degrees, needs the angular stiffness a (the curvature of
 the tetrahedral well) — which is GEOMETRIC, not a trace output. So the
 exact 4.97° is deliberately NOT claimed here; that would be a fit
-(cf. CLAUDE.md "do not fit a seventh ansatz" / formalize-first). This
+(cf. AGENTS.md "do not fit a seventh ansatz" / formalize-first). This
 probe delivers the q-exact SIGN and the order of magnitude, and isolates
 a (well stiffness) as the one remaining geometric input.
 """

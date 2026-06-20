@@ -11,7 +11,7 @@ dictionary relating it to classical Big-O / little-o / Θ / ∼.
 
 The valuation signature is axiomatised as a typeclass `OmegaOrder`;
 the classical-Big-O bridge is stated as a conjectural class
-`SurrealBigOBridge` per CLAUDE.md §3b (conjectural propagation).
+`SurrealBigOBridge` per AGENTS.md §3b (conjectural propagation).
 
 Mathlib does not yet expose Conway normal form on `𝐍𝐨`, so neither
 class is populated here — both are intended to be instantiated by

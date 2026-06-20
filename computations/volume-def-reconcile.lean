@@ -5,7 +5,7 @@
 network-blocked container with no Lean toolchain; it states the A↔B
 reconciliation as a *conditional* theorem (conditional on the Kashaev Volume
 Conjecture) and leaves the proof as `sorry` with bibliographic refs, per
-CLAUDE.md §1 (every `sorry` requires `-- Ref:`) and §3b-cond (conditional-class
+AGENTS.md §1 (every `sorry` requires `-- Ref:`) and §3b-cond (conditional-class
 discipline). It is placed alongside the probe
 `volume_def_reconcile.py`; if/when wired into the QOU Lake package it should
 move under `content/quantum-observable-universe/mass-theory/` with a content

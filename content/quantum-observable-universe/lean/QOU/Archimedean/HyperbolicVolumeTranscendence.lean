@@ -675,7 +675,7 @@ gives the Yekutieli bridge theorem. -/
     arguments).
 
     LaTeX: `\label{rem:yekutieli-transcendence-shadow}` -/
--- Per CLAUDE.md §3b: a conjecture in the YekutieliLiftingCondition
+-- Per AGENTS.md §3b: a conjecture in the YekutieliLiftingCondition
 -- class is itself the open question.  Pattern 4 narrowing:
 -- typeclass binding to a specific Yekutieli witness, rather than a
 -- universal axiom.

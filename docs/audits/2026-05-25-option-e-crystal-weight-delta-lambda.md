@@ -45,7 +45,7 @@ Probe-2 (joint multi-atom) falsified the counter-framework "global Δ_λ" hypoth
 | Crystal vertex enumeration | [`crystal-basis-resolves-mass-tower-open-problems.lean`](../../content/quantum-observable-universe/archimedean-universe/crystal-basis-resolves-mass-tower-open-problems.lean) L70-94 | ✓ finite graph traversal stub | extend to per-atom Δ_λ |
 | Frobenius Gram matrix | [`gram-matrix-dual.py`](../../computations/gram-matrix-dual.py) (pyhecke) | ✓ computed (numpy 6×6) | Lean formalisation |
 | Frobenius Gram matrix (Lean, content-block sibling) | [`particle-interactions/gram-matrix-h3-symbolic.lean`](../../content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.lean) | ✓ **landed on main** — full symbolic 6×6, all 21 upper-triangle entries as Laurent polynomials in `u = √q`, sympy-computed, verified to 1e-16 against `gram-matrix-dual.witness.json` at q_0 | wiring to `gram_matrix q = 0` stub is the only remaining sub-task (see row below) |
-| Frobenius Gram matrix (Lake-built production) | [`lean/QOU/Archimedean/frobenius_gram_matrix.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/frobenius_gram_matrix.lean) | ✓ **landed on main** — full 6×6 over generic ring `R` (CLAUDE.md §7c compliant), with explicit Hoefsmit-seminormal entries `g₁₅, g₃₄, g₃₅, g₅₅` and symmetry/positivity theorems | use directly in Phase 2 |
+| Frobenius Gram matrix (Lake-built production) | [`lean/QOU/Archimedean/frobenius_gram_matrix.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/frobenius_gram_matrix.lean) | ✓ **landed on main** — full 6×6 over generic ring `R` (AGENTS.md §7c compliant), with explicit Hoefsmit-seminormal entries `g₁₅, g₃₄, g₃₅, g₅₅` and symmetry/positivity theorems | use directly in Phase 2 |
 | Wire `gram_matrix q = 0` stub | [`universal-ilp-algorithm.lean`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean) L28-29 | ✗ still `= 0`; the production `gram_matrix` lives in `frobenius_gram_matrix.lean` so this content-block stub is mostly cosmetic | low-priority wiring; not blocking Phase 2 |
 | `gram_matrix(q)` PyO3 | [`pyhecke-native/src/lib.rs`](../../tools/pyhecke-native/src/lib.rs) | ✓ hardwired to H_3 (6×6) | generalise to H_n |
 | `gram_inverse(q)` PyO3 | [`pyhecke-native/src/lib.rs`](../../tools/pyhecke-native/src/lib.rs) | ✓ hardwired to H_3 | generalise to H_n |
@@ -194,7 +194,7 @@ shortcut.  The remaining live paths are:
    `n^w_λ` (KL polynomials, not `n^w_λ = 1`) summed across multiple
    vertices `w` (extend `kazhdan_lusztig.py` past the n ≤ 4 cap to
    S_6, ~hours of recursion-implementation work).
-2. **Pivot to GAP-A-3 / GAP-A-4** per CLAUDE.md §L2 (categorical
+2. **Pivot to GAP-A-3 / GAP-A-4** per AGENTS.md §L2 (categorical
    brane-tower level selection / ρ general rule).
 
 Witness: `probe-option-e-phase2-crystal-vertex-candidates.witness.json`
@@ -229,10 +229,10 @@ Posted intent on all five branches (next commit on this branch).
 
 ## Anti-patterns avoided
 
-- Not a 7th fit-based ansatz (per CLAUDE.md): the crystal-weight formula is a STRUCTURAL identity derivable from categorical primitives, not an optimisation criterion.
+- Not a 7th fit-based ansatz (per AGENTS.md): the crystal-weight formula is a STRUCTURAL identity derivable from categorical primitives, not an optimisation criterion.
 - Not dropping CAL-3 (per `1ppb-compute-tranche-queue.md` invariant).
 - Not introducing free per-knot parameters: every quantity (n^w_λ, ρ_w) is derived from the framework's categorical structure.
-- Not assuming q_0 specific value: the crystal-weight formula holds over generic R (CLAUDE.md §7c); q_0 enters only at the archimedean evaluation step.
+- Not assuming q_0 specific value: the crystal-weight formula holds over generic R (AGENTS.md §7c); q_0 enters only at the archimedean evaluation step.
 
 ## What this PR does NOT do
 

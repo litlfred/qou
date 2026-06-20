@@ -23,7 +23,7 @@ and report each $c_k$ with its **tiered classification**.*
 | $\geq 4$ | $q_0$-dependent | **near-match** | N=4→N=5 non-monotonicity is the experimental signature |
 | any | empirical fit | **fitted** | flagged as discipline violation |
 
-*Per CLAUDE.md "𝔔_β c_k is a TRUNCATION ORDER, not a wire/un-wire
+*Per AGENTS.md "𝔔_β c_k is a TRUNCATION ORDER, not a wire/un-wire
 gate", **never** report tiers as binary wired / dropped — always
 tiered.*
 

@@ -9,7 +9,7 @@ identification: the Markov trace of a closed braid factors through
 the Frobenius pairing on the Hecke algebra of the relevant level,
 giving a structural decomposition of mass and binding energy.
 
-The conjecture itself is encoded as a `class` (CLAUDE.md §3b-cond);
+The conjecture itself is encoded as a `class` (AGENTS.md §3b-cond);
 `sorry` in any concrete instance is understood as **conjecture**, not
 missing proof.  Downstream conditional results take
 `[KnotFactorFrobeniusPairing]` as a hypothesis and remain
@@ -61,7 +61,7 @@ class KnotFactorFrobeniusPairing where
     ∀ (q : ℝ) {n : ℕ} (b : ClosedBraid n),
       markov_trace_q q b = frobenius_pairing_q q b knot_factor
 
-/-- **Downstream conditional theorem (CLAUDE.md §3b-cond).**
+/-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
     Conditional on `[KnotFactorFrobeniusPairing]`, the Markov trace
     of any closed braid factors through the Frobenius pairing with
     the knot factor.  Fully verified by Lean once an instance is

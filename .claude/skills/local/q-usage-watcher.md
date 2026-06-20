@@ -29,7 +29,7 @@ and `.beans/q-usage-watcher-ledger.md`.
 
 **Authoritative references**:
 
-- [CLAUDE.md §7c — base-ring convention](../../../CLAUDE.md) (generic
+- [AGENTS.md §7c — base-ring convention](../../../AGENTS.md) (generic
   `R` vs archimedean `ℝ`).
 - [`notation-collisions.md`](../../../content/quantum-observable-universe/notation/notation-collisions.md)
   — base-ring convention notation row.

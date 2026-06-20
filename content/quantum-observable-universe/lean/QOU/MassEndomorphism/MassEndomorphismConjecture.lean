@@ -10,7 +10,7 @@ in terms of:
   - the substrate parameter q,
   - the quantum dilogarithm Φ_q.
 
-**Conditional-class axiomatisation** (CLAUDE.md §3b).  This file
+**Conditional-class axiomatisation** (AGENTS.md §3b).  This file
 encodes the conjecture as a Lean `class` whose fields are the
 asserted (but not yet derived) closed-form data.  Downstream
 results conditional on the conjecture take this class as an

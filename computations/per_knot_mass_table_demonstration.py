@@ -29,7 +29,7 @@ RED verdict for the proton: per-block `tr_M(p) ≈ 1.065` and production
 ~2.4×), so this wire-up makes the proton prediction go from
 +2.89% to **−56.7%**, not the other way.
 
-Per CLAUDE.md production-vs-exploratory discipline, this script
+Per AGENTS.md production-vs-exploratory discipline, this script
 DOES NOT propose the per-block reading as a closure. It MAKES the
 discrepancy visible across the 6 atoms with data, so the structural
 question — "what is the per-knot generalization of H_4 Family-A

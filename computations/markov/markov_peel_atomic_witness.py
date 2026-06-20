@@ -61,7 +61,7 @@ from hecke_symbolic import q as q_sym                  # noqa: E402
 from q_parameter import Q as Q0                        # noqa: E402
 from witness_base import WitnessBuilder                # noqa: E402
 
-# Per CLAUDE.md / Gemini-flagged precision policy: pin a high-precision
+# Per AGENTS.md / Gemini-flagged precision policy: pin a high-precision
 # floor at the module level so all symbolic→numeric casts respect it.
 # 50 dps matches the Hoefsmit + Wenzl bridge witness this script
 # cross-checks against (`atomic-tr-m-mpfr-50dps.witness.json`).

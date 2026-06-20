@@ -334,7 +334,7 @@ theorem helium_palindromic_histogram :
    ⟨helium_slot1_zero, helium_slot2_nonzero⟩,
    ⟨helium_slot3_nonzero, helium_slot4_zero, helium_slot5_zero⟩⟩
 
--- ── Conjecture class (CLAUDE.md §3b-cond axiomatisation) ───────
+-- ── Conjecture class (AGENTS.md §3b-cond axiomatisation) ───────
 
 /-- The seven nuclear magic numbers {2, 8, 20, 28, 50, 82, 126}. -/
 def magic_numbers : Finset ℕ := {2, 8, 20, 28, 50, 82, 126}
@@ -357,7 +357,7 @@ def magic_numbers : Finset ℕ := {2, 8, 20, 28, 50, 82, 126}
     `sorry` in any concrete instance is understood as **conjecture**,
     not missing proof. Downstream blocks may take
     `[ShellClosureNFTermCount]` as an explicit hypothesis to remain
-    `theorem`/`proposition` per CLAUDE.md §3b-cond.
+    `theorem`/`proposition` per AGENTS.md §3b-cond.
 
     Ref: [manuscript] §Shell closure NF term count, conj:shell-closure-nf-term-count -/
 class ShellClosureNFTermCount where
@@ -383,7 +383,7 @@ instance canonical : ShellClosureNFTermCount where
   helium_base := rfl
   shell_constant_between_magics := fun _ _ => rfl
 
-/-- **Downstream conditional theorem (CLAUDE.md §3b-cond).**
+/-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
     Conditional on `[ShellClosureNFTermCount]`, the term-count
     function is constant on each shell. Fully verified by Lean
     once an instance is fixed. -/

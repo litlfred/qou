@@ -2,7 +2,7 @@
 
 **Branch**: `claude/option-e-phase1-gram-h6-2026-06-02`
 **Goal**: close the Δ_λ Gap 5 (Gram-matrix generalisation) for the deuteron.
-**Track**: Track A blocker per CLAUDE.md (Precision goals §L2); Δ_λ gating context per
+**Track**: Track A blocker per AGENTS.md (Precision goals §L2); Δ_λ gating context per
 [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md).
 
 ## Δ_λ derivation chain — gap location
@@ -89,7 +89,7 @@ re-organised by Wedderburn block — same data, exponentially smaller per-block 
 
 ## Why not all of Option E at once?
 
-Per CLAUDE.md "combine related work into one branch": this Phase 1 piece is
+Per AGENTS.md "combine related work into one branch": this Phase 1 piece is
 genuinely independent of Phase 2 (which needs the crystal-vertex enumeration,
 a separate concern). Sibling PR #1516 has been scoping Phase 2 in parallel;
 this PR provides Phase 2's missing infra (within-block Gram) without forcing

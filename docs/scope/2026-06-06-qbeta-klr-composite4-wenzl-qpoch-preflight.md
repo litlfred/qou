@@ -11,7 +11,7 @@ structural constraints established **after** that scope was written
 proceed to the KLR program's next sub-goal. Sibling to merged PR #1911
 (KLR tranche 1).
 
-**Disciplines:** *formalize-first* (CLAUDE.md §formalize-first: narrow the
+**Disciplines:** *formalize-first* (AGENTS.md §formalize-first: narrow the
 hypothesis class with a structural argument before any expensive search),
 *corpus-grep* (the cont. 9 scope is the upstream source of truth for
 infra cost / composite menu — do not duplicate), *Δ_λ gate* (no fits),

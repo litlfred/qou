@@ -44,7 +44,7 @@ the Phase 2 IwahoriHecke sprint series.
 Refs:
 - [manuscript] docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md
 - [manuscript] docs/audits/2026-05-18-delta-lambda-gating-context.md
-- [manuscript] CLAUDE.md §Precision goals
+- [manuscript] AGENTS.md §Precision goals
 -/
 
 namespace QOU.Observations.L2_100x

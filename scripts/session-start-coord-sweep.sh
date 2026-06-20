@@ -5,7 +5,7 @@
 # Emits a brief context block that the agent reads + uses to decide
 # whether to dispatch a background subagent for full coord-sweep.
 #
-# Per CLAUDE.md "User accessibility" §5-minute idle trigger AND
+# Per AGENTS.md "User accessibility" §5-minute idle trigger AND
 # .claude/skills/local/coordinate.md: at session start fetch origin/main,
 # list relevant new commits, summarize sibling PR activity. Pass the
 # heavy work off to a background Explore subagent — don't disrupt

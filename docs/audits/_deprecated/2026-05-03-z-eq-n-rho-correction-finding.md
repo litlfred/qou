@@ -163,7 +163,7 @@ formal-status: empirical 10⁻³ on (²H, ⁴He, ¹²C, ¹⁶O); categorical
 
 A Lean class `class ZeqNCorrection (k : ℕ)` axiomatises the
 conjecture; downstream blocks consuming it carry `[ZeqNCorrection k]`
-as an explicit hypothesis (per CLAUDE.md §3b conditional-class
+as an explicit hypothesis (per AGENTS.md §3b conditional-class
 policy).
 
 ---

@@ -100,7 +100,7 @@ by pentagon coherence applied to the $\ell = 2$ data.
 - **Jet grade**: 1 (Hecke quadratic lives at $\ell=1$)
 - **h-content**: $\sigma_i^2 = h\sigma_i + 1$ is the defining
   quadratic — this is the BASE jet of all later h-expansions
-- **Source**: [`def:hecke-algebra`](../../content/quantum-observable-universe/braids-and-knots/hecke-algebra.md), CLAUDE.md §7a
+- **Source**: [`def:hecke-algebra`](../../content/quantum-observable-universe/braids-and-knots/hecke-algebra.md), AGENTS.md §7a
 - **GB smoothing**: the Hecke relation expresses any $\sigma_i^k$
   as a degree-1 polynomial in $\sigma_i$ — collapsing infinite-jet
   data to jet grade 1.
@@ -154,7 +154,7 @@ by pentagon coherence applied to the $\ell = 2$ data.
 - **h-content**: selects active operators (`active_set`); doesn't
   introduce new $h$-orders
 - **Source**: [`prop:operator-selection-lp`](../../content/quantum-observable-universe/braids-and-knots/operator-selection-lp.md)
-  + CLAUDE.md §LP/SDP duals
+  + AGENTS.md §LP/SDP duals
 
 ### Step 9. **Geom functor ($\mathrm{VolDensity}(K, q_0)$)**
 

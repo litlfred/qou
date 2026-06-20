@@ -5,7 +5,7 @@
 > to upgrade the [`d7c56c17e`](https://github.com/litlfred/qou/commit/d7c56c17e)
 > `abs_content` lead (`Σ|c(i,j)|` matches binding A-growth at ~5 %)
 > from a *selected-from-6-candidates* near-match into a derived
-> identity. **Per CLAUDE.md Δ_λ gate, this is NOT itself a fitted
+> identity. **Per AGENTS.md Δ_λ gate, this is NOT itself a fitted
 > ansatz proposal**; the doc only states the open categorical
 > question and lists the upstream objects that would have to land.
 
@@ -173,7 +173,7 @@ Three independent pieces:
 
 ## Pre-stated falsification signatures
 
-Per CLAUDE.md flip-flop prevention discipline, any future
+Per AGENTS.md flip-flop prevention discipline, any future
 derivation attempt must declare its failure-mode signatures in
 advance. For `|c|(λ)` as Hecke-energy density:
 
@@ -211,7 +211,7 @@ structural lead*, on par with the 2026-05-30 retracted leads
 - [`docs/coordination/2026-06-02-mass-sweep-a4-plus-status-refresh.md`](2026-06-02-mass-sweep-a4-plus-status-refresh.md) — the parent A≥4 status refresh; cross-links this scoping note
 - [`docs/workplans/2026-05-29-a567-atom-knot-sdp.md`](../workplans/2026-05-29-a567-atom-knot-sdp.md) — the original A≥4 workplan (with 2026-05-30 critical-discipline retraction)
 - [`docs/coordination/2026-05-30-a567-and-alpha-em-coupling.md`](2026-05-30-a567-and-alpha-em-coupling.md) — cross-thread context
-- CLAUDE.md §"Δ_λ gate" — the seventh-fit prohibition this scoping note avoids
-- CLAUDE.md §7a + §7b — Hecke-Skein convention + symmetric-crystal authoring guidance
+- AGENTS.md §"Δ_λ gate" — the seventh-fit prohibition this scoping note avoids
+- AGENTS.md §7a + §7b — Hecke-Skein convention + symmetric-crystal authoring guidance
 - PR [#1641](https://github.com/litlfred/qou/pull/1641) / [#1643](https://github.com/litlfred/qou/pull/1643) — Φ_q signed-vs-modulus structural choice
 - PR [#1443](https://github.com/litlfred/qou/pull/1443) / [#1524](https://github.com/litlfred/qou/pull/1524) — operator-valued LR branching trace decomposition

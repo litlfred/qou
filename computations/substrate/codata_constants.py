@@ -152,7 +152,7 @@ RYDBERG_eV_VALIDATION = mp.mpf("13.605693")
 # (2.22452, 8.481798, 7.71804, 28.295674) inline in their __main__
 # print loops. The values are AME 2020 binding energies, used ONLY
 # for comparison against framework predictions (`err = pred - AME_B_*`).
-# Per CLAUDE.md three-calibration discipline, importing these as
+# Per AGENTS.md three-calibration discipline, importing these as
 # upstream inputs to mass / binding compute is an opt-out from CAL
 # (and is flagged by canonical-iw + production-vs-exploratory-discipline).
 #

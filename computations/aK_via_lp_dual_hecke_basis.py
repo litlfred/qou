@@ -227,7 +227,7 @@ def main() -> int:
         rows.append(solve_atom_lp(atom))
     w.add_data("rows", rows)
 
-    # Top-level LP-dual fields per CLAUDE.md §LP/SDP duals infra.
+    # Top-level LP-dual fields per AGENTS.md §LP/SDP duals infra.
     w.add_data("y0_star", [r["y0_star"] for r in rows])
     w.add_data("y_star", [r["y_star"] for r in rows])
     w.add_data("active_set", [r["active_set"] for r in rows])

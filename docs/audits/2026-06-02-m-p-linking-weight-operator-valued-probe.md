@@ -54,7 +54,7 @@ All six × three n-values = 18 candidates. **No fits.**
 | **TARGET (CODATA)** | **2.461648** | — |
 | dim_q-weighted | 2.438529 | **−0.94 % below** target |
 
-The target sits **between** two canonical weights on the same H_4 partition lattice. A linear combination would close it empirically (`α ≈ 0.234` gives exact match), **but that's a fit** — explicitly forbidden per CLAUDE.md §"Δ_λ gate" / "Before declaring 'open' math".
+The target sits **between** two canonical weights on the same H_4 partition lattice. A linear combination would close it empirically (`α ≈ 0.234` gives exact match), **but that's a fit** — explicitly forbidden per AGENTS.md §"Δ_λ gate" / "Before declaring 'open' math".
 
 ## What this rules out
 

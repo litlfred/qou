@@ -150,7 +150,7 @@ corpus already supplies two of the three pieces a "categorical shell term" needs
   4-body α-binding (the ~16–21 MeV ⁴He residual). The sibling audit showed the
   required count `k = B_AME / (m_e·8G)` is the binding curve itself — **no clean
   combinatorial count** — so any closed form for the magnitude that is tuned to the
-  data is a fit, blocked by the CLAUDE.md Δ_λ gate.
+  data is a fit, blocked by the AGENTS.md Δ_λ gate.
 
 **Conclusion.** `B_sym` is a closed-form linear-chain (saturation) binding; its
 two misses are opposite ends of that one structure; the shell *positions* are

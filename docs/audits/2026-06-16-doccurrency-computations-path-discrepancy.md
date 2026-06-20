@@ -9,7 +9,7 @@ discrepancy for owner confirmation.
 ## The discrepancy
 
 The corpus refers to the Python compute as **`folio-assistant/computations/*.py`** in **3576 tracked files**
-(docs, witnesses, `.beans`, skills, CLAUDE.md ×10, …). But that path **does not resolve** in a fresh checkout:
+(docs, witnesses, `.beans`, skills, AGENTS.md ×10, …). But that path **does not resolve** in a fresh checkout:
 
 | Check | Result |
 |---|---|
@@ -47,9 +47,9 @@ a 3576-file sweep is too large + irreversible to run on an inference.
 - **Owner: confirm** `computations/` (qou top-level) is the canonical compute path.
 - If confirmed, a **mechanical sweep** `folio-assistant/computations/` → `computations/` across the 3576 refs is
   a clean follow-up (single bulk commit per the integration-watcher sweep exception), **including the ~10
-  occurrences in `CLAUDE.md`** (the LP/SDP canonical-entry-point block, the project-structure table, the
+  occurrences in `AGENTS.md`** (the LP/SDP canonical-entry-point block, the project-structure table, the
   precision-dashboard paths, the long-compute logging discipline). This doc deliberately does **not** touch
-  `CLAUDE.md` or run the sweep — the blast radius (3576 files) and the small chance of interpretation (2) warrant
+  `AGENTS.md` or run the sweep — the blast radius (3576 files) and the small chance of interpretation (2) warrant
   explicit authorization first.
 
 ## Cross-references

@@ -12,7 +12,7 @@ incompatible with the production *linear-chain* topology and instead
 selects the **complete graph restricted to p-n pairs**.
 
 This file isolates the rigorous combinatorial core of that finding, with
-no archimedean input (pure `ℕ` bond counting; see CLAUDE.md §7c — base
+no archimedean input (pure `ℕ` bond counting; see AGENTS.md §7c — base
 ring stays generic, here `ℕ`, no `ℝ`):
 
 * On the **chain** topology the surviving p-n bond count is a *single*

@@ -81,7 +81,7 @@ class CrystalGraphRealization (n : ℕ) where
 ```
 
 The `sorry` lives only in an *instance* of this class (the conjectural
-witness), per CLAUDE.md §3b — not in any downstream theorem.
+witness), per AGENTS.md §3b — not in any downstream theorem.
 
 > **Implementation note (divergence from the snippet above).** The
 > shipped `GSReductionOrder.lean` realises this plan with two
@@ -152,7 +152,7 @@ conjecture chain to the single axiom (★).
 > `lake-cache/qou-v4-24-0` olean restore), `lake build
 > QOU.BraidKnot.GSReductionOrder` completed **exit 0 (2244/2244
 > targets)**, sorry-free. The single conjectural input is the
-> `order_match` class field, per CLAUDE.md §3b (not a proof `sorry`).
+> `order_match` class field, per AGENTS.md §3b (not a proof `sorry`).
 
 The value delivered regardless of the build: the conjecture is reduced
 to the single named axiom (★) over cited theorems, with the buildable

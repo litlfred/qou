@@ -51,7 +51,7 @@ value as `eps→0`).
   **cancels in the difference** and **factors through the ratio**,
   leaving a **real** observable.
 - The `Im` is therefore a **fibre-level branch-cut artifact** (per the
-  CLAUDE.md Im(q) fibre-vs-observable distinction), not an imaginary
+  AGENTS.md Im(q) fibre-vs-observable distinction), not an imaginary
   mass. **The reality gate is resolved structurally** — no `Σ Im`
   miracle cancellation is needed; the cancellation is guaranteed by
   `z`-independence regardless of `N_cross`.

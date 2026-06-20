@@ -10,7 +10,7 @@ y_λ WEIGHT-SCHEME difference:
 
   - binding_canonical uses the WENZL JONES-MARKOV normalization
     (z = 1/(√q + 1/√q) per Markov move) — the canonical mass/binding
-    convention (CLAUDE.md: "mass formula (Borromean) uses Wenzl").
+    convention (AGENTS.md: "mass formula (Borromean) uses Wenzl").
   - the per-bond probe used the NORMALIZED-PLANCHEREL weights
     (dim_q²/[n]_q!) — the q-Schur convention, correct for torus-knot
     leptons but NOT for the binding/mass chain.

@@ -9,7 +9,7 @@ Tests the candidate rule
 
 — the number of **self-conjugate partitions** of $n = 3A$, where
 $A$ is the mass number of the confined particle. Motivation
-(per PR #638 closure note + CLAUDE.md §7b on symmetric-crystal
+(per PR #638 closure note + AGENTS.md §7b on symmetric-crystal
 techniques):
 
 * Self-conjugate partitions $\\lambda = \\lambda^T$ are the **fixed

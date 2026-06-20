@@ -4,7 +4,7 @@
 two structural results of
 [`2026-06-20-chirality-forces-complete-graph-topology.md`](2026-06-20-chirality-forces-complete-graph-topology.md)
 from an empirical RMS comparison to **parameter-free Lean theorems**, per the
-CLAUDE.md formalize-first probe discipline (state the invariant the whole class
+AGENTS.md formalize-first probe discipline (state the invariant the whole class
 must satisfy; formalize it; let it narrow the claim).
 
 ## What #2507 left as prose

@@ -52,7 +52,7 @@ justified category — see below).
 
 Plus **14** `scipy.optimize.linprog`/SDP files — these are the LP-dual
 confinement infra (shadow-price / active-set / Frobenius-positivity LPs),
-explicitly first-class per CLAUDE.md §"LP / SDP duals". They are
+explicitly first-class per AGENTS.md §"LP / SDP duals". They are
 constrained optimisations, **not** least-squares fits, and are out of
 scope of this pattern. Not enumerated individually.
 
@@ -120,7 +120,7 @@ witnesses remain the live production inputs.
 | `casimir_beta_2_derivation.py` | (no fit; "15 fit hits" are substring noise) | probe | justified | Structural argument that β_k=0, not a numerical fit. |
 | `molecular_angle_*.py`, `h2o_*.py` (`:34`/`:40`/`:44`/`:21`, …) | `scipy.optimize.minimize` (Nelder-Mead) | chemistry-side bond-angle tables | justified | VSEPR Coulomb energy minimisation over electron-domain positions on a sphere (a physical geometry solve); the `q²` weight is derived (`prop:symmetric-block-domain-weight`), not fitted; no mass/binding dashboard consumer. |
 | `molecular_angle_symmetric_block_general.py:34` (+related) | `scipy.optimize.minimize` | chemistry-side | justified | Same VSEPR family as above. |
-| `*_lp_dual.py`, `*_active_set*.py`, `deuteron_real_sdp.py`, … (14 files) | `scipy.optimize.linprog` / SDP | confinement LP-dual infra | justified (category) | Constrained optimisation (shadow-price/active-set), first-class per CLAUDE.md §"LP / SDP duals" — not a least-squares fit. |
+| `*_lp_dual.py`, `*_active_set*.py`, `deuteron_real_sdp.py`, … (14 files) | `scipy.optimize.linprog` / SDP | confinement LP-dual infra | justified (category) | Constrained optimisation (shadow-price/active-set), first-class per AGENTS.md §"LP / SDP duals" — not a least-squares fit. |
 
 ---
 

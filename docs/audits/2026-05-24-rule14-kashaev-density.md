@@ -182,7 +182,7 @@ and is the only reading on the 13-driver menu. The `spin` and
    §Algorithm step 3 as the categorical mechanism (driver (x)
    MacMahon-partition-algebra multiplicity).
 2. **Conjecture-conditional Lean class** axiomatising
-   `KashaevDensityIsSDPMultiplicity` per `CLAUDE.md` §3b. The
+   `KashaevDensityIsSDPMultiplicity` per `AGENTS.md` §3b. The
    conjecture is open until R5-full lands per
    [`atom-knot-mass-derivation.md`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)
    §"Where the gaps actually are".

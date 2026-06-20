@@ -71,7 +71,7 @@ the **Khovanov–Rozansky / KLR-canonical-basis route** (Path 2 of
 operates at the **link-Markov-closure level** (the full Markov trace of
 the β-decay tangle) rather than per-block.
 
-**Skeptical prior (CLAUDE.md §7b audit precedent, 2026-05-30 KLR dialog
+**Skeptical prior (AGENTS.md §7b audit precedent, 2026-05-30 KLR dialog
 assessment):** the KLR/crystal techniques are *authoring guidance, not
 proof-restructure triggers*; the assessment found 0/6 candidate proofs
 would meaningfully shorten with a KLR layer. So the KR/KLR route is the

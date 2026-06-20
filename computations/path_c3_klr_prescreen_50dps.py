@@ -20,7 +20,7 @@ This forecloses the simplest "KLR replacement of Family A" interpretation.
 
 ## What might work — Demazure sub-crystal at H_5+
 
-The framework's CLAUDE.md §7b mentions:
+The framework's AGENTS.md §7b mentions:
 
 > "Demazure sub-crystals for resonances. Unstable intermediaries
 >  (W/Z bosons, hadronic resonances) are Demazure sub-crystals —

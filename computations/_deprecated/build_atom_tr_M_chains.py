@@ -58,7 +58,7 @@ TARGETS = {
     "D":  ("D (deuteron, A=2)", 1, 1, True,  TR_M_AT_Q0["D"], 6, 12),
 }
 # Q_0 imported from `derivation_chain` (single source of truth per
-# CLAUDE.md §7aa); do not redefine locally.
+# AGENTS.md §7aa); do not redefine locally.
 
 
 @dataclass
@@ -95,7 +95,7 @@ def build_chain(spec: AtomSpec) -> DerivationChain:
         jet_order=0,
         notes=(
             "Hecke energy axiom: each σ_i carries σ_i^2 = (q-q^{-1})σ_i + 1; "
-            "the (q-q^{-1}) factor is the per-crossing energy (CLAUDE.md §7a)."
+            "the (q-q^{-1}) factor is the per-crossing energy (AGENTS.md §7a)."
         ),
     ))
 
@@ -221,7 +221,7 @@ def build_chain(spec: AtomSpec) -> DerivationChain:
         if has_assembly_chain else
         "script: computations/habiro_coefficients_atomic.py "
         "function `markov_trace_symbolic(Z, N, q, include_inter)`.  "
-        "Per CLAUDE.md §7a, the Jones polynomial J_K(q) is the Markov "
+        "Per AGENTS.md §7a, the Jones polynomial J_K(q) is the Markov "
         "trace in H_n(q); finite-Jones is existence + uniqueness.  "
         "Per-atom assembly chains for n, D pending (extend "
         "build_markov_trace_assembly_chain.py)."

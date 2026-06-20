@@ -37,7 +37,7 @@ inputs; concrete y_λ, χ^λ caches are external.
 
 Refs:
 - [manuscript] docs/audits/2026-05-18-delta-lambda-gating-context.md
-- [manuscript] CLAUDE.md §Precision goals (L2)
+- [manuscript] AGENTS.md §Precision goals (L2)
 - AME binding energies from `B-ame-codata.witness.json`
 -/
 

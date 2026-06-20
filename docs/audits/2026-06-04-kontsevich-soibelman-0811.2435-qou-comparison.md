@@ -32,9 +32,9 @@ This doc is that comparison.
 | Q5 | Is the paper a special case of a QOU? | **Neither is literally a special case of the other.** Both instantiate (linear/monoidal category **C** + numerical realization to ℂ/ℝ + trace-type invariant). KS is far more general on geometry (any 3CY, *varying* stability); QOU is far more rigorous (Lean) and pinned (Hecke, *fixed* q₀, physical observables). Cousins under one abstraction, not subset/superset. |
 | Q6 | Is their Theorem 1 part of QOU axioms (paper = example)? | **No.** KS Theorem 1 = "the central-charge map Stab(C) → Hom(Γ,ℂ) is a local homeomorphism" (Bridgeland deformation, generalized). It is a statement about the **moduli space of stability conditions** — exactly the apparatus QOU *declines* by sitting at one calibrated point. QOU's analog axiom is "τ at fixed q₀ is well-defined/unique" (`archimedean-functor-uniqueness`), which is the *rigid* opposite of a deformation theorem. |
 | Q7 | Can we use their (mostly algebraic) infrastructure? Euler form? Easier proofs or pretty story? | **Mostly pretty story + exposition; two concrete reusables.** (a) The **Euler form** χ(E,F)=Σ(−1)ⁿdim Extⁿ on K₀^num is the Grothendieck-shadow of QOU's **Frobenius/Markov pairing** — a clean exposition upgrade and a naming bridge (we already have `euler-char-stability`). (b) The **motivic Thom–Sebastiani factorization** (KS Thm 6, a *cited, rigorous* Denef–Loeser-type result) is the categorical parent of Wenzl **disjoint multiplicativity** tr_M(K⊔K′)=tr_M(K)·tr_M(K′), already in production. The rest is heuristic (see §1). |
-| Q8 | Is the multiplicative WCF the archimedean wall we avoid? Kashaev a sub-part (trivial knot)? | **Yes on both.** The WCF's walls live in the space of central charges Z:Γ→**ℂ** — an archimedean/real-analytic locus (arg Z(γ₁)=arg Z(γ₂)). KS build the formal WCF over a **non-archimedean** field and only *speculate* (String Theory) an archimedean manifold M (§1.5). QOU avoids the wall by **fixing q₀ and staying in ℚ(q)/generic-R until the final τ** (the CLAUDE.md §7c base-ring wall = the same wall). Kashaev **is** a sub-part: `QOU.Kashaev.VolumeConjecture` (tr_M ~ exp Vol); the unknot/trivial rep σ₀ is literally a column index in Garoufalidis–Zagier's refined matrix invariant. |
+| Q8 | Is the multiplicative WCF the archimedean wall we avoid? Kashaev a sub-part (trivial knot)? | **Yes on both.** The WCF's walls live in the space of central charges Z:Γ→**ℂ** — an archimedean/real-analytic locus (arg Z(γ₁)=arg Z(γ₂)). KS build the formal WCF over a **non-archimedean** field and only *speculate* (String Theory) an archimedean manifold M (§1.5). QOU avoids the wall by **fixing q₀ and staying in ℚ(q)/generic-R until the final τ** (the AGENTS.md §7c base-ring wall = the same wall). Kashaev **is** a sub-part: `QOU.Kashaev.VolumeConjecture` (tr_M ~ exp Vol); the unknot/trivial rep σ₀ is literally a column index in Garoufalidis–Zagier's refined matrix invariant. |
 | Q9 | Why don't the exp()-algebra people go straight to Wedderburn/partitions? | **Because their algebra isn't semisimple/finite-dimensional.** KS's exp() lives in an *infinite-dimensional, non-semisimple* world (the quantum torus, the pro-nilpotent group GV of dilogarithm Hamiltonian flows, the motivic Hall algebra) where Wedderburn ⊕ M_{d_λ} simply does not apply. **QOU's central structural bet is to engineer the problem into the generically-semisimple Hecke algebra H_n(q)**, where Wedderburn/partition decomposition *is* available — so QOU *can* "go straight to partitions," and does. *(Refined in §15 per owner objection: KS **can** decompose too — via a semisimple* nerve *(JH-into-stable-objects, cellular tower, Habiro ring, A∞); QOU's real move is collapsing that shared tower at generic q₀.)* |
-| Q10 | Relation to KLR? | **One step removed, and QOU already lives on the KLR side.** KS-WCF → (their follow-up) Cohomological Hall Algebra → KLR / quiver-Hecke (Schiffmann–Vasserot, Varagnolo–Vasserot) → canonical/crystal basis. QOU uses KLR-adjacent tools directly (CLAUDE.md §7b type-B folding, KL-basis classical limit, Demazure resonances; `klr_canonical_basis_filter.py`, `crystal_basis.py`; Marsh `0008040`). QOU sits on the categorified-basis side and *omits* the WCF dynamics on top. |
+| Q10 | Relation to KLR? | **One step removed, and QOU already lives on the KLR side.** KS-WCF → (their follow-up) Cohomological Hall Algebra → KLR / quiver-Hecke (Schiffmann–Vasserot, Varagnolo–Vasserot) → canonical/crystal basis. QOU uses KLR-adjacent tools directly (AGENTS.md §7b type-B folding, KL-basis classical limit, Demazure resonances; `klr_canonical_basis_filter.py`, `crystal_basis.py`; Marsh `0008040`). QOU sits on the categorified-basis side and *omits* the WCF dynamics on top. |
 
 ---
 
@@ -123,7 +123,7 @@ heuristic so far · 🔴 KS side is sketch/speculation — do not import.
 | **Euler form** χ(E,F) on Γ=K₀^num | **Frobenius / Markov pairing** ⟨a,b⟩_F; self-duality Ψ=S²=id | 🟢 | χ is the Grothendieck-group shadow of the Frobenius pairing. QOU already has `euler-char-stability`, `crossed-module-euler-characteristic`. |
 | Γ = K₀^num (lattice of charges) | partitions λ ⊢ n (Wedderburn block labels) | 🟡 | Both index the "irreducible content." QOU's is the partition lattice; KS's is a charge lattice with skew form. |
 | **Quantum torus** + **quantum dilogarithm** factors | **Habiro ring** / Φ_q (Faddeev, `[faddeev1994]`) / Li₂^q (Rogers) | 🟢 | Same special function. QOU's Φ_q vs Li₂^q bar-symmetry split (cheat-sheet §4) is finer than KS's single E(x). |
-| **Wall of marginal stability** / cluster transformation / WCF | **the wall QOU avoids** (CLAUDE.md §7c generic-R ↔ ℝ; fixed q₀) | 🟢 | See §4. KS *crosses* walls; QOU *never approaches* one. |
+| **Wall of marginal stability** / cluster transformation / WCF | **the wall QOU avoids** (AGENTS.md §7c generic-R ↔ ℝ; fixed q₀) | 🟢 | See §4. KS *crosses* walls; QOU *never approaches* one. |
 | **ind-constructible** stack of objects | **GB normal form** (finite per ℓ(w)-slice) + **jet order** + **surreal** grading | 🟢 | The finiteness KS *assumes*, QOU *derives*. See §5. |
 | Motivic **Thom–Sebastiani** (KS Thm 6, cited) | Wenzl **disjoint multiplicativity** tr_M(K⊔K′)=tr_M(K)·tr_M(K′) | 🟢 | A *rigorous* reusable: the categorical parent of an identity already in QOU production (Phase 5l). |
 | Stab(C) is a complex manifold (Theorem 1) | — (QOU has **no** stability moduli; it pins one point) | 🔴 | Not a QOU axiom; the apparatus QOU declines (Q6). |
@@ -266,7 +266,7 @@ KS-DT and KLR are two faces of "categorify the (quantum) Hall/Grothendieck
 structure."
 
 **QOU already lives on the KLR/crystal side** and uses it as *authoring
-shortcuts* (CLAUDE.md §7b): type-B folding for CPT/chirality, KL-basis
+shortcuts* (AGENTS.md §7b): type-B folding for CPT/chirality, KL-basis
 decategorification for the classical (Pauli/Bose) limit, Demazure sub-crystals for
 resonances. Compute infra exists (`klr_canonical_basis_filter.py`,
 `crystal_basis.py`, the `qbeta_chain4_kashiwara_crystal_scaffold` family), and the
@@ -938,7 +938,7 @@ archimedean wall:
    whole object — exact, integer, no-floating-point cross-validation.
 4. **It settles the `c_k` flip-flop** (A3): the `c_k` ladder becomes the Taylor expansion
    of a *genuine integral Habiro element*, promoting `c_2, c_3, …` from "near-match /
-   fitted" (the four-session flip-flop, CLAUDE.md) to the **exact integral coefficients of
+   fitted" (the four-session flip-flop, AGENTS.md) to the **exact integral coefficients of
    a categorical object** — the real prize of the PR #1739 axis.
 
 **What A+B does *not* give: the physical number at `q₀`.** `|q₀|>1` is outside the

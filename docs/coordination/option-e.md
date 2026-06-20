@@ -1,14 +1,14 @@
 # Δ_λ closure (Option-E) — master ledger
 
 > Single source of truth for the **Δ_λ closure / per-isotope binding**
-> goal. Per CLAUDE.md L2 Subgoal-1: this is the closure path
+> goal. Per AGENTS.md L2 Subgoal-1: this is the closure path
 > ("per-isotope Borromean-tower extension + operator-valued branching
 > combiner") that unlocks the 100× targets above the CAL-2 floor.
 
 ## Why this ledger exists
 
 Six prior Δ_λ ansätze failed (Frobenius co-Casimir, Demazure-fibre,
-LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov). CLAUDE.md
+LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov). AGENTS.md
 §Precision goals records that any 7th fit-based ansatz "will be caught
 by the three-calibration discipline review". The productive direction
 is **Option-E** (Kashiwara crystal) — the §L2 Δ_λ-gate context doc
@@ -51,7 +51,7 @@ honestly closed, and no light nucleus is (Δ_λ directions blocked, main
 The A=3 mirror pair is
 near-matched but not closed. **Critical:** the v9 (1+q)/2 factor was
 selected from a substrate-candidate list, NOT derived. Treat as
-near-match per CLAUDE.md "Don't propose a seventh fit-based ansatz"
+near-match per AGENTS.md "Don't propose a seventh fit-based ansatz"
 discipline.
 
 ## v1..v9 progression (DO NOT REPEAT failed paths)
@@ -172,7 +172,7 @@ near-match. Do NOT wire as a derivation.
 - ❌ Q-factorial ratio (`q⁻^A · δ_tr · A(A-1)/2`) — RETRACTED per PR #1386 as backhanded fit. The actual `Δtr(⁴He)/Δtr(D) = 0.67`, not the 12.7 the q-factorial implied.
 - ❌ Single-nucleon Δ_λ derivation (audit `2026-05-26-...`): misses the multi-nucleon interface operator.
 - ❌ q-dependent algebraic Δ_λ at the Cat layer (audit ibid): mixes Cat and Alg layers. The Cat-layer Δ_λ is q-independent (sign × dim).
-- ❌ Seventh fit-based ansatz (CLAUDE.md §L2 explicit ban). The v9
+- ❌ Seventh fit-based ansatz (AGENTS.md §L2 explicit ban). The v9
   `(1+q)/2` factor is borderline — it's clean enough to look canonical
   but was SEARCHED for, not derived. Treat as near-match.
 
@@ -214,5 +214,5 @@ near-match. Do NOT wire as a derivation.
 - `docs/audits/2026-05-19-delta-lambda-thread-closure.md` — six-ansatz failure record
 - `computations/option-e-v9-all-symmetries.witness.json` — v9 witness
 - `computations/option_e_v9_all_symmetries.py` — v9 source
-- CLAUDE.md §Precision goals (L2 Δ_λ gate; Track A blocker; Subgoal-1 closure path)
+- AGENTS.md §Precision goals (L2 Δ_λ gate; Track A blocker; Subgoal-1 closure path)
 - `docs/coordination/1ppq-qbeta.md` — parallel flip-flop saga (c_k near-matches)

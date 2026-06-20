@@ -147,7 +147,7 @@ Coexisting forks may have authored content blocks against the legacy
 the package-qualified URI form `lean: { ref: "<pkg>:<Decl>" }` that
 the current Zod schema requires. Running validation first will fail
 with `Lean ref must be "<package>:<Decl.Path>"` errors that are
-trivially fixed by the migration. See CLAUDE.md §0b.
+trivially fixed by the migration. See AGENTS.md §0b.
 
 When the schema's Zod error message names this script in its
 output, **do not hand-edit the failing block** — run the script.

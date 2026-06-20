@@ -75,7 +75,7 @@ application of $\tilde f_i$ that would push a state into degree
 $\ell + 1$ is geometrically forbidden — the heuristic confinement
 cutoff in the engine is justified up to the upstream conjecture.
 
-This is symmetric-crystal shortcut #1 + #3 (CLAUDE.md §7b)
+This is symmetric-crystal shortcut #1 + #3 (AGENTS.md §7b)
 reducing engine-side combinatorics to a Bruhat-prefix Demazure
 filtration.  The Demazure-fiber Markov-trace functional
 $T^{\mathrm{Dem}}(\lambda;\, w)$ from

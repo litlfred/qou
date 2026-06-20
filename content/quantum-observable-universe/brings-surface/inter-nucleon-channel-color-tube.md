@@ -116,7 +116,7 @@ formalised as a Lean class. Once that class is available, the
 weight matrix $W_{c_1 c_2}$ should be derivable as a tensor in the
 SO(3)-fiber data over Bring, with no remaining degrees of freedom —
 the conjecture would then promote to a `proposition` block under
-the CLAUDE.md §3b-cond conditional-class convention.
+the AGENTS.md §3b-cond conditional-class convention.
 
 The block remains a `conjecture` until then.
 
@@ -140,7 +140,7 @@ class InterNucleonChannelColorTube
 
 The class is *inhabited* by the $S_{5}$/SO(3) fiber data once
 `conj:s5-so3-fiber-action` lands; until
-then the instance carries an explicit `sorry` per CLAUDE.md §3b
+then the instance carries an explicit `sorry` per AGENTS.md §3b
 ("class is inhabited") policy.
 
 ## Consumers

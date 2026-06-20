@@ -32,7 +32,7 @@ CONSEQUENCE (the reality resolution):
     p/n DIFFERENCES). A z-independent additive imaginary constant either
     cancels in the difference or factors through the ratio — leaving a
     REAL observable. The Im is a fibre-level branch-cut artifact (Im(q)
-    fibre-vs-observable, CLAUDE.md), not an observable imaginary mass.
+    fibre-vs-observable, AGENTS.md), not an observable imaginary mass.
 
 This is the structural counterpart of the PR #1622 finding that the Q_β
 Habiro Δtr_M has a ζ_4 modular POLE with residue ∓i/2: both are

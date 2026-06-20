@@ -69,20 +69,20 @@ Re-run the setup script any time to update the platform clone or repair the syml
 
 | If you're working on… | Start here |
 |---|---|
-| Paper content (definitions, theorems, proofs) | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) §"Content-object architecture" + [`CLAUDE.md`](CLAUDE.md) §"Content-object architecture" |
-| A Lean formalization | [`CLAUDE.md`](CLAUDE.md) §"Writing `.lean` proofs — rules for agents" + [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) §"Lean workspace" |
-| A new compute script | [`CLAUDE.md`](CLAUDE.md) §"LP / SDP duals — first-class infra" + `.claude/skills/local/compute-author.md` |
+| Paper content (definitions, theorems, proofs) | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) §"Content-object architecture" + [`AGENTS.md`](AGENTS.md) §"Content-object architecture" |
+| A Lean formalization | [`AGENTS.md`](AGENTS.md) §"Writing `.lean` proofs — rules for agents" + [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) §"Lean workspace" |
+| A new compute script | [`AGENTS.md`](AGENTS.md) §"LP / SDP duals — first-class infra" + `.claude/skills/local/compute-author.md` |
 | A pyhecke / hecke-engine change | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) §"Tools packages" |
 | A CI / publish workflow change | [`docs/workplans/2026-05-24-publish-yml-parallelization-plan.md`](docs/workplans/2026-05-24-publish-yml-parallelization-plan.md) (the current plan) |
 
 ## Branching + commits
 
-Per [`CLAUDE.md`](CLAUDE.md) §"Branch + PR workflow" (**STRICT**):
+Per [`AGENTS.md`](AGENTS.md) §"Branch + PR workflow" (**STRICT**):
 
 - **Always create a branch + PR at the start of every work tranche.** No commits direct to `main`.
 - **Branch naming**: `claude/<theme>-<utc-ymd>` (e.g. `claude/lean-cache-hybrid-2026-05-24`).
 - **Commit early + commit often**: small structured commits (1 logical unit per commit) so cherry-pick, bisect, and focused review work cleanly.
-- **Default merge method: rebase-merge** (preserves the per-commit structure). The skill docs say "merge-commit" but `CLAUDE.md` §"Branch + PR workflow" rule 7 overrides that.
+- **Default merge method: rebase-merge** (preserves the per-commit structure). The skill docs say "merge-commit" but `AGENTS.md` §"Branch + PR workflow" rule 7 overrides that.
 - **Don't squash** unless the branch has noisy `wip` / `oops` commits the owner explicitly asks to collapse.
 
 ## CI gates
@@ -124,7 +124,7 @@ The high-leverage ones for contributors:
 | `/code-review` | Review the current diff |
 | `/verify` | Run the app and verify a change works |
 
-Full routing table is in [`CLAUDE.md`](CLAUDE.md) §"Skill routing".
+Full routing table is in [`AGENTS.md`](AGENTS.md) §"Skill routing".
 
 ## Code style
 
@@ -133,10 +133,10 @@ Full routing table is in [`CLAUDE.md`](CLAUDE.md) §"Skill routing".
 | Python | `ruff` (recommended), `black` style | Substrate-precision discipline: prefer `mpmath.mpf("...")` / `Decimal("...")` over bare `float` — see `.claude/skills/local/compute-author.md` |
 | Rust | `cargo fmt` + `cargo clippy` | `hecke-engine`'s `mpfr` feature gates rug; default builds are mpfr-on |
 | TypeScript | Bun's default (tab=2-space) | Content pipeline + assistant UI |
-| Lean | `lake build` + `lake test` | Always carries `-- Ref:` citation on every `sorry`; see [`CLAUDE.md`](CLAUDE.md) §"Writing `.lean` proofs" |
+| Lean | `lake build` + `lake test` | Always carries `-- Ref:` citation on every `sorry`; see [`AGENTS.md`](AGENTS.md) §"Writing `.lean` proofs" |
 
 ## Questions?
 
 - Open an issue: https://github.com/litlfred/qou/issues
 - See [`docs/`](docs/) for design docs, audits, workplans
-- Check [`CLAUDE.md`](CLAUDE.md) for the comprehensive agent / contributor guide (it's exhaustive)
+- Check [`AGENTS.md`](AGENTS.md) for the comprehensive agent / contributor guide (it's exhaustive)

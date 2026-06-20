@@ -26,7 +26,7 @@ Part of the formal proof chain. The parameter `q` is the canonical
 indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 
-## Base-ring discipline (CLAUDE.md §7c)
+## Base-ring discipline (AGENTS.md §7c)
 
 The categorical substrate parameter lives over the *formal* ground ring
 `R_q = LaurentPolynomial ℤ`, which is **not ordered** and is **not a
@@ -66,7 +66,7 @@ noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
     modulus field over the (un-ordered, non-field) ground ring `R_q`;
     the archimedean properties (`q(p) > 0`, `q(p) ≥ 1`, not a root of
     unity) live on `ArchimedeanSubstrateField` below, after the
-    substrate→archimedean wall (CLAUDE.md §7c).
+    substrate→archimedean wall (AGENTS.md §7c).
 
     LaTeX: `\label{def:substrate-parameter}` -/
 structure SubstrateParameter (M : Type*) where

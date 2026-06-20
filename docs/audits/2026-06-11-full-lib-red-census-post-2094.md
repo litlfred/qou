@@ -32,7 +32,7 @@ every importer is red (directly or as an import casualty).
 
 Fix shape: per-name rename sweep (verify the v4.24 target module per
 name, then mechanical replace). One bulk commit per stale name is
-appropriate (mechanical-sweep exception in CLAUDE.md).
+appropriate (mechanical-sweep exception in AGENTS.md).
 
 ## Class 2 — known v4.24 syntax/lint regressions (per-file, small)
 

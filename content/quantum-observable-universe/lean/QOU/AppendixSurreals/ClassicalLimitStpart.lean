@@ -10,7 +10,7 @@ evaluation of the substrate parameter `q` at the surreal point
 `1 + ε` (an infinitesimal), with the classical realm recovered
 as the standard-part of the resulting surreal value.
 
-The conjecture is encoded as a `class` (CLAUDE.md §3b-cond);
+The conjecture is encoded as a `class` (AGENTS.md §3b-cond);
 `sorry` in any concrete instance is understood as **conjecture**, not
 missing proof.  Downstream conditional results take
 `[ClassicalLimitStpart]` as a hypothesis and remain
@@ -57,7 +57,7 @@ class ClassicalLimitStpart where
     ∀ q : ℝ, q ≥ 1 →
       cl_value q = st_part (q_quantity_at (q - 1))
 
-/-- **Downstream conditional theorem (CLAUDE.md §3b-cond).**
+/-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
     Conditional on `[ClassicalLimitStpart]`, the classical-limit
     value at any q ≥ 1 is the standard-part of the q-evaluation
     at q = 1 + ε.  Fully verified by Lean once an instance is

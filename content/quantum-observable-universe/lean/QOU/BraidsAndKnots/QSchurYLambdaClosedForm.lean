@@ -124,7 +124,7 @@ noncomputable def qFactorial : ℕ → ℝ → ℝ
 noncomputable def ySchurClosedForm (λ : List ℕ) (q : ℝ) : ℝ :=
   q ^ (contentSum λ) / qFactorial λ.sum q
 
-/-- **Conjecture (axiomatised as class per CLAUDE.md §3b-cond)**.
+/-- **Conjecture (axiomatised as class per AGENTS.md §3b-cond)**.
 
     For every partition `λ` and every valid `q : ℝ`, the q-Schur
     Markov-trace Plancherel weight `y_λ^{qSchur}(q)` equals the

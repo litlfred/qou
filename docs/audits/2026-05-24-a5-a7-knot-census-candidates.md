@@ -15,7 +15,7 @@ hyperbolic knot/link census (from memory of SnapPy's
 Thistlethwaite, and standard link families) for objects whose
 volumes sit near the Kashaev-law target windows.
 
-Per CLAUDE.md production-vs-exploratory discipline, this is a
+Per AGENTS.md production-vs-exploratory discipline, this is a
 **shape-probe**: census matching is the CAL-4-equivalent path
 already flagged in `mass_table_ppb.py:18–21`. Repeating it for
 A ∈ {5, 6, 7} extends the hidden-fitting surface, so no assignment
@@ -126,7 +126,7 @@ natural generalisation.
 
 ⁵Li lifetime ≈ 10⁻²² s. The Kashaev volume law as currently
 written produces a finite positive `B_pred`, which would predict
-a **bound** state. Per CLAUDE.md §7b, unstable intermediaries
+a **bound** state. Per AGENTS.md §7b, unstable intermediaries
 are properly modelled as **Demazure sub-crystals** of a larger
 crystal — incomplete topological states whose Macdonald
 evaluation reproduces broken-symmetry / short-lived behaviour.
@@ -216,6 +216,6 @@ environment rather than rely on this scan.
 - Grandparent anatomy: [`2026-05-24-low-isotope-mass-error-anatomy.md`](2026-05-24-low-isotope-mass-error-anatomy.md)
 - Canonical knot-volume registry: [`computations/substrate/knot_volumes.py`](../../computations/substrate/knot_volumes.py)
 - Mass-table gap surface: [`computations/mass_table_ppb.py`](../../computations/mass_table_ppb.py) lines 80–180
-- CLAUDE.md §7b — Demazure sub-crystals for resonances (the ⁵Li reading)
-- CLAUDE.md production-vs-exploratory discipline — why this is a shape-probe
+- AGENTS.md §7b — Demazure sub-crystals for resonances (the ⁵Li reading)
+- AGENTS.md production-vs-exploratory discipline — why this is a shape-probe
 - PR [#1081](https://github.com/litlfred/qou/pull/1081) Task 3 — supplier for multi-knot VolDensity path

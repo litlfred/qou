@@ -816,7 +816,7 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
       * "substrate" (default): E_0 = m_e / (q_0·(q_0−1)) from the
         FULL chain per `prop:beta-decay-energy-scale` —
         `derived_masses.e_0_full_mev()`.  Three-calibration discipline
-        per CLAUDE.md: only {m_e, q_0, Q_β} are anchors; everything
+        per AGENTS.md: only {m_e, q_0, Q_β} are anchors; everything
         else (including the proton mass) is a prediction.  HARD BREAK:
         the proton row will no longer be exactly zero error — that
         residual is the structural gap that was previously hidden in

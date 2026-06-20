@@ -394,7 +394,7 @@ def lp_dual_at_alpha(alpha: float, G: np.ndarray) -> dict:
         out["tight_constraints"] = [NF_NAMES[i]
                                       for i in range(6)
                                       if abs(Gx[i]) < 1e-6]
-        # Canonical LP-dual record (CLAUDE.md §"LP / SDP duals — first-
+        # Canonical LP-dual record (AGENTS.md §"LP / SDP duals — first-
         # class infra"). Lifted from the in-script eqlin/ineqlin to the
         # standardized field names that lp_dual_witness_validator
         # checks: y0_star, y_star, active_set, primal_obj, dual_obj,

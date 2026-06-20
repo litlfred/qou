@@ -34,7 +34,7 @@ The two-channel mass split in
     stub; comment says the stub exists only so the `lean.ref` resolves.
   - `QOU/Observations/QCltNonCommutative/QCltNonCommutative.lean` —
     conjecture class; the single `sorry` on the `noncomputable instance`
-    **is** the conjecture (intended per CLAUDE.md §3b), not a missing proof.
+    **is** the conjecture (intended per AGENTS.md §3b), not a missing proof.
   - `QOU/BraidsKnots/LinearJSJVolume.lean` — `axiom JSJ_volume_additivity`
     (line 28) + structural theorem `atomic_volume_is_linear`; **no method
     to compute** Vol_p, Vol_n, or Vol(K).
@@ -97,7 +97,7 @@ The precheck **already ran**:
   ⁴He). A three-term recurrence needs ≥ 4 same-shape levels to test the
   coefficient `b_ν`; with one interior point per single-isospin chain,
   nothing is falsified.
-- Gate: CLAUDE.md §"Δ_λ gate" — six ansätze have failed on the deuteron;
+- Gate: AGENTS.md §"Δ_λ gate" — six ansätze have failed on the deuteron;
   **do not propose a seventh fit-based ansatz**. Productive directions
   are GAP-A-3 / GAP-A-4 / Option E, not a q-Lommel fit.
 

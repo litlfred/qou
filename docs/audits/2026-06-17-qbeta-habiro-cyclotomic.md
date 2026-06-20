@@ -31,7 +31,7 @@ asking whether the `c_k` sequence is a fibre-level **q-Habiro element**
 "permanent fix" parallel to the α_EM Habiro element `[2]_q·(1−h²α)` (PR #1511,
 merged).
 
-Per CLAUDE.md §"Im(q) at fibre vs observable level", the question is **not**
+Per AGENTS.md §"Im(q) at fibre vs observable level", the question is **not**
 "is there a real formula `c_3 = f(q_0_real)`?" (already refuted —
 `dc_3/dq ≈ 4.6e6`), but whether the `c_k` admit an integral cyclotomic-in-q
 expansion at the fibre level.
@@ -109,7 +109,7 @@ independent grounds:
 **Is the "Q_β Habiro element permanent fix" viable?** Not as a real-q
 element. This probe (and the z-Habiro machinery it mirrors) can certify exactly
 the class of real-q rational / Laurent / cyclotomically-localised elements — and
-the Q_β c_k are not in it. Consistent with CLAUDE.md §"Im(q) at fibre vs
+the Q_β c_k are not in it. Consistent with AGENTS.md §"Im(q) at fibre vs
 observable level": **if** a genuine fibre-level Q_β Habiro element exists, it
 must be **complex-analytic / root-of-unity**, not a real-q rational element. The
 real-q "permanent fix" hypothesis is refuted; the complex-fibre route is neither
@@ -121,7 +121,7 @@ Per the task honesty directive: the math result (a negative) is the deliverable.
 No Lean theorem is forced — there is no positive cyclotomic-integral structure to
 formalise (unlike the z-side, where `cyclotomicPartialSum_isCauchy` had a real
 integral increment to prove). Forcing a Lean `: True` stub would violate the
-no-shadowing-stubs rule (CLAUDE.md §"No shadowing stubs").
+no-shadowing-stubs rule (AGENTS.md §"No shadowing stubs").
 
 ## Relation to prior c_k work (no duplication)
 

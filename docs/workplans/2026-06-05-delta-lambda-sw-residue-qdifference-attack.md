@@ -95,7 +95,7 @@ Sources: background corpus trace (2026-06-05) + direct reads of `mi-sw-abelianis
 | P4 | `prop:binding-genfun-qdifference` | proposition | `mass-theory/` | `G(qx)=R(q,x)G(x)` ⇒ residue recursion; post-`τ` Dirac/SW PDE (Lemma L3) |
 | P5 | `prop:hyperbolicity-volume-gate` | proposition | `climax-volume-mass/` | non-hyperbolic components ⇒ `Vol=0` ⇒ no SW-residue contribution (Lemma L4) |
 | P6 | `rem:gammagamma-binding-validation` | remark (`interprets` P4) | `observations/` or `stochastic-mechanics/` | BW regime-switch bar-even/odd split = γγ validation (Lemma L5) |
-| P7 | **Mass-and-Binding-Algorithms appendix sync** | `alg:` blocks | `appendix-mass-binding-algorithms/` | update `mba-step08-jet-prefix`, `mba-chain-map` to carry per-body terms (STRICT per CLAUDE.md appendix-sync rule) |
+| P7 | **Mass-and-Binding-Algorithms appendix sync** | `alg:` blocks | `appendix-mass-binding-algorithms/` | update `mba-step08-jet-prefix`, `mba-chain-map` to carry per-body terms (STRICT per AGENTS.md appendix-sync rule) |
 
 **Appendix promotion (the cheat-sheet → paper appendix):**
 - The paper already has [`pre-archimedean-derivation-chain.md`](../../content/quantum-observable-universe/braids-and-knots/pre-archimedean-derivation-chain.md) (steps 1–8). Extend it (or add a sibling `archimedean-derivation-chain` block) to render the **now-closed step 9** = the many-body/SW-residue story (§1 reader order).
@@ -111,7 +111,7 @@ Sources: background corpus trace (2026-06-05) + direct reads of `mi-sw-abelianis
 | C3 | **Many-body series enumerator** | extend operator-valued combiner (#1698) to emit `B(K)=Σ_n B_n` with body-order `n`; reconcile 2-body bond-sum + 4-body magic-A | `binding-manybody-series.witness.json` |
 | C4 | **SW-period residue computation** tied to `λ_SW^(n)` | new `sw_period_residue.py`: `∮λ_SW^(n)` as residue sum over hyperbolic components; cross-check vs `binding_reeb_phase_decomposition.py` `θ_λ` carrier | `sw-period-residue.witness.json` |
 | C5 | **q-difference kernel `R(q,x)` extraction** | extend `habiro_ladder_bridge.py`: extract depth-`d` recursion of `B_n`; test `F(q)=λ_SW` hypothesis | `binding-qdifference-kernel.witness.json` |
-| C6 | LP/SDP **duals** on every selection in C3/C4 | route through `lp_dual_solver.py` (CLAUDE.md LP-dual rule) | dual fields in each witness |
+| C6 | LP/SDP **duals** on every selection in C3/C4 | route through `lp_dual_solver.py` (AGENTS.md LP-dual rule) | dual fields in each witness |
 
 All long computes follow the `-u … | tee /tmp/<script>.log` discipline.
 
@@ -161,4 +161,4 @@ The six refuted ansätze fit per-partition *constants*; the §9.3 audit proved n
 - **#1871** (this branch's binding-difference `binding_difference_odd`, `ΔB=2B₀sinh θ_B`) — the **bar-odd** observable of L5.
 - GAP-A audits (Option E / GAP-A-1 / Path B) — compatible cross-checks, not competitors.
 
-Post intent on the overlapping siblings (per CLAUDE.md coordinate rule) before touching shared compute (`knot_volumes.py`, the combiner, `mass_table_comprehensive.py`).
+Post intent on the overlapping siblings (per AGENTS.md coordinate rule) before touching shared compute (`knot_volumes.py`, the combiner, `mass_table_comprehensive.py`).

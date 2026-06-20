@@ -20,7 +20,7 @@ The real-q / cyclotomically-localised class is REFUTED
 ([`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md);
 real-q probe PR #2452): empirical `c_3` swings **−2.88 %** between the proton
 and muon anchors (`dc_3/dq ≈ 4.6×10⁶`), so no smooth real `f(q)` can track it.
-Per CLAUDE.md §"Im(q) at fibre vs observable level", the only surviving form is
+Per AGENTS.md §"Im(q) at fibre vs observable level", the only surviving form is
 a **fibre-level, complex-analytic / root-of-unity** element `F(q)` whose
 archimedean evaluation at each q₀ anchor reproduces `c_3` at *that* anchor.
 

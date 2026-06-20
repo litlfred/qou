@@ -37,7 +37,7 @@ C_{A5}(S3) and N_{A5}(S3)/S3 are trivial, the ONLY forced operator on V is the
 scalar identity (degenerate spectrum, NO distinguished line) and any line must be
 chosen => FIT.
 
-DISCIPLINE (CLAUDE.md production-vs-exploratory): DERIVE or prove-no-forced-
+DISCIPLINE (AGENTS.md production-vs-exploratory): DERIVE or prove-no-forced-
 selector; NEVER fit. h^4 = -3/4 is a FALSIFICATION reference, not a target. The
 mult-2 Hom-space and every A5/S3 group-theoretic fact is computed FIRST, RAW; the
 comparison to h^4 comes LAST and only if a canonical line is forced.

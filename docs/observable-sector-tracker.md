@@ -121,7 +121,7 @@ states (next section).
 | **Δ_pn** | derived from m_n − m_p | — | dashboard composes | **773.9 ppb** (inherits Q_β floor) — ✗ 100× | DERIVED; limited by Q_β floor |
 | **m_p brane-tower d_k** | claimed d_4 = J²·11+2 = 46, d_5 = 4, d_6 = −29 | — | `proton_brane_tower_correction_probe.py` (witness at stale q₀) | **stale-q₀ artifact** (item 2: d_4 drifts 100% between pins; d_5/d_6 don't match claims) | **NOT a derivation** — see `mp-dk-decisive-test.witness.json` |
 | **m_Λ, m_Σ, m_Ξ (other baryons)** | — | — | — | — | OPEN — no canonical chain |
-| **m_Δ, m_N* (resonances)** | — | — | — | — | OPEN — these may live in the Demazure sub-crystal layer (CLAUDE.md §7b) |
+| **m_Δ, m_N* (resonances)** | — | — | — | — | OPEN — these may live in the Demazure sub-crystal layer (AGENTS.md §7b) |
 
 **Baryon gaps:**
 - m_p is the CAL-2 anchor (0.0004 ppb, exact by construction at the

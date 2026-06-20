@@ -65,7 +65,7 @@ For the n=4 (2,2) candidate q-dim_(2,2) ≈ 2.04:
 
 ## Why this NEGATIVE matters
 
-Per CLAUDE.md "Before declaring 'open' math" §, every NEGATIVE result tightens the search space. After Chain 4 n ≤ 4:
+Per AGENTS.md "Before declaring 'open' math" §, every NEGATIVE result tightens the search space. After Chain 4 n ≤ 4:
 
 - The residue A is NOT a "small categorical invariant" from a low-partition Kashiwara crystal.
 - The natural next directions (per ledger cont. 5 + this audit) are:

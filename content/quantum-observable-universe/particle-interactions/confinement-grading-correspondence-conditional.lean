@@ -1,5 +1,5 @@
 /-
-  Confinement = KLR grading shift — conditional theorem (CLAUDE.md
+  Confinement = KLR grading shift — conditional theorem (AGENTS.md
   §3b-cond, conditional-class exception).
 
   The upstream conjecture conj:crystal-graph-realization is
@@ -82,7 +82,7 @@ class CrystalGraphRealization (n : ℕ) (q : ℝ) where
     has top non-zero graded piece in degree ℓ.
 
     The proof body has NO `sorry`; the only unproved input is the
-    class instance, per CLAUDE.md §3b-cond. -/
+    class instance, per AGENTS.md §3b-cond. -/
 theorem confinement_grading_correspondence_conditional
     {n : ℕ} {q : ℝ}
     [inst : CrystalGraphRealization n q]

@@ -2,7 +2,7 @@
   Information-theoretic time: T = N (cumulative Reeb operation count)
   with rescaling t = ℏ_q · T to obtain the continuous Reeb flow parameter.
 
-  **Archimedean specialisation** (CLAUDE.md §7c): the monotonicity
+  **Archimedean specialisation** (AGENTS.md §7c): the monotonicity
   theorem uses `linarith` on `q : ℝ`, so the whole file specialises
   to ℝ. The structural data (q, stepCount) is `ℝ`-valued throughout.
 -/

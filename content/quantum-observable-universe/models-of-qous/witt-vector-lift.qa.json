@@ -257,7 +257,7 @@
           "lean": "fa3d20e71ab2"
         },
         "result": "pass",
-        "evidence": "witt-vector-lift.md:1 — '§7c banner: Lean sibling: archimedean specialisation over ℝ (CLAUDE.md §7c)'; witt-vector-lift.md:3-11 — definition using H/F_p, π_<, W(F_p)≅Z_p, all abstract ring language",
+        "evidence": "witt-vector-lift.md:1 — '§7c banner: Lean sibling: archimedean specialisation over ℝ (AGENTS.md §7c)'; witt-vector-lift.md:3-11 — definition using H/F_p, π_<, W(F_p)≅Z_p, all abstract ring language",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -267,7 +267,7 @@
         },
         "reviewed_at": "2026-06-07T14:08:58.942Z",
         "reviewed_sha": "a72996e8ab52ec378111223aabe5285606d1d90a",
-        "notes": "The .md carries the CLAUDE.md §7c banner explicitly. The definition body uses abstract ring-theoretic notation (formal group over F_p, Witt vectors, Z_p completion) with no ℝ-specific constructs. Wall-clean with proper §7c annotation for the lean sibling."
+        "notes": "The .md carries the AGENTS.md §7c banner explicitly. The definition body uses abstract ring-theoretic notation (formal group over F_p, Witt vectors, Z_p completion) with no ℝ-specific constructs. Wall-clean with proper §7c annotation for the lean sibling."
       }
     ],
     "voice-unicode-crash": [

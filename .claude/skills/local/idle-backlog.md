@@ -3,7 +3,7 @@ name: idle-backlog
 description: >-
   While idle or waiting on a long-running async task (Lean build, compute script,
   CI run, background agent), pull the applicable backlog in priority order and
-  work non-conflicting items instead of stalling. Generalises CLAUDE.md's
+  work non-conflicting items instead of stalling. Generalises AGENTS.md's
   5-minute idle trigger into a reusable skill. Use whenever blocked on an async
   wait with no substantive output to produce.
 roles: [reader]
@@ -11,7 +11,7 @@ roles: [reader]
 
 # idle-backlog
 
-Generalises the CLAUDE.md §"5-minute idle trigger" / "Work the queue while idle"
+Generalises the AGENTS.md §"5-minute idle trigger" / "Work the queue while idle"
 policy: an agent waiting on an async result should **not** sleep or poll — it
 should pull the next applicable backlog item and advance it.
 

@@ -61,7 +61,7 @@ the Skein polynomial at q = substrate_q.
 
 **Honesty note (2026-06-09 axiom audit).** That evaluation is NOT yet
 wired into Lean: the absolute hadron masses from `q₀` are the
-framework's open mass-gap (CLAUDE.md "2.89% m_p gap"), and proton mass
+framework's open mass-gap (AGENTS.md "2.89% m_p gap"), and proton mass
 is not one of the three sanctioned calibration inputs (CAL-1 `m_e`,
 CAL-2 `Q_β/τ_n`, CAL-3 `m_π`), so it cannot be pinned as a calibration
 either. Consequently each `qou_*_MeV` is currently a **placeholder

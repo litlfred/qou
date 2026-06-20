@@ -20,7 +20,7 @@ module IS the vendored snapshot.  When a new CODATA edition lands
 
 ## Calibration vs validation discipline
 
-Per CLAUDE.md §"Precision goals" and `codata_constants.py`'s
+Per AGENTS.md §"Precision goals" and `codata_constants.py`'s
 documentation: only `m_e`, `m_μ/m_e`, `Q_β` are LEGITIMATE
 calibration inputs (CAL-1, CAL-2, CAL-3).  All other CODATA
 constants are VALIDATION-ONLY (used to compare against framework

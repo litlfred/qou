@@ -78,7 +78,7 @@ per-sorry classification is the next step for the human triage.
 6. Re-scope `lean-g-action-on-substrate` to "registry entry only" (its 1 sorry is permanent §3b-cond, NOT a discharge target).
 7. Re-populate the queue from the 17-sorry census above, after a Lean-LSP-equipped session classifies each as §3b-cond / research / tractable.
 
-Per CLAUDE.md §4a, only humans may close TodoItems / resolve queue
+Per AGENTS.md §4a, only humans may close TodoItems / resolve queue
 entries; this audit recommends but does not perform the closures.
 
 ## Out-of-scope (not addressed here)

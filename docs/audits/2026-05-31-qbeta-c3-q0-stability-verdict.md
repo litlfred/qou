@@ -164,4 +164,4 @@ it's a sixth near-match, not a derivation.
 - [`.beans/1ppq-qbeta-queue.json`](../../.beans/1ppq-qbeta-queue.json) — queue with this probe `status: done`, new keystone `probe-qbeta-habiro-element-search` added
 - PR #1511 — α_EM Habiro element (the canonical template)
 - PR #1521 — Habiro categorical 1-loop (in-flight, hints at Q_β extension)
-- CLAUDE.md §Q_β c_k truncation order canonical framing (already documents this; this audit is the per-coefficient settlement record)
+- AGENTS.md §Q_β c_k truncation order canonical framing (already documents this; this audit is the per-coefficient settlement record)

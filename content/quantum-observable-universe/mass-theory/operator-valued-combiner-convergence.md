@@ -49,7 +49,7 @@ weights $w(2), w(3), \dots$ is exactly the per-interface
 exhibits the per-isotope binding tower as a telescoping accumulation
 rather than an independent high-strand computation.
 
-## Conditional-class hypothesis (CLAUDE.md §3b-cond)
+## Conditional-class hypothesis (AGENTS.md §3b-cond)
 
 The compiled Lean home is
 [`QOU.BraidKnot.OperatorValuedCombiner`](../../../content/quantum-observable-universe/lean/QOU/BraidKnot/OperatorValuedCombiner.lean),

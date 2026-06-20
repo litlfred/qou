@@ -61,7 +61,7 @@ An earlier reading (from the nuclear-binding side) claimed
   observed (+0.1 %)**; **C–C D₀ = 3.21 eV vs 3.60 (−10.9 %)**.
 
 So the chemical eV scale **exists and is anchored**. The corpus-grep
-discipline (CLAUDE.md) applies: do not declare chemistry energy "out of
+discipline (AGENTS.md) applies: do not declare chemistry energy "out of
 reach" — it is partially closed and the gap is accuracy, not existence.
 
 ## 4. Bond order = LP-dual active-set (owner-confirmed direction)
@@ -90,7 +90,7 @@ integrality result discharged.
 | SDP active-set = bond order | `co-lp-dual-binding.md` | **Confirmed**; integrality conjectural (§4). |
 | Aromatic delocalization "donut" operator (the S₆ question) | combinatorics in `rem:organic-chain-taxonomy` (Hückel 4n+2); emergence in `molecular-construction/benzene-threading-emergence.md` | **Operator gap.** The explicit object is the **q-symmetrizer / Jones–Wenzl projector on H₆(q)**, cyclic-(C₆)-invariant, projecting the 6 π-electrons onto the symmetric Wedderburn block. Combinatorics present; explicit projector missing. |
 | γγ pair-production pathway / shortest GB production | none in either chemistry chapter | **Genuinely new.** Template exists: `predicted-spectra/meson-to-proton-via-borromean.md` (3 parallel γγ → Borromean confine). |
-| Heat-as-probability / catalysis / yield | none; hooks in `stochastic-mechanics/`, KL-decategorification (CLAUDE.md §7b) | **New, most ambitious.** Home = Markov-trace-as-partition-function (Jones↔Potts/six-vertex); T via q or Boltzmann weight on birthday grading; catalyst = lowers peak-birthday of desired pathway. |
+| Heat-as-probability / catalysis / yield | none; hooks in `stochastic-mechanics/`, KL-decategorification (AGENTS.md §7b) | **New, most ambitious.** Home = Markov-trace-as-partition-function (Jones↔Potts/six-vertex); T via q or Boltzmann weight on birthday grading; catalyst = lowers peak-birthday of desired pathway. |
 
 ## 6. New content to add (beyond reconciliation)
 
@@ -132,7 +132,7 @@ machinery (`pyhecke`, `pyhecke_native`, `lp_dual_solver`, `vol_density*`)
 or rolls its own; the witness files and whether content references them;
 and the **bare numeric literals** in both chapters' `.md` that must be
 witness-pinned. LP/SDP computes must route through
-`lp_dual_solver.py` and emit primal+dual fields per CLAUDE.md.
+`lp_dual_solver.py` and emit primal+dual fields per AGENTS.md.
 
 ---
 

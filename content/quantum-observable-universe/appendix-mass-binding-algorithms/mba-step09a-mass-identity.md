@@ -63,5 +63,5 @@ target, and the L1 cross-method agreement.*
 *Current status: 3/7 observables meet L2 (m_p, m_e, m_K / m_π);
 m_p shows a +2.89 % gap to CODATA after the proton-anchor re-pin.
 The open R&D is **refining `VolDensity($\mathcal{B}_3$)`**, not
-"deriving $\lambda_{\mathrm{scale}}$" — see CLAUDE.md's critical-
+"deriving $\lambda_{\mathrm{scale}}$" — see AGENTS.md's critical-
 framing block on `λ_scale`.*

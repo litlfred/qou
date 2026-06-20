@@ -22,7 +22,7 @@ NOT carry the `open-problem` tag, is NOT a famously unsolved
 millennium-style problem, AND has no resolvable `lean.ref`. These
 are the *real research conjectures* that the framework states and
 treats as anchors, but for which no class-axiomatised Lean
-encoding (per CLAUDE.md §3b-cond) exists yet.
+encoding (per AGENTS.md §3b-cond) exists yet.
 
 **Discovered by:** `proof-integration-watcher` backlog sweep on
 2026-05-18 (refined heuristic, round 2).
@@ -30,7 +30,7 @@ encoding (per CLAUDE.md §3b-cond) exists yet.
 **Severity:** major — these conjectures are part of the paper's
 framework but lack the Lean-class scaffolding that would let
 **downstream conditional theorems** type-check against them
-(per the conditional-class exception in CLAUDE.md §3b-cond).
+(per the conditional-class exception in AGENTS.md §3b-cond).
 
 **Estimated effort:** ~30 minutes per block to author a
 class-axiomatised stub (no proof — just the `class C { … : sorry }`
@@ -59,7 +59,7 @@ conjectures**, not lazy placeholders. The mission clause *"if a
 conjecture is a placeholder for something to be proved, try"*
 does not apply — these are real conjectures.
 
-The right next step per CLAUDE.md §3b-cond is **class
+The right next step per AGENTS.md §3b-cond is **class
 axiomatisation**, not full proofs.
 
 ## Suggested approach
@@ -83,7 +83,7 @@ encoding it in Lean so that:
 - The paper's logical dependence on the conjecture is auditable
   (Lean tracks who consumes the `[C M]` class).
 - Downstream blocks can be rigorous-conditional theorems per
-  CLAUDE.md §3b-cond.
+  AGENTS.md §3b-cond.
 - A future agent (or human) attempting a proof has a Lean
   target with a well-typed statement.
 
@@ -124,7 +124,7 @@ Aggregate:
 
 ## Per-chapter listing
 
-- Recommended approach: dispatch `local/formalizer` for class-axiomatised Lean stubs (per CLAUDE.md §3b-cond), NOT full proofs.
+- Recommended approach: dispatch `local/formalizer` for class-axiomatised Lean stubs (per AGENTS.md §3b-cond), NOT full proofs.
 
 ## Per-chapter listing
 

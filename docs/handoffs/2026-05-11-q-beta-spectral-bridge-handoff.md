@@ -57,9 +57,9 @@ Location: `content/quantum-observable-universe/particle-interactions/`
 
 ### 1C. Author voice requirements
 
-- Use `:defterm[...]{#slug}` / `:refterm[...]{#slug}` per CLAUDE.md §4c (terminology contract)
+- Use `:defterm[...]{#slug}` / `:refterm[...]{#slug}` per AGENTS.md §4c (terminology contract)
 - Cite all bibliographic refs in the Lean siblings per §1
-- Math notation per the notation register (CLAUDE.md §7aa)
+- Math notation per the notation register (AGENTS.md §7aa)
 
 ## TASK 2 — Lean formalization (for Lean agent)
 

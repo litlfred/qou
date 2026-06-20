@@ -6,7 +6,7 @@ import Mathlib.Tactic
 # Chirality factor — exact Wedderburn-ribbon form (conjecture class)
 
 This file axiomatizes `conj:chirality-ribbon-frobenius` as a Lean `class`
-following the §3b conditional-class pattern from CLAUDE.md.
+following the §3b conditional-class pattern from AGENTS.md.
 
 **Conjecture (informal):** The chirality factor of a confined knot $K$
 in the mass formula equals the exact Wedderburn-weighted ribbon-twist ratio

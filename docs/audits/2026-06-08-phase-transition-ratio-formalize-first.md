@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-08
 **Branch:** `claude/gallant-bohr-w9f6a6` (PR #1999)
-**Discipline:** CLAUDE.md §"Formalize-first probe discipline" — narrow the
+**Discipline:** AGENTS.md §"Formalize-first probe discipline" — narrow the
 search *before* running a wide numerical phase-point fit.
 **Status:** preliminary — the consistency-condition resolution (§5) is
 not yet closed; this doc exists to prune the naive probe before build.
@@ -123,7 +123,7 @@ task, not a numerical scan.
   right, calibration-free test and it is already *interesting* (the
   measured ratios cluster tightly at $1.2$–$1.45$, a near-universal
   q-integer signature).
-- ✅ **Report tiered** per CLAUDE.md: the ratio prediction is a
+- ✅ **Report tiered** per AGENTS.md: the ratio prediction is a
   **structural near-match pending the running-q fixed point**, NOT a
   fitted absolute temperature.
 - ❌ **Do not** fit $S_q^{(\partial)}$ to reproduce 373.15 K / 273.15 K

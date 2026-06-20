@@ -89,12 +89,12 @@ Witness JSON emitted to
 NEAR-1PCT at proton anchor)
 
 Re-compute the surviving candidate at muon-anchor q₀ ≈ 1.10997869.
-Per the c_k Im(q) fibre-vs-archimedean distinction (CLAUDE.md
+Per the c_k Im(q) fibre-vs-archimedean distinction (AGENTS.md
 §"Critical framing — Im(q)"), a real-valued ANCHOR-DEPENDENT
 near-match remains valid as a fibre-level diagnostic; what we
 flag is anchor-SWING > 1% (the c_3 flip-flop pattern).
 
-## Anti-pattern compliance (per CLAUDE.md "Before declaring open math")
+## Anti-pattern compliance (per AGENTS.md "Before declaring open math")
 
 - ✅ TIERED reporting; no ansatz at MISS or NEAR-FUZZY.
 - ✅ Cross-anchor BEFORE structural claim.

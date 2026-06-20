@@ -32,7 +32,7 @@ cat-action → Hecke-energy chain
 This Lean stub records the statement; the full induction follows
 the chain of definitions whose Lean formalisation is tracked by
 `prop:mass-endomorphism-tower` and the upstream blocks. We state
-the discipline as a `class` per CLAUDE.md §3b: it is a structural
+the discipline as a `class` per AGENTS.md §3b: it is a structural
 assumption on the realisation of the mass functional, not a
 free-standing theorem about an arbitrary `MassFunctional`
 typeclass.
@@ -44,7 +44,7 @@ chain produces an element of `ℤ[q^{±1}]` (or `ℚ[q^{±1}]` after
 Wedderburn weights), strictly inside the algebraic substrate. The
 numerical evaluation at the substrate parameter `q_0 ∈ ℝ` is the
 final step that crosses into `ℝ`, on the far side of the
-substrate→archimedean wall (CLAUDE.md §7c). We carry the realised
+substrate→archimedean wall (AGENTS.md §7c). We carry the realised
 real value here rather than the formal Laurent polynomial, since
 `LaurentPolynomial.eval` at a non-unit ring element is not the
 intended archimedean evaluation.

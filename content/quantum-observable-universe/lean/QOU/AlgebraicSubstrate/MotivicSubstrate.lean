@@ -20,7 +20,7 @@ completion.
 
 This class is axiomatised: an instance carries the substrate data
 plus a place-compatibility axiom.  Any `sorry` in an instance is to
-be read as a **substrate axiom** (CLAUDE.md §3b), not as a missing
+be read as a **substrate axiom** (AGENTS.md §3b), not as a missing
 proof.
 
 **Formal-chain version.**  This file lives under `lean/QOU/` and is

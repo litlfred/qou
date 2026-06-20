@@ -170,7 +170,7 @@ def compute_tr_m_canonical(
         try:
             from markov_peel_rust_bridge import tr_M_atomic_rust_full
             # Honor caller-provided dps when it exceeds the 50-dps
-            # production floor; never go below 50 (CLAUDE.md §L1
+            # production floor; never go below 50 (AGENTS.md §L1
             # mandates ≥ 50 dps for the production trace).  The
             # `dps=0` default from the function signature collapses
             # to 50, matching the implicit policy used in the
@@ -209,7 +209,7 @@ def compute_tr_m_canonical(
             from q_parameter import Q_50_DIGIT_STR
             t0 = time.time()
             zh = tr_M_atomic_lq(Z, N)
-            # MPFR-50dps evaluation — NEVER f64. Per CLAUDE.md §Precision
+            # MPFR-50dps evaluation — NEVER f64. Per AGENTS.md §Precision
             # goals L1, the production trace must be at 50-dps precision
             # to preserve the structural-zero distinction needed for
             # categorical identities.

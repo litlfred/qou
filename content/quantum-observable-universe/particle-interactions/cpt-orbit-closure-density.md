@@ -110,7 +110,7 @@ a fundamental domain of $\sigma$ or is invariant.
 
 ## Crystal-basis shortcut
 
-This is shortcut #1 from CLAUDE.md §7b applied at the
+This is shortcut #1 from AGENTS.md §7b applied at the
 density-rule level: instead of the per-link Boolean flag and its
 case analysis, the Type-B fold gives the rule structurally. The
 Boolean is now a *consequence* of the orbit count, not an

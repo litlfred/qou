@@ -13,7 +13,7 @@
 | F | Wenzl-bridge augmented Markov | closure-pickle bug on first attempt |
 | **E** | **Kashiwara crystal at q→1** | **TBD** ← this PR |
 
-CLAUDE.md is explicit: **"Do not propose a seventh fit-based ansatz"**. The Δ_λ-gate cap is hard. This PR therefore tests Option E as a **parameter-free, multi-candidate structural test** — natural crystal-graph invariants for `λ ⊢ 6` (deuteron, A=2, n=6, 11 partitions) plugged into the existing `Σ_λ y_λ(q₀)·χ^λ(β_D)·Δ_λ` machinery, no LP, no fitted scalar. If a candidate matches the empirical target `-4.353` to better than 5 % with zero free parameters, it's a finding. If all candidates refute, the simple crystal-statistic family is closed and only research-grade categorical paths (GAP-A-3, GAP-A-4) remain.
+AGENTS.md is explicit: **"Do not propose a seventh fit-based ansatz"**. The Δ_λ-gate cap is hard. This PR therefore tests Option E as a **parameter-free, multi-candidate structural test** — natural crystal-graph invariants for `λ ⊢ 6` (deuteron, A=2, n=6, 11 partitions) plugged into the existing `Σ_λ y_λ(q₀)·χ^λ(β_D)·Δ_λ` machinery, no LP, no fitted scalar. If a candidate matches the empirical target `-4.353` to better than 5 % with zero free parameters, it's a finding. If all candidates refute, the simple crystal-statistic family is closed and only research-grade categorical paths (GAP-A-3, GAP-A-4) remain.
 
 ---
 
@@ -99,7 +99,7 @@ construction. Algorithm:
 
 ## §5. Honest expected outcome
 
-Per CLAUDE.md's "Δ_λ-gate" framing and the six prior failures, **the
+Per AGENTS.md's "Δ_λ-gate" framing and the six prior failures, **the
 formalize-first expectation is**: all five candidates REFUTED, advancing
 the analysis by closing the no-fit crystal-statistic family. This is a
 clean negative result, not a fit. If any candidate matches, the Δ_λ gate

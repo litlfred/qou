@@ -56,7 +56,7 @@ from codata_constants import (  # noqa: E402
 
 # CODATA atomic masses (MeV) for {p, n, D, T, ³He, ⁴He}.
 # Use validation aliases — these are NOT used as anchors in the
-# prediction chain, only for residual reporting (per CLAUDE.md
+# prediction chain, only for residual reporting (per AGENTS.md
 # three-calibration discipline; only {m_e, q_0, Q_β} are anchors).
 M_CODATA_MEV = {
     "p":   float(M_P_MEV_VALIDATION),

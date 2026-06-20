@@ -7,7 +7,7 @@
 --                                + Skein-correction mass identity.
 --
 -- Both classes are axiomatic (the `sorry` is the conjecture, per
--- the §3b conditional-class exception in CLAUDE.md).  Downstream
+-- the §3b conditional-class exception in AGENTS.md).  Downstream
 -- substrate identities — in particular the proton/neutron Skein
 -- difference ΔS(n − p) — take both classes as `[Instance]` hypotheses
 -- and are then fully verified by Lean.

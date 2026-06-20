@@ -11,7 +11,7 @@ import { proposition } from "../../schema/builders";
  * is the deuteron (A=2) base case accumulated through the
  * Littlewood-Richardson weight tower.
  *
- * Conditional-class status (CLAUDE.md §3b-cond): the missing
+ * Conditional-class status (AGENTS.md §3b-cond): the missing
  * `WenzlAOperator` instance (universal H_9+ extracts, research-grade)
  * IS the conjecture; the convergence theorem is fully Lean-verified
  * (`Nat.rec`) modulo that instance hypothesis. The downstream

@@ -22,7 +22,7 @@ This file carves out the PROVABLE algebraic content (bar-involution
 properties, P_avg idempotency, cosh/cos bar-symmetry as identities)
 from the CONJECTURAL claim (single universal categorical operator).
 The conjectural part lives in `BarSymmetricThreeLayerSynthesis`
-class fields per CLAUDE.md §3b-cond (conditional-class exception):
+class fields per AGENTS.md §3b-cond (conditional-class exception):
 downstream theorems can be stated conditional on
 `[BarSymmetricThreeLayerSynthesis R]`.
 
@@ -115,7 +115,7 @@ theorem barSymmetricProjection_idempotent {R : Type*} [Field R]
     per-Z gain ratio at induction step) — each composed with the
     bar-symmetric projection `P_avg`.
 
-    Class axiomatisation per CLAUDE.md §3b-cond: downstream theorems
+    Class axiomatisation per AGENTS.md §3b-cond: downstream theorems
     consume `[BarSymmetricThreeLayerSynthesis R]` as a hypothesis;
     the class instance carries the unproved part.
 

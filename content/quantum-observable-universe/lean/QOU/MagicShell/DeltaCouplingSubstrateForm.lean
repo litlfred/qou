@@ -41,7 +41,7 @@ Fields are concrete propositional equalities asserting the closed
 form. When promoted to a theorem (post cross-anchor verification +
 LP-active-set derivation of (A-2)), the class instance becomes the
 genuine substrate derivation. Until then it is axiomatised as a
-conjecture class per CLAUDE.md §3b.
+conjecture class per AGENTS.md §3b.
 -/
 class DeltaCouplingSubstrateForm where
   /-- The substrate parameter q_0 (Wenzl positivity regime). -/

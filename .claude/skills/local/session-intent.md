@@ -153,7 +153,7 @@ commit touching the same scope):
 2. **Post intent** on the sibling PR via `/coordinate` so the
    sibling agent sees you're also working it.
 3. **Ask the user** if they want both threads or want one to
-   stand down. Use `AskUserQuestion` with rich context (CLAUDE.md
+   stand down. Use `AskUserQuestion` with rich context (AGENTS.md
    §User accessibility). Sample:
 
    > 🟡 Two agents attacking probe-c3-q0-stability — sibling PR
@@ -190,8 +190,8 @@ or partial result):
 
 ## See also
 
-- CLAUDE.md §Agent work-plan policy (the TodoWrite source rule)
-- CLAUDE.md §Branch + PR workflow (the ALWAYS-PR rule)
+- AGENTS.md §Agent work-plan policy (the TodoWrite source rule)
+- AGENTS.md §Branch + PR workflow (the ALWAYS-PR rule)
 - `.claude/skills/local/coordinate.md` (sibling-PR coordination)
 - `.claude/skills/local/watch.md` (main-watching)
 - `.claude/skills/local/pending-show.md` (showing current pending)

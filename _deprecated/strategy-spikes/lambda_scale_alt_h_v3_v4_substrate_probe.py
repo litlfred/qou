@@ -4,7 +4,7 @@
 User challenge (2026-05-22, post-/coordinate):
   "where refinement? fitting? no good if so"
 
-Per CLAUDE.md §"three-calibration discipline" + PR #701 + PR #888,
+Per AGENTS.md §"three-calibration discipline" + PR #701 + PR #888,
 any λ_scale candidate whose normalisation is PINNED by a desired
 classical limit (rather than DERIVED from a substrate measure) is
 a 4th calibration in disguise — same antipattern as

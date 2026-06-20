@@ -57,4 +57,4 @@ consult it before moving files.
 ## See also
 
 - [`content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md`](../../../content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md) — the *content-level* audit doc (not in `docs/audits/`; tracks GAP-A/B/C/D status)
-- CLAUDE.md §"Branch + PR workflow" rule 4 (small structured commits + cherry-pick discipline)
+- AGENTS.md §"Branch + PR workflow" rule 4 (small structured commits + cherry-pick discipline)

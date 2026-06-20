@@ -16,7 +16,7 @@
 
 PR #1781 found `c_3(q) = -(q²+q⁻²)·(1 + ℏ_q·[3]_q/25 + ℏ_q³/[2]_q)`
 reproduces empirical `c_3` to 2.65 ppm **at the proton anchor**. The
-open question (CLAUDE.md §"Im(q) at fibre vs observable level"): is this
+open question (AGENTS.md §"Im(q) at fibre vs observable level"): is this
 a genuine fibre-level Habiro element (reproduces empirical `c_3` at
 every q₀ anchor) or a coincidence at one anchor?
 
@@ -56,7 +56,7 @@ real-q `c_3 = f(q)` can track the empirical swing** — the `[3]_q/25`
 form is no exception. It matches at the proton anchor by construction
 (it was found there) and is rigid everywhere else.
 
-This is exactly the distinction CLAUDE.md §"Im(q) at fibre vs
+This is exactly the distinction AGENTS.md §"Im(q) at fibre vs
 observable level" draws:
 
 - ❌ a REAL formula `c_3 = f(q_real)` matching multiple anchors — known
@@ -98,4 +98,4 @@ observable level" draws:
 - residue-A acceptance: [`2026-06-03-qbeta-residue-a-cal-anchored-acceptance.md`](2026-06-03-qbeta-residue-a-cal-anchored-acceptance.md)
 - Composite 4 archimedean dead-end + fibre redirect: `qbeta/qbeta_composite4_wenzl_qpochhammer_first_probe.py` (PR #1795)
 - prior cross-anchor infra: `probes/qbeta_li2q_spectral_combiner_crossanchor_probe.py` (PR #1609)
-- CLAUDE.md §"Critical framing — Im(q) at fibre vs observable level"
+- AGENTS.md §"Critical framing — Im(q) at fibre vs observable level"

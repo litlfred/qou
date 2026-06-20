@@ -9,7 +9,7 @@ Per the Δ_λ-gate audit (2026-05-18-delta-lambda-gating-context.md),
 six closure ansätze (Frobenius co-Casimir, Demazure-fibre, LP-
 Plancherel, LP-Frobenius, Occam, Wenzl-bridge augmented) have failed
 on the deuteron. Option E (Kashiwara crystal at q→1) is the only
-TBD entry. CLAUDE.md is explicit: "do not propose a seventh fit-based
+TBD entry. AGENTS.md is explicit: "do not propose a seventh fit-based
 ansatz" — so this probe is parameter-free.
 
 Each candidate fixes `Δ_λ = c(λ)` in closed form BEFORE the sum runs,
@@ -335,7 +335,7 @@ def main() -> int:
             "categorical brane-tower level selection; GAP-A-4 ρ general "
             "rule) as productive directions for Δ_λ binding-energy "
             "closure. A seventh fit-based ansatz is forbidden by "
-            "CLAUDE.md."
+            "AGENTS.md."
         )
     w.add_data("synthesis_verdict", synthesis)
     print(f"\n  SYNTHESIS:")

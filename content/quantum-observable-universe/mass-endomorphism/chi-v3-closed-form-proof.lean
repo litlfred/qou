@@ -61,7 +61,7 @@ makes the ε-expansion at `q = 1 + ε` trivial. -/
     `chi_V3_diff_closed` in
     `rem:chi-per-irrep-cyclotomic-closed-forms`. The two are
     semantically identical; chapter-block file isolation prevents
-    direct cross-file import. Centralisation deferred per CLAUDE.md
+    direct cross-file import. Centralisation deferred per AGENTS.md
     "tracked-duplication acceptable when files are chapter-isolated"
     convention. -/
 noncomputable def chi_V3_difference_factored (q : ℝ) : ℝ :=

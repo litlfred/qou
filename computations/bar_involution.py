@@ -31,7 +31,7 @@ compute scripts:
   primitive ``k``-th root of unity, the modular-tensor-category
   truncation that enforces finite particle generations.
 * ``crystal_paths`` — minimal BFS over the Kashiwara crystal of a
-  partition (skeleton; see CLAUDE.md §7b for the symmetric-crystal /
+  partition (skeleton; see AGENTS.md §7b for the symmetric-crystal /
   Type-B-folding shortcut).
 
 The module is self-contained and pure-Python except for sympy.
@@ -88,7 +88,7 @@ def bar_T_word(word: tuple[int, ...]) -> tuple[tuple[int, ...], sp.Expr]:
     helper returns the leading-order combinatorics needed by the
     ``is_bar_invariant`` projector below.  Callers that need the full
     KL expansion should use the symmetric-crystal shortcut
-    (CLAUDE.md §7b, item 1) rather than expanding by hand.
+    (AGENTS.md §7b, item 1) rather than expanding by hand.
     """
     w_inv = tuple(reversed(word))
     L = len(word)
@@ -177,7 +177,7 @@ def root_of_unity_truncate(P, k: int) -> sp.Expr:
     """Evaluate ``P`` at the primitive ``k``-th root of unity
     ``q = e^{2πi/k}`` — the Witten–Reshetikhin–Turaev modular-tensor
     truncation that shatters the infinite crystal graph into a finite
-    spectrum (CLAUDE.md §7b, item 2 motivation).
+    spectrum (AGENTS.md §7b, item 2 motivation).
     """
     if k <= 0:
         raise ValueError("k must be a positive integer")
@@ -190,7 +190,7 @@ def root_of_unity_truncate(P, k: int) -> sp.Expr:
 # operators on tableaux belong in a dedicated module if downstream
 # compute scripts ever need them; for now the BFS over partition
 # children is enough to drive a "crystal-prefix" pruning loop in the
-# GS engine. See CLAUDE.md §7b for symmetric-crystal shortcuts that
+# GS engine. See AGENTS.md §7b for symmetric-crystal shortcuts that
 # avoid implementing Kashiwara operators by hand.
 
 def _partition_children(lam: tuple[int, ...]) -> list[tuple[int, ...]]:

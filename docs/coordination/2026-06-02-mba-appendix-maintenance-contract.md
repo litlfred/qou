@@ -2,7 +2,7 @@
 
 **Established:** 2026-06-02 via PR #1724
 **Scope:** every PR touching mass / binding derivations or compute infra
-**Rule reference:** [CLAUDE.md §Canonical derivation chain](../../CLAUDE.md) (the 🟧 STRICT block immediately after the cheat-sheet paragraph)
+**Rule reference:** [AGENTS.md §Canonical derivation chain](../../AGENTS.md) (the 🟧 STRICT block immediately after the cheat-sheet paragraph)
 
 ## The contract
 
@@ -34,7 +34,7 @@ in the **same PR**. The expected diff:
 | Proof-editor | `.claude/skills/local/proof-editor.md §coordination rules` | mass/binding/SDP/Q_β findings include MBA-block diff in action plan |
 | Coordinate | `.claude/skills/local/coordinate.md §2-bis` | intent comments on sibling PRs name the alg:-block they'll touch |
 | Appendix self-doc | `mba-intro.md §Maintenance contract` | reader-visible declaration |
-| Top-level | `CLAUDE.md §Canonical derivation chain` | 🟧 STRICT block |
+| Top-level | `AGENTS.md §Canonical derivation chain` | 🟧 STRICT block |
 
 ## Active sibling PRs (as of 2026-06-02)
 
@@ -102,7 +102,7 @@ commit immediately after merge if a sibling lands first).
 
 | Date | PR | Action |
 |------|----|--------|
-| 2026-06-02 | #1724 | contract published; CLAUDE.md + 4 skill files updated; ledger created |
+| 2026-06-02 | #1724 | contract published; AGENTS.md + 4 skill files updated; ledger created |
 | 2026-06-02 | #1727 | intent comment posted (Q_β + c_k) |
 | 2026-06-02 | #1726 | intent comment posted (Δ_λ + per-isotope binding) |
 | 2026-06-02 | #1725 | intent comment posted (per-isotope binding) |

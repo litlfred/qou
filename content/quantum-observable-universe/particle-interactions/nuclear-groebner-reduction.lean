@@ -15,7 +15,7 @@ manifest's `lean.ref` (`qou:QOU.Archimedean.nuclear_groebner_reduction`)
 resolves cleanly via the Lake tree.
 
 **Authoring note (open):** the canonical Lean file is currently typed
-over `ℝ` (with archimedean hypotheses `1 < q`).  Per CLAUDE.md §7c the
+over `ℝ` (with archimedean hypotheses `1 < q`).  Per AGENTS.md §7c the
 algebraic core belongs over the generic ground ring `R_q = ℤ[q,q⁻¹]`
 with an archimedean specialisation in a separate file.  A stalled
 R_q-typed copy previously lived at

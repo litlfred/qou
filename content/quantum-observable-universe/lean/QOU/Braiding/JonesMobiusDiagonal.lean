@@ -24,7 +24,7 @@ The two categorical facts are recorded as class fields:
 The **embedding** conclusion `markov_eq_mobius_contact` is then *proved* (no
 `sorry`): the fundamental Jones polynomial equals the term the Möbius
 renormalization subtracts.  The base ring is generic (`AddCommGroup`) since the
-renormalization is an additive identity (CLAUDE.md §7c base-ring convention);
+renormalization is an additive identity (AGENTS.md §7c base-ring convention);
 it specialises to `R_q = ℤ[q, q⁻¹]` and to `ℝ`.
 
 ## References

@@ -62,7 +62,7 @@ Closing `BringResidueAtOrder n q` requires either:
 Both routes converge on the same closed form
 $F_n(q) = 1 / (1 - h_q \cdot q^n)$.  Closing the class is a
 Mathlib-import follow-up; until then this file states the
-**conditional uniqueness** of the resolvent form per CLAUDE.md
+**conditional uniqueness** of the resolvent form per AGENTS.md
 §3b-cond.
 
 ## Downstream consequence

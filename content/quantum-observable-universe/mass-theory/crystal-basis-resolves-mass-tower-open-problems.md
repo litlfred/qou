@@ -45,7 +45,7 @@ labelled by $\lambda$, and $\chi^\lambda(\beta)$ is the trace of
 $\beta$ acting on the crystal-graph image of the projective
 $P_\lambda$.
 
-**Type-B folding shortcut (CLAUDE.md §7b).** *To enforce
+**Type-B folding shortcut (AGENTS.md §7b).** *To enforce
 matter–antimatter pairing structurally — equivalently, the
 bar-involution $q \leftrightarrow q^{-1}$ symmetry — fold the
 $\mathfrak{sl}_n$ Cartan datum into a Type B datum. The resulting
@@ -91,7 +91,7 @@ The shell-closure sign $\alpha_5 < 0$
 is now a **structural consequence**: height-6 partitions exist
 only for $3A \geq 6$ (i.e. $A \geq 2$), and the binding-enhancing
 sign follows from the **Demazure sub-crystal** structure at
-height 6 (CLAUDE.md §7b: *Demazure sub-crystals for resonances*).
+height 6 (AGENTS.md §7b: *Demazure sub-crystals for resonances*).
 Each Demazure component represents an *incomplete* topological
 state that lowers the energy budget — exactly the binding
 enhancement $\alpha_5 < 0$ encodes.

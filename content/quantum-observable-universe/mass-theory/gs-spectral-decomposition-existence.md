@@ -38,7 +38,7 @@ spectral_decomposition :
 
 *on `GBResidueSpectralSum`. It is the analytic content of the
 `noncomputable opaque` block: instances must supply this identity as
-input, currently as `sorry` per CLAUDE.md §3b.*
+input, currently as `sorry` per AGENTS.md §3b.*
 
 **Why a conjecture and not a theorem.**
 *A Lean proof requires:*

@@ -95,7 +95,7 @@ $$
 
 1. **Categorical, not fit-based** — every ingredient (block-projection $\pi_\lambda$, residue, Galois orbit, character $\chi^\lambda$) is intrinsic to the substrate.
 2. **Reduces to PR #779 A2.4 at $\lambda = (n)$ (trivial isotype)** — the trivial partition's block is one-dimensional, $\pi_\lambda$ is the identity, $\Delta^{(n)} = \Delta$, $\chi^{(n)} = 1$; the formula reduces to the bare SW-period residue on the full discriminant. ✓
-3. **Matches Demazure-fibre topology** — for self-conjugate λ, the Demazure-fibre decomposition refines $\mathcal{O}_{\mathrm{prin}}^{(\lambda)}$ into Demazure sub-orbits per CLAUDE.md §7b (Brundan–Kleshchev / Kashiwara crystal-on-Type-B). The crystal-graph weight ansatz from PR #777's table was a coarse approximation of this.
+3. **Matches Demazure-fibre topology** — for self-conjugate λ, the Demazure-fibre decomposition refines $\mathcal{O}_{\mathrm{prin}}^{(\lambda)}$ into Demazure sub-orbits per AGENTS.md §7b (Brundan–Kleshchev / Kashiwara crystal-on-Type-B). The crystal-graph weight ansatz from PR #777's table was a coarse approximation of this.
 4. **Categorical-ring-side** — the formula is over $R = \mathbb{Z}[q^{\pm 1/2}, \zeta_5]$ for generic $K$; $\tau_q$ provides the archimedean numerical value.
 5. **Survives the three-calibration discipline** — uses only $\chi^\lambda$, $y_\lambda$, $\mathrm{Res}^{\mathrm{alg}}$, all derived. No empirical input beyond $q_0$ (CAL-1 anchor on $m_e$).
 

@@ -30,7 +30,7 @@ the GB path uses real-axis Vieta-driven closed forms from
 `sw_period_baryon.py`.  Equality of the two numbers (modulo a degree-
 independent global Hessian phase factor) is the empirical certificate
 of A2.1+A2.2+A2.3+A2.5.  **A2.4 (the real-axis = thimble equality for
-k = 1, the proton word) is verified empirically only**; per CLAUDE.md
+k = 1, the proton word) is verified empirically only**; per AGENTS.md
 §3b the downstream proton-mass result remains a `conjecture`.
 
 Trust chain
@@ -97,7 +97,7 @@ def main() -> int:
         "k ∈ {0,1,2,3}.  Empirical certificate of A2.1+A2.2+A2.3+A2.5 "
         "of prop:sw-period-thimble-equivalence; A2.4 (real-axis = "
         "thimble sum at k = 1) is verified EMPIRICALLY only — per "
-        "CLAUDE.md §3b the downstream proton-mass result remains a "
+        "AGENTS.md §3b the downstream proton-mass result remains a "
         "conjecture."
     )
     w.set_content_block("prop:sw-period-thimble-equivalence")
@@ -224,7 +224,7 @@ def main() -> int:
 
     w.add_caveat(
         "A2.4 (real-axis ≡ thimble sum for the proton word) is verified "
-        "empirically only.  Per CLAUDE.md §3b, every block whose `uses[]` "
+        "empirically only.  Per AGENTS.md §3b, every block whose `uses[]` "
         "transitively cites prop:sw-period-thimble-equivalence and is "
         "downstream of A2.4 must remain a `conjecture` (e.g. "
         "conj:baryon-period-ratio)."

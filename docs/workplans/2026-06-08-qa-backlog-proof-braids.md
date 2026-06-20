@@ -1,7 +1,7 @@
 # QA backlog proof drain — braids-and-knots (phase-1 pilot)
 
 Following #1939, this is the phase-1 pilot of the proof-axis QA backlog
-drain (CLAUDE.md skill `local/integration-backlog`). One chapter = one PR.
+drain (AGENTS.md skill `local/integration-backlog`). One chapter = one PR.
 
 ## 4 critical proof-statement-integrity fixes
 

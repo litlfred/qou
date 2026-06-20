@@ -572,7 +572,7 @@
       }
     },
     "production_default_encoding": "5_lr_branching_canonical",
-    "production_default_note": "The canonical (substrate-derived, no-fit) LR-branching encoding is the production default. Encoding 4 (AME equality) consumes the experimental binding and is a validation anchor only; encoding 6 is fitted; encoding 2 is an un-vetted ansatz. The canonical encoding does NOT yet reproduce the deuteron binding \u2014 that closure is the open \u0394_\u03bb gate (CLAUDE.md); production reports the honest canonical result, not a fit.",
+    "production_default_note": "The canonical (substrate-derived, no-fit) LR-branching encoding is the production default. Encoding 4 (AME equality) consumes the experimental binding and is a validation anchor only; encoding 6 is fitted; encoding 2 is an un-vetted ansatz. The canonical encoding does NOT yet reproduce the deuteron binding \u2014 that closure is the open \u0394_\u03bb gate (AGENTS.md); production reports the honest canonical result, not a fit.",
     "phase_A_cost": "done",
     "phase_B_constraints": "interim (bounded subspace) + 4 full encodings compared (method 2 un-vetted ansatz); full color-flavor 9-pair + AME2020 RHS",
     "phase_C_dual_solve": "diagnostic (unbounded on full space; bounded on positive subspace)",

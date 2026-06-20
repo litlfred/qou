@@ -5,7 +5,7 @@ The `wall-base-ring-minimal` QA criterion (merged in PR #2005) flags
 structure — `[Field R]`, `ℚ`, `DivisionRing`, `field_simp` — or a
 ring-element `⁻¹` (NOT a `Units` `↑q⁻¹`, the *target* pattern) where a
 **division-free** restatement over `ℤ[q,q⁻¹]` (`LaurentPolynomial ℤ`) /
-a generic `CommRing` may be possible, per CLAUDE.md §7c + the `R[h]`
+a generic `CommRing` may be possible, per AGENTS.md §7c + the `R[h]`
 multiplicative-relation pattern (Borromean
 `IsBorromeanMarkovTrace h t := (h²+4)·t = num`; α_EM as
 `α·[9]_q·[10]_q = q⁻¹`).

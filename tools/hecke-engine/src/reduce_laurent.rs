@@ -26,7 +26,7 @@
 //! than the unfolded path on every atom up to ⁴He.  Revisit only if
 //! Tier 1.A benches show the rule loop is no longer the bottleneck.
 //!
-//! Per CLAUDE.md §Precision goals L1 (50-dps compute floor): every
+//! Per AGENTS.md §Precision goals L1 (50-dps compute floor): every
 //! coefficient is exact `BigRational` throughout the reduce loop.
 
 use crate::laurent_hecke_element::LaurentHeckeElement;
@@ -74,7 +74,7 @@ pub fn reduce_laurent_rules(
     // saved GCD work.  The *_unreduced path is kept for the
     // smaller-atom win (⁵Li: 7.31 → 6.74 s, -8%) and as
     // scaffolding for future BigInt-arena optimisation.
-    // Per CLAUDE.md §Precision goals L1, correctness is preserved
+    // Per AGENTS.md §Precision goals L1, correctness is preserved
     // bit-for-bit (1e-49 cross-check vs Python LaurentQ).
     let mut terms: FxHashMap<Vec<i32>, LaurentRationalQ> = elem
         .terms

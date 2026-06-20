@@ -5,7 +5,7 @@ P0.1 wall-violation sweep over proof blocks.
 For every `*-proof.md` under `content/quantum-observable-universe/`,
 flag occurrences of Archimedean / hyperbolic-volume markers that
 appear **at the proof level**, not as a τ-image discussion. The
-strict-wall rule (CLAUDE.md §τ-wall + audit doc §0) requires that
+strict-wall rule (AGENTS.md §τ-wall + audit doc §0) requires that
 proofs of algebraic-side statements not invoke
 
   Mostow rigidity, Gromov volume, Thurston norm, hyperbolic Vol(K),

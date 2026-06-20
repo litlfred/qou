@@ -32,7 +32,7 @@
 
 ## Open hidden-fitting candidates (from PR #1089 audit)
 
-Ranked by load-bearing-ness; per CLAUDE.md Rule 14, any h^k coefficient or weight not derivable from one of the 13 categorical drivers requires owner escalation before production adoption.
+Ranked by load-bearing-ness; per AGENTS.md Rule 14, any h^k coefficient or weight not derivable from one of the 13 categorical drivers requires owner escalation before production adoption.
 
 | Rank | Candidate | Location | Status |
 |------|-----------|----------|--------|

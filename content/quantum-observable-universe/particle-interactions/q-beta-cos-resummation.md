@@ -1,4 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 **𝔔_β cos-resummation theorem (conditional on [`prop:beta-decay-transfer-matrix`](#prop:beta-decay-transfer-matrix)).**
 *The single-wrap Form A closed-form prediction* $\mathfrak{Q}_\beta^A$
@@ -55,7 +55,7 @@ Two structural constraints force this form:
 
 2. **Classical decategorification.**
    The mass observable lives in the **classical** limit (Pauli /
-   Bose–Einstein statistics, per CLAUDE.md §7b's
+   Bose–Einstein statistics, per AGENTS.md §7b's
    Kazhdan–Lusztig decategorification principle), not in the
    q-deformed quantum group.  Empirical comparison confirms:
 

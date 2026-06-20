@@ -86,7 +86,7 @@ therefore **correct**: `B_magic` is the first *shell correction*, and it works
 
 **Recommended direction.** Stop hunting a single unified binding law (q₀⁵-per-site,
 a uniform volume/colored rescale, a 7th Δ_λ ansatz — see the Δ_λ gate in
-CLAUDE.md). Model binding as **smooth categorical term + explicit shell/magic
+AGENTS.md). Model binding as **smooth categorical term + explicit shell/magic
 corrections** (shell-model-like), with `B_magic` as the first such correction.
 This retires follow-up 5: the q₀⁵ exponent was a *uniform* law fit to a
 *shell-structured* residual — doomed regardless of the exponent.

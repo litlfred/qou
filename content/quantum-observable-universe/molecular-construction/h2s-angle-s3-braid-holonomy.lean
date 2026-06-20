@@ -3,7 +3,7 @@ import Mathlib.Data.Real.Basic
 /-!
 # QOU.Molecular.H2SAngleS3HolonomyConjecture — H₂S +2.1° = chiral S³ braid holonomy
 
-Conjecture (CLAUDE.md §3b: a conjecture is axiomatised as a Lean `class`; the
+Conjecture (AGENTS.md §3b: a conjecture is axiomatised as a Lean `class`; the
 instance's proof of the field IS the conjecture, not a missing proof).
 
 The H₂S bond-angle residual — the opening of the H–S–H angle above the pure-`p`

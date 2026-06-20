@@ -22,7 +22,7 @@ factor flips sign, so the product is preserved — consistent with the
 sym-projection definition.
 
 DISCIPLINE (anti-pattern guard). This identifies the ALGEBRAIC form
-of sym, not a c_k closure. Per CLAUDE.md "Don't propose a seventh
+of sym, not a c_k closure. Per AGENTS.md "Don't propose a seventh
 fit-based ansatz":
 
   - The numerical relation `Q_β/m_e ≈ 140 · |sym|` at q_proton would

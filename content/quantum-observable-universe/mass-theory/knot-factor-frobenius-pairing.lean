@@ -2,7 +2,7 @@
 # Knot factor as Frobenius self-pairing ratio (conjecture class)
 
 This file axiomatizes `conj:knot-factor-frobenius-pairing` as a Lean
-`class` following the §3b conditional-class pattern from CLAUDE.md.
+`class` following the §3b conditional-class pattern from AGENTS.md.
 
 The main class `KnotFactorFrobeniusPairing` is defined in the BraidKnot
 module at `QOU.BraidKnot.KnotFactorFrobeniusPairing`.  This sibling

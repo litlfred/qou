@@ -58,15 +58,15 @@ matches the witness exactly:
 `precision-goals.md` and the witness are in convention agreement on
 the bare-categorical Borromean prediction; both say `misses ~964×`.
 
-### Reconciliation with `CLAUDE.md` STATUS block
+### Reconciliation with `AGENTS.md` STATUS block
 
-[`CLAUDE.md`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/CLAUDE.md)
+[`AGENTS.md`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/AGENTS.md)
 §Precision goals also matches:
 
 > 3/7 met (m_p, m_e, m_K/m_π) — … the 4 missing observables (m_μ, Q_β,
 > m_n, Δ_pn) … note **m_μ misses by 963.6× post-re-pin** …
 
-All three sources — witness, precision-goals.md, CLAUDE.md — agree:
+All three sources — witness, precision-goals.md, AGENTS.md — agree:
 m_μ is at 209.8 ppb / 963.6× miss, and does NOT meet L2.
 
 ### What about the shared-root pivot recommendation?
@@ -77,7 +77,7 @@ isolation" — was independently absorbed:
 
 - [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md)
   is the canonical shared-root analysis.
-- CLAUDE.md cites it directly: "the Q_β/m_n/Δ_pn trio share a single
+- AGENTS.md cites it directly: "the Q_β/m_n/Δ_pn trio share a single
   root cause".
 - The Q_β arm has a live keystone probe at
   [PR #1713](https://github.com/litlfred/qou/pull/1713) (Q_β Habiro
@@ -106,7 +106,7 @@ captures the supersession verdict for posterity.
 
 - Witness: [`computations/per-observable-100x-status.witness.json`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/computations/per-observable-100x-status.witness.json)
 - Precision goals: [`docs/precision-goals.md`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/docs/precision-goals.md)
-- CLAUDE.md §Precision goals: [`CLAUDE.md`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/CLAUDE.md)
+- AGENTS.md §Precision goals: [`AGENTS.md`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/AGENTS.md)
 - Shared-root audit: [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md)
 - Q_β re-pin staleness audit: [`docs/audits/2026-05-30-q0-repin-stale-witness-audit.md`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/docs/audits/2026-05-30-q0-repin-stale-witness-audit.md)
 - Original m_μ pivot coord: [`docs/coordination/2026-05-30-mu-thread-pivot.md`](https://github.com/litlfred/qou/blob/claude/m-mu-supersession-audit-2026-06-02/docs/coordination/2026-05-30-mu-thread-pivot.md)

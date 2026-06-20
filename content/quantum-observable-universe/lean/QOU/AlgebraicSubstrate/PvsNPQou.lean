@@ -7,7 +7,7 @@ inclusion `P ⊊ BQP_q` at positive Reeb infinitesimal `ε`,
 conditional on the non-compressibility of `BQP_q → P` as
 `ε → 0`.
 
-Axiomatised as a `class` per CLAUDE.md §3b: an instance of the
+Axiomatised as a `class` per AGENTS.md §3b: an instance of the
 class corresponds to a proof of the conjecture.  Downstream
 consequences (e.g. separation of specific complexity classes) are
 stated as conditional theorems under a `[PvsNPQou]` hypothesis.
@@ -27,7 +27,7 @@ namespace QOU.AlgebraicSubstrate
 
 /-- **PvsNPQou**: the QOU-framework P vs NP conjecture.
 
-    Encoded as an empty marker `Prop` class per CLAUDE.md §3b.
+    Encoded as an empty marker `Prop` class per AGENTS.md §3b.
     The complexity classes `P`, `NP`, `BQP_q` are not yet
     formalised in Lean, so the meaningful Prop content cannot
     be written down at this layer; the class therefore carries

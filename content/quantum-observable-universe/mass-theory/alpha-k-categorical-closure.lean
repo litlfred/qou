@@ -60,7 +60,7 @@ class AlphaKCategoricalClosure (q : ℝ) : Type where
     exists a closed-form resummation of the categorical $\alpha_k$
     stratum prefactors that (a) exists, (b) selects uniquely between
     the geometric and symmetric q-dilogarithm candidates, and (c)
-    closes CAL-3 in the correct direction. Per CLAUDE.md §3b-cond
+    closes CAL-3 in the correct direction. Per AGENTS.md §3b-cond
     this is the **only** `sorry` permitted in the dependency chain;
     downstream conditional theorems take this class as an explicit
     `[Instance]` hypothesis.
@@ -85,7 +85,7 @@ assertion. Downstream results may take `[AlphaKCategoricalClosure
 q]` as an instance hypothesis and derive conditional theorems
 without resolving the conjecture itself.
 
-Per CLAUDE.md §3b-cond, the class instance is the **only** `sorry`
+Per AGENTS.md §3b-cond, the class instance is the **only** `sorry`
 permitted in the dependency chain; all downstream provable kinds
 must carry the class as an explicit `[Instance]` hypothesis.
 

@@ -408,7 +408,7 @@ research; the q-dilog tower (Strategies A/B/C in the original
 brief) is the unchanged primary direction.
 
 **Anti-pattern to avoid (per
-[`CLAUDE.md §Δ_λ gate`](../../CLAUDE.md)):** do not fit a
+[`AGENTS.md §Δ_λ gate`](../../AGENTS.md)):** do not fit a
 seven-parameter `α · V_3 + β · V_4 + γ · V_7 + ...` ansatz
 against m_p. Find the categorical justification for the
 specific variant first, then verify the numerical match.
@@ -627,7 +627,7 @@ point:
      that Family A IS the framework-derived λ_scale; the gap
      is what the framework knows, and tighter closures await
      either a substrate-derivation of q_0 (out of scope per
-     CLAUDE.md §Precision goals Subgoal-2) or a fundamentally
+     AGENTS.md §Precision goals Subgoal-2) or a fundamentally
      new structural ingredient.
 
 ### Strategies closed-negative by 2026-05-22 sweep
@@ -859,7 +859,7 @@ distinguish a structural identity from a numerical coincidence.
 1. **Do not introduce new calibration constants.** A 7th-ansatz fit
    for `λ_scale` against m_p is the same CAL-4 violation as the
    hardcoded literal. The strict 3-calibration rule is enforced
-   per CLAUDE.md `Δ_λ gate`. Six closure ansätze have already
+   per AGENTS.md `Δ_λ gate`. Six closure ansätze have already
    failed on the deuteron, and a seventh fit-based attempt will be
    caught by the canonical-watcher.
 2. **Do not lower precision.** PSLQ at < 50 dps will produce false

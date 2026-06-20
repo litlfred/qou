@@ -5,7 +5,7 @@ import { conjecture } from "../../schema/builders";
 // (docs/audits/conjecture-cones.md "Methodology" footnote).
 // The Lean file's `sorry` was always the conjectural content;
 // the `lem:` label was block-kind drift. The conjecture's
-// downstream cone is then handled correctly under CLAUDE.md §3b
+// downstream cone is then handled correctly under AGENTS.md §3b
 // propagation.
 export default conjecture({
   label: "conj:motivic-perpetual-obstruction",

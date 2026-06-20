@@ -99,7 +99,7 @@ The previous "ratio of cyclotomic products" framing was a symptom
 of doing the algebra without naming the underlying structure: the
 telescope *is* the (decategorified) KLR-canonical-basis count of
 the regular $S_n$-representation, i.e. the symmetric-crystal
-shortcut listed in CLAUDE.md §7b item 2.  Naming the crystal
+shortcut listed in AGENTS.md §7b item 2.  Naming the crystal
 removes the manual algebra entirely.
 
 ## Witnesses

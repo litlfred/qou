@@ -33,7 +33,7 @@ qou.fmt.sha
 !figures/*.pdf
 # Whitelist intake uploads (raw PDFs, scans, WHO guidelines etc.
 # committed via scripts/upload-bib-papers.sh and similar intake
-# pipelines per CLAUDE.md §"uploads/").
+# pipelines per AGENTS.md §"uploads/").
 !uploads/*.pdf
 !uploads/*.txt
 !uploads/*.json

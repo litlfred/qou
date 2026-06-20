@@ -56,9 +56,9 @@ This is a categorical/structural gap that is **unaffected by today's KLR-program
 
 This is a **separate research-grade item** with its own scope and timeline; today's KLR work doesn't progress it. Flagging for future-session prioritisation.
 
-## CLAUDE.md §Precision goals — count refresh
+## AGENTS.md §Precision goals — count refresh
 
-Current section states `3/7 met (m_p, m_e, m_K/m_π)`. With the L2-100× headline status now post-re-pin (m_μ ✗), the count is **3/7 met** — unchanged from CLAUDE.md's last edit. **No CLAUDE.md edit needed; the original audit's "follow-up: quick CLAUDE.md refresh PR" item is now obsolete** since the count stayed accurate post-re-pin.
+Current section states `3/7 met (m_p, m_e, m_K/m_π)`. With the L2-100× headline status now post-re-pin (m_μ ✗), the count is **3/7 met** — unchanged from AGENTS.md's last edit. **No AGENTS.md edit needed; the original audit's "follow-up: quick AGENTS.md refresh PR" item is now obsolete** since the count stayed accurate post-re-pin.
 
 ## Sibling-PR coordination
 

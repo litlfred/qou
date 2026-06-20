@@ -50,7 +50,7 @@ the map is a free knob → wiring it is the **forbidden 7th Δ_λ ansatz**.
 1. **Unforced argument map (decisive).** `δB` swings 63% in scale across equally-natural
    `(ν_λ, w_λ)` choices. The map is a free functional knob → a per-block propagator
    multiplier is a disguised **7th Δ_λ ansatz**, which the standing discipline forbids
-   (CLAUDE.md Δ_λ gate; six closures + GAP-A-4's 22 are CLOSED).
+   (AGENTS.md Δ_λ gate; six closures + GAP-A-4's 22 are CLOSED).
 2. **Growth-sector cancellation.** 83% of the correction lives in the growth blocks —
    exactly those that cancelled in `|tr_free|−|tr_atom|` and refuted every A≥3 scalar
    observable (`binding_reeb_phase_decomposition.py`).

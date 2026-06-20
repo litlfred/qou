@@ -47,7 +47,7 @@ error: object file '.../mathlib/.lake/build/lib/lean/Mathlib.olean' of module Ma
 even though `find … -name '*.olean' | wc -l` shows thousands present.
 **Fix:** import specific modules, not the root — e.g.
 `import Mathlib.Analysis.SpecialFunctions.Sqrt` + `import Mathlib.Tactic`.
-(Also the CLAUDE.md §8 "minimal imports" rule, so do this anyway.)
+(Also the AGENTS.md §8 "minimal imports" rule, so do this anyway.)
 
 ## ⚠ Gotcha 2 — `lake env lean` / `lake build` on the restored cache WIPES the oleans
 

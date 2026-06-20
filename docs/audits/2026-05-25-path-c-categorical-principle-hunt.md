@@ -41,7 +41,7 @@ Wedderburn sum).
 2. **h² coefficient = `−G − 3/4` (= −1.666)** if additive to Family A,
    OR **h² coefficient = `−G`** if replacing Family A's `+3/4`.
 3. **Bar-symmetric** — partitions (3,1) ↔ (2,1,1) carry identical
-   contributions (CLAUDE.md §7b Type-B folding).
+   contributions (AGENTS.md §7b Type-B folding).
 4. **Doesn't contradict PR #701's 5 falsified routes.** PR #701
    ruled out Wedderburn-sum incarnations; new candidates must come
    from elsewhere.
@@ -100,7 +100,7 @@ projection candidate. Lower priority unless someone identifies one.
 
 ### C3 — KLR / Kashiwara crystal h² correction
 
-**Hypothesis.** CLAUDE.md §7b mentions "Type B folding for chirality /
+**Hypothesis.** AGENTS.md §7b mentions "Type B folding for chirality /
 CPT" and "decategorifying to KL bases for the classical limit." The
 KLR algebra has its own categorification of the q-deformation. Maybe
 the h² coefficient of linking_weight in the KLR canonical basis
@@ -260,4 +260,4 @@ owner directs in-session escalation.
 - [audit 2026-05-22](2026-05-22-yekutieli-percell-conjecture-formalized.md) — Reading B framework canonical
 - [audit 2026-05-23](2026-05-23-yekutieli-bijection-natural-reading-negative.md) — natural-reading negative
 - [PR #701](https://github.com/litlfred/qou/pull/701) — Wedderburn-search falsification
-- CLAUDE.md §7b — Type-B folding for bar-invariance
+- AGENTS.md §7b — Type-B folding for bar-invariance

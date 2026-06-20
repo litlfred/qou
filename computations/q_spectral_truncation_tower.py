@@ -42,7 +42,7 @@ WHAT THIS PROBE COMPUTES (exact symbolic; α/q FORMAL — fibre level):
      so [k]_q² is index-EVEN — the physical (charge-conjugation-
      symmetric) spectral weight.
 
-DISCIPLINE (CLAUDE.md §7b, ck-tiered-not-binary; Im(q) fibre-vs-
+DISCIPLINE (AGENTS.md §7b, ck-tiered-not-binary; Im(q) fibre-vs-
 observable): exact symbolic; q FORMAL (Im unconstrained) at the fibre
 level; the bar involution q↦q⁻¹ (fixing [k]_q) and the index involution
 k↦−k (flipping it) are the operative symmetries, NOT a reality

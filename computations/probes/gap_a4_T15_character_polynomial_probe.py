@@ -65,7 +65,7 @@ OPEN COMBINATORIAL QUESTION (NOT proposed as a derivation here):
   tableaux, 2 corners) and the Borromean braid combinatorics
   (β_Bor = (σ₁⁻¹σ₂)³ = 6 crossings, image id ∈ S_3, writhe 0)?
 
-  Per CLAUDE.md "no 7th ansatz" / formalize-first discipline, the
+  Per AGENTS.md "no 7th ansatz" / formalize-first discipline, the
   bijection candidate is NOT proposed here — the probe just records
   the closed form and the structural coefficient triple.
 

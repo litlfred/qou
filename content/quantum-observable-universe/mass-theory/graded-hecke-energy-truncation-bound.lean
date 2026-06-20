@@ -14,7 +14,7 @@
   This is the Lean counterpart of `prop:graded-hecke-energy-
   truncation-bound`.  Conditional on the GS-filtration descent
   of the Markov trace
-  (`conj:gs-graded-markov-trace-existence`); per CLAUDE.md
+  (`conj:gs-graded-markov-trace-existence`); per AGENTS.md
   §3b-cond the bound is a rigorous conditional result, expressed
   via a class hypothesis encoding the descent.
 
@@ -56,7 +56,7 @@ structure MassSpectrum (K : Type*) where
 
 /-- The graded Markov trace from GS-filtration descent
     (`conj:gs-graded-markov-trace-existence`).  Stated as a class
-    The truncation theorem is conditional per CLAUDE.md §3b-cond
+    The truncation theorem is conditional per AGENTS.md §3b-cond
     on this conjecture's content.  An instance asserts that the
     descent holds — i.e. the Markov trace descends to a sequence
     `tr_{M, ℓ}` along the GS filtration `J^•(q)`. -/
@@ -87,7 +87,7 @@ class GradedMarkovTraceDescent (K : Type*) [ConfinementLevel K] where
     The theorem statement is the contrapositive support claim:
     every grade `d` outside that finite range has coefficient zero.
 
-    Per CLAUDE.md §3b-cond, this is a *rigorous conditional result*:
+    Per AGENTS.md §3b-cond, this is a *rigorous conditional result*:
     fully verified by Lean modulo the named class instances which
     axiomatise (i) the descent (`conj:gs-graded-markov-trace-existence`)
     and (ii) the confinement-level value (`def:confinement-level`). -/

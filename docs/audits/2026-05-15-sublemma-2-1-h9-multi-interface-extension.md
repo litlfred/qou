@@ -196,7 +196,7 @@ This is **derivation-verification**, not fitting:
   (numerical proxy for proof; if it didn't close, the iterated
   formula would be wrong).
 
-Per CLAUDE.md three-calibration discipline: this probe uses only
+Per AGENTS.md three-calibration discipline: this probe uses only
 $q_0$ (CAL-2) as a calibration input; no $m_e$, $Q_\beta$, or AME
 data enters.
 

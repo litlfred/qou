@@ -194,7 +194,7 @@ suggests a non-trivial block-decomposition is present.
 
 ## Lean axiomatisation
 
-Per CLAUDE.md §3b, the conjecture is encoded as a Lean `class`:
+Per AGENTS.md §3b, the conjecture is encoded as a Lean `class`:
 
 ```lean
 class DeltaLambdaCategoricalClosure (R : Type*) [CommRing R] where

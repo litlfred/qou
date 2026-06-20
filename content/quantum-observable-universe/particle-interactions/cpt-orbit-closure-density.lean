@@ -12,7 +12,7 @@
   ρ_F ∈ {m_e, 2m_e} is no longer a Boolean asserted per atomic
   link — it is derived from the orbit structure of the populated
   Wedderburn-block set Λ(K) under the Type-B fold.  This is the
-  symmetric-crystal shortcut #1 (CLAUDE.md §7b) applied at the
+  symmetric-crystal shortcut #1 (AGENTS.md §7b) applied at the
   density-rule level.
 
   Refs: prop:cpt-orbit-closure-density (this block),
@@ -166,11 +166,11 @@ namespace QOU.ParticleInteractions.CPTOrbit.ConditionalAudit
     package sibling for the canonical declaration. -/
 class SymmetricCrystalPairProduction : Prop where
   /-- Conjecture content is the class instance (sorry = conjecture
-      per CLAUDE.md §3b). -/
+      per AGENTS.md §3b). -/
   holds : True
 
 /-- Witness theorem demonstrating the main proposition is conditional
-    on `[SymmetricCrystalPairProduction]` per CLAUDE.md §3b-cond. -/
+    on `[SymmetricCrystalPairProduction]` per AGENTS.md §3b-cond. -/
 theorem conditional_on_SymmetricCrystalPairProduction
     [_inst : SymmetricCrystalPairProduction] : True := trivial
 

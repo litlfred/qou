@@ -26,7 +26,7 @@ This is D14 Open-R&D item 2 ("verify the Volume Conjecture asymptotic on
 $\tilde q_0$ matches the framework's bare-volume evaluation") in its strongest
 form.
 
-## Formalize-first prune (CLAUDE.md §3.3)
+## Formalize-first prune (AGENTS.md §3.3)
 
 Poisson/theta resummation applies **only** when the sum's $q$-exponent support
 lies on a **quadratic lattice** `{a n² + b n + c : n∈ℤ}` (sparse support, gaps

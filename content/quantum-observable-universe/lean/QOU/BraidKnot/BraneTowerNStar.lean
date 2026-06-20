@@ -15,7 +15,7 @@ hypothesis without encoding the conjectural recovery content.
 This file builds a **substantive** recovery predicate plus a
 β-decay-sector instance with substrate-derived `n_⋆ = 2`.
 
-## Conjectural status (per CLAUDE.md §3b)
+## Conjectural status (per AGENTS.md §3b)
 
 The level-selection rule `n_⋆` is the OPEN PART of
 `conj:brane-tower-z-habiro`. This file does NOT close the

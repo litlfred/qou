@@ -75,7 +75,7 @@ of $20$–$10^4 \%$ across atoms.
 
 **User insight on optimization:** "GS reduction → use crystal
 bases" — the canonical replacement for Gröbner-Shirshov is the
-KL / Kashiwara basis (CLAUDE.md §7b). Bypasses exponential
+KL / Kashiwara basis (AGENTS.md §7b). Bypasses exponential
 algebra-rank growth; opens ¹⁶O / ⁴⁰Ca compute.
 
 ## Gap analysis: where the orders of magnitude live
@@ -292,7 +292,7 @@ move M0 → M1.
   PR should rebase onto post-#639-merge `main` to inherit the
   per-partition machinery.
 
-## Anti-patterns to avoid (per CLAUDE.md three-cal discipline)
+## Anti-patterns to avoid (per AGENTS.md three-cal discipline)
 
 - ❌ **Calibrate** Δ_shell or Δ_coupling to AME — this is fitting,
   not predicting.

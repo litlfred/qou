@@ -9,7 +9,7 @@ identifies a structured residual whose best single-feature predictor
 is the GB-filtration level `ℓ = 5` (height-6 partitions).  The
 companion narrative is `shell-correction-term-seven.md`.
 
-**Conjectural-class convention** (CLAUDE.md §3b).  The conjecture
+**Conjectural-class convention** (AGENTS.md §3b).  The conjecture
 itself is encoded as a `class` whose fields capture its content:
 
   * a height parameter `h_star` selecting the GB-filtration channel,

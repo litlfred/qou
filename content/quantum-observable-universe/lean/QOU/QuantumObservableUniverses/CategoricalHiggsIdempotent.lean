@@ -125,7 +125,7 @@ end CategoricalHiggsIdempotent
 
 The conjecture is that the substrate admits the categorical Higgs
 idempotent `e_H`, whose doublet / VEV / coupling structure is encoded in
-the class fields above.  Per `CLAUDE.md §3b-cond` we provide **no global
+the class fields above.  Per `AGENTS.md §3b-cond` we provide **no global
 instance** (which would require a `sorry`): downstream theorems take
 `[CategoricalHiggsIdempotent]` as an explicit hypothesis (e.g.
 `m_W_over_m_Z_eq_cos_theta_W`, proved conditionally above).  This removes

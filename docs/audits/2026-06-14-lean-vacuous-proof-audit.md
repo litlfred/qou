@@ -115,7 +115,7 @@ shadows the real library proof. Manifest classification:
 | **NOREF** | 25 | inspect — `.ts` has no `qou:` ref |
 | **definition** | 3 | keep — sibling required |
 
-Codified as the **no-shadowing-stubs** directive in CLAUDE.md §0a. Deleting the
+Codified as the **no-shadowing-stubs** directive in AGENTS.md §0a. Deleting the
 147 SHADOW stubs makes those blocks resolve to their real library proofs (honest
 formalisation status); the 19 NEEDED placeholders are the genuine integrity gap.
 

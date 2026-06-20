@@ -34,7 +34,7 @@ and #1622 (mode solve) into ONE consistent structural statement. It does
 NOT fabricate a c_k value — the f-lift is still the open object; this
 probe pins down exactly what f must do.
 
-DISCIPLINE (CLAUDE.md §7b, ck-tiered-not-binary): exact symbolic; no fit;
+DISCIPLINE (AGENTS.md §7b, ck-tiered-not-binary): exact symbolic; no fit;
 no c_k value claimed; tiered. NOTE on u: Habiro u = q^{1/2} vs ladder
 u_ladder = b·ℏ² (notation-collisions.md §u, PR #1622) — kept distinct.
 """

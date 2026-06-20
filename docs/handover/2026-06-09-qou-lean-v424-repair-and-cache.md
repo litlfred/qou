@@ -32,7 +32,7 @@ This document is the durable handover for a continuing agent. Read the
 | **Partial local cache** | `lake-cache/qou-v4-24-0` orphan branch = 731 MB ≈ **2918/7435** Mathlib oleans + 18 QOU oleans (seeded when QOU was mostly red). The other cache branch `lake-cache/Qq-v4-24-0-e2e-test` is **empty**. | Individual modules whose Mathlib deps are cached build in seconds; the **full lib** hits a Mathlib-rebuild wall. |
 | **From-source Mathlib build is slow** | Mathlib **source is fully present** (7435 `.lean`), so `lake build QOU` *does* build missing oleans — but ~**85 s/olean** (≈ +7 oleans / 10 min observed). | Completing the QOU-needed Mathlib subset is **many hours**. |
 | **Container restarts ~every 30 min** | Kills any long build. **Oleans persist on disk**, so re-launching resumes. | Long builds need babysitting across cycles. |
-| **CI billing failures** | `qa-sweep`, `paper-builder`, `witness-refresh` "fail" in **0 s** (same timestamp) — the GitHub Actions billing signature (CLAUDE.md §"CI billing failures"). `section-title-audit` passes. No `lean_ci` runs on feature branches. | **Not code issues.** The Lean gate runs on `main` post-merge. |
+| **CI billing failures** | `qa-sweep`, `paper-builder`, `witness-refresh` "fail" in **0 s** (same timestamp) — the GitHub Actions billing signature (AGENTS.md §"CI billing failures"). `section-title-audit` passes. No `lean_ci` runs on feature branches. | **Not code issues.** The Lean gate runs on `main` post-merge. |
 | **Gemini review quota** | `/gemini review` → "reached your daily quota limit … up to 24 hours". | Reviews are **Copilot-only** until reset. |
 
 ### Lean env recovery after a restart
@@ -93,7 +93,7 @@ Content validates (`✓`). lean-ref migration is a no-op (0 legacy refs).
 2. **Gemini review** — re-post `/gemini review` once the daily quota resets (~24 h).
 3. **Whole-library gate** — confirm `lake build QOU` is green via **post-merge
    CI on `main`** (or via the cache fix in §4).
-4. **Merge** — needs the **owner's explicit** "merge it". Method per CLAUDE.md
+4. **Merge** — needs the **owner's explicit** "merge it". Method per AGENTS.md
    rule 8 = **rebase** (the prepare-merge skill says merge-commit; confirm with
    owner). Do **not** squash.
 

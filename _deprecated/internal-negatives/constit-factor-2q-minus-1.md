@@ -1,4 +1,4 @@
-> **Archimedean specialisation (CLAUDE.md §7c).** The Lean encoding
+> **Archimedean specialisation (AGENTS.md §7c).** The Lean encoding
 > of this conjecture works over $\mathbb{R}$ — both the `q : ℝ`
 > parameter and the `Real.sqrt` evaluation are archimedean-specific.
 > The conjecture's structural content (the closed-form $\rho_Z(q)$

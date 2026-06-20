@@ -74,7 +74,7 @@ cross-referenced so they are never conflated again.
   the **proton anchor only** and are **rigid** (swing 4.7M× less than empirical
   c_3) → **falsified** as universal real-q fibre elements. A genuine c_3 Habiro
   element, if it exists, must be **complex-analytic / root-of-unity** (fibre
-  level), not a real-q formula (CLAUDE.md §"Im(q) at fibre vs observable level").
+  level), not a real-q formula (AGENTS.md §"Im(q) at fibre vs observable level").
 - **c_8 / c_9 / c_10** are PROVED rational identities at the silver ratio
   (`norm_num`-trivial in `qbeta-c8-c10-silver-rationals.lean`), but per §8 a
   silver-anchored exact rational is **not canonical** without a passing
@@ -182,7 +182,7 @@ registry is authoritative. Each should carry a one-line banner → this file.
 - [`2026-06-03-l2-closure-habiro-3-q-25-universal-template.md`](../audits/2026-06-03-l2-closure-habiro-3-q-25-universal-template.md)
 - [`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](../audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md)
 - the flip-flop history table in [`1ppq-qbeta.md`](1ppq-qbeta.md)
-- `CLAUDE.md` "c_3 SETTLED" note (the settle drifted again 2026-06-03/04)
+- `AGENTS.md` "c_3 SETTLED" note (the settle drifted again 2026-06-03/04)
 
 ---
 

@@ -32,7 +32,7 @@ the **open gate** that B_sym consumes.
   Hoefsmit `1/[2]_q` (−53%), `√([3][1])/[2]` (−18%), `q/[2]_q` (−48%). The only
   "matches" — `[2]_q/2`, `(q+1)/2` — are tautological renamings of `(1+q)/2`.
 - **Verdict:** `(1+q)/2` is empirically close but **NOT structurally forced**. It stays
-  **un-wired**; A=3 closure is **OPEN**; per CLAUDE.md there is **no v10 ansatz**.
+  **un-wired**; A=3 closure is **OPEN**; per AGENTS.md there is **no v10 ansatz**.
 
 So `cbnf`'s acceptance is **not** "derive (1+q)/2" (a refuted near-match). It is to record
 that refutation and point at the genuine non-fitting direction (§3).
@@ -97,7 +97,7 @@ session.**
 ## 6. Appendix-sync contract (for whoever wires P_λ)
 
 Any Δ_λ / binding wiring change MUST sync, in the same PR
-(CLAUDE.md §"Mass-and-Binding-Algorithms appendix sync"):
+(AGENTS.md §"Mass-and-Binding-Algorithms appendix sync"):
 
 - `appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure` — the Δ_λ closure gate (update the witness contract to name the mechanism)
 - `appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding` — the per-isotope binding consumer (Algorithm + Python-API sections)

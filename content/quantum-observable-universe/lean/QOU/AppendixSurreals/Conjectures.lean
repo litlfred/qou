@@ -13,7 +13,7 @@ import QOU.AppendixSurreals.PolynomialEval
 /-!
 # QOU.AppendixSurreals.Conjectures — Open conjectures as classes
 
-Per CLAUDE.md §3b ("conjectural propagation"), each conjecture is
+Per AGENTS.md §3b ("conjectural propagation"), each conjecture is
 encoded as a typeclass whose `sorry` instances represent the
 conjecture itself.  Downstream conditional theorems take such a
 class as an instance hypothesis.

@@ -81,7 +81,7 @@ if it exists, is this scaling map — not a value for `c_3`.
 ## Discipline note
 
 No fitted form is proposed (no 7th near-match candidate). Per the
-CLAUDE.md flip-flop framing and the `canonical-ck-tiered-not-binary`
+AGENTS.md flip-flop framing and the `canonical-ck-tiered-not-binary`
 qa-criterion, the result is reported **tiered**: proved block structure /
 near-match `c_3` / open `f`-map. This probe is a *characterization that
 prevents future flip-flops*, not a closure.

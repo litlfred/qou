@@ -18,7 +18,7 @@
 # LaTeX label: `prop:qbeta-c8-c10-silver-rationals` (the range "c8-c10"
 # covers rungs 8, 9, 10 — all three identities are proved below).
 #
-# CLAUDE.md §7c: stated over ℚ at the silver-ratio rational anchor
+# AGENTS.md §7c: stated over ℚ at the silver-ratio rational anchor
 # (b² = 7/8 ∈ ℚ). The statements are rational identities, so they
 # descend along any ℚ-algebra map; only the ℚ form is formalized here.
 -/

@@ -22,7 +22,7 @@ q_0 alone is open (see `2026-05-02-alpha-categorical-derivation`).
 
 This file states the SHAPE constraint as a Lean class; downstream
 binding-energy theorems take `[Term6BindingDensity]` as a
-hypothesis to remain `theorem`/`proposition` per CLAUDE.md
+hypothesis to remain `theorem`/`proposition` per AGENTS.md
 §3b-cond.
 
 LaTeX label: `prop:term6-binding-density`

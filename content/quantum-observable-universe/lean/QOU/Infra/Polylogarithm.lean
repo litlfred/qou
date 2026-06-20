@@ -15,7 +15,7 @@ This module exposes:
 * *Conditional-class* wrappers (`class`es) that name the
   substantive theorems (Theorems A, B from the manuscript) as
   axiomatised content; downstream `prop:` blocks take instances
-  as `[Instance]` hypotheses per CLAUDE.md §3b-cond
+  as `[Instance]` hypotheses per AGENTS.md §3b-cond
   (conditional-class exception).  A trivial default instance is
   registered so that any caller can pick up the class without
   furnishing its own (the trivial instance discharges only the

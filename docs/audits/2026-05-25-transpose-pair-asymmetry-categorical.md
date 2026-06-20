@@ -54,7 +54,7 @@ For each shape λ, the Demazure sub-crystal `B_w(λ)` for a Weyl element `w` has
 
 **Prediction:** the asymmetry reflects how the Demazure word `w` corresponding to the canonical atom-braid factors through `B(λ)` vs `B(λ^T)` differently. Tall-narrow shapes admit larger Demazure sub-fibres for the canonical `w`.
 
-This is consistent with CLAUDE.md §7b: "**Demazure sub-crystals for resonances.** Unstable intermediaries are Demazure sub-crystals". The PSD obstruction's tall-narrow concentration may reflect that tall-narrow shapes are the "natural" Demazure sub-crystals for the canonical atom-braid.
+This is consistent with AGENTS.md §7b: "**Demazure sub-crystals for resonances.** Unstable intermediaries are Demazure sub-crystals". The PSD obstruction's tall-narrow concentration may reflect that tall-narrow shapes are the "natural" Demazure sub-crystals for the canonical atom-braid.
 
 ### (H3) Bar-anti-symmetric content asymmetry
 
@@ -90,4 +90,4 @@ This refined conjecture **explains** both:
 - [`docs/audits/2026-05-25-categorical-derivation-rectangular-conjecture.md`](2026-05-25-categorical-derivation-rectangular-conjecture.md) — superseded categorical framing
 - [`computations/probe_4e_transpose_pair_asymmetry.py`](../../computations/probe_4e_transpose_pair_asymmetry.py) — asymmetry quantification (will expand when scan completes)
 - [`content/quantum-observable-universe/braids-and-knots/conj-psd-trace-orthogonality.md`](../../content/quantum-observable-universe/braids-and-knots/conj-psd-trace-orthogonality.md) — paper-level orthogonality conjecture
-- [`CLAUDE.md` §7b](../../CLAUDE.md) — Type-B folding directive
+- [`AGENTS.md` §7b](../../AGENTS.md) — Type-B folding directive

@@ -19,7 +19,7 @@ inside $A$, with the deviation $\Delta = \mathrm{shift}_{\mathrm{NF}}(\beta)
 
 ## Method
 
-Per CLAUDE.md §LP/SDP duals, the LP probe must emit BOTH primal
+Per AGENTS.md §LP/SDP duals, the LP probe must emit BOTH primal
 and dual fields. The probe uses
 [`solve_operator_selection_lp`](../../computations/lp_dual_solver.py)
 on the data:
@@ -108,7 +108,7 @@ empirical kernel at low rank:
   conjecture witnessed empirically; no formal proof is attempted.
   Downstream blocks that depend on this conjecture must be
   `remark` blocks with `interprets`, or carry the
-  conditional-class structure of CLAUDE.md §3b-cond.
+  conditional-class structure of AGENTS.md §3b-cond.
 
 ## Where it lands
 

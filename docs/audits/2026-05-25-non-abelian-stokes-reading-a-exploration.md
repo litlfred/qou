@@ -347,7 +347,7 @@ Reading-A leg; PR #1249 is the q₀ leg.
    exists, the structural theorem can be stated as a class with
    axioms encoding `Vol(𝓑₃) = 8·G`, the 8-octahedron decomposition,
    and the Yekutieli theorem.  Downstream results (the 92% gap
-   closure) become **conditional-on-class** per CLAUDE.md §3b-cond.
+   closure) become **conditional-on-class** per AGENTS.md §3b-cond.
    Multi-session.
 
 ## See also

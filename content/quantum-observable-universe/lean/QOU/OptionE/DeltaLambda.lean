@@ -55,7 +55,7 @@ functions + per-atom predictions live in `DeuteronVerification.lean`.
 
 Refs:
 - [manuscript] docs/audits/2026-05-18-delta-lambda-gating-context.md
-- [manuscript] CLAUDE.md §Precision goals (L2)
+- [manuscript] AGENTS.md §Precision goals (L2)
 -/
 
 namespace QOU.OptionE.DeltaLambda

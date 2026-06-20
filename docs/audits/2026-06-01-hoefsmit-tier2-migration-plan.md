@@ -145,4 +145,4 @@ appropriate fix — not Tier 2 formal adjoin. Tracked separately.
   §Policy B
 - Audit witness: [`2026-06-01-q-usage-audit.witness.json`](2026-06-01-q-usage-audit.witness.json)
 - Watcher skill: [`q-usage-watcher`](../../.claude/skills/local/q-usage-watcher.md)
-- Base-ring convention: [CLAUDE.md §7c](../../CLAUDE.md)
+- Base-ring convention: [AGENTS.md §7c](../../AGENTS.md)

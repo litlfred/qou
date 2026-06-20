@@ -72,7 +72,7 @@ Relation to `QOU.AlgebraicSubstrate.SurrealRateCalculus`: the abstract
 class docstring) is realised concretely with the scalar
 `(2+ε)/(2(1+ε))` displayed and pinched in `[1/2, 1]`.
 
-Per CLAUDE.md §7c the ordering hypothesis `1 < q` forces the
+Per AGENTS.md §7c the ordering hypothesis `1 < q` forces the
 archimedean carrier `ℝ` — no generic-`R` version exists.
 -/
 

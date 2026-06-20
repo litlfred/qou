@@ -137,7 +137,7 @@ The `h² = (q - q⁻¹)²` factor enters because:
 - Must NOT modify the canonical derivation chain
   (`docs/canonical-derivation-cheat-sheet.md`) without owner approval.
 - Must NOT introduce empirical CAL-4 calibration (the framework's
-  3-calibration discipline forbids it; see CLAUDE.md "Precision goals").
+  3-calibration discipline forbids it; see AGENTS.md "Precision goals").
 - Per `prop:em-coupling-bring-zero-mode` lines 191-205: the rigorous
   derivation requires items 1-4 (3-manifold identification, photon
   zero-mode computation, UV finiteness, 2-loop self-energy). This

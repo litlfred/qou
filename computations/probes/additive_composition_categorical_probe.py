@@ -13,7 +13,7 @@ categorically": the candidate linking_weight is
 The composition is ADDITIVE (108 ppm m_p match) not MULTIPLICATIVE
 (1243 ppm m_p match). What categorical structure forces this?
 
-Hypotheses tested in this probe (all from CLAUDE.md §7b + the 13-driver
+Hypotheses tested in this probe (all from AGENTS.md §7b + the 13-driver
 audit):
 
 (H1) **Direct-sum on H_4 Wedderburn block.** H_4(q) decomposes as
@@ -102,7 +102,7 @@ def main() -> int:
     print("  the cardinality of color-pair-plus-diagonal sum.")
     print()
     print("  Faddeev `1/(1 − h⁴)` is the leading-h⁴ contribution from the")
-    print("  bar-invariant fixed sub-algebra at H_4 (per CLAUDE.md §7b Type B")
+    print("  bar-invariant fixed sub-algebra at H_4 (per AGENTS.md §7b Type B")
     print("  folding: the bar-symmetric S_4 ↓ B_2 fold projects onto h^{2k}")
     print("  contributions; the leading h⁴ term is the smallest non-trivial")
     print("  non-vanishing piece).")

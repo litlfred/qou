@@ -15,7 +15,7 @@ block
 ## Setup
 
 Let $H_n(q)$ be the Iwahori–Hecke algebra over $\mathbb{Q}(q)$
-([CLAUDE.md §7a](../../../CLAUDE.md)). The Gröbner–Shirshov
+([AGENTS.md §7a](../../../AGENTS.md)). The Gröbner–Shirshov
 filtration on the underlying braid-group algebra
 $\mathbb{Q}(q)\langle \sigma_i \rangle / I_{\mathrm{Hecke}}$
 ([`prop:gb-spectral-sequence`](#prop\:gb-spectral-sequence)) is the

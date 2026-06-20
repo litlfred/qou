@@ -70,7 +70,7 @@ INGREDIENT-1 block) sharpened ingredient 1 and **corrected two framing errors**:
    establishes $\Sigma_4$ is a **genus-4 curve** (complex dim 1), $\mathrm{Aut}=S_5$. You cannot get a
    $\mathbb{CP}^1$ exceptional divisor by blowing up a point on a curve ($\mathbb{P}^{1-1}=\mathbb{P}^0=$
    a point). The $\mathbb{CP}^1$ is the **state-bundle fibre** $\mathcal{S}=P\times_G\mathbb{CP}^1$
-   (QOU archimedean tuple, CLAUDE.md §7) $=\mathbb{P}(\mathbb{C}^2_{\mathrm{spin}})$, on which
+   (QOU archimedean tuple, AGENTS.md §7) $=\mathbb{P}(\mathbb{C}^2_{\mathrm{spin}})$, on which
    $\mathrm{SU}(2)_S$ spin acts. The `exceptional-divisor-reeb-intro` "blow up a point $p\to\mathbb{CP}^1$"
    must be read as the projectivized spin fibre over $p$. This locates *where* the icosahedral $S^2$ lives.
 

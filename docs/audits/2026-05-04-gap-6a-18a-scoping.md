@@ -17,7 +17,7 @@ open-ended; P18a multi-week).
 ## Class architecture is in place
 
 Both GAPs already have the conditional-class scaffolding required by
-CLAUDE.md §3b:
+AGENTS.md §3b:
 
 | Class | File | Status |
 |-------|------|--------|
@@ -142,7 +142,7 @@ producing the instance fields from `β` algorithmically. Specifically:
   `β` can either:
   - **(a) Compute `Vol(K_β)/ℏ_q²` independently** (e.g. via
     SnapPy for the closure), in which case the recipe gives a
-    *fitting* statement, not a derivation. Per CLAUDE.md, fits
+    *fitting* statement, not a derivation. Per AGENTS.md, fits
     are recorded as conjectures; no Lean closure.
   - **(b) Define `vol_identity := tr_descended + tr_transient`**
     by fiat, in which case `vol_eq` becomes `rfl` — but this

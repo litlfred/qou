@@ -80,7 +80,7 @@ use only the four ring-involution axioms plus Mathlib's
 invoked. The trailing $\mathbb{R}[X]$ section (`c5_taylor_6`,
 `cos_truncated_6`, `cosh_truncated_6` and their concrete evaluations
 via `norm_num`) specialises to the archimedean base ring to produce
-falsifiable numerical predictions; per CLAUDE.md §7c the generic /
+falsifiable numerical predictions; per AGENTS.md §7c the generic /
 specialised cut is a soft boundary inside this file, marked by the
 "Concrete archimedean instances over $\mathbb{R}$" section header,
 and may be moved to a sibling block under `observations/` in a

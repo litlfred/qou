@@ -23,7 +23,7 @@ the substrate-level non-degeneracy condition.*
 Each substrate identity is stated in the cited literature
 (Wenzl 1988; Jones 1987) over a commutative ring with $q$ a unit;
 the QOU formalisation enforces the same generic typing through
-[`CLAUDE.md` §7c](https://github.com/litlfred/qou/blob/main/CLAUDE.md#7c-base-ring-convention-generic-r-vs-archimedean-r-strict)
+[`AGENTS.md` §7c](https://github.com/litlfred/qou/blob/main/AGENTS.md#7c-base-ring-convention-generic-r-vs-archimedean-r-strict)
 ("base-ring convention"). The relevant Lean files
 ([`hq-bi-filtration.lean`](hq-bi-filtration.lean),
 [`explicit-central-idempotent.lean`](explicit-central-idempotent.lean),

@@ -116,7 +116,7 @@ class GeomFullCanonicalSeed {Knot : Type} (G : GeomFullEval Knot)
     `PLCorrectnessHypotheses`, this gives the per-knot uniqueness
     backing the QOU mass formula `m(K) = m_e · VolDensity(K, q₀)`.
 
-    Per CLAUDE.md §3b-cond: the seed-uniqueness leg is proved
+    Per AGENTS.md §3b-cond: the seed-uniqueness leg is proved
     sorry-free conditional on the canonical-seed class; closing
     the seed itself (Family-A linking-weight extension to all
     knots) is the open `prop:hoefsmit-scattering-pipeline` work. -/
@@ -191,11 +191,11 @@ namespace QOU.BraidKnot.GeomUniversality.ConditionalAudit
     package sibling for the canonical declaration. -/
 class HyperbolicVolumeIndependence : Prop where
   /-- Conjecture content is the class instance (sorry = conjecture
-      per CLAUDE.md §3b). -/
+      per AGENTS.md §3b). -/
   holds : True
 
 /-- Witness theorem demonstrating the main proposition is conditional
-    on `[HyperbolicVolumeIndependence]` per CLAUDE.md §3b-cond. -/
+    on `[HyperbolicVolumeIndependence]` per AGENTS.md §3b-cond. -/
 theorem conditional_on_HyperbolicVolumeIndependence
     [_inst : HyperbolicVolumeIndependence] : True := trivial
 

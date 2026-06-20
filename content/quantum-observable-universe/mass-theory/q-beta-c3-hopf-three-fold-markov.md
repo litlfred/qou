@@ -1,4 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 **3-fold Markov closure $\to$ Hopf-link substructure $\to$ $c_3 = -2$.**
 
@@ -59,7 +59,7 @@ unknot contribution is trivial.
 
 ### Fact 4 — KL decategorification at $q = 1$
 
-Per CLAUDE.md §7b's Kazhdan-Lusztig decategorification principle, the
+Per AGENTS.md §7b's Kazhdan-Lusztig decategorification principle, the
 mass observable lives in the classical limit. At $q = 1$ the Jones
 polynomial of the Hopf link evaluates to:
 
@@ -108,5 +108,5 @@ encodes the chain at three levels:
    pure-arithmetic theorem (closed by `ring` / `norm_num`).
 3. **Top-level export** $c_3 = -2$ conditional on (1) and (2).
 
-The class-axiomatization pattern follows CLAUDE.md §3b's conditional-
+The class-axiomatization pattern follows AGENTS.md §3b's conditional-
 class rule for results downstream of an unproved structural input.

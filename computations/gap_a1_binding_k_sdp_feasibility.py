@@ -30,7 +30,7 @@ Steps (deuteron ²H, A=2, n_0=6):
      solve_psd_operator_selection_sdp (the canonical dual-emitting entry
      point) — channels = blocks, costs t_λ = -|y_λ·χ^λ(K)|. Emits the
      required dual fields (X_star, Z_star, primal_obj, dual_obj, duality_gap,
-     eigenvalues) per CLAUDE.md "LP/SDP duals — first-class infra".
+     eigenvalues) per AGENTS.md "LP/SDP duals — first-class infra".
   4. The DECISIVE map test. The canonical mass formula
      (prop:rho-k-h3a-refinement) defines
          Δ_λ(K) = (M_λ(K) − m_e·y_λ·χ^λ(𝓑_K)) / (m_e·y_λ·χ^λ(𝓑_K)),
@@ -136,7 +136,7 @@ def main() -> int:
     # LP-style dual variables live in Z_star = [y0_star, *y_star] and the
     # primal in X_star. Surface them under the canonical LP-dual field names
     # (y0_star, y_star, active_set) so the lp_dual_witness_validator passes —
-    # per CLAUDE.md "LP/SDP duals — first-class infra".
+    # per AGENTS.md "LP/SDP duals — first-class infra".
     Z = list(sdp_d.get("Z_star") or [])
     if Z:
         sdp_d["y0_star"] = float(Z[0])
@@ -265,7 +265,7 @@ def main() -> int:
             "SDP over K's Wedderburn blocks; t_λ = -|y_λ·χ^λ(K)| so the "
             "selected channel is the dominant block λ*(K). Dual fields "
             "(X_star, Z_star, primal_obj, dual_obj, duality_gap, eigenvalues) "
-            "per CLAUDE.md LP/SDP-duals infra. This SDP picks the dominant "
+            "per AGENTS.md LP/SDP-duals infra. This SDP picks the dominant "
             "block of K but does NOT supply M_λ(K), so it does not close the "
             "binding — see verdict."
         ),

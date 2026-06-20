@@ -156,7 +156,7 @@ restore). The same module also delivers **Step 2** (the ε³ lemma) in
 exact form: `Δ_{1+ε} = ε³(2+ε)/(2(1+ε))` (categorical),
 `Δ/ℏ_q² = ε + (3/2)ε² + (1/2)ε³` (physical-units, exact cubic — the
 workplan's `O(ε³)` tail pinned to exactly `ε³/2`), plus the two-sided
-pinch `ε³/2 ≤ Δ_{1+ε} ≤ ε³` for `ε > 0`. Generic-R per CLAUDE.md §7c is
+pinch `ε³/2 ≤ Δ_{1+ε} ≤ ε³` for `ε > 0`. Generic-R per AGENTS.md §7c is
 not available — ordering (`1 < q`) forces ℝ. The original skeleton is
 retained below for provenance.
 

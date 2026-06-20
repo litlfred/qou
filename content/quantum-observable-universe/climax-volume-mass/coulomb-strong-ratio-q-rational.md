@@ -65,4 +65,4 @@ realised at $q = q_0 \in \mathbb{R}_{>0}$ where it agrees with the
 archimedean $\tanh(\ln q_0)$. There is no $|q| = 1$ step (the identity
 involves $q^{-1}$ algebraically, not as conjugation; both $q_0$ and $q_0^{-1}$
 are real positive points). Compliant with the `lusztig_q_0_imaginary_part_zero`
-invariant. See [CLAUDE.md §7c "Base ring convention"](../../../CLAUDE.md).
+invariant. See [AGENTS.md §7c "Base ring convention"](../../../AGENTS.md).

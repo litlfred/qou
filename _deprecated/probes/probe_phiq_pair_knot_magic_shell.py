@@ -23,7 +23,7 @@ across all four probed families (commit `8efb07e7` on PR #638):
    28.296 MeV is the falsifiability test.
 
 3. **Operator-selection LP confirmation** of the pair-knot
-   operator basis per CLAUDE.md "LP / SDP duals — first-class
+   operator basis per AGENTS.md "LP / SDP duals — first-class
    infra" and `prop:operator-selection-lp`.  Build operator basis
    `{σ_i (per-generator), σ_pp (composite proton-pair),
    σ_nn (composite neutron-pair)}`; compute Markov-trace costs
@@ -229,7 +229,7 @@ def main():
             "binding gap; calibrates Δ_shell(Z=2) from ³He and predicts "
             "⁴He.  Emits full LP primal + dual (x_star, y_0_star, "
             "y_star, active_set, primal_obj, dual_obj, duality_gap) "
-            "per CLAUDE.md `LP / SDP duals — first-class infra` and "
+            "per AGENTS.md `LP / SDP duals — first-class infra` and "
             "`prop:operator-selection-lp`.  The diagonal-Gram "
             "approximation is documented as a caveat; the full "
             "Hoefsmit-seminormal Frobenius pairing is a refinement."

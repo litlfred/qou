@@ -32,7 +32,7 @@ generator — the log-binding factorizes additively over the bonds.
 | `Bsym_deuteron` | `B_sym(²H) = α·L_pn` (the deuteron *is* the single p-n bond) |
 
 The per-bond energies `L_X : Bond → R` are abstract parameters over a generic
-`CommRing R` (CLAUDE.md §7c — the additivity is pure algebra; no archimedean input,
+`CommRing R` (AGENTS.md §7c — the additivity is pure algebra; no archimedean input,
 no `q₀`). The proof is `List.sum` over the bond multiset (`abel`).
 
 ## What this buys (and what it does not)

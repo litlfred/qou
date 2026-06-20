@@ -51,7 +51,7 @@ literature `Vol(7²_1)` in `alpha_cluster_recursion.py`.
 
 ## Status: EXPLORATORY
 
-Per CLAUDE.md production-vs-exploratory discipline, this is a
+Per AGENTS.md production-vs-exploratory discipline, this is a
 probe surfacing a research-grade question (what's the categorically-
 exact derivation of c_αα at the substrate level?), NOT a wired
 production change. The α-cluster recursion's existing

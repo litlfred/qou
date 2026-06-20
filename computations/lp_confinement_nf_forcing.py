@@ -37,7 +37,7 @@ For each test compound β = β₁ ⋆ I ⋆ β₂:
     pole_order is in A (NF support lies in active sub-lattice),
     (iii) |Δ_observed| ≤ Δ_predicted_bound + numerical_slack.
 
-The witness emits BOTH primal and dual fields per CLAUDE.md
+The witness emits BOTH primal and dual fields per AGENTS.md
 §LP/SDP duals (so lp_dual_witness_validator.py recognises it).
 
 @module computations/lp_confinement_nf_forcing
@@ -120,12 +120,12 @@ def main() -> None:
     q0_sp = sp.Rational(str(q0))
     builder = WitnessBuilder("lp-confinement-nf-forcing", engine="scipy")
     builder.set_description(
-        "Probe of the conjecture (CLAUDE.md / step 5 of the multiplicative-"
+        "Probe of the conjecture (AGENTS.md / step 5 of the multiplicative-"
         "chain plan): for compound braids β = β₁ ⋆ I ⋆ β₂ on B_n, the LP/SDP "
         "active set A = {λ : y_λ* > 0} from prop:operator-selection-lp "
         "(i) is strictly smaller than n! (confinement), (ii) contains the "
         "Wedderburn maximizer of shift_NF(β), and (iii) bounds the deviation "
-        "shift_NF(β) − α_shift(I) by the LP duality gap. Per CLAUDE.md "
+        "shift_NF(β) − α_shift(I) by the LP duality gap. Per AGENTS.md "
         "§LP/SDP duals, the witness emits BOTH primal and dual fields."
     )
     builder.set_content_block("conj:confinement-nf-structure-forcing")
@@ -221,7 +221,7 @@ def main() -> None:
             "confinement_holds": confinement_holds,
             "maximizer_in_active_set": maximizer_in_active,
             "delta_within_bound": delta_within_bound,
-            # Required by CLAUDE.md §LP/SDP duals
+            # Required by AGENTS.md §LP/SDP duals
             "lp_x_star": result.x_star,
             "lp_y0_star": result.y0_star,
             "lp_y_star": result.y_star,

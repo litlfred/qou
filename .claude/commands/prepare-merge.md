@@ -6,7 +6,7 @@ Prepare the current branch's PR for merge. Execute the steps **in order**,
 with the exception of requesting external reviews (Step 6), which may be
 started in parallel with the Lean build (Step 4) to save time.
 
-**Workflow precondition** (per CLAUDE.md §Branch + PR workflow,
+**Workflow precondition** (per AGENTS.md §Branch + PR workflow,
 STRICT, supersedes default "no auto-PR" guidance for this repo):
 you should already be on a feature branch with a PR open. If
 you're on `main` or a stale branch with uncommitted work, STOP —
@@ -125,7 +125,7 @@ inventory entries.
   `cd content && bun run migrate-lean-refs`. The script is idempotent
   (no-op when there is nothing to migrate) — running it unconditionally
   is the standardized post-rebase workflow described in
-  CLAUDE.md §0b.
+  AGENTS.md §0b.
 - This catches blocks that landed on `origin/main` while the branch was
   in flight and still use the legacy `lean: { decl: "...", file? }`
   shape (Zod will hard-fail validation on those).
@@ -229,7 +229,7 @@ cycle.
 
 - Run `lake build` from the **repo root** (the standardized root Lake
   workspace builds every paper package — `qou`, `ugb`, `fred2005` —
-  in one pass; see CLAUDE.md §0).
+  in one pass; see AGENTS.md §0).
 - If the build fails, route to `lean-build-fix` and resolve.
 - Run `lean-completeness-audit`: every `sorry` must carry a `-- Ref:`
   citation, every `definition` block must have its `.lean` sibling,
@@ -268,7 +268,7 @@ doing this step. You can fire off the review requests while the build runs.
 - **Merge method: ALWAYS `merge` (merge-commit), NEVER `squash`, unless
   the user EXPLICITLY requests squash on the merge command itself.**
   Small structured commits are a deliberate authoring discipline in this
-  repo (CLAUDE.md §"Branch + PR workflow" rule 4) — they exist so
+  repo (AGENTS.md §"Branch + PR workflow" rule 4) — they exist so
   cherry-pick, `git bisect`, focused review attention, and granular
   rollback all work. Squashing destroys that record. The default for
   `mcp__github__merge_pull_request` must be `merge_method: "merge"`.

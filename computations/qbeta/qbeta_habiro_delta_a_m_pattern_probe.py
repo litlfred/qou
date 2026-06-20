@@ -37,7 +37,7 @@ PRE-STATED VERDICT SHAPES.
     coefficient-polynomial.
 
 DISCIPLINE: pure structural extraction, NO new substrate constant.
-Per CLAUDE.md, does NOT propose c_k closure — only identifies the
+Per AGENTS.md, does NOT propose c_k closure — only identifies the
 integer-coefficient signature of the underlying Habiro element.
 
 Builds on (does not duplicate):

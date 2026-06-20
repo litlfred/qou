@@ -105,7 +105,7 @@ first backfill batch lands, to avoid an avalanche of
 ## See also
 
 - `.github/copilot-instructions.md §11.0` — full authoring contract
-- `CLAUDE.md §4c` — agent-facing rules
+- `AGENTS.md §4c` — agent-facing rules
 - `content/pipeline/validate-defterm.ts` — validator implementation
 - `content/pipeline/build-glossary.ts` — builder implementation
 - `content/pipeline/codemod-refterm.ts` — backfill codemod

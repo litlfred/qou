@@ -22,7 +22,7 @@ LaTeX label: `conj:phi-q-tower-jsj-bridge`
 The Lean statement is **conditional on `Kashaev.VolumeConjecture q`**,
 the typeclass axiomatising KVC.  Modulo that typeclass instance the
 bridge theorem is fully verified by Lean.  This is Workplan B from
-`CLAUDE.md` §3b ("Lean formalization of conjectures").
+`AGENTS.md` §3b ("Lean formalization of conjectures").
 
 ## References
 

@@ -231,7 +231,7 @@ Listed in dependency order. Each one is one-PR-sized.
 
 ## Anti-pattern guard
 
-Per CLAUDE.md "Don't add features beyond what the task requires"
+Per AGENTS.md "Don't add features beyond what the task requires"
 and the no-calibration rule: at no point should the closure
 introduce a fit parameter, an empirical offset, or a CODATA m_p
 injection. The 1 % rel-diff sanity threshold on PR #663 is the

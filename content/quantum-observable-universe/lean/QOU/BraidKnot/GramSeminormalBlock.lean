@@ -32,7 +32,7 @@ For each `λ ⊢ n`, this module records:
 * the longest-word matrix `rhoLambdaW0 λ`
 * the character value `chiLambdaW0 λ := tr (rhoLambdaW0 λ)`
 
-Per CLAUDE.md §7c (Base ring convention) the structure is purely
+Per AGENTS.md §7c (Base ring convention) the structure is purely
 algebraic — no `Real.sqrt` / `Real.rpow` / order predicates — and is
 parameterised over a generic commutative ring `R`. Numerical
 specialisations live in archimedean-evaluation modules.
@@ -58,7 +58,7 @@ the Python sidecar.
 
 ## Phase 1 scope (this file)
 
-This file is a **declaration stub** (CLAUDE.md §3b conditional class
+This file is a **declaration stub** (AGENTS.md §3b conditional class
 pattern): the class encapsulates the per-block data as a hypothesis,
 with the Python witness as the canonical instance. Full Lean proof of
 the Wedderburn reassembly is deferred to a Mathlib-bridging follow-up.
@@ -105,7 +105,7 @@ opaque dimLambda : ∀ {n : ℕ}, Partition n → ℕ
 
 /-- **Per-block Hoefsmit-seminormal representation data** for a
     partition `λ ⊢ n` of the Iwahori–Hecke algebra `H_n(q)`,
-    parameterised over a generic commutative ring `R` (CLAUDE.md §7c).
+    parameterised over a generic commutative ring `R` (AGENTS.md §7c).
 
     The fields encode the dimension `dim_λ` and the per-generator and
     longest-word matrices in the Hoefsmit-seminormal basis indexed by
@@ -136,7 +136,7 @@ structure SeminormalBlockData (R : Type*) [CommRing R]
     witness `option-e-phase1-h3-cross-check.witness.json`:
 
     * `max_residual := 2.22e-16` (float64 epsilon, well below
-      the 1 ppQ ≡ 10⁻¹⁵ acceptance bar from CLAUDE.md §Precision goals);
+      the 1 ppQ ≡ 10⁻¹⁵ acceptance bar from AGENTS.md §Precision goals);
     * `rms_residual := 1.14e-16` (RMS across 36 NF Gram entries).
 
     Following the `BraidWordBasisGram.lean` pattern in this directory,
@@ -148,7 +148,7 @@ class H3WedderburnReassembly where
       vs the published H_3 NF-basis Gram, in float64 epsilon units. -/
   max_residual_eps : ℝ
   /-- The recorded residual is at or below the 1 ppQ precision floor
-      (10⁻¹⁵), satisfying L1 compute precision per CLAUDE.md. -/
+      (10⁻¹⁵), satisfying L1 compute precision per AGENTS.md. -/
   residual_below_ppq : max_residual_eps ≤ (1 : ℝ) * 10 ^ (-15 : ℤ)
 
 /-- The numerical witness pin: the H_3 Wedderburn reassembly residual

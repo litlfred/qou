@@ -291,7 +291,7 @@ recent push triggers a `paper-builder-image` run that completes in **0 s
 with 0 jobs** (`run 27512169900`: `conclusion=failure`, `total_jobs=0`,
 `run_started_at == updated_at`). A run created with **no job launched** is
 a *startup failure* — on a private repo across all branches, the
-Actions-minutes/spending-limit signature from CLAUDE.md
+Actions-minutes/spending-limit signature from AGENTS.md
 §"CI billing failures". (The `publish.yml` runs that show *real*
 durations are from **2026-06-11**, before the exhaustion, so they don't
 contradict this.) **Consequences:** ① none of the LaTeX work can be

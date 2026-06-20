@@ -47,7 +47,7 @@
   "scriptFile": "probe_sdp_active_set_dominant_partition.py",
   "scriptHash": "cb2dffe301dd",
   "scriptCommitSha": "a06287d494a2d06c4b44c0efa6cc920ea25a92c7",
-  "description": "SDP shadow-price selector probe: runs the operator-selection LP (prop:operator-selection-lp) at each atom's (q_0, β_atom) with t_λ = y_λ · χ_q^λ and diagonal Gram G = diag(Σ |μ_a|²). Reads argmax y_λ^* and compares to PR #639's empirical dominant partition. Tests whether the SDP active-set argmax is the substrate-derivable identification of isMaxEigSpectrum. Per CLAUDE.md 'LP/SDP duals — first-class infra'; emits full primal-dual pair via lp_dual_solver.solve_operator_selection_lp. Class C (diagnostic).",
+  "description": "SDP shadow-price selector probe: runs the operator-selection LP (prop:operator-selection-lp) at each atom's (q_0, β_atom) with t_λ = y_λ · χ_q^λ and diagonal Gram G = diag(Σ |μ_a|²). Reads argmax y_λ^* and compares to PR #639's empirical dominant partition. Tests whether the SDP active-set argmax is the substrate-derivable identification of isMaxEigSpectrum. Per AGENTS.md 'LP/SDP duals — first-class infra'; emits full primal-dual pair via lp_dual_solver.solve_operator_selection_lp. Class C (diagnostic).",
   "contentBlock": "rem:per-partition-k-lambda-rule",
   "parameters": {
     "atoms": [

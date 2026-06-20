@@ -6,7 +6,7 @@ Bundles five small but focused Lean fillers into
 | Section | Content | Status |
 |---|---|---|
 | (A) Height-6 partition enumeration | `HeightSixPartition n` structure with `parts : List ℕ`, `parts.length = 6` | unconditional finite-type carrier |
-| (B) Demazure sub-crystal predicate | `IsDemazureSubCrystal S` typeclass | ansatz; CLAUDE.md §7b item 3 hook |
+| (B) Demazure sub-crystal predicate | `IsDemazureSubCrystal S` typeclass | ansatz; AGENTS.md §7b item 3 hook |
 | (C) Kazhdan-Lusztig classical-limit functor | `KLClassicalLimit f := f 1` | unconditional ansatz |
 | (D) Minimal `BlochGroup F` carrier | `HasBlochGroupQuotient F` typeclass with two boolean fields (quotient existence + Borel regulator iso) | typeclass hypothesis |
 | (E) Pentagon-identity surrogate for `Cl_2` | `Cl_2_PentagonIdentity` typeclass | typeclass hypothesis |
@@ -18,7 +18,7 @@ The five pieces deepen the mass-tower scaffolding:
   carrier downstream callers can iterate over (once the GS
   spectral-sequence weight is wired in).
 - (B) adds the Demazure sub-crystal hook for resonances
-  (CLAUDE.md §7b item 3 — "incomplete topological states lowering
+  (AGENTS.md §7b item 3 — "incomplete topological states lowering
   the energy budget"), giving the structural sign argument for
   $\alpha_5 < 0$ a Lean-level handle.
 - (C) provides the KL classical-limit functor as a ansatz;

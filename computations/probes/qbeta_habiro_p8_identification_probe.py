@@ -89,7 +89,7 @@ P8_coeffs_desc = [1, 2, 2, 2, 4, -2, 2, -2, 1]   # u^8 ... u^0
 P8 = sum(c * u**(8 - i) for i, c in enumerate(P8_coeffs_desc))
 P8 = sp.expand(P8)
 
-# Canonical substrate q_0 (use proton-pin per 2026-05-28 re-pin in CLAUDE.md).
+# Canonical substrate q_0 (use proton-pin per 2026-05-28 re-pin in AGENTS.md).
 # We use the prior probe's documented value u_0 ≈ 1.05356473 (sqrt of q_0).
 # For sensitivity, also compute at q_0 itself.
 U0_STR = "1.05356473"

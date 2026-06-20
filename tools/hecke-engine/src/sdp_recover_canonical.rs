@@ -336,7 +336,7 @@ pub fn solve_recovery_h_n(
     let status = solver.solution.status;
     let solver_status = format!("{:?}", status);
     let iterations = solver.solution.iterations;
-    // CLAUDE.md rule: fail explicitly on non-success.  When the solver
+    // AGENTS.md rule: fail explicitly on non-success.  When the solver
     // returns Infeasible / MaxIterations / NumericalError / etc, the x
     // vector is not meaningful — leave c_recovered empty + max_residual
     // = ∞ so the caller's assertion-style test fails informatively.

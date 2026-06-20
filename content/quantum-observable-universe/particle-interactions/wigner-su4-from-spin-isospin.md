@@ -141,7 +141,7 @@ The class is inhabited by:
 - D10's `SpinFromSO3Fiber` instance (provides SU(2)_S)
 - The product-structure axioms (combine into SU(4))
 
-Per CLAUDE.md §3b ("class is inhabited"), the only `sorry` lives in
+Per AGENTS.md §3b ("class is inhabited"), the only `sorry` lives in
 the upstream D9 + D10 class instances.
 
 ## Closure of Cluster B in the duality tracker

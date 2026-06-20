@@ -128,7 +128,7 @@ sustained typing and to assist with Lean proof engineering.
 
 ## Notational Alignment
 
-Cross-check against `CLAUDE.md §7aa Notation Register (STRICT)` and `§7ab Approximation Convention (STRICT)`.
+Cross-check against `AGENTS.md §7aa Notation Register (STRICT)` and `§7ab Approximation Convention (STRICT)`.
 
 ### Register compliance check
 

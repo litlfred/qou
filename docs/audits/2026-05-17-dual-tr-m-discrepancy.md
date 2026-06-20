@@ -7,7 +7,7 @@ PR #664's c_3 categorical-derivation claim. The codebase has **two**
 distinct functions named `tr_M_*` that compute genuinely different
 numerical values, with no clear convention indication of which is
 canonical. Approximately 15+ production mass-derivation scripts use
-one; the precision-ladder framework (CLAUDE.md `thm:jones-markov-trace`)
+one; the precision-ladder framework (AGENTS.md `thm:jones-markov-trace`)
 implicitly cites the other.
 
 ## The two implementations
@@ -51,7 +51,7 @@ intra-nucleon Hecke word):
 These are not coordinate-rounding artifacts. The two implementations
 compute **fundamentally different numerical invariants** on the very
 braids the mass-derivation chains evaluate. If `tr_M_canonical` is
-the canonical Markov trace (per CLAUDE.md `thm:jones-markov-trace`),
+the canonical Markov trace (per AGENTS.md `thm:jones-markov-trace`),
 then every production script using `tr_M_symbolic` is computing the
 wrong invariant by 57–99% on the proton-like channel.
 
@@ -67,7 +67,7 @@ is reproduced by an inline script in this audit.
 | `tr_M_canonical` (Wenzl y_λ) | **Yes** — Ocneanu trace on $H_n(q)$ (Ocneanu 1985), expressed via Wenzl's Schur-Weyl decomposition (Wenzl 1988). Standard literature derivation. Computes the Jones polynomial (HOMFLY-Wenzl normalization) of the braid closure. |
 | `tr_M_symbolic` (dim_q²·χ/[n]_q!/f^λ) | **No documented derivation as a Markov trace.** The formula computes the q-Plancherel expectation of $\chi^\lambda / f^\lambda$ (the *normalized* character). This is a well-defined invariant (the expected normalized character under the q-Plancherel measure on partitions), but it is **not** the Jones polynomial nor obviously a knot invariant. |
 
-The framework's `thm:jones-markov-trace` (CLAUDE.md §7a) implicitly
+The framework's `thm:jones-markov-trace` (AGENTS.md §7a) implicitly
 references the Wenzl/Ocneanu Jones-Markov trace — i.e.
 `tr_M_canonical`. So the categorical-action-derived version is the
 *canonical one* the framework cites, but **NOT** the one the
@@ -92,7 +92,7 @@ Scripts calling **`tr_M_canonical`** (Wenzl Jones-Markov):
 
 - [`markov_weights_symbolic.py`](../../computations/markov/markov_weights_symbolic.py) (itself, demo only)
 
-CLAUDE.md §7a refers to:
+AGENTS.md §7a refers to:
 
 > **Markov parameter** $z = 1/(q^{1/2} + q^{-1/2})$ — this is the
 > Wenzl convention.
@@ -110,7 +110,7 @@ production scripts use `tr_M_symbolic`.
 1. **Coordinate**: `tr_M_canonical` works internally with
    $\text{SQ} = \sqrt{Q}$ (the Wenzl $q^{1/2}$ convention), giving
    outputs in $(q, q^{1/2})$ coordinates with surviving half-integer
-   powers. `tr_M_symbolic` uses pure $q$. CLAUDE.md §7a prescribes
+   powers. `tr_M_symbolic` uses pure $q$. AGENTS.md §7a prescribes
    the $q^{1/2}$ Markov parameter, so this is genuinely the canonical
    coordinate.
 2. **Formula** (the bigger issue): the weights are *not* the same
@@ -123,15 +123,15 @@ The empirical 8% disagreement at $q_0$ is from Difference (2),
 not Difference (1). Difference (1) is a presentation issue; (2)
 is a genuine math choice.
 
-## Comparison to CLAUDE.md §7a notation register
+## Comparison to AGENTS.md §7a notation register
 
-CLAUDE.md explicitly distinguishes three partition-weight families:
+AGENTS.md explicitly distinguishes three partition-weight families:
 
 > - **Markov / Jones-Markov central coefficient** `$y_\lambda$` — Wenzl hook-content closed form. Sign-indefinite at $n \geq 4$. **Distinct** from Plancherel $w_\lambda$ and q-deformed $\tilde{w}_\lambda$ at $q \neq 1$.
 > - **Plancherel measure (classical)** `$w_\lambda := (\dim V_\lambda)^2 / n!$` — classical probability measure on partitions.
 > - **Wedderburn-block weight (q-deformed)** `$\tilde{w}_\lambda := \dim_q^2(\lambda) / [n]_q!$` — q-deformed analogue of Plancherel. **Not** a probability measure at $q \neq 1$. **Never** call this "Plancherel weight" without the tilde.
 
-So CLAUDE.md *itself* warns that $y_\lambda$, $w_\lambda$, and
+So AGENTS.md *itself* warns that $y_\lambda$, $w_\lambda$, and
 $\tilde{w}_\lambda$ are **distinct at $q \neq 1$**.
 
 But the production code's `tr_M_symbolic` uses $\tilde{w}_\lambda / f^\lambda$
@@ -140,7 +140,7 @@ But the production code's `tr_M_symbolic` uses $\tilde{w}_\lambda / f^\lambda$
 `markov_weights_symbolic.py` and `tr_M_canonical`.
 
 **This means:** scripts calling `tr_M_symbolic` are NOT computing the
-Markov trace as defined in CLAUDE.md §7a / `thm:jones-markov-trace`.
+Markov trace as defined in AGENTS.md §7a / `thm:jones-markov-trace`.
 They are computing a different invariant — the q-Plancherel
 expectation of the character $\chi^\lambda(\beta) / f^\lambda$.
 
@@ -149,7 +149,7 @@ expectation of the character $\chi^\lambda(\beta) / f^\lambda$.
 Per user direction, standardise on the QOU-canonical convention:
 
 1. **Ratify `tr_M_canonical` as the canonical Markov trace** — it
-   matches CLAUDE.md §7a's `thm:jones-markov-trace` exactly. The
+   matches AGENTS.md §7a's `thm:jones-markov-trace` exactly. The
    $y_\lambda$ weights are the literature standard.
 2. **Switch the coordinate**: `tr_M_canonical` outputs in
    $(q, q^{1/2})$. Either (a) implement a `tr_M_canonical_pure_q`
@@ -165,7 +165,7 @@ Per user direction, standardise on the QOU-canonical convention:
    what the value "means" needs to be checked. Specifically:
    - mass-prediction chains use `tr_M_symbolic` — if they're predicting
      m/m_e ratios from Markov-trace-of-atomic-braid, they're predicting
-     the wrong invariant per CLAUDE.md.
+     the wrong invariant per AGENTS.md.
    - shift_NF / q-pole probes likely don't care which weight (the
      q-pole order is a property of $\chi^\lambda$ alone), so they're
      unaffected.
@@ -311,7 +311,7 @@ formula itself.
    one-line definition.
 3. **Audit downstream consumers** for which trace they actually want:
    - **mass-prediction chains** that derive m/m_e from "atomic
-     Markov trace" want the Markov trace (per CLAUDE.md
+     Markov trace" want the Markov trace (per AGENTS.md
      `thm:jones-markov-trace`) → switch to `tr_Markov_symbolic`.
    - **q-Plancherel measure probes** (Wedderburn-block weight
      verifications) want the Plancherel trace → already correct,
@@ -329,7 +329,7 @@ formula itself.
    *thought* they were equivalent.
 2. If they were never meant to be equivalent, which invariant does
    the framework actually compute when it says "atomic Markov trace"?
-   Per CLAUDE.md §7a, it should be Jones-Markov, but the production
+   Per AGENTS.md §7a, it should be Jones-Markov, but the production
    path uses q-Plancherel.
 3. Do the mass predictions (m_p, m_n, atomic binding) come out the
    same regardless of which convention is used at the input? If yes,
@@ -374,7 +374,7 @@ should pick based on its output needs:
 
 - [PR #664 critical review](2026-05-17-pr-664-c3-c4-critical-review.md)
 - [PR #671 coordination ledger](../coordination/story-b-c3-c4-categorical.md)
-- CLAUDE.md §7a notation register (collision avoidance for the three
+- AGENTS.md §7a notation register (collision avoidance for the three
   partition-weight families)
 - [`probe_hopf_markov_trace_genuine.py`](../../computations/probe_hopf_markov_trace_genuine.py) (reproduces the disagreement)
 - [`probe_c3_taylor_extraction.py`](../../computations/probe_c3_taylor_extraction.py) (shows the 8% disagreement extends across Taylor coefficients)

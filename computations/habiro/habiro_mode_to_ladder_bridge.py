@@ -45,7 +45,7 @@ substituted only for the final numeric c_k):
      muon) — predicted C1-refuted (swing ≫ 1%) — to contrast with the
      anchor-independent formal coefficients.
 
-DISCIPLINE (CLAUDE.md §7b, ck-tiered-not-binary, refuted-class map):
+DISCIPLINE (AGENTS.md §7b, ck-tiered-not-binary, refuted-class map):
 exact symbolic; TIERED reporting; NO fitted form; NO production wiring;
 NO registry tier change from this probe.  A coefficient is reported
 `derived` only if it equals the framework's stated form to compute
