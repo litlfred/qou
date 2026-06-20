@@ -86,13 +86,25 @@ def gate_W(lam, q):
 def deuteron_fpn_from_Wmap(Wmap: dict, E0_=E0, ame=AME_D) -> dict:
     """Predict the deuteron pn binding from a gate-emitted ``W_λ`` map at n=3.
 
-    ``Wmap`` is ``{partition_tuple: weight}`` for ``λ ⊢ 3`` — whatever the Step-1
-    gate emits (the current *algebraic* ``d_q²/[n]_q!`` here; a future *geometric*
-    WRT(S³/2I) realization plugs in unchanged). The deuteron pn bond rides the
-    standard channel ``V_std``, whose block is the standard rep ``λ = (2,1)``, so
-    the gate's binding-side magnitude for that bond is ``W_(2,1)``.
+    ``Wmap`` is ``{partition: weight}`` for ``λ ⊢ 3`` — whatever the Step-1 gate
+    emits (the current *algebraic* ``d_q²/[n]_q!`` here; a future *geometric*
+    WRT(S³/2I) realization plugs in unchanged). To keep that "plugs in unchanged"
+    promise honest across sources, the key is accepted either as the tuple
+    ``(2, 1)`` (in-process emitter) or its string form ``"(2, 1)"`` (a witness
+    JSON round-trip), and the weight is coerced to ``mp.mpf`` (JSON serializes it
+    as a string). The deuteron pn bond rides the standard channel ``V_std``, whose
+    block is the standard rep ``λ = (2,1)``, so the gate's binding-side magnitude
+    for that bond is ``W_(2,1)``.
+
+    Units: ``ame`` and ``E_pred`` are both MeV — ``E_pred = E0_·ln(1/W)`` with
+    ``E0_`` in MeV and ``ln(1/W)`` dimensionless — so they are compared directly;
+    ``ame`` is NOT rescaled by ``E0_``.
     """
-    w = Wmap[STD_REP_N3]
+    raw_w = Wmap.get(STD_REP_N3, Wmap.get(str(STD_REP_N3)))
+    if raw_w is None:
+        raise KeyError(f"standard-rep block {STD_REP_N3} not found in Wmap")
+    w = mp.mpf(raw_w)
+    f_req = mp.exp(-ame / E0_)
     bound = (0 < w < 1)
     E_pred = E0_ * mp.log(1 / w) if bound else None
     return {
@@ -101,12 +113,12 @@ def deuteron_fpn_from_Wmap(Wmap: dict, E0_=E0, ame=AME_D) -> dict:
         "bound": bool(bound),
         "E_pred_MeV": E_pred,
         "miss_E_pct": (abs(E_pred - ame) / ame * 100 if E_pred is not None else None),
-        "miss_f_pct": abs(w - mp.e ** (-ame / E0_)) / (mp.e ** (-ame / E0_)) * 100,
+        "miss_f_pct": abs(w - f_req) / f_req * 100,
     }
 
 
 def main() -> int:
-    f_required = mp.e ** (-AME_D / E0)
+    f_required = mp.exp(-AME_D / E0)
     f_std = channels(*BONDS["pn"])["std"]          # z·1 + (−h/2)
     E_std = E0 * mp.log(1 / f_std)
 
