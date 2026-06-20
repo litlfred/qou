@@ -48,6 +48,10 @@ def q0_value():
 
 
 def qint(m, q):
+    # Balanced q-integer; the q -> 1 limit is m (the denominator q - q^-1 -> 0).
+    # Callers here never pass q == 1 exactly, but guard defensively.
+    if q == 1:
+        return mp.mpf(m)
     return (q**m - q**(-m)) / (q - q**(-1))
 
 
