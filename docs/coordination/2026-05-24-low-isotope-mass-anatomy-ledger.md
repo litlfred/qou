@@ -300,3 +300,23 @@ siblings + s5-so3 main drift dispatched.
 - Rebase #2348 onto current main at merge time (only the ledger append conflicts).
 - Open research: derive the SO(4)/Runge-Lenz n²-bundling, or accept 2n² as a
   topological input — the blocker for emergent shell peaks (not a model tweak).
+
+### 2026-06-20 coordinate pass 4 — #2531 Aufbau ℓ-penetration overlap (#2348)
+
+- **main drift:** origin/main +48 since branch; **no conflict** on my edited
+  files (test-merge 0 changed-in-both). No rebase needed.
+- **#2346** (complex-volume / q-anchor lead) **MERGED** — its `bar-parity-split`
+  / `𝔙` work (which my 2n² self-square builds on) is now on main. No open sibling
+  there.
+- **#2531 `claude/amazing-fermat-35cgc9` (Aufbau ℓ-penetration probe) — DIRECT
+  OVERLAP, surfaced via their incoming intent on #2348.** They independently use
+  `[2ℓ+1]_q` as the ℓ-penetration (correct sign) + consume my `E_HARTREE_EV` as
+  the screening scale. Their open "next" (does it land 3d>4s without overshoot?)
+  is **answered by my (3') test**: at the canonical z² scale it OVERSHOOTS ~8.5×
+  (`s·[3]_q≈0.76` vs radial≈0.089) → ℓ-dominated, not the near-degeneracy. Posted
+  the finding + the sharpened "radial:angular balance is the crux, not the sign"
+  + the fitting flag (#2531#issuecomment-4758014286). No file overlap.
+- **#2348 CI:** `staleness` ✓; only bot comment is the Gemini quota notice. No
+  review threads to triage.
+- **Convergence note:** #2531 and I independently reached `[2ℓ+1]_q` (penetration
+  + 2n² capacity). The shared open piece is the scale balance.
