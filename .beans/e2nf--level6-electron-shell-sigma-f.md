@@ -60,18 +60,18 @@ low-isotope-mass-anatomy ledger before adopting this bean.
       shell space = the self-square. Audit 2026-06-20-shell-2n2-from-self-square.
       Side-finding: shell-structure-eigenvalues.md (T^n)₂₁ Chebyshev claim wrong
       (det T=−1) — to fix.
-- [ ] Gap 2 (Madelung) — **REFRAMED via SDP (owner, 2026-06-20).** The
-      confinement SDP IS the many-body optimiser; the Madelung filling order =
-      its optimal active-set dressing sequence. We do NOT need a separate
-      screening theory. What we need: (a) verify Wedderburn block ↔ (n,ℓ)
-      orbital map; (b) put the canonical T_ee electron-electron crossing into the
-      SDP cost/Gram (screening enters HERE, not the optimiser); (c) run the
-      dressing SDP + check if the active-set order is the n+ℓ Madelung order
-      (sharpened test: is the (n,ℓ)-block Markov cost monotone in n+ℓ?). Machinery
-      partly exists (electron_sigma_f_chain.py + main's sigma_f_electron_shell_chain.py
-      track σ_F + active set μ). RISK: may falsify (give naive [2,10,28,60]); must
-      build T_ee canonically, NOT tune-to-Madelung (fitting). Concrete test, not
-      open theory.
+- [x] Gap 2 (Madelung) — **TESTED 2026-06-20 (madelung_sdp_filling_order.py).**
+      Result as predicted: the SDP optimiser is free (lp_dual_solver x* picks the
+      min-cost orbital), BUT canonical bare T_ee gives NO ℓ-splitting (same σ
+      crossing for every orbital) ⇒ closed shells stay at pure-2n² [2,10,28,60],
+      NOT the noble gases [2,10,18,36]. Falsified "SDP+canonical-T_ee ⇒ Madelung".
+      Audit 2026-06-20-madelung-from-sdp-falsifiable-test.md.
+- [ ] **Remaining open (well-localised): ℓ-PENETRATION.** Where does the
+      ℓ-graded electron-electron coupling live — how does an orbital's ℓ modulate
+      its T_ee coupling to the inner core? Closures move off 2n² ONLY with +c·ℓ
+      screening, and tuning c = fitting. This single categorical input is what
+      stands between the (free) SDP optimiser and the periodic-table ordering.
+      (Capacity 2n² = the separate self-square result, done.)
 
 ## Notes
 
