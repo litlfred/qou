@@ -72,7 +72,7 @@ from __future__ import annotations
 import json
 import pathlib
 
-from mpmath import mp, mpf, qp, fabs, power
+from mpmath import mp, mpf, qp, fabs, power, fsum
 
 mp.dps = 60
 
@@ -91,7 +91,9 @@ def c_k(k: int, nu, q):
 
 
 def g1(w, nu, q, K: int = 60):
-    return sum(c_k(k, nu, q) * w ** k for k in range(K))
+    # fsum for correctly-rounded high-dps summation (matches the c_k form of the
+    # sibling qbessel_second_order_qdifference_equation.py).
+    return fsum(c_k(k, nu, q) * w ** k for k in range(K))
 
 
 # ---- 2nd-kind generating function g2(w) = w^{-nu} sum d_k w^k (rho = -nu) ----
@@ -105,7 +107,7 @@ def d_k_seq(nu, q, K: int = 60):
 
 def g2(w, nu, q, K: int = 60):
     d = d_k_seq(nu, q, K)
-    return power(w, -nu) * sum(d[k] * w ** k for k in range(K))
+    return power(w, -nu) * fsum(d[k] * w ** k for k in range(K))
 
 
 # Use NON-integer nu to avoid the integer-order log (Neumann) resonance q^k = q^nu.
