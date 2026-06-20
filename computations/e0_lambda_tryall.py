@@ -35,6 +35,7 @@ no 6th fit (the Δ_λ gate already killed six).
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — bridge: reads a witness that co-moved into a cluster subdir
+from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
 import sys
@@ -62,8 +63,8 @@ M_E_MEV = mpf("0.51099895069")
 # Observed masses (CODATA) — the ANCHORS (falsification targets, not fit data).
 ANCHORS_MEV = {
     "electron": mpf("0.51099895069"),
-    "proton": mpf("938.27208816"),
-    "neutron": mpf("939.56542052"),
+    "proton": mpf(M_P_MEV_VALIDATION),
+    "neutron": mpf(M_N_MEV_VALIDATION),
 }
 
 # ----------------------------------------------------------------------------

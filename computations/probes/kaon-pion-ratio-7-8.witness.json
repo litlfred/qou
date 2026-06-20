@@ -1,24 +1,24 @@
 {
   "engine": "python3/mpmath",
   "engineVersion": "50dps",
-  "computedAt": "2026-05-26T14:26:59Z",
+  "computedAt": "2026-06-20T15:07:59Z",
   "computation": "kaon-pion-ratio-7-8",
   "scriptFile": "kaon_pion_ratio_7_8_probe.py",
-  "description": "Closed-form candidate: m_K/m_\u03c0 = 7(q\u2080+q\u2080\u207b\u00b9)\u00b2/8 at 318 ppm. 450\u00d7 improvement over uncorrected [2]_q\u00b2 (14.3%). Categorical interpretation: 7/8 = (n_K\u22121)/n_K where n_K=8 (kaon total quark crossings 3+5), or equivalently (Vol(\ud835\udcd1\u2083)\u2212G)/Vol(\ud835\udcd1\u2083) = 7/8 (one octahedron removed).",
+  "description": "EXPLORATORY numerical observation (NOT a derivation): m_K/m_\u03c0 \u2248 7(q\u2080+q\u2080\u207b\u00b9)\u00b2/8 at 318 ppm. The 7/8 factor is a NUMEROLOGICAL FIT found by scanning fractions \u2014 no categorical derivation exists. Recorded for future investigation, not as a framework prediction. Per CLAUDE.md: fits to PDG are forbidden as framework claims.",
   "parameters": {
-    "q0": "1.1099785955541805752815940796095093779932822799587",
-    "m_pi_MeV": "139.57039",
-    "m_K_pdg_MeV": "493.677"
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "m_pi_MeV": "139.570390000000003283275873400270938873291015625",
+    "m_K_pdg_MeV": "493.6770000000000209183781407773494720458984375"
   },
   "data": {
     "formula": "m_K/m_\u03c0 = 7(q\u2080+q\u2080\u207b\u00b9)\u00b2/8",
-    "two_q_squared": "4.0437062182305120777582798882746249244006324020999",
-    "predicted_ratio": "3.5382429409516980680384949022402968088505533518374",
-    "pdg_ratio": "3.5371184389468281918535872830906326191393461034249",
-    "err_ppm": 317.91471625267235,
-    "m_K_predicted_MeV": "493.83394718337547051837926851869009932702718303175",
-    "m_K_pdg_MeV": "493.677",
-    "miss_MeV": 0.1569471833754705,
+    "two_q_squared": "4.0437062182329013102182450855436030316663417518847",
+    "predicted_ratio": "3.5382429409537886464409644498506526527080490328991",
+    "pdg_ratio": "3.5371184389468282585227605140603175394167472572877",
+    "err_ppm": 317.91471684369344,
+    "m_K_predicted_MeV": "493.83394718366726497836520250418472723131022430442",
+    "m_K_pdg_MeV": "493.6770000000000209183781407773494720458984375",
+    "miss_MeV": 0.15694718366724406,
     "correction_factor": "7/8",
     "categorical_interpretations": [
       "(n_crossings_K \u2212 1)/n_crossings_K = 7/8 where K has 8 quark crossings (3+5)",

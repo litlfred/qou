@@ -102,7 +102,7 @@ def main():
         "PR #1786 finding: c_4 ≈ -0.972 here is a normalisation "
         "artifact, not a genuine ladder coefficient. The witness "
         "q-beta-operator-valued-N3.witness.json fits c_3 against "
-        "rounded Q_AME = mpf('939.5654205240') - mpf('938.27208816') "
+        "rounded Q_AME = mpf('939.5654205240') - mpf(M_P_MEV_VALIDATION) "
         "- m_e, while this script compares Q_N3 to full-precision "
         "Q_codata = m_n - m_p - m_e from codata_constants. The "
         "~5e-9 relative mismatch in CODATA Q_β, divided by u^4 "
