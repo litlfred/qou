@@ -54,6 +54,20 @@ lives in the **full `Q_β`** — the bar-**odd** `sinh` partner of the bar-even
 Q_A · cos(α_eff) · Π(1+c_k u^k)`; the bar-parity must be tracked across all
 factors, with `b(q)` bar-odd, not by demanding a bar-even `F` in `u`.
 
+## Strengthening — the bar-oddness is *irreducible* (no reparametrization rescue)
+
+One might hope a different expansion variable restores a bar-even `F`. It cannot.
+A candidate monomial variable `v = b^a · ℏ_q^{2c}` transforms as
+
+$$v(q^{-1}) = (-1)^a\,q^{2c}\,v(q)\qquad(\text{$b$ bar-odd, $ℏ_q^2$ bar-covariant}),$$
+
+so `v` is bar-**invariant** only when `a` is even **and** `c = 0` — i.e. a variable
+with **no `ℏ`**. But the `c_k` ladder is intrinsically an `ℏ`-expansion (`c ≠ 0`).
+Hence **every `ℏ`-containing expansion variable is bar-covariant**, and a bar-even
+kernel `F` in such a variable is impossible while the `c_k` are the documented
+forms. Criterion 2(b) is therefore **definitively dropped**, not merely weakened:
+the bar-symmetry *necessarily* lives in the full `Q_β` (bar-odd), never in `F`.
+
 ## Narrowing for the kernel hunt (the deliverable)
 
 The next fibre-kernel search should **not** carry "`F` bar-even in `u`" as a
