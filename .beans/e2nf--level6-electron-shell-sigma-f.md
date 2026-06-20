@@ -89,13 +89,18 @@ low-isotope-mass-anatomy ledger before adopting this bean.
       q-dim (a=+2) both diverge. The Markov/Frobenius trace is PERRON-dominated by
       λ₊ ⇒ using the pairing "correctly" (λ₊ for both radial & angular) gives
       symmetric n,ℓ → n+ℓ = Madelung. Supersedes the "balance" framing.
-- [ ] **Gap-2 localized one notch finer (NOT a derivation — 2 caveats):**
-      (1) a=+1 ⟺ Madelung is partly definitional; the real claim is "radial &
-      angular share the dominant λ₊". (2) the Frobenius TRACE of V_ℓ is the q-dim
-      ~λ₊^{2ℓ} (a=+2) because dim V_ℓ=2ℓ+1 — a FACTOR OF 2 from Madelung's λ₊^ℓ.
-      Open: why does angular enter as λ₊^ℓ (open transfer, a=+1) not λ₊^{2ℓ}
-      (loop-trace, a=+2)? = the 2ℓ+1→ℓ "half"/√-q-dim. Pairing poses it, doesn't
-      settle it. Audit 2026-06-20-aufbau-from-dominant-eigenvalue-duality.md.
+- [x] **√-q-dim bridge TESTED & REFUTED at q₀ (2026-06-20).** The "2ℓ+1→ℓ half =
+      √-q-dim" idea relied on [2ℓ+1]_q~q^{2ℓ} (large-q); but q₀≈1.11 is NEAR 1, so
+      [2ℓ+1]_q≈2ℓ+1 (classical) and ½ln[2ℓ+1]_q≈0.56 (ℓ=1) ≫ radial lnq₀≈0.10 ⇒
+      √-q-dim is ℓ-DOMINATED (1s2s3s4s…2p…), NOT Aufbau. The full q-dim too. Only
+      the EXACT λ₊^ℓ=q₀^ℓ gives Aufbau — and it is NOT the √-q-dim.
+- [ ] **Gap-2 ORDERING: genuinely open.** Three structural-derivation attempts
+      for the a=+1 angular weight now RULED OUT (sign or overshoot at q₀):
+      eigensplit a=−2 (#2531), q-dim loop-trace a=+2, √-q-dim (this). The exact
+      λ₊^ℓ works but rests on the un-derived "angular = ℓ λ₊-open-transfer-steps"
+      reading; no categorical object tested FORCES it over the overshooting
+      trace. Duality/Perron names the right eigenvalue (λ₊) + order (Aufbau) but
+      doesn't force the reading. Consistent with Madelung being semi-empirical.
       (Capacity Gap-1: 2n² self-square, essentially derived.)
 
 ## Notes
