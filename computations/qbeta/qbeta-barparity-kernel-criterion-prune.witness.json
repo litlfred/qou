@@ -1,0 +1,69 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-20T20:07:01.787297+00:00",
+  "commitSha": "b9677014f92cd43100433715b5009d353e5ced2c",
+  "assertions": [
+    {
+      "name": "b_is_bar_odd",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "(q-q⁻¹)/(q+q⁻¹): odd/even"
+    },
+    {
+      "name": "no_documented_ck_satisfies_bar_even_law",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "c₂=-1, c₃=-2-ℏ², c₃=J_Hopf all violate the law"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 39,
+  "computation": "qbeta-barparity-kernel-criterion-prune",
+  "scriptFile": "qbeta_barparity_kernel_criterion_prune.py",
+  "scriptHash": "bf60c4724781",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Prunes open-axis criterion 2(b) for the Q_β fibre kernel. b(q)=(q-q⁻¹)/(q+q⁻¹) is bar-ODD, so u=b·ℏ_q² is bar-odd-covariant (u→-q²u). The documented c₂=-1 and both c₃ candidates (-2-ℏ², J_Hopf) all VIOLATE the bar-even-kernel law c_k(q⁻¹)=(-1)^k q^(-2k)c_k(q). So criterion 2(b) cannot be imposed on the c_k ladder in u; the bar-symmetry lives in the full Q_β (bar-odd sinh partner). Constraint/pruning, not a value-hunt; nothing wired.",
+  "data": {
+    "b_bar_parity": "odd",
+    "u_is_bar_odd_covariant_minus_q2": true,
+    "J_hopf_bar_parity": "even",
+    "bar_even_F_law": "c_k(q^-1) = (-1)^k q^(-2k) c_k(q)",
+    "candidates": {
+      "c2 = -1 (proved-exact)": {
+        "k": 2,
+        "residual": "-1 + q**(-4)",
+        "satisfies": false
+      },
+      "c3 = -2 - ℏ_q² (near-match)": {
+        "k": 3,
+        "residual": "-(q - 1)**2 - 2 - 2/q**6 - (q - 1)**2/q**8",
+        "satisfies": false
+      },
+      "c3 = J_Hopf(q) (near-match)": {
+        "k": 3,
+        "residual": "(-q**10 - q**6 - q**4 - 1)/q**8",
+        "satisfies": false
+      }
+    },
+    "any_candidate_satisfies": false
+  },
+  "caveats": [
+    "Pruning/constraint result for the gated fibre-kernel axis (qkhc) — NOT a real-q closed-form value-hunt (which is forbidden) and NOT a refuted mechanism. Sharpens/corrects open-axis criterion 2(b). The c_k vs the cos(α_eff)/Q_A factors of the full ladder may share bar-parity bookkeeping; this probe isolates the Π(1+c_k u^k) factor. Nothing wired."
+  ]
+}
