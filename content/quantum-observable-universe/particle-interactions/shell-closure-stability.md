@@ -39,16 +39,26 @@ minimum-action Markov-trace weight of the confined operator.  Then:*
    non-decreasing in $Z$ along the dressing chain for every
    $q$ in the generic locus.*
 
-2. ***Local maxima of the marginal gain at noble-gas $Z$:** the
+2. ***Local maxima of the marginal gain at shell closures (conditional on
+   the open shell-capacity derivation):** the
    **marginal stability gain**
    $\Delta\sigma_F(Z) := \sigma_F(P^{(Z)}, q) - \sigma_F(P^{(Z-1)}, q)$
-   — the per-electron dressing gap — attains a strict local maximum at
-   $Z \in \mathcal{Z}_{\mathrm{noble}} = \{2, 10, 18, 36, 54, 86\}$, and
-   the binding multiplicity satisfies $\mu(S_Z, q) \ge 2$ there.  It is
-   $\Delta\sigma_F$, not $\sigma_F$ itself, that peaks: $\sigma_F$ is
-   monotone non-decreasing by claim (1), so it has no interior local
-   maximum.  The simultaneous tightness of $\mu \ge 2$ dual blocks is the
-   spectral-gap jump that makes the marginal gain a local maximum.*
+   — the per-electron dressing gap — attains a strict local maximum at each
+   **shell closure**, where the binding multiplicity satisfies
+   $\mu(S_Z, q) \ge 2$ (the spectral-gap jump of the simultaneously-tight
+   dual blocks).  It is $\Delta\sigma_F$, not $\sigma_F$ itself, that peaks:
+   $\sigma_F$ is monotone non-decreasing by claim (1), so it has no interior
+   local maximum.  **Whether those closures fall at the empirical noble-gas
+   numbers** $Z \in \mathcal{Z}_{\mathrm{noble}} = \{2, 10, 18, 36, 54, 86\}$
+   **is conditional on the open shell-capacity derivation:** the bare
+   categorical operator (the $2\times2$ transfer matrix $T_{\gamma e}$; the
+   pure $2n^2$ count) places closures every two electrons / at the cumulative
+   $[2, 10, 28, 60, \ldots]$ — **not** at the noble gases, which require the
+   Madelung sub-shell ordering not yet derived (see
+   [noble-gas characterisation](#prop:noble-gas-characterization) and its
+   categorical-$\sigma_F$ caveat).  A high-precision categorical $\sigma_F$
+   dressing chain confirms $\sigma_F$ does not by itself reproduce the
+   noble-gas peaks.*
 
 3. ***Terminality:** For every $Z \in \mathcal{Z}_{\mathrm{noble}}$,
    $P^{(Z)}$ is a **local terminal object** of the dressing
@@ -157,14 +167,16 @@ Compounds of noble gases (e.g. $\mathrm{XeF}_4$) require $q$ far
 from the generic locus — shifted by external fields — to clear the
 terminality barrier.*
 
-**Corollary (ionisation energy peaks).**
+**Corollary (ionisation energy peaks — conditional).**
 *The first-ionisation energy $I_1(Z)$ is the Markov-trace
 gap from $P^{(Z)}$ to $P^{(Z-1)} + e^-$ — i.e. exactly the marginal
 stability gain $\Delta\sigma_F(Z)$ of claim (2), by
 [confinement-topological](#prop:confinement-topological) and the
 dual shadow-price structure (not $\sigma_F(P^{(Z)}, q)$ itself, which
-is monotone).  The local-maxima statement of claim (2) then predicts
-the observed peaks of $I_1$ at $Z \in \mathcal{Z}_{\mathrm{noble}}$ —
-and the troughs immediately after, at the alkali metals $Z = 3, 11,
-19, 37, 55, 87$ — recovering the classical periodic-table structure
-from the confinement SDP.*
+is monotone).  $I_1$ therefore peaks at the shell **closures** and
+dips at the shell **openings**.  Identifying those closures with the
+empirical noble-gas peaks (and the alkali troughs at $Z = 3, 11, 19,
+\ldots$) is **conditional on the open shell-capacity derivation**
+(claim 2): the bare categorical operator does not place the closures
+at the noble gases without the Madelung / $2n^2$ structure, so the
+periodic-table identification is a target, not yet a theorem.*
