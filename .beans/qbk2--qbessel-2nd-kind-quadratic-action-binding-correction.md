@@ -32,6 +32,21 @@ parent: qz9k
 > physical source the propagator contracts against, (ii) the cross-anchor gate; and
 > bar-parity of `G` is ν-DEPENDENT (mixed sector — gate 2 caveat). No fit; nothing
 > wired. Owner closes (§4a).
+>
+> **WIRING GATE 2026-06-20 — VERDICT: DO NOT WIRE (PR #2536).**
+> ([`docs/audits/2026-06-20-qbessel-quadratic-binding-wiring-gate.md`](../docs/audits/2026-06-20-qbessel-quadratic-binding-wiring-gate.md),
+> `computations/qbeta/qbessel_quadratic_binding_wiring_gate.py`). Ran the one-loop
+> correction `δB=Σ_λ y_λ[G(w_atom)-G(w_free)]` on the real deuteron per-block characters.
+> Four obstructions: (1) DECISIVE — `δB` swings 3.89..17.15 (63% spread) across equally-
+> natural `(ν_λ,w_λ)` choices ⇒ the order+argument map is a free functional knob ⇒
+> disguised 7th Δ_λ ansatz; (2) 83% of the correction is growth-sector (the blocks that
+> cancelled in the A≥3 refutation); (3) natural integer rep-levels hit the Neumann log
+> resonance `q^k=q^ν` (singular g₂); (4) mixed bar-parity. The only Lean-wireable lemma is
+> the Casoratian regularity — a q-Bessel FACT, not a binding claim, so proving it does NOT
+> make δB real (no production wiring, no appendix-mass-binding sync). Unblocking needs an
+> INDEPENDENT substrate derivation of the order+argument map. The qbk2 exploration is
+> structurally COMPLETE (object identified + characterised + shown non-wireable as-is);
+> owner closes (§4a).
 
 Owner-seeded exploration (2026-06-20): "2nd kind has a quadratic action that can be used in
 mass/binding as corrections." Queued, NOT started.
