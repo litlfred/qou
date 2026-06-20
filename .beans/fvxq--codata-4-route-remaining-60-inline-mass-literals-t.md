@@ -40,3 +40,21 @@ The 128 files matching the mass regex split into classes, most NOT cleanly routa
 
 Total now 13/~67 routed. The "value-preserving + cleanly-routable" subset is much
 smaller than ~57; the bulk is classes 1–4 above.
+
+## CRITICAL finding (2026-06-20) — class 4 is mostly UNSAFE, not just precision
+
+Checked registry vs tower literals before routing the "precision-bump" class:
+- p/n: registry == literal to 8 digits but witness carries MORE digits ⇒ true
+  precision-bump (marginal).
+- **D/T/³He/⁴He: registry masses are NUCLEAR; the in-script literals are ATOMIC
+  (with electrons). They differ by ≈ m_e per electron (D: reg 1875.613 vs lit
+  1876.124). Routing these is an ≈0.5 MeV SEMANTIC ERROR, not a precision bump.**
+  So the compound-mass literals must NOT be routed to `M_*_MEV_VALIDATION`
+  (different quantity). tower_isotope_absolute etc. left as-is.
+
+⇒ The genuine value-preserving routable set is the exact-match hardcoded-mpf
+registry constants (M_π / M_K / M_μ) used as validation comparisons — largely
+exhausted by #2349 + #2510 + #2546. The remaining "~57" are classes 1–4 (mostly
+non-routable). Recommend re-scoping fvxq: the easy mechanical tail is done;
+class-4 needs an atomic↔nuclear registry decision (add atomic-mass exports?) and
+class-3 needs the 3-cal input-discipline fix — both are NOT mechanical.
