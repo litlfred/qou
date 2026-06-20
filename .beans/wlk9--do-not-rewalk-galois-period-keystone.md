@@ -23,9 +23,11 @@ the s5-so3 keystone coupling**. It is not.
   `varprojlim ℤ[q^±1][z]/(P_n)`, the quantum-dilog Φ_q truncation tower).
 - The keystone coupling lives on the **q-side** (full-Hecke Markov trace = WRT(S³/2I) = Lawrence–Zagier).
 - These are **parallel-but-independent completions** — the 2026-06-17 sessions-log note in
-  `docs/coordination/s5-so3-keystone.md` explicitly says **"do not conflate."** Forcing the
-  period↔knot bridge is the unfalsifiable correspondence-chain the Habiro lead
-  (`docs/audits/2026-06-16-keystone-habiro-coupling-lead-and-ck-exposition.md`) **refused**.
+  [`docs/coordination/s5-so3-keystone.md`](../docs/coordination/s5-so3-keystone.md) explicitly says
+  **"do not conflate."** Forcing the period↔knot bridge is the unfalsifiable correspondence-chain the
+  Habiro lead
+  ([`2026-06-16-keystone-habiro-coupling-lead-and-ck-exposition.md`](../docs/audits/2026-06-16-keystone-habiro-coupling-lead-and-ck-exposition.md))
+  **refused**.
 
 ## Inoculation for the next agent
 
@@ -34,5 +36,6 @@ Before treating any cyclotomic-Galois / period identity as keystone-bearing, **v
 keystone's single open object is the **q-Plancherel-measure geometric-realization** problem
 (full-Hecke principal-specialization trace; finite-dim Sasakian ruled out), not a period identity.
 
-Recorded as `§Refutations not to re-walk` item 4 in `docs/coordination/s5-so3-keystone.md`.
+Recorded as `§Refutations not to re-walk` item 4 in
+[`docs/coordination/s5-so3-keystone.md`](../docs/coordination/s5-so3-keystone.md).
 No probe run, no fit, no new content claim — a do-not-re-walk inoculation only.
