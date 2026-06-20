@@ -49,7 +49,7 @@ from __future__ import annotations
 import json
 import pathlib
 
-from mpmath import mp, mpf, qp, fabs, power, fsum
+from mpmath import mp, mpf, qp, fabs, fsum
 
 mp.dps = 60
 
@@ -80,7 +80,7 @@ def d_k_seq(nu, q, K: int = 60):
 
 def g2(w, nu, q, K: int = 60):
     d = d_k_seq(nu, q, K)
-    return power(w, -nu) * fsum(d[k] * w ** k for k in range(K))
+    return w ** (-nu) * fsum(d[k] * w ** k for k in range(K))
 
 
 def casoratian(w, nu, q):
@@ -101,7 +101,9 @@ for nu, q in cases:
     wp = mpf("0.30")                       # source point w'
     # for w < w': K = g1(w) g2(w')/D(w'); apply L_w -> uses only g1(w) (a solution)
     Dp = casoratian(wp, nu, q)
-    Kfun = lambda w: g1(w, nu, q) * g2(wp, nu, q) / Dp
+
+    def Kfun(w):
+        return g1(w, nu, q) * g2(wp, nu, q) / Dp
     res = L(Kfun, mpf("0.12"), nu, q)      # 0.12 < 0.30, region w < w'
     worstA = max(worstA, fabs(res))
 print(f"    max |L_w K| (w<w') over cases = {mp.nstr(worstA, 4)}")
@@ -113,7 +115,7 @@ print("\n(B) Casoratian leading behaviour  D(w) -> (q^{-nu}-1) w^{-nu}  as w -> 
 worstB_ok = True
 for nu, q in cases:
     w = mpf("1e-8")
-    lead = casoratian(w, nu, q) * power(w, nu)     # -> q^{-nu} - 1
+    lead = casoratian(w, nu, q) * w ** nu          # -> q^{-nu} - 1
     target = q ** (-nu) - 1
     ok = fabs(lead - target) < mpf("1e-6")
     worstB_ok = worstB_ok and ok
@@ -126,7 +128,8 @@ print("\n(C) coincidence-limit propagator  G(w) = g1(w) g2(w)/D(w):  REGULAR at 
 worstC_ok = True
 recC = []
 for nu, q in cases:
-    G = lambda w: g1(w, nu, q) * g2(w, nu, q) / casoratian(w, nu, q)
+    def G(w, nu=nu, q=q):
+        return g1(w, nu, q) * g2(w, nu, q) / casoratian(w, nu, q)
     vals = [G(mpf(s)) for s in ("1e-2", "1e-5", "1e-8")]
     limit = mpf(1) / (q ** (-nu) - 1)              # predicted G(0)
     converges = fabs(vals[-1] - limit) < mpf("1e-4")
