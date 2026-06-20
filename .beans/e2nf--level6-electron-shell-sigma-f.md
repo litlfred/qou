@@ -52,16 +52,26 @@ low-isotope-mass-anatomy ledger before adopting this bean.
 
 ## Still open (genuine research, not this PR)
 
-- [ ] **(owner-corrected 2026-06-20)** n² does NOT need a second compact SU(2):
-      the cosh/sinh (real q, SU(1,1), radial σ-tower) and cos/sin (root of unity,
-      SU(2), angular V_ℓ) are the two real forms of ONE sl(2,ℂ) = the complex
-      volume 𝔙 (bar-parity-split / conj:binding-qbeta-complex-volume; λ↦iθ).
-      Open CONSTRUCTIVE task: apply the single 𝔙/sl(2,ℂ) to the electron-shell
-      σ-tower so the angular ℓ=0..n-1 (compact form) locks to the radial n
-      (non-compact form) ⇒ 2n². Well-posed, not a missing symmetry. Coordinate
-      with the complex-volume / s5-so3 siblings (#2346 lead, #2297, #2363).
-- [ ] Gap 2 (separate): Madelung/screening for the noble-gas ORDERING beyond 2n²
-      (pure-2n² closes at [2,10,28,60] ≠ noble [2,10,18,36]).
+- [x] **(2026-06-20) 2n² constructed, owner's 'no second SU(2)' vindicated.**
+      Exact (shell_capacity_chebyshev_bridge.py): [n]_q = U_{n-1}((q+q⁻¹)/2)
+      (angular q-dim = cosh/bar-even); [n]_q² = Σ_{ℓ=0}^{n-1}[2ℓ+1]_q
+      (q-Clebsch-Gordan self-square); 2[n]_q²|_{q=1}=2n². The (j,j) doubling is
+      the self-fusion V⊗V of ONE element, not two SU(2)s. Residual conjecture:
+      shell space = the self-square. Audit 2026-06-20-shell-2n2-from-self-square.
+      Side-finding: shell-structure-eigenvalues.md (T^n)₂₁ Chebyshev claim wrong
+      (det T=−1) — to fix.
+- [ ] Gap 2 (Madelung) — **REFRAMED via SDP (owner, 2026-06-20).** The
+      confinement SDP IS the many-body optimiser; the Madelung filling order =
+      its optimal active-set dressing sequence. We do NOT need a separate
+      screening theory. What we need: (a) verify Wedderburn block ↔ (n,ℓ)
+      orbital map; (b) put the canonical T_ee electron-electron crossing into the
+      SDP cost/Gram (screening enters HERE, not the optimiser); (c) run the
+      dressing SDP + check if the active-set order is the n+ℓ Madelung order
+      (sharpened test: is the (n,ℓ)-block Markov cost monotone in n+ℓ?). Machinery
+      partly exists (electron_sigma_f_chain.py + main's sigma_f_electron_shell_chain.py
+      track σ_F + active set μ). RISK: may falsify (give naive [2,10,28,60]); must
+      build T_ee canonically, NOT tune-to-Madelung (fitting). Concrete test, not
+      open theory.
 
 ## Notes
 
