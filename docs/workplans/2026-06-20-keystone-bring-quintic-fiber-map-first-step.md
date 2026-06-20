@@ -70,6 +70,36 @@ consistency constraints (the map must respect `icosBranchingMult` and the McKay
 grading). The injectivity `five_distinct_classes` then *follows from* the
 derivation rather than being imposed.
 
+## Step-1 RUN (2026-06-20) — findings + a structural obstruction
+
+Executed [`keystone_icosahedral_irrep_rotation_step1.py`](../../computations/keystone_icosahedral_irrep_rotation_step1.py)
+(A₅ character table orthogonality-verified) + a structural check on the curve:
+
+1. **`H⁰(Ω¹) ≅ V_(4,1)`, A₅ acts as `G` — confirmed.** Bring's curve is the
+   quadric∩cubic `Σxᵢ²=Σxᵢ³=0` inside the `Σxᵢ=0` hyperplane `P³`, so its
+   holomorphic differentials are the sum-zero coordinate space = standard rep.
+2. **⚠ Obstruction: the curve cohomology carries ONLY `G`.** `H⁰(Ω¹)=V_(4,1)`
+   and `H¹ = V_(4,1) ⊕ V_(4,1)* ≅ 2·G` under A₅ (V_(4,1) is self-dual). So the
+   **curve cohomology alone cannot assign rotations to `A, T₁, T₂, H`** — the
+   `irrepToRotation` map is **not** a read-off of the `Σ₄` H⁰(Ω¹) matrices
+   (revising deliverable step 1–2 below). The rotation assignment must come from
+   the **SO(3) angular-momentum tower** (`icosBranchingMult`, the I↪SO(3) action),
+   not the differentials.
+3. **Candidate (a) first-ℓ: NOT injective** — `T₂, G` both first appear at ℓ=3;
+   the SO(3) level cannot separate the chirality partner `T₂` from `G`.
+4. **Candidate (b) argmax-χ: injective** — `{A→0°, T₁→72°, T₂→144°, G→120°,
+   H→180°}`, separating `T₁/T₂` by the φ↔1-φ Galois swap. **But unconfirmed** as
+   the Bring map (a uniform heuristic, not derived from an equivariant geometric
+   identity) — **not wired** (would be the forbidden arbitrary instance).
+
+**Reframed open problem (supersedes the naive step 1–2):** the fibre map is a
+property of the **joint** structure — the curve's `G`-isotypic cohomology *and*
+the icosahedral SO(3)-tower — not of `H⁰(Ω¹)` alone. The real question is whether
+a **canonical SO(3)-tower invariant finer than first-ℓ** (something that splits
+`T₂` from `G` at ℓ=3) reproduces an injective derived map, and whether it agrees
+with (b). This is the genuine difficulty; it is *not* resolved by grinding the
+`H⁰(Ω¹)` automorphism matrices.
+
 ## Deliverable chain for the construction session
 
 1. **Extract the `Σ₄` S₅-automorphism matrices** on `H⁰(Ω¹)` (4-dim) — confirm
