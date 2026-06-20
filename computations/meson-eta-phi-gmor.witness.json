@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T15:39:30.604809+00:00",
-  "commitSha": "ca98c612c2be395226e538c29d4ed751c109be8a",
+  "computedAt": "2026-06-20T16:42:39.252601+00:00",
+  "commitSha": "559de4eba24c6b0352db8c10ccc0fcdc23c615d5",
   "assertions": [
     {
       "name": "eta_gmo_octet_consistent",
@@ -14,25 +14,31 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 195,
+  "durationMs": 11,
   "computation": "meson-eta-phi-gmor",
   "scriptFile": "meson_eta_phi_gmor.py",
-  "scriptHash": "8e999089caa7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "78207098f8c3",
+  "scriptCommitSha": "f89ec89aee3363048fc11bf0e6942b14ab5c0b22",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "η/φ under the GMOR squared-ratio lens. η: Gell-Mann–Okubo (4[3]_q[4]_q−1)/3 misses m_η²/m_π² by 6.1% (η-η′ singlet mixing). φ (vector meson) has no clean q-fusion (best 3.6%) — GMOR doesn't apply to vectors. Confirms the GMOR fusion is pseudoscalar-octet-specific.",
   "auditOnly": "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
   "data": {
     "eta_sq_measured": 15.408337163886978,
-    "eta_sq_gmo_from_fusion": 16.34488797907095,
-    "eta_gmo_miss_pct": 6.07820821431008,
-    "phi_sq_measured": 53.352484519272025,
+    "eta_sq_gmo_from_fusion": 16.344887979108467,
+    "eta_gmo_miss_pct": 6.0782082145535705,
+    "phi_sq_measured": 53.35248451927202,
     "phi_best_candidate": "[3]_q[4]_q·[4]_q",
-    "phi_best_miss_pct": 3.6471396746656803
+    "phi_best_miss_pct": 3.647139674307825
   }
 }

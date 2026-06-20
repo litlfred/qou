@@ -23,6 +23,7 @@ sys.path.insert(0, str(HERE))
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import M_PI_PM_MEV_VALIDATION, M_K_PM_MEV_VALIDATION  # noqa: E402
 
 
 def q_int(k, q):
@@ -35,8 +36,8 @@ def main():
     q = mp.mpf(Q_50_DIGIT_STR)
 
     # PDG masses (MeV) — used only as comparison targets, not inputs.
-    m_pi = mp.mpf("139.57039")
-    m_K = mp.mpf("493.677")
+    m_pi = M_PI_PM_MEV_VALIDATION
+    m_K = M_K_PM_MEV_VALIDATION
     m_eta = mp.mpf("547.862")
     m_phi = mp.mpf("1019.461")
 

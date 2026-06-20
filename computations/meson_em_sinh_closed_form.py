@@ -32,6 +32,7 @@ sys.path.insert(0, str(HERE))
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import M_PI_PM_MEV_VALIDATION, M_K_PM_MEV_VALIDATION  # noqa: E402
 
 
 def q_int(k, q):
@@ -80,8 +81,8 @@ def main():
     print()
     alpha_em_inv = mp.mpf("137.035944")  # CS-corrected, Witten κ (399 ppb)
     alpha_em = 1 / alpha_em_inv
-    m_pi = mp.mpf("139.57039")
-    m_K  = mp.mpf("493.677")
+    m_pi = M_PI_PM_MEV_VALIDATION
+    m_K  = M_K_PM_MEV_VALIDATION
     prod_34 = q_int(3, q) * q_int(4, q)
     em_factor = closed_form_3  # (3q² − 1)/(2q²)
     prediction = prod_34 + alpha_em/mp.pi * em_factor

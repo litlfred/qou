@@ -29,6 +29,7 @@ sys.path.insert(0, str(HERE))
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import M_PI_PM_MEV_VALIDATION, M_K_PM_MEV_VALIDATION  # noqa: E402
 
 
 def q_int(k, q):
@@ -63,8 +64,8 @@ def main():
     # ---------------------------------------------------------------
     # Meson scales (PDG, MeV)
     # ---------------------------------------------------------------
-    m_pi_pm = mp.mpf("139.57039")
-    m_K_pm  = mp.mpf("493.677")
+    m_pi_pm = M_PI_PM_MEV_VALIDATION
+    m_K_pm  = M_K_PM_MEV_VALIDATION
     f_pi    = mp.mpf("92.07")    # pion decay constant (PDG)
     Lambda_chi = mp.mpf("1000")  # chiral scale ~ 4π·f_pi ~ 1 GeV
     chiral_cond_cuberoot = mp.mpf("240")  # ⟨q̄q⟩^(1/3) ~ 240 MeV
