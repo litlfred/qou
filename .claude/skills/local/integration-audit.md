@@ -99,7 +99,7 @@ that:
 ## Persistence
 
 Logs every invalidation run to
-`todos/integration-audit-ledger.md`:
+`.beans/integration-audit-ledger.md`:
 
 ```markdown
 ### 2026-05-20T14:50Z — voice-emoji-content
