@@ -7,9 +7,13 @@
 **Re:** Folio-Assistant Infrastructure Migration — the `miga` epic (`.beans/miga--folio-migration-parent.md`)
 **Tracking beans:** `j8el` (qou-side `todos/`→`.beans/`), `bmwh` (handoff finalize), `17ht` (setup consolidation)
 
-> **This is the single source of truth for the folio-assistant agent.** It supersedes
-> any earlier scattered handoff notes. Read top-to-bottom: §1–§3 are context + current
-> state, §4 is what qou already did, §5 is your task list.
+> **Canonical f-a-side doc:** the folio-assistant repo's
+> [`docs/folio-assistant-migration.md`](https://github.com/litlfred/folio-assistant/blob/main/docs/folio-assistant-migration.md)
+> §6 is the canonical home for the qou-side requirements (A/B/C) and the folio-assistant
+> task list. **This file is the qou-side _record_** of what landed (the A/B/C gates are all
+> met on `main` — see §4). It supersedes any earlier scattered qou handoff notes. Read
+> top-to-bottom: §1–§3 are context + current state, §4 is what qou already did, §5 is your
+> task list.
 
 ---
 
@@ -76,7 +80,7 @@ Dockerfile.
 ### PR #2513 — durable bean status
 - Marked bean `j8el` `in-progress` so the merged `.beans/` work-plan reflects the relocation.
 
-### PR #2515 + this PR — session-setup consolidation (the "frankenstein" cleanup)
+### PR #2515 + #2526 — session-setup consolidation (the "frankenstein" cleanup)
 Diagnosis: a 7-command SessionStart chain where some scripts were deleted by `39fc90f6` but still
 referenced, the Lean hooks flood the transcript in firewalled containers, and two beans surfaces
 overlap. qou-side fixes landed:
@@ -84,10 +88,15 @@ overlap. qou-side fixes landed:
 - **(A) Stripped 4 dangling hook references** from `.claude/settings.json` — `open-folio-assistant.sh`
   + `watch-main-prompt.sh` (SessionStart), `render-on-change.sh` (PostToolUse), and
   `greeting-task-selection.sh` (UserPromptSubmit) were all deleted by `39fc90f6` but still wired.
-- **(B) Quieted the Lean hooks** — `lean-build-bg.sh` / `setup-lean-toolchain.sh` no longer flood
-  the session transcript with `elan` "failed to parse release data" backtraces when
-  `release.lean-lang.org` is firewalled; failures are redirected to log files and the hook exits
-  quietly. (Lean still builds where the host is reachable.)
+- **(B) Quieted the Lean hooks** — two layers: (#2515) the SessionStart hook redirects
+  `lean-build-bg.sh` / `setup-lean-toolchain.sh` stdout to `${TMPDIR:-/tmp}/*.log`; (#2526) the
+  hardened **in-script** port of folio-assistant PR #14 — B.1 adds a functional `lean --version`
+  probe (so a non-empty-but-broken elan toolchain dir bails cleanly instead of retrying `lake`
+  against the firewalled `release.lean-lang.org`), B.2 swaps `lake build … | tee` for
+  `> log 2>&1`. Both the `timeout` and `curl` external calls are guarded behind `has`
+  (`has timeout` / `has curl`) so a minimal container without them falls back gracefully rather
+  than mis-reading exit 127. Result: no `elan` "failed to parse release data" backtrace flood on a
+  firewalled resume. (Lean still builds where the host is reachable.)
 - **(C) Deduped the SessionStart beans surface** — kept the **CLI-independent**
   `session-start-coord-sweep.sh §4b` (parses `.beans/` directly; works in fresh containers) and
   retired the redundant CLI-dependent `session-status.sh` surface.
