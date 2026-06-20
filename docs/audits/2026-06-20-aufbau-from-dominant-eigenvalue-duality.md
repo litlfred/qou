@@ -94,6 +94,12 @@ The exact `λ₊^ℓ` works but rests on the un-derived "angular = ℓ λ₊-ste
 reading. Gap-2 (ordering) is therefore **genuinely open**: the duality/Perron
 lever names the right eigenvalue (`λ₊`) and the right order (Aufbau), but no
 categorical object tested *forces* the `λ₊^ℓ` (open) reading over the
-overshooting trace. This is consistent with Madelung being semi-empirical even
-in standard QM — and three structural-derivation attempts (eigensplit a=−2;
+overshooting trace. Three structural-derivation attempts (eigensplit a=−2;
 q-dim a=+2; `√`-q-dim) have now each been ruled out by sign or overshoot.
+
+**Per owner directive (STRICT): the ordering is NOT accepted as a semi-empirical
+input.** Madelung's known fragility in standard QM (Cr, Cu, Pd exceptions) is
+*why* a categorical derivation is hard — not a licence to accept it. The ordering
+stays an **open derivation target**: prove that angular `ℓ` enters as `λ₊^ℓ` (ℓ
+dominant-channel open-transfer steps) from the braid topology of the open
+electron strand, exactly as radial `n` enters as `n` dominant curls.
