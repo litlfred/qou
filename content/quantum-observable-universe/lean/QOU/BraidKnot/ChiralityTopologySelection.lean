@@ -61,10 +61,10 @@ the p-n bond count strictly increases with the neutron number whenever a
 proton is present, so the binding is genuinely `A`-dependent. (Symmetric in
 `Z` by `Nat.mul_comm`.) -/
 theorem complete_pn_strictMono_N {Z N : ℕ} (hZ : 0 < Z) :
-    completePnBonds Z N < completePnBonds Z (N + 1) := by
-  have hmul : Z * (N + 1) = Z * N + Z := by ring
-  simp only [completePnBonds]
-  omega
+    completePnBonds Z N < completePnBonds Z (N + 1) :=
+  -- `completePnBonds` unfolds definitionally to `Z * ·`, so this is just
+  -- strict monotonicity of left-multiplication by a positive `Z`.
+  Nat.mul_lt_mul_of_pos_left (Nat.lt_succ_self N) hZ
 
 /-- **Topology selection (the #2507 thesis).** A Pauli-restricted binding
 whose p-n bond count differs between two `(Z,N)`-nuclei (i.e. is genuinely
