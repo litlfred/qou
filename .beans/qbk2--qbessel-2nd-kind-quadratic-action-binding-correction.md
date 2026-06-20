@@ -140,3 +140,16 @@ Owner closes (humans close beans per CLAUDE.md §4a).
 > log-Neumann `Y_n` (ν→n limit, no ±0.5 proxy) + real `y_λ` weights + bar-parity. Matching
 > B(D) by choosing the offset/prefactor would be a fit. No fit; nothing wired. (Direction
 > is LIVE again; #2538 "closed" was premature.)
+
+> **RIGOROUS (reduction-of-order) + LEAN (2026-06-20, PR #2549).** Resolved BOTH #2547
+> gates with one construction: reduction of order recovers g2 from g1 + Casoratian
+> (Jackson sum), resonance-free, finite at every integer order INCLUDING the ν=0
+> confluent case. Self-checks pass (L[g2]~1e-30, Cas=w^-ν). Deuteron δ_rig=9.72,
+> ratio 2.23× B(D)/m_e, un-dominated (25%), dim=1 finite, cross-anchor 5.9%. Progression:
+> #2545 6.16 (proxy artifact) → #2547 1.27 (PV dim≥2 only) → #2549 2.23 (rigorous, all
+> blocks). LEAN: QOU/QBeta/QCasoratianAbel.lean (casoratian_abel + qbessel_casoratian_qabel,
+> the q-Abel backbone, sorry-free, generic CommRing) — a q-Bessel MACHINERY lemma, NOT a
+> binding claim. Honest: strongest evidence yet that the direction is real (rigorous,
+> on-scale ~2×, proxy-free) but NOT established — remaining gap needs real y_λ Markov
+> weights + bar-parity (and cross-anchor 5.9% is a modest flag). 2.23→1 must come from
+> forced y_λ, NOT a tuned prefactor. No fit; nothing wired.
