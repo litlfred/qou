@@ -4,7 +4,11 @@ export default proposition({
   label: "prop:germ-commutator-q-curvature",
   title:
     "Germ-commutator of two observations equals the $q$-curvature on the loop",
-  uses: ["def:observation"],
+  uses: [
+    "def:observation",
+    "def:q-flat-connection",
+    "rem:two-observer-parallelogram",
+  ],
   lean: {
     ref: "qou:QOU.LocalQ.ObservationParallelogram.commutator_eq_curvature",
   },
@@ -19,7 +23,7 @@ export default proposition({
     {
       kind: "note",
       date: "2026-06-16",
-      body: "Route 2a of the local-q programme (docs/scope/2026-06-16-local-q-evolution-routes.md): promotes the two-observer-parallelogram δq(p) to the q-curvature 2-form. Lean is self-contained over an abstract non-commutative ring, build-verified sorry-free (v4.24.0) via lean-direct against the restored lake-cache oleans. The identity [δq₁,δq₂]=F_q is unconditional; the identification of F_q with the q-flat-connection's intrinsic (q−1)𝓕_q^intr is narrative (keeps this proposition out of the conjectural cone).",
+      body: "Route 2a of the local-q programme (docs/scope/2026-06-16-local-q-evolution-routes.md): promotes the two-observer-parallelogram δq(p) to the q-curvature 2-form. Lean is self-contained over an abstract non-commutative ring, build-verified sorry-free (v4.24.0) via lean-direct against the restored lake-cache oleans. The identity [δq₁,δq₂]=F_q is unconditional (verified over an abstract ring); the identification of F_q with the q-flat-connection's intrinsic (q−1)𝓕_q^intr is narrative. The def:q-flat-connection cone is conjecture-free (def↔def with q-local-system), so uses[] records it without demoting the verified proposition.",
     },
   ],
 });
