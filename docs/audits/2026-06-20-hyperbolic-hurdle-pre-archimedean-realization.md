@@ -212,6 +212,54 @@ relocates the open problem from the *coefficients* (closed) to the *payload*
 > CAL-4 import, commit `afc820dc`); and the $c_k$ ladder is **q-holonomic**
 > (argument recurrence), not a C-finite order recurrence (commit `8ec801b1`).
 
+### 6.1 Live state (2026-06-20) — from clean-negative to verified backbone + DG attack
+
+The keystone is an **active multi-PR research front**, and its trajectory
+confirms the ③-lens diagnosis:
+
+- **2026-06-01 clean-negative**
+  ([audit](2026-06-01-s5-so3-su2-u1-fiber-action.md), PR #1672): the geometric
+  fiber map is *not derivable* from the then-current structure. Two
+  obstructions — (i) the icosahedral action lives on **5 strands** ($A_5\subset
+  S_5$) while the Borromean $h^4=-3/4$ lives on **3 strands** ($\mathbf{H}_3$):
+  different representation rings, no canonical link; (ii) the load-bearing
+  premise "$S_3$ sees only $\ell\le1$" is **false** — the $(2,1)$ irrep carrying
+  $h^4$ appears at both $\ell{=}1$ (mult 1) and $\ell{=}2$ (mult 2). A
+  normalisation sending the dim-5 $H$-amplitude to $-3/4$ "would be the fit the
+  discipline review catches."
+- **Functor identified** (2026-06-13): the cross-strand map is named —
+  $\mathrm{Res}^{S_5}_{S_3}$ (restriction), verified combinatorially in sibling
+  **#2504** (14/14 self-checks): $(3,2)\!\downarrow\!S_3=(3)+2(2,1)$,
+  $(3,1,1)\!\downarrow\!S_3=(3)+2(2,1)+(1,1,1)$, **difference $=(1,1,1)$**; and
+  $\chi^{(2,1)}=2-3h^4-h^6$ independently, so **$h^4$ lives exclusively in the
+  $(2,1)$ block.** Tiering: *combinatorics VERIFIED / functor IDENTIFIED /
+  q-deformed closure OPEN.*
+- **Gate reversed** (2026-06-19): the owner reversed the subgoal-2
+  geometric-derivation decline ("reverse gate → start DG build"). Sibling
+  **#2503** opens the construction via a corpus lead — the full-Hecke Markov
+  trace $=$ **WRT$(S^3/2I)$ = Lawrence–Zagier** (Chern–Simons on the Poincaré
+  homology sphere, the natural infinite-dim home; finite-dim Sasakian ruled out
+  by #2500's block-count theorem). Step-1 falsifiable gate: does the
+  WRT$(S^3/2I)$ per-block weight equal $d_q^2/[n]_q!$ at $q_0$ for $n=3,4,5$?
+
+**Convergence with the ③ lens.** This front and the present assessment reach the
+*same* structural diagnosis from opposite directions: the **combinatorial fusion
+rule is closed and verified** ($\mathrm{Res}^{S_5}_{S_3}$ multiplicities;
+$h^4\in(2,1)$), while the **operator-valued / geometric payload is the open
+object** (the q-deformed $E_{(3,2)}$ vs $E_{(3,1,1)}$ projector shift at $q_0$;
+the partition→$A_5$-rotation map). And the keystone functor
+$\mathrm{Res}^{S_5}_{S_3}$ is *itself a Hecke branching* — the same object-class
+as the §3 addition theorem, restriction rather than induction. The two open
+frontiers of §6 are therefore one phenomenon: **a Hecke branching whose integer
+combinatorics is known but whose operator/geometric realization at the relevant
+strand count is undefined.**
+
+**Live landmine.** The DG construction must *derive* the projector reweighting
+canonically — the 2026-06-01 "normalisation = fit" warning still binds, and
+#2503 itself flags the unfalsifiable $(q,z)$-bridge (the refused Habiro failure
+mode) as the thing to avoid. The Step-1 weight gate is the right falsifiable
+discipline.
+
 ---
 
 ## 7. Recommendation
@@ -254,5 +302,12 @@ relocates the open problem from the *coefficients* (closed) to the *payload*
   — the +2.89% closure path the combiner serves.
 - `S5SO3FiberAction.lean`, `GapA4MuonBranching.lean` (on `main`) — the s5-so3
   keystone classes (commit `035aa52e`).
+- [2026-06-01 s5-so3 clean-negative](2026-06-01-s5-so3-su2-u1-fiber-action.md) —
+  fiber map not derivable; the two obstructions + the "normalisation = fit"
+  warning.
+- Live siblings on the keystone: **#2504** (combinatorial backbone verified,
+  14/14; functor $=\mathrm{Res}^{S_5}_{S_3}$), **#2503** (DG-construction attack
+  via WRT$(S^3/2I)$ / Lawrence–Zagier, gate reversed 2026-06-19), **#2500**
+  (block-count necessary conditions, finite-dim ruled out).
 - CLAUDE.md §7b (symmetric-crystal / Macdonald authoring guidance), §7c (base
   ring), §3b-cond (conditional-class formalization).
