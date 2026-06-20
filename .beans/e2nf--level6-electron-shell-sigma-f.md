@@ -71,12 +71,20 @@ low-isotope-mass-anatomy ledger before adopting this bean.
       penetration DIRECTION — but OVERSHOOTS ~10× (s·[3]_q≈0.76 vs radial
       spacing≈0.09) ⇒ ℓ-dominated order [8,26,46,60], not n+ℓ. So the structure
       supplies BOTH ingredients but not the Madelung BALANCE.
-- [ ] **Remaining open, sharpened: the radial:angular SCALE BALANCE** (the
-      4s/3d near-degeneracy). Not "is there ℓ-penetration" (there is, via the
-      q-dim) but "why is the radial:angular ratio the n+ℓ one" — QOU's T_ee is
-      ~8× too strong for the delicate near-degeneracy. Pinning the ratio to hit
-      [2,10,18,36] = fitting. This near-degenerate balance is the single
-      un-derived input behind the periodic-table ORDERING. (Capacity 2n² done.)
+- [x] **SYNTHESIS with #2531 (merged) 2026-06-20 — Gap-2 reduced to one number `a`.**
+      Both probes converge on the ℓ-coefficient `a` in the filling key
+      K(n,ℓ)=n+a·ℓ. #2531: eigenvalue-split grading gives a=−2 (wrong sign,
+      anti-penetration, ruled out). #2348: bar-even q-dim [2ℓ+1]_q gives a>0
+      (right sign) but overshoots +1; same object also gives the 2n² capacity
+      (so capacity + penetration-sign are both bar-even). Madelung needs a=+1,
+      strictly BETWEEN. Structure brackets {−2, >+1} but never pins +1 ⇒
+      hitting +1 = tuning = fitting. Audit 2026-06-20-gap2-ordering-ell-coefficient-synthesis.md.
+      (Corrects my earlier "radial:angular balance" framing — #2531's sign half
+      sharpens it; my "~8.5×" was the z² convention, but sign-positive/>+1 robust.)
+- [ ] **Gap-2 verdict: ORDERING not derivable without a tuned ℓ-coefficient `a`.**
+      Structure offers a∈{−2 (eigensplit), >+1 (q-dim)}; Madelung is +1. The one
+      un-derived input behind the periodic-table ordering. (Capacity Gap-1: 2n²
+      self-square, essentially derived.) Coordinated with #2531 (merged).
 
 ## Notes
 
