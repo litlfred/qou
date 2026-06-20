@@ -9,7 +9,7 @@ Per [`docs/workplans/2026-05-30-source-conjecture-closure-plan.md`](../workplans
 | # | Conjecture | Status (2026-05-30 18:50 UTC) | Notes |
 |---|---|---|---|
 | 1 | `conj:pontryagin-dual-coxeter-character` | ✅ **closed** as `thm:` in [`ad094372d`](https://github.com/litlfred/qou/commit/ad094372d) | sorry-free via `Equiv.Perm.sign` + `ZMod 2` finite case analysis |
-| 2 | `conj:atom-braid-exterior-algebra` | ✅ **structurally closed** (verified cases sorry-free) | 0 actual tactic sorries — D / T / ³He / ⁴He proven via Pascal-row totals (`binomial_sum_pow_two`); general case is the open §3b-cond class instance per CLAUDE.md, not a missing proof |
+| 2 | `conj:atom-braid-exterior-algebra` | ✅ **structurally closed** (verified cases sorry-free) | 0 actual tactic sorries — D / T / ³He / ⁴He proven via Pascal-row totals (`binomial_sum_pow_two`); general case is the open §3b-cond class instance per AGENTS.md, not a missing proof |
 | 3 | `conj:dilogarithm-archimedean-limit` | ⚠ **still open** | Standard Faddeev-Kashaev limit `(1-q) log Φ_n(x; q) → Li_2(x)`. Needs Mathlib analysis infra: q-Pochhammer + Riemann-sum convergence + Li_2 series. **Not single-session work** despite the workplan's 50-150 LOC estimate — the estimate assumes the analysis infra exists; in practice it would have to be authored first. Demote to Tier B. |
 | 4 | `conj:averaging-resonance-rule` | ✅ **closed** in [`c662572c5`](https://github.com/litlfred/qou/commit/c662572c5) | + Sprint 1 IwahoriHecke skeleton |
 
@@ -50,7 +50,7 @@ The audit doc recommends **option 1** (demote to §3b-cond), since the current s
 
 **Action item (audit-only here; refactor is its own PR)**:
 
-1. Re-classify `proton_tower_residual_frobenius` as a `conjecture`-kind block per CLAUDE.md §3b-cond, with the bound `4/1000` becoming a class field carrying the residual-matching promise.
+1. Re-classify `proton_tower_residual_frobenius` as a `conjecture`-kind block per AGENTS.md §3b-cond, with the bound `4/1000` becoming a class field carrying the residual-matching promise.
 2. Update the `protonTowerMass` literal to reflect the current framework value (966.05 MeV), with comments documenting the open ~27 MeV gap.
 3. The §3b-cond instance becomes the open conjecture (the framework predicts m_p to within m_e · k for some k — `k` is the open quantity).
 
@@ -84,7 +84,7 @@ Walked every `.lean` file with a tactic-position sorry on current main, categori
 
 | Category | Files | Sorries | Closeable in scope? |
 |---|---:|---:|---|
-| §3b-cond class conjecture (open by design) | 15 | 28 | **No** — `sorry` IS the open conjecture per CLAUDE.md §3b-cond. Closure = the underlying math, multi-week+. |
+| §3b-cond class conjecture (open by design) | 15 | 28 | **No** — `sorry` IS the open conjecture per AGENTS.md §3b-cond. Closure = the underlying math, multi-week+. |
 | UGB Buchberger / PBW (research-level) | 13 | 13 | **No** — formalising Buchberger + PBW in Lean 4 is a multi-month Mathlib-contribution project. |
 | Hyperbolic / Catalan (analysis infra) | 2 | 5 | **No this session** — `BorromeanVolumeCatalan.lean` needs Lewin Λ + Adams 1985 in Lean (audit doc says "mechanical but heavy"). `kashaev-volume-conjecture.lean` is classical open. |
 | Mass-tower §3b-cond (categorical content open) | 1 | 3 | **No** — `lepton-mass-tower-canonical.lean` open categorical mechanism (gates on PR #1443's operator-valued LR-branching). |
@@ -118,7 +118,7 @@ These are explicitly axiomatised conjectures via the §3b-cond `class` pattern. 
 
 **UGB Buchberger / PBW (13 sorries, 13 files):**
 
-All under `content/unital-groebner-bases/lean/UGB/`. Closure requires formalising Buchberger's algorithm + S-polynomial decomposition + PBW corollary in Lean 4 — a multi-month Mathlib-contribution project. Each `sorry` is properly cited (CLAUDE.md §1) and represents the corresponding step of the classical algorithm.
+All under `content/unital-groebner-bases/lean/UGB/`. Closure requires formalising Buchberger's algorithm + S-polynomial decomposition + PBW corollary in Lean 4 — a multi-month Mathlib-contribution project. Each `sorry` is properly cited (AGENTS.md §1) and represents the corresponding step of the classical algorithm.
 
 **Hyperbolic / Catalan (5 sorries, 2 files):**
 

@@ -41,7 +41,7 @@ missed:
   with `prop:wigner-2-coefficient`, `wigner-np-pairing`,
   `wigner-coefficient-derivation.lean`.
 
-This is the exact failure mode the STRICT corpus-grep checklist (CLAUDE.md
+This is the exact failure mode the STRICT corpus-grep checklist (AGENTS.md
 §"Before declaring open…", precedent PRs #1515/#1532/#1543) exists to catch:
 a "this is new" claim that the corpus already contains.
 

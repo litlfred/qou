@@ -52,7 +52,7 @@ but a *different* one than the pitch names.
 | # | Dialog object | Correct QOU object | Why |
 |---|---------------|--------------------|-----|
 | ① | orthogonal basis $P_\lambda^\mu$ | **irreducible characters $\chi_\lambda$** (orthogonal under the Markov/Frobenius pairing) | The decomposition that is actually orthogonal in QOU is the Wedderburn/Frobenius one, $\operatorname{tr}_M(\beta)=\sum_{\lambda\vdash n} y_\lambda\,\chi_\lambda(\beta)$; the $\chi_\lambda$ are orthogonal under the Frobenius/Markov inner product, not the $P_\lambda^\mu$. |
-| ② | addition theorem (Jacobi/Legendre) | **$q$-Littlewood–Richardson / fusion rule** for the product in $\mathbf H_n(q)$ | The "addition" that QOU needs is the rule for the product/coproduct of two Wedderburn blocks; its $q\to1$ archimedean shadow *is* the classical Jacobi/Legendre addition theorem for zonal spherical functions. The explicit $q$-polynomial bridge is the Koornwinder / Macdonald–Askey–Wilson family ([`koornwinder1990`](../../content/schema/references.ts), [`macdonald1995`](../../content/schema/references.ts) — both already in `references.bib`), and CLAUDE.md §7b already says "non-symmetric Macdonald evaluation under the Observation Frame ($\tau$)." |
+| ② | addition theorem (Jacobi/Legendre) | **$q$-Littlewood–Richardson / fusion rule** for the product in $\mathbf H_n(q)$ | The "addition" that QOU needs is the rule for the product/coproduct of two Wedderburn blocks; its $q\to1$ archimedean shadow *is* the classical Jacobi/Legendre addition theorem for zonal spherical functions. The explicit $q$-polynomial bridge is the Koornwinder / Macdonald–Askey–Wilson family ([`koornwinder1990`](../../content/schema/references.ts), [`macdonald1995`](../../content/schema/references.ts) — both already in `references.bib`), and AGENTS.md §7b already says "non-symmetric Macdonald evaluation under the Observation Frame ($\tau$)." |
 | ③ | two-center / $\operatorname{sech}$ separation | **Borromean-tower / operator-valued branching combiner** for per-isotope binding (Subgoal-1, Track B) | The genuine "two-center" problem in QOU is gluing an $(A{-}1)$-nucleon inner braid to an outer nucleon block at an interface operator. The pre-archimedean "addition theorem" there is a branching/fusion coefficient ($q$-LR), **not** a new continuum coordinate scheme. |
 
 The structural error is identical to the KLR dialog
@@ -104,7 +104,7 @@ lives pre-$\tau$, in $\mathbf H_n(q)$.
    discrete sum is zero — there is nothing for a two-center separation to
    act on. (Same point as the KLR audit's §"Trefoil is not hyperbolic" and
    the recurrent Bloch–Wigner/dilog-transcendence failure mode flagged in
-   CLAUDE.md §7b.) Wiring ①/② into the hyperbolic-volume compute therefore
+   AGENTS.md §7b.) Wiring ①/② into the hyperbolic-volume compute therefore
    produces a "$0=0$ separation" — formally consistent, physically empty.
 
 4. **Mass-formula register.** Any version of the pitch that ends in
@@ -112,7 +112,7 @@ lives pre-$\tau$, in $\mathbf H_n(q)$.
    purged $\lambda_{\text{scale}}$ / `Geom_full` wrapper. The canonical
    formula is $m(K)=m_e\cdot\operatorname{Vol}(K)\cdot\rho(K)/\hbar_q^2$,
    a single per-knot evaluation; there is no separate $m_0$ and no
-   separable analytic factor (CLAUDE.md "Critical framing — mass formula").
+   separable analytic factor (AGENTS.md "Critical framing — mass formula").
 
 ### Critical-distance flag
 
@@ -276,6 +276,6 @@ hyperbolic-volume compute nowhere.
 - [`computations/canonical_tr_m_via_branching.py`](../../computations/canonical_tr_m_via_branching.py) — the operator-valued Wenzl branching combiner (the concrete "addition theorem").
 - [`computations/substrate/lr_coefficients.py`](../../computations/substrate/lr_coefficients.py) — $q$-Littlewood–Richardson table `get_lr_table` (the $c^\lambda_{\xi\nu}$).
 - [`content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.md`](../../content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.md) — Borromean observable content block.
-- CLAUDE.md §7b — Symmetric-crystal techniques; non-symmetric Macdonald under $\tau$; recurrent dilog/Bloch–Wigner failure mode.
-- CLAUDE.md "Critical framing — mass formula" — why $m=m_e\cdot\operatorname{Vol}(K)\cdot\rho(K)/\hbar_q^2$ has no separable $m_0$.
+- AGENTS.md §7b — Symmetric-crystal techniques; non-symmetric Macdonald under $\tau$; recurrent dilog/Bloch–Wigner failure mode.
+- AGENTS.md "Critical framing — mass formula" — why $m=m_e\cdot\operatorname{Vol}(K)\cdot\rho(K)/\hbar_q^2$ has no separable $m_0$.
 - `references.ts`: [`koornwinder1990`](../../content/schema/references.ts), [`macdonald1995`](../../content/schema/references.ts) — the $q$-polynomial bridge (Koornwinder / Macdonald–Askey–Wilson).

@@ -9,7 +9,7 @@ import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
 # Canonical knot identification for ²H, ³H, ³He from the confinement SDP
 
 This file axiomatizes `conj:canonical-knot-id-sdp` as a Lean `class`
-following the §3b conditional-class pattern from CLAUDE.md.
+following the §3b conditional-class pattern from AGENTS.md.
 
 **Conjecture (informal):** The joint mass-tower confinement SDP uniquely
 selects the canonical Hecke elements for ²H (6₂), ³H (8₁₁), and ³He
@@ -420,7 +420,7 @@ theorem bindingKWord_nonempty (n : LightNucleus) [h : CanonicalKnotIdSDP n] :
 /-- **R5FullWitness** — the numerical certificate produced by
     PR #608's `r5_full_canonical_knot_solver.py`.
 
-    Records the LP/SDP primal–dual data per CLAUDE.md "LP / SDP
+    Records the LP/SDP primal–dual data per AGENTS.md "LP / SDP
     duals — first-class infra" and the per-Wedderburn-block
     PSD-feasibility check.  An instance asserts that for nucleus
     `n`, the prototype produced a feasible candidate `T_w` in the

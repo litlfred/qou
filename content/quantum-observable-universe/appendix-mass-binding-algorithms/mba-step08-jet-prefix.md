@@ -9,7 +9,7 @@ at $q = q_0$ via the GS filtration of Step 7.*
   (output of Step 3, evaluated symbolically).*
 - *Target jet order $N \in \mathbb{N}$ (chosen by precision goal —
   default $N = \lceil \log_{10}(1/\varepsilon) / 2.07 \rceil - 1$
-  per CLAUDE.md "𝔔_β c_k truncation order").*
+  per AGENTS.md "𝔔_β c_k truncation order").*
 
 ### Output
 

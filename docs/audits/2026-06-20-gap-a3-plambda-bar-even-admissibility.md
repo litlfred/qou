@@ -26,7 +26,7 @@ whether those channels were *admissible* in the first place.
 
 The bar involution `q ↦ q⁻¹` sends `χ^λ ↦ χ^{λᵀ}`. A binding deviation `P_λ`
 realised by a **real, bar-symmetric** categorical map (the archimedean anchor has
-`Im q₀ = 0`; CLAUDE.md §"Im(q) at fibre vs observable level") must therefore be
+`Im q₀ = 0`; AGENTS.md §"Im(q) at fibre vs observable level") must therefore be
 **transpose-invariant**: `P_λ = P_{λᵀ}`. This is a *necessary* structural
 condition, independent of any numerical target.
 

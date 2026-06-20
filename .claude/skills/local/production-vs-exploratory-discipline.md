@@ -72,7 +72,7 @@ Concrete locations:
    CAL-2 m_μ, CAL-3 m_π. m_e from CODATA (the unit); m_μ from CODATA
    fixes q_0 via m_μ/m_e (phys-obs may anchor q_0 on the more-precise
    proton ratio m_p/m_e); m_π from PDG (the orthogonal meson scale).
-   These are the three calibration anchors per CLAUDE.md
+   These are the three calibration anchors per AGENTS.md
    §"three-calibration discipline". Q_β is **derived** from
    CAL-1+CAL-2, not a calibration.
 
@@ -393,7 +393,7 @@ Why it's wrong: both readings give different production
 predictions. Punting forces the next agent to make the same
 choice.
 
-Fix: per CLAUDE.md §"Agent work-plan policy" rule 5 (escalate
+Fix: per AGENTS.md §"Agent work-plan policy" rule 5 (escalate
 inconsistencies), AskUserQuestion to decide. The
 canonical-unification audit (PR #916) explicitly distinguishes
 exploratory comparison from production claim — use that pattern.
@@ -612,7 +612,7 @@ confirmation. Mismatched name vs banner is a review red flag.
   empirical-fit candidates that ended up in production.
 - **`canonical-watcher.md`** — the integration watcher that
   catches CAL-4 promotions; this skill is the rule it enforces.
-- **`Δ_λ gate`** (CLAUDE.md, top-of-repo) — the standing
+- **`Δ_λ gate`** (AGENTS.md, top-of-repo) — the standing
   "no 7th ansatz" rule; this skill's Rule 14 is the same
   discipline at the coefficient level.
 - **`prepare-merge.md`** §1.a witness drift — the standardized

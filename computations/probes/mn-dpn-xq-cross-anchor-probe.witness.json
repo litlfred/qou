@@ -34,7 +34,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Cross-anchor verdict on X(q) refinement candidates (extension of PR #1645 single-anchor probe). Per CLAUDE.md Im(q) fibre-vs-observable: tier by both q_proton AND q_muon.",
+  "description": "Cross-anchor verdict on X(q) refinement candidates (extension of PR #1645 single-anchor probe). Per AGENTS.md Im(q) fibre-vs-observable: tier by both q_proton AND q_muon.",
   "auditOnly": "docs/audits/2026-06-01-precision-residual-probes-workplan.md",
   "data": {
     "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
@@ -156,7 +156,7 @@
     ],
     "tier_1_count": 0,
     "tier_15_count": 0,
-    "verdict": "ALL CANDIDATES FAIL cross-anchor. The X(q) 0.10% residual is NOT a multiplicative-refinement problem — it needs a fibre-level Habiro element (per CLAUDE.md Im(q) framing), not a q_0-evaluated correction. This rules out the ansatz family tested in PR #1645 + this probe.",
+    "verdict": "ALL CANDIDATES FAIL cross-anchor. The X(q) 0.10% residual is NOT a multiplicative-refinement problem — it needs a fibre-level Habiro element (per AGENTS.md Im(q) framing), not a q_0-evaluated correction. This rules out the ansatz family tested in PR #1645 + this probe.",
     "anti_pattern_guard": "Tier 2 results are anchor-coincidences and MUST NOT be wired. Only Tier 1 candidates merit structural derivation. Failure of all candidates at cross-anchor confirms that X(q) needs a fibre-level Habiro element (parallel α_EM PR #1511), not a multiplicative q_0-fit."
   }
 }

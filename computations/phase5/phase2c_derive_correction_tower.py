@@ -3,7 +3,7 @@
 Phase 2c: derive (not fit) the ℏ_q correction tower.
 
 The "fitted" coefficients (c_F ≈ 1/4, c_X ≈ 5 or 3.2) are
-EMPIRICAL — matching CODATA backwards. Per CLAUDE.md Rule 14
+EMPIRICAL — matching CODATA backwards. Per AGENTS.md Rule 14
 (production-vs-exploratory discipline), we need to DERIVE them
 from categorical structure.
 

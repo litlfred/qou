@@ -52,7 +52,7 @@ of valid IDs.
 
 ## No-argument behaviour
 
-Per CLAUDE.md user-accessibility (multi-select default):
+Per AGENTS.md user-accessibility (multi-select default):
 `AskUserQuestion` 🟡 with chips for each axis + `all`. Multi-select
 so the user can pick e.g. `proof, canonical` in one go.
 

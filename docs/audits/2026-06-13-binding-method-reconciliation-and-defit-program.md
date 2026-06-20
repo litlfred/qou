@@ -73,7 +73,7 @@ with no method. Quarantine + label now; demote after §4 lands.
 ## 3. Why A ≥ 3 is open (so the weight is the right lever, not a new ansatz)
 
 The many-body ceiling is proved zero-fit: ⁴He is 74% irreducible
-4-body. **A 7th multiplicative Δ_λ ansatz is forbidden** (CLAUDE.md
+4-body. **A 7th multiplicative Δ_λ ansatz is forbidden** (AGENTS.md
 §Precision-goals Δ_λ gate; six ansätze already failed on the deuteron).
 The productive lever is therefore **not** a new closed form but the
 **weight on the existing decomposition** — and it must be *derived*,
@@ -82,7 +82,7 @@ which is exactly what the heat-kernel program supplies.
 ## 4. The derived-weight program (heat kernel + active set)
 
 Three λ-indexed weight families exist, **all derived** (do not conflate
-— CLAUDE.md notation register):
+— AGENTS.md notation register):
 
 | weight | formula | role |
 |---|---|---|

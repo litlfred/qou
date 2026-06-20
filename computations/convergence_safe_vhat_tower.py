@@ -26,7 +26,7 @@ with ZERO free parameters:
   3. Bar-symmetrization (q ↔ q⁻¹) of the argument.
   4. Reciprocal/inversion V̂ ↦ 1/V̂ for |V̂| > 1 (Hecke σ ↔ σ⁻¹ antipode).
 
-DISCIPLINE (CLAUDE.md production-vs-exploratory): a functional chosen
+DISCIPLINE (AGENTS.md production-vs-exploratory): a functional chosen
 BECAUSE it converges/fits is a FIT (RED). Each candidate's categorical
 justification is stated, THEN finiteness is checked. The {e-, p, n}
 masses are the FALSIFICATION TEST, never fit targets. All values RAW.

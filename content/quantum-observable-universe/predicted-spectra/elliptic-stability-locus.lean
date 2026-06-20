@@ -9,7 +9,7 @@ liquid-drop ansatz reduce to a Weierstrass elliptic curve whose
 integer points trace the valley.
 
 -- Ref: [manuscript]
-Per `CLAUDE.md §3b-cond`, opaque Props + class fields + sorry
+Per `AGENTS.md §3b-cond`, opaque Props + class fields + sorry
 instance per claim. Algebraic tier only — the numerical match
 to the observed stable-isotope set belongs to a future
 Archimedean tier (per gemini review on #721).

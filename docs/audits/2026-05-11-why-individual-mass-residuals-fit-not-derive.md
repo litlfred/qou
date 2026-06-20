@@ -319,7 +319,7 @@ Lean theorem `qou_markov_trace_is_jones_markov`
 is refactored 2026-05-29 from a *selection-by-contrast* with
 $\tau_{\mathrm{SW}}$ into a direct **uniqueness statement**
 axiomatising Wenzl 1990 / Jones 1987 via a
-`MarkovTraceUniqueness` class (CLAUDE.md §3b-cond pattern).
+`MarkovTraceUniqueness` class (AGENTS.md §3b-cond pattern).
 
 **Status of the rest:**
 

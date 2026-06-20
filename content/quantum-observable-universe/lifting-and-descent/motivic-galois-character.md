@@ -56,6 +56,6 @@ is the dual of two such realizations.*
 [`MotivicGaloisCharacter`](../../lean/QOU/LiftingDescent/MotivicGaloisCharacter.lean)
 takes a `MotivicSubstrate K0 Mhat Target` instance as an explicit
 hypothesis and exposes the character $\chi^{\mathrm{mot}}_A$ + its
-compatibility with each local realization $\rho_p$. Per CLAUDE.md §3b,
+compatibility with each local realization $\rho_p$. Per AGENTS.md §3b,
 `sorry` in any concrete instance is a substrate axiom, not a missing
 proof.*

@@ -9,7 +9,7 @@ import Mathlib.Algebra.Ring.Basic
 The full Lean statement and proof are pending; this stub exists so
 the `lean.ref` URI `qou:QOU.Observations.hecke_satisfies_blitvic_hypothesis` resolves to a real declaration in the
 `qou` Lake package.  The body is `sorry` carrying the manuscript
-citation per CLAUDE.md §1.
+citation per AGENTS.md §1.
 -/
 
 namespace QOU.Observations

@@ -7,7 +7,7 @@
 
 ## 1. Result — it builds (≈ 42 s)
 
-Prior notes (CLAUDE.md Lean/infra context; `docs/scope/2026-06-04-hoefsmit-stage-b-per-block-tbeta-scope.md`
+Prior notes (AGENTS.md Lean/infra context; `docs/scope/2026-06-04-hoefsmit-stage-b-per-block-tbeta-scope.md`
 §"Infra blocker") state the `pyhecke_native` PyO3/maturin build is unavailable in
 the web sandbox, which gated every arbitrary-q / cross-anchor / H₅ probe. **That is
 no longer true here.** The toolchain is present and the wheel builds:

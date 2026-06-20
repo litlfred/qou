@@ -157,7 +157,7 @@ Validation is three layers (run via `bun run validate` from `content/`):
 2. **Constraint rules** — file existence, cross-references, lean requirements
 3. **AST validation** — `unified-latex` parse of rendered LaTeX
 
-See `content/schema/types.ts` for the typed manifest definitions and [`CLAUDE.md`](../CLAUDE.md) §"Content-object architecture" for the full rules.
+See `content/schema/types.ts` for the typed manifest definitions and [`AGENTS.md`](../AGENTS.md) §"Content-object architecture" for the full rules.
 
 ## Lean workspace
 

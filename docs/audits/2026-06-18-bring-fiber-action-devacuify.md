@@ -7,7 +7,7 @@
 
 ## The defect
 
-The conditional class `BringFiberAction` (per CLAUDE.md §3b-cond) carried a **provably-false axiom**
+The conditional class `BringFiberAction` (per AGENTS.md §3b-cond) carried a **provably-false axiom**
 discharged by a **vacuous placeholder + trivial instance** — the lean-vacuity pattern:
 
 ```lean

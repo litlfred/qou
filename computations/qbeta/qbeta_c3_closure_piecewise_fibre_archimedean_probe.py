@@ -230,7 +230,7 @@ def main() -> int:
         print(f"  This is a (5+ archimedean) × (1 fibre) tensor product.")
         print(f"  Consistent with PR #1811's identification of /25 as the")
         print(f"  unique fibre piece. The 'fibre vs observable' split per")
-        print(f"  CLAUDE.md §'Im(q) at fibre vs observable level' is real")
+        print(f"  AGENTS.md §'Im(q) at fibre vs observable level' is real")
         print(f"  but minimal in this closure.")
     print()
 

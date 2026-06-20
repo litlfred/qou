@@ -30,7 +30,7 @@ holonomy that the **Reeb vector field** generates on the state bundle
 rotation whose `cosh`/`sinh` decomposition splits cleanly into a
 bar-even and a bar-odd part.
 
-**Formalize-first** (CLAUDE.md §3.3): before any numerical scan over Reeb
+**Formalize-first** (AGENTS.md §3.3): before any numerical scan over Reeb
 holonomy candidates, the prunable invariant is **parity under q ↔ q⁻¹**
 (equivalently η ↔ −η). The class of candidates splits exactly by it:
 
@@ -91,6 +91,6 @@ to the refuted bracket with a one-line parity/swing reason.
 - Parity wall (even slice empty): PR #1866
 - Odd reduction + recurrence data-block: PR #1880
 - `P_m(h)` cosh avatar precedent: cheat-sheet §3
-- Fibre-vs-observable Im(q) framing: CLAUDE.md §"Im(q) at fibre vs observable level"
+- Fibre-vs-observable Im(q) framing: AGENTS.md §"Im(q) at fibre vs observable level"
 - c_3 cross-anchor target: `qbeta_utils.c3_target_at` (PR #1831)
 - Fibre Composite-4 / Hopf sibling: PR #1811

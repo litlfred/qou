@@ -60,7 +60,7 @@ that must hold for the bridge:
   bridge.
 - **(I2) Archimedean projection (the fibre-vs-observable wall).** The
   error lives at the **fibre** level (surreal, possibly carrying the
-  `Im(q)` structure of CLAUDE.md's fibre/archimedean box); the volume is
+  `Im(q)` structure of AGENTS.md's fibre/archimedean box); the volume is
   **archimedean** (`Im(q₀)=0`, real). The bridge needs the surreal
   infinitesimal to project to *exactly* `0` under `τ`. A non-infinitesimal
   archimedean shadow injects a spurious polynomial relation among the

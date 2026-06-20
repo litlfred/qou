@@ -71,7 +71,7 @@ The binding `Δ_λ` test must derive the q-Lommel order-ν recurrence coefficien
 `b_ν(x;q)` from the substrate (the q-Casimir / contraction data), **not** fit it,
 and pass the deuteron. The formalize-first pre-check (cheap, decisive) remains:
 do the existing `Δ_λ` values from the six failed ansätze lie on **any** 3-term
-(q-Lommel) recurrence orbit? Per the CLAUDE.md `Δ_λ` gate, no seventh fit-based
+(q-Lommel) recurrence orbit? Per the AGENTS.md `Δ_λ` gate, no seventh fit-based
 ansatz — only a substrate-derived recurrence.
 
 ## Cross-refs
@@ -80,4 +80,4 @@ ansatz — only a substrate-derived recurrence.
 - PR **#2279** (q-Bessel identification — the tower/contraction object).
 - PR **#2300** (real-x c_3 closure refuted — same fibre-vs-archimedean wall).
 - `prop:q-heat-kernel-peter-weyl`, `prop:q-beta-c-k-recursion-from-habiro-q-difference`.
-- CLAUDE.md `Δ_λ` gate (no seventh fit-based ansatz).
+- AGENTS.md `Δ_λ` gate (no seventh fit-based ansatz).

@@ -94,4 +94,4 @@ graded $\rho_K$.
 - `prop:rho-k-graded-expansion`, `conj:borromean-bloch-group-element`,
   `quantum-bloch-group.md` (this PR adds pre-archimedean section)
 - `conj:wenzl-positivity-implies-substrate-positivity`
-- CLAUDE.md §7c — base ring discipline (analogous)
+- AGENTS.md §7c — base ring discipline (analogous)

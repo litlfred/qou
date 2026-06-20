@@ -58,7 +58,7 @@ The **Type-B fold** acts on the Kashiwara crystal graph of
 $H_n(q)$-modules via partition conjugation $\lambda \to \lambda^T$
 (the diagonal flip of the Young diagram). Per the
 $\mathfrak{sl}_n$-to-$\mathrm{B}_n$ folding pattern in
-CLAUDE.md §7b:
+AGENTS.md §7b:
 
 * **Fixed points** of the fold: self-conjugate partitions
   $\lambda = \lambda^T$ → unfolded orbit length 1.
@@ -138,7 +138,7 @@ The Type-B fold-depth candidate is:
   $n_\star(\ell, n_0, k, \mathbf{m})$ rule. Its strand-count
   dependence $n_\star = $ count of self-conjugate partitions of
   $3A$ matches the D / T closure depths exactly.
-* The Kashiwara-crystal interpretation (per CLAUDE.md §7b)
+* The Kashiwara-crystal interpretation (per AGENTS.md §7b)
   supplies a categorical / substrate-aligned reason for why
   self-conjugate partitions matter: they are the fold-fixed
   points of the type-B folding pattern on the unfolded

@@ -66,7 +66,7 @@
   {
     "id": "research-qbeta-habiro-element",
     "summary": "Identify the Q_\u03b2 Habiro element (analog of \u03b1_EM `[2]_q \u00b7 (1-h\u00b2\u03b1)` from PR #1511)",
-    "comment": "Cross-listed in .beans/1ppq-qbeta-queue.json (probe-qbeta-habiro-element-search). 6 mechanisms ruled out per b502b9b83; 1 left = KR/KLR with \u00a77b skeptical prior (0/6 proofs shorten). Per CLAUDE.md \u00a77b audit precedent. The fibre/observable distinction (this session): the Habiro element lives at the fibre level (formal q-deformation, potentially complex Taylor coefficients), evaluated archimedean-ly at real q_0. Untested attack candidates: non-uniform multi-block PRODUCT decomposition; exponentiated per-block; symbolic q-difference solve via sympy; modular bootstrap; Galois descent.",
+    "comment": "Cross-listed in .beans/1ppq-qbeta-queue.json (probe-qbeta-habiro-element-search). 6 mechanisms ruled out per b502b9b83; 1 left = KR/KLR with \u00a77b skeptical prior (0/6 proofs shorten). Per AGENTS.md \u00a77b audit precedent. The fibre/observable distinction (this session): the Habiro element lives at the fibre level (formal q-deformation, potentially complex Taylor coefficients), evaluated archimedean-ly at real q_0. Untested attack candidates: non-uniform multi-block PRODUCT decomposition; exponentiated per-block; symbolic q-difference solve via sympy; modular bootstrap; Galois descent.",
     "status": "open",
     "priority": "high",
     "origin": "session-2026-05-31-queue-build",
@@ -166,7 +166,7 @@
   {
     "id": "research-atom-to-knot-rule-A5plus",
     "summary": "Atom \u2192 knot rule for A \u2265 5 isotopes (currently NO assignment for \u2076Li, \u2077Li, \u2079Be, \u00b9\u00b9B, \u00b9\u2074N, \u00b9\u2079F)",
-    "comment": "Mass-table sweep shows 6 GAPs at A \u2208 {6, 7, 9, 11, 14, 19} \u2014 these isotopes have no canonical atom\u2192knot rule. Per `mass-table-ppb.witness.json`. Open question: what extends the deuteron (E\u2080\u00d7q\u207b\u00b9) and \u2074He (no canonical) to \u2076Li and beyond? Per CLAUDE.md Subgoal-1: 'per-isotope Borromean-tower extension + operator-valued branching combiner' is the closure path. Each isotope likely needs its own braid word in B_{3A} (A nucleons \u00d7 3 strands).",
+    "comment": "Mass-table sweep shows 6 GAPs at A \u2208 {6, 7, 9, 11, 14, 19} \u2014 these isotopes have no canonical atom\u2192knot rule. Per `mass-table-ppb.witness.json`. Open question: what extends the deuteron (E\u2080\u00d7q\u207b\u00b9) and \u2074He (no canonical) to \u2076Li and beyond? Per AGENTS.md Subgoal-1: 'per-isotope Borromean-tower extension + operator-valued branching combiner' is the closure path. Each isotope likely needs its own braid word in B_{3A} (A nucleons \u00d7 3 strands).",
     "status": "open",
     "priority": "medium",
     "origin": "session-2026-05-31-queue-build",
@@ -190,7 +190,7 @@
   {
     "id": "research-im-q0-fibre-vs-observable-doc",
     "summary": "Document Im(q_0)=0 (observable) vs Im(q) unconstrained (fibre) distinction in canonical chain",
-    "comment": "DONE 2026-06-01 by claude/claude-md-fibre-observable-session-refresh-2026-06-01. Added Im(q) fibre vs observable framing as Critical Framing block in CLAUDE.md \u00a7Canonical derivation chain, with explicit table (observable: Im(q_0)=0 verified; fibre: Im(q) unconstrained), the c_k flip-flop trap explanation, and the implication for Habiro element / \u0394_\u03bb closure attacks. Also cited the lusztig_q_0_imaginary_part_zero assertion as archimedean constraint (NOT categorical claim) so future sessions do not conflate the two levels.",
+    "comment": "DONE 2026-06-01 by claude/claude-md-fibre-observable-session-refresh-2026-06-01. Added Im(q) fibre vs observable framing as Critical Framing block in AGENTS.md \u00a7Canonical derivation chain, with explicit table (observable: Im(q_0)=0 verified; fibre: Im(q) unconstrained), the c_k flip-flop trap explanation, and the implication for Habiro element / \u0394_\u03bb closure attacks. Also cited the lusztig_q_0_imaginary_part_zero assertion as archimedean constraint (NOT categorical claim) so future sessions do not conflate the two levels.",
     "status": "done",
     "priority": "medium",
     "origin": "user-2026-05-31",
@@ -199,7 +199,7 @@
       "goal": "framework-discipline",
       "research_grade": false,
       "files_to_update": [
-        "CLAUDE.md (Canonical derivation chain section)",
+        "AGENTS.md (Canonical derivation chain section)",
         "docs/coordination/1ppq-qbeta.md",
         "docs/coordination/option-e.md",
         "docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md"
@@ -212,7 +212,7 @@
   {
     "id": "research-substrate-q0-derivation-DECLINED",
     "summary": "Derivation of substrate q_0 from non-CAL inputs (registered as DECLINED, not for attack)",
-    "comment": "Per CLAUDE.md \u00a7Precision goals Subgoal-2: this is RESEARCH-GRADE OUT OF SCOPE. The coordination ledger explicitly declined this 2026-05-08. Listed here so future sessions DO NOT silently attempt it. To unlock: owner reversal required. The 1ppQ-Q_\u03b2 arm is achievable WITHOUT this (Q_\u03b2 is a relative quantity, q_0 cancels in the right framing). Absolute masses (m_p, m_n, m_\u2074He) at 1ppQ would need this \u2014 those stay open at percent level for nuclei, ppm level for m_p individually.",
+    "comment": "Per AGENTS.md \u00a7Precision goals Subgoal-2: this is RESEARCH-GRADE OUT OF SCOPE. The coordination ledger explicitly declined this 2026-05-08. Listed here so future sessions DO NOT silently attempt it. To unlock: owner reversal required. The 1ppQ-Q_\u03b2 arm is achievable WITHOUT this (Q_\u03b2 is a relative quantity, q_0 cancels in the right framing). Absolute masses (m_p, m_n, m_\u2074He) at 1ppQ would need this \u2014 those stay open at percent level for nuclei, ppm level for m_p individually.",
     "status": "open",
     "priority": "low",
     "origin": "session-2026-05-31-queue-build",
@@ -227,7 +227,7 @@
   {
     "id": "research-qbeta-bar-decomposition-followup",
     "summary": "Use \u0394tr_M sym/antisym bar-decomposition (PR #1615) for structurally-justified Q_\u03b2 attack",
-    "comment": "Per PR #1615 + audit doc docs/audits/2026-06-01-delta-tr-m-bar-decomposition-structural-finding.md: \u0394tr_M(q) decomposes in t=q^(1/2) as sym(t)+antisym(t) under t \u2194 1/t. Symmetric part has clean closed form: \u2212(q\u22121)\u00b2(q+1)/(2q^(3/2)). Numerically at q_proton: sym = 7.7%, antisym = 92.3% of \u0394tr_M. Per prop:li2q-phiq-bar-symmetrization, BINDING quantities (Q_\u03b2) live in the bar-symmetric (Li_2^q) sector \u2014 so Q_\u03b2 derivation should isolate the symmetric projection. ANTI-PATTERN GUARD (CLAUDE.md no-7th-ansatz): any candidate using this decomposition MUST have a structural justification AND pass cross-anchor (q_proton vs q_muon) test before wiring. Numerical near-match candidates (1/h\u00b2 \u2248 102, [2]_q/h\u00b2 \u2248 195) for the required scaling S(q_proton) \u2248 140 are the trap to avoid.",
+    "comment": "Per PR #1615 + audit doc docs/audits/2026-06-01-delta-tr-m-bar-decomposition-structural-finding.md: \u0394tr_M(q) decomposes in t=q^(1/2) as sym(t)+antisym(t) under t \u2194 1/t. Symmetric part has clean closed form: \u2212(q\u22121)\u00b2(q+1)/(2q^(3/2)). Numerically at q_proton: sym = 7.7%, antisym = 92.3% of \u0394tr_M. Per prop:li2q-phiq-bar-symmetrization, BINDING quantities (Q_\u03b2) live in the bar-symmetric (Li_2^q) sector \u2014 so Q_\u03b2 derivation should isolate the symmetric projection. ANTI-PATTERN GUARD (AGENTS.md no-7th-ansatz): any candidate using this decomposition MUST have a structural justification AND pass cross-anchor (q_proton vs q_muon) test before wiring. Numerical near-match candidates (1/h\u00b2 \u2248 102, [2]_q/h\u00b2 \u2248 195) for the required scaling S(q_proton) \u2248 140 are the trap to avoid.",
     "status": "open",
     "priority": "medium",
     "origin": "pr-1615-structural-finding",
@@ -247,7 +247,7 @@
   {
     "id": "research-boiling-freezing-temps-from-braid-hbond",
     "summary": "Review / derive boiling + freezing (melting) temperatures from the braid-weight + H-bond framework",
-    "comment": "QUEUED 2026-06-10 (user: 'queue to review boiling/freezing temps'). Extends the molecular-construction bond-angle program (prop:symmetric-block-domain-weight, q^\u2113 domain weights; CH4/NH3/H2O/C2H4 angles within 0.6\u00b0, H2S/H2Se via Bring 1/\u221a5) from single-molecule geometry to PHASE-TRANSITION observables. Boiling point ~ H-bond network cohesion energy per molecule; freezing/melting point ~ onset of the ordered (ice-like) H-bond lattice. Existing footholds: tetrahedral-hbond-directions (the 4 sp\u00b3 H-bond directions of water), ice-pauling-residual (Pauling residual entropy of ice), covalent-bond-shared-trefoil, h2o-bent-geometry. Open question: is the boiling/melting T a tr_M / binding-energy quantity (bar-symmetric Li_2^q sector) over the H-bond network braid, calibrated by the existing CAL inputs \u2014 i.e. derivable, not fitted? FIRST STEPS (formalize-first, no fitting): (1) corpus-grep boiling|freezing|melting|phase|latent|hydrogen-bond across content/ + computations/ + docs/audits/ to see what exists; (2) identify whether T_boil/T_melt is an energy observable (MeV\u2192K via k_B) traceable to the substrate, or a network-statistical quantity needing a new combiner; (3) state the hypothesis class + the invariant it must satisfy BEFORE any numerical scan (per CLAUDE.md formalize-first). ANTI-PATTERN GUARD: do NOT fit a scale factor to reproduce 373 K / 273 K \u2014 boiling/freezing must trace to CAL-1/2/3 or be reported tier=open. Cross-refs: prop:bring-trefoil-cinquefoil-channel (this branch), conj:h2s-angle-s3-braid-holonomy.",
+    "comment": "QUEUED 2026-06-10 (user: 'queue to review boiling/freezing temps'). Extends the molecular-construction bond-angle program (prop:symmetric-block-domain-weight, q^\u2113 domain weights; CH4/NH3/H2O/C2H4 angles within 0.6\u00b0, H2S/H2Se via Bring 1/\u221a5) from single-molecule geometry to PHASE-TRANSITION observables. Boiling point ~ H-bond network cohesion energy per molecule; freezing/melting point ~ onset of the ordered (ice-like) H-bond lattice. Existing footholds: tetrahedral-hbond-directions (the 4 sp\u00b3 H-bond directions of water), ice-pauling-residual (Pauling residual entropy of ice), covalent-bond-shared-trefoil, h2o-bent-geometry. Open question: is the boiling/melting T a tr_M / binding-energy quantity (bar-symmetric Li_2^q sector) over the H-bond network braid, calibrated by the existing CAL inputs \u2014 i.e. derivable, not fitted? FIRST STEPS (formalize-first, no fitting): (1) corpus-grep boiling|freezing|melting|phase|latent|hydrogen-bond across content/ + computations/ + docs/audits/ to see what exists; (2) identify whether T_boil/T_melt is an energy observable (MeV\u2192K via k_B) traceable to the substrate, or a network-statistical quantity needing a new combiner; (3) state the hypothesis class + the invariant it must satisfy BEFORE any numerical scan (per AGENTS.md formalize-first). ANTI-PATTERN GUARD: do NOT fit a scale factor to reproduce 373 K / 273 K \u2014 boiling/freezing must trace to CAL-1/2/3 or be reported tier=open. Cross-refs: prop:bring-trefoil-cinquefoil-channel (this branch), conj:h2s-angle-s3-braid-holonomy.",
     "status": "done",
     "priority": "medium",
     "origin": "user-2026-06-10",

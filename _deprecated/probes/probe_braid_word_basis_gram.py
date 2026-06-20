@@ -5,7 +5,7 @@
 """Braid-word basis Gram matrix probe at H_3(q_0) and H_6(q_0).
 
 Per PR #639 cycle-7 user direction: test the operator-selection LP
-in the paper's canonical $\\sigma_w$ basis (CLAUDE.md §7a), where
+in the paper's canonical $\\sigma_w$ basis (AGENTS.md §7a), where
 the Gram $G_{wv} = \\mathrm{tr}_M(\\sigma_w \\cdot \\sigma_v)$ is
 genuinely non-diagonal (since adjacent generators don't commute).
 
@@ -213,7 +213,7 @@ def main() -> int:
     print("  pairs in H_6 had identically zero off-diagonal entries by")
     print("  Wedderburn orthogonality).")
     print()
-    print("  The σ_w basis is CANONICAL per CLAUDE.md §7a (Hecke-Skein")
+    print("  The σ_w basis is CANONICAL per AGENTS.md §7a (Hecke-Skein")
     print("  convention) and the Gram is over Z[q, q^-1]. This is the")
     print("  smallest paper-canonical basis where the SDP shadow-price")
     print("  hypothesis is testable in a non-degenerate way.")
@@ -224,7 +224,7 @@ def main() -> int:
         "G_wv = tr_M(σ_w · σ_v) for the 6-element reduced-word basis "
         "{e, σ_0, σ_1, σ_0σ_1, σ_1σ_0, σ_0σ_1σ_0} via the Wenzl bridge "
         "Σ_λ y_λ · tr_{V_λ}(ρ_λ(...)) and Hoefsmit seminormal matrices. "
-        "Demonstrates that the paper-canonical σ_w basis (CLAUDE.md "
+        "Demonstrates that the paper-canonical σ_w basis (AGENTS.md "
         "§7a) has GENUINE off-diagonal Gram entries — the structural "
         "property the per-partition basis lacks by Wedderburn "
         "orthogonality. The SDP shadow-price hypothesis is testable "
@@ -248,7 +248,7 @@ def main() -> int:
         w.add_data("lp_primal_obj_H3", float(lp_result.primal_obj))
         w.add_data("lp_dual_obj_H3", float(lp_result.dual_obj))
         w.add_data("lp_duality_gap_H3", float(lp_result.duality_gap))
-        # Bare-name aliases for lp_dual_witness_validator.py (CLAUDE.md
+        # Bare-name aliases for lp_dual_witness_validator.py (AGENTS.md
         # "LP / SDP duals — first-class infra"). The _H3 names above
         # retain the basis context for future H_6 extension; these
         # bare names are what the validator looks for.

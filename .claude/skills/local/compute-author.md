@@ -27,7 +27,7 @@ This is the pre-work counterpart to `local/compute-audit` (post-hoc
 script review). Both share a vocabulary; this one gates entry, that
 one gates exit.
 
-**Workflow precondition** (CLAUDE.md §Branch + PR workflow, STRICT):
+**Workflow precondition** (AGENTS.md §Branch + PR workflow, STRICT):
 before writing the first line of compute, create a branch
 (`claude/<theme>-<utc-ymd>`) and open a PR. Commit early + commit
 often; small structured commits cherry-pick cleanly. This is a
@@ -97,8 +97,8 @@ code lands.
 | Source | What it gives you | Read time |
 |--------|-------------------|----------:|
 | [`docs/precision-goals.md`](../../docs/precision-goals.md) | **L1 (compute precision) vs L2 (per-observable accuracy)** — what "1 ppb" means in QOU; substrate q_0 conventions; subgoals; CAL-2 floor | 15 min |
-| [`CLAUDE.md` §Precision goals (STRICT)](../../CLAUDE.md) | three-calibration discipline (three masses CAL-1 m_e, CAL-2 m_μ, CAL-3 m_π; q₀ via m_μ/m_e; Q_β derived); no fitting; Δ_λ gate (no 7th ansatz) | 10 min |
-| [`CLAUDE.md` §LP/SDP duals — first-class infra](../../CLAUDE.md) | every LP/SDP must emit `y0_star`, `y_star`, `active_set`, `primal_obj`, `dual_obj`, `duality_gap`; `lp_dual_solver.py` is the canonical entry | 5 min |
+| [`AGENTS.md` §Precision goals (STRICT)](../../AGENTS.md) | three-calibration discipline (three masses CAL-1 m_e, CAL-2 m_μ, CAL-3 m_π; q₀ via m_μ/m_e; Q_β derived); no fitting; Δ_λ gate (no 7th ansatz) | 10 min |
+| [`AGENTS.md` §LP/SDP duals — first-class infra](../../AGENTS.md) | every LP/SDP must emit `y0_star`, `y_star`, `active_set`, `primal_obj`, `dual_obj`, `duality_gap`; `lp_dual_solver.py` is the canonical entry | 5 min |
 | [`.claude/skills/local/production-vs-exploratory-discipline.md`](production-vs-exploratory-discipline.md) | **CAL-4 / empirical-fit / numerology bright-line** — 3-category framework (production / exploratory / numerology), 13-driver canonical menu, Rule 14 escalation, q-locality gate, pre-promotion 7-step checklist. Read BEFORE deciding whether a candidate goes into a `*_50dps.py` production script or stays in a `probe_*.py` exploratory file. | 15 min |
 | [`docs/audits/2026-05-20-compute-optimization-roadmap.md`](../../docs/audits/2026-05-20-compute-optimization-roadmap.md) | current optimization roadmap — Tier 1.A through 1.F | 10 min |
 | [`docs/audits/2026-05-20-next-agent-handover.md`](../../docs/audits/2026-05-20-next-agent-handover.md) | step-by-step Tier 1.A starter (Rust LaurentQ port) | 30 min if working that tier |
@@ -198,7 +198,7 @@ Only three calibration anchors:
 A **fourth calibration is forbidden.** Any compute that introduces a new
 free parameter calibrated against an experimental observable will be
 caught by the canonical-watcher (`.claude/skills/local/canonical-watcher.md`)
-and rejected. The Δ_λ gate (per `CLAUDE.md`) specifically forbids a
+and rejected. The Δ_λ gate (per `AGENTS.md`) specifically forbids a
 seventh ansatz for per-partition Δ_λ values — six have already failed.
 
 ### §1.3 No fitting / numerology
@@ -362,7 +362,7 @@ the hypothesis class is large and a structural invariant is plausible.
 
 Cross-ref: `production-vs-exploratory-discipline.md` (which probes are
 exploratory), `proof-gap-audit.md` §K (declaring "open"), and the
-"Before declaring open math" corpus-grep checklist in CLAUDE.md (the
+"Before declaring open math" corpus-grep checklist in AGENTS.md (the
 complement: formalize-first prunes *forward*; corpus-grep prunes
 *backward* against already-known results).
 
@@ -447,7 +447,7 @@ end QOU.BraidKnot.DeltaLambdaRefutation
 arithmetic is verified exactly — the gap `4498326505997/10^12` equals the
 witness `closure_gap`. The Lean proof is the standard rational form but is
 **not** compiled in this session (the Mathlib
-cache is unavailable in the sandbox; CLAUDE.md "Mathlib cache 403 fallback"),
+cache is unavailable in the sandbox; AGENTS.md "Mathlib cache 403 fallback"),
 so build it in CI / a warmed env before citing it as machine-checked. Promoting
 it to a committed content-object `lem:frobenius-cocasimir-refuted-deuteron`
 beside
@@ -522,13 +522,13 @@ Every compute script ships with a `*.witness.json` (per
 | `auditOnly` or full pipeline | author | `set_audit_only(doc_path)` if this is research-grade |
 
 For LP/SDP witnesses specifically: also emit `y0_star`, `y_star`,
-`active_set`, `primal_obj`, `dual_obj`, `duality_gap` per CLAUDE.md
+`active_set`, `primal_obj`, `dual_obj`, `duality_gap` per AGENTS.md
 §LP/SDP duals.
 
 ## §6. CI / merge etiquette
 
 - **CI is billing.** Don't churn commits. Squash where possible.
-- **Combine related PRs** per CLAUDE.md "minimize PR creation".
+- **Combine related PRs** per AGENTS.md "minimize PR creation".
 - **Branch naming:** `claude/<theme>-<utc-ymd>`. Pattern is load-bearing
   for `coordinate.md` + upload-branch idempotency.
 - **/prepare-merge** at the end. Address Gemini + Copilot review
@@ -554,7 +554,7 @@ For LP/SDP witnesses specifically: also emit `y0_star`, `y_star`,
 ## §8. Pre-work checklist (use before every compute change)
 
 - [ ] I have read `docs/precision-goals.md`
-- [ ] I have read `CLAUDE.md §Precision goals` and `§LP/SDP duals`
+- [ ] I have read `AGENTS.md §Precision goals` and `§LP/SDP duals`
 - [ ] I have identified which **calibration anchor** my new compute touches (CAL-1 / 2 / 3, or none)
 - [ ] My coefficient types are **exact** (BigInt / BigRational / sympy.Rational) — no `float`/`f64` in production paths
 - [ ] Cross-check at 1e-25 vs the existing reference path is planned
@@ -563,7 +563,7 @@ For LP/SDP witnesses specifically: also emit `y0_star`, `y_star`,
 - [ ] Witness emission plan: includes `parameters`, `assertions`, LP/SDP duals if applicable
 - [ ] Long-compute scripts launch with `python -u` + tee
 - [ ] Branch name follows `claude/<theme>-<utc-ymd>`
-- [ ] Combined with related work on one PR (per CLAUDE.md "minimize PR creation")
+- [ ] Combined with related work on one PR (per AGENTS.md "minimize PR creation")
 - [ ] **MBA-appendix sync.** If the script realises a step of the canonical chain (Steps 1–11 per [`docs/canonical-derivation-cheat-sheet.md §0`](../../../docs/canonical-derivation-cheat-sheet.md)) or one of the sidecar algorithms (Δ_λ closure, c_k truncation ladder, LP/SDP dual emission, witness-JSON pipeline), the matching `alg:`-block under [`content/quantum-observable-universe/appendix-mass-binding-algorithms/`](../../../content/quantum-observable-universe/appendix-mass-binding-algorithms/) must be updated in the **same commit** (or at the latest in the same PR): `uses[]` cites the upstream provables you used, `computation.script` / `computation.witness` point at the new files, and the .md body's *Algorithm* / *Correctness* / *Python API* sections reflect the new signature. Reviewers will check the appendix diff against the compute diff.
 
 If any box is unchecked, **stop and resolve before writing code**.

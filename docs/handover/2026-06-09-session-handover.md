@@ -13,7 +13,7 @@ showcase + Jones–Möbius lemma; bib human-review workflow (phases 1–2).
 ## 1. IMMEDIATE — merge the two ready PRs (rebase-merge)
 
 Both are green-local, reviews addressed, clean linear history → **rebase-merge**
-(CLAUDE.md §8 default). The author authorized "auto /prepare-merge all open PRs
+(AGENTS.md §8 default). The author authorized "auto /prepare-merge all open PRs
 IMMEDIATELY" (2026-06-09) — this is standing merge permission for these two.
 
 ### PR #2024 — ledger pass-3 (docs-only) — READY

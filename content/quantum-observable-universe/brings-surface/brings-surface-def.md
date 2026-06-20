@@ -1,4 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 Let $R$ be a commutative ring with $30 \in R^{\times}$ (i.e.
 $\mathrm{char}(R) \nmid 30$).  Let $x_j$, $j\in\{0,\dots,4\}$, be

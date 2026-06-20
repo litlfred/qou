@@ -30,7 +30,7 @@ above has not yet landed.  This file:
      `Fintype.card_congr RSK.bijection`,
      `Fintype.card_sigma`, and `Fintype.card_prod`.
 
-The class shape is the §3b-cond pattern from CLAUDE.md: the
+The class shape is the §3b-cond pattern from AGENTS.md: the
 upstream Mathlib theorem is the only sorry/instance the
 downstream chain depends on; once it lands, the whole chain
 becomes fully verified.

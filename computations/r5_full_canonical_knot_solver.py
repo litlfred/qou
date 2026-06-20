@@ -49,7 +49,7 @@ Operator-selection LP (per-atom, post-search):
 
   This is canonically `solve_operator_selection_lp` from
   `lp_dual_solver.py`; the witness is auto-validated by
-  `lp_dual_witness_validator.py` against the CLAUDE.md
+  `lp_dual_witness_validator.py` against the AGENTS.md
   "LP/SDP duals — first-class infra" rule.
 
 Cross-paper references:
@@ -338,7 +338,7 @@ def markov_trace_h3(eval_result: dict, wenzl_weights: dict) -> float:
 #       is the canonical-basis-class deduplication.
 #
 # This gives ~3-4× speedup AND prevents the search winner from being
-# a lucky-coincidence cemetery braid.  Per CLAUDE.md §7b "Symmetric-
+# a lucky-coincidence cemetery braid.  Per AGENTS.md §7b "Symmetric-
 # crystal techniques (KLR / Kashiwara) — authoring guidance", this
 # is the symmetric-crystal shortcut for filtering trivial classes.
 # ───────────────────────────────────────────────────────────────────
@@ -467,7 +467,7 @@ def cost_for_candidate(
 
       - alpha_gap (PRIMARY): max Wedderburn-block PSD violation across
         partitions of n_0.  Zero iff every block is PSD at q_0.
-        Per CLAUDE.md / prop:joint-tower-sdp-confinement, this is the
+        Per AGENTS.md / prop:joint-tower-sdp-confinement, this is the
         structural feasibility certificate of the SDP.
 
       - relative binding residual (SECONDARY): the single-term flagship
@@ -671,7 +671,7 @@ def solve_atom_b3(
             "ranking_metric": "rel_residual (single-term formula)",
             "top_k": psd_top,
         },
-        # ── LP/SDP dual fields per CLAUDE.md "first-class infra". ───
+        # ── LP/SDP dual fields per AGENTS.md "first-class infra". ───
         "lp_dual": {
             **lp_res.to_dict(),
             "channel_labels": [

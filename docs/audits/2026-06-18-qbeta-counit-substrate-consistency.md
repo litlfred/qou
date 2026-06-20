@@ -38,7 +38,7 @@ The counit value matches the closed form `m_e(q+1)(q²−2q−1)/(2q³)`
 (Lean `Qbeta_closed`) to `< 10⁻⁴⁰`. Reproducing **both** signatures at the
 *live* anchor (a) validates the substrate loop value `z_sub`, and
 (b) **confirms the +0.17 % counit value is current, not stale** — the anchor
-re-pin was 2026-05-28, and CLAUDE.md flags Habiro-exact Q_β witnesses as
+re-pin was 2026-05-28, and AGENTS.md flags Habiro-exact Q_β witnesses as
 potentially stale post-re-pin.
 
 ## The convergence-leg invariant (formalize-first)

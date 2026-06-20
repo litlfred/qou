@@ -181,7 +181,7 @@ Per the plan but not landed this round (kept narrow to ship Phase 1):
 
 - **Conditional-class content block** `compound-shift-nf-theorem`.
   The plan calls for a `proposition` block with the
-  `[PhiQTower M]` class hypothesis (CLAUDE.md §3b-cond pattern). The
+  `[PhiQTower M]` class hypothesis (AGENTS.md §3b-cond pattern). The
   closed-form shift is already proved in
   [`per-nucleon-shift-additive-linearity`](https://github.com/litlfred/qou/blob/claude/hecke-nf-shift-impl-0rNDy/content/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md),
   and the LP active-set bound is in

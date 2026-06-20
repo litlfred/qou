@@ -118,7 +118,7 @@ $$
 \boxed{\;\frac{1}{\alpha_{EM}} \;=\; 45 \cdot [3]_q \cdot \bigl(1 + \delta_{CS} + 8q \cdot \delta_{CS}^2\bigr), \qquad \delta_{CS} = \hbar_q^{4} \cdot [5]_q.\;}
 $$
 
-with $\hbar_q = (q-1)/q$ and $[k]_q = (q^k - q^{-k})/(q - q^{-1})$ per the [CLAUDE.md notation register](../CLAUDE.md). Source: [`alpha_em_pslq_uniqueness.py`](../computations/alpha/alpha_em_pslq_uniqueness.py).
+with $\hbar_q = (q-1)/q$ and $[k]_q = (q^k - q^{-k})/(q - q^{-1})$ per the [AGENTS.md notation register](../AGENTS.md). Source: [`alpha_em_pslq_uniqueness.py`](../computations/alpha/alpha_em_pslq_uniqueness.py).
 
 ### 3.2 Numerical validation
 

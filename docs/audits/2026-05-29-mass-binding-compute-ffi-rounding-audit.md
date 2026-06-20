@@ -225,7 +225,7 @@ they are used, and they are not the bottleneck.
    live code `tools/qou-substrate/python/qou_substrate/precision.py`
    (re-exported by the `_precision.py` shim) is **65 / 50 / 15**. Synced
    the doc to the code.
-2. **CLAUDE.md L1 row** carried the same stale "50 dps compute / 40 dps
+2. **AGENTS.md L1 row** carried the same stale "50 dps compute / 40 dps
    serialization" parenthetical — synced to 65/50 for consistency with its
    own cited authoritative reference (`precision-goals.md`).
 3. **`ffi-roundtrip-audit.md` offender catalogue was stale.** 5 of the 7

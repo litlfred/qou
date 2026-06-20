@@ -45,7 +45,7 @@ WHAT IS NOT DONE HERE.
   permanent fix per the truncation-order audit. This probe is the
   structural ruling-out at the c_3 level alone.
 
-50-dps mpmath throughout. WitnessBuilder + tee log per CLAUDE.md
+50-dps mpmath throughout. WitnessBuilder + tee log per AGENTS.md
 long-compute discipline.
 """
 

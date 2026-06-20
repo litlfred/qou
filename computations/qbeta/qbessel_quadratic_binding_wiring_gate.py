@@ -32,7 +32,7 @@ The unavoidable inputs a binding correction needs, and whether the substrate fix
 
 If delta_B is stable across reasonable (nu_lambda, w_lambda) choices, the correction
 is forced and worth wiring.  If it swings in sign/scale, the map is a free knob and
-wiring it is the forbidden 7th ansatz (CLAUDE.md Delta_lambda gate).
+wiring it is the forbidden 7th ansatz (AGENTS.md Delta_lambda gate).
 
 What is computed (no fit; nothing wired)
 ----------------------------------------
@@ -201,7 +201,7 @@ def main():
         print("  Correction SWINGS in sign/scale across equally-natural (nu, arg-map)")
         print("  choices => the (nu_lambda, w_lambda) map is a FREE FUNCTIONAL KNOB,")
         print("  NOT fixed by the substrate. A per-block propagator multiplier is then")
-        print("  a disguised 7th Delta_lambda ansatz (CLAUDE.md Delta_lambda gate:")
+        print("  a disguised 7th Delta_lambda ansatz (AGENTS.md Delta_lambda gate:")
         print("  'do not propose a 7th fit-based ansatz'). DO NOT WIRE.")
         print("  The admissible object G (PRs #2530/#2533) is real, but a parameter-")
         print("  free binding correction needs an INDEPENDENT substrate derivation of")

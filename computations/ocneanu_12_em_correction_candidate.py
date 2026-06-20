@@ -39,7 +39,7 @@ OPEN.
 **Critical guard against shape-probing.** Per
 [`production-vs-exploratory-discipline.md`](../../.claude/skills/local/production-vs-exploratory-discipline.md):
 this script is EXPLORATORY (records a tiered near-match, does not
-wire any production formula). The CLAUDE.md anti-pattern
+wire any production formula). The AGENTS.md anti-pattern
 "empirical-fit dressed as derivation" is avoided by:
 
   1. Reporting Δ% explicitly (0.17%, not "matches")

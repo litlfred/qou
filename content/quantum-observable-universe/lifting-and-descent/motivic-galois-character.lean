@@ -11,7 +11,7 @@ carried by a single character of the cyclotomic Galois group:
 
 axiomatised here as a Lean class.  Concrete instances supply the
 substrate-internal structure; `sorry` in any field is a substrate
-axiom (CLAUDE.md §3b), not a missing proof.
+axiom (AGENTS.md §3b), not a missing proof.
 
 Ref: [yekutieli2010] — Yekutieli's obstruction theory
 Ref: [tate1967] — Tate's thesis (adelic decomposition)

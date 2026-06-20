@@ -11,7 +11,7 @@ This Lean file follows the QOU.Infra.Polylogarithm pattern:
 - Concrete `noncomputable def` for closed-form q-quantities
 - Verified arithmetic theorems at q = 1 (classical limit)
 - `class` hypothesis for the q ≠ 1 substantive content
-  (per CLAUDE.md §3b-cond conditional-class exception)
+  (per AGENTS.md §3b-cond conditional-class exception)
 - Default instance discharging the verified base case
 
 Ref: [faddeev1995] Discrete Heisenberg-Weyl group and modular group
@@ -78,7 +78,7 @@ theorem li2qCoeff_bar_invariant_at_q_eq_one (n : ℕ) :
       classical-limit case, verified via li2qCoeff_at_q_eq_one).
 
     Downstream theorems consume the class via [Instance] per
-    CLAUDE.md §3b-cond. -/
+    AGENTS.md §3b-cond. -/
 class Li2qPhiqBarSymmetrization where
   /-- The (q, n) pairs where the bar-symmetrization identity
       is established. -/

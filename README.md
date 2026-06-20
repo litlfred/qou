@@ -96,7 +96,7 @@ Live snapshot from `scripts/lean-coverage.ts` (regenerated on each `main` publis
 | Definitions | 211 | 211 | — |
 
 Class-axiomatised conjectures follow the conditional-class convention
-(CLAUDE.md §3b): the conjecture is encoded as a Lean `class` with
+(AGENTS.md §3b): the conjecture is encoded as a Lean `class` with
 explicit field axioms, and downstream theorems carry the class as an
 `[Instance]` hypothesis — so dependent results are fully verified
 by Lean modulo a single, named, axiomatised input.

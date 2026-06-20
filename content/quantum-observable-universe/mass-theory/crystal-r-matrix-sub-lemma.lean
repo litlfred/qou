@@ -56,7 +56,7 @@ class WenzlAOperator where
   block : ∀ (lam mu nu : QOU.BraidKnot.Partition) (_iface : String), Unit
   /-- The operator-valued sub-lemma 2.1 holds — the Wenzl 1988
       identity for characters. Sorry below = conjecture per
-      CLAUDE.md §3b. -/
+      AGENTS.md §3b. -/
   identity_holds : Prop
 
 /-- **Crystal R-matrix Sub-lemma 2.1 (operator-valued statement).**

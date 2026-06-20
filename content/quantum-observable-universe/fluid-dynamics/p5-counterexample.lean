@@ -14,7 +14,7 @@ Conjectural NS-counterexample: existence of a smooth initial datum whose q-defor
 
 ## Status
 
-Class-axiomatised per CLAUDE.md §3b-cond. The conjecture sits in
+Class-axiomatised per AGENTS.md §3b-cond. The conjecture sits in
 the residual §3b-violator cone identified in
 [`AUDIT-DEEP-2026-05.md`](../../../../AUDIT-DEEP-2026-05.md) §1A
 (P1.b sweep). Class declaration here lets downstream

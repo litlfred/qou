@@ -21,7 +21,7 @@ unproved input is exactly the class instance, and the conditional
 results are verified by Lean.
 
 This pattern (axiomatize the conjecture as a class, prove conditional
-downstream results) follows §3b of `CLAUDE.md`.
+downstream results) follows §3b of `AGENTS.md`.
 
 -- Ref: [manuscript] conj:mass-endomorphism
 -- Ref: [manuscript] conj:brane-tower-z-habiro

@@ -9,7 +9,7 @@ computed as the exact ratio needed to hit the target and then
 name-matched against a 9-candidate substrate menu, and it fails to
 generalize to the absolute binding energies (154 % error when applied
 to $B(\mathrm{D},\mathrm{T},{}^3\mathrm{He})$). Per the Δ_λ gate
-(CLAUDE.md) this is recorded as a near-match, not a closure of the
+(AGENTS.md) this is recorded as a near-match, not a closure of the
 mirror difference.
 
 **Primary content moved to audits.** See [`docs/audits/2026-05-31-isospin-mirror-v9-discipline-assessment.md`](../../../docs/audits/2026-05-31-isospin-mirror-v9-discipline-assessment.md)

@@ -194,7 +194,7 @@ print_nf("B₃ (reference)", b3_vec)
 #  THE LINEAR PROGRAM
 # ══════════════════════════════════════════════════════════════
 
-# Collect per-nucleon LP duals for the witness (per CLAUDE.md
+# Collect per-nucleon LP duals for the witness (per AGENTS.md
 # §"LP / SDP duals — first-class infra"). Routed through
 # lp_dual_solver.solve_operator_selection_lp for the canonical
 # y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap
@@ -563,7 +563,7 @@ witness = {
     "markov_traces": TR_M_BASIS.tolist(),
     "b3_nf": b3_vec.tolist(),
     "sdp_lift": sdp_reports,
-    # LP-dual record per nucleon (CLAUDE.md §"LP / SDP duals — first-
+    # LP-dual record per nucleon (AGENTS.md §"LP / SDP duals — first-
     # class infra"; lp_dual_witness_validator enforces).
     "lp_dual_per_nucleon": lp_duals_per_nucleon,
     # Promote the proton's dual to top-level for the validator's

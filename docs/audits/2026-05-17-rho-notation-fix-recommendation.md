@@ -239,7 +239,7 @@ The honest framework state:
    operator K(𝔥) sits in H_{3A}, not H_3; ρ_K = round[dim_q(λ*)] at
    the H_{3A} level).
 5. **Lean-side commitment**: state ρ_K explicitly as an axiom class
-   (per CLAUDE.md §3b-cond) in the Lean library; downstream theorems
+   (per AGENTS.md §3b-cond) in the Lean library; downstream theorems
    become conditional on its categorical derivation.
 
 ## 8. Three asks for owner

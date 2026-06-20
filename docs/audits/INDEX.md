@@ -84,14 +84,14 @@ content. T5 is harder (no chronological signal) and could be deferred.
   — the *content-level* GAP-A/B/C/D audit (separate concern; refreshed
   in PRs #1075 + #1082 during the same session that produced this
   index).
-- CLAUDE.md §"Branch + PR workflow" §"Exception: batch audit-job runs"
+- AGENTS.md §"Branch + PR workflow" §"Exception: batch audit-job runs"
   — bulk-move commits are acceptable for mechanical sweeps.
 
 ## Why phased + not bulk-move
 
 The 353 audit files are not uniformly stale. Bulk-moving the entire
 pre-2026-05-10 cluster (148 files) would archive historically valuable
-content without per-file review. Per CLAUDE.md "Don't add features…
+content without per-file review. Per AGENTS.md "Don't add features…
 beyond what the task requires" and the user directive *"once reviewed,
 deprecate as needed into folder"* — the **review** step is the
 discipline, not the move. This index makes the review tractable for

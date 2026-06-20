@@ -60,7 +60,7 @@ empirical**. The "10" exponent is derived:
 ## Lean structure
 
 The uniqueness is staged via the [§3b-cond conditional-class
-pattern](../../../CLAUDE.md):
+pattern](../../../AGENTS.md):
 
 - `BarInvariant R σ_pn` — substrate axiom (bar-involution-respecting).
 - `ColorFlavorCompatible R σ_pn` — **open**: refines once the
@@ -76,7 +76,7 @@ content for downstream use.
 
 The open `ColorFlavorCompatible` class is the per-quark color
 weighting derivation; until that lands, the uniqueness theorem is
-proved *conditional on the class instance* per CLAUDE.md §3b-cond.
+proved *conditional on the class instance* per AGENTS.md §3b-cond.
 
 ## Computational consequence
 

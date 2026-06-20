@@ -159,7 +159,7 @@ The unifying formula's algebraic content is **Lean-proved** in two places:
     - `br6_eq_br2_br3_times_one_plus_h_sq` — fundamental tau identity (mirror of sibling file's theorem)
     - `lepton_xi_electron_eq_one` — calibration convention
 
-All proofs are `field_simp; ring` over generic `[Field R]` per CLAUDE.md §7c.
+All proofs are `field_simp; ring` over generic `[Field R]` per AGENTS.md §7c.
 
 The categorical derivation (why $\xi_m = [2m-1]_q \cdot [m]_q / [2m]_q$ specifically — i.e., how the q-bracket triple $(2m-1, m, 2m)$ falls out of the per-braid mass tower's operator-valued $A^\lambda_{\mu, \nu}(I)$ branching at the lepton's H_{2m+1}-substrate amphichiral knot) remains open work for Option E (Kashiwara crystal).
 

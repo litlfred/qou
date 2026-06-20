@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Convergence of the quantum dilogarithm $\\Phi_q$ on $\\lvert z\\rvert < q$",
   // The proof lives in the library file PhiQConvergence.lean (sorry-free);
-  // ref the library decl directly — no sibling stub (CLAUDE.md no-shadowing).
+  // ref the library decl directly — no sibling stub (AGENTS.md no-shadowing).
   lean: {
     ref: "qou:QOU.MassEndomorphism.PhiQConvergence.quantumDilog_multipliable",
     validation: "not_checked",

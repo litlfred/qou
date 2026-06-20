@@ -176,8 +176,8 @@ the full-precision derived value.
 3. **m_p / m_n / Δ_pn — V_7 is the structural ceiling at +0.144 %.**
    Below that, three research directions:
    - **GAP-A-3 / GAP-A-4** (categorical brane-tower level
-     selection / ρ general rule) per CLAUDE.md §Δ_λ gate
-   - **Option E (Kashiwara crystal)** per CLAUDE.md §Δ_λ gate
+     selection / ρ general rule) per AGENTS.md §Δ_λ gate
+   - **Option E (Kashiwara crystal)** per AGENTS.md §Δ_λ gate
    - **Substrate derivation of q_0** (out-of-scope per
      coord-ledger 2026-05-08)
 

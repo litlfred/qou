@@ -1,6 +1,6 @@
 import { conjecture } from "../../schema/builders";
 
-// Demoted from `proposition` to `conjecture` per CLAUDE.md §3b
+// Demoted from `proposition` to `conjecture` per AGENTS.md §3b
 // (conjectural propagation): the leading-order closed form
 // `N_v = |S_5| · q_0^{90}` depends on two upstream `conj:` blocks
 // (`conj:n-v-bring-action` and `conj:n-v-tower-depth-ninety`),

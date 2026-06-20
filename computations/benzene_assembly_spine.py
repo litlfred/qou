@@ -22,7 +22,7 @@ The spine (each arrow is an existing, separately-derived content block):
 The nucleon/atom legs are owned by sibling clusters (residue-A / GAP-A-4 /
 Borromean-h4); per owner directive this spine CONSUMES them and computes the
 molecular layer. The molecular predictions are categorical and parameter-
-free: bond order = #saturated orthogonal channels (CLAUDE.md "bond order =
+free: bond order = #saturated orthogonal channels (AGENTS.md "bond order =
 LP active-set cardinality"), with the lateral-π overlap model
 (prop:embeddable-knot-operator) supplying the fractional π of an aromatic
 ring.

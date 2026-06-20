@@ -54,7 +54,7 @@ noncomputable def chi_V111_beta_n (q : ℝ) : ℝ :=
     DUPLICATION TRACKING: also defined as `chi_V111_diff_closed` in
     `rem:chi-per-irrep-cyclotomic-closed-forms`. Chapter-block
     isolation prevents direct cross-file import; centralisation
-    deferred per CLAUDE.md convention. -/
+    deferred per AGENTS.md convention. -/
 noncomputable def chi_V111_difference_factored (q : ℝ) : ℝ :=
   -(q^2 + 1)^2 * (q^2 - 1) / (4 * q^5)
 

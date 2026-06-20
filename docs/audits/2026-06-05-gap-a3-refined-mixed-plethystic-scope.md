@@ -78,7 +78,7 @@ A future probe (out of scope here; deferred to the GAP-A-3 / GAP-A-4 sibling tra
 ## §6. Discipline
 
 - **EXPLORATORY scope only** — this PR does not run the probe.
-- **Formalize-first** — the mixed candidate is identified BEFORE running, per CLAUDE.md §"Formalize-first probe discipline". The exponents `(4N, 2(Z-1))` are derived from the Phase-4 carrier, not fitted.
+- **Formalize-first** — the mixed candidate is identified BEFORE running, per AGENTS.md §"Formalize-first probe discipline". The exponents `(4N, 2(Z-1))` are derived from the Phase-4 carrier, not fitted.
 - **Not a 7th fit ansatz** — the per-partition projection is a categorical content count product, not a free statistic of λ.
 - **Owner-gated for the ⁴He test** — the Hecke character extraction at n=12 is research-grade infrastructure work. The deuteron-only one-line modification is foreground-discharable but is a SUB-case of the genuine mixed candidate.
 

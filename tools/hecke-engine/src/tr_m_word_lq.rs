@@ -12,7 +12,7 @@
 //! and evaluates at q₀ to mpmath.mpf at production dps.
 //!
 //! No f64 anywhere in the recursion — every coefficient is exact
-//! `BigInt` via [`LaurentPolyQ`]. Per CLAUDE.md §Precision goals L1.
+//! `BigInt` via [`LaurentPolyQ`]. Per AGENTS.md §Precision goals L1.
 
 use crate::laurent_poly_q::LaurentPolyQ;
 use std::collections::{BTreeMap, HashMap};

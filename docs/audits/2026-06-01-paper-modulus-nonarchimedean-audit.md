@@ -65,7 +65,7 @@ as stated. Highest-priority refactor.
 
 ## Recommended refactor
 
-**Per the user's framing (paper-level discipline parallel to CLAUDE.md §7c):**
+**Per the user's framing (paper-level discipline parallel to AGENTS.md §7c):**
 
 1. **Categorical / pre-τ statements** should use signed `tr_M`, `χ_λ`, etc. — these are bar-asymmetric objects per `prop:li2q-phiq-bar-symmetrization` and should respect that asymmetry at the categorical level.
 
@@ -111,6 +111,6 @@ as stated. Highest-priority refactor.
 
 - PR #1641 — sister diagnostic showing Φ_q(signed) vs Φ_q(|...|) up to 92% per-term divergence
 - PR #1626 — complex c_3 fibre diagnostic
-- PR #1616 — Im(q) fibre/observable framing in CLAUDE.md
+- PR #1616 — Im(q) fibre/observable framing in AGENTS.md
 - `prop:li2q-phiq-bar-symmetrization` — the bar-asymmetric Φ_q vs bar-symmetric Li_2^q split
-- CLAUDE.md §7c — base ring convention (generic R vs archimedean ℝ); analogous paper-level discipline
+- AGENTS.md §7c — base ring convention (generic R vs archimedean ℝ); analogous paper-level discipline

@@ -50,7 +50,7 @@ Paper backing: this formula is the explicit motivator of the
 the still-open compute frontier (PRs #602 / #603 / #613).
 
 **Lean status**: `rho-k-h3a-refinement.lean` exists; per
-CLAUDE.md §3b-cond it likely class-axiomatises the Δ_λ existence.
+AGENTS.md §3b-cond it likely class-axiomatises the Δ_λ existence.
 The script's role is to **consume** the Δ_λ catalog once
 available; currently reports `delta_lambda_unavailable` for every
 atom (catalog blocked on the derivation — per Phase 1 audit).

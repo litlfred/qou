@@ -5,7 +5,7 @@
 Formalize-first STRUCTURAL GATE for the owner-seeded bean `qbk2`
 ("the q-Bessel 2nd kind has a quadratic action that can be used in mass/binding
 as corrections").  This is the narrow-before-you-scan step required by the bean's
-gate and by CLAUDE.md §Formalize-first probe discipline: settle the structure of
+gate and by AGENTS.md §Formalize-first probe discipline: settle the structure of
 the 2nd-kind solution BEFORE any wide cross-anchor numeric search.
 
 It does NOT run a binding scan and wires nothing.  It DERIVES the second solution

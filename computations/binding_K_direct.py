@@ -82,7 +82,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 # Atom roster + CODATA total masses (MeV).  Binding = M_codata − (Z m_p + N m_n).
 # Masses routed through the codata_constants registry (CODATA 2022 validation
-# witness) — no inline CODATA literals (CLAUDE.md P31 / three-CAL purity).
+# witness) — no inline CODATA literals (AGENTS.md P31 / three-CAL purity).
 ATOMS = {
     "p":   {"Z": 1, "N": 0, "M_MeV": str(M_P_MEV_VALIDATION)},
     "n":   {"Z": 0, "N": 1, "M_MeV": str(M_N_MEV_VALIDATION)},

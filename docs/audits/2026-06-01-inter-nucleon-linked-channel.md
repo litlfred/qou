@@ -158,7 +158,7 @@ flavor-cusp audits name. **The 5↔3 bridge stays OPEN.**
 
 The Reidemeister-I framing anomaly multiplies the trace by `q^{w·c}` (`w` =
 writhe, `c` = per-crossing framing coupling). At the observable level
-`Im(q₀)=0` (CLAUDE.md), so `q^{w·c}` is a real framing FACTOR, not a complex
+`Im(q₀)=0` (AGENTS.md), so `q^{w·c}` is a real framing FACTOR, not a complex
 phase. With `c=1` (SET, not fitted):
 
 | Channel | writhe `w` | framing `q^{w·c}` (q₀, c=1) |

@@ -7,7 +7,7 @@ import Mathlib.Tactic
 # Brane tower lives in the $z$-Habiro ring (conjecture class)
 
 This file axiomatizes `conj:brane-tower-z-habiro` as a Lean `class`
-following the §3b conditional-class pattern from CLAUDE.md.
+following the §3b conditional-class pattern from AGENTS.md.
 
 **Conjecture (informal):** The brane-tower partial sums
 
@@ -87,7 +87,7 @@ instance canonical (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where
 -- algebraic Cauchy-limit half of the conjecture; the multiplicity-refined
 -- scalar form `n_⋆(ℓ, n₀, k, m)` with m = per-generator near-pole
 -- multiplicity profile; and crystal-basis derived candidates such as
--- Type-B-folded-crystal depth (CLAUDE.md §7b).
+-- Type-B-folded-crystal depth (AGENTS.md §7b).
 --
 -- Witnesses:
 --   computations/probe-phiq-uniform-k.witness.json
@@ -257,7 +257,7 @@ def witnessPairKnotMarkovTraceMaxAbsErrPct : ℝ := 996.6
 
 /-- Structural finding from the same pair-knot witness: the
     **operator-selection LP dual** (per `prop:operator-selection-lp`
-    and CLAUDE.md "LP / SDP duals — first-class infra") selects
+    and AGENTS.md "LP / SDP duals — first-class infra") selects
     the pair-knot composite operators `σ_{pp}` / `σ_{nn}` in the
     active set EXACTLY for magic-shell atoms.
 

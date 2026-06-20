@@ -21,7 +21,7 @@ A type-level scaffold for:
 
 - `QBetaCategoricalPrecisionLadder.lean` (`τ_M(T_β)` is the canonical Q_β source)
 - Audit: [`docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md`](../../../../../docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md)
-- CLAUDE.md §"Hecke-Skein convention"
+- AGENTS.md §"Hecke-Skein convention"
 - [wenzl1988] doi:10.1007/BF01239526 (Markov trace on H_n(q))
 -/
 
@@ -37,7 +37,7 @@ namespace QOU.Machinery
 
 The Iwahori-Hecke algebra is presented as a quotient of the braid
 group algebra of `B_n` by the relation `(σ_i - q)(σ_i + q⁻¹) = 0`
-(CLAUDE.md §7a Hecke-Skein convention). Mathlib has only a basic
+(AGENTS.md §7a Hecke-Skein convention). Mathlib has only a basic
 stub; here we axiomatise the structure for downstream consumers. -/
 
 /-- The **Iwahori-Hecke algebra** `H_n(q)` as an abstract type-class

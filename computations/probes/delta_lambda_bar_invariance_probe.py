@@ -2,7 +2,7 @@
 
 
 # polynomial_q_not_applicable: structural-constraint probe under
-#   bar-involution (Type-B fold per CLAUDE.md §7b). Not a fit
+#   bar-involution (Type-B fold per AGENTS.md §7b). Not a fit
 #   ansatz — imposes Δ_λ = Δ_{λ^T} derivable from canonical
 #   framework primitives.
 """
@@ -10,7 +10,7 @@ Probe-1: Bar-invariance LP for Δ_λ closure on deuteron.
 
 Per `docs/audits/2026-05-24-delta-lambda-closure-synthesis-next-step.md`
 recommended diagnostic probe. Imposes the structural constraint
-**Δ_λ = Δ_{λ^T}** derivable from CLAUDE.md §7b (Type-B folding of
+**Δ_λ = Δ_{λ^T}** derivable from AGENTS.md §7b (Type-B folding of
 the sl_n Cartan datum produces a symmetric crystal whose GS normal
 forms are bar-involution-invariant by construction). NOT a 7th
 fit-based ansatz; the bar-invariance is a framework-canonical
@@ -250,7 +250,7 @@ def main() -> int:
     w.set_description(
         "Probe-1 from docs/audits/2026-05-24-delta-lambda-closure-"
         "synthesis-next-step.md. Imposes structural constraint "
-        "Δ_λ = Δ_{λ^T} (bar-involution / Type-B fold per CLAUDE.md "
+        "Δ_λ = Δ_{λ^T} (bar-involution / Type-B fold per AGENTS.md "
         "§7b) on the deuteron Δ_λ system; reports the min-||ν||_2 "
         "LP solution from the 5-dim affine subspace. NOT a 7th-"
         "ansatz fit — bar-invariance is derivable from canonical "

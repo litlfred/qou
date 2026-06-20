@@ -1,4 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 **Proposition (closed form for $y_\lambda$ via Wenzl bridge).**
 *Let $\sigma_i$ be the symmetric Hecke generators of $H_n(R, q)$
@@ -206,7 +206,7 @@ $(Q, z_{\mathrm{GL}}) = (q^2, q \cdot z)$ is recorded at two layers:
    Chlouveraki HDR Theorem 6.20 is taken as a class instance
    (1-dimensionality of the type-A Markov-trace family), the
    definitional layer (1) maps trace-uniqueness onto parameter-pair
-   uniqueness. Per CLAUDE.md §3b-cond, this is a *rigorous
+   uniqueness. Per AGENTS.md §3b-cond, this is a *rigorous
    conditional result* — fully verified by Lean modulo the named
    class axiomatising the cited theorem.
 

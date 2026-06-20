@@ -22,7 +22,7 @@ This is a striking near-match. The commit headline reads
 Tests whether `(1 + q)/2` is **uniquely identified** by the
 0.11% match — or if multiple categorically-natural candidates
 also match within this band (in which case the v9 finding is a
-"coincidence basin," NOT a structural derivation, per CLAUDE.md
+"coincidence basin," NOT a structural derivation, per AGENTS.md
 anti-pattern "matches at q_0 ≠ uniquely fixed by structure").
 
 Method:
@@ -193,7 +193,7 @@ def main() -> int:
         verdict = (
             f"COINCIDENCE BASIN: {len(within_011)} candidates match within "
             f"0.11%. The v9 'BREAKTHROUGH' framing overstates — many "
-            f"q-arithmetic forms cluster at this precision. CLAUDE.md "
+            f"q-arithmetic forms cluster at this precision. AGENTS.md "
             f"anti-pattern: 'matches at q_0 ≠ uniquely fixed by structure'."
         )
 

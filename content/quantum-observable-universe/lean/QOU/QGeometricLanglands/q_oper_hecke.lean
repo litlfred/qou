@@ -6,7 +6,7 @@
 
 This is a **conjecture**: the class `q_oper_hecke` carries a placeholder
 field; the `noncomputable instance` is the conjectural witness whose
-`sorry` represents the open conjecture itself (per CLAUDE.md §3b),
+`sorry` represents the open conjecture itself (per AGENTS.md §3b),
 NOT a missing proof.  Downstream theorems may take
 `[q_oper_hecke]` as an explicit `[Instance]` hypothesis to derive
 unconditional Lean theorems modulo this single conjectural input

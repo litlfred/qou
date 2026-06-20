@@ -52,7 +52,7 @@ Conversely, the pre-Archimedean substrate is **already** generic:
 | [`bar-involution.ts`](../../content/quantum-observable-universe/braids-and-knots/bar-involution.ts) | Hecke algebra over arbitrary CommRing | $q \mapsto q^{-1}$ requires only invertibility. |
 | `def:frobenius-hopf-substrate` ([`frobenius-hopf-substrate.md`](../../content/quantum-observable-universe/quantum-observable-universes/frobenius-hopf-substrate.md)) | Non-degenerate bilinear pairing | No Hermitian / $\ast$-structure imposed. |
 
-**Conclusion**: $\S 7\mathrm{c}$ base-ring discipline (`CLAUDE.md`) is
+**Conclusion**: $\S 7\mathrm{c}$ base-ring discipline (`AGENTS.md`) is
 **honored** in the substrate. Reality enters only at the Archimedean
 realization step, by *definitional choice* of the codomain.
 

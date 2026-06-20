@@ -59,7 +59,7 @@ formalisation can decide whether
       categorical correction, or
   (b) the form is anchor-class-specific (doubly-magic only).
 
-This is a DIAGNOSTIC PROBE, NOT a fit.  Per CLAUDE.md three-cal
+This is a DIAGNOSTIC PROBE, NOT a fit.  Per AGENTS.md three-cal
 discipline, calibrating Δ_coupling to AME is forbidden — this script
 identifies which structural form to TARGET in the closed-form
 derivation, not which one to TUNE.
@@ -348,7 +348,7 @@ def main() -> None:
         "Markov-trace structure) for inclusion in the §3b-cond canonical "
         "instance MagicShellCrossCoupling.canonicalCrossCoupling. "
         "A numerical near-fit is NOT acceptable as a Pattern-A/B Lean "
-        "instance per CLAUDE.md §3b-cond + the trivial-skeleton workplan."
+        "instance per AGENTS.md §3b-cond + the trivial-skeleton workplan."
     )
     builder.add_caveat(
         "The 0.71% gap at the (2,2) doubly-magic anchor exceeds the "

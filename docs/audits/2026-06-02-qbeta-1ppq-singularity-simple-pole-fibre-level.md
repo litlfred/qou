@@ -40,7 +40,7 @@ Loads c_2..c_10 from the canonical-pinned SDP extraction
 
 ### Method note on attempting c_11..c_15
 
-The probe initially attempted to extend the c_k extraction to c_11..c_15 via empirical recursion, but this is mathematically self-cancelling: `R/(1 + (R−1)/u^k · u^k) = R/R = 1`. The existing extractor only works because it uses **postulated canonical forms** for c_2..c_10 to advance R between rungs. Beyond c_10 no canonical forms are known, so extending would require ansatz fits — **forbidden per CLAUDE.md**. The k=8,9,10 data is sufficient for the asymptotic discrimination; c_11..c_15 would only sharpen the tail constancy further, not change the verdict.
+The probe initially attempted to extend the c_k extraction to c_11..c_15 via empirical recursion, but this is mathematically self-cancelling: `R/(1 + (R−1)/u^k · u^k) = R/R = 1`. The existing extractor only works because it uses **postulated canonical forms** for c_2..c_10 to advance R between rungs. Beyond c_10 no canonical forms are known, so extending would require ansatz fits — **forbidden per AGENTS.md**. The k=8,9,10 data is sufficient for the asymptotic discrimination; c_11..c_15 would only sharpen the tail constancy further, not change the verdict.
 
 ## Step 2 detail — cross-anchor at q_muon
 
@@ -62,7 +62,7 @@ This probe uses c_k extracted at q_proton evaluated at q_muon's u. A fully rigor
 
 ## Step 3 — documentation-level dashboard wiring (NO production wiring)
 
-Per CLAUDE.md §"Q_β c_k truncation order canonical framing" and §"Before declaring 'open' math": the converged finding **(simple pole, fibre-level, residue ≈ 1.804e-15)** is a STRUCTURAL FACT but NOT a closed-form categorical derivation. The residue A = 1.804e-15 is a NUMBER; identifying it as e.g. `ℏ_q^N` or some specific q_0-rational combination is not done here.
+Per AGENTS.md §"Q_β c_k truncation order canonical framing" and §"Before declaring 'open' math": the converged finding **(simple pole, fibre-level, residue ≈ 1.804e-15)** is a STRUCTURAL FACT but NOT a closed-form categorical derivation. The residue A = 1.804e-15 is a NUMBER; identifying it as e.g. `ℏ_q^N` or some specific q_0-rational combination is not done here.
 
 **What this means for the 1ppQ headline goal:** the empirical c_k extraction (canonical pinning on c_2..c_10 + asymptote) already achieves sub-1-ppQ precision on Q_β (per `qbeta-1ppq-achieved.witness.json` — 0.00 ppQ at N=4). Steps 1+2 do not improve that empirical number; they explain its structure.
 

@@ -27,7 +27,7 @@ Currently the paper mostly uses "proposition" / "definition" / "remark" without 
 
 ### P-4 — Audit author notes for status leaks
 
-CLAUDE.md §4d formalizes `authorNotes` for status / refined-framing / caveats. A sweep of all `.md` blocks for status-banners-in-prose (especially "as of [date]", "currently", "open") + migrate to `authorNotes`. The `one-voice-audit` skill is designed for this.
+AGENTS.md §4d formalizes `authorNotes` for status / refined-framing / caveats. A sweep of all `.md` blocks for status-banners-in-prose (especially "as of [date]", "currently", "open") + migrate to `authorNotes`. The `one-voice-audit` skill is designed for this.
 
 ### P-5 — Explicit bar-decomposition section
 
@@ -59,7 +59,7 @@ Phase 1 should be completed at minimum.
 
 ### C-3 — Wire production-vs-exploratory tags universally
 
-CLAUDE.md §"Skill routing" has `production-vs-exploratory-discipline` skill. Apply it: every compute script should have an explicit **production** / **exploratory** / **diagnostic** tag in its docstring. Currently many are ambiguous. The audit tags from PR #1110 (`# archimedean_by_design`) are one model; extend to production/exploratory.
+AGENTS.md §"Skill routing" has `production-vs-exploratory-discipline` skill. Apply it: every compute script should have an explicit **production** / **exploratory** / **diagnostic** tag in its docstring. Currently many are ambiguous. The audit tags from PR #1110 (`# archimedean_by_design`) are one model; extend to production/exploratory.
 
 ### C-4 — Witness-pipeline drift root-cause
 
@@ -126,7 +126,7 @@ PR #1127's test plan has 5+ unchecked items (Path A, Path B, Lean compilation, C
 
 ### X-3 — Lean toolchain provisioning
 
-Many session findings can't be Lean-verified because `lake` isn't in container. The `lean_setup` MCP tool exists (CLAUDE.md mentions it) — should be invoked at session start for any session that touches Lean. Alternatively, a CI workflow that runs `lake build` per-PR (already exists per `lean_ci.yml`).
+Many session findings can't be Lean-verified because `lake` isn't in container. The `lean_setup` MCP tool exists (AGENTS.md mentions it) — should be invoked at session start for any session that touches Lean. Alternatively, a CI workflow that runs `lake build` per-PR (already exists per `lean_ci.yml`).
 
 ## Priority ranking for next session
 

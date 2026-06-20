@@ -142,7 +142,7 @@ the user can triage.
     flagged-with-dual set on the tightened `LP_SDP_HINTS` is the
     authoritative baseline going forward. The 14 LP-solving scripts
     not on the hint list are presumed `feasibility-only` (opt-out).
-    `--strict-wired` enforced in CI per F11. CLAUDE.md updated.
+    `--strict-wired` enforced in CI per F11. AGENTS.md updated.
 12. **Close F13 (`:val[…]` codemod sweep).** Run codemod dry-run on
     the QOU paper; report drift; apply with `--write` after user
     review.
@@ -182,7 +182,7 @@ bun run scripts/audit-wiring.ts --warn-only
   for symbolic-output callers (e69d0acf).
 - LP/SDP solves emit BOTH primal and dual variables. Route through
   `lp_dual_solver.py`; never re-implement the primal-only solve
-  (CLAUDE.md § *LP / SDP duals*).
+  (AGENTS.md § *LP / SDP duals*).
 - Bound-state observables compute via the master formula
   `⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O, b_j⟩`
   (`prop:confinement-frobenius-reciprocity`); the raw Markov trace

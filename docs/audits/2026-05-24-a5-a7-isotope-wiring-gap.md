@@ -63,7 +63,7 @@ Risk: depends on PR #1081 Task 3 landing. Cannot proceed on this branch.
 
 ### Path 3 — symmetric-crystal Demazure sub-crystal for unbound states
 
-Per CLAUDE.md §7b: *"Demazure sub-crystals for resonances. Unstable intermediaries (W/Z bosons, hadronic resonances, virtual particles) are Demazure sub-crystals — incomplete topological states."*
+Per AGENTS.md §7b: *"Demazure sub-crystals for resonances. Unstable intermediaries (W/Z bosons, hadronic resonances, virtual particles) are Demazure sub-crystals — incomplete topological states."*
 
 ⁵Li being a resonance (lifetime ~10⁻²² s) suggests it should be modelled as a **Demazure sub-crystal of the full ⁶He / ⁵He / ⁵Li mass-near-degenerate cluster**, not as a stable knot. This is the categorically-aligned framing but requires authoring the Demazure sub-crystal machinery for the A=5 sector first.
 
@@ -73,7 +73,7 @@ Risk: substantial new machinery; out of scope for PR #1089.
 
 1. **Decide whether to repeat the census-assignment pattern** for ⁶Li, ⁷Li (extending the CAL-4-equivalent admitted in `mass_table_ppb.py`) or **wait for canonical paths** (PR #1081 Task 3, or α-cluster extension).
 2. **If canonical**: pick one of Paths 1 / 2 / 3 and escalate to Rule 14 (the 13-driver menu) — none currently identify an off-the-shelf source for the multi-cluster coupling.
-3. **If pragmatic interim**: do a SnapPy census search for `Vol ∈ {62.6 ± 1, 76.8 ± 1}` and surface candidates as **EXPLORATORY shape-probes** (per CLAUDE.md production-vs-exploratory rule), not as production assignments.
+3. **If pragmatic interim**: do a SnapPy census search for `Vol ∈ {62.6 ± 1, 76.8 ± 1}` and surface candidates as **EXPLORATORY shape-probes** (per AGENTS.md production-vs-exploratory rule), not as production assignments.
 
 This audit explicitly does NOT recommend any one path — that's owner judgement.
 

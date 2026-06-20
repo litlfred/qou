@@ -152,4 +152,4 @@ Closed-form `J_{T(p, n)}(q)` for `p ≥ 3` must go via Burau / HOMFLY-Skein, not
 - Bar-involution canonical reference: [`bar-involution.md`](../../content/quantum-observable-universe/braids-and-knots/bar-involution.md)
 - Crossing-energy EM/strong split: [`crossing-energy-interpretation.md`](../../content/quantum-observable-universe/observations/crossing-energy-interpretation.md)
 - Three-avatars synthesis (cheat sheet §4): see canonical-derivation-cheat-sheet
-- CLAUDE.md §7c base-ring discipline (generic R vs archimedean ℝ)
+- AGENTS.md §7c base-ring discipline (generic R vs archimedean ℝ)

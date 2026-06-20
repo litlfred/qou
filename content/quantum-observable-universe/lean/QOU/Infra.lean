@@ -19,7 +19,7 @@ Each module either:
   instances must furnish a proof using a chosen polylog
   implementation.
 
-See CLAUDE.md §3b-cond: downstream propositions using these
+See AGENTS.md §3b-cond: downstream propositions using these
 classes via `[Instance]` hypotheses remain *theorem-level* in
 the manifest (conditional-class exception).
 -/

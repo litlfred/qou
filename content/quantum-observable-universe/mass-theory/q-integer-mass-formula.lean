@@ -113,7 +113,7 @@ noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
   -- Term 7: shell correction (increases binding at magic numbers)
   + delta_S q m_e * (f_Z + f_N) / A ^ (2/3 : ℝ)
 
--- ── Conjecture class (CLAUDE.md §3b-cond axiomatisation) ───────
+-- ── Conjecture class (AGENTS.md §3b-cond axiomatisation) ───────
 
 /-- **Conjecture class.** An instance asserts the existence of:
     (i) the magic-proximity function `f_magic : ℕ → ℝ` peaking at
@@ -129,7 +129,7 @@ noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
     `sorry` in any concrete instance is understood as **conjecture**,
     not missing proof. Downstream blocks may take
     `[QIntegerMassFormula]` as an explicit hypothesis to remain
-    `theorem`/`proposition` per CLAUDE.md §3b-cond.
+    `theorem`/`proposition` per AGENTS.md §3b-cond.
 
     Ref: [manuscript] Ch 11 §8, conj:q-integer-mass-formula -/
 class QIntegerMassFormula where
@@ -151,7 +151,7 @@ class QIntegerMassFormula where
       ∃ δ : ℝ, |δ| ≤ tolerance ∧
         B_AME = (1 + δ) * binding_energy_bw q m_e Z N (f_magic Z) (f_magic N)
 
-/-- **Downstream conditional theorem (CLAUDE.md §3b-cond).**
+/-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
     Conditional on `[QIntegerMassFormula]`, every (Z, N) admits a
     relative residual `δ` with `|δ| ≤ tolerance` between the AME
     binding energy and the seven-term prediction. Fully verified

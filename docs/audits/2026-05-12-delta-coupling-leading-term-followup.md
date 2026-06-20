@@ -68,7 +68,7 @@ At $q_0 = :val[q_0]{precision=6}\ldots$ and $m_e = :val[m_e_MeV]{precision=6}$ M
   evaluating $(A-2)$ at $A=4$, not from a regression.
 - **Not a 1 ppb closure.** The 7100 ppm gap is ~10⁴× the 780 ppb hard
   floor from CAL-2 propagation. This is a leading-order *near-form*.
-- **Not a Lean §3b-cond Pattern-A/B instance.** Per CLAUDE.md
+- **Not a Lean §3b-cond Pattern-A/B instance.** Per AGENTS.md
   §3b-cond and the [`2026-05-08-trivial-skeleton-workplan.md`](2026-05-08-trivial-skeleton-workplan.md),
   a numerical near-fit cannot discharge the
   `MagicShellCrossCoupling.canonicalCrossCoupling` `sorry` — it must

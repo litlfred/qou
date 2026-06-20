@@ -15,7 +15,7 @@ This probe loads c_2..c_10 from the canonical-pinned SDP extraction
 (`qbeta-decay-sdp-extended-ck.witness.json`) and tests all three
 asymptotic signatures on the k≥8 tail. (Extending to c_11..c_15 is
 NOT possible without postulating a canonical form per rung — that
-would be an ansatz fit, forbidden per CLAUDE.md; and the k=8,9,10
+would be an ansatz fit, forbidden per AGENTS.md; and the k=8,9,10
 tail already discriminates cleanly. See `load_ck` for the method
 note.)
 
@@ -40,7 +40,7 @@ all the way through.  Discriminator tests:
 
 Reports tiered (PROVED <1ppm | NEAR-MATCH <1% | REFUTED >1%).
 
-## Forbidden (CLAUDE.md)
+## Forbidden (AGENTS.md)
 
 - NO ansatz fits. Each test is a tiered pass/fail of a structural
   signature on the c_k tail.
@@ -109,7 +109,7 @@ def load_ck() -> dict[int, mp.mpf]:
     yields c_2..c_10 by using CANONICAL closed forms (proved/near-
     match) to advance R between rungs. Beyond c_10 no canonical
     forms are derived, so extending the extractor would require
-    ansatz fits — forbidden per CLAUDE.md.
+    ansatz fits — forbidden per AGENTS.md.
 
     For the singularity-type discriminator, c_2..c_10 are
     sufficient: PR #1713 already showed c_k · u^k ≈ 2.12e-13 at

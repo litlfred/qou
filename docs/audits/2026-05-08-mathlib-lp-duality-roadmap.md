@@ -99,7 +99,7 @@ The interim solution (landed in this PR via
 relocates the two `sorry`s from free-standing top-level theorems
 in `confinement-nf-partial-proof.lean` to **two fields of a class
 trivial-model**, with proper `-- Ref: [schrijver1986theory]`
-citations per CLAUDE.md §1.
+citations per AGENTS.md §1.
 
 When the Mathlib wiring lands, the interim class instance can be
 swapped for a `mathlibModel` that discharges both fields

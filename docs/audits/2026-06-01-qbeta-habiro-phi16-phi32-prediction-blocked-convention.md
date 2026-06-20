@@ -113,7 +113,7 @@ Two complementary next steps, in priority order:
 
 ## Discipline note
 
-Per CLAUDE.md flip-flop history: "every flip used a fresh canonical-
+Per AGENTS.md flip-flop history: "every flip used a fresh canonical-
 looking formula and matched it numerically near the substrate q_0".
 The Φ_8² finding was a structural (not numerical) match, but its
 convention-dependence raises the same risk. **Do not promote the

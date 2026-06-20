@@ -95,7 +95,7 @@ Then the structured `AskUserQuestion` chip set.
 
 ## 0a. Repo-owner preferences (binding for all watchers)
 
-Per CLAUDE.md §"User accessibility" the repo owner types with
+Per AGENTS.md §"User accessibility" the repo owner types with
 difficulty and prefers a small set of binding behavioural
 defaults. These override the historical watcher defaults — every
 child inherits them.
@@ -123,7 +123,7 @@ more, dispatch fewer agents, ask before parallelising.
 
 ## 0c. Sibling coordination (2026-05-19)
 
-Per CLAUDE.md §"User accessibility" item "Coordinate intent with
+Per AGENTS.md §"User accessibility" item "Coordinate intent with
 sibling branches":
 
 - **At workplan start** (new branch / new tranche), list active
@@ -154,7 +154,7 @@ during idle is now the default.
 
 ## 0d. AskUserQuestion accessibility (2026-05-19)
 
-Per CLAUDE.md §"User accessibility" item "Default
+Per AGENTS.md §"User accessibility" item "Default
 `AskUserQuestion` to `multiSelect: true` + 🟡 marker": the
 repo owner is physically disabled and types with difficulty.
 
@@ -178,7 +178,7 @@ repo owner is physically disabled and types with difficulty.
 
 ## 0b. Idle-time backlog policy (5-minute trigger)
 
-Per CLAUDE.md §"Agent work-plan policy" item 4 (5-minute idle
+Per AGENTS.md §"Agent work-plan policy" item 4 (5-minute idle
 trigger, added 2026-05-19): when this watcher has been idle for
 > 5 minutes (no substantive output beyond TICK heartbeats or
 empty acks), automatically start processing backlog without
@@ -762,7 +762,7 @@ answer. Two-part pattern:
    call, write a short chat message:
    - the finding (one sentence, with severity);
    - the affected file (GitHub blob URL, `.md` preferred per
-     CLAUDE.md "Always provide GitHub links");
+     AGENTS.md "Always provide GitHub links");
    - evidence (a verbatim quote with line numbers, if applicable);
    - what was already attempted and what failed.
 2. **Structured question.** Then call `AskUserQuestion` with a
@@ -879,7 +879,7 @@ heartbeat one-liner is for periods when the queue is *empty*,
 NOT for periods when the queue is non-empty and the agent is
 choosing not to work.
 
-This matches CLAUDE.md §"Agent work-plan policy" rule 4 ("Work
+This matches AGENTS.md §"Agent work-plan policy" rule 4 ("Work
 the queue while idle"): an agent that idles with non-empty queue
 is an audit flag.  The TICK heartbeat is the trigger; the queue
 is the source of "what next".
@@ -957,7 +957,7 @@ the next backlog item. Specifically:
    in-flight PR (cannot start non-overlapping work), or (c) the
    user says "stop" / "park" / "switch to X".
 
-This matches the user-accessibility rule in CLAUDE.md
+This matches the user-accessibility rule in AGENTS.md
 ("Run commands proactively — don't ask 'shall I run X?'") and
 the work-plan policy ("Work the queue while idle"). Asking the
 user "what should I do next?" while the queue is non-empty and
@@ -1617,7 +1617,7 @@ queues the violation as `critical`, and asks the author.
   findings, may commit on this branch, may post asks on PRs.
 - **owner**: same as collaborator plus may commit to main when
   explicitly requested (still requires per-commit user approval
-  per CLAUDE.md "Executing actions with care").
+  per AGENTS.md "Executing actions with care").
 
 ## Anti-patterns (shared across all children)
 
@@ -1627,7 +1627,7 @@ queues the violation as `critical`, and asks the author.
   + own PR + newly-opened (per TICK).
 - ❌ Open > 1 ask per round on the same block. Batch findings.
 - ❌ Edit `.ts` manifests to add a `status:` field (status is
-  derived per CLAUDE.md §4).
+  derived per AGENTS.md §4).
 - ❌ Touch protected files (`deploy/google-viewers.txt`, etc.).
 - ❌ Hand-edit witness JSON to "fix" drift.
 - ❌ Auto-merge a PR without explicit author approval.

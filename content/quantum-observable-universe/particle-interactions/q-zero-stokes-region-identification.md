@@ -93,7 +93,7 @@ The conjecture is exactly the gap at step A — promoting it from CONJECTURE to 
 
 ## §6. Lean formalization (conditional class per §3b-cond)
 
-[`q-zero-stokes-region-identification.lean`](q-zero-stokes-region-identification.lean) encodes this as a **conditional class structure** per CLAUDE.md §3b-cond:
+[`q-zero-stokes-region-identification.lean`](q-zero-stokes-region-identification.lean) encodes this as a **conditional class structure** per AGENTS.md §3b-cond:
 
 - Class `MostowPrasadDistinguished K` — axiomatizes Mostow-Prasad $\exists!$
 - Class `ReidTraceField K` — axiomatizes trace-field-in-number-field

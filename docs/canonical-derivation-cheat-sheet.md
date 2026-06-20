@@ -4,7 +4,7 @@
 
 **Paper-side companion**: [`prop:pre-archimedean-derivation-chain`](../content/quantum-observable-universe/braids-and-knots/pre-archimedean-derivation-chain.md) (the rendered version that appears in the paper). This doc adds the **compute-pipeline mapping**, **Phase 5 findings**, and the **migration backlog** that don't belong in the paper but are essential for code review.
 
-**Highlight to Claude** — referenced from CLAUDE.md so any agent picking up final-stage QOU work has the full canonical chain visible.
+**Highlight to Claude** — referenced from AGENTS.md so any agent picking up final-stage QOU work has the full canonical chain visible.
 
 ---
 
@@ -350,7 +350,7 @@ The forward work has shifted from §5 mechanics to scientific closure:
 **Common pitfalls** (look for these in code review):
 - Hardcoded literal values where a categorical derivation exists → **discipline violation**. Example: `LAMBDA_PROTON_DOC = 2.4599527869` should derive from `prop:lambda-scale-bring-bloch-identity`.
 - Φ_q in a binding-context script → **bar-symmetry violation**. The binding context wants Li_2^q.
-- Calibration parameters not in the 3-input set → **4th-calibration violation**. The CLAUDE.md `Δ_λ gate` (Track A blocker) explicitly forbids a 7th closure ansatz.
+- Calibration parameters not in the 3-input set → **4th-calibration violation**. The AGENTS.md `Δ_λ gate` (Track A blocker) explicitly forbids a 7th closure ansatz.
 - Substrate-side compute using $q$ as $\mathbb{R}$ before the Archimedean functor → **§7c base-ring violation**. Everything categorical should be generic over `[Field R]` until step 9.
 
 **Final-stage discipline**: every script in `computations/` (non-deprecated) should either (a) be backed by a `derivation_chain.py`-tracked DerivationChain, or (b) be marked `SCRIPT_CITED` against a canonical script that IS so backed.
@@ -521,7 +521,7 @@ verification-debt for the proof-watcher / a Lean session (lake required).
 
 These three close the "ASSUMED" entries in the §9.1 table. They are the
 canonical chain's standing Lean backlog; pick them up in a lake-enabled session
-(per CLAUDE.md §1, every resulting `sorry` carries a `-- Ref:` citation until
+(per AGENTS.md §1, every resulting `sorry` carries a `-- Ref:` citation until
 discharged). Proof-watcher: route under the proof-integration-watcher queue.
 
 ### 9.5 The 6-knot multiplicative closure (tower interpretation)
@@ -627,4 +627,4 @@ choice.
 - [`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](audits/2026-05-24-magic-shell-gs-filtration-exploitation.md) — magic-shell + GS-NF wiring gap (L3 closure path)
 - [`docs/audits/2026-05-24-isospin-categorical-source.md`](audits/2026-05-24-isospin-categorical-source.md) — D9 isospin closure path (operator-valued bowtie extension)
 - [`.claude/skills/local/canonical-watcher.md`](../.claude/skills/local/canonical-watcher.md) §Slot J — probe follow-up discipline (GB filtration + jet order + bar-symmetry triple-check)
-- [`CLAUDE.md`](../CLAUDE.md) — repo-wide agent discipline (§3b-cond, §7c, §7aa)
+- [`AGENTS.md`](../AGENTS.md) — repo-wide agent discipline (§3b-cond, §7c, §7aa)

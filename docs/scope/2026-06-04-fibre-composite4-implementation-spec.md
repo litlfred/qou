@@ -9,7 +9,7 @@ specified, not executed.
 - Scope + corrected effort estimate: [`2026-06-04-habiro-fibre-composite4-mtau-scope.md`](2026-06-04-habiro-fibre-composite4-mtau-scope.md)
 - Reconnaissance result (self-contained probe): [`computations/qbeta/qbeta_composite4_fibre_root_of_unity_probe.py`](../../computations/qbeta/qbeta_composite4_fibre_root_of_unity_probe.py) (PR #1811)
 - `/25` refutation: PR #1801 (`qbeta_rung1_div25_framing_squared_test.py`)
-- CLAUDE.md §"Im(q) at fibre vs observable", §"Q_β c_3 truncation order"
+- AGENTS.md §"Im(q) at fibre vs observable", §"Q_β c_3 truncation order"
 
 **Goal.** Decide whether the Q_β c_3 *residue A* (the correction beyond
 the proved `c_2 = -1`) is the archimedean evaluation of a **Habiro-ring
@@ -217,7 +217,7 @@ not the c_3 coefficient — the shared `/25` is a coincident fibre
 constant, not a shared knot. And the real-q single-knot route is
 **closed**: a smooth real-q `f(q)` cannot track `dc_3/dq ≈ 4.6×10⁶`
 (falsification audit), so the live object is necessarily **fibre /
-root-of-unity** (CLAUDE.md §"Im(q) at fibre vs observable" — the c_k
+root-of-unity** (AGENTS.md §"Im(q) at fibre vs observable" — the c_k
 live in the fibre, potentially complex).
 
 ### Corrected attacks (priority order)

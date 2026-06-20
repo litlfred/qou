@@ -6,7 +6,7 @@ Generalises the per-atom extractors (PR #1618 helium-3/⁴He;
 PR #1642 ⁵Li/⁶Li/⁷Li/⁷Be) to **every canonical atom** in the
 production mass-table list (`mass_at_3A_proper.py::ATOMS`).
 
-Per CLAUDE.md "Exception: batch audit-job runs" — this is a single
+Per AGENTS.md "Exception: batch audit-job runs" — this is a single
 infra sweep generating:
 
   * one `habiro-coefficients-<atom>.witness.json` per canonical atom
@@ -38,7 +38,7 @@ OUTPUTS (sweep):
 OUTPUTS (audit):
   * `docs/audits/2026-06-01-qbeta-habiro-mass-table-mirror-pair-tests.md`.
 
-Per CLAUDE.md long-compute discipline:
+Per AGENTS.md long-compute discipline:
     python3 -u _habiro_coefficient_extract.py 2>&1 \
         | tee /tmp/mass_table_habiro.log
 

@@ -16,7 +16,7 @@ they secretly reach across $\tau$?
 > `Mathlib.Geometry.Manifold` imports in the pre-Archimedean tier;
 > all `q : ℝ` / `NormedCommRing` / `Real.sqrt` references that
 > remain are inside explicit `namespace Arch` post-Archimedean
-> tiers, properly partitioned per CLAUDE.md `GroundRingAnnotations`.
+> tiers, properly partitioned per AGENTS.md `GroundRingAnnotations`.
 
 ## TL;DR
 
@@ -254,7 +254,7 @@ import Mathlib.Data.Real.Basic
 ```
 
 🔴 $y_\lambda \in \mathbb{Z}[q^{\pm 1}]$ (Wenzl-bridge closed forms,
-per Step 12 of the forward derivation, and CLAUDE.md §7aa notation
+per Step 12 of the forward derivation, and AGENTS.md §7aa notation
 register); typing the weight functions to $\mathbb{R}$ is a wall break.
 
 **Fix.** Parametrise over Laurent polynomials.
@@ -313,7 +313,7 @@ ring.
 **Fix.** Either (a) declare them as opaque maps into a Laurent ring
 $R = \mathbb{Z}[q^{\pm 1}]$, or (b) replace them by an explicit
 hypothesis class `class GBSpectralCollapse (R) where …` so the wall
-status is explicit (per CLAUDE.md §3b conditional-class pattern).
+status is explicit (per AGENTS.md §3b conditional-class pattern).
 
 ### Step 15 — `prop:jet-prolongation-C`
 
@@ -534,7 +534,7 @@ against (§B.1, §3·E).
    `Mathlib.Data.Real.Basic`.
 
 After these three tracks, GAP 13a in the parent audit can be reframed
-as a *single explicit conjectural class* (per CLAUDE.md §3b
+as a *single explicit conjectural class* (per AGENTS.md §3b
 conditional-class pattern), and the headline can read **"19/19
 algebraic-clean, 5/19 conjectural-conditional, 0 wall violations"** at
 both the math and Lean levels.
@@ -762,7 +762,7 @@ cleanly partitions algebraic prerequisites
 ingredients (`kashaev-volume-conjecture`,
 `kashaev-as-archimedean-realization`, `cor:quantum-dilogarithm`).
 
-**P2. Bridge `.lean` is conditional per CLAUDE.md §3b.**
+**P2. Bridge `.lean` is conditional per AGENTS.md §3b.**
 The Lean stub uses two typeclass instances — `[VolumeConjecture q]`
 (the Kashaev axiom) and `[PerPieceBridge q]` (the per-piece
 identification) — and the master `theorem bridge` is `:=
@@ -900,7 +900,7 @@ extraction.** `theorem motivic_perpetual_obstruction` repackages the
 class field `MotivicGaloisCharacter.almost_everywhere_nontrivial`
 (which provides `∃ N, ∀ p ≥ N, ¬IsUnit (frobenius_at p)`) into the
 "bad finite set" form preferred by the conjecture (`∃ S : Finset ℕ,
-∀ p ∉ S, ¬IsUnit ...`).  This is fine per CLAUDE.md §3b — the
+∀ p ∉ S, ¬IsUnit ...`).  This is fine per AGENTS.md §3b — the
 conjectural content lives in the class field; the theorem just
 exposes it — but a reader of the .lean file should know that the
 theorem's no-`sorry` property is *because* the class field carries
@@ -959,7 +959,7 @@ to translate them to the `§3b conditional-class` pattern.
 ### Findings
 
 **S1 (resolved). `prop:gb-spectral-sequence` had no Lean file at
-all.** Block kind is `proposition` — CLAUDE.md §3 says Lean is
+all.** Block kind is `proposition` — AGENTS.md §3 says Lean is
 expected (warning if missing).  The block's `lean.ref` was
 `qou:QOU.BraidKnot.gb_spectral_sequence`; no co-located stub, no
 formal-chain file.  Pipeline fell back to the grep heuristic and
@@ -1110,7 +1110,7 @@ multi-rank statement).
 ### Findings
 
 **D1 (resolved). `prop:delta-max-uniform-bound` had no Lean file
-at all.** Block kind is `proposition` — CLAUDE.md §3 expects Lean.
+at all.** Block kind is `proposition` — AGENTS.md §3 expects Lean.
 The `lean.ref = "qou:QOU.MassEndomorphism.delta_max_uniform_bound"`
 resolved to nothing; no co-located `.lean` and no formal-chain
 module.
@@ -1218,7 +1218,7 @@ level*; GAP 17b — *descent sharpness on pairs*).  Cluster:
 ### Findings
 
 **E1 (resolved). `prop:markov-pair-z2` had no Lean file at all.**
-Block kind `proposition` (CLAUDE.md §3 expects Lean).  `lean.ref =
+Block kind `proposition` (AGENTS.md §3 expects Lean).  `lean.ref =
 "qou:QOU.Hecke.markov_pair_z2"` resolved to nothing.
 
 **Fixed**: created
@@ -1315,7 +1315,7 @@ Registered in `lean/QOU/MassEndomorphism.lean`.
 **F2 (no fix needed). `rem:mass-endomorphism-jet-tower` is correct.**
 A `remark` block (no Lean expected) interpreting
 `prop:mass-endomorphism-tower`.  Its `interprets:` field is set
-correctly; CLAUDE.md §3a discipline holds.
+correctly; AGENTS.md §3a discipline holds.
 
 ### Net status of the Step-18 cluster
 

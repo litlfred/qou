@@ -24,7 +24,7 @@
     "guard_digits": 10,
     "truncation_bound": "1e-40"
   },
-  "description": "Probe-1 from docs/audits/2026-05-24-delta-lambda-closure-synthesis-next-step.md. Imposes structural constraint Δ_λ = Δ_{λ^T} (bar-involution / Type-B fold per CLAUDE.md §7b) on the deuteron Δ_λ system; reports the min-||ν||_2 LP solution from the 5-dim affine subspace. NOT a 7th-ansatz fit — bar-invariance is derivable from canonical framework primitives. Diagnostic only.",
+  "description": "Probe-1 from docs/audits/2026-05-24-delta-lambda-closure-synthesis-next-step.md. Imposes structural constraint Δ_λ = Δ_{λ^T} (bar-involution / Type-B fold per AGENTS.md §7b) on the deuteron Δ_λ system; reports the min-||ν||_2 LP solution from the 5-dim affine subspace. NOT a 7th-ansatz fit — bar-invariance is derivable from canonical framework primitives. Diagnostic only.",
   "parameters": {
     "atom": "D",
     "n": 6,

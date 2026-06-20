@@ -41,7 +41,7 @@ status-sweep would have wrongly weakened.
   the formulae or proofs.
 - **Verify before editing** — distinguish a genuine q=1 classical-limit proof
   from a stale q₀ "derived" overclaim; only the latter is misaligned.
-- **Status → `authorNotes`** where a banner is status-tracking (CLAUDE.md §4d);
+- **Status → `authorNotes`** where a banner is status-tracking (AGENTS.md §4d);
   scholarly caveats stay in prose.
 - Run `content-validation` after edits.
 - Where "derived vs empirical" is genuinely contested (c_4 product identity),

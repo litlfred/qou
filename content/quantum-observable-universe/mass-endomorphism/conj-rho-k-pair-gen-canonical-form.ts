@@ -18,7 +18,7 @@ export default conjecture({
       body:
         "**Open conjecture (PR #1127).** Promotes the 'pair-gen piece (open)' " +
         "section of [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) " +
-        "to an explicit conjecture block per CLAUDE.md §3b conjectural-propagation " +
+        "to an explicit conjecture block per AGENTS.md §3b conjectural-propagation " +
         "discipline. Per the existing audit: " +
         "(a) the naive log-additive form $\\alpha z^2 \\sum \\ln|\\hat V_i \\hat V_j|$ " +
         "DEGRADES accuracy across $Z = 1..20$ in `rho-k-pair-gen-extension.witness.json`, " +

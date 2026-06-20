@@ -23,7 +23,7 @@ This file carries two things:
    former `holds : Prop` stub with an honest, non-degenerate axiomatisation: a
    conjectural modular continuation `F` of the Hecke data that is `S`-covariant
    with the Jacobi-theta automorphy factor.  An instance is the conjectural
-   witness (sorry = conjecture, CLAUDE.md §3b); Mathlib's `jacobiTheta`
+   witness (sorry = conjecture, AGENTS.md §3b); Mathlib's `jacobiTheta`
    (functional equation `jacobiTheta_S_smul`) is the canonical inhabitant on
    the analytic side — the residual assembly conjecture (that the Hecke data
    *is* such a theta) is what stays open.

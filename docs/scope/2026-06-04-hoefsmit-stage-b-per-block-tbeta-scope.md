@@ -71,7 +71,7 @@ witness values do not match naive matrix-trace formulas
 ≈ 1.110), so the projection is non-trivial and must mirror the
 canonical convention exactly.
 
-Per CLAUDE.md "don't iterate Lean / compute blind when verification
+Per AGENTS.md "don't iterate Lean / compute blind when verification
 is unavailable", a re-implementation here would be doing exactly that
 in the numeric domain. The honest move is to scope the probe + leave
 it for a session with `pyhecke_native` available.

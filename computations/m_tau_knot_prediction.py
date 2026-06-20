@@ -31,7 +31,7 @@ status, per §3b-cond). A negative result (no clean match) is also valuable
 extensions might recover m_tau (volume + Chern-Simons, Whitehead doubling,
 polylog tower, etc.).
 
-Per the audit's §5 option 4 and CLAUDE.md anti-pattern guard:
+Per the audit's §5 option 4 and AGENTS.md anti-pattern guard:
 - NO fitting; the search is exhaustive over a published knot-volume table.
 - NO 4th calibration input.
 - NO ansatz proposal — just numerical pattern matching.

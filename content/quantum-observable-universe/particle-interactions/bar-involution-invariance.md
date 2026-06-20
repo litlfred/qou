@@ -73,7 +73,7 @@ unreachable.
 Steps (1) and (2) are unconditional; step (3) is conditional on
 [`conj:symmetric-crystal-pair-production`](#conj:symmetric-crystal-pair-production)
 and is registered as such in the Lean file (class-conditional, per
-CLAUDE.md §3b-cond).
+AGENTS.md §3b-cond).
 
 ## Worked example: $n = 3$
 
@@ -107,5 +107,5 @@ on every factor.
  `plancherel_weight_bar_invariant` and
  `plancherel_weight_transpose_eq` (parts 1 and 2 above).
 - Records part 3 as a conditional theorem under the class
- `SymmetricCrystalPairProduction n` (per CLAUDE.md §3b-cond),
+ `SymmetricCrystalPairProduction n` (per AGENTS.md §3b-cond),
  citing the upstream conjecture.

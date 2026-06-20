@@ -45,7 +45,7 @@ import { proposition } from "../../schema/builders";
  *
  * **Conditional on:** the empirical witness file
  * `he4-canonical-tr-m-block-fingerprint.witness.json`.  Per
- * CLAUDE.md §3b-cond, the Lean proposition is axiomatised as a
+ * AGENTS.md §3b-cond, the Lean proposition is axiomatised as a
  * class `HasHe4TwoRowDominance` whose instance encodes the
  * witness-verified 86.6 % figure.  Downstream propositions
  * consume the class as a `[HasHe4TwoRowDominance]` hypothesis.
@@ -87,7 +87,7 @@ export default proposition({
   authorNotes: [
     {
       kind: "status",
-      body: "The proposition is verified at 50-dps numerical precision in the\ncompanion witness. The Lean formalisation follows the conditional-\nclass pattern (CLAUDE.md §3b-cond): the witness-verified\n$86.6\\,\\%$ figure is encoded as a class\n`HasHe4TwoRowDominance` whose only `sorry` is the empirical\ninstance, and downstream propositions such as\n`rem:he4-magic-shell-fingerprint`\ntake this class as a `[HasHe4TwoRowDominance]` typeclass\nhypothesis.",
+      body: "The proposition is verified at 50-dps numerical precision in the\ncompanion witness. The Lean formalisation follows the conditional-\nclass pattern (AGENTS.md §3b-cond): the witness-verified\n$86.6\\,\\%$ figure is encoded as a class\n`HasHe4TwoRowDominance` whose only `sorry` is the empirical\ninstance, and downstream propositions such as\n`rem:he4-magic-shell-fingerprint`\ntake this class as a `[HasHe4TwoRowDominance]` typeclass\nhypothesis.",
     },
   ],
 });

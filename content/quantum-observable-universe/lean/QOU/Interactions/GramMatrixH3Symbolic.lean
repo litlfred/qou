@@ -194,7 +194,7 @@ theorem gramMatrix_top_left (u : ℝ) : gramMatrix u 0 0 = 1 := by
     - `rank(gramMatrix u_0) = 6`                 (full rank at substrate)
 
     -- Ref: [manuscript]
-    The `sorry` is conjectural-conditional per CLAUDE.md §3b-cond;
+    The `sorry` is conjectural-conditional per AGENTS.md §3b-cond;
     discharging it requires lifting the symbolic factorisation into
     Lean. Witness sidecar:
     `computations/gram-h3-det-factorization.witness.json`. -/

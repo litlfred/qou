@@ -156,7 +156,7 @@ VOL_41 = mp.mpf("2.02988321281930725004240510854658")
 # CODATA / validation values — imported from the calibration
 # registry, not free literals (P31 audit discipline). m_e is CAL-1;
 # m_p, m_n, m_mu are validation-only references (NOT calibration
-# anchors per CLAUDE.md three-CAL discipline).
+# anchors per AGENTS.md three-CAL discipline).
 from codata_constants import (  # noqa: E402
     M_E_MEV as _M_E_MEV,
     M_P_MEV_VALIDATION as _M_P_MEV_VALIDATION,

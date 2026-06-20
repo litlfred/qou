@@ -9,7 +9,7 @@ audit `2026-06-02-qbeta-1ppq-singularity-simple-pole-fibre-level.md`:
   (2) A = b^N · ℏ_q^M  structural product
   (3) A = Q_β · ε_struct  with ε_struct a small structural factor
 
-NO ansatz fits per CLAUDE.md. Each test is a TIERED PSLQ-style match:
+NO ansatz fits per AGENTS.md. Each test is a TIERED PSLQ-style match:
 PROVED (<1ppm), NEAR-MATCH (<1%), or REFUTED (>1%). The "tiered
 NEAR-MATCH" outcome is honest: report as a NEAR-MATCH on a SPECIFIC
 candidate, NOT a closure.
@@ -219,7 +219,7 @@ def main() -> int:
     print()
 
     # ─── (6) Cyclotomic Φ_8 / q-Pochhammer / depth-15 (Q_β-native) ─
-    # Per CLAUDE.md §"Q_β c_k truncation order": Φ_8² is a documented
+    # Per AGENTS.md §"Q_β c_k truncation order": Φ_8² is a documented
     # Q_β structural object (mirror-pair Δa_m). The simple-pole at
     # u_subst with exponent 15 strongly suggests the documented
     # depth-15 Habiro prefactor Σ_m Δa_m·(u;u)_m = −u^15·(...). Test

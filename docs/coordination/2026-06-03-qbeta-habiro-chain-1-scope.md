@@ -134,7 +134,7 @@ the 15-candidate c_3 re-run):
 4. **q-deformed Hopf-Jones at substrate** — `J_Hopf(q₀)` in standard
    Kauffman normalization (NOT `J_Hopf(q=1)`); equals
    `-q₀^{-1/2}·(q₀² + 1) ≈ -2.119` (rough estimate, 2.4% from target)
-5. **Type-B folded crystal trace** — per CLAUDE.md §7b authoring
+5. **Type-B folded crystal trace** — per AGENTS.md §7b authoring
    guidance, the Type-B fold gives matter-antimatter pairing as fixed
    points; trace over fixed points may give c_3
 6. **Mixed Wenzl · Kashaev symmetric combination** —

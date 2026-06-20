@@ -77,7 +77,7 @@ This author's own week (the previous 7 sessions):
 
 - **#1514** Phase 3 BringResidue at `q = 2 : ℝ` + `NormNum` import
 - **#1517** L2 100× shared-root audit + atom-braid feasibility audit
-- **#1526** `CLAUDE.md` L2 count refresh (4/6 → 4/7) + Q_β bullet
+- **#1526** `AGENTS.md` L2 count refresh (4/6 → 4/7) + Q_β bullet
   reconciliation
 - **#1528** q₀ constant-staleness detector wired into
   `witness-pipeline.yml` (warn-only)
@@ -141,7 +141,7 @@ This author's own merged branches from the 2026-05-31 cluster
 
 - **Q_β Habiro element search** — 6 mechanisms ruled out
   (`docs/coordination/1ppq-qbeta.md`), 1 KR/KLR avenue left per
-  CLAUDE.md §7b skeptical prior. Speculative; no current
+  AGENTS.md §7b skeptical prior. Speculative; no current
   estimate.
 - **Flavor-split m_n / Δ_pn refinement** — X(q) multiplicative-
   refinement family refuted at cross-anchor (PR #1673 Probe 1);
@@ -154,7 +154,7 @@ This author's own merged branches from the 2026-05-31 cluster
   (template from PR #1442). Estimated 3–5 sessions.
 - **Conjecture-consumer provability analysis** — 13 `conj:*`
   blocks newly tagged `tier:E|S|keystone` via `a54f1f8b`.
-  Cross-ref CLAUDE.md §3b-cond consumers; identify which open
+  Cross-ref AGENTS.md §3b-cond consumers; identify which open
   conjectures block ≥ 5 downstream provable blocks. Prioritise
   research queue accordingly. ~1 session triage.
 
@@ -183,7 +183,7 @@ pick from these; each is single-PR scoped unless flagged.
    blocks.** Cheap (≤ 1 session). Output: a sorted list of which
    open conjectures unblock the most downstream provable claims.
    Drives subsequent research-queue prioritisation. Cite
-   `a54f1f8b` + CLAUDE.md §3b-cond.
+   `a54f1f8b` + AGENTS.md §3b-cond.
 2. **Mathlib oleans cache-restore protocol verification.** ~1
    session. Unblocks at least one stuck Lean discharge
    (`lean-catalan-G-numerical-bound`) + lets future agents iterate

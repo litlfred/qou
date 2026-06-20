@@ -92,7 +92,7 @@ env-gated. WS1 is highest-volume + lowest-cost → start there once WS0 scopes i
   block `.qa.json` changes; revert the script-sidecar churn.
 - **CI:** GitHub Actions is billing-blocked → validate locally (`qa-staleness`),
   tag `[skip-ci]`.
-- **Merge:** rebase-merge per CLAUDE.md §8; `/prepare-merge` before each merge.
+- **Merge:** rebase-merge per AGENTS.md §8; `/prepare-merge` before each merge.
 
 ## Execution-routing summary
 

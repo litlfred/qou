@@ -18,7 +18,7 @@
 
   Scope (per author direction, 2026-05-24): combinatorial scaffold +
   type-level statement + dim² = |S_5| = 120 sanity check.
-  Geometric fiber map → conditional class (CLAUDE.md §3b-cond).
+  Geometric fiber map → conditional class (AGENTS.md §3b-cond).
 
   -- Ref: [james1984representation] https://doi.org/10.1007/978-1-4684-9458-7
   -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron (Bring)
@@ -193,7 +193,7 @@ structure IcosahedralRotation where
     theorem `PartitionOf5.conjugate_same_a5_irrep` (conjugate partitions
     share a fiber — derived, not axiomatised).
 
-    Per CLAUDE.md §3b-cond the conjectural geometric map is a class field;
+    Per AGENTS.md §3b-cond the conjectural geometric map is a class field;
     downstream results consume it via `[BringFiberAction]`.  The field
     `five_distinct_classes` is SUBSTANTIVE — a constant map fails injectivity
     — so the class is **not** vacuously satisfiable.  The explicit map

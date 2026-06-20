@@ -55,7 +55,7 @@ remains open"). Best parameter-free prediction: interface-knot +T3 = 1.526 MeV
 > by a hand-chosen pair-count A(A−1)/2 and a q-power q⁻ᴬ — a
 > multi-parameter fit disguised as a derivation. The actual
 > trace-difference ratio Δtr(⁴He)/Δtr(D) is 0.67, not the 12.7 the
-> q-factorial implied. Per CLAUDE.md, coefficient fits to AME/PDG
+> q-factorial implied. Per AGENTS.md, coefficient fits to AME/PDG
 > data are forbidden as framework claims. Do **not** re-introduce
 > the q-factorial ratio.
 

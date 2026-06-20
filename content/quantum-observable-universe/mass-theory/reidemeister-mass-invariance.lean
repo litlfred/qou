@@ -143,10 +143,10 @@ canonical class from the sibling stub file instead. -/
     See `borromean-quark.lean` (sibling) for the canonical declaration. -/
 class BorromeanQuark : Prop where
   /-- The conjecture's content is the class instance (sorry = conjecture
-      per CLAUDE.md §3b). -/
+      per AGENTS.md §3b). -/
   holds : True
 
 /-- Witness theorem: this file's proposition is conditional on
-    `BorromeanQuark` per CLAUDE.md §3b-cond. -/
+    `BorromeanQuark` per AGENTS.md §3b-cond. -/
 theorem reidemeister_mass_invariance_conditional_on_borromean_quark
     [_inst : BorromeanQuark] : True := trivial

@@ -41,7 +41,7 @@ export default remark({
       "computations/atomic-tr-m-mpfr-50dps.witness.json",
       // LP / SDP duals supplying shadow-price structure for the
       // operator-selection step that picks per-Wedderburn-block
-      // contributions to the binding-energy ansatz. Per CLAUDE.md
+      // contributions to the binding-energy ansatz. Per AGENTS.md
       // (LP/SDP duals first-class infra) every operator-selection
       // compute must emit primal + dual; these three witnesses are
       // the dual companions to this mass-table block:

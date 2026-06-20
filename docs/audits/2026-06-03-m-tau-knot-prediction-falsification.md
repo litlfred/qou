@@ -131,7 +131,7 @@ for future work:
 
 Each extension is a separate research direction; none should be
 proposed as a 4th calibration input or as a fit-based ansatz (per
-CLAUDE.md "Δ_λ gate" anti-pattern guard).
+AGENTS.md "Δ_λ gate" anti-pattern guard).
 
 ## Status
 

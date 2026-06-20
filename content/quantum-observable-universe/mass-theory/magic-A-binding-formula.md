@@ -1,4 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c).
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c).
 The underlying categorical content is generic; the formula is stated over
 $\mathbb{R}$ for the MeV comparison.*
 
@@ -80,7 +80,7 @@ $2$ — vs. $[2]_q$, $2\cos(\pi/3)$, or another natural candidate — is
 not closed in this proposition; the value is consumed as an input
 hypothesis on the
 [`MagicABindingFormula`](#prop:magic-A-binding-formula) instance per
-CLAUDE.md §3b-cond.
+AGENTS.md §3b-cond.
 ## Numerical witness
 
 [`computations/binding_alpha_shift_witness.py`](../../computations/binding_alpha_shift_witness.py)

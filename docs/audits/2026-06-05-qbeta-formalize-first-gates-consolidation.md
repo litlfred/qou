@@ -46,7 +46,7 @@ Before running any new probe attempting to derive a c_k, a kernel `R(q,ξ)`, or 
 
 ### Step 1 — Corpus-grep (backward pruning)
 
-Per CLAUDE.md §"Before declaring open math", check:
+Per AGENTS.md §"Before declaring open math", check:
 
 ```bash
 grep -rln <topic> docs/audits/        # owner-authorised resolutions

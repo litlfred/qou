@@ -119,7 +119,7 @@ genuine archimedean construction; proves the symmetric identity
 $z(q) = 1 / (\sqrt q + 1/\sqrt q)$ sorry-free via
 `Real.mul_self_sqrt`. Axiomatises the canonical Wenzl–Markov weights
 via `class CanonicalMarkovWeightsH3` with a single dimension-
-normalisation axiom (CLAUDE.md §3b-cond pattern). A conditional
+normalisation axiom (AGENTS.md §3b-cond pattern). A conditional
 `def delta_tau_M_canonical` consumes the class as `[Instance]`;
 the conditional theorem `delta_tau_M_canonical_vanish_at_one` is
 sorry-free (reduces to `chi_blocks_vanish_at_one`).

@@ -1,4 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 The Markov trace of the nuclear braid word factors exactly as
 a product of **Markov-traced generator volumes** — one per braid

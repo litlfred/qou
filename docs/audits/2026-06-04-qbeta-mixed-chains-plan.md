@@ -90,7 +90,7 @@ For each λ ⊢ n (n ∈ {3,4,5}):
 
 Total ≈ 100–200 candidates per n — manageable in one PR.
 
-## Anti-pattern guards (STRICT — CLAUDE.md compliance)
+## Anti-pattern guards (STRICT — AGENTS.md compliance)
 
 - **TIERED reporting only**: NEAR-1PPM / NEAR-0.1PCT / NEAR-1PCT /
   NEAR-FUZZY / NEAR-CLOSE / MISS / ZERO. No ansatz at NEAR-FUZZY or

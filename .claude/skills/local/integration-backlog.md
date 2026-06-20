@@ -70,7 +70,7 @@ the backlog skill writes commits and merges.
 
 If no argument is supplied, surface a 4-chip
 `AskUserQuestion` (multi-select) listing the five axes plus
-`all`, prefixed with 🟡 per the CLAUDE.md user-accessibility
+`all`, prefixed with 🟡 per the AGENTS.md user-accessibility
 convention.
 
 ## Workflow (per axis)
@@ -138,7 +138,7 @@ For each batch, **before** doing any edits, surface an
 For each authorized batch:
 
 1. **Create branch** under the structured-name convention from
-   CLAUDE.md "user accessibility" §:
+   AGENTS.md "user accessibility" §:
    `claude/integration-backlog-<axis>-<theme>-<YYYY-MM-DD>`
    - `axis` ∈ {proof, canonical, compute, detangler, one-voice}
    - `theme` ≤ 40 chars, lowercase, hyphenated
@@ -151,7 +151,7 @@ For each authorized batch:
    relevant `qa-sweep --only <criterion>`. Refuse to push if
    either fails — surface the failure to the user via
    AskUserQuestion before recovering.
-4. **Commit** with the prescribed format (see CLAUDE.md
+4. **Commit** with the prescribed format (see AGENTS.md
    commit-message guidance: `<axis>: <theme> (N items)`,
    include before/after counts in the body).
 5. **Push** `-u origin <branch>` with retry on network errors.
@@ -178,7 +178,7 @@ handles the FULL autonomous merge pipeline:
   - False-positive review comments → polite one-line counter-comment
 - **Phase 3**: Structured user questions (only when genuinely blocked)
 - **Phase 4**: Merge (after all comments resolved + CI green) via
-  `merge_method: "rebase"` per CLAUDE.md §Branch + PR workflow rule 7
+  `merge_method: "rebase"` per AGENTS.md §Branch + PR workflow rule 7
 - **Phase 5**: Post-merge sibling notification
 
 See [`.claude/skills/local/prepare-merge-auto.md`](prepare-merge-auto.md)
@@ -257,7 +257,7 @@ campaign.
   `local/coordinate` (ledger / sibling-PR coordination)
 - **Dispatches to**: per-axis `Agent` calls for mechanical batches,
   direct edits for trivial ones, AskUserQuestion for judgement
-- **CLAUDE.md links**:
+- **AGENTS.md links**:
   - §3 work-plan policy (TodoWrite + queue + idle-trigger)
   - User-accessibility (🟡, multi-select default, structured
     branch names)
@@ -295,7 +295,7 @@ User: /integration-backlog all
 - **Sweep counts not dropping**: the batch's rewrite missed a
   case. Surface the leftover hits via AskUserQuestion with the
   per-block residual count.
-- **Network / GitHub failures**: retry per CLAUDE.md `git push`
+- **Network / GitHub failures**: retry per AGENTS.md `git push`
   exponential-backoff convention; if persistent, defer the batch
   and continue with the next.
 - **Conflicting sibling PR**: detect via `mcp__github__list_pull_requests`
@@ -311,5 +311,5 @@ User: /integration-backlog all
 - [`local/prepare-merge`](prepare-merge.md) — the merge workflow
   each batch runs through
 - [`local/coordinate`](coordinate.md) — sibling-PR coordination
-- CLAUDE.md "Combine related work into one branch / one PR" and
+- AGENTS.md "Combine related work into one branch / one PR" and
   "Structured branch names" rules

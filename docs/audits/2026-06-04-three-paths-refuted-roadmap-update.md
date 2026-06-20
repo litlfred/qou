@@ -44,7 +44,7 @@ Per the Δ_λ-gate doc and the [Δ_λ Phase-4 audit](./2026-05-19-delta-lambda-p
 - **GAP-A-3**: categorical brane-tower level selection — Δ_λ as a property of the brane-tower truncation order ℓ(K, q_0), not of any per-partition functional
 - **GAP-A-4**: ρ general rule — the per-atom λ(K) substrate-derivation (Path B's gate), which would close Q1's "why H₄" structurally by making the Wedderburn-count interpretation moot
 
-Both are **research-grade categorical work**, not closed-form probes. They sit above the Δ_λ-gate cap; CLAUDE.md is explicit that no seventh fit ansatz is permitted.
+Both are **research-grade categorical work**, not closed-form probes. They sit above the Δ_λ-gate cap; AGENTS.md is explicit that no seventh fit ansatz is permitted.
 
 ## §4. What this audit does NOT close
 

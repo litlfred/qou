@@ -9,7 +9,7 @@ higher rungs c_4..c_7 have empirical closed forms with sub-percent
 residuals but no first-principles categorical derivation.
 
 This file axiomatises those closed forms as a single conjecture
-class. Per CLAUDE.md §3b-cond, downstream provable claims taking
+class. Per AGENTS.md §3b-cond, downstream provable claims taking
 `[QBetaCKClosedForms]` as a hypothesis are rigorous conditional
 results modulo this conjecture.
 

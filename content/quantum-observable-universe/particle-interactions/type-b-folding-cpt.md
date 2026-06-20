@@ -1,4 +1,4 @@
-**Conjecture (D22 Type-B folding closure, per CLAUDE.md §7b).**
+**Conjecture (D22 Type-B folding closure, per AGENTS.md §7b).**
 *The $\mathfrak{sl}_n$ Cartan datum on the canonical atomic-braid
 Hecke algebra $H_n(q)$ folds into a Type-B Cartan datum
 $\mathrm{B}_{n/2}$ under the involution $\iota: \alpha_i \leftrightarrow
@@ -17,9 +17,9 @@ decomposes naturally as a tensor of:*
 - *T from Markov-trace cyclicity
   ([`conj:t-from-trace-cyclicity`](#conj:t-from-trace-cyclicity), D8)*
 
-## The CLAUDE.md §7b authoring shortcut
+## The AGENTS.md §7b authoring shortcut
 
-Per [`CLAUDE.md`](../../../CLAUDE.md) §7b (symmetric-crystal techniques):
+Per [`AGENTS.md`](../../../AGENTS.md) §7b (symmetric-crystal techniques):
 
 > **Type B folding for chirality / CPT.** To enforce matter–antimatter
 > pairing structurally in the reduction engine, do not write custom
@@ -63,7 +63,7 @@ of the same CPT composite:
 
 The D22 view is **more compact** (no need to track three separate Z/2
 actions) but **requires more category theory** (Kashiwara crystal +
-folding). CLAUDE.md §7b recommends D22 as the authoring shortcut for
+folding). AGENTS.md §7b recommends D22 as the authoring shortcut for
 new content; D6/D7/D8 are the explicit decomposition for blocks that
 need separate access to each component.
 
@@ -116,7 +116,7 @@ class TypeBFoldingCPT (M : Type*) [BrCategory M] [Crystal M] where
 
 - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D22
   + §2 Cluster A alternative
-- [`CLAUDE.md`](../../../CLAUDE.md) §7b authoring shortcut
+- [`AGENTS.md`](../../../AGENTS.md) §7b authoring shortcut
 - D6/D7/D8 explicit CPT decomposition:
   [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md),
   [`conj:p-from-braid-mirror`](p-from-braid-mirror.md),

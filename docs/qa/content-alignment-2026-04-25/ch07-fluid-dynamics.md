@@ -181,11 +181,11 @@
 
 ---
 
-## Notational Alignment (Cross-check CLAUDE.md §7aa)
+## Notational Alignment (Cross-check AGENTS.md §7aa)
 
 ### 1. Vortex morphism notation
 
-**Standard (CLAUDE.md §7aa):** $\varrho$ (vortex filament), NEVER $\gamma$ (Euler-Mascheroni / Dirac matrices).
+**Standard (AGENTS.md §7aa):** $\varrho$ (vortex filament), NEVER $\gamma$ (Euler-Mascheroni / Dirac matrices).
 
 | Block | Usage | Compliance |
 |-------|-------|------------|
@@ -252,7 +252,7 @@
 | $\mathfrak{E}$ | **Not used** (would be for energy) | — | N/A |
 | $E(k)$ | Energy per wavenumber | q-turbulence-spectrum.md | ✓ Standard |
 
-**Note:** CLAUDE.md §7aa mandates $\mathfrak{m}$ for mass and $\mathfrak{E}$ for energy, but these are not used in the chapter. The chapter uses $m$ (scalar) and $E(k)$ (spectral), which is contextually appropriate. **Minor observation, not a violation** (the chapter's conventions are internally consistent).
+**Note:** AGENTS.md §7aa mandates $\mathfrak{m}$ for mass and $\mathfrak{E}$ for energy, but these are not used in the chapter. The chapter uses $m$ (scalar) and $E(k)$ (spectral), which is contextually appropriate. **Minor observation, not a violation** (the chapter's conventions are internally consistent).
 
 ### 8. Substrate $q$ symbolic
 
@@ -372,7 +372,7 @@
 
 2. **File:** `/home/user/qou/content/quantum-observable-universe/fluid-dynamics/discrete-vortex-physical.md`  
    **Line:** (Contextual, not line-specific)  
-   **Issue:** References to vortex filament use $\gamma$ in some contexts; should be $\varrho$ for consistency with CLAUDE.md §7aa.  
+   **Issue:** References to vortex filament use $\gamma$ in some contexts; should be $\varrho$ for consistency with AGENTS.md §7aa.  
    **Fix:** Audit all filament mentions; standardize to $\varrho$.
 
 3. **File:** `/home/user/qou/content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.md`  

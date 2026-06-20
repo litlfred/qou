@@ -15,7 +15,7 @@ The Hahn–Exton q-Bessel q-difference equation `(☆)` is **second order**, so 
 second linearly independent solution — the q-analogue of the Neumann/second-kind
 `Y_ν`. The corpus develops only the first kind `J_ν` (rotation) and modified `I_ν`
 (growth). This note develops the second-kind solution far enough to **gate** the
-binding-correction idea *before* any wide cross-anchor scan (per CLAUDE.md
+binding-correction idea *before* any wide cross-anchor scan (per AGENTS.md
 §Formalize-first probe discipline + the bean's own 5-point gate).
 
 ## The second solution
@@ -74,5 +74,5 @@ No on-shell binding scan is warranted: the on-shell channel is structurally empt
 Any continuation of `qbk2` must be an **off-shell resolvent** computation carrying an
 explicit source (the `−w` term), and must still clear the cross-anchor gate (gate 3)
 before any closure claim. `c_k` / `Δ_λ` stay cal-anchored; nothing is wired to
-production. The owner closes the bean (per CLAUDE.md §4a); this note records the gate
+production. The owner closes the bean (per AGENTS.md §4a); this note records the gate
 outcome for that decision.

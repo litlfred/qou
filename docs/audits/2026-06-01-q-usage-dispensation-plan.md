@@ -318,4 +318,4 @@ After applying A/B/C/D/E from above:
 - Detector source: [`content/pipeline/qa-checkers-q-usage.ts`](../../content/pipeline/qa-checkers-q-usage.ts)
 - CLI: [`content/pipeline/q-usage-audit.ts`](../../content/pipeline/q-usage-audit.ts)
 - Witness: [`2026-06-01-q-usage-audit.witness.json`](./2026-06-01-q-usage-audit.witness.json)
-- Base-ring convention (CLAUDE.md §7c): [`CLAUDE.md`](../../CLAUDE.md)
+- Base-ring convention (AGENTS.md §7c): [`AGENTS.md`](../../AGENTS.md)

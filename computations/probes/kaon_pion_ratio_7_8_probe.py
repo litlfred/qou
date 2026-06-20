@@ -4,7 +4,7 @@ EXPLORATORY numerical observation (NOT a derivation): m_K/m_π ≈ 7(q₀+q₀�
 
 STATUS: NUMEROLOGICAL FIT — found by scanning simple fractions near the
 [2]_q² = 4.044 candidate. The 7/8 factor has NO categorical derivation.
-Per CLAUDE.md "What is forbidden": coefficient fits to PDG data are
+Per AGENTS.md "What is forbidden": coefficient fits to PDG data are
 not permitted as framework claims. This script documents the numerical
 coincidence for future investigation; it is NOT a framework prediction
 until a categorical proof of the 7/8 factor is provided.
@@ -116,7 +116,7 @@ witness = {
         "m_K/m_π ≈ 7(q₀+q₀⁻¹)²/8 at 318 ppm. The 7/8 factor is a "
         "NUMEROLOGICAL FIT found by scanning fractions — no categorical "
         "derivation exists. Recorded for future investigation, not as a "
-        "framework prediction. Per CLAUDE.md: fits to PDG are forbidden "
+        "framework prediction. Per AGENTS.md: fits to PDG are forbidden "
         "as framework claims."
     ),
     "parameters": {"q0": str(q0), "m_pi_MeV": str(m_pi), "m_K_pdg_MeV": str(m_K_pdg)},

@@ -158,7 +158,7 @@ staleness items found:
    "live work in PR #1739" — superseded by the June-4–6 arc (refuted-class
    map; precision floor; 4 KLR preflight refutations; kernel constraints).
    Currency note + registry pointer added.
-3. **Flagged, not changed:** `CLAUDE.md` "2026-05-31 c_3 SETTLED" note — the
+3. **Flagged, not changed:** `AGENTS.md` "2026-05-31 c_3 SETTLED" note — the
    registry §7 already lists it as drifted (the settle was re-litigated
    2026-06-03/04 and re-closed harder). Owner-visible file; left to owner.
 4. **Flagged, not changed:** legacy witness
@@ -197,7 +197,7 @@ The search space is now so pruned that the options enumerate cleanly:
    narrowings). Q_β stays c_2-only in production; m_n and Δ_pn inherit the
    acceptance; the only remaining theoretical escapes are exotic-signed
    Lusztig / Demazure-Lusztig variants (research-grade, preflight-gated).
-4. **Doc hygiene** — items §5.3 / §5.4 (CLAUDE.md note; legacy witness
+4. **Doc hygiene** — items §5.3 / §5.4 (AGENTS.md note; legacy witness
    stamp), owner discretion.
 
 Options 1 and 2 are complementary (1 feeds 2); option 3 is the default if

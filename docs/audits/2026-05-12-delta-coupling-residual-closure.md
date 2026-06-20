@@ -92,7 +92,7 @@ The improvement from H1 to H7a is structurally meaningful:
   coefficient that varies across $(Z, N)$ is not a structural
   closure.
 - **Substrate derivation** of the $[A-2]_q$ prefactor.  H7a
-  identifies a structural near-form, but per CLAUDE.md §3b-cond +
+  identifies a structural near-form, but per AGENTS.md §3b-cond +
   the trivial-skeleton workplan, a numerical near-fit is **not**
   acceptable as a Pattern-A/B Lean instance.  The next agent must
   derive $[A-2]_q$ from KLR / Markov-trace primitives before any

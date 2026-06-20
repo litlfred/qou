@@ -16,11 +16,11 @@ Three probes targeting open high-priority research queue items
 | 3 | m_p 54 ppb (categorical structure) | `research-yekutieli-substrate-derivation-mp` | audit doc only (scaffolds 3–5 session program) |
 | 4 | q-usage audit triage (sibling) | PR #1640 | one coordination comment |
 
-## Discipline guards (CLAUDE.md)
+## Discipline guards (AGENTS.md)
 
 - Probe 1: must report TIERED (`proved` / `near-match` / `fitted`) and
   evaluate at BOTH q_proton AND q_muon — single-anchor matches are
-  discounted per the fibre/observable Im(q) framing in CLAUDE.md.
+  discounted per the fibre/observable Im(q) framing in AGENTS.md.
 - Probe 2: NO new substrate constant. The PR #1662 Probe 2 verdict
   exhausted that ansatz family. Must be CATEGORICAL (operator-level)
   or NULL.

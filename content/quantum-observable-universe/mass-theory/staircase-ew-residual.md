@@ -54,7 +54,7 @@ $h_{\mathrm{corner}}(\rho_k) = 2k - 1$ is
   to inspect.
 
 **Lean status (per
-[`CLAUDE.md` §3b-cond](https://github.com/litlfred/qou/blob/main/CLAUDE.md)).**
+[`AGENTS.md` §3b-cond](https://github.com/litlfred/qou/blob/main/AGENTS.md)).**
 The conjecture is axiomatised as a Lean `class`
 `QOU.StaircaseCornerHook.StaircaseEWResidual` whose canonical
 instance contains **a single `sorry`** — that `sorry` *is* the

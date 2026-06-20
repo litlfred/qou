@@ -4,7 +4,7 @@ reconnaissance for the Q_β c_3 residue A.
 
 EXPLORATORY probe (task ② of the 2026-06-04 Habiro follow-up, PR #1802
 scope doc `docs/scope/2026-06-04-habiro-fibre-composite4-mtau-scope.md`).
-NOT a wire decision and NOT a derivation — it operationalises CLAUDE.md
+NOT a wire decision and NOT a derivation — it operationalises AGENTS.md
 §"Im(q) at fibre vs observable" for the c_3 closure and tests the #1801
 verdict that the `/25` denominator is a **q-undeformed** constant.
 

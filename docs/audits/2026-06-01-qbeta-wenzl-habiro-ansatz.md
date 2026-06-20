@@ -157,7 +157,7 @@ next:
    "1ppQ Q_β" goal as currently framed is a category mistake —
    CAL anchors are *inputs*, not predictions. The current 3-CAL
    discipline (m_e, Q_β, m_π) has Q_β as CAL-2, NOT a prediction.
-   Per CLAUDE.md `## Precision goals`, Q_β's L2 target (≤ 7.8 ppb)
+   Per AGENTS.md `## Precision goals`, Q_β's L2 target (≤ 7.8 ppb)
    currently misses by 1279 ppb (164× miss), and **the cleanest
    path is to declare Q_β not a prediction at all but a
    calibration constant** — at which point N=7 / 1ppQ becomes a

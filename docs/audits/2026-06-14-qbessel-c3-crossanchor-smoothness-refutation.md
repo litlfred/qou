@@ -41,7 +41,7 @@ So the empirical slope is
 
 $$\frac{dc_3}{dq_0} \;\approx\; \frac{-2.0097 - (-2.0693)}{1.28\times10^{-8}} \;\approx\; 4.66\times10^{6},$$
 
-which is exactly the `≈ 4.6e6` smoothness wall recorded in CLAUDE.md from PR #1821.
+which is exactly the `≈ 4.6e6` smoothness wall recorded in AGENTS.md from PR #1821.
 
 Any candidate `c_3(η) = K·\sinh(x\,\sinh\eta)` with a **fixed** real `x` is a
 *smooth* real function of `η = log q₀`; its cross-anchor relative swing is
@@ -85,7 +85,7 @@ value `−2.0202` gives slope `3.84e6`, required `x ≈ 2.0e6` — same conclusi
   Koelink 1994) **at the fibre / formal-`q` level**, and explicitly claims *no*
   `c_3` closure. This probe **confirms** that caution and retires the open gate
   with a clean negative.
-- **It is the forward complement of the Im(q) rule** (CLAUDE.md "Im(q) at fibre
+- **It is the forward complement of the Im(q) rule** (AGENTS.md "Im(q) at fibre
   vs observable level"): a real-`x` q-Bessel is an *archimedean* object
   (`Im(q₀)=0`) and inherits the #1821 smoothness obstruction. The genuine
   resolution lives in the **fibre** — a Habiro element whose *per-anchor*

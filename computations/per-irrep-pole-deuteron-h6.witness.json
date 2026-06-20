@@ -228,7 +228,7 @@
           "is_pure_power_in_cemetery": true
         }
       ],
-      "note": "Canonical crossings from atom_canonical_crossings(Z, N), aggregated per generator index.  Provides structural baseline for GAP-C-1 (q-integer counting per generator) in derivation-audit-report.md.  KLR-canonical-class enrichment per CLAUDE.md §7b (and PR #608 KLR cemetery infra): each per-generator sub-word σ_g^k (pure power) is a cemetery class trivially; the full atom's canonical class is the per-partition χ-fingerprint at q_0 (emitted as `atom_chi_fingerprint` below)."
+      "note": "Canonical crossings from atom_canonical_crossings(Z, N), aggregated per generator index.  Provides structural baseline for GAP-C-1 (q-integer counting per generator) in derivation-audit-report.md.  KLR-canonical-class enrichment per AGENTS.md §7b (and PR #608 KLR cemetery infra): each per-generator sub-word σ_g^k (pure power) is a cemetery class trivially; the full atom's canonical class is the per-partition χ-fingerprint at q_0 (emitted as `atom_chi_fingerprint` below)."
     },
     "atom_chi_fingerprint": {
       "q0": 1.1099785827513808,

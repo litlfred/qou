@@ -23,7 +23,7 @@ Categorically — **no braid words**. For a confined knot $K$:
   is the **mass endomorphism** of the object $X_K$ representing $K$ in
   the rigid monoidal category $\mathbf{C}$;
 - $\mathrm{tr}_M : \operatorname{End}_{\mathbf{C}}(X_K) \to k$ is the
-  categorical **Markov trace** (the closed/categorical trace; CLAUDE.md
+  categorical **Markov trace** (the closed/categorical trace; AGENTS.md
   §7a — the fibre functor $\tau$ is a *different* object, never
   $\tau_M$);
 - $\Pi_{\text{free}} \in \operatorname{End}_{\mathbf{C}}(X_K)$ is the
@@ -135,7 +135,7 @@ independent open problems.
 
 **Proof economy.** A relation proved for $\mathfrak{V}$ over a commutative
 ring $R$ with the **bar-involution** $\sigma$ (the structural setting —
-*not* $\mathbb{C}$, per CLAUDE.md §7c) descends to **both** the bar-even
+*not* $\mathbb{C}$, per AGENTS.md §7c) descends to **both** the bar-even
 (binding) and bar-odd ($\mathfrak{Q}_\beta$) parts from a *single* proof,
 because the projections $x \mapsto x\pm\sigma x$ are additive. Formalised
 sorry-free in [`QOU.MassEndomorphism`](binding-qbeta-complex-volume.lean):

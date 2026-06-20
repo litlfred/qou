@@ -25,7 +25,7 @@ testing a derived one). `Δ_predict_succ` packages that one-step prediction; the
 empirical derive-or-refute against ⁴He is the compute companion
 (`computations/qbeta/qlommel_delta_lambda_two_seed_test.py`).
 
-Generic base ring `[Field K]` (`q`, `x` are formal fibre parameters; CLAUDE.md
+Generic base ring `[Field K]` (`q`, `x` are formal fibre parameters; AGENTS.md
 §7c). Sorry-free.
 -/
 import Mathlib.Algebra.Field.Basic

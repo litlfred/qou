@@ -1,4 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 > **Bar-symmetry class** (per [`def:bar-involution`](#def:bar-involution)):
 > $h = q - q^{-1}$ is **bar-anti-symmetric** ($\overline h = -h$);

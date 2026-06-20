@@ -43,7 +43,7 @@ bibliographic citations. The full proof requires:
    `Vol(𝓑₃) = 2 · 4G = 8G`. Since `vol_B3` is now defined as
    `8 · catalan_G`, this identity is `rfl`.
 
-The `axiom`s are tagged with `-- Ref:` citations per CLAUDE.md §1
+The `axiom`s are tagged with `-- Ref:` citations per AGENTS.md §1
 (every `axiom` and `sorry` requires a bibliographic citation).
 
 ## References

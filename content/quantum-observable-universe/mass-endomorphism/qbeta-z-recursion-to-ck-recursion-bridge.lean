@@ -25,7 +25,7 @@ for the structural-comparison table.
 **Inlined `ZRecursionCoeffs` declaration.** Content-block `.lean`
 files live outside the Lake source tree, so the class declaration
 from PR #1764 is not cross-importable here. We inline a
-byte-identical copy of `ZRecursionCoeffs` (CLAUDE.md §3b-cond
+byte-identical copy of `ZRecursionCoeffs` (AGENTS.md §3b-cond
 class-axiomatisation pattern; the actual class instance is the open
 math, both here and in PR #1764).
 

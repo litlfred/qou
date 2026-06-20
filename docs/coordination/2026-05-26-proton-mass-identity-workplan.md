@@ -25,7 +25,7 @@ Matches CODATA to **0.24 ppm**.
 | 6 | Lean cleared-form Prop + numerical-witness theorem | this commit | — |
 | 7 | Test identity extension to neutron + ⁴He | this commit | — |
 | 8 | Polish `proton-mass-substrate-identity.md` for paper-readiness | this commit | — |
-| 9 | Factor-2 categorical bridge (class hypothesis per CLAUDE.md §3b-cond) | this commit | — |
+| 9 | Factor-2 categorical bridge (class hypothesis per AGENTS.md §3b-cond) | this commit | — |
 | 10 | Coordinate sweep on siblings (#1276, #1287, #1288, #1289) | ✅ done | (comments) |
 | 11 | Final prepare-merge-auto pipeline | follow-up | — |
 
@@ -54,4 +54,4 @@ Prepare-merge-auto pipeline:
 1. Final rebase onto main (already done)
 2. Push all commits (rolling)
 3. Address final review-thread triage (per coordinate skill §5)
-4. Merge via rebase (per CLAUDE.md §rule 7 default merge method)
+4. Merge via rebase (per AGENTS.md §rule 7 default merge method)

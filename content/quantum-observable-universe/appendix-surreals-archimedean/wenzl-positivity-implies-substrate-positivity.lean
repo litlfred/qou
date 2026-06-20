@@ -6,7 +6,7 @@
 *Wenzl positivity at q_0 implies substrate C*-Frobenius positivity*.
 
 The §3b-cond class axiomatisation lives here. The class instance is
-the **conjectural witness** (sorry = conjecture per CLAUDE.md §3b),
+the **conjectural witness** (sorry = conjecture per AGENTS.md §3b),
 not a missing proof. The class bridges the downstream
 `OSReflectionPositivity` typeclass and a future
 `WenzlPositivityAt(q_0)` typeclass on the upstream side — granting

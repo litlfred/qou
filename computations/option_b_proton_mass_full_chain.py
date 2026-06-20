@@ -34,7 +34,7 @@ Pipeline:
     Phase E  — γγ pair-production reduction on every σ_i in every braid
     Phase F  — SDP knot-operator selection per γγ insertion site
                 · emits y0_star, y_star, active_set, primal_obj,
-                  dual_obj, duality_gap (per CLAUDE.md §LP/SDP duals)
+                  dual_obj, duality_gap (per AGENTS.md §LP/SDP duals)
     Phase G  — Graded / filtered tracking per step
                 · jet_order, gb_filtration_level, spectral_stratum
     Phase H  — m_p closed-form assembly:  tr_M(σ_1^7 σ_2^4)(q) as a
@@ -329,7 +329,7 @@ def sdp_select_knot_operator(
 ) -> dict:
     """Run SDP per the prop:operator-selection-lp / §LP/SDP-duals contract.
 
-    Returns the full dual contract per CLAUDE.md (y0_star / y_star /
+    Returns the full dual contract per AGENTS.md (y0_star / y_star /
     active_set / primal_obj / dual_obj / duality_gap).
     """
     res: SdpDualResult = solve_psd_operator_selection_sdp(t_costs, G_gram, n_target)
@@ -552,7 +552,7 @@ def main() -> int:
     # Phase F — SDP knot-operator selection (per Wedderburn block)
     print("\n── Phase F — SDP knot-operator selection per γγ insertion site ──")
     sdp_results = []
-    # Per CLAUDE.md §LP/SDP duals: t = energy cost vector, G = Gram matrix,
+    # Per AGENTS.md §LP/SDP duals: t = energy cost vector, G = Gram matrix,
     # n_target = total crossing budget.  For a minimal end-to-end demo:
     #   t = [1, 1, 1] (uniform per-channel cost, sym/std/alt)
     #   G = identity (uncoupled channels) — replace with full Gram for real chain
@@ -579,7 +579,7 @@ def main() -> int:
         "Phase F — SDP knot-operator selection",
         operation="Solve M(x) ≽ 0 PSD program per prop:operator-selection-lp; emit y0_star, y_star, active_set, duality_gap",
         output={"sdp_results": sdp_results,
-                "contract_compliance": "Per CLAUDE.md §LP/SDP duals (5 fields all present)"},
+                "contract_compliance": "Per AGENTS.md §LP/SDP duals (5 fields all present)"},
         jet_order=0,
         gb_filtration_level=2,   # SDP lives at level 2 (operator-selection)
         spectral_stratum="archimedean (q_0)",

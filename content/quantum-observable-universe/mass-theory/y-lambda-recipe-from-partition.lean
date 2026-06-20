@@ -21,7 +21,7 @@
   The previous version used `q : ℝ`, `open Real`, `Real.sqrt`, and
   axiomatised the Schur principal-specialisation as a real-valued
   `constant`.  All three were Archimedean shortcuts: y_λ is
-  `q`-rational by [wenzl1988] (cf. CLAUDE.md §7aa notation register).
+  `q`-rational by [wenzl1988] (cf. AGENTS.md §7aa notation register).
   The stub now parametrises in an abstract `(q, v) : R × R` with
   `v² = q` and replaces `constant` with `opaque` over `R`.
 

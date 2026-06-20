@@ -12,7 +12,7 @@ above the `E_2` line at saturated `n ∈ {2, 8, 20, 28, 50, 82, 126}`:
 
   E_∞^{p, q}(n) = 0   for all p ∈ ℕ, q > 0,  whenever n ∈ M.
 
-We axiomatise the conjecture as a `class` per CLAUDE.md §3b.
+We axiomatise the conjecture as a `class` per AGENTS.md §3b.
 Downstream theorems (e.g., the `magic-numbers-from-q` ladder)
 become conditional on `[ShellCondensation n]` instances.
 

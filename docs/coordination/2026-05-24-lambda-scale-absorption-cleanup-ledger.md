@@ -25,7 +25,7 @@ A semantic split on `λ_scale` was active across open PRs at the time of /coordi
 - **Current canonical framing (per `ffdd84409`, 2026-05-23):**
   `λ_scale` is **absorbed** into the per-knot `VolDensity(K)` evaluation. There is no separate constant. The 2.89% residual is the gap between the framework's current `VolDensity(𝓑₃)` computation and its categorically-exact value — refinement is a per-knot `VolDensity` problem, not a "λ_scale closure" task. Yekutieli per-cell variant was briefly in production then PURGED 2026-05-24 (`71d674da1`).
 
-**Resolution.** New canonical reference doc [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) created on this branch. CLAUDE.md and `docs/canonical-derivation-cheat-sheet.md` both gained prominent top-line warnings pointing at it. Three coordination comments posted on sibling PRs (#1063, #1065, #1072) flagging the framing issue + the canonical reference. No silent rewrites; sibling-PR authors free to revise or push back.
+**Resolution.** New canonical reference doc [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) created on this branch. AGENTS.md and `docs/canonical-derivation-cheat-sheet.md` both gained prominent top-line warnings pointing at it. Three coordination comments posted on sibling PRs (#1063, #1065, #1072) flagging the framing issue + the canonical reference. No silent rewrites; sibling-PR authors free to revise or push back.
 
 ## Commits on this branch
 
@@ -36,7 +36,7 @@ A semantic split on `λ_scale` was active across open PRs at the time of /coordi
 | [`d4b727d1a`](https://github.com/litlfred/qou/commit/d4b727d1a) | docs(handover): next-agent orientation carried over from PR #863 |
 | [`7e6e7734a`](https://github.com/litlfred/qou/commit/7e6e7734a) | docs(framing): reframe ~3% m_p gap as `VolDensity` refinement, NOT `λ_scale` closure |
 | [`56fc7401a`](https://github.com/litlfred/qou/commit/56fc7401a) | docs(cleanup): 32 zero-ref top-level orphans → `docs/_archive/orphan-top-level/`; `docs/README.md` |
-| [`79d659d4e`](https://github.com/litlfred/qou/commit/79d659d4e) | docs(framing): canonical `lambda-scale-absorbed-into-vol-density.md` reference; CLAUDE.md + cheat-sheet + README all point at it |
+| [`79d659d4e`](https://github.com/litlfred/qou/commit/79d659d4e) | docs(framing): canonical `lambda-scale-absorbed-into-vol-density.md` reference; AGENTS.md + cheat-sheet + README all point at it |
 
 ## Coordination comments posted
 

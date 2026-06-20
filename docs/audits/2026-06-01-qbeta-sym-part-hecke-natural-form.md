@@ -40,7 +40,7 @@ this product structure.
 ## What's NOT done — explicit anti-pattern guard
 
 This audit identifies the ALGEBRAIC FORM of sym, not a c_k closure
-candidate. Per CLAUDE.md "Don't propose a seventh fit-based ansatz"
+candidate. Per AGENTS.md "Don't propose a seventh fit-based ansatz"
 discipline:
 
 - The numerical relation `Q_β/m_e ≈ 140 · |sym|` at q_proton would
@@ -94,4 +94,4 @@ from substrate axioms, not match-by-fitting.
 - `computations/probes/qbeta-delta-tr-bar-decomposition-probe.witness.json`
 - `computations/qbeta/qbeta-sym-part-hecke-natural-form.witness.json` (this PR)
 - `.beans/research-queue.json` — `research-qbeta-bar-decomposition-followup`
-- CLAUDE.md §Canonical derivation chain: Im(q) fibre vs observable (PR #1616 framing)
+- AGENTS.md §Canonical derivation chain: Im(q) fibre vs observable (PR #1616 framing)

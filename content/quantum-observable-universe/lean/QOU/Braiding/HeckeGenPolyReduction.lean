@@ -27,7 +27,7 @@ alone. That is what removes the `d_λ`-dimensional Hoefsmit matrix from the
 χ compute (⁶Li/⁷Li in sub-second time, no `n!` wall).
 
 The reduction holds over ANY `CommRing R` — no archimedean / `q+q⁻¹ ≠ 0`
-hypothesis (per CLAUDE.md §7c the structural fact is stated generically).
+hypothesis (per AGENTS.md §7c the structural fact is stated generically).
 The eigenvalue closed form `α = (E₁−E₂)/(q+q⁻¹)`, `E₁=∏(q+dⱼ)`,
 `E₂=∏(−q⁻¹+dⱼ)` used in the compute for speed is a corollary that DOES
 need `2`-invertibility; only the division-free `heckeAB` recursion is

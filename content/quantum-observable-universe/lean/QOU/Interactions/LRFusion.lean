@@ -11,7 +11,7 @@ and the neutron representation `V_{ydN}` yields a dominant composite
 `V_{ydA}` whose Jucys–Murphy multiset is gapless and globally
 neutral: `κ_{ydA} = 0`.
 
-Conjectural-propagation (CLAUDE.md §3b): downstream of
+Conjectural-propagation (AGENTS.md §3b): downstream of
 `SaturatedShellConjecture` and `ShellCondensationConjecture`, so the
 LR-rigidity claim is also axiomatised here.
 

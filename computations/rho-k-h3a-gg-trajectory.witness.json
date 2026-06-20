@@ -59,7 +59,7 @@
   "scriptFile": "rho_k_h3a_gg_trajectory.py",
   "scriptHash": "2adbb5d61b3b",
   "scriptCommitSha": "fbf39bd26ca0665fbde72cec214f607eb92e2c42",
-  "description": "Δ_λ Option G extension: per-prefix gg-pair-production trajectory for the proton and neutron (n=3, p(3)=3) canonical braid words, with per-step χ^λ + Σ y_λ χ^λ decomposition. At the full braid, applies the Frobenius-pairing min-norm closure (Option G) AND routes through the canonical LP / SDP solvers from lp_dual_solver.py (per CLAUDE.md § LP/SDP duals — first-class infra). Sibling of rho_k_h3a_frobenius_pairing.py (deuteron @ n=6).",
+  "description": "Δ_λ Option G extension: per-prefix gg-pair-production trajectory for the proton and neutron (n=3, p(3)=3) canonical braid words, with per-step χ^λ + Σ y_λ χ^λ decomposition. At the full braid, applies the Frobenius-pairing min-norm closure (Option G) AND routes through the canonical LP / SDP solvers from lp_dual_solver.py (per AGENTS.md § LP/SDP duals — first-class infra). Sibling of rho_k_h3a_frobenius_pairing.py (deuteron @ n=6).",
   "data": {
     "nucleons": {
       "p": {

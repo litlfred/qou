@@ -125,7 +125,7 @@ to invalidate.
 | `bibliography` | Re-audit 4 block-level bib criteria. Risk: low — reads `bib-qa.json`. |
 | `all` | Full re-audit across all 6 axes. Risk: medium — sweep takes ~15-30s. |
 
-Multi-select, default `multiSelect: true` per CLAUDE.md
+Multi-select, default `multiSelect: true` per AGENTS.md
 accessibility convention.
 
 ## Integration

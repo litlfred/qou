@@ -23,7 +23,7 @@ factorizes over bond positions and the log-binding is exactly additive:
 This file proves (i) the **bond-count combinatorics** (pure `ℕ`) and (ii) the
 **additivity closed form** as a `List.sum` identity over the chain's bond
 multiset. The per-bond values `L_X : Bond → R` are abstract parameters (base ring
-generic `R`, per CLAUDE.md §7c — the additivity is algebra, no archimedean input);
+generic `R`, per AGENTS.md §7c — the additivity is algebra, no archimedean input);
 the empirical claim that this matches the actual 50-dps trace stays in the audit,
 *not* asserted here. Complements
 `QOU.BraidKnot.ChiralityTopologySelection` (which fixed the p-n bond counts

@@ -26,7 +26,7 @@ class and its importers are untouched.
 
 Build-verified 2026-06-07: `lake build QOU.BraidKnot.GSReductionOrder`
 exit 0 (2244/2244 targets), sorry-free (the single conjectural input is
-the `order_match` class field per CLAUDE.md §3b).
+the `order_match` class field per AGENTS.md §3b).
 
 -- Ref: [manuscript] particle-interactions/crystal-graph-realization
 -- Ref: [brundankleshchev2009] Brundan & Kleshchev, "Blocks of cyclotomic Hecke algebras and Khovanov-Lauda algebras," Invent. Math. 178 (2009), arXiv:0808.2032

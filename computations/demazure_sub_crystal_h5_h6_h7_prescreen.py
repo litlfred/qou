@@ -39,7 +39,7 @@ h⁰ normalization), flag as a candidate for deeper investigation.
 - PR #1288 (sibling: dominant-partition + Type-B folding, main 5b8150e5d)
 - PR #1287 stack (companion probes)
 - audit 2026-05-25 Path C principle hunt
-- CLAUDE.md §7b — Type-B folding, Demazure sub-crystals for resonances
+- AGENTS.md §7b — Type-B folding, Demazure sub-crystals for resonances
 """
 from __future__ import annotations
 

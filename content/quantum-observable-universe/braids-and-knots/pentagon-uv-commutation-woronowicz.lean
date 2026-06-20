@@ -219,7 +219,7 @@ with the specific identifications above.  The body uses `sorry` at
 the construction sites; this `sorry` cites Woronowicz 1989 +
 Jurčo 1991 + the Schur–Weyl–Hecke pullback theorem (Kassel §X.4).
 
-Per CLAUDE.md §3b: this `sorry` is a CITATION-BACKED conjectural
+Per AGENTS.md §3b: this `sorry` is a CITATION-BACKED conjectural
 construction (the standard Woronowicz calculus on H_n(q) is
 mathematical folklore from 1989–1991 but has never been formalised
 in Lean).  It is NOT a proof gap to be closed by elementary means;

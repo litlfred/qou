@@ -4,7 +4,7 @@
 KLR canonical-basis "cemetery" filter — reusable infra for any
 Markov-class enumeration over braid words / Hecke elements.
 
-Per CLAUDE.md §7b "Symmetric-crystal techniques (KLR / Kashiwara) —
+Per AGENTS.md §7b "Symmetric-crystal techniques (KLR / Kashiwara) —
 authoring guidance":
 
 > Decategorifying to KL bases for the classical limit. The transition

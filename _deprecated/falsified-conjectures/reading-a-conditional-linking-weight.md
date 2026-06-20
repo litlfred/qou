@@ -70,7 +70,7 @@ yet been identified.
 | `m_p_pred_reading_a` | `def` | conditional prediction formula |
 | `m_p_pred_reading_a_factored` | `theorem` | factored closed form (verified) |
 
-Per CLAUDE.md §3b-cond, the conditional-class pattern lets the
+Per AGENTS.md §3b-cond, the conditional-class pattern lets the
 downstream `m_p` prediction be **fully Lean-verified** modulo the
 single class-axiomatised assumption `ReadingAValidAtH2`.
 

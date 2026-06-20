@@ -37,7 +37,7 @@ If any variant passes q-locality AND has a reasonable structural
 justification, that's a candidate architectural fix for the
 +2.89 % gap.
 
-Per CLAUDE.md three-calibration discipline: this probe is EXPLORATORY
+Per AGENTS.md three-calibration discipline: this probe is EXPLORATORY
 (no production wiring proposed). Any variant claimed canonical would
 need separate categorical justification.
 
@@ -285,7 +285,7 @@ def main() -> None:
             ),
         },
         "interpretation_note": (
-            "Per CLAUDE.md three-calibration discipline, this probe does "
+            "Per AGENTS.md three-calibration discipline, this probe does "
             "NOT propose production wiring of any variant. Even if a "
             "variant passed, it would need separate categorical "
             "justification before being eligible for canonical promotion."

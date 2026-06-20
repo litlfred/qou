@@ -68,7 +68,7 @@ Ref: docs/canonical-derivation-cheat-sheet.md §"11. β-decay Q"
 Ref: computations/lp_dual_solver.py (solve_operator_selection_lp)
 Ref: computations/qbeta/qbeta_symbolic_tbeta_min_l2.py (PR #1739)
 Ref: computations/qbeta/qbeta_decay_sdp_solver.py (min-L2 incumbent)
-Ref: prop:operator-selection-lp (LP/SDP first-class-infra rule, CLAUDE.md)
+Ref: prop:operator-selection-lp (LP/SDP first-class-infra rule, AGENTS.md)
 """
 from __future__ import annotations
 

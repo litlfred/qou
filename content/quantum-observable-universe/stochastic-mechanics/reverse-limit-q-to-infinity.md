@@ -52,7 +52,7 @@ The framework does NOT currently use the $q \to \infty$ limit
 explicitly — but every Kashiwara-crystal result has a bar-paired
 counterpart at $q \to \infty$ that can be derived for free.
 
-For the matter/antimatter discussion (per CLAUDE.md §7b + D22 Type-B
+For the matter/antimatter discussion (per AGENTS.md §7b + D22 Type-B
 folding): if matter is identified with Kashiwara crystal fixed
 points (at $q \to 0$), antimatter corresponds to
 reverse-crystal fixed points (at $q \to \infty$), and the bar

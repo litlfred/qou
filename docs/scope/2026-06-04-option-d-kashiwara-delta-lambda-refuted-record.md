@@ -59,7 +59,7 @@ redirects to **GAP-A-3 / GAP-A-4**:
   moot.
 
 Both are **research-grade categorical work**, above the Δ_λ-gate
-cap. CLAUDE.md explicitly forbids a seventh fit ansatz; per the
+cap. AGENTS.md explicitly forbids a seventh fit ansatz; per the
 audit, no further single-formula Δ_λ candidates should be tested.
 
 ## What this PR's record contributes

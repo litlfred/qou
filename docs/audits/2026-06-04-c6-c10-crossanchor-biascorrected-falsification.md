@@ -61,7 +61,7 @@ not continue the pattern even after bias correction. Same shape as the c_3
 [3]_q/25 rigidity finding
 ([`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md)):
 a smooth real-q form is exact at one structural anchor and does not represent
-the q₀ residual structure (a fibre-level object per CLAUDE.md §"Im(q) at fibre
+the q₀ residual structure (a fibre-level object per AGENTS.md §"Im(q) at fibre
 vs observable level").
 
 ## Consequences
@@ -81,4 +81,4 @@ vs observable level").
 - c_8/c_9/c_10 closed forms + silver Lean: PR #1793; Lake mirror + raw-extraction first cut: PR #1833
 - bias-corrected extraction: PR #1824 (`qbeta_ck_truncation_bias_correction_probe.py`)
 - c_3 [3]_q/25 cross-anchor rigidity: [`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md)
-- CLAUDE.md §"Critical framing — Im(q) at fibre vs observable level"
+- AGENTS.md §"Critical framing — Im(q) at fibre vs observable level"

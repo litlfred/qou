@@ -186,7 +186,7 @@ operator ratio so the gap is visible:
 
 `writhe(T(2,n)) = n ≠ 0` for every lepton ⇒ a **live** Reidemeister-I
 framing factor `q^{n·c}` throughout the tower (unlike the writhe-0
-Borromean baryon). At the observable level `Im(q₀)=0` (CLAUDE.md), so
+Borromean baryon). At the observable level `Im(q₀)=0` (AGENTS.md), so
 `q^{n·c}` is a real factor. With `c=1` SET (not fitted):
 
 | `n` | Particle | writhe | `q^{n}` (q₀, c=1) | electric charge |

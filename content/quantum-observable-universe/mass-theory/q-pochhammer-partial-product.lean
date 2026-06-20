@@ -94,7 +94,7 @@ def AlgebraicCuspComplete (q x : ℝ) (n : ℕ) : Prop :=
     dilogarithm `Li₂` is **not stated here**. The genuine asymptotic
     identity (Faddeev's saddle-point analysis) lives in the
     `ArchimedeanLimit` typeclass of `dilogarithm-archimedean-limit.lean`,
-    where it is packaged as a class hypothesis (CLAUDE.md §3b). -/
+    where it is packaged as a class hypothesis (AGENTS.md §3b). -/
 -- Ref: [manuscript] conj:dilogarithm-archimedean-limit
 
 end QOU.QPochhammer

@@ -110,4 +110,4 @@ L2 met count would go from **3/7 → 7/7** — closing the entire L2 100× campa
 - m_n + Δ_pn acceptance (PR #1781): `docs/audits/2026-06-03-m-n-delta-pn-qbeta-cal-anchored-acceptance.md`
 - KLR/crystal infra scope (PR #1770): `docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md`
 - 1ppQ Q_β master ledger: `docs/coordination/1ppq-qbeta.md`
-- CLAUDE.md §"Precision goals" — L2 status table
+- AGENTS.md §"Precision goals" — L2 status table

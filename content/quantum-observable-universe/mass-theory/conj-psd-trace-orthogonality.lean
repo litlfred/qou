@@ -32,7 +32,7 @@ For the canonical atom-braid `T_w(Z, N) ∈ B_{3A}` and its image in
 
 ## Status
 
-Per CLAUDE.md §3b-cond, axiomatised as a Lean `class`
+Per AGENTS.md §3b-cond, axiomatised as a Lean `class`
 `PSDTraceOrthogonalDecomp` with fields encoding the disjointness
 claim. The empirical witnesses (A=4, A=6) provide concrete
 instance data but not Lean instances — those would require

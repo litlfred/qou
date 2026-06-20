@@ -30,7 +30,7 @@ $\mathtt{def:universal-ilp-algorithm}$).*
               x ≥ 0.
 2. Solve via Clarabel (default) or a sibling SDP backend.
 3. Recover dual variables y_0*, y*.
-4. Emit the LP-dual witness (per CLAUDE.md "LP/SDP duals —
+4. Emit the LP-dual witness (per AGENTS.md "LP/SDP duals —
    first-class infra").
 ```
 
@@ -64,7 +64,7 @@ solver helpers are exposed as
 **Must emit all of** `y0_star`, `y_star`, `active_set`,
 `primal_obj`, `dual_obj`, `duality_gap` — enforced in CI by
 [`lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py)
-(see CLAUDE.md "LP/SDP duals — first-class infra").*
+(see AGENTS.md "LP/SDP duals — first-class infra").*
 
 ### Notes
 

@@ -2,20 +2,20 @@
 
 **Date:** 2026-06-02
 **Branch:** `claude/qbeta-habiro-element-2026-06-02`
-**Trigger:** PR #1698 Subgoal-1 follow-up (merged `4cd808f05b`); owner directive "1 2 3"; CLAUDE.md gap-map highest-priority item.
+**Trigger:** PR #1698 Subgoal-1 follow-up (merged `4cd808f05b`); owner directive "1 2 3"; AGENTS.md gap-map highest-priority item.
 
-Per CLAUDE.md "Precision goals" + the L2 100× shared-root audit (`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`), the Q_β Habiro element is the **highest-priority gap**: gates c_4-c_7 Taylor coefficients of `Q_β = Q_base · Π(1 + c_k u^k)` AND, via shared root, the three failing L2-100× observables (m_n, Q_β, Δ_pn).
+Per AGENTS.md "Precision goals" + the L2 100× shared-root audit (`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`), the Q_β Habiro element is the **highest-priority gap**: gates c_4-c_7 Taylor coefficients of `Q_β = Q_base · Π(1 + c_k u^k)` AND, via shared root, the three failing L2-100× observables (m_n, Q_β, Δ_pn).
 
-## State of the framing (CLAUDE.md §"Q_β c_k truncation order")
+## State of the framing (AGENTS.md §"Q_β c_k truncation order")
 
 - `u = b · ℏ_q² ≈ 0.00852` — Q_β precision-ladder variable.
 - `c_2 = -1` — **PROVED Taylor-exact**.
-- `c_3 = -2 = J_Hopf(q=1)` — **NEAR-MATCH at q_0** (2.98 % cross-anchor swing between q_proton and q_muon; up to 3.47 % displacement at the m_p-anchor q_0 alone per CLAUDE.md §"Q_β c_k truncation order"); 4-session flip-flop history settled 2026-05-31 as fibre-vs-observable Im(q) distinction (CLAUDE.md §"Critical framing").
+- `c_3 = -2 = J_Hopf(q=1)` — **NEAR-MATCH at q_0** (2.98 % cross-anchor swing between q_proton and q_muon; up to 3.47 % displacement at the m_p-anchor q_0 alone per AGENTS.md §"Q_β c_k truncation order"); 4-session flip-flop history settled 2026-05-31 as fibre-vs-observable Im(q) distinction (AGENTS.md §"Critical framing").
 - `c_4 - c_7` — **OPEN**, blocked on the Habiro element identification.
 
 ## What the open question actually is
 
-Per CLAUDE.md §"Im(q) at fibre vs observable level (2026-06-01)":
+Per AGENTS.md §"Im(q) at fibre vs observable level (2026-06-01)":
 
 > The c_k Taylor coefficients live in the FIBRE (formal q-deformation, potentially complex). Each q_0 anchor is a different archimedean evaluation of the SAME fibre object. The "cross-anchor swing" caught as "near-match" is the fibre object having structure beyond a real constant — exactly what you'd expect if c_k(q) is a complex-analytic function evaluated at real q_0.
 
@@ -45,7 +45,7 @@ Combined: `α · [2]_q/(8π) · (1 - h²α)`.
 
 ## Phase A — re-frame using the fibre-level distinction
 
-Per CLAUDE.md, the trio `c_2 / c_3 / c_4` should be re-examined at fibre level:
+Per AGENTS.md, the trio `c_2 / c_3 / c_4` should be re-examined at fibre level:
 - `c_2 = -1` proved Taylor-exact ✓ (archimedean fact too)
 - `c_3` cross-anchor swing 2.98 % (compute precision << 1 ppQ, so swing IS structural, not noise)
 - `c_4` unknown
@@ -64,7 +64,7 @@ Two attack methodologies:
 
 After the categorical identification, add a Lean class `QBetaHabiroElement` mirroring the §3b-cond pattern used in `OperatorValuedCombiner.lean` (PR #1698): class fields encode the fibre-level identification, theorem applies it at concrete c_k.
 
-## Out of scope (per CLAUDE.md)
+## Out of scope (per AGENTS.md)
 
 - **No new ansatz fits** for c_k (the 4-session c_3 flip-flop saga is the cautionary tale).
 - **No "binary wired/dropped" decisions** — report TIERED (proved / near-match / fitted) per the canonical reference [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](../audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).
@@ -78,5 +78,5 @@ Sibling #1521 (α_em Habiro) — methodology DEPENDENCY + CHERRY-PICK. Intent po
 
 - L2 100× shared-root: [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](../audits/2026-05-30-l2-100x-status-3-failing-shared-root.md)
 - Q_β c_k canonical framing (settled 2026-05-31): [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](../audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
-- Fibre vs observable Im(q) (2026-06-01): CLAUDE.md §"Im(q) at fibre vs observable level"
+- Fibre vs observable Im(q) (2026-06-01): AGENTS.md §"Im(q) at fibre vs observable level"
 - α_em Habiro categorical ID (sibling): PR #1521 + [`PR #1511`](https://github.com/litlfred/qou/pull/1511) (merged)

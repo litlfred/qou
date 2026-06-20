@@ -1,4 +1,4 @@
-*Lean sibling: any commutative ring with $q, q_i$ formal (fibre-level, no reality imposed — the `alpha-em-habiro-bar-involution` convention; CLAUDE.md §7c).*
+*Lean sibling: any commutative ring with $q, q_i$ formal (fibre-level, no reality imposed — the `alpha-em-habiro-bar-involution` convention; AGENTS.md §7c).*
 
 **Proposition (van der Waals $=$ the bar-odd $P_{\mathrm{skew}}$ channel).**
 *Under the bar involution $q \mapsto q^{-1}$, the Hopf weighting of

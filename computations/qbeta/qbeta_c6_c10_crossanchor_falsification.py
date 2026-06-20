@@ -43,7 +43,7 @@ structural anchor. The bias-corrected extraction confirms them only where
 they are assumed (c_6, c_7) and the Pell-Lucas pattern BREAKS at the first
 free rung (c_8). Tier stays `empirical — silver-anchored`; no production
 wire (§8). Consistent with the c_3 [3]_q/25 rigidity finding and
-CLAUDE.md §"Im(q) at fibre vs observable level".
+AGENTS.md §"Im(q) at fibre vs observable level".
 
 Run:
     python3 computations/qbeta/qbeta_c6_c10_crossanchor_falsification.py

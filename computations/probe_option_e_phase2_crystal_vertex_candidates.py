@@ -254,7 +254,7 @@ out = {
         "machinery n^w_λ (non-trivial KL multiplicities, not n^w_λ = 1) "
         "summed across multiple vertices w — requires extending "
         "kazhdan_lusztig.py past its n ≤ 4 cap to S_6. Otherwise: "
-        "pivot to GAP-A-3/A-4 per CLAUDE.md §L2."
+        "pivot to GAP-A-3/A-4 per AGENTS.md §L2."
         if not any_closes else
         "POSITIVE FINDING — one or more candidates closed within 10%. "
         "Escalate: refine the candidate rule, then attempt the full "

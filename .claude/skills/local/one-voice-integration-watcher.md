@@ -65,7 +65,7 @@ QA report. Specifically:
    `$\mathcal{C}$` category, bare `$H_q$`) is replaced; the
    notation register (`content/quantum-observable-universe/notation/`)
    is the authoritative target.
-5. **Archimedean wall preserved.** Per CLAUDE.md §7c, algebraic
+5. **Archimedean wall preserved.** Per AGENTS.md §7c, algebraic
    substrate blocks must NOT silently specialise to `ℝ`;
    archimedean specialisations must declare themselves.
 
@@ -163,7 +163,7 @@ For `framework-canonical`:
 
 For `wall-side-correct`:
 
-> Block `<label>` has Lean at `<url>` using `Real.sqrt` / `linarith` / `ℝ` but the .md does not acknowledge archimedean specialisation. Per CLAUDE.md §7c, generic-`R` algebraic blocks and archimedean specialisations should live in separate files. Question: 1) move the archimedean evaluation to a sibling block under `descartes-universe/` or `observations/`, 2) add an explicit "archimedean specialisation" banner to the .md, 3) refactor Lean to use generic `R`?
+> Block `<label>` has Lean at `<url>` using `Real.sqrt` / `linarith` / `ℝ` but the .md does not acknowledge archimedean specialisation. Per AGENTS.md §7c, generic-`R` algebraic blocks and archimedean specialisations should live in separate files. Question: 1) move the archimedean evaluation to a sibling block under `descartes-universe/` or `observations/`, 2) add an explicit "archimedean specialisation" banner to the .md, 3) refactor Lean to use generic `R`?
 
 ## Slot G — §5a backlog discovery
 

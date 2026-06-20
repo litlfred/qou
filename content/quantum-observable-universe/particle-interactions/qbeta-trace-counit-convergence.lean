@@ -24,7 +24,7 @@ Its empirical evidence is the `+0.17%` agreement of the counit form at
 instance carries the lone `sorry`.
 
 Real-valued throughout — `𝔪`, `m_e`, `𝔈₀` are MeV observables
-(archimedean; CLAUDE.md §7c).
+(archimedean; AGENTS.md §7c).
 -/
 
 namespace QOU.Interactions.QBetaConvergence

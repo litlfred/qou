@@ -18,7 +18,7 @@ with y_λ the canonical Wenzl/Jones–Markov weights (`wedderburn_jones_markov`)
 This reproduces the known single-trace deuteron under-prediction (≈ 0.47 MeV vs
 AME 2.225 MeV); it is an audit datum, NOT a production binding claim — the
 canonical per-isotope binding lives in `binding_canonical` and the Δ_λ gate is
-the open frontier (see CLAUDE.md "Δ_λ gate"). Nothing here is wired.
+the open frontier (see AGENTS.md "Δ_λ gate"). Nothing here is wired.
 
 Free word has NO p-n interface crossing, so it is convention-independent
 (`bring_color_weighted` ≡ `strict_averaged` on the free word); the bound word

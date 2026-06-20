@@ -72,7 +72,7 @@ class AlphaEmGluonOctetConjecture (q : ℝ) (hq : q > 1) : Prop where
     simons`, the algebraic content is the existence of such a
     Gram-determinant `κ` making the identity hold.
 
-    Per `CLAUDE.md §3b-cond`, encoded as opaque Prop + class
+    Per `AGENTS.md §3b-cond`, encoded as opaque Prop + class
     field. Algebraic tier only — numerical CODATA match deferred
     to a future Archimedean tier per gemini #721 rule. -/
 opaque ChernSimonsGramDeterminantIdentityHolds (q : ℝ) (hq : q > 1) : Prop

@@ -3,7 +3,7 @@
   "target_value": -0.99124115660574,
   "target_tolerance": 1e-10,
   "content_block": "prop:term7-shell-correction",
-  "description": "Crystal-side Term-7 shell-correction sum for ⁴He, S_crystal(⁴He) ≈ −0.991241.  Structural prediction from Schur–Weyl + Wedderburn + categorical R-matrix action evaluated at the crystal limit q → 0 — no free parameter.  Trust profile {axiom: 3, mathlib-cited: 1, derived: 2, script-cited: 2, computational: 1}; the two SCRIPT_CITED frontiers are (a) crystal-limit characters (closes when `conj:crystal-graph-realization` is proven or class-axiomatised per CLAUDE.md §3b-cond), and (b) atomic braid words (inherits the open `atomic_braid_recipe` frontier).  α_5 itself becomes the AME-calibrated proportionality `Term7(A) = α_5 · S_crystal(A)`, atom-independent under flat transport q → 0 ⇝ q_0; this chain replaces PR #481's σ_shell-α_5-skeleton (which marked α_5 as the open frontier — closed structurally on 2026-05-09).",
+  "description": "Crystal-side Term-7 shell-correction sum for ⁴He, S_crystal(⁴He) ≈ −0.991241.  Structural prediction from Schur–Weyl + Wedderburn + categorical R-matrix action evaluated at the crystal limit q → 0 — no free parameter.  Trust profile {axiom: 3, mathlib-cited: 1, derived: 2, script-cited: 2, computational: 1}; the two SCRIPT_CITED frontiers are (a) crystal-limit characters (closes when `conj:crystal-graph-realization` is proven or class-axiomatised per AGENTS.md §3b-cond), and (b) atomic braid words (inherits the open `atomic_braid_recipe` frontier).  α_5 itself becomes the AME-calibrated proportionality `Term7(A) = α_5 · S_crystal(A)`, atom-independent under flat transport q → 0 ⇝ q_0; this chain replaces PR #481's σ_shell-α_5-skeleton (which marked α_5 as the open frontier — closed structurally on 2026-05-09).",
   "steps": [
     {
       "name": "Schur–Weyl decomposition of H_{12}(q) ↺ V^{⊗12}",
@@ -90,7 +90,7 @@
       "gb_filtration_level": 5,
       "spectral_stratum": "q = 0 (crystal limit)",
       "citation": "manuscript:§term7-crystal-derivation",
-      "notes": "script: computations/term7_alpha5_crystal_derivation.py (crystal_chi_lambda).  CONDITIONAL on `conj:crystal-graph-realization` per the witness's `conditional_on` field; closes when either the crystal-graph realisation conjecture is proved (or axiomatised as a class per CLAUDE.md §3b-cond) or a Lean formalisation of the q → 0 functor lands."
+      "notes": "script: computations/term7_alpha5_crystal_derivation.py (crystal_chi_lambda).  CONDITIONAL on `conj:crystal-graph-realization` per the witness's `conditional_on` field; closes when either the crystal-graph realisation conjecture is proved (or axiomatised as a class per AGENTS.md §3b-cond) or a Lean formalisation of the q → 0 functor lands."
     },
     {
       "name": "⁴He atomic braid word β_⁴He ∈ B_{12}",

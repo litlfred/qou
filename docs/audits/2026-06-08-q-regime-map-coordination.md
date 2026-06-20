@@ -16,7 +16,7 @@ confined-hadronic regime. All PR #1999 (H₂O, phase predictions) and
 PR #2002 (optical fibre) content is evaluated **here** unless explicitly
 flagged otherwise. Observable-level constraint: `Im(q₀) = 0`
 (`lusztig_q_0_imaginary_part_zero`) — real masses require real q at the
-archimedean level (CLAUDE.md fibre-vs-observable banner).
+archimedean level (AGENTS.md fibre-vs-observable banner).
 
 ## 2. Known regime boundaries (documented in the corpus)
 

@@ -51,7 +51,7 @@ and the *script* together.
 The 3 work-plan goal queues (`1ppq-qbeta-queue`, `lean-discharge-queue`, `research-queue`) were
 **relocated `todos/` → `.beans/` as bulk JSON** (`git mv` + a mechanical repoint of all readers,
 including the live `STATUS.md` links) — they stay bulk JSON per `beans ≠ sidecars`, **not** exploded
-into per-item beans. The `content-todos.ts` TodoItem store stays at `todos/` (CLAUDE.md §4a).
+into per-item beans. The `content-todos.ts` TodoItem store stays at `todos/` (AGENTS.md §4a).
 
 **`.beans/*.json` — 11 tracked bulk-JSON queues:** the 4 relocated watcher queues
 (`canonical-/compute-integration-/detangler-integration-/proof-integration-watcher-queue.json`)
@@ -70,9 +70,9 @@ Dockerfile.
   `$HOME/.local/bin`). Verified in a fresh cloud sandbox.
 - Repaired `.claude/skills/local/bean-coordination.md` (was a stub pointing at a non-resolvable
   folio-assistant path).
-- Wired beans into CLAUDE.md discovery surfaces (work-plan policy, skill-routing, project-structure).
+- Wired beans into AGENTS.md discovery surfaces (work-plan policy, skill-routing, project-structure).
 - **Relocated the 4 watcher queues** `todos/` → `.beans/` (`git mv`) + repointed **38 doc
-  references** across the integration-watcher skill family, `.claude/commands/*`, and CLAUDE.md.
+  references** across the integration-watcher skill family, `.claude/commands/*`, and AGENTS.md.
   Verified **no `*.ts` code reads the watcher-queue paths** — so this did *not* touch `/api/todos`.
 - Repointed `content/pipeline/qa-agent-drain-queue.ts` default `--out` → `.beans/`.
 

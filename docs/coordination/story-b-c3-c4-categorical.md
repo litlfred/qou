@@ -151,7 +151,7 @@ Recommended owner adjudication:
    Jones-Markov)?
 2. If accidental: rename + audit + replace. ~15 scripts affected.
 3. If deliberate: document the choice; update `thm:jones-markov-trace`
-   in CLAUDE.md §7a to reflect the actual computed invariant.
+   in AGENTS.md §7a to reflect the actual computed invariant.
 
 ## 2026-05-17 update — Dual tr_M FIX shipped + provenance traced
 
@@ -187,7 +187,7 @@ on H_3), fails the Markov property tr_M(α·σ_n) = z·tr_M(α).
 
 `tr_M_canonical` (markov_weights_symbolic.py) IS the canonical
 Markov trace via Wenzl's Schur principal specialization. **It is
-the one cited by CLAUDE.md §7a `thm:jones-markov-trace`.**
+the one cited by AGENTS.md §7a `thm:jones-markov-trace`.**
 
 ### Categorical-action derivation
 
@@ -294,7 +294,7 @@ Markov). The production code computes ρ · Σ (dim_q²/[n]_q!) χ_λ/f^λ
       with tr_Markov_symbolic; m_p / m_n / m_He predictions will
       change. The paper's claim is preserved.
   (B) Paper is WRONG: amend atom-knot-mass-derivation-proof.md to
-      cite the Plancherel formula. CLAUDE.md §7a notation register
+      cite the Plancherel formula. AGENTS.md §7a notation register
       also needs amendment (currently says y_λ is the canonical
       Markov-Wenzl weight).
   (C) BOTH are valid for DIFFERENT observables: mass = Plancherel,

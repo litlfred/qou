@@ -245,7 +245,7 @@ def main():
     w.add_data("implication_for_option_E", (
         "If D_q² rank does NOT match empirical dominant λ*(K), Option E's "
         "ρ_w(K) construction needs a selection mechanism beyond Dirac "
-        "eigenvalues. The Type-B folding bar-symmetry (CLAUDE.md §7b, "
+        "eigenvalues. The Type-B folding bar-symmetry (AGENTS.md §7b, "
         "PR #1288's transpose-pair theorems on main) may be the right "
         "structural input, since dominant pairs include both λ* and λ*^T "
         "(e.g. ⁴He: (4,4,4) ↔ (3,3,3,3))."

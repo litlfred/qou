@@ -128,7 +128,7 @@ remaining genuinely-open directions (per cumulative audit):
    basis at ppb tolerance.
 3. **Retire `conj:lambda-scale-bring-bloch-identity`** in favour of
    an explicit acknowledged CAL-4 anchor if all empirical
-   directions exhaust. (Per CLAUDE.md three-calibration discipline,
+   directions exhaust. (Per AGENTS.md three-calibration discipline,
    only `m_e`, `q_0`, and `Q_β` are calibration inputs; CAL-4
    anchors are documented as falsifiable predictions that
    numerically agree with CODATA but are not derived.)

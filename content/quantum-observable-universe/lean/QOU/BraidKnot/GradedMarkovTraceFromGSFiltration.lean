@@ -8,7 +8,7 @@ The graded Markov trace at level `ℓ` is the induced trace on the
 quotient `J^ℓ / J^{ℓ+1}` of the Gröbner–Shirshov filtration, and is
 purely algebraic in `ℤ[q^{±1}]` — no Archimedean function theory.
 
-**Conditional-class axiomatisation** (CLAUDE.md §3b).  Replaces the
+**Conditional-class axiomatisation** (AGENTS.md §3b).  Replaces the
 previous `: True := trivial` placeholder with an actual typeclass
 encoding the proposition's content: the graded trace exists at
 each level, is `R`-valued (Laurent in `q`), is the descent of

@@ -37,7 +37,7 @@
       "proof_sketch": "for each \u03bb: unfold ySchurClosedForm; have hc : contentSum \u03bb = <C>; have hs : \u03bb.sum = 3; rw [hc, hs]; show qFactorial 3 q = [3]_q!; field_simp + ring",
       "expected_duration": "30min",
       "resolution_commit": "af3316bf",
-      "resolution_note": "Already implemented in main: qSchur_H3_top (line 262), qSchur_H3_mid (line 273), qSchur_H3_bottom (line 284) \u2014 all proved via the H_2 pattern with helper lemmas q_add_inv_ne_zero and q_sq_add_one_add_inv_sq_ne_zero. Commit af3316bf ('lean(QSchurYLambdaClosedForm): refresh docstrings \u2014 H_2 + H_3 are sorry-free') landed before this 2026-05-31 todo was created. No clean H_3 'normalization' theorem (un-weighted partition sum is not 1 at H_3 without dim_q(\u03bb)\u00b2 weighting). Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as resolved (per CLAUDE.md TodoItem lifecycle rules, only humans may close todos; agents may not set status to 'resolved' or remove entries)."
+      "resolution_note": "Already implemented in main: qSchur_H3_top (line 262), qSchur_H3_mid (line 273), qSchur_H3_bottom (line 284) \u2014 all proved via the H_2 pattern with helper lemmas q_add_inv_ne_zero and q_sq_add_one_add_inv_sq_ne_zero. Commit af3316bf ('lean(QSchurYLambdaClosedForm): refresh docstrings \u2014 H_2 + H_3 are sorry-free') landed before this 2026-05-31 todo was created. No clean H_3 'normalization' theorem (un-weighted partition sum is not 1 at H_3 without dim_q(\u03bb)\u00b2 weighting). Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as resolved (per AGENTS.md TodoItem lifecycle rules, only humans may close todos; agents may not set status to 'resolved' or remove entries)."
     }
   },
   {
@@ -60,7 +60,7 @@
       ],
       "expected_duration": "1h",
       "resolution_commit": "dbb74c3d",
-      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): no `*bar*involution*` or `*mullineux*` Lean files exist in the QOU package. The candidate_files list refers to files that do not exist. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `wontfix` (referenced files do not exist; if the work is needed, file a fresh item against the actual locations). Per CLAUDE.md TodoItem lifecycle rules, only humans may close todos."
+      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): no `*bar*involution*` or `*mullineux*` Lean files exist in the QOU package. The candidate_files list refers to files that do not exist. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `wontfix` (referenced files do not exist; if the work is needed, file a fresh item against the actual locations). Per AGENTS.md TodoItem lifecycle rules, only humans may close todos."
     }
   },
   {
@@ -84,7 +84,7 @@
         "Boyd-Vandenberghe \u00a75.5.4"
       ],
       "resolution_commit": "dbb74c3d",
-      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): SDPRankEquality.lean has 0 sorry tokens on origin/main; the file's own header says 'fully sorry-free'. The queue entry's claim of '2 sorries' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per CLAUDE.md TodoItem lifecycle rules, only humans may close todos)."
+      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): SDPRankEquality.lean has 0 sorry tokens on origin/main; the file's own header says 'fully sorry-free'. The queue entry's claim of '2 sorries' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per AGENTS.md TodoItem lifecycle rules, only humans may close todos)."
     }
   },
   {
@@ -104,7 +104,7 @@
       "triage_action_first": "lean_diagnostic_messages on each sorry to determine which are tractable",
       "expected_duration": "2-3h after triage",
       "resolution_commit": "dbb74c3d",
-      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): StaircaseCornerHook.lean has 0 sorry tokens on origin/main. The queue entry's claim of '9 sorries' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per CLAUDE.md TodoItem lifecycle rules, only humans may close todos)."
+      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): StaircaseCornerHook.lean has 0 sorry tokens on origin/main. The queue entry's claim of '9 sorries' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per AGENTS.md TodoItem lifecycle rules, only humans may close todos)."
     }
   },
   {
@@ -132,7 +132,7 @@
       ],
       "expected_duration": "4-6h triage + discharge",
       "resolution_commit": "dbb74c3d",
-      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): all 7 FluidDynamics/*.lean files have 0 sorry tokens on origin/main. The queue entry's claim of '2 sorries each' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per CLAUDE.md TodoItem lifecycle rules, only humans may close todos)."
+      "resolution_note": "STALE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): all 7 FluidDynamics/*.lean files have 0 sorry tokens on origin/main. The queue entry's claim of '2 sorries each' is stale. Flagged stale 2026-06-03 post-#1736 merge cleanup. Owner action: close as `resolved` (per AGENTS.md TodoItem lifecycle rules, only humans may close todos)."
     }
   },
   {
@@ -151,13 +151,13 @@
       "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/GActionOnSubstrate.lean",
       "expected_duration": "1h",
       "resolution_commit": "dbb74c3d",
-      "resolution_note": "RE-SCOPE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): GActionOnSubstrate.lean has 1 sorry total on origin/main, and it is the legitimate \u00a73b-cond conjectural class instance (the registry pattern) \u2014 NOT a discharge target. PR #1736 strengthened the class with extensional identity fields. The 'discharge target' framing is wrong; this entry should be moved to the `lean-section-3b-cond-classes-permanent` registry. Flagged 2026-06-03 post-#1736 merge cleanup. Owner action: close as `wontfix` (re-scoped to registry); per CLAUDE.md TodoItem lifecycle rules, only humans may close todos."
+      "resolution_note": "RE-SCOPE per 2026-06-02 staleness audit ([docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md](../docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md)): GActionOnSubstrate.lean has 1 sorry total on origin/main, and it is the legitimate \u00a73b-cond conjectural class instance (the registry pattern) \u2014 NOT a discharge target. PR #1736 strengthened the class with extensional identity fields. The 'discharge target' framing is wrong; this entry should be moved to the `lean-section-3b-cond-classes-permanent` registry. Flagged 2026-06-03 post-#1736 merge cleanup. Owner action: close as `wontfix` (re-scoped to registry); per AGENTS.md TodoItem lifecycle rules, only humans may close todos."
     }
   },
   {
     "id": "lean-section-3b-cond-classes-permanent",
     "summary": "Catalog all \u00a73b-cond class sorries (NOT discharge targets \u2014 permanent by design)",
-    "comment": "**COMPLETE per session 2026-06-03** \u2014 catalog landed via PR #1780 (`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`). Final corrected counts (after `\\bsorry\\b(?!-)` regex fix): 194 classes / 219 class-body sorries. Skill docs updated in PR #1785 with the \u00a73b-cond carve-out so future agents don't treat class-body sorries as missing-proof gaps. Awaiting owner resolution \u2192 'done' per CLAUDE.md \u00a74a (agents cannot self-resolve).",
+    "comment": "**COMPLETE per session 2026-06-03** \u2014 catalog landed via PR #1780 (`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`). Final corrected counts (after `\\bsorry\\b(?!-)` regex fix): 194 classes / 219 class-body sorries. Skill docs updated in PR #1785 with the \u00a73b-cond carve-out so future agents don't treat class-body sorries as missing-proof gaps. Awaiting owner resolution \u2192 'done' per AGENTS.md \u00a74a (agents cannot self-resolve).",
     "status": "resolved",
     "resolution_note": "Catalog landed via PR #1780; skill carve-out via PR #1785; this is a one-shot catalog item, not an ongoing target",
     "closedAt": "2026-06-09",
@@ -168,7 +168,7 @@
     "data": {
       "goal": "lean-discharge-registry",
       "permanent_sorry_pattern": "field of `class FooClass : Prop where bar := sorry  -- Ref: [manuscript]`",
-      "anti_pattern": "an agent attempting to discharge these is a CLAUDE.md violation",
+      "anti_pattern": "an agent attempting to discharge these is a AGENTS.md violation",
       "examples": [
         "QbetaC3StructuralFormClass.c3_is_jones_hopf",
         "QbetaC4StructuralFormClass.c4_is_jones_kashiwara (added PR #1587)",

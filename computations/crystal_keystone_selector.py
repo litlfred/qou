@@ -46,7 +46,7 @@ SEPARATES (no selection) if the two copies are crystal-symmetric / BAR-CONJUGATE
 (swapped by evacuation / the q -> q^{-1} bar), giving the same canonical basis as
 JM without breaking the symmetry.
 
-DISCIPLINE (CLAUDE.md production-vs-exploratory; HIGHEST re-pitch risk probe):
+DISCIPLINE (AGENTS.md production-vs-exploratory; HIGHEST re-pitch risk probe):
   - The crystal / canonical basis IS a rigorous canonical basis (computing it is
     fine, NO fit). The fit risk: (a) CHOOSING a crystal convention / orientation /
     Demazure window to PRODUCE h^4 = -3/4; (b) re-deriving a known-dead re-pitch
@@ -537,7 +537,7 @@ def main():
                 "bar-fixed copy). There is no derived section to test against "
                 "h^4 = -3/4. Choosing a crystal convention / orientation / "
                 "Demazure window to make a line appear (and land -3/4) would be "
-                "exactly the fit the discipline review catches (CLAUDE.md §7b, "
+                "exactly the fit the discipline review catches (AGENTS.md §7b, "
                 "2026-05-30 KLR-dialog assessment)."),
             "h4_block_invariant_RAW": str(H4_BORROMEAN),
             "fit_performed": False,

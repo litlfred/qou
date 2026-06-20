@@ -69,7 +69,7 @@ five-way conjunction is `nStar_all_probed_forms_refuted`.
 While the level-selection existence claim is refuted across all five
 probed families, the **operator-selection LP dual** per
 [`prop:operator-selection-lp`](../../content/quantum-observable-universe/braids-and-knots/operator-selection-lp.md)
-and CLAUDE.md "LP / SDP duals — first-class infra" produces a
+and AGENTS.md "LP / SDP duals — first-class infra" produces a
 structural finding worth recording:
 
 > **Pair-knot composite operators $\sigma_{pp}$ / $\sigma_{nn}$ are
@@ -392,14 +392,14 @@ the intra-nucleon work.
 **Candidate optimizations** (for a future PR):
 
 1. **Crystal-bases replacement of Gröbner-Shirshov** (canonical
-   approach — CLAUDE.md §7b).  Replace incremental GS reduction in
+   approach — AGENTS.md §7b).  Replace incremental GS reduction in
    `H_n(q)` with reduction via the **Kazhdan-Lusztig / Kashiwara
    canonical basis**.  The KL basis has *direct combinatorial
    structure* (i-strings on standard Young tableaux) that makes
    Markov-trace evaluation polynomial in the partition data,
    bypassing the exponential algebra-rank growth of naive GS.
    Decategorifies to the KLR canonical basis on the categorified
-   side (CLAUDE.md §7b "decategorifying to KL bases for the
+   side (AGENTS.md §7b "decategorifying to KL bases for the
    classical limit").  This is the natural canonical approach;
    GS is the operational fallback.
 

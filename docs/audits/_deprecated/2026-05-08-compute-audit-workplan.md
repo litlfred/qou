@@ -172,7 +172,7 @@ cites the matching pattern and a prior successful instance.
 ## Implementation begun in this PR
 
 - [x] `local/compute-audit` skill written.
-- [x] Routing wired into `CLAUDE.md` (skill table + collaborator
+- [x] Routing wired into `AGENTS.md` (skill table + collaborator
       role row) and `.github/copilot-instructions.md` §12.
 - [x] `compute_audit_scan.py` static scanner.
 - [x] `compute-audit-scan.witness.json` (audit-only, points at this

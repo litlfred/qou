@@ -22,7 +22,7 @@ correct only up to an overall normalisation:
 
 That is a **material limitation of a production compute path** documented
 where no reviewer, audit sweep, or `grep docs/audits/` will ever find it.
-Per CLAUDE.md *"Before declaring 'open' … run the corpus-grep checklist"* and
+Per AGENTS.md *"Before declaring 'open' … run the corpus-grep checklist"* and
 the one-voice / author-notes discipline, a known-incorrectness of a compute
 path belongs in a committed audit doc, not a docstring. This doc surfaces it
 and then walks the **entire mass + binding pipeline** for the same class of
@@ -113,7 +113,7 @@ must not be cited as predictions until the path is reference-validated.
 > string even says "vs canonical E₀ ≈ 4.186 MeV"). A calibration that comes
 > out knot/channel-dependent is the **signature of a fit**: one free constant
 > absorbing the mismatch, exactly the pathology the 3-calibration discipline
-> forbids (cf. the per-partition Δ_λ gate in CLAUDE.md). If `|ΔP|` were the
+> forbids (cf. the per-partition Δ_λ gate in AGENTS.md). If `|ΔP|` were the
 > right structural quantity, `Q_β/|ΔP|` would yield the *same* E₀ in every
 > channel.
 

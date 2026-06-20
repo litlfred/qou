@@ -22,7 +22,7 @@ side.
 ## Status
 
 `borromean_brunnian` is **conjectural** — the `sorry` is the
-conjectural witness per CLAUDE.md §3b, not a missing arithmetic
+conjectural witness per AGENTS.md §3b, not a missing arithmetic
 fact.  The gap is the absence of Mathlib primitives for
 braid-word Reidemeister-move equivalence: `isUnlink` is left
 `opaque` here pending that formalisation.  Once R-moves +

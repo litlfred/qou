@@ -116,7 +116,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Item B (B.1a-rev.4) — full LP-dual extraction for a_K. Solves the operator-selection LP per `prop:mass-coefficient-shadow-price` for each of proton/neutron/D/T/³He/⁴He at f64 precision (scipy linprog via lp_dual_solver.solve_operator_selection_lp) and extracts literal u_λ^* dual variables. Compares the chirality-active dual sum to closed-form C = (1+h, 1-h², (1-h²)²) at A=2,3,4. Emits witness with all required LP-dual fields per CLAUDE.md §LP/SDP duals first-class infra. Note: this is f64-precision verification; MPFR-50dps follow-on would be a future iteration.",
+  "description": "Item B (B.1a-rev.4) — full LP-dual extraction for a_K. Solves the operator-selection LP per `prop:mass-coefficient-shadow-price` for each of proton/neutron/D/T/³He/⁴He at f64 precision (scipy linprog via lp_dual_solver.solve_operator_selection_lp) and extracts literal u_λ^* dual variables. Compares the chirality-active dual sum to closed-form C = (1+h, 1-h², (1-h²)²) at A=2,3,4. Emits witness with all required LP-dual fields per AGENTS.md §LP/SDP duals first-class infra. Note: this is f64-precision verification; MPFR-50dps follow-on would be a future iteration.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",
   "parameters": {
     "q0_50dps": "1.1099785827513808076",

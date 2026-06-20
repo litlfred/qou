@@ -50,7 +50,7 @@ says it "replaces") reproduces ~28 by construction. So:
   (suspiciously ≈ experiment);
 - current `0.7183` is the **honest categorical value** — far from
   experiment because per-isotope binding is the documented **open Δ_λ
-  problem** (CLAUDE.md Δ_λ gate: six closure ansätze failed; ⁴He binding
+  problem** (AGENTS.md Δ_λ gate: six closure ansätze failed; ⁴He binding
   research state is "+5.97% off" at best —
   `docs/audits/2026-06-01-he4-multi-nucleon-interface-research-state.md`).
 

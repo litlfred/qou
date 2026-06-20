@@ -162,7 +162,7 @@ def main() -> None:
                   f"{G_published[i,j]:>+22.15e}  "
                   f"{residual[i,j]:>10.2e}")
     print()
-    # Tolerance: 1 ppQ (10⁻¹⁵) per CLAUDE.md §Precision goals L1 floor
+    # Tolerance: 1 ppQ (10⁻¹⁵) per AGENTS.md §Precision goals L1 floor
     # and the Phase-1 scope-doc acceptance criterion. Actual residual at
     # H_3 is 2.22e-16 (float64 epsilon) — well below the gate.
     PPQ = 1e-15

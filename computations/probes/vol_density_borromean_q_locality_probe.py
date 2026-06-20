@@ -61,7 +61,7 @@ from pathlib import Path
 import mpmath as mp
 from mpmath import mpf
 
-# 50-dps compute discipline (CLAUDE.md §Precision goals L1 floor)
+# 50-dps compute discipline (AGENTS.md §Precision goals L1 floor)
 mp.mp.dps = 50
 
 # Import canonical infrastructure

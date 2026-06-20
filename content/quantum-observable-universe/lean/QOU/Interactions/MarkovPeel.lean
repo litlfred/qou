@@ -26,7 +26,7 @@ key reference proposition `markov_pair_z2`
 
 The recursive evaluator `markov_peel` itself is left as a
 `noncomputable` declaration with a `sorry` carrying a
-bibliographic citation per CLAUDE.md §1; concrete computational
+bibliographic citation per AGENTS.md §1; concrete computational
 witnesses live in `markov-peel-atomic-tr-m.witness.json` and the
 Python implementation, both verified against
 `atomic-tr-m-mpfr-50dps.witness.json` (Hoefsmit + Wenzl bridge).

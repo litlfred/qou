@@ -46,7 +46,7 @@ plus a re-run to confirm 8_11 emerges as the cost-minimum).
 
 ## Status: EXPLORATORY
 
-Per CLAUDE.md production-vs-exploratory discipline.
+Per AGENTS.md production-vs-exploratory discipline.
 
 ## Cross-references
 

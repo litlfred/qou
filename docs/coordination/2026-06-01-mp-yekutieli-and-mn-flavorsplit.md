@@ -24,7 +24,7 @@ to PR #1442's m_K/m_π closure via Bring zero-mode of Bring's curve).
 
 ## Item 3 — m_n / Δ_pn flavor-split refinement
 
-Per CLAUDE.md L2 dashboard:
+Per AGENTS.md L2 dashboard:
   - m_n target: 1.04 ppb (100× CODATA); current miss 185× (~193 ppb)
   - Δ_pn target: 4.6 ppb; current miss 163× (~755 ppb)
 

@@ -1,6 +1,6 @@
 > **DEPRECATED on 2026-05-24.** Workplan executed / point-in-time status snapshot / PR-specific note that has been superseded by subsequent integration into main. Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) §"5-tranche recommendation" T1 for the deprecation rationale.
 
-# Tier 3 progress — open conjecture classification (CLAUDE.md §3b)
+# Tier 3 progress — open conjecture classification (AGENTS.md §3b)
 
 **Branch**: `claude/tier3-math-audit-B0wyO`
 **Parent**: `claude/audit-math-framework-FXlp2` (PR
@@ -26,7 +26,7 @@ Bring → BB filtration / homological condensation):
 §P3.
 
 This branch executes **Tier 3** of the deep audit: resolving and
-classifying open conjectures per the CLAUDE.md §3b conjectural-
+classifying open conjectures per the AGENTS.md §3b conjectural-
 propagation rule.
 
 ## Summary

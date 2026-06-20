@@ -4,7 +4,7 @@
 
 Formalize-first pre-check for the **binding `Δ_λ` ↔ q-Lommel three-term
 recurrence** hypothesis (PR #2305 lead-4 redirect; coordination with #2078).
-Per the owner steer *"derive/prove first, not fit/probe"* and the CLAUDE.md
+Per the owner steer *"derive/prove first, not fit/probe"* and the AGENTS.md
 `Δ_λ` gate (**no seventh fit-based ansatz**), the cheap decisive question to
 ask *before* building any q-Lommel `Δ_λ` closure is:
 

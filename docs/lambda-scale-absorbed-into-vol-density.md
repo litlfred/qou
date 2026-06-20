@@ -75,5 +75,5 @@ Reply (or refactor) to use `VolDensity(K)` language and link here.
 
 - [`coordination/2026-05-23-algebraic-geometric-observable-consistency.md`](coordination/2026-05-23-algebraic-geometric-observable-consistency.md) — the original numerical demonstration that the 2.46 factor doesn't come from any standard invariant (Markov trace, Jones polynomial, Wedderburn sum) directly.
 - [`canonical-derivation-cheat-sheet.md`](canonical-derivation-cheat-sheet.md) §"⚠ Critical framing" — the top-line warning at the start of the cheat sheet.
-- [`../CLAUDE.md`](../CLAUDE.md) §"Canonical derivation chain — cheat sheet" — the warning is also at the chain pointer in CLAUDE.md.
+- [`../AGENTS.md`](../AGENTS.md) §"Canonical derivation chain — cheat sheet" — the warning is also at the chain pointer in AGENTS.md.
 - `prop:geom-universality` (content block) — the underlying mathematical statement that `Geom(K)` is the unique functional satisfying additivity + functoriality + normalisation.

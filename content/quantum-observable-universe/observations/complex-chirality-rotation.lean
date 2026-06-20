@@ -11,7 +11,7 @@ the particle/antiparticle distinction is governed by the phase
 rotation upon projection to the observable sector.
 
 -- Ref: [manuscript]
-Per `CLAUDE.md §3b-cond`, opaque Props + class fields + sorry
+Per `AGENTS.md §3b-cond`, opaque Props + class fields + sorry
 instance per claim.
 
 ## References

@@ -5,7 +5,7 @@
 Follow-up to PR #2305's lead-4 redirect (the q-Bessel/q-Lommel zero structure
 lives in the `n→∞` brane-tower, where the binding `Δ_λ` ladder also lives) and
 the #2078 coordination note. Per the owner steer *"derive/prove first, not
-fit/probe"* and the CLAUDE.md `Δ_λ` gate (**no seventh fit-based ansatz**), the
+fit/probe"* and the AGENTS.md `Δ_λ` gate (**no seventh fit-based ansatz**), the
 cheap decisive question to ask *before* building any q-Lommel `Δ_λ` closure is:
 
 > Do the canonical `Δ_λ` values lie on **any** three-term recurrence orbit
@@ -63,5 +63,5 @@ closed.
 
 - PR **#2305** (lead-4 redirect: q-Lommel is the tower object, not the finite-n spectrum).
 - PR **#2078** (atom→V_hyp→Δ_λ closure — the tower-extension owner).
-- CLAUDE.md §Precision goals (Subgoal-1 = per-isotope Borromean-tower extension).
-- CLAUDE.md §Δ_λ gate (six failed ansätze; no seventh fit-based ansatz).
+- AGENTS.md §Precision goals (Subgoal-1 = per-isotope Borromean-tower extension).
+- AGENTS.md §Δ_λ gate (six failed ansätze; no seventh fit-based ansatz).

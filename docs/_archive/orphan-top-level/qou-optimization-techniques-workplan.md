@@ -73,7 +73,7 @@ evaluator instead of expanding the Hecke word.
 - Lean: `QOU/BraidKnot/`, hooks into `QOU.AtomicMass`
 
 **Gaps to close:**
-- DC1. Confirm the Skein convention matches §7a of CLAUDE.md
+- DC1. Confirm the Skein convention matches §7a of AGENTS.md
   (`(\sigma_i - q)(\sigma_i + q^{-1}) = 0`, generator `$\sigma_i$`,
   Jones `$J_K(q)$`). Any block still using `$T$`, `$t$`, `$A$`, or
   `$V_K$` is a bug.
@@ -139,7 +139,7 @@ without re-proving it per call site.
 
 **Gaps to close:**
 - L41. Audit every `sorry` in QOU/ for the `-- Ref:` citation
-  required by §1 of CLAUDE.md; flag any without one.
+  required by §1 of AGENTS.md; flag any without one.
 - L42. Confluence statement: a single theorem
   `gs_reduction_confluent` (probably under `QOU/AlgebraicSubstrate/`)
   that TM, DC, and BD can all `import`.

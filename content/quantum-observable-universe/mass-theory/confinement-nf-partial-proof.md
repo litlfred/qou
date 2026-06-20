@@ -2,7 +2,7 @@
 
 **Proposition (partial proof, conditional on
 [`def:lp-duality-hypothesis-class`](lp-duality-hypothesis-class.md)
-per CLAUDE.md §3b-cond).**
+per AGENTS.md §3b-cond).**
 *The three claims of [`conj:confinement-nf-structure-forcing`](#conj:confinement-nf-structure-forcing)
 decompose as follows.*
 

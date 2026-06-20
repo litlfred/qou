@@ -277,7 +277,7 @@ w.add_assertion(
 
 # --- 4. The U(1)_framing ladder q^{n.c} ---
 # writhe(T(2,n)) = n != 0 for every lepton -> live framing factor q^{n.c}.
-# At observable level Im(q0)=0 (CLAUDE.md), so q^{n.c} is a real factor.
+# At observable level Im(q0)=0 (AGENTS.md), so q^{n.c} is a real factor.
 framing_c1 = {}
 for n, name, _ in LEPTON_TOWER:
     framing_c1[f"T(2,{n})"] = {

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """qbeta_root_of_unity_probe.py — the ONE surviving Q_β c_k lead.
 
-QUESTION (CLAUDE.md §"Im(q) at fibre vs observable level"; registry §3 line
+QUESTION (AGENTS.md §"Im(q) at fibre vs observable level"; registry §3 line
 "a genuine c_3 Habiro element, if it exists, must be complex-analytic /
 root-of-unity, not a real-q formula"):
 

@@ -316,19 +316,19 @@ in different coordinate systems and cannot be directly subtracted.
 
 The "Jones $q^{1/2}$ convention" (Jones 1985, Wenzl 1988) and the
 "straight-$q$ convention" used by the rest of the QOU framework are
-both standard; the literature is split. CLAUDE.md §7a does not
+both standard; the literature is split. AGENTS.md §7a does not
 specify which one is canonical for the framework.
 
 ### Comparison to derivation documents
 
-CLAUDE.md §7a notation register says:
+AGENTS.md §7a notation register says:
 
 > Jones polynomial: Always $J_K(q)$, never $V_K(t)$ or bracket with variable $A$.
 > ...
 > Markov parameter: plain italic, $z = 1/(q^{1/2} + q^{-1/2})$.
 
 So the canonical Markov parameter is in $q^{1/2}$ coordinates — that's the
-`tr_M_canonical` convention. But CLAUDE.md also says:
+`tr_M_canonical` convention. But AGENTS.md also says:
 
 > $H_n(q)$ — always with subscript $n$; standard knot-theory convention.
 
@@ -336,7 +336,7 @@ So the canonical Markov parameter is in $q^{1/2}$ coordinates — that's the
 relations use $q$ while the Markov parameter uses $q^{1/2}$. This is
 internally consistent in the *notation register* but it means
 `tr_M_symbolic` (pure $q$, no $q^{1/2}$) is using a different
-convention than CLAUDE.md prescribes.
+convention than AGENTS.md prescribes.
 
 The `y_lambda_equivalence_proof.py` script on main may bridge the two
 conventions, but the *symbolic outputs* of the two `tr_M` engines do
@@ -353,7 +353,7 @@ Implication for PR #664's c_3 claim:
   around $q=1$.
 
 Resolution: ratify one tr_M implementation as canonical (likely
-`tr_M_canonical` since CLAUDE.md's `thm:jones-markov-trace` and the
+`tr_M_canonical` since AGENTS.md's `thm:jones-markov-trace` and the
 $y_\lambda$ weight is the literature-standard Jones-Markov form) and
 audit downstream consumers. Until that happens, claims of the form
 "c_k = some-textbook-value" are not derivable from the framework

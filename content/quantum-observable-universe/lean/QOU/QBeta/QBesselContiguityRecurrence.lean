@@ -33,7 +33,7 @@ geometric). The order-2 C-finite pole structure is in
 `RationalCoeffRecurrence.pole_reciprocal_is_char_root`.
 
 Generic base ring `[Field K]` (no archimedean structure — `q`, `a` are formal
-fibre parameters; cf. CLAUDE.md §7c). Sorry-free.
+fibre parameters; cf. AGENTS.md §7c). Sorry-free.
 -/
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Algebra.Field.Basic

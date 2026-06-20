@@ -192,7 +192,7 @@ solves with **strong duality**:
 The dual `y_star` are the per-block shadow prices; they identify which blocks
 `K` saturates. But the SDP selects the *dominant block*, it does **not** supply
 `M_λ(K)`. So the dual variables — the binding-energy *shadow prices* of
-CLAUDE.md's LP/SDP-duals rule — confirm the block structure of `K` without
+AGENTS.md's LP/SDP-duals rule — confirm the block structure of `K` without
 closing the MeV binding. This is the cleanest statement of why GAP-A-1 stalls
 exactly where Δ_λ does.
 

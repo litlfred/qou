@@ -44,7 +44,7 @@ mathematical").
 
 | Stage | Analog | QOU status | Evidence |
 |---|---|---|---|
-| **1. Algebraic novelty** | substrate machinery polymorphic in base ring | ✓ established | CLAUDE.md §7c; `prop:q-zero-complex-extension` (this PR) |
+| **1. Algebraic novelty** | substrate machinery polymorphic in base ring | ✓ established | AGENTS.md §7c; `prop:q-zero-complex-extension` (this PR) |
 | **2. Calculational bookkeeping** | complex q as analytic continuation tool | ✓ established | Hoefsmit basis admits q-analytic continuation; bar-involution `q ↦ q⁻¹` is the QOU analog of EM phasor symmetry |
 | **3. Phasor representation** | mass formula = `|tr_M(complex)|`, complex part conceptually real but unmeasured | ✓ established | `prop:categorical-mass-markov` — modulus projection is the actual formula; Im(`tr_M`) is structurally allowed but currently set to zero by `v = 0` convention |
 | **4. Forced by formula** | a QOU equation that cannot be reduced to real q without losing observed behavior | ✗ NOT YET | Per Path D audit: no current QOU equation forces complex q. The +0.17% Q_β residual is the closest candidate — IF it can only be closed by complex q_0, this becomes the QOU analog of Schrödinger's i |

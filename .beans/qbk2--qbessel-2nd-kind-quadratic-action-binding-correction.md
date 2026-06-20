@@ -121,7 +121,7 @@ Before running any sweep it MUST clear:
 Either (a) a derive-or-refute structural statement: the 2nd-kind term IS / IS NOT a
 cross-anchor-stable, bar-correct correction (TIERED report); or (b) a clean refutation on the same
 footing as the f-map. No fit, no 7th ansatz, nothing wired to production without owner sign-off.
-Owner closes (humans close beans per CLAUDE.md §4a).
+Owner closes (humans close beans per AGENTS.md §4a).
 
 ---
 

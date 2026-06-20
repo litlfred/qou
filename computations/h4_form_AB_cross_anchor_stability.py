@@ -4,7 +4,7 @@ Task 1 of PR #1629. PR #1617's exploration found:
   Form A: f = 1 + (1 - π²/80)·h⁴            → 0.003 ppb at q_proton
   Form B: f = 1 + (7/8)·h⁴ + (G/(8π))·h⁶    → 0.0008 ppb at q_proton
 
-The pre-stated discrimination per CLAUDE.md option-e ledger:
+The pre-stated discrimination per AGENTS.md option-e ledger:
   TRUE STRUCTURAL forms are q-anchor-stable;
   COINCIDENCE BASINS collapse under cross-anchor variation.
 

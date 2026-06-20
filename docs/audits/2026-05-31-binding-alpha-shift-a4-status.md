@@ -77,7 +77,7 @@ not yet merged to `main` at the time this PR was opened)
 that turned out to be already-closed on `main` once the scoping
 read landed. Lesson: when picking a multi-week-old framing of
 "what's next", check `git log --grep <theme>` and recent
-sibling-PR scope before authoring. Per CLAUDE.md
+sibling-PR scope before authoring. Per AGENTS.md
 "Coordinate intent with sibling branches on every new workplan"
 + the 5-minute idle trigger, recurring this discipline at the
 start of every work tranche keeps the queue current.

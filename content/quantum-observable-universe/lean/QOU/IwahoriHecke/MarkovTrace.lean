@@ -94,7 +94,7 @@ downstream §3b-cond consumption. -/
     property is inherited from `markovTrace` by ideal-quotient
     invariance.
 
-    Per CLAUDE.md §3b-cond, downstream consumers take
+    Per AGENTS.md §3b-cond, downstream consumers take
     `[GradedMarkovTraceExistence R q n]` as a class hypothesis. -/
 class GradedMarkovTraceExistence
     (R : Type v) [CommRing R] (q : R) (n : ℕ) where

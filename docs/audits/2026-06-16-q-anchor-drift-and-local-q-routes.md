@@ -14,7 +14,7 @@ production wiring is changed by this audit.
 > **Physical-Observations precision anchor only** (a derived quantity of
 > smaller experimental error, re-pin 2026-05-28), **not** a change to the
 > canonical CAL-2. CAL-3 = `m_π` and `Q_β` derived stand. The convention
-> was propagated muon-canonical across CLAUDE.md + the 4 discipline skills
+> was propagated muon-canonical across AGENTS.md + the 4 discipline skills
 > + the calibration content blocks + `codata_constants.py` docstrings. See
 > the coordination ledger
 > [`2026-06-16-q-local-evolution.md`](../coordination/2026-06-16-q-local-evolution.md)
@@ -34,7 +34,7 @@ paper-side statement is stale relative to the 2026-05-28 re-pin.
 | [`three-calibration-discipline.md`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md) (paper proposition) | `m_μ/m_e` (muon) | `Q_β` | **input** |
 | [`epistemic-status-of-calibrations.md`](../../content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md) (paper remark) | `m_μ/m_e` (muon) | `Q_β` | **input** |
 | [`canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) §1 diagram | `m_μ/m_e` (muon) | **`m_π`** | derived |
-| `CLAUDE.md` cheat-sheet table | neutron β-decay `τ_n` → `Q_β` | pion width → `m_π` | input (via `τ_n`) |
+| `AGENTS.md` cheat-sheet table | neutron β-decay `τ_n` → `Q_β` | pion width → `m_π` | input (via `τ_n`) |
 | [`README.md`](../../tools/qou-substrate/README.md) (`:29`) | prints the **muon** `q₀` value | — | — |
 
 **Two independent forks:**
@@ -44,7 +44,7 @@ paper-side statement is stale relative to the 2026-05-28 re-pin.
    `m_μ/m_e` to `m_p/m_e = 1836.152673426` (CODATA 2022, 0.06 ppb, "the
    most precise anchor"; `σ(q₀) ≈ 0.0029 ppb = 2853 ppQ` vs 1.22 ppb on
    the muon anchor). `m_μ/m_e` is now a **prediction** (agrees ~9.5σ; the
-   old muon `q₀ = 1.10997859555418…` is −11.5 ppb away). The CLAUDE.md
+   old muon `q₀ = 1.10997859555418…` is −11.5 ppb away). The AGENTS.md
    table's "neutron β-decay `τ_n`" is a *third* description that matches
    neither the live proton anchor nor the paper's muon anchor. See
    [`2026-05-30-q0-repin-stale-witness-audit.md`](2026-05-30-q0-repin-stale-witness-audit.md).
@@ -72,7 +72,7 @@ which therefore carry stale calibration framing.
 
 **Action taken** (this branch): author-notes added to the two stale
 paper blocks recording the live state + the owner resolution (per
-CLAUDE.md §4d — status/caveat belongs in `authorNotes` metadata, not
+AGENTS.md §4d — status/caveat belongs in `authorNotes` metadata, not
 scholarly prose). The full prose migration of the proposition statement
 (changing the calibration basis, which ripples into
 `prop:three-calibration-inputs`, the Wedderburn-count proposition, and
@@ -146,7 +146,7 @@ a separate `ℝ`-valued `ArchimedeanSubstrateField (M)`** structure —
 `field : M → ℝ` with `field_pos`, `field_ge_one`, not-root-of-unity —
 living on the archimedean side of the substrate wall. *That* makes
 "`q(p)` is a real field" literally true while respecting the base-ring
-discipline (CLAUDE.md §7c). **Verdict:** valid, concrete, bounded; it
+discipline (AGENTS.md §7c). **Verdict:** valid, concrete, bounded; it
 both delivers the user's ask and fixes a compile break. **Build-verified
 2026-06-16:** restored the `lake-cache/qou-v4-24-0` oleans and ran
 `lean`-direct (manual `LEAN_PATH`, no `lake` re-resolve) — **exit 0,
@@ -180,7 +180,7 @@ a **Reeb closed-orbit / period-integrality** condition — **not** by
 the correction baked in; do **not** claim it derives `q₀`.
 
 > **Scope flag (STRICT).** Substrate-derivation of `q₀` was **declined
-> 2026-05-08** as out-of-scope (CLAUDE.md Subgoal-2) and **re-opened**
+> 2026-05-08** as out-of-scope (AGENTS.md Subgoal-2) and **re-opened**
 > recently per the epistemic-status block. The owner question driving
 > this session is the reversal. Any `q₀`-selection work stays at
 > research-direction / conjecture status until a closure clears the

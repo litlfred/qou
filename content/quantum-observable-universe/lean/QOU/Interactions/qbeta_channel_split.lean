@@ -19,7 +19,7 @@ decomposes under the bar-involution `h ↦ −h` into a bar-even `h²/2` and a
 bar-odd `−h` part. These lemmas record that algebra. They do **not** assign
 the bar-even part to any other observable.
 
-Generic field; `h` free (CLAUDE.md §7c).
+Generic field; `h` free (AGENTS.md §7c).
 -/
 
 namespace QOU.Interactions.QBetaChannelSplit
