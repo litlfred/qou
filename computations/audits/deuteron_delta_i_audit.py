@@ -157,7 +157,8 @@ def main() -> int:
     p_t1 = mp.mpf(rows["p"]["term1_atomic_total"])
     p_t6 = mp.mpf(rows["p"]["term6_cyclotomic_tail_MeV"])
     p_total = mp.mpf(rows["p"]["total_hecke"])
-    M_p_codata = mp.mpf("938.27208816")
+    from codata_constants import M_P_MEV_VALIDATION  # registry (no inline literal)
+    M_p_codata = mp.mpf(M_P_MEV_VALIDATION)
     # Audit-only consumer of the deprecated Conv-C "proton back-fit"
     # E_0 pattern (≈ 200 MeV; flagged as DISCIPLINE VIOLATION in
     # derivation_chain.E_0_CONVENTIONS["C_proton_back_fit"]). This
