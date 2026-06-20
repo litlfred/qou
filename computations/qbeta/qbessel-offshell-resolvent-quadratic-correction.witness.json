@@ -1,0 +1,61 @@
+{
+  "computation": "qbessel_offshell_resolvent_quadratic_correction",
+  "description": "Off-shell follow-up to the qbk2 gate (PR #2530). Verifies the q-Bessel Green's-function kernel is a genuine propagator and that the coincidence-limit propagator G(w)=g1 g2/D is REGULAR at the substrate origin (the 2nd-kind w^{-nu} singularity cancels against the Casoratian), so the owner's 'quadratic action' is the channel in which the 2nd kind survives on-shell as a bilinear -- distinct from the linear exclusion of PR #2530. Structural identification only; no binding number (needs a physical source + cross-anchor gate). No fit; nothing wired; TIERED.",
+  "discipline": "formalize-first; no fit; derive-or-refute; TIERED; nothing wired; binding-correction claim OPEN",
+  "precision_dps": 60,
+  "results": {
+    "kernel_solves_star": {
+      "max_resid": "5.44514e-61"
+    },
+    "coincidence_propagator_regular": [
+      {
+        "nu": "2.5",
+        "q": "0.83",
+        "G_at_1e-8": "1.685413059",
+        "G0_predicted": "1.685412776",
+        "regular": true
+      },
+      {
+        "nu": "1.5",
+        "q": "0.6",
+        "G_at_1e-8": "0.8683139079",
+        "G0_predicted": "0.8683137775",
+        "regular": true
+      },
+      {
+        "nu": "3.5",
+        "q": "0.9",
+        "G_at_1e-8": "2.242438804",
+        "G0_predicted": "2.242438322",
+        "regular": true
+      }
+    ],
+    "bar_parity_numeric": [
+      {
+        "nu": "2.5",
+        "G_q": "0.23635039",
+        "G_qinv": "-0.2561897",
+        "nearer_sector": "odd"
+      },
+      {
+        "nu": "1.5",
+        "G_q": "0.68327167",
+        "G_qinv": "1.1497688",
+        "nearer_sector": "even"
+      },
+      {
+        "nu": "3.5",
+        "G_q": "-0.75103055",
+        "G_qinv": "-3.3773378",
+        "nearer_sector": "even"
+      }
+    ]
+  },
+  "assertions": {
+    "(A) kernel solves (☆) in w away from the source (residual < 1e-25)": true,
+    "(B) D(w) ~ (q^{-nu}-1) w^{-nu} near 0": true,
+    "(C) G(w)=g1 g2/D is REGULAR at the origin (g2/D singularities cancel)": true
+  },
+  "allPassed": true,
+  "verdict": "OFF-SHELL FOLLOW-UP (formalize-first; no fit; nothing wired). The q-Bessel Green's-function kernel K(w,w')=g1(w_<)g2(w_>)/D(w') is a genuine 2-point propagator (A), and its q-Casoratian normalisation D(w)~(q^{-nu}-1)w^{-nu} (B). HEADLINE (C): the coincidence-limit propagator G(w)=g1(w)g2(w)/D(w) is REGULAR at the substrate origin (finite limit 1/(q^{-nu}-1)) -- the w^{-nu} singularity of the 2nd-kind g2 cancels against the w^{-nu} of the Casoratian D. So the QUADRATIC (bilinear) 2nd-kind object is origin-admissible even though the LINEAR g2 is not: the owner's 'quadratic action' names exactly the channel in which the 2nd kind survives on-shell, distinct from (not contradicting) the linear matrix-coefficient exclusion of PR #2530. (D) reports its bar-parity numerically. SCOPE: this is a STRUCTURAL identification of the admissible quadratic object, NOT a binding number -- a falsifiable correction still needs the physical source the propagator contracts against PLUS the cross-anchor gate (substrate-fixed coupling, no per-anchor refit). Those remain open; nothing wired; c_k/Delta_lambda stay cal-anchored. TIERED: (A)(B)(C) PROVED; the binding-correction claim is OPEN."
+}

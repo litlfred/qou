@@ -19,6 +19,19 @@ parent: qz9k
 > off-shell (q-Bessel resolvent `G ~ g₁(x_<)g₂(x_>)/D` with the `-w` source). PRUNES the
 > on-shell binding scan. Any continuation must be off-shell (resolvent + explicit
 > source) and still clear the cross-anchor gate. Owner closes (§4a).
+>
+> **OFF-SHELL FOLLOW-UP 2026-06-20 (PR pending).**
+> ([`docs/audits/2026-06-20-qbessel-offshell-resolvent-quadratic-correction.md`](../docs/audits/2026-06-20-qbessel-offshell-resolvent-quadratic-correction.md),
+> `computations/qbeta/qbessel_offshell_resolvent_quadratic_correction.py`, ALL PASSED).
+> Result: the coincidence-limit propagator `G(w)=g₁g₂/D` is REGULAR at the origin
+> (finite limit `1/(q^{-ν}-1)`) — the `w^{-ν}` singularities of `g₂` and the Casoratian
+> `D` cancel. So the QUADRATIC (bilinear) 2nd-kind object IS origin-admissible though
+> the linear `g₂` is not: "quadratic action" names exactly the channel where the 2nd
+> kind survives on-shell. REFINES the gate (linear exclusion stands; quadratic
+> propagator distinct + admissible). STILL OPEN for a binding number: needs (i) the
+> physical source the propagator contracts against, (ii) the cross-anchor gate; and
+> bar-parity of `G` is ν-DEPENDENT (mixed sector — gate 2 caveat). No fit; nothing
+> wired. Owner closes (§4a).
 
 Owner-seeded exploration (2026-06-20): "2nd kind has a quadratic action that can be used in
 mass/binding as corrections." Queued, NOT started.
