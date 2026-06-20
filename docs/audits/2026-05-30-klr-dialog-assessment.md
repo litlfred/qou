@@ -128,6 +128,7 @@ The single near-miss (Candidate 2, `hecke-normal-form.md`) already cross-referen
 
 ## Cross-references
 
+- [`docs/coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md) §Refutations item 4 — the **period / z-Habiro axis** (cyclotomic-Galois, `Li₃(ζ₅)`) is orthogonal to the q-side keystone coupling; do not re-aim a period identity at the keystone (same archimedean-re-register failure mode as this dialog's dilog/Bloch–Wigner pitch).
 - [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md) — Δ_λ gate, six ansätze, 2026-05-29 retraction.
 - [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md) — why `m = m_e · VolDensity(K, q_0)` is single-eval; no separate `m_0`.
 - [`docs/precision-goals.md`](../precision-goals.md) — L1 / L2 precision targets the Δ_λ closure would help reach.
