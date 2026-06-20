@@ -4,7 +4,37 @@
 **Branch:** `claude/zealous-hypatia-05xyp9` (PR #2348, bean `e2nf`)
 **Class:** research verdict (formalize-first) + content correction.
 
-## The question
+## ⚠ Owner correction (2026-06-20) — no second *compact* SU(2); the unification is the complex volume 𝔙
+
+The "Gap 1 needs a second compact SU(2) (Runge–Lenz)" framing below is
+**superseded**. Per [`bar-parity-split`](../../content/quantum-observable-universe/mass-theory/bar-parity-split.md)
++ [`conj:binding-qbeta-complex-volume`](../../content/quantum-observable-universe/mass-endomorphism/complex-volume-intro.md):
+the bar-even (**cosh**, `(q+q⁻¹)/2`) and bar-odd (**sinh**, `(q−q⁻¹)/2`) parts are
+the two parities of **one** element, unified by the complex volume
+`𝔙 = Re 𝔙 + i·Im 𝔙` via the continuation **`λ ↦ iθ`** (real `q` rotated onto a
+root of unity: `cosh λ ↦ cos θ`, `sinh λ ↦ i sin θ`). That continuation **is** the
+`SU(1,1) ↔ SU(2)` Weyl-unitary trick:
+
+- **non-compact real form** (real `q`, cosh/sinh, `SU(1,1)≅SO(2,1)`) = the **radial
+  shell tower** — exactly QOU's `T_γe` σ-tower (`T_γe` trace `= 2 sinh η`,
+  `T_γe^n` the discrete-series ladder);
+- **compact real form** (root of unity, cos/sin, `SU(2)`) = the **angular** `V_ℓ`
+  (dim `2ℓ+1`).
+
+These are **the same complexified `sl(2,ℂ)`** (= 𝔙), *not* two independent compact
+`SU(2)`s. So `2n²` does **not** need a second compact group: it needs the *single*
+`sl(2,ℂ)`/𝔙 structure applied to the electron-shell σ-tower, with the angular
+`ℓ = 0,…,n−1` multiplicity arising from the compact (root-of-unity) form locked to
+the radial `n` of the non-compact form. **This is an open but well-posed
+constructive task — not a missing symmetry.** What remains genuinely separate is
+**Gap 2 (Madelung/screening)** for the noble-gas *ordering* beyond `2n²`.
+
+The original (now-superseded) "two symmetries short" verdict is retained below for
+the record.
+
+---
+
+## The question (original)
 
 Derive the 2n² shell capacity (and thereby the noble-gas closures) from the
 categorical structure, **or** establish that they must be accepted as inputs.

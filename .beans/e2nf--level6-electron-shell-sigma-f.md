@@ -52,9 +52,16 @@ low-isotope-mass-anatomy ledger before adopting this bean.
 
 ## Still open (genuine research, not this PR)
 
-- [ ] Derive the SO(4)/Runge-Lenz n²-bundling AND a categorical screening/Madelung
-      mechanism — the real two-symmetry blocker for the periodic table (not a
-      confinement-SDP cost-operator tweak).
+- [ ] **(owner-corrected 2026-06-20)** n² does NOT need a second compact SU(2):
+      the cosh/sinh (real q, SU(1,1), radial σ-tower) and cos/sin (root of unity,
+      SU(2), angular V_ℓ) are the two real forms of ONE sl(2,ℂ) = the complex
+      volume 𝔙 (bar-parity-split / conj:binding-qbeta-complex-volume; λ↦iθ).
+      Open CONSTRUCTIVE task: apply the single 𝔙/sl(2,ℂ) to the electron-shell
+      σ-tower so the angular ℓ=0..n-1 (compact form) locks to the radial n
+      (non-compact form) ⇒ 2n². Well-posed, not a missing symmetry. Coordinate
+      with the complex-volume / s5-so3 siblings (#2346 lead, #2297, #2363).
+- [ ] Gap 2 (separate): Madelung/screening for the noble-gas ORDERING beyond 2n²
+      (pure-2n² closes at [2,10,28,60] ≠ noble [2,10,18,36]).
 
 ## Notes
 
