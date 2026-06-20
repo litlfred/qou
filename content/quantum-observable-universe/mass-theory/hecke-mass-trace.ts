@@ -11,7 +11,7 @@ export default proposition({
     "topological-decomposition",
   ],
   lean: { ref: "qou:QOU.Braiding.hecke_mass_trace",
-    validation: "not_checked",
+    validation: "leanok",
   },
   uses: ["def:hecke-mass-element"],
   // Production wiring of the proved mass = Markov-trace bridge: the canonical
