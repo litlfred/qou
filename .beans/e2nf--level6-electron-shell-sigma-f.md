@@ -81,10 +81,22 @@ low-isotope-mass-anatomy ledger before adopting this bean.
       hitting +1 = tuning = fitting. Audit 2026-06-20-gap2-ordering-ell-coefficient-synthesis.md.
       (Corrects my earlier "radial:angular balance" framing — #2531's sign half
       sharpens it; my "~8.5×" was the z² convention, but sign-positive/>+1 robust.)
-- [ ] **Gap-2 verdict: ORDERING not derivable without a tuned ℓ-coefficient `a`.**
-      Structure offers a∈{−2 (eigensplit), >+1 (q-dim)}; Madelung is +1. The one
-      un-derived input behind the periodic-table ordering. (Capacity Gap-1: 2n²
-      self-square, essentially derived.) Coordinated with #2531 (merged).
+- [x] **DUALITY LEVER (owner duality question, 2026-06-20) — aufbau_eigenvalue_channel.py.**
+      The ℓ-coefficient a depends on WHICH eigenvalue channel angular ℓ couples to
+      (T_γe: λ₊=q₀ dominant, λ₋=−1/q₀ sub-dominant, λ₊λ₋=−1 bar-dual = D1).
+      ONLY the dominant-λ₊ channel (λ₊^ℓ=q^{+ℓ}, a=+1) reproduces the empirical
+      Aufbau order (4s<3d, 5s<4d…) EXACTLY; λ₋ (a=−2, #2531) and the loop-trace
+      q-dim (a=+2) both diverge. The Markov/Frobenius trace is PERRON-dominated by
+      λ₊ ⇒ using the pairing "correctly" (λ₊ for both radial & angular) gives
+      symmetric n,ℓ → n+ℓ = Madelung. Supersedes the "balance" framing.
+- [ ] **Gap-2 localized one notch finer (NOT a derivation — 2 caveats):**
+      (1) a=+1 ⟺ Madelung is partly definitional; the real claim is "radial &
+      angular share the dominant λ₊". (2) the Frobenius TRACE of V_ℓ is the q-dim
+      ~λ₊^{2ℓ} (a=+2) because dim V_ℓ=2ℓ+1 — a FACTOR OF 2 from Madelung's λ₊^ℓ.
+      Open: why does angular enter as λ₊^ℓ (open transfer, a=+1) not λ₊^{2ℓ}
+      (loop-trace, a=+2)? = the 2ℓ+1→ℓ "half"/√-q-dim. Pairing poses it, doesn't
+      settle it. Audit 2026-06-20-aufbau-from-dominant-eigenvalue-duality.md.
+      (Capacity Gap-1: 2n² self-square, essentially derived.)
 
 ## Notes
 
