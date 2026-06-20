@@ -1,7 +1,7 @@
 # Lean discharge queue — staleness audit (2026-06-02)
 
 > Companion audit to PR #1720. Surveys all 8 items in
-> [`todos/lean-discharge-queue.json`](../../todos/lean-discharge-queue.json)
+> [`.beans/lean-discharge-queue.json`](../../.beans/lean-discharge-queue.json)
 > against the actual `.lean` sources on origin/main. **Headline:
 > 5 of 8 items are stale — work done, NOT discharge targets, or
 > referencing files that no longer exist.** Recommendation:

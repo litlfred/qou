@@ -66,7 +66,7 @@
   {
     "id": "research-qbeta-habiro-element",
     "summary": "Identify the Q_\u03b2 Habiro element (analog of \u03b1_EM `[2]_q \u00b7 (1-h\u00b2\u03b1)` from PR #1511)",
-    "comment": "Cross-listed in todos/1ppq-qbeta-queue.json (probe-qbeta-habiro-element-search). 6 mechanisms ruled out per b502b9b83; 1 left = KR/KLR with \u00a77b skeptical prior (0/6 proofs shorten). Per CLAUDE.md \u00a77b audit precedent. The fibre/observable distinction (this session): the Habiro element lives at the fibre level (formal q-deformation, potentially complex Taylor coefficients), evaluated archimedean-ly at real q_0. Untested attack candidates: non-uniform multi-block PRODUCT decomposition; exponentiated per-block; symbolic q-difference solve via sympy; modular bootstrap; Galois descent.",
+    "comment": "Cross-listed in .beans/1ppq-qbeta-queue.json (probe-qbeta-habiro-element-search). 6 mechanisms ruled out per b502b9b83; 1 left = KR/KLR with \u00a77b skeptical prior (0/6 proofs shorten). Per CLAUDE.md \u00a77b audit precedent. The fibre/observable distinction (this session): the Habiro element lives at the fibre level (formal q-deformation, potentially complex Taylor coefficients), evaluated archimedean-ly at real q_0. Untested attack candidates: non-uniform multi-block PRODUCT decomposition; exponentiated per-block; symbolic q-difference solve via sympy; modular bootstrap; Galois descent.",
     "status": "open",
     "priority": "high",
     "origin": "session-2026-05-31-queue-build",

@@ -161,5 +161,5 @@ DO:
 - `prop:diagrammatic-double-magic-lr-fusion` (LR-fusion at doubly-magic)
 - PR #1386 (RETRACTED q-factorial ratio attempt)
 - PR #1289 (⁴He Wedderburn dominance: (4,4,4) PSD, [9,3]/[8,4]/[10,2]/[11,1]/[7,5] trace)
-- `todos/research-queue.json` — `research-multi-nucleon-interface-operator`
+- `.beans/research-queue.json` — `research-multi-nucleon-interface-operator`
 - CLAUDE.md §Canonical chain Im(q) fibre vs observable (2026-06-01)

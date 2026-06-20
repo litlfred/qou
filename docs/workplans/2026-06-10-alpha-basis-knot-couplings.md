@@ -69,6 +69,6 @@ the step-3 per-force coupling *values* (α_s, α_W) gated on
 - **No π in the derivation** (pre-archimedean R); π only as the `τ_arch` image.
 - **No fitting** — each α_K and each correction must be a q-rational/sinh
   expression forced by the cohomological force structure, reported tiered.
-- Coordinate with the stalled `alpha-em-4pi-*` family (`todos/research-queue.json`
+- Coordinate with the stalled `alpha-em-4pi-*` family (`.beans/research-queue.json`
   `triage-alpha-em-4pi-sibling-family`) — they are the (π-carrying) α/(4π)
   attempts; this program reframes them pre-archimedean.

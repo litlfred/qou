@@ -77,7 +77,7 @@ $$
 i.e. the categorical action of a *weak* `σ`-crossing (an H-bond) relative to a
 covalent crossing. This is the one thing to compute from braid weights; it must
 be **derived, not fitted** to reproduce 373 K / 273 K (anti-pattern guard from
-`todos/research-queue.json::research-boiling-freezing-temps-from-braid-hbond`).
+`.beans/research-queue.json::research-boiling-freezing-temps-from-braid-hbond`).
 
 ## Concrete compute steps
 
