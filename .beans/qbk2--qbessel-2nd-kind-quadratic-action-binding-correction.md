@@ -48,6 +48,20 @@ parent: qz9k
 > structurally COMPLETE (object identified + characterised + shown non-wireable as-is);
 > owner closes (§4a).
 
+> **UNBLOCKER REFUTED 2026-06-20 — binding direction CLOSED (PR pending).**
+> ([`docs/audits/2026-06-20-qbessel-unblocker-forced-order-refutation.md`](../docs/audits/2026-06-20-qbessel-unblocker-forced-order-refutation.md),
+> `computations/qbeta/qbessel_unblocker_forced_order_refutation.py`). Attempted the
+> substrate-forcing of `(ν_λ, w_λ)`. (R1, computed): the only rep-theoretic order
+> `ν_λ=dim_λ-1` is INTEGER for every block ⇒ Neumann log-resonance where the #2533
+> power-series `g₂` is SINGULAR (verified, deuteron). (R2, structural): the genuine
+> integer-order log-Neumann `Y_n~J_n log(x)+reg` needs the RADIAL `x`, but the Markov
+> trace fixes only the ANGULAR `θ_λ`; angular/radial are independent E_q(2) coordinates,
+> so `x` is the SAME free knob that gave #2536's 63% swing — now named (the missing
+> radial coordinate). A parameter-free correction needs a NEW substrate datum (canonical
+> per-block radial coordinate) the trace cannot supply. The admissible object (#2530/#2533)
+> stays real; its use as a parameter-free binding correction is refuted. qbk2 binding
+> direction CLOSED; owner closes the bean (§4a).
+
 Owner-seeded exploration (2026-06-20): "2nd kind has a quadratic action that can be used in
 mass/binding as corrections." Queued, NOT started.
 
