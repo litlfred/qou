@@ -97,7 +97,7 @@ This is a **reduction**, not a from-scratch construction or a closed proof:
   the *2I-equivariance*; the *colouring category* is the gauge datum.
 - **210 ppb stays refuted.** Per the icosahedral-reeb scope §"Ingredient 5", no
   natural Wedderburn-projector knob is at the `2×10⁻⁷` scale; this note does not
-  touch the muon fine shift (consumer-side: [#2520], the frontier carries the
+  touch the muon fine shift (consumer-side: #2520, the frontier carries the
   O(1) generation skeleton, not the fine shift). No fit introduced.
 
 ## Net
