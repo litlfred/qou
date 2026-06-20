@@ -212,6 +212,16 @@ def main() -> int:
         tag = "  ← pn std-channel block (standard rep)" if lam == STD_REP_N3 else ""
         print(f"      W_{str(lam):<10} = {mp.nstr(w, 8):>10}   d_q = "
               f"{mp.nstr(gate_qdim(lam, Q0), 7)}{tag}")
+    # Exact leading defect coefficient (sibling closed form, PR #2536-era):
+    #   1 − Z(n) = C(n)·h² + O(h⁴),  C(n) = −n(n−1)(2n−13)/144.
+    # At the deuteron level n=3 this is C(3) = 7/24 — the geometric W_λ must
+    # reproduce this exact defect structure (and the sign change at n=7), not
+    # just the per-block weights.
+    C3 = mp.mpf(-3 * 2 * (2 * 3 - 13)) / 144
+    print(f"      defect 1−Z(3) = {mp.nstr(1 - Z3, 7)}  =  C(3)·h² + O(h⁴),  "
+          f"C(3) = 7/24 = {mp.nstr(C3, 7)}  (closed form C(n)=−n(n−1)(2n−13)/144;")
+    print(f"        C(3)·h² = {mp.nstr(C3 * h ** 2, 7)}; sign change at n=7 — the geometric "
+          "target the W_λ realization must also reproduce)")
 
     print("\n  [3] Wiring  f_pn  ←  W_(2,1):")
     print(f"      f_pn_pred (gate algebraic W_(2,1)) = {mp.nstr(pred['f_pn_pred'], 8)}"
@@ -279,6 +289,16 @@ def main() -> int:
         "E_std_channel_MeV": str(E_std),
         "gate_Wlambda_n3": {str(lam): str(Wmap3[lam]) for lam in gate_partitions(3)},
         "gate_Z3": str(Z3),
+        "gate_defect_closed_form": {
+            "formula": "1 - Z(n) = C(n)*h^2 + O(h^4), C(n) = -n(n-1)(2n-13)/144",
+            "C3": str(C3),
+            "C3_times_h2": str(C3 * h ** 2),
+            "defect_Z3": str(1 - Z3),
+            "sign_change_n": 7,
+            "note": ("Exact leading defect coefficient (sibling closed form). The "
+                     "geometric W_λ realization must reproduce this Z(n) structure "
+                     "(C(3)=7/24, sign change at n=7), not just the per-block weights."),
+        },
         "pn_block": str(STD_REP_N3),
         "f_pn_pred_from_gate_Wlambda": str(pred["f_pn_pred"]),
         "E_pred_from_gate_Wlambda_MeV": str(pred["E_pred_MeV"]),

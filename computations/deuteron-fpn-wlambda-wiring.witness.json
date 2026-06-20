@@ -16,6 +16,14 @@
     "(1, 1, 1)": "0.1633832273395816925522253108682946519752219996745"
   },
   "gate_Z3": "0.98744022702718964051192237850624283357591026346132",
+  "gate_defect_closed_form": {
+    "formula": "1 - Z(n) = C(n)*h^2 + O(h^4), C(n) = -n(n-1)(2n-13)/144",
+    "C3": "0.29166666666666666666666666666666666666666666666667",
+    "C3_times_h2": "0.012747646984596215480321483283550884236016344299706",
+    "defect_Z3": "0.01255977297281035948807762149375716642408973653868",
+    "sign_change_n": 7,
+    "note": "Exact leading defect coefficient (sibling closed form). The geometric W_\u03bb realization must reproduce this Z(n) structure (C(3)=7/24, sign change at n=7), not just the per-block weights."
+  },
   "pn_block": "(2, 1)",
   "f_pn_pred_from_gate_Wlambda": "0.66067377234802625540747175676965352962546626411232",
   "E_pred_from_gate_Wlambda_MeV": "1.7350685312547037265589166627609516088114153250484",

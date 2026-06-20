@@ -57,6 +57,22 @@ f_std   <   f_required   <   W_(2,1)
 
 equivalently `E(W_(2,1)) < E_AME < E(std)` — `1.7351 < 2.2246 < 3.8905`.
 
+## The gate's exact defect (geometric target, not just the weights)
+
+The geometric `W_λ` realization must reproduce not only the per-block weights but
+the gate's partition function `Z(n) = Σ_{λ⊢n} W_λ`. A sibling probe pinned the
+leading defect to a **closed form** (no fit):
+
+```
+1 − Z(n) = C(n)·h² + O(h⁴),   C(n) = −n(n−1)(2n−13)/144,   h = q − q⁻¹.
+```
+
+At the deuteron level `n = 3` this is `C(3) = 7/24`, so `1 − Z(3) ≈ (7/24)h² =
+0.012748` (vs the exact `0.012560`, the `O(h⁴)` tail). The coefficient `C(n)`
+changes sign at `n = 7` (`Z(n) > 1` for `n ≥ 7`). So the geometric target is
+sharper than "land `f_pn = 0.588`": any `S¹`-equivariant index realizing `W_λ`
+must also reproduce this exact `Z(n)` defect structure and its `n = 7` sign change.
+
 ## Bring-coordinate cross-check (not just the algebraic weight)
 
 The wiring above rides the *algebraic* q-Plancherel weight and the abstract
