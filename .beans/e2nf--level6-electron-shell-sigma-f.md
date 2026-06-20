@@ -35,12 +35,26 @@ low-isotope-mass-anatomy ledger before adopting this bean.
 
 ## Open
 
-- [ ] Rebase #2348 onto current main (~479 commits ahead; only the ledger
-      both-appends — keep both). `/prepare-merge` at merge time.
-- [ ] Research: derive the SO(4)/Runge-Lenz n²-bundling, or accept 2n² as a
-      topological input — the blocker for emergent shell peaks (not a model tweak).
-- [ ] (env) content validator + Lean build absent in this sparse checkout; CI to
-      confirm content validation + lean.ref resolution after the stub removal.
+- [x] Rebase #2348 onto current main — done 2026-06-20: 15 commits replayed onto
+      current main (0 behind); only the ledger both-appended (kept both);
+      force-pushed-with-lease.
+- [x] Research item resolved as a VERDICT (not a derivation): 2n² + the noble
+      gases are **accept-as-input** — the framework is *two symmetries short*
+      (an SO(4)/Runge-Lenz degeneracy for the orbital n²; a categorical
+      screening/Madelung mechanism for the noble-gas ordering — both absent).
+      Pure-2n² closes at [2,10,28,60] ≠ noble [2,10,18,36]. Audit
+      `2026-06-20-2n2-noble-gas-accept-as-input-verdict.md`; fixed the
+      electron-shells-hopf table mislabel (28→Ni, 60→Nd were tagged "noble gas").
+- [~] CI: `staleness` check ✓ post-rebase; full content-validate + lean checks
+      pending / billing-gated (validator absent locally; local sanity clean —
+      balanced math, stub removed + library decl imported). Subscription surfaces
+      any failure.
+
+## Still open (genuine research, not this PR)
+
+- [ ] Derive the SO(4)/Runge-Lenz n²-bundling AND a categorical screening/Madelung
+      mechanism — the real two-symmetry blocker for the periodic table (not a
+      confinement-SDP cost-operator tweak).
 
 ## Notes
 
