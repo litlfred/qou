@@ -78,3 +78,19 @@ So "ν_SDP = SDP active-set" gives 7≠1 for D. BOTH operational definitions fai
 (PSD-count→1,2,1; SDP-active→7). ν_SDP has NO computable definition reproducing
 1,2,2 — values are manual. ρ_F=2 for ⁴He unconfirmable; task not well-posed without
 a derivation of ν_SDP. No fit. FINAL landing for the ν_SDP line.
+
+## "Derive ν_SDP" attempt — self-conjugate candidate, mechanism refuted (2026-06-20)
+
+kashaev def: ν_SDP = dim of saturating projection (MacMahon partition count).
+- Deuteron BAR-FOLD SDP (principled §7b, no-fit) supports a SINGLE block (3,2,1) =
+  the unique self-conjugate partition of 6. Other encodings rail to ±1e6.
+- CANDIDATE: ν_SDP = #{self-conjugate λ⊢3A} = #{distinct-odd-part partitions of 3A}.
+  Matches D(n6)=1, T(n9)=2, ³He(n9)=2 (all confirmed). Predicts ⁴He(n12)=3.
+- PROBLEMS: (1) mechanism REFUTED — conjugate pairs do NOT cancel in the H₆ Gram
+  (sums nonzero); (2) ⁴He=3 CONFLICTS with magic-A ρ_F=2 (ρ_F=3→+59% vs AME).
+- VERDICT: not a derivation. Decisive next test = T/³He bar-fold support vs their 2
+  self-conj blocks (needs y_λ, χ^λ at H₉). No fit, no forced number.
+Audit: docs/audits/2026-06-20-nu-sdp-selfconjugate-candidate-and-binding-tension.md.
+
+(1+q)/2: REFUTED near-match (PR #1707, bean cbnf) — NOT re-attempted; live non-fit
+direction is GAP-A-3 P_λ, separate from this ν_SDP line.
