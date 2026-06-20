@@ -81,6 +81,7 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import M_MU_MEV_VALIDATION  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -130,7 +131,7 @@ def main() -> int:
     # The proton-mass identity: m_p = 2·m_μ·F_Bor − 12·m_e
     # If m_p, m_μ, m_e are anchored, what value of "12" gives exact match?
     m_e = mp.mpf("0.51099895069")
-    m_mu = mp.mpf("105.6583755")
+    m_mu = M_MU_MEV_VALIDATION
     m_p = mp.mpf("938.27208816")
     # m_p = 2·m_μ·F_Bor − k·m_e  ⇒  k = (2·m_μ·F_Bor − m_p) / m_e
     k_required = (2 * m_mu * F_Bor - m_p) / m_e

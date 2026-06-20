@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-26T15:09:11.221373+00:00",
-  "commitSha": "df49d949cd03ec2e2fc817efed7369eabec5b1ec",
+  "computedAt": "2026-06-20T19:54:04.303592+00:00",
+  "commitSha": "797c7717d610ad4dac29105e4473c6e416837777",
   "assertions": [
     {
       "name": "residual_identified",
@@ -14,25 +14,31 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "phase2a-flavor-split-higher-order",
   "scriptFile": "phase2a_flavor_split_higher_order_probe.py",
-  "scriptHash": "1ff974551bfb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "422ce320d733",
+  "scriptCommitSha": "f89ec89aee3363048fc11bf0e6942b14ab5c0b22",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Probes higher-order corrections to the flavor-split X formula. At 50 dps, the residual δX = X_current − X_target is analyzed for rational structure in the h-variable. Identifies the leading correction order and coefficient.",
   "contentBlock": "prop:flavor-split-substrate",
   "data": {
-    "delta_X": "-2.0009344572324621365e-6",
-    "delta_X_ppm_of_X": "-1454.472701",
+    "delta_X": "-2.0009419999470669565e-6",
+    "delta_X_ppm_of_X": "-1454.478184",
     "best_correction": {
       "order": 3,
-      "coefficient": "-0.000218986840760013"
+      "coefficient": "-0.000218987666233984"
     }
   }
 }

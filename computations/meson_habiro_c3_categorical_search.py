@@ -53,6 +53,7 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import M_K_PM_MEV_VALIDATION, M_PI_PM_MEV_VALIDATION  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -74,8 +75,8 @@ def main() -> int:
     hbar_q_sq = hbar_q ** 2
     u = b * hbar_q_sq
 
-    m_K = mp.mpf("493.677")
-    m_pi = mp.mpf("139.57039")
+    m_K = M_K_PM_MEV_VALIDATION
+    m_pi = M_PI_PM_MEV_VALIDATION
     target = m_K / m_pi
     chi5 = q ** 5 - q ** (-5)
     seifert_ratio_sq = (mp.mpf(9) / 5) ** 2

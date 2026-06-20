@@ -77,6 +77,7 @@ sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import M_MU_MEV_VALIDATION  # noqa: E402
 
 q = Symbol("q", positive=True)
 
@@ -173,7 +174,7 @@ def main():
     # ── 5. Numerical verification ───────────────────────────────
     print()
     q0 = mp.mpf(Q_50_DIGIT_STR)
-    m_mu = mp.mpf("105.6583755")
+    m_mu = M_MU_MEV_VALIDATION
     m_e = mp.mpf("0.51099895")
     h0 = q0 - 1/q0
     trM = abs((4 + h0**2 - 3*h0**4 - h0**6) / (h0**2 + 4))

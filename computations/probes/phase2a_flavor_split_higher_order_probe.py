@@ -42,6 +42,7 @@ from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
+from codata_constants import M_MU_MEV_VALIDATION  # noqa: E402
 
 
 def main():
@@ -52,7 +53,7 @@ def main():
     q = mp.mpf(Q_50_DIGIT_STR)
     h = q - 1/q
     m_e = mp.mpf(M_E_MEV)
-    m_mu = mp.mpf("105.6583755")
+    m_mu = M_MU_MEV_VALIDATION
     m_p_codata = mp.mpf(M_P_MEV_VALIDATION)
     m_n_codata = mp.mpf(M_N_MEV_VALIDATION)
 

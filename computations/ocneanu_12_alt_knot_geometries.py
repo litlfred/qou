@@ -39,6 +39,7 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import M_MU_MEV_VALIDATION  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -73,7 +74,7 @@ def main() -> int:
     trM = abs(trM_borromean_closed(q))
     F_Bor = trM * qfact_3 / q ** 3
     m_e = mp.mpf("0.51099895069")
-    m_mu = mp.mpf("105.6583755")
+    m_mu = M_MU_MEV_VALIDATION
     m_p = mp.mpf("938.27208816")
     k_required = (2 * m_mu * F_Bor - m_p) / m_e
     residual_target = 12 - k_required
