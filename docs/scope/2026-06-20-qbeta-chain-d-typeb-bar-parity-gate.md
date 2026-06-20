@@ -3,9 +3,15 @@
 **Date.** 2026-06-20.
 **Bean.** qkhc (Q_β kernel hunt, Stage C) — fibre-level kernel `R(q,ξ)` in
 `F(qξ) = R(q,ξ)·F(ξ)`.
-**Status.** SCOPE / formalize-first gate — **no search run, no fit**. Owner-gated
-multi-session; this is the cheap decisive prune *before* the 12–17 session
-Type-B build.
+**Status.** GATE RUN (2026-06-20) — **REFUTE D as the single kernel; ladder is
+parity-split.** No fit, nothing wired. Verdict at the bottom.
+
+> **⮕ Result.** Executed via
+> [`qbeta_chain_d_bar_parity_gate.py`](../../computations/qbeta/qbeta_chain_d_bar_parity_gate.py)
+> → `qbeta-chain-d-bar-parity-gate.witness.json`. The dominant odd rung
+> `c₃ = −2 − ℏ_q²` is **not** bar-invariant (a bar-covariant `ℏ_q²` tail on a
+> bar-invariant Jones core), so a uniformly bar-invariant Type-B crystal cannot
+> reproduce it. See **"Gate run — verdict"**.
 
 ## Why a gate before the build
 
@@ -94,3 +100,42 @@ is *not* wasted even if D is subsequently refuted.
 - This is a **prune, not a closure**. Nothing wired; `c_k` stay cal-anchored.
 - Owner-gated multi-session; coordinate with the Q_β upstream cluster before
   opening the symbolic-`b(q)` extraction.
+
+## Gate run — verdict (2026-06-20)
+
+The gate was run on the **fully-determined** rungs (so no `b(q)` ambiguity): the
+compute's own ladder is `Q_A·cos(α_eff)·(1−u²)·(1+c₃u³)` with the documented
+parity labels *"even rungs geometric (c₂=c₄≈−1), odd topological (c₁=cos,
+c₃=J−ℏ²)"* ([`qbeta_1ppq_achieved.py`](../../computations/qbeta/qbeta_1ppq_achieved.py)).
+
+| quantity | value | bar-parity |
+|---|---|---|
+| `ℏ_q²` | — | bar-**covariant**: `ℏ_q²(1/q) = q²·ℏ_q²(q)` (verified to 10⁻⁴⁰) |
+| `c₂ = −1` (even, geometric) | `−1` | bar-**invariant** ✓ |
+| `c₃ = −2 − ℏ_q²` (odd, topological) | `−2.00982` → bar image `−2.01210` | **NOT** bar-invariant (swing `0.113%`) |
+
+**`c₃` is bar-MIXED:** a bar-**invariant** topological core `J_Hopf(1) = −2`
+(Jones of the Hopf link, classical value) **plus** a bar-**covariant** quantum
+tail `−ℏ_q²` (`↦ −q²ℏ_q²`). The same `ℏ_q²` q-dependence that breaks bar-invariance
+here is the source of `c₃`'s known cross-anchor near-match instability.
+
+**Verdict (settles the chain choice):**
+
+1. **Refute D as the single kernel.** A uniformly bar-*invariant* Type-B folded
+   crystal can supply the even/geometric rungs and the `−2` core, but **cannot**
+   produce the bar-*covariant* `ℏ_q²` tail on `c₃`. **Do not spend the 12–17
+   session Type-B build on the odd rungs.**
+2. **C does not rescue it either.** Demazure (chain C) is likewise bar-even; it
+   cannot make the topological core or the bar-covariant tail. The "crystal
+   chain" framing (B/C/D) is **mis-aimed for the odd rungs**.
+3. **The ladder is parity-split:** bar-even (crystal / geometric) **even** rungs
+   × bar-odd (Jones–Hopf topological) **odd** rungs — consistent with Q_β being
+   the bar-odd sinh partner. The even rungs *are* a legitimate (small) crystal
+   target; the dominant odd rung `c₃` is a **Jones–Hopf** object already
+   identified (`c₃ = J_Hopf − ℏ_q²`).
+4. **The genuine open piece** is the **coefficient of the bar-covariant `ℏ_q²`
+   tail** on `c₃` — a topological-quantum (Jones-deformation) quantity, *not* a
+   crystal fold. That is where the kernel hunt should point, not at Type-B.
+
+This **prunes** the most expensive option (D, 12–17 sessions) and redirects the
+odd-rung search to the Jones–Hopf q-deformation, in one bar-parity check.
