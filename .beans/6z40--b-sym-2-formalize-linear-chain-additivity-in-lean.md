@@ -28,3 +28,5 @@ structural input, NOT asserted in Lean — honouring the bean's definition-vs-th
 distinction. Audit: `docs/audits/2026-06-20-bsym-linear-chain-additivity-lean.md`.
 No production rewire, no fit. The open 4He cooperative alpha-unit magnitude (audit 6)
 is untouched.
+
+DEDUP (2026-06-20, PR #2540 prepare-merge): PR #2540 independently formalized the same additivity (QOU.HadronicMass.BSymChainAdditive) in parallel; on rebase it was found to DUPLICATE the canonical QOU.BraidKnot.BsymLinearChain already merged to main. The duplicate module + its HadronicMass import were DROPPED; the audit cross-link in 2026-06-16-b-sym-linear-chain-closed-form.md now points to BsymLinearChain. The one complementary piece #2540 had (the ℝ Real.log-of-product lemma that DISCHARGES the per-bond factorization from the multiplicative trace ratio) is noted as an optional follow-up next to BsymLinearChain — not shipped, to avoid editing the just-merged module.
