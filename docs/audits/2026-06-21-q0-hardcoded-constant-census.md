@@ -31,7 +31,8 @@ pre-re-pin q₀.
 ### Verification of the anchors
 - Canonical proton C is read directly from `q_parameter.Q`.
 - Muon anchor B re-derived here: `m_μ/m_e = 206.7682830`,
-  `Vol(4₁) = 2·Λ(π/3) = 2.029883212819307…`, `ℏ_q = (q−1)/q` ⇒
+  `Vol(4₁) = 2·Cl₂(π/3) = 6·Λ(π/3) = 2.029883212819307…` (Clausen `Cl₂`,
+  = `clsin(2,·)` in the code; Lobachevsky `Λ(θ) = ½·Cl₂(2θ)`), `ℏ_q = (q−1)/q` ⇒
   `q = 1.10997859555418057528159407961` — matches cluster B's 6 files to ~28
   digits. (B and C agree to 11 sig figs then split at the μ–p tension.)
 - A (`1.10997858275138…`) matches neither the current proton nor the current
