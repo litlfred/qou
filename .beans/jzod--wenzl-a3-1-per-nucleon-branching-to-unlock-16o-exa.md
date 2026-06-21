@@ -1,11 +1,11 @@
 ---
 # jzod
 title: 'Wenzl A>=3 #1: per-nucleon branching to unlock 16O exact tr_M (multi-day; rank-deficient extracts)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-20T00:58:14Z
-updated_at: 2026-06-20T00:58:54Z
+updated_at: 2026-06-21T19:51:21Z
 parent: qfzy
 ---
 

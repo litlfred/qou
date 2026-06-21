@@ -1,11 +1,11 @@
 ---
 # e2nf
 title: Level-6 electron shell — σ_F dual, shell-closure fix, 2n² gap
-status: in_progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-16T02:16:00Z
-updated_at: 2026-06-21T02:30:00Z
+updated_at: 2026-06-21T19:51:21Z
 ---
 
 Branch `claude/zealous-hypatia-05xyp9` → PR #2348. Picked up a stalled
