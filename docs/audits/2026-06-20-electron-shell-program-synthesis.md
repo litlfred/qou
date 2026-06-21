@@ -69,41 +69,52 @@ nuclear `B_sym` model error (electrons are sub-keV).
 *(Audits: `…-level6-atom-electron-wiring`; bonus correction of a prior
 25-MeV/electron scale blunder.)*
 
-## 4. Ordering (Aufbau / noble gases) — structure named, one reading un-derived
+## 4. Ordering (Aufbau / noble gases) — eigenvalue derived, the weight still open
 
 The filling order reduces to a single **ℓ-coefficient `a`** in the key
-`K(n,ℓ)=n+a·ℓ` (3d/4s crossover needs `a>½`; Madelung is `a=+1`). The angular `ℓ`
-couples through one of the `T_γe` eigenvalues (`λ₊=q₀` dominant, `λ₋=−1/q₀`
-sub-dominant, `λ₊λ₋=det=−1`), and the **Markov/Frobenius pairing is
-Perron-dominated by `λ₊`** — so reading `ℓ` on the dominant channel,
-`λ₊^ℓ = q₀^ℓ`, gives `a=+1` = the **empirical Aufbau order** (4s<3d, 5s<4d, …;
-`aufbau_eigenvalue_channel.py`). That is the right eigenvalue and the right order.
+`K(n,ℓ)=n+a·ℓ` (Madelung is `a=+1`).
 
-But the *derivation* of "angular `ℓ` enters as `λ₊^ℓ`" is **not** supplied: three
-structural candidates for `a` were each ruled out —
+**What IS derived (eigenvalue identity).** The `T_γe = [[q−q⁻¹,1],[1,0]]`
+eigenvalues are **exactly** `{q, −q⁻¹}` (sympy: discriminant `(q−q⁻¹)²+4 =
+(q+q⁻¹)²`, `det=−1`), **identical to the Hecke generator eigenvalues**
+`(σ−q)(σ+q⁻¹)=0`. Since `σ_i` obeys this quadratic in *every* representation, its
+eigenvalues are `{q, −q⁻¹}` on **every** block, with Perron `λ₊ = q`. `T_γe` *is*
+a Hecke generator. And on the **scalar** (trivial, 1-dim) block `σ_i ↦ q`, so a
+length-`L` word weighs `q^L` ([`prop:symmetric-block-domain-weight`](../../content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.md),
+`symmetric_block_domain_weight`, **Lean sorry-free**).
 
-| candidate | object | `a` | ruled out by |
+**What is NOT derived — `a=+1` (owner: "don't assume only scalar channels").** The
+`q^ℓ = λ₊^ℓ` reading (a=+1) lives on the **scalar** block. But angular momentum
+`ℓ` is intrinsically the **non-scalar** `(2ℓ+1)`-dim irrep `V_ℓ`, where `σ_i` is a
+*matrix* and **every** natural object overshoots to `q^{2ℓ}` (a=+2): the weights
+`q^{2m}` (`m=−ℓ..ℓ`), the highest weight `q^{2ℓ}`, and the trace (q-dimension)
+`[2ℓ+1]_q` (`aufbau_symmetric_block_channel.py`). **No** weight equals `q^ℓ`
+(needs half-integer `m=ℓ/2`). So `q^ℓ` is obtainable **only** by projecting the
+angular content onto the scalar block *and* equating word-length with `ℓ` — and
+**those assumptions are exactly the content of Madelung.** The scalar shortcut is
+**load-bearing**; without it everything overshoots.
+
+| channel | object | `a` | status |
 |---|---|--:|---|
-| eigensplit (#2531, merged) | `(λ₋/λ₊)^ℓ` | −2 | **sign** (anti-penetration) |
-| q-dim loop-trace | `[2ℓ+1]_q` | +2 | **overshoot** (ns-dominated) |
-| `√`-q-dim ("half") | `√[2ℓ+1]_q` | — | **overshoot at `q₀`** (near-classical) |
-
-The exact `λ₊^ℓ` works but rests on the un-derived *open-transfer* reading; the
-natural categorical objects (the loop-trace and its root) overshoot because
-`q₀≈1.11` is near 1, where `[2ℓ+1]_q≈2ℓ+1` (classical) rather than `q^{2ℓ}`.
+| scalar block | `q^ℓ = λ₊^ℓ` | +1 | **matches Aufbau, but ASSUMES the scalar projection** |
+| non-scalar `V_ℓ` (weight/h.w./trace) | `q^{2ℓ}` | +2 | the genuine angular rep — overshoots |
+| antisymmetric (#2531) | `(λ₋/λ₊)^ℓ` | −2 | wrong sign |
 
 **The ordering is OPEN — to be DERIVED, not accepted as input and not fitted.**
-The derivation target is now precise: *prove that an electron orbital's angular
-momentum `ℓ` enters the Markov/Frobenius amplitude as `ℓ` **dominant-channel
-(`λ₊`) open-transfer steps** — `λ₊^ℓ` — from the braid topology of the open
-electron strand, exactly as the radial `n` enters as `n` dominant curls.* The
-three ruled-out candidates (sub-dominant `λ₋`, loop-trace q-dim, its root) narrow
-the search; `λ₊^ℓ` is the **unique** survivor that yields Aufbau, so the open
-problem is its **topological derivation** — why the angular nodes are dominant
-(`λ₊`) curls, not sub-dominant or loop closures. (Madelung's known fragility in
-standard QM — Cr, Cu, Pd — is why this is *hard*, not a licence to accept it.)
-*(Audits: `…-gap2-ordering-ell-coefficient-synthesis`,
-`…-aufbau-from-dominant-eigenvalue-duality`.)*
+Correctly framed:
+
+> **Why would an atomic orbital's angular content be the SCALAR-block projection
+> (`q^ℓ`, a=+1) and not the genuine non-scalar `V_ℓ` action (`q^{2ℓ}`, a=+2)?**
+
+The candidate bridge is [`conj:palindromicity-orbital-type`](../../content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.md)
+(`ℓ = ½·palindromic-defect` — the same `½` separating `q^ℓ` from `q^{2ℓ}`), but it
+is a **conjecture** and must be established *on the non-scalar content*, not by
+assuming the scalar block. Per owner STRICT: Madelung's fragility (Cr, Cu, Pd) is
+why this is hard, not a licence to accept it.
+
+*(Audits: `…-aufbau-lambda-plus-channel-from-symmetric-block` (scalar-channel
+correction), `…-aufbau-from-dominant-eigenvalue-duality`,
+`…-gap2-ordering-ell-coefficient-synthesis`.)*
 
 ## Net
 
@@ -112,7 +123,7 @@ standard QM — Cr, Cu, Pd — is why this is *hard*, not a licence to accept it
 | **capacity** `2n²` | **derived** — self-square `[n]_q²` of the bar-even element; no second SU(2) |
 | **stability** `σ_F` | **derived** — monotone confinement-SDP dual; closure = marginal `Δσ_F` + `μ≥2` |
 | **binding scale** `E_h` | **conditional theorem** — `α²` exact in `R`; unit = CAL-1 (by design) |
-| **ordering** (Aufbau) | **structure named** (`λ₊`/Aufbau); 3 derivations ruled out — **OPEN, derivation target:** angular `ℓ = ℓ` `λ₊` open-transfer steps (`λ₊^ℓ`), topological (not input, not fit) |
+| **ordering** (Aufbau) | eigenvalue derived (`λ₊=q`, every block; scalar-block `q^L` Lean) — but `a=+1` is **OPEN**: needs the scalar-block projection of the angular content, whereas the genuine non-scalar `V_ℓ` gives `q^{2ℓ}` (a=+2). **Derivation target:** why scalar (`q^ℓ`) not non-scalar (`q^{2ℓ}`)? (not input, not fit) |
 
 QOU **derives the periodic-table capacities and the electron-binding scale, and
 identifies the ordering's eigenvalue structure**, while the ordering's one free

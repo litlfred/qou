@@ -5,7 +5,7 @@ status: in_progress
 type: task
 priority: normal
 created_at: 2026-06-16T02:16:00Z
-updated_at: 2026-06-20T23:40:00Z
+updated_at: 2026-06-21T00:30:00Z
 ---
 
 Branch `claude/zealous-hypatia-05xyp9` → PR #2348. Picked up a stalled
@@ -108,6 +108,19 @@ low-isotope-mass-anatomy ledger before adopting this bean.
       [2ℓ+1]_q≈2ℓ+1 (classical) and ½ln[2ℓ+1]_q≈0.56 (ℓ=1) ≫ radial lnq₀≈0.10 ⇒
       √-q-dim is ℓ-DOMINATED (1s2s3s4s…2p…), NOT Aufbau. The full q-dim too. Only
       the EXACT λ₊^ℓ=q₀^ℓ gives Aufbau — and it is NOT the √-q-dim.
+- [~] **(2026-06-21) λ₊^ℓ derivation attempt → corpus-grep find + owner scalar
+      correction.** corpus-grep (STRICT) surfaced `prop:symmetric-block-domain-
+      weight` (Lean sorry-free: on the SCALAR/trivial block σ_i↦q, word weight
+      q^L) + `conj:palindromicity-orbital-type` (ℓ=½·defect) BEFORE any wide
+      search. Derived rigorously (sympy): T_γe eigenvalues = Hecke {q,−q⁻¹}
+      exactly ⇒ T_γe IS σ_i, λ₊=q Perron on every block. **BUT owner: "don't
+      assume only scalar channels" — caught a real over-claim.** Angular ℓ is the
+      NON-scalar V_ℓ (dim 2ℓ+1); its weights q^{2m}, highest weight q^{2ℓ}, and
+      trace [2ℓ+1]_q ALL give a=+2 (overshoot); NO weight = q^ℓ. So a=+1 needs the
+      SCALAR projection + word-length=ℓ — assuming those IS assuming Madelung
+      (load-bearing). Ordering STILL OPEN, now correctly framed: "why scalar-block
+      q^ℓ not non-scalar V_ℓ q^{2ℓ}?". Compute aufbau_symmetric_block_channel.py;
+      audit 2026-06-20-aufbau-lambda-plus-channel-from-symmetric-block.md.
 - [ ] **Gap-2 ORDERING: genuinely open.** Three structural-derivation attempts
       for the a=+1 angular weight now RULED OUT (sign or overshoot at q₀):
       eigensplit a=−2 (#2531), q-dim loop-trace a=+2, √-q-dim (this). The exact
