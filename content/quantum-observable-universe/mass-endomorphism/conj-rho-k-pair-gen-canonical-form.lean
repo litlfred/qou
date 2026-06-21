@@ -31,7 +31,7 @@ noncomputable def pair_gen_functional
 
 /-- Conjectural Kashaev limit: as `q → 1`, the canonical functional
     recovers the hyperbolic-volume pair contribution. -/
-theorem pair_gen_kashaev_limit_existence
+theorem pair_gen_kashaev_limit
     {R : Type*} [Field R] :
     ∃ f : R → R → R → R, ∀ q V_i V_j, pair_gen_functional q V_i V_j = f q V_i V_j := by
   refine ⟨pair_gen_functional, ?_⟩
