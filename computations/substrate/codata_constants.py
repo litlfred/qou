@@ -186,6 +186,23 @@ M_K_PM_MEV_VALIDATION  = mp.mpf("493.677")       # ± 0.013 MeV (26 ppm)
 M_K_0_MEV_VALIDATION   = mp.mpf("497.611")       # ± 0.013 MeV (26 ppm)
 M_MU_MEV_VALIDATION    = mp.mpf("105.6583755")   # ± 0.0000023 MeV (22 ppb)
 
+# ── Neutral-atom atomic masses (validation-only) ──────────────
+# Added 2026-06-21 (bean fvxq class-4): single canonical source for
+# the atomic (neutral-atom, electrons included) masses used as
+# absolute-mass comparison targets in tower_isotope_absolute.py.
+# These are ATOMIC masses (≠ the nuclear M_*_MEV_VALIDATION above,
+# which differ by ≈ Z·m_e); never calibration inputs. Source:
+# AME2020 / CODATA atomic masses. Precision is carried over verbatim
+# from the prior in-script literals (5–6 dp) to keep routing exactly
+# value-preserving; refine to full AME2020 precision in a follow-up
+# if a high-precision vendored atomic-mass source is added.
+M_D_ATOMIC_MEV_VALIDATION   = mp.mpf("1876.12392")    # ²H  (deuterium atom)
+M_T_ATOMIC_MEV_VALIDATION   = mp.mpf("2809.43215")    # ³H  (tritium atom)
+M_HE3_ATOMIC_MEV_VALIDATION = mp.mpf("2809.41347")    # ³He atom
+M_HE4_ATOMIC_MEV_VALIDATION = mp.mpf("3728.40133")    # ⁴He atom
+M_LI6_ATOMIC_MEV_VALIDATION = mp.mpf("5603.05122")    # ⁶Li atom
+M_C12_ATOMIC_MEV_VALIDATION = mp.mpf("11177.92923")   # ¹²C atom
+
 # ── Internal consistency check (Q_β derived vs CODATA m_n − m_p − m_e) ─
 # Q_β is derived from CAL-1 + CAL-2; this check verifies it agrees
 # with (m_n − m_p − m_e) within combined CODATA σ.
