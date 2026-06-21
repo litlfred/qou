@@ -14,8 +14,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "LOGICAL forward ref (forward_ref_classifier.py severity=logical, L-dependency): def:skein-resolution-obstruction (braids-and-knots, ch precedes target) uses def:computational-horizon (information-theory). definition→definition cross-chapter; reader must rely on a later-defined construct. Fix: demote to interprets/narrative pointer, invert edge, promote target, or add to FOUNDATIONAL_LATE. 1 of only 3 logical defects vs 247 raw fwd-refs (rest storytelling/structural/waived).",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: foxn"
     },
     {
       "id": "b5bedf70f92b",
@@ -31,8 +32,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "LOGICAL forward ref (forward_ref_classifier.py severity=logical, L-dependency): def:embeddable-knot-operator (molecular-construction, ch precedes target) uses def:covalent-bond-types (organic-chemistry). definition→definition cross-chapter; reader must rely on a later-defined construct. Fix: demote to interprets/narrative pointer, invert edge, promote target, or add to FOUNDATIONAL_LATE. 1 of only 3 logical defects vs 247 raw fwd-refs (rest storytelling/structural/waived).",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: foxn"
     },
     {
       "id": "05e2e299d6a6",
@@ -48,8 +50,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "LOGICAL forward ref (forward_ref_classifier.py severity=logical, L-dependency): def:quark-antiquark-production (particle-interactions, ch precedes target) uses def:breit-wheeler-pair-production (predicted-spectra). definition→definition cross-chapter; reader must rely on a later-defined construct. Fix: demote to interprets/narrative pointer, invert edge, promote target, or add to FOUNDATIONAL_LATE. 1 of only 3 logical defects vs 247 raw fwd-refs (rest storytelling/structural/waived).",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: foxn"
     },
     {
       "id": "69cc59f87d2e",
@@ -65,8 +68,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H2 chapter-pair aggregate: Chapter 9 ('Particle Interactions and Nuclear Structure') → Chapter 11 ('Mass Analysis'): 23 forward cross-chapter edge(s). Baseline architectural coupling (existing on main). Most edges are storytelling/result-callback per forward_ref_classifier (only 3 of 247 are logical defects). Candidate for section reordering OR wontfix:architectural if cross-callback by design.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e5tn"
     },
     {
       "id": "db3f8eac3c34",
@@ -82,8 +86,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H2 chapter-pair aggregate: Chapter 11 ('Mass Analysis') → Chapter 13 ('Predicted Particle Spectra'): 17 forward cross-chapter edge(s). Baseline architectural coupling (existing on main). Most edges are storytelling/result-callback per forward_ref_classifier (only 3 of 247 are logical defects). Candidate for section reordering OR wontfix:architectural if cross-callback by design.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e5tn"
     },
     {
       "id": "728a488af21a",
@@ -99,8 +104,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H2 chapter-pair aggregate: Chapter 8 ('The Mass Endomorphism') → Chapter 11 ('Mass Analysis'): 15 forward cross-chapter edge(s). Baseline architectural coupling (existing on main). Most edges are storytelling/result-callback per forward_ref_classifier (only 3 of 247 are logical defects). Candidate for section reordering OR wontfix:architectural if cross-callback by design.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e5tn"
     },
     {
       "id": "3f7f29d8d96c",
@@ -116,8 +122,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H2 chapter-pair aggregate: Chapter 3 ('Quantum Observable Universes') → Chapter 4 ('Models of QOUs'): 10 forward cross-chapter edge(s). Baseline architectural coupling (existing on main). Most edges are storytelling/result-callback per forward_ref_classifier (only 3 of 247 are logical defects). Candidate for section reordering OR wontfix:architectural if cross-callback by design.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e5tn"
     },
     {
       "id": "711efc620558",
@@ -133,8 +140,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H2 chapter-pair aggregate: Chapter 6 ('Braids and Knots') → Chapter 7 ('Bring'): 8 forward cross-chapter edge(s). Baseline architectural coupling (existing on main). Most edges are storytelling/result-callback per forward_ref_classifier (only 3 of 247 are logical defects). Candidate for section reordering OR wontfix:architectural if cross-callback by design.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e5tn"
     },
     {
       "id": "de869f9e2c76",
@@ -150,8 +158,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H2 chapter-pair aggregate: Chapter 11 ('Mass Analysis') → Chapter 14 ('Physical Observations'): 8 forward cross-chapter edge(s). Baseline architectural coupling (existing on main). Most edges are storytelling/result-callback per forward_ref_classifier (only 3 of 247 are logical defects). Candidate for section reordering OR wontfix:architectural if cross-callback by design.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e5tn"
     },
     {
       "id": "ef5f939989b5",
@@ -167,8 +176,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H2 chapter-pair aggregate: Chapter 7 ('Bring') → Chapter 13 ('Predicted Particle Spectra'): 7 forward cross-chapter edge(s). Baseline architectural coupling (existing on main). Most edges are storytelling/result-callback per forward_ref_classifier (only 3 of 247 are logical defects). Candidate for section reordering OR wontfix:architectural if cross-callback by design.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e5tn"
     },
     {
       "id": "0f47a0f27c0b",
@@ -184,8 +194,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H2 chapter-pair aggregate: Chapter 7 ('Bring') → Chapter 9 ('Particle Interactions and Nuclear Structure'): 5 forward cross-chapter edge(s). Baseline architectural coupling (existing on main). Most edges are storytelling/result-callback per forward_ref_classifier (only 3 of 247 are logical defects). Candidate for section reordering OR wontfix:architectural if cross-callback by design.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e5tn"
     },
     {
       "id": "799edb7a3f23",
@@ -201,8 +212,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H2 chapter-pair aggregate: Chapter 3 ('Quantum Observable Universes') → Chapter 7 ('Bring'): 5 forward cross-chapter edge(s). Baseline architectural coupling (existing on main). Most edges are storytelling/result-callback per forward_ref_classifier (only 3 of 247 are logical defects). Candidate for section reordering OR wontfix:architectural if cross-callback by design.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e5tn"
     },
     {
       "id": "eb05151e5a9e",
@@ -218,8 +230,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H2 chapter-pair aggregate: Chapter 14 ('Physical Observations') → Chapter 17 ('Fluid Dynamics of the Brane'): 5 forward cross-chapter edge(s). Baseline architectural coupling (existing on main). Most edges are storytelling/result-callback per forward_ref_classifier (only 3 of 247 are logical defects). Candidate for section reordering OR wontfix:architectural if cross-callback by design.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e5tn"
     },
     {
       "id": "1c7d0900bd45",
@@ -235,8 +248,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H2 chapter-pair aggregate: Chapter 9 ('Particle Interactions and Nuclear Structure') → Chapter 14 ('Physical Observations'): 4 forward cross-chapter edge(s). Baseline architectural coupling (existing on main). Most edges are storytelling/result-callback per forward_ref_classifier (only 3 of 247 are logical defects). Candidate for section reordering OR wontfix:architectural if cross-callback by design.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e5tn"
     },
     {
       "id": "50a557937fdd",
@@ -252,8 +266,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H2 chapter-pair aggregate: Chapter 7 ('Bring') → Chapter 10 ('q-Hyperbolic Geometry'): 4 forward cross-chapter edge(s). Baseline architectural coupling (existing on main). Most edges are storytelling/result-callback per forward_ref_classifier (only 3 of 247 are logical defects). Candidate for section reordering OR wontfix:architectural if cross-callback by design.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e5tn"
     },
     {
       "id": "9bcd7ce5e416",
@@ -269,8 +284,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H5 dense: Dense section: 'sec:substrate-parameter' ('Quantum Observable Universes') — 19 blocks (19 blocks, limit 18, band-distance 1). Baseline. Split proposal P1 splits 'Substrate parameter and deformation' along comment boundaries (key blocks: substrate-parameter-intro, quantum-universe-explication, braiding-eigenvalue-extraction, spectral-chart-correspondence, tannaka-krein-reconstruction). Author-assist: split needs per-section story (Slot F).",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "dc6f97b09031",
@@ -286,8 +302,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:amc-calculations' ('Atomic Mass Calculations') — 1 block(s), 0 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "f4113b602130",
@@ -303,8 +320,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:categorical-braiding-hecke-eigenbasis' ('Braids and Knots') — 1 block(s), 0 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "20c1a1e6abbd",
@@ -320,8 +338,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:confinement-selection' ('Particle Interactions and Nuclear Structure') — 1 block(s), 0 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "ea3593b2fe80",
@@ -337,8 +356,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:hoefsmit-convergence-magic-shells' ('Mass Analysis') — 1 block(s), 0 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "fdfb041582af",
@@ -354,8 +374,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:mass-algebraic-consolidated' ('Mass Analysis') — 1 block(s), 0 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "e359eef721fd",
@@ -371,8 +392,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:mba-chain-map' ('Mass and Binding Algorithms') — 1 block(s), 0 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "06cb464ce454",
@@ -388,8 +410,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:phi-q-markov-schur-weyl-foundations' ('Mass Analysis') — 1 block(s), 0 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "a643ab8a14ff",
@@ -405,8 +428,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:tm-general-form' ('Transfer Matrices') — 1 block(s), 0 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "e9f78628d169",
@@ -422,8 +446,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:tm-inductive-construction' ('Transfer Matrices') — 1 block(s), 0 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "9b29db3f53a9",
@@ -439,8 +464,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:archimedean-encounter' ('Models of QOUs') — 2 block(s), 0 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "a682cd8e96f9",
@@ -456,8 +482,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:archimedean-lifting-topological-mass-variants' ('Lifting and Descent') — 2 block(s), 0 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "9099ff200c3d",
@@ -473,8 +500,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:info-geometry-variants' ('Information-Theoretic Perspectives') — 2 block(s), 0 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "a29cd8e90c3f",
@@ -490,8 +518,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:strangelet-stability' ('Physical Observations') — 13 block(s), 0 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "9ac8d2249f53",
@@ -507,8 +536,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:knot-ops-archi-gluon-model' ('Knot Operations Dictionary — archimedean evaluations at the substrate') — 1 block(s), 1 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "878731000046",
@@ -524,8 +554,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:knot-periodic-table' ('Knot-Periodic Table of the Elements') — 2 block(s), 1 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "9a31d54688be",
@@ -541,8 +572,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:localized-knots' ('Lifting and Descent') — 2 block(s), 1 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "b5b0a22fdf61",
@@ -558,8 +590,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:transcendence-signatures' ('Physical Observations') — 2 block(s), 1 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "2ff1f3e21225",
@@ -575,8 +608,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:finite-fields' ('Models of QOUs') — 3 block(s), 1 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "a8eb6b68a01c",
@@ -592,8 +626,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:non-archimedean-models' ('Models of QOUs') — 3 block(s), 1 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "b7e88826922f",
@@ -609,8 +644,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H4 sparse: Sparse section: 'sec:amc-q-integer' ('Atomic Mass Calculations') — 2 block(s), 2 non-prose. Baseline structural debt; below 3-block band. Author-assist (Slot F): merge with adjacent section OR keep if a deliberate single-result/capstone section. Merge proposals P2-P6 cover several pairs.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: yjxk"
     },
     {
       "id": "61e99cd1c635",
@@ -626,8 +662,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'lem:tilting-module-rigidity' (Predicted Particle Spectra / JWST observations and aeon initiations) — kind=lemma, no uses[] and not referenced by any block. lemma with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "48250ceb45be",
@@ -643,8 +680,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'prop:cyclotomic-l-value-decomposition' ($q$-Geometric Langlands Correspondence / Reconnected orphan blocks (Phase 7)) — kind=proposition, no uses[] and not referenced by any block. proposition with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "a32a3f0690ca",
@@ -660,8 +698,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'prop:gram-matrix-h3-symbolic' (Particle Interactions and Nuclear Structure / Atomic braid and Wedderburn mass formula: foundations) — kind=proposition, no uses[] and not referenced by any block. proposition with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "b2246ee3adbc",
@@ -677,8 +716,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'prop:interface-knot-markov-z' (Mass Analysis / Weak-spectral and isospin lemmas) — kind=proposition, no uses[] and not referenced by any block. proposition with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "05de88cfabd3",
@@ -694,8 +734,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'prop:jonquiere-cyclotomic-tate-rationality' (Mass Analysis / Cyclotomic depth-3 trilog identities) — kind=proposition, no uses[] and not referenced by any block. proposition with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "26bca97338c8",
@@ -711,8 +752,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'prop:knot-operator-transition' (Mass Analysis / Staircase and character lemmas) — kind=proposition, no uses[] and not referenced by any block. proposition with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "786f4dfec100",
@@ -728,8 +770,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'prop:lr-coefficient-hecke' (Mass Analysis / Substrate cohomology calibration) — kind=proposition, no uses[] and not referenced by any block. proposition with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "158b74ed3369",
@@ -745,8 +788,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'prop:mass-element-nf' (Mass Analysis / Mass-formula derivation) — kind=proposition, no uses[] and not referenced by any block. proposition with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "bbc3c5040c08",
@@ -762,8 +806,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'prop:n-equals-1-vacuous-magic' (Particle Interactions and Nuclear Structure / Which constraints survive) — kind=proposition, no uses[] and not referenced by any block. proposition with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "53356436af4a",
@@ -779,8 +824,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'prop:polynomial-bar-involution' (Stochastic Mechanics / Markov axioms and braid-link enumeration) — kind=proposition, no uses[] and not referenced by any block. proposition with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "77698e840b53",
@@ -796,8 +842,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'prop:q-plancherel-asymptotic-skeleton' (Physical Observations / Non-Commutative Probability, the q-CLT, and the Archimedean Macroscopic Limit) — kind=proposition, no uses[] and not referenced by any block. proposition with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "75d63006b2bf",
@@ -813,8 +860,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'prop:skein-bar-antisymmetry' (q-Hyperbolic Geometry / Crossing energy and Coulomb charge) — kind=proposition, no uses[] and not referenced by any block. proposition with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "302e19832037",
@@ -830,8 +878,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'prop:spectrahedral-phase-collapse' (Predicted Particle Spectra / JWST observations and aeon initiations) — kind=proposition, no uses[] and not referenced by any block. proposition with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "3ebb996f0176",
@@ -847,8 +896,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'thm:gauge-conformal-invariance' (Predicted Particle Spectra / JWST observations and aeon initiations) — kind=theorem, no uses[] and not referenced by any block. theorem with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "bf47f134f46b",
@@ -864,8 +914,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'conj:graded-baer-star-Hq' (Stochastic Mechanics / Classical limit: implications) — kind=conjecture, no uses[] and not referenced by any block. conjecture with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "315cebcff389",
@@ -881,8 +932,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'def:confinement-category' (Particle Interactions and Nuclear Structure / Confined particles and shells) — kind=definition, no uses[] and not referenced by any block. definition with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "b65a6b83254a",
@@ -898,8 +950,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'prf:mi-sw-abelianisation-cartan' (Bring / Spectral resolvents and gauge structures) — kind=proof, no uses[] and not referenced by any block. proof with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     },
     {
       "id": "b41ae4767912",
@@ -915,8 +968,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "H6 isolated: Isolated block: 'prf:observation-energy' (Quantum Observable Universes / Particle types and observation) — kind=proof, no uses[] and not referenced by any block. proof with no incoming/outgoing uses[] edges — orphaned from the dependency DAG. Defer band per Slot E (flagged for content-pass, not structure-pass): either wire into the graph via uses[]/consumers, or confirm it is a leaf result. Provable-kind orphans (prop/thm/lem) ranked first.",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: flus"
     }
   ],
   "audited": {
