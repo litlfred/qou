@@ -71,6 +71,35 @@ projection's dimension is computable and equals `1, 2, 2`. None exists in the co
 Until then, the ν_SDP / ρ_F line is **open**, and the magic-A ⁴He prefactor is an
 acknowledged input.
 
+## The constructive path is obstructed too — the *derived* LR constraint also rails
+
+The one positivity restoration that is **not** an encoding choice — the per-nucleon
+**Littlewood–Richardson branching** `H_n ⊃ H_3 × ⋯ × H_3` (the nucleons *are* 3-strand
+bundles; the constraint rows are the verified integer LR coefficients, the production
+default in `deuteron_real_sdp.py`) — was checked as the natural constructive candidate.
+It **does not regularize the program**: for the deuteron the LR-constrained LP is still
+unbounded, with four blocks rail-pinned at ±10⁶ `{(2,2,2),(2,2,1,1),(2,1,1,1,1),(1⁶)}`
+and only `(3,2,1)=+0.53`, `(3,1,1,1)=−0.41` bounded. The LR rows constrain the trace
+but leave the indefinite-Gram null directions free. (Its own production note concedes
+the canonical encoding "does **not** yet reproduce the deuteron binding — that closure
+is the open Δ_λ gate.")
+
+So **every** derived constraint — bare, bar-fold, and LR-branching — fails to produce a
+clean saturation; only the fitted/un-vetted encodings (AME-equality, which consumes the
+experiment; the 9-pair ratio, fitted; color-flavor, un-vetted) bound the program, and
+none reproduces `1, 2, 2`. The constructive path is obstructed.
+
+## Verdict
+
+The first-principles SDP-saturation derivation of ν_SDP is **obstructed** in every
+principled formulation (q→1 well-posed → single block; q₀ indefinite → degenerate; the
+derived LR / bar-fold constraints → rail). `ν_SDP = 1, 2, 2` is recovered only by
+hand-assignment. Per the §Critical-distance license: **`ρ_F = ν_SDP` is an
+underived naming, and `ρ_F = 2` for ⁴He is an acknowledged input that looks fitted**,
+not a closed structural derivation — it should be labelled as such until a genuine
+positivity-restoration derivation recovering D/T/³He exists. The ν_SDP / ρ_F line is
+**open + flagged**.
+
 ## Cross-references
 
 - [`2026-06-20-he4-nu-sdp-not-computed-definition-gate.md`](2026-06-20-he4-nu-sdp-not-computed-definition-gate.md) — #2552 (no computed definition).
