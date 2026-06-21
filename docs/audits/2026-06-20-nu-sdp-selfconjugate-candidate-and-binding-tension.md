@@ -60,15 +60,27 @@ the deuteron bar-fold support, but with (i) no proven mechanism (the cancellatio
 hypothesis is refuted on the real Gram) and (ii) a direct conflict with the ⁴He
 binding. The two-distinct-value match (n=6→1, n=9→2) is weak evidence on its own.
 
-**Decisive next test** (out of scope here — needs `y_λ` and `χ^λ(β)` at H₉): compute
-the **T and ³He bar-fold SDP supports** and check whether they equal their two
-self-conjugate blocks `{(5,1,1,1,1), (3,3,3)}`. If yes, the count gains a real
-(if still-unexplained) mechanism and the ⁴He=3 tension becomes a serious challenge to
-`ρ_F=2`. If not, the count match is coincidence and the ν_SDP derivation is back to
-square one. Either way, no fit and no forced ⁴He number.
+**Decisive test — RUN (2026-06-21), and it REFUTES the candidate.** Computed the T and
+³He bar-fold SDP supports at H₉ (pipeline: `y_λ` via Wenzl bridge, `χ^λ(β)` via
+`hoefsmit_numpy` + `atom_canonical_crossings`, bar-fold LP; validated by reproducing
+the deuteron support {(3,2,1)} first):
 
-Probe: [`computations/probes/he_nu_sdp_selfconjugate_candidate.py`](../../computations/probes/he_nu_sdp_selfconjugate_candidate.py)
-· witness `he-nu-sdp-selfconjugate-candidate.witness.json`.
+| atom | n | self-conj | bar-fold **bounded** support | ν_canon |
+|------|--:|-----------|------------------------------|--------:|
+| D | 6 | {(3,2,1)} | **{(3,2,1)}** → 1 | 1 ✓ |
+| ³He | 9 | {(5,1⁴),(3,3,3)} | **{(5,1⁴)}** → 1 (4 others ±10⁶ rails) | 2 ✗ |
+| T | 9 | {(5,1⁴),(3,3,3)} | **∅** → 0 (all 8 entries railed) | 2 ✗ |
+
+`|bar-fold support|` = (1, 1, 0) **≠** ν = (1, 2, 2). The bar-fold regularises *only*
+the deuteron; at A≥3 the indefinite-Gram unboundedness returns (rail-pinned conjugate
+pairs — the #2552 pathology), so the support does **not** equal the self-conjugate
+blocks. The count match was **coincidence**. A weaker fact survives: the bounded support
+is ⊆ self-conjugate blocks (but not all of them, and empty for T). **The self-conjugate
+avenue is closed; ν_SDP derivation remains open.**
+
+Probes: [`he_nu_sdp_selfconjugate_candidate.py`](../../computations/probes/he_nu_sdp_selfconjugate_candidate.py),
+[`he_nu_sdp_barfold_h9_test.py`](../../computations/probes/he_nu_sdp_barfold_h9_test.py)
+· witnesses `he-nu-sdp-selfconjugate-candidate.witness.json`, `he-nu-sdp-barfold-h9-test.witness.json`.
 
 ## Note on the (1+q)/2 thread
 
