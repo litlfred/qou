@@ -357,11 +357,6 @@ theorem gramMatrix_det_ne_zero_conditional
     exact neg_lt_zero.mpr (div_pos h_num_pos h_denom_pos)
   exact ne_of_lt h_quot_neg
 
--- The denominator-cleared determinant proof below needs a raised heartbeat
--- budget (720-term `ring`) and recursion depth (entrywise `simp`).
-set_option maxHeartbeats 40000000
-set_option maxRecDepth 8000
-
 /-- Row-scale factors `L_i`; `diagonal L * gram` clears all denominators
     (turning each rational Gram entry into a polynomial). -/
 noncomputable def Lval (u : ℝ) : Fin 6 → ℝ
@@ -415,6 +410,8 @@ noncomputable def gramScaledEntry (u : ℝ) : Fin 6 → Fin 6 → ℝ
 noncomputable def gramScaled (u : ℝ) : Matrix (Fin 6) (Fin 6) ℝ :=
   Matrix.of (gramScaledEntry u)
 
+set_option maxHeartbeats 40000000 in
+set_option maxRecDepth 8000 in
 /-- Determinant of the polynomial scaled Gram matrix, by direct
     `det_fin_six` expansion + `ring` (no division — all entries polynomial). -/
 theorem gramScaled_det (u : ℝ) :
@@ -424,6 +421,8 @@ theorem gramScaled_det (u : ℝ) :
   simp only [Matrix.of_apply, gramScaledEntry]
   ring
 
+set_option maxHeartbeats 40000000 in
+set_option maxRecDepth 8000 in
 /-- The scaled matrix equals `diagonal (Lval u) * gramMatrix u` (entrywise,
     after clearing denominators; needs `u ≠ 0`). -/
 theorem gram_scale_rel (u : ℝ) (hu : u ≠ 0) :
@@ -435,6 +434,8 @@ theorem gram_scale_rel (u : ℝ) (hu : u ≠ 0) :
       gramScaled, gramScaledEntry, gramEntry, Lval] <;>
     field_simp <;> ring
 
+set_option maxHeartbeats 40000000 in
+set_option maxRecDepth 8000 in
 /-- Symbolic factorization of `det(gramMatrix u)` for `u ≠ 0`, obtained from
     `gramScaled_det` by dividing out the row scales `∏ Lval = u¹⁸(u²+1)¹²`. -/
 theorem gram_det_eq (u : ℝ) (hu : u ≠ 0) :
@@ -452,6 +453,8 @@ theorem gram_det_eq (u : ℝ) (hu : u ≠ 0) :
   field_simp at key ⊢
   linear_combination key
 
+set_option maxHeartbeats 40000000 in
+set_option maxRecDepth 8000 in
 /-- **THEOREM (PROVED).** The symbolic `Matrix.det` of `gramMatrix u` equals
     the witness-derived factorization, for every real `u`. The 6×6 determinant
     is expanded via `det_fin_six` on the denominator-cleared polynomial matrix
