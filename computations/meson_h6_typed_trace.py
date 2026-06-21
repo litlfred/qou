@@ -33,6 +33,10 @@ sys.path.insert(0, str(HERE))
 
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (  # noqa: E402 — canonical PDG registry
+    M_PI_PM_MEV_VALIDATION,
+    M_K_PM_MEV_VALIDATION,
+)
 
 try:
     from q_parameter import Q_50_DIGIT_STR  # noqa: E402
@@ -201,7 +205,7 @@ def main():
     seifert_sq = (9.0 / 5.0) ** 2
 
     # Target
-    target = 493.677 / 139.57039  # PDG m_K/m_π
+    target = float(M_K_PM_MEV_VALIDATION) / float(M_PI_PM_MEV_VALIDATION)  # PDG m_K/m_π
 
     # Test various formulas
     pred_raw = ratio
