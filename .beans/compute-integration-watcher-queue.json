@@ -607,8 +607,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "compound_binding_via_differences.py:81 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - M_CODATA dict (L80-81) used as a computational input at L238 ('Z*M_CODATA[p] + N*M_CODATA[n] - m_atom'). Genuine hardcode used in the binding arithmetic. scheme=4-input-mp-and-mn.] [FLAGGED 2026-06-13 (branch claude/iw-compute-drain-2026-06-13): needs dict-wide treatment (p/n used as inputs). M_CODATA['p']/['n'] (L80-81) ARE used as binding INPUTS (b_s3 = Z*M_CODATA['p'] + N*M_CODATA['n'] - m_atom, L238); their values match M_P/N_MEV_VALIDATION exactly and routing IS the sanctioned constituent pattern (cf binding_K_direct). BUT M_CODATA also carries D/T/3He/4He comparison rows with no registry symbol, so a partial route of just p/n is inconsistent. FLAGGED: apply the same _VALIDATION-import treatment binding_K_direct already has, dict-wide.]",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e4cz"
     },
     {
       "id": "fa4610f2db74",
@@ -686,8 +687,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "mass_table_l1_full_crosscheck.py:29 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - m_e = mp.mpf('0.51099895') inline at L29 (electron mass), used as a substrate-scale input. scheme=vol-hyp-fitted, consts-src=False. Genuine hardcode; should import M_E_MEV.] [FLAGGED 2026-06-13 (branch claude/iw-compute-drain-2026-06-13): needs value-change review (m_e input). m_e = mp.mpf('0.51099895') (L29) is an INPUT (substrate scale) at 8 sig figs; registry M_E_MEV is '0.51099895069' (11 sig). Swap CHANGES the value at 1.35e-9 relative \u2014 above the 1e-15 L1 floor \u2014 so it is NOT a behavior-preserving 1-line swap and could perturb a pinned L1 cross-check witness. Correct fix (route to full-precision M_E_MEV) requires re-pinning + delta verification. FLAGGED rather than guessed (conservative).]",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e4cz"
     },
     {
       "id": "29d7569c2ad4",
@@ -701,8 +703,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "mass_table_ppb.py:122 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - inline divisor '26.328 / 0.51099895' (m_e) at L122 inside the atom-target dict. Genuine inline m_e literal used to convert to m_e units. scheme=vol-hyp-fitted.] [FLAGGED 2026-06-13 (branch claude/iw-compute-drain-2026-06-13): needs value-change review (m_e input). Divisor '26.328 / 0.51099895' etc. (L122+) uses truncated 8-sig m_e as an INPUT to compute vol_kashaev_target_m_e_units in the gap-row targets. Routing to full-precision M_E_MEV (0.51099895069) changes the target values (1.35e-9 rel). NOT behavior-preserving -> FLAGGED for an author-approved re-pin.]",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e4cz"
     },
     {
       "id": "4b9aa11b2400",
@@ -748,8 +751,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "tower_isotope_absolute.py:72 \u2014 hardcoded CODATA literal in a PRODUCTION/prediction script (P31). Should import from codata_constants.py (_VALIDATION aliases) / experimental_constants.py, not inline. Source: compute-audit-scan.witness.json (regenerated 2026-06-13). [VERIFIED 2026-06-13: source - CODATA_ATOMIC dict (L71-72) fed as computational inputs at L218-221 (CODATA_ATOMIC['D']/['T']/['3He']/['4He']). m_e imported but the atomic masses are hardcoded. Genuine hardcode used as input.] [FLAGGED 2026-06-13 (branch claude/iw-compute-drain-2026-06-13): needs registry symbol (no clean swap). CODATA_ATOMIC (L71) holds NEUTRAL-ATOM masses used as M_obs INPUTS (e.g. D=1876.12392 with electron), which DIFFER from the registry's bare-nucleus M_D_MEV_VALIDATION (1875.6...). No registry symbol exists for the neutral-atom masses -> no clean 1-line swap. FLAGGED: needs neutral-atom-mass registry entries before routing.]",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e4cz"
     },
     {
       "id": "54aabc03fbfd",
@@ -972,8 +976,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "Mass-table sweep: 3 atom(s) status='exploratory' \u2014 2H, 3H, 3He. 0 atoms fully-canonically-wired. 'exploratory' needs: R5-full SDP solver + Rule-14 census audit (census-assigned knot, \u03bd_SDP guessed). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27). [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json current; 2H/3H/3He status='exploratory' (census-assigned knot, nu_SDP guessed). Real open work-item, R5-full SDP + Rule-14 census audit pending.]",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: uc3n"
     },
     {
       "id": "dd63070e288b",
@@ -988,8 +993,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "Mass-table sweep: 1 atom(s) status='extrapolated' \u2014 4He. 0 atoms fully-canonically-wired. 'extrapolated' needs: R5-full SDP solver landing (knot framework-derived, \u03bd_SDP extrapolated). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27). [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json current; 4He status='extrapolated' (knot framework-derived, nu_SDP extrapolated). Real open work-item awaiting R5-full SDP solver.]",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: uc3n"
     },
     {
       "id": "ef50351c2ecb",
@@ -1004,8 +1010,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "Mass-table sweep: 7 atom(s) status='gap' \u2014 5Li, 6Li, 7Li, 9Be, 11B, 14N, 19F. 0 atoms fully-canonically-wired. 'gap' needs: Rule-14 atom-knot census expansion (A\u22085,6,7). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27). [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json current; 5Li/6Li/7Li/9Be/11B/14N/19F status='gap' (Rule-14 census not yet expanded for A in 5,6,7). Real open work-item.]",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: uc3n"
     },
     {
       "id": "fb83faba85d4",
@@ -1020,8 +1027,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "Mass-table sweep: 6 atom(s) status='alpha-cluster' \u2014 8Be, 12C, 16O, 20Ne, 24Mg, 40Ca. 0 atoms fully-canonically-wired. 'alpha-cluster' needs: \u2074He canonical first (built on n\u00d7\u2074He extrapolation). Source: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27). [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27) still current; alpha-cluster atoms need 4He canonical first. Real open work-item gated on the Delta_lambda / Rule-14 census state documented in AGENTS.md (Track A blocker).]",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: uc3n"
     },
     {
       "id": "5e1594d29b41",
@@ -1035,8 +1043,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "8 atoms violate KLR positivity (B_pred > B_AME over-prediction \u2192 wrong knot / wrong \u03bd_SDP / missing structural restriction). Predicted should be a LOWER bound on observed. Source: mass-sweep-wiring-status.witness.json klr_violations_count=8. [VERIFIED 2026-06-13: mass-sweep-wiring-status.witness.json (computedAt 2026-05-27) records klr_violations_count==8 (still current). Genuine structural-correctness signal (B_pred > B_AME over-prediction = wrong knot/nu_SDP). Real open work-item.]",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: uc3n"
     },
     {
       "id": "153e1a484b43",
@@ -1050,8 +1059,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "142 of 730 files write .witness.json WITHOUT witness_base.WitnessBuilder (P30 contract FAIL). 133 P30 findings in compute-audit-scan. Batch-port hand-written writers. Source: canonical-derivation-pipeline-compliance contract 'WitnessBuilder usage (P30)'. [VERIFIED 2026-06-13: REPRODUCED live - compute_audit_scan.py fresh run reports P30=133 hits (matches the 133 P30 findings claim). Genuine infra backlog (hand-written witness writers not using WitnessBuilder).]",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: 1j39"
     },
     {
       "id": "63a90056cb57",
@@ -1065,8 +1075,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "26 of 707 witnesses missing engine/scriptFile/commitSha (completeness ratio 0.963, WARN). Dashboard-reported aggregate (707-scope run not on disk; local audits/ run is 29-file exempt scope). Re-run full provenance audit to enumerate. Source: canonical-derivation-pipeline-compliance contract 'Witness provenance completeness (I14)'. [VERIFIED 2026-06-13: SCOPE-MISMATCH - the local audits/witness_provenance_audit.py scans only 32 files (PROV_MISSING=0, completeness 1.000); it CANNOT reproduce the dashboard's '26 of 707 missing' figure (the 707-scope run is not on disk; local run is an exempt subset). The 26-missing claim is unverifiable from the local tool and the local run shows 0 missing. UNSURE/STALE - needs the full-corpus provenance run to confirm scope. Kept queued pending re-scope.] [VERIFIED 2026-06-13: real provenance concern (P30-class); number scope-stale (26/707 dashboard vs narrow). Needs full-corpus re-run.]",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e4cz"
     },
     {
       "id": "dc74da9b9293",
@@ -1080,8 +1091,9 @@
       "source_sha": "565be78e866d733c6a9db086f66715be0c0fd17e",
       "evidence": "3-input canonical scheme WARN: 31 canonical / 49 over-count / 676 classified. 49 scripts declare more calibration inputs than the permitted CAL-1/2/3. Source: canonical-derivation-pipeline-compliance contract '3-input canonical scheme'. Overlaps canonical-watcher domain. [VERIFIED 2026-06-13: SCOPE-MISMATCH - fresh canonical_script_input_audit.py run (scoped to its own 35-script consumer set) shows 2 canonical / 3 over-count / 35 classified, NOT the queue's '31/49/676'. The 49/676 figures are the dashboard's full-corpus scan; the local audit runs a 35-file scope. Underlying over-count issue is real but ~3 (not 49) in the canonical scope. UNSURE/scope-stale - overlaps canonical-watcher; kept queued pending scope reconciliation.] [VERIFIED 2026-06-13: real canonical over-count concern (overlaps canonical-watcher); number scope-stale (49 dashboard vs narrow on-disk). Needs full-corpus re-run for current count.]",
       "attempts": [],
-      "status": "queued",
-      "asked_author_at": null
+      "status": "wontfix",
+      "asked_author_at": null,
+      "reason": "converted to bean: e4cz"
     }
   ],
   "audited": {
