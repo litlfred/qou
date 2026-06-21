@@ -63,10 +63,8 @@ where z = √q/(q+1) and h = q - q⁻¹.
 
 - ✅ **is_symm** — proved (sympy-verified all 15 G[i,j]−G[j,i] = 0)
 - ✅ **diag_top_one** — proved (G[0,0] = 1 by definition)
-- ✅ **det_ne_zero** — PROVED with **corrected hypothesis `u > 1`**; the
-  symbolic-factorization step is discharged by `Matrix.det_fin_six`
-  (`QOU.Shared.DetFin`) + `field_simp; ring` (see
-  `gramMatrix_det_eq_factorization`).
+- ⏳ **det_ne_zero** — STATED with **corrected hypothesis `u > 1`**;
+  proof of the symbolic-factorization step deferred to Phase 1b-2.
 
   **Correctness finding (2026-05-25, this branch):** the
   determinant has TWO positive real roots, not one:
@@ -161,14 +159,8 @@ theorem gramMatrix_top_left (u : ℝ) : gramMatrix u 0 0 = 1 := by
   unfold gramMatrix gramEntry
   simp [Matrix.of_apply]
 
-/-! **Design note (DEFERRED — Phase 1b-2).** The Gram matrix is invertible
+/-! **THEOREM (DEFERRED — Phase 1b-2).** The Gram matrix is invertible
     when `u > 1` (equivalently `q > 1`).
-
-    (This was an orphaned declaration doc-comment with no following
-    declaration — a hard parse error; converted to a section comment
-    2026-06-20 so the file compiles. The live theorems are
-    `gramMatrix_det_ne_zero_conditional`, `gramMatrix_det_eq_factorization`,
-    and `gramMatrix_det_ne_zero` below, each with its own doc-comment.)
 
     **Why `u > 1` rather than `u ≠ 1`** (correctness fix, 2026-05-25):
     sympy factorization of det numerator yields
@@ -365,66 +357,131 @@ theorem gramMatrix_det_ne_zero_conditional
     exact neg_lt_zero.mpr (div_pos h_num_pos h_denom_pos)
   exact ne_of_lt h_quot_neg
 
-set_option maxHeartbeats 400000000 in
-set_option maxRecDepth 16000 in
-/-- **THEOREM (PROVED, 2026-06-20).** For `u ≠ 0`, the symbolic
-    `Matrix.det` of `gramMatrix u` equals the witness-derived factorization.
+-- The denominator-cleared determinant proof below needs a raised heartbeat
+-- budget (720-term `ring`) and recursion depth (entrywise `simp`).
+set_option maxHeartbeats 40000000
+set_option maxRecDepth 8000
 
-    **Why the `u ≠ 0` hypothesis.** The Gram entries carry `/u`, `/u²`,
-    `/u⁴`, `/u⁶` denominators, so at `u = 0` both sides collapse to Lean's
-    junk `x / 0 = 0` and the *unconditional* form is not the intended
-    rational-function identity. `u ≠ 0` (supplied by the sole consumer
-    `gramMatrix_det_ne_zero`, where `1 < u`) scopes the theorem to its
-    meaningful domain and is what lets `field_simp` clear the denominators.
+/-- Row-scale factors `L_i`; `diagonal L * gram` clears all denominators
+    (turning each rational Gram entry into a polynomial). -/
+noncomputable def Lval (u : ℝ) : Fin 6 → ℝ
+  | 0 => (u^2+1)^2
+  | 1 => u^2*(u^2+1)^2
+  | 2 => u^2*(u^2+1)^2
+  | 3 => u^4*(u^2+1)^2
+  | 4 => u^4*(u^2+1)^2
+  | 5 => u^6*(u^2+1)^2
 
-    **Proof.** Expand the 6×6 determinant with the reusable
-    `Matrix.det_fin_six` (`QOU.Shared.DetFin`) — Mathlib ships only
-    `det_fin_two`/`det_fin_three`, so this module continues the pattern,
-    proving `det_fin_four/five/six` *incrementally* (each from the previous)
-    to sidestep the factorial blow-up of a one-shot cofactor expansion.
-    After the expansion, `simp` reduces the entries to their closed forms,
-    `field_simp` clears denominators, and `ring` discharges the resulting
-    polynomial identity. The proof is heavy (a 720-term Leibniz expansion of
-    rational entries; raised `maxHeartbeats`/`maxRecDepth`) but sorry-free.
+/-- Polynomial (denominator-cleared) Gram matrix `= diagonal (Lval u) * gramMatrix u`.
+    Verified entrywise in `gram_scale_rel`. -/
+noncomputable def gramScaledEntry (u : ℝ) : Fin 6 → Fin 6 → ℝ
+  | 0, 0 => u^4+2*u^2+1
+  | 0, 1 => u^3+u
+  | 0, 2 => u^3+u
+  | 0, 3 => u^2
+  | 0, 4 => u^2
+  | 0, 5 => u^4+u^3+u-1
+  | 1, 0 => u^5+u^3
+  | 1, 1 => u^7+u^6+u^5+2*u^4-u^3+u^2-u
+  | 1, 2 => u^4
+  | 1, 3 => u^6+u^5+u^3-u^2
+  | 1, 4 => u^6+u^5+u^3-u^2
+  | 1, 5 => u^8+u^7+u^5-u^4-u^3-u+1
+  | 2, 0 => u^5+u^3
+  | 2, 1 => u^4
+  | 2, 2 => u^7+u^6+u^5+2*u^4-u^3+u^2-u
+  | 2, 3 => u^6+u^5+u^3-u^2
+  | 2, 4 => u^6+u^5+u^3-u^2
+  | 2, 5 => u^8+u^7+u^5-u^4-u^3-u+1
+  | 3, 0 => u^6
+  | 3, 1 => u^8+u^7+u^5-u^4
+  | 3, 2 => u^8+u^7+u^5-u^4
+  | 3, 3 => u^10+u^9+u^7-u^6-u^5-u^3+u^2
+  | 3, 4 => u^10+2*u^9+u^8+2*u^7-2*u^5+u^4-2*u^3+u^2
+  | 3, 5 => u^12+u^11+u^9-u^8-u^7-u^5+u^4+u^3+u-1
+  | 4, 0 => u^6
+  | 4, 1 => u^8+u^7+u^5-u^4
+  | 4, 2 => u^8+u^7+u^5-u^4
+  | 4, 3 => u^10+2*u^9+u^8+2*u^7-2*u^5+u^4-2*u^3+u^2
+  | 4, 4 => u^10+u^9+u^7-u^6-u^5-u^3+u^2
+  | 4, 5 => u^12+u^11+u^9-u^8-u^7-u^5+u^4+u^3+u-1
+  | 5, 0 => u^10+u^9+u^7-u^6
+  | 5, 1 => u^12+u^11+u^9-u^8-u^7-u^5+u^4
+  | 5, 2 => u^12+u^11+u^9-u^8-u^7-u^5+u^4
+  | 5, 3 => u^14+u^13+u^11-u^10-u^9-u^7+u^6+u^5+u^3-u^2
+  | 5, 4 => u^14+u^13+u^11-u^10-u^9-u^7+u^6+u^5+u^3-u^2
+  | 5, 5 => u^16+u^15+u^13-u^12+u^10+2*u^8+u^6-u^4-u^3-u+1
 
-    The factorization is independently sympy-verified at 50 dps and the
-    row-cleared reduction (`det(M) = -num·u^8`) is recorded reproducibly in
-    the witness `computations/gram-h3-det-factorization.witness.json`
-    (`row_cleared_structural_route`, assertion
-    `row_cleared_det_equals_minus_num_times_u8`). -/
-theorem gramMatrix_det_eq_factorization (u : ℝ) (hu : u ≠ 0) :
+noncomputable def gramScaled (u : ℝ) : Matrix (Fin 6) (Fin 6) ℝ :=
+  Matrix.of (gramScaledEntry u)
+
+/-- Determinant of the polynomial scaled Gram matrix, by direct
+    `det_fin_six` expansion + `ring` (no division — all entries polynomial). -/
+theorem gramScaled_det (u : ℝ) :
+    (gramScaled u).det =
+      -((u-1)*(u+1)*(u^3+u-1)^5*(u^3+u^2+1)^5*(u^6-u^5+u^4-u^3+2*u^2-u+1)*(u^6+u^5+2*u^4+u^3+u^2+u+1))*u^8 := by
+  rw [gramScaled, Matrix.det_fin_six]
+  simp only [Matrix.of_apply, gramScaledEntry]
+  ring
+
+/-- The scaled matrix equals `diagonal (Lval u) * gramMatrix u` (entrywise,
+    after clearing denominators; needs `u ≠ 0`). -/
+theorem gram_scale_rel (u : ℝ) (hu : u ≠ 0) :
+    Matrix.diagonal (Lval u) * gramMatrix u = gramScaled u := by
+  have h1 : (u^2+1) ≠ 0 := by positivity
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [Matrix.mul_apply, Fin.sum_univ_six, Matrix.diagonal, gramMatrix,
+      gramScaled, gramScaledEntry, gramEntry, Lval] <;>
+    field_simp <;> ring
+
+/-- Symbolic factorization of `det(gramMatrix u)` for `u ≠ 0`, obtained from
+    `gramScaled_det` by dividing out the row scales `∏ Lval = u¹⁸(u²+1)¹²`. -/
+theorem gram_det_eq (u : ℝ) (hu : u ≠ 0) :
+    (gramMatrix u).det =
+      -((u-1)*(u+1)*(u^3+u-1)^5*(u^3+u^2+1)^5*(u^6-u^5+u^4-u^3+2*u^2-u+1)*(u^6+u^5+2*u^4+u^3+u^2+u+1))
+      / (u^10 * (u^2+1)^12) := by
+  have h1 : (u^2+1) ≠ 0 := by positivity
+  have hLd : (∏ i, Lval u i) = u^18*(u^2+1)^12 := by
+    rw [Fin.prod_univ_six]; simp only [Lval]; ring
+  have key : u^18*(u^2+1)^12 * (gramMatrix u).det =
+      -((u-1)*(u+1)*(u^3+u-1)^5*(u^3+u^2+1)^5*(u^6-u^5+u^4-u^3+2*u^2-u+1)*(u^6+u^5+2*u^4+u^3+u^2+u+1))*u^8 := by
+    rw [← hLd, ← Matrix.det_diagonal, ← Matrix.det_mul, gram_scale_rel u hu, gramScaled_det]
+  rw [eq_div_iff (by positivity : (u^10*(u^2+1)^12 : ℝ) ≠ 0)]
+  have hu10 : (u:ℝ)^10 ≠ 0 := pow_ne_zero 10 hu
+  field_simp at key ⊢
+  linear_combination key
+
+/-- **THEOREM (PROVED).** The symbolic `Matrix.det` of `gramMatrix u` equals
+    the witness-derived factorization, for every real `u`. The 6×6 determinant
+    is expanded via `det_fin_six` on the denominator-cleared polynomial matrix
+    `gramScaled` (`gramScaled_det`), related back to `gramMatrix` by the row
+    scaling `gram_scale_rel` and `∏ Lval = u¹⁸(u²+1)¹²`. The `u = 0` boundary
+    (where both sides are `0` under Lean's `x / 0 = 0`) is discharged directly. -/
+theorem gramMatrix_det_eq_factorization (u : ℝ) :
     (gramMatrix u).det =
       -(detFactor1 u * detFactor2 u
         * (detFactor3 u)^5 * (detFactor4 u)^5
         * detFactor5 u * detFactor6 u)
       / (u^10 * (u^2 + 1)^12) := by
-  -- Expand the 6×6 determinant via the reusable `Matrix.det_fin_six`
-  -- (QOU.Shared.DetFin), reduce the entries to their closed forms, clear
-  -- denominators (`hu : u ≠ 0`, `u² + 1 > 0`), and close by `ring`.
-  have h1 : (u ^ 2 + 1) ≠ 0 := by positivity
-  rw [gramMatrix, Matrix.det_fin_six]
-  -- Reduce only the LHS entries first, clear denominators, then expand the
-  -- (polynomial, denominator-free) `detFactor` definitions just before `ring`
-  -- so `field_simp` operates on the smaller expression (per PR #2529 review).
-  simp only [Matrix.of_apply, gramEntry]
-  field_simp
-  simp only [detFactor1, detFactor2, detFactor3, detFactor4, detFactor5, detFactor6]
-  ring
+  rw [detFactor1, detFactor2, detFactor3, detFactor4, detFactor5, detFactor6]
+  rcases eq_or_ne u 0 with rfl | hu
+  · rw [gramMatrix, Matrix.det_fin_six]
+    norm_num [Matrix.of_apply, gramEntry]
+  · exact gram_det_eq u hu
 
 /-- **THEOREM (FULL DISCHARGE of `gramMatrix_det_ne_zero`).**
     Combines the conditional discharge (above) with the symbolic
     factorization theorem to give the unconditional result `u > 1
     ⟹ det(G(u)) ≠ 0`.
 
-    Status: FULLY PROVED (sorry-free). The conditional logic is the 6
-    positivity lemmas + denominator positivity → product non-zero, and the
-    symbolic-determinant identity it is fed is now
-    `gramMatrix_det_eq_factorization` (discharged via `Matrix.det_fin_six`,
-    no longer a `sorry`). -/
+    Status: FULLY PROVED (sorry-free). The conditional logic (6 positivity
+    lemmas + denominator positivity → product non-zero) composes with the
+    now-proved symbolic-determinant identity `gramMatrix_det_eq_factorization`. -/
 theorem gramMatrix_det_ne_zero (u : ℝ) (hu_gt_one : 1 < u) :
     (gramMatrix u).det ≠ 0 :=
   gramMatrix_det_ne_zero_conditional u hu_gt_one
-    (gramMatrix_det_eq_factorization u (lt_trans zero_lt_one hu_gt_one).ne')
+    (gramMatrix_det_eq_factorization u)
 
 end QOU.Interactions.GramMatrixH3Symbolic
 
