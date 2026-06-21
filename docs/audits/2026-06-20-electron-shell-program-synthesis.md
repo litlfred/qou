@@ -69,7 +69,7 @@ nuclear `B_sym` model error (electrons are sub-keV).
 *(Audits: `…-level6-atom-electron-wiring`; bonus correction of a prior
 25-MeV/electron scale blunder.)*
 
-## 4. Ordering (Aufbau / noble gases) — eigenvalue derived, the weight still open
+## 4. Ordering (Aufbau / noble gases) — NOT derived (H_scalar refuted)
 
 The filling order reduces to a single **ℓ-coefficient `a`** in the key
 `K(n,ℓ)=n+a·ℓ` (Madelung is `a=+1`).
@@ -116,15 +116,31 @@ therefore reduces to **one** isolated hypothesis:
 > **H_scalar** — an orbital's energy is the **symmetric-block (scalar) component**
 > of its angular braid word (`q^ℓ`), not the non-scalar `V_ℓ` action (`q^{2ℓ}`).
 
-`H_scalar` is an **assumption, not a theorem**; per owner STRICT it is a derivation
-target, not a semi-empirical input (Madelung's Cr/Cu/Pd fragility is why it is
-hard, not a licence). Honest framework statement: **QOU's natural non-scalar
-angular objects give `a=+2` (overshoot); empirical `a=+1` Madelung requires
-`H_scalar`.**
+**`H_scalar` was attacked and REFUTED** (audit
+`2026-06-21-h-scalar-refuted-post-hoc-functional-choice`): QOU has **three**
+natural orbital-energy functionals — `σ_F` (SDP dual, `a=0`), symmetric-block
+`q^ℓ` (`a=+1`), `tr_M`/q-dim `q^{2ℓ}` (`a=+2`) — and `a=+1` sits **between** the
+two natural outputs, never produced by either. Decisive rep-theory: the atomic
+orbital `V_ℓ` (ℓ≥1) has **zero** trivial-block multiplicity, so `q^ℓ` is the
+**molecular `C_nv`-projector** construct with **no atomic analog** (isolated atom:
+full `SO(3)_q`, trivial rep only `ℓ=0`); the rotation-invariant atomic scalar is
+the q-dim trace `~q^{2ℓ}` (`a=+2`). So `H_scalar` selects the `a=+1` functional
+**because it matches Madelung** — a fit-by-functional-choice, forbidden by the
+three-calibration discipline.
 
-*(Audits: `…-aufbau-lambda-plus-channel-from-symmetric-block` (scalar-channel
-correction), `…-aufbau-from-dominant-eigenvalue-duality`,
-`…-gap2-ordering-ell-coefficient-synthesis`.)*
+**Honest framework conclusion: QOU derives the shell *capacities* (`2n²`,
+sorry-free Lean) but does NOT derive the shell *ordering*.** Its canonical
+observable (`tr_M`) predicts `a=+2` — the ℓ-dominated overshoot — disagreeing with
+the empirical periodic table. Madelung stays **OPEN**, not accepted as a
+semi-empirical input and not reached by selecting a functional to fit it (owner
+STRICT). A real derivation would need a *derived* screening operator contributing
+exactly `+ℓ` per unit angular momentum (from the inner-shell penetration braid),
+which is not in the corpus.
+
+*(Audits: `…-h-scalar-refuted-post-hoc-functional-choice` (refutation),
+`…-palindromicity-does-not-justify-scalar-projection`,
+`…-aufbau-lambda-plus-channel-from-symmetric-block`,
+`…-aufbau-from-dominant-eigenvalue-duality`.)*
 
 ## Net
 
@@ -133,12 +149,14 @@ correction), `…-aufbau-from-dominant-eigenvalue-duality`,
 | **capacity** `2n²` | **derived** — self-square `[n]_q²` of the bar-even element; no second SU(2) |
 | **stability** `σ_F` | **derived** — monotone confinement-SDP dual; closure = marginal `Δσ_F` + `μ≥2` |
 | **binding scale** `E_h` | **conditional theorem** — `α²` exact in `R`; unit = CAL-1 (by design) |
-| **ordering** (Aufbau) | eigenvalue derived (`λ₊=q`, every block; scalar-block `q^L` Lean) — but `a=+1` is **OPEN**: needs the scalar-block projection of the angular content, whereas the genuine non-scalar `V_ℓ` gives `q^{2ℓ}` (a=+2). **Derivation target:** why scalar (`q^ℓ`) not non-scalar (`q^{2ℓ}`)? (not input, not fit) |
+| **ordering** (Aufbau) | **NOT derived** — `H_scalar` refuted (fit-by-functional-choice). Canonical `tr_M` predicts `a=+2` (ℓ-dominated overshoot), disagreeing with the periodic table; `a=+1` Madelung sits between the framework's `σ_F` (a=0) and `tr_M` (a=+2) outputs, produced by neither. **OPEN**, not accepted (STRICT) |
 
-QOU **derives the periodic-table capacities and the electron-binding scale, and
-identifies the ordering's eigenvalue structure**, while the ordering's one free
-reading and the CAL-1 unit remain — the latter by design. No fits were
-introduced; the open items are stated, not papered over.
+QOU **derives the periodic-table capacities and the electron-binding scale**, but
+**does NOT derive the shell ordering** — its canonical observable predicts an
+ℓ-dominated overshoot, and the empirical Madelung order is reachable only by
+selecting a functional to fit it (refuted). The CAL-1 unit remains by design. No
+fits were introduced; the open items — and the framework's failure to derive the
+ordering — are stated, not papered over.
 
 ## Provenance
 
