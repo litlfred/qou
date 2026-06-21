@@ -94,3 +94,15 @@ Audit: docs/audits/2026-06-20-nu-sdp-selfconjugate-candidate-and-binding-tension
 
 (1+q)/2: REFUTED near-match (PR #1707, bean cbnf) — NOT re-attempted; live non-fit
 direction is GAP-A-3 P_λ, separate from this ν_SDP line.
+
+## DECISIVE H₉ test: self-conjugate ν_SDP candidate REFUTED (2026-06-21)
+
+Ran the bar-fold SDP support at H₉ (y_λ Wenzl bridge + χ^λ hoefsmit_numpy + bar-fold LP;
+validated by reproducing deuteron support {(3,2,1)} first):
+- D: bounded support {(3,2,1)} → 1 ✓
+- ³He: bounded support {(5,1⁴)} → 1 (4 others ±1e6 RAILS) ✗ (ν=2)
+- T: bounded support ∅ → 0 (all railed) ✗ (ν=2)
+|bar-fold support|=(1,1,0) ≠ ν=(1,2,2). Bar-fold regularises ONLY the deuteron; A≥3
+rails (indefinite-Gram unboundedness, #2552 pathology). #self-conj match was COINCIDENCE.
+Weaker survivor: bounded support ⊆ self-conjugate blocks. Self-conjugate avenue CLOSED;
+ν_SDP derivation remains open. Probe: he_nu_sdp_barfold_h9_test.py. No fit.
