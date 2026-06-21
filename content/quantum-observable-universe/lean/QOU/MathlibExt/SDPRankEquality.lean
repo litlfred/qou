@@ -154,25 +154,22 @@ theorem Matrix.PosSemidef.eigenvalues_pos_filter_eq_ne_zero_filter
     (PSD eigenvalues are non-negative, so equivalently:
     rank = #{i : eigenvalues i ≠ 0}).
 
-    **Status: axiomatised** — this is the standard rank-equals-
-    number-of-non-zero-eigenvalues fact for Hermitian matrices,
-    which Mathlib supplies as
-    `Matrix.IsHermitian.rank_eq_card_non_zero_eigenvalues` (or a
-    nearby name; the exact API depends on the Mathlib snapshot).
-    Rather than risk a build break on a Mathlib lemma-name miss,
-    we book it as an axiom here with the bibliographic context
-    below.  When the exact lemma is verified at build time, this
-    axiom is replaced by a one-line theorem composing
-    `eigenvalues_pos_filter_eq_ne_zero_filter` with the Mathlib
-    rank-eigenvalue lemma.
+    **Status: PROVEN** (de-axiomatised) — composes the proven
+    helper `eigenvalues_pos_filter_eq_ne_zero_filter` (PSD
+    eigenvalues are `≥ 0`, so `> 0` ⟺ `≠ 0`) with Mathlib's
+    `Matrix.IsHermitian.rank_eq_card_non_zero_eigs`
+    (`rank A = #{i // eigenvalues i ≠ 0}`, immediate from the
+    spectral theorem) and `Fintype.card_subtype` (bridging the
+    subtype-card to the `Finset.filter` card).
 
     Ref: [boyd-vandenberghe-2004] *Convex Optimization* §A.5.5
     (rank of a Hermitian matrix equals the number of non-zero
     eigenvalues; immediate from the spectral theorem). -/
--- Ref: [manuscript] Ch. braid-knot, prop:operator-selection-lp §"dual program" (PSD rank = #non-zero eigenvalues; Mathlib spectral-theorem gap)
-axiom Matrix.PosSemidef.rank_via_eigenvalues
+theorem Matrix.PosSemidef.rank_via_eigenvalues
     {n : ℕ} {M : Matrix (Fin n) (Fin n) ℝ} (hM : M.PosSemidef) :
-    M.rank = (Finset.univ.filter (fun i => 0 < hM.1.eigenvalues i)).card
+    M.rank = (Finset.univ.filter (fun i => 0 < hM.1.eigenvalues i)).card := by
+  rw [Matrix.PosSemidef.eigenvalues_pos_filter_eq_ne_zero_filter hM,
+      hM.1.rank_eq_card_non_zero_eigs, Fintype.card_subtype]
 
 /-! ## §2  Strict-complementarity kernel disjointness
 
