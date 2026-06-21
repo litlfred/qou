@@ -1,11 +1,11 @@
 ---
 # qbk2
 title: 'EXPLORE: q-Bessel 2nd-kind "quadratic action" as a mass/binding correction term'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-20T11:30:00Z
-updated_at: 2026-06-20T12:30:00Z
+updated_at: 2026-06-21T19:39:07Z
 parent: qz9k
 ---
 

@@ -1,11 +1,11 @@
 ---
 # qkhc
-title: 'Q_β kernel hunt — Stage C (fibre-level Habiro/recurrence kernel for c_k)'
-status: in_progress
+title: Q_β kernel hunt — Stage C (fibre-level Habiro/recurrence kernel for c_k)
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-16T02:14:00Z
-updated_at: 2026-06-16T02:40:00Z
+updated_at: 2026-06-21T19:39:07Z
 parent: qz9k
 ---
 

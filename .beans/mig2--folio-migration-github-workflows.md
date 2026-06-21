@@ -1,10 +1,12 @@
 ---
-id: mig2
-parent: miga
-type: child
+# mig2
+title: ""
 status: completed
-created_at: 2026-06-14
-updated_at: 2026-06-14
+type: child
+priority: normal
+created_at: 2026-06-14T00:00:00Z
+updated_at: 2026-06-21T19:39:07Z
+parent: miga
 ---
 
 # GitHub Workflows & Final Cleanup

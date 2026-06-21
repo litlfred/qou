@@ -1,11 +1,11 @@
 ---
 # k9td
-title: 'Koide tau-forcing derivation — is Q=2/3 a categorical constraint or a fit?'
-status: in_progress
+title: Koide tau-forcing derivation — is Q=2/3 a categorical constraint or a fit?
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-16T02:14:00Z
-updated_at: 2026-06-16T02:30:00Z
+updated_at: 2026-06-21T19:39:07Z
 parent: qz9k
 ---
 

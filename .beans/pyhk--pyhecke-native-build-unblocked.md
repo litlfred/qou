@@ -1,11 +1,11 @@
 ---
 # pyhk
-title: 'pyhecke_native BUILDS in the web sandbox (≈42s) — q-deformed compute unblocked'
-status: in_progress
+title: pyhecke_native BUILDS in the web sandbox (≈42s) — q-deformed compute unblocked
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-20T00:35:00Z
-updated_at: 2026-06-20T00:35:00Z
+updated_at: 2026-06-21T19:39:07Z
 ---
 
 User pick (option 2, "2 y"): build pyhecke_native to unblock the keystone q-deformed shift.
