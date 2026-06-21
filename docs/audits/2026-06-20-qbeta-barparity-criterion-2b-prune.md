@@ -1,6 +1,6 @@
-# Q_β fibre-kernel — criterion 2(b) prune (bar-odd `b(q)`)
+# Q_β fibre-kernel — criterion 2(b) prune (bar-even `b(q)`)
 
-**Date.** 2026-06-20.
+**Date.** 2026-06-20 (corrected 2026-06-21).
 **Bean.** qkhc (Q_β kernel hunt, Stage C) — the fibre-level Habiro kernel `R(q,ξ)`.
 **Type.** **Constraint / pruning** of the open-axis search criteria — *not* a
 real-q closed-form value-hunt (forbidden) and *not* a refuted mechanism. This is
@@ -8,6 +8,18 @@ the sanctioned step-3 "narrow before you scan" of
 [`2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`](2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md).
 **Probe.** [`computations/qbeta/qbeta_barparity_kernel_criterion_prune.py`](../../computations/qbeta/qbeta_barparity_kernel_criterion_prune.py)
 → `qbeta-barparity-kernel-criterion-prune.witness.json` (exact symbolic, sympy).
+
+> **⮕ CORRECTION (2026-06-21).** An earlier version of this doc used a
+> **non-canonical** `b(q)=(q−q⁻¹)/(q+q⁻¹)` (bar-ODD), which gives the **wrong**
+> substrate step-size `u≈0.00102` — off by ~8× from the documented `u≈0.00852`.
+> The canonical Hoefsmit base (matching `u≈0.00852`, the mainstream `c_k`
+> probes, and `SilverAnchorGrounding.lean`, `b²=(q⁴+q²+1)/(q²+1)²`) is
+> `b(q)=√((h²+3)/(h²+4))=√(q⁴+q²+1)/(q²+1)` with `h=q−q⁻¹`, which is **bar-EVEN**
+> (`QOU.QBeta.hoefsmitBSq_bar_even`). The **verdict is unchanged** — criterion
+> 2(b) is still refuted — but **there is no "parity-split"**: `u` is uniformly
+> bar-even-covariant (`u↦+q²u`, no per-rung sign). See
+> [`2026-06-20-hoefsmit-b-bar-parity-correction.md`](2026-06-20-hoefsmit-b-bar-parity-correction.md)
+> (sibling fix `3f95b1ea`).
 
 ## What was assumed
 
@@ -18,79 +30,58 @@ satisfy (criterion **2(b)**):
 
 ## What the symbolic check shows
 
-Using the substrate forms (`qbeta_c3_jhopf_q0_vs_q1_comparison.py`):
-
 | quantity | form | bar-parity (`q↦q⁻¹`) |
 |---|---|---|
-| Hoefsmit base `b` | `(q−q⁻¹)/(q+q⁻¹)` | **bar-ODD** (`b(q⁻¹)=−b(q)`; odd/even) |
+| Hoefsmit base `b` | `√(q⁴+q²+1)/(q²+1)` | **bar-EVEN** (`b²` is a function of `h²`, `h` bar-odd) |
 | `ℏ_q²` | `(1−q⁻¹)²` | bar-covariant (`↦ q²ℏ_q²`) |
-| **expansion variable `u`** | `b·ℏ_q²` | **bar-ODD-covariant** (`u ↦ −q²u`, verified) |
+| **expansion variable `u`** | `b·ℏ_q²` | **bar-EVEN-covariant** (`u ↦ +q²u`, verified) |
 | `J_Hopf` | `−(q²+q⁻²)` | bar-EVEN |
 
-A bar-**even** kernel `F(q)=Σ c_k u^k` in this `u` forces, term by term,
+A bar-**even** kernel `F(q)=Σ c_k u^k` in this `u` forces, term by term (no
+`(−1)^k` — `u` carries no per-rung sign):
 
-$$\boxed{\,c_k(q^{-1}) = (-1)^k\,q^{-2k}\,c_k(q)\,}.$$
+$$\boxed{\,c_k(q^{-1}) = q^{-2k}\,c_k(q)\,}.$$
 
 **None of the documented coefficients satisfy it:**
 
-| `k` | candidate | residual `c_k(q⁻¹) − (−1)^k q^{−2k}c_k(q)` | satisfies? |
+| `k` | candidate | residual `c_k(q⁻¹) − q^{−2k}c_k(q)` | satisfies? |
 |---|---|---|---|
 | 2 | `c₂ = −1` (proved-exact) | `q⁻⁴ − 1` | ❌ |
-| 3 | `c₃ = −2 − ℏ_q²` (near-match) | `≠ 0` | ❌ |
-| 3 | `c₃ = J_Hopf(q)` (near-match) | `(−q¹⁰−q⁶−q⁴−1)/q⁸` | ❌ |
+| 3 | `c₃ = −2 − ℏ_q²` (near-match) | `−(q−1)²−2+2/q⁶+(q−1)²/q⁸` | ❌ |
+| 3 | `c₃ = J_Hopf(q)` (near-match) | `(−q¹⁰−q⁶+q⁴+1)/q⁸` | ❌ |
 
 ## Verdict
 
 **Criterion 2(b) cannot be imposed on the `c_k` ladder in the variable `u`.** Its
 justification — *"`c₂ = −1` is bar-even"* — conflates the bar-**invariance** of a
 constant (`c₂(q⁻¹)=c₂(q)`, trivially true) with the **covariance law** a bar-even
-`F` actually needs in the bar-odd-covariant `u`. Because `b(q)` is bar-ODD, that
-law is `c_k(q⁻¹)=(−1)^k q^{−2k}c_k(q)`, which the proved-exact `c₂=−1` already
-violates.
+`F` actually needs in the bar-even-covariant `u`. That law is
+`c_k(q⁻¹)=q^{−2k}c_k(q)`, which the proved-exact `c₂=−1` already violates
+(`q⁻⁴ ≠ 1`), as do both `c₃` candidates.
 
-**Consistent picture (no contradiction with the framework):** the bar-symmetry
-lives in the **full `Q_β`** — the bar-**odd** `sinh` partner of the bar-even
-`cosh` meson scale (per the canonical framing) — not in `F(q)` over `u`. `Q_β =
-Q_A · cos(α_eff) · Π(1+c_k u^k)`; the bar-parity must be tracked across all
-factors, with `b(q)` bar-odd, not by demanding a bar-even `F` in `u`.
-
-## Strengthening — the bar-oddness is *irreducible* (no reparametrization rescue)
-
-One might hope a different expansion variable restores a bar-even `F`. It cannot.
-A candidate monomial variable `v = b^a · ℏ_q^{2c}` transforms as
-
-$$v(q^{-1}) = (-1)^a\,q^{2c}\,v(q)\qquad(\text{$b$ bar-odd, $ℏ_q^2$ bar-covariant}),$$
-
-so `v` is bar-**invariant** only when `a` is even **and** `c = 0` — i.e. a variable
-with **no `ℏ`**. But the `c_k` ladder is intrinsically an `ℏ`-expansion (`c ≠ 0`).
-Hence **every `ℏ`-containing expansion variable is bar-covariant**, and a bar-even
-kernel `F` in such a variable is impossible while the `c_k` are the documented
-forms. Criterion 2(b) is therefore **definitively dropped**, not merely weakened:
-the bar-symmetry *necessarily* lives in the full `Q_β` (bar-odd), never in `F`.
+**No parity-split.** Because the canonical `b(q)` is bar-EVEN, `u` is uniformly
+bar-even-covariant — there is **no** per-rung `(−1)^k` sign and **no**
+"parity-split ladder". The prune stands purely on the documented `c_k` *values*
+failing the (unsigned) covariance law, independent of any bar-oddness of `u`.
 
 ## Narrowing for the kernel hunt (the deliverable)
 
 The next fibre-kernel search should **not** carry "`F` bar-even in `u`" as a
-filter. Instead:
-
-1. **Use a bar-definite variable explicitly.** Either find a bar-**invariant**
-   small parameter `v` (replacing `u`) in which the `c_k` *do* become bar-definite,
-   or carry the bar-ODD-covariance of `u` through `R(q,ξ)` directly.
-2. **Anchor the parity on `Q_β` (bar-odd), not `F`.** The overall sinh parity is
-   the real constraint; `F`'s parity is derived from it given the bar-odd `b(q)`
-   and the `cos(α_eff)`/`Q_A` factors.
+filter (the documented `c_k` violate the covariance it would require). The
+bar-symmetry, if it constrains the kernel, must be reckoned at the level of the
+full `Q_β` or the fibre object — see the follow-up below — not by demanding a
+bar-even `F` in the real-`u` ladder.
 
 A constraint on `R(q,ξ)`, not a value — within the qkhc discipline (nothing
 wired; `c_k` stay cal-anchored).
 
 ## Follow-up — the closed-form `Q_β` is bar-mixed too (parity is a *fibre* statement)
 
-Testing the natural next step ("anchor the parity on `Q_β`") symbolically: the
-closed-form `Q_β` core `(q²−2q−1)(q+1)/q³ = 1 − q⁻¹ − 3q⁻² − q⁻³` is **bar-MIXED**
-(neither bar-odd nor bar-even; the `|·|` variant likewise). So the *literal*
-archimedean closed form is **not** bar-definite — the "`Q_β` = bar-odd `sinh`
-partner" statement is about its **structural origin** (`sinh` vs the `cosh` meson
-scale), not a bar-parity of the evaluated closed form.
+The closed-form `Q_β` core `(q²−2q−1)(q+1)/q³ = 1 − q⁻¹ − 3q⁻² − q⁻³` is
+**bar-MIXED** (neither bar-odd nor bar-even; the `|·|` variant likewise). So the
+*literal* archimedean closed form is **not** bar-definite — the "`Q_β` = bar-odd
+`sinh` partner" statement is about its **structural origin** (`sinh` vs the
+`cosh` meson scale), not a bar-parity of the evaluated closed form.
 
 **Net:** bar-parity is **not a clean archimedean filter at any level** — neither on
 `F(q)` in `u` (criterion 2b, refuted above) nor on the closed-form `Q_β`. If the
