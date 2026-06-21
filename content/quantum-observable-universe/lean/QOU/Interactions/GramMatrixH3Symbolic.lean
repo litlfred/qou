@@ -431,7 +431,7 @@ theorem gram_scale_rel (u : ℝ) (hu : u ≠ 0) :
   have h1 : (u^2+1) ≠ 0 := by positivity
   ext i j
   fin_cases i <;> fin_cases j <;>
-    simp [Matrix.mul_apply, Fin.sum_univ_six, Matrix.diagonal, gramMatrix,
+    simp [Matrix.mul_apply, Matrix.diagonal, gramMatrix,
       gramScaled, gramScaledEntry, gramEntry, Lval] <;>
     field_simp <;> ring
 
