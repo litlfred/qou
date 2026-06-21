@@ -28,7 +28,6 @@ Output: ame-registry-routing-triage.witness.json
 """
 from __future__ import annotations
 
-import glob
 import json
 import re
 import sys
@@ -55,13 +54,14 @@ def _in_range(v: float) -> bool:
 
 
 def main() -> int:
-    files = [f for f in glob.glob("computations/*.py")
-             if "_deprecated" not in f and "substrate/" not in f]
+    # HERE.parent == computations/; *.py globbing there is CWD- and OS-independent
+    # (substrate/ is a subdir, so not matched; _deprecated/ likewise excluded).
+    files = [p for p in HERE.parent.glob("*.py") if "_deprecated" not in p.name]
     safe: dict[str, set] = {}
     unsafe: dict[str, set] = {}
-    for f in files:
-        fn = f.split("/")[-1]
-        txt = Path(f).read_text()
+    for p in files:
+        fn = p.name
+        txt = p.read_text(encoding="utf-8")
         for m in _LIT.finditer(txt):
             lit = m.group(1) or m.group(2) or m.group(3)
             if lit is None:
@@ -110,7 +110,8 @@ def main() -> int:
         "bean": "fvxq", "sibling": "claude/fvxq-atomic-mass-registry-2026-06-21",
     }
     out = HERE.parent / "ame-registry-routing-triage.witness.json"
-    out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
+    out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n",
+                   encoding="utf-8")
     print(f"\n  witness: {out}")
     return 0
 
