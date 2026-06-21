@@ -123,16 +123,16 @@ ATOM_ASSIGN = {
     # visible.  See docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md
     # for the knot-census target volumes and candidate paths.
     "5Li":  {"rule": "gap",      "B_AME_MeV_target": 26.328,
-             "vol_kashaev_target_m_e_units": 26.328 / 0.51099895,
-             "vol_kashaev_target_2m_e_units": 26.328 / (2 * 0.51099895),
+             "vol_kashaev_target_m_e_units": 26.328 / float(M_E_MEV),
+             "vol_kashaev_target_2m_e_units": 26.328 / (2 * float(M_E_MEV)),
              "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
     "6Li":  {"rule": "gap",      "B_AME_MeV_target": 31.99405,
-             "vol_kashaev_target_m_e_units": 31.99405 / 0.51099895,
-             "vol_kashaev_target_2m_e_units": 31.99405 / (2 * 0.51099895),
+             "vol_kashaev_target_m_e_units": 31.99405 / float(M_E_MEV),
+             "vol_kashaev_target_2m_e_units": 31.99405 / (2 * float(M_E_MEV)),
              "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
-    "7Li":  {"rule": "gap",      "B_AME_MeV_target": 39.24453,
-             "vol_kashaev_target_m_e_units": 39.24453 / 0.51099895,
-             "vol_kashaev_target_2m_e_units": 39.24453 / (2 * 0.51099895),
+    "7Li":  {"rule": "gap",      "B_AME_MeV_target": 39.2438,
+             "vol_kashaev_target_m_e_units": 39.2438 / float(M_E_MEV),
+             "vol_kashaev_target_2m_e_units": 39.2438 / (2 * float(M_E_MEV)),
              "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
     # 8Be: α-cluster (n_α=2, n_pairs=1)
     "8Be":  {"rule": "alpha",    "n_alpha": 2, "n_pairs": 1,

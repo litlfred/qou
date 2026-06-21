@@ -73,6 +73,8 @@ from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from codata_constants import (  # noqa: E402 — CODATA-2022 validation masses (registry; no literals)
     M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_D_MEV_VALIDATION,
     M_T_MEV_VALIDATION, M_HE3_MEV_VALIDATION, M_HE4_MEV_VALIDATION,
+    AME_B_DEUTERON_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION,
 )
 
 
@@ -92,10 +94,10 @@ M_CODATA = {
 
 # AME 2020 binding energies (MeV) — values where M_atom = Σ Z·m_p + N·m_n − B
 B_CODATA = {
-    "D":   mp.mpf("2.224566"),
-    "T":   mp.mpf("8.481793"),
-    "3He": mp.mpf("7.718041"),
-    "4He": mp.mpf("28.295674"),
+    "D":   AME_B_DEUTERON_MEV_VALIDATION,
+    "T":   AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 
 
