@@ -11,6 +11,22 @@
     "ts": "2c6e6785486a"
   },
   "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "93f12bf5b6c4",
+          "ts": "2c6e6785486a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "claude/qa-agent-drain-batch1-2026-06-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-06-21T21:55:00.000Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {
