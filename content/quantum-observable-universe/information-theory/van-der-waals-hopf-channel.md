@@ -1,4 +1,4 @@
-*Lean sibling: archimedean specialisation over a field $R$ carrying the $q$-data (CLAUDE.md §7c).*
+*Lean sibling: archimedean specialisation over a field $R$ carrying the $q$-data (AGENTS.md §7c).*
 
 **Definition (van der Waals channel).** *In the 2-strand inter-molecular Hecke
 algebra $H_2(q)$ (two molecules $=$ two strands), the **van der Waals channel**

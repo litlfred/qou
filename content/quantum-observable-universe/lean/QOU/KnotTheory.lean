@@ -15,7 +15,7 @@ turns a braid word into a link; every knot or link arises this way
 The braid-word encoding is `O(n)` in storage and `O(n)` for writhe /
 crossing-count, matching the older PD/Gauss-code encoding's complexity
 while staying in the canonical Hecke-algebra register that the QOU
-mass derivation uses throughout (CLAUDE.md *Canonical derivation
+mass derivation uses throughout (AGENTS.md *Canonical derivation
 chain*).  Multigraph encodings (PD code, Gauss code, chord diagrams)
 are equivalent up to a basis change but are not used elsewhere in the
 paper, so we drop them here.

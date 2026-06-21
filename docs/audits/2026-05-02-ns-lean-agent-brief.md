@@ -1,7 +1,7 @@
 # NS-Lean retrofit — agent brief
 
 **Status:** the algebraic-side framework is **fully retrofitted** under
-CLAUDE.md §3b-cond ([commit `4049f96dc`](https://github.com/litlfred/qou/commit/4049f96dc)
+AGENTS.md §3b-cond ([commit `4049f96dc`](https://github.com/litlfred/qou/commit/4049f96dc)
 on `claude/audit-math-framework-FXlp2`). The propagation audit shows
 **13 violators** remaining — all in the fluid-dynamics cone.
 
@@ -65,7 +65,7 @@ this branch:
 Each follows the same template:
 
 ```lean
--- ── Conjecture class (CLAUDE.md §3b-cond axiomatisation) ───────
+-- ── Conjecture class (AGENTS.md §3b-cond axiomatisation) ───────
 
 class C where
   -- fields encoding the conjecture's content
@@ -229,7 +229,7 @@ open a PR.
 
 Before starting: read these for context.
 
-- `CLAUDE.md` §3b-cond — the conditional-class exception protocol
+- `AGENTS.md` §3b-cond — the conditional-class exception protocol
 - [`shell-correction-term-seven.lean`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/content/quantum-observable-universe/braids-and-knots/shell-correction-term-seven.lean) — original canonical pattern
 - [`shell-closure-nf-term-count.lean`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.lean) — recent retrofit example
 - [`KnotFactorFrobeniusPairing.lean`](https://github.com/litlfred/qou/blob/claude/audit-math-framework-FXlp2/content/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorFrobeniusPairing.lean) — example creating a brand-new .lean class file

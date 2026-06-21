@@ -24,7 +24,7 @@ several closure paths and identified one tractable route: the
 **`q`-dimension decoration** `δ_q : NF basis → R`, dual to the
 GB filtration / jet expansion. No closure is claimed here; the
 class merely **axiomatises** the conjecture so downstream theorems
-can carry it as an `[Instance]` hypothesis (CLAUDE.md §3b-cond).
+can carry it as an `[Instance]` hypothesis (AGENTS.md §3b-cond).
 
 `sorry` in any concrete instance is understood as **conjecture**,
 not missing proof.
@@ -63,7 +63,7 @@ abbrev R_q : Type := LaurentPolynomial ℤ
 
     Downstream blocks may take `[EHartreeCategoricalDerivation]`
     as an explicit hypothesis to remain `theorem` / `proposition`
-    per CLAUDE.md §3b-cond.
+    per AGENTS.md §3b-cond.
 
     Ref: [manuscript] §Hartree-energy categorical derivation -/
 class EHartreeCategoricalDerivation where

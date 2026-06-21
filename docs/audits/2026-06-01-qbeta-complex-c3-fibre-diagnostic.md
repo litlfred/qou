@@ -102,7 +102,7 @@ precision (currently ~10⁻²), not absolute compute precision (10⁻⁵⁰).
 
 ## Implication for CAL-1/2/3 + fibre framing
 
-Per CLAUDE.md §Canonical chain (PR #1616): CAL inputs measure
+Per AGENTS.md §Canonical chain (PR #1616): CAL inputs measure
 ARCHIMEDEAN observables only — they constrain Re[q_0] and Im[q_0] = 0
 but give no information about the fibre Im structure of the Habiro
 element.
@@ -133,7 +133,7 @@ c_k flip-flop pattern remains under-constrained by current data.
 
 ## Anti-pattern guard
 
-Per CLAUDE.md no-7th-ansatz discipline:
+Per AGENTS.md no-7th-ansatz discipline:
 
 - ❌ Do NOT wire `c_3 = -2 + i·δ` for any specific δ form — refuted at q^3 order
 - ❌ Do NOT promote the bar-decomposition (PR #1620) to Re/Im of a complex object — that interpretation is refuted (sum-of-squares mismatch)
@@ -143,10 +143,10 @@ Per CLAUDE.md no-7th-ansatz discipline:
 
 - `computations/probes/qbeta-complex-c3-fibre-probe.witness.json`
 - `computations/probes/qbeta_complex_c3_fibre_probe.py`
-- PR #1616 — Im(q) fibre/observable framing in CLAUDE.md
+- PR #1616 — Im(q) fibre/observable framing in AGENTS.md
 - PR #1620 — bar-decomposition Hecke-natural form (the REAL bar-involution
   eigenspaces, not complex Re/Im)
 - `docs/audits/2026-05-31-qbeta-bridge-narrowing.md` — 7 mechanisms ruled out
 - `docs/audits/2026-05-30-qbeta-recursive-pair-rules-and-habiro-pde.md` — q-difference equation framing
-- `todos/research-queue.json` — `research-qbeta-habiro-element-search`
+- `.beans/research-queue.json` — `research-qbeta-habiro-element-search`
   remains the keystone; this probe refines its scope

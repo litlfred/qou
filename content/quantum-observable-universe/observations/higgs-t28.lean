@@ -7,7 +7,7 @@ surface whose Seifert surface spans all three exceptional
 divisors `D_r ∪ D_g ∪ D_b` simultaneously.
 
 -- Ref: [manuscript]
-Per `CLAUDE.md §3b-cond`, opaque Props + class fields + sorry
+Per `AGENTS.md §3b-cond`, opaque Props + class fields + sorry
 instance per claim. This is the **algebraic/topological** tier;
 the numerical Higgs mass evaluation (crossing energy of T(2,8)
 at q_0 vs. observed mass) belongs to a future Archimedean tier

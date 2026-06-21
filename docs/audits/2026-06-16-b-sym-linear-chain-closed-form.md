@@ -150,7 +150,7 @@ corpus already supplies two of the three pieces a "categorical shell term" needs
   4-body α-binding (the ~16–21 MeV ⁴He residual). The sibling audit showed the
   required count `k = B_AME / (m_e·8G)` is the binding curve itself — **no clean
   combinatorial count** — so any closed form for the magnitude that is tuned to the
-  data is a fit, blocked by the CLAUDE.md Δ_λ gate.
+  data is a fit, blocked by the AGENTS.md Δ_λ gate.
 
 **Conclusion.** `B_sym` is a closed-form linear-chain (saturation) binding; its
 two misses are opposite ends of that one structure; the shell *positions* are
@@ -159,6 +159,29 @@ magnitude**, and it must come from a **derivation** (the α-cluster recursion th
 treats ⁴He's 4-body binding as the magic input — recommended by both the
 chain-cooperative file and the sibling audit), **not** a 7th uniform / bond-count /
 fitted ansatz.
+
+## Lean formalization (2026-06-20)
+
+The §1 additivity is a sorry-free Lean theorem in
+[`QOU.BraidKnot.BsymLinearChain`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/BsymLinearChain.lean)
+(`chain_num_bonds`, `chain_count_pp/pn/nn`, `chain_binding_sum`,
+`Bsym_closed_form`, `Bsym_deuteron`; see
+[`2026-06-20-bsym-linear-chain-additivity-lean.md`](2026-06-20-bsym-linear-chain-additivity-lean.md)).
+It states the *structural* content honestly: **given** the per-bond
+factorisation (the distinct-generator fact verified to the 50-dps floor
+in §1), the binding is the count-weighted additive chain sum
+`α·[(Z−1)L_pp + L_pn + (N−1)L_nn]` (and the deuteron is the single p-n
+bond). It depends on **no open conjecture** — the factorisation is the
+explicit structural input. This addresses bean `6z40`: it does **not**
+claim "B_sym is a theorem" (B_sym is a *definition* + an empirical
+binding claim, the latter still gated by the Δ_λ saturation residual of
+§5–§6); it formalises only the conjecture-free additivity structure.
+
+*Optional follow-up:* an ℝ-specialised `Real.log`-of-product lemma that
+*discharges* the per-bond factorisation from the multiplicative trace
+ratio (`log(tr_free/tr_atom) = Σ counts · log(tr_free/tr_X)`) would
+connect the abstract `L : Bond → R` of `BsymLinearChain` to the actual
+trace; it belongs next to that module.
 
 ## References
 

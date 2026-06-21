@@ -268,5 +268,258 @@ theorem borromean_crossing_minimal :
     wordsBelow6.all (fun w => !nontrivialBrunnian w) = true := by
   native_decide
 
+/-! ## Library validation + reuse — the figure-eight knot `4₁`
+
+The Kauffman/`TL₃` bracket is not Borromean-specific: applied to *any* 3-braid
+closure it computes the Jones invariant. The figure-eight knot
+`4₁ = closure of (σ₁σ₂⁻¹)²` is the natural cross-check — it is the
+**q₀-calibration knot** (`m_μ/m_e = Vol(4₁)/ℏ_q²`, `Vol(4₁) = 2Λ(π/3)`,
+canonical-derivation cheat-sheet CAL-2), and as a 1-component closure of a
+length-4 3-braid it is directly in range. Reproducing its *exact* Jones
+polynomial validates the bracket against a literature invariant — a stronger
+check than brick 1's Borromean nontriviality, which only compared two brackets
+for inequality. -/
+
+/-- The figure-eight knot `4₁`, as the closure of the 3-braid `(σ₁σ₂⁻¹)²` (its
+    underlying permutation is a 3-cycle, so the closure is a single component —
+    a knot). -/
+def figureEight : List (Nat × Bool) := [(1, true), (2, false), (1, true), (2, false)]
+
+/-- The figure-eight Jones polynomial `V(4₁) = A⁸ - A⁴ + 1 - A⁻⁴ + A⁻⁸`
+    (Kauffman `A`-variable; the substitution `t = A⁻⁴` recovers the classical
+    `t⁻² - t⁻¹ + 1 - t + t²`). -/
+def jonesFigureEight : LP := ⟨-8, [1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0, 1]⟩
+
+section FigureEight
+
+set_option maxRecDepth 100000
+
+/-- `δ · V(4₁)` in fully reduced form, `-A¹⁰ - A⁻¹⁰` (small-`LP` arithmetic). -/
+theorem delta_mul_jonesFigureEight :
+    LP.mul delta jonesFigureEight =
+      ⟨-10, [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1]⟩ := by
+  decide
+
+set_option maxHeartbeats 400000 in
+/-- The bracket reduction of the figure-eight closure: `jones (4₁) = -A¹⁰ - A⁻¹⁰`. -/
+theorem jones_figureEight_value :
+    jones figureEight =
+      ⟨-10, [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1]⟩ := by
+  decide
+
+/-- **The link library reproduces the known figure-eight Jones polynomial**
+    (machine-proved, AXIOM-FREE): `jones (4₁ closure) = δ · V(4₁)` with
+    `V(4₁) = A⁸ - A⁴ + 1 - A⁻⁴ + A⁻⁸`. An *exact polynomial identity* against a
+    literature invariant — a stronger validation of the Kauffman/`TL₃` bracket
+    than brick 1's Borromean nontriviality (which only compared two brackets for
+    inequality). The `δ` is the 1-component normalisation (`jones (unknot) = δ`);
+    the reduced invariant `jones (4₁) / δ = V(4₁)`. Since `4₁` is the
+    q₀-calibration knot (`m_μ/m_e = Vol(4₁)/ℏ_q²`), this exercises the library on a
+    framework-central knot. (Proved by transitivity through the two value lemmas:
+    a single `decide` on the combined `jones`+`δ·V` reduction exceeds even a
+    1 M-heartbeat elaboration budget, so the two reductions are kept separate.) -/
+theorem figure_eight_jones : jones figureEight = LP.mul delta jonesFigureEight :=
+  jones_figureEight_value.trans delta_mul_jonesFigureEight.symm
+
+/-- **The figure-eight is a nontrivial knot** (machine-proved, AXIOM-FREE): its
+    Jones polynomial `δ·V(4₁)` differs from the unknot's `δ` (the closure of the
+    3-cycle braid `σ₁σ₂`), because `V(4₁) ≠ 1`. -/
+theorem figure_eight_knot_nontrivial :
+    jones figureEight ≠ jones [(1, true), (2, true)] := by decide
+
+end FigureEight
+
+/-! ## Library validation + reuse — the trefoil knot `3₁`
+
+The third validation target completes the library's knot ladder
+(unknot → trefoil → figure-eight). The trefoil `3₁ = T(3,2) = closure of (σ₁σ₂)²`
+is the simplest nontrivial knot — the `(3,2)` torus knot, here the closure of the
+all-positive 3-braid `(σ₁σ₂)²` (its underlying permutation is a 3-cycle, so the
+closure is a single component). Reproducing its exact Jones polynomial is a second
+literature cross-check of the bracket and the first on a *chiral* knot: the trefoil
+is not amphichiral (unlike the figure-eight, brick 3), and the Jones polynomial
+detects this — `V(3₁) ≠ V(mirror 3₁)`. -/
+
+/-- The trefoil knot `3₁`, as the closure of the all-positive 3-braid `(σ₁σ₂)²`
+    — the `(3,2)` torus knot (its underlying permutation is a 3-cycle, so the
+    closure is a single component, a knot). -/
+def trefoil : List (Nat × Bool) := [(1, true), (2, true), (1, true), (2, true)]
+
+/-- The trefoil Jones polynomial `V(3₁) = -A⁻¹⁶ + A⁻¹² + A⁻⁴` in the Kauffman
+    `A`-variable (the substitution `t = A⁻⁴` gives the classical `-t⁴ + t³ + t`).
+    This is the chirality the all-positive braid `(σ₁σ₂)²` selects in this
+    convention; the mirror trefoil has `-t⁻⁴ + t⁻³ + t⁻¹`. The asymmetry
+    `V(3₁) ≠ V(mirror)` is the Jones polynomial detecting trefoil handedness. -/
+def jonesTrefoil : LP := ⟨-16, [-1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1]⟩
+
+section Trefoil
+
+set_option maxRecDepth 100000
+
+/-- `δ · V(3₁)` in fully reduced form, `A⁻¹⁸ - A⁻¹⁰ - A⁻⁶ - A⁻²` (small-`LP`
+    arithmetic). -/
+theorem delta_mul_jonesTrefoil :
+    LP.mul delta jonesTrefoil =
+      ⟨-18, [1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1]⟩ := by
+  decide
+
+set_option maxHeartbeats 400000 in
+/-- The bracket reduction of the trefoil closure: `jones (3₁) = A⁻¹⁸ - A⁻¹⁰ - A⁻⁶ - A⁻²`. -/
+theorem jones_trefoil_value :
+    jones trefoil =
+      ⟨-18, [1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1]⟩ := by
+  decide
+
+/-- **The link library reproduces the known trefoil Jones polynomial**
+    (machine-proved, AXIOM-FREE): `jones (3₁ closure) = δ · V(3₁)` with
+    `V(3₁) = -A⁻¹⁶ + A⁻¹² + A⁻⁴` (classically `-t⁴ + t³ + t`). A second exact
+    polynomial identity against a literature invariant — now for a *chiral* knot,
+    complementing the amphichiral figure-eight (brick 3) and the Borromean link
+    (bricks 1–2). The `δ` is the 1-component normalisation (`jones (unknot) = δ`);
+    the reduced invariant `jones (3₁) / δ = V(3₁)`. (Proved by transitivity through
+    the two value lemmas, as in `figure_eight_jones`: a single `decide` on the
+    combined `jones`+`δ·V` reduction exceeds the elaboration heartbeat budget.) -/
+theorem trefoil_jones : jones trefoil = LP.mul delta jonesTrefoil :=
+  jones_trefoil_value.trans delta_mul_jonesTrefoil.symm
+
+/-- **The trefoil is a nontrivial knot** (machine-proved, AXIOM-FREE): its Jones
+    polynomial `δ·V(3₁)` differs from the unknot's `δ` (the closure of the 3-cycle
+    braid `σ₁σ₂`), because `V(3₁) ≠ 1`. -/
+theorem trefoil_knot_nontrivial :
+    jones trefoil ≠ jones [(1, true), (2, true)] := by decide
+
+end Trefoil
+
+/-! ## Library validation — the Hopf link (the first multi-component named link)
+
+The figure-eight and trefoil (bricks 3–4) are *knots* (1-component). The next rung
+exercises the bracket on a genuine multi-component **link** against a literature
+Jones polynomial. The **Hopf link** is the framework's **CAL-3 / `m_π`** object
+(`Vol(Hopf) = 0`, the meson scale — canonical-derivation cheat-sheet CAL-3) and the
+simplest nontrivial link. As the closure of `σ₁²` it lives directly in range.
+
+**Honest scope.** A 3-braid closure always carries the third strand, and `σ₁²`
+leaves `σ₂` (hence strand 3) untouched: its underlying permutation is the identity,
+so the closure is **Hopf ⊔ split-unknot** — 3 components, not the bare 2-component
+Hopf link. This is unavoidable in `TL₃`; the quark–antiquark (2-strand) + spectator
+reading is arguably the framework-natural presentation. The split unknot multiplies
+the bracket by exactly one `δ`, and the residue `jones (hopf) / δ² = V(Hopf)` is the
+genuine 2-component Hopf-link Jones polynomial (one `δ` the split unknot, one the
+1-component normalisation). -/
+
+/-- The Hopf link, as the closure of `σ₁²` in `B₃`. With `σ₂` unused the third
+    strand is disjoint, so the closure is `Hopf ⊔ split-unknot` (3 components).
+    The framework's CAL-3 / `m_π` object (`Vol(Hopf) = 0`). -/
+def hopf : List (Nat × Bool) := [(1, true), (1, true)]
+
+/-- The Hopf-link Jones polynomial `V(Hopf) = -A⁻² - A⁻¹⁰` in the Kauffman
+    `A`-variable (`t = A⁻⁴`: `-t^{1/2} - t^{5/2}`). The Hopf link is chiral; the
+    all-positive `σ₁²` selects this handedness (the mirror Hopf has `-A² - A¹⁰`). -/
+def jonesHopf : LP := ⟨-10, [-1, 0, 0, 0, 0, 0, 0, 0, -1]⟩
+
+/-- `δ² · V(Hopf)` fully bracket-reduced — the Jones polynomial of the `σ₁²`
+    closure (`Hopf ⊔ unknot`): `-A⁻¹⁴ - 2A⁻¹⁰ - 2A⁻⁶ - 2A⁻² - A²`. Shared by
+    `delta_sq_mul_jonesHopf` and `jones_hopf_value` (avoids duplicating the literal). -/
+def jonesHopfReduced : LP := ⟨-14, [-1, 0, 0, 0, -2, 0, 0, 0, -2, 0, 0, 0, -2, 0, 0, 0, -1]⟩
+
+section Hopf
+
+set_option maxRecDepth 100000
+
+/-- `δ² · V(Hopf)` fully reduced. The two `δ` factors are the split unknot of the
+    3-braid closure (`Hopf ⊔ unknot`) and the 1-component normalisation. -/
+theorem delta_sq_mul_jonesHopf :
+    LP.mul (LP.mul delta delta) jonesHopf = jonesHopfReduced := by
+  decide
+
+/-- The bracket reduction of the Hopf (`⊔ unknot`) closure:
+    `jones (hopf) = -A⁻¹⁴ - 2A⁻¹⁰ - 2A⁻⁶ - 2A⁻² - A²`. -/
+theorem jones_hopf_value :
+    jones hopf = jonesHopfReduced := by
+  decide
+
+/-- **The link library reproduces the known Hopf-link Jones polynomial**
+    (machine-proved, AXIOM-FREE): `jones (σ₁² closure) = δ² · V(Hopf)` with
+    `V(Hopf) = -A⁻² - A⁻¹⁰`. The **first named multi-component link** validated
+    against a literature invariant — bricks 1–2 only proved the Borromean bracket
+    *differed* from the unlink's (a `≠`), never reproduced a *known* `V` (an `=`).
+    Of the two `δ` factors, one is the split unknot forced by the third strand
+    (`Hopf ⊔ unknot`), one the 1-component normalisation; the residue
+    `jones (hopf) / δ² = V(Hopf)` is the genuine 2-component Hopf-link Jones
+    polynomial. This exercises the library on the framework's CAL-3 / `m_π`
+    object (`Vol(Hopf) = 0`). (Two value lemmas + transitivity, as in
+    `figure_eight_jones`.) -/
+theorem hopf_link_jones : jones hopf = LP.mul (LP.mul delta delta) jonesHopf :=
+  jones_hopf_value.trans delta_sq_mul_jonesHopf.symm
+
+/-- **The Hopf link is nontrivial** (machine-proved, AXIOM-FREE): the `σ₁²` closure
+    (`Hopf ⊔ unknot`) has Jones polynomial differing from the 3-component unlink's
+    `δ³`, so the Hopf sublink is genuinely linked (a nonzero linking number, here
+    visible as `V(Hopf) ≠ δ`). -/
+theorem hopf_link_nontrivial : jones hopf ≠ jones unlink3 := by decide
+
+end Hopf
+
+/-! ## Library validation — the `(3,4)` torus knot `8₁₉`
+
+Completing the knot ladder with a higher-crossing knot. `8₁₉ = T(3,4)` is the
+all-positive `(3,4)` torus knot, the closure of `(σ₁σ₂)⁴` (permutation a 3-cycle ⇒
+a single component). At 8 crossings and Jones span `20` it is the widest reduction
+in the ladder — a stress-test of the kernel-`decide` bracket compute — and a third
+*chiral* cross-check against the closed-form torus-knot Jones polynomial. -/
+
+/-- The torus knot `8₁₉ = T(3,4)`, as the closure of the all-positive 3-braid
+    `(σ₁σ₂)⁴` (underlying permutation a 3-cycle ⇒ a single component, a knot). -/
+def torus819 : List (Nat × Bool) :=
+  [(1, true), (2, true), (1, true), (2, true), (1, true), (2, true), (1, true), (2, true)]
+
+/-- The `8₁₉` Jones polynomial `V(8₁₉) = -A⁻³² + A⁻²⁰ + A⁻¹²` in the Kauffman
+    `A`-variable (`t = A⁻⁴`: `-t⁸ + t⁵ + t³`). This is the closed-form torus-knot
+    Jones polynomial `V(T(m,n)) = t^{(m-1)(n-1)/2}(1 - t^{m+1} - t^{n+1} + t^{m+n})
+    / (1 - t²)` at `(m,n) = (3,4)`, which reduces to `t³(1 + t² - t⁵)`. `8₁₉` is
+    chiral; the all-positive `(σ₁σ₂)⁴` selects this handedness. -/
+def jonesTorus819 : LP :=
+  ⟨-32, [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1]⟩
+
+/-- `δ · V(8₁₉)` fully bracket-reduced — the Jones polynomial of the `(σ₁σ₂)⁴`
+    closure: `A⁻³⁴ + A⁻³⁰ - A⁻²² - A⁻¹⁸ - A⁻¹⁴ - A⁻¹⁰`. Shared by
+    `delta_mul_jonesTorus819` and `jones_torus819_value` (avoids duplicating the literal). -/
+def jonesTorus819Reduced : LP :=
+  ⟨-34, [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1]⟩
+
+section Torus819
+
+set_option maxRecDepth 100000
+
+/-- `δ · V(8₁₉)` fully reduced. -/
+theorem delta_mul_jonesTorus819 :
+    LP.mul delta jonesTorus819 = jonesTorus819Reduced := by
+  decide
+
+set_option maxHeartbeats 2000000 in
+/-- The bracket reduction of the `8₁₉` closure (a length-8 3-braid — the heaviest
+    kernel-`decide` reduction in the ladder, ~70 s):
+    `jones (8₁₉) = A⁻³⁴ + A⁻³⁰ - A⁻²² - A⁻¹⁸ - A⁻¹⁴ - A⁻¹⁰`. -/
+theorem jones_torus819_value :
+    jones torus819 = jonesTorus819Reduced := by
+  decide
+
+/-- **The link library reproduces the known `8₁₉` Jones polynomial**
+    (machine-proved, AXIOM-FREE): `jones (8₁₉ closure) = δ · V(8₁₉)` with
+    `V(8₁₉) = -A⁻³² + A⁻²⁰ + A⁻¹²` (the closed-form `(3,4)` torus-knot Jones
+    polynomial). The widest exact identity in the ladder (Jones span 20, an
+    8-crossing knot) and a third chiral cross-check, after the trefoil (brick 4).
+    The `δ` is the 1-component normalisation; `jones (8₁₉) / δ = V(8₁₉)`. (Two
+    value lemmas + transitivity, as in `figure_eight_jones`.) -/
+theorem torus819_jones : jones torus819 = LP.mul delta jonesTorus819 :=
+  jones_torus819_value.trans delta_mul_jonesTorus819.symm
+
+set_option maxHeartbeats 2000000 in
+/-- **`8₁₉` is a nontrivial knot** (machine-proved, AXIOM-FREE): its Jones
+    polynomial `δ·V(8₁₉)` differs from the unknot's `δ`, because `V(8₁₉) ≠ 1`. -/
+theorem torus819_knot_nontrivial :
+    jones torus819 ≠ jones [(1, true), (2, true)] := by decide
+
+end Torus819
 end TL
 end QOU.Knots

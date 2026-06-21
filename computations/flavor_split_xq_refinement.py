@@ -1,6 +1,6 @@
 """m_n / Δ_pn flavor-split X(q) refinement — Item 3 of PR #1645.
 
-Per CLAUDE.md L2 dashboard: m_n misses 100× target by 185× and Δ_pn
+Per AGENTS.md L2 dashboard: m_n misses 100× target by 185× and Δ_pn
 by 163×, both blocked by the canonical Hecke-skein X(q) formula's
 0.10% intrinsic residual:
 

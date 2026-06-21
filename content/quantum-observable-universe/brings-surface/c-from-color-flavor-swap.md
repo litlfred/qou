@@ -103,7 +103,7 @@ class CFromColorFlavorSwap
 
 The class is inhabited by the color-tube data once
 [`conj:inter-nucleon-channel-color-tube`](#conj:inter-nucleon-channel-color-tube)
-is instantiated — per CLAUDE.md §3b ("class is inhabited"), the only
+is instantiated — per AGENTS.md §3b ("class is inhabited"), the only
 `sorry` lives in the upstream class instance.
 
 ## Consumers / downstream
@@ -114,7 +114,7 @@ is instantiated — per CLAUDE.md §3b ("class is inhabited"), the only
 - The matter/antimatter sheet structure on Bring's quintic surface
   (via [`def:color-tube-fibers`](color-tube-fibers.md)) gets a
   natural C-action that descends to the SO(3) fiber.
-- Type-B folding for chirality / CPT (CLAUDE.md §7b, **D22** in
+- Type-B folding for chirality / CPT (AGENTS.md §7b, **D22** in
   the duality tracker) becomes the symmetric-crystal analogue of
   this conjecture — folding the $\mathfrak{sl}_n$ Cartan datum
   to Type B is the symmetric-crystal realisation of C.
@@ -147,5 +147,5 @@ is instantiated — per CLAUDE.md §3b ("class is inhabited"), the only
   (CPT composite already formalised)
 - [`bar-involution.md`](bar-involution.md) — the bar-involution =
   CPT composite identification at the algebraic level
-- CLAUDE.md §7b — Type-B folding for chirality / CPT
+- AGENTS.md §7b — Type-B folding for chirality / CPT
   (symmetric-crystal authoring shortcut, D22)

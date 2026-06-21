@@ -1,0 +1,79 @@
+{
+  "computation": "qbessel_second_kind_quadratic_action_gate",
+  "description": "Formalize-first structural gate for bean qbk2 (q-Bessel 2nd-kind quadratic-action binding correction). Constructs the singular 2nd solution g2=w^{-nu} sum d_k w^k of the Hahn-Exton q-Bessel equation (☆), verifies it via the q-Casoratian q-Abel law (param-free normalization) and its w^{-nu} origin singularity, and deduces the 2nd-kind correction is on-shell-EXCLUDED by regularity (off-shell resolvent only). Prunes the qbk2 search before any binding scan. No fit; nothing wired; TIERED.",
+  "discipline": "formalize-first; no fit; derive-or-refute; TIERED; nothing wired; on-shell binding stays cal-anchored",
+  "precision_dps": 60,
+  "results": {
+    "g2_solves_star": [
+      {
+        "nu": "2.5",
+        "q": "0.83",
+        "w": "0.18",
+        "residual": "-1.35413e-57"
+      },
+      {
+        "nu": "1.5",
+        "q": "0.6",
+        "w": "0.42",
+        "residual": "0.0"
+      },
+      {
+        "nu": "3.5",
+        "q": "0.9",
+        "w": "0.12",
+        "residual": "-4.63908e-55"
+      }
+    ],
+    "q_casoratian": [
+      {
+        "nu": "2.5",
+        "q": "0.83",
+        "w": "0.18",
+        "D": "43.163083",
+        "abel_resid": "-4.97841e-59",
+        "D_times_w_nu": "0.5933264623"
+      },
+      {
+        "nu": "1.5",
+        "q": "0.6",
+        "w": "0.42",
+        "D": "4.2310618",
+        "abel_resid": "-3.73381e-60",
+        "D_times_w_nu": "1.151657415"
+      },
+      {
+        "nu": "3.5",
+        "q": "0.9",
+        "w": "0.12",
+        "D": "744.98089",
+        "abel_resid": "6.69099e-57",
+        "D_times_w_nu": "0.4459431459"
+      }
+    ],
+    "g2_singular_origin": [
+      {
+        "nu": "2.5",
+        "g2_times_w_nu": "1.000000291",
+        "g2_magnitude_at_1e-8": "1.0e+20"
+      },
+      {
+        "nu": "1.5",
+        "g2_times_w_nu": "1.000000185",
+        "g2_magnitude_at_1e-8": "1.0e+12"
+      },
+      {
+        "nu": "3.5",
+        "g2_times_w_nu": "1.00000048",
+        "g2_magnitude_at_1e-8": "1.0e+28"
+      }
+    ]
+  },
+  "assertions": {
+    "(A) g2 is a genuine 2nd solution of (☆) (residual < 1e-25)": true,
+    "(B) g1, g2 independent (Casoratian nonzero)": true,
+    "(B) q-Abel law D(qw)=q^{-nu}D(w) (=> D*w^nu const, param-free)": true,
+    "(C) g2 ~ w^{-nu} (leading coeff d_0=1, diverges at w->0)": true
+  },
+  "allPassed": true,
+  "verdict": "GATE RESULT (formalize-first; no fit; nothing wired). The Hahn-Exton q-Bessel 2nd-kind solution g2(w)=w^{-nu} sum d_k w^k is (A) a genuine 2nd solution of the (☆) q-difference equation, (B) independent of g1 with a q-Abel Casoratian D(w)=const*w^{-nu} -- so its normalization is SUBSTRATE-FIXED, adding NO fitted per-block knob (NOT a 7th Delta_lambda ansatz), and (C) SINGULAR ~ w^{-nu} at the substrate origin (the classical Neumann Y_nu ~ x^{-nu}). Because the on-shell binding sum is built from REGULAR-rep Markov matrix coefficients, regularity at the origin EXCLUDES the 2nd-kind solution from the on-shell trace (the same regularity that excludes Y_nu from E_q(2)/SU_q(2) matrix coefficients): the 2nd-kind 'quadratic action' correction is IDENTICALLY ZERO on-shell. It is non-trivial ONLY off-shell, in the q-Bessel Green's function / resolvent G ~ g1(x_<) g2(x_>)/D(x) sourced by the linear -w term of (☆). This PRUNES the qbk2 search: no on-shell binding scan is warranted; any continuation must be an off-shell resolvent with an explicit source. Bar sector: g1 carries both bar parities via Jacobi-Anger; the 2nd-kind enters off-shell paired with g1 through the Casoratian, so it does not define a new independent bar sector. TIERED: (A)(B)(C) PROVED; the off-shell-only conclusion is a structural deduction, not a fit; c_k / Delta_lambda stay cal-anchored."
+}

@@ -32,7 +32,7 @@ theorem complementary_slackness (lp : OperatorSelectionLP) (λ : lp.Λ) :
   sorry
 ```
 
-Per CLAUDE.md §3b-cond, the proper locale for routine-but-not-yet-
+Per AGENTS.md §3b-cond, the proper locale for routine-but-not-yet-
 formalised inputs is a **conditional-class hypothesis** with a
 trivial model carrying the `sorry` + bibliographic citation. This
 block provides that class.

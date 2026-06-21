@@ -12,7 +12,7 @@ carried by a single character of the cyclotomic Galois group:
 
 axiomatised here as a Lean class.  Concrete instances supply the
 substrate-internal structure; `sorry` in any field is a substrate
-axiom (CLAUDE.md §3b), not a missing proof.
+axiom (AGENTS.md §3b), not a missing proof.
 
 **Formal-chain version.**  This file lives under `lean/QOU/` and is
 compiled by `lake build`.  The co-located documentation stub at

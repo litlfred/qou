@@ -20,7 +20,7 @@ This forecloses the simplest "KLR replacement of Family A" interpretation.
 
 ## What might work — Demazure sub-crystal at H_5+
 
-The framework's CLAUDE.md §7b mentions:
+The framework's AGENTS.md §7b mentions:
 
 > "Demazure sub-crystals for resonances. Unstable intermediaries
 >  (W/Z bosons, hadronic resonances) are Demazure sub-crystals —
@@ -79,6 +79,7 @@ This probe:
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import sys
 from pathlib import Path
 
@@ -128,7 +129,7 @@ def main() -> int:
 
     # === Empirical c_4 from m_p anchor ===
     m_e = mp.mpf("0.51099895069")
-    m_p = mp.mpf("938.27208816")
+    m_p = mp.mpf(M_P_MEV_VALIDATION)
     hbar_q = 1 - qi
     vol_b3 = 8 * G
     geom_leading = vol_b3 / hbar_q ** 2

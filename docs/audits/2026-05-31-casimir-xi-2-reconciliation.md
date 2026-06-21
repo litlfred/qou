@@ -19,7 +19,7 @@ inside PR #1540:
 | 2 | `ac3fae543` | `ξ_odd = 0` only; `ξ_{even≥2}` **OPEN** | bar-symmetry kills only odd ranks; retract #1 as overreach |
 | 3 | `665aa7eb1` | `ξ_k = 0` (again) | "Casimir doesn't go through Hecke at any order" |
 
-This is exactly the wire/un-wire flip-flop pattern that CLAUDE.md flags for the
+This is exactly the wire/un-wire flip-flop pattern that AGENTS.md flags for the
 Q_β `c_k` saga. Per the repo's anti-flip-flop discipline, the correct response is
 not a fourth claim but a **structural settlement** of why the coefficient keeps
 flipping.

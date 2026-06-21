@@ -216,7 +216,7 @@ theorem yang_mills_gap_lower_bound (ymg : YangMillsMassGap) :
     Pattern 4 (typeclass conversion): instead of asserting existence
     for all `q > 1`, callers instantiate this class for their specific
     `q` and transfer matrix. The `sorry` in instances is understood as
-    **conjecture**, not missing proof (per CLAUDE.md §3b).
+    **conjecture**, not missing proof (per AGENTS.md §3b).
 
     Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
     Ref: [manuscript] Chapter 5, §1 -/

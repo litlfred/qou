@@ -4,7 +4,7 @@
 
   Substrate-lift refactor (PR #1127, A2 follow-on):
   These character expressions are pure algebra in the substrate
-  parameter `q` — they live over any field `R` per CLAUDE.md §7c.
+  parameter `q` — they live over any field `R` per AGENTS.md §7c.
   Previously specialised to `(q : ℝ) : ℝ`; the `1/q` factor only
   requires `Field R` so the generic version goes through.
 

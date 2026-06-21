@@ -1,4 +1,4 @@
-*Lean sibling: a field $R$ carrying the $q$-data (CLAUDE.md §7c); the identity is purely algebraic modulo the Hecke relation.*
+*Lean sibling: a field $R$ carrying the $q$-data (AGENTS.md §7c); the identity is purely algebraic modulo the Hecke relation.*
 
 **Proposition (Hopf-link symmetric decomposition).** *The Hopf element
 $\sigma_1^2$ of $H_2(q)$ weights the two blocks of

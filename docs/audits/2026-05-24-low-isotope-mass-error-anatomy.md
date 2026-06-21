@@ -105,7 +105,7 @@ To wire ⁵Li / ⁶Li:
 
 Deferred to a follow-up branch (`claude/wire-a5-a7-isotopes-<date>`). Filed as audit gap; not addressed by this PR.
 
-## Three-substrate decomposition (per CLAUDE.md cheat sheet)
+## Three-substrate decomposition (per AGENTS.md cheat sheet)
 
 | Substrate | Role | Status |
 |---|---|---|

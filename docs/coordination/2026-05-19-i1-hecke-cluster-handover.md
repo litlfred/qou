@@ -29,7 +29,7 @@
 **I1 audit movement (session):** `i1_no_probe` 525 → 506 (–19), `wired` 53 → 67 (+14).
 **Audit movement (current PR alone):** `i1_no_probe` 520 → 506 (–14, all from PR #818).
 
-### Latent-bug fixes carried inline (per CLAUDE.md "small-moderate fixes" pattern)
+### Latent-bug fixes carried inline (per AGENTS.md "small-moderate fixes" pattern)
 
 | What | Where | Why |
 |---|---|---|
@@ -41,7 +41,7 @@
 
 | What | Where |
 |---|---|
-| CLAUDE.md rule "Small-moderate fixes for related bugs ride on the active PR" | `CLAUDE.md` §User accessibility — companion to the existing "combine related work into one branch" rule |
+| AGENTS.md rule "Small-moderate fixes for related bugs ride on the active PR" | `AGENTS.md` §User accessibility — companion to the existing "combine related work into one branch" rule |
 
 ## Pending — for the next session / agent
 
@@ -92,7 +92,7 @@
 
 ### E. Coordination ledger entries to file (optional)
 
-The pattern noted by the user this session — "small-moderate fixes ride on the active PR" — was added to `CLAUDE.md`. If the project keeps a separate coordination ledger of process-rule additions, file an entry there too (pattern: see `docs/coordination/` for the existing convention).
+The pattern noted by the user this session — "small-moderate fixes ride on the active PR" — was added to `AGENTS.md`. If the project keeps a separate coordination ledger of process-rule additions, file an entry there too (pattern: see `docs/coordination/` for the existing convention).
 
 ## How to resume
 

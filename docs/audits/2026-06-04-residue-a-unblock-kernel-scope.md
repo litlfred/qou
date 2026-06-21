@@ -104,7 +104,7 @@ The following is a structural reading, consistent with the infra but unproven:
   `H_n(q) ≅ H_n(q)*` produces the `y_λ` weights; its degeneracies are the
   root-of-unity Schur-element zeros (*not* our pole). (ii) The **confinement
   SDP primal–dual** has shadow prices `(y₀*, y*)` (the `lp_dual_solver` infra);
-  per CLAUDE.md *"the dual variables ARE the binding-energy shadow prices."*
+  per AGENTS.md *"the dual variables ARE the binding-energy shadow prices."*
 - **Hypothesis:** residue `A` is a **dual/shadow-price quantity of the
   confinement SDP at a strict-complementarity boundary**, and q₀'s CAL-2 (τ_n)
   pinning places the SDP solution *at* that boundary — which *is* the near-real

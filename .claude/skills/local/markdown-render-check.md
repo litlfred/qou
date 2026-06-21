@@ -59,7 +59,7 @@ https://github.com/litlfred/qou/blob/<branch>/<path-to>/<file>.md
 ```
 
 Always link the `.md` (the rendered view), never the `.ts` or `.lean`
-sibling — see `CLAUDE.md` "Always provide GitHub links — default to
+sibling — see `AGENTS.md` "Always provide GitHub links — default to
 `.md`" for the rule.
 
 The repo is private; WebFetch and `raw.githubusercontent.com` return

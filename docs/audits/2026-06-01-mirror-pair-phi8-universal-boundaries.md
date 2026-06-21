@@ -55,7 +55,7 @@ This is consistent with the magic-shell hypothesis: anomalous pairs (A=6 ⁶He(Z
 
 ## Connection to the existing magic-shell corpus
 
-(Per CLAUDE.md §"Before declaring 'open' math" corpus-grep — user correctly recalled this exists.)
+(Per AGENTS.md §"Before declaring 'open' math" corpus-grep — user correctly recalled this exists.)
 
 - [`prop:categorical-neutrality-saturated-shells`](../../content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.md): at magic n, full-twist Δ²_n acts as identity ⇒ Wedderburn support contracts to self-conjugates.
 - [`conj:diagrammatic-double-magic-lr-fusion`](../../content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.md): LR-fusion of two magic shells is rigid.

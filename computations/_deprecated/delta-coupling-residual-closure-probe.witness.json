@@ -129,7 +129,7 @@
     }
   },
   "caveats": [
-    "DIAGNOSTIC PROBE ONLY — does not fit Δ_coupling to AME. A numerical near-fit is NOT acceptable as a Pattern-A/B Lean §3b-cond instance per CLAUDE.md §3b-cond + the trivial-skeleton workplan. Any closure candidate must be derived from substrate primitives (KLR / Markov-trace / quantum-integer structure) before promotion.",
+    "DIAGNOSTIC PROBE ONLY — does not fit Δ_coupling to AME. A numerical near-fit is NOT acceptable as a Pattern-A/B Lean §3b-cond instance per AGENTS.md §3b-cond + the trivial-skeleton workplan. Any closure candidate must be derived from substrate primitives (KLR / Markov-trace / quantum-integer structure) before promotion.",
     "Single-anchor probe — closure candidates flagged here MUST be cross-validated against the (2,1) and (1,2) anchors after PR #644 merges (which adds proton/neutron Δ_cat to the canonical magic-shell-empirical-instantiation witness). A coefficient that varies across (Z,N) is not a structural closure.",
     "The small-rational heuristic uses denominator ≤ 12 with tolerance 1e-3 (relative). Clean coefficients flagged here are candidates, not proofs."
   ]

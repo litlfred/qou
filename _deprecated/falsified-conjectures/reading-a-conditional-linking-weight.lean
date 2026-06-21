@@ -54,7 +54,7 @@ research.
 
 2. A **class** `ReadingAValidAtH2` axiomatising the conjecture
    "the actual linking-weight equals `linkingWeightReadingA`."
-   Per CLAUDE.md §3b-cond, this is the SOLE `sorry` in the
+   Per AGENTS.md §3b-cond, this is the SOLE `sorry` in the
    downstream chain.
 
 3. A **conditional theorem** `mp_prediction_under_reading_a` deriving
@@ -90,7 +90,7 @@ namespace QOU.BraidKnot
 noncomputable def linkingWeightReadingA (q G : ℝ) : ℝ :=
   5/2 + (-G) * (q - q⁻¹)^2
 
-/-- **The Reading-A conjecture as a class** (per CLAUDE.md §3b-cond).
+/-- **The Reading-A conjecture as a class** (per AGENTS.md §3b-cond).
 
     Asserts that the actual physical linking-weight `actualLW`
     equals the Reading-A formula at every q. The single field

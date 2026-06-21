@@ -20,7 +20,7 @@ exposed:
   `(n+1)`-st graded piece of the braid element is non-zero.
 
 The conjectural exponential bound itself remains axiomatised as a
-typeclass field (CLAUDE.md §3b).
+typeclass field (AGENTS.md §3b).
 
 LaTeX label: `conj:archimedean-remainder-exponential-decay`
 

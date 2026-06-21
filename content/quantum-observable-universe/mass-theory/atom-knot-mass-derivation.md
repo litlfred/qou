@@ -383,12 +383,12 @@ Markov-trace computation) and the production-scale Rust port
  [`r5-full-canonical-knot-solver.witness.json`](https://github.com/litlfred/qou/blob/main/computations/r5-full-canonical-knot-solver.witness.json).
  It enumerates $B_3$ braid words up to length $L_{\max} = 8$,
  filters via a KLR canonical-basis "cemetery" prune (drops $\sigma_i^{\pm k}$
- pure-power Demazure-trivial classes per CLAUDE.md §7b symmetric-
+ pure-power Demazure-trivial classes per AGENTS.md §7b symmetric-
  crystal guidance) plus a $\chi$-fingerprint dedup that collapses
  Markov-equivalent words to a single canonical-basis-class
  representative, and emits an operator-selection LP with strong-
  duality dual fields ($y_0^*$, $y_\lambda^*$, active set) per the
- CLAUDE.md "LP / SDP duals — first-class infra" rule.
+ AGENTS.md "LP / SDP duals — first-class infra" rule.
 
  The cemetery + dedup pass compresses the search space by **99 %**
  ($13088 \to 138$ canonical-basis classes at $L_{\max} = 8$). The

@@ -433,7 +433,7 @@ def main() -> dict:
     # - α_em from prop:em-coupling-projection (q·[9]_q·[10]_q, CS-corrected
     #   to 137.035944, 399 ppb off CODATA)
     #
-    # CLASS-A acknowledged anchor (CLAUDE.md §3b-cond): the α_em literal
+    # CLASS-A acknowledged anchor (AGENTS.md §3b-cond): the α_em literal
     # `137.035944` is the CS-corrected ansatz from em-coupling-chern-simons.lean,
     # which still carries an open `sorry` on the Witten κ Gram-determinant
     # value (see prop:em-coupling-chern-simons). The m_K/m_π closure is

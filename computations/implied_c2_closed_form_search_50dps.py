@@ -37,6 +37,7 @@ the K closest candidates, sorted by absolute deviation. The candidate
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import sys
 from pathlib import Path
 from typing import Any, Iterable
@@ -52,7 +53,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 
 M_E_MEV = "0.51099895069"
-M_P_MEV = "938.27208816"
+M_P_MEV = str(M_P_MEV_VALIDATION)  # codata_constants registry (type+value preserving)
 
 
 def compute_implied_c2(dps: int = 50) -> "mp.mpf":

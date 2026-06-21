@@ -11,7 +11,7 @@ PR #1781 found a 3-rung Habiro closure that reproduces empirical c_3 to
 
 Is this a GENUINE fibre-level Habiro element (reproduces empirical c_3
 at EVERY q₀ anchor) or a PROTON-ANCHOR COINCIDENCE (matches at one q₀
-only)? Per CLAUDE.md §"Im(q) at fibre vs observable level":
+only)? Per AGENTS.md §"Im(q) at fibre vs observable level":
   ❌ a REAL formula c_3 = f(q_real) matching multiple anchors — known to fail
   ✓ a FIBRE Habiro element F(q) at roots of unity — different question
 
@@ -150,7 +150,7 @@ def main() -> int:
         print(f"  {empirical_swing_pct:+.2f}% — a {mismatch_factor:.1e}× mismatch. At the muon")
         print(f"  anchor the formula misses empirical c_3 by {err_m_pct:+.2f}%.")
         print()
-        print("  INTERPRETATION (consistent with CLAUDE.md §Im(q) fibre-vs-observable):")
+        print("  INTERPRETATION (consistent with AGENTS.md §Im(q) fibre-vs-observable):")
         print("  empirical c_3 has dc_3/dq ~ 4.6e6 near the anchor — NO smooth real-q")
         print("  formula can track that. So [3]_q/25 is NOT a real-q fibre element;")
         print("  the genuine Habiro element (if any) is complex-analytic / evaluated")
@@ -189,7 +189,7 @@ def main() -> int:
         f"c_3 only at the proton anchor (miss {err_m_pct:+.2f}% at muon). This "
         "CONFIRMS [3]_q/25 is a proton-anchor NEAR-MATCH, not a real-q fibre "
         "element — consistent with the known impossibility of a real-q c_3=f(q) "
-        "matching multiple anchors (CLAUDE.md). The genuine Habiro element, if it "
+        "matching multiple anchors (AGENTS.md). The genuine Habiro element, if it "
         "exists, is complex-analytic / root-of-unity. Falsification test; no fit, "
         "no production change."
     ))

@@ -1,5 +1,11 @@
 # Difference-knot binding — JSJ classification + the two blockers (2026-06-13)
 
+> **⛔ RETRACTED 2026-06-13** — the "HP volumes" below are SnapPy noise; the
+> difference link is **reducible / non-hyperbolic** (Regina
+> `isIrreducible=False`), not a JSJ union of hyperbolic pieces. The `2A−1`
+> cusp count is real, but there is no per-piece hyperbolic volume to sum. See
+> [`2026-06-13-difference-knot-nonhyperbolic-retraction.md`](2026-06-13-difference-knot-nonhyperbolic-retraction.md).
+
 **Probe:** [`probes/difference_knot_jsj_classification_probe.py`](../../computations/probes/difference_knot_jsj_classification_probe.py)
 (witness `difference-knot-jsj-classification.witness.json`)
 **Follows:** [`2026-06-13-difference-knot-binding-geometric-probe.md`](2026-06-13-difference-knot-binding-geometric-probe.md)

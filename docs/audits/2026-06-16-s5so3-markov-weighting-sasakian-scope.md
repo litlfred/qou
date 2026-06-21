@@ -7,6 +7,26 @@ handoff to differential geometry (not done in-session).
 **Discipline:** formalize-first + critical-distance — state the forced target, record what is verifiable, mark
 honestly where in-session methods bottom out. No fit, no fabricated construction.
 
+> **⚠ SUPERSEDED (arena only) — the SU(3)/SO(3) Wu-manifold Sasakian (Q1/Q2 below) was RULED OUT later the
+> same day.** Two corrections in [`docs/coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md)
+> (its ⚠-banner) post-date this scope:
+> - **#2398** — the **Wu-manifold SU(3)/SO(3) arena is ruled out**: the spatial $\mathrm{SO}(3)$ is the
+>   *isotropy* subgroup and has **no continuous centralizer in $\mathrm{SU}(3)$** (Schur), so no
+>   spacetime-fixing Reeb exists there ⇒ spacetime ⊥ colour (= corpus $S_5=S_2\times S_3$).
+> - **#2406** — there is **no finite colour-$\mathrm{SU}(3)$ Sasakian arena at all**: the production weight is
+>   the **full-Hecke / Wenzl principal specialization** $s_\lambda(1,q,q^2,\dots)$ (intrinsically
+>   $p(3A)$-dimensional, infinite-variable), **not** a finite $\mathbb{C}^N$. Relatedly, $W_\lambda$ below is
+>   the **q-Plancherel measure**, not the production trace weight (sibling `e269ca12ea`).
+>
+> **Corrected open object** (read this *over* Q1/Q2): does the **full-Hecke principal-specialization trace**
+> admit *any* geometric realization whose index reproduces the canonical Markov weights? A **finite-dimensional
+> Sasakian is excluded.** The natural infinite arena is the WRT TQFT of $S^3/2I$ (Lawrence–Zagier), per the
+> keystone ledger's q-side Habiro note. **What still STANDS in this doc:** the *forced-target* $W_\lambda$
+> table (the algebraic weights are correct) and the met Boothby–Wang *necessary* conditions (dim 5 odd,
+> $\chi=0$) — those are facts, but they no longer point at the Wu manifold as *the* arena. The Q1/Q2
+> sub-questions are retracted as posed; the geometric-existence problem now lives on the infinite-dimensional
+> object.
+
 ## Where the keystone stands
 
 Across this session's merged PRs the geometric leg of `conj:s5-so3-fiber-action` was reduced step by step:

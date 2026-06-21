@@ -154,7 +154,7 @@ Pure combinatorics, **no `sorry`** — `arm(0,0) = leg(0,0) = k − 1` for
 
 ### Conjectural layer (spectral)
 
-Per `CLAUDE.md §3b-cond`, the spectral claim is encoded as
+Per `AGENTS.md §3b-cond`, the spectral claim is encoded as
 
 ```lean
 axiom StaircaseEWSpectralContent (k : ℕ) : Prop

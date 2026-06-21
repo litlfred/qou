@@ -16,6 +16,7 @@ no tuning (discipline gate: report the raw discrepancy, never force a match).
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401
+from codata_constants import M_D_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import json
 import sys
 from pathlib import Path
@@ -36,7 +37,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 q0 = mp.mpf(Q_50_DIGIT_STR)
 VOL_B3 = 8 * mp.catalan                      # Vol(𝓑₃) = 8·G (Adams 1985), the uniform value
 VOL_6_2 = mp.mpf("4.40083298054544839393")   # Vol(6₂) hyperbolic volume (SnapPy census, §9.3 deuteron link)
-M_D_AME = mp.mpf("1875.61294257")            # deuteron mass (CODATA/AME), MeV
+M_D_AME = mp.mpf(M_D_MEV_VALIDATION)            # deuteron mass (CODATA/AME), MeV
 
 # canonical H₆ deuteron trace tr_M(β_D) from the chi-deuteron-h6 cache
 tr_M_D = None

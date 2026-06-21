@@ -8,7 +8,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 The full Lean statement and proof are pending; this stub exists so the
 `lean.ref` URI `qou:QOU.BraidsAndKnots.demazure_fiber_markov_trace` resolves to a real
 declaration in the `qou` Lake package. The body is `sorry` carrying
-the manuscript citation per CLAUDE.md §1.
+the manuscript citation per AGENTS.md §1.
 
 Note: the chapter-dir uses singular `QOU.BraidKnot` for most blocks;
 this plural `QOU.BraidsAndKnots` namespace was inherited from existing
@@ -67,7 +67,7 @@ element $w_0$, $D_{w_0}(\lambda) = s_\lambda(x_1, \ldots, x_n)$
 recovers the Schur polynomial; at intermediate $w$, the Demazure
 character $D_w(\lambda)$ is the character of a sub-crystal of
 $\mathrm{Cryst}(V_\lambda)$ — an "incomplete topological state" in
-the sense of CLAUDE.md §7b item 3. Define the Demazure-fiber
+the sense of AGENTS.md §7b item 3. Define the Demazure-fiber
 Markov-trace functional*
 
 $$

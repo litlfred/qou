@@ -71,7 +71,7 @@ target at both anchors).
 No free parameters. Every g candidate is a closed form in
 {h, q, [n]_q}; reading it at q_proton and q_muon and comparing to the
 empirical c_3 target is falsifiable, not a fit. The reduction argument
-is the deliverable; CLAUDE.md forbids a seventh fit ansatz, and this
+is the deliverable; AGENTS.md forbids a seventh fit ansatz, and this
 probe proposes none — it explains why the generating-function reframing
 cannot evade the saturated search.
 

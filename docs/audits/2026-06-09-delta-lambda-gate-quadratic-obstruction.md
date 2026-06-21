@@ -3,7 +3,7 @@
 **Status:** exploratory finding (no production wiring). Quantifies *why*
 the six tabulated constant/structural Δ_λ ansätze fail, and pins what
 Δ_λ must structurally be. This is a **refutation + characterization**,
-not a seventh fit ansatz (cf. CLAUDE.md "Δ_λ gate (Track A blocker)").
+not a seventh fit ansatz (cf. AGENTS.md "Δ_λ gate (Track A blocker)").
 
 > **⚠ Correction (2026-06-09, owner-confirmed).** The `tr_M` analysed below
 > is the **H₃-local `build_atom_nf` NF** (gen 0/1 forced into the 6-dim

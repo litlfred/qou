@@ -36,7 +36,7 @@ for ⁴He.  This script uses the Rust kernel from PR #1748 (chi-cache
 JSONs), so T/³He become instant and ⁴He becomes feasible (~10 min
 wall per q-evaluation on a 4-core box).
 
-q-usage discipline (per CLAUDE.md §7c, §q-usage / fixed q_0 leak):
+q-usage discipline (per AGENTS.md §7c, §q-usage / fixed q_0 leak):
 
   - q_0 ≈ 1.110:  real, > 1, archimedean place ⇒ |·| is the
     conjugation bar (TRIVIAL on real χ — Im(χ(q_0)) = 0)

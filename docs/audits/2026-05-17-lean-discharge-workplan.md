@@ -89,7 +89,7 @@ After Tier 1 + Tier 2 completion:
 After all tiers:
 - All actionable sorries discharged via §3b-cond axioms
 - Only 14 intentional sorries remain
-- All §3b-cond axioms carry bibliographic citations per CLAUDE.md §1
+- All §3b-cond axioms carry bibliographic citations per AGENTS.md §1
 
 ## ACTUAL SESSION OUTCOME (2026-05-17 final)
 

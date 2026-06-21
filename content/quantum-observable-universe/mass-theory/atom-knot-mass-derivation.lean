@@ -133,7 +133,7 @@ def CategoricalMassInvariantFinite (T_w : Type*) : Prop := Nonempty T_w
     in `computations/from_scratch/` (Markov axiom
     derivation reproducing Wenzl-Schur tr_M to bit-precision).
 
-    **Path to a stronger proof** (per CLAUDE.md §3b on substrate
+    **Path to a stronger proof** (per AGENTS.md §3b on substrate
     axioms):
 
       (1) `YekutieliFiniteSliceMultiplicativeTrace` ⇒ formal

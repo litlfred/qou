@@ -134,5 +134,5 @@ production-impact").
 - This PR's audit: 34 NON-ARCH-MISUSE sites
 - PR #1641: signed-vs-abs Φ_q sensitivity at q_proton
 - PR #1626: complex-c_3 fibre diagnostic
-- PR #1616: Im(q) fibre/observable framing in CLAUDE.md
+- PR #1616: Im(q) fibre/observable framing in AGENTS.md
 - `prop:li2q-phiq-bar-symmetrization`: the Φ_q vs Li_2^q discipline

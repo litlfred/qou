@@ -117,7 +117,10 @@ import QOU.QBeta.RationalCoeffRecurrence
 import QOU.QBeta.SilverAnchorGrounding
 import QOU.QBeta.ReebTowerJacobiAnger
 import QOU.QBeta.QBesselContiguityRecurrence
+import QOU.QBeta.QBesselBarCovariance
+import QOU.QBeta.QCasoratianAbel
 import QOU.QBeta.QLommelOrderRecurrence
+import QOU.QBeta.HoefsmitBBarParity
 -- Concrete H₃(q) Markov-trace functional (NF model: linearity, cyclicity,
 -- Hecke σ₀²=hσ₀+1, Markov reduction tr(x·σ₁)=z·tr(x)); cross-checked vs
 -- `gram.py` / `pyhecke.trace_formal`. Was an orphan under `Machinery/`.

@@ -175,7 +175,7 @@ fn run(args: Args) -> io::Result<()> {
         // MPFR path: q passed as decimal string; preserves the
         // canonical 50-dps q_0 precision through the FFI.
         let q_str = if spec.q_str.is_empty() {
-            // Per CLAUDE.md "only do arbitrary precision w/ >= 50 dps":
+            // Per AGENTS.md "only do arbitrary precision w/ >= 50 dps":
             // if MPFR mode (--dps > 0) is requested but no decimal
             // string was provided, refuse to silently downgrade to
             // f64 (which would cap precision at ~15-17 digits).
@@ -204,7 +204,7 @@ fn run(args: Args) -> io::Result<()> {
                 // Parse failures here would corrupt the χ^λ output
                 // (returning 0 silently misrepresents non-zero values
                 // as zero downstream). Fail explicitly per
-                // CLAUDE.md "fail explicitly rather than returning a
+                // AGENTS.md "fail explicitly rather than returning a
                 // default value like zero".
                 let chi = Float::parse(chi_str)
                     .map(|p| Float::with_val(prec, p))

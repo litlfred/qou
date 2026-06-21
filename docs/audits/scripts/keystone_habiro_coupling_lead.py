@@ -25,7 +25,7 @@ Lawrence-Zagier→Habiro→masses) — explicitly NOT done.  The coupling stays 
 WHAT IT *DOES* EASE (the honest payoff): the Q_β c_k ladder.  Near q=1 (the q0 regime)
 a Habiro element has a canonical Ohtsuki (perturbative) expansion; its coefficients are
 the Ohtsuki invariants.  The Q_β `c_k` ladder = m_e·Π(1+c_k u^k) is exactly such an
-expansion (1ppq-qbeta.md already invokes Ohtsuki; CLAUDE.md names "the Q_β Habiro
+expansion (1ppq-qbeta.md already invokes Ohtsuki; AGENTS.md names "the Q_β Habiro
 element" as the permanent c_k fix).  Reframing c_k as Ohtsuki invariants of a Habiro
 element dissolves the per-coefficient mystery + the 6-entry flip-flop framing: they are
 not free near-matches to settle one-by-one, but the canonical Ohtsuki series of one
@@ -60,7 +60,7 @@ print("WHAT IT EASES (honest payoff): the Q_β c_k ladder exposition")
 print("=" * 70)
 print("  Near q=1 (q0 regime) a Habiro element has a canonical OHTSUKI expansion; its")
 print("  coefficients ARE the Ohtsuki invariants.  Q_β c_k = m_e·Π(1+c_k u^k) is such an")
-print("  expansion (1ppq-qbeta.md invokes Ohtsuki; CLAUDE.md names the Q_β Habiro element")
+print("  expansion (1ppq-qbeta.md invokes Ohtsuki; AGENTS.md names the Q_β Habiro element")
 print("  as the permanent c_k fix).  => c_k are Ohtsuki invariants of ONE Habiro element,")
 print("  not free near-matches to settle one-by-one — dissolving the 6-entry flip-flop")
 print("  framing.  EXPOSITION simplification, no new physical claim.")

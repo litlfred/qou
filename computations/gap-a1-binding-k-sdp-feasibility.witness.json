@@ -351,7 +351,7 @@
         -0.00044175594626844224,
         -1.0095338824443956e-05
       ],
-      "interpretation": "SDP over K's Wedderburn blocks; t_λ = -|y_λ·χ^λ(K)| so the selected channel is the dominant block λ*(K). Dual fields (X_star, Z_star, primal_obj, dual_obj, duality_gap, eigenvalues) per CLAUDE.md LP/SDP-duals infra. This SDP picks the dominant block of K but does NOT supply M_λ(K), so it does not close the binding — see verdict."
+      "interpretation": "SDP over K's Wedderburn blocks; t_λ = -|y_λ·χ^λ(K)| so the selected channel is the dominant block λ*(K). Dual fields (X_star, Z_star, primal_obj, dual_obj, duality_gap, eigenvalues) per AGENTS.md LP/SDP-duals infra. This SDP picks the dominant block of K but does NOT supply M_λ(K), so it does not close the binding — see verdict."
     },
     "decisive_map_test": {
       "n_unknowns_delta_lambda": 11,

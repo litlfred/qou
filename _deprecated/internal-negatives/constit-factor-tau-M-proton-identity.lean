@@ -55,7 +55,7 @@ class MarkovTraceDisjoint (R : Type*) [Field R] where
 
     The constit-side per-Z step factor in the canonical-atom Markov
     trace equals tr_M(𝓑_p), the proton's H_3 Markov trace.  Stated
-    over a generic field `R` per CLAUDE.md §7c (the statement is
+    over a generic field `R` per AGENTS.md §7c (the statement is
     purely algebraic; no archimedean structure needed). -/
 -- Ref: [manuscript] prop:constit-factor-tau-M-proton-identity
 -- Ref: [wenzl1988] §1.7 disjoint Markov trace multiplicativity

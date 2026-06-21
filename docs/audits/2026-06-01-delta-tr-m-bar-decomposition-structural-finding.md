@@ -130,4 +130,4 @@ Includes the symbolic decomposition + numerical sanity check
 - `docs/audits/2026-05-30-qbeta-recursive-pair-rules-and-habiro-pde.md` — Habiro q-difference equation framing
 - `computations/_li_2_q_util.py` — prop:li2q-phiq-bar-symmetrization docstring
 - `docs/coordination/1ppq-qbeta.md` — flip-flop history
-- `todos/research-queue.json` — `research-qbeta-habiro-element-search`
+- `.beans/research-queue.json` — `research-qbeta-habiro-element-search`

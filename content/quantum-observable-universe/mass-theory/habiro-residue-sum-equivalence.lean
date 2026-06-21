@@ -66,7 +66,7 @@ open Polynomial
       `descended + Σ_ℓ Res_{q→ζ_ℓ}(Φ_q · tr_{M,ℓ})`.
 
     Concrete instances supply `archimedean_agreement` as a `sorry`-axiom
-    (CLAUDE.md §3b), backed by the empirical witness
+    (AGENTS.md §3b), backed by the empirical witness
     `markov-pipeline-cross-validation.witness.json` (relative
     difference ≤ `1e-9` to machine epsilon for every available atom).
 
@@ -139,7 +139,7 @@ noncomputable def proton_gb_mass : ℝ := 2.1225825095
     v4.24 rejects orphaned docstrings).
 
     The `archimedean_agreement` field is supplied as `sorry` per
-    CLAUDE.md §3b: a substrate axiom backed by the empirical
+    AGENTS.md §3b: a substrate axiom backed by the empirical
     cross-pipeline witness (proton rel_diff = 0.00e+00 to machine
     precision).  Concrete proof requires either:
     * full transcription of `protonHabiroTrace` and direct numerical

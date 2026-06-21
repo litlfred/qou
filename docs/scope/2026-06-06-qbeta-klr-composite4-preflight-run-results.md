@@ -41,7 +41,7 @@ So Composite 4 in either of its non-fit forms **cannot source c_2 = -1**, let al
 **Redirect (per cont. 9 menu, master infra scope §97-104):**
 
 - **Option C — Composite 1 (Demazure × q-Pochhammer), 5-7 sessions**. Demazure character `D_w(λ)` is genuinely useful beyond Q_β (mass-formula crystal-multiplicity work). Same preflight pattern should apply before committing to the build: derive the analogous A_2 = D_w(λ)·(q;q)_k product and check c_2 magnitude.
-- **Option D — Composite 3 (Type-B folded crystal), 12-17 sessions**. Aligns with CLAUDE.md §7b §"symmetric-crystal techniques" authoring guidance; highest theoretical value.
+- **Option D — Composite 3 (Type-B folded crystal), 12-17 sessions**. Aligns with AGENTS.md §7b §"symmetric-crystal techniques" authoring guidance; highest theoretical value.
 - **Option A — accept residue A as inherently CAL-3-anchored permanently**. Now reinforced by *three* corpus-side closures + a preflight refutation; the absolute c_3 closure is research-grade unknown.
 
 ## Cross-refs

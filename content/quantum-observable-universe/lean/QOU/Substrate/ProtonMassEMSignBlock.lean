@@ -19,7 +19,7 @@ is hypothesized to arise from EM coupling at the SIGN rep V_(1,1,1) of
 H_3 (the Wedderburn block carrying the proton's color-antisymmetric
 wave function), with Plancherel weight P_(1,1,1) = d²/|S_3| = 1/6.
 
-This file states the conjecture as a Lean class per CLAUDE.md §3b-cond
+This file states the conjecture as a Lean class per AGENTS.md §3b-cond
 (conditional-class exception), so that downstream theorems can carry it
 as an explicit hypothesis until the structural derivation lands.
 
@@ -92,7 +92,7 @@ theorem plancherel_sum_S4 :
   simp [plancherelH4, List.sum, List.map]
   norm_num
 
-/-- The conjectural conditional class. Per CLAUDE.md §3b-cond: this
+/-- The conjectural conditional class. Per AGENTS.md §3b-cond: this
     class axiomatizes the hypothesis that the proton-mass identity
     EM correction equals `(α_em/π) · P_(1,1,1)(H_3) = (α_em/π)/6`,
     arising from EM coupling at the sign-rep Wedderburn block of H_3.

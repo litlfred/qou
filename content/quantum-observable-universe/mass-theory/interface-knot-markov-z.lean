@@ -152,7 +152,7 @@ theorem interface_knot_markov_z
 
     In the concrete Hecke setting H_n(q), `h = q - q⁻¹` and the
     skein relation is the canonical defining identity of the
-    Iwahori-Hecke algebra (per CLAUDE.md §7a). -/
+    Iwahori-Hecke algebra (per AGENTS.md §7a). -/
 class MarkovHeckeSkeinAlgebra (R : Type*) [CommRing R]
     extends MarkovTraceAlgebra R where
   /-- The Hecke skein parameter h ∈ R. -/

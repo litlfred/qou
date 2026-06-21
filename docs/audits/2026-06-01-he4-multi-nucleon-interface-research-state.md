@@ -55,7 +55,7 @@ holes:
 `[2]_{q^(1/2)} = q^(1/2) + q^(-1/2)`. At q_proton ≈ 1.110, this is
 ≈ 2.0021. **Surprisingly close to 2.**
 
-But wait — that's a NUMERICAL near-match. Per CLAUDE.md "Don't propose
+But wait — that's a NUMERICAL near-match. Per AGENTS.md "Don't propose
 a seventh fit-based ansatz", a near-match to ρ_F = 2 without structural
 justification is the trap.
 
@@ -114,7 +114,7 @@ explicit.
    restriction to the dominant block is canonical.
 2. **Compare** the predicted ρ_F (= some categorical invariant of
    this restriction) at q_proton AND q_muon. Cross-anchor test
-   per fibre/observable distinction (CLAUDE.md §Canonical chain
+   per fibre/observable distinction (AGENTS.md §Canonical chain
    2026-06-01 framing).
 3. **If matches at both anchors AND has structural justification**:
    wire as conditional theorem extending magic-A-binding-formula
@@ -161,5 +161,5 @@ DO:
 - `prop:diagrammatic-double-magic-lr-fusion` (LR-fusion at doubly-magic)
 - PR #1386 (RETRACTED q-factorial ratio attempt)
 - PR #1289 (⁴He Wedderburn dominance: (4,4,4) PSD, [9,3]/[8,4]/[10,2]/[11,1]/[7,5] trace)
-- `todos/research-queue.json` — `research-multi-nucleon-interface-operator`
-- CLAUDE.md §Canonical chain Im(q) fibre vs observable (2026-06-01)
+- `.beans/research-queue.json` — `research-multi-nucleon-interface-operator`
+- AGENTS.md §Canonical chain Im(q) fibre vs observable (2026-06-01)

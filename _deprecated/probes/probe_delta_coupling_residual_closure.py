@@ -46,7 +46,7 @@ integer) coefficient at the doubly-magic anchor:
         for scale ∈ {m_e, E_0·h, E_0·h², E_0/q_0, E_0/q_0²}.
         Reports c for each.
 
-This is a DIAGNOSTIC PROBE, NOT a fit.  Per CLAUDE.md three-cal
+This is a DIAGNOSTIC PROBE, NOT a fit.  Per AGENTS.md three-cal
 discipline, calibrating Δ_coupling to AME is forbidden — this script
 identifies whether any of the H6/H7/H8 candidates produce a clean
 (small-rational or quantum-integer) coefficient that would justify a
@@ -317,7 +317,7 @@ def main() -> None:
     builder.add_caveat(
         "DIAGNOSTIC PROBE ONLY — does not fit Δ_coupling to AME. "
         "A numerical near-fit is NOT acceptable as a Pattern-A/B Lean "
-        "§3b-cond instance per CLAUDE.md §3b-cond + the trivial-skeleton "
+        "§3b-cond instance per AGENTS.md §3b-cond + the trivial-skeleton "
         "workplan. Any closure candidate must be derived from substrate "
         "primitives (KLR / Markov-trace / quantum-integer structure) "
         "before promotion."

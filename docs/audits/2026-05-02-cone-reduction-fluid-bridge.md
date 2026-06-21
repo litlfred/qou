@@ -30,7 +30,7 @@ prop:per-braid-mass-tower
 The leak is at step 4 → 5: `rem:body-asymptotics-catalog`
 (a *catalog* of analytic bounds in surreal big-O form) listed
 `prop:ns-obstruction-computation` as a `uses[]` entry. Per
-CLAUDE.md §3a, a catalog remark **may freely list interpretive
+AGENTS.md §3a, a catalog remark **may freely list interpretive
 references**, but the §3b propagation audit treats every
 `uses[]` edge as a structural dependency — making this catalog
 entry a load-bearing path.

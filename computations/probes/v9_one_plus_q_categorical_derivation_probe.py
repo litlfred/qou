@@ -73,7 +73,7 @@ For ANY candidate to be a categorically-derived (1+q)/2:
 - docs/canonical-derivation-cheat-sheet.md §5 (Bring color-tube averaging,
   pn-convention finding)
 - docs/audits/2026-05-27-pion-half-figure-eight.md (half-Reeb-rotation)
-- CLAUDE.md §7a (Hecke-Skein convention: σ_i eigenvalues q, -q⁻¹)
+- AGENTS.md §7a (Hecke-Skein convention: σ_i eigenvalues q, -q⁻¹)
 """
 from __future__ import annotations
 

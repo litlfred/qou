@@ -8,7 +8,7 @@ a QOU-canonical realisation of one symmetry; the **joint**
 statement is that they compose to give CPT preservation of the
 Markov trace.
 
-Axiomatised as a Lean class per CLAUDE.md §3b-cond.  Downstream
+Axiomatised as a Lean class per AGENTS.md §3b-cond.  Downstream
 blocks that need CPT-closure as a hypothesis take this class as
 `[CPTD6D7D8Closure]`.
 -/

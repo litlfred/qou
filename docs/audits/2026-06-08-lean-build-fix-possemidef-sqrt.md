@@ -11,7 +11,7 @@ upstream **Mathlib API drift**, not repo content:
 - `content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Realification.lean`
   (third file with the **same** Laurent-map drift; not listed in the
   original report but in the QOU build cone via `QOU/HeckeAlgebra.lean`,
-  so it is red too — fixed inline here per CLAUDE.md "ride related
+  so it is red too — fixed inline here per AGENTS.md "ride related
   fixes on the active PR")
 
 ## Two distinct Mathlib drifts

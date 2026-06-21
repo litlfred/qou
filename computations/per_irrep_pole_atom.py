@@ -427,7 +427,7 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
             "aggregated per generator index.  Provides structural "
             "baseline for GAP-C-1 (q-integer counting per generator) "
             "in derivation-audit-report.md.  KLR-canonical-class "
-            "enrichment per CLAUDE.md §7b (and PR #608 KLR cemetery "
+            "enrichment per AGENTS.md §7b (and PR #608 KLR cemetery "
             "infra): each per-generator sub-word σ_g^k (pure power) "
             "is a cemetery class trivially; the full atom's "
             "canonical class is the per-partition χ-fingerprint at "

@@ -107,7 +107,7 @@ The expected route — to be formalised once each gap is closed:
 
 ### Lean axiomatisation
 
-Per CLAUDE.md §3b, the conjecture is encoded in Lean as a typeclass
+Per AGENTS.md §3b, the conjecture is encoded in Lean as a typeclass
 `DecayConjecture K`, with `C : ℝ`, `c : ℝ`, threshold `n₀ : ℕ`, and
 
 $$

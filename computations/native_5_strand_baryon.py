@@ -8,7 +8,7 @@ a MARKOV-DESTABILIZED SHADOW of a canonical NATIVE-5-STRAND object, so the
 keystone coefficient h^4 = -3/4 lives natively at n=5, there is NO vertical
 map to construct, and the keystone DISSOLVES.
 
-DISCIPLINE (CLAUDE.md production-vs-exploratory — THIS IS THE FIT EPICENTER):
+DISCIPLINE (AGENTS.md production-vs-exploratory — THIS IS THE FIT EPICENTER):
 the 5-strand carrier MUST be FORCED by symmetry already in the corpus
 (Brunnian / A5 / S5). Choosing a 5-braid or lambda|-5 to make h^4=-3/4 appear
 is THE fit. h^4 = -3/4 is a FALSIFICATION REFERENCE, never a target. We

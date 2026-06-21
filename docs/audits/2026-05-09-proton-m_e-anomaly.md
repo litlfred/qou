@@ -185,7 +185,7 @@ in progress.
 - **Risk:** lowest of the four.
 
 ### Option E — Defer; treat 544k ppb as known-floor
-Document the placeholder behavior in CLAUDE.md and the precision dashboard,
+Document the placeholder behavior in AGENTS.md and the precision dashboard,
 then focus 1ppb work on chains that don't depend on the placeholder
 (e.g. T1 / T3 / T2 in the action queue, which improve binding-energy
 predictions for A ≥ 2 nuclei without touching `M_HECKE_PIPELINE_AT_Q0`).

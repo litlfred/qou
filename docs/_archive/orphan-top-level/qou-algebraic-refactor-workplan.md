@@ -17,7 +17,7 @@ LR-fusion rigidity.
 | Ch 8 — Algebraic Substrate | `algebraic-substrate` | Ch 7 |
 | Ch 10 — Nuclear binding and magic numbers | `observations` | Ch 12 |
 
-## Block kinds (CLAUDE.md §3b conjectural propagation)
+## Block kinds (AGENTS.md §3b conjectural propagation)
 
 The directive labels each item "Proposition", but the framework-level
 claims (full-twist global neutrality, spectral-sequence collapse on the
@@ -62,7 +62,7 @@ In `observations`, kind `example`, sibling section to `magic-numbers-from-q`:
   homological prediction; the higher magic numbers $\{50, 82, 126\}$
   are not waiting on hardware.
 
-### Lean (axiom-class pattern, CLAUDE.md §3b)
+### Lean (axiom-class pattern, AGENTS.md §3b)
 
 Each `conj:` block carries a Lean file under
 `content/quantum-observable-universe/lean/QOU/` declaring the
@@ -70,7 +70,7 @@ conjecture as a typeclass with named structural fields. Downstream
 results (e.g. magic-number ladder) become conditional theorems
 parameterised on the relevant typeclass instance.
 
-Per CLAUDE.md "Namespace = chapter module", each new module is
+Per AGENTS.md "Namespace = chapter module", each new module is
 nested under the existing chapter namespace it logically extends:
 
 | Lean ref | Module path | Chapter namespace |
@@ -104,7 +104,7 @@ only when:
 1. Zod + constraint validation pass for the new triples.
 2. `lean.ref` URIs resolve to the new `QOU.*` modules.
 3. `interprets` cross-refs for the two `remark` blocks resolve.
-4. `uses[]` are minimal (CLAUDE.md §"Dependency graph integration").
+4. `uses[]` are minimal (AGENTS.md §"Dependency graph integration").
 
 ## Phase 2 — landed in this same PR
 

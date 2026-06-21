@@ -22,7 +22,7 @@ export default remark({
   authorNotes: [
     {
       kind: "status",
-      body: "**Closed at the rational-identity level** (5 theorems sorry-free):\nfactored $\\leftrightarrow$ polynomial, Laurent decomposition, numerical checks\nat q=1, q=2.\n\n**Matrix-product trace identity STATED** with explicit matrices\nand word; proof marked sorry with `-- Ref:` to the sympy\nverification per CLAUDE.md §1.\n\nThis honestly captures both what's formally proved and what's\nempirically backed.",
+      body: "**Closed at the rational-identity level** (5 theorems sorry-free):\nfactored $\\leftrightarrow$ polynomial, Laurent decomposition, numerical checks\nat q=1, q=2.\n\n**Matrix-product trace identity STATED** with explicit matrices\nand word; proof marked sorry with `-- Ref:` to the sympy\nverification per AGENTS.md §1.\n\nThis honestly captures both what's formally proved and what's\nempirically backed.",
     },
   ],
 });

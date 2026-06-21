@@ -39,7 +39,7 @@ Refreshing the diagnostics requires:
 1. A working Lean LSP server with an indexed QOU project →
 2. A built QOU project (`.lake/build/lib/`) →
 3. Built Mathlib oleans →
-4. `lake exe cache get` succeeding (currently **403** on every download — see [`infra-lean-cache-host-bypass`](../../todos/lean-discharge-queue.json))
+4. `lake exe cache get` succeeding (currently **403** on every download — see [`infra-lean-cache-host-bypass`](../../.beans/lean-discharge-queue.json))
 5. Per-file invocation of `mcp__lean-lsp__lean_diagnostic_messages`
 6. Feed results to `bun run content/pipeline/lean-compile-audit.ts --ingest <diagnostics.jsonl>`
 7. Sweep the affected sidecars (auto-clears once `lean-compile-diagnostics.json` updates)
@@ -83,4 +83,4 @@ The grep-derived counts don't trace through the stale sidecar pipeline, so they'
 - [`docs/audits/2026-06-03-proof-objects-json-extractor-broken.md`](2026-06-03-proof-objects-json-extractor-broken.md) — companion: `proof-objects.json` extractor stale 45 days for a different reason
 - [`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](2026-06-03-lean-3b-cond-class-sorries-catalog.md) — companion: 202 §3b-cond classes catalog (this PR)
 - [PR #1774](https://github.com/litlfred/qou/pull/1774) — the idle-trigger discipline that would target exactly this kind of stale source-of-truth
-- [`todos/lean-discharge-queue.json`](../../todos/lean-discharge-queue.json) — work queue
+- [`.beans/lean-discharge-queue.json`](../../.beans/lean-discharge-queue.json) — work queue

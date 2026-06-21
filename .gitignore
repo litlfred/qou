@@ -33,7 +33,7 @@ qou.fmt.sha
 !figures/*.pdf
 # Whitelist intake uploads (raw PDFs, scans, WHO guidelines etc.
 # committed via scripts/upload-bib-papers.sh and similar intake
-# pipelines per CLAUDE.md §"uploads/").
+# pipelines per AGENTS.md §"uploads/").
 !uploads/*.pdf
 !uploads/*.txt
 !uploads/*.json
@@ -81,11 +81,17 @@ todos/*
 # EXCEPTION: per-goal coordination queues are committed so multiple agents
 # can see the same queue. Pattern: todos/<goal>-queue.json
 !todos/*-queue.json
-# …but the agent-drain queue is a pure runtime artifact (regenerated on
-# every run; changes every time) — re-ignore it despite the exception.
+# The agent-drain queue moved to .beans/qa-agent-drain-queue.json — a
+# tracked bulk-JSON coordination queue (beans ≠ sidecars). The legacy
+# todos/ path is re-ignored for any old-invocation stragglers.
 todos/qa-agent-drain-queue.json
 # Stray queue artifact when a pipeline script is run with cwd=content/
 content/todos/
+
+# Bean work-plan (.beans/ is tracked). Watcher *-queue.json are tracked
+# bulk-JSON coordination queues; watcher *-ledger.md are local runtime
+# event logs — keep them gitignored (matching the prior todos/ semantics).
+.beans/*-ledger.md
 
 # Local agent state (per-machine, not shared)
 .claude/local-state/

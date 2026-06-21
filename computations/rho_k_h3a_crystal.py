@@ -19,7 +19,7 @@ Definition of c_lambda(q)
 =========================
 
 The Kashiwara symmetric-crystal carries a NATURAL q-deformed weight on
-each connected component B(lambda). Per CLAUDE.md sec.7b shortcut #3
+each connected component B(lambda). Per AGENTS.md sec.7b shortcut #3
 ("Demazure-fiber Markov-trace functional"), the canonical structural
 weight on B(lambda) at the longest Weyl element w_0 is the principal
 q-specialisation of the Schur polynomial:
@@ -597,7 +597,7 @@ def main() -> int:
             "dim V_lambda for sl_n = |B(lambda, n)| from "
             "crystal_basis.crystal_B (Weyl dimension formula). "
             "We report BOTH the q-deformed (q_0) and the q -> 1 "
-            "variants, since CLAUDE.md sec.7b shortcut #3 leaves the "
+            "variants, since AGENTS.md sec.7b shortcut #3 leaves the "
             "choice open for the symmetric-crystal case (the Type-B "
             "fold-orbit closure work uses crystal *cardinality* at q=1, "
             "while the Demazure-fiber Markov-trace functional uses the "

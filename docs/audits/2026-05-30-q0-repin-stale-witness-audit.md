@@ -93,7 +93,7 @@ witness so future drift is attributable.
 `--force` runs the *dependency cascade* (one producer pulled in 13
 downstream witnesses before timing out at 2m30s; that partial run was
 reverted). At ~2.5 min × 392 that is a **~15-hour** job — a dedicated
-batch/CI run with progress logging (per CLAUDE.md "Long-compute logging
+batch/CI run with progress logging (per AGENTS.md "Long-compute logging
 discipline"), **not** an interactive session task. Recommended shape:
 a `q0-repin-regen.yml` workflow (or an overnight `nohup` batch) that
 walks `witness_constant_staleness.py --list`, regenerates in dependency

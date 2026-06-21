@@ -7,7 +7,7 @@ disk after each partition, so the script can resume if killed and so
 peak memory stays bounded by per-λ working set (rather than the
 22 K-entry χ_λ pre-cache + simultaneous M matrices for all λ at once).
 
-Per CLAUDE.md "Long-compute logging discipline" — emits a progress
+Per AGENTS.md "Long-compute logging discipline" — emits a progress
 line for every λ + every major step, with wall elapsed and ETA.
 
 ## Usage
@@ -476,7 +476,7 @@ def main() -> int:
         d_lam = r.get("d_lam", "?")
         max_rel = r.get("max_relative_residual")
         max_rel_str = f"{max_rel:.2e}" if max_rel is not None else "—"
-        # units/sec rate per CLAUDE.md long-compute logging discipline
+        # units/sec rate per AGENTS.md long-compute logging discipline
         # (PR #944 r3292555475).
         print(f"  λ={lam_key:<22} d={d_lam:>4}  status={status_str:<14} "
               f"rel_res={max_rel_str:<9}  "

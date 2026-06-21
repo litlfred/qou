@@ -23,7 +23,7 @@ The 1 ppb plan's Phase 4 has two named tasks:
   provable).
 
 Both are **conditional-class instances** in the §3b-cond sense (see
-CLAUDE.md §3b-cond). The remaining `sorry`s record the conjectural
+AGENTS.md §3b-cond). The remaining `sorry`s record the conjectural
 backing; closing them would either prove the conjecture or replace
 it with an explicit Mathlib dependency.
 
@@ -158,7 +158,7 @@ the Lean agent should be aware of:
    $y_\lambda$ (Markov). They coincide only at $q = 1$ on
    self-conjugate partitions. Any Lean lemma stating "Plancherel
    weight = Markov weight" must qualify with these conditions
-   (see CLAUDE.md §7aa, `notation-collisions.md`).
+   (see AGENTS.md §7aa, `notation-collisions.md`).
 
 2. **T1 canonicalisation is settled** — the Hoefsmit seminormal +
    Jones–Markov $y_\lambda$ via Wenzl bridge is the canonical T1.
@@ -203,7 +203,7 @@ Phase 4.
 
 ## 5  Build / verification checklist for the Lean agent
 
-Per CLAUDE.md §0a, the workspace is the **root Lake workspace**:
+Per AGENTS.md §0a, the workspace is the **root Lake workspace**:
 
 ```bash
 # from repo root

@@ -12,4 +12,4 @@ arithmetic to the archimedean side: the substrate-level outputs
 ($Q$-values, mass ratios, hyperbolic volumes) are evaluated at the
 substrate parameter $q_0$ and compared against experimental data
 with the 100× per-observable accuracy bound from
-CLAUDE.md §Precision goals.
+AGENTS.md §Precision goals.

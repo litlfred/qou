@@ -11,7 +11,7 @@ The conjecture asserts: when both `Z` and `N` are saturated (lie in
 `V_{λ_Z} ⊗ V_{μ_N}` collapses to a single self-conjugate Specht
 module `V_{ν_{ZN}}` at level `A = Z + N`, with multiplicity one.
 
-We axiomatise the conjecture as a `class` per CLAUDE.md §3b.
+We axiomatise the conjecture as a `class` per AGENTS.md §3b.
 Downstream double-magic binding-energy predictions become
 conditional on `[DoubleMagicConjecture Z N]` instances.
 

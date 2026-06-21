@@ -54,14 +54,54 @@ reachable in ~5 min. Building it is recorded as an optional follow-up for an
 ## Honest scope — what is and isn't reachable
 
 - **A=4** — done, exact, 50 dps (#2449 + streaming here).
-- **A=5** — reachable: float64 ~5 min (coarse), or exact 50 dps in ~66 min with
-  the Rust wheel / ~8 h pure mpmath. A concrete A=5 cross-check (combiner vs the
-  fine-Bratteli transfer) is the natural next step.
+- **A=5** — **done** (#2459, 2026-06-18); see the RESULT section below. *Cost
+  correction:* the "float64 ~5 min" is the ρ_ξ **diagonal** builds only; the naive
+  combiner (rebuilding the mpmath `interface_blocks` per λ⊢15) ran **> 2.75 h** — an
+  exact regrouping cuts it to **11 s**, so the whole A=5 cross-check is ≈ 2 min,
+  float64. (Exact 50 dps still ~66 min Rust / ~8 h pure mpmath, unbuilt.)
 - **A=6** — **out of reach for the independent cross-check by any rep-based
   backend** (float64 10.7 d, Rust 150 d). The only A=6 path is a genuinely
   rep-free weighted-trace method (none known — MN does not apply) or the
   fine-Bratteli transfer itself, which is the *production* path and so not an
   *independent* check.
+
+## A=5 cross-check — RESULT (2026-06-18, #2459)
+
+The operator-valued combiner **reproduces the production fine-Bratteli transfer at
+A=5 (⁵He)** — `tr_M = Σ_λ y_λ χ^λ` over all 176 λ⊢15, with the contraction-only
+`diag(ρ_ξ)` (ξ⊢12, `d_ξ ≤ 7700`):
+
+| check | result | tol | status |
+|---|---|---|---|
+| A4-a: float64 regrouped combiner vs exact `chi_young` (λ⊢12) | `1.42e-14` | `1e-6` | ✓ |
+| A4-b: float64 regrouped combiner vs original mpmath combiner (λ⊢12) | `1.78e-15` | `1e-6` | ✓ |
+| A5: per-λ max\|χ_comb − χ_transfer\| (all 176 λ⊢15) | `1.89e-12` (rel `9.86e-15`) | rel `1e-8` | ✓ |
+| A5: `tr_M` combiner vs transfer | rel `1.29e-15` | `1e-5` | ✓ |
+
+`tr_M_combiner = tr_M_transfer = 0.01483482681` (`|Δtr_M| = 1.91e-17`). Float64,
+but the agreement sits at the double-precision floor — the long word product does
+not lose the feared ~1e-8. Witness:
+[`aoperator_a5_crosscheck.witness.json`](../../computations/probes/aoperator_a5_crosscheck.witness.json)
+(`allPassed=true`).
+
+### The combiner cost — corrected (the regrouping)
+
+The cost table above bounds the ρ_ξ **diagonal** builds (`Σ_ξ d_ξ²·|W| = n!·|W|`,
+104 s float64 at A=5). It does **not** bound the **combiner contraction**: the
+naive form rebuilds the production `interface_blocks` (mpmath `A^λ_{ξν}`, an
+`O(d_ξ)` mpmath loop) **once per λ — all 176 λ⊢15** — and ran **> 2.75 h** without
+finishing. The fix is an exact regrouping of the partial trace (identical
+arithmetic, `A` never materialised):
+
+    χ^λ = Σ_{(ξ,ν)} Σ_a dg[a]·( Σ_w bridge(cfirst[w] − c_a[a])·G[w] + d_coef·ΣG ),
+    G[w] = Σ_{b,b'} rb[b',b] Σ_kk Cinv[j1,w]·C[w,j2]   (a-independent).
+
+`G[w]` comes from the tiny `nW×nW` block-to-standard alignment; the only `O(d_ξ)`
+work is then a float64 sum with `bridge(δ)` cached by integer δ. Combiner over all
+176 λ⊢15: **11 s** (≈ 900× the naive mpmath form). So A=5 is float64-reachable in
+≈ 2 min total, not the diagonals-only "~5 min" the table implied. The same
+regrouping does **not** rescue A=6 (the `Σ_ξ d_ξ²` diagonal wall is untouched —
+the cost table stands for A≥6).
 
 ## Honest framing
 Per `χ_eff(k)=p(3k)` and #2441's dense-SDP closure, the route this feeds is
@@ -73,4 +113,5 @@ rewired.
 ## Cross-links
 - [`rho_xi_diagonal.py`](../../computations/a_operator/rho_xi_diagonal.py) — `combiner_value_streaming` (+ #2449's diagonal-only builders).
 - [`aoperator_a6_cost_and_contraction.py`](../../computations/probes/aoperator_a6_cost_and_contraction.py) — the cost table + A=4 streaming verification.
+- [`aoperator_a5_crosscheck.py`](../../computations/probes/aoperator_a5_crosscheck.py) (#2459) — the A=5 ⁵He cross-check + the regrouped float64 combiner (`combiner_chi_fast`); witness `aoperator_a5_crosscheck.witness.json`.
 - [`2026-06-17-rho-xi-diagonal-aoperator-optimization.md`](../workplans/2026-06-17-rho-xi-diagonal-aoperator-optimization.md) (#2449) — the diagonal-only memory enabler this builds on.

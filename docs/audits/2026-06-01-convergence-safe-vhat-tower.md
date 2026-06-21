@@ -98,7 +98,7 @@ the path-integrated value matches the direct series to **1e-30** at
 (c) — reduces to the working tower in the domain of overlap — holds
 exactly.
 
-### Im(q) framing (per CLAUDE.md "Im(q) at fibre vs observable level")
+### Im(q) framing (per AGENTS.md "Im(q) at fibre vs observable level")
 
 The continuation produces a **complex** value with `Im = 0.6568`. This is
 consistent with the fibre/observable distinction: the per-generator

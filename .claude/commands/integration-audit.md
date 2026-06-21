@@ -40,7 +40,7 @@ of valid IDs.
    to repopulate sidecars with fresh entries (unless `--no-sweep`
    or `--dry-run`).
 4. Surfaces the delta (e.g. `voice-emoji-content: 8 → 11 fails`).
-5. Appends a ledger entry to `todos/integration-audit-ledger.md`.
+5. Appends a ledger entry to `.beans/integration-audit-ledger.md`.
 
 ## When to invoke
 
@@ -52,7 +52,7 @@ of valid IDs.
 
 ## No-argument behaviour
 
-Per CLAUDE.md user-accessibility (multi-select default):
+Per AGENTS.md user-accessibility (multi-select default):
 `AskUserQuestion` 🟡 with chips for each axis + `all`. Multi-select
 so the user can pick e.g. `proof, canonical` in one go.
 

@@ -63,7 +63,7 @@ This block closes the operator-valued form **categorically modulo**
   $\alpha_{\mathrm{shift}}(T_{(p, k)}) = k \cdot (p - 1)$ — recovered
   in $\sim$10 lines of combinatorics (no Hoefsmit matrix entries).
 
-## Conditional-class hypothesis (CLAUDE.md §3b-cond)
+## Conditional-class hypothesis (AGENTS.md §3b-cond)
 
 The Lean file at
 [`crystal-r-matrix-sub-lemma.lean`](crystal-r-matrix-sub-lemma.lean)

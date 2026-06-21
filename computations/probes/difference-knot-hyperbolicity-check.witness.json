@@ -1,0 +1,61 @@
+{
+  "engine": "snappea",
+  "engineVersion": "snappy 3.3.2",
+  "computedAt": "2026-06-13T06:19:03.143442+00:00",
+  "commitSha": "d3b3b0bde335060900376e3b65f29a768ceb6aa0",
+  "assertions": [
+    {
+      "name": "difference_links_reducible_nonhyperbolic",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Regina isIrreducible=False (essential spheres ⇒ split ⇒ non-hyperbolic) and/or unstable/negative SnapPy volume — the difference-knot 'volume' of PR #2235/#2242 is an artifact"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 878,
+  "computation": "difference-knot-hyperbolicity-check",
+  "scriptFile": "difference_knot_hyperbolicity_check.py",
+  "scriptHash": "9950eb43b91b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "RETRACTION of PR #2235/#2242: the binding difference link D = W_atom·W_free⁻¹ is reducible (Regina isIrreducible=False) and non-hyperbolic — SnapPy's volume is unstable (cv 29-132%) and frequently negative, i.e. noise on a non-geometric triangulation. The 'nonzero A-growing volumes' previously reported are artifacts. Converges with binding_volume_difference_probe.py (derived braid closures non-hyperbolic). prop:binding-error-amplification stands; only the difference-knot-volume realisation is refuted.",
+  "contentBlock": "conj:canonical-knot-id-sdp",
+  "data": {
+    "D_vol_cv": "1.35421",
+    "D_vol_min": "-1.79815",
+    "D_n_negative_of_25": 8,
+    "D_regina_irreducible": false,
+    "D_regina_haken": false,
+    "T_vol_cv": "0.960743",
+    "T_vol_min": "-5.8665",
+    "T_n_negative_of_25": 4,
+    "T_regina_irreducible": false,
+    "T_regina_haken": false,
+    "3He_vol_cv": "0.544923",
+    "3He_vol_min": "-3.10326",
+    "3He_n_negative_of_25": 2,
+    "3He_regina_irreducible": false,
+    "3He_regina_haken": false,
+    "4He_vol_cv": "0.247759",
+    "4He_vol_min": "8.72063",
+    "4He_n_negative_of_25": 0,
+    "4He_regina_irreducible": false,
+    "4He_regina_haken": false,
+    "retraction": "PR #2235/#2242 reported hyperbolic volumes for the difference link; they are SnapPy noise on non-geometric triangulations. The links are reducible (split) and non-hyperbolic. The geometric binding route must use the hand-assigned hyperbolic census knots (conj:canonical-knot-id-sdp), not a volume of the raw difference braid. prop:binding-error-amplification is unaffected."
+  }
+}

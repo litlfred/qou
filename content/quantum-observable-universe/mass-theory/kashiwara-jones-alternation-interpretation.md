@@ -56,7 +56,7 @@ The mechanism:
   **2-component link** ($(k+1)$ is even, so the closure has even crossing
   number and is topologically link-like). The Jones polynomial of this
   link emerges as the τ_M trace. At $q = 1$ (the KL classical-limit
-  decategorification per CLAUDE.md §7b), the Jones value is an integer,
+  decategorification per AGENTS.md §7b), the Jones value is an integer,
   contributing the inter-block coefficient.
 
 ## The "GeomK with jet-order twist" interpretation

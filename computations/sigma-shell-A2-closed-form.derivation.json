@@ -7,7 +7,7 @@
   "steps": [
     {
       "name": "Hecke energy h = q − q^{-1}",
-      "operation": "Hecke energy axiom: each braid generator σ_i carries the relation σ_i² = (q − q^{-1}) σ_i + 1; the prefactor h := q − q^{-1} is the per-crossing energy scale (CLAUDE.md §7a).",
+      "operation": "Hecke energy axiom: each braid generator σ_i carries the relation σ_i² = (q − q^{-1}) σ_i + 1; the prefactor h := q − q^{-1} is the per-crossing energy scale (AGENTS.md §7a).",
       "inputs": [
         "Hecke.Energy"
       ],

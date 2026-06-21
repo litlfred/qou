@@ -30,7 +30,7 @@ export default proposition({
       kind: "note",
       date: "2026-06-06",
       body: [
-        "Authoring archaeology (moved out of prose per CLAUDE.md §4d, \"Author notes vs. scholarly prose\").",
+        "Authoring archaeology (moved out of prose per AGENTS.md §4d, \"Author notes vs. scholarly prose\").",
         "",
         "**Typeclass pattern.** The Lean typeclass mirrors the decay-side `BarEvenKernel` pattern introduced in PR #1893; the sympy companion `mass_theory_formalize_first_invariants_probe.py` (PR #1896, Track 3) runs the 4×3 verdict matrix on Family A / via-Jones / Bring color-tube candidates.",
         "",

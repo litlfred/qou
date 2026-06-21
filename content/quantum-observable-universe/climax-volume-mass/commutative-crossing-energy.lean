@@ -37,7 +37,7 @@ verification would require formalising:
   2. The Markov trace expansion in canonical-form irreducibles;
   3. The symbolic pole-order extraction at $u=0$.
 
-That machinery is substantial future work; per CLAUDE.md §1 the
+That machinery is substantial future work; per AGENTS.md §1 the
 axioms here carry `-- Ref:` pinning to the substrate-derived
 witnesses that established the closure empirically + symbolically.
 

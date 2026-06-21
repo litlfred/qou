@@ -83,11 +83,14 @@ free nucleons and composites in one run.*
 
 ### Witness contract
 
-*Canonical witness:
+*Provisional witness:
 [`canonical-mass-table-242ppb.witness.json`](../../../computations/canonical-mass-table-242ppb.witness.json).
-Records per-isotope predicted $B(K)$, AME experimental anchor,
-the $\Delta_\lambda$ choice used, and a clear flag when
-$\Delta_\lambda$ is the open gate.*
+Records per-isotope predicted $B(K)$, the AME experimental anchor,
+and an explicit `"open_gate": "delta_lambda"` flag marking
+$\Delta_\lambda$ as the open Track-A gate. It is a hand-authored
+summary (`auditOnly`, no producer run): the $B(K)$ values are not a
+derived $\Delta_\lambda$ result and await a producer-backed
+regeneration once the $\Delta_\lambda$ closure lands.*
 
 ### Notes
 

@@ -28,7 +28,7 @@ $$
 
 All five identities are proved in
 [`three-halves-structural-factor.lean`](three-halves-structural-factor.lean)
-over generic `[Field R]` per CLAUDE.md §7c, using
+over generic `[Field R]` per AGENTS.md §7c, using
 `field_simp; ring`. Generic-ring proofs apply at the substrate
 $q_0 \approx 1.110$ by specialisation; numerical cross-checks at
 50-dps mpmath verify each identity to $\leq 10^{-40}$ in the

@@ -3,7 +3,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 
 # λ_scale absorbed into VolDensity — formal documentation (2026-06-04)
 
-> **⚠ Critical framing reminder.** Per CLAUDE.md §"Mass-and-Binding-
+> **⚠ Critical framing reminder.** Per AGENTS.md §"Mass-and-Binding-
 > Algorithms appendix sync" + [`docs/lambda-scale-absorbed-into-vol-density.md`](../../../../../docs/lambda-scale-absorbed-into-vol-density.md):
 > the numerical factor previously called `λ_scale` was **absorbed**
 > into the canonical per-knot `VolDensity(K)` evaluation on 2026-05-23
@@ -37,7 +37,7 @@ introduce a numerical constant.
 ## Cross-refs
 
 - Canonical doc: [`docs/lambda-scale-absorbed-into-vol-density.md`](../../../../../docs/lambda-scale-absorbed-into-vol-density.md)
-- CLAUDE.md §"⚠ Critical framing — do NOT treat `λ_scale` as a separate object"
+- AGENTS.md §"⚠ Critical framing — do NOT treat `λ_scale` as a separate object"
 -/
 
 namespace QOU.Machinery

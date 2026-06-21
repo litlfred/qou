@@ -11,7 +11,7 @@ against the CODATA target (m_n - m_p)/M_N at q_proton. Best non-
 tautological candidate sat at ~10³ ppb residual; only the PSLQ-fit
 (by construction) hit 0 ppb.
 
-PER CLAUDE.md "Im(q) fibre vs observable" framing (added this session):
+PER AGENTS.md "Im(q) fibre vs observable" framing (added this session):
 each q_0 anchor is a different archimedean evaluation of the SAME
 fibre object. A refinement that closes the gap at q_proton ALONE is
 an anchor-coincidence (near-match); a refinement structural at the
@@ -26,7 +26,7 @@ pre-2026-05-28 anchor) AND q_proton = 1.10997858275, and tiers:
     up by > 10× at q_muon (single-anchor-fit signature)
   TIER 3 (refuted): residual > 10⁵ ppb at either anchor
 
-DISCIPLINE: this probe is DIAGNOSTIC. Per CLAUDE.md ("don't search
+DISCIPLINE: this probe is DIAGNOSTIC. Per AGENTS.md ("don't search
 for substrate matching the residual"), do NOT wire a Tier 2 result
 into production. Only Tier 1 candidates merit structural derivation
 work. Confirmation of Tier 2 ⟹ confirms X(q) intrinsic residual
@@ -122,7 +122,7 @@ def main() -> int:
     )
     builder.set_description(
         "Cross-anchor verdict on X(q) refinement candidates "
-        "(extension of PR #1645 single-anchor probe). Per CLAUDE.md "
+        "(extension of PR #1645 single-anchor probe). Per AGENTS.md "
         "Im(q) fibre-vs-observable: tier by both q_proton AND q_muon."
     )
     builder.set_audit_only(
@@ -198,7 +198,7 @@ def main() -> int:
         verdict = (
             "ALL CANDIDATES FAIL cross-anchor. The X(q) 0.10% residual "
             "is NOT a multiplicative-refinement problem — it needs a "
-            "fibre-level Habiro element (per CLAUDE.md Im(q) framing), "
+            "fibre-level Habiro element (per AGENTS.md Im(q) framing), "
             "not a q_0-evaluated correction. This rules out the "
             "ansatz family tested in PR #1645 + this probe."
         )

@@ -28,7 +28,7 @@ two algebraic facts the resolution rests on:
 
 `ℏ_q^E = (q−1)/q` (energy-scale action-per-tick) is **distinct** from the
 Hecke parameter `h = q − q⁻¹`; they are kept separate here. All statements
-hold over an arbitrary field (no archimedean structure; CLAUDE.md §7c).
+hold over an arbitrary field (no archimedean structure; AGENTS.md §7c).
 -/
 
 namespace QOU.Interactions.QBetaEnergyScale

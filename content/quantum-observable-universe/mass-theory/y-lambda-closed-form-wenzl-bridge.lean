@@ -195,7 +195,7 @@ Uniqueness holds at two layers:
     must agree with the canonical one. This layer is encoded as
     a conditional theorem under
     `[MarkovTraceFamilyOneDim ℝ q (jonesMarkovZ q)]` per
-    CLAUDE.md §3b-cond.
+    AGENTS.md §3b-cond.
 
 The combined statement is then: under the categorical hypothesis,
 any convention shift reproducing `tr_M` agrees definitionally
@@ -229,7 +229,7 @@ theorem wenzl_bridge_unique_definitional (q : ℝ) :
     its Wenzl-formula parameter pair `(Q, z_GL)` to equal
     `(q², q · z)` definitionally.
 
-    Per CLAUDE.md §3b-cond, this theorem is a *rigorous
+    Per AGENTS.md §3b-cond, this theorem is a *rigorous
     conditional result* — fully verified by Lean modulo the named
     `MarkovTraceFamilyOneDim` class instance, which axiomatises
     Chlouveraki HDR Theorem 6.20.

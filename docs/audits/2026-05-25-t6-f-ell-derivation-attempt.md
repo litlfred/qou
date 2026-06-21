@@ -93,7 +93,7 @@ T6 (F_ℓ derivation) is **PROPERLY OPEN** — not a wiring task, not a 1-week i
 
 ## Lean
 
-The `lepton_mass_ratio` sorry in `lepton-mass-tower-canonical.lean` remains correctly marked per CLAUDE.md §3b — the formula is genuinely conjectural, not just a formalisation gap.
+The `lepton_mass_ratio` sorry in `lepton-mass-tower-canonical.lean` remains correctly marked per AGENTS.md §3b — the formula is genuinely conjectural, not just a formalisation gap.
 
 ## Cross-references
 
@@ -136,7 +136,7 @@ muon (PR #1127):  [4]_q  =  (2 + h²) · [2]_q
 tau  (PR #1253):  [6]_q  =  [2]_q · [3]_q · (1 + h²)
 ```
 
-Both proved via `field_simp; ring` over generic `[Field R]` per CLAUDE.md §7c. Numerically cross-checked at the canonical q_0 to ≤ 1e-40 in the tau-probe witness (4 assertions, all pass).
+Both proved via `field_simp; ring` over generic `[Field R]` per AGENTS.md §7c. Numerically cross-checked at the canonical q_0 to ≤ 1e-40 in the tau-probe witness (4 assertions, all pass).
 
 ### What this resolves vs leaves open
 

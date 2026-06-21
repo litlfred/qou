@@ -273,7 +273,7 @@
 
 ---
 
-## VI. Notational Alignment vs CLAUDE.md §7aa
+## VI. Notational Alignment vs AGENTS.md §7aa
 
 ### Particles (fraktur)
 
@@ -330,7 +330,7 @@
 | Nuclear ($Z, N, A$) | None | ✓ |
 | Hecke & polynomials | None | ✓ |
 
-**Assessment:** ✓ **Excellent notational compliance.** All CLAUDE.md §7aa conventions are followed.
+**Assessment:** ✓ **Excellent notational compliance.** All AGENTS.md §7aa conventions are followed.
 
 ---
 
@@ -396,9 +396,9 @@ Searched for all instances of `$p$` to verify no confusion with proton number:
 
 ---
 
-## IX. Conjectural Propagation Audit (CLAUDE.md §3b)
+## IX. Conjectural Propagation Audit (AGENTS.md §3b)
 
-Per CLAUDE.md §3b: "Any provable kind downstream of `conj:` must be demoted."
+Per AGENTS.md §3b: "Any provable kind downstream of `conj:` must be demoted."
 
 ### Conjectures found in chapter
 
@@ -524,7 +524,7 @@ Searched for any **Propositions, Theorems, or Definitions** that depend on these
 
 ### Strengths
 
-1. ✓ **Perfect notational alignment** with CLAUDE.md §7aa. All particle, energy, and mass symbols correct.
+1. ✓ **Perfect notational alignment** with AGENTS.md §7aa. All particle, energy, and mass symbols correct.
 2. ✓ **One-voice consistency.** No terminology shifts, perspective changes, or formality breaks.
 3. ✓ **Content alignment.** All 9 sections serve the stated chapter intent; no topical drift.
 4. ✓ **Authoritative derivations.** Key results (GB reduction, $\mathcal{B}_3$ selection, transfer matrices, binding formula) derived once and properly referenced.

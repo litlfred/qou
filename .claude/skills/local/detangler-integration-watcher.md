@@ -29,8 +29,8 @@ domain-specific slots A–I.
 
 **Setup:** use `NAME=detangler-integration-watcher` everywhere the
 parent's §1 references `${NAME}`. Files land at
-`todos/detangler-integration-watcher-queue.json` and
-`todos/detangler-integration-watcher-ledger.md`.
+`.beans/detangler-integration-watcher-queue.json` and
+`.beans/detangler-integration-watcher-ledger.md`.
 
 **Additional baseline cache.** Beyond the parent's §1 setup, this
 watcher caches a graph baseline so per-event deltas are comparable:
@@ -312,7 +312,7 @@ mv /tmp/_detangler_watcher_graph_current.json \
 | `uses-resolve-broken` | critical | `uses[]` cites a missing target (schema constraint failure) |
 | `critical-path-break` | critical | Moved / removed block broke a logical chain reaching a downstream `theorem`/`proposition` (per `critical-path-analysis`) |
 | `cross-chapter-forward` | critical | New forward cross-chapter edge to a non-existent block, OR a new H2 forward edge crossing the categorical/archimedean wall in an unintended direction (per PR4) |
-| `defterm-undeclared` | critical | New `:refterm`/`\refterm` with no matching `defines` declaration (per CLAUDE.md §4c) |
+| `defterm-undeclared` | critical | New `:refterm`/`\refterm` with no matching `defines` declaration (per AGENTS.md §4c) |
 | `forward-ref` | major | New **logical** H1 forward reference (block A uses block B, B appears later) — span > 3 OR cross-section. **Severity gate**: only `severity: "logical"` edges from `forward_ref_classifier.py` count; storytelling/structural edges are excluded (see §Logical-vs-storytelling severity, exclusion class 3) |
 | `dense-section` | major | Section pushed > 18 blocks by this commit (H5) |
 | `sparse-section` | major | Section dropped below 3 non-prose blocks (H4) — excludes intro/overview sections |

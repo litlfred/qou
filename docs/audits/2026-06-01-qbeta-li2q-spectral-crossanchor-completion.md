@@ -52,7 +52,7 @@ the fibre object.
 
 **(iii) Implication for PR #1626's complex-c_3 hypothesis.** The user's
 hypothesis ("are we missing an Im part not directly observable?") is
-still STRUCTURALLY plausible per CLAUDE.md fibre/observable framing
+still STRUCTURALLY plausible per AGENTS.md fibre/observable framing
 (PR #1616), but the cross-anchor test cannot discriminate it at current
 data. Both:
 - **Real q-independent c_3** (Li_2^q × spectral candidate behavior)
@@ -68,7 +68,7 @@ threading m_p vs m_μ inputs through different paths).
 
 ## Implication for CAL-1/2/3
 
-Per CLAUDE.md (PR #1616): CAL inputs constrain archimedean Re[q_0] only.
+Per AGENTS.md (PR #1616): CAL inputs constrain archimedean Re[q_0] only.
 This audit confirms: the structural Habiro element (whether real or
 complex-with-hidden-Im) is q_0-INDEPENDENT in the relevant sense at
 near-identical anchors. The empirical c_3 cross-anchor "swing" is NOT a
@@ -94,7 +94,7 @@ window into fibre Im content — it's noise from the empirical pipeline.
 ## Cross-refs
 
 - PR #1609 — original Li_2^q × spectral refutation at q_proton (now mech #7)
-- PR #1616 — Im(q) fibre/observable framing in CLAUDE.md
+- PR #1616 — Im(q) fibre/observable framing in AGENTS.md
 - PR #1620 — Hecke-natural form for sym(Δtr_M)
 - PR #1626 — complex c_3 fibre diagnostic (cross-anchor under-diagnostic finding)
 - `docs/audits/2026-05-31-qbeta-bridge-narrowing.md` — 7 mechanisms ruled out

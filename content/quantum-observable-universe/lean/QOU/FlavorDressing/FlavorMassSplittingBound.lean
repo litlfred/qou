@@ -34,7 +34,7 @@ open Flavor
     factor `ℏ_q² · h_q · [2]_q` equals exactly `1/3` for any
     non-zero `q`.  This algebraic identity is the engine of the
     upper bound; stated over a generic `Field R` per the
-    repository's base-ring convention (CLAUDE.md §7c) — the
+    repository's base-ring convention (AGENTS.md §7c) — the
     identity is a rational-function fact with no archimedean
     content.  The downstream inequality `flavor_mass_splitting_bound`
     keeps its `ℝ` specialisation because it uses ordering.

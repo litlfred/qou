@@ -29,7 +29,7 @@ Conjectural content (with sorry):
 Ref: [manuscript] conj:lepton-mass-tower-canonical
 Ref: [manuscript] docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md
 
-Generic over `[CommRing R]` per CLAUDE.md §7c base-ring discipline.
+Generic over `[CommRing R]` per AGENTS.md §7c base-ring discipline.
 NOT YET LAKE-VERIFIED — defer to follow-up branch with lake toolchain.
 -/
 

@@ -178,7 +178,7 @@ This is exactly the unified binomial pattern, and it holds for **all `m ≥ 0`**
 **Corollary (termination).** Since `C(m+j, 2j) = 0` for `j > m`, the expansion has degree exactly `2m` in `h`; equivalently, `T(2, 2m)` has a finite even-h Markov trace expansion of degree `2m`.
 
 **Algebraic-side identities (pre-Archimedean, `ℚ(q)`).**
-The proof above lives entirely on the **algebraic side**: every step works over `ℤ[q, q^{-1}]` or `ℚ(q)`, no `Real.log` / `Real.exp` / `Real.cos` invoked. The two q-brackets standard in the q-deformation literature give the cleanest statement (per CLAUDE.md §7c base-ring discipline):
+The proof above lives entirely on the **algebraic side**: every step works over `ℤ[q, q^{-1}]` or `ℚ(q)`, no `Real.log` / `Real.exp` / `Real.cos` invoked. The two q-brackets standard in the q-deformation literature give the cleanest statement (per AGENTS.md §7c base-ring discipline):
 
 - **Bar-symmetric q-bracket:** `<n>_q := q^n + q^{-n}` (sometimes called the "second-kind" or "Chebyshev" q-integer; characterised by `<n>_{q^{-1}} = <n>_q`)
 - **Standard q-integer (Gauss bracket):** `[n]_q := (q^n − q^{-n}) / (q − q^{-1})` (bar-anti-symmetric: `[n]_{q^{-1}} = −[n]_q`)
@@ -249,7 +249,7 @@ In the three-avatars language: the algebraic form (6) is the `ℤ[q, q^{-1}]` / 
 
 ## Pre-Archimedean / Archimedean counting (CAL-1 / CAL-2 / CAL-3 layering)
 
-The fact that the structural identity (6) and its derived forms (P_m, Q_m, the q-tanh) live in `ℤ[q, q^{-1}]` and `ℚ(q)` — entirely PARAMETER-FREE — has a clean implication for the framework's 3-calibration discipline (per CLAUDE.md `prop:three-calibration-discipline`):
+The fact that the structural identity (6) and its derived forms (P_m, Q_m, the q-tanh) live in `ℤ[q, q^{-1}]` and `ℚ(q)` — entirely PARAMETER-FREE — has a clean implication for the framework's 3-calibration discipline (per AGENTS.md `prop:three-calibration-discipline`):
 
 | layer | object | calibration inputs |
 |---|---|---|
@@ -269,7 +269,7 @@ Totals: `0 + 1 + 1 + 1 = 3` calibrations. This **is** the CAL-1/2/3 budget.
 | absolute mass | 3 (all) | `m_p` ≈ 938 MeV |
 | isospin mass difference | 3 (all, plus the bar-anti-symmetric Q-channel structurally) | `Δm_{n-p}` ≈ 1.293 MeV (see PR #1153) |
 
-**Substrate-derivation status (CAL-2 → 0?):** If a categorical first-principles argument could pick `q_0` from the algebraic side alone (e.g., as a unique real fixed point of some structural endomorphism), then CAL-2 would collapse to 0, leaving only the 2 dimensional scales (CAL-1, CAL-3) as irreducible. The owner declined this direction on 2026-05-08 (per CLAUDE.md). The 3-2-1-0 layering above stands as the current canonical statement.
+**Substrate-derivation status (CAL-2 → 0?):** If a categorical first-principles argument could pick `q_0` from the algebraic side alone (e.g., as a unique real fixed point of some structural endomorphism), then CAL-2 would collapse to 0, leaving only the 2 dimensional scales (CAL-1, CAL-3) as irreducible. The owner declined this direction on 2026-05-08 (per AGENTS.md). The 3-2-1-0 layering above stands as the current canonical statement.
 
 This recasts the 3-calibration discipline as a **counting theorem**: pre-Archimedean has 0 free parameters; the Archimedean specialization has 3 (= 1 point in q-space + 2 dimensional scales). The pre-Archimedean identities of this audit therefore do not consume any calibration; only their evaluation at `q = q_0` and conversion to MeV does.
 
@@ -279,7 +279,7 @@ A unified closed-form characterization of the **entire T(2, 2m) torus-link famil
 
 ## What this finding is NOT
 
-A mass derivation. Per CLAUDE.md and `local/production-vs-exploratory-discipline`, this is an EXPLORATORY result. It does NOT enter any production mass-prediction chain.
+A mass derivation. Per AGENTS.md and `local/production-vs-exploratory-discipline`, this is an EXPLORATORY result. It does NOT enter any production mass-prediction chain.
 
 ## Useful as a sanity-check
 

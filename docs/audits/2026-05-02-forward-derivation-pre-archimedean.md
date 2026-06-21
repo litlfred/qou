@@ -34,7 +34,7 @@ deep-audit and a refresh of that audit's flags is appended at the end
    Anything else entering as a derivation source is a **wall
    violation** and is flagged 🔴.
 
-2. **Conjectural propagation** (CLAUDE.md §3b). Any provable kind
+2. **Conjectural propagation** (AGENTS.md §3b). Any provable kind
    downstream of a `conj:` block is a `conjecture` itself. Definitions
    may name conjectural objects but do not propagate; they are
    tagged 🟡-axiomatic when their well-formedness rides on a
@@ -196,7 +196,7 @@ Every step links to its primary `.md` block; siblings (`.lean`,
   `MotivicGaloisCharacter` in the Lean file takes a
   `MotivicSubstrate` instance and exposes $\chi^{\mathrm{mot}}_A$;
   the `sorry` in any concrete instance **is** the substrate axiom,
-  not a missing proof (per CLAUDE.md §3b).
+  not a missing proof (per AGENTS.md §3b).
 - **Compute backing:** none at this level — this is the
   pure-substrate layer.
 - **AUDIT.** 🟡 *No concrete `instance` of
@@ -262,7 +262,7 @@ $\tau$-image identification).
 ### Step 9 — Chern–Simons / Jones–Wenzl idempotents
 
 [`def:hecke-normal-form`](../../content/quantum-observable-universe/braids-and-knots/skein-generation.md)
-(Hecke–Skein dictionary §7a of CLAUDE.md),
+(Hecke–Skein dictionary §7a of AGENTS.md),
 [`prop:wedderburn-mass-formula`](../../content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.md),
 [`prop:markov-pair-z2`](../../content/quantum-observable-universe/braids-and-knots/markov-pair-z2.md).
 
@@ -354,7 +354,7 @@ $\tau$-image identification).
 - **AUDIT.** 🟢 Derived. The previous "approx" tag on $y_{(4,1)} +
   y_{(2,1,1,1)}$ (BW-11) is **resolved** — closed form available
   at $n \leq 12$.
-- **Notation collision warning** (CLAUDE.md §7aa): $y_\lambda$ here
+- **Notation collision warning** (AGENTS.md §7aa): $y_\lambda$ here
   is the Jones–Markov central coefficient (sign-indefinite at
   $n\geq 4$); do **not** confuse with $u_\lambda$ (LP shadow
   price, non-negative by LP duality, used at Step 19). The two

@@ -33,7 +33,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "I1 probe for prop:wedderburn-weight-canonical.  Verifies (1) dim_q(λ)|_{q→1} = f_λ classical for all λ ⊢ n with n = 1…6 via q-deformed Frame-Robinson-Thrall and classical hook-length formula; also confirms f_λ = |SYT(λ)|.  Documents (2) at q_0 the q-deformed Wedderburn weights w̃_λ = dim_q(λ)² / [n]_q! do NOT sum to 1 — the deviation is recorded for n = 3, 4, 5 (empirical evidence for the 'not a probability measure at q ≠ 1' property called out in CLAUDE.md's notation register).  Max residue on (1): 1.20e-24 at q = 1+1e-13 — small enough to confirm the limit while avoiding the 0/0 singularity in [k]_q at q = 1 exactly.",
+  "description": "I1 probe for prop:wedderburn-weight-canonical.  Verifies (1) dim_q(λ)|_{q→1} = f_λ classical for all λ ⊢ n with n = 1…6 via q-deformed Frame-Robinson-Thrall and classical hook-length formula; also confirms f_λ = |SYT(λ)|.  Documents (2) at q_0 the q-deformed Wedderburn weights w̃_λ = dim_q(λ)² / [n]_q! do NOT sum to 1 — the deviation is recorded for n = 3, 4, 5 (empirical evidence for the 'not a probability measure at q ≠ 1' property called out in AGENTS.md's notation register).  Max residue on (1): 1.20e-24 at q = 1+1e-13 — small enough to confirm the limit while avoiding the 0/0 singularity in [k]_q at q = 1 exactly.",
   "contentBlock": "prop:wedderburn-weight-canonical",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",

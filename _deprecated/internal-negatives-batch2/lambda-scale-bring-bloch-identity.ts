@@ -1,6 +1,6 @@
 import { conjecture } from "../../schema/builders";
 
-// CAL-4 caveat (2026-05-22): demoted prop → conj per CLAUDE.md §3b
+// CAL-4 caveat (2026-05-22): demoted prop → conj per AGENTS.md §3b
 // conjectural propagation rule (uses[] contains conj:bring-hyperbolic-
 // knot-bloch-decomposition with no §3b-cond class-instance hypothesis
 // on the Lean side), and per the empirical falsification of the

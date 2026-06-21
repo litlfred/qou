@@ -61,7 +61,7 @@ theorem signPlancherelWeight_3 : signPlancherelWeight 3 = 1 / 6 := by
 
 /-- **Conjectural placeholder class**: substrate-level QCD color singlet.
 
-    Per CLAUDE.md §3b-cond: this class axiomatizes the conjecture that
+    Per AGENTS.md §3b-cond: this class axiomatizes the conjecture that
     the proton (uud baryon) wave function on 3 color strands is fully
     antisymmetric (Fermi statistics), making the COLOR action lie in
     the sign rep V_(1,1,1) of S_3.

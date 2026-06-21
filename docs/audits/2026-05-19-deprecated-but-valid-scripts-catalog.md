@@ -159,7 +159,7 @@ If you are picking up this catalog to **actually revive** the deprecated-but-val
 
 1. **Identify the target.** Pick one row of the table above (e.g. `prop:unified-curvature-rank-mass-formula` → `strict_3cal_unified_mass.py`).
 
-2. **Re-wire BEFORE moving the script.** Per CLAUDE.md and the orphan-cleanup policy, the canonical fix is to add a `computation` field to the proposition's `.ts` manifest. For the worked example:
+2. **Re-wire BEFORE moving the script.** Per AGENTS.md and the orphan-cleanup policy, the canonical fix is to add a `computation` field to the proposition's `.ts` manifest. For the worked example:
 
    ```ts
    // content/quantum-observable-universe/braids-and-knots/unified-curvature-rank-mass-formula.ts

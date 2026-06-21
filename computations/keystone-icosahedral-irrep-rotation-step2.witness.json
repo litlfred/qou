@@ -1,0 +1,72 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-20T17:28:43.080080+00:00",
+  "commitSha": "b8613dfb9bea0c197123b15a4615c67641e43cd7",
+  "assertions": [
+    {
+      "name": "argmax_chi_not_canonical",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "argmax-χ angle order ≠ SO(3)-tower appearance order"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "keystone-icosahedral-irrep-rotation-step2",
+  "scriptFile": "keystone_icosahedral_irrep_rotation_step2.py",
+  "scriptHash": "908a1dbea35b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "mpmath": "1.4.1"
+  },
+  "description": "Convergence test for the keystone fibre map. The argmax-χ candidate angle order and the canonical SO(3)-tower appearance order DISAGREE, so argmax-χ is a heuristic, not canonical: the irrep→angle map is not determined by elementary icosahedral combinatorics and needs the Bring-equivariant identity. argmax-χ recorded as conj:s5-so3-argmax-chi-fibre (NOT wired).",
+  "data": {
+    "tower_order": [
+      "A",
+      "T1",
+      "H",
+      "G",
+      "T2"
+    ],
+    "argmax_chi_order": [
+      "A",
+      "T1",
+      "G",
+      "T2",
+      "H"
+    ],
+    "orders_converge": false,
+    "argmax_chi_angle_map_deg": {
+      "A": 0,
+      "T1": 72,
+      "T2": 144,
+      "G": 120,
+      "H": 180
+    },
+    "conjecture": {
+      "label": "conj:s5-so3-argmax-chi-fibre",
+      "form": {
+        "A": 0,
+        "T1": 72,
+        "T2": 144,
+        "G": 120,
+        "H": 180
+      },
+      "status": "heuristic-lead; refuted-as-canonical-by-tower-disagreement; not wired"
+    }
+  },
+  "caveats": [
+    "Negative/structural result: no convergent canonical irrep→angle map from elementary icosahedral combinatorics (tower + character disagree). The map needs the deeper Bring-equivariant identity. Nothing wired; the BringFiberAction class stays without an instance (genuinely conditional)."
+  ]
+}

@@ -77,7 +77,7 @@ Lean siblings: `q-integer-mass-formula.lean`, `figure-eight-bw-coefficients.lean
 | 6 | `λ_ex` and exchange–Coulomb relation | **LEAN_PROVED:** `lambda_ex` (L57); `exchange_coulomb_relation` theorem (L84, field_simp/ring, sorry-free). |
 | 7 | `δ_S` | **LEAN_PROVED:** `delta_S` (L63). |
 | 8 | Magic-proximity Gaussian | **LEAN_MISSING:** abstracted as parameters `f_Z f_N : ℝ` in `binding_energy_bw` (L94) and as a class field `f_magic : ℕ → ℝ` (L121). No constructive Lean definition. |
-| 9 | Seven-term BW formula | **LEAN_PROVED (as a def, not a theorem):** `binding_energy_bw` (L94) packages the algebraic formula. The accuracy claim (this formula matches AME to within tolerance) is **LEAN_HAS_SORRY** as the conjecture class field `QIntegerMassFormula.fits_AME` (L149); marked conjectural per CLAUDE.md §3b-cond. The `-- Ref:` lines (L43, L73 etc.) cite `[manuscript] Ch 11 §8`. |
+| 9 | Seven-term BW formula | **LEAN_PROVED (as a def, not a theorem):** `binding_energy_bw` (L94) packages the algebraic formula. The accuracy claim (this formula matches AME to within tolerance) is **LEAN_HAS_SORRY** as the conjecture class field `QIntegerMassFormula.fits_AME` (L149); marked conjectural per AGENTS.md §3b-cond. The `-- Ref:` lines (L43, L73 etc.) cite `[manuscript] Ch 11 §8`. |
 | 10 | Chirality factors per A class | **LEAN_PROVED (partial):** `fig8BulkFactor` (L24) and `fig8ZdepFactor` (L29) defined; `figure_eight_bw_coefficients` theorem exists (L84) but states existence only for `A = 3` (the figure-eight case). The satellite (`1+h`) and Borromean (`(1−h²)²`) factors are NOT formalised. |
 | 11 | `f_Zdep = h·[2]_q = q²−q⁻²` | **LEAN_PROVED:** `fig8ZdepFactor` def (L29); `fig8ZdepFactor_pos` (L64) proves positivity of this factor when `q > 1`. The algebraic identity `h·[2]_q = q²−q⁻²` is implicit in the def. The `figure_eight_std_character` theorem (L38) proves the character identity `2 − [3]_q = −1 − h²` that yields the factor. |
 | 12 | Composite formula `B_K = (·)B_bulk + (h[2]_q)B_Z` | **LEAN_MISSING:** Lean has only the existential statement that `a, f` exist with the right values for A=3 (`figure_eight_bw_coefficients` L84); the full composite binding formula is not assembled at theorem level. |
@@ -117,8 +117,8 @@ Lean siblings: `q-integer-mass-formula.lean`, `figure-eight-bw-coefficients.lean
 
 | # | Claim | Backing |
 |---|-------|---------|
-| 1 | Hecke relations (T_i² + braid + far commut.) | **BACKED:** CLAUDE.md §7a "Hecke-Skein convention" gives the relation `(σ_i − q)(σ_i + q⁻¹) = 0` equivalent to `T_i² = (q−q⁻¹)T_i + 1`. Multiple paper blocks reference `H_n(q)` (e.g., `figure-eight-bw-coefficients.md` L48–51 cites the Wedderburn decomposition of `H_3(q)`). No single dedicated paper block defines the Hecke relations themselves — the script's docstring relations are the canonical Iwahori-Hecke presentation, treated as standard background. **Marginally BACKED via convention** but no `def:hecke-algebra` or `prop:hecke-relations` block exists. |
-| 2 | `T_i⁻¹ = T_i − (q − q⁻¹)` | **BACKED:** CLAUDE.md §7a explicitly derives this from the Hecke quadratic relation. Not formalised as a paper proposition. |
+| 1 | Hecke relations (T_i² + braid + far commut.) | **BACKED:** AGENTS.md §7a "Hecke-Skein convention" gives the relation `(σ_i − q)(σ_i + q⁻¹) = 0` equivalent to `T_i² = (q−q⁻¹)T_i + 1`. Multiple paper blocks reference `H_n(q)` (e.g., `figure-eight-bw-coefficients.md` L48–51 cites the Wedderburn decomposition of `H_3(q)`). No single dedicated paper block defines the Hecke relations themselves — the script's docstring relations are the canonical Iwahori-Hecke presentation, treated as standard background. **Marginally BACKED via convention** but no `def:hecke-algebra` or `prop:hecke-relations` block exists. |
+| 2 | `T_i⁻¹ = T_i − (q − q⁻¹)` | **BACKED:** AGENTS.md §7a explicitly derives this from the Hecke quadratic relation. Not formalised as a paper proposition. |
 | 3 | GS-NF right-action rule | **UNBACKED as a stand-alone proposition.** The rule is a direct consequence of (1) and is standard knot-theory folklore (Geck–Pfeiffer, Mathas). Papers reference *that* the GS normal form exists (e.g., `prop:atomic-mass-gb-nf` cites `unital-groebner-bases:cor:pbw`; `gs-graded-markov-trace-existence.md`, `graded-markov-trace-from-gs-filtration.md` reference the GS filtration), but the **explicit Hecke right-multiplication rule** the script implements is not the content of any QOU paper block. It is encoded only in the script's docstring. |
 | 4 | Coxeter length = inversion count | **UNBACKED:** standard combinatorics; the script implements it as helper code. No paper block. |
 | 5 | GS-filtration certificate | **BACKED (indirectly):** `prop:graded-markov-trace-from-gs-filtration` at `/home/user/qou/content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.md` defines the GS filtration `J^•(q)`, the associated-graded algebra, and the descent of the Markov trace. The script's `filtration_certificate` is a concrete data structure realising the abstract `J^ℓ / J^{ℓ+1}` strata. Companion `conj:gs-graded-markov-trace-existence` at `gs-graded-markov-trace-existence.md` axiomatises the existence. |
@@ -130,7 +130,7 @@ Lean siblings: `q-integer-mass-formula.lean`, `figure-eight-bw-coefficients.lean
 
 | # | Claim | Lean status |
 |---|-------|------|
-| 1 | Hecke relations | **LEAN_PROVED (as definition):** `QOU.HeckeAlgebra.*` Lean modules (e.g., `/home/user/qou/content/quantum-observable-universe/lean/QOU/HeckeAlgebra.lean` umbrella; `Common`, `Hoefsmit`, `Wedderburn`, `MarkovTrace`, `Formal`, `Realification`). Algebra exists in Lean. The quadratic relation is not exposed as a stand-alone theorem with a `-- Ref:` line that matches CLAUDE.md §7a, but the underlying definitions are present. |
+| 1 | Hecke relations | **LEAN_PROVED (as definition):** `QOU.HeckeAlgebra.*` Lean modules (e.g., `/home/user/qou/content/quantum-observable-universe/lean/QOU/HeckeAlgebra.lean` umbrella; `Common`, `Hoefsmit`, `Wedderburn`, `MarkovTrace`, `Formal`, `Realification`). Algebra exists in Lean. The quadratic relation is not exposed as a stand-alone theorem with a `-- Ref:` line that matches AGENTS.md §7a, but the underlying definitions are present. |
 | 2 | `T_i⁻¹ = T_i − (q − q⁻¹)` | **LEAN_MISSING** as a stand-alone theorem. Implicit in any concrete realisation of the algebra. |
 | 3 | GS-NF right-action rule | **LEAN_MISSING.** No `right_mul_T` theorem in the QOU Lean tree that proves the case split (ascending = `T_{ws_i}`, descending = `(q−q⁻¹)T_w + T_{ws_i}`). |
 | 4 | Coxeter length | **LEAN_MISSING** in QOU. (Mathlib has `Coxeter.Length`; not wrapped in QOU.) |
@@ -206,7 +206,7 @@ The backing content blocks have these Lean coverage states:
 - **25 distinct math claims** across the three files.
 - **17 BACKED** by a content block in `content/quantum-observable-universe/`.
 - **9 LEAN_PROVED (sorry-free, theorem-level)** — all from `q-integer-mass-formula.lean` and `figure-eight-bw-coefficients.lean`.
-- **3 LEAN_HAS_SORRY** in conjecture-class form (`fits_AME`, `gradedTrace` per-level descent, `factorisation_holds`) — formally per CLAUDE.md §3b-cond, the class fields are *not* `sorry` literals but the discharging instances are tautological / level-0-only.
+- **3 LEAN_HAS_SORRY** in conjecture-class form (`fits_AME`, `gradedTrace` per-level descent, `factorisation_holds`) — formally per AGENTS.md §3b-cond, the class fields are *not* `sorry` literals but the discharging instances are tautological / level-0-only.
 - **13 LEAN_MISSING** — the GS right-action rule, the explicit Hecke quadratic / inverse identities at theorem level, the mirror-word `β_mirror⁻¹ = reverse-word(β)` identity, the magic-proximity Gaussian, and most of `gb_filtration_jet_tracker.py`'s mathematical infrastructure.
 
 ## Notable findings
@@ -216,12 +216,12 @@ The backing content blocks have these Lean coverage states:
    a `-- Ref:` comment, and the two algebraic relations
    (`a_asym = (3/2)λ_V` and the exchange–Coulomb identity) are proved
    sorry-free in Lean. The accuracy claim against AME data is correctly
-   class-axiomatised (CLAUDE.md §3b-cond).
+   class-axiomatised (AGENTS.md §3b-cond).
 
 2. **`gb_filtration_jet_tracker.py`'s core right-action rule is
    formally unbacked.** The Hecke quadratic identity, the σ-inverse
    rule, and the ascending/descending case split for `T_w · T_i`
-   are all standard but appear only in CLAUDE.md §7a and in script
+   are all standard but appear only in AGENTS.md §7a and in script
    docstrings — there is no `prop:hecke-right-action-rule` block,
    and no Lean theorem proving the case split. The `JetEvent` data
    model is purely a script-side convention.

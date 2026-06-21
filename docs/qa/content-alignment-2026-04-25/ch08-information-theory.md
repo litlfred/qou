@@ -47,7 +47,7 @@ No drift.
 
 None. Conjectures correctly marked (`p-vs-np-boundary`, `quantum-computational-universality`, `aeon-boundary-generates-chart`, `qou-p-neq-np`). `mass-energy-equivalence` correctly marked theorem (rigorous Reshetikhin–Turaev proof, not speculative). Big Bang and Planck-scale framings are deductive, not editorialized.
 
-## Conjectural propagation audit (CLAUDE.md §3b)
+## Conjectural propagation audit (AGENTS.md §3b)
 
 Walked the `uses[]` graph for all conjectures. All downstream blocks are `remark` or `conjecture`. **Zero propagation violations.**
 
@@ -55,7 +55,7 @@ Walked the `uses[]` graph for all conjectures. All downstream blocks are `remark
 - `conj:quantum-computational-universality` → `rem:skein-turing-machine` ✓
 - `conj:aeon-boundary-generates-chart` → `rem:penrose-ccc`, `rem:information-paradox-incompleteness` ✓
 
-## Notational alignment (CLAUDE.md §7aa)
+## Notational alignment (AGENTS.md §7aa)
 
 100% compliant. All 12 audited registers correct:
 

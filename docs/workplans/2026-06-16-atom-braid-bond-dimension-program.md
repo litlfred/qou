@@ -63,7 +63,7 @@ and the `N` identical neutron blocks (`|S_Z × S_N| = Z!·N!`). Two payoffs:
   transfer whose action is governed by its dominant eigenvector; heavy nuclei could
   be evaluated by a fixed-point rather than `A` explicit steps.
 
-**Preflight (STRICT, CLAUDE.md §3.2):** mixed-species (p–n) interfaces are **not**
+**Preflight (STRICT, AGENTS.md §3.2):** mixed-species (p–n) interfaces are **not**
 pure conjugations, so the symmetry is broken at each p–n boundary. Verify on ⁴He
 (2p2n, orbit size 4) at 50 dps that the symmetrised trace equals the direct trace
 *before* using it. Within-species (p–p, n–n) symmetry is exact; cross-species is

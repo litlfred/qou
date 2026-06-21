@@ -624,7 +624,7 @@
         },
         "result": "pass",
         "severity": "minor",
-        "evidence": "Proof is acknowledged open; Lean uses axiom+sorry per CLAUDE.md §3b-cond with proper Ref: annotations; no false algebraic proof of an archimedean claim.",
+        "evidence": "Proof is acknowledged open; Lean uses axiom+sorry per AGENTS.md §3b-cond with proper Ref: annotations; no false algebraic proof of an archimedean claim.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",

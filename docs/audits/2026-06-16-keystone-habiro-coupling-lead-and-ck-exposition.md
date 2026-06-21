@@ -33,7 +33,7 @@ Given the coupling is open, the Habiro framing's concrete value is **exposition-
 - Near `q=1` (the `q₀` regime) a Habiro-ring element has a **canonical Ohtsuki (perturbative) expansion**; its
   coefficients **are** the Ohtsuki invariants.
 - The Q_β precision ladder `Q_β = Q_base·∏(1 + c_k u^k)` (`u = b·ℏ_q²`) is exactly such an expansion —
-  [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md) already invokes Ohtsuki, and CLAUDE.md
+  [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md) already invokes Ohtsuki, and AGENTS.md
   names "the Q_β Habiro element" as the *permanent* `c_k` fix.
 - **Reframing `c_k` as the Ohtsuki invariants of one Habiro element dissolves the per-coefficient mystery and the
   6-entry flip-flop framing**: the `c_k` are not free near-matches to settle one-by-one (`c_3` Taylor-exact?
@@ -59,6 +59,6 @@ No fit.
 ## Cross-references
 
 - `docs/audits/2026-06-16-keystone-infinite-dim-full-hecke-realization.md` (#2409) — the three faces; Habiro home
-- `docs/coordination/1ppq-qbeta.md` — Q_β c_k ladder (Ohtsuki already invoked); CLAUDE.md "Q_β Habiro element"
+- `docs/coordination/1ppq-qbeta.md` — Q_β c_k ladder (Ohtsuki already invoked); AGENTS.md "Q_β Habiro element"
 - `docs/coordination/s5-so3-keystone.md` — keystone ledger (coupling open)
 - `scripts/keystone_habiro_coupling_lead.py` — arithmetic anchors (exit 0)

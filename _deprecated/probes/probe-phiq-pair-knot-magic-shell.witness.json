@@ -23,7 +23,7 @@
   "scriptFile": "probe_phiq_pair_knot_magic_shell.py",
   "scriptHash": "d846b889671c",
   "scriptCommitSha": "509e913dbe9de3e12b972d676a041ae6e542cd8e",
-  "description": "Pair-knot magic-shell probe + operator-selection LP dual confirmation for the ³He brane-tower gap.  Tests whether collapsing the Z=2 closed proton shell (and N=2 closed neutron shell for ⁴He) into a single composite Φ_q(|V̂_pair|) — instead of summing 4 per-generator Φ_q(|V̂_i|) contributions — closes the AME light-isotope binding gap; calibrates Δ_shell(Z=2) from ³He and predicts ⁴He.  Emits full LP primal + dual (x_star, y_0_star, y_star, active_set, primal_obj, dual_obj, duality_gap) per CLAUDE.md `LP / SDP duals — first-class infra` and `prop:operator-selection-lp`.  The diagonal-Gram approximation is documented as a caveat; the full Hoefsmit-seminormal Frobenius pairing is a refinement.",
+  "description": "Pair-knot magic-shell probe + operator-selection LP dual confirmation for the ³He brane-tower gap.  Tests whether collapsing the Z=2 closed proton shell (and N=2 closed neutron shell for ⁴He) into a single composite Φ_q(|V̂_pair|) — instead of summing 4 per-generator Φ_q(|V̂_i|) contributions — closes the AME light-isotope binding gap; calibrates Δ_shell(Z=2) from ³He and predicts ⁴He.  Emits full LP primal + dual (x_star, y_0_star, y_star, active_set, primal_obj, dual_obj, duality_gap) per AGENTS.md `LP / SDP duals — first-class infra` and `prop:operator-selection-lp`.  The diagonal-Gram approximation is documented as a caveat; the full Hoefsmit-seminormal Frobenius pairing is a refinement.",
   "contentBlock": "conj:brane-tower-z-habiro",
   "parameters": {
     "q_0": 1.1099785955541805,

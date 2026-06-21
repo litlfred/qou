@@ -57,15 +57,15 @@ The "magic A·8G shell" closure (`A=4` for ⁴He) is hypothesised as the categor
 Per the existing `atom-knot-mass-derivation.md`, ²H ↔ 6₂ is NOT PSD-feasible alone (α* = 0.89, only top 45%) while ³He ↔ L6a4 is PSD-top-17%. The census map is scaffolding — R5-full SDP solver supersedes it when it lands.
 
 ### Item #1 — ⁵Li / ⁶Li / ⁷Li await PR #1081 Task 3 multi-knot VolDensity
-No SnapPy single-knot candidate cleanly matches the target volumes 51.5 / 62.6 / 76.8 (or the 2m_e half-values 25.8 / 31.3 / 38.4). ⁵Li is unbound (resonance → Demazure sub-crystal, per CLAUDE.md §7b); ⁶Li is naturally `α + d` link; ⁷Li has J^π = 3/2⁻ spin sector. Recommendation: wait for `VolDensity(K_1 ⊔ K_2)` multi-knot evaluation from PR #1081 Task 3.
+No SnapPy single-knot candidate cleanly matches the target volumes 51.5 / 62.6 / 76.8 (or the 2m_e half-values 25.8 / 31.3 / 38.4). ⁵Li is unbound (resonance → Demazure sub-crystal, per AGENTS.md §7b); ⁶Li is naturally `α + d` link; ⁷Li has J^π = 3/2⁻ spin sector. Recommendation: wait for `VolDensity(K_1 ⊔ K_2)` multi-knot evaluation from PR #1081 Task 3.
 
 ## Decisions
 
 | # | Decision | Rationale |
 |---|----------|-----------|
-| 1 | Author `conj:inter-nucleon-channel-color-tube` as a **conjecture** (not proposition) | Conditional on PR #1081 Task 3 (S₅↔SO(3)) which is itself open; per CLAUDE.md §3b, the class instance carries the only sorry |
+| 1 | Author `conj:inter-nucleon-channel-color-tube` as a **conjecture** (not proposition) | Conditional on PR #1081 Task 3 (S₅↔SO(3)) which is itself open; per AGENTS.md §3b, the class instance carries the only sorry |
 | 2 | Defer script renames (item #4) | Mechanical but invasive — affects witness slugs + audit refs across the repo; cleaner as standalone follow-up |
-| 3 | Author Rule-14 escalations BEFORE owner sees them, with explicit "owner decision needed" sections | Per CLAUDE.md production-vs-exploratory rule 14, the escalation IS the deliverable; owner judgement is the next step |
+| 3 | Author Rule-14 escalations BEFORE owner sees them, with explicit "owner decision needed" sections | Per AGENTS.md production-vs-exploratory rule 14, the escalation IS the deliverable; owner judgement is the next step |
 | 4 | Use **color-tube weighting** as the unifying categorical mechanism across items #2, #3, #7 | Per owner directive 2026-05-24 "use color tube weighting as appropriate" — the three audits all converge on the same Phase 5q open finding |
 
 ## Anti-patterns avoided

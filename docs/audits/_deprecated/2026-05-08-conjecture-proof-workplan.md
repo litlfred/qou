@@ -197,7 +197,7 @@ These improvements help all classes:
 
 - **Witness-backed instances**: each numerical conjecture should
   have at least one `.witness.json` cross-checking the predicted
-  value at $q_0$ — already required by CLAUDE.md LP/SDP infra
+  value at $q_0$ — already required by AGENTS.md LP/SDP infra
   rules.  Apply this to every INSTANCE row.
 
 - **Class-vs-class coherence**: when one conjecture's class refers

@@ -16,14 +16,14 @@ operator-selection-LP machinery:
 These are the two `sorry`s in
 `content/.../braids-and-knots/confinement-nf-partial-proof.lean`
 (theorems `strong_duality` + `complementary_slackness`).  Per
-CLAUDE.md §3b-cond, axiomatising them as a class lets the two
+AGENTS.md §3b-cond, axiomatising them as a class lets the two
 theorems be derived as `class.field` references rather than
 free-standing `sorry`s — the proper conditional-class locale for
 LP-theory inputs that aren't yet wired in Mathlib.
 
 The class is purely a hypothesis carrier; the trivial model fills
 both fields via the LP-theory citations (single `sorry` per
-field, with explicit `-- Ref: [schrijver1986theory]` per CLAUDE.md
+field, with explicit `-- Ref: [schrijver1986theory]` per AGENTS.md
 §1).  When Mathlib gets a finite-dim LP-duality library
 (`Mathlib.Analysis.Convex.LinearProgramming` or similar), the
 trivial-model sorrys can be discharged unconditionally without
@@ -73,7 +73,7 @@ end OperatorSelectionLP
     discharge `theorem_3_strong_duality` and
     `theorem_1_maximizer_in_active_set` in
     `confinement-nf-partial-proof.lean` without `sorry`s in the
-    consumer file.  Per CLAUDE.md §3b-cond conditional-class
+    consumer file.  Per AGENTS.md §3b-cond conditional-class
     pattern.
 
     Class fields:

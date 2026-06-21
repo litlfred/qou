@@ -159,7 +159,7 @@ constrained by the negative space the 8 refutations have carved out:
    Schur-Weyl tower NOR in the q-modular form tower — a possibility
    that T4–T14's negative space leaves on the table.
 
-Per CLAUDE.md "no 7th ansatz" / formalize-first discipline, **no
+Per AGENTS.md "no 7th ansatz" / formalize-first discipline, **no
 specific candidate is proposed here**.  The pursuit of any of (1)-(3)
 would be a separate, carefully-scoped follow-up.
 

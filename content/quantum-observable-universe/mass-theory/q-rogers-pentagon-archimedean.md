@@ -141,7 +141,7 @@ Computational consequences of the post-$\tau$ pentagon (R):
 [`qou:QOU.BraidKnot.q_rogers_pentagon_archimedean`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean)
 states the post-$\tau$ pentagon (R) as a theorem conditional on the
 $O((q-1)^2)$ correction being class-axiomatized
-(per CLAUDE.md §3b-cond). At $q = 1$ the theorem reduces to the
+(per AGENTS.md §3b-cond). At $q = 1$ the theorem reduces to the
 classical Rogers identity (provable in Mathlib via real-log
 arithmetic).
 

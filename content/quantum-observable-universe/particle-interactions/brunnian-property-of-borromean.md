@@ -35,7 +35,7 @@ theorem borromean_brunnian :
 ```
 
 The `sorry` is the conjectural witness per
-[CLAUDE.md §3b-cond]; the gap is **not** a missing arithmetic
+[AGENTS.md §3b-cond]; the gap is **not** a missing arithmetic
 fact but the absence of Mathlib primitives for Reidemeister /
 Markov-move equivalence at the level of braid-word closures.
 Naive strand-deletion does not yield the unlink at the

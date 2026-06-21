@@ -3,7 +3,7 @@
 *Let $R$ be the categorical coefficient ring with $q \in R$ generic
 (not a root of unity in $R$ — note $q = 1$ IS excluded), and let
 $H_n(q)$ be the Iwahori-Hecke algebra over $R$ in the standard
-generators ([Hecke-Skein convention](https://github.com/litlfred/qou/blob/main/CLAUDE.md) §7a).
+generators ([Hecke-Skein convention](https://github.com/litlfred/qou/blob/main/AGENTS.md) §7a).
 Let $\{b_i\}$ be a Frobenius-non-degenerate basis (e.g. the
 Gröbner-Shirshov NF basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-,
 e^-\}$ for $H_3(q)$ on three strands). Then for any confinement

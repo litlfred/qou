@@ -59,8 +59,8 @@ Q0_STR = "1.10997859561220225731080831999100762523924148"
 Q0 = mp.mpf(Q0_STR)
 
 # PDG / CODATA falsification references (NOT fit targets).
+from codata_constants import M_P_MEV_VALIDATION as M_P_MEV  # noqa: E402 — registry (no inline literal)
 M_N_MINUS_M_P_MEV = mp.mpf("1.29333236")   # m_n - m_p, PDG 2024 (MeV)
-M_P_MEV = mp.mpf("938.27208816")            # proton mass, CODATA (MeV)
 
 
 # ---------------------------------------------------------------------------

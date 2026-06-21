@@ -9,11 +9,12 @@ def main():
     HERE = Path(__file__).parent.resolve()
     sys.path.insert(0, str(HERE))
     import _path_bridge as _pb
+    from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 
     Q_PIN = _pb.witness_path("q-pinning-200-digit.witness.json", HERE)
     q = mp.mpf("1.1099785827514336021665403058428800994197368560098")
     m_e = mp.mpf("0.51099895000")
-    Q_AME = mp.mpf("939.5654205240") - mp.mpf("938.27208816") - m_e
+    Q_AME = mp.mpf("939.5654205240") - mp.mpf(M_P_MEV_VALIDATION) - m_e
     Q_A = m_e * mp.fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
 
     h = q - 1 / q

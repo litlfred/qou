@@ -6,7 +6,7 @@ CONTEXT. User-raised 2026-06-01 follow-up to PR #1616 (Im(q)
 fibre/observable framing): "are we maybe missing an Im part that's
 not directly observable?"
 
-Per CLAUDE.md §Canonical chain (PR #1616): CAL-1/2/3 measure
+Per AGENTS.md §Canonical chain (PR #1616): CAL-1/2/3 measure
 ARCHIMEDEAN observables (real), so they constrain only the post-τ
 evaluation. The fibre Habiro element may have Im components that
 project to real via the bar-symmetric pairing (prop:li2q-phiq-bar-
@@ -20,7 +20,7 @@ fits a complex-c_3(q) Habiro element where:
   c_3(q) = Re[c_3](q) + i · Im[c_3](q)
 projected via various rules (modulus, real-part, etc.)
 
-DISCIPLINE (CLAUDE.md no-7th-ansatz). This is a DIAGNOSTIC, NOT a
+DISCIPLINE (AGENTS.md no-7th-ansatz). This is a DIAGNOSTIC, NOT a
 candidate-fishing run. The probe enumerates 4 specific projection
 rules + 3 specific complex-c_3(q) candidates, reports which (if
 any) explain the cross-anchor swing structurally, and the audit
@@ -240,7 +240,7 @@ def main() -> int:
     print("=" * 78)
     print("""
 1. The 'is c_3 complex with Im hidden by archimedean projection?' framing
-   is structurally PLAUSIBLE per CLAUDE.md fibre/observable distinction
+   is structurally PLAUSIBLE per AGENTS.md fibre/observable distinction
    (PR #1616), but the SPECIFIC c_3 = -2 + i·δ form is REFUTED by the
    data: the empirical deviation IS at u^3 order, ruling out projection
    to -2 + Im correction.

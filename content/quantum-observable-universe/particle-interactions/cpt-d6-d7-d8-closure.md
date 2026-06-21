@@ -44,7 +44,7 @@ symmetry channel; the parent block records the unified statement.
 
 ## Lean
 
-Class-axiomatised per CLAUDE.md §3b-cond. Downstream blocks that
+Class-axiomatised per AGENTS.md §3b-cond. Downstream blocks that
 need CPT-closure as an explicit hypothesis take
 `[CPTD6D7D8Closure]` as a class hypothesis; the three
 component-instances live in their respective `.lean` files.

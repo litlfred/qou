@@ -191,7 +191,7 @@ Q_β-derivation gap propagating to m_n / Δ_pn). This 2026-05-31 audit
   [`2026-05-30-l2-100x-status-3-failing-shared-root.md`](2026-05-30-l2-100x-status-3-failing-shared-root.md)
 - CAL-3 = m_π corroboration (sibling, this PR):
   [`2026-05-31-cal-3-equals-m-pi-empirical-corroboration.md`](2026-05-31-cal-3-equals-m-pi-empirical-corroboration.md)
-- Q_β c_k truncation-order canonical framing (CLAUDE.md-cited):
+- Q_β c_k truncation-order canonical framing (AGENTS.md-cited):
   [`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
 - Δ_λ gating context (deeper structural backdrop):
   [`2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md)

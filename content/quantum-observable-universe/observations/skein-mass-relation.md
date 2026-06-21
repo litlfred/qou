@@ -1,4 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 > **Substrate-density (ρ_q) ansatz purge in progress .**
 > The relation $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ below uses the

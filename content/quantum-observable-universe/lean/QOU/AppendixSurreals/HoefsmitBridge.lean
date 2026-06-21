@@ -25,7 +25,7 @@ full bridge cannot be proved here.  This file provides:
 2. an explicit injectivity proof at small sizes (`n ≤ 2`), the
    first non-trivial cases of the bridge proposition;
 3. a typeclass formulation of the bridge in general (per
-   CLAUDE.md §3b), with the witness deferred to a future
+   AGENTS.md §3b), with the witness deferred to a future
    entry-aware refactor of `TwoRowTableau` plus a YJM-tree
    formalisation.
 
@@ -182,7 +182,7 @@ theorem hoefsmit_bridge_two :
 
     The general-`n` extension requires an entry-aware tableau type
     plus a YJM-tree formalisation in Mathlib (see the file-level
-    docstring); per CLAUDE.md §3b we **do not** assert it as an
+    docstring); per AGENTS.md §3b we **do not** assert it as an
     axiom.  The proposition here is the genuine `n ≤ 2` statement,
     proved unconditionally. -/
 -- Ref: [conway1976] §0

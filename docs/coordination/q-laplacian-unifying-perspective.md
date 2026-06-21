@@ -87,7 +87,7 @@ local re-derivations into backward references to one source.
 ## Discipline
 - Fibre-level: `[k]_q`, `q` formal, Im unconstrained; the bar
   involution / root-of-unity is the operative structure; reality only
-  at q₀ (per CLAUDE.md Im(q) fibre-vs-observable).
+  at q₀ (per AGENTS.md Im(q) fibre-vs-observable).
 - No fitted form; the truncation values are exact cyclotomic.
 - The Verlinde/ADE values are *referenced* (standard since RT 1990),
   not claimed as framework-internal discoveries.

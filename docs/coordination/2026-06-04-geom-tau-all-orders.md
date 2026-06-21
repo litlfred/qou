@@ -79,7 +79,7 @@ collapses to excluded middle. This is recorded in the conjecture's
 
 ## What does *not* settle this
 
-Per CLAUDE.md "Before declaring 'open' math/questions/gaps", the
+Per AGENTS.md "Before declaring 'open' math/questions/gaps", the
 corpus was searched:
 
 - `grep -rln "tau.*all.orders" docs/audits/` → empty

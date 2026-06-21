@@ -9,7 +9,7 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 The full Lean statement and proof are pending; this stub exists so
 the `lean.ref` URI resolves to a real declaration in the `qou` Lake
 package. The body is `sorry` carrying the manuscript citation per
-CLAUDE.md §1.
+AGENTS.md §1.
 -/
 
 import QOU.Shared.MarkovTraceClaim

@@ -21,7 +21,7 @@ unification is taken **definitionally**: `𝔙 := E₀·tr_M((Π_free−1)∘�
 `𝔈_bind + i·𝔔_β = 𝔙` is a **theorem** (`Complex.re_add_im`), sorry-free.
 The only conjectural content is the *physical match*: that the measured
 binding and Q_β equal these definitional Re/Im at one normalisation —
-axiomatised as the class `ComplexVolumeMatch` (CLAUDE.md §3b-cond).
+axiomatised as the class `ComplexVolumeMatch` (AGENTS.md §3b-cond).
 
 Fibre-level caveat: `Im(q₀)=0` at the archimedean level
 (`lusztig_q_0_imaginary_part_zero`); the complex structure is fibre-level
@@ -105,11 +105,11 @@ with the bar-involution `σ`). The `ℂ` Re/Im descent is simply their
 **archimedean instance** with `σ =` complex conjugation: `Re z = (z+σz)/2`
 (bar-even / binding) and `Im z` carried by `(z−σz)/2` (bar-odd / `𝔔_β`).
 No separate `ℂ`-only lemma is needed — the proofs live over the ring with
-involution, per CLAUDE.md §7c. -/
+involution, per AGENTS.md §7c. -/
 
 /-! ## Physical-match conjecture (the only open content) -/
 
-/-- The physical-match conjecture (CLAUDE.md §3b-cond class): the
+/-- The physical-match conjecture (AGENTS.md §3b-cond class): the
     *measured* complex volume of a composite `K` — the **single** observable
     `𝔙_obs = 𝔈_bind^obs + i·𝔔_β^obs` — equals `𝔙(K)` at a single
     normalisation.  One hypothesis (`volume_match`), not two parallel arms:

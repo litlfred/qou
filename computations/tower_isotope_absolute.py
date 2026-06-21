@@ -33,6 +33,7 @@ Isotopes tested: p, n, D, T, ³He, ⁴He, ⁶Li (optional).
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import sys
 import json
 import math
@@ -69,8 +70,8 @@ Z_SQ = Z_MP * Z_MP
 # CODATA masses (MeV) — atomic masses, neutral atom
 M_E_CODATA = mp.mpf(str(M_E_MEV))
 CODATA_ATOMIC = {
-    "p":     mp.mpf("938.27208816"),       # bare proton (not neutral H)
-    "n":     mp.mpf("939.56542052"),
+    "p":     mp.mpf(M_P_MEV_VALIDATION),       # bare proton (not neutral H)
+    "n":     mp.mpf(M_N_MEV_VALIDATION),
     "D":     mp.mpf("1876.12392"),         # ²H atomic mass (with e)
     "T":     mp.mpf("2809.43215"),         # ³H atomic mass
     "3He":   mp.mpf("2809.41347"),         # ³He atomic mass
@@ -213,8 +214,8 @@ def main() -> int:
     print()
 
     ISOTOPES = [
-        ("p",     1, 0, M_E_CODATA * 0 + mp.mpf("938.27208816")),
-        ("n",     0, 1, mp.mpf("939.56542052")),
+        ("p",     1, 0, M_E_CODATA * 0 + mp.mpf(M_P_MEV_VALIDATION)),
+        ("n",     0, 1, mp.mpf(M_N_MEV_VALIDATION)),
         ("D",     1, 1, CODATA_ATOMIC["D"]),
         ("T",     1, 2, CODATA_ATOMIC["T"]),
         ("3He",   2, 1, CODATA_ATOMIC["3He"]),

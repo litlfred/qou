@@ -1,4 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
+*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 The vertex operator algebra $(V, Y, |0\rangle)$
 ([vertex operator](#def\:vertex-operator)) inherits every QU and QUO
@@ -19,7 +19,7 @@ $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$.
 The braiding $c_{V,V}$ acts on $V^{\otimes n}$ via the Hecke
 representation $\rho_n\colon B_n \to H_n(R, q)$, where we write
 $\sigma_i$ both for the braid generator in $B_n$ and for its image
-$\rho_n(\sigma_i)$ in $H_n(R, q)$ (CLAUDE.md §7a). Rigidity and
+$\rho_n(\sigma_i)$ in $H_n(R, q)$ (AGENTS.md §7a). Rigidity and
 braiding are encoded by three families of relations:
 
 **(QU-1a) Hecke relation** (quadratic):

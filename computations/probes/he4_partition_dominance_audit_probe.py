@@ -31,7 +31,7 @@ VERDICT shape (pre-stated):
 DISCIPLINE. This is a pure empirical accounting probe; it makes
 no new numerical claims about ρ_F. The verdict re-frames the open
 research direction for ⁴He WITHOUT proposing a new substrate
-constant or operator (per CLAUDE.md anti-pattern guards on PR #1662).
+constant or operator (per AGENTS.md anti-pattern guards on PR #1662).
 """
 from __future__ import annotations
 

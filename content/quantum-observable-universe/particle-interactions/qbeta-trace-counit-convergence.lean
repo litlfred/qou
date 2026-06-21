@@ -15,16 +15,16 @@ and the proved algebraic core in `QOU/Interactions/qbeta_energy_scale.lean`.
 
 These must agree (same physical observable). The agreement is **not
 perturbative**: at the substrate the `N=0` Markov-trace term alone misses
-`Q_β` by ~259% (sign-corrected magnitude `|tr_M(Δ)|·𝔈₀ ≈ 0.49` MeV vs
-`0.78` MeV), so the convergence is a *functional-consistency identity*
-between the trace and counit functionals, not a small-correction limit.
+`Q_β` by −56% (magnitude `|tr_M(Δ)|·𝔈₀ ≈ 0.345` MeV vs `0.78` MeV, ~2.3×
+low), so the convergence is a *functional-consistency identity* between
+the trace and counit functionals, not a small-correction limit.
 Its empirical evidence is the `+0.17%` agreement of the counit form at
 `N=0`. It is therefore stated as a **conjecture**, axiomatised as a class
 (formalizer §3b): the `converges` field is the conjectural input; any
 instance carries the lone `sorry`.
 
 Real-valued throughout — `𝔪`, `m_e`, `𝔈₀` are MeV observables
-(archimedean; CLAUDE.md §7c).
+(archimedean; AGENTS.md §7c).
 -/
 
 namespace QOU.Interactions.QBetaConvergence

@@ -3,7 +3,7 @@
 After the c_3 cross-anchor rigidity falsification (PR-merged 2026-06-04:
 docs/audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md),
 no real-q formula c_3 = f(q) can track the empirical c_3 swing
-(dc_3/dq ≈ 4.6e6). Per CLAUDE.md §"Im(q) at fibre vs observable level" the
+(dc_3/dq ≈ 4.6e6). Per AGENTS.md §"Im(q) at fibre vs observable level" the
 genuine object is complex-analytic / root-of-unity at the fibre level.
 
 This probe makes that concrete and falsifiable. A function whose value

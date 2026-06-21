@@ -64,7 +64,7 @@ predicted_split = derived_Coulomb · lw_c2(q₀) · (12/5)
 
 ## Q-usage discipline
 
-All symbolic work at fibre level (formal q). q₀ enters only at the final archimedean evaluation (Im(q₀) = 0). 12/5 is the **classical** limit at q = 1 — also a legitimate archimedean point. No |q| = 1 step. CLAUDE.md §7c compliant.
+All symbolic work at fibre level (formal q). q₀ enters only at the final archimedean evaluation (Im(q₀) = 0). 12/5 is the **classical** limit at q = 1 — also a legitimate archimedean point. No |q| = 1 step. AGENTS.md §7c compliant.
 
 ## Coordination
 

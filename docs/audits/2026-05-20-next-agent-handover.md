@@ -22,7 +22,7 @@ You are picking up the compute-optimization track for the **Quantum Observable U
 
 | # | File | Time | Why |
 |---|------|-----:|-----|
-| 1 | [`CLAUDE.md`](../../CLAUDE.md) | 15 min | repo conventions, **precision goals (L1 = 50-dps)**, three-calibration discipline (STRICT — read this) |
+| 1 | [`AGENTS.md`](../../AGENTS.md) | 15 min | repo conventions, **precision goals (L1 = 50-dps)**, three-calibration discipline (STRICT — read this) |
 | 2 | [`2026-05-20-compute-optimization-roadmap.md`](2026-05-20-compute-optimization-roadmap.md) | 10 min | the master plan (PR #865) — tiers, projections, attack order |
 | 3 | [`2026-05-20-markov-peel-bottleneck-profile.md`](2026-05-20-markov-peel-bottleneck-profile.md) | 5 min | cProfile data + 4-strategy ranking that motivated #859 |
 | 4 | [`2026-05-20-rust-port-scoping-markov-peel.md`](2026-05-20-rust-port-scoping-markov-peel.md) | 10 min | initial scoping (Phase-1+2 done; you're doing Phase-3) |
@@ -407,7 +407,7 @@ timeout 7200 python3 -u canonical_mass_table_extended.py \
 
 ---
 
-## §8. Strict rules (from CLAUDE.md)
+## §8. Strict rules (from AGENTS.md)
 
 | Rule | Consequence of violating |
 |------|--------------------------|
@@ -474,7 +474,7 @@ These are durable preferences (not session-specific):
 1. **No f64 in production.** MPFR via `mpmath.mpf` at `dps=50+`.
 2. **Heavy atoms + organic chem are the use cases.** Optimize for A ≥ 8, not for ⁴He.
 3. **Rust where it helps; Python where it doesn't.** The roundtrip Python ↔ Rust costs ~50ns per call — only worth crossing for amortizable work (whole-atom compute, not per-multiplication).
-4. **One PR, combined commits.** Per CLAUDE.md "Combine related work into one branch / one PR. Minimize their creation."
+4. **One PR, combined commits.** Per AGENTS.md "Combine related work into one branch / one PR. Minimize their creation."
 5. **Show benches in commit messages.** Concrete numbers, not "should be faster".
 
 ---
@@ -486,7 +486,7 @@ These are durable preferences (not session-specific):
 | Rust BigRational arithmetic | `tools/hecke-engine/src/laurent_poly_q.rs` (BigInt template) + `num-rational` docs | n/a |
 | PyO3 patterns | `tools/pyhecke-native/src/lib.rs` (20+ existing fns) | n/a |
 | Markov-axiom recursion | `markov_trace_canonical.py:_tr_M_word_impl` + `laurent_q_trace.py:_tr_M_word_lq_cached` | `compute-audit` skill |
-| Hecke algebra background | `hecke_symbolic.py` + papers cited in `CLAUDE.md §7a` | n/a |
+| Hecke algebra background | `hecke_symbolic.py` + papers cited in `AGENTS.md §7a` | n/a |
 | Cross-PR coordination | `coordinate.md` | `coordinate` skill |
 | /prepare-merge | `.claude/skills/local/prepare-merge.md` | `prepare-merge` skill |
 | Witness-pipeline drift | `compute_audit_scan.py`, `derivation_chain_validator.py`, etc. | `compute-audit` skill |

@@ -63,7 +63,7 @@ Consequence for any HOMFLY-like compute in this repo:
 
 The mass/binding pipeline computes `Σ_λ y_λ · |χ^λ|` (modulus per partition;
 see `per_bond_growth_a3.py:59`, `closed_form_tau_M.py`) because strong binding
-is `|tr_M|` (CLAUDE.md: *"Strong binding = modulus"*). A **sum of absolute
+is `|tr_M|` (AGENTS.md: *"Strong binding = modulus"*). A **sum of absolute
 values has already destroyed the sign** that a signed knot invariant needs.
 
 > You cannot recover a signed HOMFLY/Jones value from `Σ y_λ |χ^λ|` by any

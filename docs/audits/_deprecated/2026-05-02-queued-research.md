@@ -153,7 +153,7 @@ the Habiro cyclotomic expansion at $u = \zeta_{2p}$. Witness:
 `instance qouMotivicGaloisChar` discharges the
 `MotivicGaloisCharacter` axiom-class for the QOU substrate. The
 `almost_everywhere_nontrivial` field carries `sorry` as a
-substrate axiom (CLAUDE.md §3b) backed by the numerical witness.
+substrate axiom (AGENTS.md §3b) backed by the numerical witness.
 
 **Missing piece.** The explicit map
 

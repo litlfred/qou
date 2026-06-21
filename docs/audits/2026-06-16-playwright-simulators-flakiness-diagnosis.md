@@ -3,8 +3,8 @@
 **Date:** 2026-06-16
 **Session:** determined-hawking follow-up (`claude/amazing-galileo-ih3g4q`)
 **Scope:** the deferred "OOM/SIGTERM/Timeouts in `tests/simulators.spec.ts`" task.
-**Status:** root-caused; ready-to-apply patch produced (static + server-level
-verified; live browser run deferred — see *Verification*).
+**Status:** root-caused; ready-to-apply patch produced and **live-verified —
+7/7 tests pass against Chrome 149 with no OOM/SIGTERM** (see *Verification*).
 
 > **Where the code lives.** The simulators and their Playwright harness are in
 > the **`litlfred/folio-assistant`** repo, not `qou` (the platform was migrated
@@ -110,7 +110,7 @@ Three files (patch: `2026-06-16-playwright-simulators.patch`):
 
 | File | Change |
 |---|---|
-| `playwright.config.ts` | dedupe `timeout`; `fullyParallel:false`; CI retries; container launch flags (`--disable-dev-shm-usage` + SwiftShader); `actionTimeout`/`navigationTimeout`; `webServer.url` health check on `simulators/empty.html`. |
+| `playwright.config.ts` | dedupe `timeout`; `fullyParallel:false`; CI retries; container launch flags (`--disable-dev-shm-usage` + SwiftShader); `actionTimeout`/`navigationTimeout`; `webServer.url` health check on `simulators/empty.html`; optional `PLAYWRIGHT_CHROMIUM_PATH` executablePath hook for egress-restricted CI. |
 | `test-server.cjs` | **new** — dependency-free static server on `127.0.0.1:8080`, traversal-guarded, clean SIGTERM/SIGINT shutdown. |
 | `tests/simulators.spec.ts` | **new** — serial Tier-1 suite (7 tests): load + URL-param parsing for the 2D sims (beta-decay `q`+`shell`, knot `q`+`color`), WebGL load/parse for the Brings sims guarded behind a `three.min.js` HEAD check; every test fails on any uncaught `pageerror`. |
 | `scripts/vendor-three.cjs` | **new** — idempotent, non-fatal vendoring of the global `three.min.js` from the `three` devDep into `simulators/`. |
@@ -147,7 +147,7 @@ un-skip — no manual step.
 | `scripts/vendor-three.cjs` | ✅ provisions the 608 KB build when missing; idempotent no-op when present; non-fatal when `three` absent |
 | `playwright test --list` (config loads, tests discovered, no browser) | ✅ 7 tests discovered |
 | `git apply --check` on clean folio-assistant `main` (5 files) | ✅ applies cleanly |
-| **Live browser run** | ⛔ **deferred** — `cdn.playwright.dev` is not in this environment's egress allowlist (`playwright install chromium` → HTTP 403), and no system Chrome/Chromium is present. Run in CI or a network-allowlisted folio-assistant session. |
+| **Live browser run** | ✅ **7/7 passed in 6.8 s** — Chrome 149 (`@sparticuz/chromium`, fetched via npm/GitHub since `cdn.playwright.dev` is egress-blocked), incl. all 3 WebGL tests (SwiftShader) and the heaviest Quantum Brings scene (2.6 s); **no OOM/SIGTERM/timeout**. See *Running in an egress-restricted environment*. |
 
 ---
 
@@ -159,7 +159,7 @@ git apply /path/to/qou/docs/audits/2026-06-16-playwright-simulators.patch
 git add playwright.config.ts test-server.cjs tests/simulators.spec.ts \
         scripts/vendor-three.cjs package.json
 bun install                            # installs three@0.149.0 (+ @playwright/test)
-bunx playwright install chromium       # needs cdn.playwright.dev allowlisted
+bunx playwright install chromium       # if cdn.playwright.dev is blocked, see "egress-restricted" below
 bun run test:e2e                       # pretest:e2e vendors three.min.js, then runs
 ```
 
@@ -168,3 +168,24 @@ bun run test:e2e                       # pretest:e2e vendors three.min.js, then 
 vendor step is non-fatal and the 3 WebGL tests **skip** with a clear reason
 while the 4 two-D-sim tests still pass.) For production, also commit
 `simulators/three.min.js` (see *Production note*).
+
+---
+
+## Running in an egress-restricted environment (locked-down CI / this sandbox)
+
+`bunx playwright install chromium` fetches from `cdn.playwright.dev`, which is
+often **not** in a CI egress allowlist (HTTP 403). `github.com` + the npm
+registry usually **are** — so provision Chromium from there instead:
+
+```bash
+# Chrome 149 build, released on GitHub, mirrored to npm — matches Playwright 1.60.
+bun add -d @sparticuz/chromium@149.0.0
+export PLAYWRIGHT_CHROMIUM_PATH="$(node -e \
+  "require('@sparticuz/chromium').executablePath().then(p=>console.log(p))")"
+bun run test:e2e   # config's launchOptions.executablePath reads PLAYWRIGHT_CHROMIUM_PATH
+```
+
+This is exactly how the live run above (7/7, no OOM/SIGTERM) was produced from a
+sandbox with `cdn.playwright.dev` blocked. `@sparticuz/chromium` bundles
+SwiftShader, so the WebGL tests pass too. No config change beyond setting the env
+var — the `executablePath` hook is already in the patched `playwright.config.ts`.

@@ -24,7 +24,7 @@
 -- decomposition) that live behind the `LValueDecomposition`
 -- conditional class — they require Mathlib `Polylogarithm` /
 -- `DirichletL` infrastructure not yet shipped, so they remain
--- conjecture-via-class per CLAUDE.md §3b-cond.
+-- conjecture-via-class per AGENTS.md §3b-cond.
 
 namespace QOU.BraidKnot.CyclotomicLValueDecomposition
 

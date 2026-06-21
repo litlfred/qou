@@ -53,7 +53,7 @@ For higher-A atoms the ratio increases sharply (D = 6.52, T = 24.3, ⁴He = 45.8
 - ❌ Replacing `VolDensity(K) = Vol(𝓑₃)/ℏ_q² · Family_A(q)` with `VolDensity(K) = Vol(𝓑₃)/ℏ_q² · |tr_M(β_K)|` for general atoms
   - Reproduces the canonical-reference's −56.7 % m_p regression
   - Fails CODATA for D, T, ³He, ⁴He by 48 % to 99 %
-- ❌ Any (Z, N)-dependent scaling of Family A that reproduces atom-specific masses without categorical derivation (forbidden per CLAUDE.md §"Δ_λ gate")
+- ❌ Any (Z, N)-dependent scaling of Family A that reproduces atom-specific masses without categorical derivation (forbidden per AGENTS.md §"Δ_λ gate")
 
 ## What Phase B confirms
 
@@ -74,12 +74,12 @@ The production m_avg formula uses uniform Vol(𝓑₃). For Subgoal-1 m_avg clos
 
 ## Phase C — Lean scaffold
 
-Created [`content/quantum-observable-universe/lean/QOU/BraidKnot/OperatorValuedCombiner.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/OperatorValuedCombiner.lean) per CLAUDE.md §3b-cond conditional-class pattern:
+Created [`content/quantum-observable-universe/lean/QOU/BraidKnot/OperatorValuedCombiner.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/OperatorValuedCombiner.lean) per AGENTS.md §3b-cond conditional-class pattern:
 
 - **`class WenzlAOperator (R : Type u) [CommRing R] (q : R) [CrystalGraphRealization R q]`** — the universal A^λ_{ξν}(I) operator-extract claim with `extract_universal` field (the H_9+ universality conjecture)
 - **`theorem operator_valued_combiner_convergence`** — Nat.rec on A ≥ 2; base case A=2 verified at 0.72 ppb in Phase A; inductive step deferred to `sorry` carrying the manuscript citation to the audit doc
 
-This is **NOT** instance-populated — `WenzlAOperator` carries the research-grade sorry per CLAUDE.md §3b-cond. Production safe.
+This is **NOT** instance-populated — `WenzlAOperator` carries the research-grade sorry per AGENTS.md §3b-cond. Production safe.
 
 ## Cross-references
 

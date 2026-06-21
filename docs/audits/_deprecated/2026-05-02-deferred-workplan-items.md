@@ -93,7 +93,7 @@ identified ~3000 transitive provable blocks in 18 case-(3)
 legitimate-dependency cones (definitions / remarks where the
 conjecture is structurally essential to the named construction).
 
-Per CLAUDE.md §3b clarification, these are **not** propagation
+Per AGENTS.md §3b clarification, these are **not** propagation
 violations — but a per-block acknowledgement audit would confirm
 each prose body explicitly notes the conjectural upstream
 dependency. Estimated **1–2 days, manual triage**, with most

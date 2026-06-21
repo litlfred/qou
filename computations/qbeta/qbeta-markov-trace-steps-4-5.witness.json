@@ -65,7 +65,7 @@
     },
     "step_4_pointer": {
       "S_at_q0": "0.18689369188617716011080460702942218631505966186523",
-      "structural_note": "Under Markov collapse T_β = S · I, the c_k Taylor coefficients of Q_β(q)/E_0(q) are the w-Taylor coefficients of S(q), not of a 6-channel L2 projection. Re-extracting c_k from S(q) directly is the runnable next-probe; this script does NOT propose c_k values (forbidden ansatz pattern per CLAUDE.md)."
+      "structural_note": "Under Markov collapse T_β = S · I, the c_k Taylor coefficients of Q_β(q)/E_0(q) are the w-Taylor coefficients of S(q), not of a 6-channel L2 projection. Re-extracting c_k from S(q) directly is the runnable next-probe; this script does NOT propose c_k values (forbidden ansatz pattern per AGENTS.md)."
     }
   }
 }

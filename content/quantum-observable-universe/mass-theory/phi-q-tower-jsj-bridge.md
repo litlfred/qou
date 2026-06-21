@@ -101,7 +101,7 @@ while JSJ remains the numerical workhorse.
 
 ### Conditional Lean theorem
 
-Per `CLAUDE.md` §3b, this conjecture is downstream of
+Per `AGENTS.md` §3b, this conjecture is downstream of
 [Kashaev volume conjecture](#conj:kashaev-volume-conjecture) and
 therefore cannot be a `theorem`/`proposition` block.  The Lean
 formalisation lives in the formal Lake package at

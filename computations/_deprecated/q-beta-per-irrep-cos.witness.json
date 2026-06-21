@@ -10,7 +10,7 @@
   "scriptFile": "probe_q_beta_per_irrep_cos.py",
   "scriptHash": "e610bf845e2b",
   "scriptCommitSha": "unknown",
-  "description": "Per-irrep cos / cos_q analysis of Q_β at single wrap. Tests whether the q-deformed cos_q appears at the per-irrep level (χ^λ_q on V_(2,1)) before the Markov trace sum decategorifies it to classical cos. Finding: τ_M-level prediction uses CLASSICAL cos (consistent with CLAUDE.md §7b KL decategorification); the per-irrep χ^(2,1)_q values themselves do not match either classical cos((z-1)h/2) or cos_q((z-1)h/2) directly — the cos structure emerges only AFTER the y_λ-weighted sum.",
+  "description": "Per-irrep cos / cos_q analysis of Q_β at single wrap. Tests whether the q-deformed cos_q appears at the per-irrep level (χ^λ_q on V_(2,1)) before the Markov trace sum decategorifies it to classical cos. Finding: τ_M-level prediction uses CLASSICAL cos (consistent with AGENTS.md §7b KL decategorification); the per-irrep χ^(2,1)_q values themselves do not match either classical cos((z-1)h/2) or cos_q((z-1)h/2) directly — the cos structure emerges only AFTER the y_λ-weighted sum.",
   "auditOnly": "PR #655 follow-up; structural analysis of where the classical-cos resummation arises in the Hecke-character × Wenzl-bridge derivation chain. Supports the `q-beta-cos-resummation` content block.",
   "data": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",

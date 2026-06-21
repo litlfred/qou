@@ -111,7 +111,7 @@ from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1)  # noq
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP  # noqa: E402
 from experimental_constants import M_P_MEV, M_N_MEV  # noqa: E402
 
-# ── Substrate parameter and Markov parameter (CLAUDE.md notation) ──
+# ── Substrate parameter and Markov parameter (AGENTS.md notation) ──
 Q0 = Q_MP    # was f64 roundtrip — now genuine 50 dps via vol_4_1_at
 QI = Q_INV_MP
 # z = 1/(q^{1/2} + q^{-1/2}) — the Markov parameter

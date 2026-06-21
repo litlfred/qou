@@ -15,7 +15,7 @@ The `publish.yml` runs were all red, but **not** because of the PDF.
 Every recent run (all branches, all of 2026-06-06) died in **4–6 seconds**
 in the `content-pipeline` job with 404 logs and all downstream jobs
 `skipped` — the textbook **GitHub Actions billing-failure signature**
-(CLAUDE.md "CI billing failures"): setup-phase death ≤ 5 s, multiple jobs,
+(AGENTS.md "CI billing failures"): setup-phase death ≤ 5 s, multiple jobs,
 no log because the job never started. That is an infra/billing condition,
 not a code bug. Local reproduction of the content-pipeline (export-bibtex
 sync, `validate.ts`, `build.ts --generate-main`) passed clean (0 errors).
@@ -30,7 +30,7 @@ the `paper-pdf` job *would* fail on once billing clears:
 
 | # | Signature | Location | Root cause | Fix |
 |---|-----------|----------|------------|-----|
-| A | `! LaTeX Error: Command \pp already defined.` | `main.tex:189` vs `:500` | The paper manifest `macros:` block (`quantum-observable-universe.ts`) re-emitted `\newcommand{\pp}{\mathfrak{p}}` while `latex/preamble.tex` already defines `\pp = p` (the p-adic prime, CLAUDE.md §7aa). All 18 content uses of `\pp` are p-adic; none are the proton. | Removed the stale manifest entry; preamble def is authoritative. |
+| A | `! LaTeX Error: Command \pp already defined.` | `main.tex:189` vs `:500` | The paper manifest `macros:` block (`quantum-observable-universe.ts`) re-emitted `\newcommand{\pp}{\mathfrak{p}}` while `latex/preamble.tex` already defines `\pp = p` (the p-adic prime, AGENTS.md §7aa). All 18 content uses of `\pp` are p-adic; none are the proton. | Removed the stale manifest entry; preamble def is authoritative. |
 | B | `! Undefined control sequence.` (`\tr`, ×3) | `binding-alpha-shift-extension.md` | Bare `\tr` is defined nowhere. | `\tr` → `\mathrm{tr}` (matches sibling `\mathrm{Vol}`). |
 | C | `! Missing { inserted.` (at `\check`) | `y-lambda-cyclotomic-factorization.md:69` | `Q^\check{q}` — a math accent as a bare superscript; `\check`'s `\mathpalette` expansion breaks without braces. | `Q^{\check{q}}`. |
 

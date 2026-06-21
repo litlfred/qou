@@ -9,7 +9,7 @@ import Mathlib.Tactic
 
 This file aggregates the Lean theorem stubs identified as gaps in
 the m_n compute chain audit (commit `dc3ce9e4` on PR #637, plus the
-follow-up symbolic recompute commit `3afe366f`). Per CLAUDE.md §1
+follow-up symbolic recompute commit `3afe366f`). Per AGENTS.md §1
 ("every `sorry` requires a bibliographic citation"), every `sorry`
 below carries a citation to its manuscript source.
 
@@ -156,7 +156,7 @@ The framework's quark-typed crossings (`four-term-pair-nucleon.md`):
   * ud pair: ½(σ + σ^{-1}) (c=1, d=-H_A/2)
 
 The encoding `(c, d) = (1, -H_A)` for dd is a CHOICE in the script
-`mass_endomorphism.py:neutron_cross`. Per CLAUDE.md §7a (Hecke-Skein
+`mass_endomorphism.py:neutron_cross`. Per AGENTS.md §7a (Hecke-Skein
 convention), σ^{-1} satisfies σ^{-1} = σ - H_A · 1, so dd → (1, -H_A)
 is forced. But the `c=1, d=-H_A/2` ud-average is a convention.
 -/

@@ -345,7 +345,7 @@ with:
 - `lobachevsky_pi_div_four_eq_half_catalan : Λ(π/4) = G/2` (Lewin 1981)
 - `vol_B3_eq_8_catalan : vol_B3 = 8 * catalan_G` (Adams 1985)
 
-All `sorry`s carry explicit bibliographic citations per CLAUDE.md §1.
+All `sorry`s carry explicit bibliographic citations per AGENTS.md §1.
 Closes the §3 audit entry "Vol(𝓑₃) Lean formalization — literature
 value cited, NOT in Lean".
 
@@ -402,14 +402,14 @@ After "go" + "build more infra" + "please continue until it's completed" sequenc
 | [`BringFaddeevH4LinkingWeight.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/BringFaddeevH4LinkingWeight.lean) | 274 | 0 | Definitions + `categorically_distinct_from_familyA_at_q_one` + positivity bounds |
 | [`BringColorTubeQForm.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/BringColorTubeQForm.lean) | 200 | 0 | Closed forms `1/(1+q⁹−q¹¹)` and Faddeev q-rational form |
 | [`LinkingWeightSubstrateBounds.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/LinkingWeightSubstrateBounds.lean) | 195 | 0 | Interval bounds at q₀ = `1109978596/10⁹`: linking_weight ∈ (2.46, 2.465); Family A ∈ (2.53, 2.54); categorical distinctness at q₀ |
-| [`AdditiveCompositionConjecture.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/AdditiveCompositionConjecture.lean) | 195 | 0 | `class AdditiveCompositionRule` per CLAUDE.md §3b-cond + 3 conditional theorems + substrate instance |
+| [`AdditiveCompositionConjecture.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/AdditiveCompositionConjecture.lean) | 195 | 0 | `class AdditiveCompositionRule` per AGENTS.md §3b-cond + 3 conditional theorems + substrate instance |
 | [`HExpansionPolynomial.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/HExpansionPolynomial.lean) | 260 | 0 | Degree-4 Taylor polynomials + 12+ coefficient theorems |
 | [`HExpansionDegree8.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/HExpansionDegree8.lean) | 284 | 0 | Extended to degree 8 + via-Jones cross-PR comparison + 3-way distinctness |
 | [`HExpansionDegree8Combined.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/HExpansionDegree8Combined.lean) | 188 | 0 | Combined Bring + Faddeev at degree 8 + polynomial-level distinctness |
 | [`TruncationErrorBound.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/TruncationErrorBound.lean) | 191 | 3 (with Refs) | Faddeev truncation PROVED (closed form); Bring + combined sorry'd |
 | [`AdditiveCompositionCategoricalProof.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/AdditiveCompositionCategoricalProof.lean) | 247 | 0 | 4 categorical-hypothesis classes + multiplicative-falsification theorem |
 
-**Total**: 10 Lean files, ~2220 LOC, **7 sorrys** (all with explicit bibliographic `Ref` per CLAUDE.md §1), **~55 sorry-free theorems**.
+**Total**: 10 Lean files, ~2220 LOC, **7 sorrys** (all with explicit bibliographic `Ref` per AGENTS.md §1), **~55 sorry-free theorems**.
 
 ### Headline formal results
 
@@ -430,7 +430,7 @@ After "go" + "build more infra" + "please continue until it's completed" sequenc
 
 5. **Multiplicative composition falsified**: `multiplicative_gt_additive_when_both_above_one` proved pointwise via `nlinarith` — multiplicative form is strictly worse at substrate.
 
-6. **4 categorical hypotheses for additive composition**: scaffolded as Lean classes per CLAUDE.md §3b-cond. Each class carries the structural commitment (partition assignment, S_4 ↓ S_3 inheritance, Frobenius reciprocity, KLR positivity); conditional theorems consume the classes.
+6. **4 categorical hypotheses for additive composition**: scaffolded as Lean classes per AGENTS.md §3b-cond. Each class carries the structural commitment (partition assignment, S_4 ↓ S_3 inheritance, Frobenius reciprocity, KLR positivity); conditional theorems consume the classes.
 
 ### Remaining open work (research-grade, multi-session)
 

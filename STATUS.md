@@ -25,9 +25,9 @@
 
 | Queue | Purpose | Items |
 |-------|---------|-------|
-| [`todos/1ppq-qbeta-queue.json`](todos/1ppq-qbeta-queue.json) | Per-goal 1ppQ-Q_β work | 6 (3 done, 1 in_progress, 2 blocked) |
-| [`todos/lean-discharge-queue.json`](todos/lean-discharge-queue.json) | Mechanical Lean sorry discharge (NOT §3b-cond) | 8 items + 1 registry of permanent sorries |
-| [`todos/research-queue.json`](todos/research-queue.json) | Research-grade open items across goals | 7 items (Q_β Habiro, Φ_q×spectral, (1+q)/2, multi-nucleon A=4, atom→knot A≥5, fibre/observable doc, q_0 declined) |
+| [`.beans/1ppq-qbeta-queue.json`](.beans/1ppq-qbeta-queue.json) | Per-goal 1ppQ-Q_β work | 6 (3 done, 1 in_progress, 2 blocked) |
+| [`.beans/lean-discharge-queue.json`](.beans/lean-discharge-queue.json) | Mechanical Lean sorry discharge (NOT §3b-cond) | 8 items + 1 registry of permanent sorries |
+| [`.beans/research-queue.json`](.beans/research-queue.json) | Research-grade open items across goals | 7 items (Q_β Habiro, Φ_q×spectral, (1+q)/2, multi-nucleon A=4, atom→knot A≥5, fibre/observable doc, q_0 declined) |
 
 ## Active sessions
 
@@ -51,7 +51,7 @@
 ## Session history (recent)
 
 - **2026-06-17** (Claude, `claude/laughing-hopper-lbo214`, 4 PRs merged): refuted the difference-link-volume geometric route to the per-isotope binding residual `q₀^(10A−5)` (PR #2435, non-constant 2.36× prefactor); Lean-grounded the Q_β silver anchor — `b²=7/8` derived from `q²−2q−1=0` (PR #2445); **corrected** that PR's dominance overclaim — the silver/Q_A zero is a *genuine but subdominant* F-pole (char root 3.12, not the dominant 117.4; PR #2454), via the GB-`Δ(net)(1+√2)=82216+58136√2≠0` (an earlier cheat-sheet check was circular); confirmed PR #2444's L1-not-certified finding live and backed out a stale "L1 met" precision-goals.md edit. Refreshed this board.
-- **2026-05-31 / 2026-06-01** (Claude, ~10 PRs): Built coordination infrastructure (STATUS.md, master ledgers for 1ppq-qbeta + option-e + alpha-em, queue files, `/session-intent` + `/pending-show` skills, SessionStart hook), bumped precision defaults (compute 65 → 70 dps, output 50 → 60 dps), settled c_3 q_0-stability as NEAR-MATCH not Taylor-exact (5th-and-final settlement; flip-flop history catalogued), refuted Li_2^q × spectral combiner (mech #7), recorded Δtr_M bar-decomposition as structural observation (sym 7.7% + antisym 92.3% in t=q^(1/2) basis), made fibre/observable Im(q) distinction explicit in CLAUDE.md. PRs: #1580, #1585, #1587, #1594, #1599, #1603, #1609, #1615, plus this one.
+- **2026-05-31 / 2026-06-01** (Claude, ~10 PRs): Built coordination infrastructure (STATUS.md, master ledgers for 1ppq-qbeta + option-e + alpha-em, queue files, `/session-intent` + `/pending-show` skills, SessionStart hook), bumped precision defaults (compute 65 → 70 dps, output 50 → 60 dps), settled c_3 q_0-stability as NEAR-MATCH not Taylor-exact (5th-and-final settlement; flip-flop history catalogued), refuted Li_2^q × spectral combiner (mech #7), recorded Δtr_M bar-decomposition as structural observation (sym 7.7% + antisym 92.3% in t=q^(1/2) basis), made fibre/observable Im(q) distinction explicit in AGENTS.md. PRs: #1580, #1585, #1587, #1594, #1599, #1603, #1609, #1615, plus this one.
 
 ## Last updated
 

@@ -11,7 +11,7 @@ import Mathlib.Data.Real.Basic
 The full Lean statement and proof are pending; this stub exists so
 the `lean.ref` URI `qou:QOU.Archimedean.knot_operator_selection` resolves to a real declaration in
 the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+manuscript citation per AGENTS.md §1.
 -/
 
 namespace QOU.Archimedean

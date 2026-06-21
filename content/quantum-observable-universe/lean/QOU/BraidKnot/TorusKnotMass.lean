@@ -48,7 +48,7 @@ namespace QOU.BraidKnot
     PR #1128) is captured here as a TARGET that a complete instance
     would establish.
 
-    Per CLAUDE.md §3b-cond: the class fields encode the conjectural
+    Per AGENTS.md §3b-cond: the class fields encode the conjectural
     content; the `noncomputable instance` is the open structural
     statement. -/
 class TorusKnotMass where

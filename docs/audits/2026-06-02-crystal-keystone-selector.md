@@ -227,7 +227,7 @@ never fixing a line.
   [`crystal_basis.py`](../../computations/crystal_basis.py).
 - The discipline guardrails (re-pitch failure modes; §7b authoring-guidance
   framing): [`2026-05-30-klr-dialog-assessment.md`](2026-05-30-klr-dialog-assessment.md);
-  CLAUDE.md §7b; the Δ_λ gate warning.
+  AGENTS.md §7b; the Δ_λ gate warning.
 - The `h⁴ = −3/4` block invariant (falsification reference):
   [`borromean_h3_2_1_irrep_derivation.py`](../../computations/borromean_h3_2_1_irrep_derivation.py).
 - Lusztig bar / Schützenberger evacuation realizing it on type-A canonical bases:

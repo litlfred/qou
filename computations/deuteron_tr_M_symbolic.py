@@ -11,7 +11,7 @@ BOTH:
 
   - tr_q_plancherel_symbolic — historical output, Σ dim_q²/[n]_q!·χ^λ/f^λ
   - tr_Markov_symbolic — canonical Wenzl-Ocneanu y_λ·χ^λ trace
-    (matches `thm:jones-markov-trace` in CLAUDE.md §7a)
+    (matches `thm:jones-markov-trace` in AGENTS.md §7a)
 
 The witness JSON now reports both for downstream comparison.
 
@@ -199,7 +199,7 @@ def main() -> int:
         "description": (
             "Closed-form symbolic Markov trace of the internal A=2 "
             "(deuteron) braid in H_6(q), via the canonical Wenzl-"
-            "Ocneanu y_λ·χ^λ formula (matches CLAUDE.md §7a "
+            "Ocneanu y_λ·χ^λ formula (matches AGENTS.md §7a "
             "`thm:jones-markov-trace`). Migrated from the historical "
             "Plancherel-trace formula on 2026-05-17 per audit doc "
             "2026-05-17-dual-tr-m-discrepancy.md — no fallback."

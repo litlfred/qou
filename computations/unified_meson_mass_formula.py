@@ -45,7 +45,7 @@ def main():
     q = mp.mpf(Q_50_DIGIT_STR)
     h = q - 1/q
 
-    from codata_constants import M_PI_PM_MEV_VALIDATION  # noqa: E402
+    from codata_constants import M_PI_PM_MEV_VALIDATION, M_K_PM_MEV_VALIDATION  # noqa: E402
     m_pi = M_PI_PM_MEV_VALIDATION  # CAL-3: 𝔇_π → m_π
 
     print("=" * 70)
@@ -79,11 +79,11 @@ def main():
         5: mp.mpf(9)/5,         # from #1344: V(T(2,5))/V(T(2,3)) = 9/5
     }
 
-    # PDG masses for comparison
+    # PDG masses for comparison — registry where available (η not yet in registry)
     pdg = {
-        "π±": mp.mpf("139.57039"),
-        "K±": mp.mpf("493.677"),
-        "η": mp.mpf("547.862"),
+        "π±": M_PI_PM_MEV_VALIDATION,
+        "K±": M_K_PM_MEV_VALIDATION,
+        "η": mp.mpf("547.862"),  # noqa: P31 — PDG η; no registry export yet
     }
 
     print(f"  Meson mass predictions from CAL-3 + derived identities")

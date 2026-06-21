@@ -6,7 +6,7 @@
 
 ## The redirect: stop fitting at q_0, derive symbolically
 
-All prior Q_β c_k work was **archimedean** — numerical, fitted at q_0 ≈ 1.10998, hence the "c_4+ extracted from CODATA residual" circularity. The owner's directive is to work **pre-archimedean**: formal q, symbolic, where the c_k genuinely live as Habiro/Taylor coefficients (CLAUDE.md §"Im(q) fibre vs observable", §7c base-ring convention).
+All prior Q_β c_k work was **archimedean** — numerical, fitted at q_0 ≈ 1.10998, hence the "c_4+ extracted from CODATA residual" circularity. The owner's directive is to work **pre-archimedean**: formal q, symbolic, where the c_k genuinely live as Habiro/Taylor coefficients (AGENTS.md §"Im(q) fibre vs observable", §7c base-ring convention).
 
 The enabling fact (from `qbeta-decay-sdp-knot-operator.witness.json`):
 
@@ -34,7 +34,7 @@ This recursion:
 3. **Integrality / Habiro membership (existence)** — symbolic `(q;q)_n` expansion of the correction factor; check coefficients ∈ ℤ[q]. Pass ⇒ element ∈ Habiro ring (`habiro_integral`).
 4. **Uniqueness + bridge instance (Lean)** — cite `habiro_terminates` (Habiro injectivity, already in `habiro-precision-ladder-equivalence.lean`); discharge the `QbetaHabiroTaylorBridgeClass` §3b-cond instance. Converts c_3+ from *fitted* to *the unique Taylor coefficients of the canonical Habiro element* — no closed form needed.
 
-## Forbidden (CLAUDE.md)
+## Forbidden (AGENTS.md)
 
 - No ansatz fits for c_k (the recursion is DERIVED from z(q)'s algebraicity, not guessed).
 - No production wiring until cross-anchor validation.

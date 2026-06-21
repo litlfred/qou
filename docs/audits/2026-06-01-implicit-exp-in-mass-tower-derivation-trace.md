@@ -37,7 +37,7 @@ candidate to wire.
 
 ## Derivation chain — where exp/exp_q/Φ_q appear
 
-Per CLAUDE.md §Canonical derivation chain:
+Per AGENTS.md §Canonical derivation chain:
 
 ```
 substrate q_0 → 𝐂 categorical action → Yekutieli non-abelian Stokes → 𝐇_n(q) Hecke
@@ -199,7 +199,7 @@ level that the cross-anchor test doesn't probe.
 
 ## Anti-pattern guard
 
-Per CLAUDE.md no-7th-ansatz discipline:
+Per AGENTS.md no-7th-ansatz discipline:
 
 - ❌ DO NOT propose `Q_β = exp(Σ c̃_k u^k)` formula and re-fit c̃_k
   numerically — that's the 8th-ansatz trap
@@ -222,7 +222,7 @@ Per CLAUDE.md no-7th-ansatz discipline:
 - `content/quantum-observable-universe/information-theory/q-exponential-taylor.md` — q-exponential definition
 - `computations/_phi_q_util.py` — Φ_q archimedean util (post-τ)
 - `computations/_li_2_q_util.py` — Li_2^q util (pre-τ, binding context)
-- PR #1616 — Im(q) fibre/observable framing in CLAUDE.md
+- PR #1616 — Im(q) fibre/observable framing in AGENTS.md
 - PR #1620 — Hecke-natural form for sym(Δtr_M)
 - PR #1626 — complex c_3 fibre diagnostic
 - PR #1630 — Li_2^q × spectral cross-anchor completion + cosh_q/sinh_q scan

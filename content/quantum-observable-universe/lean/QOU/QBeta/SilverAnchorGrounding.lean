@@ -42,7 +42,7 @@ factorisation `q⁴ − 6q² + 1 = (q² − 2q − 1)(q² + 2q − 1)` — the s
 and its bar-conjugate.
 
 Pure algebra from `q² = 2q + 1`; stated over a generic `CommRing` per
-CLAUDE.md §7c (no `ℝ`, no `√2` needed). The field form is added only for the
+AGENTS.md §7c (no `ℝ`, no `√2` needed). The field form is added only for the
 literal `b² = 7/8` ratio. This grounds — it does **not** make any `c_k ≥ 3`
 canonical (the Pell–Lucas pattern still breaks at the free rungs; registry §8);
 no `c_k` value is claimed here.

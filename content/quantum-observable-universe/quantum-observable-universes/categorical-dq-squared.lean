@@ -20,7 +20,7 @@ LaTeX label: `prop:categorical-dq-squared`
 
 - [manuscript] §1-quantum-observable-universe/categorical-dq-squared
 
-**Base ring** (CLAUDE.md §7c): the obstruction formula
+**Base ring** (AGENTS.md §7c): the obstruction formula
 `q⁻¹(1 - q⁻¹) · [ξ, α]` requires an inverse `q⁻¹`, so the carrier is a
 generic `{R : Type*} [Field R]` with `q : R`, `q ≠ 0`. The combinatorial
 content stays generic — no archimedean ordering is used (the `q = 1`

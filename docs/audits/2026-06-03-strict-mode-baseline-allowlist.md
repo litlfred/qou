@@ -5,7 +5,7 @@
 ## Why this exists
 
 [`content/pipeline/conditional-class-banner-audit.ts`](../../content/pipeline/conditional-class-banner-audit.ts)
-enforces CLAUDE.md §3b-cond: every block downstream of a
+enforces AGENTS.md §3b-cond: every block downstream of a
 `conj:`-axiomatised class must carry **both** (i) the upstream class
 as an `[Instance]` hypothesis in its `.lean`, **and** (ii) a
 `Theorem (conditional on conj:X).` banner in its `.md`.
@@ -75,17 +75,17 @@ git commit -m "audit: discharge §3b-cond gap on <block-label>"
 ## What it does NOT do
 
 - **Does not fix the 232 gaps.** That is a separate, substantive
-  content campaign (per CLAUDE.md §3b-cond #2 + #3).
+  content campaign (per AGENTS.md §3b-cond #2 + #3).
 - **Does not unblock billing-side CI failures.** As of 2026-06-03,
   ~25 of 27 recent main runs are failing on GitHub Actions billing
   (runner_id=0, 3-second simultaneous fails across unrelated
-  workflows). Those are out of scope per CLAUDE.md
+  workflows). Those are out of scope per AGENTS.md
   "CI billing failures" rule.
 
 ## Related
 
-- CLAUDE.md §3b-cond (the source rule).
-- CLAUDE.md §"CI billing failures — distinguish from real failures"
+- AGENTS.md §3b-cond (the source rule).
+- AGENTS.md §"CI billing failures — distinguish from real failures"
   (why we are not retriggering blocked workflows).
 - PR #566 (initial 12/12 fully-compliant baseline — the count has
   since regressed as new propositions landed without the contract).

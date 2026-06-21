@@ -130,7 +130,7 @@ opportunities for `ring`, `positivity`, or `norm_num`. Minimal commented-out cod
 - **Lean toolchain:** v4.24.0 — pinned correctly
 - **Mathlib:** Pinned to commit hash `f897ebcf72cd16f89ab4577d0c826cd14afaafc7` — GOOD
 - **No `.lake/` or `build/` committed** — GOOD
-- **Note:** CLAUDE.md references `lean/` but actual structure uses `content/quantum-observable-universe/lean/`
+- **Note:** AGENTS.md references `lean/` but actual structure uses `content/quantum-observable-universe/lean/`
 
 ### 7. Content Block Coverage
 
@@ -241,7 +241,7 @@ complete and verify they hold here.
 showing the logical dependencies between chapters and the flow of the
 main argument.
 
-**m2.** The notation register (§7aa in CLAUDE.md) is extensive and well-designed
+**m2.** The notation register (§7aa in AGENTS.md) is extensive and well-designed
 but not fully reflected in the paper itself. A notation table at the
 beginning of the paper would greatly aid readers.
 
@@ -346,7 +346,7 @@ confuse readers.
 
 9. **Fibre functor notation** in fibre-functor-atlas.md — review `$\omega$` vs `$\tau$`
 10. **Import bloat** in Lean files — consider shared prelude
-11. **CLAUDE.md path mismatch** — references `lean/` but actual path is `content/quantum-observable-universe/lean/`
+11. **AGENTS.md path mismatch** — references `lean/` but actual path is `content/quantum-observable-universe/lean/`
 
 ### LOW / INFO
 

@@ -142,7 +142,7 @@ class SpinFromSO3Fiber
    $h^4 = -3/4$ at the $\ell = 2$ level.
 2. **D10 to closed** requires the Lean class instance + the
    `ell_two_yields_h4_coefficient` proof (with `sorry` for the
-   regulator of the divergent series at higher $\ell$, per CLAUDE.md
+   regulator of the divergent series at higher $\ell$, per AGENTS.md
    §3b "class is inhabited").
 3. **Connect to 's W/Z $\approx$ cos θ_W within 1%** binomial
    pattern — the unified $T(2, 2m)$ torus-knot Markov-trace

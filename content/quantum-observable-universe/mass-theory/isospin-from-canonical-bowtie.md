@@ -220,7 +220,7 @@ once:
 3. The isospin-Z/2-anti-symmetric residue verification numerical witness
    ships (see §"Open R&D" below)
 
-The Lean class follows the conditional-class exception of CLAUDE.md
+The Lean class follows the conditional-class exception of AGENTS.md
 §3b-cond: the upstream conjecture `crystal-isospin-degeneracy`
 provides the plain-generator base; the regularised-functional
 extension is an `Instance` parameter; the isospin-Z/2-anti-symmetric residue
@@ -270,7 +270,7 @@ The class is inhabited by:
 - the regularised-functional construction (concrete Cesàro
   regulator on the divergent series).
 
-Per CLAUDE.md §3b ("class is inhabited"), the only `sorry`
+Per AGENTS.md §3b ("class is inhabited"), the only `sorry`
 ultimately lives in the upstream-conjecture class instances.
 
 ## Open R&D

@@ -1,7 +1,7 @@
 /-!
 # QOU.BraidKnot.QZeroStokesRegionIdentification
 
-**Conditional class structure** (per CLAUDE.md §3b-cond) for the
+**Conditional class structure** (per AGENTS.md §3b-cond) for the
 substrate $q_0$ identification, framed over $\mathbb{Z}[q, q^{\pm 1}]$
 as the universal base.
 
@@ -67,7 +67,7 @@ def borromean : KnotComplement where
   vol_over_G := 8
 
 /-! ## §1. PROVED-LEVEL: Mostow-Prasad + Reid (axiomatized via classes
-   per CLAUDE.md §3b-cond — the sorrys represent literature theorems
+   per AGENTS.md §3b-cond — the sorrys represent literature theorems
    that exist independently of Lean formalization). -/
 
 /-- **Class axiomatization of Mostow-Prasad rigidity** (Mostow 1968 +
@@ -162,7 +162,7 @@ specific trace-field degree (SnapPy verifiable); inhabit
 identification (the OPEN GAP).
 -/
 
--- INSTANCES (uninstantiated; would carry sorrys per CLAUDE.md §3b-cond):
+-- INSTANCES (uninstantiated; would carry sorrys per AGENTS.md §3b-cond):
 -- instance : MostowPrasadDistinguished borromean := { }  -- literature
 -- instance : ReidTraceField borromean := { trace_field_degree := 4, finite_positive := by omega }  -- SnapPy
 -- instance (R : Type*) [UniversalBase R] : QZeroStokesIdentification borromean R := sorry  -- OPEN GAP

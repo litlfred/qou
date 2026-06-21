@@ -246,7 +246,7 @@ B_canonical(atom) = m_e · Σ_λ y_λ(atom) · χ_λ(β_atom) |_{q=q_0}
 Sibling PR #1224 identifies 4 structural constraints not yet jointly
 imposed. Combined with my D-row scaffolds (PR #1162/#1168/#1173/#1189/#1194):
 
-### Option B: Type-B Cartan folding (CLAUDE.md §7b, my D22 scaffold)
+### Option B: Type-B Cartan folding (AGENTS.md §7b, my D22 scaffold)
 
 Fold sl_n Cartan datum into Type B → symmetric crystal → bar-invariant
 GS-NF **by construction**. The framework gets bar-invariance "for

@@ -162,7 +162,7 @@ The M4 / interface-type-resolved probe used $\kappa = -1.07$ MeV/excess as an **
 
 ### 3·f  Chirality V2 status
 
-The V2 chirality `a_K = τ(β · β_mirror⁻¹)` is now production-default in `paper_six_term_mass(..., chirality_source="v2")`. This matches `prop:chirality-dual-space-derivation` per CLAUDE.md §V2. Closed-form fallback (`Π(1 + sign·h)`) is retained for back-compat but not canonical.
+The V2 chirality `a_K = τ(β · β_mirror⁻¹)` is now production-default in `paper_six_term_mass(..., chirality_source="v2")`. This matches `prop:chirality-dual-space-derivation` per AGENTS.md §V2. Closed-form fallback (`Π(1 + sign·h)`) is retained for back-compat but not canonical.
 
 ✅ canonical.
 

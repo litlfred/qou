@@ -23,7 +23,7 @@ export default proposition({
     {
       kind: "note",
       body:
-        "Provenance: the order-0 and order-1 coefficients were proved sorry-free in PR #1764 (`delta_tau_M_surrogate_vanish_at_one`, `delta_tau_M_surrogate_hasDerivAt_one`). Kept in metadata (not scholarly prose) per CLAUDE.md §4d; the audit trail is preserved without leaking PR refs into the rendered statement.",
+        "Provenance: the order-0 and order-1 coefficients were proved sorry-free in PR #1764 (`delta_tau_M_surrogate_vanish_at_one`, `delta_tau_M_surrogate_hasDerivAt_one`). Kept in metadata (not scholarly prose) per AGENTS.md §4d; the audit trail is preserved without leaking PR refs into the rendered statement.",
     },
   ],
 });

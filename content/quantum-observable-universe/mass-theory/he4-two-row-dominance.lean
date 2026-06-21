@@ -14,7 +14,7 @@ verifies
 
 at 50 dps, where Λ²(12) = {(12), (11,1), (10,2), (9,3), (8,4), (7,5), (6,6)}.
 
-Following CLAUDE.md §3b-cond (conditional class exception), the
+Following AGENTS.md §3b-cond (conditional class exception), the
 proposition is axiomatized as a Lean class `HasHe4TwoRowDominance`
 whose instance encodes the witness-verified ≥ 80 % bound.
 Downstream propositions take this class as a

@@ -18,7 +18,7 @@ solves uniquely (strong duality holds, gap = 0):
   dual y*   = (3.778, 0, 0.796)           ⇒ DD highest receptivity
   active_set = {DD, ³He+n}
 
-Following CLAUDE.md §3b-cond, the proposition is axiomatised as a
+Following AGENTS.md §3b-cond, the proposition is axiomatised as a
 class `HasHe4ChannelActiveSet` whose instance encodes the
 witness-verified primal+dual+active-set triple.
 
@@ -69,7 +69,7 @@ end Channel
     axioms. The class IS categorical; the instance below is one
     witness, the witness JSON is the authoritative source.
 
-    Per CLAUDE.md §3b-cond, this class is the sole `sorry`-equivalent
+    Per AGENTS.md §3b-cond, this class is the sole `sorry`-equivalent
     input for downstream propositions; the empirical numerics are
     LIVE in the witness JSON, with the class providing the structural
     interface. -/

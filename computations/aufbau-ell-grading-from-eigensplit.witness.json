@@ -1,0 +1,140 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-20T12:44:59.442701+00:00",
+  "commitSha": "3242a1187f8359aa71b237d23f57f8633ec6ba45",
+  "assertions": [
+    {
+      "name": "lambda_plus_eq_q",
+      "computed": "1.1099785955573347",
+      "expected": "1.1099785955573347",
+      "passed": true,
+      "tolerance": 1e-18,
+      "source": "roots of x^2-(q-1/q)x-1"
+    },
+    {
+      "name": "structural_ell_coeff_is_negative_two",
+      "computed": -2,
+      "expected": -2,
+      "passed": true,
+      "source": "ln|lambda_-/lambda_+| / ln(lambda_+) = -2"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "aufbau-ell-grading-from-eigensplit",
+  "scriptFile": "aufbau_ell_grading_from_eigensplit.py",
+  "scriptHash": "b95994c8ed45",
+  "scriptCommitSha": "3242a1187f8359aa71b237d23f57f8633ec6ba45",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Tests whether the lambda_+/lambda_- eigenvalue split that yields the 2(2l+1) shell capacity also supplies the l-graded penetration screening the noble-gas filling order needs. Zero-parameter structural key K(n,l)=n-2l (l-coeff fixed by |lambda_-|/lambda_+=1/q0^2). Formalize-first prediction (wrong-sign l-grading, not noble gases) is CONFIRMED.",
+  "parameters": {
+    "q0": "1.1099785955573347",
+    "lambda_plus": "1.1099785955573347",
+    "lambda_minus": "-0.900918273561741057069617740224",
+    "eigenvalue_ratio_abs": "0.811653735637468095332261925782",
+    "structural_ell_coefficient": -2
+  },
+  "data": {
+    "noble_gas_closures": [
+      2,
+      10,
+      18,
+      36,
+      54,
+      86
+    ],
+    "pure_2n2_closures": [
+      2,
+      10,
+      28,
+      60,
+      110
+    ],
+    "hydrogenic_bare_T_ee": {
+      "a": 0,
+      "closures": [
+        2,
+        10,
+        28,
+        60,
+        110
+      ],
+      "match": "pure-2n^2 [2,10,28,60]",
+      "fill_order_first10": [
+        "1s",
+        "2s",
+        "2p",
+        "3s",
+        "3p",
+        "3d",
+        "4s",
+        "4p",
+        "4d",
+        "4f"
+      ]
+    },
+    "Madelung_reference": {
+      "a": 1,
+      "closures": [
+        2,
+        4,
+        12,
+        20,
+        38,
+        56,
+        88
+      ],
+      "match": "neither",
+      "fill_order_first10": [
+        "1s",
+        "2s",
+        "2p",
+        "3s",
+        "3p",
+        "4s",
+        "3d",
+        "4p",
+        "5s",
+        "4d"
+      ]
+    },
+    "EIGENSPLIT_structural": {
+      "a": -2,
+      "closures": [
+        26,
+        48,
+        88
+      ],
+      "match": "neither",
+      "fill_order_first10": [
+        "7i",
+        "6h",
+        "5g",
+        "7h",
+        "4f",
+        "6g",
+        "3d",
+        "5f",
+        "7g",
+        "2p"
+      ]
+    },
+    "crossover_threshold_a": 0.5,
+    "crossover_sign_eigensplit_2a_minus_1": -5,
+    "ell_coefficient_values_hitting_noble_zero_param": []
+  },
+  "caveats": [
+    "Mechanical gap-detection closure detector (gap_factor=1.5x median); the noble-gas set is quantitative and Madelung itself is only an approximation, so the discriminating result is the SIGN of the structural l-coefficient (a=-2), not the precise closure set.",
+    "NULL/structural-constraint result: the eigenvalue split does NOT derive penetration. Any positive tuned c*l reproducing [2,10,18,36] would be a fit."
+  ]
+}

@@ -33,7 +33,7 @@ and for two bridge crossings at generators `i < j` the trace
   `tr_M((c₁ • σ_i + d₁) · (c₂ • σ_j + d₂)) = (c₁·z + d₁) · (c₂·z + d₂)`
 
 This is the fibre-level (generic `CommRing R`, formal `q` — per
-CLAUDE.md §7c no archimedean structure) backbone of the per-bond
+AGENTS.md §7c no archimedean structure) backbone of the per-bond
 binding factor `f_bond(q) = c·z + d` derived on the compute side:
 `f_pp = z`, `f_nn = z − h`, `f_pn = z − h(½ − δ/4)`, validated against
 the measured `tr_atom/tr_free` to 1.1e-15 on D/T/³He/⁴He.  See

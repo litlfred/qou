@@ -35,11 +35,11 @@ Do **not** skim. Each one assumes the prior reads landed.
 
 | Order | File | Why |
 |---|---|---|
-| 1 | [`CLAUDE.md`](../../CLAUDE.md) | Repo-wide agent policy: user accessibility, work-plan rules, notation/Lean discipline, protected files. Mandatory. |
+| 1 | [`AGENTS.md`](../../AGENTS.md) | Repo-wide agent policy: user accessibility, work-plan rules, notation/Lean discipline, protected files. Mandatory. |
 | 2 | [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) | The "one-page-up" map of the derivation chain with per-step math, paper refs, canonical compute scripts, and the Phase 5 findings table (5b through 5q). **Read this before touching any math-affecting code.** |
 | 3 | [`docs/precision-goals.md`](../precision-goals.md) | The L1/L2 precision-leg distinction. Don't conflate "1 ppb compute" with "100× experimental" — they're independent. |
 | 4 | [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](../audits/2026-05-18-delta-lambda-gating-context.md) | The Δ_λ Track-A blocker: six ansätze have failed on deuteron binding. Do **not** propose a seventh fit. Productive directions are GAP-A-3, GAP-A-4, or Option E (Kashiwara crystal). |
-| 5 | [`content/quantum-observable-universe/notation/notation-register.md`](../../content/quantum-observable-universe/notation/notation-register.md) + [`notation-collisions.md`](../../content/quantum-observable-universe/notation/notation-collisions.md) | Symbol register. CLAUDE.md no longer mirrors per-chapter tables (drifted in Phase 5n) — these are the single source of truth. |
+| 5 | [`content/quantum-observable-universe/notation/notation-register.md`](../../content/quantum-observable-universe/notation/notation-register.md) + [`notation-collisions.md`](../../content/quantum-observable-universe/notation/notation-collisions.md) | Symbol register. AGENTS.md no longer mirrors per-chapter tables (drifted in Phase 5n) — these are the single source of truth. |
 | 6 | [`docs/coordination/1ppb-categorical-chain.md`](../coordination/1ppb-categorical-chain.md) | Coordination ledger — append a row when you start substantive work. |
 | 7 | The pre-merge commit log: `git log --oneline 2f7eabe1e~20..2f7eabe1e` | Walk the merged content; the 18 commits trace Phase 5l → 5l.1 → 5k.2 → 5l.2 → 5o → 5q. |
 
@@ -166,7 +166,7 @@ sum. Probably 1-2 hours per script.
 
 ## 5. The non-obvious rules (you will trip on these)
 
-### 5.1 Three-calibration discipline (CLAUDE.md §Precision goals)
+### 5.1 Three-calibration discipline (AGENTS.md §Precision goals)
 
 Only `m_e`, `m_μ/m_e`, `Q_β` may be calibrated. Everything else MUST
 derive from these three via the chain. The Δ_λ gate already broke six
@@ -174,7 +174,7 @@ ansätze; do not write a seventh. If you find yourself fitting parameters
 to experimental data, **stop** — the canonical-watcher integration
 review will catch it and you will be asked to revert.
 
-### 5.2 §3b-cond conditional-class exception (CLAUDE.md §3b)
+### 5.2 §3b-cond conditional-class exception (AGENTS.md §3b)
 
 A `theorem`/`proposition` whose `uses[]` cone touches a `conj:`
 cannot stay provable **unless** all four conditions hold: (a) the
@@ -260,7 +260,7 @@ Gemini and Copilot will run on every PR. Triage protocol per
    For Gap #4: `claude/gap-4-tr-m-migration-2026-05-21` (or whatever
    today's date is).
 5. Coordinate by posting an intent comment on any sibling PR touching
-   the same scripts (per the CLAUDE.md "Coordinate intent with sibling
+   the same scripts (per the AGENTS.md "Coordinate intent with sibling
    branches" rule).
 6. Do the work. When ready, run `/prepare-merge` to set up review.
 
@@ -292,7 +292,7 @@ Gemini and Copilot will run on every PR. Triage protocol per
   `Li_2^q` (Rogers / Kashaev). See cheat sheet §4 for the context-sort
   table.
 - Do not write a new symbol convention without updating
-  `notation-register.md` (the canonical source). CLAUDE.md no longer
+  `notation-register.md` (the canonical source). AGENTS.md no longer
   mirrors the per-chapter tables.
 - Do not re-implement `(c, d, gen) → (sign, gen)` marshalling inline;
   use `canonical_braid_marshalling`. Copilot will flag inline copies.

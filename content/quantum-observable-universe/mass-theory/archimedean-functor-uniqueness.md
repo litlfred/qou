@@ -42,7 +42,7 @@ $$
 $$
 
 > **Theorem (conditional on [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)).**
-> Per CLAUDE.md §3b-cond: the upstream conjecture is axiomatised in
+> Per AGENTS.md §3b-cond: the upstream conjecture is axiomatised in
 > Lean as the typeclass
 > [`QOU.QPochhammer.ArchimedeanLimit`](../braids-and-knots/dilogarithm-archimedean-limit.lean);
 > the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`,

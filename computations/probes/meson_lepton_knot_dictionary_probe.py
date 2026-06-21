@@ -26,6 +26,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import M_K_PM_MEV_VALIDATION, M_MU_MEV_VALIDATION, M_N_MEV_VALIDATION, M_PI_PM_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 del _sys, _Path, _bridge
 
 import json, time
@@ -44,7 +45,7 @@ m_e_MeV = mpf('0.51099895069')  # CODATA 2022
 PDG = {
     # leptons
     'e':     mpf('0.51099895069'),
-    'mu':    mpf('105.6583755'),
+    'mu':    mpf(M_MU_MEV_VALIDATION),
     'tau':   mpf('1776.86'),
     # light quarks (MS-bar at 2 GeV)
     'u':     mpf('2.16'),
@@ -54,17 +55,17 @@ PDG = {
     'b':     mpf('4180'),
     't':     mpf('172760'),
     # light mesons
-    'pi_pm': mpf('139.57039'),
+    'pi_pm': mpf(M_PI_PM_MEV_VALIDATION),
     'pi_0':  mpf('134.9768'),
-    'K_pm':  mpf('493.677'),
+    'K_pm':  mpf(M_K_PM_MEV_VALIDATION),
     'K_0':   mpf('497.611'),
     'eta':   mpf('547.862'),
     'rho':   mpf('775.26'),
     'omega': mpf('782.66'),
     'phi':   mpf('1019.461'),
     # nucleons
-    'p':     mpf('938.27208816'),
-    'n':     mpf('939.56542052'),
+    'p':     mpf(M_P_MEV_VALIDATION),
+    'n':     mpf(M_N_MEV_VALIDATION),
 }
 
 # ---------- H_2(q) Hecke algebra: sigma_1^n normal form ----------

@@ -173,7 +173,7 @@ This unblocks the level-1 mass computation: the level-1 mass operator decomposes
 
 ## Conjectural propagation note
 
-Per CLAUDE.md §3b: this audit memo describes a **numerical witness**,
+Per AGENTS.md §3b: this audit memo describes a **numerical witness**,
 not a logical claim. No conjectural propagation issues.
 
 ## Files

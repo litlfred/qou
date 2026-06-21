@@ -157,7 +157,7 @@ class ZHLaurent:
         but **inadequate** for categorical identities that need
         structural-zero distinction at >1e-30 precision.
 
-        Per project precision policy (CLAUDE.md §Precision goals L1
+        Per project precision policy (AGENTS.md §Precision goals L1
         is 50-dps compute), the production evaluator is
         `evaluate_mpf(q_str, dps=50)` which returns `mpmath.mpf` at
         arbitrary precision.
@@ -186,7 +186,7 @@ class ZHLaurent:
 
         Coefficient evaluation uses `sympy.Rational` (exact) → `mpmath.mpf`
         conversion at `dps` precision, then the polynomial sum is
-        accumulated entirely in mpmath. Per CLAUDE.md §Precision goals
+        accumulated entirely in mpmath. Per AGENTS.md §Precision goals
         L1 (compute precision ≤ 1 ppb), `dps=50` is the production
         floor; tighter targets (e.g. 100-dps for substrate-derivation
         cross-checks) pass `dps=100`.

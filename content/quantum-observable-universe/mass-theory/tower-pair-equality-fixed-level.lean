@@ -12,7 +12,7 @@ notices (a) the pentagon doesn't apply to scalar V̂'s
 (`lem:vhat-pair-commutation-trace`) and (b) the Markov-pair
 identity `tr_M(σ_i σ_j) = z²` is itself an equality.
 
-Per CLAUDE.md §3b, this is a `lemma` (provable, not conjectural).
+Per AGENTS.md §3b, this is a `lemma` (provable, not conjectural).
 
 -- Ref: [manuscript] lem:tower-pair-equality-fixed-level
 -- Ref: [manuscript] prop:markov-pair-z2

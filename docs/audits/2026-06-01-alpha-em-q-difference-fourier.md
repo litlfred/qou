@@ -28,7 +28,7 @@ Applying the Q_β machinery to the α_EM Habiro element
 
 ## Level discipline (fibre vs observable)
 
-Per CLAUDE.md *"Im(q) at fibre vs observable level"*: this probe works
+Per AGENTS.md *"Im(q) at fibre vs observable level"*: this probe works
 at the **fibre / categorical level** — `q` and `α` are **formal**, with
 `Im` **unconstrained**, and the operative symmetry is the **bar
 involution `q↦q⁻¹`** (the framework/tower involution structure), NOT a

@@ -90,7 +90,7 @@ via MTC unitarity.**
 ### (3) `atom-knot-mass-derivation.md`
 
 > "filters via a KLR canonical-basis 'cemetery' prune (drops σ_i^{±k}
-> pure-power Demazure-trivial classes per CLAUDE.md §7b)"
+> pure-power Demazure-trivial classes per AGENTS.md §7b)"
 
 KLR canonical basis used as a **compression tool** for braid-word
 enumeration. Compresses 13088 → 138 canonical-basis classes.
@@ -105,7 +105,7 @@ enumeration. Compresses 13088 → 138 canonical-basis classes.
 KLR proposed as the **route to higher-order c_k coefficients**. NOT
 yet implemented. **Conjectural; positivity-adjacent if proved.**
 
-## CLAUDE.md §7b audit precedent (2026-05-30)
+## AGENTS.md §7b audit precedent (2026-05-30)
 
 > "An external AI dialog re-pitching KLR/crystal as (a) GS
 > compute-speedup, (b) positivity-by-construction, (c) Option E Δ_λ
@@ -163,6 +163,6 @@ ad-hoc.
 - `conj:root-of-unity-mtc-truncation` — KLR at roots of unity (PR #1642)
 - `conj:qbeta-c-k-closed-forms` — KLR for higher-order c_k (open)
 - `docs/audits/2026-05-30-klr-dialog-assessment.md` — KLR as proof-shortening: 0/6
-- CLAUDE.md §7b — Symmetric-crystal techniques (KLR / Kashiwara)
+- AGENTS.md §7b — Symmetric-crystal techniques (KLR / Kashiwara)
 - `docs/audits/2026-06-01-paper-modulus-nonarchimedean-audit.md` — sister audit
 - `docs/audits/2026-06-01-paper-modulus-tier2-refactor-proposal.md` — proposal

@@ -74,7 +74,7 @@ The discipline is **"no fitting in the production mass pipeline"**, not "no fits
 - `lp_dual_solver.py` (canonical entry point)
 - (+ 2 others)
 
-These are **LP solvers**, not regressions/fits. Per CLAUDE.md §"LP/SDP duals — first-class infra", they emit primal + dual variables in their witnesses.
+These are **LP solvers**, not regressions/fits. Per AGENTS.md §"LP/SDP duals — first-class infra", they emit primal + dual variables in their witnesses.
 
 ## §7. Open frontiers (queued, not blocking this PR)
 

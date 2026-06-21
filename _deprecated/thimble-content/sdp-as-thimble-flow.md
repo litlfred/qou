@@ -13,7 +13,7 @@ Three points are worth highlighting.
 $u_\lambda$ appearing in the LP/SDP dual are not a bookkeeping
 nicety: they are exactly the depths along the real part of the
 Seiberg--Witten action at which each thimble enters the
-decomposition.  The CLAUDE.md-mandated *both-sides*
+decomposition.  The AGENTS.md-mandated *both-sides*
 emission of LP duals (`y0_star`, `y_star`, `active_set`,
 `primal_obj`, `dual_obj`, `duality_gap`) is, geometrically, the
 emission of the *thimble depths*.  A primal-only solve loses the

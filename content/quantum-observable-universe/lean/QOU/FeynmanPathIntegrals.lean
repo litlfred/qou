@@ -293,7 +293,8 @@ structure ClassicalLimitDegeneration where
   hecke_q : PathIntegrals.HeckeAlgebra
   /-- Consistency: same n. -/
   n_eq : hecke_q.n = n
-  /-- (1) At q = 1, T² = 1 (symmetric group relation). -/
+  /-- (1) At q = 1, T² = 1 (symmetric group relation).  The index ranges
+      over `hecke_q`'s own strand count (`= n` by `n_eq`). -/
   symmetric_degeneration :
     hecke_q.q = 1 →
     ∀ (i : Fin (hecke_q.n - 1)),

@@ -43,7 +43,7 @@ this probe only evaluates the numerical prediction at MPFR-50dps so
 the framework's honest m_p prediction can be quoted alongside the
 remaining categorical theory step.
 
-Per CLAUDE.md "no fitting": the formula is NOT fitted against CODATA;
+Per AGENTS.md "no fitting": the formula is NOT fitted against CODATA;
 it is the categorical sum of two independent substrate derivations
 (Family A theorem + Yekutieli per-cell curvature argument). The
 1.4 % residual is the framework's honest accuracy under this

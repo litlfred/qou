@@ -24,7 +24,7 @@ space over any field of characteristic 0) to the **exterior algebra**
 
 ## Status
 
-Per CLAUDE.md §3b-cond, axiomatised as a Lean `class`
+Per AGENTS.md §3b-cond, axiomatised as a Lean `class`
 `AtomBraidExteriorAlgebraStructure` whose instance encodes the
 filtration-shape claim. The 4 verified atom cases (D, T, ³He, ⁴He)
 are provided as concrete instances; the general conjecture remains
@@ -49,7 +49,7 @@ namespace QOU.BraidKnot.AtomBraidExteriorAlgebra
 
     for k in [Z − 1, 3A − 1], with total dim 2^(3A − Z).
 
-    Per CLAUDE.md §3b-cond, this is the sole `sorry`-equivalent
+    Per AGENTS.md §3b-cond, this is the sole `sorry`-equivalent
     input for downstream propositions; the empirical verification
     is recorded in `joint-tower-sdp-rust.witness.json` for D, T,
     ³He, ⁴He. -/
@@ -282,7 +282,7 @@ This is the **only** step in the 5-step argument that requires
 genuine new Hecke representation theory; Steps 1-3 are mechanical
 G0/G1 pattern reductions, Step 5 is `Nat.sum_range_choose`.
 
-Per CLAUDE.md §3b-cond, codified here as a `class` field so it
+Per AGENTS.md §3b-cond, codified here as a `class` field so it
 can be axiomatised at the namespace level: any concrete proof
 discharges the `sorry` in `AtomBraidStep4Hypothesis` and unlocks
 the structural conclusion via the existing
@@ -291,7 +291,7 @@ the structural conclusion via the existing
 
 /-- **The Step 4 categorical claim, as a named opaque Prop.**
 
-    Per CLAUDE.md §3b-cond + the audit
+    Per AGENTS.md §3b-cond + the audit
     `docs/audits/2026-05-30-atom-braid-categorical-proof-feasibility.md`'s
     failure-mode #4 ("axiomatising more just relocates the sorry"),
     Step 4 must be a *specific* Prop, not a `Prop`-typed slot, so
@@ -315,7 +315,7 @@ opaque AvgCrossingPreservesGradeHolds (Z N : ℕ) : Prop
 
 /-- **PR-D Step 4 hypothesis** — the inter-nucleon Avg-crossing
     Boolean-grading preservation claim, axiomatised as a class
-    field per CLAUDE.md §3b-cond.
+    field per AGENTS.md §3b-cond.
 
     The field `avg_crossing_preserves_grade` carries a proof of
     the *specific* named Prop `AvgCrossingPreservesGradeHolds Z N`,
@@ -494,7 +494,7 @@ theorem conjugate_3_2_2_2_involutive :
     partition (4, 4, 4) AND its transpose (3, 3, 3, 3) both appear in
     the top-5 most-negative min_eig list. This is the Wedderburn-level
     manifestation of the bar-involution Δ_λ = Δ_{λ^T} structure
-    (CLAUDE.md §7b Type-B folding).
+    (AGENTS.md §7b Type-B folding).
 
     The structural meaning: the bar-anti-symmetric content of the
     canonical atom-braid σ_avg crossings populates **transpose-paired**

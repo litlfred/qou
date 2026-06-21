@@ -197,7 +197,7 @@ def main():
     print(f"  explain is the algebraic bridge R_alg itself.")
     print()
 
-    # Build witness with FULL LP dual fields (per CLAUDE.md LP/SDP rule)
+    # Build witness with FULL LP dual fields (per AGENTS.md LP/SDP rule)
     w = WitnessBuilder("habiro-correction-shadow-price-test", engine="python",
                        start_time=_t0)
     w.set_description(

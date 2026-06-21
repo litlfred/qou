@@ -56,7 +56,7 @@ Plus:
   4. Closed-form interface factor in 4 production tr_M scripts
   5. Reeb/Garside compute verification
 
-**CLAUDE.md cross-link** added at top so any agent picking up final-stage work has the chain visible.
+**AGENTS.md cross-link** added at top so any agent picking up final-stage work has the chain visible.
 
 Also updates the paper-side `pre-archimedean-derivation-chain.md`:
 - Adds an "Audience reading note" pointing at the cheat sheet
@@ -119,7 +119,7 @@ Currently axiomatized as §3b-cond class `MarkovTraceDisjoint`. Replacing the ax
 | `computations/constit-factor-varying-q-phase5k2.witness.json` | witness | NEW (audit-only) |
 | `computations/tau_M_proton_closed_form_phase5l1.py` | script | NEW (Phase 5l.1 symbolic probe) |
 | `computations/tau-M-proton-closed-form-phase5l1.witness.json` | witness | NEW (audit-only) |
-| `CLAUDE.md` | repo discipline | UPDATED (cheat-sheet cross-link at top) |
+| `AGENTS.md` | repo discipline | UPDATED (cheat-sheet cross-link at top) |
 
 ## Test plan
 

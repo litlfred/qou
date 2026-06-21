@@ -109,7 +109,7 @@ in [`epistemic-status-of-calibrations.md`](../../content/quantum-observable-univ
    against the Reeb-fibre source — couples routes 1 and 2.
 
 > **Scope flag (STRICT).** Substrate-derivation of `q₀` was **declined
-> 2026-05-08** (CLAUDE.md Subgoal-2) and **re-opened** by the owner
+> 2026-05-08** (AGENTS.md Subgoal-2) and **re-opened** by the owner
 > question driving this session. These remain research directions /
 > conjectures — not to be wired to production or quoted as derived until
 > a closure clears the three-calibration discipline review.

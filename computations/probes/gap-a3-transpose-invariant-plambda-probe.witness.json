@@ -1,0 +1,110 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-20T12:55:19.490589+00:00",
+  "commitSha": "0b03e8f747912d1af58a41a836a5b7518517af0f",
+  "assertions": [
+    {
+      "name": "all_candidates_transpose_invariant",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Every candidate P_λ must satisfy P_λ = P_{λᵀ} (the admissibility constraint the candidates are built to meet)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 60,
+  "computation": "gap-a3-transpose-invariant-plambda-probe",
+  "scriptFile": "gap_a3_transpose_invariant_plambda_probe.py",
+  "scriptHash": "8cc2c7a56e7a",
+  "scriptCommitSha": "0b03e8f747912d1af58a41a836a5b7518517af0f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "GAP-A-3 transpose-invariant P_λ candidate probe (continuation of the bar-even admissibility narrowing, PR #2522). Tests six manifestly transpose-invariant candidates (constant, Specht dim, n(λ)+n(λᵀ), Σh, Σh², ∏[h]_q) against the deuteron P_λ target; each is asserted P_λ=P_{λᵀ} before scoring. Tiered verdict, no fit, no production rewire. EXPLORATORY.",
+  "auditOnly": "docs/audits/2026-06-20-gap-a3-transpose-invariant-plambda.md",
+  "parameters": {
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "A_D_at_q0": "22.975451662315613206466261572364816994981714298291",
+    "tr_M_beta_D": "0.3882864240747888767115375131293520934425994727551477855525846307100523",
+    "target_after_A_factored": "-0.1894734417382284989104672294731036662590919611610931919935792110238943",
+    "flat_scale_c_star": "-0.4879733876601709808485073408556847917322718990939865566710132678627765"
+  },
+  "data": {
+    "discipline": "EXPLORATORY",
+    "production_wired": false,
+    "candidates": [
+      {
+        "code": "T0",
+        "name": "constant_control",
+        "formula": "P_λ = 1",
+        "bar_even_admissible": true,
+        "S_at_q0": "0.3882864240747888767115375131293520934425994727551477855525846307100523",
+        "target": "-0.1894734417382284989104672294731036662590919611610931919935792110238943",
+        "relative_error": "-3.049292082904342559123945729822486318555372402888148008072638638317578",
+        "verdict": "SCALE c*=-0.4880 (control)"
+      },
+      {
+        "code": "T1",
+        "name": "specht_dim",
+        "formula": "P_λ = f^λ (= dim_λ)",
+        "bar_even_admissible": true,
+        "S_at_q0": "1.661986999621949433813172244660044483670692505223244865307572285645128",
+        "target": "-0.1894734417382284989104672294731036662590919611610931919935792110238943",
+        "relative_error": "-9.771609278719424760724143612879267405470349347031986142391378523380118",
+        "verdict": "REFUTED"
+      },
+      {
+        "code": "T2",
+        "name": "n_plus_nT",
+        "formula": "P_λ = n(λ) + n(λᵀ)",
+        "bar_even_admissible": true,
+        "S_at_q0": "4.442625143975250296454598352515605156994937081385543860825153841328654",
+        "target": "-0.1894734417382284989104672294731036662590919611610931919935792110238943",
+        "relative_error": "-24.44721826562407526338664206258241390192581640947445725756403984776977",
+        "verdict": "REFUTED"
+      },
+      {
+        "code": "T3",
+        "name": "hook_sum",
+        "formula": "P_λ = Σ h",
+        "bar_even_admissible": true,
+        "S_at_q0": "6.772343688423983556723823431291717717650533917916430574140661625588968",
+        "target": "-0.1894734417382284989104672294731036662590919611610931919935792110238943",
+        "relative_error": "-36.74297076305013061813031644151733181325805082680334530599987167767523",
+        "verdict": "REFUTED"
+      },
+      {
+        "code": "T4",
+        "name": "hook_sq_sum",
+        "formula": "P_λ = Σ h²",
+        "bar_even_admissible": true,
+        "S_at_q0": "26.12897046564965071692057677091556943025843707620884981877678942328565",
+        "target": "-0.1894734417382284989104672294731036662590919611610931919935792110238943",
+        "relative_error": "-138.903076156439623698058603668049472518021567453075056487156551348573",
+        "verdict": "REFUTED"
+      },
+      {
+        "code": "T5",
+        "name": "q_hook_product",
+        "formula": "P_λ = ∏ [h]_q at q₀",
+        "bar_even_admissible": true,
+        "S_at_q0": "121.5974972388463491397791561300624488128431248596524163462272903423412",
+        "target": "-0.1894734417382284989104672294731036662590919611610931919935792110238943",
+        "relative_error": "-642.765390037313190505907996405152226219220007156346848386017086305144",
+        "verdict": "REFUTED"
+      }
+    ],
+    "synthesis_verdict": "All natural transpose-invariant single functionals (Specht dim, n(λ)+n(λᵀ), Σh, Σh², ∏[h]_q) REFUTE the deuteron P_λ target. Bar-even admissibility is necessary but these elementary symmetric functionals are insufficient: GAP-A-3 P_λ, if it exists categorically, is a non-elementary transpose-invariant object (e.g. a knot-dependent symmetric combination), consistent with the s5-so3 keystone framing (conj:s5-so3-fiber-action) where the per-atom selection is operator-valued. No fit attempted; the elementary symmetric family is now excluded."
+  }
+}

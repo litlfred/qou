@@ -1,4 +1,4 @@
-*Lean sibling: a field $R$ carrying the $q$-data (CLAUDE.md §7c); the identity is purely algebraic, pre-archimedean.*
+*Lean sibling: a field $R$ carrying the $q$-data (AGENTS.md §7c); the identity is purely algebraic, pre-archimedean.*
 
 **Proposition (q-dimension decoration of the basis knots).** *For the basis
 torus knot $T_{2,k}$, the q-dimension decoration factors as the Hecke

@@ -8,7 +8,7 @@ import Mathlib.Data.Real.Basic
 
 This is a **conjecture**: the class `VacuumEpsilon` carries a placeholder
 field and is trivially inhabited (`residual := 0`), so the instance is
-total (per CLAUDE.md §3b the conjectural content lives in the narrative
+total (per AGENTS.md §3b the conjectural content lives in the narrative
 block `conj:vacuum-epsilon`, refined into class fields as the
 formalisation matures).  Downstream theorems may take
 `[VacuumEpsilon]` as an explicit `[Instance]` hypothesis to derive

@@ -2,7 +2,7 @@
 
 ## Background
 
-CLAUDE.md §3b STRICT conjectural-propagation rule: a provable
+AGENTS.md §3b STRICT conjectural-propagation rule: a provable
 block (`theorem`/`proposition`/`lemma`/`corollary`) whose
 `uses[]` cone transitively touches a `conj:` must be `conjecture`
 (or `remark` with `interprets:`).
@@ -168,7 +168,7 @@ If B is selected, next steps:
    may have a few more in their cones).
 2. For each, decide on Lean class content (existing
    `prop:vhat-pair-commutation-trace`-style class structure).
-3. Update CLAUDE.md §3b to permit the conditional-class
+3. Update AGENTS.md §3b to permit the conditional-class
    pattern explicitly (currently §3b is unconditional).
 4. Codemod downstream theorems to add explicit class
    hypotheses + narrative banners.

@@ -11,7 +11,7 @@ that the iterated-integral depth filtration on `G(H_q)` matches
 Goncharov's period filtration `P_n` under the archimedean
 realization functor `tau_arch`.
 
-This is a conjecture, axiomatised as a Lean class (per CLAUDE.md
+This is a conjecture, axiomatised as a Lean class (per AGENTS.md
 §3b — conjectures are encoded as classes whose `sorry` instances
 are understood as conjectural inputs, with downstream conditional
 theorems proved over the class).

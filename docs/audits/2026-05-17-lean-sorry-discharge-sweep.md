@@ -71,7 +71,7 @@ This converts an unannotated `sorry` (proof gap with no audit trail)
 into a properly-cited external axiom whose:
 
 1. **Mathematical content** is named and stated explicitly.
-2. **Bibliographic source** is recorded via `-- Ref: [key]` per CLAUDE.md §1.
+2. **Bibliographic source** is recorded via `-- Ref: [key]` per AGENTS.md §1.
 3. **Discharge path** is clear: when the upstream Mathlib API lands
    or the QOU Hecke-algebra implementation matures, the axiom is
    replaced with a `theorem ... := by ...` derivation; consumer-side

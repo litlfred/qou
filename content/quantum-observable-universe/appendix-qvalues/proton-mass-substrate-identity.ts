@@ -41,7 +41,7 @@ export default proposition({
   ],
   // lean ref deferred: this block's uses[] cone transitively touches
   // conjectural categorical derivations (the "2" structural integer,
-  // the "12" via Ocneanu, F_Bor categoricity). Per CLAUDE.md §3b-cond,
+  // the "12" via Ocneanu, F_Bor categoricity). Per AGENTS.md §3b-cond,
   // declaring a `lean:` field on a provable kind whose uses[] cone
   // touches `conj:` requires either downgrade to `remark`/`conjecture`
   // OR the conditional-class banner + [Class] Lean hypothesis pattern.

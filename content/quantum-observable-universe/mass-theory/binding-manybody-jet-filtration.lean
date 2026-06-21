@@ -10,7 +10,7 @@ body-order series whose `n`-th term is `m_e` times the `n`-th prolonged
 Seiberg–Witten period (itself a residue sum, `prop:sw-period-residue-sum`),
 the body order `n` being the vertical/jet degree.
 
-Per CLAUDE.md §3b, the conjecture is **axiomatised as a Lean `class`**:
+Per AGENTS.md §3b, the conjecture is **axiomatised as a Lean `class`**:
 the existence of an instance is the conjecture; the conditional corollary
 below is proved *from* the class hypothesis (fully verified, no `sorry`).
 

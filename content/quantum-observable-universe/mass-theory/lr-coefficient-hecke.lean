@@ -11,7 +11,7 @@
     3. LR-tableau enumeration formula: `c^λ_{μν} = |LR(λ/μ, ν)|`
        (Yamanouchi-valid skew SSYT of content `ν`).
 
-  Per CLAUDE.md §3b-cond: the class hypothesis is sorry-free; any
+  Per AGENTS.md §3b-cond: the class hypothesis is sorry-free; any
   instance discharges the three fields definitionally for its
   specific (λ, μ, ν). The standard mathematical references
   (Macdonald, Stanley EC2, Ariki) supply the proof; QOU consumes
@@ -59,7 +59,7 @@ def Partition.contains (lam mu : Partition) : Prop :=
 
     All three fields are sorry-free conditional on the standard
     LR theorem (Macdonald §I.9 / Ariki §6); QOU consumes the
-    theorem as a class hypothesis per CLAUDE.md §3b-cond. -/
+    theorem as a class hypothesis per AGENTS.md §3b-cond. -/
 class LRCoefficientHecke where
   /-- The LR coefficient `c^λ_{μν}` for partitions of the
       appropriate sizes. -/

@@ -2242,7 +2242,7 @@ author refinement pass.
 > **Notation note.**  Throughout this chapter we use plain italic
 > $m_e$, $m_p$, $m_n$ for the **CODATA-measured** electron, proton,
 > and neutron masses, treated as experimental input — distinct from
-> the categorical mass $\mathfrak{m}$ of CLAUDE.md §7aa, which denotes
+> the categorical mass $\mathfrak{m}$ of AGENTS.md §7aa, which denotes
 > the QOU-derived mass via the topological mass formula
 > $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^{2}$.  The role of $m_e$
 > in this chapter is as an **external scaling ruler**: it fixes the

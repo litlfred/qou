@@ -108,7 +108,7 @@ theorem nucleusEmptySDP_strictlyFeasible :
 /-- **Trivial strict-complementarity pair for the generic empty
     SDP** — instantiated from `SDPEmptyConstraints`. Active set
     is empty; the optimum is at `Φ⋆ = 0`. -/
-def nucleusTrivialStrictCompPair :
+noncomputable def nucleusTrivialStrictCompPair :
     StrictComplementarityPair (nucleusEmptySDP n) :=
   trivialStrictComplementarityPair _
 

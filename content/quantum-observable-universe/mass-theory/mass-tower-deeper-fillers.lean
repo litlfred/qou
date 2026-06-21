@@ -13,7 +13,7 @@ one sorry-free Lean file:
 
 (A) Height-6 partition enumeration — finite Lean type for the
     Term-7 reduction.
-(B) Demazure sub-crystal predicate — CLAUDE.md §7b item 3,
+(B) Demazure sub-crystal predicate — AGENTS.md §7b item 3,
     "incomplete topological states lowering the energy budget".
 (C) KL classical-limit functor placeholder — `H_n(R, q) → ℤ[S_n]`
     at `q = 1` via Kazhdan-Lusztig basis specialisation.
@@ -33,7 +33,7 @@ provides a concrete Lean handle for downstream usage.
 -- Ref: [manuscript] conj:shell-correction-term-seven
 -- Ref: [manuscript] conj:kazhdan-lusztig-classical-limit
 -- Ref: [manuscript] prop:archimedean-functor-uniqueness
--- Ref: [manuscript] CLAUDE.md §7b "Symmetric-crystal techniques"
+-- Ref: [manuscript] AGENTS.md §7b "Symmetric-crystal techniques"
 -- Ref: [borel1974], [bloch2000], [suslin1991]
 -/
 
@@ -66,7 +66,7 @@ theorem heightSixPartition_finite_existence
 
 /-- A **Demazure sub-crystal** is a connected sub-graph of a
     Kashiwara crystal closed under a chosen subset of Kashiwara
-    raising operators `ẽ_i`. Per CLAUDE.md §7b item 3, Demazure
+    raising operators `ẽ_i`. Per AGENTS.md §7b item 3, Demazure
     sub-crystals correspond to *incomplete topological states*
     (resonances): unstable intermediaries (W/Z bosons, hadronic
     resonances) lowering the energy budget by sitting in the

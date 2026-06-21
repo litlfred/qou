@@ -6,7 +6,7 @@
   a faithful S_5-action with |S_5| = 120 acting as the Markov-trace
   rescaling factor.
 
-  Status: conjecture.  Per CLAUDE.md §3b, axiomatised as a Lean
+  Status: conjecture.  Per AGENTS.md §3b, axiomatised as a Lean
   class with sorry-fields encoding the structural content.
 
   Ref: [manuscript] `prop:n-v-bring-action`,
@@ -60,7 +60,7 @@ noncomputable opaque rescale_EW (Σ : ElectroweakSlice) : ℝ
     tau_M(C_dim_q^EW) · rescale_EW = 120 · tau_M(C_dim_q^{H_n(q)})
     ```
 
-    **Path to a stronger proof** (per CLAUDE.md §3b):
+    **Path to a stronger proof** (per AGENTS.md §3b):
 
       (1) Construct `ElectroweakSlice` concretely as a GB filtration
           grade (or jet order) determined by the brane-tower closure

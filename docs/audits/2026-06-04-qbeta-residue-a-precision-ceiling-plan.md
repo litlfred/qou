@@ -46,7 +46,7 @@ of a sequence sampled only at k = 8, 9, 10, which agree to ~4 sig figs.
 
 1. **More rungs (c_11…c_15) are blocked.** The Step-1 method note states
    extracting c_k beyond 10 from R(q₀) requires a postulated canonical
-   form per rung — an ansatz fit, forbidden per CLAUDE.md.
+   form per rung — an ansatz fit, forbidden per AGENTS.md.
 2. **Extrapolation needs clean asymptotics.** If `x_k = L + B·ρ^k`
    (`L` the tail limit, ρ = u_subst/u_2 set by the second-nearest
    singularity), three points k=8,9,10 give a Shanks/Aitken estimate of

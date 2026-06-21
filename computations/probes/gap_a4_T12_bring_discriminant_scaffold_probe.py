@@ -169,7 +169,7 @@ def test_h_deformation_open() -> dict:
     print(f"    (2) A q-analogue of the Hermite resolvent")
     print(f"  Both are substantial standalone projects (~500+ lines each).")
     print()
-    print(f"  Per formalize-first discipline (CLAUDE.md no-7th-ansatz):")
+    print(f"  Per formalize-first discipline (AGENTS.md no-7th-ansatz):")
     print(f"    No h-coefficient candidate is proposed here.")
     print(f"    T12 closes the T9 follow-up triple by pinning the")
     print(f"    classical Bring discriminant scaffold.")

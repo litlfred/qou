@@ -245,7 +245,7 @@ For each new skill file:
    >    on future main-refreshes.
 
 4. **Record the decision** in the watcher's ledger
-   (`todos/<watcher-name>-ledger.md` for integration-watcher
+   (`.beans/<watcher-name>-ledger.md` for integration-watcher
    children, or chat-only for the bare `/watch` flow) so subsequent
    main-refreshes don't re-prompt for the same skill.
 
@@ -314,7 +314,7 @@ is timed out.
 
 ## 6.  Output style
 
-Match user-accessibility note in CLAUDE.md:
+Match user-accessibility note in AGENTS.md:
 
 - One sentence per commit / event by default
 - Numbered choices when integration is non-obvious

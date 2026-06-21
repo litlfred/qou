@@ -15,7 +15,7 @@ export default conjecture({
   authorNotes: [
     {
       kind: "status",
-      body: "**Conjectural.**  This is a substrate axiom in the precise sense\nof [`CLAUDE.md` §3b](../../../CLAUDE.md#3b-conjectural-propagation):\nthe categorical $S_5$-action on $H_n(R, q)$ at the EW slice is\nasserted but not formally constructed.  It is the **first** of the\ntwo lemmas in the\n[N_v derivation](#conj:n-v-leading-order-derivation) chain;\ncombining it with\n[the EW-slice depth lemma](#conj:n-v-tower-depth-ninety) gives the\nleading-order closure $N_v = 120 \\cdot q_0^{90}$ (residual $-0.58\\%$\nvs CODATA Higgs VEV).",
+      body: "**Conjectural.**  This is a substrate axiom in the precise sense\nof [`AGENTS.md` §3b](../../../AGENTS.md#3b-conjectural-propagation):\nthe categorical $S_5$-action on $H_n(R, q)$ at the EW slice is\nasserted but not formally constructed.  It is the **first** of the\ntwo lemmas in the\n[N_v derivation](#conj:n-v-leading-order-derivation) chain;\ncombining it with\n[the EW-slice depth lemma](#conj:n-v-tower-depth-ninety) gives the\nleading-order closure $N_v = 120 \\cdot q_0^{90}$ (residual $-0.58\\%$\nvs CODATA Higgs VEV).",
     },
   ],
 });

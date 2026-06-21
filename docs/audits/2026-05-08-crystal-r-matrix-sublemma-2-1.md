@@ -7,7 +7,7 @@
 explicitly in the Hoefsmit seminormal basis for general $\lambda, \mu, \nu$."*
 **Conditional on** [`conj:crystal-graph-realization`](../../content/quantum-observable-universe/braids-and-knots/crystal-graph-realization.md)
 (Brundan–Kleshchev isomorphism + GS↔crystal bijection — already a
-content block on main; CLAUDE.md §3b-cond conditional-class pattern).
+content block on main; AGENTS.md §3b-cond conditional-class pattern).
 
 **Companion:**
 [`2026-05-04-sub-lemma-2-1-categorical-proof.md`](2026-05-04-sub-lemma-2-1-categorical-proof.md)

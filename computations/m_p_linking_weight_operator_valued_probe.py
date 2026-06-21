@@ -40,7 +40,7 @@ categorical objects, NO fits:
 Reports tiered: PASS within 1 ppm = structural finding; PASS within
 1% = near-match (not closure); FAIL = refute.
 
-## Forbidden (CLAUDE.md)
+## Forbidden (AGENTS.md)
 
 - NO ansatz fits — every weight w is a pre-existing canonical
   categorical object.

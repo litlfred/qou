@@ -12,7 +12,7 @@ equation
        = (1 / |tr_M(β_K)|) · Σ_{λ ⊢ 3A} y_λ(q) · χ^λ(β_K) · Δ_λ(K)
 
 is reformulated as an **operator-selection LP** per
-`prop:operator-selection-lp` (CLAUDE.md § *LP / SDP duals — first-class
+`prop:operator-selection-lp` (AGENTS.md § *LP / SDP duals — first-class
 infra*):
 
     Variables : Δ_λ ∈ ℝ for each λ ⊢ 6 (11 of them)
@@ -24,7 +24,7 @@ infra*):
 
 The LP-dual variables are the *derived* per-irrep binding-energy shadow
 prices — replacing the arbitrary "single-support / smallest-|Δ|" choice
-of the Occam baseline with a principled (per-CLAUDE.md) selector.
+of the Occam baseline with a principled (per-AGENTS.md) selector.
 
 Witness: `rho-k-h3a-lp-dual.witness.json` carries
   - all original fields the Occam witness has (per_λ y_λ, χ^λ, products);
@@ -210,7 +210,7 @@ def lp_select_delta_lambda(
     primal_obj = float(t_np @ (delta_plus + delta_minus))
 
     # ── Canonical dual extraction (Gemini PR #613 review):
-    # Per CLAUDE.md "LP / SDP duals — first-class infra" and the
+    # Per AGENTS.md "LP / SDP duals — first-class infra" and the
     # convention used by `solve_operator_selection_lp` and
     # `rho_k_h3a_gg_trajectory.py`, `y_star` reports the dual shadow
     # prices (reduced costs) of the per-λ non-negativity constraints
@@ -509,7 +509,7 @@ def main() -> int:
                  "cost_frobenius": str(cost_frob[i])}
                 for i in range(len(parts))
             ],
-            # ── Required LP-dual fields (per CLAUDE.md / lp_dual_witness_validator) ──
+            # ── Required LP-dual fields (per AGENTS.md / lp_dual_witness_validator) ──
             # These are the canonical names the validator looks for.
             "y0_star": lp_primary["y0_star"],
             "y_star": lp_primary["y_star"],

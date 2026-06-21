@@ -415,7 +415,7 @@ Implications:
 2. Any closed form must carry a $Z, N$-dependent piece beyond
    $[A-2]_q$ — a candidate structure is $[Z-1]_q \cdot [N-1]_q$ or
    a Murphy-central element product depending on the partition
-   spectrum (per CLAUDE.md §7b crystal-bases hint). **PR #656**
+   spectrum (per AGENTS.md §7b crystal-bases hint). **PR #656**
    proposes a sharper substrate-derivation candidate **D-2**:
    $\mathrm{Cat}_q(A-1, 1) = [A-1]_q [A-2]_q / ([2]_q [A]_q)$ with
    Z/N-dependent SYT-shape corrections; survives the same cross-

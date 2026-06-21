@@ -125,7 +125,7 @@ This removes a *compute wall*; it does **not** improve the prediction. `B_sym` i
 the generic hyperbolic chain binding and **under-binds** (¹⁶O 60.5 vs AME 127.6,
 ratio ~2.1; the whole ladder sits at 2.1–2.2 past the light nuclei). The accuracy
 gap is the cooperative **α-cluster / shell-closure** term — the Δ_λ gate, which
-CLAUDE.md blocks from any fit-based ansatz. The 1.8 h ¹⁶O sweep was never going to
+AGENTS.md blocks from any fit-based ansatz. The 1.8 h ¹⁶O sweep was never going to
 produce an accurate binding; it would only have produced the exact `B_sym`, which
 the closed form already gives instantly. The α-unit magnitude remains the one open
 lever (α-cluster recursion with ⁴He as the magic input), unchanged by this PR.

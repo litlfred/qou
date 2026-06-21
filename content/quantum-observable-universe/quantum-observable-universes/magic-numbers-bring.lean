@@ -11,7 +11,7 @@ numbers `{2, 8, 20, 28, 50, 82, 126}` and seven distinguished
 S₅-stable, τ̂-stable period sub-lattices of the brane-tower
 cohomology.
 
-Per CLAUDE.md §3b, this is a `class` axiomatization of the
+Per AGENTS.md §3b, this is a `class` axiomatization of the
 conjecture; downstream conditional theorems would take instances
 as hypotheses.
 

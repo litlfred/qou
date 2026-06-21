@@ -398,7 +398,7 @@ canonical route**. The correct routes are:
   `solve_psd_operator_selection_sdp`,
   [`computations/lp_dual_solver.py`](../../computations/lp_dual_solver.py))
   — already MPFR-50dps capable, already emits the required
-  dual fields per CLAUDE.md §LP / SDP duals — and read off the
+  dual fields per AGENTS.md §LP / SDP duals — and read off the
   chirality-active dual sum as in §7b.1.
 
 - **B.1b (PL-side).** Compute $a_K$ via the thimble intersection

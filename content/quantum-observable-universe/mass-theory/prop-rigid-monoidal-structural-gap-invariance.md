@@ -54,7 +54,7 @@ $\Delta_{\mathrm{cat}}$ value.
 
 ## Type-B-folded rigid monoidal structure
 
-The Type-B folding (CLAUDE.md §7b) folds the
+The Type-B folding (AGENTS.md §7b) folds the
 $\mathfrak{sl}_n$ Cartan datum into a Type B datum; the resulting
 *symmetric* Kashiwara crystal is the categorical home of the
 spin-involution invariance ([`prop:spin-involution-lp-dual-invariance`](#prop:spin-involution-lp-dual-invariance)).

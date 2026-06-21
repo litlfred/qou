@@ -1,5 +1,5 @@
 diff --git a/package.json b/package.json
-index 157e755..d61814e 100644
+index 157e755..d98ea45 100644
 --- a/package.json
 +++ b/package.json
 @@ -43,6 +43,8 @@
@@ -11,11 +11,12 @@ index 157e755..d61814e 100644
      "test:e2e": "playwright test",
      "test": "bun test",
      "lint": "eslint ."
-@@ -65,8 +67,9 @@
+@@ -65,8 +67,10 @@
      "zod": "^3.23.0"
    },
    "devDependencies": {
 +    "@playwright/test": "^1.60.0",
++    "@sparticuz/chromium": "149.0.0",
      "bun-types": "latest",
 -    "@playwright/test": "^1.60.0"
 +    "three": "0.149.0"
@@ -23,10 +24,10 @@ index 157e755..d61814e 100644
    "engines": {
      "bun": ">=1.0.0"
 diff --git a/playwright.config.ts b/playwright.config.ts
-index eb3f416..78161ce 100644
+index eb3f416..d2a3b99 100644
 --- a/playwright.config.ts
 +++ b/playwright.config.ts
-@@ -1,34 +1,82 @@
+@@ -1,34 +1,86 @@
  import { defineConfig, devices } from '@playwright/test';
  
 +/**
@@ -78,6 +79,10 @@ index eb3f416..78161ce 100644
      launchOptions: {
 -      args: ['--no-sandbox', '--disable-setuid-sandbox']
 -    }
++      // Let egress-restricted CI point at a pre-provisioned Chromium (e.g. the
++      // @sparticuz/chromium build, fetched via npm/GitHub when cdn.playwright.dev
++      // is blocked). Unset → Playwright's own managed browser is used.
++      executablePath: process.env.PLAYWRIGHT_CHROMIUM_PATH || undefined,
 +      args: [
 +        '--no-sandbox',
 +        '--disable-setuid-sandbox',

@@ -254,8 +254,7 @@ def main():
     qi = 1 / q0
     h2_q0 = (q0 - qi) ** 2
     hbar_q = 1 - qi
-    m_e = mp.mpf("0.51099895069")
-    m_p_codata = mp.mpf("938.27208816")
+    from codata_constants import M_E_MEV as m_e, M_P_MEV_VALIDATION as m_p_codata  # registry (no literals)
     vol_b3 = 8 * G
     geom_leading = vol_b3 / hbar_q ** 2
 

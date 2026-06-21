@@ -39,7 +39,7 @@ q-bracket-corrected formulas (PR #1253 witness).
 
 - h = q - q⁻¹ (Hecke amplitude)
 - [n]_q = q^(n-1) + q^(n-3) + ... + q^(−(n-1)) (symmetric q-integer)
-- All identities generic over `[Field R]` per CLAUDE.md §7c.
+- All identities generic over `[Field R]` per AGENTS.md §7c.
 
 Ref: [manuscript] docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md
 Ref: [manuscript] computations/t6_three_halves_factor_probes.py

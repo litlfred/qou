@@ -39,7 +39,7 @@ defined. Audited with this stricter rule below.
 - 🟢 **Proved** — verified against Lean (when present) or rigorously
   closed narrative.
 - 🟡 **Conjectured** (`conj:` block) — honestly conjectural; downstream
-  blocks must propagate per CLAUDE.md §3b.
+  blocks must propagate per AGENTS.md §3b.
 - 🟠 **Empirical / fitted** — numerical input not derived from prior
   blocks.
 - 🔴 **Wall violation / leak** — uses Archimedean structure as a
@@ -64,7 +64,7 @@ above**.
 | 3 | Frobenius–Hopf substrate axioms (cocommutative, ribbon, anti-Yetter–Drinfeld) | [frobenius-hopf-substrate](../../content/quantum-observable-universe/algebraic-substrate/frobenius-hopf-substrate.md) | 🟢 axiomatic (the "substrate") | none — but the substrate parameter $q$ enters here (see §3·E) |
 | 4 | Categorical mass identity $\mathfrak{m}(\varrho) = \|\mathrm{tr}((\int_A\!\otimes\!\mathrm{id})\circ\Delta\circ\varrho)\|$ | [mass-identity](../../content/quantum-observable-universe/quantum-observable-universes/mass-identity.md) | 🟢 derives mechanically from links 1–3 | the norm $\|\cdot\|$ is the *Frobenius norm* on $A$, **not** an Archimedean absolute value |
 | 5 | Cyclic / Reeb categorical action $\mathcal{S}_{\text{Reeb}}$ | [categorical-reeb-derivation](../../content/quantum-observable-universe/algebraic-substrate/categorical-reeb-derivation.md) | 🟢 derives | none |
-| 6 | Non-abelian Stokes / motivic-Galois descent (the "descent involution" $\hat\tau_n$) | [motivic-galois-character](../../content/quantum-observable-universe/lifting-and-descent/motivic-galois-character.md), [descent-involution](../../content/quantum-observable-universe/lifting-and-descent/descent-involution.md) | 🟡 axiomatic class (per CLAUDE.md §3b) — `motivic-perpetual-obstruction` is the obstruction class | **GAP 6a** — concrete `instance` for the QOU substrate at $q_0$ is missing; `family-4-motivic-path.md` flags it as research-grade |
+| 6 | Non-abelian Stokes / motivic-Galois descent (the "descent involution" $\hat\tau_n$) | [motivic-galois-character](../../content/quantum-observable-universe/lifting-and-descent/motivic-galois-character.md), [descent-involution](../../content/quantum-observable-universe/lifting-and-descent/descent-involution.md) | 🟡 axiomatic class (per AGENTS.md §3b) — `motivic-perpetual-obstruction` is the obstruction class | **GAP 6a** — concrete `instance` for the QOU substrate at $q_0$ is missing; `family-4-motivic-path.md` flags it as research-grade |
 | 7 | Cosimplicial crossed-groupoid / descent condition / global gluing | [cosimplicial-crossed-groupoid](../../content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.md), [descent-condition](../../content/quantum-observable-universe/lifting-and-descent/descent-condition.md), [global-gluing](../../content/quantum-observable-universe/lifting-and-descent/global-gluing.md) | 🟢 derived | none |
 | 8 | JSJ decomposition of confined hadron knots (algebraic statement) | [phi-q-tower-jsj-bridge](../../content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md) | 🟡 conjecture (`conj:phi-q-tower-jsj-bridge`) | 🟢 (P0.3 closure) — the *algebraic JSJ* is now stated explicitly as the $J^\bullet$-graded stratification of $H_n(q)$ by depth, with no 3-manifold language used in the algebraic-side derivation. The geometric JSJ is identified under $\tau_{\mathrm{arch}}$ as the conjectural content. Dilog-branch sibling `pl-jsj-mass-integration-equivalence` will receive the same recast when that branch lands on `main`. |
 | 9 | Chern–Simons / Jones–Wenzl idempotents in $H_n(q)$ | [skein-generation](../../content/quantum-observable-universe/braids-and-knots/skein-generation.md) (Hecke-Skein dictionary), `wedderburn-mass-formula`, `markov-pair-z2` | 🟢 the JW idempotents themselves are 🟢; their use as block projectors in $H_n(q)$ is 🟢 | none — the CS-side statement (TQFT path-integral interpretation) lives at τ |
@@ -428,7 +428,7 @@ chain, they are dropped from §5. They can be re-added if and
 when the corresponding content is authored.
 
 🟠 **Action.** Every block that depends transitively on these
-conjectures must be a `conjecture` per CLAUDE.md §3b conjectural
+conjectures must be a `conjecture` per AGENTS.md §3b conjectural
 propagation. Audit pass needed (see §P0.1 of the workplan).
 
 ---

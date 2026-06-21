@@ -8,7 +8,7 @@ The unified knot mass formula has six structural terms which emerge
 as pages of a **spectral sequence** associated with the Gröbner–
 Shirshov filtration `J^•(q)` on `H_n(R, q)`.
 
-**Conditional-class axiomatisation** (CLAUDE.md §3b).  The
+**Conditional-class axiomatisation** (AGENTS.md §3b).  The
 spectral-sequence existence statement is captured here as an
 abstract typeclass; full constructive formalisation requires the
 filtered-Hochschild-cochain machinery and is multi-week work

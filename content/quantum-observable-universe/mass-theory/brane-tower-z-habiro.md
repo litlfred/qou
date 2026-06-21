@@ -216,8 +216,11 @@ The conjecture has two independent claims:
    proceeds via the cyclotomic projections $\pi_n^{(z)}$ and does not
    depend on $n_\star$. The analytic prerequisite — that the infinite
    product $\Phi_q(z) = \prod_{k\geq 1}(1-q^{-k}z)^{-1}$ is a
-   well-defined positive real on $|z| < q$ — is formalized in
-   `QOU.MassEndomorphism.PhiQConvergence`.
+   well-defined positive real on $|z| < q$ — is now **proved** as
+   [convergence of the quantum dilogarithm](#prop\:quantum-dilog-convergence)
+   (Lean `QOU.MassEndomorphism.PhiQConvergence.quantumDilog_multipliable`,
+   sorry-free): the convergence half of the conjecture is a theorem, so the
+   $z$-Habiro Cauchy limit has a well-defined analytic target.
 
    The algebraic Cauchy/limit infrastructure is formalized sorry-free in
    `QOU.MassEndomorphism.ZHabiroCauchy` (filtration, increment-coherence

@@ -26,7 +26,7 @@ The Wenzl factor encodes the level-2 SU(2) Verlinde annihilator (`[4]_q = 0` at 
 
 ## Status
 
-- **L1 (cross-method compute precision at q₀, target ≤ 1 ppQ)**: MET — `_precision.py` default 65 dps compute / 50 dps serialization, per CLAUDE.md §Precision goals + [`docs/precision-goals.md`](../precision-goals.md).
+- **L1 (cross-method compute precision at q₀, target ≤ 1 ppQ)**: MET — `_precision.py` default 65 dps compute / 50 dps serialization, per AGENTS.md §Precision goals + [`docs/precision-goals.md`](../precision-goals.md).
 - **L2 (per-observable accuracy, target σ_pred ≤ σ_exp/100)**: 3/7 met; Q_β, m_n, Δ_pn share c_k tier wall root; m_μ misses 963.6× (post-re-pin).
 - c_2 = −1 Taylor-exact PROVED
 - c_3 = −2 near-match SETTLED (J_Hopf(q=1))

@@ -77,7 +77,7 @@ A=6: matches `A−4`. A=8, 10: match `A−2`. The "even-A" formula is itself not
 
 The Wedderburn-block structure at q = ζ_8 (level-2 SU(2) Wenzl) determines which partitions λ contribute to the Markov-trace decomposition. The Φ_8 multiplicity counts the **number of distinct Wenzl-block linear relations** the pair-difference triggers, which depends on the Wedderburn-block content of the canonical braid representations for the specific Z, N values — not just A.
 
-**Connection to existing magic-shell propositions in the corpus** (per CLAUDE.md §"Before declaring 'open' math" corpus-grep — the framework already has this):
+**Connection to existing magic-shell propositions in the corpus** (per AGENTS.md §"Before declaring 'open' math" corpus-grep — the framework already has this):
 
 - [`prop:categorical-neutrality-saturated-shells`](../../content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.md) — At magic `n ∈ {2, 8, 20, 28, 50, 82, 126}`, the full-twist `Δ²_n` acts as identity on the mass endomorphism Φ_n ⇒ Φ_n is supported on self-conjugate partitions (content sum `c(λ) = 0`).
 - [`conj:diagrammatic-double-magic-lr-fusion`](../../content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.md) — Double-magic (both Z, N magic) ⇒ LR-fusion of Z-block and N-block is rigid: single self-conjugate Specht module on the diagonal.

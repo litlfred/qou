@@ -35,7 +35,7 @@ This probe:
          simplify.
   3. Reports each candidate's residual at 50 dps.
 
-NO ansatz fits per CLAUDE.md §"Q_β c_k truncation order" — this is
+NO ansatz fits per AGENTS.md §"Q_β c_k truncation order" — this is
 a STRUCTURAL TEST, reporting tiered (proved / near-match / refuted).
 Each candidate either passes (clean recurrence, structural finding)
 or fails (refutes that specific fibre-level structure, narrows the

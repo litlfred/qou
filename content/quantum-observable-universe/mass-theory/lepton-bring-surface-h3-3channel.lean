@@ -18,7 +18,7 @@ Proves the closed-form algebraic identity:
 Where (a_n, b_n) come from the Hecke recursion σ^n = a_n σ + b_n
 (reuses lepton-mass-tower-canonical's torus_knot_odd_reduction_exists).
 
-Generic over `[Field R]` per CLAUDE.md §7c.
+Generic over `[Field R]` per AGENTS.md §7c.
 -/
 
 namespace QOU.BraidKnot.LeptonBringSurfaceH3

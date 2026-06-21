@@ -24,7 +24,7 @@ Provides:
   word-sensitive (distinguishes braids whose permutation cycle
   types coincide).
 
-Status: structural framework laid out as classes (per CLAUDE.md §3b
+Status: structural framework laid out as classes (per AGENTS.md §3b
 axiom-class pattern). Substantive proofs are left as `sorry` with
 `Ref` citations to the relevant references / .md content; downstream
 QOU theorems can take these as `[instance]` hypotheses.

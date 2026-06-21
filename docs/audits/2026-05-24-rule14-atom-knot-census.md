@@ -21,9 +21,9 @@ The script's own docstring ([`mass_table_ppb.py:18-21`](../../computations/mass_
 
 > *"The atom→knot assignments for D, T, ³He were obtained by census search in `jsj_verification.py` — that IS a form of AME-driven fitting (we picked the knot whose volume is closest to B_AME/ρ)."*
 
-The selection procedure (see [`delta_lambda_jsj_phase3.py:14-21`](../../computations/delta_lambda_jsj_phase3.py)) closes the canonical atomic braid word into a link, calls `snappy.simplify`, reads the hyperbolic volume, and accepts the knot whose `Vol_hyp(K)` minimises `|B_AME − ρ_F · m_e · Vol(K)|` across the SnapPy `HTLinkExteriors` / `OrientableCuspedCensus` enumeration. The choice of `ρ_F ∈ {m_e, 2m_e}` is itself a free binary picked to match. **This is empirical fitting** in the CLAUDE.md production-vs-exploratory sense: a coefficient selected by minimising a CODATA residual, with no substrate-derived rule producing the same answer.
+The selection procedure (see [`delta_lambda_jsj_phase3.py:14-21`](../../computations/delta_lambda_jsj_phase3.py)) closes the canonical atomic braid word into a link, calls `snappy.simplify`, reads the hyperbolic volume, and accepts the knot whose `Vol_hyp(K)` minimises `|B_AME − ρ_F · m_e · Vol(K)|` across the SnapPy `HTLinkExteriors` / `OrientableCuspedCensus` enumeration. The choice of `ρ_F ∈ {m_e, 2m_e}` is itself a free binary picked to match. **This is empirical fitting** in the AGENTS.md production-vs-exploratory sense: a coefficient selected by minimising a CODATA residual, with no substrate-derived rule producing the same answer.
 
-Per CLAUDE.md §production-vs-exploratory and the Rule-14 escalation protocol (§"Rule 14 — Author-escalation for off-menu coefficients" of the 2026-05-23 canonical-unification audit), this cannot remain in the production mass-prediction pipeline without either (a) a derivation from one of the 13 categorical drivers, or (b) explicit owner authorisation under conjecture-conditional status (analogous to PR #895's canonical-Wedderburn adoption — see [`docs/audits/2026-05-24-family-a-gap-audit.md`](2026-05-24-family-a-gap-audit.md) for that precedent).
+Per AGENTS.md §production-vs-exploratory and the Rule-14 escalation protocol (§"Rule 14 — Author-escalation for off-menu coefficients" of the 2026-05-23 canonical-unification audit), this cannot remain in the production mass-prediction pipeline without either (a) a derivation from one of the 13 categorical drivers, or (b) explicit owner authorisation under conjecture-conditional status (analogous to PR #895's canonical-Wedderburn adoption — see [`docs/audits/2026-05-24-family-a-gap-audit.md`](2026-05-24-family-a-gap-audit.md) for that precedent).
 
 ## §2. Trace through the 13 categorical drivers
 
@@ -46,7 +46,7 @@ Per CLAUDE.md §production-vs-exploratory and the Rule-14 escalation protocol (�
 **Summary.** Eleven of the 13 drivers are categorically off-topic — they constrain *coefficients on a chosen topological object*, not the choice of object. Two plausible candidate categorical homes exist:
 
 - **(xii) Chern-Simons / WRT.** An atom built as a WRT-coloured state on a punctured 3-manifold naturally carries a coloured-link representative; the (Z, N) → state-labelling would canonically pick the closure. Concrete construction is missing.
-- **(xiii) Kashiwara crystal → Demazure → Schubert.** A nucleus path in the crystal could lift to a Bruhat element whose Schubert cell selects a closed braid. The CLAUDE.md §7b Demazure-subcrystal-for-resonances hint suggests this is on-framework for unstable resonances; the stable-atom version is not yet articulated.
+- **(xiii) Kashiwara crystal → Demazure → Schubert.** A nucleus path in the crystal could lift to a Bruhat element whose Schubert cell selects a closed braid. The AGENTS.md §7b Demazure-subcrystal-for-resonances hint suggests this is on-framework for unstable resonances; the stable-atom version is not yet articulated.
 
 Neither candidate currently delivers a rule mapping (Z, N) ↦ K. Both would require new content blocks.
 

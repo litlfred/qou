@@ -1,7 +1,7 @@
 /-!
 # QOU.BraidKnot.PhiQAJMachineryIdentification
 
-**Conditional proposition** (per CLAUDE.md §3b-cond): the Φ_q (Faddeev)
+**Conditional proposition** (per AGENTS.md §3b-cond): the Φ_q (Faddeev)
 and Li_2^q (Rogers) regulators used in the framework's substrate-
 evaluation chain are specific saddle-point regimes of the AJ-conjecture
 machinery `Â_K · J_N = 0`.
@@ -23,7 +23,7 @@ machinery `Â_K · J_N = 0`.
 
 ## Honest framing
 
-Per CLAUDE.md §3b-cond, this is a CONDITIONAL proposition with
+Per AGENTS.md §3b-cond, this is a CONDITIONAL proposition with
 class-axiomatized inputs. The `sorry` in the class instances
 represents the OPEN conjectural inputs (AJ, dilog-saddle identifications),
 NOT missing Lean tactics on the conditional result.
@@ -106,7 +106,7 @@ class Li2QRegulator (K : KnotComplement) [QuantumAPolynomial K] where
     instantiated — the work is the IDENTIFICATION at the class
     statement, not the proof.
 
-    Per CLAUDE.md §3b-cond: this is a class-conditional proposition.
+    Per AGENTS.md §3b-cond: this is a class-conditional proposition.
     The class instances carry the open conjectural content; the
     theorem itself is verified by Lean. -/
 -- Ref: [garoufalidis2004] https://doi.org/10.4310/JDG/1090425531

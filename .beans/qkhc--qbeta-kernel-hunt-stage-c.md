@@ -80,3 +80,13 @@ list + canonical scripts; results to be folded in before Stage C is fixed.)
 A scoped Stage-C definition + at least one formalize-first pruning result
 (kills or constrains a kernel sub-class), recorded in the ledger with tiered
 status. NO production wire/un-wire flip without ledger + tiered justification.
+
+> **LEAN CONTRIBUTION 2026-06-20 (PR #2555).** Formalized invariant (b) bar-evenness as a
+> sorry-free lemma: the (★) coefficient ratio ρ_k = c_{k+1}/c_k satisfies, under the bar
+> involution q↦q⁻¹/a↦a⁻¹, a k-INDEPENDENT twist ρ_k(q⁻¹,a⁻¹) = (a q)·ρ_k(q,a) (a q =
+> q^{ν+2}). So bar-evenness of the whole ladder collapses to ONE global normalization, a
+> necessary-condition gate. `QOU/QBeta/QBesselBarCovariance.lean` (heckeCoeffRatio +
+> heckeCoeffRatio_bar_covariance, [Field K], axioms [propext,Classical.choice,Quot.sound];
+> wired into QOU.lean). Complements the sibling NUMERICAL bar-parity gate (qbeta-D, Type-B
+> refuted) with the proved STRUCTURAL covariance. Machinery / necessary-condition lemma —
+> NOT the kernel construction (owner-gated multi-session) and NOT a c_k value. No fit.

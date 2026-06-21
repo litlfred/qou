@@ -134,7 +134,7 @@ theorem mass_markov_upper_bound (d : MarkovMassData) :
     |d.descendedTrace| + |d.transientTrace| := by
   unfold categoricalMassFromMarkov
   rw [d.trace_decomposition]
-  exact abs_add d.descendedTrace d.transientTrace
+  exact abs_add_le d.descendedTrace d.transientTrace
 
 /-- Exact decomposition when both trace components are non-negative
     (as guaranteed in the archimedean realisation, where trace values

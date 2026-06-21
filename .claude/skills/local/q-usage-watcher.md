@@ -24,12 +24,12 @@ The parent encodes the shared mechanics; this file fills the nine
 domain-specific slots A–I and documents the q-regime taxonomy.
 
 **Setup:** use `NAME=q-usage-watcher` everywhere the parent's §1
-references `${NAME}`. Files at `todos/q-usage-watcher-queue.json`
-and `todos/q-usage-watcher-ledger.md`.
+references `${NAME}`. Files at `.beans/q-usage-watcher-queue.json`
+and `.beans/q-usage-watcher-ledger.md`.
 
 **Authoritative references**:
 
-- [CLAUDE.md §7c — base-ring convention](../../../CLAUDE.md) (generic
+- [AGENTS.md §7c — base-ring convention](../../../AGENTS.md) (generic
   `R` vs archimedean `ℝ`).
 - [`notation-collisions.md`](../../../content/quantum-observable-universe/notation/notation-collisions.md)
   — base-ring convention notation row.

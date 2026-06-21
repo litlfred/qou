@@ -161,7 +161,7 @@ degenerate class to carry hypotheses + derive the conclusion, or demote
 `theorem → conjecture` — is **out of scope this session** because each item:
 
 1. **Changes a `theorem` claim** → owner sign-off required
-   (CLAUDE.md `§3b-cond` item 5; `/integration-backlog proof` recipe-4).
+   (AGENTS.md `§3b-cond` item 5; `/integration-backlog proof` recipe-4).
 2. **Needs `lake build` / `lean`-direct verification** of the restated proof →
    the Lean toolchain is unavailable in this sandbox (elan cannot reach
    `release.lean-lang.org`).

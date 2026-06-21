@@ -95,7 +95,7 @@ Then the structured `AskUserQuestion` chip set.
 
 ## 0a. Repo-owner preferences (binding for all watchers)
 
-Per CLAUDE.md §"User accessibility" the repo owner types with
+Per AGENTS.md §"User accessibility" the repo owner types with
 difficulty and prefers a small set of binding behavioural
 defaults. These override the historical watcher defaults — every
 child inherits them.
@@ -123,7 +123,7 @@ more, dispatch fewer agents, ask before parallelising.
 
 ## 0c. Sibling coordination (2026-05-19)
 
-Per CLAUDE.md §"User accessibility" item "Coordinate intent with
+Per AGENTS.md §"User accessibility" item "Coordinate intent with
 sibling branches":
 
 - **At workplan start** (new branch / new tranche), list active
@@ -154,7 +154,7 @@ during idle is now the default.
 
 ## 0d. AskUserQuestion accessibility (2026-05-19)
 
-Per CLAUDE.md §"User accessibility" item "Default
+Per AGENTS.md §"User accessibility" item "Default
 `AskUserQuestion` to `multiSelect: true` + 🟡 marker": the
 repo owner is physically disabled and types with difficulty.
 
@@ -178,7 +178,7 @@ repo owner is physically disabled and types with difficulty.
 
 ## 0b. Idle-time backlog policy (5-minute trigger)
 
-Per CLAUDE.md §"Agent work-plan policy" item 4 (5-minute idle
+Per AGENTS.md §"Agent work-plan policy" item 4 (5-minute idle
 trigger, added 2026-05-19): when this watcher has been idle for
 > 5 minutes (no substantive output beyond TICK heartbeats or
 empty acks), automatically start processing backlog without
@@ -190,7 +190,7 @@ waiting for the user to prompt. Walk the priority order:
    `mcp__github__pull_request_read get_review_comments` and
    `get` for the body).
 3. **Integration-watcher queue items** — this watcher's own
-   `todos/<name>-queue.json` first, then sibling watchers'.
+   `.beans/<name>-queue.json` first, then sibling watchers'.
    Prefer items whose `block_or_script` overlaps the current
    PR's scope (same chapter / same Python or Lean file).
 4. **Refresh stale sidecars + witnesses** (added 2026-06-03).
@@ -288,12 +288,13 @@ queue item", not "TICK heartbeats forever".
 OWNER=litlfred
 REPO=qou
 
-# Bootstrap the queue + ledger (gitignored under todos/)
-mkdir -p todos
+# Bootstrap the queue + ledger under .beans/ (queue tracked as a bulk-JSON
+# coordination queue; ledger gitignored — both survive branch switches)
+mkdir -p .beans
 NAME="<your-watcher-name>"
-[ -f "todos/${NAME}-queue.json" ] || \
-  echo '{"items":[],"audited":{},"reviewed_up_to":{}}' > "todos/${NAME}-queue.json"
-[ -f "todos/${NAME}-ledger.md" ] || cat > "todos/${NAME}-ledger.md" <<EOF
+[ -f ".beans/${NAME}-queue.json" ] || \
+  echo '{"items":[],"audited":{},"reviewed_up_to":{}}' > ".beans/${NAME}-queue.json"
+[ -f ".beans/${NAME}-ledger.md" ] || cat > ".beans/${NAME}-ledger.md" <<EOF
 # ${NAME} — session ledger
 
 | ts (UTC) | event | scope | findings | action |
@@ -638,7 +639,7 @@ For each new skill file:
    - `Defer to follow-up branch` — record + skip
    - `Not relevant` — record so re-prompt is suppressed
 4. **Record the decision in the watcher's ledger**
-   (`todos/${NAME}-ledger.md`) under a `### New skills` subsection
+   (`.beans/${NAME}-ledger.md`) under a `### New skills` subsection
    so future sessions don't re-prompt for the same skill.
 
 This rule applies to skill files only (`.claude/skills/local/*.md`
@@ -761,7 +762,7 @@ answer. Two-part pattern:
    call, write a short chat message:
    - the finding (one sentence, with severity);
    - the affected file (GitHub blob URL, `.md` preferred per
-     CLAUDE.md "Always provide GitHub links");
+     AGENTS.md "Always provide GitHub links");
    - evidence (a verbatim quote with line numbers, if applicable);
    - what was already attempted and what failed.
 2. **Structured question.** Then call `AskUserQuestion` with a
@@ -800,10 +801,10 @@ After each event:
 ```bash
 ts=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 echo "| $ts | <event> | <scope> | <N critical / N major / N minor> | <N auto / N asked / N deferred> |" \
-  >> "todos/${NAME}-ledger.md"
+  >> ".beans/${NAME}-ledger.md"
 ```
 
-Update `todos/${NAME}-queue.json` with new items + status changes
+Update `.beans/${NAME}-queue.json` with new items + status changes
 via `Edit`.
 
 ### 4g. Refresh spawned PRs against main *(superseded by §2c)*
@@ -867,7 +868,7 @@ when multiple items are independent; items sharing state serialise.
 1. No incoming event has arrived during this TICK window
 2. The count of items currently in `status: in-progress` is below
    the parallelism cap (per §5m, default 4)
-3. `todos/${NAME}-queue.json` contains at least one item with
+3. `.beans/${NAME}-queue.json` contains at least one item with
    `status: queued` (or `status: needs-author` whose author ask
    has been outstanding ≥ 7 days — the §5e re-ask cadence)
 
@@ -878,7 +879,7 @@ heartbeat one-liner is for periods when the queue is *empty*,
 NOT for periods when the queue is non-empty and the agent is
 choosing not to work.
 
-This matches CLAUDE.md §"Agent work-plan policy" rule 4 ("Work
+This matches AGENTS.md §"Agent work-plan policy" rule 4 ("Work
 the queue while idle"): an agent that idles with non-empty queue
 is an audit flag.  The TICK heartbeat is the trigger; the queue
 is the source of "what next".
@@ -956,7 +957,7 @@ the next backlog item. Specifically:
    in-flight PR (cannot start non-overlapping work), or (c) the
    user says "stop" / "park" / "switch to X".
 
-This matches the user-accessibility rule in CLAUDE.md
+This matches the user-accessibility rule in AGENTS.md
 ("Run commands proactively — don't ask 'shall I run X?'") and
 the work-plan policy ("Work the queue while idle"). Asking the
 user "what should I do next?" while the queue is non-empty and
@@ -1107,7 +1108,7 @@ Per prepared PR:
    # `^### ` — `/^### Watching/,/^### /` collapses to one line
    # (the opening line itself matches the closer).
    pr_branches=$(awk '/^### Watching/,/^## /' \
-       "todos/${NAME}-ledger.md" \
+       ".beans/${NAME}-ledger.md" \
        | grep -oE 'claude/iw-[a-z0-9-]+' | sort -u)
 
    for pr_branch in $pr_branches; do
@@ -1410,7 +1411,7 @@ state and surface a structured suggestion to the user.
 
 **Procedure:**
 
-1. **Load persisted state.** If `todos/${NAME}-queue.json`
+1. **Load persisted state.** If `.beans/${NAME}-queue.json`
    exists, parse it. Read:
    - `reviewed_up_to[<criterion>]` per Slot D criterion → the
      per-criterion last-fully-audited SHA
@@ -1548,7 +1549,7 @@ minutes), it must:
 
 **Anti-parallel cases** (always sequential even with consent):
 
-- Anything touching the same `todos/${NAME}-queue.json` write (race condition).
+- Anything touching the same `.beans/${NAME}-queue.json` write (race condition).
 - Anything touching the same Lean build (`lake build` is exclusive).
 - Anything that depends on a prior step's output (rebase → validate, format → lint).
 - Tasks where the user is mid-asking — never dispatch in parallel until the author-ask is resolved.
@@ -1602,8 +1603,8 @@ queues the violation as `critical`, and asks the author.
 - **Built on**: `local/watch` (Monitor scaffolding),
   `local/coordinate` (PR triage helpers).
 - **Dispatches**: see each child's Slot C.
-- **Produces**: `todos/${NAME}-queue.json` (live state) +
-  `todos/${NAME}-ledger.md` (event log).
+- **Produces**: `.beans/${NAME}-queue.json` (live state) +
+  `.beans/${NAME}-ledger.md` (event log).
 - **Complements** other watchers — each owns one axis (proof /
   canonical / wiring / …); coordinate via `/coordinate` if the
   user is running more than one.
@@ -1616,7 +1617,7 @@ queues the violation as `critical`, and asks the author.
   findings, may commit on this branch, may post asks on PRs.
 - **owner**: same as collaborator plus may commit to main when
   explicitly requested (still requires per-commit user approval
-  per CLAUDE.md "Executing actions with care").
+  per AGENTS.md "Executing actions with care").
 
 ## Anti-patterns (shared across all children)
 
@@ -1626,7 +1627,7 @@ queues the violation as `critical`, and asks the author.
   + own PR + newly-opened (per TICK).
 - ❌ Open > 1 ask per round on the same block. Batch findings.
 - ❌ Edit `.ts` manifests to add a `status:` field (status is
-  derived per CLAUDE.md §4).
+  derived per AGENTS.md §4).
 - ❌ Touch protected files (`deploy/google-viewers.txt`, etc.).
 - ❌ Hand-edit witness JSON to "fix" drift.
 - ❌ Auto-merge a PR without explicit author approval.

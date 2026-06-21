@@ -29,7 +29,7 @@ tag (parallel filename to `chi-{atom}-h{n}-at-q0-50dps.witness.json`),
 so the downstream bar-pairing observable can be assembled by a
 post-processor that consumes both witnesses.
 
-q-usage discipline (per CLAUDE.md §7c):
+q-usage discipline (per AGENTS.md §7c):
 
 | q-value                | type        | role                              |
 |------------------------|-------------|-----------------------------------|

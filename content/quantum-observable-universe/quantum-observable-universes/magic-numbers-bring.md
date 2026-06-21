@@ -130,7 +130,7 @@ computation.
 
 ## Discussion
 
-**Conjectural** under CLAUDE.md §3b. The conjecture's role is
+**Conjectural** under AGENTS.md §3b. The conjecture's role is
 to **name** the algebraic mechanism behind the magic-number
 sequence. Promotion to a theorem requires the
 representation-theory + period-lattice computation outlined in

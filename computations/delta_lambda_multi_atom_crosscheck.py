@@ -18,6 +18,7 @@ where c(λ) = content sum = Σ_{(i,j)∈λ} (j-i).
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import json, time
 from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
@@ -82,8 +83,8 @@ He_parts, He_chi, He_n = load_chi('atom-chi-rust-3he.witness.json')
 B_AME = {'D': mpf('2.22452'), 'T': mpf('8.48180'), '3He': mpf('7.71804')}
 
 # CODATA masses
-M_P = mpf('938.27208816')
-M_N = mpf('939.56542052')
+M_P = mpf(M_P_MEV_VALIDATION)
+M_N = mpf(M_N_MEV_VALIDATION)
 M_atoms = {
     'D': M_P + M_N - B_AME['D'],
     'T': M_P + 2*M_N - B_AME['T'],

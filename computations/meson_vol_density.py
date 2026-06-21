@@ -43,7 +43,7 @@ qi = 1/q0
 h_q = q0 - qi
 hbar_q = 1 - qi  # ℏ_q = (q-1)/q
 # Masses routed through the codata_constants registry — no inline CODATA
-# literals (CLAUDE.md P31 / three-CAL purity). _path_bridge (above) puts
+# literals (AGENTS.md P31 / three-CAL purity). _path_bridge (above) puts
 # substrate/ on sys.path so `codata_constants` resolves.
 from codata_constants import (  # noqa: E402
     M_E_MEV, M_PI_PM_MEV_VALIDATION, M_K_PM_MEV_VALIDATION,

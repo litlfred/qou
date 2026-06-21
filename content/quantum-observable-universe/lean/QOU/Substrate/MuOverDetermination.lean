@@ -167,7 +167,7 @@ theorem substrate_over_determination
   at 100 dps with 12-significant-figure match.
 
 - Does NOT prove the framework's choice of q₀ anchor. The class
-  `ReadingAValidAtH2` pattern (CLAUDE.md §3b-cond) is the right
+  `ReadingAValidAtH2` pattern (AGENTS.md §3b-cond) is the right
   way to formalise such structural choices; this module only
   proves the INJECTIVITY structure that makes the choice
   consequential.

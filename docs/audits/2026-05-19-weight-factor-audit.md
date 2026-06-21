@@ -162,7 +162,7 @@ The following should hold at every $q$ where each weight is defined:
 
 **User insight 2026-05-19:** "all observables by KLR are non-neg. so over-expected is an issue but can also help diagnose errors in model".
 
-Per the Khovanov-Lauda-Rouquier categorification (CLAUDE.md §7b on symmetric-crystal techniques), every contribution to a physical observable in the KLR canonical basis is **structurally non-negative**. In the co-Casimir expansion:
+Per the Khovanov-Lauda-Rouquier categorification (AGENTS.md §7b on symmetric-crystal techniques), every contribution to a physical observable in the KLR canonical basis is **structurally non-negative**. In the co-Casimir expansion:
 
 $$M_{\text{pred}} = \rho_K^{LO} \cdot m_e \cdot |\text{tr}_M| + \Delta\rho_K \cdot m_e \cdot |\text{tr}_M|$$
 
@@ -194,7 +194,7 @@ The **err-vs-n trend** then makes sense:
 
 So the +441 → +2.7 ppm trend ISN'T improving accuracy — it's that the (missing) antisymmetric correction grows with n while the (present) symmetric over-prediction stays fixed.
 
-**Bottom line**: the substrate-derivation is wired with KLR-symmetric positivity but **missing the KLR-antisymmetric channel**. The path forward is folding the bar-involution (Type B folding per CLAUDE.md §7b) into the Hoefsmit χ^λ accumulation — explicitly projecting onto both ±h/2 eigenspaces of the averaged crossings.
+**Bottom line**: the substrate-derivation is wired with KLR-symmetric positivity but **missing the KLR-antisymmetric channel**. The path forward is folding the bar-involution (Type B folding per AGENTS.md §7b) into the Hoefsmit χ^λ accumulation — explicitly projecting onto both ±h/2 eigenspaces of the averaged crossings.
 
 This audit, with KLR positivity as the gate, is the framework for finding which weight family loses the antisymmetric piece.
 

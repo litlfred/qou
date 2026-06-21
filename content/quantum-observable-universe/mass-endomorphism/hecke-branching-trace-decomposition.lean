@@ -15,7 +15,7 @@ inside the regime.
 
 Mathlib does not yet carry the Hoefsmit seminormal basis or the
 Hecke-algebra branching infrastructure, so the formalization is
-class-axiomatised per CLAUDE.md §3b: `HeckeBranchingTraceDecomposition`
+class-axiomatised per AGENTS.md §3b: `HeckeBranchingTraceDecomposition`
 encodes the identity as a class instance; downstream theorems take it
 as `[HeckeBranchingTraceDecomposition q]` and are then fully verified.
 

@@ -18,7 +18,7 @@ violation. Common breakages:
 
 1. **Status markers** in body prose — `✅ Done`, `(TODO)`, `(TBD)`,
    `**Pending.**`, etc. These are work-tracker speech
-   (`CLAUDE.md` §4a *TodoItem lifecycle rules*: content TODOs live
+   (`AGENTS.md` §4a *TodoItem lifecycle rules*: content TODOs live
    in `todos/`, not in the paper).
 2. **Emoji used as content** — `✅`, `❌`, `⚠`, `🔧`, `🚧` outside of
    tables. Even in tables, these belong only when used as compact
@@ -50,14 +50,14 @@ violation. Common breakages:
    `$\mathcal{C}$` for category (canonical: `$\mathbf{C}$`); bare
    `$H_q$` for any of three distinct objects ($\mathcal{H}_q$,
    $\hat{H}_q$, $H_n(q)$, $H_q(\lambda)$).
-10. **Archimedean / algebraic wall side mismatch** — per CLAUDE.md
+10. **Archimedean / algebraic wall side mismatch** — per AGENTS.md
     §7c, algebraic substrate blocks must NOT mention `Real.*`,
     `linarith`, `0 < q`, or `ℝ` without declaring archimedean
     specialisation; archimedean blocks must declare their `ℝ`
     types explicitly.
 11. **Structural-argument hedging / "exposition simplifies"
     framing** — the paper derives its results from a canonical
-    derivation chain (CLAUDE.md *Canonical derivation chain*
+    derivation chain (AGENTS.md *Canonical derivation chain*
     cheat sheet). It does not need "structural argument" /
     "morally correct" / "essentially the X" / "heuristically" /
     "simplification for exposition" / "provides the mathematical
@@ -157,7 +157,7 @@ bun run content/pipeline/qa-section-title-audit.ts
 | **E. Unicode crash** | `↦`, `⁻`, `√`, `─`, `✅`, `·`, `²` | Replace with LaTeX command in math (`\mapsto`, `^{-1}`, `\sqrt{}`, `\cdot`, `^{2}`) or strip box-drawing comments. Add to preamble's `\newunicodechar` list only if widely used. |
 | **F. First-person work tone** | "we'll add", "I'll fix" | **Rewrite in passive/scholarly voice.** Often a sign the sentence shouldn't exist at all. |
 | **G. Structural-argument hedging** | "structural argument", "morally correct", "essentially the X", "heuristically", "simplification for exposition", "provides the mathematical framework", "amounts to" | **Strip** if the canonical derivation IS in the paper (most cases — paper is already too long). **Demote** to `remark` with `interprets:` if the block is asserting an unsupported analogy. **Keep** only if (i) the phrase is a category-theory term of art (e.g. `essentially surjective`) or (ii) the block has `tags: ["non-scholarly-voice-exception"]`. |
-| **H. Banner-in-prose** | `> **Status: theorem (sorry-free)...**`, `> **Caveat (over-permissive...)...**`, `> **Status (May 2026):...**`, `> **Refined-framing note (added when promoting...)...**` | **Migrate to `authorNotes` field** on the block's `.ts` manifest. Per CLAUDE.md `BlockBase.authorNotes` (the schema field added 2026-05-24), author-tracking notes belong as metadata, not in scholarly prose. Render pipeline skips them by default; `WITH_AUTHOR_NOTES=1` env var exposes them in working drafts. **EXCEPTION:** `**Theorem (conditional on [conj:X])**` banners required by CLAUDE.md §3b-cond are STRUCTURAL parts of the theorem statement, not author notes — keep in prose. |
+| **H. Banner-in-prose** | `> **Status: theorem (sorry-free)...**`, `> **Caveat (over-permissive...)...**`, `> **Status (May 2026):...**`, `> **Refined-framing note (added when promoting...)...**` | **Migrate to `authorNotes` field** on the block's `.ts` manifest. Per AGENTS.md `BlockBase.authorNotes` (the schema field added 2026-05-24), author-tracking notes belong as metadata, not in scholarly prose. Render pipeline skips them by default; `WITH_AUTHOR_NOTES=1` env var exposes them in working drafts. **EXCEPTION:** `**Theorem (conditional on [conj:X])**` banners required by AGENTS.md §3b-cond are STRUCTURAL parts of the theorem statement, not author notes — keep in prose. |
 | **I. Audit-doc reference in paper** | `docs/audits/...`, `[audit](../../../docs/audits/...)`, `per audit`, `see audit doc` | **Remove.** Paper content must NOT reference audit documents. Audit docs are internal working artifacts — they are not part of the scholarly publication. If the audit contains a result needed in the paper, promote the result to a content block (proposition/theorem/remark) and cite that block instead. Empirical observations (percentage matches, ppm comparisons to CODATA) belong in audit docs only, never in paper `.md` blocks. |
 | **J. Empirical fit in scholarly prose** | "within X% of CODATA", "matches to Y ppm", "≈ Z MeV (close to...)", "near-match", "numerical observation" | **Remove from paper content.** Empirical comparisons are audit-doc material. Paper content states the derived formula; the audit doc records how well it matches experiment. **EXCEPTION:** a content block may state a formula's formal precision target (e.g. "the substrate identity matches CODATA to $0.24\,\mathrm{ppm}$") if the block IS a proposition about precision (e.g. `prop:proton-mass-substrate-identity`). |
 | **K. Title coherence** | section/subsection title ending in `" : vs"` / `" : generation"` / `" : characterisation"` / `" : comparison"`; a comma-list title of 3+ concepts; a title meaningless without its chapter | **Rewrite from the section's story** — read the section's intro block, make it short + coherent against its responsible parent (paper→chapter→section→subsection) and distinct from the sibling. Surfaced by `qa-section-title-audit.ts`; conventions in `one-voice-style-guide.md` §Title Conventions. |
@@ -285,5 +285,5 @@ outrank agent entries; agent entries outrank script entries — but
   (§4a delegates to `markdown-render-check`; §4b is this skill).
 - `proof-conciseness` — for trimming proofs that contain work-tracker
   language disguised as expository structure.
-- `CLAUDE.md` §4a *TodoItem lifecycle rules* — content TODOs are
+- `AGENTS.md` §4a *TodoItem lifecycle rules* — content TODOs are
   external to paper; live in `todos/`, never in `.md` content.

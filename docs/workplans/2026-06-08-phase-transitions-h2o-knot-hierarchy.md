@@ -2,7 +2,7 @@
 
 **Branch:** `claude/gallant-bohr-w9f6a6`
 **Date:** 2026-06-08
-**Status:** WIP — workplan stub (PR opened first per CLAUDE.md branch+PR policy)
+**Status:** WIP — workplan stub (PR opened first per AGENTS.md branch+PR policy)
 
 ## Owner request (verbatim intent)
 
@@ -103,7 +103,7 @@ resolve structurally before any numerical phase build.
 5. **Electron shells in lattice** — what the Hopf-trefoil shell model
    says happens to shells under lattice bonding.
 
-## Discipline notes (CLAUDE.md)
+## Discipline notes (AGENTS.md)
 
 - Report numerical predictions **tiered** (proved / near-match /
   fitted), never binary; use `$\approx$` for q₀-derived values.

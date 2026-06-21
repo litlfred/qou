@@ -78,7 +78,7 @@ findings are **convergent** with sibling work. No §6 escalations.
 
 ## CI status
 
-PR #1579 hit the documented [CLAUDE.md billing-pattern failure](../../CLAUDE.md)
+PR #1579 hit the documented [AGENTS.md billing-pattern failure](../../AGENTS.md)
 across `validate`, `Content pipeline`, `Build all papers + sidecar`,
 `copilot-setup-steps` — all completing in 2-4 seconds setup-phase.
 Local content validate is exit 0. Not pushing retrigger commits per

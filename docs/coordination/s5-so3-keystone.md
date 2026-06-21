@@ -58,6 +58,24 @@ is its *geometric origin*.
    is an A₅ rep (central +1), ℂ³⊗ℂ² has central −1. dim-6 = chirality T₁⊕T₂, not a tensor.
 3. **Reeb-eigenvalue resonance** — the ℓ=1,2 content matches (`c(λ)=ℓ(ℓ−1)`) are non-unique and fail at ℓ=3
    (tau, multi-block). No parameter-free ≥3-anchor resonance.
+4. **Cyclotomic-Galois / `Li₃(ζ₅)` period as a keystone "falsifier"** — recorded 2026-06-20 after a fresh
+   agent (`claude/kind-ptolemy-acladr`) independently re-derived the cyclotomic-Galois / fifth-root-of-unity
+   period angle and mis-aimed it at the keystone coupling as a falsifier. That angle lives on the **period /
+   z-Habiro axis**, which the 2026-06-17 sessions-log note flags as **orthogonal to the keystone coupling — "do
+   not conflate"**: the z-side completion `varprojlim ℤ[q^±1][z]/(P_n)` (quantum-dilog Φ_q tower) is parallel-
+   but-independent of the q-side Habiro/full-Hecke Markov trace. Forcing the period↔knot bridge is exactly the
+   **unfalsifiable correspondence-chain the Habiro lead refused**
+   ([`2026-06-16-keystone-habiro-coupling-lead-and-ck-exposition.md`](../audits/2026-06-16-keystone-habiro-coupling-lead-and-ck-exposition.md)).
+   Inoculation for the next agent: a period-axis cyclotomic-Galois result is **not** an s5-so3 keystone
+   constraint; the keystone's single open object is the q-Plancherel-measure geometric-realization problem
+   (below), not a period identity. Verify the axis (period/z vs coupling/q) before treating any Galois fact as
+   keystone-bearing.
+   **Twice-demonstrated recurrence (strengthened 2026-06-20, PR #2506 / bean `wlk9`).** A *second*, independent
+   agent (`claude/tender-darwin-sw4zo1`, the #2506 hyperbolic-hurdle audit) re-derived the identical
+   cyclotomic-Galois / `Li₃(ζ₅)` angle from scratch and again mis-aimed it at the keystone as a falsifier — with
+   no knowledge of the #2517 record (it was 475 commits stale). Two agents re-walking the same dead end within
+   one day is exactly the recurrence the canonical-no-negative-result discipline exists to stop; treat this item
+   as high-priority inoculation, not a one-off footnote.
 
 ## Sessions log
 
@@ -80,6 +98,13 @@ is its *geometric origin*.
 | 2026-06-17 | #2442 | **Lean (full Mathlib):** z-Habiro `c_n` localisation pinned — `eulerCoeff` (Euler `b_n` in `S^{-1}ℤ[q^±1]`, `S=⟨1-q^{-j}⟩`) + `braneMonic_coords_unique` (coordinates unique); analytic↔algebraic identification stays open |
 | 2026-06-17 | (this PR) | **Lean (full Mathlib):** z-Habiro `braneMonic_coords_exist` — monic basis spans `R[X]_{≤n}`; with #2442's uniqueness, cyclotomic coordinates are a bijection `R[X]_{≤n} ≅ R^{n+1}` staying in the localised `R` (item 2(i) base-ring half) |
 | 2026-06-17 | (coord note) | **z-Habiro on main is ORTHOGONAL to the keystone coupling — do not conflate.** The z-Habiro Lean work (#2417-era: `ZHabiroCompletion`, `zHabiroLimit`, `cyclotomicPartialSum_isCauchy`) builds the **z-side** completion `varprojlim ℤ[q^±1][z]/(P_n)` for the quantum-dilog Φ_q truncation tower. The keystone coupling is the **q-side** Habiro element (full-Hecke Markov trace = WRT(S³/2I) = Lawrence–Zagier). These are parallel-but-independent completions; bridging them needs a simultaneous (q,z)-bicompletion, which the z-Habiro file itself flags "construction open." No fit-free Lean bridge exists yet — forcing one is the unfalsifiable correspondence-chain the Habiro lead (`2026-06-16-keystone-habiro-coupling-lead-and-ck-exposition.md`) explicitly refused. The keystone coupling stays OPEN. |
+| 2026-06-20 | #2520 | **Scope (consumer side, no fit):** what the mass-ratio needs from the W_λ frontier. Since #2516/#2519 prove the knot layer is null on the generation difference, the geometric frontier carries the **entire O(1) generation skeleton** (consumer weight `y_(3,2)/y_(3,1,1)=3.68` at q₀) and **none** of the 210 ppb fine shift (2.1e-7, anchor artifact). Forward necessary condition complementing producer-side C1–C7; no edit to producer docs. |
+| 2026-06-20 | #2519 | **Probe (no fit):** the (2,1)/h⁴ cancellation is **robust to q-deformation**. Generic-q Hecke branching H₃⊂H₅ carries classical multiplicities → `χ_μ^H5(β)=Σ m·χ` exactly (max |Δ|=8.9e-16) and `χ_(3,1,1)−χ_(3,2)=χ_(1,1,1)=1` identically, h-indep up to h⁴≈0.9. Closes the q-deformed-Wenzl escape #2516 left at the **character** level — only surviving μ/e asymmetry is the O(1) `W`/`y` block-weight ratio (#2488 frontier). |
+| 2026-06-20 | #2516 | **Probe (no fit):** ran the functor-resolution §4 object via `pyhecke_native` (built in-sandbox, #2511) — the H₃ Borromean Markov-trace shift between muon `E_(3,2)` and electron `E_(3,1,1)` projectors via the classical `S₅→S₃` branchings. The h⁴-bearing `(2,1)` block enters both with the **same** multiplicity 2 (classical, q-indep) → **cancels exactly** in the μ/e difference (6.9e-18). Classical-multiplicity baseline is **null**; residual split is the `(1,1,1)` sign channel (h-indep, ~1.5e-2). Sharpens the W_λ frontier (#2488): the q-deformed `W_λ = d_q(λ)²/[n]_q!` weights are **necessary**, not optional — pure multiplicity counting cannot produce a generation shift. |
+| 2026-06-20 | #2517 | **Lead + inoculation:** (a) §Refutations item 4 — cyclotomic-Galois / `Li₃(ζ₅)` period is period-axis, NOT a keystone falsifier; (b) **q-heat-kernel / q-Bessel(2nd-kind) geometric-realization lead** — precheck found `W_λ=d_q²/[n]!` is **sub-normalized** (`Z=0.98222` at q_0, P1 fail; symmetry P2 + audit P3 pass); the mass defect `1−Z` is the geometric quantity to explain. Bridges the existing q-Bessel infra (2026-06-13) to the keystone target. `2026-06-20-keystone-qbessel-heat-kernel-lead.md` + `scripts/keystone_qbessel_plancherel_precheck.py`. NOT a closure. |
+| 2026-06-20 | #2506 | **Inoculation + corpus trace:** (a) §Refutations item 4 strengthened — the cyclotomic-Galois falsifier was re-walked a **second** time independently (`claude/tender-darwin`, #2506), now a twice-demonstrated recurrence; (b) pieces-1–3 corpus-object trace consolidated into [`docs/audits/2026-06-20-s5so3-pieces-1-3-corpus-trace.md`](../audits/2026-06-20-s5so3-pieces-1-3-corpus-trace.md) — every settled ingredient mapped to its verified `.md`/`.lean`/checker source. No new math; reporting only. |
+| 2026-06-20 | #2528 | **Probe (no fit) — binding-side target for the Step-1 gate:** wired the owner-gated deuteron `f_pn = 0.588` (reproduces AME `B(²H)` exactly) against the gate's `W_λ = d_q²/[n]_q!`. The pn std-channel block is the standard rep `λ=(2,1)` at `n=3`; gate `W_(2,1)=0.661` UNDER-binds (E 1.74), the bare std channel `0.395` OVER-binds (E 3.89) → required `0.58776` (E 2.2246) is **strictly bracketed** `0.395 < 0.588 < 0.661`. REFUTE the naive direct-weight map; algebraic `W_λ` does not land 0.588 but brackets it. Hands the geometric `W_λ` (WRT(S³/2I)) a sharp **second** binding-side target alongside the m_τ tower: any index reproducing `W_λ` must land `f_pn` in `(0.395, 0.661)`. Harness `deuteron_fpn_from_Wmap` consumes any future geometric `W_λ` unchanged. `2026-06-20-deuteron-fpn-wlambda-wiring.md`. |
+| 2026-06-18 | #2480 | **Lean (formalization fix):** de-vacuify `BringFiberAction` — remove the provably-false `respects_conjugate` (angle sign-flip) + vacuous `hits_five_conjugacy_classes : True` + trivial instance; correct the fibre-map domain to the 5 A₅ irreps (new `A5Irrep` + `conjugate_same_a5_irrep`), substantive `five_distinct_classes`. Per `2026-06-13-bring-fiber-action-falsification.md`. Formalization correction, **not** a closure — the geometric map stays open. |
 
 ## Key artifacts
 
@@ -88,10 +113,31 @@ is its *geometric origin*.
   markov-weighting-sasakian-scope) + the corrected `2026-06-13-gap-a4-operator-valued-muon-branching.md`.
 - Verifiers (all exit 0): `docs/audits/scripts/s5so3_*.py` (branching backbone, ingredient 4/5 markov shift,
   fibre Schur–Weyl, coupling Schur, Reeb resonance, Hopf coupling obstruction, markov weighting facts).
-- Lean scaffold: `content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean` (open `partition_to_rotation`).
+- Lean scaffold: `content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean` (open `irrepToRotation` on the corrected A₅-irrep domain — de-vacuified in #2480; was the falsified `partition_to_rotation`).
 
 ## Cross-references
 
 - Synthesis: [`2026-06-16-mtau-and-binding-converge-on-s5so3-keystone.md`](../audits/2026-06-16-mtau-and-binding-converge-on-s5so3-keystone.md)
 - Construction program: [`docs/scope/2026-06-16-icosahedral-reeb-fiber-map-construction.md`](../scope/2026-06-16-icosahedral-reeb-fiber-map-construction.md)
 - Sibling A≥3 compute cluster: #2369 / #2371 / #2372 (produces `W_λ` algebraically)
+
+## qbk2 q-Bessel "quadratic action" binding direction — FORECLOSED (2026-06-20, double-sourced)
+
+Two independent routes agree the q-Bessel 2nd-kind "quadratic action" is **not** the
+binding mechanism:
+
+- **#2521** (session 01Q34jUc): retired via the `2026-06-14` joint-J⊕I combiner (³He
+  +17.4%→+117.9% NO-GO); the legitimate "quadratic action" is the content-Casimir `μ_λ`
+  already wired into `prop:q-heat-kernel-peter-weyl`; the precheck "P1 fail" is a
+  normalizer artifact (`Z(0)=Σd²`, not `[n]_q!`).
+- **#2549** (this session, fresh rigorous arc #2530→#2549): forced `y_λ` Markov weighting
+  collapses the rigorous reduction-of-order correction from `2.23×` (unweighted) to
+  **1–6%** of `B(D)` (~20–80× too small). Refuted by its own forced weighting.
+
+**Convergent negative** (different methods) ⇒ do not re-walk the q-Bessel binding probe.
+**Machinery that stands** (additive, from #2549): the resonance-free reduction-of-order
+2nd-solution construction + sorry-free Lean lemma `QOU/QBeta/QCasoratianAbel.lean`
+(q-Casoratian/Abel law, axioms `[propext, Quot.sound]` only). The C(n) defect closed
+form `−n(n−1)(2n−13)/144` (#2527) is the falsifiable sub-leading target for the
+*geometric* W_λ index continuation (#2503/#2524/#2488). bean `qbk2` carries both notes;
+owner closes.

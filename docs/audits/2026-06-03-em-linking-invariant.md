@@ -108,7 +108,7 @@ by the length-scale conversion.
     the natural coupling c=1;
     [`u1_hypercharge_assignment.py`](../../computations/u1_hypercharge_assignment.py)),
     and
-  - the Δ_λ per-partition closure (six ansätze failed; CLAUDE.md Δ_λ gate).
+  - the Δ_λ per-partition closure (six ansätze failed; AGENTS.md Δ_λ gate).
 
   In each case the framework supplies the dimensionless/structural datum
   but not the dimensionful normalization. Here the normalization is a

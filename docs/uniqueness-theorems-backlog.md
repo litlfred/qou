@@ -14,7 +14,7 @@ without external choice.
 
 | # | Construction | Cheat-sheet line | Current status | Uniqueness theorem state |
 |---|---|---|---|---|
-| 1 | **τ_M Markov trace** on H_n(R, q) | line 234 (`[jones1987]` cited) | ✅ **DONE (#1422)** | `qou_markov_trace_is_jones_markov` refactored from selection-by-contrast → direct uniqueness statement via `MarkovTraceUniqueness` class (Wenzl/Jones axiom, CLAUDE.md §3b-cond). τ_SW + `schur-weyl-vanishing.lean` fully purged. |
+| 1 | **τ_M Markov trace** on H_n(R, q) | line 234 (`[jones1987]` cited) | ✅ **DONE (#1422)** | `qou_markov_trace_is_jones_markov` refactored from selection-by-contrast → direct uniqueness statement via `MarkovTraceUniqueness` class (Wenzl/Jones axiom, AGENTS.md §3b-cond). τ_SW + `schur-weyl-vanishing.lean` fully purged. |
 | 2 | **T_w SDP-canonical knot operator** | line 69, 95 | ✅ **SCAFFOLDED** (pre-existing, surfaced by 2026-05-30 audit) | `canonical_T_w_subsingleton_under_strict_complementarity` in `mass-theory/conj-canonical-knot-id-sdp.lean:748` ALREADY proves the Subsingleton uniqueness conditional on `StrictComplementarityPair`. Underlying `sorry` is in `QOU.MathlibExt.SDP.strict_complementarity_unique` (Mathlib SDP layer — PSD-cone strict convexity). Open work: discharge the Mathlib SDP sorry, OR upgrade `class CanonicalKnotIdSDP` to include a `strictComplementarity` field so per-instance witnesses certify uniqueness. |
 | 3 | **Canonical p-n averaging form** | line 124, 128 | ⚠ **OPEN — genuinely missing** | No dedicated `averaging-resonance-rule.lean` file exists; only referenced from `bar-involution.md`, `c5-involution-leibniz-decomposition.ts`, etc. Needed: `pn_averaging_unique` — any p-n averaging satisfying (a) bar-invariance, (b) color-flavor compatibility (Bring color-tube symmetry), (c) standard normalisation, is unique. Open math (the Bring color-tube weighted vs uniform bar-invariant question) AND open Lean. |
 | 4 | **VolDensity(K) per-knot** | line 175, 185 | ✅ **SCAFFOLDED** (pre-existing) | `particle-interactions/geom-universality.lean` already carries `class SingleVolumeIrrational`, `class PLCorrectnessHypotheses`, `class HyperbolicVolumeIndependence` (§3b-cond axiom classes) + `theorem geom_universality_conditional` + `theorem conditional_on_HyperbolicVolumeIndependence`. Open work: close one of those classes, OR add a top-level `vol_density_per_knot_unique` theorem that consumes all three. |
@@ -57,7 +57,7 @@ without external choice.
 - **q₀ is NOT a uniqueness item** — q₀ is a *calibration choice* (pinned from CODATA m_p/m_e per #1422), not a mathematically unique value. The framework is parametric in q₀; the uniqueness items above hold for every q in the appropriate generic locus.
 - **The Wedderburn decomposition + Hecke algebra** uniqueness are standard
   theorems (Mathlib / Drinfeld–Jimbo) — assumed without re-proof.
-- **Class-axiomatisation pattern** (CLAUDE.md §3b-cond): when the cited
+- **Class-axiomatisation pattern** (AGENTS.md §3b-cond): when the cited
   uniqueness is an established external theorem (Wenzl, Jones), the Lean
   proof axiomatizes it as a `class` with the `-- Ref:` citation, and
   downstream results are proved sorry-free *conditional on the class

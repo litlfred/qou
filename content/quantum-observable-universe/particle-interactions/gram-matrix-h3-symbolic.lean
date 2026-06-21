@@ -158,8 +158,14 @@ theorem gramMatrix_top_left (u : ℝ) : gramMatrix u 0 0 = 1 := by
   unfold gramMatrix gramEntry
   simp [Matrix.of_apply]
 
-/-- **THEOREM (DEFERRED — Phase 1b-2).** The Gram matrix is invertible
+/-! **Design note (DEFERRED — Phase 1b-2).** The Gram matrix is invertible
     when `u > 1` (equivalently `q > 1`).
+
+    (This was an orphaned declaration doc-comment with no following
+    declaration — a hard parse error; converted to a section comment
+    2026-06-20 so the file compiles. The live theorems are
+    `gramMatrix_det_ne_zero_conditional`, `gramMatrix_det_eq_factorization`,
+    and `gramMatrix_det_ne_zero` below, each with its own doc-comment.)
 
     **Why `u > 1` rather than `u ≠ 1`** (correctness fix, 2026-05-25):
     sympy factorization of det numerator yields
@@ -194,7 +200,7 @@ theorem gramMatrix_top_left (u : ℝ) : gramMatrix u 0 0 = 1 := by
     - `rank(gramMatrix u_0) = 6`                 (full rank at substrate)
 
     -- Ref: [manuscript]
-    The `sorry` is conjectural-conditional per CLAUDE.md §3b-cond;
+    The `sorry` is conjectural-conditional per AGENTS.md §3b-cond;
     discharging it requires lifting the symbolic factorisation into
     Lean. Witness sidecar:
     `computations/gram-h3-det-factorization.witness.json`. -/
@@ -356,22 +362,57 @@ theorem gramMatrix_det_ne_zero_conditional
     exact neg_lt_zero.mpr (div_pos h_num_pos h_denom_pos)
   exact ne_of_lt h_quot_neg
 
-/-- **THEOREM (DEFERRED — Phase 1b-3 follow-up).** The symbolic Matrix.det
-    of `gramMatrix u` equals the witness-derived factorization. Full
-    Lean proof requires expanding the 6×6 determinant (720-term
-    permutation sum); deferred but the witness records the symbolic
-    identity at 50-dps mpmath precision. -/
-theorem gramMatrix_det_eq_factorization (u : ℝ) :
+/-- **THEOREM (DEFERRED — Phase 1b-3 follow-up).** For `u ≠ 0`, the
+    symbolic `Matrix.det` of `gramMatrix u` equals the witness-derived
+    factorization.
+
+    **Why the `u ≠ 0` hypothesis (added 2026-06-20).** The Gram entries
+    carry `/u`, `/u²`, `/u⁴`, `/u⁶` denominators, so at `u = 0` both sides
+    collapse to Lean's junk `x / 0 = 0` and the *unconditional* form is not
+    the intended rational-function identity. `u ≠ 0` (supplied by the sole
+    consumer `gramMatrix_det_ne_zero`, where `1 < u`) scopes the theorem to
+    its meaningful domain and is exactly what lets `field_simp` clear the
+    denominators in any future proof.
+
+    **Why still `sorry` (empirical findings, 2026-06-20).** Two routes
+    were measured and both exceed any shippable compute budget:
+
+    1. *Rational brute force.* A `Matrix.det_succ_row_zero` expansion +
+       `field_simp; ring` over the rational entries is not viable — even
+       rewriting `gramMatrix u` as a `!!` literal times out at the default
+       200 000 heartbeats (≈3.5 min wall, `isDefEq`/`whnf`).
+
+    2. *Structural (denominator-cleared) route — identified, symbolically
+       verified, still not closable.* Scaling each row `i` by the lcm
+       `L_i` of that row's denominators turns the matrix polynomial-entried;
+       since `det(diag(L)·G) = (∏ L_i)·det G` with `∏ L_i = u^18 (u²+1)^12`,
+       the identity reduces to the *polynomial* `ring` goal
+       `det(M) = -num · u^8` (deg 52, 45 terms; `num` the deg-44
+       factored numerator). sympy (Berkowitz) confirms this exactly — see
+       `row_cleared_structural_route` in the witness, with the 36 cleared
+       entries and the `L` vector recorded for transcription. **But the
+       Lean bottleneck is the cofactor *expansion*, not `ring`:**
+       `simp [Matrix.det_succ_row_zero, Fin.sum_univ_succ, …]` on even a
+       *moderate* dense 6×6 exhausts 16 000 000 heartbeats before reaching
+       `ring`, and the real degree-16-entry matrix exceeds 20 000 000 simp
+       steps / 50 000 000 heartbeats. Mathlib has no `det_fin_six`, so
+       there is no controlled expansion lemma; the reduced gap is therefore
+       a *tactic-capability* gap (an efficient explicit-6×6-determinant
+       decision procedure), not a mathematical one.
+
+    The factorization is sympy-verified at 50 dps and the row-cleared
+    reduction is recorded reproducibly in the witness. Witness:
+    `computations/gram-h3-det-factorization.witness.json`
+    (`row_cleared_structural_route`, assertion
+    `row_cleared_det_equals_minus_num_times_u8`). -/
+theorem gramMatrix_det_eq_factorization (u : ℝ) (hu : u ≠ 0) :
     (gramMatrix u).det =
       -(detFactor1 u * detFactor2 u
         * (detFactor3 u)^5 * (detFactor4 u)^5
         * detFactor5 u * detFactor6 u)
       / (u^10 * (u^2 + 1)^12) := by
-  -- PROOF STRATEGY (sympy-verified at 50 dps):
-  -- 1. unfold gramMatrix gramEntry Matrix.of + all detFactor defs
-  -- 2. simp [Matrix.det_fin_succ] to expand 6×6 det recursively
-  -- 3. field_simp + ring (may need set_option maxHeartbeats 800000)
   -- Ref: [manuscript]
+  -- `hu : u ≠ 0` is the hypothesis a future `field_simp`-based proof needs.
   sorry
 
 /-- **THEOREM (FULL DISCHARGE of `gramMatrix_det_ne_zero`).**
@@ -387,7 +428,7 @@ theorem gramMatrix_det_eq_factorization (u : ℝ) :
 theorem gramMatrix_det_ne_zero (u : ℝ) (hu_gt_one : 1 < u) :
     (gramMatrix u).det ≠ 0 :=
   gramMatrix_det_ne_zero_conditional u hu_gt_one
-    (gramMatrix_det_eq_factorization u)
+    (gramMatrix_det_eq_factorization u (lt_trans zero_lt_one hu_gt_one).ne')
 
 end QOU.Interactions.GramMatrixH3Symbolic
 
