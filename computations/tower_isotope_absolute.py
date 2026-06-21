@@ -33,7 +33,12 @@ Isotopes tested: p, n, D, T, ³He, ⁴He, ⁶Li (optional).
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
+from codata_constants import (  # noqa: E402 (codata sweep)
+    M_N_MEV_VALIDATION, M_P_MEV_VALIDATION,
+    M_D_ATOMIC_MEV_VALIDATION, M_T_ATOMIC_MEV_VALIDATION,
+    M_HE3_ATOMIC_MEV_VALIDATION, M_HE4_ATOMIC_MEV_VALIDATION,
+    M_LI6_ATOMIC_MEV_VALIDATION, M_C12_ATOMIC_MEV_VALIDATION,
+)
 import sys
 import json
 import math
@@ -72,12 +77,12 @@ M_E_CODATA = mp.mpf(str(M_E_MEV))
 CODATA_ATOMIC = {
     "p":     mp.mpf(M_P_MEV_VALIDATION),       # bare proton (not neutral H)
     "n":     mp.mpf(M_N_MEV_VALIDATION),
-    "D":     mp.mpf("1876.12392"),         # ²H atomic mass (with e)
-    "T":     mp.mpf("2809.43215"),         # ³H atomic mass
-    "3He":   mp.mpf("2809.41347"),         # ³He atomic mass
-    "4He":   mp.mpf("3728.40133"),         # ⁴He atomic mass
-    "6Li":   mp.mpf("5603.05122"),
-    "12C":   mp.mpf("11177.92923"),
+    "D":     M_D_ATOMIC_MEV_VALIDATION,    # ²H atomic mass (with e)
+    "T":     M_T_ATOMIC_MEV_VALIDATION,    # ³H atomic mass
+    "3He":   M_HE3_ATOMIC_MEV_VALIDATION,  # ³He atomic mass
+    "4He":   M_HE4_ATOMIC_MEV_VALIDATION,  # ⁴He atomic mass
+    "6Li":   M_LI6_ATOMIC_MEV_VALIDATION,
+    "12C":   M_C12_ATOMIC_MEV_VALIDATION,
 }
 
 
