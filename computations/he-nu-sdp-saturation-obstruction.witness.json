@@ -1,0 +1,104 @@
+{
+  "computation": "he-nu-sdp-saturation-obstruction",
+  "kind": "exploratory-probe",
+  "description": "Capstone of the ν_SDP line: the operator-selection SDP saturation does not reproduce ν=1,2,2 in any principled regime — q→1 gives a single min-cost block (ν=1 always); q₀ is indefinite/rail-degenerate. With per-block-PSD, SDP-active-set, bar-fold, and self-conjugate all refuted, ν_SDP has no first-principles SDP-saturation derivation; 1,2,2 are hand-assigned. No fit.",
+  "engine": "numpy+scipy",
+  "q0": 1.1099785955573347,
+  "regimes": {
+    "q→1⁺ (well-posed)": {
+      "D": {
+        "bounded_support_size": 1,
+        "nu_canonical": 1,
+        "neg_norm_blocks": 3,
+        "support": [
+          [
+            [
+              3,
+              2,
+              1
+            ],
+            0.12578235772282598
+          ]
+        ]
+      },
+      "T": {
+        "bounded_support_size": 1,
+        "nu_canonical": 2,
+        "neg_norm_blocks": 10,
+        "support": [
+          [
+            [
+              3,
+              2,
+              2,
+              1,
+              1
+            ],
+            0.031476907548863564
+          ]
+        ]
+      },
+      "3He": {
+        "bounded_support_size": 1,
+        "nu_canonical": 2,
+        "neg_norm_blocks": 10,
+        "support": [
+          [
+            [
+              3,
+              2,
+              2,
+              1,
+              1
+            ],
+            0.03157928461429216
+          ]
+        ]
+      }
+    },
+    "q₀ (indefinite)": {
+      "D": {
+        "bounded_support_size": 0,
+        "nu_canonical": 1,
+        "neg_norm_blocks": 3,
+        "support": []
+      },
+      "T": {
+        "bounded_support_size": 0,
+        "nu_canonical": 2,
+        "neg_norm_blocks": 10,
+        "support": []
+      },
+      "3He": {
+        "bounded_support_size": 1,
+        "nu_canonical": 2,
+        "neg_norm_blocks": 10,
+        "support": [
+          [
+            [
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            0.20654085857249782
+          ]
+        ]
+      }
+    }
+  },
+  "q1_saturation_sizes": {
+    "D": 1,
+    "T": 1,
+    "3He": 1
+  },
+  "verdict": "OBSTRUCTED",
+  "conclusion": "No principled Markov-trace SDP saturation yields ν_SDP=1,2,2. The kashaev 'MacMahon SDP-multiplicity' categorical home is aspirational; ρ_F=2 (⁴He) is an underived acknowledged input, not a derived structural quantity.",
+  "refs": [
+    "PR #2552, #2556 (ν_SDP arc)",
+    "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md",
+    "computations/deuteron_real_sdp.py"
+  ],
+  "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number."
+}
