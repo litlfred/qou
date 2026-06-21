@@ -1,11 +1,11 @@
 ---
 # cbnf
-title: 'Categorical binding wiring (NO fitting) — derive (1+q)/2, not a 7th Δ_λ ansatz'
-status: in_progress
+title: Categorical binding wiring (NO fitting) — derive (1+q)/2, not a 7th Δ_λ ansatz
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-16T02:14:00Z
-updated_at: 2026-06-16T02:50:00Z
+updated_at: 2026-06-21T19:39:07Z
 parent: qz9k
 ---
 

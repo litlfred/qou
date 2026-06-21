@@ -1,11 +1,11 @@
 ---
 # mtxi
-title: 'm_τ Path A → underdetermined; live framing is operator-valued ℓ=3 branching (conj:s5-so3-fiber-action)'
-status: in_progress
+title: m_τ Path A → underdetermined; live framing is operator-valued ℓ=3 branching (conj:s5-so3-fiber-action)
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-16T02:45:00Z
-updated_at: 2026-06-16T02:55:00Z
+updated_at: 2026-06-21T19:39:07Z
 parent: qz9k
 ---
 

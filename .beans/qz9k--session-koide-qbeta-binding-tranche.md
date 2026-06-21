@@ -1,11 +1,11 @@
 ---
 # qz9k
 title: 'Session: koide-tau / Q_β kernel Stage C / categorical binding wiring (no fitting)'
-status: in_progress
+status: completed
 type: milestone
 priority: high
 created_at: 2026-06-16T02:14:00Z
-updated_at: 2026-06-16T02:52:00Z
+updated_at: 2026-06-21T19:39:07Z
 ---
 
 ## Session results (2026-06-16) — all three children delivered (pending human close)

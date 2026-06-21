@@ -29,13 +29,9 @@ how every session tracks its work-plan and how agents hand off across sessions.
 (idempotent; `go install github.com/hmans/beans@latest`).
 
 > **Ownership note — Folio-Assistant Infrastructure Migration.** The *generic*
-> coordinator/orchestrator bean-coordination logic is being decoupled from this
-> physics repo and migrated into the `folio-assistant` repository (tracked by
-> the `miga` epic — see `.beans/miga--folio-migration-parent.md`). The path
-> `folio-assistant/.claude/skills/local/bean-coordination.md` referenced in
-> older notes is the **upstream copy** and is NOT resolvable inside this
-> checkout. Until folio-assistant vendors the generic skill back, treat
-> `todo-manager.md` as the local source of truth.
+> coordinator/orchestrator bean-coordination logic has been decoupled from this
+> physics repo and migrated into the `folio-assistant` repository (epic `miga`).
+> The canonical generic version is maintained upstream and synced here.
 
 ## Disambiguation (do not conflate)
 

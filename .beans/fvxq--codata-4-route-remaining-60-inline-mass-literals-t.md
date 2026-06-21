@@ -1,11 +1,11 @@
 ---
 # fvxq
 title: 'CODATA #4: route remaining ~60 inline mass literals through codata_constants registry'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-20T00:58:14Z
-updated_at: 2026-06-20T01:04:35Z
+updated_at: 2026-06-21T19:16:07Z
 parent: qfzy
 ---
 
@@ -74,3 +74,5 @@ ACTION (post-rebase): re-verify every #2540-routed literal against main's
 witness state; revert any p/n route where registry != literal.
 
 RE-CHECK RESOLVED (2026-06-20, PR #2540 prepare-merge): the precision-bump risk flagged in RECONCILIATION was tested at the ACTUAL script runtime dps (set_compute_dps → 70): all 7 routed constants (M_P/M_N/M_D/M_T/M_MU/M_PI_PM/M_K_PM_MEV_VALIDATION) give rel_diff = 0.0 vs their former string literals → exactly value-preserving at runtime. (The apparent dps=60 mismatch was a binary-mpf precision-of-creation artifact, not a real value change; the witness m_p IS exactly 938.27208816 in this repo state.) #2540's routes confirmed safe. Also: reverted 2 witness files that import-test side-effects had regenerated (kaon-pion restored, meson-lepton-dict removed). Branch diff vs main = .py routing + audit .md + beans only (no witness/lean diffs).
+
+Substantive routing done. The remainder (classes 1-4) are deferred as they require semantic design decisions (atomic vs nuclear registry, 3-cal input discipline) rather than mechanical routing.
