@@ -1,12 +1,22 @@
 ---
 # e2nf
 title: Level-6 electron shell — σ_F dual, shell-closure fix, 2n² gap
-status: in_progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-16T02:16:00Z
-updated_at: 2026-06-21T02:30:00Z
+updated_at: 2026-06-21T19:40:00Z
 ---
+
+**✅ MERGED 2026-06-21** — PR #2348 rebase-merged to main (32 commits, tip
+`8f09cf28`). Delivered: Level-6 atom→electron wiring; σ_F shell-closure
+monotonicity fix; 2n² capacity DERIVED (self-square, sorry-free Lean
+`shell_capacity_self_square` + paper block `prop:shell-capacity-self-square`);
+Aufbau-ordering audits. **Open research (NOT this PR, future bean if pursued):**
+Gap-2 ordering `a=+1` — needs hypothesis `H_scalar` (orbital energy = symmetric-
+block scalar component of the non-scalar angular word); NOT accepted as a
+semi-empirical input (owner STRICT). CI was billing-gated; Lean/content verified
+manually + textbook-safe.
 
 Branch `claude/zealous-hypatia-05xyp9` → PR #2348. Picked up a stalled
 electron-shell / atomic-mass discussion; tracked via docs/audits + the
