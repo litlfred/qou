@@ -3,14 +3,14 @@
   "label": "conj:algebraic-geometric-dilog-equivalence",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts",
-    "md": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.md",
-    "lean": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean"
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.md",
+    "lean": "../qou/content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean"
   },
   "source_hashes": {
-    "md": "46f5fa0cd898",
+    "md": "386ade328590",
     "ts": "db2bac7acf39",
-    "lean": "1351b2d6bfbe"
+    "lean": "5edc255f2989"
   },
   "criteria": {
     "voice-status-leak": [
@@ -330,9 +330,9 @@
       },
       {
         "field_hash": {
-          "md": "0cf132df61ae",
+          "md": "386ade328590",
           "ts": "db2bac7acf39",
-          "lean": "1351b2d6bfbe"
+          "lean": "5edc255f2989"
         },
         "result": "pass",
         "reviewer": {
@@ -340,10 +340,10 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T12:22:18.883Z",
+        "reviewed_sha": "7e9230d39a9311f712172aac7b937892c33fee34"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1416,46 +1416,6 @@
         },
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
-      }
-    ],
-    "proof-no-trivial-skeleton": [
-      {
-        "field_hash": {
-          "md": "0cf132df61ae",
-          "ts": "db2bac7acf39",
-          "lean": "1351b2d6bfbe"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "dc9f5d490026"
-        },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
-      }
-    ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "0cf132df61ae",
-          "ts": "db2bac7acf39",
-          "lean": "1351b2d6bfbe"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "85320dc56a6f"
-        },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
       }
     ],
     "canonical-calibration-count": [
@@ -2737,26 +2697,46 @@
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
       }
     ],
-    "proof-no-self-assuming-projection": [
+    "proof-no-trivial-skeleton": [
       {
         "field_hash": {
-          "lean": "1351b2d6bfbe"
+          "md": "386ade328590",
+          "ts": "db2bac7acf39",
+          "lean": "5edc255f2989"
         },
-        "result": "fail",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean:79 [tuple-projection] theorem algebraic_geometric_equivalence",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "3d6da1d6f221",
-          "script_commit_sha": "59988482014b44b7f22be60f49df38000c2228c2"
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "21d9ff417741"
         },
-        "reviewed_at": "2026-06-20T11:45:15.347Z",
-        "reviewed_sha": "e451d436f3729e99f9df9615b034a95ad2fa8407",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "reviewed_at": "2026-06-21T12:22:18.883Z",
+        "reviewed_sha": "7e9230d39a9311f712172aac7b937892c33fee34"
+      }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "386ade328590",
+          "ts": "db2bac7acf39",
+          "lean": "5edc255f2989"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "16d8c7a8984e"
+        },
+        "reviewed_at": "2026-06-21T12:22:18.883Z",
+        "reviewed_sha": "7e9230d39a9311f712172aac7b937892c33fee34"
       }
     ]
   },
-  "updated_at": "2026-06-20T11:45:15.347Z"
+  "updated_at": "2026-06-21T12:22:18.883Z"
 }

@@ -3,14 +3,12 @@
   "label": "conj:bohr-radius-categorical",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/predicted-spectra/bohr-radius-categorical.ts",
-    "md": "content/quantum-observable-universe/predicted-spectra/bohr-radius-categorical.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/Archimedean.lean"
+    "ts": "../qou/content/quantum-observable-universe/predicted-spectra/bohr-radius-categorical.ts",
+    "md": "../qou/content/quantum-observable-universe/predicted-spectra/bohr-radius-categorical.md"
   },
   "source_hashes": {
     "md": "02a2170fc181",
-    "ts": "0f5bea7691a6",
-    "lean": "2ca8d48a16a3"
+    "ts": "0f5bea7691a6"
   },
   "criteria": {
     "voice-status-leak": [
@@ -330,20 +328,20 @@
       },
       {
         "field_hash": {
-          "md": "724761230205",
-          "ts": "eee6fb5a41f6",
-          "lean": "aa6c1dcf0f25"
+          "md": "02a2170fc181",
+          "ts": "0f5bea7691a6"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-21T12:22:18.883Z",
+        "reviewed_sha": "7e9230d39a9311f712172aac7b937892c33fee34",
+        "notes": "block has no .lean sibling"
       }
     ],
     "canonical-no-hardcoded-observable": [
@@ -1655,82 +1653,6 @@
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
       }
     ],
-    "proof-no-trivial-skeleton": [
-      {
-        "field_hash": {
-          "md": "631251dc4319",
-          "ts": "18c97dbc70e9",
-          "lean": "d0a836478d3d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "dc9f5d490026"
-        },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
-      },
-      {
-        "field_hash": {
-          "md": "724761230205",
-          "ts": "eee6fb5a41f6",
-          "lean": "aa6c1dcf0f25"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "dc9f5d490026"
-        },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
-      }
-    ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "631251dc4319",
-          "ts": "18c97dbc70e9",
-          "lean": "d0a836478d3d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "85320dc56a6f"
-        },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
-      },
-      {
-        "field_hash": {
-          "md": "724761230205",
-          "ts": "eee6fb5a41f6",
-          "lean": "aa6c1dcf0f25"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "85320dc56a6f"
-        },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
-      }
-    ],
     "canonical-calibration-count": [
       {
         "field_hash": {
@@ -2996,26 +2918,46 @@
         "evidence": "content/quantum-observable-universe/predicted-spectra/bohr-radius-categorical.md:279: status-section-header: ### Status"
       }
     ],
-    "proof-no-self-assuming-projection": [
+    "proof-no-trivial-skeleton": [
       {
         "field_hash": {
-          "lean": "2ca8d48a16a3"
+          "md": "02a2170fc181",
+          "ts": "0f5bea7691a6"
         },
-        "result": "fail",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/Archimedean/bohr_radius_categorical.lean:57 [field-projection] theorem bohr_radius_categorical [ctx : BohrRadiusCategoricalContext] :",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "3d6da1d6f221",
-          "script_commit_sha": "59988482014b44b7f22be60f49df38000c2228c2"
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "21d9ff417741"
         },
-        "reviewed_at": "2026-06-20T11:45:15.347Z",
-        "reviewed_sha": "e451d436f3729e99f9df9615b034a95ad2fa8407",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "reviewed_at": "2026-06-21T12:22:18.883Z",
+        "reviewed_sha": "7e9230d39a9311f712172aac7b937892c33fee34",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "02a2170fc181",
+          "ts": "0f5bea7691a6"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "16d8c7a8984e"
+        },
+        "reviewed_at": "2026-06-21T12:22:18.883Z",
+        "reviewed_sha": "7e9230d39a9311f712172aac7b937892c33fee34",
+        "notes": "block has no .lean sibling"
       }
     ]
   },
-  "updated_at": "2026-06-20T11:45:15.347Z"
+  "updated_at": "2026-06-21T12:22:18.883Z"
 }

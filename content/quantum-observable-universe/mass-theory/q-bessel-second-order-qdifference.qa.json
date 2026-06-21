@@ -3,10 +3,10 @@
   "label": "proof:q-bessel-second-order-qdifference",
   "kind": "proof",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/q-bessel-second-order-qdifference.ts"
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/q-bessel-second-order-qdifference.ts"
   },
   "source_hashes": {
-    "ts": "a4dc2e18b7d0"
+    "ts": "600e02923343"
   },
   "criteria": {
     "voice-status-leak": [
@@ -386,25 +386,6 @@
         "notes": "block has no .md sibling"
       }
     ],
-    "proof-no-trivial-skeleton": [
-      {
-        "field_hash": {
-          "ts": "a4dc2e18b7d0"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "dc9f5d490026"
-        },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b",
-        "notes": "block has no .lean sibling"
-      }
-    ],
     "canonical-calibration-count": [
       {
         "field_hash": {
@@ -754,7 +735,26 @@
         "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b",
         "notes": "block has no .md sibling"
       }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "ts": "600e02923343"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-06-21T12:22:18.883Z",
+        "reviewed_sha": "7e9230d39a9311f712172aac7b937892c33fee34",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-21T12:22:18.883Z"
 }

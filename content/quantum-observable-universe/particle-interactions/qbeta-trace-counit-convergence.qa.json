@@ -1,0 +1,77 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:qbeta-trace-counit-convergence",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.ts",
+    "md": "../qou/content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.md",
+    "lean": "../qou/content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.lean"
+  },
+  "source_hashes": {
+    "md": "b3d2ff3173bc",
+    "ts": "a5045a26f4f1",
+    "lean": "5d81f8abaa07"
+  },
+  "criteria": {
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "b3d2ff3173bc",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-21T12:22:18.883Z",
+        "reviewed_sha": "7e9230d39a9311f712172aac7b937892c33fee34"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "b3d2ff3173bc",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-06-21T12:22:18.883Z",
+        "reviewed_sha": "7e9230d39a9311f712172aac7b937892c33fee34"
+      }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "b3d2ff3173bc",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "16d8c7a8984e"
+        },
+        "reviewed_at": "2026-06-21T12:22:18.883Z",
+        "reviewed_sha": "7e9230d39a9311f712172aac7b937892c33fee34"
+      }
+    ]
+  },
+  "updated_at": "2026-06-21T12:22:18.883Z"
+}

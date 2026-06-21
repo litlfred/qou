@@ -3,12 +3,12 @@
   "label": "rem:molecular-hbond-phase-transition",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/information-theory/molecular-hbond-phase-transition.ts",
-    "md": "content/quantum-observable-universe/information-theory/molecular-hbond-phase-transition.md"
+    "ts": "../qou/content/quantum-observable-universe/information-theory/molecular-hbond-phase-transition.ts",
+    "md": "../qou/content/quantum-observable-universe/information-theory/molecular-hbond-phase-transition.md"
   },
   "source_hashes": {
-    "md": "49e848b46cb9",
-    "ts": "09c3453a0e0b"
+    "md": "bf85dfb7c991",
+    "ts": "e4ab226af51d"
   },
   "criteria": {
     "fit-section-chapter": [
@@ -1132,26 +1132,6 @@
         "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
       }
     ],
-    "proof-no-trivial-skeleton": [
-      {
-        "field_hash": {
-          "md": "ef7d0026428f",
-          "ts": "09c3453a0e0b"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "dc9f5d490026"
-        },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383",
-        "notes": "block has no .lean sibling"
-      }
-    ],
     "canonical-calibration-count": [
       {
         "field_hash": {
@@ -2128,7 +2108,27 @@
         "reviewed_at": "2026-06-15T03:54:06.462Z",
         "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
       }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "bf85dfb7c991",
+          "ts": "e4ab226af51d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-06-21T12:22:18.883Z",
+        "reviewed_sha": "7e9230d39a9311f712172aac7b937892c33fee34",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-06-15T13:25:43.317Z"
+  "updated_at": "2026-06-21T12:22:18.883Z"
 }

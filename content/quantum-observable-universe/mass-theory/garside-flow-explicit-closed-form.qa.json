@@ -3,8 +3,8 @@
   "label": "rem:garside-flow-explicit-closed-form",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.ts",
-    "md": "content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.md"
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.md"
   },
   "source_hashes": {
     "md": "830e055ac210",
@@ -698,26 +698,6 @@
         },
         "reviewed_at": "2026-06-14T01:08:44.722Z",
         "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
-      }
-    ],
-    "proof-no-trivial-skeleton": [
-      {
-        "field_hash": {
-          "md": "830e055ac210",
-          "ts": "dd490be8210b"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "dc9f5d490026"
-        },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383",
-        "notes": "block has no .lean sibling"
       }
     ],
     "canonical-calibration-count": [
@@ -1598,7 +1578,27 @@
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
       }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "830e055ac210",
+          "ts": "dd490be8210b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-06-21T12:22:18.883Z",
+        "reviewed_sha": "7e9230d39a9311f712172aac7b937892c33fee34",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-21T12:22:18.883Z"
 }

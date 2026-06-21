@@ -3,14 +3,14 @@
   "label": "rem:chi-v111-via-sign-substitution",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-endomorphism/chi-v111-via-sign-substitution.ts",
-    "md": "content/quantum-observable-universe/mass-endomorphism/chi-v111-via-sign-substitution.md",
-    "lean": "content/quantum-observable-universe/mass-endomorphism/chi-v111-via-sign-substitution.lean"
+    "ts": "../qou/content/quantum-observable-universe/mass-endomorphism/chi-v111-via-sign-substitution.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-endomorphism/chi-v111-via-sign-substitution.md",
+    "lean": "../qou/content/quantum-observable-universe/mass-endomorphism/chi-v111-via-sign-substitution.lean"
   },
   "source_hashes": {
-    "md": "40c093f79f75",
+    "md": "ab72286f2aa6",
     "ts": "64123bb0c842",
-    "lean": "71ea14279406"
+    "lean": "405f18e1681d"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1066,26 +1066,6 @@
         },
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
-      }
-    ],
-    "proof-no-trivial-skeleton": [
-      {
-        "field_hash": {
-          "md": "b36a872ca5d1",
-          "ts": "915dbea0d088",
-          "lean": "71ea14279406"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "dc9f5d490026"
-        },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
       }
     ],
     "canonical-calibration-count": [
@@ -2386,7 +2366,27 @@
         "reviewed_at": "2026-06-14T02:00:54.341Z",
         "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
       }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "ab72286f2aa6",
+          "ts": "64123bb0c842",
+          "lean": "405f18e1681d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-06-21T12:22:18.883Z",
+        "reviewed_sha": "7e9230d39a9311f712172aac7b937892c33fee34"
+      }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-06-21T12:22:18.883Z"
 }
