@@ -1,11 +1,11 @@
 ---
 # 6z40
 title: 'B_sym #2: formalize linear-chain additivity in Lean (B_sym not a theorem as stated; needs Lean env)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-20T00:58:14Z
-updated_at: 2026-06-20T13:50:00Z
+updated_at: 2026-06-21T19:14:34Z
 parent: qfzy
 ---
 
