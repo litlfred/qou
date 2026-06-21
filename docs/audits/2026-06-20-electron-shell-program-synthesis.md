@@ -106,11 +106,21 @@ Correctly framed:
 > **Why would an atomic orbital's angular content be the SCALAR-block projection
 > (`q^ℓ`, a=+1) and not the genuine non-scalar `V_ℓ` action (`q^{2ℓ}`, a=+2)?**
 
-The candidate bridge is [`conj:palindromicity-orbital-type`](../../content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.md)
-(`ℓ = ½·palindromic-defect` — the same `½` separating `q^ℓ` from `q^{2ℓ}`), but it
-is a **conjecture** and must be established *on the non-scalar content*, not by
-assuming the scalar block. Per owner STRICT: Madelung's fragility (Cr, Cu, Pd) is
-why this is hard, not a licence to accept it.
+The candidate bridge [`conj:palindromicity-orbital-type`](../../content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.md)
+(`ℓ = ½·palindromic-defect`) was **examined and does not bridge** (audit
+`2026-06-21-palindromicity-does-not-justify-scalar-projection`): its defect `= 2ℓ`
+is the *same* `2ℓ` as the non-scalar overshoot, and the `½` recovers the *label*
+`ℓ`, not the *energy* — so proving it supports `q^{2ℓ}`, not `q^ℓ`. The gap
+therefore reduces to **one** isolated hypothesis:
+
+> **H_scalar** — an orbital's energy is the **symmetric-block (scalar) component**
+> of its angular braid word (`q^ℓ`), not the non-scalar `V_ℓ` action (`q^{2ℓ}`).
+
+`H_scalar` is an **assumption, not a theorem**; per owner STRICT it is a derivation
+target, not a semi-empirical input (Madelung's Cr/Cu/Pd fragility is why it is
+hard, not a licence). Honest framework statement: **QOU's natural non-scalar
+angular objects give `a=+2` (overshoot); empirical `a=+1` Madelung requires
+`H_scalar`.**
 
 *(Audits: `…-aufbau-lambda-plus-channel-from-symmetric-block` (scalar-channel
 correction), `…-aufbau-from-dominant-eigenvalue-duality`,

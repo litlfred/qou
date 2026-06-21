@@ -5,7 +5,7 @@ status: in_progress
 type: task
 priority: normal
 created_at: 2026-06-16T02:16:00Z
-updated_at: 2026-06-21T00:30:00Z
+updated_at: 2026-06-21T02:30:00Z
 ---
 
 Branch `claude/zealous-hypatia-05xyp9` → PR #2348. Picked up a stalled
@@ -121,6 +121,16 @@ low-isotope-mass-anatomy ledger before adopting this bean.
       (load-bearing). Ordering STILL OPEN, now correctly framed: "why scalar-block
       q^ℓ not non-scalar V_ℓ q^{2ℓ}?". Compute aufbau_symmetric_block_channel.py;
       audit 2026-06-20-aufbau-lambda-plus-channel-from-symmetric-block.md.
+- [~] **(2026-06-21, opt-1) Palindromicity route examined → does NOT justify the
+      scalar projection.** conj:palindromicity-orbital-type (a conjecture, ⊂
+      conj:shell-closure-nf-term-count) has defect=2ℓ (table2: s0 p2 d4 f6) — the
+      SAME 2ℓ as the non-scalar V_ℓ exponent. The ½ in "ℓ=½defect" recovers the
+      LABEL ℓ, not the ENERGY; palindromicity assigns no weight and puts ℓ≥1 on
+      the NON-scalar block. So proving it SUPPORTS q^{2ℓ} (overshoot), not q^ℓ.
+      Ordering gap now isolated to ONE hypothesis H_scalar: "orbital energy =
+      symmetric-block (scalar) component of the angular word (q^ℓ), not the
+      non-scalar V_ℓ action (q^{2ℓ})" — an assumption, not a theorem; NOT accepted
+      (STRICT). Audit 2026-06-21-palindromicity-does-not-justify-scalar-projection.md.
 - [ ] **Gap-2 ORDERING: genuinely open.** Three structural-derivation attempts
       for the a=+1 angular weight now RULED OUT (sign or overshoot at q₀):
       eigensplit a=−2 (#2531), q-dim loop-trace a=+2, √-q-dim (this). The exact
