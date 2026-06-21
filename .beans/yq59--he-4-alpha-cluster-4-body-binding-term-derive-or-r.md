@@ -106,3 +106,16 @@ validated by reproducing deuteron support {(3,2,1)} first):
 rails (indefinite-Gram unboundedness, #2552 pathology). #self-conj match was COINCIDENCE.
 Weaker survivor: bounded support ⊆ self-conjugate blocks. Self-conjugate avenue CLOSED;
 ν_SDP derivation remains open. Probe: he_nu_sdp_barfold_h9_test.py. No fit.
+
+## CAPSTONE: SDP-saturation derivation OBSTRUCTED + critical-distance flag (2026-06-21)
+
+Tested the bare operator-selection SDP saturation in both principled regimes:
+- q→1⁺ (well-posed): single min-cost block → ν=1 for D,T,³He (never 1,2,2).
+- q₀ (indefinite): rail-degenerate (0/0/1). neg-norm blocks present at BOTH q→1 and q₀
+  ⇒ indefiniteness is structural, not a q₀ artifact.
+NO principled saturation yields 1,2,2. With per-block-PSD/active-set/bar-fold/self-conj
+all refuted, ν_SDP has NO first-principles SDP-saturation derivation.
+CRITICAL-DISTANCE FLAG: ρ_F=ν_SDP is a naming of a hand-assigned value; ρ_F=2 (⁴He)
+looks fitted (lands +5.87%; ρ_F=3→+59%) — an acknowledged input, not a derivation.
+Audit: docs/audits/2026-06-21-nu-sdp-saturation-obstruction-and-critical-distance.md.
+Probe: he_nu_sdp_saturation_obstruction.py. No fit. ν_SDP line CLOSED as open+flagged.
