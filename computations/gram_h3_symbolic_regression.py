@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Regression guard for the symbolic H_3(q) Gram entries in
-`content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.lean`.
+`content/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean`.
 
 Computes each of the 36 entries via the sympy-derived closed forms
 (transcribed from the Lean definitions) and compares to the production
@@ -37,7 +37,7 @@ def gram_entry_symbolic(u: mp.mpf, i: int, j: int) -> mp.mpf:
     Python identifier per Habiro-literature convention — see
     notation-collisions.md §\check{q}).
 
-    Mirrors the `gramEntry` definition in `gram-matrix-h3-symbolic.lean`
+    Mirrors the `gramEntry` definition in `GramMatrixH3Symbolic.lean`
     exactly — any drift here ↔ Lean definitions is a regression.
     """
     if i > j:
@@ -109,7 +109,7 @@ def main() -> int:
     w.set_description(
         "Regression guard for symbolic H_3(q) Hoefsmit Gram closed-form "
         "entries (Phase 1b of Option E). Compares the 36 sympy-derived "
-        "Lean `gramEntry` definitions in `gram-matrix-h3-symbolic.lean` "
+        "Lean `gramEntry` definitions in `GramMatrixH3Symbolic.lean` "
         "against the production pyhecke Gram at q_0 to detect Lean ↔ "
         "compute drift. Also verifies symmetry (numerically) and reports "
         "determinant at q_0 (non-zero; gramMatrix_det_ne_zero sorry to "
