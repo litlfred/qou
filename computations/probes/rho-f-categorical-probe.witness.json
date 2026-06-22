@@ -1,20 +1,19 @@
 {
-  "computedAt": "2026-05-04T00:42:25.252438+00:00",
   "computation": "rho-f-categorical-probe",
-  "description": "W-1 categorical ρ_F probe.  Tests four zero-AME-input candidates (C0: integer ceiling, C1: q-integer, C2: tr_M-ratio correction, C3: C1×C2 combined) against the empirical true_ρ from the rho-census-wedderburn-experiment witness.  Best single-atom result: C3 gives ³He at −0.14% (vs C0 integer at −2.97%).",
-  "auditOnly": "docs/audits/2026-05-04-w1-rho-substrate-analysis.md",
+  "description": "W-1 categorical \u03c1_F probe.  Tests four zero-AME-input candidates (C0: integer ceiling, C1: q-integer, C2: tr_M-ratio correction, C3: C1\u00d7C2 combined) against the empirical true_\u03c1 from the rho-census-wedderburn-experiment witness.  Best single-atom result: C3 gives \u00b3He at \u22120.14% (vs C0 integer at \u22122.97%).",
+  "computedAt": "2026-06-22T13:00:11.527954+00:00",
   "parameters": {
-    "q_0": 1.1099785955541805,
-    "tr_M_proton": 1.065306228592389,
-    "tr_M_neutron": 0.9232332971695835,
-    "tr_M_avg": 0.9942697628809862,
-    "q_2_q": 2.0108968691184814
+    "q_0": 1.1099785955573347,
+    "tr_M_proton": 1.0653061442544502,
+    "tr_M_neutron": 0.9232332299116374,
+    "tr_M_avg": 0.9942696870830439,
+    "q_2_q": 2.010896869119075
   },
   "candidates": {
-    "C0": "integer ρ = ⌈A/2⌉  (paper baseline)",
-    "C1": "q-integer ρ = [⌈A/2⌉]_q",
-    "C2": "tr_M-ratio ρ = ⌈A/2⌉ · (Z·tr_M_p + N·tr_M_n)/(A·tr_M_avg)",
-    "C3": "combined ρ = [⌈A/2⌉]_q · (Z·tr_M_p + N·tr_M_n)/(A·tr_M_avg)"
+    "C0": "integer \u03c1 = \u2308A/2\u2309  (paper baseline)",
+    "C1": "q-integer \u03c1 = [\u2308A/2\u2309]_q",
+    "C2": "tr_M-ratio \u03c1 = \u2308A/2\u2309 \u00b7 (Z\u00b7tr_M_p + N\u00b7tr_M_n)/(A\u00b7tr_M_avg)",
+    "C3": "combined \u03c1 = [\u2308A/2\u2309]_q \u00b7 (Z\u00b7tr_M_p + N\u00b7tr_M_n)/(A\u00b7tr_M_avg)"
   },
   "rows": [
     {
@@ -23,26 +22,26 @@
       "N": 1,
       "A": 2,
       "label": "deuteron",
-      "true_rho": 0.9892212296139793,
+      "true_rho": null,
       "C0_integer": {
-        "rho": 1,
-        "delta": 0.010778770386020708,
-        "err_pct": 1.0896218220293223
+        "rho": 1.0,
+        "delta": null,
+        "err_pct": null
       },
       "C1_q_integer": {
-        "rho": 1,
-        "delta": 0.010778770386020708,
-        "err_pct": 1.0896218220293223
+        "rho": 1.0,
+        "delta": null,
+        "err_pct": null
       },
       "C2_trm_ratio": {
-        "rho": 1,
-        "delta": 0.010778770386020708,
-        "err_pct": 1.0896218220293223
+        "rho": 1.0,
+        "delta": null,
+        "err_pct": null
       },
       "C3_q_trm_combined": {
-        "rho": 1,
-        "delta": 0.010778770386020708,
-        "err_pct": 1.0896218220293223
+        "rho": 1.0,
+        "delta": null,
+        "err_pct": null
       }
     },
     {
@@ -51,26 +50,26 @@
       "N": 2,
       "A": 3,
       "label": "tritium",
-      "true_rho": 2.003119428154665,
+      "true_rho": null,
       "C0_integer": {
-        "rho": 2,
-        "delta": -0.003119428154664927,
-        "err_pct": -0.1557285157749501
+        "rho": 2.0,
+        "delta": null,
+        "err_pct": null
       },
       "C1_q_integer": {
-        "rho": 2.0108968691184814,
-        "delta": 0.007777440963816495,
-        "err_pct": 0.3882664635219136
+        "rho": 2.010896869119075,
+        "delta": null,
+        "err_pct": null
       },
       "C2_trm_ratio": {
-        "rho": 1.9523694216845346,
-        "delta": -0.05075000647013028,
-        "err_pct": -2.533548711914933
+        "rho": 1.9523694237795708,
+        "delta": null,
+        "err_pct": null
       },
       "C3_q_trm_combined": {
-        "rho": 1.9630067787140453,
-        "delta": -0.04011264944061965,
-        "err_pct": -2.002509130350388
+        "rho": 1.9630067808210758,
+        "delta": null,
+        "err_pct": null
       }
     },
     {
@@ -79,31 +78,28 @@
       "N": 1,
       "A": 3,
       "label": "helium-3",
-      "true_rho": 2.061178570833352,
+      "true_rho": null,
       "C0_integer": {
-        "rho": 2,
-        "delta": -0.0611785708333521,
-        "err_pct": -2.9681354007390577
+        "rho": 2.0,
+        "delta": null,
+        "err_pct": null
       },
       "C1_q_integer": {
-        "rho": 2.0108968691184814,
-        "delta": -0.050281701714870675,
-        "err_pct": -2.439463636308879
+        "rho": 2.010896869119075,
+        "delta": null,
+        "err_pct": null
       },
       "C2_trm_ratio": {
-        "rho": 2.047630578315465,
-        "delta": -0.013547992517886964,
-        "err_pct": -0.6572934877937041
+        "rho": 2.047630576220429,
+        "delta": null,
+        "err_pct": null
       },
       "C3_q_trm_combined": {
-        "rho": 2.058786959522917,
-        "delta": -0.002391611310434971,
-        "err_pct": -0.11603125242409358
+        "rho": 2.058786957417074,
+        "delta": null,
+        "err_pct": null
       }
     }
   ],
-  "note": "C3 reduces ³He error from −2.97% to −0.14% with zero AME input.  However C3 worsens ³H (−2.0% vs C0 +0.15%).  The residual ³H deficit implies an additional categorical correction beyond the proton/neutron tr_M ratio is needed.  GAP-A remains partially open.  See analysis doc docs/audits/2026-05-04-w1-rho-substrate-analysis.md.",
-  "engine": "python",
-  "scriptFile": "rho_f_categorical_probe.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+  "note": "C3 reduces \u00b3He error from \u22122.97% to \u22120.14% with zero AME input.  However C3 worsens \u00b3H (\u22122.0% vs C0 +0.15%).  The residual \u00b3H deficit implies an additional categorical correction beyond the proton/neutron tr_M ratio is needed.  GAP-A remains partially open.  See analysis doc docs/audits/2026-05-04-w1-rho-substrate-analysis.md."
 }
