@@ -13,7 +13,7 @@ Phase 2 entry-point probe for Option E (Kashiwara crystal weight →
 ## What this probe does
 
 Cross-checks the EXISTING H_3 Gram-matrix infrastructure (already
-landed on main: `particle-interactions/gram-matrix-h3-symbolic.lean`
+landed on main: `lean/QOU/Interactions/GramMatrixH3Symbolic.lean`
 + `lean/QOU/Archimedean/frobenius_gram_matrix.lean`) against
 probe-1's empirical Δ_λ(D) solution under bar-invariance.
 
