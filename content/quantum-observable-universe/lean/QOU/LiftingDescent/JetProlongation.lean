@@ -289,8 +289,9 @@ theorem pentagon_inter_level_placeholder
       (IL.liftOperator n k x) =
     q • ((IL.liftOperator n k x) *
           ((IL.liftOperator n i x) * (IL.liftOperator n j x))) := by
-  -- Ref: [manuscript] superseded by InterLevelLift.pentagon_inter_level_on_transient.
-  sorry
+  -- Superseded by `InterLevelLift.pentagon_inter_level_on_transient`, which
+  -- proves the identical statement; this back-compat wrapper just delegates.
+  exact InterLevelLift.pentagon_inter_level_on_transient n i j k x h_transient
 
 end JetChain
 
