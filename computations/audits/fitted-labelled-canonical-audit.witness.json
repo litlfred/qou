@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-13T00:22:32.418546+00:00",
-  "commitSha": "1736cc5f64a70813d9fb514d3f27263459354c73",
+  "computedAt": "2026-06-22T12:37:45.174190+00:00",
+  "commitSha": "5ed54ebd371aae0d3f85e0c81104657b8fef9871",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
-      "computed": 16,
+      "computed": 2,
       "expected": 0,
       "passed": false,
       "tolerance": 0
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 14,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
-  "scriptHash": "aaff0df25751",
-  "scriptCommitSha": "91ec507378a633aa41664fb1ba12f71fec15e6fb",
+  "scriptHash": "34338951a64d",
+  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,9 +35,9 @@
   "description": "Audits production scripts in computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
-    "total_issues": 16,
-    "flagged_script_count": 4,
-    "scripts_scanned": 1242,
+    "total_issues": 2,
+    "flagged_script_count": 2,
+    "scripts_scanned": 1469,
     "rows": [
       {
         "path": "computations/metallic_q_n4_character_sweep.py",
@@ -60,102 +60,6 @@
             "var": "Q0",
             "literal": "1.1099785955541805",
             "context_snippet": "ute it.\n\nEach interval is sampled at ≥10 q-values (denser than just midpoints).\nBar-mirror intervals (1/δ_n) are sampled symmetrically.  Output is a\nwitness JSON with the full sweep + a per-interval positive-block count\n"
-          }
-        ]
-      },
-      {
-        "path": "computations/probes/gap_a4_S_K_additive_probe.py",
-        "issue_count": 7,
-        "issues": [
-          {
-            "line": 52,
-            "var": "M_E_MEV",
-            "literal": "0.51099895069",
-            "context_snippet": "n) is next.\n\nFor each light atom K ∈ {p, n, D, T, ³He, ⁴He}, this probe computes:\n\n    S_emp(K) = m(K) − m_e · Vol(K) / ℏ_q² · λ_uniform\n\nand tests against several substrate-derived closed-form candidates\nfor the residua"
-          },
-          {
-            "line": 54,
-            "var": "M_P_MEV",
-            "literal": "938.27208816",
-            "context_snippet": "∈ {p, n, D, T, ³He, ⁴He}, this probe computes:\n\n    S_emp(K) = m(K) − m_e · Vol(K) / ℏ_q² · λ_uniform\n\nand tests against several substrate-derived closed-form candidates\nfor the residual.  No fitting; each candidate is a"
-          },
-          {
-            "line": 55,
-            "var": "M_N_MEV",
-            "literal": "939.56542052",
-            "context_snippet": "obe computes:\n\n    S_emp(K) = m(K) − m_e · Vol(K) / ℏ_q² · λ_uniform\n\nand tests against several substrate-derived closed-form candidates\nfor the residual.  No fitting; each candidate is a fixed\nsubstrate expression.\n\nEXP"
-          },
-          {
-            "line": 56,
-            "var": "M_D_MEV",
-            "literal": "1875.61294257",
-            "context_snippet": ") − m_e · Vol(K) / ℏ_q² · λ_uniform\n\nand tests against several substrate-derived closed-form candidates\nfor the residual.  No fitting; each candidate is a fixed\nsubstrate expression.\n\nEXPLORATORY — no production code, co"
-          },
-          {
-            "line": 57,
-            "var": "M_T_MEV",
-            "literal": "2808.92113298",
-            "context_snippet": "m\n\nand tests against several substrate-derived closed-form candidates\nfor the residual.  No fitting; each candidate is a fixed\nsubstrate expression.\n\nEXPLORATORY — no production code, content blocks, or production\nwitnes"
-          },
-          {
-            "line": 58,
-            "var": "M_HE3_MEV",
-            "literal": "2808.39160743",
-            "context_snippet": "rate-derived closed-form candidates\nfor the residual.  No fitting; each candidate is a fixed\nsubstrate expression.\n\nEXPLORATORY — no production code, content blocks, or production\nwitnesses changed.  Emits `gap-a4-S-K-ad"
-          },
-          {
-            "line": 60,
-            "var": "VOL_BORROMEAN_8G",
-            "literal": "7.32772475341775212043682811945907288619319499425",
-            "context_snippet": "ch candidate is a fixed\nsubstrate expression.\n\nEXPLORATORY — no production code, content blocks, or production\nwitnesses changed.  Emits `gap-a4-S-K-additive-probe.witness.json`.\n\"\"\"\nfrom __future__ import annotations\n\ni"
-          }
-        ]
-      },
-      {
-        "path": "computations/probes/gap_a4_cross_isotope_residual_probe.py",
-        "issue_count": 7,
-        "issues": [
-          {
-            "line": 63,
-            "var": "M_E_MEV",
-            "literal": "0.51099895069",
-            "context_snippet": "Z·N − 1)`\n\nIf any rule closes all six rows to better than 5 %, the\nsqrt([3]_q/[2]_q) finding becomes a derivable structural lead (per\nthe discipline rule, this would also need (b) — categorical\nidentification — to be pro"
-          },
-          {
-            "line": 65,
-            "var": "M_P_MEV",
-            "literal": "938.27208816",
-            "context_snippet": "ix rows to better than 5 %, the\nsqrt([3]_q/[2]_q) finding becomes a derivable structural lead (per\nthe discipline rule, this would also need (b) — categorical\nidentification — to be promoted).  If all rules refute, ³He's"
-          },
-          {
-            "line": 66,
-            "var": "M_N_MEV",
-            "literal": "939.56542052",
-            "context_snippet": "qrt([3]_q/[2]_q) finding becomes a derivable structural lead (per\nthe discipline rule, this would also need (b) — categorical\nidentification — to be promoted).  If all rules refute, ³He's\n+0.70 % match is confirmed as a "
-          },
-          {
-            "line": 67,
-            "var": "M_D_MEV",
-            "literal": "1875.61294257",
-            "context_snippet": "a derivable structural lead (per\nthe discipline rule, this would also need (b) — categorical\nidentification — to be promoted).  If all rules refute, ³He's\n+0.70 % match is confirmed as a coincidence and direction 3 close"
-          },
-          {
-            "line": 68,
-            "var": "M_T_MEV",
-            "literal": "2808.92113298",
-            "context_snippet": "he discipline rule, this would also need (b) — categorical\nidentification — to be promoted).  If all rules refute, ³He's\n+0.70 % match is confirmed as a coincidence and direction 3 closes\nnegative.\n\nEXPLORATORY — no prod"
-          },
-          {
-            "line": 69,
-            "var": "M_HE3_MEV",
-            "literal": "2808.39160743",
-            "context_snippet": "o need (b) — categorical\nidentification — to be promoted).  If all rules refute, ³He's\n+0.70 % match is confirmed as a coincidence and direction 3 closes\nnegative.\n\nEXPLORATORY — no production code, content blocks, or pr"
-          },
-          {
-            "line": 71,
-            "var": "VOL_BORROMEAN_8G",
-            "literal": "7.32772475341775212043682811945907288619319499425",
-            "context_snippet": "les refute, ³He's\n+0.70 % match is confirmed as a coincidence and direction 3 closes\nnegative.\n\nEXPLORATORY — no production code, content blocks, or production\nwitnesses changed.\n\"\"\"\nfrom __future__ import annotations\n\ni"
           }
         ]
       }
