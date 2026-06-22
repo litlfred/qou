@@ -102,19 +102,34 @@ def main():
             f"{0 not in block_signs.values()}  | signs present: {uniq}")
     assertions.append(("lemma2_conjugation_duality_up_to_sign", lemma2_ok, True))
 
-    # LEMMA 1 — order-parity = word-length parity (n=3,6,9 trivial rep; proof is general)
-    log("=== LEMMA 1: χ_λ(β) Laurent exponents ≡ (word length L) mod 2 ===")
+    # LEMMA 1 — order-parity = word-length parity, now verified over ALL λ⊢n (not just
+    # the trivial rep) at n=3,6. At n=9 the full-partition Hoefsmit sweep is cost-
+    # prohibitive in pure-symbolic form (p(9)=30 high-dim reps over an L=33 word; the
+    # 11-rep n=6 difference already costs ~3 min), so the trivial rep stands there. The
+    # PROOF is rep-independent: each crossing factor σ_i (eigenvalues q, −q⁻¹) or
+    # σ_i−h·I (h=q−q⁻¹) has odd Laurent degree, so a length-L product — and its trace —
+    # has degree ≡ L (mod 2) for every λ.
+    log("=== LEMMA 1: χ_λ(β) Laurent exponents ≡ (word length L) mod 2, ∀λ⊢n ===")
     lemma1_ok = True
     for A in (1, 2, 3):
         n = 3 * A
         bp = atom_canonical_crossings(A, 0, include_inter=False)
         L = len(bp)
-        e = sp.cancel(chi_lambda_symbolic((n,), bp))
-        exps = list(laurent_coeffs(e, Q).keys())
-        par = {x % 2 for x in exps}
-        ok = (par == {L % 2})
-        lemma1_ok = lemma1_ok and ok
-        log(f"  A={A} n={n} L={L} (L%2={L % 2}): χ_(n) exponent parities={par}  ok={ok}")
+        lams = list(partitions_of(n)) if A <= 2 else [(n,)]
+        all_ok, bad = True, []
+        for lam in lams:
+            e = sp.cancel(chi_lambda_symbolic(lam, bp))
+            exps = list(laurent_coeffs(e, Q).keys())
+            par = {x % 2 for x in exps}
+            ok = (par == {L % 2} or not par)  # empty ⇒ identically-zero char (vacuous)
+            all_ok = all_ok and ok
+            if not ok:
+                bad.append((lam, par))
+        lemma1_ok = lemma1_ok and all_ok
+        scope = (f"all {len(lams)} λ⊢{n}" if A <= 2
+                 else "trivial rep (n,) [n=9 all-λ deferred: cost]")
+        log(f"  A={A} n={n} L={L} (L%2={L % 2}): {scope} → exponent parities ≡ {L % 2}?  "
+            f"{all_ok}" + (f"  FAILS: {bad}" if bad else ""))
     assertions.append(("lemma1_order_parity_equals_word_length_parity", lemma1_ok, True))
 
     # LEMMA 3 — framing GF = χ_λ/(1 − t q^{2c}) (corollary of proved θ_λ=q^{2c})
@@ -124,15 +139,23 @@ def main():
     chi, bp, bn = diff_chars(1)
     lemma3_ok = True
     for lam in partitions_of(3):
-        # verify the m=0,1,2 partial sums against the closed rational
+        # Genuine (non-tautological) check: build the series from the ACTUAL framed
+        # difference characters χ_λ(𝓑_n·Δ^{2m}) − χ_λ(𝓑_p·Δ^{2m}) — appending m full
+        # twists Δ²=(σ₀σ₁)³ — and confirm it equals the closed 1-pole rational whose
+        # pole sits at the proved ribbon eigenvalue θ_λ=q^{2c(λ)}. This verifies that
+        # framing multiplies χ_λ by θ_λ (the lemma's content), rather than assuming it.
         theta = Q ** (2 * content(lam))
         closed = chi[lam] / (1 - t * theta)
-        series = sum((t ** m) * sp.cancel(theta ** m * chi[lam]) for m in range(4))
+        series = sum((t ** m) * sp.cancel(
+            chi_lambda_symbolic(lam, bn + DELTA2 * m)
+            - chi_lambda_symbolic(lam, bp + DELTA2 * m))
+            for m in range(4))
         closed_series = sp.series(closed, t, 0, 4).removeO()
-        if sp.simplify(series - closed_series) != 0:
+        match = sp.simplify(series - closed_series) == 0
+        if not match:
             lemma3_ok = False
-        log(f"  λ={lam!s:10s} pole at t=q^{-2 * content(lam):+d}  GF matches to O(t⁴)? "
-            f"{sp.simplify(series - closed_series) == 0}")
+        log(f"  λ={lam!s:10s} pole at t=q^{-2 * content(lam):+d}  framed-char GF matches "
+            f"χ_λ/(1−t·θ_λ) to O(t⁴)? {match}")
     assertions.append(("lemma3_framing_gf_three_pole_rational", lemma3_ok, True))
 
     _emit_witness(assertions, signs)
@@ -185,6 +208,16 @@ def _emit_witness(assertions, signs):
                                       "n=3).",
             "L3_framing_gf": "Σ_m t^m χ_λ(β·Δ^{2m}) = χ_λ(β)/(1−t·q^{2c(λ)}); "
                              "proof: centrality + geometric sum on θ_λ=q^{2c}.",
+        },
+        "verification_scope": {
+            "L1": "all λ⊢n at n=3 (3 reps) and n=6 (11 reps); trivial rep at n=9 "
+                  "(all-λ symbolic sweep deferred — cost; proof is rep-independent).",
+            "L2": "all λ⊢n at n=3 (3 reps) and n=6 (11 reps).",
+            "L3": "framing GF built from the ACTUAL framed difference characters "
+                  "χ_λ(𝓑_n·Δ^{2m})−χ_λ(𝓑_p·Δ^{2m}) for m=0..3 (NOT the assumed θ_λ^m "
+                  "— a genuine, non-tautological check that framing multiplies χ_λ by "
+                  "θ_λ=q^{2c}); cross-corroborated by the `framing_multiplicativity` "
+                  "assertion in chi_content_eigenbasis_probe.py.",
         },
         "L2_per_block_signs": signs,
         "does_not_close": "per-isotope Δ_λ binding gate (content-statistic refuted, "
