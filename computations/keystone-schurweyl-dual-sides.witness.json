@@ -1,0 +1,15 @@
+{
+  "description": "Spin-sector realisation: the two sides of Schur-Weyl for the SU(2)-reachable 2-row blocks of n=5. The corpus W_lambda uses the Hecke (S_n-side) hook-content q-dimension d_q(lambda); the WRT/Poincare modular data uses the SU(2) (centralizer-side) quantum dim [2j+1]_q. They are dual but DIFFERENT, so WRT=W_lambda is a category error. The keystone link is Schur-Weyl DUALITY. No fit.",
+  "computation": "docs/audits/scripts/keystone_schurweyl_dual_sides_probe.py",
+  "q0": "1.1099785955541805",
+  "dps": 30,
+  "two_row_blocks_n5": [
+    {"lambda": "(5)", "spin_j": "5/2", "hecke_dq_Sn_side": "1.0", "su2_dim_Vlambda_side": "6.38809", "equal": false, "f_lambda": 1, "W_lambda": "0.00762"},
+    {"lambda": "(4,1)", "spin_j": "3/2", "hecke_dq_Sn_side": "4.10968", "su2_dim_Vlambda_side": "4.10968", "equal": true, "f_lambda": 4, "W_lambda": "0.12862"},
+    {"lambda": "(3,2)", "spin_j": "1/2", "hecke_dq_Sn_side": "5.22044", "su2_dim_Vlambda_side": "2.01090", "equal": false, "f_lambda": 5, "W_lambda": "0.20754", "role": "muon"}
+  ],
+  "key_fact": "d_q^Hecke(lambda) != [2j+1]_q^SU(2) in general (coincide only at (4,1)); muon (3,2): [5]_q=5.22 vs [2]_q=2.01",
+  "verdict": "W_lambda is the Hecke/S_n side of Schur-Weyl; the WRT(S3/2I) modular data is the SU(2)/centralizer (V_lambda) side. They are Schur-Weyl DUAL (paired by (C^2)^{⊗n}=⊕ S^λ⊗V_λ) but NOT equal. A direct WRT=W_lambda equality is a category error. The Poincare sphere is the icosahedral SELECTOR of the modular data; the W_lambda numbers are the dual S_n-side q-dimensions. No closer identity at the weight level. This is the deflationary terminus of the WRT line.",
+  "arc_assessment": "Genuine exact gains (Sasakian ruled out; angles explicit + Lean phi pin; W_lambda reproduced; WRT operational; link=Schur-Weyl duality). NOT achieved: closure of conj:s5-so3-fiber-action or any mass prediction. Standing caveats: muon/electron spin/colour split is a consequence of the posited home-block assignment, non-monotone vs mass ordering, no clear physical reading.",
+  "discipline": "No fit; nothing wired; c_k/Delta_lambda cal-anchored. Owner closes bean s5bb (section 4a)."
+}
