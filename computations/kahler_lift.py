@@ -44,6 +44,7 @@ Symbolic q-derivative implementation:
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale
 import sys
 import math
 from pathlib import Path
@@ -372,7 +373,7 @@ if __name__ == "__main__":
             delta_1 = m_f - m_a
             tower_1_MeV = E_0_BETA_DECAY_MEV * HBAR_Q_SQ * delta_1
             B_total = canon_MeV + tower_1_MeV
-            dm_pct = abs(B_total - B_AME) / (2 * 938.272) * 100
+            dm_pct = abs(B_total - B_AME) / (2 * float(M_P_MEV_VALIDATION)) * 100
             HBAR_Q_val = (Q0 - 1) / Q0
             eps_MeV = (HBAR_Q_val ** eps_order) * abs(delta_1) * E_0_BETA_DECAY_MEV
             tag = f"{lift_name} ({pair_mode})"

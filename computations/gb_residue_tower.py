@@ -12,6 +12,7 @@ violation.
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
@@ -256,7 +257,7 @@ if __name__ == "__main__":
         at = spectral_sum_mass(Z, N, True, 1, 1, 1, q0, k_max=3)
         B_cat = at["total"] - free["total"]
         B_MeV = float(E_0_cat * abs(B_cat))
-        M_total = (Z + N) * 938.272
+        M_total = (Z + N) * float(M_P_MEV_VALIDATION)
         dm = abs(B_MeV - B_AME) / M_total * 100
         print(f"  {atom:>6} {Z+N:>3d} "
               f"{float(free['descended']):>14.4e} "

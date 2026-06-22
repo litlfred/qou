@@ -514,7 +514,7 @@ def test_tower_binding():
         mf = tower_mass_symbolic_eval(Z, N, False, mp, mpn, mn, q0, 50)
         ma = tower_mass_symbolic_eval(Z, N, True, mp, mpn, mn, q0, 50)
         B = float(E_0_tower * (mf["total"] - ma["total"]))
-        M_total = (Z + N) * 938.272
+        M_total = (Z + N) * float(M_P_MEV_VALIDATION)
         dm = abs(B - B_AME) / M_total * 100
         print(f"  {atom:>6} {Z+N:>3d} {float(mf['total']):>15.4e} "
               f"{float(ma['total']):>15.4e} {B:>10.4f} "
@@ -604,7 +604,7 @@ if __name__ == "__main__":
         tr_free = mpmath.mpf(r["tr_free_abs"])
         B_cat = tr_free - tr_atom
         B_MeV = float(E_0_cat * B_cat)
-        M_total = r["A"] * 938.272
+        M_total = r["A"] * float(M_P_MEV_VALIDATION)
         dm_m = abs(B_MeV - r["B_AME_MeV"]) / M_total * 100
         B_err = B_MeV - r["B_AME_MeV"]
         Bpa = B_MeV / r["A"]
