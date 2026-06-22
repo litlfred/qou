@@ -98,8 +98,12 @@ to production binding** — the blocker is the Δ_λ / 𝓑₃-selection gate, w
 open and whose every probed shortcut (including this week's two) is refuted.
 Per AGENTS.md, **do not propose a 7th fit-based Δ_λ ansatz**; the productive
 directions are GAP-A-3 / GAP-A-4 (categorical brane-tower level selection / ρ
-general rule) and Option E (Kashiwara crystal). Wiring the combiner is therefore
-*not* the actionable step — closing the gate is, and that is research-grade.
+general rule) and **Option E via the A=4 interface operator (PROBE 2)** +
+`conj:s5-so3-fiber-action`. (Option E's Kashiwara-crystal / KL-weight sub-path,
+PROBE 4, is **pruned** — KL positivity cannot supply the mixed-sign Δ_λ
+chirality; see `2026-06-16-option-e-probe4-kl-positivity-prune.md`.) Wiring the
+combiner is therefore *not* the actionable step — closing the gate is, and that
+is research-grade.
 
 ## Caveats
 
