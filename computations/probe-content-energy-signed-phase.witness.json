@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T18:31:03.677424+00:00",
-  "commitSha": "3bf0868ebb9d3a82738ed46626e8613fc0bd5b77",
+  "computedAt": "2026-06-22T14:23:16.761245+00:00",
+  "commitSha": "858f41202339ad977e9ea3a8352ffaeea3b40863",
   "assertions": [
     {
       "name": "no_content_energy_phase_weight_jointly_closes",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "best content_sq joint (max of abs-worst, |T/³He diff|) = 152.2%; no content-energy×phase weight jointly closes absolute + difference to 5%."
+      "source": "best content_sq joint (max of abs-worst, |T/³He diff|) = 152.3%; no content-energy×phase weight jointly closes absolute + difference to 5%."
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 10,
   "computation": "probe-content-energy-signed-phase",
   "scriptFile": "probe_content_energy_signed_phase.py",
-  "scriptHash": "2576c6acd6be",
-  "scriptCommitSha": "3bf0868ebb9d3a82738ed46626e8613fc0bd5b77",
+  "scriptHash": "eeb359e741df",
+  "scriptCommitSha": "b3c73c01b07e02b932f7ee9075ccd484af33775b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,10 +28,8 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "EXPLORATORY: (1) which content-energy (|content|, content², Casimir) matches the binding A-growth 12.72; (2) content-energy × |Δθ_λ| (optionally × y_λ) joint test of absolute binding + T/³He difference on D/T/³He/⁴He. Searches whether w_λ^bind = content-energy × phase closes both. Δ_λ / A≥3-absolute remains open.",
   "data": {
@@ -51,47 +49,47 @@
     },
     "joint_weights": {
       "abs_content": {
-        "worst_abs_err": 0.19931674125792362,
-        "t_he3_diff_err": -1.900683592355665,
-        "joint": 1.900683592355665,
+        "worst_abs_err": 0.19933881818657712,
+        "t_he3_diff_err": -1.9009990642284287,
+        "joint": 1.9009990642284287,
         "per_isotope": {
-          "D": -0.03519070974844221,
-          "T": -0.19931674125792362,
-          "3He": -0.030943587478647252,
-          "4He": 0.016508018133233562
+          "D": -0.03522440581213694,
+          "T": -0.19933881818657712,
+          "3He": -0.030947478579643403,
+          "4He": 0.016509631138680383
         }
       },
       "content_sq": {
-        "worst_abs_err": 0.4645007134621779,
-        "t_he3_diff_err": -1.5221456238132398,
-        "joint": 1.5221456238132398,
+        "worst_abs_err": 0.46451364984970017,
+        "t_he3_diff_err": -1.5225413004137274,
+        "joint": 1.5225413004137274,
         "per_isotope": {
-          "D": -0.4645007134621779,
-          "T": -0.40472645307435895,
-          "3He": -0.2941427833917524,
-          "4He": 0.03724510426017025
+          "D": -0.46451364984970017,
+          "T": -0.40475435124529496,
+          "3He": -0.29414141179193326,
+          "4He": 0.03724564469651829
         }
       },
       "abs_content*y": {
-        "worst_abs_err": 3.397919089376479,
-        "t_he3_diff_err": -0.9565660035478781,
-        "joint": 3.397919089376479,
+        "worst_abs_err": 3.397963634543897,
+        "t_he3_diff_err": -0.9568551005246065,
+        "joint": 3.397963634543897,
         "per_isotope": {
-          "D": 3.397919089376479,
-          "T": -0.26677434466613886,
-          "3He": -0.1985101740190966,
-          "4He": -0.9324897108595229
+          "D": 3.397963634543897,
+          "T": -0.2667986078289046,
+          "3He": -0.19851262801608494,
+          "4He": -0.9324886729273056
         }
       },
       "content_sq*y": {
-        "worst_abs_err": 3.1896602918842647,
-        "t_he3_diff_err": -0.7517613238397,
-        "joint": 3.1896602918842647,
+        "worst_abs_err": 3.189831174652892,
+        "t_he3_diff_err": -0.7524441620406157,
+        "joint": 3.189831174652892,
         "per_isotope": {
-          "D": 3.1896602918842647,
-          "T": 0.17426475897645002,
-          "3He": 0.26590750606831,
-          "4He": -0.8520939155582229
+          "D": 3.189831174652892,
+          "T": 0.17421053607530756,
+          "3He": 0.2659095848905793,
+          "4He": -0.8520915134211915
         }
       }
     },

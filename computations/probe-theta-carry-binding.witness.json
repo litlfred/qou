@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T04:34:30.452217+00:00",
-  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
+  "computedAt": "2026-06-22T14:23:16.553892+00:00",
+  "commitSha": "858f41202339ad977e9ea3a8352ffaeea3b40863",
   "assertions": [
     {
       "name": "theta_carry_does_not_close_all_four_zero_or_one_param",
@@ -17,8 +17,8 @@
   "durationMs": 10,
   "computation": "probe-theta-carry-binding",
   "scriptFile": "probe_theta_carry_binding.py",
-  "scriptHash": "0dce24589ff6",
-  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
+  "scriptHash": "87f0f324ebc5",
+  "scriptCommitSha": "2ee1eddd42e93090f831004dd65c95525b5255f7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,15 +28,13 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "EXPLORATORY: per-block q-Reeb phase CARRY (preserve info until observation). B(K) = E·Σ_λ y_λ |Δθ_λ| over rotation channels (|χ/d|≤1), collapsed via the y_λ-weighted observation instead of the scalar tr_M. Tested with derived μ₀ (0 fit) + one global scale (1 param) on D/T/³He/⁴He. Δ_λ remains open (GAP-A-3/A-4).",
   "parameters": {
     "mu0_derived_MeV": 1.6295103914259104,
-    "global_scale_MeV_per_rad": 511.6085521771273
+    "global_scale_MeV_per_rad": 511.609320399887
   },
   "data": {
     "per_atom": {
@@ -62,7 +60,7 @@
         "sum_y_absDtheta": "0.0051117899",
         "scalar_dtr_M": "-0.84117786",
         "B_mu0_MeV": 0.008329714717689262,
-        "err_mu0": -0.9989207418090581
+        "err_mu0": -0.9989207475870718
       },
       "4He": {
         "n_rotation": 68,
@@ -74,11 +72,11 @@
       }
     },
     "worst_err_mu0": 0.9999747040186754,
-    "worst_err_global_scale": 2.2796857905712895,
+    "worst_err_global_scale": 2.2796907152920713,
     "t_he3_difference": {
-      "pred_MeV": 0.8264604058172534,
-      "ame_MeV": 0.7637962000000016,
-      "rel_err": 0.08204309712100134,
+      "pred_MeV": 0.826461646816238,
+      "ame_MeV": 0.7637548800000014,
+      "rel_err": 0.08210326173789755,
       "note": "SAME global scale, no isotope-specific fit — the signed phase-carry difference, NOT the fitted (1+q)/2."
     }
   }

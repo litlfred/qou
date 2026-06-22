@@ -31,7 +31,7 @@ from mpmath import mpf  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402 — CAL-1
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402 — CAL-1
 import binding_canonical as bc  # noqa: E402
 
 set_compute_dps()
@@ -40,7 +40,7 @@ q0 = mpf(str(Q0))
 E0 = M_E / (q0 * (q0 - 1))
 
 AME_B = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
-         "3He": mpf("7.7180"), "4He": AME_B_HE4_MEV_VALIDATION}
+         "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 BOND_ZN = {"pp": (2, 0), "pn": (1, 1), "nn": (0, 2)}
 # chain adjacency (canonical braid wires nucleons in a chain)
 CHAIN = {"D": ["pn"], "T": ["pn", "nn"], "3He": ["pp", "pn"],
