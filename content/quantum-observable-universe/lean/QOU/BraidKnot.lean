@@ -25,6 +25,7 @@ import QOU.BraidKnot.ConfinementPhaseStratification
 import QOU.BraidKnot.ThreeCalibrationInputs
 import QOU.BraidKnot.ConfinementLevel
 import QOU.BraidKnot.ChiralityWritheRibbon
+import QOU.BraidKnot.EigenbasisStructuralLemmas
 import QOU.BraidKnot.GradedMarkovTraceFromGSFiltration
 import QOU.BraidKnot.ResidueAtRoot
 import QOU.BraidKnot.GBSpectralSequence
@@ -106,4 +107,6 @@ and phase stratification.
 - MathlibBridge: fromMathlib bridge to Mathlib.Combinatorics.Young.YoungDiagram
 - ConfinementPhaseStratification: Ω(P) open, local μ constancy
 - ChiralityWritheRibbon: a_K = 1 + w·h + O(h²) from ribbon-twist framing
+- EigenbasisStructuralLemmas: content/twist eigenbasis L1 (q↦−q parity),
+  L2 (bar↔conjugate duality), L3 (framing GF = single-pole rational)
 -/

@@ -116,4 +116,53 @@ theorem character_qneg_parity {L : ℕ} {ι : Type*} (paths : Finset ι)
     rw [hodd p i]; ring
   rw [hp, prod_mul_distrib, prod_const, card_univ, Fintype.card_fin]
 
+/-! ## L2 — bar-involution ↔ conjugation duality -/
+
+/-- **L2 — bar-involution ↔ conjugation duality (conditional on the seminormal
+bar–conjugate relation).**
+
+The Hecke **bar involution** `q ↦ q⁻¹` swaps the seminormal eigenvalues
+`q ↔ −q⁻¹`, which is exactly the intertwiner `V_λ ≅ V_{λ'}` to the
+**conjugate** Wedderburn channel `λ'` (transpose partition; `dim V_λ =
+dim V_{λ'}`, so the path index sets are in bijection `φ`).  At the level of
+matrix entries this is a uniform sign `s ∈ {±1}` and a path bijection `φ` with
+
+  `a_λ(p,i)(q⁻¹) = s · a_{λ'}(φ p, i)(q)`  (the seminormal bar–conjugate input).
+
+From this **factor-level** categorical input the **character-level** duality
+follows by reindexing along `φ` and extracting the `L` signs:
+
+  `χ_λ(β)(q⁻¹) = s^L · χ_{λ'}(β)(q)`.
+
+This is the §3b-cond conditional-class shape: the bar–conjugate relation is the
+explicit hypothesis; the duality is **derived**, not assumed. -/
+theorem character_bar_conjugate {L : ℕ} {ι ι' : Type*} [Fintype ι] [Fintype ι']
+    (a : ι → Fin L → ℝ → ℝ) (a' : ι' → Fin L → ℝ → ℝ)
+    (q s : ℝ) (φ : ι ≃ ι')
+    (hfac : ∀ p i, a p i q⁻¹ = s * a' (φ p) i q) :
+    (∑ p, ∏ i, a p i q⁻¹) = s ^ L * ∑ p', ∏ i, a' p' i q := by
+  rw [← Equiv.sum_comp φ (fun p' => ∏ i, a' p' i q), mul_sum]
+  refine sum_congr rfl (fun p _ => ?_)
+  have hp : (∏ i, a p i q⁻¹) = ∏ i : Fin L, s * a' (φ p) i q :=
+    prod_congr rfl (fun i _ => hfac p i)
+  rw [hp, prod_mul_distrib, prod_const, card_univ, Fintype.card_fin]
+
+/-- **L2 sign corollary.**  With a unit sign `s ∈ {±1}` the duality constant
+`ε_λ = s^L` is itself a sign: the bar image of the channel-`λ` character is
+`ε_λ` times the conjugate-channel character, `ε_λ ∈ {±1}` (uniformly `−1` at
+`n=3`, `+1` at `n=6`, matching the probe's `(−1)^L`). -/
+theorem character_bar_conjugate_sign {L : ℕ} {ι ι' : Type*} [Fintype ι] [Fintype ι']
+    (a : ι → Fin L → ℝ → ℝ) (a' : ι' → Fin L → ℝ → ℝ)
+    (q s : ℝ) (φ : ι ≃ ι') (hs : s = 1 ∨ s = -1)
+    (hfac : ∀ p i, a p i q⁻¹ = s * a' (φ p) i q) :
+    ∃ ε : ℝ, (ε = 1 ∨ ε = -1) ∧
+      (∑ p, ∏ i, a p i q⁻¹) = ε * ∑ p', ∏ i, a' p' i q := by
+  refine ⟨s ^ L, ?_, character_bar_conjugate a a' q s φ hfac⟩
+  rcases hs with h | h
+  · left; rw [h, one_pow]
+  · rw [h]
+    rcases Nat.even_or_odd L with he | ho
+    · left; exact he.neg_one_pow
+    · right; exact ho.neg_one_pow
+
 end QOU.BraidKnot.EigenbasisStructuralLemmas
