@@ -55,3 +55,20 @@ Owner authorized all 4 geometric paths. Results:
 
 Docs: `docs/audits/2026-06-22-keystone-geometric-angles-preflight.md`. No fit; nothing wired.
 Owner closes (§4a).
+
+## Modular-category identification SETTLED (2026-06-22, PR follows)
+
+Pursuing the WRT-reframed object (which modular category?): q_0 is REAL > 1
+(|q_0|=1.11≠1, η=log q_0=0.104 real), so NOT a root of unity ⇒ NOT a compact
+SU(2)_k MTC. [m]_q=sinh(mη)/sinh(η) exactly (growth/I_ν branch). The W_λ-producing
+structure is the NON-COMPACT SU_q(2)→E_q(2) contraction (Hahn-Exton q-Bessel) at
+generic real q_0 — ALREADY identified in the corpus (reeb-phase-qbessel doc).
+
+This UNIFIES three framings: (1) finite Sasakian (ruled out), (2) WRT/modular block
+weights, (3) here = non-compact E_q(2) contraction = the corpus's existing q-Bessel
+home. Keystone's "owner-gated geometric object" is NOT differential geometry — it's
+representation theory already named. Residual frontier (sharply located): the explicit
+Habiro-ring WRT(S³/2I) q-series at q_0 reproducing W_λ — a concrete q-series compute,
+not Sasakian existence.
+
+Doc: docs/audits/2026-06-22-keystone-modular-category-identification.md. No fit. Owner closes (§4a).
