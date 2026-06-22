@@ -50,17 +50,31 @@ various precisions). Of these:
 This is therefore a **coordinated, batched** operation, not a single sweep (an
 initial blind 100-file regex sweep was reverted for exactly this reason).
 
-## Batch 1 (this PR) — 9 safe files
+## Batch 1 (this PR) — 5 plain-consumer files
 
-Migrated A→C (length-preserving) in the **no-witness, non-`qbeta/` files** — pure
-`.py` value corrections, no witness churn, no conclusion-flip surface:
+Migrated A→C (length-preserving) in the **no-witness, non-`qbeta/`, plain-consumer
+files** — pure `.py` value corrections, no witness churn:
 
 `definitive_q0_shift_for_mp.py`, `habiro/habiro_interpolate_cross_validator.py`,
-`probe_q_beta_wenzl_projectors.py`, `probes/_gap_a4_qsafe.py`,
-`probes/difference_knot_binding_probe.py`,
-`probes/qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py`,
-`probes/qbeta_habiro_cyclotomic_probe.py`, `probes/qbeta_root_of_unity_probe.py`,
+`probe_q_beta_wenzl_projectors.py`, `probes/difference_knot_binding_probe.py`,
 `witness_polynomial.py`. All `py_compile`-clean.
+
+### ⚠ Lesson — "context-bearing" files must NOT be mechanically migrated
+
+A first attempt also migrated 4 files that *mention* anchors; a Gemini review
+caught that one of them
+(`probes/qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py`) uses A **as a
+deliberate (stale) proton anchor** in a **cross-anchor c₃-rigidity** comparison
+(its table reads `proton (m_p) | 1.10997858275… | -2.0693` vs `muon | …955… |
+-2.0097`, "separation ≈ 1.3e-8"). Mechanically swapping A→C makes proton≈muon,
+collapsing the separation and contradicting the surrounding analysis. Those 4
+files (`qbeta_c3_habiro_3rung_crossanchor_rigidity_probe`,
+`qbeta_habiro_cyclotomic_probe`, `qbeta_root_of_unity_probe`, `_gap_a4_qsafe`)
+were **reverted** — they need an *analytical* update (re-derive the cross-anchor
+comparison at the current proton C=…955573 vs muon …955541, separation ~3e-11),
+not a string swap. **Migration screening must add: skip files where A appears on
+a line labeled `proton`/`anchor`/`cross-anchor` — those are deliberate comparison
+inputs, not stale consumers.**
 
 ## Recommended remaining batches (owner-sequenced)
 
