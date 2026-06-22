@@ -123,8 +123,18 @@ theorem zHabiro_realq_saddle_eq_rogers_li2q :
 ```
 
 i.e. *the real-q archimedean saddle of the Lean-certified `eulerCoeff` limit
-is the production `li2q` tower term.* Anchors that already exist (no scaffold
-from scratch):
+is the production `li2q` tower term.*
+
+> **Update (2026-06-22): scaffolded.** The target is now a typed Lean object —
+> `class QOU.BraidKnot.ZHabiroRogersSaddle` in `QuantumDilogarithm.lean`, whose
+> `saddle_phi_q_eq_towerTerm : realQSaddle phi_q = towerTerm` field is the open
+> conjectural input, with two non-vacuous conditional corollaries
+> (`realQSaddle_phi_q_at_zero`, `…_ne_phi_q_at_zero`). It reuses the file's
+> existing `phi_q` (Faddeev) and `towerTerm = -li2_q(-|·|)` (Rogers) so no new
+> dilog objects were introduced. A full proof of the field remains research-grade
+> (saddle-point / Stokes); the scaffold lets downstream depend on it conditionally.
+
+Anchors that already exist (no scaffold from scratch):
 
 | piece | where |
 |---|---|
