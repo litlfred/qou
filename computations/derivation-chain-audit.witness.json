@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T12:37:44.552832+00:00",
-  "commitSha": "5ed54ebd371aae0d3f85e0c81104657b8fef9871",
+  "computedAt": "2026-06-22T14:27:12.432482+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -573,7 +573,6 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"

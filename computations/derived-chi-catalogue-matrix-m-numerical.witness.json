@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-08T10:30:16.772257+00:00",
-  "commitSha": "bd756f99eb9a5c800225e98673825a0b18d66111",
+  "computedAt": "2026-06-22T14:27:17.070592+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [
     {
       "name": "numerical_matrix_m_matches_rust_at_substrate_q",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 171,
+  "durationMs": 165,
   "computation": "derived-chi-catalogue-matrix-m-numerical",
   "scriptFile": "derived_chi_catalogue_matrix_m_numerical.py",
   "scriptHash": "f30db96d251e",
-  "scriptCommitSha": "bd756f99eb9a5c800225e98673825a0b18d66111",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,14 +27,13 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
   "description": "Phase 1.4 numerical-cache backend for the matrix-M μ_p factorisation. Pre-computes σ matrices at substrate q_0 ONCE per λ, then uses small Rational matrix products on the μ_p-blocks per call. Validates against Rust chi_q_via_gp at q_0 and benchmarks wall time.",
   "data": {
-    "q_0_substrate_str": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_substrate_str": "1.1099785955573347198997632204832250266562084087802",
     "n_test_cases": 6,
     "n_pass": 6,
     "cases": [
@@ -43,10 +42,10 @@
           6
         ],
         "dim_V_lambda": 1,
-        "precompute_secs": 0.0016579020000335731,
-        "call_secs": 0.0009458600000016304,
-        "rust_secs": 0.001001404999897204,
-        "call_speedup_vs_rust": 1.0587243354148372,
+        "precompute_secs": 0.0015947079999705238,
+        "call_secs": 0.0007706370000732932,
+        "rust_secs": 0.0008178369999995994,
+        "call_speedup_vs_rust": 1.061248032370386,
         "match": true
       },
       {
@@ -55,10 +54,10 @@
           1
         ],
         "dim_V_lambda": 5,
-        "precompute_secs": 0.003958296000064365,
-        "call_secs": 0.013324611999905756,
-        "rust_secs": 0.002832098999988375,
-        "call_speedup_vs_rust": 0.2125464516346447,
+        "precompute_secs": 0.003058580000015354,
+        "call_secs": 0.009523575000002893,
+        "rust_secs": 0.0024306479999722796,
+        "call_speedup_vs_rust": 0.2552243248960124,
         "match": true
       },
       {
@@ -67,10 +66,10 @@
           3
         ],
         "dim_V_lambda": 5,
-        "precompute_secs": 0.0019268149999334128,
-        "call_secs": 0.01051993299984133,
-        "rust_secs": 0.004816394000044966,
-        "call_speedup_vs_rust": 0.4578350451583304,
+        "precompute_secs": 0.0016210090000186028,
+        "call_secs": 0.0072486720000597415,
+        "rust_secs": 0.0037915509999493224,
+        "call_speedup_vs_rust": 0.5230683634075419,
         "match": true
       },
       {
@@ -80,10 +79,10 @@
           2
         ],
         "dim_V_lambda": 5,
-        "precompute_secs": 0.0020392649998939305,
-        "call_secs": 0.010605256999951962,
-        "rust_secs": 0.003729054999894288,
-        "call_speedup_vs_rust": 0.3516232562691483,
+        "precompute_secs": 0.0015611919999400925,
+        "call_secs": 0.007218448999992688,
+        "rust_secs": 0.0028498390000777363,
+        "call_speedup_vs_rust": 0.3947993537227489,
         "match": true
       },
       {
@@ -95,10 +94,10 @@
           1
         ],
         "dim_V_lambda": 5,
-        "precompute_secs": 0.0021529880000343837,
-        "call_secs": 0.013138168999830668,
-        "rust_secs": 0.002279875999875003,
-        "call_speedup_vs_rust": 0.17353072562123284,
+        "precompute_secs": 0.0016422029999603183,
+        "call_secs": 0.009328302999961124,
+        "rust_secs": 0.0017921059999252975,
+        "call_speedup_vs_rust": 0.1921149002056179,
         "match": true
       },
       {
@@ -111,15 +110,15 @@
           1
         ],
         "dim_V_lambda": 1,
-        "precompute_secs": 0.0006860569999389554,
-        "call_secs": 0.0008075400000961963,
-        "rust_secs": 0.0008052709999901708,
-        "call_speedup_vs_rust": 0.9971902319318483,
+        "precompute_secs": 0.0005431850000832128,
+        "call_secs": 0.0005486070000415566,
+        "rust_secs": 0.0007761319999417537,
+        "call_speedup_vs_rust": 1.4147322215774905,
         "match": true
       }
     ],
-    "total_precompute_secs": 0.01242132299989862,
-    "total_call_secs": 0.04934137099962754,
-    "total_rust_secs": 0.015464099999690006
+    "total_precompute_secs": 0.010020876999988104,
+    "total_call_secs": 0.0346382430001313,
+    "total_rust_secs": 0.012458112999865989
   }
 }

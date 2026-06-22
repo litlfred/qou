@@ -1,15 +1,15 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T16:05:11.363646+00:00",
-  "commitSha": "2b3a65d87ea1549a52c6baa4904ac6d36fa5f949",
+  "computedAt": "2026-06-22T14:28:04.076701+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "habiro-coefficients-proton",
   "scriptFile": "_habiro_coefficient_extract.py",
-  "scriptHash": "53ae956b30cd",
-  "scriptCommitSha": "2b3a65d87ea1549a52c6baa4904ac6d36fa5f949",
+  "scriptHash": "023b70899dce",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,9 +20,18 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Habiro / cyclotomic expansion tr_M(A=1, q) = Σ_m a_m·(u;u)_m (u = q^{1/2}) via the Phase 5q closed form. Mass-table-wide extraction (PR #1642 follow-up infrastructure); covers Z=1, N=0 under chi_lambda_braid (production) pn-convention. Feeds (i) mirror-pair Φ_k universality audit, (ii) Φ_8-multiplicity scaling-law table, and (iii) Q_β Habiro element keystone search.",
+  "data": {
+    "lean_uniqueness_ref": {
+      "nucleus": "proton",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
+  },
   "reference_blocks": [
     "def:habiro-ring",
     "prop:full-pole-structure-mass-trace",
@@ -31,8 +40,8 @@
     "thm:knot-mass-formula-unified"
   ],
   "parameters": {
-    "q_0": 1.1099785827513808,
-    "pn_convention": "chi_lambda_braid (production default)",
+    "q_0": 1.1099785955573347,
+    "pn_convention": "chi_lambda_braid (legacy production marshalling)",
     "source": "habiro-coefficients-atomic.witness.json (τ_p, τ_n)",
     "generator": "_habiro_coefficient_extract.py"
   },
@@ -46,56 +55,56 @@
     },
     {
       "m": 1,
-      "a_m": "-74*check_q - 74",
+      "a_m": "-74*u - 74",
       "deg_a_m": 1,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 2,
-      "a_m": "340*check_q**2 + 365*check_q + 389",
+      "a_m": "340*u**2 + 365*u + 389",
       "deg_a_m": 2,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 3,
-      "a_m": "-711*check_q**3 - 789*check_q**2 - 872*check_q - 959",
+      "a_m": "-711*u**3 - 789*u**2 - 872*u - 959",
       "deg_a_m": 3,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 4,
-      "a_m": "788*check_q**4 + 901*check_q**3 + 1029*check_q**2 + 1172*check_q + 1328",
+      "a_m": "788*u**4 + 901*u**3 + 1029*u**2 + 1172*u + 1328",
       "deg_a_m": 4,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 5,
-      "a_m": "-466*check_q**5 - 559*check_q**4 - 660*check_q**3 - 781*check_q**2 - 918*check_q - 1078",
+      "a_m": "-466*u**5 - 559*u**4 - 660*u**3 - 781*u**2 - 918*u - 1078",
       "deg_a_m": 5,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 6,
-      "a_m": "133*check_q**6 + 167*check_q**5 + 212*check_q**4 + 264*check_q**3 + 328*check_q**2 + 402*check_q + 494",
+      "a_m": "133*u**6 + 167*u**5 + 212*u**4 + 264*u**3 + 328*u**2 + 402*u + 494",
       "deg_a_m": 6,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 7,
-      "a_m": "-12*check_q**7 - 17*check_q**6 - 24*check_q**5 - 34*check_q**4 - 48*check_q**3 - 63*check_q**2 - 84*check_q - 110",
+      "a_m": "-12*u**7 - 17*u**6 - 24*u**5 - 34*u**4 - 48*u**3 - 63*u**2 - 84*u - 110",
       "deg_a_m": 7,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 8,
-      "a_m": "check_q**4 + 2*check_q**3 + 3*check_q**2 + 5*check_q + 7",
+      "a_m": "u**4 + 2*u**3 + 3*u**2 + 5*u + 7",
       "deg_a_m": 4,
       "integral": true,
       "remainder_nonzero": false
@@ -108,13 +117,13 @@
   "include_inter": true,
   "tr_M_in_q": "(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) + q**(23/2) + q**(21/2) - q**(19/2) - q**(17/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 2*q**12 + 2*q**8 - q**2 + 1)/(4*q**(19/2)*(q + 1))",
   "shift": 0,
-  "denom_in_u": "4*check_q**21 + 4*check_q**19",
-  "p_in_u": "check_q**40 + check_q**39 - check_q**36 + check_q**35 - check_q**33 + check_q**31 - check_q**29 + check_q**27 + 2*check_q**24 + check_q**23 + check_q**21 - check_q**19 - check_q**17 + 2*check_q**16 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 - check_q**4 - check_q + 1",
+  "denom_in_u": "4*u**21 + 4*u**19",
+  "p_in_u": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 + 2*u**24 + u**23 + u**21 - u**19 - u**17 + 2*u**16 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
   "deg_p_u": 40,
   "n_nonzero": 9,
   "all_integral": true,
-  "reconstruction_matches": true,
-  "tr_M_at_q0": 1.0653061442544502,
-  "tr_M_at_q0_via_u_poly": 1.0653061442544502,
-  "tr_M_at_q0_rel_err": 0.0
+  "reconstruction_matches": false,
+  "tr_M_at_q0": 1.065306228613167,
+  "tr_M_at_q0_via_u_poly": NaN,
+  "tr_M_at_q0_rel_err": NaN
 }

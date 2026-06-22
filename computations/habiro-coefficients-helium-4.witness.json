@@ -1,15 +1,15 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T16:05:18.036597+00:00",
-  "commitSha": "2b3a65d87ea1549a52c6baa4904ac6d36fa5f949",
+  "computedAt": "2026-06-22T14:28:26.230708+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "habiro-coefficients-helium-4",
   "scriptFile": "_habiro_coefficient_extract.py",
-  "scriptHash": "53ae956b30cd",
-  "scriptCommitSha": "2b3a65d87ea1549a52c6baa4904ac6d36fa5f949",
+  "scriptHash": "023b70899dce",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,9 +20,18 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Habiro / cyclotomic expansion tr_M(A=4, q) = Σ_m a_m·(u;u)_m (u = q^{1/2}) via the Phase 5q closed form. Mass-table-wide extraction (PR #1642 follow-up infrastructure); covers Z=2, N=2 under chi_lambda_braid (production) pn-convention. Feeds (i) mirror-pair Φ_k universality audit, (ii) Φ_8-multiplicity scaling-law table, and (iii) Q_β Habiro element keystone search.",
+  "data": {
+    "lean_uniqueness_ref": {
+      "nucleus": "helium-4",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
+  },
   "reference_blocks": [
     "def:habiro-ring",
     "prop:full-pole-structure-mass-trace",
@@ -31,8 +40,8 @@
     "thm:knot-mass-formula-unified"
   ],
   "parameters": {
-    "q_0": 1.1099785827513808,
-    "pn_convention": "chi_lambda_braid (production default)",
+    "q_0": 1.1099785955573347,
+    "pn_convention": "chi_lambda_braid (legacy production marshalling)",
     "source": "habiro-coefficients-atomic.witness.json (τ_p, τ_n)",
     "generator": "_habiro_coefficient_extract.py"
   },
@@ -46,119 +55,119 @@
     },
     {
       "m": 1,
-      "a_m": "-16896*check_q - 17152",
+      "a_m": "-16896*u - 17152",
       "deg_a_m": 1,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 2,
-      "a_m": "353056*check_q**2 + 358688*check_q + 364352",
+      "a_m": "353056*u**2 + 358688*u + 364352",
       "deg_a_m": 2,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 3,
-      "a_m": "-3444768*check_q**3 - 3537664*check_q**2 - 3623136*check_q - 3704352",
+      "a_m": "-3444768*u**3 - 3537664*u**2 - 3623136*u - 3704352",
       "deg_a_m": 3,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 4,
-      "a_m": "18809530*check_q**4 + 19462806*check_q**3 + 20139598*check_q**2 + 20831330*check_q + 21532608",
+      "a_m": "18809530*u**4 + 19462806*u**3 + 20139598*u**2 + 20831330*u + 21532608",
       "deg_a_m": 4,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 5,
-      "a_m": "-63185208*check_q**5 - 66056690*check_q**4 - 69026520*check_q**3 - 72102806*check_q**2 - 75290888*check_q - 78588088",
+      "a_m": "-63185208*u**5 - 66056690*u**4 - 69026520*u**3 - 72102806*u**2 - 75290888*u - 78588088",
       "deg_a_m": 5,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 6,
-      "a_m": "138186218*check_q**6 + 146038683*check_q**5 + 154261249*check_q**4 + 162865745*check_q**3 + 171862791*check_q**2 + 181268421*check_q + 191099969",
+      "a_m": "138186218*u**6 + 146038683*u**5 + 154261249*u**4 + 162865745*u**3 + 171862791*u**2 + 181268421*u + 191099969",
       "deg_a_m": 6,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 7,
-      "a_m": "-202939391*check_q**7 - 216998569*check_q**6 - 231906130*check_q**5 - 247696049*check_q**4 - 264375184*check_q**3 - 282000021*check_q**2 - 300644978*check_q - 320349713",
+      "a_m": "-202939391*u**7 - 216998569*u**6 - 231906130*u**5 - 247696049*u**4 - 264375184*u**3 - 282000021*u**2 - 300644978*u - 320349713",
       "deg_a_m": 7,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 8,
-      "a_m": "202160119*check_q**8 + 219056033*check_q**7 + 237162427*check_q**6 + 256573383*check_q**5 + 277378788*check_q**4 + 299639367*check_q**3 + 323435276*check_q**2 + 348877628*check_q + 376073112",
+      "a_m": "202160119*u**8 + 219056033*u**7 + 237162427*u**6 + 256573383*u**5 + 277378788*u**4 + 299639367*u**3 + 323435276*u**2 + 348877628*u + 376073112",
       "deg_a_m": 8,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 9,
-      "a_m": "-134817834*check_q**9 - 148404781*check_q**8 - 163197549*check_q**7 - 179277813*check_q**6 - 196739802*check_q**5 - 215695358*check_q**4 - 236260176*check_q**3 - 258540967*check_q**2 - 282659613*check_q - 308756441",
+      "a_m": "-134817834*u**9 - 148404781*u**8 - 163197549*u**7 - 179277813*u**6 - 196739802*u**5 - 215695358*u**4 - 236260176*u**3 - 258540967*u**2 - 282659613*u - 308756441",
       "deg_a_m": 9,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 10,
-      "a_m": "57038582*check_q**10 + 64160887*check_q**9 + 72049603*check_q**8 + 80779154*check_q**7 + 90434681*check_q**6 + 101099200*check_q**5 + 112857285*check_q**4 + 125810014*check_q**3 + 140069980*check_q**2 + 155750453*check_q + 172967545",
+      "a_m": "57038582*u**10 + 64160887*u**9 + 72049603*u**8 + 80779154*u**7 + 90434681*u**6 + 101099200*u**5 + 112857285*u**4 + 125810014*u**3 + 140069980*u**2 + 155750453*u + 172967545",
       "deg_a_m": 10,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 11,
-      "a_m": "-12742552*check_q**11 - 14957245*check_q**10 - 17473449*check_q**9 - 20329203*check_q**8 - 23578370*check_q**7 - 27262282*check_q**6 - 31416705*check_q**5 - 36096947*check_q**4 - 41377287*check_q**3 - 47318805*check_q**2 - 53976651*check_q - 61429863",
+      "a_m": "-12742552*u**11 - 14957245*u**10 - 17473449*u**9 - 20329203*u**8 - 23578370*u**7 - 27262282*u**6 - 31416705*u**5 - 36096947*u**4 - 41377287*u**3 - 47318805*u**2 - 53976651*u - 61429863",
       "deg_a_m": 11,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 12,
-      "a_m": "-34173*check_q**12 + 229819*check_q**11 + 561937*check_q**10 + 966993*check_q**9 + 1454096*check_q**8 + 2044227*check_q**7 + 2754869*check_q**6 + 3596604*check_q**5 + 4585746*check_q**4 + 5752183*check_q**3 + 7123638*check_q**2 + 8719544*check_q + 10566540",
+      "a_m": "-34173*u**12 + 229819*u**11 + 561937*u**10 + 966993*u**9 + 1454096*u**8 + 2044227*u**7 + 2754869*u**6 + 3596604*u**5 + 4585746*u**4 + 5752183*u**3 + 7123638*u**2 + 8719544*u + 10566540",
       "deg_a_m": 12,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 13,
-      "a_m": "814192*check_q**13 + 874814*check_q**12 + 936676*check_q**11 + 996520*check_q**10 + 1051858*check_q**9 + 1103375*check_q**8 + 1150145*check_q**7 + 1186985*check_q**6 + 1209467*check_q**5 + 1216969*check_q**4 + 1206894*check_q**3 + 1170893*check_q**2 + 1101770*check_q + 996222",
+      "a_m": "814192*u**13 + 874814*u**12 + 936676*u**11 + 996520*u**10 + 1051858*u**9 + 1103375*u**8 + 1150145*u**7 + 1186985*u**6 + 1209467*u**5 + 1216969*u**4 + 1206894*u**3 + 1170893*u**2 + 1101770*u + 996222",
       "deg_a_m": 13,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 14,
-      "a_m": "-200405*check_q**14 - 227977*check_q**13 - 258209*check_q**12 - 291140*check_q**11 - 328028*check_q**10 - 369303*check_q**9 - 413838*check_q**8 - 461987*check_q**7 - 515224*check_q**6 - 573608*check_q**5 - 635669*check_q**4 - 701776*check_q**3 - 773572*check_q**2 - 850728*check_q - 931129",
+      "a_m": "-200405*u**14 - 227977*u**13 - 258209*u**12 - 291140*u**11 - 328028*u**10 - 369303*u**9 - 413838*u**8 - 461987*u**7 - 515224*u**6 - 573608*u**5 - 635669*u**4 - 701776*u**3 - 773572*u**2 - 850728*u - 931129",
       "deg_a_m": 14,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 15,
-      "a_m": "19345*check_q**15 + 23090*check_q**14 + 27351*check_q**13 + 32096*check_q**12 + 37777*check_q**11 + 44575*check_q**10 + 52240*check_q**9 + 60708*check_q**8 + 70694*check_q**7 + 82488*check_q**6 + 95713*check_q**5 + 110215*check_q**4 + 127050*check_q**3 + 146656*check_q**2 + 168468*check_q + 192379",
+      "a_m": "19345*u**15 + 23090*u**14 + 27351*u**13 + 32096*u**12 + 37777*u**11 + 44575*u**10 + 52240*u**9 + 60708*u**8 + 70694*u**7 + 82488*u**6 + 95713*u**5 + 110215*u**4 + 127050*u**3 + 146656*u**2 + 168468*u + 192379",
       "deg_a_m": 15,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 16,
-      "a_m": "-585*check_q**16 - 740*check_q**15 - 975*check_q**14 - 1226*check_q**13 - 1520*check_q**12 - 1894*check_q**11 - 2380*check_q**10 - 2963*check_q**9 - 3612*check_q**8 - 4410*check_q**7 - 5435*check_q**6 - 6625*check_q**5 - 7998*check_q**4 - 9628*check_q**3 - 11689*check_q**2 - 14036*check_q - 16714",
+      "a_m": "-585*u**16 - 740*u**15 - 975*u**14 - 1226*u**13 - 1520*u**12 - 1894*u**11 - 2380*u**10 - 2963*u**9 - 3612*u**8 - 4410*u**7 - 5435*u**6 - 6625*u**5 - 7998*u**4 - 9628*u**3 - 11689*u**2 - 14036*u - 16714",
       "deg_a_m": 16,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 17,
-      "a_m": "check_q**13 + 5*check_q**12 + 13*check_q**11 + 25*check_q**10 + 36*check_q**9 + 46*check_q**8 + 63*check_q**7 + 86*check_q**6 + 122*check_q**5 + 159*check_q**4 + 203*check_q**3 + 281*check_q**2 + 365*check_q + 470",
+      "a_m": "u**13 + 5*u**12 + 13*u**11 + 25*u**10 + 36*u**9 + 46*u**8 + 63*u**7 + 86*u**6 + 122*u**5 + 159*u**4 + 203*u**3 + 281*u**2 + 365*u + 470",
       "deg_a_m": 13,
       "integral": true,
       "remainder_nonzero": false
@@ -175,13 +184,13 @@
   "include_inter": true,
   "tr_M_in_q": "(q**(3/2) - q**2*(q + 1) + q + 1)*(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) - q**(25/2) - q**(21/2) + q**(19/2) + q**(15/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 4*q**10 - q**2 + 1)**2*(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) + q**(23/2) + q**(21/2) - q**(19/2) - q**(17/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 2*q**12 + 2*q**8 - q**2 + 1)**2/(256*q**38*(q + 1)**7)",
   "shift": 0,
-  "denom_in_u": "256*check_q**90 + 1792*check_q**88 + 5376*check_q**86 + 8960*check_q**84 + 8960*check_q**82 + 5376*check_q**80 + 1792*check_q**78 + 256*check_q**76",
-  "p_in_u": "-u**166 - 4*check_q**165 - 7*check_q**164 - 7*check_q**163 + 2*check_q**162 + 14*check_q**161 + 14*check_q**160 + 9*check_q**159 - 3*check_q**158 + 7*check_q**156 - 18*check_q**155 - 12*check_q**154 - 4*check_q**153 + 18*check_q**152 + 16*check_q**151 - 49*check_q**150 - 20*check_q**149 + 17*check_q**148 + 19*check_q**147 - 20*check_q**146 - 46*check_q**145 + 36*check_q**144 + 65*check_q**143 - 11*check_q**142 - 12*check_q**141 + 51*check_q**140 + 74*check_q**139 - 43*check_q**138 - 60*check_q**137 + 72*check_q**136 + 41*check_q**135 - 91*check_q**134 - 113*check_q**133 + 164*check_q**132 + 65*check_q**131 - 229*check_q**130 - 177*check_q**129 + 231*check_q**128 + 174*check_q**127 - 303*check_q**126 - 211*check_q**125 + 417*check_q**124 + 399*check_q**123 - 332*check_q**122 - 279*check_q**121 + 428*check_q**120 + 363*check_q**119 - 456*check_q**118 - 283*check_q**117 + 448*check_q**116 + 405*check_q**115 - 647*check_q**114 - 255*check_q**113 + 583*check_q**112 + 168*check_q**111 - 715*check_q**110 - 263*check_q**109 + 825*check_q**108 + 195*check_q**107 - 872*check_q**106 - 269*check_q**105 + 1045*check_q**104 + 381*check_q**103 - 919*check_q**102 - 484*check_q**101 + 1138*check_q**100 + 589*check_q**99 - 960*check_q**98 - 646*check_q**97 + 1144*check_q**96 + 731*check_q**95 - 1139*check_q**94 - 672*check_q**93 + 1069*check_q**92 + 562*check_q**91 - 1292*check_q**90 - 454*check_q**89 + 1234*check_q**88 + 388*check_q**87 - 1364*check_q**86 - 306*check_q**85 + 1322*check_q**84 + 106*check_q**83 - 1322*check_q**82 - 306*check_q**81 + 1364*check_q**80 + 388*check_q**79 - 1234*check_q**78 - 454*check_q**77 + 1292*check_q**76 + 562*check_q**75 - 1069*check_q**74 - 672*check_q**73 + 1139*check_q**72 + 731*check_q**71 - 1144*check_q**70 - 646*check_q**69 + 960*check_q**68 + 589*check_q**67 - 1138*check_q**66 - 484*check_q**65 + 919*check_q**64 + 381*check_q**63 - 1045*check_q**62 - 269*check_q**61 + 872*check_q**60 + 195*check_q**59 - 825*check_q**58 - 263*check_q**57 + 715*check_q**56 + 168*check_q**55 - 583*check_q**54 - 255*check_q**53 + 647*check_q**52 + 405*check_q**51 - 448*check_q**50 - 283*check_q**49 + 456*check_q**48 + 363*check_q**47 - 428*check_q**46 - 279*check_q**45 + 332*check_q**44 + 399*check_q**43 - 417*check_q**42 - 211*check_q**41 + 303*check_q**40 + 174*check_q**39 - 231*check_q**38 - 177*check_q**37 + 229*check_q**36 + 65*check_q**35 - 164*check_q**34 - 113*check_q**33 + 91*check_q**32 + 41*check_q**31 - 72*check_q**30 - 60*check_q**29 + 43*check_q**28 + 74*check_q**27 - 51*check_q**26 - 12*check_q**25 + 11*check_q**24 + 65*check_q**23 - 36*check_q**22 - 46*check_q**21 + 20*check_q**20 + 19*check_q**19 - 17*check_q**18 - 20*check_q**17 + 49*check_q**16 + 16*check_q**15 - 18*check_q**14 - 4*check_q**13 + 12*check_q**12 - 18*check_q**11 - 7*check_q**10 + 3*check_q**8 + 9*check_q**7 - 14*check_q**6 + 14*check_q**5 - 2*check_q**4 - 7*check_q**3 + 7*check_q**2 - 4*check_q + 1",
+  "denom_in_u": "256*u**90 + 1792*u**88 + 5376*u**86 + 8960*u**84 + 8960*u**82 + 5376*u**80 + 1792*u**78 + 256*u**76",
+  "p_in_u": "-u**166 - 4*u**165 - 7*u**164 - 7*u**163 + 2*u**162 + 14*u**161 + 14*u**160 + 9*u**159 - 3*u**158 + 7*u**156 - 18*u**155 - 12*u**154 - 4*u**153 + 18*u**152 + 16*u**151 - 49*u**150 - 20*u**149 + 17*u**148 + 19*u**147 - 20*u**146 - 46*u**145 + 36*u**144 + 65*u**143 - 11*u**142 - 12*u**141 + 51*u**140 + 74*u**139 - 43*u**138 - 60*u**137 + 72*u**136 + 41*u**135 - 91*u**134 - 113*u**133 + 164*u**132 + 65*u**131 - 229*u**130 - 177*u**129 + 231*u**128 + 174*u**127 - 303*u**126 - 211*u**125 + 417*u**124 + 399*u**123 - 332*u**122 - 279*u**121 + 428*u**120 + 363*u**119 - 456*u**118 - 283*u**117 + 448*u**116 + 405*u**115 - 647*u**114 - 255*u**113 + 583*u**112 + 168*u**111 - 715*u**110 - 263*u**109 + 825*u**108 + 195*u**107 - 872*u**106 - 269*u**105 + 1045*u**104 + 381*u**103 - 919*u**102 - 484*u**101 + 1138*u**100 + 589*u**99 - 960*u**98 - 646*u**97 + 1144*u**96 + 731*u**95 - 1139*u**94 - 672*u**93 + 1069*u**92 + 562*u**91 - 1292*u**90 - 454*u**89 + 1234*u**88 + 388*u**87 - 1364*u**86 - 306*u**85 + 1322*u**84 + 106*u**83 - 1322*u**82 - 306*u**81 + 1364*u**80 + 388*u**79 - 1234*u**78 - 454*u**77 + 1292*u**76 + 562*u**75 - 1069*u**74 - 672*u**73 + 1139*u**72 + 731*u**71 - 1144*u**70 - 646*u**69 + 960*u**68 + 589*u**67 - 1138*u**66 - 484*u**65 + 919*u**64 + 381*u**63 - 1045*u**62 - 269*u**61 + 872*u**60 + 195*u**59 - 825*u**58 - 263*u**57 + 715*u**56 + 168*u**55 - 583*u**54 - 255*u**53 + 647*u**52 + 405*u**51 - 448*u**50 - 283*u**49 + 456*u**48 + 363*u**47 - 428*u**46 - 279*u**45 + 332*u**44 + 399*u**43 - 417*u**42 - 211*u**41 + 303*u**40 + 174*u**39 - 231*u**38 - 177*u**37 + 229*u**36 + 65*u**35 - 164*u**34 - 113*u**33 + 91*u**32 + 41*u**31 - 72*u**30 - 60*u**29 + 43*u**28 + 74*u**27 - 51*u**26 - 12*u**25 + 11*u**24 + 65*u**23 - 36*u**22 - 46*u**21 + 20*u**20 + 19*u**19 - 17*u**18 - 20*u**17 + 49*u**16 + 16*u**15 - 18*u**14 - 4*u**13 + 12*u**12 - 18*u**11 - 7*u**10 + 3*u**8 + 9*u**7 - 14*u**6 + 14*u**5 - 2*u**4 - 7*u**3 + 7*u**2 - 4*u + 1",
   "deg_p_u": 166,
   "n_nonzero": 18,
   "all_integral": true,
-  "reconstruction_matches": true,
-  "tr_M_at_q0": 0.07000313147469332,
-  "tr_M_at_q0_via_u_poly": 0.07000313147469332,
-  "tr_M_at_q0_rel_err": 0.0
+  "reconstruction_matches": false,
+  "tr_M_at_q0": 0.07000314708991544,
+  "tr_M_at_q0_via_u_poly": NaN,
+  "tr_M_at_q0_rel_err": NaN
 }

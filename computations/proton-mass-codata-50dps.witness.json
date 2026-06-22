@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-29T19:58:10.407566+00:00",
-  "commitSha": "3ba4636f1cb0098b0d612942d4db2b09b985a82a",
+  "computedAt": "2026-06-22T14:32:17.851492+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [
     {
       "name": "m_p_within_10_ppm_conditional_on_conjecture",
-      "computed": "29605.204",
+      "computed": "29604.991",
       "expected": "< 10",
       "passed": false,
       "tolerance": 10.0,
@@ -15,7 +15,7 @@
     },
     {
       "name": "m_p_within_1_ppb_target",
-      "computed": "0.029605203711293501746127793540410263574003428761027",
+      "computed": "0.029604990650819323472469845126763337587277827977398",
       "expected": "0",
       "passed": false,
       "tolerance": 1e-09,
@@ -29,37 +29,44 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "proton-mass-codata-50dps",
   "scriptFile": "build_proton_mass_50dps_chain.py",
-  "scriptHash": "206158973777",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptHash": "61a276ccc8f3",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Cross-pipeline m_p prediction vs CODATA at the precision achievable by the current pipeline (currently f64-bounded via mass_endomorphism.py; will lift to 50 dps once the Phase A tower-lift PRs land).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
-    "q_0": 1.1099785827513808,
+    "q_0": 1.1099785955573347,
     "M_E_MEV_CODATA": "0.51099895069",
     "target_precision_ppb": "1.0",
     "conjectural_derivation": true,
     "conjecture_label": "conj:lambda-scale-substrate-form"
   },
   "data": {
-    "m_p_pred_MeV": "966.04982446659753565797793103937409734667618179461",
+    "m_p_pred_MeV": "966.04962455790152404939278385972003666014618390642",
     "m_p_codata_MeV": "938.27208816",
-    "rel_diff": "0.029605203711293501746127793540410263574003428761027",
-    "rel_diff_ppb": "29605203.7113",
+    "rel_diff": "0.029604990650819323472469845126763337587277827977398",
+    "rel_diff_ppb": "29604990.6508",
     "target_ppb": "1.0",
-    "gap_orders_of_magnitude_to_1ppb": "7.47137",
+    "gap_orders_of_magnitude_to_1ppb": "7.47136",
     "upstream_witness_hashes": [
       {
         "path": "option-b-proton-mass-full-chain.witness.json",
-        "sha256": "1561075f06ce0817736f40757938f7d2a0ad9fe56cf546f1bc6a337cfa0dc32e",
+        "sha256": "4b2da48476f30937d886312539a2cbc9d802b6a090d81e998e3545dbb9bea757",
         "size_bytes": 18134,
         "commitSha": "a565201b866a99c843cd8e85aaa08a52d691b28d",
         "scriptCommitSha": "299567fa008ae080c59a726e2f09d68eb5e0a074",
@@ -69,6 +76,12 @@
     "reference_blocks": [
       "prop:full-pole-structure-mass-trace",
       "prop:markov-trace-axiomatic-closed-form"
-    ]
+    ],
+    "lean_uniqueness_ref": {
+      "nucleus": "proton",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
   }
 }

@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T05:58:28.581248+00:00",
-  "commitSha": "c0488b478cdbd79629bd6bcb88b5174c2f2375a7",
+  "computedAt": "2026-06-22T14:26:22.302685+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [],
   "allPassed": true,
   "durationMs": 26,
   "computation": "canonical-isotope-witness-Z06",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "8d34736394b8",
-  "scriptCommitSha": "95163cf6c2f0adecc5a4ab1c05afa3e743bd0209",
+  "scriptHash": "45fb3f70048a",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,16 +19,15 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "Per-Z=6 shard of the recursive atom-knot atlas. Element: C. Covers every (Z=6, N) in AME 2020. Each row carries: prediction_type ∈ {mass, binding_energy}; the prediction value (from L1 canonical |tr_M| via markov_peel+mpmath, OR L2 α-cluster recursion); the AME 2020 reference; err in MeV / % / ppm; L4 composite mass M = N·m_n + Z·m_p − B (when nucleon masses + B are available). L1 source: canonical-mass-table-extended.witness.json; L2 source: alpha-cluster-recursion.witness.json; nucleon masses: m-p-borromean-verification-50dps.witness.json.",
   "parameters": {
     "Z": 6,
     "element": "C",
-    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_0": "1.1099785955573347198997632204832250266562084087802",
     "rows_total": 16,
     "rows_with_prediction": 1,
     "rows_with_composite_mass": 1
@@ -178,10 +177,10 @@
         "err_ppm": 54103.42100111288,
         "excised": null,
         "composite_mass": {
-          "M_pred_MeV": 11495.44989323945,
+          "M_pred_MeV": 11495.4474943351,
           "M_AME_MeV": 11177.92922904,
-          "err_MeV": 317.52066419945004,
-          "err_ppm": 28406.036368036643,
+          "err_MeV": 317.5182652950989,
+          "err_ppm": 28405.821757235128,
           "canonical_status": "canonical-recursive",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
@@ -556,11 +555,11 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "27e5278cf0a3e5ab6e540e5fc69774f667231579da9340ac970dfc15ec2e034f",
-        "size_bytes": 31490,
-        "commitSha": "b22a8c46a04d98ea66162fc9165721b11dd07a33",
-        "scriptCommitSha": "8948cf14da37f8b87865ccd85007d308796d8201",
-        "computedAt": "2026-06-01T17:46:09.784242+00:00"
+        "sha256": "e9df7bc74ec3dca6500c62f45f0b583d40c5f43725c1b254d462690cf006a937",
+        "size_bytes": 23828,
+        "commitSha": "96c4de9c94ef659a11c87efc0293c598271531ad",
+        "scriptCommitSha": "96c4de9c94ef659a11c87efc0293c598271531ad",
+        "computedAt": "2026-06-14T23:40:47.221743+00:00"
       },
       {
         "path": "alpha-cluster-recursion.witness.json",
@@ -580,16 +579,16 @@
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "da7a3d010b4996e43df33f04aab32e1fbb2c1e0ccbcfd0863221e1a8f9428359",
-        "size_bytes": 9103,
-        "commitSha": "18ac6def75acf693c516f28e4a8e625e698c5307",
-        "scriptCommitSha": "b1b64be871849333c44690b3b198e567773df962",
-        "computedAt": "2026-06-01T18:23:28.253677+00:00"
+        "sha256": "cb4b76b51ef58f364fcc1a6e9a5c5ece4529dfffe098ce3a96b5e61f73f47819",
+        "size_bytes": 9112,
+        "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+        "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+        "computedAt": "2026-06-22T13:19:41.230571+00:00"
       },
       {
         "path": "ame2020.json",
-        "sha256": "a55ad891687504323ac32e3041bf05ac5e44e9237473079c43496948e4f857ab",
-        "size_bytes": 2404361,
+        "sha256": "70f7f2f8cc954a65f265ca2cea62bc45521c8ab0233d195c02f70df3ebeea43d",
+        "size_bytes": 2404329,
         "commitSha": null,
         "scriptCommitSha": null,
         "computedAt": null
