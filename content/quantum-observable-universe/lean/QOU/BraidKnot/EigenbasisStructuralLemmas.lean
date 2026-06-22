@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Order.Ring.GeomSum
 import Mathlib.Tactic
+import QOU.BraidKnot.ChiralityWritheRibbon
 
 /-!
 # QOU.BraidKnot.EigenbasisStructuralLemmas — content/twist eigenbasis lemmas
@@ -34,7 +35,7 @@ LaTeX / witness: probe `eigenbasis-structural-lemmas`, lemma L3.
 
 namespace QOU.BraidKnot.EigenbasisStructuralLemmas
 
-open Finset
+open Finset QOU.BraidKnot.ChiralityWritheRibbon
 
 /-! ## L3 — framing generating function -/
 
@@ -86,6 +87,43 @@ theorem framing_gf_closed_form
   have hgeom : (1 - t * θ) * (∑ m ∈ range N, (t * θ) ^ m) = 1 - (t * θ) ^ N := by
     linear_combination - geom_sum_mul (t * θ) N
   rw [hsum, ← mul_assoc, mul_comm (1 - t * θ) (c 0), mul_assoc, hgeom]
+
+/-- **L3 discharged at the concrete ribbon eigenvalue `θ_λ = q^{2κ}`.**
+
+Instantiating `framing_gf_closed_form` at the framed character
+`c m = q^{2mκ}·χ₀` — the action of the `m`-fold full twist `Δ^{2m}` on `V_λ`
+through the ribbon eigenvalue `θ_λ = q^{2κ}`
+(`QOU.BraidKnot.ChiralityWritheRibbon.RibbonTwistEigenvalue.framing_formula`,
+here via `framing_eigenvalue_pow`).  The hypothesis `hstep` is **discharged**
+(not assumed): the one-step scaling `q^{2(m+1)κ} = q^{2κ}·q^{2mκ}` is proved.
+The framing tower is then the single-pole rational with pole at `t = q^{−2κ}`:
+
+  `(1 − t·q^{2κ}) · Σ_{m<N} t^m · q^{2mκ} · χ₀ = χ₀ · (1 − (t·q^{2κ})^N)`. -/
+theorem framing_gf_ribbon (q t χ₀ : ℝ) (κ : ℤ) (N : ℕ) :
+    (1 - t * q ^ (2 * κ)) *
+        (∑ m ∈ range N, t ^ m * (q ^ (2 * (m : ℤ) * κ) * χ₀))
+      = χ₀ * (1 - (t * q ^ (2 * κ)) ^ N) := by
+  have hstep : ∀ m, q ^ (2 * ((m + 1 : ℕ) : ℤ) * κ) * χ₀
+      = q ^ (2 * κ) * (q ^ (2 * (m : ℤ) * κ) * χ₀) := by
+    intro m
+    rw [framing_eigenvalue_pow q κ (m + 1), framing_eigenvalue_pow q κ m, pow_succ]
+    ring
+  have h := framing_gf_closed_form (q ^ (2 * κ)) t
+      (fun m => q ^ (2 * (m : ℤ) * κ) * χ₀) hstep N
+  simpa using h
+
+/-- **L3 against the `RibbonTwistEigenvalue` class.**  The fullest discharge:
+with an actual ribbon-eigenvalue instance `[RibbonTwistEigenvalue q]`, the
+framing tower built from the class's own `framing_eigenvalue` is the single-pole
+rational, pole at `t = (θ_λ)⁻¹`.  No new hypothesis — `framing_formula` supplies
+the eigenvalue and `framing_gf_ribbon` the geometric closure. -/
+theorem framing_gf_ribbon_class {q : ℝ} [RT : RibbonTwistEigenvalue q]
+    (t χ₀ : ℝ) (κ : ℤ) (N : ℕ) :
+    (1 - t * RT.framing_eigenvalue 1 κ) *
+        (∑ m ∈ range N, t ^ m * (RT.framing_eigenvalue (m : ℤ) κ * χ₀))
+      = χ₀ * (1 - (t * RT.framing_eigenvalue 1 κ) ^ N) := by
+  simp only [RT.framing_formula, show (2 * (1 : ℤ) * κ) = 2 * κ by ring]
+  exact framing_gf_ribbon q t χ₀ κ N
 
 /-! ## L1 — order-parity = word-length parity -/
 
