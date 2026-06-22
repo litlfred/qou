@@ -47,4 +47,12 @@ export default proposition({
     "wedderburn",
     "derived-coefficient",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-06-22",
+      body:
+        "The charge-type scaling function $S_\\lambda$ (left here as \"Z-dependent\") is identified — formalize-first, no fit — with the free-vs-atom **$H_{3A}$ q-Reeb phase** $|\\Delta\\theta_\\lambda|$, not a partition-only $Z(Z-1)$ count. The bare $\\sum_{\\text{charge}} C_\\lambda\\,Z(Z-1)\\,m_e$ misses the $^3$H$-^3$He split by $22.6\\times$ (the GAP-A-4 $H_3$-collapse obstruction: $p\\equiv n\\equiv{}^3$He at $H_3$); the atomic q-Reeb phase reproduces it to $\\sim118\\%$ (right order). The Coulomb channel $\\sinh(\\log q)=h/2$ is already the factor in $C_\\lambda=\\tilde w_\\lambda\\,h/2$. See `docs/audits/2026-06-22-charge-slambda-reeb-phase-crack.md`.",
+    },
+  ],
 });
