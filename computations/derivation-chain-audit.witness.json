@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T04:14:24.427657+00:00",
-  "commitSha": "093bce3cdcb4643c7bb114f9b7bc14f0c2fcf139",
+  "computedAt": "2026-06-22T12:37:44.552832+00:00",
+  "commitSha": "5ed54ebd371aae0d3f85e0c81104657b8fef9871",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -573,8 +573,10 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -2464,6 +2466,7 @@
         "eigenvalue-reeb-extension-h4-h5.witness.json",
         "electron-m_e-derivation.witness.json",
         "em-linking-invariant-probe.witness.json",
+        "em-linking-invariant-scoping.witness.json",
         "embeddable-knot-operator.witness.json",
         "emitted-particle-tracker.witness.json",
         "entanglement-orders.witness.json",
@@ -2683,6 +2686,7 @@
         "metallic-q-quark-bifurcation.witness.json",
         "metallic-q-symbolic-galois-proofs.witness.json",
         "metallic-q-wenzl-sign-sweep.witness.json",
+        "mirror-pair-coulomb-sign-correction.witness.json",
         "mmu-categorical-correction-first-probe.witness.json",
         "mmu-categorical-correction-k-crossing-probe.witness.json",
         "mmu-categorical-correction-refined-probe.witness.json",
