@@ -66,8 +66,9 @@ from mass_endomorphism import HA as HA_VAL, z_mark
 # H_12 Phase-1 A-operator extract).
 from mass_tower_operator_valued import mass_from_tower
 from pyhecke.gram import atom_per_generator_volumes
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p for E_0 anchor
 
-E_0_CAL_MEV = 938.272 / 1178995.5254  # proton tower → 938.272 MeV
+E_0_CAL_MEV = float(M_P_MEV_VALIDATION) / 1178995.5254  # proton tower → m_p MeV
 B_AME_D_MEV = 2.22452  # deuteron AME2020
 
 
