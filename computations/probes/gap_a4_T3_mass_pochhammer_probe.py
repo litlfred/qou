@@ -66,7 +66,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
+Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 
 # CODATA-2022 / AME-2020 masses (MeV) routed through the canonical
 # registry (I9 — no hardcoded literals). See codata_constants.py.

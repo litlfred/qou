@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-20T15:00:04.470018+00:00",
-  "commitSha": "bc9935cd4fc2739b52e14b5ce059ff8c07575993",
+  "computedAt": "2026-06-22T14:54:43.776701+00:00",
+  "commitSha": "d7b1b81f39553f4703b2b2e92a785586211e4063",
   "assertions": [
     {
       "name": "m_p_matches_codata_within_1ppm",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "m-p-substrate-identity-50dps",
   "scriptFile": "m_p_substrate_identity_50dps.py",
-  "scriptHash": "713adf0dbef8",
-  "scriptCommitSha": "f89ec89aee3363048fc11bf0e6942b14ab5c0b22",
+  "scriptHash": "372f902c6591",
+  "scriptCommitSha": "fc85ff26c57a65b8f8d2a69aa398ce4aad804ae2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,6 +37,8 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -66,11 +68,11 @@
       "Delta_m_pn_MeV": "1.291679956545074824489116"
     },
     "predictions_pathC": {
-      "m_n_MeV": "939.5654205236888141877098",
-      "m_n_residual_ppm": "3.9260855148e-6",
-      "Delta_m_pn_MeV": "1.293332363309999951820939",
-      "Delta_m_pn_ppb": "2.5592802393198752",
-      "Q_beta_N3_MeV": "0.78233341331",
+      "m_n_MeV": "939.5654205196888141877098",
+      "m_n_residual_ppm": "-3.31201857257e-7",
+      "Delta_m_pn_MeV": "1.293332359309999951820939",
+      "Delta_m_pn_ppb": "-0.5335055933952358",
+      "Q_beta_N3_MeV": "0.78233340931",
       "derivation": "m_n = m_p + Q_beta(N=3) + m_e (bypasses flavor-split)"
     },
     "codata_comparison": {

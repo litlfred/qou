@@ -267,7 +267,7 @@ def main() -> int:
     for name, cand in c3_candidates.items():
         rat = is_rational_in_q(cand)
         # evaluate at proton q₀ to report the residual (report only — no fit)
-        q0 = sp.Float("1.1099785827513808075916690956107688798744991218736")
+        q0 = sp.Float("1.1099785955573347198997632204832250266562084087802")
         val0 = sp.N(cand.subs(q, q0)) if cand.free_symbols else sp.N(cand)
         err = abs(float(val0) - float(c3_numeric)) / abs(float(c3_numeric)) * 100
         print(f"    candidate {name:<20} = {cand}")
