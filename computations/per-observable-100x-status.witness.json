@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-16T16:30:49.572796+00:00",
-  "commitSha": "0a23cad17248d51d21eada08b8af059f0007a372",
+  "computedAt": "2026-06-22T12:40:13.219045+00:00",
+  "commitSha": "7b12822eab9b4f49a89db02c7a90d75d1f7d61b5",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 13,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "8613f4e81f62",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "4e679e710146",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,8 +29,7 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Headline status for Workplan v7: report each predicted observable's current error against the 100× experimental target (σ_pred ≤ σ_exp / 100). Audit-only — reads existing witnesses, does not introduce new predictions. All CODATA values + uncertainties source from codata_constants / codata-2022-validation-masses.witness.json / cal-3-q-beta.witness.json — no floating literals.",
   "contentBlock": "rem:per-observable-100x-status-dashboard",
@@ -163,11 +162,11 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "201d917ed67f82e00fc860096dd6c05ad374665d5fd0fa7423edc5b7816c9f54",
-        "size_bytes": 4263,
-        "commitSha": "aef90e40ee636b78c4e4d53ad4398aaf98fbd21d",
-        "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
-        "computedAt": "2026-06-14T04:42:49.539703+00:00"
+        "sha256": "3f9be065e69b9d868dd32aef1914b8a3835f33f408c73b5c2ee2ba9a1616aaeb",
+        "size_bytes": 4191,
+        "commitSha": "bc9935cd4fc2739b52e14b5ce059ff8c07575993",
+        "scriptCommitSha": "f89ec89aee3363048fc11bf0e6942b14ab5c0b22",
+        "computedAt": "2026-06-20T15:00:04.470018+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",

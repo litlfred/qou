@@ -1,52 +1,17 @@
 {
   "computation": "q0-consistency-audit",
   "description": "Scans compute scripts for stale pre-habiro q\u2080 literals (10997858275 / 858275) and stale-A tr_M leaf values (tr_M evaluated at A) that the 2026-06-22 cluster-A migration replaced with the canonical C values. production-hardcode entries are real bugs (a live constant kept at the stale value); stale-docstring are cosmetic; legit-muon-xcheck are the intentional muon cross-check.",
-  "timestamp": "2026-06-22T04:26:35.180347+00:00",
+  "timestamp": "2026-06-22T12:37:49.902624+00:00",
   "canonical_q0_source": "q_parameter.q_at() / Q_50_DIGIT_STR (proton pin, habiro-refined)",
   "stale_pre_habiro_q0": "1.10997858275138080759\u2026",
   "canonical_proton_q0": "1.10997859555733471989\u2026",
   "counts_by_classification": {
-    "production-hardcode": 73,
-    "stale-docstring": 21
+    "production-hardcode": 36,
+    "stale-docstring": 10
   },
-  "total_hits": 94,
-  "production_hardcode_count": 73,
+  "total_hits": 46,
+  "production_hardcode_count": 36,
   "hits": [
-    {
-      "file": "computations/audits/canonical_a_k_magnitude_audit.py",
-      "line": 81,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"D\":   mp.mpf(\"0.3882864240747888\"),"
-    },
-    {
-      "file": "computations/audits/deuteron_delta_i_audit.py",
-      "line": 24,
-      "kind": "stale-trM",
-      "classification": "stale-docstring",
-      "text": "Deuteron tr_M closed form at q_0: 0.3882864240747888\u2026"
-    },
-    {
-      "file": "computations/audits/deuteron_delta_i_audit.py",
-      "line": 25,
-      "kind": "stale-trM",
-      "classification": "stale-docstring",
-      "text": "vs canonical bridge 0.3882864240747888 \u2014 3 \u00d7 10\u207b\u00b9\u2076 (machine precision)."
-    },
-    {
-      "file": "computations/audits/deuteron_delta_i_audit.py",
-      "line": 29,
-      "kind": "stale-trM",
-      "classification": "stale-docstring",
-      "text": "|tr_M(\u03b2_D)| = 0.388286424048    at q_0"
-    },
-    {
-      "file": "computations/audits/deuteron_delta_i_audit.py",
-      "line": 114,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "TR_M_DEUTERON_AT_Q0 = mp.mpf(\"0.3882864240747888\")  # from categorical chain audit"
-    },
     {
       "file": "computations/audits/qbeta_multiblock_order_audit.py",
       "line": 82,
@@ -67,111 +32,6 @@
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "\"1.1099785827513808075916690956107688798744991218735787360728142402\""
-    },
-    {
-      "file": "computations/canonical_tr_m_three_path_comparison.py",
-      "line": 97,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"proton\":  \"1.0653061442544499\",  # matches bridge to all digits"
-    },
-    {
-      "file": "computations/canonical_tr_m_three_path_comparison.py",
-      "line": 98,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"neutron\": \"0.9232332299116371\",  # matches bridge"
-    },
-    {
-      "file": "computations/canonical_tr_m_three_path_comparison.py",
-      "line": 99,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"deuteron\": \"0.38828642407478885246789009070198517292737960815430\","
-    },
-    {
-      "file": "computations/delta_lambda_two_factor_phase2.py",
-      "line": 199,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "expected=0.3882864240747888,"
-    },
-    {
-      "file": "computations/derivation_chain.py",
-      "line": 79,
-      "kind": "stale-trM",
-      "classification": "stale-docstring",
-      "text": "#   p = 1.0653061442544499  n = 0.9232332299116371  D = 0.3882864240747888"
-    },
-    {
-      "file": "computations/derivation_chain.py",
-      "line": 79,
-      "kind": "stale-trM",
-      "classification": "stale-docstring",
-      "text": "#   p = 1.0653061442544499  n = 0.9232332299116371  D = 0.3882864240747888"
-    },
-    {
-      "file": "computations/derivation_chain.py",
-      "line": 79,
-      "kind": "stale-trM",
-      "classification": "stale-docstring",
-      "text": "#   p = 1.0653061442544499  n = 0.9232332299116371  D = 0.3882864240747888"
-    },
-    {
-      "file": "computations/derivation_chain.py",
-      "line": 97,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"p\": 1.0653061442544499,"
-    },
-    {
-      "file": "computations/derivation_chain.py",
-      "line": 98,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"n\": 0.9232332299116371,"
-    },
-    {
-      "file": "computations/derivation_chain.py",
-      "line": 99,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"D\": 0.3882864240747888,"
-    },
-    {
-      "file": "computations/derivation_chain.py",
-      "line": 112,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"p\":  \"1.0653061442544499756666334037445034130528872534934\","
-    },
-    {
-      "file": "computations/derivation_chain.py",
-      "line": 113,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"n\":  \"0.92323322991163717797026991200748498402824245608814\","
-    },
-    {
-      "file": "computations/derivation_chain.py",
-      "line": 114,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"D\":  \"0.38828642407478887671153751312935209344259947275515\","
-    },
-    {
-      "file": "computations/derivation_chain.py",
-      "line": 146,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"p\":   1.0653061442544499,  # 11-crossing typed B_3 (uud)"
-    },
-    {
-      "file": "computations/derivation_chain.py",
-      "line": 147,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"n\":   0.9232332299116371,  # 11-crossing typed B_3 (udd)"
     },
     {
       "file": "computations/e_hartree_round24_molecular_reuse.py",
@@ -223,130 +83,11 @@
       "text": "- q_proton = 1.10997858275\u2026 (CAL-2 / m_p anchor since PR #1422)"
     },
     {
-      "file": "computations/habiro/habiro_coefficients_atomic.py",
-      "line": 94,
-      "kind": "stale-trM",
-      "classification": "stale-docstring",
-      "text": "proton:   1.0653061442544499"
-    },
-    {
-      "file": "computations/habiro/habiro_coefficients_atomic.py",
-      "line": 95,
-      "kind": "stale-trM",
-      "classification": "stale-docstring",
-      "text": "neutron:  0.9232332299116371"
-    },
-    {
-      "file": "computations/habiro/habiro_coefficients_atomic.py",
-      "line": 96,
-      "kind": "stale-trM",
-      "classification": "stale-docstring",
-      "text": "deuteron: 0.388286424047713  (`include_inter=True`)"
-    },
-    {
-      "file": "computations/habiro/habiro_correction_product_verify.py",
-      "line": 69,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "tr_M = mp.mpf(\"1.065306144254449900000000000000000000000\")"
-    },
-    {
-      "file": "computations/habiro/habiro_exact_qbeta.py",
-      "line": 78,
-      "kind": "stale-trM",
-      "classification": "stale-docstring",
-      "text": "at q\u2080 = 1.0653061442 matches the witness tr_M_at_q0 = 1.0653062286"
-    },
-    {
-      "file": "computations/habiro/habiro_exact_taylor_extraction.py",
-      "line": 159,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "tr_M_val = mp.mpf(\"1.065306144254449900000000000000000000000\")"
-    },
-    {
-      "file": "computations/habiro/habiro_h9_correction_series.py",
-      "line": 73,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "tr_M = mp.mpf(\"1.065306144254449900000000000000000000000\")"
-    },
-    {
-      "file": "computations/habiro/habiro_h9_spectral_decomposition.py",
-      "line": 124,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "tr_M = mp.mpf(\"1.065306144254449900000000000000000000000\")"
-    },
-    {
-      "file": "computations/habiro/habiro_normalization_bridge.py",
-      "line": 55,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "direct = mp.mpf(\"1.065306144254449900000000000000000000000\")"
-    },
-    {
-      "file": "computations/habiro/habiro_sub_ppm_third_factor.py",
-      "line": 64,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "tr_M = mp.mpf(\"1.065306144254449900000000000000000000000\")"
-    },
-    {
-      "file": "computations/iterative_lp_dual_h6_deuteron.py",
-      "line": 179,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "print(f\"    Closed-form ref    = 0.3882864240747888\")"
-    },
-    {
-      "file": "computations/iterative_lp_dual_h6_deuteron.py",
-      "line": 180,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "err_rel = abs(tr_M_check - mp.mpf(\"0.3882864240747888\")) / mp.mpf(\"0.3882864240747888\")"
-    },
-    {
       "file": "computations/m_p_substrate_identity_50dps.py",
       "line": 51,
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "At q_0 = 1.1099785827513808... (50 dps, m_p-pinned re-pin #1422):"
-    },
-    {
-      "file": "computations/markov/markov_trace_axiomatic_multi_atom.py",
-      "line": 40,
-      "kind": "stale-trM",
-      "classification": "stale-docstring",
-      "text": "gives |tr_M(\u03b2_D)| = 0.388286424074788819620628617786 (canonical)."
-    },
-    {
-      "file": "computations/markov/markov_weights_symbolic.py",
-      "line": 291,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "print(f\"  markov_peel ref : 1.0653061442544499\")"
-    },
-    {
-      "file": "computations/markov/markov_weights_symbolic.py",
-      "line": 302,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "print(f\"  markov_peel ref : 0.9232332299116371\")"
-    },
-    {
-      "file": "computations/markov/markov_weights_symbolic.py",
-      "line": 324,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"tr_M_proton_markov_peel_reference\": 1.0653061442544499,"
-    },
-    {
-      "file": "computations/markov/markov_weights_symbolic.py",
-      "line": 327,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"tr_M_neutron_markov_peel_reference\": 0.9232332299116371,"
     },
     {
       "file": "computations/mass_theory_formalize_first_invariants_probe.py",
@@ -377,27 +118,6 @@
       "text": "Q_0_50DPS = \"1.1099785827513808075916690956107688798744991218736\""
     },
     {
-      "file": "computations/probes/graded_hecke_energy_probe.py",
-      "line": 68,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"proton\":   mp.mpf(\"1.0653061442544499\"),"
-    },
-    {
-      "file": "computations/probes/graded_hecke_energy_probe.py",
-      "line": 69,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"neutron\":  mp.mpf(\"0.9232332299116371\"),"
-    },
-    {
-      "file": "computations/probes/graded_hecke_energy_probe.py",
-      "line": 70,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"deuteron\": mp.mpf(\"0.3882864240747888\"),"
-    },
-    {
       "file": "computations/probes/he4_partition_dominance_audit_probe.py",
       "line": 201,
       "kind": "old-q0",
@@ -410,13 +130,6 @@
       "kind": "old-q0",
       "classification": "stale-docstring",
       "text": "pre-2026-05-28 anchor) AND q_proton = 1.10997858275, and tiers:"
-    },
-    {
-      "file": "computations/probes/path_b_defect_binding_probe.py",
-      "line": 105,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "\"D\":   0.3882864240,"
     },
     {
       "file": "computations/probes/phi_q_regularization_probe.py",
@@ -445,27 +158,6 @@
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q0 = mp.mpf(\"1.1099785827513808075916690956107688798744991218736\")"
-    },
-    {
-      "file": "computations/probes/rho_f_categorical_probe.py",
-      "line": 100,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "(1, 0): 1.0653061442544499,   # proton"
-    },
-    {
-      "file": "computations/probes/rho_f_categorical_probe.py",
-      "line": 101,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "(0, 1): 0.9232332299116371,   # neutron"
-    },
-    {
-      "file": "computations/probes/rho_f_categorical_probe.py",
-      "line": 102,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "(1, 1): 0.3882864240747888,   # deuteron  (D)"
     },
     {
       "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
@@ -634,34 +326,6 @@
       "kind": "old-q0",
       "classification": "production-hardcode",
       "text": "Q_PROTON = mp.mpf(\"1.1099785827513808075916690956107688798744991218736\")"
-    },
-    {
-      "file": "computations/skein_proton_canonical.py",
-      "line": 178,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "atlas_value = mp.mpf(\"1.0653061442544499\")"
-    },
-    {
-      "file": "computations/subgoal_1_per_knot_mass_table_probe.py",
-      "line": 60,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "(\"p\",   1, 1, 0, mp.mpf(\"7.32772475341775\"),  M_P_MEV_VALIDATION,   mp.mpf(\"1.06530614425\")),"
-    },
-    {
-      "file": "computations/subgoal_1_per_knot_mass_table_probe.py",
-      "line": 61,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "(\"n\",   1, 0, 1, mp.mpf(\"7.32772475341775\"),  M_N_MEV_VALIDATION,   mp.mpf(\"0.92323322991\")),"
-    },
-    {
-      "file": "computations/subgoal_1_per_knot_mass_table_probe.py",
-      "line": 62,
-      "kind": "stale-trM",
-      "classification": "production-hardcode",
-      "text": "(\"D\",   2, 1, 1, mp.mpf(\"4.40083251608\"),     M_D_MEV_VALIDATION,   mp.mpf(\"0.38828642408\")),"
     },
     {
       "file": "computations/substrate/unified_tau_odd_partner_solve.py",
