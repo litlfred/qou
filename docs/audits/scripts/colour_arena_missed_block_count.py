@@ -93,7 +93,7 @@ def schur_kvar_principal(lam, k):
     l = list(lam) + [0] * (k - len(lam))
     num = sp.Matrix(k, k, lambda i, j: xs[j] ** (l[i] + k - 1 - i))
     den = sp.Matrix(k, k, lambda i, j: xs[j] ** (k - 1 - i))
-    return sp.simplify(num.det() / den.det())
+    return sp.cancel(num.det() / den.det())
 
 
 def check_row_bound():
