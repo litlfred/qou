@@ -72,6 +72,29 @@ from markov_trace_canonical import tr_M_element  # noqa: E402
 # the (c, d) triples).  Imported lazily inside the builders.
 _H_NUM_TOL = 1e-9
 
+# Color-weighted p-n averaged crossing support (owner default
+# pn_convention="bring_color_weighted", per mass_at_3A_proper.atom_braid_word_3A):
+# the inter-nucleon crossing is σ − h·(½ − δ/4)·𝟙 with
+# δ = flavor_split_subleading(q₀), NOT the color-blind σ − h/2.
+# Lazily initialised (q_parameter is imported lazily elsewhere here to
+# avoid import cycles). Returns (δ_numeric_at_q0, δ_symbolic_in_q).
+_COLOR_DELTA: "tuple[float, object] | None" = None
+
+
+def _color_delta():
+    global _COLOR_DELTA
+    if _COLOR_DELTA is None:
+        from _li_2_q_util import flavor_split_subleading
+        from q_parameter import Q as _Q0
+        d_num = float(flavor_split_subleading(mp.mpf(str(_Q0))))
+        # symbolic mirror of flavor_split_subleading(q):
+        #   leading = (q−1)²·(1−q⁻⁴)/3 ;  subleading = leading·(1+((q−1)/q)³)
+        leading = (q_sym - 1) ** 2 * (1 - q_sym ** (-4)) / 3
+        d_sym = leading * (1 + ((q_sym - 1) / q_sym) ** 3)
+        _COLOR_DELTA = (d_num, d_sym)
+    return _COLOR_DELTA
+
+
 # Cache for crossing_from_cd: per (gen_idx, c-rounded, d-rounded)
 # the resulting SymbolicHeckeElement is uniquely determined. Keying
 # on rounded floats avoids identity-comparison issues.
@@ -129,6 +152,14 @@ def crossing_from_cd(
     elif abs(cf) < _H_NUM_TOL and abs(df - 1.0) < _H_NUM_TOL:
         # identity (no crossing)
         result = SymbolicHeckeElement.identity()
+    elif abs(cf - 1.0) < _H_NUM_TOL and \
+            abs(df + h_num * (0.5 - _color_delta()[0] / 4.0)) < _H_NUM_TOL:
+        # σ − h·(½ − δ/4)·𝟙  (color-weighted p-n averaged crossing)
+        _, d_sym = _color_delta()
+        result = SymbolicHeckeElement({
+            (gen_idx,): sp.Integer(1),
+            (): -HA * (sp.Rational(1, 2) - d_sym / 4),
+        })
     else:
         raise ValueError(
             f"unknown (c, d) crossing: c={cf!r}, d={df!r} at gen={gen_idx} "
