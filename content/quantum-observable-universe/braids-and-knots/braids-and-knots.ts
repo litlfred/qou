@@ -47,6 +47,7 @@ export default chapter({
       label: "sec:categorical-braiding-hecke-eigenbasis",
       blocks: [
         "categorical-braiding-hecke-eigenbasis-intro",
+        "eigenbasis-structural-lemmas",
       ],
       // Over-weight split (P4): 27-block section broken into 3
       // reading-order sub-arcs (Hecke quotient / Markov trace + normal
