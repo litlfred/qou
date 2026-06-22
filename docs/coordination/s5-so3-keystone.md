@@ -9,6 +9,11 @@ m_τ (lepton tower), GAP-A-3 binding Δ_λ, and GAP-A-4 mass λ(K).
 problem**. Everything combinatorial / representation-theoretic / algebraic is done or refuted; no fit
 was introduced anywhere.
 
+**Status (2026-06-22).** The single open object is **not** differential geometry — it is the
+colored Σ(2,3,5) WRT / `E_q(2)` q-Bessel q-series whose `q₀`-evaluation must reproduce `W_λ`
+(the Markov-trace surface is now exhausted — projector-weight shift refuted, [#2584](https://github.com/litlfred/qou/pull/2584)).
+See the 2026-06-22 update banner below.
+
 > **⚠ Corrections (2026-06-16, late session) — the "OPEN" row + the colour-arena framing are superseded.**
 > Three findings (mine + sibling) refine the open object below; read them over the "Current state" table:
 > - **No finite colour-SU(3) arena** (#2406, reconciling sibling #2389). The "colour ℂ³ ✅ forced" row is a
@@ -28,6 +33,14 @@ was introduced anywhere.
 > PROBE-4 prune (abstract `H_n(q)`) are unaffected. Audits: `2026-06-16-{keystone-arena-is-full-hecke-not-su3,
 > keystone-wu-manifold-reeb-obstruction}.md`; sibling `2026-06-16-s5-s3-symmetry-review-and-suq3-trace-question.md`.
 
+> **⚠ Update (2026-06-22) — the arena is the non-compact `E_q(2)` contraction, NOT a compact Sasakian; the Markov-trace surface is exhausted.** Four 2026-06-22 sessions (bean `s5bb`, all merged) supersede the "Wu-manifold Sasakian / differential-geometry" framing above:
+> - **q-deformed projector-weight shift REFUTED as the 210 ppb mechanism** ([#2584](https://github.com/litlfred/qou/pull/2584), merged). The E_λ-projected H₅ Markov trace gives `δ = T_μ − T_e = 0.2075` — non-null, so the q-deformed home-block weighting *does* break the (2,1) symmetry classical multiplicity preserved — but it is 6–7 orders too large for the 209.8 ppb gap and **bar-mixed** (fails the bar-even precondition). The Markov-trace surface (multiplicity / home-block weight / projected trace) is now **exhausted**; any surviving q-closure must leave the trace-weighting entirely. ([`2026-06-22-keystone-qdeform-projector-shift.md`](../audits/2026-06-22-keystone-qdeform-projector-shift.md))
+> - **No compact Sasakian / compact MTC can host `W_λ`** at the substrate anchor: `q₀ ≈ 1.10998` is real `> 1` (growth regime, `[m]_q = sinh(mη)/sinh(η)`, `η = log q₀` real), not a root of unity. The `W_λ`-producing structure is the non-compact `SU_q(2) → E_q(2)` contraction whose matrix coefficients are **Hahn–Exton q-Bessel** functions (already named in the corpus, `2026-06-13-reeb-phase-qbessel-identification.md`). ([`2026-06-22-keystone-modular-category-identification.md`](../audits/2026-06-22-keystone-modular-category-identification.md))
+> - **Sharpened open object:** pin the **colored Σ(2,3,5) WRT / Habiro-ring q-series** whose evaluation at `q₀` reproduces the `W_λ` family — reached from the convergent WRT series via the `q ↦ q⁻¹` bar involution (`q₀ ↔ 1/q₀ ≈ 0.901`, inside the disk). The bare `Σ(2,3,5)` Lawrence–Zagier false-theta `Ψ(1/q₀) = 2.32958` is operational but is **one** number vs a **λ-family** (type mismatch — *not* claimed equal to `W_λ`; the numerology trap the discipline forbids). ([`2026-06-22-keystone-habiro-wrt-s3-2i.md`](../audits/2026-06-22-keystone-habiro-wrt-s3-2i.md), [`2026-06-22-keystone-geometric-level-route-reduction.md`](../audits/2026-06-22-keystone-geometric-level-route-reduction.md))
+> - **Falsifiable, `q₀`-free sub-target:** any index realizing `W_λ` must reproduce the heat-kernel defect coefficient `144·C(n) = −n(n−1)(2n−13)` exactly (the `n = 7` sign change). The algebra is Lean-proved sorry-free ([`WLambdaDefectClosedForm.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaDefectClosedForm.lean), `n144C_closed_form` / `n144C_pos` / `n144C_neg`); the **one** carried representation-theoretic input is **Identity I** `M(n) = (1/n!) Σ_{λ⊢n} dim(λ)² Σ_{c} h_c² = n(3n−1)/2`, held as a `def twoM` (compute-verified `n = 2..14`). Proving Identity I from the partition squared-hook sum needs SYT-dimension / hook-length infrastructure **not currently in Mathlib** — a multi-session infra fill, not a single-session lemma. ([`2026-06-20-keystone-wlambda-C-n-closed-form.md`](../audits/2026-06-20-keystone-wlambda-C-n-closed-form.md))
+>
+> **Owner-decisions outstanding before geometry-grade build:** (1) the `W_λ` normalization convention (unnormalized `d_q²/[n]_q!`, Σ ≈ 0.982, vs probability-normalized `d_q²/D²`, Σ = 1); (2) whether to authorize the multi-session colored-WRT / `E_q(2)` q-series direction (outside-view: expect an *identification* / categorical name for `W_λ`, **not** a new mass prediction — tautology risk that the "geometric origin" is the harmonic analysis of the same `SU_q(2)` the framework already postulates); (3) whether the Identity-I Mathlib infra fill is in-scope.
+
 ## Current state
 
 | Layer | Status |
@@ -41,13 +54,19 @@ was introduced anywhere.
 | 210 ppb muon mechanism (Wedderburn-projector correction) | ❌ refuted (6–8 orders too coarse) |
 | colour⊗spin = (3,1,1) dim-6 shortcut | ❌ refuted (spin-parity mismatch) |
 | Reeb-eigenvalue resonance | ❌ refuted (no parameter-free ≥3-anchor match) |
-| **OPEN:** Markov-trace weighting `W_λ` via Wu-manifold SU(3)/SO(3) Sasakian equivariant index | ⛔ differential geometry (owner-gated) |
+| q-deformed projector-weight as the 210 ppb mechanism | ❌ refuted (#2584: `δ=0.21` non-null but 6–7 orders too large, bar-mixed) |
+| **OPEN:** `W_λ` geometric origin — colored Σ(2,3,5) WRT / `E_q(2)` q-Bessel q-series (**NOT** a compact Sasakian; see the 2026-06-22 banner) | ⛔ q-series (owner-gated) |
 
 **The single open object.** Does the SU(3)/SO(3) (Wu-manifold) Sasakian with spatial-SO(3)_colour Reeb
 admit a structure whose S¹-equivariant index reproduces the Ocneanu weights `W_λ = d_q(λ)²/[n]_q!`?
 (dim 5 odd ✓; χ(Wu)=0 ✓ — Boothby–Wang necessary conditions met, not obstructed at that level.) The
 sibling A≥3 operator-branching compute (#2369/#2371/#2372) produces `W_λ` algebraically; the open piece
 is its *geometric origin*.
+
+> **Superseded (2026-06-22).** This paragraph's Wu-manifold/Sasakian framing is retained for history but
+> **superseded** — at the substrate anchor `q₀ ≈ 1.10998` (real `> 1`, growth regime) **no** compact Sasakian /
+> MTC hosts `W_λ`; the arena is the non-compact `SU_q(2) → E_q(2)` Hahn–Exton q-Bessel contraction and the
+> sharpened object is the colored Σ(2,3,5) WRT q-series. See the 2026-06-22 update banner above.
 
 ## Refutations not to re-walk (canonical-no-negative-result discipline)
 
@@ -108,6 +127,8 @@ is its *geometric origin*.
 | 2026-06-22 | #2605 (re-land #2500) | **colour-arena block-count THEOREM** (`ColourArenaBlockCount.lean`, sorry-free): the colour-`ℂ^N`-missed Wedderburn blocks contain an injected copy of *every* partition of size `n−(N+1)` (`appendUnitRows`/`missedEmbedding`) ⇒ missed-block count **unbounded + monotone** in `A` (verifier `colour_arena_missed_block_count.py`, B1–B5). Upgrades #2406's *weighted* 3.4%→6.0% from data points to a **block-count theorem**; gives **C6 (full support)** quantitative teeth (no finite-`N` Sasakian). Weighted-share monotonicity stays **empirical** (q₀/braid-dependent). Audit `2026-06-19-colour-arena-block-count-theorem.md`. |
 | 2026-06-22 | #2605 (re-land #2500) | **combiner branching completeness / non-degeneracy** (`CombinerBranchingCompleteness.lean`, sorry-free): `exists_subpartition_of_size` — every `λ⊢n` (`n≥k`) has a sub-partition of size `n−k`, so `interface_blocks` returns ≥1 child for every block and the operator combiner drops none (Frobenius reciprocity; verifier `combiner_branching_completeness.py` over splits 6/9/12, self-contained). Formalizes the **dual** non-degeneracy of the already-corpus-established per-λ completeness — a correctness guarantee, not a new derivation. Audit `2026-06-19-combiner-branching-completeness.md`. |
 | 2026-06-22 | #2605 (re-land #2500) | **C2 chirality involution formalized** (`KeystoneChiralityInvolution.lean`, sorry-free): facets of C2 (`W_λ=W_{λ'}`) — content negates under transpose `c(j,i)=−c(i,j)`, electron `(3,1,1)` self-conjugate (`c=0`, central A₅ rep `T₁⊕T₂`), `[2]↔[1,1]` flip. The strongest pruning lever now machine-checked at the cell/example level; global `W_λ=W_{λ'}` stays cited + witnessed. |
+| 2026-06-22 | #2584 | **Probe (no fit) — q-deformed projector shift REFUTED:** E_λ-projected H₅ Markov trace `T_g = y_{λ_g}^{H5}·χ^{λ_g}(ι(β_Bor))` gives non-null `δ = T_μ − T_e = 0.2075` (the q-deformed home-block weighting breaks the (2,1) symmetry classical multiplicity preserved) but 6–7 orders too large + **bar-mixed** → not the 210 ppb mechanism. Markov-trace surface (multiplicity / home-block weight / projected trace) **exhausted**; branching cross-check to 9.6e-50. |
+| 2026-06-22 | (audits) | **Reframe + route reduction (no fit):** at real `q₀ > 1` no compact Sasakian / MTC hosts `W_λ` → arena = non-compact `SU_q(2) → E_q(2)` Hahn–Exton q-Bessel contraction; sharpened object = colored Σ(2,3,5) WRT q-series via the `q ↦ q⁻¹` bar involution. `Ψ(1/q₀) = 2.32958` operational (one number, **not** the λ-family — no numerology match). On-main (level,chirality) Lean gives class *separation*, not a mass functional. Falsifiable `q₀`-free sub-target `144·C(n) = −n(n−1)(2n−13)` Lean-proved (`WLambdaDefectClosedForm.lean`); the one carried input **Identity I** `M(n) = n(3n−1)/2` needs SYT/hook-length infra not in Mathlib. Docs: `2026-06-22-keystone-{modular-category-identification,habiro-wrt-s3-2i,geometric-level-route-reduction,geometric-angles-preflight}.md`. |
 
 ## Key artifacts
 
