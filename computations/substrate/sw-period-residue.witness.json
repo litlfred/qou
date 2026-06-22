@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-05T18:11:50.521899+00:00",
-  "commitSha": "a5e1fb4cb5a9150ce581c8e0c1a6dbde026ec174",
+  "computedAt": "2026-06-22T13:28:16.018262+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "residue_weight_eq_partition_form",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "sw-period-residue",
   "scriptFile": "sw_period_residue.py",
   "scriptHash": "b4458aba8d9e",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,20 +34,17 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "auditOnly": "docs/workplans/2026-06-05-delta-lambda-sw-residue-qdifference-attack.md",
   "parameters": {
-    "q_0": "1.1099785827513808075916690956107688798744991218736"
+    "q_0": "1.1099785955573347198997632204832250266562084087802"
   },
   "data": {
-    "n4_residue_weight": "2.532779656399391",
+    "n4_residue_weight": "2.532779663674676",
     "n4_vol_component_L6a4": "7.327724753417752",
-    "n4_sw_term_geom_x_alg": "18.55951218315073",
+    "n4_sw_term_geom_x_alg": "18.55951223646201",
     "selection_rule_form": "lambda(L) = (1/(c+1)) * sum_{lambda |- c+1} dim_q(lambda); c=3 -> partitions of 4 -> Family-A = I(4)/4"
   }
 }

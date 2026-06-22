@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T13:57:52.634272+00:00",
-  "commitSha": "b9488a99672ebc9fcd43249acbb9b52c24d0d714",
+  "computedAt": "2026-06-22T13:27:32.313812+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "probe_6d_partitions_enumerated_scope_only",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "qbeta-ck-wedderburn-decomposition-scope-probe",
   "scriptFile": "qbeta_ck_wedderburn_decomposition_scope_probe.py",
-  "scriptHash": "75bf80cf9470",
-  "scriptCommitSha": "1c12ee15b192c7de5e2bf821de007f166931c0f4",
+  "scriptHash": "3da3f29a68f4",
+  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -27,14 +27,15 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "Probe 6.d (scoping form): enumerates partitions of n=3 for the proton braid 𝓑₃, computes Wenzl weights y_λ(q_0) at substrate, and scopes the Wedderburn-block decomposition hypothesis. Full per-block c_k decomposition requires Hoefsmit-rep extraction infra not built here.",
   "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   "data": {
-    "q_0": "1.109978582751380807591669",
-    "z_markov": "0.4993203341836944524134427",
+    "q_0": "1.109978595557334719899763",
+    "z_markov": "0.4993203340335612717689664",
     "partitions_n_3": [
       {
         "label": "(3)",
@@ -63,7 +64,7 @@
     ],
     "dim_q_verification_anchor": {
       "sum_d_lambda": 4,
-      "z_squared_target": "0.2493207961293163066997983",
+      "z_squared_target": "0.2493207959793872068594165",
       "note": "y_λ(q_0) NOT yet extracted (pending pyhecke); the identity Σ_λ d_λ·y_λ = z² is the future-extraction correctness test, not evaluable here."
     },
     "future_work": {

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:56:34.278858+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-22T13:27:08.980237+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "dim_q_at_q_to_1_equals_classical_f_lambda",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 35,
+  "durationMs": 26,
   "computation": "wedderburn-weight-canonical-probe",
   "scriptFile": "wedderburn_weight_canonical_probe.py",
-  "scriptHash": "faf612a09c13",
-  "scriptCommitSha": "ac8f844015e912da2eb00b14b04edfb8fe8197e6",
+  "scriptHash": "5d37b228f53f",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,16 +27,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "I1 probe for prop:wedderburn-weight-canonical.  Verifies (1) dim_q(λ)|_{q→1} = f_λ classical for all λ ⊢ n with n = 1…6 via q-deformed Frame-Robinson-Thrall and classical hook-length formula; also confirms f_λ = |SYT(λ)|.  Documents (2) at q_0 the q-deformed Wedderburn weights w̃_λ = dim_q(λ)² / [n]_q! do NOT sum to 1 — the deviation is recorded for n = 3, 4, 5 (empirical evidence for the 'not a probability measure at q ≠ 1' property called out in AGENTS.md's notation register).  Max residue on (1): 1.20e-24 at q = 1+1e-13 — small enough to confirm the limit while avoiding the 0/0 singularity in [k]_q at q = 1 exactly.",
   "contentBlock": "prop:wedderburn-weight-canonical",
   "parameters": {
-    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
     "max_classical_limit_residue": 1.199999999999846e-24
   },
   "data": {
@@ -313,100 +312,100 @@
     "q_deformed_sum_at_q_0": [
       {
         "n": 3,
-        "n_q_factorial_at_q0": 6.120579277915064,
-        "sum_w_tilde_lambda_at_q0": 0.9874402297736877,
-        "deviation_from_one": 0.01255977022631227,
+        "n_q_factorial_at_q0": 6.120579304762804,
+        "sum_w_tilde_lambda_at_q0": 0.9874402270271896,
+        "deviation_from_one": 0.01255977297281036,
         "per_lambda": [
           {
             "shape": "(3,)",
             "dim_q": 1.0,
-            "w_tilde": 0.16338322805625738
+            "w_tilde": 0.1633832273395817
           },
           {
             "shape": "(2, 1)",
-            "dim_q": 2.0108968667071223,
-            "w_tilde": 0.660673773661173
+            "dim_q": 2.0108968691190756,
+            "w_tilde": 0.6606737723480263
           },
           {
             "shape": "(1, 1, 1)",
             "dim_q": 1.0,
-            "w_tilde": 0.16338322805625738
+            "w_tilde": 0.1633832273395817
           }
         ]
       },
       {
         "n": 4,
-        "n_q_factorial_at_q0": 25.153637004851337,
-        "sum_w_tilde_lambda_at_q0": 0.9821653238356108,
-        "deviation_from_one": 0.017834676164389215,
+        "n_q_factorial_at_q0": 25.153637264748195,
+        "sum_w_tilde_lambda_at_q0": 0.9821653199589623,
+        "deviation_from_one": 0.017834680041037672,
         "per_lambda": [
           {
             "shape": "(4,)",
             "dim_q": 1.0,
-            "w_tilde": 0.0397556822421796
+            "w_tilde": 0.039755681831408915
           },
           {
             "shape": "(3, 1)",
-            "dim_q": 3.043706208532522,
-            "w_tilde": 0.36830250361300276
+            "dim_q": 3.0437062182329013,
+            "w_tilde": 0.36830250215514393
           },
           {
             "shape": "(2, 2)",
-            "dim_q": 2.043706208532522,
-            "w_tilde": 0.166048952125246
+            "dim_q": 2.0437062182329013,
+            "w_tilde": 0.16604895198585665
           },
           {
             "shape": "(2, 1, 1)",
-            "dim_q": 3.043706208532522,
-            "w_tilde": 0.36830250361300276
+            "dim_q": 3.0437062182329013,
+            "w_tilde": 0.36830250215514393
           },
           {
             "shape": "(1, 1, 1, 1)",
             "dim_q": 1.0,
-            "w_tilde": 0.0397556822421796
+            "w_tilde": 0.039755681831408915
           }
         ]
       },
       {
         "n": 5,
-        "n_q_factorial_at_q0": 131.31308484471597,
-        "sum_w_tilde_lambda_at_q0": 0.9822241482832541,
-        "deviation_from_one": 0.017775851716745946,
+        "n_q_factorial_at_q0": 131.31308744281998,
+        "sum_w_tilde_lambda_at_q0": 0.9822241444316945,
+        "deviation_from_one": 0.017775855568305566,
         "per_lambda": [
           {
             "shape": "(5,)",
             "dim_q": 1.0,
-            "w_tilde": 0.007615387310278697
+            "w_tilde": 0.0076153871596039355
           },
           {
             "shape": "(4, 1)",
-            "dim_q": 4.109682411207941,
-            "w_tilde": 0.12862000417524688
+            "dim_q": 4.109682435643728,
+            "w_tilde": 0.12862000315995203
           },
           {
             "shape": "(3, 2)",
-            "dim_q": 5.220441275326898,
-            "w_tilde": 0.207542204505855
+            "dim_q": 5.220441324676728,
+            "w_tilde": 0.2075422043233869
           },
           {
             "shape": "(3, 1, 1)",
-            "dim_q": 6.220441275326898,
-            "w_tilde": 0.2946689563004929
+            "dim_q": 6.220441324676728,
+            "w_tilde": 0.29466895514580865
           },
           {
             "shape": "(2, 2, 1)",
-            "dim_q": 5.220441275326898,
-            "w_tilde": 0.207542204505855
+            "dim_q": 5.220441324676728,
+            "w_tilde": 0.2075422043233869
           },
           {
             "shape": "(2, 1, 1, 1)",
-            "dim_q": 4.109682411207941,
-            "w_tilde": 0.12862000417524688
+            "dim_q": 4.109682435643728,
+            "w_tilde": 0.12862000315995203
           },
           {
             "shape": "(1, 1, 1, 1, 1)",
             "dim_q": 1.0,
-            "w_tilde": 0.007615387310278697
+            "w_tilde": 0.0076153871596039355
           }
         ]
       }

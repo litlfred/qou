@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.2.1",
-  "computedAt": "2026-06-13T13:25:02.608709+00:00",
-  "commitSha": "90727459676ce04618330cc102e795ad226cb817",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-22T13:29:07.755104+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "per_cell_weight_matches_alpha_em",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 38,
+  "durationMs": 10,
   "computation": "yekutieli-per-cell-alpha-em-derivation-probe",
   "scriptFile": "yekutieli_per_cell_alpha_em_derivation_probe.py",
   "scriptHash": "17402bb2c4fd",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,18 +26,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.2",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.11.1",
-    "mpmath": "0.0.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Session A probe: applies τ_q action to ONE ideal octahedron at h² order under the Reading-A geometrised scaffold (PR #1628). Checks if the resulting per-cell coupling weight matches the hypothesized α_em/π factor (the Bring-zero-mode analog). Pre-stated failure signature: weight is a rational times G (Catalan's constant) without an α_em factor.",
   "contentBlock": "prop:yekutieli-non-abelian-stokes",
   "data": {
-    "q_0": "1.10997858275138080759166909561",
+    "q_0": "1.10997859555733471989976322048",
     "alpha_em": "0.00729735256928380099728510547238",
     "G_catalan": "0.915965594177219015054603514932",
     "target_factor_alpha_em_over_pi": "0.0023228194657717191262490312501",

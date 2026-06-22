@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-06T03:42:34.251427+00:00",
-  "commitSha": "b7b1c6be98a4308ff0c95f2071342e91c46edb34",
+  "computedAt": "2026-06-22T13:28:16.246522+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "machinery_recovers_chebyshev_depth2",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "sw-prolongation-symbol",
   "scriptFile": "sw_prolongation_symbol.py",
   "scriptHash": "9dc23454c33e",
-  "scriptCommitSha": "9c0d78ea86036bbe49a3dcd55660bc208f67065a",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,24 +27,21 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "auditOnly": "docs/workplans/2026-06-05-keystone-prolongation-symbol-derivation.md",
   "parameters": {
-    "q_0": "1.1099785827513808075916690956107688798744991218736"
+    "q_0": "1.1099785955573347198997632204832250266562084087802"
   },
   "data": {
     "self_validation_torus_P": {
       "depth": 2,
       "c": [
         "-1.0",
-        "2.04370620853"
+        "2.04370621823"
       ],
-      "expected_c1_2cosh2eta": "2.04370620853"
+      "expected_c1_2cosh2eta": "2.04370621823"
     },
     "binding_aD_status": "only a_D^(4)=Family-A wired; a_D^(2),a_D^(3) gated on #1765 per-knot λ(L) rule — test deferred until consumed"
   }

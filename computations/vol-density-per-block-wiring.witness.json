@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T04:34:11.213371+00:00",
-  "commitSha": "b9cb197ca67be391d8d9074d7aeae9ac5fd4d433",
+  "computedAt": "2026-06-22T13:29:01.314418+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "discipline_gate_per_block_reproduces_production",
-      "computed": "2.3775134219017826858",
+      "computed": "2.3775134287310725851",
       "expected": "1.0",
       "passed": false,
       "tolerance": 1e-06,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "vol-density-per-block-wiring",
   "scriptFile": "vol_density_per_block_wiring.py",
-  "scriptHash": "2c9f41e96981",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ff10560725ae",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,18 +28,16 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Discipline-gate verification of the paper's per-block Σ_λ factor (prop:hoefsmit-scattering-pipeline Stage 4) against production's global linking_weight collapse (vol_density_borromean). Computes m(K) = m_e·[Vol(K)/ℏ_q²]·tr_M(K) per knot using the canonical H₃ Markov trace from the chi-{atom}-h3-at-q0 caches, vs production m = m_e·[Vol/ℏ_q²]·linking_weight (the H₄ scalar 2.53). VERDICT (raw, no fudge): the per-block H₃ trace tr_M(proton)≈1.065 is NOT the global H₄ scalar 2.53; they differ by ≈2.38×. The per-block reading gives m_p≈406 MeV (−56.7%), so production's near-correct m_p does NOT come from the paper's per-block formula as literally written — the global H₄ scalar lands near the CODATA-implied λ≈2.46 coincidentally, using the WRONG index set (H₄ not H₃). This is a flagged structural discrepancy, NOT hard-coded away. Corroborates sibling PR #1608/#1613 findings.",
   "parameters": {
-    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
     "Vol_B3": "7.32772475341775212043682811946",
-    "geom_leading_Vol_over_hbar2": "746.418007597967138987935109265",
-    "linking_weight_H4_global": "2.53277965639939149205151450176",
-    "implied_lambda_m_p_roundtrip": "2.45995227169578169616690802307"
+    "geom_leading_Vol_over_hbar2": "746.417850994545302378902428434",
+    "linking_weight_H4_global": "2.53277966367467598266368381416",
+    "implied_lambda_m_p_roundtrip": "2.45995278781010397423153448025"
   },
   "data": {
     "per_knot": {
@@ -47,21 +45,21 @@
         "n_strands": 3,
         "index_set": "H_3 (partitions of 3)",
         "tr_M_at_q0": "1.0653061442544499757",
-        "geom_leading": "746.41800759796713899",
-        "vol_density_per_block": "795.16368967627911894",
-        "m_per_block_MeV": "406.32781050270446969",
+        "geom_leading": "746.41785099454530238",
+        "vol_density_per_block": "795.16352284569162513",
+        "m_per_block_MeV": "406.32772525244943247",
         "codata_MeV": "938.27208816",
-        "rel_err_per_block": "-0.566940319732"
+        "rel_err_per_block": "-0.566940410591"
       },
       "neutron": {
         "n_strands": 3,
         "index_set": "H_3 (partitions of 3)",
         "tr_M_at_q0": "0.92323322991163717797",
-        "geom_leading": "746.41800759796713899",
-        "vol_density_per_block": "689.1179080188801416",
-        "m_per_block_MeV": "352.13852742384433253",
+        "geom_leading": "746.41785099454530238",
+        "vol_density_per_block": "689.11776343739718417",
+        "m_per_block_MeV": "352.13845354285835184",
         "codata_MeV": "939.56542052",
-        "rel_err_per_block": "-0.625211273496"
+        "rel_err_per_block": "-0.625211352129"
       }
     },
     "linking_weight_h_series": {
@@ -74,13 +72,13 @@
       "c_6": "0.0"
     },
     "ratio_linking_weight_over_trM": {
-      "proton": "2.3775134219017826858",
-      "neutron": "2.743380084620442332"
+      "proton": "2.3775134287310725851",
+      "neutron": "2.7433800925006661529"
     },
-    "production_m_avg_MeV": "966.04982316214401774",
-    "production_gap_pct": "2.8896077213",
-    "per_block_m_avg_MeV": "379.23316896327440111",
-    "per_block_gap_pct": "-59.6095863236",
-    "recovered_fraction_pct": "-1962.89545409"
+    "production_m_avg_MeV": "966.04962325344827606",
+    "production_gap_pct": "2.88958642993",
+    "per_block_m_avg_MeV": "379.23308939765389216",
+    "per_block_gap_pct": "-59.6095947978",
+    "recovered_fraction_pct": "-1962.91094741"
   }
 }

@@ -1,29 +1,29 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T17:47:00.191973+00:00",
-  "commitSha": "73ab94807c7b7dab11d84577584a0c20e28ecf56",
+  "computedAt": "2026-06-22T13:27:32.593868+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "c3_target_proton_matches_canonical",
-      "computed": -2.069342577115168,
+      "computed": -2.0201881281414393,
       "expected": -2.069342577115168,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-12
     },
     {
       "name": "cross_anchor_swing_resolvable",
-      "computed": 1.0,
+      "computed": 0.0,
       "expected": 1.0,
-      "passed": true
+      "passed": false
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 10,
   "computation": "qbeta-composite-crossanchor-2factor-sweep",
   "scriptFile": "qbeta_composite_crossanchor_2factor_sweep.py",
   "scriptHash": "7547d89eb7e7",
-  "scriptCommitSha": "73ab94807c7b7dab11d84577584a0c20e28ecf56",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,108 +32,214 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "Systematic 2-factor composite sweep for the Q_β c_3 f-map, discriminated by cross-anchor agreement (proton AND muon). The CAL-anchored c_3 target is computed at both substrate anchors via the ladder inversion c_3(q)=(Q_codata/Q_N2(q)−1)/u(q)³; a genuine closure must match the target (and its ~0.049 cross-anchor swing) at BOTH anchors, not just at the proton anchor. Supersedes the 6-product proton-only first-test. No fits.",
   "contentBlock": "conj:qbeta-precision-ladder",
   "data": {
-    "q_proton": "1.1099785827513808075916690956107688798744991218736",
+    "q_proton": "1.1099785955573347198997632204832250266562084087802",
     "q_muon": "1.1099785955541805752815940796095093779932822799587",
-    "c3_target_proton": "-2.0693425771151678378797195172496285890220309981034",
+    "c3_target_proton": "-2.0201881281414394558201685539515835304079350729144",
     "c3_target_muon": "-2.0202002350212551713823267498857625189020606133007",
-    "c3_cross_anchor_swing": "0.049142342093912666497392767363866070119970384802752",
+    "c3_cross_anchor_swing": "0.000012106879815715562158195934178988494125540386326271",
     "n_candidates_swept": 1323,
     "verdict": "NEGATIVE_2FACTOR_SATURATED",
     "n_closures": 0,
-    "n_single_anchor_near_matches": 4,
+    "n_single_anchor_near_matches": 27,
     "best_proton_matcher": {
-      "name": "q²+q⁻² − [4]_q",
-      "proton_miss": 0.0016267845048844767,
-      "muon_miss": 0.02265913130411073
+      "name": "(q;q)_3 − [2]_q",
+      "proton_miss": 4.4036175868601566e-05,
+      "muon_miss": 3.8043000444612e-05
     },
     "top12_by_proton_agreement": [
       {
-        "name": "q²+q⁻² − [4]_q",
-        "proton_miss": 0.0016267845048844767,
-        "muon_miss": 0.02265913130411073
+        "name": "(q;q)_3 − [2]_q",
+        "proton_miss": 4.4036175868601566e-05,
+        "muon_miss": 3.8043000444612e-05
       },
       {
-        "name": "[4]_q ÷ -2",
-        "proton_miss": 0.0070077191043995,
-        "muon_miss": 0.017147301637273085
+        "name": "(q;q)_3 − q+q⁻¹",
+        "proton_miss": 4.4036175868601566e-05,
+        "muon_miss": 3.8043000444612e-05
       },
       {
-        "name": "J_Hopf(q) − -2",
-        "proton_miss": 0.007122794475176563,
-        "muon_miss": 0.017029426950530294
+        "name": "(q;q)_2 − q²+q⁻²",
+        "proton_miss": 0.0009913512568847926,
+        "muon_miss": 0.0009973382270488142
       },
       {
-        "name": "(q;q)_3 − q²+q⁻²",
-        "proton_miss": 0.007855708295830722,
-        "muon_miss": 0.016278685162178244
+        "name": "J_Hopf(q) ÷ [2]_q",
+        "proton_miss": 0.0019168259556179839,
+        "muon_miss": 0.001922807379495015
       },
       {
-        "name": "cos_N1 − [3]_q",
-        "proton_miss": 0.011614951580050865,
-        "muon_miss": 0.012427994958557413
+        "name": "J_Hopf(q) ÷ q+q⁻¹",
+        "proton_miss": 0.0019168259556179839,
+        "muon_miss": 0.001922807379495015
       },
       {
-        "name": "[2]_q + J_Hopf(q)",
-        "proton_miss": 0.012388653703914523,
-        "muon_miss": 0.011635471970435442
+        "name": "-2 − (q;q)_2",
+        "proton_miss": 0.002639693757088446,
+        "muon_miss": 0.002633685026091214
       },
       {
-        "name": "[4]_q × tr_M(p2)",
-        "proton_miss": 0.012388653703914523,
-        "muon_miss": 0.011635471970435442
+        "name": "tr_M(p3) − SYT_maj(2,1)",
+        "proton_miss": 0.003318438624116665,
+        "muon_miss": 0.003324411652969472
       },
       {
-        "name": "J_Hopf(q) + q+q⁻¹",
-        "proton_miss": 0.012388653703914523,
-        "muon_miss": 0.011635471970435442
+        "name": "J_Hopf(q) × 1/2",
+        "proton_miss": 0.003521164903138688,
+        "muon_miss": 0.003515150889568626
       },
       {
-        "name": "-2 − h^2",
-        "proton_miss": 0.012388653703914523,
-        "muon_miss": 0.011635471970435442
+        "name": "J_Hopf(q) + q²+q⁻²",
+        "proton_miss": 0.004599204842824017,
+        "muon_miss": 0.0046051701912981895
       },
       {
-        "name": "[2]_q − [4]_q",
-        "proton_miss": 0.01422817454744343,
-        "muon_miss": 0.03889977346584436
+        "name": "-2 − hbar_q^2",
+        "proton_miss": 0.005133650417495856,
+        "muon_miss": 0.0051396125630424234
       },
       {
-        "name": "q+q⁻¹ − [4]_q",
-        "proton_miss": 0.01422817454744343,
-        "muon_miss": 0.03889977346584436
+        "name": "(q;q)_3 + -2",
+        "proton_miss": 0.005349951130205121,
+        "muon_miss": 0.00535591197965024
       },
       {
-        "name": "(q;q)_4 − q²+q⁻²",
-        "proton_miss": 0.014736507509280676,
-        "muon_miss": 0.009230504282990187
+        "name": "-2 − u",
+        "proton_miss": 0.0057771311683193,
+        "muon_miss": 0.005783089457510281
       }
     ],
     "single_anchor_near_matches": [
       {
-        "name": "q²+q⁻² − [4]_q",
-        "proton_miss": 0.0016267845048844767,
-        "muon_miss": 0.02265913130411073
+        "name": "(q;q)_3 − [2]_q",
+        "proton_miss": 4.4036175868601566e-05,
+        "muon_miss": 3.8043000444612e-05
       },
       {
-        "name": "[4]_q ÷ -2",
-        "proton_miss": 0.0070077191043995,
-        "muon_miss": 0.017147301637273085
+        "name": "(q;q)_3 − q+q⁻¹",
+        "proton_miss": 4.4036175868601566e-05,
+        "muon_miss": 3.8043000444612e-05
       },
       {
-        "name": "J_Hopf(q) − -2",
-        "proton_miss": 0.007122794475176563,
-        "muon_miss": 0.017029426950530294
+        "name": "(q;q)_2 − q²+q⁻²",
+        "proton_miss": 0.0009913512568847926,
+        "muon_miss": 0.0009973382270488142
       },
       {
-        "name": "(q;q)_3 − q²+q⁻²",
-        "proton_miss": 0.007855708295830722,
-        "muon_miss": 0.016278685162178244
+        "name": "J_Hopf(q) ÷ [2]_q",
+        "proton_miss": 0.0019168259556179839,
+        "muon_miss": 0.001922807379495015
+      },
+      {
+        "name": "J_Hopf(q) ÷ q+q⁻¹",
+        "proton_miss": 0.0019168259556179839,
+        "muon_miss": 0.001922807379495015
+      },
+      {
+        "name": "-2 − (q;q)_2",
+        "proton_miss": 0.002639693757088446,
+        "muon_miss": 0.002633685026091214
+      },
+      {
+        "name": "tr_M(p3) − SYT_maj(2,1)",
+        "proton_miss": 0.003318438624116665,
+        "muon_miss": 0.003324411652969472
+      },
+      {
+        "name": "J_Hopf(q) × 1/2",
+        "proton_miss": 0.003521164903138688,
+        "muon_miss": 0.003515150889568626
+      },
+      {
+        "name": "J_Hopf(q) + q²+q⁻²",
+        "proton_miss": 0.004599204842824017,
+        "muon_miss": 0.0046051701912981895
+      },
+      {
+        "name": "-2 − hbar_q^2",
+        "proton_miss": 0.005133650417495856,
+        "muon_miss": 0.0051396125630424234
+      },
+      {
+        "name": "(q;q)_3 + -2",
+        "proton_miss": 0.005349951130205121,
+        "muon_miss": 0.00535591197965024
+      },
+      {
+        "name": "-2 − u",
+        "proton_miss": 0.0057771311683193,
+        "muon_miss": 0.005783089457510281
+      },
+      {
+        "name": "cos_N1 ÷ tr_M(p2)",
+        "proton_miss": 0.006192896389287848,
+        "muon_miss": 0.006198852186817088
+      },
+      {
+        "name": "hbar_q^2 − q²+q⁻²",
+        "proton_miss": 0.006781992917699509,
+        "muon_miss": 0.006775959362084824
+      },
+      {
+        "name": "(q;q)_4 − [2]_q",
+        "proton_miss": 0.007004186943410425,
+        "muon_miss": 0.007010137878743445
+      },
+      {
+        "name": "(q;q)_4 − q+q⁻¹",
+        "proton_miss": 0.007004186943410425,
+        "muon_miss": 0.007010137878743445
+      },
+      {
+        "name": "u − q²+q⁻²",
+        "proton_miss": 0.007425473668522953,
+        "muon_miss": 0.007419436256552682
+      },
+      {
+        "name": "-2 − (q;q)_4",
+        "proton_miss": 0.007588210048311333,
+        "muon_miss": 0.007594157483947787
+      },
+      {
+        "name": "-2 ÷ cos_N1",
+        "proton_miss": 0.008405594842658343,
+        "muon_miss": 0.008411537379575661
+      },
+      {
+        "name": "u − [2]_q",
+        "proton_miss": 0.008815265823402458,
+        "muon_miss": 0.00882120590518095
+      },
+      {
+        "name": "u − q+q⁻¹",
+        "proton_miss": 0.008815265823402458,
+        "muon_miss": 0.00882120590518095
+      },
+      {
+        "name": "cos_N1 − 3",
+        "proton_miss": 0.009200664411181392,
+        "muon_miss": 0.00920660218327107
+      },
+      {
+        "name": "(q;q)_4 − q²+q⁻²",
+        "proton_miss": 0.009236552548514985,
+        "muon_miss": 0.009230504282990187
+      },
+      {
+        "name": "hbar_q^2 − [2]_q",
+        "proton_miss": 0.009458746574225903,
+        "muon_miss": 0.009464682799648808
+      },
+      {
+        "name": "hbar_q^2 − q+q⁻¹",
+        "proton_miss": 0.009458746574225903,
+        "muon_miss": 0.009464682799648808
       }
     ],
     "interpretation": "Cross-anchor swing of the c_3 target is large (~2.4%), so a single-anchor proton match is necessary but far from sufficient. Candidates listed under single_anchor_near_matches reproduce the proton target to <1% but FAIL at the muon anchor — they are coincidences, not the f-map. A both-anchor closure (n_closures>0) would identify the residue-A categorical element."

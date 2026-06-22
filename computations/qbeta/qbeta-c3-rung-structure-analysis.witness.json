@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T02:15:19.474736+00:00",
-  "commitSha": "f6634cf53eea7cf9f94556eb085fba18f1c27848",
+  "computedAt": "2026-06-22T13:27:29.401522+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "rung_decomposition_equals_closure",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 310,
+  "durationMs": 246,
   "computation": "qbeta-c3-rung-structure-analysis",
   "scriptFile": "qbeta_c3_rung_structure_analysis.py",
-  "scriptHash": "5003960031e3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "352dd3f8c1a6",
+  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -27,6 +27,7 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -44,11 +45,11 @@
       "matches_J_Hopf_classical_limit": true
     },
     "at_q_0": {
-      "q_0": "1.1099785827513808075916690956107688798744991218736",
-      "rung_0": "-2.043706208532521989402019",
-      "rung_1": "0.01206302537103864062432698",
-      "rung_2": "0.0004837163440454520352282205",
-      "c_3_full": "-2.069348062472493332671029"
+      "q_0": "1.1099785955573347198997632204832250266562084087802",
+      "rung_0": "-2.043706218232901310218245",
+      "rung_1": "0.01206302667493520203034199",
+      "rung_2": "0.0004837164956956220627765728",
+      "c_3_full": "-2.069348075269290713323227"
     },
     "structural_status": {
       "rung_0": "STRUCTURAL (Hopf Jones polynomial; Lean bridge in main)",

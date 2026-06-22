@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T16:51:04.175303+00:00",
-  "commitSha": "6f18f4d2bb737d97b6769e3b12356c8ce27ba205",
+  "computedAt": "2026-06-22T13:26:43.210671+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "proton_per_block_under_uniform_within_1pct",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 13,
   "computation": "option-a-vol-per-knot-light-series",
   "scriptFile": "option_a_vol_per_knot_light_series.py",
-  "scriptHash": "3ed39e0dfea4",
-  "scriptCommitSha": "6f18f4d2bb737d97b6769e3b12356c8ce27ba205",
+  "scriptHash": "5a5f3fe58e2b",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,7 +27,6 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -90,7 +89,7 @@
           ],
           [
             1.0,
-            -0.10453014939781968,
+            -0.10453016099779683,
             0.0
           ],
           [
@@ -139,12 +138,12 @@
           ],
           [
             1.0,
-            -0.10453014939781968,
+            -0.10453016099779683,
             0.0
           ],
           [
             1.0,
-            -0.10453014939781968,
+            -0.10453016099779683,
             0.0
           ],
           [
@@ -198,7 +197,7 @@
           ],
           [
             1.0,
-            -0.10453014939781968,
+            -0.10453016099779683,
             0.0
           ],
           [
@@ -252,7 +251,7 @@
           ],
           [
             1.0,
-            -0.10453014939781968,
+            -0.10453016099779683,
             0.0
           ],
           [
@@ -306,7 +305,7 @@
           ],
           [
             1.0,
-            -0.10453014939781968,
+            -0.10453016099779683,
             0.0
           ],
           [
@@ -360,7 +359,7 @@
           ],
           [
             1.0,
-            -0.10453014939781968,
+            -0.10453016099779683,
             0.0
           ],
           [
