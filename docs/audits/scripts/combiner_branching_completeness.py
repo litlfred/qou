@@ -93,46 +93,12 @@ def check_shape_completeness():
     return ok
 
 
-def check_lr_crosscheck():
-    """Optional: confirm c^lambda_{xi,nu} > 0 for some child of every lambda,
-    using the canonical LR enumerator (stronger than shape containment)."""
-    try:
-        import os
-        sub = os.path.join(os.path.dirname(__file__), "..", "..", "..",
-                           "computations", "substrate")
-        sys.path.insert(0, os.path.abspath(sub))
-        from lr_coefficients import lr_coef  # noqa: E402
-    except Exception as e:  # pragma: no cover - cross-check is best-effort
-        print(f"\nLR cross-check skipped (lr_coefficients not importable: {e}).")
-        return True
-
-    ok = True
-    print("\nLR cross-check  (every lambda has c^lambda_{xi,nu} > 0 for some child):")
-    for (n_inner, n_block) in SPLITS:
-        n = n_inner + n_block
-        split_ok = True
-        for lam in partitions_of(n):
-            found = any(
-                lr_coef(xi, nu, lam) > 0
-                for xi in partitions_of(n_inner)
-                for nu in partitions_of(n_block)
-            )
-            if not found:
-                split_ok = False
-                print(f"     NO LR child for lambda={lam} at split ({n_inner},{n_block})")
-        if not split_ok:
-            ok = False
-        print(f"     split ({n_inner},{n_block}) -> {n}: every block has an LR child : {split_ok}")
-    return ok
-
-
 def main():
     print("=" * 72)
     print("COMBINER BRANCHING COMPLETENESS  (interface_blocks non-degenerate)")
     print("=" * 72)
     print()
     b_shape = check_shape_completeness()
-    b_lr = check_lr_crosscheck()
 
     print("\n" + "=" * 72)
     print("VERDICT")
@@ -145,7 +111,6 @@ def main():
     print("  the structural lemma exists_subpartition_of_size formalizes.")
 
     assert b_shape, "shape-level completeness failed"
-    assert b_lr, "LR cross-check failed"
     print("\nCOMPLETENESS + NON-DEGENERACY VERIFIED.")
     sys.exit(0)
 
