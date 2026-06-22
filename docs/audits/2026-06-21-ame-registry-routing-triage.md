@@ -53,51 +53,46 @@ can confirm value-preservation.
    registry value (a deliberate value change), or (c) leave them is an owner call, not
    a mechanical route.
 
-## Registry ⟷ corpus value disagreement (the reconciliation crux)
+## Registry ⟷ corpus disagreement — RESOLVED against vendored AME2020 (correction)
 
-`pyhecke_native` was built in-sandbox (≈42s) and the SAFE candidate files now run
-exit 0, so routing *could* be verified here. But inspecting the actual `B_AME` dicts
-reveals the deeper problem: **within a single dict, only the tritium value
-(`8.481798`) is byte-exact to the registry** — every other isotope uses a value the
-registry does *not* share. The disagreement is not uniform precision; for ⁶Li/⁷Li it
-is ~100× larger:
+`pyhecke_native` was built in-sandbox (≈42s), unblocking verification, and the SAFE
+candidate files run exit 0. Inspecting the `B_AME` dicts showed that within each dict
+only tritium (`8.481798`) is byte-exact to the registry — every other isotope differs.
 
-| isotope | registry (`AME_B_*`) | corpus literal (common) | Δ | class |
-|---------|---------------------|-------------------------|---|-------|
-| D   | 2.224566   | 2.22456607 | ~0.07 eV | precision (corpus longer) |
-| T   | 8.481798   | 8.481798   | 0        | **byte-exact (SAFE)** |
-| ³He | 7.718043   | 7.7180428  | ~0.2 eV  | 7th-digit |
-| ⁴He | 28.295673  | 28.295674  | ~1 eV    | 1 ulp |
-| **⁶Li** | **31.99405** | **31.99464** | **~590 eV** | **substantive — registry suspect** |
-| **⁷Li** | **39.24397** | **39.24454** | **~570 eV** | **substantive — registry suspect** |
+**An earlier draft of this audit mis-diagnosed the cause** (it claimed the registry's
+⁶Li/⁷Li were wrong and the corpus matched AME2020). Cross-checking **all** registry
+values against the **vendored AME2020 evaluation** (`qou-mass/src/qou_mass/data/ame2020.json`,
+`binding_energy_total_keV` — the authoritative source) corrects the record:
 
-The ⁶Li/⁷Li gaps (~0.6 keV) are two orders of magnitude larger than the others and
-**consistent** (both ≈ +0.58 keV in the corpus over the registry), pointing to a
-data error or stale-source in the registry's `B_li6_MeV` / `B_li7_MeV` (the source
-witness `ame-2020-binding-energies.witness.json`), not a precision nicety. The corpus
-literals (`31.99464`, `39.24454`) are the values to verify against an authoritative
-AME2020 table.
+| isotope | registry (orig) | vendored AME2020 | Δ keV | corpus literal | verdict |
+|---------|-----------------|------------------|------:|----------------|---------|
+| D, T, ³He, ⁴He, ⁸Be, ¹²C, ¹⁶O | … | … | < 0.1 | (various) | registry OK |
+| **⁶Li** | 31.99405 | **31.99399** | +0.06 | 31.99464 | **registry OK; corpus is the +0.65 keV outlier** |
+| **⁵Li** | 26.32800 | **26.33066** | −2.66 | — | **registry error → FIXED** |
+| **⁷Li** | 39.24397 | **39.24508** | −1.11 | 39.24454 | **registry error → FIXED** (corpus also −0.54 keV off) |
+| **⁹Be** | 58.16480 | **58.16402** | +0.78 | — | **registry error → FIXED** |
 
-**Consequence for routing:** mechanically routing corpus files *toward* the registry
-would (a) for most isotopes change the value by 1 ulp (already a violation), and (b)
-for ⁶Li/⁷Li propagate a **likely-wrong** registry value over the corpus value. So the
-"route to registry" direction is not safe even where the literal is close.
+So the genuine errors were **manual-entry transcription mistakes in the registry's
+⁵Li / ⁷Li / ⁹Be values** (the witness `engine` is `"manual-entry"`), not ⁶Li. These
+three are corrected in this PR to the vendored AME2020 values (provenance note added
+to `ame-2020-binding-energies.witness.json`). The corpus literals (`31.99464`,
+`39.24454`, `2.22456607`, …) are a *separate* set of slightly-off values — the routing
+tail still needs them reconciled, but **toward the verified AME2020 values, not toward
+each other**.
 
-## Reconciliation policy needed (answers blocker b)
+## Reconciliation policy (verified)
 
-Before any routing, the registry must be **audited against an authoritative AME2020
-source**, isotope by isotope, to decide per value which side is canonical:
+1. **Registry data (done here):** ⁵Li/⁷Li/⁹Be corrected to vendored AME2020; all other
+   registry binding values verified within 0.1 keV.
+2. **Corpus literals (the routing tail):** the ≤1-ulp and the ⁶Li `31.99464` /
+   ⁷Li `39.24454` corpus values should be routed to the (now-verified) registry
+   exports — which *is* value-improving toward AME2020. This is the safe routing
+   direction, to be done in a compute-enabled env with per-file run-verification.
+3. **Tritium (`8.481798`):** already agrees everywhere; the 60 "SAFE byte-exact" routes
+   are dominated by it.
 
-1. **⁶Li, ⁷Li (~0.6 keV gaps):** verify against AME2020; if the corpus is right, **fix
-   the registry** (`B_li6_MeV`, `B_li7_MeV`) — do not route corpus → registry.
-2. **D, ³He, ⁴He (≤1 ulp):** pick one canonical precision and align both registry and
-   corpus to it (a deliberate, documented value choice).
-3. **T (`8.481798`):** the only value both agree on — the 93 "SAFE" routes are
-   dominated by this single repeated literal; routing just it leaves mixed dicts, so
-   it is low value until the rest is reconciled.
-
-This is an owner / data-audit decision, not a mechanical sweep. The routing should
-follow the audit, not precede it.
+The lesson: "route literals → registry" is sound **only after** the registry is itself
+audited against the authoritative AME2020 source — which this PR does.
 
 ## Cross-references
 

@@ -12,6 +12,7 @@
   "parameters": {
     "source": "AME 2020 (Wang, M. et al., 'The AME 2020 atomic mass evaluation', Chinese Physics C 45.3 (2021) 030003)",
     "precision_note": "Values stored as strings (per codata_constants._load_mpf convention) to preserve precision through JSON round-trip; 6-7 sig figs from the AME 2020 evaluation.",
+    "correction_note_2026-06-22": "B_li5 (26.32800→26.3306625, was −2.66 keV off), B_li7 (39.24397→39.2450807, −1.11 keV), B_be9 (58.16480→58.1640237, +0.78 keV) corrected against the vendored AME2020 binding_energy_total_keV in qou-mass/src/qou_mass/data/ame2020.json (the authoritative evaluation). The other values verified within 0.1 keV; B_li6 (31.99405) confirmed correct (0.06 keV) — an earlier triage mis-flagged it. PR #2577.",
     "derivation_note_c12_o16": "B(12C)=6*(Delta_H + Delta_n)=6*(7.288971+8.071317)=92.16173 MeV (Delta(12C)=0 by the u definition). B(16O)=8*(Delta_H+Delta_n)-Delta(16O)=8*15.360288-(-4.737001)=127.61931 MeV, using AME2020 mass excesses Delta_H=7.288971, Delta_n=8.071317, Delta(16O)=-4.737001 MeV."
   },
   "data": {
@@ -19,11 +20,11 @@
     "B_tritium_MeV": "8.481798",
     "B_he3_MeV": "7.718043",
     "B_he4_MeV": "28.295673",
-    "B_li5_MeV": "26.32800",
+    "B_li5_MeV": "26.3306625",
     "B_li6_MeV": "31.99405",
-    "B_li7_MeV": "39.24397",
+    "B_li7_MeV": "39.2450807",
     "B_be8_MeV": "56.49950",
-    "B_be9_MeV": "58.16480",
+    "B_be9_MeV": "58.1640237",
     "B_c12_MeV": "92.16173",
     "B_o16_MeV": "127.61931"
   }
