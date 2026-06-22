@@ -77,8 +77,8 @@ def projected_traces(q):
     Te = y5[(3, 1, 1)] * chi311
     # H_3 branching cross-check (numerical)
     chi3 = {nu: chi(nu, q) for nu in H3}
-    bran32 = sum(BRANCH[(3, 2)][nu] * chi3[nu] for nu in H3)
-    bran311 = sum(BRANCH[(3, 1, 1)][nu] * chi3[nu] for nu in H3)
+    bran32 = mp.fsum(BRANCH[(3, 2)][nu] * chi3[nu] for nu in H3)
+    bran311 = mp.fsum(BRANCH[(3, 1, 1)][nu] * chi3[nu] for nu in H3)
     return Tmu, Te, {
         "y_32": y5[(3, 2)], "y_311": y5[(3, 1, 1)],
         "chi_32": chi32, "chi_311": chi311,
