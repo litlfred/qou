@@ -20,3 +20,22 @@ preserved — is now run via the E_λ-projected H₅ Markov trace
 - Finding: `docs/audits/2026-06-22-keystone-qdeform-projector-shift.md`;
   witness `computations/keystone-qdeform-projector-shift.witness.json`.
 - No fit; nothing wired. Owner closes (§4a).
+
+## Geometric-level route consolidation (2026-06-22, PR follows) — reduced to ONE owner-gated object
+
+Owner asked to try the geometric (Reeb-Casimir level) route. Corpus-grep shows all
+THREE reducible surfaces are now closed:
+1. **Eigenvalue resonance** (Casimir ℓ(ℓ+1) ↔ content sum) — REFUTED (2026-06-16 negative
+   probe: non-unique ℓ=1,2, fails ℓ=3, tau multi-block).
+2. **q-deformed Markov-trace projector weight** — REFUTED (#2584, this session).
+3. **Contact-geometric equivariant index = W_λ** — owner-gated multi-session; the SU(3)/SO(3)
+   arena is obstructed (Wu-manifold doc), redirected to a U(1)⊂SU(3) Reeb outside isotropy
+   on independent spacetime⊥colour factors.
+
+The on-main (level, chirality) Lean (`ReebChiralitySeparation.lean`, 8f343e10) gives class
+SEPARATION, not a mass functional; adding chirality does not open a tractable mass probe
+(tau still multi-block; (level,chirality)→mass is a fit unless geometry-derived).
+
+**Net:** no in-session tractable probe remains — the q-closure is fully reduced to the single
+owner-gated equivariant-index object. Doc: `docs/audits/2026-06-22-keystone-geometric-level-route-reduction.md`.
+No fit; nothing wired. Owner closes (§4a).
