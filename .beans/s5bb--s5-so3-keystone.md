@@ -39,3 +39,19 @@ SEPARATION, not a mass functional; adding chirality does not open a tractable ma
 **Net:** no in-session tractable probe remains — the q-closure is fully reduced to the single
 owner-gated equivariant-index object. Doc: [`docs/audits/2026-06-22-keystone-geometric-level-route-reduction.md`](../docs/audits/2026-06-22-keystone-geometric-level-route-reduction.md).
 No fit; nothing wired. Owner closes (§4a).
+
+## Geometric angles + WRT + Lean (2026-06-22, PR #2591) — 4-path exploration, owner-authorized
+
+Owner authorized all 4 geometric paths. Results:
+1. **Angles (explicit)** — icosahedral conjugacy angles {0,72,120,144,180°}; SO(3)-restriction
+   validated to 5e-41 with the EXACT φ=1+2cos72° pin; per-irrep Reeb phases computed.
+2. **WRT/Lawrence-Zagier** — index=W_λ DISSOLVES into modular data: W_λ=d_q²/[n]_q! is the modular
+   block weight d²/D² up to the fixed factor D²/[n]_q! (0.982 at n=5), gap EXPLAINED (q-dim≠f^λ).
+   S³/2I is the icosahedral selector but WRT(S³/2I)=W_λ is a type mismatch (number vs family).
+   Open object REFRAMED: Sasakian existence → modular-category identification (more tractable).
+3. **W_λ target** — reproduced to scope-doc numbers (electron 0.29467, muon 0.20754).
+4. **Lean** — `icosahedral_ell1_fivefold_char_eq_golden` (1+2cos(2π/5)=(1+√5)/2) sorry-free
+   (lean-direct EXIT=0), wired into QOU.lean.
+
+Docs: `docs/audits/2026-06-22-keystone-geometric-angles-preflight.md`. No fit; nothing wired.
+Owner closes (§4a).
