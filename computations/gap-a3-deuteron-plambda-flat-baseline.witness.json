@@ -1,0 +1,26 @@
+{
+  "description": "GAP-A-3 §4 binding-P_lambda probe (cbnf, infra-unblocked by pyhecke_native): the flat baseline tr_M(beta_D)=Sum y_lambda chi^lambda (the P_lambda=1 point) and the bar-even (lambda<->lambda^T) admissibility constraint on P_lambda, for the deuteron (n=6). Canonical chi_all_lambda + y_lambda_at(q0 hot path); no convention re-derivation. NOT a fit; the underdetermined Delta_lambda system is not solved.",
+  "computation": "computations/gap_a3_deuteron_plambda_flat_baseline_probe.py",
+  "q0": "1.1099785955541805",
+  "dps": 20,
+  "atom": "deuteron (Z=1, N=1), n=3A=6, braid = atom_braid_word_3A(1,1) (bring_color_weighted interface)",
+  "flat_baseline": {
+    "tr_M_beta_D": "0.38836",
+    "note": "= Sum_lambda y_lambda chi^lambda(beta_D), the P_lambda=1 point; binding lives in (P_lambda-1)",
+    "target_minus_B_D_over_me": "4.353",
+    "A_D_needed_if_P_lambda_flat": "11.21",
+    "dominant_blocks": {"(5,1)": "0.190", "(6)": "0.092", "(4,2)": "0.067", "(3,3)": "0.060"},
+    "ge_3_row_blocks_contribution": "<= 0.01 each"
+  },
+  "bar_even_admissibility": {
+    "p_6": 11,
+    "self_conjugate": ["(3,2,1)"],
+    "conjugate_pairs": [["(6)", "(1,1,1,1,1,1)"], ["(5,1)", "(2,1,1,1,1)"], ["(4,2)", "(2,2,1,1)"], ["(4,1,1)", "(3,1,1,1)"], ["(3,3)", "(2,2,2)"]],
+    "bar_even_subspace_dim": 6,
+    "flat_trace_is_bar_even": false,
+    "max_pair_asymmetry": "0.189 (on (5,1)<->(2,1^4))",
+    "finding": "the flat trace w_lambda=y_lambda chi^lambda(beta_D) is BAR-MIXED (chi^lambda != chi^lambda^T at q0); so the bar-even constraint is NON-TRIVIAL: an admissible P_lambda must actively symmetrise the bar-mixed trace (an O(1) bar-symmetrising part, not a small perturbation)."
+  },
+  "verdict": "Runs the deferred cbnf §4 probe canonically (infra unblocked). Flat baseline tr_M(beta_D)=0.38836; bar-even admissible P_lambda subspace dim 6 of 11; flat trace is bar-mixed so the bar-even constraint is an active O(1) requirement. No P_lambda value proposed (underdetermined system; choosing one = forbidden fit). Immediate follow-up: compare Phase-4-derived A(D) vs 11.21 (needs Vol_hyp(D)).",
+  "discipline": "No fit; no 7th ansatz; nothing wired; c_k/Delta_lambda cal-anchored. Characterises the admissible subspace + baseline only."
+}

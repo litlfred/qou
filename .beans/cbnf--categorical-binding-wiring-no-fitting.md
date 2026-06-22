@@ -82,3 +82,18 @@ Either (a) a categorical derivation (or tight structural constraint) of the
 refutation narrowing the candidate structure. NO 7th fit-ansatz, NO CAL-4.
 
 TRIAGE VERDICT (2026-06-20, "wire now?", session intelligent-pasteur): NOT-YET — nothing wireable. (1+q)/2 confirmed a REFUTED near-match (+0.12% at canonical q0; only tautological [2]_q/2 / (q+1)/2 "match", all independent objects miss 18–90%; docs/audits/2026-06-02-option-e-derive-1plusq-over-2.md, ledger docs/coordination/option-e.md "TESTED → NEAR-MATCH (fit)"). Stays un-wired per the Δ_λ gate; NOT a v10 ansatz. Currently WIRED in production: B_sym (log-trace), B_magic (⁴He), LP/SDP dual contract. The genuine non-fit direction = GAP-A-3 factorization Δ_λ(K)=A(K)·P_λ(K) with A(K) derived (≤2.5%, zero-param) and P_λ(K) OPEN (brane-tower content count). Per bean g3pl that probe is "already run/exhausted; converges on conj:s5-so3-fiber-action". Infra (pyhecke_native χ^λ at q0 + plethystic multiplicity) is buildable per bean pyhk, but P_λ is the OPEN MATH — it reduces to the s5-so3 q-closure (bean s5bb). So: not wireable this session; bottleneck is the s5-so3 keystone, not infra.
+
+## §4 probe RUN (2026-06-22, infra unblocked) — follow-up
+
+The §4 probe this bean deferred ("next step on an infra-enabled session", §5 blocker = no
+pyhecke_native) is now RUN — pyhecke_native was built this session (bean pyhk). Canonical
+chi_all_lambda + y_lambda_at(q₀ hot path), no convention re-derivation. For the deuteron:
+- Flat baseline tr_M(β_D) = Σ_λ y_λ χ^λ(β_D) = 0.38836 (the P_λ≡1 point); A(D)=11.21 would be
+  needed if P_λ≡1. Flat distribution concentrated on 2-row blocks ((5,1),(6),(4,2),(3,3)).
+- Bar-even admissible P_λ subspace = dim 6 of 11 (self-conj {(3,2,1)} + 5 conjugate pairs).
+- NEW: the flat trace w_λ is BAR-MIXED (χ^λ≠χ^λᵀ at q₀; max pair asymmetry 0.189) ⇒ the bar-even
+  constraint is NON-TRIVIAL — an admissible P_λ must actively symmetrise it (O(1) part, not a
+  perturbation). Sharpens §4(ii) from "filter" to "active constraint".
+- No fit; underdetermined system NOT solved (no P_λ proposed). Immediate follow-up: Phase-4-derived
+  A(D) vs 11.21 (needs Vol_hyp(D)).
+Doc: docs/audits/2026-06-22-gap-a3-deuteron-plambda-flat-baseline-bareven.md.
