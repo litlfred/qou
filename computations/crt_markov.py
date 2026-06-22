@@ -49,6 +49,7 @@ import numpy as np
 import mpmath
 
 sys.path.insert(0, str(Path(__file__).parent))
+import _path_bridge  # noqa: F401, E402 — ensure substrate/ on path for direct runs
 from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p for E_0 anchor
 from q_parameter import Q as _Q_CANONICAL
 
