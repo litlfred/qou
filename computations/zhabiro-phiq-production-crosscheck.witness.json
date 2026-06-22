@@ -12,7 +12,7 @@
     "euler_vs_cyclotomic_ok": true,
     "max_euler_vs_cyclo_abs": "3.63848e-47",
     "cross_check_ok": true,
-    "physical_z_note": "production \u03a6_q argument is |V\u0302_i^full| = |tr_M(\u03c3_i)|-type per-generator sub-trace (< q for convergence), per per-braid-mass-tower.md \u2014 NOT the scalar \u210f_q\u00b2."
+    "physical_z_note": "REFUTED as a production wire: at the physical z_i = |V_i^full| (0.59-0.99) the Faddeev Phi_q is 1e2-1e6 (see samples), regressing the mass table (-737 MeV isospin pathology); n-star truncation refuted x6. Production uses the bounded Rogers li2q. See docs/audits/2026-06-18-zhabiro-physical-z-pin-and-wiring-verdict.md."
   },
   "samples": [
     {
@@ -53,6 +53,6 @@
       "QOU.MassEndomorphism.ZHabiroCauchy.eulerTrunc_eq_cyclotomic",
       "QOU.MassEndomorphism.ZHabiroCauchy.zHabiroLimit_coord_eq_eulerTrunc"
     ],
-    "wiring_status": "production \u03a6_q \u2261 Lean eulerCoeff/cyclotomic identification CERTIFIED at q_0; next: route per-generator |V\u0302_i^full| magnitudes through the canonical mass table + dashboards."
+    "wiring_status": "production phi_q UTILITY == Lean eulerCoeff/cyclotomic algebraic Cauchy-limit CERTIFIED at q_0 (the surviving half). Phi_q production mass-wire REFUTED (regresses; n-star refuted x6) -- see docs/audits/2026-06-18-zhabiro-physical-z-pin-and-wiring-verdict.md SS5-6. Bounded-continuation direction: Rogers/real-q face, see docs/audits/2026-06-22-zhabiro-bounded-rogers-continuation-direction.md."
   }
 }
