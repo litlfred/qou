@@ -133,9 +133,9 @@ def main() -> int:
                 skipped.append((lam, "intertwiner empty"))
                 cell, st = f"{'(intertwiner empty)':>16}", "⚠"
             else:
-                chi_comb = sum((aoa._trace(info["A"] * _kron(rmu[mu], rnu[nu]))
-                                for (mu, nu), info in Ac.items() if "A" in info),
-                               mp.mpf(0))
+                chi_comb = mp.fsum(
+                    aoa._trace(info["A"] * _kron(rmu[mu], rnu[nu]))
+                    for (mu, nu), info in Ac.items() if "A" in info)
                 full_fac = (inner_fac + [(mp.mpf(1), -h / 2, 5)]
                             + ops_to_factors(outer_ops, h))
                 chi_true = aoa._trace(word_matrix(mats9, full_fac))
