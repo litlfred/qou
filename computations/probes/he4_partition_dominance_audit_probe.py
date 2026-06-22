@@ -202,8 +202,10 @@ def main() -> int:
 
     builder.add_data("cache_anchor_q_0", cache["q_0_50dps"])
     builder.add_data("cache_anchor_note", (
-        "Cache was generated at pre-2026-05-28 muon anchor q_0=1.10997859555…; "
-        "current production anchor is q_proton=1.10997858275… (Δq ≈ 1.28e-8). "
+        "Cache was generated at q_0=1.10997859555…, which is within ~3e-12 of "
+        "the CURRENT canonical proton re-pin q_at()≈1.1099785955573… (2026-05-28) "
+        "and of the muon anchor q_muon_at()≈1.10997859555418…. The retired "
+        "pre-re-pin proton anchor was 1.10997858275… (Δq ≈ 1.28e-8 from current). "
         "Cross-anchor q-stability of the contribution table is plausible at "
         "this scale but not formally verified by this probe."
     ))
