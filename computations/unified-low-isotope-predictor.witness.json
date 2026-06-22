@@ -1,15 +1,15 @@
 {
   "engine": "python+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T04:40:45.234978+00:00",
-  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
+  "computedAt": "2026-06-22T14:50:12.389511+00:00",
+  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 26,
   "computation": "unified-low-isotope-predictor",
   "scriptFile": "unified_low_isotope_predictor.py",
-  "scriptHash": "9235088473e3",
-  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
+  "scriptHash": "4e8e493c653b",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,8 +48,8 @@
         "k3_plus_tail": -10575.101144352631,
         "delta_m_shell": 0.043524921407322795,
         "B_pred_MeV": -10570.824174533187,
-        "B_AME_MeV": 2.2245662000000004,
-        "err_pct": -475285.86655381107
+        "B_AME_MeV": 2.22456612,
+        "err_pct": -475285.883642478
       },
       {
         "sym": "T",
@@ -63,8 +63,8 @@
         "k3_plus_tail": -14521.123471916804,
         "delta_m_shell": 0.043524921407322795,
         "B_pred_MeV": "-14509.1559378691",
-        "B_AME_MeV": 8.481796200000002,
-        "err_pct": "-171162.303263891"
+        "B_AME_MeV": 8.4817984,
+        "err_pct": "-171162.258893929"
       },
       {
         "sym": "3He",
@@ -78,8 +78,8 @@
         "k3_plus_tail": 0.0,
         "delta_m_shell": 0.043524921407322795,
         "B_pred_MeV": "11.844465595242",
-        "B_AME_MeV": 7.71804132,
-        "err_pct": "53.4646564349053"
+        "B_AME_MeV": 7.7180375,
+        "err_pct": "53.4647323913887"
       },
       {
         "sym": "4He",
@@ -93,8 +93,8 @@
         "k3_plus_tail": 0.0,
         "delta_m_shell": 0.043524921407322795,
         "B_pred_MeV": "23.6377482315158",
-        "B_AME_MeV": 28.2956624,
-        "err_pct": "-16.461583767285"
+        "B_AME_MeV": 28.2956912,
+        "err_pct": "-16.4616687945908"
       },
       {
         "sym": "6Li",
@@ -108,8 +108,8 @@
         "k3_plus_tail": 0.0,
         "delta_m_shell": 0.043524921407322795,
         "B_pred_MeV": "31.9751121931683",
-        "B_AME_MeV": 31.993987199999996,
-        "err_pct": "-0.058995481600097"
+        "B_AME_MeV": 31.99405,
+        "err_pct": "-0.0591916522969708"
       },
       {
         "sym": "7Li",
@@ -188,8 +188,8 @@
       }
     ],
     "stats": {
-      "mean_abs_err_pct": "64656.7395460625",
-      "max_abs_err_pct": 475285.86655381107
+      "mean_abs_err_pct": "64656.7368536485",
+      "max_abs_err_pct": 475285.883642478
     }
   },
   "caveats": [
