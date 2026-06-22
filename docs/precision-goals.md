@@ -272,6 +272,17 @@ declined on 2026-05-08:
 Subgoal-2 is **out of scope** unless and until the ledger decision is
 reverted by the repo owner.
 
+> **Narrow owner reversal (2026-06-19, recorded 2026-06-22; PRs
+> [#2503](https://github.com/litlfred/qou/pull/2503) /
+> [#2524](https://github.com/litlfred/qou/pull/2524)).** The owner reversed
+> the decline **only for the s5-so3 keystone geometric-realization
+> construction** — the DG / WRT(S³/2I) build of the `W_λ` index (see
+> [`docs/coordination/s5-so3-keystone.md`](coordination/s5-so3-keystone.md)).
+> That geometric `W_λ` build is now **in scope**. The reversal is narrow: it
+> does **not** reopen fit-based q_0 derivation, and the Δ_λ "no seventh
+> fit-based ansatz" rule still holds. All other Subgoal-2 items remain out of
+> scope without explicit owner sign-off.
+
 ## Where measured
 
 Live snapshot: `computations/per-observable-100x-status.witness.json`
