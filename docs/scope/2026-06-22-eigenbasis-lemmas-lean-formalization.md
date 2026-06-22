@@ -26,13 +26,17 @@ ribbon-twist eigenvalue θ_λ = q^{2κ_λ} as the axiom class
 conditional on that class where the categorical input is needed (§3b-cond
 conditional-class discipline) — never a vacuous self-assuming projection.
 
-New file: `QOU/BraidKnot/EigenbasisStructuralLemmas.lean`.
+New file: `QOU/BraidKnot/EigenbasisStructuralLemmas.lean` (registered in the
+`QOU.BraidKnot` aggregator).
 
-| Lemma | Statement | Plan | Risk |
-|---|---|---|---|
-| **L3** framing GF | `Σ_m t^m χ_λ(β·Δ^{2m}) = χ_λ(β)/(1 − t·q^{2c(λ)})` | framing by Δ^{2m} scales χ_λ by θ_λ^m (from `RibbonTwistEigenvalue` + `q^{2mκ}=(q^{2κ})^m`); finite geometric closed form `(1−tθ)·Σ_{m<N} (tθ)^m χ = χ(1−(tθ)^N)`. | low — clean corollary, infra exists |
-| **L1** order-parity | χ_λ(β) Laurent exponents ≡ L (mod 2), ∀λ | abstract odd-Laurent-degree crossing factors ⇒ length-L product (and its trace) has degree ≡ L (mod 2). | medium — parity bookkeeping |
-| **L2** bar-involution | χ_λ(1/q) = ε_λ χ_{λ'}(q), ε_λ ∈ {±1} | the q↔−q⁻¹ seminormal eigenvalue swap = V_λ≅V_{λ'} intertwiner. | high — must be derived, not axiomatized, to avoid a vacuous projection |
+| Lemma | Lean theorem(s) | Status |
+|---|---|---|
+| **L3** framing GF | `framing_gf_closed_form` (geometric closed form `(1−tθ)·Σ = c₀·(1−(tθ)^N)`, single pole at `t=θ⁻¹`) + `framing_eigenvalue_pow` (`q^{2mκ}=(q^{2κ})^m`) | ✅ **sorry-free** |
+| **L1** order-parity | `character_qneg_parity` — `q↦−q` form: `χ(−q)=(−1)^L·χ(q)` (≡ Laurent exponents ≡ L mod 2, since `q^k↦(−1)^k q^k`) | ✅ **sorry-free** |
+| **L2** bar-involution | `character_bar_conjugate` + `character_bar_conjugate_sign` — §3b-cond: factor-level seminormal bar↔conjugate relation (input) ⟹ derived `χ_λ(q⁻¹)=s^L·χ_{λ'}(q)`, `ε=s^L∈{±1}` | ✅ **sorry-free** |
+
+All three verified `lean`-direct against the restored `lake-cache/qou-v4-24-0`
+oleans (exit 0, no warnings, no `sorry`).
 
 ## Discipline
 
