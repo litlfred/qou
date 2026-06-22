@@ -96,35 +96,34 @@ private theorem quadratic_nonneg_implies_linear_zero
     have h_a2_eq : a ^ 2 = 0 := le_antisymm h_a2_le (sq_nonneg a)
     exact (pow_eq_zero_iff two_ne_zero).mp h_a2_eq
 
-/-- **External lemma (Horn–Johnson 2013 §7.7): 2-index quadratic
-    form expansion.**
+/-- **2-index quadratic form expansion (Horn–Johnson 2013 §7.7).**
 
     For a Hermitian matrix `C` and a two-support test vector
-    `α · e_i + β · e_j` (with `i ≠ j`), the quadratic form expands
-    to `α² C_ii + 2αβ C_ij + β² C_jj`.
+    `α · e_i + β · e_j`, the quadratic form expands to
+    `α² C_ii + 2αβ C_ij + β² C_jj`.
 
-    Proof: expand `dotProduct` as a `Finset.sum`, collapse the four
-    cross-terms via `Finset.sum_ite_eq'`, use Hermitian symmetry to
-    identify `C j i = C i j`.  The mechanical unfolding involves
-    Mathlib API names that have shifted between versions
-    (`Matrix.dotProduct` → top-level `dotProduct`, `Pi.single`
-    elaboration changes); recorded as an axiom pending the next
-    Mathlib API stabilisation. -/
+    Proved directly: distribute `mulVec`/`dotProduct` over the two
+    `Pi.single` summands (`mulVec_add`, `add_dotProduct`,
+    `dotProduct_add`), collapse each `single` term (`mulVec_single`,
+    `single_dotProduct`, `col_apply`, `op_smul_eq_mul`), identify
+    `C j i = C i j` by Hermitian symmetry, and close with `ring`.
+    (The identity in fact holds for all `i, j`; the `i ≠ j`
+    hypothesis is retained for the call sites and is unused in the
+    proof.)  Previously an `axiom` "pending Mathlib API
+    stabilisation"; now discharged with the current API. -/
 -- Ref: [horn-johnson-2013] *Matrix Analysis*, §7.7
-axiom quadratic_form_two_index_axiom :
-    ∀ {n : ℕ} {C : Matrix (Fin n) (Fin n) ℝ} (_hH : C.IsHermitian)
-      (α β : ℝ) {i j : Fin n} (_hij : i ≠ j),
-        dotProduct (star (Pi.single i α + Pi.single j β))
-          (C.mulVec (Pi.single i α + Pi.single j β)) =
-        α ^ 2 * C i i + 2 * α * β * C i j + β ^ 2 * C j j
-
 private theorem quadratic_form_two_index
     {C : Matrix (Fin n) (Fin n) ℝ} (hH : C.IsHermitian)
-    (α β : ℝ) {i j : Fin n} (hij : i ≠ j) :
+    (α β : ℝ) {i j : Fin n} (_hij : i ≠ j) :
     dotProduct (star (Pi.single i α + Pi.single j β))
       (C.mulVec (Pi.single i α + Pi.single j β)) =
-    α ^ 2 * C i i + 2 * α * β * C i j + β ^ 2 * C j j :=
-  quadratic_form_two_index_axiom hH α β hij
+    α ^ 2 * C i i + 2 * α * β * C i j + β ^ 2 * C j j := by
+  have hsymm : C j i = C i j := by have := hH.apply i j; simpa using this
+  simp only [star_trivial, mulVec_add, dotProduct_add, add_dotProduct,
+             mulVec_single, single_dotProduct, Pi.smul_apply, col_apply,
+             op_smul_eq_mul]
+  rw [hsymm]
+  ring
 
 /-- **External axiom (Horn–Johnson 2013 §7.7; Boyd–Vandenberghe
     2004 §A.5.3): Cauchy–Schwarz inequality for PSD entries.**
