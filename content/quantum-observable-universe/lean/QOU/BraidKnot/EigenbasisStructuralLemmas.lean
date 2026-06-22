@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Order.Ring.GeomSum
+import Mathlib.Algebra.MonoidAlgebra.Support
 import Mathlib.Tactic
 import QOU.BraidKnot.ChiralityWritheRibbon
 
@@ -153,6 +154,72 @@ theorem character_qneg_parity {L : ℕ} {ι : Type*} (paths : Finset ι)
     refine prod_congr rfl (fun i _ => ?_)
     rw [hodd p i]; ring
   rw [hp, prod_mul_distrib, prod_const, card_univ, Fintype.card_fin]
+
+/-! ### L1 — literal Laurent-support form -/
+
+/-- A Laurent polynomial `p ∈ ℝ[ℤ] = LaurentPolynomial ℝ` is **`ε`-parity-
+homogeneous** when every exponent in its support has parity `ε` (the zero
+polynomial vacuously, for every `ε`).  This is the literal "all exponents
+≡ ε (mod 2)" content behind the `q ↦ −q` symmetry of `character_qneg_parity`. -/
+def ParityHom (ε : ZMod 2) (p : AddMonoidAlgebra ℝ ℤ) : Prop :=
+  ∀ k ∈ p.support, (k : ZMod 2) = ε
+
+/-- Parity adds under multiplication of Laurent polynomials (the exponent of a
+product term is the sum of the factor exponents). -/
+theorem ParityHom.mul {a b : ZMod 2} {p r : AddMonoidAlgebra ℝ ℤ}
+    (hp : ParityHom a p) (hr : ParityHom b r) : ParityHom (a + b) (p * r) := by
+  intro k hk
+  obtain ⟨i, hi, j, hj, rfl⟩ := Finset.mem_add.mp (AddMonoidAlgebra.support_mul p r hk)
+  push_cast
+  rw [hp i hi, hr j hj]
+
+/-- The constant `1` is parity-`0` (its only exponent is `0`). -/
+theorem ParityHom.one : ParityHom 0 (1 : AddMonoidAlgebra ℝ ℤ) := by
+  intro k hk
+  have hk0 : k ∈ ({0} : Finset ℤ) := AddMonoidAlgebra.support_one_subset hk
+  rw [Finset.mem_singleton] at hk0
+  subst hk0; rfl
+
+/-- The zero polynomial is vacuously parity-`ε` for any `ε`. -/
+theorem ParityHom.zero {ε : ZMod 2} : ParityHom ε (0 : AddMonoidAlgebra ℝ ℤ) := by
+  intro k hk; simp at hk
+
+/-- Sum of `ε`-homogeneous Laurent polynomials is `ε`-homogeneous. -/
+theorem ParityHom.add {ε : ZMod 2} {p r : AddMonoidAlgebra ℝ ℤ}
+    (hp : ParityHom ε p) (hr : ParityHom ε r) : ParityHom ε (p + r) := by
+  intro k hk
+  rcases Finset.mem_union.mp (Finsupp.support_add hk) with h | h
+  · exact hp k h
+  · exact hr k h
+
+/-- A product of `L` odd (parity-`1`) Laurent factors is `(L mod 2)`-homogeneous. -/
+theorem ParityHom.listProd : ∀ {l : List (AddMonoidAlgebra ℝ ℤ)},
+    (∀ p ∈ l, ParityHom 1 p) → ParityHom (l.length : ZMod 2) l.prod
+  | [], _ => by simpa using ParityHom.one
+  | p :: t, h => by
+      rw [List.prod_cons, List.length_cons]
+      have hp : ParityHom 1 p := h p List.mem_cons_self
+      have ht : ParityHom (t.length : ZMod 2) t.prod :=
+        ParityHom.listProd (fun q hq => h q (List.mem_cons_of_mem p hq))
+      have hmul := hp.mul ht
+      rwa [show (1 : ZMod 2) + (t.length : ZMod 2) = ((t.length + 1 : ℕ) : ZMod 2) by
+        push_cast; ring] at hmul
+
+/-- **L1 — literal Laurent-support form.**  The Hecke character
+`χ_λ(β) = Σ_p Π_{i<L} a(p,i)`, a sum of `L`-fold products of odd (parity-`1`)
+crossing factors, has **every Laurent exponent of parity `≡ L (mod 2)`**.  This
+is the exponent-level statement of `character_qneg_parity` (whose `q↦−q` form
+`χ(−q)=(−1)^L χ(q)` is the evaluation face of the same fact). -/
+theorem character_support_parity {L : ℕ} {ι : Type*} (paths : Finset ι)
+    (a : ι → List (AddMonoidAlgebra ℝ ℤ))
+    (hlen : ∀ p ∈ paths, (a p).length = L)
+    (hodd : ∀ p ∈ paths, ∀ f ∈ a p, ParityHom 1 f) :
+    ParityHom (L : ZMod 2) (∑ p ∈ paths, (a p).prod) := by
+  refine Finset.sum_induction _ (ParityHom (L : ZMod 2))
+    (fun _ _ ha hb => ParityHom.add ha hb) ParityHom.zero ?_
+  intro p hp
+  rw [← hlen p hp]
+  exact ParityHom.listProd (hodd p hp)
 
 /-! ## L2 — bar-involution ↔ conjugation duality -/
 
