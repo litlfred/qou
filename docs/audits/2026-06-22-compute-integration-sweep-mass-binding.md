@@ -67,10 +67,9 @@ the conjecture with the proven `towerTerm_at_zero` / `phi_q_at_zero`. The
 `saddle_phi_q_eq_towerTerm` field is the open conjectural input (the AJ-saddle
 identification, open for `𝓑₃`). A full proof is research-grade
 (saddle-point / Stokes); this turns the prose conjecture into a typed Lean
-object that downstream can depend on conditionally. *(Local Lean verify
-unavailable — olean restore failed and a from-source build would storm Mathlib;
-the additions mirror verified idioms in the same file, but CI / lean-direct must
-confirm elaboration.)*
+object that downstream can depend on conditionally. *(Verified via lean-direct
+— `lean-v4.24.0` against restored `lake-cache/qou-v4-24-0` oleans, exit 0,
+sorry-free; the conjecture is a class field, not a `sorry`.)*
 
 ### 2. A=3 ³He operator-form combiner → binding: BLOCKED at the Δ_λ gate
 
