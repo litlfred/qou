@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T22:42:42.119410+00:00",
-  "commitSha": "5f5e7107d54440ae8bd5d2de9571831ac92a3508",
+  "computedAt": "2026-06-22T15:29:52.104249+00:00",
+  "commitSha": "eda70311ec6e676225371b0db08b5bfadc1b6d45",
   "assertions": [
     {
       "name": "rotation_phase_lead_evaluated",
@@ -14,82 +14,88 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2163,
+  "durationMs": 1085,
   "computation": "binding-rotation-phase-lead",
   "scriptFile": "binding_rotation_phase_lead.py",
-  "scriptHash": "0d9a7e7d4b3d",
-  "scriptCommitSha": "5595010eb6f6937b38b71c61af999478dc28549f",
+  "scriptHash": "3f77088793b7",
+  "scriptCommitSha": "d6ac02a305ebd7c5d22ee22f4a44e7a79156c20c",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Push the q-Reeb rotation-phase binding lead: ρ_needed = B_AME / Σ(Δθ aggregation) for unweighted / dim / Markov(y_λ) / signed-Markov per-rep phase shifts (free→bound), D/T/³He/⁴He. Reports ρ spread and the A=3 mirror-pair (T,³He) sub-spread. Derive-or-refute, no AME fit; ⁴He doubly-magic Coulomb (sinh channel) handled separately.",
   "data": {
     "aggregations": {
       "S1_unweighted": {
         "rho_needed": {
-          "D": "0.387468",
-          "T": "1.03142",
-          "3He": "0.908675",
-          "4He": "1.6419"
+          "D": "0.387495",
+          "T": "1.03143",
+          "3He": "0.908679",
+          "4He": "1.64191"
         },
-        "spread_pct": 323.7519586599082,
-        "A3_pair_spread_pct": 13.508448045950994
+        "spread_pct": 323.7246581406623,
+        "A3_pair_spread_pct": 13.50879301508252
       },
       "S2_dim": {
         "rho_needed": {
-          "D": "0.06518",
-          "T": "0.0104922",
-          "3He": "0.00866478",
+          "D": "0.0651846",
+          "T": "0.0104921",
+          "3He": "0.00866485",
           "4He": "0.000927468"
         },
-        "spread_pct": 6927.731687750873,
-        "A3_pair_spread_pct": 21.09033784874854
+        "spread_pct": 6928.228335553422,
+        "A3_pair_spread_pct": 21.088624910938968
       },
       "S3_markov": {
         "rho_needed": {
-          "D": "14.6673",
-          "T": "18.3453",
-          "3He": "18.6512",
-          "4He": "54.7932"
+          "D": "14.669",
+          "T": "18.3455",
+          "3He": "18.6516",
+          "4He": "54.7934"
         },
-        "spread_pct": 273.5729625315357,
-        "A3_pair_spread_pct": 1.6677247294407893
+        "spread_pct": 273.5323123578952,
+        "A3_pair_spread_pct": 1.6689518250067703
       },
       "S4_markov_signed": {
         "rho_needed": {
-          "D": "14.5639",
-          "T": "18.4005",
-          "3He": "18.6949",
-          "4He": "54.7266"
+          "D": "14.5655",
+          "T": "18.4007",
+          "3He": "18.6953",
+          "4He": "54.7269"
         },
-        "spread_pct": 275.76945143029633,
-        "A3_pair_spread_pct": 1.599937542745944
+        "spread_pct": 275.72846884604115,
+        "A3_pair_spread_pct": 1.601158026263727
       }
     },
     "tightest": {
       "aggregation": "S3_markov",
-      "spread_pct": 273.5729625315357,
-      "A3_pair_spread_pct": 1.6677247294407893
+      "spread_pct": 273.5323123578952,
+      "A3_pair_spread_pct": 1.6689518250067703
     },
     "d0_strong_channel": {
       "per_atom": {
         "D": {
-          "rho_full": "14.6673",
+          "rho_full": "14.669",
           "rho_d0_strong": "16.7979"
         },
         "T": {
-          "rho_full": "18.3453",
+          "rho_full": "18.3455",
           "rho_d0_strong": "19.9307"
         },
         "3He": {
-          "rho_full": "18.6512",
+          "rho_full": "18.6516",
           "rho_d0_strong": "19.201"
         }
       },
-      "DTHe3_spread_full_pct": 27.161781650337822,
+      "DTHe3_spread_full_pct": 27.149771627241105,
       "DTHe3_spread_d0_pct": 18.649950291405503,
       "note": "Removing the antisymmetric −h (sinh) inter-nucleon term (d=0, symmetric cosh/strong channel) tightens the D/T/³He spread and pulls D up toward the A=3 scale — the sinh term carries the deuteron's anomaly. D/T/³He only (H₁₂ too slow)."
     }
