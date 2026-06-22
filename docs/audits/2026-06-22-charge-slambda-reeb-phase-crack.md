@@ -117,6 +117,61 @@ braid-word construction artifact is the residual open piece** — it is *not* a
 missing scale and *not* a fit. The Coulomb scale lies inside the bracket; pinning
 it remains gated (CAL-4 / Δ_λ).
 
+## Diagnosis — the 5.9% cosh asymmetry is an artifact; the split is all-sinh
+
+Probe: [`he3_tritium_cosh_asymmetry_diagnosis.py`](../../computations/he3_tritium_cosh_asymmetry_diagnosis.py)
+→ [`he3-tritium-cosh-asymmetry-diagnosis.witness.json`](../../computations/he3-tritium-cosh-asymmetry-diagnosis.witness.json).
+
+The braid-word construction
+([`atom_braid_word_3A`](../../computations/mass_at_3A_proper.py)) builds each
+nucleon from intra chains (proton = uud, neutron = udd) plus an inter-nucleon
+crossing. The proton−neutron **intra** difference in the identity-coefficient
+sum is **exactly `+h = +(q−q⁻¹)`** (ratio = 1.000000) — a single linear-in-`h`
+term, i.e. **bar-odd (sinh)**, exactly as the cheat-sheet "n−p difference is
+bar-odd" rule requires. But `strong_channel_rho` zeros `d` **only** on
+inter-nucleon generators (`k%3==2`), leaving the intra-nucleon bar-odd term in
+the "cosh" bucket. Testing the per-λ characters χ_λ (n=9) of ³H vs ³He under
+three `d`-treatments:
+
+| `d`-treatment | max&#124;Δχ_λ&#124; (³H vs ³He) | meaning |
+|---|---|---|
+| full (all `d`) | 3.235 | mirror partners differ |
+| inter-zeroed (current "strong") | 0.913 | the spurious 5.9% asymmetry |
+| **all-`d`-zeroed (true cosh)** | **0.000** | **³H ≡ ³He, bit-for-bit** |
+
+**The all-`d`-zeroed (charge-symmetric) cosh channel makes ³H and ³He identical
+— zero split.** So the 5.9% "cosh asymmetry" is a **pure artifact** of
+`strong_channel_rho`'s incomplete sinh-removal (it strips only the inter-nucleon
+`−h`, not the intra-nucleon bar-odd `d=+h` p/n distinction). With `c≡1` and every
+`d` a multiple of `h`, zeroing all `d` collapses both uud and udd chains to the
+same σ-powers at the same generators — hence the exact identity.
+
+**Consequences (correcting the bracket above):**
+
+1. The earlier `(60%, 118%)` cosh/sinh bracket was an artifact of the incomplete
+   split. Properly, **cosh = 0** and **the entire ³H/³He split is bar-odd
+   (sinh)** — consistent with the framework's bar-odd assignment of the n−p
+   difference (cheat sheet; `crossing-energy-decomposition.lean`).
+2. The honest residual is therefore a single, clean overshoot of the all-sinh
+   q-Reeb phase, best stated at the **binding-ratio** level (the split is a
+   difference of near-equal binding energies, so it amplifies):
+
+   | q-Reeb (universal ρ), all bar-odd | predicted | actual | error |
+   |---|---|---|---|
+   | binding **ratio** B(³H)/B(³He) | 1.1173 | 1.0990 | **+1.7%** |
+   | split B(³H)−B(³He) | 0.905 MeV | 0.764 MeV | +19% |
+
+   The q-Reeb phase captures the Coulomb split to **1.7% at the ratio level**,
+   entirely in the bar-odd channel, **no fit**; difference-taking amplifies that
+   to the 19% split overshoot. The residual is sub-2% physics (genuine
+   charge-symmetry breaking + higher-order phase), **not** a missing mechanism
+   and **not** a cosh/sinh mixing ambiguity.
+
+**Producer note (minor):** `strong_channel_rho`'s "strong/cosh channel" is
+incompletely sinh-stripped (inter-nucleon only). Its `d0(strong)` outputs should
+be read as "inter-nucleon-symmetrised", not true charge-symmetric cosh. Not
+rewired here (exploratory producer); documented for future use.
+
 ## Lean status
 
 **No new Lean.** The two structural inputs are already formalised/witnessed: the
