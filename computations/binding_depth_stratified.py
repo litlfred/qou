@@ -68,7 +68,7 @@ import mpmath as mp
 
 from _precision import set_compute_dps, fmt
 from witness_base import WitnessBuilder
-from codata_constants import M_E_MEV
+from codata_constants import M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 from mass_at_3A_proper import (
     atom_braid_word_3A, markov_trace_3A, dim_q, qfac,
     E_0_CALIBRATION_MEV)
@@ -76,10 +76,10 @@ from q_parameter import Q as Q0
 
 
 B_AME = {
-    "D":   mp.mpf("2.22456607"),
-    "T":   mp.mpf("8.481798"),
-    "3He": mp.mpf("7.7180428"),
-    "4He": mp.mpf("28.295674"),
+    "D":   AME_B_DEUTERON_MEV_VALIDATION,
+    "T":   AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
