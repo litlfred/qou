@@ -27,5 +27,12 @@ export default proposition({
     "theorem-level",
     "analytic-number-theory-bridge",
   ],
-  uses: ["prop:cyclotomic-dimension-synthesis-all-depths"],
+  // The constructive proof of β(3)=π³/32 invokes Theorem A
+  // (prop:jonquiere-cyclotomic-tate-rationality) alongside Theorem G
+  // (prop:cyclotomic-dimension-synthesis-all-depths). Both live in mass-theory
+  // (an earlier chapter) — genuine backward dependencies, no forward-ref.
+  uses: [
+    "prop:cyclotomic-dimension-synthesis-all-depths",
+    "prop:jonquiere-cyclotomic-tate-rationality",
+  ],
 });
