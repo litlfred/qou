@@ -175,15 +175,14 @@ _AME2020_JSON = _WITNESS_DIR.parent / "qou-mass" / "src" / "qou_mass" / "data" /
 def _ame2020() -> dict:
     if _AME2020_JSON not in _WITNESS_CACHE:
         with _AME2020_JSON.open("r", encoding="utf-8") as fh:
-            _WITNESS_CACHE[_AME2020_JSON] = json.load(fh)
+            data = json.load(fh)
+        data["_index"] = {(e["Z"], e["A"]): e for e in data["entries"]}  # O(1) lookup
+        _WITNESS_CACHE[_AME2020_JSON] = data
     return _WITNESS_CACHE[_AME2020_JSON]
 
 
 def _ame_entry(Z: int, A: int) -> dict:
-    for e in _ame2020()["entries"]:
-        if e["Z"] == Z and e["A"] == A:
-            return e
-    raise KeyError(f"AME2020 entry (Z={Z}, A={A}) not found in {_AME2020_JSON.name}")
+    return _ame2020()["_index"][(Z, A)]
 
 
 # u→MeV is itself documented once, in the data file's own metadata
@@ -197,12 +196,12 @@ del _re
 
 def _ame_binding_mev(Z: int, A: int) -> mp.mpf:
     """Total nuclear binding energy (MeV) read from vendored AME2020."""
-    return mp.mpf(repr(_ame_entry(Z, A)["binding_energy_total_keV"])) / 1000
+    return mp.mpf(str(_ame_entry(Z, A)["binding_energy_total_keV"])) / 1000
 
 
 def _ame_atomic_mev(Z: int, A: int) -> mp.mpf:
     """Neutral-atom mass (MeV) read from vendored AME2020 (atomic_mass_micro_u·u)."""
-    return mp.mpf(repr(_ame_entry(Z, A)["atomic_mass_micro_u"])) * mp.mpf("1e-6") * _U_MEV
+    return mp.mpf(str(_ame_entry(Z, A)["atomic_mass_micro_u"])) * mp.mpf("1e-6") * _U_MEV
 
 
 AME_B_DEUTERON_MEV_VALIDATION = _ame_binding_mev(1, 2)
