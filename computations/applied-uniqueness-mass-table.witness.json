@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-05T19:25:17.509624+00:00",
-  "commitSha": "5ea24b6edb5715657922748534983a0b8e447ca0",
+  "computedAt": "2026-06-22T03:57:52.573595+00:00",
+  "commitSha": "b024f4c8c0a650f55988e600f32f2b4a99fcdc9b",
   "assertions": [
     {
       "name": "all_predictions_finite",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 13,
   "computation": "applied-uniqueness-mass-table",
   "scriptFile": "applied_uniqueness_mass_table.py",
-  "scriptHash": "5ea76a116a0b",
-  "scriptCommitSha": "af3316bf9d3479939510555d41340c30033866ba",
+  "scriptHash": "bb28ca57fd15",
+  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,8 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Phase 1 of the 1 ppb workplan — wires AppliedDeuteron/Tritium/Helium3Uniqueness theorems into mass-table predictions by applying the categorical mass formula M(K) = ρ · m_e · |tr_M| from QOU.BraidKnot.MassFormulaCategorical to the canonical |tr_M(β_K, q_0)| values from derivation_chain.TR_M_AT_Q0.  Currently uses placeholder m_e_Hecke literal (DEPRECATED in derivation_chain.py); Phase 2 of the workplan replaces it with the Path A 50-dps derivation, expected to tighten predictions by ~5 orders of magnitude.  AUDIT-ONLY scaffolding.",
   "contentBlock": "prop:atom-knot-mass-derivation",
@@ -60,19 +61,19 @@
     },
     "sources": {
       "proton": {
-        "path": "computations/markov-trace-assembly-proton.derivation.json",
+        "path": "qou/computations/markov-trace-assembly-proton.derivation.json",
         "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]",
         "target_value": 1.0653062285923893,
         "canonical_source": "derivation_chain.TR_M_AT_Q0"
       },
       "neutron": {
-        "path": "computations/markov-trace-assembly-neutron.derivation.json",
+        "path": "qou/computations/markov-trace-assembly-neutron.derivation.json",
         "target": "tr_M(n, q_0)  [canonical Wenzl-bridge]",
         "target_value": 0.9232332299116371,
         "canonical_source": "derivation_chain.TR_M_AT_Q0"
       },
       "deuteron": {
-        "path": "computations/markov-trace-assembly-deuteron.derivation.json",
+        "path": "qou/computations/markov-trace-assembly-deuteron.derivation.json",
         "target": "tr_M(D, q_0)",
         "target_value": 0.3882864240747888,
         "canonical_source": "derivation_chain.TR_M_AT_Q0"
@@ -112,9 +113,9 @@
         "rho": 1,
         "tr_M_q0": "0.388286424074788800000000000000000000000000000000000000000000",
         "m_K_predicted_MeV": "0.0990721224518201334691471646865194025965797891399555311175502",
-        "m_K_reference_MeV": "1875.61294256000000000000000000000000000000000000000000000000",
+        "m_K_reference_MeV": "1875.61294248000000000000000000000000000000000000000000000000",
         "reference_label": "AME m_D",
-        "err_ppb": -999947178.8020846,
+        "err_ppb": -999947178.8020823,
         "formula": "ρ_d · |tr_M(β_d)| / m_e_Hecke_placeholder · M_E_MEV",
         "status": "categorical_via_placeholder_m_e_Hecke"
       },
@@ -143,8 +144,8 @@
       {
         "atom": "deuteron-binding",
         "B_predicted_MeV": "0.408308029204578370578925300160696855662489763792289971355200",
-        "B_AME_MeV": "2.22456612000000000000000000000000000000000000000000000000000",
-        "err_ppb": -816454981.7001716,
+        "B_AME_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
+        "err_ppb": -816454988.3008299,
         "formula": "m_p_pred + m_n_pred - m_D_pred",
         "status": "categorical_via_placeholder_m_e_Hecke"
       }
