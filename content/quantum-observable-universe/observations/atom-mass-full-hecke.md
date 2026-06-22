@@ -30,7 +30,7 @@ $$
 where $\hat y_\lambda = y_\lambda(q)\,d_\lambda$ are the **$q$-deformed
 Jones--Markov weights** — the Wenzl Schur principal specialisation of the
 canonical $y_\lambda$
-([y-lambda-closed-form-wenzl-bridge](#prop:y-lambda-closed-form-wenzl-bridge))
+([Wenzl-bridge closed form](#prop:y-lambda-closed-form-wenzl-bridge))
 — normalised by $\sum_\lambda \hat y_\lambda = 1$. These are the weights
 the production Markov-trace compute uses throughout. The **classical**
 Wedderburn--Artin values $d_\lambda^2 / |S_3| = \{\tfrac16, \tfrac23,
@@ -125,7 +125,7 @@ weight-independent.
 **Weights witness**: the $q$-deformed Jones--Markov weights
 $\hat y_\lambda$ are pinned by `y-lambda-at-q0.witness.json` (canonical
 source
-[y-lambda-closed-form-wenzl-bridge](#prop:y-lambda-closed-form-wenzl-bridge)).
+[Wenzl-bridge closed form](#prop:y-lambda-closed-form-wenzl-bridge)).
 A dedicated witness for the per-atom three-channel table (channel traces +
 $q$-deformed $\mathrm{tr}_{\mathrm{full}}$ + Skein binding) is not yet
 produced.
