@@ -73,14 +73,16 @@ with $q$-derived Bethe--Weizsäcker coefficients.
 See [Table](#tbl:atom-mass-full-hecke-table-data).
 
 **Note (weighting convention).** The $\mathrm{tr}_{\mathrm{full}}$ column
-of the table — and the $B/A$ and $\Delta$ columns derived from it — are
-formed with the $q \to 1$ classical weights $\{\tfrac16, \tfrac23,
-\tfrac16\}$, not the canonical $q$-deformed $\hat y_\lambda$ above. Under
-$\hat y_\lambda$ these move materially (for ${}^4\mathrm{He}$,
-$\mathrm{tr}_{\mathrm{full}}$ shifts from $\approx 0.42$ to $\approx
-0.52$). A $q$-deformed regeneration of the table, with its own witness, is
-the outstanding production step; the channel traces themselves are
-weight-independent.
+of the table uses the canonical $q$-deformed weights $\hat y_\lambda$ above
+(witness `atom-mass-full-hecke.witness.json`); the $q \to 1$ classical
+weighting would give materially different values (for ${}^4\mathrm{He}$,
+$\mathrm{tr}_{\mathrm{full}} = 0.516$ q-deformed vs $0.422$ classical). The
+$B/A$ and $\Delta$ columns are independent of this weighting — they come
+from the Skein binding Lagrangian (Bethe--Weizsäcker form), not from
+$\mathrm{tr}_{\mathrm{full}}$. The per-channel traces are inherited from
+the published table; an independent witness for the high-$A$ $\chi^\lambda$
+(the Gröbner--Shirshov reducer is infeasible past the light nuclei) remains
+a separate open item.
 
 ## Key observations
 
@@ -93,13 +95,17 @@ weight-independent.
    symmetric and alternating channels remain $O(1)$, and the full
    Wedderburn trace recovers the physically correct mass scale.
 
-2. **Alternating channel sign flips.**  The alternating trace
-   changes sign according to the parity of the total crossing
-   count (the exponent of $(-q^{-1})$ in the alternating
-   eigenvalue product), which depends on the ground-state
-   ordering rather than directly on even/odd $A$.  This
-   produces the sign variation in $\mathrm{tr}_{\mathrm{full}}$
-   visible across the table.
+2. **Alternating channel sign flips — but do not dominate.**  The
+   alternating trace changes sign according to the parity of the total
+   crossing count (the exponent of $(-q^{-1})$ in the alternating
+   eigenvalue product), which depends on the ground-state ordering rather
+   than directly on even/odd $A$.  Under the **classical** equal weighting
+   this sign variation propagated to $\mathrm{tr}_{\mathrm{full}}$ (negative
+   entries at ${}^7\mathrm{Li}$, ${}^{11}\mathrm{B}$, ${}^{19}\mathrm{F}$);
+   under the canonical $q$-deformed weights the alternating block is
+   suppressed $\sim 7\times$, so $\mathrm{tr}_{\mathrm{full}}$ stays
+   positive and $O(0.2$--$1)$ across the table — the apparent sign
+   variation was a classical-weighting artifact.
 
 3. **${}^{14}\mathrm{N}$ cancellation.**  For the symmetric
    nucleus $Z = N = 7$, the symmetric and alternating traces
@@ -112,8 +118,9 @@ weight-independent.
    however, depends on the equal *classical* weighting
    $\hat y_{\mathrm{sym}} = \hat y_{\mathrm{alt}}$: under the canonical
    $q$-deformed weights the symmetric block outweighs the alternating one
-   by $\sim 18\times$, so $\mathrm{tr}_{\mathrm{full}}$ does not vanish at
-   ${}^{14}\mathrm{N}$.
+   by $\sim 18\times$, so $\mathrm{tr}_{\mathrm{full}} = 0.512$ (not $\approx
+   0$) at ${}^{14}\mathrm{N}$ — the near-cancellation was a
+   classical-weighting artifact.
 
 4. **Binding energy deviations.**  The Skein Lagrangian with
    $q$-derived Bethe--Weizsäcker coefficients reproduces
@@ -122,10 +129,10 @@ weight-independent.
    MeV/$A$) where the semi-empirical formula is known to
    undercount the doubly-magic shell closure.
 
-**Weights witness**: the $q$-deformed Jones--Markov weights
-$\hat y_\lambda$ are pinned by `y-lambda-at-q0.witness.json` (canonical
-source
-[Wenzl-bridge closed form](#prop:y-lambda-closed-form-wenzl-bridge)).
-A dedicated witness for the per-atom three-channel table (channel traces +
-$q$-deformed $\mathrm{tr}_{\mathrm{full}}$ + Skein binding) is not yet
-produced.
+**Witness**: `atom-mass-full-hecke.witness.json` (producer
+`computations/atom_mass_full_hecke_qdeformed.py`) — the canonical
+$q$-deformed weights $\hat y_\lambda$ (from
+[Wenzl-bridge closed form](#prop:y-lambda-closed-form-wenzl-bridge),
+`y-lambda-at-q0.witness.json`) applied to the inherited per-atom channel
+traces. The high-$A$ $\chi^\lambda$ are not yet independently witnessed
+(GS reducer infeasible past the light nuclei).
