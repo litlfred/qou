@@ -11,6 +11,8 @@
 -/
 import Mathlib.GroupTheory.Perm.Basic
 import Mathlib.Data.Fintype.Basic
+import Mathlib.Data.Rat.Defs
+import Mathlib.Tactic.NormNum
 
 namespace QOU.BraidsAndKnots
 
@@ -67,7 +69,6 @@ theorem halfSymTrivialS3_eq : halfSymTrivialS3 = 2 := by native_decide
 theorem s3TrivialFactor_eq : s3TrivialFactor = 2 / 5 := by
   unfold s3TrivialFactor
   rw [halfSymTrivialS3_eq, halfSymTotalDim_eq]
-  norm_num
 
 theorem effectiveCellCount_eq : effectiveCellCount = 1 := by
   unfold effectiveCellCount
@@ -77,7 +78,6 @@ theorem effectiveCellCount_eq : effectiveCellCount = 1 := by
 /-- The per-cell ratio 1/8 (one effective cell of eight total). -/
 theorem perCellRatio_eq : effectiveCellCount / 8 = 1 / 8 := by
   rw [effectiveCellCount_eq]
-  norm_num
 
 /-- Main result: the half-symmetric H_4 projection, restricted to
     the S_3-trivial subspace, extracts exactly ONE of the 8 ideal
@@ -116,16 +116,25 @@ the conditional-on-class structure of the main theorem above. -/
 
 namespace QOU.BraidsAndKnots.S4S3Audit.ConditionalAudit
 
-/-- Local stub of the conjecture's axiomatised class.  See the lake-
-    package sibling for the canonical declaration. -/
-class BorromeanCommonScale : Prop where
-  /-- Conjecture content is the class instance (sorry = conjecture
-      per AGENTS.md §3b). -/
-  holds : True
+/-- §3b-cond conjecture class (non-degenerate per AGENTS.md §3b-cond item 5):
+    the conjectural Borromean common-scale hypothesis identifies the
+    mass-channel scale factor `scale` with the per-cell ratio
+    `effectiveCellCount / 8`.  This is the HYPOTHESIS (the categorical
+    scale identification), not the combinatorial conclusion (proved
+    unconditionally above as `perCellRatio_eq`). -/
+class BorromeanCommonScale where
+  /-- The conjectural mass-channel scale factor. -/
+  scale : ℚ
+  /-- Conjecture: the common scale equals the per-cell ratio. -/
+  scale_eq_per_cell : scale = QOU.BraidsAndKnots.effectiveCellCount / 8
 
-/-- Witness theorem demonstrating the main proposition is conditional
-    on `[BorromeanCommonScale]` per CLAUDE.md §3b-cond. -/
-def conditional_on_BorromeanCommonScale
-    [_inst : BorromeanCommonScale] : True := trivial
+-- Ref: [adams1985hyperbolic] https://doi.org/10.1007/978-1-4684-9458-7
+/-- **Theorem (conditional on `BorromeanCommonScale`).** Combining the
+    conjectural common-scale identification with the proved combinatorial
+    per-cell ratio (`perCellRatio_eq`), the mass-channel scale factor is
+    exactly `1/8` — a rigorous conditional, not a `True := trivial` stub. -/
+theorem conditional_on_BorromeanCommonScale [inst : BorromeanCommonScale] :
+    inst.scale = 1 / 8 := by
+  rw [inst.scale_eq_per_cell, QOU.BraidsAndKnots.perCellRatio_eq]
 
 end QOU.BraidsAndKnots.S4S3Audit.ConditionalAudit
