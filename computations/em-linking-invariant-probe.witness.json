@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-03T22:42:49.555008+00:00",
-  "commitSha": "8157edfb4495eef37f5f23fb6e09a66ab36d1876",
+  "computedAt": "2026-06-22T13:19:03.123143+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "no_derived_dimensionless_form_matches_factor_at_1pct",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "em-linking-invariant-probe",
   "scriptFile": "em_linking_invariant_probe.py",
   "scriptHash": "9b060c301376",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,37 +34,34 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "EXPLORATORY gap-analysis of the per-pair EM-linking invariant for the pp-Coulomb T-³He split (OPEN gate of merged PR #1775). Tests whether any DERIVED dimensionless q-form (linking number, U(1)_framing, Markov-trace asymmetry, [2]_q α_EM lead, binding-link volume ratio) reproduces the remaining 3.2× factor. Finds NONE do (<1% gate); the factor decodes as a DIMENSIONFUL nuclear-charge-radius scale (r≈1.885 fm from AME vs ≈6.06 fm strong-bond proxy). 0.7638 MeV is POST-HOC; no fit, no tuning. RAW @ 40 dps. Audit: docs/audits/2026-06-03-em-linking-invariant.md",
   "auditOnly": "docs/audits/2026-06-03-em-linking-invariant.md",
   "data": {
-    "q_0": "1.109978582751380807591669095610768879874",
-    "coulomb_strong_ratio_tanh_ln_q0": 0.10396371005241015,
+    "q_0": "1.109978595557334719899763220483225026656",
+    "coulomb_strong_ratio_tanh_ln_q0": 0.1039637214648297,
     "derived_categorical_dHe_MeV": 0.2377,
     "ame_split_MeV_POSTHOC": 0.7638,
     "factor_to_explain": 3.213294068153134,
     "Q_pp_linking_number": 1,
-    "framing_q2": 1.232052454166764,
-    "link_trace_asymmetry_pp_minus_nn": 0.16506990798584129,
-    "bracket_2_q": 2.0108968667071223,
+    "framing_q2": 1.2320524825954333,
+    "link_trace_asymmetry_pp_minus_nn": 0.16506992139110613,
+    "bracket_2_q": 2.0108968691190756,
     "binding_link_vol_ratio_811_over_8G": 1.1308171470462434,
     "candidate_rel_miss": {
       "Q_pp (linking number)": 0.6887928777166797,
-      "framing q^2 (U(1), c=1)": 0.6165765012366591,
-      "trace asymmetry tr(pp)-tr(nn)": 0.9486290689601539,
-      "[2]_q (alpha_EM Habiro lead)": 0.3741945729035311,
-      "1/h": 0.48859981582410117,
-      "1/(h[2]_q)": 0.2597333854014559,
+      "framing q^2 (U(1), c=1)": 0.6165764923894548,
+      "trace asymmetry tr(pp)-tr(nn)": 0.94862906478834,
+      "[2]_q (alpha_EM Habiro lead)": 0.37419457215291396,
+      "1/h": 0.48859965063040267,
+      "1/(h[2]_q)": 0.2597334684386269,
       "binding-link vol ratio 8_11/8G": 0.6480816498391044,
-      "1/tanh(ln q0)": 1.9934207054214843
+      "1/tanh(ln q0)": 1.9934203768244267
     },
     "best_candidate": "1/(h[2]_q)",
-    "best_rel_miss": 0.2597333854014559,
+    "best_rel_miss": 0.2597334684386269,
     "r_implied_by_derived_fm": 6.0579070256626,
     "r_implied_by_ame_fm": 1.8852638125163654,
     "verdict": "EM-linking STRUCTURE is derived (lk=+1=Q_pp, U(1)_framing q^{w·c}, Markov-trace asymmetry — all on main). But the per-pair Coulomb MAGNITUDE is DIMENSIONFUL: the 3.2× factor is the ratio of the nuclear-charge-radius Coulomb scale (r≈1.885 fm) to the strong-bond scale (r≈6.06 fm). NO derived dimensionless q-form matches it (<1% gate). The MISSING OBJECT is a categorical brane-separation / nuclear-charge-radius scale; any concrete value would be a CAL-4 fit to AME. PRECISE OBSTRUCTION — not a fit, not closed."

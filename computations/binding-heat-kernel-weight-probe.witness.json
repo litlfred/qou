@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T04:02:40.998658+00:00",
-  "commitSha": "56bd29634b58f096923c9b4dfb06e99ebfc9b622",
+  "computedAt": "2026-06-22T13:18:14.918798+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "derived_heat_kernel_weight_closes_or_refutes_A3plus",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "binding-heat-kernel-weight-probe",
   "scriptFile": "binding_heat_kernel_weight_probe.py",
-  "scriptHash": "a2581c0e8f6d",
-  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
+  "scriptHash": "d4be26ec2998",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,152 +28,150 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "EXPLORATORY de-fit probe: tests the DERIVED q-heat-kernel eigenvalue weight C_λ(q)=Σ_□[c]_q[c+1]_q (prop:q-heat-kernel-peter-weyl, μ_λ shape) as the per-block binding measure B=E·Σ_λ w_λ|Δθ_λ|, replacing the FITTED per-depth α_k assignment. C_λ is parameter-free (ℏ_q² absorbed into E); heat-kernel e^{−C_λ·τ} variants are 1-param and reported tiered (no τ tuned to AME). Active set reported for the weight-form diagnostic; binding sum is FULL p(3A) (no truncation). Asserts the refutation if no zero-fit weight closes A≥3 to 5%.",
   "parameters": {
     "q0_50dps": "1.1099785955573347",
-    "A_growth_target": 12.719631539848082
+    "A_growth_target": 12.719630460986057
   },
   "data": {
     "weights": {
       "heat_mu_lambda": {
-        "global_scale": 0.004544049454347671,
-        "worst_err": 0.6133943957431469,
+        "global_scale": 0.004544049197335976,
+        "worst_err": 0.6133944176095818,
         "S_4He_over_S_D": 34.149683731138,
         "per_isotope": {
           "D": {
-            "B_pred": 0.8600297599603717,
-            "err": -0.6133943957431469
+            "B_pred": 0.8600297113170395,
+            "err": -0.6133944176095818
           },
           "T": {
-            "B_pred": 4.922645223808073,
-            "err": -0.41962231728604
+            "B_pred": 4.922644945382979,
+            "err": -0.4196226101319321
           },
           "3He": {
-            "B_pred": 5.287408092667921,
-            "err": -0.31492509812543135
+            "B_pred": 5.287407793611819,
+            "err": -0.31492513687330675
           },
           "4He": {
-            "B_pred": 29.36974430201322,
-            "err": 0.03795924219159542
+            "B_pred": 29.369742640858814,
+            "err": 0.037959271522870076
           }
         }
       },
       "abs_content": {
-        "global_scale": 0.028830603897389395,
-        "worst_err": 0.19933908311845291,
+        "global_scale": 0.02883060256307737,
+        "worst_err": 0.1993394788844933,
         "S_4He_over_S_D": 13.40169469738184,
         "per_isotope": {
           "D": {
-            "B_pred": 2.1462064672538026,
-            "err": -0.03522472504805556
+            "B_pred": 2.1462063679250094,
+            "err": -0.03522476969891511
           },
           "T": {
-            "B_pred": 6.791042722294423,
-            "err": -0.19933908311845291
+            "B_pred": 6.791042407997505,
+            "err": -0.1993394788844933
           },
           "3He": {
-            "B_pred": 7.479184926773928,
-            "err": -0.030942611197988114
+            "B_pred": 7.479184580629032,
+            "err": -0.030942656047028765
           },
           "4He": {
-            "B_pred": 28.7628038316819,
-            "err": 0.01650929478441538
+            "B_pred": 28.762802500507735,
+            "err": 0.016509333958201956
           }
         }
       },
       "y_lambda": {
-        "global_scale": 50.018864245276646,
-        "worst_err": 1.98815516651701,
+        "global_scale": 50.0188699446767,
+        "worst_err": 1.988155507002385,
         "S_4He_over_S_D": 0.04190391653087593,
         "per_isotope": {
           "D": {
-            "B_pred": 6.647348983789113,
-            "err": 1.98815516651701
+            "B_pred": 6.647349741221369,
+            "err": 1.988155507002385
           },
           "T": {
-            "B_pred": 1.6731981574504158,
-            "err": -0.8027306813325207
+            "B_pred": 1.673198348102999,
+            "err": -0.8027307472349031
           },
           "3He": {
-            "B_pred": 1.6937287648757522,
-            "err": -0.78054822947969
+            "B_pred": 1.6937289578676955,
+            "err": -0.7805482044742555
           },
           "4He": {
-            "B_pred": 0.278549956968302,
-            "err": -0.990155736486017
+            "B_pred": 0.27854998870768,
+            "err": -0.9901557345293349
           }
         }
       },
       "heatker_tau_1": {
-        "global_scale": 76.44090779026357,
+        "global_scale": 76.44090779340564,
         "worst_err": 0.9999999996148854,
         "S_4He_over_S_D": 4.897584911628353e-09,
         "per_isotope": {
           "D": {
-            "B_pred": 2.22498885017648,
-            "err": 0.00018999217756697373
+            "B_pred": 2.224988850267937,
+            "err": 0.00018999221867943818
           },
           "T": {
-            "B_pred": 5.3557327857969725e-05,
-            "err": -0.9999936856148632
+            "B_pred": 5.355732786017117e-05,
+            "err": -0.999993685617692
           },
           "3He": {
-            "B_pred": 6.29474062170285e-05,
-            "err": -0.9999918440779714
+            "B_pred": 6.294740621961592e-05,
+            "err": -0.999991844077971
           },
           "4He": {
-            "B_pred": 1.0897071821165649e-08,
+            "B_pred": 1.0897071821613567e-08,
             "err": -0.9999999996148854
           }
         }
       },
       "heatker_tau_hbar2": {
-        "global_scale": 2.986390580778234,
-        "worst_err": 3.813644854986089,
+        "global_scale": 2.9863907606365268,
+        "worst_err": 3.8136451448925572,
         "S_4He_over_S_D": 0.21025572409504,
         "per_isotope": {
           "D": {
-            "B_pred": 10.708271643205958,
-            "err": 3.813644854986089
+            "B_pred": 10.708272288122085,
+            "err": 3.8136451448925572
           },
           "T": {
-            "B_pred": 3.895648119410723,
-            "err": -0.540704819173712
+            "B_pred": 3.8956483540299396,
+            "err": -0.5407049972847816
           },
           "3He": {
-            "B_pred": 4.600568780404545,
-            "err": -0.4039169758480765
+            "B_pred": 4.600569057478298,
+            "err": -0.4039169399483936
           },
           "4He": {
-            "B_pred": 2.2514754081486523,
-            "err": -0.9204303692798989
+            "B_pred": 2.25147554374596,
+            "err": -0.92043035773875
           }
         }
       },
       "heatker_tau_inv_hbar2": {
-        "global_scale": 1.2601685739859574e+40,
+        "global_scale": 1.2601685739859571e+40,
         "worst_err": 1.0,
         "S_4He_over_S_D": 1.4248831764477298e-163,
         "per_isotope": {
           "D": {
-            "B_pred": 2.2245662000000004,
+            "B_pred": 2.2245662,
             "err": 0.0
           },
           "T": {
-            "B_pred": 2.865889567289244e-82,
+            "B_pred": 2.8658895672892437e-82,
             "err": -1.0
           },
           "3He": {
-            "B_pred": 3.3674076354293937e-82,
+            "B_pred": 3.367407635429393e-82,
             "err": -1.0
           },
           "4He": {
-            "B_pred": 3.169746953274256e-163,
+            "B_pred": 3.1697469532742556e-163,
             "err": -1.0
           }
         }

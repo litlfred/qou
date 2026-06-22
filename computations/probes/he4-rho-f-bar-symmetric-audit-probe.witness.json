@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T17:56:18.862370+00:00",
-  "commitSha": "4346ac283a5d37b574b89240378dd7f59f8efbe5",
+  "computedAt": "2026-06-22T13:21:04.369967+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "bar_symmetric_rho_F_candidates_enumerated",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 16,
   "computation": "he4-rho-f-bar-symmetric-audit-probe",
   "scriptFile": "he4_rho_f_bar_symmetric_audit_probe.py",
-  "scriptHash": "8c5260150af1",
-  "scriptCommitSha": "ef6d55a6753935d3cd11d8a083909afb434aa018",
+  "scriptHash": "de4d24957fbe",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,14 +28,13 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "⁴He magic-A binding: tests bar-symmetric ρ_F candidates. Companion to PR #1621 audit. Per PR #1643 discipline.",
   "auditOnly": "docs/audits/2026-06-01-bar-symmetric-discipline-tests.md",
   "data": {
-    "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "q_proton": "1.10997859555733471989976322048322502665620840878015368660798114614493",
     "m_e_MeV": "0.51099895",
     "eight_G": "7.327724753417752120436828119459072886193194994253377074131984956974104",
     "B_AME_MeV": "28.295674",
@@ -51,58 +50,58 @@
       },
       {
         "name": "C2: [2]_q = q + q⁻¹",
-        "value_rho_F": "2.01089686670712229975249197809186281588924074848413291676393",
-        "value_numeric": 2.0108968667071223,
-        "B_pred_MeV": 30.11888875008178,
-        "err_vs_AME_pct": 6.443439905625782,
+        "value_rho_F": "2.01089686911907576081766380450048270305079351591282754642622",
+        "value_numeric": 2.0108968691190756,
+        "B_pred_MeV": 30.118888786207627,
+        "err_vs_AME_pct": 6.443440033298478,
         "bar_symmetric": true
       },
       {
         "name": "C3: [2]_{q^(1/2)} (PR #1621 already tested)",
-        "value_rho_F": "2.00272236386053329050782023799163176253410508509069637359648",
-        "value_numeric": 2.002722363860533,
-        "B_pred_MeV": 29.996452365650583,
-        "err_vs_AME_pct": 6.010736360796999,
+        "value_rho_F": "2.00272236446270199452458170801238844660674387057392118180329",
+        "value_numeric": 2.002722364462702,
+        "B_pred_MeV": 29.99645237466977,
+        "err_vs_AME_pct": 6.010736392671785,
         "bar_symmetric": true
       },
       {
         "name": "C4: [2]_q/2 + 1",
-        "value_rho_F": "2.00544843335356114987624598904593140794462037424206645838197",
-        "value_numeric": 2.005448433353561,
-        "B_pred_MeV": 30.03728299458281,
-        "err_vs_AME_pct": 6.155036259545577,
+        "value_rho_F": "2.00544843455953788040883190225024135152539675795641377321311",
+        "value_numeric": 2.005448434559538,
+        "B_pred_MeV": 30.037283012645734,
+        "err_vs_AME_pct": 6.155036323381925,
         "bar_symmetric": true
       },
       {
         "name": "C5: √(([2]_q + 2)/2) [bar-modulus form]",
-        "value_rho_F": "1.41613856431973532703471215889151404819567749474029553122604",
-        "value_numeric": 1.4161385643197353,
-        "B_pred_MeV": 21.21069487929078,
-        "err_vs_AME_pct": -25.03908944070114,
+        "value_rho_F": "1.41613856474553290106327921300871094702658986339949366369827",
+        "value_numeric": 1.416138564745533,
+        "B_pred_MeV": 21.21069488566831,
+        "err_vs_AME_pct": -25.039089418162263,
         "bar_symmetric": true
       },
       {
         "name": "C6: 1 + b² (Hoefsmit, bar-symmetric)",
-        "value_rho_F": "1.75270211325196540159377935162023613783017559887490468132603",
-        "value_numeric": 1.7527021132519653,
-        "B_pred_MeV": 26.251689400418027,
-        "err_vs_AME_pct": -7.2236646477549,
+        "value_rho_F": "1.75270211384520417247078416697498424697860959562913687875002",
+        "value_numeric": 1.7527021138452041,
+        "B_pred_MeV": 26.25168940930346,
+        "err_vs_AME_pct": -7.223664616352805,
         "bar_symmetric": true
       },
       {
         "name": "C7: 2·cos(h/2)/q^(1/4) [NOT bar-symmetric]",
-        "value_rho_F": "1.93786867148207591796316370767928572990956786915090811575271",
-        "value_numeric": 1.9378686714820759,
-        "B_pred_MeV": 29.025084227324633,
-        "err_vs_AME_pct": 2.5778153484685764,
+        "value_rho_F": "1.93786866353436760225212675707841902540802049929764962813990",
+        "value_numeric": 1.9378686635343676,
+        "B_pred_MeV": 29.02508410828514,
+        "err_vs_AME_pct": 2.577814927770018,
         "bar_symmetric": false
       },
       {
         "name": "C8: ([2]_q)² / (2·[2]_q − 2) [bar-sym ratio]",
-        "value_rho_F": "2.00005873086955921504308683442773271768111077936071558042534",
-        "value_numeric": 2.000058730869559,
-        "B_pred_MeV": 29.956556900570085,
-        "err_vs_AME_pct": 5.86974143316072,
+        "value_rho_F": "2.00005873089541851182421603862926691701932198981183974787690",
+        "value_numeric": 2.0000587308954185,
+        "B_pred_MeV": 29.956556900957402,
+        "err_vs_AME_pct": 5.869741434529538,
         "bar_symmetric": true
       }
     ],

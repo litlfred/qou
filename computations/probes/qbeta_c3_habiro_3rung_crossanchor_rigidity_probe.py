@@ -22,16 +22,19 @@ BOTH established anchors and compare its swing to the empirical c_3 swing.
 
 | anchor | q₀ | empirical c_3 |
 |--------|-----|---------------|
-| proton (m_p) | 1.10997858275… | -2.0693 |
+| proton (m_p) | 1.10997859556… | -2.0693 |
 | muon   (m_μ) | 1.10997859555… | -2.0097 |
 
-Anchor separation ≈ 1.3e-8, yet empirical c_3 swings ≈ 2.88% — c_3 is a
-hyper-sensitive EXTRACTED quantity (it's the tiny c_3·u³ ladder term, so
-minute q shifts get amplified ~4.6e6×).
+Anchor separation ≈ 3.2e-12 (proton re-pinned to the habiro-refined C value
+2026-05-28; it now nearly coincides with the muon anchor), yet empirical c_3
+swings ≈ 2.88% — c_3 is a hyper-sensitive EXTRACTED quantity (it's the tiny
+c_3·u³ ladder term, so minute q shifts get amplified ~1.9e10×). The two
+near-identical q₀ carrying different empirical c_3 is exactly that
+hyper-sensitivity, not a contradiction.
 
 ## Prediction
 
-A smooth real-q formula CANNOT have a derivative dc_3/dq ≈ 4.6e6 near the
+A smooth real-q formula CANNOT have a derivative dc_3/dq ≈ 1.9e10 near the
 anchor, so the 3-rung formula's swing should be MICROSCOPIC vs the 2.88%
 empirical swing — REFUTING it as a real-q fibre element and CONFIRMING it
 is a proton-anchor near-match. That sharpens the search: the genuine

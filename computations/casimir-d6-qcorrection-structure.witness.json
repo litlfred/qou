@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T16:58:48.612128+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "computedAt": "2026-06-22T13:18:26.058861+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "jones_4_1_leading_h2_coefficient_is_three_quarters",
@@ -14,19 +14,19 @@
     },
     {
       "name": "jones_identity_h_form",
-      "computed": "1.03280934182539968532877820146",
-      "expected": "1.03280934182539968532877820146",
+      "computed": "1.03280934911382553807475915338",
+      "expected": "1.03280934911382553807475915338",
       "passed": true,
       "tolerance": 1e-40,
       "source": "J_{4_1} = h² + 3 − √(h²+4)"
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 17,
   "computation": "casimir-d6-qcorrection-structure",
   "scriptFile": "casimir_d6_qcorrection_structure.py",
   "scriptHash": "1c58240ccf31",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,17 +34,16 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "First Casimir q-correction structure for conj:casimir-epsilon-vacuum: torus closures contribute Vol=0; the first hyperbolic mode is 4_1 (the substrate-defining knot); its q-weight is J_{4_1}(q)=1+(3/4)h²+O(h⁴), exact leading 3/4. Absolute 1/d-power awaits the interacting mode-sum.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "substrate_q": 1.1099785827513808,
-    "h2_substrate": 0.04370620853252198,
+    "substrate_q": 1.1099785955573347,
+    "h2_substrate": 0.043706218232901294,
     "Vol_4_1": 2.0298832128193074
   },
   "data": {
@@ -104,10 +103,10 @@
     },
     "first_qcorrection_weight": {
       "knot": "figure-8 4_1",
-      "jones_J_4_1_at_q0": "1.0328093418253996853",
+      "jones_J_4_1_at_q0": "1.0328093491138255381",
       "jones_classical": "1",
-      "relative_deviation_at_q0": "0.03280934183",
-      "relative_h2_coefficient_at_q0": "0.7506792039",
+      "relative_deviation_at_q0": "0.03280934911",
+      "relative_h2_coefficient_at_q0": "0.750679204",
       "leading_h2_coefficient_exact": "3/4",
       "identity_J_eq_h2_plus_3_minus_sqrt_h2_plus_4": true,
       "expansion": "J_{4_1}(q) = 1 + (3/4) h^2 + O(h^4)",

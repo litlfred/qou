@@ -1,12 +1,12 @@
 {
   "engine": "numpy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T04:26:23.338861+00:00",
-  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
+  "computedAt": "2026-06-22T13:19:37.332073+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "tr_M_cross_validation_within_1e-6",
-      "computed": 0.00018247372792264523,
+      "computed": 0.00018235144298500055,
       "expected": 0.0,
       "passed": false,
       "tolerance": 1e-06
@@ -25,11 +25,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 6,
+  "durationMs": 7,
   "computation": "iterative-lp-dual-h6-deuteron",
   "scriptFile": "iterative_lp_dual_h6_deuteron.py",
-  "scriptHash": "1f98c8767766",
-  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
+  "scriptHash": "4a70c4135c10",
+  "scriptCommitSha": "7b12822eab9b4f49a89db02c7a90d75d1f7d61b5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,10 +39,8 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Iterative LP-dual at H_6 for the deuteron β_D per term7-alpha5's prop:mass-formula-iterative-lp-dual.  Computes u^{(ℓ)*}(β_D) = m_e · Σ_λ y_λ(q_0) · c_ℓ(λ) · χ^λ(β_D) / [6]_q! for ℓ ∈ {0,…,6} with y_λ from y-lambda-mpfr-witness.json (50 dps, 11 partitions of 6) and χ^λ(β_D) computed numerically by applying the deuteron's atom_braid_word_3A(1,1) (23 crossings) to Hoefsmit seminormal matrices for each partition.  Cross-validates Σ_λ y_λ·χ^λ(β_D) against the closed-form |tr_M(β_D)| = 0.388 from wenzl_n6_closed_form.witness.json.  Reports Σ_ℓ u^{(ℓ)*}(β_D) and compares to CODATA M_D, Z·m_p+N·m_n, AME B(D).",
   "contentBlock": "prop:mass-formula-iterative-lp-dual",
@@ -50,7 +48,7 @@
     "q_0": 1.1099785955573347,
     "h": 0.20906032199559366,
     "hecke_level_n": 6,
-    "M_D_codata_atomic_MeV": 1875.61294248,
+    "M_D_codata_atomic_MeV": 1875.6129426799998,
     "Z_M_p_plus_N_M_n_MeV": 1877.83750868,
     "M_e_codata": 0.51099895
   },
@@ -193,7 +191,7 @@
     },
     "sum_u_levels_MeV": 0.05251793089439923,
     "tr_M_check_at_q0": 0.3883572761460915,
-    "tr_M_check_rel_err": 0.00018247372792264523,
+    "tr_M_check_rel_err": 0.00018235144298500055,
     "lean_uniqueness_ref": {
       "nucleus": "deuteron (²H)",
       "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",

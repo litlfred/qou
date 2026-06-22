@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-30T03:23:55.195375+00:00",
-  "commitSha": "c0dedb4e5a42773b98ceb4cf10d2b8903870bcf2",
+  "computedAt": "2026-06-22T13:20:25.514338+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "all_candidates_evaluated",
@@ -14,21 +14,27 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 12,
   "computation": "alpha-em-4pi-derived-form-probe",
   "scriptFile": "alpha_em_4pi_derived_form_probe.py",
-  "scriptHash": "6a14ecb563a2",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "026af5ac7eae",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Derive-or-refute candidate categorical/geometric forms for the next-order α/(4π) ≈ 5.805e-4 correction in the FSC α_EM⁻¹ closure. 8 parameter-free candidates: 2nd Hodge class, Euler-char² / area², genus-descent factors, q-bracket modulation of Bring shift, Chern-Simons one-loop on S³/PSL(2,5), central-full-twist length normalization, and sphere-volume ratio. No fit; honest residual.",
   "data": {
     "inputs": {
-      "q0": "1.10997858275138080759166909561",
+      "q0": "1.10997859555733471989976322048",
       "CODATA_alpha_inv": "137.035999084",
       "target_alpha_over_4pi": "0.000580704866442929781562257812526",
       "g_Bring": 4,
@@ -57,9 +63,9 @@
         "log10_abs_dev": -0.04417868016116652
       },
       "(2/(3π))² / [2]_q²": {
-        "value": "0.011136228710027",
-        "ratio_to_target": 19.177088661647986,
-        "log10_abs_dev": 1.259524325561935
+        "value": "0.011136228683312",
+        "ratio_to_target": 19.177088615644386,
+        "log10_abs_dev": 1.2595243244627983
       },
       "1/(2π·|PSL(2,5)|)": {
         "value": "0.0026525823848649",
@@ -82,9 +88,9 @@
         "log10_abs_dev": -2.4626730576245834
       },
       "(1/1728)·(1 + 1/[2]_q²)": {
-        "value": "0.00072181590668289",
-        "ratio_to_target": 1.2429995827386935,
-        "log10_abs_dev": -0.6143944721401181
+        "value": "0.00072181590633958",
+        "ratio_to_target": 1.242999582147499,
+        "log10_abs_dev": -0.6143944731967145
       },
       "ζ(3)/(2π)³": {
         "value": "0.0048460224503646",
