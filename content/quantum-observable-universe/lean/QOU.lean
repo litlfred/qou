@@ -108,6 +108,9 @@ import QOU.frobenius_dagger_positive_definite
 import QOU.volume_from_rigidity
 import QOU.substrate_radial_coordinate
 import QOU.Braiding.non_self_intersection
+-- Keystone geometric-angle fingerprint: the ℓ=1 icosahedral character on the
+-- 5-fold rotation is the golden ratio (parameter-free; validates irrepToRotation).
+import QOU.BraidsAndKnots.IcosahedralCharacterGoldenRatio
 import QOU.Information.p_bandwidth_bound
 import QOU.ParticleInteractions.atomic_lp_stability
 import QOU.ParticleInteractions.silver_ratio_beta_decay_null

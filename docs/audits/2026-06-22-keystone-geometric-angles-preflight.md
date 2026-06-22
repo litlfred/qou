@@ -94,8 +94,11 @@ invariant) is the target the next probe attacks.
   the q-vs-classical gate identified; McKay/E₈ shadow recorded.
 - **Confirmed direction:** the W_λ-producing bridge is q-deformed (WRT/Habiro), not a classical index —
   consistent with the corpus redirect.
-- **Next (follow-up):** the WRT TQFT of S³/2I (Lawrence–Zagier) — does its q-series reproduce W_λ? —
-  and a Lean formalization of the W_λ target + the exact angle/φ validation.
+- **Lean (path 4, done):** the exact φ fingerprint is formalised sorry-free —
+  [`IcosahedralCharacterGoldenRatio.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/IcosahedralCharacterGoldenRatio.lean):
+  `icosahedral_ell1_fivefold_char_eq_golden : 1 + 2·cos(2π/5) = (1+√5)/2`, built on Mathlib's
+  `Real.cos_pi_div_five` (verified `lean`-direct, EXIT=0; wired into `QOU.lean`).
+- **WRT (path 2, done above):** reframed `index = W_λ` as the modular-block-weight statement; see §(2).
 
 No fit; nothing wired; `c_k`/`Δ_λ` cal-anchored.
 
