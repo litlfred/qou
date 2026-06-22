@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:26:11.125027+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-06-22T14:20:35.374237+00:00",
+  "commitSha": "56e0d96d0785b62b4f6c46c89955d32d3ccf3517",
   "assertions": [
     {
       "name": "A4_clifford_excess_identity",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 44,
+  "durationMs": 52,
   "computation": "gap-a4-T6-q-deformed-icosahedral-probe",
   "scriptFile": "gap_a4_T6_q_deformed_icosahedral_probe.py",
   "scriptHash": "f3cd07beeb5b",
@@ -37,7 +37,8 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "GAP-A-4 T6 — q-deformed icosahedral character matrix. Tabulates per-A_n-irrep dim_q sums Q_R(q) for n=4 (A_4) and n=5 (A_5), extracts h⁰/h²/h⁴ coefficients, and shows Q_H(q) = 2·[5]_q has h⁴ coefficient +2 — NOT the Borromean −3/4 (which lives on H_3 not H_5). Complements T5 by exhibiting the H-sector's OWN h⁴ structure for comparison.",
   "auditOnly": "docs/audits/2026-06-01-s5-so3-su2-u1-fiber-action.md",
