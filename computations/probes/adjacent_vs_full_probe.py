@@ -342,7 +342,7 @@ if __name__ == "__main__":
     all_results = []
     for name, Z, N, B_AME in ATOMS:
         A = Z + N
-        M_total = A * 938.272
+        M_total = A * float(M_P_MEV_VALIDATION)
         row = {"atom": name, "Z": Z, "N": N, "A": A, "B_AME": B_AME}
         for mode, variant in VARIANTS:
             key = f"{mode}_{variant}"

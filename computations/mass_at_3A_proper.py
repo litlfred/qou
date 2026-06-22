@@ -47,6 +47,7 @@ Key design decisions:
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale
 import sys
 import math
 import json
@@ -771,7 +772,7 @@ if __name__ == "__main__":
             print(f"  {name:>6} {A:>3} {3*A:>3} ERR: {e}")
             continue
         dt = time.time() - t0
-        M_total = A * 938.272
+        M_total = A * float(M_P_MEV_VALIDATION)
         dm = abs(r["B_MeV"] - B_AME) / M_total * 100
         print(f"  {name:>6} {A:>3} {3*A:>3} {r['n_partitions']:>6} "
               f"{abs(r['tr_M_atom']):>14.6e} "
@@ -798,7 +799,7 @@ if __name__ == "__main__":
             print(f"  {name:>6} {A:>3} {3*A:>3} ERR: {e}")
             continue
         dt = time.time() - t0
-        M_total = A * 938.272
+        M_total = A * float(M_P_MEV_VALIDATION)
         dm = abs(r["B_MeV"] - B_AME) / M_total * 100
         print(f"  {name:>6} {A:>3} {3*A:>3} "
               f"{r['m_atom_tower_H3A']:>12.3e} "

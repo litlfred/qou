@@ -44,6 +44,7 @@ TO that baseline.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale
 import sys
 import math
 from pathlib import Path
@@ -153,7 +154,7 @@ def binding_unified(Z: int, N: int, *, pair_mode: str = "full",
     # `target_ppm`.
     import os
     target_ppm = float(os.environ.get("JET_TARGET_PPM", "1.0"))
-    n_strands_mev = n_strands * 938.272
+    n_strands_mev = n_strands * float(M_P_MEV_VALIDATION)
     target_term_cat = (target_ppm * 1e-6 * n_strands_mev) / max(E_0, 1e-12)
     jet_cap = int(os.environ.get("JET_MAX_LEVELS", "60"))
     tower_term_cat = 0.0
@@ -246,7 +247,7 @@ if __name__ == "__main__":
                 r = binding_unified(Z, N, pair_mode="full",
                                        kahler_order=kahler_order)
                 dt = time.time() - t0
-                dm = (abs(r["B_MeV"] - B_AME) / (A * 938.272) * 100
+                dm = (abs(r["B_MeV"] - B_AME) / (A * float(M_P_MEV_VALIDATION)) * 100
                        if math.isfinite(r["B_MeV"])
                        else float("nan"))
                 print(f"  {name:>4} {A:>3} {B_AME:>9.4f} "

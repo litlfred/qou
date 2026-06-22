@@ -56,6 +56,7 @@ SCOPE & CAVEATS:
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale
 import sys
 import math
 import json
@@ -682,7 +683,7 @@ if __name__ == "__main__":
                                       apply_brane_scaling=True,
                                       geometric_closed_form=True)
                 dt = time.time() - t0
-                dm = (abs(r["B_MeV"] - B_AME) / (A * 938.272) * 100
+                dm = (abs(r["B_MeV"] - B_AME) / (A * float(M_P_MEV_VALIDATION)) * 100
                        if math.isfinite(r["B_MeV"])
                        else float("nan"))
                 # Pull out eps bounds from per_level[0]
@@ -731,7 +732,7 @@ if __name__ == "__main__":
                         r = _binding_cached(Z, N, n_levels, pair_mode,
                                               apply_brane_scaling=apply_scaling)
                         dt = time.time() - t0
-                        dm = (abs(r["B_MeV"] - B_AME) / (A * 938.272) * 100
+                        dm = (abs(r["B_MeV"] - B_AME) / (A * float(M_P_MEV_VALIDATION)) * 100
                                if math.isfinite(r["B_MeV"])
                                else float("nan"))
                         print(f"  {name:>6} {A:>3} {B_AME:>8.3f} "

@@ -1322,7 +1322,7 @@ if __name__ == "__main__":
             print(f"  ⚠ upstream missing: {_exc}")
 
     ISOTOPES = [
-        ("p",   1, 0, False,  938.272),
+        ("p",   1, 0, False,  float(M_P_MEV_VALIDATION)),
         ("n",   0, 1, False,  939.565),
         ("D",   1, 1, True,  1876.124),
         ("T",   1, 2, True,  2809.432),

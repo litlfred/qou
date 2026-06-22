@@ -173,7 +173,7 @@ if __name__ == "__main__":
     for name, Z, N, B_AME in ATOMS:
         A = Z + N
         B = binding_flat_all_pairs(Z, N)
-        dm = abs(B - B_AME) / (A * 938.272) * 100
+        dm = abs(B - B_AME) / (A * float(M_P_MEV_VALIDATION)) * 100
         print(f"  {name:>6} {A:>3} {B_AME:>8.3f} {B:>10.3f} {dm:>9.4f}%")
         results.append({
             "atom": name, "Z": Z, "N": N, "A": A,
