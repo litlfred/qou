@@ -1,0 +1,87 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-22T13:25:32.291120+00:00",
+  "commitSha": "10f2199e2887d0791bfd4851dc41b3a58f06cabe",
+  "assertions": [
+    {
+      "name": "dominant_tail_ratio_matches_root_sub",
+      "computed": 117.4097638129516,
+      "expected": 117.40900102154255,
+      "passed": true,
+      "tolerance": 0.05,
+      "source": "c_10/c_9 -> 1/u_substrate = 117.41 (reproduces PR #1727)"
+    },
+    {
+      "name": "open_rung_c3_dominant_negligible",
+      "computed": 1.7056070198357348e-07,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "dominant-pole fraction D_3/c_3 < 1e-3: c_3 is NOT a dominant-pole rung (lives in subdominant+entire sector)"
+    },
+    {
+      "name": "silver_pole_not_leading_subdominant_in_ladder",
+      "computed": 2.0,
+      "expected": 2.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "dominant-peeled residual sign-flips at k=6 => no clean +3.1154 geometric; canonical c_k do not corroborate the silver pole as leading subdominant ladder structure"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "qbeta-two-pole-ladder-decomposition",
+  "scriptFile": "qbeta_two_pole_ladder_decomposition.py",
+  "scriptHash": "a815420f5d56",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Structural diagnostic (no fit/wiring): where the dominant (root 117.41, PR #1727) and subdominant silver (root 3.1154, PR #2454) F-poles each manifest in the canonical Q_β c_2..c_10 ladder. (1) Rung partition: dominant pole is TAIL-only, contributing <0.4% to open rungs c_3,c_4,c_5. (2) First test of the silver pole against the actual c_k: the dominant-peeled residual shows no clean +3.1154 geometric (sign-flips at k=6) — the ladder does not corroborate the silver zero as leading subdominant structure (matches PR #2454's caution). (3) The depth-2 annihilator of both roots leaves h_k≠0 (large at low k, ~1e-4 collapse in tail) => minimal denominator deg>=3 (re-confirms C5 from the pole side); h_k is the exact-extraction target for #2106/#2474. NO FLOAT, 70 dps. Exploratory.",
+  "contentBlock": "prop:q-beta-radius-of-convergence-gate",
+  "data": {
+    "u_substrate": "0.008517234550156142189255573603309202969194221611630136163602977805856105",
+    "u_silver": "0.3209834580317308973723915911963031012135113455031900587189492825779151",
+    "char_root_dominant": "117.4090010215425500454471420688129707423250965232546473787297023281228",
+    "char_root_silver": "3.115425343511455216965387030215241372587013736523711651483510605537769",
+    "tail_amplitude_L": "0.0000000000002117944722253307370200781802064076335254325723738565769785653573954109",
+    "tail_spread_rel": "0.0002965434560100466181246933432262003868303214064930812292345095786320908",
+    "residue_A": "0.000000000000001803903196369672391089865839110038255652979797323516698679907303200557",
+    "rung_partition_frac_dom": {
+      "2": "2.87043e-9",
+      "3": "1.70561e-7",
+      "4": "3.51941e-5",
+      "5": "0.0038639",
+      "6": "0.15862",
+      "7": "1.13976",
+      "8": "0.999805",
+      "9": "1.0001",
+      "10": "1.00009"
+    },
+    "dominant_peeled_residual": {
+      "4": "-1.143577",
+      "5": "-1.2276378",
+      "6": "2.9427793",
+      "7": "-7.9872502"
+    },
+    "two_pole_removed_residual_h": {
+      "4": "-130.96052",
+      "5": "-598.51935",
+      "6": "-267.39332",
+      "7": "-811.70812",
+      "8": "2040.5609",
+      "9": "-3192.4927",
+      "10": "1514.3714"
+    },
+    "residual_sign_flips_k4_7": 2
+  }
+}
