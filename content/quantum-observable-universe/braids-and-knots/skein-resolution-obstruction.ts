@@ -16,8 +16,11 @@ export default definition({
   lean: { ref: "qou:QOU.SkeinResolutionObstruction",
     validation: "not_checked",
   },
+  // Detangler forward-ref demote (bean foxn): def:computational-horizon
+  // (information-theory, a later chapter) is a thematic link, not a logical
+  // dependency — the .md defines κ_c^comp self-containedly via χ(A) + Kummer
+  // reduction and never references it. Dropped the spurious forward edge.
   uses: [
-    "def:computational-horizon",
     "thm:qou-obstruction-reduction",
     "rem:kummer-filtration-obstruction",
     "prop:ns-obstruction-tower",
