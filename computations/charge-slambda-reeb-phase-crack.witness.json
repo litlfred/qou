@@ -1,0 +1,69 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-22T15:35:47.509065+00:00",
+  "commitSha": "eda70311ec6e676225371b0db08b5bfadc1b6d45",
+  "assertions": [
+    {
+      "name": "five_charge_blocks",
+      "computed": 5,
+      "expected": 5,
+      "passed": true,
+      "tolerance": 0,
+      "source": "partitions of 6 with content sum < 0"
+    },
+    {
+      "name": "partition_only_22x_short",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "bare C_λ·Z(Z−1)·m_e < 10% of split (GAP-A-4 obstruction)"
+    },
+    {
+      "name": "reeb_phase_right_order",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "atomic q-Reeb phase reproduces split within 2× (universal ρ)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "charge-slambda-reeb-phase-crack",
+  "scriptFile": "charge_slambda_reeb_phase_crack.py",
+  "scriptHash": "093071ce1c5a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "data": {
+    "description": "Formalize-first crack: charge-type S_λ is the H_{3A} q-Reeb phase, not partition-only Z(Z−1); the 22.6× miss is the GAP-A-4 obstruction. Audit-only; no fit; no production rewire.",
+    "q0": 1.1099785955573347,
+    "sum_C_lambda_charge": 0.03305473025804146,
+    "bare_partition_only_he3_MeV": 0.03378186495440036,
+    "ame_split_MeV": 0.76374,
+    "rho_need_T": 18.345,
+    "rho_need_He3": 18.652,
+    "reeb_phase_sums": {
+      "T": 0.4623493049877351,
+      "He3": 0.4137925155479305,
+      "delta": 0.048556789439804564
+    },
+    "reeb_universal_rho": 18.4985,
+    "reeb_split_prediction_MeV": 0.8982277694522247,
+    "bare_fraction_of_split": 0.04423215355278021,
+    "reeb_fraction_of_split": 1.176091038117978,
+    "verdict": "Charge-type S_λ SHAPE Z(Z−1)/A^{1/3} is forced (content-sum + BW); the MAGNITUDE cannot come from partition-only C_λ×count (GAP-A-4: p≡n≡³He at H_3). The real S_λ is the free-vs-atom q-Reeb phase |Δθ_λ| at H_{3A}: with universal ρ≈18.5 it gives the split to ~118% (right order) vs the partition-only 4.4% (22.6× short). The Coulomb channel sinh(log q)=h/2 is already inside C_λ=w̃_λ·h/2 (crossing-energy-decomposition.lean). Open residual: the universal-ρ normalisation (2% strong + ~18% Coulomb), not a missing partition formula. No fit; no rewire."
+  }
+}
