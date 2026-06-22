@@ -50,23 +50,18 @@ def chi60(n):
 
 
 def false_theta(q, nterms=4000):
-    """Ψ(q) = Σ_{n≥0} χ(n) q^{n²/120}; converges for |q|<1."""
-    s = mpf(0)
-    for n in range(nterms):
-        c = chi60(n)
-        if c:
-            s += c * q ** (mpf(n * n) / 120)
-    return s
+    """Ψ(q) = Σ_{n≥0} χ(n) q^{n²/120}; converges for |q|<1.
+
+    Uses `mp.fsum` over the term list (not a running `+=`) to avoid
+    intermediate-rounding precision loss in the high-precision mpf sum."""
+    terms = [chi60(n) * q ** (mpf(n * n) / 120) for n in range(nterms) if chi60(n)]
+    return mp.fsum(terms)
 
 
 def weight32_theta(q, nterms=4000):
     """The weight-3/2 partner Θ(q)=Σ n·χ(n) q^{n²/120} (Eichler-integral source)."""
-    s = mpf(0)
-    for n in range(nterms):
-        c = chi60(n)
-        if c:
-            s += c * n * q ** (mpf(n * n) / 120)
-    return s
+    terms = [chi60(n) * n * q ** (mpf(n * n) / 120) for n in range(nterms) if chi60(n)]
+    return mp.fsum(terms)
 
 
 def qint(m):
@@ -115,7 +110,7 @@ def main():
 
     # W_λ-derived scalars at q_0 (n=5)
     PARTS = [(5,), (4,1), (3,2), (3,1,1), (2,2,1), (2,1,1,1), (1,1,1,1,1)]
-    D2 = sum(d_q(l) ** 2 for l in PARTS)
+    D2 = mp.fsum(d_q(l) ** 2 for l in PARTS)
     nfac = q_factorial(5)
     print("W_λ-derived scalars at q_0 (n=5):")
     print(f"  [5]_q!          = {nstr(nfac,14)}")
