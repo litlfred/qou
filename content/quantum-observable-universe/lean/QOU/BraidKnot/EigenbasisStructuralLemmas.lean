@@ -87,4 +87,33 @@ theorem framing_gf_closed_form
     linear_combination - geom_sum_mul (t * θ) N
   rw [hsum, ← mul_assoc, mul_comm (1 - t * θ) (c 0), mul_assoc, hgeom]
 
+/-! ## L1 — order-parity = word-length parity -/
+
+/-- **L1 — order-parity = word-length parity.**
+
+Model the Hecke character of a length-`L` braid word `β` in channel `λ` as a
+sum over the index paths of the seminormal matrix product,
+`χ_λ(β)(q) = Σ_p Π_{i<L} a(p,i)(q)`, where each factor `a(p,i)` is an entry of
+one crossing matrix `σ_j` (or `σ_j − h·I`).  Each such factor is an **odd**
+Laurent polynomial: its `q ↦ −q` image is its negation (the seminormal
+eigenvalues `q, −q⁻¹` and the off-diagonal entries all have odd Laurent
+degree, since `q ↦ −q` sends `q^k ↦ (−1)^k q^k`).  Then
+
+  `χ_λ(β)(−q) = (−1)^L · χ_λ(β)(q)`,
+
+equivalently every exponent of the Laurent character has parity `≡ L (mod 2)`.
+This makes the PR #2496 parity obstruction a theorem: a same-type-nucleon /
+winding tower flips parity because the nucleon word has odd length `L = 11`,
+so `11·k` alternates parity in `k`. -/
+theorem character_qneg_parity {L : ℕ} {ι : Type*} (paths : Finset ι)
+    (a : ι → Fin L → ℝ → ℝ) (q : ℝ)
+    (hodd : ∀ p i, a p i (-q) = - a p i q) :
+    (∑ p ∈ paths, ∏ i, a p i (-q)) = (-1) ^ L * ∑ p ∈ paths, ∏ i, a p i q := by
+  rw [mul_sum]
+  refine sum_congr rfl (fun p _ => ?_)
+  have hp : (∏ i, a p i (-q)) = ∏ i : Fin L, (-1 : ℝ) * a p i q := by
+    refine prod_congr rfl (fun i _ => ?_)
+    rw [hodd p i]; ring
+  rw [hp, prod_mul_distrib, prod_const, card_univ, Fintype.card_fin]
+
 end QOU.BraidKnot.EigenbasisStructuralLemmas
