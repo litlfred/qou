@@ -62,7 +62,7 @@ from young_seminormal import seminormal_sigma, chi_young, standard_tableaux  # n
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 50
-Q = mp.mpf("1.1099785827513808075916690956107688798744991218735787360728142402")
+Q = mp.mpf("1.1099785955573347198997632204832250266562084087801536866079811461")
 
 
 def partitions_of(n: int) -> list[tuple[int, ...]]:

@@ -69,7 +69,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 
 def main() -> int:
-    Q0 = 1.1099785827513808075916690956107688798744991218736
+    Q0 = 1.1099785955573347198997632204832250266562084087802
 
     t0 = time.monotonic()
     builder = WitnessBuilder(

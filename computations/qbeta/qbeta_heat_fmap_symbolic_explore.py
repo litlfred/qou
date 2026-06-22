@@ -52,7 +52,7 @@ def main():
     k21 = kappas[(2, 1)]
     print(f"  κ_(2,1) = {k21}  [parity {parity(k21)}, pure-q, fibre-level]")
     # numeric: S = a_1_target / κ_(2,1)(q0) at both anchors
-    q0 = sp.Rational(110997858275, 100000000000)  # q_0 ≈ 1.10997858275
+    q0 = sp.Rational(110997858275, 100000000000)  # q_0 ≈ 1.10997859556
     k21_q0 = float(k21.subs(q, q0))
     a1_p = float(sp.sqrt(2) * sp.Rational(146324616887618, 100000000000000))
     a1_mu = float(sp.sqrt(2) * sp.Rational(142849728553818, 100000000000000))

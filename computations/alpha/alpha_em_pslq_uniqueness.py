@@ -87,7 +87,7 @@ def main():
     q_0 = 1 / (1 - r)
     print(f"DPS = {DPS}")
     print(f"q_0 (extended)       = {mp.nstr(q_0, 50)}")
-    print(f"q_0 (q_parameter.py) = 1.1099785827513805 (17 digits)")
+    print(f"q_0 (q_parameter.py) = 1.1099785955573347 (17 digits)")
 
     def q_int(n, q=q_0):
         return (q**n - q**(-n)) / (q - 1/q)

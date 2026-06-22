@@ -61,7 +61,7 @@ TARGET_SIGNED = mp.mpf("-4.353")
 TARGET_PRECISE = mp.mpf("-2.2245") / mp.mpf("0.51099895069")
 
 # Canonical 50-dps q₀ — matches every chi-cache witness header.
-Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
+Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 
 
 # ── Partitions + hook-length combinatorics ──

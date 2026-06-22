@@ -58,7 +58,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
+Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 
 # Empirical ladder (registry ck-dk-canonical-registry.md §3).
 C_EMP = {2: mp.mpf("-1"), 3: mp.mpf("-2"), 4: mp.mpf("-0.97157")}

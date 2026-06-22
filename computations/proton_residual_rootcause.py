@@ -11,7 +11,7 @@ mass_endomorphism.py and proton_mass_tower_derivation.py.  Convention
 diagnostics already ruled out:
 
   * Markov-Wenzl vs Plancherel (Hoefsmit vs markov_peel agree to 2e-16)
-  * q_0 drift across scripts (uniform 1.1099785827513805)
+  * q_0 drift across scripts (uniform 1.1099785955573347)
   * q_0 precision (CODATA-stable to 2000 dps)
 
 This diagnostic computes m_p four ways using the same

@@ -47,7 +47,7 @@ HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
 # Canonical 50-dps q₀ anchor — matches every chi-cache witness header.
-Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
+Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 
 
 # ── Young-diagram combinatorics (shared with the Option B probe) ──

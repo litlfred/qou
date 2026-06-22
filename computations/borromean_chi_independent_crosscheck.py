@@ -77,7 +77,7 @@ def main() -> int:
     print("Independent Borromean χ^λ cross-check "
           "(seminormal engine vs content q-forms)")
     print("=" * 72)
-    q_tests = [mp.mpf(s) for s in ("1.07", "1.23", "1.5", "1.10997858275")]
+    q_tests = [mp.mpf(s) for s in ("1.07", "1.23", "1.5", "1.10997859556")]
     rows = []
     worst = mp.mpf(0)
     for q in q_tests:
