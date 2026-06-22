@@ -15,5 +15,10 @@ export default definition({
   lean: { ref: "qou:QOU.Archimedean.QuarkAntiquarkProduction",
     validation: "not_checked",
   },
-  uses: ["def:breit-wheeler-pair-production"],
+  // Detangler forward-ref demote (bean foxn): def:breit-wheeler-pair-production
+  // (predicted-spectra, a later chapter) is referenced only as a parenthetical
+  // narrative pointer in the .md ("([pair production](#def:...))"); the
+  // derivation uses its own φ₀₁=0 specialization. Demoted from a hard uses[]
+  // dependency to that narrative link (which still resolves document-wide).
+  uses: [],
 });

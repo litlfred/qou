@@ -19,6 +19,11 @@ export default definition({
     ],
     status: "verified",
   },
-  uses: ["def:covalent-bond-types"],
+  // Detangler forward-ref demote (bean foxn): this generic, "reusable
+  // downstream" operator does not logically depend on the specific
+  // def:covalent-bond-types (organic-chemistry, a later chapter) — that block
+  // is a downstream *application*. The .md carries no reference to it; the edge
+  // was a spurious cross-chapter forward dependency.
+  uses: [],
   tags: ["knot-operator", "embedding", "overlap-weight", "sigma-pi", "reusable"],
 });
