@@ -72,3 +72,19 @@ Habiro-ring WRT(S³/2I) q-series at q_0 reproducing W_λ — a concrete q-series
 not Sasakian existence.
 
 Doc: docs/audits/2026-06-22-keystone-modular-category-identification.md. No fit. Owner closes (§4a).
+
+## Habiro-WRT(S³/2I) push (2026-06-22, PR follows) — WRT q-series operational, frontier sharpened
+
+Owner pick: push the residual frontier (Habiro-WRT(S³/2I) ↔ W_λ).
+- **Formula pinned** from the literature (Lawrence-Zagier 1999 / Hikami): the Σ(2,3,5) false theta
+  Ψ(q)=Σχ(n)q^{n²/120}, χ=+1 on {1,11,19,29}, −1 on {31,41,49,59} mod 60. Support = icosahedral/E₈
+  data (P=30=h(E₈)). Now operational in the corpus (script + witness).
+- **Regime catch:** Ψ converges only for |q|<1; substrate q₀=1.11 is OUTSIDE; its bar image
+  1/q₀≈0.901 is INSIDE. Ψ(1/q₀)=2.32957704683293 (converged 50 dps). Bridge = the q↦q⁻¹ bar
+  involution the whole corpus runs on; Habiro ring unifies root-of-unity + generic.
+- **Type-correct verdict:** Ψ(1/q₀) is ONE manifold invariant; W_λ a λ-family → no direct equality
+  (not claimed; no numerology sought). Link is structural (shared E₈/icosahedral input).
+- **Sharpened frontier:** the λ-family needs the WRT TQFT with λ-COLORED insertions (colored Σ(2,3,5)
+  invariants / S-matrix), not the bare closed-manifold number — a concrete rep-theoretic+q-series
+  object, not differential geometry.
+Doc: docs/audits/2026-06-22-keystone-habiro-wrt-s3-2i.md. No fit. Owner closes (§4a).
