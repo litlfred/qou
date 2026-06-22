@@ -20,7 +20,7 @@ This audit scans `computations/**/*.py` (and the
                        hardcoded as a value (NOT a `q_muon`/cross-check
                        reference, NOT a `# comment` documenting history).
   * stale-q₀ tr_M    — the stale-A Markov-trace leaf literals
-                       (1.0653062286…, 0.9232332971…, 0.3882864240…),
+                       (1.0653062286…, 0.9232332971…, 0.3882864715…),
                        i.e. tr_M evaluated at the stale A.  The canonical
                        values at C are (1.0653062286…, 0.9232332971…,
                        0.3882864715…).  [Verified by direct computation

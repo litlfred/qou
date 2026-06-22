@@ -67,7 +67,7 @@ from q_parameter import Q as Q0_FLOAT
 TR_M_TARGETS = {
     "proton":   mp.mpf("1.0653062286131670"),
     "neutron":  mp.mpf("0.9232332971861535"),
-    "deuteron": mp.mpf("0.3882864240747888"),
+    "deuteron": mp.mpf("0.3882864715477132"),
 }
 
 # Atom braid encodings (Z, N, include_inter, n_strands) — same as
