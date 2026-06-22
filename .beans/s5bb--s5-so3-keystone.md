@@ -127,3 +127,9 @@ WRT line. Arc net: genuine structural gains (Sasakian ruled out; angles+Lean φ;
 operational; link=Schur-Weyl duality) but NO closure / no mass prediction. Caveats stand
 (assignment-dependence; non-monotone spin/colour vs mass). Doc:
 docs/audits/2026-06-22-keystone-schurweyl-dual-sides.md. No fit. Owner closes (§4a).
+
+## Ledger reconciled (2026-06-22, trusting-dirac, PR #2610)
+
+Reconciled docs/coordination/s5-so3-keystone.md to the 2026-06-22 state: E_q(2)/colored-WRT reframe, #2584 projector-shift refuted, the falsifiable 144*C(n)=-n(n-1)(2n-13) sub-target + the Identity-I M(n)=n(3n-1)/2 Mathlib gap (no SYT/hook-length infra; multi-session). Background-agent scoping read: safe win = Identity I (but Mathlib-blocked); full closure at real risk of being a categorical re-NAMING of W_λ (tautology), not a new mass prediction.
+
+Escalated to owner (NOT adjudicated in ledger): (1) GATE — #2503/#2524 state the geometric-derivation gate was reversed 2026-06-19 + DG build directed, but this is not recorded in the ledger or AGENTS.md §Precision-goals (still says subgoal-2 out-of-scope without reversal); (2) C1 normalization — #2524 (open) proposes d_q^2/D^2 via Beasley-Witten CS localization on S^3/2I. Coordination note posted on #2503.
