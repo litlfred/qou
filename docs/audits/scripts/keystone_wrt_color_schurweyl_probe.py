@@ -39,14 +39,18 @@ RESIDUES = [1, 11, 19, 29]
 
 
 def psi_component(a, q, nterms=4000):
-    """Ψ̃_30^{(a)}(q) = Σ_{n≥0} [n≡a → +1, n≡60−a → −1] q^{n²/120}."""
+    """Ψ̃_30^{(a)}(q) = Σ_{n≥0} [n≡a → +1, n≡60−a → −1] q^{n²/120}.
+
+    Precompute `base = q^{1/120}` once and use the integer power `base^{n²}`
+    (repeated squaring) instead of a fractional power per term."""
+    base = q ** (mpf(1) / 120)
     terms = []
     for n in range(nterms):
         r = n % 60
         if r == a:
-            terms.append(q ** (mpf(n * n) / 120))
+            terms.append(base ** (n * n))
         elif r == (60 - a) % 60:
-            terms.append(-q ** (mpf(n * n) / 120))
+            terms.append(-(base ** (n * n)))
     return mp.fsum(terms)
 
 
