@@ -37,5 +37,5 @@ SEPARATION, not a mass functional; adding chirality does not open a tractable ma
 (tau still multi-block; (level,chirality)→mass is a fit unless geometry-derived).
 
 **Net:** no in-session tractable probe remains — the q-closure is fully reduced to the single
-owner-gated equivariant-index object. Doc: `docs/audits/2026-06-22-keystone-geometric-level-route-reduction.md`.
+owner-gated equivariant-index object. Doc: [`docs/audits/2026-06-22-keystone-geometric-level-route-reduction.md`](../docs/audits/2026-06-22-keystone-geometric-level-route-reduction.md).
 No fit; nothing wired. Owner closes (§4a).
