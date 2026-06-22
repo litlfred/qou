@@ -28,6 +28,7 @@ open QOU.Archimedean
 def IsPalindromic (xs : List ℕ) : Prop :=
   xs = xs.reverse
 
+open Classical in
 /-- The word-length histogram of an H₃(q) NF element.
 
     Basis elements by word length:
@@ -39,7 +40,7 @@ def IsPalindromic (xs : List ℕ) : Prop :=
     The histogram counts nonzero coefficients at each length. -/
 noncomputable def h3_histogram (x : Fin 6 → R_q) : List ℕ :=
   let count_at := fun (slots : List (Fin 6)) =>
-    slots.filter (fun i => x i ≠ 0) |>.length
+    slots.filter (fun i => decide (x i ≠ 0)) |>.length
   -- Full histogram over all word lengths 0..3.
   -- Do NOT filter zeros: [1, 0, 1, 0] is NOT palindromic,
   -- but filtering to [1, 1] would incorrectly pass.
@@ -60,7 +61,7 @@ noncomputable def h3_histogram (x : Fin 6 → R_q) : List ℕ :=
 theorem helium_histogram_palindromic :
     IsPalindromic [0, 1, 1, 0] := by
   unfold IsPalindromic
-  simp [List.reverse]
+  decide
 
 /-! ## §3  General palindromicity conjecture -/
 
