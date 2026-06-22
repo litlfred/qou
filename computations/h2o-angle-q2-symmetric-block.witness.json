@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T20:24:46.858075+00:00",
-  "commitSha": "2d8b13ab737cec27b9c87c5c1a45ee4b27b3cdae",
+  "computedAt": "2026-06-22T14:42:35.308527+00:00",
+  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
   "assertions": [
     {
       "name": "symmetric-block lone/bond ratio = q² exactly",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 25,
   "computation": "h2o-angle-q2-symmetric-block",
   "scriptFile": "h2o_angle_q2_symmetric_block.py",
   "scriptHash": "9d676027113f",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,40 +35,42 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "mpmath": "1.4.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "H₂O lone/bond weight ratio = q² DERIVED from the symmetric Wedderburn block. The C₂ᵥ assembly projector (S₂ H-exchange stabiliser, rem:h2o-c2v-from-projector) selects the symmetric (trivial) rep of the local H₃(q), on which σ↦q so bond σ↦q and lone e⁻=σ₀σ₁σ₀↦q³, giving lone/bond = q² EXACTLY (verified across all 3 blocks: sym→q², alt→q⁻², std→0). Feeding r=q² into the trace-weighted VSEPR (n=1) gives θ=104.72° (obs 104.5°). PROMOTES the earlier kernel-conditional q² near-match to a kernel-independent derived ratio; only the 0.22° residual carries the VSEPR-kernel/geometry approximation. No fit.",
   "contentBlock": "prop:h2o-bond-angle-shift",
   "parameters": {
-    "q": 1.1099785827513808
+    "q": 1.1099785955573347
   },
   "data": {
-    "q_squared": 1.232052454166764,
+    "q_squared": 1.232052482595433,
     "block_ratios": {
       "sym V(3)": {
         "dim": 1,
-        "sigma_trace": 1.109978582751381,
-        "e_minus_trace": 1.3675518369513862,
-        "lone_over_bond": 1.2320524541667646
+        "sigma_trace": 1.109978595557335,
+        "e_minus_trace": 1.3675518842842074,
+        "lone_over_bond": 1.2320524825954338
       },
       "std V(2,1)": {
         "dim": 2,
-        "sigma_trace": 0.20906029879563925,
-        "e_minus_trace": 1.1102230246251565e-16,
-        "lone_over_bond": 5.310539739113366e-16
+        "sigma_trace": 0.20906032199559343,
+        "e_minus_trace": 4.996003610813204e-16,
+        "lone_over_bond": 2.389742617405186e-15
       },
       "alt V(1,1,1)": {
         "dim": 1,
-        "sigma_trace": -0.9009182839557418,
-        "e_minus_trace": -0.7312337075494344,
-        "lone_over_bond": 0.8116537543657586
+        "sigma_trace": -0.9009182735617415,
+        "e_minus_trace": -0.7312336822404466,
+        "lone_over_bond": 0.8116537356374689
       }
     },
-    "sym_block_ratio": 1.2320524541667646,
+    "sym_block_ratio": 1.2320524825954338,
     "sym_ratio_equals_q2_exact": true,
-    "theta_at_r_eq_q2_deg": 104.71946018960544,
+    "theta_at_r_eq_q2_deg": 104.71945661731137,
     "observed_deg": 104.5,
-    "residual_deg": 0.21946018960544222,
+    "residual_deg": 0.21945661731136568,
     "finding": "DERIVED: w_lone/w_bond = q² = 1.232052 on the symmetric Wedderburn block that the C₂ᵥ assembly projector selects (σ↦q ⇒ e⁻↦q³). This is a ratio of Hecke eigenvalues — kernel-independent, not fitted. The VSEPR angle at r=q² is 104.72° vs observed 104.5° (+0.22°); the residual is the VSEPR-kernel + points-on-a-sphere approximation, not the ratio. Promotes the owner's q² lever from a Coulomb-conditional near-match to a derivation."
   }
 }

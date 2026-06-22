@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-05-30T20:06:23.556792+00:00",
-  "commitSha": "54d5d45549187c98ec9944c46f686177292bf453",
+  "computedAt": "2026-06-22T14:37:16.908361+00:00",
+  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
   "assertions": [
     {
       "name": "lp_feasible[proton]",
@@ -27,7 +27,7 @@
     },
     {
       "name": "lp_duality_gap_small[neutron]",
-      "computed": 0.0,
+      "computed": 3.469446951953614e-18,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-06,
@@ -35,19 +35,11 @@
       "source": "strong-duality assertion"
     },
     {
-      "name": "lp_feasible[deuteron]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "lp_duality_gap_small[deuteron]",
-      "computed": 0.0,
-      "expected": 0.0,
-      "passed": true,
-      "tolerance": 1e-06,
-      "unit": "absolute",
-      "source": "strong-duality assertion"
+      "name": "lp_solve_ok[deuteron]",
+      "computed": "FAILED: KeyError: 'tr_M_at_q0'",
+      "expected": "success",
+      "passed": false,
+      "source": "LP solve via scipy linprog"
     },
     {
       "name": "lp_feasible[tritium]",
@@ -80,32 +72,24 @@
       "source": "strong-duality assertion"
     },
     {
-      "name": "lp_feasible[helium-4]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "lp_duality_gap_small[helium-4]",
-      "computed": 0.0,
-      "expected": 0.0,
-      "passed": true,
-      "tolerance": 1e-06,
-      "unit": "absolute",
-      "source": "strong-duality assertion"
+      "name": "lp_solve_ok[helium-4]",
+      "computed": "FAILED: KeyError: 'tr_M_at_q0'",
+      "expected": "success",
+      "passed": false,
+      "source": "LP solve via scipy linprog"
     }
   ],
-  "allPassed": true,
-  "durationMs": 5495,
+  "allPassed": false,
+  "durationMs": 399,
   "computation": "a-K-via-lp-dual-full",
   "scriptFile": "aK_via_lp_dual_full.py",
-  "scriptHash": "74a6849cc331",
-  "scriptCommitSha": "dd867616ae15be4e9a031f4f1cfff79654373543",
+  "scriptHash": "4e18bfc9c90d",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
@@ -113,14 +97,13 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "Item B (B.1a-rev.4) — full LP-dual extraction for a_K. Solves the operator-selection LP per `prop:mass-coefficient-shadow-price` for each of proton/neutron/D/T/³He/⁴He at f64 precision (scipy linprog via lp_dual_solver.solve_operator_selection_lp) and extracts literal u_λ^* dual variables. Compares the chirality-active dual sum to closed-form C = (1+h, 1-h², (1-h²)²) at A=2,3,4. Emits witness with all required LP-dual fields per AGENTS.md §LP/SDP duals first-class infra. Note: this is f64-precision verification; MPFR-50dps follow-on would be a future iteration.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",
   "parameters": {
-    "q0_50dps": "1.1099785827513808076",
-    "h_q": "0.20906029879563931543",
+    "q0_50dps": "1.1099785955573347199",
+    "h_q": "0.20906032199559367898",
     "precision": "f64 (scipy linprog highs)",
     "lp_method": "highs"
   },
@@ -131,7 +114,7 @@
         "Z": 1,
         "N": 0,
         "A": 1,
-        "tr_M_atom": 1.06530614425445,
+        "tr_M_atom": "1.0653061442544499756666334037445034130528872534934",
         "x_star": [
           -0.0,
           -0.0,
@@ -164,9 +147,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 3,
-            "y_lambda": 0.4153957953606134,
-            "chi_lambda": 1.3824944633925929,
-            "contribution": 0.5742823872026106,
+            "y_lambda": "0.41539579536061340131043751972541446062496615551882",
+            "chi_lambda": "1.3824944633925928759010066186910068575145333016307",
+            "contribution": "0.57428238720261054553308605310815991986809859908064",
             "x_star": -0.0,
             "u_lambda_star": 0.9707224215058496,
             "is_active": true
@@ -178,9 +161,9 @@
             ],
             "self_conjugate": true,
             "content_sum": 0,
-            "y_lambda": 0.2809296310310197,
-            "chi_lambda": 1.807703063778621,
-            "contribution": 0.5078373547209719,
+            "y_lambda": "0.28092963103101970777815130637822107959502749332953",
+            "chi_lambda": "1.8077030637786210288109844137955337992663530400168",
+            "contribution": "0.50783735472097189210079185791533256739134888072341",
             "x_star": -0.0,
             "u_lambda_star": 0.9668917666004098,
             "is_active": true
@@ -193,9 +176,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -3,
-            "y_lambda": 0.022744942577347185,
-            "chi_lambda": -0.7392235707764748,
-            "contribution": -0.01681359766913246,
+            "y_lambda": "0.022744942577347183133259867518143380184978857822109",
+            "chi_lambda": "-0.73922357077647486081682637872259067950821434399694",
+            "contribution": "-0.016813597669132461967244507278989074206560226310639",
             "x_star": 1.06530614425445,
             "u_lambda_star": 0.0,
             "is_active": false
@@ -209,7 +192,7 @@
         "Z": 0,
         "N": 1,
         "A": 1,
-        "tr_M_atom": 0.9232332299116371,
+        "tr_M_atom": "0.92323322991163717797026991200748498402824245608811",
         "x_star": [
           -0.0,
           -0.0,
@@ -226,8 +209,8 @@
           1
         ],
         "primal_obj": 0.019124992644970647,
-        "dual_obj": 0.019124992644970647,
-        "duality_gap": 0.0,
+        "dual_obj": 0.01912499264497065,
+        "duality_gap": 3.469446951953614e-18,
         "feasible": true,
         "u0_star": 0.02071523427162723,
         "chirality_dual_sum": 0.9555580045779928,
@@ -242,9 +225,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 3,
-            "y_lambda": 0.4153957953606134,
-            "chi_lambda": 1.122106821602472,
-            "contribution": 0.4661184556391288,
+            "y_lambda": "0.41539579536061340131043751972541446062496615551882",
+            "chi_lambda": "1.1221068216024720738277212759029981741187093477827",
+            "contribution": "0.46611845563912881864467675555791747642724423835585",
             "x_star": -0.0,
             "u_lambda_star": 0.9555580045779928,
             "is_active": true
@@ -256,9 +239,9 @@
             ],
             "self_conjugate": true,
             "content_sum": 0,
-            "y_lambda": 0.2809296310310197,
-            "chi_lambda": 1.700888606127043,
-            "contribution": 0.4778300085441356,
+            "y_lambda": "0.28092963103101970777815130637822107959502749332953",
+            "chi_lambda": "1.7008886061270429791873531548743888917445154859717",
+            "contribution": "0.47783000854413559078949177051793673673103621352666",
             "x_star": -0.0,
             "u_lambda_star": 0.9566472722490935,
             "is_active": true
@@ -271,9 +254,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -3,
-            "y_lambda": 0.022744942577347185,
-            "chi_lambda": -0.9107622145530744,
-            "contribution": -0.02071523427162723,
+            "y_lambda": "0.022744942577347183133259867518143380184978857822109",
+            "chi_lambda": "-0.91076221455307436648866691041701579466699304610602",
+            "contribution": "-0.020715234271627231463898614068369229130037995794411",
             "x_star": 0.9232332299116371,
             "u_lambda_star": 0.0,
             "is_active": false
@@ -284,237 +267,14 @@
       },
       {
         "atom": "deuteron",
-        "Z": 1,
-        "N": 1,
-        "A": 2,
-        "tr_M_atom": 0.38828642407478886,
-        "x_star": [
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          0.38828642407478886
-        ],
-        "y0_star": 8.419588525696698e-06,
-        "y_star": [
-          0.9999087985288458,
-          0.999955595492869,
-          0.9998751282783819,
-          0.9982329125838385,
-          0.9998596748689209,
-          0.9994168451096728,
-          0.9749262560459596,
-          0.996886557305661,
-          0.9699713556958791,
-          0.9603971796514108,
-          0.0
-        ],
-        "active_set": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ],
-        "primal_obj": 3.269211920823894e-06,
-        "dual_obj": 3.269211920823894e-06,
-        "duality_gap": 0.0,
-        "feasible": true,
-        "u0_star": 8.419588525696698e-06,
-        "chirality_dual_sum": 8.900013458451767,
-        "self_conjugate_dual_sum": 0.9994168451096728,
-        "a_K_via_lp_dual": 1057061.3814294257,
-        "a_K_C_closed": 1.2090602987956394,
-        "dual_vs_C_ppm": 874282426957.5953,
-        "per_partition": [
-          {
-            "partition": [
-              6
-            ],
-            "self_conjugate": false,
-            "content_sum": 15,
-            "y_lambda": 0.05918772109163174,
-            "chi_lambda": 1.5597586581034162,
-            "contribution": 0.09231856042608279,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9999087985288458,
-            "is_active": true
-          },
-          {
-            "partition": [
-              5,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 9,
-            "y_lambda": 0.05896068354593311,
-            "chi_lambda": 3.215890878473305,
-            "contribution": 0.1896111244039174,
-            "x_star": -0.0,
-            "u_lambda_star": 0.999955595492869,
-            "is_active": true
-          },
-          {
-            "partition": [
-              4,
-              2
-            ],
-            "self_conjugate": false,
-            "content_sum": 5,
-            "y_lambda": 0.04028438790125638,
-            "chi_lambda": 1.6737477222247328,
-            "contribution": 0.06742590249094545,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9998751282783819,
-            "is_active": true
-          },
-          {
-            "partition": [
-              4,
-              1,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 3,
-            "y_lambda": 0.010133462518969929,
-            "chi_lambda": -0.47019171015698125,
-            "contribution": -0.0047646700716061415,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9982329125838385,
-            "is_active": true
-          },
-          {
-            "partition": [
-              3,
-              3
-            ],
-            "self_conjugate": false,
-            "content_sum": 3,
-            "y_lambda": 0.014120874264455371,
-            "chi_lambda": 4.2490694054099745,
-            "contribution": 0.060000574814738396,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9998596748689209,
-            "is_active": true
-          },
-          {
-            "partition": [
-              3,
-              2,
-              1
-            ],
-            "self_conjugate": true,
-            "content_sum": 0,
-            "y_lambda": 0.007318453556334671,
-            "chi_lambda": -1.9728207380214016,
-            "contribution": -0.014437996946183517,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9994168451096728,
-            "is_active": true
-          },
-          {
-            "partition": [
-              3,
-              1,
-              1,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": -3,
-            "y_lambda": -0.0006853090066213158,
-            "chi_lambda": -0.4899877712745947,
-            "contribution": 0.000335793032788785,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9749262560459596,
-            "is_active": true
-          },
-          {
-            "partition": [
-              2,
-              2,
-              2
-            ],
-            "self_conjugate": false,
-            "content_sum": -3,
-            "y_lambda": 0.0007731866279680458,
-            "chi_lambda": -3.4975638908268736,
-            "contribution": -0.0027042696308512285,
-            "x_star": -0.0,
-            "u_lambda_star": 0.996886557305661,
-            "is_active": true
-          },
-          {
-            "partition": [
-              2,
-              2,
-              1,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": -5,
-            "y_lambda": -0.00034205182747287707,
-            "chi_lambda": -0.8197156502925226,
-            "contribution": 0.00028038523619067517,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9699713556958791,
-            "is_active": true
-          },
-          {
-            "partition": [
-              2,
-              1,
-              1,
-              1,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": -9,
-            "y_lambda": 9.863560383539689e-05,
-            "chi_lambda": 2.1554157117076285,
-            "contribution": 0.00021260073024058368,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9603971796514108,
-            "is_active": true
-          },
-          {
-            "partition": [
-              1,
-              1,
-              1,
-              1,
-              1,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": -15,
-            "y_lambda": -1.2437991483744833e-05,
-            "chi_lambda": -0.6769250916999121,
-            "contribution": 8.419588525696698e-06,
-            "x_star": 0.38828642407478886,
-            "u_lambda_star": 0.0,
-            "is_active": false
-          }
-        ],
-        "n_partitions": 11,
-        "n_active": 10
+        "error": "KeyError: 'tr_M_at_q0'"
       },
       {
         "atom": "tritium",
         "Z": 1,
         "N": 2,
         "A": 3,
-        "tr_M_atom": 0.1040521067420518,
+        "tr_M_atom": "0.10405210674205179940541687876459346194008936103244",
         "x_star": [
           -0.0,
           -0.0,
@@ -619,8 +379,8 @@
         "chirality_dual_sum": 26.809418207373987,
         "self_conjugate_dual_sum": 1.9994233997781228,
         "a_K_via_lp_dual": 450634314.2554799,
-        "a_K_C_closed": 0.9562937914674781,
-        "dual_vs_C_ppm": 471229989486459.4,
+        "a_K_C_closed": 0.9562937817670987,
+        "dual_vs_C_ppm": 471229994266486.0,
         "per_partition": [
           {
             "partition": [
@@ -628,9 +388,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 36,
-            "y_lambda": 0.006554640224663667,
-            "chi_lambda": 1.5768014423962848,
-            "contribution": 0.010335366160638378,
+            "y_lambda": "0.0065546402246636668143244521482893969702736891486148",
+            "chi_lambda": "1.5768014423962848491118430566007716699794900973073",
+            "contribution": "0.010335366160638378410247600680228348755196336041824",
             "x_star": -0.0,
             "u_lambda_star": 0.9999942437815876,
             "is_active": true
@@ -642,9 +402,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 27,
-            "y_lambda": 0.007306302293061436,
-            "chi_lambda": 3.7402805388552594,
-            "contribution": 0.027327620277731245,
+            "y_lambda": "0.0073063022930614361596234426304583418164399641312046",
+            "chi_lambda": "3.7402805388552591512157893512634941608499439088196",
+            "contribution": "0.027327620277731244003858723191937815043244293617027",
             "x_star": -0.0,
             "u_lambda_star": 0.9999978229855221,
             "is_active": true
@@ -656,9 +416,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 20,
-            "y_lambda": 0.0062689455070904145,
-            "chi_lambda": 3.190018788935819,
-            "contribution": 0.019998053954433208,
+            "y_lambda": "0.0062689455070904147926008909533106266094145059165647",
+            "chi_lambda": "3.1900187889358189896623613019605021189200034516914",
+            "contribution": "0.019998053954433208653803716737398387446122558586531",
             "x_star": -0.0,
             "u_lambda_star": 0.9999970250792838,
             "is_active": true
@@ -671,9 +431,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 18,
-            "y_lambda": 0.0014725458302899228,
-            "chi_lambda": -0.5793965429530328,
-            "contribution": -0.0008531879634098847,
+            "y_lambda": "0.0014725458302899227907789578391389841516329985304278",
+            "chi_lambda": "-0.57939654295303282713047123058384666880032218002934",
+            "contribution": "-0.00085318796340988463814470987183775785718593958541483",
             "x_star": -0.0,
             "u_lambda_star": 0.9999302702012404,
             "is_active": true
@@ -685,9 +445,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 15,
-            "y_lambda": 0.004456442453625004,
-            "chi_lambda": 10.167417371487472,
-            "contribution": 0.045310510418021116,
+            "y_lambda": "0.0044564424536250039665857787786307394424775855148455",
+            "chi_lambda": "10.167417371487471459603775925571123181020719082255",
+            "contribution": "0.045310510418021115757316963905077584595095911138259",
             "x_star": -0.0,
             "u_lambda_star": 0.9999986870016594,
             "is_active": true
@@ -700,9 +460,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 12,
-            "y_lambda": 0.0015797910173972352,
-            "chi_lambda": -6.340254449287273,
-            "contribution": -0.010016277026996888,
+            "y_lambda": "0.0015797910173972352129752234922064984499487798981469",
+            "chi_lambda": "-6.3402544492872730119724927863174859227540136697292",
+            "contribution": "-0.010016277026996888283220415784246160494883893142015",
             "x_star": -0.0,
             "u_lambda_star": 0.9999940604053948,
             "is_active": true
@@ -716,9 +476,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 9,
-            "y_lambda": -0.00012632451277671804,
-            "chi_lambda": -1.0292765623594955,
-            "contribution": 0.0001300228602525585,
+            "y_lambda": "-0.00012632451277671803059143955145437720974645721561259",
+            "chi_lambda": "-1.0292765623594954814064963943003191816009722697949",
+            "contribution": "0.00013002286025255849970467508111610623121494934806356",
             "x_star": -0.0,
             "u_lambda_star": 0.999542444883329,
             "is_active": true
@@ -730,9 +490,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 12,
-            "y_lambda": 0.0022956143296586707,
-            "chi_lambda": 4.424036909362935,
-            "contribution": 0.010155882524072412,
+            "y_lambda": "0.0022956143296586705407406214699188822453919229921092",
+            "chi_lambda": "4.4240369093629354121542423324928874880366385582475",
+            "contribution": "0.010155882524072411576989351899305578216629626104113",
             "x_star": -0.0,
             "u_lambda_star": 0.9999941420526625,
             "is_active": true
@@ -745,9 +505,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 8,
-            "y_lambda": 0.001112378605445634,
-            "chi_lambda": 2.0741879126959586,
-            "contribution": 0.0023072822577569208,
+            "y_lambda": "0.0011123786054456339405865703333266584899407250728209",
+            "chi_lambda": "2.074187912695958698962662550648551352075400962317",
+            "contribution": "0.0023072822577569208597414347076043771368478039587208",
             "x_star": -0.0,
             "u_lambda_star": 0.9999742152808601,
             "is_active": true
@@ -760,9 +520,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 6,
-            "y_lambda": 0.00035942351733200725,
-            "chi_lambda": -9.370716178226562,
-            "contribution": -0.0033680557686981355,
+            "y_lambda": "0.00035942351733200723178727220224033851581637042886204",
+            "chi_lambda": "-9.3707161782265629786306446637688138839234714153912",
+            "contribution": "-0.0033680557686981356267986301764129367771306634108509",
             "x_star": -0.0,
             "u_lambda_star": 0.9999823362114293,
             "is_active": true
@@ -776,9 +536,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 4,
-            "y_lambda": -0.00013919036190503077,
-            "chi_lambda": -5.974289925220178,
-            "contribution": 0.0008315635768169759,
+            "y_lambda": "-0.00013919036190503077171857021679423496661386307209838",
+            "chi_lambda": "-5.9742899252201786196067107546712286952613217670232",
+            "contribution": "0.00083156357681697588804003715558272546702923938127177",
             "x_star": -0.0,
             "u_lambda_star": 0.9999284569133963,
             "is_active": true
@@ -793,9 +553,9 @@
             ],
             "self_conjugate": true,
             "content_sum": 0,
-            "y_lambda": 2.6781218857901155e-05,
-            "chi_lambda": 6.0446970952339,
-            "contribution": 0.00016188435583717846,
+            "y_lambda": "0.000026781218857901156331703697105801636572458280829205",
+            "chi_lambda": "6.0446970952338999321091292302839173814696364376801",
+            "contribution": "0.00016188435583717846274805300622493381057026891947381",
             "x_star": -0.0,
             "u_lambda_star": 0.9996324992326461,
             "is_active": true
@@ -808,9 +568,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 6,
-            "y_lambda": 0.00039454294571540763,
-            "chi_lambda": -2.6078337144417603,
-            "contribution": -0.0010289023956318053,
+            "y_lambda": "0.00039454294571540763607310396391698417644686825562965",
+            "chi_lambda": "-2.6078337144417602292861771701181787702535264628588",
+            "contribution": "-0.0010289023956318052647669653155646794832080839609863",
             "x_star": -0.0,
             "u_lambda_star": 0.9999421785533348,
             "is_active": true
@@ -823,9 +583,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 3,
-            "y_lambda": 0.0002668269765934913,
-            "chi_lambda": 7.0274623472011974,
-            "contribution": 0.0018751165312282955,
+            "y_lambda": "0.00026682697659349132676671158377104213567216598783277",
+            "chi_lambda": "7.0274623472011976587344645743016530692906069703856",
+            "contribution": "0.0018751165312282955871019451427244457153481837255298",
             "x_star": -0.0,
             "u_lambda_star": 0.9999682725718632,
             "is_active": true
@@ -839,9 +599,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 1,
-            "y_lambda": -8.434580134197214e-05,
-            "chi_lambda": -3.7441132468123013,
-            "contribution": 0.00031580023211747664,
+            "y_lambda": "-0.000084345801341972135046291395215952253902727076215668",
+            "chi_lambda": "-3.7441132468123011681502486425009054956970112868816",
+            "contribution": "0.00031580023211747663954837321087770646506673135104483",
             "x_star": -0.0,
             "u_lambda_star": 0.9998116131055578,
             "is_active": true
@@ -855,9 +615,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -1,
-            "y_lambda": -3.678405855565233e-05,
-            "chi_lambda": -2.170319475636676,
-            "contribution": 7.983315867629215e-05,
+            "y_lambda": "-0.000036784058555652329137958502472814503408988889503858",
+            "chi_lambda": "-2.1703194756366761447325436585364394259506353489755",
+            "contribution": "0.000079833158676292153846050162808935411216057280144657",
             "x_star": -0.0,
             "u_lambda_star": 0.9992547880357086,
             "is_active": true
@@ -872,9 +632,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -4,
-            "y_lambda": 2.7423647379024884e-05,
-            "chi_lambda": 3.7590026401434784,
-            "contribution": 0.00010308556290011832,
+            "y_lambda": "0.000027423647379024882794624366712456541853773680412364",
+            "chi_lambda": "3.7590026401434785556793927663037795378099183395363",
+            "contribution": "0.00010308556290011832036808702742784443604782713954592",
             "x_star": -0.0,
             "u_lambda_star": 0.9994228811162393,
             "is_active": true
@@ -890,9 +650,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -9,
-            "y_lambda": -7.1689400045791934e-06,
-            "chi_lambda": -0.31102334807128923,
-            "contribution": 2.229707722346424e-06,
+            "y_lambda": "-0.0000071689400045791934543244137953197269126535923538526",
+            "chi_lambda": "-0.31102334807128921038567158886326913057649060116617",
+            "contribution": "0.0000022297077223464241515323678225851961541972739051317",
             "x_star": -0.0,
             "u_lambda_star": 0.9733181957453402,
             "is_active": true
@@ -905,9 +665,9 @@
             ],
             "self_conjugate": true,
             "content_sum": 0,
-            "y_lambda": 3.0103760606526106e-05,
-            "chi_lambda": 9.451254985268033,
-            "contribution": 0.0002845183175077453,
+            "y_lambda": "0.000030103760606526104499381816331631863505404449768791",
+            "chi_lambda": "9.4512549852680329876164551212367295248339618060045",
+            "contribution": "0.00028451831750774526957627106189951104310806937586477",
             "x_star": -0.0,
             "u_lambda_star": 0.9997909005454767,
             "is_active": true
@@ -921,9 +681,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -3,
-            "y_lambda": -1.8045059122362287e-05,
-            "chi_lambda": -2.217620817891667,
-            "contribution": 4.0017098769836534e-05,
+            "y_lambda": "-0.000018045059122362285898698538661475021626166725579256",
+            "chi_lambda": "-2.2176208178916668292587511787202120776026273944777",
+            "contribution": "0.000040017098769836536076082915317637422218963681134605",
             "x_star": -0.0,
             "u_lambda_star": 0.9985133198852089,
             "is_active": true
@@ -938,9 +698,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -6,
-            "y_lambda": 1.0981329913541541e-05,
-            "chi_lambda": 3.3704099720215845,
-            "contribution": 3.7011583846659335e-05,
+            "y_lambda": "0.000010981329913541540881305754801925286149476123604067",
+            "chi_lambda": "3.3704099720215846620301103362165375000168876056463",
+            "contribution": "0.000037011583846659335517423519284079492545435045995299",
             "x_star": -0.0,
             "u_lambda_star": 0.9983925944580153,
             "is_active": true
@@ -954,9 +714,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -6,
-            "y_lambda": -1.4609844893778608e-06,
-            "chi_lambda": 2.866137847841513,
-            "contribution": -4.187382940115294e-06,
+            "y_lambda": "-0.0000014609844893778607411953762645668037137642363401426",
+            "chi_lambda": "2.86613784784151314867396293431829159223104619551",
+            "contribution": "-0.000004187382940115293812055725480563949486408316206344",
             "x_star": -0.0,
             "u_lambda_star": 0.985792408804361,
             "is_active": true
@@ -971,9 +731,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -8,
-            "y_lambda": 6.463882154011145e-06,
-            "chi_lambda": 3.381635774694264,
-            "contribution": 2.1858495135411905e-05,
+            "y_lambda": "0.0000064638821540111445457530613896019323174279703425337",
+            "chi_lambda": "3.381635774694264123075787835077283473824517124931",
+            "contribution": "0.000021858495135411905465923314000026720962607261666046",
             "x_star": -0.0,
             "u_lambda_star": 0.9972782835861207,
             "is_active": true
@@ -989,9 +749,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -12,
-            "y_lambda": -6.063111126267785e-06,
-            "chi_lambda": -1.049612282122628,
-            "contribution": 6.363915906005026e-06,
+            "y_lambda": "-0.0000060631111262677849137936500303708156553779532971162",
+            "chi_lambda": "-1.0496122821226279072702752554743982961287786616534",
+            "contribution": "0.0000063639159060050264954134663796132642127590478088116",
             "x_star": -0.0,
             "u_lambda_star": 0.9906515695883704,
             "is_active": true
@@ -1008,9 +768,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -18,
-            "y_lambda": 2.0022506395004724e-06,
-            "chi_lambda": -2.245439776810627,
-            "contribution": -4.4959332290788755e-06,
+            "y_lambda": "0.000002002250639500472258790053175251729576115467864814",
+            "chi_lambda": "-2.2454397768106269250292880550426902290800905257056",
+            "contribution": "-0.0000044959332290788754597079444229950689715635369832187",
             "x_star": -0.0,
             "u_lambda_star": 0.9867674580645541,
             "is_active": true
@@ -1025,9 +785,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -12,
-            "y_lambda": 2.1027753307138873e-07,
-            "chi_lambda": 8.649841637935419,
-            "contribution": 1.8188673610832402e-06,
+            "y_lambda": "0.00000021027753307138872090705363911556128136088030133926",
+            "chi_lambda": "8.6498416379354186762962123805434087119905597169694",
+            "contribution": "0.0000018188673610832401831544764340522348666347843849873",
             "x_star": -0.0,
             "u_lambda_star": 0.9672913889898385,
             "is_active": true
@@ -1043,9 +803,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -15,
-            "y_lambda": -9.364981834690639e-07,
-            "chi_lambda": -5.113737071078846,
-            "contribution": 4.789005477803752e-06,
+            "y_lambda": "-0.00000093649818346906393385874486035162071241252952243863",
+            "chi_lambda": "-5.1137370710788466288953222379240082464900102890163",
+            "contribution": "0.0000047890054778037513449756843528472687784531994479989",
             "x_star": -0.0,
             "u_lambda_star": 0.9875772484979419,
             "is_active": true
@@ -1062,9 +822,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -20,
-            "y_lambda": 1.0702141465056672e-06,
-            "chi_lambda": -1.8834911716929879,
-            "contribution": -2.0157388967643702e-06,
+            "y_lambda": "0.0000010702141465056673259699295463932967029057117529354",
+            "chi_lambda": "-1.8834911716929879397405607155619999448795354218974",
+            "contribution": "-0.0000020157388967643704063957063183081639236545268748086",
             "x_star": -0.0,
             "u_lambda_star": 0.9704859468216607,
             "is_active": true
@@ -1082,9 +842,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -27,
-            "y_lambda": -5.035540180337562e-07,
-            "chi_lambda": 2.661914475105901,
-            "contribution": -1.3404177296017934e-06,
+            "y_lambda": "-0.0000005035540180337561678291418832310053501946839780626",
+            "chi_lambda": "2.6619144751059009974841544730548090101307760851914",
+            "contribution": "-0.0000013404177296017934545618507938851433724959172849723",
             "x_star": -0.0,
             "u_lambda_star": 0.9556163547535107,
             "is_active": true
@@ -1103,9 +863,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -36,
-            "y_lambda": 8.693665292184324e-08,
-            "chi_lambda": -0.6843215490045953,
-            "contribution": -5.949262499275065e-08,
+            "y_lambda": "0.00000008693665292184324293488882558784973710856537122526",
+            "chi_lambda": "-0.68432154900459531755319430391538199052867118475384",
+            "contribution": "-0.000000059492624992750645467574134392494224842832700633085",
             "x_star": 0.1040521067420518,
             "u_lambda_star": 0.0,
             "is_active": false
@@ -1119,7 +879,7 @@
         "Z": 2,
         "N": 1,
         "A": 3,
-        "tr_M_atom": 0.20654081702073965,
+        "tr_M_atom": "0.20654081702073964813770987099204950200337250952334",
         "x_star": [
           -0.0,
           -0.0,
@@ -1224,8 +984,8 @@
         "chirality_dual_sum": 26.79615016205672,
         "self_conjugate_dual_sum": 1.9996177409644944,
         "a_K_via_lp_dual": 683703287.3497081,
-        "a_K_C_closed": 0.9562937914674781,
-        "dual_vs_C_ppm": 714951087724034.2,
+        "a_K_C_closed": 0.9562937817670987,
+        "dual_vs_C_ppm": 714951094976300.2,
         "per_partition": [
           {
             "partition": [
@@ -1233,9 +993,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 36,
-            "y_lambda": 0.006554640224663667,
-            "chi_lambda": 2.393510873803696,
-            "contribution": 0.015688602651603586,
+            "y_lambda": "0.0065546402246636668143244521482893969702736891486148",
+            "chi_lambda": "2.3935108738036959869422203076618903908731087995283",
+            "contribution": "0.015688602651603587332547090714508451990066331279629",
             "x_star": -0.0,
             "u_lambda_star": 0.9999975018387258,
             "is_active": true
@@ -1247,9 +1007,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 27,
-            "y_lambda": 0.007306302293061436,
-            "chi_lambda": 6.56766248605825,
-            "contribution": 0.04798532748194096,
+            "y_lambda": "0.0073063022930614361596234426304583418164399641312046",
+            "chi_lambda": "6.5676624860582498376534974284769211047149133803597",
+            "contribution": "0.047985327481940963281260996697709064585488982292642",
             "x_star": -0.0,
             "u_lambda_star": 0.9999991832365924,
             "is_active": true
@@ -1261,9 +1021,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 20,
-            "y_lambda": 0.0062689455070904145,
-            "chi_lambda": 7.567570361268455,
-            "contribution": 0.04744068621586447,
+            "y_lambda": "0.0062689455070904147926008909533106266094145059165647",
+            "chi_lambda": "7.5675703612684547721020616834292176572232287769373",
+            "contribution": "0.047440686215864466669108665298779310494325382089929",
             "x_star": -0.0,
             "u_lambda_star": 0.9999991738597664,
             "is_active": true
@@ -1276,9 +1036,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 18,
-            "y_lambda": 0.0014725458302899228,
-            "chi_lambda": 1.6704860686723906,
-            "contribution": 0.0024598672949809343,
+            "y_lambda": "0.0014725458302899227907789578391389841516329985304278",
+            "chi_lambda": "1.6704860686723904922724618197825100127973631044996",
+            "contribution": "0.0024598672949809342385143301424088741831317043452662",
             "x_star": -0.0,
             "u_lambda_star": 0.9999840671650583,
             "is_active": true
@@ -1290,9 +1050,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 15,
-            "y_lambda": 0.004456442453625004,
-            "chi_lambda": 16.06472795200011,
-            "contribution": 0.07159153565122955,
+            "y_lambda": "0.0044564424536250039665857787786307394424775855148455",
+            "chi_lambda": "16.06472795200010904449347010161088641462964578055",
+            "contribution": "0.071591535651229550898631468546103591263674506204287",
             "x_star": -0.0,
             "u_lambda_star": 0.9999994525517684,
             "is_active": true
@@ -1305,9 +1065,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 12,
-            "y_lambda": 0.0015797910173972352,
-            "chi_lambda": -2.8969111713142706,
-            "contribution": -0.004576514246639988,
+            "y_lambda": "0.0015797910173972352129752234922064984499487798981469",
+            "chi_lambda": "-2.896911171314270536975025785586100293198000883338",
+            "contribution": "-0.0045765142466399878043282404938940383389152300989984",
             "x_star": -0.0,
             "u_lambda_star": 0.9999914361329437,
             "is_active": true
@@ -1321,9 +1081,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 9,
-            "y_lambda": -0.00012632451277671804,
-            "chi_lambda": -2.0500519932347663,
-            "contribution": 0.0002589718192123215,
+            "y_lambda": "-0.00012632451277671803059143955145437720974645721561259",
+            "chi_lambda": "-2.050051993234766143264633736175971216708216682178",
+            "contribution": "0.00025897181921232148127738966122529242419446449132342",
             "x_star": -0.0,
             "u_lambda_star": 0.9998486605233395,
             "is_active": true
@@ -1335,9 +1095,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 12,
-            "y_lambda": 0.0022956143296586707,
-            "chi_lambda": 7.695234837676842,
-            "contribution": 0.01766529136345957,
+            "y_lambda": "0.0022956143296586705407406214699188822453919229921092",
+            "chi_lambda": "7.6952348376768418106586070626126257254399497367204",
+            "contribution": "0.017665291363459571623672877177886440056766084312307",
             "x_star": -0.0,
             "u_lambda_star": 0.9999977813748563,
             "is_active": true
@@ -1350,9 +1110,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 8,
-            "y_lambda": 0.001112378605445634,
-            "chi_lambda": 6.7818792521485625,
-            "contribution": 0.007544017384805697,
+            "y_lambda": "0.0011123786054456339405865703333266584899407250728209",
+            "chi_lambda": "6.7818792521485628476587954838077151459925400158861",
+            "contribution": "0.0075440173848056971689507851369120669799298226401782",
             "x_star": -0.0,
             "u_lambda_star": 0.9999948048025885,
             "is_active": true
@@ -1365,9 +1125,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 6,
-            "y_lambda": 0.00035942351733200725,
-            "chi_lambda": -9.994185179671216,
-            "contribution": -0.0035921451901448475,
+            "y_lambda": "0.00035942351733200723178727220224033851581637042886204",
+            "chi_lambda": "-9.9941851796712167718231269671255802359734489973896",
+            "contribution": "-0.0035921451901448473912700771432730867320447292710482",
             "x_star": -0.0,
             "u_lambda_star": 0.9999890893442456,
             "is_active": true
@@ -1381,9 +1141,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 4,
-            "y_lambda": -0.00013919036190503077,
-            "chi_lambda": -7.8590733762809,
-            "contribution": 0.0010939072674827307,
+            "y_lambda": "-0.00013919036190503077171857021679423496661386307209838",
+            "chi_lambda": "-7.8590733762809005803256935384940067719999428481202",
+            "contribution": "0.0010939072674827306319090154057808249404895860265318",
             "x_star": -0.0,
             "u_lambda_star": 0.9999641718628677,
             "is_active": true
@@ -1398,9 +1158,9 @@
             ],
             "self_conjugate": true,
             "content_sum": 0,
-            "y_lambda": 2.6781218857901155e-05,
-            "chi_lambda": 5.4790398006087635,
-            "contribution": 0.0001467353640312544,
+            "y_lambda": "0.000026781218857901156331703697105801636572458280829205",
+            "chi_lambda": "5.4790398006087635379027723386463791454613889137073",
+            "contribution": "0.00014673536403125440954871091015485780360599920556328",
             "x_star": -0.0,
             "u_lambda_star": 0.9997329024271133,
             "is_active": true
@@ -1413,9 +1173,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 6,
-            "y_lambda": 0.00039454294571540763,
-            "chi_lambda": -1.736664246934078,
-            "contribution": -0.0006851886277040012,
+            "y_lambda": "0.00039454294571540763607310396391698417644686825562965",
+            "chi_lambda": "-1.7366642469340780192106118945187942964776577845609",
+            "contribution": "-0.00068518862770400122611090743612228623834772225678783",
             "x_star": -0.0,
             "u_lambda_star": 0.9999428001896051,
             "is_active": true
@@ -1428,9 +1188,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 3,
-            "y_lambda": 0.0002668269765934913,
-            "chi_lambda": 8.64991770843003,
-            "contribution": 0.002308031389922886,
+            "y_lambda": "0.00026682697659349132676671158377104213567216598783277",
+            "chi_lambda": "8.6499177084300302928843357422344253333942081653308",
+            "contribution": "0.0023080313899228858278377337863327919729869529037652",
             "x_star": -0.0,
             "u_lambda_star": 0.9999830190092905,
             "is_active": true
@@ -1444,9 +1204,9 @@
             ],
             "self_conjugate": false,
             "content_sum": 1,
-            "y_lambda": -8.434580134197214e-05,
-            "chi_lambda": -5.42868394807741,
-            "contribution": 0.0004578866978328902,
+            "y_lambda": "-0.000084345801341972135046291395215952253902727076215668",
+            "chi_lambda": "-5.4286839480774098689085113493357992761974599934783",
+            "contribution": "0.00045788669783289018561395573776097995886160289320424",
             "x_star": -0.0,
             "u_lambda_star": 0.9999144053326404,
             "is_active": true
@@ -1460,9 +1220,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -1,
-            "y_lambda": -3.678405855565233e-05,
-            "chi_lambda": -6.521714510124135,
-            "contribution": 0.00023989512842365363,
+            "y_lambda": "-0.000036784058555652329137958502472814503408988889503858",
+            "chi_lambda": "-6.5217145101241348604034983300091843095421653211436",
+            "contribution": "0.00023989512842365362142819976763920538985888862825698",
             "x_star": -0.0,
             "u_lambda_star": 0.9998366258629472,
             "is_active": true
@@ -1477,9 +1237,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -4,
-            "y_lambda": 2.7423647379024884e-05,
-            "chi_lambda": 3.633805942675549,
-            "contribution": 9.965221281573936e-05,
+            "y_lambda": "0.000027423647379024882794624366712456541853773680412364",
+            "chi_lambda": "3.6338059426755489743323634070482849782991579090968",
+            "contribution": "0.000099652212815739362124312254986673811454991275817238",
             "x_star": -0.0,
             "u_lambda_star": 0.9996067055765047,
             "is_active": true
@@ -1495,9 +1255,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -9,
-            "y_lambda": -7.1689400045791934e-06,
-            "chi_lambda": 1.0771713000907959,
-            "contribution": -7.722176425005486e-06,
+            "y_lambda": "-0.0000071689400045791934543244137953197269126535923538526",
+            "chi_lambda": "1.0771713000907958291873791419448222946321866114385",
+            "contribution": "-0.0000077221764250054856182564609221912026207842707961383",
             "x_star": -0.0,
             "u_lambda_star": 0.9949246614642879,
             "is_active": true
@@ -1510,9 +1270,9 @@
             ],
             "self_conjugate": true,
             "content_sum": 0,
-            "y_lambda": 3.0103760606526106e-05,
-            "chi_lambda": 11.305162563434951,
-            "contribution": 0.00034032790742750675,
+            "y_lambda": "0.000030103760606526104499381816331631863505404449768791",
+            "chi_lambda": "11.305162563434950568290137311250870476785808923048",
+            "contribution": "0.00034032790742750673785211594445505737044869998669517",
             "x_star": -0.0,
             "u_lambda_star": 0.9998848385373811,
             "is_active": true
@@ -1526,9 +1286,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -3,
-            "y_lambda": -1.8045059122362287e-05,
-            "chi_lambda": -2.942345035261571,
-            "contribution": 5.3094790119684195e-05,
+            "y_lambda": "-0.000018045059122362285898698538661475021626166725579256",
+            "chi_lambda": "-2.9423450352615711503985698938803665425486626804201",
+            "contribution": "0.000053094790119684196258932669330962812426790749601192",
             "x_star": -0.0,
             "u_lambda_star": 0.9992618360577177,
             "is_active": true
@@ -1543,9 +1303,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -6,
-            "y_lambda": 1.0981329913541541e-05,
-            "chi_lambda": 2.153665172302584,
-            "contribution": 2.3650107780358964e-05,
+            "y_lambda": "0.000010981329913541540881305754801925286149476123604067",
+            "chi_lambda": "2.1536651723025840981915983339752871523477772785195",
+            "contribution": "0.00002365010778035896358011577964944581754468937097961",
             "x_star": -0.0,
             "u_lambda_star": 0.9983428126436723,
             "is_active": true
@@ -1559,9 +1319,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -6,
-            "y_lambda": -1.4609844893778608e-06,
-            "chi_lambda": -0.3696749391504149,
-            "contribution": 5.400893522104606e-07,
+            "y_lambda": "-0.0000014609844893778607411953762645668037137642363401426",
+            "chi_lambda": "-0.36967493915041487364836996830656139969638130329663",
+            "contribution": "0.00000054008935221046061482389474715867077200848001170785",
             "x_star": -0.0,
             "u_lambda_star": 0.9274330082068988,
             "is_active": true
@@ -1576,9 +1336,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -8,
-            "y_lambda": 6.463882154011145e-06,
-            "chi_lambda": 2.110470804065932,
-            "contribution": 1.3641834566963328e-05,
+            "y_lambda": "0.0000064638821540111445457530613896019323174279703425337",
+            "chi_lambda": "2.1104708040659319639570494365273745246391366593307",
+            "contribution": "0.000013641834566963328499636556113428507792114224657102",
             "x_star": -0.0,
             "u_lambda_star": 0.9971270242725043,
             "is_active": true
@@ -1594,9 +1354,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -12,
-            "y_lambda": -6.063111126267785e-06,
-            "chi_lambda": 1.1287695590772469,
-            "contribution": -6.843855272633638e-06,
+            "y_lambda": "-0.0000060631111262677849137936500303708156553779532971162",
+            "chi_lambda": "1.1287695590772469497106606878652140157025075548806",
+            "contribution": "-0.0000068438552726336377333106662269574861722247057990523",
             "x_star": -0.0,
             "u_lambda_star": 0.9942733067798618,
             "is_active": true
@@ -1613,9 +1373,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -18,
-            "y_lambda": 2.0022506395004724e-06,
-            "chi_lambda": -2.381403005545122,
-            "contribution": -4.768165690761067e-06,
+            "y_lambda": "0.000002002250639500472258790053175251729576115467864814",
+            "chi_lambda": "-2.3814030055451218786884313622534770326719013221491",
+            "contribution": "-0.0000047681656907610669662113808505770019061498866517309",
             "x_star": -0.0,
             "u_lambda_star": 0.9917803486432238,
             "is_active": true
@@ -1630,9 +1390,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -12,
-            "y_lambda": 2.1027753307138873e-07,
-            "chi_lambda": 6.659203379841765,
-            "contribution": 1.4002808589337803e-06,
+            "y_lambda": "0.00000021027753307138872090705363911556128136088030133926",
+            "chi_lambda": "6.6592033798417650112154658388606882974673031048671",
+            "contribution": "0.0000014002808589337802884709375540289770893364688075424",
             "x_star": -0.0,
             "u_lambda_star": 0.9720108581508138,
             "is_active": true
@@ -1648,9 +1408,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -15,
-            "y_lambda": -9.364981834690639e-07,
-            "chi_lambda": -3.7202579947917775,
-            "contribution": 3.4840148541587623e-06,
+            "y_lambda": "-0.00000093649818346906393385874486035162071241252952243863",
+            "chi_lambda": "-3.7202579947917777647217911278150044948305225148506",
+            "contribution": "0.000003484014854158762190008236118296090158967249837178",
             "x_star": -0.0,
             "u_lambda_star": 0.988750719721354,
             "is_active": true
@@ -1667,9 +1427,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -20,
-            "y_lambda": 1.0702141465056672e-06,
-            "chi_lambda": -1.4695198898660191,
-            "contribution": -1.5727009747060637e-06,
+            "y_lambda": "0.0000010702141465056673259699295463932967029057117529354",
+            "chi_lambda": "-1.469519889866019016656397067383447749948686448341",
+            "contribution": "-0.000001572700974706063789498860967652126890640163366234",
             "x_star": -0.0,
             "u_lambda_star": 0.9750793951172295,
             "is_active": true
@@ -1687,9 +1447,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -27,
-            "y_lambda": -5.035540180337562e-07,
-            "chi_lambda": 1.8583355139071098,
-            "contribution": -9.357723148827504e-07,
+            "y_lambda": "-0.0000005035540180337561678291418832310053501946839780626",
+            "chi_lambda": "1.8583355139071098327016358241764561261274433532822",
+            "contribution": "-0.00000093577231488275032051451954411281368330965120032642",
             "x_star": -0.0,
             "u_lambda_star": 0.9581173123354172,
             "is_active": true
@@ -1708,9 +1468,9 @@
             ],
             "self_conjugate": false,
             "content_sum": -36,
-            "y_lambda": 8.693665292184324e-08,
-            "chi_lambda": -0.45081859344909886,
-            "contribution": -3.9192659589397864e-08,
+            "y_lambda": "0.00000008693665292184324293488882558784973710856537122526",
+            "chi_lambda": "-0.45081859344909887473973316051709991940274182561549",
+            "contribution": "-0.000000039192659589397862747302306400157114605291299684707",
             "x_star": 0.20654081702073965,
             "u_lambda_star": 0.0,
             "is_active": false
@@ -1721,475 +1481,16 @@
       },
       {
         "atom": "helium-4",
-        "Z": 2,
-        "N": 2,
-        "A": 4,
-        "tr_M_atom": 0.05515778759484302,
-        "x_star": [
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          0.05515778759484302,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0
-        ],
-        "y0_star": 6.764847590218118e-06,
-        "y_star": [
-          0.9957418693970151,
-          0.9988065630497653,
-          0.9990919264132239,
-          0.9798402409947952,
-          0.9995783796595847,
-          0.99568941949892,
-          0.866363083580935,
-          0.9994813156809738,
-          0.9969826219956899,
-          0.9943882944135517,
-          0.9848509483984851,
-          0.8359596355008023,
-          0.9988131629867759,
-          0.968436200154247,
-          0.993115627670843,
-          0.9836000986516895,
-          0.9604179919320531,
-          0.8808416568847266,
-          0.0,
-          0.9962303203811056,
-          0.9663057229504706,
-          0.9653847286809286,
-          0.9824780047027363,
-          0.9926122102868223
-        ],
-        "active_set": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          19,
-          20,
-          21,
-          22,
-          23
-        ],
-        "primal_obj": 3.731340264927366e-07,
-        "dual_obj": 3.731340264927366e-07,
-        "duality_gap": 0.0,
-        "feasible": true,
-        "u0_star": 6.764847590218118e-06,
-        "chirality_dual_sum": 22.33501002386614,
-        "self_conjugate_dual_sum": 0,
-        "a_K_via_lp_dual": 3301628.9710665285,
-        "a_K_C_closed": 0.9144978155992444,
-        "dual_vs_C_ppm": 3610318144286.9277,
-        "per_partition": [
-          {
-            "partition": [
-              12
-            ],
-            "self_conjugate": false,
-            "content_sum": 66,
-            "y_lambda": 0.0006565744608000247,
-            "chi_lambda": 2.419663944533871,
-            "contribution": 0.0015886895496995872,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9957418693970151,
-            "is_active": true
-          },
-          {
-            "partition": [
-              11,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 54,
-            "y_lambda": 0.0007670122284469952,
-            "chi_lambda": 7.390200966330793,
-            "contribution": 0.0056683745118565184,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9988065630497653,
-            "is_active": true
-          },
-          {
-            "partition": [
-              10,
-              2
-            ],
-            "self_conjugate": false,
-            "content_sum": 44,
-            "y_lambda": 0.0007121291177018274,
-            "chi_lambda": 10.461121094403996,
-            "contribution": 0.007449668935129892,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9990919264132239,
-            "is_active": true
-          },
-          {
-            "partition": [
-              10,
-              1,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 42,
-            "y_lambda": 0.00016439510077294743,
-            "chi_lambda": 2.0411917748574875,
-            "contribution": 0.00033556192752460807,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9798402409947952,
-            "is_active": true
-          },
-          {
-            "partition": [
-              9,
-              3
-            ],
-            "self_conjugate": false,
-            "content_sum": 36,
-            "y_lambda": 0.0005870537936059484,
-            "chi_lambda": 27.331191373309128,
-            "contribution": 0.016044879579471292,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9995783796595847,
-            "is_active": true
-          },
-          {
-            "partition": [
-              9,
-              2,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 33,
-            "y_lambda": 0.0001978560092821337,
-            "chi_lambda": -7.931822945220232,
-            "contribution": -0.0015693588342737355,
-            "x_star": -0.0,
-            "u_lambda_star": 0.99568941949892,
-            "is_active": true
-          },
-          {
-            "partition": [
-              9,
-              1,
-              1,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 30,
-            "y_lambda": -1.5310182795746622e-05,
-            "chi_lambda": -3.306368041515286,
-            "contribution": 5.0621099105613787e-05,
-            "x_star": -0.0,
-            "u_lambda_star": 0.866363083580935,
-            "is_active": true
-          },
-          {
-            "partition": [
-              8,
-              4
-            ],
-            "self_conjugate": false,
-            "content_sum": 30,
-            "y_lambda": 0.00043096777104569076,
-            "chi_lambda": 30.262869451455284,
-            "contribution": 0.01304232139294041,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9994813156809738,
-            "is_active": true
-          },
-          {
-            "partition": [
-              8,
-              3,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 26,
-            "y_lambda": 0.0001755928943501141,
-            "chi_lambda": 12.767955456296871,
-            "contribution": 0.002241962253504499,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9969826219956899,
-            "is_active": true
-          },
-          {
-            "partition": [
-              8,
-              2,
-              2
-            ],
-            "self_conjugate": false,
-            "content_sum": 24,
-            "y_lambda": 5.298025469888414e-05,
-            "chi_lambda": -22.753546434310206,
-            "contribution": -0.0012054886853926417,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9943882944135517,
-            "is_active": true
-          },
-          {
-            "partition": [
-              8,
-              2,
-              1,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 22,
-            "y_lambda": -1.9996351250506104e-05,
-            "chi_lambda": -22.331701531899895,
-            "contribution": 0.0004465525478533355,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9848509483984851,
-            "is_active": true
-          },
-          {
-            "partition": [
-              8,
-              1,
-              1,
-              1,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 18,
-            "y_lambda": 3.631958889678474e-06,
-            "chi_lambda": 11.35445691857662,
-            "contribution": 4.123892074289561e-05,
-            "x_star": -0.0,
-            "u_lambda_star": 0.8359596355008023,
-            "is_active": true
-          },
-          {
-            "partition": [
-              7,
-              5
-            ],
-            "self_conjugate": false,
-            "content_sum": 26,
-            "y_lambda": 0.0002617832038206581,
-            "chi_lambda": 21.773345101891135,
-            "contribution": 0.005699896038665893,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9988131629867759,
-            "is_active": true
-          },
-          {
-            "partition": [
-              7,
-              4,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 21,
-            "y_lambda": 0.00012698792640447018,
-            "chi_lambda": 1.6877429563111395,
-            "contribution": 0.00021432297832570192,
-            "x_star": -0.0,
-            "u_lambda_star": 0.968436200154247,
-            "is_active": true
-          },
-          {
-            "partition": [
-              7,
-              3,
-              2
-            ],
-            "self_conjugate": false,
-            "content_sum": 18,
-            "y_lambda": 5.8742374866969024e-05,
-            "chi_lambda": 16.72792858679626,
-            "contribution": 0.0009826382517934733,
-            "x_star": -0.0,
-            "u_lambda_star": 0.993115627670843,
-            "is_active": true
-          },
-          {
-            "partition": [
-              7,
-              3,
-              1,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 16,
-            "y_lambda": -1.7836038205158153e-05,
-            "chi_lambda": -23.126951359128196,
-            "contribution": 0.0004124931880102448,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9836000986516895,
-            "is_active": true
-          },
-          {
-            "partition": [
-              7,
-              2,
-              2,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 14,
-            "y_lambda": -6.809099439248465e-06,
-            "chi_lambda": -25.099814794551083,
-            "contribution": 0.0001709071348428181,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9604179919320531,
-            "is_active": true
-          },
-          {
-            "partition": [
-              7,
-              2,
-              1,
-              1,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 11,
-            "y_lambda": 4.8263092013835175e-06,
-            "chi_lambda": 11.763008717655481,
-            "contribution": 5.677191720997517e-05,
-            "x_star": -0.0,
-            "u_lambda_star": 0.8808416568847266,
-            "is_active": true
-          },
-          {
-            "partition": [
-              7,
-              1,
-              1,
-              1,
-              1,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 6,
-            "y_lambda": -1.1400957464074628e-06,
-            "chi_lambda": 5.933578483679743,
-            "contribution": -6.764847590218118e-06,
-            "x_star": 0.05515778759484302,
-            "u_lambda_star": 0.0,
-            "is_active": false
-          },
-          {
-            "partition": [
-              6,
-              6
-            ],
-            "self_conjugate": false,
-            "content_sum": 24,
-            "y_lambda": 8.766526021900938e-05,
-            "chi_lambda": 20.470386787186634,
-            "contribution": 0.0017945417844824876,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9962303203811056,
-            "is_active": true
-          },
-          {
-            "partition": [
-              6,
-              5,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 18,
-            "y_lambda": 6.597007548505871e-05,
-            "chi_lambda": 3.043370965400691,
-            "contribution": 0.00020077141231651958,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9663057229504706,
-            "is_active": true
-          },
-          {
-            "partition": [
-              6,
-              4,
-              2
-            ],
-            "self_conjugate": false,
-            "content_sum": 14,
-            "y_lambda": 4.203075056887348e-05,
-            "chi_lambda": 4.649680707122326,
-            "contribution": 0.0001954295700259618,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9653847286809286,
-            "is_active": true
-          },
-          {
-            "partition": [
-              6,
-              4,
-              1,
-              1
-            ],
-            "self_conjugate": false,
-            "content_sum": 12,
-            "y_lambda": -1.1912789847179293e-05,
-            "chi_lambda": -32.40865268433877,
-            "contribution": 0.00038607746865875083,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9824780047027363,
-            "is_active": true
-          },
-          {
-            "partition": [
-              6,
-              3,
-              3
-            ],
-            "self_conjugate": false,
-            "content_sum": 12,
-            "y_lambda": 1.4393230617981808e-05,
-            "chi_lambda": 63.61876108586493,
-            "contribution": 0.0009156794999391407,
-            "x_star": -0.0,
-            "u_lambda_star": 0.9926122102868223,
-            "is_active": true
-          }
-        ],
-        "n_partitions": 24,
-        "n_active": 23
+        "error": "KeyError: 'tr_M_at_q0'"
       }
     ],
     "y0_star": [
       0.01681359766913246,
       0.02071523427162723,
-      8.419588525696698e-06,
+      null,
       5.949262499275065e-08,
       3.9192659589397864e-08,
-      6.764847590218118e-06
+      null
     ],
     "y_star": [
       [
@@ -2202,19 +1503,7 @@
         0.9566472722490935,
         0.0
       ],
-      [
-        0.9999087985288458,
-        0.999955595492869,
-        0.9998751282783819,
-        0.9982329125838385,
-        0.9998596748689209,
-        0.9994168451096728,
-        0.9749262560459596,
-        0.996886557305661,
-        0.9699713556958791,
-        0.9603971796514108,
-        0.0
-      ],
+      null,
       [
         0.9999942437815876,
         0.9999978229855221,
@@ -2279,32 +1568,7 @@
         0.9581173123354172,
         0.0
       ],
-      [
-        0.9957418693970151,
-        0.9988065630497653,
-        0.9990919264132239,
-        0.9798402409947952,
-        0.9995783796595847,
-        0.99568941949892,
-        0.866363083580935,
-        0.9994813156809738,
-        0.9969826219956899,
-        0.9943882944135517,
-        0.9848509483984851,
-        0.8359596355008023,
-        0.9988131629867759,
-        0.968436200154247,
-        0.993115627670843,
-        0.9836000986516895,
-        0.9604179919320531,
-        0.8808416568847266,
-        0.0,
-        0.9962303203811056,
-        0.9663057229504706,
-        0.9653847286809286,
-        0.9824780047027363,
-        0.9926122102868223
-      ]
+      null
     ],
     "active_set": [
       [
@@ -2315,18 +1579,7 @@
         0,
         1
       ],
-      [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9
-      ],
+      null,
       [
         0,
         1,
@@ -2389,49 +1642,25 @@
         27,
         28
       ],
-      [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        19,
-        20,
-        21,
-        22,
-        23
-      ]
+      null
     ],
     "primal_obj": [
       0.01791162890394911,
       0.019124992644970647,
-      3.269211920823894e-06,
+      null,
       6.190332966110549e-09,
       8.094883932809962e-09,
-      3.731340264927366e-07
+      null
     ],
     "dual_obj": [
       0.01791162890394911,
-      0.019124992644970647,
-      3.269211920823894e-06,
+      0.01912499264497065,
+      null,
       6.190332966110549e-09,
       8.094883932809962e-09,
-      3.731340264927366e-07
+      null
     ],
-    "duality_gap": 0
+    "duality_gap": 3.469446951953614e-18
   },
   "caveats": [
     "B.1a-rev.4 PROBE-ONLY: the LP basis used here is the Wedderburn-block projector basis {π_λ : λ ⊢ n}, giving a block-DIAGONAL Frobenius Gram G_λλ' = w_λ · δ_λλ'. This is too coarse for the operator-selection LP — the duals come out DEGENERATE (y0^* = 0 for A ≥ 2; chirality dual sum diverges in the limit). The full operator-selection LP per `prop:mass-coefficient-shadow-price` requires the full Hecke algebra basis {b_i : i = 1..[n]_q!} with non-diagonal Gram G_ij = tr_M(b_i b_j). That setup is an open R&D item (per Item B audit §7c B.1a-rev.4); the present script wires the SDP-attribution path and surfaces the block-diagonal LP's degeneracy as an empirical finding."

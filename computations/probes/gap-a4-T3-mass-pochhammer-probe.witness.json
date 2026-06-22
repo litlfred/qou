@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:20:36.141655+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-06-22T14:46:16.291452+00:00",
+  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
   "assertions": [
     {
       "name": "P4_control_proton_ratio_is_one",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 16,
   "computation": "gap-a4-T3-mass-pochhammer-probe",
   "scriptFile": "gap_a4_T3_mass_pochhammer_probe.py",
   "scriptHash": "988aa18c052b",
@@ -28,8 +28,10 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "GAP-A-4 T3 probe: test bar-symmetric q-Pochhammer combinations as the Path-B-native λ(K) formulation.  Four candidates (q-factorial, q-Pochhammer, Markov trace, Phase-4 amplitude as control) tested against the light-series λ_emp(K) / λ_emp(p) target ratios.  I1 + I2 (bar-symmetry + proton anchor) pre-narrow the candidate space.  EXPLORATORY.",
   "auditOnly": "docs/audits/2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md",
@@ -74,7 +76,7 @@
         "target_ratio_lambda_K_over_lambda_p": "1.146538568421333240633767734778140331427428788644210249124154960345011",
         "P1_q_factorial_ratio": "137.0522819139878862903766557565279848903160840018459683700608527091275",
         "P2_q_pochhammer_sq_ratio": "0.09529411067461232260488244064871828239624042720985192417162365477133445",
-        "P3_trM_ratio": "0.3644834174372752702473209760932004223217557212242286944117533567531996",
+        "P3_trM_ratio": "0.3644833999454021028656128171178680582141684411504088042398601845873265",
         "P4_A_phase4_ratio": "28.04844217170543370039322926101445436005419724856079578102721399040763"
       },
       {
@@ -110,7 +112,7 @@
         "target_ratio_lambda_K_over_lambda_p": "2.318792184494547118604162081487081316467598128340286837529507786269776",
         "P1_q_factorial_ratio": "239972044.8022786866370627364750649843990595485290578835339030467272748",
         "P2_q_pochhammer_sq_ratio": "44.42810650082511754636428626207289556731152984538854365092728541939392",
-        "P3_trM_ratio": "0.05195533271095875109486004985925698055317975402474332033898951229594598",
+        "P3_trM_ratio": "0.05195532583293662628260932908536105594074844272366123494290000258301909",
         "P4_A_phase4_ratio": "4107.564736535066701370498867577189642036189671444011803001420812654707"
       }
     ],
@@ -127,7 +129,7 @@
       },
       {
         "code": "P3",
-        "worst_rel_err": "0.9775937951411182490672715223077902412414624640200934725945807335258796",
+        "worst_rel_err": "0.9775937981073271964687091289556097835727632796410898107568518788361184",
         "verdict": "REFUTED"
       },
       {

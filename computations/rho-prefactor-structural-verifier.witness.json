@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T17:03:42.444968+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-22T14:48:18.347341+00:00",
+  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 379,
+  "durationMs": 451,
   "computation": "rho-prefactor-structural-verifier",
   "scriptFile": "rho_prefactor_structural_verifier.py",
-  "scriptHash": "bd11077db6f4",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "f9cea6b0091f",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,16 +17,17 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Structural ρ(Z, N) rule verifier — operator-selection LP / shadow-price / primal-dual / lp-duality evaluation of the rule ρ(𝔥) = dim_q(λ*(T_w)) per conj:rho-prefactor-structural (issue #604 deliverable 4 / closes-or-narrows GAP-A-4). For each canonical T_w ∈ H_3(q_0) of {proton, neutron, ²H/6_2, ³He/L₆ₐ₄}, decomposes into Wedderburn blocks via Hoefsmit seminormal form, evaluates |y_λ · χ_λ(T_w)| per partition λ ⊢ 3, identifies the dominant λ*, and tests five candidate rules (exact dim_q / round / floor / hook-special-case / classical d_λ) against the observed ρ ∈ {1, 1, 1, 2}.  The rule that matches all four observations is reported as the structural form of ρ(Z, N) at B_3.  Tritium (B_5 / 8_11) deferred — needs Hoefsmit at H_5 (consistent with the joint_tower_sdp_solver_v2.py / R5-full prototype posture).",
   "contentBlock": "conj:rho-prefactor-structural",
   "parameters": {
-    "q_0": 1.1099785827513808,
+    "q_0": 1.1099785955573347,
     "m_e_MeV": 0.51099895,
     "registry_size": 4
   },
@@ -47,8 +48,8 @@
         "observed_rho": 1,
         "atomic_mass_A": 1,
         "constituents": [
-          "check_q",
-          "check_q",
+          "u",
+          "u",
           "d"
         ],
         "binding_operator_K": "identity",
@@ -69,7 +70,7 @@
         "observed_rho": 1,
         "atomic_mass_A": 1,
         "constituents": [
-          "check_q",
+          "u",
           "d",
           "d"
         ],
@@ -142,11 +143,11 @@
               1
             ],
             "is_hook": true,
-            "chi": 1.9941858129799634,
+            "chi": 1.9941858103805727,
             "y_wenzl": 0.2809296339798641,
-            "y_times_chi_abs": 0.5602258905282989,
+            "y_times_chi_abs": 0.560225889798053,
             "d_lambda_syt_count": 2,
-            "dim_q": 2.010896866707122
+            "dim_q": 2.0108968691190756
           },
           {
             "lambda": [
@@ -179,25 +180,25 @@
         ],
         "dominant_lambda_is_hook": true,
         "dominant_d_lambda": 2,
-        "dominant_dim_q_at_q0": 2.010896866707122,
+        "dominant_dim_q_at_q0": 2.0108968691190756,
         "candidate_rules": {
           "rule_A_exact_dim_q": {
-            "value": 2.010896866707122,
-            "rho_predicted": 2.010896866707122,
+            "value": 2.0108968691190756,
+            "rho_predicted": 2.0108968691190756,
             "matches_obs": false
           },
           "rule_B_round_dim_q": {
-            "value": 2.010896866707122,
+            "value": 2.0108968691190756,
             "rho_predicted": 2,
             "matches_obs": false
           },
           "rule_C_floor_dim_q": {
-            "value": 2.010896866707122,
+            "value": 2.0108968691190756,
             "rho_predicted": 2,
             "matches_obs": false
           },
           "rule_D_hook_special_case": {
-            "value": 2.010896866707122,
+            "value": 2.0108968691190756,
             "rho_predicted": 1,
             "matches_obs": true
           },
@@ -213,18 +214,18 @@
             -0.0,
             -0.0
           ],
-          "y0_star": -0.5602258905282989,
+          "y0_star": -0.560225889798053,
           "y_star": [
             0.0,
-            0.14483010419373227,
-            0.5374809448225936
+            0.1448301034634864,
+            0.5374809440923477
           ],
           "active_set": [
             1,
             2
           ],
-          "primal_obj": -0.5602258905282989,
-          "dual_obj": -0.5602258905282989,
+          "primal_obj": -0.560225889798053,
+          "dual_obj": -0.560225889798053,
           "duality_gap": 0.0,
           "feasible": true,
           "channel_lambdas": [
@@ -242,7 +243,7 @@
             ]
           ],
           "channel_t_costs": [
-            -0.5602258905282989,
+            -0.560225889798053,
             -0.4153957863345666,
             -0.022744945705705264
           ],
@@ -270,11 +271,11 @@
               1
             ],
             "is_hook": true,
-            "chi": 1.9941858129799634,
+            "chi": 1.9941858103805727,
             "y_wenzl": 0.2809296339798641,
-            "y_times_chi_abs": 0.5602258905282989,
+            "y_times_chi_abs": 0.560225889798053,
             "d_lambda_syt_count": 2,
-            "dim_q": 2.010896866707122
+            "dim_q": 2.0108968691190756
           },
           {
             "lambda": [
@@ -307,25 +308,25 @@
         ],
         "dominant_lambda_is_hook": true,
         "dominant_d_lambda": 2,
-        "dominant_dim_q_at_q0": 2.010896866707122,
+        "dominant_dim_q_at_q0": 2.0108968691190756,
         "candidate_rules": {
           "rule_A_exact_dim_q": {
-            "value": 2.010896866707122,
-            "rho_predicted": 2.010896866707122,
+            "value": 2.0108968691190756,
+            "rho_predicted": 2.0108968691190756,
             "matches_obs": false
           },
           "rule_B_round_dim_q": {
-            "value": 2.010896866707122,
+            "value": 2.0108968691190756,
             "rho_predicted": 2,
             "matches_obs": false
           },
           "rule_C_floor_dim_q": {
-            "value": 2.010896866707122,
+            "value": 2.0108968691190756,
             "rho_predicted": 2,
             "matches_obs": false
           },
           "rule_D_hook_special_case": {
-            "value": 2.010896866707122,
+            "value": 2.0108968691190756,
             "rho_predicted": 1,
             "matches_obs": true
           },
@@ -341,18 +342,18 @@
             -0.0,
             -0.0
           ],
-          "y0_star": -0.5602258905282989,
+          "y0_star": -0.560225889798053,
           "y_star": [
             0.0,
-            0.14483010419373227,
-            0.5374809448225936
+            0.1448301034634864,
+            0.5374809440923477
           ],
           "active_set": [
             1,
             2
           ],
-          "primal_obj": -0.5602258905282989,
-          "dual_obj": -0.5602258905282989,
+          "primal_obj": -0.560225889798053,
+          "dual_obj": -0.560225889798053,
           "duality_gap": 0.0,
           "feasible": true,
           "channel_lambdas": [
@@ -370,7 +371,7 @@
             ]
           ],
           "channel_t_costs": [
-            -0.5602258905282989,
+            -0.560225889798053,
             -0.4153957863345666,
             -0.022744945705705264
           ],
@@ -397,9 +398,9 @@
               3
             ],
             "is_hook": true,
-            "chi": 1.232052454166764,
+            "chi": 1.2320524825954329,
             "y_wenzl": 0.4153957863345666,
-            "y_times_chi_abs": 0.5117893980040354,
+            "y_times_chi_abs": 0.5117894098131848,
             "d_lambda_syt_count": 1,
             "dim_q": 1.0
           },
@@ -409,11 +410,11 @@
               1
             ],
             "is_hook": true,
-            "chi": -0.8611569547181094,
+            "chi": -0.8611569221696472,
             "y_wenzl": 0.2809296339798641,
-            "y_times_chi_abs": 0.24192450808817287,
+            "y_times_chi_abs": 0.2419244989443453,
             "d_lambda_syt_count": 2,
-            "dim_q": 2.010896866707122
+            "dim_q": 2.0108968691190756
           },
           {
             "lambda": [
@@ -422,9 +423,9 @@
               1
             ],
             "is_hook": true,
-            "chi": 0.811653754365758,
+            "chi": 0.811653735637468,
             "y_wenzl": 0.022744945705705264,
-            "y_times_chi_abs": 0.018461020574881002,
+            "y_times_chi_abs": 0.018461020148907065,
             "d_lambda_syt_count": 1,
             "dim_q": 1.0
           }
@@ -468,18 +469,18 @@
             -0.0,
             -0.0
           ],
-          "y0_star": -0.5117893980040354,
+          "y0_star": -0.5117894098131848,
           "y_star": [
             0.0,
-            0.26986488991586255,
-            0.4933283774291544
+            0.26986491086883946,
+            0.4933283896642777
           ],
           "active_set": [
             1,
             2
           ],
-          "primal_obj": -0.5117893980040354,
-          "dual_obj": -0.5117893980040354,
+          "primal_obj": -0.5117894098131848,
+          "dual_obj": -0.5117894098131848,
           "duality_gap": 0.0,
           "feasible": true,
           "channel_lambdas": [
@@ -497,9 +498,9 @@
             ]
           ],
           "channel_t_costs": [
-            -0.5117893980040354,
-            -0.24192450808817287,
-            -0.018461020574881002
+            -0.5117894098131848,
+            -0.2419244989443453,
+            -0.018461020148907065
           ],
           "interpretation": "PRIMAL: argmin_i t_i (with t_i = -|y_λ·χ_λ|) ⇒ argmax_λ |y_λ·χ_λ|, i.e. the dominant Wedderburn summand λ* per conj:rho-prefactor-structural — the channel with x_i^* > 0.  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 (active_set membership) marks channels where x_i ≥ 0 is TIGHT at the optimum (x_i^* = 0, NOT selected).  The dominant channel has x_i^* > 0 and y_star[i] = 0 — its complement is the active_set."
         }
@@ -525,11 +526,11 @@
               1
             ],
             "is_hook": true,
-            "chi": 1.9941858129799634,
+            "chi": 1.9941858103805727,
             "y_wenzl": 0.2809296339798641,
-            "y_times_chi_abs": 0.5602258905282989,
+            "y_times_chi_abs": 0.560225889798053,
             "d_lambda_syt_count": 2,
-            "dim_q": 2.010896866707122
+            "dim_q": 2.0108968691190756
           },
           {
             "lambda": [
@@ -562,25 +563,25 @@
         ],
         "dominant_lambda_is_hook": true,
         "dominant_d_lambda": 2,
-        "dominant_dim_q_at_q0": 2.010896866707122,
+        "dominant_dim_q_at_q0": 2.0108968691190756,
         "candidate_rules": {
           "rule_A_exact_dim_q": {
-            "value": 2.010896866707122,
-            "rho_predicted": 2.010896866707122,
+            "value": 2.0108968691190756,
+            "rho_predicted": 2.0108968691190756,
             "matches_obs": false
           },
           "rule_B_round_dim_q": {
-            "value": 2.010896866707122,
+            "value": 2.0108968691190756,
             "rho_predicted": 2,
             "matches_obs": true
           },
           "rule_C_floor_dim_q": {
-            "value": 2.010896866707122,
+            "value": 2.0108968691190756,
             "rho_predicted": 2,
             "matches_obs": true
           },
           "rule_D_hook_special_case": {
-            "value": 2.010896866707122,
+            "value": 2.0108968691190756,
             "rho_predicted": 1,
             "matches_obs": false
           },
@@ -596,18 +597,18 @@
             -0.0,
             -0.0
           ],
-          "y0_star": -0.5602258905282989,
+          "y0_star": -0.560225889798053,
           "y_star": [
             0.0,
-            0.14483010419373227,
-            0.5374809448225936
+            0.1448301034634864,
+            0.5374809440923477
           ],
           "active_set": [
             1,
             2
           ],
-          "primal_obj": -0.5602258905282989,
-          "dual_obj": -0.5602258905282989,
+          "primal_obj": -0.560225889798053,
+          "dual_obj": -0.560225889798053,
           "duality_gap": 0.0,
           "feasible": true,
           "channel_lambdas": [
@@ -625,7 +626,7 @@
             ]
           ],
           "channel_t_costs": [
-            -0.5602258905282989,
+            -0.560225889798053,
             -0.4153957863345666,
             -0.022744945705705264
           ],

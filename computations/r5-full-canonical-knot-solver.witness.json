@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T15:08:52.540937+00:00",
-  "commitSha": "f4386be0c04b0f139d02935ef2408bf838f51448",
+  "computedAt": "2026-06-22T14:48:17.582901+00:00",
+  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9256,
+  "durationMs": 3870,
   "computation": "r5-full-canonical-knot-solver",
   "scriptFile": "r5_full_canonical_knot_solver.py",
-  "scriptHash": "6dda94d8d692",
-  "scriptCommitSha": "b0b449e26eea926eda44779bac03dd7af2b03952",
+  "scriptHash": "37f46fd5bd8c",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -22,13 +22,12 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "R5-full SDP solver — operator-selection LP / shadow-price / primal-dual / lp-duality search for the canonical Hecke element T_w (and Wedderburn multiplicity ρ) from substrate data alone (issue #604, deliverable 1: numerical prototype). Enumerates B_3 braid words up to length L_max, KLR canonical-basis 'cemetery' filter + χ-fingerprint dedup compress the search space ~99 % to canonical-basis-class representatives, scores each candidate by (alpha-gap of Wedderburn PSD constraint) + (relative binding-energy residual under the single-term flagship formula), and emits an operator-selection LP with channels = top-K candidates whose dual shadow prices y_star identify the saturating channels. For ²H and ³He the historical knot identifications (6_2, L6a4) are PRESENT in the canonical-basis-class search space and their per-block PSD-feasibility / rank by single-term residual are reported, providing the infrastructure for the categorical uniqueness theorem of conj:canonical-knot-id-sdp / conj:rho-prefactor-structural (issue #604 deliverables 3-4) once the multi-term mass formula (T2-T6 of thm:knot-mass-formula-unified) is wired into the cost function.",
   "contentBlock": "conj:canonical-knot-id-sdp",
   "parameters": {
-    "q_0": 1.1099785827513808,
+    "q_0": 1.1099785955573347,
     "m_e_MeV": 0.51099895,
     "L_max": 8,
     "top_k": 8
@@ -77,7 +76,7 @@
             "udd"
           ],
           "B_AME_MeV": 2.224566,
-          "q_0": 1.1099785827513808,
+          "q_0": 1.1099785955573347,
           "m_e_MeV": 0.51099895
         },
         "search_summary": {
@@ -100,10 +99,10 @@
           "L": 8,
           "rho_star": 3,
           "alpha_gap": 0.0,
-          "markov_trace": 1.4646420634883708,
-          "B_pred_MeV": 2.2452916697051726,
-          "rel_residual": 0.009316725017451835,
-          "cost": 0.0023291812543629587
+          "markov_trace": 1.4646421342766265,
+          "B_pred_MeV": 2.2452917782233452,
+          "rel_residual": 0.009316773799179447,
+          "cost": 0.0023291934497948617
         },
         "top_k_candidates": [
           {
@@ -119,35 +118,35 @@
             ],
             "L": 8,
             "alpha_gap": 0.0,
-            "min_eig_overall": 0.5035751085313162,
-            "markov_trace": 1.4646420634883708,
-            "abs_markov_trace": 1.4646420634883708,
+            "min_eig_overall": 0.5035750635903412,
+            "markov_trace": 1.4646421342766265,
+            "abs_markov_trace": 1.4646421342766265,
             "rho_star": 3,
-            "B_pred_MeV": 2.2452916697051726,
-            "rel_residual": 0.009316725017451835,
-            "cost": 0.0023291812543629587,
+            "B_pred_MeV": 2.2452917782233452,
+            "rel_residual": 0.009316773799179447,
+            "cost": 0.0023291934497948617,
             "chi_fingerprint": [
-              1.87019803,
+              1.87019816,
               0.8649679,
-              -0.81824199,
-              -0.40573876,
-              1.53993286,
-              0.53470274
+              -0.81824211,
+              -0.4057388,
+              1.53993295,
+              0.5347027
             ],
             "per_block_summary": {
               "trivial_(3)": {
-                "trace": 1.8701980267491085,
-                "min_eig_sym": 1.8701980267491085,
+                "trace": 1.8701981562092833,
+                "min_eig_sym": 1.8701981562092833,
                 "psd_within_tol": true
               },
               "standard_(2,1)": {
-                "trace": 2.4049007618055973,
-                "min_eig_sym": 0.5035751085313162,
+                "trace": 2.4049008542522037,
+                "min_eig_sym": 0.5035750635903412,
                 "psd_within_tol": true
               },
               "sign_(1,1,1)": {
-                "trace": 0.5347027350564906,
-                "min_eig_sym": 0.5347027350564906,
+                "trace": 0.5347026980429208,
+                "min_eig_sym": 0.5347026980429208,
                 "psd_within_tol": true
               }
             }
@@ -165,35 +164,127 @@
             ],
             "L": 8,
             "alpha_gap": 0.0,
-            "min_eig_overall": 0.5335980944453034,
-            "markov_trace": 1.4646420634883712,
-            "abs_markov_trace": 1.4646420634883712,
+            "min_eig_overall": 0.5335980565172571,
+            "markov_trace": 1.4646421342766267,
+            "abs_markov_trace": 1.4646421342766267,
             "rho_star": 3,
-            "B_pred_MeV": 2.245291669705173,
-            "rel_residual": 0.009316725017452034,
-            "cost": 0.0023291812543630086,
+            "B_pred_MeV": 2.2452917782233457,
+            "rel_residual": 0.009316773799179648,
+            "cost": 0.002329193449794912,
             "chi_fingerprint": [
-              1.87019803,
+              1.87019816,
               0.8649679,
-              -0.53904294,
-              -0.61589247,
-              1.53993286,
-              0.53470274
+              -0.539043,
+              -0.61589256,
+              1.53993295,
+              0.5347027
             ],
             "per_block_summary": {
               "trivial_(3)": {
-                "trace": 1.8701980267491085,
-                "min_eig_sym": 1.8701980267491085,
+                "trace": 1.8701981562092833,
+                "min_eig_sym": 1.8701981562092833,
                 "psd_within_tol": true
               },
               "standard_(2,1)": {
-                "trace": 2.4049007618055986,
-                "min_eig_sym": 0.5335980944453034,
+                "trace": 2.404900854252204,
+                "min_eig_sym": 0.5335980565172571,
                 "psd_within_tol": true
               },
               "sign_(1,1,1)": {
-                "trace": 0.5347027350564906,
-                "min_eig_sym": 0.5347027350564906,
+                "trace": 0.5347026980429208,
+                "min_eig_sym": 0.5347026980429208,
+                "psd_within_tol": true
+              }
+            }
+          },
+          {
+            "braid_word": [
+              1,
+              1,
+              1,
+              -2,
+              1,
+              -2,
+              1,
+              -2
+            ],
+            "L": 8,
+            "alpha_gap": 0.0,
+            "min_eig_overall": 0.811653735637468,
+            "markov_trace": 1.1010499247062533,
+            "abs_markov_trace": 1.1010499247062533,
+            "rho_star": 4,
+            "B_pred_MeV": 2.250541421689898,
+            "rel_residual": 0.011676624424673385,
+            "cost": 0.0029191561061683463,
+            "chi_fingerprint": [
+              1.23205248,
+              1.21105892,
+              0.12215339,
+              -0.0491633,
+              0.82076481,
+              0.81165374
+            ],
+            "per_block_summary": {
+              "trivial_(3)": {
+                "trace": 1.2320524825954327,
+                "min_eig_sym": 1.2320524825954327,
+                "psd_within_tol": true
+              },
+              "standard_(2,1)": {
+                "trace": 2.0318237227536926,
+                "min_eig_sym": 0.8173816074729766,
+                "psd_within_tol": true
+              },
+              "sign_(1,1,1)": {
+                "trace": 0.811653735637468,
+                "min_eig_sym": 0.811653735637468,
+                "psd_within_tol": true
+              }
+            }
+          },
+          {
+            "braid_word": [
+              1,
+              -2,
+              1,
+              1,
+              1,
+              -2,
+              1,
+              -2
+            ],
+            "L": 8,
+            "alpha_gap": 0.0,
+            "min_eig_overall": 0.7554891209595834,
+            "markov_trace": 1.1010499247062533,
+            "abs_markov_trace": 1.1010499247062533,
+            "rho_star": 4,
+            "B_pred_MeV": 2.250541421689898,
+            "rel_residual": 0.011676624424673385,
+            "cost": 0.0029191561061683463,
+            "chi_fingerprint": [
+              1.23205248,
+              0.88079371,
+              0.41168613,
+              0.03356925,
+              1.15103001,
+              0.81165374
+            ],
+            "per_block_summary": {
+              "trivial_(3)": {
+                "trace": 1.2320524825954327,
+                "min_eig_sym": 1.2320524825954327,
+                "psd_within_tol": true
+              },
+              "standard_(2,1)": {
+                "trace": 2.0318237227536926,
+                "min_eig_sym": 0.7554891209595834,
+                "psd_within_tol": true
+              },
+              "sign_(1,1,1)": {
+                "trace": 0.811653735637468,
+                "min_eig_sym": 0.811653735637468,
                 "psd_within_tol": true
               }
             }
@@ -201,45 +292,45 @@
           {
             "braid_word": [
               2,
+              2,
+              2,
               -1,
               2,
               -1,
-              2,
-              2,
               2,
               -1
             ],
             "L": 8,
             "alpha_gap": 0.0,
-            "min_eig_overall": 0.7815789031917139,
-            "markov_trace": 1.1010499146967323,
-            "abs_markov_trace": 1.1010499146967323,
+            "min_eig_overall": 0.811653735637468,
+            "markov_trace": 1.1010499247062533,
+            "abs_markov_trace": 1.1010499247062533,
             "rho_star": 4,
-            "B_pred_MeV": 2.2505414012304787,
-            "rel_residual": 0.01167661522763493,
-            "cost": 0.0029191538069087324,
+            "B_pred_MeV": 2.250541421689898,
+            "rel_residual": 0.011676624424673385,
+            "cost": 0.0029191561061683463,
             "chi_fingerprint": [
-              1.23205245,
+              1.23205248,
               0.9385587,
-              -0.37231034,
-              -0.07008507,
-              1.09326501,
-              0.81165375
+              0.114718,
+              0.22745689,
+              1.09326502,
+              0.81165374
             ],
             "per_block_summary": {
               "trivial_(3)": {
-                "trace": 1.232052454166764,
-                "min_eig_sym": 1.232052454166764,
+                "trace": 1.2320524825954327,
+                "min_eig_sym": 1.2320524825954327,
                 "psd_within_tol": true
               },
               "standard_(2,1)": {
-                "trace": 2.031823718422104,
-                "min_eig_sym": 0.7815789031917139,
+                "trace": 2.0318237227536926,
+                "min_eig_sym": 0.8281502451084358,
                 "psd_within_tol": true
               },
               "sign_(1,1,1)": {
-                "trace": 0.811653754365758,
-                "min_eig_sym": 0.811653754365758,
+                "trace": 0.811653735637468,
+                "min_eig_sym": 0.811653735637468,
                 "psd_within_tol": true
               }
             }
@@ -249,181 +340,43 @@
               2,
               -1,
               2,
-              -1,
+              2,
               2,
               -1,
               2,
-              2
+              -1
             ],
             "L": 8,
             "alpha_gap": 0.0,
-            "min_eig_overall": 0.811653754365758,
-            "markov_trace": 1.1010499146967323,
-            "abs_markov_trace": 1.1010499146967323,
+            "min_eig_overall": 0.7736023976443219,
+            "markov_trace": 1.1010499247062533,
+            "abs_markov_trace": 1.1010499247062533,
             "rho_star": 4,
-            "B_pred_MeV": 2.2505414012304787,
-            "rel_residual": 0.01167661522763493,
-            "cost": 0.0029191538069087324,
+            "B_pred_MeV": 2.250541421689898,
+            "rel_residual": 0.011676624424673385,
+            "cost": 0.0029191561061683463,
             "chi_fingerprint": [
-              1.23205245,
-              0.91029389,
-              0.09956132,
-              0.21013934,
-              1.12152983,
-              0.81165375
+              1.23205248,
+              1.25499373,
+              -0.20262581,
+              0.12379089,
+              0.77682999,
+              0.81165374
             ],
             "per_block_summary": {
               "trivial_(3)": {
-                "trace": 1.232052454166764,
-                "min_eig_sym": 1.232052454166764,
+                "trace": 1.2320524825954327,
+                "min_eig_sym": 1.2320524825954327,
                 "psd_within_tol": true
               },
               "standard_(2,1)": {
-                "trace": 2.031823718422104,
-                "min_eig_sym": 0.8284717875528109,
+                "trace": 2.0318237227536926,
+                "min_eig_sym": 0.7736023976443219,
                 "psd_within_tol": true
               },
               "sign_(1,1,1)": {
-                "trace": 0.811653754365758,
-                "min_eig_sym": 0.811653754365758,
-                "psd_within_tol": true
-              }
-            }
-          },
-          {
-            "braid_word": [
-              -1,
-              2,
-              -1,
-              2,
-              2,
-              2,
-              -1,
-              2
-            ],
-            "L": 8,
-            "alpha_gap": 0.0,
-            "min_eig_overall": 0.7767554343326305,
-            "markov_trace": 1.1010499146967323,
-            "abs_markov_trace": 1.1010499146967323,
-            "rho_star": 4,
-            "B_pred_MeV": 2.2505414012304787,
-            "rel_residual": 0.01167661522763493,
-            "cost": 0.0029191538069087324,
-            "chi_fingerprint": [
-              1.23205245,
-              1.25499369,
-              0.16446196,
-              -0.15251684,
-              0.77683002,
-              0.81165375
-            ],
-            "per_block_summary": {
-              "trivial_(3)": {
-                "trace": 1.232052454166764,
-                "min_eig_sym": 1.232052454166764,
-                "psd_within_tol": true
-              },
-              "standard_(2,1)": {
-                "trace": 2.031823718422104,
-                "min_eig_sym": 0.7767554343326305,
-                "psd_within_tol": true
-              },
-              "sign_(1,1,1)": {
-                "trace": 0.811653754365758,
-                "min_eig_sym": 0.811653754365758,
-                "psd_within_tol": true
-              }
-            }
-          },
-          {
-            "braid_word": [
-              -1,
-              2,
-              -1,
-              2,
-              -1,
-              2,
-              2,
-              2
-            ],
-            "L": 8,
-            "alpha_gap": 0.0,
-            "min_eig_overall": 0.8068102535625151,
-            "markov_trace": 1.1010499146967323,
-            "abs_markov_trace": 1.1010499146967323,
-            "rho_star": 4,
-            "B_pred_MeV": 2.2505414012304787,
-            "rel_residual": 0.01167661522763493,
-            "cost": 0.0029191538069087324,
-            "chi_fingerprint": [
-              1.23205245,
-              0.9385587,
-              0.30218708,
-              0.08634848,
-              1.09326501,
-              0.81165375
-            ],
-            "per_block_summary": {
-              "trivial_(3)": {
-                "trace": 1.232052454166764,
-                "min_eig_sym": 1.232052454166764,
-                "psd_within_tol": true
-              },
-              "standard_(2,1)": {
-                "trace": 2.031823718422104,
-                "min_eig_sym": 0.8068102535625151,
-                "psd_within_tol": true
-              },
-              "sign_(1,1,1)": {
-                "trace": 0.811653754365758,
-                "min_eig_sym": 0.811653754365758,
-                "psd_within_tol": true
-              }
-            }
-          },
-          {
-            "braid_word": [
-              1,
-              1,
-              1,
-              -2,
-              1,
-              -2,
-              1,
-              -2
-            ],
-            "L": 8,
-            "alpha_gap": 0.0,
-            "min_eig_overall": 0.811653754365758,
-            "markov_trace": 1.1010499146967325,
-            "abs_markov_trace": 1.1010499146967325,
-            "rho_star": 4,
-            "B_pred_MeV": 2.250541401230479,
-            "rel_residual": 0.011676615227635129,
-            "cost": 0.0029191538069087823,
-            "chi_fingerprint": [
-              1.23205245,
-              1.2110589,
-              0.12215335,
-              -0.04916329,
-              0.82076482,
-              0.81165375
-            ],
-            "per_block_summary": {
-              "trivial_(3)": {
-                "trace": 1.232052454166764,
-                "min_eig_sym": 1.232052454166764,
-                "psd_within_tol": true
-              },
-              "standard_(2,1)": {
-                "trace": 2.0318237184221046,
-                "min_eig_sym": 0.8173816253214088,
-                "psd_within_tol": true
-              },
-              "sign_(1,1,1)": {
-                "trace": 0.811653754365758,
-                "min_eig_sym": 0.811653754365758,
+                "trace": 0.811653735637468,
+                "min_eig_sym": 0.811653735637468,
                 "psd_within_tol": true
               }
             }
@@ -441,35 +394,81 @@
             ],
             "L": 8,
             "alpha_gap": 0.0,
-            "min_eig_overall": 0.811653754365758,
-            "markov_trace": 1.1010499146967325,
-            "abs_markov_trace": 1.1010499146967325,
+            "min_eig_overall": 0.8116537356374679,
+            "markov_trace": 1.1010499247062535,
+            "abs_markov_trace": 1.1010499247062535,
             "rho_star": 4,
-            "B_pred_MeV": 2.250541401230479,
-            "rel_residual": 0.011676615227635129,
-            "cost": 0.0029191538069087823,
+            "B_pred_MeV": 2.2505414216898982,
+            "rel_residual": 0.011676624424673585,
+            "cost": 0.002919156106168396,
             "chi_fingerprint": [
-              1.23205245,
-              1.2110589,
-              -0.09914623,
-              0.06057175,
-              0.82076482,
-              0.81165375
+              1.23205248,
+              1.21105892,
+              -0.09914625,
+              0.06057176,
+              0.82076481,
+              0.81165374
             ],
             "per_block_summary": {
               "trivial_(3)": {
-                "trace": 1.232052454166764,
-                "min_eig_sym": 1.232052454166764,
+                "trace": 1.2320524825954329,
+                "min_eig_sym": 1.2320524825954329,
                 "psd_within_tol": true
               },
               "standard_(2,1)": {
-                "trace": 2.0318237184221046,
-                "min_eig_sym": 0.8198140163737502,
+                "trace": 2.0318237227536926,
+                "min_eig_sym": 0.8198139998465892,
                 "psd_within_tol": true
               },
               "sign_(1,1,1)": {
-                "trace": 0.811653754365758,
-                "min_eig_sym": 0.811653754365758,
+                "trace": 0.8116537356374679,
+                "min_eig_sym": 0.8116537356374679,
+                "psd_within_tol": true
+              }
+            }
+          },
+          {
+            "braid_word": [
+              1,
+              -2,
+              1,
+              -2,
+              1,
+              1,
+              1,
+              -2
+            ],
+            "L": 8,
+            "alpha_gap": 0.0,
+            "min_eig_overall": 0.8116169866781211,
+            "markov_trace": 1.1010499247062535,
+            "abs_markov_trace": 1.1010499247062535,
+            "rho_star": 4,
+            "B_pred_MeV": 2.2505414216898982,
+            "rel_residual": 0.011676624424673585,
+            "cost": 0.002919156106168396,
+            "chi_fingerprint": [
+              1.23205248,
+              0.88079371,
+              -0.05494748,
+              -0.25151284,
+              1.15103001,
+              0.81165374
+            ],
+            "per_block_summary": {
+              "trivial_(3)": {
+                "trace": 1.2320524825954329,
+                "min_eig_sym": 1.2320524825954329,
+                "psd_within_tol": true
+              },
+              "standard_(2,1)": {
+                "trace": 2.0318237227536926,
+                "min_eig_sym": 0.8116169866781211,
+                "psd_within_tol": true
+              },
+              "sign_(1,1,1)": {
+                "trace": 0.811653735637468,
+                "min_eig_sym": 0.811653735637468,
                 "psd_within_tol": true
               }
             }
@@ -493,35 +492,35 @@
               ],
               "L": 8,
               "alpha_gap": 0.0,
-              "min_eig_overall": 0.5035751085313162,
-              "markov_trace": 1.4646420634883708,
-              "abs_markov_trace": 1.4646420634883708,
+              "min_eig_overall": 0.5035750635903412,
+              "markov_trace": 1.4646421342766265,
+              "abs_markov_trace": 1.4646421342766265,
               "rho_star": 3,
-              "B_pred_MeV": 2.2452916697051726,
-              "rel_residual": 0.009316725017451835,
-              "cost": 0.0023291812543629587,
+              "B_pred_MeV": 2.2452917782233452,
+              "rel_residual": 0.009316773799179447,
+              "cost": 0.0023291934497948617,
               "chi_fingerprint": [
-                1.87019803,
+                1.87019816,
                 0.8649679,
-                -0.81824199,
-                -0.40573876,
-                1.53993286,
-                0.53470274
+                -0.81824211,
+                -0.4057388,
+                1.53993295,
+                0.5347027
               ],
               "per_block_summary": {
                 "trivial_(3)": {
-                  "trace": 1.8701980267491085,
-                  "min_eig_sym": 1.8701980267491085,
+                  "trace": 1.8701981562092833,
+                  "min_eig_sym": 1.8701981562092833,
                   "psd_within_tol": true
                 },
                 "standard_(2,1)": {
-                  "trace": 2.4049007618055973,
-                  "min_eig_sym": 0.5035751085313162,
+                  "trace": 2.4049008542522037,
+                  "min_eig_sym": 0.5035750635903412,
                   "psd_within_tol": true
                 },
                 "sign_(1,1,1)": {
-                  "trace": 0.5347027350564906,
-                  "min_eig_sym": 0.5347027350564906,
+                  "trace": 0.5347026980429208,
+                  "min_eig_sym": 0.5347026980429208,
                   "psd_within_tol": true
                 }
               }
@@ -539,35 +538,127 @@
               ],
               "L": 8,
               "alpha_gap": 0.0,
-              "min_eig_overall": 0.5335980944453034,
-              "markov_trace": 1.4646420634883712,
-              "abs_markov_trace": 1.4646420634883712,
+              "min_eig_overall": 0.5335980565172571,
+              "markov_trace": 1.4646421342766267,
+              "abs_markov_trace": 1.4646421342766267,
               "rho_star": 3,
-              "B_pred_MeV": 2.245291669705173,
-              "rel_residual": 0.009316725017452034,
-              "cost": 0.0023291812543630086,
+              "B_pred_MeV": 2.2452917782233457,
+              "rel_residual": 0.009316773799179648,
+              "cost": 0.002329193449794912,
               "chi_fingerprint": [
-                1.87019803,
+                1.87019816,
                 0.8649679,
-                -0.53904294,
-                -0.61589247,
-                1.53993286,
-                0.53470274
+                -0.539043,
+                -0.61589256,
+                1.53993295,
+                0.5347027
               ],
               "per_block_summary": {
                 "trivial_(3)": {
-                  "trace": 1.8701980267491085,
-                  "min_eig_sym": 1.8701980267491085,
+                  "trace": 1.8701981562092833,
+                  "min_eig_sym": 1.8701981562092833,
                   "psd_within_tol": true
                 },
                 "standard_(2,1)": {
-                  "trace": 2.4049007618055986,
-                  "min_eig_sym": 0.5335980944453034,
+                  "trace": 2.404900854252204,
+                  "min_eig_sym": 0.5335980565172571,
                   "psd_within_tol": true
                 },
                 "sign_(1,1,1)": {
-                  "trace": 0.5347027350564906,
-                  "min_eig_sym": 0.5347027350564906,
+                  "trace": 0.5347026980429208,
+                  "min_eig_sym": 0.5347026980429208,
+                  "psd_within_tol": true
+                }
+              }
+            },
+            {
+              "braid_word": [
+                1,
+                1,
+                1,
+                -2,
+                1,
+                -2,
+                1,
+                -2
+              ],
+              "L": 8,
+              "alpha_gap": 0.0,
+              "min_eig_overall": 0.811653735637468,
+              "markov_trace": 1.1010499247062533,
+              "abs_markov_trace": 1.1010499247062533,
+              "rho_star": 4,
+              "B_pred_MeV": 2.250541421689898,
+              "rel_residual": 0.011676624424673385,
+              "cost": 0.0029191561061683463,
+              "chi_fingerprint": [
+                1.23205248,
+                1.21105892,
+                0.12215339,
+                -0.0491633,
+                0.82076481,
+                0.81165374
+              ],
+              "per_block_summary": {
+                "trivial_(3)": {
+                  "trace": 1.2320524825954327,
+                  "min_eig_sym": 1.2320524825954327,
+                  "psd_within_tol": true
+                },
+                "standard_(2,1)": {
+                  "trace": 2.0318237227536926,
+                  "min_eig_sym": 0.8173816074729766,
+                  "psd_within_tol": true
+                },
+                "sign_(1,1,1)": {
+                  "trace": 0.811653735637468,
+                  "min_eig_sym": 0.811653735637468,
+                  "psd_within_tol": true
+                }
+              }
+            },
+            {
+              "braid_word": [
+                1,
+                -2,
+                1,
+                1,
+                1,
+                -2,
+                1,
+                -2
+              ],
+              "L": 8,
+              "alpha_gap": 0.0,
+              "min_eig_overall": 0.7554891209595834,
+              "markov_trace": 1.1010499247062533,
+              "abs_markov_trace": 1.1010499247062533,
+              "rho_star": 4,
+              "B_pred_MeV": 2.250541421689898,
+              "rel_residual": 0.011676624424673385,
+              "cost": 0.0029191561061683463,
+              "chi_fingerprint": [
+                1.23205248,
+                0.88079371,
+                0.41168613,
+                0.03356925,
+                1.15103001,
+                0.81165374
+              ],
+              "per_block_summary": {
+                "trivial_(3)": {
+                  "trace": 1.2320524825954327,
+                  "min_eig_sym": 1.2320524825954327,
+                  "psd_within_tol": true
+                },
+                "standard_(2,1)": {
+                  "trace": 2.0318237227536926,
+                  "min_eig_sym": 0.7554891209595834,
+                  "psd_within_tol": true
+                },
+                "sign_(1,1,1)": {
+                  "trace": 0.811653735637468,
+                  "min_eig_sym": 0.811653735637468,
                   "psd_within_tol": true
                 }
               }
@@ -575,45 +666,45 @@
             {
               "braid_word": [
                 2,
+                2,
+                2,
                 -1,
                 2,
                 -1,
-                2,
-                2,
                 2,
                 -1
               ],
               "L": 8,
               "alpha_gap": 0.0,
-              "min_eig_overall": 0.7815789031917139,
-              "markov_trace": 1.1010499146967323,
-              "abs_markov_trace": 1.1010499146967323,
+              "min_eig_overall": 0.811653735637468,
+              "markov_trace": 1.1010499247062533,
+              "abs_markov_trace": 1.1010499247062533,
               "rho_star": 4,
-              "B_pred_MeV": 2.2505414012304787,
-              "rel_residual": 0.01167661522763493,
-              "cost": 0.0029191538069087324,
+              "B_pred_MeV": 2.250541421689898,
+              "rel_residual": 0.011676624424673385,
+              "cost": 0.0029191561061683463,
               "chi_fingerprint": [
-                1.23205245,
+                1.23205248,
                 0.9385587,
-                -0.37231034,
-                -0.07008507,
-                1.09326501,
-                0.81165375
+                0.114718,
+                0.22745689,
+                1.09326502,
+                0.81165374
               ],
               "per_block_summary": {
                 "trivial_(3)": {
-                  "trace": 1.232052454166764,
-                  "min_eig_sym": 1.232052454166764,
+                  "trace": 1.2320524825954327,
+                  "min_eig_sym": 1.2320524825954327,
                   "psd_within_tol": true
                 },
                 "standard_(2,1)": {
-                  "trace": 2.031823718422104,
-                  "min_eig_sym": 0.7815789031917139,
+                  "trace": 2.0318237227536926,
+                  "min_eig_sym": 0.8281502451084358,
                   "psd_within_tol": true
                 },
                 "sign_(1,1,1)": {
-                  "trace": 0.811653754365758,
-                  "min_eig_sym": 0.811653754365758,
+                  "trace": 0.811653735637468,
+                  "min_eig_sym": 0.811653735637468,
                   "psd_within_tol": true
                 }
               }
@@ -623,181 +714,43 @@
                 2,
                 -1,
                 2,
-                -1,
+                2,
                 2,
                 -1,
                 2,
-                2
+                -1
               ],
               "L": 8,
               "alpha_gap": 0.0,
-              "min_eig_overall": 0.811653754365758,
-              "markov_trace": 1.1010499146967323,
-              "abs_markov_trace": 1.1010499146967323,
+              "min_eig_overall": 0.7736023976443219,
+              "markov_trace": 1.1010499247062533,
+              "abs_markov_trace": 1.1010499247062533,
               "rho_star": 4,
-              "B_pred_MeV": 2.2505414012304787,
-              "rel_residual": 0.01167661522763493,
-              "cost": 0.0029191538069087324,
+              "B_pred_MeV": 2.250541421689898,
+              "rel_residual": 0.011676624424673385,
+              "cost": 0.0029191561061683463,
               "chi_fingerprint": [
-                1.23205245,
-                0.91029389,
-                0.09956132,
-                0.21013934,
-                1.12152983,
-                0.81165375
+                1.23205248,
+                1.25499373,
+                -0.20262581,
+                0.12379089,
+                0.77682999,
+                0.81165374
               ],
               "per_block_summary": {
                 "trivial_(3)": {
-                  "trace": 1.232052454166764,
-                  "min_eig_sym": 1.232052454166764,
+                  "trace": 1.2320524825954327,
+                  "min_eig_sym": 1.2320524825954327,
                   "psd_within_tol": true
                 },
                 "standard_(2,1)": {
-                  "trace": 2.031823718422104,
-                  "min_eig_sym": 0.8284717875528109,
+                  "trace": 2.0318237227536926,
+                  "min_eig_sym": 0.7736023976443219,
                   "psd_within_tol": true
                 },
                 "sign_(1,1,1)": {
-                  "trace": 0.811653754365758,
-                  "min_eig_sym": 0.811653754365758,
-                  "psd_within_tol": true
-                }
-              }
-            },
-            {
-              "braid_word": [
-                -1,
-                2,
-                -1,
-                2,
-                2,
-                2,
-                -1,
-                2
-              ],
-              "L": 8,
-              "alpha_gap": 0.0,
-              "min_eig_overall": 0.7767554343326305,
-              "markov_trace": 1.1010499146967323,
-              "abs_markov_trace": 1.1010499146967323,
-              "rho_star": 4,
-              "B_pred_MeV": 2.2505414012304787,
-              "rel_residual": 0.01167661522763493,
-              "cost": 0.0029191538069087324,
-              "chi_fingerprint": [
-                1.23205245,
-                1.25499369,
-                0.16446196,
-                -0.15251684,
-                0.77683002,
-                0.81165375
-              ],
-              "per_block_summary": {
-                "trivial_(3)": {
-                  "trace": 1.232052454166764,
-                  "min_eig_sym": 1.232052454166764,
-                  "psd_within_tol": true
-                },
-                "standard_(2,1)": {
-                  "trace": 2.031823718422104,
-                  "min_eig_sym": 0.7767554343326305,
-                  "psd_within_tol": true
-                },
-                "sign_(1,1,1)": {
-                  "trace": 0.811653754365758,
-                  "min_eig_sym": 0.811653754365758,
-                  "psd_within_tol": true
-                }
-              }
-            },
-            {
-              "braid_word": [
-                -1,
-                2,
-                -1,
-                2,
-                -1,
-                2,
-                2,
-                2
-              ],
-              "L": 8,
-              "alpha_gap": 0.0,
-              "min_eig_overall": 0.8068102535625151,
-              "markov_trace": 1.1010499146967323,
-              "abs_markov_trace": 1.1010499146967323,
-              "rho_star": 4,
-              "B_pred_MeV": 2.2505414012304787,
-              "rel_residual": 0.01167661522763493,
-              "cost": 0.0029191538069087324,
-              "chi_fingerprint": [
-                1.23205245,
-                0.9385587,
-                0.30218708,
-                0.08634848,
-                1.09326501,
-                0.81165375
-              ],
-              "per_block_summary": {
-                "trivial_(3)": {
-                  "trace": 1.232052454166764,
-                  "min_eig_sym": 1.232052454166764,
-                  "psd_within_tol": true
-                },
-                "standard_(2,1)": {
-                  "trace": 2.031823718422104,
-                  "min_eig_sym": 0.8068102535625151,
-                  "psd_within_tol": true
-                },
-                "sign_(1,1,1)": {
-                  "trace": 0.811653754365758,
-                  "min_eig_sym": 0.811653754365758,
-                  "psd_within_tol": true
-                }
-              }
-            },
-            {
-              "braid_word": [
-                1,
-                1,
-                1,
-                -2,
-                1,
-                -2,
-                1,
-                -2
-              ],
-              "L": 8,
-              "alpha_gap": 0.0,
-              "min_eig_overall": 0.811653754365758,
-              "markov_trace": 1.1010499146967325,
-              "abs_markov_trace": 1.1010499146967325,
-              "rho_star": 4,
-              "B_pred_MeV": 2.250541401230479,
-              "rel_residual": 0.011676615227635129,
-              "cost": 0.0029191538069087823,
-              "chi_fingerprint": [
-                1.23205245,
-                1.2110589,
-                0.12215335,
-                -0.04916329,
-                0.82076482,
-                0.81165375
-              ],
-              "per_block_summary": {
-                "trivial_(3)": {
-                  "trace": 1.232052454166764,
-                  "min_eig_sym": 1.232052454166764,
-                  "psd_within_tol": true
-                },
-                "standard_(2,1)": {
-                  "trace": 2.0318237184221046,
-                  "min_eig_sym": 0.8173816253214088,
-                  "psd_within_tol": true
-                },
-                "sign_(1,1,1)": {
-                  "trace": 0.811653754365758,
-                  "min_eig_sym": 0.811653754365758,
+                  "trace": 0.811653735637468,
+                  "min_eig_sym": 0.811653735637468,
                   "psd_within_tol": true
                 }
               }
@@ -815,35 +768,81 @@
               ],
               "L": 8,
               "alpha_gap": 0.0,
-              "min_eig_overall": 0.811653754365758,
-              "markov_trace": 1.1010499146967325,
-              "abs_markov_trace": 1.1010499146967325,
+              "min_eig_overall": 0.8116537356374679,
+              "markov_trace": 1.1010499247062535,
+              "abs_markov_trace": 1.1010499247062535,
               "rho_star": 4,
-              "B_pred_MeV": 2.250541401230479,
-              "rel_residual": 0.011676615227635129,
-              "cost": 0.0029191538069087823,
+              "B_pred_MeV": 2.2505414216898982,
+              "rel_residual": 0.011676624424673585,
+              "cost": 0.002919156106168396,
               "chi_fingerprint": [
-                1.23205245,
-                1.2110589,
-                -0.09914623,
-                0.06057175,
-                0.82076482,
-                0.81165375
+                1.23205248,
+                1.21105892,
+                -0.09914625,
+                0.06057176,
+                0.82076481,
+                0.81165374
               ],
               "per_block_summary": {
                 "trivial_(3)": {
-                  "trace": 1.232052454166764,
-                  "min_eig_sym": 1.232052454166764,
+                  "trace": 1.2320524825954329,
+                  "min_eig_sym": 1.2320524825954329,
                   "psd_within_tol": true
                 },
                 "standard_(2,1)": {
-                  "trace": 2.0318237184221046,
-                  "min_eig_sym": 0.8198140163737502,
+                  "trace": 2.0318237227536926,
+                  "min_eig_sym": 0.8198139998465892,
                   "psd_within_tol": true
                 },
                 "sign_(1,1,1)": {
-                  "trace": 0.811653754365758,
-                  "min_eig_sym": 0.811653754365758,
+                  "trace": 0.8116537356374679,
+                  "min_eig_sym": 0.8116537356374679,
+                  "psd_within_tol": true
+                }
+              }
+            },
+            {
+              "braid_word": [
+                1,
+                -2,
+                1,
+                -2,
+                1,
+                1,
+                1,
+                -2
+              ],
+              "L": 8,
+              "alpha_gap": 0.0,
+              "min_eig_overall": 0.8116169866781211,
+              "markov_trace": 1.1010499247062535,
+              "abs_markov_trace": 1.1010499247062535,
+              "rho_star": 4,
+              "B_pred_MeV": 2.2505414216898982,
+              "rel_residual": 0.011676624424673585,
+              "cost": 0.002919156106168396,
+              "chi_fingerprint": [
+                1.23205248,
+                0.88079371,
+                -0.05494748,
+                -0.25151284,
+                1.15103001,
+                0.81165374
+              ],
+              "per_block_summary": {
+                "trivial_(3)": {
+                  "trace": 1.2320524825954329,
+                  "min_eig_sym": 1.2320524825954329,
+                  "psd_within_tol": true
+                },
+                "standard_(2,1)": {
+                  "trace": 2.0318237227536926,
+                  "min_eig_sym": 0.8116169866781211,
+                  "psd_within_tol": true
+                },
+                "sign_(1,1,1)": {
+                  "trace": 0.811653735637468,
+                  "min_eig_sym": 0.811653735637468,
                   "psd_within_tol": true
                 }
               }
@@ -861,16 +860,16 @@
             -0.0,
             -0.0
           ],
-          "y0_star": 0.0023291812543629587,
+          "y0_star": 0.0023291934497948617,
           "y_star": [
             0.0,
             0.0,
-            0.0005899725525457737,
-            0.0005899725525457737,
-            0.0005899725525457737,
-            0.0005899725525457737,
-            0.0005899725525458236,
-            0.0005899725525458236
+            0.0005899626563734845,
+            0.0005899626563734845,
+            0.0005899626563734845,
+            0.0005899626563734845,
+            0.0005899626563735344,
+            0.0005899626563735344
           ],
           "active_set": [
             2,
@@ -880,8 +879,8 @@
             6,
             7
           ],
-          "primal_obj": 0.0023291812543629587,
-          "dual_obj": 0.0023291812543629587,
+          "primal_obj": 0.0023291934497948617,
+          "dual_obj": 0.0023291934497948617,
           "duality_gap": 0.0,
           "feasible": true,
           "channel_labels": [
@@ -895,14 +894,14 @@
             "b_7_L8"
           ],
           "channel_t_costs": [
-            0.0023291812543629587,
-            0.0023291812543630086,
-            0.0029191538069087324,
-            0.0029191538069087324,
-            0.0029191538069087324,
-            0.0029191538069087324,
-            0.0029191538069087823,
-            0.0029191538069087823
+            0.0023291934497948617,
+            0.002329193449794912,
+            0.0029191561061683463,
+            0.0029191561061683463,
+            0.0029191561061683463,
+            0.0029191561061683463,
+            0.002919156106168396,
+            0.002919156106168396
           ],
           "channel_braid_words": [
             [
@@ -926,46 +925,6 @@
               -2
             ],
             [
-              2,
-              -1,
-              2,
-              -1,
-              2,
-              2,
-              2,
-              -1
-            ],
-            [
-              2,
-              -1,
-              2,
-              -1,
-              2,
-              -1,
-              2,
-              2
-            ],
-            [
-              -1,
-              2,
-              -1,
-              2,
-              2,
-              2,
-              -1,
-              2
-            ],
-            [
-              -1,
-              2,
-              -1,
-              2,
-              -1,
-              2,
-              2,
-              2
-            ],
-            [
               1,
               1,
               1,
@@ -977,6 +936,36 @@
             ],
             [
               1,
+              -2,
+              1,
+              1,
+              1,
+              -2,
+              1,
+              -2
+            ],
+            [
+              2,
+              2,
+              2,
+              -1,
+              2,
+              -1,
+              2,
+              -1
+            ],
+            [
+              2,
+              -1,
+              2,
+              2,
+              2,
+              -1,
+              2,
+              -1
+            ],
+            [
+              1,
               1,
               -2,
               1,
@@ -984,6 +973,16 @@
               1,
               -2,
               1
+            ],
+            [
+              1,
+              -2,
+              1,
+              -2,
+              1,
+              1,
+              1,
+              -2
             ]
           ]
         },
@@ -999,16 +998,16 @@
           ],
           "rho_known": 1,
           "rho_recovered": null,
-          "alpha_gap": 0.8905102653299845,
+          "alpha_gap": 0.890510299676959,
           "psd_feasible": false,
           "in_cemetery": false,
           "chi_fingerprint": [
-            1.23205245,
-            -0.04111414,
-            -1.25763777,
-            0.76833304,
-            -0.82004281,
-            0.81165375
+            1.23205248,
+            -0.04111408,
+            -1.25763781,
+            0.76833305,
+            -0.82004285,
+            0.81165374
           ],
           "canonical_basis_representative_in_search": [
             1,
@@ -1018,10 +1017,10 @@
             1,
             -2
           ],
-          "markov_trace": 0.2883259216115809,
-          "B_pred_MeV": 0.5893369728052005,
-          "rel_residual": 0.7350777757076209,
-          "cost": 1.0742797092568896,
+          "markov_trace": 0.28832593101500664,
+          "B_pred_MeV": 0.5893369920257633,
+          "rel_residual": 0.7350777670674805,
+          "cost": 1.0742797414438292,
           "rank_in_full_search": 1075,
           "rank_in_top_k": null,
           "rank_in_psd_feasible_subset": null,
@@ -1052,7 +1051,7 @@
             "udd"
           ],
           "B_AME_MeV": 7.71806,
-          "q_0": 1.1099785827513808,
+          "q_0": 1.1099785955573347,
           "m_e_MeV": 0.51099895
         },
         "search_summary": {
@@ -1075,10 +1074,10 @@
           "L": 8,
           "rho_star": 4,
           "alpha_gap": 0.0,
-          "markov_trace": 1.617533204540643,
-          "B_pred_MeV": 3.3062310764416147,
-          "rel_residual": 0.5716240769776841,
-          "cost": 0.14290601924442103
+          "markov_trace": 1.6175332996390974,
+          "B_pred_MeV": 3.3062312708224564,
+          "rel_residual": 0.5716240517924898,
+          "cost": 0.14290601294812244
         },
         "top_k_candidates": [
           {
@@ -1094,35 +1093,35 @@
             ],
             "L": 8,
             "alpha_gap": 0.0,
-            "min_eig_overall": 0.4339934823782398,
-            "markov_trace": 1.617533204540643,
-            "abs_markov_trace": 1.617533204540643,
+            "min_eig_overall": 0.4339934423219698,
+            "markov_trace": 1.6175332996390974,
+            "abs_markov_trace": 1.6175332996390974,
             "rho_star": 4,
-            "B_pred_MeV": 3.3062310764416147,
-            "rel_residual": 0.5716240769776841,
-            "cost": 0.14290601924442103,
+            "B_pred_MeV": 3.3062312708224564,
+            "rel_residual": 0.5716240517924898,
+            "cost": 0.14290601294812244,
             "chi_fingerprint": [
-              2.30418207,
-              1.71238598,
-              0.39098416,
+              2.30418228,
+              1.71238608,
+              0.39098423,
               0.08414089,
-              0.60319214,
-              0.43399348
+              0.6031921,
+              0.43399344
             ],
             "per_block_summary": {
               "trivial_(3)": {
-                "trace": 2.3041820686340784,
-                "min_eig_sym": 2.3041820686340784,
+                "trace": 2.3041822813030493,
+                "min_eig_sym": 2.3041822813030493,
                 "psd_within_tol": true
               },
               "standard_(2,1)": {
-                "trace": 2.315578112076266,
-                "min_eig_sym": 0.5544535806027364,
+                "trace": 2.3155781842741794,
+                "min_eig_sym": 0.5544535389257953,
                 "psd_within_tol": true
               },
               "sign_(1,1,1)": {
-                "trace": 0.4339934823782398,
-                "min_eig_sym": 0.4339934823782398,
+                "trace": 0.4339934423219698,
+                "min_eig_sym": 0.4339934423219698,
                 "psd_within_tol": true
               }
             }
@@ -1140,35 +1139,35 @@
             ],
             "L": 8,
             "alpha_gap": 0.0,
-            "min_eig_overall": 0.4339934823782398,
-            "markov_trace": 1.617533204540643,
-            "abs_markov_trace": 1.617533204540643,
+            "min_eig_overall": 0.4339934423219698,
+            "markov_trace": 1.6175332996390974,
+            "abs_markov_trace": 1.6175332996390974,
             "rho_star": 4,
-            "B_pred_MeV": 3.3062310764416147,
-            "rel_residual": 0.5716240769776841,
-            "cost": 0.14290601924442103,
+            "B_pred_MeV": 3.3062312708224564,
+            "rel_residual": 0.5716240517924898,
+            "cost": 0.14290601294812244,
             "chi_fingerprint": [
-              2.30418207,
-              1.71238598,
-              -0.31734376,
-              -0.10366599,
-              0.60319214,
-              0.43399348
+              2.30418228,
+              1.71238608,
+              -0.31734381,
+              -0.103666,
+              0.6031921,
+              0.43399344
             ],
             "per_block_summary": {
               "trivial_(3)": {
-                "trace": 2.3041820686340784,
-                "min_eig_sym": 2.3041820686340784,
+                "trace": 2.3041822813030493,
+                "min_eig_sym": 2.3041822813030493,
                 "psd_within_tol": true
               },
               "standard_(2,1)": {
-                "trace": 2.315578112076266,
-                "min_eig_sym": 0.5645858484733293,
+                "trace": 2.3155781842741794,
+                "min_eig_sym": 0.5645858102382373,
                 "psd_within_tol": true
               },
               "sign_(1,1,1)": {
-                "trace": 0.4339934823782398,
-                "min_eig_sym": 0.4339934823782398,
+                "trace": 0.4339934423219698,
+                "min_eig_sym": 0.4339934423219698,
                 "psd_within_tol": true
               }
             }
@@ -1186,35 +1185,35 @@
             ],
             "L": 8,
             "alpha_gap": 0.0,
-            "min_eig_overall": 0.4339934823782398,
-            "markov_trace": 1.617533204540643,
-            "abs_markov_trace": 1.617533204540643,
+            "min_eig_overall": 0.4339934423219698,
+            "markov_trace": 1.6175332996390974,
+            "abs_markov_trace": 1.6175332996390974,
             "rho_star": 4,
-            "B_pred_MeV": 3.3062310764416147,
-            "rel_residual": 0.5716240769776841,
-            "cost": 0.14290601924442103,
+            "B_pred_MeV": 3.3062312708224564,
+            "rel_residual": 0.5716240517924898,
+            "cost": 0.14290601294812244,
             "chi_fingerprint": [
-              2.30418207,
-              1.71238598,
-              0.25757325,
-              0.12772194,
-              0.60319214,
-              0.43399348
+              2.30418228,
+              1.71238608,
+              0.25757329,
+              0.12772195,
+              0.6031921,
+              0.43399344
             ],
             "per_block_summary": {
               "trivial_(3)": {
-                "trace": 2.3041820686340784,
-                "min_eig_sym": 2.3041820686340784,
+                "trace": 2.3041822813030493,
+                "min_eig_sym": 2.3041822813030493,
                 "psd_within_tol": true
               },
               "standard_(2,1)": {
-                "trace": 2.315578112076266,
-                "min_eig_sym": 0.5706852838816184,
+                "trace": 2.3155781842741794,
+                "min_eig_sym": 0.5706852475093975,
                 "psd_within_tol": true
               },
               "sign_(1,1,1)": {
-                "trace": 0.4339934823782398,
-                "min_eig_sym": 0.4339934823782398,
+                "trace": 0.4339934423219698,
+                "min_eig_sym": 0.4339934423219698,
                 "psd_within_tol": true
               }
             }
@@ -1232,35 +1231,35 @@
             ],
             "L": 8,
             "alpha_gap": 0.0,
-            "min_eig_overall": 0.4339934823782398,
-            "markov_trace": 1.617533204540643,
-            "abs_markov_trace": 1.617533204540643,
+            "min_eig_overall": 0.4339934423219698,
+            "markov_trace": 1.6175332996390974,
+            "abs_markov_trace": 1.6175332996390974,
             "rho_star": 4,
-            "B_pred_MeV": 3.3062310764416147,
-            "rel_residual": 0.5716240769776841,
-            "cost": 0.14290601924442103,
+            "B_pred_MeV": 3.3062312708224564,
+            "rel_residual": 0.5716240517924898,
+            "cost": 0.14290601294812244,
             "chi_fingerprint": [
-              2.30418207,
-              1.71238598,
-              -0.2090603,
-              -0.15736013,
-              0.60319214,
-              0.43399348
+              2.30418228,
+              1.71238608,
+              -0.20906032,
+              -0.15736015,
+              0.6031921,
+              0.43399344
             ],
             "per_block_summary": {
               "trivial_(3)": {
-                "trace": 2.3041820686340784,
-                "min_eig_sym": 2.3041820686340784,
+                "trace": 2.3041822813030493,
+                "min_eig_sym": 2.3041822813030493,
                 "psd_within_tol": true
               },
               "standard_(2,1)": {
-                "trace": 2.315578112076266,
-                "min_eig_sym": 0.5737139536937201,
+                "trace": 2.3155781842741794,
+                "min_eig_sym": 0.5737139181109241,
                 "psd_within_tol": true
               },
               "sign_(1,1,1)": {
-                "trace": 0.4339934823782398,
-                "min_eig_sym": 0.4339934823782398,
+                "trace": 0.4339934423219698,
+                "min_eig_sym": 0.4339934423219698,
                 "psd_within_tol": true
               }
             }
@@ -1278,35 +1277,35 @@
             ],
             "L": 8,
             "alpha_gap": 0.0,
-            "min_eig_overall": 0.4339934823782398,
-            "markov_trace": 1.617533204540643,
-            "abs_markov_trace": 1.617533204540643,
+            "min_eig_overall": 0.4339934423219698,
+            "markov_trace": 1.6175332996390974,
+            "abs_markov_trace": 1.6175332996390974,
             "rho_star": 4,
-            "B_pred_MeV": 3.3062310764416147,
-            "rel_residual": 0.5716240769776841,
-            "cost": 0.14290601924442103,
+            "B_pred_MeV": 3.3062312708224564,
+            "rel_residual": 0.5716240517924898,
+            "cost": 0.14290601294812244,
             "chi_fingerprint": [
-              2.30418207,
-              1.71238598,
-              0.16968458,
-              0.19387593,
-              0.60319214,
-              0.43399348
+              2.30418228,
+              1.71238608,
+              0.16968459,
+              0.19387596,
+              0.6031921,
+              0.43399344
             ],
             "per_block_summary": {
               "trivial_(3)": {
-                "trace": 2.3041820686340784,
-                "min_eig_sym": 2.3041820686340784,
+                "trace": 2.3041822813030493,
+                "min_eig_sym": 2.3041822813030493,
                 "psd_within_tol": true
               },
               "standard_(2,1)": {
-                "trace": 2.315578112076266,
-                "min_eig_sym": 0.5741609178266934,
+                "trace": 2.31557818427418,
+                "min_eig_sym": 0.574160882196981,
                 "psd_within_tol": true
               },
               "sign_(1,1,1)": {
-                "trace": 0.4339934823782398,
-                "min_eig_sym": 0.4339934823782398,
+                "trace": 0.4339934423219698,
+                "min_eig_sym": 0.4339934423219698,
                 "psd_within_tol": true
               }
             }
@@ -1324,35 +1323,35 @@
             ],
             "L": 8,
             "alpha_gap": 0.0,
-            "min_eig_overall": 0.4339934823782398,
-            "markov_trace": 1.617533204540643,
-            "abs_markov_trace": 1.617533204540643,
+            "min_eig_overall": 0.4339934423219698,
+            "markov_trace": 1.6175332996390974,
+            "abs_markov_trace": 1.6175332996390974,
             "rho_star": 4,
-            "B_pred_MeV": 3.3062310764416147,
-            "rel_residual": 0.5716240769776841,
-            "cost": 0.14290601924442103,
+            "B_pred_MeV": 3.3062312708224564,
+            "rel_residual": 0.5716240517924898,
+            "cost": 0.14290601294812244,
             "chi_fingerprint": [
-              2.30418207,
-              1.06568582,
-              0.81824199,
-              0.40573876,
-              1.24989229,
-              0.43399348
+              2.30418228,
+              1.06568585,
+              0.81824211,
+              0.4057388,
+              1.24989233,
+              0.43399344
             ],
             "per_block_summary": {
               "trivial_(3)": {
-                "trace": 2.3041820686340784,
-                "min_eig_sym": 2.3041820686340784,
+                "trace": 2.3041822813030493,
+                "min_eig_sym": 2.3041822813030493,
                 "psd_within_tol": true
               },
               "standard_(2,1)": {
-                "trace": 2.315578112076265,
-                "min_eig_sym": 0.5389068167706785,
+                "trace": 2.3155781842741794,
+                "min_eig_sym": 0.5389067721980537,
                 "psd_within_tol": true
               },
               "sign_(1,1,1)": {
-                "trace": 0.4339934823782398,
-                "min_eig_sym": 0.4339934823782398,
+                "trace": 0.4339934423219698,
+                "min_eig_sym": 0.4339934423219698,
                 "psd_within_tol": true
               }
             }
@@ -1370,35 +1369,35 @@
             ],
             "L": 8,
             "alpha_gap": 0.0,
-            "min_eig_overall": 0.4339934823782398,
-            "markov_trace": 1.617533204540643,
-            "abs_markov_trace": 1.617533204540643,
+            "min_eig_overall": 0.4339934423219698,
+            "markov_trace": 1.6175332996390974,
+            "abs_markov_trace": 1.6175332996390974,
             "rho_star": 4,
-            "B_pred_MeV": 3.3062310764416147,
-            "rel_residual": 0.5716240769776841,
-            "cost": 0.14290601924442103,
+            "B_pred_MeV": 3.3062312708224564,
+            "rel_residual": 0.5716240517924898,
+            "cost": 0.14290601294812244,
             "chi_fingerprint": [
-              2.30418207,
-              1.71238598,
-              -0.13772512,
-              -0.23886532,
-              0.60319214,
-              0.43399348
+              2.30418228,
+              1.71238608,
+              -0.13772513,
+              -0.23886536,
+              0.6031921,
+              0.43399344
             ],
             "per_block_summary": {
               "trivial_(3)": {
-                "trace": 2.3041820686340784,
-                "min_eig_sym": 2.3041820686340784,
+                "trace": 2.3041822813030493,
+                "min_eig_sym": 2.3041822813030493,
                 "psd_within_tol": true
               },
               "standard_(2,1)": {
-                "trace": 2.315578112076266,
-                "min_eig_sym": 0.5720990074153892,
+                "trace": 2.3155781842741794,
+                "min_eig_sym": 0.572098970911166,
                 "psd_within_tol": true
               },
               "sign_(1,1,1)": {
-                "trace": 0.4339934823782398,
-                "min_eig_sym": 0.4339934823782398,
+                "trace": 0.4339934423219698,
+                "min_eig_sym": 0.4339934423219698,
                 "psd_within_tol": true
               }
             }
@@ -1416,35 +1415,35 @@
             ],
             "L": 8,
             "alpha_gap": 0.0,
-            "min_eig_overall": 0.4339934823782398,
-            "markov_trace": 1.617533204540643,
-            "abs_markov_trace": 1.617533204540643,
+            "min_eig_overall": 0.4339934423219698,
+            "markov_trace": 1.6175332996390974,
+            "abs_markov_trace": 1.6175332996390974,
             "rho_star": 4,
-            "B_pred_MeV": 3.3062310764416147,
-            "rel_residual": 0.5716240769776841,
-            "cost": 0.14290601924442103,
+            "B_pred_MeV": 3.3062312708224564,
+            "rel_residual": 0.5716240517924898,
+            "cost": 0.14290601294812244,
             "chi_fingerprint": [
-              2.30418207,
-              1.06568582,
-              -0.66412918,
-              -0.49989144,
-              1.24989229,
-              0.43399348
+              2.30418228,
+              1.06568585,
+              -0.66412926,
+              -0.4998915,
+              1.24989233,
+              0.43399344
             ],
             "per_block_summary": {
               "trivial_(3)": {
-                "trace": 2.3041820686340784,
-                "min_eig_sym": 2.3041820686340784,
+                "trace": 2.3041822813030493,
+                "min_eig_sym": 2.3041822813030493,
                 "psd_within_tol": true
               },
               "standard_(2,1)": {
-                "trace": 2.315578112076265,
-                "min_eig_sym": 0.5685361329543674,
+                "trace": 2.3155781842741794,
+                "min_eig_sym": 0.5685360967391992,
                 "psd_within_tol": true
               },
               "sign_(1,1,1)": {
-                "trace": 0.4339934823782398,
-                "min_eig_sym": 0.4339934823782398,
+                "trace": 0.4339934423219698,
+                "min_eig_sym": 0.4339934423219698,
                 "psd_within_tol": true
               }
             }
@@ -1468,35 +1467,35 @@
               ],
               "L": 8,
               "alpha_gap": 0.0,
-              "min_eig_overall": 0.4339934823782398,
-              "markov_trace": 1.617533204540643,
-              "abs_markov_trace": 1.617533204540643,
+              "min_eig_overall": 0.4339934423219698,
+              "markov_trace": 1.6175332996390974,
+              "abs_markov_trace": 1.6175332996390974,
               "rho_star": 4,
-              "B_pred_MeV": 3.3062310764416147,
-              "rel_residual": 0.5716240769776841,
-              "cost": 0.14290601924442103,
+              "B_pred_MeV": 3.3062312708224564,
+              "rel_residual": 0.5716240517924898,
+              "cost": 0.14290601294812244,
               "chi_fingerprint": [
-                2.30418207,
-                1.71238598,
-                0.39098416,
+                2.30418228,
+                1.71238608,
+                0.39098423,
                 0.08414089,
-                0.60319214,
-                0.43399348
+                0.6031921,
+                0.43399344
               ],
               "per_block_summary": {
                 "trivial_(3)": {
-                  "trace": 2.3041820686340784,
-                  "min_eig_sym": 2.3041820686340784,
+                  "trace": 2.3041822813030493,
+                  "min_eig_sym": 2.3041822813030493,
                   "psd_within_tol": true
                 },
                 "standard_(2,1)": {
-                  "trace": 2.315578112076266,
-                  "min_eig_sym": 0.5544535806027364,
+                  "trace": 2.3155781842741794,
+                  "min_eig_sym": 0.5544535389257953,
                   "psd_within_tol": true
                 },
                 "sign_(1,1,1)": {
-                  "trace": 0.4339934823782398,
-                  "min_eig_sym": 0.4339934823782398,
+                  "trace": 0.4339934423219698,
+                  "min_eig_sym": 0.4339934423219698,
                   "psd_within_tol": true
                 }
               }
@@ -1514,35 +1513,35 @@
               ],
               "L": 8,
               "alpha_gap": 0.0,
-              "min_eig_overall": 0.4339934823782398,
-              "markov_trace": 1.617533204540643,
-              "abs_markov_trace": 1.617533204540643,
+              "min_eig_overall": 0.4339934423219698,
+              "markov_trace": 1.6175332996390974,
+              "abs_markov_trace": 1.6175332996390974,
               "rho_star": 4,
-              "B_pred_MeV": 3.3062310764416147,
-              "rel_residual": 0.5716240769776841,
-              "cost": 0.14290601924442103,
+              "B_pred_MeV": 3.3062312708224564,
+              "rel_residual": 0.5716240517924898,
+              "cost": 0.14290601294812244,
               "chi_fingerprint": [
-                2.30418207,
-                1.71238598,
-                -0.31734376,
-                -0.10366599,
-                0.60319214,
-                0.43399348
+                2.30418228,
+                1.71238608,
+                -0.31734381,
+                -0.103666,
+                0.6031921,
+                0.43399344
               ],
               "per_block_summary": {
                 "trivial_(3)": {
-                  "trace": 2.3041820686340784,
-                  "min_eig_sym": 2.3041820686340784,
+                  "trace": 2.3041822813030493,
+                  "min_eig_sym": 2.3041822813030493,
                   "psd_within_tol": true
                 },
                 "standard_(2,1)": {
-                  "trace": 2.315578112076266,
-                  "min_eig_sym": 0.5645858484733293,
+                  "trace": 2.3155781842741794,
+                  "min_eig_sym": 0.5645858102382373,
                   "psd_within_tol": true
                 },
                 "sign_(1,1,1)": {
-                  "trace": 0.4339934823782398,
-                  "min_eig_sym": 0.4339934823782398,
+                  "trace": 0.4339934423219698,
+                  "min_eig_sym": 0.4339934423219698,
                   "psd_within_tol": true
                 }
               }
@@ -1560,35 +1559,35 @@
               ],
               "L": 8,
               "alpha_gap": 0.0,
-              "min_eig_overall": 0.4339934823782398,
-              "markov_trace": 1.617533204540643,
-              "abs_markov_trace": 1.617533204540643,
+              "min_eig_overall": 0.4339934423219698,
+              "markov_trace": 1.6175332996390974,
+              "abs_markov_trace": 1.6175332996390974,
               "rho_star": 4,
-              "B_pred_MeV": 3.3062310764416147,
-              "rel_residual": 0.5716240769776841,
-              "cost": 0.14290601924442103,
+              "B_pred_MeV": 3.3062312708224564,
+              "rel_residual": 0.5716240517924898,
+              "cost": 0.14290601294812244,
               "chi_fingerprint": [
-                2.30418207,
-                1.71238598,
-                0.25757325,
-                0.12772194,
-                0.60319214,
-                0.43399348
+                2.30418228,
+                1.71238608,
+                0.25757329,
+                0.12772195,
+                0.6031921,
+                0.43399344
               ],
               "per_block_summary": {
                 "trivial_(3)": {
-                  "trace": 2.3041820686340784,
-                  "min_eig_sym": 2.3041820686340784,
+                  "trace": 2.3041822813030493,
+                  "min_eig_sym": 2.3041822813030493,
                   "psd_within_tol": true
                 },
                 "standard_(2,1)": {
-                  "trace": 2.315578112076266,
-                  "min_eig_sym": 0.5706852838816184,
+                  "trace": 2.3155781842741794,
+                  "min_eig_sym": 0.5706852475093975,
                   "psd_within_tol": true
                 },
                 "sign_(1,1,1)": {
-                  "trace": 0.4339934823782398,
-                  "min_eig_sym": 0.4339934823782398,
+                  "trace": 0.4339934423219698,
+                  "min_eig_sym": 0.4339934423219698,
                   "psd_within_tol": true
                 }
               }
@@ -1606,35 +1605,35 @@
               ],
               "L": 8,
               "alpha_gap": 0.0,
-              "min_eig_overall": 0.4339934823782398,
-              "markov_trace": 1.617533204540643,
-              "abs_markov_trace": 1.617533204540643,
+              "min_eig_overall": 0.4339934423219698,
+              "markov_trace": 1.6175332996390974,
+              "abs_markov_trace": 1.6175332996390974,
               "rho_star": 4,
-              "B_pred_MeV": 3.3062310764416147,
-              "rel_residual": 0.5716240769776841,
-              "cost": 0.14290601924442103,
+              "B_pred_MeV": 3.3062312708224564,
+              "rel_residual": 0.5716240517924898,
+              "cost": 0.14290601294812244,
               "chi_fingerprint": [
-                2.30418207,
-                1.71238598,
-                -0.2090603,
-                -0.15736013,
-                0.60319214,
-                0.43399348
+                2.30418228,
+                1.71238608,
+                -0.20906032,
+                -0.15736015,
+                0.6031921,
+                0.43399344
               ],
               "per_block_summary": {
                 "trivial_(3)": {
-                  "trace": 2.3041820686340784,
-                  "min_eig_sym": 2.3041820686340784,
+                  "trace": 2.3041822813030493,
+                  "min_eig_sym": 2.3041822813030493,
                   "psd_within_tol": true
                 },
                 "standard_(2,1)": {
-                  "trace": 2.315578112076266,
-                  "min_eig_sym": 0.5737139536937201,
+                  "trace": 2.3155781842741794,
+                  "min_eig_sym": 0.5737139181109241,
                   "psd_within_tol": true
                 },
                 "sign_(1,1,1)": {
-                  "trace": 0.4339934823782398,
-                  "min_eig_sym": 0.4339934823782398,
+                  "trace": 0.4339934423219698,
+                  "min_eig_sym": 0.4339934423219698,
                   "psd_within_tol": true
                 }
               }
@@ -1652,35 +1651,35 @@
               ],
               "L": 8,
               "alpha_gap": 0.0,
-              "min_eig_overall": 0.4339934823782398,
-              "markov_trace": 1.617533204540643,
-              "abs_markov_trace": 1.617533204540643,
+              "min_eig_overall": 0.4339934423219698,
+              "markov_trace": 1.6175332996390974,
+              "abs_markov_trace": 1.6175332996390974,
               "rho_star": 4,
-              "B_pred_MeV": 3.3062310764416147,
-              "rel_residual": 0.5716240769776841,
-              "cost": 0.14290601924442103,
+              "B_pred_MeV": 3.3062312708224564,
+              "rel_residual": 0.5716240517924898,
+              "cost": 0.14290601294812244,
               "chi_fingerprint": [
-                2.30418207,
-                1.71238598,
-                0.16968458,
-                0.19387593,
-                0.60319214,
-                0.43399348
+                2.30418228,
+                1.71238608,
+                0.16968459,
+                0.19387596,
+                0.6031921,
+                0.43399344
               ],
               "per_block_summary": {
                 "trivial_(3)": {
-                  "trace": 2.3041820686340784,
-                  "min_eig_sym": 2.3041820686340784,
+                  "trace": 2.3041822813030493,
+                  "min_eig_sym": 2.3041822813030493,
                   "psd_within_tol": true
                 },
                 "standard_(2,1)": {
-                  "trace": 2.315578112076266,
-                  "min_eig_sym": 0.5741609178266934,
+                  "trace": 2.31557818427418,
+                  "min_eig_sym": 0.574160882196981,
                   "psd_within_tol": true
                 },
                 "sign_(1,1,1)": {
-                  "trace": 0.4339934823782398,
-                  "min_eig_sym": 0.4339934823782398,
+                  "trace": 0.4339934423219698,
+                  "min_eig_sym": 0.4339934423219698,
                   "psd_within_tol": true
                 }
               }
@@ -1698,35 +1697,35 @@
               ],
               "L": 8,
               "alpha_gap": 0.0,
-              "min_eig_overall": 0.4339934823782398,
-              "markov_trace": 1.617533204540643,
-              "abs_markov_trace": 1.617533204540643,
+              "min_eig_overall": 0.4339934423219698,
+              "markov_trace": 1.6175332996390974,
+              "abs_markov_trace": 1.6175332996390974,
               "rho_star": 4,
-              "B_pred_MeV": 3.3062310764416147,
-              "rel_residual": 0.5716240769776841,
-              "cost": 0.14290601924442103,
+              "B_pred_MeV": 3.3062312708224564,
+              "rel_residual": 0.5716240517924898,
+              "cost": 0.14290601294812244,
               "chi_fingerprint": [
-                2.30418207,
-                1.06568582,
-                0.81824199,
-                0.40573876,
-                1.24989229,
-                0.43399348
+                2.30418228,
+                1.06568585,
+                0.81824211,
+                0.4057388,
+                1.24989233,
+                0.43399344
               ],
               "per_block_summary": {
                 "trivial_(3)": {
-                  "trace": 2.3041820686340784,
-                  "min_eig_sym": 2.3041820686340784,
+                  "trace": 2.3041822813030493,
+                  "min_eig_sym": 2.3041822813030493,
                   "psd_within_tol": true
                 },
                 "standard_(2,1)": {
-                  "trace": 2.315578112076265,
-                  "min_eig_sym": 0.5389068167706785,
+                  "trace": 2.3155781842741794,
+                  "min_eig_sym": 0.5389067721980537,
                   "psd_within_tol": true
                 },
                 "sign_(1,1,1)": {
-                  "trace": 0.4339934823782398,
-                  "min_eig_sym": 0.4339934823782398,
+                  "trace": 0.4339934423219698,
+                  "min_eig_sym": 0.4339934423219698,
                   "psd_within_tol": true
                 }
               }
@@ -1744,35 +1743,35 @@
               ],
               "L": 8,
               "alpha_gap": 0.0,
-              "min_eig_overall": 0.4339934823782398,
-              "markov_trace": 1.617533204540643,
-              "abs_markov_trace": 1.617533204540643,
+              "min_eig_overall": 0.4339934423219698,
+              "markov_trace": 1.6175332996390974,
+              "abs_markov_trace": 1.6175332996390974,
               "rho_star": 4,
-              "B_pred_MeV": 3.3062310764416147,
-              "rel_residual": 0.5716240769776841,
-              "cost": 0.14290601924442103,
+              "B_pred_MeV": 3.3062312708224564,
+              "rel_residual": 0.5716240517924898,
+              "cost": 0.14290601294812244,
               "chi_fingerprint": [
-                2.30418207,
-                1.71238598,
-                -0.13772512,
-                -0.23886532,
-                0.60319214,
-                0.43399348
+                2.30418228,
+                1.71238608,
+                -0.13772513,
+                -0.23886536,
+                0.6031921,
+                0.43399344
               ],
               "per_block_summary": {
                 "trivial_(3)": {
-                  "trace": 2.3041820686340784,
-                  "min_eig_sym": 2.3041820686340784,
+                  "trace": 2.3041822813030493,
+                  "min_eig_sym": 2.3041822813030493,
                   "psd_within_tol": true
                 },
                 "standard_(2,1)": {
-                  "trace": 2.315578112076266,
-                  "min_eig_sym": 0.5720990074153892,
+                  "trace": 2.3155781842741794,
+                  "min_eig_sym": 0.572098970911166,
                   "psd_within_tol": true
                 },
                 "sign_(1,1,1)": {
-                  "trace": 0.4339934823782398,
-                  "min_eig_sym": 0.4339934823782398,
+                  "trace": 0.4339934423219698,
+                  "min_eig_sym": 0.4339934423219698,
                   "psd_within_tol": true
                 }
               }
@@ -1790,35 +1789,35 @@
               ],
               "L": 8,
               "alpha_gap": 0.0,
-              "min_eig_overall": 0.4339934823782398,
-              "markov_trace": 1.617533204540643,
-              "abs_markov_trace": 1.617533204540643,
+              "min_eig_overall": 0.4339934423219698,
+              "markov_trace": 1.6175332996390974,
+              "abs_markov_trace": 1.6175332996390974,
               "rho_star": 4,
-              "B_pred_MeV": 3.3062310764416147,
-              "rel_residual": 0.5716240769776841,
-              "cost": 0.14290601924442103,
+              "B_pred_MeV": 3.3062312708224564,
+              "rel_residual": 0.5716240517924898,
+              "cost": 0.14290601294812244,
               "chi_fingerprint": [
-                2.30418207,
-                1.06568582,
-                -0.66412918,
-                -0.49989144,
-                1.24989229,
-                0.43399348
+                2.30418228,
+                1.06568585,
+                -0.66412926,
+                -0.4998915,
+                1.24989233,
+                0.43399344
               ],
               "per_block_summary": {
                 "trivial_(3)": {
-                  "trace": 2.3041820686340784,
-                  "min_eig_sym": 2.3041820686340784,
+                  "trace": 2.3041822813030493,
+                  "min_eig_sym": 2.3041822813030493,
                   "psd_within_tol": true
                 },
                 "standard_(2,1)": {
-                  "trace": 2.315578112076265,
-                  "min_eig_sym": 0.5685361329543674,
+                  "trace": 2.3155781842741794,
+                  "min_eig_sym": 0.5685360967391992,
                   "psd_within_tol": true
                 },
                 "sign_(1,1,1)": {
-                  "trace": 0.4339934823782398,
-                  "min_eig_sym": 0.4339934823782398,
+                  "trace": 0.4339934423219698,
+                  "min_eig_sym": 0.4339934423219698,
                   "psd_within_tol": true
                 }
               }
@@ -1836,7 +1835,7 @@
             -0.0,
             -0.0
           ],
-          "y0_star": 0.14290601924442103,
+          "y0_star": 0.14290601294812244,
           "y_star": [
             0.0,
             0.0,
@@ -1848,8 +1847,8 @@
             0.0
           ],
           "active_set": [],
-          "primal_obj": 0.14290601924442103,
-          "dual_obj": 0.14290601924442103,
+          "primal_obj": 0.14290601294812244,
+          "dual_obj": 0.14290601294812244,
           "duality_gap": 0.0,
           "feasible": true,
           "channel_labels": [
@@ -1863,14 +1862,14 @@
             "b_7_L8"
           ],
           "channel_t_costs": [
-            0.14290601924442103,
-            0.14290601924442103,
-            0.14290601924442103,
-            0.14290601924442103,
-            0.14290601924442103,
-            0.14290601924442103,
-            0.14290601924442103,
-            0.14290601924442103
+            0.14290601294812244,
+            0.14290601294812244,
+            0.14290601294812244,
+            0.14290601294812244,
+            0.14290601294812244,
+            0.14290601294812244,
+            0.14290601294812244,
+            0.14290601294812244
           ],
           "channel_braid_words": [
             [
@@ -1972,10 +1971,10 @@
           "in_cemetery": false,
           "chi_fingerprint": [
             1.0,
-            1.01122531,
-            0.08047241,
-            -0.07462758,
-            0.9829605,
+            1.01122532,
+            0.08047243,
+            -0.07462759,
+            0.98296049,
             1.0
           ],
           "canonical_basis_representative_in_search": [
@@ -1986,13 +1985,13 @@
             -1,
             2
           ],
-          "markov_trace": 0.9983666225857156,
-          "B_pred_MeV": 2.0406571834253877,
-          "rel_residual": 0.7355997253940255,
-          "cost": 0.18389993134850638,
-          "rank_in_full_search": 383,
+          "markov_trace": 0.9983666218383206,
+          "B_pred_MeV": 2.0406571818977155,
+          "rel_residual": 0.7355997255919603,
+          "cost": 0.18389993139799007,
+          "rank_in_full_search": 381,
           "rank_in_top_k": null,
-          "rank_in_psd_feasible_subset": 383,
+          "rank_in_psd_feasible_subset": 381,
           "winner_matches_historical_class": false,
           "winner_markov_within_eps": false
         },
