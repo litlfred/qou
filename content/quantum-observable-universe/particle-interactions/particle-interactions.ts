@@ -79,6 +79,7 @@ export default chapter({
             "confinement-topological",
             "lp-dual-stability",
             "lp-dual-stability-table-data",
+            "algebraic-primality",
             "n-equals-1-vacuous-magic",
             // prop:operator-selection-lp moved earlier to
             // braids-and-knots/sec:hoefsmit-convergence-atomic per

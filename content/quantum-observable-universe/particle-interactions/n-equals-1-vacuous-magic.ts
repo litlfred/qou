@@ -7,8 +7,7 @@ export default proposition({
     ref: "qou:QOU.Interactions.AlgebraicPrimality.one_isAlgebraicallyPrime",
     validation: "not_checked",
   },
-  uses: [
-  ],
+  uses: ["def:algebraic-primality"],
   tags: [
     "magic-numbers",
     "primality",
