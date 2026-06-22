@@ -14,6 +14,8 @@ from pathlib import Path
 from typing import Optional
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "folio-assistant"))
+import _path_bridge  # noqa: F401, E402
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402
 from computations.q_parameter import Q, VOL_FIGURE_EIGHT as VOL_4_1_CANONICAL
 
 # ── Substrate parameter (from muon-electron mass ratio) ──────────────
@@ -39,7 +41,7 @@ CODATA = {
     "electron":    0.51099895000,
     "muon":      105.6583755,
     "tau":      1776.86,
-    "proton":    938.27208816,
+    "proton":    float(M_P_MEV_VALIDATION),
     "neutron":   939.56542052,
     "deuteron": 1875.61294257,
     "He-3":     2808.39160743,

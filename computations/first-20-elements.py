@@ -5,6 +5,8 @@ import math
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "folio-assistant"))
+import _path_bridge  # noqa: F401, E402
+from experimental_constants import M_E_MEV  # noqa: E402
 from computations.q_parameter import Q
 
 q = Q
@@ -19,7 +21,7 @@ def S(a, b):
 
 m_p = S(mu_u, mu_u) + 2 * S(mu_u, mu_d)   # proton
 m_n = 2 * S(mu_u, mu_d) + S(mu_d, mu_d)    # neutron
-m_e = 0.51099895                             # electron (CODATA 2022)
+m_e = M_E_MEV                             # electron (CODATA 2022)
 
 # (Z, N, symbol, name, B/A in MeV from AME2020, observed atomic mass MeV)
 elements = [

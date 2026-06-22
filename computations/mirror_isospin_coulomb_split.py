@@ -28,6 +28,8 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
+from experimental_constants import M_E_MEV  # noqa: E402
+
 # The categorical comparison needs the canonical Markov trace, which transitively
 # pulls in the substrate package. Attempt the import once here (EAFP); when it is
 # absent — e.g. the post-#2310 content-repo sandbox — the categorical section is
@@ -102,7 +104,7 @@ def substrate_length_check():
     length built from E0 — i.e. the textbook 'nuclear size ~ pion range'. Since
     m_pi is CAL-3, this is consistent with the calibration, not a new derivation."""
     hbarc = 197.3269804  # MeV.fm
-    me, m_pi, q0, alpha = 0.51099895, 139.57039, 1.1097, 1.0 / 137.035999
+    me, m_pi, q0, alpha = M_E_MEV, 139.57039, 1.1097, 1.0 / 137.035999
     E0 = me / (q0 * (q0 - 1.0))
     print("\n[substrate-length] is r0 ~ 1.5 fm a framework length?")
     for name, v in (("hbar c / E0", hbarc / E0),
