@@ -127,6 +127,7 @@ export default chapter({
         "omega-constraints",
         "spectral-dynamics",
         "mi-sw-abelianisation",
+        "mi-sw-abelianisation-cartan",
         "mi-sw-abelianisation-cartan-proof",
         "mi-sw-abelianisation-proof",
         "sw-period-residue-sum",
