@@ -38,7 +38,7 @@ from partition_utils import hook_lengths
 # Authoritative source: T4-T8 use this exact 50-dps decimal; T9-T12
 # extend it without re-deriving.  Do not edit without updating the
 # whole probe series.
-Q_0_50DPS: str = "1.1099785955573347198997632204832250266562084087801"
+Q_0_50DPS: str = "1.1099785827513808075916690956107688798744991218736"
 
 
 def q_number(n: int, q: mp.mpf) -> mp.mpf:
