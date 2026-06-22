@@ -7,15 +7,17 @@ migration `74d93256`). What remains is **owner-sequenced / value-changing**
 and is tracked here so the active q₀ sweep and the owner pick it up rather
 than racing it on separate branches.
 
-## Item A — q₀ cluster-B (muon anchor) + `Q_MUON` accessor
+## Item A — q₀ cluster-B (muon anchor) + `Q0_MUON` accessor
 
 - **Source:** `docs/audits/2026-06-21-q0-hardcoded-constant-census.md` cluster B
   (6+ files hardcoding the muon-anchor q₀ `1.10997859555418…`).
-- **Recipe:** add a `Q_MUON` accessor to `tools/qou-substrate/python/qou_substrate/constants.py`
-  (re-exported via `q_parameter`), value = the canonical muon derivation
-  `q = 1/(1 − ℏ_q)` with `ℏ_q² = Vol(4₁)/(m_μ/m_e)`; route the cluster-B
-  files' bare-decimal q₀ to it. Confirm each is genuinely in the
-  canonical-CAL-2 (muon) layer first (two-layer convention).
+- **Recipe:** add a `Q0_MUON` accessor to `tools/qou-substrate/python/qou_substrate/constants.py`
+  (re-exported via `q_parameter`) — named `Q0_` (a q₀ anchor value), **not**
+  `Q_`, to avoid confusion with the β-decay Q-value `Q_β`. Value = the
+  canonical muon derivation $q = 1/(1 - \hbar_q)$ with
+  $\hbar_q^2 = \mathrm{Vol}(4_1)/(m_\mu/m_e)$; route the cluster-B files'
+  bare-decimal q₀ to it. Confirm each is genuinely in the canonical-CAL-2
+  (muon) layer first (two-layer convention).
 - **Why deferred:** same package + files as the active cluster-A sweep;
   collision-prone; witness-churning. **Fold into the q₀ sweep.**
 
@@ -60,10 +62,11 @@ Remaining P31 literals are **not** value-preserving routes:
   `docs/audits/2026-06-22-overcount-3input-triage.md` (m_n consumed in a
   `Z·m_p + N·m_n` constituent sum or `rho_K` formula).
 - **The fork (owner decision):**
-  - **Honest fix:** derive `m_n` from the **framework's q₀-derived Q_β**
-    (`Q_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³)`), i.e. `m_n = m_p + Q_β_derived + m_e`.
-    This is the true 3-input canonical scheme but **value-changing (~0.17%)**
-    — refreshes every dependent witness.
+  - **Honest fix:** derive $m_n$ from the **framework's $q_0$-derived $Q_\beta$**
+    ($Q_\beta = m_e \cdot |q_0^2 - 2q_0 - 1| \cdot (q_0 + 1)/(2 q_0^3)$), i.e.
+    $m_n = m_p + Q_{\beta,\text{derived}} + m_e$. This is the true 3-input
+    canonical scheme but **value-changing (~0.17%)** — refreshes every
+    dependent witness.
   - **Value-preserving relabel (NOT recommended):** `m_n = m_p +
     Q_NEUTRON_MEV + m_e` with the *experimental* `Q_NEUTRON_MEV`
     (= m_n − m_p − m_e by construction) is exactly value-preserving and
