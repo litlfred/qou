@@ -162,19 +162,56 @@ RYDBERG_eV_VALIDATION = mp.mpf("13.605693")
 # be unambiguous since these are AME constants, but the suffix makes
 # the validation-only role explicit at every call site.
 #
-# Source witness:
-# `ame-2020-binding-energies.witness.json` (committed alongside).
-# Original data: Wang, M. et al., "The AME 2020 atomic mass
-# evaluation", Chinese Physics C 45.3 (2021) 030003.
-_AME_BINDING_WITNESS = _WITNESS_DIR / "ame-2020-binding-energies.witness.json"
+# SINGLE SOURCE OF TRUTH (write-once): the binding/atomic-mass values are
+# NOT copied here — they are read directly, by (Z, A), from the vendored
+# AME2020 evaluation `qou-mass/src/qou_mass/data/ame2020.json` (Huang/Wang/
+# Kondev/Audi/Naimi, Chinese Physics C 45 (2021) 030002). This eliminates the
+# hand-maintained `ame-2020-binding-energies.witness.json` (whose manual entry
+# had drifted on ⁵Li/⁷Li/⁹Be) and any divergence between the registry and the
+# in-script literals — each number lives in exactly one place.
+_AME2020_JSON = _WITNESS_DIR.parent / "qou-mass" / "src" / "qou_mass" / "data" / "ame2020.json"
 
-AME_B_DEUTERON_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_deuteron_MeV")
-AME_B_TRITIUM_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_tritium_MeV")
-AME_B_HE3_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_he3_MeV")
-AME_B_HE4_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_he4_MeV")
-AME_B_LI5_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_li5_MeV")
-AME_B_LI6_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_li6_MeV")
-AME_B_LI7_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_li7_MeV")
+
+def _ame2020() -> dict:
+    if _AME2020_JSON not in _WITNESS_CACHE:
+        with _AME2020_JSON.open("r", encoding="utf-8") as fh:
+            _WITNESS_CACHE[_AME2020_JSON] = json.load(fh)
+    return _WITNESS_CACHE[_AME2020_JSON]
+
+
+def _ame_entry(Z: int, A: int) -> dict:
+    for e in _ame2020()["entries"]:
+        if e["Z"] == Z and e["A"] == A:
+            return e
+    raise KeyError(f"AME2020 entry (Z={Z}, A={A}) not found in {_AME2020_JSON.name}")
+
+
+# u→MeV is itself documented once, in the data file's own metadata
+# ("...1u = 931.49410242 MeV"); parsed rather than re-typed here.
+import re as _re  # noqa: E402
+_U_MEV = mp.mpf(_re.search(
+    r"1u\s*=\s*([\d.]+)\s*MeV",
+    _ame2020()["_metadata"]["units"]["atomic_mass_micro_u"]).group(1))
+del _re
+
+
+def _ame_binding_mev(Z: int, A: int) -> mp.mpf:
+    """Total nuclear binding energy (MeV) read from vendored AME2020."""
+    return mp.mpf(repr(_ame_entry(Z, A)["binding_energy_total_keV"])) / 1000
+
+
+def _ame_atomic_mev(Z: int, A: int) -> mp.mpf:
+    """Neutral-atom mass (MeV) read from vendored AME2020 (atomic_mass_micro_u·u)."""
+    return mp.mpf(repr(_ame_entry(Z, A)["atomic_mass_micro_u"])) * mp.mpf("1e-6") * _U_MEV
+
+
+AME_B_DEUTERON_MEV_VALIDATION = _ame_binding_mev(1, 2)
+AME_B_TRITIUM_MEV_VALIDATION = _ame_binding_mev(1, 3)
+AME_B_HE3_MEV_VALIDATION = _ame_binding_mev(2, 3)
+AME_B_HE4_MEV_VALIDATION = _ame_binding_mev(2, 4)
+AME_B_LI5_MEV_VALIDATION = _ame_binding_mev(3, 5)
+AME_B_LI6_MEV_VALIDATION = _ame_binding_mev(3, 6)
+AME_B_LI7_MEV_VALIDATION = _ame_binding_mev(3, 7)
 
 # ── PDG 2024 meson masses (validation-only) ───────────────────
 # Added 2026-05-26 per meson knot-dictionary probe (PR #1292).
@@ -191,17 +228,15 @@ M_MU_MEV_VALIDATION    = mp.mpf("105.6583755")   # ± 0.0000023 MeV (22 ppb)
 # the atomic (neutral-atom, electrons included) masses used as
 # absolute-mass comparison targets in tower_isotope_absolute.py.
 # These are ATOMIC masses (≠ the nuclear M_*_MEV_VALIDATION above,
-# which differ by ≈ Z·m_e); never calibration inputs. Source:
-# AME2020 / CODATA atomic masses. Precision is carried over verbatim
-# from the prior in-script literals (5–6 dp) to keep routing exactly
-# value-preserving; refine to full AME2020 precision in a follow-up
-# if a high-precision vendored atomic-mass source is added.
-M_D_ATOMIC_MEV_VALIDATION   = mp.mpf("1876.12392")    # ²H  (deuterium atom)
-M_T_ATOMIC_MEV_VALIDATION   = mp.mpf("2809.43215")    # ³H  (tritium atom)
-M_HE3_ATOMIC_MEV_VALIDATION = mp.mpf("2809.41347")    # ³He atom
-M_HE4_ATOMIC_MEV_VALIDATION = mp.mpf("3728.40133")    # ⁴He atom
-M_LI6_ATOMIC_MEV_VALIDATION = mp.mpf("5603.05122")    # ⁶Li atom
-M_C12_ATOMIC_MEV_VALIDATION = mp.mpf("11177.92923")   # ¹²C atom
+# which differ by ≈ Z·m_e); never calibration inputs. Read by (Z, A)
+# from the same vendored AME2020 file (full evaluation precision —
+# supersedes the prior 5–6 dp in-script literals).
+M_D_ATOMIC_MEV_VALIDATION   = _ame_atomic_mev(1, 2)    # ²H  (deuterium atom)
+M_T_ATOMIC_MEV_VALIDATION   = _ame_atomic_mev(1, 3)    # ³H  (tritium atom)
+M_HE3_ATOMIC_MEV_VALIDATION = _ame_atomic_mev(2, 3)    # ³He atom
+M_HE4_ATOMIC_MEV_VALIDATION = _ame_atomic_mev(2, 4)    # ⁴He atom
+M_LI6_ATOMIC_MEV_VALIDATION = _ame_atomic_mev(3, 6)    # ⁶Li atom
+M_C12_ATOMIC_MEV_VALIDATION = _ame_atomic_mev(6, 12)   # ¹²C atom
 
 # ── Internal consistency check (Q_β derived vs CODATA m_n − m_p − m_e) ─
 # Q_β is derived from CAL-1 + CAL-2; this check verifies it agrees
