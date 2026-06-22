@@ -8,7 +8,13 @@ export default proposition({
   },
   title:
     "Symbolic closed-form H_3(q) Hoefsmit-seminormal Gram matrix on the 6-element NF basis — 36 explicit Laurent-polynomial entries in $u = \\sqrt{q}$ with 2 of 3 structural axioms (is_symm, diag_top_one) Lean-proved.",
-  uses: [],
+  // Detangler isolated-block fix (bean flus): the H_3(q) Hoefsmit Gram matrix is
+  // defined "on the 6-element NF basis" (def:hecke-normal-form, braids-and-knots,
+  // an earlier chapter — a backward edge, not a forward-ref). Wiring this genuine
+  // upstream dependency de-isolates the block. (Its Hoefsmit/Wedderburn
+  // foundations live in the later mass-theory chapter, so those are deliberately
+  // not added here — they would introduce a Ch 9 → Ch 11 forward-ref.)
+  uses: ["def:hecke-normal-form"],
   cites: [
     "halverson_ram_1998",
   ],
