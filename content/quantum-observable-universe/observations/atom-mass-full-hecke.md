@@ -42,6 +42,12 @@ rises by about $2.5\times$ and the alternating weight falls by about
 $7\times$ relative to the classical equal-weighting of the symmetric and
 alternating channels.
 
+For a single nucleon ($A = 1$) this three-channel sum is the full $H_3(q)$
+Markov trace. For $A > 1$ it is a **three-channel $H_3$ projection** of the
+multi-nucleon state, not the full $H_{3A}(q)$ Markov trace; the two coincide
+only at $A = 1$. The columns below should therefore be read as this projection
+model rather than the canonical $H_{3A}$ trace.
+
 ## Mass decomposition (fibre / horizontal / mixed)
 
 For each nucleus, the mass integrand

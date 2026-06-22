@@ -1,9 +1,10 @@
 ---
 # tb0j
 title: 'Item 1 fuller: trustworthy channel-trace producer for atom-mass-full-hecke (recompute χ^λ per atom, not inherit)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-06-22T14:18:43Z
-updated_at: 2026-06-22T14:18:43Z
+updated_at: 2026-06-22T14:40:47Z
 ---
 
