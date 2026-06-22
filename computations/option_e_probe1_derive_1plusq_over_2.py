@@ -69,7 +69,7 @@ def transpose(lam):
 # ── load the canonical (proton-q₀) y_λ and χ_λ at 50 dps ─────────────────────
 def load_y_and_chi(atom):
     """Load y_λ AND χ_λ from the canonical chi-<atom>-h9-at-q0-50dps witness.
-    These are at the CURRENT canonical proton q₀ = 1.1099785827513808 (50dps)."""
+    These are at the CURRENT canonical proton q₀ = 1.1099785955573347 (50dps)."""
     name = {"T": "tritium-h9", "3He": "helium-3-h9"}[atom]
     fn = COMP / f"chi-{name}-at-q0-50dps.witness.json"
     data = json.load(fn.open())

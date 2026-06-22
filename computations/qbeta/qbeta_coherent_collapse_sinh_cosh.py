@@ -98,7 +98,7 @@ observe_opp = sp.simplify(y1 * sp.Abs(ssym) + y2 * sp.Abs(-ssym))
 check("coherent (opposite signs) = (y1-y2)·s  → nulls at y1=y2", sp.simplify(coherent_opp - (y1 - y2) * ssym) == 0)
 check("observe-last (opposite signs) = (y1+y2)·s  → survives", sp.simplify(observe_opp - (y1 + y2) * ssym) == 0)
 # numeric at the proton-pinned q₀
-q0 = sp.Rational(110997858275, 10 ** 11)  # 1.10997858275
+q0 = sp.Rational(110997859556, 10 ** 11)  # 1.10997859556
 eta0 = sp.log(q0)
 s0 = sp.sinh(eta0)
 coh = float((sp.Rational(1, 1) * s0 + sp.Rational(1, 1) * (-s0)))

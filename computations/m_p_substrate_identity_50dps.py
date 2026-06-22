@@ -48,7 +48,7 @@ calibration input.
 
 ## Empirical performance
 
-At q_0 = 1.1099785827513808... (50 dps, m_p-pinned re-pin #1422):
+At q_0 = 1.1099785955573347... (50 dps, m_p-pinned re-pin #1422):
   m_p_pred  = 938.27209 MeV   vs CODATA 938.27209  →  0.0004 ppb  (ANCHOR
                                           round-trip, not a prediction)
   m_μ_pred  = 105.65840 MeV   vs CODATA 105.65838  →  +0.21 ppm   (9.5σ
