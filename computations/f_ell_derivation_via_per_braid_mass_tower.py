@@ -50,13 +50,17 @@ from pathlib import Path
 
 import mpmath as mp
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _path_bridge  # noqa: F401, E402
+from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
+
 
 def main() -> int:
     mp.mp.dps = 60
 
     # Substrate at q_0 (canonical 50-dps pinning, same as q_pinning_50_digit)
     Vol_4_1 = mp.mpf("2.0298832128193072500115978049904475264466050157561096")
-    cal2_target = mp.mpf("206.7682830")
+    cal2_target = M_MU_OVER_M_E
     cal_tau_e   = mp.mpf("3477.23")
     hbar_q_sq = Vol_4_1 / cal2_target
     hbar_q = mp.sqrt(hbar_q_sq)

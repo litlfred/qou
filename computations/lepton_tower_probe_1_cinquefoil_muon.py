@@ -38,12 +38,16 @@ from pathlib import Path
 
 import mpmath as mp
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _path_bridge  # noqa: F401, E402
+from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
+
 
 def main() -> int:
     mp.mp.dps = 50
 
     # Constants (CODATA 2022)
-    cal2_target = mp.mpf("206.7682830")           # m_μ / m_e
+    cal2_target = M_MU_OVER_M_E           # m_μ / m_e
     cal_tau_e   = mp.mpf("3477.23")               # m_τ / m_e
 
     # Substrate q_0 from CAL-2 (Skein LO, same as q_pinning_50_digit)
