@@ -91,7 +91,19 @@ scan):
      Rogers `α/β` pair already carries this
      (`rogersAlpha_beta_symmetry`, `rogersLogCorrection_symmetric`).
    - **(I-Cauchy)** must reproduce the *algebraic* Cauchy data the merged
-     `eulerCoeff` limit fixes (the part PR #2447/#2460 certified).
+     `eulerCoeff` limit fixes (the part PR #2447/#2460 certified) — **in the
+     regular-representation (`full`) channel**, which the open channel audit
+     **#2481** argues is the *forced* mass-tower argument (trace of the
+     left-mult endomorphism `L_{α_ϱ}`, hence the Wedderburn `w_λ`).
+
+   **Channel caveat (do not skip).** (I-bound) holds for the `full` channel
+   (`z_i < 1`). The *genuine* Jones–Markov per-generator arg is the `std`
+   channel `Vol_q^({i})`, which is `> q₀` (proton σ₀ ≈ 1.146) — there **even
+   `li2q` diverges** (#2481 finding 2). So the bounded-continuation programme is
+   conditional on `full` (regular-rep) being the correct tower argument, and the
+   `tr_M`-vs-`tr_reg` descended-term conflation (~10%) + the classical-vs-q
+   weight convention (#2481 findings 3–4) are **part of the Cauchy data the
+   Rogers-saddle lemma (§4) must reproduce — and must be reconciled first.**
 3. **Let the invariant narrow the probe.** `−Li₂^q(−z)` satisfies
    (I-bound)+(I-bar) by the already-proved Rogers lemmas. So the *only* open
    numerical question is **(I-Cauchy): is `−Li₂^q(−z)` the exact real-q saddle
@@ -161,3 +173,4 @@ Either way the refuted `Φ_q`-at-`|V̂_i|` direction is not revisited.
 - `content/.../mass-theory/mass-endomorphism-tower.md` (`prop:mass-endomorphism-tower`, the `li2q` production form)
 - refs: `[garoufalidis2004]` (AJ), `[faddeev1994]`, `[kashaev1997]`, `[habiro2004cyclotomic]`
 - `AGENTS.md` §"Im(q) at fibre vs observable level"; canonical-derivation cheat-sheet "Φ_q vs Li₂^q context-sorting"
+- sibling PR **#2481** (channel-level `|V̂_i^full|` audit: `full`/regular-rep is the forced mass arg vs `std`/Jones–Markov which diverges; the `tr_M`-vs-`tr_reg` ~10% conflation + weight convention)
