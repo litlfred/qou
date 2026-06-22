@@ -124,7 +124,8 @@ type Category =
   | "proof-no-self-assuming-projection"
   | "proof-no-false-premise"
   | "proof-no-decide-masking"
-  | "proof-no-provable-axiom";
+  | "proof-no-provable-axiom"
+  | "proof-no-placeholder-stub";
 
 const ALL_CATEGORIES: Category[] = [
   "proof-no-trivial-true",
@@ -132,14 +133,16 @@ const ALL_CATEGORIES: Category[] = [
   "proof-no-false-premise",
   "proof-no-decide-masking",
   "proof-no-provable-axiom",
+  "proof-no-placeholder-stub",
 ];
 
 const SEVERITY: Record<Category, "critical" | "major" | "minor"> = {
-  "proof-no-trivial-true": "major",
+  "proof-no-trivial-true": "critical",
   "proof-no-self-assuming-projection": "critical",
-  "proof-no-false-premise": "major",
+  "proof-no-false-premise": "critical",
+  "proof-no-provable-axiom": "critical",
   "proof-no-decide-masking": "major",
-  "proof-no-provable-axiom": "major",
+  "proof-no-placeholder-stub": "critical",
 };
 
 interface Hit {
@@ -590,11 +593,23 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
   const origLines = src.split("\n");
   const codeLines = stripCommentLines(src);
   const fileIsStub = STUB_MARKERS.test(src);
+  const isPlaceholderStub = /# QOU\..* — placeholder stub/.test(src);
   const decls = splitDecls(origLines, codeLines);
   const hits: Hit[] = [];
   const push = (h: Hit | undefined) => {
     if (h && (!onlyCat || h.category === onlyCat)) hits.push(h);
   };
+
+  if (isPlaceholderStub && (!onlyCat || onlyCat === "proof-no-placeholder-stub")) {
+    hits.push({
+      line: 1,
+      category: "proof-no-placeholder-stub",
+      pattern: "placeholder-stub-file",
+      snippet: "# QOU... — placeholder stub",
+      severity: "critical"
+    });
+  }
+
   for (const d of decls) {
     push(detectTrivialTrue(d, src, fileIsStub, absPath));
     push(detectSelfAssuming(d));
