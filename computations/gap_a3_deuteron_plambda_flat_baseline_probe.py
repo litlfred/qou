@@ -70,16 +70,18 @@ def main():
     # --- (i) flat baseline: tr_M(β_D) = Σ_λ y_λ χ^λ  (the P_λ≡1 point) ---
     print("Per-λ flat-trace weights w_λ = y_λ·χ^λ(β_D)  (the P_λ≡1 distribution):")
     print(f"  {'λ':<14}{'y_λ':>14}{'χ^λ(β_D)':>16}{'w_λ=y_λχ^λ':>16}{'λᵀ':>10}")
-    trM = mp.mpf(0)
     w = {}
     for lam in parts:
         yl = y.get(lam, mp.mpf(0))
         cl = chi.get(lam, mp.mpf(0))
         wl = yl * cl
         w[lam] = wl
-        trM += wl
         print(f"  {str(lam):<14}{mp.nstr(yl,7):>14}{mp.nstr(cl,9):>16}"
               f"{mp.nstr(wl,9):>16}{str(transpose(lam)):>10}")
+    # mp.fsum over the term collection avoids intermediate-rounding precision loss
+    # vs a sequential `+=` accumulator (Gemini #2626). Display nstr widths are a
+    # deliberate readability choice; full precision lives in the witness JSON.
+    trM = mp.fsum(w.values())
     print(f"\n  tr_M(β_D) = Σ_λ w_λ = {mp.nstr(trM, 14)}   (= flat P_λ≡1 baseline, mod A(D))")
     print(f"  target −B(D)/m_e = {mp.nstr(B_D_OVER_ME,8)}")
     print(f"  ⇒ A(D) needed for flat baseline to hit target: A(D) = {mp.nstr(B_D_OVER_ME/abs(trM),8)} "
