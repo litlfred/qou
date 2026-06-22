@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T14:11:16.758129+00:00",
-  "commitSha": "5cb6d95e1fec87c7eac2e091853dfdea921c8e00",
+  "computedAt": "2026-06-22T14:33:26.166970+00:00",
+  "commitSha": "c55192aa2f0360c12fbb8248bbf384b9a7bf81f9",
   "assertions": [
     {
       "name": "Tritium_has_zero_ZZ1_coulomb",
@@ -35,14 +35,22 @@
       "passed": true,
       "tolerance": 0,
       "source": "partitions of 6 with content sum < 0"
+    },
+    {
+      "name": "bare_clambda_ZZ1_far_short",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "C_λ·Z(Z−1)·m_e covers <10% of split (22.6× short) — S_λ=Z(Z−1) ruled out"
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 19,
   "computation": "he3-pairknot-clambda-coulomb-probe",
   "scriptFile": "he3_pairknot_clambda_coulomb_probe.py",
-  "scriptHash": "58c16f907ace",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4505afe355fc",
+  "scriptCommitSha": "ad971a8b8761a3af6c6eb2ad1dc8621b3744b495",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -203,6 +211,17 @@
         1
       ]
     ],
+    "C_lambda_charge_blocks": {
+      "[3, 1, 1, 1]": 0.014184504736043362,
+      "[2, 2, 2]": 0.003699421241137427,
+      "[2, 2, 1, 1]": 0.011650116662524492,
+      "[2, 1, 1, 1, 1]": 0.003396074774806677,
+      "[1, 1, 1, 1, 1, 1]": 0.0001246128435294994
+    },
+    "sum_C_lambda_charge": 0.03305473025804146,
+    "C_lambda_formula": "C_λ = w̃_λ·h/2, w̃_λ = dim_q(λ)²/[6]_q!, h=q−q⁻¹ (prop:wedderburn-weight-canonical)",
+    "B_charge_he3_clambda_ZZ1_MeV": 0.03378186495440036,
+    "fraction_covered_clambda_ZZ1": 0.04422867891385226,
     "B_pp_strong_MeV": 2.2860880888652635,
     "coulomb_strong_ratio_tanh_ln_q0": 0.10396372146482967,
     "derived_pp_coulomb_MeV": 0.23767022531485302,
@@ -243,15 +262,17 @@
       }
     ],
     "fraction_covered_derived": 0.31116813997755044,
-    "open_invariant_bracket_MeV": [
-      0.23767022531485302,
-      0.9665456164447848
-    ],
+    "three_parameter_free_estimates_MeV": {
+      "C_lambda_ZZ1_m_e": 0.03378186495440036,
+      "derived_tanh_B_pp": 0.23767022531485302,
+      "skein_aC_ZZ1_over_A13": 0.9665456164447848,
+      "ame_split": 0.7638
+    },
     "probe_diagnostics": {
       "gb_filtration": "H_6 diproton pair-knot, ℓ ≤ 15",
       "jet_order": "h^1 (Coulomb excess δ=½(q−q⁻¹) per crossing; strong baseline h^0)",
       "bar_symmetry": "bar-anti-symmetric (charge/sinh part; c(λ')=−c(λ))"
     },
-    "verdict": "Z(Z−1)/A^{1/3} structure correct (c(λ)<0 blocks carry it; T has 0, ³He nonzero). Parameter-free endpoints BRACKET the AME split: derived pp-Coulomb under (~31%), Skein-a_C over (~127%). The categorical two-like-charge brane-pairing invariant inside the bracket is OPEN; closing by fit to 0.764 MeV is forbidden (CAL-4 / Δ_λ gate)."
+    "verdict": "C_λ q-integer products computed explicitly (prop:wedderburn-weight-canonical, no fit): Σ_charge C_λ = 0.0331. The bare C_λ·Z(Z−1)·m_e shadow-price ansatz gives 0.034 MeV (~4.4%, 22.6× short) — DECISIVELY insufficient, ruling out S_λ=Z(Z−1) at the m_e scale. The Z(Z−1)/A^{1/3} structure is correct (c(λ)<0 blocks carry it; T=0, ³He nonzero). Three parameter-free estimates span the split: C_λ·Z(Z−1) 4%, derived tanh·B_pp 31%, Skein-a_C 127%. The charge-type S_λ normalisation (the categorical two-like-charge brane-pairing invariant, ~22× the bare C_λ·Z(Z−1)) is OPEN; closing by fit to 0.764 MeV is forbidden (CAL-4 / Δ_λ gate)."
   }
 }

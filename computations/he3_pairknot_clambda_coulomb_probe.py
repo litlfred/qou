@@ -58,6 +58,7 @@ from habiro_coefficients_interpolate import (  # noqa: E402
 )
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from schur_weyl_symbolic import partitions_of  # noqa: E402
+from pyhecke.wedderburn import wedderburn_weight  # noqa: E402 — w̃_λ = dim_q(λ)²/[n]_q!
 from q_parameter import Q as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402 — CAL-1
 from _precision import set_compute_dps  # noqa: E402
@@ -115,6 +116,28 @@ def main() -> int:
     print(f"  charge-type (c<0, carry the Z-dependent Coulomb): {len(charge_blocks)} blocks")
     print(f"  isospin-type (c=0): {len(isospin_blocks)}   volume-type (c>0): {len(volume_blocks)}")
 
+    # ---- 1b. evaluate the C_λ q-integer products (prop:wedderburn-weight-canonical) ----
+    # C_λ = w̃_λ · h/2,  w̃_λ = dim_q(λ)²/[6]_q!,  h = q−q⁻¹.  Partition-derived, no fit.
+    h = q0 - 1 / q0
+    me = mp.mpf(str(M_E_MEV))
+    print("\n=== 1b. explicit C_λ for the charge-type blocks (no fit) ===")
+    C_charge = {}
+    sum_C_charge = mp.mpf(0)
+    for lam in charge_blocks:
+        w = mp.mpf(str(wedderburn_weight(list(lam))))
+        C = w * h / 2
+        C_charge[tuple(lam)] = C
+        sum_C_charge += C
+        print(f"  C_{str(list(lam)):16s} = {float(C):.6f}")
+    print(f"  Σ_charge C_λ = {float(sum_C_charge):.6f}")
+    # B_charge(³He): the prop's B = Σ_λ C_λ·S_λ·m_e with the explicit S_λ = Z(Z−1).
+    dHe_clambda = sum_C_charge * mp.mpf(2) * me            # ³He: Z(Z−1)=2
+    split0 = mp.mpf("0.7638")
+    print(f"  B_charge(³He) = Σ_charge C_λ · Z(Z−1) · m_e = {float(dHe_clambda):.4f} MeV  "
+          f"({float(dHe_clambda/split0*100):.2f}% of split, {float(split0/dHe_clambda):.1f}× short)")
+    print("  → the bare C_λ·Z(Z−1)·m_e ansatz is decisively insufficient; the charge-type")
+    print("    S_λ needs ~22× more structure (A-dependence / larger scale) — the OPEN invariant.")
+
     # ---- 2. derived pp pair-knot Coulomb (no fit; def:coulomb-charge) ----
     print("\n=== 2. derived pp pair-knot Coulomb (parameter-free) ===")
     B_pp = E0 * (per_block(2, 0, False) - per_block(2, 0, True))     # diproton strong bond
@@ -143,15 +166,17 @@ def main() -> int:
               f"Skein L_Coul(empirical a_C) = {float(skein_coul):.4f} MeV")
     dHe_skein = a_C_empirical * mp.mpf(2) / mp.power(mp.mpf(3), mp.mpf(1) / 3)
 
-    # ---- 4. bracket: derived (under) vs empirical-a_C (over) endpoints ----
-    print("\n=== 4. the open brane-pairing invariant is BRACKETED (no fit) ===")
-    print(f"  derived pp-Coulomb      = {float(dHe_derived):.4f} MeV  ({float(dHe_derived/split*100):.0f}%, UNDER)")
-    print(f"  AME T−³He split         = {float(split):.4f} MeV  (target)")
-    print(f"  Skein a_C·Z(Z−1)/A^1/3  = {float(dHe_skein):.4f} MeV  ({float(dHe_skein/split*100):.0f}%, OVER)")
+    # ---- 4. three parameter-free estimates span/bracket the empirical split ----
+    print("\n=== 4. three parameter-free estimates vs the AME split (no fit) ===")
+    print(f"  C_λ·Z(Z−1)·m_e (shadow price)  = {float(dHe_clambda):.4f} MeV  ({float(dHe_clambda/split*100):5.1f}%, FAR UNDER)")
+    print(f"  derived tanh(ln q₀)·B_pp        = {float(dHe_derived):.4f} MeV  ({float(dHe_derived/split*100):5.1f}%, UNDER)")
+    print(f"  AME T−³He split                = {float(split):.4f} MeV  (target)")
+    print(f"  Skein a_C·Z(Z−1)/A^{{1/3}}        = {float(dHe_skein):.4f} MeV  ({float(dHe_skein/split*100):5.1f}%, OVER)")
     brackets = float(dHe_derived) < float(split) < float(dHe_skein)
     print(f"  derived < split < skein-empirical : {brackets}")
-    print(f"  → open invariant ∈ ({float(dHe_derived):.3f}, {float(dHe_skein):.3f}) MeV; "
-          f"fitting to {float(split):.3f} would be CAL-4 (forbidden).")
+    print(f"  → The explicit C_λ are derived (no fit); with S_λ=Z(Z−1) at the m_e scale they")
+    print(f"    give only {float(dHe_clambda/split*100):.1f}%. The charge-type S_λ normalisation (the brane-pairing")
+    print(f"    invariant) is the OPEN piece; fitting it to {float(split):.3f} MeV would be CAL-4 (forbidden).")
 
     # ---- witness (audit-only; assert the EXPECTED structural outcome) ----
     wb = WitnessBuilder("he3-pairknot-clambda-coulomb-probe", engine="mpmath")
@@ -160,6 +185,11 @@ def main() -> int:
     wb.data["h6_block_classification"] = block_rows
     wb.data["charge_type_blocks_c_lt_0"] = [list(b) for b in charge_blocks]
     wb.data["isospin_type_blocks_c_eq_0"] = [list(b) for b in isospin_blocks]
+    wb.data["C_lambda_charge_blocks"] = {str(list(k)): float(v) for k, v in C_charge.items()}
+    wb.data["sum_C_lambda_charge"] = float(sum_C_charge)
+    wb.data["C_lambda_formula"] = "C_λ = w̃_λ·h/2, w̃_λ = dim_q(λ)²/[6]_q!, h=q−q⁻¹ (prop:wedderburn-weight-canonical)"
+    wb.data["B_charge_he3_clambda_ZZ1_MeV"] = float(dHe_clambda)
+    wb.data["fraction_covered_clambda_ZZ1"] = float(dHe_clambda / split)
     wb.data["B_pp_strong_MeV"] = float(B_pp)
     wb.data["coulomb_strong_ratio_tanh_ln_q0"] = float(ratio)
     wb.data["derived_pp_coulomb_MeV"] = float(dHe_derived)
@@ -167,17 +197,26 @@ def main() -> int:
     wb.data["skein_coulomb_empirical_aC_MeV"] = float(dHe_skein)
     wb.data["isotope_structure"] = iso_rows
     wb.data["fraction_covered_derived"] = float(dHe_derived / split)
-    wb.data["open_invariant_bracket_MeV"] = [float(dHe_derived), float(dHe_skein)]
+    wb.data["three_parameter_free_estimates_MeV"] = {
+        "C_lambda_ZZ1_m_e": float(dHe_clambda),
+        "derived_tanh_B_pp": float(dHe_derived),
+        "skein_aC_ZZ1_over_A13": float(dHe_skein),
+        "ame_split": float(split),
+    }
     wb.data["probe_diagnostics"] = {
         "gb_filtration": "H_6 diproton pair-knot, ℓ ≤ 15",
         "jet_order": "h^1 (Coulomb excess δ=½(q−q⁻¹) per crossing; strong baseline h^0)",
         "bar_symmetry": "bar-anti-symmetric (charge/sinh part; c(λ')=−c(λ))",
     }
     wb.data["verdict"] = (
-        "Z(Z−1)/A^{1/3} structure correct (c(λ)<0 blocks carry it; T has 0, ³He nonzero). "
-        "Parameter-free endpoints BRACKET the AME split: derived pp-Coulomb under (~31%), "
-        "Skein-a_C over (~127%). The categorical two-like-charge brane-pairing invariant "
-        "inside the bracket is OPEN; closing by fit to 0.764 MeV is forbidden (CAL-4 / Δ_λ gate).")
+        "C_λ q-integer products computed explicitly (prop:wedderburn-weight-canonical, no fit): "
+        "Σ_charge C_λ = 0.0331. The bare C_λ·Z(Z−1)·m_e shadow-price ansatz gives 0.034 MeV "
+        "(~4.4%, 22.6× short) — DECISIVELY insufficient, ruling out S_λ=Z(Z−1) at the m_e scale. "
+        "The Z(Z−1)/A^{1/3} structure is correct (c(λ)<0 blocks carry it; T=0, ³He nonzero). "
+        "Three parameter-free estimates span the split: C_λ·Z(Z−1) 4%, derived tanh·B_pp 31%, "
+        "Skein-a_C 127%. The charge-type S_λ normalisation (the categorical two-like-charge "
+        "brane-pairing invariant, ~22× the bare C_λ·Z(Z−1)) is OPEN; closing by fit to 0.764 MeV "
+        "is forbidden (CAL-4 / Δ_λ gate).")
     # Assert the EXPECTED structural outcomes (so allPassed=true on the honest result).
     wb.add_assertion("Tritium_has_zero_ZZ1_coulomb",
                      computed=1 * 0, expected=0, tolerance=0,
@@ -193,6 +232,10 @@ def main() -> int:
     wb.add_assertion("five_charge_type_blocks_at_H6",
                      computed=len(charge_blocks), expected=5, tolerance=0,
                      source="partitions of 6 with content sum < 0")
+    wb.add_assertion("bare_clambda_ZZ1_far_short",
+                     computed=1 if float(dHe_clambda / split) < 0.1 else 0,
+                     expected=1, tolerance=0,
+                     source="C_λ·Z(Z−1)·m_e covers <10% of split (22.6× short) — S_λ=Z(Z−1) ruled out")
     wb.set_audit_only("docs/audits/2026-06-22-he3-pairknot-clambda-coulomb-probe.md")
     wb.save()
     print("\n✓ Witness: he3-pairknot-clambda-coulomb-probe.witness.json (audit-only)")
