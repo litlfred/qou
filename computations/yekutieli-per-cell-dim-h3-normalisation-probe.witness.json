@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.2.1",
-  "computedAt": "2026-06-13T13:26:31.649397+00:00",
-  "commitSha": "9d123b3945b4e4932598e7edd0ec3f786cc4f02b",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-22T13:29:07.988182+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "normalisation_factor_matches_h3",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 22,
+  "durationMs": 11,
   "computation": "yekutieli-per-cell-dim-h3-normalisation-probe",
   "scriptFile": "yekutieli_per_cell_dim_h3_normalisation_probe.py",
   "scriptHash": "45e6a67e1a43",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,22 +26,19 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.2",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.11.1",
-    "mpmath": "0.0.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Session B probe: attempts to derive the 1/dim H_3 = 1/6 factor as the per-cell normalisation under the half-symmetric projection Π_HS using a Kashiwara-crystal projection.",
   "data": {
-    "q_0": "1.10997858275138080759166909561",
-    "sum_c_h3": "26.2977283867816756884417666486",
-    "sum_c2_h3": "316.746067785980408175447436277",
-    "sum_c_h4": "223.547740033661678619151627432",
-    "sum_c2_h4": "14452.6277947804464107073509799",
-    "sum_c2_h4_self_conj": "13639.0256201251110328397375153"
+    "q_0": "1.10997859555733471989976322048",
+    "sum_c_h3": "26.2977293668258392430801458375",
+    "sum_c2_h3": "316.746091539675799215675922373",
+    "sum_c_h4": "223.547756988749848327810505732",
+    "sum_c2_h4": "14452.6299999958350741573576513",
+    "sum_c2_h4_self_conj": "13639.0277075205885273647735679"
   },
   "caveats": [
     "The probe hits the pre-stated failure signature: the factor comes out as a Wedderburn-weighted form (1/14 at q=1 for H_4 self-conjugate, or 1/6 for H_3, but tied to the Wedderburn sums Σ d²). This implies the (α_em/π)/dim H_3 factor is correct numerically but NOT derived from a fundamental per-cell Yekutieli structure. Session B result is NEGATIVE."

@@ -1,15 +1,15 @@
 {
   "computation": "q0-consistency-audit",
   "description": "Scans compute scripts for stale pre-habiro q\u2080 literals (10997858275 / 858275) and stale-A tr_M leaf values (tr_M evaluated at A) that the 2026-06-22 cluster-A migration replaced with the canonical C values. production-hardcode entries are real bugs (a live constant kept at the stale value); stale-docstring are cosmetic; legit-muon-xcheck are the intentional muon cross-check.",
-  "timestamp": "2026-06-22T13:17:35.464867+00:00",
+  "timestamp": "2026-06-22T13:23:59.073516+00:00",
   "canonical_q0_source": "q_parameter.q_at() / Q_50_DIGIT_STR (proton pin, habiro-refined)",
   "stale_pre_habiro_q0": "1.10997858275138080759\u2026",
   "canonical_proton_q0": "1.10997859555733471989\u2026",
   "counts_by_classification": {
     "production-hardcode": 36,
-    "stale-docstring": 10
+    "stale-docstring": 9
   },
-  "total_hits": 46,
+  "total_hits": 45,
   "production_hardcode_count": 36,
   "hits": [
     {
@@ -137,13 +137,6 @@
       "kind": "stale-trM",
       "classification": "production-hardcode",
       "text": "T1 = mpf(\"1.0653061442544499036108498526519307688964161791863\")"
-    },
-    {
-      "file": "computations/probes/qbeta_c3_habiro_3rung_crossanchor_rigidity_probe.py",
-      "line": 25,
-      "kind": "old-q0",
-      "classification": "stale-docstring",
-      "text": "| proton (m_p) | 1.10997858275\u2026 | -2.0693 |"
     },
     {
       "file": "computations/probes/qbeta_habiro_cyclotomic_probe.py",

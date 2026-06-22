@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:29:57.859067+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-22T13:26:42.589929+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "bring_plus_faddeev_h4_m_p_within_500ppm",
-      "computed": 107.7062571,
+      "computed": 107.8267919,
       "expected": 0.0,
       "passed": true,
       "tolerance": 500.0,
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "m-p-bring-plus-faddeev-h4-probe",
   "scriptFile": "m_p_bring_plus_faddeev_h4_probe.py",
-  "scriptHash": "56699ceb04a2",
-  "scriptCommitSha": "b1b64be871849333c44690b3b198e567773df962",
+  "scriptHash": "d4aa34215501",
+  "scriptCommitSha": "60e8cafa0252189b203c9c8b21cebb5f8c6f5d28",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,9 +27,8 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -37,9 +36,9 @@
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {
     "dps": 80,
-    "q_0": "1.1099785827513808075916690956107688798744991218736",
-    "z_1": "0.593495673687377248543371194523",
-    "z_2": "0.00191023266428829795033657460696",
+    "q_0": "1.1099785955573347198997632204832250266562084087802",
+    "z_1": "0.593495808021412783317821046915",
+    "z_2": "0.00191023351222199492801151487377",
     "interpretation_z_1": "10 = 9 color-pair assignments (3 colors × 3 colors) + 1 diagonal direction (per Bring color-tube weighted averaging, Phase 5q open finding)",
     "interpretation_z_2": "h⁴ = substrate-natural KLR canonical-basis vector at H_4 partition algebra (KLR positivity: smallest non-trivial non-negative integer = 1)"
   },
@@ -47,41 +46,41 @@
     "results": [
       {
         "composition": "Bring color-tube only",
-        "lambda": "2.459998418887548384192148",
-        "m_avg_MeV": "938.28969083431341",
-        "m_p_MeV": "937.643655410030978",
-        "m_n_MeV": "938.935726258595843",
-        "rel_avg_pct": "-0.06699871557",
-        "rel_m_p_pct": "-0.06697766649",
-        "rel_m_n_pct": "-0.06701973568",
-        "rel_m_p_ppm": "-669.7766649"
+        "lambda": "2.4599992318226214762209",
+        "m_avg_MeV": "938.289804043616895",
+        "m_p_MeV": "937.643768333179871",
+        "m_n_MeV": "938.935839754053919",
+        "rel_avg_pct": "-0.06698665816",
+        "rel_m_p_pct": "-0.06696563127",
+        "rel_m_n_pct": "-0.06700765611",
+        "rel_m_p_ppm": "-669.6563127"
       },
       {
         "composition": "Bring + Faddeev h⁴ ADDITIVE",
-        "lambda": "2.461912307524426657224795",
-        "m_avg_MeV": "939.019683977235796",
-        "m_p_MeV": "938.373145934802042",
-        "m_n_MeV": "939.66622201966955",
-        "rel_avg_pct": "0.01074956025",
-        "rel_m_p_pct": "0.01077062571",
-        "rel_m_n_pct": "0.01072852379",
-        "rel_m_p_ppm": "107.7062571"
+        "lambda": "2.461913121310682254244744",
+        "m_avg_MeV": "939.019797358038861",
+        "m_p_MeV": "938.373259029170448",
+        "m_n_MeV": "939.666335686907274",
+        "rel_avg_pct": "0.01076163593",
+        "rel_m_p_pct": "0.01078267919",
+        "rel_m_n_pct": "0.01074062164",
+        "rel_m_p_ppm": "107.8267919"
       },
       {
         "composition": "Bring × Faddeev h⁴ MULTIPLICATIVE",
-        "lambda": "2.464706581908195781078216",
-        "m_avg_MeV": "940.085472811701231",
-        "m_p_MeV": "939.438200947561243",
-        "m_n_MeV": "940.732744675841218",
-        "rel_avg_pct": "0.12426192",
-        "rel_m_p_pct": "0.1242830094",
-        "rel_m_n_pct": "0.1242408597",
-        "rel_m_p_ppm": "1242.830094"
+        "lambda": "2.464707398493044380436811",
+        "m_avg_MeV": "940.085587036330581",
+        "m_p_MeV": "939.438314884938439",
+        "m_n_MeV": "940.732859187722722",
+        "rel_avg_pct": "0.1242740856",
+        "rel_m_p_pct": "0.1242951527",
+        "rel_m_n_pct": "0.1242530474",
+        "rel_m_p_ppm": "1242.951527"
       }
     ],
     "best_composition": "Bring + Faddeev h⁴ ADDITIVE",
-    "best_m_p_MeV": "938.373145934802042",
-    "best_rel_m_p_ppm": "107.7062571",
+    "best_m_p_MeV": "938.373259029170448",
+    "best_rel_m_p_ppm": "107.8267919",
     "lean_uniqueness_ref": {
       "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",
       "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
