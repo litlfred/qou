@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T14:20:35.374237+00:00",
-  "commitSha": "56e0d96d0785b62b4f6c46c89955d32d3ccf3517",
+  "computedAt": "2026-06-22T14:30:27.700493+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [
     {
       "name": "A4_clifford_excess_identity",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 52,
+  "durationMs": 43,
   "computation": "gap-a4-T6-q-deformed-icosahedral-probe",
   "scriptFile": "gap_a4_T6_q_deformed_icosahedral_probe.py",
   "scriptHash": "f3cd07beeb5b",

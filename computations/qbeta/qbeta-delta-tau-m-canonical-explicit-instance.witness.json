@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T14:00:39.273717+00:00",
-  "commitSha": "db515c7513bddb2fcd0b4b8dbb24d8b4a271340e",
+  "computedAt": "2026-06-22T14:32:21.794282+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [
     {
       "name": "delta_tau_M_canonical_explicit_vanish_at_one",
@@ -19,11 +19,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 12,
   "computation": "qbeta-delta-tau-m-canonical-explicit-instance",
   "scriptFile": "qbeta_delta_tau_M_canonical_explicit_instance.py",
-  "scriptHash": "2edd2e1afff6",
-  "scriptCommitSha": "db515c7513bddb2fcd0b4b8dbb24d8b4a271340e",
+  "scriptHash": "ee8bb8741555",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,8 +32,10 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Evaluation of Δτ_M_canonical at the explicit √q-bearing instance of CanonicalMarkovWeightsH3 (Lean PR #1764) at substrate q₀, with side-by-side comparison against the rational Δτ_M surrogate (qbeta_c3_multiblock_recursion_attack). Closes the conjectural-to-numerical loop: makes the §3b-cond conditional theorem prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor numerically inspectable. Both anchors derived at full compute precision (q_at / q_muon_at). No fits, no tuning.",
   "contentBlock": "prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor",
@@ -41,15 +43,15 @@
     "anchor_dps": 70,
     "compute_dps_effective": 70,
     "output_dps": 60,
-    "q_proton": "1.10997858275138080759166909561076887987449912187357873607281",
+    "q_proton": "1.10997859555733471989976322048322502665620840878015368660798",
     "q_muon": "1.10997859555418057528159407960950937799328227995868622546675",
-    "delta_tau_M_canonical_explicit_q_proton": "-0.215742175387449619996559998606212913912306932846169861520977",
+    "delta_tau_M_canonical_explicit_q_proton": "-0.215742200821477722106719207847705287342815728944783320587983",
     "delta_tau_M_canonical_explicit_q_muon": "-0.215742200815213245146895348505504964643977654867065747418755",
-    "swing_canonical_explicit": "0.0000000254277636251503353498992920507316707220208958858977782340984",
-    "delta_tau_M_surrogate_q_proton": "-0.0866343003075774469231990712235120102643082384354145654682597",
+    "swing_canonical_explicit": "0.00000000000626447695982385934220032269883807407771757316922767693340765",
+    "delta_tau_M_surrogate_q_proton": "-0.0866343103063716668808477358181833169731266200104339775152345",
     "delta_tau_M_surrogate_q_muon": "-0.0866343103039089340525282627799506714671720492658793459625925",
-    "swing_surrogate": "0.00000000999633148712932919155643866120286381083046478049433278074560",
-    "relative_divergence_at_q_proton": "1.49026280147125267188883333674131395463978188812795573481376",
+    "swing_surrogate": "0.00000000000246273282831947303823264550595457074455463155264199434885882",
+    "relative_divergence_at_q_proton": "1.49026280763974174618291119947973205106030852266572376971470",
     "relative_divergence_at_q_muon": "1.49026280763822242904580106067153566762257343569315346634755",
     "interpretation": "The explicit-instance Δτ_M and the surrogate Δτ_M disagree by the reported relative divergence at each anchor; both have non-zero cross-anchor swings (NEAR-MATCH diagnostic). Neither is the canonical Wenzl–Markov instance: the explicit instance uses y_3 = y_111 = z and y_21 = 1/2 - z (the simplest √q-bearing choice that satisfies the dimension-normalisation axiom), while the surrogate uses the rational dimension-shape y_λ = q^{ℓ(λ)} / ((1+q)(1+q+q²)). Identifying THE canonical instance — the open math — would close the f-map keystone for the Q_β c_k ladder."
   }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-12T15:37:39.703828+00:00",
-  "commitSha": "65ea73135161187fa554c5aca8db138e70d40127",
+  "computedAt": "2026-06-22T14:30:24.458103+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [
     {
       "name": "agreement_at_q_0",
@@ -49,8 +49,8 @@
   "durationMs": 12,
   "computation": "borromean-trace-cross-validation",
   "scriptFile": "borromean_trace_cross_validator.py",
-  "scriptHash": "2821fedff624",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "157312aeae0e",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,9 +60,9 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Cross-validate tr_M(β_Bor) at 50 dps between (1) the closed form (4 + h² − 3h⁴ − h⁶)/(h² + 4) of prop:borromean-markov-trace-closed-form and (2) the Frobenius expansion Σ y_λ · χ^λ using the closed-form Wenzl weights ([4]_q/[2]_q³, 1/[2]_q², 0) of prop:h3-markov-wenzl-weights with χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶.  Within-H_3 analogue of markov_pipeline_cross_validator.py (which targets atomic mass-derivation braids).  Fulfils Finding 5 of the audit doc.",
   "auditOnly": "docs/audits/2026-06-12-borromean-h4-q-heat-kernel-consistency-audit.md",

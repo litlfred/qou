@@ -1,15 +1,15 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T16:05:15.143028+00:00",
-  "commitSha": "2b3a65d87ea1549a52c6baa4904ac6d36fa5f949",
+  "computedAt": "2026-06-22T14:28:15.398392+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "habiro-coefficients-helium-3",
   "scriptFile": "_habiro_coefficient_extract.py",
-  "scriptHash": "53ae956b30cd",
-  "scriptCommitSha": "2b3a65d87ea1549a52c6baa4904ac6d36fa5f949",
+  "scriptHash": "023b70899dce",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,9 +20,18 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Habiro / cyclotomic expansion tr_M(A=3, q) = Σ_m a_m·(u;u)_m (u = q^{1/2}) via the Phase 5q closed form. Mass-table-wide extraction (PR #1642 follow-up infrastructure); covers Z=2, N=1 under chi_lambda_braid (production) pn-convention. Feeds (i) mirror-pair Φ_k universality audit, (ii) Φ_8-multiplicity scaling-law table, and (iii) Q_β Habiro element keystone search.",
+  "data": {
+    "lean_uniqueness_ref": {
+      "nucleus": "helium-3",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
+  },
   "reference_blocks": [
     "def:habiro-ring",
     "prop:full-pole-structure-mass-trace",
@@ -31,8 +40,8 @@
     "thm:knot-mass-formula-unified"
   ],
   "parameters": {
-    "q_0": 1.1099785827513808,
-    "pn_convention": "chi_lambda_braid (production default)",
+    "q_0": 1.1099785955573347,
+    "pn_convention": "chi_lambda_braid (legacy production marshalling)",
     "source": "habiro-coefficients-atomic.witness.json (τ_p, τ_n)",
     "generator": "_habiro_coefficient_extract.py"
   },
@@ -46,98 +55,98 @@
     },
     {
       "m": 1,
-      "a_m": "-3392*check_q - 3392",
+      "a_m": "-3392*u - 3392",
       "deg_a_m": 1,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 2,
-      "a_m": "55148*check_q**2 + 56268*check_q + 57384",
+      "a_m": "55148*u**2 + 56268*u + 57384",
       "deg_a_m": 2,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 3,
-      "a_m": "-418132*check_q**3 - 431088*check_q**2 - 444732*check_q - 459172",
+      "a_m": "-418132*u**3 - 431088*u**2 - 444732*u - 459172",
       "deg_a_m": 3,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 4,
-      "a_m": "1757307*check_q**4 + 1835862*check_q**3 + 1916550*check_q**2 + 1999847*check_q + 2086314",
+      "a_m": "1757307*u**4 + 1835862*u**3 + 1916550*u**2 + 1999847*u + 2086314",
       "deg_a_m": 4,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 5,
-      "a_m": "-4522416*check_q**5 - 4783831*check_q**4 - 5057394*check_q**3 - 5343491*check_q**2 - 5642018*check_q - 5953985",
+      "a_m": "-4522416*u**5 - 4783831*u**4 - 5057394*u**3 - 5343491*u**2 - 5642018*u - 5953985",
       "deg_a_m": 5,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 6,
-      "a_m": "7538495*check_q**6 + 8079323*check_q**5 + 8652496*check_q**4 + 9259528*check_q**3 + 9902355*check_q**2 + 10582393*check_q + 11301361",
+      "a_m": "7538495*u**6 + 8079323*u**5 + 8652496*u**4 + 9259528*u**3 + 9902355*u**2 + 10582393*u + 11301361",
       "deg_a_m": 6,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 7,
-      "a_m": "-8387622*check_q**7 - 9114676*check_q**6 - 9895625*check_q**5 - 10733561*check_q**4 - 11633778*check_q**3 - 12599651*check_q**2 - 13634058*check_q - 14740795",
+      "a_m": "-8387622*u**7 - 9114676*u**6 - 9895625*u**5 - 10733561*u**4 - 11633778*u**3 - 12599651*u**2 - 13634058*u - 14740795",
       "deg_a_m": 7,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 8,
-      "a_m": "6292649*check_q**8 + 6940448*check_q**7 + 7647777*check_q**6 + 8418734*check_q**5 + 9257634*check_q**4 + 10170600*check_q**3 + 11163625*check_q**2 + 12242154*check_q + 13411827",
+      "a_m": "6292649*u**8 + 6940448*u**7 + 7647777*u**6 + 8418734*u**5 + 9257634*u**4 + 10170600*u**3 + 11163625*u**2 + 12242154*u + 13411827",
       "deg_a_m": 8,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 9,
-      "a_m": "-3156079*check_q**9 - 3540265*check_q**8 - 3966221*check_q**7 - 4438152*check_q**6 - 4960730*check_q**5 - 5538415*check_q**4 - 6176188*check_q**3 - 6879801*check_q**2 - 7655564*check_q - 8509646",
+      "a_m": "-3156079*u**9 - 3540265*u**8 - 3966221*u**7 - 4438152*u**6 - 4960730*u**5 - 5538415*u**4 - 6176188*u**3 - 6879801*u**2 - 7655564*u - 8509646",
       "deg_a_m": 9,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 10,
-      "a_m": "1027007*check_q**10 + 1175044*check_q**9 + 1342509*check_q**8 + 1531773*check_q**7 + 1745005*check_q**6 + 1984995*check_q**5 + 2254989*check_q**4 + 2558419*check_q**3 + 2898625*check_q**2 + 3279657*check_q + 3706193",
+      "a_m": "1027007*u**10 + 1175044*u**9 + 1342509*u**8 + 1531773*u**7 + 1745005*u**6 + 1984995*u**5 + 2254989*u**4 + 2558419*u**3 + 2898625*u**2 + 3279657*u + 3706193",
       "deg_a_m": 10,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 11,
-      "a_m": "-203802*check_q**11 - 239063*check_q**10 - 279972*check_q**9 - 327391*check_q**8 - 381958*check_q**7 - 444662*check_q**6 - 516862*check_q**5 - 599930*check_q**4 - 694940*check_q**3 - 803464*check_q**2 - 927591*check_q - 1069464",
+      "a_m": "-203802*u**11 - 239063*u**10 - 279972*u**9 - 327391*u**8 - 381958*u**7 - 444662*u**6 - 516862*u**5 - 599930*u**4 - 694940*u**3 - 803464*u**2 - 927591*u - 1069464",
       "deg_a_m": 11,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 12,
-      "a_m": "21790*check_q**12 + 26525*check_q**11 + 32115*check_q**10 + 38802*check_q**9 + 46850*check_q**8 + 56363*check_q**7 + 67530*check_q**6 + 80749*check_q**5 + 96447*check_q**4 + 114859*check_q**3 + 136352*check_q**2 + 161542*check_q + 191131",
+      "a_m": "21790*u**12 + 26525*u**11 + 32115*u**10 + 38802*u**9 + 46850*u**8 + 56363*u**7 + 67530*u**6 + 80749*u**5 + 96447*u**4 + 114859*u**3 + 136352*u**2 + 161542*u + 191131",
       "deg_a_m": 12,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 13,
-      "a_m": "-939*check_q**13 - 1209*check_q**12 - 1565*check_q**11 - 2019*check_q**10 - 2561*check_q**9 - 3236*check_q**8 - 4092*check_q**7 - 5154*check_q**6 - 6427*check_q**5 - 7996*check_q**4 - 9936*check_q**3 - 12300*check_q**2 - 15118*check_q - 18545",
+      "a_m": "-939*u**13 - 1209*u**12 - 1565*u**11 - 2019*u**10 - 2561*u**9 - 3236*u**8 - 4092*u**7 - 5154*u**6 - 6427*u**5 - 7996*u**4 - 9936*u**3 - 12300*u**2 - 15118*u - 18545",
       "deg_a_m": 13,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 14,
-      "a_m": "4*check_q**14 + 8*check_q**13 + 13*check_q**12 + 18*check_q**11 + 27*check_q**10 + 44*check_q**9 + 62*check_q**8 + 86*check_q**7 + 119*check_q**6 + 168*check_q**5 + 234*check_q**4 + 307*check_q**3 + 406*check_q**2 + 546*check_q + 727",
+      "a_m": "4*u**14 + 8*u**13 + 13*u**12 + 18*u**11 + 27*u**10 + 44*u**9 + 62*u**8 + 86*u**7 + 119*u**6 + 168*u**5 + 234*u**4 + 307*u**3 + 406*u**2 + 546*u + 727",
       "deg_a_m": 14,
       "integral": true,
       "remainder_nonzero": false
@@ -160,13 +169,13 @@
   "include_inter": true,
   "tr_M_in_q": "(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) - q**(25/2) - q**(21/2) + q**(19/2) + q**(15/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 4*q**10 - q**2 + 1)*(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) + q**(23/2) + q**(21/2) - q**(19/2) - q**(17/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 2*q**12 + 2*q**8 - q**2 + 1)**2/(64*q**(55/2)*(q + 1)**5)",
   "shift": 0,
-  "denom_in_u": "64*check_q**65 + 320*check_q**63 + 640*check_q**61 + 640*check_q**59 + 320*check_q**57 + 64*check_q**55",
-  "p_in_u": "check_q**120 + 3*check_q**119 + 3*check_q**118 + check_q**117 - 3*check_q**116 - 3*check_q**115 + 3*check_q**114 - 3*check_q**112 - 3*check_q**111 + 3*check_q**110 + 9*check_q**109 - 7*check_q**108 - 9*check_q**107 + 6*check_q**106 + 15*check_q**105 + 2*check_q**104 - 9*check_q**103 + 8*check_q**102 + 23*check_q**101 - 2*check_q**100 - 17*check_q**99 + 6*check_q**98 + 16*check_q**97 - 10*check_q**96 - 18*check_q**95 + 18*check_q**94 + 23*check_q**93 - 26*check_q**92 - 33*check_q**91 + 45*check_q**90 + 28*check_q**89 - 40*check_q**88 - 35*check_q**87 + 65*check_q**86 + 48*check_q**85 - 55*check_q**84 - 36*check_q**83 + 71*check_q**82 + 52*check_q**81 - 55*check_q**80 - 41*check_q**79 + 49*check_q**78 + 40*check_q**77 - 43*check_q**76 - 28*check_q**75 + 27*check_q**74 + 41*check_q**73 - 47*check_q**72 - 31*check_q**71 + 37*check_q**70 + 46*check_q**69 - 58*check_q**68 - 42*check_q**67 + 79*check_q**66 + 60*check_q**65 - 96*check_q**64 - 70*check_q**63 + 108*check_q**62 + 58*check_q**61 - 108*check_q**60 - 58*check_q**59 + 108*check_q**58 + 70*check_q**57 - 96*check_q**56 - 60*check_q**55 + 79*check_q**54 + 42*check_q**53 - 58*check_q**52 - 46*check_q**51 + 37*check_q**50 + 31*check_q**49 - 47*check_q**48 - 41*check_q**47 + 27*check_q**46 + 28*check_q**45 - 43*check_q**44 - 40*check_q**43 + 49*check_q**42 + 41*check_q**41 - 55*check_q**40 - 52*check_q**39 + 71*check_q**38 + 36*check_q**37 - 55*check_q**36 - 48*check_q**35 + 65*check_q**34 + 35*check_q**33 - 40*check_q**32 - 28*check_q**31 + 45*check_q**30 + 33*check_q**29 - 26*check_q**28 - 23*check_q**27 + 18*check_q**26 + 18*check_q**25 - 10*check_q**24 - 16*check_q**23 + 6*check_q**22 + 17*check_q**21 - 2*check_q**20 - 23*check_q**19 + 8*check_q**18 + 9*check_q**17 + 2*check_q**16 - 15*check_q**15 + 6*check_q**14 + 9*check_q**13 - 7*check_q**12 - 9*check_q**11 + 3*check_q**10 + 3*check_q**9 - 3*check_q**8 + 3*check_q**6 + 3*check_q**5 - 3*check_q**4 - check_q**3 + 3*check_q**2 - 3*check_q + 1",
+  "denom_in_u": "64*u**65 + 320*u**63 + 640*u**61 + 640*u**59 + 320*u**57 + 64*u**55",
+  "p_in_u": "u**120 + 3*u**119 + 3*u**118 + u**117 - 3*u**116 - 3*u**115 + 3*u**114 - 3*u**112 - 3*u**111 + 3*u**110 + 9*u**109 - 7*u**108 - 9*u**107 + 6*u**106 + 15*u**105 + 2*u**104 - 9*u**103 + 8*u**102 + 23*u**101 - 2*u**100 - 17*u**99 + 6*u**98 + 16*u**97 - 10*u**96 - 18*u**95 + 18*u**94 + 23*u**93 - 26*u**92 - 33*u**91 + 45*u**90 + 28*u**89 - 40*u**88 - 35*u**87 + 65*u**86 + 48*u**85 - 55*u**84 - 36*u**83 + 71*u**82 + 52*u**81 - 55*u**80 - 41*u**79 + 49*u**78 + 40*u**77 - 43*u**76 - 28*u**75 + 27*u**74 + 41*u**73 - 47*u**72 - 31*u**71 + 37*u**70 + 46*u**69 - 58*u**68 - 42*u**67 + 79*u**66 + 60*u**65 - 96*u**64 - 70*u**63 + 108*u**62 + 58*u**61 - 108*u**60 - 58*u**59 + 108*u**58 + 70*u**57 - 96*u**56 - 60*u**55 + 79*u**54 + 42*u**53 - 58*u**52 - 46*u**51 + 37*u**50 + 31*u**49 - 47*u**48 - 41*u**47 + 27*u**46 + 28*u**45 - 43*u**44 - 40*u**43 + 49*u**42 + 41*u**41 - 55*u**40 - 52*u**39 + 71*u**38 + 36*u**37 - 55*u**36 - 48*u**35 + 65*u**34 + 35*u**33 - 40*u**32 - 28*u**31 + 45*u**30 + 33*u**29 - 26*u**28 - 23*u**27 + 18*u**26 + 18*u**25 - 10*u**24 - 16*u**23 + 6*u**22 + 17*u**21 - 2*u**20 - 23*u**19 + 8*u**18 + 9*u**17 + 2*u**16 - 15*u**15 + 6*u**14 + 9*u**13 - 7*u**12 - 9*u**11 + 3*u**10 + 3*u**9 - 3*u**8 + 3*u**6 + 3*u**5 - 3*u**4 - u**3 + 3*u**2 - 3*u + 1",
   "deg_p_u": 120,
   "n_nonzero": 16,
   "all_integral": true,
-  "reconstruction_matches": true,
-  "tr_M_at_q0": 0.2612274411870306,
-  "tr_M_at_q0_via_u_poly": 0.2612274411870306,
-  "tr_M_at_q0_rel_err": 0.0
+  "reconstruction_matches": false,
+  "tr_M_at_q0": 0.26122750143695955,
+  "tr_M_at_q0_via_u_poly": NaN,
+  "tr_M_at_q0_rel_err": NaN
 }
