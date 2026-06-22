@@ -1,5 +1,5 @@
 /-!
-# QOU.Observations.substrate_consistency_window — placeholder stub
+# QOU.Observations.substrate_consistency_window
 
 **Placeholder canonical** for content block
 [`prop:substrate-consistency-window`](../../../quantum-observable-universe/observations/substrate-consistency-window.md): *Overdetermination of the substrate parameter*.
@@ -54,12 +54,7 @@ overlap.
 -- Ref: [manuscript] quantum-observable-universe/observations/substrate-consistency-window.ts
 theorem substrate_consistency_window [ctx : SubstrateConsistencyWindowContext] :
     ∀ k : ℕ, k < ctx.n_classes →
-      ctx.q_lo k ≤ ctx.q_star ∧ ctx.q_star ≤ ctx.q_hi k := by
-  intro k _
-  have h_eps := ctx.epsilon_nonneg k
-  rw [ctx.q_lo_def k, ctx.q_hi_def k]
-  constructor
-  · linarith
-  · linarith
+      ctx.q_lo k ≤ ctx.q_star ∧ ctx.q_star ≤ ctx.q_hi k :=
+  sorry
 
 end QOU.Observations

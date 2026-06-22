@@ -197,26 +197,26 @@ instance bringResidueAtOrder_of_pole_nonzero
     `1 - (3/2) · 2³ = 1 - 12 = -11 ≠ 0`. -/
 theorem bring_residue_q_eq_2_pole_nonzero_at_3 :
     1 - hShift (2 : ℚ) * (2 : ℚ)^3 ≠ 0 := by
-  unfold hShift; native_decide
+  unfold hShift; decide
 
 /-- Phase-3 concrete pole non-vanishing at n = 4, q = 2 : ℚ
     (meson `[4]_q` index).  `1 - (3/2) · 2⁴ = 1 - 24 = -23 ≠ 0`. -/
 theorem bring_residue_q_eq_2_pole_nonzero_at_4 :
     1 - hShift (2 : ℚ) * (2 : ℚ)^4 ≠ 0 := by
-  unfold hShift; native_decide
+  unfold hShift; decide
 
 /-- Phase-3 concrete pole non-vanishing at n = 9, q = 2 : ℚ
     (#1444 α_EM `[9]_q`).  `1 - (3/2) · 2⁹ = 1 - 768 = -767 ≠ 0`. -/
 theorem bring_residue_q_eq_2_pole_nonzero_at_9 :
     1 - hShift (2 : ℚ) * (2 : ℚ)^9 ≠ 0 := by
-  unfold hShift; native_decide
+  unfold hShift; decide
 
 /-- Phase-3 concrete pole non-vanishing at n = 10, q = 2 : ℚ
     (#1445 p-n averaging color-tube weight `[10]_q`).
     `1 - (3/2) · 2¹⁰ = 1 - 1536 = -1535 ≠ 0`. -/
 theorem bring_residue_q_eq_2_pole_nonzero_at_10 :
     1 - hShift (2 : ℚ) * (2 : ℚ)^10 ≠ 0 := by
-  unfold hShift; native_decide
+  unfold hShift; decide
 
 /-- `Fact`-instance carrying the n=3 pole non-vanishing. Fires the
     default `bringResidueAtOrder_of_pole_nonzero` to give a concrete

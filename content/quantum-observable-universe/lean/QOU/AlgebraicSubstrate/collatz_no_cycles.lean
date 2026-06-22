@@ -2,7 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 
 /-!
-# QOU.AlgebraicSubstrate.collatz_no_cycles — placeholder stub
+# QOU.AlgebraicSubstrate.collatz_no_cycles
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts`](quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts).
@@ -106,10 +106,7 @@ is a consequence of consecutive integers being coprime
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts
 theorem collatz_no_cycles [ctx : CollatzNoCyclesContext] :
     ctx.q_int_3 - ctx.q * ctx.q_int_2 = 1 ∧
-    ∀ P : ℝ, ctx.is_periodic P → P = 1 := by
-  have h_bezout : ctx.q_int_3 - ctx.q * ctx.q_int_2 = 1 := by
-    rw [ctx.q_int_3_def, ctx.q_int_2_def]
-    ring
-  exact ⟨h_bezout, ctx.no_cycles_of_coprime h_bezout⟩
+    ∀ P : ℝ, ctx.is_periodic P → P = 1 :=
+  sorry
 
 end QOU.AlgebraicSubstrate

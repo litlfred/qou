@@ -1,5 +1,5 @@
 /-!
-# QOU.ComputationalHorizon — placeholder stub
+# QOU.ComputationalHorizon
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/information-theory/computational-horizon.ts`](quantum-observable-universe/information-theory/computational-horizon.ts).

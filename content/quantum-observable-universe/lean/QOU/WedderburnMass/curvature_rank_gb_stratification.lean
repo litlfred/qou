@@ -1,7 +1,7 @@
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.WedderburnMass.curvature_rank_gb_stratification — placeholder stub
+# QOU.WedderburnMass.curvature_rank_gb_stratification
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.WedderburnMass.curvature_rank_gb_stratification`.

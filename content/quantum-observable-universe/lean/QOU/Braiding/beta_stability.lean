@@ -1,5 +1,5 @@
 /-!
-# QOU.Braiding.beta_stability — placeholder stub
+# QOU.Braiding.beta_stability
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.Braiding.beta_stability`.

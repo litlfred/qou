@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.CompoundBetaShellCalibration — placeholder stub
+# QOU.BraidKnot.CompoundBetaShellCalibration
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/compound-beta-shell-calibration.ts`](quantum-observable-universe/braids-and-knots/compound-beta-shell-calibration.ts).

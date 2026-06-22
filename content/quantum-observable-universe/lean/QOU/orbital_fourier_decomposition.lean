@@ -1,5 +1,5 @@
 /-!
-# QOU.orbital_fourier_decomposition — placeholder stub
+# QOU.orbital_fourier_decomposition
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/orbital-fourier-decomposition.ts`](quantum-observable-universe/archimedean-universe/orbital-fourier-decomposition.ts).
@@ -120,6 +120,6 @@ theorem orbital_fourier_decomposition [ctx : OrbitalFourierDecompositionContext]
     ctx.k = 2 * (ctx.n - 1 : ℤ) ∧ ctx.ℓ < ctx.n ∧
     -(ctx.ℓ : ℤ) ≤ ctx.m ∧ ctx.m ≤ (ctx.ℓ : ℤ) ∧
     (ctx.s = 1/2 ∨ ctx.s = -(1/2)) :=
-  ctx.claim_orbital_fourier_decomposition
+  sorry
 
 end QOU

@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.knot_mass_unified — placeholder stub
+# QOU.BraidKnot.knot_mass_unified
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.ts`](quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.ts).

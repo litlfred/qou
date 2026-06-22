@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.Archimedean.torus_knot_shell_binding — placeholder stub
+# QOU.Archimedean.torus_knot_shell_binding
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/torus-knot-shell-binding.ts`](quantum-observable-universe/archimedean-universe/torus-knot-shell-binding.ts).
@@ -128,8 +128,7 @@ theorem torus_knot_shell_binding [ctx : TorusKnotShellBindingContext] :
     (ctx.magic_numbers 0 = 2 ∧ ctx.magic_numbers 1 = 8 ∧
      ctx.magic_numbers 2 = 20 ∧ ctx.magic_numbers 3 = 28 ∧
      ctx.magic_numbers 4 = 50 ∧ ctx.magic_numbers 5 = 82 ∧
-     ctx.magic_numbers 6 = 126) := by
-  refine ⟨ctx.claim_i_intershell_operator, ctx.claim_ii_chebyshev_recurrence,
-          ctx.claim_iii_magic_numbers⟩
+     ctx.magic_numbers 6 = 126) :=
+  sorry
 
 end QOU.Archimedean

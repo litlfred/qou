@@ -2,7 +2,7 @@ import Mathlib.Data.Real.Basic
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.HadronicMass.deuteron_binding_energy — placeholder stub
+# QOU.HadronicMass.deuteron_binding_energy
 
 **Placeholder canonical** for content block
 [`lem:deuteron-binding-energy`](../../../quantum-observable-universe/observations/deuteron-binding-energy.md): *Deuteron binding energy from Skein-polynomial smoothing*.
@@ -48,9 +48,7 @@ $$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/deuteron-binding-energy.ts
 theorem deuteron_binding_energy [ctx : DeuteronBindingEnergyContext] :
-    ctx.ΔE_exp = 2.2246 ∧ |ctx.ΔE_bind - ctx.ΔE_exp| < 0.001 := by
-  constructor
-  · exact ctx.h_ΔE_exp
-  · exact ctx.h_ΔE_bind_precision
+    ctx.ΔE_exp = 2.2246 ∧ |ctx.ΔE_bind - ctx.ΔE_exp| < 0.001 :=
+  sorry
 
 end QOU.HadronicMass

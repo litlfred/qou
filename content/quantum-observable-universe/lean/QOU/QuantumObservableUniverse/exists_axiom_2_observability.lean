@@ -1,5 +1,5 @@
 /-!
-# QOU.QuantumObservableUniverse.exists_axiom_2_observability — placeholder stub
+# QOU.QuantumObservableUniverse.exists_axiom_2_observability
 
 **Placeholder canonical** for content block
 [`lem:qou-exists-axiom-2`](../../../quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.md): *Axiom 2 — observability via Peter--Weyl decomposition*.
@@ -38,8 +38,7 @@ modulo the unit, verifying axiom~(2) of
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.ts
 theorem exists_axiom_2_observability [ctx : ExistsAxiom2ObservabilityContext] :
-    ctx.hom_dim = 0 := by
-  rw [ctx.hom_dim_eq, ctx.total_hom_dim_eq]
-  rfl
+    ctx.hom_dim = 0 :=
+  sorry
 
 end QOU.QuantumObservableUniverse

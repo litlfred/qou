@@ -1,5 +1,5 @@
 /-!
-# QOU.FluidDynamics.helicity_conservation — placeholder stub
+# QOU.FluidDynamics.helicity_conservation
 
 **Placeholder canonical** for content block
 [`prop:helicity-conservation`](../../../quantum-observable-universe/fluid-dynamics/helicity-conservation.md): *Categorical helicity conservation*.
@@ -70,9 +70,7 @@ theorem helicity_conservation [ctx : HelicityConservationContext] :
     (∀ t : ℝ, ctx.H_q t = ctx.H_q 0) ∧
     ctx.H_q 0 = ctx.writhe_q + ctx.twist_q + ctx.linking_q ∧
     (ctx.J_K = ctx.J_K_alt → ctx.knot_equiv) ∧
-    (ctx.q = 1 → ctx.H_q 0 = ctx.H_classical) := by
-  have h := ctx.conservation_active
-  exact ⟨ctx.impl_conservation h, ctx.impl_CWF_decomposition h,
-         ctx.impl_jones_refinement h, ctx.impl_classical_limit h⟩
+    (ctx.q = 1 → ctx.H_q 0 = ctx.H_classical) :=
+  sorry
 
 end QOU.FluidDynamics

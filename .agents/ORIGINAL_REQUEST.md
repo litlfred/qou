@@ -109,3 +109,68 @@ Resolve all remaining Lean proof vacuity and audit findings. The goals are:
 
 Working directory: /Users/litlfred/space_cats/qou
 Integrity mode: benchmark
+
+## 2026-06-22T02:36:41Z
+
+# Teamwork Project Prompt
+
+Resolve the 103 placeholders and `TODO`s tracked in the `qou/mass-theory` bean (`.beans/zslh--resolve-103-placeholderstodos-in-qoumass-theory.md`) as a pilot run.
+
+Working directory: /Users/litlfred/space_cats/qou
+Integrity mode: demo
+
+## Requirements
+
+### R1. Resolve Placeholders in Mass Theory
+Process the `qou/mass-theory` directory and resolve all inline `TODO`, `FIXME`, and `PLACEHOLDER` strings. For Lean files, this means replacing `sorry`s with valid, compiling proofs.
+
+### R2. Resolve Unreferenced `sorry`s
+Check the Lean source files in the targeted scope for any bare `sorry` proofs that are not explicitly marked with references/placeholders, and resolve them as well.
+
+### R3. Batched Integration Workflow
+Drain the findings in a batch. For the batch, open a PR, run the `/prepare-merge-auto` workflow to handle integration watcher disciplines (sidecars, reviews, CI), and then successfully merge the batch.
+
+## Acceptance Criteria
+
+### Lean Compilation
+- [ ] Running `lake build` on the modified `qou/mass-theory` Lean files completes without errors.
+- [ ] No `sorry` warnings are emitted for the modified proofs (both previously tracked and newly discovered).
+
+### Content Validation & Merge
+- [ ] The `bun run validate` script passes for any modified markdown/TS files.
+- [ ] The batch is successfully pushed, PR'd, passed through `/prepare-merge-auto`, and merged into `main`.
+
+## Follow-up — 2026-06-22T02:36:54Z
+
+Important clarification from the user regarding Requirement 2 (Resolve Unreferenced `sorry`s): 
+
+When looking for bare `sorry` proofs, you should resolve them EXCEPT when the `sorry` is acting as a reference to an external paper (e.g., a theorem whose proof is deferred to literature rather than formalized). Do not attempt to formalize `sorry`s that are explicitly standing in for external paper references!
+
+## 2026-06-22T02:44:00Z
+
+# Teamwork Project Prompt
+
+Execute a thorough Lean code audit using a fleet of 8 agents, specifically targeting the newly flagged placeholder stubs and the existing QA backlog.
+
+Working directory: /Users/litlfred/space_cats/qou
+Integrity mode: benchmark
+
+## Requirements
+
+### R1. Process Placeholder Stubs
+Audit the 184 newly flagged `proof-no-placeholder-stub` Lean files to verify, properly stub, or replace them as needed.
+
+### R2. Drain QA Agent Queue
+Drain the existing `qa-agent-drain-queue.json` backlog by having agents adjudicate any pending agent-checked QA criteria.
+
+### R3. Quality Evaluation
+Evaluate the audited Lean files using the `proof-rater` quality rubrics (strategy clarity, goal plausibility, and novelty).
+
+## Acceptance Criteria
+
+### Audit Completion & Verification
+- [ ] The 184 placeholder stubs have been successfully adjudicated, and their `.qa.json` sidecars reflect the updated status.
+- [ ] The `qa-agent-drain-queue.json` backlog is fully drained.
+- [ ] The agents have verified their own work using programmatic validation tools (`lean_ci`, `qa-sweep`, and `lean_verify`).
+- [ ] All audited files have been scored using the `proof-rater` rubrics.
+

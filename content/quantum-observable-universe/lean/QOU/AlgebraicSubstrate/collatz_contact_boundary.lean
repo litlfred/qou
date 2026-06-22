@@ -1,5 +1,5 @@
 /-!
-# QOU.AlgebraicSubstrate.collatz_contact_boundary — placeholder stub
+# QOU.AlgebraicSubstrate.collatz_contact_boundary
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts`](quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts).
@@ -94,10 +94,7 @@ $$
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts
 theorem collatz_contact_boundary [ctx : CollatzContactBoundaryContext] :
     (ctx.q_int_2 = 0 → ctx.kummer_obstruction_removable) ∧
-    ((2 : ℤ) ∣ ctx.chi_A) := by
-  have h_div : (2 : ℤ) ∣ ctx.chi_A := by
-    rw [ctx.chi_A_eq]
-    use -3
-  exact ⟨ctx.obstruction_removable_of_even_chi h_div, h_div⟩
+    ((2 : ℤ) ∣ ctx.chi_A) :=
+  sorry
 
 end QOU.AlgebraicSubstrate

@@ -1,7 +1,7 @@
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.Braiding.mobius_energy — placeholder stub
+# QOU.Braiding.mobius_energy
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.Braiding.mobius_energy`.

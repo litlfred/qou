@@ -1,5 +1,5 @@
 /-!
-# QOU.AlgebraicSubstrate.QVonMangoldtFunction — placeholder stub
+# QOU.AlgebraicSubstrate.QVonMangoldtFunction
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.ts`](quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.ts).

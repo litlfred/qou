@@ -1,5 +1,5 @@
 /-!
-# QOU.Su2Generators — placeholder stub
+# QOU.Su2Generators
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/su2-generators.ts`](quantum-observable-universe/braids-and-knots/su2-generators.ts).

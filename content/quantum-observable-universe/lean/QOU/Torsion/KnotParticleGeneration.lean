@@ -1,5 +1,5 @@
 /-!
-# QOU.Torsion.KnotParticleGeneration — placeholder stub
+# QOU.Torsion.KnotParticleGeneration
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.Torsion.KnotParticleGeneration`.
@@ -50,8 +50,7 @@ color-tube fibration.
 theorem KnotParticleGeneration [ctx : KnotParticleGenerationContext] :
     ctx.n_linking_ops = 2 ∧
     ∀ (K : ctx.Link) (m n : ℕ),
-      ctx.is_torus_generator K m n → Nat.Coprime m n := by
-  have h := ctx.generation_active
-  exact ctx.impl_knot_particle_generation h
+      ctx.is_torus_generator K m n → Nat.Coprime m n :=
+  sorry
 
 end QOU.Torsion

@@ -1,7 +1,7 @@
 import QOU.Shared.SobolevHkRegularity
 
 /-!
-# QOU.FluidDynamics.acoustic_horizon_conditions — placeholder stub
+# QOU.FluidDynamics.acoustic_horizon_conditions
 
 **Placeholder canonical** for content block
 [`prop:acoustic-horizon-conditions`](../../../quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.md): *Acoustic horizon formation and gravitational emergence*.
@@ -46,8 +46,7 @@ horizons wherever $|v| = c_s$.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.ts
 theorem acoustic_horizon_conditions [ctx : AcousticHorizonConditionsContext] :
-    ctx.mach = 1 ∧ 0 < ctx.grad_mach_sq_norm ∧ 0 ≤ ctx.null_energy := by
-  have h := ctx.horizon_active
-  exact ⟨ctx.impl_transonic h, ctx.impl_non_degeneracy h, ctx.impl_energy_condition h⟩
+    ctx.mach = 1 ∧ 0 < ctx.grad_mach_sq_norm ∧ 0 ≤ ctx.null_energy :=
+  sorry
 
 end QOU.FluidDynamics

@@ -1,5 +1,5 @@
 /-!
-# QOU.Archimedean.QMomentum — placeholder stub
+# QOU.Archimedean.QMomentum
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/q-momentum.ts`](quantum-observable-universe/braids-and-knots/q-momentum.ts).

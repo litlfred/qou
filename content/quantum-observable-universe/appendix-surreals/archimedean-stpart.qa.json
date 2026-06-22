@@ -855,7 +855,49 @@
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7977b343cb8c",
+          "ts": "9cc1b7e11ea5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:39.869Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "7977b343cb8c",
+          "ts": "9cc1b7e11ea5"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:40.244Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Trivial skeleton proof stub restating the target."
+      }
     ]
   },
-  "updated_at": "2026-06-21T19:19:07.308Z"
+  "updated_at": "2026-06-22T02:56:40.244Z"
 }

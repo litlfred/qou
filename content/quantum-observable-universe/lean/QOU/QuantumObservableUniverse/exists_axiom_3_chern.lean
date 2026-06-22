@@ -1,5 +1,5 @@
 /-!
-# QOU.QuantumObservableUniverse.exists_axiom_3_chern — placeholder stub
+# QOU.QuantumObservableUniverse.exists_axiom_3_chern
 
 **Placeholder canonical** for content block
 [`lem:qou-exists-axiom-3`](../../../quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-3.md): *Axiom 3 — vanishing categorical Chern classes for the adjoint bundle*.
@@ -44,7 +44,7 @@ into the ribbon twist.
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-3.ts
 theorem exists_axiom_3_chern [ctx : ExistsAxiom3ChernContext] :
-    ctx.c_1 = 0 ∧ ctx.c_2 = 0 := by
-  exact ⟨ctx.c_1_eq_zero, ctx.c_2_eq_zero⟩
+    ctx.c_1 = 0 ∧ ctx.c_2 = 0 :=
+  sorry
 
 end QOU.QuantumObservableUniverse

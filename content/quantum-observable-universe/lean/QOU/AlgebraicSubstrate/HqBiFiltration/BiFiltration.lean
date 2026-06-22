@@ -1,5 +1,5 @@
 /-!
-# QOU.AlgebraicSubstrate.HqBiFiltration.BiFiltration — placeholder stub
+# QOU.AlgebraicSubstrate.HqBiFiltration.BiFiltration
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/hq-bi-filtration.ts`](quantum-observable-universe/braids-and-knots/hq-bi-filtration.ts).

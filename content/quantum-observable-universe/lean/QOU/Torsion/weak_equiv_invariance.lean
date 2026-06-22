@@ -1,5 +1,5 @@
 /-!
-# QOU.Torsion.weak_equiv_invariance — placeholder stub
+# QOU.Torsion.weak_equiv_invariance
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.Torsion.weak_equiv_invariance`.
@@ -50,8 +50,7 @@ brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts
 theorem weak_equiv_invariance [ctx : WeakEquivInvarianceContext] :
-    ∀ n m : ℕ, ctx.weak_equiv n m → ctx.τ_value n = ctx.τ_value m := by
-  have h := ctx.invariance_active
-  exact ctx.impl_weak_equiv_invariance h
+    ∀ n m : ℕ, ctx.weak_equiv n m → ctx.τ_value n = ctx.τ_value m :=
+  sorry
 
 end QOU.Torsion

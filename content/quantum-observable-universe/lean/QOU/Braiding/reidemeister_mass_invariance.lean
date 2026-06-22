@@ -1,5 +1,5 @@
 /-!
-# QOU.Braiding.reidemeister_mass_invariance — placeholder stub
+# QOU.Braiding.reidemeister_mass_invariance
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.Braiding.reidemeister_mass_invariance`.

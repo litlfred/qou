@@ -1,5 +1,5 @@
 /-!
-# QOU.q_gl_obstruction_calc — placeholder stub
+# QOU.q_gl_obstruction_calc
 
 **Placeholder canonical** for content block
 [`prop:q-gl-obstruction-calc`](../../../quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.md): *Obstruction to $q$-flatness*.
@@ -63,9 +63,6 @@ theorem q_gl_obstruction_calc [ctx : QGlObstructionCalcContext] :
     (∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A)) ∧
     (∀ N : ℕ, ∃ n : ℕ, N < n ∧ ¬ ((n : ℤ) ∣ ctx.chi_A) ∧
                        ¬ ctx.kappa_vanishes n) :=
-  ⟨ctx.claim_i_intrinsic_curvature_zero,
-   ctx.claim_ii_q_flat_iff_curvature_zero,
-   ctx.claim_iii_kummer_level_obstruction,
-   ctx.claim_iv_non_vanish_density⟩
+  sorry
 
 end QOU

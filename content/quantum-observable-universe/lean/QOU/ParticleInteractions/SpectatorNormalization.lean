@@ -1,5 +1,5 @@
 /-!
-# QOU.ParticleInteractions.SpectatorNormalization — placeholder stub
+# QOU.ParticleInteractions.SpectatorNormalization
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.ParticleInteractions.SpectatorNormalization`.
@@ -47,7 +47,7 @@ $N - 1$ neutrons are spectators.
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/spectator-normalization.ts
 theorem SpectatorNormalization [ctx : SpectatorNormalizationContext] :
-    ctx.converting = 1 ∧ ctx.spectator_p = ctx.Z ∧ ctx.spectator_n = ctx.N - 1 := by
-  refine ⟨ctx.h_converting, ctx.h_spectator_p, ctx.h_spectator_n⟩
+    ctx.converting = 1 ∧ ctx.spectator_p = ctx.Z ∧ ctx.spectator_n = ctx.N - 1 :=
+  sorry
 
 end QOU.ParticleInteractions

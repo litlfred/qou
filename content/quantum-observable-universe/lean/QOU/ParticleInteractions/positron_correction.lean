@@ -1,5 +1,5 @@
 /-!
-# QOU.ParticleInteractions.positron_correction — placeholder stub
+# QOU.ParticleInteractions.positron_correction
 
 **Placeholder canonical** for content block
 [`prop:positron-correction`](../../../quantum-observable-universe/particle-interactions/positron-correction.md): *QOU.ParticleInteractions.positron_correction*.
@@ -71,7 +71,6 @@ theorem positron_correction [ctx : PositronCorrectionContext] :
     ctx.Q = ctx.Σ_char * ctx.m_e + ctx.m_e ∧
     (ctx.is_pair_creation → ctx.applied_correction = ctx.m_e) ∧
     (¬ctx.is_pair_creation → ctx.applied_correction = 0) :=
-  ⟨ctx.claim_i_corrected_Q, ctx.claim_ii_regime_applicability.1,
-   ctx.claim_ii_regime_applicability.2⟩
+  sorry
 
 end QOU.ParticleInteractions

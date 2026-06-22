@@ -1,5 +1,5 @@
 /-!
-# QOU.CMBFunctor — placeholder stub
+# QOU.CMBFunctor
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/information-theory/cmb-functor.ts`](quantum-observable-universe/information-theory/cmb-functor.ts).

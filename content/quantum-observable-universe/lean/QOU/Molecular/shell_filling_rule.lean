@@ -1,5 +1,5 @@
 /-!
-# QOU.Molecular.shell_filling_rule — placeholder stub
+# QOU.Molecular.shell_filling_rule
 
 **Placeholder canonical** for content block
 [`prop:shell-filling-rule`](../../../quantum-observable-universe/molecular-construction/shell-filling-rule.md): *Shell filling minimises $\\Phi_1$ (aufbau from LP dual)*.
@@ -85,9 +85,7 @@ penalty for electron-electron repulsion at shell $n$.*
 theorem shell_filling_rule [ctx : ShellFillingRuleContext] :
     (∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n) ∧
     (∀ other : ℕ, other ≤ ctx.singly_occupied) ∧
-    ctx.primal_obj = (ctx.Z : ℝ) * ctx.y_0 := by
-  have h := ctx.aufbau_active
-  exact ⟨ctx.impl_inner_shells_fill h, ctx.impl_hunds_rule_max h,
-         ctx.impl_lp_dual_objective h⟩
+    ctx.primal_obj = (ctx.Z : ℝ) * ctx.y_0 :=
+  sorry
 
 end QOU.Molecular

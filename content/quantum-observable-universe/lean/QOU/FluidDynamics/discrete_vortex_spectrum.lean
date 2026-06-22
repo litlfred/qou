@@ -1,5 +1,5 @@
 /-!
-# QOU.FluidDynamics.discrete_vortex_spectrum — placeholder stub
+# QOU.FluidDynamics.discrete_vortex_spectrum
 
 **Placeholder canonical** for content block
 [`prop:discrete-vortex-spectrum`](../../../quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.md): *Discrete vortex mode spectrum*.
@@ -73,9 +73,7 @@ theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
       (ctx.hbar_q / (2 * ctx.I_q)) * (ctx.q_int n) * (ctx.q_int (n + 1))) ∧
     (∀ n n' : ℕ, (n + 1 = n' ∨ n' + 1 = n) →
       ctx.ΔE_trans n n' = ctx.E_level n' - ctx.E_level n) ∧
-    (ctx.q = 1 → ∀ k : ℕ, ctx.q_int k = (k : ℝ)) := by
-  have h := ctx.spectrum_active
-  exact ⟨ctx.impl_discrete_eigenvalues h, ctx.impl_spin_levels h,
-         ctx.impl_ladder_transitions h, ctx.impl_classical_kelvin_limit h⟩
+    (ctx.q = 1 → ∀ k : ℕ, ctx.q_int k = (k : ℝ)) :=
+  sorry
 
 end QOU.FluidDynamics

@@ -1,5 +1,5 @@
 /-!
-# QOU.Archimedean.BreitWheelerPairProduction — placeholder stub
+# QOU.Archimedean.BreitWheelerPairProduction
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/breit-wheeler-pair-production.ts`](quantum-observable-universe/archimedean-universe/breit-wheeler-pair-production.ts).

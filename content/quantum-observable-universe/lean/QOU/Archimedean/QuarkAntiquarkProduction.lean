@@ -1,5 +1,5 @@
 /-!
-# QOU.Archimedean.QuarkAntiquarkProduction — placeholder stub
+# QOU.Archimedean.QuarkAntiquarkProduction
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/quark-antiquark-production.ts`](quantum-observable-universe/archimedean-universe/quark-antiquark-production.ts).

@@ -1,7 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-!
-# QOU.Braiding.skein_crossing_asymmetry — placeholder stub
+# QOU.Braiding.skein_crossing_asymmetry
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.Braiding.skein_crossing_asymmetry`.

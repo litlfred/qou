@@ -1,5 +1,5 @@
 /-!
-# QOU.Archimedean.TransferMatrixOperator — placeholder stub
+# QOU.Archimedean.TransferMatrixOperator
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/transfer-matrix-operator.ts`](quantum-observable-universe/archimedean-universe/transfer-matrix-operator.ts).

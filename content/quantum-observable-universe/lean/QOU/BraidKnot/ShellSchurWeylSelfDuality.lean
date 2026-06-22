@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.ShellSchurWeylSelfDuality — placeholder stub
+# QOU.BraidKnot.ShellSchurWeylSelfDuality
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/shell-schur-weyl-self-duality.ts`](quantum-observable-universe/braids-and-knots/shell-schur-weyl-self-duality.ts).

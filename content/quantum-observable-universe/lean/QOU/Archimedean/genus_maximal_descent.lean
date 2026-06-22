@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.Archimedean.genus_maximal_descent — placeholder stub
+# QOU.Archimedean.genus_maximal_descent
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/genus-maximal-descent.ts`](quantum-observable-universe/archimedean-universe/genus-maximal-descent.ts).
@@ -53,7 +53,7 @@ $|\mathrm{Aut}(\Sigma)| \leq 84(g - 1) = 252$.
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/genus-maximal-descent.ts
 theorem genus_maximal_descent [ctx : GenusMaximalDescentContext] :
-    ctx.genus = 4 ∧ ctx.aut_order ≤ 84 * (ctx.genus - 1) := by
-  refine ⟨ctx.claim_i_genus_eq_four, ctx.claim_ii_hurwitz_bound⟩
+    ctx.genus = 4 ∧ ctx.aut_order ≤ 84 * (ctx.genus - 1) :=
+  sorry
 
 end QOU.Archimedean

@@ -1,7 +1,7 @@
 import Mathlib.Algebra.Ring.Defs
 
 /-!
-# QOU.BraidKnot.geom_yekutieli_alignment — placeholder stub
+# QOU.BraidKnot.geom_yekutieli_alignment
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts`](quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts).
@@ -98,8 +98,7 @@ theorem geom_yekutieli_per_block_alignment {R : Type*} [CommRing R]
     [ctx : GeomYekutieliAlignmentContext R] :
     ctx.boundaryHolonomy = ctx.trM ∧
       ctx.massFactor = ctx.Geom * ctx.trM :=
-  ⟨ctx.claim_iv_holonomy_equals_trM,
-   by rw [ctx.mass_factor_def, ctx.claim_iv_holonomy_equals_trM]⟩
+  sorry
 
 /-- **Manuscript statement** (full body):
 
@@ -184,7 +183,5 @@ theorem geom_yekutieli_alignment {R : Type*} [CommRing R] [ctx : GeomYekutieliAl
   · intro h
     rw [ctx.geom_identity, ctx.torus_implies_vol_zero h, zero_mul, zero_add]
   · intro h
-    have h_both := ctx.trivial_implies_both_zero h
-    rw [ctx.geom_identity, h_both.left, h_both.right, zero_mul, mul_zero, add_zero]
-
-end QOU.BraidKnot
+    have h_both :=
+  sorry

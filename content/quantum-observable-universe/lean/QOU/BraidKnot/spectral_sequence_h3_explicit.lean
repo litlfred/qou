@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.spectral_sequence_h3_explicit — placeholder stub
+# QOU.BraidKnot.spectral_sequence_h3_explicit
 
 **Placeholder canonical** for content block
 [`prop:spectral-sequence-h3-explicit`](../../../quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.md): *QOU.BraidKnot.spectral_sequence_h3_explicit*.

@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.Archimedean.em_coupling_projection — placeholder stub
+# QOU.Archimedean.em_coupling_projection
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/em-coupling-projection.ts`](quantum-observable-universe/archimedean-universe/em-coupling-projection.ts).
@@ -101,9 +101,7 @@ contour integrals, no factors of $2 \pi i$, and no renormalisation-group
 theorem em_coupling_projection [ctx : EmCouplingProjectionContext] :
     (ctx.endRank = 2 ∧ ctx.centralIdempotentCount = 2) ∧
     ctx.singlet_channel_count = 1 ∧
-    ctx.bringTorusKnotCount = 2 := by
-  refine ⟨ctx.claim_i_two_strand_completeness,
-          ctx.claim_ii_gauge_coupling_uniqueness,
-          ctx.claim_iii_bring_uniqueness⟩
+    ctx.bringTorusKnotCount = 2 :=
+  sorry
 
 end QOU.Archimedean

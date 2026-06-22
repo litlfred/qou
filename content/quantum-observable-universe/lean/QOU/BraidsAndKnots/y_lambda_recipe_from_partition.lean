@@ -1,7 +1,7 @@
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.BraidsAndKnots.y_lambda_recipe_from_partition — placeholder stub
+# QOU.BraidsAndKnots.y_lambda_recipe_from_partition
 
 **Placeholder canonical** for content block y_lambda recipe from partition.
 

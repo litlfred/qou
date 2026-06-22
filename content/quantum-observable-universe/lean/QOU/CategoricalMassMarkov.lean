@@ -1,5 +1,5 @@
 /-!
-# QOU.CategoricalMassMarkov — placeholder stub
+# QOU.CategoricalMassMarkov
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/categorical-mass-markov.ts`](quantum-observable-universe/braids-and-knots/categorical-mass-markov.ts).

@@ -877,7 +877,47 @@
         "reviewed_at": "2026-06-21T19:19:07.308Z",
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:41.302Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "5f9ba09be8ae",
+          "ts": "f62287725163",
+          "lean": "f9881ed69db7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:41.763Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      }
     ]
   },
-  "updated_at": "2026-06-21T19:19:07.308Z"
+  "updated_at": "2026-06-22T02:56:41.763Z"
 }

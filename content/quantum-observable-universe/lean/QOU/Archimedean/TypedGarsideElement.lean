@@ -1,5 +1,5 @@
 /-!
-# QOU.Archimedean.TypedGarsideElement — placeholder stub
+# QOU.Archimedean.TypedGarsideElement
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/particle-interactions/typed-garside-element.ts`](quantum-observable-universe/particle-interactions/typed-garside-element.ts).

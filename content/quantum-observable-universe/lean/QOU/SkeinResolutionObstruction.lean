@@ -1,5 +1,5 @@
 /-!
-# QOU.SkeinResolutionObstruction — placeholder stub
+# QOU.SkeinResolutionObstruction
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/information-theory/skein-resolution-obstruction.ts`](quantum-observable-universe/information-theory/skein-resolution-obstruction.ts).

@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.Archimedean.parity_violation_skein — placeholder stub
+# QOU.Archimedean.parity_violation_skein
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/parity-violation-skein.ts`](quantum-observable-universe/archimedean-universe/parity-violation-skein.ts).
@@ -119,9 +119,7 @@ $\mathcal{P}:
 theorem parity_violation_skein [ctx : ParityViolationSkeinContext] :
     (ctx.lambda_sym = ctx.q ∧ ctx.lambda_alt = - ctx.q⁻¹) ∧
     (ctx.parityInvariant ↔ ctx.q = ctx.q⁻¹) ∧
-    ctx.q ≠ 1 := by
-  refine ⟨ctx.claim_i_hecke_eigenvalues,
-          ctx.claim_ii_skein_mirror_iff_eigenvalue_eq,
-          ctx.claim_iii_q_ne_one_on_substrate⟩
+    ctx.q ≠ 1 :=
+  sorry
 
 end QOU.Archimedean

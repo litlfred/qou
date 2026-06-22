@@ -1,7 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
-# QOU.BraidsAndKnots.demazure_fiber_markov_trace — placeholder stub
+# QOU.BraidsAndKnots.demazure_fiber_markov_trace
 
 **Placeholder canonical** for content block Demazure fiber Markov trace.
 

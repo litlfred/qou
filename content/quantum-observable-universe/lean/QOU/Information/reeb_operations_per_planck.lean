@@ -2,7 +2,7 @@ import Mathlib.Data.Real.Basic
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.Information.reeb_operations_per_planck — placeholder stub
+# QOU.Information.reeb_operations_per_planck
 
 **Placeholder canonical** for content block
 [`prop:reeb-operations-per-planck`](../../../quantum-observable-universe/information-theory/reeb-operations-per-planck.md): *Discrete iterations per Reeb circuit*.

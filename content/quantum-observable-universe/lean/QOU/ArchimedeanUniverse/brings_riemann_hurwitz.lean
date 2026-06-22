@@ -1,5 +1,5 @@
 /-!
-# QOU.ArchimedeanUniverse.brings_riemann_hurwitz — placeholder stub
+# QOU.ArchimedeanUniverse.brings_riemann_hurwitz
 
 **Placeholder canonical** for content block
 [`lem:brings-riemann-hurwitz`](../../../quantum-observable-universe/archimedean-universe/brings-riemann-hurwitz.md): *Riemann--Hurwitz count for the canonical map $\\Sigma_4 \\to \\mathbb{P}(V)$*.
@@ -50,6 +50,6 @@ $$
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/brings-riemann-hurwitz.ts
 theorem brings_riemann_hurwitz [ctx : BringsRiemannHurwitzContext] :
     ctx.deg = 4 ∧ ctx.R_tot = 14 ∧ ctx.n_branch = 6 :=
-  ctx.claim_brings_riemann_hurwitz
+  sorry
 
 end QOU.ArchimedeanUniverse

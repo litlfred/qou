@@ -1,7 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
-# QOU.BraidKnot.hoefsmit_scattering_pipeline — placeholder stub
+# QOU.BraidKnot.hoefsmit_scattering_pipeline
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.ts`](quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.ts).

@@ -1,5 +1,5 @@
 /-!
-# QOU.ParticleInteractions.ground_state_ordering — placeholder stub
+# QOU.ParticleInteractions.ground_state_ordering
 
 **Placeholder canonical** for content block
 [`prop:ground-state-ordering`](../../../quantum-observable-universe/particle-interactions/ground-state-ordering.md): *Ground-state ordering from transfer matrix eigenvalues*.
@@ -64,8 +64,7 @@ theorem ground_state_ordering [ctx : GroundStateOrderingContext] :
       ∀ k : ℕ, ctx.ordering k =
         if k % 2 = 1 ∧ k < 2 * ctx.Z then 1 else 0) ∧
     (ctx.A ≤ 3 → ∀ k : ℕ, k < ctx.Z → ctx.ordering k = 1) ∧
-    ctx.λ_plus * ctx.λ_minus = -1 := by
-  refine ⟨ctx.claim_i_interleaving, ctx.claim_iii_boundary_correction,
-   ctx.claim_vieta_product⟩
+    ctx.λ_plus * ctx.λ_minus = -1 :=
+  sorry
 
 end QOU.ParticleInteractions

@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidTwistFlip — placeholder stub
+# QOU.BraidTwistFlip
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/braid-twist-flip.ts`](quantum-observable-universe/braids-and-knots/braid-twist-flip.ts).

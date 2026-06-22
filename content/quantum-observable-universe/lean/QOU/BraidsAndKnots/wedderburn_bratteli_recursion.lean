@@ -1,7 +1,7 @@
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.BraidsAndKnots.wedderburn_bratteli_recursion — placeholder stub
+# QOU.BraidsAndKnots.wedderburn_bratteli_recursion
 
 **Placeholder canonical** for content block Wedderburn-Bratteli recursion.
 

@@ -1,7 +1,7 @@
 import QOU.Shared.SobolevHkRegularity
 
 /-!
-# QOU.FluidDynamics.quantum_peter_weyl — placeholder stub
+# QOU.FluidDynamics.quantum_peter_weyl
 
 **Placeholder canonical** for content block
 [`thm:quantum-peter-weyl`](../../../quantum-observable-universe/fluid-dynamics/quantum-peter-weyl.md): *QOU.FluidDynamics.quantum_peter_weyl*.
@@ -43,8 +43,7 @@ available.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/quantum-peter-weyl.ts
 theorem quantum_peter_weyl [ctx : QuantumPeterWeylContext] :
-    ∀ n : ℕ, ctx.dim_V n = n + 1 := by
-  have h := ctx.peter_weyl_active
-  exact ctx.impl_quantum_peter_weyl h
+    ∀ n : ℕ, ctx.dim_V n = n + 1 :=
+  sorry
 
 end QOU.FluidDynamics

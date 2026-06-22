@@ -1,7 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
-# QOU.BraidKnot.e_infinity_identifications — placeholder stub
+# QOU.BraidKnot.e_infinity_identifications
 
 **Placeholder canonical** for content block
 [`prop:e-infinity-page-identifications`](../../../quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.md): *QOU.BraidKnot.e_infinity_identifications*.

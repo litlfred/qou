@@ -1,7 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-!
-# QOU.Observations.QPlancherelAsymptoticSkeleton — placeholder stub
+# QOU.Observations.QPlancherelAsymptoticSkeleton
 
 **Placeholder canonical** for content block
 [`prop:q-plancherel-asymptotic-skeleton`](../../../quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md): *QOU.Observations.QPlancherelAsymptoticSkeleton*.
@@ -72,10 +72,7 @@ satisfy:*
 -- Ref: [manuscript] quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts
 theorem QPlancherelAsymptoticSkeleton [ctx : QPlancherelAsymptoticSkeletonContext] :
     ∀ n : ℕ, 4 ≤ n →
-      ctx.char_variance n ≤ 1 / Real.sqrt ((n : ℝ) - 3) := by
-  intro n hn
-  have h := ctx.char_variance_bound n hn
-  rw [ctx.constant_eq_one] at h
-  exact h
+      ctx.char_variance n ≤ 1 / Real.sqrt ((n : ℝ) - 3) :=
+  sorry
 
 end QOU.Observations

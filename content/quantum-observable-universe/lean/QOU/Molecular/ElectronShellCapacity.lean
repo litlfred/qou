@@ -1,5 +1,5 @@
 /-!
-# QOU.Molecular.ElectronShellCapacity — placeholder stub
+# QOU.Molecular.ElectronShellCapacity
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/molecular-construction/electron-shell-braid-capacity.ts`](quantum-observable-universe/molecular-construction/electron-shell-braid-capacity.ts).

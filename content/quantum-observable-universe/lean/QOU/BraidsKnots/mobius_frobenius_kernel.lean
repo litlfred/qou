@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidsKnots.mobius_frobenius_kernel — placeholder stub
+# QOU.BraidsKnots.mobius_frobenius_kernel
 
 **Placeholder canonical** for content block
 [`lem:mobius-energy-frobenius-kernel`](../../../quantum-observable-universe/braids-and-knots/mobius-energy-frobenius-kernel.md): *Classical limit of the Frobenius--Hopf kernel is the repulsive $1/r^2$*.

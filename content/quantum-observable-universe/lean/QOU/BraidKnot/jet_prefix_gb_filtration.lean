@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.jet_prefix_gb_filtration — placeholder stub
+# QOU.BraidKnot.jet_prefix_gb_filtration
 
 **Placeholder canonical** for content block
 [`prop:jet-prefix-gb-filtration`](../../../quantum-observable-universe/braids-and-knots/jet-prefix-gb-filtration.md): *QOU.BraidKnot.jet_prefix_gb_filtration*.

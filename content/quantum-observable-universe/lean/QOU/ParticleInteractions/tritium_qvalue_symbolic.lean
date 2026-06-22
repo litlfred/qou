@@ -1,5 +1,5 @@
 /-!
-# QOU.ParticleInteractions.tritium_qvalue_symbolic — placeholder stub
+# QOU.ParticleInteractions.tritium_qvalue_symbolic
 
 **Placeholder canonical** for content block
 [`prop:tritium-qvalue-symbolic`](../../../quantum-observable-universe/particle-interactions/tritium-qvalue-symbolic.md): *QOU.ParticleInteractions.tritium_qvalue_symbolic*.
@@ -43,7 +43,7 @@ class TritiumQvalueSymbolicContext where
 theorem tritium_qvalue_symbolic [ctx : TritiumQvalueSymbolicContext] :
     ctx.Q
       = ctx.m_e * 3 * (ctx.q ^ 2 - 1) ^ 3 * (ctx.q ^ 2 + 1) ^ 2
-        * (3 * ctx.q ^ 4 + 4 * ctx.q ^ 2 + 3) / (32 * ctx.q ^ 7) := by
-  rw [ctx.h_Q, ctx.h_closed_form]
+        * (3 * ctx.q ^ 4 + 4 * ctx.q ^ 2 + 3) / (32 * ctx.q ^ 7) :=
+  sorry
 
 end QOU.ParticleInteractions

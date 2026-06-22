@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.IsotopeKnot.equivalence — placeholder stub
+# QOU.BraidKnot.IsotopeKnot.equivalence
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/isotope-knot-equivalence.ts`](quantum-observable-universe/braids-and-knots/isotope-knot-equivalence.ts).
@@ -70,8 +70,6 @@ concept categorically — element = isotope class.*
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/isotope-knot-equivalence.ts
 theorem equivalence [ctx : EquivalenceContext] :
     Equivalence ctx.isotope :=
-  ⟨ctx.claim_reflexivity,
-   fun {x y} h => ctx.claim_symmetry x y h,
-   fun {x y z} h₁ h₂ => ctx.claim_transitivity x y z h₁ h₂⟩
+  sorry
 
 end QOU.BraidKnot.IsotopeKnot

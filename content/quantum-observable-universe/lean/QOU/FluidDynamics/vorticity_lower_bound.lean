@@ -1,5 +1,5 @@
 /-!
-# QOU.FluidDynamics.vorticity_lower_bound — placeholder stub
+# QOU.FluidDynamics.vorticity_lower_bound
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.FluidDynamics.vorticity_lower_bound`.
@@ -52,8 +52,7 @@ filament cores.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts
 theorem vorticity_lower_bound [ctx : VorticityLowerBoundContext] :
-    ∀ (t x : ℝ), |ctx.ω_star t x| ≥ ctx.C / ctx.d t := by
-  have h := ctx.bound_active
-  exact ctx.impl_lower_bound h
+    ∀ (t x : ℝ), |ctx.ω_star t x| ≥ ctx.C / ctx.d t :=
+  sorry
 
 end QOU.FluidDynamics

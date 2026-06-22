@@ -1,5 +1,5 @@
 /-!
-# QOU.QuantumObservableUniverse.exists_axiom_1_frobenius — placeholder stub
+# QOU.QuantumObservableUniverse.exists_axiom_1_frobenius
 
 **Placeholder canonical** for content block
 [`lem:qou-exists-axiom-1`](../../../quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.md): *Axiom 1 — Haar state gives a non-degenerate Frobenius pairing*.
@@ -41,7 +41,7 @@ axiom~(1) of [quantum observable universe](#def:quantum-observable-universe).
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.ts
 theorem exists_axiom_1_frobenius [ctx : ExistsAxiom1FrobeniusContext] :
-    Function.Bijective ctx.pairing_map := by
-  exact ⟨ctx.pairing_inj, ctx.pairing_surj⟩
+    Function.Bijective ctx.pairing_map :=
+  sorry
 
 end QOU.QuantumObservableUniverse

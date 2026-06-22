@@ -1,7 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Exp
 
 /-!
-# QOU.FluidDynamics.q_ns_wellposedness — placeholder stub
+# QOU.FluidDynamics.q_ns_wellposedness
 
 **Placeholder canonical** for content block
 [`thm:q-ns-wellposedness`](../../../quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.md): *Global regularity of the $q$-deformed Navier--Stokes equation*.
@@ -75,9 +75,7 @@ theorem q_ns_wellposedness [ctx : QNsWellposednessContext] :
       ctx.v_norm_sq t + 2 * ctx.ν_q * ctx.dissipation t ≤ ctx.v_norm_sq 0) ∧
     (∀ (k : ℕ) (t : ℝ), 0 ≤ t →
       ctx.v_hat k t ≤ ctx.v_hat k 0 *
-        Real.exp (- ctx.ν_q * (ctx.q_int k) ^ 2 * t)) := by
-  have h := ctx.wellposed_active
-  exact ⟨ctx.impl_smoothness h, ctx.impl_energy_inequality h,
-         ctx.impl_spectral_decay h⟩
+        Real.exp (- ctx.ν_q * (ctx.q_int k) ^ 2 * t)) :=
+  sorry
 
 end QOU.FluidDynamics

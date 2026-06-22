@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.Archimedean.borromean_hopf_energy_crossover — placeholder stub
+# QOU.Archimedean.borromean_hopf_energy_crossover
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts`](quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts).
@@ -132,8 +132,7 @@ $$
 theorem borromean_hopf_energy_crossover [ctx : BorromeanHopfEnergyCrossoverContext] :
     ctx.M_B = 2 * ctx.V_B / ((ctx.q - 1) / ctx.q) ^ 2 ∧
     ctx.M_D = ctx.q + ctx.q⁻¹ ∧
-    (ctx.diquark_favoured ↔ |ctx.E_D| > |ctx.E_B|) := by
-  refine ⟨ctx.claim_i_borromean_mass, ctx.claim_ii_diquark_mass,
-          ctx.claim_iii_crossover⟩
+    (ctx.diquark_favoured ↔ |ctx.E_D| > |ctx.E_B|) :=
+  sorry
 
 end QOU.Archimedean

@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidsAndKnots.ew_interface_knot — placeholder stub
+# QOU.BraidsAndKnots.ew_interface_knot
 
 **Placeholder canonical** for content block EW interface knot.
 

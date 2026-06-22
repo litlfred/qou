@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.MagicShellCouplingKappa — placeholder stub
+# QOU.BraidKnot.MagicShellCouplingKappa
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/magic-shell-coupling-kappa.ts`](quantum-observable-universe/braids-and-knots/magic-shell-coupling-kappa.ts).

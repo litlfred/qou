@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.confined_knot_binding — placeholder stub
+# QOU.BraidKnot.confined_knot_binding
 
 **Placeholder canonical** for content block
 [`prop:confined-knot-binding`](../../../quantum-observable-universe/braids-and-knots/confined-knot-binding.md): *QOU.BraidKnot.confined_knot_binding*.

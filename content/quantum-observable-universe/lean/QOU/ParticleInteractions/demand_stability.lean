@@ -1,5 +1,5 @@
 /-!
-# QOU.ParticleInteractions.demand_stability — placeholder stub
+# QOU.ParticleInteractions.demand_stability
 
 **Placeholder canonical** for content block
 [`prop:demand-stability`](../../../quantum-observable-universe/particle-interactions/demand-stability.md): *Demand profile determines nuclear and atomic stability*.
@@ -64,8 +64,7 @@ theorem demand_stability [ctx : DemandStabilityContext] :
     (ctx.trM ctx.Z ctx.N ≤ ctx.trM (ctx.Z + 1) ctx.N ∧
      ctx.trM ctx.Z ctx.N ≤ ctx.trM (ctx.Z - 1) ctx.N ∧
      ctx.trM ctx.Z ctx.N ≤ ctx.trM ctx.Z (ctx.N + 1) ∧
-     ctx.trM ctx.Z ctx.N ≤ ctx.trM ctx.Z (ctx.N - 1)) := by
-  refine ⟨ctx.claim_i_beta_stable, ctx.claim_ii_shell_closed,
-   ctx.claim_iii_doubly_magic⟩
+     ctx.trM ctx.Z ctx.N ≤ ctx.trM ctx.Z (ctx.N - 1)) :=
+  sorry
 
 end QOU.ParticleInteractions

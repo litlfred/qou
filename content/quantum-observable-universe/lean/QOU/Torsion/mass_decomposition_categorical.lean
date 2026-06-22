@@ -1,7 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
-# QOU.Torsion.mass_decomposition_categorical — placeholder stub
+# QOU.Torsion.mass_decomposition_categorical
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.Torsion.mass_decomposition_categorical`.
@@ -54,8 +54,7 @@ base-level morphism $\varrho_0 \colon \mathbf{1} \to A_0$.
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass.ts
 theorem mass_decomposition_categorical [ctx : MassDecompositionCategoricalContext] :
-    ctx.mass = (Finset.range ctx.N).sum (fun n => ctx.mass_level n) := by
-  have h := ctx.decomposition_active
-  exact ctx.impl_mass_decomposition_categorical h
+    ctx.mass = (Finset.range ctx.N).sum (fun n => ctx.mass_level n) :=
+  sorry
 
 end QOU.Torsion

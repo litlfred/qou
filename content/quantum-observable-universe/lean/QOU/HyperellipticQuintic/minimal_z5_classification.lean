@@ -1,5 +1,5 @@
 /-!
-# QOU.HyperellipticQuintic.minimal_z5_classification — placeholder stub
+# QOU.HyperellipticQuintic.minimal_z5_classification
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/hyperelliptic-z5-classification.ts`](quantum-observable-universe/braids-and-knots/hyperelliptic-z5-classification.ts).
@@ -85,6 +85,6 @@ The combinatorial decomposi
 theorem minimal_z5_classification [ctx : MinimalZ5ClassificationContext] :
     ctx.genus = 2 ∧ ctx.branch_count = 2 * ctx.genus + 2 ∧
     ctx.branch_count = 6 :=
-  ctx.claim_minimal_z5_classification
+  sorry
 
 end QOU.HyperellipticQuintic

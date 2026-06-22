@@ -1048,7 +1048,299 @@
         "reviewed_at": "2026-06-21T19:19:07.308Z",
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:32.212Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:32.536Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:32.942Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:33.280Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:33.769Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:34.095Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof stub with core gaps but carrying structure."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.34,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:34.405Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof stub with core gaps but carries math structure and definitions."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "warn",
+        "score": {
+          "value": 0.5,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:34.744Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Standard proof stub structure."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:35.235Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Declaration contains sorryAx or unexpected axioms."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:35.628Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "No self-assuming projection detected."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:36.146Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Not a trivial true goal."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:36.562Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Stub proof with unresolved premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:36.932Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Stub proof with unresolved hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:37.307Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Stub uses decide/trivial masking."
+      }
     ]
   },
-  "updated_at": "2026-06-21T19:19:07.308Z"
+  "updated_at": "2026-06-22T02:56:37.307Z"
 }

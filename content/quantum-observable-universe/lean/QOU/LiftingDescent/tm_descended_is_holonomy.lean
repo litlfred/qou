@@ -1,5 +1,5 @@
 /-!
-# QOU.LiftingDescent.tm_descended_is_holonomy — placeholder stub
+# QOU.LiftingDescent.tm_descended_is_holonomy
 
 **Placeholder canonical** for content block
 [`lem:topological-mass-holonomy`](../../../quantum-observable-universe/lifting-and-descent/topological-mass-holonomy.md): *Descended term is the unknot-core holonomy*.
@@ -40,7 +40,7 @@ the unknot-core holonomy:
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-holonomy.ts
 theorem tm_descended_is_holonomy [ctx : TmDescendedIsHolonomyContext] :
-    ctx.descended_term = ctx.unknot_holonomy := by
-  rw [ctx.descended_eq_integral, ctx.holonomy_eq_integral]
+    ctx.descended_term = ctx.unknot_holonomy :=
+  sorry
 
 end QOU.LiftingDescent

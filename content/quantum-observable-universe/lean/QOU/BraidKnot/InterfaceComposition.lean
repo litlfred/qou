@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.InterfaceComposition — placeholder stub
+# QOU.BraidKnot.InterfaceComposition
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/canonical-braid-interface-composition.ts`](quantum-observable-universe/braids-and-knots/canonical-braid-interface-composition.ts).

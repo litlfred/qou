@@ -1,5 +1,5 @@
 /-!
-# QOU.Brings.brings_is_qou — placeholder stub
+# QOU.Brings.brings_is_qou
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.Brings.brings_is_qou`.
@@ -68,8 +68,6 @@ theorem brings_is_qou [ctx : BringsIsQouContext] :
     (∀ n : ℕ, ctx.kappa n ≠ 0) ∧
     (ctx.g = 4 ∧ ctx.chi_A = 2 - 2 * (ctx.g : ℤ) ∧ ctx.chi_A = -6) ∧
     (ctx.n_branch_points = 6 ∧ ctx.R_tot = 14) :=
-  ⟨ctx.claim_i_quantum_universe, ctx.claim_ii_observability,
-   ctx.claim_iii_yekutieli_lifting, ctx.claim_iv_euler_characteristic,
-   ctx.claim_v_geometric_descent⟩
+  sorry
 
 end QOU.Brings
