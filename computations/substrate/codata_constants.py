@@ -193,6 +193,11 @@ _U_MEV = mp.mpf(_re.search(
     _ame2020()["_metadata"]["units"]["atomic_mass_micro_u"]).group(1))
 del _re
 
+# Public alias for the atomic-mass-unit → MeV conversion (CODATA, via the
+# vendored AME2020 metadata).  Consumers that need the u→MeV factor import
+# this rather than re-typing the 931.494… literal (bean 46ke).
+U_MEV = _U_MEV
+
 
 def _ame_binding_mev(Z: int, A: int) -> mp.mpf:
     """Total nuclear binding energy (MeV) read from vendored AME2020."""
@@ -302,6 +307,7 @@ def __getattr__(name: str):
 __all__ = [
     # Legitimate calibration inputs (CAL-1) + derived cross-check (Q_β)
     "M_E_MEV", "M_E_MEV_ERR",
+    "U_MEV",  # atomic-mass-unit → MeV conversion (from AME2020 metadata)
     "Q_BETA_MEV", "Q_BETA_MEV_ERR",  # derived from CAL-1+CAL-2; kept for cross-check
     # Validation-only experimental values (loaded from witness)
     "M_P_MEV_VALIDATION", "M_P_MEV_VALIDATION_ERR",

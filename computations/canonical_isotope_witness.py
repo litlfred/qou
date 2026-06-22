@@ -54,6 +54,7 @@ sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import U_MEV  # noqa: E402 — u→MeV factor (bean 46ke)
 
 
 # ── Data loaders ──────────────────────────────────────────────────
@@ -344,9 +345,9 @@ def assemble_row(
         m_composite_MeV = N * m_n_borr + Z * m_p_borr - b_pred
         composite_canonical_status = canonical_status
 
-    # L4 reference: from AME atomic mass (× 931.494 MeV/u).
+    # L4 reference: from AME atomic mass (× u→MeV, registry U_MEV ≈ 931.494).
     m_composite_ref_MeV = (
-        atomic_mass_u * 931.49410242 if atomic_mass_u is not None else None
+        atomic_mass_u * float(U_MEV) if atomic_mass_u is not None else None
     )
     m_composite_err_MeV = (
         m_composite_MeV - m_composite_ref_MeV
