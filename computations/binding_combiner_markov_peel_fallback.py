@@ -92,7 +92,7 @@ import mpmath  # noqa: E402
 import sympy as sp  # noqa: E402
 
 from mass_at_3A_proper import atom_braid_word_3A, E_0_CALIBRATION_MEV  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 from markov_peel import incremental_reduced_element  # noqa: E402
 from markov_trace_canonical import tr_M_element  # noqa: E402
 from hecke_symbolic import q as q_sym  # noqa: E402
@@ -112,10 +112,10 @@ Q0_HP = sp.Float(Q_50_DIGIT_STR, mpmath.mp.dps)
 # AME-2020 experimental binding energies (MeV), same source as
 # binding_via_interface_knot.py.
 B_AME = {
-    "D": mpmath.mpf("2.22456607"),
-    "T": mpmath.mpf("8.481798"),
-    "3He": mpmath.mpf("7.7180428"),
-    "4He": mpmath.mpf("28.295674"),
+    "D": AME_B_DEUTERON_MEV_VALIDATION,
+    "T": AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
     # 6Li/7Li experimental values for the --include-li rows.
     "6Li": mpmath.mpf("31.99464"),
     "7Li": mpmath.mpf("39.24454"),
