@@ -90,6 +90,55 @@ def _strip_comments(text: str) -> str:
     return _COMMENT_RX.sub("", text)
 
 
+# ── Triaged false-positives for the 4-input over-count (bean j1hg) ──
+# The 4-input-mp-and-mn scheme fires on any script referencing BOTH
+# M_P_MEV and M_N_MEV. A 2026-06-22 per-script triage
+# (docs/audits/2026-06-22-overcount-3input-triage.md) found that 34 of
+# the 57 hits are NOT a hadronic over-count: 7 are the registry sources
+# that DEFINE the masses, and 27 use M_N only as a validation/comparison
+# reference (error %, ratio, print, output dict) — never as an input to a
+# mass/binding prediction. Only the remaining 23 (M_N inside a
+# Z·m_p + N·m_n constituent sum) are genuine three-calibration candidates.
+# A script may also self-exclude with a `# noqa: over-count-3-input`
+# comment (rename-robust). Genuine candidates are left flagged.
+OVER_COUNT_MN_NOT_INPUT = {
+    'alpha_blend_tower.py',
+    'alpha_high_precision.py',
+    'atom_mass_derived.py',
+    'beta-decay-energy-scale.py',
+    'bw_chirality_isotopes.py',
+    'cal4_disguise_hunt.py',
+    'catalan_binding.py',
+    'codata_2022_source.py',
+    'codata_constants.py',
+    'codata_masses.py',
+    'codata_reconciliation.py',
+    'compound_binding_via_differences.py',
+    'd_from_scratch.py',
+    'entanglement_orders.py',
+    'experimental_constants.py',
+    'flavor_split_xq_refinement.py',
+    'gap_a4_He3_residual_probe.py',
+    'hadron_knot_table.py',
+    'hecke_characters.py',
+    'hecke_core.py',
+    'inverse-markov-qvalues.py',
+    'iterative_lp_dual_levels.py',
+    'mass_formula_6term.py',
+    'mn_flavor_split_h3_plancherel.py',
+    'mn_flavor_split_h4_plancherel.py',
+    'mn_flavor_split_plancherel_channel.py',
+    'mn_standard_channel_correction.py',
+    'neutron_error_diagnostic.py',
+    'path_b_habiro_mass_probe.py',
+    'qbeta_h4_em_normalization_probe.py',
+    'qbeta_h4_sign_block_exact.py',
+    'qbeta_h4_sign_block_proof_search.py',
+    'reeb_rotation_pn_test.py',
+    'sigma_shell_from_beta_chain.py',
+}
+
+
 def classify_script(path: Path) -> dict:
     """Read script and tally which canonical inputs it uses."""
     try:
@@ -133,8 +182,16 @@ def classify_script(path: Path) -> dict:
             "masses — post-Workplan-0b target form)"
         )
     elif uses_m_p and uses_m_n:
-        # Two hadronic inputs — over-count if Q_β not also used
-        scheme = "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)"
+        # Two hadronic inputs — over-count if Q_β not also used.
+        # Triaged false-positives (registry sources + m_n-as-comparison)
+        # are reclassified out of the over-count (bean j1hg, 2026-06-22).
+        if path.name in OVER_COUNT_MN_NOT_INPUT or "over-count-3-input" in text:
+            scheme = (
+                "m_n-not-an-input (registry-source or m_n comparison-only; "
+                "triaged 2026-06-22, not a 4th calibration input)"
+            )
+        else:
+            scheme = "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)"
     elif uses_m_p and uses_q_beta:
         scheme = "3-input-canonical (m_p + Q_β; per calibration-inputs.md)"
     elif uses_m_n and uses_q_beta:
