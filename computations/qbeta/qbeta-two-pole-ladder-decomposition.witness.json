@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:25:32.291120+00:00",
-  "commitSha": "10f2199e2887d0791bfd4851dc41b3a58f06cabe",
+  "computedAt": "2026-06-22T13:29:16.315566+00:00",
+  "commitSha": "fe6a62a7fc89ee9be3568b6c519ba5af37200942",
   "assertions": [
     {
       "name": "dominant_tail_ratio_matches_root_sub",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "qbeta-two-pole-ladder-decomposition",
   "scriptFile": "qbeta_two_pole_ladder_decomposition.py",
-  "scriptHash": "a815420f5d56",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ed929e6e0cd2",
+  "scriptCommitSha": "fe6a62a7fc89ee9be3568b6c519ba5af37200942",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

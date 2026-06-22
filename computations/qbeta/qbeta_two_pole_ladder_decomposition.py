@@ -94,7 +94,7 @@ def main() -> int:
 
     # --- tail amplitude L = lim c_k u_sub^k  (k = 8,9,10) ---
     xk = {k: c[k] * u_sub**k for k in (8, 9, 10)}
-    L = sum(xk.values()) / 3
+    L = mp.fsum(xk.values()) / 3  # mp.fsum: no intermediate-rounding loss (Gemini #2611)
     L_spread = (max(xk.values()) - min(xk.values())) / L
     residue_A = u_sub * L
 
