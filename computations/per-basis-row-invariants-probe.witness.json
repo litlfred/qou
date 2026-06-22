@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T03:18:35.827730+00:00",
-  "commitSha": "967bf8b38014a7ee023df999121d82572a9aadd5",
+  "computedAt": "2026-06-22T13:19:57.268859+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "structural_invariants_extracted",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "per-basis-row-invariants-probe",
   "scriptFile": "per_basis_row_invariants_probe.py",
   "scriptHash": "0f565d299d0c",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,7 +28,6 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -36,7 +35,7 @@
   "contentBlock": "rem:per-wedderburn-block-c5-c6",
   "data": {
     "pins": {
-      "canonical_mp_pin_q0": "1.1099785827513808075916690956107688798744991218736",
+      "canonical_mp_pin_q0": "1.1099785955573347198997632204832250266562084087802",
       "stale_muon_pin_q0": "1.10997859555418057528159407960950937799328227995870"
     },
     "per_row_invariants": [
@@ -49,9 +48,9 @@
         "tau_canonical": "1.0",
         "tau_stale_muon_pin": "1.0",
         "tau_pct_drift": 0.0,
-        "ginv_diag_canonical": "6.12057927791506346151306076719",
+        "ginv_diag_canonical": "6.1205793047628035911454037359",
         "ginv_diag_stale_muon_pin": "6.12057930475619091239147634394",
-        "ginv_diag_pct_drift": 4.385390047593939e-07,
+        "ginv_diag_pct_drift": 1.0804007961765409e-10,
         "q0_stable_to_compute_precision": false
       },
       {
@@ -60,13 +59,13 @@
         "particle": "u-quark/σ₀",
         "knot_type": "+crossing",
         "wedderburn_block": "(2,1)",
-        "tau_canonical": "0.499320334183694452413442680258",
+        "tau_canonical": "0.499320334033561271768966386276",
         "tau_stale_muon_pin": "0.499320334033598250020669084677",
-        "tau_pct_drift": 3.0060102126254455e-08,
-        "ginv_diag_canonical": "1.52185310426626099470100966784",
+        "tau_pct_drift": 7.405717168372508e-12,
+        "ginv_diag_canonical": "1.52185310911645065510912254277",
         "ginv_diag_stale_muon_pin": "1.52185310911525603887913994414",
-        "ginv_diag_pct_drift": 3.186243817215198e-07,
-        "q0_stable_to_compute_precision": false
+        "ginv_diag_pct_drift": 7.84974727735821e-11,
+        "q0_stable_to_compute_precision": true
       },
       {
         "row_index": 3,
@@ -74,13 +73,13 @@
         "particle": "partner",
         "knot_type": "+crossing",
         "wedderburn_block": "(2,1)",
-        "tau_canonical": "0.499320334183694452413442680258",
+        "tau_canonical": "0.499320334033561271768966386276",
         "tau_stale_muon_pin": "0.499320334033598250020669084677",
-        "tau_pct_drift": 3.0060102126254455e-08,
-        "ginv_diag_canonical": "1.52185310426626099470100966784",
+        "tau_pct_drift": 7.405717168372508e-12,
+        "ginv_diag_canonical": "1.52185310911645065510912254277",
         "ginv_diag_stale_muon_pin": "1.52185310911525603887913994414",
-        "ginv_diag_pct_drift": 3.186243817215198e-07,
-        "q0_stable_to_compute_precision": false
+        "ginv_diag_pct_drift": 7.84974727735821e-11,
+        "q0_stable_to_compute_precision": true
       },
       {
         "row_index": 4,
@@ -88,13 +87,13 @@
         "particle": "gluon+",
         "knot_type": "Hopf+ 2-link",
         "wedderburn_block": "(2,1)",
-        "tau_canonical": "0.24932079612931630669979826224",
+        "tau_canonical": "0.249320795979387206859416492623",
         "tau_stale_muon_pin": "0.249320795979424134845400830933",
-        "tau_pct_drift": 6.012020424347282e-08,
-        "ginv_diag_canonical": "1.52185310426626099470100966784",
+        "tau_pct_drift": 1.4811434336745563e-11,
+        "ginv_diag_canonical": "1.52185310911645065510912254277",
         "ginv_diag_stale_muon_pin": "1.52185310911525603887913994414",
-        "ginv_diag_pct_drift": 3.186243817215198e-07,
-        "q0_stable_to_compute_precision": false
+        "ginv_diag_pct_drift": 7.84974727735821e-11,
+        "q0_stable_to_compute_precision": true
       },
       {
         "row_index": 5,
@@ -102,13 +101,13 @@
         "particle": "gluon-",
         "knot_type": "Hopf− 2-link",
         "wedderburn_block": "(2,1)",
-        "tau_canonical": "0.24932079612931630669979826224",
+        "tau_canonical": "0.249320795979387206859416492623",
         "tau_stale_muon_pin": "0.249320795979424134845400830933",
-        "tau_pct_drift": 6.012020424347282e-08,
-        "ginv_diag_canonical": "1.52185310426626099470100966784",
+        "tau_pct_drift": 1.4811434336745563e-11,
+        "ginv_diag_canonical": "1.52185310911645065510912254277",
         "ginv_diag_stale_muon_pin": "1.52185310911525603887913994414",
-        "ginv_diag_pct_drift": 3.186243817215198e-07,
-        "q0_stable_to_compute_precision": false
+        "ginv_diag_pct_drift": 7.84974727735821e-11,
+        "q0_stable_to_compute_precision": true
       },
       {
         "row_index": 6,
@@ -116,12 +115,12 @@
         "particle": "electron",
         "knot_type": "trefoil T(2,3)",
         "wedderburn_block": "(1,1,1)",
-        "tau_canonical": "0.551443414318455993583364700049",
+        "tau_canonical": "0.551443419921209679134093895626",
         "tau_stale_muon_pin": "0.551443419919829704212132290182",
-        "tau_pct_drift": 1.0157658184297402e-06,
-        "ginv_diag_canonical": "6.12057927791506346151306076719",
+        "tau_pct_drift": 2.502477810250735e-10,
+        "ginv_diag_canonical": "6.1205793047628035911454037359",
         "ginv_diag_stale_muon_pin": "6.12057930475619091239147634394",
-        "ginv_diag_pct_drift": 4.385390047593939e-07,
+        "ginv_diag_pct_drift": 1.0804007961765409e-10,
         "q0_stable_to_compute_precision": false
       }
     ],
@@ -136,79 +135,79 @@
       {
         "row": "γ",
         "invariant_kind": "G⁻¹_diag[(3)]",
-        "invariant_value": "6.1205792779150634615",
+        "invariant_value": "6.1205793047628035911",
         "closest_candidate": "1/α_EM",
-        "closest_candidate_residual_pct": 95.53359750807022
+        "closest_candidate_residual_pct": 95.53359748847848
       },
       {
         "row": "σ₀",
         "invariant_kind": "τ(σ₀)",
-        "invariant_value": "0.49932033418369445241",
+        "invariant_value": "0.49932033403356127177",
         "closest_candidate": "1/α_EM",
-        "closest_candidate_residual_pct": 99.63562834764409
+        "closest_candidate_residual_pct": 99.63562834775365
       },
       {
         "row": "σ₀",
         "invariant_kind": "G⁻¹_diag[(2,1)]",
-        "invariant_value": "1.5218531042662609947",
+        "invariant_value": "1.5218531091164506551",
         "closest_candidate": "1/α_EM",
-        "closest_candidate_residual_pct": 98.88945013394854
+        "closest_candidate_residual_pct": 98.88945013040919
       },
       {
         "row": "σ₁",
         "invariant_kind": "τ(σ₁)",
-        "invariant_value": "0.49932033418369445241",
+        "invariant_value": "0.49932033403356127177",
         "closest_candidate": "1/α_EM",
-        "closest_candidate_residual_pct": 99.63562834764409
+        "closest_candidate_residual_pct": 99.63562834775365
       },
       {
         "row": "σ₁",
         "invariant_kind": "G⁻¹_diag[(2,1)]",
-        "invariant_value": "1.5218531042662609947",
+        "invariant_value": "1.5218531091164506551",
         "closest_candidate": "1/α_EM",
-        "closest_candidate_residual_pct": 98.88945013394854
+        "closest_candidate_residual_pct": 98.88945013040919
       },
       {
         "row": "L₊",
         "invariant_kind": "τ(L₊)",
-        "invariant_value": "0.2493207961293163067",
+        "invariant_value": "0.24932079597938720686",
         "closest_candidate": "1/α_EM",
-        "closest_candidate_residual_pct": 99.81806182477858
+        "closest_candidate_residual_pct": 99.81806182488799
       },
       {
         "row": "L₊",
         "invariant_kind": "G⁻¹_diag[(2,1)]",
-        "invariant_value": "1.5218531042662609947",
+        "invariant_value": "1.5218531091164506551",
         "closest_candidate": "1/α_EM",
-        "closest_candidate_residual_pct": 98.88945013394854
+        "closest_candidate_residual_pct": 98.88945013040919
       },
       {
         "row": "L₋",
         "invariant_kind": "τ(L₋)",
-        "invariant_value": "0.2493207961293163067",
+        "invariant_value": "0.24932079597938720686",
         "closest_candidate": "1/α_EM",
-        "closest_candidate_residual_pct": 99.81806182477858
+        "closest_candidate_residual_pct": 99.81806182488799
       },
       {
         "row": "L₋",
         "invariant_kind": "G⁻¹_diag[(2,1)]",
-        "invariant_value": "1.5218531042662609947",
+        "invariant_value": "1.5218531091164506551",
         "closest_candidate": "1/α_EM",
-        "closest_candidate_residual_pct": 98.88945013394854
+        "closest_candidate_residual_pct": 98.88945013040919
       },
       {
         "row": "e⁻",
         "invariant_kind": "τ(e⁻)",
-        "invariant_value": "0.55144341431845599358",
+        "invariant_value": "0.55144341992120967913",
         "closest_candidate": "1/α_EM",
-        "closest_candidate_residual_pct": 99.59759229836996
+        "closest_candidate_residual_pct": 99.59759229428144
       },
       {
         "row": "e⁻",
         "invariant_kind": "G⁻¹_diag[(1,1,1)]",
-        "invariant_value": "6.1205792779150634615",
+        "invariant_value": "6.1205793047628035911",
         "closest_candidate": "1/α_EM",
-        "closest_candidate_residual_pct": 95.53359750807022
+        "closest_candidate_residual_pct": 95.53359748847848
       }
     ],
     "verdict": {

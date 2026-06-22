@@ -1,7 +1,7 @@
 {
   "computation": "option-e-h6-entry-point",
   "description": "Phase 2 entry-point structural cross-check at H_6 / deuteron scope. Consumes option-e-phase1-gram-h6.witness.json from PR #1697. NOT a fit; NOT a derivation; reads canonical Hoefsmit-seminormal witness data and exposes per-block structural quantities for ledger PROBE 1 (#1707, derive (1+q)/2) and ledger PROBE 4 (#1516, Kashiwara-crystal-coefficient angle).",
-  "timestamp_utc": "2026-06-02T16:03:20.377229+00:00",
+  "timestamp_utc": "2026-06-22T13:20:25.309226+00:00",
   "inputs": {
     "h6_gram_witness": "option-e-phase1-gram-h6.witness.json",
     "h6_gram_witness_commit_sha": "5d80bf9a735374582966d53ef493dcfd2187d1cc"

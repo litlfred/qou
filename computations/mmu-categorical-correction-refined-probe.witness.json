@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-03T22:44:52.404286+00:00",
-  "commitSha": "c8281773b024c7f5c5412704c1529a349a181831",
+  "computedAt": "2026-06-22T13:19:47.751030+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "mmu_refined_correction_at_least_one_passes_10_ppm",
@@ -17,7 +17,7 @@
   "computation": "mmu-categorical-correction-refined-probe",
   "scriptFile": "mmu_categorical_correction_refined_probe.py",
   "scriptHash": "fb93f534934c",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,14 +27,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.4.0"
+    "mpmath": "1.3.0"
   },
   "data": {
     "target_delta": "0.0000002098",
-    "q_substrate": "1.10997858275138080759166909561",
+    "q_substrate": "1.10997859555733471989976322048",
     "candidates_tested": [
       "R1. hbar^6 / [2]_q",
       "R2. hbar^6 / [3]_q",
@@ -49,58 +47,58 @@
     ],
     "per_candidate_results": {
       "R1. hbar^6 / [2]_q": {
-        "computed_delta": "0.000000470512668227138097536660112537",
-        "err_ppm_vs_target": 1242672.3938376459,
+        "computed_delta": "0.000000470512963812894293593841272401",
+        "err_ppm_vs_target": 1242673.8027306688,
         "passed": false
       },
       "R2. hbar^6 / [3]_q": {
-        "computed_delta": "0.000000310855380073010795361339535438",
-        "err_ppm_vs_target": 481674.83352245373,
+        "computed_delta": "0.000000310855574740915240102391415064",
+        "err_ppm_vs_target": 481675.76139616413,
         "passed": false
       },
       "R3. hbar^6 / [4]_q": {
-        "computed_delta": "0.00000023022519883862784481038212959",
-        "err_ppm_vs_target": 97355.57120413653,
+        "computed_delta": "0.000000230225342378086608976858745524",
+        "err_ppm_vs_target": 97356.25537696191,
         "passed": false
       },
       "R4. hbar^6 / [5]_q": {
-        "computed_delta": "0.000000181239937465767730340157719845",
-        "err_ppm_vs_target": 136129.94534905753,
+        "computed_delta": "0.000000181240049828522085799715172382",
+        "err_ppm_vs_target": 136129.40977825507,
         "passed": false
       },
       "R5. hbar^6 / (q + q^-1 + 1)": {
-        "computed_delta": "0.000000314242729714858235462607835255",
-        "err_ppm_vs_target": 497820.44668664556,
+        "computed_delta": "0.000000314242927253802066480577358104",
+        "err_ppm_vs_target": 497821.3882450051,
         "passed": false
       },
       "R6. hbar^6 * b / (q + 1)": {
-        "computed_delta": "0.000000389040342635183192918579883432",
-        "err_ppm_vs_target": 854339.097403161,
+        "computed_delta": "0.000000389040585297108576328876396639",
+        "err_ppm_vs_target": 854340.2540376957,
         "passed": false
       },
       "R7. hbar^6 / ([2]_q * [3]_q)": {
-        "computed_delta": "0.000000154585441560730933287287258156",
-        "err_ppm_vs_target": 263177.1136285466,
+        "computed_delta": "0.000000154585538181823012989127500768",
+        "err_ppm_vs_target": 263176.65308949945,
         "passed": false
       },
       "R8. hbar^6 / Vol(4_1)": {
-        "computed_delta": "0.00000046611176658279147678774586214",
-        "err_ppm_vs_target": 1221695.741576699,
+        "computed_delta": "0.000000466112059962884769112019609659",
+        "err_ppm_vs_target": 1221697.1399565528,
         "passed": false
       },
       "R9. hbar^6 * q / 5": {
-        "computed_delta": "0.000000210041791166587192453879270148",
-        "err_ppm_vs_target": 1152.4841114737487,
+        "computed_delta": "0.000000210041925794381190400327437068",
+        "err_ppm_vs_target": 1153.125807345998,
         "passed": false
       },
       "R10. hbar^4 * hbar^2 / (q + q^-1)": {
-        "computed_delta": "0.000000470512668227138097536660112537",
-        "err_ppm_vs_target": 1242672.3938376459,
+        "computed_delta": "0.000000470512963812894293593841272401",
+        "err_ppm_vs_target": 1242673.8027306688,
         "passed": false
       }
     },
     "best_candidate_name": "R9. hbar^6 * q / 5",
-    "best_candidate_err_ppm": 1152.4841114737487,
+    "best_candidate_err_ppm": 1153.125807345998,
     "any_candidate_passes_10_ppm": false
   }
 }

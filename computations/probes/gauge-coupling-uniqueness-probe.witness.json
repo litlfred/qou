@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T13:24:05.610362+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-22T13:20:38.832402+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "completeness_e_plus_plus_e_minus_eq_1",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 18,
   "computation": "gauge-coupling-uniqueness-probe",
   "scriptFile": "gauge_coupling_uniqueness_probe.py",
-  "scriptHash": "b86ba74cadb6",
-  "scriptCommitSha": "5a94db74bc38829390149c5991c136d3f5c648d9",
+  "scriptHash": "1c1ea0d90629",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,22 +54,21 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "I1 probe for cor:gauge-coupling-uniqueness.  Verifies the H_2(q) idempotent decomposition that underpins the corollary: σ² = (q − q⁻¹)σ + 1 admits exactly two central idempotents e_± projecting onto V_± with V_- ≅ 𝟏 the unique singlet.  Confirms completeness, orthogonality, idempotency symbolically, and that tr_M(e_-) ≠ 0 numerically at q_0 — so the singlet coupling is non-degenerate, and uniqueness up to global scaling λ ∈ R is structural.",
   "contentBlock": "cor:gauge-coupling-uniqueness",
   "parameters": {
-    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
     "e_plus_symbolic": "(1/(q**2 + 1)) + (q/(q**2 + 1))·σ",
     "e_minus_symbolic": "(q**2/(q**2 + 1)) + (-q/(q**2 + 1))·σ",
     "tr_M_e_plus_symbolic": "(q**(3/2) + q + 1)/((q + 1)*(q**2 + 1))",
     "tr_M_e_minus_symbolic": "(-q**(3/2) + q**3 + q**2)/(q**3 + q**2 + q + 1)",
-    "tr_M_e_plus_at_q0": 0.6963254263916331,
-    "tr_M_e_minus_at_q0": 0.3036745736083669
+    "tr_M_e_plus_at_q0": 0.6963254203129334,
+    "tr_M_e_minus_at_q0": 0.30367457968706657
   },
   "data": {
     "symbolic_checks": {

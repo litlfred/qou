@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-07T12:55:19.179848+00:00",
-  "commitSha": "82cc2ae6ed984501c503def22594f398daf4b6a5",
+  "computedAt": "2026-06-22T13:20:36.380454+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "A4_class_sizes_sum_to_group_order",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 17,
   "computation": "gap-a4-T4-schur-weyl-icosahedral-probe",
   "scriptFile": "gap_a4_T4_schur_weyl_icosahedral_probe.py",
   "scriptHash": "f519e29d9374",
-  "scriptCommitSha": "4a31d4ede99743f90b21f40a1cef7be86b1c7f6a",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,7 +52,6 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T21:11:01.979298+00:00",
-  "commitSha": "329f0a1dd97af4fbab3e2c78c2f90e1e9019a562",
+  "computedAt": "2026-06-22T13:19:36.722486+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "s-electron trefoil is a palindrome (self-dual ⇒ ℓ=0, symmetric block)",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 12,
   "computation": "hybridization-sp-gap-braid",
   "scriptFile": "hybridization_sp_gap_braid.py",
   "scriptHash": "e9a206159c00",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,18 +34,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "mpmath": "1.4.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Shell-braid derivation of the sp³↔pure-p bond-angle base flip. (A) palindromicity-orbital-type: s (ℓ=0) is palindromic/self-dual ⇒ symmetric-block (trivial) character; the s trefoil e⁻=σ₀σ₁σ₀ is a palindrome; p is chiral ⇒ standard block. s,p sit in different Wedderburn blocks; hybridisation mixes them at the s–p promotion gap. (B) electron-shell-braid-capacity: ns Hopf-links the (n−1) inner shells ⇒ Δ(n) ∝ (n−1) = central-atom size; integer ⇒ DISCRETE flip; window closes at n=2→3. (C) group-16 O 104.5°→S/Se/Te ~90° flat confirms. Derives the mechanism + direction + discreteness; the exact Δ-vs-bonding numbers (atomic Φ₁ penetration model) remain open.",
   "contentBlock": "prop:symmetric-block-domain-weight",
   "parameters": {
-    "q": 1.1099785827513808
+    "q": 1.1099785955573347
   },
   "data": {
     "s_word_palindrome_self_dual": true,
     "p_word_palindrome": false,
-    "s_on_symmetric_block_q3": 1.3675518369513862,
+    "s_on_symmetric_block_q3": 1.3675518842842074,
     "penetration_flip_by_shell": {
       "n2": {
         "inner_shells": 1,

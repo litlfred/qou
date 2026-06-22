@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T20:15:04.770023+00:00",
-  "commitSha": "41f1b2a404de0759b15e4ddd8dbfa55deca21f23",
+  "computedAt": "2026-06-22T13:18:27.135037+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "normalized_markov_trace_identity_is_one",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 43,
+  "durationMs": 36,
   "computation": "casimir-xi-2-dig-deeper",
   "scriptFile": "casimir_xi_2_dig_deeper.py",
-  "scriptHash": "80bbc94c3a1a",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "bb4f676eafdf",
+  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,17 +26,16 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "Resolves the ξ_2 flip-flop on conj:casimir-epsilon-vacuum. Shows the ξ_k=0 calibration is circular and that ξ_2 is gated on the N_⊙ construction: normalized Markov trace of identity ≡ 1 ∀q (tautological ξ_k=0), unnormalized weight sum diverges with n.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "substrate_q": 1.1099785827513808,
-    "h2_substrate": 0.04370620853252198
+    "substrate_q": 1.1099785955573347,
+    "h2_substrate": 0.043706218232901294
   },
   "data": {
     "finding_A_calibration_is_circular": {
@@ -51,7 +50,7 @@
           "sum_y_dim_n4": "1.0"
         },
         {
-          "q": "1.1099785827513808",
+          "q": "1.1099785955573347",
           "sum_y_dim_n4": "1.0"
         },
         {
@@ -83,37 +82,37 @@
         {
           "n": 3,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.719070368969",
+          "sum_y_unnorm": "0.719070366019",
           "sum_y_unnorm_classical": "0.75",
-          "h2coef_unnorm_rel": "-0.94356178"
+          "h2coef_unnorm_rel": "-0.94356166"
         },
         {
           "n": 4,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.507614042017",
+          "sum_y_unnorm": "0.50761403668",
           "sum_y_unnorm_classical": "0.5625",
-          "h2coef_unnorm_rel": "-2.2325212"
+          "h2coef_unnorm_rel": "-2.2325209"
         },
         {
           "n": 5,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.312924322133",
+          "sum_y_unnorm": "0.312924316301",
           "sum_y_unnorm_classical": "0.375",
-          "h2coef_unnorm_rel": "-3.7874514"
+          "h2coef_unnorm_rel": "-3.7874509"
         },
         {
           "n": 6,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.189837606285",
+          "sum_y_unnorm": "0.189837600817",
           "sum_y_unnorm_classical": "0.25",
-          "h2coef_unnorm_rel": "-5.506073"
+          "h2coef_unnorm_rel": "-5.5060723"
         },
         {
           "n": 7,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.107062722969",
+          "sum_y_unnorm": "0.107062718715",
           "sum_y_unnorm_classical": "0.15625",
-          "h2coef_unnorm_rel": "-7.2026054"
+          "h2coef_unnorm_rel": "-7.2026044"
         }
       ],
       "verdict": "q-dependent; relative h²-coefficient grows with n. A divergent, n-dependent ξ_2 is inadmissible for a single observable → naive 'prefactor = Markov trace on H_n(q)' needs ζ-regularization (the q-independent step)."

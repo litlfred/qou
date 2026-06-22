@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-07T12:18:00.220735+00:00",
-  "commitSha": "089da89f76c5d367bf7070b284cca984c0506dbb",
+  "computedAt": "2026-06-22T13:18:57.526573+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "catalogue_reachable_and_schur_weyl_consistent",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 21,
   "computation": "derived-chi-catalogue-consumer-demo",
   "scriptFile": "derived_chi_catalogue_consumer_demo.py",
-  "scriptHash": "929d95280c2a",
-  "scriptCommitSha": "7752b8033054a6a9e8a57d6cafee93172beca8b4",
+  "scriptHash": "55623922041d",
+  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +39,7 @@
   },
   "description": "Phase 1.3 read-through demo: prove the catalogue is reachable from compute and that its three Borromean cells cross-check the Schur-Weyl trace identity. No production file modified.",
   "data": {
-    "schur_weyl_identity_under_catalogue_lookup": "4·χ^(3) + 2·χ^(2,1) = tr_{V⊗³}(β_Bor) = 8 − 6h⁴ − 2h⁶  (verified to 1e-40 at q = 1.10997858275 and 1.05)",
+    "schur_weyl_identity_under_catalogue_lookup": "4·χ^(3) + 2·χ^(2,1) = tr_{V⊗³}(β_Bor) = 8 − 6h⁴ − 2h⁶  (verified to 1e-40 at q = 1.10997859556 and 1.05)",
     "phase_3_next_step": "Phase 2 adds Trefoil/Cinquefoil/4₁ rows; Phase 3 swaps extracted χ^λ reads in closed_form_tau_M.py + the per-atom mass sweep for `lookup_derived` calls. The failing-loud guard then enforces that any site asking for `tier='derived'` cannot silently consume a `cal-anchored` value."
   }
 }

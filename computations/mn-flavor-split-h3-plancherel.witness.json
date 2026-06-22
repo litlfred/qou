@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T16:54:17.954821+00:00",
-  "commitSha": "a0e38db691fc98bfcb42fbb3df1311b55903fafc",
+  "computedAt": "2026-06-22T13:19:49.549771+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "h3_plancherel_scan_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 17,
   "computation": "mn-flavor-split-h3-plancherel",
   "scriptFile": "mn_flavor_split_h3_plancherel.py",
-  "scriptHash": "6ac6aba620a9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4f2669155d97",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,19 +28,17 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Item A of PR #1654: tests Plancherel-channel template at H_3 (3 Wedderburn blocks) for the m_n / Δ_pn flavor-split residual.",
   "parameters": {
-    "q_80dps": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830",
+    "q_80dps": "1.1099785955573347198997632204832250266562084087801536866079811461449304145619756",
     "mp_dps_runtime": "80"
   },
   "data": {
     "best_candidate": "(d) (P_triv + P_sign) · h · [2]_q · ℏ_q²",
-    "best_ppm": "-1277.07577241",
-    "verdict": "NULL at H_3 — Plancherel-channel decomposition at H_3 does NOT find a tighter form than baseline X(q) = ℏ_q²·h·[2]_q. Combined with PR #1650's NULL at H_2: the Plancherel-channel template at H_n with classical weights does NOT close the m_n flavor-split residual. Likely requires q-deformed Plancherel or different categorical operator entirely."
+    "best_ppm": "-1276.75420494",
+    "verdict": "BEST: '(d) (P_triv + P_sign) · h · [2]_q · ℏ_q²' at -1276.75 ppm — beats baseline X(q) (1277 ppm) but not structural threshold."
   }
 }
