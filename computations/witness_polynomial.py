@@ -46,7 +46,7 @@ def _default_q0() -> sp.Rational:
         # `prop:three-calibration-discipline`, q_0 is the H^1
         # calibration; this value is not a fit but the resolution
         # of the lepton-ratio constraint at 50dp.
-        return sp.Rational("1.10997858275138050")
+        return sp.Rational("1.10997859555733471")
 
 
 def expose_polynomial(

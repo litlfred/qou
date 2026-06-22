@@ -22,7 +22,7 @@ BOTH established anchors and compare its swing to the empirical c_3 swing.
 
 | anchor | q₀ | empirical c_3 |
 |--------|-----|---------------|
-| proton (m_p) | 1.10997858275… | -2.0693 |
+| proton (m_p) | 1.10997859555… | -2.0693 |
 | muon   (m_μ) | 1.10997859555… | -2.0097 |
 
 Anchor separation ≈ 1.3e-8, yet empirical c_3 swings ≈ 2.88% — c_3 is a

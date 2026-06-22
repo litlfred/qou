@@ -12,7 +12,7 @@ def main():
     from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402 (codata sweep)
 
     Q_PIN = _pb.witness_path("q-pinning-200-digit.witness.json", HERE)
-    q = mp.mpf("1.1099785827514336021665403058428800994197368560098")
+    q = mp.mpf("1.1099785955573347198997632204832250266562084087801")
     m_e = mp.mpf("0.51099895000")
     Q_AME = mp.mpf(M_N_MEV_VALIDATION) - mp.mpf(M_P_MEV_VALIDATION) - m_e
     Q_A = m_e * mp.fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
