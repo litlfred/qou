@@ -136,8 +136,8 @@ import mpmath as mp
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: F401  (re-export)
 
 _HERE = Path(__file__).resolve().parent
-_BETA_DECAY_WITNESS = __pb.witness_path("beta-decay-energy-scale.witness.json", HERE)
-_Q_PINNING_WITNESS = __pb.witness_path("q-pinning-50-digit.witness.json", HERE)
+_BETA_DECAY_WITNESS = _pb.witness_path("beta-decay-energy-scale.witness.json", _HERE)
+_Q_PINNING_WITNESS = _pb.witness_path("q-pinning-50-digit.witness.json", _HERE)
 
 
 @lru_cache(maxsize=None)
