@@ -14,4 +14,5 @@ export default definition({
     "unfolding",
     "dressing",
   ],
+  uses: ["def:confined-particle", "prop:level-sufficiency"],
 });

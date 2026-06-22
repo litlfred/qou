@@ -16,5 +16,5 @@ export default proposition({
     ref: "qou:QOU.BraidsAndKnots.SkeinBarAntisymmetry.skein_bar_antisymmetry",
     validation: "not_checked",
   },
-  uses: [],
+  uses: ["def:bar-involution"],
 });

@@ -12,4 +12,5 @@ export default theorem({
     "emission-gaps",
     "jwst",
   ],
+  uses: ["prop:spectrahedral-phase-collapse"],
 });
