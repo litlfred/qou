@@ -662,6 +662,15 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   CAL-2 floor (absolute m_p / m_n / m_⁴He). Requires substrate-
   derivation of q_0, which the coordination ledger explicitly
   declined on 2026-05-08. Do **not** attempt without owner reversal.
+  - **Narrow owner reversal (2026-06-19, recorded 2026-06-22; PRs #2503 /
+    #2524).** The owner reversed this decline **only for the s5-so3 keystone
+    geometric-realization construction** — the differential-geometry /
+    WRT(S³/2I) build of the `W_λ` index (see
+    [`docs/coordination/s5-so3-keystone.md`](docs/coordination/s5-so3-keystone.md)).
+    That specific geometric `W_λ` build is **in scope**. The reversal is
+    narrow: it does **not** reopen fit-based q_0 derivation, and the `Δ_λ`
+    "no seventh fit-based ansatz" rule below **still stands**; any other
+    Subgoal-2 work still needs explicit owner sign-off.
 
 **Δ_λ gate (Track A blocker).** The per-isotope binding-energy
 formula `B(K) = m_e · Σ_λ y_λ χ^λ Δ_λ` requires per-partition Δ_λ
