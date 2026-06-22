@@ -93,7 +93,7 @@ def markov_trace_symbolic(Z, N, q, include_inter=True):
     50-dps reducer (`cross-check-trM-1ppb.witness.json`) at q_0:
       proton:   1.0653062286131670
       neutron:  0.9232332971861535
-      deuteron: 0.388286424047713  (`include_inter=True`)
+      deuteron: 0.388286471547713  (`include_inter=True`)
 
     Performance: y_λ has sqrt(q) factors that make `sp.cancel`
     catastrophic for the deuteron's n=6 partition sum.  Workaround:

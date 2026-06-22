@@ -177,8 +177,8 @@ def main() -> int:
     tr_M_check = sum(y_at_q0[p] * chi_at_q0[p] for p in parts_6)
     print(f"\n  Cross-validation:")
     print(f"    Σ_λ y_λ · χ^λ(β_D) = {mp.nstr(tr_M_check, 12)}")
-    print(f"    Closed-form ref    = 0.3882864240747888")
-    err_rel = abs(tr_M_check - mp.mpf("0.3882864240747888")) / mp.mpf("0.3882864240747888")
+    print(f"    Closed-form ref    = 0.3882864715477132")
+    err_rel = abs(tr_M_check - mp.mpf("0.3882864715477132")) / mp.mpf("0.3882864715477132")
     print(f"    rel error          = {float(err_rel):.2e}")
 
     # c_ℓ(λ) per partition × level ℓ ∈ {0..6}

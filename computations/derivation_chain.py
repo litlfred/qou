@@ -76,7 +76,7 @@ from q_parameter import Q as Q_0  # noqa: E402
 # Jones-Markov tr_M of the 11-crossing canonical braid at the
 # proton-pinned q₀:
 #
-#   p = 1.0653062286131670  n = 0.9232332971861535  D = 0.3882864240747888
+#   p = 1.0653062286131670  n = 0.9232332971861535  D = 0.3882864715477132
 #
 # Four independent production methods (`atomic_tr_m_mpfr_50dps`
 # Hoefsmit, `markov_peel`, chi-cache combiner, Habiro `a_m` integer
@@ -96,7 +96,7 @@ from q_parameter import Q as Q_0  # noqa: E402
 TR_M_AT_Q0: dict[str, float] = {
     "p": 1.0653062286131670,
     "n": 0.9232332971861535,
-    "D": 0.3882864240747888,
+    "D": 0.3882864715477132,
 }
 
 # ── 50-dps decimal-string companion to TR_M_AT_Q0 ──────────────────
@@ -111,7 +111,7 @@ TR_M_AT_Q0: dict[str, float] = {
 TR_M_AT_Q0_50DPS: dict[str, str] = {
     "p":  "1.0653062286131670593652845464313725576506616741351",
     "n":  "0.92323329718615355710525339599068604013866212190134",
-    "D":  "0.38828642407478887671153751312935209344259947275515",
+    "D":  "0.3882864715477132785110659223165687998713135876719",
 }
 
 # Default Model B (SDP-canonical low-strand) τ_M values at q_0 ───────

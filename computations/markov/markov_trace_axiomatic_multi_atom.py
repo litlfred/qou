@@ -37,7 +37,7 @@ canonical interface requires.  For canonical |tr_M(deuteron)|, use:
     → atomic-tr-m-mpfr-50dps.witness.json
 
 which uses tr_M_via_wenzl_bridge_mpfr.py + atom_braid_word_3A and
-gives |tr_M(β_D)| = 0.388286424074788819620628617786 (canonical).
+gives |tr_M(β_D)| = 0.388286471547713278511065922316 (canonical).
 
 Disjoint multiplicativity tr_M(α ⊗ β) = tr_M(α) · tr_M(β) is **only
 valid for genuine disjoint-cluster braids** (e.g. an unknot operator
