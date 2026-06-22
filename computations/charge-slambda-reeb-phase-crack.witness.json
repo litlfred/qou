@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T15:35:47.509065+00:00",
-  "commitSha": "eda70311ec6e676225371b0db08b5bfadc1b6d45",
+  "computedAt": "2026-06-22T18:31:04.827046+00:00",
+  "commitSha": "9a9cd8b081553578be23ebf440a19daeafa79774",
   "assertions": [
     {
       "name": "five_charge_blocks",
@@ -27,14 +27,22 @@
       "passed": true,
       "tolerance": 0,
       "source": "atomic q-Reeb phase reproduces split within 2× (universal ρ)"
+    },
+    {
+      "name": "channels_bracket_split",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "sinh-only (60%) < AME split < full cosh+sinh (118%) — tighter bracket"
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 67,
   "computation": "charge-slambda-reeb-phase-crack",
   "scriptFile": "charge_slambda_reeb_phase_crack.py",
-  "scriptHash": "093071ce1c5a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "98f8bf5c025f",
+  "scriptCommitSha": "ff2b84df77bb4280792ee316d7fc02778741c0b2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -62,8 +70,15 @@
     },
     "reeb_universal_rho": 18.4985,
     "reeb_split_prediction_MeV": 0.8982277694522247,
+    "channel_split": {
+      "cosh_strong_MeV": 0.4366243299599277,
+      "sinh_coulomb_MeV": 0.46160343949229693,
+      "cosh_mirror_asymmetry_pct": 5.8720159691466245,
+      "bracket_sinh_only_pct": 60.439866903959064,
+      "bracket_full_pct": 117.60910381179782
+    },
     "bare_fraction_of_split": 0.04423215355278021,
     "reeb_fraction_of_split": 1.176091038117978,
-    "verdict": "Charge-type S_λ SHAPE Z(Z−1)/A^{1/3} is forced (content-sum + BW); the MAGNITUDE cannot come from partition-only C_λ×count (GAP-A-4: p≡n≡³He at H_3). The real S_λ is the free-vs-atom q-Reeb phase |Δθ_λ| at H_{3A}: with universal ρ≈18.5 it gives the split to ~118% (right order) vs the partition-only 4.4% (22.6× short). The Coulomb channel sinh(log q)=h/2 is already inside C_λ=w̃_λ·h/2 (crossing-energy-decomposition.lean). Open residual: the universal-ρ normalisation (2% strong + ~18% Coulomb), not a missing partition formula. No fit; no rewire."
+    "verdict": "Charge-type S_λ SHAPE Z(Z−1)/A^{1/3} is forced (content-sum + BW); the MAGNITUDE cannot come from partition-only C_λ×count (GAP-A-4: p≡n≡³He at H_3). The real S_λ is the free-vs-atom q-Reeb phase |Δθ_λ| at H_{3A}: with universal ρ≈18.5 it gives the split to ~118% (right order) vs the partition-only 4.4% (22.6× short). The Coulomb channel sinh(log q)=h/2 is already inside C_λ=w̃_λ·h/2 (crossing-energy-decomposition.lean). ρ-normalisation push: the cosh(strong)/sinh(Coulomb) channel split BRACKETS the AME split — sinh-only 60% (under), full 118% (over); no no-fit closure to ~100%. The residual is the cosh/sinh mixing of the mirror split (a 5.9% spurious cosh mirror-asymmetry — mirror partners should have equal strong binding), not a missing partition formula. No fit; no rewire."
   }
 }

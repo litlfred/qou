@@ -95,6 +95,30 @@ def main() -> None:
     print(f"  phase sums: Σ(T)={float(S_T):.5f}  Σ(³He)={float(S_He3):.5f}  ΔΣ={float(dS):.5f}")
     print(f"  universal ρ={float(rho_univ):.3f}: split = ρ·ΔΣ = {float(reeb_split):.4f} MeV")
 
+    # ---- 2b. ρ-normalisation: cosh(strong) vs sinh(Coulomb) channel split ----
+    # strong_channel_rho (binding_rotation_phase_lead.py) zeros the inter-nucleon
+    # −h (sinh) term ⇒ cosh-only ρ; full−strong isolates the sinh/Coulomb channel.
+    # ρ values cited from binding-rotation-phase-lead.witness.json (d0 block).
+    print("\n=== 2b. ρ-normalisation: isolate the sinh (Coulomb) channel ===")
+    rho_strong = {"T": mp.mpf("19.9307"), "He3": mp.mpf("19.201")}   # cosh-only
+    Sstr_T, Sstr_He3 = B_T / rho_strong["T"], B_He3 / rho_strong["He3"]
+    Ssinh_T, Ssinh_He3 = S_T - Sstr_T, S_He3 - Sstr_He3
+    dS_cosh, dS_sinh = Sstr_T - Sstr_He3, Ssinh_T - Ssinh_He3
+    cosh_split, sinh_split = rho_univ * dS_cosh, rho_univ * dS_sinh
+    cosh_asym = Sstr_T / Sstr_He3 - 1
+    print(f"  Σ_sinh: T={float(Ssinh_T):.5f}  ³He={float(Ssinh_He3):.5f}   "
+          f"(³He carries less — but T>³He: not a clean pp count)")
+    print(f"  cosh-only split = ρ₀·ΔΣ_cosh = {float(cosh_split):.4f} MeV "
+          f"({float(cosh_split/split*100):.1f}%)")
+    print(f"  sinh-only split = ρ₀·ΔΣ_sinh = {float(sinh_split):.4f} MeV "
+          f"({float(sinh_split/split*100):.1f}%)")
+    print(f"  cosh mirror-asymmetry Σ_cosh(T)/Σ_cosh(³He)−1 = {float(cosh_asym)*100:.1f}% "
+          f"(ideal mirror = 0)")
+    print(f"  → BRACKET (tighter): sinh-only {float(sinh_split/split*100):.0f}% (under) "
+          f"< AME 100% < full {float(reeb_split/split*100):.0f}% (over).")
+    print(f"    No no-fit closure to ~100%; the residual is the cosh/sinh mixing of the")
+    print(f"    mirror split — a 5.9% spurious cosh mirror-asymmetry, not a missing scale.")
+
     # ---- 3. contrast + verdict ----
     print("\n=== 3. contrast (³He−³H split, AME = 0.764 MeV) ===")
     print(f"  partition-only  C_λ·Z(Z−1)·m_e = {float(bare_he3):.4f} MeV  "
@@ -121,6 +145,13 @@ def main() -> None:
     wb.data["reeb_phase_sums"] = {"T": float(S_T), "He3": float(S_He3), "delta": float(dS)}
     wb.data["reeb_universal_rho"] = float(rho_univ)
     wb.data["reeb_split_prediction_MeV"] = float(reeb_split)
+    wb.data["channel_split"] = {
+        "cosh_strong_MeV": float(cosh_split),
+        "sinh_coulomb_MeV": float(sinh_split),
+        "cosh_mirror_asymmetry_pct": float(cosh_asym) * 100,
+        "bracket_sinh_only_pct": float(sinh_split / split * 100),
+        "bracket_full_pct": float(reeb_split / split * 100),
+    }
     wb.data["bare_fraction_of_split"] = float(bare_he3 / split)
     wb.data["reeb_fraction_of_split"] = float(reeb_split / split)
     wb.data["verdict"] = (
@@ -129,8 +160,11 @@ def main() -> None:
         "is the free-vs-atom q-Reeb phase |Δθ_λ| at H_{3A}: with universal ρ≈18.5 it gives "
         "the split to ~118% (right order) vs the partition-only 4.4% (22.6× short). The "
         "Coulomb channel sinh(log q)=h/2 is already inside C_λ=w̃_λ·h/2 "
-        "(crossing-energy-decomposition.lean). Open residual: the universal-ρ normalisation "
-        "(2% strong + ~18% Coulomb), not a missing partition formula. No fit; no rewire.")
+        "(crossing-energy-decomposition.lean). ρ-normalisation push: the cosh(strong)/sinh"
+        "(Coulomb) channel split BRACKETS the AME split — sinh-only 60% (under), full 118% "
+        "(over); no no-fit closure to ~100%. The residual is the cosh/sinh mixing of the "
+        "mirror split (a 5.9% spurious cosh mirror-asymmetry — mirror partners should have "
+        "equal strong binding), not a missing partition formula. No fit; no rewire.")
     wb.add_assertion("five_charge_blocks", computed=len(charge), expected=5, tolerance=0,
                      source="partitions of 6 with content sum < 0")
     wb.add_assertion("partition_only_22x_short",
@@ -140,6 +174,10 @@ def main() -> None:
                      computed=1 if 0.5 < float(reeb_split / split) < 2.0 else 0,
                      expected=1, tolerance=0,
                      source="atomic q-Reeb phase reproduces split within 2× (universal ρ)")
+    wb.add_assertion("channels_bracket_split",
+                     computed=1 if float(sinh_split) < float(split) < float(reeb_split) else 0,
+                     expected=1, tolerance=0,
+                     source="sinh-only (60%) < AME split < full cosh+sinh (118%) — tighter bracket")
     wb.save()
     print("\n✓ Witness: charge-slambda-reeb-phase-crack.witness.json (audit-only; no fit)")
 
