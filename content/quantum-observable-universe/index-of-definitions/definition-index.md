@@ -810,7 +810,7 @@
 | [conj:n-v-leading-order-derivation](#conj:n-v-leading-order-derivation) | Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90) | Ch 13 | `qou:QOU.Observations.n_v_leading_order` |
 | [conj:levi-degeneracy](#conj:levi-degeneracy) | Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity | Ch 16 | `qou:QOU.FluidDynamics.LeviDegeneracy` |
 | [conj:lifted-crossing-locality](#conj:lifted-crossing-locality) | Locality of lifted-crossing contributions in the mass expansion | Ch 10 | `qou:QOU.ParticleInteractions.LiftedCrossingLocality` |
-| [conj:lusztig-canonical-basis-q-eq-1](#conj:lusztig-canonical-basis-q-eq-1) | Lusztig canonical basis at $q = 1$ — decategorification of Kashiwara crystal via Kazhdan–Lusztig polynomials | Ch 17 | `qou:QOU.BraidsAndKnots.LusztigCanonicalBasisQEqOne` |
+| [conj:lusztig-canonical-basis-q-eq-1](#conj:lusztig-canonical-basis-q-eq-1) | Lusztig canonical basis at $q = 1$ — decategorification of Kashiwara crystal via Kazhdan–Lusztig polynomials | Ch 17 | `qou:QOU.BraidsAndKnots.LusztigCanonicalBasisQEq1` |
 | [conj:magic-numbers-bring](#conj:magic-numbers-bring) | Magic numbers $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ as ranks of $S_5$-stable Bring period sub-lattices | Ch 2 | `qou:QOU.AlgebraicSubstrate.MagicNumbersBring` |
 | [conj:mass-volume-factorization](#conj:mass-volume-factorization) | Mass-volume factorization of the categorical mass endomorphism | Ch 10 | `qou:QOU.ParticleInteractions.MassVolumeFactorization` |
 | [conj:modular-s-transform-q-q-tilde](#conj:modular-s-transform-q-q-tilde) | Modular $S$-transform $q \leftrightarrow \tilde q = \exp(2\pi i / \tau)$ for Hecke parameter analytic continuation | Ch 20 | `qou:QOU.BraidsAndKnots.ModularSTransformQQTilde` |
