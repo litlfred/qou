@@ -1,9 +1,12 @@
 ---
 # 1osq
 title: Resolve 5 placeholders/TODOs in qou/lean/Substrate
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-06-22T02:25:51Z
-updated_at: 2026-06-22T02:25:51Z
+updated_at: 2026-06-22T12:15:21Z
 ---
 
+
+2026-06-22: PR #2599 — formalized ColorAntisymmetric open-work item (2): sign of an S_3 transposition = -1 (sorry-free, Gemini-clean) + fixed a latent /-- before section parse error. Landscape finding: the other Substrate placeholders are NOT mechanical — ProtonMassEMSignBlock is already fully proved; SDP dual_feas/obj_eq:True is intentional (real content in RealStrongDualityPair); FermiColorSinglet needs the (nonexistent) substrate-categorification machinery; Information stubs (reeb/toffoli/photon) are §3b-cond self-assuming projections needing class restructuring. Genuinely-provable sub-facts are rare and found via each module open-work docstring.
