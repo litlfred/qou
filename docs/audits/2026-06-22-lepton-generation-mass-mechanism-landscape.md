@@ -63,4 +63,4 @@ No fit; nothing wired; `c_k`/`Δ_λ` cal-anchored. The author closes the related
 - [`2026-06-03-m-tau-knot-prediction-falsification.md`](2026-06-03-m-tau-knot-prediction-falsification.md) — #1 falsified + #5 extensions.
 - [`2026-06-16-koide-tau-forcing-assessment.md`](2026-06-16-koide-tau-forcing-assessment.md) — #2 (Koide = fit).
 - [`2026-06-16-mtau-and-binding-converge-on-s5so3-keystone.md`](2026-06-16-mtau-and-binding-converge-on-s5so3-keystone.md) — #3 (Path A underdetermined).
-- `content/quantum-observable-universe/observations/calibration-inputs.md` — the "tau predicted from q₀ alone" claim this audit flags as unsubstantiated.
+- [`content/quantum-observable-universe/mass-theory/calibration-inputs.md`](../../content/quantum-observable-universe/mass-theory/calibration-inputs.md) — the "tau predicted from q₀ alone" claim this audit flags as unsubstantiated.
