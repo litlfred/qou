@@ -88,7 +88,7 @@ def main() -> int:
     pole_genuine = (qA_at_silver == 0) and (not silver_divides_delta)
 
     # --- numeric roots (mpmath, NO FLOAT) ---
-    q0 = mp.mpf("1.1099785827513808075916690956107688798744991218736")
+    q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
     qs = 1 + mp.sqrt(2)
 
     def hbar(x): return (x - 1) / x

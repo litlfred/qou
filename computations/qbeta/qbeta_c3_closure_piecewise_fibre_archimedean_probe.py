@@ -84,7 +84,7 @@ def c_3_closure(base, h_pieces):
 def main() -> int:
     # Constants defined inside main() per Gemini review (avoid
     # module-level magic numbers).
-    Q0_MP = mp.mpf("1.1099785827513808075916690956107688798744991218736")
+    Q0_MP = mp.mpf("1.1099785955573347198997632204832250266562084087802")
     C3_TARGET = mp.mpf("-2.069342577")
 
     t0 = time.monotonic()

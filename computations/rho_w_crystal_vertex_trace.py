@@ -63,7 +63,7 @@ from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
 # ----------------------------------------------------------------------------
 # Substrate constants (canonical; from the deuteron χ cache header).
 # ----------------------------------------------------------------------------
-Q0_STR = "1.1099785827513808075916690956107688798744991218736"
+Q0_STR = "1.1099785955573347198997632204832250266562084087802"
 # CODATA electron mass (MeV); matches docs/audits gating residual −4.353.
 M_E_MEV_STR = "0.51099895069"
 # B_D AME (MeV) — used ONLY to report the honest residual, never to fit.

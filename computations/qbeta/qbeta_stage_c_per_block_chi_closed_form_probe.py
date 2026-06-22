@@ -81,7 +81,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 
 def main() -> int:
-    Q0_STR = "1.1099785827513808075916690956107688798744991218736"
+    Q0_STR = "1.1099785955573347198997632204832250266562084087802"
     Q0 = mp.mpf(Q0_STR)
 
     t0 = time.monotonic()

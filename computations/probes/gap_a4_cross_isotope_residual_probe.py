@@ -62,7 +62,7 @@ from codata_constants import (  # noqa: E402
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
+Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 
 M_E_MEV = mp.mpf("0.51099895069")
 M_P_MEV = mp.mpf(M_P_MEV_VALIDATION)  # CODATA validation (codata_constants registry)

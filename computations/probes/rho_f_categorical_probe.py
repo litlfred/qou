@@ -95,7 +95,7 @@ if _peel.exists():
             _peel_data[(int(z), int(n))] = float(trm)
 
 # Hardcode from markov-peel witness (verified; see below)
-# These are the gold-standard values at q_0 = 1.1099785827513805, 50 dps.
+# These are the gold-standard values at q_0 = 1.1099785955573347, 50 dps.
 TR_M: dict[tuple[int, int], float] = {
     (1, 0): 1.0653061442544499,   # proton
     (0, 1): 0.9232332299116371,   # neutron
@@ -125,7 +125,7 @@ if _census_path.exists():
                 "rho_handpick":    r.get("rho_handpick"),
             }
 
-Q0 = 1.1099785827513805   # substrate parameter
+Q0 = 1.1099785955573347   # substrate parameter
 
 
 def q_integer(n: int, q: float = Q0) -> float:

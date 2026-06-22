@@ -64,7 +64,7 @@ try:
     from qou_substrate.constants import q_at
     Q0 = str(q_at())
 except Exception:
-    Q0 = "1.1099785827513808075916690956107688798744991218736"
+    Q0 = "1.1099785955573347198997632204832250266562084087802"
 
 
 def reduce_word(poly: sp.Poly, q: sp.Symbol, s: sp.Symbol) -> sp.Expr:

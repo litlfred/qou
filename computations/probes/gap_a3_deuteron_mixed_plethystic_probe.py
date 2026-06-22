@@ -58,7 +58,7 @@ COMPUTE_DIR = HERE.parent
 # Canonical anchors per the existing GAP-A-3 channels probe.
 # CODATA constants imported from the central registry per Gemini
 # review on PR #1899; M_E_MEV is re-cast to mp.mpf for precision.
-Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
+Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 VOL_HYP_D = mp.mpf("12.776")   # Phase-4 deuteron hyperbolic volume
 M_E_MEV = mp.mpf(str(M_E_MEV_RAW))
 B_D_MEV = mp.mpf("2.2245")

@@ -22,7 +22,7 @@ q₀, and degrade at the canonical m_p-pin q₀.
 THIS TEST applies the same decisive check to the d_k. The proton
 brane-tower witness (proton-brane-tower-correction-probe.witness.json)
 was computed at q₀ = 1.10997859555… — the STALE muon-pin. The canonical
-q₀ is now 1.10997858275… (m_p-pin, post-#1422). We recompute the d_k at
+q₀ is now 1.10997859556… (m_p-pin, post-#1422). We recompute the d_k at
 BOTH pins from the SAME substrate formula
 
     m_p/m_e (N=0) = 2·Vol/ℏ_q² · F_Bor(q) − 12,   d_k = (codata/N0 − 1)/u^k

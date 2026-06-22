@@ -64,7 +64,7 @@ mp.dps = 60
 try:
     from q_parameter import Q as q0, Q_INV as qi, HA
 except Exception:
-    q0 = mp.mpf("1.1099785827513808075916690956107688798744991218736")
+    q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
     qi = 1 / q0
     HA = q0 - qi
 

@@ -62,7 +62,7 @@ HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
 # Canonical 50-dps q₀ anchor — matches every chi-cache witness header.
-Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
+Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 
 
 # ── §1. Young-diagram box-adding (Bratteli induction H_n → H_{n+1}) ──

@@ -42,7 +42,7 @@ try:
     from q_parameter import Q_50_DIGIT_STR  # noqa: E402
     Q0 = float(Q_50_DIGIT_STR[:20])
 except Exception:
-    Q0 = 1.10997858275138
+    Q0 = 1.10997859555733
 
 
 def partitions_of(n):

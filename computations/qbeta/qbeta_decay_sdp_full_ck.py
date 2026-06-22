@@ -148,7 +148,7 @@ def main() -> None:
         "the audit claim that the c_k are tautologically determined by "
         "the precision-ladder structure once Q_β CODATA is input."
     )
-    w.add_parameter("q_0_50dps", str(mp.nstr(mpf(str(data["q"])), 50)) if "q" in data else "1.10997858275...")
+    w.add_parameter("q_0_50dps", str(mp.nstr(mpf(str(data["q"])), 50)) if "q" in data else "1.10997859556...")
     w.add_parameter("Q_AME_50dps", mp.nstr(Q_AME, 50))
     w.add_data("R_q0", mp.nstr(R_q0, 20))
     w.add_data("R_minus_1", mp.nstr(R_q0 - 1, 12))
