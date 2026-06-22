@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-12T19:54:48.336323+00:00",
-  "commitSha": "d39ac22a90e17a28eb1eb78b1350c20d3f6f18e0",
+  "computedAt": "2026-06-22T13:12:57.398770+00:00",
+  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
   "assertions": [
     {
       "name": "n=2 singlet multiplicity = 1 (EM uniqueness, cor:gauge-coupling-uniqueness)",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "alpha-k-four-strand-singlet-selection",
   "scriptFile": "alpha_k_four_strand_singlet_selection.py",
-  "scriptHash": "3eb57907ff3d",
-  "scriptCommitSha": "d39ac22a90e17a28eb1eb78b1350c20d3f6f18e0",
+  "scriptHash": "2013522ec20d",
+  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,14 +54,15 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "alpha_{basis-knot} per-force selection scoping: the even-strand singlet ladder dim Hom(1, A^{(x) n}) = 0 (n odd) / Catalan(n/2) (n even) for the SU_q(2) fundamental at generic q (exact integer Clebsch-Gordan walk; pre-archimedean).  n=2 gives the UNIQUE EM coupling slot (matches thm:em-spectral-completeness / cor:gauge-coupling-uniqueness, the trivial/unknot channel V_- ~ 1); n=4 gives exactly TWO independent scalar-coupling slots — the same count as the remaining knot-mediated short-range forces (strong T_{2,9}, weak T_{3,5}) in the established role table (prop:cohomological-embedding consequence 3).  The forced TL Gram matrix [[d^2,d],[d,d^2]] (d=[2]_q) on the n=4 slot space has eigenvalues d(d+/-1) on the symmetric/antisymmetric (bar-odd) combinations.  Tier: structural observation / selection-rule candidate; coupling VALUES not derived (gated on conj:e-hartree-categorical-derivation); nothing compared to measured alpha_s/alpha_W (anti-fishing).",
   "contentBlock": "thm:em-spectral-completeness",
   "data": {
-    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
-    "delta_2q": "2.010896866707122299752491978091862815889240748484132916763932425904622",
+    "q0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "delta_2q": "2.010896869119075760817663804500482703050793515912827546426218055303123",
     "singlet_ladder": {
       "1": 0,
       "2": 1,
@@ -73,10 +74,10 @@
       "8": 14
     },
     "gram_n4_cup_basis": {
-      "diag": "4.04370620853252198940201933567738830976821396071350610903595079685529",
-      "off": "2.010896866707122299752491978091862815889240748484132916763932425904622",
-      "eig_symmetric_d_dplus1": "6.054603075239644289154511313769251125657454709197639025799883222759912",
-      "eig_antisymmetric_d_dminus1": "2.032809341825399689649527357585525493878973212229373192272018370950668"
+      "diag": "4.043706218232901310218245085543603031666341751884671890987563520452577",
+      "off": "2.010896869119075760817663804500482703050793515912827546426218055303123",
+      "eig_symmetric_d_dplus1": "6.0546030873519770710359088900440857347171352677974994374137815757557",
+      "eig_antisymmetric_d_dminus1": "2.032809349113825549400581281043120328615548235971844344561345465149453"
     },
     "finding": "Selection-rule candidate (structural, conditional): braid-invariant scalar couplings exist only at even strand counts, with multiplicity 1, 2, 5 at n = 2, 4, 6.  The unique n=2 slot is the established EM coupling (the trivial/unknot channel).  The n=4 sector provides exactly two independent slots — matching the two remaining knot-mediated forces (strong T_{2,9}, weak T_{3,5}); their forced Gram structure [[d^2,d],[d,d^2]] splits into symmetric/antisymmetric channels with eigenvalues d(d+/-1).  Deriving alpha_s/alpha_W VALUES from these slots requires the archimedean trace-ratio functor on the slot space and stays gated on conj:e-hartree-categorical-derivation.  No fitting; no comparison to experiment."
   }

@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-30T20:07:15.827511+00:00",
-  "commitSha": "ae14160fe162c3a3a8c23f588f9472010ed61e5b",
+  "computedAt": "2026-06-22T13:13:04.588512+00:00",
+  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
   "assertions": [
     {
       "name": "bring_shift_closes_bare_to_4ppm",
-      "computed": 4.26,
+      "computed": 4.18,
       "expected": 4.18,
       "passed": true,
       "tolerance": 0.2,
@@ -14,55 +14,52 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "alpha-em-categorical-reidentification",
   "scriptFile": "alpha_em_categorical_reidentification.py",
-  "scriptHash": "2c9d79c0904c",
-  "scriptCommitSha": "8cd964a992dbca7519eef126557382589371d3a5",
+  "scriptHash": "e5e57f192ecf",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Categorical re-identification of the framework's α_EM⁻¹ formula. The bare q·[9]_q·[10]_q is the TREE term; the framework's em-coupling-bring-zero-mode proposition adds a derived Bring zero-mode shift 2g/(4π(g−1)) = 2/(3π) at genus g=4 (Hodge/Gauss-Bonnet ratio), closing the residual from −1553 ppm to ~−4 ppm. A tentative α/(4π) next term reaches ~57 ppb but its derived form is open (the candidate 1/(2π·[2]_q) is 1.4% off — not it).",
   "data": {
     "inputs": {
-      "q0": "1.10997858275138080759166909561",
+      "q0": "1.10997859555733471989976322048",
       "CODATA_alpha_inv": "137.035999084",
       "CODATA_sigma_ppb": 0.15,
       "g_Bring": 4
     },
     "A_bare_tree": {
       "formula": "q · [9]_q · [10]_q",
-      "value": "136.82320885358",
-      "residual_ppm": -1552.8053346550205
+      "value": "136.82321965722",
+      "residual_ppm": -1552.7264966878706
     },
     "B_tree_plus_bring": {
       "formula": "A + 2g/(4π(g−1))  at g=4 = 2/(3π)",
       "bring_shift": "0.21220659078919",
-      "value": "137.03541544437",
-      "residual_ppm": -4.259024140541004,
-      "residual_ppb": -4259.024140541004,
+      "value": "137.03542624801",
+      "residual_ppm": -4.180186173391118,
+      "residual_ppb": -4180.186173391118,
       "hodge_gb_check": "0.21220659078919",
       "sphere_vol_check": "0.21220659078919"
     },
     "C_full_tentative": {
       "formula": "B + α/(4π)  with α taken from CODATA (next-order is OPEN)",
       "alpha_over_4pi": "0.00058070486644293",
-      "candidate_inv_2pi_bra2": "0.079146248485888",
+      "candidate_inv_2pi_bra2": "0.079146248390957",
       "ratio_check": "0.0073371117",
-      "value": "137.03599614924",
-      "residual_ppb": -21.415991408083972,
+      "value": "137.03600695288",
+      "residual_ppb": 57.42197574180181,
       "experimental_sigma_ppb": 0.15
     },
     "conclusion": {

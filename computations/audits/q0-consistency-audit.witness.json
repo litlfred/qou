@@ -1,7 +1,7 @@
 {
   "computation": "q0-consistency-audit",
   "description": "Scans compute scripts for stale pre-habiro q\u2080 literals (10997858275 / 858275) and stale-A tr_M leaf values (tr_M evaluated at A) that the 2026-06-22 cluster-A migration replaced with the canonical C values. production-hardcode entries are real bugs (a live constant kept at the stale value); stale-docstring are cosmetic; legit-muon-xcheck are the intentional muon cross-check.",
-  "timestamp": "2026-06-22T12:44:02.279693+00:00",
+  "timestamp": "2026-06-22T13:13:43.411276+00:00",
   "canonical_q0_source": "q_parameter.q_at() / Q_50_DIGIT_STR (proton pin, habiro-refined)",
   "stale_pre_habiro_q0": "1.10997858275138080759\u2026",
   "canonical_proton_q0": "1.10997859555733471989\u2026",

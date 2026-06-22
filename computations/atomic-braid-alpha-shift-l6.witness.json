@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-29T14:36:21.108047+00:00",
-  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
+  "computedAt": "2026-06-22T13:13:34.732453+00:00",
+  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
   "assertions": [
     {
       "name": "alpha_shift_equals_word_length_disjoint",
@@ -22,16 +22,22 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 18,
   "computation": "atomic-braid-alpha-shift-l6",
   "scriptFile": "atomic_braid_alpha_shift_l6.py",
-  "scriptHash": "8ba8abb5781d",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptHash": "fd339d83491a",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "L6 advance: extends the AXKIA-style α_shift = k·(p−1) table from torus-knot interfaces to atomic-braid words for A=1..4. Per-atom α_shift_total (sum over cycle factors) is compared to ℓ(K, q) (max GS-filtration grade). For disjoint-cluster words their ratio is identically 1, validating the column-rich pole-order formula at the atomic-braid level.",
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
@@ -40,7 +46,7 @@
     "conditional_on": [
       "conj:crystal-graph-realization"
     ],
-    "q_0": 1.1099785827513808,
+    "q_0": 1.1099785955573347,
     "atoms": [
       {
         "atom": "p",
