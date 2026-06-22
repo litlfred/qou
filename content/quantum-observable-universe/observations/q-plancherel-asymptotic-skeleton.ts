@@ -22,4 +22,5 @@ export default proposition({
     "thoma-simplex",
     "partly-established",
   ],
+  uses: ["prop:wedderburn-weight-canonical", "prop:algebraic-gns-embedding"],
 });

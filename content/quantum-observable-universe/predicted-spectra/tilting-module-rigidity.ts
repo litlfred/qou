@@ -12,4 +12,5 @@ export default lemma({
     "tilting-module",
     "rigidity",
   ],
+  uses: ["prop:spectrahedral-phase-collapse"],
 });

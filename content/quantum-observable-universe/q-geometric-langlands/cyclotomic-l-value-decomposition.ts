@@ -27,4 +27,5 @@ export default proposition({
     "theorem-level",
     "analytic-number-theory-bridge",
   ],
+  uses: ["prop:cyclotomic-dimension-synthesis-all-depths"],
 });

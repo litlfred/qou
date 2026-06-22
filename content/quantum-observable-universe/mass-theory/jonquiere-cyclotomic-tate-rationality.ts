@@ -27,4 +27,5 @@ export default proposition({
     "graded-mikusinski",
     "theorem-level",
   ],
+  uses: ["prop:cyclotomic-trilog-imaginary-closed-form"],
 });
