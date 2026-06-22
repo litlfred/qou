@@ -51,22 +51,34 @@ instance : CommRing S.R := S.comm
 def lambdaPlus : S.R := S.qHalf
 def lambdaMinus : S.R := -((S.qHalf⁻¹ : S.Rˣ) : S.R)
 
-/-- **External axiom (Jones 1987): λ₊ − λ₋ = [2]_q · q^{−1/2} is a
-    unit in R** (the Hecke deformation is invertible by SpectralRing
-    construction). -/
--- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
---      — Jones, "Hecke algebra representations of braid groups and link
---      polynomials," Ann. Math. 126 (1987). Verified against the
---      published version.
-axiom eigenvalues_distinct_axiom (S : SpectralRing) :
-    IsUnit (lambdaPlus S - lambdaMinus S)
+/-- The two eigenvalues of the categorical braiding are distinct:
+    `λ₊ − λ₋ = qHalf + qHalf⁻¹` is a unit in `R`.
 
-/-- The eigenvalues are distinct: `λ₊ - λ₋ = [2]_q · q^{-1/2}`,
-    a unit in `R`. -/
--- Ref: [manuscript] §5/em-spectral-completeness
+    Proof: `(qHalf + qHalf⁻¹)(qHalf − qHalf⁻¹) = qHalf² − qHalf⁻² =
+    q − q⁻¹`, a unit by the `SpectralRing.qDiff_unit` field
+    (`qHalf² = q` via `qHalf_sq`; `qHalf⁻² = q⁻¹` as units); a factor
+    of a unit is a unit (`isUnit_of_mul_isUnit_left`).  Previously an
+    `axiom` citing Jones 1987; the unit algebra discharges it from the
+    `SpectralRing` fields directly. -/
+-- Ref: [jones1987] §3–§4 (Hecke representations of braid groups; the
+--      standard-block braiding eigenvalues q and −q⁻¹)
 theorem eigenvalues_distinct :
-    IsUnit (lambdaPlus S - lambdaMinus S) :=
-  eigenvalues_distinct_axiom S
+    IsUnit (lambdaPlus S - lambdaMinus S) := by
+  have hqh : S.qHalf * S.qHalf = S.q :=
+    Units.ext (by rw [Units.val_mul]; exact S.qHalf_sq)
+  have h2 : ((S.qHalf⁻¹ : S.Rˣ) : S.R) * ((S.qHalf⁻¹ : S.Rˣ) : S.R)
+      = ((S.q⁻¹ : S.Rˣ) : S.R) := by
+    rw [← Units.val_mul, ← mul_inv, hqh]
+  have key : (lambdaPlus S - lambdaMinus S)
+        * ((S.qHalf : S.R) - ((S.qHalf⁻¹ : S.Rˣ) : S.R))
+      = (S.q : S.R) - ((S.q⁻¹ : S.Rˣ) : S.R) := by
+    simp only [lambdaPlus, lambdaMinus, sub_neg_eq_add]
+    have expand : ((S.qHalf : S.R) + ((S.qHalf⁻¹ : S.Rˣ) : S.R))
+          * ((S.qHalf : S.R) - ((S.qHalf⁻¹ : S.Rˣ) : S.R))
+        = (S.qHalf : S.R) * (S.qHalf : S.R)
+          - ((S.qHalf⁻¹ : S.Rˣ) : S.R) * ((S.qHalf⁻¹ : S.Rˣ) : S.R) := by ring
+    rw [expand, S.qHalf_sq, h2]
+  exact isUnit_of_mul_isUnit_left (key ▸ S.qDiff_unit)
 
 /-- The minimal polynomial of the categorical braiding factors
     over `R` into linear factors with distinct unit roots. -/
