@@ -88,6 +88,35 @@ shadow-price lens. The crack resolves the *structure* of the open item:
 
 No production path is rewired; no constant is fitted.
 
+## ρ-normalisation push — cosh(strong) vs sinh(Coulomb) channel split
+
+Attacking the residual ~18% overshoot by isolating the sinh/Coulomb channel
+(`strong_channel_rho` in
+[`binding_rotation_phase_lead.py`](../../computations/binding_rotation_phase_lead.py)
+zeros the inter-nucleon `−h` sinh term on every 3rd generator ⇒ a cosh-only
+"strong" ρ; `full − strong` is the sinh channel). Using the witness `d0` block
+(ρ_full T=18.346/³He=18.652; ρ_strong T=19.931/³He=19.201) and universal
+ρ₀ = 18.5:
+
+| channel of the ³H−³He split | split (MeV) | vs AME |
+|---|---|---|
+| sinh-only (Coulomb) `ρ₀·ΔΣ_sinh` | 0.462 | **60%** (under) |
+| cosh-only (strong) `ρ₀·ΔΣ_cosh` | 0.437 | 57% |
+| full (cosh+sinh) `ρ₀·ΔΣ_full` | 0.898 | **118%** (over) |
+
+**Outcome (honest — no closure):** isolating the sinh channel does **not** pin
+the split to ~100% without a fit. Instead it (i) **tightens the bracket** to
+`(60%, 118%)` — much tighter than the prior `(4%, 127%)` — and (ii) **localises
+the residual**: the mirror split is ~half cosh / ~half sinh, and the cosh
+channel carries a **5.9% spurious mirror-asymmetry** (`Σ_cosh(³H)/Σ_cosh(³He) − 1
+= 5.9%`, where ideal mirror partners must be equal). A perfectly
+charge-symmetric strong channel would push the split into the sinh channel
+(60%, undershoot); the observed cosh asymmetry adds the rest to overshoot at
+118%. **Whether that cosh asymmetry is physical (charge-symmetry breaking) or a
+braid-word construction artifact is the residual open piece** — it is *not* a
+missing scale and *not* a fit. The Coulomb scale lies inside the bracket; pinning
+it remains gated (CAL-4 / Δ_λ).
+
 ## Lean status
 
 **No new Lean.** The two structural inputs are already formalised/witnessed: the
