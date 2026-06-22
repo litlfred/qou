@@ -1,5 +1,5 @@
 /-!
-# QOU.ArchimedeanUniverse.mi_sw_cartan_reduction — placeholder stub
+# QOU.ArchimedeanUniverse.mi_sw_cartan_reduction
 
 **Placeholder canonical** for content block
 [`lem:mi-sw-abelianisation-cartan`](../../../quantum-observable-universe/archimedean-universe/mi-sw-abelianisation-cartan.md): *Cartan reduction recovers the Seiberg--Witten differential*.
@@ -46,6 +46,6 @@ $$
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/mi-sw-abelianisation-cartan.ts
 theorem mi_sw_cartan_reduction [ctx : MiSwCartanReductionContext] :
     ctx.A_0 = ctx.X_dz ∧ ctx.X_dz = ctx.lambda_SW :=
-  ctx.claim_mi_sw_cartan_reduction
+  sorry
 
 end QOU.ArchimedeanUniverse

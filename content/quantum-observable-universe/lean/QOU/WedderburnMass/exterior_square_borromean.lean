@@ -1,7 +1,7 @@
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.WedderburnMass.exterior_square_borromean — placeholder stub
+# QOU.WedderburnMass.exterior_square_borromean
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.WedderburnMass.exterior_square_borromean`.

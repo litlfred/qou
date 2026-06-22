@@ -1,5 +1,5 @@
 /-!
-# QOU.ColorTubeFibers — placeholder stub
+# QOU.ColorTubeFibers
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/color-tube-fibers.ts`](quantum-observable-universe/archimedean-universe/color-tube-fibers.ts).

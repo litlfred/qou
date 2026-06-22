@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.FrobeniusSelfDualityForcesLPDualExtraction — placeholder stub
+# QOU.BraidKnot.FrobeniusSelfDualityForcesLPDualExtraction
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/frobenius-self-duality-forces-lp-dual-extraction.ts`](quantum-observable-universe/braids-and-knots/frobenius-self-duality-forces-lp-dual-extraction.ts).

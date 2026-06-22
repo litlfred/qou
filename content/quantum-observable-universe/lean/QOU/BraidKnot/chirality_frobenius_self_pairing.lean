@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.chirality_frobenius_self_pairing — placeholder stub
+# QOU.BraidKnot.chirality_frobenius_self_pairing
 
 **Placeholder canonical** for content block
 [`prop:chirality-from-frobenius-self-pairing`](../../../quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.md): *QOU.BraidKnot.chirality_frobenius_self_pairing*.

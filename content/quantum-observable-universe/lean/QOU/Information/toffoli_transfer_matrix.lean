@@ -1,7 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-!
-# QOU.Information.toffoli_transfer_matrix — placeholder stub
+# QOU.Information.toffoli_transfer_matrix
 
 **Placeholder canonical** for content block
 [`prop:toffoli-transfer-matrix`](../../../quantum-observable-universe/information-theory/toffoli-transfer-matrix.md): *QOU.Information.toffoli_transfer_matrix*.

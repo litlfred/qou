@@ -2,7 +2,7 @@ import Mathlib.Data.Real.Basic
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.BraidsKnots.tmli_constituent_composite_agreement — placeholder stub
+# QOU.BraidsKnots.tmli_constituent_composite_agreement
 
 **Placeholder canonical** for content block
 [`lem:tmli-constituent-composite-agreement`](../../../quantum-observable-universe/braids-and-knots/tmli-constituent-composite-agreement.md): *Constituent and composite Markov-trace evaluations agree exactly*.

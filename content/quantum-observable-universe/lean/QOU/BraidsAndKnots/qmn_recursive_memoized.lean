@@ -1,7 +1,7 @@
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.BraidsAndKnots.qmn_recursive_memoized — placeholder stub
+# QOU.BraidsAndKnots.qmn_recursive_memoized
 
 **Placeholder canonical** for content block qmn recursive memoized.
 

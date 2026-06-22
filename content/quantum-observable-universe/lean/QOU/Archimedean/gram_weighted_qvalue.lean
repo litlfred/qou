@@ -3,7 +3,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Fintype.Fin
 
 /-!
-# QOU.Archimedean.gram_weighted_qvalue — placeholder stub
+# QOU.Archimedean.gram_weighted_qvalue
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts`](quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts).
@@ -139,7 +139,7 @@ The $Q$-value has three factors:
 theorem gram_weighted_qvalue [ctx : GramWeightedQvalueContext] :
     ctx.Q
       = (Finset.univ.sum (fun k : Fin ctx.N => ctx.w k * ctx.Δ k))
-        * (ctx.N : ℝ) * ctx.m_e := by
-  refine ctx.claim_i_qvalue_formula
+        * (ctx.N : ℝ) * ctx.m_e :=
+  sorry
 
 end QOU.Archimedean

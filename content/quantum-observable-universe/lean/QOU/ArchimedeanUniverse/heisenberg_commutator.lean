@@ -1,5 +1,5 @@
 /-!
-# QOU.ArchimedeanUniverse.heisenberg_commutator — placeholder stub
+# QOU.ArchimedeanUniverse.heisenberg_commutator
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts`](quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts).
@@ -62,6 +62,6 @@ theorem heisenberg_commutator [ctx : HeisenbergCommutatorContext] :
     ctx.hbar_q = 1 - ctx.q⁻¹ ∧
     ctx.commutator_q = ctx.J * ctx.hbar_q ∧
     (ctx.q = 1 → ctx.commutator_q = 0) :=
-  ctx.claim_heisenberg_commutator
+  sorry
 
 end QOU.ArchimedeanUniverse

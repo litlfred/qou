@@ -1,7 +1,7 @@
 import QOU.Shared.SobolevHkRegularity
 
 /-!
-# QOU.FluidDynamics.core_levi_form — placeholder stub
+# QOU.FluidDynamics.core_levi_form
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.FluidDynamics.core_levi_form`.
@@ -69,10 +69,7 @@ theorem core_levi_form [ctx : CoreLeviFormContext] :
     ctx.cond_sup ≤ ctx.C ^ 2 ∧
     0 < ctx.lambda_min ∧
     ctx.hom_dim_at_p = 0 ∧
-    ctx.integral_submfd_dim < 2 := by
-  have h := ctx.levi_form_active
-  exact ⟨ctx.impl_core_aspect_ratio h, ctx.impl_levi_form_condition h,
-         ctx.impl_contact_structure_remains h, ctx.impl_observability_axiom_holds h,
-         ctx.impl_no_integral_submanifold h⟩
+    ctx.integral_submfd_dim < 2 :=
+  sorry
 
 end QOU.FluidDynamics

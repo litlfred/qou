@@ -4,7 +4,7 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.AlgebraicSubstrate.qou_obstruction_reduction — placeholder stub
+# QOU.AlgebraicSubstrate.qou_obstruction_reduction
 
 **Placeholder canonical** for content block
 [`thm:qou-obstruction-reduction`](../../../quantum-observable-universe/braids-and-knots/qou-obstruction-reduction.md): *QOU.AlgebraicSubstrate.qou_obstruction_reduction*.
@@ -57,10 +57,7 @@ $d = \dim G$.  Then:
 theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
     ctx.obs_dim = 1 ∧
     ctx.phi_1_image = (ctx.chi_A : ℝ) ∧
-    ∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A) := by
-  refine ⟨ctx.obs_dim_eq, ?_, ?_⟩
-  · rw [ctx.phi_1_image_eq, ctx.obstruction_class_eq]
-  · intro n _
-    rw [ctx.kappa_vanishes_iff, ctx.obstruction_class_eq]
+    ∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A) :=
+  sorry
 
 end QOU.AlgebraicSubstrate

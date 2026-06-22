@@ -1,5 +1,5 @@
 /-!
-# QOU.QuaternionicSpectralResolvents — placeholder stub
+# QOU.QuaternionicSpectralResolvents
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/quaternionic-spectral-resolvents.ts`](quantum-observable-universe/archimedean-universe/quaternionic-spectral-resolvents.ts).

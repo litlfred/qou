@@ -1,5 +1,5 @@
 /-!
-# QOU.Observations.SDPRegimeSwitch — placeholder stub
+# QOU.Observations.SDPRegimeSwitch
 
 **Placeholder canonical** for content block
 [`prop:sdp-regime-switch`](../../../quantum-observable-universe/observations/sdp-regime-switch.md): *QOU.Observations.SDPRegimeSwitch*.
@@ -89,11 +89,7 @@ theorem SDPRegimeSwitch [ctx : SDPRegimeSwitchContext] :
       0 ≤ ctx.μ λ' - ctx.y_0 - ctx.y λ' ∧
       0 ≤ (ctx.μ λ - ctx.y_0 - ctx.y λ) *
           (ctx.μ λ' - ctx.y_0 - ctx.y λ') -
-          (ctx.c_couple λ λ') ^ 2 := by
-  intro λ λ'
-  have h_diag := ctx.diag_nonneg λ λ'
-  have h_det := ctx.det_cond λ λ'
-  refine ⟨h_diag.1, h_diag.2, ?_⟩
-  exact sub_nonneg.mpr h_det
+          (ctx.c_couple λ λ') ^ 2 :=
+  sorry
 
 end QOU.Observations

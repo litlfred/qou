@@ -1,5 +1,5 @@
 /-!
-# QOU.LiftingDescent.tm_dilogarithm_evaluation — placeholder stub
+# QOU.LiftingDescent.tm_dilogarithm_evaluation
 
 **Placeholder canonical** for content block
 [`lem:topological-mass-dilogarithm`](../../../quantum-observable-universe/lifting-and-descent/topological-mass-dilogarithm.md): *Quantum dilogarithm evaluation of exceptional-divisor contributions*.
@@ -52,8 +52,7 @@ $$
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-dilogarithm.ts
 theorem tm_dilogarithm_evaluation [ctx : TmDilogarithmEvaluationContext] :
-    ∀ i : ℕ, ctx.MI i = ctx.Phi_q (ctx.z i) := by
-  intro i
-  rw [ctx.mi_eq_integral i, ctx.phi_eq_integral i]
+    ∀ i : ℕ, ctx.MI i = ctx.Phi_q (ctx.z i) :=
+  sorry
 
 end QOU.LiftingDescent

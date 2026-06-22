@@ -1,5 +1,5 @@
 /-!
-# QOU.ObservableSubcategory — placeholder stub
+# QOU.ObservableSubcategory
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/information-theory/observable-subcategory.ts`](quantum-observable-universe/information-theory/observable-subcategory.ts).

@@ -2,7 +2,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.ParticleInteractions.PerNucleonChannelDecomposition — placeholder stub
+# QOU.ParticleInteractions.PerNucleonChannelDecomposition
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.ParticleInteractions.PerNucleonChannelDecomposition`.
@@ -52,7 +52,7 @@ of $H_3(q)$.
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts
 theorem PerNucleonChannelDecomposition [ctx : PerNucleonChannelDecompositionContext] :
-    ctx.M = (Finset.univ.prod fun m : Fin ctx.A => ctx.M_m m) := by
-  rw [ctx.h_M, ctx.h_prod]
+    ctx.M = (Finset.univ.prod fun m : Fin ctx.A => ctx.M_m m) :=
+  sorry
 
 end QOU.ParticleInteractions

@@ -1,5 +1,5 @@
 /-!
-# QOU.ParticleInteractions.parity_regime_selection — placeholder stub
+# QOU.ParticleInteractions.parity_regime_selection
 
 **Placeholder canonical** for content block
 [`thm:parity-regime-selection`](../../../quantum-observable-universe/particle-interactions/parity-regime-selection.md): *QOU.ParticleInteractions.parity_regime_selection*.
@@ -77,8 +77,7 @@ theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] :
     ctx.sign_val = (-(1 : ℝ)) ^ (ctx.A - 1) ∧
     (Odd ctx.A → 3 ≤ ctx.A → ctx.Q_value = |ctx.S_Delta| * ctx.m_e) ∧
     (Even ctx.A → ctx.Q_value = (ctx.Sigma_FP + 1) * ctx.m_e) ∧
-    (ctx.A = 1 → ctx.Q_value = (ctx.S_Delta + 1) * ctx.m_e) := by
-  refine ⟨ctx.claim_i_sign_identity, ctx.claim_ii_odd_A_regime,
-   ctx.claim_iii_even_A_regime, ctx.claim_iv_A_one_neutron_decay⟩
+    (ctx.A = 1 → ctx.Q_value = (ctx.S_Delta + 1) * ctx.m_e) :=
+  sorry
 
 end QOU.ParticleInteractions

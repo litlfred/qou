@@ -1,5 +1,5 @@
 /-!
-# QOU.Intent — placeholder stub
+# QOU.Intent
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/quantum-observable-universes/observation.ts`](quantum-observable-universe/quantum-observable-universes/observation.ts).

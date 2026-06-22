@@ -1,5 +1,5 @@
 /-!
-# QOU.Interactions.confinementUniversality — placeholder stub
+# QOU.Interactions.confinementUniversality
 
 **Placeholder canonical** for content block
 [`prop:confinement-universality`](../../../quantum-observable-universe/particle-interactions/confinement-universality.md): *Confinement universality: nucleon NF independent of photon polarization*.
@@ -63,8 +63,7 @@ The derivation chain has two stages:
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-universality.ts
 theorem confinementUniversality [ctx : ConfinementUniversalityContext] :
-    ∀ (φ_0 φ_1 φ_01 : ℝ), ctx.N_F φ_0 φ_1 φ_01 = ctx.N_F 0 0 0 := by
-  intro φ_0 φ_1 φ_01
-  rw [ctx.h_N_F, ctx.h_N_F_zero]
+    ∀ (φ_0 φ_1 φ_01 : ℝ), ctx.N_F φ_0 φ_1 φ_01 = ctx.N_F 0 0 0 :=
+  sorry
 
 end QOU.Interactions

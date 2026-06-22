@@ -3,7 +3,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Fintype.Fin
 
 /-!
-# QOU.Archimedean.skein_finiteness_bound — placeholder stub
+# QOU.Archimedean.skein_finiteness_bound
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/skein-finiteness-bound.ts`](quantum-observable-universe/archimedean-universe/skein-finiteness-bound.ts).
@@ -131,9 +131,7 @@ theorem skein_finiteness_bound [ctx : SkeinFinitenessBoundContext] :
     ctx.P
       = (Finset.univ.prod (fun i : Fin (ctx.Z + ctx.N - 1) => ctx.V i)) ∧
     (ctx.is_stable ↔ ∀ i : Fin (ctx.Z + ctx.N - 1), 0 < ctx.V i) ∧
-    Finite ctx.StableConfig := by
-  refine ⟨ctx.claim_i_skein_factorisation,
-          ctx.claim_ii_per_generator_positivity,
-          ctx.claim_iii_stable_configurations_finite⟩
+    Finite ctx.StableConfig :=
+  sorry
 
 end QOU.Archimedean

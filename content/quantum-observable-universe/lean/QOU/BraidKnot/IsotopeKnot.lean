@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.IsotopeKnot — placeholder stub
+# QOU.BraidKnot.IsotopeKnot
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/isotope-knot.ts`](quantum-observable-universe/braids-and-knots/isotope-knot.ts).

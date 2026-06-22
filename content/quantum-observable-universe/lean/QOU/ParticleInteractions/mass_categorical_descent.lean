@@ -1,7 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
-# QOU.ParticleInteractions.mass_categorical_descent — placeholder stub
+# QOU.ParticleInteractions.mass_categorical_descent
 
 **Placeholder canonical** for content block
 [`prop:mass-categorical-descent`](../../../quantum-observable-universe/particle-interactions/mass-categorical-descent.md): *QOU.ParticleInteractions.mass_categorical_descent*.
@@ -60,9 +60,7 @@ for the recovered coefficients.
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/mass-categorical-descent.ts
 theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] :
     ctx.m = (Finset.range ctx.n_levels).sum (fun ℓ => ctx.m_level ℓ) ∧
-    |ctx.m - ctx.m_BW| ≤ ctx.rel_err := by
-  constructor
-  · exact ctx.claim_i_descent_decomposition
-  · exact ctx.claim_ii_BW_recovery
+    |ctx.m - ctx.m_BW| ≤ ctx.rel_err :=
+  sorry
 
 end QOU.ParticleInteractions

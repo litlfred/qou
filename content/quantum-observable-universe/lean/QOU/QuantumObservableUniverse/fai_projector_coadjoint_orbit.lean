@@ -1,5 +1,5 @@
 /-!
-# QOU.QuantumObservableUniverse.fai_projector_coadjoint_orbit — placeholder stub
+# QOU.QuantumObservableUniverse.fai_projector_coadjoint_orbit
 
 **Placeholder canonical** for content block
 [`lem:fai-projector-coadjoint-orbit`](../../../quantum-observable-universe/quantum-observable-universes/fai-projector-coadjoint-orbit.md): *Rank-1 projectors embed $\\mathbb{P}(V)$ as a coadjoint orbit in $\\mathrm{Ad}(A)$*.
@@ -49,7 +49,7 @@ coadjoint orbit in $\mathrm{Ad}(A)$.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fai-projector-coadjoint-orbit.ts
 theorem fai_projector_coadjoint_orbit [ctx : FaiProjectorCoadjointOrbitContext] :
-    ∀ v : ctx.V, ctx.twice_sigma_sq v = ctx.id_V v := by
-  exact ctx.twice_sigma_eq_id_of_projector ctx.ρ_proj
+    ∀ v : ctx.V, ctx.twice_sigma_sq v = ctx.id_V v :=
+  sorry
 
 end QOU.QuantumObservableUniverse

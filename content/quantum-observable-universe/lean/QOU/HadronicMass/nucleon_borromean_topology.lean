@@ -1,5 +1,5 @@
 /-!
-# QOU.HadronicMass.nucleon_borromean_topology — placeholder stub
+# QOU.HadronicMass.nucleon_borromean_topology
 
 **Placeholder canonical** for content block
 [`lem:nucleon-borromean-topology`](../../../quantum-observable-universe/observations/nucleon-borromean-topology.md): *Nucleon Borromean topology and Hopf-link binding*.
@@ -51,7 +51,7 @@ volume.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/nucleon-borromean-topology.ts
 theorem nucleon_borromean_topology [ctx : NucleonBorromeanTopologyContext] :
-    ctx.Vol_Hopf = 0 ∧ ctx.mass_volume = 0 ∧ ctx.mass_total = ctx.mass_skein := by
-  refine ⟨ctx.h_vol_hopf, ctx.h_mass_volume, ctx.h_mass_total⟩
+    ctx.Vol_Hopf = 0 ∧ ctx.mass_volume = 0 ∧ ctx.mass_total = ctx.mass_skein :=
+  sorry
 
 end QOU.HadronicMass

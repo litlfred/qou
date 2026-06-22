@@ -1,7 +1,7 @@
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.Brings.coral_elliptic — placeholder stub
+# QOU.Brings.coral_elliptic
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.Brings.coral_elliptic`.
@@ -49,6 +49,6 @@ theorem coral_elliptic [ctx : CoralEllipticContext] :
     ctx.X ^ 3 + (ctx.z + 1) * ctx.X ^ 2 +
       (ctx.z ^ 2 + ctx.z + 1) * ctx.X +
       (ctx.z ^ 3 + ctx.z ^ 2 + ctx.z + 1) = 0 :=
-  ctx.claim_coral_elliptic
+  sorry
 
 end QOU.Brings

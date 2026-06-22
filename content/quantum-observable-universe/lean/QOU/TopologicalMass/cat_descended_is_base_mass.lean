@@ -1,5 +1,5 @@
 /-!
-# QOU.TopologicalMass.cat_descended_is_base_mass — placeholder stub
+# QOU.TopologicalMass.cat_descended_is_base_mass
 
 **Placeholder canonical** for content block
 [`lem:topological-mass-cat-descended`](../../../quantum-observable-universe/braids-and-knots/topological-mass-cat-descended.md): *Descended term equals the base-level mass*.
@@ -41,7 +41,7 @@ $n+1$, and let $\varrho_0$ be its base-level descent.  Then
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-descended.ts
 theorem cat_descended_is_base_mass [ctx : CatDescendedIsBaseMassContext] :
-    ctx.α = ctx.base_mass := by
-  rw [ctx.h_alpha, ctx.h_base]
+    ctx.α = ctx.base_mass :=
+  sorry
 
 end QOU.TopologicalMass

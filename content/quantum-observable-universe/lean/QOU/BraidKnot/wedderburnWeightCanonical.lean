@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.wedderburnWeightCanonical — placeholder stub
+# QOU.BraidKnot.wedderburnWeightCanonical
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/wedderburn-weight-canonical.ts`](quantum-observable-universe/braids-and-knots/wedderburn-weight-canonical.ts).

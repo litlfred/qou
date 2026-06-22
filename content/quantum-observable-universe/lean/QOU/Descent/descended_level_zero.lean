@@ -1,5 +1,5 @@
 /-!
-# QOU.Descent.descended_level_zero — placeholder stub
+# QOU.Descent.descended_level_zero
 
 **Placeholder canonical** for content block
 [`prop:descended-level-zero`](../../../quantum-observable-universe/braids-and-knots/descended-level-zero.md): *QOU.Descent.descended_level_zero*.
@@ -42,6 +42,6 @@ jet level at which it is read off.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/descended-level-zero.ts
 theorem descended_level_zero [ctx : DescendedLevelZeroContext] :
     ∀ n : ℕ, 1 ≤ n → ctx.desc_contrib n = 0 :=
-  ctx.claim_descended_level_zero
+  sorry
 
 end QOU.Descent

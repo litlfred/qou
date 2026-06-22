@@ -1,7 +1,7 @@
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.Observations.brane_tower_q_laplacian_decay — placeholder stub
+# QOU.Observations.brane_tower_q_laplacian_decay
 
 **Placeholder canonical** for content block
 [`prop:brane-tower-q-laplacian-decay`](../../../quantum-observable-universe/observations/brane-tower-q-laplacian-decay.md): *Brane-tower convergence: q-Laplacian exponential decay drives the $\hbar_q^{2n}$ tail bound*.
@@ -61,9 +61,7 @@ contribution.*
 theorem brane_tower_q_laplacian_decay [ctx : BraneTowerQLaplacianDecayContext] :
     |ctx.T_rho - ctx.hbar_q ^ 2 * ctx.delta1_rho|
       ≤ ctx.hbar_q ^ 4 * ctx.rho_L2 *
-        (ctx.q_real ^ (-2 : ℤ) / (1 - ctx.q_real ^ (-2 : ℤ))) := by
-  have h := ctx.remainder_bound
-  rw [ctx.ratio_eq] at h
-  exact h
+        (ctx.q_real ^ (-2 : ℤ) / (1 - ctx.q_real ^ (-2 : ℤ))) :=
+  sorry
 
 end QOU.Observations

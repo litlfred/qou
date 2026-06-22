@@ -110,10 +110,10 @@ axiom bindingEnergy_R1_changes : ∀ K sign h,
 def shellNumber (w : Int) : ℕ := ((w - 1) / 2).toNat
 
 /-- Ground state trefoil has writhe 3, shell 1. -/
-theorem ground_state_shell : shellNumber 3 = 1 := by native_decide
+theorem ground_state_shell : shellNumber 3 = 1 := by decide
 
 /-- First excited state has writhe 5, shell 2. -/
-theorem first_excited_shell : shellNumber 5 = 2 := by native_decide
+theorem first_excited_shell : shellNumber 5 = 2 := by decide
 
 /-- Shell transition: two R-I moves (writhe +2) advances shell by 1. -/
 -- theorem shell_advance (w : Int) (hw : w ≥ 3) (hw_odd : w % 2 = 1) :  -- (archimedean; not meaningful over R_q)

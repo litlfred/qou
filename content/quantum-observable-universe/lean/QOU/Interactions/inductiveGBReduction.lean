@@ -1,5 +1,5 @@
 /-!
-# QOU.Interactions.inductiveGBReduction — placeholder stub
+# QOU.Interactions.inductiveGBReduction
 
 **Placeholder canonical** for content block
 [`prop:inductive-gb-reduction`](../../../quantum-observable-universe/particle-interactions/inductive-gb-reduction.md): *Inductive Gröbner--Shirshov reduction (polynomial scaling)*.
@@ -81,7 +81,7 @@ The key identity enabling this is the
 theorem inductiveGBReduction [ctx : InductiveGBReductionContext] :
     ctx.NF_size ctx.A ≤ Nat.choose (ctx.A - 1) ((ctx.A - 1) / 2) ∧
     ctx.n_multiplications ≤ ctx.A ^ 2 ∧
-    ctx.n_reduction_steps ≤ ctx.A ^ 3 := by
-  refine ⟨ctx.h_NF_size, ctx.h_multiplications, ctx.h_reduction_steps⟩
+    ctx.n_reduction_steps ≤ ctx.A ^ 3 :=
+  sorry
 
 end QOU.Interactions

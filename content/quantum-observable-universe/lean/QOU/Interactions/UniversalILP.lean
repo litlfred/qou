@@ -1,5 +1,5 @@
 /-!
-# QOU.Interactions.UniversalILP — placeholder stub
+# QOU.Interactions.UniversalILP
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.Interactions.UniversalILP`.
@@ -46,9 +46,7 @@ to quarks, nucleons, atoms, and molecules.*
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/universal-ilp-algorithm.ts
 theorem UniversalILP [ctx : UniversalILPContext] :
     ctx.n_levels = 4 ∧
-    ∀ ℓ : ℕ, ℓ < ctx.n_levels → ctx.gram_dim ℓ = ctx.gram_dim 0 := by
-  constructor
-  · exact ctx.h_n_levels
-  · exact ctx.h_gram_dim
+    ∀ ℓ : ℕ, ℓ < ctx.n_levels → ctx.gram_dim ℓ = ctx.gram_dim 0 :=
+  sorry
 
 end QOU.Interactions

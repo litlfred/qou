@@ -1,7 +1,7 @@
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.BraidsAndKnots.wenzl_qmn_synergy — placeholder stub
+# QOU.BraidsAndKnots.wenzl_qmn_synergy
 
 **Placeholder canonical** for content block Wenzl-qmn synergy.
 

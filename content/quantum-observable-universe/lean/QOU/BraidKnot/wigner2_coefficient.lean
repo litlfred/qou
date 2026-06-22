@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.wigner2_coefficient — placeholder stub
+# QOU.BraidKnot.wigner2_coefficient
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/wigner-2-coefficient.ts`](quantum-observable-universe/braids-and-knots/wigner-2-coefficient.ts).

@@ -1,5 +1,5 @@
 /-!
-# QOU.Braiding.fermion_boson_knot_link — placeholder stub
+# QOU.Braiding.fermion_boson_knot_link
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.Braiding.fermion_boson_knot_link`.

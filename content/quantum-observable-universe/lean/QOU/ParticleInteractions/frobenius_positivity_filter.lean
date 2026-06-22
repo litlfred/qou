@@ -1,5 +1,5 @@
 /-!
-# QOU.ParticleInteractions.frobenius_positivity_filter — placeholder stub
+# QOU.ParticleInteractions.frobenius_positivity_filter
 
 **Placeholder canonical** for content block
 [`prop:frobenius-positivity-filter`](../../../quantum-observable-universe/particle-interactions/frobenius-positivity-filter.md): *QOU.ParticleInteractions.frobenius_positivity_filter*.
@@ -67,9 +67,7 @@ In the discrete (branching) setting, it acts as a
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts
 theorem frobenius_positivity_filter [ctx : FrobeniusPositivityFilterContext] :
     ctx.claim_i_positivity_condition ∧
-    ctx.admissible_count = 4 ^ ctx.A - 2 ^ (ctx.A - 1) := by
-  constructor
-  · exact ctx.claim_i_positivity_condition
-  · exact ctx.claim_ii_exclusion_count
+    ctx.admissible_count = 4 ^ ctx.A - 2 ^ (ctx.A - 1) :=
+  sorry
 
 end QOU.ParticleInteractions

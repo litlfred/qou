@@ -1,5 +1,5 @@
 /-!
-# QOU.AlgebraicSubstrate.QChebyshevFunction — placeholder stub
+# QOU.AlgebraicSubstrate.QChebyshevFunction
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.ts`](quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.ts).

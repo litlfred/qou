@@ -1,5 +1,5 @@
 /-!
-# QOU.FluidDynamics.root_of_unity_truncation — placeholder stub
+# QOU.FluidDynamics.root_of_unity_truncation
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.FluidDynamics.root_of_unity_truncation`.
@@ -69,10 +69,7 @@ theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] :
     1 < ctx.q ∧ 2 ≤ ctx.κ ∧
     2 * ctx.j_max + 2 ≤ ctx.κ ∧
     ctx.κ_t ≤ 1 + ctx.C * (ctx.κ - 1 : ℝ) ∧
-    (ctx.nsBlowsUp ↔ ctx.leviNonDeg) := by
-  have h := ctx.truncation_active
-  exact ⟨ctx.impl_generic_qou_regime h, ctx.impl_root_unity h,
-         ctx.impl_classical_limit h, ctx.impl_bernstein_bound h,
-         ctx.impl_blowup_iff_levi_iff_kappa h⟩
+    (ctx.nsBlowsUp ↔ ctx.leviNonDeg) :=
+  sorry
 
 end QOU.FluidDynamics

@@ -1,5 +1,5 @@
 /-!
-# QOU.Experimental.local_substrate_q — placeholder stub
+# QOU.Experimental.local_substrate_q
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.Experimental.local_substrate_q`.
@@ -41,6 +41,6 @@ universe, the substrate parameter $q$
 -- Ref: [manuscript] quantum-observable-universe/observations/local-substrate-q.ts
 theorem local_substrate_q [ctx : LocalSubstrateQContext] :
     |ctx.q - ctx.q_measured| ≤ ctx.Δq :=
-  ctx.claim_local_substrate_q
+  sorry
 
 end QOU.Experimental

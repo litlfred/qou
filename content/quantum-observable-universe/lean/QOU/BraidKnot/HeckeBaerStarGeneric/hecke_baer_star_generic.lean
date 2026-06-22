@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.HeckeBaerStarGeneric.hecke_baer_star_generic — placeholder stub
+# QOU.BraidKnot.HeckeBaerStarGeneric.hecke_baer_star_generic
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/hecke-baer-star-generic.ts`](quantum-observable-universe/braids-and-knots/hecke-baer-star-generic.ts).

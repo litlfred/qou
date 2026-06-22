@@ -1,7 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
-# QOU.BraidsKnots.skein_mass_from_linking — placeholder stub
+# QOU.BraidsKnots.skein_mass_from_linking
 
 **Placeholder canonical** for content block
 [`lem:skein-mass-from-linking`](../../../quantum-observable-universe/braids-and-knots/skein-mass-from-linking.md): *Mass functional on a Skein resolution: linking-energy plus constituent volume*.

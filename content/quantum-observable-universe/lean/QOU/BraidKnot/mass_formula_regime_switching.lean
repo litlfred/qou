@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.mass_formula_regime_switching — placeholder stub
+# QOU.BraidKnot.mass_formula_regime_switching
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts`](quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts).

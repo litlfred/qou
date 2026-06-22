@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.Archimedean.archimedean_hartree_derivation — placeholder stub
+# QOU.Archimedean.archimedean_hartree_derivation
 
 **Placeholder canonical** for content block
 [`prop:archimedean-hartree-derivation`](../../../quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.md): *QOU.Archimedean.archimedean_hartree_derivation*.
@@ -72,7 +72,7 @@ the Hartree energy.*
 theorem archimedean_hartree_derivation [ctx : ArchimedeanHartreeDerivationContext] :
     ctx.rho_inf_Phi_M
       = ctx.Phi_M * ctx.m_e * ctx.c ^ 2 * ctx.α_EM ^ 2
-        * (ctx.q + ctx.q⁻¹) ^ (-(2 : ℤ)) := by
-  refine ctx.claim_archimedean_factorisation
+        * (ctx.q + ctx.q⁻¹) ^ (-(2 : ℤ)) :=
+  sorry
 
 end QOU.Archimedean

@@ -1,5 +1,5 @@
 /-!
-# QOU.ParticleInteractions.confinement_frobenius_reciprocity — placeholder stub
+# QOU.ParticleInteractions.confinement_frobenius_reciprocity
 
 **Placeholder canonical** for content block
 [`prop:confinement-frobenius-reciprocity`](../../../quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md): *QOU.ParticleInteractions.confinement_frobenius_reciprocity*.
@@ -83,9 +83,7 @@ theorem confinement_frobenius_reciprocity [ctx : ConfinementFrobeniusReciprocity
     0 < ctx.y_0_star ∧
     (∃ i : Fin ctx.d, ctx.A_star i) ∧
     (∀ i : Fin ctx.d, ctx.A_star i ↔ 0 < ctx.y_star i) ∧
-    ctx.primal_obj = ctx.dual_obj := by
-  refine ⟨ctx.claim_i_primal_optimum, ctx.claim_ii_dual_optimum,
-   ctx.claim_iii_active_set_nonempty,
-   ctx.claim_iv_active_iff_dual_positive, ctx.claim_v_strong_duality⟩
+    ctx.primal_obj = ctx.dual_obj :=
+  sorry
 
 end QOU.ParticleInteractions

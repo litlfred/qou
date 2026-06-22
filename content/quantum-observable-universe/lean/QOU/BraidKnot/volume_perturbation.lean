@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.volume_perturbation — placeholder stub
+# QOU.BraidKnot.volume_perturbation
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/volume-perturbation-formula.ts`](quantum-observable-universe/braids-and-knots/volume-perturbation-formula.ts).

@@ -1,5 +1,5 @@
 /-!
-# QOU.LiftingDescent.tm_eigenspace_decomp — placeholder stub
+# QOU.LiftingDescent.tm_eigenspace_decomp
 
 **Placeholder canonical** for content block
 [`lem:topological-mass-eigenspace-decomp`](../../../quantum-observable-universe/lifting-and-descent/topological-mass-eigenspace-decomp.md): *Eigenspace decomposition of the mass integrand (descent involution)*.
@@ -48,6 +48,6 @@ direct sums gives
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-eigenspace-decomp.ts
 theorem tm_eigenspace_decomp [ctx : TmEigenspaceDecompContext] :
     ctx.MI_alpha = ctx.MI_desc + ctx.MI_trans :=
-  ctx.additivity_of_orthogonal ctx.h_killing_orthogonal ctx.h_mi_additive
+  sorry
 
 end QOU.LiftingDescent

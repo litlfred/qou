@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.Archimedean.skew_poisson_integration — placeholder stub
+# QOU.Archimedean.skew_poisson_integration
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/models-of-qous/skew-poisson-integration.ts`](quantum-observable-universe/models-of-qous/skew-poisson-integration.ts).
@@ -72,9 +72,7 @@ theorem skew_poisson_integration [ctx : SkewPoissonIntegrationContext] :
     (∃ (f : ctx.G_mod_p → ctx.H) (g : ctx.H → ctx.G_mod_p),
       Function.LeftInverse g f ∧ Function.RightInverse g f) ∧
     Function.Injective ctx.deformation ∧
-    (∀ x : ctx.DistG, ctx.Frob_LHS x = ctx.Frob_RHS x) := by
-  refine ⟨ctx.claim_i_reduction_isomorphism,
-          ctx.claim_ii_distribution_deformation,
-          ctx.claim_iii_frobenius_preserved⟩
+    (∀ x : ctx.DistG, ctx.Frob_LHS x = ctx.Frob_RHS x) :=
+  sorry
 
 end QOU.Archimedean

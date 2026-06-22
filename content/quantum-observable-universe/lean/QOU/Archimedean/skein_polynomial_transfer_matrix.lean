@@ -4,7 +4,7 @@ import Mathlib.Data.Fintype.Fin
 import Mathlib.Data.Nat.Choose.Basic
 
 /-!
-# QOU.Archimedean.skein_polynomial_transfer_matrix — placeholder stub
+# QOU.Archimedean.skein_polynomial_transfer_matrix
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/skein-polynomial-transfer-matrix.ts`](quantum-observable-universe/archimedean-universe/skein-polynomial-transfer-matrix.ts).
@@ -114,8 +114,7 @@ theorem skein_polynomial_transfer_matrix [ctx : SkeinPolynomialTransferMatrixCon
     ctx.P
       = (Finset.univ.prod (fun i : Fin (ctx.Z + ctx.N - 1) => ctx.V i)) ∧
     ctx.degree ≤ (ctx.Z + ctx.N) ^ 2 - 1 ∧
-    ctx.n_mults = Nat.choose (ctx.Z + ctx.N) 2 := by
-  refine ⟨ctx.claim_i_factorisation, ctx.claim_ii_degree_bound,
-          ctx.claim_iii_binomial_cost⟩
+    ctx.n_mults = Nat.choose (ctx.Z + ctx.N) 2 :=
+  sorry
 
 end QOU.Archimedean

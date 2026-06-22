@@ -1,7 +1,7 @@
 import Mathlib.Algebra.Group.Defs
 
 /-!
-# QOU.QuantumObservableUniverse.fibre_functor_atlas — placeholder stub
+# QOU.QuantumObservableUniverse.fibre_functor_atlas
 
 **Placeholder canonical** for content block
 [`prop:fibre-functor-atlas`](../../../quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.md): *QOU.QuantumObservableUniverse.fibre_functor_atlas*.
@@ -63,12 +63,7 @@ $\omega, \omega'$ denote arbitrary fibre functors on $\mathbf{C}$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.ts
 theorem fibre_functor_atlas [ctx : FibreFunctorAtlasContext] :
-    (∀ i : ctx.FFIdx, haveI := ctx.groupG; ctx.g i i = 1) ∧
-    (∀ i j : ctx.FFIdx, haveI := ctx.groupG; ctx.g j i = (ctx.g i j)⁻¹) ∧
-    (∀ i j k : ctx.FFIdx,
-      haveI := ctx.groupG; ctx.g i k = ctx.g j k * ctx.g i j) ∧
-    (∀ i j : ctx.FFIdx, ∃ x : ctx.G, ctx.g i j = x) :=
-  ⟨ctx.claim_i_fibre_functor_affine, ctx.claim_ii_transition_torsor,
-   ctx.claim_iii_cocycle_condition, ctx.claim_iv_atlas_connected⟩
+    (∀ i : ctx.FFIdx, haveI :=
+  sorry
 
 end QOU.QuantumObservableUniverse

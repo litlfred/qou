@@ -2,7 +2,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.ParticleInteractions.operator_selection_lp — placeholder stub
+# QOU.ParticleInteractions.operator_selection_lp
 
 **Placeholder canonical** for content block
 [`prop:operator-selection-lp`](../../../quantum-observable-universe/particle-interactions/operator-selection-lp.md): *Knot operator selection as linear program with LP duality*.
@@ -104,8 +104,7 @@ theorem operator_selection_lp [ctx : OperatorSelectionLpContext] :
     (∀ i : Fin ctx.d,
       0 ≤ (Finset.univ.sum fun j : Fin ctx.d => ctx.G i j * ctx.x_star j)) ∧
     (Finset.univ.sum fun i : Fin ctx.d => ctx.t i * ctx.x_star i)
-      = ctx.n_target * ctx.y_0_star := by
-  refine ⟨ctx.claim_primal_net, ctx.claim_primal_feasible,
-   ctx.claim_strong_duality⟩
+      = ctx.n_target * ctx.y_0_star :=
+  sorry
 
 end QOU.ParticleInteractions

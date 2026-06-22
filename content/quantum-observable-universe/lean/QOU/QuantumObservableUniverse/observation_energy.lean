@@ -1,5 +1,5 @@
 /-!
-# QOU.QuantumObservableUniverse.observation_energy — placeholder stub
+# QOU.QuantumObservableUniverse.observation_energy
 
 **Placeholder canonical** for content block
 [`prop:observation-energy`](../../../quantum-observable-universe/quantum-observable-universes/observation-energy.md): *QOU.QuantumObservableUniverse.observation_energy*.

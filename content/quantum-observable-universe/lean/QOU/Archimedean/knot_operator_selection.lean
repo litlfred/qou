@@ -3,7 +3,7 @@ import Mathlib.Data.Real.Basic
 
 
 /-!
-# QOU.Archimedean.knot_operator_selection — placeholder stub
+# QOU.Archimedean.knot_operator_selection
 
 **Placeholder canonical** for content block
 [`prop:knot-operator-selection`](../../../quantum-observable-universe/archimedean-universe/knot-operator-selection.md): *Knot operator selection via Frobenius dual*.
@@ -88,10 +88,7 @@ theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] :
     ctx.action_pair = ctx.channel_sum ∧
     ctx.pairing_kernel_dim = 0 ∧
     (∀ Φ_alt : ctx.CategoricalObj → ctx.CategoricalObj,
-      ctx.is_on_shell Φ_alt → ctx.action_Phi ≤ ctx.action_alt Φ_alt) := by
-  refine ⟨ctx.claim_i_spectral_decomposition,
-          ctx.claim_ii_multichannel_pair_production,
-          ctx.claim_iii_frobenius_demand_supply,
-          ctx.claim_iv_minimum_action_selection⟩
+      ctx.is_on_shell Φ_alt → ctx.action_Phi ≤ ctx.action_alt Φ_alt) :=
+  sorry
 
 end QOU.Archimedean

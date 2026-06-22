@@ -2,7 +2,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly — placeholder stub
+# QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly
 
 **Placeholder canonical** for content block
 [`prop:six-term-per-derivation-weights`](../../../quantum-observable-universe/braids-and-knots/six-term-per-derivation-weights.md): *Per-derivation weights for the six-term mass formula*.

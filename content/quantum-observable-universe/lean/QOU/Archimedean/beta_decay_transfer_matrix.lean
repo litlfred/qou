@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.Archimedean.beta_decay_transfer_matrix — placeholder stub
+# QOU.Archimedean.beta_decay_transfer_matrix
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/beta-decay-transfer-matrix.ts`](quantum-observable-universe/archimedean-universe/beta-decay-transfer-matrix.ts).
@@ -129,8 +129,7 @@ theorem beta_decay_transfer_matrix [ctx : BetaDecayTransferMatrixContext] :
     (ctx.tr_T_pp = ctx.q - ctx.q⁻¹ ∧ ctx.tr_T_nn = -(ctx.q - ctx.q⁻¹) ∧
      ctx.tr_T_mix = 0) ∧
     (ctx.det_T_pp = -1 ∧ ctx.det_T_nn = -1) ∧
-    ctx.Δβ_lower = ctx.Δβ_upper := by
-  refine ⟨ctx.claim_i_transfer_matrices, ctx.claim_ii_unimodular_pp_nn,
-          ctx.claim_iii_universal_delta⟩
+    ctx.Δβ_lower = ctx.Δβ_upper :=
+  sorry
 
 end QOU.Archimedean

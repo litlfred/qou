@@ -2,7 +2,7 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 /-!
-# QOU.FluidDynamics.q_turbulence_spectrum — placeholder stub
+# QOU.FluidDynamics.q_turbulence_spectrum
 
 **Placeholder canonical** for content block
 [`prop:q-turbulence-spectrum`](../../../quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md): *$q$-deformed energy cascade and modified Kolmogorov spectrum*.
@@ -85,8 +85,6 @@ theorem q_turbulence_spectrum [ctx : QTurbulenceSpectrumContext] :
       (ctx.q_int (k + 1) - ctx.q_int k)) ∧
     (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q ∧
     0 < ctx.ΔE_gap :=
-  ⟨ctx.claim_i_q_kolmogorov_spectrum, ctx.claim_ii_discrete_cascade,
-   ctx.claim_iii_finite_cascade_depth,
-   ctx.claim_iv_spectral_gap_positive.1⟩
+  sorry
 
 end QOU.FluidDynamics

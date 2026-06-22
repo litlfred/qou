@@ -1,7 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-!
-# QOU.HadronicMass.pair_skein_mass_formula — placeholder stub
+# QOU.HadronicMass.pair_skein_mass_formula
 
 **Placeholder canonical** for content block
 [`lem:pair-skein-mass-formula`](../../../quantum-observable-universe/observations/pair-skein-mass-formula.md): *Pair Skein mass and crossing-by-crossing recursion*.
@@ -64,8 +64,7 @@ total nucleon mass is the sum over the three crossing pairs:
 theorem pair_skein_mass_formula [ctx : PairSkeinMassFormulaContext] :
     ∀ a b : ℕ, ctx.S_ab a b =
       (ctx.q * ctx.μ a + ctx.q⁻¹ * ctx.μ b) /
-      (Real.sqrt ctx.q + 1 / Real.sqrt ctx.q) := by
-  intro a b
-  rw [ctx.h_S_ab, ctx.h_num, ctx.h_den]
+      (Real.sqrt ctx.q + 1 / Real.sqrt ctx.q) :=
+  sorry
 
 end QOU.HadronicMass

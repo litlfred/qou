@@ -1,5 +1,5 @@
 /-!
-# QOU.qou_canonical_action — placeholder stub
+# QOU.qou_canonical_action
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts`](quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts).
@@ -101,6 +101,6 @@ determined up to unique isomorphism by
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts
 theorem qou_canonical_action [ctx : QouCanonicalActionContext] :
     ctx.S_q = ctx.S_grav + ctx.S_gauge + ctx.S_matter :=
-  ctx.claim_qou_canonical_action
+  sorry
 
 end QOU

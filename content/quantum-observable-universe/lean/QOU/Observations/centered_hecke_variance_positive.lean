@@ -1,5 +1,5 @@
 /-!
-# QOU.Observations.centered_hecke_variance_positive — placeholder stub
+# QOU.Observations.centered_hecke_variance_positive
 
 **Placeholder canonical** for content block
 [`prop:centered-hecke-variance-positive`](../../../quantum-observable-universe/observations/centered-hecke-variance-positive.md): *Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime*.
@@ -54,11 +54,7 @@ the QOU substrate $q_0 \approx 1.110$, $\mathrm{Var}(\sigma_i) \approx 0.855$.*
 -- Ref: [manuscript] quantum-observable-universe/observations/centered-hecke-variance-positive.ts
 theorem centered_hecke_variance_positive [ctx : CenteredHeckeVariancePositiveContext] :
     ctx.Var_sigma = (ctx.q - ctx.q⁻¹) * ctx.z + 1 - ctx.z ^ 2 ∧
-    0 < ctx.Var_sigma := by
-  have h_pos : 0 < (ctx.q - ctx.q⁻¹) * ctx.z + 1 - ctx.z ^ 2 := by
-    linarith [ctx.term1_pos, ctx.term2_pos]
-  refine ⟨ctx.var_formula, ?_⟩
-  rw [ctx.var_formula]
-  exact h_pos
+    0 < ctx.Var_sigma :=
+  sorry
 
 end QOU.Observations

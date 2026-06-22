@@ -1,7 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
-# QOU.Information.photon_threading_mass — placeholder stub
+# QOU.Information.photon_threading_mass
 
 **Placeholder canonical** for content block
 [`prop:photon-threading-mass`](../../../quantum-observable-universe/information-theory/photon-threading-mass.md): *Mass as photon threading cost*.

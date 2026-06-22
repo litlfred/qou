@@ -1,7 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
-# QOU.FeynmanPathIntegrals.markov_identification — placeholder stub
+# QOU.FeynmanPathIntegrals.markov_identification
 
 **Placeholder canonical** for content block
 [`lem:feynman-markov-identification`](../../../quantum-observable-universe/braids-and-knots/feynman-markov-identification.md): *Markov-weighted eigenbasis sum equals the Markov trace*.
@@ -64,6 +64,6 @@ theorem markov_identification [ctx : MarkovIdentificationContext] :
     ctx.amplitude_eigenbasis =
       (Finset.range ctx.n_partitions).sum (fun λ => ctx.w λ * ctx.tr_S λ) ∧
     ctx.amplitude_eigenbasis = ctx.tr_M :=
-  ctx.claim_markov_identification
+  sorry
 
 end QOU.FeynmanPathIntegrals

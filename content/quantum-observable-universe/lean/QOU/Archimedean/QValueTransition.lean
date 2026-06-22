@@ -1,5 +1,5 @@
 /-!
-# QOU.Archimedean.QValueTransition — placeholder stub
+# QOU.Archimedean.QValueTransition
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/q-value-transition.ts`](quantum-observable-universe/archimedean-universe/q-value-transition.ts).

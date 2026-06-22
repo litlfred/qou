@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.terms_2_6_higher_operations — placeholder stub
+# QOU.BraidKnot.terms_2_6_higher_operations
 
 **Placeholder canonical** for content block
 [`prop:terms-2-6-higher-operations`](../../../quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md): *QOU.BraidKnot.terms_2_6_higher_operations*.

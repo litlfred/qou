@@ -1,5 +1,5 @@
 /-!
-# QOU.QuantumObservableUniverse.exists_axiom_4_volume — placeholder stub
+# QOU.QuantumObservableUniverse.exists_axiom_4_volume
 
 **Placeholder canonical** for content block
 [`lem:qou-exists-axiom-4`](../../../quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.md): *Axiom 4 — categorical volume constraint via the quantum determinant*.
@@ -47,8 +47,7 @@ $$
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.ts
 theorem exists_axiom_4_volume [ctx : ExistsAxiom4VolumeContext] :
-    ∀ g h : ctx.G, ctx.ε g = ctx.ε h := by
-  intro g h
-  rw [ctx.det_eq_const g, ctx.det_eq_const h]
+    ∀ g h : ctx.G, ctx.ε g = ctx.ε h :=
+  sorry
 
 end QOU.QuantumObservableUniverse

@@ -1,5 +1,5 @@
 /-!
-# QOU.Interactions.nucleon_ordering_factorization — placeholder stub
+# QOU.Interactions.nucleon_ordering_factorization
 
 **Placeholder canonical** for content block
 [`prop:nucleon-ordering-factorization`](../../../quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.md): *QOU.Interactions.nucleon_ordering_factorization*.
@@ -83,7 +83,7 @@ theorem nucleon_ordering_factorization [ctx : NucleonOrderingFactorizationContex
                 ctx.W_std * (ctx.z * ctx.a_pi + ctx.b_pi) +
                 ctx.W_alt * ctx.A_pi ∧
     (ctx.cost_std = 4 ∧ ctx.cost_naive = 36) ∧
-    (ctx.n_symmetric_evaluations = 1 ∧ ctx.n_alternating_evaluations = 1) := by
-  refine ⟨ctx.h_master, ⟨ctx.h_cost_std, ctx.h_cost_naive⟩, ⟨ctx.h_symmetric_evaluations, ctx.h_alternating_evaluations⟩⟩
+    (ctx.n_symmetric_evaluations = 1 ∧ ctx.n_alternating_evaluations = 1) :=
+  sorry
 
 end QOU.Interactions

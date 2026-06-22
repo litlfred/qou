@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.SpinInvolutionLPDualInvariance — placeholder stub
+# QOU.BraidKnot.SpinInvolutionLPDualInvariance
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.ts`](quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.ts).

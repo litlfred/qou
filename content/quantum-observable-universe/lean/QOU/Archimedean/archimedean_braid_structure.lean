@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.Archimedean.descartes_braid_structure — placeholder stub
+# QOU.Archimedean.descartes_braid_structure
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/descartes-braid-structure.ts`](quantum-observable-universe/archimedean-universe/descartes-braid-structure.ts).
@@ -79,8 +79,7 @@ theorem descartes_braid_structure [ctx : DescartesBraidStructureContext] :
     12 ≤ ctx.ρ_3_image_size ∧
     ctx.image_order = 12 ∧
     ctx.n_S3_copies = 3 ∧
-    (∀ R : Type, ctx.defined_over R) := by
-  refine ⟨ctx.claim_i_faithful_rep, ctx.claim_ii_image_order_eq_12,
-          ctx.claim_iii_three_S3_copies, ctx.claim_iv_padic_universal⟩
+    (∀ R : Type, ctx.defined_over R) :=
+  sorry
 
 end QOU.Archimedean

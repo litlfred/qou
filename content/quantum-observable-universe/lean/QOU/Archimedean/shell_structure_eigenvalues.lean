@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.Archimedean.shell_structure_eigenvalues — placeholder stub
+# QOU.Archimedean.shell_structure_eigenvalues
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/shell-structure-eigenvalues.ts`](quantum-observable-universe/archimedean-universe/shell-structure-eigenvalues.ts).
@@ -179,8 +179,7 @@ theorem shell_structure_eigenvalues [ctx : ShellStructureEigenvaluesContext] :
         (ctx.lambda_plus - ctx.lambda_minus) ∧
       ctx.T_power_21 n = (ctx.lambda_plus ^ n - ctx.lambda_minus ^ n) /
         (ctx.lambda_plus - ctx.lambda_minus)) ∧
-    (∀ n : ℕ, ctx.V_hat n = ctx.z * ctx.T_power_11 n + ctx.T_power_21 n) := by
-  refine ⟨ctx.claim_i_char_poly_product, ctx.claim_ii_eigenvalue_sum,
-          ctx.claim_iii_chebyshev_second_kind, ctx.claim_iv_traced_volume⟩
+    (∀ n : ℕ, ctx.V_hat n = ctx.z * ctx.T_power_11 n + ctx.T_power_21 n) :=
+  sorry
 
 end QOU.Archimedean

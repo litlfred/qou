@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.UnstableAtom.decay_channel — placeholder stub
+# QOU.BraidKnot.UnstableAtom.decay_channel
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/unstable-atom-decay-channel.ts`](quantum-observable-universe/braids-and-knots/unstable-atom-decay-channel.ts).

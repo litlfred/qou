@@ -1,7 +1,7 @@
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.Torsion.antiparticle_crossing_reversal — placeholder stub
+# QOU.Torsion.antiparticle_crossing_reversal
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.Torsion.antiparticle_crossing_reversal`.
@@ -74,11 +74,7 @@ theorem antiparticle_crossing_reversal [ctx : AntiparticleCrossingReversalContex
      ∀ b : ctx.Braid, ctx.mirror (ctx.mirror b) = b) ∧
     ctx.E_cross_anti = - ctx.E_cross_bar ∧
     ctx.Q_charge_anti = - ctx.Q_charge ∧
-    ctx.m_bare_anti = ctx.m_bare := by
-  have h := ctx.reversal_active
-  exact ⟨ctx.impl_crossing_reversal_defines h,
-         ctx.impl_crossing_energy_sign h,
-         ctx.impl_coulomb_charge_reversal h,
-         ctx.impl_bare_mass_invariance h⟩
+    ctx.m_bare_anti = ctx.m_bare :=
+  sorry
 
 end QOU.Torsion

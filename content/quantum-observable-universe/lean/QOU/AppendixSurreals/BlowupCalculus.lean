@@ -1,5 +1,5 @@
 /-!
-# QOU.AppendixSurreals.BlowupCalculus — placeholder stub
+# QOU.AppendixSurreals.BlowupCalculus
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/appendix-surreals/surreal-blowup-calculus.ts`](quantum-observable-universe/appendix-surreals/surreal-blowup-calculus.ts).

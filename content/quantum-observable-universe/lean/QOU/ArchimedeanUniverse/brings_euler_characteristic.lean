@@ -1,5 +1,5 @@
 /-!
-# QOU.ArchimedeanUniverse.brings_euler_characteristic — placeholder stub
+# QOU.ArchimedeanUniverse.brings_euler_characteristic
 
 **Placeholder canonical** for content block
 [`lem:brings-euler-characteristic`](../../../quantum-observable-universe/archimedean-universe/brings-euler-characteristic.md): *Categorical Euler characteristic of $\\mathcal{O}_q(\\mathrm{SU}(2))$ on Bring's surface*.
@@ -48,6 +48,6 @@ the Descartes substrate parameter $q_0$.
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/brings-euler-characteristic.ts
 theorem brings_euler_characteristic [ctx : BringsEulerCharacteristicContext] :
     ctx.g = 4 ∧ ctx.chi_A = 2 - 2 * (ctx.g : ℤ) ∧ ctx.chi_A = -6 :=
-  ctx.claim_brings_euler_characteristic
+  sorry
 
 end QOU.ArchimedeanUniverse

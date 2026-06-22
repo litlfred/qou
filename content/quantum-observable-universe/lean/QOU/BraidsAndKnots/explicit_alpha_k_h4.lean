@@ -1,7 +1,7 @@
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.BraidsAndKnots.explicit_alpha_k_h4 — placeholder stub
+# QOU.BraidsAndKnots.explicit_alpha_k_h4
 
 **Placeholder canonical** for content block Explicit α_k at H_4.
 

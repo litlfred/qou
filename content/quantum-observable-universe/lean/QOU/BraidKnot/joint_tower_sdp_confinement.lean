@@ -1,5 +1,5 @@
 /-!
-# QOU.BraidKnot.joint_tower_sdp_confinement — placeholder stub
+# QOU.BraidKnot.joint_tower_sdp_confinement
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.ts`](quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.ts).

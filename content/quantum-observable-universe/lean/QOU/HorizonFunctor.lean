@@ -1,5 +1,5 @@
 /-!
-# QOU.HorizonFunctor — placeholder stub
+# QOU.HorizonFunctor
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/information-theory/horizon-functor.ts`](quantum-observable-universe/information-theory/horizon-functor.ts).

@@ -1,5 +1,5 @@
 /-!
-# QOU.LiftingDescent.jp_categorical_jet — placeholder stub
+# QOU.LiftingDescent.jp_categorical_jet
 
 **Placeholder canonical** for content block
 [`lem:jet-prolongation-categorical-jet`](../../../quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.md): *Categorical jet object $J^1(A)$ inherits the Frobenius--Hopf structure*.
@@ -36,8 +36,7 @@ $(\Delta', \varepsilon', S')$ from $A$.
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts
 theorem jp_categorical_jet [ctx : JpCategoricalJetContext] :
-    ∀ x : ctx.J1A, ctx.S' (ctx.S' x) = x := by
-  intro x
-  exact ctx.antipode_involutive x
+    ∀ x : ctx.J1A, ctx.S' (ctx.S' x) = x :=
+  sorry
 
 end QOU.LiftingDescent

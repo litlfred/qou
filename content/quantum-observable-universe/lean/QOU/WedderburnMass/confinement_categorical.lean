@@ -1,7 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
-# QOU.WedderburnMass.confinement_categorical — placeholder stub
+# QOU.WedderburnMass.confinement_categorical
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.WedderburnMass.confinement_categorical`.

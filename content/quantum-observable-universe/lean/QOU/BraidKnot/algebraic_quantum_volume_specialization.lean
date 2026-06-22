@@ -1,7 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-!
-# QOU.BraidKnot.algebraic_quantum_volume_specialization — placeholder stub
+# QOU.BraidKnot.algebraic_quantum_volume_specialization
 
 **Placeholder canonical** for content block
 [`prop:algebraic-quantum-volume-specialization`](../../../quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.md): *Specialisation of the algebraic quantum volume*.

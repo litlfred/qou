@@ -1,7 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 
 /-!
-# QOU.CommutativeQOU.u1EquivariantReduction — placeholder stub
+# QOU.CommutativeQOU.u1EquivariantReduction
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/u1-equivariant-reduction.ts`](quantum-observable-universe/braids-and-knots/u1-equivariant-reduction.ts).
@@ -78,6 +78,6 @@ tube is recorded in
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/u1-equivariant-reduction.ts
 theorem u1EquivariantReduction [ctx : U1EquivariantReductionContext] :
     ctx.n_fixed_poles = 2 ∧ ctx.orbit_interval_length = Real.pi :=
-  ctx.claim_u1EquivariantReduction
+  sorry
 
 end QOU.CommutativeQOU

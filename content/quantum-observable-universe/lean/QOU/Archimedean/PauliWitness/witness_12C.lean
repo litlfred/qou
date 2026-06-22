@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.Archimedean.PauliWitness.witness_12C — placeholder stub
+# QOU.Archimedean.PauliWitness.witness_12C
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/appendix-nf-witnesses/witness-12c.ts`](quantum-observable-universe/appendix-nf-witnesses/witness-12c.ts).
@@ -63,7 +63,7 @@ braid configuration.
 -- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-12c.ts
 theorem witness_12C [ctx : Witness12CContext] :
     ctx.Z = 6 ∧ ctx.N = 6 ∧ ctx.pre_reduction_terms = 479001600 ∧
-    ctx.net_terms = 12 ∧ |ctx.F_Pauli - 0.129| < 0.005 := by
-  refine ctx.claim_witness_12C
+    ctx.net_terms = 12 ∧ |ctx.F_Pauli - 0.129| < 0.005 :=
+  sorry
 
 end QOU.Archimedean.PauliWitness

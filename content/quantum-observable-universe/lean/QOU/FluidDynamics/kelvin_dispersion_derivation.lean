@@ -1,5 +1,5 @@
 /-!
-# QOU.FluidDynamics.kelvin_dispersion_derivation — placeholder stub
+# QOU.FluidDynamics.kelvin_dispersion_derivation
 
 **Placeholder canonical** for content block
 [`prop:kelvin-dispersion-derivation`](../../../quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.md): *Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem*.
@@ -52,8 +52,7 @@ subsection derives this from first principles.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.ts
 theorem kelvin_dispersion_derivation [ctx : KelvinDispersionDerivationContext] :
-    ∀ k : ℕ, ctx.λ k = ctx.q_int k ^ 2 * ctx.hbar_q / ctx.L_q ^ 2 := by
-  have h := ctx.dispersion_active
-  exact ctx.impl_dispersion_identity h
+    ∀ k : ℕ, ctx.λ k = ctx.q_int k ^ 2 * ctx.hbar_q / ctx.L_q ^ 2 :=
+  sorry
 
 end QOU.FluidDynamics

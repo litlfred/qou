@@ -4,7 +4,7 @@ import Mathlib.Data.Nat.Prime.Defs
 
 
 /-!
-# QOU.Archimedean.genus_filtration_ideal — placeholder stub
+# QOU.Archimedean.genus_filtration_ideal
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/archimedean-universe/genus-filtration-ideal.ts`](quantum-observable-universe/archimedean-universe/genus-filtration-ideal.ts).
@@ -112,8 +112,7 @@ theorem genus_filtration_ideal [ctx : GenusFiltrationIdealContext] :
     ctx.genus = 4 ∧
     ctx.EvalMatrixRank = 5 ∧
     ctx.ideal_exponent = 5 ∧
-    (∀ p : ℕ, 11 ≤ p → Nat.Prime p → Odd p → ctx.kills_T_2p p) := by
-  refine ⟨ctx.claim_i_genus_eq_four, ctx.claim_i_completeness_rank_five,
-          ctx.claim_ii_ideal_eq_u5, ctx.claim_iii_kills_higher_torus_knots⟩
+    (∀ p : ℕ, 11 ≤ p → Nat.Prime p → Odd p → ctx.kills_T_2p p) :=
+  sorry
 
 end QOU.Archimedean

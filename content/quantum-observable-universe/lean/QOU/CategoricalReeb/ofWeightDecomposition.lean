@@ -1,5 +1,5 @@
 /-!
-# QOU.CategoricalReeb.ofWeightDecomposition — placeholder stub
+# QOU.CategoricalReeb.ofWeightDecomposition
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/quantum-observable-universes/categorical-reeb-exists.ts`](quantum-observable-universe/quantum-observable-universes/categorical-reeb-exists.ts).
@@ -57,6 +57,6 @@ $(\xi, \varTheta_A)$ on $A$ satisfying:
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/categorical-reeb-exists.ts
 theorem ofWeightDecomposition [ctx : OfWeightDecompositionContext] :
     ∀ x : ctx.CategoricalObj, ctx.Θ_A (ctx.ξ x) = 1 :=
-  ctx.claim_ofWeightDecomposition
+  sorry
 
 end QOU.CategoricalReeb
