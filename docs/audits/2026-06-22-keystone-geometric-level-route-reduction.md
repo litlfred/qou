@@ -75,5 +75,5 @@ No fit; nothing wired; `c_k`/`Δ_λ` cal-anchored.
 - [`2026-06-16-s5so3-reeb-resonance-probe-negative.md`](2026-06-16-s5so3-reeb-resonance-probe-negative.md) — eigenvalue-resonance refutation.
 - [`2026-06-22-keystone-qdeform-projector-shift.md`](2026-06-22-keystone-qdeform-projector-shift.md) — Markov-trace projector refutation (this session).
 - [`2026-06-16-keystone-wu-manifold-reeb-obstruction.md`](2026-06-16-keystone-wu-manifold-reeb-obstruction.md) — corrected arena (independent spacetime⊥colour factors).
-- `content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ReebChiralitySeparation.lean` — the (level, chirality) separation (main `8f343e10`).
-- `docs/coordination/s5-so3-keystone.md` — keystone ledger.
+- [`content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ReebChiralitySeparation.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ReebChiralitySeparation.lean) — the (level, chirality) separation (main `8f343e10`).
+- [`docs/coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md) — keystone ledger.
