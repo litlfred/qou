@@ -218,6 +218,20 @@ elan / cache hosts are network-restricted.
 > goes to a `mktemp` file and extracts with `-C "$ROOT"` (repo root), not the
 > current directory. Full restore/seed details (incl. how to **SEED** after a
 > fresh build) are in the **🗄️ PRESERVE THE BUILD** section further down this file.
+>
+> **⚠ `FETCH_HEAD` is global — do NOT run another `git fetch` concurrently
+> during the restore.** The recipe resolves the parts via the mutable
+> `FETCH_HEAD` ref. If a second fetch (a background `git fetch origin main`, a
+> parallel agent) repoints `FETCH_HEAD` mid-loop, the `git show FETCH_HEAD:…part0N`
+> calls silently resolve against the wrong commit, the assembled tarball is
+> truncated, and `tar` fails (`gzip: not in gzip format` / `Child returned status
+> 1`) — looking exactly like a corrupt cache (cost a session 2026-06-22). The
+> recipe itself is correct (`git show` and `git cat-file blob` are byte-identical
+> here — the slug/loop are fine). Run the restore **serially**, or make it
+> race-proof by fetching into a private ref: `git fetch --depth=1 origin
+> "$BR:refs/restore-tmp"` then read `refs/restore-tmp:$p` in the loop instead of
+> `FETCH_HEAD:$p`.
+>
 > Only if the fetch fails (branch unseeded) or the oleans are a
 > toolchain/`lakefile.toml` **miss** do you fall back to the source-clone +
 > from-source build below — and **SEED the cache branch afterwards** so the
