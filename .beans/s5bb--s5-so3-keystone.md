@@ -114,3 +114,16 @@ the corpus spin-ℂ²⊥colour-ℂ³ split (#2364) AT THE GENERATION LEVEL, deri
 Keystone factorises: spin sector ← S³/2I WRT; colour/≥3-row sector ← SU(3). Remaining: per-sector
 numerical realisation (level-k S-matrix / SU(3) coloured invariants) via bar/Habiro. Not diff geo.
 Doc: docs/audits/2026-06-22-keystone-schurweyl-su2-rowcount.md. Exact rep theory; no fit. Owner closes (§4a).
+
+## Schur-Weyl dual-sides — deflationary capstone (2026-06-22, PR follows)
+
+Owner pick: keep pushing (spin-sector realisation). Computed BOTH Schur-Weyl sides for the
+2-row blocks of n=5: the corpus W_λ uses the HECKE (S_n-side) hook-content d_q(λ); the WRT/Poincaré
+modular data is the SU(2) (V_λ-side) [2j+1]_q. They DIFFER (muon (3,2): [5]_q=5.22 vs [2]_q=2.01;
+coincide only at (4,1)). So W_λ and the WRT data are Schur-Weyl DUAL — paired, NOT equal. A direct
+WRT=W_λ equality is a category error; the Poincaré sphere is the icosahedral selector, the W_λ are
+the dual S_n-side q-dims. No closer identity at the weight level — the deflationary terminus of the
+WRT line. Arc net: genuine structural gains (Sasakian ruled out; angles+Lean φ; W_λ reproduced; WRT
+operational; link=Schur-Weyl duality) but NO closure / no mass prediction. Caveats stand
+(assignment-dependence; non-monotone spin/colour vs mass). Doc:
+docs/audits/2026-06-22-keystone-schurweyl-dual-sides.md. No fit. Owner closes (§4a).
