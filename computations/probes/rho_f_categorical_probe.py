@@ -97,8 +97,8 @@ if _peel.exists():
 # Hardcode from markov-peel witness (verified; see below)
 # These are the gold-standard values at q_0 = 1.1099785955573347, 50 dps.
 TR_M: dict[tuple[int, int], float] = {
-    (1, 0): 1.0653061442544499,   # proton
-    (0, 1): 0.9232332299116371,   # neutron
+    (1, 0): 1.0653062286131670,   # proton
+    (0, 1): 0.9232332971861535,   # neutron
     (1, 1): 0.3882864240747888,   # deuteron  (D)
     (1, 2): 0.1040521186755260,   # tritium   (³H)
     (2, 1): 0.2065408585622625,   # helium-3  (³He)

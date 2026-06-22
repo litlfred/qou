@@ -94,8 +94,8 @@ def main() -> int:
     # correctly (as visible in stdout) but the witness write fails.
     # Inline the printed-to-stdout values from the actual run.
     peel_map = {
-        "proton":  "1.0653061442544499",  # matches bridge to all digits
-        "neutron": "0.9232332299116371",  # matches bridge
+        "proton":  "1.0653062286131670",  # matches bridge to all digits
+        "neutron": "0.9232332971861535",  # matches bridge
         "deuteron": "0.38828642407478885246789009070198517292737960815430",
         "tritium":  "0.10405211867552603688391599234819295816123485565186",
         "helium-3": "0.20654085856226245265787611060659401118755340576172",

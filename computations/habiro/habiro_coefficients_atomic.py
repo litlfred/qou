@@ -91,8 +91,8 @@ def markov_trace_symbolic(Z, N, q, include_inter=True):
     classical Plancherel point is the only place where the two
     conventions agree.  Cross-checks against the 1 ppb canonical
     50-dps reducer (`cross-check-trM-1ppb.witness.json`) at q_0:
-      proton:   1.0653061442544499
-      neutron:  0.9232332299116371
+      proton:   1.0653062286131670
+      neutron:  0.9232332971861535
       deuteron: 0.388286424047713  (`include_inter=True`)
 
     Performance: y_λ has sqrt(q) factors that make `sp.cancel`

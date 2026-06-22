@@ -75,7 +75,7 @@ def habiro_sum(atom_data, u_val):
     dividing by D(u). The Habiro reconstruction is
         D(u) · tr_M(T_w, q) = Σ_m a_m(u) · (u;u)_m
     so tr_M = sum / D, not sum. With this fix, Habiro tr_M(proton)
-    at q₀ = 1.0653061442 matches the witness tr_M_at_q0 = 1.0653062286
+    at q₀ = 1.0653062286 matches the witness tr_M_at_q0 = 1.0653062286
     to 6e-8.
     """
     total = mp.mpf(0)

@@ -76,7 +76,7 @@ from q_parameter import Q as Q_0  # noqa: E402
 # Jones-Markov tr_M of the 11-crossing canonical braid at the
 # proton-pinned q₀:
 #
-#   p = 1.0653061442544499  n = 0.9232332299116371  D = 0.3882864240747888
+#   p = 1.0653062286131670  n = 0.9232332971861535  D = 0.3882864240747888
 #
 # Four independent production methods (`atomic_tr_m_mpfr_50dps`
 # Hoefsmit, `markov_peel`, chi-cache combiner, Habiro `a_m` integer
@@ -94,8 +94,8 @@ from q_parameter import Q as Q_0  # noqa: E402
 # Audit: `docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md`
 # §"Resolution 2026-05-29".
 TR_M_AT_Q0: dict[str, float] = {
-    "p": 1.0653061442544499,
-    "n": 0.9232332299116371,
+    "p": 1.0653062286131670,
+    "n": 0.9232332971861535,
     "D": 0.3882864240747888,
 }
 
@@ -109,8 +109,8 @@ TR_M_AT_Q0: dict[str, float] = {
 # (1ppb canonical 50-dps reducer) and markov_peel.tr_M_atomic (the
 # production canonical Markov trace).
 TR_M_AT_Q0_50DPS: dict[str, str] = {
-    "p":  "1.0653061442544499756666334037445034130528872534934",
-    "n":  "0.92323322991163717797026991200748498402824245608814",
+    "p":  "1.0653062286131670593652845464313725576506616741351",
+    "n":  "0.92323329718615355710525339599068604013866212190134",
     "D":  "0.38828642407478887671153751312935209344259947275515",
 }
 
@@ -143,8 +143,8 @@ TR_M_AT_Q0_50DPS: dict[str, str] = {
 # n_canon (strand count of the canonical braid):
 #   p, n: 3, D: 3, T: 5, ³He: 3, ⁴He: open
 TR_M_CANONICAL_B_AT_Q0: dict[str, float] = {
-    "p":   1.0653061442544499,  # 11-crossing typed B_3 (uud)
-    "n":   0.9232332299116371,  # 11-crossing typed B_3 (udd)
+    "p":   1.0653062286131670,  # 11-crossing typed B_3 (uud)
+    "n":   0.9232332971861535,  # 11-crossing typed B_3 (udd)
     "D":   0.288326,            # knot 6_2, SDP-canonical  (#1422-recompute pending)
     "T":   0.012889,            # knot 8_11, SDP-canonical (H_5)  (#1422-recompute pending)
     "3He": 0.998367,            # L6a4 = β_Bor (the bare Borromean)  (#1422-recompute pending)

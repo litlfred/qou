@@ -70,7 +70,7 @@ def main():
     vol_41 = vol_4_1_at(50)
 
     hab_sum = mp.mpf("136.0712063634817616514048508169837773395")
-    tr_M = mp.mpf("1.065306144254449900000000000000000000000")
+    tr_M = mp.mpf("1.065306228613167059365284546431372557650")
     plancherel_ratio = mp.factorial(n) / q_factorial(n, q)
     vol_over_hsq = vol_41 / hbar_sq
 
