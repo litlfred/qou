@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-06-18T03:40:23.605803+00:00",
-  "commitSha": "9961af72fc1402e14da28f0589707aad939d5697",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-22T04:34:30.183869+00:00",
+  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
   "assertions": [
     {
       "name": "sparse_common_dominant_block_prune",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 10,
   "computation": "probe-sparse-interface-magnitude-the3-prune",
   "scriptFile": "probe_sparse_interface_magnitude_the3_prune.py",
-  "scriptHash": "b493ed353b28",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f80fa262f3af",
+  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,11 +27,15 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "FORMALIZE-FIRST PRUNE of the sparse interface-operator magnitude hypothesis (binding concentrates on one dominant Wedderburn block per atom). Parameter-free T/³He mirror test: if the dominant block is common then B_T/B_³He = |χ^{λ*}(β_T)|/|χ^{λ*}(β_³He)| (Δ,y cancel). Tests every n=9 block's character ratio vs AME 1.0990 + trace dominance. No fit. Δ_λ magnitude open (GAP-A-3).",
   "parameters": {
-    "ame_binding_ratio": "1.09896346204",
+    "ame_binding_ratio": "1.09896296968",
     "ratio_tol": 0.02
   },
   "data": {

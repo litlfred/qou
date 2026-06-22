@@ -27,6 +27,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 set_compute_dps()
 
@@ -127,10 +128,10 @@ def main():
     E0 = m_e / (q0 * (q0 - 1))
 
     atoms = [
-        ("D", 1, 1, 2.22457),
-        ("T", 1, 2, 8.48182),
-        ("³He", 2, 1, 7.71804),
-        ("⁴He", 2, 2, 28.2957),
+        ("D", 1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),
+        ("T", 1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
+        ("³He", 2, 1, float(AME_B_HE3_MEV_VALIDATION)),
+        ("⁴He", 2, 2, float(AME_B_HE4_MEV_VALIDATION)),
         ("⁶Li", 3, 3, 31.994),
         ("⁷Li", 3, 4, 39.245),
         ("⁹Be", 4, 5, 58.165),

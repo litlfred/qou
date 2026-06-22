@@ -71,6 +71,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_HE4_MEV_VALIDATION  # noqa: E402
 
 mp.mp.dps = 50
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
@@ -88,7 +89,7 @@ C_ALPHA_DERIVED = M_E_MEV * VOL_7_SQ_1  # = m_e · Vol(7^2_1)
 # KLR-violating atoms with production formula (magic/α-cluster).
 # Each row: (sym, A, n_alpha, n_pairs, rule, B_AME_MeV)
 ATOMS = [
-    ("4He",    4,  1,   0, "magic",          mp.mpf("28.2956912")),
+    ("4He",    4,  1,   0, "magic",          AME_B_HE4_MEV_VALIDATION),
     ("8Be",    8,  2,   1, "alpha",          mp.mpf("56.49951")),
     ("12C",   12,  3,   3, "alpha",          mp.mpf("92.16175")),
     ("16O",   16,  4,   6, "alpha",          mp.mpf("127.61929")),

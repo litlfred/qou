@@ -50,6 +50,7 @@ from witness_base import WitnessBuilder
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from q_parameter import Q as Q0_FLOAT
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -214,7 +215,7 @@ def main() -> int:
     print("─" * 100)
     print("  Comparisons")
     print("─" * 100)
-    M_D_codata = M_P_MEV + M_N_MEV - 2.224566   # AME atomic mass
+    M_D_codata = M_P_MEV + M_N_MEV - float(AME_B_DEUTERON_MEV_VALIDATION)   # AME atomic mass
     Z_M_p_plus_N_M_n = 1 * M_P_MEV + 1 * M_N_MEV
     print(f"\n  CODATA atomic D mass:        {M_D_codata:.4f} MeV")
     print(f"  Z·m_p + N·m_n (free):       {Z_M_p_plus_N_M_n:.4f} MeV")

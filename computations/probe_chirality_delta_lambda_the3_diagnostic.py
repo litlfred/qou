@@ -23,7 +23,7 @@ Two binding models, both from the cached (y_λ, χ^λ_T, χ^λ_³He):
   |·| (chirality_binding_sweep model; binding must be ≥0):
       diff_abs = m_e · (|Σ_λ y_λ χ^λ_T Δ_λ| − |Σ_λ y_λ χ^λ_³He Δ_λ|)
 
-Target: B_T − B_³He = 8.4818 − 7.7180 = +0.7638 MeV (= +1.4947·m_e).
+Target: B_T − B_³He = float(AME_B_TRITIUM_MEV_VALIDATION) − 7.7180 = +0.7638 MeV (= +1.4947·m_e).
 
 The PROVED sign is *signed*, so unlike a non-negative multiplicity it CAN reach
 the + sign; the question is whether any proved-sign magnitude variant lands on
@@ -41,11 +41,12 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401,E402 — substrate/ (witness_base) on path
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 mp.mp.dps = 50
 HERE = Path(__file__).resolve().parent
 M_E_MEV = mp.mpf("0.51099895069")
-AME_B = {"tritium": mp.mpf("8.4818"), "helium-3": mp.mpf("7.7180")}
+AME_B = {"tritium": AME_B_TRITIUM_MEV_VALIDATION, "helium-3": mp.mpf("7.7180")}
 CHI = {"tritium": "chi-tritium-h9-at-q0-50dps.witness.json",
        "helium-3": "chi-helium-3-h9-at-q0-50dps.witness.json"}
 

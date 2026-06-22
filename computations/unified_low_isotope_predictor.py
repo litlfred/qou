@@ -50,6 +50,7 @@ from light_isotope_sweep import tr_M_at_q0, FROB_N3, M_E
 from q_parameter import Q as Q_0
 from q_parameter import HA as H_VAL
 from witness_base import WitnessBuilder
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 # β-decay calibration (CANONICAL for this pipeline)
 # E_0 = Q_β(n) / |Q_cat|; Q_cat = tr_M(n_free) − tr_M(p_free)
@@ -281,11 +282,11 @@ def main():
     print()
 
     isotopes = [
-        ("D",   1, 1, 2.22456612),
-        ("T",   1, 2, 8.4817984),
-        ("3He", 2, 1, 7.7180375),
-        ("4He", 2, 2, 28.2956912),
-        ("6Li", 3, 3, 31.99405),
+        ("D",   1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),
+        ("T",   1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
+        ("3He", 2, 1, float(AME_B_HE3_MEV_VALIDATION)),
+        ("4He", 2, 2, float(AME_B_HE4_MEV_VALIDATION)),
+        ("6Li", 3, 3, float(AME_B_LI6_MEV_VALIDATION)),
         ("7Li", 3, 4, 39.24453),
         ("9Be", 4, 5, 58.16498),
         ("11B", 5, 6, 76.20548),

@@ -31,6 +31,7 @@ import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder
+from codata_constants import AME_B_HE4_MEV_VALIDATION  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -130,7 +131,7 @@ def main() -> int:
     print(f"  contrib from (4,4,4) only    = {mp.nstr(factor * y_by_part[(4,4,4)] * chi_by_part[(4,4,4)], 6)} MeV")
     print(f"  contrib from (3,3,3,3) only  = {mp.nstr(factor * y_by_part[(3,3,3,3)] * chi_by_part[(3,3,3,3)], 6)} MeV")
     print(f"  contrib from pair total      = {mp.nstr(factor * pair_total, 6)} MeV")
-    print(f"  AME B(⁴He)                  = 28.2957 MeV")
+    print(f"  AME B(⁴He)                  = float(AME_B_HE4_MEV_VALIDATION) MeV")
     print(f"  current B_pred (mass-table) = 29.9557 MeV (formula '2·m_e·4·8G', no tr_M)")
 
     # === Build witness ===
@@ -188,7 +189,7 @@ def main() -> int:
         "contrib_4_4_4_MeV": mp.nstr(factor * y_by_part[(4,4,4)] * chi_by_part[(4,4,4)], 30),
         "contrib_3_3_3_3_MeV": mp.nstr(factor * y_by_part[(3,3,3,3)] * chi_by_part[(3,3,3,3)], 30),
         "pair_contribution_MeV": mp.nstr(factor * pair_total, 30),
-        "AME_B_4He_MeV": 28.2957,
+        "AME_B_4He_MeV": float(AME_B_HE4_MEV_VALIDATION),
     })
 
     # Falsification assertion: if PSD-dominant pair contributes < 1% of

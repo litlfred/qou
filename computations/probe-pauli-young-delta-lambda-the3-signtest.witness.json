@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-06-18T02:56:03.351501+00:00",
-  "commitSha": "a3e568203b14c0680d2e177338c660dca9c6fa08",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-22T04:34:29.896585+00:00",
+  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
   "assertions": [
     {
       "name": "wigner_su4_delta_lambda_misses_the3_differential",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "EXPECTED NEGATIVE: Wigner-SU(4) Δ_λ=dimGL4 gives -45.019 for (B_T−B_³He)/m_e vs target 1.49472; non-negative cone is unbounded so a free fit exists, but the principled Wigner-SU(4) weight is not it."
+      "source": "EXPECTED NEGATIVE: Wigner-SU(4) Δ_λ=dimGL4 gives -45.019 for (B_T−B_³He)/m_e vs target 1.49471; non-negative cone is unbounded so a free fit exists, but the principled Wigner-SU(4) weight is not it."
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 10,
   "computation": "probe-pauli-young-delta-lambda-the3-signtest",
   "scriptFile": "probe_pauli_young_delta_lambda_the3_signtest.py",
-  "scriptHash": "ab87d48ac91f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a8283b450bfa",
+  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,7 +27,11 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "EXPLORATORY: decisive T/³He same-n sign test for the Pauli-Young / Wigner-SU(4) Δ_λ projection proposed in PR #2461. A spin-isospin Young-symmetry multiplicity is Δ_λ≥0; the T/³He differential (B_T−B_³He)/m_e=+1.4947 is the entire same-n binding split. Reports the v_λ=y_λ·Δχ_λ sign census (whether any non-negative Δ_λ can reach the +sign) and the concrete Δ_λ=dim GL(4)-irrep(λ) evaluation. Δ_λ remains open (GAP-A-3/A-4).",
   "parameters": {
@@ -35,7 +39,7 @@
     "n_partitions": 30
   },
   "data": {
-    "target_diff": "1.49471931198419",
+    "target_diff": "1.494711875569706",
     "max_y_drift": "0.0",
     "sign_census": {
       "positive": 10,
