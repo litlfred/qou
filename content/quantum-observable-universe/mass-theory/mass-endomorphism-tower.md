@@ -237,8 +237,12 @@ incompatible with isospin symmetry at $q_0$
 in the brane tower
 ([topological decomposition](#thm\:topological-mass)):*
 
-1. *The **descended term** $\lvert\prod \hat{V}_i\rvert$ is the
-   base-level Markov trace
+1. *The **descended term** $\lvert\prod \hat{V}_i^{\mathrm{full}}\rvert$ is the
+   base-level **regular-representation (Wedderburn) trace** — the trace of the
+   left-multiplication endomorphism
+   ([Hecke mass element](#def\:hecke-mass-element)) — distinct from the
+   single-channel Jones--Markov trace $\prod \hat{V}_i^{\mathrm{std}}$ of the
+   categorical-mass reading
    ([categorical mass as Markov trace](#prop\:categorical-mass-markov)).*
 2. *Each **single-generator blow-up** at generator $i$ contributes
    $\Phi_q(\lvert\hat{V}_i\rvert)$.  (The Markov weight
