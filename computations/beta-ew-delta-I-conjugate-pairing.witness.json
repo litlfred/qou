@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-02T20:06:22.832813+00:00",
-  "commitSha": "41f1b2a404de0759b15e4ddd8dbfa55deca21f23",
+  "computedAt": "2026-06-22T13:14:29.786070+00:00",
+  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
   "assertions": [
     {
       "name": "abs_det_product_eq_1[6_x_1_1_1_1_1_1]",
@@ -81,11 +81,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 35966,
+  "durationMs": 43086,
   "computation": "beta-ew-delta-I-conjugate-pairing",
   "scriptFile": "beta_ew_delta_I_conjugate_pairing.py",
   "scriptHash": "b0e44e9445e0",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -93,17 +93,16 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "β_EW(Δ_I^minimal) conjugate-partition pairing at n=6 + staircase recursion (k=2,3,4 ↔ n=3,6,10).  Verifies the structural det law det(M_λ)·det(M_λ′) = ±1 across every conjugate pair, and tests the staircase ρ_k = (k,…,1) extension of the (3,2,1) bar-pair finding from 2d19e475.",
   "contentBlock": "conj:weinberg-angle-categorical",
   "parameters": {
-    "q_0": "1.1099785827513808075916690956107688798744991218736",
-    "q_0_numeric": 1.1099785827513808
+    "q_0": "1.1099785955573347198997632204832250266562084087802",
+    "q_0_numeric": 1.1099785955573347
   },
   "data": {
     "conjugate_pair_results_n6": [
@@ -122,10 +121,10 @@
         "self_conjugate": false,
         "dim_lambda": 1,
         "dim_lambda_prime": 1,
-        "det_lambda": 16.72993196973968,
-        "det_lambda_prime": -0.059773106179317005,
-        "det_product": -1.0,
-        "abs_det_product_minus_1": 0.0
+        "det_lambda": 16.729937181150852,
+        "det_lambda_prime": -0.05977308755986673,
+        "det_product": -0.9999999999999999,
+        "abs_det_product_minus_1": 1.1102230246251565e-16
       },
       {
         "lambda": [
@@ -142,10 +141,10 @@
         "self_conjugate": false,
         "dim_lambda": 5,
         "dim_lambda_prime": 5,
-        "det_lambda": -4682.551093671743,
-        "det_lambda_prime": 0.00021355880160100224,
-        "det_product": -0.9999999999999998,
-        "abs_det_product_minus_1": 2.220446049250313e-16
+        "det_lambda": -4682.555469548477,
+        "det_lambda_prime": 0.00021355860202899575,
+        "det_product": -1.0000000000000004,
+        "abs_det_product_minus_1": 4.440892098500626e-16
       },
       {
         "lambda": [
@@ -161,10 +160,10 @@
         "self_conjugate": false,
         "dim_lambda": 9,
         "dim_lambda_prime": 9,
-        "det_lambda": -4682.551093671732,
-        "det_lambda_prime": 0.00021355880160100205,
-        "det_product": -0.9999999999999966,
-        "abs_det_product_minus_1": 3.4416913763379853e-15
+        "det_lambda": -4682.555469548456,
+        "det_lambda_prime": 0.0002135586020289947,
+        "det_product": -0.9999999999999911,
+        "abs_det_product_minus_1": 8.881784197001252e-15
       },
       {
         "lambda": [
@@ -181,10 +180,10 @@
         "self_conjugate": false,
         "dim_lambda": 10,
         "dim_lambda_prime": 10,
-        "det_lambda": 279.8906237121182,
-        "det_lambda_prime": 0.00357282422232388,
-        "det_product": 0.9999999999999944,
-        "abs_det_product_minus_1": 5.551115123125783e-15
+        "det_lambda": 279.89079808525304,
+        "det_lambda_prime": 0.0035728219964395085,
+        "det_product": 1.000000000000001,
+        "abs_det_product_minus_1": 1.1102230246251565e-15
       },
       {
         "lambda": [
@@ -199,10 +198,10 @@
         "self_conjugate": false,
         "dim_lambda": 5,
         "dim_lambda_prime": 5,
-        "det_lambda": 16.729931969739635,
-        "det_lambda_prime": -0.05977310617931726,
-        "det_product": -1.0000000000000016,
-        "abs_det_product_minus_1": 1.5543122344752192e-15
+        "det_lambda": 16.72993718115084,
+        "det_lambda_prime": -0.05977308755986681,
+        "det_product": -1.0000000000000004,
+        "abs_det_product_minus_1": 4.440892098500626e-16
       },
       {
         "lambda": [
@@ -217,9 +216,9 @@
         ],
         "self_conjugate": true,
         "dim": 16,
-        "det_lambda": 1.0000000000000127,
-        "det_product": 1.0000000000000253,
-        "abs_det_product_minus_1": 2.531308496145357e-14
+        "det_lambda": 1.0000000000000133,
+        "det_product": 1.0000000000000266,
+        "abs_det_product_minus_1": 2.6645352591003757e-14
       }
     ],
     "staircase_results": [
@@ -233,11 +232,11 @@
         "dim": 2,
         "eigenvalues": [
           1.0,
-          -1.0000000000000004
+          -1.0
         ],
         "bar_pairs": 1,
         "unpaired": 0,
-        "det": -1.0000000000000004,
+        "det": -1.0,
         "det_expected": -1,
         "computed_kind": "full_spectrum"
       },
@@ -269,43 +268,43 @@
         "gen_determinants": [
           {
             "generator": 1,
-            "det": 1.000000000000004
+            "det": 0.999999999999987
           },
           {
             "generator": 2,
-            "det": 0.9999999999999412
+            "det": 1.0000000000001028
           },
           {
             "generator": 3,
-            "det": 1.0000000000000062
+            "det": 1.0000000000000029
           },
           {
             "generator": 4,
-            "det": 0.9999999999999634
+            "det": 1.0000000000000957
           },
           {
             "generator": 5,
-            "det": 0.999999999999941
+            "det": 1.0000000000000442
           },
           {
             "generator": 6,
-            "det": 0.999999999999979
+            "det": 0.999999999999993
           },
           {
             "generator": 7,
-            "det": 1.0000000000000007
+            "det": 1.0000000000000469
           },
           {
             "generator": 8,
-            "det": 0.9999999999999756
+            "det": 1.0000000000001048
           },
           {
             "generator": 9,
-            "det": 1.0000000000000082
+            "det": 1.0000000000001197
           }
         ],
         "all_gen_dets_unit_modulus": true,
-        "det_reconstructed_from_gens": 0.9999999999988469,
+        "det_reconstructed_from_gens": 1.0000000000025853,
         "computed_kind": "per_generator_only"
       }
     ],

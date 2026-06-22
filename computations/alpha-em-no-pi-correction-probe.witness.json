@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-10T23:42:07.123784+00:00",
-  "commitSha": "299739d4e2293ed5a7422a01cceb3bc0dd82480e",
+  "computedAt": "2026-06-22T13:12:54.990412+00:00",
+  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
   "assertions": [
     {
       "name": "additive corrections close bare residual: |resid_corrected| < 5e-5",
@@ -31,7 +31,7 @@
   "computation": "alpha-em-no-pi-correction-probe",
   "scriptFile": "alpha_em_no_pi_correction_probe.py",
   "scriptHash": "77e56f4b09dd",
-  "scriptCommitSha": "be8c9f5cba0384afc3fde4986e86fc4c5d756d89",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,19 +40,20 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "alpha_{basis-knot} step 6 (no-pi correction, research probe).  Makes the owner's thesis concrete: pi is the archimedean image of the Hopf-fibration periods |S^1|=2pi, |S^2|=4pi, so the corrections that close the bare e_- coupling 1/alpha=q[9]_q[10]_q (resid -1.55e-3) decompose as (pre-archimedean numerator)/(Hopf period): alpha/(4pi)=alpha/|S^2| and 2/(3pi)=(4/3)/|S^1|.  The corrected 1/alpha = q[9][10]+2/(3pi)+alpha/(4pi) closes to ~1e-5.  SECTOR/SOURCE map: the leading term is the DERIVED e_- sinh (step 2); alpha/(4pi) is the e_+ cosh Habiro element H=[2]_q(1-h^2 alpha) (prop:alpha-em-habiro-bar-involution, H(1)=2) — already pre-archimedean, pi = |S^2|; the 2/(3pi) numerator 4/3 has NO pre-archimedean source yet and is reported tier=OPEN (structural notes 4/3=H(1)^2/3 and '3'=trefoil index flagged, NOT claimed).  Nothing fitted.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "data": {
-    "q0": "1.1099785827513808075916690956107688798744991218736",
-    "bare_inv_alpha_e_minus_sinh": "136.82320885358258430804610540444147849492999517976",
-    "residual_bare_rel": "-0.0015528060122549916813082164487812227620256805028112",
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "bare_inv_alpha_e_minus_sinh": "136.82321965722217844421585389121350313248240188816",
+    "residual_bare_rel": "-0.0015527271742878952992139579383489320381415772441498",
     "correction_2_over_3pi": "0.21220659078919378102517835116335248271261286098728",
     "correction_alpha_over_4pi": "0.00058070486604883222396035203892135576818869216913455",
-    "corrected_inv_alpha": "137.03599614923782692129524410764375233341079673292",
-    "residual_corrected_rel": "-0.000000022094648057901574093999764492749316827693213835145",
+    "corrected_inv_alpha": "137.03600695287742105746499259441577697096320344132",
+    "residual_corrected_rel": "0.000000056743319038480520164510667797974567275565447564741",
     "hopf_periods": {
       "S1_2pi": "6.2831853071795864769252867665590057683943387987502",
       "S2_4pi": "12.5663706143591729538505735331180115367886775975",
