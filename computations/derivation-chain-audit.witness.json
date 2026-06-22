@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-20T19:03:39.418483+00:00",
-  "commitSha": "17d23d15ba45bd938cf9ec052359429b321bb786",
+  "computedAt": "2026-06-22T04:14:24.427657+00:00",
+  "commitSha": "093bce3cdcb4643c7bb114f9b7bc14f0c2fcf139",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -573,8 +573,8 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "mpmath": "1.4.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -2065,6 +2065,7 @@
         "alpha-k-selection-rule-conditional.witness.json",
         "alpha-k-split-pole-order-audit.witness.json",
         "ame-2020-binding-energies.witness.json",
+        "ame-registry-routing-triage.witness.json",
         "applied-uniqueness-mass-table.witness.json",
         "atom-braid-active-partitions.witness.json",
         "atom-chi-rust-3he.witness.json",
@@ -2546,6 +2547,10 @@
         "hbond-categorical-action.witness.json",
         "hbond-vdw-energy-ladder.witness.json",
         "hbond-vdw-sdp.witness.json",
+        "he-nu-sdp-barfold-h9-test.witness.json",
+        "he-nu-sdp-psd-count-test.witness.json",
+        "he-nu-sdp-saturation-obstruction.witness.json",
+        "he-nu-sdp-selfconjugate-candidate.witness.json",
         "he3-brane-tower-structural-gap.witness.json",
         "he3-pairknot-composite-lp.witness.json",
         "he3-tower-charge-asymmetry.witness.json",
@@ -2590,6 +2595,7 @@
         "kazhdan-lusztig-canonical-basis.witness.json",
         "keystone-icosahedral-irrep-rotation-step1.witness.json",
         "keystone-icosahedral-irrep-rotation-step2.witness.json",
+        "keystone-qdeform-projector-shift.witness.json",
         "keystone-reeb-casimir-chirality-step3.witness.json",
         "kite-tail-reconciliation.witness.json",
         "kite_tail_reconciliation.witness.json",
