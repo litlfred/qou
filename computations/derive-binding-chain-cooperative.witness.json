@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T04:26:21.427197+00:00",
-  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
+  "computedAt": "2026-06-22T14:23:16.306052+00:00",
+  "commitSha": "858f41202339ad977e9ea3a8352ffaeea3b40863",
   "assertions": [
     {
       "name": "he4_binding_is_majority_many_body",
@@ -17,8 +17,8 @@
   "durationMs": 19,
   "computation": "derive-binding-chain-cooperative",
   "scriptFile": "derive_binding_chain_cooperative.py",
-  "scriptHash": "fa55b0d61e6d",
-  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
+  "scriptHash": "c65abc37e752",
+  "scriptCommitSha": "2ee1eddd42e93090f831004dd65c95525b5255f7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,10 +28,8 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "DERIVATION (0 fit): chain (A−1) pairwise bond-sum over the canonical braid's adjacency, and the many-body residual B_AME − B_chain. Bond types from binding_canonical (pp/pn/nn 2-nucleon sub-braids), E_0 calibration. Localizes: sub-α (A≤3) pairwise path + T/³He ordering; ⁴He residual ~20.9 MeV = irreducible 4-body α-binding (beyond pairwise).",
   "parameters": {
@@ -71,10 +69,10 @@
           "pn"
         ],
         "B_chain_MeV": 4.869881926875459,
-        "AME_MeV": 7.718,
-        "err": -0.36902281330973574,
-        "many_body_residual_MeV": 2.8481180731245406,
-        "fraction_pairwise": 0.6309771866902643
+        "AME_MeV": 7.71804132,
+        "err": -0.3690261913659385,
+        "many_body_residual_MeV": 2.848159393124541,
+        "fraction_pairwise": 0.6309738086340615
       },
       "4He": {
         "chain_bonds": [

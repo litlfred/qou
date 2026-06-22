@@ -35,7 +35,7 @@ from mpmath import mpf, acos, fabs
 sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
-from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 mp.mp.dps = 40
 HERE = Path(__file__).parent
@@ -46,7 +46,7 @@ h0 = q0 - 1 / q0
 mu0 = M_E / (3 * h0 / 2)
 
 AME_B = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
-         "3He": mpf("7.7180"), "4He": AME_B_HE4_MEV_VALIDATION}
+         "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 CHI = {"D": "atom-chi-rust-d.witness.json", "T": "atom-chi-rust-t.witness.json",
        "3He": "atom-chi-rust-3he.witness.json", "4He": "atom-chi-rust-4he.witness.json"}
 

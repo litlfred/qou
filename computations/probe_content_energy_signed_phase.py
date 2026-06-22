@@ -33,14 +33,15 @@ from mpmath import mpf, fabs, acos  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402 — AME validation refs
 
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
 
 # AME 2020 binding-energy comparison targets (validation-only; this probe
 # fits a global scale, so no MeV calibration constant is used).
-AME_B = {"D": mpf("2.2245662"), "T": mpf("8.4818"),
-         "3He": mpf("7.7180"), "4He": mpf("28.29566")}
+AME_B = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
+         "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 CHI = {"D": "atom-chi-rust-d.witness.json", "T": "atom-chi-rust-t.witness.json",
        "3He": "atom-chi-rust-3he.witness.json", "4He": "atom-chi-rust-4he.witness.json"}
 BIND_RATIO = 12.72   # AME B(⁴He)/B(D)
