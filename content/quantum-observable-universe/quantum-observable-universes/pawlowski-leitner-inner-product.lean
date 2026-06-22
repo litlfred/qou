@@ -12,7 +12,7 @@ Authoritative source: `content/quantum-observable-universe/lean/QOU/Representati
 
 ## References
 
-- [pawlowski-leitner-rep] (see content/schema/references.ts — TODO bib lookup)
+- [pawlowski-leitner-rep] (in content/schema/references.ts; exact title pending bib-human-review)
 - [manuscript] §1, Proposition: Inner product on intertwiner spaces
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
@@ -39,7 +39,7 @@ structure PawLeiInnerProduct where
   /-- The norm-squared of each basis vector. -/
   normSq : Fin num_basis → R_q
   /-- All norms are positive. -/
-  -- Ref: [pawlowski-leitner-rep] PL inner product / SU(2) intertwiner basis — TODO bib lookup
+  -- Ref: [pawlowski-leitner-rep] PL inner product / SU(2) intertwiner basis (title pending bib-human-review)
   -- normSq_pos : ∀ i, normSq i > 0  -- (archimedean; not meaningful over R_q)
 
 /-- Positive-definiteness: the PL inner product ⟨φ, φ⟩ > 0
