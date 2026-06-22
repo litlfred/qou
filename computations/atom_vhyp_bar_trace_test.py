@@ -41,7 +41,7 @@ import pyhecke_native as nat  # noqa: E402
 from chi_at_q0_via_matrix_m_mpfr import _split_atom_braid  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
-from codata_constants import M_E_MEV as _M_E  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV as _M_E  # noqa: E402
 
 mp.mp.dps = 55
 DPS = 50
@@ -49,7 +49,7 @@ K_SPLIT = 3  # proton|neutron parabolic split (chi_at_q0_via_matrix_m_mpfr:124)
 M_E = float(_M_E)
 
 # AME2020 binding (MeV), same source as ame-2020-binding-energies.witness.json
-AME_B = {"deuteron": (1, 1, 2.224566), "tritium": (1, 2, 8.481798)}
+AME_B = {"deuteron": (1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)), "tritium": (1, 2, float(AME_B_TRITIUM_MEV_VALIDATION))}
 TRM_Q0_WITNESS = {"deuteron": mp.mpf("1.3317821792991125061382939027504490778795270468692")}
 
 

@@ -41,7 +41,7 @@ from _li_2_q_util import (  # noqa: E402
     flavor_split_subleading,
 )
 from q_parameter import Q as Q0  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402 — CAL-1
+from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402 — CAL-1
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -83,7 +83,7 @@ def main() -> int:
         print(f"  bond {xy}: B0 = {float(B0[xy]):+.4f} MeV   "
               f"color weight = {float(w[xy]):.8f}  ({float((w[xy]-1)*100):+.4f} %)")
 
-    AME_T, AME_He = mp.mpf("8.4818"), mp.mpf("7.7180")
+    AME_T, AME_He = AME_B_TRITIUM_MEV_VALIDATION, mp.mpf("7.7180")
     need = AME_T - AME_He
     T_cw = 2 * B0["pn"] * w["pn"] + B0["nn"] * w["nn"]
     He_cw = B0["pp"] * w["pp"] + 2 * B0["pn"] * w["pn"]

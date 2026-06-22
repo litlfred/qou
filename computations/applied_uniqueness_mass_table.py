@@ -69,7 +69,7 @@ import mpmath as mp
 
 from _precision import set_compute_dps, fmt
 set_compute_dps()  # mp.mp.dps via QOU_COMPUTE_DPS (default 50)
-from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402
 from witness_base import WitnessBuilder
 
 ASSEMBLY_DIR = Path(__file__).parent
@@ -126,10 +126,10 @@ RHO = {
 # AME baselines for binding-energy comparison (MeV).  Per
 # `mass-table-ppb.witness.json`.
 B_AME_MEV = {
-    "deuteron": mp.mpf("2.22456612"),
-    "tritium":  mp.mpf("8.4817984"),
-    "helium3":  mp.mpf("7.7180375"),
-    "helium4":  mp.mpf("28.2956912"),
+    "deuteron": AME_B_DEUTERON_MEV_VALIDATION,
+    "tritium":  AME_B_TRITIUM_MEV_VALIDATION,
+    "helium3":  AME_B_HE3_MEV_VALIDATION,
+    "helium4":  AME_B_HE4_MEV_VALIDATION,
 }
 
 # AME nucleus masses (MeV).  Computed below from
