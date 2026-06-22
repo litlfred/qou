@@ -82,7 +82,7 @@ CASES = [("D", 1, 1), ("T", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
 CENSUS_BINDING_VOL = {"D": 0.0, "T": 8.2863168, "3He": 7.3277248}
 
 # Substrate h = q − q⁻¹ at q₀; the crossing-sign classifier thresholds.
-_Q0 = mp.mpf("1.1099785827513808")
+_Q0 = mp.mpf("1.1099785955573347")
 _H = float(_Q0 - 1 / _Q0)            # ≈ 0.2091
 
 
