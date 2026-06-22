@@ -27,10 +27,10 @@ import mpmath as mp  # noqa: E402
 
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, M_E_MEV  # noqa: E402
 
 # AME2020 total binding (MeV)
-B_AME = {"D": 2.224566, "3He": 7.718058, "4He": 28.295673,
+B_AME = {"D": float(AME_B_DEUTERON_MEV_VALIDATION), "3He": float(AME_B_HE3_MEV_VALIDATION), "4He": float(AME_B_HE4_MEV_VALIDATION),
          "6Li": 31.994564, "7Li": 39.245389, "12C": 92.161728,
          "16O": 127.619296, "40Ca": 342.052}
 SEQ = [("D", 1, 1), ("3He", 2, 1), ("4He", 2, 2), ("6Li", 3, 3),

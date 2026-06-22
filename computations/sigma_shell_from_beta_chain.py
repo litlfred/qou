@@ -73,9 +73,9 @@ set_compute_dps()
 # ── Inputs (calibration anchors at the ρ_K layer; NOT shell-derivation params) ──
 # Centralised via codata_constants per Copilot review on PR #564
 # (avoids duplicating CODATA literals across compute scripts).
-from codata_constants import M_E_MEV, M_P_MEV  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, M_E_MEV, M_P_MEV  # noqa: E402
 from codata_constants import M_N_MEV  # noqa: E402
-B_D_MEV = mp.mpf("2.224566110")  # AME 2020 deuteron binding energy (benchmark only)
+B_D_MEV = AME_B_DEUTERON_MEV_VALIDATION  # AME 2020 deuteron binding energy (benchmark only)
 
 
 def evaluate_y_lambda(partition: list[int]) -> mp.mpf:

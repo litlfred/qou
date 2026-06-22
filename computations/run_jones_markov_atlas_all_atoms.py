@@ -58,6 +58,7 @@ from pyhecke_jones_markov_atlas import (  # noqa: E402
     tr_M_via_atlas,
 )
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 mp.mp.dps = 30
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
@@ -81,12 +82,12 @@ VOL_BOR = float(8 * mp.catalan)
 
 # AME binding energies
 B_AME = {
-    "2H":   2.22456612,
-    "3H":   8.4817984,
-    "3He":  7.7180375,
-    "4He": 28.2956912,
+    "2H":   float(AME_B_DEUTERON_MEV_VALIDATION),
+    "3H":   float(AME_B_TRITIUM_MEV_VALIDATION),
+    "3He":  float(AME_B_HE3_MEV_VALIDATION),
+    "4He": float(AME_B_HE4_MEV_VALIDATION),
     "5Li": 26.328,
-    "6Li": 31.99405,
+    "6Li": float(AME_B_LI6_MEV_VALIDATION),
     "7Li": 39.24453,
     "8Be": 56.49951,
 }

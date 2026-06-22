@@ -30,7 +30,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder
 # CAL-1: m_e sourced from codata_constants registry (P31-triage Phase A);
 # coerced to float for json-serialisable arithmetic in this script.
-from codata_constants import M_E_MEV as _M_E_MEV_MP
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV as _M_E_MEV_MP
 
 # ── Constants ──────────────────────────────────────────────────
 # Knot volumes from canonical knot_volumes module (mpmath 50dps).
@@ -49,7 +49,7 @@ def main() -> None:
     m_cat = {"D": 1.813186209713881, "T": 7.874495793321092,
              "3He": 7.872184876047902}
     # AME binding energies (MeV):
-    B_AME = {"D": 2.22456612, "T": 8.4817984, "3He": 7.7180375}
+    B_AME = {"D": float(AME_B_DEUTERON_MEV_VALIDATION), "T": float(AME_B_TRITIUM_MEV_VALIDATION), "3He": float(AME_B_HE3_MEV_VALIDATION)}
 
     # ── Raw ratios = alpha * m_cat / B_AME ────────────────────────
     raw = {atom: ALPHA_MEV * m_cat[atom] / B_AME[atom]

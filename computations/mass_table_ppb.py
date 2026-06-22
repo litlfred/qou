@@ -54,6 +54,7 @@ from q_parameter import Q as Q0
 from experimental_constants import M_E_MEV
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from knot_volumes import VOL_BORROMEAN, VOL_7_SQ_1  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 # Knot volumes now imported from `knot_volumes` (canonical mpmath
 # 50dps source). Catalan G + Vol(L6a4) = 8G + Vol(7²_1) literature
@@ -75,11 +76,11 @@ KNOT_VOL = {
 
 # AME2020 light-atom table (B in MeV; positive = binding).
 AME_TABLE = [
-    ("2H",     1,  1,   2.22456612),
-    ("3H",     1,  2,   8.4817984),
-    ("3He",    2,  1,   7.7180375),
-    ("4He",    2,  2,  28.2956912),
-    ("6Li",    3,  3,  31.99405),
+    ("2H",     1,  1,   float(AME_B_DEUTERON_MEV_VALIDATION)),
+    ("3H",     1,  2,   float(AME_B_TRITIUM_MEV_VALIDATION)),
+    ("3He",    2,  1,   float(AME_B_HE3_MEV_VALIDATION)),
+    ("4He",    2,  2,  float(AME_B_HE4_MEV_VALIDATION)),
+    ("6Li",    3,  3,  float(AME_B_LI6_MEV_VALIDATION)),
     ("7Li",    3,  4,  39.24453),
     ("8Be",    4,  4,  56.49951),
     ("9Be",    4,  5,  58.16498),
@@ -126,9 +127,9 @@ ATOM_ASSIGN = {
              "vol_kashaev_target_m_e_units": 26.328 / M_E_MEV,
              "vol_kashaev_target_2m_e_units": 26.328 / (2 * M_E_MEV),
              "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
-    "6Li":  {"rule": "gap",      "B_AME_MeV_target": 31.99405,
-             "vol_kashaev_target_m_e_units": 31.99405 / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": 31.99405 / (2 * M_E_MEV),
+    "6Li":  {"rule": "gap",      "B_AME_MeV_target": float(AME_B_LI6_MEV_VALIDATION),
+             "vol_kashaev_target_m_e_units": float(AME_B_LI6_MEV_VALIDATION) / M_E_MEV,
+             "vol_kashaev_target_2m_e_units": float(AME_B_LI6_MEV_VALIDATION) / (2 * M_E_MEV),
              "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
     "7Li":  {"rule": "gap",      "B_AME_MeV_target": 39.24453,
              "vol_kashaev_target_m_e_units": 39.24453 / M_E_MEV,
@@ -327,7 +328,7 @@ def main() -> int:
     print(f"  c_αα (derived = m_e · Vol(7²_1)) = {C_ALPHA_DERIVED:.6f} MeV")
     print(f"  B(⁴He_derived) = 2m_e · 4·8G = "
           f"{2*M_E_MEV*4*VOL_BORROMEAN:.6f} MeV   "
-          f"(AME 4He: {28.2957} MeV)")
+          f"(AME 4He: {float(AME_B_HE4_MEV_VALIDATION)} MeV)")
     print(f"  NO AME VALUES USED AS INPUTS.")
     if args.shell_correction:
         print(f"  L3 shell-correction APPLIED (--shell-correction flag, "

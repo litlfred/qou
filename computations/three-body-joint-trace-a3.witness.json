@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-04T00:15:27.504218+00:00",
-  "commitSha": "62323c979764c94ef6df7ec90c315942232027b2",
+  "computedAt": "2026-06-22T04:36:43.972539+00:00",
+  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
   "assertions": [
     {
       "name": "kernel_ran",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 19,
   "computation": "three-body-joint-trace-a3",
   "scriptFile": "three_body_joint_trace_a3.py",
-  "scriptHash": "7f3a52eaf0a9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7ac3273c213e",
+  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,32 +30,31 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "data": {
-    "q_0": "1.1099785827513808",
-    "E0_MeV": 4.185981363294476,
+    "q_0": "1.1099785955573347",
+    "E0_MeV": 4.185980827582892,
     "results": {
       "T": {
-        "B_bond_a_MeV": 2.3199429779545104,
-        "B_bond_b_MeV": 2.701305462731074,
-        "pair_sum_MeV": 5.021248440685584,
-        "joint_MeV": 3.2524733758781457,
-        "correlation_c3_MeV": -1.7687750648074383,
-        "AME_MeV": 8.4818,
-        "pair_sum_err": -0.4079973070945337,
-        "joint_err": -0.6165350072062362
+        "B_bond_a_MeV": 2.31994325549869,
+        "B_bond_b_MeV": 2.7013058314901257,
+        "pair_sum_MeV": 5.021249086988816,
+        "joint_MeV": 3.252473799937315,
+        "correlation_c3_MeV": -1.7687752870515012,
+        "AME_MeV": 8.481796200000002,
+        "pair_sum_err": -0.40799696566762417,
+        "joint_err": -0.6165347854105108
       },
       "3He": {
-        "B_bond_a_MeV": 2.200186880613862,
-        "B_bond_b_MeV": 2.671786192430095,
-        "pair_sum_MeV": 4.871973073043957,
-        "joint_MeV": 3.4665488171583814,
-        "correlation_c3_MeV": -1.4054242558855756,
+        "B_bond_a_MeV": 2.2001871035452343,
+        "B_bond_b_MeV": 2.6717865346700886,
+        "pair_sum_MeV": 4.871973638215323,
+        "joint_MeV": 3.4665492613742392,
+        "correlation_c3_MeV": -1.4054243768410837,
         "AME_MeV": 7.718,
-        "pair_sum_err": -0.368751869260954,
-        "joint_err": -0.5508488187149027
+        "pair_sum_err": -0.3687517960332569,
+        "joint_err": -0.5508487611590775
       }
     },
     "note": "Cluster (Ursell) correlation of the two adjacent chain bonds: c3 = joint − pair-sum = E_0(g_a+g_b−g_0−g_ab). c3<0 = destructive co-bond interference = the 3-body force. Adjacent pair only; non-adjacent 1-3 flagged. Rust kernel; zero fit."

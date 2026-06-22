@@ -15,7 +15,7 @@ This is a formalize-first PRUNE, not a fit: the T/³He mirror pair (same n=9, sa
 dominant block is common to the mirror pair (λ*(T)=λ*(³He), the natural case),
 then Δ_{λ*} and y_{λ*} CANCEL in the binding ratio:
 
-    B_T / B_³He = |χ^{λ*}(β_T)| / |χ^{λ*}(β_³He)|  =!=  8.4818/7.7180 = 1.0990.
+    B_T / B_³He = |χ^{λ*}(β_T)| / |χ^{λ*}(β_³He)|  =!=  float(AME_B_TRITIUM_MEV_VALIDATION)/7.7180 = 1.0990.
 
 So H_sparse PREDICTS: some Wedderburn block has character-ratio equal to the AME
 binding ratio 1.0990 — and it should be the block that actually dominates the
@@ -41,11 +41,12 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401,E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 mp.mp.dps = 50
 HERE = Path(__file__).resolve().parent
 M_E = mp.mpf("0.51099895069")
-AME = {"tritium": mp.mpf("8.4818"), "helium-3": mp.mpf("7.7180")}
+AME = {"tritium": AME_B_TRITIUM_MEV_VALIDATION, "helium-3": mp.mpf("7.7180")}
 CHI = {"tritium": "chi-tritium-h9-at-q0-50dps.witness.json",
        "helium-3": "chi-helium-3-h9-at-q0-50dps.witness.json"}
 

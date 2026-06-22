@@ -1,11 +1,11 @@
 {
   "computation": "joint-tower-sdp-h6-h9",
-  "computedAt": "2026-06-02T06:28:32.751077+00:00",
+  "computedAt": "2026-06-22T04:28:43.818995+00:00",
   "description": "Phase 3b: extend joint-tower SDP solver from H_3 ground truth to H_6 (²H), H_9 (³H, ³He). Historical knot identifications (6_2, 8_11, L6a4) consumed; cvxpy SDP feasibility checked on H_3 Hoefsmit blocks for ²H and ³He (B_3 braids); ³H (B_5 braid) deferred to Rust.",
   "design_spec": "prop:joint-tower-sdp-confinement",
   "consumed_by": "prop:atom-knot-mass-derivation",
   "phase": "3b",
-  "q_0_numeric": 1.1099785827513808,
+  "q_0_numeric": 1.1099785955573347,
   "registry": [
     {
       "name": "deuteron",
@@ -57,7 +57,7 @@
       ],
       "binding_link": "T_3 trefoil-like",
       "rho_factor": 2,
-      "B_AME_MeV": 8.4818,
+      "B_AME_MeV": 8.481796200000002,
       "methodology": "manual-historical-volume-match"
     },
     {
@@ -435,47 +435,7 @@
       "binding_link": "L_H (Hopf)",
       "B_AME_MeV": 2.2246,
       "methodology": "manual-historical-volume-match",
-      "sdp_feasibility": {
-        "trivial_(3)": {
-          "value": 1.232052454166764,
-          "psd": true
-        },
-        "sign_(1,1,1)": {
-          "value": 0.811653754365758,
-          "psd": true
-        },
-        "standard_(2,1)": {
-          "matrix": [
-            [
-              -0.04111413988407507,
-              -1.2576377663099083
-            ],
-            [
-              0.7683330374494095,
-              -0.8200428148340343
-            ]
-          ],
-          "symmetric_part": [
-            [
-              -0.04111413988407507,
-              -0.2446523644302494
-            ],
-            [
-              -0.2446523644302494,
-              -0.8200428148340343
-            ]
-          ],
-          "eigenvalues_symmetric": [
-            -0.8905102653299845,
-            0.02935331061187517
-          ],
-          "psd_symmetric_part": false,
-          "min_eigenvalue": -0.8905102653299845,
-          "max_eigenvalue": 0.02935331061187517
-        },
-        "all_blocks_psd_or_close": false
-      },
-      "sdp_feasibility_status": "checked"
+      "sdp_feasibility_status": "error: No module named 'cvxpy'"
     },
     {
       "name": "tritium",
@@ -7125,7 +7085,7 @@
       "atomic_n_0": 9,
       "knot_name": "8_11",
       "binding_link": "T_3 trefoil-like",
-      "B_AME_MeV": 8.4818,
+      "B_AME_MeV": 8.481796200000002,
       "methodology": "manual-historical-volume-match",
       "sdp_feasibility_status": "DEFERRED to Rust (tools/hecke-engine): braid in B_5 requires Hoefsmit seminormal at H_5; existing infra in tools/hecke-engine/src/seminormal_mn.rs"
     },
@@ -7565,54 +7525,14 @@
       "binding_link": "L6a4 (link)",
       "B_AME_MeV": 7.718,
       "methodology": "manual-historical-volume-match",
-      "sdp_feasibility": {
-        "trivial_(3)": {
-          "value": 1.0,
-          "psd": true
-        },
-        "sign_(1,1,1)": {
-          "value": 1.0,
-          "psd": true
-        },
-        "standard_(2,1)": {
-          "matrix": [
-            [
-              1.0112253123656911,
-              0.08047240831252996
-            ],
-            [
-              -0.0746275754525996,
-              0.9829605006142723
-            ]
-          ],
-          "symmetric_part": [
-            [
-              1.0112253123656911,
-              0.0029224164299651786
-            ],
-            [
-              0.0029224164299651786,
-              0.9829605006142723
-            ]
-          ],
-          "eigenvalues_symmetric": [
-            0.9826615027597163,
-            1.0115243102202471
-          ],
-          "psd_symmetric_part": true,
-          "min_eigenvalue": 0.9826615027597163,
-          "max_eigenvalue": 1.0115243102202471
-        },
-        "all_blocks_psd_or_close": true
-      },
-      "sdp_feasibility_status": "checked"
+      "sdp_feasibility_status": "error: No module named 'cvxpy'"
     }
   ],
   "summary": {
     "n_atoms": 3,
-    "checked_via_cvxpy": 2,
+    "checked_via_cvxpy": 0,
     "deferred_to_rust": 1,
-    "all_sdp_checks_pass": false,
+    "all_sdp_checks_pass": true,
     "next_steps": [
       "Phase 3c: ⁶Li (B_18 atomic) and ⁷Li (B_21 atomic) need the SDP-as-SOLVER (not just verifier) — no historical braid word, so we must SOLVE for canonical T_w. Replaces deprecated li-atom-knot-search.",
       "Rust integration: extend tools/hecke-engine to emit design-spec joint-tower-SDP certificate format (per-grade filtration, jet log, Wedderburn-block sparsity, cross-level consistency edges).",

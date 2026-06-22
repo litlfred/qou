@@ -45,7 +45,7 @@ from mpmath import mpf, fabs  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402 — CAL-1, centralized
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402 — CAL-1, centralized
 from experimental_constants import Q_NEUTRON_MEV  # noqa: E402 — CAL-3, centralized
 
 set_compute_dps()
@@ -57,8 +57,8 @@ q0 = mpf(str(Q0))         # substrate parameter (q_parameter)
 E0_substrate = M_E / (q0 * (q0 - 1))        # 𝔈₀ ≈ 4.186 MeV
 E0_qbeta = mpf(str(Q_NEUTRON_MEV))          # CAL-3 free-neutron β-decay Q-value
 
-AME_B = {"D": mpf("2.2245662"), "T": mpf("8.4818"),
-         "3He": mpf("7.7180"), "4He": mpf("28.29566")}
+AME_B = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
+         "3He": mpf("7.7180"), "4He": AME_B_HE4_MEV_VALIDATION}
 CHI = {"D": "atom-chi-rust-d.witness.json", "T": "atom-chi-rust-t.witness.json",
        "3He": "atom-chi-rust-3he.witness.json", "4He": "atom-chi-rust-4he.witness.json"}
 

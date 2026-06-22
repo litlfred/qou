@@ -5,8 +5,8 @@ deuteron sub-braid) close the deuteron binding-energy ratio?
 
 ## Setup
 
-Deuteron: B(d) = 2.22456611 MeV. The binding-fraction ratio:
-  B(d) / M_d_avg = 2.22456611 / 1875.612... = 0.001186
+Deuteron: B(d) = float(AME_B_DEUTERON_MEV_VALIDATION) MeV. The binding-fraction ratio:
+  B(d) / M_d_avg = float(AME_B_DEUTERON_MEV_VALIDATION) / 1875.612... = 0.001186
 
 In the framework, this corresponds to Δ_λ for partition λ at the
 deuteron's Wedderburn channel.
@@ -41,6 +41,7 @@ import experimental_constants as _ec  # noqa: E402
 from q_parameter import q_at, q_str  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 
 
 def main() -> int:

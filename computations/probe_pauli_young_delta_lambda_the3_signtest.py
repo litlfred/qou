@@ -55,12 +55,13 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401,E402 — puts substrate/ (witness_base) on path
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 mp.mp.dps = 50
 HERE = Path(__file__).parent
 
 M_E_MEV = mp.mpf("0.51099895069")
-AME_B = {"tritium": mp.mpf("8.4818"), "helium-3": mp.mpf("7.7180")}
+AME_B = {"tritium": AME_B_TRITIUM_MEV_VALIDATION, "helium-3": mp.mpf("7.7180")}
 CHI = {
     "tritium": "chi-tritium-h9-at-q0-50dps.witness.json",
     "helium-3": "chi-helium-3-h9-at-q0-50dps.witness.json",

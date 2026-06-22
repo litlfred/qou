@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T16:57:25.845119+00:00",
-  "commitSha": "32e2edb8e940de14e9b665866967cb295d870852",
+  "computedAt": "2026-06-22T04:26:22.001482+00:00",
+  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
   "assertions": [
     {
       "name": "deuteron_scan_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 18,
   "computation": "deuteron-binding-plancherel-channel",
   "scriptFile": "deuteron_binding_plancherel_channel.py",
-  "scriptHash": "30fabd7f181a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9457661d5230",
+  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,13 +35,19 @@
   },
   "description": "Item C of PR #1654: brief test of Plancherel-channel template at H_2 for the deuteron binding ratio. Complements sibling Δ_λ Option E work (multiple existing queue entries).",
   "parameters": {
-    "q_80dps": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830",
+    "q_80dps": "1.1099785955573347198997632204832250266562084087801536866079811461449304145619756",
     "mp_dps_runtime": "80"
   },
   "data": {
     "target_Bd_over_Md": "0.001186047536887797345969665",
     "best_candidate": "(h) ℏ_q · (q-1)² · 1/2",
-    "best_rel_pct": "-49.4783337258",
-    "verdict": "NULL — Plancherel-channel template at H_2 does NOT close the deuteron binding ratio. Confirms (yet again) that the Δ_λ binding closure requires deeper structure than H_2 classical Plancherel — multi-session open work."
+    "best_rel_pct": "-49.4783166604",
+    "verdict": "NULL — Plancherel-channel template at H_2 does NOT close the deuteron binding ratio. Confirms (yet again) that the Δ_λ binding closure requires deeper structure than H_2 classical Plancherel — multi-session open work.",
+    "lean_uniqueness_ref": {
+      "nucleus": "deuteron (²H)",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
   }
 }
