@@ -52,15 +52,55 @@ correct real-q archimedean face of the merged `eulerCoeff` limit is still open
   `alpha-em-*`, `binding-*`) was moved to `computations/_deprecated/` this week
   — actively pulled *out* of the tree.
 
-## Opportunities (if wiring is the goal)
+## Wiring the two production-adjacent leads
 
-1. **Prove the z-Habiro Rogers saddle lemma** (direction doc §4) — justifies the
-   `li2q` term already in production; the missing deliverable is the Lean proof,
-   not a compute change.
-2. **A=3 ³He operator-form combiner → per-isotope binding.** It is the
-   week's most production-adjacent probe (reconstructs ³He χ^λ that feeds
-   binding), but wiring it is gated by the standing **Δ_λ closure problem**
-   (six ansätze failed — AGENTS.md "Δ_λ gate"); not a quick wire.
+### 1. z-Habiro Rogers saddle lemma — SCAFFOLDED (Lean conjecture-class)
+
+Production already runs the bounded Rogers `li2q`; the missing deliverable is
+the *proof* that it is the correct real-`q` archimedean saddle of the merged
+`eulerCoeff` (Faddeev) limit. Now scaffolded as a formalize-first conjecture
+class `QOU.BraidKnot.ZHabiroRogersSaddle` in `QuantumDilogarithm.lean`, reusing
+the file's existing `phi_q` (Faddeev face) and `towerTerm = -li2_q(-|·|)`
+(Rogers production face), with two **non-vacuous** conditional corollaries
+(`realQSaddle_phi_q_at_zero`, `realQSaddle_phi_q_ne_phi_q_at_zero`) that compose
+the conjecture with the proven `towerTerm_at_zero` / `phi_q_at_zero`. The
+`saddle_phi_q_eq_towerTerm` field is the open conjectural input (the AJ-saddle
+identification, open for `𝓑₃`). A full proof is research-grade
+(saddle-point / Stokes); this turns the prose conjecture into a typed Lean
+object that downstream can depend on conditionally. *(Local Lean verify
+unavailable — olean restore failed and a from-source build would storm Mathlib;
+the additions mirror verified idioms in the same file, but CI / lean-direct must
+confirm elaboration.)*
+
+### 2. A=3 ³He operator-form combiner → binding: BLOCKED at the Δ_λ gate
+
+The A=3 combiner (`binding_a3plus_joint_ji_combiner.py`) is a Path-D-style
+binding combiner — `S_joint(K) = |Σ_λ y_λ dim_λ (z_atom_λ − z_free_λ)|` (joint
+J⊕I rotation⊕growth eigenvalues, *no fits*; ³He +17.4% vs the `Σ|Δθ|`
+baseline). It produces the χ^λ / per-block eigenvalue ingredients, but
+production binding is `B(K) = m_e·Σ_λ y_λ χ^λ Δ_λ`, and the gate is **Δ_λ**, not
+the combiner.
+
+Per the **2026-06-20 binding-gate stocktake**, *no binding path is closed*, and
+the Δ_λ family (Path D) is open with every probed closure refuted:
+- 6 Δ_λ ansätze failed; the 2026-05-26 "deuteron closure" was **retracted**
+  (−82.9% on Path D).
+- This week, independently: the **qbk2** q-Bessel quadratic-action correction
+  collapsed to **20–80× too small** under the *forced* `y_λ` measure; the
+  **ν_SDP** reading (Path C) has no computable definition.
+- The operator route reduces to the LP **𝓑₃-selection**, and (2026-06-17)
+  **both** remaining directions — close the 𝓑₃-selection gate, and the
+  α-cluster recursion sidestep — are **negative**: no continuous variational
+  principle selects the Borromean signature (the SDP returns the trivial
+  `tr_M=0` / mesonic channel).
+
+**Verdict:** the A=3 combiner is *ready as an ingredient* but **cannot be wired
+to production binding** — the blocker is the Δ_λ / 𝓑₃-selection gate, which is
+open and whose every probed shortcut (including this week's two) is refuted.
+Per AGENTS.md, **do not propose a 7th fit-based Δ_λ ansatz**; the productive
+directions are GAP-A-3 / GAP-A-4 (categorical brane-tower level selection / ρ
+general rule) and Option E (Kashiwara crystal). Wiring the combiner is therefore
+*not* the actionable step — closing the gate is, and that is research-grade.
 
 ## Caveats
 
