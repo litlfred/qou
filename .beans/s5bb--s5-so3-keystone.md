@@ -89,7 +89,7 @@ Owner pick: push the residual frontier (Habiro-WRT(S³/2I) ↔ W_λ).
   object, not differential geometry.
 Doc: docs/audits/2026-06-22-keystone-habiro-wrt-s3-2i.md. No fit. Owner closes (§4a).
 
-## λ-coloured WRT / Schur-Weyl obstruction (2026-06-22, PR follows)
+## λ-coloured WRT / Schur-Weyl obstruction (2026-06-22, PR #2603)
 
 Owner pick: the λ-coloured WRT invariants. Well-anchored increment:
 - **Colour-resolution computed:** the bare Σ(2,3,5) invariant splits over its 4 false-theta
@@ -100,3 +100,17 @@ Owner pick: the λ-coloured WRT invariants. Well-anchored increment:
 - **Frontier now at the rep-theory core:** push SU(2)-coloured WRT data through Schur-Weyl, compare
   S₅-resolved weights to W_λ via the bar/Habiro bridge. Finitely stated; not differential geometry.
 Doc: docs/audits/2026-06-22-keystone-wrt-color-schurweyl.md. No fit. Owner closes (§4a).
+
+## Schur-Weyl SU(2) row-count push (2026-06-22, PR #2604) — spin/colour generation split
+
+Owner pick: push SU(2)-coloured WRT through Schur-Weyl to the S₅ blocks. Exact selection rule:
+GL(2)/SU(2) Schur-Weyl on (ℂ²)^⊗n yields ONLY ≤2-row partitions; ≥3-row needs SU(≥3) colour.
+Applied to λ⊢5:
+- SU(2)-reachable (≤2-row): {(5),(4,1),(3,2)} ↔ spins {5/2,3/2,1/2}. INCLUDES muon (3,2).
+- Needs colour SU(≥3) (≥3-row): {(3,1,1),(2,2,1),...}. INCLUDES electron (3,1,1).
+SHARP: muon (3,2) 2-row → spin-reachable (Poincaré WRT sector); electron (3,1,1) 3-row →
+colour/SU(3) only. The lepton generations split across the spin/colour Schur-Weyl boundary —
+the corpus spin-ℂ²⊥colour-ℂ³ split (#2364) AT THE GENERATION LEVEL, derived not posited.
+Keystone factorises: spin sector ← S³/2I WRT; colour/≥3-row sector ← SU(3). Remaining: per-sector
+numerical realisation (level-k S-matrix / SU(3) coloured invariants) via bar/Habiro. Not diff geo.
+Doc: docs/audits/2026-06-22-keystone-schurweyl-su2-rowcount.md. Exact rep theory; no fit. Owner closes (§4a).
