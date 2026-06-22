@@ -53,6 +53,7 @@ mp.mp.dps = 40
 
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 Q0 = Q_MP  # was f64 roundtrip
 QI = Q_INV_MP
@@ -208,11 +209,11 @@ def main() -> int:
 
     # Observed binding energies (AME2020)
     CODATA = {
-        "D":    (1, 1, 2, 2.22456612),
-        "T":    (1, 2, 3, 8.481798),
-        "3He":  (2, 1, 3, 7.718058),
-        "4He":  (2, 2, 4, 28.29566),
-        "6Li":  (3, 3, 6, 31.99405),
+        "D":    (1, 1, 2, float(AME_B_DEUTERON_MEV_VALIDATION)),
+        "T":    (1, 2, 3, float(AME_B_TRITIUM_MEV_VALIDATION)),
+        "3He":  (2, 1, 3, float(AME_B_HE3_MEV_VALIDATION)),
+        "4He":  (2, 2, 4, float(AME_B_HE4_MEV_VALIDATION)),
+        "6Li":  (3, 3, 6, float(AME_B_LI6_MEV_VALIDATION)),
         "7Li":  (3, 4, 7, 39.24452),
         "9Be":  (4, 5, 9, 58.16505),
         "11B":  (5, 6, 11, 76.20546),

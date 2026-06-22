@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-14T23:40:47.221743+00:00",
-  "commitSha": "96c4de9c94ef659a11c87efc0293c598271531ad",
+  "computedAt": "2026-06-22T04:02:48.903592+00:00",
+  "commitSha": "56bd29634b58f096923c9b4dfb06e99ebfc9b622",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 1634,
+  "durationMs": 5693,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
-  "scriptHash": "78bdbb660b64",
-  "scriptCommitSha": "96c4de9c94ef659a11c87efc0293c598271531ad",
+  "scriptHash": "5457f04c7a7b",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,222 +19,27 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Extended canonical mass table via unknown method 'auto'. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
+  "description": "Extended canonical mass table via unknown method 'branching'. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
   "parameters": {
     "q_0": "1.1099785955573347198997632204832250266562084087802",
-    "method": "auto",
+    "method": "branching",
     "precision": "mpfr",
-    "dps": 50,
+    "dps": 0,
     "compute_dps": 70,
     "output_dps": 60,
-    "target_dps": 11,
+    "target_dps": 60,
     "paper_hard_floor_ppb": 780.0,
     "active_set_pruning_safe": true,
-    "atoms_requested": "p,n,D,T,3He",
+    "atoms_requested": "p,n,D,T,3He,4He,5Li,6Li,7Li",
     "timeout_per_atom_sec": 1500
   },
   "data": {
     "rows": [
-      {
-        "Z": 1,
-        "N": 0,
-        "A": 1,
-        "n_strands": 3,
-        "spin_J": null,
-        "parity": null,
-        "braid_word_canonical": [
-          [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "averaged"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "averaged"
-          ]
-        ],
-        "markov_closure": "trefoil 3_1 = T(2,3)",
-        "knot_operators": [
-          {
-            "op_type": "intra-nucleon",
-            "gen_index": 0,
-            "crossing_type": "sigma",
-            "nucleon_type": "p",
-            "interface_channel": null,
-            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
-            "witness_ref": null
-          },
-          {
-            "op_type": "intra-nucleon",
-            "gen_index": 1,
-            "crossing_type": "sigma_inv",
-            "nucleon_type": "p",
-            "interface_channel": null,
-            "canonical_form_label": null,
-            "witness_ref": null
-          },
-          {
-            "op_type": "closure-topology",
-            "gen_index": -1,
-            "crossing_type": null,
-            "nucleon_type": null,
-            "interface_channel": null,
-            "canonical_form_label": "trefoil 3_1 = T(2,3)",
-            "witness_ref": null
-          }
-        ],
-        "tr_M_q0_canonical_50dps": "1.06530622861316705936528454643137255765066167413514838947453",
-        "wedderburn_blocks_active": [],
-        "prediction_method": "canonical-trace",
-        "calibration_source": "CAL-1",
-        "prediction_type": "mass",
-        "prediction_MeV_50dps": "965.384675510658",
-        "B_AME_MeV": 938.27208816,
-        "err_MeV": 27.112587350658032,
-        "err_pct": 2.8896295320717913,
-        "err_ppb": 28896295.320717912,
-        "err_ppm": 28896.295320717913,
-        "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via laurent_q_rust)",
-        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
-      },
-      {
-        "Z": 0,
-        "N": 1,
-        "A": 1,
-        "n_strands": 3,
-        "spin_J": null,
-        "parity": null,
-        "braid_word_canonical": [
-          [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "averaged"
-          ],
-          [
-            0,
-            "averaged"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            0,
-            "sigma"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ],
-          [
-            1,
-            "sigma_inv"
-          ]
-        ],
-        "markov_closure": "trefoil 3_1 = T(2,3)",
-        "knot_operators": [
-          {
-            "op_type": "intra-nucleon",
-            "gen_index": 0,
-            "crossing_type": "sigma",
-            "nucleon_type": "n",
-            "interface_channel": null,
-            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
-            "witness_ref": null
-          },
-          {
-            "op_type": "intra-nucleon",
-            "gen_index": 1,
-            "crossing_type": "sigma_inv",
-            "nucleon_type": "n",
-            "interface_channel": null,
-            "canonical_form_label": null,
-            "witness_ref": null
-          },
-          {
-            "op_type": "closure-topology",
-            "gen_index": -1,
-            "crossing_type": null,
-            "nucleon_type": null,
-            "interface_channel": null,
-            "canonical_form_label": "trefoil 3_1 = T(2,3)",
-            "witness_ref": null
-          }
-        ],
-        "tr_M_q0_canonical_50dps": "0.923233297186153557105253395990686040138662121901341259163501",
-        "wedderburn_blocks_active": [],
-        "prediction_method": "canonical-trace",
-        "calibration_source": "CAL-1",
-        "prediction_type": "mass",
-        "prediction_MeV_50dps": "966.714973422537",
-        "B_AME_MeV": 939.56542052,
-        "err_MeV": 27.14955290253704,
-        "err_pct": 2.8895862182232284,
-        "err_ppb": 28895862.182232283,
-        "err_ppm": 28895.862182232282,
-        "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via laurent_q_rust)",
-        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
-      },
       {
         "Z": 1,
         "N": 1,
@@ -399,11 +204,11 @@
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
         "prediction_MeV_50dps": "2.2488207948647343",
-        "B_AME_MeV": 2.22456589,
-        "err_MeV": 0.02425490486473425,
-        "err_pct": 1.090320811524007,
-        "err_ppb": 10903208.115240071,
-        "err_ppm": 10903.20811524007,
+        "B_AME_MeV": 2.2245662,
+        "err_MeV": 0.024254594864734358,
+        "err_pct": 1.0903067242833393,
+        "err_ppb": 10903067.242833393,
+        "err_ppm": 10903.067242833393,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via branching)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -647,11 +452,11 @@
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
         "prediction_MeV_50dps": "8.46859838653302",
-        "B_AME_MeV": 8.4817983,
-        "err_MeV": -0.013199913466978686,
-        "err_pct": -0.15562635422465407,
-        "err_ppb": -1556263.5422465405,
-        "err_ppm": -1556.2635422465407,
+        "B_AME_MeV": 8.4817962,
+        "err_MeV": -0.013197813466979014,
+        "err_pct": -0.15560163384943174,
+        "err_ppb": -1556016.3384943174,
+        "err_ppm": -1556.0163384943173,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via branching)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -895,17 +700,1759 @@
         "calibration_source": "CAL-1",
         "prediction_type": "binding_energy",
         "prediction_MeV_50dps": "7.48891930977096",
-        "B_AME_MeV": 7.7180428,
-        "err_MeV": -0.22912349022904,
-        "err_pct": -2.968673485835554,
-        "err_ppb": -29686734.858355537,
-        "err_ppm": -29686.73485835554,
+        "B_AME_MeV": 7.71804132,
+        "err_MeV": -0.2291220102290401,
+        "err_pct": -2.9686548792542626,
+        "err_ppb": -29686548.792542625,
+        "err_ppm": -29686.548792542624,
+        "derivation_chain_witness": null,
+        "chi_cache_witness": "(computed live via branching)",
+        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_strands": 12,
+        "spin_J": null,
+        "parity": null,
+        "braid_word_canonical": [
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "averaged"
+          ],
+          [
+            2,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "averaged"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "averaged"
+          ],
+          [
+            5,
+            "averaged"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "averaged"
+          ],
+          [
+            6,
+            "averaged"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            8,
+            "sigma_inv"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "averaged"
+          ],
+          [
+            9,
+            "averaged"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ]
+        ],
+        "markov_closure": "magic A·8G shell (no single knot)",
+        "knot_operators": [
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 0,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 1,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 2,
+            "crossing_type": "sigma",
+            "nucleon_type": null,
+            "interface_channel": "pp",
+            "canonical_form_label": "pp coupling: σ at gen 3k+2 (positive)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 3,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 4,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 5,
+            "crossing_type": "averaged",
+            "nucleon_type": null,
+            "interface_channel": "pn",
+            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 6,
+            "crossing_type": "sigma",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 7,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 8,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": null,
+            "interface_channel": "nn",
+            "canonical_form_label": "nn coupling: σ + (-h)·𝟙 at gen 3k+2",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 9,
+            "crossing_type": "sigma",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 10,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "closure-topology",
+            "gen_index": -1,
+            "crossing_type": null,
+            "nucleon_type": null,
+            "interface_channel": null,
+            "canonical_form_label": "magic A·8G shell (no single knot)",
+            "witness_ref": null
+          }
+        ],
+        "tr_M_q0_canonical_50dps": "0.0553584434002387645739770751801330760538092460961447770308063",
+        "wedderburn_blocks_active": [],
+        "prediction_method": "canonical-trace",
+        "calibration_source": "CAL-1",
+        "prediction_type": "binding_energy",
+        "prediction_MeV_50dps": "29.95567723908384",
+        "B_AME_MeV": 28.2956624,
+        "err_MeV": 1.6600148390838392,
+        "err_pct": 5.866676014214247,
+        "err_ppb": 58666760.14214246,
+        "err_ppm": 58666.76014214246,
+        "derivation_chain_witness": null,
+        "chi_cache_witness": "(computed live via branching)",
+        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
+      },
+      {
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "n_strands": 15,
+        "spin_J": null,
+        "parity": null,
+        "braid_word_canonical": [
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "averaged"
+          ],
+          [
+            2,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "averaged"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "averaged"
+          ],
+          [
+            5,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "averaged"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "averaged"
+          ],
+          [
+            8,
+            "averaged"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "averaged"
+          ],
+          [
+            9,
+            "averaged"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            11,
+            "sigma_inv"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            12,
+            "averaged"
+          ],
+          [
+            12,
+            "averaged"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ]
+        ],
+        "markov_closure": null,
+        "knot_operators": [
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 0,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 1,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 2,
+            "crossing_type": "sigma",
+            "nucleon_type": null,
+            "interface_channel": "pp",
+            "canonical_form_label": "pp coupling: σ at gen 3k+2 (positive)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 3,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 4,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 5,
+            "crossing_type": "sigma",
+            "nucleon_type": null,
+            "interface_channel": "pp",
+            "canonical_form_label": "pp coupling: σ at gen 3k+2 (positive)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 6,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 7,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 8,
+            "crossing_type": "averaged",
+            "nucleon_type": null,
+            "interface_channel": "pn",
+            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 9,
+            "crossing_type": "sigma",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 10,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 11,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": null,
+            "interface_channel": "nn",
+            "canonical_form_label": "nn coupling: σ + (-h)·𝟙 at gen 3k+2",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 12,
+            "crossing_type": "sigma",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 13,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "closure-topology",
+            "gen_index": -1,
+            "crossing_type": null,
+            "nucleon_type": null,
+            "interface_channel": null,
+            "canonical_form_label": "closure(Z=3, N=2) — TBD",
+            "witness_ref": null
+          }
+        ],
+        "tr_M_q0_canonical_50dps": "0.0294467609690993515889051603348699632346840215311245880584935",
+        "wedderburn_blocks_active": [],
+        "prediction_method": "canonical-trace",
+        "calibration_source": "CAL-1",
+        "prediction_type": "binding_energy",
+        "prediction_MeV_50dps": null,
+        "B_AME_MeV": 26.328,
+        "err_MeV": null,
+        "err_pct": null,
+        "err_ppb": null,
+        "err_ppm": null,
+        "derivation_chain_witness": null,
+        "chi_cache_witness": "(computed live via branching)",
+        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
+      },
+      {
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "n_strands": 18,
+        "spin_J": null,
+        "parity": null,
+        "braid_word_canonical": [
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "averaged"
+          ],
+          [
+            2,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "averaged"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "averaged"
+          ],
+          [
+            5,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "averaged"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "averaged"
+          ],
+          [
+            8,
+            "averaged"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "averaged"
+          ],
+          [
+            9,
+            "averaged"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            11,
+            "sigma_inv"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            12,
+            "averaged"
+          ],
+          [
+            12,
+            "averaged"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ],
+          [
+            14,
+            "sigma_inv"
+          ],
+          [
+            15,
+            "sigma"
+          ],
+          [
+            15,
+            "sigma"
+          ],
+          [
+            15,
+            "sigma"
+          ],
+          [
+            15,
+            "averaged"
+          ],
+          [
+            15,
+            "averaged"
+          ],
+          [
+            15,
+            "sigma"
+          ],
+          [
+            15,
+            "sigma"
+          ],
+          [
+            16,
+            "sigma_inv"
+          ],
+          [
+            16,
+            "sigma_inv"
+          ],
+          [
+            16,
+            "sigma_inv"
+          ],
+          [
+            16,
+            "sigma_inv"
+          ]
+        ],
+        "markov_closure": null,
+        "knot_operators": [
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 0,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 1,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 2,
+            "crossing_type": "sigma",
+            "nucleon_type": null,
+            "interface_channel": "pp",
+            "canonical_form_label": "pp coupling: σ at gen 3k+2 (positive)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 3,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 4,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 5,
+            "crossing_type": "sigma",
+            "nucleon_type": null,
+            "interface_channel": "pp",
+            "canonical_form_label": "pp coupling: σ at gen 3k+2 (positive)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 6,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 7,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 8,
+            "crossing_type": "averaged",
+            "nucleon_type": null,
+            "interface_channel": "pn",
+            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 9,
+            "crossing_type": "sigma",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 10,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 11,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": null,
+            "interface_channel": "nn",
+            "canonical_form_label": "nn coupling: σ + (-h)·𝟙 at gen 3k+2",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 12,
+            "crossing_type": "sigma",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 13,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 14,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": null,
+            "interface_channel": "nn",
+            "canonical_form_label": "nn coupling: σ + (-h)·𝟙 at gen 3k+2",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 15,
+            "crossing_type": "sigma",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 16,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "closure-topology",
+            "gen_index": -1,
+            "crossing_type": null,
+            "nucleon_type": null,
+            "interface_channel": null,
+            "canonical_form_label": "closure(Z=3, N=3) — TBD",
+            "witness_ref": null
+          }
+        ],
+        "tr_M_q0_canonical_50dps": "0.00789107551120110442043351523048319302063747852562078331452555",
+        "wedderburn_blocks_active": [],
+        "prediction_method": "canonical-trace",
+        "calibration_source": "CAL-1",
+        "prediction_type": "binding_energy",
+        "prediction_MeV_50dps": null,
+        "B_AME_MeV": 31.993987199999996,
+        "err_MeV": null,
+        "err_pct": null,
+        "err_ppb": null,
+        "err_ppm": null,
+        "derivation_chain_witness": null,
+        "chi_cache_witness": "(computed live via branching)",
+        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "n_strands": 21,
+        "spin_J": null,
+        "parity": null,
+        "braid_word_canonical": [
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "averaged"
+          ],
+          [
+            2,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "averaged"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "averaged"
+          ],
+          [
+            5,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "averaged"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "averaged"
+          ],
+          [
+            8,
+            "averaged"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "averaged"
+          ],
+          [
+            9,
+            "averaged"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            11,
+            "sigma_inv"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            12,
+            "averaged"
+          ],
+          [
+            12,
+            "averaged"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            12,
+            "sigma"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ],
+          [
+            13,
+            "sigma_inv"
+          ],
+          [
+            14,
+            "sigma_inv"
+          ],
+          [
+            15,
+            "sigma"
+          ],
+          [
+            15,
+            "sigma"
+          ],
+          [
+            15,
+            "sigma"
+          ],
+          [
+            15,
+            "averaged"
+          ],
+          [
+            15,
+            "averaged"
+          ],
+          [
+            15,
+            "sigma"
+          ],
+          [
+            15,
+            "sigma"
+          ],
+          [
+            16,
+            "sigma_inv"
+          ],
+          [
+            16,
+            "sigma_inv"
+          ],
+          [
+            16,
+            "sigma_inv"
+          ],
+          [
+            16,
+            "sigma_inv"
+          ],
+          [
+            17,
+            "sigma_inv"
+          ],
+          [
+            18,
+            "sigma"
+          ],
+          [
+            18,
+            "sigma"
+          ],
+          [
+            18,
+            "sigma"
+          ],
+          [
+            18,
+            "averaged"
+          ],
+          [
+            18,
+            "averaged"
+          ],
+          [
+            18,
+            "sigma"
+          ],
+          [
+            18,
+            "sigma"
+          ],
+          [
+            19,
+            "sigma_inv"
+          ],
+          [
+            19,
+            "sigma_inv"
+          ],
+          [
+            19,
+            "sigma_inv"
+          ],
+          [
+            19,
+            "sigma_inv"
+          ]
+        ],
+        "markov_closure": null,
+        "knot_operators": [
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 0,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 1,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 2,
+            "crossing_type": "sigma",
+            "nucleon_type": null,
+            "interface_channel": "pp",
+            "canonical_form_label": "pp coupling: σ at gen 3k+2 (positive)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 3,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 4,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 5,
+            "crossing_type": "sigma",
+            "nucleon_type": null,
+            "interface_channel": "pp",
+            "canonical_form_label": "pp coupling: σ at gen 3k+2 (positive)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 6,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 7,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 8,
+            "crossing_type": "averaged",
+            "nucleon_type": null,
+            "interface_channel": "pn",
+            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 9,
+            "crossing_type": "sigma",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 10,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 11,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": null,
+            "interface_channel": "nn",
+            "canonical_form_label": "nn coupling: σ + (-h)·𝟙 at gen 3k+2",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 12,
+            "crossing_type": "sigma",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 13,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 14,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": null,
+            "interface_channel": "nn",
+            "canonical_form_label": "nn coupling: σ + (-h)·𝟙 at gen 3k+2",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 15,
+            "crossing_type": "sigma",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 16,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 17,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": null,
+            "interface_channel": "nn",
+            "canonical_form_label": "nn coupling: σ + (-h)·𝟙 at gen 3k+2",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 18,
+            "crossing_type": "sigma",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 19,
+            "crossing_type": "sigma_inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "closure-topology",
+            "gen_index": -1,
+            "crossing_type": null,
+            "nucleon_type": null,
+            "interface_channel": null,
+            "canonical_form_label": "closure(Z=3, N=4) — TBD",
+            "witness_ref": null
+          }
+        ],
+        "tr_M_q0_canonical_50dps": "0.00211463232879233412344867356007078268896309426133241789246551",
+        "wedderburn_blocks_active": [],
+        "prediction_method": "canonical-trace",
+        "calibration_source": "CAL-1",
+        "prediction_type": "binding_energy",
+        "prediction_MeV_50dps": null,
+        "B_AME_MeV": 39.24522,
+        "err_MeV": null,
+        "err_pct": null,
+        "err_ppb": null,
+        "err_ppm": null,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via branching)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       }
     ],
-    "n_atoms_computed": 5,
+    "n_atoms_computed": 7,
     "upstream_witness_hashes": [
       {
         "path": "mass-table-ppb.witness.json",

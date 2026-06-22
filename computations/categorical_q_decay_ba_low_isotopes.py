@@ -71,6 +71,7 @@ from q_parameter import Q_ERR as Q_0_ERR
 from witness_base import WitnessBuilder
 
 from functools import lru_cache
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 HERE = Path(__file__).parent
 
@@ -309,8 +310,8 @@ def main():
     }
     B_AME = {
         "1H": 0.0,                          # convention: single nucleon ⇒ B = 0
-        "D": 2.22456612, "T": 8.4817984, "3He": 7.7180375, "4He": 28.2956912,
-        "6Li": 31.99405, "7Li": 39.24453, "9Be": 58.16498, "11B": 76.20548,
+        "D": float(AME_B_DEUTERON_MEV_VALIDATION), "T": float(AME_B_TRITIUM_MEV_VALIDATION), "3He": float(AME_B_HE3_MEV_VALIDATION), "4He": float(AME_B_HE4_MEV_VALIDATION),
+        "6Li": float(AME_B_LI6_MEV_VALIDATION), "7Li": 39.24453, "9Be": 58.16498, "11B": 76.20548,
         "12C": 92.16175, "16O": 127.61929,
     }
 

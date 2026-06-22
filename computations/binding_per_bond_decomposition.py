@@ -32,7 +32,7 @@ sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402
 
 try:
     from mass_at_3A_proper import (
@@ -88,7 +88,7 @@ def main():
     from mpmath import catalan
     VOL_B3 = 8 * catalan
 
-    AME = {"2H": mpf("2.22452"), "3H": mpf("8.48182"), "3He": mpf("7.71804")}
+    AME = {"2H": mpf("2.22452"), "3H": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION}
 
     print("=" * 70)
     print("PER-BOND BINDING DECOMPOSITION (H_{3A} chain)")
