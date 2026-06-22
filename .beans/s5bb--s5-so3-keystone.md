@@ -88,3 +88,15 @@ Owner pick: push the residual frontier (Habiro-WRT(S³/2I) ↔ W_λ).
   invariants / S-matrix), not the bare closed-manifold number — a concrete rep-theoretic+q-series
   object, not differential geometry.
 Doc: docs/audits/2026-06-22-keystone-habiro-wrt-s3-2i.md. No fit. Owner closes (§4a).
+
+## λ-coloured WRT / Schur-Weyl obstruction (2026-06-22, PR follows)
+
+Owner pick: the λ-coloured WRT invariants. Well-anchored increment:
+- **Colour-resolution computed:** the bare Σ(2,3,5) invariant splits over its 4 false-theta
+  components Ψ̃₃₀^(a), a∈{1,11,19,29}: at 1/q₀ = {0.990, 0.789, 0.503, 0.048}, sum=2.3296 (×-check 1.4e-15).
+- **Obstruction established (not forced):** 4 WRT colour components (SU(2)-spin index) vs 7 partitions
+  / 3 physical blocks (S₅ index). 4≠7, 4≠3 ⇒ NO naive component↔W_λ bijection; impossible by counting.
+  The map SU(2)-colour → S₅-block is SCHUR-WEYL duality (the colour-ℂ³/spin-ℂ² bridge, #2364), not identity.
+- **Frontier now at the rep-theory core:** push SU(2)-coloured WRT data through Schur-Weyl, compare
+  S₅-resolved weights to W_λ via the bar/Habiro bridge. Finitely stated; not differential geometry.
+Doc: docs/audits/2026-06-22-keystone-wrt-color-schurweyl.md. No fit. Owner closes (§4a).
