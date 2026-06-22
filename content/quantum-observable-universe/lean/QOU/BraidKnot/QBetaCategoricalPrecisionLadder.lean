@@ -138,22 +138,25 @@ classical-limit decategorification principle. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
 -- Ref: [jones1985] doi:10.2307/1971403
 -- Ref: [wenzl1988] doi:10.1007/BF01239526
-/-- **External axiom (§3b-cond pattern): hoefsmitB_bar_invariant.**
+/-- **b is bar-symmetric**: `hoefsmitB q⁻¹ = hoefsmitB q` for `q > 0`.
 
-    `b² = (q⁴ + q² + 1) / (q² + 1)²` is manifestly invariant under
-    q ↔ q⁻¹ after dividing by `q²` (the algebraic identity is
-    straightforward; the Lean proof requires manipulating `Real.sqrt`
-    quotients, pending a `sqrt_div_eq` lemma in Mathlib that we have
-    not built up yet). -/
-axiom hoefsmitB_bar_invariant_axiom (q : ℝ) (hq : 0 < q) :
-    hoefsmitB q⁻¹ = hoefsmitB q
-
-/-- **b is bar-symmetric**: `hoefsmitB q⁻¹ = hoefsmitB q`.
-    Reason: `b² = (q⁴ + q² + 1) / (q² + 1)² = (q² + 1 + q⁻²) / (q + q⁻¹)²`
-    after dividing by q², which is manifestly invariant under q ↔ q⁻¹. -/
+    `hoefsmitB q = √(q⁴+q²+1)/(q²+1)`.  Dividing radicand and
+    denominator by `q²`: `q⁻⁴+q⁻²+1 = (q⁴+q²+1)/(q²)²` and
+    `q⁻²+1 = (q²+1)/q²`, so `√(·)/(·)` telescopes to the `q`-form
+    (`Real.sqrt_div` splits the quotient, `Real.sqrt_sq` evaluates
+    `√(q²)² = q²`).  Previously an `axiom` "pending a `sqrt_div_eq`
+    lemma in Mathlib"; the existing `Real.sqrt_div` + `Real.sqrt_sq`
+    API discharges it directly. -/
+-- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
 theorem hoefsmitB_bar_invariant (q : ℝ) (hq : 0 < q) :
-    hoefsmitB q⁻¹ = hoefsmitB q :=
-  hoefsmitB_bar_invariant_axiom q hq
+    hoefsmitB q⁻¹ = hoefsmitB q := by
+  have hq' : q ≠ 0 := ne_of_gt hq
+  unfold hoefsmitB
+  have e1 : q⁻¹ ^ 4 + q⁻¹ ^ 2 + 1 = (q ^ 4 + q ^ 2 + 1) / (q ^ 2) ^ 2 := by
+    field_simp; ring
+  have e2 : q⁻¹ ^ 2 + 1 = (q ^ 2 + 1) / q ^ 2 := by field_simp; ring
+  rw [e1, e2, Real.sqrt_div (by positivity), Real.sqrt_sq (sq_nonneg q)]
+  field_simp
 
 /-! ## Q_β categorical-derivation expansion -/
 
