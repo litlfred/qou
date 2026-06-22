@@ -41,7 +41,7 @@ from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 
 # substrate inputs (CAL-1 m_e, CAL-2 q₀) — pure canonical, no fit
 from q_parameter import Q as Q0  # noqa: E402
-from codata_constants import M_E_MEV as _ME  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV as _ME  # noqa: E402
 
 # canonical energy scale α = E₀ = m_e/(q₀(q₀−1)) ≈ 4.186 MeV (derived,
 # the dashboard scale) — distinct from binding_canonical's Q_β multiplier.
@@ -51,7 +51,7 @@ _E0 = float(_ME) / (float(Q0) * (float(Q0) - 1.0))
 ISOTOPES = [("2H", 1, 1), ("3H", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
 
 # AME binding ground truth (MeV) for the Re cross-check
-B_AME = {"2H": 2.224566, "3H": 8.481821, "3He": 7.718058, "4He": 28.295673}
+B_AME = {"2H": float(AME_B_DEUTERON_MEV_VALIDATION), "3H": float(AME_B_TRITIUM_MEV_VALIDATION), "3He": float(AME_B_HE3_MEV_VALIDATION), "4He": float(AME_B_HE4_MEV_VALIDATION)}
 
 
 def complex_volume(Z: int, N: int):

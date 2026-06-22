@@ -69,6 +69,7 @@ from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 # mirrors low_isotopes_binding_sweep.py.
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools" / "qou-substrate" / "python"))
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 
@@ -76,12 +77,12 @@ set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 B_AME_MEV: dict[tuple[int, int], float] = {
     (1, 0):  0.0,        # proton (no binding)
     (0, 1):  0.0,        # neutron (no binding; mass excess separate)
-    (1, 1):  2.22456589, # D
-    (1, 2):  8.4817983,  # T
-    (2, 1):  7.7180428,  # ³He
-    (2, 2): 28.295673,   # ⁴He
+    (1, 1):  float(AME_B_DEUTERON_MEV_VALIDATION), # D
+    (1, 2):  float(AME_B_TRITIUM_MEV_VALIDATION),  # T
+    (2, 1):  float(AME_B_HE3_MEV_VALIDATION),  # ³He
+    (2, 2): float(AME_B_HE4_MEV_VALIDATION),   # ⁴He
     (3, 2): 26.328,      # ⁵Li (unstable, half-life ~10⁻²² s)
-    (3, 3): 31.99405,    # ⁶Li
+    (3, 3): float(AME_B_LI6_MEV_VALIDATION),    # ⁶Li
     (3, 4): 39.24522,    # ⁷Li
     (4, 3): 37.6,        # ⁷Be
     (4, 4): 56.49951,    # ⁸Be
