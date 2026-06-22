@@ -11,14 +11,31 @@ they compute the same object at the substrate q_0:
 
 Euler's identity ∏(1-x t^k)^{-1} = Σ x^m/(t;t)_m makes the first two equal for
 |z| < q; the third equals the second by the proven triangular base change. So a
-three-way agreement at q_0 certifies that the PRODUCTION Φ_q used in the mass
-tower IS the Lean-proven brane-tower limit `zHabiroLimit qinv eulerCoeff`.
+three-way agreement at q_0 certifies that the production `_phi_q_util.phi_q`
+UTILITY computes the Lean-proven algebraic Cauchy limit `zHabiroLimit qinv
+eulerCoeff` — i.e. the Φ_q utility matches the Lean formalization.
 
-PHYSICAL z (pinned, per `per-braid-mass-tower.md`): the production Φ_q is
-evaluated at the per-generator magnitude |V̂_i^full| = |tr_M(σ_i)|-type
-sub-trace (constrained < q for convergence), NOT the scalar ℏ_q². We sample z
-across (0, q) — including a representative |V̂_i^full|-scale band — to certify
-the identity on the physical domain.
+SCOPE — do not overstate (see VERDICT below). This certifies the *algebraic
+Cauchy-limit* half ONLY. The Faddeev Φ_q is the root-of-unity face of the
+quantum dilogarithm; it is the SUPERSEDED `brane-legacy` evaluator and is NOT
+the production real-q mass-tower term — that is the bounded Rogers −Li₂^q
+(`li2q`). The Euler identity holding on (0, q) says nothing about masses.
+
+VERDICT — the Φ_q production mass-wire is REFUTED, not pending
+(docs/audits/2026-06-18-zhabiro-physical-z-pin-and-wiring-verdict.md). The
+physical brane-tower argument z_i = |V̂_i^full| (per-generator additive
+Wedderburn traced volume, per `per-braid-mass-tower.md`) is pinned at
+0.59–0.99. At those z the Faddeev Φ_q is convergent-but-ENORMOUS (10²–10⁶ — see
+the z=1.0 sample below, Φ_q ≈ 9e5), so routing it into the canonical mass table
+REGRESSES it: the −737 MeV mirror-nucleus isospin pathology
+(zhabiro-physical-z-pin.witness.json + brane-tower-isospin-diagnosis). The only
+rescue — an n⋆ truncation level — is refuted across all six probed families
+(docs/audits/2026-06-17-refuted-ansatz-lemmas.md). Production correctly uses
+the bounded Rogers `li2q`. We sample z across (0, q) ONLY to exhibit the
+algebraic identity (and, incidentally, the blow-up); this is NOT a step toward
+a Φ_q mass wire. The live bounded-continuation direction is the Rogers/real-q
+archimedean face — see
+docs/audits/2026-06-22-zhabiro-bounded-rogers-continuation-direction.md.
 
 Output: zhabiro-phiq-production-crosscheck.witness.json
 """
@@ -130,9 +147,12 @@ def main() -> int:
             "euler_vs_cyclotomic_ok": bool(cyclo_ok),
             "max_euler_vs_cyclo_abs": mp.nstr(max_euler_vs_cyclo, 6),
             "cross_check_ok": bool(ok),
-            "physical_z_note": "production Φ_q argument is |V̂_i^full| = |tr_M(σ_i)|-type "
-                               "per-generator sub-trace (< q for convergence), per "
-                               "per-braid-mass-tower.md — NOT the scalar ℏ_q².",
+            "physical_z_note": "REFUTED as a production wire: at the physical z_i = "
+                               "|V_i^full| (0.59-0.99) the Faddeev Phi_q is 1e2-1e6 (see "
+                               "samples), regressing the mass table (-737 MeV isospin "
+                               "pathology); n-star truncation refuted x6. Production uses "
+                               "the bounded Rogers li2q. See "
+                               "docs/audits/2026-06-18-zhabiro-physical-z-pin-and-wiring-verdict.md.",
         },
         "samples": rows,
         "_provenance": {
@@ -142,9 +162,13 @@ def main() -> int:
                 "QOU.MassEndomorphism.ZHabiroCauchy.eulerTrunc_eq_cyclotomic",
                 "QOU.MassEndomorphism.ZHabiroCauchy.zHabiroLimit_coord_eq_eulerTrunc",
             ],
-            "wiring_status": "production Φ_q ≡ Lean eulerCoeff/cyclotomic identification "
-                             "CERTIFIED at q_0; next: route per-generator |V̂_i^full| "
-                             "magnitudes through the canonical mass table + dashboards.",
+            "wiring_status": "production phi_q UTILITY == Lean eulerCoeff/cyclotomic "
+                             "algebraic Cauchy-limit CERTIFIED at q_0 (the surviving half). "
+                             "Phi_q production mass-wire REFUTED (regresses; n-star refuted "
+                             "x6) -- see docs/audits/2026-06-18-zhabiro-physical-z-pin-and-"
+                             "wiring-verdict.md SS5-6. Bounded-continuation direction: "
+                             "Rogers/real-q face, see docs/audits/2026-06-22-zhabiro-bounded-"
+                             "rogers-continuation-direction.md.",
         },
     }
     out = HERE.parent / "zhabiro-phiq-production-crosscheck.witness.json"
