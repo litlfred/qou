@@ -57,8 +57,8 @@ lw_FA = linking_weight_family_a(q)
 # Atom data: A, Z, N, atlas Vol, CODATA (central registry), tr_M (markov_peel @ q_0)
 ATOMS = [
     # (atom, A, Z, N, Vol(K_atom), CODATA_MeV, tr_M_abs)
-    ("p",   1, 1, 0, mp.mpf("7.32772475341775"),  M_P_MEV_VALIDATION,   mp.mpf("1.06530614425")),
-    ("n",   1, 0, 1, mp.mpf("7.32772475341775"),  M_N_MEV_VALIDATION,   mp.mpf("0.92323322991")),
+    ("p",   1, 1, 0, mp.mpf("7.32772475341775"),  M_P_MEV_VALIDATION,   mp.mpf("1.06530622861")),
+    ("n",   1, 0, 1, mp.mpf("7.32772475341775"),  M_N_MEV_VALIDATION,   mp.mpf("0.92323329718")),
     ("D",   2, 1, 1, mp.mpf("4.40083251608"),     M_D_MEV_VALIDATION,   mp.mpf("0.38828642408")),
     ("T",   3, 1, 2, mp.mpf("8.28631681780"),     M_T_MEV_VALIDATION,   mp.mpf("0.10405210674")),
     ("3He", 3, 2, 1, mp.mpf("7.32772475341775"),  M_HE3_MEV_VALIDATION, mp.mpf("0.20654081702")),

@@ -156,7 +156,7 @@ def main():
 
     # Habiro sum (numerical)
     hab = mp.mpf("136.0712063634817616514048508169837773395")
-    tr_M_val = mp.mpf("1.065306144254449900000000000000000000000")
+    tr_M_val = mp.mpf("1.065306228613167059365284546431372557650")
 
     def q_factorial_mp(n, q):
         result = mp.mpf(1)

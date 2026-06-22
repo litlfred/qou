@@ -288,7 +288,7 @@ def main() -> int:
     print(f"  closed form: {trM_p}")
     val_q0 = float(sp.N(trM_p.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
     print(f"  at q_0 ≈ 1.1097 : {val_q0}")
-    print(f"  markov_peel ref : 1.0653061442544499")
+    print(f"  markov_peel ref : 1.0653062286131670")
 
     # Same for neutron (canonical markov_peel word).
     neutron = atom_braid_word_3A_to_crossings(0, 1, include_inter=False)
@@ -299,7 +299,7 @@ def main() -> int:
     print(f"  closed form: {trM_n}")
     val_n = float(sp.N(trM_n.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
     print(f"  at q_0 ≈ 1.1097 : {val_n}")
-    print(f"  markov_peel ref : 0.9232332299116371")
+    print(f"  markov_peel ref : 0.9232332971861535")
 
     # Witness JSON.
     out = HERE / "markov_weights_symbolic.witness.json"
@@ -321,10 +321,10 @@ def main() -> int:
         },
         "tr_M_proton_closed_form": str(trM_p),
         "tr_M_proton_at_q0": val_q0,
-        "tr_M_proton_markov_peel_reference": 1.0653061442544499,
+        "tr_M_proton_markov_peel_reference": 1.0653062286131670,
         "tr_M_neutron_closed_form": str(trM_n),
         "tr_M_neutron_at_q0": val_n,
-        "tr_M_neutron_markov_peel_reference": 0.9232332299116371,
+        "tr_M_neutron_markov_peel_reference": 0.9232332971861535,
         "generated_at": datetime.now(timezone.utc).isoformat(),
     }
     out.write_text(json.dumps(witness, indent=2))
