@@ -186,7 +186,6 @@ export default chapter({
         "yekutieli-triple",
         "cosimplicial-crossed-groupoid",
         "ccg-cosimplicial-identities",
-        "ccg-cosimplicial-identities-proof",
         "ccg-crossed-module-structure",
         "ccg-crossed-module-structure-proof",
         "cosimplicial-crossed-groupoid-proof",
