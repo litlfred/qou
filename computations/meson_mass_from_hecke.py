@@ -60,6 +60,27 @@ except ImportError:
 
 HERE = Path(__file__).resolve().parent
 
+# CODATA-2022 / PDG constants — centralised in the registry
+# (computations/substrate/codata_constants.py) per the hidden-codata-
+# literals consolidation.  The inline literals are kept only on the
+# degraded no-mpmath (Decimal) path, since the registry requires mpmath.
+if HAS_MP:
+    import sys as _sys
+    _sys.path.insert(0, str(HERE / "substrate"))
+    from codata_constants import (  # noqa: E402
+        M_E_MEV, M_PI_PM_MEV_VALIDATION, M_PI_0_MEV_VALIDATION,
+        M_K_PM_MEV_VALIDATION, M_K_0_MEV_VALIDATION,
+        M_MU_MEV_VALIDATION, M_P_MEV_VALIDATION,
+    )
+else:
+    M_E_MEV                = mpf("0.51099895069")
+    M_PI_PM_MEV_VALIDATION = mpf("139.57039")
+    M_PI_0_MEV_VALIDATION  = mpf("134.9768")
+    M_K_PM_MEV_VALIDATION  = mpf("493.677")
+    M_K_0_MEV_VALIDATION   = mpf("497.611")
+    M_MU_MEV_VALIDATION    = mpf("105.6583755")
+    M_P_MEV_VALIDATION     = mpf("938.27208816")
+
 # ══════════════════════════════════════════════════════════════════
 #  SUBSTRATE (from constants.py — replicated here for standalone)
 # ══════════════════════════════════════════════════════════════════
@@ -71,18 +92,18 @@ HBAR_Q_SQ = VOL_4_1 / MASS_RATIO_MU_E
 HBAR_Q = sqrt(HBAR_Q_SQ) if HAS_MP else mpf(str(math.sqrt(float(HBAR_Q_SQ))))
 q0 = mpf(1) / (mpf(1) - HBAR_Q)
 h_q = q0 - 1/q0
-m_e = mpf("0.51099895069")  # MeV, CODATA 2022
+m_e = M_E_MEV  # MeV, CODATA 2022 (registry)
 
 # ══════════════════════════════════════════════════════════════════
 #  PDG 2024 (comparison targets — NOT inputs)
 # ══════════════════════════════════════════════════════════════════
 
-PDG_PI_PM = mpf("139.57039")     # ± 0.00018 MeV
-PDG_PI_0  = mpf("134.9768")      # ± 0.0005 MeV
-PDG_K_PM  = mpf("493.677")       # ± 0.013 MeV
-PDG_K_0   = mpf("497.611")       # ± 0.013 MeV
-PDG_MU    = mpf("105.6583755")   # ± 30e-7 MeV
-PDG_P     = mpf("938.27208816")  # ± 29e-8 MeV
+PDG_PI_PM = M_PI_PM_MEV_VALIDATION   # ± 0.00018 MeV
+PDG_PI_0  = M_PI_0_MEV_VALIDATION    # ± 0.0005 MeV
+PDG_K_PM  = M_K_PM_MEV_VALIDATION    # ± 0.013 MeV
+PDG_K_0   = M_K_0_MEV_VALIDATION     # ± 0.013 MeV
+PDG_MU    = M_MU_MEV_VALIDATION      # ± 30e-7 MeV
+PDG_P     = M_P_MEV_VALIDATION       # ± 29e-8 MeV
 
 # ══════════════════════════════════════════════════════════════════
 #  H_3(q) HECKE ALGEBRA — 6-dimensional basis
