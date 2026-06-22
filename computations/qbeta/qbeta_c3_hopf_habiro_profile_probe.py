@@ -84,8 +84,8 @@ mp.dps = 50
 # ── Pinned anchor data (verified against the corpus) ──────────────────
 # Cross-anchor q₀ + empirical c_3, from
 # docs/audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md
-Q0_PROTON = "1.10997858275"     # proton (production) anchor
-Q0_MUON = "1.10997859555"       # muon anchor
+Q0_PROTON = "1.10997858275"     # RETIRED pre-re-pin proton anchor (see top note); kept for this cross-anchor c_3 profile
+Q0_MUON = "1.10997859555"       # muon anchor (≈ current proton re-pin too, within ~3e-12)
 C3_PROTON = "-2.0693"           # empirical c_3 at proton anchor
 C3_MUON = "-2.0097"             # empirical c_3 at muon anchor
 C3_STRUCTURAL = -2              # proven J_Hopf(q=1) = -2 (production)
