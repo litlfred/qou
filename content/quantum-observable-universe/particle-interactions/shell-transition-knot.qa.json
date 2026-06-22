@@ -892,7 +892,27 @@
         "reviewed_at": "2026-06-21T19:19:07.308Z",
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f"
       }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "lean": "3ab5c4de2c95"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:20 [native_decide] theorem hoCumulative_eq_sum (N : ℕ) : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:34 [native_decide] theorem ho_closures : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:72 [native_decide] theorem stability_pairs_correct : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:82 [native_decide] theorem first_three_eq_ho : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:89 [native_decide] theorem fourth_pair : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:94 [native_decide] theorem shellTransition_counts :",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "bad2c01f7b40",
+          "script_commit_sha": "59988482014b44b7f22be60f49df38000c2228c2"
+        },
+        "reviewed_at": "2026-06-22T02:36:55.142Z",
+        "reviewed_sha": "c4a28b1e52d5e50c9ae4a95299d8d9ea87154d3b",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      }
     ]
   },
-  "updated_at": "2026-06-21T19:19:07.308Z"
+  "updated_at": "2026-06-22T02:36:55.142Z"
 }

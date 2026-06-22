@@ -1,14 +1,15 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-06-20T22:05:20.489Z",
+  "generated": "2026-06-22T02:36:54.518Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 1756,
-  "files_flagged": 100,
-  "total_defects": 81,
+  "scanned_files": 1768,
+  "files_flagged": 266,
+  "total_defects": 267,
   "total_exempt": 48,
   "categories": {
-    "proof-no-false-premise": 13,
-    "proof-no-decide-masking": 32,
+    "proof-no-false-premise": 14,
+    "proof-no-decide-masking": 33,
+    "proof-no-placeholder-stub": 184,
     "proof-no-self-assuming-projection": 23,
     "proof-no-trivial-true": 13
   },
@@ -20,7 +21,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem b1_figure_8_row : True := by",
         "decl": "b1_figure_8_row",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AppendixSurreals/B1Figure8RowTheorem.lean)"
       }
@@ -32,7 +33,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem b1_hyperbolic_rows : True := by",
         "decl": "b1_hyperbolic_rows",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean)"
       }
@@ -44,7 +45,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem b1_soft_sharpness : True := by",
         "decl": "b1_soft_sharpness",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AppendixSurreals/B1SoftSharpnessTheorem.lean)"
       }
@@ -56,7 +57,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem b1_torus_knot_rows : True := by",
         "decl": "b1_torus_knot_rows",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean)"
       }
@@ -68,7 +69,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem borel_partial : True := by",
         "decl": "borel_partial",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AppendixSurreals/BorelPartialResolution.lean)"
       }
@@ -80,7 +81,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem depth_2_identification : True := by",
         "decl": "depth_2_identification",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean)"
       }
@@ -92,7 +93,7 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem isospin_signature_distinct_from_deuteron :",
         "decl": "isospin_signature_distinct_from_deuteron",
-        "severity": "major"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean": [
@@ -102,7 +103,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem HasReconciliation : True := by",
         "decl": "HasReconciliation",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/Observations/TraceLocalityMeetsGsNonLocality.lean)"
       }
@@ -114,7 +115,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem skein_crossing_asymmetry : True := sorry",
         "decl": "skein_crossing_asymmetry",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/Braiding/skein_crossing_asymmetry.lean)"
       }
@@ -160,7 +161,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem observability_q_independent : True := by",
         "decl": "observability_q_independent",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/GaugeFieldFluidDynamics.lean)"
       }
@@ -172,7 +173,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem horizon_conformal_invariance : True := by",
         "decl": "horizon_conformal_invariance",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/JetHorizon.lean)"
       }
@@ -184,9 +185,72 @@
         "pattern": "conclusion-True",
         "snippet": "theorem qou_is_ccc : True := by",
         "decl": "qou_is_ccc",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/JetHorizon.lean)"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/HqBiFiltration/BiFiltration.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/QChebyshevFunction.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/QVonMangoldtFunction.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/collatz_contact_boundary.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/collatz_no_cycles.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/BlowupCalculus.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/AppendixSurreals/HoefsmitBridge.lean": [
@@ -196,7 +260,7 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem hoefsmit_bridge_two :",
         "decl": "hoefsmit_bridge_two",
-        "severity": "major"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/BetaDecay.lean": [
@@ -206,7 +270,16 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem interaction_completeness :",
         "decl": "interaction_completeness",
-        "severity": "major"
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/BreitWheelerPairProduction.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean": [
@@ -216,10 +289,242 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem HyperbolicVolumeIndependence.implies_single_irrational",
         "decl": "HyperbolicVolumeIndependence.implies_single_irrational",
-        "severity": "major"
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/PauliWitness/witness_12C.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/PauliWitness/witness_4He.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/PauliWitness/witness_8Be.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/QMomentum.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/QValueTransition.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/QuarkAntiquarkProduction.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/TransferMatrixOperator.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/TypedGarsideElement.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/archimedean_braid_structure.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/archimedean_hartree_derivation.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/beta_decay_transfer_matrix.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/borromean_hopf_energy_crossover.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/em_coupling_projection.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/eos_borromean_cfl.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/genus_filtration_ideal.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/genus_maximal_descent.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/gram_weighted_qvalue.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/parity_violation_skein.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/reidemeister_action_table.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/shell_structure_eigenvalues.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/skein_finiteness_bound.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/skein_polynomial_transfer_matrix.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/skew_poisson_integration.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/torus_knot_shell_binding.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_euler_characteristic.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
       {
         "line": 49,
         "category": "proof-no-self-assuming-projection",
@@ -231,6 +536,13 @@
     ],
     "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_riemann_hurwitz.lean": [
       {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
+      {
         "line": 51,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
@@ -240,6 +552,13 @@
       }
     ],
     "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/heisenberg_commutator.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
       {
         "line": 61,
         "category": "proof-no-self-assuming-projection",
@@ -251,6 +570,13 @@
     ],
     "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/mi_sw_cartan_reduction.lean": [
       {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
+      {
         "line": 47,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
@@ -261,11 +587,45 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BaryonWeight/beta4_hook.lean": [
       {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
+      {
         "line": 64,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem beta4_hook [ctx : Beta4HookContext] :",
         "decl": "beta4_hook",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/AtomKnot/unique.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/ChiLambdaW0SignWeighting.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/CompoundBetaShellCalibration.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
         "severity": "critical"
       }
     ],
@@ -297,6 +657,78 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/FrobeniusSelfDualityForcesLPDualExtraction.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/HeckeBaerStarGeneric/hecke_baer_star_generic.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/InterfaceComposition.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/IsotopeKnot.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/IsotopeKnot/equivalence.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/JucysMurphyCentralElementsQOU.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/KnotOperatorEnergy/unique.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/MagicShellCouplingKappa.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/MassGapKeystone.lean": [
       {
         "line": 204,
@@ -304,7 +736,250 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem substrateGap_of_uniform_gapValue",
         "decl": "substrateGap_of_uniform_gapValue",
-        "severity": "major"
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellSchurWeylSelfDuality.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/SixTermPerDerivationWeights/binding_assembly.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/SpinInvolutionLPDualInvariance.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/UnstableAtom/decay_channel.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/algebraic_quantum_volume_specialization.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/chirality_frobenius_self_pairing.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/confined_knot_binding.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/e_infinity_identifications.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/geom_yekutieli_alignment.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/hoefsmit_scattering_pipeline.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/jet_prefix_gb_filtration.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/joint_tower_sdp_confinement.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/knot_mass_unified.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/mass_formula_regime_switching.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/spectral_sequence_h3_explicit.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/terms_2_6_higher_operations.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/wedderburnWeightCanonical.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/wigner2_coefficient.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidTwistFlip.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Braiding/beta_stability.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Braiding/fermion_boson_knot_link.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Braiding/mobius_energy.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Braiding/reidemeister_mass_invariance.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Braiding/skein_crossing_asymmetry.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ReebChiralitySeparation.lean": [
+      {
+        "line": 41,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem A5Irrep.firstEll_appears :",
+        "decl": "A5Irrep.firstEll_appears",
+        "severity": "critical"
+      },
+      {
+        "line": 60,
+        "category": "proof-no-false-premise",
+        "pattern": "discharged-impossible-hyp",
+        "snippet": "theorem A5Irrep.reebCasimir_not_injective :",
+        "decl": "A5Irrep.reebCasimir_not_injective",
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S4S3HalfSymmetricProjection.lean": [
@@ -343,7 +1018,7 @@
         "severity": "critical"
       },
       {
-        "line": 225,
+        "line": 269,
         "category": "proof-no-decide-masking",
         "pattern": "native_decide",
         "snippet": "theorem icos_branching_dim_check :",
@@ -351,7 +1026,7 @@
         "severity": "critical"
       },
       {
-        "line": 237,
+        "line": 281,
         "category": "proof-no-decide-masking",
         "pattern": "native_decide",
         "snippet": "theorem ell2_yields_one_copy_of_H :",
@@ -359,7 +1034,7 @@
         "severity": "critical"
       },
       {
-        "line": 260,
+        "line": 304,
         "category": "proof-no-decide-masking",
         "pattern": "native_decide",
         "snippet": "theorem s3_std_appears_at_ell1_and_ell2 :",
@@ -367,7 +1042,7 @@
         "severity": "critical"
       },
       {
-        "line": 271,
+        "line": 315,
         "category": "proof-no-decide-masking",
         "pattern": "native_decide",
         "snippet": "theorem spin_Z2_ne_sign_Z2 :",
@@ -375,7 +1050,7 @@
         "severity": "critical"
       },
       {
-        "line": 304,
+        "line": 348,
         "category": "proof-no-decide-masking",
         "pattern": "native_decide",
         "snippet": "theorem restriction_functor_yields_h4_irrep :",
@@ -383,7 +1058,113 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/demazure_fiber_markov_trace.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ew_interface_knot.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/explicit_alpha_k_h4.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/qmn_recursive_memoized.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/wedderburn_bratteli_recursion.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/wenzl_qmn_synergy.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/y_lambda_recipe_from_partition.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsKnots/nsi_q_deformed_kernel.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsKnots/skein_mass_from_linking.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsKnots/tmli_constituent_composite_agreement.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/Brings/brings_is_qou.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
       {
         "line": 65,
         "category": "proof-no-self-assuming-projection",
@@ -395,11 +1176,36 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Brings/coral_elliptic.lean": [
       {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
+      {
         "line": 48,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem coral_elliptic [ctx : CoralEllipticContext] :",
         "decl": "coral_elliptic",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/CMBFunctor.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/CategoricalMassMarkov.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
         "severity": "critical"
       }
     ],
@@ -410,10 +1216,17 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem boundaryPerm_bijective (β : CanonicalBraid) :",
         "decl": "boundaryPerm_bijective",
-        "severity": "major"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/CategoricalReeb/ofWeightDecomposition.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
       {
         "line": 58,
         "category": "proof-no-self-assuming-projection",
@@ -423,7 +1236,23 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/ColorTubeFibers.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/CommutativeQOU/u1EquivariantReduction.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
       {
         "line": 79,
         "category": "proof-no-self-assuming-projection",
@@ -433,7 +1262,23 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/ComputationalHorizon.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/Descent/descended_level_zero.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
       {
         "line": 43,
         "category": "proof-no-self-assuming-projection",
@@ -455,6 +1300,13 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Experimental/local_substrate_q.lean": [
       {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
+      {
         "line": 42,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
@@ -464,6 +1316,13 @@
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Experimental/terminal_resolution.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
       {
         "line": 45,
         "category": "proof-no-self-assuming-projection",
@@ -475,11 +1334,63 @@
     ],
     "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals/markov_identification.lean": [
       {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
+      {
         "line": 63,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem markov_identification [ctx : MarkovIdentificationContext] :",
         "decl": "markov_identification",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/acoustic_horizon_conditions.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/core_levi_form.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/discrete_vortex_spectrum.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/helicity_conservation.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/kelvin_dispersion_derivation.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
         "severity": "critical"
       }
     ],
@@ -507,13 +1418,92 @@
         "exempt_reason": "legitimate iff-from-directions conditional-class"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_wellposedness.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/quantum_peter_weyl.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/root_of_unity_truncation.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/FluidDynamics/vorticity_lower_bound.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/FrobeniusHopfData/frobeniusForm.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
       {
         "line": 69,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem frobeniusForm [ctx : FrobeniusFormContext] :",
         "decl": "frobeniusForm",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/HadronicMass/deuteron_binding_energy.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/HadronicMass/nucleon_borromean_topology.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
         "severity": "critical"
       }
     ],
@@ -524,16 +1514,68 @@
         "pattern": "placeholder-true",
         "snippet": "theorem hoefsmit_distinguishes_word_sensitivity",
         "decl": "hoefsmit_distinguishes_word_sensitivity",
-        "severity": "major"
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/HorizonFunctor.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/HyperellipticQuintic/minimal_z5_classification.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
       {
         "line": 85,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem minimal_z5_classification [ctx : MinimalZ5ClassificationContext] :",
         "decl": "minimal_z5_classification",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Information/photon_threading_mass.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Information/reeb_operations_per_planck.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Information/toffoli_transfer_matrix.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Intent.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
         "severity": "critical"
       }
     ],
@@ -544,7 +1586,7 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem zero_not_isAlgebraicallyPrime (q : ℝ) :",
         "decl": "zero_not_isAlgebraicallyPrime",
-        "severity": "major"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Interactions/BorromeanUnique.lean": [
@@ -554,7 +1596,43 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem hopf_ne : hopfPlus ≠ hopfMinus := by",
         "decl": "hopf_ne",
-        "severity": "major"
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Interactions/UniversalILP.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Interactions/confinementUniversality.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Interactions/inductiveGBReduction.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Interactions/nucleon_ordering_factorization.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean": [
@@ -567,6 +1645,51 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/LiftingDescent/jp_categorical_jet.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_dilogarithm_evaluation.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_eigenspace_decomp.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_transient_localisation.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/LightningPath.lean": [
       {
         "line": 76,
@@ -574,7 +1697,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem lightning_path_synthesis :",
         "decl": "lightning_path_synthesis",
-        "severity": "major"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Machinery/LambdaScaleAbsorbed.lean": [
@@ -594,7 +1717,7 @@
         "pattern": "placeholder-true",
         "snippet": "theorem additive_wedderburn_recurrence_matches_std_rep_trace",
         "decl": "additive_wedderburn_recurrence_matches_std_rep_trace",
-        "severity": "major"
+        "severity": "critical"
       },
       {
         "line": 168,
@@ -602,7 +1725,7 @@
         "pattern": "placeholder-true",
         "snippet": "theorem typed_crossings_encoding_unique :",
         "decl": "typed_crossings_encoding_unique",
-        "severity": "major"
+        "severity": "critical"
       },
       {
         "line": 188,
@@ -610,7 +1733,7 @@
         "pattern": "placeholder-true",
         "snippet": "theorem phi_q_converges_absolutely",
         "decl": "phi_q_converges_absolutely",
-        "severity": "major"
+        "severity": "critical"
       },
       {
         "line": 218,
@@ -618,7 +1741,7 @@
         "pattern": "placeholder-true",
         "snippet": "theorem n_star_existence_conjecture :",
         "decl": "n_star_existence_conjecture",
-        "severity": "major"
+        "severity": "critical"
       },
       {
         "line": 241,
@@ -626,7 +1749,7 @@
         "pattern": "placeholder-true",
         "snippet": "theorem wedderburn_weights_H3 (q : ℝ) (h : q > 0) :",
         "decl": "wedderburn_weights_H3",
-        "severity": "major"
+        "severity": "critical"
       },
       {
         "line": 294,
@@ -634,7 +1757,7 @@
         "pattern": "placeholder-true",
         "snippet": "theorem per_nucleon_shift_additive",
         "decl": "per_nucleon_shift_additive",
-        "severity": "major"
+        "severity": "critical"
       },
       {
         "line": 304,
@@ -642,7 +1765,7 @@
         "pattern": "placeholder-true",
         "snippet": "theorem per_nucleon_shift_at_A1",
         "decl": "per_nucleon_shift_at_A1",
-        "severity": "major"
+        "severity": "critical"
       },
       {
         "line": 327,
@@ -650,7 +1773,7 @@
         "pattern": "placeholder-true",
         "snippet": "theorem frobenius_co_casimir_universal_high_n",
         "decl": "frobenius_co_casimir_universal_high_n",
-        "severity": "major"
+        "severity": "critical"
       },
       {
         "line": 353,
@@ -658,7 +1781,7 @@
         "pattern": "placeholder-true",
         "snippet": "theorem wenzl_bridge_atomic_tr_M (Z N : ℕ) (h_A : Z + N ≤ 4) :",
         "decl": "wenzl_bridge_atomic_tr_M",
-        "severity": "major"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/MassDerivation.lean": [
@@ -688,7 +1811,295 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero",
         "decl": "Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero",
-        "severity": "major"
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Molecular/ElectronShellCapacity.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Molecular/benzene_threading_emergence.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Molecular/ch4_lp_dual_binding.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Molecular/co2_lp_dual_binding.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Molecular/co_lp_dual_binding.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Molecular/h2_lp_dual_binding.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ObservableSubcategory.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Observations/QPlancherelAsymptoticSkeleton.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Observations/SDPRegimeSwitch.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Observations/brane_tower_q_laplacian_decay.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Observations/centered_hecke_variance_positive.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Observations/hecke_satisfies_blitvic_hypothesis.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Observations/strangelet_crossing_energy.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Observations/substrate_consistency_window.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/PerNucleonChannelDecomposition.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/SpectatorNormalization.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/atomic_nf_witness.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/demand_stability.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/deuterium_derived_binding.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/frobenius_positivity_filter.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/ground_state_ordering.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/neutron_qvalue_symbolic.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/parity_regime_selection.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/positron_correction.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/transfer_matrix_identities.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/tritium_qvalue_symbolic.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/PhotonThreading.lean": [
@@ -698,10 +2109,215 @@
         "pattern": "reflexive-tautology",
         "snippet": "theorem crossing_energy_gauge_invariant {M : Type*}",
         "decl": "crossing_energy_gauge_invariant",
-        "severity": "major"
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/QuantumBloch/pentagon_uv_commutation.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/exists_axiom_1_frobenius.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/exists_axiom_2_observability.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/exists_axiom_3_chern.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/exists_axiom_4_volume.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/fai_projector_coadjoint_orbit.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/fibre_functor_atlas.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/observation_energy.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/QuaternionicSpectralResolvents.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/SkeinResolutionObstruction.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Su2Generators.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_descended_is_base_mass.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_eigenspace_decomposition.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_transient_localises_blowup.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Torsion/KnotParticleGeneration.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Torsion/antiparticle_crossing_reversal.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Torsion/mass_decomposition_categorical.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Torsion/weak_equiv_invariance.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/WedderburnMass/chirality_residue_mass_term.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/WedderburnMass/confinement_categorical.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/WedderburnMass/curvature_rank_gb_stratification.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/WedderburnMass/exterior_square_borromean.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/orbital_fourier_decomposition.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
       {
         "line": 119,
         "category": "proof-no-self-assuming-projection",
@@ -713,6 +2329,13 @@
     ],
     "content/quantum-observable-universe/lean/QOU/q_gl_obstruction_calc.lean": [
       {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
+      {
         "line": 60,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
@@ -723,6 +2346,13 @@
     ],
     "content/quantum-observable-universe/lean/QOU/qou_canonical_action.lean": [
       {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
+      {
         "line": 102,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
@@ -732,6 +2362,13 @@
       }
     ],
     "content/quantum-observable-universe/lean/QOU/variational_equations.lean": [
+      {
+        "line": 1,
+        "category": "proof-no-placeholder-stub",
+        "pattern": "placeholder-stub-file",
+        "snippet": "# QOU... — placeholder stub",
+        "severity": "critical"
+      },
       {
         "line": 104,
         "category": "proof-no-self-assuming-projection",
@@ -748,7 +2385,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem gb_spectral_sequence : True := by",
         "decl": "gb_spectral_sequence",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/GBSpectralSequence.lean)"
       }
@@ -760,7 +2397,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem character_closure_holds : True := by",
         "decl": "character_closure_holds",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/QHeckeSeminormalCharacterClosure.lean)"
       }
@@ -772,7 +2409,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem delta_tau_M_surrogate_taylor_coeff_2 :",
         "decl": "delta_tau_M_surrogate_taylor_coeff_2",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean)"
       }
@@ -818,7 +2455,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem im_li3_zeta5_closed_form : True := by",
         "decl": "im_li3_zeta5_closed_form",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/BringTrilogImaginaryTateRational.lean)"
       }
@@ -830,7 +2467,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem chirality_writhe_ribbon : True := by",
         "decl": "chirality_writhe_ribbon",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/ChiralityWritheRibbon.lean)"
       }
@@ -842,7 +2479,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem orbit_sum_identity : True := by",
         "decl": "orbit_sum_identity",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/Cl3Zeta5OrbitSum.lean)"
       }
@@ -854,7 +2491,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem pslq_independence : True := by",
         "decl": "pslq_independence",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/Cl3Zeta5PslqIndependence.lean)"
       }
@@ -866,7 +2503,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem orbit_sum_general : True := by",
         "decl": "orbit_sum_general",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicCl3OrbitSum.lean)"
       }
@@ -878,7 +2515,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem dimension_synthesis_upper_bound : True := by",
         "decl": "dimension_synthesis_upper_bound",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicDepth3DimensionSynthesis.lean)"
       }
@@ -890,7 +2527,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem dimension_synthesis_all_depths : True := by",
         "decl": "dimension_synthesis_all_depths",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicDimensionSynthesisAllDepths.lean)"
       }
@@ -902,7 +2539,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem orbit_sum_all_depths : True := by",
         "decl": "orbit_sum_all_depths",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicOrbitSumAllDepths.lean)"
       }
@@ -914,7 +2551,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem closed_form_holds : True := by",
         "decl": "closed_form_holds",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicTrilogImaginary.lean)"
       }
@@ -926,7 +2563,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem delta_max_uniform_bound : True := by",
         "decl": "delta_max_uniform_bound",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/MassEndomorphism/DeltaMaxUniformBound.lean)"
       }
@@ -938,7 +2575,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem FeynmanCategoricalTrace : True := by",
         "decl": "FeynmanCategoricalTrace",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean)"
       }
@@ -950,7 +2587,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem eigenbasis_decomposition : True := by",
         "decl": "eigenbasis_decomposition",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean)"
       }
@@ -962,7 +2599,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem trace_collapse : True := by",
         "decl": "trace_collapse",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean)"
       }
@@ -974,7 +2611,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem jonquiere_tate_rationality : True := by",
         "decl": "jonquiere_tate_rationality",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/JonquiereCyclotomicTateRationality.lean)"
       }
@@ -986,7 +2623,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem knot_operator_transition : True := sorry",
         "decl": "knot_operator_transition",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/knot_operator_transition.lean)"
       }
@@ -998,7 +2635,7 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem bindingRegime_doublyMagic_iff (Z N : ℕ) :",
         "decl": "bindingRegime_doublyMagic_iff",
-        "severity": "major"
+        "severity": "critical"
       },
       {
         "line": 179,
@@ -1006,7 +2643,7 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem bindingRegime_alphaShift_iff (Z N : ℕ) :",
         "decl": "bindingRegime_alphaShift_iff",
-        "severity": "major"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/mass-theory/markov-pair-z2.lean": [
@@ -1016,7 +2653,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem markov_pair_z2 : True := by",
         "decl": "markov_pair_z2",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/Interactions/MarkovPeel.lean)"
       }
@@ -1028,7 +2665,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem phi_q_tower_algebraic_stratification : True := by",
         "decl": "phi_q_tower_algebraic_stratification",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/PhiQTowerAlgebraicStratification.lean)"
       }
@@ -1040,7 +2677,7 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem denomPoly_root_iff (q x : ℝ) (n : ℕ) (k : ℕ) (hk : k < n) :",
         "decl": "denomPoly_root_iff",
-        "severity": "major"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean": [
@@ -1068,7 +2705,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem staircase_corner_hook_eq_two_k_sub_one : True := by",
         "decl": "staircase_corner_hook_eq_two_k_sub_one",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/StaircaseCornerHook.lean)"
       }
@@ -1080,7 +2717,7 @@
         "pattern": "placeholder-true",
         "snippet": "theorem symbolic_character_table_valid : True := sorry",
         "decl": "symbolic_character_table_valid",
-        "severity": "major"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/mass-theory/term6-binding-density.lean": [
@@ -1090,7 +2727,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem Term6BindingDensity : True := by",
         "decl": "Term6BindingDensity",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/Term6BindingDensity.lean)"
       }
@@ -1102,7 +2739,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem three_calibration_inputs : True := by",
         "decl": "three_calibration_inputs",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/ThreeCalibrationInputs.lean)"
       }
@@ -1114,7 +2751,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem bridge_map_general : True := by",
         "decl": "bridge_map_general",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/TwoFiltrationBridgeGeneral.lean)"
       }
@@ -1126,7 +2763,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem wigner_energy_from_22 : True := by",
         "decl": "wigner_energy_from_22",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/Archimedean/ConfinedKnotBinding.lean)"
       }
@@ -1138,7 +2775,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem flavor_split_substrate : True := by",
         "decl": "flavor_split_substrate",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/HadronicMass.lean)"
       }
@@ -1150,7 +2787,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem magic_numbers_from_q : True := by",
         "decl": "magic_numbers_from_q",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AtomicMass/MagicNumbersFromQ.lean)"
       }
@@ -1182,7 +2819,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem lp_achieves_zero_trace : True := by",
         "decl": "lp_achieves_zero_trace",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/Interactions/ConfinementLP.lean)"
       }
@@ -1194,7 +2831,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem gram_indefinite_witness : True := by",
         "decl": "gram_indefinite_witness",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/Interactions/GramIndefinite.lean)"
       }
@@ -1266,7 +2903,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem beta_3_from_jonquiere : True := by",
         "decl": "beta_3_from_jonquiere",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicLValueDecomposition.lean)"
       }
@@ -1278,7 +2915,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem q_hecke_eigenvalue : True := by",
         "decl": "q_hecke_eigenvalue",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean)"
       }
@@ -1290,7 +2927,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem categorical_dq_squared : True := by",
         "decl": "categorical_dq_squared",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/CategoricalDqSquared.lean)"
       }
@@ -1302,7 +2939,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem joint_action_discharged : True := by",
         "decl": "joint_action_discharged",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/JointGaloisBraidDischarged.lean)"
       }
@@ -1314,7 +2951,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem figure_8_joint_action : True := by",
         "decl": "figure_8_joint_action",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/JointGaloisBraidFigure8.lean)"
       }
@@ -1326,7 +2963,7 @@
         "pattern": "conclusion-True",
         "snippet": "theorem bridge_small_cases : True := by",
         "decl": "bridge_small_cases",
-        "severity": "major",
+        "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/TwoFiltrationBridgeSmallCases.lean)"
       }
@@ -1338,7 +2975,7 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "private theorem lexLt_implies_listLex :",
         "decl": "lexLt_implies_listLex",
-        "severity": "major"
+        "severity": "critical"
       }
     ]
   }

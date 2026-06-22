@@ -8,7 +8,8 @@
   },
   "source_hashes": {
     "md": "818e1658b9e7",
-    "ts": "f04a44b16945"
+    "ts": "f04a44b16945",
+    "lean": "bd3fcc1b4c7c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1009,7 +1010,27 @@
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "proof-no-placeholder-stub": [
+      {
+        "field_hash": {
+          "lean": "bd3fcc1b4c7c"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/lean/QOU/Observations/substrate_consistency_window.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "bad2c01f7b40",
+          "script_commit_sha": "59988482014b44b7f22be60f49df38000c2228c2"
+        },
+        "reviewed_at": "2026-06-22T02:36:55.142Z",
+        "reviewed_sha": "c4a28b1e52d5e50c9ae4a95299d8d9ea87154d3b",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      }
     ]
   },
-  "updated_at": "2026-06-21T19:19:07.308Z"
+  "updated_at": "2026-06-22T02:36:55.142Z"
 }
