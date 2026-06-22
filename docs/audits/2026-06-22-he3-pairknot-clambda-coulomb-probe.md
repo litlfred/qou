@@ -37,21 +37,44 @@ lone isospin block. **The pp pair-knot's Coulomb lives in the 5 charge-type
 (`c<0`) blocks** — this is the concrete structural identification #2478 asked
 for (it pins *which* Wedderburn blocks the two-like-charge term occupies).
 
-## Finding 2 — the open invariant is BRACKETED by two parameter-free endpoints
+## Finding 1b — the explicit C_λ shadow-price products (no fit) badly undershoot
+
+`C_λ = w̃_λ·h/2`, `w̃_λ = dim_q(λ)²/[6]_q!`, `h = q−q⁻¹`
+([`prop:wedderburn-weight-canonical`](../../content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md))
+— partition-derived, computed at q₀ via `pyhecke.wedderburn.wedderburn_weight`:
+
+| charge block | `C_λ` |
+|---|---|
+| `[3,1,1,1]` | 0.014185 |
+| `[2,2,2]` | 0.003699 |
+| `[2,2,1,1]` | 0.011650 |
+| `[2,1,1,1,1]` | 0.003396 |
+| `[1,1,1,1,1,1]` | 0.000125 |
+| **Σ_charge** | **0.033055** |
+
+Applying the prop's binding form `B = Σ_λ C_λ·S_λ·m_e` with the **explicit
+`S_λ = Z(Z−1)`**: `B_charge(³He) = Σ_charge C_λ · 2 · m_e = `**`0.034 MeV`** — only
+**4.4%** of the 0.764 MeV split (**22.6× short**). This **decisively rules out
+the bare `S_λ = Z(Z−1)` closure at the `m_e` scale**: the charge-type `S_λ` must
+carry ~22× more structure (A-dependence and/or a larger energy scale). The `C_λ`
+themselves are correct and derivable; the *open* piece is exactly the
+charge-type `S_λ` normalisation.
+
+## Finding 2 — the open invariant is BRACKETED by parameter-free estimates
 
 | quantity | value (MeV) | vs split | fit? |
 |---|---|---|---|
+| `C_λ·Z(Z−1)·m_e` (explicit shadow price) | **0.034** | 4.4% (FAR UNDER) | none (`C_λ` partition-derived; `S_λ=Z(Z−1)`) |
 | derived pp-Coulomb `tanh(ln q₀)·B_pp` | **0.238** | 31% (UNDER) | none (`def:coulomb-charge` + B_pp from H₆ trace) |
 | AME ³H−³He split (target) | 0.764 | — | experimental, comparison only |
 | Skein `a_C·Z(Z−1)/A^{1/3}` (a_C ≈ 0.697) | **0.967** | 127% (OVER) | a_C is the empirical BW value — *not adopted* |
 
-`derived < split < skein-empirical` holds. The two **parameter-free** endpoints
-— the bare categorical pp-Coulomb (below) and the Skein `Z(Z−1)/A^{1/3}` form
-with the empirical `a_C` (above) — **bracket** the empirical split. This
-sharpens #2478's "31%, 3.2× short" into a two-sided statement: the categorical
-two-like-charge brane-pairing invariant lies inside `(0.238, 0.967)` MeV. It is
-**still OPEN**; landing it on 0.764 by fitting `a_C` (or any per-pair constant)
-is a forbidden CAL-4 fit (Δ_λ gate).
+Three **parameter-free** estimates span the split — `C_λ·Z(Z−1)` far below,
+the derived pp-Coulomb below, the Skein-`a_C` form above. This sharpens #2478's
+"31%, 3.2× short" into a two-sided statement: the categorical two-like-charge
+brane-pairing invariant lies inside `(0.238, 0.967)` MeV, and is **~22× the bare
+`C_λ·Z(Z−1)`** at the `m_e` scale. It is **still OPEN**; landing it on 0.764 by
+fitting `a_C` (or any per-pair constant) is a forbidden CAL-4 fit (Δ_λ gate).
 
 ## Finding 3 — the explicit Z(Z−1)/A^{1/3} structure has the right Z-dependence
 
@@ -79,13 +102,18 @@ backwards); only the magnitude normalisation is open.
 
 The user's requested direction is executed in full and honestly: the LP-dual
 pair-knot composite (via the analytical `C_λ·S_λ` route, since the direct LP is
-degenerate) **plus** the explicit `Z(Z−1)/A^{1/3}` Coulomb. The **structure** is
-derived and correct — the 5 `c<0` blocks carry the charge term, T/³He sign is
-right, and the magnitude is bracketed `(0.238, 0.967)` MeV by two parameter-free
-endpoints. The **magnitude closure** — the categorical two-like-charge
-brane-pairing invariant inside that bracket — remains the open item; it is **not**
-a direct LP-dual (degenerate at H₃, intractable at H₆, #2478) and closing it by
-fit is forbidden (CAL-4 / Δ_λ gate). No production path is rewired.
+degenerate) **plus** the explicit `Z(Z−1)` Coulomb. The **C_λ are now computed
+explicitly** (`prop:wedderburn-weight-canonical`, no fit) — `Σ_charge C_λ =
+0.0331` — and the **structure** is derived and correct: the 5 `c<0` blocks carry
+the charge term, the T/³He sign is right (#2467's brane-tower had it backwards).
+But the bare `C_λ·Z(Z−1)·m_e` shadow-price gives only **0.034 MeV (4.4%, 22.6×
+short)**, so the simplest `S_λ = Z(Z−1)` closure is **ruled out**; three
+parameter-free estimates bracket the split `(0.034, 0.238, 0.967)` MeV around
+0.764. The **magnitude closure** — the charge-type `S_λ` normalisation, the
+categorical two-like-charge brane-pairing invariant (~22× the bare
+`C_λ·Z(Z−1)`) — remains the open item; it is **not** a direct LP-dual (degenerate
+at H₃, intractable at H₆, #2478) and closing it by fit is forbidden (CAL-4 / Δ_λ
+gate). No production path is rewired.
 
 ## Cross-references
 
