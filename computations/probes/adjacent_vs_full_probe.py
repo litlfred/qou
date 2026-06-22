@@ -21,6 +21,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p for E_0 anchor
 del _sys, _Path, _bridge
 
 #!/usr/bin/env python3
@@ -287,9 +288,9 @@ def binding_probe(Z, N, cross_mode, *, m_pp=None, m_pn=None, m_nn=None,
         _, _, _, m_p_tower = mass_from_tower_probe(
             vols_p, cross_mode=cross_mode, phi_q_variant=phi_q_variant)
         if m_p_tower == 0 or not math.isfinite(m_p_tower):
-            E_0 = 938.272 / 1178995.5254  # fallback
+            E_0 = float(M_P_MEV_VALIDATION) / 1178995.5254  # fallback
         else:
-            E_0 = 938.272 / m_p_tower
+            E_0 = float(M_P_MEV_VALIDATION) / m_p_tower
     return {
         "Z": Z, "N": N, "A": Z + N,
         "m_pp": mpp, "m_pn": mpn, "m_nn": mnn,

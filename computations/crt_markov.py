@@ -49,6 +49,7 @@ import numpy as np
 import mpmath
 
 sys.path.insert(0, str(Path(__file__).parent))
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p for E_0 anchor
 from q_parameter import Q as _Q_CANONICAL
 
 
@@ -490,7 +491,7 @@ def test_tower_binding():
 
     # Calibration from single-nucleon proton tower
     m_p_tower = tower_mass_symbolic_eval(1, 0, False, 1, 1, 1, q0, 50)
-    E_0_tower = mpmath.mpf('938.272') / m_p_tower["total"]
+    E_0_tower = mpmath.mpf(M_P_MEV_VALIDATION) / m_p_tower["total"]
     print(f"m_p_tower = {m_p_tower['total']!s}")
     print(f"E_0_tower = {E_0_tower!s} MeV/cat.unit")
     print()
