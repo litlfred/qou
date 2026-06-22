@@ -41,17 +41,17 @@ import mpmath as mp
 
 from _precision import set_compute_dps, fmt
 from witness_base import WitnessBuilder
-from codata_constants import M_E_MEV
+from codata_constants import AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV
 from mass_at_3A_proper import dim_q, qfac, E_0_CALIBRATION_MEV
 from q_parameter import Q as Q0
 
 
 B_AME = {
     "D":   mp.mpf("2.22456607"),
-    "T":   mp.mpf("8.481798"),
+    "T":   AME_B_TRITIUM_MEV_VALIDATION,
     "3He": mp.mpf("7.7180428"),
     "4He": mp.mpf("28.295674"),
-    "6Li": mp.mpf("31.99405"),
+    "6Li": AME_B_LI6_MEV_VALIDATION,
     "7Li": mp.mpf("39.2453"),
 }
 
