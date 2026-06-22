@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-16T19:58:00.095355+00:00",
-  "commitSha": "2f9c6e8c4a7201baa63b9113fefe5b0cee4b579a",
+  "computedAt": "2026-06-22T12:38:51.310697+00:00",
+  "commitSha": "fe37f1e86409f43dd92d1f88cc91ee139cb0ac42",
   "assertions": [],
   "allPassed": true,
   "durationMs": 13,
   "computation": "canonical-script-input-audit",
   "scriptFile": "canonical_script_input_audit.py",
-  "scriptHash": "fc278c5da8f8",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "1b6fbdcb043b",
+  "scriptCommitSha": "137aac2d208201385bb4619f9fb9c09b38887169",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -22,19 +22,20 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "Audit of every Python computation script under computations/ for alignment with the paper's 3-input canonical scheme (calibration-inputs.md): q_0 from m_μ/m_e, m_e, and Q_β(n). Flags scripts that use both m_p AND m_n from CODATA (over-counts hadronic input), use Vol_hyp (fitted under option B), or omit canonical input modules entirely.",
   "contentBlock": "calibration-inputs.md",
   "parameters": {
-    "total_scripts_audited": 1338
+    "total_scripts_audited": 1432
   },
   "data": {
     "by_scheme": {
-      "no-hadronic-input (substrate-only or pure dimensionless)": 1051,
-      "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)": 146,
-      "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)": 57,
-      "Q_β-only-hadronic": 41,
+      "no-hadronic-input (substrate-only or pure dimensionless)": 1140,
+      "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)": 149,
+      "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)": 34,
+      "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)": 23,
+      "Q_β-only-hadronic": 43,
       "m_p-only (no Q_β; m_n derivation TBD)": 22,
       "3-input-canonical (m_p + Q_β; per calibration-inputs.md)": 20,
       "3-input-canonical-with-substrate-splitting-pure (consumes substrate-splitting witness; no CODATA nucleon masses — post-Workplan-0b target form)": 1
@@ -221,6 +222,86 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "a_operator_recursive.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "a_operator_recursive_he4_crosscheck.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "canonical_tr_m_combiner_crosscheck.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "rho_xi_diagonal.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "ab_methodology_metrics.py",
         "found": {
           "M_E_MEV": false,
@@ -323,7 +404,7 @@
       {
         "script": "all-elements-knot-table.py",
         "found": {
-          "M_E_MEV": false,
+          "M_E_MEV": true,
           "M_P_MEV": false,
           "M_N_MEV": false,
           "Q_NEUTRON": false,
@@ -331,14 +412,14 @@
           "Q_C14": false,
           "Vol_hyp": false,
           "q_parameter": false,
-          "experimental_constants": false,
+          "experimental_constants": true,
           "MASS_RATIO_MU_E": false,
           "calibration_skein_pair": true,
           "substrate_splitting_witness": false
         },
         "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": false,
-        "uses_canonical_consts_source": false
+        "uses_canonical_consts_source": true
       },
       {
         "script": "all_nuclides_sdp_admissibility.py",
@@ -436,7 +517,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -676,7 +757,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -1141,6 +1222,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "atom_bond_dimension_measure.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "atom_braid_active_partitions.py",
         "found": {
           "M_E_MEV": false,
@@ -1181,6 +1282,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "atom_electron_mass.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "atom_level_wedderburn_tower.py",
         "found": {
           "M_E_MEV": false,
@@ -1216,7 +1337,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -1521,6 +1642,106 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "aufbau_eigenvalue_channel.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "aufbau_ell_grading_from_eigensplit.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "aufbau_ell_penetration_hartree_pinned.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "aufbau_h_scalar_refutation.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "aufbau_symmetric_block_channel.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "averaged_block_swap_binding.py",
         "found": {
           "M_E_MEV": false,
@@ -1716,7 +1937,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -2441,6 +2662,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "binding_observe_last.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "binding_per_block_magnitude_a3_probe.py",
         "found": {
           "M_E_MEV": true,
@@ -2603,7 +2844,7 @@
       {
         "script": "binding_sym_vs_lin_two_models.py",
         "found": {
-          "M_E_MEV": false,
+          "M_E_MEV": true,
           "M_P_MEV": false,
           "M_N_MEV": false,
           "Q_NEUTRON": false,
@@ -3356,7 +3597,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -3496,7 +3737,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
@@ -3976,7 +4217,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -4039,6 +4280,26 @@
         "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
+      },
+      {
+        "script": "channel_binding.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": true,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": true
       },
       {
         "script": "channel_product_mass.py",
@@ -4481,6 +4742,86 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "chirality_factor_from_content.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "chirality_pn_sector_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "chirality_rmatrix_skein_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "chirality_shell_sign_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "ck_sector_classifier.py",
         "found": {
           "M_E_MEV": false,
@@ -4621,6 +4962,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "closed_form_entanglement.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "closed_form_tau_M.py",
         "found": {
           "M_E_MEV": false,
@@ -4696,7 +5057,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
@@ -4716,7 +5077,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
@@ -4736,7 +5097,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": true
       },
@@ -4761,6 +5122,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "complex_volume_witness.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": true,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": true,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "Q_β-only-hadronic",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": true
+      },
+      {
         "script": "compound_binding_via_differences.py",
         "found": {
           "M_E_MEV": true,
@@ -4776,7 +5157,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -5276,7 +5657,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -5698,6 +6079,26 @@
         },
         "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "delta_lambda_shape_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
       {
@@ -6663,7 +7064,7 @@
       {
         "script": "dirac_yekutieli_combinations_50dps.py",
         "found": {
-          "M_E_MEV": false,
+          "M_E_MEV": true,
           "M_P_MEV": false,
           "M_N_MEV": false,
           "Q_NEUTRON": false,
@@ -6881,6 +7282,66 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "electron_shell_sdp_capacity.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "electron_sigma_f_chain.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "electron_sigma_f_marginal.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "em_linking_invariant_probe.py",
         "found": {
           "M_E_MEV": false,
@@ -6921,6 +7382,66 @@
         "uses_canonical_consts_source": true
       },
       {
+        "script": "emitted_particle_tracker.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "entanglement_binding_variants.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "entanglement_emitted_energy.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": true,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "entanglement_orders.py",
         "found": {
           "M_E_MEV": true,
@@ -6936,7 +7457,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -7303,7 +7824,7 @@
       {
         "script": "first-20-elements.py",
         "found": {
-          "M_E_MEV": false,
+          "M_E_MEV": true,
           "M_P_MEV": false,
           "M_N_MEV": false,
           "Q_NEUTRON": false,
@@ -7311,14 +7832,14 @@
           "Q_C14": false,
           "Vol_hyp": false,
           "q_parameter": false,
-          "experimental_constants": false,
+          "experimental_constants": true,
           "MASS_RATIO_MU_E": false,
           "calibration_skein_pair": true,
           "substrate_splitting_witness": false
         },
         "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": false,
-        "uses_canonical_consts_source": false
+        "uses_canonical_consts_source": true
       },
       {
         "script": "fix_md_computations.py",
@@ -7376,7 +7897,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -7823,7 +8344,7 @@
       {
         "script": "generate-appendix-table-v2.py",
         "found": {
-          "M_E_MEV": false,
+          "M_E_MEV": true,
           "M_P_MEV": false,
           "M_N_MEV": false,
           "Q_NEUTRON": false,
@@ -7831,19 +8352,19 @@
           "Q_C14": false,
           "Vol_hyp": false,
           "q_parameter": false,
-          "experimental_constants": false,
+          "experimental_constants": true,
           "MASS_RATIO_MU_E": false,
           "calibration_skein_pair": true,
           "substrate_splitting_witness": false
         },
         "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": false,
-        "uses_canonical_consts_source": false
+        "uses_canonical_consts_source": true
       },
       {
         "script": "generate-appendix-table.py",
         "found": {
-          "M_E_MEV": false,
+          "M_E_MEV": true,
           "M_P_MEV": false,
           "M_N_MEV": false,
           "Q_NEUTRON": false,
@@ -7851,14 +8372,14 @@
           "Q_C14": false,
           "Vol_hyp": false,
           "q_parameter": false,
-          "experimental_constants": false,
+          "experimental_constants": true,
           "MASS_RATIO_MU_E": false,
           "calibration_skein_pair": true,
           "substrate_splitting_witness": false
         },
         "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": false,
-        "uses_canonical_consts_source": false
+        "uses_canonical_consts_source": true
       },
       {
         "script": "generate-knot-plots.py",
@@ -8701,6 +9222,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "habiro_mode_to_ladder_bridge.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "habiro_neutron_cross_check.py",
         "found": {
           "M_E_MEV": false,
@@ -8961,6 +9502,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "qbeta_h4_tower_branching_preflight.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "verify_derived_recurrence.py",
         "found": {
           "M_E_MEV": false,
@@ -8996,7 +9557,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -9136,7 +9697,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -9756,7 +10317,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -9876,7 +10437,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -10022,6 +10583,86 @@
       },
       {
         "script": "kazhdan_lusztig.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "keystone_icosahedral_irrep_rotation_step1.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "keystone_icosahedral_irrep_rotation_step2.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "keystone_index_necessary_conditions.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "keystone_reeb_casimir_chirality_step3.py",
         "found": {
           "M_E_MEV": false,
           "M_P_MEV": false,
@@ -10211,14 +10852,14 @@
           "Q_C14": false,
           "Vol_hyp": true,
           "q_parameter": true,
-          "experimental_constants": false,
-          "MASS_RATIO_MU_E": false,
+          "experimental_constants": true,
+          "MASS_RATIO_MU_E": true,
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
         "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
         "uses_canonical_q0_source": true,
-        "uses_canonical_consts_source": false
+        "uses_canonical_consts_source": true
       },
       {
         "script": "kummer_reflection_zeta5.py",
@@ -10843,7 +11484,7 @@
       {
         "script": "low_isotope_binding_model_comparison.py",
         "found": {
-          "M_E_MEV": false,
+          "M_E_MEV": true,
           "M_P_MEV": false,
           "M_N_MEV": false,
           "Q_NEUTRON": false,
@@ -11197,6 +11838,26 @@
           "substrate_splitting_witness": false
         },
         "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "madelung_sdp_filling_order.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -11616,7 +12277,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -11703,7 +12364,7 @@
       {
         "script": "mass_table_l1_full_crosscheck.py",
         "found": {
-          "M_E_MEV": false,
+          "M_E_MEV": true,
           "M_P_MEV": false,
           "M_N_MEV": false,
           "Q_NEUTRON": false,
@@ -12351,14 +13012,14 @@
           "Q_C14": false,
           "Vol_hyp": false,
           "q_parameter": true,
-          "experimental_constants": false,
+          "experimental_constants": true,
           "MASS_RATIO_MU_E": false,
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
         "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": true,
-        "uses_canonical_consts_source": false
+        "uses_canonical_consts_source": true
       },
       {
         "script": "mmu_categorical_correction_first_probe.py",
@@ -12543,7 +13204,7 @@
       {
         "script": "mn_delta_pn_qbeta_habiro_cascade_probe.py",
         "found": {
-          "M_E_MEV": false,
+          "M_E_MEV": true,
           "M_P_MEV": false,
           "M_N_MEV": false,
           "Q_NEUTRON": false,
@@ -12596,7 +13257,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -12616,7 +13277,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -12636,7 +13297,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -12656,7 +13317,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -13076,7 +13737,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -14323,7 +14984,7 @@
       {
         "script": "phase1d_f_bor_exact_h_expansion.py",
         "found": {
-          "M_E_MEV": false,
+          "M_E_MEV": true,
           "M_P_MEV": false,
           "M_N_MEV": false,
           "Q_NEUTRON": false,
@@ -14343,7 +15004,7 @@
       {
         "script": "phase1e_neutron_and_cross_isotope_h_expansion.py",
         "found": {
-          "M_E_MEV": false,
+          "M_E_MEV": true,
           "M_P_MEV": false,
           "M_N_MEV": false,
           "Q_NEUTRON": true,
@@ -14941,6 +15602,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "probe_chirality_delta_lambda_the3_diagnostic.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "probe_content_energy_signed_phase.py",
         "found": {
           "M_E_MEV": false,
@@ -15201,6 +15882,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "probe_pauli_young_delta_lambda_the3_signtest.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "probe_q6j_jm_spectral_delta_lambda.py",
         "found": {
           "M_E_MEV": true,
@@ -15257,6 +15958,26 @@
           "substrate_splitting_witness": false
         },
         "scheme": "Q_β-only-hadronic",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "probe_sparse_interface_magnitude_the3_prune.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
@@ -15441,6 +16162,66 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "ame_registry_routing_triage.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "aoperator_a5_crosscheck.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "aoperator_a6_cost_and_contraction.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "archimedean_knot_eigenbasis_probe.py",
         "found": {
           "M_E_MEV": false,
@@ -15458,6 +16239,86 @@
         },
         "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "b3_brunnian_minimality_enumeration.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "b3_brunnian_selection_scope.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "b3_dense_sdp_wedderburn_projector.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "b3_selection_signature_cos.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
       {
@@ -15519,6 +16380,46 @@
         "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
+      },
+      {
+        "script": "bn_minus_bp_brane_tower_parity_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "bn_minus_bp_winding_iterate_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
       },
       {
         "script": "borromean_trace_cross_validator.py",
@@ -15781,6 +16682,46 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "chirality_delta_lambda_binding_sweep.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "chirality_topology_binding_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "commutative_chirality_vanishes_probe.py",
         "found": {
           "M_E_MEV": false,
@@ -15901,6 +16842,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "d14_theta_bar_side_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "delta_coupling_closed_form_probe.py",
         "found": {
           "M_E_MEV": false,
@@ -16001,6 +16962,46 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "delta_lambda_master_formula_h3_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "deuteron_fpn_wlambda_wiring.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "difference_knot_binding_probe.py",
         "found": {
           "M_E_MEV": false,
@@ -16021,6 +17022,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "difference_knot_hyperbolicity_check.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "difference_knot_jsj_classification_probe.py",
         "found": {
           "M_E_MEV": false,
@@ -16037,6 +17058,46 @@
           "substrate_splitting_witness": false
         },
         "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "difference_knot_volume_prefactor_probe.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": true,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "em_linking_invariant_scoping.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
@@ -16221,6 +17282,46 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "gap_a3_plambda_bar_even_admissibility_probe.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "gap_a3_transpose_invariant_plambda_probe.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "gap_a4_He3_residual_probe.py",
         "found": {
           "M_E_MEV": true,
@@ -16236,7 +17337,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
@@ -16781,6 +17882,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "h6_deuteron_free_word_chi_lambda_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "habiro_expansion_atomic_probe.py",
         "found": {
           "M_E_MEV": false,
@@ -16804,6 +17925,66 @@
         "script": "habiro_frobenius_probe.py",
         "found": {
           "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "he3_brane_tower_structural_gap.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "he3_pairknot_composite_lp_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "he3_tower_charge_asymmetry_probe.py",
+        "found": {
+          "M_E_MEV": true,
           "M_P_MEV": false,
           "M_N_MEV": false,
           "Q_NEUTRON": false,
@@ -16901,6 +18082,86 @@
         "uses_canonical_consts_source": true
       },
       {
+        "script": "he_nu_sdp_barfold_h9_test.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "he_nu_sdp_psd_count_test.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "he_nu_sdp_saturation_obstruction.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "he_nu_sdp_selfconjugate_candidate.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "hecke_1d_irrep_closed_form_character_probe.py",
         "found": {
           "M_E_MEV": false,
@@ -16938,6 +18199,26 @@
         },
         "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "hecke_channel_binding_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
       {
@@ -17403,7 +18684,7 @@
       {
         "script": "meson_lepton_knot_dictionary_probe.py",
         "found": {
-          "M_E_MEV": false,
+          "M_E_MEV": true,
           "M_P_MEV": false,
           "M_N_MEV": false,
           "Q_NEUTRON": false,
@@ -17458,6 +18739,26 @@
         },
         "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "mirror_pair_coulomb_sign_correction.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
       {
@@ -17696,7 +18997,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -18081,6 +19382,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "qbeta_habiro_cyclotomic_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "qbeta_habiro_element_probe.py",
         "found": {
           "M_E_MEV": false,
@@ -18321,6 +19642,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "qbeta_root_of_unity_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": true,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "qbeta_wenzl_habiro_ansatz_probe.py",
         "found": {
           "M_E_MEV": false,
@@ -18421,6 +19762,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "rho_xi_diagonal_verify.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "rt_binomial_trace_evaluation_probe.py",
         "found": {
           "M_E_MEV": false,
@@ -18478,6 +19839,26 @@
         },
         "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "signed_crossing_feasibility_probe.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
       {
@@ -18601,6 +19982,26 @@
         "uses_canonical_consts_source": true
       },
       {
+        "script": "theta_poisson_mass_resummation_prune.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "three_parameters_wedderburn_probe.py",
         "found": {
           "M_E_MEV": false,
@@ -18697,6 +20098,26 @@
           "substrate_splitting_witness": false
         },
         "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "wedderburn_sdp_extreme_point.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -18962,6 +20383,66 @@
       },
       {
         "script": "yekutieli_per_cell_qlambert_decomposition_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "z_habiro_increment_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "zhabiro_phiq_wiring.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "zhabiro_physical_z_pin.py",
         "found": {
           "M_E_MEV": false,
           "M_P_MEV": false,
@@ -19681,6 +21162,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "qbessel_integer_order_log_neumann_pv.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "qbessel_mu_lambda_vs_qlommel_zeros.py",
         "found": {
           "M_E_MEV": false,
@@ -19701,7 +21202,167 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "qbessel_offshell_resolvent_quadratic_correction.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "qbessel_qdeformed_reeb_scale.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "qbessel_quadratic_binding_wiring_gate.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "qbessel_reeb_flow_radial_forced.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "qbessel_reeb_yweighted_gap.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "qbessel_rigorous_log_neumann_reduction.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "qbessel_second_kind_quadratic_action_gate.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "qbessel_second_order_qdifference_equation.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "qbessel_unblocker_forced_order_refutation.py",
         "found": {
           "M_E_MEV": false,
           "M_P_MEV": false,
@@ -19802,6 +21463,26 @@
       },
       {
         "script": "qbeta_bar_even_kernel_invariant_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "qbeta_barparity_kernel_criterion_prune.py",
         "found": {
           "M_E_MEV": false,
           "M_P_MEV": false,
@@ -20181,6 +21862,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "qbeta_chain_d_bar_parity_gate.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "qbeta_ck_cache.py",
         "found": {
           "M_E_MEV": true,
@@ -20441,6 +22142,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "qbeta_ck_sseries_operator_match_probe.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": true,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "Q_β-only-hadronic",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "qbeta_ck_truncation_bias_correction_probe.py",
         "found": {
           "M_E_MEV": false,
@@ -20661,6 +22382,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "qbeta_counit_substrate_consistency.py",
+        "found": {
+          "M_E_MEV": true,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "qbeta_decay_sdp_extended_ck.py",
         "found": {
           "M_E_MEV": false,
@@ -20856,7 +22597,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
@@ -20876,7 +22617,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
@@ -20896,7 +22637,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
@@ -21281,6 +23022,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "qbeta_hahn_exton_kernel_test.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "qbeta_heat_fmap_symbolic_explore.py",
         "found": {
           "M_E_MEV": false,
@@ -21402,6 +23163,26 @@
       },
       {
         "script": "qbeta_hoefsmit_tbeta_matrix_build_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "qbeta_jacobi_anger_tower_general.py",
         "found": {
           "M_E_MEV": false,
           "M_P_MEV": false,
@@ -21981,6 +23762,26 @@
         "uses_canonical_consts_source": false
       },
       {
+        "script": "qbeta_reeb_tower_jacobi_anger_physical_weight.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "qbeta_residue_a_precision_ceiling.py",
         "found": {
           "M_E_MEV": false,
@@ -22302,6 +24103,26 @@
       },
       {
         "script": "qbeta_signed_vs_abs_tower_diagnostic.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "qbeta_silver_pole_subdominant_probe.py",
         "found": {
           "M_E_MEV": false,
           "M_P_MEV": false,
@@ -22916,7 +24737,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -23621,6 +25442,26 @@
         "uses_canonical_consts_source": true
       },
       {
+        "script": "shell_capacity_chebyshev_bridge.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
+        "uses_canonical_consts_source": false
+      },
+      {
         "script": "shell_closure_phi8_correlation_test.py",
         "found": {
           "M_E_MEV": false,
@@ -23756,7 +25597,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -24349,14 +26190,14 @@
           "Q_NEUTRON": false,
           "Q_TRITIUM": false,
           "Q_C14": false,
-          "Vol_hyp": false,
+          "Vol_hyp": true,
           "q_parameter": false,
           "experimental_constants": false,
           "MASS_RATIO_MU_E": false,
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
@@ -24376,7 +26217,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": true
       },
@@ -24396,7 +26237,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -25322,6 +27163,46 @@
       },
       {
         "script": "test_muon_wenzl_closure.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "test_nucleon_gen_chains_q_param.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": true,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "test_tr_m_atom_q_param.py",
         "found": {
           "M_E_MEV": false,
           "M_P_MEV": false,
@@ -26801,10 +28682,10 @@
         "uses_canonical_consts_source": false
       }
     ],
-    "canonical_3input_count": 62,
+    "canonical_3input_count": 64,
     "substrate_splitting_count": 1,
-    "over_count_count": 57,
-    "vol_hyp_fitted_count": 146
+    "over_count_count": 23,
+    "vol_hyp_fitted_count": 149
   },
   "caveats": [
     "Heuristic detection by import + regex. False positives possible for scripts that comment out CODATA constants or use them only for comparison rather than derivation.",
