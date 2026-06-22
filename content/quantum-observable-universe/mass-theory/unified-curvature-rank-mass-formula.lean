@@ -58,8 +58,9 @@ theorem unified_mass_finite
 /-- **Theorem (Term 6 + Term 7 = sum over depths ≥ 3).**
     With prefactor sequence `alphas` defined by paper's Term-6 and
     Term-7 conventions, the legacy "Term 6 + Term 7" combination
-    equals the partial sum Σ_{k=3}^{n-1} α_k · Φ_k. -/
-/-- **External lemma (List/Mathlib): list-fold split + filter identity.**
+    equals the partial sum Σ_{k=3}^{n-1} α_k · Φ_k.
+
+    **External lemma (List/Mathlib): list-fold split + filter identity.**
 
     Pure list algebra: `List.range n = List.range 3 ++ ...` for n ≥ 4
     combined with `(List.range n).filter (· ≥ 3) = (List.range (n-3)).map (· + 3)`.
