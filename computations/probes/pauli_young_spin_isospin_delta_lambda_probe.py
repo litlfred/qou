@@ -214,19 +214,21 @@ def delta_lambda_from_plethysm(A):
 # ----------------------------------------------------------------------------
 
 def load_y_lambda(n):
-    w = json.load(open(COMP / "y-lambda-at-q0.witness.json"))
+    with open(COMP / "y-lambda-at-q0.witness.json") as f:
+        w = json.load(f)
     by_n = w["data"]["by_n"][str(n)]
     return {tuple(e["partition"]): mp.mpf(e["y_at_q0_50dps"]) for e in by_n}
 
 
 def load_chi(atom):
-    w = json.load(open(COMP / f"atom-chi-rust-{atom}.witness.json"))
+    with open(COMP / f"atom-chi-rust-{atom}.witness.json") as f:
+        w = json.load(f)
     by = w["data"]["atom"]["by_partition"]
     return {tuple(e["partition"]): mp.mpf(e["chi_lambda"]) for e in by}
 
 
-AME = {k: mp.mpf(v) for k, v in
-       json.load(open(COMP / "ame-2020-binding-energies.witness.json"))["data"].items()}
+with open(COMP / "ame-2020-binding-energies.witness.json") as _f:
+    AME = {k: mp.mpf(v) for k, v in json.load(_f)["data"].items()}
 
 ATOMS = [
     # (label, chi-witness key, A, Z, N, AME key)
@@ -253,8 +255,8 @@ def main():
         ylam = load_y_lambda(n)
         chi = load_chi(key)
 
-        # the signed sum
-        S = mp.mpf(0)
+        # the signed sum (mp.fsum for high-precision accumulation)
+        terms = []
         per_lambda = []
         for lam in sorted(delta.keys(), key=lambda p: (-len(p), p)):
             d = delta[lam]
@@ -263,8 +265,9 @@ def main():
             y = ylam[lam]
             c = chi[lam]
             term = y * c * d
-            S += term
+            terms.append(term)
             per_lambda.append((lam, d, y, c, term))
+        S = mp.fsum(terms)
         B_pred = M_E * abs(S)
         B_ame = AME[amek]
         rel = (B_pred - B_ame) / B_ame
@@ -342,7 +345,8 @@ def main():
         },
     }
     outp = COMP / "pauli-young-spin-isospin-delta-lambda.witness.json"
-    json.dump(witness, open(outp, "w"), indent=1)
+    with open(outp, "w") as f:
+        json.dump(witness, f, indent=1)
     print(f"\nwitness -> {outp.relative_to(REPO)}")
     return 0
 
