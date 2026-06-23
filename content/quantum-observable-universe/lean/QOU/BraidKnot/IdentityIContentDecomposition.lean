@@ -56,111 +56,52 @@ def sumSqContents (l : List ℕ) : ℤ :=
 /-- Size `n = Σ λ_i`. -/
 def sz (l : List ℕ) : ℕ := l.sum
 
-/-! ### (A) machine-checked instances (sorry-free)
+/-! ### (A) machine-checked for ALL partitions `n ≤ 9` (sorry-free)
 
-`Σ_c h_c² = Σ_c c(c)² + n²` for representative partitions across `n = 1..8`,
-including the self-conjugate `[3,1,1]` (electron block) and a two-row and a
-three-row case.  These are genuine kernel/native computations, not stubs. -/
+`Σ_c h_c² = Σ_c c(c)² + n²` verified by `native_decide` over **every** partition with
+`n ≤ 9` (96 of them) — a uniform bounded-universal, strengthening earlier hand-picked
+instances.  Genuine native computation, not stubs. -/
 
-example : sumSqHooks [1] = sumSqContents [1] + (sz [1] : ℤ) ^ 2 := by native_decide
-example : sumSqHooks [2] = sumSqContents [2] + (sz [2] : ℤ) ^ 2 := by native_decide
-example : sumSqHooks [1, 1] = sumSqContents [1, 1] + (sz [1, 1] : ℤ) ^ 2 := by native_decide
-example : sumSqHooks [2, 1] = sumSqContents [2, 1] + (sz [2, 1] : ℤ) ^ 2 := by native_decide
-example : sumSqHooks [3, 1, 1] = sumSqContents [3, 1, 1] + (sz [3, 1, 1] : ℤ) ^ 2 := by
+/-- All integer partitions for `1 ≤ n ≤ 9` (96 of them), as weakly-decreasing lists. -/
+def allPartsLE9 : List (List ℕ) :=
+  [[1], [2], [1, 1], [3], [2, 1], [1, 1, 1], [4], [3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1],
+   [5], [4, 1], [3, 2], [3, 1, 1], [2, 2, 1], [2, 1, 1, 1], [1, 1, 1, 1, 1],
+   [6], [5, 1], [4, 2], [4, 1, 1], [3, 3], [3, 2, 1], [3, 1, 1, 1], [2, 2, 2], [2, 2, 1, 1],
+   [2, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1],
+   [7], [6, 1], [5, 2], [5, 1, 1], [4, 3], [4, 2, 1], [4, 1, 1, 1], [3, 3, 1], [3, 2, 2],
+   [3, 2, 1, 1], [3, 1, 1, 1, 1], [2, 2, 2, 1], [2, 2, 1, 1, 1], [2, 1, 1, 1, 1, 1],
+   [1, 1, 1, 1, 1, 1, 1],
+   [8], [7, 1], [6, 2], [6, 1, 1], [5, 3], [5, 2, 1], [5, 1, 1, 1], [4, 4], [4, 3, 1], [4, 2, 2],
+   [4, 2, 1, 1], [4, 1, 1, 1, 1], [3, 3, 2], [3, 3, 1, 1], [3, 2, 2, 1], [3, 2, 1, 1, 1],
+   [3, 1, 1, 1, 1, 1], [2, 2, 2, 2], [2, 2, 2, 1, 1], [2, 2, 1, 1, 1, 1], [2, 1, 1, 1, 1, 1, 1],
+   [1, 1, 1, 1, 1, 1, 1, 1],
+   [9], [8, 1], [7, 2], [7, 1, 1], [6, 3], [6, 2, 1], [6, 1, 1, 1], [5, 4], [5, 3, 1], [5, 2, 2],
+   [5, 2, 1, 1], [5, 1, 1, 1, 1], [4, 4, 1], [4, 3, 2], [4, 3, 1, 1], [4, 2, 2, 1], [4, 2, 1, 1, 1],
+   [4, 1, 1, 1, 1, 1], [3, 3, 3], [3, 3, 2, 1], [3, 3, 1, 1, 1], [3, 2, 2, 2], [3, 2, 2, 1, 1],
+   [3, 2, 1, 1, 1, 1], [3, 1, 1, 1, 1, 1, 1], [2, 2, 2, 2, 1], [2, 2, 2, 1, 1, 1],
+   [2, 2, 1, 1, 1, 1, 1], [2, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1]]
+
+/-- **(A) for all partitions `n ≤ 9`** — sorry-free `native_decide` over `allPartsLE9`. -/
+theorem identityA_verified_le9 :
+    ∀ l ∈ allPartsLE9, sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 := by
   native_decide
-example : sumSqHooks [3, 2] = sumSqContents [3, 2] + (sz [3, 2] : ℤ) ^ 2 := by native_decide
-example : sumSqHooks [4, 2, 1] = sumSqContents [4, 2, 1] + (sz [4, 2, 1] : ℤ) ^ 2 := by
-  native_decide
-example : sumSqHooks [3, 3, 2] = sumSqContents [3, 3, 2] + (sz [3, 3, 2] : ℤ) ^ 2 := by native_decide
 
-lemma range_succ_left (m : ℕ) : List.range (m + 1) = 0 :: (List.range m).map (· + 1) := by
-  induction m with
-  | zero => rfl
-  | succ p ih =>
-    rw [List.range_succ]
-    nth_rw 1 [ih]
-    rw [List.range_succ, List.map_append]
-    rfl
+/-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
+partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
+(`identityA_verified_le9`) and exhaustively in Python for `n ≤ 22`.
 
-lemma sum_range_reflect (x : ℕ) :
-    ((List.range x).map fun (j : ℕ) => ((x : ℤ) - (j : ℤ)) ^ 2).sum =
-      ((List.range x).map fun (j : ℕ) => (j : ℤ) ^ 2).sum + (x : ℤ) ^ 2 := by
-  induction x with
-  | zero => rfl
-  | succ m ih =>
-    rw [range_succ_left]
-    simp only [List.map_cons, List.map_map, List.sum_cons]
-    unfold Function.comp
-    dsimp
-    have h_map : (List.map (fun (j : ℕ) => (↑m + 1 - (↑j + 1) : ℤ) ^ 2) (List.range m)) =
-                  (List.map (fun (j : ℕ) => (↑m - ↑j : ℤ) ^ 2) (List.range m)) := by
-      apply List.map_congr_left
-      intro j hj
-      have : j < m := List.mem_range.mp hj
-      congr 1
-      omega
-    have h_assoc : (List.map (fun (j : ℕ) => (j : ℤ) ^ 2) (List.range m)).sum + (m : ℤ) ^ 2 =
-                   (List.map (fun (j : ℕ) => (j : ℤ) ^ 2) (List.range (m + 1))).sum := by
-      rw [List.range_succ, List.map_append, List.sum_append]
-      simp
-    rw [h_map, ih]
-    rw [h_assoc]
-    rw [range_succ_left]
-    simp
-    unfold Function.comp
-    dsimp
-    omega
-
-lemma colLen_singleton_of_lt {x j : ℕ} (h : j < x) : colLen [x] j = 1 := by
-  unfold colLen
-  simp [h]
-
-lemma flatMap_coe (l : List ℕ) : List.flatMap (fun (a : ℕ) => [(a : ℤ)]) l = l.map (fun (a : ℕ) => (a : ℤ)) := by
-  induction l with
-  | nil => rfl
-  | cons head tail ih =>
-    change (head : ℤ) :: List.flatMap (fun (a : ℕ) => [(a : ℤ)]) tail = (head : ℤ) :: tail.map (fun (a : ℕ) => (a : ℤ))
-    rw [ih]
-
-/-- **Identity (A), general (carried).** For a weakly-decreasing partition `l`,
-`Σ_c h_c² = Σ_c c(c)² + n²`. Proved honestly here for lists of length ≤ 1. -/
-theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (h : l.length ≤ 1) :
+Proof roadmap (β-set / arm-leg, audit doc §"Proof of (A)"), being formalized
+incrementally below:
+* **(L1)** β-set hook-square formula `Σ_c h² = Σ_i Σ_{s≤β_i} s² − Σ_{i<t}(β_i−β_t)²`;
+* **(Lc)** per-bead contents along `β_i` are exactly `{j−i}`;
+* **(Lal)** arm·leg row-pair closed form
+  `Σ_c a·l = Σ_{i,k} λ_i·min(λ_i,λ_k) − Σ_i iλ_i² − Σ_j jλ'_j² + Σ_i i·\binom{λ_i+1}{2}`;
+then the elementary single-sum cancellation gives `n²`.  The crux is the 2-D reindex
+in (Lal); the rest is `ring`/`Finset.sum` glue. -/
+theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
     sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 := by
-  match l, h with
-  | [], _ =>
-    rfl
-  | [x], _ =>
-    have h_term : ∀ j ∈ List.range x,
-        ((( [x].getD 0 0 - j ) + (colLen [x] j - 0) - 1 : ℕ) : ℤ) ^ 2 = ((x : ℤ) - (j : ℤ)) ^ 2 := by
-      intro j hj
-      have h_lt : j < x := List.mem_range.mp hj
-      have h_col : colLen [x] j = 1 := colLen_singleton_of_lt h_lt
-      have h_getD : [x].getD 0 0 = x := rfl
-      rw [h_getD, h_col]
-      have : (((x - j) + (1 - 0) - 1 : ℕ) : ℤ) = (x : ℤ) - (j : ℤ) := by omega
-      rw [this]
-    have h_hooks : sumSqHooks [x] = ((List.range x).map fun (j : ℕ) => ((x : ℤ) - (j : ℤ)) ^ 2).sum := by
-      dsimp [sumSqHooks]
-      simp only [add_zero]
-      apply congr_arg List.sum
-      apply List.map_congr_left
-      intro j hj
-      exact h_term j hj
-    have h_contents : sumSqContents [x] = ((List.range x).map fun (j : ℕ) => (j : ℤ) ^ 2).sum := by
-      dsimp [sumSqContents]
-      simp only [sub_zero, add_zero]
-      have h_getD : [x].getD 0 0 = x := rfl
-      rw [h_getD]
-      rw [flatMap_coe]
-      rw [List.map_map]
-      unfold Function.comp
-      dsimp
-    rw [h_hooks, h_contents]
-    exact sum_range_reflect x
-  | x :: y :: zs, h_len =>
-    have h_len_simp : zs.length + 2 ≤ 1 := h_len
-    omega
-
+  -- Ref: [manuscript] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (A)"
+  sorry
 
 /-! ## (B) Jucys–Murphy content-square mean -/
 
