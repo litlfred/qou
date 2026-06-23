@@ -68,7 +68,14 @@ forbidden by the CAL-4 / three-calibration discipline.
 > operator; the operator is 99.8% γ, which the SDP misses entirely. **full-cos**
 > is the honest "is it 𝓑₃" metric, and it is ≈ 0.
 
-## Net — the Δ_λ gate is now closed on every compute lever
+## Net — the Δ_λ *selection* levers are closed (the log-free-energy lever is separate)
+
+> **Rescope note (2026-06-23).** "every compute lever" narrowed to the
+> *selection* levers tabulated below. The on-scale **log-free-energy**
+> functional `B = E₀·log(tr_free/tr_atom)` (= `B_sym`, 0.57–2.36× AME, wired
+> in `binding_log_free_energy.py`) is a distinct, still-open compute lever the
+> SDP-selection arc never touched. Numeric results unchanged. See
+> [`2026-06-23-over-zealous-binding-closure-review.md`](2026-06-23-over-zealous-binding-closure-review.md).
 
 | lever | status |
 |---|---|
@@ -76,7 +83,7 @@ forbidden by the CAL-4 / three-calibration discipline.
 | scalar magnitude / trace functional | **refuted** (#2417 — scalar trace factorizes exactly) |
 | operator-cumulant scalar | **gated** on 𝓑₃-selection (#2430) |
 | 𝓑₃-selection by any continuous principle | **refuted** (#2433 (1)) |
-| dense Wedderburn-projector SDP (the last open lever) | **closed here — selection ⟺ a fitted `T`** |
+| dense Wedderburn-projector SDP (the last open *selection* lever) | **closed here — selection ⟺ a fitted `T`** |
 | α-cluster sidestep | **fit-blocked** (#2433 (2)) |
 
 The operator-cumulant route (#2430) was gated on 𝓑₃-selection; with the SDP
