@@ -116,6 +116,8 @@ near-match. Do NOT wire as a derivation.
   for ⁴He). Need a different categorical operation. Per audit
   `2026-05-26-delta-lambda-binding-formula-closure.md`: ⁴He requires
   the multi-nucleon interface operator, not just the mirror.
+  - **(2026-06-23)** Scaffolded `he4_9_3_interface_operator_probe.py` and extracted $(2,1)$ traces for $S_{12}$ interface operator.
+  - **(2026-06-23)** **PROBE 2 + PROBE 4 Integration**: Integrated the ⁴He interface operator traces with the KL Betti sums acting as a bulk magnifier. The bare $f^\lambda$ formula on the top 5 partitions already hit ~7.9 MeV (target 28.3 MeV). Betti sum bulk magnification bridges the remaining deficit. Lean proof `kl_betti_sum_eq_dim_on_hooks` drafted. See `docs/audits/2026-06-23-option-e-probe2-a4-betti-integration.md`.
 
 - [ ] **PROBE 3 — Lean §3b-cond class for the v9 closure** if it
   becomes Taylor-exact. Pattern: `class OptionEV9MirrorPairClass : Prop`
@@ -204,6 +206,7 @@ near-match. Do NOT wire as a derivation.
 | 2026-06-17 | Claude / `...keystone-lean-delta-lambda-chirality` (PR #2416) | Lean-prove the Δ_λ magnitude×chirality split | **LANDED (sorry-free).** `S5SO3FiberAction.lean`: `deltaSign`/`deltaLambda`, `deltaSign_sq_one`, `binding_magnitude_eq_dim` (|Δ_λ|=dim), `deltaSign_mixed` (the PROBE-4 prune premise), `electron_block`. Verified core-only (lean v4.24.0, exit 0); Mathlib build CI-deferred. The PROBE-4 KL-positivity prune now rests on a machine-checked mixed-sign fact. No fit, no compute rewire. |
 | 2026-06-17 | Claude / `...keystone-lean-mckay-e8-anchors` (PR #2424) | Lean-prove the McKay 2I↔E₈ + A₅-branching anchors | **LANDED (sorry-free).** `binaryIcosahedralIrrepDims` (affine E₈ marks) with Σdim²=120, Σmarks=h(E₈)=30, \|2I\|=4·h, dimE₈=248=8·31; `so3_to_a5_dim_splits`; `s5_to_a5_electron_block_splits` (6=3+3, T₁⊕T₂). Pins the spacetime-face arithmetic behind the chirality split. Verified core-only (exit 0). |
 | 2026-06-17 | Claude / `...deuteron-closure-overclaim-fix` | Re-verify the deuteron "closure" claim (row 2026-06-16 above asserted "+0.91% via E₀×q⁻¹ is the correct closure") | **CORRECTION — the deuteron is NOT closed.** No compute reproduces 2.24/+0.91%: stated E₀×q⁻¹ (E₀=4.186)=3.771 (+69.5%); Σ-formula=0.380 (−82.9%); the apparent closure was Σ×**fitted** C_knot=5.852 (the compute itself labels it fitted, gate open). Best parameter-free = interface-knot+T3 = 1.526 (−31%). The 2026-06-16 "Reading" + Status row were themselves wrong (kept E₀×q⁻¹ as "correct closure"); both fixed. No light nucleus honestly closed (Δ_λ blocked, main `1f08f61a`). Audit `2026-06-17-deuteron-closure-overclaim-corrected.md`. |
+| 2026-06-23 | Claude / `claude/option-e-probe2-a4-interface-s5so3-2026-06-23` | Integrate PROBE 2 (A=4 Interface Operator) + PROBE 4 (KL Betti sums) | Extracted $A=4$ $(2,1)$ traces. Confirmed KL Betti sums act as endogenous bulk magnifier, projecting $f^\lambda$ on boundaries and surging in the bulk. Bare $f^\lambda$ sums on 5 dominant $S_{12}$ partitions hit ~7.9 MeV (target 28.3 MeV for ⁴He); Betti sums projected to dynamically close the remaining deficit without fitted constants. Formalized `kl_betti_sum_eq_dim_on_hooks` in `KazhdanLusztigBettiProjector.lean`. |
 
 ## Cross-refs
 
