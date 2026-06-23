@@ -86,6 +86,18 @@ theorem identityA_verified_le9 :
     ∀ l ∈ allPartsLE9, sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 := by
   decide
 
+/-- **Building block for the general (A) proof — sum of squares (sorry-free).**
+`6·Σ_{k<N} k² = N(N−1)(2N−1)`.  Together with the Gauss sum `Σ_{k<N} k` it gives the
+single-row content closed form `Σ_{j<λ_i}(j−i)²` in the β-set/arm-leg assembly. -/
+theorem six_mul_sum_range_sq (N : ℕ) :
+    6 * ∑ k ∈ Finset.range N, (k : ℤ) ^ 2 = (N : ℤ) * (N - 1) * (2 * N - 1) := by
+  induction N with
+  | zero => simp
+  | succ m ih =>
+    rw [Finset.sum_range_succ, mul_add, ih]
+    push_cast
+    ring
+
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
 (`identityA_verified_le9`) and exhaustively in Python for `n ≤ 22`.
