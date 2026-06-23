@@ -174,7 +174,9 @@ noncomputable instance canonical : QIntegerMassFormula where
   f_magic := fun _ => 0
   tolerance := 1 / 100
   tolerance_bound := ⟨by norm_num, by norm_num⟩
+  -- Ref: [manuscript] conj:q-integer-mass-formula (§3b-cond conjectural field):
+  --      the AME-accuracy assertion is the conjecture proper; per AGENTS.md
+  --      §3b the `sorry` denotes "conjectured", not "missing proof".
   fits_AME := sorry
-    -- Ref: [manuscript] conj:q-integer-mass-formula (§3b-cond conjectural field)
 
 end QOU.Interactions
