@@ -78,7 +78,7 @@ theorem n144C_neg {n : ℤ} (h7 : 7 ≤ n) : n144C n < 0 := by
     mul_pos (mul_pos (by linarith) (by linarith)) (by linarith)
   linarith
 
-/-! ## Identity I — computable verification (formalize-first, n = 2..6)
+/-! ## Identity I — computable verification (formalize-first, n = 1..6)
 
 `twoM` above carries **Identity I** (`2·M(n) = n(3n−1)`, with
 `M(n) = (1/n!) Σ_{λ⊢n} dim(λ)² Σ_{c∈λ} h_c²`, the Plancherel-expected
@@ -91,13 +91,13 @@ This section **computes** the squared-hook numerator from the partition
 *structure* (not hand-tabulated results): `hookLengths` derives each cell's hook
 via the arm+leg+1 rule; `dimOf` uses the hook-length formula
 `dim λ = (Σλ)! / ∏ h_c`; `numerComputed n = Σ_{λ⊢n} dim(λ)² · Σ_c h_c²`. The
-partition *lists* are supplied explicitly (`partitionsOf`, n = 2..6); everything
+partition *lists* are supplied explicitly (`partitionsOf`, n = 1..6); everything
 combinatorial is computed. `identityI_computed` checks the cleared-denominator
 form
 
     2 · numerComputed n  =  n(3n−1) · n!     (⟺ M(n) = n(3n−1)/2)
 
-for n = 2..6, anchoring the carried `twoM` def to the genuine quantity
+for n = 1..6, anchoring the carried `twoM` def to the genuine quantity
 (previously Python-only; audit n = 2..14). General n: deferred (hook-length
 formula). Ref: [manuscript] docs/audits/2026-06-20-keystone-wlambda-C-n-closed-form.md
 -/
@@ -107,8 +107,9 @@ formula). Ref: [manuscript] docs/audits/2026-06-20-keystone-wlambda-C-n-closed-f
 and `leg = #{i' > i : l_{i'} > j}` (cells below). Structurally computable. -/
 def hookLengths (l : List ℕ) : List ℕ :=
   (List.range l.length).flatMap fun i =>
-    (List.range (l.getD i 0)).map fun j =>
-      (l.getD i 0 - 1 - j) + ((l.drop (i + 1)).filter (fun p => decide (j < p))).length + 1
+    let li := l.getD i 0
+    (List.range li).map fun j =>
+      (li - 1 - j) + ((l.drop (i + 1)).filter (fun p => decide (j < p))).length + 1
 
 /-- `dim λ = (Σλ)! / ∏ h_c` (hook-length formula). Exact ℕ division — the HLF
 guarantees `∏ h_c ∣ n!`. -/
@@ -120,6 +121,7 @@ def sumHookSq (l : List ℕ) : ℕ := ((hookLengths l).map (· ^ 2)).sum
 /-- The partitions of `n`, supplied as explicit descending lists (the
 combinatorial content — hooks, `dim`, the sum — is computed, not tabulated). -/
 def partitionsOf : ℕ → List (List ℕ)
+  | 1 => [[1]]
   | 2 => [[2], [1, 1]]
   | 3 => [[3], [2, 1], [1, 1, 1]]
   | 4 => [[4], [3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1]]
@@ -132,28 +134,29 @@ def partitionsOf : ℕ → List (List ℕ)
 def numerComputed (n : ℕ) : ℕ :=
   ((partitionsOf n).map fun l => dimOf l ^ 2 * sumHookSq l).sum
 
-/-- **Identity I — verified for `n = 2..6`.** `M(n) = n(3n−1)/2`, in cleared form
-`2·numerComputed n = n(3n−1)·n!` (RHS `n(3n−1)`: 5, 8, 11, 14, 17). Computed from
+/-- **Identity I — verified for `n = 1..6`.** `M(n) = n(3n−1)/2`, in cleared form
+`2·numerComputed n = n(3n−1)·n!` (RHS `n(3n−1)`: 2, 5, 8, 11, 14, 17). Computed from
 hooks/`dim`, not hand-tabulated — dodge-proof. -/
 theorem identityI_computed :
+    2 * numerComputed 1 = 1 * 2 * Nat.factorial 1 ∧
     2 * numerComputed 2 = 2 * 5 * Nat.factorial 2 ∧
     2 * numerComputed 3 = 3 * 8 * Nat.factorial 3 ∧
     2 * numerComputed 4 = 4 * 11 * Nat.factorial 4 ∧
     2 * numerComputed 5 = 5 * 14 * Nat.factorial 5 ∧
     2 * numerComputed 6 = 6 * 17 * Nat.factorial 6 := by
-  refine ⟨?_, ?_, ?_, ?_, ?_⟩ <;> native_decide
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩ <;> decide
 
 /-- **Consistency with the carried `twoM`.** `twoM n = n(3n−1) = 2·M(n)`; at the
 verified `n` this matches the computed numerator: `twoM n · n! = 2·numerComputed n`. -/
 theorem twoM_eq_numer_base :
     twoM 4 * (Nat.factorial 4 : ℤ) = 2 * (numerComputed 4 : ℤ) ∧
     twoM 6 * (Nat.factorial 6 : ℤ) = 2 * (numerComputed 6 : ℤ) := by
-  refine ⟨?_, ?_⟩ <;> native_decide
+  refine ⟨?_, ?_⟩ <;> decide
 
 /-! **Identity I (general) — DEFERRED.** `2·M(n) = n(3n−1)` for all `n ≥ 1`. A
 general Lean proof needs the hook-length formula (absent from Mathlib); the
 `partitionsOf` enumerator and an HLF-based `dim` would replace the explicit
-partition lists. Compute-verified `n = 2..14` (audit + witness); `n = 2..6` now
+partition lists. Compute-verified `n = 2..14` (audit + witness); `n = 1..6` now
 Lean-verified above. Tracked as a Mathlib-extension opportunity.
 Ref: [manuscript] docs/audits/2026-06-20-keystone-wlambda-C-n-closed-form.md -/
 
