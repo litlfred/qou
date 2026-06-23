@@ -26,7 +26,7 @@ literals"). To avoid double-routing:
   isotope-witness production scripts, plus the public U_MEV export.
 - Owned by the sibling now: the AME-binding literal sweep
   (³He/D/T/⁴He and the rest of the AME batches).
-- Remaining unclaimed tail: the option_e_*/probe_*/delta_lambda_*
+- Remaining unclaimed tail: the `option_e_*/probe_*/delta_lambda_*`
   exploratory scripts (low value — diminishing returns).
 Handing the remaining production sweep to the sibling; not picking up
 further 46ke work from this branch to prevent collisions.
