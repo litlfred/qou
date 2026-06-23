@@ -1281,6 +1281,24 @@
         "reviewed_at": "2026-06-22T02:56:46.517Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "lean": "04e2c898a6f3"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean:113 [def-disguised-true] def markovTraceAxiomaticClosedForm :",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "397e2491603f",
+          "script_commit_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
+        },
+        "reviewed_at": "2026-06-23T11:59:48.389Z",
+        "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "proof-no-false-premise": [
@@ -1344,5 +1362,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:47.764Z"
+  "updated_at": "2026-06-23T11:59:48.389Z"
 }

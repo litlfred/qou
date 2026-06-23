@@ -1281,6 +1281,24 @@
         "reviewed_at": "2026-06-22T02:57:24.418Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "lean": "8166b02946f1"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.lean:195 [def-disguised-true] def q_beta_cos_conditional [_inst : BorromeanQuark] : True := trivial",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "397e2491603f",
+          "script_commit_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
+        },
+        "reviewed_at": "2026-06-23T11:59:48.389Z",
+        "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "proof-no-false-premise": [
@@ -1344,5 +1362,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:25.075Z"
+  "updated_at": "2026-06-23T11:59:48.389Z"
 }

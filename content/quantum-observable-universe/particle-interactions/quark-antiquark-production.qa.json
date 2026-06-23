@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "52632ea94220",
-    "ts": "03bda5cbf95f",
+    "ts": "36609bcac7a5",
     "lean": "00abc7694585"
   },
   "criteria": {
@@ -913,7 +913,27 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "lean": "00abc7694585"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/particle-interactions/quark-antiquark-production.lean:23 [def-disguised-true] def quarkAntiquarkProduction : True := trivial | content/quantum-observable-universe/particle-interactions/quark-antiquark-production.lean:29 [def-disguised-true] def quark_antiquark_production_witness : True := trivial",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "397e2491603f",
+          "script_commit_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
+        },
+        "reviewed_at": "2026-06-23T11:59:48.389Z",
+        "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:22.411Z"
+  "updated_at": "2026-06-23T11:59:48.389Z"
 }

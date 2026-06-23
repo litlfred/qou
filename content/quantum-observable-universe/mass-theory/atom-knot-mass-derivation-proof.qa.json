@@ -818,7 +818,27 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "lean": "830f9592d7fa"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-proof.lean:24 [def-disguised-true] def categorical_leg_to_markov_trace (T_w : Type*) : | content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-proof.lean:36 [def-disguised-true] def archimedean_realization_to_mev (T_w : Type*) | content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-proof.lean:45 [def-disguised-true] def post_archimedean_naming_borrowed (K : Type*) (hyp : Prop) :",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "397e2491603f",
+          "script_commit_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
+        },
+        "reviewed_at": "2026-06-23T11:59:48.389Z",
+        "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:10.617Z"
+  "updated_at": "2026-06-23T11:59:48.389Z"
 }
