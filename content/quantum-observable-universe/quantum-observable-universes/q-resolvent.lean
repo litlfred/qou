@@ -48,19 +48,23 @@ structure QResolvent (H : Type*) where
 
     For two spectral parameters `s₁, s₂` with resolvents `R₁, R₂`,
     the first resolvent identity holds:
-      R₁ - R₂ = (s₂ - s₁) · R₁ · R₂.
+      R₁ - R₂ = (s₂ - s₁) · R₁ · R₂,
+    stated at the element level (the only structure the abstract
+    `QResolvent` carries) as
+      ∀ x, R₁.R x - R₂.R x = (R₂.s - R₁.s) * R₁.R (R₂.R x).
 
     This is the mate of the coproduct Δ_q on 𝓗_q under the Laplace
     pairing. -/
 -- Ref: [kassel1995] Quantum Groups, §IV.4
-def QResolvent.first_identity {H : Type*} [AddCommGroup H] [Mul H]
+theorem QResolvent.first_identity {H : Type*} [AddCommGroup H] [Mul H]
     (R₁ R₂ : QResolvent H) :
-    True := by
-  -- The full statement requires a ring structure on End(H) compatible
-  -- with the Hopf-algebra convolution.  Recorded here as a TODO
-  -- pending q-shuffle Hopf algebra infrastructure in Mathlib.
-  -- Ref: [kassel1995] Quantum Groups, §IV.4
-  trivial
+    ∀ x : H, R₁.R x - R₂.R x = (R₂.s - R₁.s) * R₁.R (R₂.R x) := by
+  -- Ref: [kassel1995] Quantum Groups, §IV.4 — the proof needs the End(H)
+  --      ring structure compatible with the q-shuffle Hopf-algebra
+  --      convolution (`s + delta_q` invertible, coproduct mate), which is
+  --      not yet in Mathlib; queued as a sorry per AGENTS.md §1 rather than
+  --      hidden behind a vacuous `: True` conclusion.
+  sorry
 
 end
 
