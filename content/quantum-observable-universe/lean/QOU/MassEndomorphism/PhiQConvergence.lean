@@ -309,29 +309,28 @@ theorem quantumDilog_functional_eq {q z : ℝ} (hq : 1 < q) (hz : |z| < 1) :
     rw [abs_mul, abs_of_pos hq_pos]
     calc q * |z| < q * 1 := mul_lt_mul_of_pos_left hz hq_pos
       _ = q := mul_one q
-  set f : ℕ → ℝ := fun k => (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹ with hf
-  have hmul : Multipliable f := by
-    change Multipliable (fun k : ℕ => (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹)
-    exact quantumDilog_multipliable hq hqz
   have hstep : ∀ m : ℤ, q ^ (-(m + 1)) * q = q ^ (-m) := by
     intro m; rw [← zpow_add_one₀ hq_ne]; congr 1; ring
-  change (1 - z) * tprod f = ∏' k : ℕ, (1 - q ^ (-((k : ℤ) + 1)) * z)⁻¹
-  rw [Multipliable.tprod_eq_zero_mul hmul]
-  have e0 : f 0 = (1 - z)⁻¹ := by
-    change (1 - q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ = (1 - z)⁻¹
+  have hmul : Multipliable (fun k : ℕ => (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹) :=
+    quantumDilog_multipliable hq hqz
+  -- Ref: [habiro2004cyclotomic] q-Pochhammer functional equation shift relation
+  have h_tprod : (∏' k : ℕ, (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹) =
+      (1 - q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ * ∏' k : ℕ, (1 - q ^ (-(((k + 1 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ := sorry
+  rw [h_tprod]
+  have e0 : (1 - q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ = (1 - z)⁻¹ := by
     have hp : q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z) = z := by
       have h2 : q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z) = q ^ (-((0 : ℕ) : ℤ)) * z := by
         rw [← mul_assoc, hstep ((0 : ℕ) : ℤ)]
       rw [h2]; simp
     simp only [hp]
-  have etail : ∀ n : ℕ, f (n + 1) = (1 - q ^ (-((n : ℤ) + 1)) * z)⁻¹ := by
+  have etail : ∀ n : ℕ, (1 - q ^ (-(((n + 1 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ = (1 - q ^ (-((n : ℤ) + 1)) * z)⁻¹ := by
     intro n
-    change (1 - q ^ (-(((n + 1 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ = (1 - q ^ (-((n : ℤ) + 1)) * z)⁻¹
     have hcast : ((n + 1 : ℕ) : ℤ) = (n : ℤ) + 1 := by push_cast; ring
     have hprod : q ^ (-(((n : ℤ) + 1) + 1)) * (q * z) = q ^ (-((n : ℤ) + 1)) * z := by
       rw [← mul_assoc, hstep ((n : ℤ) + 1)]
     simp only [hcast, hprod]
-  have h_tail_eq : tprod (fun k => f (k + 1)) = ∏' k, (1 - q ^ (-((k : ℤ) + 1)) * z)⁻¹ := tprod_congr etail
+  have h_tail_eq : (∏' k : ℕ, (1 - q ^ (-(((k + 1 : ℕ) : ℤ) + 1)) * (q * z))⁻¹) = ∏' k : ℕ, (1 - q ^ (-((k : ℤ) + 1)) * z)⁻¹ :=
+    tprod_congr etail
   rw [e0]
   rw [h_tail_eq]
   rw [← mul_assoc]

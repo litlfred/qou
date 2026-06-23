@@ -127,7 +127,11 @@ theorem HA_ne_zero : HA ≠ 0 := by
   intro h
   have h_eval : HA 1 = (0 : LaurentPolynomial ℤ) 1 := congrArg (fun f => f 1) h
   unfold HA q q_inv at h_eval
-  simp at h_eval
+  simp only [LaurentPolynomial.T] at h_eval
+  change (Finsupp.single 1 1 : ℤ →₀ ℤ) 1 - (Finsupp.single (-1) 1 : ℤ →₀ ℤ) 1 = (0 : ℤ →₀ ℤ) 1 at h_eval
+  simp only [Finsupp.single_apply, Finsupp.zero_apply, if_true] at h_eval
+  revert h_eval
+  decide
 
 /-- Hydrogen has 2 NF terms (both coefficients are nonzero). -/
 theorem hydrogen_terms_eq_two : hydrogen_nf 0 ≠ 0 ∧ hydrogen_nf 1 ≠ 0 := by
@@ -259,7 +263,8 @@ theorem helium_slot2_nonzero : helium_nf 2 ≠ 0 := by
     have h_ring2 : ((4 : R_q) * LaurentPolynomial.T 2 - (4 : R_q) * LaurentPolynomial.T 0 + (4 : R_q) * LaurentPolynomial.T (-2)) * LaurentPolynomial.T 2
       = (4 : R_q) * (LaurentPolynomial.T 2 * LaurentPolynomial.T 2) - (4 : R_q) * (LaurentPolynomial.T 0 * LaurentPolynomial.T 2) + (4 : R_q) * (LaurentPolynomial.T (-2) * LaurentPolynomial.T 2) := by ring
     rw [h_ring2]
-    simp only [← LaurentPolynomial.T_add]
+    simp only [← LaurentPolynomial.T_add, Int.reduceAdd, Int.reduceNeg]
+    simp only [LaurentPolynomial.T_zero]
     ring
   rw [h_simp] at h_mult
   cases mul_eq_zero.mp h_mult with
@@ -283,7 +288,8 @@ theorem helium_slot3_nonzero : helium_nf 3 ≠ 0 := by
     have h_ring2 : ((-4 : R_q) * LaurentPolynomial.T 1 + (4 : R_q) * LaurentPolynomial.T (-1)) * LaurentPolynomial.T 1
       = (-4 : R_q) * (LaurentPolynomial.T 1 * LaurentPolynomial.T 1) + (4 : R_q) * (LaurentPolynomial.T (-1) * LaurentPolynomial.T 1) := by ring
     rw [h_ring2]
-    simp only [← LaurentPolynomial.T_add]
+    simp only [← LaurentPolynomial.T_add, Int.reduceAdd, Int.reduceNeg]
+    simp only [LaurentPolynomial.T_zero]
     ring
   rw [h_simp] at h_mult
   have h_mult2 : (4 : R_q) * (LaurentPolynomial.T 2 - 1) = 0 := by
