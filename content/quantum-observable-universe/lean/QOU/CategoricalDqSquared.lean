@@ -9,6 +9,7 @@ import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
+import QOU.QuantumObservableUniverse.Instanton
 
 /-!
 # QOU.categorical_dq_squared
@@ -38,9 +39,10 @@ open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -59,7 +61,7 @@ universe u v
     LaTeX: `\label{prop:categorical-dq-squared}` -/
 theorem categorical_dq_squared {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
-    [CategoryTheory.Preadditive C] [CategoryTheory.Linear R_q C]
+    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
     (cqd : CategoricalQExtDeriv C)
     (hq : cqd.q = 1)
     (hd_sq : cqd.d_classical ≫ cqd.d_classical = 0) :
@@ -67,5 +69,7 @@ theorem categorical_dq_squared {C : Type u} [CategoryTheory.Category.{v} C]
   -- When q = 1, d_q = d (by dq_classical), so d_q² = d² = 0.
   rw [cqd.dq_classical hq]
   exact hd_sq
+
+end  -- noncomputable section
 
 end QOU
