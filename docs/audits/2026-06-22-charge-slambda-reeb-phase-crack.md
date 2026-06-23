@@ -176,7 +176,7 @@ rewired here (exploratory producer); documented for future use.
 
 **No new Lean.** The two structural inputs are already formalised/witnessed: the
 `sinh(log q)=h/2` Coulomb identity in
-[`crossing-energy-decomposition.lean`](../../content/quantum-observable-universe/braids-and-knots/crossing-energy-decomposition.lean),
+[`crossing-energy-decomposition.lean`](../../content/quantum-observable-universe/observations/crossing-energy-decomposition.lean),
 and the H₃ Markov-equivalence collapse in the GAP-A-4 verifier
 (`rho-prefactor-structural-verifier.witness.json`). This crack *connects* them
 to the shadow-price `S_λ`; it introduces no new identity to prove.
