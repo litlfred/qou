@@ -55,17 +55,28 @@ check**: does `(1/3)Σ_{λ⊢3} dim_q = (q+1)²/(3q)`? If yes,
 `thm:binding-closure-conditional` becomes **unconditional**. If no, the c=2 anchor
 is corrected and τ refined.
 
-**Why not done here (honesty):** the per-partition `dim_q` convention is not
-cleanly exposed on this branch — Family-A is hard-coded as its closed form, and
-the `prop:selection-rule-c2-prediction` / `…-anchors-c1-c3` blocks were
-cherry-picked from #1765 and are not fully present. Reverse-engineering `dim_q`
-from the c=3 anchor to force a c=2 number would be fabrication. The check needs
-the #1765 `dim_q` definition synced (main is +116; the keystone is actively
-worked — Identity I landed today). **Coordinate, do not open a parallel
-construction.**
+**Now done (post-rebase, 2026-06-23).** After rebasing onto main (+119), the
+#1765 selection-rule blocks + the canonical q-hook `dim_q`
+(`phase5_n8_dim_q_table`) are in tree. The c=2 check is **confirmed
+derivation-tight** (no fabrication):
+[`binding_selection_rule_tau_closure.py`](../../computations/binding_selection_rule_tau_closure.py)
+computes all three τ-anchors as ONE rule `lw(c)=(1/(c+1))·Σ_{λ⊢c+1} dim_q` via
+the canonical `dim_q` — `lw(1)=1`, `lw(2)=(q+1)²/(3q)` (the former gate),
+`lw(3)=(3q²+4+3q⁻²)/4` (Family-A, **bit-for-bit** = production
+`linking_weight_family_a`) — and they satisfy the proved depth-2 det=1
+recurrence (`τ(q₀)=2.6424`, `a_D⁵=5.3556`). Wired both ways: **MASS** (`lw(c)` is
+the VolDensity linking weight, `mba-step09a`) and **BINDING** (`a_D^(n)=lw(n−1)`
+→ kernel `R`, `mba-step09b`).
 
-**Net:** lever 1 went from "owner-gated DG matrix" → "one scalar `dim_q`-sum
-check," with all surrounding machinery proved and validated.
+**Residual (open, honest):** the geometric↔algebraic identification
+`a_D^(n)=lw(n−1)` — that the SW prolonged period *equals* the selection-rule
+value (#1765). The *algebraic* side (the rule's values + the recurrence) is
+closed; the SW-period identification is not. Did NOT construct the Bring matrix
+`M` (keystone actively worked on main — coordinate).
+
+**Net:** lever 1 went from "owner-gated DG matrix M" → "one rule, confirmed via
+the canonical `dim_q`, satisfying the proved recurrence," sole residual the
+SW-period↔selection-rule identification.
 
 ---
 
@@ -113,7 +124,7 @@ None of the three manufactured a closure. The Δ_λ / per-isotope binding gate
 
 | lever | before | after (this session) |
 |---|---|---|
-| 1 | "owner-gated DG matrix M" | one scalar `dim_q`-sum check (`R=x²−τx+1` proved; τ-test passes) |
+| 1 | "owner-gated DG matrix M" | **one rule confirmed via canonical `dim_q`** (c=2 derivation-tight); proved recurrence holds; wired to mass + binding; residual = SW-period↔rule ID |
 | 2 | "static graphs refuted; occupancy open" | Pauli→pp/nn-unbound **formalized** (sorry-free); Z·N count still research-scale |
 | 3 | "ρ≈18.5 fitted; 1.7% post-hoc" | A=3 **ratio** is a ρ-free **prediction** (1.67%); absolute ρ still CAL-4-gated |
 
