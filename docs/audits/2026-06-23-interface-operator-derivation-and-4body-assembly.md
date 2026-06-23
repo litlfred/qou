@@ -152,3 +152,48 @@ overshoot) — a real step, and it localizes the remaining gap to the
 saturation/curvature term rather than the interface factor or topology.
 
 → `binding_additive_linked_cluster_probe.py` · `binding-additive-linked-cluster-scan.witness.json`
+
+## Mayer linked-cluster decomposition — measures the cooperativity (does NOT rule out the interface)
+
+For A≤4 the nucleons form a simplex, so the exact energy decomposition is
+`B(A) = C(A,2)·b₂ + C(A,3)·b₃ + C(A,4)·b₄`, with `b₂` identified from the
+deuteron (the unique 2-body nucleus). Result: per-bond energy is non-constant
+(2.22 → 2.83 → 4.72 MeV/bond), and the irreducible terms are large —
+`b₃/b₂ = 0.64`, **`b₄/b₂ = 4.16`**. The ⁴He spike is the dominant 4-body
+α-cluster term, coincident with the closed `[1⁴]` SU(4) supermultiplet
+(`e_A[h₃]` vanishes for A>4).
+
+→ `binding_mayer_linked_cluster_probe.py` · `binding-mayer-linked-cluster-decomposition.witness.json`
+
+## Calibration note (2026-06-23) — scope of these negative results (owner correction)
+
+An earlier draft over-stated these probes as "ruling out" whole classes. That is
+wrong, on two counts the owner flagged:
+
+1. **The framework's binding is the trace object `B = E₀·τ_vac·(1−∏f)`, which is
+   already many-body.** Expanding `1−∏f = ∑ᵢ(1−fᵢ) − ∑_{i<j}(1−fᵢ)(1−fⱼ) + …`
+   generates cross-bond (3-, 4-body) cooperative terms. A large irreducible
+   `b₃/b₄` therefore says how *big* the cross terms must be — it does **not** prove
+   the product form is structurally incapable.
+2. **A Lean-proved piece is a permanent, correct contribution even while the total
+   is inaccurate.** The per-bond factors z, z−h, z−h/2 are proved exact for the
+   trace ratio; the missing cluster operator **adds to / re-weights** them, it does
+   not invalidate them. "Inaccurate now" ≠ "ruled out."
+
+Read every negative in this doc and the 2026-06-22 Δ_λ doc with that scope: each
+shows a *specific parameter-free construction, tested alone as the sole mechanism,
+does not reproduce the numbers as-is*. None excludes the ingredient as a
+**contributor** to a multi-term closure. Accurate verdicts:
+
+- **Spin-isospin Δ_λ = ⟨s_λ, e_A[h₃]⟩**: as the *sole* per-block weight it underbinds
+  badly; but the plethysm multiplicities are exact SU(4) content and could enter a
+  combined assembly. ("This construction alone fails," not "spin-isospin refuted.")
+- **Bond-counting topology**: within the *multiplicative-deficit* form chain≈complete
+  both under-scale; the *additive* form with the same counts scaled far better — so
+  counting does contribute, it was the deficit *saturation* that capped it.
+- **Mayer cooperativity**: measures the 4-body target (≈4×b₂); does not reject any
+  interface factor.
+
+The genuinely robust, parameter-free finding across all of them: binding is strongly
+cooperative and its A-scaling lives on the dynamics/interface side, with the proved
+per-bond factors as the foundation a 3-/4-body cluster operator (PROBE 2) builds on.
