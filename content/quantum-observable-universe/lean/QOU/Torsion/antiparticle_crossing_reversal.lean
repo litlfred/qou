@@ -75,6 +75,9 @@ theorem antiparticle_crossing_reversal [ctx : AntiparticleCrossingReversalContex
     ctx.E_cross_anti = - ctx.E_cross_bar ∧
     ctx.Q_charge_anti = - ctx.Q_charge ∧
     ctx.m_bare_anti = ctx.m_bare :=
-  sorry
+  ⟨ctx.impl_crossing_reversal_defines ctx.reversal_active,
+   ctx.impl_crossing_energy_sign ctx.reversal_active,
+   ctx.impl_coulomb_charge_reversal ctx.reversal_active,
+   ctx.impl_bare_mass_invariance ctx.reversal_active⟩
 
 end QOU.Torsion
