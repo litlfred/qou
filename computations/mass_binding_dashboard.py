@@ -98,11 +98,36 @@ def _nucleon_msym(alpha):
     """Per-nucleon Kashaev mass m_sym(W) = −α·ln tr_M(W) for the free proton and
     neutron (A=1 sub-braids; cheap). The free atom word factorizes
     tr_free = tr_p^Z·tr_n^N, so m_sym(free components) = Z·msp + N·msn for ANY A
-    with no bound-knot trace — the un-gateable half of the B_sym decomposition."""
+    with no bound-knot trace — the un-gateable half of the B_sym decomposition.
+
+    NB: this is the LOG-TRACE internal mass (sub-MeV; tr_M(nucleon) ≈ 1.065), the
+    quantity differenced to give B_sym = m_sym_atom − m_sym_free. It is NOT the
+    physical nucleon rest mass — for that see `_nucleon_mass_canonical`."""
     from tr_m_atom_via_transfer import tr_m_atom_zn
     tp = float(tr_m_atom_zn(1, 0, dps=50)[1])   # A=1 → no interfaces → atom==free
     tn = float(tr_m_atom_zn(0, 1, dps=50)[1])
     return -alpha * math.log(tp), -alpha * math.log(tn)
+
+
+def _nucleon_mass_canonical(me, q0):
+    """Framework-DERIVED physical nucleon rest masses (m_p, m_n) in MeV — the
+    GeV-scale categorical prediction, used for the pure-canonical constituent sum.
+
+    m_p = m_e·Vol(𝓑₃)·ρ_global(q₀)/ℏ_q²  (the production global-scalar reading of
+    the canonical mass formula m(K) = m_e·Vol(K)·ρ(K)/ℏ_q²; ≈ 966.05 MeV, +2.96%
+    vs CODATA — the known m_p gap). m_n then follows the canonical 3-input chain
+    m_n = m_p + Q_β,derived + m_e with the q₀-derived β-decay scale
+    Q_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³). No measured nucleon mass enters: every
+    term scales off the CAL-1 unit m_e. (The per-block H₃ trace reading gives
+    m_p ≈ 406 MeV (−57%) and is NOT production — see mass_vol_density.py:129.)"""
+    import mpmath as _mp
+    from mass_vol_density import mass_vol_density
+    from knot_volumes import VOL_BORROMEAN
+    from derived_masses import q_beta_predicted_mev
+    me_mp, q_mp = _mp.mpf(str(me)), _mp.mpf(str(q0))
+    m_p = float(mass_vol_density(me_mp, _mp.mpf(str(VOL_BORROMEAN)), q_mp))
+    m_n = m_p + float(q_beta_predicted_mev()) + float(me)
+    return m_p, m_n
 
 
 def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
@@ -185,8 +210,44 @@ def _fmt(v, w=8, p=2):
     return f"{v:>{w}.{p}f}" if v is not None else f"{'—':>{w}}"
 
 
+def _sci(v, w=11, p=2):
+    """Scientific-notation cell — for sub-keV σ_exp values that round to
+    0.000000 in fixed-point and read as a misleading empty column."""
+    return f"{v:>{w}.{p}e}" if v is not None else f"{'—':>{w}}"
+
+
 def _err(bame, b):
     return (bame / b) if (bame is not None and b is not None and b > 0) else None
+
+
+def _print_legend() -> None:
+    """Explain every column header used across the dashboard's tables, so the
+    output is self-documenting when pasted into a PR / issue."""
+    print("#### Column legend")
+    print("""
+| Header | Meaning |
+|---|---|
+| `iso` / `A` | Isotope label / mass number A = Z+N |
+| `B_AME` | Total nuclear binding energy from AME2020 (MeV) — the experimental target |
+| `σ_exp (MeV)` | AME2020 experimental 1σ on the total binding (scientific notation; sub-keV for light nuclei) |
+| `σ_exp (ppm)` | The same 1σ as a relative figure (σ_exp / B_AME × 10⁶) |
+| `B_sym` | EXACT log-ratio binding α·ln(tr_free/tr_atom) = α[(Z−1)L_pp + L_pn + (N−1)L_nn] — the archimedean realization |
+| `B_qCLT` | Uniform per-bond q-CLT α·(A−1)·ℓ̄(D) — no p↔n colour weighting |
+| `B_qCLT_fac` | p↔n colour-weighted q-CLT α·(A−1)·⟨bond-type L⟩ |
+| `B_magic` | ⁴He-only magic-volume binding 2·m_e·A·8G |
+| `sym/qCLT/qCLT_fac/magic` (Error table) | B_AME / B_model — 1.00 = perfect, >1 under-binds |
+| `best dev / σ_exp` | Best form's |B_model − B_AME| measured in experimental σ (the L2-100× gap) |
+| `m_unbnd,can` | Framework-DERIVED constituent sum Z·m_p,can + N·m_n,can (m_p,can = m_e·Vol·ρ/ℏ_q² ≈ 966 MeV, +2.96% gap) |
+| `m_unbnd` | MEASURED constituent sum Z·m_p + N·m_n (CODATA) |
+| `M_AME` | Measured atomic mass m_unbnd − B_AME |
+| `m_sym` | PURE-CANONICAL bound mass m_unbnd,can − B_sym (framework constituents) |
+| `m_sym,rel` | Measured-relative bound mass m_unbnd − B_sym (same canonical B_sym, measured baseline) |
+| `m_qCLT,rel` / `m_qCLT_fac,rel` | m_unbnd − B_qCLT(,fac) (measured baseline) |
+| `retained E` / `emitted E` | bar-involution (q↦q⁻¹) split: E₀·bar-even = retained binding, E₀·|bar-odd| = emitted γγ̄ |
+| `multi-link emit` | bar-odd of the inter-nucleon binding defect (radiated inter-nucleon energy) |
+| `B_sym+ent` | B_sym + multi-link emitted energy (entanglement-augmented binding) |
+| `m_sym(free comps)` / `m_sym(atom)` | LOG-TRACE internal masses −α·ln tr_M(W) (sub-MeV; differenced to give B_sym — NOT a rest mass) |
+""")
 
 
 def main(argv=None) -> int:
@@ -219,6 +280,7 @@ def main(argv=None) -> int:
     me, q0, E0, g8 = _constants()
     Lbond = _bond_type_L()
     nucleon_msym = _nucleon_msym(E0)         # per-nucleon free Kashaev mass (cheap)
+    mp_can, mn_can = _nucleon_mass_canonical(me, q0)   # framework-derived rest masses
     ame = _ame_table()                       # parse AME2020 once, not per row
     rows = [_row(nm, Z, N, E0, me, g8, Lbond, nucleon_msym, ame, args.max_strands)
             for (nm, Z, N) in sel]
@@ -232,6 +294,8 @@ def main(argv=None) -> int:
           f"{args.max_strands // 3}) only to validate the chain. "
           f"qCLT/fac/magic + m_sym(free): combinatorial → all A.\n")
 
+    _print_legend()
+
     # 1. BINDING  (B_AME ± experimental 1σ from AME2020)
     print("### Binding  B (MeV)   [σ_exp = AME2020 experimental 1σ]")
     print("| iso | A | B_AME | σ_exp (MeV) | σ_exp (ppm) | B_sym | B_qCLT | B_qCLT_fac | B_magic |")
@@ -239,7 +303,7 @@ def main(argv=None) -> int:
     for r in rows:
         s = r["sigma_AME"]
         s_ppm = (s / r["B_AME"] * 1e6) if (s and r["B_AME"]) else None
-        print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_fmt(s,11,6)} "
+        print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_sci(s,11,2)} "
               f"| {_fmt(s_ppm,11,3)} | {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT'])} "
               f"| {_fmt(r['B_qCLT_fac'])} | {_fmt(r['B_magic'])} |")
 
@@ -278,26 +342,31 @@ def main(argv=None) -> int:
 
     # 3. MASS  M = Z·m_p + N·m_n − B  (two-column convention, owner-set 2026-06-22)
     #    Wherever the nucleon masses enter the constituent sum we report BOTH:
-    #      • a PURE-CANONICAL column — framework-derived constituents
-    #        (m_sym_free = Z·msp + N·msn, the per-nucleon Kashaev mass; the bound
-    #        atom is m_sym_atom = m_sym_free + B_sym). No measured CODATA input.
+    #      • a PURE-CANONICAL column — framework-DERIVED nucleon rest masses
+    #        (m_p,can = m_e·Vol(𝓑₃)·ρ_global/ℏ_q² ≈ 966.05 MeV, +2.96% gap;
+    #        m_n,can = m_p,can + Q_β,derived + m_e). No measured nucleon mass enters
+    #        — everything scales off the CAL-1 unit m_e. m_sym = m_unbnd,can − B_sym.
     #      • a "…,rel" column — the SAME canonical binding B_sym subtracted from
     #        the MEASURED constituent sum mu = Z·m_p + N·m_n (CODATA). This is the
     #        experiment-anchored reading, kept for AME comparison.
     #    The binding B_sym itself is the single canonical value in both readings;
-    #    only the constituent baseline differs (framework-derived vs measured).
+    #    only the constituent baseline differs (framework-derived vs measured). The
+    #    ~2.96%·A spread between m_sym and m_sym,rel IS the propagated m_p gap.
     from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
     mp_, mn_ = float(mp_), float(mn_)
     print("\n### Mass  M = (constituents) − B (MeV)   "
-          "[canonical = framework-derived constituents; ,rel = measured CODATA mu]")
+          "[canonical = framework-derived nucleon masses; ,rel = measured CODATA mu]")
+    print(f"  canonical constituents: m_p,can = {mp_can:.3f} MeV (+"
+          f"{(mp_can/mp_-1)*100:.2f}%), m_n,can = {mn_can:.3f} MeV "
+          f"(= m_p,can + Q_β,derived + m_e)")
     print("| iso | A | m_unbnd,can | m_unbnd | M_AME | m_sym | m_sym,rel | "
           "m_qCLT,rel | m_qCLT_fac,rel |")
     print("|---|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         mu = r["Z"] * mp_ + r["N"] * mn_                 # measured constituent sum
-        mu_can = r["m_sym_free"]                          # framework-derived sum
+        mu_can = r["Z"] * mp_can + r["N"] * mn_can       # framework-derived sum
         mame = (mu - r["B_AME"]) if r["B_AME"] is not None else None
-        m_sym_can = r["m_sym_atom"]                       # pure canonical bound atom
+        m_sym_can = (mu_can - r["B_sym"]) if r["B_sym"] is not None else None
         msym_rel = (mu - r["B_sym"]) if r["B_sym"] is not None else None
         mqclt = mu - r["B_qCLT"]
         mfac = mu - r["B_qCLT_fac"]
