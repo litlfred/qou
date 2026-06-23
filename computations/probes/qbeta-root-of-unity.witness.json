@@ -1,7 +1,7 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-17T20:37:46.863548+00:00",
+  "computedAt": "2026-06-23T15:27:20.266229+00:00",
   "computation": "qbeta-root-of-unity",
   "scriptFile": "qbeta_root_of_unity_probe.py",
   "description": "FORCED-knot root-of-unity / Ohtsuki\u2013Habiro test of the Q_\u03b2 c_k ladder. Computes the genuine quantum invariants of the only two framework-forced knots \u2014 figure-eight 4\u2081 (q\u2080 fixed by Vol(4\u2081)=2\u039b(\u03c0/3); Kashaev/Habiro cyclotomic colored Jones + Ohtsuki loop series) and the Hopf link (registry hint c_3=\u22122=J_Hopf(q=1)) \u2014 plus the trefoil 3\u2081 as a non-hyperbolic control. Each formula is verified against a literature value (Habiro unknot norm, V_{4\u2081} Jones poly at N=2, volume-conjecture Kashaev growth \u2192 Vol(4\u2081), V_Hopf(1)=\u22122, V_K(1)=1) BEFORE comparison. PARAMETER-FREE test against c_2=\u22121 (canonical) and c_3=\u22122.0693 (empirical, proton-pinned). NO knot/root-of-unity scan: only forced candidates are admitted, per the anti-fitting discipline (a scan to find a match would BE a fit). This is the complex / root-of-unity follow-up that the real-q falsification (2026-06-04 c3-rigidity audit; PR #2452) left open.",
