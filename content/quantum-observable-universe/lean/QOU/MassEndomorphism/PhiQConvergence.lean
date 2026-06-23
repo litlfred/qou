@@ -309,12 +309,14 @@ theorem quantumDilog_functional_eq {q z : ℝ} (hq : 1 < q) (hz : |z| < 1) :
     rw [abs_mul, abs_of_pos hq_pos]
     calc q * |z| < q * 1 := mul_lt_mul_of_pos_left hz hq_pos
       _ = q := mul_one q
-  have hmul : Multipliable (fun k : ℕ => (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹) :=
-    quantumDilog_multipliable hq hqz
+  set f : ℕ → ℝ := fun k => (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹ with hf
+  have hmul : Multipliable f := by
+    rw [hf]
+    exact quantumDilog_multipliable hq hqz
   have hstep : ∀ m : ℤ, q ^ (-(m + 1)) * q = q ^ (-m) := by
     intro m; rw [← zpow_add_one₀ hq_ne]; congr 1; ring
-  set f : ℕ → ℝ := fun k => (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹ with hf
-  rw [hmul.tprod_eq_zero_mul]
+  change (1 - z) * tprod f = ∏' k : ℕ, (1 - q ^ (-((k : ℤ) + 1)) * z)⁻¹
+  rw [Multipliable.tprod_eq_zero_mul hmul]
   have e0 : f 0 = (1 - z)⁻¹ := by
     rw [hf]
     have hp : q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z) = z := by
@@ -329,7 +331,12 @@ theorem quantumDilog_functional_eq {q z : ℝ} (hq : 1 < q) (hz : |z| < 1) :
     have hprod : q ^ (-(((n : ℤ) + 1) + 1)) * (q * z) = q ^ (-((n : ℤ) + 1)) * z := by
       rw [← mul_assoc, hstep ((n : ℤ) + 1)]
     simp only [hcast, hprod]
-  rw [e0, tprod_congr etail, ← mul_assoc, mul_inv_cancel₀ h1z, one_mul]
+  have h_tail_eq : tprod (fun k => f (k + 1)) = ∏' k, (1 - q ^ (-((k : ℤ) + 1)) * z)⁻¹ := tprod_congr etail
+  rw [e0]
+  rw [h_tail_eq]
+  rw [← mul_assoc]
+  rw [mul_inv_cancel₀ h1z]
+  rw [one_mul]
 
 /-! ## Gap 4 status summary
 

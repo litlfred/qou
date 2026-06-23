@@ -125,7 +125,7 @@ theorem T4_sub_T2_add_one_ne_zero :
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem HA_ne_zero : HA ≠ 0 := by
   intro h
-  have h_eval : (HA : LaurentPolynomial ℤ) 1 = (0 : LaurentPolynomial ℤ) 1 := congr_fun h 1
+  have h_eval : HA 1 = (0 : LaurentPolynomial ℤ) 1 := congrArg (fun f => f 1) h
   unfold HA q q_inv at h_eval
   simp at h_eval
 
@@ -241,34 +241,58 @@ theorem helium_slot1_zero : helium_nf 1 = 0 := by
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_slot2_nonzero : helium_nf 2 ≠ 0 := by
   intro h
-  have h_poly : helium_nf 2 = 4 * LaurentPolynomial.T 2 - 4 * LaurentPolynomial.T 0 + 4 * LaurentPolynomial.T (-2) := by
+  have h_poly : helium_nf 2 = (4 : R_q) * LaurentPolynomial.T 2 - (4 : R_q) * LaurentPolynomial.T 0 + (4 : R_q) * LaurentPolynomial.T (-2) := by
     unfold helium_nf helium_step3 helium_step2 helium_step1
     unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
-    have h_ring : 2 * 2 + (-2 * (LaurentPolynomial.T 1 - LaurentPolynomial.T (-1))) * (-2 * (LaurentPolynomial.T 1 - LaurentPolynomial.T (-1)))
-      = 4 * (LaurentPolynomial.T 1 * LaurentPolynomial.T 1) - 8 * (LaurentPolynomial.T 1 * LaurentPolynomial.T (-1)) + 4 * (LaurentPolynomial.T (-1) * LaurentPolynomial.T (-1)) + 4 * LaurentPolynomial.T 0 := by
+    have h_ring : (2 * 2 + (-2 * (LaurentPolynomial.T 1 - LaurentPolynomial.T (-1))) * (-2 * (LaurentPolynomial.T 1 - LaurentPolynomial.T (-1))) : R_q)
+      = (4 : R_q) * (LaurentPolynomial.T 1 * LaurentPolynomial.T 1) - (8 : R_q) * (LaurentPolynomial.T 1 * LaurentPolynomial.T (-1)) + (4 : R_q) * (LaurentPolynomial.T (-1) * LaurentPolynomial.T (-1)) + (4 : R_q) * LaurentPolynomial.T 0 := by
       rw [LaurentPolynomial.T_zero]
       ring
     rw [h_ring]
     simp only [← LaurentPolynomial.T_add, Int.reduceAdd, Int.reduceNeg]
     ring
   rw [h] at h_poly
-  have h_eval : (0 : LaurentPolynomial ℤ) 2 = (4 * LaurentPolynomial.T 2 - 4 * LaurentPolynomial.T 0 + 4 * LaurentPolynomial.T (-2) : LaurentPolynomial ℤ) 2 := by
-    rw [h_poly]
-  simp at h_eval
+  have h_mult : ((4 : R_q) * LaurentPolynomial.T 2 - (4 : R_q) * LaurentPolynomial.T 0 + (4 : R_q) * LaurentPolynomial.T (-2)) * LaurentPolynomial.T 2 = 0 := by
+    rw [← h_poly, zero_mul]
+  have h_simp : ((4 : R_q) * LaurentPolynomial.T 2 - (4 : R_q) * LaurentPolynomial.T 0 + (4 : R_q) * LaurentPolynomial.T (-2)) * LaurentPolynomial.T 2
+    = (4 : R_q) * (LaurentPolynomial.T 4 - LaurentPolynomial.T 2 + 1) := by
+    have h_ring2 : ((4 : R_q) * LaurentPolynomial.T 2 - (4 : R_q) * LaurentPolynomial.T 0 + (4 : R_q) * LaurentPolynomial.T (-2)) * LaurentPolynomial.T 2
+      = (4 : R_q) * (LaurentPolynomial.T 2 * LaurentPolynomial.T 2) - (4 : R_q) * (LaurentPolynomial.T 0 * LaurentPolynomial.T 2) + (4 : R_q) * (LaurentPolynomial.T (-2) * LaurentPolynomial.T 2) := by ring
+    rw [h_ring2]
+    simp only [← LaurentPolynomial.T_add]
+    ring
+  rw [h_simp] at h_mult
+  cases mul_eq_zero.mp h_mult with
+  | inl h4 => exact four_ne_zero_Rq h4
+  | inr h_poly2 => exact T4_sub_T2_add_one_ne_zero h_poly2
 
 /-- Helium NF has nonzero σ₀σ₁-coefficient (slot 3).
     This is −4·(q² − 1)/q = −4·(T(1) − T(−1)) = −4·HA. -/
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_slot3_nonzero : helium_nf 3 ≠ 0 := by
   intro h
-  have h_poly : helium_nf 3 = -4 * LaurentPolynomial.T 1 + 4 * LaurentPolynomial.T (-1) := by
+  have h_poly : helium_nf 3 = (-4 : R_q) * LaurentPolynomial.T 1 + (4 : R_q) * LaurentPolynomial.T (-1) := by
     unfold helium_nf helium_step3 helium_step2 helium_step1
     unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
     ring
   rw [h] at h_poly
-  have h_eval : (0 : LaurentPolynomial ℤ) 1 = (-4 * LaurentPolynomial.T 1 + 4 * LaurentPolynomial.T (-1) : LaurentPolynomial ℤ) 1 := by
-    rw [h_poly]
-  simp at h_eval
+  have h_mult : ((-4 : R_q) * LaurentPolynomial.T 1 + (4 : R_q) * LaurentPolynomial.T (-1)) * LaurentPolynomial.T 1 = 0 := by
+    rw [← h_poly, zero_mul]
+  have h_simp : ((-4 : R_q) * LaurentPolynomial.T 1 + (4 : R_q) * LaurentPolynomial.T (-1)) * LaurentPolynomial.T 1
+    = (-4 : R_q) * (LaurentPolynomial.T 2 - 1) := by
+    have h_ring2 : ((-4 : R_q) * LaurentPolynomial.T 1 + (4 : R_q) * LaurentPolynomial.T (-1)) * LaurentPolynomial.T 1
+      = (-4 : R_q) * (LaurentPolynomial.T 1 * LaurentPolynomial.T 1) + (4 : R_q) * (LaurentPolynomial.T (-1) * LaurentPolynomial.T 1) := by ring
+    rw [h_ring2]
+    simp only [← LaurentPolynomial.T_add]
+    ring
+  rw [h_simp] at h_mult
+  have h_mult2 : (4 : R_q) * (LaurentPolynomial.T 2 - 1) = 0 := by
+    calc (4 : R_q) * (LaurentPolynomial.T 2 - 1) = - ((-4 : R_q) * (LaurentPolynomial.T 2 - 1)) := by ring
+      _ = -0 := congrArg Neg.neg h_mult
+      _ = 0 := neg_zero
+  cases mul_eq_zero.mp h_mult2 with
+  | inl h4 => exact four_ne_zero_Rq h4
+  | inr h_poly2 => exact T2_sub_one_ne_zero h_poly2
 
 /-- Helium NF has zero σ₁σ₀-coefficient (slot 4). -/
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
