@@ -64,7 +64,12 @@ def main():
             if isinstance(yraw, dict):
                 yitems = yraw.items()
             else:
-                yitems = zip([tuple(p) for p in partitions_of(n)], yraw)
+                parts_n = [tuple(p) for p in partitions_of(n)]
+                if len(parts_n) != len(yraw):
+                    raise ValueError(
+                        f"y_lambda_at returned {len(yraw)} weights but p({n})="
+                        f"{len(parts_n)} partitions — mismatch (would zip-truncate).")
+                yitems = zip(parts_n, yraw)
             y = {tuple(k): (v if isinstance(v, mp.mpf) else mp.mpf(str(v)))
                  for k, v in yitems}
             chi = {tuple(k): v for k, v in
