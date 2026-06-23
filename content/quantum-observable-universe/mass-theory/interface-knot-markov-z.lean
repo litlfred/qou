@@ -53,6 +53,8 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Algebra.BigOperators.Group.List.Basic
 import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
@@ -481,5 +483,27 @@ theorem productModel_3body_nonpos {c f_a f_b f_c : ℝ}
                mul_nonneg (mul_nonneg _ha0 _hb0) (sub_nonneg.2 hcc1),
                mul_nonneg (sub_nonneg.2 hcc1) (add_nonneg _ha0 _hb0)]
   nlinarith [mul_nonneg hc key]
+
+/-! ### The enhancing escape is foreclosed (no pairwise factor reaches 1)
+
+`productModel_3body_nonpos` requires `fᵢ ∈ [0,1]`.  The only way to escape it with a
+*pairwise* interface is an enhancing factor `fᵢ > 1`.  The positive (Markov) factor is
+`z = 1/(t + t⁻¹)` with `t = √q`, and `z ≤ 1/2 < 1` for **all** `q > 0` (AM-GM), so no
+pairwise interface can enhance the trace.  An attractive 3-body force therefore cannot
+come from any pairwise interface factor at all — it needs a genuine non-product
+operator. -/
+
+/-- For `t > 0`, `t + t⁻¹ ≥ 2` (AM-GM, from `(t-1)² ≥ 0`). -/
+theorem two_le_add_inv {t : ℝ} (ht : 0 < t) : 2 ≤ t + t⁻¹ := by
+  have h : t + t⁻¹ - 2 = (t - 1) ^ 2 / t := by field_simp; ring
+  have : 0 ≤ (t - 1) ^ 2 / t := by positivity
+  linarith [h ▸ this]
+
+/-- **No enhancing pairwise interface.** The positive interface factor
+    `z = 1/(t + t⁻¹) ≤ 1/2` for all `t = √q > 0`; in particular `z < 1`, so a pairwise
+    interface always *suppresses* (never enhances) the Markov trace.  Hence the
+    `productModel_3body_nonpos` obstruction has no pairwise-factor escape. -/
+theorem markovParam_le_half {t : ℝ} (ht : 0 < t) : 1 / (t + t⁻¹) ≤ 1 / 2 :=
+  one_div_le_one_div_of_le (by norm_num) (two_le_add_inv ht)
 
 end QOU.BraidKnot.Cluster

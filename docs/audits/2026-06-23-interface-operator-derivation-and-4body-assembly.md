@@ -283,4 +283,15 @@ correct per-cluster algebra (only the *physical* "attractive 3-body" reading was
 corrected in their docstrings); `productModel_3body_nonpos` is the correctly-scoped
 positive result that replaces the retracted claim.
 
+**The enhancing escape is foreclosed (proved).** `productModel_3body_nonpos` needs
+`fᵢ ∈ [0,1]`; the only *pairwise* escape is an enhancing factor `fᵢ > 1`. But every
+canonical interface factor at q₀ is in (0,1) (z=0.499, z−h=0.290, averaged=0.395), and
+structurally the positive factor `z = 1/(√q + 1/√q) ≤ 1/2 < 1` for **all** `q > 0`
+(AM-GM) — Lean `QOU.BraidKnot.Cluster.markovParam_le_half` (+ `two_le_add_inv`),
+sorry-free. So no pairwise interface can enhance the trace, and the obstruction has no
+pairwise-factor escape: an attractive 3-body force can come **only** from a genuine
+non-product operator (the H₃⁴→H₁₂ 3-body interface, or a chirality-weighted combiner
+that breaks the product structure).
+→ `interface_factor_enhancing_check_probe.py` · `interface-factor-enhancing-check.witness.json`
+
 → `binding_triangle_3body_cluster_probe.py` (corrected) · `binding-triangle-3body-cluster.witness.json`
