@@ -9,3 +9,5 @@ updated_at: 2026-06-22T15:47:05Z
 ---
 
 resweep 2026-06-22: honest counter = 2 actionable (claimed 15) via scripts/count-actionable-placeholders.ts.
+
+resweep 2026-06-23 (#2637): honest actionable = 2 (claimed 15): qbeta-per-block 1, explicit-central-idempotent 1. See docs/audits/2026-06-23-placeholder-bean-resweep.md.
