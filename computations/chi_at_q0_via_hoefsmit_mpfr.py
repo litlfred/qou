@@ -89,6 +89,25 @@ def build_chi_cache_at_q0(
     """
     n = 3 * (Z + N)
     word = atom_braid_word_3A(Z, N)
+    # Upgrade the color-weighted p-n crossing's δ from the word's f64 value
+    # to full mpf precision. atom_braid_word_3A casts δ=_avg_color_delta()
+    # to float (mass_at_3A_proper L300); the seminormal χ slow path would
+    # then carry only ~f64 precision in the δ term, capping inter-method
+    # agreement with markov_peel at ~1.5e-15·(#crossings). markov_peel
+    # re-derives δ symbolically (exact), so we restore the exact mpf
+    # d = −h·(½ − δ/4) here to match it. Distinct from the color-blind
+    # −h/2 by ~7e-5, so a 1e-9 match window is unambiguous. A=1 atoms have
+    # no inter-nucleon crossing → no match → word unchanged.
+    try:
+        from canonical_braid_crossings import _avg_color_delta
+        _qm = mp.mpf(q_str)
+        _hm = _qm - mp.mpf(1) / _qm
+        _cw_d = -_hm * (mp.mpf(1) / 2 - _avg_color_delta() / 4)
+        _cw_f64 = float(_cw_d)
+        word = [(c, _cw_d if abs(float(d) - _cw_f64) < 1e-9 else d, g)
+                for (c, d, g) in word]
+    except Exception:
+        pass  # import miss / unexpected shape → leave word as-is
     t0 = time.time()
 
     if not incremental:
