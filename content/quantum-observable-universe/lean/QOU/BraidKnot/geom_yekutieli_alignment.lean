@@ -97,8 +97,10 @@ class GeomYekutieliAlignmentContext (R : Type*) [CommRing R] where
 theorem geom_yekutieli_per_block_alignment {R : Type*} [CommRing R]
     [ctx : GeomYekutieliAlignmentContext R] :
     ctx.boundaryHolonomy = ctx.trM ∧
-      ctx.massFactor = ctx.Geom * ctx.trM :=
-  sorry
+      ctx.massFactor = ctx.Geom * ctx.trM := by
+  constructor
+  · exact ctx.claim_iv_holonomy_equals_trM
+  · rw [ctx.mass_factor_def, ctx.claim_iv_holonomy_equals_trM]
 
 /-- **Manuscript statement** (full body):
 
@@ -179,9 +181,9 @@ theorem geom_yekutieli_alignment {R : Type*} [CommRing R] [ctx : GeomYekutieliAl
     (ctx.is_trivial → ctx.Geom = 0) := by
   refine ⟨?hyperbolic, ?torus, ?trivial⟩
   · intro h
-    rw [ctx.geom_identity, ctx.hyperbolic_implies_cs_zero h, mul_zero, add_zero]
+    rw [ctx.geom_identity, ctx.hyperbolic_implies_cs_zero h, zero_mul, add_zero]
   · intro h
     rw [ctx.geom_identity, ctx.torus_implies_vol_zero h, zero_mul, zero_add]
   · intro h
-    have h_both :=
-  sorry
+    have h_both := ctx.trivial_implies_both_zero h
+    rw [ctx.geom_identity, h_both.1, h_both.2, zero_mul, zero_mul, add_zero]
