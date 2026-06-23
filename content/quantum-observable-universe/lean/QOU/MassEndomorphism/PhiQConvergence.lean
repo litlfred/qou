@@ -311,14 +311,14 @@ theorem quantumDilog_functional_eq {q z : ℝ} (hq : 1 < q) (hz : |z| < 1) :
       _ = q := mul_one q
   set f : ℕ → ℝ := fun k => (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹ with hf
   have hmul : Multipliable f := by
-    rw [hf]
+    change Multipliable (fun k : ℕ => (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹)
     exact quantumDilog_multipliable hq hqz
   have hstep : ∀ m : ℤ, q ^ (-(m + 1)) * q = q ^ (-m) := by
     intro m; rw [← zpow_add_one₀ hq_ne]; congr 1; ring
   change (1 - z) * tprod f = ∏' k : ℕ, (1 - q ^ (-((k : ℤ) + 1)) * z)⁻¹
   rw [Multipliable.tprod_eq_zero_mul hmul]
   have e0 : f 0 = (1 - z)⁻¹ := by
-    rw [hf]
+    change (1 - q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ = (1 - z)⁻¹
     have hp : q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z) = z := by
       have h2 : q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z) = q ^ (-((0 : ℕ) : ℤ)) * z := by
         rw [← mul_assoc, hstep ((0 : ℕ) : ℤ)]
@@ -326,7 +326,7 @@ theorem quantumDilog_functional_eq {q z : ℝ} (hq : 1 < q) (hz : |z| < 1) :
     simp only [hp]
   have etail : ∀ n : ℕ, f (n + 1) = (1 - q ^ (-((n : ℤ) + 1)) * z)⁻¹ := by
     intro n
-    rw [hf]
+    change (1 - q ^ (-(((n + 1 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ = (1 - q ^ (-((n : ℤ) + 1)) * z)⁻¹
     have hcast : ((n + 1 : ℕ) : ℤ) = (n : ℤ) + 1 := by push_cast; ring
     have hprod : q ^ (-(((n : ℤ) + 1) + 1)) * (q * z) = q ^ (-((n : ℤ) + 1)) * z := by
       rw [← mul_assoc, hstep ((n : ℤ) + 1)]
