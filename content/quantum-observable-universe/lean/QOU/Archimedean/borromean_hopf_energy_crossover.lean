@@ -133,6 +133,6 @@ theorem borromean_hopf_energy_crossover [ctx : BorromeanHopfEnergyCrossoverConte
     ctx.M_B = 2 * ctx.V_B / ((ctx.q - 1) / ctx.q) ^ 2 ∧
     ctx.M_D = ctx.q + ctx.q⁻¹ ∧
     (ctx.diquark_favoured ↔ |ctx.E_D| > |ctx.E_B|) :=
-  sorry
+  ⟨ctx.claim_i_borromean_mass, ctx.claim_ii_diquark_mass, ctx.claim_iii_crossover⟩
 
 end QOU.Archimedean

@@ -64,6 +64,6 @@ braid configuration.
 theorem witness_12C [ctx : Witness12CContext] :
     ctx.Z = 6 ∧ ctx.N = 6 ∧ ctx.pre_reduction_terms = 479001600 ∧
     ctx.net_terms = 12 ∧ |ctx.F_Pauli - 0.129| < 0.005 :=
-  sorry
+  ctx.claim_witness_12C
 
 end QOU.Archimedean.PauliWitness

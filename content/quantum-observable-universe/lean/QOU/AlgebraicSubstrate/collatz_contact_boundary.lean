@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.collatz_contact_boundary
 
@@ -95,6 +97,10 @@ $$
 theorem collatz_contact_boundary [ctx : CollatzContactBoundaryContext] :
     (ctx.q_int_2 = 0 → ctx.kummer_obstruction_removable) ∧
     ((2 : ℤ) ∣ ctx.chi_A) :=
-  sorry
+  by
+    have h1 : (2 : ℤ) ∣ ctx.chi_A := by
+      rw [ctx.chi_A_eq]
+      exact ⟨-3, rfl⟩
+    exact ⟨ctx.obstruction_removable_of_even_chi h1, h1⟩
 
 end QOU.AlgebraicSubstrate

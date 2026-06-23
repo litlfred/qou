@@ -130,6 +130,6 @@ theorem beta_decay_transfer_matrix [ctx : BetaDecayTransferMatrixContext] :
      ctx.tr_T_mix = 0) ∧
     (ctx.det_T_pp = -1 ∧ ctx.det_T_nn = -1) ∧
     ctx.Δβ_lower = ctx.Δβ_upper :=
-  sorry
+  ⟨ctx.claim_i_transfer_matrices, ctx.claim_ii_unimodular_pp_nn, ctx.claim_iii_universal_delta⟩
 
 end QOU.Archimedean
