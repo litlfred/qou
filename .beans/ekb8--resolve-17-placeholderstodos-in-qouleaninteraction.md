@@ -9,3 +9,5 @@ updated_at: 2026-06-22T15:47:05Z
 ---
 
 resweep 2026-06-22: honest counter = 1 actionable (claimed 17) via scripts/count-actionable-placeholders.ts.
+
+resweep 2026-06-23 (#2637): honest actionable = 1 (claimed 17): QIntegerMassFormula (1 sorry). See docs/audits/2026-06-23-placeholder-bean-resweep.md.
