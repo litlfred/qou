@@ -361,10 +361,21 @@ def tr_M_atomic(
     # symbolic form rather than the numerical value at q₀).
     if use_fast and reduce_first:
         from hecke_laurent_fast import tr_M_atomic_fast
-        return tr_M_atomic_fast(
-            Z, N, include_inter=include_inter,
-            max_iterations=max_iterations,
-        )
+        try:
+            return tr_M_atomic_fast(
+                Z, N, include_inter=include_inter,
+                max_iterations=max_iterations,
+            )
+        except ValueError as e:
+            # The color-weighted inter-nucleon crossing (A ≥ 2 under the
+            # bring_color_weighted convention) carries a non-Laurent δ(q)
+            # coefficient (flavor_split_subleading), which the LaurentQ
+            # fast path cannot represent. Fall back to the exact
+            # sympy/Ocneanu slow path below, which handles arbitrary
+            # rational-in-q coefficients. A=1 (proton/neutron) has no
+            # inter-nucleon crossing and stays on the fast path.
+            if "non-Laurent" not in str(e):
+                raise
 
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)
 

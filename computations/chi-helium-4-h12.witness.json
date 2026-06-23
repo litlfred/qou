@@ -1,0 +1,28 @@
+{
+  "description": "Symbolic \u03c7^\u03bb_q(\u03b2_atomic(2, 2)) \u2014 helium-4 \u2014 for the canonical atomic braid word at H_12, per partition \u03bb \u22a2 12.  Incrementally saved per partition so a SIGTERM/timeout mid-loop preserves work done so far. PARTIAL \u2014 re-run to continue.",
+  "atom": "helium-4",
+  "Z": 2,
+  "N": 2,
+  "n": 12,
+  "n_partitions": 2,
+  "n_partitions_total": 77,
+  "partial": true,
+  "compute_time_sec_so_far": 394.90696263313293,
+  "workers": 4,
+  "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
+  "chi_lambda_symbolic": [
+    {
+      "partition": [
+        12
+      ],
+      "chi_q_symbolic": "(q**18 + 9*q**16 + 36*q**14 + 84*q**12 + 126*q**10 + 126*q**8 + 84*q**6 + 36*q**4 + 9*q**2 + 1)/(512*q)"
+    },
+    {
+      "partition": [
+        11,
+        1
+      ],
+      "chi_q_symbolic": "(q**38 + 10*q**36 + 43*q**34 + 105*q**32 + 160*q**30 + 162*q**28 + 137*q**26 + 154*q**24 + 183*q**22 + 119*q**20 - 29*q**18 - 144*q**16 - 182*q**14 - 192*q**12 - 197*q**10 - 170*q**8 - 106*q**6 - 43*q**4 - 10*q**2 - 1)/(512*q**13)"
+    }
+  ]
+}
