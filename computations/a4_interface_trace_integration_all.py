@@ -1,0 +1,57 @@
+import sys
+import re
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from mpmath import mp, mpf
+from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric
+from rho_w_crystal_vertex_trace import standard_young_tableaux
+from a_operator.a_operator_categorical import q0_mp
+
+def conjugate(lam):
+    if not lam: return []
+    return [sum(1 for x in lam if x >= i) for i in range(1, lam[0] + 1)]
+
+def delta_sign(lam):
+    conj = conjugate(lam)
+    length = sum(c * (c - 1) // 2 for c in conj)
+    return 1 if length % 2 == 0 else -1
+
+
+def main():
+    mp.dps = 50
+    q = q0_mp(50)
+    m_e = 0.510998950
+    
+    traces = {}
+    
+    log_content = Path("/tmp/a4_trace.log").read_text()
+    for line in log_content.splitlines():
+        # Match: -> Total (2,1) trace for λ=(10, 2): 10.8018 (time: 0.01s)
+        match = re.search(r'Total \(2,1\) trace for λ=\((.*?)\): ([\-\.0-9e]+)', line)
+        if match:
+            # Parse partition
+            lam_str = match.group(1)
+            if not lam_str.strip():
+                continue
+            lam = tuple(int(x.strip()) for x in lam_str.split(',') if x.strip())
+            
+            tr = mpf(match.group(2))
+            traces[lam] = tr
+            
+    print(f"Loaded {len(traces)} traces from log.")
+    
+    sum_val = mpf(0)
+    for lam, tr in traces.items():
+        y = y_lambda_wenzl_bridge_numeric(lam, q)
+        dim = len(standard_young_tableaux(lam))
+        sign = delta_sign(lam)
+        term = y * tr * sign * dim
+        sum_val += term
+        
+    B_4He = m_e * abs(sum_val)
+    print(f"\nExact Upper bound B(4He) = {float(B_4He):.6f} MeV (using dim(V_λ))")
+    print(f"Target B(4He) = 28.30 MeV")
+
+if __name__ == '__main__':
+    main()
