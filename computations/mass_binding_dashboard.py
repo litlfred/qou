@@ -222,12 +222,16 @@ def _err(bame, b):
 
 def _print_legend() -> None:
     """Explain every column header used across the dashboard's tables, so the
-    output is self-documenting when pasted into a PR / issue."""
-    print("#### Column legend")
+    output is self-documenting when pasted into a PR / issue. Grouped by table;
+    every header that appears below is defined here."""
+    print("#### Column legend (every header, by table)")
     print("""
+**Shared** — `iso` = isotope label · `A` = mass number A = Z+N (Z protons, N neutrons).
+
+**Table 1 — Binding B (MeV)**
+
 | Header | Meaning |
 |---|---|
-| `iso` / `A` | Isotope label / mass number A = Z+N |
 | `B_AME` | Total nuclear binding energy from AME2020 (MeV) — the experimental target |
 | `σ_exp (MeV)` | AME2020 experimental 1σ on the total binding (scientific notation; sub-keV for light nuclei) |
 | `σ_exp (ppm)` | The same 1σ as a relative figure (σ_exp / B_AME × 10⁶) |
@@ -235,18 +239,61 @@ def _print_legend() -> None:
 | `B_qCLT` | Uniform per-bond q-CLT α·(A−1)·ℓ̄(D) — no p↔n colour weighting |
 | `B_qCLT_fac` | p↔n colour-weighted q-CLT α·(A−1)·⟨bond-type L⟩ |
 | `B_magic` | ⁴He-only magic-volume binding 2·m_e·A·8G |
-| `sym/qCLT/qCLT_fac/magic` (Error table) | B_AME / B_model — 1.00 = perfect, >1 under-binds |
-| `best dev / σ_exp` | Best form's |B_model − B_AME| measured in experimental σ (the L2-100× gap) |
-| `m_unbnd,can` | Framework-DERIVED constituent sum Z·m_p,can + N·m_n,can (m_p,can = m_e·Vol·ρ/ℏ_q² ≈ 966 MeV, +2.96% gap) |
-| `m_unbnd` | MEASURED constituent sum Z·m_p + N·m_n (CODATA) |
-| `M_AME` | Measured atomic mass m_unbnd − B_AME |
-| `m_sym` | PURE-CANONICAL bound mass m_unbnd,can − B_sym (framework constituents) |
-| `m_sym,rel` | Measured-relative bound mass m_unbnd − B_sym (same canonical B_sym, measured baseline) |
-| `m_qCLT,rel` / `m_qCLT_fac,rel` | m_unbnd − B_qCLT(,fac) (measured baseline) |
-| `retained E` / `emitted E` | bar-involution (q↦q⁻¹) split: E₀·bar-even = retained binding, E₀·|bar-odd| = emitted γγ̄ |
-| `multi-link emit` | bar-odd of the inter-nucleon binding defect (radiated inter-nucleon energy) |
-| `B_sym+ent` | B_sym + multi-link emitted energy (entanglement-augmented binding) |
-| `m_sym(free comps)` / `m_sym(atom)` | LOG-TRACE internal masses −α·ln tr_M(W) (sub-MeV; differenced to give B_sym — NOT a rest mass) |
+
+**Table 2 — Error (B_AME / B_model; 1.00 = perfect, >1 under-binds)**
+
+| Header | Meaning |
+|---|---|
+| `sym` / `qCLT` / `qCLT_fac` / `magic` | B_AME / B_model for that binding form |
+| `σ_exp (ppm)` | (as Table 1) experimental 1σ relative to B_AME |
+| `best dev / σ_exp` | Best form's \\|B_model − B_AME\\| measured in experimental σ (the L2-100× gap) |
+
+**Table 3 — Mass M = (constituents) − B (MeV)**
+
+| Header | Meaning |
+|---|---|
+| `m_unbnd,can` | Framework-DERIVED unbound sum Z·m_p,can + N·m_n,can (m_p,can = m_e·Vol·ρ/ℏ_q² ≈ 966 MeV +2.96%; m_n,can = m_p,can + Q_β,derived + m_e) |
+| `m_unbnd` | MEASURED unbound sum Z·m_p + N·m_n (CODATA m_p=938.272, m_n=939.565) |
+| `M_AME` | Measured atomic mass = m_unbnd − B_AME |
+| `m_sym` | PURE-CANONICAL bound mass = m_unbnd,can − B_sym (framework constituents; carries the +2.96%·A m_p gap) |
+| `m_sym,rel` | Measured-relative bound mass = m_unbnd − B_sym (same canonical B_sym, measured baseline) |
+| `m_qCLT,rel` / `m_qCLT_fac,rel` | Measured-relative bound mass = m_unbnd − B_qCLT(,fac) |
+
+**Table 4 — Entanglement (bar-involution q↦q⁻¹ split of the atom trace)**
+
+| Header | Meaning |
+|---|---|
+| `retained E` | E₀·bar-even (cosh) channel — retained binding/volume (MeV) |
+| `emitted E` | E₀·\\|bar-odd\\| (sinh) channel — emitted/radiated γγ̄ (MeV) |
+| `multi-link emit` | bar-odd of the inter-nucleon binding defect (tr_free−tr_atom) — radiated inter-nucleon energy (MeV) |
+| `emitted/retained` | ratio emitted E / retained E |
+
+**Table 5 — Entanglement-augmented binding**
+
+| Header | Meaning |
+|---|---|
+| `B_sym` | (as Table 1) the log-ratio binding |
+| `err sym` | B_AME / B_sym |
+| `B_sym+ent` | B_sym + multi-link emitted energy |
+| `err sym+ent` | B_AME / B_sym+ent |
+
+**Table 6 — Colour-weighting (B_qCLT_fac = baseline + p↔n chirality)**
+
+| Header | Meaning |
+|---|---|
+| `bonds pp/pn/nn` | bond counts: pp = C(Z,2), pn = Z·N, nn = C(N,2) |
+| `sym baseline` | isospin-symmetric baseline α·(A−1)·L_pn (every bond = the deuteron p-n bond) |
+| `+ chirality` | the p↔n colour correction B_qCLT_fac − baseline |
+| `= B_qCLT_fac` | their sum (the colour-weighted q-CLT binding) |
+
+**Table 7 — Compositional B_sym (m_sym(W) = −α·ln tr_M(W))**
+
+| Header | Meaning |
+|---|---|
+| `m_sym(free comps)` | LOG-TRACE internal mass of the free word Z·msp + N·msn (sub-MeV; NOT a rest mass) |
+| `m_sym(atom)` | LOG-TRACE internal mass of the bound atom word (sub-MeV; NOT a rest mass) |
+| `B_sym (chain)` | the closed-form chain binding = m_sym(atom) − m_sym(free comps) |
+| `Δ vs exact trace` | \\|chain − exact p(3A) trace\\| where the trace is feasible (n=3A ≤ max-strands), else "— (no trace)" |
 """)
 
 
