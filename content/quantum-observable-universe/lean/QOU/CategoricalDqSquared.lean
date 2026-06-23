@@ -1,8 +1,11 @@
 import QOU.Basic
 import QOU.Glossary
+import QOU.QuantumObservableUniverse.Instanton
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
+import Mathlib.CategoryTheory.Preadditive.Basic
+import Mathlib.CategoryTheory.Linear.Basic
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.Order.Field.Basic
@@ -28,19 +31,23 @@ makes the directional asymmetry explicit; the original name is
 preserved here to keep the content-block URI
 `qou:QOU.categorical_dq_squared` resolvable.
 
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
+**Categorical layer.** This is the categorical (pre-archimedean)
+statement, over the canonical `CategoricalQExtDeriv` of
+`QOU.QuantumObservableUniverse.Instanton`, whose deformation parameter
+`q : ℝ` and whose `dq` are `ℝ`-linear (`[CategoryTheory.Linear ℝ C]`).
+The Laurent ground ring `R_q = ℤ[q, q⁻¹]` is recorded below for the
+narrative; the substrate specialisation `ι : R_q → ℝ, q ↦ q₀` is used
+for numerical evaluation downstream.
 -/
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -59,7 +66,7 @@ universe u v
     LaTeX: `\label{prop:categorical-dq-squared}` -/
 theorem categorical_dq_squared {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
-    [CategoryTheory.Preadditive C] [CategoryTheory.Linear R_q C]
+    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
     (cqd : CategoricalQExtDeriv C)
     (hq : cqd.q = 1)
     (hd_sq : cqd.d_classical ≫ cqd.d_classical = 0) :
@@ -67,5 +74,7 @@ theorem categorical_dq_squared {C : Type u} [CategoryTheory.Category.{v} C]
   -- When q = 1, d_q = d (by dq_classical), so d_q² = d² = 0.
   rw [cqd.dq_classical hq]
   exact hd_sq
+
+end
 
 end QOU
