@@ -102,9 +102,21 @@ The markdown AST node types used:
 
 ## Running validation
 
+> **Currency (miga, 2026-06-23).** The content pipeline + schemas now live in the
+> separate `litlfred/folio-assistant` repo. Run
+> [`scripts/setup-folio-assistant.sh`](../../../scripts/setup-folio-assistant.sh)
+> **once** (clones the platform as a sibling + symlinks `folio-assistant/`), then
+> validate via the standalone entry `bun run scripts/run-validate.ts content/<paper>`.
+> The `bun run <name>` package.json shortcuts below (`validate`, `validate-tex`,
+> `build-glossary`, `migrate-lean-refs`) were dropped in the migration and the
+> `pipeline/*.ts` paths moved under `folio-assistant/content/pipeline/`; only
+> `run-validate.ts` has a standalone replacement so far (the rest await re-wiring —
+> `miga` epic). Commands below are retained for their flags/semantics.
+
 ```bash
 # Validate all objects in a paper (schema + constraints + LaTeX AST)
-cd content && bun run pipeline/validate.ts quantum-observable-universe/
+bun run scripts/run-validate.ts content/quantum-observable-universe   # after setup-folio-assistant.sh
+# (legacy form, pre-miga: cd content && bun run pipeline/validate.ts quantum-observable-universe/)
 
 # Full build with validation
 cd content && bun run pipeline/build.ts quantum-observable-universe/quantum-observable-universe.ts
