@@ -40,9 +40,30 @@ algebraic collapse and the sign change are proved outright.
 namespace QOU.BraidKnot.WLambdaDefect
 
 /-- `2·M(n)`, where `M(n) = n(3n−1)/2` is the Plancherel-expected squared-hook sum
-(**Identity I**, compute-verified for `n = 2..14`). Stated cleared of the `½` to
-stay in `ℤ`. -/
+(**Identity I**, compute-verified for `n = 2..14`; content-decomposed and
+exhaustively verified for `n ≤ 22` in
+`docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md`). Stated
+cleared of the `½` to stay in `ℤ`. -/
 def twoM (n : ℤ) : ℤ := n * (3 * n - 1)
+
+/-- **Identity I, content decomposition.** `2·M(n)` splits into the two carried
+pieces (cf. `docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md`),
+each attributed and *neither using the Frame–Robinson–Thrall hook-length formula*:
+
+* `n·(n−1) = 2·binom(n,2) = 2·E_Planch[Σ_c c(c)²]` — piece **B**, the standard
+  Jucys–Murphy / Plancherel content-square mean (central `Σ_k X_k²`, identity
+  coefficient `Σ_{k=1}^n (k−1) = binom(n,2)`);
+* `2·n²` — piece **A**, the per-partition hook-content identity
+  `Σ_c h_c² = Σ_c c(c)² + n²` (a single-Young-diagram fact, no dimensions) summed
+  under the Plancherel measure (`E_Planch[n²] = n²`).
+
+This makes the carried Identity I transparent: the hard hook-length **formula** is
+OFF the Lean critical path; the residual fill is (A) `YoungDiagram` defs + a
+combinatorial identity and (B) the standard `ℂ[S_n]` Wedderburn/JM machinery.
+Pure `ℤ` ring identity (`n(n−1)+2n² = 3n²−n = n(3n−1)`). -/
+theorem twoM_content_decomposition (n : ℤ) :
+    twoM n = n * (n - 1) + 2 * n ^ 2 := by
+  simp only [twoM]; ring
 
 /-- `6·S_n`, where `S_n = Σ_{k=1}^n (k²−1) = n(n+1)(2n+1)/6 − n`. Cleared of the
 `/6` to stay in `ℤ`. -/
