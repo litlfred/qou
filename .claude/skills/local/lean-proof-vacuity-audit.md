@@ -63,6 +63,17 @@ Watch for a `holds : Prop` / `claim : Prop` field that is later **instantiated
 as `True`**, or a conclusion that `simp`/`tauto`/`trivial` closes with no use of
 the hypotheses.
 
+**The `theorem`→`def` dodge (STRICT — forbidden, 2026-06-23).** Re-declaring a
+vacuous `theorem X : True := trivial` as `def X : True := trivial` (or
+`abbrev`/`instance`) once hid it from every detector here (they keyed on the
+provable kinds). The scanner now flags a trivial-bodied `: True` `def` as
+pattern **`def-disguised-true`**. Carve-outs: a shadow-stub (real decl resolves
+elsewhere) or a `conjecture`-block Lean placeholder (sibling `.ts` is
+`conjecture(...)`) → exempt. Per **AGENTS.md §1a**, dodging an audit this way is
+a review failure; the honest dispositions are *prove it* / *state the real
+proposition with `sorry` + `-- Ref:`* / *demote to `conjecture`* — never a
+vacuous `def : True`.
+
 ### 3. False / unsatisfiable premise (vacuously true) — `proof-no-false-premise`
 
 A hypothesis can never hold, so the theorem is vacuously true and asserts

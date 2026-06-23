@@ -1061,6 +1061,41 @@ sorry
 - If no published reference exists, use `[manuscript]` and cite chapter/section.
 - A `sorry` without `-- Ref:` is always a review failure.
 
+### 1a. No audit-dodging / sorry-workarounds (STRICT, 2026-06-23)
+
+The vacuity / sorry / axiom audits exist to surface unproved or
+content-free declarations **honestly**. Agents **must not** disguise
+such a declaration to slip it past a checker. Forbidden workarounds
+include:
+
+- **`theorem X : True := trivial` → `def X : True := trivial`.** Every
+  vacuity detector keyed on the provable kinds
+  (`theorem`/`lemma`/`proposition`/`corollary`/`example`); re-declaring
+  the same vacuous body as a `def` (or `abbrev`/`instance`) hid it from
+  the entire audit. Now caught as `def-disguised-true`
+  ([`content/pipeline/lean-vacuity-axiom-audit.ts`](content/pipeline/lean-vacuity-axiom-audit.ts)).
+- **Concluding `: True`** (or `: X = X := rfl`, or any tautology) in
+  place of the real proposition.
+- **`native_decide`** to mask a goal behind the kernel evaluator.
+- Any equivalent move whose *only* effect is to make an audit pass
+  without making the proof any less vacuous.
+
+**Honest dispositions** (the only acceptable outcomes) — per the
+self-assuming disposition rubric (PR #2477) and §3b:
+
+1. **Prove it** — state the real proposition and discharge it.
+2. **Queue it** — state the *real* proposition with `sorry` + a
+   `-- Ref:` citation. The derived `has_sorry` status is the honest
+   "stated, not yet proved" marker (§4); never an uncited `sorry`.
+3. **Demote it** — make it a `conjecture` (kind `conjecture`, or the
+   §3b class-axiomatisation `class C : Prop where …`). The vacuity
+   audit's **"except conjectures"** carve-out recognises a `def : True`
+   inside a `conjecture` content block, and shadow-stubs whose real
+   formalisation lives elsewhere.
+
+A `def : True := trivial` that is neither a shadow-stub nor a
+conjecture-block placeholder is a **review failure**.
+
 ### 2. Naming convention: LaTeX label → Lean declaration
 
 | LaTeX label | Lean declaration | Rule |
