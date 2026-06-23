@@ -134,7 +134,7 @@ sums over rows or pairs of rows:
 |---|---|
 | `Σ_c i² = Σ_i i²λ_i`, `Σ_c j² = Σ_j j²λ'_j`, `Σ_c ij = Σ_i i·\binom{λ_i+1}{2}` | single-row/col |
 | `Σ_c a = Σ_i \binom{λ_i}{2} = n(λ')`, `Σ_c l = n(λ)` | single |
-| `Σ_c a² = Σ_i \binom{λ_i}{?}` (`= Σ_i (λ_i−1)λ_i(2λ_i−1)/6`), `Σ_c l²` (conj.) | single |
+| `Σ_c a² = Σ_i (\binom{λ_i}{2} + 2\binom{λ_i}{3})` (`= Σ_i (λ_i−1)λ_i(2λ_i−1)/6`), `Σ_c l²` (conj.) | single |
 | `Σ_c a·l = Σ_{i,k} λ_i\min(λ_i,λ_k) − Σ_i iλ_i² − Σ_j jλ'_j² + Σ_i i\binom{λ_i+1}{2}` | row-pair |
 | `n² = (Σ_iλ_i)² = Σ_{i,k} λ_iλ_k` | row-pair |
 
