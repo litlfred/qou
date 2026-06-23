@@ -437,10 +437,10 @@ function detectTrivialTrue(
   leanAbs: string,
 ): Hit | undefined {
   const isProvable = PROVABLE_KINDS.test(d.kind);
-  // `def`/`abbrev`/`instance` are scanned ONLY for the theorem→def
-  // audit-dodge (a trivial-bodied `: True`), never for the general
-  // `: True`-with-real-body or reflexive-tautology cases (a real def
-  // legitimately reduces to a value).
+  // `def`/`abbrev`/`instance` are scanned for the theorem→def audit-dodge:
+  // any `: True` conclusion (the body is irrelevant — `True` is trivially
+  // inhabited). They are NOT scanned for the reflexive-tautology case (a
+  // real def legitimately reduces to a value).
   const isDodge = DODGE_KINDS.test(d.kind);
   if (!isProvable && !isDodge) return undefined;
   const concl = conclusionOf(d.sig);
@@ -465,11 +465,12 @@ function detectTrivialTrue(
   // shadow (real decl exists elsewhere → exempt) vs placeholder (no
   // real decl → genuine gap, flag).
   const isStubBody = TRIVIAL_BODY.test(body);
-  // The dodge is specifically a *trivial-bodied* `def : True`. A `def`
-  // concluding `True` with a real computational body is left to the
-  // agent pass (and is exceedingly rare), so do not flag it here.
-  if (isDodge && !isStubBody) return undefined;
-  if (fileIsStub || isStubBody) {
+  // A `def`/`abbrev`/`instance` concluding `True` is vacuous REGARDLESS of
+  // its body — `True` is trivially inhabited, so the body carries no
+  // content. Flag every such `def : True` (widened 2026-06-23: the
+  // trivial-body-only check let `:= by <tactic>` re-dodge); the shadow-stub
+  // and conjecture-block carve-outs below still apply.
+  if (isDodge || fileIsStub || isStubBody) {
     const real = findRealDecl(leanAbs, rawSrc, d.name);
     if (real) {
       const h = mk(
