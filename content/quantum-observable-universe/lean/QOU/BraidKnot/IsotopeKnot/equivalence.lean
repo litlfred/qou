@@ -1,3 +1,5 @@
+import Mathlib.Data.Nat.Basic
+
 /-!
 # QOU.BraidKnot.IsotopeKnot.equivalence
 
@@ -70,6 +72,6 @@ concept categorically — element = isotope class.*
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/isotope-knot-equivalence.ts
 theorem equivalence [ctx : EquivalenceContext] :
     Equivalence ctx.isotope :=
-  ⟨ctx.claim_reflexivity, ctx.claim_symmetry, ctx.claim_transitivity⟩
+  ⟨ctx.claim_reflexivity, fun h => ctx.claim_symmetry _ _ h, fun h1 h2 => ctx.claim_transitivity _ _ _ h1 h2⟩
 
 end QOU.BraidKnot.IsotopeKnot
