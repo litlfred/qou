@@ -78,4 +78,64 @@ theorem n144C_neg {n : ℤ} (h7 : 7 ≤ n) : n144C n < 0 := by
     mul_pos (mul_pos (by linarith) (by linarith)) (by linarith)
   linarith
 
+/-! ## Identity I — base-case Lean verification (formalize-first)
+
+`twoM` above carries **Identity I** (`2·M(n) = n(3n−1)`, with
+`M(n) = (1/n!) Σ_{λ⊢n} dim(λ)² Σ_{c∈λ} h_c²`) as a *definition*. A general Lean
+proof needs the hook-length formula / standard-Young-tableau count, which
+Mathlib does **not** yet provide (`Mathlib.Combinatorics.Young` has
+`YoungDiagram` + `SemistandardTableau`, but no hook length, no SYT count, no
+RSK) — that is the deferred Mathlib contribution.
+
+This section discharges the **base cases** `n = 2,3,4` by tabulating the exact
+partition data `(dim λ, Σ_{c∈λ} h_c²)` (hooks via the arm+leg+1 rule, `dim` via
+the hook-length formula `n!/∏h_c`) and checking the cleared-denominator form
+
+    2 · (Σ_{λ⊢n} dim(λ)² · Σ_{c∈λ} h_c²)  =  n(3n−1) · n!  ,
+
+equivalent to `M(n) = n(3n−1)/2`. This anchors the carried `twoM` def to the
+genuine combinatorial quantity (previously Python-only, audit `n = 2..14`):
+
+  n=2: (2)[dim 1; Σh² 5]  (1,1)[1; 5]                                  → numer 10
+  n=3: (3)[1; 14]  (2,1)[2; 11]  (1³)[1; 14]                           → numer 72
+  n=4: (4)[1; 30]  (3,1)[3; 22]  (2,2)[2; 18]  (2,1,1)[3; 22]  (1⁴)[1; 30] → numer 528
+-/
+
+/-- `Σ_{λ⊢n} dim(λ)² · Σ_{c∈λ} h_c²` — the Plancherel squared-hook numerator,
+tabulated from exact partition/hook data for the base cases `n = 2,3,4`
+(`0` elsewhere — a base-case anchor, not the general definition, which awaits a
+Mathlib hook-length formula). -/
+def plancherelNumer : ℕ → ℤ
+  | 2 => 1^2 * 5 + 1^2 * 5
+  | 3 => 1^2 * 14 + 2^2 * 11 + 1^2 * 14
+  | 4 => 1^2 * 30 + 3^2 * 22 + 2^2 * 18 + 3^2 * 22 + 1^2 * 30
+  | _ => 0
+
+/-- **Identity I — base cases verified.** For `n = 2,3,4` the actual Plancherel
+squared-hook numerator satisfies the cleared-denominator identity
+`2·numer = n(3n−1)·n!` (RHS: `2·5·2! = 20`, `3·8·3! = 144`, `4·11·4! = 1056`),
+i.e. `M(n) = n(3n−1)/2` — the value `twoM` carries. Lean-verified from explicit
+combinatorial data, upgrading the Python-only check at these `n`. -/
+theorem identityI_base :
+    2 * plancherelNumer 2 = 20 ∧
+    2 * plancherelNumer 3 = 144 ∧
+    2 * plancherelNumer 4 = 1056 := by
+  refine ⟨?_, ?_, ?_⟩ <;> decide
+
+/-- **Consistency with the carried `twoM`.** At the verified base cases the
+carried Identity-I value `twoM n = n(3n−1) = 2·M(n)` equals `2·numer / n!`
+(checked here as `twoM n · n! = 2·numer n`). -/
+theorem twoM_eq_plancherel_base :
+    twoM 2 * 2 = 2 * plancherelNumer 2 ∧
+    twoM 3 * 6 = 2 * plancherelNumer 3 ∧
+    twoM 4 * 24 = 2 * plancherelNumer 4 := by
+  refine ⟨?_, ?_, ?_⟩ <;> decide
+
+/-! **Identity I (general) — DEFERRED.** `2·M(n) = n(3n−1)` for all `n ≥ 1`,
+equivalently `2·(Σ_{λ⊢n} dim(λ)² Σ_c h_c²) = n(3n−1)·n!`. Compute-verified
+`n = 2..14` (audit + witness). A Lean proof requires the hook-length formula
+(absent from Mathlib); stating it against a general `M` needs that infra first.
+Tracked as a Mathlib-extension opportunity; base cases discharged above.
+Ref: [manuscript] docs/audits/2026-06-20-keystone-wlambda-C-n-closed-form.md -/
+
 end QOU.BraidKnot.WLambdaDefect
