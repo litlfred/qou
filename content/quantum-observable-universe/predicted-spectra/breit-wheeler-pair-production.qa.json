@@ -913,7 +913,27 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
       }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "lean": "d4f91aa53c97"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.lean:25 [def-disguised-true] def breit_wheeler_pair_production (q : ℝ) (γ₁ γ₂ : ColoredPhoton q) :",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "397e2491603f",
+          "script_commit_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
+        },
+        "reviewed_at": "2026-06-23T11:59:48.389Z",
+        "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:50.395Z"
+  "updated_at": "2026-06-23T11:59:48.389Z"
 }

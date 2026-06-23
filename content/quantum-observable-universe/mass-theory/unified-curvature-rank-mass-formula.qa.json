@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "2cc9e1225c2a",
     "ts": "119e6c41a67c",
-    "lean": "10eadfae1c16"
+    "lean": "2a33bc7551e2"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1277,6 +1277,24 @@
         "reviewed_at": "2026-06-22T02:57:16.215Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "lean": "2a33bc7551e2"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-theory/unified-curvature-rank-mass-formula.lean:95 [def-disguised-true] def paper_terminology_mapping :",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "397e2491603f",
+          "script_commit_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
+        },
+        "reviewed_at": "2026-06-23T11:59:48.389Z",
+        "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "proof-no-false-premise": [
@@ -1340,5 +1358,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:17.544Z"
+  "updated_at": "2026-06-23T11:59:48.389Z"
 }
