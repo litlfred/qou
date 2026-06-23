@@ -125,25 +125,19 @@ theorem em_spectral_completeness (S : SpectralRing) [Nontrivial S.R] :
   obtain ⟨u, hu_eq⟩ := S.eigenvalues_distinct
   have hinv : (↑u⁻¹ : S.R) * (S.lambdaPlus - S.lambdaMinus) = 1 := by
     rw [← hu_eq]; exact u.inv_mul
-  have hpp : ((↑u⁻¹ : S.R) •
-        (Matrix.diagonal ![S.lambdaPlus, S.lambdaMinus]
-          - S.lambdaMinus • (1 : Matrix (Fin 2) (Fin 2) S.R)))
-      = Matrix.diagonal ![1, 0] := by
+  let p_plus : Matrix (Fin 2) (Fin 2) S.R := (↑u⁻¹ : S.R) •
+      (Matrix.diagonal ![S.lambdaPlus, S.lambdaMinus]
+        - S.lambdaMinus • (1 : Matrix (Fin 2) (Fin 2) S.R))
+  let p_minus : Matrix (Fin 2) (Fin 2) S.R := (↑u⁻¹ : S.R) •
+      (S.lambdaPlus • (1 : Matrix (Fin 2) (Fin 2) S.R)
+        - Matrix.diagonal ![S.lambdaPlus, S.lambdaMinus])
+  have hpp : p_plus = Matrix.diagonal ![1, 0] := by
     ext i j; fin_cases i <;> fin_cases j <;>
-      simp [Matrix.smul_apply, Matrix.sub_apply, smul_eq_mul, hinv]
-  have hpm : ((↑u⁻¹ : S.R) •
-        (S.lambdaPlus • (1 : Matrix (Fin 2) (Fin 2) S.R)
-          - Matrix.diagonal ![S.lambdaPlus, S.lambdaMinus]))
-      = Matrix.diagonal ![0, 1] := by
+      simp [p_plus, Matrix.smul_apply, Matrix.sub_apply, smul_eq_mul, hinv]
+  have hpm : p_minus = Matrix.diagonal ![0, 1] := by
     ext i j; fin_cases i <;> fin_cases j <;>
-      simp [Matrix.smul_apply, Matrix.sub_apply, smul_eq_mul, hinv]
-  refine ⟨(↑u⁻¹ : S.R) •
-            (Matrix.diagonal ![S.lambdaPlus, S.lambdaMinus]
-              - S.lambdaMinus • (1 : Matrix (Fin 2) (Fin 2) S.R)),
-          (↑u⁻¹ : S.R) •
-            (S.lambdaPlus • (1 : Matrix (Fin 2) (Fin 2) S.R)
-              - Matrix.diagonal ![S.lambdaPlus, S.lambdaMinus]),
-          ?_, ?_, ?_, ?_⟩
+      simp [p_minus, Matrix.smul_apply, Matrix.sub_apply, smul_eq_mul, hinv]
+  refine ⟨p_plus, p_minus, ?_, ?_, ?_, ?_⟩
   · rw [hpp, hpm]; ext i j; fin_cases i <;> fin_cases j <;> simp [Matrix.add_apply]
   · rw [hpp, hpm]; ext i j; fin_cases i <;> fin_cases j <;>
       simp [Matrix.mul_apply, Matrix.diagonal_apply, Matrix.zero_apply]
