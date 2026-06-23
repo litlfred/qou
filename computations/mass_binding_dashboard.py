@@ -276,20 +276,34 @@ def main(argv=None) -> int:
               f"| {_fmt(e['B_magic'],6)} | {_fmt(s_ppm,11,3)} "
               f"| {_fmt(best_dev_sigma,16,3) if best_dev_sigma else _fmt(None,16)} |")
 
-    # 3. MASS  M = Z*m_p + N*m_n - B
+    # 3. MASS  M = Z·m_p + N·m_n − B  (two-column convention, owner-set 2026-06-22)
+    #    Wherever the nucleon masses enter the constituent sum we report BOTH:
+    #      • a PURE-CANONICAL column — framework-derived constituents
+    #        (m_sym_free = Z·msp + N·msn, the per-nucleon Kashaev mass; the bound
+    #        atom is m_sym_atom = m_sym_free + B_sym). No measured CODATA input.
+    #      • a "…,rel" column — the SAME canonical binding B_sym subtracted from
+    #        the MEASURED constituent sum mu = Z·m_p + N·m_n (CODATA). This is the
+    #        experiment-anchored reading, kept for AME comparison.
+    #    The binding B_sym itself is the single canonical value in both readings;
+    #    only the constituent baseline differs (framework-derived vs measured).
     from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
     mp_, mn_ = float(mp_), float(mn_)
-    print("\n### Mass  M = Z·m_p + N·m_n − B (MeV)")
-    print("| iso | A | m_unbound | M_AME | m_sym | m_qCLT | m_qCLT_fac |")
-    print("|---|--:|--:|--:|--:|--:|--:|")
+    print("\n### Mass  M = (constituents) − B (MeV)   "
+          "[canonical = framework-derived constituents; ,rel = measured CODATA mu]")
+    print("| iso | A | m_unbnd,can | m_unbnd | M_AME | m_sym | m_sym,rel | "
+          "m_qCLT,rel | m_qCLT_fac,rel |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
-        mu = r["Z"] * mp_ + r["N"] * mn_
+        mu = r["Z"] * mp_ + r["N"] * mn_                 # measured constituent sum
+        mu_can = r["m_sym_free"]                          # framework-derived sum
         mame = (mu - r["B_AME"]) if r["B_AME"] is not None else None
-        msym = (mu - r["B_sym"]) if r["B_sym"] is not None else None
+        m_sym_can = r["m_sym_atom"]                       # pure canonical bound atom
+        msym_rel = (mu - r["B_sym"]) if r["B_sym"] is not None else None
         mqclt = mu - r["B_qCLT"]
         mfac = mu - r["B_qCLT_fac"]
-        print(f"| {r['name']} | {r['A']} | {mu:>9.1f} | {_fmt(mame,9,1)} "
-              f"| {_fmt(msym,9,1)} | {mqclt:>9.1f} | {mfac:>9.1f} |")
+        print(f"| {r['name']} | {r['A']} | {mu_can:>9.1f} | {mu:>9.1f} "
+              f"| {_fmt(mame,9,1)} | {_fmt(m_sym_can,9,1)} | {_fmt(msym_rel,9,1)} "
+              f"| {mqclt:>9.1f} | {mfac:>9.1f} |")
 
     # 3b. ENTANGLEMENT  (bar-involution q↦q⁻¹ split of the atom trace, via the
     #     q-parameterised core): bar-even (cosh) = retained binding/volume;
