@@ -235,39 +235,41 @@ precise open question, not the existence or scale.
 → `binding_cluster_operator_vs_mayer_probe.py` · `cluster-operator-vs-mayer-b3.witness.json` ·
 `QOU.BraidKnot.Cluster` (Lean, sorry-free)
 
-### Sign resolved — it was the parity of the bond count (the missing 1–3 bond)
+### Sign NOT resolved by the triangle — RETRACTION (owner caught the error)
 
-The negative sign above is **not** a lost sign in the arithmetic — it is the *proved*
-saturation (`InterfaceDeficit.deficit_marginal_le`): a multiplicative joint trace
-always falls below the independent pair-sum, so the connected cluster over the **two
-adjacent chain bonds** is forced negative. But that is a `k=2` cluster. The genuine
-3-body force is the connected cluster over the **triangle** — all three pairwise
-bonds, including the long-range `1–3` bond the chain omits. For the product trace the
-Ursell cluster over `k` bonds is
+A draft of this section claimed "closing the triangle flips the 3-body cluster to
+attractive, matching `b₃` to +4.9 %". **That was wrong and is retracted.** It
+cherry-picked the single *top* (3-bond) Ursell cluster term `+c·∏(1−f)` and compared
+it to the empirical `b₃`, ignoring the (negative) 2-bond clusters that are part of the
+*same* physical 3-body content.
 
-$$ u_k \;=\; E_0\,\tau_{\mathrm{vac}}\,(-1)^{k+1}\prod_i (1-f_i), $$
+The honest decomposition of `B = E₀·τ_vac·(1−∏f)` over the triangle bonds is
+`B = (+c·∑x) + (−c·∑xᵢxⱼ) + (+c·x_a x_b x_c)` with `x = 1−f`. The **physical
+beyond-pairwise 3-body content** is the *sum* of the higher clusters, and it is
+strongly **negative** at every atom and convention:
 
-so the sign **alternates with the bond count**: `k=1` bond `+`, `k=2` (chain) `−`,
-`k=3` (triangle) `+`. Closing the triangle is exactly the parity flip
-(`binding_triangle_3body_cluster_probe.py`):
+| atom (bar-avg pn) | 1-bond | 2-bond | 3-bond | **beyond-pair (3-body)** | empirical `b₃` |
+|------|----:|----:|----:|----:|----:|
+| ³H  | +14.00 | −8.94 | +1.90 | **−7.04** | +1.81 |
+| ³He | +12.75 | −7.24 | +1.37 | **−5.88** | +1.04 |
 
-| atom | 2-bond chain `u₂` | 3-bond triangle `u₃` | Mayer `b₃` | `u₃` err (bar-avg pn) |
-|------|----:|----:|----:|----:|
-| ³H  | −2.67 (saturation) | **+1.896** | +1.808 | **+4.9 %** |
-| ³He | −2.26 | **+1.366** | +1.044 | +30.8 % |
+So the multiplicative 3-body content is **destructive** (`< 0`), the *same* sign as
+the framework's joint-trace `c₃ < 0`, and **opposite** the attractive empirical
+`b₃ > 0` (and ~4× too big). Closing the triangle does **not** flip the physical sign.
+The individual cluster signs *do* alternate by parity (Lean `ursell2_nonpos` /
+`ursell3_nonneg` — correct algebra), but a **saturating product is destructive at
+every many-body order** (`deficit_marginal_le`); no bond topology repairs that.
 
-`u₃ > 0` (attractive, the sign of `b₃`), parameter-free, matching the empirical
-3-body term to **+4.9 %** for ³H with the canonical bar-averaged pn factor, correct
-`T > ³He` ordering (³He's +31 % is the expected mirror-pair asymmetry). The sign flip
-is **structural and Lean-proved**: `QOU.BraidKnot.Cluster.ursell2_eq` /
-`ursell3_eq` (the cluster identities) + `ursell2_nonpos` (`k=2 ⇒ ≤ 0`) /
-`ursell3_nonneg` (`k=3 ⇒ ≥ 0`), all sorry-free.
+**The real sign candidate is the chirality involution, not the topology.** The
+binding combiner uses `|χ_λ|` (absolute value), which discards the chirality sign
+`sgn(w₀^{S_{λ'}})` shown essential and mixed-sign in the Δ_λ work. A *signed*-trace
+combiner is not bounded by the saturation lemma and could produce an attractive
+(positive) many-body term. That — the `|χ|`-vs-signed-trace convention — is the open
+question, **not** the bond count. (Verifying it needs the per-partition signed χ at
+H₉, i.e. the Rust kernel; deferred.)
 
-So the cluster operator is now resolved in **sign** (proved parity) and **scale**
-(³H to ~5 %): the framework's connected 3-body cluster, computed over the closed
-triangle, is the attractive 3-body force. The open items are the residual magnitude
-(the mirror-pair asymmetry / the ³He 31 %) and the A=4 extension (where the 6-bond
-parity and the `|χ|` vs signed-trace convention need the same triangle treatment).
+The Lean theorems `ursell2_eq`/`ursell3_eq`/`ursell2_nonpos`/`ursell3_nonneg` stand as
+correct per-cluster algebra; only the *physical* "attractive 3-body" reading was
+wrong and is corrected in their docstrings.
 
-→ `binding_triangle_3body_cluster_probe.py` · `binding-triangle-3body-cluster.witness.json` ·
-`QOU.BraidKnot.Cluster.{ursell2_eq,ursell3_eq,ursell2_nonpos,ursell3_nonneg}` (Lean, sorry-free)
+→ `binding_triangle_3body_cluster_probe.py` (corrected) · `binding-triangle-3body-cluster.witness.json`

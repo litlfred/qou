@@ -70,8 +70,8 @@ def binding(form, Z, N, pairs):
     prod_f = mp.mpf(1)
     for f in fs:
         prod_f *= f
-    sum_neglog = sum(-mp.log(f) for f in fs)
-    sum_def = sum(1 - f for f in fs)
+    sum_neglog = mp.fsum(-mp.log(f) for f in fs)
+    sum_def = mp.fsum(1 - f for f in fs)
     if form == "M":
         return E0 * tau_vac * (1 - prod_f)
     if form == "LV":
@@ -108,7 +108,7 @@ def main():
                 B[a] = b
                 errs[a] = (b - AME[a]) / AME[a] * 100
             scaling = B["4He"] / B["D"]
-            rms = mp.sqrt(sum((errs[a] / 100) ** 2 for a in ATOMS) / 4) * 100
+            rms = mp.sqrt(mp.fsum((errs[a] / 100) ** 2 for a in ATOMS) / 4) * 100
             key = f"{form}/{topo}"
             results[key] = {"B": {a: mp.nstr(B[a], 8) for a in ATOMS},
                             "err_pct": {a: mp.nstr(errs[a], 5) for a in ATOMS},

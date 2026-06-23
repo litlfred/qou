@@ -417,11 +417,18 @@ theorem cluster2_eq_zero_iff (g_empty g_a g_b g_ab : R) :
 
 For the product trace `g(S) = c·∏_{i∈S} fᵢ` the binding functional is
 `B(S) = c·(1 − ∏_{i∈S} fᵢ)` and the connected (Ursell) cluster over `k` bonds is
-`u_k = c·(−1)^{k+1}·∏ᵢ(1−fᵢ)`.  The sign therefore **alternates with the bond
-count**: `k=2` (two adjacent chain bonds) is negative — the *proved* saturation —
-while `k=3` (the closed triangle, all three pairwise bonds) is positive, the sign
-of the attractive empirical 3-body force.  Closing the triangle (adding the
-long-range `1–3` bond) is exactly the parity flip. -/
+`u_k = c·(−1)^{k+1}·∏ᵢ(1−fᵢ)`.  The *individual cluster* sign therefore alternates
+with the bond count: `k=2` negative, `k=3` positive.
+
+**Scope caveat (corrected 2026-06-23).** These are the signs of the *isolated*
+`k`-bond clusters, NOT of the physical many-body force.  The physical
+beyond-pairwise content is the *sum* of all higher clusters
+(`∑_{k≥2} (binom-many) u_k`), which for a saturating product is **negative at
+every order** (the deficit-saturation, `deficit_marginal_le`).  An earlier draft
+wrongly read `u₃ > 0` alone as "closing the triangle makes the 3-body force
+attractive"; the full beyond-pairwise sum is `≈ −7 MeV` (destructive), opposite
+the attractive empirical `b₃`.  So these lemmas are correct *algebra* about a
+single cluster term; they do **not** establish an attractive 3-body force. -/
 
 /-- 2-bond connected cluster (product model) `= −c(1−fₐ)(1−f_b)`. -/
 theorem ursell2_eq (c f_a f_b : R) :
@@ -443,10 +450,12 @@ theorem ursell2_nonpos {c f_a f_b : ℝ} (hc : 0 ≤ c) (ha : f_a ≤ 1) (hb : f
     mul_nonneg hc (mul_nonneg (by linarith) (by linarith))
   linarith
 
-/-- **Odd bond-count → non-negative.** The 3-bond (triangle) cluster
-    `+c(1−fₐ)(1−f_b)(1−f_c) ≥ 0` for `c ≥ 0`, `fₐ,f_b,f_c ≤ 1` — the *attractive*
-    sign of the empirical 3-body force.  This is the sign flip from closing the
-    triangle (the long-range bond supplies the third factor). -/
+/-- **Odd bond-count → non-negative.** The *isolated* 3-bond cluster
+    `+c(1−fₐ)(1−f_b)(1−f_c) ≥ 0` for `c ≥ 0`, `fₐ,f_b,f_c ≤ 1`.  This is the sign
+    of the single top cluster term only; the physical beyond-pairwise 3-body
+    content (this `+` term plus the negative 2-bond clusters) is destructive
+    (`< 0`), so this lemma does NOT establish an attractive 3-body force (see the
+    scope caveat above). -/
 theorem ursell3_nonneg {c f_a f_b f_c : ℝ} (hc : 0 ≤ c)
     (ha : f_a ≤ 1) (hb : f_b ≤ 1) (hc' : f_c ≤ 1) :
     0 ≤ c * ((1 - f_a) * (1 - f_b) * (1 - f_c)) :=
