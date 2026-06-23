@@ -1,0 +1,35 @@
+{
+ "computation": "interface-factor-categorical-derivation",
+ "description": "Task 1: the per-interface Markov factors z, z-h, z-h/2 are forced by trace-linearity from the single Markov move tr(x sigma)=z tr(x) plus the Hecke skein sigma^-1=sigma-h; not three independent heuristics.",
+ "scriptFile": "computations/probes/interface_factor_categorical_derivation_probe.py",
+ "data": {
+  "symbolic": {
+   "hecke_poly": "-q*sigma + sigma**2 - 1 + sigma/q",
+   "sigma_inv_eq_sigma_minus_h": true,
+   "sigma_times_sigma_inv_minus_1_equals_hecke_poly(=0)": true,
+   "bar_eq_sigma_minus_half_h": true
+  },
+  "markov_move": {
+   "I": {
+    "neg_minus_(pos-h*trx)": "3.34096e-52",
+    "bar_minus_(pos-h/2*trx)": "1.1093e-52"
+   },
+   "sigma_1": {
+    "neg_minus_(pos-h*trx)": "2.50572e-52",
+    "bar_minus_(pos-h/2*trx)": "1.40947e-52"
+   },
+   "I+sigma_1": {
+    "neg_minus_(pos-h*trx)": "3.34096e-52",
+    "bar_minus_(pos-h/2*trx)": "4.43721e-53"
+   },
+   "module_factor_check": {
+    "positive": "0.0",
+    "negative": "0.0",
+    "averaged": "0.0"
+   },
+   "z": "0.499320334184",
+   "h": "0.209060298796"
+  },
+  "verdict": "DERIVED"
+ }
+}
