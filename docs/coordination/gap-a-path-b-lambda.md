@@ -156,9 +156,15 @@ The two intersect on: (a) the per-knot Vol(K) convention (T2 here ≡ C2 there),
    a NEAR-MATCH (<5 %) with no categorical derivation is filed as
    coincidence pending derivation. Single-atom matches are
    numerology unless backed by cross-isotope structural rule.
-2. **18 no-fit closures form a saturating chain** — no per-partition
-   ansatz survives (single statistic, brane-tower content channel,
-   induction, stabilization, Bratteli, Kashiwara crystal, etc.).
+2. **18 fit-based per-partition ansätze refuted, forming a saturating
+   chain** — no *fitted* per-partition ansatz has survived (single
+   statistic, brane-tower content channel, induction, stabilization,
+   Bratteli, Kashiwara crystal, etc.). The signed / chirality
+   categorical-Vol route (kept open in this ledger above) and the
+   owner-gated `s5-so3` Vol are **not** in this refuted class.
+   *(Rescoped 2026-06-23: a finite refuted set is not a non-existence
+   proof over the whole ansatz class — see
+   [`2026-06-23-over-zealous-binding-closure-review.md`](../audits/2026-06-23-over-zealous-binding-closure-review.md).)*
 3. **Productive direction has shifted** from "derive per-partition
    Δ_λ" (closed) to "derive per-atom mass closure via Path B" (the
    `S(K)` sub-leading term + the `Vol(K)` convention question).

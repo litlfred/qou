@@ -1,4 +1,4 @@
-# Δ_λ-route: the two remaining directions both closed (2026-06-17)
+# Δ_λ-route: the two remaining *selection/α-cluster* directions both closed (2026-06-17)
 
 **Branch:** `claude/delta-lambda-selection-alpha-refuted-2026-06-17`
 **Picks up:** the Δ_λ-route arc (#2405/#2417/#2426/#2430). After the operator
@@ -74,7 +74,16 @@ a modelled assembly with a fitted, non-constant coupling), **not a non-fit path*
 — exactly the standing Δ_λ-gate situation ("the α-unit magnitude has no clean
 combinatorial count"; `2026-06-16-b-sym-linear-chain-closed-form.md §6`).
 
-## Net — the Δ_λ gate is now fully bounded
+## Net — the Δ_λ *selection/α-cluster* arc is bounded
+
+> **Rescope note (2026-06-23).** "both closed" / "fully bounded" narrowed:
+> Verdict (1) itself records a **real gap, Open** (candidate fix: the unbuilt
+> dense per-block Wedderburn-projector SDP, or promoting the topological
+> criterion into the program). What is closed is the *continuous-variational
+> selection* approach and the *α-cluster sidestep* — not the Δ_λ gate. The
+> on-scale log-free-energy functional (`B_sym`, 0.57–2.36× AME) is outside this
+> arc. Numeric results unchanged. See
+> [`2026-06-23-over-zealous-binding-closure-review.md`](2026-06-23-over-zealous-binding-closure-review.md).
 
 The full arc (LP → quadratic → Bring → chirality → scalar-magnitude → operator
 → **𝓑₃-selection → α-cluster**) has closed every tractable lever:

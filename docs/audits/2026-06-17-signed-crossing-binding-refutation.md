@@ -52,15 +52,28 @@ halo-loose" finding; signs do not rescue it.)
 
 ## Verdict
 
-The entire **crossing-counting family** for binding — continuous LP
-(fractional + circular), non-negative integer enumeration, and signed
-integer / chirality (this probe) — is **closed**. The deuteron's 0.57
-fractional occupancy cannot be represented by any integer crossing
-structure. The only non-circular direction left is a **knot-geometry-
-dependent bond strength** (the per-nucleus volume route / Path B),
-already audited as stalled at ≤2.5 %. This is consistent with the
-2026-06-17 binding-frontier audit: the per-isotope binding program is
-Subgoal-2 (research-grade, owner-declined 2026-05-08).
+The **integer / signed crossing-counting** sub-family for binding —
+continuous LP (fractional + circular), non-negative integer enumeration,
+and signed integer / chirality (this probe) — is **closed**. The deuteron's
+0.57 fractional occupancy cannot be represented by any *integer* crossing
+structure. The obstruction is the **integer-multiplicity representation**,
+not the trace/heat functional itself: the on-scale log-free-energy form
+`B = E₀·log(tr_free/tr_atom)` (= `B_sym`, 0.57–2.36× AME) carries the same
+canonical trace through a *fractional* log, and the
+Pauli-channel→complete-graph route
+(`2026-06-20-chirality-forces-complete-graph-topology.md`) is a later
+non-fit direction **outside** this family. A knot-geometry-dependent bond
+strength (per-nucleus volume route / Path B, audited as stalled at ≤2.5 %)
+remains a further open direction. The per-isotope *absolute* binding program
+is Subgoal-2 (research-grade, owner-declined 2026-05-08).
 
-**Do not re-propose signed/ILP crossing selection for binding** — it is
-examined and refuted here.
+**Do not re-propose signed/ILP _integer_ crossing selection for binding** —
+that specific sub-family is examined and refuted here. The log-free-energy
+functional and the channel-topology route are **not** foreclosed.
+
+> **Rescope note (2026-06-23).** Verdict narrowed from "the *entire*
+> crossing-counting family is closed; the only direction left is the stalled
+> volume route" to the *integer/signed* sub-family. The numeric refutation
+> (0.57-of-a-bond) is unchanged; the over-broad foreclosure of the on-scale
+> log-free-energy sibling + the channel-topology route was removed. See
+> [`2026-06-23-over-zealous-binding-closure-review.md`](2026-06-23-over-zealous-binding-closure-review.md).

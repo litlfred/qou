@@ -1,9 +1,16 @@
-# c_4 structural-vs-fitted gap CANNOT be closed by any constant-kernel recursion
+# c_4 structural-vs-fitted gap not closed by a constant-kernel recursion (depth ≤ 3; k-dependent kernel open)
 
 **Date:** 2026-06-04
 **Branch:** `claude/qbeta-c8-c10-pell-lucas-closed-forms-2026-06-04`
 **Probe:** [`computations/probes/qbeta_constant_kernel_depth_test.py`](../../computations/probes/qbeta_constant_kernel_depth_test.py)
 **Status:** EXPLORATORY. Decisive negative result.
+
+> **Rescope note (2026-06-23).** Title/headline narrowed: the refutation is of
+> *constant-kernel* recursions at **depth ≤ 3** (the test's actual scope). A
+> **k-dependent / non-constant** kernel remains the open keystone (see
+> §"What this means" item 1; registry C5 corroborates "kernel, if any, is
+> non-constant q-rational"). The numeric results are unchanged. See
+> [`2026-06-23-over-zealous-binding-closure-review.md`](2026-06-23-over-zealous-binding-closure-review.md).
 
 ## Question
 

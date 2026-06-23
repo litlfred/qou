@@ -8,7 +8,15 @@ sign* and is therefore shell structure, not a uniform law). This audit adds the
 linear-chain spanning binding, and identifies the missing physics as **nuclear
 saturation** (binding ∝ A, not the chain's per-bond sum and not C(A,2) pairs).
 Together they explain *why* the trace over-binds the deuteron and under-binds the
-closures, and *why* no bond-count topology can fix it.
+closures, and *why* no *static integer* bond-count topology fixes it (the chain's
+per-bond sum saturates; channel-weighted topologies are revisited later).
+
+> **Rescope note (2026-06-23).** "no bond-count topology can fix it" narrowed to
+> *static integer* bond counts: a later sibling
+> (`2026-06-20-chirality-forces-complete-graph-topology.md`) finds a
+> Pauli-channel-weighted complete graph is the best non-fit model (still with an
+> α-cluster residual). The closed-form chain result is unchanged. See
+> [`2026-06-23-over-zealous-binding-closure-review.md`](2026-06-23-over-zealous-binding-closure-review.md).
 
 **Provenance / caveats.** Numbers are live from the canonical engine
 (`tr_m_atom_via_transfer.tr_m_atom_zn`, the fine-Bratteli transfer trace) in the
