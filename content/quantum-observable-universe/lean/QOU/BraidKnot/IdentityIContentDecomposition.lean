@@ -48,10 +48,12 @@ def sumSqHooks (l : List ℕ) : ℤ :=
     ((List.range (l.getD i 0)).map fun j =>
       (((l.getD i 0 - j) + (colLen l j - i) - 1 : ℕ) : ℤ) ^ 2).sum).sum
 
-/-- `Σ_{cells} c(c)²` with content `c(i,j) = j − i`. -/
+/-- `Σ_{cells} c(c)²` with content `c(i,j) = j − i`.  The inner binder is annotated
+`(j : ℕ)` so the cast `(j : ℤ)` lives inside a single `ℕ → ℤ` map (matching `sumSqHooks`),
+keeping the def reducible for the closed-form lemmas below; the values are unchanged. -/
 def sumSqContents (l : List ℕ) : ℤ :=
   ((List.range l.length).map fun i =>
-    ((List.range (l.getD i 0)).map fun j => ((j : ℤ) - (i : ℤ)) ^ 2).sum).sum
+    ((List.range (l.getD i 0)).map fun (j : ℕ) => ((j : ℤ) - (i : ℤ)) ^ 2).sum).sum
 
 /-- Size `n = Σ λ_i`. -/
 def sz (l : List ℕ) : ℕ := l.sum
@@ -97,6 +99,56 @@ theorem six_mul_sum_range_sq (N : ℕ) :
     rw [Finset.sum_range_succ, mul_add, ih]
     push_cast
     ring
+
+/-! ### Content side of (A), closed form (sorry-free)
+
+The content half of (A) needs **no** β-set / hook-length / Jucys–Murphy machinery:
+`Σ_c c(c)²` reduces to an explicit cubic summed over the rows.  These three lemmas
+carry that reduction end to end, so the only remaining work for the general (A)
+(`sumSqHooks_eq_sumSqContents_add_sq` below) is the **hook side** (L1)+(Lal). -/
+
+/-- Bridge a `List.range`-mapped sum to the corresponding `Finset.range` sum, so the
+closed-form algebra lemmas apply to the computable `List`-based models above. -/
+theorem list_range_map_sum (n : ℕ) (f : ℕ → ℤ) :
+    ((List.range n).map f).sum = ∑ i ∈ Finset.range n, f i := by
+  induction n with
+  | zero => simp
+  | succ m ih =>
+    rw [List.range_succ, List.map_append, List.sum_append, ih, Finset.sum_range_succ]
+    simp
+
+/-- **Per-row content-square closed form (sorry-free).** For a row of length `m` at
+row index `i`, `6·Σ_{j<m}(j−i)² = m(m−1)(2m−1) − 6i·m(m−1) + 6m·i²`.  This is the
+content analogue of `six_mul_sum_range_sq`: the `Σ k²` cubic and the Gauss `Σ k`
+assembled with the `−i` content shift. -/
+theorem six_mul_sum_range_content_sq (m i : ℕ) :
+    6 * ∑ j ∈ Finset.range m, ((j : ℤ) - (i : ℤ)) ^ 2
+      = (m : ℤ) * ((m : ℤ) - 1) * (2 * (m : ℤ) - 1)
+        - 6 * (i : ℤ) * ((m : ℤ) * ((m : ℤ) - 1)) + 6 * (m : ℤ) * (i : ℤ) ^ 2 := by
+  induction m with
+  | zero => simp
+  | succ k ih =>
+    rw [Finset.sum_range_succ, mul_add, ih]
+    push_cast
+    ring
+
+/-- **Content side of (A), closed form (sorry-free).** The full squared-content sum
+`Σ_c c(c)²` equals an explicit cubic summed over the rows — no hook-length, β-set, or
+Jucys–Murphy infrastructure.  Multiplying by `6` clears the `Σ k²` / `Σ k`
+denominators: `6·Σ_c c(c)² = Σ_i [λ_i(λ_i−1)(2λ_i−1) − 6i·λ_i(λ_i−1) + 6λ_i·i²]`,
+the rows indexed `0 ≤ i < length` with `λ_i = l.getD i 0`. -/
+theorem six_mul_sumSqContents (l : List ℕ) :
+    6 * sumSqContents l
+      = ∑ i ∈ Finset.range l.length,
+          ((l.getD i 0 : ℤ) * ((l.getD i 0 : ℤ) - 1) * (2 * (l.getD i 0 : ℤ) - 1)
+            - 6 * (i : ℤ) * ((l.getD i 0 : ℤ) * ((l.getD i 0 : ℤ) - 1))
+            + 6 * (l.getD i 0 : ℤ) * (i : ℤ) ^ 2) := by
+  unfold sumSqContents
+  rw [list_range_map_sum, Finset.mul_sum]
+  apply Finset.sum_congr rfl
+  intro i _
+  rw [list_range_map_sum]
+  exact six_mul_sum_range_content_sq (l.getD i 0) i
 
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
