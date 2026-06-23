@@ -1,0 +1,82 @@
+{
+  "engine": "snappea",
+  "engineVersion": "snappy 3.3.2",
+  "computedAt": "2026-06-23T23:35:58.236885+00:00",
+  "commitSha": "147754c771d484f76e2855949a808490c2cfe27b",
+  "assertions": [
+    {
+      "name": "modal_spread_reproduces_audit_and_exceeds_1p1",
+      "computed": 2.357617226530009,
+      "expected": 2.358,
+      "passed": true,
+      "tolerance": 0.6,
+      "source": "modal B_AME/Vol spread from default-simplify volumes; reproduces the committed audit 2.358 and stays ≫ 1.1, so AT THE MODAL TRIANGULATION the constant-ρ closure is refuted. HONEST CAVEAT: all difference links return degenerate-triangulation volumes (raw envelope >2×), so the volumes are not rigorously pinned; the Sage rigorous interval volume is genuinely warranted for airtightness — this REFINES the prune audit's 'expect it to confirm, do not prioritise Sage' to 'Sage is warranted'."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4541,
+  "computation": "difference-knot-volume-extrema-stability",
+  "scriptFile": "difference_knot_volume_extrema_stability.py",
+  "scriptHash": "0c7409b189c5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Extrema-stability stress for the difference-link constant-prefactor prune. Per-isotope MODAL volume (default simplify path) + cluster fraction + degenerate fraction + raw envelope, over N trials. Honest finding: the composite difference links return DEGENERATE-triangulation volumes, so the modal value reproduces the audit (spread 2.36) but the underlying volumes are not rigorously pinned — the rigorous interval volume is Sage-only (blocked) and is genuinely WARRANTED, not optional. Exploratory; no fit; does not wire.",
+  "contentBlock": "rem:difference-knot-jsj-volume",
+  "data": {
+    "sage_gate_blocked": true,
+    "sage_gate_message": "SageNotAvailable: Sorry, this feature requires using SnapPy inside Sage.",
+    "n_trials": 10,
+    "per_isotope": {
+      "2H": {
+        "A": 2,
+        "modal_vol": "6.088331475643957074135733977566603719109642106968824080260788448",
+        "k_modal": "0.3653819127455950671118126958940776923704969303408236644364507987882398",
+        "vmin": "6.088331475643957074135733977566603719109642106968824080260788448",
+        "vmax": "6.088331475643957074135733977566603719109642106968824080260788448",
+        "cluster_frac": 1.0,
+        "deg_frac": 1.0
+      },
+      "3H": {
+        "A": 3,
+        "modal_vol": "14.647477626620405111118254972426559030196170412279651146839311821",
+        "k_modal": "0.5790618983151842638448038736112060986553962439068897533027205644707439",
+        "vmin": "12.467301445162524278748041795617864091111589864037364853614637197",
+        "vmax": "14.647477626620405111118254972426559030196170412279651146839311821",
+        "cluster_frac": 0.8,
+        "deg_frac": 1.0
+      },
+      "3He": {
+        "A": 3,
+        "modal_vol": "16.547191924043296603806497154410554356437824939008407681544973611",
+        "k_modal": "0.4664260471159206421254740630665836580078946528445600123548084888098596",
+        "vmin": "16.547191924043296603806497154410554356437824939008407681544973611",
+        "vmax": "16.547191924043296603806497154410554356437824939008407681544973611",
+        "cluster_frac": 1.0,
+        "deg_frac": 1.0
+      },
+      "4He": {
+        "A": 4,
+        "modal_vol": "32.847288436482324981531769632900833325016132872571936634261805363",
+        "k_modal": "0.8614306917514995474507899621000062463710772708557739046981492028427137",
+        "vmin": "31.778343881784499705006609151903660695517417963261216510646538037",
+        "vmax": "32.847288436482324981531769632900833325016132872571936634261805363",
+        "cluster_frac": 0.8,
+        "deg_frac": 1.0
+      }
+    },
+    "modal_spread": "2.357617226530008888924370917045301336401029490466954758852230861265245",
+    "all_links_degenerate_triangulation": true,
+    "sage_script": "# sage_verify_difference_link_volume.sage  — RUN INSIDE SAGE\n# Rigorous interval per-piece JSJ volume vs the constant prefactor.\n# (Needs SageMath; unavailable in the plain-Python sandbox.)\nimport snappy\nfrom difference_knot_binding_probe import _difference_braid\nCASES = [(\"2H\",1,1),(\"3H\",1,2),(\"3He\",2,1),(\"4He\",2,2)]\nfor iso, Z, N in CASES:\n    braid = _difference_braid(Z, N, \"minus\", reduce=True)\n    M = snappy.Link(braid_closure=braid).exterior()\n    M.simplify(); M.simplify()\n    print(iso, \"verified_vol =\", M.volume(verified=True),\n          \"hyperbolic =\", M.verify_hyperbolicity(bits_prec=200)[0])\n# Compare k_i = B_AME_i / verified_vol_i; the prune predicts spread stays ~2.36.\n"
+  }
+}
