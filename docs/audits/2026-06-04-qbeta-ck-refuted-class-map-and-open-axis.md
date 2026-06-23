@@ -74,6 +74,7 @@ member of a `REFUTED` class, do not re-run it.**
 | C11 | **Volume conjecture** as the strand-count limit | **SILENT** — limit parameter is color N / root-of-unity order, not strand count | literature import (PR #1808) |
 | C12 | **Trace-level Markov-stabilization** (`Ind_{H₃}^{H₄}` under `tr_M`; M1 identity-trace + M2 `z^{±k}` renormalised; mass-side axis) | **REFUTED** — `z(q₀)=0.4993 < 1 < linking_weight=2.5328` (direction obstruction); `tr_M(1_{H₄}) = Σ_{λ⊢4} y_λ f^λ = 1` exactly, not 2.53 (M1); no exact `z^{±k}·(clean H₃)` coincidence (M2); `z⁻¹ = q^½+q^{-½}` irrational | sibling probe — PR #1850 (merged `e43d071d`), formalize-first prediction confirmed |
 | C13 | **#1622 mode→ladder bridge with a `Δtr_M`-seeded *linear/bar-even* `f`** (change of variable `u=√q ↦ u_L=b·ℏ_q²`, seed `1+N·Σ_{k≥2}(a_{2k}/b^k)u_L^k`, scale `N` fixing `c_2=−1`) | **REFUTED** — both seeds give a *constant* (anchor-stable) `c_3` far from `−2`: raw even-in-ℏ `c_3=−100/(77b)≈−1.497` (25% off), #1602 bar-even `c_3=−175/(144b)≈−1.401` (30% off); `c_4` off 65–87%. `c_2=−1` only as a scale-fix, not independently derived. The bridge IS now executed; the surviving `f` is **non-linear** in `Δtr_M`. | PR #2465 — `habiro_mode_to_ladder_bridge.py` + `habiro-mode-to-ladder-bridge.witness.json`; formalize-first gate (the bridge had to be formal/anchor-independent, and is) |
+| C14 | **Root-of-unity / Ohtsuki–Habiro invariant of a framework-FORCED knot** (figure-eight 4₁ — `q₀` fixed by `Vol(4₁)=2Λ(π/3)` — via Habiro cyclotomic colored Jones + the published 4₁ Ohtsuki loop series `11/12, 697/288, 724351/51840`; Hopf link via the `c_3=−2=J_Hopf(q=1)` hint; trefoil 3₁ control) | **REFUTED (forced candidates)** — no forced candidate reproduces `c_2` AND `c_3` parameter-free. The 4₁ Ohtsuki rationals bear no relation to `c_3=−2.069` (`\|err\|=1.44, 2.17, 7.75`); the only near-`c_3` value, `V_Hopf(q=1)=−2`, misses by **3.35 %** and is the `q→1` *classical* limit (no quantum deformation ⇒ **no** Ohtsuki series), not a root-of-unity structure; the 4₁ colored-Jones values at `q₀` (`1.033, 1.093, 1.190, 1.343` for `N=2..5`) land nowhere near `c_3` under any natural normalisation. **No knot/root-of-unity scan was run** — only the two zero-free-choice forced candidates, per the anti-fitting discipline (a scan to find a match would *be* a fit). All five formulas literature-verified first (Habiro unknot norm; `V_{4₁}` Jones at `N=2`; Kashaev growth → `Vol(4₁)` to 0.11 %; `V_Hopf(1)=−2`; `V_K(1)=1`). | [`computations/probes/qbeta_root_of_unity_probe.py`](../../computations/probes/qbeta_root_of_unity_probe.py) → [`qbeta-root-of-unity.witness.json`](../../computations/probes/qbeta-root-of-unity.witness.json) (`dps=60`, exit 0, VERDICT NEGATIVE) |
 
 **Reading.** The real-q axis (C1–C4), the constant-kernel axis (C5), the
 Pell-Lucas-into-free-rungs axis (C6), the SDP-extraction axis (C7), the
@@ -91,6 +92,18 @@ seedings: the #1622 mode→ladder change of variable is now **executed**, and a
 constant `≈ −1.4…−1.5`, not `−2`). The bridge itself is sound and the exact
 even-in-ℏ data is now pinned (§3 forward constraint); what survives is a
 **non-linear** `f`, still fibre-level and open.
+
+**C14 (2026-06-23)** closes the **forced-knot root-of-unity / Ohtsuki** route —
+the complex-analytic follow-up that the real-q falsification (C1–C4) explicitly
+left open per AGENTS.md §"Im(q) at fibre vs observable level". The only two
+zero-free-choice knots the framework forces (4₁ via `Vol(4₁)=2Λ(π/3)`; Hopf via
+the `c_3=−2` hint) do **not** reproduce `c_2`+`c_3` parameter-free: the genuine
+4₁ Ohtsuki loop series is unrelated to `c_3`, and the Hopf `−2` is a `q→1`
+*classical* value (no Ohtsuki series exists at `q=1`), 3.35 % off. This does
+**not** refute *every* root-of-unity object — it refutes every **forced-knot**
+one. The single surviving object is therefore the one that is **not a knot
+invariant**: the **λ-coloured `Σ(2,3,5)` (Poincaré-sphere) WRT invariant** =
+the keystone `W_λ` build (§3).
 
 ---
 
@@ -124,6 +137,26 @@ even-in-ℏ data is now pinned (§3 forward constraint); what survives is a
 
 The §1 invariants for any F(q) candidate (fibre-level, anchor-stable,
 bar-even, integer `q=1` shadow) stand unchanged.
+
+> **Update 2026-06-23 (post-C14) — the open axis is now narrowed to a single
+> object.** The decay-side fibre element was characterised as "root-of-unity /
+> complex-analytic." C14 has since run the **forced-knot** root-of-unity test
+> (4₁, Hopf) and refuted it. What this leaves open is *not* a generic
+> "complex-analytic `F(q)`" — it is the **one** root-of-unity object the
+> framework forces that is **not a knot invariant**: the **λ-coloured
+> Poincaré-sphere `Σ(2,3,5)` WRT invariant** (the Lawrence–Zagier quantum
+> modular form with λ-coloured insertions / its `S`-matrix). The bare
+> closed-manifold number `Ψ(1/q₀)=2.33`
+> ([`keystone-habiro-wrt-s3-2i.witness.json`](../../computations/keystone-habiro-wrt-s3-2i.witness.json))
+> is a **single scalar**, type-mismatched with the `c_k`/`W_λ` λ-family — so
+> matching it would be numerology and is **not** sought. The genuinely-open
+> object is the **λ-coloured** invariant, which is **the same object as the
+> s5-so3 keystone `W_λ` geometric build** (`docs/coordination/s5-so3-keystone.md`,
+> bean `s5bb`). That build is the narrow Subgoal-2 reversal the owner granted
+> (AGENTS.md "Precision goals" → "Narrow owner reversal"). **Consequence for
+> this ledger: the Q_β decay-side `F(q)` axis is no longer an independent open
+> probe — it has merged into the keystone `W_λ` axis.** Do not open a separate
+> Q_β root-of-unity probe; coordinate on the keystone `s5bb` thread.
 
 > **New forward constraint (2026-06-18, PR #2465 / C13).** The #1622 bridge
 > is now **executed**, yielding the **exact, anchor-independent ℏ_q-Taylor
@@ -214,3 +247,4 @@ sub-case is killed on paper rather than by an expensive scan:
 - **H₃→H₄ jump consolidated negative (paper-topic deep-dive complement to this map):** [`2026-06-04-h3-h4-jump-both-axes-refuted.md`](2026-06-04-h3-h4-jump-both-axes-refuted.md) — closes 2 of the 5 #1762 attack options at the paper-topic level (mass-side `linking_weight_family_a` ≈ 2.53 is CODATA-implied near-match), while this map records the same outcome at the method-registry level (C8 + C12).
 - **Trace-level axis scope + refutation (C12):** [`2026-06-04-markov-stab-trace-axis-scope.md`](2026-06-04-markov-stab-trace-axis-scope.md), [`markov_stab_trace_axis_probe.py`](../../computations/probes/markov_stab_trace_axis_probe.py), `markov-stab-trace-axis-probe.witness.json` (all merged via PR #1850)
 - **Refuted-class source PRs:** #1811, #1816, #1822, #1831, #1839, #1841, #1842, #1850 (all merged)
+- **C14 (forced-knot root-of-unity) source:** [`computations/probes/qbeta_root_of_unity_probe.py`](../../computations/probes/qbeta_root_of_unity_probe.py) + [`qbeta-root-of-unity.witness.json`](../../computations/probes/qbeta-root-of-unity.witness.json); the surviving λ-coloured-WRT object is the keystone build [`docs/coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md) (bean `s5bb`) + the bare-invariant push [`keystone-habiro-wrt-s3-2i.witness.json`](../../computations/keystone-habiro-wrt-s3-2i.witness.json).
