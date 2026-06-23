@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-23T11:27:23.045446+00:00",
-  "commitSha": "c70b515433b5b426a73a379341a7ceabd661eb6d",
+  "computedAt": "2026-06-23T23:12:31.695488+00:00",
+  "commitSha": "1b182c34364c4b53cf581d0ec6654e5329f47e19",
   "assertions": [],
   "allPassed": true,
   "durationMs": 12,
@@ -27,7 +27,7 @@
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 915,
+    "files_scanned": 918,
     "patterns": [
       "P15",
       "P16",
@@ -42,7 +42,7 @@
       "P16": 251,
       "P21": 24,
       "P30": 138,
-      "P31": 21
+      "P31": 22
     },
     "top_files": [
       {
@@ -1666,6 +1666,13 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P31",
+        "file": "gap_a3_cross_atom_overshoot_probe.py",
+        "line": 18,
+        "snippet": "CODATA literal \"0.51099895\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P30",
