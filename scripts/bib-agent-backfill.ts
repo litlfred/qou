@@ -1,8 +1,6 @@
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { processIngestion } from '../pipeline/bib-photo-ingestion-watcher.js';
-import { references } from '../content/schema/references.js';
-import { entryHash } from '../content/pipeline/validate-references-human-review.js';
 
 /**
  * bib-agent-backfill.ts
@@ -24,6 +22,11 @@ async function main() {
   const intakeData = JSON.parse(readFileSync(INTAKE_FILE, 'utf8'));
   const targetRefId = intakeData.targetPaper || intakeData.id;
 
+  if (!targetRefId) {
+    console.error("intake.json has neither 'targetPaper' nor 'id'; nothing to backfill.");
+    return;
+  }
+
   console.log(`[Backfill] Analyzing intake.json for reference: ${targetRefId}`);
 
   let needsReview = true;
@@ -38,27 +41,15 @@ async function main() {
 
   if (needsReview) {
     console.log(`[Backfill] Triggering ingestion for backfill reference: ${targetRefId}`);
-    // Assume the PDF name matches the id in intake.json
-    const pdfPath = join('uploads', `${intakeData.id}.pdf`);
+    // Assume the PDF name matches the id in intake.json, falling back to targetRefId
+    const pdfId = intakeData.id || targetRefId;
+    const pdfPath = join('uploads', `${pdfId}.pdf`);
     if (existsSync(pdfPath)) {
       await processIngestion({
         type: 'local_backfill',
         filePath: pdfPath,
         referenceId: targetRefId
       });
-
-      // Update the hash properly after processIngestion since processIngestion uses 'pending'
-      const entry = references.find(r => r.id === targetRefId);
-      if (entry && existsSync(REVIEWS_FILE)) {
-         const hash = entryHash(entry);
-         const reviews = JSON.parse(readFileSync(REVIEWS_FILE, 'utf8'));
-         if (reviews.reviews[targetRefId]) {
-             reviews.reviews[targetRefId].entryHash = hash;
-             writeFileSync(REVIEWS_FILE, JSON.stringify(reviews, null, 2));
-             console.log(`[Backfill] Updated proper entryHash ${hash} for ${targetRefId}`);
-         }
-      }
-
     } else {
       console.error(`[Backfill] Error: Could not find PDF at ${pdfPath}`);
     }
