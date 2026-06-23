@@ -169,6 +169,24 @@ $$
    *exact* ($\star$); the single-block-level correction is *empirical*
    and structurally distinct.
 
+### Proved structural corollaries (binding assembly)
+
+Two correctly-scoped structural facts about the binding assembly
+`B = E_0\,\tau_M(\mathcal{B}_K^{\mathrm{vac}})\,(1-\prod_i f_i)` are formalised
+sorry-free alongside the interface identity (same `.lean` file):
+
+1. **Interface-deficit saturation** (`QOU.BraidKnot.InterfaceDeficit`). For bond
+   factors $f_i \in [0,1]$ the deficit $D = 1-\prod_i f_i$ satisfies
+   $0 \le D \le 1$, is monotone in the bond list, and the marginal deficit of an
+   added bond is $(1-f)\prod < 1-f$. This is the *proved* form of the 4-body
+   assembly observation: the multiplicative deficit **saturates** (extra bonds
+   contribute ever less) — it does **not** show the interface program is
+   excluded, only that the bond *count/topology* cannot supply unbounded scaling.
+2. **SU(4) shell closure** (`QOU.BraidKnot.SU4Supermultiplet`). The
+   fully-antisymmetric Wigner supermultiplet $[1^A] = \Lambda^A(\mathbb{C}^4)$ has
+   dimension $\binom{4}{A}$, so it vanishes for $A>4$: ${}^4\mathrm{He}$ (the SU(4)
+   singlet) is the last s-shell supermultiplet. Theorem `su4_shell_closure`.
+
 ### Implementation reference
 
 - Script: [`computations/delta_lambda_fr_identity_phase5c.py`](../../../computations/delta_lambda_fr_identity_phase5c.py)

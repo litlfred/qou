@@ -50,6 +50,9 @@ Ref: thm:jones-markov-trace.md
 
 import Mathlib.Algebra.Ring.Defs
 import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.Algebra.BigOperators.Group.List.Basic
+import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
@@ -269,3 +272,106 @@ theorem interface_knot_markov_z_per_Z_step
   interface_knot_markov_z_single beta_prev sigma_interface h_interface h_below
 
 end QOU.BraidKnot
+
+/-! ## §5. Interface-deficit saturation (correctly-scoped 4-body assembly fact)
+
+The binding assembly `B = E₀·τ_vac·(1 − ∏ᵢ fᵢ)` was probed at the 4-body level
+(`docs/audits/2026-06-23-interface-operator-derivation-and-4body-assembly.md`):
+adding bonds barely moves `B`.  The honest, correctly-scoped reason is **not**
+"bond-counting is ruled out" but that the multiplicative deficit `1 − ∏f`
+**saturates** — it is bounded by 1, monotone in the bond list, and each added
+bond contributes at most its bare deficit `(1 − f)`, strictly less once other
+bonds are present (because the `∏` prefactor `< 1`).  These four facts are the
+proved version of that observation. -/
+namespace QOU.BraidKnot.InterfaceDeficit
+
+/-- A product of factors each `≥ 0` is `≥ 0`. -/
+theorem prod_nonneg {l : List ℝ} (h : ∀ x ∈ l, 0 ≤ x) : 0 ≤ l.prod := by
+  induction l with
+  | nil => simp
+  | cons a t ih =>
+    simp only [List.prod_cons]
+    exact mul_nonneg (h a (by simp)) (ih (fun x hx => h x (by simp [hx])))
+
+/-- A product of factors each in `[0,1]` is `≤ 1`. -/
+theorem prod_le_one {l : List ℝ} (h0 : ∀ x ∈ l, 0 ≤ x) (h1 : ∀ x ∈ l, x ≤ 1) :
+    l.prod ≤ 1 := by
+  induction l with
+  | nil => simp
+  | cons a t ih =>
+    simp only [List.prod_cons]
+    have ht0 : 0 ≤ t.prod := prod_nonneg (fun x hx => h0 x (by simp [hx]))
+    have hile : t.prod ≤ 1 :=
+      ih (fun x hx => h0 x (by simp [hx])) (fun x hx => h1 x (by simp [hx]))
+    calc a * t.prod ≤ 1 * t.prod := mul_le_mul_of_nonneg_right (h1 a (by simp)) ht0
+      _ = t.prod := one_mul _
+      _ ≤ 1 := hile
+
+/-- The interface deficit of a bond-factor list: `D = 1 − ∏ f`. -/
+def deficit (l : List ℝ) : ℝ := 1 - l.prod
+
+/-- `0 ≤ D` for factors in `[0,1]` (the deficit is a genuine non-negative shortfall). -/
+theorem deficit_nonneg {l : List ℝ} (h0 : ∀ x ∈ l, 0 ≤ x) (h1 : ∀ x ∈ l, x ≤ 1) :
+    0 ≤ deficit l := by unfold deficit; linarith [prod_le_one h0 h1]
+
+/-- `D ≤ 1`: the multiplicative deficit can never exceed 1 — it **saturates**. -/
+theorem deficit_le_one {l : List ℝ} (h0 : ∀ x ∈ l, 0 ≤ x) : deficit l ≤ 1 := by
+  unfold deficit; linarith [prod_nonneg h0]
+
+/-- Monotone: adding a bond `f ∈ [0,1]` never decreases the deficit. -/
+theorem deficit_cons_ge (f : ℝ) (l : List ℝ) (hf1 : f ≤ 1)
+    (h0 : ∀ x ∈ l, 0 ≤ x) : deficit l ≤ deficit (f :: l) := by
+  unfold deficit
+  simp only [List.prod_cons]
+  have hp : 0 ≤ l.prod := prod_nonneg h0
+  have : f * l.prod ≤ l.prod := mul_le_of_le_one_left hp hf1
+  linarith
+
+/-- **Saturation.** The marginal deficit of adding bond `f` is `(1−f)·∏`, hence
+    `≤ (1−f)`: each added bond contributes at most its bare deficit, and strictly
+    less once other bonds are present (`∏ < 1`).  This is *why* extra bonds barely
+    move `B` — the correctly-scoped statement of the 4-body assembly result (the
+    interface program is not excluded; the multiplicative deficit just saturates). -/
+theorem deficit_marginal_le (f : ℝ) (l : List ℝ) (hf1 : f ≤ 1)
+    (h0 : ∀ x ∈ l, 0 ≤ x) (h1 : ∀ x ∈ l, x ≤ 1) :
+    deficit (f :: l) - deficit l ≤ 1 - f := by
+  unfold deficit
+  simp only [List.prod_cons]
+  have expand : (1 - f * l.prod) - (1 - l.prod) = (1 - f) * l.prod := by ring
+  rw [expand]
+  exact mul_le_of_le_one_right (by linarith) (prod_le_one h0 h1)
+
+end QOU.BraidKnot.InterfaceDeficit
+
+/-! ## §6. SU(4) supermultiplet shell closure (Pauli-Young cooperative channel cap)
+
+The Pauli-Young construction
+(`docs/audits/2026-06-22-pauli-young-spin-isospin-delta-lambda-test.md`) assigns
+the ground-state nucleus the fully-antisymmetric spin-isospin supermultiplet
+`[1^A]` of Wigner's SU(4) (spatial-symmetric s-shell ⇒ spin-isospin
+antisymmetric).  Its dimension is `dim Λ^A(ℂ⁴) = C(4, A)`, so it **vanishes for
+`A > 4`**: ⁴He (the SU(4) singlet, `S=0, T=0`) is the last s-shell supermultiplet.
+This is the proved version of the "`e_A[h₃]` vanishes for `A > 4`" shell-closure
+observation. -/
+namespace QOU.BraidKnot.SU4Supermultiplet
+
+/-- Dimension of the fully-antisymmetric SU(4) spin-isospin supermultiplet
+    `[1^A] = Λ^A(ℂ⁴)`:  `C(4, A)`. -/
+def su4AntisymDim (A : ℕ) : ℕ := Nat.choose 4 A
+
+/-- **SU(4) shell closure.** The fully-antisymmetric supermultiplet `[1^A]`
+    vanishes for `A > 4`: no Pauli-allowed spin-isospin-antisymmetric state of
+    more than 4 nucleons exists in the s-shell. -/
+theorem su4_shell_closure {A : ℕ} (h : 4 < A) : su4AntisymDim A = 0 :=
+  Nat.choose_eq_zero_of_lt h
+
+/-- ⁴He (A=4) is the last nonzero antisymmetric supermultiplet: the SU(4) singlet,
+    dimension 1 (the doubly-magic alpha, `S=0, T=0`). -/
+theorem helium4_singlet : su4AntisymDim 4 = 1 := rfl
+
+/-- Contrapositive: a nonzero `[1^A]` supermultiplet forces `A ≤ 4`. -/
+theorem su4_last_nonzero {A : ℕ} (h : su4AntisymDim A ≠ 0) : A ≤ 4 := by
+  by_contra hc
+  exact h (su4_shell_closure (Nat.lt_of_not_le hc))
+
+end QOU.BraidKnot.SU4Supermultiplet
