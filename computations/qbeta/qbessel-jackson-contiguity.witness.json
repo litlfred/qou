@@ -1,0 +1,52 @@
+{
+  "computation": "qbessel_jackson_contiguity",
+  "description": "Verify the first- and second-kind Jackson q-Bessel (SU_q(1,1)) coefficient contiguity recurrences and their q-hypergeometric product solution, wiring QOU.QBeta.qbessel_first_kind_coeff_closed_form and qbessel_second_kind_coeff_closed_form (QBesselContiguityRecurrence.lean). Partners of the already-wired third-kind second-order q-difference equation.",
+  "discipline": "no fit; derive-or-verify; fibre-level (formal q); c_k cal-anchored; wires the Lean skeleton only",
+  "lean_refs": [
+    "qou:QOU.QBeta.qbessel_first_kind_coeff_closed_form",
+    "qou:QOU.QBeta.qbessel_second_kind_coeff_closed_form"
+  ],
+  "precision_dps": 60,
+  "results": {
+    "ratio_identity_symbolic": {
+      "first_kind": true,
+      "second_kind": true
+    },
+    "contiguity_numeric": {
+      "cases": [
+        {
+          "nu": 0,
+          "q": "0.6"
+        },
+        {
+          "nu": 1,
+          "q": "0.83"
+        },
+        {
+          "nu": 2,
+          "q": "0.75"
+        },
+        {
+          "nu": 3,
+          "q": "0.9"
+        }
+      ],
+      "max_resid_first": "2.03916e-56",
+      "max_resid_second": "5.97409e-59"
+    },
+    "product_solution": {
+      "max_resid_first": "1.63133e-54",
+      "max_resid_second": "1.27447e-57"
+    }
+  },
+  "assertions": {
+    "(A) first-kind ratio == qbesselFirstKindRatio (symbolic, all k≤6)": true,
+    "(A) second-kind ratio == qbesselSecondKindRatio (symbolic, all k≤6)": true,
+    "(B) first-kind contiguity (★₁) holds (< 1e-30)": true,
+    "(B) second-kind contiguity (★₂) holds (< 1e-30)": true,
+    "(C) first-kind product solution matches A_k (< 1e-30)": true,
+    "(C) second-kind product solution matches B_k (< 1e-30)": true
+  },
+  "allPassed": true,
+  "verdict": "PROVED (derive-and-verify, 60 dps + symbolic). The first- and second-kind Jackson q-Bessel (SU_q(1,1)) coefficient ratios equal the Lean closed forms qbesselFirstKindRatio / qbesselSecondKindRatio; the contiguity recurrences (★₁) A_{k+1}(1−q^{k+1})(1−a q^{k+1}) = −A_k and (★₂) with the −a q^{2k+1} factor hold to 60 dps; and the q-hypergeometric product solution c_k = c_0 ∏_{j<k} r_j (the Lean first_order_solution conclusion) reproduces the Jackson coefficients. These are formal-q fibre-level identities (hold for all q, independent of the substrate anchor). Wires the proved SKELETON of the two SU_q(1,1) partners of the third-kind equation; no fit, no binding scale claimed, c_k stay cal-anchored."
+}
