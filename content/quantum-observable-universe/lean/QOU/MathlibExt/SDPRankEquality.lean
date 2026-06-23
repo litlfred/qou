@@ -309,7 +309,8 @@ theorem range_spans_of_dualSlack_posDef
   refine ⟨0, (sdp.dualSlack sc.ystar)⁻¹.mulVec v, ?_⟩
   rw [Matrix.mulVec_zero, zero_add]
   -- S·(S⁻¹·v) = (S * S⁻¹)·v = 1·v = v
-  rw [← Matrix.mulVec_mulVec, Matrix.mul_nonsing_inv _ h_isUnit, Matrix.one_mulVec]
+  -- (`mulVec_mulVec : A *ᵥ B *ᵥ x = (A * B) *ᵥ x` here — forward, not `←`.)
+  rw [Matrix.mulVec_mulVec, Matrix.mul_nonsing_inv _ h_isUnit, Matrix.one_mulVec]
 
 /-- **Range-spanning when active set is empty + cost PosDef** —
     proven via reduction to the interior case (S = cost
@@ -403,7 +404,11 @@ theorem kernel_disjoint_of_range_spans
     -- Now goal: `(Φᵀ.mulVec v) ⬝ᵥ a + (Sᵀ.mulVec v) ⬝ᵥ b = 0`.
     -- Hermitian: Φᵀ = Φ, Sᵀ = S — combined with `Φ·v = 0`, `S·v = 0`,
     -- both terms collapse to `0 ⬝ᵥ _ = 0`.
-    rw [show sc.Φstar.transpose = sc.Φstar from h_Φ_herm,
+    -- `dotProduct_mulVec` produced the `v ᵥ* M` (vecMul) form; convert each
+    -- back to `Mᵀ *ᵥ v` via `← mulVec_transpose` so the Hermitian `Mᵀ = M`
+    -- rewrites apply and the kernel hypotheses collapse both summands.
+    rw [← Matrix.mulVec_transpose, ← Matrix.mulVec_transpose,
+        show sc.Φstar.transpose = sc.Φstar from h_Φ_herm,
         show (sdp.dualSlack sc.ystar).transpose = sdp.dualSlack sc.ystar from h_S_herm,
         h_Φv, h_Sv, zero_dotProduct, zero_dotProduct, add_zero]
   -- ⟨v, v⟩ = 0 ⟹ v = 0 (sum of squares zero ⟹ each entry zero).
@@ -417,6 +422,26 @@ theorem kernel_disjoint_of_range_spans
     (Finset.sum_eq_zero_iff_of_nonneg
       (fun k _ => mul_self_nonneg (v k))).mp h_sum i (Finset.mem_univ _)
   exact mul_self_eq_zero.mp h_sq_zero
+
+/-! ## §2.9  Matrix rank via the `toLin'` range (missing-lemma shim)
+
+`Matrix.rank` is *defined* as `finrank R (range mulVecLin)`, and the proofs
+below phrase rank through `range toLin'`.  Mathlib ships only the
+basis-general `Matrix.rank_eq_finrank_range_toLin`; the standard-basis
+specialisation (`…toLin'`) the original proofs assumed is provided here. -/
+
+/-- Standard-basis specialisation of `Matrix.rank_eq_finrank_range_toLin`:
+    `M.rank = finrank ℝ (range M.toLin')`.  Since `toLin' = mulVecLin`
+    (both send `v ↦ M *ᵥ v`) and `Matrix.rank` is by definition the finrank
+    of `range mulVecLin`, the two ranges coincide. -/
+theorem Matrix.rank_eq_finrank_range_toLin' {m k : ℕ}
+    (M : Matrix (Fin m) (Fin k) ℝ) :
+    M.rank = Module.finrank ℝ (LinearMap.range M.toLin') := by
+  have hbridge : M.toLin' = M.mulVecLin := by
+    ext v i
+    simp [Matrix.toLin'_apply]
+  rw [hbridge]
+  rfl
 
 /-! ## §3  Rank equality from kernel disjointness
 
