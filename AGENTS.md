@@ -493,6 +493,65 @@ resolution missed?"](docs/audits/2026-05-31-binding-magic-A-wireup.md).
 Skill cross-reference: `local/proof-gap-audit` §K codifies this
 checklist for proof-gap declarations specifically.
 
+## Before declaring "refuted" / "ruled out" / "dead end" (STRICT)
+
+The mirror image of the "open" over-claim: an agent tests a single
+parameter-free construction **alone, as the sole mechanism**, gets a
+bad number, and writes "REFUTED" / "ruled out" / "dead end" /
+"cannot" / "impossible" in a durable artifact (audit doc, content
+block, ledger, witness `verdict`, PR description). This **over-narrows
+the search** — later agents avoid an ingredient that was never
+actually excluded. (Calibration audit 2026-06-23 found 6 such
+over-claims live in the corpus: c_k method-class map, Bratteli /
+Markov-trace H₃→H₄, signed-crossing binding, q-Bessel smoothness.)
+
+Before writing a refutation in a durable artifact, classify the claim
+into exactly one of two scopes and use the matching phrasing:
+
+- **(a) Scope-limited negative** — "this construction, *alone*, does
+  not reproduce the numbers as-is." This is what a failed numerical
+  probe actually shows. Use this phrasing by default. It constrains
+  *magnitudes and combinations*, not *ingredients*.
+- **(b) Structural exclusion** — "this ingredient cannot appear in any
+  closure." Only permitted when a **proved invariant** forbids it:
+  parity / sign (e.g. a mixed-sign target vs a provably non-negative
+  weight — the KL-positivity prune), a dimension / orbit-count / degree
+  bound, a Lean-proved impossibility, or an entropy/precision bound.
+  **Cite the invariant.** Without one, you may not write (b).
+
+Two permanence principles that make most "(b)" claims wrong:
+
+1. **A Lean-proved or structurally-exact piece is a permanent, correct
+   contribution** even while the current *total* is inaccurate.
+   "Inaccurate alone" ≠ "excluded." A proved per-bond / per-block
+   factor stays valid; a missing term *adds to / re-weights* it.
+2. **A compositional / additive / trace object is already many-body.**
+   Showing a term is insufficient *by itself* says nothing about
+   whether it belongs in a multi-term closure. In particular a
+   multiplicative/trace object (e.g. `1 − ∏ᵢ fᵢ`) expands to cross
+   terms — a "pairwise can't do it" argument against it is a category
+   error; the probe *measures the size of the missing higher term*, it
+   does not exclude the factor.
+
+**Scope note.** As with the "open" checklist, this gates *durable
+"refuted" declarations*, not chat-level skepticism. Saying "this looks
+fitted" or "I doubt this closes" in chat is the Critical-distance
+license and is never gated. What is gated: writing "REFUTED" /
+"ruled out" in an audit doc / witness / ledger without the (a)/(b)
+classification, and asserting in chat as *fact* that an ingredient is
+excluded from the corpus.
+
+When you find an existing over-claimed "(b)" in the corpus, **re-scope
+it to (a)** (do not silently delete the finding — the numerical result
+stands; only the scope was wrong), and note the calibration in the
+commit. Worked example + the 6-item live list:
+[`docs/audits/2026-06-23-interface-operator-derivation-and-4body-assembly.md` §"Calibration note"](docs/audits/2026-06-23-interface-operator-derivation-and-4body-assembly.md).
+
+Skill cross-reference: `local/canonical-watcher` flags durable
+refutations missing the (a)/(b) scope; `local/compute-author`
+§formalize-first is the forward complement (prove the invariant that
+*would* justify a (b) before running the wide search).
+
 ## Formalize-first probe discipline (STRICT — narrow the search before running it)
 
 **Too much time is lost chasing numerical rainbows that a one-line
