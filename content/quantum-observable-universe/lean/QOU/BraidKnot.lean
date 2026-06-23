@@ -1,6 +1,7 @@
 import QOU.BraidKnot.BsymLinearChain
 import QOU.BraidKnot.ChiralityTopologySelection
 import QOU.BraidKnot.WLambdaDefectClosedForm
+import QOU.BraidKnot.IdentityIContentDecomposition
 import QOU.BraidKnot.CyclotomicLValueDecomposition
 import QOU.BraidKnot.CyclotomicTrilogImaginary
 import QOU.BraidKnot.CyclotomicCl3OrbitSum

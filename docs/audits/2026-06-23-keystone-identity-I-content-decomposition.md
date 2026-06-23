@@ -183,6 +183,21 @@ theorem twoM_content_decomposition (n : ℤ) : twoM n = n * (n - 1) + 2 * n ^ 2
 `n=7` sign change are unchanged; the opaque carried constant is now a transparent,
 individually-attributed split.
 
+A second file, `IdentityIContentDecomposition.lean` (wired into `QOU.BraidKnot`),
+carries the two pieces as far as Mathlib allows today (lean-direct verified, exit 0):
+
+- **(A)** a self-contained computable model on `List ℕ` (`colLen`, `sumSqHooks`,
+  `sumSqContents`, `sz`), with `Σh² = Σc² + n²` **machine-checked sorry-free**
+  (`native_decide`) on 8 representative partitions (`n = 1..8`, incl. the
+  self-conjugate `[3,1,1]`); the general statement
+  `sumSqHooks_eq_sumSqContents_add_sq` is carried with one honest `sorry` + `-- Ref:`
+  to the §"Proof of (A)" above (general Lean proof needs `YoungDiagram` hook/content
+  defs).
+- **(B)** the Jucys–Murphy computational core `jm_identity_coeff_two`:
+  `(Σ_{k<n} k)·2 = n(n−1)` — **proved sorry-free** (Gauss). The full Plancherel-mean
+  statement is documented (no faithful Lean statement is possible without `ℂ[S_n]`
+  block-dimension / JM infrastructure).
+
 ## Verification (this PR, exact integer / Fraction arithmetic)
 
 `scripts/keystone_identity_I_content_decomposition.py` (`ALL CHECKS PASS`):
