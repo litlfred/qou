@@ -49,6 +49,7 @@ Ref: thm:jones-markov-trace.md
 -/
 
 import Mathlib.Algebra.Ring.Defs
+import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
@@ -190,6 +191,44 @@ theorem interface_knot_markov_z_negative
   rw [inst.hecke_skein sigma h_interface]
   rw [h_tau_linear]
   rw [inst.markov_axiom alpha sigma h_interface h_below]
+  ring
+
+/-! ## §3a. Averaged (bar-invariant) interface via the charge-symmetric crossing -/
+
+/-- **Bar-invariant (p-n) interface Markov identity.**
+
+    The canonical p-n boundary in `closed_form_tau_M.canonical_interface_kinds`
+    is the *bar-invariant* (charge-symmetric) crossing
+      σ_bar := σ + σ⁻¹ = 2σ - h·1      (from the Hecke skein σ⁻¹ = σ - h·1),
+    i.e. the q ↔ q⁻¹–symmetric average of the positive and negative crossings
+    (no preferred chirality at the p-n bond).  Its Markov trace is
+
+      τ_M(α · (σ + σ⁻¹)) = (2z - h) · τ_M(α),
+
+    so the per-interface "averaged" factor (after the 1/2 normalisation that
+    lives at the archimedean realisation) is `z - h/2`.  Together with the
+    positive (`z`) and negative (`z - h`) identities above, this shows all
+    THREE interface factors are forced by **one** Markov move
+    `τ_M(α·σ) = z·τ_M(α)` plus the skein — no fit (cf. `prop:averaging-resonance-rule`).
+
+    Stated division-free over a generic `CommRing R` (the 1/2 is deferred to
+    the archimedean step, per AGENTS.md §7c base-ring convention). -/
+-- Ref: [jones1987] Hecke algebra representations of braid groups
+-- Ref: [manuscript] prop:interface-knot-markov-z §"Averaged (bar-invariant) interface"
+-- Ref: prop:averaging-resonance-rule.md
+theorem interface_knot_markov_z_bar_symmetric
+    {R : Type*} [CommRing R] [inst : MarkovHeckeSkeinAlgebra R]
+    (alpha sigma : R)
+    (h_interface : inst.isInterface sigma)
+    (h_below : inst.isBelow alpha sigma)
+    (h_tau_linear :
+      inst.tau_M (alpha * (2 * sigma - inst.h * 1))
+        = 2 * inst.tau_M (alpha * sigma) - inst.h * inst.tau_M alpha) :
+    inst.tau_M (alpha * (sigma + inst.sigma_inv sigma))
+      = (2 * inst.z - inst.h) * inst.tau_M alpha := by
+  have hsum : sigma + inst.sigma_inv sigma = 2 * sigma - inst.h * 1 := by
+    rw [inst.hecke_skein sigma h_interface]; ring
+  rw [hsum, h_tau_linear, inst.markov_axiom alpha sigma h_interface h_below]
   ring
 
 /-! ## §4. Per-step factorisation (positive + negative) -/

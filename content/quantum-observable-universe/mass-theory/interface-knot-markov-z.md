@@ -48,6 +48,33 @@ $\bowtie_K$ — each one is "topmost" relative to the constituent
 sub-braid below it — and applying the appropriate factor per sign
 yields the boxed identity ($\star$).
 
+### Averaged (bar-invariant) p-n interface
+
+The same single Markov input fixes a **third** interface factor. The
+canonical p-n boundary (`closed_form_tau_M.canonical_interface_kinds`,
+`prop:averaging-resonance-rule`) carries no preferred chirality, so it is
+the **bar-invariant** ($q \leftrightarrow q^{-1}$ symmetric) crossing
+$$
+  \sigma_{\mathrm{bar}} \;:=\; \tfrac{1}{2}\bigl(\sigma_g + \sigma_g^{-1}\bigr)
+  \;=\; \sigma_g - \tfrac{h}{2}\cdot\mathbf{1},
+$$
+the last equality again from the Hecke skein $\sigma_g^{-1} = \sigma_g - h$.
+Linearity of $\tau_M$ then gives
+$$
+  \tau_M(\alpha\cdot\sigma_{\mathrm{bar}})
+  \;=\; \tau_M(\alpha\cdot\sigma_g) - \tfrac{h}{2}\,\tau_M(\alpha)
+  \;=\; \Bigl(z - \tfrac{h}{2}\Bigr)\cdot\tau_M(\alpha).
+$$
+Thus **all three** per-interface factors — $z$ (positive), $z-h$
+(negative), $z-\tfrac{h}{2}$ (bar-invariant p-n) — follow by
+trace-linearity from the *single* Markov axiom $\tau_M(\alpha\sigma_g) =
+z\,\tau_M(\alpha)$ plus the skein $\sigma_g^{-1}=\sigma_g-h$; none is an
+independent input or a fit. The division-free form
+$\tau_M(\alpha(\sigma_g+\sigma_g^{-1})) = (2z-h)\,\tau_M(\alpha)$ is
+formalised over a generic commutative ring as
+`interface_knot_markov_z_bar_symmetric` (the $\tfrac12$ normalisation is
+deferred to the archimedean realisation, per the base-ring convention).
+
 ### Empirical verification (4 atoms, 50-dps Rust kernel)
 
 Computed via [`delta_lambda_fr_identity_phase5c.py`](../../../computations/delta_lambda_fr_identity_phase5c.py)
