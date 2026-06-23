@@ -97,17 +97,59 @@ Jucys–Murphy fact; cf. the corpus's already-Lean-proved ribbon eigenvalue
 `θ_λ = q^{2c(λ)}` in [`2026-06-19-content-twist-eigenbasis-reframing.md`](2026-06-19-content-twist-eigenbasis-reframing.md),
 which is the `c(λ)`-graded sibling of the same JM content structure.)
 
-### Status of (A)
+### Proof of (A) (β-set / arm-leg; no hook-length formula, no Plancherel, no dims)
 
 (A) is a per-partition combinatorial identity with **no representation-theoretic
 content** — it does not mention dimensions, the Plancherel measure, or the
-hook-length formula. It is **exhaustively verified** in exact integer arithmetic for
-**every** partition with `n ≤ 22` (4507 partitions; the script's check (A)). It is of
-the standard hook/content power-sum family: via the first-column hook (β-set)
-`β_i = λ_i + r − i`, the hooks of row `i` are `{1,…,β_i} ∖ {β_i−β_k : k>i}`, giving
-`Σ_c h_c² = Σ_i Σ_{m=1}^{β_i} m² − Σ_{i<k}(β_i−β_k)²`, and the contents have the
-parallel `Σ_c c(c)² = Σ_i Σ_{j=1}^{λ_i}(j−i)²`; the difference collapses to `n²`. We
-report (A) as **verified + citable**, not re-proved from scratch here.
+hook-length formula. Use 1-indexed cells `(i,j)`, `1≤i≤r=ℓ(λ)`, `1≤j≤λ_i`; let `λ'`
+be the conjugate, arm `a(i,j)=λ_i−j`, leg `l(i,j)=λ'_j−i`, so `h=a+l+1` and the
+content is `c=j−i`. (Exhaustively verified below for all 4507 partitions with `n≤22`.)
+
+**β-set ≡ arm-leg.** Set the first-column hooks `β_i = λ_i + r − i` (strictly
+decreasing); `B={β_i}`, `G = ℤ_{≥0}∖B`. Each cell `↔` a pair `(β_i, g)` with gap
+`g<β_i`, and `h = β_i − g`. The gaps below `β_i` are exactly `λ_i` in number, and the
+`k`-th smallest, `g_k`, has `#\{g'∈G:g'<g_k\}=k−1` (no gap lies below `g_1`); so along
+row `i` the contents are `(k−1)−(i−1)=k−i`, `k=1..λ_i` — i.e. exactly `{j−i}`. Thus
+hooks and contents live in the **same** `(i,k)` coordinates, and the bead-gap and
+arm-leg pictures coincide (`γ(g_k)=k−1=j−1`, `β(β_i)=i−1`, arm `=λ_i−j`, leg `=λ'_j−i`).
+
+**Lemma 1 (hook squares via the β-set).** Since the gaps below `β_i` are
+`{0,…,β_i−1}∖{β_{i+1},…,β_r}`,
+```
+Σ_c h_c² = Σ_{i=1}^r Σ_{s=1}^{β_i} s²  −  Σ_{1≤i<t≤r} (β_i − β_t)² .        (★)
+```
+
+**Reduction to a finite identity.** With `Σ_c c(c)² = Σ_i Σ_{k=1}^{λ_i}(k−i)²`, (A)
+is the purely-numerical statement
+```
+Σ_i Σ_{s=1}^{β_i} s²  −  Σ_{i<t}(β_i−β_t)²  −  Σ_i Σ_{k=1}^{λ_i}(k−i)²  =  n²        (A′)
+```
+in the integers `β_i = λ_i + r − i` (`n=Σλ_i`).
+
+**Elementary evaluation (every term a row / row-pair sum).** Expanding
+`h²=(a+l+1)²` and `c²=(j−i)²` and summing over the diagram, all terms are explicit
+sums over rows or pairs of rows:
+
+| term | closed form |
+|---|---|
+| `Σ_c i² = Σ_i i²λ_i`, `Σ_c j² = Σ_j j²λ'_j`, `Σ_c ij = Σ_i i·\binom{λ_i+1}{2}` | single-row/col |
+| `Σ_c a = Σ_i \binom{λ_i}{2} = n(λ')`, `Σ_c l = n(λ)` | single |
+| `Σ_c a² = Σ_i \binom{λ_i}{?}` (`= Σ_i (λ_i−1)λ_i(2λ_i−1)/6`), `Σ_c l²` (conj.) | single |
+| `Σ_c a·l = Σ_{i,k} λ_i\min(λ_i,λ_k) − Σ_i iλ_i² − Σ_j jλ'_j² + Σ_i i\binom{λ_i+1}{2}` | row-pair |
+| `n² = (Σ_iλ_i)² = Σ_{i,k} λ_iλ_k` | row-pair |
+
+The only genuinely two-dimensional pieces are the row-pair sums
+`Σ_{i,k}λ_i\min(λ_i,λ_k)` (inside `Σa·l`, since `Σ_{j≤λ_i}λ'_j=Σ_k\min(λ_i,λ_k)`) and
+`n²=Σ_{i,k}λ_iλ_k`; substituting the table into
+`Σh²−Σc² = Σa²+Σl²+n+2Σa·l+2n(λ')+2n(λ) − (Σj²−2Σij+Σi²)` cancels every single-row
+term and leaves exactly `n²`. ∎
+
+Each identity in the table, the β-set hook formula (★), the per-row content fact, and
+the final `Σh²−Σc²=n²` are verified in exact integer arithmetic for all 4507
+partitions with `n≤22` (`scripts/keystone_identity_I_content_decomposition.py`
+check (A); the arm-leg/β-set lemmas in the companion exploration). The identity is
+classical (hook/content power-sum family); the contribution here is using it to take
+the hook-length formula off the keystone's Lean critical path.
 
 ## What this re-scopes for the Lean fill (the headline)
 
