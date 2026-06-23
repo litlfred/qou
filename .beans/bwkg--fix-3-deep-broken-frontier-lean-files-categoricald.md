@@ -3,8 +3,9 @@
 title: 'Fix 3 deep-broken frontier Lean files: CategoricalDqSquared, QHookBound, MarkovPeel'
 status: todo
 type: task
+priority: normal
 created_at: 2026-06-23T17:03:11Z
-updated_at: 2026-06-23T17:03:11Z
+updated_at: 2026-06-23T23:27:35Z
 ---
 
 
@@ -31,3 +32,20 @@ deliberate debugging. Details:
   `hecke_quadratic : ∀ n, top n * top n = h * top n + 1` fails to synthesize the
   SMul/HMul instance for `h * top n` (h a scalar, top n an algebra element) —
   the structure likely needs an [Algebra]/[Module] hypothesis or h:H not scalar.
+
+REFINED TRIAGE 2026-06-23 (claude/fix-deep-broken-frontier, lean-direct vs current main):
+- QHookBound: ALREADY GREEN on current main (0 errors) — fixed by a sibling Archimedean
+  commit since this bean was filed. Drop from scope.
+- MarkovPeel (1 err, L112): class `MarkovTrace` declares only [Mul H][One H] + [CommRing R],
+  but field `hecke_quadratic : top n*top n = h*top n + 1` needs [Add H] (the `+1`) AND an
+  R-action h:R • top n:H ([SMul R H] / [Algebra R H]). Structural + CASCADES: strengthen
+  the class binders, change `h * top n`→`h • top n`, propagate binders to the 3 in-file
+  reference identities (L137/185/233) + MarkovPeelH3.lean + any proof that rw[hecke_quadratic].
+- CategoricalDqSquared (4 err on main): (a) docstring before `noncomputable section` L43 —
+  move section first; (b) L45-46 q_param/q_inv_param IR-noncomputable are DOWNSTREAM of (a);
+  (c) missing bare `end` for the section L71; (d) missing imports Preadditive.Basic +
+  Linear.Basic. AFTER (a)-(d): theorem L61-70 uses cqd.d_classical/dq/dq_classical on
+  `CategoricalQExtDeriv` (defined in QOU/QuantumObservableUniverse/Instanton.lean, NOT
+  imported here; Instanton exposes dq/dq_classical/proj_H). Needs: import Instanton + re-sync
+  the theorem to the current structure API (the "Function expected at L66" residual).
+Both remaining = genuine deep structural work; best as a focused lean-lsp pass.
