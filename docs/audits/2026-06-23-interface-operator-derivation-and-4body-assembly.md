@@ -234,3 +234,40 @@ precise open question, not the existence or scale.
 
 → `binding_cluster_operator_vs_mayer_probe.py` · `cluster-operator-vs-mayer-b3.witness.json` ·
 `QOU.BraidKnot.Cluster` (Lean, sorry-free)
+
+### Sign resolved — it was the parity of the bond count (the missing 1–3 bond)
+
+The negative sign above is **not** a lost sign in the arithmetic — it is the *proved*
+saturation (`InterfaceDeficit.deficit_marginal_le`): a multiplicative joint trace
+always falls below the independent pair-sum, so the connected cluster over the **two
+adjacent chain bonds** is forced negative. But that is a `k=2` cluster. The genuine
+3-body force is the connected cluster over the **triangle** — all three pairwise
+bonds, including the long-range `1–3` bond the chain omits. For the product trace the
+Ursell cluster over `k` bonds is
+
+$$ u_k \;=\; E_0\,\tau_{\mathrm{vac}}\,(-1)^{k+1}\prod_i (1-f_i), $$
+
+so the sign **alternates with the bond count**: `k=1` bond `+`, `k=2` (chain) `−`,
+`k=3` (triangle) `+`. Closing the triangle is exactly the parity flip
+(`binding_triangle_3body_cluster_probe.py`):
+
+| atom | 2-bond chain `u₂` | 3-bond triangle `u₃` | Mayer `b₃` | `u₃` err (bar-avg pn) |
+|------|----:|----:|----:|----:|
+| ³H  | −2.67 (saturation) | **+1.896** | +1.808 | **+4.9 %** |
+| ³He | −2.26 | **+1.366** | +1.044 | +30.8 % |
+
+`u₃ > 0` (attractive, the sign of `b₃`), parameter-free, matching the empirical
+3-body term to **+4.9 %** for ³H with the canonical bar-averaged pn factor, correct
+`T > ³He` ordering (³He's +31 % is the expected mirror-pair asymmetry). The sign flip
+is **structural and Lean-proved**: `QOU.BraidKnot.Cluster.ursell2_eq` /
+`ursell3_eq` (the cluster identities) + `ursell2_nonpos` (`k=2 ⇒ ≤ 0`) /
+`ursell3_nonneg` (`k=3 ⇒ ≥ 0`), all sorry-free.
+
+So the cluster operator is now resolved in **sign** (proved parity) and **scale**
+(³H to ~5 %): the framework's connected 3-body cluster, computed over the closed
+triangle, is the attractive 3-body force. The open items are the residual magnitude
+(the mirror-pair asymmetry / the ³He 31 %) and the A=4 extension (where the 6-bond
+parity and the `|χ|` vs signed-trace convention need the same triangle treatment).
+
+→ `binding_triangle_3body_cluster_probe.py` · `binding-triangle-3body-cluster.witness.json` ·
+`QOU.BraidKnot.Cluster.{ursell2_eq,ursell3_eq,ursell2_nonpos,ursell3_nonneg}` (Lean, sorry-free)
