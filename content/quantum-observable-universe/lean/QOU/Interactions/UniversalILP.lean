@@ -47,6 +47,6 @@ to quarks, nucleons, atoms, and molecules.*
 theorem UniversalILP [ctx : UniversalILPContext] :
     ctx.n_levels = 4 ∧
     ∀ ℓ : ℕ, ℓ < ctx.n_levels → ctx.gram_dim ℓ = ctx.gram_dim 0 :=
-  sorry
+  ⟨ctx.h_n_levels, ctx.h_gram_dim⟩
 
 end QOU.Interactions

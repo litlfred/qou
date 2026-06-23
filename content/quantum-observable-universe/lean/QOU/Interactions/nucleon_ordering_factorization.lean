@@ -84,6 +84,6 @@ theorem nucleon_ordering_factorization [ctx : NucleonOrderingFactorizationContex
                 ctx.W_alt * ctx.A_pi ∧
     (ctx.cost_std = 4 ∧ ctx.cost_naive = 36) ∧
     (ctx.n_symmetric_evaluations = 1 ∧ ctx.n_alternating_evaluations = 1) :=
-  sorry
+  ⟨ctx.h_master, ⟨ctx.h_cost_std, ctx.h_cost_naive⟩, ⟨ctx.h_symmetric_evaluations, ctx.h_alternating_evaluations⟩⟩
 
 end QOU.Interactions
