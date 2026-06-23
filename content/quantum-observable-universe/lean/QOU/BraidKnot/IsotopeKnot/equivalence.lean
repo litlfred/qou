@@ -70,6 +70,6 @@ concept categorically — element = isotope class.*
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/isotope-knot-equivalence.ts
 theorem equivalence [ctx : EquivalenceContext] :
     Equivalence ctx.isotope :=
-  sorry
+  ⟨ctx.claim_reflexivity, ctx.claim_symmetry, ctx.claim_transitivity⟩
 
 end QOU.BraidKnot.IsotopeKnot

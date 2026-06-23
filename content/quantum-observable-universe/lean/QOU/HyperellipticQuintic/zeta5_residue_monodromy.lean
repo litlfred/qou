@@ -72,7 +72,7 @@ lemma zeta5_add_inv : zeta5 + zeta5^4 = 2 * (Real.cos (2 * Real.pi / 5) : ℂ) :
   have h_inv : zeta5 ^ 4 = zeta5⁻¹ := by
     calc zeta5 ^ 4 = zeta5 ^ 4 * (zeta5 * zeta5⁻¹) := by rw [mul_inv_cancel₀ h_nz, mul_one]
       _ = (zeta5 ^ 4 * zeta5) * zeta5⁻¹ := by ring
-      _ = zeta5 ^ 5 * zeta5⁻¹ := by ring_nf; rfl
+      _ = zeta5 ^ 5 * zeta5⁻¹ := by ring_nf
       _ = 1 * zeta5⁻¹ := by rw [zeta5_pow_five]
       _ = zeta5⁻¹ := by ring
   rw [h_inv, zeta5]
