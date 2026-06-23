@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:41:31.201242+00:00",
-  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
+  "computedAt": "2026-06-23T11:27:26.944019+00:00",
+  "commitSha": "c70b515433b5b426a73a379341a7ceabd661eb6d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -2325,6 +2325,8 @@
         "chi-at-q0-matrix-m-deuteron.witness.json",
         "chi-at-q0-matrix-m-tritium.witness.json",
         "chi-at-q0-rust-lossless-helium-4.witness.json",
+        "chi-content-eigenbasis.witness.json",
+        "chi-content-single-mode.witness.json",
         "chi-deuteron-free-h6-at-q0-50dps.witness.json",
         "chi-deuteron-free-h6-at-qinv-50dps.witness.json",
         "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
@@ -2463,6 +2465,7 @@
         "e0-calibration-audit.witness.json",
         "e0-lambda-composite.witness.json",
         "e0-lambda-tryall.witness.json",
+        "eigenbasis-structural-lemmas.witness.json",
         "eigenvalue-reeb-extension-h4-h5.witness.json",
         "electron-m_e-derivation.witness.json",
         "em-linking-invariant-probe.witness.json",
@@ -2487,6 +2490,7 @@
         "full-twist-delta-n2-verification.witness.json",
         "gamma-gamma-pair-production-decomposition.witness.json",
         "gap-a1-binding-k-sdp-feasibility.witness.json",
+        "gap-a3-deuteron-plambda-flat-baseline.witness.json",
         "garside-irrep-qvalues.witness.json",
         "gb-depth-period-bring-fig8.witness.json",
         "gb-filtration-jet-order-reader.witness.json",
@@ -2596,10 +2600,14 @@
         "k-star-search-phase5d-5.witness.json",
         "k-star-variance-phase5d-5b.witness.json",
         "kazhdan-lusztig-canonical-basis.witness.json",
+        "keystone-habiro-wrt-s3-2i.witness.json",
         "keystone-icosahedral-irrep-rotation-step1.witness.json",
         "keystone-icosahedral-irrep-rotation-step2.witness.json",
         "keystone-qdeform-projector-shift.witness.json",
         "keystone-reeb-casimir-chirality-step3.witness.json",
+        "keystone-schurweyl-dual-sides.witness.json",
+        "keystone-schurweyl-su2-rowcount.witness.json",
+        "keystone-wrt-color-schurweyl.witness.json",
         "kite-tail-reconciliation.witness.json",
         "kite_tail_reconciliation.witness.json",
         "knot-factor-skein-verification.witness.json",
@@ -3003,6 +3011,7 @@
         "yekutieli-per-cell-dim-h3-normalisation-probe.witness.json",
         "yekutieli-volume-join.witness.json",
         "z-habiro-increment-probe.witness.json",
+        "zhabiro-phiq-production-crosscheck.witness.json",
         "zhabiro-phiq-wiring.witness.json",
         "zhabiro-physical-z-pin.witness.json"
       ]
