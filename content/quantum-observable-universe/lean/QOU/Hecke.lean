@@ -5,6 +5,7 @@ import QOU.Hecke.MarkovTraceProduct
 import QOU.Hecke.MarkovPairZ2
 import QOU.Hecke.Wedderburn
 import QOU.Hecke.Hoefsmit
+import QOU.Hecke.PauliChannelBinding
 
 /-!
 # Hecke algebra infrastructure — module index
