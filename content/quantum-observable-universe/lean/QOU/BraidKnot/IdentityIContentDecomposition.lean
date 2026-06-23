@@ -23,7 +23,7 @@ Jucys–Murphy infrastructure, so the *general* (A) and (B) are multi-session in
 builds.  This file delivers what is feasible **today**, sorry-free where possible:
 
 * (A) is given a self-contained computable model (partition = weakly-decreasing
-  `List ℕ`) and **machine-checked on representative partitions** (`native_decide`);
+  `List ℕ`) and **machine-checked on all partitions `n ≤ 9`** (kernel `decide`);
   the general statement is carried honestly with `sorry` + `-- Ref:` to the proof.
 * (B)'s computational heart — the identity coefficient of the central Jucys–Murphy
   element `Σ_k X_k²`, namely `Σ_{k<n} k = binom(n,2)` — is **proved sorry-free**;
@@ -58,7 +58,7 @@ def sz (l : List ℕ) : ℕ := l.sum
 
 /-! ### (A) machine-checked for ALL partitions `n ≤ 9` (sorry-free)
 
-`Σ_c h_c² = Σ_c c(c)² + n²` verified by `native_decide` over **every** partition with
+`Σ_c h_c² = Σ_c c(c)² + n²` verified by kernel `decide` over **every** partition with
 `n ≤ 9` (96 of them) — a uniform bounded-universal, strengthening earlier hand-picked
 instances.  Genuine native computation, not stubs. -/
 
@@ -81,7 +81,7 @@ def allPartsLE9 : List (List ℕ) :=
    [3, 2, 1, 1, 1, 1], [3, 1, 1, 1, 1, 1, 1], [2, 2, 2, 2, 1], [2, 2, 2, 1, 1, 1],
    [2, 2, 1, 1, 1, 1, 1], [2, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1]]
 
-/-- **(A) for all partitions `n ≤ 9`** — sorry-free `native_decide` over `allPartsLE9`. -/
+/-- **(A) for all partitions `n ≤ 9`** — sorry-free kernel `decide` over `allPartsLE9`. -/
 theorem identityA_verified_le9 :
     ∀ l ∈ allPartsLE9, sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 := by
   decide
