@@ -423,7 +423,7 @@ Actions billing issue, NOT a problem with the code:
 - **Multiple jobs fail together.** Same `started_at` timestamp
   across `validate`, `Content pipeline`, `Build all papers + commit
   sidecar`, etc.
-- **Local reproduction passes.** `bun run validate <paper>` exits 0,
+- **Local reproduction passes.** `bun run scripts/run-validate.ts content/<paper>` exits 0,
   witness-pipeline Python scripts exit 0, no `.lean` changes.
 - **Webhook payload says `conclusion: failure`** but no error log
   exists because the job never actually started.
@@ -1040,9 +1040,21 @@ into `lean: { ref: "<pkg>:<Decl>" }` using the paper directory to
 choose the Lake package prefix (see `LEAN_PACKAGES` in
 `folio-assistant/schemas/lean-packages.ts`).
 
-After the migration, re-run `bun run validate` to confirm the schema
-is clean before continuing your task.  **Do not add `decl` back** to
-unblock a merge — that field was removed from the schema on purpose.
+After the migration, re-run `bun run scripts/run-validate.ts content/<paper>`
+to confirm the schema is clean before continuing your task.  **Do not add
+`decl` back** to unblock a merge — that field was removed from the schema on
+purpose.
+
+> **Currency note (miga, 2026-06-23).** The content pipeline + schemas now live
+> in the separate `litlfred/folio-assistant` repo, wired into this checkout by
+> [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh) (clones
+> the platform as a sibling + symlinks `folio-assistant/`). Run it **once** before
+> any validate / pipeline command. The former `package.json` shortcuts
+> (`bun run validate`, `migrate-lean-refs`, `validate-refs`, `export-bibtex`) were
+> dropped in the migration; only `scripts/run-validate.ts` has a standalone
+> replacement so far — the others await re-wiring (track under the `miga` epic).
+> The lean.ref migration above is corpus-complete (0 legacy `decl:` shapes
+> remain), so it is now historical.
 
 If new `.lean` files were added on your branch, their content-block
 `lean.ref` URIs must use the correct `<package>:` prefix for the
@@ -1380,7 +1392,7 @@ permitted for defined terms. See
   forms `:defterm[term]` / `:refterm[term]` use the bracket text as
   both label and slug.
 - **LaTeX**: use `\defterm{slug}[{Visible}]` / `\refterm{slug}[{Visible}]`.
-- **Validation**: `bun run validate <paper>` enforces five rules
+- **Validation**: `bun run scripts/run-validate.ts content/<paper>` enforces five rules
   (`defterm-declared`, `defterm-marked`, `refterm-resolves`,
   `defterm-unique`, plus opt-in `term-mention-coverage` via `--strict`).
   Run with `--strict` once the chapter has been backfilled.
