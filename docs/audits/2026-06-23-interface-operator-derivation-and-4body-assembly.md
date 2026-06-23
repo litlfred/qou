@@ -113,3 +113,42 @@ narrowing the search to the assembly *functional form* and the energy scale.
 - [`computations/closed_form_tau_M.py`](../../computations/closed_form_tau_M.py) — the interface product
 - [`computations/binding_canonical.py`](../../computations/binding_canonical.py) — `B = E₀(tr_M_free − tr_M_atom)`
 - [`docs/coordination/option-e.md`](../coordination/option-e.md) — Δ_λ / binding ledger (PROBE 2 = A=4 interface)
+
+---
+
+## Follow-up — candidate #1: additive / log linked-cluster interface form
+
+Task 2 showed the *multiplicative* deficit `B = E₀·τ_vac·(1−∏f)` saturates
+(`(1−∏f)→1`), capping the `B(⁴He)/B(D)` ratio at ~2.7–2.9 vs AME 12.72. The
+natural fix: an **additive / linked-cluster** interface term, where per-bond
+contributions **sum** (grow ∝ #bonds) instead of multiplying (saturate).
+`log[τ_M(atom)/τ_M(vac)] = ∑ᵢ log fᵢ`, so the per-bond binding strength carried
+additively is `∑ᵢ(−log fᵢ) > 0`. Scanned forms (all with the *same* single scale
+E₀, **zero** tuned parameters) × chain/complete topology
+(`binding_additive_linked_cluster_probe.py`):
+
+| form | B(⁴He)/B(D) | RMS\|err\| | note |
+|------|----:|----:|------|
+| M (multiplicative deficit) | 2.70 / 2.89 | 44 / 41% | baseline; saturates |
+| L  `E₀·∑(−log f)` (complete) | 6.78 | **27%** | best RMS; ⁴He −30% |
+| LV `E₀·τ_vac·∑(−log f)` (complete) | **9.89** | 96% | closest scaling; overshoots light |
+| DV `E₀·τ_vac·∑(1−f)` (complete) | 9.36 | 38% | **⁴He = 28.60 MeV, +1.07%** |
+
+**Reading — direction CONFIRMED, not a closure.** Every additive form out-scales
+the multiplicative baseline (2.7 → 6.8–9.9), so summing over bonds is the right
+A-scaling mechanism. Two notable parameter-free near-hits: `DV/complete`
+reproduces **⁴He to +1.07%** (28.60 vs 28.296), and `L/complete` gives the lowest
+overall RMS (27%). But none closes: the additive×τ_vac forms overshoot the light
+atoms (D +37%, T +47%) because τ_vac multiplies a bond-sum that already grows,
+and the pure-additive `L` then undershoots ⁴He (−30%). The residual is a
+**saturation curve** (the empirical B/A ≈ const that peaks at ⁴He): the per-bond
+`−log f` weights are A-flat, so they can't bend B/A. Closing it needs either an
+A-dependent E₀ or a bond weight beyond the bare Markov factor — i.e. a genuine
+additional input, not a re-parameterization of the existing factors.
+
+So candidate #1 moves binding from "wrong A-scaling" (multiplicative, 4.4× short)
+to "right A-scaling, wrong curvature" (additive, ⁴He to ~1% but light-atom
+overshoot) — a real step, and it localizes the remaining gap to the
+saturation/curvature term rather than the interface factor or topology.
+
+→ `binding_additive_linked_cluster_probe.py` · `binding-additive-linked-cluster-scan.witness.json`
