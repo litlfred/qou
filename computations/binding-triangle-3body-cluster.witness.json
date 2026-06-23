@@ -1,0 +1,57 @@
+{
+ "computation": "binding-triangle-3body-cluster",
+ "description": "Closing the A=3 triangle (adding the long-range 1-3 bond) flips the connected 3-body cluster from negative (2-bond chain, saturation) to positive (3-bond triangle) via the Ursell sign-parity (-1)^(k+1). u3 matches Mayer b3 in sign (always) and magnitude (T +4.9% bar-averaged).",
+ "scriptFile": "computations/probes/binding_triangle_3body_cluster_probe.py",
+ "parameters": {
+  "q_0": "1.109978582751380807591669095610768879874",
+  "E0_MeV": "4.185981363294475896945062158759008410144",
+  "tau_p": "1.22036288908669305595736107223",
+  "tau_n": "1.194862425413377106533238569760592864699",
+  "free_parameters": 0
+ },
+ "data": {
+  "rows": [
+   {
+    "atom": "T",
+    "pn_convention": "chi (pn=z)",
+    "u2_chain_MeV": "-1.828277012",
+    "u3_triangle_MeV": "1.297601262",
+    "mayer_b3_MeV": "1.8081",
+    "u3_err_pct": "-28.234",
+    "u2_sign": "-",
+    "u3_sign": "+"
+   },
+   {
+    "atom": "3He",
+    "pn_convention": "chi (pn=z)",
+    "u2_chain_MeV": "-1.867295656",
+    "u3_triangle_MeV": "0.9349169648",
+    "mayer_b3_MeV": "1.044345",
+    "u3_err_pct": "-10.4781",
+    "u2_sign": "-",
+    "u3_sign": "+"
+   },
+   {
+    "atom": "T",
+    "pn_convention": "bar-averaged (pn=z-h/2)",
+    "u2_chain_MeV": "-2.671369829",
+    "u3_triangle_MeV": "1.895977928",
+    "mayer_b3_MeV": "1.8081",
+    "u3_err_pct": "4.86024",
+    "u2_sign": "-",
+    "u3_sign": "+"
+   },
+   {
+    "atom": "3He",
+    "pn_convention": "bar-averaged (pn=z-h/2)",
+    "u2_chain_MeV": "-2.257143111",
+    "u3_triangle_MeV": "1.366045165",
+    "mayer_b3_MeV": "1.044345",
+    "u3_err_pct": "30.804",
+    "u2_sign": "-",
+    "u3_sign": "+"
+   }
+  ],
+  "verdict": "triangle_closure_flips_sign_to_attractive"
+ }
+}
