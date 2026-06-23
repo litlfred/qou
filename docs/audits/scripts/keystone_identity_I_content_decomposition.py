@@ -109,6 +109,56 @@ def contents(lam):
     return [j - i for i, row in enumerate(lam) for j in range(row)]
 
 
+def beta_set(lam):
+    """First-column hooks beta_i = lam_i + r - i (1-indexed row), strictly decreasing."""
+    r = len(lam)
+    return [lam[i] + r - (i + 1) for i in range(r)]
+
+
+def check_proof_of_A_lemmas(NMAX=22):
+    """Verify the lemmas of the PAPER PROOF of (A) (audit doc 2026-06-23), so the
+    proof's steps are part of this committed artifact (not just scratch):
+
+      (L1) star:  sum_c h^2 = sum_i sum_{s=1}^{beta_i} s^2 - sum_{i<t}(beta_i-beta_t)^2
+      (Lc) per-bead gap count = lam_i  (=> row-i contents are exactly {j-i})
+      (Lal) sum_c arm*leg = sum_{i,k} lam_i*min(lam_i,lam_k)
+                            - sum_i i*lam_i^2 - sum_j j*lp_j^2 + sum_i i*C(lam_i+1,2)
+
+    None uses the hook-length formula; (Lal)+the elementary single-sums assemble to
+    sum h^2 - sum c^2 = n^2.
+    """
+    okL1 = okLc = okLal = True
+    for n in range(1, NMAX + 1):
+        for lam in partitions(n):
+            lp = conjugate(lam)
+            r = len(lam)
+            B = beta_set(lam)
+            # (L1) beta-set hook-square formula
+            star = sum(b * (b + 1) * (2 * b + 1) // 6 for b in B)
+            for x in range(r):
+                for t in range(x + 1, r):
+                    star -= (B[x] - B[t]) ** 2
+            if star != sum(h * h for h in hooks(lam)):
+                okL1 = False
+            # (Lc) number of gaps below beta_i equals lam_i
+            Bset = set(B)
+            M = (max(B) if B else 0) + 1
+            G = [p for p in range(M) if p not in Bset]
+            for i in range(r):
+                if sum(1 for g in G if g < B[i]) != lam[i]:
+                    okLc = False
+            # (Lal) arm*leg row-pair closed form
+            Sal = sum((lam[i] - (j + 1)) * (lp[j] - (i + 1))
+                      for i, row in enumerate(lam) for j in range(row))
+            rp = sum(lam[i] * min(lam[i], lam[k]) for i in range(r) for k in range(r))
+            t2 = sum((i + 1) * lam[i] ** 2 for i in range(r))
+            t3 = sum((j + 1) * lp[j] ** 2 for j in range(len(lp)))
+            t4 = sum((i + 1) * lam[i] * (lam[i] + 1) // 2 for i in range(r))
+            if rp - t2 - t3 + t4 != Sal:
+                okLal = False
+    return okL1, okLc, okLal
+
+
 def dim(lam, hk=None):
     """f^lambda via the hook-length formula -- used ONLY to compute the
     Plancherel weight for the cross-checks; the DERIVATION of M(n) above does
@@ -211,11 +261,20 @@ def main():
                   f"{('OK' if ok else 'FAIL'):>6}")
     print(f"    ... all three agree, n=1..{NMAX} : {'PASS' if okD else 'FAIL'}")
 
+    # ---- (P) paper-proof-of-(A) lemmas (beta-set / arm-leg) ----
+    okL1, okLc, okLal = check_proof_of_A_lemmas(NMAX)
+    okP = okL1 and okLc and okLal
+    print("\n(P) paper proof of (A): beta-set hook formula + per-bead content + arm-leg")
+    print(f"    (L1) sum h^2 = sum_i Sq(beta_i) - sum_{{i<t}}(bi-bt)^2 : {'OK' if okL1 else 'FAIL'}")
+    print(f"    (Lc) #gaps below beta_i = lam_i (=> contents {{j-i}})  : {'OK' if okLc else 'FAIL'}")
+    print(f"    (Lal) sum arm*leg = row-pair closed form              : {'OK' if okLal else 'FAIL'}")
+
     print("\n--- SELF-CHECKS ---")
     print(f"  (A)  per-partition  sum h^2 = sum c^2 + n^2  (all parts)   : {'PASS' if okA else 'FAIL'}")
     print(f"  (B)  E_Planch[sum c^2] = binom(n,2)                        : {'PASS' if okB else 'FAIL'}")
     print(f"  (Bx) JM a_e = sum(k-1) = binom(n,2) = E_Planch[sum c^2]    : {'PASS' if okBx else 'FAIL'}")
     print(f"  (D)  M(n) = binom(n,2)+n^2 = n(3n-1)/2 (decomp == direct)  : {'PASS' if okD else 'FAIL'}")
+    print(f"  (P)  paper-proof-of-(A) lemmas (L1,Lc,Lal)                 : {'PASS' if okP else 'FAIL'}")
 
     print("\n--- RESULT ---")
     print("  Identity I  M(n) = n(3n-1)/2  =  E_Planch[sum c^2] + n^2  =  binom(n,2) + n^2,")
@@ -227,7 +286,7 @@ def main():
     print("  standard C[S_n] Wedderburn-dimension / JM machinery.  No fit; nothing")
     print("  archimedean (q_0 and the 210 ppb target never appear).")
 
-    all_ok = okA and okB and okBx and okD
+    all_ok = okA and okB and okBx and okD and okP
     print("\nALL CHECKS PASS." if all_ok else "\nSELF-CHECK FAILED.")
     return 0 if all_ok else 1
 
