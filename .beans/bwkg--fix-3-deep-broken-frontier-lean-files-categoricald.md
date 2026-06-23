@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-06-23T17:03:11Z
-updated_at: 2026-06-23T23:27:35Z
+updated_at: 2026-06-23T23:55:01Z
 ---
 
 
@@ -49,3 +49,30 @@ REFINED TRIAGE 2026-06-23 (claude/fix-deep-broken-frontier, lean-direct vs curre
   imported here; Instanton exposes dq/dq_classical/proj_H). Needs: import Instanton + re-sync
   the theorem to the current structure API (the "Function expected at L66" residual).
 Both remaining = genuine deep structural work; best as a focused lean-lsp pass.
+
+## Progress 2026-06-23 (#2663)
+
+- ✅ **CategoricalDqSquared** — fixed red→green, sorry-free (library-critical:
+  QOU.lean imports it). Section ordering + imports (Instanton/Preadditive/Linear)
+  + closing `end` + `[Linear R_q C]`→`[Linear ℝ C]`.
+- ✅ **MarkovPeel** — fixed red→green, sorry-free (imported by MarkovPeelH3 +
+  markov-axiom-recursive-ascent). Added `[Add H] [SMul R H]` to the MarkovTrace
+  class + the 3 theorems; `h * top n`→`h • top n`.
+- ⏳ **QHookBound** — DEFERRED (orphan = latent-red, not a lake-build breaker).
+  Deeper than the calc fix the bean cites: after replacing the `;`-calc at L61
+  with `lt_trans hq_inv_lt hq`, **46 errors remain**, of three kinds:
+  1. Mathlib-API rot (current names needed): `inv_lt_one_iff_of_pos` (×6: L56,
+     137, 225, 261, 289, 333), `pow_lt_pow_left` (L59), `div_le_div_iff`
+     (L103, 380).
+  2. Dangling docstrings (two `/--` with no decl between): L65-80 before
+     `qInt_ratio_bound_m2`, and L204-215.
+  3. A genuine proof bug at `qInt_pos`: `pow_lt_pow_left hq_inv_lt …` uses
+     `q⁻¹ < 1` where the goal `q⁻¹^m < q^m` needs `q⁻¹ < q`
+     (`lt_trans hq_inv_lt hq`); plus several `nlinarith`/`rw` proofs need
+     re-tuning for the renamed lemmas.
+  Needs lean-lsp (leansearch/loogle) for the current lemma names + deliberate
+  per-proof debugging — a focused follow-up, not a mechanical sweep.
+  **NOTE (reconcile vs sibling REFINED TRIAGE above):** my 46-error count was
+  vs a stale olean cache (+31 behind main); the sibling reports QHookBound
+  ALREADY GREEN on current main. Re-verifying against current main before
+  acting — see #2663 follow-up.
