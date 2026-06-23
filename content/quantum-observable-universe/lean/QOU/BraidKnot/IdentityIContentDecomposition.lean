@@ -84,7 +84,7 @@ def allPartsLE9 : List (List ℕ) :=
 /-- **(A) for all partitions `n ≤ 9`** — sorry-free `native_decide` over `allPartsLE9`. -/
 theorem identityA_verified_le9 :
     ∀ l ∈ allPartsLE9, sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 := by
-  native_decide
+  decide
 
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
