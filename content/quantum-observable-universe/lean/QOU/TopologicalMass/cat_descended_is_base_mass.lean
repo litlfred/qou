@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.TopologicalMass.cat_descended_is_base_mass
 
@@ -42,6 +44,6 @@ $n+1$, and let $\varrho_0$ be its base-level descent.  Then
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-descended.ts
 theorem cat_descended_is_base_mass [ctx : CatDescendedIsBaseMassContext] :
     ctx.α = ctx.base_mass :=
-  sorry
+  by rw [ctx.h_alpha, ctx.h_base]
 
 end QOU.TopologicalMass

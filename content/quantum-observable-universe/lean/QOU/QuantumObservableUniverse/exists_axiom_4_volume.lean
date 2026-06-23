@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.QuantumObservableUniverse.exists_axiom_4_volume
 
@@ -47,7 +49,8 @@ $$
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.ts
 theorem exists_axiom_4_volume [ctx : ExistsAxiom4VolumeContext] :
-    ∀ g h : ctx.G, ctx.ε g = ctx.ε h :=
-  sorry
+    ∀ g h : ctx.G, ctx.ε g = ctx.ε h := by
+  intro g h
+  rw [ctx.det_eq_const g, ctx.det_eq_const h]
 
 end QOU.QuantumObservableUniverse

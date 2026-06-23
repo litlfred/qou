@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.TopologicalMass.cat_eigenspace_decomposition
 
@@ -46,7 +48,7 @@ components, giving
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-eigenspace.ts
 theorem cat_eigenspace_decomposition [ctx : CatEigenspaceDecompositionContext] :
-    ctx.α = ctx.α_descended + ctx.α_transient :=
-  sorry
+    ctx.α = ctx.α_descended + ctx.α_transient := by
+  rw [ctx.h_alpha, ctx.h_sum]
 
 end QOU.TopologicalMass
