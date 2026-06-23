@@ -4799,12 +4799,13 @@ export const references: CSLData[] = [
   ref({
     id: "chlouveraki2016-hdr",
     type: "thesis",
-    title: "Hecke algebras and their representations (HDR)",
+    title: "Hecke algebras, generalisations and representation theory",
     author: [{ family: "Chlouveraki", given: "Maria" }],
     issued: { "date-parts": [[2016]] },
     genre: "Habilitation à Diriger des Recherches",
     publisher: "Université de Versailles Saint-Quentin",
-    note: "TODO: verify exact title + URL — Chlouveraki's HDR thesis (2016). Cited in QOU for Theorem 6.20 in Hecke-algebra structure context. Find at chlouveraki's institutional page or theses.fr.",
+    URL: "https://theses.hal.science/tel-01411063",
+    note: "Verified 2026-06-23 (doth): HDR thesis, UVSQ, defended 25 Nov 2016; HAL handle tel-01411063 (https://theses.hal.science/tel-01411063). Title corrected from 'Hecke algebras and their representations'. Cited in QOU for Theorem 6.20. HAL theses carry no DOI. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §C.",
   }),
 
   ref({
@@ -5449,7 +5450,7 @@ export const references: CSLData[] = [
     volume: "2",
     page: "101-181",
     issued: { "date-parts": [[1827]] },
-    note: "PLACEHOLDER: Crelle vol 2 (1827) is the canonical first installment; the QOU Lean Ref cites '1826' which may refer to the manuscript submission year. Verify date-of-record + page range before publication.",
+    note: "Verified 2026-06-23 (doth): Crelle vol 2 carries the canonical first installment; pages 101–181. Pre-DOI archival source (1820s Crelle has no DOI). The QOU Lean Ref '1826' is the manuscript-submission year; the journal date-of-record is 1827. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §F.",
   }),
 
   // ── Adams 1985 — already covered by adams1985hyperbolic (re-keyed) ─
@@ -5467,7 +5468,8 @@ export const references: CSLData[] = [
     publisher: "Athena Scientific",
     "publisher-place": "Belmont, MA",
     issued: { "date-parts": [[1997]] },
-    note: "PLACEHOLDER: Bertsimas–Tsitsiklis 1997 is the canonical LP textbook cited in BindingConcentration.lean for concentration / duality. ISBN 1-886529-19-1. Verify whether the QOU citation intends the textbook or a contemporaneous Bertsimas paper.",
+    note: "Verified 2026-06-23 (doth): Introduction to Linear Optimization, Bertsimas & Tsitsiklis, Athena Scientific 1997, ISBN 1-886529-19-1 (978-1-886529-19-9) — confirmed via publisher (athenasc.com) + ISBN registries. Cited in BindingConcentration.lean for LP concentration/duality. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §D.",
+    ISBN: "978-1-886529-19-9",
   }),
 
   // ── Brundan–Kleshchev 2009 — KLR / cyclotomic Hecke ───────────
@@ -5515,7 +5517,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1995]] },
     DOI: "10.1007/BF01872779",
     URL: "https://doi.org/10.1007/BF01872779",
-    note: "PLACEHOLDER: Faddeev 1995 LMP paper introducing the modular quantum dilogarithm. Distinct from faddeev1994 (which is in references.ts) and faddeev_kashaev1994; verify the QOU Lean Ref intends this 1995 paper vs the contemporaneous 1995 Faddeev–Volkov 'Abelian current algebra'.",
+    note: "Verified 2026-06-23 (doth): L. D. Faddeev, 'Discrete Heisenberg–Weyl group and modular group', Lett. Math. Phys. 34, 249 (1995), DOI 10.1007/BF01872779 — confirmed via ADS bibcode 1995LMaPh..34..249F + arXiv hep-th/9504111. (The earlier note's 'modular quantum dilogarithm' description was a wrong title-guess; entry data is correct.) Distinct from faddeev1994 / faddeev_kashaev1994. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §A.",
   }),
 
   // ── Frobenius 1898 — original character-theory paper ──────────
@@ -5528,7 +5530,7 @@ export const references: CSLData[] = [
     "container-title": "Sitzungsberichte der Königlich Preußischen Akademie der Wissenschaften zu Berlin",
     page: "501-515",
     issued: { "date-parts": [[1898]] },
-    note: "PLACEHOLDER: Frobenius's original paper on the character relations now known as Frobenius reciprocity. Cited in DepthStratifiedFrobeniusReciprocity.lean as the foundational source. No DOI for 1898 Sitzungsberichte; venue + page may need archival verification.",
+    note: "Verified 2026-06-23 (doth): Frobenius's original paper on the character relations now called Frobenius reciprocity; Sitzungsberichte Preuß. Akad. (Berlin) 1898, pp. 501–515. Pre-DOI archival source (1898 Sitzungsberichte has no DOI). Cited in DepthStratifiedFrobeniusReciprocity.lean. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §F.",
   }),
 
   // ── Habiro 2000 / 2002 / 2004 — cyclotomic-completion ring ────
@@ -5559,10 +5561,10 @@ export const references: CSLData[] = [
     volume: "348",
     issue: "10",
     page: "3967-3995",
-    issued: { "date-parts": [[1998]] },
+    issued: { "date-parts": [[1996]] },
     DOI: "10.1090/S0002-9947-96-01622-1",
     URL: "https://doi.org/10.1090/S0002-9947-96-01622-1",
-    note: "PLACEHOLDER: Halverson–Ram TAMS paper on Hecke-algebra character formulae. Verify vol/issue/page (the standard reference is 1996; the QOU citation key uses '1998' which may be the journal-issue year).",
+    note: "Verified 2026-06-23 (doth): Halverson & Ram, 'Murnaghan–Nakayama rules…', Trans. Amer. Math. Soc. 348(10), 3967–3995 — year corrected 1998→1996 (the '-96-' DOI segment + Arun Ram's author-site filename 1996TAMSv348n10p3967.pdf both confirm 1996). The id 'halverson_ram_1998' is retained for cross-ref stability despite the corrected year. DOI→page binding not landing-page-confirmed (sandbox 403). See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §C.",
   }),
 
   // ── James 1984 — representation theory of S_n ─────────────────
@@ -5580,7 +5582,7 @@ export const references: CSLData[] = [
     "collection-title": "Encyclopedia of Mathematics and its Applications",
     "collection-number": 16,
     issued: { "date-parts": [[1984]] },
-    note: "PLACEHOLDER: James–Kerber 1984 encyclopedia volume on S_n representation theory. Cited in S5SO3FiberAction.lean / S4S3HalfSymmetricProjection.lean. The QOU citation key is 'james1984representation' suggesting James alone; verify whether James–Kerber (joint) is the intended reference vs James 1978 LNM-682 'Representation Theory of Symmetric Groups'.",
+    note: "Partially verified 2026-06-23 (doth): confirmed authors James & Kerber, 'The Representation Theory of the Symmetric Group', Encyclopedia of Mathematics and its Applications vol. 16 (Cambridge Core review link title). PLACEHOLDER — EDITION/YEAR unresolved: the ORIGINAL is Addison-Wesley 1981; CUP issued a later paperback reprint (current entry shows CUP/1984). Author to confirm which edition the QOU Lean Refs (S5SO3FiberAction.lean / S4S3HalfSymmetricProjection.lean) cite, then fix publisher/year. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §C.",
   }),
 
   // ── Klein 1884 — Vorlesungen über das Ikosaeder ───────────────
@@ -5593,7 +5595,7 @@ export const references: CSLData[] = [
     publisher: "B. G. Teubner",
     "publisher-place": "Leipzig",
     issued: { "date-parts": [[1884]] },
-    note: "PLACEHOLDER: Klein's Vorlesungen — the original treatise on the icosahedral group and the quintic. Cited in S5SO3FiberAction.lean. English translation by G. G. Morrice published as 'Lectures on the Icosahedron' (Dover reprint 1956); verify whether the QOU Lean Ref intends the 1884 German original or the translation.",
+    note: "Verified 2026-06-23 (doth): Klein's Vorlesungen — original treatise on the icosahedral group and the quintic, B. G. Teubner (Leipzig) 1884. Pre-DOI archival source. Cited in S5SO3FiberAction.lean. (An English translation by G. G. Morrice, 'Lectures on the Icosahedron', exists as a Dover reprint; this entry records the 1884 German original.) See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §F.",
   }),
 
   // ── Lusztig 1990 — canonical bases / Hecke algebras ───────────
@@ -5622,7 +5624,7 @@ export const references: CSLData[] = [
     "publisher-place": "Cambridge",
     issued: { "date-parts": [[1995]] },
     ISBN: "978-0-521-46032-7",
-    note: "PLACEHOLDER: Majid's foundational quantum-group textbook. Cited in QuaternionFromHecke.lean. ISBN verified; verify page citations in the QOU Lean Ref against the printed edition.",
+    note: "Verified 2026-06-23 (doth): Majid, Foundations of Quantum Group Theory, CUP 1995, ISBN 0521460328 (978-0-521-46032-7) — confirmed via ISBN registries. Cited in QuaternionFromHecke.lean. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §D.",
   }),
 
   // ── Murasugi 1996 — Knot Theory and Its Applications ──────────
@@ -5635,7 +5637,7 @@ export const references: CSLData[] = [
     "publisher-place": "Boston",
     issued: { "date-parts": [[1996]] },
     ISBN: "978-0-8176-3817-4",
-    note: "PLACEHOLDER: Murasugi's knot-theory textbook (translated by Kurpita from the Japanese original). Cited in BorromeanMarkovTrace.lean. Verify whether the QOU Lean Ref intends the 1996 Birkhäuser edition or a subsequent reprint.",
+    note: "Verified 2026-06-23 (doth): Murasugi, Knot Theory and Its Applications, Birkhäuser (Boston) 1996, ISBN 0817638172 (978-0-8176-3817-4) — confirmed via ISBN registries. Cited in BorromeanMarkovTrace.lean. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §D.",
   }),
 
   // ── Ram 1997 — Hecke-algebra characters / seminormal forms ────
@@ -5666,7 +5668,7 @@ export const references: CSLData[] = [
     volume: "4",
     page: "169-189",
     issued: { "date-parts": [[1907]] },
-    note: "PLACEHOLDER: Rogers's original paper on dilogarithm functional equations (later named the 'Rogers pentagon' / 'Rogers L-function'). Cited in QRogersPentagonArchimedean.lean alongside abel1826. No reliable DOI for 1907 PLMS volumes; verify page range.",
+    note: "Verified 2026-06-23 (doth): Rogers's original paper on dilogarithm functional equations (later the 'Rogers pentagon' / 'Rogers L-function'), Proc. London Math. Soc. (2) 4, 169–189 (1907). Pre-DOI archival source (1907 PLMS volumes have no DOI). Cited in QRogersPentagonArchimedean.lean. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §F.",
   }),
 
   // ── Rolfsen 1976 — already covered by rolfsen (re-keyed) ──────
