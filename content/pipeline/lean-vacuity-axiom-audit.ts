@@ -243,6 +243,13 @@ function stripCommentLines(src: string): string[] {
 }
 
 const PROVABLE_KINDS = /^(theorem|lemma|proposition|corollary|example)\b/;
+// Kinds an agent can abuse to DODGE the vacuity audit: re-declaring a
+// vacuous `theorem X : True := trivial` as `def X : True := trivial`
+// hides it from every `PROVABLE_KINDS`-guarded detector below. A real
+// `def`/`abbrev`/`instance` almost never has type `True`, so a
+// trivial-bodied `: True` declaration of these kinds is the dodge
+// signature and is flagged (see `detectTrivialTrue`).
+const DODGE_KINDS = /^(def|abbrev|instance)\b/;
 const DECL_START =
   /^\s*(?:@\[[^\]]*\]\s*)?(?:private\s+|protected\s+|noncomputable\s+|nonrec\s+|scoped\s+|partial\s+|unsafe\s+)*(theorem|lemma|proposition|corollary|example|def|abbrev|instance|axiom|structure|class)\s+([A-Za-z_][\w'.]*)/;
 
@@ -395,6 +402,23 @@ function findRealDecl(
 
 // ── Category detectors ──────────────────────────────────────────────
 
+/**
+ * True when the `.lean`'s content-block sibling `.ts` is a `conjecture`
+ * block. Such a block's Lean file may legitimately carry a `def … :
+ * True := trivial` placeholder (the conjecture's content is the unproved
+ * input per §3b), so it is an acknowledged conjectural representation —
+ * NOT an audit dodge. This is the "except conjectures" carve-out.
+ */
+function isConjectureBlock(leanAbs: string): boolean {
+  const ts = leanAbs.replace(/\.lean$/, ".ts");
+  if (!existsSync(ts)) return false;
+  try {
+    return /export\s+default\s+conjecture\s*\(/.test(readFileSync(ts, "utf-8"));
+  } catch {
+    return false;
+  }
+}
+
 const TRIVIAL_BODY = /^\s*(trivial|by\s+trivial|sorry|by\s+sorry|⟨⟩|by\s+exact\s+trivial)\s*$/;
 
 function detectTrivialTrue(
@@ -403,20 +427,28 @@ function detectTrivialTrue(
   fileIsStub: boolean,
   leanAbs: string,
 ): Hit | undefined {
-  if (!PROVABLE_KINDS.test(d.kind)) return undefined;
+  const isProvable = PROVABLE_KINDS.test(d.kind);
+  // `def`/`abbrev`/`instance` are scanned ONLY for the theorem→def
+  // audit-dodge (a trivial-bodied `: True`), never for the general
+  // `: True`-with-real-body or reflexive-tautology cases (a real def
+  // legitimately reduces to a value).
+  const isDodge = DODGE_KINDS.test(d.kind);
+  if (!isProvable && !isDodge) return undefined;
   const concl = conclusionOf(d.sig);
   const body = d.body.trim();
   let pattern: string | undefined;
   if (/^True\b/.test(concl) || concl === "True") pattern = "conclusion-True";
   else if (/^True(\s*[∧×]\s*True)+$/.test(concl)) pattern = "conclusion-True-conj";
   else {
-    // reflexive tautology: `: X = X := rfl`
-    const eq = concl.match(/^(.+?)=(.+)$/);
-    if (eq && /^\s*(rfl|by\s+rfl|Eq\.refl)\b/.test(body)) {
-      const lhs = eq[1].replace(/\s+/g, "");
-      const rhs = eq[2].replace(/\s+/g, "");
-      if (lhs && lhs === rhs)
-        return mk(d, "proof-no-trivial-true", "reflexive-tautology", false);
+    // reflexive tautology: `: X = X := rfl` — provable kinds only.
+    if (isProvable) {
+      const eq = concl.match(/^(.+?)=(.+)$/);
+      if (eq && /^\s*(rfl|by\s+rfl|Eq\.refl)\b/.test(body)) {
+        const lhs = eq[1].replace(/\s+/g, "");
+        const rhs = eq[2].replace(/\s+/g, "");
+        if (lhs && lhs === rhs)
+          return mk(d, "proof-no-trivial-true", "reflexive-tautology", false);
+      }
     }
     return undefined;
   }
@@ -424,15 +456,39 @@ function detectTrivialTrue(
   // shadow (real decl exists elsewhere → exempt) vs placeholder (no
   // real decl → genuine gap, flag).
   const isStubBody = TRIVIAL_BODY.test(body);
+  // The dodge is specifically a *trivial-bodied* `def : True`. A `def`
+  // concluding `True` with a real computational body is left to the
+  // agent pass (and is exceedingly rare), so do not flag it here.
+  if (isDodge && !isStubBody) return undefined;
   if (fileIsStub || isStubBody) {
     const real = findRealDecl(leanAbs, rawSrc, d.name);
     if (real) {
-      const h = mk(d, "proof-no-trivial-true", pattern, true);
+      const h = mk(
+        d,
+        "proof-no-trivial-true",
+        isDodge ? "def-disguised-true-shadow" : pattern,
+        true,
+      );
       h.exempt_reason = `shadow-stub (real formalisation: ${real})`;
       return h;
     }
-    // genuine placeholder — no resolvable real decl
-    return mk(d, "proof-no-trivial-true", "placeholder-true", false);
+    // "except conjectures": a `def : True` inside a `conjecture` content
+    // block is the acknowledged §3b placeholder, not a dodge.
+    if (isDodge && isConjectureBlock(leanAbs)) {
+      const h = mk(d, "proof-no-trivial-true", "def-disguised-true-conjecture", true);
+      h.exempt_reason = "conjecture-block Lean placeholder (§3b)";
+      return h;
+    }
+    // genuine placeholder — no resolvable real decl. A `def`-kind hit is
+    // the theorem→def dodge (a forbidden audit workaround, AGENTS.md
+    // §"No audit-dodging"); honest disposition is to state the real
+    // proposition with `sorry` + `-- Ref:`, or demote to `conjecture`.
+    return mk(
+      d,
+      "proof-no-trivial-true",
+      isDodge ? "def-disguised-true" : "placeholder-true",
+      false,
+    );
   }
   // `: True` with a non-trivial body is a genuinely vacuous proof.
   return mk(d, "proof-no-trivial-true", pattern, false);
