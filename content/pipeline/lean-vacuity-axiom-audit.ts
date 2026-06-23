@@ -409,14 +409,23 @@ function findRealDecl(
  * input per §3b), so it is an acknowledged conjectural representation —
  * NOT an audit dodge. This is the "except conjectures" carve-out.
  */
+const conjectureBlockCache = new Map<string, boolean>();
 function isConjectureBlock(leanAbs: string): boolean {
+  const cached = conjectureBlockCache.get(leanAbs);
+  if (cached !== undefined) return cached;
   const ts = leanAbs.replace(/\.lean$/, ".ts");
-  if (!existsSync(ts)) return false;
-  try {
-    return /export\s+default\s+conjecture\s*\(/.test(readFileSync(ts, "utf-8"));
-  } catch {
-    return false;
+  let result = false;
+  if (existsSync(ts)) {
+    try {
+      result = /export\s+default\s+conjecture\s*\(/.test(
+        readFileSync(ts, "utf-8"),
+      );
+    } catch {
+      result = false;
+    }
   }
+  conjectureBlockCache.set(leanAbs, result);
+  return result;
 }
 
 const TRIVIAL_BODY = /^\s*(trivial|by\s+trivial|sorry|by\s+sorry|⟨⟩|by\s+exact\s+trivial)\s*$/;
