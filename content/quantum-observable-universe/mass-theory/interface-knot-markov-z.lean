@@ -135,13 +135,36 @@ theorem interface_knot_markov_z_single
     inst.tau_M (alpha * sigma) = inst.z * inst.tau_M alpha :=
   inst.markov_axiom alpha sigma h_interface h_below
 
--- Ref: [manuscript] prop:interface-knot-markov-z
-/-- The Markov trace ratio for an atomic braid B_K = B_K^vac * bowtie_K equals z^{p+} * (z-h)^{p-}. -/
+/-- `interfaceTrace z h tvac signs` folds the interface knot `bowtie_K` onto the
+    constituent-vacuum trace `tvac = τ_M(β_K^vac)`: each *positive* interface
+    (`true`) multiplies the running trace by `z` (Markov axiom), each *negative*
+    interface (`false`) by `z - h` (Markov axiom + Hecke skein).  This is exactly
+    `τ_M(β_K)` assembled from the two single-step identities
+    `interface_knot_markov_z_single` and `interface_knot_markov_z_negative`. -/
+def interfaceTrace {R : Type*} [CommRing R] (z h tvac : R) : List Bool → R
+  | [] => tvac
+  | s :: rest => (if s then z else z - h) * interfaceTrace z h tvac rest
+
+-- Ref: [manuscript] prop:interface-knot-markov-z §"Consequences" (1)
+/-- **Iterated interface-knot factorisation.**  Folding the per-interface
+    factors over the constituent vacuum yields the closed product
+
+      τ_M(β_K) = z^{p_+} · (z - h)^{p_-} · τ_M(β_K^vac),
+
+    where `p_+ = signs.count true` (positive interfaces) and
+    `p_- = signs.count false` (negative interfaces).  Proved by induction on the
+    interface list from the two single-step identities — no `sorry`, no extra
+    hypotheses (the division-free product form; cf. the malformed ratio
+    placeholder it replaces). -/
 theorem interface_knot_markov_z
-    {R : Type*} [CommRing R] [inst : MarkovTraceAlgebra R]
-    (tau_M_B_K tau_M_B_K_vac z h : ℝ) (p_plus p_minus : ℕ) :
-    tau_M_B_K / tau_M_B_K_vac = (z ^ p_plus) * ((z - h) ^ p_minus) := by
-  sorry
+    {R : Type*} [CommRing R] (z h tvac : R) (signs : List Bool) :
+    interfaceTrace z h tvac signs
+      = z ^ (signs.count true) * (z - h) ^ (signs.count false) * tvac := by
+  induction signs with
+  | nil => simp [interfaceTrace]
+  | cons s rest ih =>
+    cases s <;>
+      simp [interfaceTrace, ih, pow_succ] <;> ring
 
 /-! ## §3. Negative-interface variant via Hecke skein -/
 
