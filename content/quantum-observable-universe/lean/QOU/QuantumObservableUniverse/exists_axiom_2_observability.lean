@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.QuantumObservableUniverse.exists_axiom_2_observability
 
@@ -38,7 +40,7 @@ modulo the unit, verifying axiom~(2) of
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.ts
 theorem exists_axiom_2_observability [ctx : ExistsAxiom2ObservabilityContext] :
-    ctx.hom_dim = 0 :=
-  sorry
+    ctx.hom_dim = 0 := by
+  rw [ctx.hom_dim_eq, ctx.total_hom_dim_eq]
 
 end QOU.QuantumObservableUniverse
