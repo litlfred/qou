@@ -292,22 +292,34 @@ def main() -> int:
             rel_pairs["peel_vs_chi"] = fabs(p_val - c_val) / fabs(p_val) if p_val != 0 else mpf(0)
         rel_max = max(rel_pairs.values()) if rel_pairs else mpf(0)
 
-        # Split the certification: the 1 ppQ L1 claim rests ONLY on the
-        # float-clean methods (Hoefsmit / chi-cache / Habiro). peel is held
-        # to a looser float tolerance — it is an independent cross-check,
-        # not a 1 ppQ-certifying path (see header).
-        exact_keys = ("hoef_vs_chi", "hoef_vs_habiro", "chi_vs_habiro")
-        exact_pairs = {k: rel_pairs[k] for k in exact_keys if k in rel_pairs}
-        exact_max = max(exact_pairs.values(), default=mpf(0))
-        peel_max = max((v for k, v in rel_pairs.items() if "peel" in k),
-                       default=mpf(0))
-        # certified_1ppQ requires ≥2 float-clean methods agreeing (an actual
-        # cross-check), not just one method present.
-        certified_1ppQ = bool(exact_pairs) and exact_max < TOLERANCE_PPQ
-        ok = exact_max < TOLERANCE_PPQ and peel_max < TOLERANCE_PEEL
+        # Certification gates on the CANONICAL p-n convention. Production
+        # tr_M uses `pn_convention="bring_color_weighted"` (the
+        # closed_form_tau_M default / owner directive). markov_peel and
+        # chi-cache are the two INDEPENDENT exact-mpfr implementations of
+        # that color-weighted convention; their agreement certifies the
+        # 1 ppQ L1 gate. The Rust canonical-chi (Hoefsmit) and Habiro legs
+        # are SIGN-ONLY (color-blind) cross-checks — they agree for A=1
+        # (no inter-nucleon crossing) but diverge for A>=2 by the
+        # color-weighting amount (δ·h/4 ~ 1.8e-4), which is EXPECTED, not a
+        # failure. They are reported as informational, not gating.
+        # (See docs/audits/2026-06-23-trM-crosscheck-colorweighting-split-at-C.md.)
+        cw_pairs = {k: rel_pairs[k] for k in ("peel_vs_chi",) if k in rel_pairs}
+        exact_max = max(cw_pairs.values(), default=mpf(0))
+        # Color-blind informational deltas (vs the canonical color-weighted
+        # peel): zero at A=1, ~1.8e-4 at A>=2 by construction.
+        colorblind_max = max(
+            (rel_pairs[k] for k in ("hoef_vs_peel", "peel_vs_habiro")
+             if k in rel_pairs), default=mpf(0))
+        peel_max = colorblind_max  # back-compat: reported field below
+        # certified_1ppQ requires the two color-weighted methods to agree.
+        certified_1ppQ = bool(cw_pairs) and exact_max < TOLERANCE_PPQ
+        ok = certified_1ppQ
         if not ok:
             any_diverge = True
-        status = "OK" if ok else "DIVERGE"
+        # "OK" = color-weighted methods certify; suffix "+cb" flags that the
+        # color-blind cross-check legs diverge (expected for A>=2).
+        status = ("OK" if ok else "DIVERGE") + (
+            " (cb≠)" if (ok and colorblind_max > TOLERANCE_PEEL) else "")
 
         h_str = str(h_val)[:18] if h_val is not None else "(no Hoefsmit)"
         p_str = str(p_val)[:18] if p_val is not None else "(no peel)"
