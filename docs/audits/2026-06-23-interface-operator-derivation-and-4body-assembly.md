@@ -260,16 +260,27 @@ The individual cluster signs *do* alternate by parity (Lean `ursell2_nonpos` /
 `ursell3_nonneg` — correct algebra), but a **saturating product is destructive at
 every many-body order** (`deficit_marginal_le`); no bond topology repairs that.
 
-**The real sign candidate is the chirality involution, not the topology.** The
-binding combiner uses `|χ_λ|` (absolute value), which discards the chirality sign
-`sgn(w₀^{S_{λ'}})` shown essential and mixed-sign in the Δ_λ work. A *signed*-trace
-combiner is not bounded by the saturation lemma and could produce an attractive
-(positive) many-body term. That — the `|χ|`-vs-signed-trace convention — is the open
-question, **not** the bond count. (Verifying it needs the per-partition signed χ at
-H₉, i.e. the Rust kernel; deferred.)
+**The obstruction is structural — and now proved.** It is *not* merely a
+`|χ|`-vs-signed-trace convention (an earlier draft of this line said so — also
+imprecise: the *signed* closed-form trace `τ_M = τ_vac·∏f` factorises and saturates
+just as hard). The real statement is a theorem: for the multiplicative model
+`B(S) = c·(1−∏_{i∈S} fᵢ)` with `c ≥ 0`, `fᵢ ∈ [0,1]`, the beyond-pairwise 3-body
+content `c·(f_a+f_b+f_c − f_a f_b f_c − 2)` is **non-positive** —
+`QOU.BraidKnot.Cluster.productModel_3body_nonpos` (Lean, sorry-free). So **no**
+saturating interface product, signed or `|χ|`, can yield an attractive 3-body force.
+
+An attractive (`> 0`) many-body term therefore requires a genuinely
+**non-multiplicative / cooperative** combiner: either an *enhancing* interface
+`fᵢ > 1` (a crossing that raises rather than suppresses the trace), or a true 3-body
+operator that is **not** a product of pairwise factors (e.g. the H₃⁴→H₁₂ interface
+operator, or a chirality-weighted `Σ_λ y_λ sgn(w₀) χ_λ` that breaks the product
+structure). That is the open lever — not the bond count, and not a sign convention on
+a product. (Constructing it needs the per-partition data at H₉/H₁₂, i.e. the Rust
+kernel; deferred.)
 
 The Lean theorems `ursell2_eq`/`ursell3_eq`/`ursell2_nonpos`/`ursell3_nonneg` stand as
-correct per-cluster algebra; only the *physical* "attractive 3-body" reading was
-wrong and is corrected in their docstrings.
+correct per-cluster algebra (only the *physical* "attractive 3-body" reading was wrong,
+corrected in their docstrings); `productModel_3body_nonpos` is the correctly-scoped
+positive result that replaces the retracted claim.
 
 → `binding_triangle_3body_cluster_probe.py` (corrected) · `binding-triangle-3body-cluster.witness.json`

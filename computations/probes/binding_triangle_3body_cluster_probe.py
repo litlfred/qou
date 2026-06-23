@@ -23,13 +23,15 @@ joint-trace c3 < 0, and OPPOSITE the attractive empirical b3 > 0 (4x too big).
 So closing the triangle does NOT flip the physical sign. The individual cluster
 signs DO alternate by bond-count parity (Lean: ursell2_nonpos / ursell3_nonneg),
 but the multiplicative deficit's full many-body content is destructive at every
-order -- a structural property of a saturating product, not a parity that the
-triangle repairs. The real candidate for the attractive sign is the chirality
-involution: the binding combiner uses |chi_lambda| (absolute value), which
-discards the chirality sign sgn(w_0^{S_lambda'}) shown essential and mixed-sign
-in the Delta_lambda work; a signed-trace combiner is not bounded by the
-saturation lemma and could yield an attractive (positive) many-body term.
-That is the open question -- NOT the bond topology.
+order -- a structural property of a saturating product, proved sorry-free as
+`QOU.BraidKnot.Cluster.productModel_3body_nonpos`: for ANY product model
+B(S)=c(1-PROD f), c>=0, f in [0,1], the beyond-pairwise 3-body content
+c*(Sf - PROD f - 2) <= 0. This holds for the signed closed-form trace
+(tau_M = tau_vac*PROD f, which factorises and saturates too) AND the |chi|
+combiner. So an attractive (positive) 3-body force requires a genuinely
+NON-multiplicative / cooperative combiner -- an enhancing interface f>1, or a
+true 3-body operator that is not a product of pairwise factors -- NOT a sign
+convention on a product, and NOT the bond topology.
 """
 import json
 import sys
@@ -93,10 +95,11 @@ def main():
     print("  atoms/conventions -- SAME sign as the framework joint-trace c3 < 0, OPPOSITE the")
     print("  attractive empirical b3 > 0. Closing the triangle does NOT flip the sign; the")
     print("  +3-bond term alone (~+1.9) was a cherry-pick, not the physical 3-body force.")
-    print("  Per-cluster signs alternate by parity (proved), but a SATURATING PRODUCT is")
-    print("  destructive at every many-body order. The open sign candidate is the chirality")
-    print("  involution -- the |chi| combiner drops sgn(w_0), and a signed trace escapes the")
-    print("  saturation bound. The sign problem is NOT topology; it is the |chi|-vs-signed trace.")
+    print("  Per-cluster signs alternate by parity (proved), but the SUM is bounded <= 0:")
+    print("  productModel_3body_nonpos (Lean) proves c*(Sf - PROD f - 2) <= 0 for any product")
+    print("  model, signed or |chi|. So an attractive 3-body force needs a NON-multiplicative")
+    print("  cooperative combiner (an enhancing f>1 interface, or a true 3-body operator that")
+    print("  is not a product of pairwise factors) -- NOT a sign convention on a product.")
 
     witness = {
         "computation": "binding-triangle-3body-cluster",
