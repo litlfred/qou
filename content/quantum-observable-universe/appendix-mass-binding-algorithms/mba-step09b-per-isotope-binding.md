@@ -148,3 +148,18 @@ occupancy, see
 [`docs/audits/2026-06-10-binding-bond-graph-compute-audit-and-derivation.md`](../../../docs/audits/2026-06-10-binding-bond-graph-compute-audit-and-derivation.md)
 §6) is the open piece. It is the on-scale sibling skipped by the 2026-06-16/17
 binding-closure docs.*
+
+*Body-order generating function — the depth-2 selection-rule kernel.* The
+body-order binding series $B(K)=\sum_n B_n$ has generating function
+$G(x;q)=\sum_n B_n x^n$ satisfying the fibre q-difference equation
+$G(qx)=R(q,x)\,G(x)$ with $R(q,x)=x^2-\tau x+1$ — depth 2 (S₅/A₅ Schur) and
+$\det=1$ (symplectic, `prop:sl2-prolongation-recurrence`, sorry-free). Its
+SW-period anchors are the SAME selection-rule values
+$a_D^{(n)}=\mathrm{lw}(n-1)$ that supply the
+[`mba-step09a`](mba-step09a-mass-identity.md) mass linking weight:
+$a_D^{(2)}{=}1$, $a_D^{(3)}{=}(q{+}1)^2/(3q)$, $a_D^{(4)}{=}$Family-A, giving
+$\tau(q_0)=2.6424$
+([`binding_selection_rule_tau_closure.py`](../../../computations/binding_selection_rule_tau_closure.py)).
+**Residual (open):** the geometric↔algebraic identification
+$a_D^{(n)}=\mathrm{lw}(n-1)$ — that the SW prolonged period *equals* the
+selection-rule value (#1765) — is not closed.*

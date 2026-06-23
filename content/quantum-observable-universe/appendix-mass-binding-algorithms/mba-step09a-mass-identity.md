@@ -65,3 +65,19 @@ m_p shows a +2.89 % gap to CODATA after the proton-anchor re-pin.
 The open R&D is **refining `VolDensity($\mathcal{B}_3$)`**, not
 "deriving $\lambda_{\mathrm{scale}}$" — see AGENTS.md's critical-
 framing block on `λ_scale`.*
+
+*Linking-weight component = one per-component selection rule.* The
+linking-weight factor of $\mathrm{VolDensity}$ is
+$\mathrm{lw}(c) = \frac{1}{c+1}\sum_{\lambda \vdash c+1} \dim_q V_\lambda$
+(canonical q-hook $\dim_q$), reproducing the established anchors
+$\mathrm{lw}(1)=1$ (muon) and
+$\mathrm{lw}(3) = (3q^2+4+3q^{-2})/4$ (proton, Family-A — **bit-for-bit**
+equal to the production `linking_weight_family_a`), and giving the new
+$c=2$ (2-component link, e.g. Hopf) value
+$\mathrm{lw}(2) = (q+1)^2/(3q)$
+([`prop:selection-rule-c2-prediction`](../climax-volume-mass/selection-rule-c2-prediction.md)).
+Unified + regression-tied to production by
+[`binding_selection_rule_tau_closure.py`](../../../computations/binding_selection_rule_tau_closure.py)
+$\to$ [witness](../../../computations/binding-selection-rule-tau-closure.witness.json).
+The same $\mathrm{lw}(c)$ values are the SW-period anchors of the depth-2
+binding kernel — see [`mba-step09b`](mba-step09b-per-isotope-binding.md).*
