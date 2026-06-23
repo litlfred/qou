@@ -171,7 +171,8 @@ def main():
                                         "AME": mp.nstr(sc_ame, 12)}},
     }
     out = COMP / "interface-4body-assembly.witness.json"
-    json.dump(witness, open(out, "w"), indent=1, default=str)
+    with open(out, "w") as f:
+        json.dump(witness, f, indent=1, default=str)
     print(f"\nwitness -> {out.relative_to(REPO)}")
     return 0
 

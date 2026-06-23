@@ -147,7 +147,8 @@ def main():
                  "closest_form": best[0]},
     }
     out = COMP / "binding-additive-linked-cluster-scan.witness.json"
-    json.dump(witness, open(out, "w"), indent=1, default=str)
+    with open(out, "w") as f:
+        json.dump(witness, f, indent=1, default=str)
     print(f"\nwitness -> {out.relative_to(REPO)}")
     return 0
 

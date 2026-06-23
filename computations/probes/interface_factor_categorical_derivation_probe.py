@@ -79,29 +79,14 @@ def hoefsmit_H3(q):
     # standard content/axial-distance seminormal form for (2,1):
     # sigma_1 diagonal with eigenvalues q, -1/q on the two standard tableaux
     s1 = mp.matrix([[q, 0], [0, -qi]])
-    # sigma_2 via seminormal off-diagonal at axial distance 2
-    # rho = 1/[2]_q on diagonal, sqrt([3][1])/[2] off-diagonal (standard Hoefsmit)
-    two = q + qi
-    a = 1 / two                       # 1/[2]_q
-    b = mp.sqrt((q + qi + 1) * 1) / two  # sqrt([3]_q)/[2]_q  ([1]_q = 1)
-    # sigma_2 = [[ (q-1/q)*? ]] -- build from eigenprojectors: sigma_2 has same
-    # spectrum {q,-1/q}; seminormal entry:
-    s2 = mp.matrix([[(q - qi) * a - (-qi) + (q + (-qi)) * 0, 0], [0, 0]])
-    # Build sigma_2 explicitly in seminormal form (Ram/Hoefsmit):
-    #   diag part d = (q + (-1/q))/2 + (q - (-1/q))/2 * (1/d_axial)
-    # Use the canonical 2x2 seminormal rep:
-    d = a  # 1/[2]_q axial term
-    s2 = mp.matrix([
-        [(q - qi) * d, b],
-        [b, (q - qi) - (q - qi) * d],
-    ])
-    # enforce eigenvalues {q, -1/q}: shift so trace = q - 1/q and det = -1
-    # (the seminormal s2 above already has trace q-1/q; fix det to -1 via b)
-    tr = s2[0, 0] + s2[1, 1]
-    # choose b so that det = (q-1/q)*d*((q-1/q)-(q-1/q)*d) - b^2 = -1
-    d00, d11 = s2[0, 0], s2[1, 1]
-    b2 = d00 * d11 + 1
-    b = mp.sqrt(b2)
+    # sigma_2 (Ram/Hoefsmit seminormal, axial distance 2): diagonal entries
+    # d00 = (q-1/q)/[2]_q, d11 = (q-1/q)(1 - 1/[2]_q), with trace q-1/q.
+    d = 1 / (q + qi)                  # 1/[2]_q axial term
+    d00 = (q - qi) * d
+    d11 = (q - qi) - d00
+    # off-diagonal b fixed by det = -1 (enforces the spectrum {q, -1/q}):
+    #   det = d00*d11 - b^2 = -1  =>  b = sqrt(d00*d11 + 1).
+    b = mp.sqrt(d00 * d11 + 1)
     s2 = mp.matrix([[d00, b], [b, d11]])
     return s1, s2
 
@@ -189,7 +174,8 @@ def main():
         "data": {"symbolic": sk, "markov_move": mv, "verdict": verdict},
     }
     out = COMP / "interface-factor-categorical-derivation.witness.json"
-    json.dump(witness, open(out, "w"), indent=1, default=str)
+    with open(out, "w") as f:
+        json.dump(witness, f, indent=1, default=str)
     print(f"\nwitness -> {out.relative_to(REPO)}")
     return 0
 
