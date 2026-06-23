@@ -375,3 +375,42 @@ theorem su4_last_nonzero {A : ℕ} (h : su4AntisymDim A ≠ 0) : A ≤ 4 := by
   exact h (su4_shell_closure (Nat.lt_of_not_le hc))
 
 end QOU.BraidKnot.SU4Supermultiplet
+
+/-! ## §7. Connected (Ursell/Mayer) cluster operator
+
+The irreducible k-body cluster operator is the **connected** part of the joint
+Markov trace over the k interfaces — the Ursell/Mayer term that the pairwise
+interface product misses.  For two bonds with sub-traces `g∅` (neither bond),
+`gₐ`, `g_b` (one bond each), `g_ab` (both), the connected cluster is
+
+    c = gₐ + g_b − g∅ − g_ab        (= inclusion–exclusion / Möbius over {a,b}),
+
+and it equals (joint binding) − (independent pair-sum).  Empirically this
+connected cluster lands at the scale of the Mayer 3-body term `b₃ ≈ 1.5 MeV`
+(`cluster-operator-vs-mayer-b3.witness.json`: |c₃|/|b₃| = 0.98 for ³H), with the
+Brunnian/Borromean property as the topological selection criterion for the
+3-body interface (`b3_brunnian_selection_scope.py`). The sign of `c` is the open
+question (this realisation gives `c < 0`). This file proves only the algebraic
+connected-cluster identity (the definition); the magnitude/sign are compute. -/
+namespace QOU.BraidKnot.Cluster
+
+variable {R : Type*} [CommRing R]
+
+/-- Connected 2-bond (Ursell) cluster from the four interface sub-traces. -/
+def cluster2 (g_empty g_a g_b g_ab : R) : R := g_a + g_b - g_empty - g_ab
+
+/-- The connected cluster equals (joint binding) − (independent pair-sum):
+    with `joint = g∅ − g_ab` and `pair_sum = (g∅−gₐ)+(g∅−g_b)`,
+    `cluster2 = joint − pair_sum`. The irreducible 3-body term. -/
+theorem cluster2_eq_joint_sub_pairsum (g_empty g_a g_b g_ab : R) :
+    cluster2 g_empty g_a g_b g_ab
+      = (g_empty - g_ab) - ((g_empty - g_a) + (g_empty - g_b)) := by
+  unfold cluster2; ring
+
+/-- The cluster vanishes exactly when the joint trace factorises additively
+    (`g∅ + g_ab = gₐ + g_b`): no irreducible 3-body content. -/
+theorem cluster2_eq_zero_iff (g_empty g_a g_b g_ab : R) :
+    cluster2 g_empty g_a g_b g_ab = 0 ↔ g_a + g_b = g_empty + g_ab := by
+  unfold cluster2; rw [sub_sub, sub_eq_zero]
+
+end QOU.BraidKnot.Cluster

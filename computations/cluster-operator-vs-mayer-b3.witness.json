@@ -1,0 +1,28 @@
+{
+ "computation": "cluster-operator-vs-mayer-b3",
+ "description": "Compare the framework's connected 3-body cluster (Ursell, joint H_9 trace) to the empirical Mayer b3 (AME - 3*b2). Magnitude matches (~1.5 MeV); sign opposed in this chain-adjacent realisation. Scope-limited: not a refutation of the cluster operator.",
+ "scriptFile": "computations/probes/binding_cluster_operator_vs_mayer_probe.py",
+ "parameters": {
+  "free_parameters": 0,
+  "b2_source": "deuteron"
+ },
+ "data": {
+  "rows": [
+   {
+    "atom": "T",
+    "framework_c3_MeV": "-1.76877528705",
+    "empirical_b3_MeV": "1.8081",
+    "mag_ratio": "0.97825081",
+    "same_sign": false
+   },
+   {
+    "atom": "3He",
+    "framework_c3_MeV": "-1.40542437684",
+    "empirical_b3_MeV": "1.044345",
+    "mag_ratio": "1.3457472",
+    "same_sign": false
+   }
+  ],
+  "verdict": "scale_matches_sign_opposed_scope_limited"
+ }
+}

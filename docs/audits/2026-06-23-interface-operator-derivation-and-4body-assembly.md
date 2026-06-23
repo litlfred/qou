@@ -197,3 +197,40 @@ does not reproduce the numbers as-is*. None excludes the ingredient as a
 The genuinely robust, parameter-free finding across all of them: binding is strongly
 cooperative and its A-scaling lives on the dynamics/interface side, with the proved
 per-bond factors as the foundation a 3-/4-body cluster operator (PROBE 2) builds on.
+
+## Cluster operator — the framework already realises it (connected joint-trace term)
+
+The irreducible 3-body cluster operator is **not** a new object to invent: it is the
+**connected (Ursell/Mayer) part of the joint Markov trace** over the A=3 interfaces,
+computed at H₉ with zero fit (`three_body_joint_trace_a3.py`):
+`c₃ = joint − pair-sum = E₀·(gₐ + g_b − g∅ − g_ab)`. The Brunnian/Borromean property
+(`b3_brunnian_selection_scope.py`) is its **topological selection criterion** (3-body
+confinement = no separable sub-link). The algebraic connected-cluster identity
+`cluster2 = joint − pair_sum` and its vanishing criterion are now Lean-proved
+(`QOU.BraidKnot.Cluster`, sorry-free).
+
+Comparing the framework's `c₃` to the empirical Mayer `b₃ = B(A=3) − 3·b₂`
+(`binding_cluster_operator_vs_mayer_probe.py`):
+
+| atom | framework c₃ (MeV) | empirical b₃ (MeV) | \|c₃\|/\|b₃\| | sign |
+|------|----:|----:|----:|------|
+| ³H  | −1.769 | +1.808 | **0.98** | opposed |
+| ³He | −1.405 | +1.044 | 1.35 | opposed |
+
+**Scope-disciplined reading** (AGENTS.md §"Before declaring refuted"):
+- **(+) Scale matches** — the connected joint-trace cluster lands at \|c₃\| ≈ 1.4–1.8 MeV,
+  the *same* O(1.5 MeV) as the empirical 3-body term (³H to 2 %). This is a positive,
+  parameter-free signal that the joint-trace Ursell cluster **is the right object and
+  scale** for the 3-body force.
+- **(−) Sign opposed, scope-limited** — this realisation gives `c₃ < 0` (the joint
+  saturates below the pair-sum) where the empirical 3N force is attractive (`b₃ > 0`).
+  This is **not** a refutation of the cluster operator. The negative sign is specific to
+  the *2-adjacent-chain-bond, |χ|-combiner* realisation; untested candidates to flip it:
+  the missing long-range (1–3) triangle bond, the Borromean-selected interface vs the
+  bare σ_g, and the joint combiner's |χ| vs signed convention.
+
+So the cluster operator is located and at the right magnitude; the **sign** is the
+precise open question, not the existence or scale.
+
+→ `binding_cluster_operator_vs_mayer_probe.py` · `cluster-operator-vs-mayer-b3.witness.json` ·
+`QOU.BraidKnot.Cluster` (Lean, sorry-free)
