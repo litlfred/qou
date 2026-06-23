@@ -1,0 +1,152 @@
+{
+ "computation": "binding-additive-linked-cluster-scan",
+ "description": "Binding candidate #1: scan additive/log linked-cluster interface forms vs the multiplicative deficit, x chain/complete topology, vs AME. Tests whether SUM-over-bonds (grows ~A) beats PROD-over-bonds (saturates).",
+ "scriptFile": "computations/probes/binding_additive_linked_cluster_probe.py",
+ "parameters": {
+  "q_0": "1.1099785827513808075916690956107688798744991218736",
+  "E0_MeV": "4.1859813632944758969450621587590084101434868908797",
+  "tau_p": "1.22036288908669305595736107223",
+  "tau_n": "1.1948624254133771065332385697605928646986009643795",
+  "free_parameters": 0
+ },
+ "data": {
+  "forms": {
+   "M": "E0*tau_vac*(1-PROD f)   multiplicative deficit [baseline]",
+   "LV": "E0*tau_vac*SUM(-log f)  linked-cluster x vac",
+   "L": "E0*SUM(-log f)          pure additive log",
+   "DV": "E0*tau_vac*SUM(1-f)     additive deficit x vac"
+  },
+  "results": {
+   "M/chain": {
+    "B": {
+     "D": "3.0560759",
+     "T": "6.2362335",
+     "3He": "5.5917477",
+     "4He": "8.2563267"
+    },
+    "err_pct": {
+     "D": "37.379",
+     "T": "-26.475",
+     "3He": "-27.55",
+     "4He": "-70.821"
+    },
+    "scaling_4He_D": "2.70161",
+    "rms_err_pct": "44.364"
+   },
+   "LV/chain": {
+    "B": {
+     "D": "4.2391725",
+     "T": "14.086839",
+     "3He": "10.346658",
+     "4He": "23.372472"
+    },
+    "err_pct": {
+     "D": "90.562",
+     "T": "66.083",
+     "3He": "34.058",
+     "4He": "-17.399"
+    },
+    "scaling_4He_D": "5.51345",
+    "rms_err_pct": "59.226"
+   },
+   "L/chain": {
+    "B": {
+     "D": "2.9071952",
+     "T": "8.0851624",
+     "3He": "5.8143904",
+     "4He": "10.992358"
+    },
+    "err_pct": {
+     "D": "30.686",
+     "T": "-4.6763",
+     "3He": "-24.665",
+     "4He": "-61.152"
+    },
+    "scaling_4He_D": "3.78109",
+    "rms_err_pct": "36.44"
+   },
+   "DV/chain": {
+    "B": {
+     "D": "3.0560759",
+     "T": "8.8279131",
+     "3He": "7.4590433",
+     "4He": "15.229523"
+    },
+    "err_pct": {
+     "D": "37.379",
+     "T": "4.0807",
+     "3He": "-3.3558",
+     "4He": "-46.177"
+    },
+    "scaling_4He_D": "4.98336",
+    "rms_err_pct": "29.822"
+   },
+   "M/complete": {
+    "B": {
+     "D": "3.0560759",
+     "T": "6.7654685",
+     "3He": "6.521595",
+     "4He": "8.8202467"
+    },
+    "err_pct": {
+     "D": "37.379",
+     "T": "-20.235",
+     "3He": "-15.502",
+     "4He": "-68.828"
+    },
+    "scaling_4He_D": "2.88613",
+    "rms_err_pct": "41.183"
+   },
+   "LV/complete": {
+    "B": {
+     "D": "4.2391725",
+     "T": "19.152067",
+     "3He": "15.519986",
+     "4He": "41.91672"
+    },
+    "err_pct": {
+     "D": "90.562",
+     "T": "125.8",
+     "3He": "101.09",
+     "4He": "48.138"
+    },
+    "scaling_4He_D": "9.88795",
+    "rms_err_pct": "95.608"
+   },
+   "L/complete": {
+    "B": {
+     "D": "2.9071952",
+     "T": "10.992358",
+     "3He": "8.7215856",
+     "4He": "19.713943"
+    },
+    "err_pct": {
+     "D": "30.686",
+     "T": "29.599",
+     "3He": "13.003",
+     "4He": "-30.329"
+    },
+    "scaling_4He_D": "6.78109",
+    "rms_err_pct": "26.957"
+   },
+   "DV/complete": {
+    "B": {
+     "D": "3.0560759",
+     "T": "12.479503",
+     "3He": "11.188565",
+     "4He": "28.598319"
+    },
+    "err_pct": {
+     "D": "37.379",
+     "T": "47.133",
+     "3He": "44.966",
+     "4He": "1.0696"
+    },
+    "scaling_4He_D": "9.35786",
+    "rms_err_pct": "37.556"
+   }
+  },
+  "ame_scaling_4He_D": "12.719637",
+  "closest_form": "LV/complete"
+ }
+}
