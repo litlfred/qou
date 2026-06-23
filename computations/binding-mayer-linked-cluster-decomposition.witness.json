@@ -1,0 +1,30 @@
+{
+ "computation": "binding-mayer-linked-cluster-decomposition",
+ "description": "Mayer linked-cluster decomposition of light-nuclei binding. b2 identified from the deuteron (unique 2-body nucleus); residual b3, b4 forced by A=3,4 data. Large b3/b2=0.64, b4/b2=4.16 => binding is irreducibly cooperative; no pairwise interface factor can close it.",
+ "scriptFile": "computations/probes/binding_mayer_linked_cluster_probe.py",
+ "parameters": {
+  "free_parameters": 0,
+  "b2_source": "deuteron (unique 2-body nucleus)"
+ },
+ "data": {
+  "per_bond_MeV": {
+   "D": "2.224566",
+   "T": "2.827266",
+   "3He": "2.572681",
+   "4He": "4.7159455"
+  },
+  "b2_MeV": "2.224566",
+  "b3_T_MeV": "1.8081",
+  "b3_3He_MeV": "1.044345",
+  "b4_4He_MeV": "9.243387",
+  "b3_over_b2": "0.64112393",
+  "b4_over_b2": "4.1551417",
+  "pairwise_only_pred_MeV": {
+   "T": "6.673698",
+   "3He": "6.673698",
+   "4He": "13.347396"
+  },
+  "verdict": "strongly_cooperative_measures_4body_target",
+  "scope_note": "does NOT rule out the interface program: the trace product 1-PROD f already carries cross-bond cooperative terms, and the per-bond factors are Lean-proved exact (a permanent correct contribution). Measures the size of the missing cluster operator."
+ }
+}
