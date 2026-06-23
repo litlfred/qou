@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.Interactions.confinementUniversality
 
@@ -63,7 +65,8 @@ The derivation chain has two stages:
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-universality.ts
 theorem confinementUniversality [ctx : ConfinementUniversalityContext] :
-    ∀ (φ_0 φ_1 φ_01 : ℝ), ctx.N_F φ_0 φ_1 φ_01 = ctx.N_F 0 0 0 :=
-  sorry
+    ∀ (φ_0 φ_1 φ_01 : ℝ), ctx.N_F φ_0 φ_1 φ_01 = ctx.N_F 0 0 0 := by
+  intro φ_0 φ_1 φ_01
+  rw [ctx.h_N_F, ctx.h_N_F_zero]
 
 end QOU.Interactions

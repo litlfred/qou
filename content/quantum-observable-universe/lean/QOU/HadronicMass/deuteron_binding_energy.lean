@@ -49,6 +49,6 @@ $$
 -- Ref: [manuscript] quantum-observable-universe/observations/deuteron-binding-energy.ts
 theorem deuteron_binding_energy [ctx : DeuteronBindingEnergyContext] :
     ctx.ΔE_exp = 2.2246 ∧ |ctx.ΔE_bind - ctx.ΔE_exp| < 0.001 :=
-  sorry
+  ⟨ctx.h_ΔE_exp, ctx.h_ΔE_bind_precision⟩
 
 end QOU.HadronicMass

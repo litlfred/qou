@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.Experimental.local_substrate_q
 
@@ -41,6 +43,6 @@ universe, the substrate parameter $q$
 -- Ref: [manuscript] quantum-observable-universe/observations/local-substrate-q.ts
 theorem local_substrate_q [ctx : LocalSubstrateQContext] :
     |ctx.q - ctx.q_measured| ≤ ctx.Δq :=
-  sorry
+  ctx.claim_local_substrate_q
 
 end QOU.Experimental

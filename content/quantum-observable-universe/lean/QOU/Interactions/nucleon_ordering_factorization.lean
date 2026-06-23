@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.Interactions.nucleon_ordering_factorization
 
@@ -27,11 +29,15 @@ class NucleonOrderingFactorizationContext where
   /-- Markov trace of the nucleus. -/
   trM_N : ℝ
   /-- Symmetric / standard / alternating channel weights `W_*`. -/
-  W_sym W_std W_alt : ℝ
+  W_sym : ℝ
+  W_std : ℝ
+  W_alt : ℝ
   /-- Symmetric channel value `S(π)`. -/
   S_pi : ℝ
   /-- Standard channel components `a_π`, `b_π`, and Markov parameter `z`. -/
-  a_pi b_pi z : ℝ
+  a_pi : ℝ
+  b_pi : ℝ
+  z : ℝ
   /-- Alternating channel value `A(π)`. -/
   A_pi : ℝ
   /-- Master factorisation identity. -/
@@ -84,6 +90,6 @@ theorem nucleon_ordering_factorization [ctx : NucleonOrderingFactorizationContex
                 ctx.W_alt * ctx.A_pi ∧
     (ctx.cost_std = 4 ∧ ctx.cost_naive = 36) ∧
     (ctx.n_symmetric_evaluations = 1 ∧ ctx.n_alternating_evaluations = 1) :=
-  sorry
+  ⟨ctx.h_master, ⟨ctx.h_cost_std, ctx.h_cost_naive⟩, ⟨ctx.h_symmetric_evaluations, ctx.h_alternating_evaluations⟩⟩
 
 end QOU.Interactions

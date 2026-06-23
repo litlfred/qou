@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.Experimental.terminal_resolution
 
@@ -45,6 +47,6 @@ Using the derived $q_0$, the hadronic mass collapses into a linear combination o
 theorem terminal_resolution [ctx : TerminalResolutionContext] :
     ctx.mass = ctx.m_nu_drag + ctx.E_strong ∧
     |ctx.mass - ctx.mass_codata| ≤ ctx.tol :=
-  sorry
+  ctx.claim_terminal_resolution
 
 end QOU.Experimental

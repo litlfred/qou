@@ -64,7 +64,8 @@ total nucleon mass is the sum over the three crossing pairs:
 theorem pair_skein_mass_formula [ctx : PairSkeinMassFormulaContext] :
     ∀ a b : ℕ, ctx.S_ab a b =
       (ctx.q * ctx.μ a + ctx.q⁻¹ * ctx.μ b) /
-      (Real.sqrt ctx.q + 1 / Real.sqrt ctx.q) :=
-  sorry
+      (Real.sqrt ctx.q + 1 / Real.sqrt ctx.q) := by
+  intro a b
+  rw [ctx.h_S_ab, ctx.h_num, ctx.h_den]
 
 end QOU.HadronicMass

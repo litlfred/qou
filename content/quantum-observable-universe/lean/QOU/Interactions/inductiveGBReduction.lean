@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.Interactions.inductiveGBReduction
 
@@ -82,6 +84,6 @@ theorem inductiveGBReduction [ctx : InductiveGBReductionContext] :
     ctx.NF_size ctx.A ≤ Nat.choose (ctx.A - 1) ((ctx.A - 1) / 2) ∧
     ctx.n_multiplications ≤ ctx.A ^ 2 ∧
     ctx.n_reduction_steps ≤ ctx.A ^ 3 :=
-  sorry
+  ⟨ctx.h_NF_size, ctx.h_multiplications, ctx.h_reduction_steps⟩
 
 end QOU.Interactions

@@ -73,6 +73,6 @@ theorem archimedean_hartree_derivation [ctx : ArchimedeanHartreeDerivationContex
     ctx.rho_inf_Phi_M
       = ctx.Phi_M * ctx.m_e * ctx.c ^ 2 * ctx.α_EM ^ 2
         * (ctx.q + ctx.q⁻¹) ^ (-(2 : ℤ)) :=
-  sorry
+  ctx.claim_archimedean_factorisation
 
 end QOU.Archimedean

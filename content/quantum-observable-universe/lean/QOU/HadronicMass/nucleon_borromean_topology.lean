@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.HadronicMass.nucleon_borromean_topology
 
@@ -52,6 +54,6 @@ volume.
 -- Ref: [manuscript] quantum-observable-universe/observations/nucleon-borromean-topology.ts
 theorem nucleon_borromean_topology [ctx : NucleonBorromeanTopologyContext] :
     ctx.Vol_Hopf = 0 ∧ ctx.mass_volume = 0 ∧ ctx.mass_total = ctx.mass_skein :=
-  sorry
+  ⟨ctx.h_vol_hopf, ctx.h_mass_volume, ctx.h_mass_total⟩
 
 end QOU.HadronicMass

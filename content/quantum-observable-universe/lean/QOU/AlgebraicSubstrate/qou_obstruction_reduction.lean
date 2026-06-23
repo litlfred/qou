@@ -58,6 +58,12 @@ theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
     ctx.obs_dim = 1 ∧
     ctx.phi_1_image = (ctx.chi_A : ℝ) ∧
     ∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A) :=
-  sorry
+  by
+    have h_phi : ctx.phi_1_image = (ctx.chi_A : ℝ) := by
+      rw [ctx.phi_1_image_eq, ctx.obstruction_class_eq]
+    have h_kappa : ∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A) := by
+      intro n _
+      rw [ctx.kappa_vanishes_iff, ctx.obstruction_class_eq]
+    exact ⟨ctx.obs_dim_eq, h_phi, h_kappa⟩
 
 end QOU.AlgebraicSubstrate

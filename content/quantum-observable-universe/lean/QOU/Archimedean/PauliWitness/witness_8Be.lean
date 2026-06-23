@@ -61,6 +61,6 @@ relative amplitude than in neighbouring stable nuclei.
 theorem witness_8Be [ctx : Witness8BeContext] :
     ctx.Z = 4 ∧ ctx.N = 4 ∧ ctx.pre_reduction_terms = 5040 ∧
     ctx.net_terms = 8 ∧ |ctx.F_Pauli - 0.368| < 0.005 :=
-  sorry
+  ctx.claim_witness_8Be
 
 end QOU.Archimedean.PauliWitness

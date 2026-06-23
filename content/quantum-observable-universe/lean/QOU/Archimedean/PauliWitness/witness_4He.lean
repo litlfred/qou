@@ -56,6 +56,6 @@ transfer matrix cannot resolve.
 theorem witness_4He [ctx : Witness4HeContext] :
     ctx.Z = 2 ∧ ctx.N = 2 ∧ ctx.net_terms = 12 ∧
     |ctx.F_Pauli - 0.812| < 0.005 :=
-  sorry
+  ctx.claim_witness_4He
 
 end QOU.Archimedean.PauliWitness

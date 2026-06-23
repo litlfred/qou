@@ -107,6 +107,10 @@ is a consequence of consecutive integers being coprime
 theorem collatz_no_cycles [ctx : CollatzNoCyclesContext] :
     ctx.q_int_3 - ctx.q * ctx.q_int_2 = 1 ∧
     ∀ P : ℝ, ctx.is_periodic P → P = 1 :=
-  sorry
+  by
+    have h_coprime : ctx.q_int_3 - ctx.q * ctx.q_int_2 = 1 := by
+      rw [ctx.q_int_2_def, ctx.q_int_3_def]
+      ring
+    exact ⟨h_coprime, ctx.no_cycles_of_coprime h_coprime⟩
 
 end QOU.AlgebraicSubstrate
