@@ -255,9 +255,8 @@ def _print_legend() -> None:
 | `m_unbnd,can` | Framework-DERIVED unbound sum Z·m_p,can + N·m_n,can (m_p,can = m_e·Vol·ρ/ℏ_q² ≈ 966 MeV +2.96%; m_n,can = m_p,can + Q_β,derived + m_e) |
 | `m_unbnd` | MEASURED unbound sum Z·m_p + N·m_n (CODATA m_p=938.272, m_n=939.565) |
 | `M_AME` | Measured atomic mass = m_unbnd − B_AME |
-| `m_sym` | PURE-CANONICAL bound mass = m_unbnd,can − B_sym (framework constituents; carries the +2.96%·A m_p gap) |
-| `m_sym,rel` | Measured-relative bound mass = m_unbnd − B_sym (same canonical B_sym, measured baseline) |
-| `m_qCLT,rel` / `m_qCLT_fac,rel` | Measured-relative bound mass = m_unbnd − B_qCLT(,fac) |
+| `m_sym` / `m_qCLT` / `m_qCLT_fac` / `m_magic` | PURE-CANONICAL bound mass = m_unbnd,can − B_X (framework constituents; carries the +2.96%·A m_p gap). m_magic is ⁴He-only. |
+| `m_sym,rel` / `m_qCLT,rel` / `m_qCLT_fac,rel` / `m_magic,rel` | Measured-relative bound mass = m_unbnd − B_X (same canonical binding B_X, measured baseline). m_magic,rel is ⁴He-only. |
 
 **Table 4 — Entanglement (bar-involution q↦q⁻¹ split of the atom trace)**
 
@@ -405,21 +404,30 @@ def main(argv=None) -> int:
           "[canonical = framework-derived nucleon masses; ,rel = measured CODATA mu]")
     print(f"  canonical constituents: m_p,can = {mp_can:.3f} MeV (+"
           f"{(mp_can/mp_-1)*100:.2f}%), m_n,can = {mn_can:.3f} MeV "
-          f"(= m_p,can + Q_β,derived + m_e)")
-    print("| iso | A | m_unbnd,can | m_unbnd | M_AME | m_sym | m_sym,rel | "
-          "m_qCLT,rel | m_qCLT_fac,rel |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|")
+          f"(= m_p,can + Q_β,derived + m_e). Every binding form has BOTH a "
+          f"canonical (m_X = m_unbnd,can − B_X) and a ,rel (m_X,rel = m_unbnd − B_X) mass.")
+    print("| iso | A | m_unbnd,can | m_unbnd | M_AME | m_sym | m_sym,rel "
+          "| m_qCLT | m_qCLT,rel | m_qCLT_fac | m_qCLT_fac,rel | m_magic | m_magic,rel |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         mu = r["Z"] * mp_ + r["N"] * mn_                 # measured constituent sum
         mu_can = r["Z"] * mp_can + r["N"] * mn_can       # framework-derived sum
         mame = (mu - r["B_AME"]) if r["B_AME"] is not None else None
-        m_sym_can = (mu_can - r["B_sym"]) if r["B_sym"] is not None else None
-        msym_rel = (mu - r["B_sym"]) if r["B_sym"] is not None else None
-        mqclt = mu - r["B_qCLT"]
-        mfac = mu - r["B_qCLT_fac"]
+        # each form X: m_X (canonical, mu_can − B_X) and m_X,rel (measured, mu − B_X)
+        def _pair(bkey):
+            b = r[bkey]
+            if b is None:
+                return None, None
+            return mu_can - b, mu - b
+        m_sym_can, m_sym_rel = _pair("B_sym")
+        m_qclt_can, m_qclt_rel = _pair("B_qCLT")
+        m_fac_can, m_fac_rel = _pair("B_qCLT_fac")
+        m_magic_can, m_magic_rel = _pair("B_magic")
         print(f"| {r['name']} | {r['A']} | {mu_can:>9.1f} | {mu:>9.1f} "
-              f"| {_fmt(mame,9,1)} | {_fmt(m_sym_can,9,1)} | {_fmt(msym_rel,9,1)} "
-              f"| {mqclt:>9.1f} | {mfac:>9.1f} |")
+              f"| {_fmt(mame,9,1)} | {_fmt(m_sym_can,9,1)} | {_fmt(m_sym_rel,9,1)} "
+              f"| {_fmt(m_qclt_can,9,1)} | {_fmt(m_qclt_rel,9,1)} "
+              f"| {_fmt(m_fac_can,9,1)} | {_fmt(m_fac_rel,9,1)} "
+              f"| {_fmt(m_magic_can,9,1)} | {_fmt(m_magic_rel,9,1)} |")
 
     # 3b. ENTANGLEMENT  (bar-involution q↦q⁻¹ split of the atom trace, via the
     #     q-parameterised core): bar-even (cosh) = retained binding/volume;
