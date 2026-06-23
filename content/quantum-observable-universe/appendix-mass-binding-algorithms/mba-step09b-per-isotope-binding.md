@@ -127,3 +127,24 @@ $\sim10^{-3}$ error rejected for 1-ppQ per
 [`docs/audits/2026-06-10-binding-active-set-compute-optimization.md`](../../../docs/audits/2026-06-10-binding-active-set-compute-optimization.md)),
 validated $\mathrm{tr}_M$-transfer $\equiv$ full Hoefsmit
 (`char_fast`) to $4.7\times10^{-15}$.*
+
+*Extensive (log-free-energy) functional — the on-scale sibling.* The
+$\Delta_\lambda$ sum above is the (gated) Path-D binding. A complementary
+**extensive** functional on the *same* canonical $\mathrm{tr}_M$ is the
+q-heat-flow free energy
+$B(K) = E_0\,\log\!\big(|\mathrm{tr}_M(\beta_{\mathrm{free}})| /
+|\mathrm{tr}_M(\beta_{\mathrm{atom}})|\big)$, with
+$E_0 = m_e/(q_0(q_0-1)) \approx 4.186$ MeV (closed substrate form, **no fit**),
+computed by
+[`binding_log_free_energy.py`](../../../computations/binding_log_free_energy.py)
+$\to$ [`binding-log-free-energy.witness.json`](../../../computations/binding-log-free-energy.witness.json).
+It is **on-scale** ($0.57$–$2.36\times$ AME over D/T/³He/⁴He), wired onto the
+canonical lossless trace rather than the per-bond $f_{\mathrm{bond}}$ product
+of the exploratory probe. By contrast the canonical *linear* trace difference
+$Q_\beta(\mathrm{tr}_{\mathrm{free}}-\mathrm{tr}_{\mathrm{atom}})$ is
+**intensive** and saturates ($\sim0.78$ MeV, $4.8$–$39.7\times$ miss). This is
+**not** a closure: the chain-topology residual (edge-set / fractional
+occupancy, see
+[`docs/audits/2026-06-10-binding-bond-graph-compute-audit-and-derivation.md`](../../../docs/audits/2026-06-10-binding-bond-graph-compute-audit-and-derivation.md)
+§6) is the open piece. It is the on-scale sibling skipped by the 2026-06-16/17
+binding-closure docs.*
