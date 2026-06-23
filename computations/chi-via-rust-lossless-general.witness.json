@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-11T00:02:39.963826+00:00",
-  "commitSha": "e8b82252faaa2e39b972c4e095ee6c13d23c33e9",
+  "computedAt": "2026-06-23T12:48:44.893380+00:00",
+  "commitSha": "802516eed261bf13104f64fb082fc6be6a72167e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 48,
+  "durationMs": 82,
   "computation": "chi-via-rust-lossless-general",
   "scriptFile": "chi_via_rust_lossless.py",
   "scriptHash": "9dec1cdfee64",
-  "scriptCommitSha": "672e2bc2d512f27e5054a341661f5a0bcf636063",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,33 +27,21 @@
   "description": "Lossless per-λ χ(q₀) caches via Rust chi_q_via_gp for arbitrary nuclides (generalizes chi_4he_via_rust_lossless.py). χ_λ is dim-independent (~20 ms/λ) so any H_n is seconds; consumes the closed-form y_λ tower for n>12. Produces the canonical chi-{atom}-h{n}-...-matrix-m.witness.json the active-set / binding consumers read. Sign-only convention; matches the matrix-M backend to the 50-dps floor (#2062 §8).",
   "data": {
     "atoms": [
-      "lithium-5",
-      "lithium-6"
+      "helium-3"
     ],
     "results": [
       {
-        "atom": "lithium-5",
-        "n_strands": 15,
-        "Z": 3,
-        "N": 2,
-        "n_partitions": 176,
-        "tr_M_at_q0": "0.72219067572428003906546700725859846608796048795124",
-        "compute_time_sec": 66.86,
-        "cache_path": "/home/user/qou/computations/chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
-        "reused": true
-      },
-      {
-        "atom": "lithium-6",
-        "n_strands": 18,
-        "Z": 3,
-        "N": 3,
-        "n_partitions": 385,
-        "tr_M_at_q0": "0.58892244002696787134345006247120330799639569324758",
-        "compute_time_sec": 1381.75,
-        "cache_path": "/home/user/qou/computations/chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
+        "atom": "helium-3",
+        "n_strands": 9,
+        "Z": 2,
+        "N": 1,
+        "n_partitions": 30,
+        "tr_M_at_q0": "1.0860240058218428921913699499413612355786846551455",
+        "compute_time_sec": 381.9,
+        "cache_path": "/home/user/qou/computations/chi-helium-3-h9-at-q0-50dps-matrix-m.witness.json",
         "reused": true
       }
     ],
-    "total_time_sec": 0.05
+    "total_time_sec": 0.08
   }
 }
