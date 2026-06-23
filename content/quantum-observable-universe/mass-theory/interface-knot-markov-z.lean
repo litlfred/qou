@@ -461,4 +461,25 @@ theorem ursell3_nonneg {c f_a f_b f_c : ℝ} (hc : 0 ≤ c)
     0 ≤ c * ((1 - f_a) * (1 - f_b) * (1 - f_c)) :=
   mul_nonneg hc (mul_nonneg (mul_nonneg (by linarith) (by linarith)) (by linarith))
 
+/-- **Product-model many-body obstruction (the real result).** For the
+    multiplicative model `B(S) = c·(1 − ∏_{i∈S} fᵢ)` with `c ≥ 0` and every
+    `fᵢ ∈ [0,1]`, the *physical* beyond-pairwise 3-body content
+    `B(abc) − [B(a)+B(b)+B(c)] = c·(f_a+f_b+f_c − f_a f_b f_c − 2)` is
+    **non-positive**.  So a saturating interface product — signed closed-form
+    trace or `|χ|` combiner alike — can **never** produce an attractive (`> 0`)
+    3-body force; that requires a non-multiplicative / cooperative combiner
+    (one with an enhancing `fᵢ > 1` interface, or a genuine 3-body operator that
+    is not a product of pairwise factors).  This is the correctly-scoped
+    structural fact behind the retracted "triangle sign flip": the per-cluster
+    signs alternate, but their *sum* is bounded `≤ 0`. -/
+theorem productModel_3body_nonpos {c f_a f_b f_c : ℝ}
+    (hc : 0 ≤ c) (_ha0 : 0 ≤ f_a) (ha1 : f_a ≤ 1) (_hb0 : 0 ≤ f_b) (hb1 : f_b ≤ 1)
+    (hcc0 : 0 ≤ f_c) (hcc1 : f_c ≤ 1) :
+    c * (f_a + f_b + f_c - f_a * f_b * f_c - 2) ≤ 0 := by
+  have key : 0 ≤ 2 - f_a - f_b - f_c + f_a * f_b * f_c := by
+    nlinarith [mul_nonneg (sub_nonneg.2 ha1) (sub_nonneg.2 hb1),
+               mul_nonneg (mul_nonneg _ha0 _hb0) (sub_nonneg.2 hcc1),
+               mul_nonneg (sub_nonneg.2 hcc1) (add_nonneg _ha0 _hb0)]
+  nlinarith [mul_nonneg hc key]
+
 end QOU.BraidKnot.Cluster
