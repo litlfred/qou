@@ -109,13 +109,16 @@ def contents(lam):
     return [j - i for i, row in enumerate(lam) for j in range(row)]
 
 
-def dim(lam):
+def dim(lam, hk=None):
     """f^lambda via the hook-length formula -- used ONLY to compute the
     Plancherel weight for the cross-checks; the DERIVATION of M(n) above does
-    not invoke it."""
+    not invoke it.  Accepts a precomputed hook list `hk` to avoid recomputing
+    hooks(lam) at call sites that already have it."""
     n = sum(lam)
     prod = 1
-    for h in hooks(lam):
+    if hk is None:
+        hk = hooks(lam)
+    for h in hk:
         prod *= h
     return factorial(n) // prod
 
@@ -126,8 +129,9 @@ def M_direct(n):
     decomposition."""
     tot = 0
     for lam in partitions(n):
-        d = dim(lam)
-        tot += d * d * sum(h * h for h in hooks(lam))
+        hk = hooks(lam)
+        d = dim(lam, hk)
+        tot += d * d * sum(h * h for h in hk)
     return Fraction(tot, factorial(n))
 
 
