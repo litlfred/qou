@@ -27,8 +27,8 @@ $\S 4$ lists four structural invariants any candidate $F(q)$ must satisfy:
 |---|---|---|
 | (a) | **Anchor-stable** (cross-anchor $u_{\text{substrate}}$ swing < 1 ppm = $10^{-6}$ relative; 210 ppb observed) | **this proposition** |
 | (b) | **Bar-even** under $q \mapsto q^{-1}$ | [`prop:q-beta-bar-even-kernel-invariant`](q-beta-bar-even-kernel-invariant.md) |
-| (c) | **q = 1 shadow** reproduces known integer (e.g. $c_3 \to J_{\text{Hopf}}(1) = -2$) | TODO |
-| (d) | **Direction sanity** — $|F(q_0)|$ scales appropriately | TODO |
+| (c) | **q = 1 shadow** reproduces known integer (e.g. $c_3 \to J_{\text{Hopf}}(1) = -2$) | *not yet formalised* |
+| (d) | **Direction sanity** — $|F(q_0)|$ scales appropriately | *not yet formalised* |
 
 The radius-of-convergence gate is the **sharpest concrete form** of $\S 4(a)$:
 The cross-anchor analysis established that $u_{\text{substrate}}$ at $q_{\text{muon}}$ vs
@@ -93,8 +93,8 @@ A candidate $F(q)$ must clear (in order):
 1. Bar-even check        →  bar-even gate (q ↦ q⁻¹ Taylor-even-in-t)
 2. Radius-of-convergence →  this proposition (simple pole at u_substrate)
 3. CFinite recurrence    →  CFinite engine (generates c_k from kernel + seed)
-4. q=1 shadow            →  TODO (c_2 = −1, c_3 = J_Hopf(1) = −2 anchors)
-5. Direction sanity      →  TODO (|F(q_0)| in target's magnitude range)
+4. q=1 shadow            →  not yet formalised (c_2 = −1, c_3 = J_Hopf(1) = −2 anchors)
+5. Direction sanity      →  not yet formalised (|F(q_0)| in target's magnitude range)
 ```
 
-Steps 1–3 are now formalized in Lean (sorry-free); steps 4–5 are TODO.
+Steps 1–3 are formalised in Lean (sorry-free); steps 4–5 are not yet formalised.
