@@ -1,0 +1,51 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-23T17:18:30.562860+00:00",
+  "commitSha": "f86dde0332f1eadda95a5772f5da097d7c59737d",
+  "assertions": [
+    {
+      "name": "rho_free_a3_ratio_within_2pct",
+      "computed": 0.016689518250067908,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.02,
+      "source": "|S(³H)/S(³He) / (B_AME(³H)/B_AME(³He)) − 1| = 1.67% — ρ-free, no fit."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 70,
+  "computation": "binding-reeb-ratio-rho-free",
+  "scriptFile": "binding_reeb_ratio_rho_free.py",
+  "scriptHash": "6a7339b484ec",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "ρ-FREE A=3 mirror binding-ratio prediction from the q-Reeb phase. B(K)=ρ·S(K), S=Σ_λ y_λ dim_λ|Δθ_λ| (substrate-only). The RATIO B(³H)/B(³He)=S(³H)/S(³He) is ρ-INDEPENDENT (ρ cancels) ⇒ a genuine no-fit prediction: predicted 1.1173 vs AME 1.09896 (1.67%). The ABSOLUTE scale ρ stays fitted (CAL-4-gated): ρ_need(³H)=18.3455, ρ_need(³He)=18.6516 MeV/rad. NOT a closure — per-λ ρ_λ from one total binding is the underdetermined Δ_λ gate.",
+  "data": {
+    "rho_free_ratio": {
+      "S_tritium": "0.4623374074",
+      "S_he3": "0.4137994922",
+      "ratio_predicted_rho_free": "1.117298151",
+      "ratio_AME": "1.098957086",
+      "rel_err_pct": "1.669",
+      "note": "ratio = S(³H)/S(³He); ρ cancels — no fit, no free parameter"
+    },
+    "absolute_scale_fitted": {
+      "rho_need_tritium_MeV_per_rad": "18.345468",
+      "rho_need_he3_MeV_per_rad": "18.651645",
+      "rho_universal_spread_pct": "-1.642",
+      "note": "ρ_need = B_AME/S uses the experimental binding ⇒ CAL-4-gated (fitted); the ~1.7% spread is the universal-ρ consistency, not a derivation."
+    }
+  }
+}
