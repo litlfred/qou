@@ -1,5 +1,17 @@
-import { readdirSync, readFileSync, writeFileSync, existsSync } from 'fs';
-import { join } from 'path';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { createHash } from 'crypto';
+import { references } from '../content/schema/references.js';
+
+/**
+ * Deterministic 12-char fingerprint of a reference entry. Inlined here
+ * because the original `validate-references-human-review` module (which
+ * exported `entryHash`) was never merged to main; this keeps the watcher
+ * self-contained. No on-main validator consumes this field yet, so the
+ * exact algorithm is free to be a stable sha256 prefix.
+ */
+function entryHash(entry: unknown): string {
+  return createHash('sha256').update(JSON.stringify(entry)).digest('hex').slice(0, 12);
+}
 
 /**
  * bib-photo-ingestion-watcher
@@ -45,13 +57,19 @@ export async function processIngestion(payload: Payload) {
   
   if (existsSync(REVIEWS_FILE)) {
     const reviews = JSON.parse(readFileSync(REVIEWS_FILE, 'utf8'));
+    if (!reviews.reviews) {
+      reviews.reviews = {};
+    }
+    const entry = references.find(r => r.id === payload.referenceId);
+    const hash = entry ? entryHash(entry) : 'pending';
+
     reviews.reviews[payload.referenceId] = {
       status: 'validated',
       by: payload.type === 'github_issue' ? 'issue-uploader' : 'agent-backfill',
       date: new Date().toISOString().split('T')[0],
       source: payload.filePath,
       page: 'auto-identified',
-      entryHash: 'pending' // TODO: compute proper entryHash
+      entryHash: hash
     };
     writeFileSync(REVIEWS_FILE, JSON.stringify(reviews, null, 2));
     console.log(`[Watcher] -> Success. Reference ${payload.referenceId} marked as validated.`);
@@ -59,7 +77,7 @@ export async function processIngestion(payload: Payload) {
 }
 
 // Simple CLI entry point for local backfill
-if (require.main === module) {
+if (import.meta.main) {
   const fileArg = process.argv[2];
   const refArg = process.argv[3];
   
