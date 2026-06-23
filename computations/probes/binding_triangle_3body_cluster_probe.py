@@ -1,26 +1,35 @@
 #!/usr/bin/env python3
-"""3-body cluster: closing the triangle flips the sign to attractive (the lost bond).
+"""3-body cluster in the multiplicative model -- CORRECTED (the sign is NOT fixed).
 
-The cached `three_body_joint_trace_a3.py` measured the connected cluster over the
-TWO ADJACENT chain bonds (a, b) of the A=3 atom and got c < 0 ("destructive"),
-opposite to the attractive empirical 3-body force (Mayer b3 > 0).  That negative
-sign is *structurally forced* — the multiplicative joint trace saturates, so the
-2-bond connected cluster is always negative (proved: `InterfaceDeficit`).
+CORRECTION (2026-06-23, owner caught the error). An earlier version of this probe
+claimed that "closing the triangle flips the 3-body cluster to attractive,
+matching the Mayer b3 to +4.9%". That was WRONG -- it cherry-picked the single
+top (3-bond) cluster term `+c*PROD(1-f)` and compared it to the empirical b3,
+ignoring the (negative) 2-bond clusters that are part of the same physical
+3-body content.
 
-But the genuine 3-body force is the connected cluster over the **triangle** — all
-THREE pairwise bonds, including the long-range (1-3) bond the chain omits.  For a
-product trace `tau_atom = tau_vac * PROD f`, the Ursell connected cluster over k
-bonds is
+The honest decomposition of the product-model binding
+`B = E0*tau_vac*(1 - PROD f)` over the triangle bonds is
 
-    u_k = E0 * tau_vac * (-1)^(k+1) * PROD_i (1 - f_i),
+    B = [1-bond clusters: +c*SUM x]            (pairwise)
+      + [2-bond clusters: -c*SUM x_i x_j]      (negative)
+      + [3-bond cluster:  +c*x_a x_b x_c]      (positive)
 
-so the sign ALTERNATES with the bond count: k=1 bond +, k=2 (chain) -, k=3
-(triangle) +.  Closing the triangle (k=3) is therefore exactly the sign flip:
-u3 > 0, attractive, matching b3 > 0.
+with x = 1-f.  The **physical beyond-pairwise 3-body content** is the SUM of the
+higher clusters (2-bond + 3-bond), and it is strongly NEGATIVE (destructive):
+-5.7 to -7.0 MeV for T, -4.7 to -5.9 for 3He -- the SAME sign as the framework's
+joint-trace c3 < 0, and OPPOSITE the attractive empirical b3 > 0 (4x too big).
 
-This probe computes u3 over the closed-form interface factors (no Rust) for the
-mirror pair T / 3He, in both pn conventions, vs the Mayer b3.  Parameter-free
-(tau_p cached; tau_n from the canonical deuteron trace; factors derived).
+So closing the triangle does NOT flip the physical sign. The individual cluster
+signs DO alternate by bond-count parity (Lean: ursell2_nonpos / ursell3_nonneg),
+but the multiplicative deficit's full many-body content is destructive at every
+order -- a structural property of a saturating product, not a parity that the
+triangle repairs. The real candidate for the attractive sign is the chirality
+involution: the binding combiner uses |chi_lambda| (absolute value), which
+discards the chirality sign sgn(w_0^{S_lambda'}) shown essential and mixed-sign
+in the Delta_lambda work; a signed-trace combiner is not bounded by the
+saturation lemma and could yield an attractive (positive) many-body term.
+That is the open question -- NOT the bond topology.
 """
 import json
 import sys
@@ -40,11 +49,9 @@ E0 = M_E / (Q0 * (Q0 - 1))
 Z_MK = C.markov_z(Q0)
 H_MK = C.hecke_h(Q0)
 TAU_P = mp.mpf("1.22036288908669305595736107223")
-TAU_N = mp.mpf("0.7280918153466761555460727563") / (TAU_P * Z_MK)  # from canonical D
+TAU_N = mp.mpf("0.7280918153466761555460727563") / (TAU_P * Z_MK)
 B2 = mp.mpf("2.224566")
 AME = {"T": mp.mpf("8.481798"), "3He": mp.mpf("7.718043")}
-
-# triangle (complete-graph K_3) bond types per atom
 TRIANGLE = {"T": (1, 2, ["pn", "pn", "nn"]), "3He": (2, 1, ["pp", "pn", "pn"])}
 
 
@@ -52,62 +59,56 @@ def fac(kind, f_pn):
     return {"pp": Z_MK, "nn": Z_MK - H_MK, "pn": f_pn}[kind]
 
 
-def cluster(atom, bonds, f_pn):
-    """Ursell connected cluster u_k = E0 tau_vac (-1)^(k+1) PROD (1-f)."""
-    Z, N, _ = TRIANGLE[atom]
-    tau_vac = TAU_P**Z * TAU_N**N
-    k = len(bonds)
-    prod = mp.mpf(1)
-    for kind in bonds:
-        prod *= (1 - fac(kind, f_pn))
-    return E0 * tau_vac * ((-1) ** (k + 1)) * prod
-
-
 def main():
-    print("=" * 78)
-    print("3-BODY CLUSTER -- closing the triangle flips the sign to attractive")
-    print("  u_k = E0 tau_vac (-1)^(k+1) PROD(1-f)   [Ursell, product trace]")
-    print(f"  E0={mp.nstr(E0,7)}  z={mp.nstr(Z_MK,7)}  h={mp.nstr(H_MK,7)}  (0 tuned params)")
-    print("=" * 78)
+    print("=" * 80)
+    print("3-BODY CLUSTER (product model) -- full decomposition, sign NOT fixed by triangle")
+    print(f"  E0={mp.nstr(E0,7)}  (0 tuned params)")
+    print("=" * 80)
     rows = []
     for conv, f_pn in [("chi (pn=z)", Z_MK), ("bar-averaged (pn=z-h/2)", Z_MK - H_MK / 2)]:
         print(f"\n--- pn convention: {conv} ---")
         for atom in ["T", "3He"]:
-            _, _, tri = TRIANGLE[atom]
-            chain = tri[:2]                      # 2 adjacent bonds (what the cache measured)
-            u2 = cluster(atom, chain, f_pn)      # k=2 chain cluster
-            u3 = cluster(atom, tri, f_pn)        # k=3 triangle cluster
+            Z, N, bonds = TRIANGLE[atom]
+            tau_vac = TAU_P**Z * TAU_N**N
+            c = E0 * tau_vac
+            xs = [1 - fac(b, f_pn) for b in bonds]
+            one = c * mp.fsum(xs)                                          # 1-bond (pairwise)
+            two = -c * mp.fsum([xs[i] * xs[j] for i in range(3) for j in range(i + 1, 3)])
+            three = c * xs[0] * xs[1] * xs[2]                              # 3-bond (the cherry-pick)
+            beyond = two + three                                          # FULL 3-body content
             b3 = AME[atom] - 3 * B2
-            err = (u3 - b3) / b3 * 100
-            print(f"  {atom:4s} 2-bond chain u2 = {mp.nstr(u2,5):>9} (sign {'+' if u2>0 else '-'})"
-                  f"   3-bond triangle u3 = {mp.nstr(u3,6):>8} (sign +)"
-                  f"   Mayer b3 = {mp.nstr(b3,5)}   err {mp.nstr(err,4)}%")
+            print(f"  {atom:4s} 1-bond={mp.nstr(one,5):>8}  2-bond={mp.nstr(two,5):>8}"
+                  f"  3-bond={mp.nstr(three,5):>7}  | beyond-pair={mp.nstr(beyond,5):>8}"
+                  f"  vs empirical b3={mp.nstr(b3,4)}  same_sign={(beyond>0)==(b3>0)}")
             rows.append({"atom": atom, "pn_convention": conv,
-                         "u2_chain_MeV": mp.nstr(u2, 10), "u3_triangle_MeV": mp.nstr(u3, 10),
-                         "mayer_b3_MeV": mp.nstr(b3, 10), "u3_err_pct": mp.nstr(err, 6),
-                         "u2_sign": "+" if u2 > 0 else "-", "u3_sign": "+"})
+                         "one_bond_MeV": mp.nstr(one, 10), "two_bond_MeV": mp.nstr(two, 10),
+                         "three_bond_MeV": mp.nstr(three, 10),
+                         "beyond_pairwise_MeV": mp.nstr(beyond, 10),
+                         "empirical_b3_MeV": mp.nstr(b3, 10),
+                         "same_sign_as_b3": bool((beyond > 0) == (b3 > 0))})
 
-    print("\n" + "=" * 78)
-    print("VERDICT: the sign of the connected cluster is the PARITY of the bond count.")
-    print("  u2 (2 adjacent chain bonds, even k)  -> NEGATIVE  (saturation, proved)")
-    print("  u3 (3 triangle bonds, odd k)         -> POSITIVE  (attractive, = sign of b3)")
-    print("  The cached three_body_joint_trace measured u2 and read its (forced) negative")
-    print("  sign as 'the 3-body force has the wrong sign'. The genuine 3-body force is u3")
-    print("  over the TRIANGLE -- the long-range (1-3) bond the chain omits supplies the")
-    print("  third factor and flips the parity to +.  Magnitude: T to +4.9%% (bar-averaged),")
-    print("  correct T>3He ordering; 3He +31%% is the expected mirror-pair asymmetry.")
-    print("  Sign flip is structural/proved; magnitude is convention-dependent, right order.")
+    print("\n" + "=" * 80)
+    print("VERDICT (corrected): the multiplicative model's 3-body content is DESTRUCTIVE.")
+    print("  The full beyond-pairwise sum (2-bond + 3-bond) is -4.7 to -7.0 MeV for all")
+    print("  atoms/conventions -- SAME sign as the framework joint-trace c3 < 0, OPPOSITE the")
+    print("  attractive empirical b3 > 0. Closing the triangle does NOT flip the sign; the")
+    print("  +3-bond term alone (~+1.9) was a cherry-pick, not the physical 3-body force.")
+    print("  Per-cluster signs alternate by parity (proved), but a SATURATING PRODUCT is")
+    print("  destructive at every many-body order. The open sign candidate is the chirality")
+    print("  involution -- the |chi| combiner drops sgn(w_0), and a signed trace escapes the")
+    print("  saturation bound. The sign problem is NOT topology; it is the |chi|-vs-signed trace.")
 
     witness = {
         "computation": "binding-triangle-3body-cluster",
-        "description": ("Closing the A=3 triangle (adding the long-range 1-3 bond) flips the "
-                        "connected 3-body cluster from negative (2-bond chain, saturation) to "
-                        "positive (3-bond triangle) via the Ursell sign-parity (-1)^(k+1). "
-                        "u3 matches Mayer b3 in sign (always) and magnitude (T +4.9% bar-averaged)."),
+        "description": ("CORRECTED: product-model 3-body content. The full beyond-pairwise "
+                        "(2-bond + 3-bond) clusters sum to -4.7..-7.0 MeV (destructive), opposite "
+                        "empirical b3 > 0. Closing the triangle does NOT flip the sign; the prior "
+                        "'+u3 matches b3' claim cherry-picked the top cluster term and is retracted. "
+                        "The sign candidate is the chirality involution (|chi| vs signed trace)."),
         "scriptFile": "computations/probes/binding_triangle_3body_cluster_probe.py",
         "parameters": {"q_0": str(Q0), "E0_MeV": str(E0), "tau_p": str(TAU_P),
                        "tau_n": str(TAU_N), "free_parameters": 0},
-        "data": {"rows": rows, "verdict": "triangle_closure_flips_sign_to_attractive"},
+        "data": {"rows": rows, "verdict": "multiplicative_3body_is_destructive_sign_not_fixed_by_triangle"},
     }
     out = COMP / "binding-triangle-3body-cluster.witness.json"
     with open(out, "w") as f:
