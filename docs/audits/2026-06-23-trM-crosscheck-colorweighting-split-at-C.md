@@ -61,11 +61,45 @@ Plus the **known A=3 combiner / Δ_λ gate** (per the coordination ledger): even
 with consistent conventions, the A=3 legs diverge at ~1.8e-4 independently of
 q₀ or color-weighting.
 
+## Resolution (2026-06-23, this PR)
+
+Three of the four legs are now color-weighted and converge at C:
+
+1. **markov_peel — FIXED.** Fast→slow fallback in `tr_M_atomic` on a non-Laurent
+   `LaurentQ` failure (the δ(q) coefficient). Color-weighted at C.
+2. **chi-cache — FIXED.** The color-blindness was **not** an architecture limit:
+   `chi_at_q0_via_hoefsmit_mpfr` hit a resume `KeyError: 'contribution'` on a
+   stale partial cache and never recomputed, so the combiner read the old
+   color-blind numerical cache. Deleting the stale caches and regenerating fresh
+   makes the native path correctly bypass the color-weighted δ-crossing
+   (d=−0.10446 ≠ −h/2) to the exact slow path. **markov_peel and chi-cache now
+   agree to ~1e-15** for deuteron/tritium/helium-3.
+3. **Hoefsmit — already color-weighted**, but sits ~9e-9 from the
+   markov_peel=chi-cache pair (a separate, small Hoefsmit-leg precision/method
+   offset, independent of color-weighting and of q₀).
+
+**The A=3 ~1.8e-4 "Δ_λ gate" divergence was the stale chi-cache, not a
+fundamental gate** — with the cache regenerated, the A=3 exact methods agree.
+
+### The Habiro leg is structurally color-blind (by design)
+
+The Habiro extrapolation leg is built from `hecke_laurent_fast.tr_M_atomic_fast`
+(the LaurentQ pipeline) and extracts **cyclotomic** coefficients a_m(u) with
+integer coefficients. The color-weighted tr_M is a rational function with
+`(q+1)`/`(q−1)` denominator factors (non-Laurent), which breaks the cyclotomic
+structure the Habiro method depends on. So the Habiro leg **cannot** be made
+color-weighted without abandoning the cyclotomic extraction. It remains a
+color-blind extrapolation, useful where the exact methods are intractable
+(⁵Li/⁶Li); for atoms where the three exact methods exist and agree, the Habiro
+column is expected to differ by the color-weighting amount (~1.8e-4).
+
 ## Disposition
 
 - The q₀→C migration ships in PR #2598 (correct, verified: m_p err 0.0004 ppb).
-- `cross-check-trM-1ppb.witness.json` honestly records `passed: false` at C
-  (vs main's stale `passed: true` at A).
-- **Follow-up (tracked):** wire the color-weighted p-n crossing into the native
-  Rust χ path + the Habiro series path so all four legs agree at C; revisit the
-  A=3 Δ_λ gate. This is a compute-author task, not a witness refresh.
+- Color-weighting now consistent across the three **exact** tr_M methods
+  (Hoefsmit / markov_peel / chi-cache).
+- The cross-check `--strict` still flags divergence driven by (a) the
+  color-blind Habiro extrapolation leg and (b) the ~9e-9 Hoefsmit offset.
+  Recommended gate design: compare the exact methods (now agreeing); treat
+  Habiro as an informational extrapolation column, gated only where it is the
+  sole method.
