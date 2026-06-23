@@ -146,6 +146,10 @@ $$
    $$
      \tau_M(\mathcal{B}_K) \;=\; z^{p_+(K)} \cdot (z-h)^{p_-(K)} \cdot \tau_M(\mathcal{B}_K^{\mathrm{vac}}).
    $$
+   This iterated product is formalised sorry-free as the theorem
+   `interface_knot_markov_z` (Lean), proved by induction over the interface
+   list from the two single-step identities (`interface_knot_markov_z_single`
+   for $z$, `interface_knot_markov_z_negative` for $z-h$).
 
 2. **Per-Z step.** Adding a proton (Z+1) inserts one positive interface
    (p-* boundary): $\tau_M$ multiplies by $z$.
