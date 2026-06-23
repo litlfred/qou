@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.QuantumObservableUniverse.exists_axiom_3_chern
 
@@ -45,6 +47,6 @@ into the ribbon twist.
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-3.ts
 theorem exists_axiom_3_chern [ctx : ExistsAxiom3ChernContext] :
     ctx.c_1 = 0 ∧ ctx.c_2 = 0 :=
-  sorry
+  ⟨ctx.c_1_eq_zero, ctx.c_2_eq_zero⟩
 
 end QOU.QuantumObservableUniverse

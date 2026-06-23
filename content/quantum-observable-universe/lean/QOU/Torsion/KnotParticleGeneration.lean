@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.Torsion.KnotParticleGeneration
 
@@ -51,6 +53,6 @@ theorem KnotParticleGeneration [ctx : KnotParticleGenerationContext] :
     ctx.n_linking_ops = 2 ∧
     ∀ (K : ctx.Link) (m n : ℕ),
       ctx.is_torus_generator K m n → Nat.Coprime m n :=
-  sorry
+  ctx.impl_knot_particle_generation ctx.generation_active
 
 end QOU.Torsion

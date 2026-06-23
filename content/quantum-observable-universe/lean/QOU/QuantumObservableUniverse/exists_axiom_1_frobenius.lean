@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.QuantumObservableUniverse.exists_axiom_1_frobenius
 
@@ -42,6 +44,6 @@ axiom~(1) of [quantum observable universe](#def:quantum-observable-universe).
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.ts
 theorem exists_axiom_1_frobenius [ctx : ExistsAxiom1FrobeniusContext] :
     Function.Bijective ctx.pairing_map :=
-  sorry
+  ⟨ctx.pairing_inj, ctx.pairing_surj⟩
 
 end QOU.QuantumObservableUniverse

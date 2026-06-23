@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.Torsion.weak_equiv_invariance
 
@@ -51,6 +53,6 @@ brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts
 theorem weak_equiv_invariance [ctx : WeakEquivInvarianceContext] :
     ∀ n m : ℕ, ctx.weak_equiv n m → ctx.τ_value n = ctx.τ_value m :=
-  sorry
+  ctx.impl_weak_equiv_invariance ctx.invariance_active
 
 end QOU.Torsion

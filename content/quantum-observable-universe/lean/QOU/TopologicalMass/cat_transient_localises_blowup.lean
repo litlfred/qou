@@ -1,4 +1,4 @@
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib
 
 /-!
 # QOU.TopologicalMass.cat_transient_localises_blowup
@@ -46,7 +46,8 @@ disjoint local contributions:
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-transient.ts
 theorem cat_transient_localises_blowup [ctx : CatTransientLocalisesBlowupContext] :
-    ctx.trace_transient = (Finset.range ctx.N).sum (fun i => ctx.trace_local i) :=
-  sorry
+    ctx.trace_transient = (Finset.range ctx.N).sum (fun i => ctx.trace_local i) := by
+  rw [ctx.h_transient, ctx.h_sum]
+
 
 end QOU.TopologicalMass
