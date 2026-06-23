@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Matrix.Basic
 import QOU.Archimedean.EmCouplingProjection
 
 
@@ -91,35 +92,66 @@ theorem hecke_minimal_polynomial_splits :
 
 end SpectralRing
 
-/-! **Theorem (two-strand spectral completeness)**.
+/-- **Theorem (two-strand spectral completeness).**
 
-    There exist exactly two non-zero central idempotents `p₊, p₋`
-    in `End(A ⊗ A)` with `p₊ + p₋ = id` and `p₊ · p₋ = 0`.  The
-    singlet idempotent `p₋` projects onto a free rank-1 summand,
-    canonically isomorphic to the unit object.
+    The endomorphism algebra `End(A ⊗ A)` of the rank-2 block is
+    modelled as `M₂(R) = Matrix (Fin 2) (Fin 2) R`, with the braiding
+    diagonal in its eigenbasis (`diagonal ![λ₊, λ₋]`).  Its two
+    resolvent projections
 
-    The corollary is that any scalar coupling `A ⊗ A → 𝟙` is a
-    multiple of `tr_τ(p₋) · p₋`. -/
+      `p₊ = (λ₊−λ₋)⁻¹ · (c − λ₋·1)`,   `p₋ = (λ₊−λ₋)⁻¹ · (λ₊·1 − c)`
+
+    are two non-zero idempotents with `p₊ + p₋ = 1` and `p₊·p₋ = 0`
+    (each equals a coordinate projection `diagonal ![1,0]` /
+    `diagonal ![0,1]`).  The construction is well-defined precisely
+    because `λ₊ − λ₋` is a unit (`eigenvalues_distinct`) — this is
+    where the spectral content enters (`(λ₊−λ₋)⁻¹·(λ₊−λ₋) = 1`).
+
+    **Correction (was a false axiom).**  This was previously an `axiom`
+    asserting the idempotents live in the base ring `S.R`.  That
+    statement is *false*: an integral domain such as `ℝ` (a valid
+    `SpectralRing`) has no non-trivial idempotent splitting of `1`
+    (`p₊·p₋ = 0` forces `p₊ = 0 ∨ p₋ = 0`).  The idempotents live in
+    `End(A⊗A) = M₂(R)`, not in `R`.  Requires `Nontrivial R` (over the
+    zero ring `p₊ = 0`). -/
+-- Ref: [jones1987] §3–§4 (Hecke representations of braid groups; the
+--      two braiding eigenvalues on the standard rank-2 block)
 -- Ref: [manuscript] §5/em-spectral-completeness
-/-- **External axiom (Jones 1987; manuscript §5): two-strand spectral
-    completeness — exactly two central idempotents in End(A⊗A).** -/
--- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
---      — Jones, "Hecke algebra representations of braid groups and link
---      polynomials," Ann. Math. 126 (1987). Verified against the
---      published version.
--- Ref: [manuscript] §5/em-spectral-completeness
-axiom em_spectral_completeness_axiom :
-    ∀ (S : SpectralRing),
-      ∃ (p_plus p_minus : S.R),
-        p_plus + p_minus = 1 ∧
-        p_plus * p_minus = 0 ∧
-        p_plus ≠ 0 ∧ p_minus ≠ 0
-
-theorem em_spectral_completeness (S : SpectralRing) :
-    ∃ (p_plus p_minus : S.R),
+theorem em_spectral_completeness (S : SpectralRing) [Nontrivial S.R] :
+    ∃ (p_plus p_minus : Matrix (Fin 2) (Fin 2) S.R),
       p_plus + p_minus = 1 ∧
       p_plus * p_minus = 0 ∧
-      p_plus ≠ 0 ∧ p_minus ≠ 0 :=
-  em_spectral_completeness_axiom S
+      p_plus ≠ 0 ∧ p_minus ≠ 0 := by
+  obtain ⟨u, hu_eq⟩ := S.eigenvalues_distinct
+  have hinv : (↑u⁻¹ : S.R) * (S.lambdaPlus - S.lambdaMinus) = 1 := by
+    rw [← hu_eq]; exact u.inv_mul
+  have hpp : ((↑u⁻¹ : S.R) •
+        (Matrix.diagonal ![S.lambdaPlus, S.lambdaMinus]
+          - S.lambdaMinus • (1 : Matrix (Fin 2) (Fin 2) S.R)))
+      = Matrix.diagonal ![1, 0] := by
+    ext i j; fin_cases i <;> fin_cases j <;>
+      simp [Matrix.smul_apply, Matrix.sub_apply, smul_eq_mul, hinv]
+  have hpm : ((↑u⁻¹ : S.R) •
+        (S.lambdaPlus • (1 : Matrix (Fin 2) (Fin 2) S.R)
+          - Matrix.diagonal ![S.lambdaPlus, S.lambdaMinus]))
+      = Matrix.diagonal ![0, 1] := by
+    ext i j; fin_cases i <;> fin_cases j <;>
+      simp [Matrix.smul_apply, Matrix.sub_apply, smul_eq_mul, hinv]
+  refine ⟨(↑u⁻¹ : S.R) •
+            (Matrix.diagonal ![S.lambdaPlus, S.lambdaMinus]
+              - S.lambdaMinus • (1 : Matrix (Fin 2) (Fin 2) S.R)),
+          (↑u⁻¹ : S.R) •
+            (S.lambdaPlus • (1 : Matrix (Fin 2) (Fin 2) S.R)
+              - Matrix.diagonal ![S.lambdaPlus, S.lambdaMinus]),
+          ?_, ?_, ?_, ?_⟩
+  · rw [hpp, hpm]; ext i j; fin_cases i <;> fin_cases j <;> simp [Matrix.add_apply]
+  · rw [hpp, hpm]; ext i j; fin_cases i <;> fin_cases j <;>
+      simp [Matrix.mul_apply, Matrix.diagonal_apply, Matrix.zero_apply]
+  · rw [hpp]; intro h
+    have h00 := congrFun (congrFun h 0) 0
+    simp at h00
+  · rw [hpm]; intro h
+    have h11 := congrFun (congrFun h 1) 1
+    simp at h11
 
 end QOU.Archimedean
