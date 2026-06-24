@@ -1,0 +1,84 @@
+{
+  "description": "Cross-check of the closed form C(n)=\u2212n(n\u22121)(2n\u221213)/144 against the empirical small-h leading coefficient of the actual W_\u03bb defect 1\u2212Z(n)=1\u2212\u03a3_\u03bb d_q\u00b2/[n]_q!, n=2..10, via Richardson extrapolation h=q\u22121/q \u2192 0. Confirms the falsifiable defect target is exact.",
+  "dps": 60,
+  "h_convention": "h = q - 1/q (balanced); C(n)=lim_{h->0}(1-Z(n))/h^2 (2x Richardson)",
+  "closed_form": "C(n) = -n(n-1)(2n-13)/144  (WLambdaDefectClosedForm.lean)",
+  "rows": [
+    {
+      "n": 2,
+      "C_empirical": "0.125",
+      "C_closed_form": "0.125",
+      "rel_err": "2.44141e-15",
+      "match_1e-10": true,
+      "sign": "+"
+    },
+    {
+      "n": 3,
+      "C_empirical": "0.29166666666667",
+      "C_closed_form": "0.29166666666667",
+      "rel_err": "7.33972e-15",
+      "match_1e-10": true,
+      "sign": "+"
+    },
+    {
+      "n": 4,
+      "C_empirical": "0.41666666666667",
+      "C_closed_form": "0.41666666666667",
+      "rel_err": "1.55382e-14",
+      "match_1e-10": true,
+      "sign": "+"
+    },
+    {
+      "n": 5,
+      "C_empirical": "0.41666666666668",
+      "C_closed_form": "0.41666666666667",
+      "rel_err": "2.47048e-14",
+      "match_1e-10": true,
+      "sign": "+"
+    },
+    {
+      "n": 6,
+      "C_empirical": "0.20833333333334",
+      "C_closed_form": "0.20833333333333",
+      "rel_err": "3.67903e-14",
+      "match_1e-10": true,
+      "sign": "+"
+    },
+    {
+      "n": 7,
+      "C_empirical": "-0.29166666666667",
+      "C_closed_form": "-0.29166666666667",
+      "rel_err": "1.85949e-15",
+      "match_1e-10": true,
+      "sign": "\u2212"
+    },
+    {
+      "n": 8,
+      "C_empirical": "-1.1666666666667",
+      "C_closed_form": "-1.1666666666667",
+      "rel_err": "2.46597e-15",
+      "match_1e-10": true,
+      "sign": "\u2212"
+    },
+    {
+      "n": 9,
+      "C_empirical": "-2.5",
+      "C_closed_form": "-2.5",
+      "rel_err": "1.16137e-14",
+      "match_1e-10": true,
+      "sign": "\u2212"
+    },
+    {
+      "n": 10,
+      "C_empirical": "-4.375",
+      "C_closed_form": "-4.375",
+      "rel_err": "8.27521e-15",
+      "match_1e-10": true,
+      "sign": "\u2212"
+    }
+  ],
+  "all_match_1e-10": true,
+  "sign_flip_empirical_n": 7,
+  "sign_flip_closed_form_n": 7,
+  "verdict": "CONFIRMED: the closed form C(n) = \u2212n(n\u22121)(2n\u221213)/144 is the EXACT small-h leading coefficient of the actual W_\u03bb defect 1\u2212Z(n), matching the directly-computed \u03a3_\u03bb d_q\u00b2/[n]_q! to <1e-10 for all n=2..10, and the n=7 sign flip appears identically in both (empirical 7 = closed-form 7). The q\u2080-free falsifiable target (the defect cubic + its n=7 sign change) that any geometric W_\u03bb index must reproduce is thus pinned EXACTLY \u2014 not an empirical fit. No fit; closed form derived (Identity I) + Lean-proved (WLambdaDefectClosedForm), here cross-checked against direct W_\u03bb computation."
+}
