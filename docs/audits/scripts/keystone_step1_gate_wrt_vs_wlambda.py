@@ -113,31 +113,28 @@ def su2_dim_q(lam, q):
 def analyse(n):
     parts = list(partitions(n))
     nf = q_factorial(n, Q0)
+    # precompute the (expensive) q-dimensions once; high-precision sums via fsum
+    dqs = [d_q(lam, Q0) for lam in parts]
+    D2 = mp.fsum(dq ** 2 for dq in dqs)
+    Z = mp.fsum(dq ** 2 / nf for dq in dqs)
     rows = []
-    D2 = mp.mpf(0)
-    for lam in parts:
-        dq = d_q(lam, Q0)
-        D2 += dq ** 2
-    Z = mp.mpf(0)
-    for lam in parts:
-        dq = d_q(lam, Q0)
-        w_fac = dq ** 2 / nf          # W_lambda = d_q^2 / [n]_q!
-        Z += w_fac
+    for lam, dq in zip(parts, dqs):
         su2 = su2_dim_q(lam, Q0)
-        # the VALUE test compares the two q-dimensions d_q (S_n) vs [2j+1]_q (SU(2))
+        # the VALUE test compares the two q-dimensions d_q (S_n) vs [2j+1]_q (SU(2));
+        # tolerance well above q-arithmetic rounding at this dps, well below any real gap
         if su2 is None:
             match = None
         else:
-            match = abs(dq - su2) < mp.mpf(10) ** (-12)
+            match = abs(dq - su2) < mp.mpf(10) ** (-(mp.mp.dps // 2))
         rows.append({
             "lambda": list(lam),
             "rows": len(lam),
             "in_su2_image": su2 is not None,
-            "d_q_Sn": mp.nstr(dq, 8),
-            "su2_dim_q": (mp.nstr(su2, 8) if su2 is not None else None),
+            "d_q_Sn": dq,                      # mpf — formatted at print / serialize time
+            "su2_dim_q": su2,                  # mpf or None
             "d_q_eq_su2": match,
-            "W_lambda_nfac": mp.nstr(w_fac, 8),
-            "W_lambda_D2": mp.nstr(dq ** 2 / D2, 8),
+            "W_lambda_nfac": dq ** 2 / nf,     # W_lambda = d_q^2 / [n]_q!
+            "W_lambda_D2": dq ** 2 / D2,
         })
     return parts, nf, D2, Z, rows
 
@@ -171,19 +168,30 @@ def main():
               f"{mp.nstr(Z, 10)}; 1-Z(n) = {mp.nstr(1 - Z, 10)}) ===")
         print(f"{'lambda':<16}{'rows':>5}{'d_q (S_n)':>14}{'[2j+1]_q (SU2)':>16}"
               f"{'eq?':>6}{'W_l/[n]!':>12}{'W_l/D^2':>12}")
-        for r in rows:
-            su2s = r["su2_dim_q"] if r["su2_dim_q"] is not None else "-- (>=3 row)"
+        for r in rows:                          # human table: 8 sig figs for readability
+            su2s = (mp.nstr(r["su2_dim_q"], 8) if r["su2_dim_q"] is not None
+                    else "-- (>=3 row)")
             eqs = "" if r["d_q_eq_su2"] is None else ("YES" if r["d_q_eq_su2"] else "no")
-            print(f"{str(r['lambda']):<16}{r['rows']:>5}{r['d_q_Sn']:>14}{su2s:>16}"
-                  f"{eqs:>6}{r['W_lambda_nfac']:>12}{r['W_lambda_D2']:>12}")
+            print(f"{str(r['lambda']):<16}{r['rows']:>5}{mp.nstr(r['d_q_Sn'], 8):>14}"
+                  f"{su2s:>16}{eqs:>6}{mp.nstr(r['W_lambda_nfac'], 8):>12}"
+                  f"{mp.nstr(r['W_lambda_D2'], 8):>12}")
+        # witness: serialize numerics at full working precision (tie to mp.mp.dps)
+        def _s(x):
+            return None if x is None else mp.nstr(x, mp.mp.dps)
+        wrows = [{
+            "lambda": r["lambda"], "rows": r["rows"], "in_su2_image": r["in_su2_image"],
+            "d_q_Sn": _s(r["d_q_Sn"]), "su2_dim_q": _s(r["su2_dim_q"]),
+            "d_q_eq_su2": r["d_q_eq_su2"], "W_lambda_nfac": _s(r["W_lambda_nfac"]),
+            "W_lambda_D2": _s(r["W_lambda_D2"]),
+        } for r in rows]
         out["by_n"][str(n)] = {
             "num_blocks": len(parts),
-            "Z_n": mp.nstr(Z, 12),
-            "defect_1_minus_Z": mp.nstr(1 - Z, 12),
+            "Z_n": mp.nstr(Z, mp.mp.dps),
+            "defect_1_minus_Z": mp.nstr(1 - Z, mp.mp.dps),
             "coverage_gap_blocks": gap,
             "le2_row_blocks": len(le2),
             "value_matches": len(matches),
-            "blocks": rows,
+            "blocks": wrows,
         }
 
     verdict = (
