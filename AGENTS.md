@@ -767,6 +767,56 @@ PROBE-4 prune
 and report the deltas. Mention which leg the change addresses.
 Do not regress either.
 
+### q₀ anchor convention — ideal CAL-2 (muon) vs experimental anchor (proton) (STRICT)
+
+The substrate modulus q₀ has **one** value but **two** documented pins
+(authoritative corpus:
+[`observations/three-calibration-discipline.md` §3](content/quantum-observable-universe/observations/three-calibration-discipline.md),
+[`observations/epistemic-status-of-calibrations.md`](content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md),
+[`observations/substrate-anchor-alternatives.md`](content/quantum-observable-universe/observations/substrate-anchor-alternatives.md)):
+
+| Layer | q₀ pin | m_μ status |
+|---|---|---|
+| **Ideal / canonical 3-CAL** | **CAL-2 = m_μ/m_e** via `m_μ/m_e = Vol(4₁)/ℏ_q²` | calibration **input** — exact *by construction* |
+| **Experimental / Physical-Observations** | **m_p/m_e** (0.06 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
+
+The proton re-pin is a **precision substitution within the same
+overdetermined H¹ datum — NOT a 4th calibration and NOT a change to
+CAL-2.** (CAL-1 = m_e, CAL-2 = m_μ/m_e, CAL-3 = m_π; Q_β is **derived**,
+not CAL-3.) Pin on the most precise ratio so the unavoidable ~11.5 ppb
+theory residual lands where least significant (proton-anchor → 9.5σ on
+muon; muon-anchor → ~4000σ on proton).
+
+**STRICT rules:**
+
+1. **Every precision / accuracy / prediction artifact** — the L2 100×
+   dashboard, `per-observable-100x-status`, accuracy audit docs,
+   "N/7 met" counts — **must report m_μ as the proton-anchored
+   prediction (963.6×, FAIL), never "exact / ~0 ppb / MET".** An m_μ
+   value ≈ CODATA computed at the muon q₀ is the CAL-2 calibration
+   tautology ("equality by construction"), **not** an accuracy win.
+   The canonical L2 count is **3/7** (m_e, m_p, m_K/m_π), **not** 4/7.
+2. **Two q₀ live in the repo; do not conflate them:**
+   - **Package layer** `tools/qou-substrate/.../constants.py` (`Q`,
+     `q_at()`, `Q_50_DIGIT_STR`) is **proton-pinned**
+     (`_solve_q_proton_f64`), q₀ ≈ 1.10998 — use for precision/prediction.
+   - **`computations/` layer** is currently **muon-q₀ canonical**:
+     `…/q-pinning-50-digit.witness.json` carries the muon value
+     `1.10997859555733471…` (−11.5 ppb), feeding ~72 producers /
+     ~840 witnesses — the canonical 3-CAL (muon) derivation witnesses.
+3. **Recurring bug to watch (bean `tnjb`):** a dashboard/witness that
+   reads a **muon-q₀** `muon_check.m_mu_pred_MeV` (≈ CODATA, ~0 ppb)
+   and scores it as the m_μ *prediction* silently flips m_μ FAIL→MET.
+   The committed `per-observable-100x-status.witness.json`
+   (m_μ ≈ 105.6583978, 963.6×) is the **canonical** value; a fresh run
+   that reads the muon-q₀ Borromean witness (≈ 105.6583756, 1.36 ppb)
+   is the symptom.
+4. **Do NOT migrate the ~840 muon-q₀ `computations/` witnesses to proton
+   without explicit owner sign-off** — large, gated (bean `tnjb`), not
+   an idle-drain. The convention is enforced at the *reporting/precision*
+   layer, not by rewriting the canonical 3-CAL derivation witnesses.
+
+
 ## CRITICAL: Protected Files — DO NOT MODIFY
 
 The following files are **strictly off-limits** to all coding agents
