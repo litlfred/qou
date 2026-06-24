@@ -95,8 +95,8 @@ def _load_mpf(witness_path: Path, dotted_key: str) -> mp.mpf:
 
 # ── CAL-1: electron mass (legitimate calibration input) ─────────
 # Hardcoded — the framework's sole direct mass-scale anchor (CAL-1).
-# 0.5109989500(15) MeV/c² (CODATA 2022)
-M_E_MEV = mp.mpf("0.51099895")
+# 0.51099895069(15) MeV/c² (CODATA 2022, full 11 sig figs)
+M_E_MEV = mp.mpf("0.51099895069")
 M_E_MEV_ERR = mp.mpf("0.00000000015")
 
 # ── DERIVED Q_β (NOT a calibration; canonical CAL-3 is m_π) ──────
