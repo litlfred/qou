@@ -256,7 +256,12 @@ def main() -> dict:
             rows.append(_row_for("m_p", m_p_sub, sub_source))
         else:
             rows.append({"obs": "m_p", "status": "NO-WITNESS"})
-        # m_mu still from Borromean (CAL-2 anchor check)
+        # m_mu: under the proton-anchored convention this is a 9.5σ
+        # PREDICTION (~210 ppb, 963.6× the 100× target), NOT an anchor.
+        # CAVEAT: the Borromean witness currently carries the MUON q₀, so its
+        # muon_check ≈ CODATA (~0 ppb) = the CAL-2 calibration tautology;
+        # reading it here can silently flip m_mu FAIL→MET vs the canonical
+        # committed witness. See AGENTS.md §"q₀ anchor convention" + bean tnjb.
         v_mu = borr_data.get("muon_check", {}).get("m_mu_pred_MeV")
         if v_mu is None:
             rows.append({"obs": "m_mu", "status": "NO-WITNESS"})
