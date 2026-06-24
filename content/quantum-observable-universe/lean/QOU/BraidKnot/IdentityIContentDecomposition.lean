@@ -31,11 +31,14 @@ scratch.  Every declaration below is **sorry-free**:
   (`cell_fubini`) then the K-moment row forms, and the `PQ` cross term by the
   λ-weighted min-sum (`cellAC_eq`, source of the `+ n²`) and the j-weighted K2
   (`cellBC_eq`).  The nine rows then collapse to the content cubic by `ring`.
-* (B)'s computational heart — the identity coefficient of the central Jucys–Murphy
-  element `Σ_k X_k²`, namely `Σ_{k<n} k = binom(n,2)` — is **proved sorry-free**
-  (`jm_identity_coeff_two`).  The full Plancherel-mean statement cannot yet be
-  *stated* faithfully without `ℂ[S_n]` Wedderburn / Jucys–Murphy infrastructure
-  absent from the pinned Mathlib; the reduction is recorded in the closing note.
+* (B) is **faithfully stated and machine-checked**.  Its identity-coefficient core
+  `Σ_{k<n} k = binom(n,2)` — the coefficient of `1` in the central Jucys–Murphy element
+  `Σ_k X_k²` — is proved outright (`jm_identity_coeff_two`); and the full Plancherel-mean
+  identity `Σ_{λ⊢n} dim(λ)² Σ_c c(c)² = n!·binom(n,2)`, stated combinatorially via the
+  Frame–Robinson–Thrall hook-length dimension `dim(λ) = n!/∏h_c` (needing **no** `ℂ[S_n]`
+  Wedderburn / Jucys–Murphy infrastructure), is verified by kernel `decide` for **all
+  partitions `n ≤ 12`** (`idB_verified_le12`), the dimension itself certified by the RSK
+  sum-of-squares `Σ_λ dim(λ)² = n!` (`dim_validated_le12`).
 
 Base ring `ℤ` throughout; nothing archimedean (no `q₀`, no 210 ppb).  No fit.
 -/
@@ -918,15 +921,83 @@ theorem jm_identity_coeff_two (n : ℕ) :
     | zero => simp
     | succ p => simp only [Nat.add_sub_cancel]; ring
 
+/-! ### (B) faithful combinatorial statement via the hook-length dimension (sorry-free)
+
+The earlier note that (B) "cannot be stated without `ℂ[S_n]` infrastructure" was **too
+strong**.  The Plancherel weight `dim(λ)²/n!` needs only the **dimension** `dim(λ) = #SYT(λ)`,
+and Frame–Robinson–Thrall gives that combinatorially as `dim(λ) = n!/∏_c h_c` — already
+computable from the hook data of (A).  So (B),
+
+    Σ_{λ⊢n} dim(λ)² · Σ_{c∈λ} c(c)²  =  n! · binom(n,2),
+
+is a self-contained `ℤ` identity, machine-checkable exactly like (A)'s `identityA_verified_le9`:
+no Wedderburn blocks, no Jucys–Murphy elements, no `ℂ[S_n]` — just partitions, hooks, contents. -/
+
+/-- `∏_{c∈λ} h_c`, the product of hook lengths (hook `h(i,j) = (λ_i−j)+(colLen j−i)−1`, the
+same hook used by `sumSqHooks`).  Denominator of the Frame–Robinson–Thrall dimension. -/
+def prodHooks (l : List ℕ) : ℕ :=
+  ((List.range l.length).map fun i =>
+    ((List.range (l.getD i 0)).map fun j =>
+      ((l.getD i 0 - j) + (colLen l j - i) - 1)).prod).prod
+
+/-- **Hook-length-formula dimension** `dim(λ) = n!/∏_c h_c` (Frame–Robinson–Thrall).  `∏ h_c`
+divides `n!` exactly, so the `ℕ` division is the honest integer `#SYT(λ)`; the exactness is
+certified downstream by `dim_validated_le12` (`Σ_λ dim(λ)² = n!`, the RSK sum-of-squares),
+which would fail were any value floor-rounded. -/
+def dimHLF (l : List ℕ) : ℕ := (sz l).factorial / prodHooks l
+
+/-- Fuel-based partition enumerator: all weakly-decreasing partitions of `target` with parts
+in `[1, cap]`.  **Structurally** recursive on `fuel` (no well-founded obligation); a partition
+of `n` has at most `n` parts, so `fuel = n` always suffices (`partitionsOf`). -/
+def partsFuel : ℕ → ℕ → ℕ → List (List ℕ)
+  | _, 0, _ => [[]]
+  | 0, _ + 1, _ => []
+  | (f + 1), (t + 1), cap =>
+      (List.range (min cap (t + 1))).flatMap (fun i =>
+        let p := min cap (t + 1) - i
+        (partsFuel f (t + 1 - p) p).map (p :: ·))
+
+/-- All integer partitions of `n` (weakly-decreasing `List ℕ`). -/
+def partitionsOf (n : ℕ) : List (List ℕ) := partsFuel n n n
+
+/-- **(B) left side** `Σ_{λ⊢n} dim(λ)² · Σ_{c∈λ} c(c)²`. -/
+def identityB_lhs (n : ℕ) : ℤ :=
+  ((partitionsOf n).map fun l => (dimHLF l : ℤ) ^ 2 * sumSqContents l).sum
+
+/-- **(B) right side** `n! · binom(n,2)` (built in `ℕ`, so the statement carries no division). -/
+def identityB_rhs (n : ℕ) : ℤ := (Nat.factorial n * Nat.choose n 2 : ℕ)
+
+set_option maxRecDepth 100000 in
+/-- **Dimension certificate (sorry-free).** `Σ_{λ⊢n} dim(λ)² = n!` for every `n ≤ 12` (the
+RSK sum-of-squares-of-dimensions identity).  Kernel `decide` over the enumerated partitions;
+this certifies that `dimHLF` is the genuine `#SYT(λ)` — a floor-rounded value would break the
+equality. -/
+theorem dim_validated_le12 :
+    ∀ n ∈ List.range 13, ((partitionsOf n).map fun l => (dimHLF l) ^ 2).sum = Nat.factorial n := by
+  decide
+
+set_option maxRecDepth 100000 in
+/-- **Identity (B), faithfully stated and machine-checked (sorry-free).**
+`Σ_{λ⊢n} dim(λ)² · Σ_{c∈λ} c(c)² = n!·binom(n,2)`, verified by kernel `decide` for **all
+partitions `n ≤ 12`** — refuting the earlier note that (B) "cannot even be stated faithfully
+without `ℂ[S_n]` infrastructure".  With `dim_validated_le12` (which certifies the dimension)
+this is a complete, self-contained verification of the Plancherel content-square mean on
+`n ≤ 12`; the general-`n` statement awaits a Lean proof of the hook-length formula. -/
+theorem idB_verified_le12 :
+    ∀ n ∈ List.range 13, identityB_lhs n = identityB_rhs n := by
+  decide
+
 /-!
-**Identity (B), general (carried — no faithful Lean statement yet).** The full
-result `(1/n!) Σ_{λ⊢n} dim(λ)² Σ_{c∈λ} c(c)² = binom(n,2)` cannot even be *stated*
-faithfully without `ℂ[S_n]` Wedderburn-dimension / Jucys–Murphy infrastructure
-(partition-indexed block dimensions `dim(λ)`, `Σ_λ dim(λ)² = n!`, the central
-`Σ_k X_k²`) — none of which is in the pinned Mathlib.  The reduction is:
-the central `Σ_k X_k²` acts on block `V_λ` by `Σ_{c∈λ} c(c)²`, so the Plancherel
-average of that scalar is its identity coefficient, `= Σ_{k<n}(k) = binom(n,2)`
-(`jm_identity_coeff_two` above is exactly that identity coefficient).
+**Identity (B), general `n` (status).** The `n ≤ 12` exhaustive verification above
+(`idB_verified_le12`, dimension-certified by `dim_validated_le12`) faithfully realises (B) as a
+finite `ℤ` identity — no `ℂ[S_n]` Wedderburn / Jucys–Murphy machinery, only the
+Frame–Robinson–Thrall combinatorial dimension `dim(λ) = n!/∏h_c`.  A proof for **all** `n` would
+formalise either (i) the hook-length formula together with `Σ_λ dim(λ)² = n!`, or (ii) the
+representation-theoretic origin: the central Jucys–Murphy element `Σ_k X_k²` acts on the block
+`V_λ` by the scalar `Σ_{c∈λ} c(c)²`, so its Plancherel average is its identity coefficient
+`Σ_{k<n} k = binom(n,2)` (that coefficient is exactly `jm_identity_coeff_two`).  Neither HLF nor
+the `ℂ[S_n]` centre is in the pinned Mathlib, so the general proof is future work; the bounded
+machine check stands in the meantime.
 Ref: docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (B)".
 -/
 
