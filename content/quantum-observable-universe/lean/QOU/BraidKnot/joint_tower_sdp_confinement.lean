@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.joint_tower_sdp_confinement
 
@@ -29,6 +31,8 @@ class JointTowerSdpConfinementContext where
       hadron `H ∈ R` and every Wedderburn block `λ ⊢ n_0(H)`, the block
       projection `ρ_λ(T_w(H))` is positive semidefinite. -/
   claim_i_wedderburn_positivity : Prop
+  /-- Axiomatised proof that sub-claim (i) holds (§3b-cond conditional class). -/
+  claim_i_holds : claim_i_wedderburn_positivity
   /-- SDP coefficient `c_{H, w}` indexed by hadron index `H : ℕ` and
       word index `w : ℕ`. -/
   coefficient : ℕ → ℕ → ℝ
@@ -107,7 +111,7 @@ def joint_tower_sdp_confinement [ctx : JointTowerSdpConfinementContext] :
     (∀ i j : ℕ, i ≤ j → ctx.jet_order i ≤ ctx.jet_order j) ∧
     (∀ n n' : ℕ, n < n' →
       ctx.embedding n n' (ctx.T_w_value n) = ctx.T_w_value n') :=
-  ⟨ctx.claim_i_wedderburn_positivity, ctx.claim_ii_gb_filtration_grading,
+  ⟨ctx.claim_i_holds, ctx.claim_ii_gb_filtration_grading,
    ctx.claim_iii_jet_order_ordering, ctx.claim_iv_cross_level_compatibility⟩
 
 end QOU.BraidKnot

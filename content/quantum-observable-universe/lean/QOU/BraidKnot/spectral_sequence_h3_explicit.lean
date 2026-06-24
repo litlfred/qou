@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.spectral_sequence_h3_explicit
 
@@ -32,11 +34,17 @@ class SpectralSequenceH3ExplicitContext where
   /-- Manuscript sub-claim (i): explicit `d_1`-differential of the
       GB-filtered Hochschild spectral sequence on `H_3(R, q)`. -/
   claim_i_d1_differential : Prop
+  /-- Axiomatised proof of the sub-claim (§3b-cond conditional class). -/
+  claim_i_d1_differential_holds : claim_i_d1_differential
   /-- Manuscript sub-claim (ii): explicit `d_2`-differential. -/
   claim_ii_d2_differential : Prop
+  /-- Axiomatised proof of the sub-claim (§3b-cond conditional class). -/
+  claim_ii_d2_differential_holds : claim_ii_d2_differential
   /-- Manuscript sub-claim (iii): the `E_∞` page identifications are
       *concretised* on `H_3(R, q)` for the single-nucleon case. -/
   claim_iii_page_identifications_concretised : Prop
+  /-- Axiomatised proof of the sub-claim (§3b-cond conditional class). -/
+  claim_iii_page_identifications_concretised_holds : claim_iii_page_identifications_concretised
 
 /-- **Content statement** (from manuscript):
 
@@ -58,8 +66,8 @@ def spectral_sequence_h3_explicit [ctx : SpectralSequenceH3ExplicitContext] :
     ctx.claim_i_d1_differential ∧
     ctx.claim_ii_d2_differential ∧
     ctx.claim_iii_page_identifications_concretised :=
-  ⟨ctx.claim_strand_count, ctx.claim_i_d1_differential,
-   ctx.claim_ii_d2_differential,
-   ctx.claim_iii_page_identifications_concretised⟩
+  ⟨ctx.claim_strand_count, ctx.claim_i_d1_differential_holds,
+   ctx.claim_ii_d2_differential_holds,
+   ctx.claim_iii_page_identifications_concretised_holds⟩
 
 end QOU.BraidKnot
