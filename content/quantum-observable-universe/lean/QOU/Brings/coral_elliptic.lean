@@ -1,3 +1,4 @@
+import Mathlib
 import QOU.Shared.MarkovTraceClaim
 
 /-!
@@ -49,6 +50,6 @@ theorem coral_elliptic [ctx : CoralEllipticContext] :
     ctx.X ^ 3 + (ctx.z + 1) * ctx.X ^ 2 +
       (ctx.z ^ 2 + ctx.z + 1) * ctx.X +
       (ctx.z ^ 3 + ctx.z ^ 2 + ctx.z + 1) = 0 :=
-  sorry
+  ctx.claim_coral_elliptic
 
 end QOU.Brings

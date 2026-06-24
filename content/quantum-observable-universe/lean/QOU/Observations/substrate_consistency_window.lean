@@ -1,3 +1,7 @@
+import Mathlib
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Linarith
+
 /-!
 # QOU.Observations.substrate_consistency_window
 
@@ -9,9 +13,6 @@ the `lean.ref` URI `qou:QOU.Observations.substrate_consistency_window` resolves 
 the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per AGENTS.md §1.
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.Linarith
 
 namespace QOU.Observations
 
@@ -54,7 +55,12 @@ overlap.
 -- Ref: [manuscript] quantum-observable-universe/observations/substrate-consistency-window.ts
 theorem substrate_consistency_window [ctx : SubstrateConsistencyWindowContext] :
     ∀ k : ℕ, k < ctx.n_classes →
-      ctx.q_lo k ≤ ctx.q_star ∧ ctx.q_star ≤ ctx.q_hi k :=
-  sorry
+      ctx.q_lo k ≤ ctx.q_star ∧ ctx.q_star ≤ ctx.q_hi k := by
+  intro k _hk
+  rw [ctx.q_lo_def k, ctx.q_hi_def k]
+  have h_eps := ctx.epsilon_nonneg k
+  constructor
+  · linarith
+  · linarith
 
 end QOU.Observations

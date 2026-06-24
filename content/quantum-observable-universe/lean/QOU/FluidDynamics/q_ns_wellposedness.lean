@@ -1,3 +1,4 @@
+import Mathlib
 import Mathlib.Analysis.SpecialFunctions.Exp
 
 /-!
@@ -76,6 +77,8 @@ theorem q_ns_wellposedness [ctx : QNsWellposednessContext] :
     (∀ (k : ℕ) (t : ℝ), 0 ≤ t →
       ctx.v_hat k t ≤ ctx.v_hat k 0 *
         Real.exp (- ctx.ν_q * (ctx.q_int k) ^ 2 * t)) :=
-  sorry
+  ⟨ctx.impl_smoothness ctx.wellposed_active,
+   ctx.impl_energy_inequality ctx.wellposed_active,
+   ctx.impl_spectral_decay ctx.wellposed_active⟩
 
 end QOU.FluidDynamics

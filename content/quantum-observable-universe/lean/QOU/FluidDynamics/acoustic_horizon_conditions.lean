@@ -1,4 +1,6 @@
+import Mathlib
 import QOU.Shared.SobolevHkRegularity
+
 
 /-!
 # QOU.FluidDynamics.acoustic_horizon_conditions
@@ -47,6 +49,9 @@ horizons wherever $|v| = c_s$.
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.ts
 theorem acoustic_horizon_conditions [ctx : AcousticHorizonConditionsContext] :
     ctx.mach = 1 ∧ 0 < ctx.grad_mach_sq_norm ∧ 0 ≤ ctx.null_energy :=
-  sorry
+  ⟨ctx.impl_transonic ctx.horizon_active,
+   ctx.impl_non_degeneracy ctx.horizon_active,
+   ctx.impl_energy_condition ctx.horizon_active⟩
+
 
 end QOU.FluidDynamics

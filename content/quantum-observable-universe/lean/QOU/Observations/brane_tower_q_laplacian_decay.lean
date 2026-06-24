@@ -1,3 +1,4 @@
+import Mathlib
 import QOU.Shared.MarkovTraceClaim
 
 /-!
@@ -61,7 +62,8 @@ contribution.*
 theorem brane_tower_q_laplacian_decay [ctx : BraneTowerQLaplacianDecayContext] :
     |ctx.T_rho - ctx.hbar_q ^ 2 * ctx.delta1_rho|
       ≤ ctx.hbar_q ^ 4 * ctx.rho_L2 *
-        (ctx.q_real ^ (-2 : ℤ) / (1 - ctx.q_real ^ (-2 : ℤ))) :=
-  sorry
+        (ctx.q_real ^ (-2 : ℤ) / (1 - ctx.q_real ^ (-2 : ℤ))) := by
+  rw [← ctx.ratio_eq]
+  exact ctx.remainder_bound
 
 end QOU.Observations
