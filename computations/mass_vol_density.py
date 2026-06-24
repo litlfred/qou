@@ -52,6 +52,7 @@ from __future__ import annotations
 import functools
 import json
 import sys
+import warnings
 from pathlib import Path
 
 import mpmath as mp
@@ -186,7 +187,29 @@ def vol_density_vd(vol_K: mp.mpf, q: mp.mpf, density: mp.mpf | None = None) -> m
 
 def mass_vol_density(m_e: mp.mpf, vol_K: mp.mpf, q: mp.mpf,
                      density: mp.mpf | None = None) -> mp.mpf:
-    """m(K) = m_e · Vol(K) · ρ(q) / ℏ_q² — the canonical mass, proper form."""
+    """m(K) = m_e · Vol(K) · ρ(q) / ℏ_q².
+
+    ⚠ DEPRECATED FOR ABSOLUTE NUCLEON/ATOM MASS (owner ruling 2026-06-24).
+    This applies 1/ℏ_q² (= q²·c_q²) to the *Borromean* volume, which is NOT
+    the canonical nucleon mass: with ρ=λ_A it gives m_p≈966 (+2.96%, a fit);
+    with ρ=tr_M it gives m_p≈406 (−57%). The CANONICAL nucleon mass is the
+    muon-anchored Hecke energy (substrate-identity):
+
+        m_p = dim V_{(2,1)}·(m_μ·F_Bor − |S_3|·m_e) = 2·(m_μ·F_Bor − 6·m_e),
+        m_μ = m_e·Vol(4₁)/ℏ_q²,  F_Bor = |tr_M(β_Bor)|·[3]_q!/q³   → 938.27 MeV
+
+    Use `m_p_substrate_identity_50dps` / the `m-p-substrate-identity-50dps`
+    witness. See docs/canonical-mass-formula-guardrail.md and
+    docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md.
+    (Still valid for non-mass diagnostics / the muon anchor where Vol=Vol(4₁).)"""
+    warnings.warn(
+        "mass_vol_density (m_e·Vol·ρ/ℏ_q²) is NOT the canonical absolute "
+        "nucleon mass — use the muon-anchored F_Bor substrate-identity "
+        "(m_p_substrate_identity_50dps). See "
+        "docs/canonical-mass-formula-guardrail.md.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
     return m_e * vol_density_vd(vol_K, q, density)
 
 
