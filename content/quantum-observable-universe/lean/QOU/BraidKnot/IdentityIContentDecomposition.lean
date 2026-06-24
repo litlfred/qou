@@ -665,6 +665,34 @@ theorem two_mul_sum_lambda_min (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
       (fun i k hik => getD_antitone l hl hik) l.length]
   ring
 
+/-- Reflected square sum: `6·Σ_{j<M}((M:ℤ)−j)² = M(M+1)(2M+1)` (the `Σ_{m=1}^M m²` form). -/
+theorem six_mul_sum_range_refl_sq (M : ℕ) :
+    6 * ∑ j ∈ Finset.range M, ((M : ℤ) - j) ^ 2 = (M : ℤ) * ((M : ℤ) + 1) * (2 * (M : ℤ) + 1) := by
+  have h1 : ∑ j ∈ Finset.range M, ((M : ℤ) - j) ^ 2 = ∑ j ∈ Finset.range M, ((j : ℤ) + 1) ^ 2 := by
+    rw [← Finset.sum_range_reflect (fun j => ((M : ℤ) - j) ^ 2) M]
+    apply Finset.sum_congr rfl
+    intro j hj
+    have hjM := Finset.mem_range.mp hj
+    have : ((M - 1 - j : ℕ) : ℤ) = (M : ℤ) - 1 - j := by omega
+    rw [this]; ring
+  have h2 : ∑ j ∈ Finset.range (M + 1), (j : ℤ) ^ 2 = ∑ j ∈ Finset.range M, ((j : ℤ) + 1) ^ 2 := by
+    rw [Finset.sum_range_succ']; simp
+  rw [h1, ← h2, six_mul_sum_range_sq (M + 1)]; push_cast; ring
+
+/-- Reflected linear sum: `2·Σ_{j<M}((M:ℤ)−j) = M(M+1)` (the `Σ_{m=1}^M m` form). -/
+theorem two_mul_sum_range_refl (M : ℕ) :
+    2 * ∑ j ∈ Finset.range M, ((M : ℤ) - j) = (M : ℤ) * ((M : ℤ) + 1) := by
+  have h1 : ∑ j ∈ Finset.range M, ((M : ℤ) - j) = ∑ j ∈ Finset.range M, ((j : ℤ) + 1) := by
+    rw [← Finset.sum_range_reflect (fun j => (M : ℤ) - j) M]
+    apply Finset.sum_congr rfl
+    intro j hj
+    have hjM := Finset.mem_range.mp hj
+    have : ((M - 1 - j : ℕ) : ℤ) = (M : ℤ) - 1 - j := by omega
+    rw [this]; ring
+  have h2 : ∑ j ∈ Finset.range (M + 1), (j : ℤ) = ∑ j ∈ Finset.range M, ((j : ℤ) + 1) := by
+    rw [Finset.sum_range_succ']; simp
+  rw [h1, ← h2, two_mul_sum_range_int (M + 1)]; push_cast; ring
+
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
 (`identityA_verified_le9`) and exhaustively in Python for `n ≤ 22`.
