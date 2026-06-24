@@ -140,6 +140,39 @@ theorem identityA_algebra
     h2 = c2 + n ^ 2 := by
   subst hLeg1; subst hLeg2; linarith
 
+/-! ### Foundational lemma for the residual fill (lemma 1 of 6, sorry-free)
+
+The six reduction lemmas (E)/(Leg1)/(Leg2)/(Cross) all hinge on the fact that, for a
+weakly-decreasing `l`, a **genuine cell** `(i,j)` (`i < len`, `j < λ_i`) has
+`i < colLen l j` — i.e. the leg `colLen_j − 1 − i ≥ 0`, so the `ℕ`-subtraction in the
+hook def is exact and `hook = arm + leg + 1`.  The rows with part `> j` form a prefix
+(sortedness), so the first `i+1` rows all qualify. -/
+
+/-- For a weakly-decreasing `l`, every genuine cell `(i,j)` satisfies `i < colLen l j`. -/
+theorem lt_colLen_of_cell (l : List ℕ) (hl : l.Sorted (· ≥ ·)) {i j : ℕ}
+    (hi : i < l.length) (hj : j < l.getD i 0) : i < colLen l j := by
+  have hmem : ∀ x ∈ l.take (i + 1), j < x := by
+    intro x hx
+    rw [List.mem_iff_getElem] at hx
+    obtain ⟨k, hk, rfl⟩ := hx
+    rw [List.length_take] at hk
+    have hkl : k < l.length := by omega
+    rw [List.getElem_take]
+    have hgi : l.getD i 0 = l[i] := by
+      rw [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hi]; rfl
+    rcases Nat.lt_or_ge k i with hki | hki
+    · have := (List.pairwise_iff_getElem.mp hl) k i hkl hi hki
+      simp only [ge_iff_le] at this; omega
+    · have hke : k = i := by omega
+      subst hke; omega
+  have hfilt : (l.take (i + 1)).filter (fun p => j < p) = l.take (i + 1) :=
+    List.filter_eq_self.mpr (by intro a ha; simpa using hmem a ha)
+  have hsub : List.Sublist ((l.take (i + 1)).filter (fun p => j < p))
+      (l.filter (fun p => j < p)) := (List.take_sublist _ _).filter _
+  have hlen : (l.take (i + 1)).length ≤ colLen l j := by
+    have h := hsub.length_le; rwa [hfilt] at h
+  rw [List.length_take] at hlen; omega
+
 /-- **Identity (A), general (carried — residual is six finite, formula-free facts).**
 For a weakly-decreasing partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.
 
