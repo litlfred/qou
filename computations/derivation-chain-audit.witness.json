@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-24T02:08:35.929013+00:00",
-  "commitSha": "cc6708f24d31e84869e31ea8ddee1ff8ee2890af",
+  "computedAt": "2026-06-24T02:33:20.910343+00:00",
+  "commitSha": "2528274542dd6f8aa428b6fdd54747d82285f70e",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "81b286b6b75382730a0886067c550a30ed123a68",
+  "scriptCommitSha": "e46b8145b47b2bb40f9b7ce30a8bd126e7fbc6ad",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -574,7 +574,8 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -2788,6 +2789,7 @@
         "option-e-v9-all-symmetries.witness.json",
         "orbit-trace-identity.witness.json",
         "p2-5-symbolic-q-audit.witness.json",
+        "pairwise-magnitude-gap-decomposition.witness.json",
         "paper-modulus-audit-nonarchimedean.witness.json",
         "path-b-evacuation.witness.json",
         "path-b-open-questions.witness.json",
@@ -2886,6 +2888,7 @@
         "reading-a-residual-at-50dps.witness.json",
         "real-star-lift-candidates.witness.json",
         "reeb-flow-garside-closed-form-verification.witness.json",
+        "reeb-phase-deficit-consistency.witness.json",
         "reeb-rotation-pn-test-reeb.witness.json",
         "rho-constit-equals-tau-M-proton-phase5l.witness.json",
         "rho-f-volume-binding-gap.witness.json",
