@@ -40,6 +40,9 @@ more concrete child watchers and invokes them.
 /integration-watch bib                          → same as `bibliography`
 /integration-watch q-usage                      → q-usage watcher (per-block q regime + chapter-mismatch)
 /integration-watch q                            → same as `q-usage`
+/integration-watch devils-advocate              → devils-advocate-watcher (adversarial "why is this wrong" review)
+/integration-watch da                           → same as `devils-advocate`
+/integration-watch adversarial                  → same as `devils-advocate`
 /integration-watch all                          → all watchers in parallel
 /integration-watch proof,canonical              → those two in parallel
 /integration-watch proof canonical              → same (space-separated)
@@ -90,6 +93,17 @@ Per `integration-watcher §0` + `§4e` (full-context preamble):
    >   construction without declaration, formal-power-series prose
    >   using `q > 1` instead of `|q| > 1`. Emits per-block sidecars
    >   (`q-usage-*` criteria) and a global witness JSON.
+   > - **devils-advocate** — devils-advocate-watcher: for every
+   >   block + Lean sibling, construct the strongest case it is
+   >   WRONG (the objection a hostile-but-competent referee raises),
+   >   fanning out four adversarial-lens agents (formalist /
+   >   skeptical physicist / algebraist / reproducibility-citation)
+   >   + an adjudicator that scores each objection
+   >   surviving/rebutted/partial. Emits per-block `da-*` sidecars
+   >   (12 finding kinds + `da-referee-verdict`). Gated by the
+   >   (a)/(b) refutation-scope rule + corpus-grep checklist so it
+   >   predicts real referee objections without crying wolf on
+   >   settled items.
 
 2. **Role-gate the chip set.** Before composing the
    `AskUserQuestion`, detect the user's role (`reader` /
@@ -166,7 +180,8 @@ When multiple watchers are dispatched in parallel:
   `local/compute-integration-watcher`,
   `local/detangler-integration-watcher`,
   `local/one-voice-integration-watcher`,
-  `local/proposition-consolidation-audit`
+  `local/proposition-consolidation-audit`,
+  `local/devils-advocate-watcher`
 - **Inherits everything**: §0-§9 of the parent
 - **Write-side counterpart**: [`local/integration-backlog`](integration-backlog.md)
   — same argument grammar, but DRAINS the open findings into

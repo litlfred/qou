@@ -878,6 +878,8 @@ When a user request arrives, route to the right skill(s):
 | "/integration-watch consolidation / dedupe" | `local/integration-watch` (dispatcher → proposition-consolidation-audit child) | reader |
 | "q usage / q regime / fixed q_0 leak / Real.sqrt q without 0 < q / archimedean leak / |q| > 1 vs q > 1 / root of unity undeclared / chapter regime mismatch / q symbolic vs numerical / per-block q audit" | `local/q-usage-watcher` (per-block q-regime detector + chapter-mismatch flagger; emits sidecar entries under `q-usage-*` criteria) | reader |
 | "/integration-watch q-usage / q" | `local/integration-watch` (dispatcher → q-usage-watcher child) | reader |
+| "devils advocate / why is this wrong / what will reviewers argue / adversarial review / red team / referee objection / counterexample / break this proof / poke holes" | `local/devils-advocate-watcher` (per-block + Lean adversarial review; 4 lenses + adjudicator; emits `da-*` sidecars) | reader |
+| "/integration-watch devils-advocate / da / adversarial" | `local/integration-watch` (dispatcher → devils-advocate-watcher child) | reader |
 | "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `content/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/schemas/block-qa.ts` (schema) | collaborator |
 | "session todos / work plan / what's left / track progress / beans" | `local/todo-manager` (session work-plan via the `beans` CLI) + `local/bean-coordination` | reader |
 | "process feedback / review todos / triage open feedback" | `local/todo-review` (content-feedback triage) | reader |
@@ -915,7 +917,7 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, watch, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check, witnessed-values, proof-integration-watcher, canonical-watcher, detangler-integration-watcher, production-vs-exploratory-discipline, proposition-consolidation-audit, q-usage-watcher, symbiotic-interaction |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, watch, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check, witnessed-values, proof-integration-watcher, canonical-watcher, detangler-integration-watcher, production-vs-exploratory-discipline, proposition-consolidation-audit, q-usage-watcher, symbiotic-interaction, devils-advocate-watcher |
 | `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, lean-substantive-pass, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator, one-voice-audit, compute-audit, compute-author, coordinate, compute-integration-watcher, ffi-roundtrip-audit |
 | `owner` | All collaborator skills + deployment-auth |
 
