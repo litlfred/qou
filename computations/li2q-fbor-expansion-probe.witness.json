@@ -1,0 +1,82 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-24T04:08:58.806400+00:00",
+  "commitSha": "4347614bfc98a8f170ebc172c92148257b7e28a2",
+  "assertions": [
+    {
+      "name": "q3_is_exact_balancing",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "F_Bor_alone_subpercent",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "habiro_ratio_is_small_correction",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "li2q-fbor-expansion-probe",
+  "scriptFile": "li2q_fbor_expansion_probe.py",
+  "scriptHash": "22d0c4d70cf6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Reframing probe for bean ovud: proves the F_Bor `/q^3` is the EXACT q-factorial balancing [3]_q!/q^3 = 1+2q^-2+2q^-4+q^-6 (not a fit), locates the genuine approximation layer (the habiro_ratio {46,4,29} at u^4/u^5/u^6), measures layer sizes, and reports the Li_2^q u-expansion coefficients as the target for a follow-up against the habiro_ratio (NOT the exact /q^3).",
+  "contentBlock": "prop:markov-trace-axiomatic-closed-form",
+  "parameters": {
+    "q_0": "1.1099785955573347198997632204832250266562084087802",
+    "convention": "wenzl-schur"
+  },
+  "data": {
+    "step1_q3_exact_balancing": {
+      "qfact3_over_q3_symbolic": "1 + 2/q**2 + 2/q**4 + q**(-6)",
+      "claimed_laurent": "1 + 2*q^-2 + 2*q^-4 + q^-6",
+      "residual": "0",
+      "is_exact": true
+    },
+    "step23_layer_sizes": {
+      "trM_borromean": "0.99856216319741255575768689907",
+      "qfact3_over_q3": "4.4755737424663707495078667843",
+      "F_Bor": "4.46913859782675858137078848338",
+      "u": "0.0085172363404849214399331129023",
+      "habiro_ratio": "1.0000002422447144406619337925",
+      "habiro_ratio_minus_1": "0.000000242244714440661933792496857101",
+      "m_p_F_Bor_only_mev": "938.271860868979810321390560663",
+      "m_p_full_mev": "938.272088160378814235888817352",
+      "err_F_Bor_only_ppb": "-242.244252022",
+      "err_full_ppb": "0.000403736017163"
+    },
+    "step4_li2q_u_coefficients": {
+      "a_1": "1.0",
+      "a_2": "-0.248645272504222281",
+      "a_3": "0.109515606774578336",
+      "a_4": "-0.0608319508660140015",
+      "a_5": "0.0383109372486596873",
+      "a_6": "-0.0260902324947668682",
+      "a_7": "0.0187345222686398554",
+      "a_8": "-0.0139732093918851465"
+    }
+  }
+}
