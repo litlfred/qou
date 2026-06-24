@@ -64,3 +64,37 @@ fibre-`R(q,x)` derivation where the A-scaling is an output, not an assumption.
 
 → `computations/probes/he4_qreeb_phase_falsification_probe.py` ·
 `computations/he4-qreeb-phase-falsification.witness.json`
+
+## Yardstick-free follow-up — the real obstruction is saturation, not the phase
+
+Removing the `k·B₂` yardstick entirely (the #2703 confound) and testing the **total
+gap** `Gap = B_AME − B_joint^model` (`|χ|` joint trace, all bonds, no reference)
+against `Σ|Δθ|`:
+
+| atom | `B_AME` | `B_joint^model` | Gap | `Σ|Δθ|` | `Gap/Σ|Δθ|` |
+|---|---:|---:|---:|---:|---:|
+| ³H  | 8.48 | 3.25 | 5.23 | 8.22 | 0.636 |
+| ³He | 7.72 | 3.47 | 4.25 | 8.49 | 0.500 |
+| ⁴He | 28.30 | 3.80 | 24.49 | 17.23 | 1.421 |
+
+`Gap/Σ|Δθ|` spread = **108%** — far *noisier* than the pairwise version. So removing
+the yardstick makes it **worse**, and that exposes the real obstruction:
+
+**`B_joint^model` is nearly A-independent (3.25 → 3.47 → 3.80 MeV) while `B_AME`
+scales strongly (8.5 → 7.7 → 28.3).** The `|χ|` joint trace captures a *shrinking*
+fraction of binding as A grows — 38% (³H), 45% (³He), **13% (⁴He)**. The
+multiplicative deficit `1 − ∏f` **saturates** (exactly `productModel_3body_nonpos`):
+summing per-bond gives 7.34 MeV for ⁴He but the joint product gives only 3.80, and
+it barely moves with A.
+
+**Reframing the whole thread.** The dominant missing binding is the **extensive
+(A-scaling)** part, which **no saturating multiplicative trace can supply** — and the
+q-Reeb phase does *not* supply it either (108% spread). The phase is at best a small
+directional correction to the *intensive* per-bond residual; the large extensive
+binding (and ⁴He's doubly-magic enhancement) is a separate, bigger gap. This points
+squarely at the `z2bn` fibre-`R(q,x)` recurrence, whose **solution grows with A**
+(the `Iν`-growth regime of the q-Bessel split) — an output of the kernel, not a
+saturating product and not a fitted phase scale.
+
+→ `computations/probes/yardstick_free_phase_binding_probe.py` ·
+`computations/yardstick-free-phase-binding.witness.json`
