@@ -290,6 +290,75 @@ theorem hookE (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   exact cellSum_expand l (fun i j => (l.getD i 0 : ℤ) - 1 - j)
     (fun i j => (colLen l j : ℤ) - 1 - i)
 
+/-! ### Young-diagram Fubini swap (sum over cells = sum over columns) (sorry-free)
+
+The leg/cross reduction lemmas all need the *sum-over-cells → sum-over-columns*
+reorganization.  `cellSum_swap` provides it once: for sorted `l`, cell `(i,j)` lies in
+the diagram (`i < len ∧ j < λ_i`) iff `j < sz l ∧ i < colLen_j`, so `Finset.sum_comm'`
+flips the order.  Both membership directions use sortedness: `λ_i ≤ j ⇒ colLen_j ≤ i`
+(`colLen_le_of_le`) and its contrapositive `i < colLen_j ⇒ j < λ_i`. -/
+
+/-- Converse cell bound: for sorted `l`, `λ_i ≤ j ⇒ colLen_j ≤ i`. -/
+theorem colLen_le_of_le (l : List ℕ) (hl : l.Sorted (· ≥ ·)) {i j : ℕ}
+    (h : l.getD i 0 ≤ j) : colLen l j ≤ i := by
+  have hdrop : ∀ a ∈ l.drop i, ¬ (j < a) := by
+    intro a ha
+    rw [List.mem_iff_getElem] at ha
+    obtain ⟨k, hk, rfl⟩ := ha
+    rw [List.length_drop] at hk
+    have hidx : i < l.length := by omega
+    rw [List.getElem_drop]
+    have hil : l.getD i 0 = l[i] := by
+      rw [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hidx]; rfl
+    have hle : l[i + k] ≤ l[i] := by
+      rcases Nat.eq_or_lt_of_le (Nat.le_add_right i k) with he | hlt
+      · have hk0 : k = 0 := by omega
+        subst hk0; simp
+      · have := (List.pairwise_iff_getElem.mp hl) i (i + k) hidx (by omega) hlt
+        simpa using this
+    omega
+  have hfilt : (l.drop i).filter (fun p => j < p) = [] :=
+    List.filter_eq_nil_iff.mpr (by simpa using hdrop)
+  have hsplit : l.filter (fun p => j < p) = (l.take i).filter (fun p => j < p) := by
+    conv_lhs => rw [← List.take_append_drop i l]
+    rw [List.filter_append, hfilt, List.append_nil]
+  unfold colLen
+  rw [hsplit]
+  calc ((l.take i).filter (fun p => j < p)).length
+      ≤ (l.take i).length := List.length_filter_le _ _
+    _ ≤ i := by rw [List.length_take]; omega
+
+/-- Converse of `lt_colLen_of_cell`: for sorted `l`, `i < colLen_j ⇒ j < λ_i`. -/
+theorem lt_part_of_lt_colLen (l : List ℕ) (hl : l.Sorted (· ≥ ·)) {i j : ℕ}
+    (h : i < colLen l j) : j < l.getD i 0 := by
+  by_contra hc
+  push_neg at hc
+  exact absurd (colLen_le_of_le l hl hc) (by omega)
+
+/-- **Young-diagram Fubini (sorry-free).** Sum over cells (rows then columns) equals
+sum over columns then rows; column index bounded by `sz l ≥ max part`, row index by
+`colLen_j`. -/
+theorem cellSum_swap (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (F : ℕ → ℕ → ℤ) :
+    cellSum l F = ∑ j ∈ Finset.range (sz l), ∑ i ∈ Finset.range (colLen l j), F i j := by
+  unfold cellSum
+  refine Finset.sum_comm' ?_
+  intro i j
+  simp only [Finset.mem_range]
+  constructor
+  · rintro ⟨hi, hj⟩
+    refine ⟨lt_colLen_of_cell l hl hi hj, ?_⟩
+    have hpart : l.getD i 0 ≤ sz l := by
+      unfold sz
+      have : l.getD i 0 = l[i] := by
+        rw [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hi]; rfl
+      rw [this]
+      exact List.single_le_sum (by intro x _; exact Nat.zero_le x) _ (List.getElem_mem hi)
+    omega
+  · rintro ⟨hcol, hsz⟩
+    have hpart := lt_part_of_lt_colLen l hl hcol
+    have hcl : colLen l j ≤ l.length := List.length_filter_le _ _
+    exact ⟨by omega, hpart⟩
+
 /-! ### Row-data sums + the remaining reduction lemmas
 
 `p2 = Σλ_i²`, `q1 = Σ i·λ_i`, `q2 = Σ i²·λ_i`, `s2 = Σ i·λ_i²` (row data).  (Arm)/(Cont)
