@@ -191,6 +191,8 @@ export default chapter({
         "lepton-meson-parallel-intro",
         "frobenius-lepton-meson-bridge",
         "hoefsmit-binding-amplitude",
+        "meson-em-sinh-closed-form",
+        "meson-qcg-fusion-identity",
         "q-difference-viewpoint-method",
         "alpha-em-habiro-bar-involution",
         "figure-eight-reeb-rotation",
