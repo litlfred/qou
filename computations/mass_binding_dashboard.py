@@ -268,6 +268,25 @@ def _print_legend() -> None:
 | `σ_pred math (ppb)` | CAL-propagated theory error bar, ideal framework (CAL-2 = m_μ/m_e 22 ppb → ~462 ppb; the formula amplifies CAL-2 ~21× via ℏ_q) |
 | `σ_pred obs (ppb)` | CAL-propagated theory error bar, physical-observations layer (CAL-2 = m_p/m_e 0.06 ppb → ~1.3 ppb). err ≫ σ_pred ⇒ genuine formula systematic, not calibration noise |
 
+**Calibration anchors — principled (ideal) vs experimental pin**
+
+The three calibrations have a *principled* form (decay-width / weak-sector
+observables, h-graded) and an *experimental numerical pin* (best-measured
+ratio). q₀ is pinned on the most precise ratio so the theory residual lands
+where it is least significant; the principled observable is kept as the
+conceptual calibration + cross-check.
+
+| CAL | Principled (ideal) | h-order | Experimental pin (σ) |
+|---|---|---|---|
+| CAL-1 | m_e — dimensional unit | h⁰ | m_e CODATA (0.31 ppb) |
+| CAL-2 | 𝔇_β neutron β-decay width (τ_n = ℏ/𝔇_β) | h² | m_p/m_e (0.06 ppb) · alt m_μ/m_e (22 ppb) · m_n/m_e (0.48 ppb) |
+| CAL-3 | 𝔇_π pion decay width (τ_π = ℏ/𝔇_π) | h³ | m_π = 139.57 MeV |
+
+𝔇_β as a *numerical* pin is poor (~780 ppb, dlnQ_β/dlnq≈11 → σ(q₀)≈68 ppb),
+so it stays conceptual; the `σ_pred math` column uses the canonical m_μ/m_e
+CAL-2 (22 ppb), `σ_pred obs` the proton pin (0.06 ppb). Source:
+`observations/substrate-anchor-alternatives.md`, `particle-interactions/meson-scale-independence.md`.
+
 **Table 3 — Mass M = (constituents) − B (MeV)**
 
 | Header | Meaning |
