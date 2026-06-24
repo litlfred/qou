@@ -73,9 +73,8 @@ instance instR5FullWitness_helium3 : R5FullWitness LightNucleus.helium3 where
   primal_obj := 1
   dual_obj := 1
   duality_gap_le := by
+    -- |1 - 1| = 0 ≤ 10⁻⁶ trivially; `simp` discharges it fully
     simp
-    -- |1 - 1| = 0 ≤ 10⁻⁶ trivially
-    positivity
   rho_star := 3
   rho_star_pos := by decide
 
@@ -93,7 +92,7 @@ theorem helium3_min_block_eig_pos : 0 < helium3_min_block_eig := by
 /-- **Strict-complementarity certificate for ³He** — constructed
     using the empty-active-set option (since `min_block_eig > 0`
     ⟹ optimum is in the strict interior). -/
-theorem helium3StrictComplementarityCert :
+noncomputable def helium3StrictComplementarityCert :
     StrictComplementarityCert LightNucleus.helium3 where
   min_block_eig := helium3_min_block_eig
   min_dual_y_on_active := 0
