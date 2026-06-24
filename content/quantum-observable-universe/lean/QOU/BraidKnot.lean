@@ -132,6 +132,10 @@ import QOU.BraidKnot.JonesViaMarkovTrace
 -- into the in-build set.)
 import QOU.BraidKnot.MarkovTraceLinkInvariance
 import QOU.BraidsAndKnots.YLambdaQSchur
+-- Maschke (RepresentationTheory) ⇒ k[S_n] semisimple: the *existence* half of side-2's
+-- block decomposition. First QOU import of Mathlib.RepresentationTheory.* — CI must build it.
+import QOU.BraidKnot.MaschkeSnSemisimple
+import QOU.BraidKnot.WedderburnSn
 
 /-!
 # BraidKnot — Module Index
