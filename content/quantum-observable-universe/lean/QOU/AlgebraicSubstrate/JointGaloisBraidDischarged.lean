@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # Joint Galois × braid action — general discharge
 

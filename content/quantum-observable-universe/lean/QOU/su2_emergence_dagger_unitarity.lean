@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.su2_emergence_dagger_unitarity — gauge-group containment `G ⊆ U(2)`
 

@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-
   Δ_λ binding exponent — keystone (formalize-first, arithmetic core only)
 

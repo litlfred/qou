@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.emergence_to_quantum_flat — INN(G_q) uniqueness from F_A = B
 

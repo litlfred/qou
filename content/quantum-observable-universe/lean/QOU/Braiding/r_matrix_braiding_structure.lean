@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Braiding.r_matrix_braiding_structure — Yang-Baxter for the universal `R`-matrix
 

@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # Joint Galois × braid action on the figure-8 cell
 

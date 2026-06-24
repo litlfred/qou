@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.AlgebraicSubstrate.PvsNPQou — P vs NP in the QOU framework
 

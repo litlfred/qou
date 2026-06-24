@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # Depth-2 identification: G^(2)(H_q) ≅ K_3^ind(F) ⊗ ℚ
 
