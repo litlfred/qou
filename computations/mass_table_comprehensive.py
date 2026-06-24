@@ -55,9 +55,8 @@ from codata_constants import (  # noqa: E402
 )
 from _li_2_q_util import (  # noqa: E402
     linking_weight_family_a,
-    flavor_split_subleading,
-    vol_density_borromean,
 )
+from canonical_mass import proton_neutron_mass_mev  # noqa: E402  (canonical facade)
 from witness_base import WitnessBuilder  # noqa: E402
 
 # AME 2020 binding energies (MeV) — used for comparison only.
@@ -155,25 +154,15 @@ def borromean_mass_prediction(
     """
     m_e = mp.mpf(str(M_E_MEV))
 
-    # Load substrate identity predictions (sub-ppb accuracy)
-    # from the canonical witness, falling back to Family A if unavailable.
-    sub_witness = _pb.witness_path("m-p-substrate-identity-50dps.witness.json", HERE)
-    if sub_witness.exists():
-        import json as _json
-        sub_data = _json.load(sub_witness.open())
-        preds = sub_data["data"]["predictions"]
-        m_p_pred = mp.mpf(str(preds["m_p_MeV"]))
-        m_n_pred = mp.mpf(str(preds["m_n_MeV"]))
-        # Habiro brane-tower correction (PR #1346) is now natively included in the substrate witness.
-        _source = "substrate-identity + Habiro brane-tower"
-    else:
-        vol_density = vol_density_borromean(q)
-        delta_m_over_M = flavor_split_subleading(q)
-        m_avg = m_e * vol_density
-        m_p_pred = m_avg * (1 - delta_m_over_M / 2)
-        m_n_pred = m_avg * (1 + delta_m_over_M / 2)
-        _source = "Family A (fallback)"
-    linking_weight = linking_weight_family_a(q)
+    # Canonical nucleon masses via the single facade — the muon-anchored Hecke
+    # energy m_p = 2(m_μ·F_Bor − 6·m_e) (substrate-identity, ≈938.27/939.56).
+    # The λ_A Family-A fallback (m_e·Vol(𝓑₃)·ρ/ℏ_q²) is a FIT and was removed
+    # 2026-06-24 (owner ruling) — see docs/canonical-mass-formula-guardrail.md.
+    _mp_can, _mn_can = proton_neutron_mass_mev()
+    m_p_pred = mp.mpf(str(_mp_can))
+    m_n_pred = mp.mpf(str(_mn_can))
+    _source = "canonical_mass facade (muon-anchored Hecke energy)"
+    linking_weight = linking_weight_family_a(q)   # reported for diagnostics only
 
     # Base definition (q-CLT statistical average)
     m_nucleus_unbound_approx = Z * float(m_p_pred) + N * float(m_n_pred)
