@@ -93,6 +93,12 @@ out = {
     "discipline": "exact character theory (genus(Bring/H)=dim std^H); no fit; "
                   "extends merged #2701 A5-irreducibility",
 }
-with open("computations/substrate/bring-jacobian-isogeny-factors.witness.json", "w") as fh:
+import os
+try:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+except NameError:
+    script_dir = "."
+witness_path = os.path.join(script_dir, "bring-jacobian-isogeny-factors.witness.json")
+with open(witness_path, "w") as fh:
     json.dump(out, fh, indent=2)
-print("\nwitness -> computations/substrate/bring-jacobian-isogeny-factors.witness.json")
+print(f"\nwitness -> {witness_path}")
