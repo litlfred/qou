@@ -26,9 +26,12 @@ Falsification: if the relation holds, 4He (Sigma|Dtheta| = 17.2334 rad) should s
 a leading-trace deficit ~= 0.206 * 17.2334 ~= 3.56 MeV. That is the next test.
 """
 import json
+import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO / "computations"))
+import _path_bridge  # noqa: E402,F401 — adds qou-substrate (witness_base) to the path
 
 # Provenance: both values are outputs of the two committed probes above (0 fit).
 ROWS = {
@@ -79,8 +82,10 @@ def main():
             "sum_abs_dtheta_4He_rad": SUM_DTHETA_4HE,
         },
     }
-    out = REPO / "computations" / "reeb-phase-deficit-consistency.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    out = WitnessBuilder.wrap_legacy(
+        "reeb-phase-deficit-consistency", witness, script_path=__file__,
+        engine="mpmath", output_dir=str(REPO / "computations")).save()
     print(f"\nwrote {out.relative_to(REPO)}")
 
 

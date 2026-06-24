@@ -106,8 +106,10 @@ def main():
         "data": {"rows": rows, "mean_ratio_MeV_per_rad": mp.nstr(mean, 8),
                  "full_spread_pct": mp.nstr(spread, 6), "verdict": verdict},
     }
-    out = REPO / "computations" / "yardstick-free-phase-binding.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    out = WitnessBuilder.wrap_legacy(
+        "yardstick-free-phase-binding", witness, script_path=__file__,
+        engine="mpmath", output_dir=str(REPO / "computations")).save()
     print(f"\nwrote {out.relative_to(REPO)}")
 
 

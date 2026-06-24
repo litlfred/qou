@@ -1,7 +1,29 @@
 {
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-24T11:58:21.101016+00:00",
+  "commitSha": "1e4bfb1655362502884d2545cff5e1ce4bee56e0",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "yardstick-free-phase-binding",
+  "scriptFile": "yardstick_free_phase_binding_probe.py",
+  "scriptHash": "1cd867665816",
+  "scriptCommitSha": "1dd7f1a98d3e7b1a95095659952cd88e457b626b",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
   "description": "Yardstick-free phase->binding test (0 fit): Gap=B_AME-B_joint^model (|chi| joint trace, no k*B2 reference) vs q-Reeb Sigma|Dtheta| across T/3He/4He. Tests whether removing the k*B2 yardstick (the #2703 confound) yields a flatter phase->binding ratio, or whether the total gap is noisier (mixes in 3-body).",
-  "scriptFile": "computations/probes/yardstick_free_phase_binding_probe.py",
   "inputs": {
     "E0_MeV": "4.185980828",
     "q0": "1.10997859556",

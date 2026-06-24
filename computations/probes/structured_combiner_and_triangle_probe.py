@@ -133,8 +133,10 @@ def main():
         "inputs": {"E0_MeV": mp.nstr(E0, 10), "q0": mp.nstr(q0, 12), "fit_params": 0},
         "data": {"rows": rows},
     }
-    out = REPO / "computations" / "structured-combiner-and-triangle.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    out = WitnessBuilder.wrap_legacy(
+        "structured-combiner-and-triangle", witness, script_path=__file__,
+        engine="mpmath", output_dir=str(REPO / "computations")).save()
     print(f"wrote {out.relative_to(REPO)}")
 
 

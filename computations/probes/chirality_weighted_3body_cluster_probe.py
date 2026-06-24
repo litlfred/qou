@@ -121,9 +121,10 @@ def main():
         "parameters": {"q_0": str(Q0), "E0_MeV": str(E0), "free_parameters": 0},
         "data": {"rows": rows},
     }
-    out = COMP / "chirality-weighted-3body-cluster.witness.json"
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=1, default=str)
+    from witness_base import WitnessBuilder
+    out = WitnessBuilder.wrap_legacy(
+        "chirality-weighted-3body-cluster", witness, script_path=__file__,
+        engine="mpmath", output_dir=str(COMP)).save()
     print(f"witness -> {out.relative_to(REPO)}")
     return 0
 
