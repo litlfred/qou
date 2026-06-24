@@ -304,18 +304,40 @@ were floated for the joint-trace cluster `c₃`; the obstruction now decides two
 |---|---|---|
 | **plain signed trace** `∑ y_λ χ_λ` | factorises (`τ_vac·∏f`) → **proved** `productModel_3body_nonpos` | `< 0` (dead) |
 | **`|χ|` joint trace** (production) | measured `three_body_joint_trace_a3` | `c₃ = −1.77` (dead as-is) |
-| **chirality-weighted** `∑ y_λ sgn(w₀^{S_{λ'}}) χ_λ` | **untested** — breaks the product structure, so escapes the obstruction | unknown |
+| **chirality-weighted** `∑ y_λ sgn(w₀^{S_{λ'}}) χ_λ` | **COMPUTED** — `chirality_weighted_3body_cluster_probe` (Rust kernel) | **`c₃ > 0` (attractive!)** |
 
-So the *one* remaining sign-flip lever is the **chirality-weighted joint cluster**:
-the `sgn(w₀)` weight is mixed-sign (the Δ_λ chirality), so the cluster is no longer a
-positive product and `productModel_3body_nonpos` does **not** apply to it. It is the
-only candidate that could be `> 0`.
+**Result (2026-06-24): the chirality involution flips the sign.** Built
+`pyhecke_native` locally and ran all three combiners on the H₉ joint trace (zero
+fit; the `abs` baseline reproduces the cached `c₃ = −1.769 / −1.405` *exactly*,
+validating the kernel + probe):
 
-**Blocker.** Computing its *connected cluster* needs the per-partition signed χ at H₉
-for the partial-interface words (`g∅, gₐ, g_b, g_ab`), i.e. the Rust kernel
-`pyhecke_native.chi_q_atomic_all_partitions` — not built in this environment (no wheel;
-needs a Rust toolchain + maturin). The cached `atom-chi-rust-*` witnesses give only the
-*full-atom* signed χ, not the partial-interface traces.
+| atom | abs `|χ|` | signed | **chiral** `sgn(w₀)·χ` | empirical b₃ |
+|------|----:|----:|----:|----:|
+| ³H  | −1.769 | −1.633 | **+0.076** | +1.808 |
+| ³He | −1.405 | −1.329 | **+0.120** | +1.044 |
+
+The chirality-weighted combiner is the **first attractive (`c₃ > 0`) 3-body result**
+in the investigation. It escapes `productModel_3body_nonpos` exactly as predicted
+(the `sgn(w₀^{S_{λ'}})` weight is mixed-sign — `(-1)^{n(λ)}`, the Δ_λ sign — so the
+cluster is no longer a positive product). So **the chirality involution is the sign
+mechanism for the 3-body force** — a genuine, parameter-free advance.
+
+**Honest scope (not a closure).** The chiral `c₃` has the right *sign* but its
+*magnitude* (+0.08 / +0.12 MeV) is ~10–24× below the empirical b₃ (+1.8 / +1.0 MeV):
+the chirality weighting introduces heavy cancellation that shrinks the cluster. Two
+caveats compound it: (i) this is the **2-adjacent-chain-bond** cluster only (the
+long-range 1–3 bond is still omitted); (ii) per the cluster-decomposition lesson
+above, the 2-bond connected cluster is not identical to the full physical 3-body
+force. So this identifies the sign ingredient and removes the sign obstruction — it
+does **not** close the magnitude. The open question shifts from *"what gives the
+attractive sign"* (answered: chirality) to *"what supplies the magnitude"* (the full
+triangle + the chiral assembly + A=4).
+
+→ `chirality_weighted_3body_cluster_probe.py` · `chirality-weighted-3body-cluster.witness.json`
+(`pyhecke_native` build note: the `clarabel` git dep is proxy-blocked; build with a
+local empty `clarabel` stub crate — features `mpfr/sdp-netlib/bigrational/serde`
+declared empty — repointed via the two `[patch.crates-io]` blocks; `clarabel` is
+optional and never compiled in the default wheel.)
 
 **Other non-product routes (all gated or sibling-owned):**
 - **H₃⁴→H₁₂ A=4 interface operator** — topological support correct (LR fusion recovers
