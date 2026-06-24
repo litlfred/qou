@@ -105,3 +105,18 @@ this container ⇒ analytical/corpus synthesis, not compute):
 Net: B resolved to the coral-`E_z` rank-2 factor; A sharpened to a tractable genus-1 Picard–Fuchs
 rapidity test + keystone-arena convergence; C confirmed circularity-gated. No closure; no fit;
 nothing wired. Owner closes (§4a).
+
+## Option 2 (2026-06-24, PR #2708) — coral `E_q` confirmed; `tr B` non-integer reframes the test
+
+Ran the genus-1 coral `E_q` step (Sage unavailable ⇒ analytical):
+- **Coral `E_q` = descartes `E_q` CONFIRMED** by the invariant `j`: `j(q₀)=129.86` (descartes 129.9),
+  `j(1)=128`, `p(1)=2/3`, `r(1)=20/27` exact. Direction-B curve half **closed** (single identified curve,
+  not genus-4).
+- **Decisive reframing:** `tr B = 2.6424 ∉ ℤ`, but the **topological** Gauss–Manin monodromy of an
+  elliptic family is in `SL₂(ℤ)` (integer trace). So `B` is **NOT** the topological monodromy — it is the
+  **abelianised `λ_SW` Cartan-connection holonomy** (real/hyperbolic, `τ=2cosh θ`), per the M-workplan
+  abelianisation. The literal option-2 goal (genus-1 Picard–Fuchs *topological* monodromy) computes the
+  wrong (integer-trace) object. `τ_torus=2.0437` also non-integer ⇒ same connection-holonomy nature.
+- **Still open (keystone):** the explicit abelianised-connection holonomy `=θ_binding=0.7815` at q₀.
+Probe `lever1_coral_eq_monodromy_integrality.py` (7/7); audit
+`2026-06-24-lever1-coral-eq-monodromy-integrality.md`. No fit; nothing wired. Owner closes (§4a).
