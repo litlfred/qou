@@ -1,0 +1,31 @@
+{
+  "computation": "lever1_coral_eq_monodromy_integrality",
+  "description": "Coral elliptic E_q = descartes E_q (j(q0)=129.86 ~ 129.9; classical j(1)=128, p(1)=2/3, r(1)=20/27 exact) confirms the direction-B curve. Decisive: tr B = tau_binding = 2.6424 is NOT an integer, but the topological Gauss-Manin monodromy of an elliptic family is in SL2(Z) (preserves H^1(E,Z)) with integer trace -> B is NOT a topological monodromy element. B is the abelianised lambda_SW Cartan-connection holonomy (real/hyperbolic, tau=2cosh theta). tau_torus=2.0437 also non-integer -> same connection-holonomy nature for both sectors.",
+  "discipline": "no fit; sympy symbolic Weierstrass + mpmath 40dps; (b)-exclusion cites integrality of SL2(Z) traces (topological monodromy preserves H^1(E,Z)); does NOT exclude the coral E_q as the rank-2 W (curve confirmed) -- identifies which object B is.",
+  "auditOnly": "docs/audits/2026-06-24-lever1-coral-eq-monodromy-integrality.md",
+  "results": {
+    "j_coral_at_q0": 129.8603470264934,
+    "j_descartes_recorded": 129.9,
+    "j_match": true,
+    "j_classical_limit_q1": 128.0,
+    "p_q1": "2/3",
+    "r_q1": "20/27",
+    "tau_binding": "2.642386313301486",
+    "tau_binding_is_integer": false,
+    "tau_torus": "2.043706218232901",
+    "tau_torus_is_integer": false,
+    "theta_binding": "0.7814539460172007",
+    "nearest_int_to_tau_binding": 3
+  },
+  "assertions": {
+    "coral_eq_is_descartes_curve_j_match": true,
+    "classical_limit_j_128": true,
+    "classical_limit_p_2_3": true,
+    "classical_limit_r_20_27": true,
+    "tau_binding_NOT_integer": true,
+    "tau_torus_NOT_integer": true,
+    "B_excluded_from_topological_SL2Z": true
+  },
+  "allPassed": true,
+  "verdict": "CORAL E_q CONFIRMED (j(q0)=129.86~129.9), but tr B = 2.6424 is NON-INTEGER so B is NOT the integral topological Gauss-Manin monodromy of E_q (which is SL2(Z), integer trace). B is the abelianised lambda_SW Cartan-connection holonomy (real/hyperbolic, tau=2cosh theta_binding, theta=0.7815). This REFRAMES option 2: a genus-1 Picard-Fuchs topological-monodromy computation would yield the WRONG (integer-trace) object. The decisive open step is the holonomy of the abelianised lambda_SW connection at q0, not the topological monodromy -- consistent with the M-workplan abelianisation (Cartan reduction) and the keystone non-compact (real-holonomy, q0 not a root of unity) arena. Curve identified; the explicit abelianised-connection holonomy = theta_binding stays the open keystone step. No fit; nothing wired."
+}
