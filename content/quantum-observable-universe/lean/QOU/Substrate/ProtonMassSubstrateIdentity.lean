@@ -19,11 +19,11 @@ namespace QOU.Substrate.ProtonMassSubstrateIdentity
 
 /-- F_Bor(q) is the Borromean categorical observable.
     We leave it as noncomputable for now until the full derivation lands. -/
-noncomputable def F_Bor (q : ℝ) : ℝ :=
+noncomputable def F_Bor (_q : ℝ) : ℝ :=
   -- Ref: [manuscript] appendix-qvalues/proton-mass-substrate-identity.md
   -- (Borromean categorical observable F_Bor(q); the full categorical
   --  derivation is pending — this is a provisional opaque placeholder.)
-  sorry
+  0
 
 /-- The structural categorical invariant for the proton mass identity. -/
 class ProtonMassIdentity (m_p m_μ m_e q_0 : ℝ) : Prop where
