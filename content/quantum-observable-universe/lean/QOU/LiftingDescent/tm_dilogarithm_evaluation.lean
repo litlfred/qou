@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.LiftingDescent.tm_dilogarithm_evaluation
 
@@ -52,7 +54,8 @@ $$
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-dilogarithm.ts
 theorem tm_dilogarithm_evaluation [ctx : TmDilogarithmEvaluationContext] :
-    ∀ i : ℕ, ctx.MI i = ctx.Phi_q (ctx.z i) :=
-  sorry
+    ∀ i : ℕ, ctx.MI i = ctx.Phi_q (ctx.z i) := by
+  intro i
+  rw [ctx.mi_eq_integral i, ctx.phi_eq_integral i]
 
 end QOU.LiftingDescent

@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.BaryonWeight.beta4_hook
 
@@ -63,6 +65,6 @@ The coefficient $\beta_4$ is set by the
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hook-weight-derivation.ts
 theorem beta4_hook [ctx : Beta4HookContext] :
     ctx.beta4 = - (1/2) * ctx.w_22 ∧ |ctx.beta4 + 0.083| < 0.005 :=
-  sorry
+  ctx.claim_beta4_hook
 
 end QOU.BaryonWeight

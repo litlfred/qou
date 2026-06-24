@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.LiftingDescent.tm_eigenspace_decomp
 
@@ -48,6 +50,6 @@ direct sums gives
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-eigenspace-decomp.ts
 theorem tm_eigenspace_decomp [ctx : TmEigenspaceDecompContext] :
     ctx.MI_alpha = ctx.MI_desc + ctx.MI_trans :=
-  sorry
+  ctx.additivity_of_orthogonal ctx.h_killing_orthogonal ctx.h_mi_additive
 
 end QOU.LiftingDescent

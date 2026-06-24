@@ -1,4 +1,5 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.LiftingDescent.tm_transient_localisation
@@ -49,6 +50,6 @@ decomposes as a sum over the exceptional divisors $E_i$:
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-transient-localisation.ts
 theorem tm_transient_localisation [ctx : TmTransientLocalisationContext] :
     ctx.MI_norm_total = (Finset.range ctx.N).sum (fun i => ctx.MI_norm i) :=
-  sorry
+  ctx.sum_of_disjoint ctx.h_disjoint_support ctx.h_additivity
 
 end QOU.LiftingDescent

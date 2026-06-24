@@ -1,3 +1,4 @@
+import Mathlib
 /-!
 # QOU.FluidDynamics.helicity_conservation
 
@@ -71,6 +72,9 @@ theorem helicity_conservation [ctx : HelicityConservationContext] :
     ctx.H_q 0 = ctx.writhe_q + ctx.twist_q + ctx.linking_q ∧
     (ctx.J_K = ctx.J_K_alt → ctx.knot_equiv) ∧
     (ctx.q = 1 → ctx.H_q 0 = ctx.H_classical) :=
-  sorry
+  ⟨ctx.impl_conservation ctx.conservation_active,
+   ctx.impl_CWF_decomposition ctx.conservation_active,
+   ctx.impl_jones_refinement ctx.conservation_active,
+   ctx.impl_classical_limit ctx.conservation_active⟩
 
 end QOU.FluidDynamics

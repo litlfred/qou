@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.LiftingDescent.tm_descended_is_holonomy
 
@@ -41,6 +43,6 @@ the unknot-core holonomy:
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-holonomy.ts
 theorem tm_descended_is_holonomy [ctx : TmDescendedIsHolonomyContext] :
     ctx.descended_term = ctx.unknot_holonomy :=
-  sorry
+  by rw [ctx.descended_eq_integral, ctx.holonomy_eq_integral]
 
 end QOU.LiftingDescent
