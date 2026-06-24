@@ -9,6 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["lem:tower-pair-equality-fixed-level"],
+  proofs: ["prf:topological-mass-formula-algebraic"],
   cites: [
     "kassel1995",
     "habiro2002",

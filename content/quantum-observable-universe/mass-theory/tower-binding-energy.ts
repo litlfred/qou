@@ -19,4 +19,5 @@ export default proposition({
   uses: [
         "rem:hecke-charge-mass-duality",
   ],
+  proofs: ["prf:tower-binding-energy"],
 });
