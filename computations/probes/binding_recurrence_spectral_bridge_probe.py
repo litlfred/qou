@@ -39,7 +39,8 @@ import _path_bridge  # noqa: E402,F401
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 50
-Q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
+Q0_STR = "1.10997858275138080759166909561076887987449912187357763605672"
+Q0 = mp.mpf(Q0_STR)
 
 # |χ| joint-trace binding (PR #2703 yardstick-free probe) — the saturating side.
 B_JOINT = {"3H": mp.mpf("3.2525"), "3He": mp.mpf("3.4665"), "4He": mp.mpf("3.8043")}
@@ -54,7 +55,7 @@ def main():
     tau_sym = sp.simplify(sp.cancel((a2 + a4) / a3))
 
     def num(e):
-        return mp.mpf(str(sp.N(e.subs(q, sp.Float(str(Q0), 50)), 50)))
+        return mp.mpf(str(sp.N(e.subs(q, sp.Float(Q0_STR, 50)), 50)))
 
     tau = num(tau_sym)
     A2, A3, A4 = num(a2), num(a3), num(a4)
@@ -102,10 +103,12 @@ def main():
     wb.add_data("growth_ratios", [mp.nstr(r, 10) for r in ratios])
     wb.add_data("chi_joint_saturating", {k: mp.nstr(v, 8) for k, v in B_JOINT.items()})
     wb.add_data("chi_effective_ratio_3H_to_4He", mp.nstr(chi_ratio_TtoHe, 8))
-    # λ₊ satisfies the characteristic polynomial x²−τx+1 = 0 (root verification).
-    charpoly_resid = lam_p * lam_p - tau * lam_p + 1
-    wb.add_assertion("lambda_plus_is_root", computed=mp.nstr(charpoly_resid, 12), expected="0",
-                     tolerance=1e-30, source="x²−τx+1 evaluated at λ₊")
+    # Empirical (non-tautological): the recurrence sequence's growth ratio converges
+    # to the dominant root λ₊ — tests the actual a_D^(n) sequence, not the quadratic
+    # formula used to compute λ₊.
+    ratio_residual = ratios[-1] - lam_p
+    wb.add_assertion("ratio_convergence", computed=mp.nstr(ratio_residual, 12), expected="0",
+                     tolerance=1e-4, source="a_D^(n+1)/a_D^(n) − λ₊ (sequence tail)")
     wb.add_assertion("det_one", computed=mp.nstr(lam_p * lam_m, 12), expected="1",
                      tolerance=1e-30)
     # extensive-growth flag as a checkable boolean (1.0 ⟺ λ₊>1).

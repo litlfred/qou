@@ -1,16 +1,16 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-24T12:51:33.266528+00:00",
-  "commitSha": "1a8646d9c5e5750e41e20a17887bcc0e0dbb42ae",
+  "computedAt": "2026-06-24T13:03:50.167634+00:00",
+  "commitSha": "e47662a2d9e5fd49b531ea751106db5eba7025d4",
   "assertions": [
     {
-      "name": "lambda_plus_is_root",
-      "computed": "0.0",
+      "name": "ratio_convergence",
+      "computed": "-2.95159936137e-5",
       "expected": "0",
       "passed": true,
-      "tolerance": 1e-30,
-      "source": "x²−τx+1 evaluated at λ₊"
+      "tolerance": 0.0001,
+      "source": "a_D^(n+1)/a_D^(n) − λ₊ (sequence tail)"
     },
     {
       "name": "det_one",
@@ -29,11 +29,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 21,
   "computation": "binding-recurrence-spectral-bridge",
   "scriptFile": "binding_recurrence_spectral_bridge_probe.py",
-  "scriptHash": "7658273f9c53",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d2b43c974855",
+  "scriptCommitSha": "00544aedbda91157a6697a9f4e017c239cb9b12f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
