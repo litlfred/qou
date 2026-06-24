@@ -15,12 +15,13 @@
 
   METHODOLOGY CLASSIFICATION (STRICT):
 
-    Each entry carries one of the following methodology tags.  Atlas
-    entries with tag = `deprecatedVolumeMatch` are PROVISIONAL and are
-    NOT principled — see `methodology-deprecation.witness.json`.  They
-    survive in the registry only for historical transparency and are
-    rendered in a quarantined section, never mixed with principled
-    entries.
+    Each entry carries one of the following methodology tags.  A
+    `deprecatedVolumeMatch` tag marks a PROVISIONAL, non-principled
+    identification — see `methodology-deprecation.witness.json`.  Such
+    entries are filtered out of the live atlas by `principledAtlas`
+    (the theorem `principled_path_for_atom_knot` certifies none are
+    present); any empirical audit data lives in the witness JSON, not
+    here.
 
     The principled path for ANY new atom-knot identification is:
 
@@ -54,7 +55,7 @@ namespace QOU.BraidsAndKnots
     Only `principledDerivation`, `principledGbNf`,
     `manualHistoricalVolumeMatch`, `magicAFormula`, and `recursiveOn4He`
     are admissible in the principled atlas.  `deprecatedVolumeMatch`
-    entries are quarantined and rendered separately. -/
+    entries are filtered out of the live atlas by `principledAtlas`. -/
 inductive Methodology where
   | principledDerivation             -- explicit σ-word → closure → hp Vol
   | principledGbNf                   -- trivial-NF (unknot, disjoint unknots)
@@ -82,8 +83,9 @@ structure AtlasEntry where
 
 /-- The recursive atom-knot atlas: list of all confined particles and
     atoms at q_0 with their Hecke-NF braid words, knot closures, and
-    mass predictions.  Includes both principled entries and quarantined
-    provisional entries; consumers MUST filter by methodology tag.
+    mass predictions.  The `principledAtlas` filter excludes any entry
+    tagged `deprecatedVolumeMatch`; statistical summaries cite the
+    filtered list.
 
     Concrete model: contains the canonical proton + neutron entries
     derived from the from-scratch derivation chain; the full atlas
@@ -139,10 +141,6 @@ def principledAtlas : List AtlasEntry → List AtlasEntry
       6. hecke_core.py — Q-CLT finite sum approximations tracking active asymptotics.
       7. y_lambda_wenzl_bridge_extended.py — symbolic-q Wenzl bridge.
 
-    DEPRECATED INPUT (consumed only by the quarantined provisional
-    section, never by the principled atlas):
-      8. li-atom-knot-search.witness.json — (provisional) volume-match search.
-
     Updates to any input propagate via witness_staleness_tracker.py
     to the rendered appendix on the next `bun run build`.
 
@@ -162,27 +160,22 @@ theorem atlas_witness_derived : AtlasIsWitnessDerived := by
   show atomKnotAtlas.length ≥ 1
   decide
 
-/-! ### Provisional / deprecated methodology (li7 volume-match)
+/-! ### Methodology filter — `deprecatedVolumeMatch` is excluded
 
-    The 7Li / 6Li volume-match results from the SnapPy search
-    (li-atom-knot-search.witness.json) are NOT principled.  The
-    search reverse-engineers the answer by picking the knot whose
-    Vol_hyp matches the AME target; at ~2400 knots searched, residuals
-    below ~10 ppb cannot be distinguished from numerical coincidence
-    absent an independent GB-NF derivation.
+    The `principledAtlas` filter below drops any entry tagged
+    `deprecatedVolumeMatch` — a brute-force volume-match search that
+    reverse-engineers the knot from the AME target rather than deriving
+    it from the categorical pipeline.  The theorem
+    `principled_path_for_atom_knot` certifies that `atomKnotAtlas`
+    contains no such entry, so the filter is the identity on the live
+    atlas: a regression guard against a non-principled entry being
+    added later.
 
-    The earlier theorem `li7_best_precision` claimed ⁷Li at L_{11a62}
-    as the best-precision atlas entry (4001 ppb residual).  That claim
-    is now demoted to *provisional* status and is no longer cited as
-    a principled result in the statistical summary.  The provisional
-    `li7_provisional_volume_match : True` placeholder that recorded it
-    has been removed: it was a pure empirical witness and lives in
-    methodology-deprecation.witness.json §particles[12] ("7Li",
-    method = "deprecated-volume-match"), not the formal layer.
-
-    The principled best-precision claim awaits SDP-on-full-mass-tower
-    with GB filtration and jet-order tracking (see
-    `principled_path_for_atom_knot` below). -/
+    Any empirical volume-match audit data lives in
+    methodology-deprecation.witness.json, not the formal layer.  The
+    principled best-precision claim for any new atom awaits the
+    SDP-on-full-mass-tower path with GB filtration and jet-order
+    tracking (see `principled_path_for_atom_knot` below). -/
 
 /-- The principled path for any new atom-knot identification: a JOINT
     SDP on the full mass tower (over all confinement levels ℓ and all

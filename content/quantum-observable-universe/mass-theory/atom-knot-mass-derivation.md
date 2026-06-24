@@ -293,7 +293,6 @@ with methodology tag and high-precision certificate.
         earlier work, GB-NF derivation pending),
         \texttt{magic-A-formula} (algebraic shell-closure rule),
         \texttt{recursive-on-${}^{4}$He} (cluster recursion).
-        Quarantine separately if \texttt{deprecated-volume-match}.
 \end{enumerate}
 \textbf{Optional post-Archimedean naming (borrowed, not in derivation):}
 \begin{enumerate}
@@ -345,11 +344,10 @@ conjecture commits both quantities to the same number, but the
 *principled* path (Step 1a $\to$ Step 5) does not depend on this
 substitution.
 
-The quarantined provisional ${}^{6}$Li, ${}^{7}$Li entries
-([prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas)
-§"Provisional / deprecated methodology") run *backwards* from Step
-6 to a candidate knot, bypassing Step 1a entirely. Such shortcuts
-are forbidden by this proposition.
+Running *backwards* from Step 6 to a candidate knot — a brute-force
+volume-match search that bypasses Step 1a entirely — is forbidden by
+this proposition: it reverse-engineers the knot from the AME target
+rather than deriving it from the categorical pipeline.
 
 ## Where the gaps actually are
 
