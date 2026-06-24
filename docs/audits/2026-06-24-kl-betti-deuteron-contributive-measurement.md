@@ -1,0 +1,93 @@
+# Option-E PROBE 4 — KL left-cell Betti sum is ×2.0 *contributive* on the deuteron (not a closure)
+
+**Date:** 2026-06-24
+**Branch:** `claude/brave-hawking-tjdu2p`
+**Status:** scope-limited measurement (AGENTS.md §"Before declaring refuted").
+No fit, no production rewire.
+**Witness:** [`computations/option-e-kl-betti-contributive-deuteron.witness.json`](../../computations/option-e-kl-betti-contributive-deuteron.witness.json)
+**Script:** [`computations/option_e_kl_betti_contributive_deuteron.py`](../../computations/option_e_kl_betti_contributive_deuteron.py)
+
+## Why this measurement
+
+The PROBE-4 KL-positivity prune
+([`2026-06-16-option-e-probe4-kl-positivity-prune.md`](2026-06-16-option-e-probe4-kl-positivity-prune.md))
+correctly established — and Lean-proved (`deltaSign_mixed`, PR #2416) — that the
+**chirality sign** of $\Delta_\lambda = \mathrm{sgn}(w_0^{S_{\lambda'}})\cdot\dim$
+cannot come from non-negative KL multiplicities. That sign exclusion stands.
+
+The prune additionally stated, in passing, that KL "supplies **at most** the
+magnitude $|\Delta_\lambda| = \dim(V_\lambda)$ — already the closure's $f^\lambda$
+… at best it re-derives $|\Delta_\lambda|=\dim$ by a longer route." The owner
+flagged that "not sufficient" ≠ "wrong," and asked whether the KL weight can be
+**contributive** to the magnitude even if it does not close. Per the standing
+*"Before declaring refuted"* discipline (a Lean-proved / structurally-exact
+piece is a permanent contribution; "inaccurate alone" ≠ "excluded"; a
+compositional object is already many-body), that question deserved a number,
+not an assertion. The deuteron (H₆/S₆) is the **one nucleus whose KL left-cell
+Betti sums are exactly computable** — the right oracle.
+
+## What was computed (exact, reproducible, 7.3 s)
+
+Same primitives as the canonical producer
+[`delta_lambda_binding_full_evaluation.py`](../../computations/delta_lambda_binding_full_evaluation.py)
+— $y_\lambda$ (Wenzl), $\chi^\lambda(\beta_D)$ (Hoefsmit+interface),
+$\mathrm{sgn}(w_0^{S_{\lambda'}})$ (Macdonald) — changing **only** the per-λ
+magnitude:
+
+| magnitude | $\Sigma = \sum_\lambda y_\lambda\,\chi^\lambda\,\mathrm{sgn}\,(\cdot)$ | $B(D)=m_e\lvert\Sigma\rvert$ | vs AME 2.22452 |
+|---|---|---|---|
+| $f^\lambda = \dim V_\lambda$ (canonical) | −0.74378 | **0.380 MeV** | −82.9% |
+| $B_\lambda = \sum_{w\in\Gamma_\lambda} P_{e,w}(1)$ (KL Betti) | −1.48938 | **0.761 MeV** | −65.8% |
+
+- The $f^\lambda$ path reproduces the canonical witness (−0.7439) to 4 dp → the
+  reconstruction is faithful.
+- **Factor needed to close: ×5.85. Factor KL-Betti delivers: ×2.00.**
+- The KL-Betti $B_\lambda$ values (computed via the on-main engine
+  `kazhdan_lusztig.py`, identical method to PROBE-4 batch PR #2658):
+  hooks $B_\lambda=f^\lambda$ exactly; bulk
+  $(3,3)\!:5\to23$, $(4,2)\!:9\to20$, $(3,2,1)\!:16\to41$,
+  $(2,2,2)\!:5\to21$, $(2,2,1,1)\!:9\to21$. The lift is entirely from the
+  bulk; the dominant $(5,1)$ term is a **hook**, so it is unchanged.
+
+## Verdict (scope-limited, (a) not (b))
+
+**KL-Betti is contributive to the deuteron magnitude (×2.0; −83% → −66%) but
+does not close it (supplies ≈ 1/3 of the required ×5.85).** This is a genuine
+partial contribution, not an excluded ingredient.
+
+**Refinement of the prune.** The prune's *sign* exclusion is unaffected and
+stands (Lean-proved). Its incidental magnitude claim — KL "at most re-derives
+$|\Delta_\lambda|=\dim$" — is **imprecise**: the KL left-cell Betti sum is a
+*distinct, strictly larger* magnitude than $\dim$ on bulk partitions, and it
+*does* move the binding number. So the honest framing of PROBE-4 is **(a)
+scope-limited** ("the KL-Betti magnitude, alone, is ×2.0 contributive and does
+not close the deuteron; the sign must still be supplied exogenously"), not (b)
+"KL is excluded / merely re-derives dim."
+
+## Important caveat — this is NOT a production rewire
+
+The object $\Delta_\lambda = \mathrm{sgn}\cdot\dim$ has $|\Delta_\lambda|=\dim$
+**by definition** (Lean `binding_magnitude_eq_dim`). Substituting $B_\lambda$ for
+$\dim$ defines a *different* ansatz $\Delta'_\lambda=\mathrm{sgn}\cdot B_\lambda$;
+it is not "the magnitude of $\Delta_\lambda$." Because $\Delta'_\lambda$ does not
+close the deuteron (−66%) and is not independently motivated by the categorical
+chain, it is **not wired into production binding** — that would be a non-closing
+ansatz swap, against the "no 7th fit-based ansatz" discipline. What is recorded
+here is the *measurement* of its contribution, as a witness.
+
+## Next steps (per owner steer)
+
+- **S₁₂ / ⁴He KL-Betti contribution (option 4).** Brute KL over $S_{12}$
+  (479M perms) is infeasible; the tractable route is **smoothness-pruned**
+  ($P_{e,w}=1$ unless $w$ is singular — Lakshmibai–Sandhya: $w$ avoids 3412 &
+  4231 — so $B_\lambda = f^\lambda + \sum_{\text{singular }w\in\Gamma_\lambda}(P_{e,w}(1)-1)$),
+  measuring the ⁴He contribution, *not* claiming closure.
+- **FOCUS lever z2bn (option 3).** Fibre-level $q$-difference kernel $R(q,x)$ for
+  the binding generating function — the unpruned, fibre-level direction (a new
+  *term*, not a per-λ magnitude refit).
+
+## Cross-references
+
+- [`2026-06-16-option-e-probe4-kl-positivity-prune.md`](2026-06-16-option-e-probe4-kl-positivity-prune.md) — the sign prune (stands)
+- [`docs/coordination/option-e.md`](../coordination/option-e.md) — Δ_λ closure ledger
+- `S5SO3FiberAction.lean` — `deltaSign_mixed` (sign prune premise), `binding_magnitude_eq_dim` (|Δ_λ|=dim) — both sorry-free

@@ -49,6 +49,23 @@ The KL engine (`kazhdan_lusztig.py`) and the Option-E witnesses live in `folio-a
 unpopulated in this sandbox (0 `.py`), so PROBE 4 could not be *run* here regardless — this prune is the
 formalize-first reason it need not be, computed from pure combinatorics + the KL-positivity theorem.
 
+## Refinement (2026-06-24) — the *magnitude* claim is scope-limited, not exclusion
+
+The **sign** prune above stands (Lean-proved `deltaSign_mixed`). The incidental
+*magnitude* claim — KL "supplies **at most** $|\Delta_\lambda|=\dim$ … at best
+re-derives dim by a longer route" — is refined by a direct deuteron measurement
+([`2026-06-24-kl-betti-deuteron-contributive-measurement.md`](2026-06-24-kl-betti-deuteron-contributive-measurement.md),
+witness `option-e-kl-betti-contributive-deuteron`): the KL **left-cell Betti
+sum** $B_\lambda=\sum_{w\in\Gamma_\lambda}P_{e,w}(1)$ is *not* $\dim$ on bulk
+partitions (it is strictly larger), and substituted as the magnitude it is
+**×2.0 contributive** on the deuteron ($0.380\to0.761$ MeV, $-83\%\to-66\%$) —
+though still short of the ×5.85 needed to close. So PROBE-4's correct status is
+**(a) scope-limited** ("KL-Betti magnitude alone is contributive, not closing;
+sign exogenous"), not (b) "KL excluded / merely re-derives dim." It remains
+**not a production rewire** (the $\dim$-magnitude is fixed by definition via
+`binding_magnitude_eq_dim`; the Betti substitution is a non-closing alternate
+ansatz, recorded as a measurement only).
+
 ## Cross-references
 
 - [`docs/coordination/option-e.md`](../coordination/option-e.md) — Δ_λ closure ledger (PROBE 4 §"Open probes")
