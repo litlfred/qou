@@ -59,11 +59,11 @@ class PlancherelSnData (n : ℕ) where
   /-- The SYT dimension `dim(λ)`. -/
   dim : List ℕ → ℕ
   /-- **(i)** `Σ_λ dim(λ)² = n!` — the regular-representation dimension sum. -/
-  sum_dim_sq : ∑ l ∈ parts, ((dim l : ℤ)) ^ 2 = (n.factorial : ℤ)
+  sum_dim_sq : ∑ l ∈ parts, (dim l : ℤ) ^ 2 = (n.factorial : ℤ)
   /-- **(ii)** Jucys–Murphy / Okounkov–Vershik content-square mean, cleared of `1/n!`:
   `2·Σ_λ dim(λ)²·Σ_c c(c)² = n(n−1)·n!`. -/
   two_sum_dim_sq_content :
-    2 * ∑ l ∈ parts, ((dim l : ℤ)) ^ 2 * sumSqContents l
+    2 * ∑ l ∈ parts, (dim l : ℤ) ^ 2 * sumSqContents l
       = (n : ℤ) * ((n : ℤ) - 1) * (n.factorial : ℤ)
 
 /-- **Identity I, conditional (sorry-free modulo `PlancherelSnData`).** The Plancherel-expected
@@ -73,15 +73,15 @@ Proof: replace each `Σ_c h_c²` by `Σ_c c(c)² + n²` (**(A)**, using `parts_s
 split, discharge the content half by **(ii)** and the `n²·Σdim²` half by **(i)**; the residue is
 `ring`.  The only unproved inputs are the two class fields. -/
 theorem two_sum_dim_sq_hooks (n : ℕ) [h : PlancherelSnData n] :
-    2 * ∑ l ∈ h.parts, ((h.dim l : ℤ)) ^ 2 * sumSqHooks l
+    2 * ∑ l ∈ h.parts, (h.dim l : ℤ) ^ 2 * sumSqHooks l
       = (n : ℤ) * (3 * (n : ℤ) - 1) * (n.factorial : ℤ) := by
-  have hstep : ∀ l ∈ h.parts, ((h.dim l : ℤ)) ^ 2 * sumSqHooks l
-      = ((h.dim l : ℤ)) ^ 2 * sumSqContents l + ((h.dim l : ℤ)) ^ 2 * (n : ℤ) ^ 2 := by
+  have hstep : ∀ l ∈ h.parts, (h.dim l : ℤ) ^ 2 * sumSqHooks l
+      = (h.dim l : ℤ) ^ 2 * sumSqContents l + (h.dim l : ℤ) ^ 2 * (n : ℤ) ^ 2 := by
     intro l hl
     rw [sumSqHooks_eq_sumSqContents_add_sq l (h.parts_sorted l hl), h.parts_sz l hl]; ring
   rw [Finset.sum_congr rfl hstep, Finset.sum_add_distrib, mul_add, h.two_sum_dim_sq_content]
-  have hpull : ∑ l ∈ h.parts, ((h.dim l : ℤ)) ^ 2 * (n : ℤ) ^ 2
-      = (∑ l ∈ h.parts, ((h.dim l : ℤ)) ^ 2) * (n : ℤ) ^ 2 := by
+  have hpull : ∑ l ∈ h.parts, (h.dim l : ℤ) ^ 2 * (n : ℤ) ^ 2
+      = (∑ l ∈ h.parts, (h.dim l : ℤ) ^ 2) * (n : ℤ) ^ 2 := by
     rw [Finset.sum_mul]
   rw [hpull, h.sum_dim_sq]
   ring
@@ -92,10 +92,23 @@ squared-hook sum (cleared by `2` / `n!`), conditional on `PlancherelSnData`.  So
 `twoM` is no longer carried — it equals its representation-theoretic definition modulo the two
 named, standard, Mathlib-absent axioms. -/
 theorem twoM_eq_plancherel_hook_sum (n : ℕ) [h : PlancherelSnData n] :
-    2 * ∑ l ∈ h.parts, ((h.dim l : ℤ)) ^ 2 * sumSqHooks l
+    2 * ∑ l ∈ h.parts, (h.dim l : ℤ) ^ 2 * sumSqHooks l
       = QOU.BraidKnot.WLambdaDefect.twoM (n : ℤ) * (n.factorial : ℤ) := by
   rw [two_sum_dim_sq_hooks]
   unfold QOU.BraidKnot.WLambdaDefect.twoM
   ring
+
+/-- **Non-vacuity witness — `PlancherelSnData 2` is inhabited.** The partitions of `2` are
+`[2]` and `[1,1]`, both of SYT dimension `1`; both standard axioms (i)/(ii) check by `decide`
+(`Σ dim² = 1+1 = 2 = 2!`; `2·Σ dim²·Σc² = 2·(1+1) = 4 = 2·1·2!`).  This confirms the conditional
+theorems above are **not** conditional-on-`False`: the class has a genuine model where the
+axioms hold against the actual partition combinatorics. -/
+instance plancherelSnData_two : PlancherelSnData 2 where
+  parts := {[2], [1, 1]}
+  parts_sorted := by decide
+  parts_sz := by decide
+  dim := fun _ => 1
+  sum_dim_sq := by decide
+  two_sum_dim_sq_content := by decide
 
 end QOU.BraidKnot.IdentityI
