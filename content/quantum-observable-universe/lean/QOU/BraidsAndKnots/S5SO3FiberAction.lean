@@ -438,6 +438,42 @@ theorem PartitionOf5.electron_block :
     PartitionOf5.threeOneOne.deltaSign = -1 ∧ PartitionOf5.threeOneOne.dim = 6 := by
   decide
 
+/-- The partition of each `n = 5` block, as its weakly-decreasing list of parts. -/
+def PartitionOf5.parts : PartitionOf5 → List ℕ
+  | .five          => [5]
+  | .fourOne       => [4, 1]
+  | .threeTwo      => [3, 2]
+  | .threeOneOne   => [3, 1, 1]
+  | .twoTwoOne     => [2, 2, 1]
+  | .twoOneOneOne  => [2, 1, 1, 1]
+  | .onesFive      => [1, 1, 1, 1, 1]
+
+/-- The partition statistic `n(λ) = Σ_i (i-1)·λ_i` (here the 0-indexed `Σ i·λ_i`
+    over the enumerated parts, via a `(index, sum)` fold).  For the symmetric
+    group this is the **b-invariant** (the lowest fake-degree exponent =
+    `min_{T ∈ SYT(λ)} maj(T)`) and, since every `S_n` irrep is special, **Lusztig's
+    a-function** value on the two-sided cell of `V_λ`.  Verified combinatorially
+    (b-invariant via min major index over SYT) in
+    `docs/audits/scripts/option_e_probe4_overturning_afunction_sign.py`. -/
+def PartitionOf5.nStat (p : PartitionOf5) : ℕ :=
+  (p.parts.foldl (fun (acc : ℕ × ℕ) part => (acc.1 + 1, acc.2 + acc.1 * part)) (0, 0)).2
+
+/-- **The Δ_λ chirality sign is the partition-statistic parity** — the PROBE-4
+    re-scope (PR #2661).  The chirality sign equals `(-1)^{n(λ)}`, i.e. the parity
+    of the b-invariant / Lusztig a-function — **not** an exogenous decoration.
+    Because the a-function is constant on Kazhdan–Lusztig cells, a *forced*
+    cell-constant sign `(-1)^{a(w)}` factors through any nonnegative (KL)
+    multiplicity sum and reproduces this mixed-sign pattern; so the
+    KL-positivity prune is re-scoped from "the sign must be supplied exogenously"
+    to "the sign **is** the a-function parity; the open Δ_λ problem is the
+    *magnitude*".  (`(-1)^{n(λ)} = sgn(w₀^{S_{λ'}})`, the conjugate Young-subgroup
+    longest-element sign of `deltaSign`'s definition, for all `λ ⊢ n ≤ 8` per the
+    same probe; here proved at `n = 5`.)  See
+    `docs/audits/2026-06-23-option-e-probe4-overturning-afunction-sign.md`. -/
+theorem PartitionOf5.deltaSign_eq_nStat_parity (p : PartitionOf5) :
+    p.deltaSign = (-1 : ℤ) ^ p.nStat := by
+  cases p <;> decide
+
 /-! ## McKay correspondence anchors: 2I ↔ affine E₈
 
     The binary icosahedral group 2I = π⁻¹(I) ⊂ SU(2) (the spin double cover
