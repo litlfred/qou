@@ -1356,6 +1356,142 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "537c9f05b203",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "lean.ref names QOU.ParticleInteractions.ConfinementSDP which exists nowhere; the sibling decl is confinement_sdp (snake_case) with sorry; the library file is namespace QOU.Interactions. The ref is dangling/mis-cased.",
+        "rebuttal": "partial→survived — the library file is sorry-free and typeclass-backed and validation:not_checked is honest, but the cited ref still does not resolve (real wiring defect).",
+        "evidence": [
+          {
+            "text": "confinement-sdp.ts:7 vs .lean:27-29 vs lean/QOU/Interactions/ConfinementSDP.lean:30"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+        "severity": "major"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "537c9f05b203",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "library theorem ConfinementSDP := HasConfinementSDPStrongDuality.strong_duality projects a class field that IS its own conclusion (self-assuming projection §3b-cond item 5).",
+        "rebuttal": "partial — docs/audits/conditional-class-instances.md registers ConfinementSDPDuality as an accepted Pattern-4 conditional-class pending Mathlib SDP machinery, with boyd-vandenberghe-2004 cited + slaterStrict carried as explicit hypothesis. Sanctioned conditional stub, not an audit-dodge.",
+        "evidence": [
+          {
+            "text": "lean/QOU/Interactions/ConfinementSDP.lean:102-104,129-132"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+        "severity": "major"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "537c9f05b203",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": ".md names multi_level_sdp.py, sdp_cross_channel.py, misdp_cross_channel.py; only sdp_cross_channel.py exists (other two MISSING).",
+        "rebuttal": "partial→survived — .md prose is descriptive infra not a numeric claim and confinement-operator-selection.witness.json exists, but two named compute scripts do not exist (stale/broken references).",
+        "evidence": [
+          {
+            "text": "confinement-sdp.md:4-6"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "537c9f05b203",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "Historical LP/SDP gap: primal-only witnesses hiding shadow prices.",
+        "rebuttal": "rebutted — witness emits y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap (all AGENTS.md-required dual fields); PSD cone + tr(Phi)=n_target is a standard well-posed spectrahedron.",
+        "evidence": [
+          {
+            "text": "confinement-operator-selection.witness.json"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "537c9f05b203",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The .ts lean.ref (qou:QOU.ParticleInteractions.ConfinementSDP) resolves to no real declaration — the sibling is a sorry-stub theorem confinement_sdp that assumes its own conclusion as a class field, and the substantive library file lives in a different namespace (QOU.Interactions).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"
