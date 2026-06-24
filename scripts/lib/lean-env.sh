@@ -53,7 +53,7 @@ lean_toolchain_slug() {
 #    and QOU-package build dirs (so files importing `QOU.*` resolve).
 lean_leanpath() {
   local lp full
-  lp=$(find "$REPO_ROOT/.lake/packages" -maxdepth 5 -type d \
+  lp=$(find "$REPO_ROOT/.lake/packages" "$LEAN_DIR/.lake/packages" -maxdepth 5 -type d \
          -path '*/.lake/build/lib/lean' 2>/dev/null | tr '\n' ':')
   full="${lp}${REPO_ROOT}/.lake/build/lib/lean:${LEAN_DIR}/.lake/build/lib/lean"
   # Strip leading/trailing/duplicate colons: an empty LEAN_PATH segment

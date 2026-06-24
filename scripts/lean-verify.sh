@@ -27,7 +27,7 @@ has lean || {
 }
 
 # Ensure oleans are present (restore on demand).
-existing=$(find "$REPO_ROOT/.lake/packages/mathlib" -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
+existing=$(find "$LEAN_DIR/.lake/packages/mathlib" -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
 if [ "${existing:-0}" -lt 2000 ]; then
   echo "lean-verify: mathlib oleans missing ($existing) — restoring cache first."
   "$(dirname "$0")/lean-cache-restore.sh" || exit $?
