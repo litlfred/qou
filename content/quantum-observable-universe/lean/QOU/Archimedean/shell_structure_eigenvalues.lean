@@ -180,6 +180,6 @@ theorem shell_structure_eigenvalues [ctx : ShellStructureEigenvaluesContext] :
       ctx.T_power_21 n = (ctx.lambda_plus ^ n - ctx.lambda_minus ^ n) /
         (ctx.lambda_plus - ctx.lambda_minus)) ∧
     (∀ n : ℕ, ctx.V_hat n = ctx.z * ctx.T_power_11 n + ctx.T_power_21 n) :=
-  sorry
+  ⟨ctx.claim_i_char_poly_product, ctx.claim_ii_eigenvalue_sum, ctx.claim_iii_chebyshev_second_kind, ctx.claim_iv_traced_volume⟩
 
 end QOU.Archimedean

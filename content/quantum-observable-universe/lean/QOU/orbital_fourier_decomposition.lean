@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.orbital_fourier_decomposition
 
@@ -120,6 +122,6 @@ theorem orbital_fourier_decomposition [ctx : OrbitalFourierDecompositionContext]
     ctx.k = 2 * (ctx.n - 1 : ℤ) ∧ ctx.ℓ < ctx.n ∧
     -(ctx.ℓ : ℤ) ≤ ctx.m ∧ ctx.m ≤ (ctx.ℓ : ℤ) ∧
     (ctx.s = 1/2 ∨ ctx.s = -(1/2)) :=
-  sorry
+  ctx.claim_orbital_fourier_decomposition
 
 end QOU

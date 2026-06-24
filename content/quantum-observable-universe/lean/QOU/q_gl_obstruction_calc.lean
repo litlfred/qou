@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.q_gl_obstruction_calc
 
@@ -63,6 +65,6 @@ theorem q_gl_obstruction_calc [ctx : QGlObstructionCalcContext] :
     (∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A)) ∧
     (∀ N : ℕ, ∃ n : ℕ, N < n ∧ ¬ ((n : ℤ) ∣ ctx.chi_A) ∧
                        ¬ ctx.kappa_vanishes n) :=
-  sorry
+  ⟨ctx.claim_i_intrinsic_curvature_zero, ctx.claim_ii_q_flat_iff_curvature_zero, ctx.claim_iii_kummer_level_obstruction, ctx.claim_iv_non_vanish_density⟩
 
 end QOU

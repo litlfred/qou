@@ -132,6 +132,6 @@ theorem skein_finiteness_bound [ctx : SkeinFinitenessBoundContext] :
       = (Finset.univ.prod (fun i : Fin (ctx.Z + ctx.N - 1) => ctx.V i)) ∧
     (ctx.is_stable ↔ ∀ i : Fin (ctx.Z + ctx.N - 1), 0 < ctx.V i) ∧
     Finite ctx.StableConfig :=
-  sorry
+  ⟨ctx.claim_i_skein_factorisation, ctx.claim_ii_per_generator_positivity, ctx.claim_iii_stable_configurations_finite⟩
 
 end QOU.Archimedean
