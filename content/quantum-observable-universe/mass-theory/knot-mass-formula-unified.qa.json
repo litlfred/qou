@@ -1354,6 +1354,142 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "079f0ca38d01",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "knot_mass_unified.lean:87-89 def knot_mass_unified ... := ctx.claim_boxed_six_term_expansion; docs/audits/2026-06-18-self-assuming-projection-triage.json:565 verdict 'degenerate(field)'.",
+        "rebuttal": "none — the only Lean backing is a projection of its own conclusion (fails proof-statement-integrity §3b-cond rule 5). File self-labels 'Placeholder ... full Lean statement pending' (disclosed) but surviving.",
+        "evidence": [
+          {
+            "text": "knot_mass_unified.lean:87-89; triage json:565"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+        "severity": "major"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "079f0ca38d01",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "Cited rho-k-codata-vs-six-term, path-b-habiro-mass-probe, paper-six-term-isotope-sweep, brane-tower-plancherel-scaffold all MISSING from computations/; only brane-tower-isospin-diagnosis + the .ts mass-formula-6term-mpfr-50dps exist.",
+        "rebuttal": "none — 4/5 numeric claims (5% / 22-31% / sub-1% Habiro) are non-reproducible; load-bearing empirical citations.",
+        "evidence": [
+          {
+            "text": "knot-mass-formula-unified.md (cited witnesses)"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+        "severity": "major"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "079f0ca38d01",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": ".md:43 'this is the closed-form result' + title vs .md:19-20 'spectral closure of rho_K remains open' and .md:77-78 'Markov-invariance-broken at q_0 ... hundreds-of-MeV isospin pathologies'.",
+        "rebuttal": "partial — block is unusually candid ('not a refutation ... it is a flag'), so the overclaim is the banner/label, not the prose. Re-scope label off 'closed-form'.",
+        "evidence": [
+          {
+            "text": "knot-mass-formula-unified.md:43,19-20,77-78"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+        "severity": "medium"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "079f0ca38d01",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "Boxed form is muon-anchorless (uses m_e*Sum 1/dim_q) — guardrail violation?",
+        "rebuttal": "rebutted — NOT the purged Vol(B3)*rho/hbar_q^2 trap (that specific banned form is absent); it is a binding/residual additive model where scale partly cancels, and the block flags the additive structure as needing re-derivation. Scope-limited negative, not structural.",
+        "evidence": [
+          {
+            "text": "docs/canonical-mass-formula-guardrail.md:11"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "079f0ca38d01",
+          "ts": "3e86217c7233",
+          "lean": "b22dd80a8177"
+        },
+        "result": "fail",
+        "verdict": "open-objection",
+        "referee_argument": "The .ts lean.ref resolves (candidate-2) to knot_mass_unified.lean, a stub whose class KnotMassUnifiedContext carries the conclusion as field claim_boxed_six_term_expansion and the 'theorem' is := ctx.claim_boxed_six_term_expansion — audit-confirmed degenerate(field); the 'closed-form' banner is contradicted by the block's own body, and 4 of 5 cited witnesses are missing.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"

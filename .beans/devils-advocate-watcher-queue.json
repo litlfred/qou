@@ -375,6 +375,96 @@
       "status": "needs-author",
       "asked_author_at": null,
       "referee_argument": "Either derive the 311.10/312.39 values or soften the 'Derived from' docstring + acknowledge the norm_num-on-literals theorem is a consistency check, not a derivation. (Pre-documented open item, 2026-05-17 audit.)"
+    },
+    {
+      "id": "497ee9f57a2c",
+      "block_or_script": "prop:calibration-cohomology-alignment",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.lean",
+        "ts": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.ts"
+      },
+      "finding": "da-vacuous (self-assuming projection)",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+      "evidence": "theorem calibrations_eq_cohomology := by rw [A.align1,A.align2,A.align3] \u2014 alignments are axiomatic struct fields; proves nothing about Bring cohomology; .ts validation:'validated' + kind proposition over-claim.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Make the Lean a conjecture/conditional class OR derive the cal_i=hodge_i alignment rather than carry it as fields; and downgrade .ts validation from 'validated'. The math (genus-4 => 2g=8) is sound; only the formal artifact is vacuous."
+    },
+    {
+      "id": "9a22ba8e015c",
+      "block_or_script": "thm:knot-mass-formula-unified",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean",
+        "md": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.md"
+      },
+      "finding": "da-vacuous+da-reproducibility",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+      "evidence": "lean.ref resolves to degenerate(field) projection := ctx.claim_boxed_six_term_expansion (triage json:565); 'closed-form' banner contradicted by body (rho_K closure open, Markov-invariance-broken at q_0); 4/5 cited witnesses missing from computations/.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Re-scope the label off 'closed-form'; restore/repair the 4 missing witnesses (rho-k-codata-vs-six-term, path-b-habiro-mass-probe, paper-six-term-isotope-sweep, brane-tower-plancherel-scaffold); finish or honestly demote the Lean."
+    },
+    {
+      "id": "dd50b53d0b8d",
+      "block_or_script": "prop:wedderburn-weight-canonical",
+      "paths": {
+        "md": "content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md"
+      },
+      "finding": "da-definitional-ambiguity+da-reproducibility",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+      "evidence": "self-conjugate y_\u03bb=\u1ef9_\u03bb identity is circular: at n=3 (2,1) the probe gives y/\u1ef9\u22480.43\u22601; holds only under a tautological P1.3a y_\u03bb definition; cited witnesses are in _deprecated/ under status:'verified'. Same \u00a77aa conflation as wave-3 mba-step05.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "State the explicit Markov normalization (z_M) under which y_\u03bb=\u1ef9_\u03bb on self-conjugate \u03bb, reconcile against the probe's normalized Markov y_\u03bb, and relink/un-deprecate the witnesses. Resolves the corpus-level \u00a77aa weight-family ambiguity."
+    },
+    {
+      "id": "641199150038",
+      "block_or_script": "prop:b1-figure-8-row-theorem",
+      "paths": {
+        "lean": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.lean"
+      },
+      "finding": "da-lean-narrative-divergence (\u00a70a shadow-stub + \u00a73b-cond rule5)",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+      "evidence": "sibling .lean:16 theorem b1_figure_8_row : True := by trivial (\u00a70a shadow-stub; real decl exists at lean/QOU/AppendixSurreals/B1Figure8RowTheorem.lean) which is itself a self-assuming projection; .md:35 'Theorem-level (no conditional)' but library decl is [ctx]-conditional.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Delete the ': True := trivial' sibling stub (\u00a70a); reconcile the .md 'no conditional' wording with the [ctx] class; per \u00a73b-cond rule5, restate the class to carry sub-hypotheses not both conjuncts."
     }
   ],
   "audited": {
@@ -545,9 +635,44 @@
       "criteria": [
         "da-referee-verdict"
       ]
+    },
+    "prop:calibration-cohomology-alignment": {
+      "ts": "2026-06-24",
+      "sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:wedderburn-weight-canonical": {
+      "ts": "2026-06-24",
+      "sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "thm:knot-mass-formula-unified": {
+      "ts": "2026-06-24",
+      "sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "conj:wenzl-positivity-implies-substrate-positivity": {
+      "ts": "2026-06-24",
+      "sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:b1-figure-8-row-theorem": {
+      "ts": "2026-06-24",
+      "sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+      "criteria": [
+        "da-referee-verdict"
+      ]
     }
   },
   "reviewed_up_to": {
-    "da-referee-verdict": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
+    "da-referee-verdict": "4969df905a8d555017a1d0756f02b58dea170ddc"
   }
 }
