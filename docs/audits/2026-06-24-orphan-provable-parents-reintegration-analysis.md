@@ -125,8 +125,8 @@ check = 0):
 3. **braids-and-knots (8)** — ✅ triaged: 3 wired
    (`meson-em-sinh-closed-form`, `meson-qcg-fusion-identity` →
    `sec:lepton-meson-parallel`; `unit-modulus-eigenvalue` **moved**
-   braids → mass-theory + `thm:`→`prop:` fix → `sec:mass-algebraic-
-   markov-gram`). **5 held WIP** — the Habiro chain
+   braids → mass-theory + `thm:`→`prop:` fix →
+   `sec:mass-algebraic-markov-gram`). **5 held WIP** — the Habiro chain
    (`a8-partition-function-identity`, `cyclotomic-strand-doubling`,
    `habiro-pochhammer-bridge`, `habiro-precision-ladder-equivalence`,
    `zeta8-witness-level2-su2`). **Decision: leave WIP** (deeper review
