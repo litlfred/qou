@@ -6,6 +6,7 @@ export default proposition({
   chapter: "mass-theory",
   cites: ["jones1987", "wenzl1988"],
   uses: ["thm:averaging-resonance-rule"],
+  proofs: ["prf:pn-averaging-uniqueness"],
   defines: [],
   tags: ["normalization", "frobenius", "no-fitting", "uniqueness"],
   lean: { ref: "qou:QOU.BraidKnot.pn_averaging_unique" },

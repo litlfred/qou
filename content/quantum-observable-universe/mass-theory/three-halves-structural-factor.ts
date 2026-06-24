@@ -11,6 +11,7 @@ export default proposition({
   uses: [
     "prop:lepton-bring-surface-h3-3channel",
   ],
+  proofs: ["prf:three-halves-structural-factor"],
   cites: [],
   authorNotes: [
     {
