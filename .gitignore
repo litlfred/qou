@@ -148,3 +148,6 @@ computations/atomic-prefix-cache/
 
 # Lean content-block verification scratch area (throwaway; never committed)
 **/lean/QOU/_Scratch/
+
+# Sage preparse build artifacts
+*.sage.py
