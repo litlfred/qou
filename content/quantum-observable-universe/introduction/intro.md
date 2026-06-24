@@ -45,22 +45,25 @@ and a trace playing the role of integration); the force of the
 thesis is that the observations *determine* them — nothing else
 is added by hand.
 
-The categorical language identifies, as internal objects of the
-category, the physical concepts that describe the mechanics of a
-quantum universe.  The Lagrangian is a trace; the Dirac operator
-is a connection twisted by the Reeb derivation; the action is an
-integral; curvature, gauge field, and matter current are specific
-morphisms in $\mathbf{C}$.  Each is forced — not borrowed from
-the classical dictionary, but recovered as the unique construction
-the axioms allow.
+The categorical language recovers, as internal pieces of the
+structure, the physical concepts that describe a universe's
+mechanics.  The Lagrangian is a trace; the action is an integral;
+curvature, the gauge field, and the matter current are specific
+processes in the category; the Dirac operator is a connection
+twisted by the system's own internal time-flow.  Each is forced —
+not borrowed from the classical dictionary, but recovered as the
+unique construction the axioms allow.
 
-The consequences are broad in scope and specific in detail.  The
-symmetry group $\mathrm{SU}_2(R)$ is not assumed; it emerges from
-the axioms.  The uncertainty principle is not postulated; it
-appears as the geometric signature of degrees of freedom not yet
-resolved.  The state space is not free to take any shape: the
-axioms force it to be a surface of one fixed genus, rigid rather
-than chosen.  Particles can be viewed as knots or as vortices, and
+The consequences are broad in scope and specific in detail.
+Return to the observation that what we measure does not depend on
+which way we face: the symmetry behind that viewpoint-independence
+— an internal rotation group relating one observer's description
+to another's — is not assumed but emerges from the axioms, and the
+chapters identify it precisely.  The uncertainty principle is not
+postulated either; it appears as the geometric signature of
+degrees of freedom not yet resolved.  Nor is the state space free
+to take any shape: the axioms force it to be a surface of one
+fixed genus, rigid rather than chosen.  Particles can be viewed as knots or as vortices, and
 the algebra describes their interactions; because only finitely
 many knots fit on a surface of fixed genus, the catalogue of
 possible interactions is finite too — exactly six force operators
