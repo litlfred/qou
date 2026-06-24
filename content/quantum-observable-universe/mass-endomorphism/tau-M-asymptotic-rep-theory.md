@@ -1,5 +1,15 @@
 **$\tau_M$ ladder — representation-theoretic structure.**
 
+**Proposition (conditional on the open recursion kernel of
+[`prop:q-beta-c-k-recursion-from-habiro-q-difference`](#prop:q-beta-c-k-recursion-from-habiro-q-difference)).**
+The low-order data ($c_0 = 0$, 1-d triviality, the $N=1$ coupling $b$, and the
+bar-even seed $c_2 = -1$) together with the $\hbar_q$-parity are proved
+*unconditionally* (Proof, below). The full ladder
+$\prod_{k \geq 2}\bigl(1 + c_k^{(\lambda)} u_\lambda^k\bigr)$ is rigorous **modulo**
+the substrate-derivation of the kernel $R(q,\xi)$ that fixes $c_k$ for $k \geq 3$
+— the open $s5$–$so_3$ keystone. The higher rungs are therefore conjectural
+pending that kernel; nothing beyond $N=2$ is wired to production.
+
 For a typed braid $\beta$ and a Hecke irrep $V_\lambda$ of $H_n(q)$, the
 Markov-traced character at single wrap admits the canonical factorisation, in
 the substrate ladder variable $u_\lambda = b_\lambda\,\hbar_q^2$
