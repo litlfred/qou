@@ -11,9 +11,8 @@ export default proposition({
   uses: [
     "prop:q-beta-over-e0-classical-vanishing",
     "prop:t-beta-markov-frobenius-collapse",
-    "rem:alpha-em-habiro-bar-involution",
+    "prop:alpha-em-habiro-bar-involution",
     "rem:markov-trace-inductive-limit",
-    "prop:q-heat-kernel-peter-weyl",
   ],
   cites: ["jones1987", "wenzl1988", "habiro2004", "koelink1994"],
   computation: {
