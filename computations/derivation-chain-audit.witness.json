@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-23T23:12:36.499756+00:00",
-  "commitSha": "1b182c34364c4b53cf581d0ec6654e5329f47e19",
+  "computedAt": "2026-06-24T01:27:11.757025+00:00",
+  "commitSha": "146610638654bc9fd4d2dfb81aa688237cd3b817",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "81b286b6b75382730a0886067c550a30ed123a68",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -573,10 +573,8 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -2076,6 +2074,7 @@
         "atom-chi-rust-t.witness.json",
         "atom-level-wedderburn-tower.witness.json",
         "atom-mass-derived.witness.json",
+        "atom-mass-full-hecke.witness.json",
         "atom-nf-symbolic-D.witness.json",
         "atom-vhyp-bar-trace-test.witness.json",
         "atom-vhyp-closure-matrix-m.witness.json",
@@ -2131,6 +2130,7 @@
         "binding-ladder-catalog.witness.json",
         "binding-link-psd-feasibility-probe.witness.json",
         "binding-link-volumes.witness.json",
+        "binding-log-free-energy.witness.json",
         "binding-log-scale-investigation.witness.json",
         "binding-lp-delta-audit.witness.json",
         "binding-multibond-wenzl.witness.json",
@@ -2140,7 +2140,9 @@
         "binding-perblock-bond-type-a3.witness.json",
         "binding-qhamiltonian-rotational-scale.witness.json",
         "binding-reeb-phase-decomposition.witness.json",
+        "binding-reeb-ratio-rho-free.witness.json",
         "binding-rotation-phase-lead.witness.json",
+        "binding-selection-rule-tau-closure.witness.json",
         "binding-shell-enhancement-derivation.witness.json",
         "binding-single-pipeline-comparison.witness.json",
         "binding-sym-vs-lin-two-models.witness.json",
@@ -2321,6 +2323,7 @@
         "ch-bond-writhe-lp.witness.json",
         "channel-product-mass.witness.json",
         "charge-coulomb-tn3he-derived.witness.json",
+        "charge-slambda-reeb-phase-crack.witness.json",
         "chebyshev-pairing-engine.witness.json",
         "chi-at-q0-matrix-m-deuteron.witness.json",
         "chi-at-q0-matrix-m-tritium.witness.json",
@@ -2565,8 +2568,10 @@
         "he-nu-sdp-saturation-obstruction.witness.json",
         "he-nu-sdp-selfconjugate-candidate.witness.json",
         "he3-brane-tower-structural-gap.witness.json",
+        "he3-pairknot-clambda-coulomb-probe.witness.json",
         "he3-pairknot-composite-lp.witness.json",
         "he3-tower-charge-asymmetry.witness.json",
+        "he3-tritium-cosh-asymmetry-diagnosis.witness.json",
         "he4-canonical-tr-m-block-fingerprint.witness.json",
         "hecke-channel-binding.witness.json",
         "hecke-core-symbolic-migration.witness.json",
