@@ -297,7 +297,7 @@ via `Multipliable.tprod_eq_zero_mul`. Domain `|z| < 1` (so both `|z| < q` and
 > environment-timeout pattern, not a proof failure. -/
 -- Ref: [manuscript] conj:brane-tower-z-habiro §"What survives the closure"
 -- Ref: [habiro2004cyclotomic] q-Pochhammer functional equation
-set_option maxHeartbeats 1000000 in
+set_option maxHeartbeats 0 in
 theorem quantumDilog_functional_eq {q z : ℝ} (hq : 1 < q) (hz : |z| < 1) :
     (1 - z) * (∏' k : ℕ, (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹)
       = ∏' k : ℕ, (1 - q ^ (-((k : ℤ) + 1)) * z)⁻¹ := by
@@ -311,11 +311,19 @@ theorem quantumDilog_functional_eq {q z : ℝ} (hq : 1 < q) (hz : |z| < 1) :
       _ = q := mul_one q
   have hstep : ∀ m : ℤ, q ^ (-(m + 1)) * q = q ^ (-m) := by
     intro m; rw [← zpow_add_one₀ hq_ne]; congr 1; ring
-  have hmul : Multipliable (fun k : ℕ => (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹) :=
-    quantumDilog_multipliable hq hqz
+  have etail : ∀ n : ℕ, (1 - q ^ (-(((n + 1 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ = (1 - q ^ (-((n : ℤ) + 1)) * z)⁻¹ := by
+    intro n
+    have hcast : ((n + 1 : ℕ) : ℤ) = (n : ℤ) + 1 := by push_cast; ring
+    have hprod : q ^ (-(((n : ℤ) + 1) + 1)) * (q * z) = q ^ (-((n : ℤ) + 1)) * z := by
+      rw [← mul_assoc, hstep ((n : ℤ) + 1)]
+    simp only [hcast, hprod]
+  have hz_q : |z| < q := lt_trans hz hq
+  have h_tail_multipliable : Multipliable (fun k : ℕ => (1 - q ^ (-(((k + 1 : ℕ) : ℤ) + 1)) * (q * z))⁻¹) :=
+    (multipliable_congr etail).mpr (quantumDilog_multipliable hq hz_q)
   -- Ref: [habiro2004cyclotomic] q-Pochhammer functional equation shift relation
   have h_tprod : (∏' k : ℕ, (1 - q ^ (-((k : ℤ) + 1)) * (q * z))⁻¹) =
-      (1 - q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ * ∏' k : ℕ, (1 - q ^ (-(((k + 1 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ := sorry
+      (1 - q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ * ∏' k : ℕ, (1 - q ^ (-(((k + 1 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ :=
+    tprod_eq_zero_mul' h_tail_multipliable
   rw [h_tprod]
   have e0 : (1 - q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ = (1 - z)⁻¹ := by
     have hp : q ^ (-(((0 : ℕ) : ℤ) + 1)) * (q * z) = z := by
@@ -323,12 +331,6 @@ theorem quantumDilog_functional_eq {q z : ℝ} (hq : 1 < q) (hz : |z| < 1) :
         rw [← mul_assoc, hstep ((0 : ℕ) : ℤ)]
       rw [h2]; simp
     simp only [hp]
-  have etail : ∀ n : ℕ, (1 - q ^ (-(((n + 1 : ℕ) : ℤ) + 1)) * (q * z))⁻¹ = (1 - q ^ (-((n : ℤ) + 1)) * z)⁻¹ := by
-    intro n
-    have hcast : ((n + 1 : ℕ) : ℤ) = (n : ℤ) + 1 := by push_cast; ring
-    have hprod : q ^ (-(((n : ℤ) + 1) + 1)) * (q * z) = q ^ (-((n : ℤ) + 1)) * z := by
-      rw [← mul_assoc, hstep ((n : ℤ) + 1)]
-    simp only [hcast, hprod]
   have h_tail_eq : (∏' k : ℕ, (1 - q ^ (-(((k + 1 : ℕ) : ℤ) + 1)) * (q * z))⁻¹) = ∏' k : ℕ, (1 - q ^ (-((k : ℤ) + 1)) * z)⁻¹ :=
     tprod_congr etail
   rw [e0]
