@@ -112,15 +112,13 @@ def main() -> int:
     # radsimp/cancel/together (not sp.simplify) — exact on these small rational/radical
     # forms and avoids the compute-audit P16 flag on sp.simplify.
     trM_sym = sp.radsimp((qs - 1 / qs) / (sp.sqrt(qs) + 1 / sp.sqrt(qs)) + 1)
-    diff_sym = sp.cancel(sp.together(lw2_sym - trM_sym))
     identically_equal = bool(sp.together(lw2_sym - trM_sym).equals(0))
     # Real-positive q where they DO coincide (isolated ⇒ not a structural identity).
     coincidence_qs = []
     try:
-        for s in sp.solve(sp.Eq(lw2_sym, trM_sym), qs):
-            sval = sp.nsimplify(s)
-            fval = complex(sp.N(s))
-            if abs(fval.imag) < 1e-30 and fval.real > 0:
+        for sol in sp.solve(sp.Eq(lw2_sym, trM_sym), qs):
+            fval = complex(sp.N(sol))
+            if abs(fval.imag) < 1e-12 and fval.real > 0:
                 coincidence_qs.append(float(fval.real))
     except Exception:
         pass

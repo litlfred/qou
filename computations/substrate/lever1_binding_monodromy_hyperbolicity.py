@@ -45,7 +45,7 @@ tau_torus = 2 * mp.cosh(2 * eta)      # = q^2 + q^-2 (multiplicative/Chebyshev t
 
 theta_b = mp.acosh(tau_cf / 2)
 theta_t = mp.acosh(tau_torus / 2)
-lam_b = mp.e ** theta_b               # hyperbolic eigenvalue lambda (B ~ diag(lambda, 1/lambda))
+lam_b = mp.exp(theta_b)               # hyperbolic eigenvalue lambda (B ~ diag(lambda, 1/lambda))
 k_b = theta_b / eta                   # tau = q^k + q^-k would need integer k
 
 # trefoil holonomy in SU(2): (H1 H2)^3 = id (3-cycle) => trace in {-1, +1}; all |.| <= 2
