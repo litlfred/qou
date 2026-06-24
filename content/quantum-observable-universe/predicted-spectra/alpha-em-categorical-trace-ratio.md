@@ -70,4 +70,4 @@ Witness assertion confirmed:
 [`delta-q-decoration.witness.json`](computations/delta-q-decoration.witness.json).
 
 
-**Remark on Mathematical Novelty:** While this re-expresses existing projection identities, framing the relationship as a trace ratio on the q-dimension layer demonstrates a novel closure of the categorical framework, proving that empirical electromagnetic coupling naturally reduces to a structural trace algebraic constraint.
+Framing the relationship as a trace ratio on the $q$-dimension layer re-expresses existing projection identities and closes the categorical framework: the empirical electromagnetic coupling reduces to a structural trace-algebraic constraint.
