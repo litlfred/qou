@@ -215,6 +215,3 @@ the definitional layer; the original quantification "for all
 $(Q', z')$ reproducing the canonical $y_\lambda$ values, $(Q', z')
 = (q^2, q \cdot z)$" was structurally vacuous on the ansatz
 Schur-element model.
-
-`y_lambda_bridge_numerical_agreement` records the empirical witness
-data (machine-precision agreement) as a `True := trivial` ansatz.
