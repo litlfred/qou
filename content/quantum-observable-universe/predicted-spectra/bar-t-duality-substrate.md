@@ -86,4 +86,4 @@ parameter — the two structures are not independent dualities but
 two faces of the same algebraic involution.
 
 
-**Remark on Mathematical Novelty:** Framing standard q->q^-1 involution directly as a Hecke-bar origin yields a novel algebraic geometry for the substrate, bridging T-duality cleanly with involution algebra and enforcing rigorous algebraic parity on the substrate.
+Framing the standard $q \to q^{-1}$ involution as a Hecke-bar origin gives an algebraic geometry for the substrate that bridges T-duality with involution algebra and enforces algebraic parity on the substrate.

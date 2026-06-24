@@ -18,4 +18,4 @@ solutions are global for $q > 1$, the integral is always finite
 when $q > 1$.  The criterion becomes non-trivial only in the
 $q \to 1$ limit.
 
-**Mathematical Novelty.** While the specific estimate is a direct algebraic translation of the classical Beale-Kato-Majda criterion using $q$-vorticity, the mathematical novelty is establishing that this bound functions purely as a diagnostic limit check in the observable universe. Because the deformed Navier-Stokes system is unconditionally globally regular for $q > 1$, the integral is trivially finite in the bulk, shifting the role of the BKM condition from a PDE survival test into an obstruction indicator at the unphysical $q \to 1$ substrate boundary.
+The $q$-vorticity estimate is a direct algebraic translation of the classical Beale-Kato-Majda criterion; here the bound functions as a diagnostic limit check in the observable universe. Because the deformed Navier-Stokes system is unconditionally globally regular for $q > 1$, the integral is finite in the bulk, so the BKM condition shifts from a PDE survival test to an obstruction indicator at the $q \to 1$ substrate boundary.

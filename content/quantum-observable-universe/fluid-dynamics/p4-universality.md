@@ -26,7 +26,7 @@ It does **not** depend on the specific initial data $v_0$, the
 energy $E_0$, or the detailed geometry of the state bundle
 $\mathcal{S}$.
 
-**Mathematical Novelty.** While the critical exponent itself ($\alpha = 4/3$) is a heuristic derivation imported from physical arguments (Kolmogorov scaling), the mathematical novelty here is framing it rigorously as a universality class invariant tied strictly to the categorical structure of the QOU. By demonstrating that the exponent depends solely on representation-theoretic data (the $q$-Sobolev constant) and the topology ($\chi(A)$), this cleanly decouples the rate of blowup from specific PDE initial data, recasting the scaling behavior as an intrinsic topological property of the background category.
+The critical exponent $\alpha = 4/3$ is a heuristic derivation imported from physical arguments (Kolmogorov scaling); here it is framed as a universality-class invariant tied to the categorical structure of the QOU. The exponent depends solely on representation-theoretic data (the $q$-Sobolev constant) and the topology ($\chi(A)$), which decouples the rate of blowup from specific PDE initial data and recasts the scaling behavior as an intrinsic topological property of the background category.
 
 **Argument from the Yekutieli tower.**
 
