@@ -1,4 +1,4 @@
-import Mathlib.Algebra.Ring.Basic
+import Mathlib
 
 /-!
 # QOU.Observations.hecke_satisfies_blitvic_hypothesis
@@ -68,7 +68,10 @@ central limit theorem [`blitvic2012`].*
 -- Ref: [manuscript] quantum-observable-universe/observations/hecke-satisfies-blitvic-hypothesis.ts
 theorem hecke_satisfies_blitvic_hypothesis
     [ctx : HeckeSatisfiesBlitvicHypothesisContext] :
-    (∀ i : ℕ, haveI :=
-  sorry
+    (∀ i : ℕ, haveI := ctx.ringA; ctx.σ i * ctx.σ i = ctx.h_A * ctx.σ i + 1) ∧
+    (∀ (x : ctx.A) (n : ℕ), haveI := ctx.ringA; ctx.tr_M (x * ctx.σ n) = ctx.z_real * ctx.tr_M x) ∧
+    (∀ n : ℕ, n % 2 = 1 → ctx.moment n = 0) :=
+  ⟨ctx.claim_i_hecke_quadratic_relation, ctx.claim_ii_markov_property,
+   ctx.claim_iii_wenzl_product_factorisation⟩
 
 end QOU.Observations
