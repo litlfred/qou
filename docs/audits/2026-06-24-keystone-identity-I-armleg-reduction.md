@@ -4,11 +4,11 @@
 **Branch:** `claude/optimistic-meitner-owwu8n`
 **Status:** complete arm–leg reduction of the per-partition identity (A); the general
 theorem is **Lean-assembled** (`identityA_algebra` + the six reduction lemmas), with
-**four of six reduction lemmas Lean-proved sorry-free** (E/Arm/Cont + the cell-sum
-framework + foundational cell-bound) and only the three conjugate/cross double-counts
-(Leg1/Leg2/Cross) carried; the per-partition statement is **exhaustively machine-verified
-for every partition through `n = 12`** (271 partitions); nothing archimedean (`q₀` and
-the 210 ppb target never appear); no fit.
+**five of six reduction lemmas Lean-proved sorry-free** (E/Arm/Cont/Leg1/Leg2 + the
+Young-diagram Fubini swap `cellSum_swap` + the cell-sum framework + foundational
+cell-bound) and only the **single** sorted cross-term (Cross) carried; the per-partition
+statement is **exhaustively machine-verified for every partition through `n = 12`** (271
+partitions); nothing archimedean (`q₀` and the 210 ppb target never appear); no fit.
 **Lean:** [`IdentityIContentDecomposition.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/IdentityIContentDecomposition.lean)
 (`identityA_algebra` sorry-free; `partitions` + `identityA_exhaustive_n12` +
 `partitionCounts` sorry-free `native_decide`).
@@ -113,32 +113,44 @@ conjugate column-sums + the cross-term remain carried:
 | **(E)** `hookE` — hook-square expansion | ✅ sorry-free (`cellSum` linearity, via `lt_colLen_of_cell`/`hook_cast`) |
 | **(Arm)** `redArm` — `2·Σarm = Σλ²−n` | ✅ sorry-free (`rowArm`/`sz_eq`) |
 | **(Cont)** `redCont` — `Σc² = Σarm²−s2+q1+q2` | ✅ sorry-free (`rowSq_reflect`/`two_sum_id`) |
-| **(Leg1)** `redLeg1` — `Σℓ = Σ i·λ_i` | ⛔ carried `sorry` (conjugate column-sum) |
-| **(Leg2)** `redLeg2` — `Σℓ² = Σ i²·λ_i` | ⛔ carried `sorry` (conjugate column-sum) |
-| **(Cross)** `redCross` — `2·Σaℓ = n²−p2−s2−q1` | ⛔ carried `sorry` (sorted L-triple count) |
+| **(Leg1)** `redLeg1` — `Σℓ = Σ i·λ_i` | ✅ sorry-free (`cellSum_swap` + reflect + swap-back) |
+| **(Leg2)** `redLeg2` — `Σℓ² = Σ i²·λ_i` | ✅ sorry-free (`cellSum_swap` + `rowSq_reflect` + swap-back) |
+| **(Cross)** `redCross` — `2·Σaℓ = n²−p2−s2−q1` | ⛔ single remaining `sorry` (sorted cross-term) |
+
+The **Young-diagram Fubini swap** `cellSum_swap` (sum-over-cells = sum-over-columns,
+via `Finset.sum_comm'` + the two-directional cell↔`colLen` equivalence
+`colLen_le_of_le`/`lt_part_of_lt_colLen`) is **sorry-free** and is the shared unlock.
+With it, both legs collapse without any pair double-count: swap to columns, reflect each
+inner column sum (`Σ(colLen_j−1−i) = Σ i`, resp. squared), then swap **back** to
+`cellSum (fun i _ => i) = q1` (resp. `i² = q2`).
 
 So the corpus framing *"Identity I needs SYT-dimension / hook-length infrastructure"*
-is now sharpened twice over: the **hook-length formula is off the critical path
-entirely**, and four of the six reduction lemmas are machine-checked sorry-free. The
-genuine residual is **three** precisely-characterized finite double-counts (Leg1/Leg2/
-Cross), each a *sum-over-cells → sum-over-row-pairs/columns* reorganization needing a
-Young-diagram Fubini lemma — self-contained finite combinatorics, still multi-session in
-Lean but **not gated on any absent Mathlib theorem**. The Plancherel half **(B)**
+is now sharpened all the way down: the **hook-length formula is off the critical path
+entirely**, and **five of the six** reduction lemmas (plus the swap, the cell-sum
+framework, and the foundational cell-bound) are machine-checked sorry-free. The genuine
+residual is **one** precisely-characterized finite double-count — `redCross`, the sorted
+cross-term `2·Σarm·leg = n²−p2−s2−q1`. Unlike the legs (which reflect away), it is a true
+pair count: `Σarm·leg = Σ_{i<i′} Σ_{j<λ_{i′}}(λ_i−1−j)` (sorted ⇒ `λ_{i′}≤λ_i` binds the
+inner range), needing a `Finset.range i′` pair-Fubini on top of `cellSum_swap` — still
+self-contained finite combinatorics, **not gated on any absent Mathlib theorem**. The
+Plancherel half **(B)**
 (`E_Planch[Σc²] = binom(n,2)`, via `Σ(dim λ)² = n!` + Jucys–Murphy centrality) remains
 the only piece needing genuine `ℂ[S_n]` Wedderburn/JM infrastructure.
 
 ## Verification
 
 - **Lean (sorry-free):** the general theorem `sumSqHooks_eq_sumSqContents_add_sq`
-  (assembled via `identityA_algebra`, modulo the three carried `redLeg1`/`redLeg2`/
-  `redCross`); `identityA_algebra`, `hookE`, `redArm`, `redCont`, and the cell-sum
-  framework (`list_sum_range`, `cellSum`, linearity, `nested_bridge`, `cellSum_one`,
-  `cellSum_expand`, the two bridges), the foundational `lt_colLen_of_cell`/`hook_cast`,
-  and the Gauss helpers (`two_sum_id`/`rowArm`/`rowSq_reflect`/`sz_eq`) — all
-  sorry-free; `partitionCounts` (`p(n) = 1,2,3,5,7,11,15,22,30,42,56,77` for
-  `n = 1..12`, enumerator completeness); `identityA_exhaustive_n12` (the per-partition
-  `Σh² = Σc² + n²` for **every partition through `n = 12`**, 271 partitions,
-  `native_decide`). All check via lean-direct (`EXIT 0`).
+  (assembled via `identityA_algebra`, modulo the single carried `redCross`);
+  `identityA_algebra`, `hookE`, `redArm`, `redCont`, **`redLeg1`, `redLeg2`**, the
+  Young-diagram Fubini `cellSum_swap` (+ `colLen_le_of_le`/`lt_part_of_lt_colLen`), the
+  cell-sum framework (`list_sum_range`, `cellSum`, linearity, `nested_bridge`,
+  `cellSum_one`, `cellSum_expand`, the two bridges, `cellSum_i_eq_q1`/`cellSum_isq_eq_q2`),
+  the foundational `lt_colLen_of_cell`/`hook_cast`, and the Gauss/reflect helpers
+  (`two_sum_id`/`rowArm`/`rowReflect_lin`/`rowSq_reflect`/`sz_eq`) — all sorry-free;
+  `partitionCounts` (`p(n) = 1,2,3,5,7,11,15,22,30,42,56,77` for `n = 1..12`, enumerator
+  completeness); `identityA_exhaustive_n12` (the per-partition `Σh² = Σc² + n²` for
+  **every partition through `n = 12`**, 271 partitions, `native_decide`). All check via
+  lean-direct (`EXIT 0`).
 - **Python (exact integer, `n = 1..22`, 4507 partitions):** the six sub-identities
   (E)/(Arm)/(Cont)/(Leg1)/(Leg2)/(Cross) and the assembled `Σh² = Σc² + n²` all hold.
 

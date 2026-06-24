@@ -462,8 +462,15 @@ theorem redLeg2 (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   rw [cellSum_swap l hl, Finset.sum_congr rfl (fun j _ => rowSq_reflect (colLen l j)),
     ← cellSum_swap l hl (fun i _ => (i : ℤ) ^ 2), cellSum_isq_eq_q2]
 
-/-- **Reduction lemma (Cross) (carried).** `2·Σ arm·leg = n² − p2 − s2 − q1` — the sorted
-L-triple count (uses `λ_i ≥ λ_{i'}`).  Machine-checked (assembled) `n ≤ 12`; `n ≤ 22`. -/
+/-- **Reduction lemma (Cross) (carried — single remaining sorry).** `2·Σ arm·leg
+= n² − p2 − s2 − q1` — the sorted cross-term.  Unlike the legs (which collapse via
+swap+reflect), this is a genuine pair double-count.  Roadmap: expand `leg(i,j) =
+#{i′ : i < i′ < colLen_j} = #{i′ : i < i′, j < λ_{i′}}` (sorted), so
+`Σ arm·leg = Σ_{i<i′} Σ_{j<λ_{i′}} (λ_i − 1 − j)` (for sorted `i<i′`, `λ_{i′} ≤ λ_i`
+binds `j`); the inner is a Gauss sum, leaving a `Σ_{i<i′}` pair-sum that reduces to
+row data — needs a `Finset.range i′` pair-Fubini on top of `cellSum_swap`.
+Machine-checked (assembled identity) for every partition `n ≤ 12`; exact-integer
+`n ≤ 22` (audit). -/
 theorem redCross (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
     2 * cellSum l (fun i j => ((l.getD i 0 : ℤ) - 1 - j) * ((colLen l j : ℤ) - 1 - i))
       = (sz l : ℤ) ^ 2 - p2 l - s2 l - q1 l := by
