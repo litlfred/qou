@@ -13,3 +13,5 @@ resweep 2026-06-22: honest counter = 1 actionable (claimed 17) via scripts/count
 resweep 2026-06-23 (#2637): honest actionable = 1 (claimed 17): QIntegerMassFormula (1 sorry). See docs/audits/2026-06-23-placeholder-bean-resweep.md.
 
 drain 2026-06-23 (#2654): actionable 1 -> 0 — repositioned the QIntegerMassFormula §3b conjecture-class sorry citation (-- Ref: now precedes := sorry; comment-only). lean/Interactions fully drained.
+
+resweep 2026-06-24 (honest counter, PR hygiene): **uncited-sorry = 0 corpus-wide**; this title count is a raw grep and is badly inflated. Honest actionable count for this scope + the full per-bean table in docs/audits/2026-06-24-placeholder-bean-count-resweep.md. Remaining TODO/FIXME are intentional markers (-- TODO upstream: on proved lemmas, witness-deps, research notes), NOT actionable placeholders — do not "drain a count" by removing them. Re-title/close is owner-only.
