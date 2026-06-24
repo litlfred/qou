@@ -65,7 +65,7 @@ the empirical near-match $c_3 = -2 = J_{\mathrm{Hopf}}(q=1)$ to $3\,\mathrm{ppm}
 
 The $+1.71\\%$ relative bias on the SDP-extracted $\hat c_2$ vs the
 **proved canonical** $c_2 = -1$ ([`prop:q-beta-c-2-eq-neg-one-structural`](q-beta-c-2-eq-neg-one-structural.md))
-was first reported as a methodology defect in PR #1824 item 1. This
+was first reported as a methodology defect. This
 proposition reframes the bias as a **structural signature**: it is exactly
 $c_3^{\mathrm{alg}} \cdot u_0 \approx -2 \cdot 0.00852 \approx -0.01704$,
 matching the observed $\hat c_2 - c_2^{\mathrm{alg}} = -1.0171 - (-1) =

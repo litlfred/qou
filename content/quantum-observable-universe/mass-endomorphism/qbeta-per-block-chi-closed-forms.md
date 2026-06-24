@@ -134,7 +134,7 @@ uniqueness theorem sorry-free via strong induction
 inductive case. This is the auxiliary z-Taylor recursion;
 the GENERAL c_k ladder recursion is the sibling
 [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
-(landed 2026-06-03), which provides the depth-$d$ linear recursion
+, which provides the depth-$d$ linear recursion
 structure on the ladder coefficients themselves.
 
 **Cross-references to sibling Lean blocks** (landed 2026-06-03 on
