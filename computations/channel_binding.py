@@ -133,8 +133,20 @@ def bond_crossing(bond: str) -> list[tuple[sp.Expr, sp.Expr]]:
     return BOND_CROSSING[bond]
 
 
-def _channels_sym(chain: Iterable[tuple[sp.Expr, sp.Expr]]) -> dict:
+def _channels_sym(chain: Iterable[tuple[sp.Expr, sp.Expr]],
+                  simplify: bool = True) -> dict:
+    """The three raw Hecke channels of a crossing chain.
+
+    ``simplify=True`` (default, back-compat) returns ``sp.simplify``-d
+    expressions — wanted for the exact ``route="symbolic"`` output and
+    any human-readable display. Pass ``simplify=False`` (P16) when the
+    result is fed straight into ``sp.N`` at ``q₀`` (the numeric route):
+    the cosmetic ``sp.simplify`` on the un-reduced channel expression is
+    pure overhead before a numerical evaluation. Ref: 2834792d.
+    """
     sym, std, alt = _vertex_channels_sym(list(chain))
+    if not simplify:
+        return {"sym": sym, "std": std, "alt": alt}
     return {"sym": sp.simplify(sym), "std": sp.simplify(std), "alt": sp.simplify(alt)}
 
 
@@ -145,7 +157,9 @@ def bond_channels(bond: str, route: Route = "numeric",
     ``route="symbolic"`` → exact sympy expressions in ℚ(√q).
     ``route="numeric"``  → mpf values at q₀.
     """
-    chans = _channels_sym(bond_crossing(bond))
+    # Numeric route evaluates at q₀ immediately, so skip the cosmetic
+    # symbolic simplify (P16); the symbolic route keeps the exact form.
+    chans = _channels_sym(bond_crossing(bond), simplify=(route == "symbolic"))
     if route == "symbolic":
         return chans
     with mp.workdps(dps):
