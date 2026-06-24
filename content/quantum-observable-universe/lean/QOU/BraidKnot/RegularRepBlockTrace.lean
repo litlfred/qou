@@ -133,4 +133,29 @@ theorem identityB_conditional (W : SnWedderburnSpectralData R n) :
   rw [← blockTrace_eq W]
   exact RegularRepTrace.trace_centralC2_eq_factorial_mul_choose_two n
 
+/-! ## Non-vacuity — the hypothesis bundle is satisfiable
+
+The conditional results above are vacuous if `SnWedderburnSpectralData` cannot be instantiated, so we
+exhibit the degenerate `n = 0` witness. `R[S_0] ≅ R` is one-dimensional; the single (empty) partition
+has `dim = 1`, and `C₂ = 0` (an empty `Fin 0` sum) so its eigenvalue is `ω = 0` and the lone block is
+the whole space. This sorry-free instance certifies that the structure is consistent / not
+over-constrained. (Non-degenerate instances, `n ≥ 2`, require the actual Wedderburn block
+decomposition — the isolated Mathlib gap this file is conditional on.) -/
+noncomputable def spectralData_zero : SnWedderburnSpectralData R 0 where
+  Idx := Unit
+  d := fun _ => 1
+  ω := fun _ => 0
+  p := fun _ => ⊤
+  proj := fun _ => LinearMap.id
+  isProj := fun _ => ⟨fun _ => Submodule.mem_top, fun _ _ => rfl⟩
+  rank := fun _ => by
+    have h1 : Module.finrank R (MonoidAlgebra R (Equiv.Perm (Fin 0))) = 1 := by
+      unfold MonoidAlgebra
+      rw [Module.finrank_finsupp_self, Fintype.card_perm, Fintype.card_fin, Nat.factorial_zero]
+    rw [finrank_top, h1, one_pow]
+  decomp := by
+    rw [show centralC2 (R := R) 0 = 0 from by simp [centralC2], LinearMap.mulLeft_zero_eq_zero]
+    simp
+  complete := by simp
+
 end QOU.BraidKnot.RegularRepBlockTrace
