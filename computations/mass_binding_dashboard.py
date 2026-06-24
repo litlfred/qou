@@ -141,7 +141,14 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
     sigma_L = n_pp * Lbond["pp"] + n_pn * Lbond["pn"] + n_nn * Lbond["nn"]
     Lbar = sigma_L / comb(A, 2) if A >= 2 else 0.0
     B_fac = alpha * (A - 1) * Lbar
-    B_magic = (2.0 * me * A * g8) if (Z, N) == (2, 2) else None
+    # ---- B_magic GENERALIZED (owner request 2026-06-23): the doubly-magic ⁴He
+    #   magic-volume binding 2·m_e·A·8G is linear in A and exact-at-⁴He by
+    #   construction. Ungated to ALL A as the *linear magic-volume reference*
+    #   (8G = Vol(Borromean) carried per nucleon). It over-binds light nuclei
+    #   and under-binds heavy ones — it is the linear-in-A line, the complement
+    #   of the SATURATING B_lin below. Not a per-nucleus categorical derivation
+    #   beyond ⁴He; flagged as a reference extrapolation in the legend.
+    B_magic = 2.0 * me * A * g8
     # ---- colour-weighting decomposition of the factorized q-CLT ------------
     #   B_qCLT_fac = isospin-symmetric baseline (every bond = the deuteron p-n
     #   bond) + the p↔n chirality correction. The baseline IS the uniform
@@ -170,6 +177,13 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
     pn_term = b_pn if (Z >= 1 and N >= 1) else 0.0
     B_sym = (Z - 1) * b_pp + pn_term + (N - 1) * b_nn
     m_sym_atom = B_sym + m_sym_free               # B_sym = m_sym_atom − m_sym_free
+    # ---- B_lin = α·s, the LINEAR/SATURATING leading term of B_sym. The bond
+    #   suppression s = 1 − tr_atom/tr_free and B_sym = α·L = −α·ln(1−s), so
+    #   s = 1 − e^{−L} with L = B_sym/α — recoverable from the closed-form chain
+    #   (no exact trace needed). B_lin = α·s = α(1 − e^{−B_sym/α}) saturates at α
+    #   (s < 1), so it under-binds increasingly with A. Leading term: B_lin ≈ B_sym
+    #   for small L (B_sym = α(s + s²/2 + …)).
+    B_lin = alpha * (1.0 - math.exp(-B_sym / alpha)) if alpha else 0.0
     # ---- exact p(3A) trace (capped) — VALIDATOR of the chain + the bar-
     #   involution entanglement split. Computed only when n=3A ≤ max_strands;
     #   |chain − exact| ≈ 1e-13.
@@ -198,6 +212,7 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
     return {"name": name, "Z": Z, "N": N, "A": A, "n": n, "B_AME": bame,
             "sigma_AME": sigma_ame,
             "n_pp": n_pp, "n_pn": n_pn, "n_nn": n_nn,
+            "B_lin": B_lin,
             "B_sym": B_sym, "B_sym_exact": B_sym_exact, "chain_resid": chain_resid,
             "B_qCLT": B_qCLT,
             "B_qCLT_fac": B_fac, "B_base": B_base, "B_chir": B_chir,
@@ -235,16 +250,17 @@ def _print_legend() -> None:
 | `B_AME` | Total nuclear binding energy from AME2020 (MeV) — the experimental target |
 | `σ_exp (MeV)` | AME2020 experimental 1σ on the total binding (scientific notation; sub-keV for light nuclei) |
 | `σ_exp (ppm)` | The same 1σ as a relative figure (σ_exp / B_AME × 10⁶) |
+| `B_lin` | LINEAR/saturating binding α·s, s = 1−e^(−B_sym/α) (leading term of B_sym; bounded by α, under-binds with A) |
 | `B_sym` | EXACT log-ratio binding α·ln(tr_free/tr_atom) = α[(Z−1)L_pp + L_pn + (N−1)L_nn] — the archimedean realization |
 | `B_qCLT` | Uniform per-bond q-CLT α·(A−1)·ℓ̄(D) — no p↔n colour weighting |
 | `B_qCLT_fac` | p↔n colour-weighted q-CLT α·(A−1)·⟨bond-type L⟩ |
-| `B_magic` | ⁴He-only magic-volume binding 2·m_e·A·8G |
+| `B_magic` | Magic-volume binding 2·m_e·A·8G (GENERALIZED to all A; exact-at-⁴He by construction, linear-in-A reference elsewhere — over-binds light, under-binds heavy) |
 
 **Table 2 — Error (B_AME / B_model; 1.00 = perfect, >1 under-binds)**
 
 | Header | Meaning |
 |---|---|
-| `sym` / `qCLT` / `qCLT_fac` / `magic` | B_AME / B_model for that binding form |
+| `lin` / `sym` / `qCLT` / `qCLT_fac` / `magic` | B_AME / B_model for that binding form |
 | `σ_exp (ppm)` | (as Table 1) experimental 1σ relative to B_AME |
 | `best dev / σ_exp` | Best form's \\|B_model − B_AME\\| measured in experimental σ (the L2-100× gap) |
 
@@ -255,8 +271,8 @@ def _print_legend() -> None:
 | `m_unbnd,can` | Framework-DERIVED unbound sum Z·m_p,can + N·m_n,can (m_p,can = m_e·Vol·ρ/ℏ_q² ≈ 966 MeV +2.96%; m_n,can = m_p,can + Q_β,derived + m_e) |
 | `m_unbnd` | MEASURED unbound sum Z·m_p + N·m_n (CODATA m_p=938.272, m_n=939.565) |
 | `M_AME` | Measured atomic mass = m_unbnd − B_AME |
-| `m_sym` / `m_qCLT` / `m_qCLT_fac` / `m_magic` | PURE-CANONICAL bound mass = m_unbnd,can − B_X (framework constituents; carries the +2.96%·A m_p gap). m_magic is ⁴He-only. |
-| `m_sym,rel` / `m_qCLT,rel` / `m_qCLT_fac,rel` / `m_magic,rel` | Measured-relative bound mass = m_unbnd − B_X (same canonical binding B_X, measured baseline). m_magic,rel is ⁴He-only. |
+| `m_lin` / `m_sym` / `m_qCLT` / `m_qCLT_fac` / `m_magic` | PURE-CANONICAL bound mass = m_unbnd,can − B_X (framework constituents; carries the +2.96%·A m_p gap) for X in {lin, sym, qCLT, qCLT_fac, magic} |
+| `m_lin,rel` / `m_sym,rel` / `m_qCLT,rel` / `m_qCLT_fac,rel` / `m_magic,rel` | Measured-relative bound mass = m_unbnd − B_X (same canonical binding B_X, measured baseline) |
 
 **Table 4 — Entanglement (bar-involution q↦q⁻¹ split of the atom trace)**
 
@@ -344,14 +360,14 @@ def main(argv=None) -> int:
 
     # 1. BINDING  (B_AME ± experimental 1σ from AME2020)
     print("### Binding  B (MeV)   [σ_exp = AME2020 experimental 1σ]")
-    print("| iso | A | B_AME | σ_exp (MeV) | σ_exp (ppm) | B_sym | B_qCLT | B_qCLT_fac | B_magic |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|")
+    print("| iso | A | B_AME | σ_exp (MeV) | σ_exp (ppm) | B_lin | B_sym | B_qCLT | B_qCLT_fac | B_magic |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         s = r["sigma_AME"]
         s_ppm = (s / r["B_AME"] * 1e6) if (s and r["B_AME"]) else None
         print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_sci(s,11,2)} "
-              f"| {_fmt(s_ppm,11,3)} | {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT'])} "
-              f"| {_fmt(r['B_qCLT_fac'])} | {_fmt(r['B_magic'])} |")
+              f"| {_fmt(s_ppm,11,3)} | {_fmt(r['B_lin'])} | {_fmt(r['B_sym'])} "
+              f"| {_fmt(r['B_qCLT'])} | {_fmt(r['B_qCLT_fac'])} | {_fmt(r['B_magic'])} |")
 
     # 1b. chain ≡ exact-trace validation (rows where the p(3A) trace is feasible)
     val = [(r["name"], r["chain_resid"]) for r in rows
@@ -368,20 +384,20 @@ def main(argv=None) -> int:
     #    best form's deviation measured in experimental σ (how far past the
     #    100× L2 target each form sits).
     print("\n### Error  (B_AME / B_model; 1.00 = perfect, >1 under-binds)")
-    print("| iso | A | sym | qCLT | qCLT_fac | magic | σ_exp (ppm) | best dev / σ_exp |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|")
+    print("| iso | A | lin | sym | qCLT | qCLT_fac | magic | σ_exp (ppm) | best dev / σ_exp |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         e = {k: _err(r["B_AME"], r[k]) for k in
-             ("B_sym", "B_qCLT", "B_qCLT_fac", "B_magic")}
+             ("B_lin", "B_sym", "B_qCLT", "B_qCLT_fac", "B_magic")}
         s = r["sigma_AME"]
         s_ppm = (s / r["B_AME"] * 1e6) if (s and r["B_AME"]) else None
         # best model = smallest |B_AME − B_model|; report its deviation in σ_exp
-        cand = [r[k] for k in ("B_sym", "B_qCLT", "B_qCLT_fac", "B_magic") if r[k]]
+        cand = [r[k] for k in ("B_lin", "B_sym", "B_qCLT", "B_qCLT_fac", "B_magic") if r[k]]
         best_dev_sigma = None
         if cand and s and r["B_AME"]:
             best = min(cand, key=lambda b: abs(b - r["B_AME"]))
             best_dev_sigma = abs(best - r["B_AME"]) / s
-        print(f"| {r['name']} | {r['A']} | {_fmt(e['B_sym'],6)} "
+        print(f"| {r['name']} | {r['A']} | {_fmt(e['B_lin'],6)} | {_fmt(e['B_sym'],6)} "
               f"| {_fmt(e['B_qCLT'],6)} | {_fmt(e['B_qCLT_fac'],6)} "
               f"| {_fmt(e['B_magic'],6)} | {_fmt(s_ppm,11,3)} "
               f"| {_fmt(best_dev_sigma,16,3) if best_dev_sigma else _fmt(None,16)} |")
@@ -406,9 +422,9 @@ def main(argv=None) -> int:
           f"{(mp_can/mp_-1)*100:.2f}%), m_n,can = {mn_can:.3f} MeV "
           f"(= m_p,can + Q_β,derived + m_e). Every binding form has BOTH a "
           f"canonical (m_X = m_unbnd,can − B_X) and a ,rel (m_X,rel = m_unbnd − B_X) mass.")
-    print("| iso | A | m_unbnd,can | m_unbnd | M_AME | m_sym | m_sym,rel "
+    print("| iso | A | m_unbnd,can | m_unbnd | M_AME | m_lin | m_lin,rel | m_sym | m_sym,rel "
           "| m_qCLT | m_qCLT,rel | m_qCLT_fac | m_qCLT_fac,rel | m_magic | m_magic,rel |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         mu = r["Z"] * mp_ + r["N"] * mn_                 # measured constituent sum
         mu_can = r["Z"] * mp_can + r["N"] * mn_can       # framework-derived sum
@@ -419,12 +435,14 @@ def main(argv=None) -> int:
             if b is None:
                 return None, None
             return mu_can - b, mu - b
+        m_lin_can, m_lin_rel = _pair("B_lin")
         m_sym_can, m_sym_rel = _pair("B_sym")
         m_qclt_can, m_qclt_rel = _pair("B_qCLT")
         m_fac_can, m_fac_rel = _pair("B_qCLT_fac")
         m_magic_can, m_magic_rel = _pair("B_magic")
         print(f"| {r['name']} | {r['A']} | {mu_can:>9.1f} | {mu:>9.1f} "
-              f"| {_fmt(mame,9,1)} | {_fmt(m_sym_can,9,1)} | {_fmt(m_sym_rel,9,1)} "
+              f"| {_fmt(mame,9,1)} | {_fmt(m_lin_can,9,1)} | {_fmt(m_lin_rel,9,1)} "
+              f"| {_fmt(m_sym_can,9,1)} | {_fmt(m_sym_rel,9,1)} "
               f"| {_fmt(m_qclt_can,9,1)} | {_fmt(m_qclt_rel,9,1)} "
               f"| {_fmt(m_fac_can,9,1)} | {_fmt(m_fac_rel,9,1)} "
               f"| {_fmt(m_magic_can,9,1)} | {_fmt(m_magic_rel,9,1)} |")
