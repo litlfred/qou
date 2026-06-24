@@ -24,8 +24,7 @@ This **proves the existence half** of
 a fixed-depth recurrence on the prolonged periods *necessarily* exists, with
 depth bounded by the rank of the Gauss--Manin local system. What remains is the
 **identification half** — that $d$ and the kernel $c$ are *exactly* the Bring
-Picard--Fuchs operator (so the kernel is the prolongation symbol, not merely
-some recurrence). That is fixed by computing the SW connection's local monodromy
+Picard--Fuchs operator (so the kernel is the prolongation symbol, not a generic recurrence). That is fixed by computing the SW connection's local monodromy
 at the branch points and matching it against the residue weights $a_D^{(n)}$
 (the consistency test of the keystone workplan, gated on the per-knot weights at
 $n = 2, 3$).
