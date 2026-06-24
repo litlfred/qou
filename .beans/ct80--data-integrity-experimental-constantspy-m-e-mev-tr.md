@@ -57,3 +57,20 @@ above, NOT the small option-2 case). Same scope/producer set as the `768d9ddf`
 canonical regen** (don't spin a standalone 143-witness churn PR). Physically
 negligible (1.35e-9, ~580× below the CAL-2 floor); single-source-of-truth
 hygiene, not an accuracy fix. Gated on owner scheduling the regen.
+
+## Regen attempt 2026-06-24 — SANDBOX DEGRADES PRECISION (must be full-env)
+
+Owner-authorized "rerun witnesses on separate branch". Ran the
+M_E_MEV-importing producers (349 scanned) in the sandbox → **the regenerated
+witnesses REGRESS precision**: e.g. `atomic-mass-via-rho-k.witness.json`
+`tr_M_at_q0` went 50-dps mpf `1.06530623807587821568…` → f64
+`1.06530622861316705936…000000` (trailing zeros). `tr_M` does **not** depend on
+m_e — the change is the **f64 fallback** (no `pyhecke_native` / 50-dps in this
+env), NOT the m_e fix. Committing sandbox regens would be a precision
+regression (L1 violation). All regenerated witnesses reverted.
+
+**Conclusion:** the value fix (`M_E_MEV 0.51099895000 → 0.51099895069`) is on
+the branch, but the **witness regen MUST be run in a full env** (pyhecke_native
++ 50-dps) so the ~143 m_e-dependent witnesses re-emit at full precision. Fix +
+regen must land **together** (don't merge the fix alone — it leaves the
+importers' witnesses stale). Same native-dep gate as the `768d9ddf` follow-up.

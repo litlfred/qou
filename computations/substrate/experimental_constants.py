@@ -38,7 +38,7 @@ del _sys, _Path, _bridge
 
 # ── Fundamental constants (CODATA 2022) ─────────────────────────
 
-M_E_MEV     = 0.51099895000   # ± 0.00000000015 MeV
+M_E_MEV     = 0.51099895069   # ± 0.00000000015 MeV (CODATA 2022, full 11 sig figs; matches codata_2022_source)
 M_E_MEV_ERR = 0.00000000015
 
 # Energy scale for Q-values: κ = m_e / 3
