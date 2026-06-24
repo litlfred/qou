@@ -693,6 +693,119 @@ theorem two_mul_sum_range_refl (M : ℕ) :
     rw [Finset.sum_range_succ']; simp
   rw [h1, ← h2, two_mul_sum_range_int (M + 1)]; push_cast; ring
 
+/-- ℤ form of the K1 row moment. -/
+theorem sum_colLen_parts_int (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    ∑ c ∈ Finset.range (l.headD 0), (colLen l c : ℤ)
+      = ∑ i ∈ Finset.range l.length, (l.getD i 0 : ℤ) := by
+  exact_mod_cast sum_colLen_eq_sum_parts l hl
+
+/-- ℤ form of the K2 row moment. -/
+theorem sum_colLen_sq_row_int (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    ∑ c ∈ Finset.range (l.headD 0), (colLen l c : ℤ) ^ 2
+      = ∑ i ∈ Finset.range l.length, (2 * (i : ℤ) + 1) * (l.getD i 0 : ℤ) := by
+  exact_mod_cast sum_colLen_sq_row_form l hl
+
+/-- ℤ form of the K3 row moment. -/
+theorem sum_colLen_cube_row_int (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    ∑ c ∈ Finset.range (l.headD 0), (colLen l c : ℤ) ^ 3
+      = ∑ i ∈ Finset.range l.length, (3 * (i : ℤ) ^ 2 + 3 * (i : ℤ) + 1) * (l.getD i 0 : ℤ) := by
+  exact_mod_cast sum_colLen_cube_row_form l hl
+
+/-! ### Hook side of (A): the six per-term cell sums (sorry-free)
+
+`H = P + Q − 1` with `P = λ_i − j` (arm+1), `Q = colLen j − i` (leg+1); `H² = P²+Q²+1+2PQ
+−2P−2Q`.  The six cell sums below each reduce to a row form: `P` terms by row reflection,
+`Q` terms by `cell_fubini` then the K-moment row forms, and the `PQ` cross via the
+λ-weighted min-sum (`AC`) and the j-weighted K2 (`BC`). -/
+
+/-- `P²` term. -/
+theorem cellP_sq_eq (l : List ℕ) :
+    6 * ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), ((l.getD i 0 : ℤ) - j) ^ 2
+      = ∑ i ∈ Finset.range l.length,
+          (l.getD i 0 : ℤ) * ((l.getD i 0 : ℤ) + 1) * (2 * (l.getD i 0 : ℤ) + 1) := by
+  rw [Finset.mul_sum]; apply Finset.sum_congr rfl; intro i _
+  exact six_mul_sum_range_refl_sq (l.getD i 0)
+
+/-- `P` term. -/
+theorem cellP_eq (l : List ℕ) :
+    2 * ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), ((l.getD i 0 : ℤ) - j)
+      = ∑ i ∈ Finset.range l.length, (l.getD i 0 : ℤ) * ((l.getD i 0 : ℤ) + 1) := by
+  rw [Finset.mul_sum]; apply Finset.sum_congr rfl; intro i _
+  exact two_mul_sum_range_refl (l.getD i 0)
+
+/-- `Q²` term (`cell_fubini` + column reflection + K-moment row forms). -/
+theorem cellQ_sq_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    6 * ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), ((colLen l j : ℤ) - i) ^ 2
+      = ∑ i ∈ Finset.range l.length,
+          (6 * (i : ℤ) ^ 2 + 12 * (i : ℤ) + 6) * (l.getD i 0 : ℤ) := by
+  rw [cell_fubini l hl (fun i j => ((colLen l j : ℤ) - (i : ℤ)) ^ 2)]
+  have hcol : 6 * ∑ j ∈ Finset.range (l.headD 0), ∑ i ∈ Finset.range (colLen l j),
+        ((colLen l j : ℤ) - (i : ℤ)) ^ 2
+      = ∑ j ∈ Finset.range (l.headD 0),
+          (colLen l j : ℤ) * ((colLen l j : ℤ) + 1) * (2 * (colLen l j : ℤ) + 1) := by
+    rw [Finset.mul_sum]; apply Finset.sum_congr rfl; intro j _
+    exact six_mul_sum_range_refl_sq (colLen l j)
+  rw [hcol]
+  simp_rw [show ∀ M : ℤ, M * (M + 1) * (2 * M + 1) = 2 * M ^ 3 + 3 * M ^ 2 + M from fun M => by ring]
+  rw [Finset.sum_add_distrib, Finset.sum_add_distrib]
+  simp_rw [← Finset.mul_sum]
+  rw [sum_colLen_cube_row_int l hl, sum_colLen_sq_row_int l hl, sum_colLen_parts_int l hl]
+  simp_rw [Finset.mul_sum, ← Finset.sum_add_distrib]
+  apply Finset.sum_congr rfl; intro i _; ring
+
+/-- `Q` term (`cell_fubini` + column reflection + K-moment row forms). -/
+theorem cellQ_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    2 * ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), ((colLen l j : ℤ) - i)
+      = ∑ i ∈ Finset.range l.length, (2 * (i : ℤ) + 2) * (l.getD i 0 : ℤ) := by
+  rw [cell_fubini l hl (fun i j => ((colLen l j : ℤ) - (i : ℤ)))]
+  have hcol : 2 * ∑ j ∈ Finset.range (l.headD 0), ∑ i ∈ Finset.range (colLen l j),
+        ((colLen l j : ℤ) - (i : ℤ))
+      = ∑ j ∈ Finset.range (l.headD 0), (colLen l j : ℤ) * ((colLen l j : ℤ) + 1) := by
+    rw [Finset.mul_sum]; apply Finset.sum_congr rfl; intro j _
+    exact two_mul_sum_range_refl (colLen l j)
+  rw [hcol]
+  simp_rw [show ∀ M : ℤ, M * (M + 1) = M ^ 2 + M from fun M => by ring]
+  rw [Finset.sum_add_distrib, sum_colLen_sq_row_int l hl, sum_colLen_parts_int l hl,
+    ← Finset.sum_add_distrib]
+  apply Finset.sum_congr rfl; intro i _; ring
+
+/-- `AC` cross piece `Σ_c λ_i·colLen j` (λ-weighted min-sum). -/
+theorem cellAC_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    2 * ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0),
+        (l.getD i 0 : ℤ) * (colLen l j : ℤ)
+      = ∑ i ∈ Finset.range l.length, (2 * (i : ℤ) + 1) * (l.getD i 0 : ℤ) ^ 2 + (sz l : ℤ) ^ 2 := by
+  have step1 : ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0),
+        (l.getD i 0 : ℤ) * (colLen l j : ℤ)
+      = ∑ i ∈ Finset.range l.length, (l.getD i 0 : ℤ) *
+          (∑ k ∈ Finset.range l.length, (min (l.getD i 0) (l.getD k 0) : ℤ)) := by
+    apply Finset.sum_congr rfl; intro i _
+    rw [← Finset.mul_sum]
+    congr 1
+    exact_mod_cast sum_colLen_eq_sum_min l i
+  rw [step1]
+  exact_mod_cast two_mul_sum_lambda_min l hl
+
+/-- `BC` cross piece `Σ_c j·colLen j` (j-weighted K2; `2·` clears the inner Gauss sum). -/
+theorem cellBC_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    2 * ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), (j : ℤ) * (colLen l j : ℤ)
+      = ∑ i ∈ Finset.range l.length, (2 * (i : ℤ) + 1) * ((l.getD i 0 : ℤ) * ((l.getD i 0 : ℤ) - 1)) := by
+  have hbase : ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), (j : ℤ) * (colLen l j : ℤ)
+      = ∑ i ∈ Finset.range l.length, (2 * (i : ℤ) + 1) * (∑ j ∈ Finset.range (l.getD i 0), (j : ℤ)) := by
+    rw [cell_fubini l hl (fun i j => (j : ℤ) * (colLen l j : ℤ))]
+    have hcol : ∑ j ∈ Finset.range (l.headD 0), ∑ i ∈ Finset.range (colLen l j), (j : ℤ) * (colLen l j : ℤ)
+        = ∑ j ∈ Finset.range (l.headD 0), (j : ℤ) * (colLen l j : ℤ) ^ 2 := by
+      apply Finset.sum_congr rfl; intro j _
+      rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul]; ring
+    rw [hcol]
+    have h := congrArg (fun n : ℕ => (n : ℤ)) (sum_j_colLen_sq_row_form l hl)
+    push_cast at h
+    exact h
+  rw [hbase, Finset.mul_sum]
+  apply Finset.sum_congr rfl; intro i _
+  rw [show (2 : ℤ) * ((2 * (i : ℤ) + 1) * ∑ j ∈ Finset.range (l.getD i 0), (j : ℤ))
+      = (2 * (i : ℤ) + 1) * (2 * ∑ j ∈ Finset.range (l.getD i 0), (j : ℤ)) from by ring,
+    two_mul_sum_range_int]
+
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
 (`identityA_verified_le9`) and exhaustively in Python for `n ≤ 22`.
