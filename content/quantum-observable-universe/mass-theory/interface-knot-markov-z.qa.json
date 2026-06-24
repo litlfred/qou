@@ -1356,6 +1356,222 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "interface-knot-markov-z.qa.json:1151 'Narrative claims completed proof but Lean uses a sorry stub' + :1243 'Declaration contains sorryAx or unexpected axioms'. The md (149-152,176) asserts the theorem is 'formalised sorry-free … proved by induction' — if the Lean carried a sorry the claim would be the C1 overclaim.",
+        "rebuttal": "rebutted — the qa.json agent entries are STALE (reviewed 2026-06-22) and contradict their OWN script-reviewer rows (proof-no-bare-sorries=pass :925, proof-substantive=pass :982). Decisive: lean-direct on the LIVE file (Mathlib+QOU oleans restored from lake-cache/qou-v4-24-0) → EXIT 0, zero diagnostics, no sorry warning; #print axioms for interface_knot_markov_z + 5 companions → only [propext, Quot.sound, Classical.choice], NO sorryAx. The md sorry-free claim is TRUE against the live Lean.",
+        "evidence": [
+          {
+            "text": "interface-knot-markov-z.lean:164-172"
+          },
+          {
+            "text": "interface-knot-markov-z.lean:161 (only 'sorry' token: 'no `sorry`' in docstring)"
+          },
+          {
+            "text": "interface-knot-markov-z.qa.json:925 vs stale :1151/:1243"
+          }
+        ],
+        "severity": "major",
+        "result": "pass",
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "qa.json:1263 'Placeholder stub is unformalised', :1283 'Goal or proof is trivial/vacuous' — is the theorem vacuous/shadow-stub/self-assuming?",
+        "rebuttal": "rebutted — the theorem concludes a non-trivial ring identity interfaceTrace z h tvac signs = z^(count true)·(z-h)^(count false)·tvac (lean:164-167) over a generic CommRing, discharged by genuine list induction with pow_succ+ring — not :True, not a projection. §0a sibling-first: lean.ref resolves to the SIBLING (sole definition; grep over lean/ found no library file). InterfaceComposition.lean is an unrelated placeholder for a DIFFERENT block (no shadow).",
+        "evidence": [
+          {
+            "text": "interface-knot-markov-z.lean:149-151"
+          },
+          {
+            "text": "interface-knot-markov-z.lean:164-172"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "qa.json:642 compute-witness-exists=fail 'declared witness does not exist on disk'.",
+        "rebuttal": "rebutted — witness AND script present (delta-lambda-fr-identity-phase5c.witness.json 20KB; delta_lambda_fr_identity_phase5c.py 17KB); the qa fail is stale (2026-06-21). The witness z_ratio_tests reproduce the md table EXACTLY (D 0.49932033 rel 4.8e-16; T 0.14493273; 3He 0.24932080; 4He 0.07236786) with matching (p+,p-) census; max_rel_err computed=1.32e-15 < tol 1e-6, allPassed=True. Minor: witness scriptCommitSha 7242db0 (2026-05-19) older than producer sha 3d03626 — staleness flag, not a defect.",
+        "evidence": [
+          {
+            "text": "computations/delta-lambda-fr-identity-phase5c.witness.json"
+          },
+          {
+            "text": "computations/delta_lambda_fr_identity_phase5c.py:89"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "qa.json:835 bib-cite-resolves=fail 'jones1987/markov1936 does not resolve in references.ts'.",
+        "rebuttal": "rebutted — both resolve: references.ts:906 (jones1987), :5399 (markov1936). The qa fail is stale. Citations used correctly (Markov axiom markov1936 for τ_M(α·σ)=z·τ_M(α); Jones jones1987 for the skein).",
+        "evidence": [
+          {
+            "text": "content/schema/references.ts:906"
+          },
+          {
+            "text": "interface-knot-markov-z.ts:15"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "L2: is the interface-knot Markov-Z a fitted Z-defect? z(q),h(q),(p+,p-) could be tuned to hit the 4 measured ratios.",
+        "rebuttal": "rebutted — z=1/(q^{1/2}+q^{-1/2}) is the standard Markov parameter (canonical corpus-wide), h=q−q⁻¹ the fixed Hecke skein; neither is free. The (p+,p-) census is computed structurally from atom_braid_word_3A (live producer, imported by binding_canonical.py etc.), not fit. A trace-linearity theorem, parameter-free given the canonical braid — exact algebra, no cross-anchor swing.",
+        "evidence": [
+          {
+            "text": "interface-knot-markov-z.md:99-119"
+          },
+          {
+            "text": "computations/delta_lambda_fr_identity_phase5c.py:89"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "the md §5/§6/§7 binding-assembly corollaries (deficit saturation, SU(4) closure, Ursell clusters) could overclaim a 3-body force / mis-scoped (b) structural exclusion.",
+        "rebuttal": "rebutted — the Lean is correctly (a)-scope limited and says so: deficit_marginal_le docstring 'the interface program is not excluded; the multiplicative deficit just saturates' (lean:332-336); productModel_3body_nonpos/ursell3 carry scope caveats that the isolated cluster does NOT establish an attractive 3-body force (455-485), matching the 4-body audit (2026-06-23:225,260). The one (b)-exclusion (no enhancing pairwise factor) is backed by a PROVED AM-GM invariant (two_le_add_inv → markovParam_le_half, z≤1/2).",
+        "evidence": [
+          {
+            "text": "interface-knot-markov-z.lean:332-336"
+          },
+          {
+            "text": "docs/audits/2026-06-23-interface-operator-derivation-and-4body-assembly.md:225"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "clean",
+        "referee_argument": "The strongest objection — the C1 flag that the md's sorry-free/proved labels contradict a Lean sorry — is a FALSE POSITIVE sourced entirely from a stale .qa.json agent pass (2026-06-22) that contradicts its own script reviewers and the live file. Decisive rebuttal: lean-direct on the LIVE .lean returns EXIT 0 with zero diagnostics and #print axioms shows [propext, Quot.sound, Classical.choice] with NO sorryAx for all six theorems. The witness reproduces the boxed identity to 1.3e-15 (allPassed), both citations resolve, witness/script exist, the (p+,p-) census is structural via the live atom_braid_word_3A producer, and the binding corollaries are correctly (a)-scope limited with the one (b)-exclusion backed by a proved AM-GM invariant. Every fail in the .qa.json (sorry stub, sorryAx, missing witness, broken cites) is stale and refuted against the live materials. No referee argument survives. (Follow-up: refresh the stale .qa.json agent rows — same qa-staleness class as pontryagin.)",
+        "result": "pass",
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"

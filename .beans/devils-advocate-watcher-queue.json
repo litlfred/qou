@@ -810,6 +810,118 @@
       "status": "needs-author",
       "asked_author_at": null,
       "referee_argument": "Apply the same comment-strip (strip /- -/ and -- before matching) to the C1 sorry-free-over-sorry test, then regenerate the C1 bucket; the 23-entry C1 list will shrink. Until then, real C1 overclaims must be lens-confirmed per block."
+    },
+    {
+      "id": "ac353887fd91",
+      "block_or_script": "prop:crystal-basis-resolves-mass-tower-open-problems",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.lean",
+        "md": "content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.md"
+      },
+      "finding": "da-false-claim+da-vacuous+da-non-sequitur",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "7030e24e69206f50237590a614af029a9e1afb33",
+      "evidence": "First REAL Bucket-C1: a TACTIC-POSITION sorry (lean:11) under a 'sorry-free conditional' authorNotes label (ts:36-37; buckets.json:230-237). The class CrystalBasisCorrespondence.reduction_holds : Prop is a §3b-cond rule-5 self-assuming projection (class field = theorem conclusion) and it is `sorry`, not even projected. Title 'resolves open problems' overclaims vs the corpus stub classification (NOT-WIRED; KLR-dialog 0/6 shorten). Reduction-1 'chirality = sum over integer crystal multiplicities' re-treads the KL-positivity-pruned PROBE-4 (mixed-sign cannot come from non-negative multiplicities; PartitionOf5.deltaSign_mixed).",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Replace the tactic `sorry` with an honest sorry+-- Ref: or demote to conjecture; restate the §3b-cond class to carry the chirality/Term-7/z-Habiro sub-hypotheses (not the bare conclusion); re-scope the title from 'resolves' to 'proposes a crystal path to'; drop the 'chirality from integer multiplicities' framing (KL-positivity-excluded — the sign must come from chi^lambda)."
+    },
+    {
+      "id": "f5feb5b54235",
+      "block_or_script": "prop:lr-coefficient-hecke",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-theory/lr-coefficient-hecke.lean",
+        "md": "content/quantum-observable-universe/mass-theory/lr-coefficient-hecke.md"
+      },
+      "finding": "da-vacuous+da-citation-misuse",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "7030e24e69206f50237590a614af029a9e1afb33",
+      "evidence": "C1 flag is a comment false positive (all sorry tokens are 'sorry-free' in docstring). But the only two PROVED theorems are vacuous: `0 <= coeff := Nat.zero_le _` (true for any N-valued function, zero LR content, lean:91) + a verbatim axiom-field projection (lean:99); the .md sells 'non-negative integer' as substantive; the real multiplicity statement is deferred to an unlanded Sprint-2 follow-up. The 'sorry-free per §3b-cond' label (ts:22) is misapplied (uses:[], no conjecture, no conditional banner — it is literature-axiomatization).",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Either land the deferred multiplicity theorem (a real LR statement) or soften the .md 'non-negative integer' framing to acknowledge only the codomain type is Lean-checked; re-label the §3b-cond citation to 'axiomatize a published theorem (Macdonald/Ariki) as a class'. Math standard-correct; the formalization proves nothing LR-specific."
+    },
+    {
+      "id": "106b880d5d8a",
+      "block_or_script": "prop:meson-color-tube-uniqueness",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean",
+        "md": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.md"
+      },
+      "finding": "da-overclaim+da-empirical-fragility",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "7030e24e69206f50237590a614af029a9e1afb33",
+      "evidence": "FRAMING-level (like flavor-split): the title 'uniqueness... forced by the proved alpha_shift formula' is contradicted by the block's OWN witness (meson-3x4-structural-origin.witness.json: 'Spin assignment post-hoc') and its cited audit (2026-05-28-meson-mass-ratio-derived-vs-fitted.md, titled 'meson m_K/m_pi is fitted, not a derived character ratio'). The Lean rewrites the tautology 3 = 3*(2-1) into an unconstrained class hypothesis; the (3,4) minimisation principle is conceded-open (md:58-63). Three inconsistent m_K/m_pi numbers (ts:18 '1098x', md:79 '23.44 ppb', witness '28.01 ppb' which PASSES). C1 sorry-flag is a false positive.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Re-scope the title from 'uniqueness... forced' to the honest status (the (3,4) indices are an observed match with a post-hoc spin assignment; the minimisation principle is OPEN); reconcile the three m_K/m_pi numbers to the fresh passing witness (28.01 ppb), drop the stale 1098x authorNotes + the wrong 23.44 ppb."
+    },
+    {
+      "id": "edd945decff2",
+      "block_or_script": "prop:borromean-h4-categorical-derivation",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.lean",
+        "ts": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.ts"
+      },
+      "finding": "da-lean-narrative-divergence",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "7030e24e69206f50237590a614af029a9e1afb33",
+      "evidence": "survivable: C1 comment false positive (the sorry at lean:99 is in a -- comment sketching the deferred composition theorem; the real lemma is sorry-free). Disclosed divergence: the .ts lean.ref attaches the substantive name borromean_h4_numeric_factorisation to the tautology (-3)*(1/4)=-3/4 := by norm_num; the categorical content is the deferred := sorry composition theorem. Docstring (33-35,70-72) + .md Scope-note (244-250) openly disclose it; math correct + witness-reproduced 50 dps; -3/4 is a topological invariant.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Rename the lean.ref theorem to reflect it is the arithmetic core (not the categorical factorisation), OR land the deferred composition theorem; the disclosure is honest so this is low-priority hygiene."
+    },
+    {
+      "id": "23624ad213d0",
+      "block_or_script": "infra:da-qa-staleness-stale-fail-notes",
+      "paths": {},
+      "finding": "da-reproducibility (qa-staleness on clean blocks)",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "7030e24e69206f50237590a614af029a9e1afb33",
+      "evidence": "Two lens-CLEAN blocks carry stale agent-reviewer `fail` rows in their .qa.json asserting non-existent sorryAx/sorry-stubs: interface-knot-markov-z.qa.json:1151/1243 (refuted by lean-direct EXIT 0 + #print axioms = [propext,Quot.sound,Classical.choice]) and pontryagin-dual-coxeter-character.qa.json (proof-narrative-lean-equiv/proof-statement-integrity claiming a 'sorry stub' absent at the current hash). The agent-drain reviewer (2026-06-22) fired against older content; the script reviewers in the same files PASS.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Refresh the stale qa-agent-drain entries on these two (and sweep for the same class corpus-wide): re-run qa-sweep or delete the stale criteria so they re-derive against current hashes. Distinct from the devil's-advocate findings; a qa-staleness maintenance pass."
     }
   ],
   "audited": {
@@ -1120,9 +1232,44 @@
       "criteria": [
         "da-referee-verdict"
       ]
+    },
+    "prop:crystal-basis-resolves-mass-tower-open-problems": {
+      "ts": "2026-06-24",
+      "sha": "7030e24e69206f50237590a614af029a9e1afb33",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:lr-coefficient-hecke": {
+      "ts": "2026-06-24",
+      "sha": "7030e24e69206f50237590a614af029a9e1afb33",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:meson-color-tube-uniqueness": {
+      "ts": "2026-06-24",
+      "sha": "7030e24e69206f50237590a614af029a9e1afb33",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:borromean-h4-categorical-derivation": {
+      "ts": "2026-06-24",
+      "sha": "7030e24e69206f50237590a614af029a9e1afb33",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:interface-knot-markov-z": {
+      "ts": "2026-06-24",
+      "sha": "7030e24e69206f50237590a614af029a9e1afb33",
+      "criteria": [
+        "da-referee-verdict"
+      ]
     }
   },
   "reviewed_up_to": {
-    "da-referee-verdict": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+    "da-referee-verdict": "7030e24e69206f50237590a614af029a9e1afb33"
   }
 }

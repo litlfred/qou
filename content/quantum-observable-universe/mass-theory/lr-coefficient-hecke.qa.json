@@ -1354,6 +1354,94 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-vacuous": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "lr-coefficient-hecke.lean:91-93 `theorem lr_coefficient_hecke_non_negative [hLR] (lam mu nu) : 0 ≤ hLR.coeff lam mu nu := Nat.zero_le _`. The narrative (md:21-24) sells c^λ_{μν} ∈ ℤ_{≥0} as substantive LR content, but the Lean discharge is Nat.zero_le, true for ANY ℕ-valued function — nothing about Littlewood-Richardson/branching/Hecke. Companion lr_coefficient_hecke_trivial_case (lean:99-103) is a verbatim projection := hLR.coeff_trivial mu of the axiom field. The two shipped theorems prove zero LR-specific content beyond the codomain type + an axiom restatement.",
+        "rebuttal": "surviving — paths tried: (1) the class fields are necessary conditions (vanishing + trivial-case) but the only PROVED theorems reduce to ℕ-nonnegativity + field projection; (2) the actual multiplicity statement is deferred to an unlanded 'Sprint-2 follow-up' (lean:88-90 docstring); (3) qa no-self-assuming-projection passed but checks the §3b-cond shape, not the orthogonal Nat.zero_le vacuity. The headline 'non-negative integer' guarantee is type-trivial.",
+        "evidence": [
+          {
+            "text": "lr-coefficient-hecke.lean:91"
+          },
+          {
+            "text": "lr-coefficient-hecke.lean:99"
+          },
+          {
+            "text": "lr-coefficient-hecke.md:21"
+          }
+        ],
+        "severity": "major",
+        "result": "fail",
+        "field_hash": {
+          "md": "0fc0d4e6910a",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "lr-coefficient-hecke.ts:22 + lean:14/60/79 assert 'sorry-free per AGENTS.md §3b-cond'. §3b-cond is the conditional-class exception for a block whose uses[] cone touches a conj:C (requires a 'conditional on conj:C' banner + the conjecture in uses[]). This block has uses:[] (ts:9), no conj: anywhere, NO conditional banner; it is downstream of a PUBLISHED theorem (Macdonald/Ariki), so §3b-cond does not apply — the correct frame is literature-axiomatization.",
+        "rebuttal": "partial — the §3b-cond citation is wrong (no conjecture, banner rules 3-4 unmet), so the justification is misapplied; BUT the underlying disposition is honest (class axiomatizes the LR theorem; downstream consumers take [LRCoefficientHecke] explicitly, e.g. crystal-r-matrix-sub-lemma.lean:77; the Lean genuinely has no sorry). Downgrades the label's correctness, not the block's integrity.",
+        "evidence": [
+          {
+            "text": "lr-coefficient-hecke.ts:22"
+          },
+          {
+            "text": "lr-coefficient-hecke.ts:9"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "0fc0d4e6910a",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "open-objection",
+        "referee_argument": "The C1 sorry-stub flag is a FALSE POSITIVE — every sorry token is the docstring phrase 'sorry-free' (lean:14/60/79); no tactic-position sorry, no sorryAx, and the qa.json 'sorry stub'/'sorryAx' notes (1149/1241) were auto-emitted by qa-agent-drain firing on that same false pattern. But the strongest surviving objection is independent of the sorry charge: the block's only two PROVED Lean theorems are vacuous — `0 ≤ coeff := Nat.zero_le _` (true for any ℕ function, zero LR content) and a verbatim axiom-field projection — while the narrative advertises 'non-negative integer' as substantive. The real multiplicity statement is explicitly deferred to an unlanded Sprint-2 follow-up. The math itself is standard-correct and the witness (lr_coefficients.py) + citations resolve; the defect is that the formalization proves nothing LR-specific the type ℕ does not already give.",
+        "result": "fail",
+        "field_hash": {
+          "md": "0fc0d4e6910a",
+          "ts": "69fc05c7f0e5",
+          "lean": "864c3fc25237"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"

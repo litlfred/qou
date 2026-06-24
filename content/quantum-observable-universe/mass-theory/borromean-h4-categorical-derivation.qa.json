@@ -1358,6 +1358,222 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "borromean-h4-categorical-derivation.lean:73-75 `theorem borromean_h4_numeric_factorisation : (-3:ℝ)*(1/4:ℝ) = -3/4 := by norm_num`. The .ts (line 7) advertises this as the proposition's formalization, but the theorem proves only a numeric tautology independent of every categorical claim (Schur-Weyl, R-matrix, Markov norm). The proposition the block states — that the h⁴ coeff of tr_M(β_Bor) factorises through χ^{(2,1)} and y_{(2,1)} — is the deferred `:= sorry` composition theorem in a -- comment (lean:95-99).",
+        "rebuttal": "partial — the divergence is real (the named Lean theorem does not back the .md proposition), but the block's materials DISCLOSE it rather than hide it: lean:33-35 ('the composition theorem … is deferred to a follow-up Lean PR'), lean:70-72, md:244-250 Scope note; the gap is tracked (2026-05-24-family-a-gap-audit.md). The overclaim is confined to the .ts lean.ref pointing a substantive name at a tautology; no durable false assertion survives → demoted to partial.",
+        "evidence": [
+          {
+            "text": "borromean-h4-categorical-derivation.lean:73"
+          },
+          {
+            "text": "borromean-h4-categorical-derivation.lean:95"
+          },
+          {
+            "text": "borromean-h4-categorical-derivation.ts:7"
+          }
+        ],
+        "severity": "major",
+        "result": "warn",
+        "field_hash": {
+          "md": "79c65c0ccf6b",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "md:227-242 calls h⁴=-3/4 'derived from first principles within H₃(q)' with 'no empirical fitting, no free parameters'; the Lean backing is `by norm_num` on (-3)·(1/4), and the first-principles R-matrix/Schur-Weyl derivation exists only in .md prose + a 50-dps numerical witness, not in checked Lean.",
+        "rebuttal": "partial — the math is correct + reproduced (witness gap-a4-T15, scriptHash 82b899772f15 matches, χ^{(2,1)}=2−3h⁴−h⁶ to 50 dps; SpectralProjector 0-sorry). 'From first principles' overstates the formalization status, but the narrative's Connection/Scope-note sections concede exactly this → partial, not surviving.",
+        "evidence": [
+          {
+            "text": "borromean-h4-categorical-derivation.md:238"
+          },
+          {
+            "text": "computations/probes/gap-a4-T15-character-polynomial-probe.witness.json"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "79c65c0ccf6b",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "the proved theorem is the arithmetic identity (-3)·(1/4)=-3/4, vacuous as a backing for a categorical 'derivation' proposition.",
+        "rebuttal": "rebutted — NOT a vacuity-audit violation: a genuine theorem with a non-tautological RHS (-3/4, not :True / X=X), discharged by norm_num, honestly named 'the combinatorial core'. §0a sibling-first lands on the real file; no :True/∨True/def-disguised-True/self-assuming projection. A narrow lemma, not a vacuous one.",
+        "evidence": [
+          {
+            "text": "borromean-h4-categorical-derivation.lean:73-75"
+          },
+          {
+            "text": "borromean-h4-categorical-derivation.lean:49-72"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "79c65c0ccf6b",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "C1 alleges the block labels itself sorry-free/closed-form while the Lean contains a sorry.",
+        "rebuttal": "rebutted (FALSE POSITIVE, 4th of 4) — the only sorry (lean:99) is inside a -- comment block (lean:92-99 all --prefixed) sketching the deferred composition theorem; NOT tactic position. The lemma at lean:73 is genuinely sorry-free. 'sorry-free' at md:199 correctly describes QOU.Hecke.SpectralProjector (grep -c sorry = 0). No sorry-free/closed-form label on this block's own Lean.",
+        "evidence": [
+          {
+            "text": "borromean-h4-categorical-derivation.lean:92-99"
+          },
+          {
+            "text": "borromean-h4-categorical-derivation.md:199"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "79c65c0ccf6b",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "L2: an H₄/H₃ categorical derivation feeding the proton mass risks hidden DOF; the proton mass should route through canonical_mass, not λ_A/vol_density.",
+        "rebuttal": "rebutted — this block does NOT feed any mass number: -3/4 is the h⁴ topological invariant of the Borromean Jones polynomial; grep canonical_mass.py finds no reference to it; consumers (pentagon/pachner probes, h3-markov-wenzl-weights) are categorical; no deprecated λ_A/vol_density path; q=1 used only to read y_{(2,1)}=1/4, explicitly flagged non-uniform. L2 moot.",
+        "evidence": [
+          {
+            "text": "computations/canonical_mass.py"
+          },
+          {
+            "text": "borromean-h4-categorical-derivation.md:227-228"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "79c65c0ccf6b",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "L4: the witness must reproduce the H₃ values, be fresh, refs resolve.",
+        "rebuttal": "rebutted — witness gap-a4-T15 reproduces χ^{(2,1)}=2−3h⁴−h⁶ to 50 dps (residual 3.6e-71, allPassed), FRESH (scriptHash 82b899772f15 == current sha256[:12]); jones1987 (references.ts:906), murasugi1996 (:5640) resolve; cited props exist.",
+        "evidence": [
+          {
+            "text": "computations/probes/gap-a4-T15-character-polynomial-probe.witness.json"
+          },
+          {
+            "text": "content/schema/references.ts:906"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "79c65c0ccf6b",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "survivable-objection",
+        "referee_argument": "The C1 'sorry-while-labelled-sorry-free' flag is a FALSE POSITIVE (4th of 4): the sorry is comment-only, the lemma is genuinely sorry-free, and 'sorry-free' in the prose refers to the real 0-sorry SpectralProjector. The genuine residual is a lean–narrative divergence: the .ts lean.ref attaches a substantive-sounding name borromean_h4_numeric_factorisation to the trivial identity (-3)·(1/4)=-3/4 := by norm_num, which does not formalize the stated categorical proposition (that is the deferred := sorry composition theorem). PARTIAL not surviving: the .lean docstring (33-35,70-72) and .md Scope note (244-250) openly disclose the deferral, the underlying math is correct + witness-reproduced, and -3/4 is a topological invariant (no mass-path/hidden-DOF). ≥1 partial, none surviving ⇒ survivable-objection.",
+        "result": "warn",
+        "field_hash": {
+          "md": "79c65c0ccf6b",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"
