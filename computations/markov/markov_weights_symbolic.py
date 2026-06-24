@@ -231,7 +231,11 @@ def solve_y_lambda(n: int) -> dict[tuple, sp.Expr]:
         if A.shape[0] != A.shape[1]:
             return y_lambda_symbolic(n)
         y = A.solve(b)
-        y = sp.simplify(y)
+        # P16: the previous `y = sp.simplify(y)` over the whole solution
+        # vector was redundant — every component is immediately passed
+        # through `sp.cancel` below, which gives the canonical rational
+        # form of each y_λ(q) directly. `sp.cancel` is value-preserving
+        # and far cheaper than simplifying the matrix first.
         return {sh: sp.cancel(y[i]) for i, sh in enumerate(shapes)}
     return y_lambda_symbolic(n)
 

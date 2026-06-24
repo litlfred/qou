@@ -248,15 +248,24 @@ class SymbolicHeckeDivision:
                 elem_c = elem.terms[w]
                 if nf_c == 0:
                     continue
-                ratio = sp.simplify(elem_c / nf_c)
+                # P16: ratio of two Laurent polynomials in q is a
+                # rational function; `sp.cancel` gives the canonical
+                # form exactly and is far cheaper than `sp.simplify`.
+                # The result is used only for equality comparison
+                # (below) and as a collapsed coefficient — both
+                # value-preserving. Matches the `sp.cancel` already
+                # used in `_try_multi_term_subword_quotient`.
+                ratio = sp.cancel(elem_c / nf_c)
                 ratios.append(ratio)
 
             if not ratios:
                 continue
 
-            # All ratios should be equal (the common factor)
+            # All ratios should be equal (the common factor).
+            # `.equals(0)` is an exact (value-level) zero test that
+            # returns a Python bool; cheaper than `sp.simplify(...) == 0`.
             common = ratios[0]
-            all_equal = all(sp.simplify(r - common) == 0 for r in ratios[1:])
+            all_equal = all((r - common).equals(0) for r in ratios[1:])
 
             if not all_equal:
                 # Check if integer multiples work (multiple copies)
@@ -315,7 +324,18 @@ class SymbolicHeckeDivision:
                         new_terms = dict(elem.terms)
                         new_terms[word] = sp.expand(
                             new_terms.get(word, sp.Integer(0)) - coeff)
-                        if sp.simplify(new_terms.get(word, 0)) == 0:
+                        # P16: exact zero test via `.equals(0)` (Python
+                        # bool, value-level) instead of the much more
+                        # expensive `sp.simplify(...) == 0`. The operand
+                        # is already `sp.expand`-ed, so the residual is a
+                        # polynomial/Laurent expression and `.equals`
+                        # decides zero exactly.
+                        _resid = new_terms.get(word, sp.Integer(0))
+                        if getattr(_resid, "equals", None) is not None:
+                            _is_zero = _resid.equals(0)
+                        else:
+                            _is_zero = (_resid == 0)
+                        if _is_zero:
                             new_terms.pop(word, None)
                         new_terms[new_word] = sp.expand(
                             new_terms.get(new_word, sp.Integer(0)) + new_coeff)
@@ -680,9 +700,13 @@ class SymbolicHeckeDivision:
                     ext_coeff = new_terms[ext_word]
                     # Check if ratio matches I₁
                     if word and len(word) > 0:
-                        expected_ratio = sp.simplify(ext_coeff / coeff)
-                        # If close to r₁, collapse
-                        # For symbolic, we keep as-is but mark
+                        # P16: the symbolic ratio check is a TODO and its
+                        # result was discarded (the function returns
+                        # `elem, False` unconditionally). The previous
+                        # `sp.simplify(ext_coeff / coeff)` here was dead
+                        # compute executed on every matching term — removed.
+                        # Restore a (cheap) ratio computation here if/when
+                        # the symbolic ratio check is implemented.
                         pass  # TODO: symbolic ratio check
 
             return elem, False  # placeholder
@@ -745,12 +769,13 @@ class SymbolicHeckeDivision:
                         # where r = coeff / c_j
                         # This means: delete σ_i·σ_{i+1} term,
                         # and annotate σ_{i+1} as carrying the correlation
-                        r = sp.simplify(coeff / c_j)
-                        # Absorb: σ_i·σ_{i+1} term is absorbed into σ_{i+1}
-                        # The σ_{i+1} term now represents σ_{i+1}·(1 + r·σ_i)
-                        # where r = adjacency ratio, a function of q only.
-                        # Delete the σ_i·σ_{i+1} term — its information is
-                        # carried by the adjacency ratio r.
+                        # P16: the adjacency ratio r = coeff / c_j was
+                        # computed via `sp.simplify(coeff / c_j)` but never
+                        # used — only the `del new_terms[word]` below has an
+                        # effect. Removed the dead simplify call. The
+                        # σ_i·σ_{i+1} term is absorbed into σ_{i+1}; its
+                        # information is carried implicitly by the (currently
+                        # un-stored) adjacency ratio, a function of q only.
                         del new_terms[word]
                         did_reduce = True
                         break
@@ -1307,12 +1332,25 @@ class SymbolicHeckeDivision:
 
     # ── Markov trace ─────────────────────────────────────────────
 
-    def markov_trace(self, elem, n_strands):
-        """Compute Markov trace with symbolic coefficients."""
+    def markov_trace(self, elem, n_strands, simplify=True):
+        """Compute Markov trace with symbolic coefficients.
+
+        ``simplify`` (default True for back-compat): apply
+        ``sp.simplify`` to the aggregated total before returning. This
+        is the P16 antipattern — for elements with many terms the
+        simplify step dominates the runtime and is purely cosmetic when
+        the caller only evaluates numerically (``.subs(q, q₀).evalf``)
+        or further-processes the expression. Pass ``simplify=False``
+        from hot paths / float-eval callers to return the unsimplified
+        total (mathematically identical; numerical evaluation is
+        unaffected). Mirrors ``markov_trace_canonical.tr_M_element``.
+        """
         total = sp.Integer(0)
         for word, coeff in elem.terms.items():
             total += coeff * self._trace_word(word, n_strands)
-        return sp.simplify(total)
+        if simplify and isinstance(total, sp.Basic):
+            return sp.simplify(total)
+        return total
 
     def _trace_word(self, word, n_strands):
         """Recursive Markov trace of a braid monomial.
