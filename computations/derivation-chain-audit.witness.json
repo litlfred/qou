@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-24T02:33:20.910343+00:00",
-  "commitSha": "2528274542dd6f8aa428b6fdd54747d82285f70e",
+  "computedAt": "2026-06-24T11:20:09.457166+00:00",
+  "commitSha": "1dd7f1a98d3e7b1a95095659952cd88e457b626b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -2579,6 +2579,7 @@
         "he3-tower-charge-asymmetry.witness.json",
         "he3-tritium-cosh-asymmetry-diagnosis.witness.json",
         "he4-canonical-tr-m-block-fingerprint.witness.json",
+        "he4-qreeb-phase-falsification.witness.json",
         "hecke-channel-binding.witness.json",
         "hecke-core-symbolic-migration.witness.json",
         "hh-trefoil-corrected.witness.json",
@@ -2654,6 +2655,7 @@
         "lepton-t2n-torus-tower.witness.json",
         "lepton-tower-probe-1-cinquefoil-muon.witness.json",
         "level1-qvalues.witness.json",
+        "li2q-fbor-expansion-probe.witness.json",
         "li2q-phiq-bar-symmetry.witness.json",
         "linking-weight-canonical-object-lwfix.witness.json",
         "linking-weight-h4-correction.witness.json",
@@ -2737,6 +2739,7 @@
         "molecular-frobenius-lp.witness.json",
         "molecular-trefoil-scan.witness.json",
         "mp-dk-decisive-test.witness.json",
+        "mp-habiro-c4-keystone-probe.witness.json",
         "mp-residual-exotic-basis-pslq.witness.json",
         "mp-yekutieli-plancherel-scaffold.witness.json",
         "mp-yekutieli-sign-block-discrimination.witness.json",
@@ -3026,6 +3029,7 @@
         "y-lambda-q-schur-lean-verify.witness.json",
         "y-lambda-tower-infra.witness.json",
         "y_lambda_equivalence_proof.witness.json",
+        "yardstick-free-phase-binding.witness.json",
         "yekutieli-borromean-h2-extraction.witness.json",
         "yekutieli-half-h2-observable-hunt.witness.json",
         "yekutieli-mi-h2-extraction.witness.json",
