@@ -286,6 +286,29 @@ done
 Refresh discovery every 50 items (parent §5a cadence). Prefer the
 content-pipeline TypeScript loader over grep when parsing `kind`.
 
+**Mechanical pre-filters (cheap, corpus-wide).** Two stdlib checkers
+sweep the recurring failure classes before the per-block lens fan-out,
+so the expensive agent audits target what they surface. Both are
+report-only (`--strict` to gate), agent-free, and do **not** write
+`da-*` sidecars (they feed this backlog):
+
+- **Class 3 — witness hollowness:**
+  [`computations/witness_hollowness_audit.py`](../../../computations/witness_hollowness_audit.py)
+  — `null-dual` (LP/SDP dual emitted with null values; complements
+  `lp_dual_witness_validator.py`'s presence-only check) + the
+  high-recall `hollow-verification` (empty-`assertions` success claims).
+- **Class 2 — status-label overclaim:**
+  [`computations/status_label_overclaim_audit.py`](../../../computations/status_label_overclaim_audit.py)
+  — a closure label (`proved`/`closed-form`/`no-fit`/`RESOLVED`/
+  `sorry-free`) over a non-closure signal (`.lean` `sorry`/`:True`/
+  `:=trivial`, `validation:not_checked|stub`, `kind:conjecture`). The
+  *sharp* subset (label over a vacuous Lean) is the actionable class-2
+  backlog.
+
+A block flagged by either checker jumps the §5b priority queue (a
+mechanical signal of a likely surviving objection); the lens fan-out
+then confirms or rebuts it per block.
+
 ## Slot H — §5b prioritisation
 
 Rank the backlog by *blast radius × headline-proximity × novelty*:

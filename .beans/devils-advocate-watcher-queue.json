@@ -225,6 +225,50 @@
       "status": "needs-author",
       "asked_author_at": null,
       "referee_argument": "Re-scope the prose uniqueness from C\\{0,1} to the formalised real locus (or add a conjectural-backing note that complex-D uniqueness is unformalised) and drop ArchimedeanLimit from the \u00a73b-cond uniqueness-hypothesis claim (it gates only figure8_calibration)."
+    },
+    {
+      "id": "d79717d2e9c9",
+      "block_or_script": "infra:lp-dual-witnesses",
+      "paths": {
+        "py": "computations/witness_hollowness_audit.py"
+      },
+      "finding": "da-reproducibility (corpus sweep)",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd",
+      "evidence": "11 active LP/SDP witnesses emit y0_star/y_star/active_set/duality_gap as null VALUES (confinement-operator-selection, binding-lp-delta-audit, e-0-lp-dual-h3, rho-k-h3a-wenzl-bridge, shadow-price-c-321-q0, toffoli-lp-stability, wedderburn-lp-ew-wiring, compound-binding-via-differences, delta-n2-placeholder-audit, deuteron-delta-i-audit, paper-six-term-shadow-price-sweep); lp_dual_witness_validator checks presence not non-null so all pass CI.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator / mechanical sweep",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Harden lp_dual_witness_validator.py to reject null dual VALUES under --strict (one-line fix), then recompute the 11 duals via lp_dual_solver.py."
+    },
+    {
+      "id": "9a6ea8ebe16a",
+      "block_or_script": "infra:status-label-overclaims",
+      "paths": {
+        "py": "computations/status_label_overclaim_audit.py"
+      },
+      "finding": "da-overclaim (corpus sweep)",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd",
+      "evidence": "95 blocks carry a closure label (proved/closed-form/no-fit/sorry-free) over a vacuous Lean (sorry / : True / := trivial) \u2014 e.g. b1-figure-8-row-theorem & b1-hyperbolic-rows-theorem ('proved' over : True), depth-2-identification-bloch-suslin, wenzl-positivity-implies-substrate-positivity, qbeta-ck-truncation-canonical.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator / mechanical sweep",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Triage the 95-sharp subset (status_label_overclaim_audit.py --json | filter lean:True/trivial/sorry); each is a candidate 'proved'->'stated/conjectural' relabel or a real Lean to finish."
     }
   ],
   "audited": {
@@ -325,9 +369,44 @@
       "criteria": [
         "da-referee-verdict"
       ]
+    },
+    "rem:markov-trace-inductive-limit": {
+      "ts": "2026-06-24",
+      "sha": "9686182e06e08cbd35d8c754c76d947324dc44cd",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:h3-markov-wenzl-weights": {
+      "ts": "2026-06-24",
+      "sha": "9686182e06e08cbd35d8c754c76d947324dc44cd",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:hoefsmit-binding-amplitude": {
+      "ts": "2026-06-24",
+      "sha": "9686182e06e08cbd35d8c754c76d947324dc44cd",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:q-beta-bar-even-kernel-invariant": {
+      "ts": "2026-06-24",
+      "sha": "9686182e06e08cbd35d8c754c76d947324dc44cd",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "conj:brunnian-property-of-borromean": {
+      "ts": "2026-06-24",
+      "sha": "9686182e06e08cbd35d8c754c76d947324dc44cd",
+      "criteria": [
+        "da-referee-verdict"
+      ]
     }
   },
   "reviewed_up_to": {
-    "da-referee-verdict": "dac6ec352f10e755ecb8fc8907df8771ce5887a1"
+    "da-referee-verdict": "9686182e06e08cbd35d8c754c76d947324dc44cd"
   }
 }

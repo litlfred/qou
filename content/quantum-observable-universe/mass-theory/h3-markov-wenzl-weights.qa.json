@@ -1356,6 +1356,112 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1554b9bb60b7",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "h3-markov-wenzl-weights.lean:75-77 theorem proves (1/2)*1+(1/4)*2+0*1=1 by norm_num; :87-91 the real statement is a commented := sorry; lean.ref resolves to the q=1 normalization only.",
+        "rebuttal": "partial — honest not audit-dodging: .lean docstring + .md:174-182 state the categorical statement is deferred pending Mathlib Markov/TL theorems; narrative Steps 1-3 give a rigorous human proof, identities machine-verified; sorry carries -- Ref:[jones1987]. Provable-kind with proof in prose, status derived per §4.",
+        "evidence": [
+          {
+            "text": "h3-markov-wenzl-weights.lean:75-77,87-91"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:37:26Z",
+        "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1554b9bb60b7",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "§7aa risk: are these the y_λ used by the mass pipeline?",
+        "rebuttal": "rebutted — .md:30-53 + :139-161 explicitly scope to Jones/TL trace and state full-Hecke pipeline weights differ (y_(1^3)≠0); TL y_(2,1)(1.1097)=0.2473≠0.2809 confirms the claimed divergence; w_λ Plancherel correctly distinguished.",
+        "evidence": [
+          {
+            "text": "h3-markov-wenzl-weights.md:30-53,139-161"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:37:26Z",
+        "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1554b9bb60b7",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "jones1987 attribution for Jones-trace/TL-factorization.",
+        "rebuttal": "rebutted — jones1987 present references.ts:906, attribution correct.",
+        "evidence": [
+          {
+            "text": "references.ts:906"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:37:26Z",
+        "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1554b9bb60b7",
+          "ts": "f702b93025ff",
+          "lean": "5cbec0b8ff1b"
+        },
+        "result": "pass",
+        "verdict": "clean",
+        "referee_argument": "The boxed proposition's three q-dependent closed forms (y_(3)=[4]/[2]^3, y_(2,1)=1/[2]^2, y_(1^3)=0) are not formalized; the lean.ref resolves to only the q=1 normalization arithmetic (a true-but-trivial check), with the full statement in a commented-out sorry stub.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:37:26Z",
+        "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"

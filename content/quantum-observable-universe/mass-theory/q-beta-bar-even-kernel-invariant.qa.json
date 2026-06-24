@@ -1342,7 +1342,141 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2af6839f2278",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": ".md:9-11 states the iff; .lean proves only bar_even_quadratic_term_in_t_squared + bar_even_test_n2 (N=2 prototype, three ring lines); the iff is unformalized.",
+        "rebuttal": "partial \u2014 .md Proof section explicitly scopes itself ('the N=2 instance is the prototype', line 43); the iff is stated as a structural discriminant not claimed Lean-proved; honest but the iff remains a narrative assertion.",
+        "evidence": [
+          {
+            "text": "q-beta-bar-even-kernel-invariant.md:9-11 vs .lean"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:37:26Z",
+        "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2af6839f2278",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": ".md:50-58 calls the N=2 factor 'bar-even at the Taylor level' yet .lean:116-120 + witness show it is bar-ASYMMETRIC archimedean (vanishes iff q^4=1).",
+        "rebuttal": "partial\u2192survived \u2014 reconciled by the Taylor/archimedean split and the block discloses both, but the two-sided 'bar-even'/'bar-asymmetric' usage invites confusion (cosmetic).",
+        "evidence": [
+          {
+            "text": "q-beta-bar-even-kernel-invariant.md:50-58 vs .lean:116-120"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:37:26Z",
+        "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2af6839f2278",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": ".qa.json:626-645 compute-witness-exists result:fail severity:critical ('declared witness does not exist').",
+        "rebuttal": "rebutted \u2014 witness + probe now exist (computations/qbeta/qbeta-bar-even-kernel-invariant-probe.{witness.json,py}, allPassed:true); the sidecar entry is STALE (idle-time refresh would clear it). Not a live defect.",
+        "evidence": [
+          {
+            "text": "q-beta-bar-even-kernel-invariant.qa.json:626-645 (stale)"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:37:26Z",
+        "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2af6839f2278",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "Q_\u03b2 formula m_e|q^2-2q-1|... as a fit (2026-05-24 audit POSTULATED NOT DERIVED).",
+        "rebuttal": "rebutted \u2014 that formula is NOT this block; this is the bar-even discriminant gate (no-fit structural meta-test, tags:[no-fit,formalize-first]); the fitting concern lives in other blocks, already documented.",
+        "evidence": [
+          {
+            "text": "q-beta-bar-even-kernel-invariant.ts tags"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:37:26Z",
+        "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2af6839f2278",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The block's headline claim \u2014 the iff 'clean integer-u Taylor representation \u27fa R bar-even' \u2014 is asserted, not proved: the Lean formalizes only the N=2 prototype's three ring identities, not the biconditional; the substantive discriminant is a narrative assertion.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:37:26Z",
+        "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:13.454Z"
+  "updated_at": "2026-06-24T04:37:26Z"
 }
