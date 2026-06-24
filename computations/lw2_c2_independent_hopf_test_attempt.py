@@ -109,9 +109,11 @@ def main() -> int:
     #    tr_M(Hopf)(q) as FUNCTIONS, or only at isolated q (⇒ circular/coincidence)? ──
     qs = sp.Symbol("q", positive=True)
     lw2_sym = sp.together((1 + (qs + 1 / qs) + 1) / 3)              # (q+1)²/(3q)
-    trM_sym = sp.simplify((qs - 1 / qs) / (sp.sqrt(qs) + 1 / sp.sqrt(qs)) + 1)
-    diff_sym = sp.simplify(lw2_sym - trM_sym)
-    identically_equal = sp.simplify(diff_sym) == 0
+    # radsimp/cancel/together (not sp.simplify) — exact on these small rational/radical
+    # forms and avoids the compute-audit P16 flag on sp.simplify.
+    trM_sym = sp.radsimp((qs - 1 / qs) / (sp.sqrt(qs) + 1 / sp.sqrt(qs)) + 1)
+    diff_sym = sp.cancel(sp.together(lw2_sym - trM_sym))
+    identically_equal = bool(sp.together(lw2_sym - trM_sym).equals(0))
     # Real-positive q where they DO coincide (isolated ⇒ not a structural identity).
     coincidence_qs = []
     try:
@@ -126,7 +128,7 @@ def main() -> int:
     # ── q→1 classical limit: even there they disagree (4/3 vs 1). ──
     lw2_q1 = sp.limit(lw2_sym, qs, 1)        # 4/3 (mean dim of S₃)
     trM_q1 = sp.limit(trM_sym, qs, 1)        # 1   (Hopf, q=1)
-    disagree_at_q1 = sp.simplify(lw2_q1 - trM_q1) != 0
+    disagree_at_q1 = sp.cancel(lw2_q1 - trM_q1) != 0
 
     # ── Characterisation: lw(c) = (q-deformed involution number)/(c+1). ──
     # Σ_{λ⊢n} dim_q V_λ at q=1 = #involutions in S_n (Frobenius–Schur). It is a
