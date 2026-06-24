@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.Molecular.shell_filling_rule
 
@@ -86,6 +88,8 @@ theorem shell_filling_rule [ctx : ShellFillingRuleContext] :
     (∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n) ∧
     (∀ other : ℕ, other ≤ ctx.singly_occupied) ∧
     ctx.primal_obj = (ctx.Z : ℝ) * ctx.y_0 :=
-  sorry
+  ⟨ctx.impl_inner_shells_fill ctx.aufbau_active,
+   ctx.impl_hunds_rule_max ctx.aufbau_active,
+   ctx.impl_lp_dual_objective ctx.aufbau_active⟩
 
 end QOU.Molecular

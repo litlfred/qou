@@ -1,3 +1,4 @@
+import Mathlib
 import QOU.Shared.MarkovTraceClaim
 
 /-!
@@ -71,7 +72,14 @@ theorem strangelet_crossing_energy [ctx : StrangeletCrossingEnergyContext] :
     (0 < ctx.q_real →
       ctx.E_bind_uds = 8 * ctx.q_real⁻¹ ∧
       ctx.E_bind_udd = 6 * ctx.q_real⁻¹ ∧
-      ctx.E_bind_udd < ctx.E_bind_uds) :=
-  sorry
+      ctx.E_bind_udd < ctx.E_bind_uds) := by
+  refine ⟨ctx.claim_i_electromagnetic_neutrality, ctx.claim_ii_purely_strong_crossing, ?_⟩
+  intro hq
+  have huds := ctx.uds_binding hq
+  have hudd := ctx.udd_binding hq
+  refine ⟨huds, hudd, ?_⟩
+  rw [hudd, huds]
+  have h_inv_pos := ctx.q_real_inv_pos hq
+  linarith
 
 end QOU.Observations
