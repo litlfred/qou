@@ -75,3 +75,33 @@ has no monodromy. So the Sage fixed-curve period work (done) cannot supply it; `
 Refs: `docs/audits/2026-06-24-lever1-trB-geometric-target.md`,
 `2026-06-24-lw2-c2-prediction-untested-status.md`, `2026-06-23-delta-lambda-three-lever-status.md`.
 Kill-switch (magic-A ⁴He +5.87%) unchanged. No fit; nothing wired. Owner closes (§4a).
+
+## Progress 2026-06-24 (PR #2708) — A/B sharpened, C clean (a)-negative
+
+Owner picked all three (B, A, C). Disciplined increments (formalize-first; Sage unavailable in
+this container ⇒ analytical/corpus synthesis, not compute):
+
+- **A + B — binding monodromy is HYPERBOLIC, not compact SU(2).** Corpus-grep surfaced the
+  un-cross-referenced **2026-06-06 M-workplan**: `H¹(Bring)=W⊗ℂ²` (Riera–Rodríguez; `W`=irred
+  4-dim S₅ rep), `M=id_W⊗B`, `B∈SL₂`, `det=1` (Lean `sl2_prolongation_recurrence`). So the rank-2
+  `W` is the **S₅-Hodge multiplicity space = candidate H¹(coral elliptic E_z)** (B largely
+  resolved). Probe: `τ_binding=2.6424>2` ⇒ `B` hyperbolic; the coral `E_z` monodromy = trefoil
+  holonomy is **compact SU(2)** (`(H₁H₂)³=id`, `tr=−1`, `|tr|≤2`) ⇒ `B` **structurally excluded
+  from compact SU(2)** ((b), trace invariant) — it's the non-compact `SU_q(2)→E_q(2)`
+  continuation, the **same arena the keystone reached from the W_λ side** (independent
+  convergence). Refines the torus refutation: torus is *also* hyperbolic (2.044), so binding≠torus
+  is a *rapidity* mismatch (`θ_b/θ_t=3.74`), not compact-vs-noncompact. Next (tractable, NOT
+  genus-4): compute the coral `E_z` (genus-1) Picard–Fuchs rapidity, test `=θ_binding=0.7815`.
+  Probe `lever1_binding_monodromy_hyperbolicity.py` (8/8); audit
+  `2026-06-24-lever1-binding-monodromy-hyperbolicity.md`. Hygiene flag: M-workplan's 3 `.py`
+  scripts are NOT in the tree (only Lean+props back it).
+- **C — lw(2) still circularity-gated (clean (a)-negative).** Independent Hopf-link `T(2,2)`
+  Markov trace `tr_M(σ₁²)=1+(q−1)/√q ≈ 1.1044` (no selection-rule input) ≠ `lw(2)≈1.337`. Reason:
+  `lw(c)` is a **mean quantum dimension** (rep count), NOT a single-link trace — wrong *kind* of
+  object. (a)-scope: constrains the identification, not lw(2)'s validity. Still needs a
+  non-circular c=2 mass-consumer. Probe `lw2_c2_independent_hopf_test_attempt.py` (4/4); audit
+  `2026-06-24-lw2-c2-independent-test-attempt.md`.
+
+Net: B resolved to the coral-`E_z` rank-2 factor; A sharpened to a tractable genus-1 Picard–Fuchs
+rapidity test + keystone-arena convergence; C confirmed circularity-gated. No closure; no fit;
+nothing wired. Owner closes (§4a).
