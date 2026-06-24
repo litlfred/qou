@@ -175,6 +175,18 @@ export default chapter({
       ],
     }),
     section({
+      title:
+        "Per-block $\\chi$ closed forms, $\\Delta\\tau_M$ machinery, and canonical Markov weights",
+      label: "sec:hecke-chi-per-block-delta-tau-canonical-weights",
+      blocks: [
+        "qbeta-per-block-delta-tau-intro",
+        "qbeta-per-block-chi-closed-forms",
+        "qbeta-delta-tau-canonical-conditional-q2-minus-1-factor",
+        "qbeta-delta-tau-surrogate-taylor-coefficients",
+        "qbeta-canonical-markov-weights-explicit-instance",
+      ],
+    }),
+    section({
       title: "Hecke-Baer-star foundation and chirality pairing",
       label: "sec:hecke-baer-star-chirality",
       blocks: [
