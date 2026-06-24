@@ -157,6 +157,74 @@
       "status": "needs-author",
       "asked_author_at": null,
       "referee_argument": "Repoint lean.ref to the real QOU.Interactions decl (or align namespaces) and fix/remove the missing-script references."
+    },
+    {
+      "id": "3edcc8a7c4fe",
+      "block_or_script": "prop:operator-selection-lp",
+      "paths": {
+        "md": "content/quantum-observable-universe/mass-theory/operator-selection-lp.md",
+        "py": "computations/confinement-operator-selection.witness.json"
+      },
+      "finding": "da-reproducibility",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+      "evidence": "confinement-operator-selection.witness.json emits y0_star/y_star/active_set/duality_gap = null; lp_dual_witness_validator checks presence not non-null so it passes CI; .md:181 active-set {sigma_0,L_-} unbacked.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Recompute the LP dual via lp_dual_solver.py and harden lp_dual_witness_validator.py to reject null dual values (one-line --strict upgrade that would have caught this)."
+    },
+    {
+      "id": "5fd5e5d875b0",
+      "block_or_script": "alg:mba-step05-wedderburn",
+      "paths": {
+        "md": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step05-wedderburn.md"
+      },
+      "finding": "da-false-claim+da-reproducibility",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+      "evidence": ".md calls wedderburn_weight() output 'Wenzl-Markov y_\u03bb' but it is w\u0303_\u03bb=dim_q^2/[n]_q! (\u00a77aa conflation); witness-contract says per-partition (d_\u03bb,y_\u03bb) table but named witness records EW LP probes.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Correct the API description to w\u0303_\u03bb (or call the Wenzl bridge) and fix the witness-contract section to match the actual witness contents (appendix maintenance-contract sync)."
+    },
+    {
+      "id": "c5de26a6fd8b",
+      "block_or_script": "prop:archimedean-functor-uniqueness",
+      "paths": {
+        "md": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.md",
+        "lean": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.lean"
+      },
+      "finding": "da-lean-narrative-divergence+da-overclaim",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+      "evidence": "Prose claims uniqueness on C\\{0,1} via complex Bloch-Wigner D; Lean proves real-slice R->R; \u00a73b-cond banner lists ArchimedeanLimit as a uniqueness hypothesis but it is absent from the signature (only BlochSuslinUniqueness gates it).",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Re-scope the prose uniqueness from C\\{0,1} to the formalised real locus (or add a conjectural-backing note that complex-D uniqueness is unformalised) and drop ArchimedeanLimit from the \u00a73b-cond uniqueness-hypothesis claim (it gates only figure8_calibration)."
     }
   ],
   "audited": {
@@ -222,9 +290,44 @@
       "criteria": [
         "da-referee-verdict"
       ]
+    },
+    "prop:operator-selection-lp": {
+      "ts": "2026-06-24",
+      "sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "alg:mba-step05-wedderburn": {
+      "ts": "2026-06-24",
+      "sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "example:archimedean-yekutieli": {
+      "ts": "2026-06-24",
+      "sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "rem:hecke-algebra-from-braiding": {
+      "ts": "2026-06-24",
+      "sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:archimedean-functor-uniqueness": {
+      "ts": "2026-06-24",
+      "sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+      "criteria": [
+        "da-referee-verdict"
+      ]
     }
   },
   "reviewed_up_to": {
-    "da-referee-verdict": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+    "da-referee-verdict": "dac6ec352f10e755ecb8fc8907df8771ce5887a1"
   }
 }

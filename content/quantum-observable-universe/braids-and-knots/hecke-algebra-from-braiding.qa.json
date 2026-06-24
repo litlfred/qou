@@ -835,7 +835,137 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e9d751b9cdbc",
+          "ts": "4df440475596"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "hecke-algebra-from-braiding.md:11 'endomorphism T = \u03c4(c_{V,V}) satisfying (T-q)(T+q^-1)=0' and braiding-eigenvalue-extraction.md:31 same T, vs \u00a77a 'generator is \u03c3_i (never T)'; the quotient on line 25 correctly uses \u03c3_i.",
+        "rebuttal": "partial \u2014 \u00a77a's T ban targets the Hecke GENERATOR; here T=\u03c4(c_{V,V}) is the fibre-functor image of the categorical braiding (a named morphism), and the quotient uses \u03c3_i, so the intent is arguably met; still a real fixable internal inconsistency.",
+        "evidence": [
+          {
+            "text": "hecke-algebra-from-braiding.md:11,25"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e9d751b9cdbc",
+          "ts": "4df440475596"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": ".md:29 'q is a categorical datum ... not chosen freely' smuggles rank-2 + \u039b\u00b2V\u22451 hypotheses; for generic objects q is free.",
+        "rebuttal": "rebutted \u2014 upstream braiding-eigenvalue-extraction.md conditions on rank-2 V with \u039b\u00b2V\u22451; det relation \u03bb+\u03bb-=-1 forces \u03bb-=-q^-1 given \u03bb+=q. Scoped to that object (Kassel \u00a7XII).",
+        "evidence": [
+          {
+            "text": "hecke-algebra-from-braiding.md:29"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e9d751b9cdbc",
+          "ts": "4df440475596"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "Do Kassel/Jones support eigenvalues (q,-q^-1) and this presentation?",
+        "rebuttal": "rebutted \u2014 Generators.lean:11 \u03c3_i^2=(q-q^-1)\u03c3_i+1 is equivalent to (\u03c3_i-q)(\u03c3_i+q^-1)=0; eigenvalues q,-q^-1 product -1 is the standard Kassel \u00a7XII presentation; Lean honestly axiom/sorry-marked with -- Ref:.",
+        "evidence": [
+          {
+            "text": "Generators.lean:11; jones-markov-trace.lean:25-26"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e9d751b9cdbc",
+          "ts": "4df440475596"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "jones-markov-trace.lean:163 axiom jones_markov_trace_exists \u2014 the Jones result is an unproved axiom.",
+        "rebuttal": "rebutted \u2014 Jones 1987 correctly cited as an external 54-page result, axiomatized per the Yekutieli pattern, not claimed proved; dim H_n=n! is not claimed in this block.",
+        "evidence": [
+          {
+            "text": "jones-markov-trace.lean:163"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e9d751b9cdbc",
+          "ts": "4df440475596"
+        },
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The block names the endomorphism T = \u03c4(c_{V,V}) and writes the Hecke relation on T, in apparent tension with AGENTS.md \u00a77a ('the Hecke generator is \u03c3_i, never T') \u2014 though the quotient ideal correctly uses \u03c3_i, so the block is internally inconsistent.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:22.350Z"
+  "updated_at": "2026-06-24T04:27:37Z"
 }

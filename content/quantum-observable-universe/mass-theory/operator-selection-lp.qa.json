@@ -1321,6 +1321,110 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4bd69953548f",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "confinement-operator-selection.witness.json: y0_star/y_star/active_set/duality_gap/primal_obj/dual_obj all = null, while .md:181 claims Active set = {sigma_0, L_-}.",
+        "rebuttal": "none — survived; grep of docs/audits docs/coordination finds no prior flag of this null-dual witness (not corpus-closed). lp_dual_witness_validator checks key presence not non-null, so it passes CI while emitting no shadow prices.",
+        "evidence": [
+          {
+            "text": "computations/confinement-operator-selection.witness.json (null duals); operator-selection-lp.md:181"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+        "severity": "major"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4bd69953548f",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "operator_selection_lp.lean:102-108 theorem := sorry; the three claims live as class fields (self-assuming projection).",
+        "rebuttal": "rebutted-as-known — catalogued degenerate(tuple-split) in docs/audits/2026-06-18-self-assuming-projection-triage.json:1346-1351; honest sorry + -- Ref:[manuscript]; .ts validation:not_checked.",
+        "evidence": [
+          {
+            "text": "operator_selection_lp.lean:102-108"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4bd69953548f",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": ".md:145-153 strong-duality Proof asserts feasibility ('G*e_1>0 for generic q') and boundedness with no Lean/witness check; cites 'the LP strong duality theorem' but carries no cite{boyd-vandenberghe-2004} (the ref exists at references.ts:984 but is uncited here).",
+        "rebuttal": "partial→survived — claim is true for generic feasible bounded LPs; defect is rigor/citation hygiene (Slater interior at q_0 unproved), not falsity.",
+        "evidence": [
+          {
+            "text": "operator-selection-lp.md:145-153"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4bd69953548f",
+          "ts": "bdf5fe16b68e"
+        },
+        "result": "fail",
+        "verdict": "open-objection",
+        "referee_argument": "The dual certificate (y0_star, y_star, active_set, duality_gap) that AGENTS.md mandates as first-class is emitted as JSON keys with null VALUES in the confinement witness, so the .md active-set {sigma_0, L_-} is unbacked by any computed dual; the validator checks presence not non-null, so it passes CI.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"
