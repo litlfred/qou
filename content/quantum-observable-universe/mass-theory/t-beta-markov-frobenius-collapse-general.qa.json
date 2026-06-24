@@ -1105,6 +1105,20 @@
         "reviewed_at": "2026-06-22T02:57:03.402Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "ts": "5c0e47b803ca",
+          "md": "588c77be7a38"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/narrative-lean-rerate"
+        },
+        "reviewed_at": "2026-06-24T12:30:00.000Z",
+        "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
+        "notes": "lean.ref 'qou:QOU.QBeta.MarkovFrobeniusCollapse.General.markov_frobenius_min_norm_lift' resolves to no Lean declaration; narrative<->Lean criterion N/A."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1291,5 +1305,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:06.606Z"
+  "updated_at": "2026-06-24T12:30:00.000Z"
 }

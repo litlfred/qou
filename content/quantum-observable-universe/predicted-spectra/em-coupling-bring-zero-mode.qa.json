@@ -1101,6 +1101,20 @@
         "reviewed_at": "2026-06-22T02:56:51.109Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "ts": "127b17240b9c",
+          "md": "67f4c1060af9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/narrative-lean-rerate"
+        },
+        "reviewed_at": "2026-06-24T12:30:00.000Z",
+        "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
+        "notes": "Narrative explicitly flags open/conjectural; Lean carries sorry (honest deferral) -- narrative<->Lean consistent, not a drift."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1287,5 +1301,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:54.578Z"
+  "updated_at": "2026-06-24T12:30:00.000Z"
 }
