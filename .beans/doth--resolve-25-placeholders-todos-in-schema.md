@@ -46,3 +46,5 @@ split. Rewired its citations to leitnerpawloski2004, fixed 6 wrong-title inline
 .lean comments, deprecated the stub entry + ledger. wenzl1988b/c kept (real,
 widely-cited; only DOIs wrong). schema actionable 7 remain (off-sandbox DOI /
 author input).
+
+resweep 2026-06-24 (honest counter, PR hygiene): **uncited-sorry = 0 corpus-wide**; this title count is a raw grep and is badly inflated. Honest actionable count for this scope + the full per-bean table in docs/audits/2026-06-24-placeholder-bean-count-resweep.md. Remaining TODO/FIXME are intentional markers (-- TODO upstream: on proved lemmas, witness-deps, research notes), NOT actionable placeholders — do not "drain a count" by removing them. Re-title/close is owner-only.
