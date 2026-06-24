@@ -1,0 +1,11 @@
+The proposition asserts two mathematical facts about the degree-lexicographic relation $\prec_c$ on the monomial basis $B$: that it is a well-ordering and that it is admissible. The physical interpretation (categorical arrow of time, CPT) is an overlay carrying no separate proof obligation.
+
+Identify a monomial $w = \sigma_{i_1}\cdots\sigma_{i_k} \in B$ with the word $(i_1,\ldots,i_k) \in \mathrm{List}(\mathrm{Fin}\,(n-1))$. Under this identification $\prec_c$ is the relation `DegLex`: $w \prec_c w'$ iff $\ell(w) < \ell(w')$, or $\ell(w) = \ell(w')$ and $w <_{\mathrm{lex}} w'$.
+
+**Well-ordering.** A total order is a well-ordering iff it is well-founded. The map $\Phi\colon w \mapsto (\ell(w), w)$ embeds $\prec_c$ into the lexicographic product of $(\mathbb{N}, <)$ with lexicographic list order: $w \prec_c w'$ iff $\Phi(w)$ precedes $\Phi(w')$. The first factor $(\mathbb{N},<)$ is well-founded, lexicographic order over a finite alphabet is well-founded, and the lexicographic product of well-founded relations is well-founded; hence $\prec_c = \Phi^{*}(\mathrm{Prod.Lex})$ is well-founded as an inverse image. This is `degLex_wellOrdered` (`InvImage.wf` against `Prod.lex_wf Nat.lt_wfRel.wf List.wellFoundedLT.wf`). The informal "minimum-length subset $S_d$ has a lex-minimum" argument is the same fact phrased combinatorially.
+
+**Admissibility.** We show $w \prec_c w' \Rightarrow u\,w\,v \prec_c u\,w'\,v$. Split on the two cases:
+- *Length-dominated* ($\ell(w) < \ell(w')$): length is additive under concatenation, so $\ell(u w v) < \ell(u w' v)$ witnesses $\prec_c$ (`degLex_admissible_length`).
+- *Lex-dominated* ($\ell(w) = \ell(w')$, $w <_{\mathrm{lex}} w'$): lengths stay equal, and lexicographic order is stable under a common prefix and suffix — the shared $u$ defers the first differing position to within $w$ vs $w'$, where the hypothesis decides it (`degLex_admissible_lex`, induction on $u$ via `List.Lex.append_left`/`List.Lex.cons`).
+
+Combining the cases gives `degLex_admissible`. Both properties hold for every $n$, so the braiding-induced degree-lex order is a canonical admissible well-ordering on $B$; the top-level `braiding_induced_ordering` ($\forall n,\ \mathrm{WellFounded}(\mathrm{DegLex})$) is witnessed by `degLex_wellOrdered`. $\qquad\blacksquare$

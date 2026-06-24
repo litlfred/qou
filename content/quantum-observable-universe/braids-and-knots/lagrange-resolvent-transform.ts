@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:lagrange-resolvent-transform",
+  proofs: ["prf:lagrange-resolvent-transform"],
   title:
     "Discrete Fourier transform diagonalises $C_5$ on the Bring's surface",
   tags: ["lagrange", "resolvent", "fourier", "c5", "brings-surface"],

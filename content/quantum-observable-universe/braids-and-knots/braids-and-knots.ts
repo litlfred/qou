@@ -139,6 +139,7 @@ export default chapter({
         // Emits new H2 to def:brings-surface @ archimedean-universe
         // (accepted §5).
         "lagrange-resolvent-transform",
+        "lagrange-resolvent-transform-proof",
         "braid-twist-flip",
         "holonomy-trefoil",
         "rho-s3-holonomy-exposition",
@@ -197,6 +198,7 @@ export default chapter({
         "hoefsmit-binding-amplitude-proof",
         "q-difference-viewpoint-method",
         "alpha-em-habiro-bar-involution",
+        "alpha-em-habiro-bar-involution-proof",
         "figure-eight-reeb-rotation",
         "figure-eight-reeb-rotation-proof",
         "pion-half-figure-eight",

@@ -34,6 +34,7 @@ export default chapter({
         "qou-exists-axiom-4-proof",
         "quantum-observable-universe-exists-proof",
         "braiding-induced-ordering",
+        "braiding-induced-ordering-proof",
         "frobenius-integration",
         "yekutieli-stokes-remark",
         "fibre-functor-rigidity",

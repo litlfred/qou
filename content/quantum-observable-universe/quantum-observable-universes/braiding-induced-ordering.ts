@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:braiding-induced-ordering",
+  proofs: ["prf:braiding-induced-ordering"],
   title:
     "Canonical admissible ordering on the Hecke basis induced by braiding",
   tags: [
