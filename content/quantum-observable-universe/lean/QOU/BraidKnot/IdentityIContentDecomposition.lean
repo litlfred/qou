@@ -428,19 +428,39 @@ theorem redCont (l : List ℕ) :
   rw [hsplit (l.getD i 0)]
   nlinarith [two_sum_id (l.getD i 0)]
 
-/-- **Reduction lemma (Leg1) (carried).** `Σ leg = Σ i·λ_i`.  The conjugate column-sum
-`Σ_j binom(colLen_j,2) = Σ_{i<i'} λ_{i'}` (sorted) — a sum-over-cells → sum-over-row-pairs
-double-count.  Machine-checked (assembled identity) `n ≤ 12`; exact-integer `n ≤ 22`. -/
+/-- Linear reflect: `Σ_{i<m}(m−1−i) = Σ_{i<m} i`. -/
+theorem rowReflect_lin (m : ℕ) :
+    ∑ i ∈ Finset.range m, ((m : ℤ) - 1 - (i : ℤ)) = ∑ i ∈ Finset.range m, (i : ℤ) := by
+  have key : ∀ i ∈ Finset.range m, (m : ℤ) - 1 - (i : ℤ) = ((m - 1 - i : ℕ) : ℤ) := by
+    intro i hi; rw [Finset.mem_range] at hi; omega
+  rw [Finset.sum_congr rfl key, Finset.sum_range_reflect (fun k => (k : ℤ)) m]
+
+/-- `cellSum (fun i _ => i) = q1` (inner column-constant sum). -/
+theorem cellSum_i_eq_q1 (l : List ℕ) : cellSum l (fun i _ => (i : ℤ)) = q1 l := by
+  unfold cellSum q1
+  exact Finset.sum_congr rfl
+    (fun i _ => by rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul]; ring)
+
+/-- `cellSum (fun i _ => i²) = q2`. -/
+theorem cellSum_isq_eq_q2 (l : List ℕ) : cellSum l (fun i _ => (i : ℤ) ^ 2) = q2 l := by
+  unfold cellSum q2
+  exact Finset.sum_congr rfl
+    (fun i _ => by rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul]; ring)
+
+/-- **Reduction lemma (Leg1) (sorry-free).** `Σ leg = Σ i·λ_i`.  Proof: swap to columns
+(`cellSum_swap`), reflect each inner column sum (`Σ(colLen_j−1−i)=Σ i`), then swap back
+to `cellSum (fun i _ => i) = q1` — no pair double-count needed. -/
 theorem redLeg1 (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
     cellSum l (fun i j => (colLen l j : ℤ) - 1 - i) = q1 l := by
-  -- Ref: [manuscript] docs/audits/2026-06-24-keystone-identity-I-armleg-reduction.md §(Leg1)
-  sorry
+  rw [cellSum_swap l hl, Finset.sum_congr rfl (fun j _ => rowReflect_lin (colLen l j)),
+    ← cellSum_swap l hl (fun i _ => (i : ℤ)), cellSum_i_eq_q1]
 
-/-- **Reduction lemma (Leg2) (carried).** `Σ leg² = Σ i²·λ_i` (conjugate column-sum). -/
+/-- **Reduction lemma (Leg2) (sorry-free).** `Σ leg² = Σ i²·λ_i` (swap → `rowSq_reflect`
+→ swap back to `cellSum (fun i _ => i²) = q2`). -/
 theorem redLeg2 (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
     cellSum l (fun i j => ((colLen l j : ℤ) - 1 - i) ^ 2) = q2 l := by
-  -- Ref: [manuscript] docs/audits/2026-06-24-keystone-identity-I-armleg-reduction.md §(Leg2)
-  sorry
+  rw [cellSum_swap l hl, Finset.sum_congr rfl (fun j _ => rowSq_reflect (colLen l j)),
+    ← cellSum_swap l hl (fun i _ => (i : ℤ) ^ 2), cellSum_isq_eq_q2]
 
 /-- **Reduction lemma (Cross) (carried).** `2·Σ arm·leg = n² − p2 − s2 − q1` — the sorted
 L-triple count (uses `λ_i ≥ λ_{i'}`).  Machine-checked (assembled) `n ≤ 12`; `n ≤ 22`. -/
