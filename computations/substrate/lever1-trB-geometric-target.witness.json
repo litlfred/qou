@@ -1,0 +1,22 @@
+{
+  "computation": "lever1_trB_geometric_target",
+  "description": "Concrete geometric target for the lever-1 a_D=lw identification (tr B = 3(3q⁴+8q²+3)/(4q(q+1)²)), the torus-shortcut-fails finding (τ_binding ≠ τ_torus), and the W-plane≠substrate tension. The genuine tr B needs the Bring genus-4 period (Sage script provided).",
+  "discipline": "no fit; symbolic+mpmath; TOOL-gated on Sage not owner-gated; states target + tension",
+  "auditOnly": "docs/audits/2026-06-24-lever1-trB-geometric-target.md",
+  "sage_script": "computations/substrate/lever1_bring_period_trB.sage",
+  "results": {
+    "target_trB_symbolic": "3*(q**2*(3*q**2 + 8) + 3)/(4*q*(q + 1)**2)",
+    "target_trB_at_q0": "2.6423863133014861339",
+    "tau_torus_at_q0": "2.0437062182329013102",
+    "torus_shortcut_matches": false,
+    "tau_binding_as_qk_exponent": "7.48944282939",
+    "tau_binding_is_integer_torus_power": false
+  },
+  "assertions": {
+    "(S) torus geometric recurrence holds (τ=2cosh2η₀)": true,
+    "(S) torus shortcut FAILS (binding W-plane ≠ substrate torus)": true,
+    "(X) τ_binding is NOT q₀^k+q₀^-k for integer k (distinct geometric object)": true
+  },
+  "allPassed": true,
+  "verdict": "TARGET RECORDED + TORUS SHORTCUT REFUTED. The lever-1 identification a_D^(n)=lw(n−1) reduces to ONE checkable geometric number: the Bring W-plane monodromy trace tr B = 3(3q⁴+8q²+3)/(4q(q+1)²) = 2.6424 at q₀. The easy geometric handle FAILS — τ_torus = 2cosh2η₀ = 2.0437 ≠ 2.6424, and τ_binding ≠ q₀^k+q₀^-k for integer k — so the binding W-plane is a genuinely separate genus-4 Bring object, not the substrate torus. TENSION for the keystone: if H¹(Bring)=2W with W the substrate, τ_binding should equal τ_torus; it does not, so either W is a distinct Bring factor or a_D≠lw. tr B is the trace of the q-FAMILY Gauss–Manin MONODROMY; a fixed curve has no monodromy, so tr B(q₀) is gated on the q-family matrix M (s5-so3 keystone, owner-gated). Sage settles the rank-2 question EXACTLY: H^{1,0}(Bring) is the 4-dim irreducible A₅ standard rep (no A₅-invariant rank-2 form-subspace; W is an isogeny/CM factor of Jac(Bring)). No fit."
+}
