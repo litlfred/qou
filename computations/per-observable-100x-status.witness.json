@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-24T17:52:32.122906+00:00",
-  "commitSha": "1705edfc35bf23739ba03cdaea53f2aa12b02640",
+  "computedAt": "2026-06-24T18:19:16.444904+00:00",
+  "commitSha": "0f1368f4b001905fd76fc7dc91b657dd1684f2d9",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 14,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "4e679e710146",
+  "scriptHash": "e22ac7839ccf",
   "scriptCommitSha": "2f3f9c0b533ed504983c36c85631e0946d9a6978",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -38,6 +38,7 @@
       {
         "obs": "m_p",
         "role": "CAL-2 numerical anchor",
+        "tier": "anchor",
         "pred_MeV": "938.272088160",
         "codata_MeV": "938.272088160",
         "sigma_exp_MeV": "2.90000e-7",
@@ -47,6 +48,7 @@
         "miss_factor": "0.1306",
         "beats_1x_experimental": true,
         "beats_100x_experimental": true,
+        "tier_note": "",
         "source_witness": "m-p-substrate-identity-50dps.witness.json",
         "sigma_source": "codata_constants.M_P_MEV_VALIDATION",
         "compute_truncation_ppb": "1.066e-54",
@@ -55,6 +57,7 @@
       {
         "obs": "m_mu",
         "role": "validation",
+        "tier": "cal-anchored",
         "pred_MeV": "105.658375644",
         "codata_MeV": "105.658375649",
         "sigma_exp_MeV": "2.30000e-6",
@@ -64,6 +67,7 @@
         "miss_factor": "0.2374",
         "beats_1x_experimental": true,
         "beats_100x_experimental": true,
+        "tier_note": "cal-anchored cross-check — rides the m_p-cal-anchored c_4 (term-6 Habiro residue ≈46.03); independent c_4-free prediction ≈209.8 ppb (963.6×, the μ–p substrate tension). NOT counted as a derived 100× pass.",
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
         "sigma_source": "COMPARISON TARGET (codata_MeV), NOT the prediction: m_e × (m_μ/m_e)_CODATA = 0.5109989506900000000000000000000000000000000000000005654434719000544678 × 206.7682829999999999999999999999999999999999999999998424852944944885311 (ratio-derived; independently-quoted 105.6583755(23) MeV). The PREDICTION (pred_MeV) is the INDEPENDENT categorical value m_μ = m_e·Vol(4_1)/ℏ_q² from the Borromean witness — post the 2026-05-29 q₀ re-pin it is a genuine 9.5σ PREDICTION, NOT ratio-derived. The ~210 ppb pred-vs-codata gap (963.6× the 100× target) is the real μ-p tension; m_μ does NOT meet L2. Do not read 'ratio-derived' as 'm_μ trivially meets' (the error PR #1556 made).",
         "compute_truncation_ppb": "9.464e-54",
@@ -72,6 +76,7 @@
       {
         "obs": "Q_beta",
         "role": "derived (CAL-1+CAL-2)",
+        "tier": "derived",
         "pred_MeV": "0.782334386518",
         "codata_MeV": "0.782333410000",
         "sigma_exp_MeV": "6.10000e-7",
@@ -81,6 +86,7 @@
         "miss_factor": "160.1",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
+        "tier_note": "",
         "source_witness": "Q_N2 (fallback; qbeta-ck-cache witness not present)",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json; CODATA validation value — Q_β is derived, not CAL-3)",
         "compute_truncation_ppb": "1.278e-51",
@@ -89,6 +95,7 @@
       {
         "obs": "m_n",
         "role": "validation",
+        "tier": "derived",
         "pred_MeV": "939.565421498",
         "codata_MeV": "939.565420520",
         "sigma_exp_MeV": "5.40000e-7",
@@ -98,6 +105,7 @@
         "miss_factor": "181.0",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
+        "tier_note": "",
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=0) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "codata_constants.M_N_MEV_VALIDATION",
         "compute_truncation_ppb": "1.064e-54",
@@ -106,6 +114,7 @@
       {
         "obs": "Delta_pn",
         "role": "validation (derived)",
+        "tier": "derived",
         "pred_MeV": "1.29333333721",
         "codata_MeV": "1.29333236000",
         "sigma_exp_MeV": "6.12944e-7",
@@ -115,6 +124,7 @@
         "miss_factor": "159.4",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
+        "tier_note": "",
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=0) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
         "compute_truncation_ppb": "7.732e-52",
@@ -139,6 +149,7 @@
       {
         "obs": "m_K/m_pi",
         "role": "validation (meson ratio)",
+        "tier": "derived",
         "pred_MeV": "3.53711853802",
         "codata_MeV": "3.53711843895",
         "sigma_exp_MeV": "9.32546e-5",
@@ -148,6 +159,7 @@
         "miss_factor": "0.1062",
         "beats_1x_experimental": true,
         "beats_100x_experimental": true,
+        "tier_note": "",
         "source_witness": "[3]_q·[4]_q + (α_em/π)·(3q²−1)/(2q²) — closed form; both pieces Lean-proved (qou:QOU.BraidKnot.meson_qCG_3x4, qou:QOU.BraidKnot.meson_EM_closed_form); α_em is a CLASS-A acknowledged anchor (CS ansatz conditional on Witten-κ class)",
         "sigma_source": "PDG 2024: m_K±/m_π± = 493.677/139.57039; σ propagated in quadrature",
         "compute_truncation_ppb": "2.827e-52",
@@ -156,17 +168,18 @@
     ],
     "summary": {
       "total": 7,
-      "beats_1x_count": 4,
-      "beats_100x_count": 4
+      "beats_1x_count": 3,
+      "beats_100x_count": 3,
+      "cal_anchored_excluded": 1
     },
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "37113b39822b79fbeb560bb6dc0328552b13af010162618547f6520128b7b958",
-        "size_bytes": 4183,
-        "commitSha": "1705edfc35bf23739ba03cdaea53f2aa12b02640",
-        "scriptCommitSha": "2f3f9c0b533ed504983c36c85631e0946d9a6978",
-        "computedAt": "2026-06-24T17:52:31.501067+00:00"
+        "sha256": "045a3f5ff3091045f2ff0f4f671d9dfb9fa641e07807f1ed0a9eb8f9daac337e",
+        "size_bytes": 4972,
+        "commitSha": "777d843a1128debaa42b9f502e537091032adf3b",
+        "scriptCommitSha": "1c5cdc987ec2fb9a1be1ad4b15302d6d461ae117",
+        "computedAt": "2026-06-24T18:15:01.074010+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",

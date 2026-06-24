@@ -174,9 +174,20 @@ def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
     from qou_substrate.precision import OUTPUT_DPS
     truncation_ppb = mpf(10) ** (-OUTPUT_DPS) / abs(pred) * mpf("1e9") if pred != 0 else mpf(0)
 
+    # Tier (governs the headline count). m_μ is a cal-anchored CROSS-CHECK,
+    # not an independent derived pass: its ~0 error rides the m_p-cal-anchored
+    # c_4 in q_at (term-6 Habiro residue ≈46.03; see
+    # docs/audits/2026-06-24-l2-dashboard-refresh.md §1b′). The independent
+    # (c_4-free) prediction is ≈209.8 ppb (963.6×) — the real μ–p substrate
+    # tension. Per the same rule the Q_β cal-anchored rungs follow, cal-anchored
+    # rows are reported but NOT counted as derived 100× passes.
+    tier = ("cal-anchored" if obs == "m_mu"
+            else "anchor" if "anchor" in role
+            else "derived")
     return {
         "obs": obs,
         "role": role,
+        "tier": tier,
         "pred_MeV": fmt(pred, 12),
         "codata_MeV": fmt(codata, 12),
         "sigma_exp_MeV": fmt(sigma_exp, 6),
@@ -186,6 +197,11 @@ def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
         "miss_factor": fmt(miss_factor, 4),
         "beats_1x_experimental": beats_1x,
         "beats_100x_experimental": beats_100x,
+        "tier_note": (
+            "cal-anchored cross-check — rides the m_p-cal-anchored c_4 (term-6 "
+            "Habiro residue ≈46.03); independent c_4-free prediction ≈209.8 ppb "
+            "(963.6×, the μ–p substrate tension). NOT counted as a derived 100× pass."
+            if obs == "m_mu" else ""),
         "source_witness": source_witness,
         "sigma_source": sigma_source,
         "compute_truncation_ppb": fmt(truncation_ppb, 4),
@@ -482,8 +498,14 @@ def main() -> dict:
         "rows": rows,
         "summary": {
             "total": len(rows),
-            "beats_1x_count": sum(1 for r in rows if r.get("beats_1x_experimental")),
-            "beats_100x_count": sum(1 for r in rows if r.get("beats_100x_experimental")),
+            # Cal-anchored cross-checks (m_μ) are reported but excluded from the
+            # derived counts — they pass only by riding a CODATA-extracted c_4.
+            "beats_1x_count": sum(1 for r in rows
+                                  if r.get("beats_1x_experimental") and r.get("tier") != "cal-anchored"),
+            "beats_100x_count": sum(1 for r in rows
+                                    if r.get("beats_100x_experimental") and r.get("tier") != "cal-anchored"),
+            "cal_anchored_excluded": sum(1 for r in rows
+                                         if r.get("tier") == "cal-anchored" and r.get("beats_100x_experimental")),
         },
     }
 
@@ -503,18 +525,24 @@ if __name__ == "__main__":
         if r.get("status") == "NO-WITNESS":
             print(f"{r['obs']:10}  NO WITNESS")
             continue
+        beats100 = ("cal" if r.get("tier") == "cal-anchored"
+                    else "Y" if r['beats_100x_experimental'] else "N")
         print(
             f"{r['obs']:10}  {r['role']:22}  {r['err_ppb']:>16}  "
             f"{r['sigma_exp_ppb']:>14}  {r['target_100x_ppb']:>20}  "
             f"{r.get('miss_factor', '-'):>14}  "
             f"{('Y' if r['beats_1x_experimental'] else 'N'):>3}  "
-            f"{('Y' if r['beats_100x_experimental'] else 'N'):>5}"
+            f"{beats100:>5}"
         )
     print("-" * 128)
     print(f"Summary: {out['summary']['beats_100x_count']} / {out['summary']['total']} "
-          f"observables beat 100× experimental target.")
+          f"observables beat 100× experimental target (derived; cal-anchored cross-checks excluded).")
     print(f"         {out['summary']['beats_1x_count']} / {out['summary']['total']} "
-          f"beat 1× experimental.")
+          f"beat 1× experimental (derived).")
+    _ca = out['summary'].get('cal_anchored_excluded', 0)
+    if _ca:
+        print(f"         [{_ca} cal-anchored cross-check(s) pass numerically but are NOT "
+              f"counted — m_μ rides the m_p-cal-anchored c_4 (≈209.8 ppb c_4-free); see tier_note]")
     print()
 
     # Emit witness via WitnessBuilder for reproducible staleness metadata.
