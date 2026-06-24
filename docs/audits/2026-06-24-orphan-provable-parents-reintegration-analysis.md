@@ -95,16 +95,68 @@ braids-and-knots set separately** (do **not** leave the cluster as WIP).
 | **q-beta c_k / Habiro / qbeta** (`q-beta-*`, `qbeta-*`, `t-beta-*`) + adjacent (`borromean-h4`, `h3-markov-wenzl-weights`, `meson-kaon-pion-hecke-seifert`) | mass-theory (17) + mass-endomorphism (5) | 22 | **Integrate** into the rendered paper — owner sign-off given. Wire in dependency order; honest block kinds (§3b conjectural propagation for c_k near-matches). |
 | **Habiro / cyclotomic / meson-em / zeta8** | braids-and-knots | 8 | **Triage separately, per-block** — some (meson-em / Hecke-Seifert identities) may be sound and wireable independent of q-beta; others stay WIP. |
 | **selection-rule c_k anchors** | climax-volume-mass | 2 | Triage with the q-beta cluster (c_k-adjacent). |
-| **c5-involution-leibniz** | stochastic-mechanics | 1 | Phase-6 scaffold chapter; triage last / likely leave. |
+| **c5-involution-leibniz** | stochastic-mechanics | (0) | **Already wired** (false positive) — see detector-bug note below. |
 
-## Disposition status
+## Disposition status — COMPLETE
 
-1. **`meson-scale-independence`** — ✅ wired
-   (`sec:particle-interactions-orphan-reconnect`); CAL-2/3 decay-width
-   table confirmed correct, left as-is.
-2. **q-beta cluster (22)** — owner-approved for integration; in progress.
-3. **braids-and-knots (8)** — per-block triage; in progress.
-4. **climax (2) + stochastic (1)** — triaged alongside the above.
+**28 blocks wired this tranche** (+ 2 authored prose-lead blocks), in
+dependency order with verified-zero forward refs (cross-chapter and
+intra-chapter), all rendering exactly once (cross-manifest duplicate
+check = 0):
+
+1. **`meson-scale-independence`** (1) — ✅ wired into
+   `sec:particle-interactions-orphan-reconnect`. CAL decay-width table
+   confirmed canonical, left as-is.
+2. **q-beta cluster (22)** — ✅ wired:
+   - New section **`sec:mass-algebraic-qbeta-formalize-first-gates`**
+     (mass-theory, after Hoefsmit so `t-beta-collapse` is backward) —
+     13 gate/recursion blocks + prose lead.
+   - New section **`sec:hecke-chi-per-block-delta-tau-canonical-weights`**
+     (mass-endomorphism) — 4 cluster-G blocks + prose lead.
+   - Existing-section homes: Borromean h⁴ + H₃ weights →
+     `sec:mass-algebraic-markov-gram` / residue section; `t_β` collapse
+     pair → `sec:hoefsmit-he4-magic-a-binding`; meson-K →
+     `sec:mass-physical-face`.
+   - `qbeta-z-recursion-to-ck-recursion-bridge` moved mass-endomorphism
+     → mass-theory (forward-dep on `c_k`-recursion).
+   - Prep fix: `q-beta-c-k-recursion` `uses[]` repaired (`rem:`→`prop:`
+     for `alpha-em-habiro-bar-involution`; dropped the forward
+     cross-chapter `q-heat-kernel-peter-weyl` edge, kept as narrative).
+3. **braids-and-knots (8)** — ✅ triaged: 3 wired
+   (`meson-em-sinh-closed-form`, `meson-qcg-fusion-identity` →
+   `sec:lepton-meson-parallel`; `unit-modulus-eigenvalue` **moved**
+   braids → mass-theory + `thm:`→`prop:` fix → `sec:mass-algebraic-
+   markov-gram`). **5 held WIP** — the Habiro chain
+   (`a8-partition-function-identity`, `cyclotomic-strand-doubling`,
+   `habiro-pochhammer-bridge`, `habiro-precision-ladder-equivalence`,
+   `zeta8-witness-level2-su2`): `cyclotomic-strand-doubling` carries a
+   **refuted** categorical (strand-doubling) interpretation in its own
+   author note, and `habiro-precision-ladder-equivalence` depends on the
+   unrendered `prop:q-schur-y-lambda-closed-form`; the other three
+   cascade-block on these. Left for author review.
+4. **climax (2)** — ✅ wired (`selection-rule-anchors-c1-c3`,
+   `selection-rule-c2-prediction`, both proved) →
+   `sec:knot-operator-energy`.
+5. **stochastic (1) — `c5-involution-leibniz-decomposition`** — **already
+   wired** (false-positive orphan; see below). No action.
+
+### Detector-bug note (regex false negative)
+
+The orphan detector's blocks-array regex (`blocks:\s*\[(.*?)\]`,
+non-greedy) closed early on a `]` **inside a manifest comment**
+(`"… : generation" [4]` in `stochastic-mechanics.ts`), truncating that
+array and falsely orphaning every block after it — here
+`c5-involution-leibniz-decomposition` (already wired at line 52). Fix:
+strip `//` line comments before the regex
+(`scratchpad/orphan_analysis.py`). A cross-manifest duplicate check after
+the fix confirms **all 28 wired blocks appear in exactly one manifest** —
+no block was double-wired by the false positive.
+
+### Remaining
+
+5 orphan provable parents, all the braids-and-knots Habiro chain above —
+held WIP pending author review of the refuted interpretation +
+unrendered `q-schur-y-lambda-closed-form`.
 
 ## Reproduce
 
