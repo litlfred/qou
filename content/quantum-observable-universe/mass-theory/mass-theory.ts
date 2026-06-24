@@ -695,6 +695,7 @@ export default chapter({
         "spectral-sequence-collapse-proof",
         "delta-q-decoration",
         "alpha-basis-knot-delta-q",
+        "alpha-basis-knot-delta-q-proof",
         "torus-knot-delta-q-writhe",
         "force-carrier-intertwining-correspondence",
         "alpha-shift-torus-knot",
