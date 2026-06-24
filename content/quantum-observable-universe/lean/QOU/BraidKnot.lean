@@ -87,6 +87,12 @@ import QOU.BraidKnot.MassGapKeystone
 import QOU.BraidKnot.MassGapObstruction
 import QOU.BraidKnot.CrossingGradedModel
 import QOU.BraidKnot.MassGapFrontier
+-- Identity-(B) ℂ-free cluster (keystone-carried RT input): the Jucys–Murphy
+-- identity coefficient and the regular-representation trace bridge. Wiring these
+-- into the umbrella also pulls JucysMurphyCoeff (merged orphaned in #2713) into
+-- the CI build.
+import QOU.BraidKnot.JucysMurphyCoeff
+import QOU.BraidKnot.RegularRepTrace
 
 /-!
 # BraidKnot — Module Index
