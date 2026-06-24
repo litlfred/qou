@@ -12,7 +12,7 @@ Authoritative source: `content/quantum-observable-universe/lean/QOU/Representati
 
 ## References
 
-- [pawlowski-leitner-rep] (in content/schema/references.ts; exact title pending bib-human-review)
+- [leitnerpawloski2004] arXiv:math/0409565 — "Unital Gröbner Bases over Arbitrary Commutative Ground Rings" (Leitner & Pawloski); the single Pawloski–Leitner paper
 - [manuscript] §1, Proposition: Inner product on intertwiner spaces
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
@@ -39,12 +39,12 @@ structure PawLeiInnerProduct where
   /-- The norm-squared of each basis vector. -/
   normSq : Fin num_basis → R_q
   /-- All norms are positive. -/
-  -- Ref: [pawlowski-leitner-rep] PL inner product / SU(2) intertwiner basis (title pending bib-human-review)
+  -- Ref: [leitnerpawloski2004] PL inner product / SU(2) intertwiner basis (arXiv:math/0409565, Unital Gröbner Bases)
   -- normSq_pos : ∀ i, normSq i > 0  -- (archimedean; not meaningful over R_q)
 
 /-- Positive-definiteness: the PL inner product ⟨φ, φ⟩ > 0
     for any nonzero intertwiner φ (follows from normSq_pos). -/
--- Ref: [leitnerpawloski2004] Leitner & Pawloski, "On the morphisms of non-commutative formal groups," arXiv:math/0409565 — DIFFERENT from the "Unital Gröbner Bases" paper (see bib-verifications)
+-- Ref: [leitnerpawloski2004] Leitner & Pawloski, "Unital Gröbner Bases over Arbitrary Commutative Ground Rings," arXiv:math/0409565
 theorem pawLei_pos_def (ip : PawLeiInnerProduct)
     (i : Fin ip.num_basis) : ip.normSq i > 0 :=
   ip.normSq_pos i
