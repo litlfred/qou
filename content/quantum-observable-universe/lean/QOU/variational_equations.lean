@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.variational_equations
 
@@ -105,6 +107,6 @@ theorem variational_equations [ctx : VariationalEquationsContext] :
     ctx.sub ctx.R_int ctx.R_int_trace_half = ctx.T_q ∧
     ctx.YM_LHS = ctx.J_psi ∧
     ctx.D_psi = ctx.zero_A :=
-  sorry
+  ⟨ctx.claim_i_categorical_einstein, ctx.claim_ii_categorical_yang_mills, ctx.claim_iii_categorical_transport⟩
 
 end QOU
