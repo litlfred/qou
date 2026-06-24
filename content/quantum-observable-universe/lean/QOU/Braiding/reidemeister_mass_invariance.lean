@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Braiding.reidemeister_mass_invariance
 
@@ -21,7 +23,9 @@ class ReidemeisterMassInvarianceContext where
   /-- Knot mass `𝔪(K)`. -/
   mass : CategoricalObj → ℝ
   /-- The three Reidemeister moves R-I, R-II, R-III applied to a knot. -/
-  R_I R_II R_III : CategoricalObj → CategoricalObj
+  R_I : CategoricalObj → CategoricalObj
+  R_II : CategoricalObj → CategoricalObj
+  R_III : CategoricalObj → CategoricalObj
   /-- Manuscript identity: mass is invariant under all three
       Reidemeister moves. -/
   claim_reidemeister_mass_invariance : ∀ K : CategoricalObj,

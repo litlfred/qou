@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Braiding.fermion_boson_knot_link
 
@@ -29,7 +31,8 @@ class FermionBosonKnotLinkContext where
   claim_link_iff_even : ∀ n : ℕ, 1 ≤ n → (is_link n ↔ Even n)
   /-- Predicate: `T(2, n)` corresponds to a fermion (knot)
       or boson (link) under fermion–boson decomposition. -/
-  is_fermion is_boson : ℕ → Prop
+  is_fermion : ℕ → Prop
+  is_boson : ℕ → Prop
   /-- Manuscript claim: the knot–link decomposition of `T(2, n)`
       coincides with the fermion–boson decomposition. -/
   claim_fermion_boson_knot_link : ∀ n : ℕ, 1 ≤ n →
