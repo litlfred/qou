@@ -1,3 +1,4 @@
+import Mathlib
 import QOU.Shared.SobolevHkRegularity
 
 /-!
@@ -70,6 +71,6 @@ theorem core_levi_form [ctx : CoreLeviFormContext] :
     0 < ctx.lambda_min ∧
     ctx.hom_dim_at_p = 0 ∧
     ctx.integral_submfd_dim < 2 :=
-  sorry
+  ⟨ctx.impl_core_aspect_ratio ctx.levi_form_active, ctx.impl_levi_form_condition ctx.levi_form_active, ctx.impl_contact_structure_remains ctx.levi_form_active, ctx.impl_observability_axiom_holds ctx.levi_form_active, ctx.impl_no_integral_submanifold ctx.levi_form_active⟩
 
 end QOU.FluidDynamics
