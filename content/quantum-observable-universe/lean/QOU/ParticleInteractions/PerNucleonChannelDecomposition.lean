@@ -1,3 +1,4 @@
+import Mathlib
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Data.Real.Basic
 
@@ -53,6 +54,6 @@ of $H_3(q)$.
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts
 theorem PerNucleonChannelDecomposition [ctx : PerNucleonChannelDecompositionContext] :
     ctx.M = (Finset.univ.prod fun m : Fin ctx.A => ctx.M_m m) :=
-  sorry
+  ctx.h_M.trans ctx.h_prod.symm
 
 end QOU.ParticleInteractions
