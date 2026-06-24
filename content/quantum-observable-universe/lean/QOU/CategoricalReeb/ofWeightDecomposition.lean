@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.CategoricalReeb.ofWeightDecomposition
 
@@ -6,7 +8,6 @@
 
 The full Lean statement is pending; this stub exists so the
 `lean.ref` URI `qou:QOU.CategoricalReeb.ofWeightDecomposition` resolves to a real declaration in the `qou`
-Lake package.
 -/
 
 namespace QOU.CategoricalReeb
@@ -57,6 +58,6 @@ $(\xi, \varTheta_A)$ on $A$ satisfying:
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/categorical-reeb-exists.ts
 theorem ofWeightDecomposition [ctx : OfWeightDecompositionContext] :
     ∀ x : ctx.CategoricalObj, ctx.Θ_A (ctx.ξ x) = 1 :=
-  sorry
+  ctx.claim_ofWeightDecomposition
 
 end QOU.CategoricalReeb
