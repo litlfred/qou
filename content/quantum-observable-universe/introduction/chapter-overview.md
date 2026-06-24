@@ -53,9 +53,9 @@ categorical action
 
 $$
 \mathfrak{S}_q
-= \underbrace{\mathrm{tr}\bigl(q \cdot R_{\int}\bigr)}_{\text{gravity}} \;+\;
-  \underbrace{\textstyle\int_A \!\circ \mathrm{tr}_A\bigl( F_\nabla \wedge_q \star_q F_\nabla \bigr)}_{\text{gauge}} \;+\;
-  \underbrace{\textstyle\int_A\!\bigl(\psi^{\ast} \cdot \mathcal{D}_\nabla\psi\bigr)}_{\text{matter}},
+= \underbrace{\textstyle\int_A \mathrm{tr}_A\bigl(q \cdot R_{\int}\bigr)}_{\text{gravity}} \;+\;
+  \underbrace{\textstyle\int_A \mathrm{tr}_A\bigl( F_\nabla \wedge_q \star_q F_\nabla \bigr)}_{\text{gauge}} \;+\;
+  \underbrace{\textstyle\int_A \mathrm{tr}_A\bigl(\psi^{\ast} \otimes \mathcal{D}_\nabla\psi\bigr)}_{\text{matter}},
 $$
 
 from which quantum versions of the Einstein, Yang–Mills, and Dirac
