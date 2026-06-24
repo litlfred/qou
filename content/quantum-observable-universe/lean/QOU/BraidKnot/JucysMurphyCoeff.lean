@@ -75,4 +75,18 @@ theorem coeff_one_sq_sum_single_involution_indexed {G ι : Type*} [Group G] [Dec
   rw [hsum, coeff_one_sq_sum_single_involution (t.image f) hinv,
     Finset.card_image_of_injOn hf]
 
+/-- **Jucys–Murphy building block.** For any finite `t ⊆ Fin n`, the JM-style sum
+`Σ_{i∈t} (i k)` (transpositions all sharing the strand `k`) has squared identity coefficient
+`|t|`. The map `i ↦ (i k)` is globally injective (`(i k)` sends `k ↦ i`, so it determines `i`)
+and each `(i k)` is an involution, so the indexed lemma applies. With `t = {i : i < k}` this is
+`coeff_1(X_k²) = #{i < k} = k`; summing over `k` gives `coeff_1(Σ_k X_k²) = \binom{n}{2}`. -/
+theorem jm_swap_sq_coeff_one {n : ℕ} (k : Fin n) (t : Finset (Fin n)) :
+    ((∑ i ∈ t, single (Equiv.swap i k) (1 : R)) ^ 2) (1 : Equiv.Perm (Fin n))
+      = (t.card : R) := by
+  apply coeff_one_sq_sum_single_involution_indexed
+  · intro i _ j _ h
+    have h2 := congrArg (fun σ : Equiv.Perm (Fin n) => σ k) h
+    simpa only [Equiv.swap_apply_right] using h2
+  · intro i _; exact Equiv.swap_mul_self i k
+
 end QOU.BraidKnot.JucysMurphyCoeff
