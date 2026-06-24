@@ -129,6 +129,6 @@ theorem torus_knot_shell_binding [ctx : TorusKnotShellBindingContext] :
      ctx.magic_numbers 2 = 20 ∧ ctx.magic_numbers 3 = 28 ∧
      ctx.magic_numbers 4 = 50 ∧ ctx.magic_numbers 5 = 82 ∧
      ctx.magic_numbers 6 = 126) :=
-  sorry
+  ⟨ctx.claim_i_intershell_operator, ctx.claim_ii_chebyshev_recurrence, ctx.claim_iii_magic_numbers⟩
 
 end QOU.Archimedean
