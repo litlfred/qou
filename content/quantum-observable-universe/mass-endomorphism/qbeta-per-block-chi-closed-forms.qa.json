@@ -1371,6 +1371,260 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "qbeta-per-block-chi-closed-forms.md:151 '**Sorry tally: zero.** All theorems are sorry-free' + :156 'The three originally-deferred sorries … were each subsequently discharged'. The §0a sibling-first resolution of lean.ref qou:QOU.BraidKnot.chi_block_antipode_pairing lands on the sibling qbeta-per-block-chi-closed-forms.lean (defines chi_block_antipode_pairing @122), whose line 329 is a bare tactic-position `sorry` (theorem delta_tau_M_surrogate_taylor_coeff_2). The 'Sorry tally: zero' is literally false against the file the ref resolves to.",
+        "rebuttal": "surviving — §0a candidate-1 sibling has the sorry @329; the library twin lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean IS sorry-free (line-329 sorry replaced by a full 2nd-derivative HasDerivAt proof + linarith) but §0a checks sibling BEFORE library, so it does not save the resolved ref; diff confirms divergence; no corpus path reconciles the prose with the live sibling sorry.",
+        "evidence": [
+          {
+            "text": "qbeta-per-block-chi-closed-forms.lean:329"
+          },
+          {
+            "text": "qbeta-per-block-chi-closed-forms.md:151"
+          },
+          {
+            "text": "qbeta-per-block-chi-closed-forms.md:156"
+          },
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean (sorry-free twin, bypassed)"
+          }
+        ],
+        "severity": "major",
+        "result": "fail",
+        "field_hash": {
+          "md": "74210ffeacbe",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "md:96 'The Lean theorem delta_tau_M_surrogate_eq_sum discharges this identity sorry-free via field_simp; ring' is true, but the global summary :151 'Sorry tally: zero' is false: theorem delta_tau_M_surrogate_taylor_coeff_2 (lean:320-329) concludes `deriv (deriv delta_tau_M_surrogate) 1 / 2 = 5/6` with body `sorry`. A reader trusting the 'closed-form + sorry-free' labels is misled about the resolved sibling's formalization state.",
+        "rebuttal": "surviving — the count claim is falsifiable and false against the sibling; grep shows exactly one tactic sorry (line 329) plus comment-only 'sorry-free' status strings. The twin's fix is real but unreachable under sibling-first resolution.",
+        "evidence": [
+          {
+            "text": "qbeta-per-block-chi-closed-forms.md:151"
+          },
+          {
+            "text": "qbeta-per-block-chi-closed-forms.lean:320"
+          },
+          {
+            "text": "qbeta-per-block-chi-closed-forms.lean:329"
+          }
+        ],
+        "severity": "major",
+        "result": "fail",
+        "field_hash": {
+          "md": "74210ffeacbe",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "md:45-57 + lean:26-34 assert the canonical Δτ_M 'is a rational function of √q, NOT of q alone … Proving its sum form requires square-root handling beyond ring … out of scope / open.' docs/audits/2026-06-13-deep-audit-qbeta-symbolic-trace.md:12-13 falsifies this: 1-D sign characters are exact integers + unnormalized q-dims are pure rational polynomials, so 'the entire trace difference is a pure rational function of q' and the √q problem is 'an artifact of forcing into the Jones z-parameterization'. The 'what is open' narrative is stale.",
+        "rebuttal": "partial — does NOT touch the three χ_λ closed forms (correct + witnessed); impugns only the .md's downstream 'Δτ_M open / needs √q' scope claim. The audit §4 records the item as not-yet-reconciled ('invalidate the .qa.json once the exact rational formulation is committed') — a documented open re-scope, not a refutation of this proposition's stated results.",
+        "evidence": [
+          {
+            "text": "qbeta-per-block-chi-closed-forms.md:45"
+          },
+          {
+            "text": "docs/audits/2026-06-13-deep-audit-qbeta-symbolic-trace.md:12"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "74210ffeacbe",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "qa.json proof-no-bare-sorries=pass against source_hashes.lean 58ad5eee5eed, but the live sibling hashes to d0a02ca00bd4 — the sidecar audit was run on a stale Lean version, so its PASS does not certify the current file.",
+        "rebuttal": "rebutted — staleness confirmed, but it does not survive as an independent defect: the fresher agent rows (2026-06-22, sha b4ea04) in the SAME sidecar correctly FAIL (proof-narrative-lean-equiv 'Lean uses a sorry stub'; proof-statement-integrity 'contains sorryAx'). The QA system already caught the divergence; the surviving objection is the narrative one. The witness is fresh (2026-05-31, allPassed) and matches the χ forms exactly.",
+        "evidence": [
+          {
+            "text": "qbeta-per-block-chi-closed-forms.qa.json:13"
+          },
+          {
+            "text": "qbeta-per-block-chi-closed-forms.qa.json:1141"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "74210ffeacbe",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "C1 trap: is the line-329 sorry hiding behind a :True / 0=0 / Nat.zero_le / §3b-cond rule-5 self-assuming projection?",
+        "rebuttal": "rebutted — the sorry is HONEST: theorem delta_tau_M_surrogate_taylor_coeff_2 states the real proposition deriv(deriv delta_tau_M_surrogate) 1 / 2 = 5/6 (a genuine order-2 Taylor coeff), carries -- Ref: [manuscript] per §1, and chooses a cited sorry over a :True dodge. The CanonicalMarkovWeightsH3 class is a non-degenerate §3b-cond axiomatisation. proof-no-trivial-true + proof-no-self-assuming-projection PASS correctly. The defect is the label overclaim, not vacuity.",
+        "evidence": [
+          {
+            "text": "qbeta-per-block-chi-closed-forms.lean:319-320"
+          },
+          {
+            "text": "qbeta-per-block-chi-closed-forms.lean:400"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "74210ffeacbe",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "are the per-block χ closed forms a fitted DOF? the .md introduces surrogate y_lambda_surrogate + an order-2 coefficient 5/6.",
+        "rebuttal": "rebutted — the three χ_λ are derived from Hoefsmit seminormal H_3(q) matrices (cites hoefsmit1974; witness data/paper_closed_forms reproduces them character-for-character), no free parameter. The surrogate y_λ are repeatedly flagged 'NOT canonical / NEAR-MATCH diagnostic' (md:53, lean:188-194), and the downstream c_3 is correctly TIERED NEAR-MATCH per 1ppq-qbeta.md. No hidden DOF laundered into a canonical claim.",
+        "evidence": [
+          {
+            "text": "qbeta-per-block-chi-closed-forms.ts:10"
+          },
+          {
+            "text": "computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "74210ffeacbe",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "qa.json:835 bib-cite-resolves=fail (critical) — '\\cite{hoefsmit1974}/-- Ref: [hoefsmit1974] does not resolve in references.ts'. The proposition's sole citation is reported unresolved against the bibliography source of truth.",
+        "rebuttal": "partial — flagged by the sidecar's own checker as a live critical fail, but a bibliography-registration defect (key missing/mismatched), not a content misuse (Hoefsmit seminormal matrices ARE the correct provenance for H_3 characters). Rides alongside the primary objection; fix in the same pass. Could not independently confirm vs references.ts (miga relocated the bib pipeline to folio-assistant); deferring to the checker.",
+        "evidence": [
+          {
+            "text": "qbeta-per-block-chi-closed-forms.qa.json:835"
+          },
+          {
+            "text": "qbeta-per-block-chi-closed-forms.ts:10"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "74210ffeacbe",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "open-objection",
+        "referee_argument": "The proposition's mathematical core is sound — the three per-block χ_λ(Δ_{T_β}) closed forms verify exactly (vanish at q=1, antipode χ_(1,1,1)=q⁻⁴·χ_(3), witness matches character-for-character, ε¹ coeffs {-2,-1,-2}) — and the C1 'sorry' flag is NOT the usual false positive: the sorry is honest and cited. The surviving objection is a §0a Lean-narrative divergence: lean.ref qou:QOU.BraidKnot.chi_block_antipode_pairing resolves SIBLING-FIRST to mass-endomorphism/qbeta-per-block-chi-closed-forms.lean, which carries a live tactic sorry at line 329 (delta_tau_M_surrogate_taylor_coeff_2), while the .md asserts 'Sorry tally: zero. All theorems are sorry-free' (:151) and 'the three originally-deferred sorries were each subsequently discharged' (:156). The completed sorry-free twin exists in lean/QOU/BraidKnot/ but sibling-first resolution never reaches it, and the sidecar's reassuring proof-no-bare-sorries PASS is stale (58ad5eee5eed vs live d0a02ca00bd4) — the fresher agent rows correctly FAIL. A NEW sub-pattern: a stale sibling shadowing its own completed library twin. Fix is mechanical (sync sibling↔twin or soften the 'Sorry tally: zero' prose), but as the branch stands the label-vs-Lean contradiction is real and live.",
+        "result": "fail",
+        "field_hash": {
+          "md": "74210ffeacbe",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"
