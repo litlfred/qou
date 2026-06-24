@@ -1340,7 +1340,144 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8f1317cb7d6d",
+          "ts": "5dc46fea297b",
+          "lean": "5b5b61c934b5"
+        },
+        "result": "fail",
+        "scope": "structural",
+        "ruling": "surviving",
+        "referee_argument": "probe-wedderburn-weight-scheme.witness.json n=3 (2,1): scheme_A_plancherel:0.6607, scheme_B_wenzl:0.2809, ratio_B_over_A:0.425; md:48 'y_\u03bb=\u1ef9_\u03bb \u2014 verified symbolically for \u03bb=(2,2) and (3,2,1)'.",
+        "rebuttal": "partial\u2192survived \u2014 two cited witnesses use incompatible y_\u03bb normalizations; the self-conjugate identity holds only under the tautological P1.3a definition while the actual Markov y_(2,1)\u2260\u1ef9_(2,1). The block must state which Markov normalization (z_M) makes the identity true, else the bridge is circular.",
+        "evidence": [
+          {
+            "text": "probe-wedderburn-weight-scheme.witness.json (n=3 (2,1)); wedderburn-weight-canonical.md:48"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+        "severity": "major"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8f1317cb7d6d",
+          "ts": "5dc46fea297b",
+          "lean": "5b5b61c934b5"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": ".md:59,170 link probe-wedderburn-weight-scheme.witness.json in computations/ but the file is in _deprecated/probes/; cited bw_wenzl_shadow_equivalence.py is in computations/_deprecated/; .ts blob URLs point to a transient feature branch.",
+        "rebuttal": "none \u2014 files exist only under _deprecated/; status:'verified' overstates reproducibility on main; links resolve to a transient branch masking deprecation.",
+        "evidence": [
+          {
+            "text": "wedderburn-weight-canonical.md:59,170"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+        "severity": "major"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8f1317cb7d6d",
+          "ts": "5dc46fea297b",
+          "lean": "5b5b61c934b5"
+        },
+        "result": "pass",
+        "scope": "structural",
+        "ruling": "rebutted",
+        "referee_argument": "\u1ef9_\u03bb=\u1ef9_\u03bb' for conjugate pairs (n=3 (3) and (1,1,1) both 0.1634), so \u1ef9 cannot carry chirality.",
+        "rebuttal": "rebutted \u2014 block never claims \u1ef9 is chiral; it says off-stratum y_\u03bb is the chiral object via Wenzl. \u1ef9_\u03bb=dim_q^2/[n]! and 'self-conjugate at n=3 is only (2,1)' are correct.",
+        "evidence": [
+          {
+            "text": "probe-wedderburn-weight-scheme.witness.json (n=3 (3),(1,1,1))"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8f1317cb7d6d",
+          "ts": "5dc46fea297b",
+          "lean": "5b5b61c934b5"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "lean:72-117 class WedderburnWeightCanonical with beta_eq/C_eq/y_eq_self_conjugate fields \u2014 identities are class axioms, not derived.",
+        "rebuttal": "rebutted per \u00a73b \u2014 honest class-axiomatization; beta_over_C is genuinely derived (field_simp;ring), not :True. But the class ASSERTS the disputed self-conjugate identity as a field, so Lean does not independently corroborate finding 1.",
+        "evidence": [
+          {
+            "text": "wedderburn-weight-canonical.lean:72-117"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8f1317cb7d6d",
+          "ts": "5dc46fea297b",
+          "lean": "5b5b61c934b5"
+        },
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The proposition's central claim 'y_\u03bb = \u1ef9_\u03bb exactly when self-conjugate (\u03ba_\u03bb=0)' is contradicted by the very witness it cites: at n=3 the only self-conjugate partition is (2,1), where the probe records scheme_A (Plancherel \u1ef9)=0.6607 vs scheme_B (Wenzl y)=0.2809, ratio 0.425 \u2014 i.e. y_(2,1)/\u1ef9_(2,1)\u22480.43, NOT 1; the identity holds only under a tautological P1.3a definition of y_\u03bb, making the self-conjugate bridge circular. (Same conflation the wave-3 mba-step05 audit flagged; the canonical block does not resolve it.)",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:17.994Z"
+  "updated_at": "2026-06-24T11:19:38Z"
 }
