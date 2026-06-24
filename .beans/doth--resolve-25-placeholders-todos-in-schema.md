@@ -37,3 +37,12 @@ author R. J. Marsh). leitnerpawloski2004's fabricated title fixed to "Unital
 Gröbner Bases…" (corpus + local PDF verified); pawlowski-leitner-rep kept flagged
 (PDF-verified NOT math/0409565). 9 markers remain (off-sandbox DOI resolution /
 author input). See docs/audits/2026-06-23-bibliography-doi-verification-doth.md.
+
+## Update (2026-06-24) — pawlowski-leitner-rep agent-mistake corrected; 9 → 7
+
+Author clarified there is one Pawloski-Leitner paper (the uploads arXiv =
+math/0409565 = leitnerpawloski2004); pawlowski-leitner-rep was a fabricated
+split. Rewired its citations to leitnerpawloski2004, fixed 6 wrong-title inline
+.lean comments, deprecated the stub entry + ledger. wenzl1988b/c kept (real,
+widely-cited; only DOIs wrong). schema actionable 7 remain (off-sandbox DOI /
+author input).

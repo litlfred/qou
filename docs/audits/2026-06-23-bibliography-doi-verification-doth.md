@@ -104,3 +104,31 @@ pre-§F section header comment, and pawlowski-leitner-rep (unidentified source).
 pawlowski-leitner-inner-product.lean + RepresentationTheory.lean mis-cite
 leitnerpawloski2004 for inner-product content that belongs to pawlowski-leitner-rep
 (an author-decision rewire, not silently changed).
+
+## Correction (2026-06-24, author): pawlowski-leitner-rep was an AGENT MISTAKE
+
+The author confirmed there is **one** Pawloski–Leitner paper — the arXiv PDF in
+`uploads/` (math/0409565 = `leitnerpawloski2004` = "Unital Gröbner Bases over
+Arbitrary Commutative Ground Rings"). The separate `pawlowski-leitner-rep`
+"inner-product / SU(2)-intertwiner" entry was a fabricated 2026-05-19
+"wrong-work-split", NOT a real distinct paper. (My §B note had wrongly kept it as
+a "still-unidentified separate work" — corrected here.)
+
+Applied:
+- Rewired all `pawlowski-leitner-rep` `-- Ref:` sites → `leitnerpawloski2004`
+  (pawlowski-leitner-inner-product.lean ×2, RepresentationTheory.lean ×5). The
+  PL inner-product / basis are QOU's OWN constructions citing the PL paper as
+  foundation/namesake (this resolves the long-standing "MISMATCH / author
+  decision pending" flag in bib-qa-verifications.json).
+- Fixed 6 inline `.lean` `-- Ref:` comments that carried the fabricated title
+  "On the morphisms of non-commutative formal groups" + the false "DIFFERENT
+  from Unital Gröbner Bases" claim (QOU inner-product.lean, RepresentationTheory.lean,
+  UGB groebner-basis.lean ×2) → correct title.
+- Deprecated the `pawlowski-leitner-rep` references.ts entry (no-cite stub;
+  title marker removed so it no longer counts as actionable) + bib-qa ledger.
+
+`wenzl1988b/c`: the author was also unsure of these. They ARE widely cited (12+
+braids-and-knots files), so they are real citation needs with agent-guessed
+(wrong/unresolved) DOIs — left flagged for off-sandbox DOI resolution, NOT removed.
+
+schema actionable now **7** (was 22 at session start).

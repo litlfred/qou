@@ -1427,7 +1427,7 @@ export const references: CSLData[] = [
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2004]] },
     URL: "https://arxiv.org/abs/math/0409565",
-    note: "Corrected 2026-06-23 (doth, author-confirmed arXiv id): title was a fabricated 'On the morphisms of non-commutative formal groups' — the actual paper at arXiv:math/0409565v2 is 'Unital Gröbner Bases over Arbitrary Commutative Ground Rings' (verified vs local uploads/0409565v2.pdf + bib-qa-verifications.json; matches the unital-groebner-bases folio paper). Given-name corrected Jan Pawłowski → Robert Pawloski. This is the Gröbner paper; PDF-verified to contain NO inner products / intertwiners — distinct from pawlowski-leitner-rep (the still-unidentified inner-product / SU(2)-intertwiner work). FOLLOW-UP: 6 inline .lean -- Ref comments still carry the old fabricated title; pawlowski-leitner-inner-product.lean + RepresentationTheory.lean mis-cite THIS key for inner-product content that belongs to pawlowski-leitner-rep. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §B.",
+    note: "Corrected 2026-06-23 (doth, author-confirmed arXiv id): title was a fabricated 'On the morphisms of non-commutative formal groups' — the actual paper at arXiv:math/0409565v2 is 'Unital Gröbner Bases over Arbitrary Commutative Ground Rings' (verified vs local uploads/0409565v2.pdf + bib-qa-verifications.json; matches the unital-groebner-bases folio paper). Given-name corrected Jan Pawłowski → Robert Pawloski. This is the Gröbner paper; PDF-verified to contain NO inner products / intertwiners — The agent-fabricated separate pawlowski-leitner-rep entry (a 2026-05-19 wrong-work-split) is DEPRECATED per author 2026-06-24: there is ONE Pawloski-Leitner paper (this one), and its inner-product / intertwiner citation sites (pawlowski-leitner-inner-product.lean, RepresentationTheory.lean) were rewired to this key; inline .lean titles corrected. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §B.",
   }),
 
   // ── Pawlowski-Leitner inner product / rep-theory (NEW 2026-05-19)
@@ -1439,13 +1439,13 @@ export const references: CSLData[] = [
   ref({
     id: "pawlowski-leitner-rep",
     type: "manuscript",
-    title: "TODO: verify exact title — Pawlowski-Leitner inner product / SU(2) intertwiner basis",
+    title: "[DEPRECATED agent-mistake duplicate — the single Pawloski–Leitner paper is leitnerpawloski2004 = arXiv:math/0409565; all citation sites rewired there]",
     author: [
       { family: "Pawloski", given: "Robert" },
       { family: "Leitner", given: "Fred" },
     ],
     issued: { "date-parts": [[2009]] },
-    note: "Still UNVERIFIED (doth 2026-06-23): ruled OUT arXiv:math/0409565 — that id is the Unital Gröbner Bases paper (leitnerpawloski2004), PDF-verified (uploads/0409565v2.pdf) to contain no inner products/intertwiners. This remains a separate, still-unidentified inner-product/SU(2)-intertwiner work; needs the author's source. Cited in QOU for: (1) the 'PL inner product' construction on intertwiner spaces ⟨φ,ψ⟩_PL = tr_Ad(φ† ∘ ψ); (2) the intertwiner-space dimension formula dim = (2j+1)·n!/((n/2+j+1)!·(n/2-j)!). The exact paper id needs research — possibly Pawłowski's PhD thesis or a separate joint follow-up to LP2004. URL/DOI/container-title intentionally TODO until verified.",
+    note: "DEPRECATED (author 2026-06-24): agent-mistake duplicate. The separate inner-product / SU(2)-intertwiner Pawloski-Leitner work does not exist as a distinct paper -- there is one Pawloski-Leitner paper, arXiv:math/0409565 = leitnerpawloski2004 (Unital Gröbner Bases; local uploads/0409565v2.pdf). This entry was a 2026-05-19 wrong-work-split; all citation sites were rewired to leitnerpawloski2004. Retained as a no-cite stub; physically remove in a follow-up cleanup.",
   }),
 
   // ── Bergman 1978 ──────────────────────────────────────────────
