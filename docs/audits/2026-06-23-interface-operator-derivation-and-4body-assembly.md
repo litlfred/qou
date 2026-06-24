@@ -294,4 +294,45 @@ non-product operator (the H₃⁴→H₁₂ 3-body interface, or a chirality-wei
 that breaks the product structure).
 → `interface_factor_enhancing_check_probe.py` · `interface-factor-enhancing-check.witness.json`
 
+## Non-product 3-body frontier — landscape (what's left, and what's blocked)
+
+With the obstruction + enhancing-escape both proved, the search for an *attractive*
+3-body operator reduces to a small, sharply-bounded set. Three sign-flip candidates
+were floated for the joint-trace cluster `c₃`; the obstruction now decides two of them:
+
+| candidate operator | status | sign |
+|---|---|---|
+| **plain signed trace** `∑ y_λ χ_λ` | factorises (`τ_vac·∏f`) → **proved** `productModel_3body_nonpos` | `< 0` (dead) |
+| **`|χ|` joint trace** (production) | measured `three_body_joint_trace_a3` | `c₃ = −1.77` (dead as-is) |
+| **chirality-weighted** `∑ y_λ sgn(w₀^{S_{λ'}}) χ_λ` | **untested** — breaks the product structure, so escapes the obstruction | unknown |
+
+So the *one* remaining sign-flip lever is the **chirality-weighted joint cluster**:
+the `sgn(w₀)` weight is mixed-sign (the Δ_λ chirality), so the cluster is no longer a
+positive product and `productModel_3body_nonpos` does **not** apply to it. It is the
+only candidate that could be `> 0`.
+
+**Blocker.** Computing its *connected cluster* needs the per-partition signed χ at H₉
+for the partial-interface words (`g∅, gₐ, g_b, g_ab`), i.e. the Rust kernel
+`pyhecke_native.chi_q_atomic_all_partitions` — not built in this environment (no wheel;
+needs a Rust toolchain + maturin). The cached `atom-chi-rust-*` witnesses give only the
+*full-atom* signed χ, not the partial-interface traces.
+
+**Other non-product routes (all gated or sibling-owned):**
+- **H₃⁴→H₁₂ A=4 interface operator** — topological support correct (LR fusion recovers
+  the dominant 2-row partitions), but the scalar `ρ_F` extraction is open and Rust-gated
+  (`2026-06-01-he4-multi-nucleon-interface-research-state.md`).
+- **Operator-cumulant cooperative binding** (`2026-06-17` workplan) — gated: realizing
+  `Δ_coop` needs Borromean LP-selection, which `2026-06-17-...two-remaining-directions-closed.md`
+  proved no continuous variational principle achieves without a fit.
+- **q-Reeb phase `|Δθ_λ|`** (sibling #2612) — a non-product, non-collapsed per-λ object
+  that reportedly closes A=3 to ~2%; diagnostic infrastructure exists but binding-wiring
+  is open. Worth checking whether `|Δθ_λ|` is the cooperative object (and whether it is
+  attractive) — but it is sibling-owned.
+
+**Net frontier statement.** The binding scale is matched (~1.5 MeV); the sign is the
+lever; the obstruction proves it cannot come from any product/pairwise factor; the one
+unblocked-in-principle candidate (chirality-weighted joint cluster) is Rust-kernel-gated
+in this environment. No attractive 3-body operator is computable here without first
+building `pyhecke_native`.
+
 → `binding_triangle_3body_cluster_probe.py` (corrected) · `binding-triangle-3body-cluster.witness.json`
