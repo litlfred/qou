@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.QuantumObservableUniverse.fai_projector_coadjoint_orbit
 
@@ -50,6 +52,6 @@ coadjoint orbit in $\mathrm{Ad}(A)$.
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fai-projector-coadjoint-orbit.ts
 theorem fai_projector_coadjoint_orbit [ctx : FaiProjectorCoadjointOrbitContext] :
     ∀ v : ctx.V, ctx.twice_sigma_sq v = ctx.id_V v :=
-  sorry
+  ctx.twice_sigma_eq_id_of_projector ctx.ρ_proj
 
 end QOU.QuantumObservableUniverse
