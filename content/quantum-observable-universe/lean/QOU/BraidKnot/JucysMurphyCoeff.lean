@@ -89,4 +89,33 @@ theorem jm_swap_sq_coeff_one {n : ℕ} (k : Fin n) (t : Finset (Fin n)) :
     simpa only [Equiv.swap_apply_right] using h2
   · intro i _; exact Equiv.swap_mul_self i k
 
+/-- **Identity (B), ℂ-free computational core, fully discharged.** The Jucys–Murphy central
+element `C₂ = Σ_k X_k²` with `X_k = Σ_{i<k}(i k)` has identity coefficient `\binom{n}{2}` in
+`R[S_n] = MonoidAlgebra R (Perm (Fin n))`, over **any** `CommRing R` — no ℂ, no representation
+theory, no `dim(λ)`/SYT/RSK. Per-`k`: `coeff_1(X_k²) = #{i<k} = k` (`jm_swap_sq_coeff_one` +
+`Finset.Iio` card); summing: `Σ_{k} k = \binom{n}{2}` (Gauss). This is the exact `\binom{n}{2}`
+of `IdentityIContentDecomposition.jm_identity_coeff_two` on main, now realised as the
+group-algebra coefficient itself. The remaining bridge to `Σ_λ dim(λ)²·Σ_c c(c)²` is the
+standard regular-rep/Wedderburn step over **ℚ** (S_n rational), not ℂ. -/
+theorem centralC2_coeff_one (n : ℕ) :
+    ((∑ k : Fin n, (∑ i ∈ Finset.univ.filter (fun i : Fin n => i.val < k.val),
+        single (Equiv.swap i k) (1 : R)) ^ 2)) (1 : Equiv.Perm (Fin n)) = (n.choose 2 : R) := by
+  rw [Finsupp.finset_sum_apply]
+  have e1 : ∀ k : Fin n,
+      ((∑ i ∈ Finset.univ.filter (fun i : Fin n => i.val < k.val),
+          single (Equiv.swap i k) (1 : R)) ^ 2) (1 : Equiv.Perm (Fin n)) = (k.val : R) := by
+    intro k
+    rw [jm_swap_sq_coeff_one]
+    congr 1
+    have h : (Finset.univ.filter (fun i : Fin n => i.val < k.val)) = Finset.Iio k := by
+      ext i
+      simp only [Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_Iio]
+      exact Iff.rfl
+    rw [h, Fin.card_Iio]
+  simp_rw [e1]
+  rw [Fin.sum_univ_eq_sum_range (fun i => (i : R)) n,
+    show (n.choose 2 : R) = ((∑ i ∈ Finset.range n, i : ℕ) : R) by
+      rw [Finset.sum_range_id, Nat.choose_two_right],
+    Nat.cast_sum]
+
 end QOU.BraidKnot.JucysMurphyCoeff
