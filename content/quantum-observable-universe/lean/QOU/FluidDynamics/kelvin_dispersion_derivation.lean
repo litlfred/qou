@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.FluidDynamics.kelvin_dispersion_derivation
 
@@ -27,7 +29,7 @@ class KelvinDispersionDerivationContext where
   /-- Vortex filament length `L_q : ℝ`. -/
   L_q : ℝ
   /-- The discrete eigenvalue `λ_k^{(q)} : ℕ → ℝ`. -/
-  λ : ℕ → ℝ
+  «λ» : ℕ → ℝ
   /-- The `q`-integer `[k]_q : ℕ → ℝ`. -/
   q_int : ℕ → ℝ
   /-- Proposition: the dispersion relation is derived. -/
@@ -37,7 +39,7 @@ class KelvinDispersionDerivationContext where
   /-- Manuscript dispersion identity:
       `λ_k^{(q)} = [k]_q² · ℏ_q / L_q²` for every level `k`. -/
   impl_dispersion_identity :
-    dispersion_derived → ∀ k : ℕ, λ k = q_int k ^ 2 * hbar_q / L_q ^ 2
+    dispersion_derived → ∀ k : ℕ, «λ» k = q_int k ^ 2 * hbar_q / L_q ^ 2
 
 /-- **Content statement** (from manuscript):
 
@@ -52,7 +54,7 @@ subsection derives this from first principles.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.ts
 theorem kelvin_dispersion_derivation [ctx : KelvinDispersionDerivationContext] :
-    ∀ k : ℕ, ctx.λ k = ctx.q_int k ^ 2 * ctx.hbar_q / ctx.L_q ^ 2 :=
-  sorry
+    ∀ k : ℕ, ctx.«λ» k = ctx.q_int k ^ 2 * ctx.hbar_q / ctx.L_q ^ 2 :=
+  ctx.impl_dispersion_identity ctx.dispersion_active
 
 end QOU.FluidDynamics
