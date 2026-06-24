@@ -148,7 +148,8 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
     #   and under-binds heavy ones — it is the linear-in-A line, the complement
     #   of the SATURATING B_lin below. Not a per-nucleus categorical derivation
     #   beyond ⁴He; flagged as a reference extrapolation in the legend.
-    B_magic = 2.0 * me * A * g8
+    #   A=1 (lone nucleon) has no binding → None.
+    B_magic = 2.0 * me * A * g8 if A >= 2 else None
     # ---- colour-weighting decomposition of the factorized q-CLT ------------
     #   B_qCLT_fac = isospin-symmetric baseline (every bond = the deuteron p-n
     #   bond) + the p↔n chirality correction. The baseline IS the uniform
@@ -175,7 +176,9 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
     b_pp, b_pn, b_nn = (alpha * Lbond["pp"], alpha * Lbond["pn"],
                         alpha * Lbond["nn"])
     pn_term = b_pn if (Z >= 1 and N >= 1) else 0.0
-    B_sym = (Z - 1) * b_pp + pn_term + (N - 1) * b_nn
+    # max(·,0): a single-nucleon / zero-count species has no same-species bonds
+    # (Z−1 or N−1 would otherwise go negative and fabricate a spurious bond).
+    B_sym = max(Z - 1, 0) * b_pp + pn_term + max(N - 1, 0) * b_nn
     m_sym_atom = B_sym + m_sym_free               # B_sym = m_sym_atom − m_sym_free
     # ---- B_lin = α·s, the LINEAR/SATURATING leading term of B_sym. The bond
     #   suppression s = 1 − tr_atom/tr_free and B_sym = α·L = −α·ln(1−s), so
@@ -338,6 +341,13 @@ def main(argv=None) -> int:
         sel = GROUPS[args.group]
     else:
         sel = GROUPS["low"]
+
+    # Prepend the single-nucleon reference rows (proton, neutron): A=1, no
+    # binding, so they display the bare nucleon-level m_p/m_n gap (canonical
+    # m_p,can ≈ 966 vs measured 938). Deduped against the selection.
+    present = {(Z, N) for (_, Z, N) in sel}
+    sel = [nuc for nuc in (("p", 1, 0), ("n", 0, 1))
+           if (nuc[1], nuc[2]) not in present] + sel
 
     me, q0, E0, g8 = _constants()
     Lbond = _bond_type_L()
