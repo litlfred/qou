@@ -15,6 +15,7 @@ export default chapter({
       label: "sec:ugb-s-poly-cancel",
       blocks: [
         "s-polynomial-decomposition",
+        "s-polynomial-decomposition-proof",
       ],
     }),
     section({
@@ -22,6 +23,7 @@ export default chapter({
       label: "sec:ugb-buchberger",
       blocks: [
         "buchberger-theorem",
+        "buchberger-theorem-proof",
       ],
     }),
     section({
@@ -36,6 +38,7 @@ export default chapter({
       label: "sec:ugb-pbw",
       blocks: [
         "pbw-corollary",
+        "pbw-corollary-proof",
       ],
     }),
   ],
