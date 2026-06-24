@@ -8,7 +8,8 @@ bar-even seed $c_2 = -1$) together with the $\hbar_q$-parity are proved
 $\prod_{k \geq 2}\bigl(1 + c_k^{(\lambda)} u_\lambda^k\bigr)$ is rigorous **modulo**
 the substrate-derivation of the kernel $R(q,\xi)$ that fixes $c_k$ for $k \geq 3$
 — the open $s5$–$so_3$ keystone. The higher rungs are therefore conjectural
-pending that kernel; nothing beyond $N=2$ is wired to production.
+pending that kernel; only the $N \leq 2$ truncation enters the
+calibrated mass evaluation.
 
 For a typed braid $\beta$ and a Hecke irrep $V_\lambda$ of $H_n(q)$, the
 Markov-traced character at single wrap admits the canonical factorisation, in
