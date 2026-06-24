@@ -2,13 +2,14 @@
 
 **Date:** 2026-06-24
 **Branch:** `claude/optimistic-meitner-owwu8n`
-**Status:** complete arm–leg reduction of the per-partition identity (A); the general
-theorem is **Lean-assembled** (`identityA_algebra` + the six reduction lemmas), with
-**five of six reduction lemmas Lean-proved sorry-free** (E/Arm/Cont/Leg1/Leg2 + the
-Young-diagram Fubini swap `cellSum_swap` + the cell-sum framework + foundational
-cell-bound) and only the **single** sorted cross-term (Cross) carried; the per-partition
-statement is **exhaustively machine-verified for every partition through `n = 12`** (271
-partitions); nothing archimedean (`q₀` and the 210 ppb target never appear); no fit.
+**Status:** the per-partition identity (A) `Σ_c h_c² = Σ_c c(c)² + n²` is **fully
+Lean-proved, sorry-free**, for every weakly-decreasing partition.  All **six** reduction
+lemmas (E/Arm/Cont/Leg1/Leg2/Cross) are sorry-free; the assembly
+(`identityA_algebra`) rests only on the Young-diagram Fubini `cellSum_swap`, the Abel
+identity `abel_tri`, the square-of-sum `sq_sum_split`, and elementary Gauss sums.  The
+**Frame–Robinson–Thrall hook-length formula is off the critical path entirely.**
+Independently machine-verified for every partition through `n = 12` (271 partitions);
+nothing archimedean (`q₀` and the 210 ppb target never appear); no fit.
 **Lean:** [`IdentityIContentDecomposition.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/IdentityIContentDecomposition.lean)
 (`identityA_algebra` sorry-free; `partitions` + `identityA_exhaustive_n12` +
 `partitionCounts` sorry-free `native_decide`).
@@ -115,7 +116,7 @@ conjugate column-sums + the cross-term remain carried:
 | **(Cont)** `redCont` — `Σc² = Σarm²−s2+q1+q2` | ✅ sorry-free (`rowSq_reflect`/`two_sum_id`) |
 | **(Leg1)** `redLeg1` — `Σℓ = Σ i·λ_i` | ✅ sorry-free (`cellSum_swap` + reflect + swap-back) |
 | **(Leg2)** `redLeg2` — `Σℓ² = Σ i²·λ_i` | ✅ sorry-free (`cellSum_swap` + `rowSq_reflect` + swap-back) |
-| **(Cross)** `redCross` — `2·Σaℓ = n²−p2−s2−q1` | ⛔ single remaining `sorry` (sorted cross-term) |
+| **(Cross)** `redCross` — `2·Σaℓ = n²−p2−s2−q1` | ✅ sorry-free (`cellSum_swap` + `abel_tri` + `sq_sum_split` + Gauss) |
 
 The **Young-diagram Fubini swap** `cellSum_swap` (sum-over-cells = sum-over-columns,
 via `Finset.sum_comm'` + the two-directional cell↔`colLen` equivalence
@@ -125,32 +126,33 @@ inner column sum (`Σ(colLen_j−1−i) = Σ i`, resp. squared), then swap **bac
 `cellSum (fun i _ => i) = q1` (resp. `i² = q2`).
 
 So the corpus framing *"Identity I needs SYT-dimension / hook-length infrastructure"*
-is now sharpened all the way down: the **hook-length formula is off the critical path
-entirely**, and **five of the six** reduction lemmas (plus the swap, the cell-sum
-framework, and the foundational cell-bound) are machine-checked sorry-free. The genuine
-residual is **one** precisely-characterized finite double-count — `redCross`, the sorted
-cross-term `2·Σarm·leg = n²−p2−s2−q1`. Unlike the legs (which reflect away), it is a true
-pair count: `Σarm·leg = Σ_{i<i′} Σ_{j<λ_{i′}}(λ_i−1−j)` (sorted ⇒ `λ_{i′}≤λ_i` binds the
-inner range), needing a `Finset.range i′` pair-Fubini on top of `cellSum_swap` — still
-self-contained finite combinatorics, **not gated on any absent Mathlib theorem**. The
-Plancherel half **(B)**
+is now refuted outright: the **hook-length formula is off the critical path entirely**,
+and **all six** reduction lemmas (plus the swap, the cell-sum framework, and the
+foundational cell-bound) are machine-checked sorry-free, so the per-partition (A) is
+**fully proved** for every weakly-decreasing partition. The cross-term `redCross` — the
+last and only genuine pair double-count — closes via the chain `cellSum_swap` →
+`abel_tri` (`Σ aᵢ(m−1−i) = Σ_{i′}Σ_{i<i′} aᵢ`) → swap back to the prefix-sum `cellSum`
+→ per-row Gauss collapse (`two_sum_id`) → square-of-sum `sq_sum_split` (with `sz_eq`),
+yielding `2·Σarm·leg = n² − p2 − s2 − q1`. No absent Mathlib theorem was needed
+anywhere. The Plancherel half **(B)**
 (`E_Planch[Σc²] = binom(n,2)`, via `Σ(dim λ)² = n!` + Jucys–Murphy centrality) remains
 the only piece needing genuine `ℂ[S_n]` Wedderburn/JM infrastructure.
 
 ## Verification
 
-- **Lean (sorry-free):** the general theorem `sumSqHooks_eq_sumSqContents_add_sq`
-  (assembled via `identityA_algebra`, modulo the single carried `redCross`);
-  `identityA_algebra`, `hookE`, `redArm`, `redCont`, **`redLeg1`, `redLeg2`**, the
-  Young-diagram Fubini `cellSum_swap` (+ `colLen_le_of_le`/`lt_part_of_lt_colLen`), the
-  cell-sum framework (`list_sum_range`, `cellSum`, linearity, `nested_bridge`,
-  `cellSum_one`, `cellSum_expand`, the two bridges, `cellSum_i_eq_q1`/`cellSum_isq_eq_q2`),
-  the foundational `lt_colLen_of_cell`/`hook_cast`, and the Gauss/reflect helpers
-  (`two_sum_id`/`rowArm`/`rowReflect_lin`/`rowSq_reflect`/`sz_eq`) — all sorry-free;
-  `partitionCounts` (`p(n) = 1,2,3,5,7,11,15,22,30,42,56,77` for `n = 1..12`, enumerator
-  completeness); `identityA_exhaustive_n12` (the per-partition `Σh² = Σc² + n²` for
-  **every partition through `n = 12`**, 271 partitions, `native_decide`). All check via
-  lean-direct (`EXIT 0`).
+- **Lean (fully sorry-free):** the general theorem `sumSqHooks_eq_sumSqContents_add_sq`
+  (`Σh² = Σc² + n²` for every weakly-decreasing partition) and **all six** reduction
+  lemmas `hookE`/`redArm`/`redCont`/`redLeg1`/`redLeg2`/`redCross`; `identityA_algebra`;
+  the Young-diagram Fubini `cellSum_swap` (+ `colLen_le_of_le`/`lt_part_of_lt_colLen`);
+  the Abel identity `abel_tri` and square-of-sum `sq_sum_split`; the cell-sum framework
+  (`list_sum_range`, `cellSum`, linearity, `nested_bridge`, `cellSum_one`,
+  `cellSum_expand`, the two bridges, `cellSum_i_eq_q1`/`cellSum_isq_eq_q2`); the
+  foundational `lt_colLen_of_cell`/`hook_cast`; and the Gauss/reflect helpers
+  (`two_sum_id`/`rowArm`/`rowReflect_lin`/`rowSq_reflect`/`sz_eq`).  `partitionCounts`
+  (`p(n) = 1,2,3,5,7,11,15,22,30,42,56,77` for `n = 1..12`, enumerator completeness);
+  `identityA_exhaustive_n12` (independent `native_decide` check of `Σh² = Σc² + n²` for
+  **every partition through `n = 12`**, 271 partitions). Whole file checks via lean-direct
+  (`EXIT 0`, zero `sorry`, zero `error`).
 - **Python (exact integer, `n = 1..22`, 4507 partitions):** the six sub-identities
   (E)/(Arm)/(Cont)/(Leg1)/(Leg2)/(Cross) and the assembled `Σh² = Σc² + n²` all hold.
 
