@@ -1,12 +1,29 @@
 ---
 # me3r
 title: 'Data-integrity: reconcile three m_e CODATA registries (two truncated)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-06-23T16:10:00Z
-updated_at: 2026-06-23T16:10:00Z
+updated_at: 2026-06-24T18:40:00Z
 ---
+
+## Progress 2026-06-24 (PR #2735) — finding documented; fix REVERTED per owner (owner to apply)
+
+Confirmed the truncation is an **oversight** (both copies' comments cite the full value / claim "values
+match", but the literals are short by 3). A candidate fix (route both to `0.51099895069`) was prepared,
+verified, then **reverted at the owner's request** — the owner will apply the package-constant change
+themselves. **No package source is changed by this branch.** The analysis stands as the rationale:
+
+- Recommended: `qou-substrate constants.py:283` → `0.51099895069`; `qou-mass codata_constants.py:99`
+  → `mp.mpf("0.51099895069")` (acceptance (a); third registry already imports the full value).
+- **Proven low-risk:** `M_P_MEV` hardcoded separately (no cascade); **isolation test** — old vs full
+  package `m_e` gives bit-identical `per_observable_100x_status` output (m_μ pred `105.658375644`) ⇒ the
+  in-repo dashboards read the `computations/substrate` source, not the package copies, so the fix moves
+  **no in-repo number**; only external PyPI consumers are affected. The pyhecke_native dashboards weren't
+  runnable in-sandbox.
+
+Audit `2026-06-24-me3r-m-e-codata-registry-reconcile.md`. Owner closes (§4a).
 
 ## Finding (surfaced 2026-06-23, session nifty-cerf, while triaging bean 46ke)
 
