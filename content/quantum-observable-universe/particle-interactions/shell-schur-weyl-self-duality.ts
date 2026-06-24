@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:shell-schur-weyl-self-duality",
+  proofs: ["prf:shell-schur-weyl-self-duality"],
   title:
     "Schur-Weyl justification of shell-operator self-duality",
   lean: { ref: "qou:QOU.BraidKnot.ShellSchurWeylSelfDuality",

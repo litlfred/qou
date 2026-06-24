@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:q-beta-spectral-bridge",
+  proofs: ["prf:q-beta-spectral-bridge"],
   lean: {
     ref: "qou:QOU.Interactions.q_beta_spectral_bridge",
     validation: "not_checked",

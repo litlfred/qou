@@ -15,12 +15,6 @@ $$
 $h = q - 1$ as $q \to 1$, while the categorical bound $\Delta_q$
 itself vanishes cubically.  Both vanish identically at $q = 1$.*
 
-**Proof.** Direct computation:
-$\Delta_q / \hbar_q^2
-= \tfrac{1}{2}(q - q^{-1})(q-1)^2 \cdot q^2/(q-1)^2
-= \tfrac{1}{2}\,q^2\,(q - q^{-1})
-= \tfrac{1}{2}\,q\,(q^2 - 1)$. $\square$
-
 The identity separates two rates that are easily conflated: the
 archimedean normalisation $1/\hbar_q^2$ in the mass formula buys back
 exactly two of the three vanishing orders of $\Delta_q$, no more.  A

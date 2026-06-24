@@ -126,9 +126,11 @@ export default chapter({
         "h2o-bent-geometry",
         "tetrahedral-hbond-directions",
         "h2o-bond-angle-shift",
+        "h2o-bond-angle-shift-proof",
         "symmetric-block-domain-weight",
         "h2s-angle-s3-braid-holonomy",
         "ice-pauling-residual",
+        "ice-pauling-residual-proof",
       ],
     }),
 

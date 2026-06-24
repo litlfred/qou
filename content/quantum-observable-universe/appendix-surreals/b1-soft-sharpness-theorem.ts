@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:b1-soft-sharpness-theorem",
+  proofs: ["prf:b1-soft-sharpness-theorem"],
   title:
     "Soft sharpness of the keystone B1 is theorem-level — via Borel + polylog non-vanishing",
   lean: {

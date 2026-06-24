@@ -104,6 +104,7 @@ export default chapter({
         "classical-riemann-hypothesis",
         "macroscopic-stability-equivalence",
         "adelic-reeb-restricted-product",
+        "adelic-reeb-restricted-product-proof",
         "adelic-tate-squeeze",
         "outro-braids-and-knots",
       ],

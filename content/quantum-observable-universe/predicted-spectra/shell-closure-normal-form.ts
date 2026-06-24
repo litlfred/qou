@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:shell-closure-normal-form",
+  proofs: ["prf:shell-closure-normal-form"],
   title:
     "Shell closure as symmetric Poincaré distribution in the Hecke normal form",
   tags: [

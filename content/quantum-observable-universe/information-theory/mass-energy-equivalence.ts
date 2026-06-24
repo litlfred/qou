@@ -2,6 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:mass-energy-equivalence",
+  proofs: ["prf:mass-energy-equivalence"],
   title: "Mass--energy equivalence ($E_{\\mathfrak{H}} = \\mathfrak{m}_{\\mathfrak{H}} \\cdot c_q^2$)",
   tags: [
     "mass-energy",

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:adelic-reeb-restricted-product",
+  proofs: ["prf:adelic-reeb-restricted-product"],
   title:
     "Restricted-product structure of the Reeb $\\omega$-order: additivity over places and local--global squeeze",
   lean: {

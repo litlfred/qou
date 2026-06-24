@@ -215,6 +215,7 @@ export default chapter({
         "beta-decay-magic-shells-intro",
         "nitrogen-14-threading",
         "trace-ratio-observable",
+        "trace-ratio-observable-proof",
         "trace-ratio-interpretation",
         // Detangler R3 (2026-05-23): 6-row verification-nuclei
         // trace-ratio table extracted from
@@ -302,6 +303,7 @@ export default chapter({
         "deconfinement-golden-threshold",
         "hopf-diquark",
         "borromean-hopf-energy-crossover",
+        "borromean-hopf-energy-crossover-proof",
         "borromean-hopf-energy-crossover-factor-250",
         "color-superconductivity-borromean",
         "eos-borromean-cfl",

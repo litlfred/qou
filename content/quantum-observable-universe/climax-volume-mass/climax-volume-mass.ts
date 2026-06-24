@@ -27,6 +27,7 @@ export default chapter({
         "mobius-energy-frobenius-kernel-proof",
         "mobius-energy-proof",
         "jones-mobius-diagonal",
+        "jones-mobius-diagonal-proof",
         "non-self-intersection",
         "nsi-q-deformed-kernel",
         "nsi-q-deformed-kernel-proof",

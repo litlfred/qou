@@ -2,6 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:generation-completeness",
+  proofs: ["prf:generation-completeness"],
   title:
     "Generation completeness: all embeddable knots are reachable",
   tags: [

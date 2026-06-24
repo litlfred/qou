@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:h2o-bond-angle-shift",
+  proofs: ["prf:h2o-bond-angle-shift"],
   title: "Bent angle as a quadratic-well shift",
   lean: {
     ref: "qou:QOU.Molecular.bond_angle_shift",

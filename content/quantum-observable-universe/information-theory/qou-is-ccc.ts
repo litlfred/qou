@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:qou-is-ccc",
+  proofs: ["prf:qou-is-ccc"],
   title: "A QOU with aeons is a conformal cyclic cosmology",
   tags: [
     "ccc", "aeon", "conformal-cyclic-cosmology",

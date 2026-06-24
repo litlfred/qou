@@ -11,9 +11,6 @@ single operator under the specialisation $q = 1$ of the Hecke relation
 $(\sigma - q)(\sigma + q^{-1}) = 0$, which at $q = 1$ reads
 $\sigma^2 = 1$.*
 
-**Proof.** From $s^2 = 1$ the element $s$ is invertible with
-$s^{-1} = s$.  Substituting, $(s + s^{-1})/2 = (s + s)/2 = s$. $\square$
-
 At $q \neq 1$ the eigenvalues of a Hecke generator are
 $\{q, -q^{-1}\}$, which are distinct and separate $\sigma$ from
 $\sigma^{-1}$; at $q = 1$ they degenerate to $\mu_2 = \{1, -1\}$ — the

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:borromean-hopf-energy-crossover",
+  proofs: ["prf:borromean-hopf-energy-crossover"],
   title:
     "Energy crossover between Borromean and Hopf-diquark phases",
   tags: [

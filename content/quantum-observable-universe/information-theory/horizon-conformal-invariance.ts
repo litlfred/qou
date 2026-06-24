@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:horizon-conformal-invariance",
+  proofs: ["prf:horizon-conformal-invariance"],
   title: "Conformal invariance at the jet horizon",
   tags: [
     "jet-horizon", "conformal-invariance", "aeon",

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:surreal-rate-calculus",
+  proofs: ["prf:surreal-rate-calculus"],
   title: "Surreal rate calculus for the classical-limit scaling laws",
   lean: {
     ref: "qou:QOU.AlgebraicSubstrate.SurrealRateCalculus",

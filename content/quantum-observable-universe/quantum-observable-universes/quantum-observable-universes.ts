@@ -191,6 +191,7 @@ export default chapter({
         // u1-equivariant-reduction below depends on.
         "commutative-qou",
         "u1-equivariant-reduction",
+        "u1-equivariant-reduction-proof",
       ],
     }),
 

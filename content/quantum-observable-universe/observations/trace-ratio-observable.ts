@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:trace-ratio-observable",
+  proofs: ["prf:trace-ratio-observable"],
   title:
     "The physical observable: ratio of Markov-traced generator volumes",
   tags: [

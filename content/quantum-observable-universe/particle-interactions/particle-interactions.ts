@@ -185,6 +185,7 @@ export default chapter({
         // the spectral-bridge half.
         "transfer-beta-decay-q-beta-spectral-intro",
         "q-beta-spectral-bridge",
+        "q-beta-spectral-bridge-proof",
         "q-beta-spectral-bridge-table-data",
         "q-beta-form-a-n1-symbolic-table-data",
         "silver-ratio-beta-decay-null",
@@ -354,7 +355,9 @@ export default chapter({
       blocks: [
         "lepton-meson-parallel",
         "lepton-meson-torus-knot-dictionary",
+        "lepton-meson-torus-knot-dictionary-proof",
         "c-equals-bar-iff-all-1dim",
+        "c-equals-bar-iff-all-1dim-proof",
       ],
     }),
     section({
@@ -396,6 +399,7 @@ export default chapter({
         "intro-magic-shells",
         "ilp-solution-count-unwrap",
         "shell-schur-weyl-self-duality",
+        "shell-schur-weyl-self-duality-proof",
         "compound-beta-shell-calibration",
         "compound-beta-shell-calibration-table3-data",
         "compound-beta-shell-calibration-table2-data",

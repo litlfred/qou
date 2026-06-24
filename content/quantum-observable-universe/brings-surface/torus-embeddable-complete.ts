@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:torus-embeddable-complete",
+  proofs: ["prf:torus-embeddable-complete"],
   title:
     "Completeness of torus knots embeddable in the Bring's surface",
   tags: [

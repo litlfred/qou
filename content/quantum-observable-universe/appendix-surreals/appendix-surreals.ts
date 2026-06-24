@@ -53,6 +53,7 @@ export default chapter({
           blocks: [
             // Soft-sharpness version of B1 is theorem-level (Borel + Lewin).
             "b1-soft-sharpness-theorem",
+            "b1-soft-sharpness-theorem-proof",
             // B1 at the figure-8 row is theorem (Bloch-Suslin + Murakami-Murakami).
             "b1-figure-8-row-theorem",
             // B1 at torus-knot rows is theorem (Bloch-Suslin + Garoufalidis-Lê).
@@ -160,7 +161,9 @@ export default chapter({
       label: "sec:surreal-rate-calculus",
       blocks: [
         "surreal-rate-calculus",
+        "surreal-rate-calculus-proof",
         "surreal-squeeze",
+        "surreal-squeeze-proof",
       ],
     },
     {

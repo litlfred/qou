@@ -197,8 +197,10 @@ export default chapter({
         "genus-filtration-ideal-proof",
         "genus-filtration-interpretation",
         "torus-embeddable-complete",
+        "torus-embeddable-complete-proof",
         "bring-trefoil-cinquefoil-channel",
         "generation-completeness",
+        "generation-completeness-proof",
       ],
     }),
     section({
