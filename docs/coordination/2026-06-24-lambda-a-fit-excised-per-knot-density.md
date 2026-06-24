@@ -1,4 +1,18 @@
-# λ_A is a fit — excised; use the per-knot Hecke density (owner ruling 2026-06-24)
+# λ_A is a fit — excised; use the canonical (muon-anchored) Hecke energy (owner ruling 2026-06-24)
+
+> **🔵 CORRECTION (2026-06-24, later same day).** The first version of this
+> ledger + the 25-PR broadcast said the replacement for λ_A is the **per-knot
+> density** `vol_density_per_block` (`m_e·Vol(𝓑₃)·tr_M/ℏ_q²`). **That is also
+> wrong** — it gives m_p ≈ 406 MeV (−57%), applying `1/ℏ_q²` to the Borromean
+> volume just like λ_A (966). The CANONICAL absolute nucleon mass is the
+> **muon-anchored Hecke energy** (production substrate-identity):
+> `m_p = 2·(m_μ·F_Bor − 6·m_e)`, `m_μ = m_e·Vol(4₁)/ℏ_q²`,
+> `F_Bor = |tr_M(β_Bor)|·[3]_q!/q³` → **m_p ≈ 938.27, m_n ≈ 939.56 (CODATA)**.
+> The `c_q² = 1/ℏ_q²` belongs in the **muon** anchor `Vol(4₁)`, not on
+> `Vol(𝓑₃)`. Single entry point: [`computations/canonical_mass.py`](../../computations/canonical_mass.py).
+> Guardrail: [`canonical-mass-formula-guardrail.md`](../canonical-mass-formula-guardrail.md).
+> **Still true:** λ_A IS a fit; and for *binding* (trace ratios, p≠n) the
+> per-knot distinction matters — just not for *absolute mass*.
 
 **Owner ruling (litlfred, 2026-06-24).** The global Family-A linking
 weight
