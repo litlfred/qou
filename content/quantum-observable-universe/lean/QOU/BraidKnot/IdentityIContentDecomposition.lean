@@ -627,6 +627,44 @@ theorem sum_j_colLen_sq_row_form (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   exact antitone_f_min_sum (fun i => l.getD i 0) (fun m => ∑ j ∈ Finset.range m, j)
     (fun i k hik => getD_antitone l hl hik) l.length
 
+/-- **λ-weighted min-sum (sorry-free).** `2·Σ_i λ_i·Σ_k min(λ_i,λ_k) = Σ_i(2i+1)λ_i² + n²`
+(over `ℕ`).  Uses the pointwise identity `(a+b)·min(a,b) = min(a,b)² + a·b` + symmetry,
+collapsing to `antitone_f_min_sum` (`f = ·²`) and `(Σλ)² = n²` — no per-row split needed. -/
+theorem two_mul_sum_lambda_min (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    2 * ∑ i ∈ Finset.range l.length, (l.getD i 0) *
+        (∑ k ∈ Finset.range l.length, min (l.getD i 0) (l.getD k 0))
+      = (∑ i ∈ Finset.range l.length, (2 * i + 1) * (l.getD i 0) ^ 2) + (sz l) ^ 2 := by
+  have hS : ∑ i ∈ Finset.range l.length, (l.getD i 0) *
+        (∑ k ∈ Finset.range l.length, min (l.getD i 0) (l.getD k 0))
+      = ∑ i ∈ Finset.range l.length, ∑ k ∈ Finset.range l.length,
+        (l.getD i 0) * min (l.getD i 0) (l.getD k 0) := by
+    apply Finset.sum_congr rfl; intro i _; rw [Finset.mul_sum]
+  have sym : ∑ i ∈ Finset.range l.length, ∑ k ∈ Finset.range l.length,
+        (l.getD i 0) * min (l.getD i 0) (l.getD k 0)
+      = ∑ i ∈ Finset.range l.length, ∑ k ∈ Finset.range l.length,
+        (l.getD k 0) * min (l.getD i 0) (l.getD k 0) := by
+    rw [Finset.sum_comm]
+    apply Finset.sum_congr rfl; intro i _
+    apply Finset.sum_congr rfl; intro k _
+    rw [min_comm]
+  have key : ∀ i k : ℕ, (l.getD i 0) * min (l.getD i 0) (l.getD k 0)
+      + (l.getD k 0) * min (l.getD i 0) (l.getD k 0)
+      = (min (l.getD i 0) (l.getD k 0)) ^ 2 + (l.getD i 0) * (l.getD k 0) := by
+    intro i k
+    rcases le_total (l.getD i 0) (l.getD k 0) with h | h
+    · rw [min_eq_left h]; ring
+    · rw [min_eq_right h]; ring
+  rw [hS, two_mul]
+  nth_rewrite 2 [sym]
+  rw [← Finset.sum_add_distrib]
+  simp_rw [← Finset.sum_add_distrib]
+  simp_rw [key]
+  simp_rw [Finset.sum_add_distrib]
+  rw [← Finset.sum_mul_sum, sum_range_getD_eq_sz,
+    antitone_f_min_sum (fun i => l.getD i 0) (fun m => m ^ 2)
+      (fun i k hik => getD_antitone l hl hik) l.length]
+  ring
+
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
 (`identityA_verified_le9`) and exhaustively in Python for `n ≤ 22`.
