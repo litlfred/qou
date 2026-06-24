@@ -1353,7 +1353,226 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "flavor-split-substrate-proof.md:27-45 Step 2 introduces (μ_d−μ_u)/μ_avg ≈ h_q²·ℏ_q/√q as 'the minimal substrate-atom combination satisfying … (c) numerical agreement to −0.67% at q=q_0.' HadronicMass.lean:734 docstring concedes 'The hypothesis is that the per-quark split … is given by h_q²·ℏ_q/√q'. The (2,1) exponent pattern + 1/3 per-nucleon factor are DOF selected to hit the measured split — a hidden DOF / shape-probe, contradicting the 'no-fit'/'substrate-only' tags (ts:9).",
+        "rebuttal": "surviving — the library Lean does NOT discharge the ansatz, it assumes it (docstring 'hypothesis') and proves only a `ring` rewrite + a |·|<0.02 bound; the only uses[] dep lem:pair-skein-mass-formula supplies the EXACT Step-1 factor but nothing about the Step-2 split; the M_N-substrate audit addresses the SCALE anchor, not the per-quark-split selection. Deprecated probe note admits 'Neither α_EM nor α_S/4π matches the substrate target; h_q²·ℏ_q/√q is the substrate-internal answer.'",
+        "evidence": [
+          {
+            "text": "flavor-split-substrate-proof.md:41-45"
+          },
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/HadronicMass.lean:734"
+          },
+          {
+            "text": "flavor-split-substrate.ts:9"
+          }
+        ],
+        "severity": "critical",
+        "field_hash": {
+          "md": "741a780bf3e9",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "md:1-3 headlines 'admits a closed-form expression in substrate atoms with no calibration to the u–d mass difference'; tags 'no-fit'/'substrate-only' (ts:9). But the construction IS calibrated to the u–d split via fit-criterion (c), and the headline residual −0.10% (md:28) is loose vs the ~10 ppb formal precision of q_0, which the proof's own limitation remark concedes (proof.md:153).",
+        "rebuttal": "surviving — the block's own limitation remark and the −0.49% factored-form residual (md:57) confirm the overclaim; 'no-fit' is contradicted by the admitted selection criterion (c).",
+        "evidence": [
+          {
+            "text": "flavor-split-substrate.md:1-3"
+          },
+          {
+            "text": "flavor-split-substrate-proof.md:153"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "741a780bf3e9",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "the .md claims a substrate-pure DERIVATION (md:1-3). The live library Lean flavor_split_substrate (HadronicMass.lean:742-747) proves only (delta_m_over_M_N_substrate = delta_m_over_mu_avg_factored/3) ∧ (|delta_m_substrate_pred_MeV−1.293|<0.02): an algebraic restatement + a 0.02-MeV bound; the derivational content (substrate FORCES the split) is absent, the ansatz enters as an unproved docstring hypothesis.",
+        "rebuttal": "surviving — even taking the unshadowed library decl at face value, ring-identity + loose bound ≠ parameter-free derivation.",
+        "evidence": [
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/HadronicMass.lean:742-747"
+          },
+          {
+            "text": "flavor-split-substrate.md:1-34"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "741a780bf3e9",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "§0a no-shadowing-stub: ref qou:QOU.HadronicMass.flavor_split_substrate (ts:5) resolves SIBLING-FIRST to the trivial :True stub (observations/flavor-split-substrate.lean:20), shadowing the substantive same-FQN library decl at lean/QOU/HadronicMass.lean:742. Plus: the .md headlines '(probe probe_flavor_split_substrate.py)' (md:52) but that probe + witness live only in _deprecated/ (no computations/ copy), yet the qa.json marks canonical-script-not-deprecated=pass and compute-prop-has-probe=pass (stale).",
+        "rebuttal": "surviving — grep confirms the probe exists ONLY under _deprecated/probes/; §0a resolution lands on the vacuous sibling (candidate-1 precedes candidate-2). Honest fix = delete the shadowing stub (let the ref resolve to HadronicMass.lean:742) and re-point the deprecated-probe citation.",
+        "evidence": [
+          {
+            "text": "content/quantum-observable-universe/observations/flavor-split-substrate.lean:20"
+          },
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/HadronicMass.lean:742"
+          },
+          {
+            "text": "flavor-split-substrate.md:52"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "741a780bf3e9",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "the §0a-resolved Lean (sibling-first) is observations/flavor-split-substrate.lean:20 `theorem flavor_split_substrate : True := by trivial` — vacuously true.",
+        "rebuttal": "partial — the sibling is honestly labelled a 'Sibling-resolution stub' (lean:4) and a substantive same-FQN library decl exists at HadronicMass.lean:742; this is a shadow/honesty defect (da-citation-misuse) rather than pure vacuity, since the real formalisation does exist.",
+        "evidence": [
+          {
+            "text": "content/quantum-observable-universe/observations/flavor-split-substrate.lean:19-23"
+          },
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/HadronicMass.lean:742"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "741a780bf3e9",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "proof.md:153-156: 'The −0.10% residual on (5) exceeds the formal precision of q_0 (~10 ppb from CAL-2), so the substrate ansatz (2) is approximate at the level of a sub-leading correction.' A claimed parameter-free derivation missing by 0.1%/0.49% against a 10-ppb-precise input is fragile; 'refining (2) requires a higher-order substrate atom', i.e. not closed.",
+        "rebuttal": "partial — disclosed limitation (not hidden), so survivable on accuracy rather than falsity; undercuts the headline '−0.10%' success framing.",
+        "evidence": [
+          {
+            "text": "flavor-split-substrate-proof.md:153"
+          },
+          {
+            "text": "flavor-split-substrate.md:56-58"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "741a780bf3e9",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "fail",
+        "verdict": "open-objection",
+        "referee_argument": "The 'no-fit'/'substrate-only' claim is false on the block's own evidence: the load-bearing Step-2 per-quark-split ansatz h_q²·ℏ_q/√q is selected by fit-criterion '(c) numerical agreement to −0.67% at q=q_0' (proof.md:41-45) and entered into the Lean as an unproved 'hypothesis' (HadronicMass.lean:734). The library theorem proves only an algebraic tautology (ring) plus a loose |·|<0.02 MeV bound — never that the substrate forces the split — and even that substantive decl is shadowed at the ref by a :True:=trivial sibling (§0a no-shadowing-stub). A hostile referee's hidden-DOF objection survives every rebuttal path the block's materials offer.",
+        "field_hash": {
+          "md": "741a780bf3e9",
+          "ts": "4a511a1cb001",
+          "lean": "9cbe9cf9e203"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-24T12:29:19Z"
 }

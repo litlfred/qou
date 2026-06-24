@@ -1360,7 +1360,241 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-reproducibility": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "ts:27 names computation.script computations/probe_q_beta_tightening_landscape.py and lean:153 cites witness q-beta-tightening-landscape.witness.json as the source of +305.7 ppm/5.49×; BOTH absent from computations/ (script does not exist; witness only at _deprecated/). The one pinned witness delta-S-chain-audit.witness.json computes eps_Q_ppm=1677.5 (bare Form A), never 305.7. QA sidecar compute-witness-exists=fail.",
+        "rebuttal": "surviving — ls confirms the script absent and the witness only under _deprecated/; the headline number is not reproducible from any live pinned artifact on this branch.",
+        "evidence": [
+          {
+            "text": "q-beta-cos-resummation.ts:27"
+          },
+          {
+            "text": "q-beta-cos-resummation.lean:153"
+          },
+          {
+            "text": "computations/_deprecated/q-beta-tightening-landscape.witness.json"
+          },
+          {
+            "text": "computations/delta-S-chain-audit.witness.json:33"
+          }
+        ],
+        "severity": "major",
+        "result": "fail",
+        "field_hash": {
+          "md": "eb01585ecc49",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "lean:195 `def q_beta_cos_conditional [_inst : BorromeanQuark] : True := trivial` is a def-disguised-True (proof-no-trivial-true=fail; vacuity-def-dodge.json:1024 critical). The RESOLVED theorem q_beta_cos_resummation (lean:159-183) is tautological — both conjuncts collapse to formA*cos α = formA*cos α via a self-cancelling Taylor bracket (lean:166-172), no numerical content.",
+        "rebuttal": "partial — the :195 def-disguised-True is a live §1a STRICT violation but is the audit-stub, NOT the decl the lean.ref resolves to; the resolved headline theorem is thin-not-vacuous (proof-no-self-assuming-projection=pass) and the bar-involution evenness (lean:57-81) is genuinely proved.",
+        "evidence": [
+          {
+            "text": "q-beta-cos-resummation.lean:195"
+          },
+          {
+            "text": "q-beta-cos-resummation.lean:166"
+          },
+          {
+            "text": "docs/audits/2026-06-23-vacuity-def-dodge.json:1024"
+          }
+        ],
+        "severity": "critical",
+        "result": "warn",
+        "field_hash": {
+          "md": "eb01585ecc49",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "the .md (3-23) + ts title sell 'tightens the CODATA residual to +305.7 ppm — a 5.49× improvement'; the resolved Lean proves only the symbolic identity Q^{A,cos}=Q^A·cos α, certifying neither 305.7 nor the 5.49×.",
+        "rebuttal": "partial — proof-narrative-lean-equiv=pass; the .md/.ts tag the numerical part experimental/prediction, not Lean-proved; disclosed not concealed (a skim of the ts title over a not_checked Lean could over-read).",
+        "evidence": [
+          {
+            "text": "q-beta-cos-resummation.ts:10"
+          },
+          {
+            "text": "q-beta-cos-resummation.md:20-23"
+          },
+          {
+            "text": "q-beta-cos-resummation.lean:159"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "eb01585ecc49",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "the cos form is parameter-free in shape, but the deprecated source witness reveals it was SELECTED from a landscape of 9 candidate refinements, and md:62-68 picks classical-cos (305.7) over q-cos (313.4) by 7 ppm post-hoc — a model-selection DOF (c_3 flip-flop parallel).",
+        "rebuttal": "partial — mitigated: the cos form is structurally motivated (bar-involution evenness forces an even resummation, Lean-proved lean:57), canonical-no-numerology=pass, block labeled experimental; but the 9-candidate + cos-vs-cos_q selection is real researcher DOF.",
+        "evidence": [
+          {
+            "text": "computations/_deprecated/q-beta-tightening-landscape.witness.json"
+          },
+          {
+            "text": "q-beta-cos-resummation.md:62-68"
+          },
+          {
+            "text": "q-beta-cos-resummation.lean:57"
+          }
+        ],
+        "severity": "major",
+        "result": "warn",
+        "field_hash": {
+          "md": "eb01585ecc49",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "the headline 5.49× is a single-anchor (q_0≈1.110) snapshot; 305.7 ppm still misses the L2 100x Q_β target (7.8 ppb) by ~39000×, and the deprecated source witness states this refinement does NOT close the gap ('structural Hecke-spectral brane-tower required'); the canonical Q_β predictor remains Form A (q-beta-spectral-bridge.md:172).",
+        "rebuttal": "partial — acknowledged in-block (authorNotes 'one rung of the ladder', '1ppb-roadmap'); fragility disclosed, not over-claimed as closure; but the headline leads with the relative gain while the absolute miss + brane-tower supersession sit in prose/authorNotes.",
+        "evidence": [
+          {
+            "text": "computations/_deprecated/q-beta-tightening-landscape.witness.json"
+          },
+          {
+            "text": "q-beta-cos-resummation.ts:36"
+          },
+          {
+            "text": "q-beta-spectral-bridge.md:172"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "eb01585ecc49",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "lean:153 + ts:40 cite q-beta-tightening-landscape.witness.json as live 'numerical evidence' for the 5.49× via a NON-deprecated path (../../computations/q-beta-tightening-landscape.witness.json); that file exists only under _deprecated/. Citing a retired witness via a live path as the evidentiary anchor for the headline number is a citation-integrity defect.",
+        "rebuttal": "surviving — filesystem check: the cited path resolves to nothing; the actual file is under _deprecated/, whose own description disavows the closure claim. The bibliographic cites (jones1985, wenzl1988) resolve fine, but the load-bearing empirical citation is to a retired artifact at a wrong path.",
+        "evidence": [
+          {
+            "text": "q-beta-cos-resummation.ts:40"
+          },
+          {
+            "text": "q-beta-cos-resummation.lean:153"
+          },
+          {
+            "text": "computations/_deprecated/q-beta-tightening-landscape.witness.json"
+          }
+        ],
+        "severity": "minor",
+        "result": "fail",
+        "field_hash": {
+          "md": "eb01585ecc49",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "open-objection",
+        "referee_argument": "[Rubric note: the lens adjudicated survivable on honest-framing grounds, but it ruled two criteria surviving (da-reproducibility, da-citation-misuse) — per the ≥1-surviving rubric the rollup is open-objection.] The block advertises a Q_β cos-resummation tightening to +305.7 ppm / 5.49×, but its named script + cited evidence-witness are MISSING/deprecated on-branch (the only pinned witness gives the bare 1677.5 ppm) — a surviving reproducibility + citation-integrity defect — and a def-disguised-True audit-stub sits at lean:195. These survive. They are ARTIFACT-INTEGRITY/hygiene defects, NOT a math refutation: §0a resolves cleanly to the sibling (no shadow), the bar-involution evenness is genuinely Lean-proved, the cos form is structurally motivated, and the block honestly self-labels experimental/'one rung of the ladder'. Honest disposition: restore/re-point the witness + script, delete the :195 stub; the 9-candidate hidden-DOF warrants a TIERED (proved/near-match/fitted) framing per the c_k discipline.",
+        "result": "fail",
+        "field_hash": {
+          "md": "eb01585ecc49",
+          "ts": "89465d9b8c1c",
+          "lean": "8166b02946f1"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-24T12:29:19Z"
 }

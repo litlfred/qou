@@ -1358,7 +1358,200 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-vacuous": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "wenzl-bridge-applicability-qou.lean:65,73 `def wenzl_bridge_applicability_qou … : True := by trivial` with every load-bearing hypothesis a vacuous class field (hecke_centraliser:True :30, markov_property:True :45, z_categorical:True :48, unique:True :58). A proposition asserting Wenzl-bridge APPLICABILITY checks none of Wenzl's hypotheses; it asserts applicability by typeclass fiat.",
+        "rebuttal": "surviving — §0a: sibling IS the resolved file; glob of lean/QOU/BraidsAndKnots/ shows NO library decl carrying this FQN, so it is a PURE vacuous stub (nothing to shadow) — worse for the claim, no real formalisation exists. Flagged def-disguised-true/critical at vacuity-def-dodge.json:877.",
+        "evidence": [
+          {
+            "text": "wenzl-bridge-applicability-qou.lean:65"
+          },
+          {
+            "text": "wenzl-bridge-applicability-qou.lean:30"
+          },
+          {
+            "text": "docs/audits/2026-06-23-vacuity-def-dodge.json:877"
+          }
+        ],
+        "severity": "critical",
+        "field_hash": {
+          "md": "e7923ae0d509",
+          "ts": "0253519b7255",
+          "lean": "575720091f7c"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "md:74-75 'The trace is *forced*, not assumed: every step is dictated by the QOU substrate axioms plus the Chlouveraki HDR uniqueness theorem.' — a claim of a PROVED forcing argument, but the Lean (lean:65) discharges only True; the .ts declares proposition with lean.validation:not_checked (ts:9).",
+        "rebuttal": "surviving — the handover ledger docs/coordination/2026-05-19-i1-hecke-cluster-handover.md:82 itself reclassifies this as 'structural existence proof, not numerical', acknowledged-unverified, never closed.",
+        "evidence": [
+          {
+            "text": "wenzl-bridge-applicability-qou.md:74"
+          },
+          {
+            "text": "wenzl-bridge-applicability-qou.ts:9"
+          },
+          {
+            "text": "docs/coordination/2026-05-19-i1-hecke-cluster-handover.md:82"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "e7923ae0d509",
+          "ts": "0253519b7255",
+          "lean": "575720091f7c"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "the .md states a four-step proof culminating in a closed-form y_λ identity, kind proposition, but lean:73 concludes True := by trivial and the corollary y_lambda_unique_in_qou (lean:88) likewise; the Lean does not even STATE the conclusion.",
+        "rebuttal": "surviving — the upstream prop:y-lambda-closed-form-wenzl-bridge it depends on is ALSO vacuous (wenzlSchurElement := 0*(…) lean:117, proves 0=0), so no non-vacuous Lean anywhere in the chain.",
+        "evidence": [
+          {
+            "text": "wenzl-bridge-applicability-qou.lean:73"
+          },
+          {
+            "text": "wenzl-bridge-applicability-qou.lean:88"
+          },
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.lean:117"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "e7923ae0d509",
+          "ts": "0253519b7255",
+          "lean": "575720091f7c"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "md:100-106 'Wenzl 1988 specialises to integer-N SU_q(N) centralisers; the QOU case is the analytic continuation in the rank parameter, well-defined because the principal Schur specialisation is a rational function of X.' Non-sequitur: rationality of the WEIGHT FORMULA in X does not establish that Step 1's categorical backbone (H_n = End_H(V^{⊗n}) as the SU_q(N) Schur–Weyl centraliser) survives at non-integer rank r₀≈2.5995 — at non-integer r there is no SU_q(N) and no centralizer realisation.",
+        "rebuttal": "surviving — corpus-grep (docs/audits, content, computations, docs/coordination) for the non-integer-rank/analytic-continuation gap: the yekutieli audit is about λ_scale 2.49 not this; the cross-check witness validates formula-vs-Hoefsmit agreement at integer n=3..11 NOT applicability at non-integer r; i1-handover:82 lists it as an unproven 'structural existence proof'. No path closes it.",
+        "evidence": [
+          {
+            "text": "wenzl-bridge-applicability-qou.md:100"
+          },
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.md:36"
+          },
+          {
+            "text": "docs/coordination/2026-05-19-i1-hecke-cluster-handover.md:82"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "e7923ae0d509",
+          "ts": "0253519b7255",
+          "lean": "575720091f7c"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "md:61-64 + the Lean -- Ref lines (lean:75-77) cite wenzl1988 to license the NON-integer-rank QOU evaluation; Wenzl 1988 proves the weight formula for INTEGER N (SU_q(N) subfactor towers) — a regime its theorem does not cover.",
+        "rebuttal": "partial — the citation is used correctly for what Wenzl proves (integer-N weights) when establishing the formula's SHAPE; the misuse is only the extension step, which the block flags as 'analytic continuation' (the non-sequitur), not a citation of a non-existent result. Downgraded to partial.",
+        "evidence": [
+          {
+            "text": "wenzl-bridge-applicability-qou.md:61"
+          },
+          {
+            "text": "wenzl-bridge-applicability-qou.lean:75"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "e7923ae0d509",
+          "ts": "0253519b7255",
+          "lean": "575720091f7c"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "fail",
+        "verdict": "open-objection",
+        "referee_argument": "Two independent objections survive. (1) §0a/L1: the lean.ref resolves to a sibling that is a PURE vacuous stub — def … : True := by trivial with all four 'hypothesis' classes as : True fields (no library decl with this FQN exists to shadow; flagged def-disguised-true/critical at vacuity-def-dodge.json:877). (2) L3: the block's own md:100-106 concedes the substrate rank r₀≈2.5995 is non-integer while Wenzl 1988 holds only for integer-N SU_q(N) centralisers, then licenses applicability by a non-sequitur (rationality of the weight formula does not carry the Step-1 categorical Schur–Weyl identity to non-integer rank). Corpus-grep finds the gap acknowledged ('structural existence proof', i1-handover:82) but nowhere closed. Neither is proven false — the formula matches the Hoefsmit trace to 50 dps at integer n — but the APPLICABILITY-at-q₀ claim is asserted, not established, and the Lean is vacuous.",
+        "field_hash": {
+          "md": "e7923ae0d509",
+          "ts": "0253519b7255",
+          "lean": "575720091f7c"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-24T12:29:19Z"
 }

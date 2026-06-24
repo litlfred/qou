@@ -558,6 +558,121 @@
       "status": "needs-author",
       "asked_author_at": null,
       "referee_argument": "Drop the spurious conditional banner (or wire uses[]+export to the class); note the eigenvalue-forcing is deferred to prop:hecke-branching-trace-decomposition. The closed-form character is true and proven — labelling defects only."
+    },
+    {
+      "id": "0298d3307f27",
+      "block_or_script": "prop:wenzl-bridge-applicability-qou",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.lean",
+        "md": "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.md"
+      },
+      "finding": "da-vacuous+da-non-sequitur+da-overclaim+da-lean-narrative-divergence",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c",
+      "evidence": "Pure vacuous stub: def …:True:=by trivial with all 4 hypothesis classes as :True fields (no library decl to shadow; vacuity-def-dodge.json:877). L3 non-sequitur: Wenzl 1988 is integer-N only, substrate rank r0~2.5995 non-integer; rationality of the weight formula does not carry the Step-1 Schur-Weyl backbone to non-integer rank. Upstream y-lambda also vacuous (0=0). i1-handover:82 acknowledges 'structural existence proof', never closed.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Either prove the non-integer-rank continuation of the Schur-Weyl centraliser (the load-bearing gap) or restate applicability as conditional/conjectural; replace the all-:True stub with the real proposition + sorry + -- Ref:. The formula matches the Hoefsmit trace numerically; the applicability argument is the gap."
+    },
+    {
+      "id": "31685dc8ca06",
+      "block_or_script": "prop:confinement-topological",
+      "paths": {
+        "lean": "content/quantum-observable-universe/particle-interactions/confinement-topological.lean",
+        "md": "content/quantum-observable-universe/particle-interactions/confinement-topological.md"
+      },
+      "finding": "da-vacuous+da-lean-narrative-divergence+da-non-sequitur+da-overclaim",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c",
+      "evidence": "§0a shadow-stub: lean.ref resolves sibling-first to `theorem gram_indefinite_witness : True := trivial`, shadowing the real GramIndefinite.lean:187 decl which proves only a 2x2 matrix non-equality — none of the .md LP-optimum/braid-image/4^6-uniqueness claims. Downstream ConfinementLP discharges sub-claims by non-sequiturs (lp_achieves_zero_trace := hopf_ne); AUDIT-REPORT.md:224 flags them orphaned. Internal lambda_- inconsistency (-0.855 vs sibling -0.956); witness deprecated.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Delete the §0a sibling stub; the real claims (LP optimum=0, braid-image properness, B3 uniqueness over 4^6) are unformalised — formalise them or re-scope the 'proved' framing. Downstream consumers (confined-particle, shell-closure-stability, nucleon-ordering) rely on it."
+    },
+    {
+      "id": "59b4739ac398",
+      "block_or_script": "prop:flavor-split-substrate",
+      "paths": {
+        "lean": "content/quantum-observable-universe/observations/flavor-split-substrate.lean",
+        "md": "content/quantum-observable-universe/observations/flavor-split-substrate.md"
+      },
+      "finding": "da-hidden-dof+da-overclaim+da-citation-misuse+da-lean-narrative-divergence",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c",
+      "evidence": "The no-fit/substrate-only labels are FALSE: the per-quark split h_q^2*hbar_q/sqrt(q) is a fit-selected ansatz (criterion 'c: numerical agreement to -0.67% at q0'); HadronicMass.lean:734 calls it 'The hypothesis' and proves only a ring rewrite + |.|<0.02 bound. §0a shadow-stub: ref resolves sibling-first to observations/flavor-split-substrate.lean:20 :True, shadowing HadronicMass.lean:742. Deprecated probe + stale qa pass flags.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Re-scope away from 'no-fit'/'substrate-only' to honest fit-selected-ansatz framing (production-vs-exploratory discipline), OR derive the (2,1) exponent pattern from the substrate; delete the §0a shadow-stub so the ref resolves to HadronicMass.lean:742; re-point the deprecated probe."
+    },
+    {
+      "id": "af4866c7a311",
+      "block_or_script": "prop:y-lambda-closed-form-wenzl-bridge",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean",
+        "md": "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.md"
+      },
+      "finding": "da-lean-narrative-divergence+da-vacuous",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c",
+      "evidence": "main theorem proves 0=0 (jonesMarkovCoefficient:=0*q lean:146, wenzlSchurElement:=0*(…) lean:118), conditional class MarkovTraceFamilyOneDim.unique:True content-free; the closed form, r-bridge equation, uniqueness not formalised. NOT a shadow-stub (no library decl, no exemption). Math corroborated to 28+ digits by MPFR witnesses.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Per §1a honest disposition: restate with sorry + -- Ref: (has_sorry) or kind conjecture — not a 0*q placeholder that passes simp while formalising nothing. The math is sound; only the Lean is vacuous."
+    },
+    {
+      "id": "e2b690462d53",
+      "block_or_script": "prop:q-beta-cos-resummation",
+      "paths": {
+        "lean": "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.lean",
+        "ts": "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.ts"
+      },
+      "finding": "da-reproducibility+da-citation-misuse+da-vacuous",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c",
+      "evidence": "named script probe_q_beta_tightening_landscape.py + cited witness q-beta-tightening-landscape.witness.json MISSING/deprecated on-branch (headline +305.7 ppm/5.49x not reproducible; pinned witness gives bare 1677.5 ppm); ts:40 links the witness at a non-deprecated path that does not exist; def-disguised-True audit-stub at lean:195. Honest 'experimental' framing, §0a clean, evenness proved. [Rubric: lens rolled up survivable; corrected to open per >=1-surviving (2 surviving artifact-integrity defects).]",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Restore/re-point the witness + script (or remove the headline number if superseded by the brane-tower path); delete the lean:195 def-disguised-True stub; report the 9-candidate selection TIERED (proved/near-match/fitted) per the c_k discipline. Artifact-integrity hygiene, not a math refutation."
     }
   ],
   "audited": {
@@ -798,9 +913,44 @@
       "criteria": [
         "da-referee-verdict"
       ]
+    },
+    "prop:wenzl-bridge-applicability-qou": {
+      "ts": "2026-06-24",
+      "sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:confinement-topological": {
+      "ts": "2026-06-24",
+      "sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:flavor-split-substrate": {
+      "ts": "2026-06-24",
+      "sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:y-lambda-closed-form-wenzl-bridge": {
+      "ts": "2026-06-24",
+      "sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:q-beta-cos-resummation": {
+      "ts": "2026-06-24",
+      "sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c",
+      "criteria": [
+        "da-referee-verdict"
+      ]
     }
   },
   "reviewed_up_to": {
-    "da-referee-verdict": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+    "da-referee-verdict": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
   }
 }

@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean"
   },
   "source_hashes": {
-    "md": "efd80896a456",
+    "md": "eb91932315e3",
     "ts": "dca519aba6b6",
-    "lean": "b9c611630a27"
+    "lean": "e057bcbb2f25"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1358,7 +1358,258 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "y-lambda-closed-form-wenzl-bridge.lean:156 `theorem y_lambda_closed_form_wenzl_bridge … : jonesMarkovCoefficient q lam = yLambdaWenzlBridge parts lam q := by simp […]`. With jonesMarkovCoefficient := 0*q (:146) and wenzlSchurElement := 0*(Q+X+length) (:118), both sides reduce to 0; simp discharges 0=0. The .md boxed closed form (md:13-17), the r-bridge equation, and uniqueness are NOT formalised; the narrative asserts a non-trivial closed-form proposition, the Lean proves a tautology.",
+        "rebuttal": "surviving — §0a: grep returns ONLY the sibling; no library QOU/BraidsAndKnots decl of this name exists, so the ref legitimately resolves to the sibling and it is operative; vacuity-def-dodge.json grants this block NO shadow-stub exemption (unlike flavor-split/magic-numbers). Witnesses corroborate the MATH but cannot rebut Lean-vacuity.",
+        "evidence": [
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.lean:118"
+          },
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.lean:146"
+          },
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.lean:156"
+          }
+        ],
+        "severity": "critical",
+        "field_hash": {
+          "md": "eb91932315e3",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "y-lambda-closed-form-wenzl-bridge.lean:52-54 `class MarkovTraceFamilyOneDim (R) (q z) where unique : True`. The conditional-class hypothesis §3b-cond requires to carry the conjecture's content is the content-free True; placeholders wenzlSchurElement := 0*(…) (:117) and jonesMarkovCoefficient := 0*q (:146). Kind proposition (not conjecture), not a shadow-stub, so the vacuity carve-out does not cover it; §1a honest disposition (sorry + -- Ref:) was not used.",
+        "rebuttal": "surviving — the .md (md:213-217) itself concedes the original uniqueness 'was structurally vacuous on the ansatz Schur-element model'; honest disclosure documents the vacuity but does not remove it.",
+        "evidence": [
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.lean:54"
+          },
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.lean:117"
+          },
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.md:217"
+          }
+        ],
+        "severity": "critical",
+        "field_hash": {
+          "md": "eb91932315e3",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "ts:4-9 kind proposition, tag closed-form, with lean.ref at a theorem that does not formalise the closed form; wenzl_bridge_unique_categorical (lean:244) is presented (md:204-211) as a 'rigorous conditional result … fully verified by Lean modulo the named class' but discharges via `exact wenzl_bridge_unique_definitional q`, discarding the [MarkovTraceFamilyOneDim] instance and proving the definitional rfl q^2=q^2 ∧ q·z=q·z — §3b-cond rule-5 non-degeneracy fails (conclusion derived without the class).",
+        "rebuttal": "partial — overclaim is real, but the .md is partly self-correcting (demotes legacy wenzl_bridge_unique to 'deprecated formulation', flags 'structurally vacuous', md:213-217). Label/kind overclaim survives as a divergence; candor mitigates to partial.",
+        "evidence": [
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.lean:244"
+          },
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.ts:6"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "eb91932315e3",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "the .md boxed closed form + table2 values could be numerically wrong (table2 (3),(3): +0.41539579).",
+        "rebuttal": "rebutted — exact witness match: y-lambda-wenzl-bridge-numeric-witness.json carries 0.41539578633456658500817127101, agreeing to all printed digits; extensive corroborating compute (y_lambda_wenzl_bridge.py, tr_m_wenzl_bridge_mpfr.py, 1.9MB mpfr witness); r_0≈2.5995 cross-appears in all-nuclides-sdp-admissibility.witness.json. The MATHEMATICAL claim is corroborated, not false.",
+        "evidence": [
+          {
+            "text": "computations/y-lambda-wenzl-bridge-numeric-witness.json"
+          },
+          {
+            "text": "computations/y-lambda-mpfr-witness.json"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "eb91932315e3",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "the bridge introduces a Wenzl level r (non-integer r_0≈2.5995) that could be a fitted DOF.",
+        "rebuttal": "rebutted — r is the unique solution of the bridge equation q·z = Q^r(1-Q)/(1-Q^r) (md:25-27, lean:73-78), determined entirely by z=1/(q^{1/2}+q^{-1/2}) and Q=q²; no partition-dependent or observable-tuned parameter; same r for all λ at fixed n.",
+        "evidence": [
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.md:25"
+          },
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.lean:77"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "eb91932315e3",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "per §7aa y_λ/ỹ_λ/w_λ are distinct at q≠1; the block could conflate them.",
+        "rebuttal": "rebutted — the block consistently targets y_λ as the central coefficients in tr_M=Σ_λ y_λ χ_λ (md:7-10); no ỹ_λ/w_λ appears; normalisation tr_M(1)=Σ y_λ d_λ=1 is the correct Jones-Markov normalisation; base-ring handled per §7c (archimedean ℝ flagged, q>1 hypothesis lean:157).",
+        "evidence": [
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.md:7"
+          },
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.md:1"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "eb91932315e3",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "cites wenzl1988/orellana1998/chlouveraki2016; could mis-cite the Chlouveraki 2016 HDR vs the 2009 LNM monograph.",
+        "rebuttal": "rebutted — the sibling applicability file's class comment explicitly disambiguates 'Chlouveraki 2016 HDR Theorem 6.20 (NOT the 2009 LNM monograph)' (wenzl-bridge-applicability-qou.lean:58); Wenzl/Orellana attribution matches the standard literature.",
+        "evidence": [
+          {
+            "text": "wenzl-bridge-applicability-qou.lean:58"
+          },
+          {
+            "text": "y-lambda-closed-form-wenzl-bridge.ts:15"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "eb91932315e3",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "fail",
+        "verdict": "open-objection",
+        "referee_argument": "A referee argument survives: the block is a kind-proposition 'closed form' whose lean.ref resolves (sibling-first, §0a) to a theorem that proves 0=0 — jonesMarkovCoefficient := 0*q vs yLambdaWenzlBridge built on wenzlSchurElement := 0*(…) — with the conditional class MarkovTraceFamilyOneDim.unique : True content-free and the 'uniqueness' theorems reducing to definitional rfl with the class hypothesis unused. The closed form, the r-bridge equation, and uniqueness are not formalised; this is the Bucket-B defect verified against the live .lean, and it is NOT a shadow-stub (no real library decl of this name exists, no shadow-stub exemption). The MATHEMATICAL claim is fully corroborated by exact MPFR/numeric witnesses (table value 0.41539579 matches the witness to 28 digits), and the .md is candid the formalisation is an ansatz/placeholder — so this is formalization-vacuity / Lean-narrative divergence, NOT a claim the mathematics is false. Honest disposition under §1a: sorry + -- Ref: (has_sorry) or kind conjecture, not a 0*q placeholder that passes simp while formalising nothing.",
+        "field_hash": {
+          "md": "eb91932315e3",
+          "ts": "dca519aba6b6",
+          "lean": "e057bcbb2f25"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-24T12:29:19Z"
 }
