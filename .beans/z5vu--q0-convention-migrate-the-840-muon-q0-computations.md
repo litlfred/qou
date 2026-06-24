@@ -36,3 +36,11 @@ REAL owner-gated work item (NOT done here — large blast radius):
 
 Supersedes the dashboard-symptom half of bean `tnjb` (which is on branch
 claude/me-codata-reconcile / PR #2725).
+
+## Scope doc (2026-06-24, for owner review)
+docs/audits/2026-06-24-q0-layer-migration-scope.md — two options (full
+840-witness migration vs bounded dashboard fix), gated on a Step-0
+verification: confirm in the FULL env that q_at(50) returns the TRUE
+proton q₀ (m_μ → ~210 ppb). In a minimal sandbox q_at returned a
+muon-behaving value (m_μ → 0.05 ppb), which—if real—would invert the
+963.6× framing (and the merged AGENTS.md rule). Resolve Step 0 first.
