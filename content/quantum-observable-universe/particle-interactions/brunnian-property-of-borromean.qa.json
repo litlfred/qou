@@ -938,7 +938,114 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof stub with core gaps but carries math structure and definitions."
       }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2a7bcfdf5346",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "scope": "structural",
+        "ruling": "rebutted",
+        "referee_argument": "Brunnian.lean:83 opaque isUnlink, :94-95 class field = conclusion, :111-114 theorem = exact le.brunnian_borromean (self-assuming projection).",
+        "rebuttal": "rebutted \u2014 explicit AGENTS.md \u00a73b-cond-sanctioned conditional-on-class conjecture; block kind conjecture, validation:stub, sorry carries -- Ref:[kawauchi1996], status banners honestly state the Mathlib R-move gap. Within policy.",
+        "evidence": [
+          {
+            "text": "Brunnian.lean:83,94-95,111-114"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:37:26Z",
+        "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2a7bcfdf5346",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "borromean-topological-confinement.md:18-20 'quarks never observed in isolation is exactly the Brunnian property ... no separate dynamical assumption required'.",
+        "rebuttal": "partial\u2192survived \u2014 Brunnian-ness is a kinematic analogy; real confinement is dynamical (energetic). Contained by the remark/interprets kind + the explicit deferral of the energetic cost to the mass-formula/Bloch conjectures (lines 22-28), but 'exactly ... no dynamical assumption' overstates \u2014 recommend softening 'exactly'.",
+        "evidence": [
+          {
+            "text": "borromean-topological-confinement.md:18-20"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:37:26Z",
+        "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd",
+        "severity": "minor"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2a7bcfdf5346",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "Linking-number-zero / Milnor \u03bc-bar_123\u22600 characterization not stated.",
+        "rebuttal": "rebutted \u2014 the deletion arithmetic ((\u03c30\u03c31^-1)^3 -> \u03c30^-3 -> negative trefoil) and the L6a4 closure are correct; kawauchi1996 is a valid Brunnian reference; no counterexample.",
+        "evidence": [
+          {
+            "text": "Brunnian.lean:104-105"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:37:26Z",
+        "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2a7bcfdf5346",
+          "ts": "37665212050c",
+          "lean": "6a745f67f8ec"
+        },
+        "result": "pass",
+        "verdict": "clean",
+        "referee_argument": "The borromean_brunnian 'theorem' is a one-line projection off an opaque isUnlink and a conjectural class whose single field is the conclusion \u2014 so the Lean proves nothing; and the physics remark asserts confinement 'with no separate dynamical assumption required', promoting a topological metaphor toward derived physics.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:37:26Z",
+        "reviewed_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:23.889Z"
+  "updated_at": "2026-06-24T04:37:26Z"
 }
