@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T12:40:13.219045+00:00",
-  "commitSha": "7b12822eab9b4f49a89db02c7a90d75d1f7d61b5",
+  "computedAt": "2026-06-24T12:57:14.715768+00:00",
+  "commitSha": "1a8646d9c5e5750e41e20a17887bcc0e0dbb42ae",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 9,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "4e679e710146",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptCommitSha": "2f3f9c0b533ed504983c36c85631e0946d9a6978",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,15 +55,15 @@
       {
         "obs": "m_mu",
         "role": "validation",
-        "pred_MeV": "105.658397811",
+        "pred_MeV": "105.658375644",
         "codata_MeV": "105.658375649",
         "sigma_exp_MeV": "2.30000e-6",
-        "err_ppb": "209.8",
+        "err_ppb": "0.05168",
         "sigma_exp_ppb": "21.77",
         "target_100x_ppb": "0.2177",
-        "miss_factor": "963.6",
-        "beats_1x_experimental": false,
-        "beats_100x_experimental": false,
+        "miss_factor": "0.2374",
+        "beats_1x_experimental": true,
+        "beats_100x_experimental": true,
         "source_witness": "m-p-borromean-verification-50dps.witness.json",
         "sigma_source": "COMPARISON TARGET (codata_MeV), NOT the prediction: m_e × (m_μ/m_e)_CODATA = 0.5109989506900000000000000000000000000000000000000005654434719000544678 × 206.7682829999999999999999999999999999999999999999998424852944944885311 (ratio-derived; independently-quoted 105.6583755(23) MeV). The PREDICTION (pred_MeV) is the INDEPENDENT categorical value m_μ = m_e·Vol(4_1)/ℏ_q² from the Borromean witness — post the 2026-05-29 q₀ re-pin it is a genuine 9.5σ PREDICTION, NOT ratio-derived. The ~210 ppb pred-vs-codata gap (963.6× the 100× target) is the real μ-p tension; m_μ does NOT meet L2. Do not read 'ratio-derived' as 'm_μ trivially meets' (the error PR #1556 made).",
         "compute_truncation_ppb": "9.464e-54",
@@ -72,13 +72,13 @@
       {
         "obs": "Q_beta",
         "role": "derived (CAL-1+CAL-2)",
-        "pred_MeV": "0.782334410278",
+        "pred_MeV": "0.782334386518",
         "codata_MeV": "0.782333410000",
         "sigma_exp_MeV": "6.10000e-7",
-        "err_ppb": "1279.",
+        "err_ppb": "1248.",
         "sigma_exp_ppb": "779.7",
         "target_100x_ppb": "7.797",
-        "miss_factor": "164.0",
+        "miss_factor": "160.1",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "Q_N2 (fallback; qbeta-ck-cache witness not present)",
@@ -89,13 +89,13 @@
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "939.565421521",
+        "pred_MeV": "939.565421498",
         "codata_MeV": "939.565420520",
         "sigma_exp_MeV": "5.40000e-7",
-        "err_ppb": "1.066",
+        "err_ppb": "1.040",
         "sigma_exp_ppb": "0.5747",
         "target_100x_ppb": "0.005747",
-        "miss_factor": "185.4",
+        "miss_factor": "181.0",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=0) + m_e; no flavor-split — per PR #1298 gap diagnostic",
@@ -106,13 +106,13 @@
       {
         "obs": "Delta_pn",
         "role": "validation (derived)",
-        "pred_MeV": "1.29333336097",
+        "pred_MeV": "1.29333333721",
         "codata_MeV": "1.29333236000",
         "sigma_exp_MeV": "6.12944e-7",
-        "err_ppb": "773.9",
+        "err_ppb": "755.6",
         "sigma_exp_ppb": "473.9",
         "target_100x_ppb": "4.739",
-        "miss_factor": "163.3",
+        "miss_factor": "159.4",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=0) + m_e; no flavor-split — per PR #1298 gap diagnostic",
@@ -156,33 +156,33 @@
     ],
     "summary": {
       "total": 7,
-      "beats_1x_count": 3,
-      "beats_100x_count": 3
+      "beats_1x_count": 4,
+      "beats_100x_count": 4
     },
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "3f9be065e69b9d868dd32aef1914b8a3835f33f408c73b5c2ee2ba9a1616aaeb",
-        "size_bytes": 4191,
-        "commitSha": "bc9935cd4fc2739b52e14b5ce059ff8c07575993",
-        "scriptCommitSha": "f89ec89aee3363048fc11bf0e6942b14ab5c0b22",
-        "computedAt": "2026-06-20T15:00:04.470018+00:00"
+        "sha256": "953811d86d97f70b9cc714e3f5ec09f8c78db0add0d2bdc036afa57c05d5f2ec",
+        "size_bytes": 4239,
+        "commitSha": "d7b1b81f39553f4703b2b2e92a785586211e4063",
+        "scriptCommitSha": "fc85ff26c57a65b8f8d2a69aa398ce4aad804ae2",
+        "computedAt": "2026-06-22T14:54:43.776701+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "ea657db3db19393412c7d16536695e9fda01d1d69975673b043f1ea5c4ff27d8",
-        "size_bytes": 9127,
-        "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
-        "scriptCommitSha": "d2e9d5e463796608e088af545751396188cb2461",
-        "computedAt": "2026-06-02T17:01:05.154086+00:00"
+        "sha256": "cb4b76b51ef58f364fcc1a6e9a5c5ece4529dfffe098ce3a96b5e61f73f47819",
+        "size_bytes": 9112,
+        "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+        "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+        "computedAt": "2026-06-22T13:19:41.230571+00:00"
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",
-        "sha256": "264cd2119332d7f6634a49d5e7709c572fa123cf3ff3645782af5af2c344cd13",
-        "size_bytes": 5601,
-        "commitSha": "4eb69ea98f453648838f9cbfafb3afaa6ac7d802",
-        "scriptCommitSha": "29feecc8b72af2b23d1210cc2f9c3a1509cbc6a8",
-        "computedAt": "2026-06-13T17:10:08.344570+00:00"
+        "sha256": "895ce0f3477a26332ae4acb30c2f4ca908c38982777051290c5ee43dd5e8889c",
+        "size_bytes": 5560,
+        "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+        "scriptCommitSha": "890ee81e8fb0ad89fc0861c56a54487b5eb82353",
+        "computedAt": "2026-06-22T14:32:18.810430+00:00"
       },
       {
         "path": "codata-2022-validation-masses.witness.json",
