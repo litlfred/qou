@@ -36,7 +36,7 @@ from lr_coefficients import partitions_of       # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q as Q0                 # noqa: E402
+from q_parameter import Q_MP                    # noqa: E402  high-precision q (mpf), not float Q
 
 DPS = 50
 mp.mp.dps = 60
@@ -50,7 +50,7 @@ def main() -> int:
     chi = {tuple(k): mp.mpf(str(v)) if not isinstance(v, mp.mpf) else v
            for k, v in chi_all_lambda_reduced_block(w5, 15, q=None).items()}
     y = {tuple(k): (v if isinstance(v, mp.mpf) else mp.mpf(str(v)))
-         for k, v in y_lambda_at(15, Q0).items()}
+         for k, v in y_lambda_at(15, Q_MP).items()}
     pdim = aoa.partition_dim
 
     contrib = {lam: y[lam] * chi[lam] for lam in chi}
