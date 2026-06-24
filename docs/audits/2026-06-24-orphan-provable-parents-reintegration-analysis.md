@@ -129,11 +129,8 @@ check = 0):
    markov-gram`). **5 held WIP** — the Habiro chain
    (`a8-partition-function-identity`, `cyclotomic-strand-doubling`,
    `habiro-pochhammer-bridge`, `habiro-precision-ladder-equivalence`,
-   `zeta8-witness-level2-su2`): `cyclotomic-strand-doubling` carries a
-   **refuted** categorical (strand-doubling) interpretation in its own
-   author note, and `habiro-precision-ladder-equivalence` depends on the
-   unrendered `prop:q-schur-y-lambda-closed-form`; the other three
-   cascade-block on these. Left for author review.
+   `zeta8-witness-level2-su2`). **Decision: leave WIP** (deeper review
+   2026-06-24 below).
 4. **climax (2)** — ✅ wired (`selection-rule-anchors-c1-c3`,
    `selection-rule-c2-prediction`, both proved) →
    `sec:knot-operator-energy`.
@@ -152,11 +149,44 @@ strip `//` line comments before the regex
 the fix confirms **all 28 wired blocks appear in exactly one manifest** —
 no block was double-wired by the false positive.
 
+### Habiro-chain review (2026-06-24) — why WIP, not wired
+
+Per-block soundness is fine; the blockers are **placement + unmaintained
+draft metadata**, which make wiring an editorial call, not a mechanical
+one. The chain: `a8-partition-function-identity` →
+`cyclotomic-strand-doubling` → `habiro-pochhammer-bridge` →
+`habiro-precision-ladder-equivalence`; `zeta8-witness-level2-su2` →
+{`cyclotomic`, `pochhammer`}.
+
+- **Sound math.** `cyclotomic-strand-doubling` is *not* a soundness
+  problem — the refuted "strand-doubling" reading is correctly demoted
+  to a documented historical note and the block now states only the true
+  algebraic identity Φ₈(X)=Φ₄(X²). The others are proved;
+  `zeta8` carries one Wenzl-annihilator `sorry` with a `[wenzl1987]`
+  citation (acceptable per §1).
+- **Forward cross-chapter deps.** `habiro-pochhammer-bridge` uses
+  `def:habiro-ring` and `habiro-precision-ladder-equivalence` uses
+  `prop:mass-endomorphism-tower` — both in **mass-theory** (later than
+  braids). Wiring requires moving the 5-block chain braids → mass-theory,
+  and `mass-endomorphism-tower` sits at line ~639 (after the new gates
+  section), so the chain cannot sit with its thematic kin.
+- **Unmaintained `uses[]`.** `habiro-precision-ladder-equivalence`'s
+  `uses[]` lists `prop:q-schur-y-lambda-closed-form` (exists **nowhere**
+  — dangling; the block's `.md` never references it) and
+  `prop:mass-endomorphism-tower` (resolves but is unreferenced in prose),
+  while the one block its prose *does* cite
+  (`prop:tau-M-asymptotic-rep-theory`) is **absent** from `uses[]`.
+  Cleaning this is a judgment call about real-vs-spurious deps.
+- **Draft-tagged**, in the `c_k`/Habiro flip-flop area (AGENTS.md). The
+  owner's instruction was "triage braids-8 *separately*"; the triage
+  outcome for these 5 is **hold** — left untouched for the owner to
+  clean `uses[]` + place deliberately.
+
 ### Remaining
 
-5 orphan provable parents, all the braids-and-knots Habiro chain above —
-held WIP pending author review of the refuted interpretation +
-unrendered `q-schur-y-lambda-closed-form`.
+5 orphan provable parents, all the braids-and-knots Habiro chain —
+held WIP per the review above (sound math; needs owner-driven `uses[]`
+cleanup + braids → mass-theory move).
 
 ## Reproduce
 
