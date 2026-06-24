@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.sorting_color_energy — Hecke eigendecomposition + sorting projection
 

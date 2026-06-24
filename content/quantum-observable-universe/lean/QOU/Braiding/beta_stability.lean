@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Braiding.beta_stability
 

@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Torsion.neutron_proton_splitting — neutron-proton mass splitting
 

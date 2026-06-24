@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Archimedean.yekutieli_leading_coefficient — `κ(T_{2,p}) = 1 ≠ 0`
 
