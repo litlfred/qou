@@ -89,4 +89,27 @@ theorem coCasimir_wrong_sign : 0 < coCasimirSum ∧ targetSigned < 0 := by
   unfold coCasimirSum targetSigned
   refine ⟨by norm_num, by norm_num⟩
 
+/-! ## The six refuted Δ_λ closure ansätze — landscape (anti-re-walk index)
+
+Per AGENTS.md §"Δ_λ gate", six closure ansätze are refuted, and the "no seventh
+fit-based ansatz" rule depends on knowing *why* each is dead. They fail by
+**structurally different** mechanisms — only the co-Casimir ansatz fails as a clean
+numeric miss (the `≠` lemmas above), so the other five are catalogued here with their
+mechanism + the formalisation/audit that carries each refutation, rather than forced
+into a miss-shaped lemma they do not fit (which would misrepresent them).
+
+| # | ansatz | refutation mechanism | where |
+|---|--------|----------------------|-------|
+| B | Frobenius co-Casimir `1/dim_q(λ)` | clean numeric **miss + wrong sign** (gap ≈ 4.498 m_e; pred > 0, target < 0) | **this file** (`coCasimir_*`) |
+| C | Demazure-fibre `y_λ·D_w/D_{w₀}` | **tautological** — `Δ_λ ~ 10⁻⁵`, reproduces `M_LO`, vortex-blind | `2026-05-18-delta-lambda-gating-context.md` row C |
+| D-Plancherel | LP shadow price `min Σ\|Δ_λ\|·w_λ` | **under-determined** (not a miss) — reproduces Occam exactly, `L∞ = 1.9e-15`; shifts the freedom to the cost choice | gating-context row D-Plancherel |
+| D-Frobenius | LP alt cost | under-determined — picks a different singleton (`λ=[6]`, `Δ=−47.16`); same defect | gating-context row D-Frobenius |
+| E | crystal-graph (Kashiwara, `q→1`) | **KL-positivity prune** — target `Δ_λ = sgn(w₀)·dim` is mixed-sign, KL multiplicities are `≥ 0`, so no `Σ_w n^w_λ·X_w` can supply the chirality sign | Lean sorry-free `QOU.BraidsAndKnots.S5SO3FiberAction.PartitionOf5.deltaSign_mixed`; `2026-06-16-option-e-probe4-kl-positivity-prune.md` |
+| F | Wenzl-bridge augmented Markov | **ill-posed** — over-determined axiom set (closure-pickle) | gating-context row F |
+
+The co-Casimir `≠` lemmas above are the machine-checked face of row B; rows C/D/F are
+refuted by mechanism (documented, not miss-shaped); row E is independently Lean-proved.
+Together these close the "no 7th ansatz" gate: a candidate must defeat **all six**
+distinct mechanisms, not merely beat one number. -/
+
 end QOU.BraidKnot.DeltaLambdaRefutation
