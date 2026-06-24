@@ -29,6 +29,9 @@ to avoid `ℕ`-subtraction.
 - `sumSq_hook_expand` — `Σ hook² = Σ arm² + Σ leg² + Σ 1 + 2 Σ(arm·leg) + 2 Σ arm + 2 Σ leg`
   (`Finset`-linearity + `ring`).
 - `identityA` — the identity itself, **reduced** to the single heart `statistics_combine`.
+- `content_swap`, `leg_eq_arm_transpose`, `sum_arm_transpose_eq_sum_leg` — the **conjugation
+  bridge**: content negates and leg↔arm under the transpose cell-swap, so the leg-sum over `μ`
+  equals the arm-sum over `μ.transpose`. This is the structural lever the heart trades on.
 
 ## Remaining (the heart, `sorry` + `-- Ref:`)
 
@@ -78,6 +81,29 @@ theorem sumSq_hook_expand (μ : YoungDiagram) :
         + 2 * (arm μ c) + 2 * (leg μ c) := by
     intro c; simp only [hook]; ring
   simp only [hpt, Finset.sum_add_distrib, Finset.mul_sum]
+
+/-- Content negates under the transpose cell-swap `(i,j) ↦ (j,i)`: `content (j,i) = − content (i,j)`.
+Hence `Σ content²` is transpose-invariant — one of the symmetries the heart exploits. -/
+theorem content_swap (c : ℕ × ℕ) : content c.swap = - content c := by
+  simp only [content, Prod.fst_swap, Prod.snd_swap]; ring
+
+/-- **Pointwise conjugation.** The leg of `c` in `μ` is the arm of `c.swap` in `μ.transpose`:
+`leg μ (i,j) = μ.colLen j − i − 1 = μ.transpose.rowLen j − i − 1 = arm μ.transpose (j,i)`. -/
+theorem leg_eq_arm_transpose (μ : YoungDiagram) (c : ℕ × ℕ) :
+    leg μ c = arm μ.transpose c.swap := by
+  simp only [leg, arm, Prod.fst_swap, Prod.snd_swap, YoungDiagram.rowLen_transpose]
+
+/-- **Conjugation relation (leg-sum = transpose arm-sum).** Via the cell swap
+`μ.transpose.cells = (prodComm) '' μ.cells`, the arm-sum over `μ.transpose` equals the leg-sum over
+`μ`. This is the structural bridge the heart uses to trade leg-statistics for arm-statistics. -/
+theorem sum_arm_transpose_eq_sum_leg (μ : YoungDiagram) :
+    ∑ c ∈ μ.transpose.cells, arm μ.transpose c = ∑ c ∈ μ.cells, leg μ c := by
+  have hmap : μ.transpose.cells = μ.cells.map (Equiv.prodComm ℕ ℕ).toEmbedding := by
+    simp [YoungDiagram.transpose, Equiv.finsetCongr_apply]
+  rw [hmap, Finset.sum_map]
+  refine Finset.sum_congr rfl (fun c _ => ?_)
+  simp only [Equiv.coe_toEmbedding, Equiv.prodComm_apply]
+  exact (leg_eq_arm_transpose μ c).symm
 
 /-- **The heart (deferred, multi-session).** The six statistic sums combine to `Σ content² + n²`.
 This is the only remaining gap in `identityA`; the next-session plan uses the `transpose` API for
