@@ -114,7 +114,4 @@ instance : AveragingResonanceRule where
     unfold QOU.BraidKnot.AveragingResonanceRule.kRes
     decide
 
-/-- Restatement marker. -/
-def rung_rule [AveragingResonanceRule] : True := trivial
-
 end QOU.BraidKnot.AveragingResonanceRule

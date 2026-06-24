@@ -268,14 +268,4 @@ theorem wenzl_bridge_unique (q : ℝ) :
     wenzlQ q = q ^ 2 ∧ wenzlZ q = q * jonesMarkovZ q :=
   wenzl_bridge_unique_definitional q
 
-/-- **Numerical agreement**: at the substrate value `q_0 ≈ 1.1100`,
-    the Wenzl-bridge closed form `y_λ_bridge(q_0)` agrees with the
-    Jones-Markov coefficient computed directly from the linear-system
-    solve to machine precision (≤ 10⁻¹⁶) across all 270 partitions
-    of `n = 2, ..., 12`. -/
-def y_lambda_bridge_numerical_agreement : True := by
-  trivial  -- Empirical witness:
-           -- gb-filtration-gauge-invariance.witness.json (n ≤ 9)
-           -- y-lambda-wenzl-bridge-symbolic-witness.json (n ≤ 12)
-
 end QOU.BraidsAndKnots
