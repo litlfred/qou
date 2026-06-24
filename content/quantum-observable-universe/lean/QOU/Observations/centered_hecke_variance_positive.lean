@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Linarith
+
 /-!
 # QOU.Observations.centered_hecke_variance_positive
 
@@ -9,9 +12,6 @@ the `lean.ref` URI `qou:QOU.Observations.centered_hecke_variance_positive` resol
 `qou` Lake package.  The body is `sorry` carrying the manuscript
 citation per AGENTS.md §1.
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.Linarith
 
 namespace QOU.Observations
 
@@ -54,7 +54,9 @@ the QOU substrate $q_0 \approx 1.110$, $\mathrm{Var}(\sigma_i) \approx 0.855$.*
 -- Ref: [manuscript] quantum-observable-universe/observations/centered-hecke-variance-positive.ts
 theorem centered_hecke_variance_positive [ctx : CenteredHeckeVariancePositiveContext] :
     ctx.Var_sigma = (ctx.q - ctx.q⁻¹) * ctx.z + 1 - ctx.z ^ 2 ∧
-    0 < ctx.Var_sigma :=
-  sorry
+    0 < ctx.Var_sigma := by
+  constructor
+  · exact ctx.var_formula
+  · linarith [ctx.var_formula, ctx.term1_pos, ctx.term2_pos]
 
 end QOU.Observations
