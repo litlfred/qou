@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.frobenius_dagger_positive_definite — `f† ∘ f > 0` for all `f ≠ 0`
 

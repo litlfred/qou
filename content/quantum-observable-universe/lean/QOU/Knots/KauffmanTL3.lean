@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Knots.KauffmanTL3 — a computable link invariant for 3-braid closures
 

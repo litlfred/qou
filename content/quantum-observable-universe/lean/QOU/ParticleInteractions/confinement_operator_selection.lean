@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.ParticleInteractions.confinement_operator_selection — topological Brunnian selection
 

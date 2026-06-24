@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-
 Per-term weight assembly for the six-term mass formula.
 

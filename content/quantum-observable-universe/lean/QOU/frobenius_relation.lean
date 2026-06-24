@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.frobenius_relation — Frobenius coassociativity relation
 

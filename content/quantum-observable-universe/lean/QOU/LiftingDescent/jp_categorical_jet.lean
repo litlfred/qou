@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.LiftingDescent.jp_categorical_jet
 

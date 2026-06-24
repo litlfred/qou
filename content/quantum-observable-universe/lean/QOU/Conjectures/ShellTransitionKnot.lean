@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 namespace QOU.Conjectures
 
 class ShellTransitionKnot where
