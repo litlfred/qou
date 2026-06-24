@@ -1,98 +1,79 @@
-# Convention: narrative proofs live in a `.proof.md` sidecar
+# Convention: narrative proofs are separate `proof` blocks
 
-**Status:** adopted 2026-06-24 (author directive). qou-side tooling +
-file convention land first; the render/validation wiring is a
-`litlfred/folio-assistant` follow-up (see §Rollout).
+**Status:** the mechanism already exists in the platform and is in use
+(~170 proof blocks). This doc records the convention and the audit/QA
+gap. Adopted/clarified 2026-06-24 (author directive: "narrative proof as
+a separate `.md`, part of the content block, to track easier").
 
-## Why
+## The mechanism (already supported — no schema change needed)
 
-A provable content block (`theorem` / `lemma` / `proposition` /
-`corollary`) is a file group sharing a root name:
-
-```
-<root>.ts      manifest (kind, label, lean.ref, uses, …)
-<root>.md      narrative — the STATEMENT (+ motivation / interpretation)
-<root>.lean    formalization (when required)
-```
-
-Historically the *narrative proof* was folded into `<root>.md` as inline
-prose (or omitted entirely, with the only proof living in `<root>.lean`).
-That made "does this block have a paper proof?" un-trackable: it required
-prose heuristics, and ~50 % of provable blocks had no narrative proof at
-all (audit: `docs/audits/2026-06-24-narrative-proof-presence-audit.md`).
-
-## The convention
-
-The narrative proof gets its **own sibling file**, part of the content
-block:
+A provable block's narrative proof is its **own content block** of kind
+`proof`, a sibling triple sharing the parent's root name plus `-proof`:
 
 ```
-<root>.proof.md    narrative PROOF (markdown + TeX, same conventions as .md)
+<name>.ts          parent provable block (theorem/lemma/proposition/corollary)
+<name>.md          the STATEMENT (+ motivation)
+<name>.lean        formalization
+<name>-proof.ts    proof block:  proof({ label:"prf:<name>", title, uses:["<parent-label>"] })
+<name>-proof.md    the narrative PROOF  ← the separate .md the author asked for
 ```
 
-- **`<root>.md`** holds the statement and any motivation/interpretation.
-- **`<root>.proof.md`** holds the proof the human reader follows.
-- **Presence is the signal.** "Has a narrative proof" ⇔ a non-trivial
-  `<root>.proof.md` exists. No prose heuristics, no Lean parsing — a
-  file-existence check, trivially auditable and CI-gateable.
+Three links make it first-class and trackable:
 
-### Deliberate exemptions
+1. **Proof block** `<name>-proof.ts` — `export default proof({ label:
+   "prf:<name>", title: "Proof of …", uses: ["prop:<name>"] })`.
+2. **Parent links down** — the provable block carries
+   `proofs: ["prf:<name>"]`.
+3. **Chapter manifest lists it** — add `"<name>-proof"` to the section's
+   `blocks: [...]` array, right after `"<name>"`.
 
-Some provable blocks intentionally have no internal proof — they cite an
-external/axiomatic result (e.g. `thm:jones-markov-trace`, proved in
-Jones 1987). Mark these in the manifest rather than leaving an empty
-sidecar:
+The render pipeline already emits `<name>-proof.md` inside a proof
+environment after the statement. So "does this block have a paper proof?"
+is answered by **file/link presence** — exactly the trackability the
+author wants — without a prose heuristic.
 
-```ts
-export default theorem({
-  label: "thm:jones-markov-trace",
-  proof: "external",          // ← deliberate: no .proof.md expected
-  // …
-});
-```
+### Authoring a proof `.md`
 
-`proof` field values:
+- Same markdown/TeX conventions as any `.md` (inline `$…$`, display
+  `$$…$$`, fenced ```tex, cross-refs `[text](#label)`).
+- **Do not** add a `**Proof.**` header or a trailing `∎` expectation as a
+  hard rule — match the surrounding chapter; existing proof blocks open
+  directly with the argument and close with `$\qquad\blacksquare$`.
+- Keep it **human-readable**. When a step becomes pedantic combinatorics
+  or bookkeeping, state the structure and **refer to the Lean witness**
+  (e.g. "(`QOU.Mass.evenPart_fixed`, using $\sigma^2=\mathrm{id}$)")
+  rather than belabouring it in prose. The `.lean` is the rigorous record;
+  the `.md` is the readable account.
+- When a sorry-free Lean proof exists, the `.md` should be a faithful
+  account of the *same* argument (`proof-narrative-lean-equiv` adjudicates
+  drift).
 
-| value         | meaning                                                        | `.proof.md` expected |
-|---------------|----------------------------------------------------------------|----------------------|
-| *(unset)*     | a narrative proof is required                                  | **yes**              |
-| `"external"`  | proof deferred to a cited external/axiomatic source            | no                   |
-| `"definitional"` | the statement is true by definition / immediate; no proof needed | no                |
+### Deliberate exemptions (no proof block expected)
 
-## Authoring rules
+Some provable blocks cite an external/axiomatic result instead of proving
+it internally (e.g. `thm:jones-markov-trace` → Jones 1987). These need no
+proof block; the citation lives in the statement `.md`. (A manifest
+`proof?: "external" | "definitional"` marker is proposed in the
+folio-assistant requirements so the audit can distinguish "deliberately
+external" from "missing".)
 
-1. A new provable block ships with `<root>.proof.md` **or** an explicit
-   `proof: "external" | "definitional"` in the manifest. A provable block
-   with neither is a gap (flagged by the audit).
-2. `.proof.md` follows the same markdown/TeX conventions as `.md`
-   (inline `$…$`, display `$$…$$`, fenced ```tex blocks; see AGENTS.md
-   §"Markdown content convention").
-3. Open the proof with a bold **Proof.** lead and close it with `∎`.
-4. When a Lean proof exists, the `.proof.md` should be a faithful
-   human-readable account of the *same* argument (the
-   `proof-narrative-lean-equiv` QA criterion adjudicates drift).
-
-## Tooling
+## Audit + QA
 
 - **Audit:** `bun run content/pipeline/audit-narrative-proof-presence.ts`
-  reports, per chapter: blocks with a `.proof.md` sidecar (target),
-  blocks with only an inline proof (to migrate), external/definitional
-  exemptions, and remaining gaps.
+  reports, per chapter, provable blocks with vs. without a linked
+  non-trivial proof block. Current state: **167** covered, **492** gaps.
 - **Proposed QA criterion** `proof-narrative-present` (folio-assistant
-  `qa-criteria-registry.ts §PROOF`): `pass` iff `.proof.md` exists and is
-  non-trivial, or the manifest marks the block exempt. Routes failures to
-  the proof-authoring backlog the same way the Lean criteria route to
-  Lean skills.
+  `qa-criteria-registry.ts §PROOF`): `pass` iff a linked non-trivial proof
+  block exists, or the block is marked external/definitional. This is the
+  only genuinely *new* platform work — the proof block kind, the `proofs`
+  field, and rendering already exist. See
+  [`narrative-proof-sidecar-folio-assistant-requirements.md`](narrative-proof-sidecar-folio-assistant-requirements.md).
 
-## Rollout
+## Drain
 
-1. **(this PR, qou)** file convention + audit tooling + this doc. ✔
-2. **(folio-assistant)** add the optional `proof?: "external" |
-   "definitional"` field to the provable-block schema/builders; teach the
-   render pipeline to append `<root>.proof.md` after the statement inside
-   a `proof` environment; register the `proof-narrative-present` QA
-   criterion. *Until this lands, `.proof.md` files are authored and
-   tracked but not yet rendered into the PDF — additive, no regression.*
-3. **(qou, ongoing)** migrate inline proofs out of `.md` into `.proof.md`
-   (do this only after step 2, so the render does not drop the proof),
-   and drain the ~331 genuine gaps chapter by chapter.
+Fill the 492 gaps incrementally (largest chapters first: mass-theory 198,
+particle-interactions 53, predicted-spectra 44): for each provable block
+without a proof block, add `<name>-proof.{ts,md}`, the parent `proofs`
+link, and the chapter-manifest entry — OR mark it external/definitional.
+Tracked in bean `k65k` (children `i7fd` drain, `i4fx` folio-assistant QA
+criterion).

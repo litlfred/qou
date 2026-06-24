@@ -3,43 +3,35 @@
  * audit-narrative-proof-presence.ts
  *
  * Corpus audit: does every provable content block (theorem / lemma /
- * proposition / corollary) carry a *narrative* proof in its `.md`
- * sibling — i.e. an argument the human reader can follow in prose, not
- * only a Lean `.lean` formalization and not only a bare statement?
+ * proposition / corollary) have a *narrative* proof a human reader can
+ * follow — i.e. a linked `proof` block — rather than only a Lean `.lean`
+ * formalization or only a bare statement?
  *
- * Motivation. The QA sidecar (`<block>.qa.json`) registry §PROOF tracks
- * proof quality on the *Lean* side only: `proof-no-bare-sorries`,
- * `proof-lean-compiles`, `proof-no-axiom-growth`, `proof-narrative-lean-equiv`
- * (equivalence, gated on `.lean` existing), the vacuity family, the rater
- * scores. None of them assert the *positive* requirement "a provable block
- * must contain a narrative proof in prose." This script fills that gap as a
- * standalone, registry-independent audit so the backlog is visible while the
- * `proof-narrative-present` QA criterion is wired into the folio-assistant
- * qa-criteria-registry (separate repo).
+ * Mechanism (already in the platform). A narrative proof is its own
+ * content block of kind `proof`: a `<name>-proof.ts` + `<name>-proof.md`
+ * triple with `label: "prf:<name>"` and `uses: ["<parent-label>"]`. The
+ * parent provable block links it via `proofs: ["prf:<name>"]`, and the
+ * chapter manifest lists `"<name>-proof"` in its block array. The render
+ * pipeline emits the `<name>-proof.md` body inside a proof environment
+ * after the statement. ~170 such proof blocks already exist.
  *
- * Canonical signal (target architecture). A provable block's narrative
- * proof lives in a dedicated **`<root>.proof.md` sibling file**, parallel
- * to `<root>.md` (statement) and `<root>.lean` (formalization). Presence
- * of a non-trivial `<root>.proof.md` ⇒ the block HAS a narrative proof,
- * trackable by file existence alone. This is the convention requested by
- * the author (2026-06-24) and specified in
- * `docs/conventions/narrative-proof-sidecar.md`.
+ * A provable block is COVERED iff it has a linked, non-trivial proof
+ * block — detected either from the parent's `proofs: [...]` field or from
+ * a `proof` block whose `uses: [...]` names the parent's label. Otherwise
+ * it is a GAP: the proof, if it exists at all, lives only in Lean or in
+ * inline parent prose, and is not separately tracked.
  *
- * Legacy signal (transitional). Until every block is migrated, a block
- * also counts as HAVING a narrative proof if its `<root>.md` contains a
- * recognizable proof cue inline (a "Proof" heading/word, "we
- * prove/show/establish", an induction/construction phrase, ∎/QED). The
- * audit reports the migration split (sidecar vs inline-only) so progress
- * toward the target architecture is visible.
+ * Motivation. The QA sidecar registry §PROOF tracks proof quality on the
+ * *Lean* side only; none of its criteria assert "a provable block must
+ * carry a separately-tracked narrative proof block." This script surfaces
+ * that backlog (the proposed `proof-narrative-present` QA criterion) so it
+ * is visible while the criterion is wired into the folio-assistant
+ * qa-criteria-registry.
  *
- * A block is EXEMPT (not a gap) when its narrative explicitly defers the
- * proof to an external/axiomatic source ("external-proof" tag, "standard
- * result", "take as axiomatic", …) — those are deliberate, cited
- * black-boxes, not missing proofs.
- *
- * This is a heuristic surfacing tool, not a gate: a human still confirms
- * each flagged block genuinely lacks a proof versus being definitional or
- * trivially self-evident.
+ * Heuristic at the margin: a definitional proposition may need no proof,
+ * and an external/axiomatic result is deliberately a cited black-box. Each
+ * flagged block needs a human pass to confirm the disposition (author a
+ * proof block / mark external / demote).
  *
  * Usage:
  *   bun run content/pipeline/audit-narrative-proof-presence.ts [content-root]
@@ -50,22 +42,19 @@ import { join } from "path";
 
 const PROVABLE = new Set(["theorem", "lemma", "proposition", "corollary"]);
 
-const PROOF_CUE =
-  /\bproof\b|\bwe (?:prove|show|establish|verify|argue|claim|deduce|conclude)\b|∎|\bq\.?e\.?d\.?\b|\bby (?:induction|construction|definition|hypothesis|cases)\b|\bsuppose\b.*\bthen\b/is;
-
-const EXTERNAL_CUE =
-  /external[-\s]proof|as axiomatic|take[^.]*as (?:an )?axiom|standard result|axiomati[sz]ed|cited (?:as|external)|proof occupies|due to [A-Z]/s;
-
-interface Gap {
-  ts: string;
-  label: string;
-  kind: string;
-  chapter: string;
-}
-
 /** Non-trivial = has some real prose, not an empty/placeholder stub. */
 function nonTrivial(s: string): boolean {
   return s.replace(/\s+/g, " ").trim().length > 20;
+}
+
+function field(txt: string, name: string): string[] {
+  const m = txt.match(new RegExp(`${name}:\\s*\\[([^\\]]*)\\]`));
+  if (!m) return [];
+  return [...m[1].matchAll(/["'`]([^"'`]+)["'`]/g)].map((x) => x[1]);
+}
+
+function label(txt: string): string {
+  return (txt.match(/label:\s*["'`]([^"'`]+)["'`]/) ?? [, "?"])[1];
 }
 
 function walk(dir: string, out: string[] = []): string[] {
@@ -82,56 +71,58 @@ function walk(dir: string, out: string[] = []): string[] {
   return out;
 }
 
+interface Gap {
+  ts: string;
+  label: string;
+  kind: string;
+  chapter: string;
+}
+
 function main() {
   const args = process.argv.slice(2);
   const asJson = args.includes("--json");
   const root = args.find((a) => !a.startsWith("--")) ?? "content";
 
+  const files = walk(root).filter(
+    (f) => !f.includes("/schema/") && !f.includes("/pipeline/"),
+  );
+
+  // Pass 1: index non-trivial proof blocks and which parent labels they prove.
+  const prfOk = new Set<string>();
+  const provesParent = new Set<string>();
+  for (const ts of files) {
+    const txt = readFileSync(ts, "utf-8");
+    if (!/export default proof\(/.test(txt)) continue;
+    const md = ts.slice(0, -3) + ".md";
+    const body = existsSync(md) ? readFileSync(md, "utf-8") : "";
+    if (!nonTrivial(body)) continue;
+    prfOk.add(label(txt));
+    for (const u of field(txt, "uses")) provesParent.add(u);
+  }
+
+  // Pass 2: classify provable blocks.
   const gaps: Gap[] = [];
   let total = 0,
-    sidecar = 0,
-    inlineOnly = 0,
-    external = 0;
-
-  for (const ts of walk(root)) {
-    if (ts.includes("/schema/") || ts.includes("/pipeline/")) continue;
+    covered = 0;
+  for (const ts of files) {
     const txt = readFileSync(ts, "utf-8");
     const m = txt.match(/export default (\w+)\(/);
     if (!m || !PROVABLE.has(m[1])) continue;
     total++;
-    const kind = m[1];
-    const label = (txt.match(/label:\s*["'`]([^"'`]+)["'`]/) ?? [, "?"])[1];
-    const root3 = ts.slice(0, -3);
-    const md = root3 + ".md";
-    const proofMd = root3 + ".proof.md";
-    const body = existsSync(md) ? readFileSync(md, "utf-8") : "";
-    const haystack = txt + "\n" + body;
-
-    // Canonical signal: a non-trivial `.proof.md` sidecar.
-    if (existsSync(proofMd) && nonTrivial(readFileSync(proofMd, "utf-8"))) {
-      sidecar++;
-      continue;
+    const lab = label(txt);
+    const linked =
+      field(txt, "proofs").some((r) => prfOk.has(r)) || provesParent.has(lab);
+    if (linked) {
+      covered++;
+    } else {
+      const parts = ts.split("/");
+      gaps.push({ ts, label: lab, kind: m[1], chapter: parts[2] ?? parts[1] ?? "?" });
     }
-    // Legacy signal: an inline proof cue in `.md`.
-    if (PROOF_CUE.test(body)) {
-      inlineOnly++;
-      continue;
-    }
-    if (EXTERNAL_CUE.test(haystack)) {
-      external++;
-      continue;
-    }
-    const parts = ts.split("/");
-    gaps.push({ ts, label, kind, chapter: parts[2] ?? parts[1] ?? "?" });
   }
 
   if (asJson) {
     console.log(
-      JSON.stringify(
-        { total, sidecar, inlineOnly, external, gaps: gaps.length, items: gaps },
-        null,
-        2,
-      ),
+      JSON.stringify({ total, covered, gaps: gaps.length, items: gaps }, null, 2),
     );
     return;
   }
@@ -139,11 +130,9 @@ function main() {
   const byChap = new Map<string, number>();
   for (const g of gaps) byChap.set(g.chapter, (byChap.get(g.chapter) ?? 0) + 1);
 
-  console.log(`Provable blocks scanned:           ${total}`);
-  console.log(`  proof in .proof.md sidecar:      ${sidecar}   (target architecture)`);
-  console.log(`  proof inline in .md (legacy):    ${inlineOnly}   (migrate → .proof.md)`);
-  console.log(`  external / axiomatic:            ${external}`);
-  console.log(`  NO narrative proof (gaps):       ${gaps.length}`);
+  console.log(`Provable blocks scanned:            ${total}`);
+  console.log(`  with a linked proof block:        ${covered}`);
+  console.log(`  NO proof block (gaps):            ${gaps.length}`);
   console.log("\nGaps by chapter:");
   for (const [c, n] of [...byChap.entries()].sort((a, b) => b[1] - a[1])) {
     console.log(`  ${String(n).padStart(3)}  ${c}`);
