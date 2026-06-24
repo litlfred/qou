@@ -280,7 +280,7 @@ except ImportError:
 # can reach the same MeV anchors without depending on the flat-name
 # `experimental_constants` shim that only `_legacy` puts on sys.path.
 # Authoritative source is the substrate cluster file; values match.
-M_E_MEV     = 0.51099895000   # ± 0.00000000015 MeV (CODATA 2022)
+M_E_MEV     = 0.51099895069   # ± 0.00000000015 MeV (CODATA 2022, full 11 sig figs)
 M_E_MEV_ERR = 0.00000000015
 M_P_MEV     = 938.27208816    # ± 0.00000029   MeV (CODATA 2022)
 M_P_MEV_ERR = 0.00000029
