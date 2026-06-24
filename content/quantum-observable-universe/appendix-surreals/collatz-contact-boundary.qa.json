@@ -1356,7 +1356,159 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "lean/QOU/AlgebraicSubstrate/collatz_contact_boundary.lean:97-104 `theorem collatz_contact_boundary [ctx] : (ctx.q_int_2 = 0 → ctx.kummer_obstruction_removable) ∧ ((2:ℤ) ∣ ctx.chi_A) := ⟨ctx.obstruction_removable_of_even_chi h1, h1⟩` — proves only `2 ∣ −6` + a parity-gated Kummer implication handed in as a class field. The .md proposition (md:101,126,210) is the [2]_q-adic contact-order convergence iff `⟨v_[2]⟩(P) ≥ 2 ⟺ orbit converges` (equivalent to q-Collatz); the Lean formalises none of it.",
+        "rebuttal": "surviving — §0a: the sibling declares only collatz_contact_boundary_conditional (grep no match for the bare FQN), so the ref resolves to the LIBRARY file (resolution-audit: sole grep hit = lake-root); that resolved theorem proves a displaced, far-weaker claim. Block materials confirm, do not rebut.",
+        "evidence": [
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/collatz_contact_boundary.lean:97"
+          },
+          {
+            "text": "collatz-contact-boundary.md:101"
+          },
+          {
+            "text": "collatz-contact-boundary.md:210"
+          }
+        ],
+        "severity": "critical",
+        "result": "fail",
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "collatz-contact-boundary.lean:37-42 `def collatz_contact_boundary_conditional [QAubinLions]…[RegularityBreakdown] (q:ℝ)(hq:q>1) : True := trivial` — a def-disguised-True in the SIBLING (proof-no-trivial-true=fail critical; vacuity-def-dodge.json). The flag's 'proved over :=trivial' premise points here.",
+        "rebuttal": "partial — the vacuous def exists + is flagged, BUT it is named …_conditional, NOT the FQN the lean.ref targets, so it is NOT the resolved decl — a co-located vacuous def, not the shadow-stub the flag assumed. Vacuity stands as a co-located §1a audit-dodge (five unused archimedean class hyps + unused (q,hq)).",
+        "evidence": [
+          {
+            "text": "collatz-contact-boundary.lean:37"
+          },
+          {
+            "text": "collatz-contact-boundary.qa.json:1285"
+          }
+        ],
+        "severity": "major",
+        "result": "warn",
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "labelled proved + recorded in B_provable_vacuous (buckets.json: kind proposition, lean::= trivial, labels [proved]); md:119 '(proved: [2]_q < [3]_q < [2]_q^2)' and md:101 a convergence-iff Proposition presenting a Collatz-equivalent claim.",
+        "rebuttal": "partial — TWO sub-claims, opposite rulings. (1) Collatz-propagation overclaim REBUTTED: the .md opens with an explicit conditional banner (5 conjectures, md:1-8) and defers convergence to conj:q-collatz (md:188; boxed 'equivalent to' md:207-215); q-Collatz is correctly a conjecture block with a §3b-cond sorry-instance. (2) The proved status-LABEL overclaim SURVIVES: standing entry in B_provable_vacuous over a Lean (resolved library theorem) that proves a displaced claim, not S(B).",
+        "evidence": [
+          {
+            "text": "collatz-contact-boundary.md:1"
+          },
+          {
+            "text": "docs/audits/2026-06-24-status-label-overclaim-buckets.json"
+          }
+        ],
+        "severity": "major",
+        "result": "warn",
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-circular": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "lean/QOU/AlgebraicSubstrate/collatz_contact_boundary.lean:31: class field `obstruction_removable_of_even_chi : (2:ℤ) ∣ chi_A → (q_int_2 = 0 → kummer_obstruction_removable)` IS the theorem's first conjunct; proof `:= ⟨ctx.obstruction_removable_of_even_chi h1, h1⟩` projects a class field (§3b-cond rule-5 shape).",
+        "rebuttal": "partial — the self-assuming triage (2026-06-18) lists this decl degenerate(field); that ruling means the projection is typing-degenerate, reinforcing da-lean-narrative-divergence rather than standing as an independent fatal flaw. Circularity real but corpus-triaged.",
+        "evidence": [
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/collatz_contact_boundary.lean:31"
+          },
+          {
+            "text": "docs/audits/2026-06-18-self-assuming-projection-triage.json"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "open-objection",
+        "referee_argument": "The lean.ref resolves (§0a sibling-first → library, since the sibling declares only …_conditional) to a sorry-free library theorem proving `(2∣−6) ∧ (a class-supplied parity-gated Kummer implication)` — a displaced triviality formalising NONE of the block's stated proposition (the [2]_q-adic contact-order convergence iff, equivalent to the open q-Collatz conjecture). Fatal Lean↔narrative divergence: the claimed result is not the proved result. The block carries a proved status-label over this Lean (B_provable_vacuous), and a co-located sibling def :=trivial is a flagged def-disguised-True. The Collatz-overclaim proper is rebutted by the explicit conditional banner, but the divergence and status-label objections survive.",
+        "result": "fail",
+        "field_hash": {
+          "md": "e53fe4c65bac",
+          "ts": "c2d91407c017",
+          "lean": "afed622f0e58"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-24T12:33:51Z"
 }

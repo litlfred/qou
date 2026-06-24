@@ -1357,7 +1357,252 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "cyclotomic-l-value-decomposition.lean:32 `theorem beta_3_from_jonquiere : True := by trivial`; resolved library decl Polylogarithm.lean:68 `theorem beta3_from_jonquiere : imLi3ZetaPredicted 4 = beta3` where imLi3ZetaPredicted 'carries no analytic content' and beta3 := π³/32 by definition. The .md boxes β(3)=L(χ_4,3)=Im Li_3(i)=π³/32; neither resolved Lean (sibling : True, or library 6π³/192 = π³/32 ring tautology) proves it. The analytic identification is parked in axiomatised TheoremA/LValueDecomposition classes.",
+        "rebuttal": "surviving — §0a sibling-first lands on the vacuous : True (resolution-audit resolved_via=sibling); even forcing the library decl it is a def-vs-def ring tautology, not the boxed analytic chain.",
+        "evidence": [
+          {
+            "text": "cyclotomic-l-value-decomposition.lean:32"
+          },
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/Infra/Polylogarithm.lean:68"
+          },
+          {
+            "text": "cyclotomic-l-value-decomposition.md:39"
+          }
+        ],
+        "severity": "major",
+        "result": "fail",
+        "field_hash": {
+          "md": "fe05aca82c24",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "ts:6 title 'β(3)=π³/32 as a corollary' + tag theorem-level (ts:26) over a Lean reducing to True:=trivial (sibling)/6π³/192=π³/32 (library); buckets.json:113 logs lean::True, labels [closed form]. md:98 'Classical L-value identities are theorems of our framework' + md:104-107 reframes Beilinson's conjecture as 'part of B1's discharge surface' — far stronger than the verified arithmetic tautology supports.",
+        "rebuttal": "surviving — the gap between displayed status (theorem-level/closed-form/corollary) and the mechanically-checked content (a single ring identity) is real and independently catalogued.",
+        "evidence": [
+          {
+            "text": "cyclotomic-l-value-decomposition.ts:6"
+          },
+          {
+            "text": "docs/audits/2026-06-24-status-label-overclaim-buckets.json:113"
+          }
+        ],
+        "severity": "major",
+        "result": "fail",
+        "field_hash": {
+          "md": "fe05aca82c24",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "cyclotomic-l-value-decomposition.lean:32 `theorem beta_3_from_jonquiere : True := by trivial` is a conclusion-True vacuity and is the decl the lean.ref resolves to (sibling-first).",
+        "rebuttal": "partial — vacuity-def-dodge.json:1176 marks it exempt=true reason 'shadow-stub (real formalisation: …CyclotomicLValueDecomposition.lean)'; a real same-FQN library decl exists (line 44), so shadow-stub not pure-vacuous; survives only as the §0a hygiene violation (delete the sibling), not audit-dodging (remains a theorem, real proof wired into the build).",
+        "evidence": [
+          {
+            "text": "cyclotomic-l-value-decomposition.lean:32"
+          },
+          {
+            "text": "docs/audits/2026-06-23-vacuity-def-dodge.json:1176"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "fe05aca82c24",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "§0a no-shadowing-stub: a real library decl lives at lean/QOU/BraidKnot/CyclotomicLValueDecomposition.lean:44 AND a vacuous sibling at :32; resolution-audit (sibling_declares=true, lake_parent_declares=true, resolved_via=sibling) → the ref resolves to the vacuous sibling, shadowing the lake-root proof — the config §0a forbids.",
+        "rebuttal": "partial — shadowing real, violates §0a hygiene (delete the sibling so the ref resolves to candidate-2). Survivable: resolution-audit result=ok, vacuity audit exempts as known shadow-stub, library decl genuinely compiled (BraidKnot.lean:5 import). Fix is mechanical.",
+        "evidence": [
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicLValueDecomposition.lean:44"
+          },
+          {
+            "text": "cyclotomic-l-value-decomposition.lean:32"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "fe05aca82c24",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "cyclotomic-l-value-decomposition.md:75-78 displays `Im Li_3(i) (closed form π³/32) = 0.96894614625937036…` with Residual 0 (exact match); the true value (mpmath dps=55) is 0.96894614625936938…, diverging at the 14th sig-fig; the witness JSON carries the CORRECT digits. The rendered narrative prints a wrong number while asserting exact match against its own differing witness.",
+        "rebuttal": "partial — the displayed table digits are objectively wrong (transcription error), but the identity Im Li_3(i)=π³/32=β(3) holds to 56 digits and the Jonquière closed form is exact at K=3,4,5,6; only the typeset digits + 'exact match' annotation are defective.",
+        "evidence": [
+          {
+            "text": "cyclotomic-l-value-decomposition.md:75"
+          },
+          {
+            "text": "computations/cl-n-l-value-decomposition.witness.json:18"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "fe05aca82c24",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": ".qa.json records compute-witness-exists=fail (declared witness missing) + bib-cite-resolves=fail (bloch2000/zagier1986/lewin1981 unresolved).",
+        "rebuttal": "rebutted — both QA fails are STALE (sidecar reviewed 2026-06-21; artifacts present 2026-06-24): witness + script exist on disk; all three bib keys resolve in references.ts (579/529/5388). Re-running reproduces the witness arithmetic.",
+        "evidence": [
+          {
+            "text": "computations/cl-n-l-value-decomposition.witness.json:1"
+          },
+          {
+            "text": "content/schema/references.ts:579"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "fe05aca82c24",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-circular": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "witness residual_str '0.0' between closed_form and direct could be a tautological self-comparison.",
+        "rebuttal": "rebutted — the script computes im_li3_zeta4_direct = im(polylog(3, mpc(0,1))) (cl_n_l_value_decomposition.py:75), an independent mpmath evaluation vs the algebraic closed form; agreement to 56 digits is a real numerical identity. The circularity lives in the Lean (def=def tautology), captured under da-lean-narrative-divergence.",
+        "evidence": [
+          {
+            "text": "computations/cl_n_l_value_decomposition.py:75"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "fe05aca82c24",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "open-objection",
+        "referee_argument": "The lean.ref for this closed-form/theorem-level proposition resolves sibling-first to a vacuous `theorem beta_3_from_jonquiere : True := by trivial`, shadowing the real same-FQN library decl (§0a violation); and the shadowed library decl proves only the ring tautology imLi3ZetaPredicted 4 = beta3 (= 6π³/192 = π³/32) over two content-free defs, so neither resolved declaration formalises the boxed analytic chain β(3)=L(χ_4,3)=Im Li_3(i)=π³/32 (parked in axiomatised conditional classes). The displayed status overclaims. Underlying mathematics correct (56-digit numerical confirmation; Jonquière proof rigorous), plus a previously-unrecorded .md table-digit transcription error — so a Lean-narrative-divergence + status-overclaim objection survives, NOT a proof the proposition is false.",
+        "result": "fail",
+        "field_hash": {
+          "md": "fe05aca82c24",
+          "ts": "1890f983dcc3",
+          "lean": "53fb7da83c4f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-24T12:33:51Z"
 }

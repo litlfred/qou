@@ -1353,7 +1353,156 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-vacuous": [
+      {
+        "scope": "structural",
+        "ruling": "surviving",
+        "referee_argument": "b1-hyperbolic-rows-theorem.lean:16 `theorem b1_hyperbolic_rows : True := by trivial`. The .ts lean.ref resolves sibling-first (resolution-audit: resolved_via=sibling, lake_parent_declares=true) to this `: True` body. Invariant (structural): a `: True` body establishes the goal definitionally, not by derivation (§1 typing argument, 2026-06-18-self-assuming-projection-triage.md).",
+        "rebuttal": "surviving — vacuity audit 2026-06-23 confirms conclusion-True, exempt=shadow-stub (concedes the sibling IS vacuous, defers to the library file); the library file does not rescue it (see da-circular). The supporting lemmas muLambda_* prove only trivial edge cases.",
+        "evidence": [
+          {
+            "text": "b1-hyperbolic-rows-theorem.lean:16"
+          },
+          {
+            "text": "docs/audits/2026-06-23-vacuity-def-dodge.json:35-45"
+          }
+        ],
+        "severity": "critical",
+        "result": "fail",
+        "field_hash": {
+          "md": "c19588f11c50",
+          "ts": "5ae0cd6e7073",
+          "lean": "b9ab6be6d514"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-circular": [
+      {
+        "scope": "structural",
+        "ruling": "surviving",
+        "referee_argument": "lean/QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean:31,35-37: `class B1HyperbolicRowsContext` carries `rows_from_volume_conj : bloch_suslin → van_der_veen → 3 ≤ n_hyperbolic_rows_verified` (the conclusion-as-implication) + opaque Prop witnesses; `theorem b1_hyperbolic_rows := ctx.rows_from_volume_conj ctx.h_bloch_suslin ctx.h_van_der_veen` assembles the conclusion from class fields only (§3b-cond rule-5).",
+        "rebuttal": "surviving — 2026-06-18-self-assuming-projection-triage.json classifies this exact decl degenerate(field) (199 degenerate vs 2 LEGIT corpus-wide); cf the LEGIT exemplar q_bkm_criterion.lean (carries iff-DIRECTIONS, derives by Iff.intro). The restate-or-demote fix is acknowledged-but-deferred (owner-gated), defect live not rebutted.",
+        "evidence": [
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean:23-31"
+          },
+          {
+            "text": "docs/audits/2026-06-18-self-assuming-projection-triage.json:131-136"
+          }
+        ],
+        "severity": "critical",
+        "result": "fail",
+        "field_hash": {
+          "md": "c19588f11c50",
+          "ts": "5ae0cd6e7073",
+          "lean": "b9ab6be6d514"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "scope": "structural",
+        "ruling": "surviving",
+        "referee_argument": "the .md asserts the Borromean/Whitehead rows are 'theorem-level'/'proved here' (md:48-49,86-90) + .ts tag theorem-level/volume-conjecture-discharged; the resolved Lean proves True (vacuous), the shadowed library Lean assumes its conclusion as class fields. Neither establishes the rows.",
+        "rebuttal": "surviving — the Lean does not even MENTION Borromean/Whitehead/van der Veen as derived facts (only opaque bloch_suslin/van_der_veen : Prop placeholders). QA proof-narrative-lean-equiv=pass + proof-no-self-assuming-projection=pass are CONTRADICTED by the 2026-06-18 degenerate(field) triage (the agent-drain reviewer missed it).",
+        "evidence": [
+          {
+            "text": "b1-hyperbolic-rows-theorem.md:48-49"
+          },
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean:23-24"
+          }
+        ],
+        "severity": "major",
+        "result": "fail",
+        "field_hash": {
+          "md": "c19588f11c50",
+          "ts": "5ae0cd6e7073",
+          "lean": "b9ab6be6d514"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "md:86-90 'Three additional B1 rows are now theorem-level (Borromean, Whitehead — both proved here)'. 'Proved here' overstates: Steps 1-3 are a proof SKETCH citing van der Veen 2008/Murakami 2002, not self-contained, and the formalisation establishes none of it.",
+        "rebuttal": "partial — the math is plausible and most cites resolve (the .ts cites[] omits a van-der-veen key referenced in prose, minor); the keystone conj:gb-depth-period-correspondence is honestly a conjecture and b1-current-status.md independently records these rows 'theorem-level', so the CLAIM is corpus-consistent — but 'proved here' over a missing Lean derivation is a phrasing overclaim.",
+        "evidence": [
+          {
+            "text": "b1-hyperbolic-rows-theorem.md:86-95"
+          },
+          {
+            "text": "b1-hyperbolic-rows-theorem.ts:12-17"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "c19588f11c50",
+          "ts": "5ae0cd6e7073",
+          "lean": "b9ab6be6d514"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "open-objection",
+        "referee_argument": "Bucket-B flag (proved-label over vacuous Lean) upheld on BOTH layers. (1) lean.ref resolves sibling-first to `theorem b1_hyperbolic_rows : True := by trivial` (§0a no-shadowing-stub, shadows the parent-tree library decl). (2) The shadowed library decl does NOT rescue it: class B1HyperbolicRowsContext carries the conclusion via rows_from_volume_conj + opaque Prop witnesses and the theorem merely applies them — a §3b-cond rule-5 self-assuming projection classified degenerate(field) by the 2026-06-18 triage (199 degenerate vs 2 LEGIT), restate-or-demote fix deferred owner-gated. The narrative claims the rows are theorem-level/proved-here while the formalisation establishes nothing it claims. Identical-in-kind to its flagged sibling b1-figure-8-row-theorem. A referee argument survives; the knot theory (VC math, honest-conjecture keystone) is plausible, so this is an objection surviving, not a disproof.",
+        "result": "fail",
+        "field_hash": {
+          "md": "c19588f11c50",
+          "ts": "5ae0cd6e7073",
+          "lean": "b9ab6be6d514"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-24T12:33:51Z"
 }
