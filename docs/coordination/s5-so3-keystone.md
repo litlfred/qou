@@ -137,6 +137,7 @@ is its *geometric origin*.
 | 2026-06-24 | [#2709](https://github.com/litlfred/qou/pull/2709) | **(B) Plancherel mean made conditional-rigorous (§3b-cond, merged).** `IdentityIPlancherelConditional.lean`: `class PlancherelSnData n` axiomatises the two standard facts the pinned Mathlib lacks — (i) `Σ_λ dim²=n!`, (ii) the JM/OV content-square mean `2·Σ dim²·Σc²=n(n−1)·n!`. `two_sum_dim_sq_hooks` proves Identity I `2·Σ_λ dim²·Σ_c h_c² = n(3n−1)·n!` from (i)+(ii)+the proved (A); `twoM_eq_plancherel_hook_sum` wires it to `WLambdaDefect.twoM`. Non-vacuity instance `PlancherelSnData 2` decide-checked. So `twoM` (Identity I) is no longer a bare carried `def` — it's a theorem modulo two named axioms. Companion scope doc `docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md` plans the multi-PR Specht/JM build to discharge them (honest: rigor hygiene, not frontier). Lean sorry-free (lean-direct exit 0). |
 | 2026-06-24 | [#2717](https://github.com/litlfred/qou/pull/2717) | **Step-1 gate RUN (no fit) — SU(2)/WRT(S³/2I) does NOT reproduce `W_λ`; full-Hecke arena forced.** Ran the #2503 gate systematically at n=3,4,5 (was n=5 spot-check only, #2608): compares SU(2)-side `[2j+1]_q` to S_n-side `d_q(λ)` per block. **(b) structural exclusion of the SU(2) sub-route**, two grounds: COVERAGE — all ≥3-row blocks (incl. electron `(3,1,1)`) are outside the GL₂ Schur–Weyl image, no SU(2) weight (rigorous form of #2406); VALUE — `d_q=[2j+1]_q` ONLY on the standard rep `(n−1,1)` ∀n (both `=[n−1]_q`), sharpening #2608's single-point `(4,1)` to the `(n−1,1)` family. ⇒ geometric index must live full-Hecke side (the open object is **unchanged**, just the SU(2) branch pruned). Normalization (owner Q): per-block ratios within fixed n are normalization-invariant; only `Z(n)` (defect `1−Z(n)`) is sensitive → the defect is the fixed falsifiable content; `Z(5)=0.98222` reproduced. Docs: `2026-06-24-keystone-step1-gate-wrt-vs-wlambda.md`. |
 | 2026-06-24 | [#2727](https://github.com/litlfred/qou/pull/2727) | **SU(2)-route foreclosure machine-checked + full-Hecke program scoped.** (b) `Su2SchurWeylForeclosure.lean` (sorry-free): `gl2_image_eq_le2row` (GL₂ Schur–Weyl image = `{(5),(4,1),(3,2)}`), `electron_not_in_gl2_image`, capstone `su2_index_ne_wlambda` (any GL₂-supported index ≠ any `W` nonzero on `(3,1,1)`) — the prose/Python foreclosure of #2406/#2608/#2717 now Lean-proved as a **(b) structural exclusion** (row-count invariant; abstract codomain, no q₀). (c)+(d) `docs/scope/2026-06-24-keystone-fullhecke-geometric-index-program.md`: the multi-PR full-Hecke geometric-index program (phases G1–G4 on #2524's Beasley–Witten mechanism; falsifiable targets defect-cubic / `a_D=lw` / `f_pn`-bracket / conjugation-symmetry; foreclosed sub-routes catalogued; **(d)** Bring/Jacobian sub-lead cites #2710/#2722 under a STRICT numerology guardrail — formalize the monodromy *operator*, never fit `τ=2.6424`). Honest: rigor frontier, not a new prediction; the open full-Hecke object is **unchanged**. |
+| 2026-06-24 | [#2704](https://github.com/litlfred/qou/pull/2704) | **Residual (ii) DISCHARGED (Lean, no fit):** `Reeb = Res^{S₅}_{S₃}` scaffold formalized sorry-free + axiom-free (`S5SO3FiberAction.lean`: `s3SignTwist`, `restriction_intertwines_conjugation` = `Res(λ')=s3SignTwist(Res(λ))` ∀λ⊢5, `std_irrep_conjugation_fixed` = the `(2,1)`/h⁴-carrier multiplicity is conjugation-fixed, capstone `reeb_eq_restriction_scaffold [BringFiberAction]`). The *algebraic* restriction-commutes-with-conjugation identity only; conjunct (i) still **uses** `BringFiberAction` (geometric map stays open). Residual (i) (MTC-matching) stays owner-gated; **210 ppb stays refuted**. Audit `2026-06-24-keystone-reeb-restriction-lean-formalization.md`. |
 
 ## Key artifacts
 
@@ -223,3 +224,29 @@ identify `E(q)` (the q-deformation of `Bring/S₄`; candidate = the elliptic fib
 (`τ_torus = 2.0437 ≠ 2.6424`). Probe/audit only, no fit:
 [`computations/substrate/bring_jacobian_isogeny_factors.sage`](../../computations/substrate/bring_jacobian_isogeny_factors.sage),
 audit `docs/audits/2026-06-24-keystone-bring-jacobian-E4-elliptic-W-plane.md`. Coordinated on #2524/#2608.
+---
+
+**Residual (ii) DISCHARGED — `Reeb = Res^{S₅}_{S₃}` Lean formalization (2026-06-24, [#2704](https://github.com/litlfred/qou/pull/2704), merged `83edee35`).**
+[#2524](https://github.com/litlfred/qou/pull/2524)'s honest scope left residual (ii) — the Lean
+formalization of the *"Reeb = Res^{S₅}_{S₃}"* identity at the keystone-scaffold level — open. It now
+lands sorry-free + axiom-free in
+[`S5SO3FiberAction.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean):
+
+- **The identity.** The Seifert fibration `S³/2I → S²(2,3,5)` has Reeb = the Seifert `S¹` fibre;
+  localization restricts along it, algebraic shadow `Res^{S₅}_{S₃}`. The geometric Reeb symmetry
+  (conjugate partitions share a fibre, `conjugate_same_a5_irrep`) matches the exact algebraic symmetry
+  **restriction commutes with conjugation**: `V_{λ'}=V_λ⊗sgn_{S₅}`, `sgn_{S₅}|_{S₃}=sgn_{S₃}`, so
+  `Res(λ')=s3SignTwist(Res(λ))` — swapping `S₃` triv↔sign, **fixing the standard `(2,1)`** (the
+  Borromean `h⁴`-carrier).
+- **Decls.** `def s3SignTwist`; `restriction_intertwines_conjugation` (∀λ⊢5);
+  `std_irrep_conjugation_fixed`; capstone `reeb_eq_restriction_scaffold [BringFiberAction]`. All three
+  theorems `#print axioms` = *does not depend on any axioms*.
+- **Scope (honest — this is NOT a keystone closure).** Discharges residual (ii) ONLY: the *algebraic*
+  restriction-commutes-with-conjugation identity. The capstone's conjunct (i) still **uses** the
+  `BringFiberAction` class (the geometric fibre map stays open). **Residual (i) — MTC-matching: pin the
+  Beasley–Witten gauge datum on `S³/2I` to the Hecke `Rep U_q(sl_N)` blocks so the localization
+  `W_λ = d_q²/D²` is provably OUR Hecke category's Plancherel measure, not "some MTC's" — stays
+  owner-gated**, and IS the live `W_λ` geometric-origin frontier in the banners above. **210 ppb stays
+  refuted** (the keystone delivers the O(1) generation skeleton, not the 2×10⁻⁷ fine shift). No fit, no
+  production wiring, no registry tier change. Audit
+  [`docs/audits/2026-06-24-keystone-reeb-restriction-lean-formalization.md`](../audits/2026-06-24-keystone-reeb-restriction-lean-formalization.md).
