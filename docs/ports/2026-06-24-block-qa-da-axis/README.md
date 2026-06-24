@@ -4,12 +4,18 @@
 `schemas/block-qa.ts` + the `block-qa-schema` cross-language package).
 **From:** qou `local/devils-advocate-watcher` (PR #2688, branch
 `claude/lucid-gates-92e98s`).
-**Status:** qou has **pre-adopted** this schema — it already emits
-`da-*` sidecar entries with the structured fields below (see the four
-wave-1 `.qa.json` files in PR #2688). The folio-assistant validator
-must be extended to **accept** them. Until it is, the fields are
-additive/optional and a passthrough validator ignores them; this doc
-asks you to make them first-class.
+**Status:** ✅ **DELIVERED** — adopted upstream in
+`litlfred/folio-assistant` **PR #19** (merged to `main`,
+2026-06-24). The `da-*` criteria + the structured fields below are
+now first-class in `schemas/block-qa.ts` + the `block-qa-schema`
+package, so the qou sidecars emitted by `local/devils-advocate-watcher`
+validate against the canonical schema. This doc is retained as the
+requirements record + the conformance-fixture index.
+
+qou **pre-adopted** the schema (emitted `da-*` entries with the
+structured fields before the upstream adoption); the four wave-1 +
+five wave-2 `.qa.json` files in PR #2688 are the conformance
+fixtures referenced in R4 below.
 
 Canonical fragment to implement against:
 [`block-qa-da-extension.schema.json`](block-qa-da-extension.schema.json)
