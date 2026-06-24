@@ -43,7 +43,10 @@ def _solve_q_proton_f64(mp_me, vol, iters=80):
         
         b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** 0.5
         u_val = b_val * hbar2
-        habiro_ratio = (1 + 46 * u_val ** 4) * (1 + 4 * u_val ** 5) * (1 - 29 * u_val ** 6)
+        # 1b′ (cal-anchored): leading term-6 Habiro residue c_4≈46.03 only;
+        # dropped below-floor cosmetic c_5=4/c_6=29 (mp_habiro_c4_keystone_probe).
+        # Keep in sync with qou_substrate.constants. Derivation: bean s5bb.
+        habiro_ratio = 1 + 46.03 * u_val ** 4
         return base_ratio * habiro_ratio
 
     q = 1.11

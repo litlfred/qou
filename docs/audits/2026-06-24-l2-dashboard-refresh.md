@@ -70,3 +70,40 @@ edit is made here — that is the author's call.
 6/6, duality gap 0.0; Markov-trace consistency max rel_delta 0.0. Two witnesses
 remain absent (`brundan_kleshchev_audit`, `alpha_k_macdonald`) — pre-existing, not
 introduced here.
+
+## 1b′ implemented — `q_at()` de-fitted to one cal-anchored `c_4` (2026-06-24)
+
+Per author decision, the `habiro_ratio` in the canonical q₀ solve was changed from
+the rounded-integer fit `(1+46u⁴)(1+4u⁵)(1−29u⁶)` to the single data-determined
+term-6 Habiro residue `1 + 46.03·u⁴`, dropping the below-floor cosmetic `c_5=4` /
+`c_6=29` (σ_c5=1.34, σ_c6=157; `computations/mp_habiro_c4_keystone_probe.py`). Four
+coupled sites kept in sync: `qou_substrate/constants.py` (f64 `_solve_q_proton_f64`
++ mpmath `q_at`), `computations/substrate/q_parameter.py` (f64 duplicate),
+`computations/m_p_substrate_identity_50dps.py` (producer).
+
+**Effect (verified):** m_p still anchors exactly (residual 2.4e-50); q₀ shifts
+**0.0005 ppb** (`…5573347…` → `…567880…`); m_μ prediction stays 0.017 ppb. No
+observable regresses; the substrate-identity producer's 2 assertions pass.
+
+**`c_4` status:** cal-anchored / near-match (data-determined ≈ 46.03 ± 0.011 from the
+m_p pin); derivation = the open s5-so3 / Habiro keystone (bean s5bb) — exactly the
+Q_β `c_k` tier.
+
+**The dashboard 4/7 is unchanged — that is the remaining point.** 1b′ removes the
+cosmetic integers but does NOT move the count: m_μ is read from the borromean
+`muon_check` round-trip and, scored as a prediction at the (cal-anchored) q₀, is
+0.017 ppb → numerically passes. The honest **3/7** requires the *dashboard* to TIER
+m_μ as a cal-anchored cross-check (not an independent derived pass), parallel to how
+Q_β's cal-anchored rungs are excluded. That is a `per_observable_100x_status.py`
+count-semantics change — **deferred to author decision** (it alters the headline
+derived count).
+
+**Witness churn (flagged, not swept):** the 0.0005-ppb q₀ shift leaves **408**
+`*.witness.json` that pin q₀ to > 11 digits stale at the 12th digit. Functionally
+negligible (far below every L2 target); a mechanical re-pin sweep should follow as a
+separate PR. Regenerated here: `m-p-substrate-identity-50dps.witness.json` (+
+`per-observable-100x-status` metadata).
+
+**Cross-PR:** `m_p_substrate_identity_50dps.py` + its witness are also edited by
+**#2723** (beautiful-wright) → direct conflict; coordinated on #2723 (whoever merges
+second rebases — the habiro_ratio edit is a localized one-liner).

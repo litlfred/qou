@@ -56,7 +56,11 @@ def _solve_q_proton_f64(mp_me, vol, iters=80):
         base = 2 * vol / hbar2 * (trM * qf3 / q**3) - 12
         b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** 0.5
         u_val = b_val * hbar2
-        habiro_ratio = (1 + 46 * u_val ** 4) * (1 + 4 * u_val ** 5) * (1 - 29 * u_val ** 6)
+        # 1b′ (cal-anchored): leading term-6 Habiro residue c_4≈46.03 only.
+        # Former (1+46u⁴)(1+4u⁵)(1−29u⁶) rounded c_4 and added below-floor
+        # cosmetic c_5=4/c_6=29 (σ_c5=1.34, σ_c6=157; mp_habiro_c4_keystone_probe).
+        # c_4 derivation = s5-so3/Habiro keystone (bean s5bb).
+        habiro_ratio = 1 + 46.03 * u_val ** 4
         return base * habiro_ratio
     q = 1.11
     # f64 central difference: dq = q·1e-10 is the right scale for f64
@@ -218,7 +222,10 @@ try:
                 base = 2 * vol / hbar_sq * (trM * qf3 / q**3) - 12
                 b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** _mp.mpf("0.5")
                 u_val = b_val * hbar_sq
-                habiro_ratio = (1 + 46 * u_val ** 4) * (1 + 4 * u_val ** 5) * (1 - 29 * u_val ** 6)
+                # 1b′ (cal-anchored): leading term-6 Habiro residue c_4≈46.03 only
+                # (data-determined ±0.011 from m_p pin); dropped below-floor cosmetic
+                # c_5=4/c_6=29. c_4 derivation = s5-so3/Habiro keystone (bean s5bb).
+                habiro_ratio = 1 + _mp.mpf("46.03") * u_val ** 4
                 return base * habiro_ratio - mp_me
 
             q = _mp.findroot(_resid, _mp.mpf("1.10997858"))

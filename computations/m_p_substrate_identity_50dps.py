@@ -167,7 +167,11 @@ def main():
     F = F_Bor(q)
     b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** mp.mpf("0.5")
     u_val = b_val * hbar_q_sq
-    habiro_ratio = (1 + 46 * u_val ** 4) * (1 + 4 * u_val ** 5) * (1 - 29 * u_val ** 6)
+    # 1b′ (cal-anchored): leading term-6 Habiro residue c_4≈46.03 only
+    # (data-determined ±0.011 from m_p pin); dropped below-floor cosmetic
+    # c_5=4/c_6=29 (mp_habiro_c4_keystone_probe). Must match qou_substrate
+    # .constants q_at solve. c_4 derivation = s5-so3/Habiro keystone (s5bb).
+    habiro_ratio = 1 + mp.mpf("46.03") * u_val ** 4
     m_p_pred = (2 * m_mu * F - 12 * m_e) * habiro_ratio
     # Canonical neutron: n → p + e⁻ + ν̄, with Q_β the parameter-free
     # Kashiwara b² truncation (q_0-only; derived_masses.q_beta_kashiwara_n2_mev).

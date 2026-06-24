@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-24T16:32:02.571621+00:00",
-  "commitSha": "9f5ddbbc637b9c44e784bca410ad47e7b57715c7",
+  "computedAt": "2026-06-24T18:15:01.074010+00:00",
+  "commitSha": "777d843a1128debaa42b9f502e537091032adf3b",
   "assertions": [
     {
       "name": "m_p_matches_codata_within_1ppm",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 12,
   "computation": "m-p-substrate-identity-50dps",
   "scriptFile": "m_p_substrate_identity_50dps.py",
-  "scriptHash": "dc9252cc2fbf",
-  "scriptCommitSha": "9f5ddbbc637b9c44e784bca410ad47e7b57715c7",
+  "scriptHash": "73cb716f46c3",
+  "scriptCommitSha": "1c5cdc987ec2fb9a1be1ad4b15302d6d461ae117",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,18 +45,18 @@
   "contentBlock": "prop:proton-mass-substrate-identity",
   "auditOnly": "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md",
   "parameters": {
-    "q0": "1.109978595557334719899763",
+    "q0": "1.109978595556788007604919",
     "m_e_MeV": "0.510998949999999952",
-    "m_mu_MeV": "105.658375500842839",
-    "m_mu_over_m_e": "206.768282989315044"
+    "m_mu_MeV": "105.658375501789228",
+    "m_mu_over_m_e": "206.768282991167082"
   },
   "data": {
     "substrate_building_blocks": {
-      "abs_trM_borromean": "0.9985621631974125557576869",
-      "qfact_3": "6.120579304762803591145404",
-      "q_cubed": "1.367551884284206570868045",
-      "F_Bor": "4.469138597826758581370788",
-      "flavor_split_X": "0.001375711249976612013528743"
+      "abs_trM_borromean": "0.9985621631974398519727171",
+      "qfact_3": "6.12057930476165740629521",
+      "q_cubed": "1.367551884282185836147661",
+      "F_Bor": "4.46913859783264755381328",
+      "flavor_split_X": "0.001375711249957701593272431"
     },
     "predictions": {
       "m_p_MeV": "938.2720881603788142358888",
@@ -74,9 +74,9 @@
       "derivation": "m_n = m_p + Q_β(Kashiwara b², parameter-free) + m_e"
     },
     "neutron_diagnostics": {
-      "m_n_flavor_split_MeV": "939.5637681169238890603779",
-      "m_n_flavor_split_residual_ppm": "-1.75868868737",
-      "Delta_m_pn_flavor_split_MeV": "1.291679956545074824489116",
+      "m_n_flavor_split_MeV": "939.5637681169061215062586",
+      "m_n_flavor_split_residual_ppm": "-1.75868870628",
+      "Delta_m_pn_flavor_split_MeV": "1.291679956527307270369785",
       "flavor_split_note": "flavor-split is a derived u↔d RATIO (prop:flavor-split-substrate), −1.76 ppm on m_n; NOT the production neutron route.",
       "roundtrip_check_experimental_qbeta_MeV": "939.5654205196888141877098",
       "roundtrip_note": "m_p + Q_AME(experimental) + m_e recovers CODATA m_n BY CONSTRUCTION — circular, NOT a prediction (3-input over-count)."
