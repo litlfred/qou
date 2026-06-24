@@ -474,6 +474,40 @@ theorem PartitionOf5.deltaSign_eq_nStat_parity (p : PartitionOf5) :
     p.deltaSign = (-1 : ℤ) ^ p.nStat := by
   cases p <;> decide
 
+/-- The conjugate (transpose) partition's parts, `λ' ⊢ 5`. -/
+def PartitionOf5.conjParts : PartitionOf5 → List ℕ
+  | .five          => [1, 1, 1, 1, 1]
+  | .fourOne       => [2, 1, 1, 1]
+  | .threeTwo      => [2, 2, 1]
+  | .threeOneOne   => [3, 1, 1]
+  | .twoTwoOne     => [3, 2]
+  | .twoOneOneOne  => [4, 1]
+  | .onesFive      => [5]
+
+/-- `Σ_i C(μ_i, 2)` over a partition `μ`'s parts — the **length** `ℓ(w₀^{S_μ})` of
+    the longest element of the Young subgroup `S_μ = ∏_i S_{μ_i}` (each factor
+    `S_{μ_i}` contributes `C(μ_i,2)` inversions). -/
+def sumChoose2 (parts : List ℕ) : ℕ := (parts.map (fun p => p * (p - 1) / 2)).sum
+
+/-- **`n(λ) = Σ_i C(λ'_i, 2)`** — the partition statistic equals the sum of
+    binomials over the **conjugate** partition's parts (the standard identity,
+    here verified at `n = 5`).  Since `Σ_i C(λ'_i,2) = ℓ(w₀^{S_{λ'}})`, this ties
+    `nStat` to the conjugate Young subgroup's longest element. -/
+theorem PartitionOf5.nStat_eq_sumChoose2_conj (p : PartitionOf5) :
+    p.nStat = sumChoose2 p.conjParts := by
+  cases p <;> decide
+
+/-- **`deltaSign = sgn(w₀^{S_{λ'}})` explicitly.**  The hardcoded chirality table
+    equals the longest-element sign `(-1)^{ℓ(w₀^{S_{λ'}})} = (-1)^{Σ_i C(λ'_i,2)}`
+    of the conjugate Young subgroup — the form asserted in `deltaSign`'s
+    definition.  Together with `nStat_eq_sumChoose2_conj` and
+    `deltaSign_eq_nStat_parity` this closes the loop
+    `deltaSign = sgn(w₀^{S_{λ'}}) = (-1)^{n(λ)}` (a-function / b-invariant parity),
+    so the chirality sign is a forced cell invariant, not a table. -/
+theorem PartitionOf5.deltaSign_eq_w0_conj_sign (p : PartitionOf5) :
+    p.deltaSign = (-1 : ℤ) ^ (sumChoose2 p.conjParts) := by
+  cases p <;> decide
+
 /-! ## McKay correspondence anchors: 2I ↔ affine E₈
 
     The binary icosahedral group 2I = π⁻¹(I) ⊂ SU(2) (the spin double cover
