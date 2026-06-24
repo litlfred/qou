@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:markov-trace-frobenius-selection",
+  proofs: ["prf:markov-trace-frobenius-selection"],
   title: "Markov trace uniqueness on H_n(R, q) — the Jones–Markov form τ_M",
   chapter: "mass-theory",
   cites: ["jones1987", "wenzl1988", "yekutieli2015"],

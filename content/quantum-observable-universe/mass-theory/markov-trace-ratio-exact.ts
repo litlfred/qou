@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:markov-trace-ratio-exact",
+  proofs: ["prf:markov-trace-ratio-exact"],
   title:
     "Ratios of Markov traces are normalization-independent",
   uses: ["prop:markov-trace-axiomatic-closed-form"],

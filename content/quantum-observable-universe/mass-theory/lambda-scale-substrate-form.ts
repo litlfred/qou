@@ -47,6 +47,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:lambda-scale-substrate-form",
+  proofs: ["prf:lambda-scale-substrate-form"],
   lean: { ref: "qou:QOU.BraidKnot.lambdaA_qForm_eq_hForm" },
   title:
     "Borromean baryon $\\lambda_{\\text{scale}}$ empirical form $5/2 - h^2 \\cdot G$ (acknowledged-CAL-4)",

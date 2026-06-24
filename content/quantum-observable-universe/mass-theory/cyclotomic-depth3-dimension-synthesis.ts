@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:cyclotomic-depth3-dimension-synthesis",
+  proofs: ["prf:cyclotomic-depth3-dimension-synthesis"],
   title:
     "Cyclotomic depth-3 dimension synthesis: $(K - 3)/2$ at every prime $K \\geq 5$",
   lean: {

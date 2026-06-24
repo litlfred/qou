@@ -24,9 +24,9 @@ $$
 *where $\lambda \pm \square$ ranges over the addable / removable
 corners of the Young diagram $\lambda$.*
 
-**Proof sketch.**
-Tensoring an irreducible Specht module $V_\lambda$ with the *fundamental
-representation* $V_\square$ of $\mathrm{SU}_q(2)$ (equivalently, the
+*
+
+$ of $\mathrm{SU}_q(2)$ (equivalently, the
 defining $(n-1)$-dimensional rep of $H_n(q)$) decomposes by the
 **Pieri rule** for Hecke algebras:
 

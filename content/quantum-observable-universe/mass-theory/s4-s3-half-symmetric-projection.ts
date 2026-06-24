@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:s4-s3-half-symmetric-projection",
+  proofs: ["prf:s4-s3-half-symmetric-projection"],
   title:
     "Half-symmetric $H_4$ projection extracts one octahedral cell via $S_4 \\downarrow S_3$ branching",
   lean: { ref: "qou:QOU.BraidsAndKnots.s4_s3_half_symmetric_projection" },

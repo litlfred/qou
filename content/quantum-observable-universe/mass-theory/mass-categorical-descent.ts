@@ -13,6 +13,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:mass-categorical-descent",
+  proofs: ["prf:mass-categorical-descent"],
   title:
     "QOU mass formula as descent decomposition of the mass endomorphism",
   tags: [

@@ -2,6 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:frobenius-codim-universal",
+  proofs: ["prf:frobenius-codim-universal"],
   title:
     "Universal Frobenius co-dimension trace: $\\tau(C_{\\dim_q}) = \\sum_\\lambda 1/\\dim_q(\\lambda)$",
   lean: {

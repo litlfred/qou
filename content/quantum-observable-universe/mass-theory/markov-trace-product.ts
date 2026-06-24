@@ -2,6 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:markov-trace-product",
+  proofs: ["prf:markov-trace-product"],
   title:
     "Product factorization of the Markov trace",
   tags: [

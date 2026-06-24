@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:pieri-photon-shift",
+  proofs: ["prf:pieri-photon-shift"],
   title:
     "Multiplication by a degree-one Hecke element is a non-commutative Fourier shift (Pieri rule)",
   lean: {

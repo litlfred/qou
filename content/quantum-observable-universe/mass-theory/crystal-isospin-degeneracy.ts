@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:crystal-isospin-degeneracy",
+  proofs: ["prf:crystal-isospin-degeneracy"],
   title:
     "Crystal-limit isospin degeneracy: $S_{\\mathrm{crystal}}$ is invariant under $\\sigma_i \\leftrightarrow \\sigma_i^{-1}$",
   lean: {
