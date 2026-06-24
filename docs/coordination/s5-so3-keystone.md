@@ -169,3 +169,18 @@ binding mechanism:
 form `−n(n−1)(2n−13)/144` (#2527) is the falsifiable sub-leading target for the
 *geometric* W_λ index continuation (#2503/#2524/#2488). bean `qbk2` carries both notes;
 owner closes.
+
+---
+
+**`a_D=lw` bridge (2026-06-24, #2674).** Merged #2612 lever-1 established the binding
+kernel's SW-period anchors as selection-rule values `a_D^(n)=lw(n−1)`,
+`lw(c)=(1/(c+1))·Σ_{λ⊢c+1} dim_q` (canonical q-hook `dim_q`), confirmed c=1,2,3 +
+the proved depth-2 `det=1` recurrence `R=x²−τx+1`, τ(q₀)=2.6424
+(`binding_selection_rule_tau_closure.py`). The open residual — **SW-period =
+selection-rule value** — IS this ledger's W_λ geometric-origin frontier: the
+Seifert–CS index (#2524) at q₀ on the partition blocks must reproduce the Hecke
+q-hook `lw(c)`. Per #2608, this is a **functional-level** identification (same W_λ
+family), NOT a naive ~8%-off number-match. Shared validation target: the
+`144·C(n)=−n(n−1)(2n−13)` defect. Coordinated on #2488. c=2 status: `lw(2)=(q+1)²/(3q)`
+is derivation-tight but **untested** (no independent c=2 observable; Hopf-diquark the
+candidate) — `docs/audits/2026-06-24-lw2-c2-prediction-untested-status.md`.
