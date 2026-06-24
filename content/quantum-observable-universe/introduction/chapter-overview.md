@@ -219,10 +219,24 @@ A few examples:
   calculation on the force-carrier torus knots $T_{2,9}$ and
   $T_{3,5}$: $1/\alpha_{\mathrm{EM}} = q \cdot [9]_q \cdot [10]_q \cdot \bigl(1 + c_1 + c_1^{2}\kappa\bigr) \approx 137.0359$,
   vs CODATA $137.035999$ (399 ppb).
-* **Proton-to-electron mass ratio**
-  from the non-perturbative $\Phi_q$-tower endomorphism,
-  $m_p / m_e \approx 1836$, together with **$\beta$-decay Q-values**
-  for six benchmark nuclei at $4.4\%$ mean absolute error.
+* **Proton and neutron masses** from the muon-anchored Hecke energy.
+  Writing the dimensionless Borromean Hecke factor
+  $F_{\mathrm{Bor}} = |\mathrm{tr}_M(\mathcal{B}_{\mathrm{Bor}})|\,[3]_q!\,/\,q^{3}$
+  and reusing the muon anchor $m_\mu = m_e\,\mathrm{Vol}(4_1)/\hbar_q^{2}$
+  above,
+
+  $$
+  \mathfrak{m}_{\mathfrak{p}} = \dim V_{(2,1)}\,\bigl(m_\mu\,F_{\mathrm{Bor}} - |S_3|\,m_e\bigr) = 2\,\bigl(m_\mu\,F_{\mathrm{Bor}} - 6\,m_e\bigr), \qquad \mathfrak{m}_{\mathfrak{n}} = \mathfrak{m}_{\mathfrak{p}} + \mathfrak{Q}_\beta + m_e,
+  $$
+
+  giving $\mathfrak{m}_{\mathfrak{p}}(q_0) \approx 938.27\ \text{MeV}$ and
+  $\mathfrak{m}_{\mathfrak{n}}(q_0) \approx 939.56\ \text{MeV}$ (the neutron a
+  genuine prediction, CODATA $939.565$). The single dimensionful factor
+  $1/\hbar_q^{2}$ enters once, in the muon anchor; the Borromean structure
+  contributes only the dimensionless $F_{\mathrm{Bor}}$. Together with the
+  **$\beta$-decay Q-values** for six benchmark nuclei at $4.4\%$ mean
+  absolute error. (The earlier $\Phi_q$-tower endomorphism route, which
+  applied $1/\hbar_q^{2}$ to the Borromean volume directly, is superseded.)
 
 [Chapter 12](#chap\:molecular-construction) extends the knot-word
 formalism from nucleons to molecules.  The molecular Hecke
