@@ -55,3 +55,22 @@ Prepare-merge-auto pipeline:
 2. Push all commits (rolling)
 3. Address final review-thread triage (per coordinate skill §5)
 4. Merge via rebase (per AGENTS.md §rule 7 default merge method)
+
+## 2026-06-24 — F_Bor `/q³` exact; habiro_ratio is the fit (PR #2691, bean ovud)
+
+Probe [`computations/li2q_fbor_expansion_probe.py`](../../computations/li2q_fbor_expansion_probe.py)
++ audit [`docs/audits/2026-06-24-fbor-q3-exact-habiro-ratio-fit.md`](../audits/2026-06-24-fbor-q3-exact-habiro-ratio-fit.md):
+
+- **`/q³` is EXACT, not a fit:** `[3]_q!/q³ = 1+2q⁻²+2q⁻⁴+q⁻⁶` (sympy, residual 0).
+  `F_Bor = |tr_M(β_Bor)|·[3]_q!/q³` is a fully exact closed form.
+- **F_Bor alone → m_p at −242 ppb.** The production `habiro_ratio =
+  (1+46u⁴)(1+4u⁵)(1−29u⁶)` supplies exactly +242 ppb to the pinning floor.
+  `{46,4,29}` have no derivation trail — a CODATA-anchored near-match,
+  the **term-6 Habiro residue tail** (not the Li₂^q brane-tower, which is
+  O(1) on the proton's O(1) per-gen volumes → wrong scale by 10⁷).
+- **Deriving `{46,4,29}` = the same open Habiro/c_k keystone (s5bb).**
+  Mass sector and Q_β sector share one open Habiro element.
+
+Broadcast (canonical-state coordination) posted on the overlapping cluster:
+#2481, #2078, #2325, #2608, #2409, #2414, #2689. No production rewire;
+production `habiro_ratio` stays as-is pending the keystone.
