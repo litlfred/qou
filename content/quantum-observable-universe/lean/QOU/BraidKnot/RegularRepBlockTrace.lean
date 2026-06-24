@@ -2,6 +2,7 @@ import Mathlib.LinearAlgebra.Trace
 import Mathlib.LinearAlgebra.FreeModule.Finite.Matrix
 import Mathlib.Data.Fintype.Perm
 import QOU.BraidKnot.RegularRepTrace
+import QOU.BraidKnot.IdentityIContentDecomposition
 
 /-!
 # QOU.BraidKnot.RegularRepBlockTrace — side 2 (Wedderburn block trace) of Identity (B)
@@ -132,6 +133,27 @@ theorem identityB_conditional (W : SnWedderburnSpectralData R n) :
     ∑ i, W.ω i * (W.d i : R) ^ 2 = (n.factorial : R) * (n.choose 2 : R) := by
   rw [← blockTrace_eq W]
   exact RegularRepTrace.trace_centralC2_eq_factorial_mul_choose_two n
+
+open QOU.BraidKnot.IdentityI (dimHLF sumSqContents) in
+/-- **Identity (B) in literal content form, conditional (Layer 2).** Reading off each block `i` as a
+partition `κ i` whose dimension is the Frame–Robinson–Thrall hook-length value `dimHLF (κ i)` and
+whose Jucys–Murphy eigenvalue is the content-square sum `sumSqContents (κ i) = Σ_{c∈κ i} c(c)²`
+(the two identifications that the assumed Wedderburn/JM bundle supplies), `identityB_conditional`
+becomes the **literal Plancherel content-square mean**
+`Σ_i dim(κ i)²·(Σ_{c∈κ i} c²) = n!·binom(n,2)`. This is the **general-`n`** counterpart of the
+sibling's bounded check `IdentityI.idB_verified_le12` (`n ≤ 12`): the same per-partition summand
+`dimHLF² · sumSqContents` (cf. `IdentityI.identityB_lhs`), now an identity for all `n` modulo the
+single Wedderburn/JM hypothesis. -/
+theorem identityB_content_form (W : SnWedderburnSpectralData R n)
+    (κ : W.Idx → List ℕ)
+    (hd : ∀ i, W.d i = dimHLF (κ i))
+    (hω : ∀ i, W.ω i = (sumSqContents (κ i) : R)) :
+    ∑ i, (dimHLF (κ i) : R) ^ 2 * (sumSqContents (κ i) : R)
+      = (n.factorial : R) * (n.choose 2 : R) := by
+  rw [← identityB_conditional W]
+  refine Finset.sum_congr rfl (fun i _ => ?_)
+  rw [hω i, hd i]
+  ring
 
 /-! ## Non-vacuity — the hypothesis bundle is satisfiable
 
