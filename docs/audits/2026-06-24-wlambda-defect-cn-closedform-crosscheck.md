@@ -80,6 +80,46 @@ sharpest single falsifiable gate the geometric construction (phase **G2**) has t
   direction of the formalize-first discipline (prove the invariant, *then* confirm it governs the
   compute).
 
+## Sub-leading coefficient `D(n)` — a SECOND exact, q₀-free target
+
+**Probe:** [`computations/keystone_wlambda_defect_dn_subleading.py`](../../computations/keystone_wlambda_defect_dn_subleading.py)
+· **Witness:** [`computations/keystone-wlambda-defect-dn-subleading.witness.json`](../../computations/keystone-wlambda-defect-dn-subleading.witness.json)
+
+Having pinned the **leading** (h²) coefficient, the natural question is whether the **next**
+coefficient in `1 − Z(n) = C(n)·h² + D(n)·h⁴ + O(h⁶)` is also clean. It is. Extracting
+`D(n) = lim_{h→0}(1 − Z(n) − C(n)·h²)/h⁴` by 4× Richardson at 120 dps (using the now-exact
+`C(n)` to subtract), the forward finite differences of `D(n)` are **constant at order 6**
+(`Δ⁶` spread `1.3e-21`) — an *unfitted* structural proof that `D(n)` is a degree-6 polynomial in `n`.
+Interpolating the unique degree-6 polynomial from `n=2..8` and **validating on held-out `n=9,10`
+(PASS, exact)** gives:
+
+$$
+D(n) = \frac{-100\,n^6 + 1572\,n^5 - 6745\,n^4 + 5070\,n^3 - 625\,n^2 + 828\,n}{1036800}
+     = \frac{n(n-1)\,\bigl(-100\,n^4 + 1472\,n^3 - 5273\,n^2 - 203\,n - 828\bigr)}{1036800}.
+$$
+
+Structural features (consistency, not fit):
+
+- **Denominator `1036800 = 50·144²`** — parallels `C(n)`'s `144`.
+- **`D(n)` carries the same `n(n−1)` factor as `C(n)`** (`= −n(n−1)(2n−13)/144`), so both defect
+  coefficients **vanish at `n = 0, 1`** — consistent with zero defect for the trivial / single-box
+  partition (`Z(1) = 1` exactly).
+
+**Implication.** The defect `1 − Z(n)` is the heat-kernel expansion the geometric index must
+reproduce; its coefficients are the index's heat-kernel coefficients. We now have **two** clean
+polynomial targets, both q₀-free:
+
+| Target | coefficient | closed form | heat-kernel order |
+|---|---|---|---|
+| (1) | `C(n)` (h²) | `−n(n−1)(2n−13)/144` (Lean-proved, n=7 sign flip) | 2nd |
+| (1′) | `D(n)` (h⁴) | `n(n−1)(−100n⁴+1472n³−5273n²−203n−828)/1036800` (interpolated + held-out validated) | 4th |
+
+That **both** leading coefficients are clean low-degree polynomials in `n` is itself a structural
+fact about the defect — and it sharpens the keystone gate from one falsifiable number per `n`
+(phase G2) to two. `D(n)` is *not yet* Lean-proved (a follow-on, via the same Identity-I /
+content-hook machinery that gave `C(n)`); it is interpolation-derived with held-out validation, and
+flagged as such.
+
 ## Cross-references
 
 - [`computations/keystone_wlambda_defect_cn_closedform_crosscheck.py`](../../computations/keystone_wlambda_defect_cn_closedform_crosscheck.py) — this probe.
