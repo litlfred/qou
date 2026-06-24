@@ -550,6 +550,48 @@ theorem sum_colLen_cube_row_form (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   simp_rw [← min_assoc]
   exact antitone_min3_sum (fun i => l.getD i 0) (fun i k hik => getD_antitone l hl hik) l.length
 
+/-! ### Hook side of (A): cross-term foundation (sorry-free)
+
+The arm·leg cross term `Σ_c P·Q` (`P = λ_i−j`, `Q = colLen j − i`) needs a `λ_i`-weighted
+min-sum and a `j`-weighted column moment.  Two reusable order-split primitives: a **general**
+`f`-min-sum (covering the `j`-weighted moment via `f = m↦\binom m2`) and a **per-row** min
+split (for the `λ_i`-weighted sum, whose tail is `Σ_{i<k} λ_i λ_k`). -/
+
+/-- General `f`-min-sum: `Σ_{i,k<r} f(min(a i,a k)) = Σ_{i<r}(2i+1)·f(a i)` for antitone `a`.
+Generalizes `antitone_min_sum` (`f = id`); also gives `Σ_j j·colLen(j)²` with `f = m↦\binom m2`. -/
+theorem antitone_f_min_sum (a : ℕ → ℕ) (f : ℕ → ℕ) (h : ∀ i k, i ≤ k → a k ≤ a i) (r : ℕ) :
+    ∑ i ∈ Finset.range r, ∑ k ∈ Finset.range r, f (min (a i) (a k))
+      = ∑ i ∈ Finset.range r, (2 * i + 1) * f (a i) := by
+  induction r with
+  | zero => simp
+  | succ n ih =>
+    have h1 : ∑ i ∈ Finset.range n, f (min (a i) (a n)) = n * f (a n) := by
+      rw [Finset.sum_congr rfl (fun i hi => by
+        rw [min_eq_right (h i n (le_of_lt (Finset.mem_range.mp hi)))])]
+      rw [Finset.sum_const, Finset.card_range, smul_eq_mul]
+    have h2 : ∑ k ∈ Finset.range n, f (min (a n) (a k)) = n * f (a n) := by
+      rw [Finset.sum_congr rfl (fun k hk => by
+        rw [min_eq_left (h k n (le_of_lt (Finset.mem_range.mp hk)))])]
+      rw [Finset.sum_const, Finset.card_range, smul_eq_mul]
+    rw [Finset.sum_range_succ]
+    simp_rw [Finset.sum_range_succ, Finset.sum_add_distrib]
+    rw [ih, h1, h2, min_self]
+    ring
+
+/-- Per-row min split: `Σ_{k<r} min(a i,a k) = (i+1)·a i + Σ_{i<k<r} a k` (antitone, `i<r`).
+The tail `Σ_{i<k<r} a k`, weighted by `a i` and summed, becomes `Σ_{i<k} a i a k`. -/
+theorem per_i_min_split (a : ℕ → ℕ) (h : ∀ i k, i ≤ k → a k ≤ a i) (r i : ℕ) (hir : i < r) :
+    ∑ k ∈ Finset.range r, min (a i) (a k)
+      = (i + 1) * a i + ∑ k ∈ Finset.Ico (i + 1) r, a k := by
+  rw [← Finset.sum_range_add_sum_Ico _ (Nat.succ_le_of_lt hir)]
+  congr 1
+  · rw [Finset.sum_congr rfl (fun k hk =>
+      min_eq_left (h k i (Nat.lt_succ_iff.mp (Finset.mem_range.mp hk))))]
+    rw [Finset.sum_const, Finset.card_range, smul_eq_mul]
+  · apply Finset.sum_congr rfl
+    intro k hk
+    exact min_eq_right (h i k (le_of_lt (Finset.mem_Ico.mp hk).1))
+
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
 (`identityA_verified_le9`) and exhaustively in Python for `n ≤ 22`.
