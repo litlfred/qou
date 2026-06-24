@@ -54,6 +54,6 @@ $|\mathrm{Aut}(\Sigma)| \leq 84(g - 1) = 252$.
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/genus-maximal-descent.ts
 theorem genus_maximal_descent [ctx : GenusMaximalDescentContext] :
     ctx.genus = 4 ∧ ctx.aut_order ≤ 84 * (ctx.genus - 1) :=
-  sorry
+  ⟨ctx.claim_i_genus_eq_four, ctx.claim_ii_hurwitz_bound⟩
 
 end QOU.Archimedean
