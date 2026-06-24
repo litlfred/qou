@@ -438,6 +438,7 @@ export default chapter({
         "categorical-proton",
         "categorical-neutron",
         "categorical-meson",
+        "meson-scale-independence",
         "outro-particle-interactions",
       ],
     }),
