@@ -393,6 +393,51 @@ def q_beta_predicted_mev() -> mp.mpf:
 
 
 @lru_cache(maxsize=None)
+def q_beta_kashiwara_n2_mev() -> mp.mpf:
+    """Q_β via the parameter-free Kashiwara b² truncation (N=2).
+
+    Canonical near-match Q_β used for the production neutron mass
+    (`m_n = m_p + Q_β + m_e`). Refines the single-wrap closed form
+    `q_beta_predicted_mev()` (= Q_A, +1604 ppb on Q_β) by the first two
+    parameter-free Kashiwara brane-tower corrections — all functions of
+    q_0 alone, NO experimental input:
+
+        Q_A   = m_e·|q²−2q−1|(q+1)/(2q³)            (= q_beta_predicted_mev)
+        z     = 1/(√q + 1/√q),  h = q − q⁻¹,  ℏ_q = (q−1)/q
+        α     = (z − 1)·h / 2
+        b     = √(1 − q²/(q²+1)²)                     (Hoefsmit b)
+        Q_N1  = Q_A · cos(α − b·ℏ_q²/2)               (N=1, +73.8 ppb on Q_β)
+        Q_N2  = Q_N1 · (1 − b²·ℏ_q⁴)                  (N=2, +1.25 ppb on Q_β)
+
+    TIER: **near-match** (not proved). The b^k recursion is the Kashiwara
+    crystal brane-tower of `prop:tau-M-asymptotic-rep-theory` (authorNote
+    status: experimental); N=2 is a truncation order chosen by target
+    precision — the same convergent-ladder discipline as the Q_β c_k
+    framing (`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`).
+    The experimental Q_β (Q_AME) enters only the probe's *error metric*,
+    never the value. Exact closure is gated on the s5-so3 / Habiro-element
+    keystone (`conj:s5-so3-fiber-action`, bean s5bb).
+
+    On the neutron, Q_β is only ~0.083 % of m_n, so the 1.25 ppm Q-error
+    becomes ~1 ppb on m_n — vs the flavor-split route's −1.76 ppm.
+
+    Probe: `probe_q_beta_operator_valued_N3.py`
+    (witness `q-beta-operator-valued-N3.witness.json`: Q_N2, eps_N2 ≈ 1.25 ppm).
+    """
+    q = _q_0()
+    Q_A = q_beta_predicted_mev()
+    h = q - 1 / q
+    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    hbar_q = (q - 1) / q
+    alpha = (z - 1) * h / 2
+    d1 = q ** 3 / (q ** 2 + 1)
+    d2 = -1 / (q * (q ** 2 + 1))
+    b = mp.sqrt(d1 * d2 + 1)                       # Hoefsmit b (parameter-free)
+    Q_N1 = Q_A * mp.cos(alpha - b * hbar_q ** 2 / 2)
+    return Q_N1 * (1 - b ** 2 * hbar_q ** 4)
+
+
+@lru_cache(maxsize=None)
 def q_beta_predicted_typed_crossing_mev() -> mp.mpf:
     """Q_β via typed-crossings 6-term decomposition (LEGACY, +0.747% err).
 
