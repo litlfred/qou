@@ -98,7 +98,7 @@ Per-atom residuals (B/A AME minus prediction):
 
 See [Table 2](#tbl:term6-binding-density-table2-data).
 
-Witness: [`Term6-scaling-heavy.witness.json`](../../../docs/audits/-Term6-scaling-heavy.witness.json).
+Witness: [`Term6-scaling-heavy.witness.json`](../../../docs/audits/2026-05-02-Term6-scaling-heavy.witness.json).
 
 ## What is structurally derived
 
@@ -120,7 +120,7 @@ Witness: [`Term6-scaling-heavy.witness.json`](../../../docs/audits/-Term6-scalin
   candidate expressions like
   $m_e \cdot [7]_q [8]_q [9]_q = 361.2$ MeV are within $7\%$ of
   the fit but outside the $\pm 3\%$ fit window
-  ([attempt witness](../../../docs/audits/-alpha-categorical-derivation.witness.json)).
+  ([attempt witness](../../../docs/audits/2026-05-02-alpha-categorical-derivation.witness.json)).
 * The **form** of $\delta_M$ is operator-level — proper
   derivation requires the operator structure of $\Phi_n$ on
   self-conjugate isotypical Wedderburn blocks, which is the
