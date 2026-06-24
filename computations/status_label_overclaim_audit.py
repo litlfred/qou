@@ -55,6 +55,19 @@ def read(p):
         return ""
 
 
+def _strip_lean_comments(src: str) -> str:
+    """Remove Lean comments so `sorry`/`: True`/`trivial` mentions inside
+    docstrings or `--` comments do not trigger false positives (a
+    `-- Ref: sorry = conjecture` note is not a real sorry). Strips
+    `/- ... -/` (and `/-- ... -/`) block comments and `--` line comments.
+    """
+    # block comments (non-greedy, span newlines)
+    src = re.sub(r"/-.*?-/", " ", src, flags=re.S)
+    # line comments
+    src = re.sub(r"--[^\n]*", " ", src)
+    return src
+
+
 def qa_has_fail(qa_path) -> bool:
     if not os.path.exists(qa_path):
         return False
@@ -75,7 +88,7 @@ def qa_has_fail(qa_path) -> bool:
 def audit_block(ts_path) -> dict | None:
     base = ts_path[:-3]
     md, ts = read(base + ".md"), read(ts_path)
-    lean = read(base + ".lean") if os.path.exists(base + ".lean") else ""
+    lean = _strip_lean_comments(read(base + ".lean")) if os.path.exists(base + ".lean") else ""
 
     label_hits = sorted({m.group(0) for m in LABEL_RE.finditer(md + "\n" + ts)})
     if not label_hits:
