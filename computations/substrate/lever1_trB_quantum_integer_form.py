@@ -113,9 +113,9 @@ def trB_sf(x):
 
 
 trB_q0 = trB_qf(Q0)
-num_ok = all(abs(trB_qf(mp.mpf(r)) - trB_sf(mp.mpf(r))) < mp.mpf(10) ** -45
+num_ok = all(abs(trB_qf(mp.mpf(r)) - trB_sf(mp.mpf(r))) < mp.mpf("1e-45")
              for r in ("1.7", "0.3", "2.9", "0.91"))
-num_ok &= abs(trB_q0 - trB_sf(Q0)) < mp.mpf(10) ** -45
+num_ok &= abs(trB_q0 - trB_sf(Q0)) < mp.mpf("1e-45")
 print(f"    numeric q-form == s-form to 45 dps (q₀ + 4 random q): {num_ok}")
 print(f"    s₀ = [2]_q₀ = {mp.nstr(Q0 + 1 / Q0, 18)}")
 print(f"    tr B(q₀)    = {mp.nstr(trB_q0, 18)}")
@@ -128,9 +128,11 @@ tau = trB_q0
 det1 = True  # det B = 1 proved (prop:sl2-prolongation-recurrence); recorded, not re-derived
 hyperbolic = tau > 2
 lam = (tau + mp.sqrt(tau ** 2 - 4)) / 2
-lam_recip_ok = abs(lam * (1 / lam) - 1) < mp.mpf(10) ** -45
+lam_recip_ok = abs(lam * (1 / lam) - 1) < mp.mpf("1e-45")
 # is the trace an integer? (would be required for an SL₂(ℤ) topological monodromy)
-trace_integer = abs(tau - mp.nint(tau)) < mp.mpf("1e-9")
+# tolerance tied to the working precision rather than a hardcoded literal
+int_tol = mp.mpf("10") ** -(mp.mp.dps - 5)
+trace_integer = abs(tau - mp.nint(tau)) < int_tol
 print("\n(M) monodromy classification (det B = 1 proved)")
 print(f"    tr B = {mp.nstr(tau, 12)} > 2  →  hyperbolic: {hyperbolic}")
 print(f"    eigenvalues λ, λ⁻¹ = {mp.nstr(lam, 12)}, {mp.nstr(1 / lam, 12)}")
@@ -163,7 +165,8 @@ def sgn(p):
 
 S5 = list(permutations(range(5)))
 A5 = [p for p in S5 if sgn(p) == 1]
-chi = lambda p: fixed(p) - 1  # standard character = (#fixed) − 1
+def chi(p):
+    return fixed(p) - 1  # standard character = (#fixed) − 1
 dim_std = chi(tuple(range(5)))
 inner_S5 = sp.Rational(sum(chi(p) ** 2 for p in S5), len(S5))
 inner_A5 = sp.Rational(sum(chi(p) ** 2 for p in A5), len(A5))
