@@ -134,6 +134,10 @@ export default chapter({
             // Re-homed orphan: H_3 Jones/Temperley–Lieb Markov–Wenzl weights
             // feed the Borromean trace; sit with the Markov corrections.
             "h3-markov-wenzl-weights",
+            // Re-homed orphan (moved braids→mass-theory + thm:→prop: fix):
+            // unit-modulus eigenvalues on V_(2,1) and the Borromean −1
+            // fixed point; consumes the Borromean Markov-trace closed form.
+            "unit-modulus-eigenvalue",
           ],
         }),
         section({
