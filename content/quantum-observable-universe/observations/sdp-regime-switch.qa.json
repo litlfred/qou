@@ -1137,6 +1137,20 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Narrative explicitly flags open/conjectural; Lean carries sorry (honest deferral) -- narrative<->Lean consistent, not a drift."
+      },
+      {
+        "field_hash": {
+          "ts": "cc82ca440667",
+          "md": "dfdb311b7c87"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/narrative-lean-rerate"
+        },
+        "reviewed_at": "2026-06-24T17:45:00.000Z",
+        "reviewed_sha": "96cc4894872db1695470f26723174b5284e7b907",
+        "notes": "Post-rebase reconcile: upstream discharged the Lean sorry; resolved decl now source sorry-free (content/quantum-observable-universe/lean/QOU/Observations/SDPRegimeSwitch.lean)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1323,5 +1337,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-24T17:45:00.000Z"
 }

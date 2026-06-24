@@ -1123,6 +1123,20 @@
         "reviewed_at": "2026-06-22T02:56:55.386Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "ts": "25afe31a8f87",
+          "md": "4878cd76a53e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/narrative-lean-rerate"
+        },
+        "reviewed_at": "2026-06-24T17:45:00.000Z",
+        "reviewed_sha": "96cc4894872db1695470f26723174b5284e7b907",
+        "notes": "Post-rebase reconcile: upstream discharged the Lean sorry; resolved decl now source sorry-free (content/quantum-observable-universe/lean/QOU/Observations/centered_hecke_variance_positive.lean)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1309,5 +1323,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:58.965Z"
+  "updated_at": "2026-06-24T17:45:00.000Z"
 }
