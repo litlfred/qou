@@ -37,3 +37,23 @@ that would drift if the value were corrected.
 
 Physically negligible (1.35e-9 rel, ~580× below CAL-2 floor); this is
 single-source-of-truth hygiene, not a precision-accuracy fix.
+
+## Blast-radius scope (2026-06-24, session bold-mendel)
+
+Concrete counts (non-deprecated): **173 importers** of `experimental_constants`;
+**155 are witness-emitting**; **143 import `M_E_MEV`**. Canonical full-value
+source confirmed: `codata_constants.py:111` does `from codata_2022_source import
+M_E_MEV` (full 0.51099895069).
+
+**Fix is one line** — route `experimental_constants.py` M_E_MEV/ERR to
+`codata_2022_source` (dedup, single source of truth, matches the sibling).
+**But** it drifts ~143 witness-emitting producers' m_e-dependent values by
+1.35e-9 → a substantive (non-metadata) witness-field change across ~143
+witnesses → **large coordinated regen, owner-gated** (option 3 in the triage
+above, NOT the small option-2 case). Same scope/producer set as the `768d9ddf`
+"143-producer canonical regen".
+
+**Recommendation:** fold the m_e import-unification into the **next coordinated
+canonical regen** (don't spin a standalone 143-witness churn PR). Physically
+negligible (1.35e-9, ~580× below the CAL-2 floor); single-source-of-truth
+hygiene, not an accuracy fix. Gated on owner scheduling the regen.
