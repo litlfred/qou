@@ -105,10 +105,20 @@ cohomology, and the embeddability bound is what later makes the
 operator space finite.
 
 [The Mass Endomorphism](#chap\:mass-endomorphism) constructs the
-categorical endomorphism whose spectral data carries mass.  It
-opens the algebraic core that the particle and mass chapters
-consume — the generic Yekutieli path, developed before particles
-are specialised.
+categorical endomorphism whose spectral data carries mass, the
+algebraic core that the particle and mass chapters consume.  Mass
+is shown to be a categorical invariant: it equals the Markov trace
+$\mathrm{tr}_M$ of a distinguished element of the Hecke algebra
+$H_n(q)$, and under the descent involution it splits into a
+base-level term plus a transient blow-up correction localised at
+the obstruction centres.  A recursive Gröbner–Shirshov normal-form
+reducer makes the trace symbolically computable, with a
+disjoint-product property that lifts it to multi-atom composites,
+and the Wenzl branching rule decomposes it block by block.  The
+chapter closes with the **mass endomorphism conjecture** — a single
+endomorphism on the Habiro-ring brane tower unifying the
+construction — and packages $\Phi_n$ as the global section of the
+categorical mass functor, ready for calibration.
 
 [Particle Interactions and Nuclear Structure](#chap\:particle-interactions)
 develops the Gröbner–Shirshov reduction engine that computes
@@ -154,16 +164,27 @@ $\operatorname{Im}\mathfrak{V} = \mathfrak{Q}_\beta$ — the bar-even
 and bar-odd parts of one geometric quantity.
 
 [Gravity and Spacetime Emergence](#chap\:gravity-spacetime-emergence)
-closes the part: contact geometry and the geodesic Madelung flow
-show how long-range gravitational structure emerges from the same
-categorical action.
+closes the part by showing how long-range gravitational structure
+emerges from the gravity sector of the same categorical action.
+Contact geometry supplies the spacetime arena and the geodesic
+Madelung flow supplies the dynamics, recovering an Einstein-type
+equation from the trace term $\mathrm{tr}(q \cdot R_{\int})$.  The
+chapter positions the construction explicitly against the three
+nearest quantum-gravity programmes — loop quantum gravity, the ADM
+canonical decomposition, and Ashtekar's connection variables —
+marking where the QOU substrate carries the same categorical
+structure and where it extends or diverges from each.
 
 **Part III: Physical Realization.**
-[Predicted Particle Spectra](#chap\:predicted-spectra) collects the
-framework's predictions for the fundamental fermions, the
-mesons and nucleons, the atomic shells, and the electromagnetic
-coupling — the spectrum implied by the structure, before it is
-confronted with measured numbers.
+[Predicted Particle Spectra](#chap\:predicted-spectra) reads the
+spectrum implied by the structure, before it is confronted with
+measured numbers.  It assigns the **fundamental fermions** to their
+knots and fixes pair production by knot-operator selection; builds
+the **mesons and nucleons**, including the categorical proton and
+neutron and the torus knots that make a nucleus stable; establishes
+**electromagnetic completeness** and the gauge coupling on the
+force-carrier torus knots; and derives the **categorical Hartree
+energy and Bohr radius** that seed the atomic-shell predictions.
 
 [Physical Observations](#chap\:observations) confronts theory with
 experiment.  We calibrate with CODATA values
@@ -220,9 +241,18 @@ energies at the calibrated $q_0$.  Worked examples span
 $\mathrm{H}_2$, $\mathrm{H}_2\mathrm{O}$, and benzene.
 
 [Organic Chemistry from Hopf Chains](#chap\:organic-chemistry)
-carries the construction into covalent and Hopf-ring chemistry,
-where the same braid-concatenation rules generate organic
-structures.
+carries the construction into covalent chemistry, reading a
+covalent bond as a shared sub-Hopf link and a molecule as a Hopf
+chain or ring.  The contrast sharpens at carbon: a linear
+$\mathrm{C}_6$ chain (a tridiagonal linking matrix, dangling
+end-links as soft modes) versus **benzene**, the closed ring
+threaded by $T(2,6)$ whose Alexander polynomial
+$q^2 + 1 + q^{-2}$ replaces six pairwise weights with one
+threading invariant — accounting for bond-order equalisation and
+the $\mathrm{C}_6\mathrm{H}_6$ formula with no further input.  The
+chapter ends with a parameter-free ring-closure barrier,
+$\Delta E \approx 193\text{–}386\;\mathrm{kJ/mol}$, against the
+experimental $200\text{–}400\;\mathrm{kJ/mol}$ window.
 
 **Part IV: Dynamics, Information, Emergence.**
 [Fluid Dynamics of the Brane](#chap\:fluid-dynamics) derives the
@@ -232,8 +262,13 @@ single cohomology class — an obstruction-based perspective on
 Navier–Stokes regularity.
 
 [Stochastic Mechanics](#chap\:stochastic-mechanics) reads the
-Markov trace as a stochastic dynamics, connecting the categorical
-substrate to the Nelson and Itô pictures.
+Markov trace as a stochastic dynamics.  Markov's axioms on braid
+links and a closure map fix the trace and extract the precision
+coefficients $c_k$; a classical-limit functor then connects the
+categorical substrate to the Nelson and Itô pictures of quantum
+diffusion.  In the same $q \to 1$ limit the Gröbner–Shirshov depth
+filtration meets Goncharov's period filtration, and the classical
+Riemann zeta surfaces as the limit of the $q$-zeta primitive.
 
 [Information-Theoretic Perspectives](#chap\:info-theory) addresses
 Wigner's mystery directly: the mechanics of a QOU are Turing
@@ -260,9 +295,17 @@ where $c_q$ is the information speed of light — $E = mc^2$ derived
 from the categorical structure.
 
 [Measurement and Observation](#chap\:measurement-observation)
-treats quantum measurement as the behaviour of the fibre functor,
-making the observer's role internal to the framework rather than
-imposed on it.
+makes the observer's role internal to the framework rather than
+imposed on it.  The earlier knot–particle dictionary assigned a
+particle to each knot but left its carrier — the state bundle of
+the brane — untouched; this chapter makes that carrier explicit.
+A bundle initial condition fixes the data over the brane, and
+**observation** runs as an open braid map whose every internal
+crossing deposits the Hecke-eigenvalue energy $q + q^{-1}$ in the
+colour fibre — the act of measuring is what makes the dictionary
+measurable.  Torsion-driven knot flow supplies the dynamics, and
+the category of finite bundles over $\mathbb{P}(V)$ is the
+categorical home for the whole picture.
 
 [$q$-Geometric Langlands](#chap\:q-geometric-langlands) develops
 the $q$-geometric Langlands correspondence connecting the

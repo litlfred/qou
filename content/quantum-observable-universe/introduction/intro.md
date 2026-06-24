@@ -2,10 +2,11 @@ The starting point is a collection of observations about how we
 interact with the world.  We see colours, and three of them mix to
 produce white.  We move around, rotate, and look from different
 angles, yet the things we measure do not depend on where we stand
-or which way we face.  Time flows: the world unfolds, and we drift
-along that flow.  Three-fold structure recurs throughout nature —
-three colours, three generations of matter, three-fold chirality —
-in a way that demands explanation rather than stipulation.
+or which way we face.  Time flows in one direction, and we are
+carried along with it.  Three-fold structure recurs throughout
+nature — three colours, three generations of matter, three-fold
+chirality — too insistently to be coincidence; it asks for
+explanation rather than stipulation.
 Multiple observers share the same world; they do not each
 illuminate a private universe but navigate a common landscape.
 
