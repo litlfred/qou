@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.wigner2_coefficient
 
@@ -28,17 +30,17 @@ class Wigner2CoefficientContext where
       `⟨tr σ_g⟩_λ = tr(σ_g^{(λ)}) / dim(λ)`. -/
   per_gen_trace : PartitionIdx → ℝ
   /-- The BW coefficient indexed by partition. -/
-  C_λ : PartitionIdx → ℝ
-  /-- The classical Plancherel weight `w_λ = (dim V_λ)² / n!`. -/
-  w_λ : PartitionIdx → ℝ
+  C_lam : PartitionIdx → ℝ
+  /-- The classical Plancherel weight `w_lam = (dim V_λ)² / n!`. -/
+  w_lam : PartitionIdx → ℝ
   /-- Manuscript sub-claim (i): for every self-conjugate `λ` and every
       generator `g`, the per-generator trace equals `h / 2`. -/
   claim_i_per_generator_trace :
-    ∀ λ : PartitionIdx, per_gen_trace λ = h / 2
+    ∀ lam : PartitionIdx, per_gen_trace lam = h / 2
   /-- Manuscript sub-claim (ii): BW coefficient closed form
-      `C_λ = w_λ · h / 2` for every self-conjugate `λ`. -/
+      `C_lam = w_lam · h / 2` for every self-conjugate `λ`. -/
   claim_ii_BW_closed_form :
-    ∀ λ : PartitionIdx, C_λ λ = w_λ λ * h / 2
+    ∀ lam : PartitionIdx, C_lam lam = w_lam lam * h / 2
 
 /-- **Manuscript statement** (full body):
 
@@ -113,8 +115,8 @@ of shape $\lambda$.  Under this involution:
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wigner-2-coefficient.ts
 def wigner2_coefficient [ctx : Wigner2CoefficientContext] :
-    (∀ λ : ctx.PartitionIdx, ctx.per_gen_trace λ = ctx.h / 2) ∧
-    (∀ λ : ctx.PartitionIdx, ctx.C_λ λ = ctx.w_λ λ * ctx.h / 2) :=
+    (∀ lam : ctx.PartitionIdx, ctx.per_gen_trace lam = ctx.h / 2) ∧
+    (∀ lam : ctx.PartitionIdx, ctx.C_lam lam = ctx.w_lam lam * ctx.h / 2) :=
   ⟨ctx.claim_i_per_generator_trace, ctx.claim_ii_BW_closed_form⟩
 
 end QOU.BraidKnot
