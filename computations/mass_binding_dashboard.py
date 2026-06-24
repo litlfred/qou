@@ -110,23 +110,32 @@ def _nucleon_msym(alpha):
 
 
 def _nucleon_mass_canonical(me, q0):
-    """Framework-DERIVED physical nucleon rest masses (m_p, m_n) in MeV — the
-    GeV-scale categorical prediction, used for the pure-canonical constituent sum.
+    """Framework nucleon rest masses via the CORRECT per-knot Hecke density
+    ρ(K) = tr_M(K) = Σ_λ y_λ χ^λ(β_K) — the paper-canonical per-block reading.
 
-    m_p = m_e·Vol(𝓑₃)·ρ_global(q₀)/ℏ_q²  (the production global-scalar reading of
-    the canonical mass formula m(K) = m_e·Vol(K)·ρ(K)/ℏ_q²; ≈ 966.05 MeV, +2.96%
-    vs CODATA — the known m_p gap). m_n then follows the canonical 3-input chain
-    m_n = m_p + Q_β,derived + m_e with the q₀-derived β-decay scale
-    Q_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³). No measured nucleon mass enters: every
-    term scales off the CAL-1 unit m_e. (The per-block H₃ trace reading gives
-    m_p ≈ 406 MeV (−57%) and is NOT production — see mass_vol_density.py:129.)"""
+    The global Family-A scalar λ_A = 5/2 + ¾h² is a CODATA-implied FIT (it
+    stands in for the per-knot density and overshoots m_p by +2.96%); per owner
+    ruling 2026-06-24 it is EXCISED here. The canonical mass formula is
+
+        m(K) = m_e · Vol(𝓑₃) · tr_M(K) / ℏ_q²   (= m_e · vol_density_per_block)
+
+    Both nucleons are the Borromean knot 𝓑₃ (same Vol); the p/n distinction is
+    carried by their distinct Hecke traces — tr_M(proton) ≈ 1.0653,
+    tr_M(neutron) ≈ 0.9232 at q₀ (the dashboard's tr_m_atom_zn matches the
+    canonical chi-cache for the proton exactly). The honest categorical result
+    UNDERSHOOTS: m_p ≈ 406 MeV (−57%), m_n ≈ 352 MeV (−62%), and m_n < m_p
+    (inverted ordering) — gaps the λ_A fit was masking. Closing them is the
+    open step-9a per-knot Vol(K) frontier, NOT a density refit."""
     import mpmath as _mp
-    from mass_vol_density import mass_vol_density
+    from mass_vol_density import vol_density_per_block
     from knot_volumes import VOL_BORROMEAN
-    from derived_masses import q_beta_predicted_mev
-    me_mp, q_mp = _mp.mpf(str(me)), _mp.mpf(str(q0))
-    m_p = float(mass_vol_density(me_mp, _mp.mpf(str(VOL_BORROMEAN)), q_mp))
-    m_n = m_p + float(q_beta_predicted_mev()) + float(me)
+    from tr_m_atom_via_transfer import tr_m_atom_zn
+    q_mp = _mp.mpf(str(q0))
+    vol = _mp.mpf(str(VOL_BORROMEAN))
+    tr_p = tr_m_atom_zn(1, 0, dps=50)[1]          # per-knot Hecke trace (proton)
+    tr_n = tr_m_atom_zn(0, 1, dps=50)[1]          # per-knot Hecke trace (neutron)
+    m_p = float(me) * float(vol_density_per_block(vol, _mp.mpf(str(tr_p)), q_mp))
+    m_n = float(me) * float(vol_density_per_block(vol, _mp.mpf(str(tr_n)), q_mp))
     return m_p, m_n
 
 
@@ -271,7 +280,7 @@ def _print_legend() -> None:
 
 | Header | Meaning |
 |---|---|
-| `m_unbnd,can` | Framework-DERIVED unbound sum Z·m_p,can + N·m_n,can (m_p,can = m_e·Vol·ρ/ℏ_q² ≈ 966 MeV +2.96%; m_n,can = m_p,can + Q_β,derived + m_e) |
+| `m_unbnd,can` | Framework unbound sum Z·m_p,can + N·m_n,can via per-knot Hecke density m_e·Vol·tr_M(K)/ℏ_q² (λ_A fit EXCISED 2026-06-24; m_p,can≈406 MeV −57%, m_n,can≈352 −62%, honest undershoot) |
 | `m_unbnd` | MEASURED unbound sum Z·m_p + N·m_n (CODATA m_p=938.272, m_n=939.565) |
 | `M_AME` | Measured atomic mass = m_unbnd − B_AME |
 | `m_lin` / `m_sym` / `m_qCLT` / `m_qCLT_fac` / `m_magic` | PURE-CANONICAL bound mass = m_unbnd,can − B_X (framework constituents; carries the +2.96%·A m_p gap) for X in {lin, sym, qCLT, qCLT_fac, magic} |
@@ -371,23 +380,23 @@ def main(argv=None) -> int:
     # 1. MASS  M = (constituents) − B  (shown first, per owner request 2026-06-24)
     #    Two-column convention (owner-set 2026-06-22): wherever the nucleon masses
     #    enter the constituent sum we report BOTH:
-    #      • a PURE-CANONICAL column — framework-DERIVED nucleon rest masses
-    #        (m_p,can = m_e·Vol(𝓑₃)·ρ_global/ℏ_q² ≈ 966.05 MeV, +2.96% gap;
-    #        m_n,can = m_p,can + Q_β,derived + m_e). No measured nucleon mass enters
-    #        — everything scales off the CAL-1 unit m_e. m_sym = m_unbnd,can − B_sym.
+    #      • a PURE-CANONICAL column — framework nucleon rest masses via the
+    #        per-knot Hecke density m(K) = m_e·Vol(𝓑₃)·tr_M(K)/ℏ_q² (λ_A FIT
+    #        EXCISED, owner ruling 2026-06-24). m_p ≈ 406 MeV (−57%), m_n ≈ 352
+    #        (−62%) — honest undershoot, no fit. m_sym = m_unbnd,can − B_sym.
     #      • a "…,rel" column — the SAME canonical binding B_X subtracted from
     #        the MEASURED constituent sum mu = Z·m_p + N·m_n (CODATA). This is the
     #        experiment-anchored reading, kept for AME comparison.
     #    The binding B_X itself is the single canonical value in both readings;
-    #    only the constituent baseline differs (framework-derived vs measured). The
-    #    ~2.96%·A spread between m_X and m_X,rel IS the propagated m_p gap.
+    #    only the constituent baseline differs (framework per-knot vs measured).
     from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
     mp_, mn_ = float(mp_), float(mn_)
     print("### Mass  M = (constituents) − B (MeV)   "
-          "[canonical = framework-derived nucleon masses; ,rel = measured CODATA mu]")
-    print(f"  canonical constituents: m_p,can = {mp_can:.3f} MeV (+"
-          f"{(mp_can/mp_-1)*100:.2f}%), m_n,can = {mn_can:.3f} MeV "
-          f"(= m_p,can + Q_β,derived + m_e). Every binding form has BOTH a "
+          "[canonical = per-knot Hecke density m_e·Vol·tr_M(K)/ℏ_q²; ,rel = measured CODATA mu]")
+    print(f"  canonical constituents (λ_A fit EXCISED): m_p,can = {mp_can:.3f} MeV "
+          f"({(mp_can/mp_-1)*100:+.2f}%), m_n,can = {mn_can:.3f} MeV "
+          f"({(mn_can/mn_-1)*100:+.2f}%) — per-knot tr_M(p)≈1.0653, tr_M(n)≈0.9232; "
+          f"honest undershoot (m_n<m_p inverted). Every binding form has BOTH a "
           f"canonical (m_X = m_unbnd,can − B_X) and a ,rel (m_X,rel = m_unbnd − B_X) mass.")
     print("| iso | A | m_unbnd,can | m_unbnd | M_AME | m_lin | m_lin,rel | m_sym | m_sym,rel "
           "| m_qCLT | m_qCLT,rel | m_qCLT_fac | m_qCLT_fac,rel | m_magic | m_magic,rel |")
