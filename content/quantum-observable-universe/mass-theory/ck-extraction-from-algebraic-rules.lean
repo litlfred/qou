@@ -160,7 +160,7 @@ The extraction reproduces the per-rung coefficients used inside
 `prop:q-beta-categorical-precision-ladder`. -/
 
 -- Ref: [manuscript] rem:ck-extraction-from-algebraic-rules
--- Ref: [kashiwara1990-duke] Duke Math. J. 1990 (DOI 10.1215/S0012-7094-90-06120-X — distinct from kashiwara1990 = CMP BF02097367)
+-- Ref: [kashiwara1990-duke] Duke Math. J. 71 (1993) 839–858 (DOI 10.1215/S0012-7094-93-07131-1 — distinct from kashiwara1990 = CMP BF02097367)
 /-- `c_1 = b` (Kashiwara `f̃_1` matrix element on `V_(2,1)`). -/
 theorem ckFromReduction_eq_c1 (q : ℝ) :
     ckFromReduction q 1 = hoefsmitB_local q := rfl
@@ -294,7 +294,7 @@ theorem sigma0_hecke_quad_bottomright (q : ℝ) (hq : q ≠ 0) :
 /-! ## Synthesis theorem -/
 
 -- Ref: [manuscript] rem:ck-extraction-from-algebraic-rules §"synthesis"
--- Ref: [kashiwara1990-duke] Duke Math. J. 1990 (DOI 10.1215/S0012-7094-90-06120-X — distinct from kashiwara1990 = CMP BF02097367)
+-- Ref: [kashiwara1990-duke] Duke Math. J. 71 (1993) 839–858 (DOI 10.1215/S0012-7094-93-07131-1 — distinct from kashiwara1990 = CMP BF02097367)
 -- Ref: [jones1985] doi:10.2307/1971403
 -- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
 /-- **c_k extraction from algebraic rules (canonical export).**

@@ -27,3 +27,13 @@ archival — PLACEHOLDER was mislabeled, reworded to settled).
 
 CAVEAT: sandbox 403-blocked all DOI landing pages; confirmations are
 link-title-level. Resolve DOIs directly before any swap lands. Pending human close.
+
+## Update (2026-06-24) — author-authorized A+B+C applied; 12 → 9
+
+Author OK'd Groups A (Kashiwara DOI fixes + .lean sync), B (carter→marsh2000),
+and supplied arXiv math/0409565 for C. Kashiwara cmp2's DOI was resolving to a
+Witten paper; both corrected. carter-leal-saliola renamed to marsh2000 (single
+author R. J. Marsh). leitnerpawloski2004's fabricated title fixed to "Unital
+Gröbner Bases…" (corpus + local PDF verified); pawlowski-leitner-rep kept flagged
+(PDF-verified NOT math/0409565). 9 markers remain (off-sandbox DOI resolution /
+author input). See docs/audits/2026-06-23-bibliography-doi-verification-doth.md.

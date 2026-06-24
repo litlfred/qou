@@ -89,7 +89,7 @@ level; concrete specialisations (e.g. for `V_(2,1)` of `H_3`) connect
 the per-anchor data via explicit polynomial identities. -/
 
 -- Ref: [manuscript] prop:tau-M-asymptotic-rep-theory §"Synthesis"
--- Ref: [kashiwara1990-duke] Duke Math. J. 1990 (DOI 10.1215/S0012-7094-90-06120-X — distinct from kashiwara1990 = CMP BF02097367)
+-- Ref: [kashiwara1990-duke] Duke Math. J. 71 (1993) 839–858 (DOI 10.1215/S0012-7094-93-07131-1 — distinct from kashiwara1990 = CMP BF02097367)
 -- Ref: [macdonald1995] (Macdonald: Symmetric Functions and Hall Polynomials)
 -- Ref: [habiro2004cyclotomic] Habiro, "Cyclotomic completions of polynomial rings," arXiv:math/0209324
 /-- **Asymptotic-expansion synthesis theorem.** The Kashiwara crystal

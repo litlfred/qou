@@ -1419,15 +1419,15 @@ export const references: CSLData[] = [
   ref({
     id: "leitnerpawloski2004",
     type: "article-journal",
-    title: "On the morphisms of non-commutative formal groups",
+    title: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
     author: [
-      { family: "Leitner", given: "Fred" },
-      { family: "Paw\u0142owski", given: "Jan" },
+      { family: "Leitner", given: "Frederick" },
+      { family: "Pawloski", given: "Robert" },
     ],
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2004]] },
     URL: "https://arxiv.org/abs/math/0409565",
-    note: "arXiv:math/0409565. The Gröbner-bases paper. Distinct from pawlowski-leitner-rep (below) which is the inner-product / SU(2)-intertwiner work that QOU's pawlowski-leitner-inner-product.lean + RepresentationTheory.lean actually cite.",
+    note: "Corrected 2026-06-23 (doth, author-confirmed arXiv id): title was a fabricated 'On the morphisms of non-commutative formal groups' — the actual paper at arXiv:math/0409565v2 is 'Unital Gröbner Bases over Arbitrary Commutative Ground Rings' (verified vs local uploads/0409565v2.pdf + bib-qa-verifications.json; matches the unital-groebner-bases folio paper). Given-name corrected Jan Pawłowski → Robert Pawloski. This is the Gröbner paper; PDF-verified to contain NO inner products / intertwiners — distinct from pawlowski-leitner-rep (the still-unidentified inner-product / SU(2)-intertwiner work). FOLLOW-UP: 6 inline .lean -- Ref comments still carry the old fabricated title; pawlowski-leitner-inner-product.lean + RepresentationTheory.lean mis-cite THIS key for inner-product content that belongs to pawlowski-leitner-rep. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §B.",
   }),
 
   // ── Pawlowski-Leitner inner product / rep-theory (NEW 2026-05-19)
@@ -1441,11 +1441,11 @@ export const references: CSLData[] = [
     type: "manuscript",
     title: "TODO: verify exact title — Pawlowski-Leitner inner product / SU(2) intertwiner basis",
     author: [
-      { family: "Pawłowski", given: "Jan" },
+      { family: "Pawloski", given: "Robert" },
       { family: "Leitner", given: "Fred" },
     ],
     issued: { "date-parts": [[2009]] },
-    note: "TODO: bib metadata to be filled in. Cited in QOU for: (1) the 'PL inner product' construction on intertwiner spaces ⟨φ,ψ⟩_PL = tr_Ad(φ† ∘ ψ); (2) the intertwiner-space dimension formula dim = (2j+1)·n!/((n/2+j+1)!·(n/2-j)!). The exact paper id needs research — possibly Pawłowski's PhD thesis or a separate joint follow-up to LP2004. URL/DOI/container-title intentionally TODO until verified.",
+    note: "Still UNVERIFIED (doth 2026-06-23): ruled OUT arXiv:math/0409565 — that id is the Unital Gröbner Bases paper (leitnerpawloski2004), PDF-verified (uploads/0409565v2.pdf) to contain no inner products/intertwiners. This remains a separate, still-unidentified inner-product/SU(2)-intertwiner work; needs the author's source. Cited in QOU for: (1) the 'PL inner product' construction on intertwiner spaces ⟨φ,ψ⟩_PL = tr_Ad(φ† ∘ ψ); (2) the intertwiner-space dimension formula dim = (2j+1)·n!/((n/2+j+1)!·(n/2-j)!). The exact paper id needs research — possibly Pawłowski's PhD thesis or a separate joint follow-up to LP2004. URL/DOI/container-title intentionally TODO until verified.",
   }),
 
   // ── Bergman 1978 ──────────────────────────────────────────────
@@ -4867,24 +4867,32 @@ export const references: CSLData[] = [
   ref({
     id: "kashiwara1990-duke",
     type: "article-journal",
-    title: "Crystal bases and Littelmann's refined Demazure character formula",
+    title: "The crystal base and Littelmann's refined Demazure character formula",
     author: [{ family: "Kashiwara", given: "Masaki" }],
     "container-title": "Duke Mathematical Journal",
-    issued: { "date-parts": [[1990]] },
-    DOI: "10.1215/S0012-7094-90-06120-X",
-    note: "TODO: verify exact title + volume/pages — placeholder per the Duke DOI cited in QOU .lean inline-DOI comments. The Duke 1990 Kashiwara paper is one of his crystal-basis series.",
+    volume: "71",
+    issue: "3",
+    page: "839-858",
+    issued: { "date-parts": [[1993]] },
+    DOI: "10.1215/S0012-7094-93-07131-1",
+    URL: "https://doi.org/10.1215/S0012-7094-93-07131-1",
+    note: "Corrected 2026-06-23 (doth): the prior DOI 10.1215/S0012-7094-90-06120-X was a spurious 1990 Duke vol-61 slot (not Kashiwara); the intended paper is Kashiwara, Duke MJ 71(3) (1993) 839-858, DOI 10.1215/S0012-7094-93-07131-1. Title corrected 'Crystal bases and' → 'The crystal base and'. Id 'kashiwara1990-duke' retained for cross-ref stability despite the corrected 1993 year. Identification at link-title confidence (sandbox 403'd DOI pages); resolve the DOI directly before publication. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §A.",
   }),
 
   // ── Kashiwara 1990 (CMP 2nd) — added 2026-05-19 per split.
   ref({
     id: "kashiwara1990-cmp2",
     type: "article-journal",
-    title: "Crystal bases of modified quantum enveloping algebras",
+    title: "Crystal bases of the modified quantized enveloping algebra",
     author: [{ family: "Kashiwara", given: "Masaki" }],
-    "container-title": "Communications in Mathematical Physics",
-    issued: { "date-parts": [[1990]] },
-    DOI: "10.1007/BF02100009",
-    note: "TODO: verify exact title — placeholder per the CMP DOI cited in QOU .lean inline-DOI comments (distinct from kashiwara1990 which has DOI BF02097367).",
+    "container-title": "Duke Mathematical Journal",
+    volume: "73",
+    issue: "2",
+    page: "383-413",
+    issued: { "date-parts": [[1994]] },
+    DOI: "10.1215/S0012-7094-94-07317-1",
+    URL: "https://doi.org/10.1215/S0012-7094-94-07317-1",
+    note: "Corrected 2026-06-23 (doth): the prior DOI 10.1007/BF02100009 resolves to a WITTEN paper ('On quantum gauge theories in two dimensions', CMP 141, 1991) — wrong on every field. The intended paper is Kashiwara, 'Crystal bases of the modified quantized enveloping algebra', Duke MJ 73(2) (1994) 383-413, DOI 10.1215/S0012-7094-94-07317-1 (Duke, not CMP; 1994, not 1990). Genuinely distinct from kashiwara1990 (CMP 133, BF02097367). Id retained for cross-ref stability. Identification at link-title confidence (sandbox 403'd DOI pages); resolve the DOI directly before publication. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §A.",
   }),
 
   ref({
@@ -4961,16 +4969,16 @@ export const references: CSLData[] = [
   // bib entry. All have verified-clean title-page metadata.
 
   ref({
-    id: "carter-leal-saliola-2000",
+    id: "marsh2000",
     type: "article",
     title: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A",
     author: [
-      { family: "Carter", given: "R. W." },
+      { family: "Marsh", given: "R. J." },
     ],
     issued: { "date-parts": [[2000]] },
     "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/math/0008040",
-    note: "arxiv:math/0008040 — added 2026-05-19 from uploads/ gap audit. TODO: confirm authors (only Carter visible from title page; co-authors likely Leal & Saliola or similar). Potential citation target in QOU crystal-basis / Lusztig-cone content.",
+    note: "Corrected 2026-06-23 (doth): id was 'carter-leal-saliola-2000' with author 'R. W. Carter' — a misidentification. arXiv:math/0008040 is single-author R. J. Marsh (per arXiv author listing; sandbox 403'd the page, so link-title confidence). No Carter/Leal/Saliola. Renamed to marsh2000; do not conflate with the distinct Marsh paper math/0008035. Journal publication (possibly J. Algebra) UNVERIFIED. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §B.",
   }),
 
   ref({

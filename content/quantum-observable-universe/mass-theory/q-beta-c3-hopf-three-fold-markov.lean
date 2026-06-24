@@ -85,7 +85,7 @@ The categorical-derivation result: under the axiomatic class hypothesis,
 
 -- Ref: [manuscript] prop:q-beta-c3-hopf-three-fold-markov
 -- Ref: [jones1985] doi:10.2307/1971403   (Jones polynomial)
--- Ref: [kashiwara1990-duke] Duke Math. J. 1990 (DOI 10.1215/S0012-7094-90-06120-X — distinct from kashiwara1990 = CMP BF02097367)   (KL crystal)
+-- Ref: [kashiwara1990-duke] Duke Math. J. 71 (1993) 839–858 (DOI 10.1215/S0012-7094-93-07131-1 — distinct from kashiwara1990 = CMP BF02097367)   (KL crystal)
 /-- **$Q_\beta$ precision-ladder $c_3$ structural derivation.** Under
     the `ThreeFoldMarkovHopfExtraction` class, the canonical `c_3`
     coefficient (carried by the class as a field) equals the

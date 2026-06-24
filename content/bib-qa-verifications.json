@@ -1566,7 +1566,7 @@
       },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
-      "note": "TODO bib lookup. Placeholder for kashiwara DOI 10.1215/S0012-7094-90-06120-X cited inline in QOU .lean. | UPDATE 2026-05-19 18:13: .lean sites re-keyed; entry now has citation backing (still TODO: fill in title/URL metadata)."
+      "note": "RESOLVED 2026-06-23 (doth): the inline DOI 10.1215/S0012-7094-90-06120-X was a spurious 1990 Duke vol-61 slot (not Kashiwara). Corrected to Kashiwara, 'The crystal base and Littelmann's refined Demazure character formula', Duke MJ 71(3) (1993) 839-858, DOI 10.1215/S0012-7094-93-07131-1; references.ts + 3 .lean inline DOIs synced. Link-title confidence (sandbox 403'd DOI pages). See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §A."
     },
     {
       "id": "kashiwara1990-cmp2",
@@ -1579,7 +1579,7 @@
       },
       "fixes_applied": 1,
       "fix_commit": "(this commit)",
-      "note": "TODO bib lookup. Placeholder for kashiwara DOI 10.1007/BF02100009 cited inline in QOU .lean. | UPDATE 2026-05-19 18:13: .lean sites re-keyed; entry now has citation backing (still TODO: fill in title/URL metadata)."
+      "note": "RESOLVED 2026-06-23 (doth): the DOI 10.1007/BF02100009 resolves to a WITTEN paper (CMP 141, 1991) — wrong. Corrected to Kashiwara, 'Crystal bases of the modified quantized enveloping algebra', Duke MJ 73(2) (1994) 383-413, DOI 10.1215/S0012-7094-94-07317-1. references.ts updated (this DOI did not appear inline in any .lean). Link-title confidence (sandbox 403'd DOI pages). See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §A."
     },
     {
       "id": "wenzl1988b",
@@ -1621,17 +1621,17 @@
       "note": "PDF is Bujack et al. 'The non-Riemannian nature of perceptual color space' (PNAS 2022) — exact match."
     },
     {
-      "id": "carter-leal-saliola-2000",
+      "id": "marsh2000",
       "status": "verified-clean",
       "local_pdf": "uploads/0008040v1.pdf",
-      "verified_at": "2026-05-19T18:45:33Z",
+      "verified_at": "2026-06-23T00:00:00Z",
       "verified_by": {
         "kind": "agent",
-        "model": "claude-opus-4-7"
+        "model": "claude-opus-4-8"
       },
-      "fixes_applied": 0,
+      "fixes_applied": 1,
       "fix_commit": "(this commit)",
-      "note": "Lusztig cones type A. Fits QOU crystal-basis / Hecke content. Cited in crystal-graph-realization.ts (cites array)."
+      "note": "RENAMED 2026-06-23 (doth) from carter-leal-saliola-2000: arXiv:math/0008040 is single-author R. J. Marsh, NOT Carter/Leal/Saliola. Lusztig cones type A; fits QOU crystal-basis / Hecke content. Cited in crystal-graph-realization.ts. Link-title confidence (sandbox 403'd arXiv page). See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §B."
     },
     {
       "id": "geck-lambropoulou-2004",
