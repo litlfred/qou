@@ -96,8 +96,10 @@ def main():
                    "fit_params": 0},
         "data": {"rows": rows, "per_bond_deficit_spread_pct": mp.nstr(spread, 6)},
     }
-    out = REPO / "computations" / "pairwise-magnitude-gap-decomposition.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    out = WitnessBuilder.wrap_legacy(
+        "pairwise-magnitude-gap-decomposition", witness, script_path=__file__,
+        engine="mpmath", output_dir=str(REPO / "computations")).save()
     print(f"\nwrote {out.relative_to(REPO)}")
 
 

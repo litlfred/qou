@@ -131,8 +131,10 @@ def main():
             "verdict": verdict,
         },
     }
-    out = REPO / "computations" / "he4-qreeb-phase-falsification.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    out = WitnessBuilder.wrap_legacy(
+        "he4-qreeb-phase-falsification", witness, script_path=__file__,
+        engine="mpmath", output_dir=str(REPO / "computations")).save()
     print(f"\nwrote {out.relative_to(REPO)}")
 
 
