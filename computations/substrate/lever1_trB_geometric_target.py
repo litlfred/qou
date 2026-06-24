@@ -66,7 +66,10 @@ def check(name, ok):
 q = sp.Symbol("q", positive=True)
 a2, a3, a4 = sp.Integer(1), (q + 1) ** 2 / (3 * q), (3 * q ** 2 + 4 + 3 / q ** 2) / 4
 trB = sp.simplify((a2 + a4) / a3)
-trB_q0 = mp.mpf(str(sp.N(trB.subs(q, sp.Float(str(Q0), 40)), 40)))
+# Closed form, guarded symbolically identical to trB, evaluated directly in
+# mpmath at the 40-dps Q0 — no sympy→str→mpmath round-trip (Gemini #2701).
+assert sp.simplify(trB - 3 * (3 * q ** 4 + 8 * q ** 2 + 3) / (4 * q * (q + 1) ** 2)) == 0
+trB_q0 = 3 * (3 * Q0 ** 4 + 8 * Q0 ** 2 + 3) / (4 * Q0 * (Q0 + 1) ** 2)
 print("(T) target tr B = (a_D^(2)+a_D^(4))/a_D^(3)")
 print(f"    symbolic = {trB}")
 print(f"    at q₀    = {mp.nstr(trB_q0, 12)}")
@@ -92,7 +95,9 @@ results["tau_torus_at_q0"] = mp.nstr(tau_torus, 20)
 results["torus_shortcut_matches"] = bool(shortcut_match)
 
 # ── (X) is τ_binding a torus at shifted modulus? (q₀^k+q₀^-k) ─────────────────
-x = mp.findroot(lambda z: z + 1 / z - trB_q0, mp.mpf("2.0"))
+# Analytic larger root of z + 1/z = τ ⟺ z² − τz + 1 = 0 (Gemini #2701) —
+# exact, no solver convergence dependency.
+x = (trB_q0 + mp.sqrt(trB_q0 ** 2 - 4)) / 2
 k = mp.log(x) / mp.log(Q0)
 k_int = abs(k - mp.nint(k)) < mp.mpf("0.01")
 print(f"\n(X) τ_binding = q₀^k+q₀^-k with k = {mp.nstr(k, 8)}  (integer k? {bool(k_int)})")
