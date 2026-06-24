@@ -464,6 +464,92 @@ theorem sum_range_getD_eq_sz (l : List ℕ) :
     simp only [List.getD_cons_succ, List.getD_cons_zero]
     rw [ih]; ring
 
+/-- **Triple min order-split (sorry-free).** For an antitone sequence,
+`Σ_{i,k,m<r} min(min(a i,a k),a m) = Σ_{i<r}(3i²+3i+1)·a i` — each new index `n` is the
+smallest, so all 7 "shell" tuples touching it contribute `a n`
+(`(n+1)³−n³ = 3n²+3n+1`).  Row closed form of the column moment `Σ_j colLen(j)³`. -/
+theorem antitone_min3_sum (a : ℕ → ℕ) (h : ∀ i k, i ≤ k → a k ≤ a i) (r : ℕ) :
+    ∑ i ∈ Finset.range r, ∑ k ∈ Finset.range r, ∑ m ∈ Finset.range r,
+        min (min (a i) (a k)) (a m)
+      = ∑ i ∈ Finset.range r, (3 * i ^ 2 + 3 * i + 1) * a i := by
+  induction r with
+  | zero => simp
+  | succ n ih =>
+    have hL : ∀ x ∈ Finset.range n, a n ≤ a x :=
+      fun x hx => h x n (le_of_lt (Finset.mem_range.mp hx))
+    rw [Finset.sum_range_succ]
+    simp_rw [Finset.sum_range_succ, Finset.sum_add_distrib]
+    rw [ih]
+    have t2 : ∑ x ∈ Finset.range n, ∑ k ∈ Finset.range n, min (min (a x) (a k)) (a n)
+        = n ^ 2 * a n := by
+      have e : ∀ x ∈ Finset.range n, ∑ k ∈ Finset.range n, min (min (a x) (a k)) (a n) = n * a n := by
+        intro x hx
+        rw [Finset.sum_congr rfl (fun k hk => min_eq_right (le_min (hL x hx) (hL k hk)))]
+        simp only [Finset.sum_const, Finset.card_range, smul_eq_mul]
+      rw [Finset.sum_congr rfl e]
+      simp only [Finset.sum_const, Finset.card_range, smul_eq_mul]; ring
+    have t3 : ∑ x ∈ Finset.range n, ∑ m ∈ Finset.range n, min (min (a x) (a n)) (a m)
+        = n ^ 2 * a n := by
+      have e : ∀ x ∈ Finset.range n, ∑ m ∈ Finset.range n, min (min (a x) (a n)) (a m) = n * a n := by
+        intro x hx
+        rw [Finset.sum_congr rfl (fun m hm => by rw [min_eq_right (hL x hx), min_eq_left (hL m hm)])]
+        simp only [Finset.sum_const, Finset.card_range, smul_eq_mul]
+      rw [Finset.sum_congr rfl e]
+      simp only [Finset.sum_const, Finset.card_range, smul_eq_mul]; ring
+    have t4 : ∑ x ∈ Finset.range n, min (min (a x) (a n)) (a n) = n * a n := by
+      rw [Finset.sum_congr rfl (fun x hx => by rw [min_eq_right (hL x hx), min_self])]
+      simp only [Finset.sum_const, Finset.card_range, smul_eq_mul]
+    have t5 : ∑ x ∈ Finset.range n, ∑ m ∈ Finset.range n, min (min (a n) (a x)) (a m)
+        = n ^ 2 * a n := by
+      have e : ∀ x ∈ Finset.range n, ∑ m ∈ Finset.range n, min (min (a n) (a x)) (a m) = n * a n := by
+        intro x hx
+        rw [Finset.sum_congr rfl (fun m hm => by rw [min_eq_left (hL x hx), min_eq_left (hL m hm)])]
+        simp only [Finset.sum_const, Finset.card_range, smul_eq_mul]
+      rw [Finset.sum_congr rfl e]
+      simp only [Finset.sum_const, Finset.card_range, smul_eq_mul]; ring
+    have t6 : ∑ x ∈ Finset.range n, min (min (a n) (a x)) (a n) = n * a n := by
+      rw [Finset.sum_congr rfl (fun x hx => by rw [min_eq_left (hL x hx), min_self])]
+      simp only [Finset.sum_const, Finset.card_range, smul_eq_mul]
+    have t7 : ∑ m ∈ Finset.range n, min (min (a n) (a n)) (a m) = n * a n := by
+      rw [Finset.sum_congr rfl (fun m hm => by rw [min_self, min_eq_left (hL m hm)])]
+      simp only [Finset.sum_const, Finset.card_range, smul_eq_mul]
+    rw [t2, t3, t4, t5, t6, t7, min_self, min_self]
+    ring
+
+/-- `Σ_c colLen(c)³ = Σ_{x,i,m} min3(λ_x,λ_i,λ_m)` (cube each `colLen` into row-indicators,
+`sum_comm` the column index inward, then the triple-indicator/`min` count).  Right-associated
+`min` to match the natural product expansion. -/
+theorem sum_colLen_cube_eq_sum_min3 (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    ∑ c ∈ Finset.range (l.headD 0), (colLen l c) ^ 3
+      = ∑ x ∈ Finset.range l.length, ∑ i ∈ Finset.range l.length, ∑ m ∈ Finset.range l.length,
+          min (l.getD x 0) (min (l.getD i 0) (l.getD m 0)) := by
+  have cube : ∀ c, (colLen l c) ^ 3 = ∑ x ∈ Finset.range l.length, ∑ i ∈ Finset.range l.length,
+      ∑ m ∈ Finset.range l.length, (if c < l.getD x 0 then (1 : ℕ) else 0) *
+        ((if c < l.getD i 0 then 1 else 0) * (if c < l.getD m 0 then 1 else 0)) := by
+    intro c
+    rw [pow_three]
+    simp_rw [colLen_eq_indicator_sum l]
+    rw [Finset.sum_mul_sum]
+    simp_rw [Finset.sum_mul, Finset.mul_sum]
+  simp_rw [cube]
+  rw [Finset.sum_comm]
+  apply Finset.sum_congr rfl; intro x _
+  rw [Finset.sum_comm]
+  apply Finset.sum_congr rfl; intro i _
+  rw [Finset.sum_comm]
+  apply Finset.sum_congr rfl; intro m _
+  simp_rw [indicator_mul]
+  rw [sum_indicator_lt_eq_min]
+  exact min_eq_right (le_trans (min_le_left _ _) (getD_le_headD l hl x))
+
+/-- **`K3` as a row form (sorry-free).** `Σ_j colLen(j)³ = Σ_i (3i²+3i+1)·λ_i`. -/
+theorem sum_colLen_cube_row_form (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    ∑ c ∈ Finset.range (l.headD 0), (colLen l c) ^ 3
+      = ∑ i ∈ Finset.range l.length, (3 * i ^ 2 + 3 * i + 1) * (l.getD i 0) := by
+  rw [sum_colLen_cube_eq_sum_min3 l hl]
+  simp_rw [← min_assoc]
+  exact antitone_min3_sum (fun i => l.getD i 0) (fun i k hik => getD_antitone l hl hik) l.length
+
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
 (`identityA_verified_le9`) and exhaustively in Python for `n ≤ 22`.
