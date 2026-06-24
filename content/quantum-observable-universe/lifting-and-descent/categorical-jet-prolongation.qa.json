@@ -1151,6 +1151,20 @@
         "reviewed_at": "2026-06-22T02:56:29.645Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "ts": "f7e87434b955",
+          "md": "5fbbe0b5f693"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/narrative-lean-rerate"
+        },
+        "reviewed_at": "2026-06-24T12:30:00.000Z",
+        "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
+        "notes": "Honest deferral proof added (PR #2715): narrative gives the argument and cites the upstream result the Lean sorry defers to; narrative<->Lean consistent."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1346,5 +1360,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:33.178Z"
+  "updated_at": "2026-06-24T12:30:00.000Z"
 }

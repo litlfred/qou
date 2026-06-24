@@ -1145,6 +1145,20 @@
         "reviewed_at": "2026-06-22T02:56:30.380Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "ts": "172b87f46d0b",
+          "md": "86ee67f4c831"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/narrative-lean-rerate"
+        },
+        "reviewed_at": "2026-06-24T12:30:00.000Z",
+        "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
+        "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.lean); stale agent flag refreshed (sorry discharged after prior review)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1340,5 +1354,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:33.955Z"
+  "updated_at": "2026-06-24T12:30:00.000Z"
 }
