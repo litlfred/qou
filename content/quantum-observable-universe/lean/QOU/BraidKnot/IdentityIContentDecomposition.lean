@@ -19,15 +19,23 @@ and it factors **without the Frame–Robinson–Thrall hook-length formula** as
   (B)  the Jucys–Murphy / Plancherel content-square mean `E_Planch[Σ c²] = binom(n,2)`.
 
 Mathlib (as of the pinned toolchain) carries **no** hook-length, content, or
-Jucys–Murphy infrastructure, so the *general* (A) and (B) are multi-session infra
-builds.  This file delivers what is feasible **today**, sorry-free where possible:
+Jucys–Murphy infrastructure, so this file builds the needed combinatorics from
+scratch.  Every declaration below is **sorry-free**:
 
 * (A) is given a self-contained computable model (partition = weakly-decreasing
-  `List ℕ`) and **machine-checked on all partitions `n ≤ 9`** (kernel `decide`);
-  the general statement is carried honestly with `sorry` + `-- Ref:` to the proof.
+  `List ℕ`), **machine-checked on all partitions `n ≤ 9`** (kernel `decide`), and
+  the **general statement is proved outright** (`sumSqHooks_eq_sumSqContents_add_sq`).
+  The proof expands the hook square `h² = P²+Q²+1+2PQ−2P−2Q` (`P = λ_i−j` the arm+1,
+  `Q = colLen j−i` the leg+1), then discharges each of the nine cell sums by a row
+  form: the `P` terms by row reflection, the `Q` terms by the Fubini cell-transpose
+  (`cell_fubini`) then the K-moment row forms, and the `PQ` cross term by the
+  λ-weighted min-sum (`cellAC_eq`, source of the `+ n²`) and the j-weighted K2
+  (`cellBC_eq`).  The nine rows then collapse to the content cubic by `ring`.
 * (B)'s computational heart — the identity coefficient of the central Jucys–Murphy
-  element `Σ_k X_k²`, namely `Σ_{k<n} k = binom(n,2)` — is **proved sorry-free**;
-  the full Plancherel-mean statement is carried with `sorry` + `-- Ref:`.
+  element `Σ_k X_k²`, namely `Σ_{k<n} k = binom(n,2)` — is **proved sorry-free**
+  (`jm_identity_coeff_two`).  The full Plancherel-mean statement cannot yet be
+  *stated* faithfully without `ℂ[S_n]` Wedderburn / Jucys–Murphy infrastructure
+  absent from the pinned Mathlib; the reduction is recorded in the closing note.
 
 Base ring `ℤ` throughout; nothing archimedean (no `q₀`, no 210 ppb).  No fit.
 -/
@@ -806,22 +814,23 @@ theorem cellBC_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
       = (2 * (i : ℤ) + 1) * (2 * ∑ j ∈ Finset.range (l.getD i 0), (j : ℤ)) from by ring,
     two_mul_sum_range_int]
 
-/-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
+/-- **Identity (A), general (proved sorry-free).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
-(`identityA_verified_le9`) and exhaustively in Python for `n ≤ 22`.
+(`identityA_verified_le9`), exhaustively in Python for `n ≤ 22`, and now proved
+for **all** partitions here.
 
-Proof roadmap (β-set / arm-leg, audit doc §"Proof of (A)").  The hook-square expansion
-`h² = a² + l² + 1 + 2·a·l + 2·a + 2·l` reduces (A) to its six per-term sums; the
-infrastructure below is now in place to discharge all but one of them:
-* arm terms `a²`, `2a` — closed over rows (`six_mul_sumSqArms`, `two_mul_sumArms`);
-* leg terms `l²`, `2l` — closed over columns (`six_mul_sumSqLegs`, `two_mul_sumLegs`),
-  reached from the row-indexed `Σ_c h²` by the **Fubini transpose** (`cell_fubini`, via the
-  cell-membership duality `colLen_duality`);
-* the constant `1` sums to `n = sz`; the content side is `six_mul_sumSqContents`.
-
-The single remaining gap is the **arm·leg cross term** `Σ_c a·l` (the (Lal) row-pair
-closed form `Σ_{i,k} λ_i·min(λ_i,λ_k) − …`), which couples rows and columns and needs a
-`Σ min` reindex beyond the present transpose; the rest is `ring`/`Finset.sum` glue. -/
+Proof (β-set / arm-leg, audit doc §"Proof of (A)").  Bridge the ℕ hook square to its
+ℤ form on cells (`hook_eq`), clear the `6` with `mul_left_cancel₀`, and expand
+`H² = P²+Q²+1+2PQ−2P−2Q` (`P = λ_i−j`, `Q = colLen j−i`) into nine cell sums (`hsum`).
+Each cell sum has a row form discharged above:
+* `P²`,`P` — row reflection (`cellP_sq_eq`, `cellP_eq`);
+* `Q²`,`Q` — Fubini transpose (`cell_fubini`, via `colLen_duality`) then the K-moment
+  row forms (`cellQ_sq_eq`, `cellQ_eq`);
+* the `λ·colLen` cross term — λ-weighted min-sum (`cellAC_eq`), which contributes the
+  `+ n²`; the `j·colLen` cross term — j-weighted K2 (`cellBC_eq`);
+* the `λ·i`, `j·i`, and constant sums — direct (`hT5`, `hT7`, `hT3`).
+The two `6·n²` scalars cancel and the nine rows collapse to the content cubic by
+`ring`. -/
 theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
     sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 := by
   -- Ref: [manuscript] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (A)"
@@ -837,12 +846,60 @@ theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥
     have hcast : (((l.getD i 0 - j) + (colLen l j - i) - 1 : ℕ) : ℤ)
         = (l.getD i 0 : ℤ) - j + (colLen l j : ℤ) - i - 1 := by omega
     rw [hcast]
-  -- Step 2 (remaining): expand `H² = P²+Q²+1+2PQ−2P−2Q` (P = λ_i−j, Q = colLen j−i), split,
-  -- and plug in the verified term lemmas (six_mul_sum_range_refl_sq for P; cell_fubini +
-  -- the K-moment row forms for Q; two_mul_sum_lambda_min + sum_j_colLen_sq_row_form for PQ;
-  -- six_mul_sumSqContents for the content side), then `ring`.
-  -- Ref: [manuscript] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (A)"
-  sorry
+  -- Step 2: expand `H² = P²+Q²+1+2PQ−2P−2Q` (P = λ_i−j, Q = colLen j−i), split into the nine
+  -- per-term cell sums, plug in the verified term lemmas, and `ring` the row polynomial.
+  rw [hook_eq]
+  apply mul_left_cancel₀ (show (6 : ℤ) ≠ 0 by norm_num)
+  rw [mul_add, six_mul_sumSqContents, ← sub_eq_iff_eq_add]
+  -- split `Σ H²` into the nine cell sums
+  have hsum : (∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0),
+        ((l.getD i 0 : ℤ) - j + (colLen l j : ℤ) - i - 1) ^ 2)
+      = (∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), ((l.getD i 0 : ℤ) - j) ^ 2)
+        + (∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), ((colLen l j : ℤ) - i) ^ 2)
+        + (∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), (1 : ℤ))
+        + 2 * (∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), (l.getD i 0 : ℤ) * (colLen l j : ℤ))
+        - 2 * (∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), (l.getD i 0 : ℤ) * (i : ℤ))
+        - 2 * (∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), (j : ℤ) * (colLen l j : ℤ))
+        + 2 * (∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), (j : ℤ) * (i : ℤ))
+        - 2 * (∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), ((l.getD i 0 : ℤ) - j))
+        - 2 * (∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), ((colLen l j : ℤ) - i)) := by
+    simp only [Finset.mul_sum, ← Finset.sum_add_distrib, ← Finset.sum_sub_distrib]
+    apply Finset.sum_congr rfl; intro i _; apply Finset.sum_congr rfl; intro j _; ring
+  -- the three "simple" cell sums (constant; the λ·i sum; the j·i sum doubled)
+  have hT3 : (∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), (1 : ℤ))
+      = ∑ i ∈ Finset.range l.length, (l.getD i 0 : ℤ) := by
+    apply Finset.sum_congr rfl; intro i _
+    rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul, mul_one]
+  have hT5 : (∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), (l.getD i 0 : ℤ) * (i : ℤ))
+      = ∑ i ∈ Finset.range l.length, (i : ℤ) * (l.getD i 0 : ℤ) ^ 2 := by
+    apply Finset.sum_congr rfl; intro i _
+    rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul]; ring
+  have hT7 : 2 * (∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), (j : ℤ) * (i : ℤ))
+      = ∑ i ∈ Finset.range l.length, (i : ℤ) * ((l.getD i 0 : ℤ) * ((l.getD i 0 : ℤ) - 1)) := by
+    rw [Finset.mul_sum]; apply Finset.sum_congr rfl; intro i _
+    rw [← (Finset.sum_mul (Finset.range (l.getD i 0)) (fun j => (j : ℤ)) (i : ℤ)),
+      show (2 : ℤ) * ((∑ j ∈ Finset.range (l.getD i 0), (j : ℤ)) * (i : ℤ))
+        = (i : ℤ) * (2 * ∑ j ∈ Finset.range (l.getD i 0), (j : ℤ)) from by ring,
+      two_mul_sum_range_int]
+  rw [hsum, hT3, hT5, hT7]
+  simp only [mul_add, mul_sub]
+  rw [cellP_sq_eq l, cellQ_sq_eq l hl, cellAC_eq l hl, cellBC_eq l hl, cellP_eq l, cellQ_eq l hl]
+  -- Distribute every `6·∑` into the sum (no merge yet): this leaves the nine per-row
+  -- sums plus the two stray `6·(sz l)²` scalars — `+` inside the `AC` term (cellAC's
+  -- `+ sz²`) and `−` at the tail (from `← sub_eq_iff_eq_add`).
+  simp only [Finset.mul_sum, mul_add, mul_sub]
+  -- Cancel the two `6·(sz l)²` scalars (a `ring` identity over the opaque sum-atoms),
+  -- which makes the nine sums syntactically adjacent.
+  rw [show ∀ A B C D E F G H I zz : ℤ,
+        A + B + C + (D + 6 * zz) - E - F + G - H - I - 6 * zz
+          = A + B + C + D - E - F + G - H - I
+        from fun A B C D E F G H I zz => by ring]
+  -- Merge the nine adjacent sums into one, then close pointwise (the row polynomial
+  -- `poly_L i` equals the content cubic `(2i+1−2λ_i)·… ` — verified numerically).
+  simp only [← Finset.sum_add_distrib, ← Finset.sum_sub_distrib]
+  apply Finset.sum_congr rfl
+  intro i _
+  ring
 
 /-! ## (B) Jucys–Murphy content-square mean -/
 
