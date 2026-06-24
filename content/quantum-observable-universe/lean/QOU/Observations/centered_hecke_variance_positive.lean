@@ -1,5 +1,4 @@
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.Linarith
+import Mathlib
 
 /-!
 # QOU.Observations.centered_hecke_variance_positive
