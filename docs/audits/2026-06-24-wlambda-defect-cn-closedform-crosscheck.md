@@ -120,6 +120,40 @@ fact about the defect — and it sharpens the keystone gate from one falsifiable
 content-hook machinery that gave `C(n)`); it is interpolation-derived with held-out validation, and
 flagged as such.
 
+## The coefficient ladder — `deg c_{2k}(n) = 3k` (every coefficient is polynomial)
+
+**Probe:** [`computations/keystone_wlambda_defect_coeff_ladder.py`](../../computations/keystone_wlambda_defect_coeff_ladder.py)
+· **Witness:** [`computations/keystone-wlambda-defect-coeff-ladder.witness.json`](../../computations/keystone-wlambda-defect-coeff-ladder.witness.json)
+
+`deg C = 3`, `deg D = 6` is the start of a **ladder**. Writing the defect
+`1 − Z(n) = Σ_{k≥1} c_{2k}(n)·h^{2k}`, the probe extracts `c_2 = C`, `c_4 = D`, `c_6 = E` (the
+h², h⁴, h⁶ Taylor coefficients via `mp.taylor`, method-validated against the exact `C(n)` to 0.0)
+and finds, with each closed form interpolated + **held-out validated**:
+
+| k | coeff | degree in n | `3k` | denominator | held-out |
+|--:|:--|:--:|:--:|:--|:--|
+| 1 | `C(n)` | **3** | 3 | `144` | n=6..14 PASS |
+| 2 | `D(n)` | **6** | 6 | `1036800 = 50·144²` | n=9..14 PASS |
+| 3 | `E(n)` | **9** | 9 | `21946982400 = 7350·144³` | n=12,13,14 PASS |
+
+So **`deg c_{2k}(n) = 3k`** for k=1,2,3, and every denominator is `m_k·144^k` (`m_k ∈ {1, 50, 7350}`) —
+the Identity-I `144` recurs at every order. (`E(n)` is a degree-9 integer polynomial; its full
+coefficient list is in the witness.)
+
+**Honest framing — this is expected, and that is the point.** The polynomiality is *not* a
+surprising coincidence: the defect coefficients are symmetric functions of cell contents / hook
+lengths averaged over the Plancherel measure, and such averages are **polynomial functions on the
+set of Young diagrams** (Kerov–Olshanski; Kerov / Biane polynomials). So the framework's defect
+expansion sits inside a known structural theory; the QOU-specific content is the **sharp degree
+ladder `3k`** and the recurring `144^k` denominator. The degree-3k law is a **conjecture** on k=1,2,3
+evidence (each rung rigorously polynomial + validated; the *general* law is the extrapolation) — a
+proof should follow from the Identity-I / Kerov-polynomial structure, not from this probe.
+
+**Consequence for the keystone.** If the law holds, the geometric `W_λ` index's **entire**
+heat-kernel expansion is polynomial-in-`n` — an *unbounded* family of exact, q₀-free falsifiable
+targets (the 2k-th heat-kernel coefficient = `c_{2k}(n)`), not merely the two of phase G2. The gate
+is far more constraining than a single number-match could ever be.
+
 ## Cross-references
 
 - [`computations/keystone_wlambda_defect_cn_closedform_crosscheck.py`](../../computations/keystone_wlambda_defect_cn_closedform_crosscheck.py) — this probe.
