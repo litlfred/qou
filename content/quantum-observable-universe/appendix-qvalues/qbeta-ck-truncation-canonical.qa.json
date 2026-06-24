@@ -940,7 +940,143 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof stub with core gaps but carries math structure and definitions."
       }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "96829a83b341",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "The headline witness assertion N3_beats_100x_experimental_target has computed:38.61 expected:6.02 passed:false \u2014 N=3 does NOT beat the 7.8 ppb target under the current anchor; '+6.02' is a frozen pre-re-pin number.",
+        "rebuttal": "partial \u2014 the .md never asserts N=3 beats the target (only the tiering), so the stale number does not propagate into a false narrative claim; but the block ships a stale/false witness assertion as backing.",
+        "evidence": [
+          {
+            "text": "qbeta-ck-truncation-order-analysis.witness.json:9-12,82 'passed:false'"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "severity": "major"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "96829a83b341",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "Post-2026-06-04 'near-match' understates the corpus position \u2014 the universal-fibre reading is falsified, not merely unproved; the block (2026-05-31) predates and ignores this.",
+        "rebuttal": "partial \u2014 block does not claim c_3 is a derivation; 'near-match, anchor-dependent, no predictive content' is directionally correct (honest-tiering carve-out); defect is staleness, not fabrication.",
+        "evidence": [
+          {
+            "text": "qbeta-ck-truncation-canonical.md:25-32; ck-dk-canonical-registry.md:65"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "96829a83b341",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": ".ts see: points only to the superseded 2026-05-31 framing doc (header: 'SUPERSEDED for status'); neither .md nor .ts references ck-dk-canonical-registry.md.",
+        "rebuttal": "minor \u2014 the superseded doc still chains forward to the registry, but the manifest's auditable pointer leads to a doc explicitly marked superseded.",
+        "evidence": [
+          {
+            "text": "qbeta-ck-truncation-canonical.ts see:"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "96829a83b341",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "Lean sibling vacuity check.",
+        "rebuttal": "rebutted \u2014 Lean states the real proposition with sorry + -- Ref:, no library shadow, honest \u00a73b conjecture class; the c_2=-1 leg is genuinely proved (q-beta-c-2-eq-neg-one-structural.lean).",
+        "evidence": [
+          {
+            "text": "qbeta-ck-truncation-canonical.lean"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "96829a83b341",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The block presents c_3 = -2 = J_Hopf(q=1) as a respectable 'structural near-match' while the corpus's authoritative 2026-06-04 registry (post-dating this block) has since REFUTED every real-q c_3 form as a single-anchor coincidence, and the block cites neither the registry nor the falsification.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:26.727Z"
+  "updated_at": "2026-06-24T03:58:58Z"
 }

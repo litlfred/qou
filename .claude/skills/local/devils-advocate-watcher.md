@@ -208,6 +208,26 @@ criterion that fired; the `da-referee-verdict` is the rollup.
 | `da-reproducibility` | The compute/witness backing a number is irreproducible, stale (`scriptHash`/`scriptCommitSha` drift), or its value contradicts the prose `≈`. |
 | `da-referee-verdict` | Rollup: `clean` / `survivable-objection` / `open-objection` + the strongest objection's one-line referee argument. |
 
+### Sidecar schema (pre-adopted)
+
+Each `da-*` entry is a standard `block-qa/v1` `QaCriterionEntry`
+(`field_hash`, `result`, `severity`, `evidence`, `reviewer.kind =
+"agent"`, `reviewed_at`, `reviewed_sha`) **plus** the da-axis
+extension fields: `scope` (`limited`|`structural`), `ruling`
+(`surviving`|`rebutted`|`partial`), `referee_argument`, `rebuttal`,
+and — on the `da-referee-verdict` rollup only — `verdict`
+(`clean`|`survivable-objection`|`open-objection`). `result` is derived
+from `ruling`/`verdict` (surviving/open→`fail`, partial/survivable→
+`warn`, rebutted/clean→`pass`); a `structural` scope requires a
+non-empty `rebuttal` + `referee_argument` naming the proved invariant.
+
+The qou-side pre-adoption contract (JSON Schema fragment + the
+folio-assistant requirements) lives at
+[`docs/ports/2026-06-24-block-qa-da-axis/`](../../../docs/ports/2026-06-24-block-qa-da-axis/).
+The producing types are owned by `litlfred/folio-assistant`
+`schemas/block-qa.ts`; the watcher emits the structured fields now so
+the sidecars conform once the platform validator adopts them.
+
 ## Slot E — §4d discharge bands
 
 | Band | Devil's-advocate shape | Action |

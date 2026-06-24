@@ -938,7 +938,173 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof stub with core gaps but carries math structure and definitions."
       }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7a15a547ed59",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "fail",
+        "scope": "structural",
+        "ruling": "surviving",
+        "referee_argument": "Block presents lambda_scale as a live conjectural scale with 'open R&D', contradicting the standing purge.",
+        "rebuttal": "none \u2014 survived: contradicts sibling lambda-scale-substrate-form.md ('structurally falsified ... Do not revive'), its own witness ('RESOLVED post-PR #1080'), and AGENTS.md:660 standing purge. Cited invariant: the Family A absorption proof (PR #1080).",
+        "evidence": [
+          {
+            "text": "borromean-baryon-mass-formula.md:74-93 'lambda_scale ... open R&D item ... conjectural common scale'"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "severity": "critical"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7a15a547ed59",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": ".md claims the formula reproduces CODATA m_p/m_n; the Lean class axiomatises that content as ': True' vacuous fields, proving nothing about the CODATA match (\u00a71a / proof-statement-integrity).",
+        "rebuttal": "none \u2014 survived: the ': True' field is precisely the audit-dodge \u00a71a forbids.",
+        "evidence": [
+          {
+            "text": "borromean-baryon-mass-formula.lean:139-142 'proton_matches_codata : True'"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "severity": "major"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7a15a547ed59",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "Witness has assertions:[] yet .ts status:'verified' \u2014 an empty assertion array verifies nothing.",
+        "rebuttal": "partial \u2014 witness data carries the dS agreement numbers, but the green status is unearned with zero assertions.",
+        "evidence": [
+          {
+            "text": "m-baryon-volume-form.witness.json 'assertions:[], allPassed:true'; .ts:18 status:'verified'"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "severity": "major"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7a15a547ed59",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "Per-baryon lambda_scale fitted to each CODATA mass is a hidden per-observable DOF.",
+        "rebuttal": "partial \u2014 block honestly isolates dS (1015 ppm, no individual fit) as the testable claim; absolute masses remain fits.",
+        "evidence": [
+          {
+            "text": "borromean-baryon-mass-formula.md:47-57"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "severity": "major"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7a15a547ed59",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "Uses Vol(B3)/hbar_q^2, the documented wrong absolute-mass trap (guardrail.md:30).",
+        "rebuttal": "rebutted \u2014 block applies it to ratios m_B/m_e with an open scale, stays a conjecture, does not claim to be canonical_mass.",
+        "evidence": [
+          {
+            "text": "guardrail.md:30"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7a15a547ed59",
+          "ts": "4a9992aeb372",
+          "lean": "28df5114dd19"
+        },
+        "result": "fail",
+        "verdict": "open-objection",
+        "referee_argument": "The block revives lambda_scale as a live 'conjectural common scale' with an 'open R&D' derivation, after its own sibling block, its witness, and AGENTS.md record lambda_scale as structurally falsified, purged, and absorbed into VolDensity (Family A, PR #1080).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:12.283Z"
+  "updated_at": "2026-06-24T03:58:58Z"
 }

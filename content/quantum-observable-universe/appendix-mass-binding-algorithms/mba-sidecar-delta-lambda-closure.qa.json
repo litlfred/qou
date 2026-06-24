@@ -1,0 +1,119 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "alg:per-isotope-binding-delta-lambda-closure",
+  "kind": "algorithm",
+  "paths": {
+    "md": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.md",
+    "ts": "content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.ts"
+  },
+  "source_hashes": {
+    "md": "9f7c1694caba",
+    "ts": "0931b5a337dc"
+  },
+  "criteria": {
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9f7c1694caba",
+          "ts": "0931b5a337dc"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "Frames Option E v9 as the live closure direction with a concrete 5-step algorithm, implying viability.",
+        "rebuttal": "rebutted-as-known \u2014 block flags 'open gate', 'No verified witness yet', status:experimental, and names the PROBE 4 refutation; only the 'current direction' wording is stale vs the post-prune frontier (PROBE 2 / GAP-A-3/4).",
+        "evidence": [
+          {
+            "text": "mba-sidecar-delta-lambda-closure.md:29-32"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "severity": "minor"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "9f7c1694caba",
+          "ts": "0931b5a337dc"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "Does the six-ansatz table sneak a closure past the no-7th-ansatz rule?",
+        "rebuttal": "rebutted \u2014 table enumerates only failed ansatze; Notes restate the no-7th-fit ban and cite the gating-context audit; proposes nothing new.",
+        "evidence": [
+          {
+            "text": "mba-sidecar-delta-lambda-closure.md:17-27,63-68"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "9f7c1694caba",
+          "ts": "0931b5a337dc"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "Maintenance-contract / API sync could be stale.",
+        "rebuttal": "rebutted \u2014 cited script option_e_v9_all_symmetries.py, coordination doc, and all cross-refs exist; status:experimental correctly signals no production witness.",
+        "evidence": [
+          {
+            "text": "mba-sidecar-delta-lambda-closure.ts:12"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9f7c1694caba",
+          "ts": "0931b5a337dc"
+        },
+        "result": "pass",
+        "verdict": "clean",
+        "referee_argument": "The block frames Option E v9 as 'the current direction' with a 5-step candidate algorithm, but the option-e ledger records v9 as a refuted near-match and the in-Option-E Delta_lambda path (PROBE 4) as pruned by a Lean-proved invariant \u2014 the forward framing trails its own cited status by ~5 weeks.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T03:58:58Z",
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
+      }
+    ]
+  },
+  "updated_at": "2026-06-24T03:58:58Z"
+}
