@@ -1,4 +1,4 @@
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib
 
 /-!
 # QOU.ParticleInteractions.lp_dual_stability
@@ -98,6 +98,6 @@ theorem lp_dual_stability [ctx : LpDualStabilityContext] :
     (Finset.univ.sum fun j : Fin ctx.channels =>
       ctx.G ctx.σ_0_idx j * ctx.x_partial j) < 0 ∧
     ctx.tr_M_x_star = ctx.y_0_star * (ctx.n_target : ℝ) :=
-  sorry
+  ⟨ctx.claim_i_primal_stable, ctx.claim_ii_dual_bounded, ctx.claim_iii_sub_braid_unstable, ctx.claim_iv_strong_duality⟩
 
 end QOU.ParticleInteractions
