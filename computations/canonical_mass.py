@@ -53,8 +53,8 @@ def _from_formula() -> tuple[float, float]:
     hbar_q_sq = ((q - 1) / q) ** 2
     m_mu = m_e * vol_4_1_at(50) / hbar_q_sq           # muon anchor (Vol(4₁))
     m_p = 2 * (m_mu * F_Bor(q) - 6 * m_e)             # dim V_(2,1)=2, |S_3|=6
-    from derived_masses import q_beta_predicted_mev
-    m_n = m_p + q_beta_predicted_mev() + m_e          # canonical 3-input chain
+    from derived_masses import q_beta_kashiwara_n2_mev
+    m_n = m_p + q_beta_kashiwara_n2_mev() + m_e        # n→p+e+ν̄: Kashiwara b² Q_β (~1 ppb)
     return float(m_p), float(m_n)
 
 
@@ -101,13 +101,13 @@ def prediction_uncertainty_ppb(Z: int, N: int, layer: str = "canonical") -> floa
     from m_p_substrate_identity_50dps import F_Bor
     from q_parameter import Q as q0, vol_4_1_at
     from codata_constants import M_E_MEV
-    from derived_masses import q_beta_predicted_mev
+    from derived_masses import q_beta_kashiwara_n2_mev
     q = mp.mpf(str(q0)); m_e = mp.mpf(str(M_E_MEV))
     vol41 = vol_4_1_at(50)
 
     def constit(qq, mee):
         m_p = 2 * (mee * vol41 / ((qq - 1) / qq) ** 2 * F_Bor(qq) - 6 * mee)
-        m_n = m_p + q_beta_predicted_mev() + mee     # pathC for propagation
+        m_n = m_p + q_beta_kashiwara_n2_mev() + mee  # Kashiwara b² Q_β (const in FD)
         return Z * m_p + N * m_n
 
     base = constit(q, m_e)
