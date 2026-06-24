@@ -70,6 +70,18 @@ def sumArms (l : List ℕ) : ℤ :=
   ((List.range l.length).map fun i =>
     ((List.range (l.getD i 0)).map fun (j : ℕ) => ((l.getD i 0 - 1 - j : ℕ) : ℤ)).sum).sum
 
+/-- `Σ_{cells} leg(c)²` with leg `l(i,j) = colLen(j) − 1 − i`, summed by **columns**
+`j = 0 … λ_1 − 1` (`λ_1 = l.headD 0`).  The `l²` term of `h² = (a+l+1)²`. -/
+def sumSqLegs (l : List ℕ) : ℤ :=
+  ((List.range (l.headD 0)).map fun j =>
+    ((List.range (colLen l j)).map fun (i : ℕ) => ((colLen l j - 1 - i : ℕ) : ℤ) ^ 2).sum).sum
+
+/-- `Σ_{cells} leg(c)` with leg `l(i,j) = colLen(j) − 1 − i`, summed by columns.
+Carries the `2l` cross term of `h² = (a+l+1)²`. -/
+def sumLegs (l : List ℕ) : ℤ :=
+  ((List.range (l.headD 0)).map fun j =>
+    ((List.range (colLen l j)).map fun (i : ℕ) => ((colLen l j - 1 - i : ℕ) : ℤ)).sum).sum
+
 /-! ### (A) machine-checked for ALL partitions `n ≤ 9` (sorry-free)
 
 `Σ_c h_c² = Σ_c c(c)² + n²` verified by kernel `decide` over **every** partition with
@@ -173,14 +185,16 @@ theorem six_mul_sumSqContents (l : List ℕ) :
   rw [list_range_map_sum]
   exact six_mul_sum_range_content_sq (l.getD i 0) i
 
-/-! ### Hook side of (A): arm pieces, closed form (sorry-free)
+/-! ### Hook side of (A): arm + leg pieces, closed form (sorry-free)
 
-Writing the hook as `h(c) = a(c) + l(c) + 1` (arm + leg + 1) expands the hook square into
-`h² = a² + l² + 1 + 2·a·l + 2·a + 2·l`.  The **arm** is per-row independent (it depends
-only on the position within a row), so — exactly like the content side — its square- and
-linear-sums have closed forms over the rows, via the reflection `Σ_{j<m}(m−1−j)^k =
-Σ_{k<m} k^k`.  These discharge two of the six terms; the remaining `l²`, `2·a·l`, `2·l`
-(leg / arm·leg) terms are the genuinely 2-D `colLen` pieces (L1)+(Lal) still open. -/
+Writing the hook as `h(c) = a(c) + l(c) + 1` expands the hook square into the six terms
+`h² = a² + l² + 1 + 2·a·l + 2·a + 2·l`.  Four of them are per-row (arm) / per-column (leg)
+independent and close by the reflection `Σ_{j<m}(m−1−j)^k = Σ_{k<m} k^k`: `a²`
+(`six_mul_sumSqArms`), `l²` (`six_mul_sumSqLegs`), `2a` (`two_mul_sumArms`), `2l`
+(`two_mul_sumLegs`).  The constant `1` sums to the cell count `n = sz`.  The **only**
+genuinely 2-D piece left is the **arm·leg cross term** `Σ_c a(c)·l(c)` — the reindex
+(Lal) — after which (A) reduces to `ring` / `Finset.sum` glue against the content closed
+form `six_mul_sumSqContents`. -/
 
 /-- **Arm-square side, closed form (sorry-free).** `6·Σ_c a(c)² = Σ_i λ_i(λ_i−1)(2λ_i−1)`,
 reflecting each row's arm sum onto `Σ_{k<λ_i} k²`. -/
@@ -205,6 +219,30 @@ theorem two_mul_sumArms (l : List ℕ) :
   intro i _
   rw [list_range_map_sum, Finset.sum_range_reflect (fun k => ((k : ℤ)))]
   exact two_mul_sum_range_int (l.getD i 0)
+
+/-- **Leg-square side, closed form (sorry-free).** `6·Σ_c l(c)² = Σ_j colLen(j)(colLen(j)−1)(2·colLen(j)−1)`,
+the column transpose of `six_mul_sumSqArms` (reflect each column's leg sum onto `Σ_{k<colLen j} k²`). -/
+theorem six_mul_sumSqLegs (l : List ℕ) :
+    6 * sumSqLegs l = ∑ j ∈ Finset.range (l.headD 0),
+      (colLen l j : ℤ) * ((colLen l j : ℤ) - 1) * (2 * (colLen l j : ℤ) - 1) := by
+  unfold sumSqLegs
+  rw [list_range_map_sum, Finset.mul_sum]
+  apply Finset.sum_congr rfl
+  intro j _
+  rw [list_range_map_sum, Finset.sum_range_reflect (fun k => ((k : ℤ)) ^ 2)]
+  exact six_mul_sum_range_sq (colLen l j)
+
+/-- **Leg-linear side, closed form (sorry-free).** `2·Σ_c l(c) = Σ_j colLen(j)(colLen(j)−1)`,
+the column transpose of `two_mul_sumArms`. -/
+theorem two_mul_sumLegs (l : List ℕ) :
+    2 * sumLegs l = ∑ j ∈ Finset.range (l.headD 0),
+      (colLen l j : ℤ) * ((colLen l j : ℤ) - 1) := by
+  unfold sumLegs
+  rw [list_range_map_sum, Finset.mul_sum]
+  apply Finset.sum_congr rfl
+  intro j _
+  rw [list_range_map_sum, Finset.sum_range_reflect (fun k => ((k : ℤ)))]
+  exact two_mul_sum_range_int (colLen l j)
 
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
