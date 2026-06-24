@@ -1,0 +1,106 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-24T12:09:29.162059+00:00",
+  "commitSha": "61bcf24d887ef70408d2347da7bb96c64c61fd60",
+  "scriptCommitSha": "61bcf24d887ef70408d2347da7bb96c64c61fd60",
+  "computation": "lw2-c2-independent-hopf-test-attempt",
+  "scriptFile": "lw2_c2_independent_hopf_test_attempt.py",
+  "assertions": [
+    {
+      "name": "lw2_target_is_selection_rule_mean_dimq",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "lw(2) = (1+[2]_q+1)/3 = (q+1)\u00b2/(3q) at q\u2080 (the TARGET; a mean quantum dimension = q-involution-number I(3)/3, NOT a single-link Markov trace)."
+    },
+    {
+      "name": "independent_hopf_trace_well_formed",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "INDEPENDENT c=2 object: tr_M(\u03c3\u2081\u00b2)=(q\u2212q\u207b\u00b9)z+1 = 1+(q\u22121)/\u221aq (Hopf link; Hecke quadratic + Markov axioms; NO selection-rule input)."
+    },
+    {
+      "name": "independent_hopf_trace_does_NOT_match_lw2",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Honest NEGATIVE: the natural independent c=2 Hopf Markov trace (Wenzl/q-Schur \u2248 1.1043881, miss 17.40%; q-Schur-Plancherel \u2248 1.0437062, miss 21.93%) does NOT equal lw(2)\u22481.3369656 at q\u2080 within the 1% gate. No braid word's trace = mean dim_q."
+    },
+    {
+      "name": "lw2_and_hopf_trace_not_identically_equal",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "lw(2)(q) \u2260 tr_M(Hopf)(q) as q-functions (coincide only at isolated algebraic q: [1.4618186516030025, 8.739681318220425], none = q\u2080); disagree at q\u21921 (4/3 vs 1). So any route forcing tr_M(Hopf)\u21921.337 would be a coincidence-fit, not an independent test."
+    }
+  ],
+  "allPassed": true,
+  "auditOnly": "docs/audits/2026-06-24-lw2-c2-independent-test-attempt.md",
+  "precisionMetadata": {
+    "compute_dps": 60,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-45"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "parameters": {
+    "q_0": "1.1099785955573347198997632204832250266562084087802"
+  },
+  "data": {
+    "question": "Can lw(2)=(q+1)\u00b2/(3q)\u22481.337 be tested against an INDEPENDENT c=2 (2-component-link) object, with no circular reference to the selection rule?",
+    "target_selection_rule": {
+      "lw2_symbolic": "(q**2 + 2*q + 1)/(3*q)",
+      "lw2_at_q0": "1.3369656230396919202725546015001609010169311719709",
+      "what_it_is": "mean quantum dimension (1/(c+1))\u00b7\u03a3_{\u03bb\u22a2c+1} dim_q = q-deformed involution number I(c+1)/(c+1); a representation-COUNT, not a braid Markov trace.",
+      "q_eq_1_limit": "4/3 (= mean dim of S_3 = I(3)/3)",
+      "involution_numbers_I_n": {
+        "2": 2,
+        "3": 4,
+        "4": 10,
+        "5": 26
+      }
+    },
+    "independent_c2_object_hopf": {
+      "braid": "\u03c3\u2081\u00b2 in B\u2082 \u2192 H\u2082(q); closure = Hopf link L_H = T(2,2)",
+      "trM_wenzl_qschur_symbolic": "1 + (q-1)/\u221aq  (= (q\u2212q\u207b\u00b9)z+1)",
+      "trM_at_q0": "1.1043880698120037126001141721670983675523041758431",
+      "trM_qschur_plancherel_at_q0": "1.0437062182329013102182450855436030316663417518847",
+      "provenance": "Hecke quadratic relation \u03c3\u2081\u00b2=(q\u2212q\u207b\u00b9)\u03c3\u2081+1 + Markov axioms tr(1)=1, tr(\u03c3\u2081)=z. Corpus closed form proved over \u211a(q^{1/2}) in trm-hopf-sigma1-sq-closed-form.md. NO selection-rule input \u2014 genuinely independent.",
+      "non_hyperbolic": "Vol(T(2,2))=0, D(z)=0 \u21d2 NO Kashaev/volume route (consistent with 2026-06-24 untested-status audit)."
+    },
+    "comparison_at_q0": {
+      "lw2_target": "1.33696562303969192",
+      "hopf_trM_wenzl_qschur": "1.10438806981200371",
+      "hopf_trM_qschur_plancherel": "1.04370621823290131",
+      "rel_miss_wenzl_pct": "17.3959",
+      "rel_miss_qschur_plancherel_pct": "21.9347",
+      "match_gate_pct": 1.0,
+      "independent_object_matches": false
+    },
+    "circularity_analysis": {
+      "lw2_eq_hopf_trace_identically": false,
+      "coincidence_real_positive_q": [
+        1.4618186516030025,
+        8.739681318220425
+      ],
+      "q0_among_coincidences": false,
+      "disagree_at_q_eq_1": true,
+      "conclusion": "tr_M(Hopf) is independent but does NOT match lw(2). The ONLY object equal to lw(2)\u22481.337 at q\u2080 is the selection-rule formula itself \u21d2 any 'test' that reaches 1.337 must route through the rule = CIRCULAR. lw(2) stays structurally untestable (no c=2 mass-CONSUMER) \u2014 confirms the prior audit."
+    },
+    "refutation_scope_a_or_b": {
+      "class": "(a) scope-limited negative",
+      "statement": "The natural independent c=2 Hopf Markov trace, ALONE, does not reproduce the selection-rule c=2 value (1.104 vs 1.337). This constrains the magnitude/identification, NOT lw(2)'s validity.",
+      "NOT_a_structural_exclusion": "lw(2)=(q+1)\u00b2/(3q) remains derivation-tight (Lean-proved). Nothing here refutes the selection rule; the negative is that tr_M(Hopf) is the WRONG independent object (a trace, not a mean dimension). A correct test needs a c=2 mass-consumer."
+    }
+  }
+}
