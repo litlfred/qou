@@ -1,0 +1,264 @@
+{
+  "description": "Keystone Step-1 gate: WRT(S3/2I) SU(2)-side [2j+1]_q vs the S_n-side W_lambda numerator d_q(lambda), n=3,4,5 at q_0. Tests coverage (>=3-row blocks outside the GL_2 Schur-Weyl image) and value (d_q vs [2j+1]_q). No fit.",
+  "q0": "1.1099785900594",
+  "dps": 50,
+  "by_n": {
+    "3": {
+      "num_blocks": 3,
+      "Z_n": "0.987440228206",
+      "defect_1_minus_Z": "0.0125597717937",
+      "coverage_gap_blocks": 1,
+      "le2_row_blocks": 2,
+      "value_matches": 1,
+      "blocks": [
+        {
+          "lambda": [
+            3
+          ],
+          "rows": 1,
+          "in_su2_image": true,
+          "d_q_Sn": "1.0",
+          "su2_dim_q": "4.1096824",
+          "d_q_eq_su2": false,
+          "W_lambda_nfac": "0.16338323",
+          "W_lambda_D2": "0.16546138"
+        },
+        {
+          "lambda": [
+            2,
+            1
+          ],
+          "rows": 2,
+          "in_su2_image": true,
+          "d_q_Sn": "2.0108969",
+          "su2_dim_q": "2.0108969",
+          "d_q_eq_su2": true,
+          "W_lambda_nfac": "0.66067377",
+          "W_lambda_D2": "0.66907723"
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1
+          ],
+          "rows": 3,
+          "in_su2_image": false,
+          "d_q_Sn": "1.0",
+          "su2_dim_q": null,
+          "d_q_eq_su2": null,
+          "W_lambda_nfac": "0.16338323",
+          "W_lambda_D2": "0.16546138"
+        }
+      ]
+    },
+    "4": {
+      "num_blocks": 5,
+      "Z_n": "0.982165321623",
+      "defect_1_minus_Z": "0.0178346783767",
+      "coverage_gap_blocks": 2,
+      "le2_row_blocks": 3,
+      "value_matches": 1,
+      "blocks": [
+        {
+          "lambda": [
+            4
+          ],
+          "rows": 1,
+          "in_su2_image": true,
+          "d_q_Sn": "1.0",
+          "su2_dim_q": "5.2204413",
+          "d_q_eq_su2": false,
+          "W_lambda_nfac": "0.039755682",
+          "W_lambda_D2": "0.040477587"
+        },
+        {
+          "lambda": [
+            3,
+            1
+          ],
+          "rows": 2,
+          "in_su2_image": true,
+          "d_q_Sn": "3.0437062",
+          "su2_dim_q": "3.0437062",
+          "d_q_eq_su2": true,
+          "W_lambda_nfac": "0.3683025",
+          "W_lambda_D2": "0.37499033"
+        },
+        {
+          "lambda": [
+            2,
+            2
+          ],
+          "rows": 2,
+          "in_su2_image": true,
+          "d_q_Sn": "2.0437062",
+          "su2_dim_q": "1.0",
+          "d_q_eq_su2": false,
+          "W_lambda_nfac": "0.16604895",
+          "W_lambda_D2": "0.16906416"
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1
+          ],
+          "rows": 3,
+          "in_su2_image": false,
+          "d_q_Sn": "3.0437062",
+          "su2_dim_q": null,
+          "d_q_eq_su2": null,
+          "W_lambda_nfac": "0.3683025",
+          "W_lambda_D2": "0.37499033"
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "rows": 4,
+          "in_su2_image": false,
+          "d_q_Sn": "1.0",
+          "su2_dim_q": null,
+          "d_q_eq_su2": null,
+          "W_lambda_nfac": "0.039755682",
+          "W_lambda_D2": "0.040477587"
+        }
+      ]
+    },
+    "5": {
+      "num_blocks": 7,
+      "Z_n": "0.982224146085",
+      "defect_1_minus_Z": "0.0177758539147",
+      "coverage_gap_blocks": 4,
+      "le2_row_blocks": 3,
+      "value_matches": 1,
+      "blocks": [
+        {
+          "lambda": [
+            5
+          ],
+          "rows": 1,
+          "in_su2_image": true,
+          "d_q_Sn": "1.0",
+          "su2_dim_q": "6.3880866",
+          "d_q_eq_su2": false,
+          "W_lambda_nfac": "0.0076153872",
+          "W_lambda_D2": "0.0077532071"
+        },
+        {
+          "lambda": [
+            4,
+            1
+          ],
+          "rows": 2,
+          "in_su2_image": true,
+          "d_q_Sn": "4.1096824",
+          "su2_dim_q": "4.1096824",
+          "d_q_eq_su2": true,
+          "W_lambda_nfac": "0.12862",
+          "W_lambda_D2": "0.13094771"
+        },
+        {
+          "lambda": [
+            3,
+            2
+          ],
+          "rows": 2,
+          "in_su2_image": true,
+          "d_q_Sn": "5.2204413",
+          "su2_dim_q": "2.0108969",
+          "d_q_eq_su2": false,
+          "W_lambda_nfac": "0.2075422",
+          "W_lambda_D2": "0.21129821"
+        },
+        {
+          "lambda": [
+            3,
+            1,
+            1
+          ],
+          "rows": 3,
+          "in_su2_image": false,
+          "d_q_Sn": "6.2204413",
+          "su2_dim_q": null,
+          "d_q_eq_su2": null,
+          "W_lambda_nfac": "0.29466896",
+          "W_lambda_D2": "0.30000174"
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            1
+          ],
+          "rows": 3,
+          "in_su2_image": false,
+          "d_q_Sn": "5.2204413",
+          "su2_dim_q": null,
+          "d_q_eq_su2": null,
+          "W_lambda_nfac": "0.2075422",
+          "W_lambda_D2": "0.21129821"
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "rows": 4,
+          "in_su2_image": false,
+          "d_q_Sn": "4.1096824",
+          "su2_dim_q": null,
+          "d_q_eq_su2": null,
+          "W_lambda_nfac": "0.12862",
+          "W_lambda_D2": "0.13094771"
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "rows": 5,
+          "in_su2_image": false,
+          "d_q_Sn": "1.0",
+          "su2_dim_q": null,
+          "d_q_eq_su2": null,
+          "W_lambda_nfac": "0.0076153872",
+          "W_lambda_D2": "0.0077532071"
+        }
+      ]
+    }
+  },
+  "verdict": "REFUTE the naive SU(2)/WRT(S3/2I) route as a reproduction of the full W_lambda family. COVERAGE: 7 blocks across n=3,4,5 have >=3 rows and lie OUTSIDE the GL_2 (spinor C^2) Schur-Weyl image -- the SU(2) side assigns them no weight (incl. the electron (3,1,1) at n=5). VALUE: of 8 <=2-row blocks, only 3 have d_q(lambda) == [2j+1]_q exactly ([{'n': 3, 'lambda': [2, 1]}, {'n': 4, 'lambda': [3, 1]}, {'n': 5, 'lambda': [4, 1]}]); the rest differ (e.g. muon (3,2): d_q=[5]_q vs [2]_q). Consistent with #2608's Schur-Weyl duality (WRT SU(2)-side != W_lambda S_n-side, coincide only at (4,1)-type) and #2406's 'no finite colour-SU(N) arena'. The geometric W_lambda index MUST live on the full-Hecke (infinite-dim) side, not the SU(2)/WRT(S3/2I) modular data. NORMALIZATION: per-block ratios within fixed n are identical in the [n]_q! and D^2 conventions (global factor cancels); only the total Z(n) -- the defect 1-Z(n) -- is normalization-sensitive, so the defect (not the absolute per-block value) is the fixed falsifiable content.",
+  "coincidences_d_q_eq_su2": [
+    {
+      "n": 3,
+      "lambda": [
+        2,
+        1
+      ]
+    },
+    {
+      "n": 4,
+      "lambda": [
+        3,
+        1
+      ]
+    },
+    {
+      "n": 5,
+      "lambda": [
+        4,
+        1
+      ]
+    }
+  ]
+}
