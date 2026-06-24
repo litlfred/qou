@@ -110,37 +110,14 @@ def _nucleon_msym(alpha):
 
 
 def _nucleon_mass_canonical(me, q0):
-    """Framework nucleon rest masses via the CANONICAL muon-anchored Hecke
-    energy (the production substrate-identity):
-
-        m_p = dim V_{(2,1)} · (m_μ · F_Bor − |S_3| · m_e) = 2·(m_μ·F_Bor − 6·m_e)
-        m_μ   = m_e · Vol(4₁) / ℏ_q²                 (muon = figure-8 knot)
-        F_Bor = |tr_M(β_Bor)| · [3]_q! / q³           (dimensionless Hecke factor)
-
-    Gives m_p ≈ 938.27, m_n ≈ 939.56 (matches CODATA; m_n is the genuine
-    prediction at 939.564 vs 939.565). This is "the Hecke energy": the c_q²
-    (= 1/ℏ_q²) factor is applied ONCE in the muon anchor m_μ, then dressed by
-    the *dimensionless* Borromean factor F_Bor.
-
-    NOT the λ_A fit (m_e·Vol(𝓑₃)·λ_A/ℏ_q² ≈ 966, +2.96%) and NOT the naive
-    per-knot form (m_e·Vol(𝓑₃)·tr_M/ℏ_q² ≈ 406, −57%) — both apply 1/ℏ_q² to
-    the wrong (Borromean) volume. Resolution: docs/audits/2026-06-24-…"""
-    import json
-    w = HERE / "m-p-substrate-identity-50dps.witness.json"
-    if w.exists():
-        preds = json.load(w.open())["data"]["predictions"]
-        return float(preds["m_p_MeV"]), float(preds["m_n_MeV"])
-    # fallback: compute the F_Bor identity directly
-    import mpmath as _mp
-    from m_p_substrate_identity_50dps import F_Bor, vol_4_1_at
-    q = _mp.mpf(str(q0)); m_e = _mp.mpf(str(me))
-    hbar_q_sq = ((q - 1) / q) ** 2
-    m_mu = m_e * vol_4_1_at(50) / hbar_q_sq
-    m_p = 2 * (m_mu * F_Bor(q) - 6 * m_e)
-    # m_n via the canonical 3-input chain (pathC); good to ~ppm
-    from derived_masses import q_beta_predicted_mev
-    m_n = m_p + float(q_beta_predicted_mev()) + float(me)
-    return float(m_p), float(m_n)
+    """Canonical nucleon rest masses (m_p, m_n) via the single facade
+    `canonical_mass` — the muon-anchored Hecke energy m_p = 2(m_μ·F_Bor − 6m_e)
+    (≈ 938.27 / 939.56, matches CODATA). The facade is the ONE entry point for
+    absolute nucleon mass; the λ_A (966) and naive Vol(𝓑₃)·tr_M (406) forms are
+    deprecated (they apply 1/ℏ_q² to the wrong volume). See
+    docs/canonical-mass-formula-guardrail.md."""
+    from canonical_mass import proton_neutron_mass_mev
+    return proton_neutron_mass_mev()
 
 
 def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
