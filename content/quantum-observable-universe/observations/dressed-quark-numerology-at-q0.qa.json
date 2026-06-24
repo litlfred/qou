@@ -835,7 +835,111 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "9afdd48d4a2d",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "dressed-quark-numerology-at-q0.md:21-23 'm_n-m_p ... is no longer an input \u2014 it is a prediction at -0.53% residual', but the substrate split it relies on (flavor-split-substrate-proof.md Step 2 ansatz (2)) is selected by '(c) numerical agreement to -0.67% at q=q_0' (fit-selected).",
+        "rebuttal": "partial\u2192survived \u2014 policy-compliant (remark titled 'numerology'; the difference relation genuinely removes \u0394m from the calibration count); the fitted-ansatz caveat is disclosed upstream. Scope-limited, not structural.",
+        "evidence": [
+          {
+            "text": "dressed-quark-numerology-at-q0.md:21-23; flavor-split-substrate-proof.md:45"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "9afdd48d4a2d",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "Downstream HadronicMass.lean:352,357 dressed_mass_up:=311.10 etc.; :407 theorem dressed_quark_mass_difference proves =1.29 by norm_num on the literals (vacuous), under a docstring 'Derived from the Borromean Skein decomposition'.",
+        "rebuttal": "partial\u2192survived (downstream) \u2014 divergence lives in HadronicMass.lean not the target remark; the target does not uses/interprets that decl, and the canonical m_p route is canonical_mass.py (muon-anchored) not this pair-Skein chain. Pre-documented open item (2026-05-17 audit). The 'Derived from' docstring on a norm_num-on-literals theorem is the live action.",
+        "evidence": [
+          {
+            "text": "HadronicMass.lean:352,407"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "major"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "9afdd48d4a2d",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "33%-of-bound 'agreement' is weak evidence.",
+        "rebuttal": "rebutted \u2014 block explicitly states bound-tightening 'remains open (no canonical closed form committed)' and gives the closed-form slack ratio; honest, no overclaim.",
+        "evidence": [
+          {
+            "text": "dressed-quark-numerology-at-q0.md:86,106-107"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "9afdd48d4a2d",
+          "ts": "d544cb4a65c4"
+        },
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The target remark is honestly labelled 'numerology' and within Observations policy, but it overstates the 'prediction' status of m_n-m_p (a residual resting on a partially-fitted substrate ansatz), and its production sibling HadronicMass.lean hardcodes the 311.10/312.39 literals it calls derived.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:52.894Z"
+  "updated_at": "2026-06-24T06:07:15Z"
 }

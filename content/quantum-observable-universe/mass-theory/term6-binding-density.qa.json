@@ -8,9 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/term6-binding-density.lean"
   },
   "source_hashes": {
-    "md": "2f24f94a943e",
-    "ts": "7232c68c30bc",
-    "lean": "19c7b68f1123"
+    "md": "2cfbd5b7706e",
+    "ts": "7232c68c30bc"
   },
   "criteria": {
     "voice-status-leak": [
@@ -873,7 +872,109 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2cfbd5b7706e",
+          "ts": "7232c68c30bc"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "term6-binding-density.md:101,123 linked ../../../docs/audits/-Term6-scaling-heavy.witness.json and -alpha-categorical-derivation.witness.json \u2014 both dropped the 2026-05-02- prefix (dead links).",
+        "rebuttal": "partial\u2192fixed \u2014 the witnesses exist and are findable (off-by-a-prefix); a link-hygiene bug, not a substantive reproducibility failure. AUTO-DISCHARGED this PR: both URLs restored to the 2026-05-02- prefix.",
+        "evidence": [
+          {
+            "text": "term6-binding-density.md:101,123 (fixed)"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2cfbd5b7706e",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "The c_4 keystone was just exposed as a rounded fit (probe f2ff63c), so this block must be tainted.",
+        "rebuttal": "rebutted \u2014 distinct object: f2ff63c {46,4,29} is the m_p absolute-mass term-6 c_4 Habiro residue; this block is the B(Z,N) binding-density alpha/beta fit, never referenced by the keystone probe; block already discloses calibrated status with R^2/sigma_resid + 'open derivation' note.",
+        "evidence": [
+          {
+            "text": "term6-binding-density.md:18,88-95,117-119; probe f2ff63c"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2cfbd5b7706e",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "scope": "structural",
+        "ruling": "rebutted",
+        "referee_argument": "Term6BindingDensity.lean class could be a self-assuming projection.",
+        "rebuttal": "rebutted \u2014 class fields are INPUTS (T_6, alpha, beta, delta_M, tolerance); binding_density_within_tolerance derives the eps-bounded claim, non-degenerate existential; genuine \u00a73b-cond conditional class, sorry honest + cited.",
+        "evidence": [
+          {
+            "text": "Term6BindingDensity.lean:67-105"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2cfbd5b7706e",
+          "ts": "7232c68c30bc"
+        },
+        "result": "pass",
+        "verdict": "clean",
+        "referee_argument": "The block honestly discloses its calibrated status (alpha=339.4, beta=1.14 'calibrated to the AME panel', categorical derivation open, R^2=0.84) and the recent f2ff63c {46,4,29} rounded-fit suspicion is a DIFFERENT object (the m_p absolute-mass term-6 Habiro residue, not this B(Z,N) alpha/beta block); the only defect was two broken witness links (date prefix dropped), now fixed.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:05.330Z"
+  "updated_at": "2026-06-24T06:07:15Z"
 }

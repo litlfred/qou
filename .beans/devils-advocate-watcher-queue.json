@@ -309,6 +309,72 @@
       "status": "needs-author",
       "asked_author_at": null,
       "referee_argument": "Safe mechanical relabel: drop the 'sorry-free' tag wherever a sorry is present (the claim is false as written) \u2014 or finish the proof."
+    },
+    {
+      "id": "483c7ccffa40",
+      "block_or_script": "prop:alpha-shift-torus-knot",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-theory/alpha-shift-torus-knot.lean"
+      },
+      "finding": "da-vacuous+da-circular+da-lean-narrative-divergence",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+      "evidence": "Lean defines alphaShift:=k(p-1) then 'proves' alpha_shift_torus_knot: alphaShift=k(p-1) by rfl (sibling stub + library class); \u00a73b-cond rule-5 violation (class axiomatizes its own conclusion); maximality-over-partitions claim absent from Lean.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Restate the \u00a73b-cond class to carry per-irrep pole bounds (genuine hypotheses), or demote the maximality direction to honest sorry + -- Ref:. The V_(1^p) closed form + sympy witness are sound; only the Lean is vacuous."
+    },
+    {
+      "id": "9aff52a75a4c",
+      "block_or_script": "prop:neutron-qvalue-symbolic",
+      "paths": {
+        "ts": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts"
+      },
+      "finding": "da-reproducibility",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+      "evidence": "ts wires computation.witness=codata-masses.witness.json (CODATA masses, not a Q_\u03b2 witness); prose names q_parameter.py while ts computation.script=codata_masses.py.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Wire a genuine Q_\u03b2 witness (reproducing 0.7836 MeV) and reconcile the prose vs .ts script names."
+    },
+    {
+      "id": "218eada3409e",
+      "block_or_script": "rem:dressed-quark-numerology-at-q0",
+      "paths": {
+        "lean": "content/quantum-observable-universe/.../HadronicMass.lean"
+      },
+      "finding": "da-lean-narrative-divergence",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+      "evidence": "HadronicMass.lean hardcodes dressed_mass_up:=311.10 etc. and dressed_quark_mass_difference proves =1.29 by norm_num on the literals, under a docstring 'Derived from the Borromean Skein decomposition'.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Either derive the 311.10/312.39 values or soften the 'Derived from' docstring + acknowledge the norm_num-on-literals theorem is a consistency check, not a derivation. (Pre-documented open item, 2026-05-17 audit.)"
     }
   ],
   "audited": {
@@ -444,9 +510,44 @@
       "criteria": [
         "da-referee-verdict"
       ]
+    },
+    "rem:dressed-quark-numerology-at-q0": {
+      "ts": "2026-06-24",
+      "sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "alg:mba-step09b-per-isotope-binding": {
+      "ts": "2026-06-24",
+      "sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:neutron-qvalue-symbolic": {
+      "ts": "2026-06-24",
+      "sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:alpha-shift-torus-knot": {
+      "ts": "2026-06-24",
+      "sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:term6-binding-density": {
+      "ts": "2026-06-24",
+      "sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+      "criteria": [
+        "da-referee-verdict"
+      ]
     }
   },
   "reviewed_up_to": {
-    "da-referee-verdict": "9686182e06e08cbd35d8c754c76d947324dc44cd"
+    "da-referee-verdict": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
   }
 }
