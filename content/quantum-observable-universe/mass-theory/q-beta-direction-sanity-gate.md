@@ -86,11 +86,11 @@ Concretely, for any candidate $F(q)$:
 ## Composition with the prior three gates
 
 ```
-1. Bar-even check (§4b)        ✓ (q ↔ q⁻¹ Taylor-even-in-t)
-2. Radius-of-convergence (§4a) ✓ (simple pole at u_substrate)
-3. q = 1 shadow (§4c)          ✓ (c_2 → −1, c_3 → −2)
-4. Direction sanity (§4d)      ✓ (|F(q_0)| in 10× of target)
-5. CFinite recurrence engine   ✓ (generates c_k from kernel)
+1. Bar-even check (§4b)        PASS (q ↔ q⁻¹ Taylor-even-in-t)
+2. Radius-of-convergence (§4a) PASS (simple pole at u_substrate)
+3. q = 1 shadow (§4c)          PASS (c_2 → −1, c_3 → −2)
+4. Direction sanity (§4d)      PASS (|F(q_0)| in 10× of target)
+5. CFinite recurrence engine   PASS (generates c_k from kernel)
 ```
 
 A unified `BarEvenKernel` typeclass ties all four together,

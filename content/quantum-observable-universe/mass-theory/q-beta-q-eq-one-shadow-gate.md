@@ -52,11 +52,11 @@ This is **Step 5** of the 7-step Δ_λ pre-flight checklist (`docs/audits/2026-0
 A candidate $F(q)$ must clear (in order):
 
 ```
-1. Bar-even check (§4b)        ✓ (q ↔ q⁻¹ Taylor-even-in-t)
-2. Radius-of-convergence (§4a) ✓ (simple pole at u_substrate)
-3. q = 1 shadow (§4c)          ✓ (c_2 → −1, c_3 → −2)
-4. Direction sanity (§4d)      ✓ (|F(q_0)| in target's magnitude)
-5. CFinite recurrence          ✓ (generates c_k from kernel)
+1. Bar-even check (§4b)        PASS (q ↔ q⁻¹ Taylor-even-in-t)
+2. Radius-of-convergence (§4a) PASS (simple pole at u_substrate)
+3. q = 1 shadow (§4c)          PASS (c_2 → −1, c_3 → −2)
+4. Direction sanity (§4d)      PASS (|F(q_0)| in target's magnitude)
+5. CFinite recurrence          PASS (generates c_k from kernel)
 ```
 
 With all four §4 invariants formalized, the formalize-first gate chain is complete; any future $F(q)$ candidate is evaluable as a Lean class-instance attempt rather than as a numerical fit.
