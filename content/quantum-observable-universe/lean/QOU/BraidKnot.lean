@@ -93,6 +93,7 @@ import QOU.BraidKnot.MassGapFrontier
 -- the CI build.
 import QOU.BraidKnot.JucysMurphyCoeff
 import QOU.BraidKnot.RegularRepTrace
+import QOU.BraidKnot.RegularRepBlockTrace
 
 /-!
 # BraidKnot — Module Index
