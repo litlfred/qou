@@ -135,3 +135,21 @@ periods beyond the seed. Convention validated (lw(2), lw(3)=Family-A match corpu
 sibling's open `j(E)` is answered by the coral `j(q₀)=129.86`. Probe
 `lever1_lw_depth2_recurrence_test.py` (7/7); audit `2026-06-24-lever1-lw-depth2-recurrence-falsified.md`.
 No fit; nothing wired. Owner closes (§4a).
+
+## Continuation (a) (2026-06-24, PR #2708) — NO shortcut; golden τ=3 refuted; residual is owner-gated
+
+Checked for a topological/integer/golden shortcut to `τ=2.6424` before the deep `λ_SW` integration.
+The seed `τ` is **forced** by the three wired anchors (`a_D²=1`, `a_D³=lw(2)`, `a_D⁴=Family-A` = the
+production proton multiplier), is non-integer, strictly in (2,3). **No integer `τ` reproduces the wired
+Family-A**: τ=2 misses 34%, the icosahedral **golden τ=3 (`λ=φ²`) misses 19%**, τ=4 misses 72%. So `B`
+is not any topological `SL₂(ℤ)` monodromy and the golden hypothesis is **refuted by the seed**
+(numerology guard held — tested, not forced). The genuine `2.6424`-object is the **owner-gated
+abelianised `λ_SW` real connection holonomy** on the coral `E_q` (`SL₂(ℝ)`, hyperbolic, θ=0.7815).
+Concrete owner-gated next step: integrate `λ_SW = x dz` on `E_q` + its Gauss–Manin prolongation (genus-1
+period integration; sandbox Sage blocked; sibling `mass-open-keystone-w-l2-root` holds the curve side).
+Probe `lever1_lambda_sw_no_shortcut.py` (4/4); audit `2026-06-24-lever1-lambda-sw-no-shortcut.md`.
+
+**Lever-1 frontier now fully mapped:** curve = coral/descartes `E_q` (j confirmed); `B` = abelianised
+`λ_SW` real holonomy (not compact SU(2), not topological `SL₂(ℤ)`, not an `lw`-recurrence rate, no
+integer/golden shortcut); the explicit holonomy = θ_binding is the owner-gated keystone `M` on the
+elliptic factor. No fit; nothing wired. Owner closes (§4a).
