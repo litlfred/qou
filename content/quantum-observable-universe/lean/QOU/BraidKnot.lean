@@ -94,6 +94,9 @@ import QOU.BraidKnot.MassGapFrontier
 import QOU.BraidKnot.JucysMurphyCoeff
 import QOU.BraidKnot.RegularRepTrace
 import QOU.BraidKnot.RegularRepBlockTrace
+-- Maschke (RepresentationTheory) ⇒ k[S_n] semisimple: the *existence* half of side-2's
+-- block decomposition. First QOU import of Mathlib.RepresentationTheory.* — CI must build it.
+import QOU.BraidKnot.MaschkeSnSemisimple
 
 /-!
 # BraidKnot — Module Index
