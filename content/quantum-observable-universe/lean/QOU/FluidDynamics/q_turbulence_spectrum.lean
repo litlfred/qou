@@ -1,3 +1,4 @@
+import Mathlib
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
@@ -85,6 +86,6 @@ theorem q_turbulence_spectrum [ctx : QTurbulenceSpectrumContext] :
       (ctx.q_int (k + 1) - ctx.q_int k)) ∧
     (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q ∧
     0 < ctx.ΔE_gap :=
-  sorry
+  ⟨ctx.claim_i_q_kolmogorov_spectrum, ctx.claim_ii_discrete_cascade, ctx.claim_iii_finite_cascade_depth, ctx.claim_iv_spectral_gap_positive.left⟩
 
 end QOU.FluidDynamics
