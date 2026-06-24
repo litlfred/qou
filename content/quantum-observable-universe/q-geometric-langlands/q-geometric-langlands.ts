@@ -128,6 +128,7 @@ export default chapter({
         "hasse-weil-bound",
         "hasse-weil-bound-proof",
         "spectral-half-line",
+        "spectral-half-line-proof",
         // P3 reorder (2026-05-19): unitary-stability moved before
         // geometric-rh-exposition. unitary-stability uses
         // cor:spectral-half-line and thm:explicit-formula (both

@@ -86,6 +86,7 @@ export default chapter({
         "categorical-neutron-unique",
         "categorical-neutron-unique-proof",
         "antiparticle-crossing-reversal",
+        "antiparticle-crossing-reversal-proof",
         "chirality-trefoil-electron-positron",
       ],
     }),
