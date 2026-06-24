@@ -48,6 +48,6 @@ $$
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/mi-sw-abelianisation-cartan.ts
 theorem mi_sw_cartan_reduction [ctx : MiSwCartanReductionContext] :
     ctx.A_0 = ctx.X_dz ∧ ctx.X_dz = ctx.lambda_SW :=
-  sorry
+  ctx.claim_mi_sw_cartan_reduction
 
 end QOU.ArchimedeanUniverse
