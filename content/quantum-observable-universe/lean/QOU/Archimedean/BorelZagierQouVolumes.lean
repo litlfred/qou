@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Archimedean.BorelZagierQouVolumes — conjectural class (placeholder)
 
@@ -41,6 +43,5 @@ The three QOU hyperbolic volumes are $\mathbb{Q}$-linearly independent:
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/borel-zagier-qou-volumes.ts
 noncomputable instance : BorelZagierQouVolumes := by
-  trivial
-
+  sorry
 end QOU.Archimedean

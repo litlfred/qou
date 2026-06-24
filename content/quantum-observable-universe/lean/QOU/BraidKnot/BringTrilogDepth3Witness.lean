@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.BringTrilogDepth3Witness — conjectural class (placeholder)
 
@@ -35,6 +37,5 @@ class BringTrilogDepth3Witness where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/bring-trilog-depth-3-witness.ts
 noncomputable instance : BringTrilogDepth3Witness := by
-  trivial
-
+  sorry
 end QOU.BraidKnot

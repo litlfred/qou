@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.AppendixSurreals.HahnSubstrate — conjectural class (placeholder)
 
@@ -44,6 +46,5 @@ formula reproduces CODATA particle masses to $\sim 4\%$ MAE.
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/hahn-substrate.ts
 noncomputable instance : HahnSubstrate := by
-  trivial
-
+  sorry
 end QOU.AppendixSurreals

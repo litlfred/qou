@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Torsion.YangMillsMassGap — conjectural class (placeholder)
 
@@ -54,6 +56,5 @@ $\mathcal{A}_\infty = \varinjlim \mathrm{End}_{\mathbf{C}}(A_n)$.*
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/models-of-qous/yang-mills-mass-gap.ts
 noncomputable instance : YangMillsMassGap := by
-  trivial
-
+  sorry
 end QOU.Torsion

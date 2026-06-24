@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.AppendixSurreals.InfinitesimalObservability — conjectural class (placeholder)
 
@@ -46,6 +48,5 @@ identity.
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/infinitesimal-observability.ts
 noncomputable instance : InfinitesimalObservability := by
-  trivial
-
+  sorry
 end QOU.AppendixSurreals

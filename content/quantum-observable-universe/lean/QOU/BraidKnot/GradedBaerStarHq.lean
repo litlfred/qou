@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.GradedBaerStarHq — conjectural class (placeholder)
 
@@ -35,6 +37,5 @@ class GradedBaerStarHq where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/graded-baer-star-Hq.ts
 noncomputable instance : GradedBaerStarHq := by
-  trivial
-
+  sorry
 end QOU.BraidKnot

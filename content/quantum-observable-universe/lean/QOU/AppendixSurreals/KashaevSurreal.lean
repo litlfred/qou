@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.AppendixSurreals.KashaevSurreal — conjectural class (placeholder)
 
@@ -42,6 +44,5 @@ others, but open in full generality) states:
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/kashaev-surreal.ts
 noncomputable instance : KashaevSurreal := by
-  trivial
-
+  sorry
 end QOU.AppendixSurreals

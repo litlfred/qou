@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Archimedean.rj_canonical_inner_product — Rosso–Jones canonical inner product
 
@@ -71,8 +73,7 @@ theorem rj_canonical_inner_product_diagonal
   -- Manuscript proof (Rosso–Jones 1993): semisimplicity of `H_r(q)`
   -- + Schur orthogonality of characters.
   -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/rj-canonical-inner-product.md
-  trivial
-
+  sorry
 /-- **(ii) Uniqueness up to scalar** ([`prop:rj-canonical-inner-product`] item (ii)).
 
     Any bilinear form on `R(H_r(q))` diagonal in the irrep basis and
@@ -88,8 +89,7 @@ theorem rj_canonical_inner_product_unique
   -- Manuscript proof: any other diagonal-compatible bilinear form
   -- differs from `⟨−, −⟩_RJ` by rescaling the Markov parameter `z`.
   -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/rj-canonical-inner-product.md
-  trivial
-
+  sorry
 /-- **(iii) Rosso–Jones formula** ([`prop:rj-canonical-inner-product`] item (iii)).
 
     The Jones polynomial of the torus knot `τ(r, s)` is the
@@ -109,8 +109,7 @@ theorem rj_canonical_inner_product_torus_knot
   -- product. Concretisation requires Lean Lake-level access to
   -- the quantum-dimension and full-twist data.
   -- Ref: [rosso-jones1993]
-  trivial
-
+  sorry
 /-- **Top-level statement bundle**: combines all three parts. -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/rj-canonical-inner-product.md
 theorem rj_canonical_inner_product

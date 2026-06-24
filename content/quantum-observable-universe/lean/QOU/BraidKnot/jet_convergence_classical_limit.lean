@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.jet_convergence_classical_limit — conjectural class (placeholder)
 
@@ -35,6 +37,5 @@ class jet_convergence_classical_limit where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jet-convergence-classical-limit.ts
 noncomputable instance : jet_convergence_classical_limit := by
-  trivial
-
+  sorry
 end QOU.BraidKnot

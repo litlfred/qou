@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.QGeometricLanglands.q_oper_hecke — conjectural class (placeholder)
 
@@ -35,6 +37,5 @@ class q_oper_hecke where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-oper-hecke.ts
 noncomputable instance : q_oper_hecke := by
-  trivial
-
+  sorry
 end QOU.QGeometricLanglands

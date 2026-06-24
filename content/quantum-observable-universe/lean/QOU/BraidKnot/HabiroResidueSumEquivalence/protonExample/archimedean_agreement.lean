@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.HabiroResidueSumEquivalence.protonExample.archimedean_agreement — conjectural class (placeholder)
 
@@ -35,6 +37,5 @@ class archimedean_agreement where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-archimedean-agreement-residue.ts
 noncomputable instance : archimedean_agreement := by
-  trivial
-
+  sorry
 end QOU.BraidKnot.HabiroResidueSumEquivalence.protonExample

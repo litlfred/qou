@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Archimedean.SingleVolumeIrrationality — conjectural class (placeholder)
 
@@ -46,6 +48,5 @@ $$
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/single-volume-irrationality.ts
 noncomputable instance : SingleVolumeIrrationality := by
-  trivial
-
+  sorry
 end QOU.Archimedean

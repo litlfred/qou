@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.AppendixSurreals.OnPModularHecke — conjectural class (placeholder)
 
@@ -44,6 +46,5 @@ exactly **two** eigenvalues at generic $q$.
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/on-p-modular-hecke.ts
 noncomputable instance : OnPModularHecke := by
-  trivial
-
+  sorry
 end QOU.AppendixSurreals

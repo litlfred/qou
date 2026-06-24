@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.AppendixSurreals.LocalInfinitesimalField — conjectural class (placeholder)
 
@@ -45,6 +47,5 @@ locally from patch to patch.
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/local-infinitesimal-field.ts
 noncomputable instance : LocalInfinitesimalField := by
-  trivial
-
+  sorry
 end QOU.AppendixSurreals
