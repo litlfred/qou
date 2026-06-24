@@ -1,0 +1,59 @@
+{
+  "computation": "qbessel_reeb_order_justification",
+  "description": "Reeb-flow propagator order test: proper integer-order reduction-of-order log-Neumann vs +1/2 (spherical/Langer/spin) vs -1/2 (unphysical), with real y_lambda Markov weights on the deuteron. Justifies +1/2 and shows the -1/2 branch is the single-block artifact. No fit; audit-only.",
+  "discipline": "no fit; derive-or-refute; exploratory; does NOT wire; c_k/Delta_lambda cal-anchored",
+  "auditOnly": "docs/audits/2026-06-23-qbessel-reeb-order-justification.md",
+  "parameters": {
+    "compute_dps": 40,
+    "KSER": 50,
+    "JSUM": 80,
+    "q0": "1.10997858",
+    "B_D_over_me": "4.353380339296163006189835987937354084842"
+  },
+  "orders": {
+    "integer (2D-annular)": {
+      "offset": "0.0",
+      "raw": "9.715051161444958107133172123274793194438",
+      "A": "-0.05634313428449959598689536549496397112639",
+      "B": "-0.2440583609787877330531986298187167138957",
+      "ratio_A_over_Bd": "0.01294238726993675147981547239517925205494",
+      "xanchor_A": "0.1609265757312017318169838318586786786267",
+      "top_block_frac": "0.2704781922351827861748754837431813812107",
+      "top_block": [
+        4,
+        2
+      ],
+      "top_block_nu": 8.0
+    },
+    "+1/2 (spherical/Langer/spin)": {
+      "offset": "0.5",
+      "raw": "9.696851823209815287992686915387111301734",
+      "A": "0.1037706420890165903160551195519218915686",
+      "B": "0.2349719123703856623503487114645406534597",
+      "ratio_A_over_Bd": "0.023836796696195354629816081574267301936",
+      "xanchor_A": "0.03818377776216808385585730437100439386866",
+      "top_block_frac": "0.5793790067106374485270182207987641314884",
+      "top_block": [
+        5,
+        1
+      ],
+      "top_block_nu": 4.5
+    },
+    "-1/2 (unphysical branch)": {
+      "offset": "-0.5",
+      "raw": "27.23751672215056211407597782293798303276",
+      "A": "-0.09846407176667435332726587423168262992451",
+      "B": "-0.5227336022428674659094411776853868015022",
+      "ratio_A_over_Bd": "0.02261784270900475186738287953082033819919",
+      "xanchor_A": "0.02025241718114779396891334364809921684209",
+      "top_block_frac": "0.5293220716748318172356490051282224668198",
+      "top_block": [
+        5,
+        1
+      ],
+      "top_block_nu": 3.5
+    }
+  },
+  "integer_vs_half_spread": "0.2962112872403763932170742467047033859493",
+  "verdict_robust": false
+}
