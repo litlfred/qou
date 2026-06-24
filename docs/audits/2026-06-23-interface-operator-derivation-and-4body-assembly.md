@@ -361,10 +361,54 @@ optional and never compiled in the default wheel.)
   is open. Worth checking whether `|Δθ_λ|` is the cooperative object (and whether it is
   attractive) — but it is sibling-owned.
 
-**Net frontier statement.** The binding scale is matched (~1.5 MeV); the sign is the
-lever; the obstruction proves it cannot come from any product/pairwise factor; the one
-unblocked-in-principle candidate (chirality-weighted joint cluster) is Rust-kernel-gated
-in this environment. No attractive 3-body operator is computable here without first
-building `pyhecke_native`.
+## Two follow-ups: structured combiner + long-range triangle bond (✓ run, 0 fit)
+
+With `pyhecke_native` built, both natural next experiments ran over the H₉ joint trace
+(`structured_combiner_and_triangle_probe.py` · `structured-combiner-and-triangle.witness.json`):
+
+**(A) Structured combiner** — keep `|χ|` magnitude on the pairwise (leading) part, apply
+the chirality sign only to the 3-body correlation: `B_struct = pair_sum^{abs} + c₃^{chiral}`.
+This is the **best of the three combiners**, and it relocates the gap:
+
+| atom | abs joint | chiral joint | **B_struct** | AME | B_struct err |
+|---|---:|---:|---:|---:|---:|
+| ³H | +3.25 (−62%) | +0.18 (−98%) | **+5.10** | 8.48 | **−40%** |
+| ³He | +3.47 (−55%) | +0.22 (−97%) | **+4.99** | 7.72 | **−35%** |
+
+The structured combiner recovers the `|χ|` pairwise magnitude (`pair^abs` ≈ 5.0 MeV) *and*
+keeps the 3-body attractive (`c₃^chiral` ≈ +0.08/+0.12). **Diagnostic payoff:** the residual
+−40% is now a **pairwise-binding-magnitude** deficit (`pair^abs` ≈ 5.0 vs the ≈ 6.7 MeV the
+pairwise part would need), **not** a 3-body-sign problem. The 3-body sign is solved by
+chirality; the leftover gap lives in the leading (pairwise) trace — consistent with the
+CAL-2 floor / missing operator-valued branching combiner.
+
+**(B) Long-range 1–3 bond** — the joint trace of a braid with a *non-adjacent* crossing does
+not factor over bonds, so it **escapes `productModel_3body_nonpos`**. Adding the band
+generator `b₂,₆ = σ₅σ₄σ₃·σ₂·σ₃⁻¹σ₄⁻¹σ₅⁻¹` (one long-range crossing, block 0 ↔ block 2) on top
+of the two adjacent interfaces:
+
+| atom | combiner | joint (2-bond) | joint (triangle) | **Δ_LR** |
+|---|---|---:|---:|---:|
+| ³H | abs | +3.25 | +3.51 | **+0.26** |
+| ³He | abs | +3.47 | +3.85 | **+0.38** |
+| ³H | chiral | +0.18 | +0.09 | −0.09 |
+
+In the production `|χ|` combiner the long-range bond contributes **genuine attractive
+binding** (Δ_LR > 0 — the escape from the destructive theorem is real), confirming the
+triangle topology adds binding. But the magnitude is modest (~0.3 MeV, ~5% of the gap), so
+it does not close A=3 on its own.
+
+**Joint conclusion of (A)+(B):** sign solved (chirality), triangle topology helps (+0.3 MeV,
+non-product escape confirmed), and the **dominant residual is pairwise-trace magnitude** —
+the structured-combiner decomposition isolates exactly where the missing ~40% lives.
+
+→ `structured_combiner_and_triangle_probe.py` · `structured-combiner-and-triangle.witness.json`
+
+**Net frontier statement.** The binding scale is matched (~1.5 MeV); the 3-body **sign** is
+solved by the chirality involution (non-product, escapes the obstruction), and the long-range
+band confirms the non-adjacent trace adds attractive binding. The structured combiner relocates
+the remaining gap to **pairwise-trace magnitude** (≈ 40% short, at the CAL-2 floor), not to the
+3-body sector. The productive directions are now the leading-trace / operator-valued branching
+combiner and the sibling q-Reeb `|Δθ_λ|` magnitude (#2612), not a further 3-body sign mechanism.
 
 → `binding_triangle_3body_cluster_probe.py` (corrected) · `binding-triangle-3body-cluster.witness.json`
