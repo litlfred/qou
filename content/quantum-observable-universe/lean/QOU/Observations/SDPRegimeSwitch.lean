@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Observations.SDPRegimeSwitch
 
@@ -10,7 +12,6 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per AGENTS.md §1.
 -/
 
-import Mathlib.Data.Real.Basic
 
 namespace QOU.Observations
 
@@ -34,12 +35,12 @@ class SDPRegimeSwitchContext where
   /-- Per-conjugate-pair coupling `c_{λλ'}`. -/
   c_couple : ℕ → ℕ → ℝ
   /-- The 2×2 matrix diagonal entries are non-negative. -/
-  diag_nonneg : ∀ λ λ' : ℕ,
-    0 ≤ μ λ - y_0 - y λ ∧
-    0 ≤ μ λ' - y_0 - y λ'
+  diag_nonneg : ∀ l l' : ℕ,
+    0 ≤ μ l - y_0 - y l ∧
+    0 ≤ μ l' - y_0 - y l'
   /-- The determinant condition: the product of diagonals is at least the squared coupling. -/
-  det_cond : ∀ λ λ' : ℕ,
-    (c_couple λ λ') ^ 2 ≤ (μ λ - y_0 - y λ) * (μ λ' - y_0 - y λ')
+  det_cond : ∀ l l' : ℕ,
+    (c_couple l l') ^ 2 ≤ (μ l - y_0 - y l) * (μ l' - y_0 - y l')
 
 /-- **Proposition statement** (from manuscript):
 
@@ -84,12 +85,12 @@ observables.*
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/sdp-regime-switch.ts
 theorem SDPRegimeSwitch [ctx : SDPRegimeSwitchContext] :
-    ∀ λ λ' : ℕ,
-      0 ≤ ctx.μ λ - ctx.y_0 - ctx.y λ ∧
-      0 ≤ ctx.μ λ' - ctx.y_0 - ctx.y λ' ∧
-      0 ≤ (ctx.μ λ - ctx.y_0 - ctx.y λ) *
-          (ctx.μ λ' - ctx.y_0 - ctx.y λ') -
-          (ctx.c_couple λ λ') ^ 2 :=
-  sorry
+    ∀ l l' : ℕ,
+      0 ≤ ctx.μ l - ctx.y_0 - ctx.y l ∧
+      0 ≤ ctx.μ l' - ctx.y_0 - ctx.y l' ∧
+      0 ≤ (ctx.μ l - ctx.y_0 - ctx.y l) *
+          (ctx.μ l' - ctx.y_0 - ctx.y l') -
+          (ctx.c_couple l l') ^ 2 :=
+  fun l l' => ⟨(ctx.diag_nonneg l l').1, (ctx.diag_nonneg l l').2, sub_nonneg.mpr (ctx.det_cond l l')⟩
 
 end QOU.Observations
