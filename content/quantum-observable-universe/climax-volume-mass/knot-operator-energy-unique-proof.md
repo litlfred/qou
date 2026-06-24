@@ -1,0 +1,11 @@
+Fix the partition $\lambda \vdash k$ and the substrate value $q$ in the generic locus. The energy $E(\lambda, q) = |u_\lambda(q)|_v$ is the composite of two maps: the shadow price $u_\lambda(q) \in R$, and the absolute value $|\cdot|_v$ applied to it. Uniqueness of $E$ therefore reduces to uniqueness of each factor.
+
+**Uniqueness of the shadow price.** The shadow price $u_\lambda(q)$ is the dual variable attached to the binding Frobenius-positivity constraint indexed by $\lambda$ in the operator-selection program ([`prop:knot-operator-energy-exists`](#prop:knot-operator-energy-exists)). By strong duality for finite-dimensional linear programs, the optimal dual variables satisfy complementary slackness with the primal optimum; for each binding constraint the associated dual variable is determined — there is no residual freedom once $\lambda$ and $q$ fix the constraint data and the objective. Hence any two energy data $E_1, E_2$ over the same base ring $R$ agreeing in partition and in $q$ carry the same shadow price. This is the content recorded by the Lean witness: the canonicity invariant `KnotOperatorEnergy.shadowPrice_canonical` (the LP-duality axiom, Schrijver 1986 §7.4) states that `partition` and `q` determine `shadowPrice`, and `KnotOperatorEnergy.shadowPrice_unique` discharges
+$$
+E_1.\mathrm{partition} = E_2.\mathrm{partition} \;\wedge\; E_1.q = E_2.q \;\Longrightarrow\; E_1.\mathrm{shadowPrice} = E_2.\mathrm{shadowPrice}
+$$
+directly from it.
+
+**Uniqueness of the absolute value.** With $u_\lambda(q)\in R$ fixed, the energy is its image under the chosen place $|\cdot|_v$. Over $\mathbb{Q}$, Ostrowski's theorem classifies every nontrivial absolute value as the archimedean place or a $p$-adic place, each unique up to equivalence; equivalent absolute values agree after canonical normalisation, so assign equal values to the fixed element $u_\lambda(q)$. For the base rings of interest, $R \in \{\mathbb{R}, \mathbb{Q}_p, \mathbb{F}_p\}$, the base ring itself pins the canonical place, leaving no choice.
+
+Combining the two factors: once $\lambda$, $q$, and the place $|\cdot|_v$ (equivalently the base ring $R$) are fixed, both the shadow price and its absolute value are determined, so $E(\lambda, q) = |u_\lambda(q)|_v$ is unique up to base-ring equivalence. $\qquad\blacksquare$

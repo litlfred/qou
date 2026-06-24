@@ -74,6 +74,7 @@ export default chapter({
         "knot-operator-energy",
         "knot-operator-energy-exists",
         "knot-operator-energy-unique",
+        "knot-operator-energy-unique-proof",
         "local-shadow-ordering",
       ],
     }),

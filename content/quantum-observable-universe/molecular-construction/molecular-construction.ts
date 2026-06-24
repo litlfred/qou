@@ -125,6 +125,7 @@ export default chapter({
         "h2o-c2v-from-projector",
         "h2o-bent-geometry",
         "tetrahedral-hbond-directions",
+        "tetrahedral-hbond-directions-proof",
         "h2o-bond-angle-shift",
         "h2o-bond-angle-shift-proof",
         "symmetric-block-domain-weight",

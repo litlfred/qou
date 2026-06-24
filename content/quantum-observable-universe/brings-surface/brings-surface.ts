@@ -176,6 +176,7 @@ export default chapter({
       blocks: [
         "archimedean-condition-genus-intro",
         "torus-knot-generators",
+        "torus-knot-generators-proof",
         "torus-knot-generators-table-data",
         "embeddability-closure",
         "embeddability-closure-table-data",
