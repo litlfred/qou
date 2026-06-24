@@ -46,6 +46,5 @@ $\mathbf{1}$-rational points:
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.ts
-noncomputable instance : QBirchSwinnertonDyer := by
-  sorry
+noncomputable instance : QBirchSwinnertonDyer := sorry
 end QOU.AppendixSurreals

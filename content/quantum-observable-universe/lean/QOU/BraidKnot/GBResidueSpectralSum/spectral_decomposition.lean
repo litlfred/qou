@@ -36,6 +36,5 @@ class spectral_decomposition where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-spectral-decomposition-existence.ts
-noncomputable instance : spectral_decomposition := by
-  sorry
+noncomputable instance : spectral_decomposition := sorry
 end QOU.BraidKnot.GBResidueSpectralSum

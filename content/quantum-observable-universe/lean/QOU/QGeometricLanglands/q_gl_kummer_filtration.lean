@@ -36,6 +36,5 @@ class q_gl_kummer_filtration where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-kummer-filtration.ts
-noncomputable instance : q_gl_kummer_filtration := by
-  sorry
+noncomputable instance : q_gl_kummer_filtration := sorry
 end QOU.QGeometricLanglands

@@ -36,6 +36,5 @@ class q_oper_hecke where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-oper-hecke.ts
-noncomputable instance : q_oper_hecke := by
-  sorry
+noncomputable instance : q_oper_hecke := sorry
 end QOU.QGeometricLanglands

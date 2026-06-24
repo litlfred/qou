@@ -36,6 +36,5 @@ class jet_filtered_knot_factor where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jet-filtered-knot-factor.ts
-noncomputable instance : jet_filtered_knot_factor := by
-  sorry
+noncomputable instance : jet_filtered_knot_factor := sorry
 end QOU.BraidKnot

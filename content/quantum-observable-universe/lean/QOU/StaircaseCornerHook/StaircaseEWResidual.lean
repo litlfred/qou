@@ -36,6 +36,5 @@ class StaircaseEWResidual where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/staircase-ew-residual.ts
-noncomputable instance : StaircaseEWResidual := by
-  sorry
+noncomputable instance : StaircaseEWResidual := sorry
 end QOU.StaircaseCornerHook

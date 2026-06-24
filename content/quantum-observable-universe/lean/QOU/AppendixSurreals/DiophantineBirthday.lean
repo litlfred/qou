@@ -47,6 +47,5 @@ to avoid collision with the surreal infinitesimal $\varepsilon =
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/diophantine-birthday.ts
-noncomputable instance : DiophantineBirthday := by
-  sorry
+noncomputable instance : DiophantineBirthday := sorry
 end QOU.AppendixSurreals

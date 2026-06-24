@@ -46,6 +46,5 @@ locally from patch to patch.
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/local-infinitesimal-field.ts
-noncomputable instance : LocalInfinitesimalField := by
-  sorry
+noncomputable instance : LocalInfinitesimalField := sorry
 end QOU.AppendixSurreals

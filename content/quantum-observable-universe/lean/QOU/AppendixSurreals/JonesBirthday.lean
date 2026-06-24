@@ -46,6 +46,5 @@ shape $\lambda \vdash n$.
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/jones-birthday.ts
-noncomputable instance : JonesBirthday := by
-  sorry
+noncomputable instance : JonesBirthday := sorry
 end QOU.AppendixSurreals

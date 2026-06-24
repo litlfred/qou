@@ -54,6 +54,5 @@ $q \to 1^+$, $n\lvert 1 - q\rvert \to \infty$:*
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/observations/q-clt-non-commutative.ts
-noncomputable instance : QCltNonCommutative := by
-  sorry
+noncomputable instance : QCltNonCommutative := sorry
 end QOU.Observations.QCltNonCommutative

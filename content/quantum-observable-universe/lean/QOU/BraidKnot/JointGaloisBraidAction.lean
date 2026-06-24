@@ -45,6 +45,5 @@ on it by symmetry:*
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/joint-galois-braid-action.ts
-noncomputable instance : JointGaloisBraidAction := by
-  sorry
+noncomputable instance : JointGaloisBraidAction := sorry
 end QOU.BraidKnot
