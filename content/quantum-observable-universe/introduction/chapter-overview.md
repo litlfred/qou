@@ -1,5 +1,5 @@
 **Part I: Foundations.**
-[Chapter 1](#chap\:qu), *Quantum Universes*, introduces the **quantum universe** (QU):
+Chapter \ref{chap:qu}, *Quantum Universes*, introduces the **quantum universe** (QU):
 the algebraic skeleton encoded in the triple
 
 $$
@@ -20,7 +20,7 @@ destroys information.  From these ingredients we derive the
 Frobenius relation, the dagger involution, and the Tannaka–Krein
 reconstruction of the symmetry group.
 
-[Chapter 2](#chap\:qou), *Quantum Observable Universes*, imposes three cohomological constraints —
+Chapter \ref{chap:qou}, *Quantum Observable Universes*, imposes three cohomological constraints —
 observability, measurability, and volume — that promote the QU to
 a **quantum observable universe** (QOU).  The volume axiom makes
 the everyday observation of size precise: the Frobenius trace
@@ -55,7 +55,7 @@ $$
 from which quantum versions of the Einstein, Yang–Mills, and Dirac
 equations follow.
 
-Next, [Chapter 3](#chap\:models-qou), *Models of QOUs*, examines concrete
+Next, Chapter \ref{chap:models-qou}, *Models of QOUs*, examines concrete
 realisations of the QOU axioms: archimedean, $p$-adic, and
 finite-field models.  The archimedean model is the one we inhabit;
 the non-archimedean models provide arithmetic analogues through
@@ -63,7 +63,7 @@ which properties of the substrate can be transferred.  This is
 also where we first meet the genus-four state space — Bring's
 surface — that the later parts develop in depth.
 
-[Chapter 4](#chap\:torsion), *Lifting and Descent*, closes the foundations by addressing
+Chapter \ref{chap:torsion}, *Lifting and Descent*, closes the foundations by addressing
 the obstructions that arise when local categorical data is
 extended globally.  Measurement constrains observation, and
 observation constrains what can be lifted from one level of the
@@ -82,7 +82,7 @@ a perpetual obstruction that no amount of jet refinement can
 remove.
 
 **Part II: Structural Mechanics.**
-[Chapter 5](#chap\:path-integrals-braiding), *Braids and Knots*, replaces continuum
+Chapter \ref{chap:path-integrals-braiding}, *Braids and Knots*, replaces continuum
 path integrals with discrete braid-group computations.  The braid
 group acts on the fibre degrees of freedom; particle exchange
 becomes a representation of $B_n$ inside the Iwahori–Hecke algebra
@@ -95,7 +95,7 @@ distinct) to the neutrino; the trefoil $3_1$ to the electron;
 higher torus knots $T_{2,2k+1}$ to the muon and tau through the
 brane tower.
 
-[Chapter 6](#chap\:brings-surface), *Bring's Surface*, develops the genus-four state
+Chapter \ref{chap:brings-surface}, *Bring's Surface*, develops the genus-four state
 space in depth: the curve with Euler characteristic $-6$ and
 maximal automorphism group $S_5$.  Its exceptional divisors — the
 coral tubes — provide coordinate systems for spacetime and the
@@ -104,7 +104,7 @@ interact.  Embeddable knots form a basis for homology and
 cohomology, and the embeddability bound is what later makes the
 operator space finite.
 
-With the state space fixed, [Chapter 7](#chap\:mass-endomorphism),
+With the state space fixed, Chapter \ref{chap:mass-endomorphism},
 *The Mass Endomorphism*, constructs the categorical endomorphism whose spectral data
 carries mass — the algebraic core that the particle and mass
 chapters consume.  Mass is shown to be a categorical invariant: it
@@ -120,7 +120,7 @@ endomorphism on the Habiro-ring brane tower unifying the
 construction — and packages $\Phi_n$ as the global section of the
 categorical mass functor, ready for calibration.
 
-[Chapter 8](#chap\:particle-interactions), *Particle Interactions
+Chapter \ref{chap:particle-interactions}, *Particle Interactions
 and Nuclear Structure*, develops the Gröbner–Shirshov reduction engine that computes normal forms for
 knot words in the Iwahori–Hecke algebra, together with a
 **semidefinite program** over matrix-valued operators — its
@@ -136,7 +136,7 @@ six non-trivial force operators and the identity (**interaction
 completeness**; the seven are enumerated in
 [tm-interaction-completeness](#tm-interaction-completeness)).
 
-[Chapter 9](#chap\:climax-volume-mass), *$q$-Hyperbolic Geometry*, supplies the geometric
+Chapter \ref{chap:climax-volume-mass}, *$q$-Hyperbolic Geometry*, supplies the geometric
 inputs to mass: Möbius and crossing energy, Lagrange resolvents,
 and the braiding relations.  The hyperbolic volumes of the knots
 that appear — $\mathrm{Vol}(4_1)$, $\mathrm{Vol}(B_3)$, and others
@@ -153,7 +153,7 @@ acts as a Feynman path integral via the non-abelian Stokes formula,
 but avoids standard infinities because the space is
 finite-dimensional.
 
-[Chapter 10](#chap\:mass-theory), *Mass Analysis*, assembles these inputs into the
+Chapter \ref{chap:mass-theory}, *Mass Analysis*, assembles these inputs into the
 mass theory proper — geometric face, archimedean face, and the
 compute pipeline behind the physical predictions — consuming the
 particle and $q$-hyperbolic chapters.  A single **complex volume**
@@ -163,7 +163,7 @@ and its imaginary part is the $\beta$-decay $Q$-value,
 $\operatorname{Im}\mathfrak{V} = \mathfrak{Q}_\beta$ — the bar-even
 and bar-odd parts of one geometric quantity.
 
-[Chapter 11](#chap\:gravity-spacetime-emergence), *Gravity and
+Chapter \ref{chap:gravity-spacetime-emergence}, *Gravity and
 Spacetime Emergence*, closes the part by showing how long-range
 gravitational structure emerges from the
 gravity sector of the same categorical action.  Contact geometry
@@ -177,7 +177,7 @@ marking where the QOU substrate carries the same categorical
 structure and where it extends or diverges from each.
 
 **Part III: Physical Realization.**
-[Chapter 12](#chap\:predicted-spectra), *Predicted Particle
+Chapter \ref{chap:predicted-spectra}, *Predicted Particle
 Spectra*, reads the spectrum implied
 by the structure, before it is confronted with measured numbers.
 It assigns the **fundamental fermions** to their knots and fixes
@@ -188,7 +188,7 @@ torus knots that make a nucleus stable; establishes
 force-carrier torus knots; and derives the **categorical Hartree
 energy and Bohr radius** that seed the atomic-shell predictions.
 
-[Chapter 13](#chap\:observations), *Physical Observations*, then confronts theory with
+Chapter \ref{chap:observations}, *Physical Observations*, then confronts theory with
 experiment.  We calibrate with CODATA values
 $(m_\mu / m_e,\ m_e,\ \mathfrak{Q}_\beta(n))$; the dimensionless
 ratio $m_\mu/m_e$ fixes the substrate parameter via the Skein mass
@@ -234,7 +234,7 @@ A few examples:
   absolute error. (The earlier $\Phi_q$-tower endomorphism route, which
   applied $1/\hbar_q^{2}$ to the Borromean volume directly, is superseded.)
 
-[Chapter 14](#chap\:molecular-construction), *Molecular Construction
+Chapter \ref{chap:molecular-construction}, *Molecular Construction
 from Nucleon Braids*, extends the knot-word
 formalism from nucleons to molecules.  The molecular Hecke algebra
 describes bond formation as braid concatenation; the Frobenius
@@ -242,7 +242,7 @@ linear-programming problem that stabilised nucleons returns here to
 compute molecular binding energies at the calibrated $q_0$.  Worked
 examples span $\mathrm{H}_2$, $\mathrm{H}_2\mathrm{O}$, and benzene.
 
-[Chapter 15](#chap\:organic-chemistry), *Organic Chemistry from
+Chapter \ref{chap:organic-chemistry}, *Organic Chemistry from
 Hopf Chains*, carries the construction
 into covalent chemistry, reading a covalent bond as a shared
 sub-Hopf link and a molecule as a Hopf chain or ring.  The contrast
@@ -257,13 +257,13 @@ $\Delta E \approx 193\text{–}386\;\mathrm{kJ/mol}$, against the
 experimental $200\text{–}400\;\mathrm{kJ/mol}$ window.
 
 **Part IV: Dynamics, Information, Emergence.**
-[Chapter 16](#chap\:fluid-dynamics), *Fluid Dynamics of the Brane*, derives the $q$-deformed
+Chapter \ref{chap:fluid-dynamics}, *Fluid Dynamics of the Brane*, derives the $q$-deformed
 Navier–Stokes equation from the Frobenius–Hopf structure, and
 locates the obstruction to global smoothness in a single
 cohomology class — an obstruction-based perspective on
 Navier–Stokes regularity.
 
-Next, [Chapter 17](#chap\:stochastic-mechanics), *Stochastic
+Next, Chapter \ref{chap:stochastic-mechanics}, *Stochastic
 Mechanics*, reads the Markov
 trace as a stochastic dynamics.  Markov's axioms on braid links and
 a closure map fix the trace and extract the precision coefficients
@@ -273,7 +273,7 @@ the same $q \to 1$ limit the Gröbner–Shirshov depth filtration
 meets Goncharov's period filtration, and the classical Riemann zeta
 surfaces as the limit of the $q$-zeta primitive.
 
-[Chapter 18](#chap\:info-theory), *Information-Theoretic
+Chapter \ref{chap:info-theory}, *Information-Theoretic
 Perspectives*, addresses Wigner's mystery
 directly: the mechanics of a QOU are Turing complete — the
 combinatorics supporting logic and computation is a property of the
@@ -298,7 +298,7 @@ $$
 where $c_q$ is the information speed of light — $E = mc^2$ derived
 from the categorical structure.
 
-[Chapter 19](#chap\:measurement-observation), *Measurement and
+Chapter \ref{chap:measurement-observation}, *Measurement and
 Observation*, makes the observer's
 role internal to the framework rather than imposed on it.  The
 earlier knot–particle dictionary assigned a particle to each knot
@@ -312,14 +312,14 @@ Torsion-driven knot flow supplies the dynamics, and the category of
 finite bundles over $\mathbb{P}(V)$ is the categorical home for the
 whole picture.
 
-Finally, [Chapter 20](#chap\:q-geometric-langlands), *$q$-Geometric
+Finally, Chapter \ref{chap:q-geometric-langlands}, *$q$-Geometric
 Langlands*, develops the $q$-geometric Langlands correspondence connecting the categorical
 framework to the geometric Langlands programme.  The local
 $q$-zeta function of Bring's curve encodes the Frobenius
 eigenvalues, and the Hasse–Weil bound confines them to the critical
 line $|\alpha_i| = q^{1/2}$ — the Riemann hypothesis, proved
 unconditionally at the $q$-scale.  The Tannaka–Krein reconstruction
-closes the loop back to the symmetry group of Chapter 1.
+closes the loop back to the symmetry group of Chapter \ref{chap:qu}.
 
 The [Glossary](#chap\:glossary) maps paper terminology to Mathlib
 declarations, the [Knot-Periodic Table](#app\:knot-periodic-table)
