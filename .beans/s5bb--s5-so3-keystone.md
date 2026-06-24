@@ -133,3 +133,20 @@ docs/audits/2026-06-22-keystone-schurweyl-dual-sides.md. No fit. Owner closes (�
 Reconciled docs/coordination/s5-so3-keystone.md to the 2026-06-22 state: E_q(2)/colored-WRT reframe, #2584 projector-shift refuted, the falsifiable 144*C(n)=-n(n-1)(2n-13) sub-target + the Identity-I M(n)=n(3n-1)/2 Mathlib gap (no SYT/hook-length infra; multi-session). Background-agent scoping read: safe win = Identity I (but Mathlib-blocked); full closure at real risk of being a categorical re-NAMING of W_λ (tautology), not a new mass prediction.
 
 Escalated to owner (NOT adjudicated in ledger): (1) GATE — #2503/#2524 state the geometric-derivation gate was reversed 2026-06-19 + DG build directed, but this is not recorded in the ledger or AGENTS.md §Precision-goals (still says subgoal-2 out-of-scope without reversal); (2) C1 normalization — #2524 (open) proposes d_q^2/D^2 via Beasley-Witten CS localization on S^3/2I. Coordination note posted on #2503.
+
+## Residual (ii) DISCHARGED — Reeb = Res^{S₅}_{S₃} Lean (2026-06-24, PR #2704, merged `83edee35`)
+
+Residual (ii) of #2524 — the Lean formalization of the "Reeb = Res^{S₅}_{S₃}" scaffold identity —
+landed sorry-free + axiom-free in `S5SO3FiberAction.lean` (`s3SignTwist`,
+`restriction_intertwines_conjugation` = `Res(λ')=s3SignTwist(Res(λ))` ∀λ⊢5,
+`std_irrep_conjugation_fixed` = the (2,1)/h⁴-carrier multiplicity is conjugation-fixed, capstone
+`reeb_eq_restriction_scaffold [BringFiberAction]`; all three `#print axioms` = none).
+
+- **Scope (honest):** the *algebraic* restriction-commutes-with-conjugation identity ONLY. The capstone's
+  conjunct (i) still **uses** `BringFiberAction` (the geometric fibre map stays open). **NOT a keystone closure.**
+- **Residual (i) (MTC-matching — pin the Beasley–Witten gauge datum on S³/2I to the Hecke `Rep U_q(sl_N)`
+  blocks so the localization `W_λ = d_q²/D²` is provably OUR Hecke category's) stays owner-gated** = the live
+  W_λ geometric-origin frontier.
+- **210 ppb stays refuted** (keystone gives the O(1) generation skeleton, not the 2×10⁻⁷ fine shift). No fit,
+  nothing wired, no tier change. Ledger `docs/coordination/s5-so3-keystone.md` + sessions-log row updated; audit
+  `docs/audits/2026-06-24-keystone-reeb-restriction-lean-formalization.md`. Owner closes (§4a).
