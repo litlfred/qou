@@ -290,24 +290,115 @@ theorem hookE (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   exact cellSum_expand l (fun i j => (l.getD i 0 : ℤ) - 1 - j)
     (fun i j => (colLen l j : ℤ) - 1 - i)
 
-/-- **Identity (A), general (carried — residual is six finite, formula-free facts).**
-For a weakly-decreasing partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.
+/-! ### Row-data sums + the remaining reduction lemmas
 
-The reduction above (`identityA_algebra`) proves this **sorry-free from the six finite
-sub-identities** (E)/(Arm)/(Cont)/(Leg1)/(Leg2)/(Cross); the **hook-length formula is
-off the critical path** (audit `2026-06-24-keystone-identity-I-armleg-reduction.md`).
-The remaining Lean fill is those six identities about the `List ℕ` defs above —
-elementary `BigOperators` sums (E/Arm/Cont) plus the `colLen` conjugate column-sums
-(Leg1/Leg2) and the sorted L-triple count (Cross).  Machine-checked here for every
-partition through `n = 12` (`identityA_exhaustive_n12`) and in exact integer arithmetic
-for `n ≤ 22` (audit). -/
-theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
-    sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 := by
-  -- Ref: [manuscript] docs/audits/2026-06-24-keystone-identity-I-armleg-reduction.md
-  -- Proof = `identityA_algebra` applied to the six reduction lemmas (E)/(Arm)/(Cont)/
-  -- (Leg1)/(Leg2)/(Cross) about the `List ℕ` defs; those finite-combinatorics lemmas
-  -- are the residual fill (no hook-length formula). Exhaustively verified `n ≤ 12`.
+`p2 = Σλ_i²`, `q1 = Σ i·λ_i`, `q2 = Σ i²·λ_i`, `s2 = Σ i·λ_i²` (row data).  (Arm)/(Cont)
+are proved sorry-free below (single-row Gauss sums via `two_sum_id`/`rowArm`/
+`rowSq_reflect`/`sz_eq`).  (Leg1)/(Leg2)/(Cross) — the `colLen` conjugate column-sums
+and the sorted L-triple count — are the genuine residual double-counts, carried with
+`sorry` + `-- Ref:` (machine-checked for the assembled identity through `n = 12` by
+`identityA_exhaustive_n12`; exact-integer `n ≤ 22` in the audit). -/
+
+noncomputable def p2 (l : List ℕ) : ℤ := ∑ i ∈ Finset.range l.length, (l.getD i 0 : ℤ) ^ 2
+noncomputable def q1 (l : List ℕ) : ℤ := ∑ i ∈ Finset.range l.length, (i : ℤ) * (l.getD i 0)
+noncomputable def q2 (l : List ℕ) : ℤ := ∑ i ∈ Finset.range l.length, (i : ℤ) ^ 2 * (l.getD i 0)
+noncomputable def s2 (l : List ℕ) : ℤ := ∑ i ∈ Finset.range l.length, (i : ℤ) * (l.getD i 0) ^ 2
+
+theorem two_sum_id (m : ℕ) : 2 * ∑ j ∈ Finset.range m, (j : ℤ) = (m : ℤ) * ((m : ℤ) - 1) := by
+  induction m with
+  | zero => simp
+  | succ k ih => rw [Finset.sum_range_succ, mul_add, ih]; push_cast; ring
+
+theorem rowArm (m : ℕ) :
+    2 * ∑ j ∈ Finset.range m, ((m : ℤ) - 1 - (j : ℤ)) = (m : ℤ) ^ 2 - m := by
+  have key : ∀ j ∈ Finset.range m, (m : ℤ) - 1 - (j : ℤ) = ((m - 1 - j : ℕ) : ℤ) := by
+    intro j hj; rw [Finset.mem_range] at hj; omega
+  rw [Finset.sum_congr rfl key, Finset.sum_range_reflect (fun k => (k : ℤ)) m, two_sum_id]; ring
+
+theorem rowSq_reflect (m : ℕ) :
+    ∑ j ∈ Finset.range m, ((m : ℤ) - 1 - (j : ℤ)) ^ 2 = ∑ j ∈ Finset.range m, (j : ℤ) ^ 2 := by
+  have key : ∀ j ∈ Finset.range m, ((m : ℤ) - 1 - (j : ℤ)) ^ 2 = ((m - 1 - j : ℕ) : ℤ) ^ 2 := by
+    intro j hj; rw [Finset.mem_range] at hj
+    have : (m : ℤ) - 1 - (j : ℤ) = ((m - 1 - j : ℕ) : ℤ) := by omega
+    rw [this]
+  rw [Finset.sum_congr rfl key, Finset.sum_range_reflect (fun k => (k : ℤ) ^ 2) m]
+
+theorem sz_eq (l : List ℕ) : (sz l : ℤ) = ∑ i ∈ Finset.range l.length, (l.getD i 0 : ℤ) := by
+  unfold sz
+  induction l with
+  | nil => simp
+  | cons a t ih =>
+    rw [List.length_cons, Finset.sum_range_succ', List.sum_cons]
+    simp only [List.getD_cons_succ, List.getD_cons_zero]
+    push_cast [ih]; ring
+
+/-- **Reduction lemma (Arm) (sorry-free).** `2·Σ arm = Σλ_i² − n`. -/
+theorem redArm (l : List ℕ) :
+    2 * cellSum l (fun i j => (l.getD i 0 : ℤ) - 1 - j) = p2 l - (sz l : ℤ) := by
+  unfold cellSum p2
+  rw [sz_eq l, Finset.mul_sum, ← Finset.sum_sub_distrib]
+  exact Finset.sum_congr rfl (fun i _ => by rw [rowArm (l.getD i 0)])
+
+/-- **Reduction lemma (Cont) (sorry-free).** `Σ c² = Σ arm² − s2 + q1 + q2`. -/
+theorem redCont (l : List ℕ) :
+    sumSqContents l
+      = cellSum l (fun i j => ((l.getD i 0 : ℤ) - 1 - j) ^ 2) - s2 l + q1 l + q2 l := by
+  rw [sumSqContents_cellSum]
+  unfold cellSum s2 q1 q2
+  rw [← Finset.sum_sub_distrib, ← Finset.sum_add_distrib, ← Finset.sum_add_distrib]
+  apply Finset.sum_congr rfl
+  intro i _
+  rw [rowSq_reflect (l.getD i 0)]
+  have hsplit : ∀ M : ℕ, ∑ j ∈ Finset.range M, ((j : ℤ) - (i : ℤ)) ^ 2
+      = (∑ j ∈ Finset.range M, (j : ℤ) ^ 2) - 2 * (i : ℤ) * (∑ j ∈ Finset.range M, (j : ℤ))
+        + (M : ℤ) * (i : ℤ) ^ 2 := by
+    intro M; induction M with
+    | zero => simp
+    | succ k ih =>
+      rw [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ, ih]; push_cast; ring
+  rw [hsplit (l.getD i 0)]
+  nlinarith [two_sum_id (l.getD i 0)]
+
+/-- **Reduction lemma (Leg1) (carried).** `Σ leg = Σ i·λ_i`.  The conjugate column-sum
+`Σ_j binom(colLen_j,2) = Σ_{i<i'} λ_{i'}` (sorted) — a sum-over-cells → sum-over-row-pairs
+double-count.  Machine-checked (assembled identity) `n ≤ 12`; exact-integer `n ≤ 22`. -/
+theorem redLeg1 (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    cellSum l (fun i j => (colLen l j : ℤ) - 1 - i) = q1 l := by
+  -- Ref: [manuscript] docs/audits/2026-06-24-keystone-identity-I-armleg-reduction.md §(Leg1)
   sorry
+
+/-- **Reduction lemma (Leg2) (carried).** `Σ leg² = Σ i²·λ_i` (conjugate column-sum). -/
+theorem redLeg2 (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    cellSum l (fun i j => ((colLen l j : ℤ) - 1 - i) ^ 2) = q2 l := by
+  -- Ref: [manuscript] docs/audits/2026-06-24-keystone-identity-I-armleg-reduction.md §(Leg2)
+  sorry
+
+/-- **Reduction lemma (Cross) (carried).** `2·Σ arm·leg = n² − p2 − s2 − q1` — the sorted
+L-triple count (uses `λ_i ≥ λ_{i'}`).  Machine-checked (assembled) `n ≤ 12`; `n ≤ 22`. -/
+theorem redCross (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    2 * cellSum l (fun i j => ((l.getD i 0 : ℤ) - 1 - j) * ((colLen l j : ℤ) - 1 - i))
+      = (sz l : ℤ) ^ 2 - p2 l - s2 l - q1 l := by
+  -- Ref: [manuscript] docs/audits/2026-06-24-keystone-identity-I-armleg-reduction.md §(Cross)
+  sorry
+
+/-- **Identity (A), general.** For a weakly-decreasing partition `l`,
+`Σ_c h_c² = Σ_c c(c)² + n²`.  Proved by `identityA_algebra` from the six reduction
+lemmas: (E) `hookE`, (Arm) `redArm`, (Cont) `redCont` are **sorry-free**; only the
+conjugate column-sums (Leg1/Leg2) and the sorted cross-term (Cross) remain carried
+(`redLeg1`/`redLeg2`/`redCross`).  The **hook-length formula is off the critical path**
+(audit `2026-06-24-keystone-identity-I-armleg-reduction.md`); machine-checked for every
+partition through `n = 12` (`identityA_exhaustive_n12`), exact-integer `n ≤ 22` (audit). -/
+theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 :=
+  identityA_algebra (sz l : ℤ) (p2 l) (q1 l) (q2 l) (s2 l)
+    (cellSum l (fun i j => (l.getD i 0 : ℤ) - 1 - j))
+    (cellSum l (fun i j => ((l.getD i 0 : ℤ) - 1 - j) ^ 2))
+    (cellSum l (fun i j => (colLen l j : ℤ) - 1 - i))
+    (cellSum l (fun i j => ((colLen l j : ℤ) - 1 - i) ^ 2))
+    (cellSum l (fun i j => ((l.getD i 0 : ℤ) - 1 - j) * ((colLen l j : ℤ) - 1 - i)))
+    (sumSqContents l) (sumSqHooks l)
+    (by rw [hookE l hl, cellSum_one]) (redArm l) (redCont l) (redLeg1 l hl) (redLeg2 l hl)
+    (redCross l hl)
 
 /-! ## (B) Jucys–Murphy content-square mean -/
 
