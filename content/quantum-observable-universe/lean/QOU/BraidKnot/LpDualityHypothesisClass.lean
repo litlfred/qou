@@ -88,7 +88,7 @@ class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where
   /-- Complementary slackness (Schrijver §7.4).  At the optimum,
       a partition λ lies in the LP active set iff its primal
       constraint is tight. -/
-  complementarySlackness : ∀ (λ : lp.Λ), λ ∈ lp.active_set ↔ lp.tight λ
+  complementarySlackness : ∀ (lam : lp.Λ), lam ∈ lp.active_set ↔ lp.tight lam
 
 namespace HasFiniteLPDuality
 
@@ -104,8 +104,8 @@ axiom schrijver_strong_duality :
     its primal constraint is tight. -/
 -- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
 axiom schrijver_complementary_slackness :
-    ∀ (lp : OperatorSelectionLP) (λ : lp.Λ),
-      λ ∈ lp.active_set ↔ lp.tight λ
+    ∀ (lp : OperatorSelectionLP) (lam : lp.Λ),
+      lam ∈ lp.active_set ↔ lp.tight lam
 
 /-- **Schrijver model (consistency witness).**
 
