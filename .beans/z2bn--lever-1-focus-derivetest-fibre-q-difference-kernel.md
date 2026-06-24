@@ -120,3 +120,18 @@ Ran the genus-1 coral `E_q` step (Sage unavailable ⇒ analytical):
 - **Still open (keystone):** the explicit abelianised-connection holonomy `=θ_binding=0.7815` at q₀.
 Probe `lever1_coral_eq_monodromy_integrality.py` (7/7); audit
 `2026-06-24-lever1-coral-eq-monodromy-integrality.md`. No fit; nothing wired. Owner closes (§4a).
+
+## Option 3 (2026-06-24, PR #2708) — depth-2 recurrence FALSIFIED beyond seed; θ_binding is a fit
+
+Tried to derive `θ_binding` as the rate of the `a_D=lw` depth-2 recurrence. **It fails.** `τ` fit to
+the n=2,3,4 seed (=2.6424, the closed form) **does not satisfy the n=5 check**: `lw(4) − (τ·lw(3)−lw(2))
+= 0.0205` (0.4%), n=6 1.887 (14%), n=7 6.91 (18%). The **windowed kernel drifts** 2.6424 → 2.6505 →
+2.9933; `lw(c)` ratios 1.34→2.76 *increase* (super-geometric, like involution numbers) ⇒ not `Aλᶜ+Bλ⁻ᶜ`
+for fixed `λ`. So `lw(n−1) ≠ φ(Mⁿv₀)` for any fixed 2×2 `M` (Cayley–Hamilton) — **(b)-exclusion** of the
+const-coeff depth-2 model (invariant: window-independent kernel). **`θ_binding=0.7815` is a 3-point
+seed-fit artifact, not a derived rate.** Does NOT refute the `Jac(Bring)~E⁴` isogeny (sibling
+`mass-open-keystone-w-l2-root`) or the 2×2 `M`'s existence — only that the `lw` values ARE its prolonged
+periods beyond the seed. Convention validated (lw(2), lw(3)=Family-A match corpus). Cross-link: the
+sibling's open `j(E)` is answered by the coral `j(q₀)=129.86`. Probe
+`lever1_lw_depth2_recurrence_test.py` (7/7); audit `2026-06-24-lever1-lw-depth2-recurrence-falsified.md`.
+No fit; nothing wired. Owner closes (§4a).
