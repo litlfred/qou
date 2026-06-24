@@ -43,7 +43,7 @@
 import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import { resolve, relative, join, extname, basename } from "node:path";
 
-const REPO_ROOT = resolve(import.meta.dir, "..");
+const REPO_ROOT = resolve(new URL(".", import.meta.url).pathname, "..");
 
 const SKIP_DIRS = new Set([
   "node_modules",
