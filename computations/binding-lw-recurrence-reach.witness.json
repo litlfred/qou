@@ -1,0 +1,33 @@
+{
+  "description": "Falsifiable reach test of the depth-2 binding kernel R=x\u00b2\u2212\u03c4x+1: does it predict the selection-rule values lw(4),lw(5) beyond its c\u22643 anchors? lw(c)=(1/(c+1))\u03a3_{\u03bb\u22a2c+1} dim_q (canonical q-hook). No fit; \u03c4 from c\u22643 anchors.",
+  "q0": "1.1099785900594",
+  "dps": 50,
+  "tau": "2.6423863116474459480481152144512320606568954313432",
+  "lw": {
+    "1": "1.0",
+    "2": "1.3369656226945201055728966439454505808828020447033",
+    "3": "2.5327796605512038367732891763868756408598153118569",
+    "4": "5.3761377521548435075948964772164647909517147496578",
+    "5": "13.559827240676897792353634737033465813928048805618"
+  },
+  "reach_test": [
+    {
+      "c": 4,
+      "lw_direct": "5.3761377521548435075948964772164647909517147496578",
+      "recurrence_predicted": "5.355616682765045555810078693349753440452825827958",
+      "abs_err": "0.020521069",
+      "rel_err": "0.0038170654",
+      "agrees_1e-6": false
+    },
+    {
+      "c": 5,
+      "lw_direct": "13.559827240676897792353634737033465813928048805618",
+      "recurrence_predicted": "11.673053145273824003823845526902752229002345724283",
+      "abs_err": "1.8867741",
+      "rel_err": "0.13914441",
+      "agrees_1e-6": false
+    }
+  ],
+  "depth2_extends_beyond_anchors": false,
+  "verdict": "SCOPE-LIMITED NEGATIVE (a): the depth-2 *constant* kernel does NOT predict lw(c) beyond its c\u22643 anchors \u2014 lw(4) misses by 0.0038170654 (rel), lw(5) by 0.13914441. \u03c4 is fixed by three anchors (det=1 + one ratio), so matching c\u22643 is automatic; the c\u22654 deviation shows the constant depth-2 kernel is anchor-limited, consistent with the corpus 'depth \u2264 3 constant kernel refuted; true object is non-constant/higher-depth' (2026-06-04-c4-gap-no-constant-kernel-recursion.md). NOT a structural exclusion: the proved \u03bb\u208a>1 extensive-growth property (PR #2718) stands; this only bounds the constant-kernel reach. No fit; q\u2080 only as evaluation point."
+}
