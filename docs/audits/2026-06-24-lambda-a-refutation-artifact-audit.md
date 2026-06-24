@@ -114,6 +114,30 @@ Net: **6 of 7** re-examined refutations are λ_A-family-bound and do not
 constrain the canonical per-knot density — they should not be cited as
 ruling out the per-knot approach. The honest exception is co-Casimir.
 
+## ⚠ Critical nuance — absolute mass vs binding (do not overclaim "per-knot is the fix")
+
+Per-knot density is **not simply better**. For ABSOLUTE mass it is *worse*:
+
+| density | m_p | m_n | abs-mass error |
+|---|--:|--:|---|
+| global λ_A (fit) | 966 | 967 | **+2.96%** |
+| per-knot tr_M(K) (canonical) | 406 | 352 | **−57% / −62%** |
+| round-trip target | 938.3 | 939.6 | (≈ρ 2.46) |
+
+So neither density reproduces the absolute nucleon mass; the true density
+sits ≈2.46 between them. **The per-knot fix's leverage is in BINDING, not
+absolute mass.** Binding uses trace *ratios* `B = α·ln(tr_free/tr_atom)`
+where the absolute density scale cancels, and there the **p≠n distinction**
+(tr_M(p)=1.0653 vs tr_M(n)=0.9232) is real structure that the degenerate
+global λ_A (one number for both) erases.
+
+**Refined conclusion:** binding / shell quadratic-correction refutations
+that baselined on the **p=n-degenerate λ_A** may have missed the per-knot
+p≠n structure — that is the precise sense in which they may be artifacts.
+This does **not** claim per-knot density rescues absolute masses (it does
+not). The productive redo is binding/shell closures re-run with the
+p≠n-distinct per-knot traces, not an absolute-mass re-pin.
+
 ## Next (under x5az)
 
 1. Re-run `rho_k_h3a_co_casimir.py` with `vol_density_per_block` (per-knot
