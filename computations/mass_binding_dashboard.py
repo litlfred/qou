@@ -242,7 +242,7 @@ def _print_legend() -> None:
 |---|---|
 | `B_AME` | Total nuclear binding energy from AME2020 (MeV) — the experimental target |
 | `σ_exp (MeV)` | AME2020 experimental 1σ on the total binding (scientific notation; sub-keV for light nuclei) |
-| `σ_exp (ppm)` | The same 1σ as a relative figure (σ_exp / B_AME × 10⁶) |
+| `σ_exp (ppb)` | The same 1σ as a relative figure (σ_exp / B_AME × 10⁹), scientific notation |
 | `B_lin` | LINEAR/saturating binding α·s, s = 1−e^(−B_sym/α) (leading term of B_sym; bounded by α, under-binds with A) |
 | `B_sym` | EXACT log-ratio binding α·ln(tr_free/tr_atom) = α[(Z−1)L_pp + L_pn + (N−1)L_nn] — the archimedean realization |
 | `B_qCLT` | Uniform per-bond q-CLT α·(A−1)·ℓ̄(D) — no p↔n colour weighting |
@@ -254,8 +254,18 @@ def _print_legend() -> None:
 | Header | Meaning |
 |---|---|
 | `lin` / `sym` / `qCLT` / `qCLT_fac` / `magic` | B_AME / B_model for that binding form |
-| `σ_exp (ppm)` | (as Table 1) experimental 1σ relative to B_AME |
+| `σ_exp (ppb)` | experimental 1σ relative to B_AME (× 10⁹) |
+| `sym dev (ppb)` | B_sym model deviation, signed: (B_sym − B_AME)/B_AME × 10⁹ |
 | `best dev / σ_exp` | Best form's \\|B_model − B_AME\\| measured in experimental σ (the L2-100× gap) |
+
+**Mass error (ppb)**
+
+| Header | Meaning |
+|---|---|
+| `M_meas (MeV)` | measured mass: M_AME = mu − B_AME for nuclei, or measured constituent mu for lone p/n |
+| `σ_exp (ppb)` | experimental 1σ on the mass = σ_B / M_meas × 10⁹ |
+| `err m_sym (ppb)` | canonical-mass model error (m_sym − M_meas)/M_meas × 10⁹ (binding-dominated for A≥2; 0 for p anchor; genuine prediction for n) |
+| `err m_sym,rel (ppb)` | measured-baseline mass error (m_unbnd − B_sym − M_meas)/M_meas × 10⁹ |
 
 **Table 3 — Mass M = (constituents) − B (MeV)**
 
@@ -408,15 +418,36 @@ def main(argv=None) -> int:
               f"| {_fmt(m_fac_can,9,1)} | {_fmt(m_fac_rel,9,1)} "
               f"| {_fmt(m_magic_can,9,1)} | {_fmt(m_magic_rel,9,1)} |")
 
+    # 1b. MASS ERROR (ppb) — model deviation of m_sym from the measured mass,
+    #     plus the experimental 1σ on that mass. ppb = (pred − meas)/meas · 10⁹.
+    #     The measured target is M_AME (= mu − B_AME) for nuclei, or the measured
+    #     constituent mu for the lone p/n (no AME binding entry). m_sym's error is
+    #     binding-dominated for A≥2 (m_sym − M_AME = B_AME − B_sym); for p it is 0
+    #     (anchor) and for n it is the genuine nucleon-mass prediction error.
+    print("\n### Mass error (ppb)   [(m_X − M_meas)/M_meas · 10⁹; σ_exp = experimental 1σ on the mass]")
+    print("| iso | A | M_meas (MeV) | σ_exp (ppb) | err m_sym (ppb) | err m_sym,rel (ppb) |")
+    print("|---|--:|--:|--:|--:|--:|")
+    for r in rows:
+        mu = r["Z"] * mp_ + r["N"] * mn_
+        mu_can = r["Z"] * mp_can + r["N"] * mn_can
+        m_meas = (mu - r["B_AME"]) if r["B_AME"] is not None else mu   # measured mass
+        s = r["sigma_AME"]
+        s_ppb = (s / m_meas * 1e9) if (s and m_meas) else None
+        b = r["B_sym"]
+        err_can = ((mu_can - b) - m_meas) / m_meas * 1e9 if b is not None else None
+        err_rel = ((mu - b) - m_meas) / m_meas * 1e9 if b is not None else None
+        print(f"| {r['name']} | {r['A']} | {m_meas:>10.3f} | {_sci(s_ppb,11,2)} "
+              f"| {_sci(err_can,13,3)} | {_sci(err_rel,13,3)} |")
+
     # 2. BINDING  (B_AME ± experimental 1σ from AME2020)
     print("### Binding  B (MeV)   [σ_exp = AME2020 experimental 1σ]")
-    print("| iso | A | B_AME | σ_exp (MeV) | σ_exp (ppm) | B_lin | B_sym | B_qCLT | B_qCLT_fac | B_magic |")
+    print("| iso | A | B_AME | σ_exp (MeV) | σ_exp (ppb) | B_lin | B_sym | B_qCLT | B_qCLT_fac | B_magic |")
     print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         s = r["sigma_AME"]
-        s_ppm = (s / r["B_AME"] * 1e6) if (s and r["B_AME"]) else None
+        s_ppb = (s / r["B_AME"] * 1e9) if (s and r["B_AME"]) else None
         print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_sci(s,11,2)} "
-              f"| {_fmt(s_ppm,11,3)} | {_fmt(r['B_lin'])} | {_fmt(r['B_sym'])} "
+              f"| {_sci(s_ppb,11,2)} | {_fmt(r['B_lin'])} | {_fmt(r['B_sym'])} "
               f"| {_fmt(r['B_qCLT'])} | {_fmt(r['B_qCLT_fac'])} | {_fmt(r['B_magic'])} |")
 
     # 1b. chain ≡ exact-trace validation (rows where the p(3A) trace is feasible)
@@ -434,13 +465,16 @@ def main(argv=None) -> int:
     #    best form's deviation measured in experimental σ (how far past the
     #    100× L2 target each form sits).
     print("\n### Error  (B_AME / B_model; 1.00 = perfect, >1 under-binds)")
-    print("| iso | A | lin | sym | qCLT | qCLT_fac | magic | σ_exp (ppm) | best dev / σ_exp |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|")
+    print("| iso | A | lin | sym | qCLT | qCLT_fac | magic | σ_exp (ppb) | sym dev (ppb) | best dev / σ_exp |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         e = {k: _err(r["B_AME"], r[k]) for k in
              ("B_lin", "B_sym", "B_qCLT", "B_qCLT_fac", "B_magic")}
         s = r["sigma_AME"]
-        s_ppm = (s / r["B_AME"] * 1e6) if (s and r["B_AME"]) else None
+        s_ppb = (s / r["B_AME"] * 1e9) if (s and r["B_AME"]) else None
+        # B_sym model deviation in ppb (signed, relative to experimental B_AME)
+        sym_dev_ppb = ((r["B_sym"] - r["B_AME"]) / r["B_AME"] * 1e9
+                       if (r["B_sym"] is not None and r["B_AME"]) else None)
         # best model = smallest |B_AME − B_model|; report its deviation in σ_exp
         cand = [r[k] for k in ("B_lin", "B_sym", "B_qCLT", "B_qCLT_fac", "B_magic") if r[k]]
         best_dev_sigma = None
@@ -449,7 +483,7 @@ def main(argv=None) -> int:
             best_dev_sigma = abs(best - r["B_AME"]) / s
         print(f"| {r['name']} | {r['A']} | {_fmt(e['B_lin'],6)} | {_fmt(e['B_sym'],6)} "
               f"| {_fmt(e['B_qCLT'],6)} | {_fmt(e['B_qCLT_fac'],6)} "
-              f"| {_fmt(e['B_magic'],6)} | {_fmt(s_ppm,11,3)} "
+              f"| {_fmt(e['B_magic'],6)} | {_sci(s_ppb,11,2)} | {_sci(sym_dev_ppb,13,2)} "
               f"| {_fmt(best_dev_sigma,16,3) if best_dev_sigma else _fmt(None,16)} |")
 
     # 3b. ENTANGLEMENT  (bar-involution q↦q⁻¹ split of the atom trace, via the
