@@ -81,3 +81,26 @@ scored as proton-anchored predictions and m_p as the anchor.
 3. Option A only if the owner wants the entire computations layer
    proton-canonical (much larger; coordinate with the canonical-watcher /
    the `768d9ddf`-style regen tooling).
+
+## Resolution / coordination (2026-06-24)
+
+**Step 0 settled (no full-env needed):** the raw proton solve
+`_solve_q_proton_f64` (self-contained, closed-form tr_M, no fallback) converges
+to q₀ = 1.1099785955573347 and gives m_μ = **1.36 ppb** — but **only via the
+`habiro_ratio = (1+46u⁴)(1+4u⁵)(1−29u⁶)` factor**, whose `{46,4,29}` are the
+**CODATA-anchored fit** (`ovud` / PR #2691), still gated on the **s5bb**
+Habiro-element derivation. `F_Bor = [3]_q!/q³` is exact; only the term-6 residue
+is fitted.
+
+**Conclusion:** the honest (un-fitted) experimental m_μ is the **9.5σ / ~211 ppb**
+prediction (corpus + `precision-goals` + #2731). The 1.36 ppb is the fit-closed
+artifact → **#2731 + the tracker edit STAND; no revert.** When s5bb derives
+`{46,4,29}`, the 1.36 ppb becomes legitimate and the dashboard m_μ may flip to
+met — to be coordinated then (this bean `z5vu`).
+
+**No fresh habiro lower-order proof on recent main** (checked 60 commits + s5bb
+ledger): what is proved sorry-free is the defect closed form
+`144·C(n)=−n(n−1)(2n−13)` (`WLambdaDefectClosedForm`) + Identity-I content
+decomposition (#2634) — structural lower-order pieces, **not** the `{46,4,29}`
+fit. Intent posted on sibling **#2722** (L2 dashboard refresh): keep the m_μ row
+on the honest 9.5σ until s5bb closes `{46,4,29}`.
