@@ -212,11 +212,16 @@ theorem Q_borromean_real_eq_zero (h : ℝ) : Q_borromean_real h = 0 := by
   unfold Q_borromean_real trM_borromean_real
   ring
 
-/-- Compatibility shim: keeps the original `Q_borromean_eq_zero : True`
-    name visible for downstream consumers that imported the placeholder
-    by name.  Future code should import `Q_borromean_real_eq_zero` (this
-    file) or `QOU.BraidsAndKnots.Q_borromean_eq_zero` (over `ℚ`)
-    directly. -/
-def Q_borromean_eq_zero : True := trivial
+/-- The Borromean Markov trace has zero bar-anti-symmetric companion over `ℝ`
+    (named alias of `Q_borromean_real_eq_zero`, kept resolvable for downstream
+    consumers that referred to `Q_borromean_eq_zero` by name; see also the `ℚ`
+    version `QOU.BraidsAndKnots.Q_borromean_eq_zero` in
+    `BorromeanMarkovTrace.lean`).
+
+    Previously a `def Q_borromean_eq_zero : True := trivial` placeholder shim;
+    de-vacuified to carry the real statement now that `Q_borromean_real_eq_zero`
+    proves it (AGENTS.md §1a — no `: True` dodges). -/
+theorem Q_borromean_eq_zero (h : ℝ) : Q_borromean_real h = 0 :=
+  Q_borromean_real_eq_zero h
 
 end QOU.BraidKnot
