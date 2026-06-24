@@ -1342,7 +1342,142 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "101ca04dc530",
+          "ts": "b395a9b1ab02",
+          "lean": "86b035eaf833"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "Body presents q_0 as fixed by the muon identity; the block's witness pins q_0 on m_p/m_e and demotes m_mu/m_e to a 9.5-sigma prediction.",
+        "rebuttal": "partial \u2014 disclosed in sibling substrate-anchor-alternatives.md and re-pin audit 2026-05-30; muon identity is the legitimate transparent cross-check, but .md/.lean read stale vs the 2026-05-28 re-pin.",
+        "evidence": [
+          {
+            "text": "local-substrate-q.md:11-21 vs .ts:21-24 witness anchor 'm_p/m_e'"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+        "severity": "minor"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "101ca04dc530",
+          "ts": "b395a9b1ab02",
+          "lean": "86b035eaf833"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "Lean hardcodes m_mu/m_e and proves only range-membership of the muon constant; never references m_p/m_e, so the formal artifact is one re-pin behind production.",
+        "rebuttal": "partial \u2014 Lean honestly scoped ('NOT part of the formal proof chain', validation:not_checked); muon identity remains valid as cross-check.",
+        "evidence": [
+          {
+            "text": "local-substrate-q.lean:17 'm_mu/m_e = 206.7682830'"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "101ca04dc530",
+          "ts": "b395a9b1ab02",
+          "lean": "86b035eaf833"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "Could unique_q_solution be a self-assuming projection?",
+        "rebuttal": "rebutted \u2014 genuinely derives exists-unique via Real.sqrt inversion, sorry-free (linarith/ring/Real.sq_sqrt); well-posedness proved.",
+        "evidence": [
+          {
+            "text": "local-substrate-q.lean:65-95"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "101ca04dc530",
+          "ts": "b395a9b1ab02",
+          "lean": "86b035eaf833"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "Does the volume conjecture smuggle an unproved bridge?",
+        "rebuttal": "rebutted \u2014 flagged as tau-side naming not derivation; Vol(4_1)=3Cl_2(pi/3)~2.0299 is the standard figure-8 value, SnapPy-witnessed to 1e-14.",
+        "evidence": [
+          {
+            "text": "local-substrate-q-proof.md:11-16"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "101ca04dc530",
+          "ts": "b395a9b1ab02",
+          "lean": "86b035eaf833"
+        },
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The headline equation (1-q^-1)^2 = Vol(4_1)/(m_mu/m_e) presents q_0 as muon-determined, but the live pin (and the block's own witness) is the proton ratio m_p/m_e \u2014 a cross-check identity stated as the determination (disclosure gap, not a math error).",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:58.811Z"
+  "updated_at": "2026-06-24T04:12:24Z"
 }

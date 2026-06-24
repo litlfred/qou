@@ -1370,6 +1370,171 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": ".ts tags include 'no-fitting','shell-closure'; .md:10 'admits the closed form'. The corpus audit 2026-06-16 verdicts it 'near-match, not a closure' and 'does not generalize' (16O,40Ca use recursive-on-4He). Prose presents single-isotope dispatch as categorical necessity.",
+        "rebuttal": "none — survived; a prose/tag over-reach (not a math error). The .md does disclose the +5.9% miss, but the 'no-fitting' tag on a two-modelled-input near-match is a genuine unrebutted overclaim.",
+        "evidence": [
+          {
+            "text": "magic-A-binding-formula.ts:15-22; .md:10"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+        "severity": "major"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "rho_F=2 is a free scalar passed as a Python default arg (magic_A_formula.py:82); tuning 2->1.889 makes 4He exact, so it is one fitted DOF wearing a structural label; Lean encodes it as an assumed class field.",
+        "rebuttal": "partial — the block honestly discloses rho_F is an unclosed input hypothesis (§3b-cond), does NOT tune it (keeps +5.9% visible), and the 2026-06-16 audit independently labels it 'modelled'. Disclosed hidden-DOF, not concealed numerology.",
+        "evidence": [
+          {
+            "text": "magic_A_formula.py:82; magic-A-binding-formula.md:73-83"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+        "severity": "major"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "is_magic_A_atom returns True only for (2,2); 16O/40Ca excluded by hand. A one-point fit with a free scalar is not a law.",
+        "rebuttal": "partial→survived — the rho_F=nu_SDP identity is exact on D/T/3He (4 atoms) and the block scopes itself to 4He, but single-isotope applicability with a modelled scalar understates the fragility vs the 'closed form' framing.",
+        "evidence": [
+          {
+            "text": "magic_A_formula.py:71; audit 2026-06-16"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "The 'theorem' projects a class field that is the formula (self-assuming projection risk).",
+        "rebuttal": "rebutted — §3b-cond permits axiomatising the INPUT (rho_F) as a class field; the dispatch theorems (bindingRegime_*_iff, he4_dispatches_to_magic, decidability) are non-vacuously proved (decide/Or.inl rfl).",
+        "evidence": [
+          {
+            "text": "magic-A-binding-formula.lean:103-123"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": ".md '-79%' vs witness ratio 0.2096 cross-doc consistency.",
+        "rebuttal": "rebutted — witness reproduces 29.9557 MeV, +5.9% vs AME 28.2957; numbers reproduce and error is disclosed.",
+        "evidence": [
+          {
+            "text": "binding-alpha-shift-witness.witness.json"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The block is tagged 'no-fitting' and stated as a 'closed form' while two of its four inputs (rho_F=2, Vol=A*8G) are admittedly modelled per the corpus's own 2026-06-16 provenance audit, and the residual +5.9% miss is real — a derived-prefactor near-match dressed in closure vocabulary.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"

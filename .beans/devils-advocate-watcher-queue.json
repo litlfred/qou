@@ -88,6 +88,75 @@
       "status": "needs-author",
       "asked_author_at": null,
       "referee_argument": "Refresh the stale witness assertion and add a cite to ck-dk-canonical-registry.md (c_3 real-q REFUTED)."
+    },
+    {
+      "id": "c011b28f6643",
+      "block_or_script": "conj:knot-factor-frobenius-pairing",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.ts",
+        "lean": "content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.lean"
+      },
+      "finding": "da-false-claim+da-lean-narrative-divergence",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+      "evidence": "Both .lean siblings + .ts title encode the RETRACTED ratio form (a(N)=|tr_M(W_atom)|/|tr_M(W_free)|) the .md calls 6-17x wrong; neither Lean compiles (import-after-decls + duplicate class).",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Decide the canonical claim (Skein-product a_K per .md), repair the Lean to it, delete the retracted ratio encoding + the vacuous zero-instance."
+    },
+    {
+      "id": "658ee7659a1e",
+      "block_or_script": "prop:magic-A-binding-formula",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.ts",
+        "md": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.md"
+      },
+      "finding": "da-overclaim",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+      "evidence": "Tagged 'no-fitting'/'closed form' on a near-match with two modelled inputs (rho_F=2, Vol=A*8G) and a +5.9% 4He miss; corpus 2026-06-16 audit calls it 'near-match, not a closure'.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Re-tag to 'near-match' and soften 'closed form' framing to match the corpus provenance audit."
+    },
+    {
+      "id": "17a71d0e5d8c",
+      "block_or_script": "prop:confinement-sdp",
+      "paths": {
+        "ts": "content/quantum-observable-universe/mass-theory/confinement-sdp.ts",
+        "md": "content/quantum-observable-universe/mass-theory/confinement-sdp.md"
+      },
+      "finding": "da-lean-narrative-divergence+da-reproducibility",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+      "evidence": "lean.ref qou:QOU.ParticleInteractions.ConfinementSDP resolves to no decl (real file is namespace QOU.Interactions; sibling is sorry-stub); 2 of 3 cited compute scripts (multi_level_sdp.py, misdp_cross_channel.py) missing.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Repoint lean.ref to the real QOU.Interactions decl (or align namespaces) and fix/remove the missing-script references."
     }
   ],
   "audited": {
@@ -118,9 +187,44 @@
       "criteria": [
         "da-referee-verdict"
       ]
+    },
+    "conj:knot-factor-frobenius-pairing": {
+      "ts": "2026-06-24",
+      "sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:magic-A-binding-formula": {
+      "ts": "2026-06-24",
+      "sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:confinement-sdp": {
+      "ts": "2026-06-24",
+      "sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:local-substrate-q": {
+      "ts": "2026-06-24",
+      "sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "def:f-bor-borromean-observable": {
+      "ts": "2026-06-24",
+      "sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
+      "criteria": [
+        "da-referee-verdict"
+      ]
     }
   },
   "reviewed_up_to": {
-    "da-referee-verdict": "43dc406cec31fe3ed66167cb760e798d5add820e"
+    "da-referee-verdict": "a157b5058b8b10366a6a2051ad63f059f3320a81"
   }
 }
