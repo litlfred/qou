@@ -99,3 +99,30 @@ Exact character theory (`genus(Bring/H) = dim std^H`); no fit; nothing wired. Th
 `Jac(Bring) ~ E⁴` decomposition is exact (isotypic + elliptic-quotient argument,
 matching Riera–Rodríguez). The q-family `E(q)` and its monodromy trace are the
 open keystone, now at genus-1.
+
+## Explicit `j(E)` — status and method (T1 follow-up)
+
+Attempting the *explicit* `E = Bring/S₄` (its j-invariant) surfaced a subtlety worth
+recording so it is not re-walked:
+
+- The **symmetric P³ model** `Bring = {s₁²+s₂ = 0, s₃ − s₁³ = 0}` (power sums of
+  `x₀..x₃`, after eliminating `x₅ = −s₁`) is genus 4 (Sage-verified), and on it the
+  elementary symmetric invariants collapse: `e₂ = e₁²`, `e₃ = e₁³` (ideal-membership
+  verified).
+- **So the ambient S₄-invariant ring restricts to only a genus-0 subfield**
+  `ℚ(e₁,e₂,e₃,e₄)|_{Bring} = ℚ(e₄/e₁⁴)` — the map `(e₁:e₂:e₃:e₄)` lands in
+  `{e₂=e₁², e₃=e₁³} ≅ P(1,4) ≅ P¹`. This is a *proper* genus-0 subfield of
+  `K(Bring)^{S₄}`; restriction and "take S₄-invariants" do **not** commute through
+  the Bring relations, so the symmetric polynomials do **not** generate the genus-1
+  quotient field.
+- ⟹ **`j(E)` is not obtained from elementary invariants.** It needs either (a) the
+  function-field **fixed field** `K(Bring)^{S₄}` (extra invariants beyond the
+  symmetric polynomials), or (b) the **periods** of the unique S₄-invariant
+  differential `ω_E ∈ (H^{1,0})^{S₄}` (dim 1) — tool-blocked here by the same
+  conjugate-singularity `RiemannSurface` limitation as #2701, or (c) the **5:1 cover**
+  `E = Bring/S₄ → Bring/S₅ = P¹` (branch data).
+
+`j(E)` is therefore a **bounded next step** (fixed-field computation), distinct from
+the genuinely keystone-gated parts (`E(q)` and `tr M(q₀) = 2.6424`). The structural
+reduction above (genus-4 → elliptic, `M` a 2×2 `SL₂`) stands independent of the
+explicit `j(E)`.
