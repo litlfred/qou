@@ -62,15 +62,31 @@ The mechanism is known (the Wenzl/Habiro framework, reused from the merged α_EM
 fibre-level `F(q)` with cross-anchor validation remains a research-grade open problem.
 Once closed and wired, **all three flip green simultaneously** (m_n and Δ_pn inherit).
 
-### Actionable side-finding (independent of the closure)
+### Staleness side-finding — reconciled to the LIVE detector (2026-06-24)
 
-The 2026-05-28 re-pin was invisible to scriptHash staleness detection (the q₀
-*constant* changed, not the producer scripts). Per
-`2026-05-30-q0-repin-stale-witness-audit.md`, **~394 witnesses still carry the
-muon-anchored q₀** — including the Q_β cache whose pre-repin "5.7 ppb Habiro-exact"
-result is **stale** (the live figure is the 1279 ppb dashboard value). A batched
-regen at the proton anchor (`witness_constant_staleness.py` flags them) would refresh
-the trio's true current margins — a concrete, non-research-grade backlog item.
+The "~394 witnesses stale" figure (`2026-05-30-q0-repin-stale-witness-audit.md`) is a
+**full-corpus historical estimate that is now largely resolved** — corrected here
+against the live detector, so it is not over-cited as an actionable backlog:
+
+- The **dashboard is current** (`per-observable-100x-status.witness.json` regenerated
+  2026-06-22, post-repin), so the headline trio margins (164× / 185× / 163×) are
+  materially current.
+- Running `computations/substrate/witness_constant_staleness.py` **now** (q₀-critical
+  substrate scope, 12 witnesses) flags exactly **1**: `knot-volumes.witness.json`.
+  Its drift is **13th-significant-digit** (`…595554` vs current `…595557`, ≈ 1e-12
+  relative) — **not** the muon→proton re-pin (~22 ppb = 2e-8), and knot volumes are
+  **q-independent** (the q₀ is recorded metadata; `knot_volumes.py` does not consume
+  it). Re-running risks SnapPy triangulation drift in the volumes for a cosmetic
+  metadata fix, so it is **deliberately not regenerated**.
+- The Q_β margin input `q-beta-operator-valued-N3.witness.json` carries the **same
+  ≈1e-12 last-digit q₀ drift** — far below the 7.8 ppb Q_β target, so it does **not**
+  move the 164× margin.
+
+**Net:** the trio margins are materially current; the residual q₀ "staleness" is a
+sub-ppb last-digit artifact, **not** the muon→proton re-pin and **not** material to
+the L2 verdict. The pre-repin "5.7 ppb Habiro-exact Q_β" remains stale in the sense
+that it was computed at the *muon* anchor on a *near-match* `c_3` rung — but that is a
+**tier/anchor** issue (the gate above), not a witness-regen backlog item.
 
 ## Discipline
 
