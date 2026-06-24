@@ -162,7 +162,7 @@ theorem atlas_witness_derived : AtlasIsWitnessDerived := by
   show atomKnotAtlas.length ≥ 1
   decide
 
-/-- (provisional / deprecated methodology)
+/-! ### Provisional / deprecated methodology (li7 volume-match)
 
     The 7Li / 6Li volume-match results from the SnapPy search
     (li-atom-knot-search.witness.json) are NOT principled.  The
@@ -174,15 +174,15 @@ theorem atlas_witness_derived : AtlasIsWitnessDerived := by
     The earlier theorem `li7_best_precision` claimed ⁷Li at L_{11a62}
     as the best-precision atlas entry (4001 ppb residual).  That claim
     is now demoted to *provisional* status and is no longer cited as
-    a principled result in the statistical summary.
+    a principled result in the statistical summary.  The provisional
+    `li7_provisional_volume_match : True` placeholder that recorded it
+    has been removed: it was a pure empirical witness and lives in
+    methodology-deprecation.witness.json §particles[12] ("7Li",
+    method = "deprecated-volume-match"), not the formal layer.
 
     The principled best-precision claim awaits SDP-on-full-mass-tower
     with GB filtration and jet-order tracking (see
     `principled_path_for_atom_knot` below). -/
-def li7_provisional_volume_match : True := by
-  trivial  -- Ref: methodology-deprecation.witness.json §particles[12]
-           -- ("7Li", method = "deprecated-volume-match").
-           -- The 4001 ppb residual is striking but unverified.
 
 /-- The principled path for any new atom-knot identification: a JOINT
     SDP on the full mass tower (over all confinement levels ℓ and all
