@@ -1354,6 +1354,155 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-overclaim": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "markov-trace-frobenius-selection.md:106-111 + 2-7: 'Any non-degenerate Frobenius form on H_n(R,q) at generic q equals the Jones–Markov form τ_M block-wise' / 'the unique non-degenerate Frobenius pairing'. Markov-trace uniqueness (Wenzl/Jones) holds only up to the Markov parameter z + normalization τ(1)=1; non-degeneracy ALONE does not pin z (the canonical symmetrizing trace is non-degenerate but not Markov).",
+        "rebuttal": "partial — the .md DOES state z=1/(q^{1/2}+q^{-1/2}) + τ(1)=1 (md:68-69) and the Markov-peel axioms in the proof sketch, so the hypotheses are present in the body; but the headline Proposition/Theorem statements drop them, overstating the literature. Disclosed scope-overclaim, not a false claim.",
+        "evidence": [
+          {
+            "text": "markov-trace-frobenius-selection.md:2-7"
+          },
+          {
+            "text": "markov-trace-frobenius-selection.md:68-69"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "17e6fc122b65",
+          "ts": "08d6f4716e14",
+          "lean": "96485f25a702"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "markov-trace-frobenius-selection.lean:60 `def tau_M_block_value … := 1`. The uniqueness theorem (L128-132) + tau_M_non_degenerate (L78-83) are proved over a CONSTANT model where every block value is the literal 1 — not the genuine dim_q(λ)·d_λ/[n]_q!. MarkovTraceUniqueness.unique then asserts 'any non-degenerate τ' equals 1 block-wise', content-light.",
+        "rebuttal": "partial — the .lean docstring (L41-58) + authorNotes DISCLOSE that ≡1 is a substrate placeholder, computable upgrade queued under prop:hoefsmit-scattering-pipeline; honest documented scaffolding, but the Lean(constant)↔narrative(real τ_M=Σ y_λ χ_λ) gap is real and the Lean buys little.",
+        "evidence": [
+          {
+            "text": "markov-trace-frobenius-selection.lean:59-60"
+          },
+          {
+            "text": "markov-trace-frobenius-selection.lean:41-58"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "17e6fc122b65",
+          "ts": "08d6f4716e14",
+          "lean": "96485f25a702"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "C1 bucket + QA proof-narrative-lean-equiv (qa.json:1139 'Lean uses a sorry stub') + proof-statement-integrity (qa.json:1231 'contains sorryAx') allege a sorry behind a sorry-free label.",
+        "rebuttal": "rebutted — the live .lean (sha 96485f25a702, IDENTICAL to the QA sidecar's own recorded hash) has NO tactic-position sorry, NO axiom, NO sorryAx; every theorem closes with one_ne_zero/ring/rw/rfl/class-projection. The two 'sorry' tokens are the word 'sorry-free' in /- -/ docstrings (L109,201). The C1 heuristic + the QA notes fired on that docstring substring — both false against the live file.",
+        "evidence": [
+          {
+            "text": "markov-trace-frobenius-selection.lean:109"
+          },
+          {
+            "text": "markov-trace-frobenius-selection.qa.json:1139-1149"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "17e6fc122b65",
+          "ts": "08d6f4716e14",
+          "lean": "96485f25a702"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-circular": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "markov-trace-frobenius-selection.lean:118-132: class field MarkovTraceUniqueness.unique carries '∀ τ', nondeg → τ' li = tau_M_block_value', = the theorem's own conclusion; proof := MarkovTraceUniqueness.unique τ' h_nondeg projects it.",
+        "rebuttal": "partial — falls under the §3b-cond exemption: the class axiomatises an EXTERNAL established theorem (Wenzl 1988 Lemma 2.4 / Jones 1987 Thm 6.1, cited L113-116), the sanctioned pattern; QA proof-no-self-assuming-projection=pass; no instance fabricated (zero MarkovTraceUniqueness instances corpus-wide). Honest external axiomatisation, but the theorem adds no derivation.",
+        "evidence": [
+          {
+            "text": "markov-trace-frobenius-selection.lean:117-132"
+          },
+          {
+            "text": "markov-trace-frobenius-selection.lean:113-116"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "17e6fc122b65",
+          "ts": "08d6f4716e14",
+          "lean": "96485f25a702"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "survivable-objection",
+        "referee_argument": "The C1 'sorry-free over a sorry' flag is a FALSE POSITIVE: the live .lean (hash = the QA sidecar's own recorded hash) has zero tactic sorry/axiom/sorryAx; the only 'sorry' is the docstring word 'sorry-free' (L109,201). The accompanying QA proof-statement-integrity:fail ('sorryAx') + proof-narrative-lean-equiv:fail ('sorry stub') are themselves false against this content. A weaker, disclosed objection remains: the headline 'THE unique non-degenerate Frobenius form on H_n(R,q)' overstates Wenzl/Jones (non-degeneracy does not fix the Markov parameter z), and the Lean proves only a constant-collapse model (tau_M_block_value ≡ 1) whose uniqueness theorem is content-light + projects an uninstanced class. Both flaws are DISCLOSED in the block's own docstrings/authorNotes and tracked as conditional-on-class (conjectural-propagation sweep; uniqueness-theorems-backlog), so nothing is proven false — survivable-objection.",
+        "result": "warn",
+        "field_hash": {
+          "md": "17e6fc122b65",
+          "ts": "08d6f4716e14",
+          "lean": "96485f25a702"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:33:51Z",
+        "reviewed_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"

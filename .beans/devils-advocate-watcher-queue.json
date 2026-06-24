@@ -673,6 +673,143 @@
       "status": "needs-author",
       "asked_author_at": null,
       "referee_argument": "Restore/re-point the witness + script (or remove the headline number if superseded by the brane-tower path); delete the lean:195 def-disguised-True stub; report the 9-candidate selection TIERED (proved/near-match/fitted) per the c_k discipline. Artifact-integrity hygiene, not a math refutation."
+    },
+    {
+      "id": "4cd1e93a43b7",
+      "block_or_script": "prop:b1-hyperbolic-rows-theorem",
+      "paths": {
+        "lean": "content/quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.lean",
+        "md": "content/quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md"
+      },
+      "finding": "da-vacuous+da-circular+da-lean-narrative-divergence",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09",
+      "evidence": "§0a shadow-stub: lean.ref resolves sibling-first to `theorem b1_hyperbolic_rows : True := by trivial`, shadowing a library decl that is ITSELF self-assuming — class B1HyperbolicRowsContext carries rows_from_volume_conj : bloch_suslin -> van_der_veen -> 3<=n + opaque Prop witnesses, theorem applies them (degenerate(field) per 2026-06-18 triage: 199 degenerate vs 2 LEGIT). .md claims theorem-level/proved-here. Same defect as b1-figure-8.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Delete the §0a :True sibling stub; per §3b-cond rule-5 restate the class to carry sub-hypotheses (not the conclusion-implication) or demote to conjecture; reconcile the .md 'proved here' with the cited-VC-modulo status. (restate-or-demote is the deferred owner-gated fix.)"
+    },
+    {
+      "id": "aa4e01f7a882",
+      "block_or_script": "prop:collatz-contact-boundary",
+      "paths": {
+        "lean": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/collatz_contact_boundary.lean",
+        "md": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md"
+      },
+      "finding": "da-lean-narrative-divergence+da-overclaim+da-vacuous",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09",
+      "evidence": "lean.ref resolves to the library decl (sibling declares only ..._conditional) proving `(2|-6) AND (a class-supplied parity-gated Kummer implication)` — formalises NONE of the .md proposition (the [2]_q-adic contact-order convergence iff <v>>=2 <=> orbit converges, = open q-Collatz). Collatz-propagation REBUTTED by the conditional banner; the proved status-label + a co-located def-disguised-True sibling survive.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Re-scope the 'proved' status off this Lean (it proves a displaced claim); either formalise the actual convergence-iff (contingent on conj:q-collatz, hence at most a conditional theorem) or demote; remove/relocate the co-located :=trivial sibling stub."
+    },
+    {
+      "id": "d175e78c90a1",
+      "block_or_script": "prop:q-heat-kernel-peter-weyl",
+      "paths": {
+        "lean": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean",
+        "md": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.md"
+      },
+      "finding": "da-vacuous+da-empirical-fragility+da-overclaim",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09",
+      "evidence": "WRONG MATH (not just wiring): pure-vacuous `: True` stub; the small-lambda table gives (3)~8.84 vs the block's own formula + canonical compute 9.1585 (off 3.6%; the (1^3) row writes an identically-zero [-1]_q[0]_q term yet totals 2.82); and mu_lambda ~ n^2/q^2 convergence rate is FALSE (content-Casimir grows exponentially), so the Mercer/continuous-kernel conclusion is unjustified. The eigenvalue FORMULA is corpus-corroborated (qbessel_mu_lambda_vs_qlommel_zeros.py 3/3).",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Correct the small-lambda table to the canonical values (mu_(3)=q^3-2-1/q+2/q^2=0.0895); fix the (1^3) zero-term inconsistency; replace the false n^2/q^2 rate with the true (exponential-in-content) asymptotic and re-derive whether absolute convergence still holds; formalise (or honestly sorry) the convergence claim. Math-content fix, not just relabel."
+    },
+    {
+      "id": "56a7ac08eada",
+      "block_or_script": "prop:cyclotomic-l-value-decomposition",
+      "paths": {
+        "lean": "content/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition.lean",
+        "md": "content/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition.md"
+      },
+      "finding": "da-lean-narrative-divergence+da-overclaim+da-false-claim",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09",
+      "evidence": "§0a shadow-stub: lean.ref resolves sibling-first to `theorem beta_3_from_jonquiere : True := by trivial`, shadowing the real same-FQN library decl which proves only the ring tautology imLi3ZetaPredicted 4 = beta3 (= 6pi^3/192 = pi^3/32) over two content-free defs — neither resolved Lean proves the boxed beta(3)=L(chi_4,3)=Im Li_3(i). theorem-level/closed-form labels overclaim. .md table digit wrong at the 14th sig-fig (witness is correct). Number theory itself correct to 56 digits.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Delete the §0a :True sibling so the ref resolves to the library decl; soften theorem-level/closed-form to reflect that only the ring identity is Lean-verified (the analytic chain is class-axiomatised); fix the .md table digit to match the witness (...625936938...). Stale qa fails (compute-witness-exists, bib-cite-resolves) are also refreshable."
+    },
+    {
+      "id": "afe6de90cfb4",
+      "block_or_script": "prop:markov-trace-frobenius-selection",
+      "paths": {
+        "md": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md",
+        "lean": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean"
+      },
+      "finding": "da-overclaim+da-definitional-ambiguity",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09",
+      "evidence": "survivable: C1 flag is a FALSE POSITIVE (sorry only in 'sorry-free' docstrings; no tactic sorry; class honestly uninstanced = §3b-cond conditional). Disclosed surviving objections: 'THE unique non-degenerate Frobenius form on H_n(R,q)' overstates Wenzl/Jones (non-degeneracy does not fix the Markov param z), and the Lean proves only a constant-collapse model tau_M_block_value == 1.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Soften the headline uniqueness to 'unique Markov trace given z=1/(q^{1/2}+q^{-1/2}) and tau(1)=1' (the z-normalization is already in the body); note the constant-collapse Lean model is a placeholder pending prop:hoefsmit-scattering-pipeline. Math sound, disclosed scaffolding."
+    },
+    {
+      "id": "eefc718620ea",
+      "block_or_script": "infra:status-label-overclaim-c1-comment-strip",
+      "paths": {
+        "py": "computations/status_label_overclaim_audit.py"
+      },
+      "finding": "da-overclaim (checker false-positive mode)",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "ee5607585fde637a8e02b5f6c924349ceaccef09",
+      "evidence": "The Bucket-C1 'sorry-free-over-sorry' heuristic matches the word 'sorry-free' in /- -/ docstrings co-occurring with 'sorry' — 3 of 3 audited C1 blocks (wenzl-positivity w6, pontryagin w7, markov-trace-frobenius w9) are pure docstring false positives. The 2026-06-24 comment-strip fix corrected the SHARP/Bucket-B set but the C1 co-occurrence test still scans comments.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Apply the same comment-strip (strip /- -/ and -- before matching) to the C1 sorry-free-over-sorry test, then regenerate the C1 bucket; the 23-entry C1 list will shrink. Until then, real C1 overclaims must be lens-confirmed per block."
     }
   ],
   "audited": {
@@ -948,9 +1085,44 @@
       "criteria": [
         "da-referee-verdict"
       ]
+    },
+    "prop:b1-hyperbolic-rows-theorem": {
+      "ts": "2026-06-24",
+      "sha": "ee5607585fde637a8e02b5f6c924349ceaccef09",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:collatz-contact-boundary": {
+      "ts": "2026-06-24",
+      "sha": "ee5607585fde637a8e02b5f6c924349ceaccef09",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:q-heat-kernel-peter-weyl": {
+      "ts": "2026-06-24",
+      "sha": "ee5607585fde637a8e02b5f6c924349ceaccef09",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:cyclotomic-l-value-decomposition": {
+      "ts": "2026-06-24",
+      "sha": "ee5607585fde637a8e02b5f6c924349ceaccef09",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:markov-trace-frobenius-selection": {
+      "ts": "2026-06-24",
+      "sha": "ee5607585fde637a8e02b5f6c924349ceaccef09",
+      "criteria": [
+        "da-referee-verdict"
+      ]
     }
   },
   "reviewed_up_to": {
-    "da-referee-verdict": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+    "da-referee-verdict": "ee5607585fde637a8e02b5f6c924349ceaccef09"
   }
 }
