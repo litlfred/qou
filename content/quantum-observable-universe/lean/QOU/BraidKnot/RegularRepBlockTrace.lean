@@ -19,9 +19,16 @@ eigenvalue theorem** (the central `C₂ = Σ_k X_k²` acts on the `λ`-isotypic 
 `ω_λ = Σ_{c∈λ} c(c)²`). Equivalently — and this is all the trace computation actually uses — the
 endomorphism `mulLeft C₂` is **diagonalisable with the block spectral decomposition**
 `mulLeft C₂ = Σ_λ ω_λ · π_λ`, where `π_λ` projects onto the `λ`-isotypic block (R-dimension
-`dim(λ)²`) and `Σ_λ π_λ = id`. None of this — not Maschke/Wedderburn for `R[S_n]`, not the
-partition ↔ irreducible classification, not the JM eigenvalues = contents theorem
-(Okounkov–Vershik) — is in the pinned Mathlib (`Mathlib.RepresentationTheory.*` is absent here).
+`dim(λ)²`) and `Σ_λ π_λ = id`.
+
+The *existence* of a block decomposition is **semisimplicity**, which **is** in the pinned Mathlib
+(`Mathlib.RepresentationTheory.Maschke`: `R[G]` is semisimple when `|G|` is invertible in `R`).
+What is **not** in Mathlib is the **S_n-specific Okounkov–Vershik layer** pinning down *which*
+blocks and *which* scalars: the partition ↔ irreducible classification, `dim(λ) = #SYT(λ)`, and the
+JM-eigenvalue = contents theorem. That identification — not semisimplicity — is the irreducible
+content of the hypothesis below. (`Mathlib.RepresentationTheory.*` is merely missing from this
+sandbox's partial olean cache; it builds from the pinned commit, so the gap is genuinely the
+Okounkov–Vershik mathematics, not a toolchain artifact.)
 
 `SnWedderburnSpectralData` bundles exactly that hypothesis. Everything downstream of it is **fully
 proved** in pure linear algebra (trace is linear; trace of a projection is the rank of its range,
@@ -66,9 +73,10 @@ projections `proj i` onto blocks `p i` of R-dimension `d i ^ 2` (the `λ`-isotyp
 `dim(λ)²`), the central element acting as the scalar `ω i` on block `i`
 (`mulLeft C₂ = Σ_i ω_i · proj_i`), and the blocks exhausting the space (`Σ_i proj_i = id`).
 
-This bundles precisely the representation-theoretic content absent from the pinned Mathlib
-(Wedderburn for `R[S_n]`, partition ↔ irreducible, JM eigenvalues = contents — Okounkov–Vershik).
-Every theorem below is proved outright *given* such a datum. -/
+This bundles precisely the **S_n Okounkov–Vershik content not in Mathlib** (the partition ↔
+irreducible classification, `dim(λ) = #SYT(λ)`, and JM eigenvalues = contents) that pins the blocks
+and scalars; the *existence* of such a decomposition is semisimplicity (`RepresentationTheory.Maschke`,
+which is in Mathlib). Every theorem below is proved outright *given* such a datum. -/
 structure SnWedderburnSpectralData (R : Type*) [Field R] (n : ℕ) where
   /-- Index of the irreducible blocks (the partitions of `n`). -/
   Idx : Type

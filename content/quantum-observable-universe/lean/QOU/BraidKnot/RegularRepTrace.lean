@@ -22,17 +22,19 @@ acting by left multiplication on the regular representation `R[S_n]`:
    `binom(n,2)`, the merged `JucysMurphyCoeff.centralC2_coeff_one`) it gives
    `trace_centralC2_eq_factorial_mul_choose_two`.
 
-2. **Block side (Wedderburn, *not* in pinned Mathlib):**
+2. **Block side (Wedderburn + Okounkov–Vershik):**
    `tr_reg(C₂) = Σ_λ dim(λ) · tr_{V_λ}(C₂) = Σ_λ dim(λ)² · Σ_{c∈λ} c(c)²`,
    using `R[S_n] ≅ ⊕_λ dim(λ)·V_λ` and the JM eigenvalue `ω_λ(C₂) = Σ_{c∈λ} c(c)²`.
 
 Equating the two sides is exactly Identity (B):
 `Σ_λ dim(λ)² · Σ_{c∈λ} c(c)² = n! · binom(n,2)`.
 **This file discharges side 1 in full generality over any `CommRing R`** (§7c base-ring
-discipline — no ℂ, no representation theory, no `dim(λ)`/SYT/RSK). Side 2 — the Wedderburn
-block decomposition of the group algebra together with the Jucys–Murphy eigenvalue theorem —
-is absent from the pinned Mathlib, so the equality of the two sides for **general `n`** remains
-future work; the `n ≤ 12` machine check stands in the meantime.
+discipline — no ℂ, no representation theory, no `dim(λ)`/SYT/RSK). Side 2 is formalised
+conditionally in `RegularRepBlockTrace`: its *existence* is semisimplicity (`Maschke`, in
+Mathlib), but the **S_n Okounkov–Vershik identification** — which blocks (partitions),
+`dim(λ)=#SYT(λ)`, and the JM-eigenvalue = contents — is not in Mathlib, so the general-`n`
+equality of the two sides stays conditional on that named input; the `n ≤ 12` machine check
+(`IdentityIContentDecomposition.idB_verified_le12`) stands unconditionally in the meantime.
 
 The general lemma `trace_mulLeft_eq_card_mul_coeff_one` is the standard "trace of the left
 regular representation reads off the identity coefficient" fact, proved here directly from the
@@ -89,7 +91,8 @@ element `C₂` acting by left multiplication on the regular representation `R[S_
 (`trace_mulLeft_eq_card_mul_coeff_one`: `tr_reg(z) = |S_n|·z(1)`), the order `|S_n| = n!`
 (`Fintype.card_perm` + `Fintype.card_fin`), and the identity coefficient `C₂(1) = binom(n,2)`
 (`centralC2_coeff_one`). This is side 1 of the Identity-(B) trace equation; equating it with the
-Wedderburn block side `Σ_λ dim(λ)²·Σ_{c∈λ} c(c)²` (absent from pinned Mathlib) yields (B). -/
+Wedderburn block side `Σ_λ dim(λ)²·Σ_{c∈λ} c(c)²` (formalised conditionally in `RegularRepBlockTrace`,
+the residual input being the S_n Okounkov–Vershik identification) yields (B). -/
 theorem trace_centralC2_eq_factorial_mul_choose_two (n : ℕ) :
     LinearMap.trace R (MonoidAlgebra R (Equiv.Perm (Fin n)))
         (LinearMap.mulLeft R (centralC2 (R := R) n))
