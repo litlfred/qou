@@ -55,8 +55,8 @@ def witnessR5Full_deuterium_placeholder :
   primal_obj := 1
   dual_obj := 1
   duality_gap_le := by
+    -- |1 - 1| = 0 ≤ 10⁻⁶ trivially; `simp` discharges it fully
     simp
-    positivity
   rho_star := 1
   rho_star_pos := by decide
 
