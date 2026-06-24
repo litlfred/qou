@@ -28,6 +28,7 @@ from q_parameter import Q as q0, HA as HA_val, E_CROSS
 import sys as _sys, pathlib as _pl
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
 from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
+from derived_masses import TARGET_NET_PROTON, TARGET_NET_NEUTRON  # noqa: E402
 
 
 try:
@@ -362,7 +363,6 @@ for nucleon_name, quark_types in [("PROTON (u,u,d)", ['u', 'u', 'd']),
         print_nf(f"    {r['name'][:25]}", r['nf'])
 
     # ── Ranking by multiple criteria ──────────────────────────────
-    from derived_masses import TARGET_NET_PROTON, TARGET_NET_NEUTRON
     target_net = TARGET_NET_PROTON if 'u' == quark_types[0] and quark_types.count('u') == 2 else TARGET_NET_NEUTRON
 
     print(f"\n  RANKING 1 — Naive (fewer demand channels, lower E_×):")
