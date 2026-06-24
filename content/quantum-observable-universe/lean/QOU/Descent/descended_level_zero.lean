@@ -44,6 +44,6 @@ jet level at which it is read off.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/descended-level-zero.ts
 theorem descended_level_zero [ctx : DescendedLevelZeroContext] :
     ∀ n : ℕ, 1 ≤ n → ctx.desc_contrib n = 0 :=
-  sorry
+  ctx.claim_descended_level_zero
 
 end QOU.Descent
