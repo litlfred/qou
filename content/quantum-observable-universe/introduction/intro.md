@@ -2,10 +2,11 @@ The starting point is a collection of observations about how we
 interact with the world.  We see colours, and three of them mix to
 produce white.  We move around, rotate, and look from different
 angles, yet the things we measure do not depend on where we stand
-or which way we face.  Time flows: the world unfolds, and we drift
-along that flow.  Three-fold structure recurs throughout nature —
-three colours, three generations of matter, three-fold chirality —
-in a way that demands explanation rather than stipulation.
+or which way we face.  Time flows in one direction, and we are
+carried along with it.  Three-fold structure recurs throughout
+nature — three colours, three generations of matter, three-fold
+chirality — too insistently to be coincidence; it asks for
+explanation rather than stipulation.
 Multiple observers share the same world; they do not each
 illuminate a private universe but navigate a common landscape.
 
@@ -22,46 +23,57 @@ initial conditions.  Even the capacity for computation — to reason,
 count, and calculate — seems woven into the fabric rather than
 bolted on.
 
-Heisenberg reminded us that what we observe is not nature itself
-but nature exposed to our method of questioning.  We do not ask
-what the universe *is* — we ask what its mechanics *do*.
-Category theory is the natural language for the question, because
-it describes structure and transformation without committing to
-any particular ontology.
+As Heisenberg put it, what we observe is never nature itself but
+nature exposed to our method of questioning.  So we do not ask
+what the universe *is*; we ask what its mechanics *do* — how its
+processes compose and transform.  That question has a natural
+mathematical home: category theory, the study of how processes
+combine, which describes structure and transformation without
+committing to any picture of what the underlying objects "really
+are."
 
 The central thesis is that these everyday observations, once
-stated carefully, determine a specific algebraic structure: a
-*rigid :refterm[monoidal category]{#monoidal-category}* equipped with a fibre functor and a
-Frobenius trace.  We call this structure a **quantum
-observable universe** (QOU).  Its axioms encode precisely the
-features listed above and nothing more.
+stated carefully, single out one kind of structure: a category of
+processes rich enough to integrate, to differentiate, and to be
+measured against.  A structure meeting *all* of these requirements
+— including the demands that its states be observable, that
+measurements stay consistent, and that things have volume — is
+what we call a **quantum observable universe** (QOU).  Later
+chapters name the ingredients precisely (a rigid
+:refterm[monoidal category]{#monoidal-category}, a self-dual
+algebra object, a fibre functor playing the role of measurement,
+and a trace playing the role of integration); the force of the
+thesis is that the observations *determine* them — nothing else
+is added by hand.
 
-The categorical language identifies, as internal objects of the
-category, the physical concepts that describe the mechanics of a
-quantum universe.  The Lagrangian is a trace; the Dirac operator
-is a connection twisted by the Reeb derivation; the action is an
-integral; curvature, gauge field, and matter current are specific
-morphisms in $\mathbf{C}$.  Each is forced — not borrowed from
-the classical dictionary, but recovered as the unique construction
-the axioms allow.
+The categorical language recovers, as internal pieces of the
+structure, the physical concepts that describe a universe's
+mechanics.  The Lagrangian is a trace; the action is an integral;
+curvature, the gauge field, and the matter current are specific
+processes in the category; the Dirac operator is a connection
+twisted by the system's own internal time-flow.  Each is forced —
+not borrowed from the classical dictionary, but recovered as the
+unique construction the axioms allow.
 
-The consequences are broad in scope and specific in detail.  The
-symmetry group $\mathrm{SU}_2(R)$ is not assumed; it emerges from
-the axioms.  The uncertainty principle is not postulated; it
-appears as the geometric signature of degrees of freedom not yet
-resolved.  Genus four is not chosen either; it is forced, and a
-single algebraic curve realises it canonically: Bring's surface
-$\Sigma_4$, the universal genus-$4$ curve with maximal
-automorphism group $S_5$.  Particles can be viewed as knots or as
-vortices; the algebra describes their interactions.  Restricting
-to knots that embed in $\Sigma_4$ makes the operator space
-*finite*: the embeddability bound yields exactly six force
-operators and the identity, no more.
+The consequences are broad in scope and specific in detail.
+Return to the observation that what we measure does not depend on
+which way we face: the symmetry behind that viewpoint-independence
+— an internal rotation group relating one observer's description
+to another's — is not assumed but emerges from the axioms, and the
+chapters identify it precisely.  The uncertainty principle is not
+postulated either; it appears as the geometric signature of
+degrees of freedom not yet resolved.  Nor is the state space free
+to take any shape: the axioms force it to be a surface of one
+fixed genus, rigid rather than chosen.  Particles can be viewed as knots or as vortices, and
+the algebra describes their interactions; because only finitely
+many knots fit on a surface of fixed genus, the catalogue of
+possible interactions is finite too — exactly six force operators
+and the identity, no more.
 
-What remains, after the structure is fixed, is calibration.
-Representation theory of the Iwahori–Hecke algebra and the Bring
-constraint $\chi = -6$ together fix the degrees of freedom:
-**exactly three** inputs are required — one dimensionless ratio
+What remains, after the structure is fixed, is calibration.  The
+internal symmetry and the rigid topology of the state space leave
+only a handful of free parameters: **exactly three** inputs are
+required — one dimensionless ratio
 ($m_\mu/m_e$), one leptonic mass scale ($m_e$), and one hadronic
 energy scale ($\mathfrak{Q}_\beta(n)$).  Every other mass, Q-value, binding
 energy, and coupling constant is a prediction.  That so much
