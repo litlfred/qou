@@ -131,6 +131,9 @@ export default chapter({
             // Re-homed from the trace/operator collection: the Borromean
             // Markov-trace closed form belongs with the Markov corrections.
             "borromean-markov-trace-closed-form",
+            // Re-homed orphan: H_3 Jones/Temperley–Lieb Markov–Wenzl weights
+            // feed the Borromean trace; sit with the Markov corrections.
+            "h3-markov-wenzl-weights",
           ],
         }),
         section({
@@ -215,6 +218,11 @@ export default chapter({
             "he4-channel-active-set",
             "he4-two-row-dominance",
             "markov-trace-frobenius-selection",
+            // Re-homed orphans: the min-Frobenius-norm collapse T_β = S·1
+            // (and its general unital-R-algebra lift) that selects the
+            // Markov-trace direction the Hoefsmit He-4 channel uses.
+            "t-beta-markov-frobenius-collapse",
+            "t-beta-markov-frobenius-collapse-general",
             "pn-averaging-uniqueness",
             "averaging-resonance-rule",
             "meson-color-tube-uniqueness",
@@ -538,6 +546,10 @@ export default chapter({
         "term6-binding-density-table1-data",
         "full-pole-structure-mass-trace",
         "habiro-residue-sum-equivalence",
+        // Re-homed orphan: the Borromean h^4 = -3/4 categorical derivation
+        // (R-matrix character × Markov normalisation via Schur–Weyl)
+        // consumes the Habiro residue sum + the H_3 Markov–Wenzl weights.
+        "borromean-h4-categorical-derivation",
       ],
     }),
 
@@ -857,6 +869,9 @@ export default chapter({
         "q-integer-mass-formula",
         "lambda-scale-substrate-form",
         "topological-mass-trefoil",
+        // Re-homed orphan: kaon/pion mass ratio from Hecke χ^{(2,1)}(σ_1^5)
+        // + Seifert volumes (structured near-match, ~290 ppm vs PDG).
+        "meson-kaon-pion-hecke-seifert",
         "tower-binding-energy",
         "tower-binding-energy-table-data",
         "mass-table-z1-20",
