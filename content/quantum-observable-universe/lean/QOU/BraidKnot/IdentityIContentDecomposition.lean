@@ -712,6 +712,23 @@ closed form `Σ_{i,k} λ_i·min(λ_i,λ_k) − …`), which couples rows and col
 theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
     sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 := by
   -- Ref: [manuscript] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (A)"
+  -- Step 1: bridge to Finset double sum + cast the ℕ hook to its ℤ form (exact on cells).
+  have hook_eq : sumSqHooks l = ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0),
+      ((l.getD i 0 : ℤ) - j + (colLen l j : ℤ) - i - 1) ^ 2 := by
+    unfold sumSqHooks
+    simp_rw [list_range_map_sum]
+    apply Finset.sum_congr rfl; intro i _
+    apply Finset.sum_congr rfl; intro j hj
+    have hj' := Finset.mem_range.mp hj
+    have hi' : i < colLen l j := (colLen_duality l hl i j).mpr hj'
+    have hcast : (((l.getD i 0 - j) + (colLen l j - i) - 1 : ℕ) : ℤ)
+        = (l.getD i 0 : ℤ) - j + (colLen l j : ℤ) - i - 1 := by omega
+    rw [hcast]
+  -- Step 2 (remaining): expand `H² = P²+Q²+1+2PQ−2P−2Q` (P = λ_i−j, Q = colLen j−i), split,
+  -- and plug in the verified term lemmas (six_mul_sum_range_refl_sq for P; cell_fubini +
+  -- the K-moment row forms for Q; two_mul_sum_lambda_min + sum_j_colLen_sq_row_form for PQ;
+  -- six_mul_sumSqContents for the content side), then `ring`.
+  -- Ref: [manuscript] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (A)"
   sorry
 
 /-! ## (B) Jucys–Murphy content-square mean -/
