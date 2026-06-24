@@ -1,0 +1,39 @@
+{
+  "computation": "lever1_lambda_sw_no_shortcut",
+  "description": "The lever-1 seed tau = 2.6424 is FORCED by the three wired anchors a_D^(2)=1, a_D^(3)=lw(2), a_D^(4)=Family-A (production proton multiplier). It is non-integer and strictly between 2 and 3; NO integer tau in {2,3,4} reproduces the wired Family-A from the recurrence (golden tau=3 / lambda=phi^2 predicts a_D^(4)=3.01 vs wired 2.53, 19% miss). So B is not a topological SL2(Z) monodromy (integer trace) and there is no icosahedral-golden shortcut. The genuine 2.6424-producing object is the abelianised lambda_SW real connection holonomy (owner-gated keystone M on the elliptic factor).",
+  "discipline": "no fit; symbolic + mpmath 50dps; numerology guard -- the golden tau=3 (lambda=phi^2, icosahedral) is TESTED against the wired seed and REFUTED, not forced; (b)-exclusion of all integer/topological tau, invariant = integrality of SL2(Z) traces + the wired-anchor constraint.",
+  "auditOnly": "docs/audits/2026-06-24-lever1-lambda-sw-no-shortcut.md",
+  "results": {
+    "tau_seed_forced_by_wired_anchors": "2.642386313301486",
+    "tau_seed_is_integer": false,
+    "nearest_integer": 3,
+    "golden_tau_phi2": "3.0",
+    "integer_tau_predictions_vs_wired_FamilyA": {
+      "2": {
+        "predicted_aD4": "1.673931246",
+        "wired_FamilyA_aD4": "2.532779664",
+        "rel_miss": "0.3391"
+      },
+      "3": {
+        "predicted_aD4": "3.010896869",
+        "wired_FamilyA_aD4": "2.532779664",
+        "rel_miss": "0.1888"
+      },
+      "4": {
+        "predicted_aD4": "4.347862492",
+        "wired_FamilyA_aD4": "2.532779664",
+        "rel_miss": "0.7166"
+      }
+    },
+    "theta_seed": "0.781453946017",
+    "theta_golden_tau3": "0.962423650119"
+  },
+  "assertions": {
+    "tau_seed_NOT_integer": true,
+    "no_integer_tau_fits_wired_aD4": true,
+    "golden_tau3_refuted_by_seed": true,
+    "tau_seed_strictly_between_2_and_3": true
+  },
+  "allPassed": true,
+  "verdict": "NO TOPOLOGICAL/INTEGER/GOLDEN SHORTCUT. The seed tau=2.6424 is forced by the wired anchors (1, lw(2), Family-A), is non-integer, and no integer tau (incl. the icosahedral golden tau=3, lambda=phi^2) reproduces the wired Family-A (golden predicts a_D^(4)=3.01 vs 2.53, 19% miss). So the binding 2x2 object is NOT a topological SL2(Z) monodromy and the golden hypothesis is REFUTED by the seed (numerology guard held). The genuine 2.6424-producing object is the owner-gated abelianised lambda_SW REAL connection holonomy on the coral E_q -- no algebraic shortcut. Concrete owner-gated next step: integrate the SW differential lambda_SW = x dz on E_q and its Gauss-Manin prolongation to recover the real-holonomy 2x2 B with tr=2.6424. No fit; nothing wired."
+}
