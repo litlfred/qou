@@ -1750,6 +1750,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(gram_matrix_n, m)?)?;
     m.add_function(wrap_pyfunction!(gram_inverse_n, m)?)?;
     m.add_function(wrap_pyfunction!(nf_tr_n, m)?)?;
+    m.add_function(wrap_pyfunction!(kl_betti_sum_rust, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_atomic_all_partitions, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi_q, m)?)?;
@@ -2072,4 +2073,17 @@ fn tr_m_atomic_mpfr_with_state(
     )
     .map_err(pyo3::exceptions::PyRuntimeError::new_err)?;
     Ok((val, final_state.to_ffi()))
+}
+
+#[pyfunction]
+fn kl_betti_sum_rust(n: usize, words: Vec<Vec<u8>>) -> PyResult<i64> {
+    let mut ctx = hecke_engine::kazhdan_lusztig::KLContext::new(n);
+    let identity = hecke_engine::kazhdan_lusztig::Perm::identity(n);
+    let mut sum_betti = 0;
+    for w_elements in words {
+        let w = hecke_engine::kazhdan_lusztig::Perm::new(n, &w_elements);
+        let p = ctx.kl_polynomial(identity, w);
+        sum_betti += p.eval_at_1();
+    }
+    Ok(sum_betti)
 }

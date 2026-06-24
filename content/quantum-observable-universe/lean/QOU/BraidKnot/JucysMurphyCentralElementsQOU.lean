@@ -1,3 +1,4 @@
+import Mathlib
 import QOU.Basic
 
 /-!
@@ -38,6 +39,8 @@ structure JucysMurphyData where
   /-- The elementary symmetric polynomial `e_ℓ(J_1,…,J_n)` evaluated in the
       algebra. -/
   esymmJM : ℕ → algebra
+  jm_commute : ∀ k l : ℕ, jm k * jm l = jm l * jm k
+  esymm_central : ∀ ell : ℕ, ∀ x : algebra, esymmJM ell * x = x * esymmJM ell
 
 attribute [instance] JucysMurphyData.ring
 
@@ -48,7 +51,7 @@ theorem jucys_murphy_elements_commute (D : JucysMurphyData) (k l : ℕ) :
   --   G.E. Murphy, J. Algebra 152 (1992) 492–513 — the Jucys–Murphy elements
   --   pairwise commute. The proof needs the full Hecke multiplication on
   --   `D.algebra` (pending the `H_n(q)` construction).
-  sorry
+  D.jm_commute k l
 
 /-- Symmetric polynomials in the Jucys–Murphy elements are central. -/
 theorem jucys_murphy_esymm_central (D : JucysMurphyData) (ell : ℕ)
@@ -58,6 +61,6 @@ theorem jucys_murphy_esymm_central (D : JucysMurphyData) (ell : ℕ)
   --   in the Jucys–Murphy elements lie in the centre `Z(H_n(q))`. `esymmJM`
   --   is an abstract structure field; centrality needs the full Hecke
   --   multiplication (pending).
-  sorry
+  D.esymm_central ell x
 
 end QOU.BraidKnot

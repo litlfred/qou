@@ -1,0 +1,15 @@
+## 2026-06-22T12:21:29Z
+You are a Worker subagent in `/Users/litlfred/space_cats/qou/.agents/worker_mass_theory_placeholders_5`.
+Your mission:
+1. Verify you are on branch `claude/resolve-mass-theory-placeholders-2026-06-22`.
+2. Delete the 23 redundant shadow stubs via git:
+   ```bash
+   git rm content/quantum-observable-universe/mass-theory/bring-trilog-imaginary-tate-rational.lean content/quantum-observable-universe/mass-theory/chirality-writhe-ribbon-derivation.lean content/quantum-observable-universe/mass-theory/cl3-zeta5-orbit-sum-identity.lean content/quantum-observable-universe/mass-theory/cl3-zeta5-pslq-independence.lean content/quantum-observable-universe/mass-theory/cyclotomic-cl3-orbit-sum-general.lean content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.lean content/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths.lean content/quantum-observable-universe/mass-theory/cyclotomic-orbit-sum-all-depths.lean content/quantum-observable-universe/mass-theory/cyclotomic-trilog-imaginary-closed-form.lean content/quantum-observable-universe/mass-theory/delta-max-uniform-bound.lean content/quantum-observable-universe/mass-theory/feynman-categorical-trace.lean content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.lean content/quantum-observable-universe/mass-theory/feynman-trace-collapse.lean content/quantum-observable-universe/mass-theory/jonquiere-cyclotomic-tate-rationality.lean content/quantum-observable-universe/mass-theory/knot-operator-transition.lean content/quantum-observable-universe/mass-theory/markov-pair-z2.lean content/quantum-observable-universe/mass-theory/phi-q-tower-algebraic-stratification.lean content/quantum-observable-universe/mass-theory/staircase-corner-hook.lean content/quantum-observable-universe/mass-theory/term6-binding-density.lean content/quantum-observable-universe/mass-theory/three-calibration-inputs.lean content/quantum-observable-universe/mass-theory/two-filtration-bridge-general.lean content/quantum-observable-universe/mass-theory/wigner-np-pairing.lean content/quantum-observable-universe/mass-theory/symbolic-character-table.lean
+   ```
+3. Run `lake build` to verify Lean compiles with 0 errors.
+4. Run `bun run validate` (or `/Users/litlfred/.bun/bin/bun run validate`) to ensure content validation passes.
+5. Commit the deletions as `chore(mass-theory): remove redundant shadow stubs`.
+6. Push to origin: `git push -u origin claude/resolve-mass-theory-placeholders-2026-06-22`.
+7. Open PR: `gh pr create --title "chore(mass-theory): resolve placeholders and vacuity defects" --body "Resolves stubs and native_decide masking in mass-theory"`.
+8. Execute the `prepare-merge-auto` workflow on this PR. Refer to `.claude/skills/local/prepare-merge-auto.md`. Make sure to do sibling coordination, check review comments, and handle all phases.
+9. Deliver your final handoff.md under `/Users/litlfred/space_cats/qou/.agents/worker_mass_theory_placeholders_5/` and message me the result.

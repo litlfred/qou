@@ -60,3 +60,7 @@ path = "content/unital-groebner-bases/lean"
 [[require]]
 name = "fred2005"
 path = "content/fred2005-formal-groups/lean"
+[[require]]
+name = "doc-gen4"
+git = "https://github.com/leanprover/doc-gen4"
+rev = "main"
