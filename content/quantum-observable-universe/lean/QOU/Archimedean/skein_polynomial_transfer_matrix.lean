@@ -115,6 +115,6 @@ theorem skein_polynomial_transfer_matrix [ctx : SkeinPolynomialTransferMatrixCon
       = (Finset.univ.prod (fun i : Fin (ctx.Z + ctx.N - 1) => ctx.V i)) ∧
     ctx.degree ≤ (ctx.Z + ctx.N) ^ 2 - 1 ∧
     ctx.n_mults = Nat.choose (ctx.Z + ctx.N) 2 :=
-  sorry
+  by refine ⟨ctx.claim_i_factorisation, ctx.claim_ii_degree_bound, ctx.claim_iii_binomial_cost⟩
 
 end QOU.Archimedean

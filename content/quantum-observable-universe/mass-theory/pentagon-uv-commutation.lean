@@ -4,7 +4,7 @@ namespace QOU.QuantumBloch
 
 /-- **Proposition (pentagon UV commutation).**
     The master pentagon relation holds under the quantum torus relation. -/
-theorem pentagon_uv_commutation [ctx : PentagonUvCommutationContext] :
+theorem pentagon_uv_commutation_mass_theory [ctx : PentagonUvCommutationContext] :
     (haveI := ctx.ringR;
       ctx.Phi_q ctx.v * ctx.Phi_q ctx.u =
         ctx.Phi_q ctx.u * ctx.Phi_q (ctx.u * ctx.v) * ctx.Phi_q ctx.v) ∧
