@@ -44,3 +44,7 @@ $q \mapsto q^{-1}$ forces all Markov traces of writhe-zero braids
 to be even functions of $h$.  The $h^3$ order enters through
 the flavor-split $X = (q-1)^2(1-q^{-4})/3 = h^3/6 + \cdots$,
 which is a skein difference (not a single-braid Markov trace).
+
+## Lean formalization
+
+The companion Lean `meson_scale_independence` states the scale-independence claim and defers its proof via `sorry` (`-- Ref: [manuscript]`).

@@ -172,3 +172,7 @@ first assertion bounds. Both forms agree with CODATA $0.7823$ MeV
 within $7\%$; the canonical predictor used elsewhere remains
 Form A at $+0.168\%$ residual via the single-wrap symbolic closed
 form of [prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic).
+
+## Lean formalization
+
+The companion Lean records the bridge identities (`polynomial_bridge_identity`, `leading_order_ratio_identity`, `bridge_first_order_remainder`) with the `Real.log` steps deferred via `sorry` (`-- Ref: [manuscript]`).

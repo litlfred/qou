@@ -202,3 +202,7 @@ holonomy at the base**, and its $n$-independence in Step 4 is
 the jet-tower expression of Nakayama triviality: every :refterm[descent]{#descent}
 step undoes a jet prolongation without introducing new Nakayama
 twist.
+
+## Lean formalization
+
+The companion Lean `descended_level_zero` states the result conditional on a `DescendedLevelZeroContext` class instance and defers its proof via `sorry` (`-- Ref: [manuscript]`).

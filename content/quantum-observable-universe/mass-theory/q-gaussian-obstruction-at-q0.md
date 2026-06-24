@@ -49,3 +49,7 @@ on the partition chain). This is the rigorous backing for the framing in
 [`rem:markov-chain-fluctuations`](#rem:markov-chain-fluctuations): any
 "$q$-Gaussian limit" invoked for braid observables at $q_0$ is mis-applying
 the $|q| \le 1$ Bożejko–Speicher theory.
+
+## Lean formalization
+
+The companion Lean `qGaussianObstructionAtQ0` states the obstruction and defers its proof via `sorry` (`-- Ref: [bozejko-speicher1991]`).
