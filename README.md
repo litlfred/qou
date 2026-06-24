@@ -393,7 +393,7 @@ The compute pipeline is layered into reusable packages so external researchers c
 
 ```bash
 bun install                          # Install dependencies (root + content/)
-bun run validate                     # Validate content objects
+bun run scripts/run-validate.ts content/quantum-observable-universe   # Validate content objects
 bun run build:content                # Generate chapters/*.tex from content objects
 ```
 
