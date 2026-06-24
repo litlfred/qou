@@ -80,3 +80,7 @@ Bloch–Wigner dilogarithm, hyperbolic-volume formula
 — is the value of the same composite $\pi_\infty \circ \tau$.
 There is no archimedean side-channel: every real-valued QOU
 observable is the $\tau$-shadow of a categorical morphism.
+
+## Lean formalization
+
+The companion Lean `vol_through_tau_factors` currently encodes an existence stub (`∃ v, True`) pending a faithful statement; the sketch above is the intended content, deferred via `sorry` (`-- Ref: [kashaev1997]`, `[manuscript]`).

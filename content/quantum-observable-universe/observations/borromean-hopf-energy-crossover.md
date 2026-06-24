@@ -140,3 +140,7 @@ mass denominator of the kinetic energy, creating a
 volume-dependent feedback.  The diquark phase has zero volume
 contribution, so its kinetic energy is independent of $V_B$.
 $\square$
+
+## Lean formalization
+
+The companion Lean `borromean_hopf_energy_crossover` states the crossover and defers its proof via `sorry` (`-- Ref: [manuscript]`).

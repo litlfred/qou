@@ -116,3 +116,7 @@ Lagrange-interpolation form is the cleanest computable expression
 and is what implementations of $H_n(q)$ projectors use in practice
 (e.g. SageMath's `IwahoriHeckeAlgebra`, the `pyhecke-native` module
 in this repo).
+
+## Lean formalization
+
+The companion Lean `explicit_central_idempotent_via_murphy` states the Murphy-element construction of the central idempotent and defers it via `sorry` (`-- Ref: [murphy1981]`, `[dipper-james1986]`).

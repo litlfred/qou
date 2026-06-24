@@ -187,3 +187,7 @@ for the constituent-vacuum factor, not for the entire canonical
 braid; the convention adapter keeps the partition explicit so
 downstream consumers do not silently apply LR to a non-tensor
 braid.
+
+## Lean formalization
+
+The companion Lean `lr_tensor_character_bridge` currently records a placeholder conclusion (`1 = 1`) rather than the full Littlewood--Richardson character-bridge identity; the content above is the intended statement, deferred via `sorry` (`-- Ref: [manuscript]`).

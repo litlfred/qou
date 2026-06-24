@@ -31,3 +31,7 @@ is a quantum observable universe with the following structural properties:
    reduces to fiber data $(A, \tau, q(p))$ with the involution
    $\sigma \colon \mathbb{P}(V) \hookrightarrow \mathrm{Ad}(A)$
    ([fibre adjoint involution](#prop\:fiber-adjoint-involution)).
+
+## Lean formalization
+
+The companion Lean `qu_to_qou_exists` currently encodes an existence stub (`∃ q, True`) pending a faithful statement; the structural proof above is the intended content, deferred via `sorry` (`-- Ref: [manuscript]` §3, `[yekutieli2010]`).

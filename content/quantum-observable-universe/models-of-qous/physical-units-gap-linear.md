@@ -30,3 +30,7 @@ $(1 - q^{-1})$ of the
 [categorical Dirac operator](#def:categorical-dirac-operator).  The
 identity is verified numerically to fifty digits in the witness
 [`q1-mass-gap-probe.witness.json`](../../../computations/q1-mass-gap-probe.witness.json).
+
+## Lean formalization
+
+The companion Lean states `physical_units_gap_linear` and `gap_bound_vanishes_at_one`; the elementary algebraic discharge (`field_simp; ring`) is deferred via `sorry` (`-- Ref: [manuscript]`).

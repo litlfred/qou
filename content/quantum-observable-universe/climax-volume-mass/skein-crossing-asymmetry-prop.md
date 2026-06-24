@@ -26,3 +26,7 @@ $$
 
 At $q = 1$ the asymmetry vanishes; at $q \to \infty$ the ratio
 approaches $1$.
+
+## Lean formalization
+
+The companion Lean `skein_crossing_asymmetry` currently encodes a placeholder (`: True`); the intended statement ($q > 1 \Rightarrow \tfrac{1}{2}(q - q^{-1}) > 0$) is sketched in-file and deferred via `sorry` (`-- Ref: [manuscript]`).
