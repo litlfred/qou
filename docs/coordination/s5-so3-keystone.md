@@ -184,3 +184,21 @@ family), NOT a naive ~8%-off number-match. Shared validation target: the
 `144·C(n)=−n(n−1)(2n−13)` defect. Coordinated on #2488. c=2 status: `lw(2)=(q+1)²/(3q)`
 is derivation-tight but **untested** (no independent c=2 observable; Hopf-diquark the
 candidate) — `docs/audits/2026-06-24-lw2-c2-prediction-untested-status.md`.
+
+**Geometric `W` constraint — `H^{1,0}(Bring)` is A₅-irreducible (2026-06-24, #2701).**
+Working the `a_D=lw` bridge above, the relevant Bring fact is now computed exactly in
+Sage (character theory, no numerics): Bring is the canonical genus-4 curve in
+`P³ = P(`std 4-dim S₅ rep`)`, so `H^{1,0}(Bring)` **is** the standard rep — verified
+irreducible over S₅ (`⟨χ,χ⟩=1`) and **A₅-irreducible** (`χ|_{A₅}=[4,0,1,−1,−1]`,
+`⟨·,·⟩=1`). Two consequences for the geometric `W_λ`/`W` build:
+1. **No A₅-invariant rank-2 subspace of the holomorphic differentials** ⇒ the
+   cheat-sheet `H¹(Bring)=2W` cannot be an A₅-subrep of the forms; `W` must be an
+   **isogeny/CM factor of `Jac(Bring)`** (Riera–Rodríguez decomposition), realized at
+   the de Rham / abelian-variety level.
+2. **`tr B` (= τ(q₀)=2.6424, the `a_D=lw` recurrence trace) is a q-_family_
+   Gauss–Manin _monodromy_ trace**, not a fixed-curve period — so the Seifert–CS index
+   at q₀ must come from the q-family matrix `M` (this keystone), confirming the
+   "functional-level, not naive number-match" framing. The torus shortcut is separately
+   refuted: `τ_torus = 2cosh2η₀ = 2.0437 ≠ 2.6424`. Probe/audit only, no fit:
+   [`computations/substrate/lever1_bring_period_trB.sage`](../../computations/substrate/lever1_bring_period_trB.sage),
+   audit `docs/audits/2026-06-24-lever1-trB-geometric-target.md`. Coordinated on #2608/#2488.
