@@ -5,8 +5,8 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-06-24T03:52:14Z
-updated_at: 2026-06-24T05:57:47Z
+updated_at: 2026-06-24T11:17:49Z
 parent: k65k
 ---
 
-402/659 covered, 257 gaps (was 492). Mechanical inline-proof extraction complete corpus-wide (## Proof, ## Derivation, **Proof.**, *Proof.* italic/EOF). Remaining 257 are statement-only: need authored proofs (transcribe sorry-free Lean) or proof:'external'|'definitional' marking. Audit: content/pipeline/audit-narrative-proof-presence.ts
+413/659 covered, 246 gaps (was 492). DONE: all mechanical inline-proof extraction (## Proof, ## Derivation, **Proof.**, *Proof.* EOF) + all 33 authored-from-Lean candidates. Authored phase FLOOR reached: remaining 246 gaps are (a) trivial Lean stubs / axiom-backed / rfl-restatements (~half of 'sorry-free' candidates — vacuity overlap), (b) conjectural/numerical (no honest proof), (c) no-Lean blocks, (d) ORPHAN-PARENT blocks not in any chapter manifest (q-beta family, mass-side, habiro-pochhammer, meson-qcg — valid drafts exist, can't wire). Next: i4fx (folio-assistant proof:external|definitional marker) unblocks marking; orphan-parent manifest wiring is separate structural work.
