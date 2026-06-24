@@ -1321,6 +1321,138 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cb659f8c0ffc",
+          "ts": "ce8950017eb2"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "ts:46-47 wires computation.witness=codata-masses.witness.json (CODATA masses, not a Q_β witness); prose md:135 names q_parameter.py while ts computation.script=codata_masses.py; q_0 used is muon-anchored (pre-re-pin).",
+        "rebuttal": "partial→survived — q_0 shifts only ~22 ppb between anchors so the 0.17% headline is unaffected and the algebra is exact (0.78365, +0.166%); but the cited witness does not reproduce Q_β and the script names disagree. Recommend a genuine Q_β witness + script reconciliation.",
+        "evidence": [
+          {
+            "text": "neutron-qvalue-symbolic.ts:46-47; .md:135"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "major"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cb659f8c0ffc",
+          "ts": "ce8950017eb2"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "0.17% could be coincidence (audit possibility b); no independent derivation of the |q^2-2q-1| numerator.",
+        "rebuttal": "partial — block claims only 'empirical evidence for the ansatz', not closure; concern is live but disclosed (authorNotes reproduce the (a)/(b) disjunction + cite the audit).",
+        "evidence": [
+          {
+            "text": "neutron-qvalue-symbolic.md:117-124; audit 2026-05-24:27"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "minor"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cb659f8c0ffc",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "Title 'derived symbolically' + 'predicted, not used as input' smells like derived-status laundering of a fit.",
+        "rebuttal": "rebutted — body+authorNotes explicitly scope to 'conditional on the ansatz ... does not derive it'; cite the 2026-05-24 audit.",
+        "evidence": [
+          {
+            "text": "neutron-qvalue-symbolic.md:117"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "minor"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cb659f8c0ffc",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "theorem neutron_qvalue_symbolic projects class fields (self-assuming risk §3b-cond rule 5).",
+        "rebuttal": "rebutted — the genuinely-derived part Δ(net)=(h^2-2h)/2 is proved by ring from net coefficients in the BorromeanQuark conditional class (non-degenerate); the unproved ansatz is the disclosed gap, not hidden.",
+        "evidence": [
+          {
+            "text": "neutron_qvalue_symbolic.lean:64-70,99-101"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "cb659f8c0ffc",
+          "ts": "ce8950017eb2"
+        },
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The +0.17% Q_β match rides on the ansatz Q_β=|Δ(net)|·E_0 the cited audit labels 'POSTULATED, NOT DERIVED' (with net != the tr_M-weighted mass) — honestly disclosed, but the wired witness is a CODATA-masses witness (not a Q_β witness) and prose/ts name different scripts, a surviving reproducibility-wiring defect.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"

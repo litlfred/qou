@@ -1,0 +1,114 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "287700fc333b",
+          "ts": "b078fe9e7e60"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "A predict().value API + 242-ppb witness table reads as a working closure while the \u0394_\u03bb gate is open.",
+        "rebuttal": "rebutted \u2014 title formula explicitly 'conditional on \u0394_\u03bb' (md:1), Input lists \u0394_\u03bb 'currently open' (md:13), witness is auditOnly with open_gate:delta_lambda and 'NOT a derived \u0394_\u03bb result'; ts status:experimental, tag open-gate. No closure claimed.",
+        "evidence": [
+          {
+            "text": "mba-step09b-per-isotope-binding.md:1,13; witness open_gate:delta_lambda"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "minor"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "287700fc333b",
+          "ts": "b078fe9e7e60"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "md:137 '(closed substrate form, no fit)' + md:156 'sorry-free' in a block whose central object is an open fit-gated sum trips the status-label checker.",
+        "rebuttal": "partial \u2014 both labels are correctly scoped: 'no fit' qualifies E_0=m_e/(q_0(q_0-1)) (closed substrate constant), 'sorry-free' qualifies prop:sl2-prolongation-recurrence (verified). Neither attaches to \u0394_\u03bb. Hygiene flag only (label proximity invites misreading); no factual error.",
+        "evidence": [
+          {
+            "text": "mba-step09b-per-isotope-binding.md:137,156"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "minor"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "287700fc333b",
+          "ts": "b078fe9e7e60"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "B_pred D=+23% vs AME with no producer run is not reproducible.",
+        "rebuttal": "rebutted \u2014 witness self-discloses hand-authored/non-derived/provisional and discloses per-isotope error vs AME; appendix maintenance-contract present and sync'd. Honest disclosed non-reproducibility.",
+        "evidence": [
+          {
+            "text": "mba-step09b-per-isotope-binding.witness.json provenance"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "287700fc333b",
+          "ts": "b078fe9e7e60"
+        },
+        "result": "pass",
+        "verdict": "clean",
+        "referee_argument": "The status-label checker flagged this block's 'no fit'/'sorry-free' labels, but the adversarial lens REBUTS that flag: the labels are correctly scoped to E_0 and the sl2-prolongation recurrence, NOT to the open \u0394_\u03bb gate, which the block honestly flags as the Track A blocker.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
+      }
+    ]
+  },
+  "source_hashes": {
+    "md": "287700fc333b",
+    "ts": "b078fe9e7e60"
+  },
+  "updated_at": "2026-06-24T06:07:15Z"
+}
