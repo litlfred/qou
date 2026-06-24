@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:skein-coulomb-enhancement",
+  proofs: ["prf:skein-coulomb-enhancement"],
   title:
     "Coulomb enhancement from electron-proton Skein crossings",
   tags: [

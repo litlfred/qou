@@ -248,6 +248,7 @@ export default chapter({
         "hadron-q-self-correction",
         "hadron-q-self-correction-table-data",
         "skein-coulomb-enhancement",
+        "skein-coulomb-enhancement-proof",
         "skein-coulomb-enhancement-table1-data",
         "skein-coulomb-enhancement-table2-data",
         "groebner-nf-computation",

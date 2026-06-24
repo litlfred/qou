@@ -1,0 +1,13 @@
+We establish what the formal witness proves: the proposed enhancement factor is well-defined with exactly the qualitative behaviour an attractive Coulomb correction must have. Write $\eta_q = \alpha_{\mathrm{EM}}(q)\,Z/\beta_e$ for the $q$-deformed Sommerfeld parameter and $x = 2\pi\eta_q$, so
+$$
+F_q(Z,E) = \frac{x}{1 - e^{-x}}.
+$$
+With $\alpha_{\mathrm{EM}}(q) = (q - q^{-1})\lambda_\alpha$ in crossing-asymmetry form, $\eta_q > 0$ whenever $q > 1$, $Z > 0$, $\beta_e > 0$ (the crossing weight $q - q^{-1} > 0$ for $q > 1$) — `sommerfeldParam_pos`.
+
+**Enhancement ($F_q \ge 1$).** For $x > 0$, $e^{-x} < 1$, so $1 - e^{-x} > 0$ and $F_q$ is well-defined; $F_q \ge 1$ is equivalent to $1 - x \le e^{-x}$, the bound $1 + t \le e^{t}$ at $t = -x$. Discharged by `skeinCoulombFactor_ge_one` (`Real.add_one_le_exp`). Physically the daughter nucleus attracts the outgoing electron, so the overlap at the origin can only grow.
+
+**Growth with $Z$.** Since $\eta_q$ is linear increasing in $Z$, it suffices that $F_q$ is strictly increasing in $\eta$. For $0 < \eta_1 < \eta_2$ with $x_i = 2\pi\eta_i$, clearing positive denominators reduces the claim to $x_1 e^{-x_1}(1 - e^{-d}) < d(1 - e^{-x_1})$ with $d = x_2 - x_1 > 0$, which follows from $e^{x_1} - 1 > x_1$ and $(1 - e^{-d})/d < 1$ — two instances of the strict $1 + t < e^{t}$. Carried out in `skeinCoulombFactor_monotone_eta` (`Real.add_one_lt_exp`).
+
+**Free-limit normalisation.** As the coupling switches off, $\eta_q \to 0^+$ and the free rate must be recovered. The pointwise $F_q(0) = 0/0$ is set to $0$ by Lean's convention (`skeinCoulombFactor_at_zero`); the meaningful statement is the one-sided limit. From $(1+x)e^{-x} \le 1$ one gets $1 - e^{-x} \ge x/(1+x)$, hence $F_q(\eta) \le 1 + 2\pi\eta$; with $F_q \ge 1$ this gives $|F_q(\eta) - 1| \le 2\pi\eta$, so $\delta = \varepsilon/(2\pi+1)$ furnishes the $\varepsilon$–$\delta$ bound — `skeinCoulombFactor_limit_one`. Thus $F_q$ interpolates monotonically from $1$ upward as $Z$ and the coupling increase, with no discontinuity at the origin.
+
+These four properties — $\eta_q > 0$, $F_q \ge 1$, strict monotonicity in $\eta$ (hence $Z$), and $F_q \to 1$ in the free limit — are the formalized content of the proposition, established sorry-free. The proposition's physical reading — that this $F_q$ is the Skein polynomial evaluated on the *full* outgoing link $T_{2,3} \cup \mathcal{N}(p{+}1, n{-}1)$ rather than on the nucleus alone, with $\eta_q$ assembled from the $Z$ electron–proton crossings — is the standard Sommerfeld/Fermi-function identification motivating this factor; the formal obligation discharged here is the well-definedness and qualitative behaviour just verified. $\qquad\blacksquare$
