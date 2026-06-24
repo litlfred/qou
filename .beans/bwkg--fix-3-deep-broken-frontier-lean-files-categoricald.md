@@ -1,11 +1,11 @@
 ---
 # bwkg
 title: 'Fix 3 deep-broken frontier Lean files: CategoricalDqSquared, QHookBound, MarkovPeel'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-06-23T17:03:11Z
-updated_at: 2026-06-24T00:11:11Z
+updated_at: 2026-06-24T01:58:12Z
 ---
 
 
@@ -108,3 +108,19 @@ These need lean-lsp `lean_goal`/`lean_multi_attempt` per proof, which this sandb
 denies (leansearch/loogle/doi/crossref/arxiv all return proxy 403; only package
 registries allowlisted). **QHookBound is an ORPHAN (latent-red, not a lake-build
 breaker)** — safe to leave until a session with lean-lsp + web can finish it.
+
+## RESOLVED 2026-06-24 (#bwkg branch claude/bwkg-fix-broken-lean-2026-06-24)
+
+All 3 files green sorry-free (lean-direct vs restored v4.24.0 oleans, exit 0):
+- ✅ CategoricalDqSquared — already green on main (#2663)
+- ✅ MarkovPeel — already green on main (#2663)
+- ✅ QHookBound — **fixed this session**. lean-lsp was disconnected (loogle/leansearch
+  web-403), so the residual 20 proof-repairs were closed using lean-direct's own
+  goal-state output + Mathlib **source** grep (replaces loogle). Two commits:
+  - ed30748c: Mathlib-API renames (50→20)
+  - 233d52e1: 20 residual proof-repairs → 0 errors. Key root cause was
+    field_simp leaving (q²-1)⁻¹ uncleared on the /(q-q⁻¹) forms; fixed by
+    div_eq_iff/div_add'+congr-1 restructure. Plus Bernoulli -2≤a signature,
+    q<2-vs-3/2 bracket bug, nat-cast/mod_cast, maxHeartbeats.
+
+Awaiting PR review + merge; close after merge (human verifies).
