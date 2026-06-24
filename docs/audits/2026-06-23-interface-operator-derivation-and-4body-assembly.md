@@ -322,16 +322,26 @@ in the investigation. It escapes `productModel_3body_nonpos` exactly as predicte
 cluster is no longer a positive product). So **the chirality involution is the sign
 mechanism for the 3-body force** — a genuine, parameter-free advance.
 
-**Honest scope (not a closure).** The chiral `c₃` has the right *sign* but its
-*magnitude* (+0.08 / +0.12 MeV) is ~10–24× below the empirical b₃ (+1.8 / +1.0 MeV):
-the chirality weighting introduces heavy cancellation that shrinks the cluster. Two
-caveats compound it: (i) this is the **2-adjacent-chain-bond** cluster only (the
-long-range 1–3 bond is still omitted); (ii) per the cluster-decomposition lesson
-above, the 2-bond connected cluster is not identical to the full physical 3-body
-force. So this identifies the sign ingredient and removes the sign obstruction — it
-does **not** close the magnitude. The open question shifts from *"what gives the
-attractive sign"* (answered: chirality) to *"what supplies the magnitude"* (the full
-triangle + the chiral assembly + A=4).
+**Honest scope (not a closure — and chirality is not a binding combiner).** The
+chiral `c₃` has the right *sign* but its *magnitude* (+0.08 / +0.12 MeV) is ~10–24×
+below the empirical b₃ (+1.8 / +1.0 MeV). Worse, as a **binding combiner** chirality
+fails outright: the chiral *total* 2-bond binding is `joint = E₀(g_free − g_atom)` =
+**+0.18 MeV (³H), +0.22 (³He) — a 98 % underbind**, far worse than `|χ|`'s 62 %.
+The mixed-sign `sgn(w₀)` weight heavily cancels the whole trace, so both the leading
+(pairwise) binding and the 3-body cluster shrink to a small residual. So:
+
+- **What chirality IS:** the *sign carrier* of the 3-body correlation — the attractive
+  `(-1)^{n(λ)}` sign lives on the connected cluster, removing the sign obstruction.
+- **What chirality is NOT:** a viable binding combiner — globally reweighting by
+  `sgn(w₀)` destroys the leading magnitude (98 % underbind).
+
+So the genuine object would need to keep `|χ|`'s magnitude on the leading part **and**
+apply the chirality sign to the 3-body correlation — a *structured* combiner, not a
+global chiral reweight. This is plausibly where the q-Reeb `|Δθ_λ|` work (sibling
+#2612, which closes A=3 to ~2 %) supplies the magnitude that pure chirality cancels
+away. The open question is now precise: a combiner carrying `|χ|`-magnitude + chirality
+sign on the correlation. Two further caveats stand: this is the 2-adjacent-bond cluster
+only (no long-range 1–3 bond), and the 2-bond cluster ≠ the full physical 3-body force.
 
 → `chirality_weighted_3body_cluster_probe.py` · `chirality-weighted-3body-cluster.witness.json`
 (`pyhecke_native` build note: the `clarabel` git dep is proxy-blocked; build with a
