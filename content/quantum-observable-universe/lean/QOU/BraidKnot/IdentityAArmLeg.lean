@@ -32,6 +32,9 @@ to avoid `ℕ`-subtraction.
 - `content_swap`, `leg_eq_arm_transpose`, `sum_arm_transpose_eq_sum_leg` — the **conjugation
   bridge**: content negates and leg↔arm under the transpose cell-swap, so the leg-sum over `μ`
   equals the arm-sum over `μ.transpose`. This is the structural lever the heart trades on.
+- `sum_cells_fiberwise` — **cells decompose into rows** (general; the workhorse for every
+  per-statistic computation), and `sum_arm_row` / `sum_arm_cells` — the first concrete statistic,
+  `Σ arm = Σ_i Σ_{k < rowLen i} k = Σ_i C(rowLen_i, 2)`.
 
 ## Remaining (the heart, `sorry` + `-- Ref:`)
 
@@ -104,6 +107,40 @@ theorem sum_arm_transpose_eq_sum_leg (μ : YoungDiagram) :
   refine Finset.sum_congr rfl (fun c _ => ?_)
   simp only [Equiv.coe_toEmbedding, Equiv.prodComm_apply]
   exact (leg_eq_arm_transpose μ c).symm
+
+/-- **Cells decompose into rows** (general, reusable). Any cell-sum is the sum over rows
+`i < μ.colLen 0` (the number of rows) of the sum over that row. The workhorse for turning a
+cell-statistic into a row-by-row computation. -/
+theorem sum_cells_fiberwise (μ : YoungDiagram) (f : ℕ × ℕ → ℤ) :
+    (∑ c ∈ μ.cells, f c) = ∑ i ∈ Finset.range (μ.colLen 0), ∑ c ∈ μ.row i, f c := by
+  rw [← Finset.sum_fiberwise_of_maps_to (g := Prod.fst) (t := Finset.range (μ.colLen 0))]
+  · refine Finset.sum_congr rfl (fun i _ => ?_)
+    refine Finset.sum_congr ?_ (fun _ _ => rfl)
+    ext c; simp [YoungDiagram.row, YoungDiagram.mem_cells, and_comm]
+  · intro c hc
+    rw [Finset.mem_range]
+    rw [YoungDiagram.mem_cells] at hc
+    have h0 : (c.fst, 0) ∈ μ := μ.up_left_mem (le_refl _) (Nat.zero_le _) hc
+    rwa [YoungDiagram.mem_iff_lt_colLen] at h0
+
+/-- **Per-row arm sum** = Gauss sum of the row length: `Σ_{c ∈ row i} arm = Σ_{k < rowLen i} k`
+(`= rowLen_i·(rowLen_i − 1)/2`), via `row_eq_prod` + the reflection `b ↦ rowLen_i − 1 − b`. -/
+theorem sum_arm_row (μ : YoungDiagram) (i : ℕ) :
+    (∑ c ∈ μ.row i, arm μ c) = ∑ k ∈ Finset.range (μ.rowLen i), (k : ℤ) := by
+  rw [YoungDiagram.row_eq_prod, Finset.sum_product]
+  simp only [Finset.sum_singleton, arm]
+  rw [← Finset.sum_range_reflect (fun k => (k : ℤ)) (μ.rowLen i)]
+  refine Finset.sum_congr rfl (fun b hb => ?_)
+  rw [Finset.mem_range] at hb; omega
+
+/-- **`Σ arm` in closed form**: the arm-sum over all cells is `Σ_i Σ_{k < rowLen i} k`
+(`= Σ_i C(rowLen_i, 2)`). Combines `sum_cells_fiberwise` with `sum_arm_row`; the first concrete
+statistic of the heart. -/
+theorem sum_arm_cells (μ : YoungDiagram) :
+    (∑ c ∈ μ.cells, arm μ c)
+      = ∑ i ∈ Finset.range (μ.colLen 0), ∑ k ∈ Finset.range (μ.rowLen i), (k : ℤ) := by
+  rw [sum_cells_fiberwise]
+  exact Finset.sum_congr rfl (fun i _ => sum_arm_row μ i)
 
 /-- **The heart (deferred, multi-session).** The six statistic sums combine to `Σ content² + n²`.
 This is the only remaining gap in `identityA`; the next-session plan uses the `transpose` API for
