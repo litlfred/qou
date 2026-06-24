@@ -50,19 +50,19 @@ theorem qInt_pos (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     qIntReal q m > 0 := by
   unfold qIntReal
   have hq_ne : q ≠ 1 := ne_of_gt hq
-  simp [hq_ne]
+  rw [dif_neg hq_ne]
   have hq_pos : q > 0 := by linarith
   have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
-  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one₀ hq_pos]
   have h_num : q ^ m - q⁻¹ ^ m > 0 := by
     apply sub_pos.mpr
-    exact pow_lt_pow_left hq_inv_lt (le_of_lt hq_inv_pos) (by omega)
+    exact pow_lt_pow_left₀ (lt_trans hq_inv_lt hq) (le_of_lt hq_inv_pos) (by omega)
   have h_den : q - q⁻¹ > 0 := by
-    have : q⁻¹ < q := by calc q⁻¹ < 1 := hq_inv_lt; _ < q := hq
+    have : q⁻¹ < q := lt_trans hq_inv_lt hq
     linarith
   exact div_pos h_num h_den
 
-/-- The ratio [m]_q / m is close to 1 for small h = q - q⁻¹.
+/-! The ratio [m]_q / m is close to 1 for small h = q - q⁻¹.
 
     [m]_q / m = 1 + h²(m² − 1)/(12m) + O(h⁴)
 
@@ -100,7 +100,7 @@ theorem qInt_ratio_bound_m2 (q : ℝ) (hq : q > 1) :
   -- i.e. 3q²(q-1)² ≤ 2q(q²-1)² = 2q(q-1)²(q+1)²
   -- i.e. 3q ≤ 2(q+1)² = 2q² + 4q + 2
   -- i.e. 2q² + q + 2 > 0 ✓
-  rw [div_le_div_iff (by positivity) (by positivity)]
+  rw [div_le_div_iff₀ (by positivity) (by positivity)]
   nlinarith [sq_nonneg (q - 1), sq_nonneg q]
 
 /-- **Corrected bound**: the first-order expansion gives
@@ -134,7 +134,7 @@ theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
   have hq_ne_one : q ≠ 1 := ne_of_gt hq
   have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
   have hq_inv_lt_one : q⁻¹ < 1 := by
-    rw [inv_lt_one_iff_of_pos hq_pos]; exact hq
+    rw [inv_lt_one₀ hq_pos]; exact hq
   have h_diff_pos : q - q⁻¹ > 0 := by linarith
   -- Reduce to (m : ℝ) ≤ qIntReal q m.
   suffices h : (m : ℝ) ≤ qIntReal q m by
@@ -147,7 +147,7 @@ theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
   | zero =>
     -- qIntReal q 0 = (q^0 - q^0)/(q - q⁻¹) = 0; goal: 0 ≤ 0.
     unfold qIntReal
-    rw [if_neg hq_ne_one]
+    rw [dif_neg hq_ne_one]
     simp
   | succ k ih =>
     -- Recurrence: qIntReal q (k+1) = q · qIntReal q k + q^(-k).
@@ -155,7 +155,7 @@ theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     -- via algebraic manipulation; verified by `field_simp; ring`.
     have h_rec : qIntReal q (k+1) = q * qIntReal q k + q ^ (-(k:ℤ)) := by
       unfold qIntReal
-      rw [if_neg hq_ne_one, if_neg hq_ne_one]
+      rw [dif_neg hq_ne_one, dif_neg hq_ne_one]
       have hd : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
       field_simp
       push_cast
@@ -201,7 +201,7 @@ theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     push_cast
     linarith
 
-/-- For small m (m ≤ 4), the tighter bound holds:
+/-! For small m (m ≤ 4), the tighter bound holds:
     |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4 and q < 3/2.
 
     The proof is via the series expansion `[m]_q/m = 1 + h²(m²−1)/24 + O(h⁴)`
@@ -222,10 +222,10 @@ theorem qInt_ratio_bound_m1 (q : ℝ) (hq : q > 1) :
     |qIntReal q 1 / 1 - 1| ≤ (q - q⁻¹) ^ 2 * 1 / 6 := by
   have hq_ne_one : q ≠ 1 := ne_of_gt hq
   have hq_pos : q > 0 := by linarith
-  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one₀ hq_pos]
   have h_diff_pos : q - q⁻¹ > 0 := by linarith
   unfold qIntReal
-  rw [if_neg hq_ne_one]
+  rw [dif_neg hq_ne_one]
   have : (q ^ 1 - q⁻¹ ^ 1) / (q - q⁻¹) = 1 := by field_simp
   rw [this]
   simp
@@ -258,11 +258,11 @@ instance qIntRatioBoundSmall_two (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
   refine ⟨?_⟩
   have hq_ne_one : q ≠ 1 := ne_of_gt hq
   have hq_pos : q > 0 := by linarith
-  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one₀ hq_pos]
   have h_diff_pos : q - q⁻¹ > 0 := by linarith
   have h_eq : qIntReal q 2 / 2 = (q + q⁻¹) / 2 := by
     unfold qIntReal
-    rw [if_neg hq_ne_one]
+    rw [dif_neg hq_ne_one]
     have h_diff_ne : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
     field_simp
     ring
@@ -286,13 +286,13 @@ instance qIntRatioBoundSmall_three (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
   have hq_ne_one : q ≠ 1 := ne_of_gt hq
   have hq_pos : q > 0 := by linarith
   have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
-  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one₀ hq_pos]
   have h_diff_pos : q - q⁻¹ > 0 := by linarith
   have h_diff_ne : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
   -- Step 1: [3]_q = q² + 1 + q⁻²
   have h_eq : qIntReal q 3 = q^2 + 1 + (q⁻¹)^2 := by
     unfold qIntReal
-    rw [if_neg hq_ne_one]
+    rw [dif_neg hq_ne_one]
     field_simp
     ring
   -- Step 2: [3]_q / 3 - 1 = (q² + q⁻² - 2)/3 = (q - q⁻¹)² / 3
@@ -330,13 +330,13 @@ instance qIntRatioBoundSmall_four (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
   have hq_pos : q > 0 := by linarith
   have hq_ne : q ≠ 0 := ne_of_gt hq_pos
   have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
-  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one₀ hq_pos]
   have h_diff_pos : q - q⁻¹ > 0 := by linarith
   have h_diff_ne : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
   -- [4]_q = q³ + q + q⁻¹ + q⁻³
   have h_eq : qIntReal q 4 = q^3 + q + q⁻¹ + (q⁻¹)^3 := by
     unfold qIntReal
-    rw [if_neg hq_ne_one]
+    rw [dif_neg hq_ne_one]
     field_simp
     ring
   rw [h_eq]
@@ -377,7 +377,7 @@ instance qIntRatioBoundSmall_four (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
       have : 1/q ≤ 1 := by
         rw [div_le_one hq_pos]; linarith
       have h_inv_decr : 1/q ≥ 1/(3/2) := by
-        rw [ge_iff_le, div_le_div_iff (by norm_num : (3:ℝ)/2 > 0) hq_pos]
+        rw [ge_iff_le, div_le_div_iff₀ (by norm_num : (3:ℝ)/2 > 0) hq_pos]
         linarith
       -- We have q ≤ 3/2 and 1/q ≥ 2/3, so q + 1/q ≤ 3/2 + 1/q ≤ 3/2 + 1
       -- but that's not tight enough. The function q + 1/q on (1, 3/2) is
@@ -425,7 +425,7 @@ theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
 noncomputable def qFactReal (q : ℝ) (k : ℕ) : ℝ :=
   (Finset.range k).prod fun i => qIntReal q (i + 1)
 
-/-- The ratio [k]_q! / k! satisfies:
+/-! The ratio [k]_q! / k! satisfies:
     |[k]!/k! - 1| ≤ h² · k(k+1)(2k+1) / 36
 
     Proof: [k]!/k! = ∏_{m=1}^k ([m]_q/m).
@@ -464,13 +464,13 @@ instance qFactRatioBound_one (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
   refine ⟨?_⟩
   have hq_ne_one : q ≠ 1 := ne_of_gt hq
   have hq_pos : q > 0 := by linarith
-  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one₀ hq_pos]
   have h_diff_pos : q - q⁻¹ > 0 := by linarith
   have h_diff_ne : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
   -- qFactReal q 1 = qIntReal q 1 = 1
   have h_qfact : qFactReal q 1 = 1 := by
     unfold qFactReal qIntReal
-    rw [if_neg hq_ne_one]
+    rw [dif_neg hq_ne_one]
     simp
     field_simp
   rw [h_qfact]
@@ -492,7 +492,7 @@ instance qFactRatioBound_two (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
   have hq_ne_one : q ≠ 1 := ne_of_gt hq
   have hq_pos : q > 0 := by linarith
   have hq_ne : q ≠ 0 := ne_of_gt hq_pos
-  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one₀ hq_pos]
   have h_diff_pos : q - q⁻¹ > 0 := by linarith
   have h_diff_ne : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
   -- qFactReal q 2 = qIntReal q 1 * qIntReal q 2 = 1 * (q + q⁻¹) = q + q⁻¹
@@ -500,7 +500,7 @@ instance qFactRatioBound_two (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
     unfold qFactReal
     simp [Finset.prod_range_succ, Finset.prod_range_one]
     unfold qIntReal
-    rw [if_neg hq_ne_one]
+    rw [dif_neg hq_ne_one]
     field_simp
     ring
   rw [h_qfact]
@@ -522,7 +522,7 @@ instance qFactRatioBound_two (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
   -- Goal: (q-1)²/(2q) ≤ ((q-1)²(q+1)²/q²) · 30 / 36 = 5(q-1)²(q+1)²/(6q²)
   -- Cross-multiply (everything positive): 6q²(q-1)² ≤ 10q(q-1)²(q+1)², i.e.
   -- 3q ≤ 5(q+1)², i.e. 0 ≤ 5q² + 7q + 5. Holds for all q (esp q > 1).
-  rw [div_le_div_iff (by positivity) (by positivity)]
+  rw [div_le_div_iff₀ (by positivity) (by positivity)]
   nlinarith [sq_nonneg (q - 1), sq_nonneg (q + 1), hq_pos, sq_nonneg q]
 
 /-- **Default instance for `k = 3`** — proved via direct nlinarith.
@@ -550,7 +550,7 @@ instance qFactRatioBound_three (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
   have hq_pos : q > 0 := by linarith
   have hq_ne : q ≠ 0 := ne_of_gt hq_pos
   have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
-  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one₀ hq_pos]
   have h_diff_pos : q - q⁻¹ > 0 := by linarith
   have h_diff_ne : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
   have h_qq : q * q⁻¹ = 1 := mul_inv_cancel₀ hq_ne
@@ -559,7 +559,7 @@ instance qFactRatioBound_three (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
     unfold qFactReal
     simp [Finset.prod_range_succ]
     unfold qIntReal
-    rw [if_neg hq_ne_one]
+    rw [dif_neg hq_ne_one]
     field_simp
     ring
   rw [h_qfact]
@@ -583,7 +583,7 @@ instance qFactRatioBound_three (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
       nlinarith
     have h_inv_eq : q + q⁻¹ = (q^2 + 1) / q := by field_simp; ring
     rw [h_inv_eq]
-    rw [div_le_iff hq_pos]
+    rw [div_le_iff₀ hq_pos]
     nlinarith [h_step, hq_pos]
   -- Cast (3 : ℕ) → (3 : ℝ)
   have hcoerce3 : ((3 : ℕ) : ℝ) = 3 := by norm_num
@@ -609,7 +609,7 @@ theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
 
 /-! ## §3  q-hook formula perturbation -/
 
-/-- The q-dimension of a partition λ is:
+/-! The q-dimension of a partition λ is:
     d_q(λ) = [k]_q! / ∏_{cells c} [hook(c)]_q
 
     The hook-length formula is a ratio of q-integers, so:
@@ -644,11 +644,12 @@ theorem qDim_geq_dim (q : ℝ) (hq : q > 1)
     (dq dim_classical : ℝ) (hdq : dq > 0) (hdim : dim_classical > 0)
     (h_ratio : dq / dim_classical ≥ 1) :
     dq ≥ dim_classical := by
-  exact le_div_iff hdim |>.mp (by linarith)
+  have h := (le_div_iff₀ hdim).mp (by linarith : (1:ℝ) ≤ dq / dim_classical)
+  linarith [h]
 
 /-! ## §4  Wedderburn weight perturbation -/
 
-/-- The Wedderburn weight ratio:
+/-! The Wedderburn weight ratio:
     w_λ / w_λ^{classical} = (d_q/dim)² × (k!/[k]!)
 
     From the qDim bound:
@@ -724,7 +725,7 @@ theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1) (hq2 : q < 2)
 
 /-! ## §5  Convergence rate -/
 
-/-- **Convergence rate theorem**: combining the q-perturbation bound
+/-! **Convergence rate theorem**: combining the q-perturbation bound
     with the classical branching asymptotics gives:
 
     |f_μ^{(k)} - f_μ^∞| ≤ C_q / (k - n + 1)
@@ -737,7 +738,7 @@ theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1) (hq2 : q < 2)
 
     At k = 8: bound = 0.26/6 ≈ 0.043.
     Actual error at k = 8: 0.009 (well within bound). -/
-/-- **Convergence rate** (improved via Féray–Méliot).
+/-! **Convergence rate** (improved via Féray–Méliot).
 
     The q-Plancherel CLT [feray2010] gives character variance O(1/k),
     so the branching fraction converges at rate O(1/√k):
