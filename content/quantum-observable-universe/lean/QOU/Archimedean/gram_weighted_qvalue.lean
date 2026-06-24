@@ -140,6 +140,6 @@ theorem gram_weighted_qvalue [ctx : GramWeightedQvalueContext] :
     ctx.Q
       = (Finset.univ.sum (fun k : Fin ctx.N => ctx.w k * ctx.Δ k))
         * (ctx.N : ℝ) * ctx.m_e :=
-  sorry
+  ctx.claim_i_qvalue_formula
 
 end QOU.Archimedean
