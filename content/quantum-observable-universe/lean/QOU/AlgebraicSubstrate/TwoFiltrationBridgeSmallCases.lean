@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # Two-filtration bridge verified at small partitions
 
@@ -12,6 +14,8 @@ restricted to partitions of size at most 4.
 -/
 
 namespace QOU.AlgebraicSubstrate.TwoFiltrationBridgeSmallCases
+
+open Classical
 
 /-- Abstract context for `prop:two-filtration-bridge-small-cases`. -/
 class TwoFiltrationBridgeSmallCasesContext where

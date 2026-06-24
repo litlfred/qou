@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # Two-filtration bridge in full generality
 
@@ -10,6 +12,8 @@ Li_2), chiral pairs (λ ≠ λ') land at depth 3 (Li_3 / period-3 family).
 -/
 
 namespace QOU.AlgebraicSubstrate.TwoFiltrationBridgeGeneral
+
+open Classical
 
 /-- Abstract context for the `two_filtration_bridge_general` claim. -/
 class TwoFiltrationBridgeContext where
