@@ -508,6 +508,85 @@ theorem PartitionOf5.deltaSign_eq_w0_conj_sign (p : PartitionOf5) :
     p.deltaSign = (-1 : ℤ) ^ (sumChoose2 p.conjParts) := by
   cases p <;> decide
 
+/-! ## The Reeb = Res^{S₅}_{S₃} identity (keystone residual ii)
+
+    Per `docs/audits/2026-06-20-keystone-wlambda-beasley-witten-localization.md`
+    §"Honest scope", the Beasley–Witten Seifert–CS localization on `S³/2I`
+    supplies the q-Plancherel weights, and **"the restriction structure is the
+    Bratteli branching the localization sum runs over"** — but the explicit
+    *Reeb = restriction* equality at the scaffold level was left unformalized
+    (residual (ii)).  This section discharges it.
+
+    The Seifert fibration `S³/2I → S²(2,3,5)` has the Reeb field = the Seifert
+    `S¹` fiber; the localization restricts along it.  Its representation-theoretic
+    shadow is the restriction functor `Res^{S₅}_{S₃}` (`s5_to_s3_restriction_mults`
+    above).  The geometric Reeb symmetry — conjugate `S₅`-partitions share a
+    fiber (`conjugate_same_a5_irrep`) — must match an algebraic symmetry of the
+    restriction.  It does, and exactly: restriction **commutes with the
+    conjugation (sign) involution**.
+
+    Mathematically this is forced: `V_{λ'} = V_λ ⊗ sgn_{S₅}`, and restriction
+    commutes with sign-twist, with `sgn_{S₅}|_{S₃} = sgn_{S₃}`.  So
+    `Res^{S₅}_{S₃}(V_{λ'}) = Res^{S₅}_{S₃}(V_λ) ⊗ sgn_{S₃}`, and `⊗ sgn_{S₃}`
+    swaps the `S₃` trivial ↔ sign irreps while fixing the standard `(2,1)`.
+    The theorems below verify this on the `n = 5` table and tie it to the
+    geometric fiber map. -/
+
+/-- The `S₃` sign-twist on a restriction-multiplicity triple `[m_triv, m_sign,
+    m_std]`: tensoring by `sgn_{S₃}` swaps trivial ↔ sign and fixes standard.
+    This is the `S₃` shadow of the `S₅` conjugation (sign) involution. -/
+def s3SignTwist : List ℕ → List ℕ
+  | [a, b, c] => [b, a, c]
+  | m => m
+
+/-- **Reeb = restriction (conjugation intertwiner).**  The `Res^{S₅}_{S₃}`
+    branching commutes with conjugation: restricting the conjugate partition
+    equals sign-twisting the restriction,
+    `Res(V_{λ'}) = Res(V_λ) ⊗ sgn_{S₃} = s3SignTwist(Res(V_λ))`.  This is the
+    algebraic shadow of the geometric `conjugate_same_a5_irrep` (conjugate
+    partitions share a Reeb fiber): the shared Seifert-`S¹` fiber appears on the
+    3-strand side as the `S₃` sign-twist intertwiner.  Both express the *same*
+    conjugation symmetry — the scaffold-level content of "the localization sum
+    runs over the `Res^{S₅}_{S₃}` Bratteli branching". -/
+theorem restriction_intertwines_conjugation (p : PartitionOf5) :
+    s5_to_s3_restriction_mults p.conjugate
+      = s3SignTwist (s5_to_s3_restriction_mults p) := by
+  cases p <;> rfl
+
+/-- **The standard `(2,1)` irrep is the conjugation-fixed carrier.**  The `S₃`
+    sign-twist fixes the `(2,1)` multiplicity (3rd entry), so the load-bearing
+    standard irrep — which carries the Borromean `h⁴` per
+    `restriction_functor_yields_h4_irrep` — sits in the conjugation-invariant
+    part of every restriction, matching the Reeb fiber shared by conjugate
+    partitions. -/
+theorem std_irrep_conjugation_fixed (p : PartitionOf5) :
+    (s5_to_s3_restriction_mults p.conjugate).get! 2
+      = (s5_to_s3_restriction_mults p).get! 2 := by
+  cases p <;> rfl
+
+/-- **Reeb-thread = restriction functor (scaffold capstone, residual ii).**
+    Under the conjectural `BringFiberAction`, the geometric Reeb/fiber map and
+    the algebraic `Res^{S₅}_{S₃}` branching express the SAME conjugation
+    symmetry:
+    (i) conjugate partitions share a fiber/icosahedral rotation (geometric,
+        `conjugate_same_a5_irrep`);
+    (ii) their restriction content is sign-twisted (algebraic,
+        `restriction_intertwines_conjugation`);
+    (iii) with the standard `(2,1)` carrier fixed (`std_irrep_conjugation_fixed`).
+    This is the scaffold-level "Reeb = restriction" identity that the
+    Beasley–Witten Seifert–CS localization on `S³/2I` runs over — residual (ii)
+    of `docs/audits/2026-06-20-keystone-wlambda-beasley-witten-localization.md`.
+    The `[BringFiberAction]` hypothesis is genuinely used (conjunct i). -/
+theorem reeb_eq_restriction_scaffold [bfa : BringFiberAction] (p : PartitionOf5) :
+    bfa.irrepToRotation p.conjugate.toA5Irrep = bfa.irrepToRotation p.toA5Irrep ∧
+    s5_to_s3_restriction_mults p.conjugate
+      = s3SignTwist (s5_to_s3_restriction_mults p) ∧
+    (s5_to_s3_restriction_mults p.conjugate).get! 2
+      = (s5_to_s3_restriction_mults p).get! 2 :=
+  ⟨by rw [PartitionOf5.conjugate_same_a5_irrep],
+   restriction_intertwines_conjugation p,
+   std_irrep_conjugation_fixed p⟩
+
 /-! ## McKay correspondence anchors: 2I ↔ affine E₈
 
     The binary icosahedral group 2I = π⁻¹(I) ⊂ SU(2) (the spin double cover
