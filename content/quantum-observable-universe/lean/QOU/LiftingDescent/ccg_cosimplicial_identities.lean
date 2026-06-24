@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.LiftingDescent.ccg_cosimplicial_identities — cosimplicial identities
 
@@ -73,11 +75,15 @@ def ccg_cosimplicial_identities
   constructor
   · intro hij
     rw [ctx.delta_def, ctx.delta_def, ctx.delta_def, ctx.delta_def]
-    rw [ctx.jet_face_comm]
+    -- `jet_face_comm` must fire on BOTH sides (LHS index `i`, RHS index `j-1`);
+    -- a single `rw` rewrites only the first instance, so apply it twice.
+    rw [ctx.jet_face_comm, ctx.jet_face_comm]
     rw [ctx.cech_face_comm _ _ _ _ hij]
   · intro hij
     rw [ctx.sigma_def, ctx.sigma_def, ctx.sigma_def, ctx.sigma_def]
-    rw [← ctx.descent_deg_comm]
+    -- `descent_deg_comm` must fire on BOTH sides (LHS index `j`, RHS index `i`);
+    -- apply twice, same reason as the face case.
+    rw [← ctx.descent_deg_comm, ← ctx.descent_deg_comm]
     rw [ctx.cech_deg_comm _ _ _ _ hij]
 
 end QOU.LiftingDescent
