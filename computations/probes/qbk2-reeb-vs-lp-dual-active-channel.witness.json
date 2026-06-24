@@ -1,0 +1,212 @@
+{
+  "computation": "qbk2_reeb_vs_lp_dual_active_channel",
+  "description": "Cross-tabulate the qbk2 +1/2 form-B per-block binding correction against the canonical deuteron operator-selection LP-dual active set (shadow prices). Tests whether [5,1] (72% of the qbk2 correction) is an active binding channel.",
+  "discipline": "no fit; consumes canonical deuteron LP duals (no re-solve); audit-only",
+  "consumes_witness": "computations/deuteron-real-sdp.witness.json",
+  "auditOnly": "docs/audits/2026-06-23-qbessel-reeb-order-justification.md",
+  "results": {
+    "per_block": [
+      {
+        "block": [
+          5,
+          1
+        ],
+        "qbk2_share": 0.7190042184036948,
+        "y_star": 0.6921531742118898,
+        "active": true
+      },
+      {
+        "block": [
+          3,
+          3
+        ],
+        "qbk2_share": 0.10152473833063617,
+        "y_star": 1.0543054256675402,
+        "active": true
+      },
+      {
+        "block": [
+          6
+        ],
+        "qbk2_share": 0.07295427324663344,
+        "y_star": 1.8036943373270138,
+        "active": true
+      },
+      {
+        "block": [
+          3,
+          2,
+          1
+        ],
+        "qbk2_share": 0.04610087467385615,
+        "y_star": 0.0,
+        "active": false
+      },
+      {
+        "block": [
+          4,
+          2
+        ],
+        "qbk2_share": 0.028276459365513745,
+        "y_star": 0.2257943908355624,
+        "active": true
+      },
+      {
+        "block": [
+          4,
+          1,
+          1
+        ],
+        "qbk2_share": 0.01997047899947693,
+        "y_star": 0.09545924560799289,
+        "active": true
+      },
+      {
+        "block": [
+          2,
+          2,
+          2
+        ],
+        "qbk2_share": 0.005095265357650255,
+        "y_star": 3.035160436276261,
+        "active": true
+      },
+      {
+        "block": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "qbk2_share": 0.004609153575313452,
+        "y_star": 0.0,
+        "active": false
+      },
+      {
+        "block": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "qbk2_share": 0.002051383892691793,
+        "y_star": 29.706509833656146,
+        "active": true
+      },
+      {
+        "block": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "qbk2_share": 0.0003906931878392728,
+        "y_star": 0.0,
+        "active": false
+      },
+      {
+        "block": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "qbk2_share": 2.2460966694018462e-05,
+        "y_star": 0.0,
+        "active": false
+      }
+    ],
+    "n_active_channels": 7,
+    "active_blocks": [
+      [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        1,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        6
+      ]
+    ],
+    "inactive_blocks": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        1,
+        1
+      ],
+      [
+        3,
+        1,
+        1,
+        1
+      ],
+      [
+        3,
+        2,
+        1
+      ]
+    ],
+    "five_one_active": true,
+    "five_one_y_star": 0.6921531742118898,
+    "qbk2_weight_in_active_blocks": 0.948876817596297,
+    "qbk2_weight_in_inactive_blocks": 0.051123182403702894,
+    "largest_block": [
+      3,
+      2,
+      1
+    ],
+    "largest_block_active": false,
+    "qbk2_peak": [
+      5,
+      1
+    ],
+    "shadow_price_peak": [
+      2,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "assertions": {
+    "(1) [5,1] is one of the LP-dual ACTIVE binding channels (y_star>0)": true,
+    "(2) qbk2 correction is SUPPORTED on the active set (>85% of weight)": true
+  },
+  "allPassed": true,
+  "verdict": "CONFIRMED (multi-channel). Deuteron binding is genuinely MULTI-CHANNEL — the LP-dual has 7 active blocks, not one — so the right test is multi-channel SUPPORT, not a single dominant channel. [5,1] IS one of the active channels (y_star=0.692>0), and 95% of the qbk2 +1/2 form-B correction is supported on the active set; the inactive blocks (including the LARGEST, [3, 2, 1] dim 16) carry only 5.1% — so the qbk2 correction lives on the active binding manifold and is NOT merely tracking dimension. The qbk2 propagator and the LP shadow prices weight that shared manifold differently (qbk2 peaks [5, 1]; shadow price peaks [2, 1, 1, 1, 1] where y_λ is tiny), as expected for two distinct quantities on a multi-channel state. So the [5,1]-concentration is NOT a fragile artifact: it is the qbk2 correction sitting on the multi-channel active binding manifold. No fit; canonical duals consumed, not re-solved."
+}

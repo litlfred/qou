@@ -47,3 +47,29 @@ The **−1/2 branch is unphysical**: it puts every dim-1 block at `ν=−1/2` (n
 ## Bucket (per the too-small≠wrong triage)
 
 **SUBDOMINANT-but-REAL.** The Reeb propagator correction is forced (no fit), now correctly ordered, and real — but it is **not** the binding closure. The earlier promising "few-×" reading does not survive proper ordering + forced weights. This is the honest deflation, not a refutation: qbk2 stays a real, subdominant, un-wired correction; `c_k`/`Δ_λ` cal-anchored. No production change.
+
+## Multi-channel LP-dual cross-check (de-fragilizes the single-block concern)
+
+The +1/2 form-B correction is 72% the `[5,1]` block — is that a fragile artifact?
+Cross-tabulating against the **canonical deuteron operator-selection LP-dual**
+([`deuteron-real-sdp.witness.json`](../../computations/deuteron-real-sdp.witness.json);
+probe [`qbk2_reeb_vs_lp_dual_active_channel.py`](../../computations/qbeta/qbk2_reeb_vs_lp_dual_active_channel.py),
+witness [`qbk2-reeb-vs-lp-dual-active-channel.witness.json`](../../computations/probes/qbk2-reeb-vs-lp-dual-active-channel.witness.json)):
+
+- **Deuteron binding is genuinely MULTI-CHANNEL** — the LP-dual has **7 active blocks**
+  (`y_star>0`): `{(6,), (5,1), (4,2), (4,1,1), (3,3), (2,2,2), (2,1,1,1,1)}`. So there is
+  no single "dominant channel" to match; the right test is multi-channel **support**.
+- **`[5,1]` is one of the active channels** (`y_star = 0.692 > 0`), and **94.9% of the
+  qbk2 correction is supported on the 7 active channels** (inactive 5.1%).
+- **Not a dimension artifact:** the LARGEST block `[3,2,1]` (dim 16) is **inactive**
+  *and* carries only 4.6% of qbk2.
+- The qbk2 propagator peaks at `[5,1]` while the LP shadow price peaks at `[2,1,1,1,1]`
+  (`y_star=29.7`, but `y_λ` tiny) — two **distinct weightings of the shared active
+  manifold**, exactly as expected for a multi-channel bound state, not a defect.
+
+**Upshot:** the `[5,1]` concentration is **not** a fragile artifact — the qbk2
+correction lives on the multi-channel active binding manifold the LP selects. This
+de-fragilizes the correction (it sits where the deuteron binds), though it remains
+**subdominant** in magnitude (the deflation above stands). The honest path to wiring
+is a definite per-block form on this active manifold — still owner-gated (binding
+sector); no production change here.
