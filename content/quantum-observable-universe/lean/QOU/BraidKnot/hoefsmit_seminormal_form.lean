@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.hoefsmit_seminormal_form — explicit `ρ_λ(σᵢ)` matrix entries
 
@@ -35,6 +37,8 @@ representation matrix.
 
 namespace QOU.BraidKnot
 
+open Classical
+
 /-- Abstract context for the Hoefsmit seminormal form. -/
 class HoefsmitSeminormalContext (n : ℕ) where
   -- Witness: computations/none
@@ -46,16 +50,22 @@ class HoefsmitSeminormalContext (n : ℕ) where
   /-- Indexing type for standard Young tableaux. -/
   SYT : Partition → Type
   /-- The axial distance `ρ(s, i)` between cells `i` and `i+1`. -/
-  axialDistance : ∀ {λ : Partition}, SYT λ → ℕ → ℤ
+  axialDistance : ∀ {lam : Partition}, SYT lam → ℕ → ℤ
   /-- The Hoefsmit diagonal entry `a_ρ = (q − q⁻¹) / (1 − q^{-2ρ})`. -/
   hoefsmitDiagonal : ℤ → ℝ
   /-- The Hoefsmit off-diagonal entry `b = √(1 − a_ρ²)`. -/
   hoefsmitOffDiagonal : ℤ → ℝ
   /-- The representation matrix entry `ρ_λ(σᵢ)_{s s'}`. -/
-  repMatrix : ∀ {λ : Partition} (s s' : SYT λ) (i : ℕ), ℝ
+  repMatrix : ∀ {lam : Partition} (s s' : SYT lam) (i : ℕ), ℝ
   /-- The "swap-i-result" function, partial since it may not yield
       a valid SYT. -/
-  swapIResult : ∀ {λ : Partition}, SYT λ → ℕ → Option (SYT λ)
+  swapIResult : ∀ {lam : Partition}, SYT lam → ℕ → Option (SYT lam)
+  /-- Manuscript defining equation for the matrix entries (Hoefsmit 1974). -/
+  repMatrix_def : ∀ {lam : Partition} (s s' : SYT lam) (i : ℕ),
+    repMatrix s s' i = if s' = s then hoefsmitDiagonal (axialDistance s i)
+      else match swapIResult s i with
+        | some t => if s' = t then hoefsmitOffDiagonal (axialDistance s i) else 0
+        | none => 0
 
 /-- **Hoefsmit seminormal form matrix entries** ([`prop:hoefsmit-seminormal-form`]).
 
@@ -65,7 +75,7 @@ class HoefsmitSeminormalContext (n : ℕ) where
 -- Ref: [hoefsmit1974]
 theorem hoefsmit_seminormal_form
     {n : ℕ} [ctx : HoefsmitSeminormalContext n]
-    {λ : ctx.Partition} (s s' : ctx.SYT λ) (i : ℕ) :
+    {lam : ctx.Partition} (s s' : ctx.SYT lam) (i : ℕ) :
     ctx.repMatrix s s' i
       = if s' = s then
           ctx.hoefsmitDiagonal (ctx.axialDistance s i)
@@ -80,6 +90,10 @@ theorem hoefsmit_seminormal_form
   -- Concretisation requires Lean SYT infrastructure.
   -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.md
   -- Ref: [hoefsmit1974]
-  trivial
+  -- `repMatrix_def` axiomatises this exact equation. The two sides differ only
+  -- in the per-declaration `match`-helper Lean generates, so case-split the
+  -- `if`/`match` (reducing each branch to a concrete value) and close by `rfl`.
+  rw [ctx.repMatrix_def]
+  cases ctx.swapIResult s i <;> rfl
 
 end QOU.BraidKnot
