@@ -67,3 +67,18 @@ published constants.
 - `computations/substrate/codata_constants.py:105-111` (the documented prior fix)
 - `tools/qou-substrate/python/qou_substrate/constants.py:283`
 - `qou-mass/src/qou_mass/_internal/codata_constants.py:99`
+
+## RESOLVED 2026-06-24 (owner-approved, PR #2725, branch claude/me-codata-reconcile-2026-06-24)
+
+Fixed both truncated copies to full CODATA-2022 `0.51099895069` (option a, single
+source of truth). Verified:
+- All 3 registries agree; both package copies import the full value cleanly
+  (qou_mass full import has a pre-existing unrelated `cal-3-q-beta.witness.json`
+  path quirk, not introduced here).
+- **No L2 regression** — controlled A/B run of `per_observable_100x_status`
+  (with vs without the change) gives identical numbers; dashboards import the
+  computations/substrate codata (already full), so provably unaffected.
+- Side-finding (separate bean): committed `per-observable-100x-status.witness.json`
+  on main is STALE vs current code (m_mu 963.6×→0.2374×, Q_β/m_n drifted).
+
+Awaiting review + merge; close after merge (human verifies).
