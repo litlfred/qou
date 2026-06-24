@@ -1,0 +1,28 @@
+{
+ "computation": "chirality-weighted-3body-cluster",
+ "description": "Connected 3-body cluster c3=joint-pair_sum for abs/signed/chiral combiners over the H_9 joint trace (Rust kernel, 0 fit). Tests whether the chirality sign sgn(w0^{S_l'}) flips c3 to attractive.",
+ "scriptFile": "computations/probes/chirality_weighted_3body_cluster_probe.py",
+ "parameters": {
+  "q_0": "1.1099785955573347",
+  "E0_MeV": "4.18598082758289",
+  "free_parameters": 0
+ },
+ "data": {
+  "rows": [
+   {
+    "atom": "T",
+    "abs_c3_MeV": "-1.7687753",
+    "signed_c3_MeV": "-1.6324813",
+    "chiral_c3_MeV": "0.075991558",
+    "b3_empirical_MeV": "1.8081"
+   },
+   {
+    "atom": "3He",
+    "abs_c3_MeV": "-1.4054244",
+    "signed_c3_MeV": "-1.3288376",
+    "chiral_c3_MeV": "0.12021737",
+    "b3_empirical_MeV": "1.044345"
+   }
+  ]
+ }
+}
