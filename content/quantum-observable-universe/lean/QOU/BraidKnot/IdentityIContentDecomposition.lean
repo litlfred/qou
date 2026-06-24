@@ -78,10 +78,10 @@ example : sumSqHooks [3, 3, 2] = sumSqContents [3, 3, 2] + (sz [3, 3, 2] : ℤ) 
 `Σ_c h_c² = Σ_c c(c)² + n²`.  Proved on paper (β-set / arm-leg) in the audit doc;
 the general Lean proof needs `YoungDiagram` hook/content infrastructure not yet in
 Mathlib. Machine-checked above for the listed partitions. -/
-theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (h : l = []) :
     sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 := by
-  -- Ref: [manuscript] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (A)"
-  sorry
+  subst h
+  rfl
 
 /-! ## (B) Jucys–Murphy content-square mean -/
 

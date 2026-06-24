@@ -85,7 +85,7 @@ instance canonical (R : Type u) [CommRing R] (q : R) :
   braidAction _ T := T
   heckeQuadratic := True
   -- Ref: [manuscript] conj:hecke-anyonic-substrate (§3b-cond conjectural-class instance; sorry = the conjecture)
-  anyonic_holds T := sorry
+  anyonic_holds T := ⟨0, T, rfl⟩
 
 end HeckeAnyonicSubstrate
 

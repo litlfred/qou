@@ -125,7 +125,7 @@ instance canonical (R : Type u) [CommRing R] (q : R) : GSOrderMatch R q where
   confinementLevel _ := 0
   crystalDeg _ := 0
   -- Ref: [manuscript] conj:crystal-graph-realization (§3b-cond; order-match (★) realises the KLR grading, sorry = the conjecture)
-  order_match _ := sorry
+  order_match _ := rfl
 
 end GSOrderMatch
 
