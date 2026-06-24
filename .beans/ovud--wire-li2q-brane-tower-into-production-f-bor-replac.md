@@ -1,10 +1,10 @@
 ---
 # ovud
 title: Wire Li2q brane-tower into production F_Bor (replace /q3 normalization)
-status: todo
+status: in-progress
 type: task
 created_at: 2026-06-24T03:48:33Z
-updated_at: 2026-06-24T03:48:33Z
+updated_at: 2026-06-24T04:00:00Z
 ---
 
 
@@ -26,3 +26,20 @@ Q_β c_k≥4 classes, these coefficients come from a known function
 proved/derived/fitted per the c_k framing (AGENTS.md).
 
 Cross-ref: docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md
+
+## FINDING (2026-06-24, PR #2691): premise reframed — /q³ is EXACT
+
+Probe `computations/li2q_fbor_expansion_probe.py` proves:
+- [3]_q!/q³ = 1 + 2q⁻² + 2q⁻⁴ + q⁻⁶ EXACTLY (sympy, residual 0). The
+  /q³ is q-factorial balancing, NOT a fit. F_Bor is a fully exact form.
+- F_Bor alone lands m_p at −242 ppb.
+- The habiro_ratio (1+46u⁴)(1+4u⁵)(1−29u⁶) supplies +2.42e-7 = +242 ppb,
+  cancelling that residual to 0.0004 ppb. The {46,4,29} are the genuine
+  CODATA-anchored fit — THIS is the improvement target, not /q³.
+- The Li₂^q brane-tower (terms 2/3) is O(1) on the proton's O(1) per-gen
+  volumes (Σ −Li₂^q(−|V̂|) = 1.618) — WRONG scale by 10⁷ for the O(1e-7)
+  correction. The +242 ppb closer is the term-6 Habiro residue tail.
+
+REMAINING (the real ovud): deriving the {46,4,29} term-6 Habiro residue
+is the SAME open Habiro-element problem as the Q_β c_k ladder (s5bb
+keystone). NOT a Li₂^q-tower reparametrisation. Gated on s5bb.
