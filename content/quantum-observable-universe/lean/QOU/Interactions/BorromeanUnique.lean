@@ -1,5 +1,7 @@
 import QOU.Archimedean.HeckeH3
 
+set_option linter.unusedSimpArgs false
+
 /-!
 # B₃ is the unique optimal braid word for confinement
 
@@ -162,7 +164,13 @@ noncomputable def borromean3 : TMatrix :=
 theorem borromean3_entry_00 :
     borromean3 0 0 =
     (1 - q_from_t * q_from_t) ^ 3 +
-    3 * (1 - q_from_t * q_from_t) * (-q_inv_from_t) * (-q_inv_from_t) := sorry
+    2 * (1 - q_from_t * q_from_t) * q_inv_from_t * (-q_inv_from_t) +
+    q_inv_from_t * (-q_inv_from_t) * (-q_inv_from_t * q_inv_from_t) := by
+  simp [borromean3, mul_apply, Fin.sum_univ_two, borromeanUnit_entry_00, borromeanUnit_entry_01, borromeanUnit_entry_10, borromeanUnit_entry_11]
+  simp only [q_from_t, q_inv_from_t, t, t_inv, pow_succ, pow_zero, mul_assoc, add_mul, neg_mul, mul_neg, neg_neg, sub_mul, mul_sub,
+             mul_one, one_mul, ← LaurentPolynomial.T_add,
+             Int.reduceAdd, Int.reduceNeg, LaurentPolynomial.T_zero]
+  ring
 
 /-- B₃(0,1) is a nonzero Laurent polynomial.
 
@@ -175,8 +183,14 @@ theorem borromean3_entry_00 :
 theorem borromean3_entry_01 :
     borromean3 0 1 =
     (1 - q_from_t * q_from_t) ^ 2 * q_inv_from_t +
-    (1 - q_from_t * q_from_t) * (-q_inv_from_t) * (-q_inv_from_t * q_inv_from_t) +
-    q_inv_from_t * (-q_inv_from_t) * (-q_inv_from_t) := sorry
+    (1 - q_from_t * q_from_t) * q_inv_from_t * (-q_inv_from_t * q_inv_from_t) +
+    q_inv_from_t * (-q_inv_from_t) * q_inv_from_t +
+    q_inv_from_t * (-q_inv_from_t * q_inv_from_t) * (-q_inv_from_t * q_inv_from_t) := by
+  simp [borromean3, mul_apply, Fin.sum_univ_two, borromeanUnit_entry_00, borromeanUnit_entry_01, borromeanUnit_entry_10, borromeanUnit_entry_11]
+  simp only [q_from_t, q_inv_from_t, t, t_inv, pow_two, pow_succ, pow_zero, mul_add, add_mul, neg_mul, mul_neg, neg_neg, sub_mul, mul_sub,
+             mul_one, one_mul, ← LaurentPolynomial.T_add,
+             Int.reduceAdd, Int.reduceNeg, LaurentPolynomial.T_zero]
+  ring
 
 /-- B₃ is NOT the identity in the standard representation.
     Proof: B₃(0,1) ≠ 0 but I(0,1) = 0. -/
@@ -190,15 +204,15 @@ theorem borromean3_not_identity :
   have h01 := congr_fun (congr_fun h 0) 1
   rw [borromean3_entry_01] at h01
   simp only [Matrix.one_apply, Fin.zero_ne_one, ↓reduceIte] at h01
-  simp only [q_from_t, q_inv_from_t, t, t_inv, pow_two] at h01
-  simp only [← LaurentPolynomial.T_zero] at h01
-  simp only [mul_sub, sub_mul, neg_mul, mul_neg] at h01
-  simp only [← LaurentPolynomial.T_add, Int.reduceAdd, Int.reduceNeg] at h01
+  simp only [q_from_t, q_inv_from_t, t, t_inv, pow_two, pow_succ, pow_zero, mul_add, add_mul, neg_mul, mul_neg, neg_neg, sub_mul, mul_sub,
+             mul_one, one_mul, ← LaurentPolynomial.T_add,
+             Int.reduceAdd, Int.reduceNeg, LaurentPolynomial.T_zero] at h01
   have h01_eval := congrArg (fun f : ℤ →₀ ℤ => f 2) h01
-  change ((Finsupp.single (-2) 1 : ℤ →₀ ℤ) 2 - (Finsupp.single 2 1 : ℤ →₀ ℤ) 2 -
-          ((Finsupp.single 2 1 : ℤ →₀ ℤ) 2 - (Finsupp.single 6 1 : ℤ →₀ ℤ) 2) +
-          - -((Finsupp.single (-6) 1 : ℤ →₀ ℤ) 2 - (Finsupp.single (-2) 1 : ℤ →₀ ℤ) 2) +
-          - -((Finsupp.single (-6) 1 : ℤ →₀ ℤ) 2)) = (0 : ℤ) at h01_eval
+  change (((Finsupp.single (-2) 1 : ℤ →₀ ℤ) 2 - (Finsupp.single 2 1 : ℤ →₀ ℤ) 2 -
+           ((Finsupp.single 2 1 : ℤ →₀ ℤ) 2 - (Finsupp.single 6 1 : ℤ →₀ ℤ) 2) +
+           -((Finsupp.single (-6) 1 : ℤ →₀ ℤ) 2 - (Finsupp.single (-2) 1 : ℤ →₀ ℤ) 2) +
+           -(Finsupp.single (-6) 1 : ℤ →₀ ℤ) 2 +
+           (Finsupp.single (-10) 1 : ℤ →₀ ℤ) 2) = (0 : ℤ)) at h01_eval
   simp only [Finsupp.single_apply, if_true] at h01_eval
   revert h01_eval
   decide
