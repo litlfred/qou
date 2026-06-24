@@ -1,0 +1,41 @@
+{
+  "computation": "yardstick-free-phase-binding",
+  "description": "Yardstick-free phase->binding test (0 fit): Gap=B_AME-B_joint^model (|chi| joint trace, no k*B2 reference) vs q-Reeb Sigma|Dtheta| across T/3He/4He. Tests whether removing the k*B2 yardstick (the #2703 confound) yields a flatter phase->binding ratio, or whether the total gap is noisier (mixes in 3-body).",
+  "scriptFile": "computations/probes/yardstick_free_phase_binding_probe.py",
+  "inputs": {
+    "E0_MeV": "4.185980828",
+    "q0": "1.10997859556",
+    "fit_params": 0
+  },
+  "data": {
+    "rows": [
+      {
+        "atom": "T",
+        "B_AME_MeV": "8.481798",
+        "B_joint_model_MeV": "3.2524737",
+        "gap_MeV": "5.2293243",
+        "sum_abs_dtheta_rad": "8.2233",
+        "ratio_MeV_per_rad": "0.63591554"
+      },
+      {
+        "atom": "3He",
+        "B_AME_MeV": "7.718043",
+        "B_joint_model_MeV": "3.4665492",
+        "gap_MeV": "4.2514938",
+        "sum_abs_dtheta_rad": "8.4937",
+        "ratio_MeV_per_rad": "0.50054673"
+      },
+      {
+        "atom": "4He",
+        "B_AME_MeV": "28.295674",
+        "B_joint_model_MeV": "3.8042998",
+        "gap_MeV": "24.491374",
+        "sum_abs_dtheta_rad": "17.2334",
+        "ratio_MeV_per_rad": "1.4211574"
+      }
+    ],
+    "mean_ratio_MeV_per_rad": "0.85253989",
+    "full_spread_pct": "107.984",
+    "verdict": "NOISY (>40%) -- total gap mixes in 3-body; pairwise object was cleaner"
+  }
+}

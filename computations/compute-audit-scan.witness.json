@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-24T01:27:09.523176+00:00",
-  "commitSha": "146610638654bc9fd4d2dfb81aa688237cd3b817",
+  "computedAt": "2026-06-24T11:20:08.852866+00:00",
+  "commitSha": "1dd7f1a98d3e7b1a95095659952cd88e457b626b",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 309,
+  "durationMs": 11,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8a602c238718",
-  "scriptCommitSha": "81b286b6b75382730a0886067c550a30ed123a68",
+  "scriptCommitSha": "e46b8145b47b2bb40f9b7ce30a8bd126e7fbc6ad",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -20,12 +20,13 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 927,
+    "files_scanned": 941,
     "patterns": [
       "P15",
       "P16",
@@ -37,10 +38,10 @@
   "data": {
     "by_pattern_count": {
       "P15": 123,
-      "P16": 259,
+      "P16": 261,
       "P21": 24,
       "P30": 138,
-      "P31": 22
+      "P31": 23
     },
     "top_files": [
       {
@@ -2413,6 +2414,27 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P16",
+        "file": "li2q_fbor_expansion_probe.py",
+        "line": 82,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "li2q_fbor_expansion_probe.py",
+        "line": 84,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P31",
+        "file": "li2q_fbor_expansion_probe.py",
+        "line": 127,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P31",

@@ -1,0 +1,27 @@
+{
+  "computation": "he4-qreeb-phase-falsification",
+  "description": "4He falsification of the q-Reeb-phase/pairwise-deficit relation D/Sigma|Dtheta|~0.2065 MeV/rad (PR #2681, A=3). Per-bond pairwise binding on the canonical H_12 braid atom_braid_word_3A(2,2), |chi| combiner, 0 fit; deficit vs 6*B2 yardstick compared to 0.2065*17.2334=3.56 MeV prediction. Caveat: 4He is doubly magic, yardstick weakest here.",
+  "scriptFile": "computations/probes/he4_qreeb_phase_falsification_probe.py",
+  "inputs": {
+    "E0_MeV": "4.185980828",
+    "q0": "1.10997859556",
+    "B2_MeV": "2.224566",
+    "sum_abs_dtheta_4He_rad": "17.2334",
+    "ratio_A3_MeV_per_rad": "0.2065",
+    "fit_params": 0
+  },
+  "data": {
+    "per_bond_MeV": [
+      "2.0236701",
+      "2.442058",
+      "2.8761526"
+    ],
+    "B_pair_model_MeV": "7.3418807",
+    "pair_target_MeV": "13.347396",
+    "deficit_observed_MeV": "6.0055153",
+    "deficit_predicted_MeV": "3.5586971",
+    "ratio_observed_MeV_per_rad": "0.34848117",
+    "ratio_rel_to_A3_pct": "68.756",
+    "verdict": "FALSIFIED (>40%)"
+  }
+}
