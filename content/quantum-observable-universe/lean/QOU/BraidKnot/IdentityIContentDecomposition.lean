@@ -335,6 +335,46 @@ theorem cell_fubini (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (g : ℕ → ℕ 
   · rintro ⟨hi, hj⟩
     exact ⟨lt_of_lt_of_le hi (colLen_le_length l j), (colLen_duality l hl i j).mp hi⟩
 
+/-! ### Hook side of (A): the min-sum bridge (cross-term gateway, sorry-free)
+
+The arm·leg **cross term** `Σ_c a·l` (the last open piece of (A)) couples rows and columns;
+tracing it through `cell_fubini` produces `Σ_{j<λ_i} colLen(j)` inner sums, which equal the
+**min-sum** `Σ_k min(λ_i, λ_k)`.  That identity — `colLen` as a sum of row-indicators, then
+`Finset.sum_comm`, then the indicator/`min` count — is the bridge that turns the cross term
+into a closed form over ordered row-pairs. -/
+
+/-- `colLen` as a sum of row-indicators: `colLen(j) = Σ_k [j < λ_k]`. -/
+theorem colLen_eq_indicator_sum (l : List ℕ) (j : ℕ) :
+    colLen l j = ∑ k ∈ Finset.range l.length, (if j < l.getD k 0 then 1 else 0) := by
+  induction l with
+  | nil => simp [colLen]
+  | cons a t ih =>
+    rw [colLen_cons, List.length_cons, Finset.sum_range_succ']
+    simp only [List.getD_cons_succ, List.getD_cons_zero]
+    rw [← ih]
+    by_cases h : j < a <;> simp [h, add_comm]
+
+/-- `Σ_{j<a} [j < b] = min a b`. -/
+theorem sum_indicator_lt_eq_min (a b : ℕ) :
+    ∑ j ∈ Finset.range a, (if j < b then (1 : ℕ) else 0) = min a b := by
+  induction a with
+  | zero => simp
+  | succ n ih =>
+    rw [Finset.sum_range_succ, ih]
+    by_cases h : n < b <;> simp only [h, if_true, if_false] <;> omega
+
+/-- **Atomic min-sum bridge (sorry-free).** The row sum of column-heights over a row equals
+the min-sum: `Σ_{j<λ_i} colLen(j) = Σ_k min(λ_i, λ_k)`.  Gateway to the arm·leg cross term
+(its `Σ_{i,k} λ_i·min(λ_i,λ_k)` closed form, via an order-split on `λ_i` vs `λ_k`). -/
+theorem sum_colLen_eq_sum_min (l : List ℕ) (i : ℕ) :
+    ∑ j ∈ Finset.range (l.getD i 0), colLen l j
+      = ∑ k ∈ Finset.range l.length, min (l.getD i 0) (l.getD k 0) := by
+  simp_rw [colLen_eq_indicator_sum l]
+  rw [Finset.sum_comm]
+  apply Finset.sum_congr rfl
+  intro k _
+  exact sum_indicator_lt_eq_min (l.getD i 0) (l.getD k 0)
+
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
 (`identityA_verified_le9`) and exhaustively in Python for `n ≤ 22`.
