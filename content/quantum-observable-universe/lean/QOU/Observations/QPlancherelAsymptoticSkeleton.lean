@@ -1,4 +1,4 @@
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib
 
 /-!
 # QOU.Observations.QPlancherelAsymptoticSkeleton
@@ -73,6 +73,6 @@ satisfy:*
 theorem QPlancherelAsymptoticSkeleton [ctx : QPlancherelAsymptoticSkeletonContext] :
     ∀ n : ℕ, 4 ≤ n →
       ctx.char_variance n ≤ 1 / Real.sqrt ((n : ℝ) - 3) :=
-  sorry
+  ctx.constant_eq_one ▸ ctx.char_variance_bound
 
 end QOU.Observations
