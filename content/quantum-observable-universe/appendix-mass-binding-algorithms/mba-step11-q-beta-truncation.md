@@ -64,8 +64,22 @@ used and the tiered $c_k$ classification.*
 
 ### Notes
 
-*Current L2 status: $\mathfrak{Q}_\beta$ at 164.0× miss vs target as of
-2026-05-31 (per the [precision-goals dashboard](../../../computations/per-observable-100x-status.witness.json)).
-The Habiro-exact 5.7 ppb result was against the pre-re-pin
-muon-anchored $q_0$ and has not been refreshed since the
-proton-anchor re-pin. PR #1727 actively pursues the closure.*
+*The **production neutron mass** consumes a closed-form partial
+resummation of this ladder — the parameter-free **Kashiwara $b^2$**
+truncation
+$\mathfrak{Q}_\beta = Q_A \cos(\alpha - b\,\hbar_q^2/2)\,(1 - b^2 \hbar_q^4)$
+([`derived_masses.q_beta_kashiwara_n2_mev`](../../../computations/derived_masses.py),
+wired into the neutron via [`canonical_mass.py`](../../../computations/canonical_mass.py)
+and [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py)).
+Its outer factor $(1 - b^2\hbar_q^4) = (1 - u^2)$ is exactly the
+$c_2 = -1$ term of the ladder above (with $u = b\,\hbar_q^2$); the $\cos$
+factor supplies the odd-$b$ ($N{=}1$) correction.*
+
+*L2 status (live, PR #2723): $\mathfrak{Q}_\beta$ at $\sim 160\times$ miss
+(1248 ppb, $+1.25\,\mathrm{ppm}$ on $\mathfrak{Q}_\beta$) and $m_n$ at
+$\sim 181\times$ miss ($+1.04\,\mathrm{ppb}$) vs the (research-grade,
+sub-CAL-2-floor) 100× targets — both improved $\sim 1690\times$ over the
+former flavor-split route. TIER: **near-match**; exact closure gated on
+the s5-so3 / Habiro keystone (`conj:s5-so3-fiber-action`, bean s5bb).
+Supersedes the earlier "164.0× as of 2026-05-31 / Habiro-exact 5.7 ppb at
+the pre-re-pin muon anchor" note.*

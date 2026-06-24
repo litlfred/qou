@@ -17,6 +17,7 @@ export default algorithm({
     "step-11",
     "q-beta",
     "ck-truncation",
+    "kashiwara-b2",
     "beta-decay",
     "canonical-chain",
   ],
