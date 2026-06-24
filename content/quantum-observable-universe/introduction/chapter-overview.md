@@ -195,10 +195,15 @@ force-carrier torus knots; and derives the **categorical Hartree
 energy and Bohr radius** that seed the atomic-shell predictions.
 
 Chapter \ref{chap:observations}, *Physical Observations*, then confronts theory with
-experiment.  We calibrate with CODATA values
-$(m_\mu / m_e,\ m_e,\ \mathfrak{Q}_\beta(n))$; the dimensionless
-ratio $m_\mu/m_e$ fixes the substrate parameter via the Skein mass
-relation
+experiment.  In principled form the three calibrations are the
+dimensional unit $m_e$ (CAL-1), the neutron $\beta$-decay width
+$\mathfrak{D}_\beta$ (CAL-2), and the pion decay width $\mathfrak{D}_\pi$
+(CAL-3) — decay-rate observables of the weak sector entering at
+successive orders $h^0$, $h^2$, $h^3$.  Each is fixed numerically by
+its most precisely measured proxy (CODATA $m_e$,
+$\mathfrak{Q}_\beta(n) = \hbar/\mathfrak{D}_\beta$, and $m_\pi$); the
+dimensionless ratio $m_\mu/m_e$ fixes the substrate parameter via the
+Skein mass relation
 
 $$
 \frac{m_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}}, \qquad \hbar_q = \frac{q - 1}{q},
