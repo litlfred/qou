@@ -26,7 +26,7 @@ as $t \mapsto -t + O(t^2)$. The leading term $u \sim t^2$ is invariant under
 $t \mapsto -t$, so:
 
 - **If $R$ is even in $t$** (bar-even), every Taylor coefficient lives at
-  even powers of $t$, which the $u$-grading absorbs cleanly: $R(u)$ admits
+  even powers of $t$, which the $u$-grading absorbs: $R(u)$ admits
   an integer-power Taylor representation in $u$ with no $\sqrt{u}$ branch.
 - **If $R$ has odd-in-$t$ content**, those coefficients sit at $t^{2k+1}$
   and cannot be absorbed into integer powers of $u \sim t^2$: the $q \to u$
