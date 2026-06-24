@@ -1353,7 +1353,223 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-vacuous": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "confinement-topological.lean:20 `theorem gram_indefinite_witness : True := by trivial`. The block is kind proposition (ts:3) carrying the prose 'This is proved by showing that the linear program … has a strictly lower optimum' (md:1-4); the resolved Lean proves only True. Flagged B_provable_vacuous in buckets.json ({lean::: True, labels:[proved]}).",
+        "rebuttal": "surviving — §0a lean.ref qou:QOU.Interactions.gram_indefinite_witness resolves SIBLING-FIRST to the :True:=trivial sibling. No conjecture/§3b carve-out (kind=proposition, no conditional banner). A real same-FQN library decl exists but is shadowed and, separately, does not prove the .md statement.",
+        "evidence": [
+          {
+            "text": "confinement-topological.lean:20"
+          },
+          {
+            "text": "confinement-topological.ts:3"
+          },
+          {
+            "text": "docs/audits/2026-06-24-status-label-overclaim-buckets.json: B_provable_vacuous"
+          }
+        ],
+        "severity": "critical",
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "GramIndefinite.lean:187-192 (the real, non-shadowed decl) proves hopfPlus*hopfPlus + hopfMinus*hopfMinus ≠ 2•(hopfPlus*hopfMinus) — a 2×2 matrix non-equality. The .md Proposition (md:26-38) asserts (i) tr_M*=0 is the LP optimum, (ii) the LP optimum x* has x_{e^-}*→+∞ and is NOT in the braid-group image, (iii) B_3 is the unique braid word of length ≤6 with |Δnet|=0. None of (i)/(ii)/(iii) appears in ANY Lean declaration.",
+        "rebuttal": "surviving — a matrix non-equality is strictly weaker than the three claims; grepped content/ + GramIndefinite.lean + ConfinementLP.lean: no decl states the LP optimum value, braid-image properness, or the enumeration.",
+        "evidence": [
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/Interactions/GramIndefinite.lean:187"
+          },
+          {
+            "text": "confinement-topological.md:26"
+          }
+        ],
+        "severity": "critical",
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "ConfinementLP.lean:92-96 `theorem lp_achieves_zero_trace : hopfPlus ≠ hopfMinus := hopf_ne` and :110-116 `theorem braid_coefficients_bounded : … ≠ 2•(…) := gram_indefinite_witness`. 'L₊≠L₋' does not establish 'the LP achieves trace 0' (claim i); the Gram non-equality does not establish 'braid image is a proper subset' (claim ii).",
+        "rebuttal": "surviving — the Lean names assert the proposition's sub-claims but their proof terms are logically disconnected accessors; the repo's own AUDIT-REPORT.md:224 flags them orphaned/redundant.",
+        "evidence": [
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/Interactions/ConfinementLP.lean:92"
+          },
+          {
+            "text": "content/quantum-observable-universe/lean/AUDIT-REPORT.md:224"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "md:1-4 'Confinement is **topological**, not energetic. This is proved by…' presents a completed proof of a physical confinement mechanism; the strongest available formal object is a 2×2 matrix inequality; the LP-optimum, braid-image, uniqueness claims are unformalised. 'proved' overclaimed.",
+        "rebuttal": "surviving — corpus-grep: tracked not closed (listed in the live B_provable_vacuous bucket; AUDIT-REPORT marks the supporting ConfinementLP claims orphaned). No audit retracts the 'proved' framing.",
+        "evidence": [
+          {
+            "text": "confinement-topological.md:1"
+          },
+          {
+            "text": "docs/audits/2026-06-24-status-label-overclaim-buckets.json"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "internal numeric inconsistency on the load-bearing eigenvalue: md:57-58 states λ_-≈-0.855 'at q_0', while the sibling confinement-lp.md:96-104 states the corrected trace gives λ≈-0.956 and reclassifies B_3 as a LOCAL minimum with the GLOBAL minimum at tr_M=0. The headline 'B_3 selected by minimum action' is contradicted by its own sibling caveat.",
+        "rebuttal": "partial — both numbers and the local-vs-global tension are inside the block's own material, not reconciled; a coherence defect rather than independent falsification.",
+        "evidence": [
+          {
+            "text": "confinement-topological.md:57"
+          },
+          {
+            "text": "confinement-lp.md:96"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "the proposition's only empirical support is **Witness**: confinement-lp.witness.json (md:99), but that file lives at computations/_deprecated/confinement-lp.witness.json — deprecated; the 4^6 enumeration and the LP vertex x* are not backed by a live witness.",
+        "rebuttal": "partial — a deprecated witness is weak but present; numerical claims checkable in principle. Reproducibility degraded, not absent.",
+        "evidence": [
+          {
+            "text": "confinement-topological.md:99"
+          },
+          {
+            "text": "computations/_deprecated/confinement-lp.witness.json"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "fail",
+        "verdict": "open-objection",
+        "referee_argument": "The resolved Lean (sibling-first per §0a) is : True := trivial — a no-shadowing-stub violation over a real same-FQN library decl, and a Bucket-B 'proved'-over-vacuous flag. The shadow is not even the worst problem: the real library decl proves only a 2×2 matrix non-equality, while the .md proposition claims a fully-proved LP-optimum / braid-image / uniqueness theorem for a physical confinement mechanism, and the downstream ConfinementLP backing discharges those sub-claims by logically-disconnected accessors (hopf_ne). corpus-grep finds the overclaim tracked, never closed, and the sibling caveat actively contradicts the selection claim. Multiple referee arguments survive. Downstream consumers (confined-particle, shell-closure-stability, nucleon-ordering-factorization) rely on it as a proved selection principle.",
+        "field_hash": {
+          "md": "62a034929c1a",
+          "ts": "943149e87540",
+          "lean": "9e52b34cf96f"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-24T12:29:19Z"
 }
