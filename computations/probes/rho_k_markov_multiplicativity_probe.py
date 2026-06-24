@@ -71,6 +71,10 @@ from sublemma_2_1_deuteron_branching import (  # noqa: E402
 )
 from witness_base import WitnessBuilder  # noqa: E402
 
+# Near-zero tolerance for direct character values; module-level to avoid
+# re-parsing the literal into an mpf on every loop iteration.
+EPS = mpf("1e-12")
+
 
 def main() -> int:
     w = WitnessBuilder(
@@ -122,10 +126,12 @@ def main() -> int:
                     continue
                 s += c * chi_p[mu] * chi_n[nu]
         direct = chi_disjoint[lam]
-        if abs(direct) < mpf("1e-12"):
-            rel = abs(direct - s)
+        abs_direct = abs(direct)
+        abs_diff = abs(direct - s)
+        if abs_direct < EPS:
+            rel = abs_diff
         else:
-            rel = abs(direct - s) / abs(direct)
+            rel = abs_diff / abs_direct
         rel_diffs.append(rel)
         per_lambda.append({
             "lambda": list(lam),
