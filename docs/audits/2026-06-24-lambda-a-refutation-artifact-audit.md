@@ -138,6 +138,25 @@ This does **not** claim per-knot density rescues absolute masses (it does
 not). The productive redo is binding/shell closures re-run with the
 p≠n-distinct per-knot traces, not an absolute-mass re-pin.
 
+## Probe / consumer triage (bean 0voz — "fix research probes")
+
+20 scripts call the deprecated `vol_density_borromean` / `mass_vol_density`.
+**Immediate guard (live):** both now emit `DeprecationWarning` → no probe can
+*silently* use the wrong density. Per-script disposition:
+
+| Disposition | Scripts | Action |
+|---|---|---|
+| **Migrate** (production absolute mass) | `mass_table_comprehensive` ✅ done (→ facade) | route to `canonical_mass` |
+| **Keep + warn** (subject IS the density / a study) | `vol_density_borromean_h4_probe`, `vol_density_borromean_q_locality_probe`, `option_a_vol_per_knot_light_series`, `gap_a4_{L1,S_K,T2}`, `bring_color_weighted_base_scale_probe`, `casimir_hoefsmit_additivity_probe`, `vol_density_per_block_wiring`, `per_knot_mass_table_demonstration`, `volume_def_reconcile`, `m_p_borromean_verification_50dps` (verifies the Borromean route) | warning is correct — they knowingly use the fit |
+| **Keep + warn** (binding/energy scale, not abs nucleon mass) | `entanglement_emitted_energy`, `gamma_gamma_pair_production_decomposition`, `multi_layer_gap_decomposition`, `m_qclt_approx`, `meson_vol_density` (meson, different particle) | scale cancels / different observable |
+| **Superseded** (old route, non-production) | `build_proton_mass_50dps_chain` (Borromean→965; imported only by `witness_reproducibility_check`) | leave with warning; supersede when convenient |
+
+**Conclusion:** the only genuine production absolute-mass bad usage was
+`mass_table_comprehensive` (fixed). The rest are research probes whose
+subject is the density (warning is the right signal) or non-mass/binding
+uses. No blind migration — that would break the studies. The Deprecation
+warnings are the durable "don't continue to use wrong" guard.
+
 ## Next (under x5az)
 
 1. Re-run `rho_k_h3a_co_casimir.py` with `vol_density_per_block` (per-knot
