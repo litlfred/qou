@@ -59,20 +59,32 @@ SWEEP = [("2H", 1, 1), ("4He", 2, 2),
 
 
 def _ame_table():
-    """(Z, A) → (total binding energy MeV, experimental 1σ MeV) from the
-    vendored AME2020 table. σ_B = binding_energy_per_A_unc_keV × A (the
-    per-nucleon uncertainty scales with A for the total)."""
+    """(Z, A) → (total binding MeV, σ_B MeV, atomic mass MeV, σ_atom MeV) from the
+    vendored AME2020 table. σ_B = binding_energy_per_A_unc_keV × A; atomic mass =
+    atomic_mass_micro_u × 1e-6 × u — the RAW neutral-atom mass (electrons included)."""
+    U_MEV = 931.49410372                                # CODATA atomic mass unit u
     d = json.loads((HERE / "data" / "ame2020.json").read_text())
     entries = d["entries"] if isinstance(d, dict) and "entries" in d else d
     rows = entries.values() if isinstance(entries, dict) else entries
     out = {}
     for r in rows:
         b = r.get("binding_energy_total_keV")
-        if b is not None:
-            unc_perA = r.get("binding_energy_per_A_unc_keV") or 0.0
-            sigma = unc_perA * r["A"] / 1000.0          # total σ_B in MeV
-            out[(r["Z"], r["A"])] = (b / 1000.0, sigma)
+        if b is None:
+            continue
+        unc_perA = r.get("binding_energy_per_A_unc_keV") or 0.0
+        sigma = unc_perA * r["A"] / 1000.0              # total σ_B in MeV
+        amu = r.get("atomic_mass_micro_u")
+        m_atom = amu * 1e-6 * U_MEV if amu is not None else None
+        s_atom = (r.get("atomic_mass_unc_micro_u") or 0.0) * 1e-6 * U_MEV
+        out[(r["Z"], r["A"])] = (b / 1000.0, sigma, m_atom, s_atom)
     return out
+
+
+def _electron_binding_mev(Z):
+    """Total atomic electron binding B_el(Z) in MeV — the AME (Lunney–Pearson–
+    Thibault) empirical fit used to convert atomic↔nuclear masses:
+    B_el = 1.44381e-5·Z^2.39 + 1.55468e-12·Z^5.35 MeV (H ≈ 14 eV → U ≈ 0.76 MeV)."""
+    return 1.44381e-5 * Z ** 2.39 + 1.55468e-12 * Z ** 5.35
 
 
 def _constants():
@@ -126,6 +138,8 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
     bame_t = ame.get((Z, A))
     bame = bame_t[0] if bame_t else None
     sigma_ame = bame_t[1] if bame_t else None
+    m_atom_ame = bame_t[2] if bame_t else None
+    sigma_atom = bame_t[3] if bame_t else None
     # ---- cheap forms (any A): factorized q-CLT + ⁴He magic volume -----------
     n_pp, n_pn, n_nn = comb(Z, 2), Z * N, comb(N, 2)
     sigma_L = n_pp * Lbond["pp"] + n_pn * Lbond["pn"] + n_nn * Lbond["nn"]
@@ -203,7 +217,7 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
         E_multilink = alpha * abs((defect0 - defecti) / 2.0)
         B_sym_ent = B_sym + E_multilink
     return {"name": name, "Z": Z, "N": N, "A": A, "n": n, "B_AME": bame,
-            "sigma_AME": sigma_ame,
+            "sigma_AME": sigma_ame, "M_atom_AME": m_atom_ame, "sigma_atom": sigma_atom,
             "n_pp": n_pp, "n_pn": n_pn, "n_nn": n_nn,
             "B_lin": B_lin,
             "B_sym": B_sym, "B_sym_exact": B_sym_exact, "chain_resid": chain_resid,
@@ -414,6 +428,31 @@ def main(argv=None) -> int:
               f"| {_fmt(_can('B_lin'),9,1)} | {_fmt(_can('B_sym'),9,1)} "
               f"| {_fmt(_can('B_qCLT_fac'),9,1)} | {_fmt(_can('B_magic'),9,1)} "
               f"| {_sci(_err_ppb('B_sym'),13,3)} | {_sci(_err_ppb('B_qCLT_fac'),14,3)} |")
+
+    # 1c. ATOMIC mass comparison — the framework predicts NUCLEAR masses; add the
+    #   electron shell (Z·m_e − B_el(Z)) to compare against the RAW AME neutral-
+    #   atom masses (atomic_mass_micro_u). Predicted via the exact m_sym binding:
+    #   M_atom = (m_unbnd,can − B_sym) + Z·m_e − B_el(Z). The e⁻ layer is added
+    #   identically to prediction and data, so err tracks the nuclear binding
+    #   error — this table makes the e⁻ layer explicit and checks the framework
+    #   nuclear masses against the raw atomic tabulation.
+    print("\n### Atomic mass  M_atom = M_nuclear + Z·m_e − B_el(Z)  (vs RAW AME neutral-atom mass)")
+    print("| iso | A | Z | M_atom_AME | M_atom_pred(sym) | err sym (ppb) | σ_exp (ppb) | e⁻ layer (MeV) |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|")
+    for r in rows:
+        Z = r["Z"]
+        mu_can = Z * mp_can + r["N"] * mn_can
+        e_layer = Z * me - _electron_binding_mev(Z)        # Z·m_e − B_el(Z)
+        m_atom_ame = r["M_atom_AME"]
+        b = r["B_sym"]
+        m_atom_pred = (mu_can - b) + e_layer if b is not None else None
+        err = ((m_atom_pred - m_atom_ame) / m_atom_ame * 1e9
+               if (m_atom_pred is not None and m_atom_ame) else None)
+        sa = r["sigma_atom"]
+        s_ppb = (sa / m_atom_ame * 1e9) if (sa and m_atom_ame) else None
+        print(f"| {r['name']} | {r['A']} | {Z} | {_fmt(m_atom_ame,10,3)} "
+              f"| {_fmt(m_atom_pred,10,3)} | {_sci(err,13,3)} | {_sci(s_ppb,11,2)} "
+              f"| {_fmt(e_layer,7,3)} |")
 
     # 2. BINDING + error  (B_AME ± exp 1σ from AME2020; err X = B_AME/B_X)
     print("### Binding  B + error (MeV)   "
