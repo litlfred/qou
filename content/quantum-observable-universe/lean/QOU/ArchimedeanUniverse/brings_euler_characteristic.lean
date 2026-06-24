@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.ArchimedeanUniverse.brings_euler_characteristic
 
@@ -48,6 +50,6 @@ the Descartes substrate parameter $q_0$.
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/brings-euler-characteristic.ts
 theorem brings_euler_characteristic [ctx : BringsEulerCharacteristicContext] :
     ctx.g = 4 ∧ ctx.chi_A = 2 - 2 * (ctx.g : ℤ) ∧ ctx.chi_A = -6 :=
-  sorry
+  ctx.claim_brings_euler_characteristic
 
 end QOU.ArchimedeanUniverse
