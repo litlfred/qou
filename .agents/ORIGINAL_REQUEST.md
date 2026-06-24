@@ -174,3 +174,54 @@ Evaluate the audited Lean files using the `proof-rater` quality rubrics (strateg
 - [ ] The agents have verified their own work using programmatic validation tools (`lean_ci`, `qa-sweep`, and `lean_verify`).
 - [ ] All audited files have been scored using the `proof-rater` rubrics.
 
+## 2026-06-23T23:54:07Z
+
+# Teamwork Proof Migration Project - Batch 4
+
+Execute a Lean code proof effort targeting the next batch of placeholder `sorry` stubs. You must orchestrate a fleet of worker agents to replace the `sorry` statements with full Lean proofs.
+
+Working directory: /Users/litlfred/space_cats/qou
+
+## Requirements
+
+### R1. Formalize the Sorry Stubs
+Select a new batch of 10 files from `content/quantum-observable-universe/lean/QOU/` that contain actual `sorry` or `by sorry` code (ignore comments) and assign them to workers. Ensure you skip the ones already completed in Batch 1, Batch 2, and Batch 3. 
+The workers must read the corresponding `.md` content files, understand the math, and write the valid Lean proof to replace the `sorry`.
+CRITICAL: The workers must insert `import Mathlib` at the top of the files if they use `ℝ`, `ℕ`, or `| |` to avoid synthesis errors!
+
+### R2. Agent Throttling
+CRITICAL LIMIT: You may only spawn a maximum of 10 agents at a time to prevent resource exhaustion. Process them in batches. Wait for a batch to finish before spawning the next.
+
+### R3. Quality Evaluation
+The agents must verify their own work using programmatic validation tools (`lake build` or `scripts/lean-verify.sh`).
+
+## Acceptance Criteria
+- [ ] A new batch of 10 stubs have been successfully proved and the Lean compiler accepts the proofs.
+- [ ] No more than 10 agents were active at any given time.
+- [ ] You must create a new branch named `claude/prove-stubs-batch4-2026-06-23` and commit the work to it.
+
+## 2026-06-24T00:04:09Z
+
+# Teamwork Proof Migration Project - Batch 5
+
+Execute a Lean code proof effort targeting the next batch of placeholder `sorry` stubs. You must orchestrate a fleet of worker agents to replace the `sorry` statements with full Lean proofs.
+
+Working directory: /Users/litlfred/space_cats/qou
+
+## Requirements
+
+### R1. Formalize the Sorry Stubs
+Select a new batch of 10 files from `content/quantum-observable-universe/lean/QOU/` that contain actual `sorry` or `by sorry` code (ignore comments) and assign them to workers. Ensure you skip the ones already completed in Batch 1, Batch 2, Batch 3, and Batch 4. 
+The workers must read the corresponding `.md` content files, understand the math, and write the valid Lean proof to replace the `sorry`.
+CRITICAL: The workers must insert `import Mathlib` at the top of the files if they use `ℝ`, `ℕ`, or `| |` to avoid synthesis errors!
+
+### R2. Agent Throttling
+CRITICAL LIMIT: You may only spawn a maximum of 10 agents at a time to prevent resource exhaustion. Process them in batches. Wait for a batch to finish before spawning the next.
+
+### R3. Quality Evaluation
+The agents must verify their own work using programmatic validation tools (`lake build` or `scripts/lean-verify.sh`).
+
+## Acceptance Criteria
+- [ ] A new batch of 10 stubs have been successfully proved and the Lean compiler accepts the proofs.
+- [ ] No more than 10 agents were active at any given time.
+- [ ] You must create a new branch named `claude/prove-stubs-batch5-2026-06-23` and commit the work to it.
