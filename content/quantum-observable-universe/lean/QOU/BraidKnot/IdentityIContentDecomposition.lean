@@ -937,8 +937,9 @@ no Wedderburn blocks, no Jucys–Murphy elements, no `ℂ[S_n]` — just partiti
 same hook used by `sumSqHooks`).  Denominator of the Frame–Robinson–Thrall dimension. -/
 def prodHooks (l : List ℕ) : ℕ :=
   ((List.range l.length).map fun i =>
-    ((List.range (l.getD i 0)).map fun j =>
-      ((l.getD i 0 - j) + (colLen l j - i) - 1)).prod).prod
+    let rowLen := l.getD i 0
+    ((List.range rowLen).map fun j =>
+      ((rowLen - j) + (colLen l j - i) - 1)).prod).prod
 
 /-- **Hook-length-formula dimension** `dim(λ) = n!/∏_c h_c` (Frame–Robinson–Thrall).  `∏ h_c`
 divides `n!` exactly, so the `ℕ` division is the honest integer `#SYT(λ)`; the exactness is
@@ -953,8 +954,9 @@ def partsFuel : ℕ → ℕ → ℕ → List (List ℕ)
   | _, 0, _ => [[]]
   | 0, _ + 1, _ => []
   | (f + 1), (t + 1), cap =>
-      (List.range (min cap (t + 1))).flatMap (fun i =>
-        let p := min cap (t + 1) - i
+      let limit := min cap (t + 1)
+      (List.range limit).flatMap (fun i =>
+        let p := limit - i
         (partsFuel f (t + 1 - p) p).map (p :: ·))
 
 /-- All integer partitions of `n` (weakly-decreasing `List ℕ`). -/
