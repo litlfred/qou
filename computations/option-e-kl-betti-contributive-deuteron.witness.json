@@ -1,0 +1,186 @@
+{
+  "engine": "python3/mpmath",
+  "engineVersion": "50dps",
+  "computedAt": "2026-06-24T22:54:28Z",
+  "computation": "option-e-kl-betti-contributive-deuteron",
+  "scriptFile": "option_e_kl_betti_contributive_deuteron.py",
+  "description": "Scope-limited measurement (AGENTS.md \u00a7before-declaring-refuted): size of the KL left-cell Betti-sum contribution to deuteron binding vs the canonical f^\u03bb ansatz. NOT a refutation. B_\u03bb = f^\u03bb on hooks; bulk partitions carry B_\u03bb > f^\u03bb.",
+  "data": {
+    "nucleus": "D (H_6/S_6)",
+    "sum_f_lambda": "-0.743780885428186113483562131780900046951250340467",
+    "sum_betti": "-1.4893826104493096813558423677074882703757768707426",
+    "B_D_f_lambda_MeV": "0.38007125199708221534012950990345942497586065756214",
+    "B_D_betti_MeV": "0.76107295111553027660769370639957164701750499294306",
+    "B_D_AME_MeV": "2.22452",
+    "factor_needed_to_close": "5.8529025500120632887965493171127561020592241475022",
+    "factor_betti_delivers": "2.002448086027229938757091213515054094010266252871",
+    "verdict": "CONTRIBUTIVE (moves toward AME) but does NOT close",
+    "reconstruction_matches_canonical": true,
+    "per_partition": [
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "f_lambda": 1,
+        "betti": 1,
+        "sgn": -1,
+        "chi": -0.6768766363460386,
+        "y": -1.2437986974301156e-05,
+        "term_f": -8.418982786080806e-06,
+        "term_betti": -8.418982786080806e-06
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "f_lambda": 5,
+        "betti": 5,
+        "sgn": 1,
+        "chi": 2.155255181452089,
+        "y": 9.863557610980337e-05,
+        "term_f": 0.0010629241824308279,
+        "term_betti": 0.0010629241824308279
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "f_lambda": 9,
+        "betti": 21,
+        "sgn": -1,
+        "chi": -0.8196548894596312,
+        "y": -0.0003420517708854012,
+        "term_f": -0.0025232796580909015,
+        "term_betti": -0.005887652535545437
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "f_lambda": 10,
+        "betti": 10,
+        "sgn": 1,
+        "chi": -0.49012578644043403,
+        "y": -0.0006853088855144668,
+        "term_f": 0.003358875564673954,
+        "term_betti": 0.003358875564673954
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2
+        ],
+        "f_lambda": 5,
+        "betti": 21,
+        "sgn": 1,
+        "chi": -3.497294144384569,
+        "y": 0.0007731867369053802,
+        "term_f": -0.013520307237474992,
+        "term_betti": -0.056785290397394966
+      },
+      {
+        "partition": [
+          3,
+          2,
+          1
+        ],
+        "f_lambda": 16,
+        "betti": 41,
+        "sgn": 1,
+        "chi": -1.9722719128260298,
+        "y": 0.00731845435228573,
+        "term_f": -0.23094371142900097,
+        "term_betti": -0.591793260536815
+      },
+      {
+        "partition": [
+          4,
+          1,
+          1
+        ],
+        "f_lambda": 10,
+        "betti": 10,
+        "sgn": -1,
+        "chi": -0.4698055110854846,
+        "y": 0.010133463492072935,
+        "term_f": 0.04760756994959424,
+        "term_betti": 0.04760756994959424
+      },
+      {
+        "partition": [
+          3,
+          3
+        ],
+        "f_lambda": 5,
+        "betti": 23,
+        "sgn": -1,
+        "chi": 4.2494023464559305,
+        "y": 0.014120874004975288,
+        "term_f": -0.30002637565375273,
+        "term_betti": -1.3801213280072624
+      },
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "f_lambda": 9,
+        "betti": 20,
+        "sgn": 1,
+        "chi": 1.6743958918986115,
+        "y": 0.04028438696593521,
+        "term_f": 0.607068108390743,
+        "term_betti": 1.3490402408683178
+      },
+      {
+        "partition": [
+          5,
+          1
+        ],
+        "f_lambda": 5,
+        "betti": 5,
+        "sgn": -1,
+        "chi": 3.2163177570587527,
+        "y": 0.05896068140145373,
+        "term_f": -0.9481814327988969,
+        "term_betti": -0.9481814327988969
+      },
+      {
+        "partition": [
+          6
+        ],
+        "f_lambda": 1,
+        "betti": 1,
+        "sgn": 1,
+        "chi": 1.559870308060941,
+        "y": 0.05918771693214863,
+        "term_f": 0.09232516224437445,
+        "term_betti": 0.09232516224437445
+      }
+    ]
+  },
+  "assertions": [
+    {
+      "label": "f^\u03bb path reproduces canonical -0.7439",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "wallSeconds": 7.29
+}
