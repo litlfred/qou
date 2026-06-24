@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.wedderburnWeightCanonical
 
@@ -30,11 +32,11 @@ class WedderburnWeightCanonicalContext where
   C : PartitionIdx → ℝ
   /-- Manuscript sub-claim (ii) — BW form: `β_λ = -½ · w̃_λ` for every
       partition `λ` (definitional). -/
-  claim_ii_BW_form : ∀ λ : PartitionIdx, β λ = -(1/2) * w_tilde λ
+  claim_ii_BW_form : ∀ lam : PartitionIdx, β lam = -(1/2) * w_tilde lam
   /-- Manuscript sub-claim (iii) — LP shadow-price:
       `C_λ = ½(q - q⁻¹) · w̃_λ` for every partition `λ`. -/
   claim_iii_LP_shadow_price :
-    ∀ λ : PartitionIdx, C λ = (1/2) * (q - q⁻¹) * w_tilde λ
+    ∀ lam : PartitionIdx, C lam = (1/2) * (q - q⁻¹) * w_tilde lam
 
 /-- **Manuscript statement** (full body):
 
@@ -91,9 +93,9 @@ hook–content closed form:*
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-weight-canonical.ts
 def wedderburnWeightCanonical [ctx : WedderburnWeightCanonicalContext] :
-    (∀ λ : ctx.PartitionIdx, ctx.β λ = -(1/2) * ctx.w_tilde λ) ∧
-    (∀ λ : ctx.PartitionIdx,
-      ctx.C λ = (1/2) * (ctx.q - ctx.q⁻¹) * ctx.w_tilde λ) :=
+    (∀ lam : ctx.PartitionIdx, ctx.β lam = -(1/2) * ctx.w_tilde lam) ∧
+    (∀ lam : ctx.PartitionIdx,
+      ctx.C lam = (1/2) * (ctx.q - ctx.q⁻¹) * ctx.w_tilde lam) :=
   ⟨ctx.claim_ii_BW_form, ctx.claim_iii_LP_shadow_price⟩
 
 end QOU.BraidKnot
