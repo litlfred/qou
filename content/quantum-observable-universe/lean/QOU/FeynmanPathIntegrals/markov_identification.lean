@@ -1,4 +1,4 @@
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib
 
 /-!
 # QOU.FeynmanPathIntegrals.markov_identification
@@ -35,7 +35,7 @@ class MarkovIdentificationContext where
       AND coincides with `Σ_λ w_λ · tr_{S_λ}`. -/
   claim_markov_identification :
     amplitude_eigenbasis =
-      (Finset.range n_partitions).sum (fun λ => w λ * tr_S λ) ∧
+      (Finset.range n_partitions).sum (fun l => w l * tr_S l) ∧
     amplitude_eigenbasis = tr_M
 
 /-- **Lemma statement** (from manuscript):
@@ -62,8 +62,8 @@ $w_\lambda = \dim_q(V_\lambda) \cdot \dim(S_\lambda) / \dim_q(V^{\otimes n})$.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/feynman-markov-identification.ts
 theorem markov_identification [ctx : MarkovIdentificationContext] :
     ctx.amplitude_eigenbasis =
-      (Finset.range ctx.n_partitions).sum (fun λ => ctx.w λ * ctx.tr_S λ) ∧
+      (Finset.range ctx.n_partitions).sum (fun l => ctx.w l * ctx.tr_S l) ∧
     ctx.amplitude_eigenbasis = ctx.tr_M :=
-  sorry
+  ctx.claim_markov_identification
 
 end QOU.FeynmanPathIntegrals
