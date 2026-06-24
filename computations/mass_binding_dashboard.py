@@ -265,7 +265,6 @@ def _print_legend() -> None:
 | `M_meas (MeV)` | measured mass: M_AME = mu − B_AME for nuclei, or measured constituent mu for lone p/n |
 | `σ_exp (ppb)` | experimental 1σ on the mass = σ_B / M_meas × 10⁹ |
 | `err m_sym (ppb)` | canonical-mass model error (m_sym − M_meas)/M_meas × 10⁹ (binding-dominated for A≥2; 0 for p anchor; genuine prediction for n) |
-| `err m_sym,rel (ppb)` | measured-baseline mass error (m_unbnd − B_sym − M_meas)/M_meas × 10⁹ |
 
 **Table 3 — Mass M = (constituents) − B (MeV)**
 
@@ -274,8 +273,7 @@ def _print_legend() -> None:
 | `m_unbnd,can` | Framework unbound sum Z·m_p,can + N·m_n,can via the canonical muon-anchored Hecke energy m_p=2(m_μ·F_Bor−6m_e), F_Bor=\\|tr_M(β_Bor)\\|·[3]_q!/q³ (m_p,can≈938.27, m_n,can≈939.56, matches CODATA; λ_A fit 966 and naive Vol·tr_M 406 both excised) |
 | `m_unbnd` | MEASURED unbound sum Z·m_p + N·m_n (CODATA m_p=938.272, m_n=939.565) |
 | `M_AME` | Measured atomic mass = m_unbnd − B_AME |
-| `m_lin` / `m_sym` / `m_qCLT` / `m_qCLT_fac` / `m_magic` | PURE-CANONICAL bound mass = m_unbnd,can − B_X (framework constituents; carries the +2.96%·A m_p gap) for X in {lin, sym, qCLT, qCLT_fac, magic} |
-| `m_lin,rel` / `m_sym,rel` / `m_qCLT,rel` / `m_qCLT_fac,rel` / `m_magic,rel` | Measured-relative bound mass = m_unbnd − B_X (same canonical binding B_X, measured baseline) |
+| `m_lin` / `m_sym` / `m_qCLT` / `m_qCLT_fac` / `m_magic` | Canonical bound mass = m_unbnd,can − B_X for X in {lin, sym, qCLT, qCLT_fac, magic} |
 
 **Table 4 — Entanglement (bar-involution q↦q⁻¹ split of the atom trace)**
 
@@ -370,53 +368,38 @@ def main(argv=None) -> int:
 
     # 1. MASS  M = (constituents) − B  (shown first, per owner request 2026-06-24)
     #    Two-column convention (owner-set 2026-06-22): wherever the nucleon masses
-    #    enter the constituent sum we report BOTH:
-    #      • a PURE-CANONICAL column — framework nucleon rest masses via the
-    #        CANONICAL muon-anchored Hecke energy (substrate-identity):
+    #    framework nucleon rest masses via the CANONICAL muon-anchored Hecke
+    #    energy (substrate-identity):
     #        m_p = 2·(m_μ·F_Bor − 6·m_e), m_μ = m_e·Vol(4₁)/ℏ_q²,
     #        F_Bor = |tr_M(β_Bor)|·[3]_q!/q³. → m_p≈938.27, m_n≈939.56 (matches
     #        CODATA). λ_A (966, fit) and naive Vol(𝓑₃)·tr_M/ℏ_q² (406) both EXCISED
     #        — they apply 1/ℏ_q² to the wrong volume (resolution: audit 2026-06-24).
-    #        m_sym = m_unbnd,can − B_sym.
-    #      • a "…,rel" column — the SAME canonical binding B_X subtracted from
-    #        the MEASURED constituent sum mu = Z·m_p + N·m_n (CODATA). This is the
-    #        experiment-anchored reading, kept for AME comparison.
-    #    The binding B_X itself is the single canonical value in both readings;
-    #    only the constituent baseline differs (framework Hecke-energy vs measured).
+    #    Each form X: m_X = m_unbnd,can − B_X. (The measured-baseline ",rel"
+    #    columns were removed 2026-06-24 — redundant now that m_unbnd,can ≈ CODATA.)
     from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
     mp_, mn_ = float(mp_), float(mn_)
     print("### Mass  M = (constituents) − B (MeV)   "
-          "[canonical = muon-anchored Hecke energy 2(m_μ·F_Bor−6m_e); ,rel = measured CODATA mu]")
+          "[canonical = muon-anchored Hecke energy 2(m_μ·F_Bor−6m_e); m_X = m_unbnd,can − B_X]")
     print(f"  canonical constituents (λ_A fit + naive Vol·tr_M both EXCISED): "
           f"m_p,can = {mp_can:.3f} MeV ({(mp_can/mp_-1)*100:+.3f}%), "
           f"m_n,can = {mn_can:.3f} MeV ({(mn_can/mn_-1)*100:+.3f}%) — "
           f"m_μ-anchored F_Bor = |tr_M(β_Bor)|·[3]_q!/q³ (matches CODATA; m_n the "
-          f"genuine prediction). Every binding form has BOTH a canonical "
-          f"(m_X = m_unbnd,can − B_X) and a ,rel (m_X,rel = m_unbnd − B_X) mass.")
-    print("| iso | A | m_unbnd,can | m_unbnd | M_AME | m_lin | m_lin,rel | m_sym | m_sym,rel "
-          "| m_qCLT | m_qCLT,rel | m_qCLT_fac | m_qCLT_fac,rel | m_magic | m_magic,rel |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
+          f"genuine prediction).")
+    print("| iso | A | m_unbnd,can | m_unbnd | M_AME | m_lin | m_sym "
+          "| m_qCLT | m_qCLT_fac | m_magic |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         mu = r["Z"] * mp_ + r["N"] * mn_                 # measured constituent sum
         mu_can = r["Z"] * mp_can + r["N"] * mn_can       # framework-derived sum
         mame = (mu - r["B_AME"]) if r["B_AME"] is not None else None
-        # each form X: m_X (canonical, mu_can − B_X) and m_X,rel (measured, mu − B_X)
-        def _pair(bkey):
+        # canonical bound mass per form X: m_X = mu_can − B_X
+        def _can(bkey):
             b = r[bkey]
-            if b is None:
-                return None, None
-            return mu_can - b, mu - b
-        m_lin_can, m_lin_rel = _pair("B_lin")
-        m_sym_can, m_sym_rel = _pair("B_sym")
-        m_qclt_can, m_qclt_rel = _pair("B_qCLT")
-        m_fac_can, m_fac_rel = _pair("B_qCLT_fac")
-        m_magic_can, m_magic_rel = _pair("B_magic")
+            return (mu_can - b) if b is not None else None
         print(f"| {r['name']} | {r['A']} | {mu_can:>9.1f} | {mu:>9.1f} "
-              f"| {_fmt(mame,9,1)} | {_fmt(m_lin_can,9,1)} | {_fmt(m_lin_rel,9,1)} "
-              f"| {_fmt(m_sym_can,9,1)} | {_fmt(m_sym_rel,9,1)} "
-              f"| {_fmt(m_qclt_can,9,1)} | {_fmt(m_qclt_rel,9,1)} "
-              f"| {_fmt(m_fac_can,9,1)} | {_fmt(m_fac_rel,9,1)} "
-              f"| {_fmt(m_magic_can,9,1)} | {_fmt(m_magic_rel,9,1)} |")
+              f"| {_fmt(mame,9,1)} | {_fmt(_can('B_lin'),9,1)} | {_fmt(_can('B_sym'),9,1)} "
+              f"| {_fmt(_can('B_qCLT'),9,1)} | {_fmt(_can('B_qCLT_fac'),9,1)} "
+              f"| {_fmt(_can('B_magic'),9,1)} |")
 
     # 1b. MASS ERROR (ppb) — model deviation of m_sym from the measured mass,
     #     plus the experimental 1σ on that mass. ppb = (pred − meas)/meas · 10⁹.
@@ -424,9 +407,9 @@ def main(argv=None) -> int:
     #     constituent mu for the lone p/n (no AME binding entry). m_sym's error is
     #     binding-dominated for A≥2 (m_sym − M_AME = B_AME − B_sym); for p it is 0
     #     (anchor) and for n it is the genuine nucleon-mass prediction error.
-    print("\n### Mass error (ppb)   [(m_X − M_meas)/M_meas · 10⁹; σ_exp = experimental 1σ on the mass]")
-    print("| iso | A | M_meas (MeV) | σ_exp (ppb) | err m_sym (ppb) | err m_sym,rel (ppb) |")
-    print("|---|--:|--:|--:|--:|--:|")
+    print("\n### Mass error (ppb)   [(m_sym − M_meas)/M_meas · 10⁹; σ_exp = experimental 1σ on the mass]")
+    print("| iso | A | M_meas (MeV) | σ_exp (ppb) | err m_sym (ppb) |")
+    print("|---|--:|--:|--:|--:|")
     for r in rows:
         mu = r["Z"] * mp_ + r["N"] * mn_
         mu_can = r["Z"] * mp_can + r["N"] * mn_can
@@ -435,9 +418,8 @@ def main(argv=None) -> int:
         s_ppb = (s / m_meas * 1e9) if (s and m_meas) else None
         b = r["B_sym"]
         err_can = ((mu_can - b) - m_meas) / m_meas * 1e9 if b is not None else None
-        err_rel = ((mu - b) - m_meas) / m_meas * 1e9 if b is not None else None
         print(f"| {r['name']} | {r['A']} | {m_meas:>10.3f} | {_sci(s_ppb,11,2)} "
-              f"| {_sci(err_can,13,3)} | {_sci(err_rel,13,3)} |")
+              f"| {_sci(err_can,13,3)} |")
 
     # 2. BINDING  (B_AME ± experimental 1σ from AME2020)
     print("### Binding  B (MeV)   [σ_exp = AME2020 experimental 1σ]")
