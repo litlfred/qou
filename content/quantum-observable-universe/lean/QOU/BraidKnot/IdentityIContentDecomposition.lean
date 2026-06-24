@@ -375,6 +375,44 @@ theorem sum_colLen_eq_sum_min (l : List ℕ) (i : ℕ) :
   intro k _
   exact sum_indicator_lt_eq_min (l.getD i 0) (l.getD k 0)
 
+/-! ### Hook side of (A): order-split machinery (sorry-free)
+
+With the parts weakly decreasing, `min(λ_i, λ_k) = λ_{max(i,k)}`, so each column power-moment
+`Σ_j colLen(j)^d` collapses to a **row** closed form — no genuine triple-min needed.  The
+order-split below is the engine: it turns `Σ_{i,k} min(λ_i,λ_k)` into `Σ_i (2i+1)·λ_i`. -/
+
+/-- For a weakly-decreasing list, `getD` is antitone in the index. -/
+theorem getD_antitone (l : List ℕ) (hl : l.Sorted (· ≥ ·)) {i k : ℕ} (hik : i ≤ k) :
+    l.getD k 0 ≤ l.getD i 0 := by
+  rcases lt_or_ge k l.length with hk | hk
+  · have hi : i < l.length := lt_of_le_of_lt hik hk
+    rw [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hk, Option.getD_some,
+        List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hi, Option.getD_some]
+    exact hl.rel_get_of_le (Fin.mk_le_mk.mpr hik)
+  · rw [List.getD_eq_getElem?_getD, List.getElem?_eq_none hk, Option.getD_none]
+    exact Nat.zero_le _
+
+/-- **Min order-split (sorry-free).** For an antitone sequence,
+`Σ_{i,k<r} min(a i, a k) = Σ_{i<r} (2i+1)·a i` — each new index `n` contributes a full
+row + column of `a n` (it is the smallest, so the min on the new cross terms).  This is the
+row closed form of the column moment `Σ_j colLen(j)²`. -/
+theorem antitone_min_sum (a : ℕ → ℕ) (h : ∀ i k, i ≤ k → a k ≤ a i) (r : ℕ) :
+    ∑ i ∈ Finset.range r, ∑ k ∈ Finset.range r, min (a i) (a k)
+      = ∑ i ∈ Finset.range r, (2 * i + 1) * a i := by
+  induction r with
+  | zero => simp
+  | succ n ih =>
+    have h1 : ∑ i ∈ Finset.range n, min (a i) (a n) = n * a n := by
+      rw [Finset.sum_congr rfl (fun i hi => min_eq_right (h i n (le_of_lt (Finset.mem_range.mp hi))))]
+      rw [Finset.sum_const, Finset.card_range, smul_eq_mul]
+    have h2 : ∑ k ∈ Finset.range n, min (a n) (a k) = n * a n := by
+      rw [Finset.sum_congr rfl (fun k hk => min_eq_left (h k n (le_of_lt (Finset.mem_range.mp hk))))]
+      rw [Finset.sum_const, Finset.card_range, smul_eq_mul]
+    rw [Finset.sum_range_succ]
+    simp_rw [Finset.sum_range_succ, Finset.sum_add_distrib]
+    rw [ih, h1, h2, min_self]
+    ring
+
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
 (`identityA_verified_le9`) and exhaustively in Python for `n ≤ 22`.
