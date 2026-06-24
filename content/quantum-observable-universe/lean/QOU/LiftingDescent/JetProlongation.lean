@@ -1,6 +1,7 @@
 import QOU.Basic
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.Algebra.Module.LinearMap.Defs
+import QOU.Hecke.Generators
 
 /-!
 # Jet prolongation chain — descent involution + transient/descended decomposition
@@ -66,6 +67,7 @@ namespace QOU.LiftingDescent
 universe u v
 
 open CategoryTheory CategoryTheory.MonoidalCategory
+open QOU.Hecke  -- `Generator n` (braid-generator index) lives here
 
 /--
 **Jet prolongation chain** at a given category `C` over a base
