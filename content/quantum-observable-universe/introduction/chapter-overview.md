@@ -131,8 +131,9 @@ geometric inputs to mass: Möbius and crossing energy, Lagrange
 resolvents, and the braiding relations.  The hyperbolic volumes of
 the knots that appear — $\mathrm{Vol}(4_1)$, $\mathrm{Vol}(B_3)$,
 and others — encode the physical constants.  Writing the geometric
-invariant $\mathrm{Geom}(K) = \mathrm{Vol}(K)/\hbar_q^{2}$ for the
-volume contribution, the topological mass formula
+invariant $\mathrm{Geom}(K)$ — which for hyperbolic $K$ is
+$\mathrm{Vol}(K)/\hbar_q^{2}$ — for the volume contribution, the
+topological mass formula
 
 $$
 \mathfrak{m}(K) = m_e \cdot \mathrm{Geom}(K) \cdot \varrho(K)

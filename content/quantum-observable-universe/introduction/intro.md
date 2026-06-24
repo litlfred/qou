@@ -22,19 +22,28 @@ initial conditions.  Even the capacity for computation — to reason,
 count, and calculate — seems woven into the fabric rather than
 bolted on.
 
-Heisenberg reminded us that what we observe is not nature itself
-but nature exposed to our method of questioning.  We do not ask
-what the universe *is* — we ask what its mechanics *do*.
-Category theory is the natural language for the question, because
-it describes structure and transformation without committing to
-any particular ontology.
+As Heisenberg put it, what we observe is never nature itself but
+nature exposed to our method of questioning.  So we do not ask
+what the universe *is*; we ask what its mechanics *do* — how its
+processes compose and transform.  That question has a natural
+mathematical home: category theory, the study of how processes
+combine, which describes structure and transformation without
+committing to any picture of what the underlying objects "really
+are."
 
 The central thesis is that these everyday observations, once
-stated carefully, determine a specific algebraic structure: a
-*rigid :refterm[monoidal category]{#monoidal-category}* equipped with a fibre functor and a
-Frobenius trace.  We call this structure a **quantum
-observable universe** (QOU).  Its axioms encode precisely the
-features listed above and nothing more.
+stated carefully, single out one kind of structure: a category of
+processes rich enough to integrate, to differentiate, and to be
+measured against.  A structure meeting *all* of these requirements
+— including the demands that its states be observable, that
+measurements stay consistent, and that things have volume — is
+what we call a **quantum observable universe** (QOU).  Later
+chapters name the ingredients precisely (a rigid
+:refterm[monoidal category]{#monoidal-category}, a self-dual
+algebra object, a fibre functor playing the role of measurement,
+and a trace playing the role of integration); the force of the
+thesis is that the observations *determine* them — nothing else
+is added by hand.
 
 The categorical language identifies, as internal objects of the
 category, the physical concepts that describe the mechanics of a
