@@ -413,6 +413,36 @@ theorem antitone_min_sum (a : ℕ → ℕ) (h : ∀ i k, i ≤ k → a k ≤ a i
     rw [ih, h1, h2, min_self]
     ring
 
+/-- Product of two `<`-indicators is the indicator of the `min`. -/
+theorem indicator_mul (j a b : ℕ) :
+    (if j < a then (1 : ℕ) else 0) * (if j < b then 1 else 0) = if j < min a b then 1 else 0 := by
+  simp only [lt_min_iff]
+  split_ifs <;> simp_all
+
+/-- `Σ_j colLen(j)² = Σ_{i,k} min(λ_i, λ_k)` (expand each `colLen` to row-indicators,
+`Finset.sum_comm` the column index inward, then the indicator/`min` count). -/
+theorem sum_colLen_sq_eq_sum_min (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    ∑ j ∈ Finset.range (l.headD 0), (colLen l j) ^ 2
+      = ∑ i ∈ Finset.range l.length, ∑ k ∈ Finset.range l.length,
+          min (l.getD i 0) (l.getD k 0) := by
+  simp_rw [pow_two, colLen_eq_indicator_sum l, Finset.sum_mul_sum]
+  rw [Finset.sum_comm]
+  apply Finset.sum_congr rfl
+  intro i _
+  rw [Finset.sum_comm]
+  apply Finset.sum_congr rfl
+  intro k _
+  simp_rw [indicator_mul]
+  rw [sum_indicator_lt_eq_min]
+  exact min_eq_right (le_trans (min_le_left _ _) (getD_le_headD l hl i))
+
+/-- **`K2` as a row form (sorry-free).** `Σ_j colLen(j)² = Σ_i (2i+1)·λ_i`. -/
+theorem sum_colLen_sq_row_form (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    ∑ j ∈ Finset.range (l.headD 0), (colLen l j) ^ 2
+      = ∑ i ∈ Finset.range l.length, (2 * i + 1) * (l.getD i 0) := by
+  rw [sum_colLen_sq_eq_sum_min l hl,
+    antitone_min_sum (fun i => l.getD i 0) (fun i k hik => getD_antitone l hl hik) l.length]
+
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
 (`identityA_verified_le9`) and exhaustively in Python for `n ≤ 22`.
