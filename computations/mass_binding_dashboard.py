@@ -265,6 +265,8 @@ def _print_legend() -> None:
 | `M_meas (MeV)` | measured mass: M_AME = mu − B_AME for nuclei, or measured constituent mu for lone p/n |
 | `σ_exp (ppb)` | experimental 1σ on the mass = σ_B / M_meas × 10⁹ |
 | `err m_sym (ppb)` | canonical-mass model error (m_sym − M_meas)/M_meas × 10⁹ (binding-dominated for A≥2; 0 for p anchor; genuine prediction for n) |
+| `σ_pred math (ppb)` | CAL-propagated theory error bar, ideal framework (CAL-2 = m_μ/m_e 22 ppb → ~462 ppb; the formula amplifies CAL-2 ~21× via ℏ_q) |
+| `σ_pred obs (ppb)` | CAL-propagated theory error bar, physical-observations layer (CAL-2 = m_p/m_e 0.06 ppb → ~1.3 ppb). err ≫ σ_pred ⇒ genuine formula systematic, not calibration noise |
 
 **Table 3 — Mass M = (constituents) − B (MeV)**
 
@@ -407,9 +409,16 @@ def main(argv=None) -> int:
     #     constituent mu for the lone p/n (no AME binding entry). m_sym's error is
     #     binding-dominated for A≥2 (m_sym − M_AME = B_AME − B_sym); for p it is 0
     #     (anchor) and for n it is the genuine nucleon-mass prediction error.
-    print("\n### Mass error (ppb)   [(m_sym − M_meas)/M_meas · 10⁹; σ_exp = experimental 1σ on the mass]")
-    print("| iso | A | M_meas (MeV) | σ_exp (ppb) | err m_sym (ppb) |")
-    print("|---|--:|--:|--:|--:|")
+    #     σ_pred = CAL-propagated reliability (theory error bar), two layers:
+    #       math = ideal framework (CAL-2 = m_μ/m_e, 22 ppb → ~462 ppb)
+    #       obs  = physical-observations (CAL-2 = m_p/m_e, 0.06 ppb → ~1.3 ppb)
+    #     A model error (err m_sym) ≫ σ_pred is a genuine formula systematic,
+    #     not calibration noise (e.g. the neutron −1759 ppb ≫ 462).
+    from canonical_mass import prediction_uncertainty_ppb
+    print("\n### Mass error (ppb)   [err = (m_sym − M_meas)/M_meas · 10⁹; "
+          "σ_pred = CAL-propagated reliability (math = canonical CAL-2 22ppb; obs = proton CAL-2 0.06ppb)]")
+    print("| iso | A | M_meas (MeV) | σ_exp (ppb) | err m_sym (ppb) | σ_pred math (ppb) | σ_pred obs (ppb) |")
+    print("|---|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         mu = r["Z"] * mp_ + r["N"] * mn_
         mu_can = r["Z"] * mp_can + r["N"] * mn_can
@@ -418,8 +427,10 @@ def main(argv=None) -> int:
         s_ppb = (s / m_meas * 1e9) if (s and m_meas) else None
         b = r["B_sym"]
         err_can = ((mu_can - b) - m_meas) / m_meas * 1e9 if b is not None else None
+        sp_math = prediction_uncertainty_ppb(r["Z"], r["N"], "canonical")
+        sp_obs = prediction_uncertainty_ppb(r["Z"], r["N"], "proton")
         print(f"| {r['name']} | {r['A']} | {m_meas:>10.3f} | {_sci(s_ppb,11,2)} "
-              f"| {_sci(err_can,13,3)} |")
+              f"| {_sci(err_can,13,3)} | {sp_math:>14.1f} | {sp_obs:>14.3f} |")
 
     # 2. BINDING  (B_AME ± experimental 1σ from AME2020)
     print("### Binding  B (MeV)   [σ_exp = AME2020 experimental 1σ]")
