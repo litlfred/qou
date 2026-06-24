@@ -72,6 +72,11 @@ export default chapter({
         "knot-operator-energy-exists",
         "knot-operator-energy-unique",
         "local-shadow-ordering",
+        // Re-homed orphans: the per-component selection rule lw(c) — its
+        // c=1 (muon/knot) and c=3 (proton/Borromean 3-link) exact anchors,
+        // and the c=2 prediction proved from them.
+        "selection-rule-anchors-c1-c3",
+        "selection-rule-c2-prediction",
       ],
     }),
     section({
