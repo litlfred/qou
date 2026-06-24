@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.spectral_sum_finite — conjectural class (placeholder)
 
@@ -35,6 +37,5 @@ class spectral_sum_finite where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-spectral-sum-finite.ts
 noncomputable instance : spectral_sum_finite := by
-  trivial
-
+  sorry
 end QOU.BraidKnot

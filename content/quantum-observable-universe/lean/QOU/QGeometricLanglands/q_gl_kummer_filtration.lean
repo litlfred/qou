@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.QGeometricLanglands.q_gl_kummer_filtration — conjectural class (placeholder)
 
@@ -35,6 +37,5 @@ class q_gl_kummer_filtration where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-kummer-filtration.ts
 noncomputable instance : q_gl_kummer_filtration := by
-  trivial
-
+  sorry
 end QOU.QGeometricLanglands

@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.StaircaseCornerHook.StaircaseEWResidual — conjectural class (placeholder)
 
@@ -35,6 +37,5 @@ class StaircaseEWResidual where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/staircase-ew-residual.ts
 noncomputable instance : StaircaseEWResidual := by
-  trivial
-
+  sorry
 end QOU.StaircaseCornerHook

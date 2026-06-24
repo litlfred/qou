@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.BringFigureEightDepth2Witness — conjectural class (placeholder)
 
@@ -35,6 +37,5 @@ class BringFigureEightDepth2Witness where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/bring-figure-eight-depth-2-witness.ts
 noncomputable instance : BringFigureEightDepth2Witness := by
-  trivial
-
+  sorry
 end QOU.BraidKnot

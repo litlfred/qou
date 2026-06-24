@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.ClassicalRiemannHypothesis — conjectural class (placeholder)
 
@@ -41,6 +43,5 @@ zeta function $\zeta(s)$ satisfy
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/classical-riemann-hypothesis.ts
 noncomputable instance : ClassicalRiemannHypothesis := by
-  trivial
-
+  sorry
 end QOU.BraidKnot

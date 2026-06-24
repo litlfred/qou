@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Observations.QCltNonCommutative.QCltNonCommutative — conjectural class (placeholder)
 
@@ -53,6 +55,5 @@ $q \to 1^+$, $n\lvert 1 - q\rvert \to \infty$:*
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/observations/q-clt-non-commutative.ts
 noncomputable instance : QCltNonCommutative := by
-  trivial
-
+  sorry
 end QOU.Observations.QCltNonCommutative

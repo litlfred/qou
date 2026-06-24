@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.TwoFiltrationBridge — conjectural class (placeholder)
 
@@ -43,6 +45,5 @@ two distinct filtrations:*
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/two-filtration-bridge.ts
 noncomputable instance : TwoFiltrationBridge := by
-  trivial
-
+  sorry
 end QOU.BraidKnot

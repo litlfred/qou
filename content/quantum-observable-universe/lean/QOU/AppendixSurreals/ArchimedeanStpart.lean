@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.AppendixSurreals.ArchimedeanStpart — conjectural class (placeholder)
 
@@ -45,6 +47,5 @@ a real Lie group, and $\mathcal{S}$ is a real vector bundle.
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/archimedean-stpart.ts
 noncomputable instance : ArchimedeanStpart := by
-  trivial
-
+  sorry
 end QOU.AppendixSurreals

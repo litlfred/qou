@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.ConfinementNfStructureForcing — conjectural class (placeholder)
 
@@ -43,6 +45,5 @@ LP/SDP
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-nf-structure-forcing.ts
 noncomputable instance : ConfinementNfStructureForcing := by
-  trivial
-
+  sorry
 end QOU.BraidKnot

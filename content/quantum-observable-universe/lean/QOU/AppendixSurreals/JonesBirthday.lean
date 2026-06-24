@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.AppendixSurreals.JonesBirthday — conjectural class (placeholder)
 
@@ -45,6 +47,5 @@ shape $\lambda \vdash n$.
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/jones-birthday.ts
 noncomputable instance : JonesBirthday := by
-  trivial
-
+  sorry
 end QOU.AppendixSurreals

@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.QGeometricLanglands.q_gl_fiber_functor — conjectural class (placeholder)
 
@@ -35,6 +37,5 @@ class q_gl_fiber_functor where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-fiber-functor.ts
 noncomputable instance : q_gl_fiber_functor := by
-  trivial
-
+  sorry
 end QOU.QGeometricLanglands

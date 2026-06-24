@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.GBResidueSpectralSum.spectral_decomposition — conjectural class (placeholder)
 
@@ -35,6 +37,5 @@ class spectral_decomposition where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-spectral-decomposition-existence.ts
 noncomputable instance : spectral_decomposition := by
-  trivial
-
+  sorry
 end QOU.BraidKnot.GBResidueSpectralSum

@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.JointGaloisBraidAction — conjectural class (placeholder)
 
@@ -44,6 +46,5 @@ on it by symmetry:*
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/joint-galois-braid-action.ts
 noncomputable instance : JointGaloisBraidAction := by
-  trivial
-
+  sorry
 end QOU.BraidKnot
