@@ -1,0 +1,92 @@
+import Mathlib.Tactic
+
+/-!
+# QOU.BraidKnot.DeltaLambdaRefutation — formalize-the-refutation of Δ_λ closure ansätze
+
+The per-isotope binding formula `B(K) = m_e · Σ_λ y_λ χ^λ Δ_λ` requires per-partition
+`Δ_λ` values. Six closure ansätze have been **refuted** on the deuteron anchor
+(AGENTS.md §"Precision goals" / §"Δ_λ gate"): Frobenius co-Casimir, Demazure-fibre,
+LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov. The gate rule —
+**"do not propose a seventh fit-based ansatz"** — is currently enforced only by
+reviewer vigilance (prose warnings in audit docs).
+
+This file **operationalises** that rule per the *formalize-the-refutation* discipline
+(`.claude/skills/local/compute-author.md §3.4`): a refuted ansatz becomes a
+machine-checked inequality `tol < |prediction − target|`, not a prose warning, so the
+dead ansatz cannot be silently re-proposed and slip past review.
+
+The numbers are 12-figure truncations of the 50-dps witness
+`computations/rho-k-h3a-co-casimir.witness.json` (`allPassed: true`); the refutation
+holds with enormous margin (gap ≈ 4.498 m_e units vs tol 1), so 12 figures is far more
+than the inequality needs. Statements are decidable rational (in)equalities — sorry-free,
+`norm_num`-discharged over `ℚ`.
+
+## Lemmas
+
+- `coCasimir_closureGap_eq` — the closure gap equals `|prediction − target|` exactly.
+- `coCasimir_refuted_deuteron` — **magnitude** refutation: the ansatz misses by > tol.
+- `coCasimir_wrong_sign` — **sign** refutation: the ansatz predicts a *positive*
+  binding-density sum where the empirical target is *negative*.
+
+Follow-up (per compute-author §3.4): promote to a content-block triple
+`lem:frobenius-cocasimir-refuted-deuteron` beside
+[`conj:rho-prefactor-structural`](../../../../mass-theory/conj-rho-prefactor-structural.md)
+(GAP-A-4), and add the remaining five refuted ansätze as their clean witnessed
+numbers become available.
+
+## References
+
+- [manuscript] `computations/rho-k-h3a-co-casimir.witness.json` (50 dps, `allPassed: true`)
+- [manuscript] `docs/audits/2026-05-18-delta-lambda-gating-context.md` (Option B; the six failed ansätze)
+-/
+
+namespace QOU.BraidKnot.DeltaLambdaRefutation
+
+/-- Frobenius co-Casimir predicted `Σ_λ y_λ χ^λ Δ_λ` at the deuteron (in `m_e` units).
+12-figure truncation of `/data/co_casimir_prediction/sum_contributions_signed`
+(50 dps value `0.14495922412654927…`).
+-- Ref: [manuscript] computations/rho-k-h3a-co-casimir.witness.json -/
+def coCasimirSum : ℚ := 144959224127 / 1000000000000
+
+/-- Empirical `−B_D/m_e` (in `m_e` units), the deuteron binding-density target.
+12-figure truncation of `/data/target_signed` (50 dps value `−4.35336728187014…`).
+-- Ref: [manuscript] computations/rho-k-h3a-co-casimir.witness.json -/
+def targetSigned : ℚ := -4353367281870 / 1000000000000
+
+/-- Closure gap `|prediction − target|`, witness `/data/.../closure_gap_LHS_minus_RHS`
+(50 dps value `4.49832650599669…`). -/
+def closureGap : ℚ := 4498326505997 / 1000000000000
+
+/-- Viability tolerance: a candidate `Δ_λ` closure must land the deuteron
+binding-density sum within `1` `m_e` unit of the empirical target to be viable.
+The co-Casimir ansatz misses by ≈ 4.5, so the verdict is insensitive to `tol`. -/
+def tol : ℚ := 1
+
+/-- The recorded closure gap equals `|prediction − target|` exactly (rational identity);
+this ties the `closureGap` literal to the predicted/target literals so they cannot drift
+apart independently. -/
+theorem coCasimir_closureGap_eq : |coCasimirSum - targetSigned| = closureGap := by
+  have h : coCasimirSum - targetSigned = closureGap := by
+    unfold coCasimirSum targetSigned closureGap; norm_num
+  rw [h]
+  exact abs_of_pos (by unfold closureGap; norm_num)
+
+/-- **Refutation (magnitude).** The Frobenius co-Casimir `Δ_λ` ansatz misses the
+deuteron binding-density target by more than the viability tolerance (gap ≈ 4.498
+`m_e` units > `tol = 1`). This is the machine-checked face of the witness's
+`closure_gap_LHS_minus_RHS`; it makes "the co-Casimir ansatz is refuted" a theorem,
+not a prose warning. -/
+theorem coCasimir_refuted_deuteron : tol < |coCasimirSum - targetSigned| := by
+  rw [coCasimir_closureGap_eq]
+  unfold tol closureGap; norm_num
+
+/-- **Refutation (sign).** A stronger, scale-free defect: the co-Casimir ansatz predicts
+a *positive* binding-density sum (`coCasimirSum > 0`) where the empirical target is
+*negative* (`targetSigned < 0`). The wrong sign cannot be repaired by any positive
+normalisation `ρ > 0`, so the refutation survives the (separately gated) overall-scale
+freedom. -/
+theorem coCasimir_wrong_sign : 0 < coCasimirSum ∧ targetSigned < 0 := by
+  unfold coCasimirSum targetSigned
+  refine ⟨by norm_num, by norm_num⟩
+
+end QOU.BraidKnot.DeltaLambdaRefutation
