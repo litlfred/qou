@@ -42,18 +42,24 @@ from the connection and Reeb derivation, has a square that
 decomposes — forced by the Frobenius–Hopf structure, not by
 assumption — into exactly two curvature terms: one measuring how
 space itself curves (Ricci), one measuring how the internal gauge
-field curves (Yang–Mills).  Coupling a matter state $\psi$ adds a
-third — yielding the categorical action
+field curves (Yang–Mills).  Coupling a matter state $\psi$ adds a third — yielding the
+categorical action
 
 $$
 \mathfrak{S}_q
 = \underbrace{\textstyle\int_A \mathrm{tr}_A\bigl(q \cdot R_{\int}\bigr)}_{\text{gravity}} \;+\;
   \underbrace{\textstyle\int_A \mathrm{tr}_A\bigl( F_\nabla \wedge_q \star_q F_\nabla \bigr)}_{\text{gauge}} \;+\;
-  \underbrace{\textstyle\int_A \mathrm{tr}_A\bigl(\psi^{\ast} \otimes \mathcal{D}_\nabla\psi\bigr)}_{\text{matter}},
+  \underbrace{\textstyle\int_A \mathrm{tr}_A\bigl(\psi^{\ast} \otimes \mathcal{D}_\nabla\psi\bigr)}_{\text{matter}}.
 $$
 
-from which quantum versions of the Einstein, Yang–Mills, and Dirac
-equations follow.
+Varying it against its three inputs in turn — the trace $\int_A$,
+the connection $\nabla$, and the matter field $\psi$ — yields
+quantum versions of the Einstein and Yang–Mills equations and,
+from the matter field, the Dirac equation of motion
+$\mathcal{D}_\nabla\psi = 0$.  (The Dirac *operator*
+$\mathcal{D}_\nabla$ is not derived here but primitive: it is the
+object whose square builds the gravity and gauge terms in the
+first place.)
 
 Next, Chapter \ref{chap:models-qou}, *Models of QOUs*, examines concrete
 realisations of the QOU axioms: archimedean, $p$-adic, and
