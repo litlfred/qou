@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:confinement-universality",
+  proofs: ["prf:confinement-universality"],
   title: "Confinement universality: nucleon NF independent of photon polarization",
   tags: [
     "confinement",

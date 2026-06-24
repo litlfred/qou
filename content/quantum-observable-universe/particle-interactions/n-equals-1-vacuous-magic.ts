@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:n-equals-1-vacuous-magic",
+  proofs: ["prf:n-equals-1-vacuous-magic"],
   title: "Vacuous primality at $n = 1$",
   lean: {
     ref: "qou:QOU.Interactions.AlgebraicPrimality.one_isAlgebraicallyPrime",

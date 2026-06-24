@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:confinement-topological",
+  proofs: ["prf:confinement-topological"],
   title: "Confinement is topological (LP proof)",
   tags: [
     "confinement",

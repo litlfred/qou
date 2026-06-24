@@ -2,6 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:parity-regime-selection",
+  proofs: ["prf:parity-regime-selection"],
   title:
     "Parity regime selection for Q-values",
   tags: [

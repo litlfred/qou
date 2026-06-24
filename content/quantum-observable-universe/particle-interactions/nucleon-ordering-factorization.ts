@@ -13,6 +13,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:nucleon-ordering-factorization",
+  proofs: ["prf:nucleon-ordering-factorization"],
   title:
     "Nucleon-level ordering factorization via jet-descended confinement",
   tags: [

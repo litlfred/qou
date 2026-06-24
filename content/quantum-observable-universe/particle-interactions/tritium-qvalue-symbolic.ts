@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:tritium-qvalue-symbolic",
+  proofs: ["prf:tritium-qvalue-symbolic"],
   title:
     "Symbolic Q-value for tritium beta decay",
   tags: [

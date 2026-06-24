@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:silver-ratio-beta-decay-null",
+  proofs: ["prf:silver-ratio-beta-decay-null"],
   lean: {
     ref: "qou:QOU.ParticleInteractions.SilverRatioBetaDecayNull",
     validation: "not_checked",

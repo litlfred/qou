@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:branching-qvalue-factorization",
+  proofs: ["prf:branching-qvalue-factorization"],
   title:
     "Exact factorization of the branching Q-value",
   tags: [
