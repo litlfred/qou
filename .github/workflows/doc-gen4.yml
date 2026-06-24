@@ -1,0 +1,64 @@
+name: Build Lean Documentation (doc-gen4)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: doc-gen4-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  doc-gen4:
+    name: Build doc-gen4 HTML
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install elan
+        run: |
+          set -o pipefail
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+
+      - name: Cache oleans (mathlib)
+        uses: actions/cache@v4
+        with:
+          path: content/quantum-observable-universe/lean/.lake
+          key: lean-cache-${{ runner.os }}-${{ hashFiles('content/quantum-observable-universe/lean/lean-toolchain') }}
+          restore-keys: |
+            lean-cache-${{ runner.os }}-
+
+      - name: Restore mathlib oleans via script
+        # Restores mathlib from the lake-cache branch to save 30+ min of build time
+        run: |
+          export PATH="$HOME/.elan/bin:$PATH"
+          ./scripts/lean-cache-restore.sh || true
+
+      - name: Enable doc-gen4 in lakefile.toml
+        # Un-comment the doc-gen4 dependency block that is CI-only
+        run: |
+          cd content/quantum-observable-universe/lean
+          sed -i 's/# \[\[require\]\]/[[require]]/' lakefile.toml
+          sed -i 's/# name = "doc-gen4"/name = "doc-gen4"/' lakefile.toml
+          sed -i 's|# git = "https://github.com/leanprover/doc-gen4"|git = "https://github.com/leanprover/doc-gen4"|' lakefile.toml
+          sed -i 's/# rev = "1cd7a1113090e216703e323e8fdcdf099f0a9c8a"/rev = "1cd7a1113090e216703e323e8fdcdf099f0a9c8a"/' lakefile.toml
+
+      - name: Build doc-gen4 HTML
+        run: |
+          export PATH="$HOME/.elan/bin:$PATH"
+          cd content/quantum-observable-universe/lean
+          lake update doc-gen4
+          lake -R -Kenv=dev build QOU:docs
+
+      - name: Deploy doc-gen4 to gh-pages (in /lean/)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./content/quantum-observable-universe/lean/.lake/build/doc
+          destination_dir: lean
+          keep_files: true
+          commit_message: 'docs(lean): update doc-gen4 HTML from ${{ github.sha }}'
