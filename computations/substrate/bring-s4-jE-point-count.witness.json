@@ -1,0 +1,83 @@
+{
+  "computation": "bring_s4_jE_point_count_probe",
+  "description": "Attempt at explicit j(Bring/S₄) via equivariant point-counting; honest negative — naive S₄-orbit count of Bring(F_p) is not |E(F_p)| (inert F̄_p orbits dominate). Records the correct route (twisted Lefschetz / Magma).",
+  "discipline": "exact mod-p point counts; no fit; documents the j(E) blocker",
+  "auditOnly": "docs/audits/2026-06-24-bring-s4-jE-point-count-attempt.md",
+  "results": [
+    {
+      "p": 7,
+      "bring_points": 0,
+      "bring_ap": 8,
+      "bring_hasse_ok": true,
+      "naive_E_orbits": 0,
+      "naive_ap_E": 8,
+      "naive_ap_E_hasse_ok": false
+    },
+    {
+      "p": 11,
+      "bring_points": 24,
+      "bring_ap": -12,
+      "bring_hasse_ok": true,
+      "naive_E_orbits": 1,
+      "naive_ap_E": 11,
+      "naive_ap_E_hasse_ok": false
+    },
+    {
+      "p": 13,
+      "bring_points": 30,
+      "bring_ap": -16,
+      "bring_hasse_ok": true,
+      "naive_E_orbits": 2,
+      "naive_ap_E": 12,
+      "naive_ap_E_hasse_ok": false
+    },
+    {
+      "p": 17,
+      "bring_points": 30,
+      "bring_ap": -12,
+      "bring_hasse_ok": true,
+      "naive_E_orbits": 2,
+      "naive_ap_E": 16,
+      "naive_ap_E_hasse_ok": false
+    },
+    {
+      "p": 19,
+      "bring_points": 0,
+      "bring_ap": 20,
+      "bring_hasse_ok": true,
+      "naive_E_orbits": 0,
+      "naive_ap_E": 20,
+      "naive_ap_E_hasse_ok": false
+    },
+    {
+      "p": 23,
+      "bring_points": 0,
+      "bring_ap": 24,
+      "bring_hasse_ok": true,
+      "naive_E_orbits": 0,
+      "naive_ap_E": 24,
+      "naive_ap_E_hasse_ok": false
+    },
+    {
+      "p": 29,
+      "bring_points": 30,
+      "bring_ap": 0,
+      "bring_hasse_ok": true,
+      "naive_E_orbits": 2,
+      "naive_ap_E": 28,
+      "naive_ap_E_hasse_ok": false
+    },
+    {
+      "p": 31,
+      "bring_points": 24,
+      "bring_ap": 8,
+      "bring_hasse_ok": true,
+      "naive_E_orbits": 1,
+      "naive_ap_E": 31,
+      "naive_ap_E_hasse_ok": false
+    }
+  ],
+  "naive_shortcut_fails": true,
+  "bring_counts_hasse_ok": true,
+  "verdict": "j(Bring/S₄) NOT obtained — naive equivariant shortcut fails as predicted. Bring(F_p) counts are correct (Hasse-OK for genus 4), but |E(F_p)| ≈ #(S₄-orbits of Bring(F_p)) grossly violates Hasse (a_p≈p): |E(F_p)| is dominated by F̄_p S₄-orbits with no F_p Bring point. The correct count is the equivariant/twisted Lefschetz sum (1/|S₄|)Σ_g #{Frob(P)=g·P} over F_{p^ord(g)} (or Magma's function-field fixed field) — the sharpened bounded-next-step from #2710, not done here. Structural reduction (Jac~E⁴, W=E=Bring/S₄, M a 2×2 SL₂, tr B=[2]_q-rational) stands regardless. No fit."
+}
