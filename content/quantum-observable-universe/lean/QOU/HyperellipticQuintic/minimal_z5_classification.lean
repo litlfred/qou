@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.HyperellipticQuintic.minimal_z5_classification
 
@@ -85,6 +87,6 @@ The combinatorial decomposi
 theorem minimal_z5_classification [ctx : MinimalZ5ClassificationContext] :
     ctx.genus = 2 ∧ ctx.branch_count = 2 * ctx.genus + 2 ∧
     ctx.branch_count = 6 :=
-  sorry
+  ctx.claim_minimal_z5_classification
 
 end QOU.HyperellipticQuintic

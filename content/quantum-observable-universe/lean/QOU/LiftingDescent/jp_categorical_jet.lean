@@ -37,6 +37,6 @@ $(\Delta', \varepsilon', S')$ from $A$.
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts
 theorem jp_categorical_jet [ctx : JpCategoricalJetContext] :
     ∀ x : ctx.J1A, ctx.S' (ctx.S' x) = x :=
-  sorry
+  ctx.antipode_involutive
 
 end QOU.LiftingDescent

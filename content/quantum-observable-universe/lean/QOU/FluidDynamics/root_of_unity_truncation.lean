@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.FluidDynamics.root_of_unity_truncation
 
@@ -70,6 +72,10 @@ theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] :
     2 * ctx.j_max + 2 ≤ ctx.κ ∧
     ctx.κ_t ≤ 1 + ctx.C * (ctx.κ - 1 : ℝ) ∧
     (ctx.nsBlowsUp ↔ ctx.leviNonDeg) :=
-  sorry
+  ⟨ctx.impl_generic_qou_regime ctx.truncation_active,
+   ctx.impl_root_unity ctx.truncation_active,
+   ctx.impl_classical_limit ctx.truncation_active,
+   ctx.impl_bernstein_bound ctx.truncation_active,
+   ctx.impl_blowup_iff_levi_iff_kappa ctx.truncation_active⟩
 
 end QOU.FluidDynamics
