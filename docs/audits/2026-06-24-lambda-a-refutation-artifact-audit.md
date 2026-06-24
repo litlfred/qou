@@ -73,6 +73,47 @@ co-Casimir Δ_λ refutation. It may still hold for scripts where the density
 enters the *closure target* itself (the `gap_a4` probes) — those remain to
 be checked individually.
 
+### gap_a4 probe cluster + binding_color_vs_charge — λ_A-family-bound
+
+Inspection (2026-06-24) shows these 6 candidates **build their density
+ansätze on λ_A itself** (not on per-partition Hecke data like co-Casimir):
+
+| Script | How λ_A enters | Verdict |
+|---|---|---|
+| `gap_a4_L1_light_series_probe.py` | L1a = `λ_A`; L1c = `λ_A·[3]_q^{2(Z-1)}·…` (per-atom density rule) | **λ_A-bound — refutation does NOT constrain per-knot density** |
+| `gap_a4_He3_residual_probe.py` | tests `λ_A/2`, `(λ_A/[2]_q)^½` ansätze | **λ_A-bound — same** |
+| `gap_a4_S_K_additive_probe.py` | `lw_q0 = λ_A` additive base | **λ_A-bound — same** |
+| `gap_a4_T2_per_knot_vol_probe.py` | anchors on the `vol_density_borromean` (λ_A) convention | **λ_A-bound — same** |
+| `gap_a4_T4_schur_weyl_icosahedral_probe.py` | *tries to derive* λ_A from a weighted A₄-irrep sum | **aimed at the fitted target** — deriving λ_A is deriving a fit |
+| `binding_color_vs_charge_tn3he.py` | imports `base_lw = λ_A` as the density base | **λ_A-bound — same** |
+
+**These differ fundamentally from co-Casimir.** co-Casimir's verdict is
+in a density-independent per-partition sum (robust). These six instead
+make λ_A *the density under test* — so each negative result rules out only
+**λ_A-family** forms. The canonical **per-knot `tr_M(K)`** density was
+never tried in any of them. Therefore:
+
+- Their refutations do **NOT** refute the per-knot density (untested family).
+- `gap_a4_T4`'s effort to *derive* λ_A is misdirected — λ_A is a fit, so
+  there is no categorical object to recover; the right target is the
+  per-knot density rule.
+
+**This confirms the owner's hypothesis for the gap_a4 cluster** (6 scripts)
+while honestly excluding co-Casimir. The productive redo is to re-run the
+per-atom closure (L1/S_K/He3-residual) with `vol_density_per_block`
+(per-knot `tr_M(K)`, p≠n-distinct) as the density base instead of λ_A.
+
+## Summary verdict (7 candidates)
+
+| Refutation | λ_A-artifact? |
+|---|---|
+| co-Casimir Δ_λ (#602) | **No** — density-independent, robust |
+| gap_a4 L1 / He3 / S_K / T2 / T4 + color-vs-charge (6) | **Yes (family-bound)** — tested λ_A-forms only; per-knot density never tried |
+
+Net: **6 of 7** re-examined refutations are λ_A-family-bound and do not
+constrain the canonical per-knot density — they should not be cited as
+ruling out the per-knot approach. The honest exception is co-Casimir.
+
 ## Next (under x5az)
 
 1. Re-run `rho_k_h3a_co_casimir.py` with `vol_density_per_block` (per-knot
