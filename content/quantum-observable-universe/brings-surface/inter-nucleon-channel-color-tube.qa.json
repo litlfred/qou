@@ -936,7 +936,223 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof stub with core gaps but carries math structure and definitions."
       }
+    ],
+    "da-reproducibility": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "inter-nucleon-channel-color-tube.md:100-108 cites probe_pn_flavor_asymmetry.py and probe_per_sheet_flavor_nonin.py as 'third-line evidence' that 'Scheme 4 … reproduces Δm_{n-p} to ~0.14%'. Both scripts are ABSENT: `ls computations/probe_pn_flavor_asymmetry.py computations/probe_per_sheet_flavor_nonin.py` → No such file. The headline empirical support is non-reproducible from the repo.",
+        "rebuttal": "surviving — paths tried: ls of both literal paths (absent); glob computations/probe_*flavor* (no match). The companion low-isotope-sign-flip-diagnostic.witness.json IS present (so the R²=0.83 count-correlation is checkable), but the 0.14% Scheme-4 result is not.",
+        "evidence": [
+          {
+            "text": "inter-nucleon-channel-color-tube.md:101"
+          },
+          {
+            "text": "inter-nucleon-channel-color-tube.md:102"
+          },
+          {
+            "text": "inter-nucleon-channel-color-tube.md:106"
+          }
+        ],
+        "severity": "major",
+        "result": "fail",
+        "field_hash": {
+          "md": "8f2865d6020e",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "C1 flag asserts a sorry-free label over a sorry. md:206 'formalised (sorry-free) as so3_adjoint_eq_chebyshev' — but that describes a DIFFERENT lemma (MassVolDensity.lean:359, a real theorem), not this conjecture; .ts:8 is validation:'not_checked', no sorry-free tag. status_label_overclaim_audit.py reads md+ts together and matched the citation line, pairing it with the comment-only sorry in .lean — a regex co-occurrence artifact.",
+        "rebuttal": "rebutted — there is no sorry-free claim ABOUT the conjecture to contradict (.ts validation not_checked; the only sorry-free literal is the cross-citation to so3_adjoint_eq_chebyshev which is genuinely sorry-free; .qa proof-no-bare-sorries=pass). The triage's 'drop the sorry-free label' disposition is inapplicable — no such label is present.",
+        "evidence": [
+          {
+            "text": "inter-nucleon-channel-color-tube.ts:8"
+          },
+          {
+            "text": "inter-nucleon-channel-color-tube.md:206"
+          },
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/MassVolDensity.lean:359"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "8f2865d6020e",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "the block is conditional on conj:s5-so3-fiber-action and cites it as a content-block label (conj:) at md:39,113,234 + Lean docstrings, but NO content block with label 'conj:s5-so3-fiber-action' exists (only S5SO3FiberAction.lean + spin-from-so3-fiber.md). §3b-cond machinery requires the named conjecture to be a resolvable object.",
+        "rebuttal": "partial — .ts:10-13 HONESTLY discloses this ('cited in the narrative only — not yet a content block, omitted from uses[]'), so not a concealed broken ref and validation passes; but the prose still presents conj:s5-so3-fiber-action as a live label, and s5-so3-keystone.md (2026-06-22) confirms the underlying object is genuinely OPEN (reduced to an unclosed colored Σ(2,3,5) WRT q-series), so the conditional-class promotion path is not currently reachable.",
+        "evidence": [
+          {
+            "text": "inter-nucleon-channel-color-tube.ts:10-13"
+          },
+          {
+            "text": "docs/coordination/s5-so3-keystone.md"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "8f2865d6020e",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "a 9-element weight matrix W_{c1c2} + a ±1/0 chirality rule ε is a large parameter surface that could absorb the p/n residual by fitting.",
+        "rebuttal": "rebutted — the DOF are DISCLOSED (md open-question 1: 'probes give W ∈ {1/3,2/3,…} but the canonical formula needs the formalised class'), block typed conjecture/not_checked. The production projection used (closed_form_tau_M.py:217-300, bring_color_weighted DEFAULT) is parameter-free f_pn = z − h·(1/2 − δ/4), δ=flavor_split_subleading(q) (PR #690, substrate-pure, no fitted quark masses); ε constrained to a Z₂-grade section of SU(2)→SO(3). Disclosed conjectural DOF on a conjecture is honest per §3b.",
+        "evidence": [
+          {
+            "text": "inter-nucleon-channel-color-tube.md:161-164"
+          },
+          {
+            "text": "computations/closed_form_tau_M.py:217-300"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "8f2865d6020e",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "the .lean sibling could be a vacuous shadow-stub faking resolution of lean.ref qou:QOU.BraidsAndKnots.InterNucleonChannelColorTube.",
+        "rebuttal": "rebutted — §0a: the library file is ABSENT, so the ref resolves to the sibling (candidate 1), which carries the REAL §3b-cond class InterNucleonChannelColorTube (total fields weight : NucleonColorPair → R, holds : Prop; honest chirality_sign := 0 stub; genuine Quark/ColorSheet inductive data) — NOT : True, no ∨ True, no def-disguised-True, no self-assuming projection. An honest conjecture stub per §3b.",
+        "evidence": [
+          {
+            "text": "inter-nucleon-channel-color-tube.lean:108-115"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "8f2865d6020e",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "the 'why color-tube is load-bearing' argument (md:81-90) rests on a single R²=0.83 vs 0.26 contrast (small n) and a coincidence between the purged λ_scale literal 2.4599527869 and 1/(1−h_q·q₀^10)≈2.450 — numerical-coincidence-as-evidence, the numerology pattern the canonical-discipline warns against.",
+        "rebuttal": "partial — the count-correlation witness IS present + checkable, and the block frames these as 'evidence the categorical structure exists', not proof; but a ~2.450 two-number coincidence + a single small-n R² are weak load-bearing support. Weakens motivation, does not falsify.",
+        "evidence": [
+          {
+            "text": "inter-nucleon-channel-color-tube.md:83-87"
+          },
+          {
+            "text": "inter-nucleon-channel-color-tube.md:92-98"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "8f2865d6020e",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "open-objection",
+        "referee_argument": "[Rubric note: the lens rolled this up survivable on conjecture-honesty grounds, but it ruled da-reproducibility SURVIVING on a hard fact — two cited scripts verified absent — so per the ≥1-surviving rubric the rollup is open.] The C1 'sorry-free over a sorry' flag is a confirmed FALSE POSITIVE (no sorry-free label; .ts validation:not_checked; the lone sorry-free literal cites a different genuinely-sorry-free lemma; .lean sorry comment-only; qa FRESH). The sibling .lean is an honest §3b conjecture stub, and the production p/n asymmetry mechanism this projects to is independently realised + substrate-pure (closed_form_tau_M.py bring_color_weighted DEFAULT, δ from flavor_split_subleading, PR #690), so NO closure is overclaimed. The surviving defect is reproducibility/citation: the two probe scripts cited as the headline ~0.14% Δm_{n-p} evidence (probe_pn_flavor_asymmetry.py, probe_per_sheet_flavor_nonin.py) are absent from the repo, and the cited conj:s5-so3-fiber-action is not a resolvable content block (honestly disclosed). A missing-cited-scripts/repro defect on an honestly-typed open conjecture — open per rubric, but NOT a math refutation or closure overclaim.",
+        "result": "fail",
+        "field_hash": {
+          "md": "8f2865d6020e",
+          "ts": "8b185f445a7e",
+          "lean": "e598742379dc"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:20.271Z"
+  "updated_at": "2026-06-24T13:22:51Z"
 }

@@ -1374,6 +1374,164 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub proof with unresolved hypotheses."
       }
+    ],
+    "da-false-claim": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "bring-residue-resolvent.lean:200 `unfold hShift; decide` — verbatim error (lean v4.24.0): 'Tactic decide failed for proposition 1 - (2 - 2⁻¹) * 2 ^ 3 ≠ 0 … reduction got stuck at the Decidable instance'. Same at L206/212/219. The .ts labels assert proved + sorry-free and the .md (L186-193, L236-251) presents bring_residue_at_q_eq_2_cascade as a sorry-free end-to-end witness; the file does not compile, so these claims are false.",
+        "rebuttal": "surviving — verified by lean-direct against live hash c1306e75c789 (2951 mathlib oleans restored). Control `example:(1:ℚ)≠0:=by decide` compiles → failure is file-specific (Rat 2⁻¹ won't kernel-reduce), not env breakage. Math IS true (−11,−23,−767,−1535); show;norm_num and native_decide both compile (fix exists), but the committed `unfold; decide` does not.",
+        "evidence": [
+          {
+            "text": "bring-residue-resolvent.lean:200"
+          },
+          {
+            "text": "bring-residue-resolvent.lean:219"
+          },
+          {
+            "text": "bring-residue-resolvent.ts:10"
+          }
+        ],
+        "severity": "critical",
+        "result": "fail",
+        "field_hash": {
+          "md": "12ee6306abdf",
+          "ts": "6d7ebe576c37",
+          "lean": "c1306e75c789"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "md:88 'The four specialised theorems above are sorry-free conditional on the class' and md:186-188 'giving concrete sorry-free Lean witnesses for the §3b-cond axiom-class closure path'. The narrative asserts a green sorry-free formalisation; the live Lean errors (4× decide). Fresh QA agent row proof-narrative-lean-equiv=fail @ live hash c1306e75c789.",
+        "rebuttal": "surviving — the QA agent row's mechanism ('sorry stub'/'sorryAx') is imprecise (no tactic sorry, no sorryAx; sorry appears only in comment strings L32/187/223), but the divergence it flags is real and worse: a compile failure. Both the bucket flag and the agent row under-state it as a sorry; ground truth is build-broken.",
+        "evidence": [
+          {
+            "text": "bring-residue-resolvent.md:88"
+          },
+          {
+            "text": "bring-residue-resolvent.md:186"
+          },
+          {
+            "text": "bring-residue-resolvent.qa.json proof-narrative-lean-equiv (fail, c1306e75c789)"
+          }
+        ],
+        "severity": "critical",
+        "result": "fail",
+        "field_hash": {
+          "md": "12ee6306abdf",
+          "ts": "6d7ebe576c37",
+          "lean": "c1306e75c789"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "the .md (L242-251) presents bring_residue_at_q_eq_2_cascade as a no-hypothesis theorem discharging the resolvent equation at all four downstream pole orders via Fact-instances (L224-234). Those instances depend on the four bring_residue_q_eq_2_pole_nonzero_at_{3,4,9,10} theorems — exactly the four that error. The advertised reproducible cascade cannot be elaborated.",
+        "rebuttal": "surviving — the error set {200,206,212,219} = the four pole_nonzero theorems → Fact instances → cascade, so the entire Phase-3 chain is downstream of the break. proof-build-green=n/a (never built); proof-no-bare-sorries=pass is STALE (field_hash lean=10709e4deaa4 ≠ live c1306e75c789), so no green-build evidence exists for the current file.",
+        "evidence": [
+          {
+            "text": "bring-residue-resolvent.lean:224-234"
+          },
+          {
+            "text": "bring-residue-resolvent.lean:242-251"
+          },
+          {
+            "text": "bring-residue-resolvent.qa.json proof-build-green=n/a, proof-no-bare-sorries field_hash lean=10709e4deaa4 STALE"
+          }
+        ],
+        "severity": "major",
+        "result": "fail",
+        "field_hash": {
+          "md": "12ee6306abdf",
+          "ts": "6d7ebe576c37",
+          "lean": "c1306e75c789"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "labels no-fitting+uniqueness+closed-form (ts:10) on a proposition whose own class instance BringResidueAtOrder n q is explicitly UNCLOSED — md:62-66 'Closing the class is a Mathlib-import follow-up; until then this file states the conditional uniqueness'. The 1/(1−h_q·q^n) resolvent form is asserted to follow from a Bring/Schwarz contour integral never carried out (analytic + Bloch-Suslin routes both only sketched, md:49-63); the only Lean content is the algebraic identity (1−h_q·q^n)·F_n=1 via mul_inv_cancel₀, which presupposes the form rather than deriving it from a residue.",
+        "rebuttal": "partial — the block is honest the contour-integral derivation is open (§3b-cond conditional framing stated), so this is a scope/labeling overclaim (the proved label) on an admitted-conditional result, not a hidden fitted residue. The math identity that IS proved is correct; the overclaim folds into da-false-claim. No proved invariant violated → stays limited.",
+        "evidence": [
+          {
+            "text": "bring-residue-resolvent.ts:10"
+          },
+          {
+            "text": "bring-residue-resolvent.md:62-66"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "12ee6306abdf",
+          "ts": "6d7ebe576c37",
+          "lean": "c1306e75c789"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "open-objection",
+        "referee_argument": "The strongest objection is not the alleged sorry (there is none — the bucket flag's premise is imprecise) but a worse, verified defect: the live bring-residue-resolvent.lean does not compile under the pinned toolchain — four decide tactics on Rat-inverse propositions fail (L200/206/212/219), confirmed by lean-direct against live hash c1306e75c789 with a passing control proving decide works on plain Rat. The Phase-3 'sorry-free Lean witnesses' and the bring_residue_at_q_eq_2_cascade advertised in the .md do not exist, and the labels proved/sorry-free/closed form are false-as-applied. The lean.ref target bring_residue_equation itself compiles and is non-vacuous (mul_inv_cancel₀, real Field hypothesis), so the vacuity/self-assuming/trivial-True lenses are rebutted — but a build-broken file carrying a proved+sorry-free label is an open objection. Mechanically fixable (replace the 4 `unfold; decide` with native_decide or show;norm_num).",
+        "result": "fail",
+        "field_hash": {
+          "md": "12ee6306abdf",
+          "ts": "6d7ebe576c37",
+          "lean": "c1306e75c789"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"

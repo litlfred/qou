@@ -922,6 +922,121 @@
       "status": "needs-author",
       "asked_author_at": null,
       "referee_argument": "Refresh the stale qa-agent-drain entries on these two (and sweep for the same class corpus-wide): re-run qa-sweep or delete the stale criteria so they re-derive against current hashes. Distinct from the devil's-advocate findings; a qa-staleness maintenance pass."
+    },
+    {
+      "id": "5d218e0928d8",
+      "block_or_script": "prop:binding-alpha-shift-extension",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.lean",
+        "md": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.md"
+      },
+      "finding": "da-false-claim+da-lean-narrative-divergence+da-vacuous+da-overclaim",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6",
+      "evidence": "NON-COMPILING (TRUE-positive C1): `class BindingPerRepReebPhase {R}[Field R](B:ℕ→R)(m_e ρ_0:R) : Prop where αShiftAt : ℕ → ℕ` (lean:87-93) — a Prop-valued class carrying a DATA field, rejected by Lean v4.24.0 ('field must be a proof'); the whole file fails to elaborate (verified pristine exit 1 + 3-line minimal repro), so binding_unique_via_alpha_shift is unknownIdentifier and binding_subsingleton depends on sorryAx — yet labels proved+sorry-free, .md says 'No sorry'. Plus §3b-cond rule-5 self-assuming projection (the factors field IS the conclusion), no-fitting tag contradicted by free per-nucleus (p,k) knots, −79% ⁴He miss. Orphan sibling NOT in the QOU import graph (lake build never catches it; proof-build-green:n/a). Compile defect unrecorded in corpus.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator (incl. lean-direct compile)",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "MECHANICAL FIX (high-priority): make BindingPerRepReebPhase a `Type` class or carry αShiftAt as a parameter/derived def (not a Prop-class data field) so the file elaborates; THEN address the §3b-cond rule-5 self-assuming projection (carry genuine sub-hypotheses, not the binding identity itself) and re-scope no-fitting (the (p,k) knots are admitted hypotheses)."
+    },
+    {
+      "id": "09cbbff97d24",
+      "block_or_script": "prop:bring-residue-resolvent",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean",
+        "md": "content/quantum-observable-universe/mass-theory/bring-residue-resolvent.md"
+      },
+      "finding": "da-false-claim+da-lean-narrative-divergence+da-reproducibility",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6",
+      "evidence": "NON-COMPILING: 4 hard `decide` errors at lean:200/206/212/219 (`unfold hShift; decide` on Rat 2⁻¹ propositions — won't kernel-reduce under decide), so the Phase-3 'sorry-free Lean witnesses' + bring_residue_at_q_eq_2_cascade the .md advertises (180-193, 236-251) do not exist; labels proved/sorry-free/closed-form false-as-applied. Verified lean-direct (live hash c1306e75c789, passing control). The lean.ref target bring_residue_equation itself compiles + is non-vacuous. proof-no-bare-sorries=pass is STALE (10709e4deaa4 ≠ live); proof-build-green=n/a (never built). Math IS true (−11,−23,−767,−1535).",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator (incl. lean-direct compile)",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "MECHANICAL FIX (high-priority, one-line): replace the 4 `unfold hShift; decide` with `native_decide` or `show … ; norm_num` (both verified to compile) — the math is correct, only the tactic is wrong; then refresh the stale qa rows."
+    },
+    {
+      "id": "305407955af7",
+      "block_or_script": "prop:qbeta-per-block-chi-closed-forms",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean",
+        "md": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.md"
+      },
+      "finding": "da-lean-narrative-divergence+da-false-claim",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6",
+      "evidence": "Stale sibling shadows its completed twin: the .md asserts 'Sorry tally: zero. All theorems are sorry-free' (151) + 'the three deferred sorries were each subsequently discharged' (156), but the §0a sibling-first–resolved sibling lean:329 (theorem delta_tau_M_surrogate_taylor_coeff_2) carries a live tactic sorry; the completed sorry-free library twin lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean exists but sibling-first never reaches it. The qa proof-no-bare-sorries=pass is stale (source_hashes.lean 58ad5eee5eed vs live d0a02ca00bd4); fresher agent rows correctly fail. The three χ closed forms verify exactly (witness matches). NEW §0a sub-pattern (stale sibling shadows fixed twin).",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator (incl. lean-direct compile)",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "MECHANICAL FIX: sync the sibling .lean to its completed library twin (port the 2nd-derivative HasDerivAt proof that replaces the line-329 sorry), OR soften the 'Sorry tally: zero' prose to match the resolved sibling; then refresh the stale qa row. Separately, the deep-audit (2026-06-13) re-scope of 'Δτ_M needs √q / open' to pure-rational should land."
+    },
+    {
+      "id": "e9c56d474493",
+      "block_or_script": "conj:binding-qbeta-complex-volume",
+      "paths": {
+        "md": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.md",
+        "ts": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.ts"
+      },
+      "finding": "da-empirical-fragility",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6",
+      "evidence": "LIGHT open: C1 false positive (live .lean genuinely sorry-free, hashes match). Surviving da-empirical-fragility: the headline §'Computational corroboration (this PR)' (md:116-124) cites witness qbeta-ck-sseries-operator-match (allPassed:false, c2_gate FAIL, c_2≈-8.006 only) as confirming the c₂≈-8/c₂=-1 Re/Im split, but no witness derives both c₂'s from one complex 𝔙, and the Stage B audit the block cites marks the -8 'not identified'. Re/Im of two arbitrary reals is post-hoc; a gate failure repackaged as corroboration. The unification theorem + value-level Im 𝔙 = Q_β (2e-16) are sound.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator (incl. lean-direct compile)",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Soften the §'Computational corroboration' c₂-split framing to TIERED (the Re/Im unification is a hypothesis the failing c2_gate currently does NOT confirm — net-route ≠ brane-tower), OR commit a witness that derives both c₂'s from one 𝔙; the value-level Q_β match stands. Also refresh the stale compute-witness-exists:fail row (witness now exists)."
+    },
+    {
+      "id": "a507065e75bb",
+      "block_or_script": "conj:inter-nucleon-channel-color-tube",
+      "paths": {
+        "md": "content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md",
+        "ts": "content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.ts"
+      },
+      "finding": "da-reproducibility+da-citation-misuse",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6",
+      "evidence": "LIGHT open: C1 false positive (the matched 'sorry-free' at md:206 cites a DIFFERENT real lemma so3_adjoint_eq_chebyshev; qa fresh; honest §3b conjecture). Surviving da-reproducibility: two cited probe scripts probe_pn_flavor_asymmetry.py + probe_per_sheet_flavor_nonin.py (md:101-102) backing the headline ~0.14% Δm_{n-p} claim are ABSENT from computations/ (ls verified). Also cites conj:s5-so3-fiber-action as a content-block label but no such block exists (honestly disclosed; keystone genuinely open). The production p/n mechanism it projects to is independently realised + substrate-pure (closed_form_tau_M.py bring_color_weighted DEFAULT).",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator (incl. lean-direct compile)",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Restore/commit the two missing probe scripts (or remove the ~0.14% headline claim until they land); register conj:s5-so3-fiber-action as a content block or downgrade the prose references to a Lean-file/ledger citation. Honest conjecture; repro/citation hygiene, not a math refutation."
     }
   ],
   "audited": {
@@ -1267,9 +1382,44 @@
       "criteria": [
         "da-referee-verdict"
       ]
+    },
+    "prop:binding-alpha-shift-extension": {
+      "ts": "2026-06-24",
+      "sha": "6d0885de28e290e1d247120ae212a62ad1adbad6",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:bring-residue-resolvent": {
+      "ts": "2026-06-24",
+      "sha": "6d0885de28e290e1d247120ae212a62ad1adbad6",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:qbeta-per-block-chi-closed-forms": {
+      "ts": "2026-06-24",
+      "sha": "6d0885de28e290e1d247120ae212a62ad1adbad6",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "conj:binding-qbeta-complex-volume": {
+      "ts": "2026-06-24",
+      "sha": "6d0885de28e290e1d247120ae212a62ad1adbad6",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "conj:inter-nucleon-channel-color-tube": {
+      "ts": "2026-06-24",
+      "sha": "6d0885de28e290e1d247120ae212a62ad1adbad6",
+      "criteria": [
+        "da-referee-verdict"
+      ]
     }
   },
   "reviewed_up_to": {
-    "da-referee-verdict": "7030e24e69206f50237590a614af029a9e1afb33"
+    "da-referee-verdict": "6d0885de28e290e1d247120ae212a62ad1adbad6"
   }
 }

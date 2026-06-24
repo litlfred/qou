@@ -938,7 +938,130 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof stub with core gaps but carries math structure and definitions."
       }
+    ],
+    "da-empirical-fragility": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "binding-qbeta-complex-volume.md:116-124 — 'the E_0·|Δ(net)| net-route … gives a precision-ladder c_2 ≈ -8.0, whereas the canonical c_2 = -1 lives in the bar-odd tr_M brane-tower ladder … Two different real c_2's for the two parities are exactly what Re/Im components of one complex c_2 predict.' This headline 'corroboration' is backed by qbeta-ck-sseries-operator-match.witness.json whose assertions are allPassed:false + c2_gate passed:false (the operator s-series match does NOT reproduce c_2=-1); the witness computes only c_2≈-8.006, and no witness derives BOTH c_2's from one complex 𝔙. 'Two reals are Re/Im of one complex number' is true of any two reals → post-hoc, not a demonstrated forcing.",
+        "rebuttal": "surviving — corpus-grep: docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md marks the -8 'not identified' (:121) and per-channel c_k constancy 'Not established' (:177-187); no witness reproduces both c_2 values from one 𝔙 (falsification grep empty). The value-level Im 𝔙 = Q_β match IS corroborated (1ppq-qbeta.md RESOLVED: 0.7836 MeV to 2e-16), which is why this is limited/minor not critical — but the c_2-split corroboration narrative over-reaches.",
+        "evidence": [
+          {
+            "text": "binding-qbeta-complex-volume.md:116-124"
+          },
+          {
+            "text": "computations/qbeta/qbeta-ck-sseries-operator-match.witness.json:16-24"
+          },
+          {
+            "text": "docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md:121"
+          }
+        ],
+        "severity": "minor",
+        "result": "fail",
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "binding-qbeta-complex-volume.ts:25 sets computation.status:'verified' for witness qbeta-ck-sseries-operator-match.witness.json and the .md frames it as 'Computational corroboration', yet that witness's allPassed is false and its c2_gate fails. Citing a witness whose own pass-gate fails as 'verified' corroboration misrepresents the compute state.",
+        "rebuttal": "partial — the witness DID run + validates two sub-assertions (validate_object_at_q0 passed:true; validate_Qbeta_at_q0_MeV=0.788 ≈ Q_β), so 'verified' arguably denotes 'witness executed + object validated', and the c2 gate is documented 'FAILS by design — flags net-route ≠ brane-tower' (Stage B audit:124). Soft convention issue, not a hard false claim; the failure is disclosed in the cited audit. Downgraded surviving→partial.",
+        "evidence": [
+          {
+            "text": "binding-qbeta-complex-volume.ts:19-26"
+          },
+          {
+            "text": "computations/qbeta/qbeta-ck-sseries-operator-match.witness.json:6-25"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "C1 buckets.json:148 (C1_sorry_free_contradiction[3]) flags labels ['proved','sorry-free'] with evidence 'lean':'lean:sorry'; wave4 recategorizes as 'closure label over a .lean sorry/:True/:=trivial'.",
+        "rebuttal": "rebutted — live .lean (sha256 5b607c275ac8, matching qa source_hashes.lean) has ZERO tactic sorry, ZERO :True, ZERO :=trivial, ZERO ∨True, ZERO def-disguised-True (hard grep empty). Every theorem (barParity_sum, invol_descent, complex_volume_unification, binding_match, qbeta_match, measured_complex_volume) has a real non-True conclusion proved by ring/rw/Complex.re_add_im. The buckets 'lean:sorry' + wave4 ':True/:=trivial' tags are both WRONG against the live file (automated label-vs-source FP). The proved/sorry-free labels live in authorNotes/docstrings, correctly §3b-scoped to the definitional unification theorem complex_volume_unification (genuinely sorry-free), NOT the conjecture-as-whole (open ComplexVolumeMatch class, no sorry). Honest §3b disposition.",
+        "evidence": [
+          {
+            "text": "binding-qbeta-complex-volume.lean:53-155"
+          },
+          {
+            "text": "binding-qbeta-complex-volume.qa.json:859-876"
+          },
+          {
+            "text": "docs/audits/2026-06-24-status-label-overclaim-buckets.json:148"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "open-objection",
+        "referee_argument": "The C1 'sorry-free over a sorry' flag that triggered this review is a FALSE POSITIVE — the live .lean (5b607c275ac8) is genuinely sorry-free with real-content theorems, and the conjecture is an honest §3b block (proved unification theorem + open ComplexVolumeMatch class). One referee argument nevertheless survives: the block's headline §'Computational corroboration (this PR)' cites witness qbeta-ck-sseries-operator-match (allPassed:false, c2_gate FAIL, c_2≈-8.006 only) as confirming the c₂≈-8/c₂=-1 Re/Im split, but no witness derives both c₂'s from one complex 𝔙, and the Stage B audit the block itself cites marks the -8 'not identified' and per-channel c_k constancy 'not established'. The Re/Im framing of two arbitrary reals is post-hoc; the cited compute shows a gate failure repackaged as corroboration. Open ≠ false: the unification theorem and the machine-precision Im 𝔙 = Q_β value match are both sound; only the c₂-split corroboration narrative over-reaches. (Also: the qa compute-witness-exists:fail row is itself stale — the witness + probe now exist on disk.)",
+        "result": "fail",
+        "field_hash": {
+          "md": "e62b434b2cf0",
+          "ts": "53105739bff2",
+          "lean": "5b607c275ac8"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:56:41.265Z"
+  "updated_at": "2026-06-24T13:22:51Z"
 }

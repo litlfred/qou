@@ -1352,6 +1352,228 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-false-claim": [
+      {
+        "scope": "structural",
+        "ruling": "surviving",
+        "referee_argument": "binding-alpha-shift-extension.lean:87-95 + pristine lean-direct compile (v4.24.0, exit 1): `class BindingPerRepReebPhase {R}[Field R](B:ℕ→R)(m_e ρ_0:R) : Prop where / αShiftAt : ℕ → ℕ / factors : …`. Lean error verbatim: 'failed to generate projection αShiftAt for the Prop-valued type BindingPerRepReebPhase, field must be a proof, but it has type ℕ → ℕ'. A Prop-valued class cannot carry a data field; hB.αShiftAt/hB.factors do not exist (lines 149/153) so the theorem cannot close. The .ts labels proved+sorry-free (ts:10) and the narrative 'No sorry' (md:246, lean:120) are false claims about a declaration that does not elaborate.",
+        "rebuttal": "surviving — proved invariant: (1) pristine untouched file compiled exit 1 with identical errors; (2) 3-line minimal repro `class Foo (B:Nat):Prop where / data:Nat→Nat` reproduces the exact projection-generation failure; (3) lean-compile-diagnostics.json claims errors:[] but at a STALE lean_sha a2268765afda (2026-06-13); (4) corpus-grep found the −79% accuracy deficit recorded but NOT this compile defect — unrecorded, surviving.",
+        "evidence": [
+          {
+            "text": "binding-alpha-shift-extension.lean:87-95"
+          },
+          {
+            "text": "binding-alpha-shift-extension.ts:10"
+          },
+          {
+            "text": "binding-alpha-shift-extension.md:246"
+          }
+        ],
+        "severity": "critical",
+        "result": "fail",
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "23bba852477d"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "scope": "structural",
+        "ruling": "surviving",
+        "referee_argument": "md:95-98 asserts 'theorem binding_unique_via_alpha_shift — sorry-free conditional on the two classes' and :120 'No sorry.'; the axiom audit instead yields 'binding_subsingleton depends on [propext, sorryAx, Quot.sound]' and binding_unique_via_alpha_shift is unknownIdentifier (failed to elaborate). The QA agent rows already record this: proof-narrative-lean-equiv:fail + proof-statement-integrity:fail (sorryAx), with field_hash matching live (md 4a4b78db05cf / ts 7d011309058a / lean 23bba852477d) — NOT stale.",
+        "rebuttal": "surviving — the script proof-no-bare-sorries:pass is a true-but-irrelevant token-grep (no literal sorry token) that cannot detect a malformed Prop-class whose failed projection injects sorryAx. The divergence (narrative=proved/sorry-free, Lean=non-compiling+sorryAx) is real and unrebutted; the live-hash-matched agent FAIL rows are the correct signal.",
+        "evidence": [
+          {
+            "text": "binding-alpha-shift-extension.md:95"
+          },
+          {
+            "text": "binding-alpha-shift-extension.md:120"
+          },
+          {
+            "text": "binding-alpha-shift-extension.qa.json (proof-statement-integrity:fail, sorryAx)"
+          }
+        ],
+        "severity": "critical",
+        "result": "fail",
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "23bba852477d"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "scope": "structural",
+        "ruling": "surviving",
+        "referee_argument": "even setting aside the compile failure, binding_unique_via_alpha_shift (lean:127-137) is a §3b-cond rule-5 self-assuming projection of the same shape its upstream was flagged for. The class field `factors : ∀ A, B A = m_e * ρ_0 * (αShiftAt A : R)` (line 95) literally states the binding formula B(A)=m_e·ρ_0·α_shift(A); the 'uniqueness theorem' then `rw`s two copies of that field to conclude B=B'. The class axiomatises the conclusion, not independent sub-hypotheses; the theorem derives nothing.",
+        "rebuttal": "surviving — exactly the upstream alpha-shift-torus-knot self-assuming pattern. The QA proof-no-self-assuming-projection:pass (agent) is incorrect here: the factors field carries the full RHS, so the theorem composes nothing beyond re-stating its own hypothesis.",
+        "evidence": [
+          {
+            "text": "binding-alpha-shift-extension.lean:95"
+          },
+          {
+            "text": "binding-alpha-shift-extension.lean:127-137"
+          }
+        ],
+        "severity": "major",
+        "result": "fail",
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "23bba852477d"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "the .ts authorNotes (ts:15) claims the proposition 'Closes the A≥3 binding entry … as a structurally identified item'. What is delivered: a non-compiling Lean file, a uniqueness theorem that is a self-assuming projection, and candidate (not derived) knots. Upstream alpha-shift-torus-knot.md proves α_shift=k(p-1) only ON V_{(1^p)}; the actual definition is max_{λ⊢p} ord(...), and the maximality is 'verified case-by-case'/'we conjecture'/'defer the categorical argument' — unproved. This block inherits that gap AND adds a broken Lean layer.",
+        "rebuttal": "surviving — corpus-grep confirms upstream maximality is unproved (alpha-shift-torus-knot.md 'defer the categorical argument'). The claim to 'close' the backlog entry as 'structurally identified' overclaims against (a) its own non-compiling Lean and (b) the upstream maximality gap. No rebuttal in materials.",
+        "evidence": [
+          {
+            "text": "binding-alpha-shift-extension.ts:15"
+          },
+          {
+            "text": "content/quantum-observable-universe/mass-theory/alpha-shift-torus-knot.md"
+          }
+        ],
+        "severity": "major",
+        "result": "fail",
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "23bba852477d"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "the no-fitting tag (ts:10) is contradicted by the block's own text: the per-A torus-knot identification (p_A,k_A) is undetermined — md:39-48 tabulates D→T(2,3), T/³He→T(2,5), ⁴He→T(3,4) all marked 'open (#1485)'/'candidate'/'hypothesised'; lean:37-42 'agent-survey hypothesis (2026-05-30)'. Each nucleus picks (p,k) freely to hit a target α_shift — two integer DOF per nucleus with no derivation. The chosen knot is reverse-engineered from the desired α_shift.",
+        "rebuttal": "partial — scope limited (no PROVED invariant forbids the (p,k) freedom) and the block is HONEST the identification is open. So no-fitting as a LABEL overclaims, but the prose self-discloses the gap (already recorded in 2026-05-31-binding-alpha-shift-a4-status.md). Surviving sliver: the no-fitting tag on a block whose own body calls the choice a hypothesis.",
+        "evidence": [
+          {
+            "text": "binding-alpha-shift-extension.ts:10"
+          },
+          {
+            "text": "binding-alpha-shift-extension.md:46"
+          },
+          {
+            "text": "binding-alpha-shift-extension.lean:39"
+          }
+        ],
+        "severity": "major",
+        "result": "warn",
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "23bba852477d"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "the calibration is internally strained: md:61-75 derives ρ_0 = B(D)/(m_e·3) ≈ 1.451 (dimensionless) while the witness binding-rotation-phase-lead.witness.json outputs ρ_full(D)=14.6673 MeV/rad; the block concedes these are 'distinct quantities' 'bridged by the α_shift=3 normalisation'. The ⁴He prediction misses by −79% (docs/audits/2026-05-31-binding-alpha-shift-a4-status.md; 2026-05-29-binding-a3-honesty.md:88). Exact for D (by construction — D pins ρ_0), fails badly for the A≥3 cases it extends to.",
+        "rebuttal": "partial — scope limited; the −79% miss is ALREADY recorded in the corpus (open, not novel). Fragility real but disclosed; surviving sliver: the no-fitting+proved labelling incompatible with an extension exact only at its calibration anchor and 79% off elsewhere.",
+        "evidence": [
+          {
+            "text": "binding-alpha-shift-extension.md:67"
+          },
+          {
+            "text": "docs/coordination/2026-05-29-binding-a3-honesty.md:88"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "23bba852477d"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "open-objection",
+        "referee_argument": "This is a TRUE-POSITIVE C1 flag, contrary to the prior-wave 4/5-FP prior. The .lean does not compile: `class BindingPerRepReebPhase … : Prop where` carries a data field αShiftAt : ℕ → ℕ, which Lean v4.24.0 rejects (projection cannot be generated for a Prop-valued type) — verified on the pristine untouched file (exit 1) and reproduced by a 3-line minimal example. Consequently binding_unique_via_alpha_shift fails to elaborate and binding_subsingleton depends on sorryAx, while the .ts labels it proved+sorry-free and the .md asserts 'No sorry'. The QA script proof-no-bare-sorries:pass is a true-but-irrelevant token-grep; the live-hash-matched agent rows proof-narrative-lean-equiv:fail + proof-statement-integrity:fail (sorryAx) are the correct signal and NOT stale. Independently: the 'uniqueness theorem' is a §3b-cond rule-5 self-assuming projection (factors field IS the conclusion), the (p,k) knot choices are admitted hypotheses (contradicting no-fitting), the ⁴He prediction misses −79%, and the upstream alpha-shift-torus-knot maximality-over-partitions is itself unproved. corpus-grep found the accuracy deficit recorded but the COMPILE defect unrecorded — a new defect class: an orphan content-block sibling that does not compile (not in the QOU import graph, so lake build never catches it; proof-build-green:n/a lets it persist). Multiple surviving objections ⇒ OPEN.",
+        "result": "fail",
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "23bba852477d"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T13:22:51Z",
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"
