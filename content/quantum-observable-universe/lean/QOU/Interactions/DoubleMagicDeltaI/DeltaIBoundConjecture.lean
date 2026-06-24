@@ -36,6 +36,5 @@ class DeltaIBoundConjecture where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/observations/double-magic-delta-i-bound.ts
-noncomputable instance : DeltaIBoundConjecture := by
-  sorry
+noncomputable instance : DeltaIBoundConjecture := sorry
 end QOU.Interactions.DoubleMagicDeltaI

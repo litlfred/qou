@@ -36,6 +36,5 @@ class jet_convergence_classical_limit where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jet-convergence-classical-limit.ts
-noncomputable instance : jet_convergence_classical_limit := by
-  sorry
+noncomputable instance : jet_convergence_classical_limit := sorry
 end QOU.BraidKnot

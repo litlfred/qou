@@ -45,6 +45,5 @@ strict equality. In a surreal QOU, this can be relaxed.
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/infinitesimal-frobenius.ts
-noncomputable instance : InfinitesimalFrobenius := by
-  sorry
+noncomputable instance : InfinitesimalFrobenius := sorry
 end QOU.AppendixSurreals

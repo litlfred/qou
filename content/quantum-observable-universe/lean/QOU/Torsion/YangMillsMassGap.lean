@@ -55,6 +55,5 @@ $\mathcal{A}_\infty = \varinjlim \mathrm{End}_{\mathbf{C}}(A_n)$.*
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/models-of-qous/yang-mills-mass-gap.ts
-noncomputable instance : YangMillsMassGap := by
-  sorry
+noncomputable instance : YangMillsMassGap := sorry
 end QOU.Torsion

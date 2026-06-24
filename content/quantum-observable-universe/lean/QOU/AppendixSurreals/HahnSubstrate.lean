@@ -45,6 +45,5 @@ formula reproduces CODATA particle masses to $\sim 4\%$ MAE.
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/hahn-substrate.ts
-noncomputable instance : HahnSubstrate := by
-  sorry
+noncomputable instance : HahnSubstrate := sorry
 end QOU.AppendixSurreals

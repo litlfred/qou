@@ -53,6 +53,5 @@ $$
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.ts
-noncomputable instance : NSymSymmetricChannelNormalization := by
-  sorry
+noncomputable instance : NSymSymmetricChannelNormalization := sorry
 end QOU.BraidKnot

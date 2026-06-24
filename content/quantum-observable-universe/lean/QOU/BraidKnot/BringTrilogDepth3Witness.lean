@@ -36,6 +36,5 @@ class BringTrilogDepth3Witness where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/bring-trilog-depth-3-witness.ts
-noncomputable instance : BringTrilogDepth3Witness := by
-  sorry
+noncomputable instance : BringTrilogDepth3Witness := sorry
 end QOU.BraidKnot

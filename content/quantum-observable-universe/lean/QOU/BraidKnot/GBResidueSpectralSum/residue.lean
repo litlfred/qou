@@ -36,6 +36,5 @@ class residue where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-residue-at-root-existence.ts
-noncomputable instance : residue := by
-  sorry
+noncomputable instance : residue := sorry
 end QOU.BraidKnot.GBResidueSpectralSum

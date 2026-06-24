@@ -43,6 +43,5 @@ others, but open in full generality) states:
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/kashaev-surreal.ts
-noncomputable instance : KashaevSurreal := by
-  sorry
+noncomputable instance : KashaevSurreal := sorry
 end QOU.AppendixSurreals

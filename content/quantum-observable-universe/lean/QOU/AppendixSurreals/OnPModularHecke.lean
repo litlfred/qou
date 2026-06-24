@@ -45,6 +45,5 @@ exactly **two** eigenvalues at generic $q$.
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/on-p-modular-hecke.ts
-noncomputable instance : OnPModularHecke := by
-  sorry
+noncomputable instance : OnPModularHecke := sorry
 end QOU.AppendixSurreals

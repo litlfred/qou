@@ -36,6 +36,5 @@ class BringFigureEightDepth2Witness where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/bring-figure-eight-depth-2-witness.ts
-noncomputable instance : BringFigureEightDepth2Witness := by
-  sorry
+noncomputable instance : BringFigureEightDepth2Witness := sorry
 end QOU.BraidKnot

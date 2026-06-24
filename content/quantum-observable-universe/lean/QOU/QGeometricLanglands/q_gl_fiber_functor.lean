@@ -36,6 +36,5 @@ class q_gl_fiber_functor where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-fiber-functor.ts
-noncomputable instance : q_gl_fiber_functor := by
-  sorry
+noncomputable instance : q_gl_fiber_functor := sorry
 end QOU.QGeometricLanglands

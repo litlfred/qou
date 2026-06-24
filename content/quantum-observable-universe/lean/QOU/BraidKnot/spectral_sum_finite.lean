@@ -36,6 +36,5 @@ class spectral_sum_finite where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-spectral-sum-finite.ts
-noncomputable instance : spectral_sum_finite := by
-  sorry
+noncomputable instance : spectral_sum_finite := sorry
 end QOU.BraidKnot

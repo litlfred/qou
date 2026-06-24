@@ -46,6 +46,5 @@ a real Lie group, and $\mathcal{S}$ is a real vector bundle.
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/archimedean-stpart.ts
-noncomputable instance : ArchimedeanStpart := by
-  sorry
+noncomputable instance : ArchimedeanStpart := sorry
 end QOU.AppendixSurreals

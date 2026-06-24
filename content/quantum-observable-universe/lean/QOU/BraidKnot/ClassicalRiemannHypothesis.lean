@@ -42,6 +42,5 @@ zeta function $\zeta(s)$ satisfy
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/classical-riemann-hypothesis.ts
-noncomputable instance : ClassicalRiemannHypothesis := by
-  sorry
+noncomputable instance : ClassicalRiemannHypothesis := sorry
 end QOU.BraidKnot
