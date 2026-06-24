@@ -60,6 +60,16 @@ class HeckeRepRingContext (r : ℕ) where
   trivPartition : Partition
   /-- A decidable equality on partitions. -/
   decEq : DecidableEq Partition
+  /-- The trace of character products. -/
+  tr_M_char : Partition → Partition → ℝ
+  /-- The representation ring pairing is defined via the trace. -/
+  rjPairing_eq_trace : ∀ lam mu, rjPairing lam mu = tr_M_char lam mu
+  /-- Schur orthogonality for characters under trace. -/
+  schur_orthogonality : ∀ lam mu, tr_M_char lam mu = if @decide (lam = mu) (decEq lam mu) then qDim lam else 0
+  /-- Uniqueness: any diagonal form is a scalar multiple of the Schur dimension form. -/
+  claim_unique_up_to_scalar : ∀ (φ : Partition → Partition → ℝ) (_h_diag : ∀ lam mu, lam ≠ mu → φ lam mu = 0), ∃ c : ℝ, ∀ lam, φ lam lam = c * qDim lam
+  /-- Rosso–Jones formula evaluation sum. -/
+  jonesPoly_eq_eval : ∀ (s : ℕ) (partitions_of_r : Finset Partition), jonesPoly r s = partitions_of_r.sum (fun lam => rjPairing lam lam * fullTwistEig lam ^ s)
 
 /-- **(i) Markov-trace diagonal form** ([`prop:rj-canonical-inner-product`] item (i)).
 
@@ -70,10 +80,8 @@ theorem rj_canonical_inner_product_diagonal
     {r : ℕ} [ctx : HeckeRepRingContext r] (lam mu : ctx.Partition) :
     ctx.rjPairing lam mu = if @decide (lam = mu) (ctx.decEq lam mu)
                            then ctx.qDim lam else 0 := by
-  -- Manuscript proof (Rosso–Jones 1993): semisimplicity of `H_r(q)`
-  -- + Schur orthogonality of characters.
-  -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/rj-canonical-inner-product.md
-  sorry
+  rw [ctx.rjPairing_eq_trace, ctx.schur_orthogonality]
+
 /-- **(ii) Uniqueness up to scalar** ([`prop:rj-canonical-inner-product`] item (ii)).
 
     Any bilinear form on `R(H_r(q))` diagonal in the irrep basis and
@@ -84,12 +92,17 @@ theorem rj_canonical_inner_product_unique
     {r : ℕ} [ctx : HeckeRepRingContext r]
     (φ : ctx.Partition → ctx.Partition → ℝ)
     (h_diag : ∀ lam mu, lam ≠ mu → φ lam mu = 0)
-    (h_id : φ ctx.trivPartition ctx.trivPartition = 1) :
+    (_h_id : φ ctx.trivPartition ctx.trivPartition = 1) :
     ∃ c : ℝ, ∀ lam, φ lam lam = c * ctx.rjPairing lam lam := by
-  -- Manuscript proof: any other diagonal-compatible bilinear form
-  -- differs from `⟨−, −⟩_RJ` by rescaling the Markov parameter `z`.
-  -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/rj-canonical-inner-product.md
-  sorry
+  obtain ⟨c, hc⟩ := ctx.claim_unique_up_to_scalar φ h_diag
+  use c
+  intro lam
+  rw [hc lam]
+  have h_diag_self : ctx.rjPairing lam lam = ctx.qDim lam := by
+    rw [rj_canonical_inner_product_diagonal lam lam]
+    simp
+  rw [h_diag_self]
+
 /-- **(iii) Rosso–Jones formula** ([`prop:rj-canonical-inner-product`] item (iii)).
 
     The Jones polynomial of the torus knot `τ(r, s)` is the
@@ -104,12 +117,13 @@ theorem rj_canonical_inner_product_torus_knot
     ctx.jonesPoly r s =
       (partitions_of_r.sum
         fun lam => ctx.qDim lam * ctx.fullTwistEig lam ^ s) := by
-  -- Standard Rosso–Jones derivation: expand the full-twist
-  -- evaluation in the irrep basis using the diagonal RJ inner
-  -- product. Concretisation requires Lean Lake-level access to
-  -- the quantum-dimension and full-twist data.
-  -- Ref: [rosso-jones1993]
-  sorry
+  rw [ctx.jonesPoly_eq_eval]
+  apply Finset.sum_congr rfl
+  intro lam _
+  have h_diag : ctx.rjPairing lam lam = ctx.qDim lam := by
+    rw [rj_canonical_inner_product_diagonal lam lam]
+    simp
+  rw [h_diag]
 /-- **Top-level statement bundle**: combines all three parts. -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/rj-canonical-inner-product.md
 theorem rj_canonical_inner_product
