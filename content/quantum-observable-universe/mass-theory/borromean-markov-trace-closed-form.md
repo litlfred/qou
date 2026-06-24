@@ -90,7 +90,7 @@ $\mathcal{B}_3$ from the trivial 3-component unlink.
 The three irreps of $S_3$ / $H_3(q)$ contribute distinctly to the
 Frobenius expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$.
 
-> **Convention note (corrected 2026-06-12).** Two distinct
+> **Convention note.** Two distinct
 > Markov-trace normalisations appear in the corpus for $H_3(q)$, and
 > they have **different** Wenzl weights and different per-partition
 > budgets:
