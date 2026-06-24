@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.FluidDynamics.vorticity_lower_bound
 
@@ -53,6 +55,7 @@ filament cores.
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts
 theorem vorticity_lower_bound [ctx : VorticityLowerBoundContext] :
     ∀ (t x : ℝ), |ctx.ω_star t x| ≥ ctx.C / ctx.d t :=
-  sorry
+  ctx.impl_lower_bound ctx.bound_active
 
 end QOU.FluidDynamics
+
