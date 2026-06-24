@@ -54,3 +54,36 @@ supplies a uniform per-bond enhancement of the right ~0.85 MeV/bond scale.
 
 → `computations/probes/pairwise_magnitude_gap_probe.py` ·
 `computations/pairwise-magnitude-gap-decomposition.witness.json`
+
+## Consistency bridge — the deficit IS the cancelled q-Reeb phase (J_ν, not I_ν)
+
+Running `binding_reeb_phase_decomposition.py` (which splits each Wedderburn block λ
+into a **rotation/J_ν** channel — `arccos`, `|r_λ|≤1`, carries the q-Reeb phase
+`Σ|Δθ_λ|` — and a **growth/I_ν** channel — `arccosh`, `|r_λ|>1`, extensive) against
+the deficit above gives a clean, parameter-free relation:
+
+| atom | deficit D (MeV) | `Σ|Δθ|` (rad) | `D / Σ|Δθ|` (MeV/rad) |
+|---|---:|---:|---:|
+| ³H  | 1.652 | 8.223 | 0.2009 |
+| ³He | 1.802 | 8.494 | 0.2121 |
+
+`D / Σ|Δθ| ≈ 0.206 MeV/rad` (**5.4 % spread**, = `E₀·0.0493`). Both the deficit and
+the phase are uniform across isotopes, and they **co-vary**.
+
+**This revises the initial `I_ν`-growth guess.** The growth channel collapses
+free→atom (T: 93.1 → 1.58, ×0.017) — that collapse **is** the leading binding, and
+the `|χ|` combiner already captures it. The missing residual lives in the
+**rotation/J_ν phase channel**, which `|χ|` *cancels* (`|e^{iθ}| = 1` regardless of
+`θ`). That cancelled phase is exactly the **q-Reeb `|Δθ_λ|`** object of sibling
+#2612 — so #2612's phase is a concrete candidate for the missing magnitude, and this
+deficit fixes its conversion scale (~0.21 MeV/rad) **without fitting**.
+
+**Honest caveats (scope-(a)):** N=2 isotopes is too thin for a law; 0.206 MeV/rad is
+not (yet) a canonical scale; D inherits the `3·B₂` yardstick caveat. This is a
+*consistency relation + a falsifiable target*, not a derivation.
+
+**Falsification.** If the relation holds, ⁴He (`Σ|Δθ| = 17.233` rad) should show a
+leading-trace deficit ≈ `0.206 × 17.233 ≈ 3.56 MeV`. That is the next test.
+
+→ `computations/probes/reeb_phase_deficit_consistency_probe.py` ·
+`computations/reeb-phase-deficit-consistency.witness.json`
