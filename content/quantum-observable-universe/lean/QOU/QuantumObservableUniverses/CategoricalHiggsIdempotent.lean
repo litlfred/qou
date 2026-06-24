@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.QuantumObservableUniverses.CategoricalHiggsIdempotent — refined class (placeholder + structural fields)
 
@@ -114,9 +116,8 @@ theorem m_W_over_m_Z_eq_cos_theta_W :
   have hgg_sqrt : Real.sqrt (gauge_coupling_g ^ 2 + gauge_coupling_g_prime ^ 2) > 0 :=
     Real.sqrt_pos.mpr hgg
   field_simp
-  ring
 
-/-- Status: ratio identity proved; absolute m_W, m_Z, m_H values
+/- Status: ratio identity proved; absolute m_W, m_Z, m_H values
     require specific values for v, g, g', λ — instances supply these. -/
 
 end CategoricalHiggsIdempotent
