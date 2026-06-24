@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.symbolic_character_table — `χ_λ(σ) = c_λ · h`
 
@@ -49,8 +51,8 @@ class SymbolicCharacterTableContext where
   h_def : h = q - q⁻¹
   /-- Manuscript factorisation: `χ_λ(σ) = c_λ · h` for each
       self-conjugate `λ`. -/
-  claim_chi_factorisation : ∀ λ : SelfConjugatePartition,
-    chiSigma λ = (cCoefficient λ : ℝ) * h
+  claim_chi_factorisation : ∀ lam : SelfConjugatePartition,
+    chiSigma lam = (cCoefficient lam : ℝ) * h
 
 /-- **Self-conjugate character integer-coefficient factorisation**
     ([`prop:symbolic-character-table`]).
@@ -58,9 +60,9 @@ class SymbolicCharacterTableContext where
     For every self-conjugate partition `λ`, `χ_λ(σ) = c_λ · h`. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/symbolic-character-table.md
 theorem symbolic_character_table
-    [ctx : SymbolicCharacterTableContext] (λ : SelfConjugatePartition) :
-    ctx.chiSigma λ = (cCoefficient λ : ℝ) * ctx.h :=
-  ctx.claim_chi_factorisation λ
+    [ctx : SymbolicCharacterTableContext] (lam : SelfConjugatePartition) :
+    ctx.chiSigma lam = (cCoefficient lam : ℝ) * ctx.h :=
+  ctx.claim_chi_factorisation lam
 
 /-- **`χ_{[3,1,1]}(σᵢσⱼ) = h² − 2` for `|i − j| ≥ 2`** (far-commuting case).
     Direct computation from the manuscript's seminormal-form recipe. -/

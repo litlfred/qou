@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.knot_factor_spectral_derivation — `a_𝒦` as Plancherel-weighted character pairing
 
@@ -43,24 +45,24 @@ class KnotFactorSpectralContext (n : ℕ) where
   chi_one : Partition → ℝ
   /-- Non-vanishing: `χ_λ(𝟙) ≠ 0` for every `λ` (the categorical
       dimension is non-zero in generic position). -/
-  chi_one_ne_zero : ∀ λ, chi_one λ ≠ 0
+  chi_one_ne_zero : ∀ lam, chi_one lam ≠ 0
   /-- The knot factor `a_𝒦` from the unified mass formula. -/
   knotFactor : ℝ
   /-- Plancherel weights sum to 1 (Wedderburn trace identity). -/
   claim_plancherel_sum_one :
-    (partitions.sum fun λ => plancherelWeight λ) = 1
+    (partitions.sum fun lam => plancherelWeight lam) = 1
   /-- Knot-factor spectral formula. -/
   claim_knot_factor_spectral :
     knotFactor = partitions.sum
-      fun λ => plancherelWeight λ * chi_beta λ * chi_beta_mirror λ
-               / (chi_one λ) ^ 2
+      fun lam => plancherelWeight lam * chi_beta lam * chi_beta_mirror lam
+               / (chi_one lam) ^ 2
 
 /-- **Plancherel weights sum to 1** ([`prop:knot-factor-spectral-derivation`]
     sub-claim from the manuscript). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-factor-spectral-derivation.md
 def plancherelWeight_sum_eq_one
     {n : ℕ} [ctx : KnotFactorSpectralContext n] :
-    (ctx.partitions.sum fun λ => ctx.plancherelWeight λ) = 1 :=
+    (ctx.partitions.sum fun lam => ctx.plancherelWeight lam) = 1 :=
   ctx.claim_plancherel_sum_one
 
 /-- **Knot-factor spectral formula** ([`prop:knot-factor-spectral-derivation`]).
@@ -71,9 +73,9 @@ def knot_factor_spectral_derivation
     {n : ℕ} [ctx : KnotFactorSpectralContext n] :
     ctx.knotFactor
       = ctx.partitions.sum
-          fun λ => ctx.plancherelWeight λ
-                   * ctx.chi_beta λ * ctx.chi_beta_mirror λ
-                   / (ctx.chi_one λ) ^ 2 :=
+          fun lam => ctx.plancherelWeight lam
+                   * ctx.chi_beta lam * ctx.chi_beta_mirror lam
+                   / (ctx.chi_one lam) ^ 2 :=
   ctx.claim_knot_factor_spectral
 
 end QOU.BraidKnot

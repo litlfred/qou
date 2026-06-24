@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.HeckeBaerStarGeneric.hecke_baer_star_generic
 
@@ -35,12 +37,12 @@ class HeckeBaerStarGenericContext where
       projectors: `e_λ · e_λ = e_λ` (the Wedderburn block decomposition
       gives idempotent projectors). Full matrix-block isomorphism stays
       abstract pending Mathlib's `WedderburnDecomposition`. -/
-  claim_i_wedderburn_decomposition : ∀ λ : PartitionIdx,
-    mul (e λ) (e λ) = e λ
+  claim_i_wedderburn_decomposition : ∀ lam : PartitionIdx,
+    mul (e lam) (e lam) = e lam
   /-- Manuscript sub-claim (ii) — Bar involution swaps conjugate
       idempotents: `*(e_λ) = e_{λ'}`. -/
-  claim_ii_idempotents_bar_stable : ∀ λ : PartitionIdx,
-    star (e λ) = e (conj_partition λ)
+  claim_ii_idempotents_bar_stable : ∀ lam : PartitionIdx,
+    star (e lam) = e (conj_partition lam)
   /-- Type of right annihilator ideals in `HeckeAlgebra`. -/
   RightAnnihilator : Type
   /-- Generator of a right annihilator ideal. -/
@@ -106,9 +108,9 @@ annihilator $\mathrm{An
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-baer-star-generic.ts
 def hecke_baer_star_generic [ctx : HeckeBaerStarGenericContext] :
-    (∀ λ : ctx.PartitionIdx, ctx.mul (ctx.e λ) (ctx.e λ) = ctx.e λ) ∧
-    (∀ λ : ctx.PartitionIdx,
-      ctx.star (ctx.e λ) = ctx.e (ctx.conj_partition λ)) ∧
+    (∀ lam : ctx.PartitionIdx, ctx.mul (ctx.e lam) (ctx.e lam) = ctx.e lam) ∧
+    (∀ lam : ctx.PartitionIdx,
+      ctx.star (ctx.e lam) = ctx.e (ctx.conj_partition lam)) ∧
     (∀ I : ctx.RightAnnihilator,
       ctx.is_self_adjoint (ctx.generator_of I) ∧
       ctx.is_idempotent (ctx.generator_of I)) :=
