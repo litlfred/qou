@@ -116,11 +116,12 @@ place (step 1 of the algorithm). Within the present implementation:
  replace this substitution with a principled derivation.
 - For `recursive-on-⁴He` (${}^{8}$Be–${}^{40}$Ca) the recursion factors through
  the ${}^{4}$He magic-A formula and inherits its methodology.
-- For ${}^{6}$Li, ${}^{7}$Li the deprecated volume-match search runs *backwards*
- from step 6 to a candidate knot, bypassing step 1 entirely.
- Quarantined by [prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas)
- §"Provisional / deprecated methodology". The principled atlas
- excludes them.
+- A volume-match search that runs *backwards* from step 6 to a
+ candidate knot, bypassing step 1 entirely, is excluded: it
+ reverse-engineers the knot from the AME target rather than deriving
+ it from the categorical pipeline. The principled atlas
+ ([prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas))
+ admits no such entry.
 
 The collapsing-spectral-sequence framing
 ([prop:gb-spectral-sequence](#prop:gb-spectral-sequence),

@@ -14,9 +14,8 @@ earlier entries (recursive structure).*
 
 ## Methodology classification (STRICT)
 
-Every atlas entry carries a **methodology tag**. The atlas is split
-into a *principled* section and a *quarantined / provisional* section;
-volume-match results are **never** mixed with derivation-based ones.
+Every atlas entry carries a **methodology tag** recording how its
+particle–knot identification was obtained.
 
 | Tag | Definition | Examples |
 |---|---|---|
@@ -25,7 +24,6 @@ volume-match results are **never** mixed with derivation-based ones.
 | `manual-historical-volume-match` | Knot was identified in earlier work via volume-match against AME; well-established but the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed yet. | ${}^2$H = $6_2$, ${}^{3}$H = $8_{11}$, ${}^{3}$He = $L_{6a4}$. |
 | `magic-A-formula` | Algebraic shell-closure formula $A \cdot 8G$ for double-magic light nuclei; no single hyperbolic knot. | ${}^{4}$He. |
 | `recursive-on-⁴He` | Built from $n \cdot {}^{4}\mathrm{He} + n_{\alpha\alpha} \cdot c_{\alpha\alpha}$ recursion; principled given ${}^{4}$He. | ${}^{8}$Be–${}^{40}$Ca. |
-| `deprecated-volume-match` | **PROVISIONAL — do not cite as principled.** Brute-force SnapPy volume search picked the closest knot to the AME-derived volume target; reverse-engineers the answer. See [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/methodology-deprecation.witness.json). | ${}^{6}$Li, ${}^{7}$Li (quarantined below). |
 
 The principled pipeline computes $\mathrm{Vol}_{\mathrm{hyp}}$ from the
 $\sigma$-braid word at $\geq 50$ decimal digits via SnapPy's
@@ -34,10 +32,6 @@ $\sigma$-braid word at $\geq 50$ decimal digits via SnapPy's
 are supplied by the Wenzl bridge ([`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/y_lambda_wenzl_bridge_extended.py)).
 
 For atoms $A \geq 5$, where the combinatorics of the full $\mathcal{H}_{3A}$ space explode and `SnapPea` topological limits fail, we bypass the full evaluation by taking the exact symbolic trace restricted solely to **active block-partitions** (`closed_form_tau_M`), sidestepping the combinatorial blow-up. This exact symbolic trace $B_{sym} = -\alpha \ln |\tau_M|$ is shown side-by-side with the rigorous Q-CLT finite-sum approximation $B_{qCLT} = -\alpha \sum \ln |\hat{V}_i|$.
-
-Volume-match search (`li_atom_knot_search.py`) is **deprecated** and
-its output is consumed only in the quarantined provisional section
-below.
 
 ## Notation legend (auto-included)
 
@@ -117,8 +111,6 @@ obtained.
 | $8_{11}$ | Rolfsen | 8 | 8.2863 | Tritium $^3$H | `manual-historical-volume-match` |
 | $L_{6a4}$ | Thistlethwaite link | 6 | 7.3277 | $^3$He | `manual-historical-volume-match` |
 | $\mathcal{B}_3$ | Borromean | 6 | 7.3277$\ldots$ (hp50) | Proton/neutron $B_3$ | `principled-derivation` (closure of $(\sigma_1 \sigma_2^{-1})^3$) |
-| $K_{11a259}$ | HT-table | 11 | 12.5201 | $^6$Li (volume-match at $\rho = 5$) | `deprecated-volume-match` *(deprecated)* |
-| $L_{11a62}$ | HT-table | 11 | 15.3600 | $^7$Li (volume-match at $\rho = 5$) | `deprecated-volume-match` *(deprecated)* |
 
 ## Atlas
 
@@ -201,37 +193,6 @@ obtained.
 | Braid (NF) | $T_w \in H_{12}(q_0)$. Magic A-rule formula: $B = A \cdot 8 G \cdot m_e$. |
 | Prediction | $B_\mathrm{pred} = 2 \cdot m_e \cdot 4 \cdot 8 G = 29.956$ MeV vs $B_\mathrm{AME} = 28.296$. **err = +5.87%**. |
 
-### Caveat — provisional / deprecated methodology — ${}^{6}$Li, ${}^{7}$Li
-
-> **The two entries below are NOT principled.** They come from a
-> brute-force SnapPy volume-match search
-> ([`li_atom_knot_search.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/li_atom_knot_search.py))
-> which picks the knot whose hyperbolic volume matches the AME
-> binding-energy target — i.e. it **reverse-engineers** the answer.
-> At $\sim 2400$ knots/links searched, residuals below $\sim 10$ ppb
-> are indistinguishable from overfitting absent an independent
-> GB-NF derivation in $H_{18}(q_0)$ / $H_{21}(q_0)$. Listed here for
-> historical transparency only. **Do not cite these as evidence for
-> the mass-table-ppb framework.** See
-> [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/methodology-deprecation.witness.json)
-> for the full per-particle methodology audit.
-
-**${}^{6}$Li (PROVISIONAL — `deprecated-volume-match`)**
-
-| Row | Content |
-|--:|---|
-| Methodology | `deprecated-volume-match` *(deprecated)* — no GB-NF derivation in $H_{18}(q_0)$). |
-| Braid (NF) | *Not derived.* Volume-match search at $\rho = 5$ returned closure $= K_{11a259}$ (HT-table 11-crossing alternating, $\mathrm{Vol} = 12.5201$). No explicit $\sigma$-word in $H_{18}$ available. |
-| Provisional prediction | $B_\mathrm{pred} = 5 \cdot m_e \cdot 12.5201 = 31.989$ MeV vs $B_\mathrm{AME} = 31.994$. err $= -164{,}991$ ppb (near search noise floor). |
-
-**${}^{7}$Li (PROVISIONAL — `deprecated-volume-match`)**
-
-| Row | Content |
-|--:|---|
-| Methodology | `deprecated-volume-match` *(deprecated)* — no GB-NF derivation in $H_{21}(q_0)$). |
-| Braid (NF) | *Not derived.* Volume-match search at $\rho = 5$ returned closure $= L_{11a62}$ (HT-table 11-crossing link, $\mathrm{Vol} = 15.3600$). No explicit $\sigma$-word in $H_{21}$ available. |
-| Provisional prediction | $B_\mathrm{pred} = 5 \cdot m_e \cdot 15.3600 = 39.245$ MeV vs $B_\mathrm{AME} = 39.245$. err $= +4{,}009$ ppb. **The small residual (4,009 ppb) arises from a search over $\sim 2400$ knots and lacks independent structural justification; the closing $\sigma$-word in $H_{21}(q_0)$ remains unidentified.** |
-
 ### $\ell = 2$ — α-cluster atoms (recursive: ref to ${}^{4}$He)
 
 **Beryllium-8 ${}^{8}$Be = $2 \cdot {}^4\mathrm{He} + 1 \cdot c_{\alpha\alpha}$**
@@ -257,19 +218,12 @@ obtained.
 
 ## Statistical summary
 
-Restricted to **principled** entries (excludes the quarantined
-provisional ${}^{6}$Li / ${}^{7}$Li volume-match results):
+Principled entries:
 
 - Tritium $^3$H at $\sim 1.6 \times 10^{-3}$ (`manual-historical`).
 - Deuteron $^2$H at $\sim 1.1 \times 10^{-2}$ (`manual-historical`).
 - $\alpha$-cluster atoms ${}^{8}$Be–${}^{40}$Ca: mean $|\mathrm{err}| \sim 8$%
  (`recursive-on-⁴He`).
-
-Provisional (${}^{6}$Li, ${}^{7}$Li) — **not counted in the principled summary**:
-
-- ${}^{7}$Li: $+4{,}009$ ppb at $L_{11a62}$, $\rho = 5$ (volume-match coincidence;
- see methodology caveat above).
-- ${}^{6}$Li: $-164{,}991$ ppb at $K_{11a259}$, $\rho = 5$ (search noise floor).
 
 Atlas covers $\ell \leq 2$ at $q_0$; further atoms ($\ell = 3$
 molecules, heavier nuclei) defer to
@@ -372,11 +326,6 @@ The atlas is auto-rendered by
 4. [`hp_volume.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/hp_volume.py) — $\geq 50$-digit symbolic-$q$ Markov-closure $\to$ $\mathrm{Vol}_{\mathrm{hyp}}$.
 5. [`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/y_lambda_wenzl_bridge_extended.py) — symbolic-$q$ Wenzl bridge for $y_\lambda$.
 
-**Deprecated input** (consumed only by the quarantined provisional
-section):
-
-6. [`li-atom-knot-search.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/li-atom-knot-search.witness.json) — *(provisional)* volume-match search.
-
 For `principled-derivation` entries (electron, proton, neutron) the
 hyperbolic volume of the Markov closure is computed from the
 $\sigma$-braid word at $\geq 50$ decimal digits via
@@ -442,19 +391,17 @@ for the gating analysis.
  The reducer computes filtration grade + jet-order events exactly in
  symbolic $q$ via SymPy on the test cases $\sigma_1^3$ (electron) and
  $(\sigma_1 \sigma_2^{-1})^3$ (proton/neutron body). The joint-tower
- SDP solver consumes this certificate format; until that solver lands,
- the volume-match results stay quarantined. The Markov closure of $T_w$ is then taken in $S^3$ and
+ SDP solver consumes this certificate format. The Markov closure of $T_w$ is then taken in $S^3$ and
  $\mathrm{Vol}_{\mathrm{hyp}}$ is computed at $\geq 50$ decimal digits
  via `hp_volume_of_link_closure(braid_word, digits=50)`; comparison to
- $K_{11a259}$ / $L_{11a62}$ (or whatever closure the SDP yields) happens
- *a posteriori*. Per-atom volume-match search is FORBIDDEN as a
+ the AME binding energy happens *a posteriori*. Per-atom volume-match search is FORBIDDEN as a
  derivation route — the SDP must be joint over the tower so the GB
  filtration and the jet ordering are consistent across confinement
- levels. Until that joint SDP is run, the volume-match results stay
- quarantined.
+ levels. Until that joint SDP is run, no principled ${}^{6}$Li / ${}^{7}$Li
+ entry exists.
 - **Structural rule for $\rho$ in $B = \rho \cdot m_e \cdot \mathrm{Vol}(K)$**:
- pattern $\rho \in \{1, 2\}$ for $\ell \leq 2$ atoms breaks at
- ${}^{6}$Li, ${}^{7}$Li (both at $\rho = 5$ in the volume-match search). Open:
+ the pattern $\rho \in \{1, 2\}$ for $\ell \leq 2$ atoms does not extend to
+ ${}^{6}$Li, ${}^{7}$Li. Open:
  derive $\rho(Z, N)$ from ILP / confinement structure.
 - **Hyperbolic-knot identification beyond $\ell = 2$**: ${}^{9}$Be, ${}^{11}$B,
  ${}^{14}$N — no entries are in scope until a *principled* (GB-NF) derivation
