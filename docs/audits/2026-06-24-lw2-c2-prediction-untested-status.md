@@ -52,6 +52,31 @@ Until such a c=2 observable is independently computed, `lw(2)` stands as a
 **derivation-tight, untested prediction** — the rule's cleanest open falsification
 target. No comparison is fabricated here (per the workplan directive + CAL-4).
 
+## Why it is structurally untestable without a c=2 mass-consumer (2026-06-24, attempted)
+
+Attempting Option 1 ("compute a Hopf-diquark VolDensity to test lw(2)") surfaces a
+structural obstruction, not just a missing file:
+
+- **`lw(c)` is the *combinatorial* linking-weight definition** — a function of the
+  component count `c` alone, `(1/(c+1))·Σ_{λ⊢c+1} dim_q`. It is **not** a
+  geometric/hyperbolic quantity: the Hopf link is the **torus link T(2,2)**, which
+  is non-hyperbolic (`Vol = 0`, `D(z) = 0`), yet `lw(2) = (q+1)²/(3q) ≈ 1.337 ≠ 0`.
+  So there is **no Kashaev/volume route** to an independent Hopf linking weight.
+- **The only validation of `lw(c)` is an independent mass-USE.** `lw(3)=Family-A`
+  was confirmed because the *production proton mass* consumes exactly that
+  `(3q²+4+3q⁻²)/4` multiplier (`linking_weight_family_a`, bit-for-bit); `lw(1)=1`
+  by the muon. **c=2 has no mass-consumer** in the corpus.
+- **Therefore a genuine test of `lw(2)` requires first constructing a c=2
+  production mass** (a Hopf-diquark mass model) that *independently* needs a
+  linking weight. Such a construction must derive the c=2 linking weight from c=2
+  structure **without reference to the selection rule**, or the test is circular.
+  That is the (research-grade, circularity-gated) path — **not a quick compute**,
+  and not attempted here to avoid a built-to-match result.
+
+**Net:** `lw(2)` is derivation-tight and untested, and is *structurally* untestable
+until a non-circular c=2 mass-consumer exists. The honest disposition is to carry
+it as the selection rule's standing falsification target.
+
 ## Cross-references
 
 - [`content/quantum-observable-universe/climax-volume-mass/selection-rule-c2-prediction.md`](../../content/quantum-observable-universe/climax-volume-mass/selection-rule-c2-prediction.md) — the c=2 closed form (Lean-proved).
