@@ -99,7 +99,7 @@ elsewhere in the paper:
    In the **Physical-Observations** chapter one may instead anchor
    $q_0$ on a *derived* quantity with smaller experimental error —
    the proton ratio $m_p/m_e$ (0.06 ppb vs the muon ratio's 22 ppb;
-   the re-pin of 2026-05-28). This is a precision substitution within
+   the re-pin). This is a precision substitution within
    the same overdetermined $H^1$ datum, **not** a change to the
    canonical calibration: $m_\mu/m_e$ remains CAL-2; $m_p/m_e$ is the
    numerical anchor, with $m_\mu/m_e$ then a $9.5\sigma$ cross-check

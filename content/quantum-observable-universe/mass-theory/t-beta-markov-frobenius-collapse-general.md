@@ -41,7 +41,7 @@ $$
 T_\beta^{\mathrm{Markov}} \;=\; S \cdot 1_H.
 $$
 
-This is the Markov-trace collapse of PR #1750 (substrate model) lifted to the genuine non-commutative Hecke algebra.
+This is the Markov-trace collapse (substrate model) lifted to the genuine non-commutative Hecke algebra.
 
 The L2-Euclidean coordinate-norm picture (PR #1739: 6-channel $A_i x_i^{L2}$ SHAPE $\times$ S decomposition) and the Markov-Frobenius picture (this proposition: $T_\beta = S \cdot 1$) are **two different operators** inside $H_n(R, q)$ that **both reproduce the SDP constraint** $\tau_M(T_\beta) = S$. The observable $c_k$ Taylor coefficients of $\mathfrak{Q}_\beta(q)$ are L2/Markov-invariant: see [PR #1750](https://github.com/litlfred/qou/pull/1750) Step 4 diagnostic.
 
