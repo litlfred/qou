@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.ParticleInteractions.corrected_markov_trace — `tr_M(σ₀σ₁σ₀) = z³`
 
@@ -29,7 +31,7 @@ class CorrectedMarkovTraceContext where
   z : ℝ
   /-- The Markov trace of the trefoil braid `σ₀σ₁σ₀`. -/
   trM_trefoil : ℝ
-  /-- Manuscript identity: `tr_M(σ₀σ₁σ₀) = z³`. -/
+  -- Manuscript identity: `tr_M(σ₀σ₁σ₀) = z³` (encoded by `h_trefoil` + `h_z3` below).
   /-- Intermediate trace value. -/
   intermediate_trace : ℝ
   /-- The trefoil trace equals intermediate trace. -/
