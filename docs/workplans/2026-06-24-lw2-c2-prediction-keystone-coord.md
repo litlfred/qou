@@ -32,5 +32,18 @@ keystone's W_λ geometric-origin frontier.
 
 ## Status
 
-Explorers dispatched (lw(2) test target + keystone state). Plan fills in on
-their return.
+**Both options resolved (2026-06-24).**
+
+- **Option 1 — DONE (honest negative).** `lw(2)=(q+1)²/(3q)≈1.337` is
+  derivation-tight + Lean-proved but **untested**: corpus-grep found no
+  independent c=2 (2-component-link) linking-weight observable. The deuteron is
+  the 6₂ knot (not a c=2 link); the Hopf diquark exists topologically but has no
+  mass prediction. Documented as the rule's first falsifiable prediction awaiting
+  a c=2 observable (Hopf-diquark candidate) — **no fabricated test**. See
+  [`docs/audits/2026-06-24-lw2-c2-prediction-untested-status.md`](../audits/2026-06-24-lw2-c2-prediction-untested-status.md).
+- **Option 2 — DONE.** `a_D=lw` residual coordinated on the keystone scope hub
+  **#2488** (the natural forum; it names `a_D=lw` as the residual). Framed as the
+  **functional-level** identification of the Seifert–CS W_λ index (#2524) with the
+  Hecke `lw(c)` selection rule — respecting #2608's caveat that it is *not* a naive
+  ~8%-off number-match. Keystone ledger
+  [`s5-so3-keystone.md`](../coordination/s5-so3-keystone.md) updated with the bridge.
