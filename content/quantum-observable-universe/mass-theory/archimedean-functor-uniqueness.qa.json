@@ -1356,6 +1356,171 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "20a0f1af68a4",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": ".md:7-14 lists (C1) QOU.QPochhammer.ArchimedeanLimit as a uniqueness hypothesis and .md:51-54 'takes both classes as [Instance] hypotheses'; but .lean:113-120 archimedean_functor_uniqueness (D τ_arch : ℝ→ℝ) [hD:BlochSuslinUniqueness D] (h_cont)(h_anti)(h_pent) — ArchimedeanLimit absent from the signature.",
+        "rebuttal": "partial→survived — the Lean is honest and non-vacuous (:= hD.uniqueness τ_arch h_cont h_anti h_pent genuinely composes the field with three hypotheses, not a self-projection), and ArchimedeanLimit enters only at the scalar-fixing figure8_calibration step; but the §3b-cond banner is overstated (only one class gates uniqueness).",
+        "evidence": [
+          {
+            "text": "archimedean-functor-uniqueness.md:7-14,51-54 vs .lean:113-120"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+        "severity": "major"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "20a0f1af68a4",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": ".md:31-36 claims D unique 'on ℂ∖{0,1}' with the complex D(z)=Im Li_2(z)+log|z|arg(1-z); .lean:51,70,84 work entirely over ℝ→ℝ with antisymmetry degraded to D(x^-1)=-D(x); the complex uniqueness that pins hyperbolic volume is not formalised.",
+        "rebuttal": "partial→survived — self-flagged in the docstring (not hidden), the real-slice statement is a legitimate weaker lemma, and Im(q_0)=0 wall requires real observable evaluation (regime-consistent); but the prose claims a strictly stronger complex result than the Lean delivers.",
+        "evidence": [
+          {
+            "text": "archimedean-functor-uniqueness.md:31-36 vs .lean:51,70,84"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+        "severity": "major"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "20a0f1af68a4",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": ".md:15-18,152-159 attribute to Suslin1991 'any continuous antisymmetric pentagon-coherent real-valued function is c·D'; Suslin 1991 proves rigidity of K_3^ind / uniqueness of the regulator up to scalar, the clean pointwise statement is closer to Bloch/Zagier.",
+        "rebuttal": "partial — bloch2000 + zagier1986 are co-cited and do support the dilog characterisation; the block is explicitly conditional and lists the K-theory gap as open, so not asserting the hypothesis as proved; but the Suslin attribution is a paraphrase not verbatim.",
+        "evidence": [
+          {
+            "text": "archimedean-functor-uniqueness.md:15-18,152-159"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "20a0f1af68a4",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "'the unique archimedean functor' could smuggle a hidden DOF (normalization).",
+        "rebuttal": "rebutted — block is explicit uniqueness is only 'up to a single multiplicative real scalar' (.md:20-21), and that scalar is separately fixed by Faddeev-Kashaev in figure8_calibration (c=1). The one real DOF is named and pinned, not hidden.",
+        "evidence": [
+          {
+            "text": "archimedean-functor-uniqueness.md:20-21; .lean:122-146"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "20a0f1af68a4",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": ".ts:7-12 wires witness q-pinning-50-digit.witness.json status:verified; .md:229-231 correctly says 'No numerical witness is appropriate for a uniqueness claim'.",
+        "rebuttal": "partial — the prose is honest that no witness backs the claim; the .ts link is a loose provenance pointer to the substrate q_0, not a uniqueness proof (cosmetic mismatch).",
+        "evidence": [
+          {
+            "text": "archimedean-functor-uniqueness.ts:7-12 vs .md:229-231"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "20a0f1af68a4",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The .md advertises conditional uniqueness axiomatising BOTH named classes per §3b-cond, but the Lean theorem takes only BlochSuslinUniqueness and re-proves uniqueness over ℝ→ℝ, whereas the narrative's uniqueness lives on the complex Bloch-Wigner D on ℂ∖{0,1} — so the Lean proves a strictly weaker (real-slice) statement and ArchimedeanLimit never appears as a hypothesis.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"
