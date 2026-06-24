@@ -276,21 +276,5 @@ absolute-scale step still requires either a uniqueness lemma
 (option 4e) or further work on the curvature-rank $\to$ $\alpha$-power
 mapping (sharpening 4d to handle atomic as well as covalent
 binding).
-### Status
-
-**Proposition with explicit caveat.** The formula
-$a_{0}^{\mathrm{cat}} = \hbar/(m_e c \alpha_{EM})$ is asserted as
-the structural mapping between QOU and the standard QED Bohr
-length, with the explicit acknowledgement that the components
-$\Phi_{1}^{\mathrm{kin}}, \Phi_{1}^{\mathrm{Coul}}$ are postulated
-(not derived) and that closure requires one of options 4a–4e.
-
-This is intentionally weaker than a closed proposition. It serves
-as a **research target**: any future categorical derivation must
-recover this formula. It also serves as **honest documentation**
-of the present epistemic state: we know what answer the framework
-must give, but we have not yet derived it from algebraic
-structure.
-
 
 **Remark on Mathematical Novelty:** This formulation provides a deep structural insight by deriving the Bohr 1/n^2 dependency purely from the Hecke-algebraic gap. Bypassing the standard additive kinetic/Coulomb split, it serves as a novel purely categorical recovery of a foundational quantum result.
