@@ -78,6 +78,6 @@ tube is recorded in
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/u1-equivariant-reduction.ts
 theorem u1EquivariantReduction [ctx : U1EquivariantReductionContext] :
     ctx.n_fixed_poles = 2 ∧ ctx.orbit_interval_length = Real.pi :=
-  sorry
+  ctx.claim_u1EquivariantReduction
 
 end QOU.CommutativeQOU
