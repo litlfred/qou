@@ -43,6 +43,7 @@ export default chapter({
         "bar-involution-table7-data",
         "bar-involution-table8-data",
         "polynomial-bar-involution",
+        "polynomial-bar-involution-proof",
         // Merged from the former auto-split "... : generation" [4] — an
         // over-split that cut polynomial-bar-involution-table-data off
         // its own block (polynomial-bar-involution). Small,

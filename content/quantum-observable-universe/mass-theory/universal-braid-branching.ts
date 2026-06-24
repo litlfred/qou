@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:universal-braid-branching",
+  proofs: ["prf:universal-braid-branching"],
   title:
     "Universal braid character formula via Young's lattice branching",
   lean: { ref: "qou:QOU.BraidKnot.universal_braid_branching",

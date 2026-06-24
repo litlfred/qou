@@ -22,25 +22,6 @@ $q = 1$.
 
 **Mathematical Novelty.** While the specific result is a straightforward categorical triviality (that Hom-spaces over a fixed monoidal category do not depend on the differential layer $d_q$), the mathematical novelty lies in establishing this exact independence as the formal mechanism that permits properties to safely propagate from the deformed observable phase space ($q > 1$) directly to the unphysical/classical substrate ($q = 1$) without discontinuity.
 
-*Proof.*
-The space $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A))$
-is computed in the category $\mathbf{C}$, which is defined
-independently of $q$.  The substrate parameter $q$ determines
-only the differential $d_q$ on $\Omega^\bullet(A)$; it does
-not modify the objects, morphisms, tensor product, or braiding
-of $\mathbf{C}$.  The adjoint object $\mathrm{Ad}(A)$ is
-defined via the conjugation action
-$a \mapsto S(a_{(1)})xa_{(2)}$, which involves only the
-Hopf structure $(\mu, \Delta, S)$ — none of which depends on
-$q$.
-
-The subscript $\mathbf{C}_q$ in the notation
-$\mathrm{Hom}_{\mathbf{C}_q}$ refers to the category equipped
-with the differential $d_q$.  But
-$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A))$ involves no
-differential — it is a morphism space in the underlying
-:refterm[monoidal category]{#monoidal-category}, which is the same for all $q$.
-
 **Corollary.**  The QOU axioms (observability, measurability,
 volume constraint) are properties of the
 [substrate line bundle](#def\:substrate-line-bundle) base

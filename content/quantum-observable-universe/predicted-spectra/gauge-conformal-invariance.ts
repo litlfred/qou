@@ -2,6 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:gauge-conformal-invariance",
+  proofs: ["prf:gauge-conformal-invariance"],
   title: "Gauge conformal invariance",
   lean: {
     ref: "qou:QOU.Archimedean.gauge_conformal_invariance",

@@ -123,6 +123,7 @@ export default chapter({
         "global-gluing",
         "global-gluing-proof",
         "ordering-jet-compatibility",
+        "ordering-jet-compatibility-proof",
       ],
     }),
 

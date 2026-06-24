@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:polynomial-bar-involution",
+  proofs: ["prf:polynomial-bar-involution"],
   lean: {
     ref: "qou:QOU.BraidKnot.PolynomialBarInvolution",
     validation: "not_checked",

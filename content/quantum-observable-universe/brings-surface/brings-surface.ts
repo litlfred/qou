@@ -50,7 +50,9 @@ export default chapter({
         "su2-generators",
         "hyperelliptic-quintic",
         "x5-z5-automorphism",
+        "x5-z5-automorphism-proof",
         "x5-bring-weight-identification",
+        "x5-bring-weight-identification-proof",
       ],
     }),
     section({
@@ -139,6 +141,7 @@ export default chapter({
         "descartes-braid-structure-proof",
         "descartes-knot-eigenbasis",
         "descartes-elliptic-curve",
+        "descartes-elliptic-curve-proof",
       ],
     }),
     section({

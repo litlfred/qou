@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:categorical-coordinate-ring",
+  proofs: ["prf:categorical-coordinate-ring"],
   lean: {
     ref: "qou:QOU.QuantumObservableUniverse.CategoricalCoordinateRing",
     validation: "not_checked",

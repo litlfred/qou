@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:toffoli-lp-stability",
+  proofs: ["prf:toffoli-lp-stability"],
   title:
     "LP-dual stability of the $q$-Toffoli braid and the golden-ratio threshold",
   tags: [

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:wigner-np-pairing",
+  proofs: ["prf:wigner-np-pairing"],
   title:
     "Wigner energy from $T{=}0$ np pairing: $(2,2)$ partition at $k{=}4$",
   lean: { ref: "qou:QOU.Archimedean.ConfinedKnotBinding.wigner_energy_from_22",

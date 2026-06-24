@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:skein-polynomial-transfer-matrix",
+  proofs: ["prf:skein-polynomial-transfer-matrix"],
   title:
     "The nuclear Skein polynomial as a transfer matrix product in $q$",
   tags: [

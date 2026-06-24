@@ -38,13 +38,6 @@ $q$-rational, no fitting.*
 
 **Formalization Goal Plausibility.** The current formalization proves the existence of a programmatic solution by effectively yielding `∃ y, y = solveJonesMarkov n S := ⟨_, rfl⟩`. The mathematical claim of *uniqueness* and *invertibility* of the character matrix is not yet fully formalized in Lean, as it requires a deep library of Schur-Weyl-Hecke duality and generic semisimple character theory. However, this gap is highly plausible to close because it is a standard, well-documented result in algebraic combinatorics (the non-degeneracy of the Hecke character table). The physical model relies on the existence of this unique derivation procedure, which is computationally verified, making the unformalized uniqueness a localized algebraic gap rather than a structural flaw in the mass theory.
 
-*Proof.* The Markov property pins each $\mathrm{tr}_M(w_\mu)$ to
-$z^{n - \mathrm{len}(\mu)}$ by induction on $\mathrm{len}(\mu)$
-([Jones, Theorem 5.1](#thm:jones-markov-trace)).  Cycle-type
-representatives form a class-function basis on $H_n(R, q)$ at
-generic $q$, so the $\chi$-matrix is invertible — the system has a
-unique solution.  $\square$
-
 **Closed-form available via Wenzl-bridge.**
 *By [prop:y-lambda-closed-form-wenzl-bridge](#prop:y-lambda-closed-form-wenzl-bridge),
 $y_\lambda(q)$ has the explicit q-rational expression

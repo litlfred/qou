@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:beta-decay-transfer-matrix",
+  proofs: ["prf:beta-decay-transfer-matrix"],
   title:
     "Beta decay as a universal matrix-valued polynomial in $q$",
   tags: [

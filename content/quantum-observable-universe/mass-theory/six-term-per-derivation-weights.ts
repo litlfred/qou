@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:six-term-per-derivation-weights",
+  proofs: ["prf:six-term-per-derivation-weights"],
   title: "Per-derivation weights for the six-term mass formula",
   lean: {
     ref: "qou:QOU.BraidKnot.SixTermPerDerivationWeights.binding_assembly",

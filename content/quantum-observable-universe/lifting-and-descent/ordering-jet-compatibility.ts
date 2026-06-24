@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:ordering-jet-compatibility",
+  proofs: ["prf:ordering-jet-compatibility"],
   lean: { ref: "qou:QOU.Torsion.degLex_wellFounded" },
   title:
     "The admissible ordering extends through the jet tower",

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:eigenvalue-product-expansion",
+  proofs: ["prf:eigenvalue-product-expansion"],
   title:
     "Eigenvalue product expansion of the nuclear braid Markov trace",
   lean: { ref: "qou:QOU.BraidKnot.eigenvalue_product_expansion",

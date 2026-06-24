@@ -70,6 +70,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:spin-involution-lp-dual-invariance",
+  proofs: ["prf:spin-involution-lp-dual-invariance"],
   title:
     "Spin involutions on Frobenius algebras leave the LP-dual shadow price invariant: $\\sigma(c) = c \\Rightarrow y_0^*(\\sigma(\\beta)) = y_0^*(\\beta)$",
   lean: {

@@ -26,6 +26,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:frobenius-self-duality-forces-lp-dual-extraction",
+  proofs: ["prf:frobenius-self-duality-forces-lp-dual-extraction"],
   title:
     "Frobenius self-duality of $(H_n(R,q),\\tau)$ forces $\\tau$-extraction to produce LP-dual variables",
   lean: {

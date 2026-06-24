@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:plancherel-weight-boundedness",
+  proofs: ["prf:plancherel-weight-boundedness"],
   title:
     "Plancherel weights define a probability distribution: $\\sum_\\lambda w_\\lambda = 1$, $0 \\leq w_\\lambda \\leq 1$",
   lean: {

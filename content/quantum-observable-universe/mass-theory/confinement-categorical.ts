@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:confinement-categorical",
+  proofs: ["prf:confinement-categorical"],
   title: "Confinement = spectral-sequence collapse (only Wedderburn-central observables survive)",
   lean: {
     ref: "qou:QOU.WedderburnMass.confinement_categorical",

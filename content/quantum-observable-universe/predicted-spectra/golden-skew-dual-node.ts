@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:golden-skew-dual-node",
+  proofs: ["prf:golden-skew-dual-node"],
   title:
     "Skew-dual golden node at $q = \\varphi^2$ under the bar involution $q \\leftrightarrow q^{-1}$",
   tags: [

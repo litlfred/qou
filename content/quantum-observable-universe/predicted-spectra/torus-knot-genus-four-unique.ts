@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:torus-knot-genus-four-unique",
+  proofs: ["prf:torus-knot-genus-four-unique"],
   title:
     "Genus-$4$ torus knots: $\\{T_{2,9}, T_{3,5}\\}$ are the only solutions",
   lean: {

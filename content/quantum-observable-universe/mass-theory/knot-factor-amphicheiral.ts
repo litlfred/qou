@@ -2,6 +2,7 @@ import { corollary } from "../../schema/builders";
 
 export default corollary({
   label: "cor:knot-factor-amphicheiral",
+  proofs: ["prf:knot-factor-amphicheiral"],
   title:
     "Knot factor for Markov-amphicheiral knots: sum of positive squares",
   lean: {

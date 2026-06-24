@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:unified-iterative-correction",
+  proofs: ["prf:unified-iterative-correction"],
   title:
     "Unified iterative LP-dual correction: per-step Wedderburn " +
     "projection over all partitions $\\lambda \\vdash k$ for " +

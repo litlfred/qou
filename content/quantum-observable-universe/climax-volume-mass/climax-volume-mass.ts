@@ -50,6 +50,7 @@ export default chapter({
         "skein-crossing-asymmetry-prop",
         "skein-crossing-asymmetry",
         "skein-bar-antisymmetry",
+        "skein-bar-antisymmetry-proof",
       ],
     }),
     section({

@@ -29,6 +29,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:jucys-murphy-central-elements-qou",
+  proofs: ["prf:jucys-murphy-central-elements-qou"],
   title:
     "Elementary symmetric polynomials in Jucys–Murphy elements are central in $H_n(q)$ with closed-form spectrum on each Wedderburn block",
   lean: {

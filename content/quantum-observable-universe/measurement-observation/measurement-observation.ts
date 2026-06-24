@@ -36,6 +36,7 @@ export default chapter({
         "bundle-initial-conditions",
         "observation-braid",
         "sorting-color-energy",
+        "sorting-color-energy-proof",
         "sorting-color-energy-table-data",
         "bundle-isotopy-equivalence",
         "torsion-knot-flow",

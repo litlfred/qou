@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:force-carrier-bring-uniqueness",
+  proofs: ["prf:force-carrier-bring-uniqueness"],
   title:
     "$(T_{2,9}, T_{3,5})$ is the unique pair of genus-$4$ torus knots",
   lean: {

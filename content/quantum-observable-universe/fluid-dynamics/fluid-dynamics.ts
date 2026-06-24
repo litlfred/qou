@@ -103,6 +103,7 @@ export default chapter({
         "substrate-line-bundle",
         "substrate-gm-torsion",
         "observability-q-independent",
+        "observability-q-independent-proof",
         "core-levi-form",
         "core-levi-interpretation",
         "ns-regular-qou",
@@ -121,12 +122,14 @@ export default chapter({
         "ns-obstruction-computation",
         "ns-kummer-specialisation",
         "ns-singularity-descartes",
+        "ns-singularity-descartes-proof",
         "torus-ns-regular",
         "torus-ns-regular-table-data",
         "root-of-unity-truncation",
         // ── Observable MTC / anyons (Track B) ──────────────────────
         "observable-mtc",
         "bn-mtc-action",
+        "bn-mtc-action-proof",
       ],
     }),
 

@@ -75,13 +75,6 @@ $\mathcal{P}: L_+ \leftrightarrow L_-$ if and only if $q = 1$.
 For any $q \neq 1$, the weak interaction
 ([beta decay](#def:beta-decay-skein)) violates parity.*
 
-*Proof.*
-The Skein relation assigns coefficient $q$ to $[L_+]$ and
-$q^{-1}$ to $[L_-]$.  Parity exchanges $L_+ \leftrightarrow L_-$
-but does not change $q$.  The relation is $\mathcal{P}$-invariant
-iff $q = q^{-1}$, which holds iff $q^2 = 1$, hence $q = 1$
-(since $q > 0$).  $\square$
-
 **Physical interpretation.**
 
 The Hecke relation $\sigma^2 = (q - q^{-1})\sigma + 1$ breaks

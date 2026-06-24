@@ -24,15 +24,6 @@ Then for every $a > 0$:
    $\bigl(\exists q < a,\, q > 0 \land \neg P(q)\bigr) \iff
     \bigl(\exists q > a^{-1},\, \neg P(q)\bigr)$.
 
-*Proof.*
-*(1)* Forward: assume $\forall q > a,\, P(q)$. Let $q < a^{-1}$ with
-$q > 0$. Then $q^{-1} > a$, so $P(q^{-1})$, so $P(q)$ by bar-invariance.
-Reverse: dual. *(3)* Negate (1). *(2)* False in general (counterexample:
-$P(q) = \mathbf{1}_{q \in (a, a^{-1})}$ is bar-invariant on $(a, a^{-1})$
-and false outside); under continuity, every limit point of $\{q : P(q)\}$
-is bar-conjugate to a limit point of $\neg P$, forcing the symmetric
-extension. $\square$
-
 **Reuse pattern (refactoring).**
 
 The bar-transfer principle says: **any proof of a one-sided

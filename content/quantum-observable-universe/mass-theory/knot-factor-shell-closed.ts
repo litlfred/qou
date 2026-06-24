@@ -2,6 +2,7 @@ import { corollary } from "../../schema/builders";
 
 export default corollary({
   label: "cor:knot-factor-shell-closed",
+  proofs: ["prf:knot-factor-shell-closed"],
   title:
     "Shell-closed $Z = N$ even-even nuclei give $a = 1$ exactly",
   lean: {

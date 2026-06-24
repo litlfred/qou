@@ -9,12 +9,6 @@ classification
 force-carrier sector of any QOU built on $\Sigma_4$ contains exactly
 the two-element set $\{T_{2,9}, T_{3,5}\}$.*
 
-*Proof.* The saturation condition selects torus knots whose Seifert
-genus matches the ambient surface's geometric genus.  By the
-genus-$4$ uniqueness proposition, the only such torus knots are
-$T_{2,9}$ (crossing number $9$) and $T_{3,5}$ (crossing number $10$).
-$\square$
-
 **Remark on Novelty:** While the underlying Diophantine constraint $(m-1)(n-1)=2g$ is standard, its application here as a *genus-saturation* condition on the symplectic homology of Bring's surface provides a uniquely rigid, novel algebraic-geometric derivation of the exact force-carrier pair (the crossing-number 9 and 10 knots), replacing the ad-hoc symmetry assumptions historically required in the literature.
 
 **Corollary (categorical complexity of the force-carrier sector).**

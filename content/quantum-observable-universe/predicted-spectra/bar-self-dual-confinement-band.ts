@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:bar-self-dual-confinement-band",
+  proofs: ["prf:bar-self-dual-confinement-band"],
   title:
     "The open interval $(1/\\varphi^2,\\,\\varphi^2)$ is the maximal bar-self-dual confinement band",
   tags: [

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:hecke-mass-trace",
+  proofs: ["prf:hecke-mass-trace"],
   title: "Mass via the Markov trace of the Hecke mass element",
   tags: [
     "hecke-algebra",

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:quantum-ideal-gas-law",
+  proofs: ["prf:quantum-ideal-gas-law"],
   title: "Quantum ideal gas law",
   tags: [
     "ideal-gas",

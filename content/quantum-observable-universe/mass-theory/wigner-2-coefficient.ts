@@ -10,6 +10,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:wigner-2-coefficient",
+  proofs: ["prf:wigner-2-coefficient"],
   title:
     "Wigner-2 coefficient $C_{[3,2,1]} = w_{[3,2,1]} \\cdot h/2$ from self-conjugate trace pairing",
   lean: { ref: "qou:QOU.BraidKnot.wigner2_coefficient",

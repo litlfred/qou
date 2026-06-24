@@ -2,6 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:hasse-weil-bound",
+  proofs: ["prf:hasse-weil-bound"],
   title: "Hasse--Weil bound for the fundamental eigenvalues",
   lean: { ref: "qou:QOU.AlgebraicSubstrate.hasse_weil_bound",
     validation: "not_checked",

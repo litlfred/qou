@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:bar-t-duality-substrate",
+  proofs: ["prf:bar-t-duality-substrate"],
   title:
     "Substrate-level bar T-duality: $\\mathcal{E}_q \\leftrightarrow \\mathcal{E}_{1/q}$",
   tags: [

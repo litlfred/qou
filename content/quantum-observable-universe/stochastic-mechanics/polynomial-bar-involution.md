@@ -89,7 +89,6 @@ follow-up if reviewers prefer a hard split.
 ### Core bar-involution axioms
 
 **Proposition (Lean: `barPoly_X`).** $\overline X = -X$.
-*Proof.* By definition $\overline p := p.\mathrm{comp}(-X)$; applying to $p = X$ gives $X.\mathrm{comp}(-X) = -X$ (Mathlib `X_comp`). $\square$
 
 **Proposition (Lean: `barPoly_neg_X`).** $\overline{-X} = X$.
 *Proof.* $(-X).\mathrm{comp}(-X) = -(X.\mathrm{comp}(-X)) = -(-X) = X$ via `neg_comp`, `X_comp`, `neg_neg`. $\square$

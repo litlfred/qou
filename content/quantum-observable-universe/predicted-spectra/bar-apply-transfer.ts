@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:bar-apply-transfer",
+  proofs: ["prf:bar-apply-transfer"],
   title:
     "Bar-transfer principle: one-sided bounds on bar-invariant properties extend for free",
   tags: [

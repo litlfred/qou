@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:baryon-product-from-alt",
+  proofs: ["prf:baryon-product-from-alt"],
   title:
     "The baryon integrand $\\prod_k dc_k/dz$ is the $\\mathrm{Alt}^3$-isotype of the color-tube Jacobian",
   chapter: "archimedean-universe",

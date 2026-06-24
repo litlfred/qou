@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:q-exponential-taylor",
+  proofs: ["prf:q-exponential-taylor"],
   title: "Taylor series of $\\exp_q$ (archimedean)",
   tags: ["q-exponential", "taylor-series", "archimedean"],
   lean: { ref: "qou:QOU.qExponentialTaylor",

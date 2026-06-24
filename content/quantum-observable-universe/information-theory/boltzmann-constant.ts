@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:boltzmann-constant",
+  proofs: ["prf:boltzmann-constant"],
   title: "Boltzmann constant is unity in QOU natural units",
   tags: [
     "boltzmann-constant",

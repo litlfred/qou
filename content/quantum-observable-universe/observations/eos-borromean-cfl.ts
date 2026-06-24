@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:eos-borromean-cfl",
+  proofs: ["prf:eos-borromean-cfl"],
   title:
     "Equation of state: Borromean hadronic matter vs CFL quark matter",
   tags: [

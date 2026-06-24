@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:wenzl-bridge-applicability-qou",
+  proofs: ["prf:wenzl-bridge-applicability-qou"],
   title:
     "Applicability of the Wenzl-bridge $y_\\lambda$ formula in QOU: Schur--Weyl + 1-dim trace space",
   lean: {

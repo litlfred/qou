@@ -6,6 +6,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:wedderburn-trace-identity",
+  proofs: ["prf:wedderburn-trace-identity"],
   title: "Wedderburn trace identity for $H_n(q)$",
   tags: [
     "wedderburn",

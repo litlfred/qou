@@ -28,15 +28,6 @@ exchanged by $s \leftrightarrow 1/s$ up to sign, and their roots
 partition into the bar-paired set $\{1/\varphi, \varphi\}$ on the
 positive real axis.
 
-*Proof.*
-If $s_0$ is a root of $s^2 + s - 1 = 0$, then $s_0^{-2} \cdot
-(s_0^2 + s_0 - 1) = 0$ rearranges to $1 - s_0^{-1} - s_0^{-2} = 0$,
-i.e. $(s_0^{-1})^2 - (s_0^{-1}) - 1 = 0$ after multiplying by $-1$
-and substituting $u = s_0^{-1}$: $u^2 - u - 1 = 0$.  Hence
-$s_0 = 1/\varphi \Leftrightarrow s_0^{-1} = \varphi$, and squaring
-gives $1/\varphi^2 \leftrightarrow \varphi^2$ on the $q$-line.
-$\square$
-
 **Stability band on both sides.**
 
 Our universe sits at $q_0 = 1.109978595554181\ldots$ (50 dps), in the open interval
@@ -85,6 +76,5 @@ $q = q_0$, the super-classical margin $\approx 1.508$ is the
 larger of the two — consistent with the empirical observation that
 nuclear physics is more robust against compression of the substrate
 than against rarefaction.
-
 
 **Remark on Mathematical Novelty:** By reinterpreting the conventional reciprocal node bar-duality (phi^-2 / phi^2) as a two-sided stability margin, this skew-dual framing provides a mathematically novel boundary condition for bounding spectral gaps.

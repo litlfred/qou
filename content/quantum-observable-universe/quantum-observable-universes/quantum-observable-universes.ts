@@ -149,6 +149,7 @@ export default chapter({
       blocks: [
         "differential-structures-fiber-adjoint-intro",
         "fibre-functor-atlas",
+        "fibre-functor-atlas-proof",
         "substrate-radial-coordinate",
         "substrate-radial-coordinate-proof",
         "fiber-adjoint-involution",
@@ -507,6 +508,7 @@ export default chapter({
         "reeb-u1-chart-swap",
         "reeb-u1-chart-swap-proof",
         "categorical-coordinate-ring",
+        "categorical-coordinate-ring-proof",
       ],
     }),
 

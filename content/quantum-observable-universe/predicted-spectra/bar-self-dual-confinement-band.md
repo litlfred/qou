@@ -18,15 +18,6 @@ deconfinement criterion $q > 1/\varphi^2$
 ([deconfinement threshold](#rem:deconfinement-golden-threshold))
 and its bar conjugate $q < \varphi^2$ hold simultaneously.
 
-*Proof.*
-The fixed point of $\iota$ on $\mathbb{R}_{>0}$ is $q = 1$, lying
-in $\mathcal{B}$.  For $a > 0$, the interval $(a, 1/a)$ is
-$\iota$-invariant iff $a < 1$ (so that $1/a > a$).  Among intervals
-$(a, 1/a)$ contained in $\mathbb{R}_{>0} \setminus \{1/\varphi^2,
-\varphi^2\}$, the maximal one is $(1/\varphi^2, \varphi^2)$, since
-any larger choice $(a, 1/a)$ with $a < 1/\varphi^2$ would contain
-the node $1/\varphi^2$.  Hence $\mathcal{B}$ is maximal. $\square$
-
 **Bar-symmetric phase diagram (replaces three asymmetric tables).**
 
 The single statement $\mathcal{B} = (1/\varphi^2, \varphi^2)$
@@ -78,6 +69,5 @@ $\mathcal{B} = (1/\varphi^2, \varphi^2)$.
 Any future phase-boundary argument should be stated **once for
 $\mathcal{B}$** and applied to both endpoints by bar symmetry,
 rather than re-derived on each side.
-
 
 **Remark on Mathematical Novelty:** This formulation collapses three historically disjoint asymmetric phase regimes into a single unified bar-self-dual confinement band. While utilizing standard involution bounds, the structural consolidation is highly novel, offering a rigid phase boundary for the QOU framework.

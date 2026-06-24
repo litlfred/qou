@@ -159,14 +159,6 @@ $$
 with initial conditions $\hat{V}(0, q) = 1$ (no crossings)
 and $\hat{V}(1, q) = z(q - q^{-1}) + 1$ (one crossing).
 
-*Proof.*
-The recurrence is the matrix identity
-$T^{n+1} = T \cdot T^n$, which gives
-$(T^{n+1})_{21} = (T)_{11} (T^n)_{21} + (T)_{12} (T^n)_{22}$.
-Since $(T)_{11} = q - q^{-1}$ and $(T)_{12} = 1$, and using
-$(T^n)_{22} = (T^{n-1})_{21}$ (from $\det T = -1$), this
-becomes the Chebyshev recurrence.  $\square$
-
 The coefficient $q - q^{-1}$ in the recurrence is the
 **Hecke deformation** — the same parameter that controls
 parity violation

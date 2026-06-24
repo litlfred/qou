@@ -28,11 +28,6 @@ $$
    =  -\,(q - q^{-1})\,L_0.
 $$
 
-*Proof.*
-The bar involution swaps $L_+ \leftrightarrow L_-$ and $q
-\leftrightarrow q^{-1}$ while fixing $L_0$.  Direct substitution
-gives both equalities above. $\square$
-
 **Refactoring corollary (case-split collapse).**
 
 Any proof in the braid--knot framework that establishes a property

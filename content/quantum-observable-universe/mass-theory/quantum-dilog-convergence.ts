@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:quantum-dilog-convergence",
+  proofs: ["prf:quantum-dilog-convergence"],
   title:
     "Convergence of the quantum dilogarithm $\\Phi_q$ on $\\lvert z\\rvert < q$",
   // The proof lives in the library file PhiQConvergence.lean (sorry-free);

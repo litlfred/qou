@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:skein-bar-antisymmetry",
+  proofs: ["prf:skein-bar-antisymmetry"],
   title:
     "Skein relation $L_+ - L_- = (q - q^{-1})\\,L_0$ is bar-antisymmetric",
   tags: [

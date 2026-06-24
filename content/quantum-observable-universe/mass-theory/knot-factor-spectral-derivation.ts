@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:knot-factor-spectral-form",
+  proofs: ["prf:knot-factor-spectral-form"],
   title:
     "Knot factor $a_K$ as a chirality-block Plancherel pairing",
   lean: {

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:mass-tower-coefficient-stratification",
+  proofs: ["prf:mass-tower-coefficient-stratification"],
   title:
     "Mass-tower coefficients $(\\lambda_V, \\lambda_S, \\lambda_{\\mathrm{pair}}, \\alpha_k)$ as Wedderburn-block projections",
   lean: {

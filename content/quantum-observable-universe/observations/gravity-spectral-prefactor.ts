@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:gravity-spectral-prefactor",
+  proofs: ["prf:gravity-spectral-prefactor"],
   title:
     "Newton's $G$ as the universal-residue prefactor of the unified mass formula",
   lean: {

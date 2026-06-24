@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:alpha-k-derivation-procedure",
+  proofs: ["prf:alpha-k-derivation-procedure"],
   title:
     "Linear-system procedure for Jones--Markov weights $y_\\lambda$ and stratum prefactors $\\alpha_k$ at $H_n(R, q)$",
   lean: {

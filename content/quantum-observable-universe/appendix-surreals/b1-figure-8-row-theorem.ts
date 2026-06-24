@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:b1-figure-8-row-theorem",
+  proofs: ["prf:b1-figure-8-row-theorem"],
   title:
     "B1 keystone is theorem-level at the figure-8 row (Bloch--Suslin + Murakami--Murakami)",
   lean: {

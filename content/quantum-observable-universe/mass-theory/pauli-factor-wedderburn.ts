@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:pauli-factor-wedderburn",
+  proofs: ["prf:pauli-factor-wedderburn"],
   title:
     "Pauli factor $F_{\\mathrm{Pauli}}$ is the alt/sym Wedderburn-block trace ratio",
   lean: {

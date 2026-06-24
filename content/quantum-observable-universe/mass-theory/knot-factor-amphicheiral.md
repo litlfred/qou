@@ -17,16 +17,6 @@ $$
   \frac{\chi_\lambda(\beta_\mathcal{K})^2}{\chi_\lambda(\mathbf{1})^2}.
 $$
 
-*Proof.*
-By trace cyclicity,
-$\chi_\lambda(\beta_\mathcal{K}^*) = \chi_\lambda(w\,\beta_\mathcal{K}\, w^{-1}) = \chi_\lambda(\beta_\mathcal{K})$
-for every $\lambda$.  Substituting in
-([knot factor](#prop:knot-factor-spectral-form))
-$a_\mathcal{K} = \sum_\lambda w_\lambda \cdot
-\chi_\lambda(\beta_\mathcal{K})\,\chi_\lambda(\beta_\mathcal{K}^*) / \chi_\lambda(\mathbf{1})^2$
-yields the displayed expression.
-$\square$
-
 **Worked example ($\mathcal{K} = 4_1$ in $B_3$).** Take the
 figure-eight braid
 $\beta_{4_1} = \sigma_1\,\sigma_2^{-1}\,\sigma_1\,\sigma_2^{-1}$.

@@ -2,6 +2,7 @@ import { corollary } from "../../schema/builders";
 
 export default corollary({
   label: "cor:knot-factor-borromean-composite",
+  proofs: ["prf:knot-factor-borromean-composite"],
   title:
     "Borromean-$k$ composite knot factor is $a = (1 - h^2)^k$",
   lean: {

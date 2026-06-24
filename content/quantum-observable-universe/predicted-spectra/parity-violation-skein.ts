@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:parity-violation-skein",
+  proofs: ["prf:parity-violation-skein"],
   title:
     "Parity non-conservation from the Skein relation at $q \\neq 1$",
   tags: [

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:shell-structure-eigenvalues",
+  proofs: ["prf:shell-structure-eigenvalues"],
   title:
     "Orbital shells from eigenvalues of the photon-electron transfer matrix",
   tags: [

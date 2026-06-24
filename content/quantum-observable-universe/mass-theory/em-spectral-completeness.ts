@@ -2,6 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:em-spectral-completeness",
+  proofs: ["prf:em-spectral-completeness"],
   title:
     "Two-strand spectral completeness over a commutative ring $R$",
   lean: {

@@ -30,6 +30,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:mass-coefficient-shadow-price",
+  proofs: ["prf:mass-coefficient-shadow-price"],
   title:
     "Mass-formula coefficients as shadow prices of the Frobenius positivity constraints",
   lean: { ref: "qou:QOU.BraidKnot.MassCoefficientShadowPrice",

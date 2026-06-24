@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:gram-determinant-plancherel-ratio",
+  proofs: ["prf:gram-determinant-plancherel-ratio"],
   title:
     "Gram-determinant ratio $\\kappa$ as a Plancherel-weighted character product",
   lean: {
