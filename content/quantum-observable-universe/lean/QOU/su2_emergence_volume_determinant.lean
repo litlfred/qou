@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+import QOU.su2_emergence_dagger_unitarity
+
 /-!
 # QOU.su2_emergence_volume_determinant — gauge-group containment `G ⊆ SL(2)`
 
