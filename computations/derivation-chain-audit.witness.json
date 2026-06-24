@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-24T11:26:34.052889+00:00",
-  "commitSha": "90068e6ff0c85de8450edeb0dd3469e4e2fa8ca2",
+  "computedAt": "2026-06-24T17:36:36.135277+00:00",
+  "commitSha": "622fcd41310a57ef3015d6c9d4279e538e049e9d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "81b286b6b75382730a0886067c550a30ed123a68",
+  "scriptCommitSha": "e46b8145b47b2bb40f9b7ce30a8bd126e7fbc6ad",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -2142,6 +2142,7 @@
         "binding-per-bond-decomposition.witness.json",
         "binding-perblock-bond-type-a3.witness.json",
         "binding-qhamiltonian-rotational-scale.witness.json",
+        "binding-recurrence-spectral-bridge.witness.json",
         "binding-reeb-phase-decomposition.witness.json",
         "binding-reeb-ratio-rho-free.witness.json",
         "binding-rotation-phase-lead.witness.json",
