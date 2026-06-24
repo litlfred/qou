@@ -56,9 +56,15 @@ This is a **structural connection**, not a derivation of `τ` or a binding closu
 - `τ` is still only **algebraically** fixed (selection-rule anchors); its
   **geometric** origin (the monodromy trace `tr B = 2.6424`) is the sibling
   `lever1-trB` / s5-so3-keystone object (#2488/#2524, owner-gated DG) — untouched here.
-- The **magic-A ⁴He +5.87 %** miss stands: it is the finite-truncation residual of
-  the geometric series (and the genuine n=3 many-body term), not a failure of the
-  growth mechanism. This probe does **not** close it.
+- The **magic-A ⁴He +5.87 %** miss stands, but it is a **separate object** from the
+  body-order series. **Correction (2026-06-24):** an earlier version of this section
+  called it "the finite-truncation residual of the geometric series" — that was an
+  **over-claim**. The +5.87 % is the gap of the *separate doubly-magic formula*
+  `B = 2·m_e·A·8G` (29.956 vs 28.296 MeV); the physical-body-order (`n ≤ A = 4`)
+  jet-sum `m_e·Σ a_D⁽ⁿ⁾` is only ≈ 2.49 MeV (≈ 11× too small), and the series
+  *diverges* (`λ₊ > 1`), so there is no finite total to truncate. The spectral-bridge
+  result is unaffected — it concerns body-order *growth*, not the magic-A gap. See
+  [`2026-06-24-magic-a-truncation-overclaim-correction.md`](2026-06-24-magic-a-truncation-overclaim-correction.md).
 - The bridge is parameter-free but interpretive: it shows the *existing* kernel's
   dominant root **is** the extensive eigenvalue, resolving "what supplies extensive
   binding" (PR #2703's open question) in favour of `R`'s `λ₊ > 1`.

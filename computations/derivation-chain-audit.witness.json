@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-24T17:36:36.135277+00:00",
-  "commitSha": "622fcd41310a57ef3015d6c9d4279e538e049e9d",
+  "computedAt": "2026-06-24T18:42:10.683051+00:00",
+  "commitSha": "568404c61ea98afb7e1f25ff3351dff8f1ff1e0c",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -2629,6 +2629,7 @@
         "keystone-reeb-casimir-chirality-step3.witness.json",
         "keystone-schurweyl-dual-sides.witness.json",
         "keystone-schurweyl-su2-rowcount.witness.json",
+        "keystone-step1-gate-wrt-vs-wlambda.witness.json",
         "keystone-wrt-color-schurweyl.witness.json",
         "kite-tail-reconciliation.witness.json",
         "kite_tail_reconciliation.witness.json",
@@ -2670,6 +2671,7 @@
         "low-isotopes-binding-sweep.witness.json",
         "lp-confinement-nf-forcing.witness.json",
         "lr-fusion-self-conj-test.witness.json",
+        "lw2-c2-independent-hopf-test-attempt.witness.json",
         "m-baryon-volume-form.witness.json",
         "m-p-borromean-verification-50dps.witness.json",
         "m-p-linking-weight-operator-valued-probe.witness.json",
@@ -2678,6 +2680,7 @@
         "m-p-substrate-identity-50dps.witness.json",
         "m-qclt-approx.witness.json",
         "m-tau-knot-prediction.witness.json",
+        "magic-a-truncation-overclaim-correction.witness.json",
         "markov-free-energy-qvalues.witness.json",
         "mass-formula-6term.witness.json",
         "mass-from-q-symbolic.witness.json",

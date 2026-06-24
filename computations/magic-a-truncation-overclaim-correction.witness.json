@@ -1,0 +1,65 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-24T17:48:29.257250+00:00",
+  "commitSha": "e1c26a328568bc22276a55a9eeabf7c656629121",
+  "assertions": [
+    {
+      "name": "magicA_gap_is_5pct87",
+      "computed": "5.86663",
+      "expected": "5.87",
+      "passed": true,
+      "tolerance": 0.02,
+      "source": "2·m_e·A·8G vs AME"
+    },
+    {
+      "name": "physical_jetsum_far_below_AME",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "n≤4 jet-sum ≈ 2.49 MeV ≪ 28.3"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "magic-a-truncation-overclaim-correction",
+  "scriptFile": "magic_a_truncation_overclaim_correction_probe.py",
+  "scriptHash": "12d147a6e3b6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Self-correction (0 fit): the magic-A ⁴He +5.87% is the gap of the separate doubly-magic formula B=2·m_e·A·8G (29.956 vs 28.296 MeV), NOT a finite-truncation residual of the body-order geometric series as PR #2718's audit asserted in passing. The physical-body-order (n≤A=4) jet-sum is only 2.49 MeV (≈11× too small) and the series diverges (λ₊>1). Re-scopes the #2718 claim; the spectral-bridge result (λ₊>1 extensive growth) is unaffected.",
+  "parameters": {
+    "m_e_MeV": "0.51099895069",
+    "A": 4,
+    "fit_params": 0
+  },
+  "data": {
+    "magicA_formula_MeV": "29.95567728",
+    "magicA_err_pct": "5.86663",
+    "jet_sum_physical_n_le_4_MeV": "2.488442869",
+    "jet_sum_partials": {
+      "4": "2.488442869",
+      "5": "5.225170719",
+      "6": "11.16240925",
+      "7": "24.11415914",
+      "8": "52.40044709"
+    },
+    "ratio_AME_over_physical_jetsum": "11.3708"
+  },
+  "caveats": [
+    "Re-scope of PR #2718's audit: the +5.87% is the magic-A-formula residual, a distinct object from the body-order series. The spectral-bridge λ₊>1 extensive-growth result stands; only its tie to the magic-A gap was wrong."
+  ]
+}
