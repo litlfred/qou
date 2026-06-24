@@ -1,0 +1,42 @@
+{
+  "computation": "lever1_trB_quantum_integer_form",
+  "description": "Sage-free sharpening of the lever-1 tr B target: repackaged in s=[2]_q (tr B = 3(3s²+2)/(4(s+2)); a_D^(n) all rational in [2]_q), hyperbolic SL₂(ℝ) monodromy with non-integer trace (rank-2 q-difference connection, not SL₂(ℤ) topological monodromy), and a Sage-free reconfirmation that A₅-irreducibility forces W to be a CM/isogeny factor of Jac(Bring).",
+  "discipline": "no fit; symbolic+mpmath 50 dps; reframes 'identify E(q)', claims no closure",
+  "auditOnly": "docs/audits/2026-06-24-lever1-trB-quantum-integer-form.md",
+  "related": [
+    "computations/substrate/lever1_trB_geometric_target.py",
+    "computations/substrate/lever1_bring_period_trB.sage"
+  ],
+  "results": {
+    "a_D_s_forms": {
+      "a2": "1",
+      "a3": "(s+2)/3",
+      "a4": "(3*s**2-2)/4"
+    },
+    "trB_s_form": "3*(3*s**2+2)/(4*(s+2))",
+    "s_is": "q + 1/q = [2]_q",
+    "s0_value": "2.0108968691190757608176638045",
+    "trB_at_q0": "2.64238631330148613386361673266",
+    "det_B": 1,
+    "hyperbolic": true,
+    "eigenvalue_lambda": "2.18464631529963868698344715948",
+    "trace_is_integer": false,
+    "char_poly": "x**2 - trB*x + 1",
+    "dim_H10_Bring": 4,
+    "S5_standard_irreducible": true,
+    "A5_restriction_irreducible": true
+  },
+  "assertions": {
+    "(Q) a_D^(3) = (s+2)/3 in s=[2]_q": true,
+    "(Q) a_D^(4) = (3s²−2)/4 in s=[2]_q": true,
+    "(Q) tr B = 3(3s²+2)/(4(s+2)) in s=[2]_q": true,
+    "(Q) recurrence a4 = τ·a3 − a2 holds in s": true,
+    "(Q) q-form == s-form to 45 dps": true,
+    "(M) B is hyperbolic (tr B > 2, det B = 1)": true,
+    "(M) tr B is NOT an integer (rules out SL₂(ℤ) topological monodromy)": true,
+    "(C) H^{1,0}(Bring) is the 4-dim S₅ standard irrep": true,
+    "(C) it restricts A₅-irreducibly (W ⇒ isogeny/CM factor, not a form-subrep)": true
+  },
+  "allPassed": true,
+  "verdict": "TARGET SHARPENED, NO CLOSURE. The lever-1 monodromy trace is a rational function of the quantum integer [2]_q alone: with s = q+q⁻¹ = [2]_q, a_D^(2)=1, a_D^(3)=(s+2)/3, a_D^(4)=(3s²−2)/4, and tr B = 3(3s²+2)/(4(s+2)) (50-dps verified, symbolic + numeric). det B = 1 (proved) with tr B ≈ 2.6424 > 2 makes B a HYPERBOLIC SL₂(ℝ) element (λ ≈ 2.1846); the trace is non-integer, so B is NOT an SL₂(ℤ) elliptic-fibration topological monodromy but the rank-2 q-DIFFERENCE connection matrix on W. The rank-2 W is forced by A₅-irreducibility of H^{1,0}(Bring) (Sage-free char theory) to be an isogeny/CM factor of Jac(Bring), not a form-subrep. NET: 'identify E(q)' is now 'find the rank-2 q-difference system on H¹(E) whose connection trace is 3(3[2]_q²+2)/(4([2]_q+2))' — a [2]_q-rational, hyperbolic target. The fixed j(Bring/S₄) and the q-family connection itself stay Sage/Magma- and owner-gated (s5-so3 keystone). No fit."
+}

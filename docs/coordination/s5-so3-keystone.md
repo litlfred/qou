@@ -250,3 +250,18 @@ lands sorry-free + axiom-free in
   refuted** (the keystone delivers the O(1) generation skeleton, not the 2×10⁻⁷ fine shift). No fit, no
   production wiring, no registry tier change. Audit
   [`docs/audits/2026-06-24-keystone-reeb-restriction-lean-formalization.md`](../audits/2026-06-24-keystone-reeb-restriction-lean-formalization.md).
+
+**`tr B` is `[2]_q`-rational + the monodromy is typed (2026-06-24, Sage-free).**
+Sharpening the `W = E = Bring/S₄` target above into the SL₂-canonical variable
+`s = q+q⁻¹ = [2]_q`: the selection-rule periods are all rational in `[2]_q` —
+`a_D^(2)=1`, `a_D^(3)=(s+2)/3`, `a_D^(4)=(3s²−2)/4` — and
+`tr B = 3(3s²+2)/(4(s+2))` (50-dps verified, symbolic + numeric). So **`tr B`
+depends on `q` only through `[2]_q`**. With `det B=1` proved and `tr B≈2.6424>2`,
+`B` is a **hyperbolic** `SL₂(ℝ)` element (`λ≈2.18465`); the trace is **non-integer**,
+so the q-family `M` on `E(q)` is a **q-difference connection matrix**, not an
+`SL₂(ℤ)` topological monodromy of an elliptic fibration. Restated keystone target:
+find the rank-2 q-difference system on `E = Bring/S₄` with `det B=1` and
+`tr B = 3(3[2]_q²+2)/(4([2]_q+2))`. No closure, no owner-gated step taken.
+Probe/audit:
+[`computations/substrate/lever1_trB_quantum_integer_form.py`](../../computations/substrate/lever1_trB_quantum_integer_form.py),
+audit `docs/audits/2026-06-24-lever1-trB-quantum-integer-form.md`.
