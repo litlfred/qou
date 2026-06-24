@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-06-23T17:03:11Z
-updated_at: 2026-06-23T23:55:01Z
+updated_at: 2026-06-24T00:11:11Z
 ---
 
 
@@ -76,3 +76,35 @@ Both remaining = genuine deep structural work; best as a focused lean-lsp pass.
   vs a stale olean cache (+31 behind main); the sibling reports QHookBound
   ALREADY GREEN on current main. Re-verifying against current main before
   acting — see #2663 follow-up.
+
+## REFINED DIAGNOSIS 2026-06-24 (QHookBound — attempted, sandbox-blocked)
+
+Verified vs current main + cached Mathlib v4.24.0 via lean-direct. 46→40 errors
+with the renames below; the residual ~25 are genuine proof-repair, NOT mechanical.
+
+**CONFIRMED fixes (re-apply in an env with lean-lsp):**
+- `inv_lt_one_iff_of_pos` → `inv_lt_one₀` (×9) — lean-direct confirms it elaborates.
+- `;`-calc at qInt_pos L61 → `have : q⁻¹ < q := lt_trans hq_inv_lt hq`.
+- `pow_lt_pow_left` → `pow_lt_pow_left₀` is the right NAME, but the call also has
+  a logic bug (fed `q⁻¹ < 1`; the goal `q⁻¹^m < q^m` needs base `q⁻¹ < q` =
+  `lt_trans hq_inv_lt hq`) AND a residual arg/type mismatch — check the current
+  `pow_lt_pow_left₀` signature.
+- THREE dangling docstrings (`/-- … -/` with no decl before the next `/--`):
+  L65, L215, L436 → convert opening `/--` to `/-!`.
+
+**STILL-UNKNOWN (needs lean-lsp/web — both proxy-blocked here):**
+- `div_le_div_iff` current name (L103/380/525): `div_le_div_iff_of_pos` is also
+  unknown; try `div_le_div_iff₀` / `div_le_div_iff_left|right` — confirm via
+  loogle on `_ / _ ≤ _ / _ ↔ _`.
+
+**BLOCKED residual (~25 errors — need interactive goal states):**
+- `rewrite failed: pattern not found` ×11 (L150,158,228,265,269,295,305,339,
+  473,503,562) — lemma statements changed under the renames / new Mathlib;
+- `unsolved goals` ×6 (L88,303,327,369,376,490) + `No goals` (L96) — nlinarith/
+  field_simp proofs need re-tuning for the new normal forms;
+- `Application type mismatch` ×2 (L63,581).
+
+These need lean-lsp `lean_goal`/`lean_multi_attempt` per proof, which this sandbox
+denies (leansearch/loogle/doi/crossref/arxiv all return proxy 403; only package
+registries allowlisted). **QHookBound is an ORPHAN (latent-red, not a lake-build
+breaker)** — safe to leave until a session with lean-lsp + web can finish it.
