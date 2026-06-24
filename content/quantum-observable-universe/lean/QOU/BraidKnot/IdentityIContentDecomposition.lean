@@ -443,6 +443,27 @@ theorem sum_colLen_sq_row_form (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   rw [sum_colLen_sq_eq_sum_min l hl,
     antitone_min_sum (fun i => l.getD i 0) (fun i k hik => getD_antitone l hl hik) l.length]
 
+/-- **`K1` as a row form (sorry-free).** `Σ_j colLen(j) = Σ_i λ_i` (both count cells). -/
+theorem sum_colLen_eq_sum_parts (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    ∑ j ∈ Finset.range (l.headD 0), colLen l j = ∑ i ∈ Finset.range l.length, l.getD i 0 := by
+  simp_rw [colLen_eq_indicator_sum l]
+  rw [Finset.sum_comm]
+  apply Finset.sum_congr rfl
+  intro i _
+  rw [sum_indicator_lt_eq_min]
+  exact min_eq_right (getD_le_headD l hl i)
+
+/-- The size `n = Σ λ_i` is the `Finset.range` sum of the parts. -/
+theorem sum_range_getD_eq_sz (l : List ℕ) :
+    ∑ i ∈ Finset.range l.length, l.getD i 0 = sz l := by
+  unfold sz
+  induction l with
+  | nil => simp
+  | cons a t ih =>
+    rw [List.length_cons, Finset.sum_range_succ', List.sum_cons]
+    simp only [List.getD_cons_succ, List.getD_cons_zero]
+    rw [ih]; ring
+
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
 (`identityA_verified_le9`) and exhaustively in Python for `n ≤ 22`.
