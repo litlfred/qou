@@ -232,7 +232,7 @@
       "paths": {
         "py": "computations/witness_hollowness_audit.py"
       },
-      "finding": "da-reproducibility (corpus sweep)",
+      "finding": "da-reproducibility (validator hardened; recompute pending)",
       "severity": "major",
       "source": "backlog",
       "source_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd",
@@ -246,7 +246,7 @@
       ],
       "status": "needs-author",
       "asked_author_at": null,
-      "referee_argument": "Harden lp_dual_witness_validator.py to reject null dual VALUES under --strict (one-line fix), then recompute the 11 duals via lp_dual_solver.py."
+      "referee_argument": "DONE: verify_dual_present now rejects null dual values (the 11 now WARN). REMAINING: recompute the 11 duals via lp_dual_solver, then flip the validator to --strict in CI."
     },
     {
       "id": "9a6ea8ebe16a",
@@ -269,6 +269,46 @@
       "status": "needs-author",
       "asked_author_at": null,
       "referee_argument": "Triage the 95-sharp subset (status_label_overclaim_audit.py --json | filter lean:True/trivial/sorry); each is a candidate 'proved'->'stated/conjectural' relabel or a real Lean to finish."
+    },
+    {
+      "id": "f305668e079d",
+      "block_or_script": "triage:status-label-bucket-B-provable-vacuous",
+      "paths": {},
+      "finding": "da-overclaim (corpus, \u00a71a)",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "7c6bc0a100112135383b200d5bec529b78ca4b24",
+      "evidence": "14 provable-kind blocks conclude Lean ': True'/':= trivial' while prose claims proved/closed-form (e.g. b1-figure-8-row-theorem 'theorem b1_figure_8_row : True := by trivial'). docs/audits/2026-06-24-status-label-overclaim-triage.md Bucket B.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "status_label_overclaim_audit.py sharp + bucketing",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Per \u00a71a each needs author choice: prove it / restate with honest sorry+Ref / demote to conjecture. Not a blind mechanical fix."
+    },
+    {
+      "id": "86296f1a3443",
+      "block_or_script": "triage:status-label-bucket-C1-sorry-free-contradiction",
+      "paths": {},
+      "finding": "da-overclaim (corpus)",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "7c6bc0a100112135383b200d5bec529b78ca4b24",
+      "evidence": "23 blocks claim 'sorry-free' while their Lean contains a sorry (e.g. pontryagin-dual-coxeter-character, inter-nucleon-channel-color-tube). Bucket C1.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "status_label_overclaim_audit.py sharp + bucketing",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Safe mechanical relabel: drop the 'sorry-free' tag wherever a sorry is present (the claim is false as written) \u2014 or finish the proof."
     }
   ],
   "audited": {
