@@ -1,0 +1,236 @@
+{
+  "computation": "lpdual_active_set_vs_edge_set_negative",
+  "description": "Cross-tab of the deuteron LP-dual active set (Wedderburn blocks) against lever-2's binding edge-set (nucleon bonds) and Pauli symmetry character. NEGATIVE: blocks ≠ bonds, no clean block-level separating rule, only Pauli endpoints agree, and the LP-dual is degenerate.",
+  "discipline": "no fit; consumes canonical deuteron LP-dual; audit-only; NEGATIVE result",
+  "consumes_witness": "computations/deuteron-real-sdp.witness.json",
+  "auditOnly": "docs/audits/2026-06-24-lpdual-active-set-not-lever2-edge-set.md",
+  "per_block": [
+    {
+      "block": [
+        6
+      ],
+      "rows": 1,
+      "cols": 6,
+      "n_lambda": 0,
+      "chirality": 1,
+      "y_star": 1.8036943373270138,
+      "active": true,
+      "self_conjugate": false
+    },
+    {
+      "block": [
+        5,
+        1
+      ],
+      "rows": 2,
+      "cols": 5,
+      "n_lambda": 1,
+      "chirality": -1,
+      "y_star": 0.6921531742118898,
+      "active": true,
+      "self_conjugate": false
+    },
+    {
+      "block": [
+        4,
+        2
+      ],
+      "rows": 2,
+      "cols": 4,
+      "n_lambda": 2,
+      "chirality": 1,
+      "y_star": 0.2257943908355624,
+      "active": true,
+      "self_conjugate": false
+    },
+    {
+      "block": [
+        4,
+        1,
+        1
+      ],
+      "rows": 3,
+      "cols": 4,
+      "n_lambda": 3,
+      "chirality": -1,
+      "y_star": 0.09545924560799289,
+      "active": true,
+      "self_conjugate": false
+    },
+    {
+      "block": [
+        3,
+        3
+      ],
+      "rows": 2,
+      "cols": 3,
+      "n_lambda": 3,
+      "chirality": -1,
+      "y_star": 1.0543054256675402,
+      "active": true,
+      "self_conjugate": false
+    },
+    {
+      "block": [
+        3,
+        2,
+        1
+      ],
+      "rows": 3,
+      "cols": 3,
+      "n_lambda": 4,
+      "chirality": 1,
+      "y_star": 0.0,
+      "active": false,
+      "self_conjugate": true
+    },
+    {
+      "block": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "rows": 4,
+      "cols": 3,
+      "n_lambda": 6,
+      "chirality": 1,
+      "y_star": 0.0,
+      "active": false,
+      "self_conjugate": false
+    },
+    {
+      "block": [
+        2,
+        2,
+        2
+      ],
+      "rows": 3,
+      "cols": 2,
+      "n_lambda": 6,
+      "chirality": 1,
+      "y_star": 3.035160436276261,
+      "active": true,
+      "self_conjugate": false
+    },
+    {
+      "block": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "rows": 4,
+      "cols": 2,
+      "n_lambda": 7,
+      "chirality": -1,
+      "y_star": 0.0,
+      "active": false,
+      "self_conjugate": false
+    },
+    {
+      "block": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rows": 5,
+      "cols": 2,
+      "n_lambda": 10,
+      "chirality": 1,
+      "y_star": 29.706509833656146,
+      "active": true,
+      "self_conjugate": false
+    },
+    {
+      "block": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rows": 6,
+      "cols": 1,
+      "n_lambda": 15,
+      "chirality": -1,
+      "y_star": 0.0,
+      "active": false,
+      "self_conjugate": false
+    }
+  ],
+  "separating_rule_tests": {
+    "rows": {
+      "active_values": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "inactive_values": [
+        3,
+        4,
+        6
+      ],
+      "cleanly_separates": false
+    },
+    "cols": {
+      "active_values": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "inactive_values": [
+        1,
+        2,
+        3
+      ],
+      "cleanly_separates": false
+    },
+    "n_lambda": {
+      "active_values": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        10
+      ],
+      "inactive_values": [
+        4,
+        6,
+        7,
+        15
+      ],
+      "cleanly_separates": false
+    },
+    "chirality": {
+      "active_values": [
+        -1,
+        1
+      ],
+      "inactive_values": [
+        -1,
+        1
+      ],
+      "cleanly_separates": false
+    }
+  },
+  "pauli_endpoints_consistent": true,
+  "any_clean_block_rule": false,
+  "most_active_block": [
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "deuteron_lp_duality_gap": 43938.58869605584,
+  "connection_holds": false,
+  "verdict": "NEGATIVE — NO connection. (1) The LP-dual active set is Wedderburn BLOCKS (partitions λ⊢6); lever-2's edge-set is nucleon BONDS (p-n vs p-p/n-n) + Z·N occupancy — different objects. (2) No simple block statistic (rows/cols/n(λ)/chirality) separates active from inactive. (3) Only the Pauli endpoints agree ([6] active, [1⁶] inactive); the interior breaks any symmetry rule ([2,1,1,1,1] near-antisymmetric is the MOST active block, [3,2,1] balanced is inactive). (4) Moot — the raw LP-dual is degenerate (duality_gap=43938.58869605584), so shadow-price magnitudes are unreliable. The block-active-set is NOT lever-2's bond-occupancy answer; only the two Pauli endpoints, which lever-2 already has from PauliChannelBinding.lean, agree."
+}
