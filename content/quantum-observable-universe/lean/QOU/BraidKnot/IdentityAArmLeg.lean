@@ -142,6 +142,16 @@ theorem sum_arm_cells (μ : YoungDiagram) :
   rw [sum_cells_fiberwise]
   exact Finset.sum_congr rfl (fun i _ => sum_arm_row μ i)
 
+/-- **`Σ leg` in closed form**, for free from the conjugation bridge: `Σ leg` over `μ` is the
+arm-sum over `μ.transpose`, hence `Σ_i Σ_{k < μ.transpose.rowLen i} k` (`= Σ_j C(colLen_j, 2)`).
+A one-line corollary of `sum_arm_transpose_eq_sum_leg` + `sum_arm_cells` — the payoff of the
+transpose bridge. -/
+theorem sum_leg_cells (μ : YoungDiagram) :
+    (∑ c ∈ μ.cells, leg μ c)
+      = ∑ i ∈ Finset.range (μ.transpose.colLen 0),
+          ∑ k ∈ Finset.range (μ.transpose.rowLen i), (k : ℤ) := by
+  rw [← sum_arm_transpose_eq_sum_leg, sum_arm_cells]
+
 /-- **The heart (deferred, multi-session).** The six statistic sums combine to `Σ content² + n²`.
 This is the only remaining gap in `identityA`; the next-session plan uses the `transpose` API for
 the leg↔arm conjugation (`rowLen_transpose`/`colLen_transpose`) and `mem_iff_lt_rowLen` to range
