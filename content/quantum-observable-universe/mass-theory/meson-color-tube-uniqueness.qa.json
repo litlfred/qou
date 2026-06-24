@@ -1352,6 +1352,228 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-overclaim": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "meson-color-tube-uniqueness.md:1-5 + lean:108-129 — title/statement claims m_K²/m_π² 'factors UNIQUELY through T(2,3) and T(2,4) … with the q-integer indices FORCED by the proved α_shift formula'. But the Lean meson_ratio_via_alpha_shift (lean:122-129) proves only mK2_over_mpi2 q = qChar q (alphaShift 2 3) * qChar q (alphaShift 2 4) by rewriting 3 = alphaShift 2 3 (=3·(2−1)=3, rfl) into the UNCONSTRAINED class hypothesis MesonGMORFactorization.factors. No minimisation/uniqueness principle is proved; the α_shift 'derivation of the indices' is a numeric tautology, and the abstract qChar imposes no q-integer closed form.",
+        "rebuttal": "surviving — the .md itself (58-63) concedes 'why specifically the smallest non-trivial torus-knot pair carries the meson role … Lean target: a theorem deriving the index pair (3,4) from a minimisation principle' is OPEN. corpus-grep finds NO closure; the block's own meson-3x4-structural-origin.witness.json says 'Spin assignment post-hoc', and the cited audit docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md is titled 'meson m_K/m_π is fitted, not a derived character ratio'.",
+        "evidence": [
+          {
+            "text": "meson-color-tube-uniqueness.md:1-5"
+          },
+          {
+            "text": "meson-color-tube-uniqueness.lean:122-129"
+          },
+          {
+            "text": "computations/meson-3x4-structural-origin.witness.json"
+          },
+          {
+            "text": "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md:1"
+          }
+        ],
+        "severity": "major",
+        "result": "fail",
+        "field_hash": {
+          "md": "7959b6443742",
+          "ts": "477db9b4fde8",
+          "lean": "bd777034f37c"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "three mutually inconsistent m_K/m_π numbers: ts:18 authorNotes 'the 1098× m_K/m_π miss'; md:79 'err 23.44 ppb vs target 263.6 ppb'; fresh witness per-observable-100x-status.witness.json obs=m_K/m_pi gives err_ppb=28.01, miss_factor=0.1062, beats_100x=TRUE. None of {1098×, 23.44 ppb, 28.01 ppb} agree.",
+        "rebuttal": "partial — the witness scriptHash 4e679e710146 matches the live producer (FRESH) and reproduces a PASSING result (28.01 ppb < 263.6 ppb). The 1098× authorNotes is a pre-fix stale claim (q0-repin-staleness) contradicted by the now-passing witness; md's 23.44 ppb is simply wrong. Prose stale/wrong but NOT load-bearing for the Lean; the empirical core is sound.",
+        "evidence": [
+          {
+            "text": "meson-color-tube-uniqueness.ts:18"
+          },
+          {
+            "text": "meson-color-tube-uniqueness.md:79"
+          },
+          {
+            "text": "computations/per-observable-100x-status.witness.json"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "7959b6443742",
+          "ts": "477db9b4fde8",
+          "lean": "bd777034f37c"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "md:48-52 describes meson_ratio_via_alpha_shift as delivering the uniqueness 'staged via §3b-cond', and the title says 'uniqueness'. The Lean theorem is a pointwise factorisation projection, not a uniqueness statement; the only Subsingleton object (meson_ratio_subsingleton, lean:134-144) proves two evaluators sharing the SAME qChar + SAME class agree — a trivial congruence, not uniqueness of (3,4).",
+        "rebuttal": "partial — not contradictory at the proposition level (the §3b-cond staging is present: MesonGMORFactorization is the named unproved class), but the NAME 'uniqueness' + the subsingleton companion oversell: Subsingleton over {f // ∃ _ : Class f, True} is vacuous-adjacent (any two functions satisfying the same unconstrained axiom are equal by funext), proving nothing about why (3,4). Divergence in emphasis/labelling, not a false Lean statement.",
+        "evidence": [
+          {
+            "text": "meson-color-tube-uniqueness.lean:134-144"
+          },
+          {
+            "text": "meson-color-tube-uniqueness.md:48-52"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "7959b6443742",
+          "ts": "477db9b4fde8",
+          "lean": "bd777034f37c"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "C1 flagged sorry-free+proved+no-fitting+closed-form while Lean 'reportedly contains a sorry'; and upstream alpha-shift-torus-knot.lean proves alphaShift p k = k*(p-1) := by rfl, suggesting the chain rests on a tautology.",
+        "rebuttal": "rebutted — NO sorry anywhere in meson-color-tube-uniqueness.lean (tactic OR comment); the only 'sorry' token is the docstring word 'sorry-free' (lean:18). C1 = 4th-of-4 FALSE POSITIVE. Not a :True/∨True/def-disguised-True shadow-stub: lean.ref resolves SIBLING-FIRST to the real theorem at lean:122. The upstream rfl is honest (formula = its definition). Vacuity does not fire; the genuine defect is overclaim.",
+        "evidence": [
+          {
+            "text": "meson-color-tube-uniqueness.lean:54-144"
+          },
+          {
+            "text": "meson-color-tube-uniqueness.qa.json source_hashes.lean=bd777034f37c"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "7959b6443742",
+          "ts": "477db9b4fde8",
+          "lean": "bd777034f37c"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "the no-fitting label is strong; the (3,4) torus-knot index choice could be a hidden discrete DOF tuned to hit GMOR.",
+        "rebuttal": "rebutted — given (3,4), [3]_q·[4]_q is parameter-free (= q-CG fusion [2]_q+[4]_q+[6]_q, sibling meson-qcg-fusion-identity.lean:37-43 real field_simp;ring), and the α_em correction is an explicitly ACKNOWLEDGED CLASS-A anchor, not a hidden continuous DOF. The discrete (3,4) choice is the un-derived part — re-scoped to da-overclaim, not a hidden tuning parameter.",
+        "evidence": [
+          {
+            "text": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean:37-43"
+          },
+          {
+            "text": "computations/per-observable-100x-status.witness.json"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "7959b6443742",
+          "ts": "477db9b4fde8",
+          "lean": "bd777034f37c"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "the .md (75-78) cites dashboard Lean refs qou:QOU.BraidKnot.meson_qCG_3x4 + meson_EM_closed_form; could be mis-namespaced/non-existent.",
+        "rebuttal": "rebutted — both exist with the cited namespace QOU.BraidKnot: meson_qCG_3x4 at meson-qcg-fusion-identity.lean:37, meson_EM_closed_form at meson-em-sinh-closed-form.lean:38. jones1987 (references.ts:906), wenzl1988 (:3443) resolve. No misuse.",
+        "evidence": [
+          {
+            "text": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean:37"
+          },
+          {
+            "text": "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.lean:38"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "7959b6443742",
+          "ts": "477db9b4fde8",
+          "lean": "bd777034f37c"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "open-objection",
+        "referee_argument": "Strip the labels and the proposition titled 'meson color-tube UNIQUENESS' proves no uniqueness. Its load-bearing Lean theorem rewrites the numeric tautology 3 = 3·(2−1) into an unconstrained class hypothesis and hands it back; the abstract qChar imposes no q-integer value; and the actual 'why the indices are (3,4)' minimisation principle is conceded-open in the block's own .md and corpus-empty. Worse, the block's own structural-origin witness admits the spin/index assignment is 'post-hoc', and the audit it cites is literally titled 'meson m_K/m_π is fitted, not a derived character ratio'. The C1 sorry-flag is a clean false positive (no sorry exists, 4th of 4), and the empirical value actually passes — but the title's strongest word, 'uniqueness… forced', is an overclaim its own materials refute.",
+        "result": "fail",
+        "field_hash": {
+          "md": "7959b6443742",
+          "ts": "477db9b4fde8",
+          "lean": "bd777034f37c"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"
