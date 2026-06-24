@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.schur_weyl_mass_decomposition — `tr_M(𝒜) = Σ_λ (s_λ/H_q(λ)) · χ^λ(𝒜)`
 
@@ -43,11 +45,11 @@ class SchurWeylMassContext (Z N : ℕ) where
   /-- Markov trace `tr_M(𝒜)`. -/
   trM_atomic : ℝ
   /-- The hook product is non-zero (generic `q`). -/
-  qHookProduct_ne_zero : ∀ λ, qHookProduct λ ≠ 0
+  qHookProduct_ne_zero : ∀ lam, qHookProduct lam ≠ 0
   /-- Manuscript Schur–Weyl decomposition identity. -/
   claim_schur_weyl_sum :
     trM_atomic = partitions.sum
-      fun λ => schurFunction λ * chi_atomic λ / qHookProduct λ
+      fun lam => schurFunction lam * chi_atomic lam / qHookProduct lam
 
 /-- **Schur–Weyl decomposition of the atomic Markov trace**
     ([`prop:schur-weyl-mass-decomposition`]).
@@ -58,7 +60,7 @@ def schur_weyl_mass_decomposition
     {Z N : ℕ} [ctx : SchurWeylMassContext Z N] :
     ctx.trM_atomic
       = ctx.partitions.sum
-          fun λ => ctx.schurFunction λ * ctx.chi_atomic λ / ctx.qHookProduct λ :=
+          fun lam => ctx.schurFunction lam * ctx.chi_atomic lam / ctx.qHookProduct lam :=
   ctx.claim_schur_weyl_sum
 
 end QOU.BraidKnot
