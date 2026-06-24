@@ -1,0 +1,138 @@
+{
+  "description": "Sub-leading (h\u2074) coefficient D(n) of the W_\u03bb defect 1\u2212Z(n)=C(n)h\u00b2+D(n)h\u2074+O(h\u2076), n=2..10. Tests whether D(n) is a clean polynomial in n (a second q\u2080-free falsifiable target) via Richardson extraction + finite-difference polynomiality test. No fit.",
+  "dps": 120,
+  "h_convention": "h = q - 1/q; D(n) = h^4 Taylor coeff of 1-Z(n) about h=0 via mp.taylor (method-validated against proved-exact C(n), err 0.0; tight 1e-25 rational tol)",
+  "leading_C": "C(n) = -n(n-1)(2n-13)/144 (proved+cross-checked, companion probe)",
+  "rows": [
+    {
+      "n": 2,
+      "D_taylor": "-0.0234375",
+      "D_rational": "-3/128",
+      "C_taylor_vs_exact_err": "0.0"
+    },
+    {
+      "n": 3,
+      "D_taylor": "-0.0998263888888888888888889",
+      "D_rational": "-115/1152",
+      "C_taylor_vs_exact_err": "0.0"
+    },
+    {
+      "n": 4,
+      "D_taylor": "-0.201388888888888888888889",
+      "D_rational": "-29/144",
+      "C_taylor_vs_exact_err": "0.0"
+    },
+    {
+      "n": 5,
+      "D_taylor": "-0.234722222222222222222222",
+      "D_rational": "-169/720",
+      "C_taylor_vs_exact_err": "0.0"
+    },
+    {
+      "n": 6,
+      "D_taylor": "-0.101909722222222222222222",
+      "D_rational": "-587/5760",
+      "C_taylor_vs_exact_err": "0.0"
+    },
+    {
+      "n": 7,
+      "D_taylor": "0.168923611111111111111111",
+      "D_rational": "973/5760",
+      "C_taylor_vs_exact_err": "0.0"
+    },
+    {
+      "n": 8,
+      "D_taylor": "0.223611111111111111111111",
+      "D_rational": "161/720",
+      "C_taylor_vs_exact_err": "0.0"
+    },
+    {
+      "n": 9,
+      "D_taylor": "-0.8875",
+      "D_rational": "-71/80",
+      "C_taylor_vs_exact_err": "0.0"
+    },
+    {
+      "n": 10,
+      "D_taylor": "-5.0484375",
+      "D_rational": "-3231/640",
+      "C_taylor_vs_exact_err": "0.0"
+    }
+  ],
+  "method_validation": {
+    "check": "h^2 Taylor coeff vs proved-exact C(n)=-n(n-1)(2n-13)/144",
+    "max_abs_err": "0.0",
+    "pass_tol_1e-25": true
+  },
+  "finite_differences": [
+    {
+      "order": 1,
+      "spread": "4.43177",
+      "constant": false
+    },
+    {
+      "order": 2,
+      "spread": "3.21597",
+      "constant": false
+    },
+    {
+      "order": 3,
+      "spread": "1.98194",
+      "constant": false
+    },
+    {
+      "order": 4,
+      "spread": "0.938889",
+      "constant": false
+    },
+    {
+      "order": 5,
+      "spread": "0.208333",
+      "constant": false
+    },
+    {
+      "order": 6,
+      "spread": "1.54904e-120",
+      "constant": true
+    }
+  ],
+  "polynomial_degree": 6,
+  "closed_form": {
+    "denominator": 1036800,
+    "int_coeffs_low_to_high": [
+      0,
+      828,
+      -625,
+      5070,
+      -6745,
+      1572,
+      -100
+    ],
+    "rational_coeffs_low_to_high": [
+      "0/1",
+      "23/28800",
+      "-25/41472",
+      "169/34560",
+      "-1349/207360",
+      "131/86400",
+      "-1/10368"
+    ],
+    "per_n_rationals": {
+      "2": "-3/128",
+      "3": "-115/1152",
+      "4": "-29/144",
+      "5": "-169/720",
+      "6": "-587/5760",
+      "7": "973/5760",
+      "8": "161/720",
+      "9": "-71/80",
+      "10": "-3231/640"
+    },
+    "held_out_n": [
+      9,
+      10
+    ],
+    "held_out_validated": true
+  },
+  "verdict": "D(n) IS a clean polynomial in n of degree 6 (constant \u0394^6). The W_\u03bb defect's h\u2074 coefficient is therefore a SECOND exact, q\u2080-free falsifiable target: the geometric index's 4th heat-kernel coefficient must equal D(n). Combined with the leading cubic C(n), the keystone gate now carries two exact polynomial targets per n, not one. No fit \u2014 D(n) extracted by high-precision Taylor expansion (method-validated: the h\u00b2 coeff reproduces the proved-exact C(n) to 0.0), degree proven by finite differences (\u0394\u2076 constant to ~1e-120), closed form by exact interpolation + held-out validation. The exact closed form is D(n) = (828\u00b7n^1 + -625\u00b7n^2 + 5070\u00b7n^3 + -6745\u00b7n^4 + 1572\u00b7n^5 + -100\u00b7n^6)/1036800, interpolated from n=2..8 and VALIDATED on held-out n=[9, 10]."
+}
