@@ -592,6 +592,41 @@ theorem per_i_min_split (a : ℕ → ℕ) (h : ∀ i k, i ≤ k → a k ≤ a i)
     intro k hk
     exact min_eq_right (h i k (le_of_lt (Finset.mem_Ico.mp hk).1))
 
+/-- `j`-weighted `<`-indicator sum: `Σ_{j<a}(if j<b then j else 0) = Σ_{j<min a b} j`. -/
+theorem sum_ite_lt_id (a b : ℕ) :
+    ∑ j ∈ Finset.range a, (if j < b then j else 0) = ∑ j ∈ Finset.range (min a b), j := by
+  induction a with
+  | zero => simp
+  | succ n ih =>
+    rw [Finset.sum_range_succ, ih]
+    by_cases h : n < b
+    · have hm : min (n + 1) b = min n b + 1 := by omega
+      have hn : min n b = n := by omega
+      rw [hm, Finset.sum_range_succ, hn]; simp [h]
+    · have hm : min (n + 1) b = min n b := by omega
+      rw [hm]; simp [h]
+
+/-- `Σ_c c·colLen(c)² = Σ_{i,k} Σ_{j<min(λ_i,λ_k)} j` (`j`-weighted analogue of K2). -/
+theorem sum_j_colLen_sq_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    ∑ c ∈ Finset.range (l.headD 0), c * (colLen l c) ^ 2
+      = ∑ i ∈ Finset.range l.length, ∑ k ∈ Finset.range l.length,
+          ∑ j ∈ Finset.range (min (l.getD i 0) (l.getD k 0)), j := by
+  simp_rw [pow_two, colLen_eq_indicator_sum l, Finset.sum_mul_sum, Finset.mul_sum]
+  rw [Finset.sum_comm]
+  apply Finset.sum_congr rfl; intro i _
+  rw [Finset.sum_comm]
+  apply Finset.sum_congr rfl; intro k _
+  simp_rw [indicator_mul, mul_ite, mul_one, mul_zero]
+  rw [sum_ite_lt_id, min_eq_right (le_trans (min_le_left _ _) (getD_le_headD l hl i))]
+
+/-- **`j`-weighted K2 as a row form (sorry-free).** `Σ_j j·colLen(j)² = Σ_i (2i+1)·Σ_{j<λ_i} j`. -/
+theorem sum_j_colLen_sq_row_form (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    ∑ c ∈ Finset.range (l.headD 0), c * (colLen l c) ^ 2
+      = ∑ i ∈ Finset.range l.length, (2 * i + 1) * (∑ j ∈ Finset.range (l.getD i 0), j) := by
+  rw [sum_j_colLen_sq_eq l hl]
+  exact antitone_f_min_sum (fun i => l.getD i 0) (fun m => ∑ j ∈ Finset.range m, j)
+    (fun i k hik => getD_antitone l hl hik) l.length
+
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
 (`identityA_verified_le9`) and exhaustively in Python for `n ≤ 22`.
