@@ -1,11 +1,17 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-24T04:08:58.806400+00:00",
-  "commitSha": "4347614bfc98a8f170ebc172c92148257b7e28a2",
+  "computedAt": "2026-06-24T04:18:32.383866+00:00",
+  "commitSha": "db820b522903b01865f0a0ca672cf9ab32f904df",
   "assertions": [
     {
       "name": "q3_is_exact_balancing",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "li2q_tower_wrong_scale_for_correction",
       "computed": true,
       "expected": true,
       "passed": true
@@ -24,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 25,
   "computation": "li2q-fbor-expansion-probe",
   "scriptFile": "li2q_fbor_expansion_probe.py",
-  "scriptHash": "22d0c4d70cf6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "489a68ace842",
+  "scriptCommitSha": "74394ac441fd87a73f33dcf6754a87a32f22a558",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -77,6 +83,15 @@
       "a_6": "-0.0260902324947668682",
       "a_7": "0.0187345222686398554",
       "a_8": "-0.0139732093918851465"
+    },
+    "step5_scale_check": {
+      "proton_per_gen_full_vols": [
+        "0.9890073159508121",
+        "0.9710701586540191"
+      ],
+      "sum_neg_li2q_tower": "1.61830533031129964356350982413",
+      "habiro_ratio_lead_46_u4": "0.000000242076496551670299884480906613",
+      "verdict": "Li_2^q brane-tower (terms 2/3) is O(1) on the O(1) proton volumes — WRONG scale for the O(1e-7) habiro_ratio correction. The +242 ppb closer is the term-6 Habiro residue tail; its {46,4,29} are a CODATA-anchored near-match with no derivation trail. Deriving them is the same open Habiro-element problem as the Q_beta c_k ladder (beans kehn / s5bb keystone)."
     }
   }
 }
