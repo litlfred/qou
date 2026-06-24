@@ -52,7 +52,7 @@ Reidemeister II moves (crossing exchanges with neighbours)
 without changing the total linking number.
 
 **Strategy.**
-The proof translates the phenomenological properties of metals into structural conditions on the sub-Hopf links. We correlate macroscopic conductivity with Reidemeister-II mobility of outermost knots, and formalize shared bonding via merged linking sites between residual sub-links. The energetic inequalities naturally follow from knot-theoretic crossing energies, culminating in the $\lambda(R)$ index.
+The proof translates the phenomenological properties of metals into structural conditions on the sub-Hopf links: macroscopic conductivity is correlated with Reidemeister-II mobility of outermost knots, and shared bonding is formalized via merged linking sites between residual sub-links. The energetic inequalities follow from knot-theoretic crossing energies, culminating in the $\lambda(R)$ index.
 
 **Classification by residual size.**
 

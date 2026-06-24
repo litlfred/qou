@@ -46,7 +46,7 @@ transcendental or symbolic-q machinery required.
 
 All three closed by `norm_num` after expanding the closed-form
 expression. The Lean theorems live as `Rat` equalities; they extend
-trivially to any field containing $\mathbb{Q}$.
+to any field containing $\mathbb{Q}$.
 
 ## q-usage discipline
 
