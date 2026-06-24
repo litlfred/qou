@@ -105,7 +105,7 @@ emerged that **sharpen the conjecture and correct the naive test**:
    coefficients are pure numbers).  The diagonal fit
    $T_{k,k} = \kappa_{2k}/\alpha_{2k}$ fails at $k = 3$ (since
    $\alpha_6 = 0$), but a **non-diagonal** lower-triangular fit still
-   trivially exists — row $k$ reads
+   exists — row $k$ reads
    $\kappa_{2k} = T_{k,1}\alpha_2 + T_{k,2}\alpha_4$ (one equation, two
    free unknowns, since the higher $\alpha$ vanish), always solvable.
    Hence hypothesis (1) "$\exists$ lower-triangular $T$" is *trivially*
