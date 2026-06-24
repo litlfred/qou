@@ -73,6 +73,40 @@ question for #2524 is narrowed: *does the mass/binding consumer use `W_λ` as a
 same-`n` weight (→ C1 is exposition) or absolutely/cross-`n` (→ C1 is a `Z(n)`
 prediction)?* That is now a definite, checkable question rather than an open fork.
 
+## Resolution of the narrowed question (consumer trace, 2026-06-24)
+
+Tracing the actual consumer settles it:
+
+1. **The lepton-generation `W_λ` consumer is intrinsically same-`n`.** The
+   keystone assigns **every** generation to a partition of **`n=5`** — electron
+   `(3,1,1)`, muon `(3,2)`
+   ([`2026-06-22-keystone-schurweyl-su2-rowcount.md`](2026-06-22-keystone-schurweyl-su2-rowcount.md)).
+   The Schur–Weyl row-count *factorises* them (muon = ≤2-row spin sector / `S³/2I`
+   WRT; electron = ≥3-row colour/SU(3) sector) but **both still live at `n=5`**,
+   anchored on `m_e` (CAL-1). So the generation split is a comparison **within one
+   block** → by `ratio_invariant` the `D²` vs `[n]_q!` choice **cancels exactly**.
+   **C1 is exposition for the entire lepton generation sector** — it changes no
+   `m_μ/m_e` and cannot be falsified there.
+
+2. **The only cross-`n` consumer — the binding/isotope tower
+   `B(K)=m_e·Σ_λ y_λ χ^λ Δ_λ` over `λ⊢3A`** (`n=6,9,12` for D/³He/⁴He) — uses the
+   **Jones–Markov `y_λ`** (`wedderburn_jones_markov.py`), a Markov-trace,
+   parameter-dependent weight, **not** the keystone Plancherel `W_λ=d_q²/[n]_q!`.
+   So the C1 fork *as posed* (geometric `d_q²/D²` vs Plancherel `d_q²/[n]_q!`)
+   **does not apply** to production binding either: there is no `d_q²/[n]_q!`
+   factor in that tower to renormalize.
+
+**Net verdict.** The geometric `d_q²/D²` reframing (#2524) is **exposition
+everywhere it currently bears**: a no-op for the lepton generation ratio (same-`n`,
+proven), and inapplicable to the binding tower (which uses Markov `y_λ`, a
+different object). Its genuine value is the **index *mechanism*** (Beasley–Witten
+localization supplying *why* `W_λ` is a Plancherel-type weight + the `D²`
+normalizer), **not** a new or falsifiable number. This is the concrete,
+now-confirmed form of the tautology risk the s5bb scoping flagged: a real
+structural reduction, observationally invisible. A C1-driven `Z(n)` prediction
+would require a *future* consumer that uses the Plancherel `W_λ` itself
+**absolutely or across blocks of different `n`** — none exists today.
+
 No fit; nothing wired; `c_k`/`Δ_λ` cal-anchored.
 
 ## Cross-references
