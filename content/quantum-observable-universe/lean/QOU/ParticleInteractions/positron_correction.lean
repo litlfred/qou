@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.ParticleInteractions.positron_correction
 
@@ -24,11 +26,11 @@ class PositronCorrectionContext where
   /-- The Q-value `Q : ℝ`. -/
   Q : ℝ
   /-- The character-sum-derived contribution `Σ_char : ℝ`. -/
-  Σ_char : ℝ
+  «Σ_char» : ℝ
   /-- Manuscript sub-claim (i) — corrected Q-value identity:
       `Q = Σ_char · m_e + m_e` (the `+m_e` is the positron action). -/
   claim_i_corrected_Q :
-    Q = Σ_char * m_e + m_e
+    Q = «Σ_char» * m_e + m_e
   /-- Predicate: the current regime is a pair-creation regime. -/
   is_pair_creation : Prop
   /-- The applied positron correction (`m_e` if pair-creation, else 0). -/
@@ -68,9 +70,9 @@ The positron correction is needed in two regimes
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/positron-correction.ts
 theorem positron_correction [ctx : PositronCorrectionContext] :
-    ctx.Q = ctx.Σ_char * ctx.m_e + ctx.m_e ∧
+    ctx.Q = ctx.«Σ_char» * ctx.m_e + ctx.m_e ∧
     (ctx.is_pair_creation → ctx.applied_correction = ctx.m_e) ∧
     (¬ctx.is_pair_creation → ctx.applied_correction = 0) :=
-  sorry
+  ⟨ctx.claim_i_corrected_Q, ctx.claim_ii_regime_applicability.1, ctx.claim_ii_regime_applicability.2⟩
 
 end QOU.ParticleInteractions
