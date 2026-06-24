@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-24T17:36:36.135277+00:00",
-  "commitSha": "622fcd41310a57ef3015d6c9d4279e538e049e9d",
+  "computedAt": "2026-06-24T17:53:57.504060+00:00",
+  "commitSha": "8fe4fe5e84ca49462f3d48713d31cb3459918cae",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2629,6 +2629,7 @@
         "keystone-reeb-casimir-chirality-step3.witness.json",
         "keystone-schurweyl-dual-sides.witness.json",
         "keystone-schurweyl-su2-rowcount.witness.json",
+        "keystone-step1-gate-wrt-vs-wlambda.witness.json",
         "keystone-wrt-color-schurweyl.witness.json",
         "kite-tail-reconciliation.witness.json",
         "kite_tail_reconciliation.witness.json",
@@ -2678,6 +2679,7 @@
         "m-p-substrate-identity-50dps.witness.json",
         "m-qclt-approx.witness.json",
         "m-tau-knot-prediction.witness.json",
+        "magic-a-truncation-overclaim-correction.witness.json",
         "markov-free-energy-qvalues.witness.json",
         "mass-formula-6term.witness.json",
         "mass-from-q-symbolic.witness.json",
