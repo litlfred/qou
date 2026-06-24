@@ -49,6 +49,30 @@ script uses `vol_density_*` for a mass/normalization baseline. Each
 candidate must be checked individually; a global-λ_A *import* is
 necessary but not sufficient for the verdict to be a density artifact.
 
+## Step 2 verdicts (per-script re-examination)
+
+| Script / refutation | λ_A load-bearing for the verdict? | Verdict |
+|---|---|---|
+| `rho_k_h3a_co_casimir.py` (co-Casimir Δ_λ=1/dim_q, #602) | **NO** | **NOT an artifact — refutation robust** |
+
+### co-Casimir (#602) — robust, not a density artifact
+
+Actual run (2026-06-24): `Σ y_λ χ^λ Δ_λ = +0.145` vs `target = −4.353`
+→ **wrong sign**, ~30× too small (`rescaler = −30.03`); residual −2.30 MeV
+(≈ −B_D). The refutation verdict lives in `Σ y_λ χ^λ Δ_λ`, which is built
+from **per-partition Hecke data** (`y_λ`, `χ^λ`, `Δ_λ = 1/dim_q`) — all
+q-deformation / partition objects, **independent of the mass density**.
+The global λ_A enters only the *constituent* baseline `m_p+m_n` (and the
+script already uses the measured-equivalent ≈1877.84, not the λ_A-inflated
+1932). Swapping λ_A → per-knot `tr_M` shifts the mass baseline but does
+**not** change the sign or 30× magnitude of the closure failure. So the
+co-Casimir "wrong sign" verdict is **robust** to the density choice.
+
+**Implication:** the owner's artifact hypothesis does **not** hold for the
+co-Casimir Δ_λ refutation. It may still hold for scripts where the density
+enters the *closure target* itself (the `gap_a4` probes) — those remain to
+be checked individually.
+
 ## Next (under x5az)
 
 1. Re-run `rho_k_h3a_co_casimir.py` with `vol_density_per_block` (per-knot
