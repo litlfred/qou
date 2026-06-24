@@ -51,7 +51,7 @@ def sumSqHooks (l : List ℕ) : ℤ :=
 /-- `Σ_{cells} c(c)²` with content `c(i,j) = j − i`. -/
 def sumSqContents (l : List ℕ) : ℤ :=
   ((List.range l.length).map fun i =>
-    ((List.range (l.getD i 0)).map fun j => ((j : ℤ) - (i : ℤ)) ^ 2).sum).sum
+    ((List.range (l.getD i 0)).map fun (j : ℕ) => ((j : ℤ) - (i : ℤ)) ^ 2).sum).sum
 
 /-- Size `n = Σ λ_i`. -/
 def sz (l : List ℕ) : ℕ := l.sum
@@ -198,6 +198,97 @@ theorem sumSqHooks_armleg (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   refine congrArg List.sum (List.map_congr_left ?_)
   intro j hj; rw [List.mem_range] at hj
   rw [hook_cast l hl hi hj]
+
+/-! ### Young-diagram cell-sum framework + reduction lemma (E) (sorry-free)
+
+To do the arm/leg algebra cleanly, move the nested `List` sums to `Finset` double
+sums (`cellSum`).  Linearity (`cellSum_add`, `cellSum_const_mul`) then splits the
+expanded hook square into the six cell-sums of reduction lemma **(E)** (`hookE`). -/
+
+/-- list-map-sum over `List.range` = `Finset.range` sum. -/
+theorem list_sum_range (n : ℕ) (f : ℕ → ℤ) :
+    ((List.range n).map f).sum = ∑ i ∈ Finset.range n, f i := by
+  induction n with
+  | zero => simp
+  | succ m ih =>
+    rw [List.range_succ, List.map_append, List.sum_append, Finset.sum_range_succ, ih]; simp
+
+/-- Young-diagram cell sum `∑_{i<len} ∑_{j<λ_i} f i j`. -/
+def cellSum (l : List ℕ) (f : ℕ → ℕ → ℤ) : ℤ :=
+  ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), f i j
+
+theorem cellSum_add (l) (f g : ℕ → ℕ → ℤ) :
+    cellSum l (fun i j => f i j + g i j) = cellSum l f + cellSum l g := by
+  unfold cellSum
+  rw [← Finset.sum_add_distrib]
+  exact Finset.sum_congr rfl (fun i _ => by rw [← Finset.sum_add_distrib])
+
+theorem cellSum_const_mul (l) (c : ℤ) (f : ℕ → ℕ → ℤ) :
+    cellSum l (fun i j => c * f i j) = c * cellSum l f := by
+  unfold cellSum
+  rw [Finset.mul_sum]
+  exact Finset.sum_congr rfl (fun i _ => by rw [Finset.mul_sum])
+
+theorem cellSum_congr (l) (f g : ℕ → ℕ → ℤ) (h : ∀ i ∈ Finset.range l.length,
+    ∀ j ∈ Finset.range (l.getD i 0), f i j = g i j) : cellSum l f = cellSum l g := by
+  unfold cellSum
+  exact Finset.sum_congr rfl (fun i hi => Finset.sum_congr rfl (fun j hj => h i hi j hj))
+
+/-- General nested list→Finset bridge for a Young-diagram double sum. -/
+theorem nested_bridge (l : List ℕ) (g : ℕ → ℕ → ℤ) :
+    ((List.range l.length).map fun i =>
+      ((List.range (l.getD i 0)).map (fun j => g i j)).sum).sum = cellSum l g := by
+  unfold cellSum
+  rw [list_sum_range]
+  exact Finset.sum_congr rfl (fun i _ => list_sum_range _ (g i))
+
+theorem sumSqContents_cellSum (l : List ℕ) :
+    sumSqContents l = cellSum l (fun i j => ((j : ℤ) - (i : ℤ)) ^ 2) := by
+  unfold sumSqContents; exact nested_bridge l _
+
+/-- Number of cells `= sz l`. -/
+theorem cellSum_one (l : List ℕ) : cellSum l (fun _ _ => 1) = (sz l : ℤ) := by
+  unfold cellSum sz
+  simp only [Finset.sum_const, Finset.card_range, nsmul_eq_mul, mul_one]
+  induction l with
+  | nil => simp
+  | cons a t ih =>
+    rw [List.length_cons, Finset.sum_range_succ']
+    simp only [List.getD_cons_succ]
+    rw [ih]
+    simp only [List.getD_cons_zero, List.sum_cons, Nat.cast_add]; ring
+
+/-- Six-term square expansion of `cellSum (A+B+1)²` by linearity. -/
+theorem cellSum_expand (l : List ℕ) (A B : ℕ → ℕ → ℤ) :
+    cellSum l (fun i j => (A i j + B i j + 1) ^ 2)
+      = cellSum l (fun i j => A i j ^ 2) + cellSum l (fun i j => B i j ^ 2)
+        + cellSum l (fun _ _ => 1) + 2 * cellSum l (fun i j => A i j * B i j)
+        + 2 * cellSum l A + 2 * cellSum l B := by
+  rw [cellSum_congr l (fun i j => (A i j + B i j + 1) ^ 2)
+      (fun i j => A i j ^ 2 + B i j ^ 2 + 1 + 2 * (A i j * B i j) + 2 * A i j + 2 * B i j)
+      (by intro i _ j _; ring)]
+  rw [cellSum_add, cellSum_add, cellSum_add, cellSum_add, cellSum_add,
+      cellSum_const_mul, cellSum_const_mul, cellSum_const_mul]
+
+theorem sumSqHooks_cellSum (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    sumSqHooks l = cellSum l (fun i j =>
+      (((l.getD i 0 : ℤ) - 1 - j) + ((colLen l j : ℤ) - 1 - i) + 1) ^ 2) := by
+  rw [sumSqHooks_armleg l hl]; exact nested_bridge l _
+
+/-- **Reduction lemma (E) (sorry-free).** The hook-square expansion: `sumSqHooks`
+equals `a2 + l2 + n + 2·al + 2·a1 + 2·l1` (matching `identityA_algebra`'s `hHook`),
+with `arm = λ_i−1−j`, `leg = colLen_j−1−i`, and the constant cell-sum `= sz l`. -/
+theorem hookE (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    sumSqHooks l
+      = cellSum l (fun i j => ((l.getD i 0 : ℤ) - 1 - j) ^ 2)
+        + cellSum l (fun i j => ((colLen l j : ℤ) - 1 - i) ^ 2)
+        + cellSum l (fun _ _ => 1)
+        + 2 * cellSum l (fun i j => ((l.getD i 0 : ℤ) - 1 - j) * ((colLen l j : ℤ) - 1 - i))
+        + 2 * cellSum l (fun i j => (l.getD i 0 : ℤ) - 1 - j)
+        + 2 * cellSum l (fun i j => (colLen l j : ℤ) - 1 - i) := by
+  rw [sumSqHooks_cellSum l hl]
+  exact cellSum_expand l (fun i j => (l.getD i 0 : ℤ) - 1 - j)
+    (fun i j => (colLen l j : ℤ) - 1 - i)
 
 /-- **Identity (A), general (carried — residual is six finite, formula-free facts).**
 For a weakly-decreasing partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.
