@@ -42,7 +42,11 @@ from collections import defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-REPO = HERE.parent.parent
+# Repo root = parent of computations/ (this script lives in computations/).
+# Was HERE.parent.parent, which overshot to the repo's *parent* dir after the
+# Phase-6 subdir move — making the scan glob (REPO / WGLOB) hit a non-existent
+# path and silently report "0 stale". Fixed 2026-06-24.
+REPO = HERE.parent
 for p in (str(HERE), str(REPO / "tools" / "qou-substrate" / "python")):
     if p not in sys.path:
         sys.path.insert(0, p)

@@ -98,12 +98,28 @@ Q_β's cal-anchored rungs are excluded. That is a `per_observable_100x_status.py
 count-semantics change — **deferred to author decision** (it alters the headline
 derived count).
 
-**Witness churn (flagged, not swept):** the 0.0005-ppb q₀ shift leaves **408**
-`*.witness.json` that pin q₀ to > 11 digits stale at the 12th digit. Functionally
-negligible (far below every L2 target); a mechanical re-pin sweep should follow as a
-separate PR. Regenerated here: `m-p-substrate-identity-50dps.witness.json` (+
-`per-observable-100x-status` metadata).
+**Witness churn (Task 3 — characterized + sweep tool fixed; bulk deferred).** The
+0.0005-ppb q₀ shift staleness-marks the q₀-pinning witnesses corpus-wide. After the
+tool fix below, `q0_repin_regen_batch.py --plan` reports **614 stale** at the
+`computations/` root (**389** re-runnable producers + **77** manual/no-scriptFile);
+a recursive scan finds **~1034** including subdirs — all stale only at the **12th
+digit** (0.0005 ppb, far below every target; no assertion regresses). This is a
+**dedicated post-merge batch**, not foldable into this PR: the tool commits + pushes
+**per-producer** on its own branch `claude/q0-repin-regen-batch-*`, with long-timeout
+passes for heavy-atom producers (isotope tables, Habiro-coefficient, SDP assemblies).
+It should run **after 1b′ merges** (so it pins to the final q₀).
 
-**Cross-PR:** `m_p_substrate_identity_50dps.py` + its witness are also edited by
-**#2723** (beautiful-wright) → direct conflict; coordinated on #2723 (whoever merges
-second rebases — the habiro_ratio edit is a localized one-liner).
+**Sweep-tool bug fixed here.** `q0_repin_regen_batch.py` was silently reporting
+`0 stale` — its `REPO = HERE.parent.parent` overshot the repo root after the Phase-6
+subdir move, so the scan glob (`REPO / "computations/*.witness.json"`) hit a
+non-existent path. Corrected to `HERE.parent`. (A second limitation — the
+non-recursive glob misses subdir witnesses — is noted for the sweep operator.)
+Without this fix the post-merge sweep would have silently done nothing.
+
+Regenerated in this PR: `m-p-substrate-identity-50dps.witness.json`,
+`per-observable-100x-status.witness.json`.
+
+**Cross-PR:** `m_p_substrate_identity_50dps.py` is also edited by **#2723**
+(beautiful-wright, Kashiwara-b² neutron). #2723 **has since merged to main**; the 1b′
+edit was re-applied cleanly on its rewritten producer during the +66 rebase
+(habiro_ratio auto-merged to `1 + 46.03·u⁴`; m_p anchors, m_n unaffected).
