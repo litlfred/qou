@@ -23,7 +23,7 @@ $\mathfrak{Q}_\beta$ (neutron $\beta$-decay, $\mathfrak{D}_\beta$) is **derived*
 from CAL-1 + CAL-2, **not** a calibration — the bar-odd $\sinh$ partner
 of the bar-even $\cosh$ meson scale $m_\pi$. In the
 **Physical-Observations** layer $q_0$ may be numerically anchored on the
-more-precise proton ratio $m_p/m_\mathfrak{e}$ (re-pin 2026-05-28; the
+more-precise proton ratio $m_p/m_\mathfrak{e}$ (the
 muon ratio is then a $9.5\sigma$ cross-check), a precision substitution
 within the same $H^1$ datum — not a fourth calibration.
 

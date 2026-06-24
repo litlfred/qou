@@ -60,7 +60,7 @@ gap and identifies the missing categorical input
 
 The vanishing $S(1) = 0$ is the *direct-algebraic* witness. An
 *operator-theoretic* witness arrives from the SDP strict-complementarity
-analysis of [PR #1752](https://github.com/litlfred/qou/pull/1752):
+analysis:
 
 | Route | Diagnostic | Numerics |
 |---|---|---|
