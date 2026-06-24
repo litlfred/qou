@@ -74,3 +74,33 @@ residual. Their "PLACEHOLDER" marker should become a settled archival note
    sites); §B/§E `pawlowski-leitner` cluster.
 3. **Before any DOI swap reaches `main`:** resolve the DOIs directly (allowlist
    `doi.org`) — current confidence is link-title level only.
+
+## Resolution applied (2026-06-24, author-authorized A+B+C)
+
+Author selected Groups A + B and supplied arXiv math/0409565 for the C cluster.
+
+- **A (Kashiwara):** `kashiwara1990-duke` → Duke MJ 71(3) 1993 839–858, DOI
+  `10.1215/S0012-7094-93-07131-1` (references.ts + 3 inline `.lean` DOIs +
+  bib-qa note synced). `kashiwara1990-cmp2` → Duke MJ 73(2) 1994 383–413, DOI
+  `10.1215/S0012-7094-94-07317-1` (references.ts + bib-qa note; no `.lean` carried
+  the wrong DOI). Ids retained for cross-ref stability.
+- **B (Marsh):** `carter-leal-saliola-2000` → `marsh2000` (single-author
+  R. J. Marsh); cite key updated in crystal-graph-realization.ts + bib-qa id.
+- **C (math/0409565):** corpus + local PDF (uploads/0409565v2.pdf) confirm
+  math/0409565 = **"Unital Gröbner Bases over Arbitrary Commutative Ground Rings"**,
+  Leitner & **Robert** Pawloski. Fixed `leitnerpawloski2004`'s fabricated title
+  ("On the morphisms of non-commutative formal groups") + given-name. The PDF has
+  NO inner products, so `pawlowski-leitner-rep` (inner-product work) is confirmed a
+  **separate, still-unidentified** source (kept flagged — not math/0409565).
+
+**Still open (9 markers, need off-sandbox resolution or author input):**
+wenzl1988b (DOI = a regulator paper, correct Wenzl DOI unknown), wenzl1988c
+(DOI unresolved), drinfeld1985 / habiro2000 (not re-verified this session),
+james1984representation (1981-AW-original vs CUP-reprint edition), the
+pre-§F section header comment, and pawlowski-leitner-rep (unidentified source).
+
+**Follow-up (cross-paper, deferred — flagged in entry notes):** 6 inline `.lean`
+`-- Ref:` comments still carry the old fabricated leitnerpawloski2004 title; and
+pawlowski-leitner-inner-product.lean + RepresentationTheory.lean mis-cite
+leitnerpawloski2004 for inner-product content that belongs to pawlowski-leitner-rep
+(an author-decision rewire, not silently changed).
