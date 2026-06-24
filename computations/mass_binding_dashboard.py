@@ -236,38 +236,27 @@ def _print_legend() -> None:
     print("""
 **Shared** — `iso` = isotope label · `A` = mass number A = Z+N (Z protons, N neutrons).
 
-**Table 1 — Binding B (MeV)**
+**Table 1 — Binding B + error (MeV)** (values and error in one table)
 
 | Header | Meaning |
 |---|---|
 | `B_AME` | Total nuclear binding energy from AME2020 (MeV) — the experimental target |
-| `σ_exp (MeV)` | AME2020 experimental 1σ on the total binding (scientific notation; sub-keV for light nuclei) |
-| `σ_exp (ppb)` | The same 1σ as a relative figure (σ_exp / B_AME × 10⁹), scientific notation |
+| `σ_exp (ppb)` | AME2020 experimental 1σ relative to B_AME (σ_exp / B_AME × 10⁹) |
 | `B_lin` | LINEAR/saturating binding α·s, s = 1−e^(−B_sym/α) (leading term of B_sym; bounded by α, under-binds with A) |
-| `B_sym` | EXACT log-ratio binding α·ln(tr_free/tr_atom) = α[(Z−1)L_pp + L_pn + (N−1)L_nn] — the archimedean realization |
-| `B_qCLT` | Uniform per-bond q-CLT α·(A−1)·ℓ̄(D) — no p↔n colour weighting |
-| `B_qCLT_fac` | p↔n colour-weighted q-CLT α·(A−1)·⟨bond-type L⟩ |
-| `B_magic` | Magic-volume binding 2·m_e·A·8G (GENERALIZED to all A; exact-at-⁴He by construction, linear-in-A reference elsewhere — over-binds light, under-binds heavy) |
+| `B_sym` | EXACT log-ratio binding α·ln(tr_free/tr_atom) = α[(Z−1)L_pp + L_pn + (N−1)L_nn] — the archimedean realization, already bond-type (p↔n) resolved (no separate `_fac` needed) |
+| `B_qCLT_fac` | p↔n colour-weighted q-CLT α·(A−1)·⟨bond-type L⟩ (the q-CLT approximation to the colour weighting B_sym does exactly; replaces the uniform `B_qCLT` in the headline — the uniform/isospin-symmetric baseline α·(A−1)·ℓ̄(D) is shown in the Colour-weighting table) |
+| `B_magic` | Magic-volume binding 2·m_e·A·8G, 8G = Vol(Borromean)/nucleon (exact-at-⁴He by construction, linear-in-A reference elsewhere — over-binds light, under-binds heavy) |
+| `err sym` / `err qCLT_fac` | B_AME / B_model for the two production forms (1.00 = perfect, >1 under-binds) |
 
-**Table 2 — Error (B_AME / B_model; 1.00 = perfect, >1 under-binds)**
-
-| Header | Meaning |
-|---|---|
-| `lin` / `sym` / `qCLT` / `qCLT_fac` / `magic` | B_AME / B_model for that binding form |
-| `σ_exp (ppb)` | experimental 1σ relative to B_AME (× 10⁹) |
-| `sym dev (ppb)` | B_sym model deviation, signed: (B_sym − B_AME)/B_AME × 10⁹ |
-| `best dev / σ_exp` | Best form's \\|B_model − B_AME\\| measured in experimental σ (the L2-100× gap) |
-
-**Mass error (ppb)**
+**Table 2 — Mass M + error** (values and error in one table; m_X = m_unbnd,can − B_X)
 
 | Header | Meaning |
 |---|---|
-| `M_meas (MeV)` | measured mass: M_AME = mu − B_AME for nuclei, or measured constituent mu for lone p/n |
+| `M_meas` | measured mass: M_AME = mu − B_AME for nuclei, or measured constituent mu for lone p/n |
 | `σ_exp (ppb)` | experimental 1σ on the mass = σ_B / M_meas × 10⁹ |
-| `err m_sym (ppb)` | canonical-mass model error (m_sym − M_meas)/M_meas × 10⁹ (binding-dominated for A≥2; 0 for p anchor; genuine prediction for n) |
-| `err m_qCLT (ppb)` | same, for the uniform q-CLT binding: (m_qCLT − M_meas)/M_meas × 10⁹ |
-| `σ_pred math (ppb)` | CAL-propagated theory error bar, ideal framework (CAL-2 = m_μ/m_e 22 ppb → ~462 ppb; the formula amplifies CAL-2 ~21× via ℏ_q) |
-| `σ_pred obs (ppb)` | CAL-propagated theory error bar, physical-observations layer (CAL-2 = m_p/m_e 0.06 ppb → ~1.3 ppb). err ≫ σ_pred ⇒ genuine formula systematic, not calibration noise |
+| `m_lin` / `m_sym` / `m_qCLT_fac` / `m_magic` | canonical bound mass m_X = m_unbnd,can − B_X for each binding form |
+| `err m_sym (ppb)` | mass error (m_sym − M_meas)/M_meas × 10⁹ (binding-dominated for A≥2; 0 for p anchor; genuine prediction for n) |
+| `err m_qCLT_fac (ppb)` | same, for the colour-weighted q-CLT binding |
 
 **Calibration anchors — principled (ideal) vs experimental pin**
 
@@ -284,18 +273,15 @@ conceptual calibration + cross-check.
 | CAL-3 | 𝔇_π pion decay width (τ_π = ℏ/𝔇_π) | h³ | m_π = 139.57 MeV |
 
 𝔇_β as a *numerical* pin is poor (~780 ppb, dlnQ_β/dlnq≈11 → σ(q₀)≈68 ppb),
-so it stays conceptual; the `σ_pred math` column uses the canonical m_μ/m_e
-CAL-2 (22 ppb), `σ_pred obs` the proton pin (0.06 ppb). Source:
-`observations/substrate-anchor-alternatives.md`, `particle-interactions/meson-scale-independence.md`.
+so it stays conceptual; q₀ is pinned on the proton ratio m_p/m_e (0.06 ppb).
+Source: `observations/substrate-anchor-alternatives.md`,
+`particle-interactions/meson-scale-independence.md`.
 
-**Table 3 — Mass M = (constituents) − B (MeV)**
-
-| Header | Meaning |
-|---|---|
-| `m_unbnd,can` | Framework unbound sum Z·m_p,can + N·m_n,can via the canonical muon-anchored Hecke energy m_p=2(m_μ·F_Bor−6m_e), F_Bor=\\|tr_M(β_Bor)\\|·[3]_q!/q³ (m_p,can≈938.27, m_n,can≈939.56, matches CODATA; λ_A fit 966 and naive Vol·tr_M 406 both excised) |
-| `m_unbnd` | MEASURED unbound sum Z·m_p + N·m_n (CODATA m_p=938.272, m_n=939.565) |
-| `M_AME` | Measured atomic mass = m_unbnd − B_AME |
-| `m_lin` / `m_sym` / `m_qCLT` / `m_qCLT_fac` / `m_magic` | Canonical bound mass = m_unbnd,can − B_X for X in {lin, sym, qCLT, qCLT_fac, magic} |
+**Mass constituents (Table 2):** `m_unbnd,can` = framework unbound sum
+Z·m_p,can + N·m_n,can via the canonical muon-anchored Hecke energy
+m_p=2(m_μ·F_Bor−6m_e), F_Bor=\\|tr_M(β_Bor)\\|·[3]_q!/q³ (m_p,can≈938.27,
+m_n,can≈939.56, matches CODATA; λ_A fit 966 and naive Vol·tr_M 406 both
+excised). Each bound mass m_X = m_unbnd,can − B_X.
 
 **Table 4 — Entanglement (bar-involution q↦q⁻¹ split of the atom trace)**
 
@@ -400,72 +386,51 @@ def main(argv=None) -> int:
     #    columns were removed 2026-06-24 — redundant now that m_unbnd,can ≈ CODATA.)
     from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
     mp_, mn_ = float(mp_), float(mn_)
-    print("### Mass  M = (constituents) − B (MeV)   "
+    print("### Mass  M + error (MeV; err in ppb)   "
           "[canonical = muon-anchored Hecke energy 2(m_μ·F_Bor−6m_e); m_X = m_unbnd,can − B_X]")
     print(f"  canonical constituents (λ_A fit + naive Vol·tr_M both EXCISED): "
           f"m_p,can = {mp_can:.3f} MeV ({(mp_can/mp_-1)*100:+.3f}%), "
           f"m_n,can = {mn_can:.3f} MeV ({(mn_can/mn_-1)*100:+.3f}%) — "
           f"m_μ-anchored F_Bor = |tr_M(β_Bor)|·[3]_q!/q³ (matches CODATA; m_n the "
           f"genuine prediction).")
-    print("| iso | A | m_unbnd,can | m_unbnd | M_AME | m_lin | m_sym "
-          "| m_qCLT | m_qCLT_fac | m_magic |")
+    print("| iso | A | M_meas | σ_exp (ppb) | m_lin | m_sym | m_qCLT_fac "
+          "| m_magic | err m_sym (ppb) | err m_qCLT_fac (ppb) |")
     print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         mu = r["Z"] * mp_ + r["N"] * mn_                 # measured constituent sum
         mu_can = r["Z"] * mp_can + r["N"] * mn_can       # framework-derived sum
-        mame = (mu - r["B_AME"]) if r["B_AME"] is not None else None
+        m_meas = (mu - r["B_AME"]) if r["B_AME"] is not None else mu  # measured mass
+        s = r["sigma_AME"]
+        s_ppb = (s / m_meas * 1e9) if (s and m_meas) else None
         # canonical bound mass per form X: m_X = mu_can − B_X
         def _can(bkey):
             b = r[bkey]
             return (mu_can - b) if b is not None else None
-        print(f"| {r['name']} | {r['A']} | {mu_can:>9.1f} | {mu:>9.1f} "
-              f"| {_fmt(mame,9,1)} | {_fmt(_can('B_lin'),9,1)} | {_fmt(_can('B_sym'),9,1)} "
-              f"| {_fmt(_can('B_qCLT'),9,1)} | {_fmt(_can('B_qCLT_fac'),9,1)} "
-              f"| {_fmt(_can('B_magic'),9,1)} |")
+        # mass error (ppb): (m_X − M_meas)/M_meas · 10⁹ for the two production forms
+        def _err_ppb(bkey):
+            b = r[bkey]
+            return ((mu_can - b) - m_meas) / m_meas * 1e9 if b is not None else None
+        print(f"| {r['name']} | {r['A']} | {_fmt(m_meas,9,1)} | {_sci(s_ppb,11,2)} "
+              f"| {_fmt(_can('B_lin'),9,1)} | {_fmt(_can('B_sym'),9,1)} "
+              f"| {_fmt(_can('B_qCLT_fac'),9,1)} | {_fmt(_can('B_magic'),9,1)} "
+              f"| {_sci(_err_ppb('B_sym'),13,3)} | {_sci(_err_ppb('B_qCLT_fac'),14,3)} |")
 
-    # 1b. MASS ERROR (ppb) — model deviation of m_sym from the measured mass,
-    #     plus the experimental 1σ on that mass. ppb = (pred − meas)/meas · 10⁹.
-    #     The measured target is M_AME (= mu − B_AME) for nuclei, or the measured
-    #     constituent mu for the lone p/n (no AME binding entry). m_sym's error is
-    #     binding-dominated for A≥2 (m_sym − M_AME = B_AME − B_sym); for p it is 0
-    #     (anchor) and for n it is the genuine nucleon-mass prediction error.
-    #     σ_pred = CAL-propagated reliability (theory error bar), two layers:
-    #       math = ideal framework (CAL-2 = m_μ/m_e, 22 ppb → ~462 ppb)
-    #       obs  = physical-observations (CAL-2 = m_p/m_e, 0.06 ppb → ~1.3 ppb)
-    #     A model error (err m_sym) ≫ σ_pred is a genuine formula systematic,
-    #     not calibration noise (e.g. the neutron −1759 ppb ≫ 462).
-    from canonical_mass import prediction_uncertainty_ppb
-    print("\n### Mass error (ppb)   [err_X = (m_X − M_meas)/M_meas · 10⁹ for X ∈ {sym, qCLT}; "
-          "σ_pred = CAL-propagated reliability (math = canonical CAL-2 22ppb; obs = proton CAL-2 0.06ppb)]")
-    print("| iso | A | M_meas (MeV) | σ_exp (ppb) | err m_sym (ppb) | err m_qCLT (ppb) | σ_pred math (ppb) | σ_pred obs (ppb) |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|")
-    for r in rows:
-        mu = r["Z"] * mp_ + r["N"] * mn_
-        mu_can = r["Z"] * mp_can + r["N"] * mn_can
-        m_meas = (mu - r["B_AME"]) if r["B_AME"] is not None else mu   # measured mass
-        s = r["sigma_AME"]
-        s_ppb = (s / m_meas * 1e9) if (s and m_meas) else None
-        b = r["B_sym"]
-        err_can = ((mu_can - b) - m_meas) / m_meas * 1e9 if b is not None else None
-        b_q = r["B_qCLT"]
-        err_qclt = ((mu_can - b_q) - m_meas) / m_meas * 1e9 if b_q is not None else None
-        sp_math = prediction_uncertainty_ppb(r["Z"], r["N"], "canonical")
-        sp_obs = prediction_uncertainty_ppb(r["Z"], r["N"], "proton")
-        print(f"| {r['name']} | {r['A']} | {m_meas:>10.3f} | {_sci(s_ppb,11,2)} "
-              f"| {_sci(err_can,13,3)} | {_sci(err_qclt,14,3)} | {sp_math:>14.1f} | {sp_obs:>14.3f} |")
-
-    # 2. BINDING  (B_AME ± experimental 1σ from AME2020)
-    print("### Binding  B (MeV)   [σ_exp = AME2020 experimental 1σ]")
-    print("| iso | A | B_AME | σ_exp (MeV) | σ_exp (ppb) | B_lin | B_sym | B_qCLT | B_qCLT_fac | B_magic |")
+    # 2. BINDING + error  (B_AME ± exp 1σ from AME2020; err X = B_AME/B_X)
+    print("### Binding  B + error (MeV)   "
+          "[σ_exp = AME2020 1σ; err X = B_AME/B_X (1.00 = perfect, >1 under-binds)]")
+    print("| iso | A | B_AME | σ_exp (ppb) | B_lin | B_sym | B_qCLT_fac "
+          "| B_magic | err sym | err qCLT_fac |")
     print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         s = r["sigma_AME"]
         s_ppb = (s / r["B_AME"] * 1e9) if (s and r["B_AME"]) else None
-        print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_sci(s,11,2)} "
-              f"| {_sci(s_ppb,11,2)} | {_fmt(r['B_lin'])} | {_fmt(r['B_sym'])} "
-              f"| {_fmt(r['B_qCLT'])} | {_fmt(r['B_qCLT_fac'])} | {_fmt(r['B_magic'])} |")
+        e_sym = _err(r["B_AME"], r["B_sym"])
+        e_qclt_fac = _err(r["B_AME"], r["B_qCLT_fac"])
+        print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_sci(s_ppb,11,2)} "
+              f"| {_fmt(r['B_lin'])} | {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT_fac'])} "
+              f"| {_fmt(r['B_magic'])} | {_fmt(e_sym,6)} | {_fmt(e_qclt_fac,6)} |")
 
-    # 1b. chain ≡ exact-trace validation (rows where the p(3A) trace is feasible)
+    # chain ≡ exact-trace validation (rows where the p(3A) trace is feasible)
     val = [(r["name"], r["chain_resid"]) for r in rows
            if r["chain_resid"] is not None]
     if val:
@@ -475,31 +440,6 @@ def main(argv=None) -> int:
               f"(n=3A ≤ {args.max_strands}; float64 dashboard noise — the chain "
               f"≡ trace to the 50-dps floor through ¹²C, audit "
               f"2026-06-16-b-sym-linear-chain-closed-form.md). Chain used for all A.")
-
-    # 2. ERROR  B_AME / B_model, alongside the experimental precision and the
-    #    best form's deviation measured in experimental σ (how far past the
-    #    100× L2 target each form sits).
-    print("\n### Error  (B_AME / B_model; 1.00 = perfect, >1 under-binds)")
-    print("| iso | A | lin | sym | qCLT | qCLT_fac | magic | σ_exp (ppb) | sym dev (ppb) | best dev / σ_exp |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
-    for r in rows:
-        e = {k: _err(r["B_AME"], r[k]) for k in
-             ("B_lin", "B_sym", "B_qCLT", "B_qCLT_fac", "B_magic")}
-        s = r["sigma_AME"]
-        s_ppb = (s / r["B_AME"] * 1e9) if (s and r["B_AME"]) else None
-        # B_sym model deviation in ppb (signed, relative to experimental B_AME)
-        sym_dev_ppb = ((r["B_sym"] - r["B_AME"]) / r["B_AME"] * 1e9
-                       if (r["B_sym"] is not None and r["B_AME"]) else None)
-        # best model = smallest |B_AME − B_model|; report its deviation in σ_exp
-        cand = [r[k] for k in ("B_lin", "B_sym", "B_qCLT", "B_qCLT_fac", "B_magic") if r[k]]
-        best_dev_sigma = None
-        if cand and s and r["B_AME"]:
-            best = min(cand, key=lambda b: abs(b - r["B_AME"]))
-            best_dev_sigma = abs(best - r["B_AME"]) / s
-        print(f"| {r['name']} | {r['A']} | {_fmt(e['B_lin'],6)} | {_fmt(e['B_sym'],6)} "
-              f"| {_fmt(e['B_qCLT'],6)} | {_fmt(e['B_qCLT_fac'],6)} "
-              f"| {_fmt(e['B_magic'],6)} | {_sci(s_ppb,11,2)} | {_sci(sym_dev_ppb,13,2)} "
-              f"| {_fmt(best_dev_sigma,16,3) if best_dev_sigma else _fmt(None,16)} |")
 
     # 3b. ENTANGLEMENT  (bar-involution q↦q⁻¹ split of the atom trace, via the
     #     q-parameterised core): bar-even (cosh) = retained binding/volume;
