@@ -205,3 +205,20 @@ irreducible over S₅ (`⟨χ,χ⟩=1`) and **A₅-irreducible** (`χ|_{A₅}=[4
    refuted: `τ_torus = 2cosh2η₀ = 2.0437 ≠ 2.6424`. Probe/audit only, no fit:
    [`computations/substrate/lever1_bring_period_trB.sage`](../../computations/substrate/lever1_bring_period_trB.sage),
    audit `docs/audits/2026-06-24-lever1-trB-geometric-target.md`. Coordinated on #2608/#2488.
+
+**The rank-2 `W` is the elliptic curve `Bring/S₄`; `Jac(Bring) ~ E⁴` (2026-06-24, #2710).**
+Exact extension of the A₅-irreducibility above (character theory, `genus(Bring/H) =
+dim std^H`, no fit): `Bring/S₄` is an **elliptic curve** `E` (8 subgroup classes give
+genus-1 quotients). Since `H^{1,0}(Bring) = std` is irreducible, `Jac(Bring)` is
+isotypic ⟹ a power of one simple factor; the elliptic quotient pins it: **`Jac(Bring)
+~ E⁴`** (Riera–Rodríguez). So the framework's **rank-2 "W-plane" is literally
+`E = Bring/S₄`** (period = scale + modulus, 2 real DOF), and `H¹(Bring) = H¹(E)⊗std =
+2·std`. **Keystone reduction:** the q-family Gauss–Manin monodromy `M` drops from
+genus-4 (`Sp(8)`) to a **2×2 `SL₂` monodromy on a q-family `E(q)`**, with the lever-1
+target `tr B = 2.6424` literally `tr M` — and the lever-1 depth-2 `det=1` kernel
+`R = x²−τx+1` *is* the `SL₂` characteristic polynomial. **Open keystone, now genus-1:**
+identify `E(q)` (the q-deformation of `Bring/S₄`; candidate = the elliptic fibre of the
+`S³/2I` Seifert build #2524) and test `tr M(q₀) = 2.6424`. `E ≠` substrate torus
+(`τ_torus = 2.0437 ≠ 2.6424`). Probe/audit only, no fit:
+[`computations/substrate/bring_jacobian_isogeny_factors.sage`](../../computations/substrate/bring_jacobian_isogeny_factors.sage),
+audit `docs/audits/2026-06-24-keystone-bring-jacobian-E4-elliptic-W-plane.md`. Coordinated on #2524/#2608.
