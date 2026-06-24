@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.ParticleInteractions.deuterium_derived_binding
 
@@ -135,7 +137,7 @@ theorem deuterium_derived_binding [ctx : DeuteriumDerivedBindingContext] :
       = (ctx.tr_M_p + ctx.tr_M_n - ctx.tr_M_Tpn_n) * ctx.m_e * ctx.Vol_B3
         * (1 - ctx.α_EM / 2)) ∧
     (ctx.B_exp = 2.2246 ∧ |ctx.B_d - ctx.B_exp| < 0.001) :=
-  sorry
+  ⟨ctx.claim_i_NF_existence, ctx.claim_ii_B3_factorisation, ctx.claim_iii_h6_factorisation, ctx.claim_iv_Tpn_symmetric, ctx.claim_v_binding_energy_formula, ctx.claim_vi_codata_match⟩
 
 /-! ## Mass–binding endomorphism analogy (2026-05-28)
 
@@ -206,5 +208,6 @@ theorem mass_binding_share_prefactor [a : BindingEndomorphismAnalogy] :
 -- Ref: [manuscript] docs/audits/2026-05-28-binding-endomorphism-analogy.md
 theorem mass_binding_prefactor_deuteron [a : BindingEndomorphismAnalogy]
     (h : a.Vol_Kbind = a.Vol_B3) :
-    a.m_pred / (a.lw / a.hbar_q_sq) = a.B_pred / a.delta_tr :=
-  sorry
+    a.m_pred / (a.lw / a.hbar_q_sq) = a.B_pred / a.delta_tr := by
+  obtain ⟨h1, h2⟩ := mass_binding_share_prefactor (a := a)
+  rw [h1, h2, h]

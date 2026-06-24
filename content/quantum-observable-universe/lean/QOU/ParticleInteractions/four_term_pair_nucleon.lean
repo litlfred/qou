@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.ParticleInteractions.four_term_pair_nucleon
 
@@ -55,6 +57,6 @@ theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :
     ctx.n_proton_color_combinations = 4 ∧
     ctx.n_neutron_color_combinations = 4 ∧
     (ctx.pair_count = 3 ∧ ctx.photon_terms = 4) :=
-  sorry
+  ⟨ctx.claim_i_proton_derivation, ctx.claim_ii_neutron_derivation, ctx.claim_iii_counts⟩
 
 end QOU.ParticleInteractions

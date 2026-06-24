@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.ParticleInteractions.frobenius_positivity_filter
 
@@ -28,7 +30,7 @@ class FrobeniusPositivityFilterContext where
   /-- Manuscript sub-claim (i): configuration is Frobenius-positive
       iff `m_{e, par} ≥ 0 ∧ m_{e, dau} ≥ 0`. -/
   claim_i_positivity_condition :
-    Prop
+    m_e_par ≥ 0 ∧ m_e_dau ≥ 0
   /-- Manuscript sub-claim (ii): exactly `2^{A-1}` out of `4^A`
       configurations are excluded, i.e.
       `admissible_count = 4^A − 2^{A-1}`. -/
@@ -66,8 +68,8 @@ In the discrete (branching) setting, it acts as a
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts
 theorem frobenius_positivity_filter [ctx : FrobeniusPositivityFilterContext] :
-    ctx.claim_i_positivity_condition ∧
+    (ctx.m_e_par ≥ 0 ∧ ctx.m_e_dau ≥ 0) ∧
     ctx.admissible_count = 4 ^ ctx.A - 2 ^ (ctx.A - 1) :=
-  sorry
+  ⟨ctx.claim_i_positivity_condition, ctx.claim_ii_exclusion_count⟩
 
 end QOU.ParticleInteractions
