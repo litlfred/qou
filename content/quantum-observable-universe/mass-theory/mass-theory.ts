@@ -275,6 +275,28 @@ export default chapter({
     }),
 
     section({
+      title:
+        "$\\mathfrak{Q}_\\beta$ precision ladder: formalize-first gates and the $c_k$ recursion",
+      label: "sec:mass-algebraic-qbeta-formalize-first-gates",
+      blocks: [
+        "qbeta-formalize-first-gates-intro",
+        "q-beta-over-e0-classical-vanishing",
+        "qbeta-c8-c10-silver-rationals",
+        "q-beta-c-k-recursion-from-habiro-q-difference",
+        "qbeta-c4-from-c3-c8-product-identity",
+        "qbeta-z-recursion-to-ck-recursion-bridge",
+        "q-beta-c-2-eq-neg-one-structural",
+        "q-beta-bar-even-kernel-invariant",
+        "q-beta-radius-of-convergence-gate",
+        "q-beta-q-eq-one-shadow-gate",
+        "q-beta-direction-sanity-gate",
+        "q-beta-c-k-leading-bias-correction-identity",
+        "q-beta-bar-even-kernel-typeclass",
+        "mass-side-kernel-formalize-first-gates",
+      ],
+    }),
+
+    section({
       title: "Gröbner-Shirshov axiomatic backing",
       label: "sec:gs-axiomatic-backing",
       blocks: [
