@@ -32,7 +32,7 @@ pipeline is currently miga-broken):
 
 ## Corrected findings
 
-| Metric | Count |
+| Metric | Count (pre-fix) |
 |--------|-------|
 | Blocks on disk (QOU) | 2667 |
 | Orphans (any kind) | 43 |
@@ -57,7 +57,7 @@ The headline corrections vs the prior premise:
   observation about manifest membership, not a claim that the blocks'
   mathematics is wrong.)
 
-## The one load-bearing orphan — `meson-scale-independence`
+## The one load-bearing orphan — `meson-scale-independence` (WIRED)
 
 `particle-interactions/meson-scale-independence` (`prop:`) is cited by
 the **rendered** proof
@@ -66,60 +66,45 @@ for the **CAL-3 leg** of the canonical three-calibration count
 (`QOU.Mass.calibrations_eq_cohomology`, the AGENTS.md cheat-sheet
 theorem). The proof body explicitly invokes "meson scale-independence"
 (Hopf-link complement has `Vol = 0`, so the meson scale is a third datum
-independent of `(m_e, q_0)`). The edge is real and load-bearing.
+independent of `(m_e, q_0)`). The edge is real and load-bearing — wired
+into `sec:particle-interactions-orphan-reconnect` after its
+`def:categorical-meson` dependency (orphan-parent count 34 → 33).
 
-- **Core proposition is correct and canon-aligned** — `Vol(Hopf) = 0`
-  matches the cheat sheet ("m_π genuinely independent of (m_e, q₀),
-  Vol(Hopf)=0").
-- **All three of its `uses[]` deps are rendered**
-  (`def:categorical-meson` — same chapter;
-  `prop:frobenius-lepton-meson-bridge`,
-  `prop:hoefsmit-binding-amplitude` — braids-and-knots, earlier
-  chapter). Wiring creates **no** dependency cascade and **no**
-  forward-ref (consumer chapter mass-theory (#95) is *after*
-  particle-interactions (#93) → backward edge).
-- **Natural home exists**: section
-  `sec:particle-interactions-orphan-reconnect` ("Reconnected orphan
-  blocks (Phase 7)") already holds `categorical-meson`; the prop slots
-  in immediately after it.
-- **Wrinkle — stale CAL-2 framing.** The block's `.md` "Calibration
-  structure" table presents **CAL-2 = 𝔇_β** (neutron β-decay width) and
-  **Q_β as a calibration**. Current canon (AGENTS.md cheat sheet) is
-  **CAL-2 = m_μ**, with "the neutron β-decay width 𝔇_β/τ_n is Q_β's
-  experimental face, **not** a third calibration." The *rendered*
-  consumer proof itself uses the canonical "q₀-modulus" framing — so the
-  table in this block diverges. Rendering the block as-is would inject
-  that divergence into the paper; this is an author call (do not
-  silently rewrite canonical framing).
+### Calibration-layer note (owner-clarified 2026-06-24)
 
-## The other 33 — unintegrated WIP clusters (author triage)
+The block's `.md` "Calibration structure" table frames **CAL-2 = 𝔇_β**
+(neutron β-decay width) and **CAL-3 = 𝔇_π** (pion decay width). Per
+owner clarification this is **correct and intended**: the decay-width
+triple `(m_e, 𝔇_β, 𝔇_π)` is the **mathematically-ideal canonical
+calibration**. The mass-based framing used elsewhere — e.g. the AGENTS.md
+cheat-sheet's `CAL-2 = m_μ` / proton-ratio pin — is the
+**Physical-Observations layer**: a *derivation* chosen for smaller
+experimental error, not a different calibration. This two-layer
+distinction is already explained in the paper's Physical chapter. The
+table is left **as-is**; an earlier draft of this doc mis-labelled it
+"stale" — that was the documentation error, now corrected.
 
-Not load-bearing on any rendered block; integrating them is an editorial
-decision about publishing in-progress research, **not** a mechanical
-fix. Per the detangler-watcher discharge bands, isolated-block /
-placement decisions are **author-assist, never auto-discharge**.
+## The other 33 — unintegrated WIP clusters (owner-directed disposition)
 
-| Cluster | Chapters | Count | Character |
-|---------|----------|-------|-----------|
-| **q-beta c_k / Habiro / qbeta** (`q-beta-*`, `qbeta-*`, `t-beta-*`) | mass-theory (17) + mass-endomorphism (5) | 22 | The unsettled c_k truncation-order / Habiro saga (AGENTS.md flip-flop history; `c_k≥3` are near-matches, not proved). |
-| **Habiro / cyclotomic / meson-em / zeta8** | braids-and-knots | 8 | Mixed: Habiro-bridge WIP + meson EM/QCG identities + ζ₈ witnesses. |
-| **selection-rule c_k anchors** | climax-volume-mass | 2 | c_k-adjacent (selection-rule-anchors-c1-c3 → c2-prediction). |
-| **c5-involution-leibniz** | stochastic-mechanics | 1 | Phase-6 scaffold chapter (manifest comment: "NEW Ch 18 — Phase 6 scaffold"). |
+Not load-bearing on any rendered block. Owner triage decision
+(2026-06-24): **integrate the q-beta cluster + triage the
+braids-and-knots set separately** (do **not** leave the cluster as WIP).
 
-These reference each other but no rendered block, so they were dropped
-(never wired) as self-contained units. The q-beta majority is precisely
-the research AGENTS.md flags as flip-flop-prone and not production-wired
-— integrating it into the rendered paper needs explicit author intent.
+| Cluster | Chapters | Count | Disposition (owner 2026-06-24) |
+|---------|----------|-------|--------------------------------|
+| **q-beta c_k / Habiro / qbeta** (`q-beta-*`, `qbeta-*`, `t-beta-*`) + adjacent (`borromean-h4`, `h3-markov-wenzl-weights`, `meson-kaon-pion-hecke-seifert`) | mass-theory (17) + mass-endomorphism (5) | 22 | **Integrate** into the rendered paper — owner sign-off given. Wire in dependency order; honest block kinds (§3b conjectural propagation for c_k near-matches). |
+| **Habiro / cyclotomic / meson-em / zeta8** | braids-and-knots | 8 | **Triage separately, per-block** — some (meson-em / Hecke-Seifert identities) may be sound and wireable independent of q-beta; others stay WIP. |
+| **selection-rule c_k anchors** | climax-volume-mass | 2 | Triage with the q-beta cluster (c_k-adjacent). |
+| **c5-involution-leibniz** | stochastic-mechanics | 1 | Phase-6 scaffold chapter; triage last / likely leave. |
 
-## Recommended disposition
+## Disposition status
 
-1. **`meson-scale-independence`** — wire into
-   `sec:particle-interactions-orphan-reconnect` (resolves the dangling
-   reference in the central calibration proof). Flag/repair the stale
-   CAL-2 table per author preference.
-2. **The 33 WIP-cluster blocks** — leave unwired pending author
-   direction; record here rather than guessing. None block the rendered
-   paper.
+1. **`meson-scale-independence`** — ✅ wired
+   (`sec:particle-interactions-orphan-reconnect`); CAL-2/3 decay-width
+   table confirmed correct, left as-is.
+2. **q-beta cluster (22)** — owner-approved for integration; in progress.
+3. **braids-and-knots (8)** — per-block triage; in progress.
+4. **climax (2) + stochastic (1)** — triaged alongside the above.
 
 ## Reproduce
 
