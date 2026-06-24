@@ -97,6 +97,8 @@ import QOU.BraidKnot.RegularRepBlockTrace
 -- Maschke (RepresentationTheory) ⇒ k[S_n] semisimple: the *existence* half of side-2's
 -- block decomposition. First QOU import of Mathlib.RepresentationTheory.* — CI must build it.
 import QOU.BraidKnot.MaschkeSnSemisimple
+-- Wedderburn–Artin block decomposition of k[S_n] (k[S_n] ≃ ∏ Matrix; Σ𝔫ᵢ²=n! unconditional).
+import QOU.BraidKnot.WedderburnSn
 
 /-!
 # BraidKnot — Module Index
