@@ -1151,6 +1151,20 @@
         "reviewed_at": "2026-06-22T02:56:23.230Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "ts": "a7c34f50136e",
+          "md": "cb0d32b3aa0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/narrative-lean-rerate"
+        },
+        "reviewed_at": "2026-06-24T18:30:00.000Z",
+        "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
+        "notes": "Narrative already documents the Lean sorry deferral in its '## Lean formalization' section (cites Wenzl 1987 / Jones 1987 / Witten 1989); narrative<->Lean consistent -- prior fail was stale."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1346,5 +1360,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:56:26.570Z"
+  "updated_at": "2026-06-24T18:30:00.000Z"
 }

@@ -1151,6 +1151,20 @@
         "reviewed_at": "2026-06-22T02:57:15.345Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "ts": "cd2e497af6fe",
+          "md": "1a2bacf9c5c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/narrative-lean-rerate"
+        },
+        "reviewed_at": "2026-06-24T18:30:00.000Z",
+        "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
+        "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1346,5 +1360,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-22T02:57:18.996Z"
+  "updated_at": "2026-06-24T18:30:00.000Z"
 }
