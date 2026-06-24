@@ -38,6 +38,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:alpha-shift-torus-knot",
+  proofs: ["prf:alpha-shift-torus-knot"],
   title:
     "Pole order at $q=0$ of the torus-knot character: $\\alpha_{\\mathrm{shift}}(T_{p,k}) = k(p-1)$ on $V_{(1^p)}$",
   uses: ["prop:force-carrier-intertwining-correspondence"],

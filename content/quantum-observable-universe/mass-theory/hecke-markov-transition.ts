@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:hecke-markov-transition",
+  proofs: ["prf:hecke-markov-transition"],
   title: "Hecke generator as stochastic transition operator",
   tags: [
     "hecke-algebra",

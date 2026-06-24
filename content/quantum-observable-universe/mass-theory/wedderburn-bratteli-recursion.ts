@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:wedderburn-bratteli-recursion",
+  proofs: ["prf:wedderburn-bratteli-recursion"],
   title:
     "Wedderburn--Bratteli recursion for Jones--Markov weights $y_\\lambda$ at $H_n(R, q)$",
   lean: {

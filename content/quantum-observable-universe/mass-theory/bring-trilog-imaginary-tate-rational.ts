@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:bring-trilog-imaginary-tate-rational",
+  proofs: ["prf:bring-trilog-imaginary-tate-rational"],
   title:
     "Trilogarithm imaginary part at $\\zeta_5$: Tate-rational closed form $4\\pi^3/125$ via Kummer reflection (50-dps verified)",
   lean: {

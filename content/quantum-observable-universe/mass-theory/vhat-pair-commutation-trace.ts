@@ -2,6 +2,7 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:vhat-pair-commutation-trace",
+  proofs: ["prf:vhat-pair-commutation-trace"],
   title:
     "Pair commutation at the traced-volume level: $\\hat V_i \\hat V_j = \\hat V_j \\hat V_i$ in $\\mathbb{Z}[q^{\\pm 1/2}, z]$",
   lean: {

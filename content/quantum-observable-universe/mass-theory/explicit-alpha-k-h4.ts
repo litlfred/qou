@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:explicit-alpha-k-h4",
+  proofs: ["prf:explicit-alpha-k-h4"],
   title:
     "Explicit $\\alpha_3$ at $H_4(R, q)$ via Wedderburn-orthogonal class-function $r_3$",
   lean: {

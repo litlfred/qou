@@ -2,6 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:markov-trace-factorization",
+  proofs: ["prf:markov-trace-factorization"],
   title:
     "Exact factorization of the nuclear Markov trace",
   tags: [

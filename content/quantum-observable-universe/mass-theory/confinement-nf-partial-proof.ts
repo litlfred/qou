@@ -26,6 +26,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:confinement-nf-partial-proof",
+  proofs: ["prf:confinement-nf-partial-proof"],
   title:
     "Partial formal proof of $\\mathrm{conj}:\\mathrm{confinement\\text{-}nf\\text{-}structure\\text{-}forcing}$: $T_1$ and $T_3$ from standard LP duality; $T_2$ reduces to Sub-lemma 2.1",
   uses: [

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:pentagon-uv-commutation",
+  proofs: ["prf:pentagon-uv-commutation"],
   title:
     "Pentagon identity at adjacent jet levels: $\\widehat U \\widehat V = q\\,\\widehat V \\widehat U$",
   tags: [

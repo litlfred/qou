@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:hecke-1d-irrep-closed-form-character",
+  proofs: ["prf:hecke-1d-irrep-closed-form-character"],
   lean: {
     ref: "qou:QOU.BraidKnot.hecke_1d_irrep_closed_form_character",
     validation: "not_checked",

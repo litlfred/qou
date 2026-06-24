@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:phi-q-tower-algebraic-stratification",
+  proofs: ["prf:phi-q-tower-algebraic-stratification"],
   title:
     "Algebraic stratification of the Φ$_q$ tower in $H_n(R, q)$ (no 3-manifold language)",
   lean: {

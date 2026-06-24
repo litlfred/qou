@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:graded-markov-trace-from-gs-filtration",
+  proofs: ["prf:graded-markov-trace-from-gs-filtration"],
   title:
     "Graded Markov trace as the induced trace on $J^\\ell / J^{\\ell+1}$",
   lean: {

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:q-gaussian-obstruction-at-q0",
+  proofs: ["prf:q-gaussian-obstruction-at-q0"],
   title:
     "Bożejko–Speicher $q$-Gaussian obstruction at the substrate $q_0 > 1$",
   tags: [

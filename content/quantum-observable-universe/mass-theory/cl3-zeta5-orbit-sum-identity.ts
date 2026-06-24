@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:cl3-zeta5-orbit-sum-identity",
+  proofs: ["prf:cl3-zeta5-orbit-sum-identity"],
   title:
     "Cl$_3$(2$\\pi$/5) + Cl$_3$(4$\\pi$/5) = $-$(12/25)$\\zeta$(3) — depth-3 reduces to a 1-dim antisymmetric generator",
   lean: {

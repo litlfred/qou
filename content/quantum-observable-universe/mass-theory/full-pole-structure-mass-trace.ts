@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:full-pole-structure-mass-trace",
+  proofs: ["prf:full-pole-structure-mass-trace"],
   title:
     "Habiro completion of the mass trace",
   lean: {

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:rigid-monoidal-structural-gap-invariance",
+  proofs: ["prf:rigid-monoidal-structural-gap-invariance"],
   title:
     "Convention-independence of the structural gap: the brane-tower factors through the rigid monoidal Markov trace on the Type-B-folded Hecke category",
   lean: {

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:delta-max-uniform-bound",
+  proofs: ["prf:delta-max-uniform-bound"],
   title:
     "Uniform bound on the per-level jet residual $|\\Delta^{(n)}|$",
   tags: [

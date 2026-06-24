@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:y-lambda-cyclotomic-factorization",
+  proofs: ["prf:y-lambda-cyclotomic-factorization"],
   title:
     "Cyclotomic factorisation of $y_\\lambda$ at $H_n(R, q)$ for small $n$ via Wenzl-bridge",
   lean: {

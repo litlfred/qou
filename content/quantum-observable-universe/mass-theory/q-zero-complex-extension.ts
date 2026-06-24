@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:q-zero-complex-extension",
+  proofs: ["prf:q-zero-complex-extension"],
   lean: {
     ref: "qou:QOU.BraidKnot.QZeroComplexExtension.complex_q_is_unit",
     validation: "not_checked",

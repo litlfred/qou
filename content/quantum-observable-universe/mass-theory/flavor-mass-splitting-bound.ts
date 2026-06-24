@@ -2,6 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:flavor-mass-splitting-bound",
+  proofs: ["prf:flavor-mass-splitting-bound"],
   lean: { ref: "qou:QOU.FlavorDressing.flavor_mass_splitting_bound",
     validation: "not_checked",
   },

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:q-rogers-pentagon-archimedean",
+  proofs: ["prf:q-rogers-pentagon-archimedean"],
   title:
     "Post-τ pentagon = pre-τ pentagon + q-log² Rogers correction",
   lean: {

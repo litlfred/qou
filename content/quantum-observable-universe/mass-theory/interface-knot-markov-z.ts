@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:interface-knot-markov-z",
+  proofs: ["prf:interface-knot-markov-z"],
   title:
     "Interface-knot contribution to canonical-atom Markov trace equals the Markov parameter z exactly",
   lean: {

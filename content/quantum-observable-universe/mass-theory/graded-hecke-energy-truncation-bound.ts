@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:graded-hecke-energy-truncation-bound",
+  proofs: ["prf:graded-hecke-energy-truncation-bound"],
   title:
     "Graded Hecke energy truncation bound: $P_K(q)$ has at most $\\ell(K, q_0) + 1$ nonzero grades",
   lean: {

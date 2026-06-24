@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:archimedean-functor-uniqueness",
+  proofs: ["prf:archimedean-functor-uniqueness"],
   title:
     "Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)",
   computation: {

@@ -2,6 +2,7 @@ import { corollary } from "../../schema/builders";
 
 export default corollary({
   label: "cor:habiro-expansion-atomic",
+  proofs: ["prf:habiro-expansion-atomic"],
   title: "Atomic-braid Habiro expansion: integrality and termination",
   uses: ["prop:full-pole-structure-mass-trace"],
   tags: [

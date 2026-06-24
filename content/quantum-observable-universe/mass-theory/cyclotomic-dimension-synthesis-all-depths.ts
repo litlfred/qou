@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:cyclotomic-dimension-synthesis-all-depths",
+  proofs: ["prf:cyclotomic-dimension-synthesis-all-depths"],
   title:
     "Cyclotomic dimension synthesis at every depth: $(K - 3)/2$ for $n$ odd, $(K - 1)/2$ for $n$ even",
   lean: {

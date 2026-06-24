@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:chi-lambda-w0-sign-weighting",
+  proofs: ["prf:chi-lambda-w0-sign-weighting"],
   title:
     "Long-element $\\chi_\\lambda(w_0)$ sign-character weighting of the $c_k$ chain at $H_3$",
   lean: {

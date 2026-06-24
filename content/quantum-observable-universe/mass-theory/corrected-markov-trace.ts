@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:corrected-markov-trace",
+  proofs: ["prf:corrected-markov-trace"],
   title:
     "Corrected Markov trace of the trefoil braid",
   tags: [

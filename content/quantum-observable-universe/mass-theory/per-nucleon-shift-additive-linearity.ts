@@ -25,6 +25,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:per-nucleon-shift-additive-linearity",
+  proofs: ["prf:per-nucleon-shift-additive-linearity"],
   lean: { ref: "qou:QOU.BraidKnot.per_nucleon_shift_additive_linearity", validation: "not_checked" },
   title:
     "Per-new-nucleon additive linearity: $\\mathrm{shift}(Z, N) = 18Z + 21N + 1$ on canonical pppnnn ordering",

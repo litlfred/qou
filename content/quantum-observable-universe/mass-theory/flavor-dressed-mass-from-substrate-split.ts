@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:flavor-dressed-mass-from-substrate-split",
+  proofs: ["prf:flavor-dressed-mass-from-substrate-split"],
   lean: { ref: "qou:QOU.FlavorDressing.dressed_mass_from_substrate_split",
     validation: "not_checked",
   },

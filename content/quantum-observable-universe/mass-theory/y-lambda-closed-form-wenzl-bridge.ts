@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:y-lambda-closed-form-wenzl-bridge",
+  proofs: ["prf:y-lambda-closed-form-wenzl-bridge"],
   title:
     "Closed form for Jones-Markov $y_\\lambda$ via Wenzl Schur-element bridge ($Q = q^2$, $z_{\\mathrm{GL}} = q z$)",
   lean: {

@@ -2,6 +2,7 @@ import { corollary } from "../../schema/builders";
 
 export default corollary({
   label: "cor:lr-tensor-character-bridge",
+  proofs: ["prf:lr-tensor-character-bridge"],
   lean: {
     ref: "qou:QOU.BraidsAndKnots.lr_tensor_character_bridge",
     validation: "not_checked",

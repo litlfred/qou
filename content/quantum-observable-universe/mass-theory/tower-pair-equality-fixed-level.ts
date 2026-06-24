@@ -2,6 +2,7 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:tower-pair-equality-fixed-level",
+  proofs: ["prf:tower-pair-equality-fixed-level"],
   title:
     "Pair-contribution equality at a fixed jet level: $z^2 \\sum_{(i,j) \\in \\mathcal{P}_n} \\Phi_q(|\\hat V_i^{(n)} \\hat V_j^{(n)}|)$ is an exact identity",
   lean: {

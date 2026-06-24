@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:markov-pair-z2",
+  proofs: ["prf:markov-pair-z2"],
   title:
     "All-pairs Markov-trace identity $\\mathrm{tr}_M(\\sigma_i\\sigma_j) = z^2$",
   tags: [

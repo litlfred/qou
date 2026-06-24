@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:cyclotomic-trilog-imaginary-closed-form",
+  proofs: ["prf:cyclotomic-trilog-imaginary-closed-form"],
   title:
     "Trilogarithm imaginary part at $\\zeta_n$: closed form $(n - 1)(n - 2)\\pi^3 / (3 n^3)$ for every root of unity",
   lean: {
