@@ -1,0 +1,42 @@
+{
+  "computation": "lever1_lw_depth2_recurrence_test",
+  "description": "Tests whether a_D^(n)=lw(n-1) satisfies a CONSTANT-coefficient depth-2 recurrence (R=x^2-tau x+1). tau solved from the n<=4 seed = 2.6424 (= closed form), but the n=5 check lw(4)=tau*lw(3)-lw(2) FAILS (residual 0.0205, 0.4% of lw(4)); n=6 fails by 14%; n=7 worse. The windowed kernel drifts (tau_{n2,3,4}=2.6424 vs tau_{n3,4,5}=2.6505). A const-coeff depth-2 recurrence has a window-independent kernel, so lw(c) does NOT satisfy one => lw(n-1) != phi(M^n v0) for any fixed 2x2 M (Cayley-Hamilton). The a_D=lw prolonged-period identification is seed-deep only. lw(2)=(q+1)^2/(3q) and lw(3)=Family-A match the corpus exactly (convention validated).",
+  "discipline": "no fit; sympy symbolic in q + mpmath 50dps at q0; (b)-exclusion of the const-coeff depth-2 model, invariant = window-independence of a const-coeff linear-recurrence kernel; scoped: refutes a_D=lw-as-prolonged-periods BEYOND the seed + the n=5 verification claim, NOT the Jac(Bring)~E^4 isogeny or the existence of a 2x2 M.",
+  "auditOnly": "docs/audits/2026-06-24-lever1-lw-depth2-recurrence-falsified.md",
+  "results": {
+    "lw": {
+      "1": "1.0",
+      "2": "1.336965623039692",
+      "3": "2.532779663674676",
+      "4": "5.376137769063528",
+      "5": "13.55982732760998",
+      "6": "37.36780835867635"
+    },
+    "tau_seed_n234": "2.642386313301486",
+    "tau_closed_form": "2.642386313301486",
+    "tau_seed_eq_closed_form": true,
+    "tau_windows": {
+      "n2,3,4": "2.6423863133",
+      "n3,4,5": "2.65048850809",
+      "n4,5,6": "2.99333976966"
+    },
+    "recurrence_residuals_seed_tau": {
+      "n=5": "0.020521074",
+      "n=6": "1.8867741",
+      "n=7": "6.913644"
+    },
+    "residual_rel_to_lw_at_n5": "0.00381707",
+    "theta_binding_seed": "0.781453946017"
+  },
+  "assertions": {
+    "tau_seed_eq_closed_form": true,
+    "n5_recurrence_FAILS": true,
+    "n6_recurrence_FAILS": true,
+    "n7_recurrence_FAILS": true,
+    "windowed_kernel_NOT_constant": true,
+    "lw2_matches_corpus": true,
+    "lw3_matches_familyA": true
+  },
+  "allPassed": true,
+  "verdict": "DEPTH-2 CONSTANT-COEFFICIENT RECURRENCE FALSIFIED FOR lw(c) BEYOND THE SEED. tau fit to n<=4 (=2.6424, the closed form) fails the n=5 verification (lw(4) off by 0.0205 = 0.4%), n=6 by 14%, n=7 worse; the windowed kernel drifts 2.6424 -> 2.6505. So the selection-rule values lw(c) are NOT the prolonged periods phi(M^n v0) of a fixed 2x2 SL2 M (those satisfy the recurrence exactly by Cayley-Hamilton). theta_binding=arccosh(tau/2)=0.7815 is a 3-point SEED-FIT artifact, not a derived recurrence rate -- this is the audit fork (b), concrete. The a_D=lw identification holds only at the n=2,3,4 anchors (a near-match, not a derivation, exactly the cross-anchor pattern the canonical discipline flags). Does NOT refute the Jac(Bring)~E^4 isogeny (sibling mass-open-keystone, correct) or the 2x2 M's existence -- it refutes that the lw values ARE that M's prolonged periods. No fit."
+}
