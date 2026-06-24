@@ -1025,15 +1025,19 @@ If you are an agent working on an older branch and you **rebase or
 merge onto a commit that contains this standardization**, your
 content blocks may still use the legacy `lean: { decl: "...", file? }`
 shape.  Zod validation will fail with a message pointing at this
-procedure.  **Run the migration, do not hand-edit each block:**
+procedure.  **Run the migration, do not hand-edit each block** (it runs in
+the external `litlfred/folio-assistant` pipeline / CI — see the currency
+note below; the qou `bun run` aliases were pruned by miga):
 
-```bash
-cd content
-bun run migrate-lean-refs        # apply (writes in place)
-bun run migrate-lean-refs:dry    # preview only (no writes)
+```text
+# CONCEPTUAL — runs in the folio-assistant pipeline / CI, NOT inside qou.
+# miga pruned the qou aliases; invoke from a litlfred/folio-assistant
+# checkout per that repo's docs (exact cwd/alias is defined there):
+migrate-lean-refs        # apply (writes content blocks in place)
+migrate-lean-refs --dry  # preview only (no writes)
 ```
 
-The script ([content/pipeline/migrate-lean-refs.ts](content/pipeline/migrate-lean-refs.ts))
+The script (`migrate-lean-refs.ts`, relocated to the folio-assistant pipeline by miga)
 is **idempotent** — safe to re-run after any rebase, merge, or
 cherry-pick.  It rewrites every `lean: { decl: "<Decl>", file? }`
 into `lean: { ref: "<pkg>:<Decl>" }` using the paper directory to
