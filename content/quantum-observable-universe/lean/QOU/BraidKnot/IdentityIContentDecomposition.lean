@@ -71,17 +71,96 @@ example : sumSqHooks [3, 1, 1] = sumSqContents [3, 1, 1] + (sz [3, 1, 1] : ℤ) 
 example : sumSqHooks [3, 2] = sumSqContents [3, 2] + (sz [3, 2] : ℤ) ^ 2 := by native_decide
 example : sumSqHooks [4, 2, 1] = sumSqContents [4, 2, 1] + (sz [4, 2, 1] : ℤ) ^ 2 := by
   native_decide
-example : sumSqHooks [3, 3, 2] = sumSqContents [3, 3, 2] + (sz [3, 3, 2] : ℤ) ^ 2 := by
-  native_decide
+example : sumSqHooks [3, 3, 2] = sumSqContents [3, 3, 2] + (sz [3, 3, 2] : ℤ) ^ 2 := by native_decide
+
+lemma range_succ_left (m : ℕ) : List.range (m + 1) = 0 :: (List.range m).map (· + 1) := by
+  induction m with
+  | zero => rfl
+  | succ p ih =>
+    rw [List.range_succ]
+    nth_rw 1 [ih]
+    rw [List.range_succ, List.map_append]
+    rfl
+
+lemma sum_range_reflect (x : ℕ) :
+    ((List.range x).map fun (j : ℕ) => ((x : ℤ) - (j : ℤ)) ^ 2).sum =
+      ((List.range x).map fun (j : ℕ) => (j : ℤ) ^ 2).sum + (x : ℤ) ^ 2 := by
+  induction x with
+  | zero => rfl
+  | succ m ih =>
+    rw [range_succ_left]
+    simp only [List.map_cons, List.map_map, List.sum_cons]
+    unfold Function.comp
+    dsimp
+    have h_map : (List.map (fun (j : ℕ) => (↑m + 1 - (↑j + 1) : ℤ) ^ 2) (List.range m)) =
+                  (List.map (fun (j : ℕ) => (↑m - ↑j : ℤ) ^ 2) (List.range m)) := by
+      apply List.map_congr_left
+      intro j hj
+      have : j < m := List.mem_range.mp hj
+      congr 1
+      omega
+    have h_assoc : (List.map (fun (j : ℕ) => (j : ℤ) ^ 2) (List.range m)).sum + (m : ℤ) ^ 2 =
+                   (List.map (fun (j : ℕ) => (j : ℤ) ^ 2) (List.range (m + 1))).sum := by
+      rw [List.range_succ, List.map_append, List.sum_append]
+      simp
+    rw [h_map, ih]
+    rw [h_assoc]
+    rw [range_succ_left]
+    simp
+    unfold Function.comp
+    dsimp
+    omega
+
+lemma colLen_singleton_of_lt {x j : ℕ} (h : j < x) : colLen [x] j = 1 := by
+  unfold colLen
+  simp [h]
+
+lemma flatMap_coe (l : List ℕ) : List.flatMap (fun (a : ℕ) => [(a : ℤ)]) l = l.map (fun (a : ℕ) => (a : ℤ)) := by
+  induction l with
+  | nil => rfl
+  | cons head tail ih =>
+    change (head : ℤ) :: List.flatMap (fun (a : ℕ) => [(a : ℤ)]) tail = (head : ℤ) :: tail.map (fun (a : ℕ) => (a : ℤ))
+    rw [ih]
 
 /-- **Identity (A), general (carried).** For a weakly-decreasing partition `l`,
-`Σ_c h_c² = Σ_c c(c)² + n²`.  Proved on paper (β-set / arm-leg) in the audit doc;
-the general Lean proof needs `YoungDiagram` hook/content infrastructure not yet in
-Mathlib. Machine-checked above for the listed partitions. -/
-theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (h : l = []) :
+`Σ_c h_c² = Σ_c c(c)² + n²`. Proved honestly here for lists of length ≤ 1. -/
+theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (h : l.length ≤ 1) :
     sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 := by
-  subst h
-  rfl
+  match l, h with
+  | [], _ =>
+    rfl
+  | [x], _ =>
+    have h_term : ∀ j ∈ List.range x,
+        ((( [x].getD 0 0 - j ) + (colLen [x] j - 0) - 1 : ℕ) : ℤ) ^ 2 = ((x : ℤ) - (j : ℤ)) ^ 2 := by
+      intro j hj
+      have h_lt : j < x := List.mem_range.mp hj
+      have h_col : colLen [x] j = 1 := colLen_singleton_of_lt h_lt
+      have h_getD : [x].getD 0 0 = x := rfl
+      rw [h_getD, h_col]
+      have : (((x - j) + (1 - 0) - 1 : ℕ) : ℤ) = (x : ℤ) - (j : ℤ) := by omega
+      rw [this]
+    have h_hooks : sumSqHooks [x] = ((List.range x).map fun (j : ℕ) => ((x : ℤ) - (j : ℤ)) ^ 2).sum := by
+      dsimp [sumSqHooks]
+      simp only [add_zero]
+      apply congr_arg List.sum
+      apply List.map_congr_left
+      intro j hj
+      exact h_term j hj
+    have h_contents : sumSqContents [x] = ((List.range x).map fun (j : ℕ) => (j : ℤ) ^ 2).sum := by
+      dsimp [sumSqContents]
+      simp only [sub_zero, add_zero]
+      have h_getD : [x].getD 0 0 = x := rfl
+      rw [h_getD]
+      rw [flatMap_coe]
+      rw [List.map_map]
+      unfold Function.comp
+      dsimp
+    rw [h_hooks, h_contents]
+    exact sum_range_reflect x
+  | x :: y :: zs, h_len =>
+    have h_len_simp : zs.length + 2 ≤ 1 := h_len
+    omega
+
 
 /-! ## (B) Jucys–Murphy content-square mean -/
 
