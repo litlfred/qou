@@ -261,7 +261,7 @@ def _print_legend() -> None:
 
 | Header | Meaning |
 |---|---|
-| `m_unbnd,can` | Framework unbound sum Z·m_p,can + N·m_n,can via the canonical muon-anchored Hecke energy m_p=2(m_μ·F_Bor−6m_e), F_Bor=\|tr_M(β_Bor)\|·[3]_q!/q³ (m_p,can≈938.27, m_n,can≈939.56, matches CODATA; λ_A fit 966 and naive Vol·tr_M 406 both excised) |
+| `m_unbnd,can` | Framework unbound sum Z·m_p,can + N·m_n,can via the canonical muon-anchored Hecke energy m_p=2(m_μ·F_Bor−6m_e), F_Bor=\\|tr_M(β_Bor)\\|·[3]_q!/q³ (m_p,can≈938.27, m_n,can≈939.56, matches CODATA; λ_A fit 966 and naive Vol·tr_M 406 both excised) |
 | `m_unbnd` | MEASURED unbound sum Z·m_p + N·m_n (CODATA m_p=938.272, m_n=939.565) |
 | `M_AME` | Measured atomic mass = m_unbnd − B_AME |
 | `m_lin` / `m_sym` / `m_qCLT` / `m_qCLT_fac` / `m_magic` | PURE-CANONICAL bound mass = m_unbnd,can − B_X (framework constituents; carries the +2.96%·A m_p gap) for X in {lin, sym, qCLT, qCLT_fac, magic} |

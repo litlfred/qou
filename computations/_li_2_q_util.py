@@ -359,7 +359,21 @@ def vol_density_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
       module is the narrative/parity layer that re-exports it.
 
     Returns VolDensity = Vol(𝓑₃)/ℏ_q² × linking_weight(q).
+
+    ⚠ DEPRECATED FOR ABSOLUTE NUCLEON/ATOM MASS (owner ruling 2026-06-24):
+    this is the λ_A fit (→ m_p ≈ 966, +2.96%). Route absolute mass through the
+    `canonical_mass` facade (muon-anchored Hecke energy → 938.27). See
+    docs/canonical-mass-formula-guardrail.md.
     """
+    import warnings as _warnings
+    _warnings.warn(
+        "vol_density_borromean is the λ_A fit (Vol(𝓑₃)·ρ_global/ℏ_q² → 966 MeV) "
+        "— NOT the canonical absolute nucleon mass. Use the canonical_mass "
+        "facade (muon-anchored Hecke energy). See "
+        "docs/canonical-mass-formula-guardrail.md.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
     qi = mpf(1) / q if q_inv is None else q_inv
     hbar_q = 1 - qi  # ℏ_q = (q - 1)/q = 1 - q⁻¹; reuse qi (Gemini PR #1089)
     vol_b3 = 8 * mp.catalan  # Adams 1985 (NOT Lean-formalized — see docstring)
