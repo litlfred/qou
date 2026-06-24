@@ -1,0 +1,126 @@
+{
+  "items": [
+    {
+      "id": "525753cd282f",
+      "block_or_script": "conj:borromean-baryon-mass-formula",
+      "paths": {
+        "md": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.md"
+      },
+      "finding": "da-overclaim",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+      "evidence": "borromean-baryon-mass-formula.md:74-93 revives lambda_scale ('open R&D', 'conjectural common scale') after sibling lambda-scale-substrate-form.md + witness + AGENTS.md:660 record it structurally falsified / purged / absorbed into VolDensity (PR #1080).",
+      "attempts": [
+        {
+          "ts": "2026-06-24T03:58:58Z",
+          "tactic": "L1-L4 lenses + adjudicator (corpus-grep + Lean + refs)",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Why is lambda_scale presented as a live open object when the corpus purged it? Re-scope to absorbed-into-VolDensity / dS-only, and fix the ': True' Lean fields + empty-assertion 'verified' witness."
+    },
+    {
+      "id": "9a39ef184454",
+      "block_or_script": "conj:borromean-baryon-mass-formula",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean"
+      },
+      "finding": "da-lean-narrative-divergence",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+      "evidence": "Lean class fields proton_matches_codata/neutron_matches_codata are ': True' (\u00a71a audit-dodge); witness assertions:[] but .ts status:'verified'.",
+      "attempts": [
+        {
+          "ts": "2026-06-24T03:58:58Z",
+          "tactic": "L1-L4 lenses + adjudicator (corpus-grep + Lean + refs)",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "The Lean proves nothing about the CODATA match and the 'verified' status is unearned."
+    },
+    {
+      "id": "a0ff03bed7f1",
+      "block_or_script": "prop:three-calibration-discipline",
+      "paths": {
+        "md": "content/quantum-observable-universe/observations/three-calibration-discipline.md",
+        "lean": "content/quantum-observable-universe/observations/three-calibration-discipline.lean"
+      },
+      "finding": "da-lean-narrative-divergence",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+      "evidence": "Lean theorem ':= c.mass_factorisation X' projects the conclusion (self-assuming, \u00a73b-cond non-degenerate); encodes neither 'exactly three' nor 'no fourth'. Q_beta 'derived' is asserted where corpus says 'POSTULATED, NOT DERIVED'.",
+      "attempts": [
+        {
+          "ts": "2026-06-24T03:58:58Z",
+          "tactic": "L1-L4 lenses + adjudicator (corpus-grep + Lean + refs)",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Should the Lean derive the three-count (not project a factorisation), and should the Q_beta prose be softened to match the corpus 'postulated' status?"
+    },
+    {
+      "id": "bcf1e8b28123",
+      "block_or_script": "prop:qbeta-ck-truncation-canonical",
+      "paths": {
+        "md": "content/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.md"
+      },
+      "finding": "da-reproducibility",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+      "evidence": "Witness assertion N3_beats_100x_experimental_target passed:false (computed 38.61 vs expected 6.02, frozen pre-re-pin); block predates/omits the 2026-06-04 registry that REFUTED real-q c_3.",
+      "attempts": [
+        {
+          "ts": "2026-06-24T03:58:58Z",
+          "tactic": "L1-L4 lenses + adjudicator (corpus-grep + Lean + refs)",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Refresh the stale witness assertion and add a cite to ck-dk-canonical-registry.md (c_3 real-q REFUTED)."
+    }
+  ],
+  "audited": {
+    "conj:borromean-baryon-mass-formula": {
+      "ts": "2026-06-24T03:58:58Z",
+      "sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:three-calibration-discipline": {
+      "ts": "2026-06-24T03:58:58Z",
+      "sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "alg:per-isotope-binding-delta-lambda-closure": {
+      "ts": "2026-06-24T03:58:58Z",
+      "sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:qbeta-ck-truncation-canonical": {
+      "ts": "2026-06-24T03:58:58Z",
+      "sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    }
+  },
+  "reviewed_up_to": {
+    "da-referee-verdict": "43dc406cec31fe3ed66167cb760e798d5add820e"
+  }
+}
