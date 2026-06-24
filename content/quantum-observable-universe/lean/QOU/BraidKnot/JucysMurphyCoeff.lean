@@ -61,4 +61,18 @@ theorem coeff_one_sq_sum_single_involution {G : Type*} [Group G] [DecidableEq G]
   have hgi : g⁻¹ = g := inv_eq_of_mul_eq_one_right (hs g hg)
   rw [hgi, if_pos hg, Nat.cast_one]
 
+/-- **Indexed form** (what the Jucys–Murphy element plugs into directly). For an *injective*
+family `f` of involutions indexed by a finite set `t`, the identity coefficient of
+`(Σ_{i∈t} f i)²` is `|t|`. Re-index the core lemma through `t.image f` (injective ⇒ card `|t|`). -/
+theorem coeff_one_sq_sum_single_involution_indexed {G ι : Type*} [Group G] [DecidableEq G]
+    (t : Finset ι) (f : ι → G) (hf : Set.InjOn f t) (hfi : ∀ i ∈ t, f i * f i = 1) :
+    ((∑ i ∈ t, single (f i) (1 : R)) ^ 2) (1 : G) = (t.card : R) := by
+  have hsum : (∑ i ∈ t, single (f i) (1 : R)) = ∑ g ∈ t.image f, single g (1 : R) := by
+    rw [Finset.sum_image (fun x hx y hy h => hf hx hy h)]
+  have hinv : ∀ g ∈ t.image f, g * g = 1 := by
+    intro g hg; rw [Finset.mem_image] at hg
+    obtain ⟨i, hi, rfl⟩ := hg; exact hfi i hi
+  rw [hsum, coeff_one_sq_sum_single_involution (t.image f) hinv,
+    Finset.card_image_of_injOn hf]
+
 end QOU.BraidKnot.JucysMurphyCoeff
