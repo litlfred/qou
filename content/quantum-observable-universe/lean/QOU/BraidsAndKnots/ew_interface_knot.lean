@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidsAndKnots.ew_interface_knot
 
@@ -24,7 +26,9 @@ class EwInterfaceKnotContext where
   /-- Strand count of the EW interface knot (manuscript: `n = 6`). -/
   n_strands : ℕ
   /-- EW-carrier exponents `(σ_1^4, σ_3^6, σ_5^8)` for `(W, Z, H)`. -/
-  exp_W exp_Z exp_H : ℕ
+  exp_W : ℕ
+  exp_Z : ℕ
+  exp_H : ℕ
   /-- Manuscript sub-claim (i) — Strand-count identity: the EW
       interface knot lives in `H_6(q)` (n_strands = 6). -/
   claim_i_strand_count : n_strands = 6

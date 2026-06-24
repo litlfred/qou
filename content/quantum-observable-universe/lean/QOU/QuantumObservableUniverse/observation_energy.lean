@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.QuantumObservableUniverse.observation_energy
 
@@ -42,7 +44,8 @@ class ObservationEnergyContext where
   E_classical : ℝ → ℝ
   /-- Witness points where `E_classical` exhibits both signs of
       change (`q₁ ≠ q₂` and the classical energy is *not* monotone). -/
-  q_inc q_dec : ℝ
+  q_inc : ℝ
+  q_dec : ℝ
   /-- E_classical increases at q_inc. -/
   E_inc : E_classical (q_inc + δq) > E_classical q_inc
   /-- E_classical decreases at q_dec. -/
