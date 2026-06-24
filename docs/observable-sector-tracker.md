@@ -39,26 +39,30 @@ honest discipline call (DERIVED / PARTIAL / OPEN / NUMEROLOGY).
 > `docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md` (read the
 > ADDENDUM, not the body).
 
-## L2 100× dashboard (authoritative, from per-observable-100x-status.witness.json @ 2026-05-30T21:01)
+## L2 100× dashboard (proton-anchored convention; see AGENTS.md §"q₀ anchor convention")
 
 | observable | role | pred err | σ_exp (=100×/100) | beats 100×? | beats 1×? |
 |------------|------|--------:|------:|:----:|:----:|
 | m_e | CAL-1 anchor | 0 ppb | 0.2935 ppb | ✓ | ✓ |
-| m_p | CAL-2 anchor | 0.0004 ppb | 0.3091 ppb | ✓ | ✓ |
-| m_μ | validation | ~0 ppb | 21.77 ppb | ✓ | ✓ |
+| m_p | CAL-2 numerical anchor (m_p/m_e re-pin) | 0.0004 ppb | 0.3091 ppb | ✓ | ✓ |
+| m_μ | validation (proton-anchored prediction) | 209.8 ppb | 21.77 ppb | ✗ | ✗ |
 | m_K/m_π | validation (meson) | 23.44 ppb | 2.64×10⁴ ppb | ✓ | ✓ |
-| Q_β | CAL-3 anchor | **1279 ppb** | 779.7 ppb | ✗ | ✗ |
+| Q_β | derived (CAL-1+2; **not** CAL-3 — CAL-3 is m_π) | **1279 ppb** | 779.7 ppb | ✗ | ✗ |
 | m_n | validation | 1.066 ppb | 0.5747 ppb | ✗ | ✗ |
 | Δ_pn | validation | 773.9 ppb | 473.9 ppb | ✗ | ✗ |
 
-**Net: 4/7 beat 100×, 4/7 beat 1× experimental** (m_e, m_p, m_μ,
-m_K/m_π). Q_β / m_n / Δ_pn miss BOTH — this is the **μ-p substrate
-tension floor**, the framework's irreducible self-consistency limit at
-the single-substrate level (see `docs/precision-goals.md` Subgoal-2).
-Note: m_p is NOT 242 ppb (that was the stale muon-pin); at the canonical
-m_p-pin q₀ it is the 0.0004 ppb anchor. Closing Q_β below the floor
-requires a genuine Taylor-exact c_3 derivation (the open bridge `f`),
-NOT a structural near-match.
+**Net: 3/7 beat 100×, 3/7 beat 1× experimental** (m_e, m_p, m_K/m_π).
+m_μ is a **9.5σ proton-anchored prediction** (209.8 ppb — the μ–p
+substrate tension), **not** "~0 ppb / met": the earlier ~0 ppb value
+was the **muon-q₀ CAL-2 calibration tautology** mis-scored as a
+prediction (see AGENTS.md §"q₀ anchor convention" + bean `tnjb`).
+Q_β / m_n / Δ_pn miss BOTH — the **μ-p substrate tension floor**, the
+framework's irreducible self-consistency limit at the single-substrate
+level (see `docs/precision-goals.md` Subgoal-2). Note: m_p is NOT 242
+ppb (that was the stale muon-pin); at the canonical m_p-pin q₀ it is the
+0.0004 ppb anchor. Closing Q_β below the floor requires a genuine
+Taylor-exact c_3 derivation (the open bridge `f`), NOT a structural
+near-match.
 
 ---
 
@@ -68,7 +72,7 @@ NOT a structural near-match.
 |---|---|---|---|---|---|
 | **m_e** | CAL-1 anchor (CODATA 2022) | — | `codata_masses.py` → `codata-masses.witness.json` | 0 ppb (anchor) | DERIVED (anchor) |
 | **m_μ / m_e** | `Vol(4_1) / ℏ_q²` | `mass-formula-validation.md`, Lean `m_mu_over_m_e_via_vol_4_1` | `m_p_borromean_verification_50dps.py` | exact at q₀ | DERIVED |
-| **m_μ** | `m_e · (m_μ/m_e)` | derived | dashboard reads from borromean witness | ~0 ppb (CAL-2 anchor) | DERIVED (anchor) |
+| **m_μ** | `m_e · (m_μ/m_e)` | derived | proton-anchored prediction (μ–p tension) | 209.8 ppb (9.5σ) | PREDICTION (not anchor) |
 | **m_τ** | `m_e · (Vol(4_1) / ℏ_q²)²` (?) — **claimed** but not pin-tight | `m-tau-knot-prediction.md` | `m_tau_knot_prediction.py` | ~few % off | **PARTIAL** — has prediction, not in 100× dashboard, not Lean-proved |
 | **m_e generations** (electron family relationships) | — | — | — | — | OPEN — no canonical chain for the 3-generation structure |
 
