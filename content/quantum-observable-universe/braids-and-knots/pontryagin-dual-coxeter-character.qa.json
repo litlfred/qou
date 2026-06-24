@@ -1354,6 +1354,27 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
       }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "verdict": "clean",
+        "referee_argument": "Bucket-C1 false positive. The checker matched `sorry` twice in the live .lean (lean:37 'sorry-free.' inside the /-! -/ module docstring; lean:117 'naked `sorry`' inside a /-- -/ doc comment) — both COMMENT text, neither a tactic. All three theorems (lean:62/76/99) close with genuine tactics (fin_cases/simp/simpa; Equiv.Perm.sign_swap; refine+exact). The sorry-free label at md:44 and lean:37 thus correctly describes a genuinely sorry-free file — no da-overclaim, no da-lean-narrative-divergence. The qa.json agent notes claiming a 'sorry stub'/'sorryAx' (proof-narrative-lean-equiv, proof-statement-integrity) are themselves stale/false against the current hash; the script-level proof-no-bare-sorries PASSED. The lean.ref resolves to the sibling (no library file at candidate 2); the decl is the class PontryaginDualCoxeterCharacter whose field is := True, not a sorry. A separable non-C1 nit (the vacuous holds:Prop:=True shim) falls under the §1a/§3b shadow-stub carve-out (real formalisation in-file).",
+        "field_hash": {
+          "md": "0e1235de1c00",
+          "ts": "3def03d54601",
+          "lean": "a3cc2ad89343"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
     ]
   },
   "updated_at": "2026-06-24T12:30:00.000Z"

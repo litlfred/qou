@@ -32,7 +32,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
-      "evidence": "Lean class fields proton_matches_codata/neutron_matches_codata are ': True' (\u00a71a audit-dodge); witness assertions:[] but .ts status:'verified'.",
+      "evidence": "Lean class fields proton_matches_codata/neutron_matches_codata are ': True' (§1a audit-dodge); witness assertions:[] but .ts status:'verified'.",
       "attempts": [
         {
           "ts": "2026-06-24T03:58:58Z",
@@ -55,7 +55,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
-      "evidence": "Lean theorem ':= c.mass_factorisation X' projects the conclusion (self-assuming, \u00a73b-cond non-degenerate); encodes neither 'exactly three' nor 'no fourth'. Q_beta 'derived' is asserted where corpus says 'POSTULATED, NOT DERIVED'.",
+      "evidence": "Lean theorem ':= c.mass_factorisation X' projects the conclusion (self-assuming, §3b-cond non-degenerate); encodes neither 'exactly three' nor 'no fourth'. Q_beta 'derived' is asserted where corpus says 'POSTULATED, NOT DERIVED'.",
       "attempts": [
         {
           "ts": "2026-06-24T03:58:58Z",
@@ -191,7 +191,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
-      "evidence": ".md calls wedderburn_weight() output 'Wenzl-Markov y_\u03bb' but it is w\u0303_\u03bb=dim_q^2/[n]_q! (\u00a77aa conflation); witness-contract says per-partition (d_\u03bb,y_\u03bb) table but named witness records EW LP probes.",
+      "evidence": ".md calls wedderburn_weight() output 'Wenzl-Markov y_λ' but it is w̃_λ=dim_q^2/[n]_q! (§7aa conflation); witness-contract says per-partition (d_λ,y_λ) table but named witness records EW LP probes.",
       "attempts": [
         {
           "ts": "2026-06-24",
@@ -201,7 +201,7 @@
       ],
       "status": "needs-author",
       "asked_author_at": null,
-      "referee_argument": "Correct the API description to w\u0303_\u03bb (or call the Wenzl bridge) and fix the witness-contract section to match the actual witness contents (appendix maintenance-contract sync)."
+      "referee_argument": "Correct the API description to w̃_λ (or call the Wenzl bridge) and fix the witness-contract section to match the actual witness contents (appendix maintenance-contract sync)."
     },
     {
       "id": "c5de26a6fd8b",
@@ -214,7 +214,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
-      "evidence": "Prose claims uniqueness on C\\{0,1} via complex Bloch-Wigner D; Lean proves real-slice R->R; \u00a73b-cond banner lists ArchimedeanLimit as a uniqueness hypothesis but it is absent from the signature (only BlochSuslinUniqueness gates it).",
+      "evidence": "Prose claims uniqueness on C\\{0,1} via complex Bloch-Wigner D; Lean proves real-slice R->R; §3b-cond banner lists ArchimedeanLimit as a uniqueness hypothesis but it is absent from the signature (only BlochSuslinUniqueness gates it).",
       "attempts": [
         {
           "ts": "2026-06-24",
@@ -224,7 +224,7 @@
       ],
       "status": "needs-author",
       "asked_author_at": null,
-      "referee_argument": "Re-scope the prose uniqueness from C\\{0,1} to the formalised real locus (or add a conjectural-backing note that complex-D uniqueness is unformalised) and drop ArchimedeanLimit from the \u00a73b-cond uniqueness-hypothesis claim (it gates only figure8_calibration)."
+      "referee_argument": "Re-scope the prose uniqueness from C\\{0,1} to the formalised real locus (or add a conjectural-backing note that complex-D uniqueness is unformalised) and drop ArchimedeanLimit from the §3b-cond uniqueness-hypothesis claim (it gates only figure8_calibration)."
     },
     {
       "id": "d79717d2e9c9",
@@ -258,7 +258,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "9686182e06e08cbd35d8c754c76d947324dc44cd",
-      "evidence": "95 blocks carry a closure label (proved/closed-form/no-fit/sorry-free) over a vacuous Lean (sorry / : True / := trivial) \u2014 e.g. b1-figure-8-row-theorem & b1-hyperbolic-rows-theorem ('proved' over : True), depth-2-identification-bloch-suslin, wenzl-positivity-implies-substrate-positivity, qbeta-ck-truncation-canonical.",
+      "evidence": "95 blocks carry a closure label (proved/closed-form/no-fit/sorry-free) over a vacuous Lean (sorry / : True / := trivial) — e.g. b1-figure-8-row-theorem & b1-hyperbolic-rows-theorem ('proved' over : True), depth-2-identification-bloch-suslin, wenzl-positivity-implies-substrate-positivity, qbeta-ck-truncation-canonical.",
       "attempts": [
         {
           "ts": "2026-06-24",
@@ -274,7 +274,7 @@
       "id": "f305668e079d",
       "block_or_script": "triage:status-label-bucket-B-provable-vacuous",
       "paths": {},
-      "finding": "da-overclaim (corpus, \u00a71a)",
+      "finding": "da-overclaim (corpus, §1a)",
       "severity": "major",
       "source": "backlog",
       "source_sha": "7c6bc0a100112135383b200d5bec529b78ca4b24",
@@ -288,7 +288,7 @@
       ],
       "status": "needs-author",
       "asked_author_at": null,
-      "referee_argument": "Per \u00a71a each needs author choice: prove it / restate with honest sorry+Ref / demote to conjecture. Not a blind mechanical fix."
+      "referee_argument": "Per §1a each needs author choice: prove it / restate with honest sorry+Ref / demote to conjecture. Not a blind mechanical fix."
     },
     {
       "id": "86296f1a3443",
@@ -308,7 +308,7 @@
       ],
       "status": "needs-author",
       "asked_author_at": null,
-      "referee_argument": "Safe mechanical relabel: drop the 'sorry-free' tag wherever a sorry is present (the claim is false as written) \u2014 or finish the proof."
+      "referee_argument": "Safe mechanical relabel: drop the 'sorry-free' tag wherever a sorry is present (the claim is false as written) — or finish the proof."
     },
     {
       "id": "483c7ccffa40",
@@ -320,7 +320,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
-      "evidence": "Lean defines alphaShift:=k(p-1) then 'proves' alpha_shift_torus_knot: alphaShift=k(p-1) by rfl (sibling stub + library class); \u00a73b-cond rule-5 violation (class axiomatizes its own conclusion); maximality-over-partitions claim absent from Lean.",
+      "evidence": "Lean defines alphaShift:=k(p-1) then 'proves' alpha_shift_torus_knot: alphaShift=k(p-1) by rfl (sibling stub + library class); §3b-cond rule-5 violation (class axiomatizes its own conclusion); maximality-over-partitions claim absent from Lean.",
       "attempts": [
         {
           "ts": "2026-06-24",
@@ -330,7 +330,7 @@
       ],
       "status": "needs-author",
       "asked_author_at": null,
-      "referee_argument": "Restate the \u00a73b-cond class to carry per-irrep pole bounds (genuine hypotheses), or demote the maximality direction to honest sorry + -- Ref:. The V_(1^p) closed form + sympy witness are sound; only the Lean is vacuous."
+      "referee_argument": "Restate the §3b-cond class to carry per-irrep pole bounds (genuine hypotheses), or demote the maximality direction to honest sorry + -- Ref:. The V_(1^p) closed form + sympy witness are sound; only the Lean is vacuous."
     },
     {
       "id": "9aff52a75a4c",
@@ -342,7 +342,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
-      "evidence": "ts wires computation.witness=codata-masses.witness.json (CODATA masses, not a Q_\u03b2 witness); prose names q_parameter.py while ts computation.script=codata_masses.py.",
+      "evidence": "ts wires computation.witness=codata-masses.witness.json (CODATA masses, not a Q_β witness); prose names q_parameter.py while ts computation.script=codata_masses.py.",
       "attempts": [
         {
           "ts": "2026-06-24",
@@ -352,7 +352,7 @@
       ],
       "status": "needs-author",
       "asked_author_at": null,
-      "referee_argument": "Wire a genuine Q_\u03b2 witness (reproducing 0.7836 MeV) and reconcile the prose vs .ts script names."
+      "referee_argument": "Wire a genuine Q_β witness (reproducing 0.7836 MeV) and reconcile the prose vs .ts script names."
     },
     {
       "id": "218eada3409e",
@@ -387,7 +387,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
-      "evidence": "theorem calibrations_eq_cohomology := by rw [A.align1,A.align2,A.align3] \u2014 alignments are axiomatic struct fields; proves nothing about Bring cohomology; .ts validation:'validated' + kind proposition over-claim.",
+      "evidence": "theorem calibrations_eq_cohomology := by rw [A.align1,A.align2,A.align3] — alignments are axiomatic struct fields; proves nothing about Bring cohomology; .ts validation:'validated' + kind proposition over-claim.",
       "attempts": [
         {
           "ts": "2026-06-24",
@@ -432,7 +432,7 @@
       "severity": "major",
       "source": "backlog",
       "source_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
-      "evidence": "self-conjugate y_\u03bb=\u1ef9_\u03bb identity is circular: at n=3 (2,1) the probe gives y/\u1ef9\u22480.43\u22601; holds only under a tautological P1.3a y_\u03bb definition; cited witnesses are in _deprecated/ under status:'verified'. Same \u00a77aa conflation as wave-3 mba-step05.",
+      "evidence": "self-conjugate y_λ=ỹ_λ identity is circular: at n=3 (2,1) the probe gives y/ỹ≈0.43≠1; holds only under a tautological P1.3a y_λ definition; cited witnesses are in _deprecated/ under status:'verified'. Same §7aa conflation as wave-3 mba-step05.",
       "attempts": [
         {
           "ts": "2026-06-24",
@@ -442,7 +442,7 @@
       ],
       "status": "needs-author",
       "asked_author_at": null,
-      "referee_argument": "State the explicit Markov normalization (z_M) under which y_\u03bb=\u1ef9_\u03bb on self-conjugate \u03bb, reconcile against the probe's normalized Markov y_\u03bb, and relink/un-deprecate the witnesses. Resolves the corpus-level \u00a77aa weight-family ambiguity."
+      "referee_argument": "State the explicit Markov normalization (z_M) under which y_λ=ỹ_λ on self-conjugate λ, reconcile against the probe's normalized Markov y_λ, and relink/un-deprecate the witnesses. Resolves the corpus-level §7aa weight-family ambiguity."
     },
     {
       "id": "641199150038",
@@ -450,11 +450,11 @@
       "paths": {
         "lean": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.lean"
       },
-      "finding": "da-lean-narrative-divergence (\u00a70a shadow-stub + \u00a73b-cond rule5)",
+      "finding": "da-lean-narrative-divergence (§0a shadow-stub + §3b-cond rule5)",
       "severity": "minor",
       "source": "backlog",
       "source_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
-      "evidence": "sibling .lean:16 theorem b1_figure_8_row : True := by trivial (\u00a70a shadow-stub; real decl exists at lean/QOU/AppendixSurreals/B1Figure8RowTheorem.lean) which is itself a self-assuming projection; .md:35 'Theorem-level (no conditional)' but library decl is [ctx]-conditional.",
+      "evidence": "sibling .lean:16 theorem b1_figure_8_row : True := by trivial (§0a shadow-stub; real decl exists at lean/QOU/AppendixSurreals/B1Figure8RowTheorem.lean) which is itself a self-assuming projection; .md:35 'Theorem-level (no conditional)' but library decl is [ctx]-conditional.",
       "attempts": [
         {
           "ts": "2026-06-24",
@@ -464,7 +464,100 @@
       ],
       "status": "needs-author",
       "asked_author_at": null,
-      "referee_argument": "Delete the ': True := trivial' sibling stub (\u00a70a); reconcile the .md 'no conditional' wording with the [ctx] class; per \u00a73b-cond rule5, restate the class to carry sub-hypotheses not both conjuncts."
+      "referee_argument": "Delete the ': True := trivial' sibling stub (§0a); reconcile the .md 'no conditional' wording with the [ctx] class; per §3b-cond rule5, restate the class to carry sub-hypotheses not both conjuncts."
+    },
+    {
+      "id": "caad12d1b885",
+      "block_or_script": "prop:markov-trace-axiomatic-closed-form",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean",
+        "ts": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.ts"
+      },
+      "finding": "da-vacuous+da-overclaim",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43",
+      "evidence": "lean.ref resolves (sibling-first, no library shadow) to `def markovTraceAxiomaticClosedForm : True := by … trivial` (lean:113) — def-disguised-True wearing kind proposition + tag closed-form (ts:72); corpus records it open (vacuity-def-dodge.json:565, buckets.json:44), not closed. Math reproduces (fresh witness tr_M=1.63315, denom q^10(q+1)^3).",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Honest §1a disposition: prove the closed-form identity, or restate with sorry + -- Ref:, or demote to conjecture; drop the closed-form tag. The math is sound — only the formal artifact is vacuous."
+    },
+    {
+      "id": "6523ca1d8372",
+      "block_or_script": "prop:depth-2-identification-bloch-suslin",
+      "paths": {
+        "lean": "content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.lean",
+        "md": "content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.md"
+      },
+      "finding": "da-vacuous+da-circular+da-overclaim+da-lean-narrative-divergence",
+      "severity": "critical",
+      "source": "backlog",
+      "source_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43",
+      "evidence": "§0a shadow-stub: lean.ref resolves sibling-first to `theorem depth_2_identification : True := by trivial` (lean:16), masking a library decl that is itself a §3b-cond rule-5 self-assuming projection (exact ctx.left_inverse); .md boxes 'this is a theorem' + keystone-discharge/theorem-level tags. Figure-eight anchor hyperbolic (dilog sound); per-Bring-F generalisation over-broad; Suslin/Bloch cites mis-dated.",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Delete the §0a sibling stub so the ref falls through; de-vacuify the library projection (carry genuine sub-hypotheses, not the conclusion) or demote to conjecture; re-scope the generalisation to the hyperbolic anchor; fix the in-prose Suslin/Bloch attributions."
+    },
+    {
+      "id": "c01a7c371d18",
+      "block_or_script": "prop:crystal-r-matrix-sub-lemma",
+      "paths": {
+        "lean": "content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.lean",
+        "md": "content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma.md"
+      },
+      "finding": "da-lean-narrative-divergence+da-vacuous",
+      "severity": "major",
+      "source": "backlog",
+      "source_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43",
+      "evidence": "§0a shadow-stub: lean.ref resolves sibling-first to `theorem CrystalRMatrixSubLemma : hA.identity_holds ∨ True := by right; trivial` (lean:76), shadowing the genuine same-FQN library class the .md quotes. Conditional pole-order math is corpus-supported + witnessed 21/21 (da-false-claim rebutted).",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Mechanical §0a fix: realign the ref/file so it resolves to the library class CrystalRMatrixSubLemma, delete the orphaned vacuous sibling (or restate it with the real proposition + sorry + -- Ref:). The conditional math is sound."
+    },
+    {
+      "id": "4af5866ca6a6",
+      "block_or_script": "prop:hecke-1d-irrep-closed-form-character",
+      "paths": {
+        "md": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.md",
+        "ts": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.ts",
+        "lean": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean"
+      },
+      "finding": "da-lean-narrative-divergence+da-overclaim",
+      "severity": "minor",
+      "source": "backlog",
+      "source_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43",
+      "evidence": "survivable: §3b-cond banner 'conditional on conj:borromean-quark' (md:1) unsupported — uses[] omits it (ts:11) and the real export lean:225 is unconditional; eigenvalue-forcing λ_σ∈{+q,-q⁻¹} is narrative-only (Lean takes λ_σ free, lean:120). Bucket-B flag rebutted (orphan stub lean:248 in an unreferenced namespace).",
+      "attempts": [
+        {
+          "ts": "2026-06-24",
+          "tactic": "L1-L4 lenses + adjudicator",
+          "outcome": "fail"
+        }
+      ],
+      "status": "needs-author",
+      "asked_author_at": null,
+      "referee_argument": "Drop the spurious conditional banner (or wire uses[]+export to the class); note the eigenvalue-forcing is deferred to prop:hecke-branching-trace-decomposition. The closed-form character is true and proven — labelling defects only."
     }
   ],
   "audited": {
@@ -670,9 +763,44 @@
       "criteria": [
         "da-referee-verdict"
       ]
+    },
+    "prop:markov-trace-axiomatic-closed-form": {
+      "ts": "2026-06-24",
+      "sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:hecke-1d-irrep-closed-form-character": {
+      "ts": "2026-06-24",
+      "sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:depth-2-identification-bloch-suslin": {
+      "ts": "2026-06-24",
+      "sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "prop:crystal-r-matrix-sub-lemma": {
+      "ts": "2026-06-24",
+      "sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43",
+      "criteria": [
+        "da-referee-verdict"
+      ]
+    },
+    "thm:pontryagin-dual-coxeter-character": {
+      "ts": "2026-06-24",
+      "sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43",
+      "criteria": [
+        "da-referee-verdict"
+      ]
     }
   },
   "reviewed_up_to": {
-    "da-referee-verdict": "4969df905a8d555017a1d0756f02b58dea170ddc"
+    "da-referee-verdict": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
   }
 }
