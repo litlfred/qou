@@ -119,6 +119,7 @@ def neg_li2q_neg(z: mp.mpf, terms: int = 100000) -> mp.mpf:
     # arbitrary-precision exponentiations (Gemini review, PR #2481).
     total, zn, sign = mp.mpf(0), mp.mpf(1), 1
     q0_n, qi_n, denom_factor = mp.mpf(1), mp.mpf(1), Q0 - QI
+    tol = mp.mpf(10) ** (-mp.mp.dps - 5)  # convergence threshold (loop-invariant)
     for n in range(1, terms + 1):
         zn *= z
         q0_n *= Q0
@@ -126,7 +127,7 @@ def neg_li2q_neg(z: mp.mpf, terms: int = 100000) -> mp.mpf:
         term = (sign * zn * denom_factor) / (n * (q0_n - qi_n))  # 1/[n]_q
         total += term
         sign = -sign
-        if abs(term) < mp.mpf(10) ** (-mp.mp.dps - 5):
+        if abs(term) < tol:
             break
     return total
 
@@ -160,7 +161,7 @@ def main() -> None:
         prod_std = per_gen[0]["std"] * per_gen[1]["std"]
         prod_full = per_gen[0]["full_qdef"] * per_gen[1]["full_qdef"]
         # T2 single-generator tower under each per-generator argument
-        t2_full = sum(neg_li2q_neg(abs(g["full_qdef"])) for g in per_gen)
+        t2_full = mp.fsum(neg_li2q_neg(abs(g["full_qdef"])) for g in per_gen)
         t2_std = [neg_li2q_neg(abs(g["std"])) for g in per_gen]
         print(f"{nuc}:")
         for g in per_gen:
