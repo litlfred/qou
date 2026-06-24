@@ -29,6 +29,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:alpha-em-categorical-trace-ratio",
+  proofs: ["prf:alpha-em-categorical-trace-ratio"],
   title:
     "Algebraic identity: $\\alpha_{EM} = h^2 / [q \\cdot \\delta_q(T_{2,9}) \\cdot \\delta_q(T_{3,5})]$",
   lean: { ref: "qou:QOU.ArchimedeanUniverse.alpha_em_categorical_trace_ratio" },

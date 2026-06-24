@@ -40,6 +40,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:alpha-em-shift-multiplicative-chain",
+  proofs: ["prf:alpha-em-shift-multiplicative-chain"],
   title:
     "Multiplicative-chain form: $\\alpha_{EM}^{-1} = q \\cdot [\\alpha_{\\mathrm{shift}}(T_{2,9})]_q \\cdot [\\alpha_{\\mathrm{shift}}(T_{3,5})]_q$",
   computation: {

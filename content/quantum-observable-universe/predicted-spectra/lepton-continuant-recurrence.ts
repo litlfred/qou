@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:lepton-continuant-recurrence",
+  proofs: ["prf:lepton-continuant-recurrence"],
   title:
     "Continuant recurrence for the lepton tower $T_{2,n}$",
   tags: [

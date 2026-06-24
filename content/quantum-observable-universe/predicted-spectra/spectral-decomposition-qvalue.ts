@@ -2,6 +2,7 @@ import { corollary } from "../../schema/builders";
 
 export default corollary({
   label: "cor:spectral-decomposition-qvalue",
+  proofs: ["prf:spectral-decomposition-qvalue"],
   title:
     "Spectral decomposition of the $\\mathcal{Q}_q$-value over the torus knot basis of $\\Sigma_4$",
   tags: [

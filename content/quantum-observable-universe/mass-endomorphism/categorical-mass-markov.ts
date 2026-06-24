@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:categorical-mass-markov",
+  proofs: ["prf:categorical-mass-markov"],
   title: "Categorical mass as Markov trace",
   uses: [],
   tags: [

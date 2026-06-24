@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:rj-canonical-inner-product",
+  proofs: ["prf:rj-canonical-inner-product"],
   title:
     "Canonical inner product on $R(H_r(q))$ via Schur orthogonality",
   tags: [

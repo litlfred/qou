@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:topological-decomposition-mass",
+  proofs: ["prf:topological-decomposition-mass"],
   title: "Conjectural Topological Decomposition of Mass",
   lean: {
     ref: "qou:QOU.TopologicalMass.TopologicalDecompositionMass",

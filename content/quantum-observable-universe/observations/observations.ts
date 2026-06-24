@@ -24,6 +24,7 @@ export default chapter({
         "substrate-consistency-window-table2-data",
         "substrate-consistency-window-table1-data",
         "three-calibration-discipline",
+        "three-calibration-discipline-proof",
       ],
     }),
 

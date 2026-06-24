@@ -45,6 +45,7 @@ export default chapter({
         "commutative-crossing-energy-table1-data",
         "coulomb-charge",
         "coulomb-strong-ratio-q-rational",
+        "coulomb-strong-ratio-q-rational-proof",
         "skein-crossing-asymmetry-prop",
         "skein-crossing-asymmetry",
         "skein-bar-antisymmetry",

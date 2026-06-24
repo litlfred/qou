@@ -50,6 +50,7 @@ export default chapter({
         "markov-axioms-braid-link-li2q-phiq-bar-intro",
         "polynomial-bar-involution-table-data",
         "c5-involution-leibniz-decomposition",
+        "c5-involution-leibniz-decomposition-proof",
         "braid-group-n-strand-table3-data",
       ],
     }),
@@ -85,7 +86,9 @@ export default chapter({
         "reeb-epsilon",
         "q-from-epsilon",
         "joint-galois-braid-figure-8-verified",
+        "joint-galois-braid-figure-8-verified-proof",
         "joint-galois-braid-discharged",
+        "joint-galois-braid-discharged-proof",
       ],
     }),
     section({

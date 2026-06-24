@@ -2,6 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:pontryagin-dual-coxeter-character",
+  proofs: ["prf:pontryagin-dual-coxeter-character"],
   title:
     "Pontryagin self-duality on abelianised Coxeter group $S_n^{\\mathrm{ab}} \\cong \\mathbb{Z}/2$",
   lean: {

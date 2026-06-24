@@ -42,6 +42,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:markov-trace-axiomatic-closed-form",
+  proofs: ["prf:markov-trace-axiomatic-closed-form"],
   title:
     "Direct axiomatic closed form of the Markov trace for atomic-braid words in $H_n(q)$",
   uses: [

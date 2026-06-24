@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:trm-hopf-sigma1-sq-closed-form",
+  proofs: ["prf:trm-hopf-sigma1-sq-closed-form"],
   lean: {
     ref: "qou:QOU.Braiding.TrMHopfSigma1SqClosedForm",
     validation: "not_checked",

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:joint-galois-braid-figure-8-verified",
+  proofs: ["prf:joint-galois-braid-figure-8-verified"],
   title:
     "Joint Galois $\\times$ braid action commutes on the figure-8 bi-filtration cell — verified directly",
   lean: {

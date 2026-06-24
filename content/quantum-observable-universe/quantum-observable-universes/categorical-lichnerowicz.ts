@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:categorical-lichnerowicz",
+  proofs: ["prf:categorical-lichnerowicz"],
   title:
     "Categorical Lichnerowicz: $\\Delta_\\nabla^q = \\mathfrak{D}_\\nabla^2 + \\tfrac{1}{4}\\,\\mathrm{Sc}_q$",
   tags: [

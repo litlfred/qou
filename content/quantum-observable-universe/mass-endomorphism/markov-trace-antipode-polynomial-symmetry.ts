@@ -23,6 +23,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:markov-trace-antipode-polynomial-symmetry",
+  proofs: ["prf:markov-trace-antipode-polynomial-symmetry"],
   title:
     "Antipode-induced polynomial symmetry $q^{20} p(1/q) = -p(q)$ of the proton Markov trace closed form",
   uses: [

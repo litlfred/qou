@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:reeb-u1-chart-swap",
+  proofs: ["prf:reeb-u1-chart-swap"],
   title:
     "Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\\mathrm{Aut}(\\mathbb{P}(V))$",
   tags: [

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:c5-involution-leibniz-decomposition",
+  proofs: ["prf:c5-involution-leibniz-decomposition"],
   lean: {
     ref: "qou:QOU.BraidKnot.C5InvolutionLeibnizDecomposition",
     validation: "not_checked",

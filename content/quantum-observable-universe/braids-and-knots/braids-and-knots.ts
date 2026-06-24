@@ -78,6 +78,7 @@ export default chapter({
             "markov-axioms-primitive",
             "markov-trace-inductive-limit",
             "trm-hopf-sigma1-sq-closed-form",
+            "trm-hopf-sigma1-sq-closed-form-proof",
             "trm-hopf-sigma1-sq-closed-form-table2-data",
             "trm-hopf-sigma1-sq-closed-form-table1-data",
             "hecke-log-decomposition-table-data",
@@ -180,6 +181,7 @@ export default chapter({
         "r-matrix-braiding-structure",
         "r-matrix-braiding",
         "pontryagin-dual-coxeter-character",
+        "pontryagin-dual-coxeter-character-proof",
       ],
     }),
 

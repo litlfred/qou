@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:joint-galois-braid-discharged",
+  proofs: ["prf:joint-galois-braid-discharged"],
   title:
     "Joint motivic-Galois $\\times$ braid action commutes on every bi-filtration cell — discharged",
   lean: {
