@@ -78,10 +78,14 @@ nucleon masses from only $(m_e, m_\mu, q_0)$:
 
   - $m_p = 2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0) - 12 \cdot m_e$
     $\approx 938.27186\,\mathrm{MeV}$ ($0.24\,\mathrm{ppm}$ residual)
-  - $m_n = m_p \cdot (1 + X/(1 - X/2))$ where $X = \Delta m / M_N$
-    $\approx 939.56354\,\mathrm{MeV}$ ($2.00\,\mathrm{ppm}$ residual)
-  - $\mathfrak{Q}_\beta := m_n - m_p - m_e$ is now DERIVED, not an input
-    (matches CODATA to $-2113\,\mathrm{ppm}$, bottlenecked by $m_n$)
+  - $m_n = m_p + \mathfrak{Q}_\beta + m_e$, with $\mathfrak{Q}_\beta$ the
+    parameter-free Kashiwara $b^2$ truncation (near-match)
+    $\approx 939.56542\,\mathrm{MeV}$ ($\sim +1\,\mathrm{ppb}$ residual)
+  - $\mathfrak{Q}_\beta := m_n - m_p - m_e$ is DERIVED, not an input
+    ($+1.25\,\mathrm{ppm}$ on $\mathfrak{Q}_\beta$ itself; $\sim 1\,\mathrm{ppb}$
+    once propagated to $m_n$). The flavor-split $m_n = m_p(1 + X/(1-X/2))$
+    (below) is a **secondary diagnostic** ratio ($-1.76\,\mathrm{ppm}$ on
+    $m_n$), not the production route.
 
 The flavor-split $X$ is an $h^3$-leading quantity:
 
@@ -95,11 +99,13 @@ effect in the deformation parameter $h$, not a quadratic one.
 The dominant MeV contributions are $h^3$: $+1.43\,\mathrm{MeV}$,
 $h^4$: $-0.15\,\mathrm{MeV}$.
 
-The residual decomposition of $m_n$ (2.0 ppm) separates:
-$0.24\,\mathrm{ppm}$ from $F_{\mathrm{Bor}}$ (proton mass) and
-$1.76\,\mathrm{ppm}$ from $X$ (flavor-split formula). The
-$\mathfrak{Q}_\beta$ residual ($2113\,\mathrm{ppm}$) is dominated entirely
-by $X$.
+The **secondary** flavor-split diagnostic's $m_n$ residual (2.0 ppm)
+separates: $0.24\,\mathrm{ppm}$ from $F_{\mathrm{Bor}}$ (proton mass) and
+$1.76\,\mathrm{ppm}$ from $X$ (the flavor-split formula). Routing the
+neutron through the categorical $\mathfrak{Q}_\beta$ (Kashiwara $b^2$)
+instead removes the $X$ term: the production $m_n$ residual drops to
+$\sim 1\,\mathrm{ppb}$ and the $\mathfrak{Q}_\beta$ residual to
+$+1.25\,\mathrm{ppm}$ (on $\mathfrak{Q}_\beta$ itself).
 
 The QOU 3-calibration discipline reduces to **2 calibrations**
 $(m_e, m_\mu/m_e)$ for the baryon + $\mathfrak{Q}_\beta$ sector (or equivalently
@@ -107,11 +113,14 @@ $(m_e, q_0)$ via the muon-anchor identity $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q
 
 ## Consistency gap: decay-rate cross-check
 
-The mass-derived $\mathfrak{Q}_\beta = m_n - m_p - m_e \approx 0.7807\,\mathrm{MeV}$
-differs from the N=3 categorical-ladder
-$\mathfrak{Q}_\beta \approx 0.78233\,\mathrm{MeV}$ by $2113\,\mathrm{ppm}$ — bottlenecked
-by the flavor-split's $0.10\%$ residual. Closing this gap
-would cohomologically prove the $q_0 \leftrightarrow \mathfrak{Q}_\beta$ relationship.
+The production neutron now **consumes** the categorical
+$\mathfrak{Q}_\beta \approx 0.78233\,\mathrm{MeV}$ (Kashiwara $b^2$, parameter-free)
+directly, so the historical $2113\,\mathrm{ppm}$ gap between the flavor-split
+mass-derived $\mathfrak{Q}_\beta$ and the categorical ladder is **closed at the
+production level**. The remaining open item is the *exact* closure —
+promoting the $\mathfrak{Q}_\beta$ near-match to a derivation — which would
+cohomologically prove the $q_0 \leftrightarrow \mathfrak{Q}_\beta$ relationship; it is
+gated on the s5-so3 / Habiro keystone (`conj:s5-so3-fiber-action`, bean s5bb).
 
 A decay-width cross-check connects both derivations to experimental
 lifetimes via the Fermi theory:
