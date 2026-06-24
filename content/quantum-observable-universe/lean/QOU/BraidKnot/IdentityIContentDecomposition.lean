@@ -508,7 +508,7 @@ theorem redCross (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
       (2 : ℤ) * ∑ j ∈ Finset.range (l.getD i' 0), ∑ i ∈ Finset.range i',
           ((l.getD i 0 : ℤ) - 1 - (j : ℤ))
         = 2 * (l.getD i' 0 : ℤ) * (∑ i ∈ Finset.range i', (l.getD i 0 : ℤ))
-          - (i' : ℤ) * (l.getD i' 0) - (i' : ℤ) * (l.getD i' 0) ^ 2 := by
+          - (i' : ℤ) * (l.getD i' 0 : ℤ) - (i' : ℤ) * (l.getD i' 0 : ℤ) ^ 2 := by
     intro i' _
     rw [Finset.sum_comm]
     have hin : ∀ i, ∑ j ∈ Finset.range (l.getD i' 0), ((l.getD i 0 : ℤ) - 1 - (j : ℤ))
