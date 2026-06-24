@@ -1360,7 +1360,133 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "lean:248 `def hecke_d_irrep_closed_form_character_g2_conditional [_inst : BorromeanQuark] : True := trivial` — a def-disguised-True; the Bucket-B 'closed-form over :=trivial' flag latched here.",
+        "rebuttal": "rebutted — ts:6 lean.ref qou:QOU.BraidKnot.hecke_1d_irrep_closed_form_character resolves to lean:225, a sorry-free inductive proof of both 1-d character closed forms (zpow_add_one/zpow_sub_one/pow_succ/field_simp;ring). The :True:=trivial at lean:248 is an orphan in namespace QOU.Hecke1dIrrepClosedFormCharacter.ConditionalAudit the ref never points to.",
+        "evidence": [
+          {
+            "text": "hecke-1d-irrep-closed-form-character.ts:6"
+          },
+          {
+            "text": "hecke-1d-irrep-closed-form-character.lean:225"
+          },
+          {
+            "text": "hecke-1d-irrep-closed-form-character.lean:248"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "md:1 opens '**Proposition (conditional on conj:borromean-quark …).**' but ts:11-13 uses[] omits conj:borromean-quark (§3b-cond req 4) and the real export lean:225 takes no [BorromeanQuark] (§3b-cond req 2); the class appears only in the orphan stub lean:245-248.",
+        "rebuttal": "partial — real §3b-cond bookkeeping defect, but it OVER-states a dependency: the 1-d Hecke character bookkeeping is genuinely unconditional and true, so the unconditional Lean is correct and the banner is spurious. Fix = drop banner or wire uses[]+export to the class; no math at risk.",
+        "evidence": [
+          {
+            "text": "hecke-1d-irrep-closed-form-character.md:1"
+          },
+          {
+            "text": "hecke-1d-irrep-closed-form-character.ts:11"
+          },
+          {
+            "text": "hecke-1d-irrep-closed-form-character.lean:225"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "md:36-44 Proof asserts λ_σ∈{+q,-q⁻¹} forced 'by the Iwahori-Hecke relation (σ_i−q)(σ_i+q⁻¹)=0' and md:88-91 calls eigenvalues 'substrate-derived'; but oneDim_character_closed_form lean:120 takes lam_sig as a free real (only ≠0) and the specialisations merely PLUG IN +q,-q⁻¹ — the Lean never states/uses the quadratic relation, so exhaustiveness is narrative-only.",
+        "rebuttal": "partial — the closed-form FORMULAS are exactly what the Lean discharges; eigenvalue-forcing is a standard fact correctly deferred to prop:hecke-branching-trace-decomposition (present in corpus). Scope/labelling weakness, not a false claim.",
+        "evidence": [
+          {
+            "text": "hecke-1d-irrep-closed-form-character.md:40"
+          },
+          {
+            "text": "hecke-1d-irrep-closed-form-character.lean:120"
+          },
+          {
+            "text": "hecke-1d-irrep-closed-form-character.md:88"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The mechanical Bucket-B flag is rebutted: it caught an orphan §3b-cond audit stub at lean:248 in a namespace the lean.ref never resolves to; the referenced export at lean:225 is a sorry-free inductive proof of both 1-d character closed forms. Survivable objections: (i) the .md §3b-cond 'conditional on conj:borromean-quark' banner is unsupported — uses[] omits the conjecture and the real theorem is unconditional, a manifest/Lean divergence that over-states a dependency; (ii) the Lean proves power-bookkeeping for a free scalar λ_σ and never certifies λ_σ∈{+q,-q⁻¹} is forced by the Hecke quadratic relation, so the advertised eigenvalue-derivation is narrative-only. Neither impugns the closed-form character, which is true and proven.",
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-24T12:07:53Z"
 }

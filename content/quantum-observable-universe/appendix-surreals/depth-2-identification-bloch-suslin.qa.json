@@ -1353,7 +1353,220 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-vacuous": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "lean:16-18 `theorem depth_2_identification : True := by trivial` (verbatim, current). The .ts lean.ref qou:…Depth2IdentificationBlochSuslin.depth_2_identification resolves under §0a sibling-first (candidate 1) to this stub and never reaches the library decl (candidate 2). §0a STRICT 'no shadowing stubs': a `: True := by trivial` sibling shadowing a real library declaration.",
+        "rebuttal": "surviving — paths tried: read live sibling (verbatim `: True := by trivial`, grep one hit); read library decl (substantive name but self-assuming, see da-circular); confirmed both share name depth_2_identification so §0a candidate-1 wins. §0a forbids keeping such a stub when a library decl exists; neither was fixed.",
+        "evidence": [
+          {
+            "text": "depth-2-identification-bloch-suslin.lean:16"
+          },
+          {
+            "text": "depth-2-identification-bloch-suslin.ts:8"
+          }
+        ],
+        "severity": "critical",
+        "field_hash": {
+          "md": "324a05df9614",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "lean/QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean:16-39: the Depth2IdentificationContext class carries left_inverse/right_inverse as FIELDS (the bijection IS the identification) and `theorem depth_2_identification` discharges by `exact ctx.left_inverse`/`exact ctx.right_inverse` — projecting the conclusion out of the hypothesis class. §3b-cond rule-5: the class axiomatises the CONCLUSION, not the inputs.",
+        "rebuttal": "surviving — even if the §0a stub were fixed and the ref resolved here, the decl does not DERIVE the depth-2 Bloch–Suslin identification; it assumes it as class fields and re-projects. No Bloch group, Suslin isomorphism, or Li_2^q/D(z) comparison appears in the Lean. The qa.json already records self-assuming×2 + proof-statement-integrity + lean-vacuity.",
+        "evidence": [
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean:34"
+          },
+          {
+            "text": "depth-2-identification-bloch-suslin.qa.json (self-assuming ×2)"
+          }
+        ],
+        "severity": "critical",
+        "field_hash": {
+          "md": "324a05df9614",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "md:20-22 boxed ≅ plus 'This identification is a **theorem**'; ts:6 title '… provable via Bloch–Suslin', ts:13-20 tags keystone-discharge/theorem-level. The narrative claims a proved theorem and a keystone discharge, but the resolved Lean (sibling stub) is `: True` and the library fallback is a self-assuming projection — neither proves the boxed ≅.",
+        "rebuttal": "surviving — the .md 'What this proves' section is honest about the abstract-Hopf gap, but still asserts the image-direction identification as a theorem and the keystone conj:gb-depth-period-correspondence is correctly still a conjecture ('sharpness … Open'). The keystone-discharge tag over a vacuous/self-assuming Lean is the over-claim.",
+        "evidence": [
+          {
+            "text": "depth-2-identification-bloch-suslin.md:21"
+          },
+          {
+            "text": "depth-2-identification-bloch-suslin.ts:17"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "324a05df9614",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "the .md presents a 4-step proof chain (Bloch group 5-term; Suslin K_3^ind≅𝔅(F)⊗ℚ; archimedean τ_arch(Li_2^q)=D mod P_1; composition bijective ⊗ℝ). The resolved Lean (sibling lean:16) is `: True := by trivial`; the library decl encodes none of the four steps — only an abstract LeftInverse/RightInverse pair taken as hypotheses.",
+        "rebuttal": "surviving — divergence is total: zero of the .md's mathematical content (𝔅(F), Suslin, Borel injectivity, Li_2^q→D) appears in either the stub or the library decl.",
+        "evidence": [
+          {
+            "text": "depth-2-identification-bloch-suslin.md:24-122"
+          },
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean:34-39"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "324a05df9614",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "the Bloch–Wigner Li_2→volume identification requires HYPERBOLICITY: on a non-hyperbolic knot D(z)=0 (the AGENTS.md recurrent failure mode). The .md generalises to 'every Bring-natural F=ℚ(z_K)' and 'For each Bring-natural F', but some Bring-relevant knots (torus knots) are non-hyperbolic, where the depth-2 regulator class is trivial.",
+        "rebuttal": "partial — for the headline example the figure-eight 4₁ IS hyperbolic (Vol=2Cl_2(π/3)=2 Im Li_2(e^{iπ/3})), so D(z)≠0 and the depth-2 illustration is sound; the structural exclusion 'non-hyperbolic ⇒ D(z)=0' does NOT bite the figure-eight case. The per-knot generalisation 'for each Bring-natural F' is over-broad (silent on non-hyperbolic z_K) — re-scope, do not delete the figure-eight instance.",
+        "evidence": [
+          {
+            "text": "depth-2-identification-bloch-suslin.md:132-134"
+          },
+          {
+            "text": "content/quantum-observable-universe/mass-theory/gb-depth-period-correspondence.md:85"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "324a05df9614",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "md:52 attributes Suslin's isomorphism to 'Suslin 1986' and the Bloch group to 'Bloch 1978', but the .ts cites[] are suslin1991 and bloch2000; the in-prose dates do not match the bib keys, and suslin1991's note describes the pentagon-characterisation of D, not the K_3≅Bloch-group isomorphism the .md leans on at Step 2.",
+        "rebuttal": "partial — both keys resolve in references.ts (no broken ref) and the literature is genuinely right, so not fabrication; but the year mismatch and the suslin1991 entry supporting Step-1 well-definedness rather than the Step-2 isomorphism is a real L4 sloppiness — fix the in-prose attributions / add the 1986 Suslin K_3 paper.",
+        "evidence": [
+          {
+            "text": "depth-2-identification-bloch-suslin.md:52"
+          },
+          {
+            "text": "content/schema/references.ts (suslin1991 note = pentagon characterisation)"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "324a05df9614",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "fail",
+        "verdict": "open-objection",
+        "referee_argument": "The block wears keystone-discharge + theorem-level labels and a boxed 'this identification is a theorem', yet its lean.ref resolves under §0a (sibling-first) to a verbatim `theorem depth_2_identification : True := by trivial` shadow-stub — a STRICT §0a + §1a review failure — and even the shadowed library fallback is a §3b-cond self-assuming projection (`exact ctx.left_inverse`) that assumes the bijection it claims to prove. The qa.json already records self-assuming/proof-statement-integrity/lean-vacuity, so the formal artifact discharges nothing of the four-step Bloch–Suslin chain. Hyperbolicity holds for the figure-eight anchor (D(z)≠0, so the dilog illustration is not refuted), but the per-Bring-natural-F generalisation is over-broad and the citations mis-date Suslin/Bloch. The keystone conjecture is NOT discharged at the formal level.",
+        "field_hash": {
+          "md": "324a05df9614",
+          "ts": "c077b11cb64f",
+          "lean": "7f834ce18ac8"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-24T12:07:53Z"
 }

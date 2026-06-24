@@ -1342,7 +1342,159 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "mass-theory/crystal-r-matrix-sub-lemma.lean:76-85 `theorem CrystalRMatrixSubLemma [hLR][hA] : hA.identity_holds ∨ True := by … right; trivial`. The .ts lean.ref qou:QOU.BraidKnot.CrystalRMatrixSubLemma resolves §0a sibling-first to this vacuous theorem (trivial branch of a disjunction), NOT the `class CrystalRMatrixSubLemma` with pole_indicator_correct the .md quotes (md:73-86). Narrative (md:52,112 'closes the operator-valued form categorically', 'a categorical theorem (no sorry at the math level)') diverges from the Lean the ref resolves to.",
+        "rebuttal": "surviving — candidate-1 = sibling (vacuous theorem); candidate-2 = library class (substantive); both share FQN QOU.BraidKnot.CrystalRMatrixSubLemma (grep-confirmed theorem sibling:76, class library:74), so the sibling shadows the library decl. The block's materials describe the library class but cannot rebut a ref that resolves elsewhere.",
+        "evidence": [
+          {
+            "text": "crystal-r-matrix-sub-lemma.lean:76-85"
+          },
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean:74-86"
+          },
+          {
+            "text": "crystal-r-matrix-sub-lemma.md:73-86"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "5063855a8060",
+          "ts": "232342679732",
+          "lean": "a2dea961097d"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "crystal-r-matrix-sub-lemma.lean:81-85 `hA.identity_holds ∨ True := by … right; trivial`. The decl the ref resolves to discharges the True disjunct and proves nothing about the R-matrix pole order; §1a forbids this disjunction-with-True audit-dodge wearing kind proposition + the .md 'proved' label (md:88).",
+        "rebuttal": "surviving — vacuity is real for the resolved sibling; NOT cured by the library class (candidate-2), because the ref resolves to candidate-1. buckets.json:53-58 (lean::= trivial, labels:[proved]) independently flagged this triple.",
+        "evidence": [
+          {
+            "text": "crystal-r-matrix-sub-lemma.lean:81-85"
+          },
+          {
+            "text": "docs/audits/2026-06-24-status-label-overclaim-buckets.json:53-58"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "5063855a8060",
+          "ts": "232342679732",
+          "lean": "a2dea961097d"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "md:84-89 'all proved by rfl/decide from the class field, requiring no further hypothesis.' Even for the LIBRARY class, pole_indicator_correct is satisfied by the canonical instance setting poleIndicator := fun rho => decide (rho ≤ -1) (library lean:188-195, := fun _ => rfl) — a tautological 'indicator equals the indicator I defined' witness. The R-matrix content (σ_i eigenvalue -q⁻¹ on a same-column SYT pair) is not formalized in Lean; it lives only in audit prose.",
+        "rebuttal": "partial — legitimate under §3b-cond FOR THE LIBRARY CLASS (axiomatise the content as a field, trivial model proves consistency, no sorry). The .md 'requiring no further hypothesis' understates that the content is a class hypothesis, but the carve-out applies, so survivable for candidate-2; it does NOT rescue the resolved candidate-1.",
+        "evidence": [
+          {
+            "text": "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean:188-195"
+          },
+          {
+            "text": "crystal-r-matrix-sub-lemma.md:84-89"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "5063855a8060",
+          "ts": "232342679732",
+          "lean": "a2dea961097d"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "candidate false claim: 'closes the operator-valued form categorically' (md:52) might assert an unconditional result the corpus marks open.",
+        "rebuttal": "rebutted — docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md status table marks the operator-valued form '✅ Proved (conditional on conj:crystal-graph-realization)' and the UNCONDITIONAL form '🔓 Still open'; the block consistently says 'conditional on conj:crystal-graph-realization' and the witness (21/21, computations/crystal-pole-order.witness.json) exists. No false numerical/math claim.",
+        "evidence": [
+          {
+            "text": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md:277-288"
+          },
+          {
+            "text": "computations/crystal-pole-order.witness.json"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "5063855a8060",
+          "ts": "232342679732",
+          "lean": "a2dea961097d"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "fail",
+        "verdict": "open-objection",
+        "referee_argument": "This proposition labelled 'proved' is a §0a shadow-stub: its lean.ref (qou:QOU.BraidKnot.CrystalRMatrixSubLemma) resolves sibling-first to the sibling's `theorem CrystalRMatrixSubLemma … : hA.identity_holds ∨ True := by right; trivial` — a vacuous §1a True-disguise that SHADOWS the genuine same-FQN library `class` (grep-confirmed identical QOU.BraidKnot.CrystalRMatrixSubLemma). The .md describes the library class ('a categorical theorem, no sorry at the math level') but the ref does not resolve there. Honest dispositions (§1a/§0a): align the ref/file to the library class, delete the orphaned vacuous sibling, or restate the sibling with the real proposition + sorry + -- Ref:. NOT proven mathematically false — the conditional pole-order result is corpus-supported and witnessed — but a structural review-failure objection survives.",
+        "field_hash": {
+          "md": "5063855a8060",
+          "ts": "232342679732",
+          "lean": "a2dea961097d"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
     ]
   },
-  "updated_at": "2026-06-22T02:57:03.985Z"
+  "updated_at": "2026-06-24T12:07:53Z"
 }

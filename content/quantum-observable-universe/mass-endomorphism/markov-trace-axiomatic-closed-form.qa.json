@@ -1360,7 +1360,197 @@
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
+    ],
+    "da-vacuous": [
+      {
+        "result": "fail",
+        "scope": "structural",
+        "ruling": "surviving",
+        "referee_argument": "lean:113-133 `def markovTraceAxiomaticClosedForm : True := by … trivial` — the decl named by the .ts lean.ref (ts:63 `qou:QOU.BraidKnot.markovTraceAxiomaticClosedForm`) is a def-disguised-True proving nothing of tr_M(σ₁⁷σ₂⁴)=a₇a₄z²+(a₇b₄+b₇a₄)z+b₇b₄. §0a sibling-first + no library decl of that name (grep exit-123) ⇒ this IS the resolved Lean. Invariant (structural): §1a forbids a provable kind concluding `: True`; a True goal carries no content so cannot entail S(B).",
+        "rebuttal": "surviving — corpus-grep: docs/audits/2026-06-23-vacuity-def-dodge.json:565 records this exact decl as def-disguised-true/critical (OPEN); 2026-06-24-status-label-overclaim-buckets.json:44 + triage.md:17 place it Bucket B 'queued as needs-author'; grep axiom|conjecture|class|sorry on the live .lean = none (unlike sibling markov-trace-antipode remediated to an honest axiom). No closing artifact exists.",
+        "evidence": [
+          {
+            "text": "markov-trace-axiomatic-closed-form.lean:113-133"
+          },
+          {
+            "text": "markov-trace-axiomatic-closed-form.ts:62-65"
+          },
+          {
+            "text": "docs/audits/2026-06-23-vacuity-def-dodge.json:565"
+          }
+        ],
+        "severity": "critical",
+        "field_hash": {
+          "md": "329a7afc2409",
+          "ts": "6f0c11d19a02",
+          "lean": "04e2c898a6f3"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "kind proposition + tag closed-form (ts:72) and lean:76 docstring 'Axiomatic closed form of the Markov trace for the proton word', while the actual Lean content is `: True := trivial`; the support theorems prove only a₂,a₃,a₄ tiny recurrence facts, not the closed-form linear-combination identity.",
+        "rebuttal": "surviving — the closure label over a vacuous Lean is the class-2 overclaim the corpus checker flags; triage.md:8 'relabel vs finish-the-Lean is author judgement … queued as needs-author' (not yet closed). Limited: a relabel / honest sorry+-- Ref: / conjecture demotion fixes it without touching the math.",
+        "evidence": [
+          {
+            "text": "markov-trace-axiomatic-closed-form.ts:66-74"
+          },
+          {
+            "text": "markov-trace-axiomatic-closed-form.lean:76"
+          },
+          {
+            "text": "docs/audits/2026-06-24-status-label-overclaim-triage.md:8"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "329a7afc2409",
+          "ts": "6f0c11d19a02",
+          "lean": "04e2c898a6f3"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "the .md proves a rational-function identity in q^{1/2} (z=1/(q^{1/2}+q^{-1/2}), denom q^{10}(q+1)^3, half-integer powers q^{41/2}) but the Lean works entirely in ℤ[X] (heckePowerA/B:ℕ→ℤ[X], lean:52-74) — a ring that cannot express z; the degree lemma heckePowerA_degree_increasing (lean:184-198) proves ∃p,natDegree=k-1 with witness X^(k-1), NOT that heckePowerA k has degree k-1 (self-weakening quantifier-dodge, admitted in its own comment).",
+        "rebuttal": "partial — the divergence is real (ℤ[X] vs ℚ(q^{1/2}); existential-dodge degree lemma), but the recurrence facts the Lean DOES prove (heckePowerA_four etc.) are correct and match the witness coefficients, so it is genuine-but-incomplete, not false; the vacuous head proves S(B) neither true nor false, it fails to cover it.",
+        "evidence": [
+          {
+            "text": "markov-trace-axiomatic-closed-form.lean:52-74"
+          },
+          {
+            "text": "markov-trace-axiomatic-closed-form.lean:184-198"
+          },
+          {
+            "text": "computations/markov/markov-trace-atomic-proton-full.witness.json"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "329a7afc2409",
+          "ts": "6f0c11d19a02",
+          "lean": "04e2c898a6f3"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "the witness markov-trace-axiomatic-proton.witness.json (ts:57) is for σ₁σ₂σ₁ (an H₃ demo word, q↔1/q symmetric) NOT the proton word σ₁⁷σ₂⁴, and its symmetry contradicts the .md anti-reciprocity claim — suggesting a wrong/stale witness backs the headline number.",
+        "rebuttal": "rebutted — the SECOND pinned witness markov-trace-atomic-proton-full.witness.json (ts:56) IS the σ₁⁷σ₂⁴ word, fresh (computedAt 2026-06-02, scriptHash b825e13da45c, not q0-repin-stale), reproducing tr_M=1.6331533774490543 (.md ≈1.63315), ρ_p=1124.2989 (.md ≈1124.3), denom q^{10}(q+1)^3, ratio_at_inv_q=-0.0148 (confirms not-anti-reciprocal). The σ₁σ₂σ₁ witness is a pedagogical demo, not the headline backing.",
+        "evidence": [
+          {
+            "text": "computations/markov/markov-trace-atomic-proton-full.witness.json"
+          },
+          {
+            "text": "markov-trace-axiomatic-closed-form.md:34"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "329a7afc2409",
+          "ts": "6f0c11d19a02",
+          "lean": "04e2c898a6f3"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "is ρ_p^CODATA≈1124.3 (.md:46-48) a back-fitted constant / hidden 4th calibration in the categorical-mass anchor?",
+        "rebuttal": "rebutted — ρ_p here is a DERIVED ratio (definitionally m_p/m_e ÷ the parameter-free axiomatic trace 1.63315), not an input; the trace is fixed by q₀ alone with zero free parameters (pure Hecke-quadratic + Markov axioms). No new DOF enters; the anti-reciprocity contrast is data-backed (ratio_at_inv_q=-0.0148 in the witness), not numerology.",
+        "evidence": [
+          {
+            "text": "markov-trace-axiomatic-closed-form.md:46-48"
+          },
+          {
+            "text": "computations/markov/markov-trace-atomic-proton-full.witness.json"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "329a7afc2409",
+          "ts": "6f0c11d19a02",
+          "lean": "04e2c898a6f3"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "fail",
+        "verdict": "open-objection",
+        "referee_argument": "The proposition's numerical/algebraic content reproduces faithfully (fresh full-word witness: tr_M(σ₁⁷σ₂⁴)(q₀)=1.63315, denom q^{10}(q+1)^3, ρ_p=1124.3), so the MATH is not refuted. But the .ts lean.ref resolves (sibling-first, no library shadow) to `def markovTraceAxiomaticClosedForm : True := by … trivial` (lean:113), a Bucket-B def-disguised-True that proves none of the closed-form identity, while the block wears kind proposition + tag closed-form. The corpus RECORDS this as an open §1a review failure (vacuity-def-dodge.json:565, overclaim-buckets.json:44, 'queued as needs-author') but has NOT closed it, and the live .lean carries no axiom/sorry/conjecture honesty marker. A referee argument (Lean+label overclaim a proposition that is not formalized) survives rebuttal.",
+        "field_hash": {
+          "md": "329a7afc2409",
+          "ts": "6f0c11d19a02",
+          "lean": "04e2c898a6f3"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      }
     ]
   },
-  "updated_at": "2026-06-23T11:59:48.389Z"
+  "updated_at": "2026-06-24T12:07:53Z"
 }
