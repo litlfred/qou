@@ -173,6 +173,32 @@ theorem lt_colLen_of_cell (l : List ℕ) (hl : l.Sorted (· ≥ ·)) {i j : ℕ}
     have h := hsub.length_le; rwa [hfilt] at h
   rw [List.length_take] at hlen; omega
 
+/-- **Per-cell hook cast (sorry-free).** For a genuine cell of a weakly-decreasing
+partition the `ℕ` hook `(λ_i − j) + (colLen_j − i) − 1` equals `arm + leg + 1` over ℤ,
+with `arm = λ_i − 1 − j ≥ 0` and `leg = colLen_j − 1 − i ≥ 0` (the latter by
+`lt_colLen_of_cell`). This makes the `ℕ`-subtraction exact. -/
+theorem hook_cast (l : List ℕ) (hl : l.Sorted (· ≥ ·)) {i j : ℕ}
+    (hi : i < l.length) (hj : j < l.getD i 0) :
+    (((l.getD i 0 - j) + (colLen l j - i) - 1 : ℕ) : ℤ)
+      = ((l.getD i 0 : ℤ) - 1 - j) + ((colLen l j : ℤ) - 1 - i) + 1 := by
+  have h2 : i < colLen l j := lt_colLen_of_cell l hl hi hj
+  omega
+
+/-- **Hook-square expansion, step 1 (sorry-free).** Rewrite `sumSqHooks` cell-by-cell
+into the `(arm + leg + 1)²` form — the payoff of `lt_colLen_of_cell`/`hook_cast`. This
+is the entry point to the reduction lemma (E): expanding the square and splitting the
+double sum yields `a2 + l2 + n + 2·al + 2·a1 + 2·l1`. -/
+theorem sumSqHooks_armleg (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    sumSqHooks l = ((List.range l.length).map fun i =>
+      ((List.range (l.getD i 0)).map fun j =>
+        (((l.getD i 0 : ℤ) - 1 - j) + ((colLen l j : ℤ) - 1 - i) + 1) ^ 2).sum).sum := by
+  unfold sumSqHooks
+  refine congrArg List.sum (List.map_congr_left ?_)
+  intro i hi; rw [List.mem_range] at hi
+  refine congrArg List.sum (List.map_congr_left ?_)
+  intro j hj; rw [List.mem_range] at hj
+  rw [hook_cast l hl hi hj]
+
 /-- **Identity (A), general (carried — residual is six finite, formula-free facts).**
 For a weakly-decreasing partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.
 
