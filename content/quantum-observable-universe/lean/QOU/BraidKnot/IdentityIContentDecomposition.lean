@@ -462,28 +462,87 @@ theorem redLeg2 (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   rw [cellSum_swap l hl, Finset.sum_congr rfl (fun j _ => rowSq_reflect (colLen l j)),
     ← cellSum_swap l hl (fun i _ => (i : ℤ) ^ 2), cellSum_isq_eq_q2]
 
-/-- **Reduction lemma (Cross) (carried — single remaining sorry).** `2·Σ arm·leg
-= n² − p2 − s2 − q1` — the sorted cross-term.  Unlike the legs (which collapse via
-swap+reflect), this is a genuine pair double-count.  Roadmap: expand `leg(i,j) =
-#{i′ : i < i′ < colLen_j} = #{i′ : i < i′, j < λ_{i′}}` (sorted), so
-`Σ arm·leg = Σ_{i<i′} Σ_{j<λ_{i′}} (λ_i − 1 − j)` (for sorted `i<i′`, `λ_{i′} ≤ λ_i`
-binds `j`); the inner is a Gauss sum, leaving a `Σ_{i<i′}` pair-sum that reduces to
-row data — needs a `Finset.range i′` pair-Fubini on top of `cellSum_swap`.
-Machine-checked (assembled identity) for every partition `n ≤ 12`; exact-integer
-`n ≤ 22` (audit). -/
+/-- Square of a sum, prefix-sum form: `(Σ a)² = Σ a² + 2·Σ_{i'} a_{i'}·(Σ_{i<i'} a_i)`. -/
+theorem sq_sum_split (n : ℕ) (a : ℕ → ℤ) :
+    (∑ i ∈ Finset.range n, a i) ^ 2
+      = ∑ i ∈ Finset.range n, (a i) ^ 2
+        + 2 * ∑ i' ∈ Finset.range n, (a i' * ∑ i ∈ Finset.range i', a i) := by
+  induction n with
+  | zero => simp
+  | succ k ih =>
+    rw [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ]
+    linear_combination ih
+
+/-- Abel / triangular reorganization: `Σ_{i'<m} Σ_{i<i'} a_i = Σ_{i<m} a_i·(m−1−i)`. -/
+theorem abel_tri (m : ℕ) (a : ℕ → ℤ) :
+    ∑ i' ∈ Finset.range m, ∑ i ∈ Finset.range i', a i
+      = ∑ i ∈ Finset.range m, a i * ((m : ℤ) - 1 - (i : ℤ)) := by
+  rw [Finset.sum_comm' (t' := Finset.range m) (s' := fun i => Finset.Ioo i m)
+      (fun i' i => by simp only [Finset.mem_range, Finset.mem_Ioo]; omega)]
+  apply Finset.sum_congr rfl
+  intro i hi; rw [Finset.mem_range] at hi
+  rw [Finset.sum_const, Nat.card_Ioo, nsmul_eq_mul]
+  have : ((m - i - 1 : ℕ) : ℤ) = (m : ℤ) - 1 - (i : ℤ) := by omega
+  rw [this]; ring
+
+/-- **Reduction lemma (Cross) (sorry-free).** `2·Σ arm·leg = n² − p2 − s2 − q1` — the
+sorted cross-term.  Unlike the legs (which reflect away), this is a genuine pair count.
+Proof: `cellSum_swap` to columns, the Abel identity `abel_tri` (`Σ aᵢ(m−1−i) =
+Σ_{i'}Σ_{i<i'} aᵢ`) on each column, swap **back** to a `cellSum` whose summand is the
+prefix sum `Σ_{i<i'}(λ_i−1−j)`; the per-row Gauss collapse (`two_sum_id`) then leaves
+`2·Σ λ_{i'}·(Σ_{i<i'}λ_i) − q1 − s2`, and the square-of-sum identity `sq_sum_split`
+(with `sz_eq`) gives `2·Σ λ·prefix = n² − p2`. -/
 theorem redCross (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
     2 * cellSum l (fun i j => ((l.getD i 0 : ℤ) - 1 - j) * ((colLen l j : ℤ) - 1 - i))
       = (sz l : ℤ) ^ 2 - p2 l - s2 l - q1 l := by
   -- Ref: [manuscript] docs/audits/2026-06-24-keystone-identity-I-armleg-reduction.md §(Cross)
-  sorry
+  have hA : cellSum l (fun i j => ((l.getD i 0 : ℤ) - 1 - j) * ((colLen l j : ℤ) - 1 - i))
+      = cellSum l (fun i' j => ∑ i ∈ Finset.range i', ((l.getD i 0 : ℤ) - 1 - (j : ℤ))) := by
+    rw [cellSum_swap l hl]
+    rw [Finset.sum_congr rfl
+      (fun j _ => (abel_tri (colLen l j) (fun i => (l.getD i 0 : ℤ) - 1 - (j : ℤ))).symm)]
+    rw [← cellSum_swap l hl (fun i' j => ∑ i ∈ Finset.range i', ((l.getD i 0 : ℤ) - 1 - (j : ℤ)))]
+  rw [hA]
+  unfold cellSum
+  have key : ∀ i' ∈ Finset.range l.length,
+      (2 : ℤ) * ∑ j ∈ Finset.range (l.getD i' 0), ∑ i ∈ Finset.range i',
+          ((l.getD i 0 : ℤ) - 1 - (j : ℤ))
+        = 2 * (l.getD i' 0 : ℤ) * (∑ i ∈ Finset.range i', (l.getD i 0 : ℤ))
+          - (i' : ℤ) * (l.getD i' 0) - (i' : ℤ) * (l.getD i' 0) ^ 2 := by
+    intro i' _
+    rw [Finset.sum_comm]
+    have hin : ∀ i, ∑ j ∈ Finset.range (l.getD i' 0), ((l.getD i 0 : ℤ) - 1 - (j : ℤ))
+        = (l.getD i' 0 : ℤ) * ((l.getD i 0 : ℤ) - 1)
+          - ∑ j ∈ Finset.range (l.getD i' 0), (j : ℤ) := by
+      intro i
+      rw [Finset.sum_sub_distrib, Finset.sum_const, Finset.card_range, nsmul_eq_mul]
+    rw [Finset.sum_congr rfl (fun i _ => hin i)]
+    rw [Finset.sum_sub_distrib, Finset.sum_const, Finset.card_range, nsmul_eq_mul, ← Finset.mul_sum,
+      Finset.sum_sub_distrib, Finset.sum_const, Finset.card_range, nsmul_eq_mul]
+    have h2s := two_sum_id (l.getD i' 0)
+    linear_combination (-(i' : ℤ)) * h2s
+  rw [Finset.mul_sum, Finset.sum_congr rfl key]
+  rw [Finset.sum_sub_distrib, Finset.sum_sub_distrib]
+  have hfac : (∑ x ∈ Finset.range l.length,
+        2 * (l.getD x 0 : ℤ) * ∑ i ∈ Finset.range x, (l.getD i 0 : ℤ))
+      = 2 * ∑ x ∈ Finset.range l.length,
+          ((l.getD x 0 : ℤ) * ∑ i ∈ Finset.range x, (l.getD i 0 : ℤ)) := by
+    rw [Finset.mul_sum]; exact Finset.sum_congr rfl (fun x _ => by ring)
+  rw [hfac]
+  have hsq := sq_sum_split l.length (fun i => (l.getD i 0 : ℤ))
+  rw [← sz_eq l] at hsq
+  unfold p2 s2 q1
+  linear_combination -hsq
 
-/-- **Identity (A), general.** For a weakly-decreasing partition `l`,
-`Σ_c h_c² = Σ_c c(c)² + n²`.  Proved by `identityA_algebra` from the six reduction
-lemmas: (E) `hookE`, (Arm) `redArm`, (Cont) `redCont` are **sorry-free**; only the
-conjugate column-sums (Leg1/Leg2) and the sorted cross-term (Cross) remain carried
-(`redLeg1`/`redLeg2`/`redCross`).  The **hook-length formula is off the critical path**
-(audit `2026-06-24-keystone-identity-I-armleg-reduction.md`); machine-checked for every
-partition through `n = 12` (`identityA_exhaustive_n12`), exact-integer `n ≤ 22` (audit). -/
+/-- **Identity (A), general — fully proved, sorry-free.** For a weakly-decreasing
+partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Proved by `identityA_algebra` from the six
+reduction lemmas (E) `hookE`, (Arm) `redArm`, (Cont) `redCont`, (Leg1) `redLeg1`,
+(Leg2) `redLeg2`, (Cross) `redCross` — **all sorry-free**, resting only on the
+Young-diagram Fubini `cellSum_swap`, the Abel identity `abel_tri`, the square-of-sum
+`sq_sum_split`, and elementary Gauss sums.  The **Frame–Robinson–Thrall hook-length
+formula is off the critical path entirely** (audit
+`2026-06-24-keystone-identity-I-armleg-reduction.md`); independently machine-checked for
+every partition through `n = 12` (`identityA_exhaustive_n12`), exact-integer `n ≤ 22`. -/
 theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
     sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 :=
   identityA_algebra (sz l : ℤ) (p2 l) (q1 l) (q2 l) (s2 l)
