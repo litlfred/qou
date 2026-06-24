@@ -1,0 +1,36 @@
+{
+  "computation": "reeb-phase-deficit-consistency",
+  "description": "Consistency bridge (0 fit): the uniform A=3 pairwise binding deficit D co-varies with the q-Reeb rotation-phase magnitude Sigma|Dtheta| at ~0.206 MeV/rad (5.4% spread, T+3He), identifying the missing cooperative enhancement as the rotation/J_nu PHASE channel cancelled by the scalar |chi| trace (= #2612's |Dtheta_lambda|), NOT the growth/I_nu channel. N=2; scope-(a) consistency relation + falsifiable 4He target ~3.56 MeV, not a law.",
+  "scriptFile": "computations/probes/reeb_phase_deficit_consistency_probe.py",
+  "sources": [
+    "computations/pairwise-magnitude-gap-decomposition.witness.json",
+    "computations/binding-reeb-phase-decomposition.witness.json"
+  ],
+  "inputs": {
+    "E0_MeV": 4.186,
+    "fit_params": 0
+  },
+  "data": {
+    "rows": [
+      {
+        "deficit_MeV": 1.6524,
+        "sum_abs_dtheta_rad": 8.2233,
+        "n_bonds": 2,
+        "atom": "T",
+        "ratio_MeV_per_rad": 0.200941
+      },
+      {
+        "deficit_MeV": 1.8017,
+        "sum_abs_dtheta_rad": 8.4937,
+        "n_bonds": 2,
+        "atom": "3He",
+        "ratio_MeV_per_rad": 0.212122
+      }
+    ],
+    "mean_ratio_MeV_per_rad": 0.206532,
+    "ratio_spread_pct": 5.4136,
+    "ratio_as_fraction_of_E0": 0.049339,
+    "falsification_4He_deficit_MeV": 3.5592,
+    "sum_abs_dtheta_4He_rad": 17.2334
+  }
+}

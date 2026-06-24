@@ -1,0 +1,44 @@
+{
+  "computation": "pairwise-magnitude-gap-decomposition",
+  "description": "Per-bond decomposition of the A=3 pairwise (leading-trace) binding deficit vs the pairwise target 3*B2, |chi| combiner over the H_9 joint trace, 0 fit. Tests whether the deficit is uniform per-bond (=> missing cooperative enhancement) or bond-type dependent (=> per-interface-factor correction).",
+  "scriptFile": "computations/probes/pairwise_magnitude_gap_probe.py",
+  "inputs": {
+    "E0_MeV": "4.185980828",
+    "q0": "1.10997859556",
+    "B2_MeV": "2.224566",
+    "fit_params": 0
+  },
+  "data": {
+    "rows": [
+      {
+        "atom": "T",
+        "B_AME_MeV": "8.481798",
+        "b3_emp_MeV": "1.8081",
+        "per_bond_MeV": [
+          "2.3199432",
+          "2.7013058"
+        ],
+        "B_pair_model_MeV": "5.021249",
+        "B_pair_target_MeV": "6.673698",
+        "deficit_MeV": "1.652449",
+        "deficit_pct": "24.7606",
+        "deficit_per_bond_MeV": "0.82622448"
+      },
+      {
+        "atom": "3He",
+        "B_AME_MeV": "7.718043",
+        "b3_emp_MeV": "1.044345",
+        "per_bond_MeV": [
+          "2.2001871",
+          "2.6717865"
+        ],
+        "B_pair_model_MeV": "4.8719736",
+        "B_pair_target_MeV": "6.673698",
+        "deficit_MeV": "1.8017244",
+        "deficit_pct": "26.9974",
+        "deficit_per_bond_MeV": "0.90086219"
+      }
+    ],
+    "per_bond_deficit_spread_pct": "8.64319"
+  }
+}
