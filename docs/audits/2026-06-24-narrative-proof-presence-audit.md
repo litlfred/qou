@@ -31,6 +31,17 @@ positive requirement "a provable block must carry a narrative proof."
 So a block with a perfect Lean proof and a statement-only `.md` passes
 every existing proof criterion while having no paper proof at all.
 
+## Architecture decision (author, 2026-06-24)
+
+Narrative proofs become a **separate `<root>.proof.md` sidecar file**,
+part of the content block, so presence is trackable by file existence
+(no prose heuristics). Convention spec:
+[`docs/conventions/narrative-proof-sidecar.md`](https://github.com/litlfred/qou/blob/claude/wonderful-newton-bh1fxt/docs/conventions/narrative-proof-sidecar.md).
+The audit script now reports the migration split — `.proof.md` sidecar
+(target) vs inline-in-`.md` (legacy, to migrate) vs gap. Current state:
+**1** sidecar (seed exemplar `prop:electron-period-base`), **341** inline,
+**~308** gaps.
+
 ## Method
 
 Surfaced by the standalone, registry-independent audit

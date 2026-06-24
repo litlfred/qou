@@ -17,9 +17,21 @@
  * `proof-narrative-present` QA criterion is wired into the folio-assistant
  * qa-criteria-registry (separate repo).
  *
- * A block is counted as HAVING a narrative proof if its `.md` contains a
- * recognizable proof cue (a "Proof" heading/word, a first-person "we
- * prove/show/establish", an induction/construction phrase, a QED mark, …).
+ * Canonical signal (target architecture). A provable block's narrative
+ * proof lives in a dedicated **`<root>.proof.md` sibling file**, parallel
+ * to `<root>.md` (statement) and `<root>.lean` (formalization). Presence
+ * of a non-trivial `<root>.proof.md` ⇒ the block HAS a narrative proof,
+ * trackable by file existence alone. This is the convention requested by
+ * the author (2026-06-24) and specified in
+ * `docs/conventions/narrative-proof-sidecar.md`.
+ *
+ * Legacy signal (transitional). Until every block is migrated, a block
+ * also counts as HAVING a narrative proof if its `<root>.md` contains a
+ * recognizable proof cue inline (a "Proof" heading/word, "we
+ * prove/show/establish", an induction/construction phrase, ∎/QED). The
+ * audit reports the migration split (sidecar vs inline-only) so progress
+ * toward the target architecture is visible.
+ *
  * A block is EXEMPT (not a gap) when its narrative explicitly defers the
  * proof to an external/axiomatic source ("external-proof" tag, "standard
  * result", "take as axiomatic", …) — those are deliberate, cited
@@ -51,6 +63,11 @@ interface Gap {
   chapter: string;
 }
 
+/** Non-trivial = has some real prose, not an empty/placeholder stub. */
+function nonTrivial(s: string): boolean {
+  return s.replace(/\s+/g, " ").trim().length > 20;
+}
+
 function walk(dir: string, out: string[] = []): string[] {
   for (const e of readdirSync(dir)) {
     const p = join(dir, e);
@@ -72,7 +89,8 @@ function main() {
 
   const gaps: Gap[] = [];
   let total = 0,
-    withProof = 0,
+    sidecar = 0,
+    inlineOnly = 0,
     external = 0;
 
   for (const ts of walk(root)) {
@@ -83,11 +101,20 @@ function main() {
     total++;
     const kind = m[1];
     const label = (txt.match(/label:\s*["'`]([^"'`]+)["'`]/) ?? [, "?"])[1];
-    const md = ts.slice(0, -3) + ".md";
+    const root3 = ts.slice(0, -3);
+    const md = root3 + ".md";
+    const proofMd = root3 + ".proof.md";
     const body = existsSync(md) ? readFileSync(md, "utf-8") : "";
     const haystack = txt + "\n" + body;
+
+    // Canonical signal: a non-trivial `.proof.md` sidecar.
+    if (existsSync(proofMd) && nonTrivial(readFileSync(proofMd, "utf-8"))) {
+      sidecar++;
+      continue;
+    }
+    // Legacy signal: an inline proof cue in `.md`.
     if (PROOF_CUE.test(body)) {
-      withProof++;
+      inlineOnly++;
       continue;
     }
     if (EXTERNAL_CUE.test(haystack)) {
@@ -101,7 +128,7 @@ function main() {
   if (asJson) {
     console.log(
       JSON.stringify(
-        { total, withProof, external, gaps: gaps.length, items: gaps },
+        { total, sidecar, inlineOnly, external, gaps: gaps.length, items: gaps },
         null,
         2,
       ),
@@ -112,10 +139,11 @@ function main() {
   const byChap = new Map<string, number>();
   for (const g of gaps) byChap.set(g.chapter, (byChap.get(g.chapter) ?? 0) + 1);
 
-  console.log(`Provable blocks scanned:      ${total}`);
-  console.log(`  with narrative proof:       ${withProof}`);
-  console.log(`  external / axiomatic:       ${external}`);
-  console.log(`  NO narrative proof (gaps):  ${gaps.length}`);
+  console.log(`Provable blocks scanned:           ${total}`);
+  console.log(`  proof in .proof.md sidecar:      ${sidecar}   (target architecture)`);
+  console.log(`  proof inline in .md (legacy):    ${inlineOnly}   (migrate → .proof.md)`);
+  console.log(`  external / axiomatic:            ${external}`);
+  console.log(`  NO narrative proof (gaps):       ${gaps.length}`);
   console.log("\nGaps by chapter:");
   for (const [c, n] of [...byChap.entries()].sort((a, b) => b[1] - a[1])) {
     console.log(`  ${String(n).padStart(3)}  ${c}`);
