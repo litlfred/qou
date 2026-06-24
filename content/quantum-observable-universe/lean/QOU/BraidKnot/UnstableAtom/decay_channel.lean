@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.UnstableAtom.decay_channel
 
@@ -26,7 +28,7 @@ class DecayChannelContext where
   /-- Partition / Young-diagram indexing. -/
   PartitionIdx : Type
   /-- The decay-channel partition `λ*(K, q) : PartitionIdx`. -/
-  λ_star : PartitionIdx
+  lam_star : PartitionIdx
   /-- Energy `E(λ, q)` of constraint-violation at partition `λ`. -/
   E_lambda : ℝ
   /-- Manuscript sub-claim (i) — `λ*` is well-defined whenever the
@@ -35,13 +37,14 @@ class DecayChannelContext where
   /-- Predicate: `q` is on the boundary variety `{q : E(λ*, q) = 0}`. -/
   on_boundary : ℝ → Prop
   /-- A candidate alternative decay-channel partition `λ'`. -/
-  λ_alt : PartitionIdx
+  lam_alt : PartitionIdx
   /-- Manuscript sub-claim (ii) — Uniqueness off the boundary variety:
       off the boundary, every alternative `λ'` that also minimises
       `E_λ` must coincide with `λ*`. -/
-  claim_ii_unique_off_boundary : ¬ on_boundary q → λ_alt = λ_star
+  claim_ii_unique_off_boundary : ¬ on_boundary q → lam_alt = lam_star
   /-- The two endpoints of the phase-crossing interval. -/
-  q_1 q_2 : ℝ
+  q_1 : ℝ
+  q_2 : ℝ
   /-- Manuscript sub-claim (iii) — Phase-boundary crossing: stable at
       `q_1`, unstable at `q_2` implies `∃ q* ∈ [q_1, q_2]` with
       `E(λ*, q*) = 0` (the boundary variety is crossed). -/
@@ -104,7 +107,7 @@ flips ILP feasibility.*
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/unstable-atom-decay-channel.ts
 def decay_channel [ctx : DecayChannelContext] :
     ctx.E_lambda ≠ 0 ∧
-    (¬ ctx.on_boundary ctx.q → ctx.λ_alt = ctx.λ_star) ∧
+    (¬ ctx.on_boundary ctx.q → ctx.lam_alt = ctx.lam_star) ∧
     (ctx.q_1 ≤ ctx.q ∧ ctx.q ≤ ctx.q_2 →
       ∃ q_star : ℝ, ctx.q_1 ≤ q_star ∧ q_star ≤ ctx.q_2 ∧
         ctx.on_boundary q_star) :=
