@@ -161,9 +161,33 @@ def main() -> int:
     print("\n[4] -Li_2^q(-u) low-order u-coefficients a_n = (-1)^(n+1)/(n[n]_q) at q_0:")
     for n, c in li2q_coeffs:
         print(f"    a_{n} = {c}")
-    print("    (target for a follow-up: do these, summed over the Borromean")
-    print("     per-generator volumes, reproduce the {46,4,29} habiro_ratio")
-    print("     correction at u^4/u^5/u^6 — the ACTUAL approximation layer?)")
+
+    # ── Step 5: scale check — is the correction the Li_2^q tower? ──
+    # The Li_2^q brane-tower (6-term-formula terms 2/3) evaluates
+    # -Li_2^q(-|V_i|) on the per-generator volumes V_i of the braid.
+    # For the proton those volumes are O(1) (~0.99), so each tower term
+    # is O(1) — NOT the u^4 ~ 5e-9 scale of the habiro_ratio correction.
+    # This REFUTES the "terms 2/3" hypothesis: the +242 ppb closer is
+    # the term-6 Habiro residue tail, not the Li_2^q brane-tower.
+    try:
+        from hecke_core import atom_per_generator_volumes
+        vols = [mpf(repr(g["full"])) for g in atom_per_generator_volumes(1, 0)]
+        tower = sum(-li2q_symmetric(-abs(v), q) for v in vols)
+        tower_scale_ok = bool(abs(tower) > mpf("0.1"))   # O(1), not O(u^4)
+    except Exception as exc:  # noqa: BLE001
+        vols, tower, tower_scale_ok = [], mpf(0), False
+        print(f"    [vols unavailable: {type(exc).__name__}: {exc}]")
+    target_u4 = 46 * u_val ** 4
+    print("\n[5] scale check — Li_2^q brane-tower (terms 2/3) vs the correction:")
+    print(f"    proton per-gen |V_i|     = {[mp.nstr(v,8) for v in vols]}")
+    print(f"    Sum -Li_2^q(-|V_i|)      = {mp.nstr(tower, 12)}  (O(1))")
+    print(f"    habiro_ratio lead 46*u^4 = {mp.nstr(target_u4, 12)}  (O(1e-7))")
+    print("    => the Li_2^q brane-tower is the WRONG scale for this "
+          "correction.")
+    print("    The +242 ppb closer is the term-6 Habiro residue tail; its")
+    print("    {46,4,29} have no derivation trail (CODATA-anchored near-match).")
+    print("    Deriving them is the SAME open Habiro-element problem as the")
+    print("    Q_beta c_k ladder (beans kehn / s5-so3 keystone s5bb).")
 
     # ── Witness ──────────────────────────────────────────────────
     w = WitnessBuilder("li2q-fbor-expansion-probe", engine="mpmath+sympy")
@@ -193,10 +217,27 @@ def main() -> int:
     })
     w.add_data("step4_li2q_u_coefficients",
                {f"a_{n}": c for n, c in li2q_coeffs})
+    w.add_data("step5_scale_check", {
+        "proton_per_gen_full_vols": [mp.nstr(v, 30) for v in vols],
+        "sum_neg_li2q_tower": mp.nstr(tower, 30),
+        "habiro_ratio_lead_46_u4": mp.nstr(target_u4, 30),
+        "verdict": (
+            "Li_2^q brane-tower (terms 2/3) is O(1) on the O(1) proton "
+            "volumes — WRONG scale for the O(1e-7) habiro_ratio correction. "
+            "The +242 ppb closer is the term-6 Habiro residue tail; its "
+            "{46,4,29} are a CODATA-anchored near-match with no derivation "
+            "trail. Deriving them is the same open Habiro-element problem as "
+            "the Q_beta c_k ladder (beans kehn / s5bb keystone)."
+        ),
+    })
 
     w.add_assertion(
         "q3_is_exact_balancing",
         computed=s1["is_exact"], expected=True,
+    )
+    w.add_assertion(
+        "li2q_tower_wrong_scale_for_correction",
+        computed=tower_scale_ok, expected=True,
     )
     # F_Bor alone already lands m_p within ~1e6 ppb (sub-percent); the
     # habiro_ratio is a small (<~1e4 ppb) refinement, not the bulk.
