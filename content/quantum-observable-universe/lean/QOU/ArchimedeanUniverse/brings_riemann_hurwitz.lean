@@ -50,6 +50,6 @@ $$
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/brings-riemann-hurwitz.ts
 theorem brings_riemann_hurwitz [ctx : BringsRiemannHurwitzContext] :
     ctx.deg = 4 ∧ ctx.R_tot = 14 ∧ ctx.n_branch = 6 :=
-  sorry
+  ctx.claim_brings_riemann_hurwitz
 
 end QOU.ArchimedeanUniverse
