@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.FluidDynamics.discrete_vortex_spectrum
 
@@ -30,7 +32,7 @@ class DiscreteVortexSpectrumContext where
   /-- The q-integer `[k]_q = (q^k − q^{−k})/(q − q^{−1})`. -/
   q_int : ℕ → ℝ
   /-- The discrete spectrum `λ_k^{(q)} : ℕ → ℝ`. -/
-  λ : ℕ → ℝ
+  «λ» : ℕ → ℝ
   /-- The q-deformed moment of inertia `I_q`. -/
   I_q : ℝ
   /-- The vortex energy at intensity level `j` (indexed by `2j ∈ ℕ`
@@ -44,7 +46,7 @@ class DiscreteVortexSpectrumContext where
   spectrum_active : vortex_spectrum_discrete
   /-- (i) discrete eigenvalues -/
   impl_discrete_eigenvalues : vortex_spectrum_discrete → ∀ k : ℕ, 1 ≤ k →
-    λ k = (q_int k) ^ 2 * hbar_q / L_q ^ 2
+    «λ» k = (q_int k) ^ 2 * hbar_q / L_q ^ 2
   /-- (ii) spin-labelled intensity levels -/
   impl_spin_levels : vortex_spectrum_discrete → ∀ n : ℕ,
     E_level n = (hbar_q / (2 * I_q)) * (q_int n) * (q_int (n + 1))
@@ -68,12 +70,15 @@ sections of the normal bundle $N_\varrho$.  Then:
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts
 theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
     (∀ k : ℕ, 1 ≤ k →
-      ctx.λ k = (ctx.q_int k) ^ 2 * ctx.hbar_q / ctx.L_q ^ 2) ∧
+      ctx.«λ» k = (ctx.q_int k) ^ 2 * ctx.hbar_q / ctx.L_q ^ 2) ∧
     (∀ n : ℕ, ctx.E_level n =
       (ctx.hbar_q / (2 * ctx.I_q)) * (ctx.q_int n) * (ctx.q_int (n + 1))) ∧
     (∀ n n' : ℕ, (n + 1 = n' ∨ n' + 1 = n) →
       ctx.ΔE_trans n n' = ctx.E_level n' - ctx.E_level n) ∧
     (ctx.q = 1 → ∀ k : ℕ, ctx.q_int k = (k : ℝ)) :=
-  sorry
+  ⟨ctx.impl_discrete_eigenvalues ctx.spectrum_active,
+   ctx.impl_spin_levels ctx.spectrum_active,
+   ctx.impl_ladder_transitions ctx.spectrum_active,
+   ctx.impl_classical_kelvin_limit ctx.spectrum_active⟩
 
 end QOU.FluidDynamics
