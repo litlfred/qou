@@ -358,7 +358,53 @@ def main(argv=None) -> int:
 
     _print_legend()
 
-    # 1. BINDING  (B_AME ± experimental 1σ from AME2020)
+    # 1. MASS  M = (constituents) − B  (shown first, per owner request 2026-06-24)
+    #    Two-column convention (owner-set 2026-06-22): wherever the nucleon masses
+    #    enter the constituent sum we report BOTH:
+    #      • a PURE-CANONICAL column — framework-DERIVED nucleon rest masses
+    #        (m_p,can = m_e·Vol(𝓑₃)·ρ_global/ℏ_q² ≈ 966.05 MeV, +2.96% gap;
+    #        m_n,can = m_p,can + Q_β,derived + m_e). No measured nucleon mass enters
+    #        — everything scales off the CAL-1 unit m_e. m_sym = m_unbnd,can − B_sym.
+    #      • a "…,rel" column — the SAME canonical binding B_X subtracted from
+    #        the MEASURED constituent sum mu = Z·m_p + N·m_n (CODATA). This is the
+    #        experiment-anchored reading, kept for AME comparison.
+    #    The binding B_X itself is the single canonical value in both readings;
+    #    only the constituent baseline differs (framework-derived vs measured). The
+    #    ~2.96%·A spread between m_X and m_X,rel IS the propagated m_p gap.
+    from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
+    mp_, mn_ = float(mp_), float(mn_)
+    print("### Mass  M = (constituents) − B (MeV)   "
+          "[canonical = framework-derived nucleon masses; ,rel = measured CODATA mu]")
+    print(f"  canonical constituents: m_p,can = {mp_can:.3f} MeV (+"
+          f"{(mp_can/mp_-1)*100:.2f}%), m_n,can = {mn_can:.3f} MeV "
+          f"(= m_p,can + Q_β,derived + m_e). Every binding form has BOTH a "
+          f"canonical (m_X = m_unbnd,can − B_X) and a ,rel (m_X,rel = m_unbnd − B_X) mass.")
+    print("| iso | A | m_unbnd,can | m_unbnd | M_AME | m_lin | m_lin,rel | m_sym | m_sym,rel "
+          "| m_qCLT | m_qCLT,rel | m_qCLT_fac | m_qCLT_fac,rel | m_magic | m_magic,rel |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
+    for r in rows:
+        mu = r["Z"] * mp_ + r["N"] * mn_                 # measured constituent sum
+        mu_can = r["Z"] * mp_can + r["N"] * mn_can       # framework-derived sum
+        mame = (mu - r["B_AME"]) if r["B_AME"] is not None else None
+        # each form X: m_X (canonical, mu_can − B_X) and m_X,rel (measured, mu − B_X)
+        def _pair(bkey):
+            b = r[bkey]
+            if b is None:
+                return None, None
+            return mu_can - b, mu - b
+        m_lin_can, m_lin_rel = _pair("B_lin")
+        m_sym_can, m_sym_rel = _pair("B_sym")
+        m_qclt_can, m_qclt_rel = _pair("B_qCLT")
+        m_fac_can, m_fac_rel = _pair("B_qCLT_fac")
+        m_magic_can, m_magic_rel = _pair("B_magic")
+        print(f"| {r['name']} | {r['A']} | {mu_can:>9.1f} | {mu:>9.1f} "
+              f"| {_fmt(mame,9,1)} | {_fmt(m_lin_can,9,1)} | {_fmt(m_lin_rel,9,1)} "
+              f"| {_fmt(m_sym_can,9,1)} | {_fmt(m_sym_rel,9,1)} "
+              f"| {_fmt(m_qclt_can,9,1)} | {_fmt(m_qclt_rel,9,1)} "
+              f"| {_fmt(m_fac_can,9,1)} | {_fmt(m_fac_rel,9,1)} "
+              f"| {_fmt(m_magic_can,9,1)} | {_fmt(m_magic_rel,9,1)} |")
+
+    # 2. BINDING  (B_AME ± experimental 1σ from AME2020)
     print("### Binding  B (MeV)   [σ_exp = AME2020 experimental 1σ]")
     print("| iso | A | B_AME | σ_exp (MeV) | σ_exp (ppm) | B_lin | B_sym | B_qCLT | B_qCLT_fac | B_magic |")
     print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
@@ -401,51 +447,6 @@ def main(argv=None) -> int:
               f"| {_fmt(e['B_qCLT'],6)} | {_fmt(e['B_qCLT_fac'],6)} "
               f"| {_fmt(e['B_magic'],6)} | {_fmt(s_ppm,11,3)} "
               f"| {_fmt(best_dev_sigma,16,3) if best_dev_sigma else _fmt(None,16)} |")
-
-    # 3. MASS  M = Z·m_p + N·m_n − B  (two-column convention, owner-set 2026-06-22)
-    #    Wherever the nucleon masses enter the constituent sum we report BOTH:
-    #      • a PURE-CANONICAL column — framework-DERIVED nucleon rest masses
-    #        (m_p,can = m_e·Vol(𝓑₃)·ρ_global/ℏ_q² ≈ 966.05 MeV, +2.96% gap;
-    #        m_n,can = m_p,can + Q_β,derived + m_e). No measured nucleon mass enters
-    #        — everything scales off the CAL-1 unit m_e. m_sym = m_unbnd,can − B_sym.
-    #      • a "…,rel" column — the SAME canonical binding B_sym subtracted from
-    #        the MEASURED constituent sum mu = Z·m_p + N·m_n (CODATA). This is the
-    #        experiment-anchored reading, kept for AME comparison.
-    #    The binding B_sym itself is the single canonical value in both readings;
-    #    only the constituent baseline differs (framework-derived vs measured). The
-    #    ~2.96%·A spread between m_sym and m_sym,rel IS the propagated m_p gap.
-    from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
-    mp_, mn_ = float(mp_), float(mn_)
-    print("\n### Mass  M = (constituents) − B (MeV)   "
-          "[canonical = framework-derived nucleon masses; ,rel = measured CODATA mu]")
-    print(f"  canonical constituents: m_p,can = {mp_can:.3f} MeV (+"
-          f"{(mp_can/mp_-1)*100:.2f}%), m_n,can = {mn_can:.3f} MeV "
-          f"(= m_p,can + Q_β,derived + m_e). Every binding form has BOTH a "
-          f"canonical (m_X = m_unbnd,can − B_X) and a ,rel (m_X,rel = m_unbnd − B_X) mass.")
-    print("| iso | A | m_unbnd,can | m_unbnd | M_AME | m_lin | m_lin,rel | m_sym | m_sym,rel "
-          "| m_qCLT | m_qCLT,rel | m_qCLT_fac | m_qCLT_fac,rel | m_magic | m_magic,rel |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
-    for r in rows:
-        mu = r["Z"] * mp_ + r["N"] * mn_                 # measured constituent sum
-        mu_can = r["Z"] * mp_can + r["N"] * mn_can       # framework-derived sum
-        mame = (mu - r["B_AME"]) if r["B_AME"] is not None else None
-        # each form X: m_X (canonical, mu_can − B_X) and m_X,rel (measured, mu − B_X)
-        def _pair(bkey):
-            b = r[bkey]
-            if b is None:
-                return None, None
-            return mu_can - b, mu - b
-        m_lin_can, m_lin_rel = _pair("B_lin")
-        m_sym_can, m_sym_rel = _pair("B_sym")
-        m_qclt_can, m_qclt_rel = _pair("B_qCLT")
-        m_fac_can, m_fac_rel = _pair("B_qCLT_fac")
-        m_magic_can, m_magic_rel = _pair("B_magic")
-        print(f"| {r['name']} | {r['A']} | {mu_can:>9.1f} | {mu:>9.1f} "
-              f"| {_fmt(mame,9,1)} | {_fmt(m_lin_can,9,1)} | {_fmt(m_lin_rel,9,1)} "
-              f"| {_fmt(m_sym_can,9,1)} | {_fmt(m_sym_rel,9,1)} "
-              f"| {_fmt(m_qclt_can,9,1)} | {_fmt(m_qclt_rel,9,1)} "
-              f"| {_fmt(m_fac_can,9,1)} | {_fmt(m_fac_rel,9,1)} "
-              f"| {_fmt(m_magic_can,9,1)} | {_fmt(m_magic_rel,9,1)} |")
 
     # 3b. ENTANGLEMENT  (bar-involution q↦q⁻¹ split of the atom trace, via the
     #     q-parameterised core): bar-even (cosh) = retained binding/volume;
