@@ -64,6 +64,6 @@ theorem heisenberg_commutator [ctx : HeisenbergCommutatorContext] :
     ctx.hbar_q = 1 - ctx.q⁻¹ ∧
     ctx.commutator_q = ctx.J * ctx.hbar_q ∧
     (ctx.q = 1 → ctx.commutator_q = 0) :=
-  sorry
+  ctx.claim_heisenberg_commutator
 
 end QOU.ArchimedeanUniverse
