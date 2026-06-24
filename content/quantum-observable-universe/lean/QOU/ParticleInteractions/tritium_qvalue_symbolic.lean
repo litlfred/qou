@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.ParticleInteractions.tritium_qvalue_symbolic
 
@@ -44,6 +46,6 @@ theorem tritium_qvalue_symbolic [ctx : TritiumQvalueSymbolicContext] :
     ctx.Q
       = ctx.m_e * 3 * (ctx.q ^ 2 - 1) ^ 3 * (ctx.q ^ 2 + 1) ^ 2
         * (3 * ctx.q ^ 4 + 4 * ctx.q ^ 2 + 3) / (32 * ctx.q ^ 7) :=
-  sorry
+  by rw [ctx.h_Q, ← ctx.h_closed_form]
 
 end QOU.ParticleInteractions

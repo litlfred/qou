@@ -73,6 +73,6 @@ theorem skew_poisson_integration [ctx : SkewPoissonIntegrationContext] :
       Function.LeftInverse g f ∧ Function.RightInverse g f) ∧
     Function.Injective ctx.deformation ∧
     (∀ x : ctx.DistG, ctx.Frob_LHS x = ctx.Frob_RHS x) :=
-  sorry
+  by refine ⟨ctx.claim_i_reduction_isomorphism, ctx.claim_ii_distribution_deformation, ctx.claim_iii_frobenius_preserved⟩
 
 end QOU.Archimedean
