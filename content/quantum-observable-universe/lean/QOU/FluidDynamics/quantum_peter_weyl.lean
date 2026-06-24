@@ -1,3 +1,4 @@
+import Mathlib
 import QOU.Shared.SobolevHkRegularity
 
 /-!
@@ -44,6 +45,6 @@ available.
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/quantum-peter-weyl.ts
 theorem quantum_peter_weyl [ctx : QuantumPeterWeylContext] :
     ∀ n : ℕ, ctx.dim_V n = n + 1 :=
-  sorry
+  ctx.impl_quantum_peter_weyl ctx.peter_weyl_active
 
 end QOU.FluidDynamics
