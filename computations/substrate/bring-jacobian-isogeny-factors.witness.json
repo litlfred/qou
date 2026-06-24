@@ -1,0 +1,212 @@
+{
+  "computation": "bring_jacobian_isogeny_factors",
+  "genus": 4,
+  "subgroup_quotient_genera": [
+    {
+      "order": 1,
+      "name": "1",
+      "quotient_genus": 4
+    },
+    {
+      "order": 2,
+      "name": "C2",
+      "quotient_genus": 3
+    },
+    {
+      "order": 2,
+      "name": "C2",
+      "quotient_genus": 2
+    },
+    {
+      "order": 3,
+      "name": "C3",
+      "quotient_genus": 2
+    },
+    {
+      "order": 4,
+      "name": "C2 x C2",
+      "quotient_genus": 1
+    },
+    {
+      "order": 4,
+      "name": "C4",
+      "quotient_genus": 1
+    },
+    {
+      "order": 4,
+      "name": "C2 x C2",
+      "quotient_genus": 2
+    },
+    {
+      "order": 5,
+      "name": "C5",
+      "quotient_genus": 0
+    },
+    {
+      "order": 6,
+      "name": "S3",
+      "quotient_genus": 2
+    },
+    {
+      "order": 6,
+      "name": "S3",
+      "quotient_genus": 1
+    },
+    {
+      "order": 6,
+      "name": "C6",
+      "quotient_genus": 1
+    },
+    {
+      "order": 8,
+      "name": "D4",
+      "quotient_genus": 1
+    },
+    {
+      "order": 10,
+      "name": "D5",
+      "quotient_genus": 0
+    },
+    {
+      "order": 12,
+      "name": "A4",
+      "quotient_genus": 1
+    },
+    {
+      "order": 12,
+      "name": "D6",
+      "quotient_genus": 1
+    },
+    {
+      "order": 20,
+      "name": "C5 : C4",
+      "quotient_genus": 0
+    },
+    {
+      "order": 24,
+      "name": "S4",
+      "quotient_genus": 1
+    },
+    {
+      "order": 60,
+      "name": "A5",
+      "quotient_genus": 0
+    },
+    {
+      "order": 120,
+      "name": "S5",
+      "quotient_genus": 0
+    }
+  ],
+  "elliptic_quotients": [
+    {
+      "order": 4,
+      "name": "C2 x C2",
+      "quotient_genus": 1
+    },
+    {
+      "order": 4,
+      "name": "C4",
+      "quotient_genus": 1
+    },
+    {
+      "order": 6,
+      "name": "S3",
+      "quotient_genus": 1
+    },
+    {
+      "order": 6,
+      "name": "C6",
+      "quotient_genus": 1
+    },
+    {
+      "order": 8,
+      "name": "D4",
+      "quotient_genus": 1
+    },
+    {
+      "order": 12,
+      "name": "A4",
+      "quotient_genus": 1
+    },
+    {
+      "order": 12,
+      "name": "D6",
+      "quotient_genus": 1
+    },
+    {
+      "order": 24,
+      "name": "S4",
+      "quotient_genus": 1
+    }
+  ],
+  "positive_genus_factors": [
+    {
+      "order": 2,
+      "name": "C2",
+      "quotient_genus": 3
+    },
+    {
+      "order": 6,
+      "name": "S3",
+      "quotient_genus": 2
+    },
+    {
+      "order": 4,
+      "name": "C2 x C2",
+      "quotient_genus": 2
+    },
+    {
+      "order": 3,
+      "name": "C3",
+      "quotient_genus": 2
+    },
+    {
+      "order": 2,
+      "name": "C2",
+      "quotient_genus": 2
+    },
+    {
+      "order": 24,
+      "name": "S4",
+      "quotient_genus": 1
+    },
+    {
+      "order": 12,
+      "name": "A4",
+      "quotient_genus": 1
+    },
+    {
+      "order": 12,
+      "name": "D6",
+      "quotient_genus": 1
+    },
+    {
+      "order": 8,
+      "name": "D4",
+      "quotient_genus": 1
+    },
+    {
+      "order": 6,
+      "name": "S3",
+      "quotient_genus": 1
+    },
+    {
+      "order": 6,
+      "name": "C6",
+      "quotient_genus": 1
+    },
+    {
+      "order": 4,
+      "name": "C2 x C2",
+      "quotient_genus": 1
+    },
+    {
+      "order": 4,
+      "name": "C4",
+      "quotient_genus": 1
+    }
+  ],
+  "verdict": "Jac(Bring) (dim 4) isogeny factors read off exactly from quotient genera (genus(Bring/H)=dim std^H). The genus-1 quotient(s) Bring/S4 give a LITERAL elliptic 'W-plane' E (2 real period DOF = scale+modulus) as an isogeny factor of Jac(Bring) -- the concrete realization of the framework's rank-2 W, consistent with the merged A5-irreducibility (W is an abelian-variety factor, NOT an A5-subrep of the differentials). The q-family monodromy M (keystone) acts on H^1 of these factors; tr B=2.6424 is a trace on the W-plane factor. No fit; exact character theory.",
+  "discipline": "exact character theory (genus(Bring/H)=dim std^H); no fit; extends merged #2701 A5-irreducibility"
+}
