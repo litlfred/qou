@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Descent.descended_level_zero
 

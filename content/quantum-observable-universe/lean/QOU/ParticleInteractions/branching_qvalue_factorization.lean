@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.ParticleInteractions.branching_qvalue_factorization — `Σ Δm_e = a^Z · b^{N−1} · (a − b)`
 

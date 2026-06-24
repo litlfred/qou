@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.wedderburn_trace_identity — `Σ_λ dim_q(λ)² = [n]_q!`
 

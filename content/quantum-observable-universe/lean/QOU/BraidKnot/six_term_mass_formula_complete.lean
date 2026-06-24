@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.six_term_mass_formula_complete — six-term unified mass formula
 

@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidsKnots.mobius_frobenius_kernel
 

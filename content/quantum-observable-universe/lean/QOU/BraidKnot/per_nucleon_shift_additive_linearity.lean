@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.per_nucleon_shift_additive_linearity — `shift(Z+1, N) − shift(Z, N) = 18`
 

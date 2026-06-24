@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidsKnots.nsi_q_deformed_kernel
 
