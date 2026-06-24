@@ -70,6 +70,6 @@ and its mirror are both equal to $\mathrm{id}_A$.
 -- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-pairing.ts
 theorem frobeniusForm [ctx : FrobeniusFormContext] :
     ctx.is_iso ↔ Function.Bijective ctx.pairing :=
-  sorry
+  ctx.claim_frobeniusForm
 
 end QOU.FrobeniusHopfData
