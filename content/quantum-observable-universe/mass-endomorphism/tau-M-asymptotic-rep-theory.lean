@@ -45,7 +45,7 @@ asymptotic expansion. -/
 /-- **Kashiwara crystal-graph axiomatisation** for `V_λ`. Encodes
     the Hoefsmit off-diagonal coupling `b_λ` and the crystal-energy
     coefficients `c_k(b_λ)`. -/
-class KashiwaraCrystal (λ : Type*) [Fintype λ] where
+class KashiwaraCrystal (Λ : Type*) [Fintype Λ] where
   /-- Off-diagonal coupling (single scalar at H_3; matrix at higher n). -/
   b_lambda : ℝ
   /-- Crystal-graph matrix-element polynomial at level k. -/
@@ -61,9 +61,9 @@ class KashiwaraCrystal (λ : Type*) [Fintype λ] where
 given by `q`-contents of SYT cells. -/
 
 /-- **Jucys-Murphy spectral data** for `V_λ`. -/
-class JucysMurphySpectrum (λ : Type*) [Fintype λ] where
+class JucysMurphySpectrum (Λ : Type*) [Fintype Λ] where
   /-- q-content of cell containing label k in SYT T. -/
-  content : λ → ℕ → ℤ
+  content : Λ → ℕ → ℤ
   /-- Power-sum symmetric function p_k(J_2, ..., J_n) on V_λ. -/
   power_sum : ℕ → ℝ → ℝ
   /-- Concrete pinning: `p_1 = 0` on V_(2,1) (antisymmetric eigenvalues
@@ -73,14 +73,14 @@ class JucysMurphySpectrum (λ : Type*) [Fintype λ] where
 /-! ## Anchor 3: Macdonald (q,t) specialisation -/
 
 /-- **Macdonald (q, t) pairing data** at `t = q²`. -/
-class MacdonaldZonal (λ : Type*) [Fintype λ] where
+class MacdonaldZonal (Λ : Type*) [Fintype Λ] where
   /-- ⟨P_λ(·; q, q²), P_λ(·; q, q²)⟩ — k-th coefficient of (q,t)-inner-product expansion. -/
   inner_product_coeff : ℕ → ℝ → ℝ
 
 /-! ## Anchor 4: Habiro residue at roots of unity -/
 
 /-- **Habiro residue summation** for `V_λ` at a primitive N-th root of unity. -/
-class HabiroResidue (λ : Type*) [Fintype λ] where
+class HabiroResidue (Λ : Type*) [Fintype Λ] where
   /-- Finite residue sum at q = ζ_N. -/
   residue_sum_at_root_of_unity : ℕ → ℝ → ℝ
 
@@ -105,15 +105,15 @@ the per-anchor data via explicit polynomial identities. -/
     The agreement of the four anchors at higher `k` is per-irrep
     combinatorial content that lives outside the class axiomatisation;
     here we only export the Kashiwara generator + its low-order pinning. -/
-theorem tau_M_asymptotic_rep_theory (λ : Type*) [Fintype λ]
-    [KashiwaraCrystal λ] [JucysMurphySpectrum λ]
-    [MacdonaldZonal λ] [HabiroResidue λ]
-    (q : ℝ) (hq : 0 < q) :
+theorem tau_M_asymptotic_rep_theory (Λ : Type*) [Fintype Λ]
+    [KashiwaraCrystal Λ] [JucysMurphySpectrum Λ]
+    [MacdonaldZonal Λ] [HabiroResidue Λ]
+    (q : ℝ) :
     -- The canonical c_k generator is Kashiwara, and its low orders are pinned:
-    (KashiwaraCrystal.c_k λ) 0 = 0
-    ∧ (KashiwaraCrystal.c_k λ) 1 = KashiwaraCrystal.b_lambda λ
+    (KashiwaraCrystal.c_k (Λ := Λ)) 0 = 0
+    ∧ (KashiwaraCrystal.c_k (Λ := Λ)) 1 = KashiwaraCrystal.b_lambda (Λ := Λ)
     -- JM first power-sum vanishes (concrete content from JM class)
-    ∧ (JucysMurphySpectrum.power_sum λ 1 q : ℝ) = 0 := by
+    ∧ (JucysMurphySpectrum.power_sum (Λ := Λ) 1 q : ℝ) = 0 := by
   refine ⟨?_, ?_, ?_⟩
   · exact KashiwaraCrystal.c_0_zero
   · exact KashiwaraCrystal.c_1_eq_b
