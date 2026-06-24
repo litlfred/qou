@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.ParticleInteractions.atomic_nf_witness
 
@@ -58,7 +60,8 @@ class AtomicNfWitnessContext where
   /-- The `F_Pauli` value recorded in the witness certificate. -/
   F_Pauli : ℝ
   /-- The `tr_alt(q_0)` and `net(q_0)` values from the certificate. -/
-  trAlt net : ℝ
+  trAlt : ℝ
+  net : ℝ
   /-- Manuscript sub-claim (v) — Pauli character definition:
       `F_Pauli = |tr_alt(q_0) / net(q_0)|`. -/
   claim_v_certificate_definition : F_Pauli = |trAlt / net|
@@ -106,6 +109,6 @@ theorem atomic_nf_witness [ctx : AtomicNfWitnessContext] :
     (∀ k : ℕ, ctx.gb_converges k) ∧
     (∀ a : ℕ, a ≤ 9 → ctx.NF_no_strip a) ∧
     ctx.F_Pauli = |ctx.trAlt / ctx.net| :=
-  sorry
+  ⟨ctx.claim_i_global_min_ordering, ctx.claim_ii_greedy_electron_placement, ctx.claim_iii_gb_convergence, ctx.claim_iv_NF_accumulation, ctx.claim_v_certificate_definition⟩
 
 end QOU.ParticleInteractions

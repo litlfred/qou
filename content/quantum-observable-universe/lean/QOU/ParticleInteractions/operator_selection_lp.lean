@@ -1,5 +1,6 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Data.Real.Basic
+import Mathlib.Data.Fintype.Fin
 
 /-!
 # QOU.ParticleInteractions.operator_selection_lp
@@ -105,6 +106,6 @@ theorem operator_selection_lp [ctx : OperatorSelectionLpContext] :
       0 ≤ (Finset.univ.sum fun j : Fin ctx.d => ctx.G i j * ctx.x_star j)) ∧
     (Finset.univ.sum fun i : Fin ctx.d => ctx.t i * ctx.x_star i)
       = ctx.n_target * ctx.y_0_star :=
-  sorry
+  ⟨ctx.claim_primal_net, ctx.claim_primal_feasible, ctx.claim_strong_duality⟩
 
 end QOU.ParticleInteractions

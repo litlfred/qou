@@ -1,3 +1,4 @@
+import Mathlib
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
@@ -61,6 +62,6 @@ for the recovered coefficients.
 theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] :
     ctx.m = (Finset.range ctx.n_levels).sum (fun ℓ => ctx.m_level ℓ) ∧
     |ctx.m - ctx.m_BW| ≤ ctx.rel_err :=
-  sorry
+  ⟨ctx.claim_i_descent_decomposition, ctx.claim_ii_BW_recovery⟩
 
 end QOU.ParticleInteractions

@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.ParticleInteractions.ground_state_ordering
 
@@ -28,9 +30,9 @@ class GroundStateOrderingContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
   /-- Transfer-matrix dominant eigenvalue (`T_pp`). -/
-  λ_plus : ℝ
+  lam_plus : ℝ
   /-- Transfer-matrix subdominant eigenvalue (`T_pp`). -/
-  λ_minus : ℝ
+  lam_minus : ℝ
   /-- The ground-state ordering at position `k`: `1` = proton,
       `0` = neutron. -/
   ordering : ℕ → ℕ
@@ -47,7 +49,7 @@ class GroundStateOrderingContext where
   claim_iii_boundary_correction : A ≤ 3 → ∀ k : ℕ, k < Z → ordering k = 1
   /-- Manuscript sub-claim — eigenvalue identity:
       `λ_+ · λ_− = −1`. -/
-  claim_vieta_product : λ_plus * λ_minus = -1
+  claim_vieta_product : lam_plus * lam_minus = -1
 
 /-- **Proposition statement** (from manuscript):
 
@@ -64,7 +66,7 @@ theorem ground_state_ordering [ctx : GroundStateOrderingContext] :
       ∀ k : ℕ, ctx.ordering k =
         if k % 2 = 1 ∧ k < 2 * ctx.Z then 1 else 0) ∧
     (ctx.A ≤ 3 → ∀ k : ℕ, k < ctx.Z → ctx.ordering k = 1) ∧
-    ctx.λ_plus * ctx.λ_minus = -1 :=
-  sorry
+    ctx.lam_plus * ctx.lam_minus = -1 :=
+  ⟨ctx.claim_i_interleaving, ctx.claim_iii_boundary_correction, ctx.claim_vieta_product⟩
 
 end QOU.ParticleInteractions

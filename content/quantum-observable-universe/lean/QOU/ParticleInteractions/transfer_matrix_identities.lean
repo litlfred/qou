@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.ParticleInteractions.transfer_matrix_identities
 
@@ -57,6 +59,6 @@ $[2]_q = q + q^{-1}$.
 theorem transfer_matrix_identities [ctx : TransferMatrixIdentitiesContext] :
     (ctx.T_pp_T_nn_00 = 1 ∧ ctx.T_pp_T_nn_11 = 1) ∧
     ctx.T_pn_sq_00 = 1 + ctx.h ^ 2 / 4 :=
-  sorry
+  ⟨ctx.claim_i_inverse_product, ctx.claim_ii_T_pn_squared⟩
 
 end QOU.ParticleInteractions

@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.ParticleInteractions.confinement_frobenius_reciprocity
 
@@ -36,7 +38,8 @@ class ConfinementFrobeniusReciprocityContext where
   /-- Dual `y_0*`. -/
   y_0_star : ℝ
   /-- Primal/dual objective values. -/
-  primal_obj dual_obj : ℝ
+  primal_obj : ℝ
+  dual_obj : ℝ
   /-- Manuscript sub-claim (i) — LP primal optimum exists with
       a finite non-zero coefficient. -/
   claim_i_primal_optimum : ∃ i : Fin d, x_star i ≠ 0
@@ -84,6 +87,7 @@ theorem confinement_frobenius_reciprocity [ctx : ConfinementFrobeniusReciprocity
     (∃ i : Fin ctx.d, ctx.A_star i) ∧
     (∀ i : Fin ctx.d, ctx.A_star i ↔ 0 < ctx.y_star i) ∧
     ctx.primal_obj = ctx.dual_obj :=
-  sorry
+  ⟨ctx.claim_i_primal_optimum, ctx.claim_ii_dual_optimum, ctx.claim_iii_active_set_nonempty,
+    ctx.claim_iv_active_iff_dual_positive, ctx.claim_v_strong_duality⟩
 
 end QOU.ParticleInteractions

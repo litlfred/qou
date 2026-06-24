@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 # QOU.ParticleInteractions.parity_regime_selection
 
@@ -78,6 +80,6 @@ theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] :
     (Odd ctx.A → 3 ≤ ctx.A → ctx.Q_value = |ctx.S_Delta| * ctx.m_e) ∧
     (Even ctx.A → ctx.Q_value = (ctx.Sigma_FP + 1) * ctx.m_e) ∧
     (ctx.A = 1 → ctx.Q_value = (ctx.S_Delta + 1) * ctx.m_e) :=
-  sorry
+  ⟨ctx.claim_i_sign_identity, ctx.claim_ii_odd_A_regime, ctx.claim_iii_even_A_regime, ctx.claim_iv_A_one_neutron_decay⟩
 
 end QOU.ParticleInteractions
