@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-24T17:53:57.504060+00:00",
-  "commitSha": "8fe4fe5e84ca49462f3d48713d31cb3459918cae",
+  "computedAt": "2026-06-24T18:42:10.683051+00:00",
+  "commitSha": "568404c61ea98afb7e1f25ff3351dff8f1ff1e0c",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -2671,6 +2671,7 @@
         "low-isotopes-binding-sweep.witness.json",
         "lp-confinement-nf-forcing.witness.json",
         "lr-fusion-self-conj-test.witness.json",
+        "lw2-c2-independent-hopf-test-attempt.witness.json",
         "m-baryon-volume-form.witness.json",
         "m-p-borromean-verification-50dps.witness.json",
         "m-p-linking-weight-operator-valued-probe.witness.json",

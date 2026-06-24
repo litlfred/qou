@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-24T17:53:56.858109+00:00",
-  "commitSha": "8fe4fe5e84ca49462f3d48713d31cb3459918cae",
+  "computedAt": "2026-06-24T18:42:07.082881+00:00",
+  "commitSha": "568404c61ea98afb7e1f25ff3351dff8f1ff1e0c",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 24,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8a602c238718",
@@ -26,7 +26,7 @@
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 941,
+    "files_scanned": 944,
     "patterns": [
       "P15",
       "P16",
@@ -37,10 +37,10 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 123,
+      "P15": 124,
       "P16": 261,
       "P21": 24,
-      "P30": 138,
+      "P30": 140,
       "P31": 23
     },
     "top_files": [
@@ -2458,6 +2458,20 @@
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
+        "pattern": "P15",
+        "file": "lw2_c2_independent_hopf_test_attempt.py",
+        "line": 129,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P30",
+        "file": "lw2_c2_independent_hopf_test_attempt.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
         "pattern": "P31",
         "file": "m_p_substrate_identity_50dps.py",
         "line": 59,
@@ -3912,6 +3926,13 @@
         "line": 1,
         "snippet": "Hoefsmit construction without BlockCache",
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P30",
+        "file": "witness_hollowness_audit.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P16",
