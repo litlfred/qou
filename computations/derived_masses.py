@@ -398,7 +398,7 @@ def q_beta_kashiwara_n2_mev() -> mp.mpf:
 
     Canonical near-match Q_β used for the production neutron mass
     (`m_n = m_p + Q_β + m_e`). Refines the single-wrap closed form
-    `q_beta_predicted_mev()` (= Q_A, +1604 ppb on Q_β) by the first two
+    `q_beta_predicted_mev()` (= Q_A, +1677 ppm on Q_β) by the first two
     parameter-free Kashiwara brane-tower corrections — all functions of
     q_0 alone, NO experimental input:
 
@@ -406,8 +406,8 @@ def q_beta_kashiwara_n2_mev() -> mp.mpf:
         z     = 1/(√q + 1/√q),  h = q − q⁻¹,  ℏ_q = (q−1)/q
         α     = (z − 1)·h / 2
         b     = √(1 − q²/(q²+1)²)                     (Hoefsmit b)
-        Q_N1  = Q_A · cos(α − b·ℏ_q²/2)               (N=1, +73.8 ppb on Q_β)
-        Q_N2  = Q_N1 · (1 − b²·ℏ_q⁴)                  (N=2, +1.25 ppb on Q_β)
+        Q_N1  = Q_A · cos(α − b·ℏ_q²/2)               (N=1, +73.8 ppm on Q_β)
+        Q_N2  = Q_N1 · (1 − b²·ℏ_q⁴)                  (N=2, +1.25 ppm on Q_β)
 
     TIER: **near-match** (not proved). The b^k recursion is the Kashiwara
     crystal brane-tower of `prop:tau-M-asymptotic-rep-theory` (authorNote
@@ -430,9 +430,8 @@ def q_beta_kashiwara_n2_mev() -> mp.mpf:
     z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
     hbar_q = (q - 1) / q
     alpha = (z - 1) * h / 2
-    d1 = q ** 3 / (q ** 2 + 1)
-    d2 = -1 / (q * (q ** 2 + 1))
-    b = mp.sqrt(d1 * d2 + 1)                       # Hoefsmit b (parameter-free)
+    q_sq = q ** 2
+    b = mp.sqrt(1 - q_sq / (q_sq + 1) ** 2)        # Hoefsmit b (= probe's d1·d2+1)
     Q_N1 = Q_A * mp.cos(alpha - b * hbar_q ** 2 / 2)
     return Q_N1 * (1 - b ** 2 * hbar_q ** 4)
 

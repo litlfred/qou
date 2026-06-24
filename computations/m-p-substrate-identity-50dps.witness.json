@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-24T16:23:02.628964+00:00",
-  "commitSha": "45d9a348e19a86476df5429ed99a40cc9c10fc56",
+  "computedAt": "2026-06-24T16:32:02.571621+00:00",
+  "commitSha": "9f5ddbbc637b9c44e784bca410ad47e7b57715c7",
   "assertions": [
     {
       "name": "m_p_matches_codata_within_1ppm",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 13,
   "computation": "m-p-substrate-identity-50dps",
   "scriptFile": "m_p_substrate_identity_50dps.py",
-  "scriptHash": "a7aed73e65b7",
-  "scriptCommitSha": "f2ff63c7564f17eea060eb1599a219b29482be57",
+  "scriptHash": "dc9252cc2fbf",
+  "scriptCommitSha": "9f5ddbbc637b9c44e784bca410ad47e7b57715c7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

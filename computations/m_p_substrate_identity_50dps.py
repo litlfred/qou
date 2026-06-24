@@ -173,9 +173,9 @@ def main():
     # Kashiwara b² truncation (q_0-only; derived_masses.q_beta_kashiwara_n2_mev).
     # Q_β is ~0.083 % of m_n, so its +1.25 ppm lands m_n at ~+1 ppb.
     # TIER: near-match; exact Q_β gated on the s5bb Habiro keystone.
-    Q_beta_pred = q_beta_kashiwara_n2_mev()
-    m_n_pred = m_p_pred + Q_beta_pred + m_e
-    Delta_m_pred = m_n_pred - m_p_pred                 # = Q_β + m_e
+    Q_beta_pred = q_beta_kashiwara_n2_mev()            # absolute MeV (no E_0 scaling)
+    Delta_m_pred = Q_beta_pred + m_e                   # = m_n − m_p, computed directly
+    m_n_pred = m_p_pred + Delta_m_pred                 # avoids large-number subtraction
     M_N_pred = (m_p_pred + m_n_pred) / 2
     # SECONDARY diagnostic — the canonical flavor-split RATIO
     # X = ℏ_q²·h·[2]_q/3 (prop:flavor-split-substrate); a derived u↔d
