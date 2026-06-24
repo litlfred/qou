@@ -244,18 +244,113 @@ theorem two_mul_sumLegs (l : List ℕ) :
   rw [list_range_map_sum, Finset.sum_range_reflect (fun k => ((k : ℤ)))]
   exact two_mul_sum_range_int (colLen l j)
 
+/-! ### Hook side of (A): cell-membership duality + Fubini transpose (sorry-free)
+
+The (L1)/(Lal) "2-D reindex" the roadmap names as the crux is, concretely, the ability to
+transpose a **row**-indexed cell sum `Σ_{i<length} Σ_{j<λ_i}` into a **column**-indexed one
+`Σ_{j<λ_1} Σ_{i<colLen j}`.  Its gateway is the **cell-membership duality**
+`i < colLen(j) ↔ j < λ_i` (for weakly-decreasing `l`); `Finset.sum_comm'` then gives the
+Fubini swap.  This is the machinery that discharges the leg terms (`l²`, `2l`) of the hook
+square against the per-column `sumSqLegs` / `sumLegs` closed forms above. -/
+
+/-- `colLen` recursion on a cons: prepending `a` adds a column-`j` cell iff `j < a`. -/
+theorem colLen_cons (a : ℕ) (t : List ℕ) (j : ℕ) :
+    colLen (a :: t) j = if j < a then colLen t j + 1 else colLen t j := by
+  unfold colLen
+  rw [List.filter_cons]
+  by_cases h : j < a <;> simp [h]
+
+/-- If every part is `≤ j`, column `j` is empty. -/
+theorem colLen_eq_zero (t : List ℕ) (j : ℕ) (h : ∀ b ∈ t, b ≤ j) : colLen t j = 0 := by
+  unfold colLen
+  simp only [List.length_eq_zero_iff]
+  rw [List.filter_eq_nil_iff]
+  intro b hb
+  simp only [decide_eq_true_eq]
+  exact Nat.not_lt.mpr (h b hb)
+
+/-- **Cell-membership duality (sorry-free).** For a weakly-decreasing partition, row `i`
+reaches column `j` iff column `j` reaches row `i`: `i < colLen(j) ↔ j < λ_i`.  The gateway
+to the Fubini transpose; an induction on the parts using the column-empty lemma at the head. -/
+theorem colLen_duality : ∀ (l : List ℕ), l.Sorted (· ≥ ·) → ∀ (i j : ℕ),
+    (i < colLen l j ↔ j < l.getD i 0)
+  | [], _, i, j => by simp [colLen]
+  | a :: t, hl, i, j => by
+    obtain ⟨hat, ht⟩ := List.sorted_cons.mp hl
+    rw [colLen_cons]
+    cases i with
+    | zero =>
+      simp only [List.getD_cons_zero]
+      by_cases h : j < a
+      · simp [h]
+      · have hz : colLen t j = 0 :=
+          colLen_eq_zero t j (fun b hb => le_trans (hat b hb) (Nat.not_lt.mp h))
+        simp [h, hz]
+    | succ i' =>
+      simp only [List.getD_cons_succ]
+      by_cases h : j < a
+      · simp only [h, if_true, Nat.succ_lt_succ_iff]
+        exact colLen_duality t ht i' j
+      · have hz : colLen t j = 0 :=
+          colLen_eq_zero t j (fun b hb => le_trans (hat b hb) (Nat.not_lt.mp h))
+        simp only [h, if_false]
+        rw [hz, ← colLen_duality t ht i' j, hz]
+        omega
+
+/-- `colLen ≤ length` (a column has at most as many cells as there are rows). -/
+theorem colLen_le_length (l : List ℕ) (j : ℕ) : colLen l j ≤ l.length := by
+  unfold colLen
+  exact List.length_filter_le _ _
+
+/-- Every part is `≤` the first (largest) part, for a weakly-decreasing partition. -/
+theorem getD_le_headD (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (i : ℕ) :
+    l.getD i 0 ≤ l.headD 0 := by
+  cases l with
+  | nil => simp
+  | cons a t =>
+    rw [List.headD_cons]
+    cases i with
+    | zero => simp
+    | succ i' =>
+      rw [List.getD_cons_succ]
+      obtain ⟨hat, _⟩ := List.sorted_cons.mp hl
+      rcases lt_or_ge i' t.length with hlen | hlen
+      · rw [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hlen, Option.getD_some]
+        exact hat _ (List.getElem_mem hlen)
+      · rw [List.getD_eq_getElem?_getD, List.getElem?_eq_none hlen, Option.getD_none]
+        exact Nat.zero_le a
+
+/-- **Fubini transpose (sorry-free).** A row-indexed cell sum equals the column-indexed one,
+for any cell function `g`.  This is the (L1)/(Lal) 2-D reindex, via `Finset.sum_comm'` and the
+cell-membership duality.  The leg terms of `Σ_c h²` become per-column sums under it. -/
+theorem cell_fubini (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (g : ℕ → ℕ → ℤ) :
+    ∑ i ∈ Finset.range l.length, ∑ j ∈ Finset.range (l.getD i 0), g i j
+      = ∑ j ∈ Finset.range (l.headD 0), ∑ i ∈ Finset.range (colLen l j), g i j := by
+  apply Finset.sum_comm'
+  intro i j
+  simp only [Finset.mem_range]
+  constructor
+  · rintro ⟨hi, hj⟩
+    exact ⟨(colLen_duality l hl i j).mpr hj, lt_of_lt_of_le hj (getD_le_headD l hl i)⟩
+  · rintro ⟨hi, hj⟩
+    exact ⟨lt_of_lt_of_le hi (colLen_le_length l j), (colLen_duality l hl i j).mp hi⟩
+
 /-- **Identity (A), general (carried — proof in progress).** For a weakly-decreasing
 partition `l`, `Σ_c h_c² = Σ_c c(c)² + n²`.  Machine-checked for all `n ≤ 9`
 (`identityA_verified_le9`) and exhaustively in Python for `n ≤ 22`.
 
-Proof roadmap (β-set / arm-leg, audit doc §"Proof of (A)"), being formalized
-incrementally below:
-* **(L1)** β-set hook-square formula `Σ_c h² = Σ_i Σ_{s≤β_i} s² − Σ_{i<t}(β_i−β_t)²`;
-* **(Lc)** per-bead contents along `β_i` are exactly `{j−i}`;
-* **(Lal)** arm·leg row-pair closed form
-  `Σ_c a·l = Σ_{i,k} λ_i·min(λ_i,λ_k) − Σ_i iλ_i² − Σ_j jλ'_j² + Σ_i i·\binom{λ_i+1}{2}`;
-then the elementary single-sum cancellation gives `n²`.  The crux is the 2-D reindex
-in (Lal); the rest is `ring`/`Finset.sum` glue. -/
+Proof roadmap (β-set / arm-leg, audit doc §"Proof of (A)").  The hook-square expansion
+`h² = a² + l² + 1 + 2·a·l + 2·a + 2·l` reduces (A) to its six per-term sums; the
+infrastructure below is now in place to discharge all but one of them:
+* arm terms `a²`, `2a` — closed over rows (`six_mul_sumSqArms`, `two_mul_sumArms`);
+* leg terms `l²`, `2l` — closed over columns (`six_mul_sumSqLegs`, `two_mul_sumLegs`),
+  reached from the row-indexed `Σ_c h²` by the **Fubini transpose** (`cell_fubini`, via the
+  cell-membership duality `colLen_duality`);
+* the constant `1` sums to `n = sz`; the content side is `six_mul_sumSqContents`.
+
+The single remaining gap is the **arm·leg cross term** `Σ_c a·l` (the (Lal) row-pair
+closed form `Σ_{i,k} λ_i·min(λ_i,λ_k) − …`), which couples rows and columns and needs a
+`Σ min` reindex beyond the present transpose; the rest is `ring`/`Finset.sum` glue. -/
 theorem sumSqHooks_eq_sumSqContents_add_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
     sumSqHooks l = sumSqContents l + (sz l : ℤ) ^ 2 := by
   -- Ref: [manuscript] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (A)"
