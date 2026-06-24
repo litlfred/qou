@@ -7,4 +7,5 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["thm:wedderburn-mass-formula"],
+  proofs: ["prf:degree-two-baryon-weight"],
 });

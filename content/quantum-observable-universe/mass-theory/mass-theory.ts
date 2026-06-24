@@ -461,6 +461,7 @@ export default chapter({
         "shared-denominator-cusp-holonomy",
         "quantum-bloch-group",
         "degree-two-baryon-weight",
+        "degree-two-baryon-weight-proof",
         // Re-homed from the weak-spectral/isospin collection: the Borromean
         // Bloch-group (K3) element belongs with the Bloch group closure.
         "borromean-bloch-group-element",
