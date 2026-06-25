@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "warn",
+        "notes": "Lean encodes none of the construction strategy; the five steps are opaque class fields. Genuine evidence (certificates) is external to Lean.",
+        "reviewed_at": "2026-06-25T17:21:41.000Z",
+        "reviewed_sha": "c22b1b33d0dc1cd971952782ad9f2ab502922272",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "notes": "Well-posed computational-witness claim (atomic braid -> GS normal form, Φ₁ min, GB convergence, committed certificates); falsifiable via the certs.",
+        "reviewed_at": "2026-06-25T17:21:41.000Z",
+        "reviewed_sha": "c22b1b33d0dc1cd971952782ad9f2ab502922272",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "notes": "Constructive per-atom NF pipeline with committed JSON certificates (Φ₁ ground state, GB convergence, Pauli char) is substantive infrastructure, not a restatement.",
+        "reviewed_at": "2026-06-25T17:21:42.000Z",
+        "reviewed_sha": "c22b1b33d0dc1cd971952782ad9f2ab502922272",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1293,6 +1356,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "fail",
+        "notes": "All 5 conjuncts are class fields over opaque predicates (gb_converges, NF_no_strip); no encoding of GB reduction / Diamond Lemma / stripping; degenerate.",
+        "reviewed_at": "2026-06-25T17:20:57.000Z",
+        "reviewed_sha": "c22b1b33d0dc1cd971952782ad9f2ab502922272",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1322,6 +1402,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "fail",
+        "notes": "Body is ⟨claim_i,...,claim_v⟩ — each conjunct returns the namesake class field that IS the sub-claim verbatim; pure projection, no derivation.",
+        "reviewed_at": "2026-06-25T17:21:06.000Z",
+        "reviewed_sha": "c22b1b33d0dc1cd971952782ad9f2ab502922272",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1498,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "notes": "Fields satisfiable (existence of a Φ₁-min ordering, greedy e-pos, convergence predicates, F_Pauli def); not contradictory/vacuous.",
+        "reviewed_at": "2026-06-25T17:21:39.000Z",
+        "reviewed_sha": "c22b1b33d0dc1cd971952782ad9f2ab502922272",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1544,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c6a99ea3828d",
+          "ts": "029501d4ecb5"
+        },
+        "result": "pass",
+        "notes": "All five claim_* fields used (one per conjunct of the bundle); A_eq is data; no orphan binder in the projection.",
+        "reviewed_at": "2026-06-25T17:21:17.000Z",
+        "reviewed_sha": "c22b1b33d0dc1cd971952782ad9f2ab502922272",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
