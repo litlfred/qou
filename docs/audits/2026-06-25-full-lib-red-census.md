@@ -152,11 +152,18 @@ classified GREEN (compiles to olean) / RED (real source error) / blocked
 
 ## Fixed in this PR (verified `exit 0` via lean-direct)
 
-5 files driven fully green — the reliably-mechanical, fully-verifiable subset:
+**17 files driven fully green** — the reliably-mechanical, fully-verifiable subset.
+
+SYNTAX (5):
 - `Substrate/MuWenzlClosure` + `BraidKnot/H4SignBlockIsospinLimit` — superscript powers `q⁻ⁿ` → `(q⁻¹)^n`.
 - `Mathlib/RSKBridge` — reserved `λ` Big-Operator binder → `Λ` + dangling `/--` → `/-!`.
 - `Information/toffoli_transfer_matrix` — imports moved above the `/-!` module docstring.
 - `LiftingDescent/CosimplicialCrossedGroupoid` — `noncomputable section` moved above its docstring + missing bare `end` added.
+
+NONCOMPUTABLE (12) — all wrapped in `noncomputable section` (the error is code-gen only; elaboration already succeeded):
+- 10 isotope `BraidKnot/Applied{Beryllium9,Boron11,Carbon12,Deuteron,Helium3,Helium4,Lithium6,Nitrogen14,Oxygen16,Tritium}Uniqueness` — thin `abbrev` wrappers of noncomputable SDP objects.
+- `BraidKnot/PerNucleusMassDerivation` (`nucleusMass : ℝ`) + `Substrate/MuOverDetermination` (`hbarQ : ℝ := 1 - 1/q`).
+
 
 ## Cascade caveat (read before draining the rest)
 
