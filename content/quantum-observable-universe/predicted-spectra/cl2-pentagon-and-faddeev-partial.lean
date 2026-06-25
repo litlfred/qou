@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 import QOU.Archimedean.ClausenFunctionMathlibFiller
 import QOU.Archimedean.ThreeSubstantiveMathlibFillers
+import QOU.Archimedean.DilogarithmArchimedeanLimit
 
 
 /-!
