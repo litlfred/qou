@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "warn",
+        "notes": ".md states limit with no Proof; Lean is an explicit placeholder stub projecting a claim field, no proof strategy.",
+        "reviewed_at": "2026-06-25T16:50:18.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.4
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "pass",
+        "notes": "Goal (Frobenius-Hopf kernel -> repulsive 1/r^2 as q->1) is well-posed classical-limit claim.",
+        "reviewed_at": "2026-06-25T16:50:18.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "warn",
+        "notes": "Lean adds nothing beyond restating the claim as a class field (self-described placeholder).",
+        "reviewed_at": "2026-06-25T16:50:18.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1293,6 +1356,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "fail",
+        "notes": "def mobius_frobenius_kernel := ctx.claim_mobius_frobenius_kernel: projects the class field that IS the conclusion; placeholder stub, no derivation of q->1 limit.",
+        "reviewed_at": "2026-06-25T16:50:17.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1322,6 +1402,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "fail",
+        "notes": "Body is := ctx.claim_mobius_frobenius_kernel — returns the structure field equal to the conclusion (self-assuming projection).",
+        "reviewed_at": "2026-06-25T16:50:17.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1498,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "pass",
+        "notes": "Class fields (K_classical=1/r^2; q=1 -> K_FH=K_classical) satisfiable; no contradiction.",
+        "reviewed_at": "2026-06-25T16:50:17.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1544,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "b0a738394609",
+          "ts": "c50c6e8fc9df"
+        },
+        "result": "pass",
+        "notes": "Single ctx instance binder is used (its claim field is returned); no other explicit binders.",
+        "reviewed_at": "2026-06-25T16:50:17.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

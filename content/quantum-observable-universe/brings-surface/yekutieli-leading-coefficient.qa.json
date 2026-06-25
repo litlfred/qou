@@ -1157,6 +1157,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "091c746e9f18",
+          "ts": "775082806075"
+        },
+        "result": "warn",
+        "notes": ".md is a bare 2-line statement with no Proof; Lean main thm just projects the class field. Corollary ne_zero does derive via zero_ne_one.",
+        "reviewed_at": "2026-06-25T16:49:14.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.5
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1196,6 +1217,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "091c746e9f18",
+          "ts": "775082806075"
+        },
+        "result": "pass",
+        "notes": "Goal (Yekutieli obstruction = leading Chebyshev = 1, nonzero at q!=1) is substantive and well-posed.",
+        "reviewed_at": "2026-06-25T16:49:04.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
         }
       }
     ],
@@ -1237,6 +1279,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "091c746e9f18",
+          "ts": "775082806075"
+        },
+        "result": "warn",
+        "notes": "States obstruction=1 result but Lean adds little beyond restating it as a class field; only corollary ne_zero is a genuine derivation.",
+        "reviewed_at": "2026-06-25T16:49:26.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.55
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1273,6 +1336,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "091c746e9f18",
+          "ts": "775082806075"
+        },
+        "result": "fail",
+        "notes": "Primary thm yekutieli_leading_coefficient concludes ctx.claim_yekutieli_eq_leading p hp_odd verbatim: projects the class field that IS the .md claim; no derivation.",
+        "reviewed_at": "2026-06-25T16:48:09.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1302,6 +1382,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "091c746e9f18",
+          "ts": "775082806075"
+        },
+        "result": "fail",
+        "notes": "Body is := ctx.claim_yekutieli_eq_leading p hp_odd — returns the class field equal to the conclusion (self-assuming projection).",
+        "reviewed_at": "2026-06-25T16:48:22.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1381,6 +1478,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "091c746e9f18",
+          "ts": "775082806075"
+        },
+        "result": "pass",
+        "notes": "Hypotheses (Odd p, q!=1) satisfiable; not contradictory.",
+        "reviewed_at": "2026-06-25T16:48:53.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1410,6 +1524,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "091c746e9f18",
+          "ts": "775082806075"
+        },
+        "result": "pass",
+        "notes": "Explicit args p, hp_odd both passed to ctx.claim_yekutieli_eq_leading; ctx instance used. No unused binder in main thm.",
+        "reviewed_at": "2026-06-25T16:48:40.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

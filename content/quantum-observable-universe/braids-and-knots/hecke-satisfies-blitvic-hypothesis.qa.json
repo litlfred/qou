@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "pass",
+        "notes": ".md proof sketch is clear (quadratic relation reduces words, Markov peels generators into matchings); but Lean does not realize it",
+        "reviewed_at": "2026-06-25T16:50:15.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "pass",
+        "notes": "goal is substantive and well-posed: Hecke generators satisfy Blitvic pair-partition q-CLT hypothesis; .md gives genuine reduction sketch",
+        "reviewed_at": "2026-06-25T16:50:15.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "warn",
+        "notes": ".md states 'no new mathematics introduced; explicit reduction'; verifies a known CLT input; Lean adds nothing (projection stub)",
+        "reviewed_at": "2026-06-25T16:50:15.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1293,6 +1356,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "fail",
+        "notes": "self-assuming: theorem concludes claims i^ii^iii by projecting ctx fields that ARE those claims; substantive pair-partition decomp (iv) left as abstract Prop, never derived; docstring admits 'placeholder'",
+        "reviewed_at": "2026-06-25T16:50:15.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1322,6 +1402,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "fail",
+        "notes": "proof body is <ctx.claim_i, ctx.claim_ii, ctx.claim_iii> returning the very class fields that equal the conclusion; textbook self-assuming projection",
+        "reviewed_at": "2026-06-25T16:50:15.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1498,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "pass",
+        "notes": "context fields are satisfiable (Hecke quadratic relation, Markov property, odd-vanishing all hold for genuine H_n(q)); premises not contradictory",
+        "reviewed_at": "2026-06-25T16:50:15.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1544,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "23c3caff1f1b",
+          "ts": "e64655dfc1cd"
+        },
+        "result": "fail",
+        "notes": "class field claim_iv_pair_partition_decomposition (the real Blitvic content) is never used in the proof; conclusion drops it",
+        "reviewed_at": "2026-06-25T16:50:15.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

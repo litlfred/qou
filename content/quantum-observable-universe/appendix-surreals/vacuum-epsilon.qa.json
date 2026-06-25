@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "539177ddd0fd",
+          "ts": "848ce7db354d"
+        },
+        "result": "pass",
+        "notes": "conj:vacuum-epsilon: substantive surreal-lift vacuum axiom (Geom(unknot)=eps>0, st(eps)=0) with falsification path + Casimir consequence; well-posed conjecture",
+        "reviewed_at": "2026-06-25T16:47:05.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
       }
     ]
   },
