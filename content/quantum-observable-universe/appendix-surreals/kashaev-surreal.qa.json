@@ -913,6 +913,149 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "653d34c9a6cb",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "notes": "Well-posed: surreal recasting of Kashaev volume conjecture via evaluation at n=ω; RHS manifestly well-defined.",
+        "reviewed_at": "2026-06-25T16:53:17.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "653d34c9a6cb",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "notes": "Conjecture; class KashaevSurreal sorry-free, kernel = surreal volume identity ∀knot ∃ζ_ω st(2π log|J|/ω)=Vol; placeholder ColoredJones/HyperbolicVolume disclosed.",
+        "reviewed_at": "2026-06-25T16:53:17.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "653d34c9a6cb",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "notes": "instProvable computes both sides to 0 via real lemmas (Real.log_zero etc.), not a hypothesis projection.",
+        "reviewed_at": "2026-06-25T16:53:17.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "653d34c9a6cb",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "notes": "instProvable nullary; KashaevSurreal.exists_kcomplex uses both [class] hyps.",
+        "reviewed_at": "2026-06-25T16:53:17.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "653d34c9a6cb",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "notes": "No false premise; placeholder values make the identity hold as 0=0.",
+        "reviewed_at": "2026-06-25T16:53:17.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "653d34c9a6cb",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "notes": "Clear: prove limit-form ⇔ st-form equivalence (transfer), verify 4_1/3_1, general case stays open.",
+        "reviewed_at": "2026-06-25T16:53:17.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "653d34c9a6cb",
+          "ts": "79932e75f5d5"
+        },
+        "result": "pass",
+        "notes": "Novel separation of Kashaev's algebraic content (rational-in-ω) from geometric (Vol identity).",
+        "reviewed_at": "2026-06-25T16:53:17.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ]
   },

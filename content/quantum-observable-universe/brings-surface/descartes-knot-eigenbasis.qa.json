@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f722260a2da4",
+          "ts": "74f46e5cee25",
+          "lean": "577d6e46a35c"
+        },
+        "result": "pass",
+        "notes": ".md gives clear 4-step chain (Hecke from R-matrix -> semisimple -> Schur-Weyl -> Markov detection); Lean structures mirror it though the capstone is axiom-backed",
+        "reviewed_at": "2026-06-25T16:56:24.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f722260a2da4",
+          "ts": "74f46e5cee25",
+          "lean": "577d6e46a35c"
+        },
+        "result": "pass",
+        "notes": "well-posed corollary: Descartes condition (chi=-6, q not root of unity) instantiates complete knot-type eigenbasis via Schur-Weyl + Markov detection",
+        "reviewed_at": "2026-06-25T16:56:24.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f722260a2da4",
+          "ts": "74f46e5cee25",
+          "lean": "577d6e46a35c"
+        },
+        "result": "pass",
+        "notes": "substantive instantiation tying chi=-6 Descartes universe to knot-eigenbasis completeness; concrete n=3 trefoil/unknot detection witnesses are real content",
+        "reviewed_at": "2026-06-25T16:56:24.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1320,6 +1386,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f722260a2da4",
+          "ts": "74f46e5cee25",
+          "lean": "577d6e46a35c"
+        },
+        "result": "fail",
+        "notes": "main descartes_knot_eigenbasis := descartes_knot_eigenbasis_axiom (declared axiom) with degenerately-weak conclusion (exists jonesVal != 0, trivial in R_q), not 'complete eigenbasis'; also references commented-out D.q_pos (lines 73/106/284/289) -> non-compiling",
+        "reviewed_at": "2026-06-25T16:56:24.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1405,6 +1489,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f722260a2da4",
+          "ts": "74f46e5cee25",
+          "lean": "577d6e46a35c"
+        },
+        "result": "pass",
+        "notes": "DescartesData premises (euler=-6, dimV=2, q_ne_one) satisfiable; not contradictory (the defect is the axiom/weak-conclusion + missing q_pos, not a false premise)",
+        "reviewed_at": "2026-06-25T16:56:24.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1436,6 +1538,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f722260a2da4",
+          "ts": "74f46e5cee25",
+          "lean": "577d6e46a35c"
+        },
+        "result": "pass",
+        "notes": "proved corollaries (n3_both_detected, eigenvalues_distinct, particle_count) use their D/n binders; no unused explicit binder among the genuine theorems",
+        "reviewed_at": "2026-06-25T16:56:24.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

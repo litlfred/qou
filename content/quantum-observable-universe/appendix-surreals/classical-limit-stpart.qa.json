@@ -913,6 +913,149 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9d06930f8c52",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "notes": "Well-posed: classical-limit functor cl ≅ St∘ev_{1+ε}; RHS always defined for rational structure constants.",
+        "reviewed_at": "2026-06-25T16:52:07.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "9d06930f8c52",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "notes": "Conjecture; §3b-cond class ClassicalLimitStpart + sorry-free conditional thm classical_limit_eq_stpart. 'canonical' instance is honest trivial-zero skeleton (self-labeled 'encodes none of actual content').",
+        "reviewed_at": "2026-06-25T16:52:07.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "9d06930f8c52",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "notes": "classical_limit_eq_stpart := inst.cl_via_stpart_holds is a legit conditional consumption of the class field (the §3b-cond pattern), not a vacuous self-assume; downstream conditional theorem.",
+        "reviewed_at": "2026-06-25T16:52:07.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "9d06930f8c52",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "notes": "classical_limit_eq_stpart uses [inst] (q,hq); canonical instance nullary. No unused binders.",
+        "reviewed_at": "2026-06-25T16:52:07.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "9d06930f8c52",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "notes": "No false premise; cl_via_stpart_holds satisfiable (trivial-zero instance witnesses it).",
+        "reviewed_at": "2026-06-25T16:52:07.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "9d06930f8c52",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "notes": "Clear single-morphism→naturality strategy; obstruction becomes finite surreal whose st vanishes iff obstruction does.",
+        "reviewed_at": "2026-06-25T16:52:07.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "9d06930f8c52",
+          "ts": "1f6ebe9b81aa"
+        },
+        "result": "pass",
+        "notes": "Novel: replaces topological q→1 limit with literal surreal evaluation at 1+ε; no topology required.",
+        "reviewed_at": "2026-06-25T16:52:07.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.75
+        }
       }
     ]
   },

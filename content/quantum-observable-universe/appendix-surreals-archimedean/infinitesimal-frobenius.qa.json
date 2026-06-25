@@ -913,6 +913,149 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "683d877a8c34",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "notes": "Well-posed ε-relaxed Frobenius axiom; St-recovery easy, strict-generalisation open.",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "683d877a8c34",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "notes": "Conjecture; Conjectures.lean class InfinitesimalFrobenius is sorry-free w/ honest narrow kernel (∃SQ FrobPairing≠1 ∧ infinitesimal); placeholder-gap disclosed.",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "683d877a8c34",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "notes": "instProvable builds witness 1+ε explicitly (not projecting a conclusion field).",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "683d877a8c34",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "notes": "instProvable nullary; conditional consequences use their [class] hyp.",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "683d877a8c34",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "notes": "No false premise; QOU_FrobeniusPairing=id placeholder makes kernel satisfiable.",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "683d877a8c34",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "notes": "Clear two-half strategy (St recovery provable; Hochschild deformation open) + falsification.",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "683d877a8c34",
+          "ts": "b1d5766ff002"
+        },
+        "result": "pass",
+        "notes": "Novel one-parameter ε-deformation theory of Frobenius algebras over No; not a restatement.",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ]
   },

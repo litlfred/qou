@@ -913,6 +913,149 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f9aa07bb76a3",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "notes": "Well-posed: birthday-stratified Jones refinement J̃_K, with concrete strict-refinement test on 11n34/11n42.",
+        "reviewed_at": "2026-06-25T16:52:07.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "f9aa07bb76a3",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "notes": "Conjecture; class JonesBirthday sorry-free; kernel honestly narrowed to Nonempty Knot w/ explicit missing-infra note (refinement content in prose).",
+        "reviewed_at": "2026-06-25T16:52:07.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "f9aa07bb76a3",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "notes": "instProvable witness (0:Knot); exists_knot extracts it, no conclusion-projection.",
+        "reviewed_at": "2026-06-25T16:52:07.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "f9aa07bb76a3",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "notes": "instProvable nullary; exists_knot uses [class] hyp.",
+        "reviewed_at": "2026-06-25T16:52:07.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "f9aa07bb76a3",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "notes": "No hypotheses; Knot=ℕ inhabited, kernel satisfiable.",
+        "reviewed_at": "2026-06-25T16:52:07.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "f9aa07bb76a3",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "notes": "Direct computational attack (Hoefsmit matrix products along YJM paths → gonshor → group by birthday); days-scale.",
+        "reviewed_at": "2026-06-25T16:52:07.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "f9aa07bb76a3",
+          "ts": "b82467db91e4"
+        },
+        "result": "pass",
+        "notes": "Novel finer-than-Jones invariant via surreal birthday stratification of Markov-trace tableaux; computable.",
+        "reviewed_at": "2026-06-25T16:52:07.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ]
   },

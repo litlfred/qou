@@ -913,6 +913,149 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3e2ccfdd17c1",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "notes": "Well-posed: birthday-trajectory discriminates algebraic/transcendental; reduces to continued fractions (provable now).",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "3e2ccfdd17c1",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "notes": "Conjecture-kind; Lean class DiophantineBirthday is honest §3b placeholder (residual=0 + instance:=sorry), self-labeled placeholder. No theorem masquerade.",
+        "reviewed_at": "2026-06-25T16:50:55.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "3e2ccfdd17c1",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "notes": "Instance body is sorry (the conjecture), not a hypothesis projection.",
+        "reviewed_at": "2026-06-25T16:50:55.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "3e2ccfdd17c1",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "notes": "Class/instance take no explicit hyps; none unused.",
+        "reviewed_at": "2026-06-25T16:50:55.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "3e2ccfdd17c1",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "notes": "No hypotheses; residual:ℝ=0 field is satisfiable.",
+        "reviewed_at": "2026-06-25T16:50:55.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "3e2ccfdd17c1",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "pass",
+        "notes": "Detailed CF-reduction strategy + falsification path; deep content rests on Roth (cited classical).",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "3e2ccfdd17c1",
+          "ts": "72a0cfe6bcf9"
+        },
+        "result": "warn",
+        "notes": ".md concedes it 'restates Roth/Liouville in surreal language'; novel part is only the q0 application.",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.6
+        }
       }
     ]
   },

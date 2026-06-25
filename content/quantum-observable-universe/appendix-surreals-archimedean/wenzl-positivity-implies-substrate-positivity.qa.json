@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "51e14870351a",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "notes": "Well-posed bridge: Wenzl unitarity at q0∈R>1 ⇒ Müger/BKLR substrate C*-Frobenius positivity; identification step.",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1033,6 +1055,134 @@
         },
         "reviewed_at": "2026-06-24T11:19:38Z",
         "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "51e14870351a",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "notes": "Conjecture; Lean class WenzlPositivity... carries single 'holds:Prop' field (abstract marker), no instance/no sorry. Honest §3b-cond stub, no theorem masquerade.",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "51e14870351a",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "notes": "No instance/proof body in file; nothing projected.",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "51e14870351a",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "notes": "Class has no hypotheses/binders.",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "51e14870351a",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "notes": "No hypotheses; holds:Prop is an open propositional field, not contradictory.",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "51e14870351a",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "notes": "Clear: q0 in Wenzl's real-positive range ⇒ Rep(U_q0(sl2)) unitary ⇒ positive Frobenius algebra (BKLR off-the-shelf).",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "51e14870351a",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "pass",
+        "notes": "Novel: derives OS-positivity axiom from classical Wenzl result rather than positing it; specific to QOU substrate.",
+        "reviewed_at": "2026-06-25T16:50:56.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ]
   },

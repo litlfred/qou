@@ -1062,6 +1062,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7510e259146a",
+          "ts": "07a5758d32cf"
+        },
+        "result": "fail",
+        "notes": "proof body is := ctx.claim_brings_riemann_hurwitz, returning the single class field that IS the conclusion; no Riemann-Hurwitz derivation",
+        "reviewed_at": "2026-06-25T16:54:28.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-placeholder-stub": [
@@ -1231,6 +1248,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7510e259146a",
+          "ts": "07a5758d32cf"
+        },
+        "result": "warn",
+        "notes": ".md gives only the R-H equation and the numbers; Lean is a context-class placeholder, no derivation path",
+        "reviewed_at": "2026-06-25T16:54:28.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1270,6 +1308,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7510e259146a",
+          "ts": "07a5758d32cf"
+        },
+        "result": "pass",
+        "notes": "well-posed: Riemann-Hurwitz for the degree-4 canonical cover Sigma_4 -> P(V), R_tot=2g-2-4(2g_P1-2)=14, 6 branch points by S5 symmetry",
+        "reviewed_at": "2026-06-25T16:54:28.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
         }
       }
     ],
@@ -1311,6 +1370,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7510e259146a",
+          "ts": "07a5758d32cf"
+        },
+        "result": "warn",
+        "notes": "applies the standard Riemann-Hurwitz formula to fixed numbers; Lean adds no content (projection stub)",
+        "reviewed_at": "2026-06-25T16:54:28.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.42
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1340,6 +1420,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7510e259146a",
+          "ts": "07a5758d32cf"
+        },
+        "result": "fail",
+        "notes": "self-assuming placeholder: theorem concludes the class field claim_brings_riemann_hurwitz verbatim (deg=4 ^ R_tot=14 ^ n_branch=6); docstring admits 'Placeholder canonical / : ctx.holds := by sorry'",
+        "reviewed_at": "2026-06-25T16:54:28.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1419,6 +1516,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7510e259146a",
+          "ts": "07a5758d32cf"
+        },
+        "result": "pass",
+        "notes": "context fields (deg=4, R_tot=14, n_branch=6) jointly satisfiable; not contradictory",
+        "reviewed_at": "2026-06-25T16:54:28.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1448,6 +1562,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7510e259146a",
+          "ts": "07a5758d32cf"
+        },
+        "result": "pass",
+        "notes": "the only binder [ctx] is referenced by the projection; no unused binder (use is vacuous)",
+        "reviewed_at": "2026-06-25T16:54:28.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
