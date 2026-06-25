@@ -20,6 +20,7 @@
 -/
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 
@@ -64,9 +65,10 @@ instance singleVolumeIrrational_canonical : SingleVolumeIrrational where
     have hq_pos : (0 : ℝ) < q := by linarith
     have hbar_ne : (1 - 1/q) ^ 2 ≠ 0 := by
       apply pow_ne_zero
-      have : 1 / q < 1 := div_lt_one_of_lt hq hq_pos
+      have : 1 / q < 1 := (div_lt_one hq_pos).mpr hq
       linarith
     field_simp
+    exact div_self (sub_ne_zero.mpr (ne_of_gt hq))
 
 /-- **Canonical instance** for `PLCorrectnessHypotheses`:
     the lower-bound witness `0 ≤ 0` holds for every q. -/

@@ -91,7 +91,7 @@ def signs : Fin 6 → ℤ
 /-- Compute the h² curvature sum: Σ_{k<l} s_k s_l c_k c_l. -/
 def h2Sum : M2 :=
   let pairs : List (Fin 6 × Fin 6) :=
-    List.join (List.ofFn fun k =>
+    List.flatten (List.ofFn fun k =>
       List.ofFn fun l =>
         (k, l))
   pairs.foldl (fun acc ⟨k, l⟩ =>
