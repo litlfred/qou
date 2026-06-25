@@ -43,7 +43,7 @@ bar_even = sp.simplify(tau.subs(q, 1/q) - tau)                       # == 0
 # (3) τ>2: numerator of τ-2 over [2]
 tau2_num_b = sp.expand(3*(3*b**2 + 2) - 2*4*(b + 2))                # 9b²−8b−10
 min_q = sp.solve(sp.numer(sp.together(sp.diff(tau, q))), q)
-min_q = [c for c in min_q if c.is_real and c > 0]
+min_q = [c for c in min_q if c.is_positive]
 
 mp.mp.dps = 30
 tau_f = sp.lambdify(q, tau, 'mpmath')

@@ -21,7 +21,7 @@ This file records three structural facts that sharpen what kind of operator the 
    its eigenvalues multiply to 1 and sum to τ. With `τ > 2` (`Lever1Tau.tauAnchor_gt_two`) the
    element is **hyperbolic** (`λ₊ > 1`, extensive binding) — distinguishing it from the topological
    Picard–Fuchs monodromy, which is `SL₂(ℤ)` (integer trace, parabolic `trace = 2` at the `I₁` nodal
-   fibres of the squarefree-Δ coral curve). Since `τ ∉ ℤ` (even `τ(1)=21/8`), `M` is **not** the
+   fibres of the squarefree-Δ color curve). Since `τ ∉ ℤ` (even `τ(1)=21/8`), `M` is **not** the
    arithmetic monodromy — it is a real / q-difference `SL₂(ℝ)` operator.
 
 See `computations/substrate/z2bn_pf_monodromy_synthesis.py` and the audit
