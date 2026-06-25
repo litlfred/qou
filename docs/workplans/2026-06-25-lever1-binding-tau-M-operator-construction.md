@@ -14,12 +14,12 @@ and one is open:
 | # | piece | status |
 |---|-------|--------|
 | (i) | **Existence** of a fixed-depth recurrence on the `a_D^(n)` | **PROVED** sorry-free (`prop:prolonged-periods-fixed-depth`, Cayley–Hamilton on the rank-≤8 Bring Gauss–Manin space) |
-| (ii) | **Curve** = coral/descartes `E_q`, genus 1 (`Jac(Bring)~E⁴`) | **PINNED** (j(q₀)=129.86; Step-1 + Step-2 probes) |
+| (ii) | **Curve** = color/descartes `E_q`, genus 1 (`Jac(Bring)~E⁴`) | **PINNED** (j(q₀)=129.86; Step-1 + Step-2 probes) |
 | (iii) | **Identification** `M` = the Bring Picard–Fuchs operator, *abelianised* | **OPEN** (this workplan) |
 
 ## What the two probes established (the brackets around (iii))
 
-- **Step 1** (`lever1_coral_sigma_geometry_probe.py`, PR #2755): the bare differential `λ_SW=X dz`
+- **Step 1** (`lever1_color_sigma_geometry_probe.py`, PR #2755): the bare differential `λ_SW=X dz`
   carries **Res=0 at every finite branch point** (Puiseux slope finite); only `z=∞` has residue.
   So `a_D^(n)=2πiΣRes` for `n≥1` needs the *prolongation*, not the bare form.
 - **Step 2** (`lever1_descartes_eq_qfamily_geometry.py`, this PR): the explicit q-family `E_q`

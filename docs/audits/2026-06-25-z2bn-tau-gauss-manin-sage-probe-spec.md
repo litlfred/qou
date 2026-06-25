@@ -20,7 +20,7 @@ The first probe nailed two clean pieces and one clean negative:
 | | result |
 |---|---|
 | (A+) | τ closed form `3(3q⁴+8q²+3)/(4q(q+1)²)` — **Lean-proved** (`tau_kernel_closed_form`) |
-| (B+) | coral curve `E_q` **confirmed** (`j(q₀)=129.86`) |
+| (B+) | color curve `E_q` **confirmed** (`j(q₀)=129.86`) |
 | (E−) | **bare-period (a)-negative** — no single-curve period reproduces τ (≈6 % near-miss) |
 
 (E−) is *expected*, not a dead end. Per `sl2-prolongation-recurrence.md`, the
@@ -29,7 +29,7 @@ kernel `R = x² − τx + 1` comes from the **2×2 Gauss–Manin prolongation op
 preserves the principal polarisation, so `τ = tr B` is the whole content. A
 **single curve has no monodromy** — so a fixed-curve period *cannot* supply
 `τ`; the object is the **q-family** GM monodromy. The integrality finding
-(`2026-06-24-lever1-coral-eq-monodromy-integrality.md`) sharpens it: a
+(`2026-06-24-lever1-color-eq-monodromy-integrality.md`) sharpens it: a
 *topological* elliptic monodromy is `SL₂(ℤ)` (integer trace) but `τ=2.6424∉ℤ`,
 so `B` is the **abelianised λ_SW Cartan-connection holonomy**
 (`mi-sw-abelianisation-cartan.md`: `A⁰ = X dz = λ_SW`), a real/hyperbolic

@@ -15,14 +15,14 @@ WHY A SECOND PROBE.  The first probe (`z2bn_tau_derivation_probe.py`, audit
 and one clean negative:
 
   (A+) τ closed form   τ(q) = 3(3q⁴+8q²+3)/(4q(q+1)²)  — Lean-proved sorry-free
-  (B+) curve confirmed j(q₀) = 129.86 (coral/descartes E_q)
+  (B+) curve confirmed j(q₀) = 129.86 (color/descartes E_q)
   (E−) bare-period (a)-NEGATIVE: no single-curve period of E_q reproduces
         τ = 2.6424 (closest near-miss Im(ω₂/ω₁)=0.734 vs θ=0.781, ~6 % off).
 
 The (E−) result is *expected*: per `sl2-prolongation-recurrence.md`, B is the
 q-FAMILY Gauss–Manin **monodromy** on the rank-2 Hodge plane W (H¹(Bring)=2W),
 NOT a fixed-curve period — and a single curve has no monodromy.  Per the
-integrality finding (`2026-06-24-lever1-coral-eq-monodromy-integrality.md`),
+integrality finding (`2026-06-24-lever1-color-eq-monodromy-integrality.md`),
 tr B = 2.6424 ∉ ℤ while a *topological* elliptic monodromy is in SL₂(ℤ)
 (integer trace); so B is the **abelianised λ_SW Cartan-connection holonomy**
 (`mi-sw-abelianisation-cartan.md`: A⁰ = X dz = λ_SW), a real/hyperbolic
@@ -37,7 +37,7 @@ GEOMETRY (all from the corpus; q₀ and 2.6424 are NEVER fed into the geometry).
 Curve      E_q : y² = x³ + p(q) x + r(q)               (descartes-elliptic-curve)
   p(q) = 2(q²−q+1)/(3q) + (q−1)/(3√q)
   r(q) = 20(q−1)³/(27 q^{3/2}) + 5(q−1)²/(9q) + 5(√q − 1/√q)/9 + 20/27
-Spectral   coral cubic   X³+(z+1)X²+(z²+z+1)X+(z³+z²+z+1)=0,   z = √q − 1/√q
+Spectral   color cubic   X³+(z+1)X²+(z²+z+1)X+(z³+z²+z+1)=0,   z = √q − 1/√q
   SW differential  λ_SW = X dz = A⁰  (Cartan component of the SU(2) connection)
 Kernel     R = x² − τ x + det B,  det B = 1 (GM preserves the polarisation)
            ⇒ R = x² − τ x + 1,  a_D^(n+2) = τ a_D^(n+1) − a_D^(n)

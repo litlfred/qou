@@ -4,7 +4,7 @@
 
 Owner green-lit the binding-τ keystone geometry. Step 2 supplies the *open input* of
 `bring_picard_fuchs_kernel.py` ("supply M ⇒ get R"): the explicit Gauss–Manin / Picard–Fuchs
-structure of the q-FAMILY of coral/descartes elliptic curves
+structure of the q-FAMILY of color/descartes elliptic curves
 
     E_q :  y² = x³ + a(s)·x + b(s),   s = √q,
     a(s) = (2s⁴+s³−2s²−s+2)/(3s²),
@@ -74,7 +74,7 @@ def main() -> int:
     w.add_data("disc_core_deg_in_s", int(deg_s))
     # NOTE: the s-level Δ-core is NOT palindromic (bar symmetry z↔−z is s↔1/s, which acts on
     # z=s−1/s, not on the s-core coefficients directly); the genuine z-level bar symmetry was
-    # verified in Step-1 (`lever1_coral_sigma_geometry_probe.py`, Δ(z) palindromic).
+    # verified in Step-1 (`lever1_color_sigma_geometry_probe.py`, Δ(z) palindromic).
     w.add_data("disc_core_palindromic_in_s", bool(palindromic))
     w.add_data("singular_q", [mp.nstr(mp.mpc(q.real, q.imag), 6) for (_sv, q) in sing])
     w.add_data(
@@ -92,7 +92,7 @@ def main() -> int:
     w.add_assertion("golden_cusp_j_eq_1728", computed=float(mp.nstr(j_cusp, 8)), expected=1728.0,
                     tolerance=1e-4, source="s=1/φ cusp (golden-ratio degeneration) is the j=1728 CM point")
     w.add_assertion("six_singular_fibres_in_q", computed=int(deg_s) // 2, expected=6, tolerance=0,
-                    source="deg_s(Δ-core)=12 in s ⇒ 6 in q; matches coral six-fibre count")
+                    source="deg_s(Δ-core)=12 in s ⇒ 6 in q; matches color six-fibre count")
 
     out = w.save()
     print("=== Lever-1 Step 2: descartes E_q q-family geometry ===")
