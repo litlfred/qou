@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d1e51fb48a7f",
+          "ts": "2d5575042d83",
+          "lean": "c5c8ac147b43"
+        },
+        "result": "pass",
+        "notes": "Conjecture: H2S +2.1° opening = chiral S³ braid holonomy of 3p_z lone on c_λ=0 block V_(2,1). Class axiomatises the equality cleanly. Bring 1/√5 realisation matches H2S/H2Se within 0.1° (3 pts); exact ζ_ℓ monodromy open, honestly tiered as near-match.",
+        "reviewed_at": "2026-06-25T17:09:31.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ]
   },

@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "83f1c3eba3cf",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "notes": "Conjecture: every QOU particle is an anyon via B_n↠H_n(R,q) (T_{s_i}-q)(T_{s_i}+1)=0; Bose/Fermi = τ-image. Well-posed, honestly conjectural (spectrum exhaustion).",
+        "reviewed_at": "2026-06-25T17:08:56.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.75
+        }
       }
     ]
   },

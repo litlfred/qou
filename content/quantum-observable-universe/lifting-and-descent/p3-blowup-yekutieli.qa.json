@@ -1201,6 +1201,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "790bc449b1e4"
+        },
+        "result": "warn",
+        "notes": "md sketch (Sobolev s vs jet order n, local cohomology H^1_m1 at z=1) is suggestive but heuristic; the Lean encoding is degenerate/broken, no strategy realised",
+        "reviewed_at": "2026-06-25T17:08:36.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.58
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1242,6 +1264,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "790bc449b1e4"
+        },
+        "result": "pass",
+        "notes": "identifying NS finite-time blowup with a finite Yekutieli obstruction level n* (cohomological address (v0,T*,Sigma,n*,kappa)) is a substantive, well-posed conjectural goal",
+        "reviewed_at": "2026-06-25T17:08:36.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
         }
       }
     ],
@@ -1285,6 +1329,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "790bc449b1e4"
+        },
+        "result": "pass",
+        "notes": "the cohomological-address / obstruction-level framing of NS blowup is a genuinely novel reformulation within the framework",
+        "reviewed_at": "2026-06-25T17:08:36.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1316,6 +1382,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "790bc449b1e4"
+        },
+        "result": "fail",
+        "notes": "no theorem proves prop:blowup-yekutieli; sibling p3-blowup-yekutieli.lean is BROKEN (class BlowupYekutieli declared twice in QOU.FluidDynamics, stray Ref line between bodies — won't compile). ConditionalClasses.BlowupYekutieli is an admittedly-trivial existential (forall T>=0 exists r>=0, r<=1+T; comment: 'Trivially r=0 works'; witnessed by linarith) — degenerate, captures none of the cohomological-address content of the .md",
+        "reviewed_at": "2026-06-25T17:08:36.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1485,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "790bc449b1e4"
+        },
+        "result": "pass",
+        "notes": "the existential class fields are trivially satisfiable (zero witnesses); no contradictory premise",
+        "reviewed_at": "2026-06-25T17:08:36.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1432,6 +1534,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4027f9fb7358",
+          "ts": "172b87f46d0b",
+          "lean": "790bc449b1e4"
+        },
+        "result": "pass",
+        "notes": "blowup_yekutieli_canonical: fun T hT => <0, le_refl 0, by linarith> uses hT for r<=1+T; the other canonical instances use their hyps; no unused binder",
+        "reviewed_at": "2026-06-25T17:08:36.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

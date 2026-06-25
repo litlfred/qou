@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b1e53e3f32d5",
+          "ts": "c10fcf81e959"
+        },
+        "result": "pass",
+        "notes": "Conjecture: q→1 KLR canonical basis b_w → KL basis C_w of ℤ[S_n], classical-limit functor monoidal + τ-compatible; Bose/Fermi = s_i eigenvalue split. Well-posed, substantive; sibling proves statSign_sq=1 conditional.",
+        "reviewed_at": "2026-06-25T17:08:56.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.74
+        }
       }
     ]
   },

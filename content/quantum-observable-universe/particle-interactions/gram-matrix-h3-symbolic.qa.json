@@ -1202,6 +1202,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "notes": "Exemplary: clear denominator-clearing (gramScaled), det_fin_six expansion, row-scale relation, factor-by-factor positivity for u>1; every step in Lean.",
+        "reviewed_at": "2026-06-25T17:08:55.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.88
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1242,6 +1263,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "notes": "Closed-form Hoefsmit Gram on H_3(q) NF basis with proved symmetry + nonzero determinant — well-posed, concrete, substantive (Option E Phase 1b).",
+        "reviewed_at": "2026-06-25T17:08:55.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1284,6 +1326,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "notes": "Symbolic 6×6 Gram with full Lean determinant factorization (degree-44 numerator) + second-root correctness finding (u≈0.682) is a genuine, non-trivial contribution.",
+        "reviewed_at": "2026-06-25T17:08:56.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1314,6 +1377,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "notes": "Sorry-free: gramMatrix_isSymm, _top_left, 6 positivity lemmas, gramScaled_det (det_fin_six+ring), gram_det_eq, and headline gramMatrix_det_ne_zero (u>1) all PROVED. Faithfully encodes symm + G[0,0]=1 + det≠0; u>1 is honest documented correction of md's too-weak q≠1.",
+        "reviewed_at": "2026-06-25T17:08:55.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1398,6 +1478,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "notes": "Hypotheses (1<u, u≠0) satisfiable on the substrate (u_0≈1.054>1); no contradictory premise.",
+        "reviewed_at": "2026-06-25T17:08:55.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1428,6 +1525,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "3e4345b1dfe9",
+          "ts": "09f8e185713f"
+        },
+        "result": "pass",
+        "notes": "All binders used: _det_ne_zero_conditional uses hu_gt_one+factorization_holds; gram_det_eq/gram_scale_rel use hu; positivity lemmas use hu.",
+        "reviewed_at": "2026-06-25T17:08:55.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

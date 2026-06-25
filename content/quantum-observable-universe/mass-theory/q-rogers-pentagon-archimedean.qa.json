@@ -1155,6 +1155,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "50f4d78364f7",
+          "ts": "315280b81206"
+        },
+        "result": "pass",
+        "notes": "Clear: q=1 reduces to proven Rogers-Abel, q-deformation log->log_q; Lean proves the algebraic skeleton + class-defers the Li2 five-term core honestly.",
+        "reviewed_at": "2026-06-25T17:09:03.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1194,6 +1215,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "50f4d78364f7",
+          "ts": "315280b81206"
+        },
+        "result": "pass",
+        "notes": "Well-posed: post-tau pentagon = pre-tau + log_q^2 Rogers correction (q=1 is classical Rogers-Abel). Numerical evidence 1.5-5x improvement; honest O((q-1)^2) residual + falsifiability.",
+        "reviewed_at": "2026-06-25T17:09:03.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1235,6 +1277,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "50f4d78364f7",
+          "ts": "315280b81206"
+        },
+        "result": "pass",
+        "notes": "Identifies what tau_arch does to the pentagon (log_q^2 cost of rationalisation); ties to Faddeev/Kashaev volume conjecture. Genuine structural insight.",
+        "reviewed_at": "2026-06-25T17:09:03.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.74
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1271,6 +1334,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "50f4d78364f7",
+          "ts": "315280b81206"
+        },
+        "result": "pass",
+        "notes": "Many genuine sorry-free proofs (alpha/beta algebra, log_div correction skeleton, nlinarith bound, honest NEGATIVE borromeanH4 miss). Headline 5-term (R) honestly class-deferred (no Li2 in Mathlib), not falsely claimed proved. No sorry/native_decide.",
+        "reviewed_at": "2026-06-25T17:09:03.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1300,6 +1380,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "50f4d78364f7",
+          "ts": "315280b81206"
+        },
+        "result": "pass",
+        "notes": "Dominant theorems derive (ring/field_simp/log_div/nlinarith). One trivial bookkeeping lemma rogers_correction_leading_h_order:=c.field is a self-projection but of an rfl-backed (=4) fact, not conjectural content; substantive Pentagon->-3/4 explicitly left open.",
+        "reviewed_at": "2026-06-25T17:09:03.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1379,6 +1476,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "50f4d78364f7",
+          "ts": "315280b81206"
+        },
+        "result": "pass",
+        "notes": "Premises satisfiable (1-uv != 0; 0<=u<=1, uv<1 convergence). QRogersAnalyticContinuation default instance honestly discharges q=1; no contradictory premise.",
+        "reviewed_at": "2026-06-25T17:09:03.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1408,6 +1522,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "50f4d78364f7",
+          "ts": "315280b81206"
+        },
+        "result": "pass",
+        "notes": "Hyps used: rogersAlpha_bounded uses hu/hv/huv_lt (nlinarith); rogersLogCorrection_eq_log_sub uses hu/hv/huv (log_div); rogersAlphaBeta_complement uses h. No spurious binder.",
+        "reviewed_at": "2026-06-25T17:09:03.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

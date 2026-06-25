@@ -1207,6 +1207,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "notes": "md proof outline is reasonably clear (faithful G_q action -> strict descent -> termination; kappa_0=Euler via trace; Riemann-Hurwitz)",
+        "reviewed_at": "2026-06-25T17:08:36.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1248,6 +1270,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "notes": "QU + observability + Yekutieli-lifting => QOU with 5 structural properties is a substantive, well-posed central theorem",
+        "reviewed_at": "2026-06-25T17:08:36.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.75
         }
       }
     ],
@@ -1291,6 +1335,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "notes": "the QU->QOU bridge theorem with perpetual-obstruction is a load-bearing original result of the framework",
+        "reviewed_at": "2026-06-25T17:08:36.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1329,6 +1395,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "fail",
+        "notes": "md states a 5-property theorem (descent terminates, kappa_0=Euler class, perpetual obstruction, Riemann-Hurwitz branch formula, terminal fibre involution); Lean theorem qu_to_qou_exists : exists q:QuToQou, True := sorry — the 'True' conjunct + existence-only form is a degenerate weakening (md itself calls it 'an existence stub exists q,True'), and it is sorry. Rich structures defined but the THEOREM asserts none of the properties hold",
+        "reviewed_at": "2026-06-25T17:08:36.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1360,6 +1444,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "notes": "not a projection — qu_to_qou_exists is a sorry stub, not a return of a hypothesis field",
+        "reviewed_at": "2026-06-25T17:08:36.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1443,6 +1545,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "notes": "no premises on the theorem; QuToQou structure fields (trace_map, perpetual, riemann_hurwitz, krull_zero) are mutually satisfiable",
+        "reviewed_at": "2026-06-25T17:08:36.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1474,6 +1594,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "89b03c63bc80",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "notes": "qu_to_qou_exists has no binders; vacuously satisfied",
+        "reviewed_at": "2026-06-25T17:08:36.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
