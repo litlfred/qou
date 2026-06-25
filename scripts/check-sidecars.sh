@@ -56,19 +56,34 @@ for f in "${files[@]}"; do
         fi
         echo "    → refresh: bun run content/pipeline/qa-sweep.ts $base"
       else
-        # STANDALONE library Lean — NOT swept by any checker. §7c by hand.
-        echo "▸ $f  [⚠ LIBRARY Lean — NO sidecar, escapes qa-sweep]"
-        # Strip /- … -/ doc blocks and -- line comments so prose mentions of ℝ
-        # don't false-positive; scan the CODE body only.
+        # STANDALONE library Lean — NOT covered by any per-block checker (no .qa.json
+        # sidecar; sidecars live on content blocks in chapter dirs). §7c by hand. Two
+        # violation classes are flagged; pure-ℝ in an archimedean-domain path is fine.
+        # Strip /- … -/ doc blocks and -- comments so prose ℝ doesn't false-positive.
         body=$(sed '\#/-#,\#-/#d' "$f" | sed 's|--.*||')
-        m=$(printf '%s\n' "$body" | grep -nE "$ARCH" | head -10 || true)
-        if [ -n "$m" ]; then
-          echo "    ⚠ §7c: archimedean markers in CODE — confirm EACH decl genuinely needs ℝ"
-          echo "       (det/ring-identity/bar-symmetry are generic {R}; only ordering/Real.*/numeric is ℝ):"
-          printf '%s\n' "$m" | sed 's/^/         /'
+        GEN='(\{R : Type|\[CommRing|\[Field |\[GroupWithZero|\(R := )'
+        # Path-domain heuristic. Calibrated for PER-COMMIT use (your 1–5 changed files):
+        # a triage hint, not a verdict. On a WHOLE-TREE sweep it OVER-FIRES — catch-all
+        # dirs (BraidKnot/ especially) hold legitimately-archimedean files
+        # (QRogersPentagonArchimedean, QBeta*, PerNucleusMassDerivation, dilog…), and
+        # large files (e.g. Mathlib/HeckeAlgebra.lean) deliberately pair a generic core
+        # with an ℝ realization. Confirm per-file before acting; see
+        # docs/audits/2026-06-25-lean-library-tree-7c-coverage-gap.md.
+        ALG='/(BraidKnot|BraidsAndKnots|Braiding|HeckeAlgebra|AlgebraicSubstrate|Hecke|MathlibExt|Mathlib|Machinery)/'
+        printf '%s\n' "$body" | grep -qE "$ARCH" && has_arch=1 || has_arch=0
+        printf '%s\n' "$body" | grep -qE "$GEN"  && has_gen=1  || has_gen=0
+        if [ "$has_arch" = 1 ] && [ "$has_gen" = 1 ]; then
+          echo "▸ $f  [⚠ §7c MIXED generic+archimedean → wall violation: split into two files per §7c]"
+          printf '%s\n' "$body" | grep -nE "$ARCH" | head -6 | sed 's/^/         arch: /'
           action=1
+        elif [ "$has_arch" = 1 ] && printf '%s' "$f" | grep -qE "$ALG"; then
+          echo "▸ $f  [⚠ §7c ℝ in ALGEBRAIC-domain path → likely gratuitous; default to generic {R}]"
+          printf '%s\n' "$body" | grep -nE "$ARCH" | head -6 | sed 's/^/         arch: /'
+          action=1
+        elif [ "$has_arch" = 1 ]; then
+          echo "▸ $f  [library Lean — archimedean-domain path; ℝ OK (no sidecar — verify domain is genuinely archimedean)]"
         else
-          echo "    §7c: no archimedean markers — generic, OK"
+          echo "▸ $f  [library Lean — no archimedean markers, generic OK]"
         fi
       fi
       ;;
