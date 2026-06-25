@@ -56,34 +56,32 @@ for f in "${files[@]}"; do
         fi
         echo "    → refresh: bun run content/pipeline/qa-sweep.ts $base"
       else
-        # STANDALONE library Lean — NOT covered by any per-block checker (no .qa.json
-        # sidecar; sidecars live on content blocks in chapter dirs). §7c by hand. Two
-        # violation classes are flagged; pure-ℝ in an archimedean-domain path is fine.
-        # Strip /- … -/ doc blocks and -- comments so prose ℝ doesn't false-positive.
+        # STANDALONE library Lean — covered by the per-block checker ONLY if some content
+        # block's `lean.ref` resolves here (candidate-2); a library file referenced by NO
+        # block is an ORPHAN and escapes the block-driven sweep (the real §7c hole —
+        # folio-assistant's q-usage-audit now sweeps orphans content-based). This authoring
+        # gate mirrors that with CONTENT-BASED checks (NOT a path heuristic — a path heuristic
+        # over-fires on catch-all dirs like BraidKnot/; see the audit). Strip /- -/ + -- first.
         body=$(sed '\#/-#,\#-/#d' "$f" | sed 's|--.*||')
-        GEN='(\{R : Type|\[CommRing|\[Field |\[GroupWithZero|\(R := )'
-        # Path-domain heuristic. Calibrated for PER-COMMIT use (your 1–5 changed files):
-        # a triage hint, not a verdict. On a WHOLE-TREE sweep it OVER-FIRES — catch-all
-        # dirs (BraidKnot/ especially) hold legitimately-archimedean files
-        # (QRogersPentagonArchimedean, QBeta*, PerNucleusMassDerivation, dilog…), and
-        # large files (e.g. Mathlib/HeckeAlgebra.lean) deliberately pair a generic core
-        # with an ℝ realization. Confirm per-file before acting; see
-        # docs/audits/2026-06-25-lean-library-tree-7c-coverage-gap.md.
-        ALG='/(BraidKnot|BraidsAndKnots|Braiding|HeckeAlgebra|AlgebraicSubstrate|Hecke|MathlibExt|Mathlib|Machinery)/'
-        printf '%s\n' "$body" | grep -qE "$ARCH" && has_arch=1 || has_arch=0
-        printf '%s\n' "$body" | grep -qE "$GEN"  && has_gen=1  || has_gen=0
-        if [ "$has_arch" = 1 ] && [ "$has_gen" = 1 ]; then
-          echo "▸ $f  [⚠ §7c MIXED generic+archimedean → wall violation: split into two files per §7c]"
-          printf '%s\n' "$body" | grep -nE "$ARCH" | head -6 | sed 's/^/         arch: /'
+        GEN='(\{R\s*:\s*Type|\[CommRing|\[Field\b|\[GroupWithZero|\(R\s*:=)'
+        RTYPE='(:\s*ℝ|\(ℝ\)|→\s*ℝ|ℝ\s*\))'      # ℝ used as a type
+        # Genuine archimedean JUSTIFICATION (a statement that actually needs ℝ):
+        JUST='(Real\.(sqrt|rpow|log|exp|cos|sin|pi|tan|arctan)|0\s*<|<\s*1|≤|≥|\blinarith\b|\bpositivity\b|\bnlinarith\b|LinearOrdered|CODATA|MeV)'
+        printf '%s\n' "$body" | grep -qE "$RTYPE" && hasR=1   || hasR=0
+        printf '%s\n' "$body" | grep -qE "$JUST"  && hasJ=1   || hasJ=0
+        printf '%s\n' "$body" | grep -qE "$GEN"   && hasGen=1 || hasGen=0
+        if [ "$hasGen" = 1 ] && { [ "$hasR" = 1 ] || [ "$hasJ" = 1 ]; }; then
+          echo "▸ $f  [⚠ §7c MIXED generic + archimedean → split into two files per §7c]"
+          printf '%s\n' "$body" | grep -nE "$RTYPE|$JUST" | head -6 | sed 's/^/         /'
           action=1
-        elif [ "$has_arch" = 1 ] && printf '%s' "$f" | grep -qE "$ALG"; then
-          echo "▸ $f  [⚠ §7c ℝ in ALGEBRAIC-domain path → likely gratuitous; default to generic {R}]"
-          printf '%s\n' "$body" | grep -nE "$ARCH" | head -6 | sed 's/^/         arch: /'
+        elif [ "$hasR" = 1 ] && [ "$hasJ" = 0 ]; then
+          echo "▸ $f  [⚠ §7c base-ring-minimal: ℝ in type but NO archimedean construct → likely gratuitous; generalize to {R}/[Field R]]"
+          printf '%s\n' "$body" | grep -nE "$RTYPE" | head -6 | sed 's/^/         ℝ: /'
           action=1
-        elif [ "$has_arch" = 1 ]; then
-          echo "▸ $f  [library Lean — archimedean-domain path; ℝ OK (no sidecar — verify domain is genuinely archimedean)]"
+        elif [ "$hasR" = 1 ] || [ "$hasJ" = 1 ]; then
+          echo "▸ $f  [library Lean — archimedean construct present, ℝ justified (no sidecar; confirm if referenced by a block)]"
         else
-          echo "▸ $f  [library Lean — no archimedean markers, generic OK]"
+          echo "▸ $f  [library Lean — no ℝ, generic OK]"
         fi
       fi
       ;;
