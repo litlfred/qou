@@ -4,15 +4,6 @@ set_option maxHeartbeats 8000000
 set_option maxRecDepth 20000
 namespace QOU.Archimedean.PauliWitness
 
-/-- Build a Laurent polynomial from a list of `(exponent, coefficient)`
-    pairs: `Σᵢ cᵢ · T^{kᵢ}`.  Folding over a flat `List (ℤ × ℤ)` lets Lean
-    elaborate the `•`/`+` operations **once** (in the fold body) instead of
-    building a ~260-deep `HAdd`/`HSMul` expression tree per definition —
-    the latter does not finish elaborating within practical time/heartbeat
-    budgets for these hecke-engine witness polynomials. -/
-private noncomputable def ofPairs (l : List (ℤ × ℤ)) : LaurentPolynomial ℤ :=
-  l.foldl (fun acc p => acc + p.2 • LaurentPolynomial.T p.1) 0
-
 /-- F_Pauli for 12B (Z=5, N=7, A=12), exact in t = q^{1/2}.
     Computed by hecke-engine 0.8.0, 10920ms.
     F_Pauli(q₀) = 0.6250399370
