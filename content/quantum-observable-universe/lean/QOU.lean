@@ -43,6 +43,7 @@ import QOU.Mass.Lever1TauClosedForm
 import QOU.Mass.BindingTauAnchorClosure
 import QOU.Mass.ColorCubicPowerSums
 import QOU.Mass.TauQuantumIntegerForm
+import QOU.Mass.ColorSpectralCubicGeometry
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
