@@ -58,6 +58,34 @@ clean bug (the small, purely-ℝ, purely-algebraic `TauQuantumIntegerForm.lean`)
   only crudely approximates); (3) triage the MIXED review queue with that real per-file judgment.
   This is a `folio-assistant` pipeline change. **Bean'd** (see `.beans/`).
 
+## Checker-extension spec (turn-key — for when `folio-assistant` is in scope)
+
+The proper fix lives in `litlfred/folio-assistant` (the checkers moved there in miga). That repo is
+**not reachable from a `qou`-scoped session** — the egress proxy returns a 403 policy denial on
+`git clone …/folio-assistant.git`, and the `add_repo`/`list_repos` tools are absent here (attempted
+2026-06-25). When the repo is in scope, this is the change:
+
+1. **Confirm the gap first.** In `folio-assistant`, read `content/pipeline/qa-checkers-q-usage.ts`
+   (`qa-checkers-voice.ts` for `checkWallSide`) and find how it loads the block's Lean source. If it
+   reads only the **chapter-dir sibling** `<rootName>.lean`, then every block whose `lean.ref` resolves
+   via **candidate-2** (`<lakeRoot>/<Decl/Path>.lean` in the library tree — the common case, e.g.
+   `ref: "qou:QOU.BraidKnot.…"`) is audited against a **non-existent or stub** sibling, i.e. unswept.
+2. **Resolve through the real `lean.ref` logic.** Have the checker call the same `parseLeanRef()` /
+   resolution the pipeline uses (sibling → `<lakeRoot>/<Decl/Path>.lean` → grep fallback) and run the
+   regime / wall-side detection on the **resolved** file's content. This brings the 839 library files
+   under the per-block audit with the **content-based** regime detector (not a path grep).
+3. **Use the existing regime profile, content-not-path.** `CHAPTER_EXPECTED_REGIMES` keys off the
+   content block's **chapter** (already correct: categorical chapters expect `generic-R`, archimedean
+   expect `ℝ`). Because resolution maps library-tree decls back to their owning block, the chapter
+   profile applies automatically — no fragile lean-tree-dir heuristic needed (the `BraidKnot/`
+   catch-all over-fire in `check-sidecars` is exactly what this avoids).
+4. **Triage the true list.** Re-run; the output is the **content-verified** violation set (expected to
+   be a small fraction of the 96 grep flags). Triage with real judgment; split genuine mixed files,
+   generalise genuine gratuitous-`ℝ`, leave the legit-by-design ones (e.g. `Mathlib/HeckeAlgebra.lean`).
+
+Until then, `check-sidecars.sh` (this PR) is the authoring-time stopgap, and the one known clean bug is
+already fixed (#2782).
+
 ## Cross-references
 - [`docs/audits/2026-06-25-z2bn-pf-monodromy-synthesis.md`](2026-06-25-z2bn-pf-monodromy-synthesis.md) — the §7c fix (#2782) that triggered this.
 - `AGENTS.md §7c` (base-ring convention), §"QA is agent-owned; CI is a backup".
