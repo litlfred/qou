@@ -71,11 +71,33 @@ chapters identify it precisely.  The uncertainty principle is not
 postulated either; it appears as the geometric signature of
 degrees of freedom not yet resolved.  Nor is the state space free
 to take any shape: the axioms force it to be a surface of one
-fixed genus, rigid rather than chosen.  Particles can be viewed as knots or as vortices, and
-the algebra describes their interactions; because only finitely
-many knots fit on a surface of fixed genus, the catalogue of
-possible interactions is finite too — exactly six force operators
-and the identity, no more.
+fixed genus, rigid rather than chosen.  Particles can be viewed as knots or as vortices, and the
+algebra describes their interactions.  A few pictures fix the
+idea: a loop with no crossings is the lightest, most elusive
+particle (the neutrino); a single over-under knot (the trefoil)
+is the electron; two loops linked once (the Hopf link) is the
+strong binding of quarks; three loops linked so that no two are
+directly joined (the Borromean rings) is the proton or neutron.
+The photon stands apart — not a knot but a blend of the four
+simplest operations,
+$\gamma = 1 + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\,\sigma_0\sigma_1$,
+the identity together with the elementary crossings $\sigma_0$,
+$\sigma_1$, and their product.  This is what lets light build
+matter: in $\gamma\gamma$ production two photons meet and their
+terms multiply out into the whole list of operations, assembling
+every other particle.
+
+Because only finitely many knots fit on a surface of fixed
+genus, that list is finite — it closes into a complete basis of
+exactly six, with no seventh possible.  The restriction is in
+part a psychological one: it concerns what an observer inside the
+universe can distinguish — a limit of the measuring frame, not of
+some outside world we never directly touch.  One object then
+recurs at the framework's hardest edges — an obstruction class,
+the precise measure of when something local fails to extend
+globally — the same class that governs whether a fluid stays
+smooth, whether a computation has a shortcut, and where the zeros
+of a zeta function must fall.
 
 What remains, after the structure is fixed, is calibration.  The
 internal symmetry and the rigid topology of the state space leave
