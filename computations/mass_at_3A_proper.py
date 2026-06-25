@@ -324,17 +324,6 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
             else:
                 if pn_convention == "bring_color_weighted":
                     # color-weighted p-n averaged crossing: σ − h·(1/2 − δ/4).
-                    # CANONICAL = JOINT-TOWER-SDP-OPTIMAL: this crossing is the
-                    # confinement-SDP minimiser over the parameter-free GB-NF
-                    # interface menu {σ, σ⁻¹, σ−h/2, σ−h(½−δ/4), e±} when selected
-                    # JOINTLY across the ²H–⁷Li tower — i.e. wiring the step-10
-                    # SDP selection in returns exactly this hardcode (no
-                    # behavioural change to make). Per-isotope re-selection is a
-                    # fit (mirage: fit ⁴He → mispredict ²H 9×); the interface
-                    # moves only L_pn (1 of A−1 bonds), so the residual ⁴He
-                    # under-binding (~0.42×, 2.41× joint ceiling) is collective /
-                    # magic-A, NOT the interface. See
-                    # docs/audits/2026-06-25-sdp-interface-selection-fit-vs-derivation.md
                     base_cross = (1.0, float(-h_loc * (0.5 - delta / 4.0)))
                 elif pn_convention == "strict_averaged":
                     base_cross = (1.0, float(-h_loc / 2))   # color-blind (validation)
