@@ -268,8 +268,11 @@ named but never computed):
   θ_binding=0.7815` (undershoots **~55×**, below even `θ_torus=2log q₀=0.2087`) — a *short transport
   cannot source the large rapidity*. Scope (a): rules out the transport reading, does **not** exclude the
   curve or the keystone; `N(q)` is a permanent correct contribution.
-- **Keystone sharpened:** `θ_binding` is **neither** the loop monodromy (`SL₂(ℤ)`, integer trace; prior
-  session) **nor** the path transport (too small; this session) of `N(q)` — so it is a **curve-intrinsic
-  `λ_SW` period/regulator at `q₀`**, still open. Residual (i) MTC-matching unaffected.
-Probe `lever1_coral_eq_lambda_sw_rapidity.py`; audit
+- **Keystone REDIRECTED:** all three natural geometric candidates on the coral-`E_q`/`λ_SW` side miss —
+  loop monodromy (`SL₂(ℤ)` integer trace; prior), path transport (`θ=0.0141`, ~55× small), and intrinsic
+  Tate period `2π Im τ_E` (`5.847`, 6.5× large + 6× too q-flat; `τ_E` Klein-`j`-validated). So `θ_binding`
+  is **not** a coral-`E_q` period at all — its geometric origin is the **`W_λ`-side Plancherel/MTC
+  localization (residual i)**, the #2744 frontier. The coral `E_q` is the right *curve* (rank-2 `W`); the
+  rapidity is the rep-theoretic `tr B`, whose geometric face is the `W_λ` index, not an elliptic period.
+Probes `lever1_coral_eq_lambda_sw_rapidity.py` + `lever1_coral_eq_intrinsic_tau_rapidity.py`; audit
 [`docs/audits/2026-06-25-lever1-coral-eq-lambda-sw-rapidity.md`](../audits/2026-06-25-lever1-coral-eq-lambda-sw-rapidity.md).
