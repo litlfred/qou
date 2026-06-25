@@ -46,6 +46,30 @@ holonomy of the **abelianised Cartan sub-connection** `A⁰ = λ_SW`, **not** th
 3. **Discharge** `conj:qdifference-kernel-prolongation-symbol`: instantiate the conditional class,
    making `thm:binding-closure-conditional` unconditional.
 
+## Refinement (from `2026-06-06-deriving-bring-M-abelianisation-scalar.md`) — the irreducible open core is exactly #1765
+
+Reading the M-workplan sharpens (iii) to a single identity. `B` is **fully
+structurally pinned except its trace**:
+
+- `M = id_W ⊗ B` with `W` the irreducible 4-dim `S₅`-rep, multiplicity 2 in `H¹`
+  (`s5_bring_hodge_depth.py`, 3/3) ⇒ `B` is **2×2** (depth 2);
+- **`det B = 1`** (symplectic / Hodge–Riemann, `sl2_prolongation_recurrence`, sorry-free);
+- so `B = [[?,?],[?,?]]` collapses to the **one** scalar `τ = tr B`, and
+  `τ = (a_D⁽²⁾+a_D⁽⁴⁾)/a_D⁽³⁾` (the three-period solve, `sl2_tau_solver`).
+
+Given the three periods, `τ` = the closed form (proved: `Lever1Tau.tau_kernel_closed_form`),
+`τ>2`, extensive (proved: `BindingTauAnchorClosure`, PR #2755). **The ONLY remaining
+open input is that the three SW prolonged periods equal the selection-rule values**
+
+> `a_D⁽ⁿ⁾ = ∮ λ_SW⁽ⁿ⁾ = lw(n−1) = (1/n)·Σ_{λ⊢n} dim_q V_λ`   (the #1765 identity).
+
+Steps 1–2 (this thread) proved this **cannot** come from bare-differential residues
+(`Res(X dz)=0`) or the topological monodromy (`SL₂(ℤ)` integer-trace). So #1765 needs
+either **Griffiths–Dwork on the genus-4 quintic** (a major undertaking) or a
+**structural rep-theory proof** that the abelianised `λ_SW` period equals the mean
+quantum dimension. Neither is a turn's compute — it is the genuine, irreducible
+keystone core, now isolated with everything around it proved.
+
 ## Honest status
 
 This PR delivers **Step 2** (the (a)-baseline: explicit q-family, topological-monodromy negative).
