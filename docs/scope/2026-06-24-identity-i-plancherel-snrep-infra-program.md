@@ -4,6 +4,8 @@
 **Status:** scoping only — a *multi-PR / multi-session* program, deliberately **not** attempted in one session.
 **Context PRs:** #2655 (per-partition (A), merged), #2709 (the conditional-class formalization this program would un-condition).
 
+> **Update (2026-06-25, [#2760](https://github.com/litlfred/qou/pull/2760)) — per-`n` down-payment landed.** The slice (i)/(ii) need at small `n` is now discharged **without** any of the P1–P5 infra below: explicit `PlancherelSnData {3,4,5,6,7}` instances (`IdentityIPlancherelInstances.lean`) wire the already-`decide`-verified `dim_validated_le12` / `idB_verified_le12` computations (`dim:=dimHLF`) into the class, so Identity I and `twoM_eq_plancherel_hook_sum` are **unconditional for `n ≤ 7`** — covering the deuteron `n=3`, the keystone `n=5`, and the defect-cubic sign flip `n=7`. `#print axioms` on the capstones = `[propext, Classical.choice, Quot.sound]` (no `sorry`, no custom axiom). This does **not** discharge the general-`n` class (P5 below); it is the tractable down-payment that makes the conditional terminus also an *unconditional* result on the physically-used `n`.
+
 ## Goal
 
 Fully close **Identity I** `M(n) = (1/n!)·Σ_{λ⊢n} dim(λ)²·Σ_{c∈λ} h_c² = n(3n−1)/2` in Lean,
