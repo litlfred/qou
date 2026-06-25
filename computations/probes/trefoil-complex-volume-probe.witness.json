@@ -1,0 +1,64 @@
+{
+  "engine": "python",
+  "engineVersion": "python (stdlib decimal, 60 dps)",
+  "computedAt": "2026-06-25T01:05:41.537410+00:00",
+  "commitSha": "c7e18466119bfb47ee5dec35344ec132dadfdc33",
+  "assertions": [
+    {
+      "name": "trefoil_markov_trace_nonzero",
+      "passed": true,
+      "detail": "|tr_M(sigma^3)|@q0 = 0.730204059516550915691475156089 > 0.1"
+    },
+    {
+      "name": "trefoil_jones_nonzero",
+      "passed": true,
+      "detail": "|V(3_1)|@q0 = 0.973370169227929648594555422492 > 0.1"
+    },
+    {
+      "name": "trefoil_hyperbolic_volume_zero",
+      "passed": true,
+      "detail": "Vol_hyp(3_1) = 0 (non-hyperbolic torus knot)"
+    },
+    {
+      "name": "algebra_survives_geometry_vanishes",
+      "passed": true,
+      "detail": "algebraic quantum volume (tr_M) non-zero while hyperbolic volume = 0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2,
+  "computation": "trefoil-complex-volume-probe",
+  "scriptFile": "trefoil_complex_volume_probe.py",
+  "scriptHash": "21985664055e",
+  "scriptCommitSha": "",
+  "precisionMetadata": {
+    "compute_dps": 60,
+    "output_dps": 30,
+    "note": "stdlib Decimal; exact Laurent coefficients (h^2+1, h) are convention-robust"
+  },
+  "environment": {
+    "python": "stdlib only (no mpmath/pyhecke/qou_substrate in sandbox)"
+  },
+  "description": "Electron knot = trefoil 3_1 = T(2,3): NON-hyperbolic (Seifert-fibered) so Vol_hyp = 0, yet its algebraic invariant tr_M(sigma^3) = (h^2+1)z + h and Jones polynomial are non-zero at q_0. Substantiates the complex-volume \ud835\udd19 = E0*tr_M((Pi_free-1)\u2218M) point for a primitive knot: the algebraic quantum volume survives where the geometric (hyperbolic) volume degenerates. Hecke/Markov conventions per AGENTS.md \u00a77a.",
+  "contentBlock": "conj:binding-qbeta-complex-volume",
+  "parameters": {
+    "knot": "3_1 = T(2,3) (electron, per rem:knot-particle-dictionary)",
+    "braid_word": "sigma^3 in B_2 (equivalently sigma_0 sigma_1 sigma_0 in B_3)",
+    "q_0": "1.109978595557334700000000000000"
+  },
+  "data": {
+    "q_0": "1.109978595557334700000000000000",
+    "h_eq_q_minus_qinv": "0.209060321995593642930382259776",
+    "z_markov": "0.499320334033561272002265280994",
+    "trM_reduction": "sigma^3 = (h^2+1)*sigma + h  in H_2(q)",
+    "trM_coeff_sigma_h2_plus_1": "1.043706218232901295144376893607",
+    "trM_coeff_one_h": "0.209060321995593642930382259776",
+    "trM_trefoil_at_q0": "0.730204059516550915691475156089",
+    "abs_trM_trefoil_at_q0": "0.730204059516550915691475156089",
+    "jones_convention": "V(3_1)(t) = -t^-4 + t^-3 + t^-1 (left trefoil), t = q_0",
+    "jones_trefoil_at_q0": "0.973370169227929648594555422492",
+    "abs_jones_trefoil_at_q0": "0.973370169227929648594555422492",
+    "vol_hyp_trefoil": "0.0",
+    "vol_hyp_reason": "(2,3) torus knot: Seifert-fibered, non-hyperbolic, Gromov norm 0"
+  }
+}
