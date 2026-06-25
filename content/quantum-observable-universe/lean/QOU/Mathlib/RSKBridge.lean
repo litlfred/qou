@@ -63,15 +63,15 @@ class RSKBijection (n : ℕ) where
   dim : Nat.Partition n → ℕ
   /-- The Burnside identity: `n! = Σ_λ (dim λ)²`. -/
   n_factorial_eq_sum_squares :
-    ∑ λ : Nat.Partition n, (dim λ) ^ 2 = n.factorial
+    ∑ Λ : Nat.Partition n, (dim Λ) ^ 2 = n.factorial
 
 /-- **Bridge theorem**: from the RSK upstream class instance,
     derive the abstract `BurnsideIdentity` predicate. -/
 theorem BurnsideFromRSK (n : ℕ) [R : RSKBijection n] :
-    ∑ λ : Nat.Partition n, (R.dim λ) ^ 2 = n.factorial :=
+    ∑ Λ : Nat.Partition n, (R.dim Λ) ^ 2 = n.factorial :=
   R.n_factorial_eq_sum_squares
 
-/-- **Trivial canonical instance** (audit-level §3b-cond hook):
+/-! **Trivial canonical instance** (audit-level §3b-cond hook):
     pinning the supplied dim function to constant `0` AND the
     Burnside-identity field to a vacuous `0 = n.factorial`,
     which only holds when `n.factorial = 0`.  Since `n.factorial`
@@ -97,7 +97,7 @@ theorem BurnsideFromRSK (n : ℕ) [R : RSKBijection n] :
 --      Mathlib.Combinatorics.RSK (partial; cardinality_eq is the upstream target).
 axiom RSK_substrate_axiom (n : ℕ) :
     ∃ dimFn : Nat.Partition n → ℕ,
-      ∑ λ : Nat.Partition n, (dimFn λ) ^ 2 = n.factorial
+      ∑ Λ : Nat.Partition n, (dimFn Λ) ^ 2 = n.factorial
 
 /-! ### Cohort-based RSKBijection (concrete via explicit cohort lists)
 
