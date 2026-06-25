@@ -1159,6 +1159,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fd5f6112fd5a",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "notes": "Strategy fully explicit: give weights, verify normalisation by ring; honest scope section separates 'inhabited' from 'is canonical'.",
+        "reviewed_at": "2026-06-25T17:00:27.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1198,6 +1219,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "fd5f6112fd5a",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "notes": "Inhabiting CanonicalMarkovWeightsH3 to de-vacuify downstream §3b-cond theorems is well-posed; explicit √q/(1+q) instance given.",
+        "reviewed_at": "2026-06-25T17:00:27.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1239,6 +1281,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fd5f6112fd5a",
+          "ts": "a805e80e1a19"
+        },
+        "result": "pass",
+        "notes": "Modest: a witnessing instance, candidly NOT the canonical Wenzl weights; value is de-vacuifying the class, with numeric mismatch disclosed.",
+        "reviewed_at": "2026-06-25T17:00:27.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1275,6 +1338,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fd5f6112fd5a",
+          "ts": "a805e80e1a19"
+        },
+        "result": "n/a",
+        "notes": "No Lean sibling resolves (lean[] empty); proof lives entirely in .md (normalisation by ring), so no Lean statement to audit.",
+        "reviewed_at": "2026-06-25T17:00:27.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1304,6 +1384,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "fd5f6112fd5a",
+          "ts": "a805e80e1a19"
+        },
+        "result": "n/a",
+        "notes": "No Lean file present.",
+        "reviewed_at": "2026-06-25T17:00:27.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1383,6 +1480,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "fd5f6112fd5a",
+          "ts": "a805e80e1a19"
+        },
+        "result": "n/a",
+        "notes": "No Lean file present; .md normalisation y3+2y21+y111=1 holds for all q>0, satisfiable.",
+        "reviewed_at": "2026-06-25T17:00:27.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1412,6 +1526,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "fd5f6112fd5a",
+          "ts": "a805e80e1a19"
+        },
+        "result": "n/a",
+        "notes": "No Lean file present.",
+        "reviewed_at": "2026-06-25T17:00:27.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

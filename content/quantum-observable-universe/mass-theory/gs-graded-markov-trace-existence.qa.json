@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c8d3cb469c57",
+          "ts": "96de89d8e9ee",
+          "lean": "34fc37f5d66a"
+        },
+        "result": "pass",
+        "notes": "Well-posed: existence of graded Markov trace tr_{M,l} on J^l/J^{l+1}; rigorous over generic R, only Lean realisation conjectural. Substantive.",
+        "reviewed_at": "2026-06-25T16:59:47.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
       }
     ]
   },

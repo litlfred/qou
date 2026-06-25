@@ -915,6 +915,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0c152853f6a5",
+          "ts": "c7ae983bc4e5"
+        },
+        "result": "pass",
+        "notes": "FR-pullback refinement of Wedderburn weight is well-posed; partially supported at k=3 (4_1, 1.551x), open at k=1,2. Substantive.",
+        "reviewed_at": "2026-06-25T17:01:08.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ]
   },
