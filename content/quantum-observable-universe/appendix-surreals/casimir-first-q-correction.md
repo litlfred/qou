@@ -2,8 +2,9 @@
 carried by $4_1$).**
 *Assume the plate-constrained mode-count of
 [`conj:casimir-epsilon-vacuum`](#conj:casimir-epsilon-vacuum), whose
-leading $1/d^{4}$ term is built from disjoint (free-photon) unknot
-modes and is therefore independent of the substrate deformation. The
+leading $1/d^{4}$ term is built from disjoint free-photon modes (the
+bare photon being the identity $\mathbf{1}$, $q$-independent) and is
+therefore independent of the substrate deformation. The
 first contribution carrying substrate-$q$ dependence arises from the
 interacting sector — vacuum modes whose braid words have degree
 $\geq 2$ and whose closures are hyperbolic — and its minimal carrier
