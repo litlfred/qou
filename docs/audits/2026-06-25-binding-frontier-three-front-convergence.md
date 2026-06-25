@@ -141,6 +141,49 @@ No inconsistency requiring escalation: all four agree on the (a)-scope framing
 and the single owner-gated bottleneck. The only correction propagated here is
 the λ₊ seed-artifact calibration (#2752).
 
+## Remaining fronts — dispositions + roadmap (author-selected options 2/3/4)
+
+The author asked to push all remaining fronts. Honest dispositions:
+
+### Option 2 — keystone holonomy (the only unlock; documented gate)
+Open object: the **explicit abelianised λ_SW Cartan-connection 1-form** on
+coral `E_q`, whose holonomy at q₀ must reproduce `θ = 0.7815`
+(`τ = 2cosh θ = 2.6424`).
+- Topological route **pruned** (`lever1_coral_eq_monodromy_integrality.py`):
+  the period monodromy is `SL₂(ℤ)` (integer trace), `τ ∉ ℤ` — wrong object.
+- **Sandbox attempt:** the symbolic Weierstrass form of `E_q` is in hand
+  (`lever1_coral_eq_monodromy_integrality.py:38–46`), but the λ_SW connection
+  1-form is **not yet constructed** — that is the owner-reversed M-workplan
+  abelianisation (DG), and Sage/RiemannSurface is absent here (period
+  integration blocked). Cannot complete in this sandbox.
+- **What a Sage/DG session needs:** (i) the explicit λ_SW connection from the
+  Cartan reduction of the SW differential on the Bring/coral fibre;
+  (ii) parallel-transport its abelianised holonomy around the q₀ fibre;
+  (iii) verify `tr = 2.6424`. This is the s5-so3 keystone proper (#2503/#2524).
+
+### Option 3 — ρ-free predictions (reproduced firsthand + roadmap)
+Scale-free ratios cancel ρ → **parameter-free falsifiable predictions**.
+- **Reproduced** (`he3_tritium_cosh_asymmetry_diagnosis.py`, cached H_9 χ, no
+  native): in the charge-symmetric **cosh channel the A=3 mirror partners are
+  exactly equal**, ³H ≡ ³He (`max|Δχ_λ| = 0.000e+00`). The entire ³H/³He split
+  is **bar-odd (sinh)**, matching the canonical bar-odd n−p rule — a clean
+  ρ-free structural prediction.
+- Open residual: the split *magnitude* carries a ~18% q-Reeb overshoot (same
+  extensive/keystone gap).
+- **Roadmap:** new ρ-free predictions = other mirror pairs. The cosh-channel
+  mirror-equality is the falsifiable template; ⁷Li/⁷Be needs H_21 χ —
+  **native-gated** for fresh compute here. A=3 is the reproducible case.
+
+### Option 4 — A=4 integrator hygiene (disposition: supersede, don't polish)
+`a4_interface_trace_integration_all.py` reads an ephemeral `/tmp/a4_trace.log`
+and emits **no witness** (reproducibility + inline/truncated-m_e P31 issues).
+**Disposition: superseded** — the clean, witnessed A=4 interface path is
+`binding_via_interface_knot.py` (emits `binding-via-interface-knot.witness.json`,
+m_e via `codata_constants`) plus sibling **#2754**'s
+`probe_sdp_interface_selection.py` (audit-only witness, same (a)-scope verdict).
+Recommend deprecating the `/tmp`-log glue rather than polishing it; no new
+compute warranted given #2754.
+
 ## Discipline notes
 
 - Interface "doesn't close ⁴He" is recorded as **scope-(a)** (construction
