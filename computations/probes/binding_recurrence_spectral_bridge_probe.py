@@ -46,6 +46,40 @@ Q0 = mp.mpf(Q0_STR)
 B_JOINT = {"3H": mp.mpf("3.2525"), "3He": mp.mpf("3.4665"), "4He": mp.mpf("3.8043")}
 
 
+# --- physical selection-rule weights lw(c) via the q-hook-length quantum dimension ---
+# lw(c) = (1/(c+1))·Σ_{λ⊢c+1} dim_q(λ),  dim_q(λ) = [|λ|]_q! / ∏_cells [hook]_q  (symmetric [k]_q).
+# These ARE the physical body-order coefficients a_D^(n)=lw(n−1); computed directly (not iterated)
+# they diverge from the fixed-τ recurrence past the n=2,3,4 seed (#2708; depth-2 (b)-excluded #2764).
+def _partitions(n):
+    if n == 0:
+        yield ()
+        return
+    for first in range(n, 0, -1):
+        for rest in _partitions(n - first):
+            if not rest or first >= rest[0]:
+                yield (first,) + rest
+
+
+def _qint(k, q):  # symmetric q-integer [k]_q = (q^k − q^−k)/(q − q^−1)
+    return (q ** k - q ** (-k)) / (q - q ** (-1))
+
+
+def _dim_q(lam, q):  # q-hook-length quantum dimension of partition `lam`
+    lamT = [sum(1 for r in lam if r > c) for c in range(lam[0])]
+    denom = mp.mpf(1)
+    for i, row in enumerate(lam):
+        for j in range(row):
+            denom *= _qint((row - (j + 1)) + (lamT[j] - (i + 1)) + 1, q)
+    qfac = mp.mpf(1)
+    for k in range(1, sum(lam) + 1):
+        qfac *= _qint(k, q)
+    return qfac / denom
+
+
+def _lw(c, q):  # mean quantum dimension over partitions of c+1
+    return mp.fsum(_dim_q(lam, q) for lam in _partitions(c + 1)) / (c + 1)
+
+
 def main():
     q = sp.symbols("q", positive=True)
     # The three no-fit anchors a_D^(n) = lw(n−1) (closed forms, selection rule).
@@ -76,6 +110,18 @@ def main():
     print(f"\n  a_D^(2..9): {[mp.nstr(x,5) for x in seq]}")
     print(f"  ratios a_(n+1)/a_n → {[mp.nstr(r,5) for r in ratios]}  →  λ₊ = {mp.nstr(lam_p,6)}")
 
+    # PHYSICAL body-order coefficients a_D^(n)=lw(n−1), computed DIRECTLY (q-hook), n=2..9 — the
+    # honest comparison: they diverge from the iterated `seq` past the seed and rise past λ₊.
+    lw_phys = [_lw(c, Q0) for c in range(1, len(seq) + 1)]   # lw(1..len(seq)) = a_D^(2..), matches seq
+    phys_ratios = [lw_phys[i + 1] / lw_phys[i] for i in range(len(lw_phys) - 1)]
+    rel_div = [(lw_phys[i] - seq[i]) / lw_phys[i] for i in range(len(seq))]
+    max_div = max(abs(d) for d in rel_div)
+    anchor_resid = max(abs(lw_phys[0] - A2), abs(lw_phys[1] - A3), abs(lw_phys[2] - A4))
+    print(f"\n  PHYSICAL lw (q-hook, direct): {[mp.nstr(x,5) for x in lw_phys]}")
+    print(f"  physical ratios lw(c)/lw(c−1): {[mp.nstr(r,5) for r in phys_ratios]}  (rise PAST λ₊ ⇒ super-geometric)")
+    print(f"  iterated-vs-physical rel. divergence: {[mp.nstr(d,3) for d in rel_div]}  (max {mp.nstr(max_div,3)})")
+    print(f"  anchor consistency |lw(1,2,3)−(a₂,a₃,a₄)| = {mp.nstr(anchor_resid,3)} (≈0 ✓ seed agrees)")
+
     # saturating |χ| side: effective per-A growth ratio (≈1 = degenerate τ=2 boundary)
     chi_ratio_TtoHe = B_JOINT["4He"] / B_JOINT["3H"]
     print(f"\n  saturating |χ| joint trace: B_joint ³H→⁴He = {mp.nstr(B_JOINT['3H'],4)} → "
@@ -93,7 +139,9 @@ def main():
         "saturation gap; the |χ| trace sits at the degenerate τ=2 (λ=1) no-growth boundary. "
         "SCOPE (PR #2752): the tabulated aD_sequence is the iterated fixed-τ recurrence (→λ₊ "
         "tautologically); the physical a_D^(n)=lw(n−1) grow super-geometrically (#2708, diverge "
-        "≤32% by n=7), so λ₊>1 witnesses the SEED kernel's extensivity, not the binding growth rate.")
+        "≤32% by n=7), so λ₊>1 witnesses the SEED kernel's extensivity, not the binding growth rate. "
+        "The witness emits BOTH aD_sequence_2_to_9 (iterated) and aD_physical_lw_2_to_9 (direct q-hook), "
+        "so the divergence is DATA — asserted by physical_diverges_from_iterated / physical_super_geometric.")
     wb.add_parameter("q0", mp.nstr(Q0, 12))
     wb.add_parameter("fit_params", 0)
     wb.add_data("tau_symbolic", str(tau_sym))
@@ -106,23 +154,36 @@ def main():
     wb.add_data("growth_ratios", [mp.nstr(r, 10) for r in ratios])
     wb.add_data("chi_joint_saturating", {k: mp.nstr(v, 8) for k, v in B_JOINT.items()})
     wb.add_data("chi_effective_ratio_3H_to_4He", mp.nstr(chi_ratio_TtoHe, 8))
-    # SCOPE (2026-06-25 calibration, PR #2752): `seq` is the ITERATED fixed-τ
-    # recurrence, so its growth ratio → λ₊ TAUTOLOGICALLY (every depth-2 recurrence
-    # with τ>2 does). It does NOT test the physical body-order coefficients
-    # a_D^(n)=lw(n−1), which grow SUPER-geometrically (ratios →2.76, past λ₊) and
-    # diverge from `seq` by up to 32% (n=7) — #2708 +
-    # docs/audits/2026-06-25-spectral-bridge-tautology-recurrence-vs-lw.md. So λ₊>1
-    # is an (a)-scope witness that the SEED kernel is extensive, weaker than "the
-    # binding grows at rate λ₊". (full-env follow-up: also emit lw(c) + the
-    # divergence; reference q-hook algorithm in that audit.)
+    # PHYSICAL selection-rule sequence (q-hook), beside the iterated one — the honest comparison.
+    wb.add_data("aD_physical_lw_2_to_9", [mp.nstr(x, 10) for x in lw_phys])
+    wb.add_data("physical_growth_ratios", [mp.nstr(r, 10) for r in phys_ratios])
+    wb.add_data("iterated_vs_physical_rel_divergence", [mp.nstr(d, 6) for d in rel_div])
+    # SCOPE (2026-06-25 calibration, PR #2752): `seq` is the ITERATED fixed-τ recurrence, so
+    # `ratio_convergence` below → λ₊ TAUTOLOGICALLY (every depth-2 recurrence with τ>2 does) — it
+    # tests the iterated seq, NOT the physics. The PHYSICAL coefficients a_D^(n)=lw(n−1)
+    # (`aD_physical_lw_2_to_9`, q-hook, direct) grow SUPER-geometrically (ratios →2.76, past λ₊) and
+    # diverge from `seq` by up to 32% (n=7) — now asserted by `physical_super_geometric` /
+    # `physical_diverges_from_iterated` (data, no longer prose-only). #2708 + depth-2 (b)-exclusion
+    # #2764 + docs/audits/2026-06-25-spectral-bridge-tautology-recurrence-vs-lw.md.
     ratio_residual = ratios[-1] - lam_p
     wb.add_assertion("ratio_convergence", computed=mp.nstr(ratio_residual, 12), expected="0",
-                     tolerance=1e-4, source="a_D^(n+1)/a_D^(n) − λ₊ (sequence tail)")
+                     tolerance=1e-4,
+                     source="ITERATED seq ratio tail − λ₊ (tautological; seq built by iterating x²−τx+1)")
     wb.add_assertion("det_one", computed=mp.nstr(lam_p * lam_m, 12), expected="1",
                      tolerance=1e-30)
     # extensive-growth flag as a checkable boolean (1.0 ⟺ λ₊>1).
     wb.add_assertion("dominant_root_extensive", computed=("1" if lam_p > 1 else "0"),
                      expected="1", tolerance=0.0, source="λ₊ > 1 ⟺ τ > 2 (τ=2.6424)")
+    # PHYSICAL-vs-iterated — the honest comparison (the point of the PR #2752 calibration).
+    wb.add_assertion("lw_reproduces_anchors", computed=mp.nstr(anchor_resid, 4), expected="0",
+                     tolerance=1e-25,
+                     source="q-hook lw(1,2,3) vs closed-form anchors a₂,a₃,a₄ (seed agreement)")
+    wb.add_assertion("physical_diverges_from_iterated",
+                     computed=("1" if max_div > mp.mpf("0.1") else "0"), expected="1", tolerance=0.0,
+                     source=f"max|lw(n−1)−seq|/lw = {mp.nstr(max_div,4)} > 0.1 ⇒ physical ≠ iterated")
+    wb.add_assertion("physical_super_geometric",
+                     computed=("1" if phys_ratios[-1] > lam_p else "0"), expected="1", tolerance=0.0,
+                     source=f"physical lw ratio tail {mp.nstr(phys_ratios[-1],5)} > λ₊ {mp.nstr(lam_p,5)}")
     wb.add_caveat("τ>2 ⟹ λ₊>1 is the extensive-growth condition; τ(q₀)=2.6424 satisfies it; the "
                   "|χ| saturation sits at the degenerate τ=2 (λ=1) boundary. SCOPE (PR #2752): "
                   "`aD_sequence`/`growth_ratios` are the ITERATED fixed-τ recurrence, which → λ₊ "
