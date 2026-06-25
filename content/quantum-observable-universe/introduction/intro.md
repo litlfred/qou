@@ -26,11 +26,18 @@ bolted on.
 As Heisenberg put it, what we observe is never nature itself but
 nature exposed to our method of questioning.  So we do not ask
 what the universe *is*; we ask what its mechanics *do* — how its
-processes compose and transform.  That question has a natural
-mathematical home: category theory, the study of how processes
-combine, which describes structure and transformation without
-committing to any picture of what the underlying objects "really
-are."
+processes compose and transform.  Wigner found the effectiveness
+of mathematics in describing nature "unreasonable," a gift we
+"neither understand nor deserve" \cite{wigner1960}.  The
+philosophical heart of this approach is to take that
+unreasonableness not as a mystery to be explained but as a
+principle to be *axiomatized*: we posit that the observable
+universe simply *is* the mathematical structure its own
+observations force, so the fit between mathematics and the world
+is built in rather than discovered.  The natural home for such a
+structure is category theory, the study of how processes combine,
+which describes structure and transformation without committing
+to any picture of what the underlying objects "really are."
 
 The central thesis is that these everyday observations, once
 stated carefully, single out one kind of structure: a category of
