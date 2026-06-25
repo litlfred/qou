@@ -211,3 +211,21 @@ explicit confirm).
   weight (= `lw`), but that identity is **asserted, not computed**.
 - ⇒ Option 2 is a **CONSTRUCTION** (make the prolongation explicit), not a
   turn-crank compute. Falsifiable first step: low-jet residue (n=0,1) vs lw(1).
+
+## Construction Step 1 EXECUTED (2026-06-25, PR #2755) — residue gap rigorously located
+
+Probe `computations/substrate/lever1_coral_sigma_geometry_probe.py` (6/6, pure
+sympy+mpmath, **no Sage**): coral spectral curve Σ: X³+(z+1)X²+(z²+z+1)X+(z³+z²+z+1)=0
+over the z-line, λ_SW=X dz (Liouville form on T*ℙ¹). Verified:
+- **six singular fibres** (deg Δ=6, Δ palindromic ⇒ z↔1/z bar symmetry), squarefree;
+- **genus 1** (Riemann–Hurwitz 2g−2=3(−2)+6=0) = coral/descartes E_q;
+- branch locus = 3 bar-symmetric pairs at |z|≈{1.000,0.943,1.060} (reciprocal);
+- **CRUX: Res(X dz)=0 at every finite branch point** (Puiseux slope finite ⇒ no 1/t
+  pole); only z=∞ carries residue {0,±5i/16}, sheet-sum 0.
+
+**Finding:** the asserted a_D^(n)=2πiΣRes structure is EMPTY at finite branch points
+for the bare n=0 differential — so a_D^(n)=lw(n−1) (n≥2) must come from the
+prolongation λ_SW^(n) (n≥1). Gap rigorously located (not asserted): the explicit
+jet-prolongation map, nothing upstream. First decidable lw(1)=1 check unreachable
+until λ_SW^(2) is explicit. Consistent with merged sibling #2764 ((b)-exclusion of
+constant-τ depth-2: my aD5(q=1)=251/48 ≠ lw(4)=26/5, residual 7/240; τ(q=1)=21/8 = their seed).
