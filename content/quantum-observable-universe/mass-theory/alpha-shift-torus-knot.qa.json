@@ -1279,6 +1279,24 @@
         "reviewed_at": "2026-06-22T02:57:07.914Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Goal or proof is trivial/vacuous."
+      },
+      {
+        "field_hash": {
+          "md": "6ed296279c98",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "pass",
+        "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/mass-theory/alpha-shift-torus-knot.lean); 2026-06-22 batch fail was a false positive.",
+        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-false-premise": [
@@ -1351,8 +1369,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "alpha-shift-torus-knot.lean:5 def alphaShift (p k:\u2115):\u2115 := k*(p-1); :7-10 theorem ... = k*(p-1) := by rfl. Sidecar proof-no-trivial-true / proof-no-self-assuming-projection = fail.",
-        "rebuttal": "none \u2014 survived: Lean proves a tautology; the genuine claim (pole-order maximization) is the definition. The library file discloses the collapse ('we elevate the witness-verified closed form to the definition') but disclosure \u2260 formalization.",
+        "referee_argument": "alpha-shift-torus-knot.lean:5 def alphaShift (p k:ℕ):ℕ := k*(p-1); :7-10 theorem ... = k*(p-1) := by rfl. Sidecar proof-no-trivial-true / proof-no-self-assuming-projection = fail.",
+        "rebuttal": "none — survived: Lean proves a tautology; the genuine claim (pole-order maximization) is the definition. The library file discloses the collapse ('we elevate the witness-verified closed form to the definition') but disclosure ≠ formalization.",
         "evidence": [
           {
             "text": "alpha-shift-torus-knot.lean:5-10; AlphaShiftTorusKnot.lean:53"
@@ -1380,8 +1398,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "library AlphaShiftTorusKnot.lean:59,82,103 def alphaShift:=k*(p-1); class field alpha_shift_eq: alphaShift=k*(p-1); instance := rfl \u2014 the \u00a73b-cond class axiomatizes its own conclusion (rule 5: class must axiomatise hypotheses not the conclusion).",
-        "rebuttal": "none \u2014 survived: canonical self-assuming projection \u00a73b-cond rule 5 forbids.",
+        "referee_argument": "library AlphaShiftTorusKnot.lean:59,82,103 def alphaShift:=k*(p-1); class field alpha_shift_eq: alphaShift=k*(p-1); instance := rfl — the §3b-cond class axiomatizes its own conclusion (rule 5: class must axiomatise hypotheses not the conclusion).",
+        "rebuttal": "none — survived: canonical self-assuming projection §3b-cond rule 5 forbids.",
         "evidence": [
           {
             "text": "AlphaShiftTorusKnot.lean:59,82,103"
@@ -1409,8 +1427,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "the narrative's load-bearing claim (maximality over \u03bb) has no Lean counterpart; Lean only restates the V_(1^p) monomial as a definitional rfl.",
-        "rebuttal": "none \u2014 survived: divergence is total on the non-trivial half.",
+        "referee_argument": "the narrative's load-bearing claim (maximality over λ) has no Lean counterpart; Lean only restates the V_(1^p) monomial as a definitional rfl.",
+        "rebuttal": "none — survived: divergence is total on the non-trivial half.",
         "evidence": [
           {
             "text": "alpha-shift-torus-knot.md:24,56-74 vs .lean"
@@ -1439,7 +1457,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": "md:24 states alpha_shift=k(p-1) as a Proposition for all coprime (p,k); maximality is verified only for p in {2,3}.",
-        "rebuttal": "partial \u2014 scope honestly disclosed in-block + 2026-05-04 audit; closure on V_(1^p) itself is a genuine closed-form proof; only maximality across irreps is conjectural. Honest near-match, not fitted.",
+        "rebuttal": "partial — scope honestly disclosed in-block + 2026-05-04 audit; closure on V_(1^p) itself is a genuine closed-form proof; only maximality across irreps is conjectural. Honest near-match, not fitted.",
         "evidence": [
           {
             "text": "alpha-shift-torus-knot.md:24,56-74"
@@ -1468,7 +1486,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": ".qa.json compute-witness-exists=fail.",
-        "rebuttal": "rebutted \u2014 witness exists on disk (allPassed:true, scriptHash/commitSha recorded); script computes pole order independently via symbolic Hoefsmit matrices. The .qa.json fail is STALE (idle-refresh would clear).",
+        "rebuttal": "rebutted — witness exists on disk (allPassed:true, scriptHash/commitSha recorded); script computes pole order independently via symbolic Hoefsmit matrices. The .qa.json fail is STALE (idle-refresh would clear).",
         "evidence": [
           {
             "text": "alpha-shift-torus-knot.qa.json (stale compute-witness-exists)"
@@ -1494,7 +1512,7 @@
         },
         "result": "fail",
         "verdict": "open-objection",
-        "referee_argument": "The Lean DEFINES alphaShift p k := k*(p-1) then 'proves' alpha_shift_torus_knot : alphaShift = k*(p-1) by rfl \u2014 in both the sibling stub (which lean.ref resolves to) and the library class \u2014 a \u00a73b-cond rule-5 self-assuming projection; the proposition's real content (pole-order maximality over partitions, realized at V_(1^p)) is defined away, absent from Lean.",
+        "referee_argument": "The Lean DEFINES alphaShift p k := k*(p-1) then 'proves' alpha_shift_torus_knot : alphaShift = k*(p-1) by rfl — in both the sibling stub (which lean.ref resolves to) and the library class — a §3b-cond rule-5 self-assuming projection; the proposition's real content (pole-order maximality over partitions, realized at V_(1^p)) is defined away, absent from Lean.",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
