@@ -102,12 +102,16 @@ import QOU.BraidKnot.RegularRepBlockTrace
 -- by this umbrella, so CI never built them and their sorry-free status went
 -- unenforced (cf. JucysMurphyCoeff, wired in above after #2713). Wiring them in
 -- puts the refutations under the CI build (bean 48yu, #2676).
--- NOTE: sibling `DeltaLambdaSignRule` is intentionally NOT wired here — it does
--- not compile (uses reserved `λ` as an identifier, references ℝ/`Real.arccos`
--- without importing them). It needs a dedicated repair (λ→Λ rename + imports)
--- before it can join the CI build; tracked separately.
+-- DeltaLambdaSignRule was repaired in this PR: reserved `λ`→`Λ`, added ℝ/`arccos`
+-- imports, gave each vacuity-dodge `: trivial` "theorem" an honest disposition
+-- (§1a: faithful `sorry`+`-- Ref:` targets, one proved scalar lemma, the character
+-- identities documented rather than faked), and isolated it under namespace
+-- `QOU.BraidKnot.DeltaLambdaSignRule` to avoid the `Partition` collision with
+-- GramSeminormalBlock / PerPartitionKLambda. It now compiles (lean-direct EXIT=0;
+-- 3 honest sorry+Ref targets: nStat / sign-rule / Burnside).
 import QOU.BraidKnot.DeltaLambdaRefutation
 import QOU.BraidKnot.DeltaLambdaExponentKeystone
+import QOU.BraidKnot.DeltaLambdaSignRule
 
 /-!
 # BraidKnot — Module Index
