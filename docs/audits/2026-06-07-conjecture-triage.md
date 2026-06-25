@@ -400,11 +400,14 @@ genuine defect:
 | Block | Lean-internal defect | Disposition |
 |-------|----------------------|-------------|
 | [`conj-rho-k-pair-gen-canonical-form`](../../content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md) | (1) `def pair_gen_functional … : R := trivial` — a **type error** (`trivial : True`, expected `R`); the file did not compile. (2) `theorem pair_gen_kashaev_limit : ∃ f, ∀ args, pair_gen_functional = f args := ⟨pair_gen_functional, rfl⟩` — a **vacuous self-projection** (true for *any* function) whose docstring claimed it proved the Kashaev limit (AGENTS.md §1a violation). The sibling `.md`'s own "Lean formalization" block already documented the honest `:= sorry` form — the committed `.lean` had drifted from its own spec. | Fixed to the §3b sanctioned form: `pair_gen_functional := sorry` (cited placeholder, disposition 2) + the conjecture axiomatised as `class PairGenCanonical : Prop where holds : True` (disposition 3), replacing the vacuous theorem. `.ts` `lean.ref` repointed to the class; `.md` snippet synced. **lean-direct exit 0** (only the expected `uses 'sorry'` warning). Block stays a correctly-classified Tier-S open conjecture (per §F line "mass-endomorphism: `conj-rho-k-pair-gen-canonical-form`"). |
+| [`conj-staircase-ew-residual`](../../content/quantum-observable-universe/mass-theory/staircase-ew-residual.md) | The block's `lean.ref` (`QOU.StaircaseCornerHook.StaircaseEWResidual`) resolved (§0a candidate-2 path) to a **degenerate duplicate** `StaircaseCornerHook/StaircaseEWResidual.lean`: `class StaircaseEWResidual where residual : ℝ; residual_eq_zero : residual = 0` + `noncomputable instance := sorry`. That class is **trivially inhabited** (`⟨0, rfl⟩`), so the `sorry` axiomatises nothing — a §3b-cond rule-5 / §1a vacuous-placeholder anti-pattern. A **faithful** same-named class (rich `Prop`, references the real Hoefsmit eigenvalue spectrum `HasEigenvalueRatio (wordImage (betaEWWord …))`, correct hypothesis-only §3b-cond) already existed in `QOU/StaircaseCornerHook.lean`, unreferenced. No module imported the degenerate file (no live build collision). | Deleted the degenerate `StaircaseCornerHook/StaircaseEWResidual.lean`; the `lean.ref` now resolves (§0a grep-fallback) to the faithful class; `.md` "Lean status" updated to the hypothesis-only encoding (no instance/sorry). Not lean-direct-verifiable in-sandbox (faithful file imports a mathlib module absent from the partial olean cache; pipeline ref-resolution out of scope → CI-verified); the deletion is build-safe (no importers, not in the `QOU.lean` aggregator). Block stays a correctly-classified Tier-E open conjecture. |
 
-Net 2026-06-25: **no kind-flips** (consistent with the prior sweeps); one
-red→green compile fix + one de-vacuified theorem. The content-block
-triage's conclusion is unchanged and reaffirmed — the only thing it had
-not covered was the Lean-internal integrity of one sibling, now closed.
+Net 2026-06-25: **no kind-flips** (consistent with the prior sweeps); two
+Lean-internal integrity fixes — one red→green compile fix + de-vacuified
+theorem (rho-k, lean-direct verified) and one degenerate duplicate-class
+deletion (staircase, CI-verified). The content-block triage's conclusion is
+unchanged and reaffirmed — the only thing it had not covered was the
+Lean-internal integrity of the conjecture siblings, now swept.
 
 ### Method note (2026-06-25)
 
