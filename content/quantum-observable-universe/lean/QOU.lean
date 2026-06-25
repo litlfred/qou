@@ -40,6 +40,7 @@ import QOU.Mass.MassVolDensity
 import QOU.Mass.BindingRecurrenceSpectral
 import QOU.Mass.Lever1Depth2Exclusion
 import QOU.Mass.Lever1TauClosedForm
+import QOU.Mass.BindingTauAnchorClosure
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
