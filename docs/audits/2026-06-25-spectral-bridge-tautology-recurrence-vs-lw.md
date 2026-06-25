@@ -90,8 +90,8 @@ that wheel is *not* on PyPI). The regen merely propagates the corrected framing 
 The honest continuations are #2708's two, unchanged:
 
 1. **Drop `a_D = lw` beyond the seed** — compute the genuine prolonged periods of the abelianised
-   `λ_SW` connection on the coral `E_q`; `lw` is then only the `c = 1,2,3` physical anchors.
-   *(Owner **lifted** this gate 2026-06-25, PR #2764 — the coral `E_q` `λ_SW` holonomy `τ`-derivation
+   `λ_SW` connection on the color `E_q`; `lw` is then only the `c = 1,2,3` physical anchors.
+   *(Owner **lifted** this gate 2026-06-25, PR #2764 — the color `E_q` `λ_SW` holonomy `τ`-derivation
    is now in-scope; formalize-first, no-fit guard. Numerical elliptic-period integration may suffice
    without full Sage.)*
 2. **Keep `a_D = lw`, drop depth-2-constant** — `B` is then a variable-kernel `q`/`n`-dependent

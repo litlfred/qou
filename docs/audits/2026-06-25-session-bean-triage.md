@@ -35,7 +35,7 @@ folio-assistant sibling, so content validation cannot run.
 ## Tracked / gated — NOT clean idle-drains (leave for full-env or owner)
 
 - **canonical-watcher** `46ke` (P31 hidden codata, 53 scripts) / `j1hg` (over-count 3-input, 51+117) / `cmiy` (P30 WitnessBuilder, 133) / `trmo` (term6 fit) — large rollups, mostly Class-B/C/D *acceptable* per `2026-05-11-three-calibration-discipline-violations.md`; the vol-hyp uniform shortcut is **owner-settled 2026-06-13 (do not re-litigate)**; `trmo` is AUTHOR-ASSIST. Each needs per-file Class triage **+ running scripts** (mpmath absent).
-- **research levers** `kehn` `w5tg` `thb7` `ovud` `p3t6` `ae4b` — need `pyhecke_native` Hecke compute / Sage / owner-gated keystone. **`z2bn`** got a calibration pass this session (PR #2752); its depth-2 `(b)`-exclusion is now **Lean-formalized** (#2764, `Lever1Depth2Exclusion.lean`) and the owner **lifted** the `τ`-derivation gate 2026-06-25 — the coral `E_q` `λ_SW` holonomy derivation is now in-scope (formalize-first, no-fit guard; numerical elliptic-period integration may suffice without full Sage).
+- **research levers** `kehn` `w5tg` `thb7` `ovud` `p3t6` `ae4b` — need `pyhecke_native` Hecke compute / Sage / owner-gated keystone. **`z2bn`** got a calibration pass this session (PR #2752); its depth-2 `(b)`-exclusion is now **Lean-formalized** (#2764, `Lever1Depth2Exclusion.lean`) and the owner **lifted** the `τ`-derivation gate 2026-06-25 — the color `E_q` `λ_SW` holonomy derivation is now in-scope (formalize-first, no-fit guard; numerical elliptic-period integration may suffice without full Sage).
 - **data-integrity** `ct80` (runner delivered on #2747; regen is full-env), `tnjb`, `z5vu` (owner-gated) — full-env or owner.
 
 ## Takeaway
