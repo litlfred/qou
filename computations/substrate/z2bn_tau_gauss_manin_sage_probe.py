@@ -89,7 +89,7 @@ def section_A_anchors_and_target():
     exact = sp.simplify(tau_anchor - tau_closed) == 0
     tau0 = mp.mpf(str(sp.N(tau_anchor.subs(q, sp.Float(str(Q0), 50)), 50)))
     theta0 = mp.acosh(tau0 / 2)
-    lam0 = mp.e ** theta0
+    lam0 = mp.exp(theta0)
     print("=" * 78)
     print("Section A — anchors + target (corpus-confirmed; runs anywhere)")
     print("=" * 78)
