@@ -1,0 +1,21 @@
+{
+  "description": "z2bn lever-1 τ third probe (PF-monodromy SL₂ synthesis): M∈SL₂ with bar-even trace τ([2]_q)>2 (hyperbolic), excluding the SL₂(ℤ) topological monodromy; q-difference PF indicated. No fit.",
+  "transfer_matrix": "!![tau,-1;1,0]",
+  "det_M": 1,
+  "sl2": true,
+  "tau_quantum_integer_form": "3*(3*[2]^2+2)/(4*([2]+2)), [2]=q+1/q",
+  "qint_form_identity_residual": 0,
+  "tau_bar_even_residual": 0,
+  "tau_minus_2_numer_over_qint2": "9*b**2 - 8*b - 10",
+  "tau_gt_2_all_q": true,
+  "tau_min": "21/8",
+  "tau_min_at_q": "1",
+  "tau_at_q0": 2.642386313301486,
+  "lambda_plus_at_q0": 2.1846463152996387,
+  "lambda_minus_at_q0": 0.45773999800184745,
+  "classical_PF_monodromy": "SL2(Z), parabolic trace 2 at I1 nodal fibres (Delta deg6 squarefree, #2755 Step1)",
+  "exclusion": "(b): tau not in Z (even tau(1)=21/8) => M not in SL2(Z) => M is NOT the topological PF monodromy. M is a real/q-difference SL2(R) operator with bar-even trace tau([2]_q).",
+  "open_keystone": "explicit q-difference PF operator with trace tau([2]_q); owner-gated",
+  "lean": "QOU/Mass/TauQuantumIntegerForm.lean (tau_quantum_integer_form, tau_bar_even, transfer_det_one; sorry-free)",
+  "no_fit": true
+}
