@@ -41,7 +41,6 @@ namespace QOU.BraidsAndKnots
 theorem hecke_generator_det_neg_one {q : ℝ} (hq : q ≠ 0) :
     q * (-q⁻¹) = -1 := by
   field_simp
-  ring
 
 /-! ## Unit modulus for even-length braids -/
 

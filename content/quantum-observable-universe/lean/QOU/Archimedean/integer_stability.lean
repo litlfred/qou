@@ -65,10 +65,9 @@ theorem coulombCoeff_pos (ctx : IntegerStabilityContext) :
     0 < coulombCoeff ctx := by
   unfold coulombCoeff
   -- `q − q⁻¹ > 0` since `q > 1`, and `λ_C > 0` by hypothesis.
-  have h_q_pos : 0 < ctx.q := by linarith [ctx.q_gt_one]
   have h_q_sub_inv : 0 < ctx.q - ctx.q⁻¹ := by
     rw [sub_pos]
-    have : ctx.q⁻¹ < 1 := (inv_lt_one_iff_of_pos h_q_pos).mpr ctx.q_gt_one
+    have : ctx.q⁻¹ < 1 := inv_lt_one_of_one_lt₀ ctx.q_gt_one
     linarith [ctx.q_gt_one]
   exact mul_pos h_q_sub_inv ctx.lam_C_pos
 
