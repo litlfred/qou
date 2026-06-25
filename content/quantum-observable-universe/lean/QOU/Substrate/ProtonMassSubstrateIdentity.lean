@@ -17,13 +17,17 @@ See: `content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate
 
 namespace QOU.Substrate.ProtonMassSubstrateIdentity
 
-/-- F_Bor(q) is the Borromean categorical observable.
-    We leave it as noncomputable for now until the full derivation lands. -/
-noncomputable def F_Bor (_q : ℝ) : ℝ :=
-  -- Ref: [manuscript] appendix-qvalues/proton-mass-substrate-identity.md
-  -- (Borromean categorical observable F_Bor(q); the full categorical
-  --  derivation is pending — this is a provisional opaque placeholder.)
-  0
+/-- `F_Bor q` is the dimensionless Borromean categorical observable
+    `F_Bor(q) = |tr_M(β_Bor)| · [3]_q! / q³` (see
+    `docs/canonical-mass-formula-guardrail.md`). It is declared `opaque` — an
+    abstract real whose concrete value awaits the full categorical derivation —
+    rather than `:= 0`: pinning it to `0` would force the `ProtonMassIdentity`
+    hypothesis to read `m_p = -12 * m_e` (unsatisfiable for physical masses),
+    making every downstream conditional theorem vacuous. As an opaque constant
+    the conditional results stay genuinely conditional on the real (pending)
+    value. -/
+-- Ref: [manuscript] appendix-qvalues/proton-mass-substrate-identity.md
+opaque F_Bor (q : ℝ) : ℝ
 
 /-- The structural categorical invariant for the proton mass identity. -/
 class ProtonMassIdentity (m_p m_μ m_e q_0 : ℝ) : Prop where
