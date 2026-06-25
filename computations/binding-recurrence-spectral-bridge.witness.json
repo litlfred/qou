@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-25T10:43:40.444571+00:00",
-  "commitSha": "83f7fca41505ca0af5137c6addceb1ee24b906ba",
+  "computedAt": "2026-06-25T10:53:42.654607+00:00",
+  "commitSha": "f167b7ca1dcba48e392b7b8051495f513893207b",
   "assertions": [
     {
       "name": "ratio_convergence",
@@ -10,7 +10,7 @@
       "expected": "0",
       "passed": true,
       "tolerance": 0.0001,
-      "source": "a_D^(n+1)/a_D^(n) − λ₊ (sequence tail)"
+      "source": "ITERATED seq ratio tail − λ₊ (tautological; seq built by iterating x²−τx+1)"
     },
     {
       "name": "det_one",
@@ -26,13 +26,37 @@
       "passed": true,
       "tolerance": 0.0,
       "source": "λ₊ > 1 ⟺ τ > 2 (τ=2.6424)"
+    },
+    {
+      "name": "lw_reproduces_anchors",
+      "computed": "2.673e-50",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "q-hook lw(1,2,3) vs closed-form anchors a₂,a₃,a₄ (seed agreement)"
+    },
+    {
+      "name": "physical_diverges_from_iterated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "max|lw(n−1)−seq|/lw = 0.816 > 0.1 ⇒ physical ≠ iterated"
+    },
+    {
+      "name": "physical_super_geometric",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "physical lw ratio tail 3.6926 > λ₊ 2.1846"
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 39,
   "computation": "binding-recurrence-spectral-bridge",
   "scriptFile": "binding_recurrence_spectral_bridge_probe.py",
-  "scriptHash": "e096db610764",
+  "scriptHash": "eb975052faf6",
   "scriptCommitSha": "e748e062fc61461eeafa09a9808dacbe16b7443c",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -46,7 +70,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Spectral bridge (0 fit): the depth-2 binding kernel R=x²−τx+1 (τ=2.6424 from the selection-rule anchors, #2612) has dominant root λ₊=2.185>1 — the EXTENSIVE-growth eigenvalue the saturating |χ| joint trace (λ_eff≈1, A-independent, PR #2703) lacks. det=1 forces λ₋=1/λ₊<1. Connects the geometric/algebraic kernel to the empirical saturation gap; the |χ| trace sits at the degenerate τ=2 (λ=1) no-growth boundary. SCOPE (PR #2752): the tabulated aD_sequence is the iterated fixed-τ recurrence (→λ₊ tautologically); the physical a_D^(n)=lw(n−1) grow super-geometrically (#2708, diverge ≤32% by n=7), so λ₊>1 witnesses the SEED kernel's extensivity, not the binding growth rate.",
+  "description": "Spectral bridge (0 fit): the depth-2 binding kernel R=x²−τx+1 (τ=2.6424 from the selection-rule anchors, #2612) has dominant root λ₊=2.185>1 — the EXTENSIVE-growth eigenvalue the saturating |χ| joint trace (λ_eff≈1, A-independent, PR #2703) lacks. det=1 forces λ₋=1/λ₊<1. Connects the geometric/algebraic kernel to the empirical saturation gap; the |χ| trace sits at the degenerate τ=2 (λ=1) no-growth boundary. SCOPE (PR #2752): the tabulated aD_sequence is the iterated fixed-τ recurrence (→λ₊ tautologically); the physical a_D^(n)=lw(n−1) grow super-geometrically (#2708, diverge ≤32% by n=7), so λ₊>1 witnesses the SEED kernel's extensivity, not the binding growth rate. The witness emits BOTH aD_sequence_2_to_9 (iterated) and aD_physical_lw_2_to_9 (direct q-hook), so the divergence is DATA — asserted by physical_diverges_from_iterated / physical_super_geometric.",
   "parameters": {
     "q0": "1.10997858275",
     "fit_params": 0
@@ -88,7 +112,39 @@
       "3He": "3.4665",
       "4He": "3.8043"
     },
-    "chi_effective_ratio_3H_to_4He": "1.1696541"
+    "chi_effective_ratio_3H_to_4He": "1.1696541",
+    "aD_physical_lw_2_to_9": [
+      "1.0",
+      "1.336965622",
+      "2.532779656",
+      "5.37613773",
+      "13.55982713",
+      "37.36780738",
+      "115.8262242",
+      "388.8991439",
+      "1436.06579"
+    ],
+    "physical_growth_ratios": [
+      "1.336965622",
+      "1.894423921",
+      "2.122623544",
+      "2.522224654",
+      "2.75577314",
+      "3.099625917",
+      "3.357608751",
+      "3.692643228"
+    ],
+    "iterated_vs_physical_rel_divergence": [
+      "0.0",
+      "5.99738e-51",
+      "1.89948e-50",
+      "0.00381706",
+      "0.143143",
+      "0.321721",
+      "0.522089",
+      "0.689065",
+      "0.816047"
+    ]
   },
   "caveats": [
     "τ>2 ⟹ λ₊>1 is the extensive-growth condition; τ(q₀)=2.6424 satisfies it; the |χ| saturation sits at the degenerate τ=2 (λ=1) boundary. SCOPE (PR #2752): `aD_sequence`/`growth_ratios` are the ITERATED fixed-τ recurrence, which → λ₊ tautologically; the PHYSICAL coefficients a_D^(n)=lw(n−1) grow super-geometrically (#2708) and diverge from it by up to 32% (n=7). λ₊>1 is an (a)-scope witness that the SEED kernel is extensive, NOT the binding growth rate. The magic-A ⁴He +5.87% is a SEPARATE doubly-magic-formula gap (over-claim retracted 2026-06-24), not a truncation residual of this series."
