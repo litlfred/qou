@@ -953,6 +953,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6cbf8ad27d58",
+          "ts": "24ba8bd555c7",
+          "lean": "800365aee7af"
+        },
+        "result": "pass",
+        "notes": "conj (conditional on borromean-quark): richly substantive -- derives atomic (n,l,m,s) from Fourier modes of the trefoil normal bundle, q-Laplacian eigenvalues [l]_q[l+1]_q, SO(3) irreps, 2n^2 count; sibling lean has real sorry-free counting lemmas (orbital_dim_eq_square=n^2)",
+        "reviewed_at": "2026-06-25T16:57:51.000Z",
+        "reviewed_sha": "9d2d6c1ab790538665b366cdf22b72136052600f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
       }
     ],
     "proof-no-trivial-true": [
