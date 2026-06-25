@@ -166,6 +166,25 @@ near-match. Do NOT wire as a derivation.
     McKay 2I↔E₈ + A₅-branching anchors behind the chirality pairing are
     likewise Lean-proved (PR #2424). No new closure mechanism — theory-ledger
     tightening only.
+  - **(2026-06-25, this PR) MAGNITUDE LEG CLOSED — `B_λ` (KL left-cell Betti
+    sum) is NOT cell-invariant, so it cannot supply `|Δ_λ|` either.** The
+    2026-06-16/-17 prune closes the *sign*; this closes the *magnitude* leg it
+    explicitly left open (cf. `2026-06-16-delta-lambda-sign-is-icosahedral-chirality.md`:
+    "positive KL data could in principle contribute on the magnitude side").
+    Direct S_6 enumeration of **all** left cells (literature-validated pure-Python
+    KL, `kazhdan_lusztig._self_test` green): distinct cells of the *same* shape
+    give *different* `B_λ = Σ_{w∈Γ_λ} P_{e,w}(1)` — (3,3): 6..23; (3,2,1): 22..54;
+    (4,2): 9..20; **even hooks vary** ((4,1,1): 10..26). Only the three trivial
+    shapes (6,),(5,1),(1^6) are invariant. ⇒ `B_λ` is not a function of λ; it has
+    no canonical value without an arbitrary cell-selection rule. Resolves the
+    prior on-main disagreement (`kl_betti_extrapolation.py` first-cell vs
+    `probe_option_e_probe4_kl_batch.py` `canonical_Q` — each silently picks *a*
+    cell; the batch-results doc's "hooks match f^λ" was a `canonical_Q` artifact,
+    now corrected in that doc). Deuteron: the f^λ→B_λ swing is
+    `B_pred ∈ 0.457..0.817 MeV` (×1.20..×2.15), none reaching 2.2245 (needs ×5.85).
+    **(a)-scope** negative (this construction alone), **not** a structural
+    exclusion of KL data from every closure. Probe:
+    `kl_betti_cell_dependence_probe.py`; witness: `kl-betti-cell-dependence.witness.json`.
 
 ## Anti-patterns (DO NOT repeat)
 
