@@ -40,6 +40,7 @@ import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Archimedean.EmSpectralCompleteness
 import QOU.Archimedean.MassTowerOpenProblemsClasses
 import QOU.Archimedean.ThreeSubstantiveMathlibFillers
+import QOU.Archimedean.DilogarithmArchimedeanLimit
 import QOU.Archimedean.TypeBFoldedCrystalCombinatorics
 import QOU.Archimedean.HyperbolicVolumeIndependence
 import QOU.Archimedean.JetOrderIndependence
