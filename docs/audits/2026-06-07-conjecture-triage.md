@@ -455,8 +455,12 @@ heuristics) that the vacuity detectors miss:
   `lake build QOU`; 35 are content-block siblings outside it). Representative:
   `lean/QOU/Braiding/skein_crossing_asymmetry.lean:15` (`import …` after the
   module docstring). Fixing them is a uniform codemod (move the post-docstring
-  imports above the docstring) — deferred to its own PR where a Lean build can
-  verify it, **not** bolted on here.
+  imports above the docstring). **Drained 2026-06-25 in
+  [PR #2770](https://github.com/litlfred/qou/pull/2770)** — a block-comment-aware
+  codemod relocated the imports in all 44 (the count grew 40 → 44 as `main`
+  advanced; **pure relocation**, the import set byte-identical per file). The
+  gate's `lean-import-after-content` count is now **0**; full per-file compile
+  remains CI-gated.
 
 A new `--fail-on <categories>` flag drives a **diff-scoped** CI gate
 ([`.github/workflows/lean-content-siblings.yml`](../../.github/workflows/lean-content-siblings.yml)):
@@ -466,6 +470,31 @@ whole-tree gate would be red on the 40 pre-existing import-order defects and
 block every PR; this blocks *new* drift instead (validated: green on this PR's
 changed files, red on the skein control). This is the root-cause closure for
 the class of latent breakage that produced the rho-k / kashaev defects.
+
+### §3b stub-maturation backlog (2026-06-25)
+
+Of the 34 degenerate `class … residual : ℝ; residual_eq_zero` + global
+`instance := sorry` stubs, **`classical-riemann-hypothesis` was matured** in
+[PR #2753](https://github.com/litlfred/qou/pull/2753) to the faithful statement
+over Mathlib's `riemannZeta` — it is the one imported-famous stub cleanly
+statable with a standard Mathlib definition. The remaining 33 **need infra
+Mathlib lacks or per-conjecture formalization** and are **not** a mechanical
+batch:
+
+- **Imported-famous** (`qou-p-neq-np`, `yang-mills-mass-gap`,
+  `q-birch-swinnerton-dyer`, `qou-infra-discharges-goncharov-zeta5`, the
+  `single-volume-irrationality` / `hyperbolic-volume-transcendence` /
+  `borel-zagier-qou-volumes` set) — require complexity-theory / QFT /
+  elliptic-`L`-function / transcendence infrastructure **not in Mathlib**.
+- **q-deformed / framework-specific** (`q-collatz`'s `C_q` map over
+  `ℤ[q^±1]` with q-parity + positivity, the q-GL `q_oper_hecke` / `q_gl_*`
+  family, the GS-spectral chain, the surreal-appendix set) — substantial
+  **per-conjecture formalization**, often unverifiable in a partial-olean-cache
+  sandbox.
+
+These remain tracked under the existing `zslh` / `b3pe` / `mlt7` / `doth`
+"resolve N placeholders" beans; maturation is research-formalization, best
+done with a full Lean build (not a one-shot sandbox sweep).
 
 ### Method note (2026-06-25)
 
