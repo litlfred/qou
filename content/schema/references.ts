@@ -5763,6 +5763,117 @@ export const references: CSLData[] = [
     DOI: "10.1364/JOSA.12.000547",
   }),
 
+  // ── Swampland Program — foundational literature ───────────────
+  // Cited by the "Connections to the Swampland Program" remark
+  // cluster (information-theory / Horizons and Aeons).
+  ref({
+    id: "vafa2005",
+    type: "report",
+    title: "The String Landscape and the Swampland",
+    author: [{ family: "Vafa", given: "Cumrun" }],
+    issued: { "date-parts": [[2005]] },
+    note: "Term-origin paper; e-print only (report no. HUTP-05-A043), no journal DOI.",
+    URL: "https://arxiv.org/abs/hep-th/0509212",
+  }),
+  ref({
+    id: "ooguri-vafa2007",
+    type: "article-journal",
+    title: "On the Geometry of the String Landscape and the Swampland",
+    author: [
+      { family: "Ooguri", given: "Hirosi" },
+      { family: "Vafa", given: "Cumrun" },
+    ],
+    "container-title": "Nuclear Physics B",
+    volume: "766",
+    issue: "1-3",
+    page: "21-33",
+    issued: { "date-parts": [[2007]] },
+    DOI: "10.1016/j.nuclphysb.2006.10.033",
+    URL: "https://doi.org/10.1016/j.nuclphysb.2006.10.033",
+  }),
+  ref({
+    id: "arkani-hamed2007",
+    type: "article-journal",
+    title:
+      "The String Landscape, Black Holes and Gravity as the Weakest Force",
+    author: [
+      { family: "Arkani-Hamed", given: "Nima" },
+      { family: "Motl", given: "Lubos" },
+      { family: "Nicolis", given: "Alberto" },
+      { family: "Vafa", given: "Cumrun" },
+    ],
+    "container-title": "Journal of High Energy Physics",
+    volume: "2007",
+    issue: "06",
+    page: "060",
+    issued: { "date-parts": [[2007]] },
+    DOI: "10.1088/1126-6708/2007/06/060",
+    URL: "https://doi.org/10.1088/1126-6708/2007/06/060",
+  }),
+  ref({
+    id: "banks-seiberg2011",
+    type: "article-journal",
+    title: "Symmetries and Strings in Field Theory and Gravity",
+    author: [
+      { family: "Banks", given: "Tom" },
+      { family: "Seiberg", given: "Nathan" },
+    ],
+    "container-title": "Physical Review D",
+    volume: "83",
+    issue: "8",
+    page: "084019",
+    issued: { "date-parts": [[2011]] },
+    DOI: "10.1103/PhysRevD.83.084019",
+    URL: "https://doi.org/10.1103/PhysRevD.83.084019",
+  }),
+  ref({
+    id: "harlow-ooguri2021",
+    type: "article-journal",
+    title: "Symmetries in Quantum Field Theory and Quantum Gravity",
+    author: [
+      { family: "Harlow", given: "Daniel" },
+      { family: "Ooguri", given: "Hirosi" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    volume: "383",
+    issue: "3",
+    page: "1669-1804",
+    issued: { "date-parts": [[2021]] },
+    DOI: "10.1007/s00220-021-04040-y",
+    URL: "https://doi.org/10.1007/s00220-021-04040-y",
+  }),
+  ref({
+    id: "heidenreich2018",
+    type: "article-journal",
+    title:
+      "Emergence of Weak Coupling at Large Distance in Quantum Gravity",
+    author: [
+      { family: "Heidenreich", given: "Ben" },
+      { family: "Reece", given: "Matthew" },
+      { family: "Rudelius", given: "Tom" },
+    ],
+    "container-title": "Physical Review Letters",
+    volume: "121",
+    issue: "5",
+    page: "051601",
+    issued: { "date-parts": [[2018]] },
+    DOI: "10.1103/PhysRevLett.121.051601",
+    URL: "https://doi.org/10.1103/PhysRevLett.121.051601",
+  }),
+  ref({
+    id: "palti2019",
+    type: "article-journal",
+    title: "The Swampland: Introduction and Review",
+    author: [{ family: "Palti", given: "Eran" }],
+    "container-title": "Fortschritte der Physik",
+    volume: "67",
+    issue: "6",
+    page: "1900037",
+    issued: { "date-parts": [[2019]] },
+    DOI: "10.1002/prop.201900037",
+    URL: "https://doi.org/10.1002/prop.201900037",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
