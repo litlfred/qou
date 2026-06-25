@@ -130,3 +130,36 @@ frontier), **#2325** (parallel depth-2 b-ladder + `m_sym` log-trace match),
 **#2461** (Pauli-channel — `PauliChannelBinding` cherry-pickable). Over-zealous
 binding-closure prose rescoped in 6 docs
 (`2026-06-23-over-zealous-binding-closure-review.md`).
+
+---
+
+## 6. Report-back from #2795 (2026-06-25) — the depth-2/super-exp fork SETTLED + conserved-integral Lean
+
+Branch `claude/sw-lambda-jet-prolongation-2026-06-25` (rebased onto main +34).
+Refines §5's "Lever-1 kernel R algebraically closed": the depth-2 `R=x²−τx+1`
+is closed **only at n≤4** (deuteron n=2, ⁴He magic-shell n=4); the **global**
+`a_D^(n)` is **super-exponential**, so the true kernel is q-Bessel, not SL₂.
+
+- **Fork settled three ways** (audit `2026-06-25-sw-jet-prolongation-explicit-and-fork.md`,
+  probe `sw_period_growth_probe.py`): (i) √-branch Puiseux `X^(n)~(z−z_k)^{1/2−n}`
+  ⇒ factorial; (ii) the corpus's own `prop:sw-period-residue-sum` — residues =
+  per-block Wedderburn `dim_q` ⇒ `a_D^(n)=Σ_λ dim_q = lw` (the §5 selection rule,
+  stated by the corpus); (iii) the Lean below. lw vs depth-2 split hard at n≥6
+  (13.56 vs 11.62).
+- **Jet-form caveat RESOLVED from corpus** (corpus-grep over-flag): `λ_SW^(n)` is
+  a meromorphic 1-form (`prop:sw-period-residue-sum`); `prop:mi-sw-abelianisation`
+  bridges the fuller `J^n` MI∫ tensor to the 1-form period.
+- **Lean keystone** `prop:sl2-period-conserved-quantity` (content-block,
+  `QOU.Mass.sl2Invariant_succ`/`_eq_zeroth`, sorry-free, generic `[CommRing R]`):
+  the depth-2 recurrence's **conserved first integral**
+  `H_n = a(n+1)²−τa(n+1)a(n)+a(n)²`, `H_n=H_0`. A super-exp period has `H_n→∞`
+  ⇒ no first integral ⇒ **no depth-2 recurrence** — the formal reason the SL₂ τ
+  is the n≤4 germ. Verified lean-direct exit 0.
+
+Coordinated (intent posted): **#2800** (`lever1-keystone-na-stokes-3b` — parallel
+Lean: their `BindingHyperbolicRecurrence`/`BindingJacobiAngerBridge` `τ²−4` conic
+is the level-set side of my `H_n` invariant; no file collision content-block vs
+`QOU/Mass/` lib; consolidation question = who proves the orbit integral, posted).
+**#2793** (τ [2]_q assembly — coordinated 3×, Lean-landing noted). The geometric
+origin `a_D^(n)=lw(n−1)` (= SW period ≡ selection-rule value) remains the
+**#2488 W_λ DG frontier**, owner-gated, untouched here.
