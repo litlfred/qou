@@ -63,7 +63,7 @@ cache-artifact (missing Mathlib olean) / **genuinely-RED** (real source error wi
 
 **TIMEOUT (1):** `QOU/Archimedean/PauliWitness/Witness12B.lean` (>300 s; perf/maxHeartbeats)
 
-## Drained in this PR — 12 of 35 → GREEN (23 remaining)
+## Drained in this PR — 13 of 35 → GREEN (22 remaining)
 
 All lean-direct verified (exit 0, no `error:`; `LEAN_PATH` over the restored
 `lake-cache/qou-v4-24-0` Mathlib oleans).
@@ -95,13 +95,47 @@ All lean-direct verified (exit 0, no `error:`; `LEAN_PATH` over the restored
 12. **`ConditionalClasses.lean`** — 3 layered errors: added `import Mathlib.Tactic`
     (`linarith`/`field_simp` unknown); `div_lt_one_of_lt` → `(div_lt_one _).mpr`; closed the
     residual `(q-1)/(q-1) = 1` via `div_self (sub_ne_zero.mpr (ne_of_gt hq))`.
+13. **`demazure_fiber_markov_trace.lean`** — 4 reserved-`λ` binders → `lam`; then a pre-existing
+    structural bug (hidden behind the parse error): class field `claim_ii_bruhat_order_structural
+    : Prop` carried no witness, yet the def used the Prop as its own proof. Added the `_holds`
+    witness field (§3b-cond; verified no downstream instance to cascade) and projected it.
 
-**Layering confirmed.** 6 of these 12 had a 2nd (or 3rd) error behind the first
+**Layering confirmed.** 7 of these 13 had a 2nd (or 3rd) error behind the first
 (CategoricalDynamics: docstrings → noncomputable; BorromeanQuark: import → unused-var; hoefsmit:
 λ → Real import; tau_leptonic: ring → trivial; CrossedModule: List.join → poisoned native_decide;
-ConditionalClasses: tactic-import → lemma-rename → unsolved div_self). Per-file lean-direct
-verification caught each before commit. Two initial class-guesses were wrong: BorromeanQuark
-(`Finset.univ.sum` was a missing-import, not API rot) and hoefsmit (a missing `ℝ` import).
+ConditionalClasses: tactic-import → lemma-rename → unsolved div_self; demazure: λ → missing
+Prop-witness). Per-file lean-direct verification caught each before commit. Two initial
+class-guesses were wrong: BorromeanQuark (`Finset.univ.sum` was a missing-import, not API rot)
+and hoefsmit (a missing `ℝ` import).
+
+### Batch-3 triage refinement (stale-census reclassification, NOT new drains)
+
+A standalone lean-direct sweep over the **old**-census SYNTAX-18 + 9 typeclass-stuck entries
+(many of which the FRESH list inherited) reclassified them — the old census was stale and
+double-counts files main already fixed:
+
+- **7 already GREEN on main** (stale false-positives): `DeltaLambdaSignRule`,
+  `H4SignBlockIsospinLimit`, `CosimplicialCrossedGroupoid`, `RSKBridge`, `MuWenzlClosure`,
+  `SixTermPerDerivationWeights`, `WedderburnMassFormula`. No action needed.
+- **8 BLOCKED-on-dep** (error at `1:0` = a missing dep olean such as `QOU.Shared.MarkovTraceClaim`
+  / `QOU.Hecke` / `Mathlib.Algebra.Quaternion`, NOT a source error; the old import-position bug is
+  already fixed since parsing reaches line 1 cleanly): `QuaternionFromHecke`,
+  `skein_crossing_asymmetry`, `qmn_recursive_memoized`, `y_lambda_recipe_from_partition`,
+  `toffoli_transfer_matrix`, `NucleonNFWitness`, `PentagonUvCommutation`, `confinement_categorical`.
+  Unverifiable standalone in this sandbox; need their dep oleans built (a corrected fixpoint run).
+- **Genuinely red but NOT mechanical** (deferred — real authoring): `BindingConcentration` &
+  `interface_asymmetry_maximal` (malformed `theorem … : trivial := by trivial` vacuous
+  placeholders — need a §1a honest disposition); `TwoRoutesProtonMass` (`Real.arccos` +
+  proof-breakage); `DepthStratifiedFrobeniusReciprocity` (syntax + unsolved/no-goals);
+  `KnotFactorFrobeniusPairing` (`Inhabited (ClosedBraid n)` instance); `TraceLocalityMeetsGsNonLocality`
+  (`LinearOrderedField` is no longer a class in v4.24 — hierarchy migration);
+  `StructuralRank` / `e_infinity_identifications` / `skein_mass_from_linking` (metavariable-stuck
+  instances). NB: `BindingConcentration`/`TwoRoutes`/`DepthStratified` each needed a *correct*
+  `import Real.Basic` too, but that alone leaves them red — reverted to avoid half-fixed files.
+
+**Conclusion: the cheap mechanical seam is exhausted.** The genuinely-remaining reds need real
+per-file authoring (honest §1a dispositions, v4.24 hierarchy migration, instance derivation) or a
+corrected fixpoint census to unblock the 8 dep-blocked files.
 
 ## Lesson + next step
 
