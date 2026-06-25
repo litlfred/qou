@@ -1334,6 +1334,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "notes": "Re-audit correction 2026-06-25: prior note mis-stated 'no token' (resolver was sibling-only). Canonical lib decl QOU.Archimedean.torus_knot_genus_four_unique uses plain `decide` after `interval_cases` to discharge finitely many cases — accepted (no `native_decide`); verdict pass stands.",
+        "reviewed_at": "2026-06-25T12:39:51.000Z",
+        "reviewed_sha": "1debdf1526f15021143bdde1776810ae6c406976",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ]
   },

@@ -1357,6 +1357,24 @@
         "reviewed_at": "2026-06-22T02:56:25.044Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
+      },
+      {
+        "field_hash": {
+          "md": "faee64a6ed5c",
+          "ts": "e6fec89087e6",
+          "lean": "286f106d6c96"
+        },
+        "result": "pass",
+        "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (§1a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
+        "reviewed_at": "2026-06-25T12:27:24.000Z",
+        "reviewed_sha": "1debdf1526f15021143bdde1776810ae6c406976",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ]
   },
