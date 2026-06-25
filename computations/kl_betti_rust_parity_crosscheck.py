@@ -15,10 +15,11 @@ function sums P_{identity,w}(1) over the *given* cell, so it agrees per-cell and
 cannot itself resolve the cell-ambiguity.
 """
 import sys
-sys.path.insert(0, '/home/user/qou/computations')
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from collections import defaultdict
-import kazhdan_lusztig as KL
-import pyhecke_native
+import kazhdan_lusztig as KL  # noqa: E402
+import pyhecke_native  # noqa: E402
 
 def rsk_PQ(w):
     P=[]; Q=[]

@@ -1,7 +1,7 @@
 {
   "engine": "python3/sympy+mpmath",
   "engineVersion": "50dps",
-  "computedAt": "2026-06-25T00:31:44Z",
+  "computedAt": "2026-06-25T10:30:37Z",
   "computation": "kl-betti-cell-dependence",
   "scriptFile": "kl_betti_cell_dependence_probe.py",
   "description": "KL left-cell Betti sum B_\u03bb = \u03a3_{w\u2208\u0393_\u03bb} P_{e,w}(1) is NOT cell-invariant: distinct left cells of the same shape \u03bb over S_6 give different Betti sums (e.g. (3,3): 6..23). Hence B_\u03bb is not a function of \u03bb and cannot canonically supply |\u0394_\u03bb|=f^\u03bb. Hooks ARE cell-invariant and equal f^\u03bb. (a)-scope negative; reinforces the PROBE-4 KL-positivity sign prune. Pure-Python KL, literature-validated.",
