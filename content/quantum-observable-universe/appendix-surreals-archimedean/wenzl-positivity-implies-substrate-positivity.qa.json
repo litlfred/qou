@@ -937,6 +937,24 @@
         "reviewed_at": "2026-06-22T02:56:40.557Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof stub with core gaps but carries math structure and definitions."
+      },
+      {
+        "field_hash": {
+          "md": "51e14870351a",
+          "ts": "ce04024cf4b0",
+          "lean": "667203ec8e03"
+        },
+        "result": "n/a",
+        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
+        "reviewed_at": "2026-06-25T15:49:07.000Z",
+        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -949,8 +967,8 @@
         "result": "pass",
         "scope": "structural",
         "ruling": "rebutted",
-        "referee_argument": "wenzl-positivity-implies-substrate-positivity.lean:31 'holds : Prop' (no proof body, no sorry \u2014 only a comment mention at :9); .ts:9 validation:'not_checked'; .ts:36 'separate the conjecture from a theorem'.",
-        "rebuttal": "rebutted \u2014 both legs of the C1 trigger absent: no sorry token (comment only), no proved/sorry-free label; honestly typed conjecture with open-problem tag; lean.ref resolves to the sibling (lake_root_exists:false), \u00a70a discharged. The checker keyword-matched the comment (now fixed).",
+        "referee_argument": "wenzl-positivity-implies-substrate-positivity.lean:31 'holds : Prop' (no proof body, no sorry — only a comment mention at :9); .ts:9 validation:'not_checked'; .ts:36 'separate the conjecture from a theorem'.",
+        "rebuttal": "rebutted — both legs of the C1 trigger absent: no sorry token (comment only), no proved/sorry-free label; honestly typed conjecture with open-problem tag; lean.ref resolves to the sibling (lake_root_exists:false), §0a discharged. The checker keyword-matched the comment (now fixed).",
         "evidence": [
           {
             "text": "wenzl-positivity-implies-substrate-positivity.lean:9,31"
@@ -977,8 +995,8 @@
         "result": "warn",
         "scope": "limited",
         "ruling": "partial",
-        "referee_argument": ".md:81-91 '(a) is a theorem; (b) is the substrate axiom ... (a) implies (b)' \u2014 the Wenzl=>substrate bridge asserted as 'largely a formal exercise'; the substrate's specific Frobenius structure being a standard Frobenius algebra is not demonstrated.",
-        "rebuttal": "partial \u2014 block is explicitly a conjecture, names the bridge 'the only genuinely conjectural input', authorNotes enumerate three open ingredients; honestly scoped as open, not an overclaim. Wenzl real-positive-range unitarity + q_0 in R_>1 citations correct.",
+        "referee_argument": ".md:81-91 '(a) is a theorem; (b) is the substrate axiom ... (a) implies (b)' — the Wenzl=>substrate bridge asserted as 'largely a formal exercise'; the substrate's specific Frobenius structure being a standard Frobenius algebra is not demonstrated.",
+        "rebuttal": "partial — block is explicitly a conjecture, names the bridge 'the only genuinely conjectural input', authorNotes enumerate three open ingredients; honestly scoped as open, not an overclaim. Wenzl real-positive-range unitarity + q_0 in R_>1 citations correct.",
         "evidence": [
           {
             "text": "wenzl-positivity-implies-substrate-positivity.md:81-91,106"
@@ -1005,7 +1023,7 @@
         },
         "result": "pass",
         "verdict": "clean",
-        "referee_argument": "Bucket-C1 FALSE POSITIVE: the class-2 checker keyword-matched 'sorry' inside a doc comment ('sorry = conjecture per AGENTS.md \u00a73b') and a 'sorry-free' mention in prose; the block has NO sorry token in code and NO proved/sorry-free label \u2014 it is honestly typed conjecture / open-problem / validation:not_checked. (Checker since fixed to strip Lean comments.)",
+        "referee_argument": "Bucket-C1 FALSE POSITIVE: the class-2 checker keyword-matched 'sorry' inside a doc comment ('sorry = conjecture per AGENTS.md §3b') and a 'sorry-free' mention in prose; the block has NO sorry token in code and NO proved/sorry-free label — it is honestly typed conjecture / open-problem / validation:not_checked. (Checker since fixed to strip Lean comments.)",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
