@@ -48,6 +48,7 @@ import QOU.Mass.HeckeStokesEigenvalues
 import QOU.Mass.NaStokesKeystone
 import QOU.Mass.BindingHyperbolicRecurrence
 import QOU.Mass.BindingQBesselKernel
+import QOU.Mass.BindingJacobiAngerBridge
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
