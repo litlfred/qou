@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-24T18:42:07.082881+00:00",
-  "commitSha": "568404c61ea98afb7e1f25ff3351dff8f1ff1e0c",
+  "computedAt": "2026-06-25T10:51:17.904126+00:00",
+  "commitSha": "b1ee2a93d8b58efab4ad0a69db3c75ca993bd1fd",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 9,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8a602c238718",
-  "scriptCommitSha": "e46b8145b47b2bb40f9b7ce30a8bd126e7fbc6ad",
+  "scriptCommitSha": "71e80fe935e7d45f815d573fd38c2bca61ed4c96",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,7 +18,6 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -26,7 +25,7 @@
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 944,
+    "files_scanned": 949,
     "patterns": [
       "P15",
       "P16",
@@ -40,7 +39,7 @@
       "P15": 124,
       "P16": 261,
       "P21": 24,
-      "P30": 140,
+      "P30": 144,
       "P31": 23
     },
     "top_files": [
@@ -2171,6 +2170,27 @@
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
+        "pattern": "P30",
+        "file": "keystone_wlambda_defect_cn_closedform_crosscheck.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "keystone_wlambda_defect_coeff_ladder.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P30",
+        "file": "keystone_wlambda_defect_dn_subleading.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
         "pattern": "P15",
         "file": "kite_tail_reconciliation.py",
         "line": 65,
@@ -2197,6 +2217,13 @@
         "line": 166,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P30",
+        "file": "kl_betti_cell_dependence_probe.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P30",
