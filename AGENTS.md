@@ -404,6 +404,30 @@ PR-level visibility also activates the integration-watcher infra
 coordinate-skill sweep (§7-§8 of `coordinate.md`), so sibling
 agents triage your work automatically.
 
+## QA is agent-owned; CI is a backup (STRICT, 2026-06-25)
+
+Every agent runs the QA checks relevant to its **own** PR **by hand,
+before committing** — CI is a safety-net that catches what the agent
+missed, **not** the primary gate. Do **not** block on CI or wait for it
+to go green to proceed: verify locally and move (a PR with local
+`lean`-direct exit 0 + a clean `qa-sweep` on the touched blocks is
+merge-ready on the agent's own verification). This matters because the
+reactive post-commit `qa-sweep` does **not** cover everything — a
+**standalone library Lean file** (`content/**/lean/QOU/**/*.lean` with no
+`.ts`/`.md` sibling) has no `<block>.qa.json` sidecar and escapes every
+per-block checker (`q-usage-*`, `wall-side-correct`, one-voice, …) — and
+CI billing flakiness (below) makes CI unreliable as a gate anyway.
+
+**Preflight helper — run before every commit:**
+[`scripts/check-sidecars.sh`](scripts/check-sidecars.sh) maps the files
+you changed → the QA sidecar criteria that apply, and runs the §7c
+base-ring check on un-sidecar'd library Lean. Act on its ⚠ lines (refresh
+stale sidecars via `qa-sweep`; resolve gratuitous `ℝ` per §7c). The Lean
+authoring gate is [`local/formalizer.md` §Pre-commit base-ring
+GATE](.claude/skills/local/formalizer.md). History: added 2026-06-25 after
+a gratuitous `(q : ℝ)` / `SL₂(ℝ)` landed on a purely-algebraic τ-kernel
+lemma in a library file (no sidecar ⇒ unswept); the owner caught it by eye.
+
 ## CI billing failures — distinguish from real failures (STRICT)
 
 GitHub Actions workflows may fail in **2-3 seconds across multiple
