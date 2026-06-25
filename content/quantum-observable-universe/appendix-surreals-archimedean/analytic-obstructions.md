@@ -135,7 +135,7 @@ obstructions after audit:
 - **Convergence of $q$-dilogarithm products** — only used as
   formal power series.
 - **Smooth-manifold structure on $M$** — the main paper treats
-  $M$ via the Yekutieli brane tower (algebraic) and the
+  $M$ via the brane tower (algebraic) and the
   frame bundle $\mathcal{S}$ (algebraically described).
   Smoothness is a convenience, not load-bearing.
 - **Spectral decomposition of Hecke generators** — Hoefsmit
