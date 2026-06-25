@@ -354,3 +354,65 @@ intersecting provable-kind blocks with conjecture `uses[]`, then calibrated
 against each block's `.md` banner + `.lean` class — 16 of 31 were already honest
 (same "already-caveated" pattern as §E). Two read-only sub-agents did the
 file-level per-block investigation of the 15 silent candidates.
+
+---
+
+## 2026-06-25 refresh — fresh inventory + new Lean-internal axis
+
+Same-discipline re-run on the current tree (**147 live `conjecture()`
+blocks**, up from the 136–137 of the 2026-06-07/08 sweeps). Two parts:
+(J) a mechanical Lean-status inventory that **re-confirms** the §A–§I
+qualitative findings, and (K) **one axis the prior sweeps did not run** —
+the *Lean-internal* integrity of each conjecture's `.lean` (the earlier
+sweeps triaged block **kind**, not the sibling Lean body).
+
+### J. Lean-status inventory (re-confirmation)
+
+Per-block resolution of every `conjecture()` sibling/ref Lean source
+(`scripts/`-style grep classification):
+
+| Lean-status bucket | Count (of 147) |
+|---|---|
+| carries `sorry` (open formalisation) | 119 |
+| class-axiomatised (`class … : Prop where …`, §3b) | 142 |
+| `axiom` keyword | 6 |
+| contains a `: True := trivial` line | 9 |
+| `native_decide` | 1 |
+
+The 9 `: True := trivial` matches were each opened: **all are the
+sanctioned patterns**, not vacuity dodges — §3b-cond witness defs
+(`def X_conditional_on_Y [_inst : Y] : True := trivial`), class
+placeholder fields (`holds : True`), `example : True := trivial` compile
+markers, or already-fixed historical comments (the fluid-dynamics files
+that document *"the earlier version stated only `theorem … : True`"*).
+This **confirms the headline conclusion**: the mechanically-closeable
+conjecture set is ≈ empty; the 147 are genuine q-deformed open roots,
+correctly classified. The corpus-grep / §3b discipline is holding.
+
+### K. New axis — Lean-internal vacuity / compile audit of conjecture siblings
+
+The §A/§B/§E/§H sweeps checked *block kind* and *narrative banners*; they
+did **not** typecheck or vacuity-scan the conjecture `.lean` bodies. A
+lean-direct pass (toolchain v4.24.0, oleans restored from
+`lake-cache/qou-v4-24-0`) over the suspicious siblings found **one**
+genuine defect:
+
+| Block | Lean-internal defect | Disposition |
+|-------|----------------------|-------------|
+| [`conj-rho-k-pair-gen-canonical-form`](../../content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md) | (1) `def pair_gen_functional … : R := trivial` — a **type error** (`trivial : True`, expected `R`); the file did not compile. (2) `theorem pair_gen_kashaev_limit : ∃ f, ∀ args, pair_gen_functional = f args := ⟨pair_gen_functional, rfl⟩` — a **vacuous self-projection** (true for *any* function) whose docstring claimed it proved the Kashaev limit (AGENTS.md §1a violation). The sibling `.md`'s own "Lean formalization" block already documented the honest `:= sorry` form — the committed `.lean` had drifted from its own spec. | Fixed to the §3b sanctioned form: `pair_gen_functional := sorry` (cited placeholder, disposition 2) + the conjecture axiomatised as `class PairGenCanonical : Prop where holds : True` (disposition 3), replacing the vacuous theorem. `.ts` `lean.ref` repointed to the class; `.md` snippet synced. **lean-direct exit 0** (only the expected `uses 'sorry'` warning). Block stays a correctly-classified Tier-S open conjecture (per §F line "mass-endomorphism: `conj-rho-k-pair-gen-canonical-form`"). |
+
+Net 2026-06-25: **no kind-flips** (consistent with the prior sweeps); one
+red→green compile fix + one de-vacuified theorem. The content-block
+triage's conclusion is unchanged and reaffirmed — the only thing it had
+not covered was the Lean-internal integrity of one sibling, now closed.
+
+### Method note (2026-06-25)
+
+Inventory = a grep classifier over all `conjecture()` `.ts` blocks
+resolving each `lean.ref` (sibling → lake-path → grep fallback) and
+scanning the body for `sorry`/`class`/`axiom`/`: True := trivial`/
+`native_decide`. The one defect was confirmed by `lean <file>` with
+`LEAN_PATH` set to the restored oleans (full content-pipeline validation
+could not run in-sandbox: the `litlfred/folio-assistant` platform repo is
+out of session scope, proxy 403 — Lean compilation is the authoritative
+check used instead).
