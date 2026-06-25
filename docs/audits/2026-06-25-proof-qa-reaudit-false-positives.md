@@ -74,6 +74,54 @@ byte-identical to the source, so diffs are confined to the appended entries.
    `proof-rater-strategy-clarity`, `proof-rater-novelty`.
 4. **Warns** — after the failures, per the owner directive.
 
+## Progress (commits on this branch)
+
+1. **Deterministic FP correction** (`1debdf15`) — 205 decide + 155 trivial-true → pass, 24 → n/a; 232 sidecars.
+2. **Plain-decide reclassification + stragglers** (`9ef9e4f7`) — 15 plain-`decide` fails → pass
+   (accepted corpus-wide; only `native_decide` is a §1a violation). Corrected 3 resolver-gap
+   stragglers (q-beta → fail, torus-knot re-noted, confinement → fail). Added
+   `scripts/lean-direct-env.sh`.
+
+A robust decl-grep re-resolve verified the 360 flips: only **3 of 375** were affected by the
+first pass's path-heuristic resolver gap (all 3 corrected). Net deterministic accuracy ≈ 99%.
+
+## Genuine fails — disposition
+
+- **`native_decide` (4 blocks)** — `t211-ideal-annihilation`, `crossed-module-euler-characteristic`,
+  `shell-transition-knot`, `confinement-operator-selection`. Genuine §1a concern, **left as fail**:
+  not safely fixable this session. `decide` cannot reduce the `List.foldl`/`orderOf` goals
+  (verified — `crossed-module` `decide` got stuck on the foldl; that file also has a pre-existing
+  `List.join`→`List.flatten` API error), and the sibling `.lean` files don't compile standalone
+  (no Mathlib imports). Queued.
+- **trivial-true vacuity (44 blocks, incl. q-beta)** — all in **provable-kind** blocks
+  (23 proposition+concl, 12 class-field+concl, 3 definition, …) concluding `: True`. The batch
+  flagged these **correctly**; they are the known vacuous-proof backlog (overlaps beans `b3pe`,
+  `95jh`, `zslh`, …). Honest fix = state the real proposition + prove / `sorry`+`-- Ref:` / demote
+  to `conjecture` — real formalization, **not** a mechanical sweep. Queued, not fabricated.
+
+## Judgment + rater criteria — same ~83% FP, need re-audit
+
+The four judgment criteria fail on the **same ~232 blocks** (templated batch). Proxy for
+`proof-statement-integrity`: of 232 fails, **193 (83%)** have **no `sorry`** in resolved Lean —
+the cited "contains sorryAx" note is false. Same FP signature as decide/trivial-true.
+
+| criterion | open (fail/warn) |
+|---|--:|
+| proof-rater-goal-plausibility | 354 |
+| proof-no-false-premise | 233 |
+| proof-statement-integrity | 232 |
+| proof-no-unused-hypotheses | 232 |
+| proof-rater-strategy-clarity | 232 |
+| proof-rater-novelty | 232 |
+| proof-no-self-assuming-projection | 165 |
+
+**360 distinct blocks** (manifest with resolved Lean paths generated). These are **semantic**
+("does the Lean derive the `.md` claim", "is a premise false") — no reliable deterministic proxy;
+they need per-block reading. Caveat: a fresh agent re-audit is no more *authoritative* than the
+2026-06-22 agent batch (both Opus); the canonical `qa-sweep` (folio-assistant, out of scope) is the
+proper re-evaluator. Options under consideration: (a) full sub-agent fleet re-audit, (b) invalidate
+the proven-unreliable batch entries → pending canonical re-sweep, (c) leave + queue.
+
 ## Tooling note
 
 The canonical `qa-sweep` / `qa-agent-drain` pipeline lives in the separate
