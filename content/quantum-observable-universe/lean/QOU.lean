@@ -47,6 +47,7 @@ import QOU.Mass.ColorSpectralCubicGeometry
 import QOU.Mass.HeckeStokesEigenvalues
 import QOU.Mass.NaStokesKeystone
 import QOU.Mass.BindingHyperbolicRecurrence
+import QOU.Mass.BindingQBesselKernel
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
