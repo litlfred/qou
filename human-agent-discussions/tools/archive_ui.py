@@ -33,7 +33,7 @@ import zipfile
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import urlparse, parse_qs, unquote
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import archive_sessions as core  # noqa: E402
@@ -218,10 +218,11 @@ class ArchiveService:
         dest_dir.mkdir(parents=True, exist_ok=True)
         saved = []
         if fname.endswith(".zip"):
-            with tempfile.NamedTemporaryFile(suffix=".zip", delete=False) as tf:
-                tf.write(body)
-                tmp = Path(tf.name)
+            tmp = None
             try:
+                with tempfile.NamedTemporaryFile(suffix=".zip", delete=False) as tf:
+                    tmp = Path(tf.name)
+                    tf.write(body)
                 with zipfile.ZipFile(tmp) as zf:
                     for info in zf.infolist():
                         base = safe_filename(info.filename)
@@ -235,7 +236,8 @@ class ArchiveService:
                             shutil.copyfileobj(src, dst)
                         saved.append(base)
             finally:
-                tmp.unlink(missing_ok=True)
+                if tmp is not None:
+                    tmp.unlink(missing_ok=True)
             if not saved:
                 raise ValueError("zip contains no conversations*.json / *.jsonl")
         else:
@@ -377,7 +379,7 @@ class Handler(BaseHTTPRequestHandler):
             if u.path == "/api/git/status":
                 return self._send(200, self.service.git_status())
             if u.path.startswith("/files/"):
-                rel = u.path[len("/files/"):]
+                rel = unquote(u.path[len("/files/"):])
                 target = (self.service.root / rel).resolve()
                 root = self.service.root.resolve()
                 if root != target and root not in target.parents:
