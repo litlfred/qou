@@ -1277,6 +1277,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "03ac060c46e2",
+          "ts": "613489e1a02b",
+          "lean": "fcaea64c2d8b"
+        },
+        "result": "pass",
+        "notes": "residue_of_product derives residue(x*y)=residue(x)*residue(y) via RingHom.map_mul on project:R->+*target — uses the ring-hom structure of the class field, not := a conclusion field. Genuine derivation.",
+        "reviewed_at": "2026-06-25T17:10:19.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-trivial-true": [

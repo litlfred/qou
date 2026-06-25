@@ -1202,6 +1202,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "20afb07e9d50",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "notes": "Clear: enumerate 6 braids, define boundaryPerm table, prove injective+bijective+nodup by finite cases. Each S_3 element realised; tidy decidable discharge.",
+        "reviewed_at": "2026-06-25T17:11:36.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1242,6 +1263,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "20afb07e9d50",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "notes": "Well-posed: 6 canonical braids realise all of S_3 as boundary color-sector permutations (rho: B_3 -> S_3 explicitly). Combinatorial core sound; geometric reading honestly conditional.",
+        "reviewed_at": "2026-06-25T17:11:36.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1284,6 +1326,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "20afb07e9d50",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "notes": "Explicit B_3 -> S_3 holonomy as color-tube permutations + involution/3-cycle-inverse structure; modest but genuine, and honestly separates proved combinatorics from conditional geometry.",
+        "reviewed_at": "2026-06-25T17:11:36.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1314,6 +1377,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "20afb07e9d50",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "notes": "Genuine sorry-free: boundary_perm_realises_S3 composes boundaryPerm_injective/bijective + count(6, nodup), all by finite cases + decide (kernel, not native_decide). Honestly scopes Lean to combinatorial content; geometric q-Reeb identification left conditional in prose.",
+        "reviewed_at": "2026-06-25T17:11:36.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1433,6 +1513,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "20afb07e9d50",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "notes": "Finite enumeration over CanonicalBraid/ColorSector; all premises satisfiable, no contradictory hypothesis.",
+        "reviewed_at": "2026-06-25T17:11:36.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1463,6 +1560,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "20afb07e9d50",
+          "ts": "280a4f5846ad"
+        },
+        "result": "pass",
+        "notes": "Theorems take β (consumed by cases) with no spurious binders; boundary_perm_realises_S3 has none. All hypotheses used.",
+        "reviewed_at": "2026-06-25T17:11:36.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

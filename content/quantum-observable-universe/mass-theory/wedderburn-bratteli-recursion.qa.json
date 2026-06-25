@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "40ebf7192923",
+          "ts": "b362ba0073b2",
+          "lean": "3fe834eeb44f"
+        },
+        "result": "pass",
+        "notes": "md proof of existence is clear (Markov property + multiplicity-free Hoefsmit branching); closed-form F_q=[c+1]_q/[c+h]_q candidate + symbolic ratios given. Lean realises only the trivial/axiom skeleton.",
+        "reviewed_at": "2026-06-25T17:10:39.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "40ebf7192923",
+          "ts": "b362ba0073b2",
+          "lean": "3fe834eeb44f"
+        },
+        "result": "pass",
+        "notes": "Multiplicity-free Bratteli recursion y_λ^(n+1)=z·F_q·y_μ^(n) with Σy_λ d_λ=1 Plancherel completeness (witness 270 weights n≤12, <1e-15): well-posed, substantive.",
+        "reviewed_at": "2026-06-25T17:10:39.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "40ebf7192923",
+          "ts": "b362ba0073b2",
+          "lean": "3fe834eeb44f"
+        },
+        "result": "pass",
+        "notes": "Bratteli recursion for the y_λ tower (sign tracking, z/q decay, Plancherel invariant) is a genuine structural result enabling α_k at H_n>3 without re-solving the linear system.",
+        "reviewed_at": "2026-06-25T17:10:39.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.74
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "40ebf7192923",
+          "ts": "b362ba0073b2",
+          "lean": "3fe834eeb44f"
+        },
+        "result": "fail",
+        "notes": "Library existence thm closed by degenerate y≡0 witness (file admits 'satisfied vacuously', 'consistency not non-triviality'); Plancherel via axiom. Sibling stub self-assumes claim_i/ii/iii fields. Neither encodes the actual y_λ recursion.",
+        "reviewed_at": "2026-06-25T17:10:39.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1403,6 +1487,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "40ebf7192923",
+          "ts": "b362ba0073b2",
+          "lean": "3fe834eeb44f"
+        },
+        "result": "pass",
+        "notes": "Recursion is satisfiable (y≡0 witnesses it); no contradictory premise. plancherel axiom hyps consistent.",
+        "reviewed_at": "2026-06-25T17:10:39.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1434,6 +1536,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "40ebf7192923",
+          "ts": "b362ba0073b2",
+          "lean": "3fe834eeb44f"
+        },
+        "result": "pass",
+        "notes": "Library thm q,v appear in the goal type (SatisfiesWedderburnBratteliRecursion q v y) — statement params, not unused binders. Sibling uses all 3 claim fields.",
+        "reviewed_at": "2026-06-25T17:10:39.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

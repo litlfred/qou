@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "notes": "Clear 3-step construction (FreeAbelianGroup → pentagon AddSubgroup.closure → QuotientAddGroup); Rogers-form constraint fix documented; universal property via QuotientAddGroup.lift. Sorry-free core.",
+        "reviewed_at": "2026-06-25T17:11:13.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "notes": "Well-posed: concrete Lean Bloch group closing substantive Mathlib gap (1); honest about open items 2-4 (Cl_2 pentagon, regulator injectivity, Suslin map). Real AddCommGroup object.",
+        "reviewed_at": "2026-06-25T17:11:13.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "notes": "Genuine non-axiomatic Bloch-group construction with the over-permissive-quotient bug fixed structurally (constrained rogersGenerator); substantive Mathlib-filler, not a restatement.",
+        "reviewed_at": "2026-06-25T17:11:13.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "notes": "BlochGroup F genuinely constructed as PreBlochGroup⧸pentagonSubgroup (real QuotientAddGroup); shape₃/₄/₅ well-definedness + universal property + quot_rogersGenerator_eq_zero proved sorry-free. Faithful to md; trivial fields are class hooks over a real object, not the headline.",
+        "reviewed_at": "2026-06-25T17:11:13.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1403,6 +1487,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "notes": "RogersPair premises (x,y∈F\\{0,1}, x≠y) satisfiable in any field with ≥3 elements; derived ≠0,≠1 proved, not assumed. No contradiction.",
+        "reviewed_at": "2026-06-25T17:11:13.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1434,6 +1536,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f226d5d3f043",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "notes": "quot_universal_property uses f,h; RogersPair.shape₄ uses all ne-conditions via field_simp/linear_combination; no unused binder in the proved theorems.",
+        "reviewed_at": "2026-06-25T17:11:13.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

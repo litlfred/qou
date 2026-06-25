@@ -1207,6 +1207,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c5113cdbf635",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "warn",
+        "notes": "Lean realizes none of the LP: only a length=3 rfl + an existence axiom for binding. .md gives a clear LP + knot-comparison table, but the proof artifact is essentially empty.",
+        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.4
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1248,6 +1270,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c5113cdbf635",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "notes": "Goal substantive: one universal ILP selects both B₃ (confinement) and the covalent inverse trefoil; D0(H2)=4.48eV (+0.1%, zero fit). Well-posed and falsifiable.",
+        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.75
         }
       }
     ],
@@ -1291,6 +1335,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c5113cdbf635",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "notes": "Unifying molecular covalent bonding and quark confinement as the SAME ILP (same G, Frobenius constraint, trace objective; only state x changes) is a strong novel claim.",
+        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1322,6 +1388,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c5113cdbf635",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "fail",
+        "notes": "Lean theorem proves only inverse_trefoil.length=3 by rfl — a trivial bookkeeping fact, NOT the .md claim (universal ILP selects T(2,3)⁻¹ as unique LP solution). Binding energy is an axiom (q>1 ⊢ ∃E∈(0,5)). LP/trace/Frobenius content absent.",
+        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1407,6 +1491,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c5113cdbf635",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "notes": "Theorem has no premises; the axiom's q>1 is satisfiable. No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1438,6 +1540,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c5113cdbf635",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "notes": "covalent_bond_is_ilp_optimal has no binders (rfl). No unused hypothesis in the proved theorem.",
+        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

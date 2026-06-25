@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9f94ea27a52f",
+          "ts": "d12f63286529",
+          "lean": "7654fbf4b26a"
+        },
+        "result": "pass",
+        "notes": "Library class cleanly decomposes the 4 GNS ingredients (positive trace, trace ideal, completion, faithful repr). Strategy standard and clear; but the embedding existence theorem itself is sorry/degenerate.",
+        "reviewed_at": "2026-06-25T17:12:47.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "9f94ea27a52f",
+          "ts": "d12f63286529",
+          "lean": "7654fbf4b26a"
+        },
+        "result": "pass",
+        "notes": "GNS from a positive tracial state is standard (Jones-Wenzl subfactor machinery); valid in q≈1.11 positivity regime. Well-posed, non-conjectural.",
+        "reviewed_at": "2026-06-25T17:12:47.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9f94ea27a52f",
+          "ts": "d12f63286529",
+          "lean": "7654fbf4b26a"
+        },
+        "result": "pass",
+        "notes": "Standard GNS, but applying it to give the pre-archimedean Hecke operator-algebra carrier (H_∞(q)↪L(H)) is a meaningful structural step in the framework.",
+        "reviewed_at": "2026-06-25T17:12:47.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1320,6 +1386,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "9f94ea27a52f",
+          "ts": "d12f63286529",
+          "lean": "7654fbf4b26a"
+        },
+        "result": "fail",
+        "notes": "Library class HasMarkovGnsEmbedding packages real construction data (trM linearity/traciality/positivity, faithful repr) — honest. But NO proved embedding theorem; the sibling theorem weakens to ∃...,True := sorry (a shadowing stub, §0a violation). Faithful *-rep claim not discharged.",
+        "reviewed_at": "2026-06-25T17:12:47.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1405,6 +1489,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9f94ea27a52f",
+          "ts": "d12f63286529",
+          "lean": "7654fbf4b26a"
+        },
+        "result": "pass",
+        "notes": "Wenzl positivity regime q^{1/2}+q^{-1/2}>2 satisfiable (q≈1.11); class fields jointly inhabitable in principle.",
+        "reviewed_at": "2026-06-25T17:12:47.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1436,6 +1538,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "9f94ea27a52f",
+          "ts": "d12f63286529",
+          "lean": "7654fbf4b26a"
+        },
+        "result": "pass",
+        "notes": "Library canonical is a class (no proof binders); all fields are genuine GNS construction data, none vacuous. (Sibling's tr/[MarkovTrace] are unused under the ∃..,True body, but the sibling is the shadowing stub, not the substantive decl.)",
+        "reviewed_at": "2026-06-25T17:12:47.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

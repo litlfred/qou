@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "warn",
+        "notes": "Narrative Tannaka-Krein torsor/cocycle proof is clear, but Lean offers no strategy -- conclusions axiomatized as class fields and projected; claim_iv encoded vacuously.",
+        "reviewed_at": "2026-06-25T17:10:15.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "notes": "Fibre functors as charts, G-torsor transitions, automatic cocycle, G-gerbe atlas; well-posed Tannakian statement (narrative proof is clean).",
+        "reviewed_at": "2026-06-25T17:10:15.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "warn",
+        "notes": "Standard Tannakian gerbe-of-fibre-functors; Lean adds nothing derivational (field projection), and the gerbe field is vacuous.",
+        "reviewed_at": "2026-06-25T17:10:15.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.5
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1293,6 +1356,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "fail",
+        "notes": "Class holds the 4 sub-claims as fields; thm projects them via anon-constructor (no derivation). claim_iv (exists x, g i j = x) is vacuously true for any g -- gerbe/connectedness claim degenerate. Docstring admits ': ctx.holds := by sorry placeholder'.",
+        "reviewed_at": "2026-06-25T17:10:15.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1322,6 +1402,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "fail",
+        "notes": "Body := <ctx.claim_i_..., ctx.claim_ii_..., ctx.claim_iii_..., ctx.claim_iv_...>; each conjunct IS the class field that is the conclusion. Self-assuming projection (3b-cond item 5).",
+        "reviewed_at": "2026-06-25T17:10:15.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1498,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "notes": "FibreFunctorAtlasContext inhabitable (G trivial, g==1 satisfies i-iii; iv trivial); not contradictory.",
+        "reviewed_at": "2026-06-25T17:10:15.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1544,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bcd0a174ee53",
+          "ts": "422c23b57fbf"
+        },
+        "result": "pass",
+        "notes": "All four class fields consumed by the anon-constructor; [ctx] referenced. No dead binders.",
+        "reviewed_at": "2026-06-25T17:10:15.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

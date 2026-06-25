@@ -1201,6 +1201,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e10884ca6b06",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "pass",
+        "notes": ".md gives the degree-counting argument (each nucleon block raises NF length by its degree) clearly; Lean only assumes the degree match (no GS proof), so realisation is thin.",
+        "reviewed_at": "2026-06-25T17:10:11.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1242,6 +1264,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e10884ca6b06",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "pass",
+        "notes": "Identifying the body-order (cluster) filtration with the GS/jet-prefix filtration term-by-term is a well-posed, substantive obligation (C) of the binding conjecture.",
+        "reviewed_at": "2026-06-25T17:10:11.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
         }
       }
     ],
@@ -1285,6 +1329,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e10884ca6b06",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "pass",
+        "notes": "Bond-order ↔ jet-degree identification is a genuine framing specific to QOU; modest as the GS-filtration grading machinery is upstream.",
+        "reviewed_at": "2026-06-25T17:10:11.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1316,6 +1382,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e10884ca6b06",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "fail",
+        "notes": ".md's crux is body order = jet degree (n-cluster sub-braid has GS filtration degree n). Lean ASSUMES exactly this as struct field body_eq_graded; bodyorder_eq_jet_total derives only the sum identity Σbody=Σgr by one rw+sum_congr. The GS/jet degree-matching content is a hypothesis, not proved. Degenerate.",
+        "reviewed_at": "2026-06-25T17:10:10.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1485,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e10884ca6b06",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "pass",
+        "notes": "BodyOrderJetGrading satisfiable (bodyTerm=gradedTerm, total=Σ gradedTerm; e.g. all zeros). Not contradictory.",
+        "reviewed_at": "2026-06-25T17:10:10.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1432,6 +1534,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e10884ca6b06",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "pass",
+        "notes": "S used; total_eq used in rw, body_eq_graded used in sum_congr. No unused binder.",
+        "reviewed_at": "2026-06-25T17:10:10.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

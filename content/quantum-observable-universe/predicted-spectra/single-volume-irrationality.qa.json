@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "18794f5ab8b5",
+          "ts": "387445e756ec"
+        },
+        "result": "pass",
+        "notes": "Goal: irrationality of Vol(4_1)=2Cl_2(π/3), Vol(5_2), Vol(B_3). Completely open (no hyperbolic 3-mfd volume ever proved irrational); weakest of the irrational⟸ℚ-lin-indep⟸alg-indep chain. Sharply well-posed.",
+        "reviewed_at": "2026-06-25T17:11:51.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.88
+        }
       }
     ]
   },

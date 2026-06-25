@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "warn",
+        "notes": ".md sketches the identification, but the Lean strategy is degenerate: String-tag equality by rfl/decide; the actual algebraic-over-ℤ[q±1] saddle identity is a True placeholder, not attempted.",
+        "reviewed_at": "2026-06-25T17:10:45.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.3
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "notes": "Goal substantive/well-posed: Φ_q (Faddeev, root-of-unity) and Li_2^q (Rogers, real) are saddle regimes of AJ Â_K·J_N=0, related by modular S. Conditional on quantum-Langlands + dim-master-pentagon.",
+        "reviewed_at": "2026-06-25T17:10:45.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "warn",
+        "notes": "Conceptual identification is interesting, but Lean adds no formal content beyond default String fields + True; no algebraic q-Weyl saddle computation.",
+        "reviewed_at": "2026-06-25T17:10:45.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.3
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1325,6 +1391,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "fail",
+        "notes": "Vacuous: 'theorems' prove inst.archimedean_regime=\"root_of_unity\"/\"real_positive\" by rfl — i.e. a String field equals its own default literal. Real content (Φ_q IS the AJ saddle) is the field aj_saddle_compatibility:True:=trivial. Comment admits 'tautology at formal level'.",
+        "reviewed_at": "2026-06-25T17:10:45.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1356,6 +1440,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "fail",
+        "notes": "phi_q_eq_aj_saddle_root_of_unity := rfl reads back the regime String field (default-set to the literal compared); li2 likewise. Projects a trivially-set field; the substantive identification sits in a True field.",
+        "reviewed_at": "2026-06-25T17:10:45.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1421,6 +1523,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "notes": "Classes inhabitable (QuantumAPolynomial with degree_L=1; regulators have default fields). No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:10:45.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1452,6 +1572,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2cdc23035639",
+          "ts": "a9fabecf6d7f",
+          "lean": "56e496e54c28"
+        },
+        "result": "pass",
+        "notes": "[QuantumAPolynomial K] is a required prerequisite for the [PhiQRegulator K]/[Li2QRegulator K] instance to typecheck; K used. Binders structurally needed (vacuity is the True-field masking, not an unused binder).",
+        "reviewed_at": "2026-06-25T17:10:45.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

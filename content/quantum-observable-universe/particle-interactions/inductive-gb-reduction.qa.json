@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "warn",
+        "notes": "md proof (per-step term bound |N|×2×6 + Hecke square rule C²=H_A·C+1) is clear, but Lean only assumes the three bounds on a context class.",
+        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.55
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "pass",
+        "notes": "Polynomial O(A²)/O(A³) scaling of inductive GS nuclear NF (reduce-after-each-mult) with binomial term bound is well-posed and substantive.",
+        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.75
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "pass",
+        "notes": "Inductive reduce-as-you-go GS scaling (10^10 unreduced → 128 NF terms for O-16) is a useful algorithmic contribution.",
+        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1293,6 +1356,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "fail",
+        "notes": "Lean conclusion (NF_size A ≤ C(A-1,⌊(A-1)/2⌋) ∧ n_mult ≤ A² ∧ n_steps ≤ A³) faithfully states the md bounds, but they are posited as class fields h_NF_size/h_multiplications/h_reduction_steps; the GS inductive reduction mechanism (Hecke square rule) producing them is absent — no derivation.",
+        "reviewed_at": "2026-06-25T17:10:51.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1322,6 +1402,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "fail",
+        "notes": "theorem := ⟨ctx.h_NF_size, ctx.h_multiplications, ctx.h_reduction_steps⟩ — conclusion is verbatim the 3 class bound-fields.",
+        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1498,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "pass",
+        "notes": "Complexity bounds (≤ choose, ≤A², ≤A³) jointly satisfiable; no contradiction.",
+        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1544,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a9cc8adb6dc6",
+          "ts": "0fd1f52b1cba"
+        },
+        "result": "pass",
+        "notes": "Only binder [ctx] used; Z, N, A_eq are class data fields not theorem hypotheses.",
+        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

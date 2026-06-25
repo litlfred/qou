@@ -1281,6 +1281,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3e9460b941c0",
+          "ts": "c73ed308b78e",
+          "lean": "8a48ec5efb20"
+        },
+        "result": "pass",
+        "notes": "N_sym is a concrete def ⅟3·(q^4+q^6+q^8); theorems _factored (ring) and _eq (rfl) derive the algebraic forms, not project a class field. Class carries hyps (q_not_root_of_unity + §3b-cond opaque stubs), not the conclusion.",
+        "reviewed_at": "2026-06-25T17:09:59.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-trivial-true": [

@@ -953,6 +953,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9bda98632fac",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "notes": "Goal well-posed/substantive: D24 — Kashiwara crystal of H_n(q) decategorifies at q=1 to Lusztig canonical basis, KL polys as structure constants (KL1979/Lusztig1990/Kashiwara1991). Conditional conjecture. Lean stub is a bare holds:Prop placeholder.",
+        "reviewed_at": "2026-06-25T17:09:40.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ]
   },

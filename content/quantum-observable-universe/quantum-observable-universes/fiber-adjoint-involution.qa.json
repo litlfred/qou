@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "884036f2ca9e",
+          "ts": "1e87926ef9da",
+          "lean": "ec36dce9f9bf"
+        },
+        "result": "warn",
+        "notes": "Structure faithfully captures the 3 parts, but the existence theorem is exists inv,True := sorry -- no proof strategy realised in Lean.",
+        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.4
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "884036f2ca9e",
+          "ts": "1e87926ef9da",
+          "lean": "ec36dce9f9bf"
+        },
+        "result": "pass",
+        "notes": "Frobenius self-duality A=A^v embeds P(V)=G/T as coadjoint orbit in Ad(A) w/ involution + Hom(1,Ad(A))=0; well-posed; structure encodes all 3 md parts.",
+        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.74
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "884036f2ca9e",
+          "ts": "1e87926ef9da",
+          "lean": "ec36dce9f9bf"
+        },
+        "result": "pass",
+        "notes": "Categorical fibre-adjoint involution (CP^1 = S^2 in su(2)) framing of Frobenius self-duality; modest novelty; structure well-designed.",
+        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1327,6 +1393,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "884036f2ca9e",
+          "ts": "1e87926ef9da",
+          "lean": "ec36dce9f9bf"
+        },
+        "result": "fail",
+        "notes": "Theorem fiber_adjoint_involution_exists : exists inv, True := sorry -- sorry-masked AND degenerate-weakened ('exists inv, True' is vacuous; substantive content sits in the FiberAdjointInvolution structure, not proved). md admits 'existence stub exists inv,True pending faithful statement'.",
+        "reviewed_at": "2026-06-25T17:09:47.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1358,6 +1442,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "884036f2ca9e",
+          "ts": "1e87926ef9da",
+          "lean": "ec36dce9f9bf"
+        },
+        "result": "pass",
+        "notes": "Failure mode is sorry + True-weakening, not a hypothesis-field projection; no := ctx.field self-assumption.",
+        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1441,6 +1543,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "884036f2ca9e",
+          "ts": "1e87926ef9da",
+          "lean": "ec36dce9f9bf"
+        },
+        "result": "pass",
+        "notes": "Premises (Category/MonoidalCategory on C, FrobeniusHopfData fh) satisfiable; not contradictory.",
+        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1472,6 +1592,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "884036f2ca9e",
+          "ts": "1e87926ef9da",
+          "lean": "ec36dce9f9bf"
+        },
+        "result": "pass",
+        "notes": "C, fh appear in the statement type; sorry body uses nothing but no dead binder beyond the unproved goal. No unused-binder violation.",
+        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

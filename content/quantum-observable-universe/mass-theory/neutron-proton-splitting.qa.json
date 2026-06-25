@@ -1157,6 +1157,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "35813b473945",
+          "ts": "faed3ef4c50e"
+        },
+        "result": "pass",
+        "notes": ".md gives a clear mechanism (replace one uu sigma by one dd sigma^-1; confinement-energy asymmetry) and the same alpha=m_e·8G binding scale; concise.",
+        "reviewed_at": "2026-06-25T17:11:36.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1196,6 +1217,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "35813b473945",
+          "ts": "faed3ef4c50e"
+        },
+        "result": "pass",
+        "notes": "Goal: Delta m = alpha·|Phi(udd)-Phi(uud)| ~1.302 vs CODATA 1.293 (0.63%); uu->dd crossing (q vs q^-1) makes neutron heavier. Well-posed, correct sign.",
+        "reviewed_at": "2026-06-25T17:11:36.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.75
         }
       }
     ],
@@ -1237,6 +1279,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "35813b473945",
+          "ts": "faed3ef4c50e"
+        },
+        "result": "pass",
+        "notes": "Derives the n-p splitting from quark-ordering q-dilog volume difference with the atomic binding scale; distinctive, sub-1% with no extra fit.",
+        "reviewed_at": "2026-06-25T17:11:36.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1273,6 +1336,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "35813b473945",
+          "ts": "faed3ef4c50e"
+        },
+        "result": "fail",
+        "notes": "Conclusion-as-field: class field impl_splitting carries BOTH the formula and the CODATA-within-1% claim; theorem applies it to self-supplied splitting_active. Nothing derived; splitting_regular is a free Prop gate.",
+        "reviewed_at": "2026-06-25T17:11:36.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1302,6 +1382,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "35813b473945",
+          "ts": "faed3ef4c50e"
+        },
+        "result": "fail",
+        "notes": "neutron_proton_splitting := ctx.impl_splitting (ctx.splitting_active) — returns the class field that IS the conclusion (the (m_n-m_p=...)∧(|...-1.293|<=...) conjunction).",
+        "reviewed_at": "2026-06-25T17:11:36.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1381,6 +1478,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "35813b473945",
+          "ts": "faed3ef4c50e"
+        },
+        "result": "pass",
+        "notes": "Class inhabitable (splitting_regular:=True, splitting_active:=trivial; m_n-m_p tuned to satisfy both conjuncts). No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:11:36.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1410,6 +1524,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "35813b473945",
+          "ts": "faed3ef4c50e"
+        },
+        "result": "pass",
+        "notes": "Only binder [ctx] is used (impl_splitting + splitting_active projected). No dead binder.",
+        "reviewed_at": "2026-06-25T17:11:36.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

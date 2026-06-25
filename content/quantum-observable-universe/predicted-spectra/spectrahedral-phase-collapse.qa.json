@@ -1201,6 +1201,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "69b5044fb992",
+          "ts": "ae0cb1f75475",
+          "lean": "2827aea7e5cf"
+        },
+        "result": "pass",
+        "notes": "Clear: explicit 6-factor Gram det factorization; root of detFactor3=u³+u-1 ⇒ det=0; sign chase for melt; lepton positivity. Honest 'molecular bond H₂ deferred' note for unformalizable part.",
+        "reviewed_at": "2026-06-25T17:12:25.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1242,6 +1264,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "69b5044fb992",
+          "ts": "ae0cb1f75475",
+          "lean": "2827aea7e5cf"
+        },
+        "result": "pass",
+        "notes": "Goal: Frobenius Gram matrix of H_3(q) drops rank at the inverse Supergolden ratio u=1/ψ (ψ³=ψ²+1), giving a nucleon SDP melt; leptons (1D channels, q^n) survive. Well-posed, structurally specific.",
+        "reviewed_at": "2026-06-25T17:12:25.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
         }
       }
     ],
@@ -1285,6 +1329,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "69b5044fb992",
+          "ts": "ae0cb1f75475",
+          "lean": "2827aea7e5cf"
+        },
+        "result": "pass",
+        "notes": "Identifying the nucleon stability threshold with the Supergolden ratio (first super-metallic mean) as an exact Gram-det rank-drop, with a lepton/hadron stability dichotomy, is a substantive structural result.",
+        "reviewed_at": "2026-06-25T17:12:25.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1323,6 +1389,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "69b5044fb992",
+          "ts": "ae0cb1f75475",
+          "lean": "2827aea7e5cf"
+        },
+        "result": "pass",
+        "notes": "Headline Supergolden rank-drop genuinely proved: spectrahedral_phase_collapse(u³+u-1=0):det(gramMatrix u)=0 via gramMatrix_det_eq_factorization+detFactor3=0; hadronic_melt sign-chases the 6-factor det<0 with nlinarith. Sorry-free, faithful to .md theorem.",
+        "reviewed_at": "2026-06-25T17:12:25.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1354,6 +1438,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "69b5044fb992",
+          "ts": "ae0cb1f75475",
+          "lean": "2827aea7e5cf"
+        },
+        "result": "pass",
+        "notes": "No context-class projection; det results computed from the GramMatrixH3Symbolic factorization + nlinarith sign analysis. Real derivation.",
+        "reviewed_at": "2026-06-25T17:12:25.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1437,6 +1539,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "69b5044fb992",
+          "ts": "ae0cb1f75475",
+          "lean": "2827aea7e5cf"
+        },
+        "result": "pass",
+        "notes": "Premises satisfiable: u³+u-1=0 has real root u≈0.6823 (0<u<1); melt regime u³+u-1<0; q>1. Not vacuous.",
+        "reviewed_at": "2026-06-25T17:12:25.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1468,6 +1588,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "69b5044fb992",
+          "ts": "ae0cb1f75475",
+          "lean": "2827aea7e5cf"
+        },
+        "result": "fail",
+        "notes": "Sibling file cross_coupling_non_vanishing (q)(hq:q>1):q^6>0 proved by 'positivity' which never uses hq — a genuine unused hypothesis in a formalization-tracker stand-in. (Headline theorems use all binders; this is the only offender.)",
+        "reviewed_at": "2026-06-25T17:12:25.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

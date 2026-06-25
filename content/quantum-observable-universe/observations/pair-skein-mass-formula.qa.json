@@ -1299,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8320c25212a3",
+          "ts": "62d8470c7dcb"
+        },
+        "result": "pass",
+        "notes": "The (qμ_a+q⁻¹μ_b)/(q^{1/2}+q^{-1/2}) per-crossing weighting is a specific framework construction beyond a restatement.",
+        "reviewed_at": "2026-06-25T17:09:45.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [

@@ -158,6 +158,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "notes": "Crystal-clear: Finset.sum_range_succ + ih + ring induction. Matches the .md derivation exactly.",
+        "reviewed_at": "2026-06-25T17:10:38.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.9
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -197,6 +218,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "notes": "Goal well-posed and true: shell capacity 2n² = q=1 value of bar-even self-square 2[n]_q². Periodic-table caps [2,8,18,32] follow.",
+        "reviewed_at": "2026-06-25T17:10:38.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.88
         }
       }
     ],
@@ -238,6 +280,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "notes": "The q=1 arithmetic is elementary, but framing 2n² as the self-fusion V⊗V of ONE angular object (no second SU(2)) via q-Clebsch-Gordan is a substantive structural claim.",
+        "reviewed_at": "2026-06-25T17:10:38.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -267,6 +330,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "notes": "Sorry-free: orbital_n_squared ∑_{l<n}(2l+1)=n² and shell_capacity_self_square ∑ 2(2l+1)=2n², both by clean induction. Faithfully encodes the q=1 integer leg the .md explicitly designates as 'the part proved in Lean'.",
+        "reviewed_at": "2026-06-25T17:10:38.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -382,6 +462,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "notes": "No premises beyond n:ℕ; holds for all n (n=0 base case included). No contradiction.",
+        "reviewed_at": "2026-06-25T17:10:38.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -411,6 +508,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "61941e6676ca",
+          "ts": "c2b2420744b7"
+        },
+        "result": "pass",
+        "notes": "Each theorem's sole binder (n:ℕ) is the induction variable — used.",
+        "reviewed_at": "2026-06-25T17:10:38.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

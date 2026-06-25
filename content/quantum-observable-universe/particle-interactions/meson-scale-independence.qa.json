@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "4f1907f3b93c"
+        },
+        "result": "warn",
+        "notes": "md rep-theoretic+topological proof (Hopf complement solid torus, Vol=0; character ratios fix m_K/m_π not m_π) is clear, but Lean statement is a degenerate ¬∃ deferred via sorry.",
+        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.5
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "4f1907f3b93c"
+        },
+        "result": "pass",
+        "notes": "Claim that m_π is an independent scale (not derivable from m_e,q₀ via Vol(Hopf)=0) is well-posed and physically substantive — the CAL-3 independence.",
+        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "4f1907f3b93c"
+        },
+        "result": "pass",
+        "notes": "Vol(Hopf)=0 ⇒ no geometric invariant to set meson scale (vs Vol(B₃)=8G for baryons) is a genuine structural distinction grounding CAL-3 independence.",
+        "reviewed_at": "2026-06-25T17:10:53.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1327,6 +1393,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "4f1907f3b93c"
+        },
+        "result": "fail",
+        "notes": "Lean ¬∃f, ∀ m_e q_0 m_pi, m_pi=f m_e q_0 is degenerate: trivially true since m_pi is universally quantified/free (no constant-valued f equals all reals) — captures a cardinality triviality, NOT the Vol(Hopf)=0 representation-theoretic content of the md. Proof is sorry (honest -- Ref).",
+        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1358,6 +1442,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "4f1907f3b93c"
+        },
+        "result": "pass",
+        "notes": "Proof is an honest sorry + -- Ref:[manuscript], not a field projection; no self-assuming structure.",
+        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1441,6 +1543,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "4f1907f3b93c"
+        },
+        "result": "pass",
+        "notes": "No premises (closed statement); vacuously no contradictory hypothesis.",
+        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1472,6 +1592,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "774158651fec",
+          "ts": "bbfb4081d610",
+          "lean": "4f1907f3b93c"
+        },
+        "result": "pass",
+        "notes": "Theorem has no hypothesis binders (closed ¬∃ goal); nothing unused.",
+        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

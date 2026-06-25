@@ -1195,6 +1195,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "pass",
+        "notes": "Detailed clear md proof (SDP-relaxation primal/dual lift, not Cauchy interlacing; explicit cost-compatibility); Lean gates the open SDP-infra steps behind documented conditional classes.",
+        "reviewed_at": "2026-06-25T17:10:27.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1234,6 +1255,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "pass",
+        "notes": "Well-posed: dressing-chain σ_F monotone + marginal-gain peaks at shell closures → noble-gas terminality (chemical inertness); honestly flags the noble-gas identification as conditional on the open 2n²/Madelung derivation.",
+        "reviewed_at": "2026-06-25T17:10:27.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
         }
       }
     ],
@@ -1275,6 +1317,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "pass",
+        "notes": "Categorical origin of chemical inertness / ionisation peaks via SDP dual shadow prices is a substantive, non-trivial construction.",
+        "reviewed_at": "2026-06-25T17:10:27.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.76
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1311,6 +1374,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "pass",
+        "notes": "Lean formalizes only the consistent content (claim1 monotone, claim2 μ≥2) via conditional classes; explicitly does NOT assert the σ_F local-max. No :True/sorry/native_decide; faithful to the hedged md.",
+        "reviewed_at": "2026-06-25T17:10:26.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1340,6 +1420,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "fail",
+        "notes": "Headline ShellClosureStability := noble_gas_multi_operator D.shell q h projects the [NobleGasMultiOperator] field which IS its conclusion μ≥2; shell_closure_monotone:=hi.monotone likewise. Theorems return the class field = conclusion (§3b-cond rule-5).",
+        "reviewed_at": "2026-06-25T17:10:26.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1419,6 +1516,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "pass",
+        "notes": "nElectrons∈nobleGasMagic (e.g. 2) satisfiable; HasFrobeniusStability/NobleGasMultiOperator classes inhabitable; no contradictory premise.",
+        "reviewed_at": "2026-06-25T17:10:27.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1448,6 +1562,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "84f0f4805d0a",
+          "ts": "ad0db80f70f4"
+        },
+        "result": "pass",
+        "notes": "Headline binders (D,[HasBindingMultiplicity],q,h,[NobleGasMultiOperator]) all used by noble_gas_multi_operator; shell_closure_terminality consumes both monotone+multiplicity instances.",
+        "reviewed_at": "2026-06-25T17:10:27.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
