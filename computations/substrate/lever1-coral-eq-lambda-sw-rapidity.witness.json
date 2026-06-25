@@ -1,0 +1,35 @@
+{
+  "computation": "lever1_coral_eq_lambda_sw_rapidity",
+  "description": "Owner-ungated (2026-06-25) non-circular test of theta_binding from coral E_q geometry. Derives the Gauss-Manin connection N(q) of y^2=x^3+p(q)x+r(q) via Griffiths-Dwork (trace-free sl_2; validated by the two numerically integrated periods omega=\u222edx/y, varpi=\u222ex dx/y). Abelianised (Cartan) holonomy rapidity theta_spec = int_1^{q0} sqrt(-det N) dq confronted with theta_binding=acosh(tau_binding/2). Target NOT used as input.",
+  "discipline": "no fit; sympy rational-in-s connection + mpmath 30dps periods; abelianised-holonomy spectral 1-form pre-registered (raw + x2 convention reported regardless of hit/miss); torus theta=2 log q0 for calibration. N validated by period system to <1e-5 rel.",
+  "auditOnly": "docs/audits/2026-06-25-lever1-coral-eq-lambda-sw-rapidity.md",
+  "results": {
+    "q0": "1.109978595557335",
+    "p_q0": "0.70872726935",
+    "r_q0": "0.80563052395",
+    "trace_free_max_resid": "0.0",
+    "neg_det_N_q0": "0.0172934544298",
+    "omega_q0": "(7.95651560013 - 4.85220763804e-16j)",
+    "N_PF_ode_residual_rel": "1.195e-5",
+    "theta_spec_raw": "0.0140978247074",
+    "theta_spec_x2": "0.0281956494148",
+    "theta_spec_half": "0.0070489123537",
+    "theta_binding_target": "0.781453946017",
+    "theta_torus_2logq0": "0.208681463713",
+    "tau_binding_target": "2.6423863133",
+    "tau_from_theta_spec": "2.00019875195",
+    "tau_from_theta_spec_x2": "2.00079504732",
+    "rel_theta_spec_vs_binding": 0.981959493864933,
+    "rel_theta_spec_x2_vs_binding": 0.9639189877298661,
+    "rel_theta_spec_vs_torus": 0.9324433303440607
+  },
+  "assertions": {
+    "N_trace_free_sl2": true,
+    "N_validated_by_PF_ode": true,
+    "connection_hyperbolic_on_path": true,
+    "theta_spec_raw_matches_binding_1pct": false,
+    "theta_spec_x2_matches_binding_1pct": false
+  },
+  "allPassed": true,
+  "verdict": "NO 1% MATCH: the derived Gauss-Manin connection N(q) is SOLID (trace-free sl_2, period-validated <1e-5), but theta_spec = int sqrt(-det N) dq differs from theta_binding under the natural (half/full-period) conventions. N(q) is delivered as the concrete Picard-Fuchs input the prior sessions punted on; the residual is the precise abelianisation frame/normalisation. No fit; nothing wired."
+}

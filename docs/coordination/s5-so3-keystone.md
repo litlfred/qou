@@ -251,3 +251,25 @@ lands sorry-free + axiom-free in
   refuted** (the keystone delivers the O(1) generation skeleton, not the 2×10⁻⁷ fine shift). No fit, no
   production wiring, no registry tier change. Audit
   [`docs/audits/2026-06-24-keystone-reeb-restriction-lean-formalization.md`](../audits/2026-06-24-keystone-reeb-restriction-lean-formalization.md).
+---
+
+**Owner reversal extended to the λ_SW side; coral E_q Gauss–Manin connection derived (2026-06-25, [#2757](https://github.com/litlfred/qou/pull/2757)).**
+**Reversal.** The narrow 2026-06-19 reversal (W_λ-index DG build) is **extended by explicit owner
+sign-off (2026-06-25)** to the **λ_SW Seiberg–Witten-period side** of the same keystone — the coral
+`E_q` elliptic factor. Scope unchanged otherwise: a parameter-free geometric computation, **not** a
+fit-based q₀ derivation; the "no 7th fit-based Δ_λ ansatz" rule still stands.
+**Result (no fit, nothing wired).** First explicit write-down of the family's Picard–Fuchs / Gauss–Manin
+connection `N(q)` for `E_q: y²=x³+p(q)x+r(q)` (Griffiths–Dwork; the object the M-workplan + prior probes
+named but never computed):
+- `N(q) = −1/(2D)·[[A,Bc],[Cc,−A]]`, `D=(4a³+27b²)/6`, validated: **`tr N=0`** (re-derives `det B=1`
+  geometrically) and **`ω=∮dx/y` satisfies the implied 2nd-order PF ODE to `1.2×10⁻⁵`**; `−det N>0`
+  (hyperbolic) on `[1,q₀]`.
+- **(a)-negative:** the abelianised **transport** integral `θ_spec=∫₁^{q₀}√(−det N)dq = 0.0141 ≠
+  θ_binding=0.7815` (undershoots **~55×**, below even `θ_torus=2log q₀=0.2087`) — a *short transport
+  cannot source the large rapidity*. Scope (a): rules out the transport reading, does **not** exclude the
+  curve or the keystone; `N(q)` is a permanent correct contribution.
+- **Keystone sharpened:** `θ_binding` is **neither** the loop monodromy (`SL₂(ℤ)`, integer trace; prior
+  session) **nor** the path transport (too small; this session) of `N(q)` — so it is a **curve-intrinsic
+  `λ_SW` period/regulator at `q₀`**, still open. Residual (i) MTC-matching unaffected.
+Probe `lever1_coral_eq_lambda_sw_rapidity.py`; audit
+[`docs/audits/2026-06-25-lever1-coral-eq-lambda-sw-rapidity.md`](../audits/2026-06-25-lever1-coral-eq-lambda-sw-rapidity.md).
