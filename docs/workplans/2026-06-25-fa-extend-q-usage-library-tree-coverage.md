@@ -1,5 +1,14 @@
 # Task for a `folio-assistant` agent: extend the §7c QA checkers to cover the qou Lean **library tree**
 
+> **✅ RESOLVED / SUPERSEDED (2026-06-25).** A folio-assistant agent acted on this and reported back:
+> (1) **candidate-2 coverage already existed** — the checkers read the resolved library file via
+> `lean.ref`, so a library decl referenced by a block is already audited (the "gap" in §2 below was a
+> wrong inference; see the corrected audit `docs/audits/2026-06-25-lean-library-tree-7c-coverage-gap.md`).
+> (2) The **real hole was orphans** (library files referenced by no block), now **closed**: `q-usage-audit`
+> sweeps orphans content-based and emits `orphan_findings`. Steps 1–3 below are **historical**; the
+> remaining qou-side work is **triaging the content-verified orphan findings** (in the corrected audit),
+> not a checker rewrite. Kept for the record.
+
 **Audience:** an agent working in **`litlfred/folio-assistant`** (the platform repo that holds the
 content pipeline + QA checkers). You likely have **no `qou` context** — this doc is self-contained.
 
