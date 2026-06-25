@@ -52,11 +52,4 @@ class NSCounterexample where
   ns_counterexample_holds :
     ∀ M : ℝ, ∃ t x : ℝ, t < singularityTime ∧ M < velocityProfile t x
 
-    Ref: [manuscript] §Counter-example to Navier–Stokes regularity via q → 1 degeneration, `conj:ns-counterexample` -/
-class NSCounterexample : Prop where
-  /-- The q-deformed Navier-Stokes equation admits a
-      counterexample (initial data + finite blowup time) at some
-      specific dimension . -/
-  counterexample_data : ∃ d : ℕ, d ≥ 3
-
 end QOU.FluidDynamics

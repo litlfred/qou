@@ -59,11 +59,4 @@ class BlowupYekutieli where
   blowup_yekutieli_holds :
     ∀ u₀, ∃ c : ℝ, blowupTime u₀ = c * (yekutieliLevel u₀ : ℝ) ^ yekutieliExponent
 
-    Ref: [manuscript] §Blowup mechanism as Yekutieli lifting obstruction in the brane tower, `conj:blowup-yekutieli` -/
-class BlowupYekutieli : Prop where
-  /-- Yekutieli's blowup theorem holds for the q-NS family:
-      there exists a blowup time T* > 0 at which the H¹ norm
-      diverges. -/
-  blowup_time : ∃ T_star : ℝ, T_star > 0
-
 end QOU.FluidDynamics
