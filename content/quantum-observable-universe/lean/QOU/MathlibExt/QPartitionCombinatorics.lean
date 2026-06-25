@@ -282,4 +282,41 @@ theorem qSchur_H2_content_bridge (q : ℝ) (hq : 1 < q) :
     contentSum [2] = 1 ∧ contentSum [1, 1] = -1 := by
   exact ⟨contentSum_two, contentSum_one_one⟩
 
+/-! ## Gaussian binomial coefficient (q-binomial)
+
+Consolidates the third standard q-analog primitive alongside `qBracket`
+(`[n]_q`) and `qFactorial` (`[n]_q!`). Bean `5ldf` (epic `08a2`). -/
+
+/-- The **Gaussian binomial coefficient** (q-binomial)
+    `[n choose k]_q = [n]_q! / ([k]_q! · [n-k]_q!)`. -/
+noncomputable def qBinom (q : ℝ) (n k : ℕ) : ℝ :=
+  qFactorial q n / (qFactorial q k * qFactorial q (n - k))
+
+/-- `[n choose 0]_q = 1` (for `q > 1`, so `[n]_q! ≠ 0`). -/
+theorem qBinom_zero_right {q : ℝ} (hq : 1 < q) (n : ℕ) :
+    qBinom q n 0 = 1 := by
+  unfold qBinom
+  rw [qFactorial_zero, Nat.sub_zero, one_mul]
+  exact div_self (qFactorial_ne_zero hq n)
+
+/-- `[n choose n]_q = 1` (for `q > 1`). -/
+theorem qBinom_self {q : ℝ} (hq : 1 < q) (n : ℕ) :
+    qBinom q n n = 1 := by
+  unfold qBinom
+  rw [Nat.sub_self, qFactorial_zero, mul_one]
+  exact div_self (qFactorial_ne_zero hq n)
+
+/-- The Gaussian binomial is **positive** for `q > 1`. -/
+theorem qBinom_pos {q : ℝ} (hq : 1 < q) (n k : ℕ) :
+    0 < qBinom q n k := by
+  unfold qBinom
+  exact div_pos (qFactorial_pos hq n)
+    (mul_pos (qFactorial_pos hq k) (qFactorial_pos hq (n - k)))
+
+/-- **Symmetry** `[n choose k]_q = [n choose n-k]_q` when `k ≤ n`. -/
+theorem qBinom_symm {q : ℝ} (n k : ℕ) (hk : k ≤ n) :
+    qBinom q n k = qBinom q n (n - k) := by
+  unfold qBinom
+  rw [Nat.sub_sub_self hk, mul_comm (qFactorial q k) (qFactorial q (n - k))]
+
 end QOU.MathlibExt.QPartitionCombinatorics
