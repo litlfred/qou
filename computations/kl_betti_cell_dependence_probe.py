@@ -36,7 +36,7 @@ cell, so it cannot resolve the cell-ambiguity this probe exposes.
 Primitives (sgn, dim, χ, y, RSK) copied verbatim from
 `delta_lambda_binding_full_evaluation.py`.
 """
-import sys, json, math, time
+import sys, json, math, time, ast
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from collections import defaultdict
@@ -132,12 +132,12 @@ def main():
 
     print(f"\n{'shape':16s} {'f^l':>4s} {'#cells':>6s} {'Bmin':>5s} {'Bmax':>5s} {'inv?':>5s} {'hook?':>6s}")
     print("-"*56)
-    for shape in sorted(table, key=lambda k: sum(eval(k)), reverse=True):
+    for shape in sorted(table, key=lambda k: sum(ast.literal_eval(k)), reverse=True):
         r = table[shape]
         print(f"{shape:16s} {r['f_lambda']:>4d} {r['n_cells']:>6d} {r['betti_min']:>5d} "
               f"{r['betti_max']:>5d} {str(r['cell_invariant']):>5s} {str(r['is_hook']):>6s}")
 
-    inv_shapes = sorted([s for s, r in table.items() if r["cell_invariant"]], key=lambda k: sum(eval(k)), reverse=True)
+    inv_shapes = sorted([s for s, r in table.items() if r["cell_invariant"]], key=lambda k: sum(ast.literal_eval(k)), reverse=True)
     n_cell_dependent = sum(1 for r in table.values() if not r["cell_invariant"])
     bulk_not_inv = any((not r["cell_invariant"]) for r in table.values() if not r["is_hook"])
     # NB: hooks are NOT uniformly cell-invariant either — e.g. (4,1,1) ranges 10..26.
@@ -145,8 +145,10 @@ def main():
     hooks_also_vary = any((not r["cell_invariant"]) for r in table.values() if r["is_hook"])
 
     # ---- deuteron sum under f^λ, min-cell B_λ, max-cell B_λ ----
-    d  = json.load(open(HERE/'atom-chi-rust-d.witness.json'))['data']['atom']['by_partition']
-    lp = json.load(open(HERE/'rho-k-h3a-lp-dual.witness.json'))['data']['per_lambda']
+    with open(HERE/'atom-chi-rust-d.witness.json', encoding='utf-8') as f:
+        d = json.load(f)['data']['atom']['by_partition']
+    with open(HERE/'rho-k-h3a-lp-dual.witness.json', encoding='utf-8') as f:
+        lp = json.load(f)['data']['per_lambda']
     y  = {tuple(e['partition']): mpf(str(e['y_lambda_at_q0'])) for e in lp}
 
     sum_f = sum_min = sum_max = mpf(0)
