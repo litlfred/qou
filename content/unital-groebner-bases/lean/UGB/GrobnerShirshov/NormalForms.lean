@@ -224,64 +224,20 @@ private theorem lexEncoding_lt_of_lexLt_same_length :
         rw [heq, hlen]
         omega
 
--- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
--- Well-foundedness of lexLt on `List SU2Gen`.
--- The ordering has ordinal type ω⁴ (4-element alphabet).
---
--- The proof requires showing `Acc lexLt a` for all `a`.  The standard
--- construction (cf. Coq's `Lexicographic_Exponentiation`) uses double
--- `Acc.rec`: outer on `Acc (rank <) head`, inner on `Acc lexLt tail`.
--- In the head-rank-decrease case (`y.rank < x.rank`), the tail `ys` is
--- unconstrained, so `Acc lexLt ys` for arbitrary `ys` is needed.  This
--- requires the FULL well-foundedness result, making the construction
--- mutually recursive between (1) proving `Acc lexLt l` by structural
--- induction on `l` and (2) proving `Acc lexLt (a :: l)` by rank
--- induction on `a`.  Encoding this mutual recursion in Lean 4 requires
--- Mathlib's `List.Lex.isWellFounded` or a verbose `Acc.intro` term.
---
--- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
--- Well-foundedness of lexLt via the standard Acc-based double induction:
--- outer induction on head generator rank, inner induction on tail accessibility.
--- Cf. Coq's Lexicographic_Exponentiation for the classical construction.
-
-private theorem rank_lt_4 (g : SU2Gen) : g.rank < 4 := by
-  cases g <;> simp [SU2Gen.rank]
-
-/-- The rank ordering on SU2Gen is well-founded (ranks are natural numbers). -/
-private def rankRel : SU2Gen → SU2Gen → Prop := fun a b => a.rank < b.rank
-
-private theorem rankRel_wf : WellFounded rankRel :=
-  InvImage.wf SU2Gen.rank Nat.lt_wfRel.wf
-
-/-- `lexLt` implies `List.Lex rankRel`. -/
-private theorem lexLt_implies_listLex :
-    ∀ (a b : Monomial SU2Gen), lexLt a b → List.Lex rankRel a b := by
-  intro a
-  induction a with
-  | nil =>
-    intro b hlex
-    cases b with
-    | nil => exact absurd hlex (by simp [lexLt])
-    | cons y ys => exact List.Lex.nil
-  | cons x xs ih =>
-    intro b hlex
-    cases b with
-    | nil => exact absurd hlex (by simp [lexLt])
-    | cons y ys =>
-      simp [lexLt] at hlex
-      rcases hlex with hrank | ⟨heq, hrest⟩
-      · exact List.Lex.rel hrank
-      · have hxy : x = y := SU2Gen.rank_injective x y heq
-        subst hxy
-        exact List.Lex.cons (ih ys hrest)
-
--- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
--- Well-foundedness via List.Lex preserving well-foundedness of rankRel.
--- TODO: replace sorry with correct Lean 4.24 API name for List.Lex WF
-theorem lexLt_wf : WellFounded lexLt :=
-  Subrelation.wf
-    (fun {a b} h => lexLt_implies_listLex a b h)
-    (sorry)
+-- NOTE (2026-06-25): there is deliberately **no** `lexLt_wf`. The *pure*
+-- lexicographic order `lexLt` is NOT well-founded. With `[] < (_ :: _)`,
+-- prepending the rank-0 generator `g₀` before a common suffix strictly
+-- decreases the word, giving the infinite descending chain
+--   `[g₁] > [g₀,g₁] > [g₀,g₀,g₁] > …`
+-- so `WellFounded lexLt` is false (and `List.Lex rankRel` is likewise not
+-- well-founded — which is why no Mathlib lemma supplies the missing step;
+-- such a lemma would be unsound). The admissible, well-founded order is
+-- `degLexLt` below (compare total degree / word length first, then `lexLt`
+-- among equal-length words, where lex *is* well-founded); its `degLexLt_wf`
+-- is proved sorry-free and is what the `WellFoundedRelation` instance uses.
+-- A prior `lexLt_wf` carrying an unfillable `sorry` (plus its now-dead private
+-- scaffolding `rank_lt_4` / `rankRel` / `rankRel_wf` / `lexLt_implies_listLex`)
+-- was removed here. See docs/audits/2026-06-25-ugb-lexlt-wf-false-as-stated.md.
 
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 theorem degLexLt_wf : WellFounded degLexLt :=

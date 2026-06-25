@@ -282,8 +282,9 @@ noncomputable def mkDegLexOrder {G : Type u} [DecidableEq G]
     -- is the length-restricted lex order on `(map rank ·) : Monomial G
     -- → List ℕ`. Mathlib provides `Nat.lt_wfRel.wf.prod_lex` for the
     -- outer pair; the inner length-restricted lex needs `List.Shortlex`
-    -- (or `lexEncoding` à la NormalForms.lean's `degLexLt_wf`, which
-    -- itself currently sorrys at `lexLt_wf` for the same reason).
+    -- (or `lexEncoding` à la NormalForms.lean's `degLexLt_wf`, which is
+    -- proved sorry-free there via degree-first `Prod.Lex`; note pure lex is
+    -- NOT well-founded — see that file's note where `lexLt_wf` was removed).
     -- Closing this requires running against Mathlib to confirm the
     -- post-rename API name (candidates: `List.Shortlex.wf`,
     -- `WellFoundedRelation.shortlex`, or hand-rolling via strong
