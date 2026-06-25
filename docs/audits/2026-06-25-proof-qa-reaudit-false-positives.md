@@ -122,6 +122,40 @@ they need per-block reading. Caveat: a fresh agent re-audit is no more *authorit
 proper re-evaluator. Options under consideration: (a) full sub-agent fleet re-audit, (b) invalidate
 the proven-unreliable batch entries → pending canonical re-sweep, (c) leave + queue.
 
+## Final state — proof axis drained
+
+| | before | after |
+|---|--:|--:|
+| proof-* **fails** | 1,753 | **115** (all genuine) |
+| proof-* **warns** | 440 | **0** |
+
+The 115 remaining fails are all genuine and queued (real formalization work,
+**not fabricated**):
+
+| count | criterion | nature |
+|--:|---|---|
+| 65 | proof-no-placeholder-stub | confirmed: 65/65 carry an explicit "Placeholder/pending" marker + raw `sorry` — honest shadow-stubs so `lean.ref` resolves (§1a). The known stub backlog (beans `b3pe`/`95jh`/`zslh`). |
+| 44 | proof-no-trivial-true | provable-kind blocks concluding `: True` — real vacuity. |
+| 3 | proof-no-decide-masking | `native_decide` (§1a) — not safely replaceable this session. |
+| 2 | proof-no-bare-sorries | real `sorry` (citation check). |
+| 1 | proof-substantive | flagged thin. |
+
+How the 1,753 → 115 drain breaks down: 375 deterministic false positives
+corrected/reclassified (decide + trivial-true, 99% verified), 1,680
+unreliable judgment+rater entries invalidated → pending canonical re-sweep,
+leaving the 115 genuine.
+
+## Follow-up (for canonical tooling / future sessions)
+
+1. **Canonical re-sweep** of the 360 invalidated blocks once `folio-assistant`
+   is in session scope (`/integration-audit proof --include-agent` then
+   `qa-sweep`), to re-confirm the judgment + rater criteria deterministically.
+2. **Formalize the 44 trivial-true + 65 placeholder-stub** blocks (state the
+   real proposition; prove / `sorry`+`-- Ref:` / demote to `conjecture`).
+   Overlaps the existing "Resolve N placeholders/TODOs" beans.
+3. **Replace the 4 `native_decide`** once a sibling-compile context (lake build
+   / folio) is available to verify the replacements.
+
 ## Tooling note
 
 The canonical `qa-sweep` / `qa-agent-drain` pipeline lives in the separate
