@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "warn",
+        "notes": ".md gives a clear mechanism (q-Laplacian spectrum [k]_q²ℏ_q/L², exponential mode damping, geometric tail) but Lean postulates the bound as a field — none of the convergence argument is realized in Lean.",
+        "reviewed_at": "2026-06-25T17:14:30.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "notes": "Well-posed: brane-tower T(ρ)=Σℏ_q^{2n}Δ⁽ⁿ⁾(ρ) converges as geometric series in q⁻²ℏ_q²<1, dominated by local single-jet term. Plausible analytic statement (q-integer exp growth offset by ℏ_q^{2n} prefactor).",
+        "reviewed_at": "2026-06-25T17:14:30.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "notes": "Brane-tower (infinite jet prolongation) convergence via q-Laplacian exponential mode-damping, reducing non-local composite operators to a dominant local term, is a substantive analytic claim.",
+        "reviewed_at": "2026-06-25T17:14:30.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1293,6 +1356,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "fail",
+        "notes": "Placeholder stub: the boxed bound |T_ρ−ℏ_q²Δ⁽¹⁾|≤ℏ_q⁴·ρ_L2·q⁻²/(1−q⁻²) is POSTULATED as class field ctx.remainder_bound; theorem just rewrites via ratio_eq and returns it. The q-Laplacian decay / geometric-series convergence is not derived.",
+        "reviewed_at": "2026-06-25T17:14:30.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1322,6 +1402,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "fail",
+        "notes": "Body: rw[← ctx.ratio_eq]; exact ctx.remainder_bound — returns the class field remainder_bound that IS the conclusion (modulo a definitional ratio rewrite). Pure projection.",
+        "reviewed_at": "2026-06-25T17:14:30.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1498,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "notes": "BraneTowerQLaplacianDecayContext inhabitable (e.g. T_rho=ℏ_q²·Δ⁽¹⁾ ⇒ LHS=0≤RHS; ratio_eq defines geometric_ratio). Satisfiable.",
+        "reviewed_at": "2026-06-25T17:14:30.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1544,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f576ecc3de21",
+          "ts": "c1d1edb4cd38"
+        },
+        "result": "pass",
+        "notes": "Sole binder [ctx] used: both remainder_bound and ratio_eq fields are consumed.",
+        "reviewed_at": "2026-06-25T17:14:30.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

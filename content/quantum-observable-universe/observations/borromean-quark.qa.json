@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "071d159a6d32",
+          "ts": "f3dcffe5770a",
+          "lean": "bde8b0982bfa"
+        },
+        "result": "pass",
+        "notes": "Conjecture: baryon = Borromean link of 3 unknots (color tubes r,g,b), mass from linking Vol=7.32772 not constituents (99% binding, QCD-analogous), up/down from crossing orientation, confinement from Brunnian property. Rich, well-posed; §3b-cond class has a faithful instance (proton/neutron_partition, baryon_mass_from_volume proved).",
+        "reviewed_at": "2026-06-25T17:14:14.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ]
   },
