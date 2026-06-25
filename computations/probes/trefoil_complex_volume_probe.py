@@ -178,7 +178,9 @@ def main() -> None:
     }
 
     out = script_path.parent / "trefoil-complex-volume-probe.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    # Explicit utf-8 so the write does not depend on the locale default
+    # encoding (would risk UnicodeEncodeError under LANG=C / POSIX).
+    out.write_text(json.dumps(witness, indent=2) + "\n", encoding="utf-8")
     print(f"allPassed={all_passed}")
     print(f"  tr_M(trefoil)@q0 = {data['trM_trefoil_at_q0']}  (|.|={data['abs_trM_trefoil_at_q0']})")
     print(f"  Jones(3_1)@q0    = {data['jones_trefoil_at_q0']}")
