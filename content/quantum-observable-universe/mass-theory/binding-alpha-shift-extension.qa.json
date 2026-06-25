@@ -1201,6 +1201,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "notes": "Clear: factor B through α_shift at a force-carrier knot, prove conditional uniqueness; candidate (p,k) table + concrete instance; Phase-3 minimisation target named.",
+        "reviewed_at": "2026-06-25T17:08:50.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1242,6 +1264,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "notes": "B(A)=m_e·ρ_0·α_shift(T(p_A,k_A)) routed through the proved α_shift=k(p-1) is well-posed; uniqueness conditional on the knot ID is substantive. (p_A,k_A) honestly flagged open.)",
+        "reviewed_at": "2026-06-25T17:08:50.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
         }
       }
     ],
@@ -1285,6 +1329,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "notes": "Reuses α_shift=k(p-1) to scaffold A≥3 binding as a per-rep Reeb-phase uniqueness; candidate-knot identifications are hypotheses not derivations, so modest.",
+        "reviewed_at": "2026-06-25T17:08:50.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1316,6 +1382,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "notes": "§3b-cond: classes BindingPerRepReebPhase(factors: B(A)=m_e·ρ_0·αShiftAt A) + BindingForceCarrierKnot(matches_alpha_shift) carry the binding formula as conjectural input; binding_unique_via_alpha_shift DERIVES uniqueness B=B' via funext+rw. .md honest that (p_A,k_A) ID is Phase-3 open. No sorry.",
+        "reviewed_at": "2026-06-25T17:08:50.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1485,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "notes": "Classes satisfiable: lightNucleiForceCarrierKnot instance (matches_alpha_shift := rfl) + a BindingPerRepReebPhase instance witness them; factors consistent. Not contradictory.",
+        "reviewed_at": "2026-06-25T17:08:50.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1432,6 +1534,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4a4b78db05cf",
+          "ts": "7d011309058a",
+          "lean": "fdcbf8cb00fa"
+        },
+        "result": "pass",
+        "notes": "binding_unique_via_alpha_shift uses all of [hB],[hB'],[hFC],[hFC'] in the rw chain; binding_subsingleton likewise. p,k threaded through the force-carrier classes. No unused binder.",
+        "reviewed_at": "2026-06-25T17:08:50.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

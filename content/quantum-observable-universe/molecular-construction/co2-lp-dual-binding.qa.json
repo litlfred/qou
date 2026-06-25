@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c542823f856c",
+          "ts": "2b2df246d680"
+        },
+        "result": "warn",
+        "notes": "No Lean strategy (3 impl_* projections). .md gives qualitative repulsion-minimisation argument for (2,2) vs (3,1), not a derivation of the LP optimum.",
+        "reviewed_at": "2026-06-25T17:08:35.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.35
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c542823f856c",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "notes": "Goal meaningful (VSEPR linear CO2 as Φ₁-minimal symmetric (2,2) bonding) but optimality postulated; n_strands=66 is a bookkeeping constant; conditional on a conjecture.",
+        "reviewed_at": "2026-06-25T17:08:35.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c542823f856c",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "notes": "Casting VSEPR electron-pair-repulsion minimisation literally as Φ₁ minimisation over braid strand orderings is a genuinely novel reading.",
+        "reviewed_at": "2026-06-25T17:08:35.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1293,6 +1356,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c542823f856c",
+          "ts": "2b2df246d680"
+        },
+        "result": "fail",
+        "notes": "Placeholder stub: linear O=C=O / (2,2) optimality ASSUMED via opaque ctx.co2_lp_dual_bound; theorem projects k1+k2≤4 ∧ (k1=2∧k2=2) ∧ n_strands=66 via postulated impl_* fields. No LP solve in Lean.",
+        "reviewed_at": "2026-06-25T17:08:35.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1322,6 +1402,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c542823f856c",
+          "ts": "2b2df246d680"
+        },
+        "result": "fail",
+        "notes": "Body ⟨ctx.impl_carbon_valence h, ctx.impl_symmetric_double_bond h, ctx.impl_strand_count h⟩: each conjunct is a postulated implication field applied to the hypothesis — projection, no derivation.",
+        "reviewed_at": "2026-06-25T17:08:35.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1498,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c542823f856c",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "notes": "Co2LpDualBindingContext inhabitable; co2_lp_dual_bound any true Prop; satisfiable.",
+        "reviewed_at": "2026-06-25T17:08:35.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1544,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c542823f856c",
+          "ts": "2b2df246d680"
+        },
+        "result": "pass",
+        "notes": "Sole binder [ctx] used (h:=ctx.ground_state_active fed through 3 impl_* fields).",
+        "reviewed_at": "2026-06-25T17:08:35.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

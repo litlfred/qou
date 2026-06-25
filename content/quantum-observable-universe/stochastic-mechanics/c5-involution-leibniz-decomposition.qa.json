@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "522bed504661",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "notes": "Clear: prove b² identity, rewrite to skein form, evaluate at silver/golden/classical, prove bounds+monotonicity. Each Lean theorem mirrors a narrative proof in .md.",
+        "reviewed_at": "2026-06-25T17:08:51.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "522bed504661",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "notes": "Well-posed: c_5 = -b²-1/2 decomposition + its algebraic properties (silver-ratio outlier, classical limit, sign bounds). .md honest about 2.4% residual / conjectural match.",
+        "reviewed_at": "2026-06-25T17:08:51.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "522bed504661",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "notes": "Substantial: silver-ratio Pell-Lucas inert-11 outlier, Wedderburn non-sign-dim/2 identification, h²-factorization (anti×anti=sym), averaging-resonance rung table.",
+        "reviewed_at": "2026-06-25T17:08:51.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1320,6 +1386,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "522bed504661",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "notes": "~24 sorry-free theorems, all faithful: hoefsmit b²=1-1/[2]_q² (field_simp;ring), [2]_q²=h²+4, silver-ratio c5=-11/8, bounds/even/antitone/Wedderburn. c5Decomposition is a def; the 'is the right c_5' match is openly a structural identification (.md), not a false theorem. No masking.",
+        "reviewed_at": "2026-06-25T17:08:51.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1405,6 +1489,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "522bed504661",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "notes": "q≠0 satisfiable; silver-ratio uses concrete q=1+√2. No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:08:51.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1436,6 +1538,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "522bed504661",
+          "ts": "2600c10fbbfb",
+          "lean": "1b561d93eb2e"
+        },
+        "result": "pass",
+        "notes": "Each theorem uses its q/hq/h binders; hq:q≠0 consumed in field_simp proofs. No unused binder.",
+        "reviewed_at": "2026-06-25T17:08:51.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

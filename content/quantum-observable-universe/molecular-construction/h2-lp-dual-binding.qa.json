@@ -1175,6 +1175,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "5effc0f8be48"
+        },
+        "result": "warn",
+        "notes": "Lean is a single impl_* projection of a definitional Φ₁ identity. .md has a clear primal/dual LP + numeric evaluation, but the Lean encodes none of the optimisation.",
+        "reviewed_at": "2026-06-25T17:08:54.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.42
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1214,6 +1235,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "5effc0f8be48"
+        },
+        "result": "pass",
+        "notes": "Goal well-posed (H2 covalent binding via LP dual, y_cov*=2Φ₁^H−Φ₁^H2>0, explicit 50-dps numerics) but the Lean only states the volume sum identity; conditional on a conjecture.",
+        "reviewed_at": "2026-06-25T17:08:53.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
         }
       }
     ],
@@ -1255,6 +1297,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "5effc0f8be48"
+        },
+        "result": "pass",
+        "notes": "Covalent H2 bond as the shadow price of a Hopf-linking constraint in a Markov-trace LP, with strong-duality = binding energy, is a substantive novel construction.",
+        "reviewed_at": "2026-06-25T17:08:54.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1291,6 +1354,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "5effc0f8be48"
+        },
+        "result": "fail",
+        "notes": "Placeholder stub: theorem proves only the volume identity Φ₁^H2=Σln|V̂_i| (i=0..2), ASSUMED via opaque ctx.h2_lp_dual_bound and projected from impl_*. The .md LP-dual selection / binding-energy claim is not encoded.",
+        "reviewed_at": "2026-06-25T17:08:53.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1320,6 +1400,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "5effc0f8be48"
+        },
+        "result": "fail",
+        "notes": "Body := ctx.impl_h2_lp_dual_binding h: single postulated implication field applied to the ground-state hypothesis directly yields the conclusion equation — projection, no derivation.",
+        "reviewed_at": "2026-06-25T17:08:53.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1399,6 +1496,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "5effc0f8be48"
+        },
+        "result": "pass",
+        "notes": "H2LpDualBindingContext inhabitable; h2_lp_dual_bound any true Prop; satisfiable.",
+        "reviewed_at": "2026-06-25T17:08:53.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1428,6 +1542,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "6f51103fb73c",
+          "ts": "5effc0f8be48"
+        },
+        "result": "pass",
+        "notes": "Sole binder [ctx] used (h:=ctx.ground_state_active fed to impl_h2_lp_dual_binding).",
+        "reviewed_at": "2026-06-25T17:08:53.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

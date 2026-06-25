@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "506d228871e0",
+          "ts": "6ef0ab961147"
+        },
+        "result": "warn",
+        "notes": "Lean is pure field projection; md gives a physical interpretation (character sum counts both fermions) but no derivation of the +1 in Lean.",
+        "reviewed_at": "2026-06-25T17:08:58.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.4
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "506d228871e0",
+          "ts": "6ef0ab961147"
+        },
+        "result": "pass",
+        "notes": "Well-posed: identifies the +1 in Q as m_{e+}/m_e from γγ→e-e+ Breit-Wheeler pair vertex, applies in A=1/even-A regimes; not a fitting constant.",
+        "reviewed_at": "2026-06-25T17:08:58.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "506d228871e0",
+          "ts": "6ef0ab961147"
+        },
+        "result": "pass",
+        "notes": "Identifying the additive +1 with the positron action (not a fit) is a substantive interpretive claim tied to the parity-regime split.",
+        "reviewed_at": "2026-06-25T17:08:58.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1293,6 +1356,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "506d228871e0",
+          "ts": "6ef0ab961147"
+        },
+        "result": "pass",
+        "notes": "Conjunction faithfully encodes md Q=Σ_char·m_e+m_e + regime applicability (pair-creation⇒correction=m_e, else 0) over ℝ; no :True/sorry/native_decide.",
+        "reviewed_at": "2026-06-25T17:08:58.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1322,6 +1402,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "506d228871e0",
+          "ts": "6ef0ab961147"
+        },
+        "result": "fail",
+        "notes": "thm := ⟨ctx.claim_i_corrected_Q, ctx.claim_ii…1, .2⟩; claim_i_corrected_Q IS the headline Q-value identity, projected from a class field. No derivation.",
+        "reviewed_at": "2026-06-25T17:08:58.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1498,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "506d228871e0",
+          "ts": "6ef0ab961147"
+        },
+        "result": "pass",
+        "notes": "claim_i (Q=Σ·m_e+m_e) and claim_ii (regime-conditional correction) jointly satisfiable; no contradiction.",
+        "reviewed_at": "2026-06-25T17:08:58.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1544,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "506d228871e0",
+          "ts": "6ef0ab961147"
+        },
+        "result": "pass",
+        "notes": "Sole binder [ctx] used (3 projections); is_pair_creation/applied_correction are class data not theorem binders.",
+        "reviewed_at": "2026-06-25T17:08:58.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

@@ -1159,6 +1159,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8994617b04d1",
+          "ts": "d7747648215d"
+        },
+        "result": "warn",
+        "notes": "No Lean proof strategy (abstract predicates, iff axiomatised as a field then projected); .md gives only a phenomenological strategy sketch, no rigorous proof.",
+        "reviewed_at": "2026-06-25T17:08:51.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.42
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1198,6 +1219,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "8994617b04d1",
+          "ts": "d7747648215d"
+        },
+        "result": "pass",
+        "notes": "Underlying goal (metallic iff residual sub-Hopf-link incompleteness + low crossing energy + open site; λ(R) index) is a coherent well-posed chemistry-knot correspondence.",
+        "reviewed_at": "2026-06-25T17:08:51.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
         }
       }
     ],
@@ -1239,6 +1281,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8994617b04d1",
+          "ts": "d7747648215d"
+        },
+        "result": "pass",
+        "notes": ".md residual-linking-number λ(R) classification + Reidemeister-II transport conductivity is a substantive novel framing; Lean encoding is vacuous.",
+        "reviewed_at": "2026-06-25T17:08:51.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.62
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1275,6 +1338,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8994617b04d1",
+          "ts": "d7747648215d"
+        },
+        "result": "fail",
+        "notes": "Self-assuming projection: class field claim_metallic_iff IS the proposition's iff (IsMetallic ↔ incomplete∧lowE∧openSite); theorem := ctx.claim_metallic_iff a projects it, derives nothing. §3b-cond rule-5 violation; predicates fully abstract.",
+        "reviewed_at": "2026-06-25T17:08:51.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1304,6 +1384,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "8994617b04d1",
+          "ts": "d7747648215d"
+        },
+        "result": "fail",
+        "notes": "Proof body := ctx.claim_metallic_iff a — the goal iff equals the class field verbatim.",
+        "reviewed_at": "2026-06-25T17:08:51.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1383,6 +1480,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8994617b04d1",
+          "ts": "d7747648215d"
+        },
+        "result": "pass",
+        "notes": "MetallicCharacterContext satisfiable (trivial instance with the iff true by construction); premises not contradictory.",
+        "reviewed_at": "2026-06-25T17:08:51.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1412,6 +1526,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "8994617b04d1",
+          "ts": "d7747648215d"
+        },
+        "result": "pass",
+        "notes": "Binder a:Atom is fed to claim_metallic_iff; ctx instance used. No idle binders (vacuity is via self-projection, separate criterion).",
+        "reviewed_at": "2026-06-25T17:08:51.000Z",
+        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
