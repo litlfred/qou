@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Homology.Complex
+import Mathlib.Algebra.Ring.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.RigidDualizingComplex
 
@@ -9,8 +12,6 @@ LaTeX label: `def:rigid-dualizing-complex`
 
 set_option autoImplicit false
 
-import Mathlib.Algebra.Homology.Complex
-import Mathlib.Algebra.Ring.Basic
 
 namespace QOU.AlgebraicSubstrate
 

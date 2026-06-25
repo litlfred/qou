@@ -1,3 +1,5 @@
+import Mathlib.Data.Nat.Basic
+
 /-!
 # QOU.BraidKnot.WenzlAOperator — the Wenzl A-operator A^λ_{μν}(I)
 
@@ -26,7 +28,6 @@ Ref: [manuscript] prop:lr-coefficient-hecke
      [hoefsmit1974] http://hdl.handle.net/2429/19407
 -/
 
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.BraidKnot
 

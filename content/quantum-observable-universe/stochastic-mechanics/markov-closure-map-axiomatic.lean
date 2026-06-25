@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import QOU.BraidKnot.BraidLinkTypes
 
 /-!
 # QOU.BraidKnot.markov_closure_map_axiomatic
@@ -23,7 +24,6 @@ LaTeX label: `rem:markov-closure-map-axiomatic` (Track C Step B).
 -- Sibling-chapter dependency: `Link` inductive (with `hopfLink`
 -- constructor) defined in `braid-link-types.lean`.
 -- Ref: [manuscript] rem:braid-link-types
-import QOU.BraidKnot.BraidLinkTypes
 
 namespace QOU.BraidKnot
 

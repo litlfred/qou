@@ -1,3 +1,5 @@
+import Mathlib.Data.Nat.Basic
+
 /-!
 # QOU.BraidKnot.CrystalRMatrixSubLemma — operator-valued sub-lemma 2.1
 
@@ -33,7 +35,6 @@ Ref: [manuscript] prop:crystal-r-matrix-sub-lemma
 Local audit: docs/audits/2026-05-16-sublemma-2-1-h9-phase-1.md
 -/
 
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.BraidKnot
 

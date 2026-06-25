@@ -1,3 +1,8 @@
+import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Analysis.SpecialFunctions.Pow.NNReal
+import Mathlib.Data.Fin.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.hasse_weil_bound
 
@@ -19,10 +24,6 @@ See `GroundRingAnnotations.lean`.
 
 set_option autoImplicit false
 
-import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Analysis.SpecialFunctions.Pow.NNReal
-import Mathlib.Data.Fin.Basic
 
 open Complex Real
 

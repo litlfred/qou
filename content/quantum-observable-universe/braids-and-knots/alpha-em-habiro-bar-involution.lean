@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Tactic.Ring
+
 /-!
 # α_EM Habiro element: bar-involution fixed point + special values
 
@@ -29,8 +32,6 @@ subject to `q · qi = 1` keeps everything inside `CommRing` + a single
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
 
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
 

@@ -1,3 +1,6 @@
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Tactic.Ring
+
 /-!
 # Habiro–Markov bridge: Pochhammer factorisation
 
@@ -9,8 +12,6 @@ factorisation `(q;q)_m = (u;u)_m · Π(1 + u^k)`.
 -- Ref: [habiro2000] https://doi.org/10.2140/gt.2000.4.227
 -/
 
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
 

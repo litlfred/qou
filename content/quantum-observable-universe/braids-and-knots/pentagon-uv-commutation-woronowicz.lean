@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.Algebra.Module.Basic
+
 /-!
 # Pentagon-UV-commutation closure via Woronowicz left-covariant calculus
 
@@ -46,8 +49,6 @@ algebraic structure (corollary).
 --      DOI: 10.1007/978-1-4612-0783-2
 -/
 
-import Mathlib.Algebra.Ring.Defs
-import Mathlib.Algebra.Module.Basic
 
 namespace QOU.BraidKnot.PentagonUVCommutation
 

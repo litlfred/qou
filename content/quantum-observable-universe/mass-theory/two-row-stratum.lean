@@ -1,3 +1,5 @@
+import QOU.BraidKnot.TwoRowStratum
+
 /-!
 Sibling Lean file for `def:two-row-stratum`.
 
@@ -10,4 +12,3 @@ the `.ts`/`.md`) is satisfied.
 -- Ref: [manuscript] §Two-row Wedderburn stratum — content block
 -/
 
-import QOU.BraidKnot.TwoRowStratum

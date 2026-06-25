@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+import Mathlib.Algebra.Quaternion
+
 /-!
 # Quaternion algebra from Hecke eigenspace decomposition
 
@@ -56,8 +59,6 @@ LaTeX label: `prop:quaternion-from-hecke-eigenspaces`
 -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -- Ref: [majid1995] https://doi.org/10.1017/CBO9780511613104
-import Mathlib.Tactic
-import Mathlib.Algebra.Quaternion
 
 namespace QOU.BraidKnot
 

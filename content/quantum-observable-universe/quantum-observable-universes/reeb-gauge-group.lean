@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.GroupTheory.Subgroup.Basic
+
 /-!
 # QOU.ReebGaugeGroup — The Reeb gauge group U₁(R)
 
@@ -10,9 +14,6 @@ LaTeX label: `def:reeb-gauge-group`
 - [manuscript] §2/reeb-gauge-group
 -/
 
-import Mathlib.Algebra.Group.Basic
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.GroupTheory.Subgroup.Basic
 
 namespace QOU
 

@@ -1,3 +1,5 @@
+import QOU.BraidKnot.FrobeniusSelfDualityForcesLPDualExtraction
+
 /-!
 # Spin involution + LP-dual invariance (generic theorem)
 
@@ -31,7 +33,6 @@ exactly equal LP-dual binding-energy shadow prices.
 -- Ref: [kassel1995] §VIII.4, §XII.2
 -- Ref: [murphy1992] J. Algebra 152 (1992), 492–513
 
-import QOU.BraidKnot.FrobeniusSelfDualityForcesLPDualExtraction
 
 namespace QOU.BraidKnot
 

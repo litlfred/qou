@@ -1,3 +1,6 @@
+import Mathlib.GroupTheory.Perm.Sign
+import Mathlib.Data.ZMod.Basic
+
 /-!
 # `thm:pontryagin-dual-coxeter-character` — Pontryagin self-duality on $S_n^{\mathrm{ab}}$
 
@@ -42,8 +45,6 @@ Refs:
 - [manuscript] braids-and-knots/pontryagin-dual-coxeter-character.md
 -/
 
-import Mathlib.GroupTheory.Perm.Sign
-import Mathlib.Data.ZMod.Basic
 
 namespace QOU.BraidsAndKnots
 

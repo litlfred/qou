@@ -1,3 +1,6 @@
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+
 /-!
 # Meson EM sinh-channel correction: closed-form identity
 
@@ -23,8 +26,6 @@ rigorous derivation of the truncation order from first principles.
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
 
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
 

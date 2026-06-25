@@ -1,3 +1,6 @@
+import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.CategoryTheory.Category.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.ReebEpsilon — The Reeb infinitesimal `ε`
 
@@ -27,8 +30,6 @@ LaTeX label: `def:reeb-epsilon`
 
 set_option autoImplicit false
 
-import Mathlib.CategoryTheory.Monoidal.Category
-import Mathlib.CategoryTheory.Category.Basic
 
 open CategoryTheory MonoidalCategory
 

@@ -1,3 +1,6 @@
+import Mathlib.Topology.ContinuousFunction.Basic
+import Mathlib.Algebra.Algebra.Basic
+
 /-!
 # QOU.Observations.AlgebraicGnsEmbedding.HasMarkovGnsEmbedding — sibling stub
 
@@ -13,8 +16,6 @@ Canonical declaration: `QOU.Observations.AlgebraicGnsEmbedding.HasMarkovGnsEmbed
 -- Ref: [manuscript] quantum-observable-universe/observations/algebraic-gns-embedding.ts
 -/
 
-import Mathlib.Topology.ContinuousFunction.Basic
-import Mathlib.Algebra.Algebra.Basic
 
 namespace QOU.Observations.AlgebraicGnsEmbedding
 

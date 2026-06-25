@@ -1,3 +1,6 @@
+import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+import Mathlib.Analysis.SpecialFunctions.Complex.Log
+
 /-!
 # The q-Laplacian spectral tower and its root-of-unity truncation
 
@@ -30,8 +33,6 @@ The vanishing `[κ]_q = 0` is the numerator identity
 -- Ref: [reshetikhin1991] https://doi.org/10.1007/BF01239527
 -/
 
-import Mathlib.Analysis.SpecialFunctions.Complex.Circle
-import Mathlib.Analysis.SpecialFunctions.Complex.Log
 
 namespace QOU.QuantumObservableUniverses
 

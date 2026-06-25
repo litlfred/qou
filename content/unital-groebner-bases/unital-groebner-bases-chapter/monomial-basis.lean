@@ -1,3 +1,7 @@
+import Mathlib.Data.List.Basic
+import Mathlib.Data.Finset.Basic
+import Mathlib.Algebra.Ring.Basic
+
 /-!
 # Monomials, monomial bases, and leading terms
 
@@ -22,9 +26,6 @@ The paper's Definition 3.1–3.3 corresponds to these declarations.
 -- Re-export the relevant types for documentation purposes.
 -- In the Lean build these are imported via QOU.GrobnerShirshov.
 
-import Mathlib.Data.List.Basic
-import Mathlib.Data.Finset.Basic
-import Mathlib.Algebra.Ring.Basic
 
 namespace QOU.GrobnerShirshov.ContentBlock
 
