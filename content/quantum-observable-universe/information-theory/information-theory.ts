@@ -203,6 +203,17 @@ section({
       ],
     }),
     section({
+      title: "Connections to the Swampland Program",
+      label: "sec:swampland-connections",
+      blocks: [
+        "swampland-connections-intro",
+        "swampland-no-global-symmetry",
+        "swampland-distance-conjecture",
+        "swampland-island-of-consistency",
+        "swampland-emergent-coupling",
+      ],
+    }),
+    section({
       title: "Quantum Geometry Variants",
       label: "sec:info-geometry-variants",
       blocks: [
