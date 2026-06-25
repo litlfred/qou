@@ -1,0 +1,47 @@
+name: lean-content-siblings
+
+# Diff-scoped compile-validity gate for Lean files.
+#
+# Content-block `.lean` siblings (content/<paper>/<chapter>/*.lean) live
+# OUTSIDE the CI-built `lake build QOU` target (the qou lakefile globs
+# srcDir="." = the lean/ tree only), so they are never compile-checked and
+# accumulate latent breakage: a type-erroring `:= trivial` value
+# (trivial : True cannot inhabit a data type) or an `import` after a `/-!`
+# module docstring (illegal Lean-4 import order). Neither is caught by the
+# vacuity audit (which keys on a True *conclusion*) nor by the library build.
+#
+# This gate runs the lean-vacuity-axiom-audit scanner in `--fail-on` mode on
+# ONLY the .lean files a PR changes, failing on the two guaranteed-error
+# (compile-validity) classes. Diff-scoping is deliberate: ~40 pre-existing
+# import-order defects exist tree-wide (tracked as backlog in
+# docs/audits/2026-06-07-conjecture-triage.md §K); a whole-tree gate would
+# block every PR. This blocks NEW drift instead. The high-recall vacuity
+# categories stay warn-only (agent-adjudicated per lean-proof-vacuity-audit).
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: oven-sh/setup-bun@v2
+      - name: Compute changed .lean files
+        id: changed
+        run: |
+          base="origin/${{ github.base_ref }}"
+          git fetch origin "${{ github.base_ref }}" --depth=1 || true
+          files=$(git diff --name-only --diff-filter=d "$base"...HEAD -- '*.lean' | tr '\n' ' ')
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+          echo "changed .lean files: ${files:-<none>}"
+      - name: Compile-validity gate (changed files only)
+        if: steps.changed.outputs.files != ''
+        run: |
+          bun run content/pipeline/lean-vacuity-axiom-audit.ts \
+            ${{ steps.changed.outputs.files }} \
+            --quiet \
+            --fail-on proof-no-trivial-type-mismatch,lean-import-after-content
