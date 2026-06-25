@@ -42,6 +42,7 @@ values on the finitely many cells of `μ` — which is what makes `numSYT` via
 the type infinite, and `Nat.card` would collapse to `0`). Surjectivity onto
 `{0, …, |μ| − 1}` is *omitted*: it is forced by `inj_on` together with
 `μ.cells.card = μ.card`, so stating it would be redundant. -/
+@[ext]
 structure StandardYoungTableau (μ : YoungDiagram) where
   /-- The entry at cell `(i, j)`. -/
   entry : ℕ → ℕ → ℕ
@@ -68,6 +69,27 @@ Open brick-1 targets (next session, build-capable env): a `Finite`/`Fintype`
 instance for `StandardYoungTableau`, the base case `numSYT ⊥ = 1`, and the FRT
 identity `numSYT_mul_hookProduct` below. -/
 noncomputable def numSYT (μ : YoungDiagram) : ℕ := Nat.card (StandardYoungTableau μ)
+
+/-- Base case: the empty diagram has a single standard tableau (the empty filling),
+so `numSYT ⊥ = 1`. This also confirms the `zero_off` normalisation makes `numSYT`
+count correctly — without it the type would be infinite and `Nat.card` would give
+`0`, not `1`. -/
+theorem numSYT_bot : numSYT (⊥ : YoungDiagram) = 1 := by
+  have hempty : ∀ i j : ℕ, (i, j) ∉ (⊥ : YoungDiagram) := fun i j => by simp
+  have huniq : Unique (StandardYoungTableau (⊥ : YoungDiagram)) :=
+    { default :=
+        { entry := fun _ _ => 0
+          lt_card := fun i j h => absurd h (hempty i j)
+          zero_off := fun _ _ _ => rfl
+          inj_on := fun i j _ _ h _ _ => absurd h (hempty i j)
+          row_strict := fun i j h => absurd h (hempty i (j + 1))
+          col_strict := fun i j h => absurd h (hempty (i + 1) j) }
+      uniq := fun t => by
+        ext i j
+        simp [t.zero_off i j (hempty i j)] }
+  haveI := huniq
+  rw [numSYT]
+  exact Nat.card_unique
 
 /-- The **hook length** of cell `(i, j)` in `μ`: arm (cells strictly to the right in
 row `i`) + leg (cells strictly below in column `j`) + the cell itself. -/
