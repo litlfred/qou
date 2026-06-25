@@ -114,6 +114,9 @@ import QOU.Braiding.non_self_intersection
 -- Keystone geometric-angle fingerprint: the ℓ=1 icosahedral character on the
 -- 5-fold rotation is the golden ratio (parameter-free; validates irrepToRotation).
 import QOU.BraidsAndKnots.IcosahedralCharacterGoldenRatio
+-- D15 Pachner–Pentagon (conj:pachner-pentagon-borromean): §3b conjecture-class
+-- with sorry-free consumer theorems. Wired so CI type-checks it (not an orphan).
+import QOU.BraidsAndKnots.PachnerPentagonBorromean
 import QOU.Information.p_bandwidth_bound
 import QOU.ParticleInteractions.atomic_lp_stability
 import QOU.ParticleInteractions.silver_ratio_beta_decay_null
