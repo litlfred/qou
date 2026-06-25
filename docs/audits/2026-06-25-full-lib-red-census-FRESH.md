@@ -26,13 +26,13 @@ cache-artifact (missing Mathlib olean) / **genuinely-RED** (real source error wi
 **SYNTAX (6)** — mechanical (λ→`lam`, dangling `/--`→`/-!`, import-position, abs notation):
 - `QOU/CategoricalDynamics.lean:18` — `/--` docstring before `variable` (→ comment) — **DRAINED (#2787)** (3 docstrings + 3 `noncomputable`)
 - `QOU/BraidKnot/hoefsmit_scattering_pipeline.lean:49` — `fun λ =>` (reserved `λ`; → `lam`) — **DRAINED (#2787)** (+ `import Real.Basic`)
-- `QOU/Information/photon_threading_mass.lean:33` — `|q − q⁻¹|` abs notation unparsed
+- `QOU/Information/photon_threading_mass.lean:33` — `|q − q⁻¹|` abs notation unparsed (needed `import Real.Basic`) — **DRAINED (#2787)**
 - (+ 3 more in the prior census's SYNTAX list still pending verification on this run)
 
 **unknown-identifier / unknown-constant (7)** — Mathlib API rot (loogle the new name):
 - `QOU/Archimedean/BorromeanQuark.lean:35` — `Finset.univ.sum` (root cause was missing `Fintype.Fin`/`VecNotation` imports, NOT API rot) — **DRAINED (#2787)**
 - `QOU/Archimedean/integer_stability.lean:71` — `inv_lt_one_iff_of_pos` → `inv_lt_one_of_one_lt₀` — **DRAINED (#2787)**
-- `QOU/BraidKnot/CrossedModuleEulerCharacteristic.lean:94` — `List.join`
+- `QOU/BraidKnot/CrossedModuleEulerCharacteristic.lean:94` — `List.join` → `List.flatten` — **DRAINED (#2787)**
 - `QOU/BraidsAndKnots/QSchurYLambdaClosedForm.lean:91` — `Finset.range`
 - `QOU/BraidsAndKnots/YLambdaQSchur.lean:172` — `yLambdaQSchur_bar_mullineux` (local decl)
 - `QOU/HyperellipticQuintic/CheckAbs.lean:3` — `Complex.abs` (removed dead `#check`) — **DRAINED (#2787)**
@@ -43,8 +43,9 @@ cache-artifact (missing Mathlib olean) / **genuinely-RED** (real source error wi
 - `QOU/BraidKnot/BraidWordBasisGram.lean:119` — **DRAINED (#2787)** (drop `decide`)
 - `QOU/BraidsAndKnots/UnitModulusEigenvalue.lean:44` — **DRAINED (#2787)** (drop `ring`)
 
-**unknown-tactic (3):** `QOU/BraidKnot/ConditionalClasses.lean:64`,
-`QOU/MassEndomorphism/MassEndomorphismConjecture.lean:75`, `QOU/Mathlib/SpectralSequence.lean:58`
+**unknown-tactic (3):** `QOU/BraidKnot/ConditionalClasses.lean:64` — **DRAINED (#2787)** (missing tactic import; layered with lemma-rename + div_self),
+`QOU/MassEndomorphism/MassEndomorphismConjecture.lean:75` — **DRAINED (#2787)** (missing `Tactic.Ring`),
+`QOU/Mathlib/SpectralSequence.lean:58` (still red — multi-error, deferred)
 
 **failed-to-synthesize / typeclass-stuck (8)** — per-proof instance debugging:
 `BindingConcentration:66`, `DepthStratifiedFrobeniusReciprocity:48`,
@@ -62,7 +63,7 @@ cache-artifact (missing Mathlib olean) / **genuinely-RED** (real source error wi
 
 **TIMEOUT (1):** `QOU/Archimedean/PauliWitness/Witness12B.lean` (>300 s; perf/maxHeartbeats)
 
-## Drained in this PR — 8 of 35 → GREEN (27 remaining)
+## Drained in this PR — 12 of 35 → GREEN (23 remaining)
 
 All lean-direct verified (exit 0, no `error:`; `LEAN_PATH` over the restored
 `lake-cache/qou-v4-24-0` Mathlib oleans).
@@ -83,16 +84,30 @@ All lean-direct verified (exit 0, no `error:`; `LEAN_PATH` over the restored
    `Mathlib.Data.Fin.VecNotation` imports (NOT `Finset.univ.sum` API rot); also `hq`→`_hq`.
 8. **`hoefsmit_scattering_pipeline.lean`** — `fun λ` → `fun lam` in the def body (the class
    field was already renamed); added `import Mathlib.Data.Real.Basic` (typeclass-stuck on `ℝ`).
+9. **`photon_threading_mass.lean`** — added `import Mathlib.Data.Real.Basic` to register the
+   `|·|` abs notation (was a parse error `unexpected token '|'`, not elaboration).
+10. **`MassEndomorphismConjecture.lean`** — added `import Mathlib.Tactic.Ring` (`ring` was an
+    unknown tactic; the file imported only `Algebra.Ring.Basic`). Pre-existing dupNamespace
+    warnings remain (class name = namespace), not errors.
+11. **`CrossedModuleEulerCharacteristic.lean`** — `List.join` → `List.flatten` (v4.24); the two
+    downstream `native_decide` trace checks `(-12, 0)` now evaluate cleanly (genuine finite
+    computation the `List.join` error had poisoned — not a vacuity-dodge).
+12. **`ConditionalClasses.lean`** — 3 layered errors: added `import Mathlib.Tactic`
+    (`linarith`/`field_simp` unknown); `div_lt_one_of_lt` → `(div_lt_one _).mpr`; closed the
+    residual `(q-1)/(q-1) = 1` via `div_self (sub_ne_zero.mpr (ne_of_gt hq))`.
 
-**Layering confirmed.** 4 of these 8 had a 2nd error behind the first (CategoricalDynamics:
-docstrings → noncomputable; BorromeanQuark: import → unused-var; hoefsmit: λ → Real import;
-tau_leptonic: ring → trivial). Per-file lean-direct verification caught each before commit.
-Two initial class-guesses were wrong: BorromeanQuark (`Finset.univ.sum` was a missing-import,
-not API rot) and hoefsmit (the real 2nd blocker was a missing `ℝ` import).
+**Layering confirmed.** 6 of these 12 had a 2nd (or 3rd) error behind the first
+(CategoricalDynamics: docstrings → noncomputable; BorromeanQuark: import → unused-var; hoefsmit:
+λ → Real import; tau_leptonic: ring → trivial; CrossedModule: List.join → poisoned native_decide;
+ConditionalClasses: tactic-import → lemma-rename → unsolved div_self). Per-file lean-direct
+verification caught each before commit. Two initial class-guesses were wrong: BorromeanQuark
+(`Finset.univ.sum` was a missing-import, not API rot) and hoefsmit (a missing `ℝ` import).
 
 ## Lesson + next step
 
-Reds are **layered** (tau_leptonic had 2 distinct errors). Draining the remaining 34 is
-careful per-file work — already underway incrementally on main (the +48 red→green commits).
+Reds are **layered** (tau_leptonic had 2 distinct errors; ConditionalClasses had 3). Draining
+the remaining 23 is careful per-file work — the easy mechanical classes (SYNTAX, missing-import,
+clear renames, redundant-tactic) are now largely drained; what remains skews toward genuine
+proof-breakage (`ring`/`unsolved goals`, multi-`Function expected`, `rewrite failed`, 1 timeout).
 A clean fixpoint re-run with the corrected `lean_red_census.py` will (a) build the
 missing-dep chains and (b) surface any hidden reds behind them, for the complete count.
