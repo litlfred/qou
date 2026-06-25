@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import QOU.MathlibExt.QPlancherel
 
 /-!
 # QOU.BraidKnot.AlphaKCategoricalClosure
@@ -15,15 +16,38 @@ faithful relational fields (existence / selection / CAL-3 direction);
 the `noncomputable instance`'s `sorry` represents the open conjecture
 itself, NOT a missing proof.
 
+**Mathlib-infra pass (2026-06-25, Tier 1).** The stratum prefactors
+$\alpha_k$ are the Markov-paired Wedderburn weights $W_\lambda =
+d_q(\lambda)^2 / Z_q(k)$; that weight is now the **real**
+`QOU.MathlibExt.QPlancherel.measure`. `alphaKStratumWeight` below is that
+measure and `alphaKStratumWeight_nonneg` is a **sorry-free proof** of its
+positivity (from `QPlancherel.measure_nonneg`). The closed-form
+resummation conjecture itself stays the open content.
+
 Numerical infrastructure (substrate-level evaluation at $q_0$):
 `computations/derived_masses.py` — `e_0_full_mev()` (geometric form),
-`e_0_full_li2q_mev()` (symmetric $\mathrm{Li}_2^q$ form),
-`_li2q_symmetric(z, q, terms=200)`.
+`e_0_full_li2q_mev()` (symmetric $\mathrm{Li}_2^q$ form).
 
 LaTeX label: `conj:alpha-k-categorical-closure`
 -/
 
 namespace QOU.BraidKnot
+
+open QOU.MathlibExt.QPlancherel
+
+/-- The **Wedderburn weight** $W_\lambda = d_q(\lambda)^2 / Z_q(k)$ that
+    the Markov pairing assigns to the stratum prefactors $\alpha_k$,
+    realised as the canonical $q$-Plancherel measure. -/
+noncomputable def alphaKStratumWeight (Λ : Type) [QDimension Λ ℝ]
+    [HasPartitionFunction Λ ℝ] (lam : Λ) (k : ℕ) : ℝ :=
+  measure (R := ℝ) (Λ := Λ) lam k
+
+/-- The stratum Wedderburn weights are non-negative — a **proved**
+    (sorry-free) consequence of $q$-Plancherel positivity. -/
+theorem alphaKStratumWeight_nonneg (Λ : Type) [QDimension Λ ℝ]
+    [HasPartitionFunction Λ ℝ] (lam : Λ) (k : ℕ) :
+    0 ≤ alphaKStratumWeight Λ lam k :=
+  measure_nonneg (R := ℝ) (Λ := Λ) lam k
 
 /-- **Categorical-closure conjecture** for the stratum prefactors
     $\alpha_k$ in the unified mass formula.
@@ -63,12 +87,7 @@ class AlphaKCategoricalClosure (q : ℝ) : Type where
     itself (per AGENTS.md §3b): that the categorical $\alpha_k$
     resummation exists, selects the geometric family, and closes CAL-3 in
     the right direction. Downstream conditional theorems take
-    `[AlphaKCategoricalClosure q]` as an explicit instance hypothesis.
-
-    Path to a stronger result: per-irrep $\chi_\lambda$ closed forms
-    enable analytic resummation of the Markov-paired $\alpha_k$ at $H_n$
-    for $n \geq 4$; the empirical $H_3$ data is insufficient to select
-    between the geometric and $\mathrm{Li}_2^q$ families. -/
+    `[AlphaKCategoricalClosure q]` as an explicit instance hypothesis. -/
 -- Ref: [manuscript] conj:alpha-k-categorical-closure
 -- Ref: [manuscript] prop:alpha-k-derivation-procedure
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01239013
