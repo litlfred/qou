@@ -32,6 +32,8 @@ work; see audit
 
 namespace QOU.BraidKnot
 
+noncomputable section
+
 /-- **³He empty-constraint SDP** at `heckeDim 9`. -/
 abbrev helium3_emptySDP := nucleusEmptySDP 9
 
@@ -68,4 +70,5 @@ abbrev helium3_optimum_is_zero := nucleus_optimum_is_zero 9
 /-- ³He objective at optimum equals 0. -/
 abbrev helium3_objAt_optimum_eq_zero := nucleus_objAt_optimum_eq_zero 9
 
+end  -- noncomputable section
 end QOU.BraidKnot
