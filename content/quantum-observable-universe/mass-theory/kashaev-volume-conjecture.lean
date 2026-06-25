@@ -1,3 +1,5 @@
+import QOU.PhiQPiece -- expects sibling phi-q-piece.lean to be in scope
+
 /-!
 # QOU.Kashaev — Kashaev volume conjecture as a typeclass
 
@@ -23,8 +25,6 @@ etc.) where the conjecture is actually proved.
 - [manuscript] Ch 3 §sec:calibration-algebraic-mass /
   kashaev-volume-conjecture
 -/
-
-import QOU.PhiQPiece -- expects sibling phi-q-piece.lean to be in scope
 
 namespace QOU.Kashaev
 
@@ -81,7 +81,7 @@ noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q]
   -- limit, not the per-piece values.
   -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
   --                   kashaev-volume-conjecture
-  trivial
+  sorry
 
 theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) :
