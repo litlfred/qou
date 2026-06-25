@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-25T10:53:42.654607+00:00",
-  "commitSha": "f167b7ca1dcba48e392b7b8051495f513893207b",
+  "computedAt": "2026-06-25T12:04:32.417100+00:00",
+  "commitSha": "939a9bd391bd05092f74fb99245a1b2b91bd9954",
   "assertions": [
     {
       "name": "ratio_convergence",
@@ -50,14 +50,22 @@
       "passed": true,
       "tolerance": 0.0,
       "source": "physical lw ratio tail 3.6926 > λ₊ 2.1846"
+    },
+    {
+      "name": "lw_classical_matches_2764",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "lw(c,q→1) = (1,4/3,5/2,26/5) = #2764 Lever1Depth2Exclusion classical weights"
     }
   ],
   "allPassed": true,
-  "durationMs": 39,
+  "durationMs": 19,
   "computation": "binding-recurrence-spectral-bridge",
   "scriptFile": "binding_recurrence_spectral_bridge_probe.py",
-  "scriptHash": "eb975052faf6",
-  "scriptCommitSha": "e748e062fc61461eeafa09a9808dacbe16b7443c",
+  "scriptHash": "b7a61105dc92",
+  "scriptCommitSha": "70b9f23045605b5039ba0c41dd3314c6d295e5b2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -144,6 +152,12 @@
       "0.522089",
       "0.689065",
       "0.816047"
+    ],
+    "lw_classical_q1": [
+      "1.0",
+      "1.333333333",
+      "2.5",
+      "5.2"
     ]
   },
   "caveats": [
