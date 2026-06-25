@@ -73,9 +73,13 @@ session via `binding_selection_rule_tau_closure.py`:
 - depth-2 kernel `R(q,x) = x² − τx + 1`, `det = 1`;
 - τ **algebraically fixed** (no fit) by selection-rule anchors
   `τ = 3(3q⁴+8q²+3)/(4q(q+1)²)`, **τ(q₀) = 2.6423863133015**;
-- characteristic roots `λ₊ ≈ 2.1846 > 1` (the extensive-growth mechanism),
-  `λ₋ ≈ 0.4577`; `lambdaPlus_gt_one` Lean-proved sorry-free
-  (`BindingRecurrenceSpectral.lean`).
+- characteristic roots `λ₊ ≈ 2.1846 > 1`, `λ₋ ≈ 0.4577`; `lambdaPlus_gt_one`
+  Lean-proved sorry-free (`BindingRecurrenceSpectral.lean`). **Calibration
+  (sibling #2752):** `λ₊` confirms extensivity *qualitatively* but is a
+  fixed-τ *seed artifact* — the physical `lw(n)` sequence is **super-geometric**
+  (grows faster than `λ₊`), so `λ₊` is a lower bound, not the literal growth
+  rate. The qualitative "binding is extensive" conclusion is *reinforced*, not
+  weakened.
 - Residual open ID: `a_D^(n) = lw(n−1)` geometric↔algebraic (conj #1765) — and
   the geometric origin of τ (below). No new kernel-class search is warranted
   (formalize-first already pruned it: the spectral invariant λ₊(τ)>1 is proved
@@ -113,6 +117,29 @@ piece has its geometric origin in **one owner-gated object** (front 3). So:
 - ρ-free *ratios* (Lever 3, bean `thb7`) remain the one parameter-free
   *falsifiable-prediction* avenue (A=3 mirror `B(³H)/B(³He)` ≈ +1.67% banked;
   extending to ⁷Li/⁷Be needs H_21 χ — native-gated for fresh compute).
+
+## Coordination — independent sibling corroboration (2026-06-25 cluster)
+
+This synthesis aggregates a hot, crowded cluster; multiple sibling PRs reached
+the same conclusions independently (strong corroboration), and this doc ties
+them into one cross-front map:
+
+- **#2755** (`lever1-tau-anchor-closure`) — Lean-formalizes (sorry-free) "wired
+  anchors ⇒ τ>2 ⇒ binding kernel extensive" and states the identical
+  convergence: all FOCUS levers reduce to the one owner-gated holonomy; the
+  period probe is already refuted (integer-trace). This is the **Lean half** of
+  front 2 / the prune; this doc is the cross-front **narrative** half.
+- **#2752** (`spectral-bridge calibration`) — the λ₊ re-scope absorbed above:
+  physical `lw(n)` is super-geometric; `λ₊` is a seed artifact.
+- **#2754** (`SDP interface-selection`) — independently confirms front 1: the
+  interface operator alone has an irreducible ~2.41× ceiling (scope-(a)); the
+  open residual is collective, not the interface.
+- **#2749** (`KL-Betti deuteron`) — KL-Betti magnitude is contributive (×2.0)
+  but non-closing (scope-(a)); refines the PROBE-4 magnitude claim.
+
+No inconsistency requiring escalation: all four agree on the (a)-scope framing
+and the single owner-gated bottleneck. The only correction propagated here is
+the λ₊ seed-artifact calibration (#2752).
 
 ## Discipline notes
 
