@@ -97,4 +97,30 @@ theorem binding_extensive_at_substrate {q : ℝ} (hq : 0 < q) :
     1 < lambdaPlus (tauAnchor q) :=
   lambdaPlus_gt_one (tauAnchor_gt_two hq)
 
+/-- The depth-2 recurrence's `n=5` term — the bar-antisymmetric **odd partner**
+`a_D^(5) = τ·a_D^(4) − a_D^(3)` (`unified_tau_odd_partner_solve.py`,
+`sinh_bar_antisymmetric_partner.py`). -/
+noncomputable def aD5 (q : ℝ) : ℝ := tauAnchor q * aD4 q - aD3 q
+
+/-- **Closed form of the odd partner.**
+`a_D^(5) = (81q⁸ + 308q⁶ − 64q⁵ + 354q⁴ − 64q³ + 308q² + 81) / (48q³(q+1)²)`
+(`≈ 5.3556` at `q₀`).
+
+Honest scope: this is the depth-2 kernel's `n=5` *prediction*. It is exact
+through the seed `n ≤ 4`, but the independently-computed selection-rule value
+`lw(4)` does **not** satisfy the recurrence — it differs by `≈ 0.4 %` (the
+windowed-kernel drift, `docs/audits/2026-06-24-lever1-lw-depth2-recurrence-falsified.md`).
+So this is the kernel's value, **not** a claim that `a_D^(5) = lw(4)`. -/
+theorem aD5_closed_form {q : ℝ} (hq : 0 < q) :
+    aD5 q =
+      (81 * q ^ 8 + 308 * q ^ 6 - 64 * q ^ 5 + 354 * q ^ 4 - 64 * q ^ 3
+        + 308 * q ^ 2 + 81) / (48 * q ^ 3 * (q + 1) ^ 2) := by
+  have hq0 : q ≠ 0 := hq.ne'
+  have hq1 : q + 1 ≠ 0 := by positivity
+  unfold aD5
+  rw [tauAnchor_closed_form hq]
+  unfold aD3 aD4
+  field_simp
+  ring
+
 end QOU.Mass
