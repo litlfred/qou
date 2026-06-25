@@ -1,3 +1,4 @@
+import Mathlib.Data.Real.Basic
 import QOU.Shared.MarkovTraceClaim
 
 /-!
@@ -30,7 +31,7 @@ class YLambdaRecipeFromPartitionContext extends QOU.Shared.MarkovTraceContext wh
   /-- Manuscript identity: `y_λ(q)` is a q-rational with non-vanishing
       denominator and equals `num(λ) / denom(λ)`. -/
   claim_y_lambda_recipe_from_partition :
-    ∀ λ : ℕ, denom λ ≠ 0 ∧ y_lambda λ = num λ / denom λ
+    ∀ lam : ℕ, denom lam ≠ 0 ∧ y_lambda lam = num lam / denom lam
 /-- **Content statement** (from manuscript):
 
 **Proposition (recipe: $\lambda \mapsto y_\lambda(q)$ as q-rational).**
@@ -45,7 +46,7 @@ denominator.*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.ts
 def y_lambda_recipe_from_partition [ctx : YLambdaRecipeFromPartitionContext] :
-    ∀ λ : ℕ, ctx.denom λ ≠ 0 ∧ ctx.y_lambda λ = ctx.num λ / ctx.denom λ :=
+    ∀ lam : ℕ, ctx.denom lam ≠ 0 ∧ ctx.y_lambda lam = ctx.num lam / ctx.denom lam :=
   ctx.claim_y_lambda_recipe_from_partition
 
 end QOU.BraidsAndKnots
