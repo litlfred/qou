@@ -2,6 +2,7 @@ import QOU.BraidKnot.BsymLinearChain
 import QOU.BraidKnot.ChiralityTopologySelection
 import QOU.BraidKnot.WLambdaDefectClosedForm
 import QOU.BraidKnot.WLambdaDefectSubleadingD
+import QOU.BraidKnot.WLambdaDefectLadderE
 import QOU.BraidKnot.IdentityIContentDecomposition
 import QOU.BraidKnot.CyclotomicLValueDecomposition
 import QOU.BraidKnot.CyclotomicTrilogImaginary
