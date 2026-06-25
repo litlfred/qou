@@ -97,11 +97,12 @@ The honest continuations are #2708's two, unchanged:
 2. **Keep `a_D = lw`, drop depth-2-constant** — `B` is then a variable-kernel `q`/`n`-dependent
    object (consistent with super-geometric growth), forfeiting the clean `τ = 2cosh θ` rapidity.
 
-**Producer enhancement (runnable here — pure `mpmath`/`sympy`):** have
-`binding_recurrence_spectral_bridge_probe.py` also emit the *physical* `lw` sequence beside the
-iterated one and assert the divergence honestly (reference algorithm: this audit's q-hook recompute),
-so the witness shows the comparison rather than only the tautological tail. No fit; nothing wired;
-no tier change. Owner closes the bean (§4a).
+**Producer enhancement — ✅ DONE (PR #2752).** `binding_recurrence_spectral_bridge_probe.py` now
+emits the *physical* `lw` sequence (`aD_physical_lw_2_to_9`, direct q-hook) beside the iterated one,
+with `iterated_vs_physical_rel_divergence` as data + three machine-checked assertions
+(`lw_reproduces_anchors` ≈ 2.7e-50 seed agreement; `physical_diverges_from_iterated` max 81.6 %;
+`physical_super_geometric` ratio tail 3.69 > λ₊). The witness shows the comparison, not only the
+tautological tail. No fit; nothing wired; no tier change. Owner closes the bean (§4a).
 
 → probes: `binding_recurrence_spectral_bridge_probe.py` (#2718) ·
 `computations/substrate/lever1_lw_depth2_recurrence_test.py` (#2708) ·
