@@ -1175,6 +1175,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef12b63cc578",
+          "ts": "e6ad450b5ca7"
+        },
+        "result": "warn",
+        "notes": "md proof clear (Wedderburn weights, transfer matrix); Lean has no strategy — projects 2 assumed scalar facts.",
+        "reviewed_at": "2026-06-25T17:04:00.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.5
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1214,6 +1235,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ef12b63cc578",
+          "ts": "e6ad450b5ca7"
+        },
+        "result": "pass",
+        "notes": "Goal (confined-knot binding via Wedderburn channel decomposition + character ratios) well-posed and substantive.",
+        "reviewed_at": "2026-06-25T17:04:00.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.75
         }
       }
     ],
@@ -1255,6 +1297,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef12b63cc578",
+          "ts": "e6ad450b5ca7"
+        },
+        "result": "warn",
+        "notes": "Lean adds nothing — projects assumed conclusion. md decomposition has content but unproved in Lean.",
+        "reviewed_at": "2026-06-25T17:04:01.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.4
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1291,6 +1354,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef12b63cc578",
+          "ts": "e6ad450b5ca7"
+        },
+        "result": "fail",
+        "notes": "Degenerate self-assuming: class fields claim_i (0<n_letters) & claim_ii (E_bind=trM*m_e*rho) ARE the conclusion; def projects them. Rich md (Wedderburn channels, extremal cancel, z^2 cross-term) not encoded.",
+        "reviewed_at": "2026-06-25T17:04:00.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1320,6 +1400,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ef12b63cc578",
+          "ts": "e6ad450b5ca7"
+        },
+        "result": "fail",
+        "notes": "def confined_knot_binding := <ctx.claim_i_GB_NF_factorisation, ctx.claim_ii_binding_energy_via_markov_trace> — projects the two class fields that are literally the conclusion.",
+        "reviewed_at": "2026-06-25T17:04:00.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1399,6 +1496,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef12b63cc578",
+          "ts": "e6ad450b5ca7"
+        },
+        "result": "pass",
+        "notes": "Class instantiable (E_bind:=trM*m_e*rho, n_letters:=1 satisfy fields); not vacuous.",
+        "reviewed_at": "2026-06-25T17:04:00.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1428,6 +1542,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ef12b63cc578",
+          "ts": "e6ad450b5ca7"
+        },
+        "result": "pass",
+        "notes": "[ctx] instance used (both fields projected); no unused binder.",
+        "reviewed_at": "2026-06-25T17:04:00.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

@@ -952,6 +952,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "35c38d768b98",
+          "ts": "7551023a2ff5"
+        },
+        "result": "pass",
+        "notes": "Conjecture h4=-3/4 as Pachner-invariant Phi_q state-sum; well-posed; honestly UN-EXHIBITED (probe matches_target=false), no instance per 3b.",
+        "reviewed_at": "2026-06-25T17:03:05.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ]
   },

@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d3d2a8e0d922",
+          "ts": "ddfcde79c56f",
+          "lean": "7679a0c6a702"
+        },
+        "result": "pass",
+        "notes": "The Kashaev volume conjecture (Kashaev 1997, Murakami-Murakami 2001): Vol = 2pi lim log|J_N|/N. Famous genuine open problem; maximally well-posed.",
+        "reviewed_at": "2026-06-25T17:03:58.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.95
+        }
       }
     ],
     "proof-no-trivial-true": [

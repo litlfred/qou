@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "notes": "Clear: define rational chi_lambda, discharge identities by field_simp;ring/norm_num; explicit quotient-rule derivative chain; honest scope on what is NOT proved.",
+        "reviewed_at": "2026-06-25T17:02:28.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.88
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "notes": "Exact pre-archimedean per-block characters + antipode pairing are well-posed, substantive source data for the Q_beta ladder.",
+        "reviewed_at": "2026-06-25T17:02:28.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "notes": "Antipode pairing chi_(111)=q^-4·chi_(3) + shared -2 order-w coefficient is a genuine structural finding; §3b-cond canonical class scaffolds future closure.",
+        "reviewed_at": "2026-06-25T17:02:28.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1320,6 +1386,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "notes": "chi_block_3/21/111 + chi_blocks_vanish_at_one + chi_block_antipode_pairing encode the boxed .md identities and are sorry-free (field_simp;ring, norm_num). Library file (640L) fully sorry-free; sibling has 1 honestly-cited sorry on an order-2 EXTENSION beyond the headline claim.",
+        "reviewed_at": "2026-06-25T17:02:27.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1420,6 +1504,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "notes": "Sole premise 0<q is satisfiable (physical regime); class fields (normalisation) are consistent — instance exhibited in sibling block.",
+        "reviewed_at": "2026-06-25T17:02:27.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1451,6 +1553,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "3fc5fba93791",
+          "ts": "752273daa093",
+          "lean": "d0a02ca00bd4"
+        },
+        "result": "pass",
+        "notes": "hq:0<q used in antipode_pairing/q2-1-factor via ne_of_gt+field_simp; vanish_at_one has no hyp. §3b-cond [CanonicalMarkovWeightsH3] instance used by delta_tau_M_canonical_vanish_at_one.",
+        "reviewed_at": "2026-06-25T17:02:27.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

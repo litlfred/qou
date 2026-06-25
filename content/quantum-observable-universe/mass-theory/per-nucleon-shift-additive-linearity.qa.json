@@ -1155,6 +1155,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e1ea807f2c4d",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "warn",
+        "notes": "The .md induction is clear, but the Lean encodes it as self-assuming class fields (recurrence+closed-form both axiomatised), so no Lean-side strategy is exhibited.",
+        "reviewed_at": "2026-06-25T17:03:57.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.5
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1194,6 +1215,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e1ea807f2c4d",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "notes": "Goal (shift=18Z+21N+1 closed form, witness 5/5 + symbolic Hoefsmit pole-order cross-check) is well-posed and substantive.",
+        "reviewed_at": "2026-06-25T17:03:57.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
         }
       }
     ],
@@ -1235,6 +1277,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e1ea807f2c4d",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "notes": "Closed-form shift exponent with generator-count derivation is a genuine structural result (narratively); Lean adds nothing beyond restatement.",
+        "reviewed_at": "2026-06-25T17:03:57.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1271,6 +1334,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e1ea807f2c4d",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "fail",
+        "notes": "Lean theorems restate the .md recurrence + closed-form but PROVE nothing: both bodies are := ctx.claim_additive_recurrence / := ctx.claim_closed_form — the class fields ARE the conclusions.",
+        "reviewed_at": "2026-06-25T17:03:57.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1300,6 +1380,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e1ea807f2c4d",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "fail",
+        "notes": "Degenerate self-projection: PerNucleonShiftContext.claim_additive_recurrence/claim_closed_form fields = the two theorems' conclusions; proofs are := ctx.field (AGENTS.md 3b-cond non-degenerate clause).",
+        "reviewed_at": "2026-06-25T17:03:57.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1379,6 +1476,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e1ea807f2c4d",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "notes": "Premises 1<=Z,1<=N satisfiable; no contradictory hypotheses.",
+        "reviewed_at": "2026-06-25T17:03:57.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1408,6 +1522,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e1ea807f2c4d",
+          "ts": "898ffb8eea3d"
+        },
+        "result": "pass",
+        "notes": "Z,N,hZ,hN all passed to ctx.claim_* fields; ctx instance used. No unused binder.",
+        "reviewed_at": "2026-06-25T17:03:57.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

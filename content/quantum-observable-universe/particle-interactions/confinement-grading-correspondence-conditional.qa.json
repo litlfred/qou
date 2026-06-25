@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7683fd7cf3eb",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "notes": "Clear §3b-cond pattern: axiomatize conjecture as class field, derive the per-ℓ iff by two rw directions; both narrative and Lean aligned.",
+        "reviewed_at": "2026-06-25T17:03:34.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7683fd7cf3eb",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "notes": "Conditional confinement-filtration = KLR ℤ-grading correspondence, well-posed modulo the named upstream conjecture (Brundan-Kleshchev backing).",
+        "reviewed_at": "2026-06-25T17:03:34.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.74
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7683fd7cf3eb",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "notes": "Connects QOU LP shadow-price filtration to KLR grading; conditional but a non-trivial structural identification, with empirical k_max≤7 table.",
+        "reviewed_at": "2026-06-25T17:03:34.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7683fd7cf3eb",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "notes": "Theorem derives iff (confinementLevel T=ℓ ↔ KLRTopDegree(klr_lift T)=ℓ) by rw on class field confinement_eq_klr_top_degree; faithful §3b-cond, sorry only in class instance. (NB uses deprecated 'constant' kw.)",
+        "reviewed_at": "2026-06-25T17:03:33.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1403,6 +1487,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7683fd7cf3eb",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "notes": "Class instance + (T,ℓ) satisfiable; equality ∀T confinementLevel=KLRTopDegree is a consistent hypothesis, not contradictory.",
+        "reviewed_at": "2026-06-25T17:03:34.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1434,6 +1536,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7683fd7cf3eb",
+          "ts": "1128c70fab45",
+          "lean": "f6090fbf18ce"
+        },
+        "result": "pass",
+        "notes": "Binders [inst:CrystalGraphRealization], (T), (ℓ) all used: inst.confinement_eq_klr_top_degree T and hT/hKLR drive both rw directions.",
+        "reviewed_at": "2026-06-25T17:03:34.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

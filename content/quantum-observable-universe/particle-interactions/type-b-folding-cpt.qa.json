@@ -953,6 +953,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "notes": "Well-posed D22: Type-B Cartan fold as alt CPT realisation (bar-invariance for free); explicitly an alternative view of D6/D7/D8, honest about needing more category theory; formalises AGENTS.md 7b shortcut.",
+        "reviewed_at": "2026-06-25T17:03:39.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ]
   },

@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bfbddd177a1d",
+          "ts": "5e6f5df02231",
+          "lean": "60896dcef81a"
+        },
+        "result": "pass",
+        "notes": "Clear strategy: rewrite with Cl_2_zero / faddeev_limit_at_zero then ring/simp/linarith. Building blocks named and imported.",
+        "reviewed_at": "2026-06-25T17:03:39.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bfbddd177a1d",
+          "ts": "5e6f5df02231",
+          "lean": "60896dcef81a"
+        },
+        "result": "pass",
+        "notes": "Goal well-posed: boundary-case consistency of Cl_2 pentagon + Faddeev-Kashaev. Honest scope ('partial'); substantive but admittedly only the x=0 boundary.",
+        "reviewed_at": "2026-06-25T17:03:39.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bfbddd177a1d",
+          "ts": "5e6f5df02231",
+          "lean": "60896dcef81a"
+        },
+        "result": "warn",
+        "notes": "Low novelty: these are degenerate x=0 boundary identities of known functions (Cl_2(0)=0, Li2(0)=0); useful consistency scaffolding but not new mathematics. .md itself frames as 'maximum advance without Mathlib upstream'.",
+        "reviewed_at": "2026-06-25T17:03:39.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bfbddd177a1d",
+          "ts": "5e6f5df02231",
+          "lean": "60896dcef81a"
+        },
+        "result": "pass",
+        "notes": "Lean proves exactly the .md boundary claims: Cl_2(0)-...+Cl_2(0)=0 and (1-q)log Φ_n(0)-Li2(0)=0, via Cl_2_zero + ring/linarith. Sorry-free, no overclaim (.md says 'boundary portions').",
+        "reviewed_at": "2026-06-25T17:03:39.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1421,6 +1505,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bfbddd177a1d",
+          "ts": "5e6f5df02231",
+          "lean": "60896dcef81a"
+        },
+        "result": "pass",
+        "notes": "Premises satisfiable: q:ℝ, n:ℕ arbitrary; the two typeclasses are inhabited unconditionally (archimedeanLimit_zero / Cl_2_zero). No contradictory hypothesis.",
+        "reviewed_at": "2026-06-25T17:03:39.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1452,6 +1554,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bfbddd177a1d",
+          "ts": "5e6f5df02231",
+          "lean": "60896dcef81a"
+        },
+        "result": "pass",
+        "notes": "Main theorems take (q,n) and use them via faddeev_limit_at_zero; [Cl_2_PentagonHolds]/[FaddeevKashaev...] instance binders are genuinely required to state the consistency lemmas.",
+        "reviewed_at": "2026-06-25T17:03:39.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

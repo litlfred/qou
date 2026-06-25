@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1ae70e0c8dad",
+          "ts": "e54cbc515376"
+        },
+        "result": "pass",
+        "notes": "Each q-oper determines an irreducible q-Hecke eigensheaf via L_q^{-1}(skyscraper); transversality-implies-irreducible. Coherent conditional conjecture on q-GL.",
+        "reviewed_at": "2026-06-25T17:04:15.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ]
   },

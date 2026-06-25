@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e4568adb528e",
+          "ts": "1be9ce23b091"
+        },
+        "result": "warn",
+        "notes": "No real strategy: every conjunct assumed as a context-class field and projected. The derivation (hbar_diff from hbar_eq) is not performed in Lean.",
+        "reviewed_at": "2026-06-25T17:03:42.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.4
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e4568adb528e",
+          "ts": "1be9ce23b091"
+        },
+        "result": "pass",
+        "notes": "Goal substantive: hbar_q monotone increase under perturbation + action Taylor deform + classical sign-free. Math is correct/well-posed.",
+        "reviewed_at": "2026-06-25T17:03:42.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e4568adb528e",
+          "ts": "1be9ce23b091"
+        },
+        "result": "warn",
+        "notes": "Adds nothing beyond restating the claim as class fields; the hbar_diff identity is a 2-line calc left un-derived.",
+        "reviewed_at": "2026-06-25T17:03:42.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.35
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1286,6 +1349,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e4568adb528e",
+          "ts": "1be9ce23b091"
+        },
+        "result": "fail",
+        "notes": "def observation_energy projects ctx.hbar_diff/hbar_diff_pos/S_deform/E_inc/E_dec straight out; .md part(1) eq should be DERIVED from hbar x=1-x^-1, not axiomatised as a field. Self-assuming.",
+        "reviewed_at": "2026-06-25T17:03:42.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1481,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e4568adb528e",
+          "ts": "1be9ce23b091"
+        },
+        "result": "pass",
+        "notes": "Fields consistent: hbar_eq=1-x^-1 makes hbar_diff hold (q^-1-(q+dq)^-1); hbar_diff_pos from q>1,dq>0; E_inc/E_dec at distinct q_inc,q_dec.",
+        "reviewed_at": "2026-06-25T17:03:42.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1527,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e4568adb528e",
+          "ts": "1be9ce23b091"
+        },
+        "result": "pass",
+        "notes": "Sole binder [ctx:ObservationEnergyContext] is used (all 5 conjuncts read its fields). Unused class fields (hbar_eq,q_gt_one) are an integrity issue, not an unused binder.",
+        "reviewed_at": "2026-06-25T17:03:42.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b3d2ff3173bc",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "notes": "Well-posed functional-consistency identity: tower-summed tr_M nucleon mass diff = counit closed form; non-perturbative (N=0 misses by -56%); concrete RHS m_e(q+1)(q^2-2q-1)/2q^3.",
+        "reviewed_at": "2026-06-25T17:03:07.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ]
   },

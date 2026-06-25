@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c2c6deeb18c9",
+          "ts": "b868079c03cd",
+          "lean": "c0667808783a"
+        },
+        "result": "pass",
+        "notes": "Parts i-iv have a clear probabilistic strategy; spectral-idempotent computations are rigorous, but part iv's factorization is asserted (axiom) rather than derived from memorylessness.",
+        "reviewed_at": "2026-06-25T17:03:51.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c2c6deeb18c9",
+          "ts": "b868079c03cd",
+          "lean": "c0667808783a"
+        },
+        "result": "pass",
+        "notes": "Hecke generator as stochastic (Mallows/Metropolis) transition, Markov property = memorylessness; well-posed, grounded in Diaconis-Ram 2000.",
+        "reviewed_at": "2026-06-25T17:03:51.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c2c6deeb18c9",
+          "ts": "b868079c03cd",
+          "lean": "c0667808783a"
+        },
+        "result": "pass",
+        "notes": "Recasts Jones-Markov factorization as a memoryless Markov chain (Diaconis-Ram fugacity q^2); interpretive but substantive bridge to probabilistic language.",
+        "reviewed_at": "2026-06-25T17:03:51.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1320,6 +1386,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c2c6deeb18c9",
+          "ts": "b868079c03cd",
+          "lean": "c0667808783a"
+        },
+        "result": "fail",
+        "notes": "Parts (i)(ii) proved sorry-free + faithful (prob_sum_one, boltzmann_ratio p+/p-=q^2, eigenvalue_expectation). BUT headline part (iv) factorization tr_M=prod V_i is markov_chain_factorization_axiom asserting ARBITRARY totalTrace:R = fixed product given only n>=2 + equal-z -> unsound (totalTrace unconstrained); markov_chain_factorization_exists just forwards it.",
+        "reviewed_at": "2026-06-25T17:03:51.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1405,6 +1489,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c2c6deeb18c9",
+          "ts": "b868079c03cd",
+          "lean": "c0667808783a"
+        },
+        "result": "pass",
+        "notes": "Premises (q>0, q!=1; n>=2, equal-z) are satisfiable, not contradictory -> not vacuously true. (The axiom's defect is insufficiency/unsoundness, captured under statement-integrity, not a contradictory premise.)",
+        "reviewed_at": "2026-06-25T17:03:51.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1436,6 +1538,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c2c6deeb18c9",
+          "ts": "b868079c03cd",
+          "lean": "c0667808783a"
+        },
+        "result": "pass",
+        "notes": "Proved thms (prob_sum_one, boltzmann_ratio, eigenvalue_expectation, trace_ne_zero, bias) each use their binders. Wrapper markov..._exists forwards all 5 args to the axiom.",
+        "reviewed_at": "2026-06-25T17:03:51.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

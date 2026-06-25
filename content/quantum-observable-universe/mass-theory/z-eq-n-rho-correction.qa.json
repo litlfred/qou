@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1ef20d43c721",
+          "ts": "bf0944ac29cc"
+        },
+        "result": "pass",
+        "notes": "Conjecture: B(q)=m_e*Vol*(rho+A-[A]_q) for Z=N atoms; well-posed, class-axiomatised, ~100x empirical improvement on 2H/4He/12C/16O. q->1 limit recovers Kashaev (proved).",
+        "reviewed_at": "2026-06-25T17:02:41.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ]
   },

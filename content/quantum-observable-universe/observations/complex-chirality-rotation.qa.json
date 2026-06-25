@@ -953,6 +953,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7245ed8770ad",
+          "ts": "12baa358d006",
+          "lean": "23d73c8bf1a0"
+        },
+        "result": "pass",
+        "notes": "Conjecture: complex-phase theta governs particle/antiparticle, CPT as Z/2 quotient of U(1) chirality; well-framed pre-observable sector claim.",
+        "reviewed_at": "2026-06-25T17:04:46.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ]
   },

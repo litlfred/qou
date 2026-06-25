@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "268f8ecad4ab",
+          "ts": "0a1d5e3de728",
+          "lean": "183fe2abe591"
+        },
+        "result": "pass",
+        "notes": "tsum_congr/tsum_neg/sin_neg/p-series comparison; strategies explicit per lemma.",
+        "reviewed_at": "2026-06-25T17:02:52.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "268f8ecad4ab",
+          "ts": "0a1d5e3de728",
+          "lean": "183fe2abe591"
+        },
+        "result": "pass",
+        "notes": "Concrete Mathlib-targeted dilog/Clausen defs+identities; well-posed analysis goals.",
+        "reviewed_at": "2026-06-25T17:02:52.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "268f8ecad4ab",
+          "ts": "0a1d5e3de728",
+          "lean": "183fe2abe591"
+        },
+        "result": "pass",
+        "notes": "Real sorry-free Clausen identities + summability proof; modest but genuine Mathlib-filler content.",
+        "reviewed_at": "2026-06-25T17:02:52.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "268f8ecad4ab",
+          "ts": "0a1d5e3de728",
+          "lean": "183fe2abe591"
+        },
+        "result": "pass",
+        "notes": "File delivers real sorry-free thms (Cl_2_neg, Cl_2_pi, Cl_2_periodic, complexLiTwo_summable_on_unit_disk) matching md claim of 3 Mathlib additions; True-stubs are honest conjecture-classes.",
+        "reviewed_at": "2026-06-25T17:02:52.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1421,6 +1505,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "268f8ecad4ab",
+          "ts": "0a1d5e3de728",
+          "lean": "183fe2abe591"
+        },
+        "result": "pass",
+        "notes": "Premises (||z||<=1, ComplexLiTwoUnitCircleClassical, Cl_2_DoubleAngle) all satisfiable; no contradictory hyps.",
+        "reviewed_at": "2026-06-25T17:02:52.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1452,6 +1554,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "268f8ecad4ab",
+          "ts": "0a1d5e3de728",
+          "lean": "183fe2abe591"
+        },
+        "result": "pass",
+        "notes": "hz used (pow_le_one); hC in Cl_2_double_angle projects its field (conditional thm, ok); no dead binders in the proved lemmas.",
+        "reviewed_at": "2026-06-25T17:02:52.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

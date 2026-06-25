@@ -1062,6 +1062,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "666f3cc69a0e",
+          "ts": "0e6f911cc564"
+        },
+        "result": "fail",
+        "notes": "Body := <ctx.claim_i_..., ctx.claim_ii_..., ctx.claim_iii_..., ctx.claim_iv_...>; each conjunct IS a class field that is the conclusion. Vacuous self-projection per 3b-cond item 5.",
+        "reviewed_at": "2026-06-25T17:04:05.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-placeholder-stub": [
@@ -1231,6 +1248,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "666f3cc69a0e",
+          "ts": "0e6f911cc564"
+        },
+        "result": "warn",
+        "notes": "Narrative sketches HKR/Euler-char obstruction but Lean offers no strategy -- just axiomatizes conclusions as class fields and projects; no proof path.",
+        "reviewed_at": "2026-06-25T17:04:05.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1270,6 +1308,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "666f3cc69a0e",
+          "ts": "0e6f911cc564"
+        },
+        "result": "pass",
+        "notes": "Kummer-level obstruction kappa0 mod n vanishes iff n|chi(A), persisting at density-1 levels; well-posed though encoded informally.",
+        "reviewed_at": "2026-06-25T17:04:05.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
         }
       }
     ],
@@ -1311,6 +1370,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "666f3cc69a0e",
+          "ts": "0e6f911cc564"
+        },
+        "result": "warn",
+        "notes": "Obstruction-density claim is interesting but Lean adds nothing derivational beyond restating it as class fields.",
+        "reviewed_at": "2026-06-25T17:04:05.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.5
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1340,6 +1420,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "666f3cc69a0e",
+          "ts": "0e6f911cc564"
+        },
+        "result": "fail",
+        "notes": "Class carries the 4 conclusions as fields; thm projects them via anon-constructor (no derivation). Also md claim(i) says F_intr NONzero when kappa0!=0 but Lean field claim_i: F_intr=0 -- statement mismatch.",
+        "reviewed_at": "2026-06-25T17:04:05.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1419,6 +1516,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "666f3cc69a0e",
+          "ts": "0e6f911cc564"
+        },
+        "result": "pass",
+        "notes": "QGlObstructionCalcContext fields are independent Props (chi_A_nonzero etc.); class is inhabitable, no contradictory premise.",
+        "reviewed_at": "2026-06-25T17:04:05.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1448,6 +1562,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "666f3cc69a0e",
+          "ts": "0e6f911cc564"
+        },
+        "result": "pass",
+        "notes": "All four class fields consumed by the anon-constructor; ctx referenced. No dead binders.",
+        "reviewed_at": "2026-06-25T17:04:05.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

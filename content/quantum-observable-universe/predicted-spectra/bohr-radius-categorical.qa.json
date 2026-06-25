@@ -915,6 +915,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "42efa4ac2116",
+          "ts": "0f5bea7691a6"
+        },
+        "result": "warn",
+        "notes": "Honest 'transport sketch': a_0=ℏ/(m_e c α) virial balance NOT derived from Hecke, .md says match is tautological. Well-posed but conjectural/transported.",
+        "reviewed_at": "2026-06-25T17:02:38.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.58
+        }
       }
     ]
   },

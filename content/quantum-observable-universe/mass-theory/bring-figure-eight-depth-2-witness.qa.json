@@ -915,6 +915,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e4e0d5ddccc2",
+          "ts": "a8adf5f6f021"
+        },
+        "result": "pass",
+        "notes": "Conjecture; std §3b placeholder class (residual=0, instance:=sorry). md: Vol(4_1)=2Cl_2(pi/3), 50-digit mpmath witness. Well-posed depth-2 claim.",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
       }
     ]
   },

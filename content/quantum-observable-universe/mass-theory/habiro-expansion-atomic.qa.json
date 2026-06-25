@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "36ec42be45de",
+          "ts": "8836d62e2abb",
+          "lean": "36e61eceb7f8"
+        },
+        "result": "pass",
+        "notes": ".md gives clear constructive sequential-cyclotomic-division proof (4 steps); strategy sound even though Lean only formalises base case + axiomatises the rest.",
+        "reviewed_at": "2026-06-25T17:01:14.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "36ec42be45de",
+          "ts": "8836d62e2abb",
+          "lean": "36e61eceb7f8"
+        },
+        "result": "pass",
+        "notes": "Finite Habiro expansion of atomic-braid trace with termination m_max<=ceil-sqrt-2d; well-posed, witness-validated to 50 digits on p/n/d.",
+        "reviewed_at": "2026-06-25T17:01:14.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "36ec42be45de",
+          "ts": "8836d62e2abb",
+          "lean": "36e61eceb7f8"
+        },
+        "result": "warn",
+        "notes": "Specialises Habiro's general cyclotomic-expansion (cited [habiro2004cyclotomic]) to atomic braids w/ a termination bound; modest delta over the cited general result.",
+        "reviewed_at": "2026-06-25T17:01:14.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.6
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1320,6 +1386,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "36ec42be45de",
+          "ts": "8836d62e2abb",
+          "lean": "36e61eceb7f8"
+        },
+        "result": "fail",
+        "notes": "Main thm habiro_expansion_atomic concludes ':exists E, True' and atomic_braid_polynomial_integral ':exists p, True' -- degenerate True-conjunct; existence/uniqueness/termination all asserted as new 'axiom' decls. .md 4-part corollary (integrality/deg/termination<=ceil-sqrt-2d/uniqueness) NOT derived.",
+        "reviewed_at": "2026-06-25T17:01:14.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1405,6 +1489,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "36ec42be45de",
+          "ts": "8836d62e2abb",
+          "lean": "36e61eceb7f8"
+        },
+        "result": "pass",
+        "notes": "No contradictory premises; theorems quantify over arbitrary p:Z[X], Z N:N -- satisfiable.",
+        "reviewed_at": "2026-06-25T17:01:14.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1436,6 +1538,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "36ec42be45de",
+          "ts": "8836d62e2abb",
+          "lean": "36e61eceb7f8"
+        },
+        "result": "pass",
+        "notes": "habiro_expansion_const uses c, habiro_step_zero/expansion_atomic pattern-match p; no dead binders in proved lemmas.",
+        "reviewed_at": "2026-06-25T17:01:14.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
