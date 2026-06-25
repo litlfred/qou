@@ -96,6 +96,18 @@ import QOU.BraidKnot.MassGapFrontier
 import QOU.BraidKnot.JucysMurphyCoeff
 import QOU.BraidKnot.RegularRepTrace
 import QOU.BraidKnot.RegularRepBlockTrace
+-- Δ_λ closure-refutation cluster (sorry-free, previously orphaned). These
+-- modules formalize the per-partition binding weight Δ_λ and the failure of the
+-- co-Casimir / crystal-graph closure ansätze; they were merged but never imported
+-- by this umbrella, so CI never built them and their sorry-free status went
+-- unenforced (cf. JucysMurphyCoeff, wired in above after #2713). Wiring them in
+-- puts the refutations under the CI build (bean 48yu, #2676).
+-- NOTE: sibling `DeltaLambdaSignRule` is intentionally NOT wired here — it does
+-- not compile (uses reserved `λ` as an identifier, references ℝ/`Real.arccos`
+-- without importing them). It needs a dedicated repair (λ→Λ rename + imports)
+-- before it can join the CI build; tracked separately.
+import QOU.BraidKnot.DeltaLambdaRefutation
+import QOU.BraidKnot.DeltaLambdaExponentKeystone
 
 /-!
 # BraidKnot — Module Index
