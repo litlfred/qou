@@ -169,3 +169,25 @@ elliptic factor. No fit; nothing wired. Owner closes (§4a).
   avoid double-work. **Next focused step (formalize-first):** locate the coral/descartes E_q curve
   eqn in corpus, set up λ_SW = x dz period/Gauss-Manin holonomy, derive τ WITHOUT fitting to 2.6424
   (numerology guard). NOT yet started — deep effort, pending owner go / #2722 coordination.
+
+## Algebraic half FORMALIZED sorry-free (2026-06-25, PR #2755)
+
+Rather than chase the owner-gated `λ_SW` holonomy (the obvious period probe is
+already refuted — topological PF monodromy is integer-trace `SL₂(ℤ)`, but
+`τ=2.6424∉ℤ`, per `2026-06-24-lever1-coral-eq-monodromy-integrality.md`),
+formalized the **algebraic** lever-1 skeleton in Lean
+(`QOU/Mass/BindingTauAnchorClosure.lean`, sorry-free + axiom-free, lean-direct
+exit 0, v4.24.0):
+
+- `tauAnchor_closed_form`: the three wired anchors `a_D^(2,3,4)=lw(1,2,3)` force
+  `τ = 3(3q⁴+8q²+3)/(4q(q+1)²)` (`field_simp; ring`);
+- `tauAnchor_gt_two`: `0<q → 2<τ` for the whole substrate regime (SOS
+  `504·(τ·den−2·den)=56(9q²−4q)²+(56q−36)²+3240>0`, `nlinarith`);
+- `binding_extensive_at_substrate`: composes with `lambdaPlus_gt_one` ⇒ `λ₊>1`
+  (extensive) given the anchors.
+
+Discharges the spectral bridge's `2<τ` hypothesis at the substrate; the lever-1
+skeleton is now machine-checked, so the ONLY open thing is sharply the geometric
+`a_D^(n)=∮λ_SW^(n)=lw(n−1)` identification (owner-gated keystone `M`). MBA
+step-09b appendix synced. Non-overlapping with sibling #2524 (W_λ facet). No fit;
+nothing wired. Owner closes (§4a).

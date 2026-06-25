@@ -160,6 +160,12 @@ $a_D^{(n)}=\mathrm{lw}(n-1)$ that supply the
 $a_D^{(2)}{=}1$, $a_D^{(3)}{=}(q{+}1)^2/(3q)$, $a_D^{(4)}{=}$Family-A, giving
 $\tau(q_0)=2.6424$
 ([`binding_selection_rule_tau_closure.py`](../../../computations/binding_selection_rule_tau_closure.py)).
+The **algebraic** half — that these wired anchors force the closed form
+$\tau=3(3q^4+8q^2+3)/(4q(q+1)^2)$ and $\tau>2$ for all $q>0$, hence the depth-2
+kernel is **extensive** ($\lambda_+>1$ via the spectral bridge
+`QOU.Mass.lambdaPlus_gt_one`) — is now sorry-free in Lean
+(`QOU.Mass.BindingTauAnchorClosure`: `tauAnchor_closed_form`, `tauAnchor_gt_two`,
+`binding_extensive_at_substrate`; lean-direct exit 0).
 **Residual (open):** the geometric↔algebraic identification
 $a_D^{(n)}=\mathrm{lw}(n-1)$ — that the SW prolonged period *equals* the
 selection-rule value (#1765) — is not closed.*
