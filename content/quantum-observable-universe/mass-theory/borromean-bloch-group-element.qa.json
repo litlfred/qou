@@ -953,6 +953,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2b48584a3260",
+          "ts": "17835e720bd8",
+          "lean": "c3e7b74131f9"
+        },
+        "result": "pass",
+        "notes": "Conjecture; Lean is std §3b 'class … where holds:Prop' stub. md: substantive K3(C)/Bloch-group regulator goal r_2=8G, h^4=-3/4. Well-posed.",
+        "reviewed_at": "2026-06-25T16:59:50.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
+        }
       }
     ]
   },

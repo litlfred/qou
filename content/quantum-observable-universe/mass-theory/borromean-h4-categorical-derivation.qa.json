@@ -1207,6 +1207,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "79c65c0ccf6b",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "notes": "md gives clear 2-step Schur-Weyl/R-matrix + Markov-norm strategy; Lean only does the final multiply.",
+        "reviewed_at": "2026-06-25T17:00:19.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1248,6 +1270,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "79c65c0ccf6b",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "notes": "md goal (h^4 coeff factorises categorically) is well-posed and substantive.",
+        "reviewed_at": "2026-06-25T17:00:19.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
         }
       }
     ],
@@ -1291,6 +1335,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "79c65c0ccf6b",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "warn",
+        "notes": "Lean adds only norm_num arithmetic; categorical content deferred to sorry composition thm. Low Lean novelty.",
+        "reviewed_at": "2026-06-25T17:00:19.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.4
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1329,6 +1395,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "79c65c0ccf6b",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "fail",
+        "notes": "Lean proves only arithmetic '(-3)*(1/4)=-3/4' by norm_num; md claims categorical factorisation (R-matrix chi coeff=-3, Markov norm=1/4). Composition thm is sorry in comment. Degenerate weakening.",
+        "reviewed_at": "2026-06-25T17:00:19.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1360,6 +1444,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "79c65c0ccf6b",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "notes": "norm_num proof of arithmetic identity; not a structure-field projection.",
+        "reviewed_at": "2026-06-25T17:00:19.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1443,6 +1545,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "79c65c0ccf6b",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "notes": "No premises; goal (-3)*(1/4)=-3/4 is true, not vacuous.",
+        "reviewed_at": "2026-06-25T17:00:19.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1474,6 +1594,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "79c65c0ccf6b",
+          "ts": "ee1167836df1",
+          "lean": "b8b8e9a17483"
+        },
+        "result": "pass",
+        "notes": "Theorem borromean_h4_numeric_factorisation has no hypotheses (closed arithmetic goal).",
+        "reviewed_at": "2026-06-25T17:00:19.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

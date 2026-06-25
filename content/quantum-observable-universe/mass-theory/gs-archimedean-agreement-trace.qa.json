@@ -953,6 +953,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c74a59843ec5",
+          "ts": "da265e2b38ef",
+          "lean": "f0a39e8842fe"
+        },
+        "result": "pass",
+        "notes": "Well-posed: T_K(sqrt q0) ~= m_GB cross-pipeline agreement; empirical witness rel_diff<=1e-9 on p/n/d. Honestly a conjecture (3b class field sorry).",
+        "reviewed_at": "2026-06-25T16:59:47.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
       }
     ]
   },

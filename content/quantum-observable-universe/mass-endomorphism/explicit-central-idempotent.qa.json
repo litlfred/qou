@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "notes": "Strategy clear in .md (Lagrange interpolation in commuting JM eigenvalues); Lean defers to literature via sorry.",
+        "reviewed_at": "2026-06-25T16:59:31.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "notes": "Explicit Murphy-Lagrange idempotent formula is well-posed and substantive; numerically witnessed to 1e-50.",
+        "reviewed_at": "2026-06-25T16:59:31.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "notes": "Scope-corrected C(n) union-of-contents range is a genuine refinement over cells-of-lambda; named computable generator.",
+        "reviewed_at": "2026-06-25T16:59:31.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1327,6 +1393,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "fail",
+        "notes": "Lean states only idempotency e*e=e of an OPAQUE centralIdempotent; the .md boxed Lagrange-Murphy explicit formula + orthogonality/self-adjoint/bar cross-checks are not encoded (sorry, opaque const).",
+        "reviewed_at": "2026-06-25T16:59:31.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1358,6 +1442,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "notes": "Body is sorry (deferred via -- Ref: murphy1981/dipper-james1986), not a structure-field projection.",
+        "reviewed_at": "2026-06-25T16:59:31.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1441,6 +1543,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "notes": "Premise lam.sum = n is satisfiable (any partition of n); not contradictory.",
+        "reviewed_at": "2026-06-25T16:59:31.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1472,6 +1592,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "55f35b095520",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "fail",
+        "notes": "Hypothesis h : lam.sum = n is never used; idempotency statement does not reference n, and proof is sorry.",
+        "reviewed_at": "2026-06-25T16:59:31.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

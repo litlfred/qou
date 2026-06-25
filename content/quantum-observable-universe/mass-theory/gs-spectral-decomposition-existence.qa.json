@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d0a475286661",
+          "ts": "e08cbdf1f4a6"
+        },
+        "result": "pass",
+        "notes": "Well-posed: m=|tr_M^0|+sum residues (liquid-drop + shell-correction split); empirical rel_diff<=1e-9 on every atom. Substantive E_inf-pairing claim.",
+        "reviewed_at": "2026-06-25T16:59:48.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ]
   },

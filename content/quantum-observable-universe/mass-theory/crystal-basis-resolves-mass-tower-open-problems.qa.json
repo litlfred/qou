@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e5c8cd577e04",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "notes": ".md gives a clear 3-reduction strategy (Type-B fold, height-6 vertices, KL classical limit); Lean is only a stubbed §3b-cond hook.",
+        "reviewed_at": "2026-06-25T17:00:37.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e5c8cd577e04",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "notes": "Reducing 3 of 4 mass-tower open problems to finite crystal combinatorics is well-posed and substantive (conditional on KLR/Lecouvey conjectures).",
+        "reviewed_at": "2026-06-25T17:00:37.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e5c8cd577e04",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "notes": "Novel crystal-basis reformulation of three distinct open problems; not a mere restatement.",
+        "reviewed_at": "2026-06-25T17:00:37.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1327,6 +1393,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e5c8cd577e04",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "fail",
+        "notes": "Lean concludes opaque class field 'reduction_holds : Prop' via sorry; encodes none of the 3 named reductions (chirality/Term7/z-Habiro). Degenerate + sorry-stubbed.",
+        "reviewed_at": "2026-06-25T17:00:37.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1358,6 +1442,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e5c8cd577e04",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "notes": "Proof body is 'by sorry', not ':= ctx.field'; not a projection (though field is opaque).",
+        "reviewed_at": "2026-06-25T17:00:37.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1441,6 +1543,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e5c8cd577e04",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "notes": "Single instance hypothesis CrystalBasisCorrespondence; satisfiable (class with one Prop field). No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:00:37.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1472,6 +1592,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e5c8cd577e04",
+          "ts": "44f385cd07d6",
+          "lean": "73ac19b87aa3"
+        },
+        "result": "pass",
+        "notes": "Only binder is [ctx : CrystalBasisCorrespondence]; its field is the goal, so trivially referenced. No unused binder.",
+        "reviewed_at": "2026-06-25T17:00:37.000Z",
+        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
