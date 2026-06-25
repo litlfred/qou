@@ -74,6 +74,34 @@ theorem rogersLogCorrection_symmetric (u v : ℝ) :
   rw [mul_comm u v]
   exact mul_comm _ _
 
+/-! ## Mathlib-backed log structure of the Rogers correction
+
+  **Coverage finding (2026-06-25).** Mathlib has **no** dilogarithm /
+  polylogarithm `Li₂`, so the classical `q = 1` Rogers–Abel FIVE-TERM identity
+  (intrinsically a statement about `Li₂`) cannot yet be a Mathlib filler — it
+  stays class-axiomatised in `QRogersAnalyticContinuation` below.  What IS
+  provable now with Mathlib is the `log²`-correction skeleton of the five-term
+  relation (`Real.log_div`, `Real.log_one`): the additive-log form of the
+  correction term and its degenerate vertex.  These are the real,
+  machine-checked building blocks the eventual `Li₂` five-term proof composes. -/
+
+/-- **Mathlib filler.** The Rogers `log²` correction in additive-log form
+    (`Real.log_div`) — the algebraic skeleton of the five-term identity's
+    correction term; the full identity awaits a Mathlib `Li₂`. -/
+theorem rogersLogCorrection_eq_log_sub (u v : ℝ)
+    (hu : (1 : ℝ) - u ≠ 0) (hv : (1 : ℝ) - v ≠ 0) (huv : (1 : ℝ) - u * v ≠ 0) :
+    rogersLogCorrection u v
+      = (Real.log (1 - u) - Real.log (1 - u * v))
+        * (Real.log (1 - v) - Real.log (1 - u * v)) := by
+  unfold rogersLogCorrection
+  rw [Real.log_div hu huv, Real.log_div hv huv]
+
+/-- The degenerate pentagon vertex: the Rogers correction vanishes at
+    `u = v = 0` (both log arguments are `1`; `Real.log_one`).  Complements
+    `rogersAlphaBeta_at_zero`. -/
+theorem rogersLogCorrection_at_zero : rogersLogCorrection 0 0 = 0 := by
+  simp [rogersLogCorrection]
+
 /-- The q-Rogers analytic-continuation conjecture as a Lean class.
 
     At q = 1, the classical Rogers identity holds (provable via
