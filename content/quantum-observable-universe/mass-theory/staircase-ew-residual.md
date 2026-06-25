@@ -55,10 +55,11 @@ $h_{\mathrm{corner}}(\rho_k) = 2k - 1$ is
 
 **Lean status (per
 [`AGENTS.md` §3b-cond](https://github.com/litlfred/qou/blob/main/AGENTS.md)).**
-The conjecture is axiomatised as a Lean `class`
-`QOU.StaircaseCornerHook.StaircaseEWResidual` whose canonical
-instance contains **a single `sorry`** — that `sorry` *is* the
-conjecture.  The predicate
+The conjecture is axiomatised as a **hypothesis-only** Lean `class`
+`QOU.StaircaseCornerHook.StaircaseEWResidual` (no global instance —
+per §3b-cond, supplying one would require a `sorry`; the conjecture
+*is* the existence of an instance
+`StaircaseEWResidual q (canonicalScale q)`).  The predicate
 `StaircaseEWSpectralContent q (scale k) k` is stated explicitly
 in terms of
 `HoefsmitRepresentation.HasEigenvalueRatio` applied to
