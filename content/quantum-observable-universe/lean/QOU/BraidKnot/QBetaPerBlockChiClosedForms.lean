@@ -471,11 +471,128 @@ theorem delta_tau_M_surrogate_taylor_coeff_2 :
     exact h_deriv2.deriv
   linarith
 
-/-! The order-2..7 Taylor coefficients (`5/6`, `-41/9`, `149/18`,
-`-1729/108`, `111/4`, `-3665/81`) are recorded in the witness JSON
-`qbeta-c3-multiblock-recursion-attack.witness.json` and would each
-require an n-th derivative computation in Lean — bulky but tractable.
-Stated as TODO. -/
+/-- The explicit **second-derivative** function of `delta_tau_M_surrogate`
+(the derivative of `delta_tau_M_surrogate_deriv`), via the quotient rule on
+`g'(q) = U(q)/V(q)` with `U = N'·D − N·D'`, `V = D·D`:
+
+  `g''(q) = (U'·V − U·V') / V²`,  `U' = N''·D − N·D''`,  `V' = 2·D·D'`,
+
+where the cross terms in `U' = (N'·D − N·D')'` cancel.  `N''` and `D''`
+are the second derivatives of the numerator / denominator of
+`delta_tau_M_surrogate`. -/
+noncomputable def delta_tau_M_surrogate_deriv2 (q : ℝ) : ℝ :=
+  (((-110*q^9 + 90*q^8 - 144*q^7 + 56*q^6 + 30*q^4 - 20*q^3 - 6*q + 4)
+        * (4 * q^5 * (q^2 + q + 1))
+      - (-q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1)
+        * (168*q^5 + 120*q^4 + 80*q^3))
+      * ((4 * q^5 * (q^2 + q + 1)) * (4 * q^5 * (q^2 + q + 1)))
+    - ((-11*q^10 + 10*q^9 - 18*q^8 + 8*q^7 + 6*q^5 - 5*q^4 - 3*q^2 + 4*q - 1)
+        * (4 * q^5 * (q^2 + q + 1))
+      - (-q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1)
+        * (28*q^6 + 24*q^5 + 20*q^4))
+      * (2 * (4 * q^5 * (q^2 + q + 1)) * (28*q^6 + 24*q^5 + 20*q^4)))
+  / (((4 * q^5 * (q^2 + q + 1)) * (4 * q^5 * (q^2 + q + 1))) ^ 2)
+
+set_option maxHeartbeats 1000000 in
+/-- **Theorem (surrogate Δτ_M second derivative).** For all `q > 0`, the
+derivative of `delta_tau_M_surrogate_deriv` at `q` equals
+`delta_tau_M_surrogate_deriv2 q`. -/
+theorem delta_tau_M_surrogate_deriv_hasDerivAt2 (q : ℝ) (hq : 0 < q) :
+    HasDerivAt delta_tau_M_surrogate_deriv (delta_tau_M_surrogate_deriv2 q) q := by
+  have hden_pos : 0 < 4 * q^5 * (q^2 + q + 1) := by
+    have hq5 : 0 < q^5 := pow_pos hq 5
+    have hquad : 0 < q^2 + q + 1 := by
+      convert one_plus_q_plus_q_sq_pos q using 1; ring
+    positivity
+  have hden_ne : 4 * q^5 * (q^2 + q + 1) ≠ 0 := ne_of_gt hden_pos
+  have hVne : (4 * q^5 * (q^2 + q + 1)) * (4 * q^5 * (q^2 + q + 1)) ≠ 0 :=
+    mul_ne_zero hden_ne hden_ne
+  -- N and its first derivative N'
+  have hN : HasDerivAt
+      (fun q : ℝ => -q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1)
+      (-11*q^10 + 10*q^9 - 18*q^8 + 8*q^7 + 6*q^5 - 5*q^4 - 3*q^2 + 4*q - 1) q := by
+    have h11 := (hasDerivAt_pow 11 q).neg
+    have h10 := hasDerivAt_pow 10 q
+    have h9  := (hasDerivAt_pow 9 q).const_mul 2
+    have h8  := hasDerivAt_pow 8 q
+    have h6  := hasDerivAt_pow 6 q
+    have h5  := hasDerivAt_pow 5 q
+    have h3  := hasDerivAt_pow 3 q
+    have h2  := (hasDerivAt_pow 2 q).const_mul 2
+    have h1  := hasDerivAt_id q
+    have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 q := hasDerivAt_const q (1 : ℝ)
+    have hsum := (((((((((h11.add h10).sub h9).add h8).add h6).sub h5).sub h3).add h2).sub h1).add h0)
+    convert hsum using 1
+    ring
+  -- N' and its derivative N''
+  have hN' : HasDerivAt
+      (fun q : ℝ => -11*q^10 + 10*q^9 - 18*q^8 + 8*q^7 + 6*q^5 - 5*q^4 - 3*q^2 + 4*q - 1)
+      (-110*q^9 + 90*q^8 - 144*q^7 + 56*q^6 + 30*q^4 - 20*q^3 - 6*q + 4) q := by
+    have h10 := ((hasDerivAt_pow 10 q).const_mul 11).neg
+    have h9  := (hasDerivAt_pow 9 q).const_mul 10
+    have h8  := ((hasDerivAt_pow 8 q).const_mul 18).neg
+    have h7  := (hasDerivAt_pow 7 q).const_mul 8
+    have h5  := (hasDerivAt_pow 5 q).const_mul 6
+    have h4  := ((hasDerivAt_pow 4 q).const_mul 5).neg
+    have h2  := ((hasDerivAt_pow 2 q).const_mul 3).neg
+    have h1  := (hasDerivAt_pow 1 q).const_mul 4
+    have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 q := hasDerivAt_const q (1 : ℝ)
+    have hsum := ((((((((h10.add h9).add h8).add h7).add h5).add h4).add h2).add h1).sub h0)
+    convert hsum using 1 <;>
+      (try (funext q; simp only [Pi.add_apply, Pi.sub_apply, Pi.neg_apply])) <;> ring
+  -- D and its first derivative D'
+  have hD : HasDerivAt (fun q : ℝ => 4 * q^5 * (q^2 + q + 1))
+      (28*q^6 + 24*q^5 + 20*q^4) q := by
+    have h5  : HasDerivAt (fun q : ℝ => q^5) (5 * q^4) q := hasDerivAt_pow 5 q
+    have h2  : HasDerivAt (fun q : ℝ => q^2) (2 * q^1) q := hasDerivAt_pow 2 q
+    have h1  : HasDerivAt (fun q : ℝ => q) (1 : ℝ) q := hasDerivAt_id q
+    have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 q := hasDerivAt_const q (1 : ℝ)
+    have hquad : HasDerivAt (fun q : ℝ => q^2 + q + 1) (2 * q + 1) q := by
+      have := (h2.add h1).add h0; convert this using 1; ring
+    have hprod : HasDerivAt (fun q : ℝ => q^5 * (q^2 + q + 1))
+        (5 * q^4 * (q^2 + q + 1) + q^5 * (2 * q + 1)) q := h5.mul hquad
+    have := hprod.const_mul 4
+    convert this using 1
+    · funext q; ring
+    · ring
+  -- D' and its derivative D''
+  have hD' : HasDerivAt (fun q : ℝ => 28*q^6 + 24*q^5 + 20*q^4)
+      (168*q^5 + 120*q^4 + 80*q^3) q := by
+    have h6 := (hasDerivAt_pow 6 q).const_mul 28
+    have h5 := (hasDerivAt_pow 5 q).const_mul 24
+    have h4 := (hasDerivAt_pow 4 q).const_mul 20
+    have hsum := (h6.add h5).add h4
+    convert hsum using 1
+    ring
+  -- U = N'·D − N·D' (= numerator of g') ; V = D·D (= denominator of g')
+  have hU := (hN'.mul hD).sub (hN.mul hD')
+  have hV := hD.mul hD
+  have hdiv := hU.div hV hVne
+  unfold delta_tau_M_surrogate_deriv delta_tau_M_surrogate_deriv2
+  convert hdiv using 1 <;>
+    (try funext q) <;>
+    (try simp only [Pi.add_apply, Pi.sub_apply, Pi.neg_apply, Pi.mul_apply,
+      Pi.div_apply, Pi.pow_apply]) <;> ring
+
+/-- **Theorem (derivative-of-`deriv` equality near 1).** The derivative of
+`delta_tau_M_surrogate_deriv` eventually equals `delta_tau_M_surrogate_deriv2`
+at `1`. -/
+theorem delta_tau_M_surrogate_deriv2_eventuallyEq :
+    deriv delta_tau_M_surrogate_deriv =ᶠ[𝓝 1] delta_tau_M_surrogate_deriv2 := by
+  have h_open : IsOpen (Set.Ioi (0 : ℝ)) := isOpen_Ioi
+  have h_mem : (1 : ℝ) ∈ Set.Ioi (0 : ℝ) := (by linarith : (0 : ℝ) < 1)
+  have h_nhds : Set.Ioi (0 : ℝ) ∈ 𝓝 1 := h_open.mem_nhds h_mem
+  apply Filter.eventuallyEq_of_mem h_nhds
+  intro q hq
+  exact (delta_tau_M_surrogate_deriv_hasDerivAt2 q hq).deriv
+
+/-! The order-3..7 Taylor coefficients (`-41/9`, `149/18`, `-1729/108`,
+`111/4`, `-3665/81`) are recorded in the witness JSON
+`qbeta-c3-multiblock-recursion-attack.witness.json`. The order-3
+infrastructure (`delta_tau_M_surrogate_deriv2`,
+`delta_tau_M_surrogate_deriv_hasDerivAt2`) is in place above; the order-3
+*value* theorem (`g'''(1) = −82/3` ⟹ `c₃ = −41/9`) and orders 4–7 remain
+TODO — each adds one more `HasDerivAt` differentiation level. -/
 
 /-! ### Extension #4 — canonical √q-bearing Δτ_M (conditional on
 class axiomatisation of canonical Wenzl–Markov weights)
