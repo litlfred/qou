@@ -60,7 +60,9 @@ def _partitions(n):
                 yield (first,) + rest
 
 
-def _qint(k, q):  # symmetric q-integer [k]_q = (q^k − q^−k)/(q − q^−1)
+def _qint(k, q):  # symmetric q-integer [k]_q = (q^k − q^−k)/(q − q^−1); classical limit [k]_1 = k
+    if q == 1:           # guard the q→1 removable singularity (q − q⁻¹ = 0). `q` is an mpmath mpf
+        return mp.mpf(k)  # here, so use `== 1` — NOT SymPy's `.equals()`, which mpf does not have.
     return (q ** k - q ** (-k)) / (q - q ** (-1))
 
 
@@ -122,6 +124,15 @@ def main():
     print(f"  iterated-vs-physical rel. divergence: {[mp.nstr(d,3) for d in rel_div]}  (max {mp.nstr(max_div,3)})")
     print(f"  anchor consistency |lw(1,2,3)−(a₂,a₃,a₄)| = {mp.nstr(anchor_resid,3)} (≈0 ✓ seed agrees)")
 
+    # Classical limit q→1: lw(c,1) = (1/(c+1))·Σ_{λ⊢c+1} f^λ (number of SYT) — must reproduce the
+    # #2764 Lever1Depth2Exclusion (b)-exclusion weights (1, 4/3, 5/2, 26/5). Ties the two same-lever
+    # PRs and exercises the _qint q=1 guard (Gemini review #2752).
+    lw_classical = [_lw(c, mp.mpf(1)) for c in range(1, 5)]
+    lw_2764 = [mp.mpf(1), mp.mpf(4) / 3, mp.mpf(5) / 2, mp.mpf(26) / 5]
+    classical_resid = max(abs(lw_classical[i] - lw_2764[i]) for i in range(4))
+    print(f"  classical lw(1..4,q=1) = {[mp.nstr(x,6) for x in lw_classical]} vs #2764 (1,4/3,5/2,26/5)"
+          f"; max|Δ|={mp.nstr(classical_resid,3)}")
+
     # saturating |χ| side: effective per-A growth ratio (≈1 = degenerate τ=2 boundary)
     chi_ratio_TtoHe = B_JOINT["4He"] / B_JOINT["3H"]
     print(f"\n  saturating |χ| joint trace: B_joint ³H→⁴He = {mp.nstr(B_JOINT['3H'],4)} → "
@@ -158,6 +169,7 @@ def main():
     wb.add_data("aD_physical_lw_2_to_9", [mp.nstr(x, 10) for x in lw_phys])
     wb.add_data("physical_growth_ratios", [mp.nstr(r, 10) for r in phys_ratios])
     wb.add_data("iterated_vs_physical_rel_divergence", [mp.nstr(d, 6) for d in rel_div])
+    wb.add_data("lw_classical_q1", [mp.nstr(x, 10) for x in lw_classical])
     # SCOPE (2026-06-25 calibration, PR #2752): `seq` is the ITERATED fixed-τ recurrence, so
     # `ratio_convergence` below → λ₊ TAUTOLOGICALLY (every depth-2 recurrence with τ>2 does) — it
     # tests the iterated seq, NOT the physics. The PHYSICAL coefficients a_D^(n)=lw(n−1)
@@ -184,6 +196,9 @@ def main():
     wb.add_assertion("physical_super_geometric",
                      computed=("1" if phys_ratios[-1] > lam_p else "0"), expected="1", tolerance=0.0,
                      source=f"physical lw ratio tail {mp.nstr(phys_ratios[-1],5)} > λ₊ {mp.nstr(lam_p,5)}")
+    wb.add_assertion("lw_classical_matches_2764", computed=mp.nstr(classical_resid, 4), expected="0",
+                     tolerance=1e-25,
+                     source="lw(c,q→1) = (1,4/3,5/2,26/5) = #2764 Lever1Depth2Exclusion classical weights")
     wb.add_caveat("τ>2 ⟹ λ₊>1 is the extensive-growth condition; τ(q₀)=2.6424 satisfies it; the "
                   "|χ| saturation sits at the degenerate τ=2 (λ=1) boundary. SCOPE (PR #2752): "
                   "`aD_sequence`/`growth_ratios` are the ITERATED fixed-τ recurrence, which → λ₊ "
