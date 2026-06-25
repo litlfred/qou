@@ -88,7 +88,15 @@ def degLexNat (a b : List ℕ) : Prop :=
   a.length < b.length ∨ (a.length = b.length ∧ a < b)
 
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
--- Pending: Mathlib renames of `wellFoundedRelation` accessors.
+-- TRUE (deg-lex is length-first ⇒ well-founded), but NOT a one-line "Mathlib
+-- rename": `degLexNat` has order type ω^ω, so its well-foundedness needs a
+-- length-then-fixed-length-lex argument — e.g. `Subrelation`/`InvImage` into
+-- `Sigma.Lex Nat.lt (fun n => Pi.Lex (·<·) (β := fun _ : Fin n => ℕ))` (both
+-- factors WF), plus a `List.lt ↔ Pi.Lex ∘ List.get` bridge for the equal-length
+-- case. (Pure lex ALONE is not WF — cf. the removed `lexLt_wf` in NormalForms.lean,
+-- where `[g₁] > [g₀,g₁] > …` descends forever; the length-first guard is exactly
+-- what rescues `degLexNat`.) Formalisation target — load-bearing (used below at
+-- `degLexNat_wf.apply` / the bounded-jet `Acc`).
 theorem degLexNat_wf : WellFounded degLexNat := by
   sorry
 
