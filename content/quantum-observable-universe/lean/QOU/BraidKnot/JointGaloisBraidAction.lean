@@ -28,11 +28,20 @@ class JointGaloisBraidAction where
   -- Witness: computations/none
   /-- **Conjecture statement** (from manuscript):
 
-      Let $\mathcal{H}_q^{(n, K)}$ be the knot-indexed bi-filtration
-([`def:hq-bi-filtration`](#def:hq-bi-filtration)). Two groups act
-on it by symmetry:*
-
-- *the
+      Let $\mathcal{H}_q^{(n, K)}$ be the knot-indexed bi-filtration.
+      Two groups act on it by symmetry — the motivic Galois group
+      $G_{\mathrm{mot}}$ acts on the depth axis (permuting Goncharov
+      period classes $\mathcal{P}_n / \mathcal{P}_{n-1}$ under
+      $\tau_{\mathrm{arch}}$) and the braid group $B_{n_K}$ acts on the
+      knot axis (permuting Wedderburn cells $e_{\lambda_K}$ via the
+      standard representation on $H_{n_K}(q)$). The conjecture: these
+      extend to a joint action of the semi-direct product
+      $G_{\mathrm{mot}} \rtimes B_{n_K}$ that is equivariant across the
+      two axes, $g_{\mathrm{mot}}(\beta \cdot \alpha) = \beta \cdot
+      g_{\mathrm{mot}}(\alpha)$ for $\alpha \in \mathcal{H}_q^{(n,K)}$,
+      $g_{\mathrm{mot}} \in G_{\mathrm{mot}}$, $\beta \in B_{n_K}$;
+      equivalently the two actions commute on the bi-filtration and the
+      joint group stabilises each $\mathcal{H}_q^{(n,K)}$ stratum.
 
       Field schema below is a structural placeholder; refine per §3b
       to match the conjecture's actual content. The single sorry on
