@@ -496,6 +496,34 @@ These remain tracked under the existing `zslh` / `b3pe` / `mlt7` / `doth`
 "resolve N placeholders" beans; maturation is research-formalization, best
 done with a full Lean build (not a one-shot sandbox sweep).
 
+### Spurious shadowing-duplicate stubs removed (2026-06-25)
+
+A follow-up sweep split the degenerate `residual : ℝ := 0` + `instance :=
+sorry` stubs into **spurious duplicates** vs **genuine** stubs. A stub is
+*spurious* when the conjecture's `lean.ref` resolves (§0a candidate-2) to it
+while its **exact** class FQN is *already declared faithfully* in another,
+**in-build** file that the stub shadows (the staircase / double-magic pattern).
+**None are false** — the real formalisation already exists.
+
+**Deleted (9)** — each an orphan (imported nowhere) degenerate duplicate of an
+in-build faithful class; deletion repoints the `lean.ref` (grep-fallback) to
+the faithful declaration:
+
+| Deleted stub | Faithful in-build twin |
+|---|---|
+| `DoubleMagicDeltaI/DeltaIBoundConjecture.lean` | `QOU/Interactions/DoubleMagicDeltaI.lean` (`DoubleMagicIsotope` data + `empirical_deltaI_le_one` proved + rich `DeltaIBoundConjecture` class + compute theorems) |
+| `AppendixSurreals/{InfinitesimalFrobenius,InfinitesimalObservability,JonesBirthday,KashaevSurreal,OnPModularHecke,HahnSubstrate}.lean` (6) | `QOU/AppendixSurreals/Conjectures.lean` (Gemini-audited classes + `instProvable` + conditional theorems) |
+| `Torsion/YangMillsMassGap.lean` | `QOU/Torsion/MassGap.lean` |
+| `Observations/QCltNonCommutative/QCltNonCommutative.lean` | parent `QOU/Observations/QCltNonCommutative.lean` |
+
+`VacuumEpsilon` was **excluded**: its stub class `VacuumEpsilon` ≠ the faithful
+`VacuumEpsilon'` in `Conjectures.lean` (a rename), so it is a genuine stub, not
+an exact duplicate — deleting it would dangle the ref.
+
+**Net stub triage:** ~9 spurious shadowing-duplicates (deleted), 1 matured (RH,
+#2753), and ~37 genuine open conjectures needing the per-conjecture
+infrastructure above — not a mechanical batch.
+
 ### Method note (2026-06-25)
 
 Inventory = a grep classifier over all `conjecture()` `.ts` blocks
