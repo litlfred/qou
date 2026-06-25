@@ -29,10 +29,10 @@ variable {R : Type*} [CommRing R]
 /-- Coefficient of `L₊ = σ₀σ₁` in the two-photon product `γ₁·γ₂`, as a
     function of the color weights `(φ₀, φ₁)` of `γ₁` and `(ψ₀, ψ₁)` of
     `γ₂`: the cross-color product `φ₀ · ψ₁`. -/
-def coeffLplus (φ0 φ1 ψ0 ψ1 : R) : R := φ0 * ψ1
+def coeffLplus (φ0 _φ1 _ψ0 ψ1 : R) : R := φ0 * ψ1
 
 /-- Coefficient of `L₋ = σ₁σ₀` in the two-photon product: `φ₁ · ψ₀`. -/
-def coeffLminus (φ0 φ1 ψ0 ψ1 : R) : R := φ1 * ψ0
+def coeffLminus (_φ0 φ1 ψ0 _ψ1 : R) : R := φ1 * ψ0
 
 /-- **The chiral pair is generated independently by γγ production.**
     For any target pair `(a, b)` there exist photon color weights whose
