@@ -77,4 +77,45 @@ theorem conjugate_eq_conj (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   rw [maxPart_eq_headD l hl]
   rfl
 
+/-! ## Bridge 2 — `Partition.hookLength = ` the `colLen`-hook -/
+
+/-- For a weakly-decreasing partition with `λ_i > j` (so cell `(i,j)` exists), the leg count
+`#{i' > i : λ_{i'} > j}` equals `colLen l j − (i+1)`: the first `i+1` rows all exceed `j`. -/
+theorem leg_count (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (i j : ℕ)
+    (hi : i < l.length) (hj : j < l.getD i 0) :
+    colLen l j = (i + 1) + ((l.drop (i + 1)).filter (fun p => j < p)).length := by
+  have htake : ∀ x ∈ l.take (i + 1), j < x := by
+    intro x hx
+    obtain ⟨k, hk', hkx⟩ := List.mem_iff_getElem.mp hx
+    have hk := hk'
+    rw [List.length_take] at hk
+    have hkl : k < l.length := by omega
+    have hki : k ≤ i := by omega
+    have hxk : x = l.getD k 0 := by
+      rw [← hkx, List.getElem_take, List.getD_eq_getElem?_getD,
+        List.getElem?_eq_getElem hkl, Option.getD_some]
+    rw [hxk]
+    exact lt_of_lt_of_le hj (getD_antitone l hl hki)
+  have hcol : colLen l j = ((l.take (i + 1)).filter (fun p => j < p)).length
+      + ((l.drop (i + 1)).filter (fun p => j < p)).length := by
+    unfold colLen
+    conv_lhs => rw [← List.take_append_drop (i + 1) l]
+    rw [List.filter_append, List.length_append]
+  rw [hcol, List.filter_eq_self.mpr (by simpa using htake), List.length_take,
+    Nat.min_eq_left (by omega)]
+
+/-- **Bridge 2.** `Partition.hookLength l i j` equals the merged `colLen`-hook
+`(λ_i − j) + (colLen j − i) − 1` for a genuine cell of a weakly-decreasing partition. -/
+theorem hookLength_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (i j : ℕ)
+    (hi : i < l.length) (hj : j < l.getD i 0) :
+    Partition.hookLength l i j = (l.getD i 0 - j) + (colLen l j - i) - 1 := by
+  have hget : l.get? i = some (l.getD i 0) := by
+    rw [List.get?_eq_getElem?, List.getElem?_eq_getElem hi, List.getD_eq_getElem?_getD,
+      List.getElem?_eq_getElem hi, Option.getD_some]
+  have hleg := leg_count l hl i j hi hj
+  unfold Partition.hookLength
+  rw [hget]
+  simp only [hj, if_true, gt_iff_lt]
+  omega
+
 end QOU.BraidKnot.IdentityI
