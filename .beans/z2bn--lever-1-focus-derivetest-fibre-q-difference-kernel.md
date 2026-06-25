@@ -242,3 +242,24 @@ Parallel to the #2755 Step-1 probe above (same color Σ, same `λ_SW=X dz`). My 
 - **Convergent target (both probes + Step 1):** construct the explicit q-difference `R(q,x)` whose `∮λ_SW^(n)`
   residues reproduce `1, (q+1)²/(3q), Family-A`. Owner-gated keystone; coordinate with the #2755 sibling +
   #2722 (geometric `tr B`) before constructing. No fit; nothing wired.
+## Calibration (2026-06-25, PR #2752) — spectral-bridge `→λ₊` is tautological; physical `lw` is super-geometric
+
+Reconciled the two same-day, same-lever results that were in direct tension (no cross-ref between them):
+- **#2718 spectral bridge** tabulates `aD_sequence` = the ITERATED fixed-τ recurrence (→λ₊ by
+  construction) and asserted it "Empirical (non-tautological) / tests the actual a_D^(n) sequence".
+- **#2708** shows the PHYSICAL `a_D^(n)=lw(n−1)` grow **super-geometrically** (ratios 1.34→2.76, past
+  λ₊=2.185), diverging from the iterated seq by **≤32% (n=7)**. `5.356 = τ·2.533−1.337` proves the
+  bridge seq is the recurrence's own output, not the physical lw.
+
+Independent **float64 q-hook recompute reproduces BOTH probes exactly** (validated vs corpus closed
+forms lw(2)=(q+1)²/(3q), lw(3)=Family-A). **(a)-scope re-calibration, NOT a refutation:** qualitative
+"extensive not saturating" CONFIRMED + reinforced (super-geometric > geometric); quantitative "λ₊ is
+the binding growth rate" is a **seed artifact** — λ₊>1 witnesses only the SEED kernel's extensivity.
+Lean `lambdaPlus_gt_one` (τ>2⇒λ₊>1) is a correct **conditional**, unchanged.
+
+Source re-scoped (e748e062): producer comment/caveat/description + Lean docstring; also dropped the
+already-retracted magic-A finite-truncation over-claim from the witness caveat. Deferred (full-env,
+mpmath absent — same constraint as ct80/#2747): witness JSON regen + producer enhancement to emit lw
+beside the iterated seq (reference q-hook algorithm in the audit). Audit:
+`docs/audits/2026-06-25-spectral-bridge-tautology-recurrence-vs-lw.md`. No fit; nothing wired; no tier
+change. Owner closes (§4a).
