@@ -1293,6 +1293,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "818e1658b9e7",
+          "ts": "f04a44b16945"
+        },
+        "result": "fail",
+        "notes": "Degenerate: windows DEFINED as [q*-ε,q*+ε] so q* in window is tautological; loses the .md's real claim (3 INDEPENDENT measurement classes overlap at [1.109,1.112]).",
+        "reviewed_at": "2026-06-25T17:16:56.000Z",
+        "reviewed_sha": "ca1c18a6cfd2e5fc0007de3587186877b6f27a4e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1322,6 +1339,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "818e1658b9e7",
+          "ts": "f04a44b16945"
+        },
+        "result": "pass",
+        "notes": "Body uses rw[q_lo_def,q_hi_def] + linarith on epsilon_nonneg — a derivation, not a bare := ctx.field projection (issue is degeneracy, flagged under integrity).",
+        "reviewed_at": "2026-06-25T17:17:07.000Z",
+        "reviewed_sha": "ca1c18a6cfd2e5fc0007de3587186877b6f27a4e",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

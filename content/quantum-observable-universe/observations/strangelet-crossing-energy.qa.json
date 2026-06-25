@@ -1299,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4fdf1acbbc53",
+          "ts": "ecf3fab17a11"
+        },
+        "result": "pass",
+        "notes": "Topological EM-neutrality + enhanced strong binding for strange matter is a substantive framework prediction relevant to strangelet stability.",
+        "reviewed_at": "2026-06-25T17:16:39.000Z",
+        "reviewed_sha": "ca1c18a6cfd2e5fc0007de3587186877b6f27a4e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
