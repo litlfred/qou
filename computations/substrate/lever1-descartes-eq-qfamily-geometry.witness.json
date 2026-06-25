@@ -1,0 +1,81 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-25T11:56:49.660977+00:00",
+  "commitSha": "8558da53506a600a848903e0e3b066bdd49bea6c",
+  "assertions": [
+    {
+      "name": "j_at_q1_eq_128",
+      "computed": 128,
+      "expected": 128,
+      "passed": true,
+      "tolerance": 0,
+      "source": "descartes-elliptic-curve.md classical limit j(1)=128"
+    },
+    {
+      "name": "j_at_q0_eq_129_86",
+      "computed": 129.86,
+      "expected": 129.86,
+      "passed": true,
+      "tolerance": 0.05,
+      "source": "descartes-elliptic-curve.md j(q₀)=129.9"
+    },
+    {
+      "name": "golden_cusp_j_eq_1728",
+      "computed": 1728.0,
+      "expected": 1728.0,
+      "passed": true,
+      "tolerance": 0.0001,
+      "source": "s=1/φ cusp (golden-ratio degeneration) is the j=1728 CM point"
+    },
+    {
+      "name": "six_singular_fibres_in_q",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "deg_s(Δ-core)=12 in s ⇒ 6 in q; matches coral six-fibre count"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "lever1-descartes-eq-qfamily-geometry",
+  "scriptFile": "lever1_descartes_eq_qfamily_geometry.py",
+  "scriptHash": "38b7e414fca2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "auditOnly": "docs/audits/2026-06-25-lever1-binding-tau-construction-vs-compute-scoping.md",
+  "parameters": {
+    "curve": "y^2 = x^3 + a(s)x + b(s), s=√q (descartes-elliptic-curve.md)"
+  },
+  "data": {
+    "j_of_s": "6912*(2*s**4 + s**3 - 2*s**2 - s + 2)**3/(25*(s**2 + s - 1)**2*(4*s**4 - s**3 - 4*s**2 + s + 4)**2 + 4*(2*s**4 + s**3 - 2*s**2 - s + 2)**3)",
+    "disc_core_deg_in_s": 12,
+    "disc_core_palindromic_in_s": false,
+    "singular_q": [
+      "(2.51937 + 0.5123j)",
+      "(2.51937 - 0.5123j)",
+      "(0.49902 + 0.733579j)",
+      "(0.49902 - 0.733579j)",
+      "(0.389244 + 0.7776j)",
+      "(0.389244 - 0.7776j)",
+      "(0.381164 - 0.0775079j)",
+      "(0.381164 + 0.0775079j)",
+      "(0.514755 - 1.02834j)",
+      "(0.514755 + 1.02834j)",
+      "(0.633951 - 0.931933j)",
+      "(0.633951 + 0.931933j)"
+    ],
+    "verdict": "Topological Gauss–Manin monodromy of E_q lies in SL₂(ℤ) (cusps + the j=1728 elliptic CM point at s=1/φ) ⇒ integer trace ≠ τ=2.6424. (a)-baseline pinned on the explicit q-family; the open delta is the abelianised λ_SW Cartan-connection holonomy B (real, τ=2cosh θ). This supplies M's base geometry, not the abelianisation."
+  }
+}
