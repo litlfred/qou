@@ -84,14 +84,14 @@ this container ⇒ analytical/corpus synthesis, not compute):
 - **A + B — binding monodromy is HYPERBOLIC, not compact SU(2).** Corpus-grep surfaced the
   un-cross-referenced **2026-06-06 M-workplan**: `H¹(Bring)=W⊗ℂ²` (Riera–Rodríguez; `W`=irred
   4-dim S₅ rep), `M=id_W⊗B`, `B∈SL₂`, `det=1` (Lean `sl2_prolongation_recurrence`). So the rank-2
-  `W` is the **S₅-Hodge multiplicity space = candidate H¹(coral elliptic E_z)** (B largely
-  resolved). Probe: `τ_binding=2.6424>2` ⇒ `B` hyperbolic; the coral `E_z` monodromy = trefoil
+  `W` is the **S₅-Hodge multiplicity space = candidate H¹(color elliptic E_z)** (B largely
+  resolved). Probe: `τ_binding=2.6424>2` ⇒ `B` hyperbolic; the color `E_z` monodromy = trefoil
   holonomy is **compact SU(2)** (`(H₁H₂)³=id`, `tr=−1`, `|tr|≤2`) ⇒ `B` **structurally excluded
   from compact SU(2)** ((b), trace invariant) — it's the non-compact `SU_q(2)→E_q(2)`
   continuation, the **same arena the keystone reached from the W_λ side** (independent
   convergence). Refines the torus refutation: torus is *also* hyperbolic (2.044), so binding≠torus
   is a *rapidity* mismatch (`θ_b/θ_t=3.74`), not compact-vs-noncompact. Next (tractable, NOT
-  genus-4): compute the coral `E_z` (genus-1) Picard–Fuchs rapidity, test `=θ_binding=0.7815`.
+  genus-4): compute the color `E_z` (genus-1) Picard–Fuchs rapidity, test `=θ_binding=0.7815`.
   Probe `lever1_binding_monodromy_hyperbolicity.py` (8/8); audit
   `2026-06-24-lever1-binding-monodromy-hyperbolicity.md`. Hygiene flag: M-workplan's 3 `.py`
   scripts are NOT in the tree (only Lean+props back it).
@@ -102,14 +102,14 @@ this container ⇒ analytical/corpus synthesis, not compute):
   non-circular c=2 mass-consumer. Probe `lw2_c2_independent_hopf_test_attempt.py` (4/4); audit
   `2026-06-24-lw2-c2-independent-test-attempt.md`.
 
-Net: B resolved to the coral-`E_z` rank-2 factor; A sharpened to a tractable genus-1 Picard–Fuchs
+Net: B resolved to the color-`E_z` rank-2 factor; A sharpened to a tractable genus-1 Picard–Fuchs
 rapidity test + keystone-arena convergence; C confirmed circularity-gated. No closure; no fit;
 nothing wired. Owner closes (§4a).
 
-## Option 2 (2026-06-24, PR #2708) — coral `E_q` confirmed; `tr B` non-integer reframes the test
+## Option 2 (2026-06-24, PR #2708) — color `E_q` confirmed; `tr B` non-integer reframes the test
 
-Ran the genus-1 coral `E_q` step (Sage unavailable ⇒ analytical):
-- **Coral `E_q` = descartes `E_q` CONFIRMED** by the invariant `j`: `j(q₀)=129.86` (descartes 129.9),
+Ran the genus-1 color `E_q` step (Sage unavailable ⇒ analytical):
+- **Color `E_q` = descartes `E_q` CONFIRMED** by the invariant `j`: `j(q₀)=129.86` (descartes 129.9),
   `j(1)=128`, `p(1)=2/3`, `r(1)=20/27` exact. Direction-B curve half **closed** (single identified curve,
   not genus-4).
 - **Decisive reframing:** `tr B = 2.6424 ∉ ℤ`, but the **topological** Gauss–Manin monodromy of an
@@ -118,8 +118,8 @@ Ran the genus-1 coral `E_q` step (Sage unavailable ⇒ analytical):
   abelianisation. The literal option-2 goal (genus-1 Picard–Fuchs *topological* monodromy) computes the
   wrong (integer-trace) object. `τ_torus=2.0437` also non-integer ⇒ same connection-holonomy nature.
 - **Still open (keystone):** the explicit abelianised-connection holonomy `=θ_binding=0.7815` at q₀.
-Probe `lever1_coral_eq_monodromy_integrality.py` (7/7); audit
-`2026-06-24-lever1-coral-eq-monodromy-integrality.md`. No fit; nothing wired. Owner closes (§4a).
+Probe `lever1_color_eq_monodromy_integrality.py` (7/7); audit
+`2026-06-24-lever1-color-eq-monodromy-integrality.md`. No fit; nothing wired. Owner closes (§4a).
 
 ## Option 3 (2026-06-24, PR #2708) — depth-2 recurrence FALSIFIED beyond seed; θ_binding is a fit
 
@@ -132,7 +132,7 @@ const-coeff depth-2 model (invariant: window-independent kernel). **`θ_binding=
 seed-fit artifact, not a derived rate.** Does NOT refute the `Jac(Bring)~E⁴` isogeny (sibling
 `mass-open-keystone-w-l2-root`) or the 2×2 `M`'s existence — only that the `lw` values ARE its prolonged
 periods beyond the seed. Convention validated (lw(2), lw(3)=Family-A match corpus). Cross-link: the
-sibling's open `j(E)` is answered by the coral `j(q₀)=129.86`. Probe
+sibling's open `j(E)` is answered by the color `j(q₀)=129.86`. Probe
 `lever1_lw_depth2_recurrence_test.py` (7/7); audit `2026-06-24-lever1-lw-depth2-recurrence-falsified.md`.
 No fit; nothing wired. Owner closes (§4a).
 
@@ -144,12 +144,12 @@ production proton multiplier), is non-integer, strictly in (2,3). **No integer `
 Family-A**: τ=2 misses 34%, the icosahedral **golden τ=3 (`λ=φ²`) misses 19%**, τ=4 misses 72%. So `B`
 is not any topological `SL₂(ℤ)` monodromy and the golden hypothesis is **refuted by the seed**
 (numerology guard held — tested, not forced). The genuine `2.6424`-object is the **owner-gated
-abelianised `λ_SW` real connection holonomy** on the coral `E_q` (`SL₂(ℝ)`, hyperbolic, θ=0.7815).
+abelianised `λ_SW` real connection holonomy** on the color `E_q` (`SL₂(ℝ)`, hyperbolic, θ=0.7815).
 Concrete owner-gated next step: integrate `λ_SW = x dz` on `E_q` + its Gauss–Manin prolongation (genus-1
 period integration; sandbox Sage blocked; sibling `mass-open-keystone-w-l2-root` holds the curve side).
 Probe `lever1_lambda_sw_no_shortcut.py` (4/4); audit `2026-06-24-lever1-lambda-sw-no-shortcut.md`.
 
-**Lever-1 frontier now fully mapped:** curve = coral/descartes `E_q` (j confirmed); `B` = abelianised
+**Lever-1 frontier now fully mapped:** curve = color/descartes `E_q` (j confirmed); `B` = abelianised
 `λ_SW` real holonomy (not compact SU(2), not topological `SL₂(ℤ)`, not an `lw`-recurrence rate, no
 integer/golden shortcut); the explicit holonomy = θ_binding is the owner-gated keystone `M` on the
 elliptic factor. No fit; nothing wired. Owner closes (§4a).
@@ -163,10 +163,10 @@ elliptic factor. No fit; nothing wired. Owner closes (§4a).
   failure. Dims computed via hook-length (decide, dodge-proof). Backs the audit "θ_binding is a
   seed-fit artifact". (b)-scope: const-coeff model only; variable-τ monodromy B untouched.
 - **Owner LIFTED the gate (2026-06-25):** authorized the gated τ-derivation (abelianised λ_SW
-  holonomy on coral E_q) AND confirmed Sage is gettable. Tooling now present in-container
+  holonomy on color E_q) AND confirmed Sage is gettable. Tooling now present in-container
   (mpmath 1.3.0 + sympy 1.14.0 pip-installed; full Sage may not be needed — numerical
   elliptic-period integration suffices). Coordinated with sibling #2722 (geometric tr B side) to
-  avoid double-work. **Next focused step (formalize-first):** locate the coral/descartes E_q curve
+  avoid double-work. **Next focused step (formalize-first):** locate the color/descartes E_q curve
   eqn in corpus, set up λ_SW = x dz period/Gauss-Manin holonomy, derive τ WITHOUT fitting to 2.6424
   (numerology guard). NOT yet started — deep effort, pending owner go / #2722 coordination.
 
@@ -231,11 +231,11 @@ until λ_SW^(2) is explicit. Consistent with merged sibling #2764 ((b)-exclusion
 constant-τ depth-2: my aD5(q=1)=251/48 ≠ lw(4)=26/5, residual 7/240; τ(q=1)=21/8 = their seed).
 ## Progress 2026-06-25 cont. (PRs #2767, #2768) — converges with Step 1; operator NARROWED to q-difference
 
-Parallel to the #2755 Step-1 probe above (same coral Σ, same `λ_SW=X dz`). My two probes:
+Parallel to the #2755 Step-1 probe above (same color Σ, same `λ_SW=X dz`). My two probes:
 - **Probe 1 (PR #2767, merged):** τ closed form `(a_D²+a_D⁴)/a_D³ = 3(3q⁴+8q²+3)/(4q(q+1)²)`
-  Lean-proved sorry-free (`Lever1TauClosedForm.lean`; #2755 deduped against it, commit 8558da53); coral
+  Lean-proved sorry-free (`Lever1TauClosedForm.lean`; #2755 deduped against it, commit 8558da53); color
   `E_q` confirmed (`j(q₀)=129.86`, `j(1)=128`; flagged a −16 bug in `descartes-elliptic-curve.lean::j_invariant`).
-- **Probe 2 (PR #2768):** sorry-free `coral_power_sums` (coral cubic + classical d/dz jets + power sums all
+- **Probe 2 (PR #2768):** sorry-free `color_power_sums` (color cubic + classical d/dz jets + power sums all
   q-FREE) ⇒ **(b)-EXCLUSION of the classical-jet identification** (q-indep periods ≠ q-dep anchor `(q+1)²/(3q)`).
   **Increment over #2755 Step 1:** Step 1 showed `Res(X dz)=0` at finite branch points (residues only at z=∞);
   Probe 2 adds *why a classical prolongation can't rescue it* — the operator **must be q-DIFFERENCE** (`R(q,x)`).
