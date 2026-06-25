@@ -50,9 +50,8 @@ noncomputable def weierstrass_discriminant (p r : ℝ) : ℝ :=
   -16 * (4 * p ^ 3 + 27 * r ^ 2)
 
 /-- The j-invariant of a Weierstrass curve `y² = x³ + px + r`:
-    `j = -1728·(4p)³ / Δ` with `Δ = -16(4p³ + 27r²)`.  Dividing by the bare
-    `4p³ + 27r²` (omitting the `-16` of `Δ`) returns `-16·j` — e.g. `j(1) = -2048`
-    instead of the correct `128`; reuse `weierstrass_discriminant` so `j` is right. -/
+    `j = -1728·(4p)³ / Δ`, where `Δ` is the `weierstrass_discriminant`
+    `-16(4p³ + 27r²)`. -/
 noncomputable def j_invariant (p r : ℝ) : ℝ :=
   -1728 * (4 * p) ^ 3 / weierstrass_discriminant p r
 
