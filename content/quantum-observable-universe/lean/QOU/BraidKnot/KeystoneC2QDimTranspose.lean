@@ -118,4 +118,78 @@ theorem hookLength_eq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (i j : ℕ)
   simp only [hj, if_true, gt_iff_lt]
   omega
 
+/-! ## Bridge 3 — `conj l` is sorted; `qDim`'s nested `foldl` is a double `Finset.prod` -/
+
+/-- `colLen` is antitone in the column index `j`: wider columns sit at the left.  (Each row
+indicator `[j < λ_k]` only shrinks as `j` grows.) -/
+theorem colLen_antitone (l : List ℕ) {j₁ j₂ : ℕ} (h : j₁ ≤ j₂) :
+    colLen l j₂ ≤ colLen l j₁ := by
+  rw [colLen_eq_indicator_sum, colLen_eq_indicator_sum]
+  apply Finset.sum_le_sum
+  intro k _
+  by_cases hk : j₂ < l.getD k 0
+  · rw [if_pos hk, if_pos (lt_of_le_of_lt h hk)]
+  · rw [if_neg hk]; exact Nat.zero_le _
+
+/-- The merged conjugate `conj l` is itself weakly decreasing: its rows are the column lengths
+`colLen l j`, which decrease in `j` (`colLen_antitone`). -/
+theorem conj_sorted (l : List ℕ) : (conj l).Sorted (· ≥ ·) := by
+  show List.Pairwise (· ≥ ·) (conj l)
+  rw [List.pairwise_iff_getElem]
+  intro i j _ _ hij
+  simp only [conj, List.getElem_map, List.getElem_range]
+  exact colLen_antitone l (le_of_lt hij)
+
+/-- `(l.get? i).getD 0 = l.getD i 0` — the inner `qDim` row-length bound, normalised (agrees both
+in range, where `get? = some`, and out of range, where both are the default `0`). -/
+theorem getQ_getD (l : List ℕ) (i : ℕ) : (l.get? i).getD 0 = l.getD i 0 := by
+  rw [List.get?_eq_getElem?, ← List.getD_eq_getElem?_getD]
+
+/-- A multiplicative `foldl` over `range n` is the `Finset.prod` (product analog of the additive
+`list_range_map_sum`, but written directly on the `foldl` shape `qDim` uses). -/
+theorem foldl_mul_range {M : Type*} [CommMonoid M] (n : ℕ) (f : ℕ → M) :
+    (List.range n).foldl (fun acc i => acc * f i) 1 = ∏ i ∈ Finset.range n, f i := by
+  induction n with
+  | zero => simp
+  | succ m ih =>
+    rw [List.range_succ, List.foldl_append, ih, Finset.prod_range_succ]
+    simp
+
+/-- **`qDim` as a double `Finset.prod`.** Unfold the nested `foldl` denominator into a `Finset`
+double product, with the inner row-length bound normalised to `l.getD i 0` (`getQ_getD`). -/
+theorem qDim_eq_prod (q : ℝ) (l : List ℕ) :
+    qDim q l = qFactorial q (Partition.size l) /
+      ∏ i ∈ Finset.range l.length,
+        ∏ j ∈ Finset.range (l.getD i 0), qBracket q (Partition.hookLength l i j) := by
+  unfold qDim
+  simp only [foldl_mul_range, getQ_getD, Partition.length]
+
+/-- **C2 — the genuine q-version: the q-hook-length dimension is transpose-invariant**,
+`d_q(λ) = d_q(λ')`, hence the q-Plancherel weight `W_λ = d_q(λ)²/[n]_q!` satisfies `W_λ = W_{λ'}`
+(the s5-so3 keystone's necessary condition C2 — the weight is chirality-blind).
+
+`qDim q λ = [|λ|]_q! / ∏_c [h_c]_q`.  Both inputs are transpose-invariant: the size `|λ|` by
+`sz_conj`, and the `qBracket`-weighted hook product by `qHookProd_conj` (rewriting each genuine
+cell's `Partition.hookLength` to the merged `colLen`-hook via `hookLength_eq`, on both `conj l`
+— sorted by `conj_sorted` — and `l`).  So the q-dimension is too. -/
+theorem qDim_conj (q : ℝ) (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    qDim q (Partition.conjugate l) = qDim q l := by
+  have e1 : (∏ i ∈ Finset.range (conj l).length, ∏ j ∈ Finset.range ((conj l).getD i 0),
+              qBracket q (Partition.hookLength (conj l) i j))
+          = ∏ i ∈ Finset.range (conj l).length, ∏ j ∈ Finset.range ((conj l).getD i 0),
+              qBracket q ((conj l).getD i 0 - j + (colLen (conj l) j - i) - 1) := by
+    apply Finset.prod_congr rfl; intro i hi
+    apply Finset.prod_congr rfl; intro j hj
+    rw [hookLength_eq (conj l) (conj_sorted l) i j
+          (Finset.mem_range.mp hi) (Finset.mem_range.mp hj)]
+  have e2 : (∏ i ∈ Finset.range l.length, ∏ j ∈ Finset.range (l.getD i 0),
+              qBracket q (Partition.hookLength l i j))
+          = ∏ i ∈ Finset.range l.length, ∏ j ∈ Finset.range (l.getD i 0),
+              qBracket q (l.getD i 0 - j + (colLen l j - i) - 1) := by
+    apply Finset.prod_congr rfl; intro i hi
+    apply Finset.prod_congr rfl; intro j hj
+    rw [hookLength_eq l hl i j (Finset.mem_range.mp hi) (Finset.mem_range.mp hj)]
+  have hnum : Partition.size (conj l) = Partition.size l := sz_conj l hl
+  rw [conjugate_eq_conj l hl, qDim_eq_prod, qDim_eq_prod, hnum, e1, e2, qHookProd_conj q l hl]
+
 end QOU.BraidKnot.IdentityI
