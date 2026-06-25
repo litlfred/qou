@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-24T18:42:10.683051+00:00",
-  "commitSha": "568404c61ea98afb7e1f25ff3351dff8f1ff1e0c",
+  "computedAt": "2026-06-25T10:51:20.019231+00:00",
+  "commitSha": "b1ee2a93d8b58efab4ad0a69db3c75ca993bd1fd",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "e46b8145b47b2bb40f9b7ce30a8bd126e7fbc6ad",
+  "scriptCommitSha": "71e80fe935e7d45f815d573fd38c2bca61ed4c96",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -572,7 +572,6 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -2630,9 +2629,13 @@
         "keystone-schurweyl-dual-sides.witness.json",
         "keystone-schurweyl-su2-rowcount.witness.json",
         "keystone-step1-gate-wrt-vs-wlambda.witness.json",
+        "keystone-wlambda-defect-cn-closedform-crosscheck.witness.json",
+        "keystone-wlambda-defect-coeff-ladder.witness.json",
+        "keystone-wlambda-defect-dn-subleading.witness.json",
         "keystone-wrt-color-schurweyl.witness.json",
         "kite-tail-reconciliation.witness.json",
         "kite_tail_reconciliation.witness.json",
+        "kl-betti-cell-dependence.witness.json",
         "knot-factor-skein-verification.witness.json",
         "knot-operator-census-group-actions.witness.json",
         "knot-operator-sdp-4_1.witness.json",
