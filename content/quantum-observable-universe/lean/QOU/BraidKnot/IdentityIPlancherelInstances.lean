@@ -14,9 +14,10 @@ import QOU.BraidKnot.IdentityIPlancherelConditional
 That file ships only **one** model, `plancherelSnData_two`, so the conditional theorems are
 non-vacuous but otherwise carry the `PlancherelSnData` hypothesis everywhere.
 
-This file **discharges the class outright for `n = 3, 4, 5`** — the physically-relevant range
-(the deuteron `pn` channel lives at `n = 3`; the s5-so3 keystone itself at `n = 5`) — by an
-explicit finite construction, **needing no Specht / RSK / Jucys–Murphy infrastructure**:
+This file **discharges the class outright for `n = 3, 4, 5, 6, 7`** — the physically-relevant
+range (the deuteron `pn` channel lives at `n = 3`; the s5-so3 keystone itself at `n = 5`; the
+defect-cubic sign flip at `n = 7`) — by an explicit finite construction, **needing no Specht /
+RSK / Jucys–Murphy infrastructure**:
 
 * `parts` = the partitions of `n` (read off the verified `allPartsLE9` enumeration);
 * `dim`   = the **Frame–Robinson–Thrall hook-length dimension** `dimHLF` of
@@ -26,9 +27,10 @@ explicit finite construction, **needing no Specht / RSK / Jucys–Murphy infrast
   run in `dim_validated_le12` / `idB_verified_le12`, now wired into the class.
 
 Consequently `two_sum_dim_sq_hooks` and `twoM_eq_plancherel_hook_sum` (the keystone's
-`WLambdaDefect.twoM` = Identity I bridge) hold **unconditionally** at `n = 3, 4, 5`: at these `n`
-the keystone's one carried representation-theoretic input is *proved*, not axiomatic, so the
-falsifiable defect cubic `144·C(n) = −n(n−1)(2n−13)` rests on proved inputs there.
+`WLambdaDefect.twoM` = Identity I bridge) hold **unconditionally** at `n = 3, 4, 5, 6, 7`: at
+these `n` the keystone's one carried representation-theoretic input is *proved*, not axiomatic,
+so the falsifiable defect cubic `144·C(n) = −n(n−1)(2n−13)` — including its sign flip at `n = 7`
+— rests on proved inputs there.
 
 **Scope (honest).** This is the per-`n` slice only. The general-`n` discharge (Specht modules,
 RSK / Jucys–Murphy, the hook-length formula) remains the multi-session program scoped in
@@ -73,7 +75,31 @@ instance plancherelSnData_five : PlancherelSnData 5 where
   sum_dim_sq := by decide
   two_sum_dim_sq_content := by decide
 
-/-! ## Identity I is now unconditional at `n = 3, 4, 5`
+/-- **`PlancherelSnData 6`** — the 11 partitions of 6 (`Σ dim² = 720 = 6!`). -/
+instance plancherelSnData_six : PlancherelSnData 6 where
+  parts := {[6], [5, 1], [4, 2], [4, 1, 1], [3, 3], [3, 2, 1], [3, 1, 1, 1], [2, 2, 2],
+            [2, 2, 1, 1], [2, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]}
+  parts_sorted := by decide
+  parts_sz := by decide
+  dim := dimHLF
+  sum_dim_sq := by decide
+  two_sum_dim_sq_content := by decide
+
+/-- **`PlancherelSnData 7`** — the 15 partitions of 7 (`Σ dim² = 5040 = 7!`).  `n = 7` is where
+the falsifiable defect cubic `144·C(n) = −n(n−1)(2n−13)` has its **sign flip** (`2n−13` changes
+sign), so this is the most diagnostic `n` for the keystone's defect target — Identity I is now
+proved (not axiomatic) exactly there. -/
+instance plancherelSnData_seven : PlancherelSnData 7 where
+  parts := {[7], [6, 1], [5, 2], [5, 1, 1], [4, 3], [4, 2, 1], [4, 1, 1, 1], [3, 3, 1], [3, 2, 2],
+            [3, 2, 1, 1], [3, 1, 1, 1, 1], [2, 2, 2, 1], [2, 2, 1, 1, 1], [2, 1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1]}
+  parts_sorted := by decide
+  parts_sz := by decide
+  dim := dimHLF
+  sum_dim_sq := by decide
+  two_sum_dim_sq_content := by decide
+
+/-! ## Identity I is now unconditional at `n = 3, 4, 5, 6, 7`
 
 With the instances above registered, the conditional theorems of
 `IdentityIPlancherelConditional` fire with **no** hypothesis at these `n`: the keystone's
@@ -101,5 +127,19 @@ theorem twoM_plancherel_five :
         (plancherelSnData_five.dim l : ℤ) ^ 2 * sumSqHooks l
       = QOU.BraidKnot.WLambdaDefect.twoM (5 : ℤ) * (Nat.factorial 5 : ℤ) := by
   exact twoM_eq_plancherel_hook_sum 5
+
+/-- Identity I, **unconditional at `n = 6`**. -/
+theorem twoM_plancherel_six :
+    2 * ∑ l ∈ plancherelSnData_six.parts,
+        (plancherelSnData_six.dim l : ℤ) ^ 2 * sumSqHooks l
+      = QOU.BraidKnot.WLambdaDefect.twoM (6 : ℤ) * (Nat.factorial 6 : ℤ) := by
+  exact twoM_eq_plancherel_hook_sum 6
+
+/-- Identity I, **unconditional at `n = 7`** (the defect-cubic sign-flip degree). -/
+theorem twoM_plancherel_seven :
+    2 * ∑ l ∈ plancherelSnData_seven.parts,
+        (plancherelSnData_seven.dim l : ℤ) ^ 2 * sumSqHooks l
+      = QOU.BraidKnot.WLambdaDefect.twoM (7 : ℤ) * (Nat.factorial 7 : ℤ) := by
+  exact twoM_eq_plancherel_hook_sum 7
 
 end QOU.BraidKnot.IdentityI
