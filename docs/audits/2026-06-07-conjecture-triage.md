@@ -439,6 +439,34 @@ Net 2026-06-25: **no kind-flips**; **3** Lean-internal integrity fixes across
 the session (rho-k, staircase, kashaev). The conjecture corpus is otherwise
 sound; the closeable set remains ≈ empty — the 147 are genuine open problems.
 
+### Compile-validity CI gate + the import-order backlog (2026-06-25 follow-up)
+
+Acting on the systemic insight, the `lean-vacuity-axiom-audit.ts` scanner was
+extended with two **compile-validity** categories (guaranteed Lean errors, not
+heuristics) that the vacuity detectors miss:
+
+- `proof-no-trivial-type-mismatch` — a term-mode `trivial` body under a
+  non-`True`-typed `def`/`abbrev` (caught rho-k + kashaev). Tree-wide count
+  after the fixes: **0**.
+- `lean-import-after-content` — an `import` after a `/-!` module docstring or
+  any command (illegal Lean-4 order; caught kashaev). Tree-wide count:
+  **40 files** — a real, mechanical, latent-broken **backlog** (5 are under the
+  CI-built `lean/QOU/**` tree and contribute to the already-red
+  `lake build QOU`; 35 are content-block siblings outside it). Representative:
+  `lean/QOU/Braiding/skein_crossing_asymmetry.lean:15` (`import …` after the
+  module docstring). Fixing them is a uniform codemod (move the post-docstring
+  imports above the docstring) — deferred to its own PR where a Lean build can
+  verify it, **not** bolted on here.
+
+A new `--fail-on <categories>` flag drives a **diff-scoped** CI gate
+([`.github/workflows/lean-content-siblings.yml`](../../.github/workflows/lean-content-siblings.yml)):
+on each PR it runs the scanner over **only the changed `.lean` files** and
+fails on the two compile-validity classes. Diff-scoping is deliberate — a
+whole-tree gate would be red on the 40 pre-existing import-order defects and
+block every PR; this blocks *new* drift instead (validated: green on this PR's
+changed files, red on the skein control). This is the root-cause closure for
+the class of latent breakage that produced the rho-k / kashaev defects.
+
 ### Method note (2026-06-25)
 
 Inventory = a grep classifier over all `conjecture()` `.ts` blocks

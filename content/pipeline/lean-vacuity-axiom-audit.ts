@@ -125,7 +125,9 @@ type Category =
   | "proof-no-false-premise"
   | "proof-no-decide-masking"
   | "proof-no-provable-axiom"
-  | "proof-no-placeholder-stub";
+  | "proof-no-placeholder-stub"
+  | "proof-no-trivial-type-mismatch"
+  | "lean-import-after-content";
 
 const ALL_CATEGORIES: Category[] = [
   "proof-no-trivial-true",
@@ -134,6 +136,8 @@ const ALL_CATEGORIES: Category[] = [
   "proof-no-decide-masking",
   "proof-no-provable-axiom",
   "proof-no-placeholder-stub",
+  "proof-no-trivial-type-mismatch",
+  "lean-import-after-content",
 ];
 
 const SEVERITY: Record<Category, "critical" | "major" | "minor"> = {
@@ -143,6 +147,11 @@ const SEVERITY: Record<Category, "critical" | "major" | "minor"> = {
   "proof-no-provable-axiom": "critical",
   "proof-no-decide-masking": "major",
   "proof-no-placeholder-stub": "critical",
+  // Compile-validity classes (not heuristics — guaranteed errors): a
+  // content-block sibling carrying these never compiles. They are the gap
+  // the vacuity detectors miss and the basis of the CI `--fail-on` gate.
+  "proof-no-trivial-type-mismatch": "critical",
+  "lean-import-after-content": "critical",
 };
 
 interface Hit {
@@ -159,9 +168,15 @@ interface Hit {
 
 // ── Lean source helpers ─────────────────────────────────────────────
 
-/** Recursively collect every `.lean` under `root`. */
+/** Recursively collect every `.lean` under `root`. A `root` that is itself a
+ * `.lean` file is accepted directly — this enables diff-scoped CI gating
+ * (pass the `git diff`-listed changed files, not just directories). */
 function collectLean(root: string, out: string[]): void {
   if (!existsSync(root)) return;
+  if (statSync(root).isFile()) {
+    if (root.endsWith(".lean")) out.push(root);
+    return;
+  }
   for (const entry of readdirSync(root)) {
     if (entry.startsWith(".") && entry !== ".") continue;
     if (SKIP_DIRS.has(entry)) continue;
@@ -652,6 +667,74 @@ function mk(
   };
 }
 
+// ── Compile-validity detectors (guaranteed Lean errors, not heuristics) ──
+// These catch the gap the vacuity detectors miss: a sibling that does not
+// even typecheck. They never compile, so they are never exempt.
+
+/** A term-mode `trivial` body under a non-`True`-typed `def`/`abbrev` is a
+ * guaranteed type error — `trivial : True : Prop` cannot inhabit a data type
+ * (`ℝ`, `R`, …). This is exactly what bit `conj-rho-k-pair-gen` (`: R := trivial`)
+ * and `kashaev-volume-conjecture` (`pieceVolume : ℝ := trivial`). `sorry`
+ * (inhabits any type) and `by trivial` (may close a Prop goal) are NOT flagged;
+ * a `: True := trivial` is the vacuity case handled by `detectTrivialTrue`. */
+const TERM_TRIVIAL = /^trivial$/;
+function detectTrivialTypeMismatch(d: Decl): Hit | undefined {
+  if (!/^(def|abbrev)\b/.test(d.kind)) return undefined;
+  if (!TERM_TRIVIAL.test(d.body.trim())) return undefined;
+  const concl = conclusionTypeAscription(d.sig);
+  if (!concl || concl === "True" || /^True\b/.test(concl)) return undefined;
+  return mk(d, "proof-no-trivial-type-mismatch", "term-trivial-nontrue-type", false);
+}
+
+/** Lean 4 requires every `import` to precede all commands (a `/-!` module
+ * docstring counts as a command). A `/-!`-before-`import`, or any command
+ * before an `import`, is a hard parse error — the file never compiles. Latent
+ * in content-block siblings outside the CI-built lake tree (caught: kashaev).
+ * Plain `--` / `/- -/` comments and a leading `prelude` legally precede
+ * imports and do not count as content. */
+const IMPORT_LINE = /^\s*import\b/;
+const CMD_START_RAW =
+  /^\s*(?:@\[|namespace\b|section\b|open\b|variable\b|universe\b|set_option\b|theorem\b|lemma\b|proposition\b|corollary\b|example\b|def\b|abbrev\b|instance\b|axiom\b|structure\b|class\b|inductive\b)/;
+function detectImportOrder(origLines: string[]): Hit | undefined {
+  let inBlock = false;
+  let sawContent = false;
+  for (let i = 0; i < origLines.length; i++) {
+    let line = origLines[i];
+    if (inBlock) {
+      const close = line.indexOf("-/");
+      if (close < 0) continue;
+      inBlock = false;
+      line = line.slice(close + 2);
+    }
+    const t = line.trim();
+    if (t === "") continue;
+    if (IMPORT_LINE.test(line)) {
+      if (sawContent)
+        return {
+          line: i + 1,
+          category: "lean-import-after-content",
+          pattern: "import-after-docstring-or-command",
+          snippet: snip(line),
+          severity: SEVERITY["lean-import-after-content"],
+        };
+      continue;
+    }
+    if (t.startsWith("--") || t === "prelude") continue;
+    if (t.startsWith("/-!")) {
+      sawContent = true; // module docstring is a command
+      if (!line.includes("-/")) inBlock = true;
+      continue;
+    }
+    if (t.startsWith("/-")) {
+      if (!line.includes("-/")) inBlock = true; // plain block comment: trivia
+      continue;
+    }
+    if (CMD_START_RAW.test(line)) sawContent = true;
+    else sawContent = true; // any other token before imports = content
+  }
+  return undefined;
+}
+
 // ── File-level scan ─────────────────────────────────────────────────
 
 function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
@@ -682,7 +765,11 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     push(detectDecideMasking(d));
     push(detectFalsePremise(d));
     push(detectProvableAxiom(d, origLines));
+    push(detectTrivialTypeMismatch(d));
   }
+  const importHit = detectImportOrder(origLines);
+  if (importHit && (!onlyCat || onlyCat === "lean-import-after-content"))
+    hits.push(importHit);
   return hits;
 }
 
@@ -909,12 +996,24 @@ function main() {
   let writeSc = false;
   let quiet = false;
   let onlyCat: Category | undefined;
+  // CI gate: exit 1 if any non-exempt hit lands in one of these categories.
+  // Default targets the two guaranteed-error (compile-validity) classes so
+  // the gate is low-false-positive; the high-recall vacuity candidates stay
+  // warn-only (agent-adjudicated). Pass `--fail-on a,b` to override.
+  let failOn: Set<string> | undefined;
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === "--json") jsonOut = argv[++i];
     else if (a === "--write-sidecars") writeSc = true;
     else if (a === "--quiet") quiet = true;
     else if (a === "--only") onlyCat = argv[++i] as Category;
+    else if (a === "--fail-on")
+      failOn = new Set(
+        (argv[++i] ?? "proof-no-trivial-type-mismatch,lean-import-after-content")
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean),
+      );
     else roots.push(a);
   }
   const scanRoots = roots.length ? roots : DEFAULT_ROOTS;
@@ -984,6 +1083,22 @@ function main() {
   );
   for (const c of ALL_CATEGORIES)
     if (counts[c]) console.log(`  ${c}: ${counts[c]}`);
+
+  if (failOn) {
+    const failing: string[] = [];
+    for (const [f, hits] of flaggedByLean)
+      for (const h of hits)
+        if (!h.exempt && failOn.has(h.category))
+          failing.push(`${relative(REPO_ROOT, f)}:${h.line} [${h.category}] ${h.snippet}`);
+    if (failing.length) {
+      console.error(
+        `\n✗ CI gate: ${failing.length} guaranteed-error defect(s) in [${[...failOn].join(", ")}]:`,
+      );
+      for (const l of failing) console.error(`  ${l}`);
+      process.exit(1);
+    }
+    console.log(`\n✓ CI gate clean for [${[...failOn].join(", ")}].`);
+  }
 }
 
 main();
