@@ -8,15 +8,15 @@ PR #2775 drained the deterministic proof-QA false positives and **invalidated** 
 
 | criterion | pass | fail | warn | n/a |
 |---|--:|--:|--:|--:|
-| proof-statement-integrity | 111 | 127 | 0 | 13 |
-| proof-no-self-assuming-projection | 79 | 87 | 0 | 19 |
-| proof-no-unused-hypotheses | 226 | 12 | 0 | 13 |
-| proof-no-false-premise | 237 | 2 | 0 | 13 |
-| proof-rater-goal-plausibility | 331 | 0 | 11 | 12 |
-| proof-rater-strategy-clarity | 153 | 0 | 91 | 7 |
-| proof-rater-novelty | 184 | 0 | 59 | 8 |
+| proof-statement-integrity | 111 | 129 | 0 | 11 |
+| proof-no-self-assuming-projection | 80 | 88 | 0 | 17 |
+| proof-no-unused-hypotheses | 228 | 12 | 0 | 11 |
+| proof-no-false-premise | 239 | 2 | 0 | 11 |
+| proof-rater-goal-plausibility | 333 | 0 | 11 | 10 |
+| proof-rater-strategy-clarity | 153 | 0 | 93 | 5 |
+| proof-rater-novelty | 186 | 0 | 60 | 5 |
 
-**142 distinct blocks carry a genuine judgment fail** — real formalization debt. The dominant defect is the **context-class self-assuming projection** (a `class …Context` whose fields *are* the manuscript conclusions, with `theorem foo := ⟨ctx.claim_i, …⟩` projecting them verbatim — AGENTS.md §3b-cond rule-5), alongside degenerate `Nonempty`/`: True` weakenings, bespoke `axiom`s restating the claim, and bare/uncited `sorry`. The 2026-06-22 batch often had the right *verdict* for the wrong (templated) *reason*; these verdicts are now evidence-cited per block.
+**144 distinct blocks carry a genuine judgment fail** — real formalization debt. The dominant defect is the **context-class self-assuming projection** (a `class …Context` whose fields *are* the manuscript conclusions, with `theorem foo := ⟨ctx.claim_i, …⟩` projecting them — AGENTS.md §3b-cond rule-5), alongside degenerate `Nonempty`/`: True` weakenings, bespoke `axiom`s restating the claim, and bare/uncited `sorry`. The 2026-06-22 batch often had the right *verdict* for the wrong (templated) *reason*; verdicts are now evidence-cited per block.
 
 ### Rubric
 
@@ -34,12 +34,13 @@ PR #2775 drained the deterministic proof-QA false positives and **invalidated** 
 
 - `p3-blowup-yekutieli.lean` — `class BlowupYekutieli` declared **twice** (stray `-- Ref:` between bodies) → won't compile.
 - `terms-2-6-higher-operations` — Lean fields **contradict** the `.md` (which refutes the cup-product / tower route).
-- `q-gl-obstruction-calc` — `.md` says intrinsic curvature non-zero; Lean field asserts `F_intr = 0` (sign/statement mismatch).
+- `q-gl-obstruction-calc` — `.md` says intrinsic curvature non-zero; Lean field asserts `F_intr = 0` (mismatch).
 - `conj:borromean-baryon-mass-formula` — headline uses the **purged** `λ_scale·Vol(𝓑₃)/ℏ_q²` construct (mass-formula guardrail).
 - `cor:knot-factor-amphicheiral` — encodes the empirically-refuted `a = 1−h²` (false on 4₁) ⇒ false-premise.
-- several `axiom`-masked theorems (`q-exponential-taylor`, `markov-trace-antipode`, `hecke-markov-transition`'s unsound `totalTrace` axiom).
+- `prop:shell-filling-rule` — `ShellFillingRuleContext` is **uninhabitable** (a class field forces `∀ other:ℕ, other ≤ singly_occupied`).
+- several `axiom`-masked theorems (`q-exponential-taylor`, `markov-trace-antipode`, `wigner-coefficient-derivation`, `hecke-markov-transition`'s unsound `totalTrace`).
 
-## Genuine judgment fails — catalogue (142 blocks)
+## Genuine judgment fails — catalogue (144 blocks)
 
 | block | failing criteria |
 |---|---|
@@ -69,6 +70,7 @@ PR #2775 drained the deterministic proof-QA false positives and **invalidated** 
 | `lem:yekutieli-leading-coefficient` | self-assuming-projection, statement-integrity |
 | `prop:algebraic-gns-embedding` | statement-integrity |
 | `prop:alpha-shift-torus-knot` | self-assuming-projection |
+| `prop:atomic-lp-stability` | self-assuming-projection, statement-integrity |
 | `prop:benzene-threading-emergence` | self-assuming-projection, statement-integrity |
 | `prop:binding-genfun-qdifference` | statement-integrity |
 | `prop:blowup-yekutieli` | statement-integrity |
@@ -160,6 +162,7 @@ PR #2775 drained the deterministic proof-QA false positives and **invalidated** 
 | `prop:spectrahedral-phase-collapse` | unused-hypotheses |
 | `prop:spectral-sequence-h3-explicit` | self-assuming-projection, statement-integrity |
 | `prop:strangelet-crossing-energy` | self-assuming-projection |
+| `prop:substrate-consistency-window` | statement-integrity |
 | `prop:surreal-rate-calculus` | statement-integrity, unused-hypotheses |
 | `prop:symbolic-character-table` | self-assuming-projection, statement-integrity |
 | `prop:symmetric-point-channel-collapse` | statement-integrity |
@@ -186,7 +189,7 @@ PR #2775 drained the deterministic proof-QA false positives and **invalidated** 
 | `thm:six-term-mass-formula-complete` | self-assuming-projection, statement-integrity |
 | `thm:substrate-self-duality` | statement-integrity |
 
-## Rater warns (score < 0.66) — 119 blocks
+## Rater warns (score < 0.66) — 121 blocks
 
 | block | rater warns |
 |---|---|
@@ -221,6 +224,7 @@ PR #2775 drained the deterministic proof-QA false positives and **invalidated** 
 | `lem:topological-mass-transient-localisation` | novelty, strategy-clarity |
 | `lem:yekutieli-leading-coefficient` | novelty, strategy-clarity |
 | `prop:a-8-partition-function-identity` | novelty |
+| `prop:atomic-lp-stability` | strategy-clarity |
 | `prop:benzene-threading-emergence` | strategy-clarity |
 | `prop:blowup-yekutieli` | strategy-clarity |
 | `prop:borromean-h4-categorical-derivation` | novelty |
@@ -291,6 +295,7 @@ PR #2775 drained the deterministic proof-QA false positives and **invalidated** 
 | `prop:six-term-per-derivation-weights` | strategy-clarity |
 | `prop:skein-crossing-asymmetry` | novelty, strategy-clarity |
 | `prop:sorting-color-energy` | strategy-clarity |
+| `prop:substrate-consistency-window` | novelty, strategy-clarity |
 | `prop:surreal-rate-calculus` | strategy-clarity |
 | `prop:symbolic-character-table` | strategy-clarity |
 | `prop:tau-leptonic-universality` | strategy-clarity |
