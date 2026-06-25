@@ -90,7 +90,10 @@ def main():
         "selection-rule anchors, #2612) has dominant root λ₊=2.185>1 — the EXTENSIVE-growth "
         "eigenvalue the saturating |χ| joint trace (λ_eff≈1, A-independent, PR #2703) lacks. "
         "det=1 forces λ₋=1/λ₊<1. Connects the geometric/algebraic kernel to the empirical "
-        "saturation gap; the |χ| trace sits at the degenerate τ=2 (λ=1) no-growth boundary.")
+        "saturation gap; the |χ| trace sits at the degenerate τ=2 (λ=1) no-growth boundary. "
+        "SCOPE (PR #2752): the tabulated aD_sequence is the iterated fixed-τ recurrence (→λ₊ "
+        "tautologically); the physical a_D^(n)=lw(n−1) grow super-geometrically (#2708, diverge "
+        "≤32% by n=7), so λ₊>1 witnesses the SEED kernel's extensivity, not the binding growth rate.")
     wb.add_parameter("q0", mp.nstr(Q0, 12))
     wb.add_parameter("fit_params", 0)
     wb.add_data("tau_symbolic", str(tau_sym))
@@ -103,9 +106,15 @@ def main():
     wb.add_data("growth_ratios", [mp.nstr(r, 10) for r in ratios])
     wb.add_data("chi_joint_saturating", {k: mp.nstr(v, 8) for k, v in B_JOINT.items()})
     wb.add_data("chi_effective_ratio_3H_to_4He", mp.nstr(chi_ratio_TtoHe, 8))
-    # Empirical (non-tautological): the recurrence sequence's growth ratio converges
-    # to the dominant root λ₊ — tests the actual a_D^(n) sequence, not the quadratic
-    # formula used to compute λ₊.
+    # SCOPE (2026-06-25 calibration, PR #2752): `seq` is the ITERATED fixed-τ
+    # recurrence, so its growth ratio → λ₊ TAUTOLOGICALLY (every depth-2 recurrence
+    # with τ>2 does). It does NOT test the physical body-order coefficients
+    # a_D^(n)=lw(n−1), which grow SUPER-geometrically (ratios →2.76, past λ₊) and
+    # diverge from `seq` by up to 32% (n=7) — #2708 +
+    # docs/audits/2026-06-25-spectral-bridge-tautology-recurrence-vs-lw.md. So λ₊>1
+    # is an (a)-scope witness that the SEED kernel is extensive, weaker than "the
+    # binding grows at rate λ₊". (full-env follow-up: also emit lw(c) + the
+    # divergence; reference q-hook algorithm in that audit.)
     ratio_residual = ratios[-1] - lam_p
     wb.add_assertion("ratio_convergence", computed=mp.nstr(ratio_residual, 12), expected="0",
                      tolerance=1e-4, source="a_D^(n+1)/a_D^(n) − λ₊ (sequence tail)")
@@ -114,10 +123,14 @@ def main():
     # extensive-growth flag as a checkable boolean (1.0 ⟺ λ₊>1).
     wb.add_assertion("dominant_root_extensive", computed=("1" if lam_p > 1 else "0"),
                      expected="1", tolerance=0.0, source="λ₊ > 1 ⟺ τ > 2 (τ=2.6424)")
-    wb.add_caveat("τ>2 ⟹ λ₊>1 is the extensive-growth condition; τ(q₀)=2.6424 satisfies it. "
-                  "The |χ| saturation sits at the degenerate τ=2 (λ=1) boundary. Anchors are "
-                  "selection-rule outputs (no fit); the magic-A ⁴He +5.87% is a finite-truncation "
-                  "residual of the geometric series, not a growth-mechanism failure.")
+    wb.add_caveat("τ>2 ⟹ λ₊>1 is the extensive-growth condition; τ(q₀)=2.6424 satisfies it; the "
+                  "|χ| saturation sits at the degenerate τ=2 (λ=1) boundary. SCOPE (PR #2752): "
+                  "`aD_sequence`/`growth_ratios` are the ITERATED fixed-τ recurrence, which → λ₊ "
+                  "tautologically; the PHYSICAL coefficients a_D^(n)=lw(n−1) grow super-geometrically "
+                  "(#2708) and diverge from it by up to 32% (n=7). λ₊>1 is an (a)-scope witness that "
+                  "the SEED kernel is extensive, NOT the binding growth rate. The magic-A ⁴He +5.87% "
+                  "is a SEPARATE doubly-magic-formula gap (over-claim retracted 2026-06-24), not a "
+                  "truncation residual of this series.")
     out = wb.save()
     print(f"\nwrote {Path(out).relative_to(REPO)}")
 
