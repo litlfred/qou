@@ -98,12 +98,12 @@ the cost-coefficient functions cross. **These are the same transition**:
 |---|---|
 | Borromean phase | γ-channel binding (identity + low-action) |
 | Hopf-diquark CFL phase | σ_0-channel binding (crossing dynamics) |
-| Transition at density `ρ_c` (`coral-tube overlap`) | Transition at `q = δ_silver` (`t_1 = t_2`) |
+| Transition at density `ρ_c` (`color-tube overlap`) | Transition at `q = δ_silver` (`t_1 = t_2`) |
 | Milnor `μ̄(123): 1 → 0` first-order | Active set: `{γ, ...} → {σ_0, σ_1, ...}` first-order |
 | `Δ_CFL ≈ q + q⁻¹` at q₀ | Active-set transition unlocks `σ_0`-channel exactly when `q − q⁻¹ = 2` |
 
 The **density** that corresponds to `q = δ_silver` is the corpus's `ρ_c`.
-The **mechanism** the corpus described qualitatively (coral-tube overlap →
+The **mechanism** the corpus described qualitatively (color-tube overlap →
 inter-baryon Hopf linking) is what the LP cost-coincidence captures
 quantitatively: when `t_1(q) = t_2(q)` the LP optimum becomes degenerate,
 and above silver the binding switches.

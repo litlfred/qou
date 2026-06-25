@@ -16,14 +16,14 @@ mapped from the *binding* side (#2708, all merged to main). Three of those resul
 must be done** — and one **sharpens a falsifiable target**. None re-derives the geometry; they pin *which*
 object the geometry must produce.
 
-## Constraint 1 — the W-plane fibre `E(q)` is the coral/descartes `E_q` (identified, j-confirmed)
+## Constraint 1 — the W-plane fibre `E(q)` is the color/descartes `E_q` (identified, j-confirmed)
 
 Sub-lead (d) asks to *identify* the q-family `E(q)`. It is already identified: the rank-2 W-plane is the
-**coral/descartes elliptic curve** `E_q` (`brings-surface/descartes-elliptic-curve.md`), and
+**color/descartes elliptic curve** `E_q` (`brings-surface/descartes-elliptic-curve.md`), and
 `j(q₀)=129.86` **matches** #2710's `E = Bring/S₄` at the substrate (the j-invariant is the isogeny
 invariant). Explicit Weierstrass form `y²=x³+p(q)x+r(q)` with `p,r` rational in `√q`; classical limit
 `j(1)=128`, `p(1)=2/3`, `r(1)=20/27`. So **G1/G3 inherit an explicit `E(q)`** — no separate fibre-ID step.
-([`2026-06-24-lever1-coral-eq-monodromy-integrality.md`](2026-06-24-lever1-coral-eq-monodromy-integrality.md))
+([`2026-06-24-lever1-color-eq-monodromy-integrality.md`](2026-06-24-lever1-color-eq-monodromy-integrality.md))
 
 ## Constraint 2 — G3's monodromy is the abelianised `λ_SW` REAL holonomy, NOT the topological monodromy
 
@@ -34,7 +34,7 @@ topological Gauss–Manin monodromy — it must be the **abelianised `λ_SW` Car
 program's own non-compact `SU_q(2)→E_q(2)` arena (`q₀>1` is not a root of unity). **G3 must extract the
 flat-connection holonomy of `λ_SW`, not the integral π₁-monodromy.**
 ([`2026-06-24-lever1-binding-monodromy-hyperbolicity.md`](2026-06-24-lever1-binding-monodromy-hyperbolicity.md),
-[`…coral-eq-monodromy-integrality.md`](2026-06-24-lever1-coral-eq-monodromy-integrality.md))
+[`…color-eq-monodromy-integrality.md`](2026-06-24-lever1-color-eq-monodromy-integrality.md))
 
 ## Constraint 3 — target (2) `a_D = lw` is SEED-LIMITED (`c ≤ 3` only), not a full functional identity
 
@@ -64,7 +64,7 @@ seed `τ=2.6424` is **forced** by the three wired anchors (`1`, `lw(2)`, Family-
 
 | program item | inherited constraint |
 |---|---|
-| (d) identify `E(q)` | **done** — coral/descartes `E_q`, `j(q₀)=129.86` = `Bring/S₄` |
+| (d) identify `E(q)` | **done** — color/descartes `E_q`, `j(q₀)=129.86` = `Bring/S₄` |
 | G3 monodromy object | the **abelianised `λ_SW` real holonomy** (`SL₂(ℝ)`), **not** topological `SL₂(ℤ)` |
 | G3 target (2) `a_D=lw` | **seed-limited** — reproduce the genuine `a_D`; `lw` is the `c≤3` anchor only |
 | guardrail | reinforced — no integer/golden scalar shortcut; deliver the operator |

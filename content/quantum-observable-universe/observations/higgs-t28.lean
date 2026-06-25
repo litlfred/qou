@@ -24,7 +24,7 @@ per gemini review on #721 (algebraic vs. numerical separation).
 namespace QOU.HiggsT28
 
 /-- **Sub-claim (genus)**: `T(2, 8)` has Seifert-surface genus 3,
-    matching the count of coral tubes / exceptional divisors. -/
+    matching the count of color tubes / exceptional divisors. -/
 opaque T28GenusHolds : Prop
 
 /-- **Sub-claim (spanning)**: the Seifert surface of `T(2, 8)`

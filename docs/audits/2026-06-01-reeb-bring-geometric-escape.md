@@ -150,7 +150,7 @@ it independently. None exists for the splitting.
 The Reeb bundle lives over the Bring curve `M_Bring` (the substrate's
 Riemann surface). Per
 [`figure-eight-reeb-rotation.md`](../../content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.md)
-the q-Reeb flow advances the **coral-sector angular coordinate** by `q·t`
+the q-Reeb flow advances the **color-sector angular coordinate** by `q·t`
 per crossing, mixing the two lepton channels `V_{(2)} ↔ V_{(1,1)}` inside
 `V_{(2,1)}`. A knot operator acts on the **same** seminormal blocks
 (`V_{(3)}, V_{(2,1)}, V_{(1,1,1)}`) — proton and neutron do **not** act on

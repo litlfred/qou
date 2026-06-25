@@ -158,8 +158,8 @@ After Slot F batch approval (2026-05-23), the 13 remaining cluster-4 dense secti
 |-------------|-------------|--------|
 | `sec:brings-geometry` (31 blocks) | `sec:brings-surface-qou` | brings-surface, brings-surface-example, brings-realisations, brings-physics-interpretations, brings-is-qou, brings-is-qou-proof, brings-qou-4tuple, brings-qou-axiom-map, braid-group-action |
 | | `sec:color-tube-coords` | color-tube-coordinates, aggregate-color-quantities, color-tube-constraints, color-tube-interpretation, c5-color-tube, intrinsic-color-cubic-pairing |
-| | `sec:coral-fibration-elliptic` | coral-elliptic, coral-elliptic-proof, t-duality-elliptic, color-tube-cubic, color-tube-fibers, t-duality-color-tube, color-tube-subloci, pure-colour-sublocus |
-| | `sec:brings-smoothness` | coral-bundles, brings-smoothness-resolution, brings-smoothness, briggs-klein-chart, radial-projection, four-colourability, four-colour-theorem, cyclotomic-reduction |
+| | `sec:color-fibration-elliptic` | color-elliptic, color-elliptic-proof, t-duality-elliptic, color-tube-cubic, color-tube-fibers, t-duality-color-tube, color-tube-subloci, pure-colour-sublocus |
+| | `sec:brings-smoothness` | color-bundles, brings-smoothness-resolution, brings-smoothness, briggs-klein-chart, radial-projection, four-colourability, four-colour-theorem, cyclotomic-reduction |
 
 ### P1 — `sec:vertex-operators-markov` → 4 sections (braids-and-knots)
 

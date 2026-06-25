@@ -32,14 +32,14 @@
   "bracket_fstd_lt_freq_lt_W21": true,
   "bring_coordinate_crosscheck": {
     "z_markov_bond_factor": "0.4993203340335612717689663862757371401611757978999",
-    "z0_coral_fibre": "0.10438806981200371260011417216709836755230417584318",
+    "z0_color_fibre": "0.10438806981200371260011417216709836755230417584318",
     "f_pn_bring_color_weighted": "0.39486216662129854671731215785987947424075814149177",
     "E_bring_MeV": "3.8896909103558806688103100601634759548716152381477",
     "delta_flavour_split": "0.0013774700975660380574326305055634426044552084977238",
     "yekutieli_b3_stokes_kappa": "0.1875",
     "trM_b3_q0": "1.00673",
     "bring_color_on_lower_bracket": true,
-    "note": "The PRODUCTION Bring-color-weighted convention (f_pn=z\u2212h(\u00bd\u2212\u03b4/4), closed_form_tau_M.py::bring_color_weighted) gives 0.39486 \u2014 the same lower bracket as the abstract std channel (\u03b4-split negligible). It rides z=\u221aq/(q+1), NOT the coral-fibre z\u2080=\u221aq\u22121/\u221aq (0.10439) where the open geometric W_\u03bb lives. The genuine Bring-surface geometric object that DOES exist (Yekutieli non-abelian Stokes h\u00b2-action of \ud835\udcd1\u2083, \u03ba=3/16, tr_M(\ud835\udcd1\u2083,q\u2080)=1.00673) is an action/trace >1, not a per-bond suppression. So no available compute \u2014 algebraic OR Bring-coordinate \u2014 lands 0.588; it remains the open coral-fibre (z\u2080) geometric W_\u03bb."
+    "note": "The PRODUCTION Bring-color-weighted convention (f_pn=z\u2212h(\u00bd\u2212\u03b4/4), closed_form_tau_M.py::bring_color_weighted) gives 0.39486 \u2014 the same lower bracket as the abstract std channel (\u03b4-split negligible). It rides z=\u221aq/(q+1), NOT the color-fibre z\u2080=\u221aq\u22121/\u221aq (0.10439) where the open geometric W_\u03bb lives. The genuine Bring-surface geometric object that DOES exist (Yekutieli non-abelian Stokes h\u00b2-action of \ud835\udcd1\u2083, \u03ba=3/16, tr_M(\ud835\udcd1\u2083,q\u2080)=1.00673) is an action/trace >1, not a per-bond suppression. So no available compute \u2014 algebraic OR Bring-coordinate \u2014 lands 0.588; it remains the open color-fibre (z\u2080) geometric W_\u03bb."
   },
   "verdict": "REFUTE (naive direct-weight map): the algebraic W_\u03bb the gate emits under-binds (W_(2,1)=0.661, E=1.74) while the std channel over-binds (0.395, E=3.89); the required f_pn=0.58776 (E=2.2246) is strictly bracketed between them. The magnitude stays owner-gated to the GEOMETRIC W_\u03bb realization (WRT(S\u00b3/2I)), for which this is now a sharp, second binding-side falsifiable target alongside the m_\u03c4 tower: any index reproducing W_\u03bb must land f_pn in (0.395, 0.661) and at 0.58776.",
   "discipline": "EXPLORATORY \u2014 derive-or-refute, zero free parameters, no production rewire.",

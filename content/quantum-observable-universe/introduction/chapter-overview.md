@@ -104,7 +104,7 @@ brane tower.
 Chapter \ref{chap:brings-surface}, *Bring's Surface*, develops the genus-four state
 space in depth: the curve with Euler characteristic $-6$ and
 maximal automorphism group $S_5$.  Its exceptional divisors — the
-coral tubes — provide coordinate systems for spacetime and the
+color tubes — provide coordinate systems for spacetime and the
 electromagnetic field, mapping exactly where vertex operators
 interact.  Embeddable knots form a basis for homology and
 cohomology, and the embeddability bound is what later makes the

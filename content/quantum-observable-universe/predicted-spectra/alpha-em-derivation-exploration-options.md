@@ -29,10 +29,10 @@ $2/(3\pi) = \mathrm{Vol}(S^2)/(3\cdot\mathrm{Vol}(S^3))$. The
 "category of base" is $\mathcal{S}_p \cong S^2$ and the "category of
 total space" is $S^3$.
 
-### 2. Three coral tubes / chromaticity primaries on Bring's surface
+### 2. Three color tubes / chromaticity primaries on Bring's surface
 
 [`rem:q-chromaticity`](#rem:q-chromaticity) identifies three
-colour primaries on Bring's surface (the three coral tubes /
+colour primaries on Bring's surface (the three color tubes /
 three $S_3$ subgroups of the Bring automorphism group). This is
 the **natural source of the "$/3$" denominator** in $2/(3\pi)$:
 photon coupling averaged over three independent chromaticity channels.

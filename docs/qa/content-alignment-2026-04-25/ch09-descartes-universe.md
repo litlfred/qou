@@ -9,7 +9,7 @@
   - Preamble (Why this universe): 1 block
   - §1a (Bring's as QOU): 9 blocks
   - §1b (Color tube coords): 6 blocks
-  - §1c (Coral fibration): 8 blocks
+  - §1c (Color fibration): 8 blocks
   - §1d (Bundle structures): 8 blocks
   - §2 (Spectral/gauge): 10 blocks
   - §3a (Descartes condition/leptons): 17 blocks
@@ -28,11 +28,11 @@
 |---------|------------------|-------|
 | §1a: Bring's as QOU | ✓ Aligned | Defines Bring's surface (genus-4, Aut ≅ S₅, χ = -6) correctly. Power-sum equations stated. |
 | §1b: Color tube coords | ✓ Aligned | Lagrange resolvents → (r, g, b) coordinates. Terminology consistent. |
-| §1c: Coral fibration | ✓ Aligned | Elliptic curve E_z from cubic; monodromy recovers trefoil generators. "Coral" imagery distinct from "color" (coordinates). |
+| §1c: Color fibration | ✓ Aligned | Elliptic curve E_z from cubic; monodromy recovers trefoil generators. "Color" imagery distinct from "color" (coordinates). |
 | §1d: Bundle structures | ✓ Aligned | Smoothness, Briggs-Klein chart, cyclotomic reduction. |
 | §2: Spectral/gauge | ⚠ Minor | Seiberg-Witten integration on Bring's; categorical braids; E_q (Descartes elliptic). One notational check needed (E_q vs. \mathcal{E}_q). |
 | §3a: Descartes condition | ✓ Aligned | χ(A) = -6 stated consistently. Trefoil subgroups, torus knot generators from χ = -6. |
-| §3b: Fundamental particles | ✓ Aligned | Electron/up quark both T_{2,3}; distinction via environment (orbital vs. coral tube). Proton/neutron categorical construction. |
+| §3b: Fundamental particles | ✓ Aligned | Electron/up quark both T_{2,3}; distinction via environment (orbital vs. color tube). Proton/neutron categorical construction. |
 | §3c: Nuclear stability | ✓ Aligned | Beta decay as skein operation; half-life via Gröbner; shell closure. |
 | §3d: Atomic shells | ✓ Aligned | Shell eigenvalues, periodic table mapping, elliptic stability locus. |
 | §3e: Descartes theorem | ✓ Aligned | Brings surface as terminal object in C_{-6}. Single, clear statement. |
@@ -43,10 +43,10 @@
 
 ## Section-to-Chapter Intent Alignment
 
-**Manifest intent:** Bring's surface (genus-4, Aut = S₅), coral tubes as exceptional divisors, particle = torus knot, Descartes theorem (terminal QOU at χ = -6).
+**Manifest intent:** Bring's surface (genus-4, Aut = S₅), color tubes as exceptional divisors, particle = torus knot, Descartes theorem (terminal QOU at χ = -6).
 
 - **Brings geometry (§1a–d):** Correctly establishes Bring's as central object. Power-sum defining equations verified. Automorphism group S₅ stated (line 16, brings-surface.md: "Aut(Σ₄) ≅ S₅").
-- **Coral vs. color distinction:** Clear in coral-elliptic.md ("coral variable X... named because geometry resembles coral reef") and electron-knot.md ("electron orbits nucleus... without entering coral tubes; up quark threaded through coral tube").
+- **Color naming:** Clear in color-elliptic.md ("color variable X... named because geometry is a weave of colorful tubes") and electron-knot.md ("electron orbits nucleus... without entering color tubes; up quark threaded through color tube").
 - **Particle model:** Electron and up quark both T_{2,3} (trefoil), distinguished by localization. Proton/neutron as categorical Borromean links. Consistent throughout §3b.
 - **Descartes condition χ = -6:** Stated in manifest comment, defined in descartes-condition.md, enforced in theorem statement (descartes.md: "Brings surface is terminal object in C_{-6}").
 - **Terminal object theorem:** Single, clear statement (descartes.md); proof delegated to descartes-proof.lean.
@@ -70,13 +70,13 @@ meson-to-proton-via-borromean.md:130:3. **Why this works.**  The ratio is well-d
 
 ## Notational Alignment (CRITICAL Terminology Audit)
 
-### Coral vs. Color vs. Chiral
+### Color vs. Chiral
 
-**Query:** `grep -rn 'color tube\|coral coord\|chiral tube' .`
+**Query:** `grep -rn 'color tube\|color coord\|chiral tube' .`
 
 **Result:** 74 matches — all consistent.
 - **"color tube"** (18 matches): Refers to coordinates (r, g, b) and fibers. Correct usage.
-- **"coral"** (4 matches): In coral-elliptic.md, brings-smoothness-resolution.lean ("coral coordinates"). Refers to geometry of Bring's surface fibers. Distinct from "color."
+- **"color"** (4 matches): In color-elliptic.md, brings-smoothness-resolution.lean ("color coordinates"). Refers to geometry of Bring's surface fibers. Distinct from "color."
 - **"chiral"** (0 matches in this grep): No "chiral tube" found. Chiral refers to knot handedness (chirality-trefoil.md), not tube geometry. **Correct separation.**
 
 **Verdict:** ✓ Terminology audit passed.
@@ -96,7 +96,7 @@ descartes-elliptic-curve.lean:7:  E_q : y² = x³ + p(q)·x + r(q)
 descartes-elliptic-curve.lean:58:    z = s - s⁻¹ (s = √q) is the elliptic curve E_q with Weierstrass
 ```
 
-**Assessment:** Uses E_q (sans \mathcal) in comments; defines formally in Lean. In markdown (coral-elliptic.md, descartes-elliptic-curve.md), context is sufficiently clear. Minor inconsistency but not blocking. **Acceptable in mixed prose/Lean.**
+**Assessment:** Uses E_q (sans \mathcal) in comments; defines formally in Lean. In markdown (color-elliptic.md, descartes-elliptic-curve.md), context is sufficiently clear. Minor inconsistency but not blocking. **Acceptable in mixed prose/Lean.**
 
 ---
 
@@ -154,8 +154,8 @@ parity-violation-skein.md:142:$\mathcal{C}$ violated, $\mathcal{CP}$ conserved (
 
 ## Expository Simplification Opportunities
 
-1. **§1c (Coral fibration, lines 7–9, coral-elliptic.md)**  
-   "Coral" metaphor (reef, tubes, fractal boundary) is vivid but could be supplemented with explicit fiber-product definition for clarity. Add: "Formally, the coral fibre at z is the solution set of [cubic equation] over the affine coordinates."
+1. **§1c (Color fibration, lines 7–9, color-elliptic.md)**  
+   "Color" metaphor (twisted tubes, fractal boundary) is vivid but could be supplemented with explicit fiber-product definition for clarity. Add: "Formally, the color fibre at z is the solution set of [cubic equation] over the affine coordinates."
 
 2. **§2 (Spectral dynamics, generation-dependent-sw.md)**  
    Seiberg-Witten integration for leptons is dense. Suggest: isolate muon case (genus-2 lift) as worked example before generalizing to higher generations.
@@ -178,11 +178,11 @@ parity-violation-skein.md:142:$\mathcal{C}$ violated, $\mathcal{CP}$ conserved (
 | **Blocker** | 0 | — |
 | **Major** | 0 | — |
 | **Minor** | 1 | E_q notation (lean vs. markdown, acceptable mixed use) |
-| **Simplification** | 5 | Coral metaphor, Seiberg-Witten example, χ diagram, proton functors, shell closure examples |
+| **Simplification** | 5 | Color metaphor, Seiberg-Witten example, χ diagram, proton functors, shell closure examples |
 | **Total** | 6 | — |
 
 ---
 
 ## Conclusion
 
-Chapter 9 is **content-aligned, terminology-audited, and ready for formal review.** No blockers. Chapter successfully realizes Bring's surface as terminal QOU at χ = -6, with consistent particle model (torus knots in coral geometry). Five expository opportunities identified for clarity in next revision cycle.
+Chapter 9 is **content-aligned, terminology-audited, and ready for formal review.** No blockers. Chapter successfully realizes Bring's surface as terminal QOU at χ = -6, with consistent particle model (torus knots in color geometry). Five expository opportunities identified for clarity in next revision cycle.

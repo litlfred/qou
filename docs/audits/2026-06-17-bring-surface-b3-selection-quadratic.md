@@ -31,7 +31,7 @@ leads assemble the alternative:
 - **"q₀-specific ⇒ Bring's surface"** — the −0.855 eigenvalue and the
   `𝓑₃`-local-min are functions of `q₀`, so the principle should live where `q₀`
   is geometrically fixed: **H¹(Bring) = 2W** (rank-2 W-plane) at
-  `z₀ = √q₀ − 1/√q₀ ≈ 0.104` on the coral fibre `𝓔_q`.
+  `z₀ = √q₀ − 1/√q₀ ≈ 0.104` on the color fibre `𝓔_q`.
 
 **Conjecture:** `𝓑₃` is the minimal-energy configuration of the **Bring-surface
 quadratic** (period / polarization / Levi form on `H¹(Bring)=2W`, equivalently
@@ -40,7 +40,7 @@ the q-heat-kernel / Stokes action) evaluated at `z₀` — *not* of the Hecke Gr
 ## Plan
 
 1. Identify the Bring-side quadratic — candidates: `intrinsic-color-cubic-pairing`,
-   `levi-form-defect`, `descartes-elliptic-curve` (period form), `coral-elliptic`.
+   `levi-form-defect`, `descartes-elliptic-curve` (period form), `color-elliptic`.
 2. Identify the knot ↔ Bring map — candidate: `descartes-knot-eigenbasis`,
    `knot-basis-color-content`.
 3. Evaluate the quadratic at `z₀`; test whether its minimal-energy operator maps

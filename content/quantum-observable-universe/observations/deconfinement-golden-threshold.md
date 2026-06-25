@@ -8,15 +8,15 @@ hadrons dissolve into free quarks and gluons — corresponds to the
 Color confinement in QOU is enforced by the $S_5$-invariance of
 the Skein module on Bring's surface
 ([chromaticity](#rem:q-chromaticity)): only $S_5$-invariant
-combinations of knots in the three coral tubes yield positive
+combinations of knots in the three color tubes yield positive
 $\tau$-evaluation.  This $S_5$-invariance is a property of the
 **smooth elliptic fiber** $\mathcal{E}_q$ — the chiral structure
-that relates the three coral tubes.
+that relates the three color tubes.
 
 At $q_{\mathrm{gold}} = 1/\varphi^2 \approx 0.382$, the
 elliptic fiber degenerates: $\mathcal{E}_q$ acquires a node,
 two roots of the Weierstrass equation coincide, and the three
-coral tubes collapse to a degenerate configuration.  At this
+color tubes collapse to a degenerate configuration.  At this
 point:
 
 1. The $S_5$ symmetry that enforces color neutrality **breaks**.

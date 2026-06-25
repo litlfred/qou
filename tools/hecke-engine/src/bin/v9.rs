@@ -6,7 +6,7 @@
 // Key differences from v8:
 // 1. LPoly coefficients are BigInt (arbitrary precision)
 // 2. Mid-crossing stripping always on (threshold configurable)
-// 3. Iterative quotienting: reuse coral content from A=n for A=n+1
+// 3. Iterative quotienting: reuse color content from A=n for A=n+1
 // 4. Memory-bounded: strip aggressively to stay under budget
 //
 // Usage:
@@ -918,7 +918,7 @@ fn main() {
             if total.net_by_len.len() > 1 { obs = obs.add(&total.net_by_len[1]); }
             SparsePoly::from_btree(&obs.terms)
         },
-        coral: {
+        color: {
             // J≥2: multi-body correlations
             let mut cor = LPoly::zero();
             for k in 2..total.net_by_len.len() {

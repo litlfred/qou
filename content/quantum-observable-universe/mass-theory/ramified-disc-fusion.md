@@ -6,7 +6,7 @@ the latitude range $\phi \in \{0, \pi\}$).  Let
 $\widetilde{D} \subset \mathcal{R}_p$ denote the preimage
 $\pi_H^{-1}(D)$ together with the three colour-tube sections
 $\mathfrak{r}, \mathfrak{g}, \mathfrak{b}$ restricted to $D$
-([coral-sector coordinates](#def:coral-sector-coords)).  Then:*
+([color-sector coordinates](#def:color-sector-coords)).  Then:*
 
 1. **Fusion.** *$\widetilde{D}$ is a single connected topological
    disc with degree-$3$ ramification at the centre $\pi_H^{-1}(p)$.
@@ -32,7 +32,7 @@ $\mathfrak{r}, \mathfrak{g}, \mathfrak{b}$ restricted to $D$
 
 **Sketch of proof.**
 
-For (1): the three coral-sector embeddings
+For (1): the three color-sector embeddings
 $\mathfrak{r}(\phi,\psi),\mathfrak{g}(\phi,\psi),\mathfrak{b}(\phi,\psi)$
 tile the exceptional divisor with shared meridian boundaries at
 $\psi = 0, 2\pi/3, 4\pi/3$ (each sector covers an angular sector
@@ -50,7 +50,7 @@ action embedded in the symmetric group $S_3$.  Going around
 $\partial D$ once therefore implements the cyclic permutation
 $(rgb)$.  Adjoining the cover's transpositions (orientation
 reversals on $D$ — equivalently, the involution that exchanges
-the $\pm N$ poles in the coral parametrisation) yields the
+the $\pm N$ poles in the color parametrisation) yields the
 full $S_3$.
 
 For (3): the Lagrange resolvents $w_1, w_2, w_3$ are obtained

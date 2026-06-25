@@ -7,7 +7,7 @@ export default table({
   caption:
     "Per-ingredient map of where existing QOU infrastructure supplies the " +
     "ingredients needed to close the $2/(3\\pi)$ derivation of $1/\\alpha_{EM}$: " +
-    "Hopf-fibration total space, exceptional-divisor base, three coral tubes, " +
+    "Hopf-fibration total space, exceptional-divisor base, three color tubes, " +
     "Bring genus, spectral-sequence collapse, stratum prefactors, Wenzl-bridge " +
     "$y_\\lambda$.",
   uses: ["rem:alpha-em-derivation-exploration-options"],

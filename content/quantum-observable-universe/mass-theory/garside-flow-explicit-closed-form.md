@@ -5,7 +5,7 @@ intricate of the six canonical operators
 The user-flagged concern that "we will need to write PDEs and
 hope we can find an exact solution" turns out to be unwarranted:
 because the underlying flow is piecewise-linear in the angular
-coordinate ([$q$-Reeb flow on coral coords](#def:q-reeb-flow-on-coral-coords)),
+coordinate ([$q$-Reeb flow on color coords](#def:q-reeb-flow-on-color-coords)),
 the compound trajectory admits a closed-form solution by direct
 composition.  This remark records that solution explicitly.
 
@@ -27,7 +27,7 @@ tubes $(r, g, b)$ is fixed:
 $\psi^{(s)}_0$ denote the input angular position of sector $s$ at
 the south foundry $\phi = 0$.  Applying the flow piecewise via
 the additive composition rule of
-[$q$-Reeb flow on coral coords](#def:q-reeb-flow-on-coral-coords)
+[$q$-Reeb flow on color coords](#def:q-reeb-flow-on-color-coords)
 yields the explicit closed form for the angular trajectory:
 
 $$
@@ -73,7 +73,7 @@ $$
 \end{aligned}
 $$
 
-The **net coral-twist accumulated** by each sector across the
+The **net color-twist accumulated** by each sector across the
 Garside trajectory is therefore
 $\Delta\psi^{(r)} = +2q\pi/3$,
 $\Delta\psi^{(g)} = -q\pi/3$,

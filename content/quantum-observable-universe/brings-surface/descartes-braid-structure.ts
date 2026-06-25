@@ -9,7 +9,7 @@ export default corollary({
   tags: ["archimedean-universe", "braid-group", "dic3"],
   uses: [
     "prop:braid-action-tensor",
-    "def:coral-sector-coords",
+    "def:color-sector-coords",
     "rem:r-matrix-braiding",
     "ex:trefoil-operator-algebra",
     "prop:brings-is-qou",

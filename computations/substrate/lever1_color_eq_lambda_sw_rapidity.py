@@ -1,16 +1,16 @@
-"""Lever-1 (owner-ungated 2026-06-25): derive theta_binding from the coral E_q
+"""Lever-1 (owner-ungated 2026-06-25): derive theta_binding from the color E_q
 GEOMETRY, non-circularly.
 
 Owner reversal: the narrow s5-so3 keystone reversal (2026-06-19) is extended to the
 lambda_SW SW-period side of the SAME keystone (coordination ledger updated this PR).
 
-The prior probes (lever1_coral_eq_monodromy_integrality.py, ..._hyperbolicity.py,
+The prior probes (lever1_color_eq_monodromy_integrality.py, ..._hyperbolicity.py,
 ..._lambda_sw_no_shortcut.py) all set theta = acosh(tau_binding/2) with tau_binding the
 WIRED anchor value -- circular. Here we compute a curve-native candidate and confront it
 with the target, WITHOUT feeding tau_binding in.
 
 Construction (no fit):
-  * Family E_q: y^2 = x^3 + p(q) x + r(q), p,r the coral/descartes coefficients.
+  * Family E_q: y^2 = x^3 + p(q) x + r(q), p,r the color/descartes coefficients.
   * Griffiths-Dwork on the basis (omega = dx/y, varpi = x dx/y) gives the Gauss-Manin
     connection d/dq [omega, varpi]^T = N(q) [omega, varpi]^T (derived by hand; trace-free
     => sl_2, consistent with the proved det B = 1, prop:sl2-prolongation-recurrence).
@@ -143,9 +143,9 @@ assertions = {
 solid = trace_free and N_validated
 hit = assertions["theta_spec_raw_matches_binding_1pct"] or assertions["theta_spec_x2_matches_binding_1pct"]
 witness = {
-    "computation": "lever1_coral_eq_lambda_sw_rapidity",
+    "computation": "lever1_color_eq_lambda_sw_rapidity",
     "description": (
-        "Owner-ungated (2026-06-25) non-circular test of theta_binding from coral E_q "
+        "Owner-ungated (2026-06-25) non-circular test of theta_binding from color E_q "
         "geometry. Derives the Gauss-Manin connection N(q) of y^2=x^3+p(q)x+r(q) via "
         "Griffiths-Dwork (trace-free sl_2; validated by the two numerically integrated "
         "periods omega=∮dx/y, varpi=∮x dx/y). Abelianised (Cartan) holonomy rapidity "
@@ -157,7 +157,7 @@ witness = {
         "spectral 1-form pre-registered (raw + x2 convention reported regardless of hit/miss); "
         "torus theta=2 log q0 for calibration. N validated by period system to <1e-5 rel."
     ),
-    "auditOnly": "docs/audits/2026-06-25-lever1-coral-eq-lambda-sw-rapidity.md",
+    "auditOnly": "docs/audits/2026-06-25-lever1-color-eq-lambda-sw-rapidity.md",
     "results": results, "assertions": assertions,
     "allPassed": bool(solid),
 }
@@ -171,7 +171,7 @@ witness["verdict"] = (
      "Picard-Fuchs input the prior sessions punted on; the residual is the precise "
      "abelianisation frame/normalisation.") + " No fit; nothing wired."
 )
-out = os.path.join(os.path.dirname(__file__), "lever1-coral-eq-lambda-sw-rapidity.witness.json")
+out = os.path.join(os.path.dirname(__file__), "lever1-color-eq-lambda-sw-rapidity.witness.json")
 with open(out, "w") as f:
     json.dump(witness, f, indent=2, default=str)
 

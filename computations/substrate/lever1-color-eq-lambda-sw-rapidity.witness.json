@@ -1,8 +1,8 @@
 {
-  "computation": "lever1_coral_eq_lambda_sw_rapidity",
-  "description": "Owner-ungated (2026-06-25) non-circular test of theta_binding from coral E_q geometry. Derives the Gauss-Manin connection N(q) of y^2=x^3+p(q)x+r(q) via Griffiths-Dwork (trace-free sl_2; validated by the two numerically integrated periods omega=\u222edx/y, varpi=\u222ex dx/y). Abelianised (Cartan) holonomy rapidity theta_spec = int_1^{q0} sqrt(-det N) dq confronted with theta_binding=acosh(tau_binding/2). Target NOT used as input.",
+  "computation": "lever1_color_eq_lambda_sw_rapidity",
+  "description": "Owner-ungated (2026-06-25) non-circular test of theta_binding from color E_q geometry. Derives the Gauss-Manin connection N(q) of y^2=x^3+p(q)x+r(q) via Griffiths-Dwork (trace-free sl_2; validated by the two numerically integrated periods omega=\u222edx/y, varpi=\u222ex dx/y). Abelianised (Cartan) holonomy rapidity theta_spec = int_1^{q0} sqrt(-det N) dq confronted with theta_binding=acosh(tau_binding/2). Target NOT used as input.",
   "discipline": "no fit; sympy rational-in-s connection + mpmath 30dps periods; abelianised-holonomy spectral 1-form pre-registered (raw + x2 convention reported regardless of hit/miss); torus theta=2 log q0 for calibration. N validated by period system to <1e-5 rel.",
-  "auditOnly": "docs/audits/2026-06-25-lever1-coral-eq-lambda-sw-rapidity.md",
+  "auditOnly": "docs/audits/2026-06-25-lever1-color-eq-lambda-sw-rapidity.md",
   "results": {
     "q0": "1.109978595557335",
     "p_q0": "0.70872726935",

@@ -40,13 +40,13 @@ seductive "natural" monodromy. It is **tested and rejected**: it overshoots the 
 
 Combining the three lever-1 probes:
 
-1. **Curve:** the rank-2 `W` is the coral/descartes `E_q` (`j(q₀)=129.86`, confirmed).
-2. **Not topological:** `τ=2.6424 ∉ ℤ` — `B` is not the integral monodromy ([integrality audit](2026-06-24-lever1-coral-eq-monodromy-integrality.md)).
+1. **Curve:** the rank-2 `W` is the color/descartes `E_q` (`j(q₀)=129.86`, confirmed).
+2. **Not topological:** `τ=2.6424 ∉ ℤ` — `B` is not the integral monodromy ([integrality audit](2026-06-24-lever1-color-eq-monodromy-integrality.md)).
 3. **Not a recurrence rate of `lw`:** `lw(c)` fails the depth-2 recurrence past the seed ([falsification audit](2026-06-24-lever1-lw-depth2-recurrence-falsified.md)).
 4. **No integer/golden shortcut:** this probe — the wired seed forces a non-integer `τ`, and no integer (incl. golden `τ=3`) fits.
 
 So there is **no algebraic shortcut** to `τ=2.6424`. The genuine object is the **abelianised `λ_SW`
-real connection holonomy** on the coral `E_q` — `SL₂(ℝ)`, hyperbolic, `θ_binding=0.7815` — which is
+real connection holonomy** on the color `E_q` — `SL₂(ℝ)`, hyperbolic, `θ_binding=0.7815` — which is
 the owner-gated keystone `M` restricted to the elliptic factor. **Concrete owner-gated next step:**
 integrate the Seiberg–Witten differential `λ_SW = x dz` on `E_q` and its Gauss–Manin prolongation to
 recover the real-holonomy 2×2 `B` with `tr B = 2.6424` (needs the genus-1 period integration the

@@ -36,7 +36,7 @@ lesson.
 ## Corpus-grep evidence (the four STRICT paths)
 
 1. `docs/audits/` — `2026-06-24-lever1-*` (trB-quantum-integer-form, binding-monodromy-
-   hyperbolicity, coral-eq-monodromy-integrality, lw-depth2-recurrence-falsified,
+   hyperbolicity, color-eq-monodromy-integrality, lw-depth2-recurrence-falsified,
    lambda-sw-no-shortcut). The thread is **documented as mapped**, not open.
 2. `content/` — `prop:binding-recurrence-extensive` (the kernel proposition).
 3. `computations/` — `probes/binding_recurrence_spectral_bridge_probe.py` (live);
@@ -47,7 +47,7 @@ lesson.
 ## The single remaining open piece — owner-gated
 
 `τ = tr B` is a q-family Gauss–Manin **monodromy** trace (the abelianised `λ_SW` real
-connection holonomy on the coral `E_q`, hyperbolic `SL₂(ℝ)`, `θ_binding = 0.7815`).
+connection holonomy on the color `E_q`, hyperbolic `SL₂(ℝ)`, `θ_binding = 0.7815`).
 Its explicit derivation **is** the s5-so3 keystone `M` (residual i) — **owner-gated**
 (precision-goals Subgoal-2; narrow owner reversal applies only to the s5-so3 geometric
 `W_λ` build). Refuted shortcuts (recorded, not re-litigated): torus (`2.0437`), golden

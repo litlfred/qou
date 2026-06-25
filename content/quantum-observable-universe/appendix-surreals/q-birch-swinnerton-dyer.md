@@ -39,9 +39,9 @@ critically on the categorical axioms:
 | Descartes QOU ($\chi = -6$) | $\mathrm{SU}(2)$ | $V_{1/2} \cong \mathbb{C}^2$ (fundamental) | $= 0$ |
 
 **Proof that $r_q = 0$ in the Descartes QOU.**
-The Descartes elliptic curve $\mathcal{E}_q$ is a coral
+The Descartes elliptic curve $\mathcal{E}_q$ is a color
 fiber of the color fibration
-([coral elliptic](#prop\:coral-elliptic)), so $\mathrm{SU}(2)$
+([color elliptic](#prop\:color-elliptic)), so $\mathrm{SU}(2)$
 acts non-by definition on it. The first cohomology
 $H^1(\mathcal{E}_q) \cong \mathbb{C}^2$ is two-dimensional
 (genus $1$). The only two-dimensional irreducible

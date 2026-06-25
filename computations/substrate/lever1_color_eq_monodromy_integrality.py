@@ -1,11 +1,11 @@
-"""Option 2: the coral elliptic E_q + the integer-trace obstruction on tr B.
+"""Option 2: the color elliptic E_q + the integer-trace obstruction on tr B.
 
 Probe only — no fit, no production wiring. Two findings:
 
-1. The coral elliptic curve E_z (brings-surface/coral-elliptic.md) IS the descartes
+1. The color elliptic curve E_z (brings-surface/color-elliptic.md) IS the descartes
    elliptic curve E_q (brings-surface/descartes-elliptic-curve.md): j(q0) = 129.86
    (descartes records 129.9) and the classical limit j(1) = 128, p(1)=2/3, r(1)=20/27
-   match exactly. So the rank-2 W-plane = H^1(coral E_q) is the SAME curve direction B
+   match exactly. So the rank-2 W-plane = H^1(color E_q) is the SAME curve direction B
    names (numerically confirmed; closes the curve-identification half of direction B).
 
 2. INTEGER-TRACE OBSTRUCTION (decisive reframing of direction A / option 2). The
@@ -21,7 +21,7 @@ Probe only — no fit, no production wiring. Two findings:
 
 (b)-exclusion invariant cited: integrality of SL2(Z) traces (the topological monodromy of
 an elliptic family preserves H^1(E,Z), so its trace is an integer). This does NOT exclude
-the coral E_q as the rank-2 W (the curve is confirmed); it identifies WHICH object B is
+the color E_q as the rank-2 W (the curve is confirmed); it identifies WHICH object B is
 (abelianised connection holonomy, real trace) vs is NOT (integral topological monodromy).
 """
 import json
@@ -35,7 +35,7 @@ from qou_substrate import constants as C
 
 mp.mp.dps = 40
 
-# ---- symbolic coral/descartes E_q Weierstrass data: y^2 = x^3 + p x + r ----
+# ---- symbolic color/descartes E_q Weierstrass data: y^2 = x^3 + p x + r ----
 qs = sp.Symbol("q", positive=True)
 ss = sp.sqrt(qs)
 zc = ss - 1/ss
@@ -65,7 +65,7 @@ def is_int(x, tol=mp.mpf("1e-9")):
     return abs(x - mp.nint(x)) < tol
 
 results = {
-    "j_coral_at_q0": j_q0,
+    "j_color_at_q0": j_q0,
     "j_descartes_recorded": 129.9,
     "j_match": abs(j_q0 - 129.9) < 0.1,
     "j_classical_limit_q1": j_q1,
@@ -79,7 +79,7 @@ results = {
 }
 
 assertions = {
-    "coral_eq_is_descartes_curve_j_match": bool(abs(j_q0 - 129.9) < 0.1),
+    "color_eq_is_descartes_curve_j_match": bool(abs(j_q0 - 129.9) < 0.1),
     "classical_limit_j_128": bool(abs(j_q1 - 128) < 1e-6),
     "classical_limit_p_2_3": bool(p_q1 == sp.Rational(2, 3)),
     "classical_limit_r_20_27": bool(r_q1 == sp.Rational(20, 27)),
@@ -90,9 +90,9 @@ assertions = {
 all_passed = all(assertions.values())
 
 witness = {
-    "computation": "lever1_coral_eq_monodromy_integrality",
+    "computation": "lever1_color_eq_monodromy_integrality",
     "description": (
-        "Coral elliptic E_q = descartes E_q (j(q0)=129.86 ~ 129.9; classical j(1)=128, "
+        "Color elliptic E_q = descartes E_q (j(q0)=129.86 ~ 129.9; classical j(1)=128, "
         "p(1)=2/3, r(1)=20/27 exact) confirms the direction-B curve. Decisive: tr B = "
         "tau_binding = 2.6424 is NOT an integer, but the topological Gauss-Manin monodromy "
         "of an elliptic family is in SL2(Z) (preserves H^1(E,Z)) with integer trace -> B is "
@@ -103,14 +103,14 @@ witness = {
     "discipline": (
         "no fit; sympy symbolic Weierstrass + mpmath 40dps; (b)-exclusion cites integrality "
         "of SL2(Z) traces (topological monodromy preserves H^1(E,Z)); does NOT exclude the "
-        "coral E_q as the rank-2 W (curve confirmed) -- identifies which object B is."
+        "color E_q as the rank-2 W (curve confirmed) -- identifies which object B is."
     ),
-    "auditOnly": "docs/audits/2026-06-24-lever1-coral-eq-monodromy-integrality.md",
+    "auditOnly": "docs/audits/2026-06-24-lever1-color-eq-monodromy-integrality.md",
     "results": results,
     "assertions": assertions,
     "allPassed": all_passed,
     "verdict": (
-        "CORAL E_q CONFIRMED (j(q0)=129.86~129.9), but tr B = 2.6424 is NON-INTEGER so B is "
+        "COLOR E_q CONFIRMED (j(q0)=129.86~129.9), but tr B = 2.6424 is NON-INTEGER so B is "
         "NOT the integral topological Gauss-Manin monodromy of E_q (which is SL2(Z), integer "
         "trace). B is the abelianised lambda_SW Cartan-connection holonomy (real/hyperbolic, "
         "tau=2cosh theta_binding, theta=0.7815). This REFRAMES option 2: a genus-1 Picard-Fuchs "
@@ -123,7 +123,7 @@ witness = {
     ),
 }
 
-out = os.path.join(os.path.dirname(__file__), "lever1-coral-eq-monodromy-integrality.witness.json")
+out = os.path.join(os.path.dirname(__file__), "lever1-color-eq-monodromy-integrality.witness.json")
 with open(out, "w") as f:
     json.dump(witness, f, indent=2)
 

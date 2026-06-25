@@ -15,7 +15,7 @@ loci correspond to confinement. **$C_5$ action in color tube
 coordinates** (rem) records the residual cyclic symmetry that
 survives after the $S_5$ quotient, and **Intrinsic color cubic:
 pairing structure** (rem) extracts the pairing that the next section
-on coral fibration and elliptic curves treats as the defining datum
+on color fibration and elliptic curves treats as the defining datum
 of the elliptic structure $\mathcal{E}_q$.
 
 _(draft.)_

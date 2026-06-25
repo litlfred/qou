@@ -15,7 +15,7 @@ and **Abelianisation of the MI integral on exceptional divisors**
 differential** (lem) provide the abelianisation needed to evaluate
 those integrals.
 
-The closing blocks bridge to the next section. **Coral sector
+The closing blocks bridge to the next section. **Color sector
 coordinates $\mathfrak{r}, \mathfrak{g}, \mathfrak{b}$** (def) fixes
 the color sectorisation in resolvent variables, **Braid-group
 structure of a Descartes universe** (cor) and **Knot eigenbasis

@@ -53,7 +53,7 @@ Bring's surface:
    number of this phase around the $\mathrm{U}(1)$ fiber of the
    Hopf map $\mathrm{SU}(2) \to \mathbb{CP}^1$.
 
-3. **The symplectic pairing** on the coral tube coordinates:
+3. **The symplectic pairing** on the color tube coordinates:
    the T-duality involution $\iota \colon (X, z) \mapsto (z, X)$
    on the symmetric cubic $F(X, z) = F(z, X)$ exchanges color
    and spacetime degrees of freedom.  The symplectic form
@@ -86,7 +86,7 @@ of the trefoil
 |----------|-------|---------------------|
 | Winding | $9 = 3 \times 3$ | Interpolates 3 color copies of $T_{2,3}$ |
 | Genus | $4$ (saturating) | Maximal topological complexity |
-| Crossings | $9$ (all same sign) | Three crossing triples, one per coral tube |
+| Crossings | $9$ (all same sign) | Three crossing triples, one per color tube |
 | Hyperbolic volume | $0$ | Massless carrier (gluon) |
 | Meridional strands | $m = 2$ | Same winding family as leptons/quarks |
 
@@ -107,7 +107,7 @@ surface.
 
 **Asymptotic freedom** (weakening at short distances) corresponds to
 the local triviality of the torus embedding: at scales smaller than
-the coral tube radius, the three strands of $T_{2,9}$ are locally
+the color tube radius, the three strands of $T_{2,9}$ are locally
 parallel, and the binding provided by their global winding becomes
 negligible.
 

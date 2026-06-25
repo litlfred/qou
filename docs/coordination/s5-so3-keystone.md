@@ -253,9 +253,9 @@ lands sorry-free + axiom-free in
   [`docs/audits/2026-06-24-keystone-reeb-restriction-lean-formalization.md`](../audits/2026-06-24-keystone-reeb-restriction-lean-formalization.md).
 ---
 
-**Owner reversal extended to the λ_SW side; coral E_q Gauss–Manin connection derived (2026-06-25, [#2757](https://github.com/litlfred/qou/pull/2757)).**
+**Owner reversal extended to the λ_SW side; color E_q Gauss–Manin connection derived (2026-06-25, [#2757](https://github.com/litlfred/qou/pull/2757)).**
 **Reversal.** The narrow 2026-06-19 reversal (W_λ-index DG build) is **extended by explicit owner
-sign-off (2026-06-25)** to the **λ_SW Seiberg–Witten-period side** of the same keystone — the coral
+sign-off (2026-06-25)** to the **λ_SW Seiberg–Witten-period side** of the same keystone — the color
 `E_q` elliptic factor. Scope unchanged otherwise: a parameter-free geometric computation, **not** a
 fit-based q₀ derivation; the "no 7th fit-based Δ_λ ansatz" rule still stands.
 **Result (no fit, nothing wired).** First explicit write-down of the family's Picard–Fuchs / Gauss–Manin
@@ -268,11 +268,11 @@ named but never computed):
   θ_binding=0.7815` (undershoots **~55×**, below even `θ_torus=2log q₀=0.2087`) — a *short transport
   cannot source the large rapidity*. Scope (a): rules out the transport reading, does **not** exclude the
   curve or the keystone; `N(q)` is a permanent correct contribution.
-- **Keystone REDIRECTED:** all three natural geometric candidates on the coral-`E_q`/`λ_SW` side miss —
+- **Keystone REDIRECTED:** all three natural geometric candidates on the color-`E_q`/`λ_SW` side miss —
   loop monodromy (`SL₂(ℤ)` integer trace; prior), path transport (`θ=0.0141`, ~55× small), and intrinsic
   Tate period `2π Im τ_E` (`5.847`, 6.5× large + 6× too q-flat; `τ_E` Klein-`j`-validated). So `θ_binding`
-  is **not** a coral-`E_q` period at all — its geometric origin is the **`W_λ`-side Plancherel/MTC
-  localization (residual i)**, the #2744 frontier. The coral `E_q` is the right *curve* (rank-2 `W`); the
+  is **not** a color-`E_q` period at all — its geometric origin is the **`W_λ`-side Plancherel/MTC
+  localization (residual i)**, the #2744 frontier. The color `E_q` is the right *curve* (rank-2 `W`); the
   rapidity is the rep-theoretic `tr B`, whose geometric face is the `W_λ` index, not an elliptic period.
-Probes `lever1_coral_eq_lambda_sw_rapidity.py` + `lever1_coral_eq_intrinsic_tau_rapidity.py`; audit
-[`docs/audits/2026-06-25-lever1-coral-eq-lambda-sw-rapidity.md`](../audits/2026-06-25-lever1-coral-eq-lambda-sw-rapidity.md).
+Probes `lever1_color_eq_lambda_sw_rapidity.py` + `lever1_color_eq_intrinsic_tau_rapidity.py`; audit
+[`docs/audits/2026-06-25-lever1-color-eq-lambda-sw-rapidity.md`](../audits/2026-06-25-lever1-color-eq-lambda-sw-rapidity.md).

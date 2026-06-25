@@ -19,7 +19,7 @@ verified in [trefoil operator algebra](#ex:trefoil-operator-algebra).
 $\alpha \mapsto (123)$ and $\beta \mapsto (12)$.  The three
 copies of $S_3$ inside $S_5$ are the stabilisers of the three pairs
 of color coordinates
-([coral sector coords](#def:coral-sector-coords)), and conjugation by
+([color sector coords](#def:color-sector-coords)), and conjugation by
 elements of $S_5 \setminus S_3$ permutes these copies.
 
 *Item (4)*: the braided monoidal structure of

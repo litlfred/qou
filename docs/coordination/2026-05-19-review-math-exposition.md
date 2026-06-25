@@ -1,7 +1,7 @@
 # Coordination ledger — `claude/review-math-exposition-03e6H`
 
 **Goal (one line):** Add the missing geometric-narrative spine in
-`braids-and-knots/`: q-Reeb flow on coral sectors → six S₃ knot
+`braids-and-knots/`: q-Reeb flow on color sectors → six S₃ knot
 operators → ramified-disc boundary → JSJ-graded knot-complement
 volume → generating-function PDE solutions in the Habiro ring.
 
@@ -23,7 +23,7 @@ Claude Code UI after the first coordination round).
 
 | block | kind | file | Lean class? |
 |---|---|---|---|
-| `def:q-reeb-flow-on-coral-coords` | definition | `braids-and-knots/q-reeb-flow-on-coral-coords.{ts,md,lean}` | yes — `QReebFlowOnCoralCoords q` |
+| `def:q-reeb-flow-on-color-coords` | definition | `braids-and-knots/q-reeb-flow-on-color-coords.{ts,md,lean}` | yes — `QReebFlowOnColorCoords q` |
 | `prop:six-canonical-knot-operators` | proposition (conditional) | `braids-and-knots/six-canonical-knot-operators.{ts,md,lean}` | yes — `boundary_perm_realises_S3` |
 | `rem:garside-as-compound-flow` | remark | `braids-and-knots/garside-as-compound-flow.{ts,md}` | — |
 | `prop:ramified-disc-fusion` | proposition | `braids-and-knots/ramified-disc-fusion.{ts,md,lean}` | yes (stub) |
@@ -34,7 +34,7 @@ Claude Code UI after the first coordination round).
 
 Lean files added under `lean/QOU/CategoricalReeb/`:
 
-- `QReebFlowOnCoralCoords.lean` — `class QReebFlowOnCoralCoords (q : ℝ)` + `inductive CoralSector`.
+- `QReebFlowOnColorCoords.lean` — `class QReebFlowOnColorCoords (q : ℝ)` + `inductive ColorSector`.
 - `SixCanonicalKnotOperators.lean` — `inductive CanonicalBraid` + `def boundaryPerm` + `theorem boundary_perm_realises_S3` (sorry-free modulo flow class).
 
 ## Sibling-PR scope map
@@ -66,7 +66,7 @@ Lean files added under `lean/QOU/CategoricalReeb/`:
 |---|---|---|---|---|
 | 1 | this branch | After #817 lands, is "Markov-amphicheiral via H₃(q)-conjugacy" the canonical phrasing for the figure-8 chirality reference? | #817 | pending |
 | 2 | this branch | Does the BD canonical-rep fix change any of the six canonical braid words I tabulated? | #818 | pending |
-| 3 | this branch | Does the Brunnian probe contradict the two-strand localisation rule of `def:q-reeb-flow-on-coral-coords`? | #818 | pending |
+| 3 | this branch | Does the Brunnian probe contradict the two-strand localisation rule of `def:q-reeb-flow-on-color-coords`? | #818 | pending |
 | 4 | this branch | Namespace convention + ground-ring annotation block style for `QOU.CategoricalReeb` enrichments? | #806 | pending |
 | 5 | this branch | Does the FR-pullback recalibration touch the substrate-pinning anchor V(4_1) = 2v_3? | #826 | pending |
 

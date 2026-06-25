@@ -6,7 +6,7 @@ selected **three** binding-improvement fronts to pursue in parallel:
 
 1. **A=4 interface operator scaffolding** — Option E PROBE 2 (beans `ae42`/`ae43`/`ae4b`).
 2. **Lever-1 fibre kernel `R(q,x)`** — beans `z2bn`/`830y`.
-3. **s5-so3 keystone pre-work** — `Jac(Bring)` CM/isogeny + coral `E_q`
+3. **s5-so3 keystone pre-work** — `Jac(Bring)` CM/isogeny + color `E_q`
    Picard–Fuchs rapidity test (target θ ≈ 0.7815); beans `s5bb`/keystone ledger.
 
 This doc is the living anchor for the tranche. It is **exploratory** work
@@ -20,7 +20,7 @@ q-locality, and the Δ_λ "no 7th fit-ansatz" rule stands.
 |---|---|---|
 | **1. A=4 interface operator** | **Yes — independent forward step** | Sanctioned Δ_λ PROBE-2 direction; extends the A=3 mirror-pair. Primary focus. |
 | **2. Lever-1 `R(q,x)`** | **Mostly banked** | Algebraic kernel resolved in **PR #2718** (2026-06-24): depth-2 `R=x²−τx+1`, det=1; τ **algebraically fixed** (no fit) `τ=3(3q⁴+8q²+3)/(4q(q+1)²)`, τ(q₀)=2.6423863133015 (reproduced this session); λ₊≈2.1846>1 Lean-proved sorry-free (`BindingRecurrenceSpectral.lean`). **Open remainder = keystone** (geometric origin of τ) **+ `a_D^(n)=lw(n−1)`** geometric↔algebraic ID (conj #1765). |
-| **3. Keystone pre-work** | **Partly — tool-gated** | The non-owner-gated remainder of front 2. Sub-direction B (CM/isogeny of `Jac(Bring)`, coral `E_q` identified j≈129.86) is "mostly done"; coral `E_q` Picard–Fuchs rapidity θ≈0.7815 test pending tooling (Sage?). |
+| **3. Keystone pre-work** | **Partly — tool-gated** | The non-owner-gated remainder of front 2. Sub-direction B (CM/isogeny of `Jac(Bring)`, color `E_q` identified j≈129.86) is "mostly done"; color `E_q` Picard–Fuchs rapidity θ≈0.7815 test pending tooling (Sage?). |
 
 **Consequence:** front 2's *open* part **is** front 3 (both gate on the
 owner-reserved Gauss–Manin monodromy `tr B`). New search on the `R(q,x)`
@@ -34,7 +34,7 @@ Full synthesis: [`docs/audits/2026-06-25-binding-frontier-three-front-convergenc
 
 **All actionable, non-owner-gated work across the three fronts is already
 banked / recorded / pruned in the corpus; the three converge on one
-owner-gated object** — the abelianised λ_SW holonomy on coral `E_q`
+owner-gated object** — the abelianised λ_SW holonomy on color `E_q`
 (`θ=0.7815`, `τ=2.6424`).
 
 - **Front 1 (A=4):** interface operator exists + evaluated — under-binds ⁴He
@@ -43,7 +43,7 @@ owner-gated object** — the abelianised λ_SW holonomy on coral `E_q`
   native-gated (clarabel fork dep unfetchable here). Witness-emission hygiene
   gap in `a4_interface_trace_integration_all.py` filed as follow-up.
 - **Front 2 (Lever-1):** banked (#2718); τ(q₀)=2.6423863133015 reproduced.
-- **Front 3 (keystone):** curve identified (coral E_q, j≈129.86); Picard–Fuchs
+- **Front 3 (keystone):** curve identified (color E_q, j≈129.86); Picard–Fuchs
   route formalize-first-pruned (integer-trace obstruction). Open step
   owner-gated.
 
@@ -65,13 +65,13 @@ remain the parameter-free falsifiable-prediction avenue.
 and the owner-gated DG holonomy are blocked; pure symbolic algebra is fine.
 
 Banked (do not redo): `Jac(Bring) ~ E⁴` isotypic, H¹(Bring)=std A₅-irreducible
-(#2701); coral `E_q` = descartes `E_q`, j(q₀)≈129.86; `tr B = 2.6424 ∉ ℤ` ⇒
+(#2701); color `E_q` = descartes `E_q`, j(q₀)≈129.86; `tr B = 2.6424 ∉ ℤ` ⇒
 B is the abelianised λ_SW holonomy (`SL₂(ℝ)`, τ=2cosh θ, θ≈0.78145), **not** the
 topological Picard–Fuchs monodromy.
 
 Actionable (non-gated, symbolic):
-- [ ] **(b-3)** Derive the symbolic Picard–Fuchs q-difference operator for coral
-  `E_q: y²=x³+p(q)x+r(q)` (reuse `lever1_coral_eq_monodromy_integrality.py:38–89`
+- [ ] **(b-3)** Derive the symbolic Picard–Fuchs q-difference operator for color
+  `E_q: y²=x³+p(q)x+r(q)` (reuse `lever1_color_eq_monodromy_integrality.py:38–89`
   + `bring_picard_fuchs_kernel.py:36–61`). Report the actual period-monodromy
   trace (expected integer `SL₂(ℤ)`); confirm it ≠ 2.6424, re-isolating τ to the
   owner-gated holonomy. *Confirmatory, bounded.*

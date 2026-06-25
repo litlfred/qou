@@ -14,10 +14,10 @@ export default proposition({
     "s3-galois",
     "braid-group",
     "garside-element",
-    "coral-sectors",
+    "color-sectors",
   ],
   uses: [
-    "def:q-reeb-flow-on-coral-coords",
+    "def:q-reeb-flow-on-color-coords",
     "rem:rho-s3-holonomy-exposition",
     "prop:vertex-is-exceptional-divisor",
   ],

@@ -103,7 +103,7 @@ AGENTS.md, the 4 discipline skills, `three-calibration-inputs`,
   | PR | relationship | overlap / dep / cherry-pick | action |
   |---|---|---|---|
   | **#2346** (this) | lead | — | phase audit + S₅ Lean landed |
-  | **#2297** `friendly-archimedes` (3D color-tube render) | **genuine overlap** — color-tube cubic, `conj:s5-so3-fiber-action`, complex roots {−1,±i} | overlap=high (structural), dep=none, cherry-pick=none; **no file collision** (they: `scripts/knot-plots`+`color-tube-cubic`/`coral-elliptic`; me: `mass-endo`+new Lean+audit) | **intent posted** (`#issuecomment-4724158064`) |
+  | **#2297** `friendly-archimedes` (3D color-tube render) | **genuine overlap** — color-tube cubic, `conj:s5-so3-fiber-action`, complex roots {−1,±i} | overlap=high (structural), dep=none, cherry-pick=none; **no file collision** (they: `scripts/knot-plots`+`color-tube-cubic`/`color-elliptic`; me: `mass-endo`+new Lean+audit) | **intent posted** (`#issuecomment-4724158064`) |
   | **#1552** α_EM RT Phase 4 (dim H¹(M_Bring)=8) | conceptual EM↔Bring only | overlap=low, no file overlap, modifies no content/Lean, stale (06-13) | **logged, not commented** (avoid noise) |
   | #2363 Q_β counit | incoming intent (above) | no collision | acknowledged in ledger |
 - **main advanced** `9a2ee428..1017b897` — landed changes are schema-path +

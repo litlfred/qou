@@ -41,7 +41,7 @@ Each isotope produces a certificate with:
     "tr_alt": [[exp, "coeff"], ...],
     "net":    [[exp, "coeff"], ...],
     "observable": [[exp, "coeff"], ...],
-    "coral":  [[exp, "coeff"], ...]
+    "color":  [[exp, "coeff"], ...]
   },
   "strand_trace": [
     { "strand": 1, "n_words": 1, "checksum": "sha256..." },

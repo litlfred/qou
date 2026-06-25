@@ -7,7 +7,7 @@ and a corpus synthesis:
   * The rank-2 object `B` acts on is the S5-Hodge MULTIPLICITY space of the irreducible
     4-dim S5 rep `W` in H^1(Bring) = W (x) C^2 (Riera-Rodriguez; the M-workplan
     2026-06-06, Lean `sl2_prolongation_recurrence`, det B = 1).
-  * The coral elliptic curve E_z (brings-surface/coral-elliptic.md) has monodromy around
+  * The color elliptic curve E_z (brings-surface/color-elliptic.md) has monodromy around
     its singular fibres = the trefoil holonomy generators H_1=sigma_1, H_2=sigma_2 in
     SU(2) (holonomy-trefoil.md), with (H_1 H_2)^3 = id  =>  |trace| <= 2 (compact/elliptic).
   * tau_binding = tr B = 2.6424 > 2  =>  B is HYPERBOLIC in SL2(R); a compact SU(2)
@@ -17,7 +17,7 @@ and a corpus synthesis:
     W_lambda / modular-category side (s5-so3-keystone ledger, 2026-06-22).
 
 (b)-exclusion invariant cited: the trace dichotomy of SL2(R) / the |trace|<=2 bound on the
-2-dim rep of compact SU(2).  This does NOT exclude the coral E_z as the rank-2 W (the curve
+2-dim rep of compact SU(2).  This does NOT exclude the color E_z as the rank-2 W (the curve
 is fine; its monodromy is merely evaluated in the non-compact regime at q0>1) -- only the
 COMPACT evaluation is excluded.
 """
@@ -85,14 +85,14 @@ witness = {
         "Lever-1 sharpening: the rank-2 binding monodromy B (tr B = tau = "
         "3(3q^4+8q^2+3)/(4q(q+1)^2) = 2.6424 at q0) is HYPERBOLIC (tau>2), so it is "
         "structurally excluded from the compact-SU(2) trefoil holonomy (|trace|<=2, "
-        "(H1H2)^3=id) that is the coral elliptic E_z monodromy. B is the non-compact "
+        "(H1H2)^3=id) that is the color elliptic E_z monodromy. B is the non-compact "
         "SU_q(2)->E_q(2) hyperbolic continuation at q0>1 -- the keystone's growth-regime "
         "arena reached from the binding side. Corpus synthesis of the 2026-06-06 M-workplan "
-        "(H^1(Bring)=W(x)C^2, B in SL2, det=1) + coral-elliptic.md + holonomy-trefoil.md."
+        "(H^1(Bring)=W(x)C^2, B in SL2, det=1) + color-elliptic.md + holonomy-trefoil.md."
     ),
     "discipline": (
         "no fit; symbolic+mpmath 50dps; (b)-exclusion cites the SL2(R) trace dichotomy / "
-        "compact-SU(2) |trace|<=2 invariant; does NOT exclude coral E_z as the rank-2 W "
+        "compact-SU(2) |trace|<=2 invariant; does NOT exclude color E_z as the rank-2 W "
         "(only its compact evaluation); not owner-gated (pure trace arithmetic)."
     ),
     "auditOnly": "docs/audits/2026-06-24-lever1-binding-monodromy-hyperbolicity.md",
@@ -101,14 +101,14 @@ witness = {
     "allPassed": all_passed,
     "verdict": (
         "BINDING MONODROMY IS HYPERBOLIC, NOT COMPACT-SU(2). tau_binding=2.6424>2 puts B in "
-        "the hyperbolic SL2(R) class; the trefoil holonomy (= coral E_z monodromy, compact "
+        "the hyperbolic SL2(R) class; the trefoil holonomy (= color E_z monodromy, compact "
         "SU(2), (H1H2)^3=id, tr=-1) is elliptic with |trace|<=2, so B is structurally "
         "excluded from being a compact trefoil-holonomy generator (b-exclusion, trace "
         "invariant). B is the non-compact SU_q(2)->E_q(2) continuation at q0>1 -- the SAME "
         "arena the keystone reached from the W_lambda side (independent convergence, binding "
         "vs generation). The rank-2 W is the S5-Hodge multiplicity space (= candidate H^1 of "
-        "the coral elliptic E_z, Riera-Rodriguez isotypic factor), NOT a compact object. Open "
-        "(rank-2, tractable, NOT genus-4): the coral E_z Picard-Fuchs hyperbolic rapidity "
+        "the color elliptic E_z, Riera-Rodriguez isotypic factor), NOT a compact object. Open "
+        "(rank-2, tractable, NOT genus-4): the color E_z Picard-Fuchs hyperbolic rapidity "
         "theta_binding=0.7815 (k=7.489 non-integer, not a substrate q-power). No fit."
     ),
 }

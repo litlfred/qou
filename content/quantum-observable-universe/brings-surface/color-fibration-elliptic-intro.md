@@ -1,8 +1,8 @@
 _[draft]_ The intrinsic color cubic of the previous section sets up
 exactly the data needed to identify an elliptic curve over the color
-parameter. **Coral fibre as an elliptic curve** (prop) realises this:
-the generic coral fibre carries the Weierstrass structure $\mathcal{E}_q$,
-and **Self-duality of the coral elliptic curve** (rem) records the
+parameter. **Color fibre as an elliptic curve** (prop) realises this:
+the generic color fibre carries the Weierstrass structure $\mathcal{E}_q$,
+and **Self-duality of the color elliptic curve** (rem) records the
 $T$-duality that pairs $q \leftrightarrow q^{-1}$ on this curve.
 **Color tube cubic** (rem) and **Color tube fibers** (rem) translate
 the elliptic data back into the tube coordinates, and **T-duality in
@@ -14,7 +14,7 @@ $\widetilde C = 0$ and colour confinement** (rem) identifies the
 discriminant locus where the elliptic fibre degenerates, and
 **Pure colour sublocus and confinement constraint** (rem) extracts
 the explicit constraint a pure-color state must satisfy. This is the
-form bundle structures and smoothness pick up next: the coral
+form bundle structures and smoothness pick up next: the color
 fibration extends to a bundle whose smoothness on $\mathbb{P}^1$ is
 the subject of §1d.
 

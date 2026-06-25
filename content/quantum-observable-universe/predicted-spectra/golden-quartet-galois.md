@@ -102,7 +102,7 @@ is the **maximal real subfield**.
 
 The quartet-orbit description above lets such arguments be
 **rewritten without $\zeta_5$**: instead of "the $\zeta_5$-action
-on the coral tube coordinates fixes $\varphi$ as a real combination",
+on the color tube coordinates fixes $\varphi$ as a real combination",
 one writes "the golden quartet $Q$ is closed under $G$-action, and
 $\varphi$ is a $\mathrm{Gal}$-orbit representative". This eliminates
 roots-of-unity bookkeeping where it is not essential.

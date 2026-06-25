@@ -1,4 +1,4 @@
-The three coral tubes of the Bring's surface
+The three color tubes of the Bring's surface
 ([color tube interpretation](#rem:color-tube-interpretation)) and
 the three $S_3$ subgroups of its automorphism group
 ([chirality of the trefoil](#rem:chirality-trefoil)) provide a
@@ -26,7 +26,7 @@ locus is not contained in any triangular cone.
 **The $q$-deformed color space.**
 
 In the Descartes universe, the "color space" is the Skein module
-$\mathrm{Sk}_q(\mathbf{C})$.  The three coral tubes
+$\mathrm{Sk}_q(\mathbf{C})$.  The three color tubes
 $(r, g, b) = (w_2 - z, w_3 - z, w_4 - z)$ provide three
 distinguished directions — the "primaries" of the categorical
 color space.  An arbitrary element of $\mathrm{Sk}_q$ is a formal
@@ -69,10 +69,10 @@ $S_5$-theoretic origin of the color permutation symmetry of QCD.
 
 In Feynman's language: some spectral colors lie outside the triangle
 of primaries, requiring negative coefficients.  In QOU language:
-some Skein elements have negative coefficients in the coral-tube
+some Skein elements have negative coefficients in the color-tube
 basis.
 
-An individual quark — a trefoil $T_{2,3}$ in a single coral tube —
+An individual quark — a trefoil $T_{2,3}$ in a single color tube —
 is a "primary color."  It does not span the full Skein module with
 positive coefficients.  The Skein resolution of a physical process
 generically produces terms with $-q^{-1}$ factors, which are
@@ -100,7 +100,7 @@ spectral color outside the primary triangle.
 The three-fold cover $T_{2,9}$
 ([force identification](#rem:force-knot-identification)) is the
 topological agent that enforces positivity.  By interpolating all
-three coral tubes in a single closed curve, $T_{2,9}$ provides
+three color tubes in a single closed curve, $T_{2,9}$ provides
 the binding that makes the full Skein sum $S_5$-invariant.  Without
 $T_{2,9}$, the three trefoil copies could be evaluated separately
 (in which case negative coefficients are possible); with $T_{2,9}$,
@@ -126,7 +126,7 @@ $$
 $$
 
 where $a_r, a_g, a_b$ are the $q$-coefficients of $\psi$ in the
-three coral tubes.  These satisfy $\hat{c}_r + \hat{c}_g + \hat{c}_b = 1$,
+three color tubes.  These satisfy $\hat{c}_r + \hat{c}_g + \hat{c}_b = 1$,
 The $q$-chromaticity diagram is a triangle (the $q$-simplex).
 
 For color-neutral states (hadrons): $\hat{c}_r = \hat{c}_g = \hat{c}_b = 1/3$

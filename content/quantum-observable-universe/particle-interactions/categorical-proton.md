@@ -12,7 +12,7 @@ $$
 where:
 
 - $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ is the Borromean
-  braid of three unknots threaded through coral tubes $(r,g,b)$
+  braid of three unknots threaded through color tubes $(r,g,b)$
   ([color tube coordinates](#def:color-tube-coordinates)):
   two with positive crossing orientation ($\mathfrak{u}$,
   [up quark](#def:up-quark)) and one with negative orientation
@@ -23,7 +23,7 @@ where:
   this is the gluon field binding the three constituents
   (no separate Hopf link factor is needed),
 
-- the $S_3$ permutation symmetry of the coral tubes ensures
+- the $S_3$ permutation symmetry of the color tubes ensures
   the definition is independent of the color assignment.
 
 **Step 1: Borromean braid NF.**

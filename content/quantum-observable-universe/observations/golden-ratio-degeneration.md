@@ -34,7 +34,7 @@ $y^2 = x^3 + p(q_{\mathrm{gold}})x = x(x^2 + p)$.
 The curve acquires a **node** at the origin: the smooth elliptic
 fiber pinches to a rational curve with a double point.  The
 chiral fibration of Bring's surface loses its elliptic structure
-— the three coral tubes $(r, g, b)$ collapse to a degenerate
+— the three color tubes $(r, g, b)$ collapse to a degenerate
 configuration where two roots coincide.
 
 **Why the golden ratio?**
@@ -46,7 +46,7 @@ $\mathbb{CP}^4$, and the $S_5$ symmetry of the quintic acts on
 the Lagrange resolvents through fifth roots of unity
 $\zeta = e^{2\pi i/5}$.  The golden ratio satisfies
 $\varphi = -2\cos(4\pi/5) = 2\cos(\pi/5)$, linking it to the
-$\zeta$-action on the coral tube coordinates.  The degeneration
+$\zeta$-action on the color tube coordinates.  The degeneration
 at $q = 1/\varphi^2$ occurs when the substrate deformation
 resonates with the $S_5$ symmetry of Bring's surface.
 

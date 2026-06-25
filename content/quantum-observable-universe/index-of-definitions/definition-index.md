@@ -81,7 +81,7 @@
 | [def:confined-particle](#def:confined-particle) | Confined particle | Ch 8 | `qou:QOU.BraidKnot.ConfinedParticle` |
 | [def:confinement-level](#def:confinement-level) | Confinement level via shadow-price filtration | Ch 8 | `qou:QOU.BraidKnot.ConfinementLevel` |
 | [def:contact-affine-chart](#def:contact-affine-chart) | Contact affine chart on $\mathbb{P}(V)$ | Ch 2 | `qou:QOU.ContactAffineChart` |
-| [def:coral-sector-coords](#def:coral-sector-coords) | Coral sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$ | Ch 6 | `qou:QOU.CoralSectorCoords` |
+| [def:color-sector-coords](#def:color-sector-coords) | Color sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$ | Ch 6 | `qou:QOU.ColorSectorCoords` |
 | [def:coulomb-charge](#def:coulomb-charge) | Coulomb charge of a knot composite | Ch 9 | `qou:QOU.Braiding.CoulombCharge` |
 | [def:covalent-bond-types](#def:covalent-bond-types) | Covalent bond (shared Hopf links) | Ch 15 | `qou:QOU.Organic.CovalentBond` |
 | [def:covalent-bond-shared-trefoil](#def:covalent-bond-shared-trefoil) | Covalent bond as shared electron trefoil | Ch 14 | `qou:QOU.Molecular.CovalentBond` |
@@ -185,7 +185,7 @@
 | [def:surreal-blowup-calculus](#def:surreal-blowup-calculus) | Surreal blow-up calculus: named infinite surreals for renormalisation | Ch 22 | `qou:QOU.AppendixSurreals.BlowupCalculus` |
 | [def:q-casimir](#def:q-casimir) | The $q$-Casimir element of $\mathcal{U}_q(\mathfrak{su}(2))$ | Ch 5 | `qou:QOU.QCasimir` |
 | [def:q-chebyshev-function](#def:q-chebyshev-function) | The $q$-Chebyshev function | Ch 20 | `qou:QOU.AlgebraicSubstrate.QChebyshevFunction` |
-| [def:q-reeb-flow-on-coral-coords](#def:q-reeb-flow-on-coral-coords) | The $q$-Reeb flow in coral-sector coordinates | Ch 10 | `qou:QOU.CategoricalReeb.QReebFlowOnCoralCoords` |
+| [def:q-reeb-flow-on-color-coords](#def:q-reeb-flow-on-color-coords) | The $q$-Reeb flow in color-sector coordinates | Ch 10 | `qou:QOU.CategoricalReeb.QReebFlowOnColorCoords` |
 | [def:q-von-mangoldt-function](#def:q-von-mangoldt-function) | The $q$-von Mangoldt function | Ch 20 | `qou:QOU.AlgebraicSubstrate.QVonMangoldtFunction` |
 | [def:classical-limit-functor](#def:classical-limit-functor) | The classical limit functor $q \to 1$ | Ch 17 | `qou:QOU.AlgebraicSubstrate.ClassicalLimitFunctor` |
 | [def:classical-limit-obstruction](#def:classical-limit-obstruction) | The classical limit obstruction of a quantum universe | Ch 17 | `qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction` |
@@ -343,7 +343,7 @@
 | [prop:lepton-continuant-recurrence](#prop:lepton-continuant-recurrence) | Continuant recurrence for the lepton tower $T_{2,n}$ | Ch 12 | `qou:QOU.Archimedean.lepton_continuant_recurrence` |
 | [prop:rigid-monoidal-structural-gap-invariance](#prop:rigid-monoidal-structural-gap-invariance) | Convention-independence of the structural gap: the brane-tower factors through the rigid monoidal Markov trace on the Type-B-folded Hecke category | Ch 10 | `qou:QOU.BraidKnot.RigidMonoidalStructuralGapInvariance` |
 | [prop:categorical-chain-convergence-mechanisms](#prop:categorical-chain-convergence-mechanisms) | Convergence of $\mathfrak{Q}_\beta^{\text{cat}}$'s infinite product: per-knot c(K) brane-tower bound + inter-knot linking-number locality (Habiro-ring interpretation) | Ch 7 | `qou:QOU.BraidKnot.categorical_chain_convergence_mechanisms` |
-| [prop:coral-elliptic](#prop:coral-elliptic) | Coral fibre as an elliptic curve | Ch 6 | `qou:QOU.Brings.coral_elliptic` |
+| [prop:color-elliptic](#prop:color-elliptic) | Color fibre as an elliptic curve | Ch 6 | `qou:QOU.Brings.color_elliptic` |
 | [prop:core-levi-form](#prop:core-levi-form) | Core aspect ratio equals Levi form condition number on the normal plane | Ch 16 | `qou:QOU.FluidDynamics.core_levi_form` |
 | [prop:cosimplicial-crossed-groupoid](#prop:cosimplicial-crossed-groupoid) | Cosimplicial crossed groupoid | Ch 4 | `qou:QOU.LiftingDescent.cosimplicial_crossed_groupoid_exists` |
 | [prop:skein-coulomb-enhancement](#prop:skein-coulomb-enhancement) | Coulomb enhancement from electron-proton Skein crossings | Ch 12 | `qou:QOU.Archimedean.skein_coulomb_enhancement` |

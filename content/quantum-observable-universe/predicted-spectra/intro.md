@@ -4,6 +4,6 @@ section assembles the topological mass formula and its Skein-theoretic
 decomposition: the hyperbolic volume of a knot complement determines the mass
 of the associated particle, and the Skein decomposition of the Jones
 polynomial separates the contributions of the Picard--Lefschetz thimbles
-attached to the exceptional coral tubes.  The results feed directly into the
+attached to the exceptional color tubes.  The results feed directly into the
 nuclear structure of [Chapter 10](#chap:particle-interactions) and the
 numerical predictions of [Chapter 11](#chap:observations).

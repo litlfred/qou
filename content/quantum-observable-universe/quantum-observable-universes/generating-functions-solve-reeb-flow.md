@@ -19,8 +19,8 @@ identity is the formal solution of the base Reeb-flow equation
 $L_{\xi_q} Z = J\,\hbar_q Z$: the categorical Reeb derivation
 $\xi_q$ is exponentiated by $\exp_q$, producing the
 one-parameter group $\phi^q_t$ that drives the
-coral-twist rotation
-([$q$-Reeb flow on coral coords](#def:q-reeb-flow-on-coral-coords)).
+color-twist rotation
+([$q$-Reeb flow on color coords](#def:q-reeb-flow-on-color-coords)).
 
 **2.  Categorical Fourier diagonalises the $q$-heat equation.**
 The $q$-heat equation $\partial_t u = -\Delta_q u$

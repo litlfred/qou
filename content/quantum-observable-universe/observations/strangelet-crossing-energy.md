@@ -57,7 +57,7 @@ $$
 
 *Proof.*
 Part (1) follows from the crossing-orientation partition.
-In the Borromean triple, the up quark occupies a coral tube
+In the Borromean triple, the up quark occupies a color tube
 with positive orientation ($+2/3$ charge), while the down
 and strange quarks occupy tubes with negative orientation
 ($-1/3$ each).  The Coulomb charge

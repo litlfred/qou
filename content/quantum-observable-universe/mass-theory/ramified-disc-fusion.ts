@@ -16,7 +16,7 @@ export default proposition({
   ],
   uses: [
     "def:reeb-bundle",
-    "def:coral-sector-coords",
+    "def:color-sector-coords",
     "rem:rho-s3-holonomy-exposition",
   ],
 });

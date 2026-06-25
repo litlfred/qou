@@ -61,7 +61,7 @@ characteristic discriminant as $M$. $\square$
 
 | Map | Equation | Fixed points | Role |
 |-----|---------|--------------|------|
-| $f(q) = (4-q)/(4q+3)$ | $q^2 + q - 1 = 0$ | $1/\varphi$, $-\varphi$ | Coral tube branch |
+| $f(q) = (4-q)/(4q+3)$ | $q^2 + q - 1 = 0$ | $1/\varphi$, $-\varphi$ | Color tube branch |
 | $g(q) = (q+4)/(4q-3)$ | $q^2 - q - 1 = 0$ | $\varphi$, $-1/\varphi$ | Bar-dual branch |
 
 The **positive-axis pair** $\{1/\varphi, \varphi\}$ are exactly the

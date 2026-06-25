@@ -254,7 +254,7 @@ models ($p$-adic, finite-field) demonstrate universality.
 **Intent (Part B — Descartes)**: Study Bring's surface — the
 universal genus-4 curve with automorphism group $S_5$ — as a
 concrete model for QOU. Develop coordinate systems for the red,
-green, and blue coral tubes (the exceptional divisors where all
+green, and blue color tubes (the exceptional divisors where all
 particle interactions occur). Identify specific torus knots with
 specific particles. Derive the Descartes theorem: Bring's surface is
 the terminal object in the category of QOUs with $\chi(A) = -6$.
@@ -264,12 +264,12 @@ specialises to familiar geometric objects.
 
 **Voice (Part B)**: The most "hands-on" chapter. Coordinate-heavy,
 with explicit equations for Bring's surface ($\sum x_j = \sum x_j^2
-= \sum x_j^3 = 0$), color tube coordinates, coral elliptic curves,
+= \sum x_j^3 = 0$), color tube coordinates, color elliptic curves,
 and particle assignments. The reader should feel they are working
 inside the surface.
 
-**What a writer should know**: "Coral tubes" are the geometric
-objects (twisted, fractal, reef-like); "color tube coordinates" are
+**What a writer should know**: "Color tubes" are the geometric
+objects (twisted, fractal, knotted); "color tube coordinates" are
 the coordinate system. Particles are fraktur ($\mathfrak{u}$,
 $\mathfrak{d}$, $\mathfrak{e}$). The Descartes theorem is a
 categorical statement about terminal objects — prove it categorically,
@@ -362,9 +362,9 @@ field pointing to the earlier example block.
 
 | Term | Correct | Incorrect |
 |------|---------|-----------|
-| Geometric tubes on Bring's surface | coral tubes | color tubes, chiral tubes |
-| Coordinate system for r,g,b | color tube coordinates | coral tube coordinates |
-| Physical chirality (experiments) | chiral | coral |
+| Geometric tubes on Bring's surface | color tubes | color tubes, chiral tubes |
+| Coordinate system for r,g,b | color tube coordinates | color tube coordinates |
+| Physical chirality (experiments) | chiral | color |
 | Hadron variable | $\mathfrak{H}$ | $H$ (plain italic) |
 | Hadron mass | $\mathfrak{m}_{\mathfrak{H}}$ | $\mathfrak{m}_H$, $m_H$ |
 | Category | $\mathbf{C}$ (bold) | $\mathcal{C}$ (calligraphic) |
@@ -397,7 +397,7 @@ Before committing any .md content, verify:
 3. [ ] **Tense**: Present tense for definitions and theorems
 4. [ ] **Tone**: No editorializing phrases (check blacklist above)
 5. [ ] **Notation**: All symbols match the notation register (§7aa)
-6. [ ] **Coral/color**: Geometric tubes = "coral"; coordinates = "color"
+6. [ ] **Color/color**: Geometric tubes = "color"; coordinates = "color"
 7. [ ] **Hadron fraktur**: $\mathfrak{H}$ for hadrons, not $H$
 8. [ ] **Example thread**: SU(2) examples use consistent notation
 9. [ ] **Cross-chapter**: Terms introduced in earlier chapters are

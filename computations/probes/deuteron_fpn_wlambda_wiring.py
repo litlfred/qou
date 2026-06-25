@@ -139,7 +139,7 @@ def bring_color_weighted_fpn():
     realisation documented at `closed_form_tau_M.py::pn_convention="bring_color_weighted"`
     and `prearchimedean_bond_factor.py`, and named in the inter-nucleon-channel-color-tube
     Lean block. This is the Bring-color leg; it still rides `z = √q/(q+1)`, NOT the
-    coral-fibre coordinate `z₀ = √q − 1/√q` where the open *geometric* W_λ lives.
+    color-fibre coordinate `z₀ = √q − 1/√q` where the open *geometric* W_λ lives.
     """
     return z - h * (mp.mpf(1) / 2 - DELTA / 4)
 
@@ -233,14 +233,14 @@ def main() -> int:
     # ---- [2b] Bring-coordinate cross-check (NOT just the algebraic weight) ---
     f_bring = bring_color_weighted_fpn()
     E_bring = E0 * mp.log(1 / f_bring)
-    z0_coral = mp.sqrt(Q0) - 1 / mp.sqrt(Q0)         # Bring coral-fibre coordinate
+    z0_color = mp.sqrt(Q0) - 1 / mp.sqrt(Q0)         # Bring color-fibre coordinate
     kappa_b3 = mp.mpf(3) / 16                          # Yekutieli Stokes h²-action of 𝓑₃
     trM_b3 = mp.mpf("1.00673")                         # tr_M(𝓑₃,q₀) (Yekutieli extraction)
     print("\n  [2b] Bring-coordinate cross-check (does the GEOMETRY land 0.588, "
           "not just the algebraic W_λ?):")
     print(f"      bond-factor coordinate   z = √q/(q+1)        = {mp.nstr(z, 8)}  "
           "(what every f = c·z + d factor uses)")
-    print(f"      coral-fibre coordinate   z₀ = √q − 1/√q      = {mp.nstr(z0_coral, 8)}  "
+    print(f"      color-fibre coordinate   z₀ = √q − 1/√q      = {mp.nstr(z0_color, 8)}  "
           "(where the OPEN geometric W_λ lives — UNUSED by any f_pn compute)")
     print(f"      Bring-color-weighted f_pn = z − h(½ − δ/4)   = {mp.nstr(f_bring, 8)}  "
           f"→ E = {mp.nstr(E_bring, 7)} MeV  (δ = {mp.nstr(DELTA, 4)}; over-binds)")
@@ -307,7 +307,7 @@ def main() -> int:
         "bracket_fstd_lt_freq_lt_W21": bool(brackets),
         "bring_coordinate_crosscheck": {
             "z_markov_bond_factor": str(z),
-            "z0_coral_fibre": str(z0_coral),
+            "z0_color_fibre": str(z0_color),
             "f_pn_bring_color_weighted": str(f_bring),
             "E_bring_MeV": str(E_bring),
             "delta_flavour_split": str(DELTA),
@@ -318,12 +318,12 @@ def main() -> int:
                 "The PRODUCTION Bring-color-weighted convention (f_pn=z−h(½−δ/4), "
                 "closed_form_tau_M.py::bring_color_weighted) gives 0.39486 — the same "
                 "lower bracket as the abstract std channel (δ-split negligible). It "
-                "rides z=√q/(q+1), NOT the coral-fibre z₀=√q−1/√q (0.10439) where the "
+                "rides z=√q/(q+1), NOT the color-fibre z₀=√q−1/√q (0.10439) where the "
                 "open geometric W_λ lives. The genuine Bring-surface geometric object "
                 "that DOES exist (Yekutieli non-abelian Stokes h²-action of 𝓑₃, "
                 "κ=3/16, tr_M(𝓑₃,q₀)=1.00673) is an action/trace >1, not a per-bond "
                 "suppression. So no available compute — algebraic OR Bring-coordinate "
-                "— lands 0.588; it remains the open coral-fibre (z₀) geometric W_λ."
+                "— lands 0.588; it remains the open color-fibre (z₀) geometric W_λ."
             ),
         },
         "verdict": (

@@ -43,7 +43,7 @@ depends on two factors:
      \qquad |\chi(\Sigma_4)| = 6.
    $$
 
-   A single production channel couples to one coral tube out
+   A single production channel couples to one color tube out
    of $|\chi|$ total curvature units, giving a geometric
    projection factor $1/|\chi(\Sigma_4)| = 1/6$.
 

@@ -2,7 +2,7 @@ The Bring's surface $\mathcal{S}$ ([Bring's surface](#def:brings-surface)) is a
 *smooth* algebraic variety: the three power-sum constraints are
 transverse in $\mathbb{P}^4$, so their intersection carries no singular
 points.  The six topological defects identified in
-[coral bundles](#rem:coral-bundles)---where the discriminant $\Delta(z)$
+[color bundles](#rem:color-bundles)---where the discriminant $\Delta(z)$
 vanishes and two color sheets $X_i,X_j$ collide---are singularities of
 the *projection* $\pi\colon\mathcal{S}\to\mathbb{P}^1(\mathbb{C})$, not of the
 surface itself.
