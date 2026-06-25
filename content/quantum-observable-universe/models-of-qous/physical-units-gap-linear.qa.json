@@ -1357,6 +1357,24 @@
         "reviewed_at": "2026-06-22T02:56:29.492Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
+      },
+      {
+        "field_hash": {
+          "md": "ecc2f45d1167",
+          "ts": "91ca2068a882",
+          "lean": "dc6151450d2f"
+        },
+        "result": "pass",
+        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/models-of-qous/physical-units-gap-linear.lean); 2026-06-22 batch fail was a false positive.",
+        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ]
   },
