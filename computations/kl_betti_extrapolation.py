@@ -55,7 +55,11 @@ def main():
             left_cells[lam].append(p)
         
         # for each shape, pick a canonical left cell (the one containing the first element)
-        # actually, all left cells of the same shape have the same Betti sum!
+        # WARNING (2026-06-25): the Betti sum is NOT cell-invariant — distinct left
+        # cells of the same shape give different sums (e.g. (3,3): 6..23 over S_6).
+        # This first-cell choice picks the low end; probe_option_e_probe4_kl_batch.py's
+        # canonical_Q picks a high cell. B_λ is therefore not a function of λ.
+        # See kl_betti_cell_dependence_probe.py + kl-betti-cell-dependence.witness.json.
         shape_betti = {}
         for lam, p_list in left_cells.items():
             # pick one element from the shape to find its left cell
