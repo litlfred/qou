@@ -128,14 +128,23 @@ theorem nStat_eq_sum_choose2_conjugate {n : ℕ} (Λ : Partition n) :
   -- Ref: [macdonald1995] Macdonald §I.1, eq. (1.5).
   sorry
 
+/-- `(-1)^(Σ m) = Π_j (-1)^{mⱼ}` over a list of naturals — the sign is multiplicative
+over a sum. -/
+private theorem neg_one_pow_list_sum (m : List ℕ) :
+    (-1 : ℤ) ^ m.sum = (m.map fun a => (-1 : ℤ) ^ a).prod := by
+  induction m with
+  | nil => simp
+  | cons a t ih => simp [List.sum_cons, List.map_cons, List.prod_cons, pow_add, ih]
+
 /-- Corollary `(-1)^{n(λ)} = Π_j (-1)^{C(λ'_j,2)} = Π_j sgn(w_0^{S_{λ'_j}})` — the
-sign of the longest element of the conjugate parabolic `S_{λ'} ⊂ S_n`. -/
+sign of the longest element of the conjugate parabolic `S_{λ'} ⊂ S_n`. The sign-
+multiplicativity step (`neg_one_pow_list_sum`) is proved here; this theorem is
+therefore sorry-free in its own right, depending only on the still-open Macdonald
+identity `nStat_eq_sum_choose2_conjugate`. -/
 theorem sign_rule_conjugate_parabolic {n : ℕ} (Λ : Partition n) :
     (-1 : ℤ) ^ Λ.nStat = (Λ.conjugate.map fun p => (-1 : ℤ) ^ choose2 p).prod := by
-  rw [nStat_eq_sum_choose2_conjugate]
-  -- Ref: [macdonald1995] sign multiplicative over conjugate columns:
-  -- (-1)^(Σ aⱼ) = Π (-1)^aⱼ.
-  sorry
+  rw [nStat_eq_sum_choose2_conjugate, neg_one_pow_list_sum, List.map_map]
+  rfl
 
 -- ═══════════════════════════════════════════════════════════════
 --  BURNSIDE (regular representation decomposition)
