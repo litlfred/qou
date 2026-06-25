@@ -48,6 +48,8 @@ namespace QOU
 namespace Substrate
 namespace MuOverDetermination
 
+noncomputable section
+
 /-- The q-deformed Planck constant ℏ_q := 1 - 1/q. -/
 def hbarQ (q : ℝ) : ℝ := 1 - 1 / q
 
@@ -176,6 +178,7 @@ theorem substrate_over_determination
   lives in `per_observable_100x_status.py`).
 -/
 
+end  -- noncomputable section
 end MuOverDetermination
 end Substrate
 end QOU
