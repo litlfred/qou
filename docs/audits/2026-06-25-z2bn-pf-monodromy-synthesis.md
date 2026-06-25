@@ -38,8 +38,10 @@ fingerprint**, independently corroborating Probe 2.
 **3. `M` is hyperbolic; the topological monodromy is parabolic.** `[2]_q ≥ 2` (AM–GM, equality at
 `q=1`) and `9[2]²−8[2]−10 > 0` for `[2]≥2`, so `τ > 2 ∀q>0`, with **minimum `21/8` at `q=1`** (the
 classical limit). Thus `M` is **hyperbolic** (`λ₊>1`): at `q₀`, `τ=2.6424`, `λ₊=2.1846`, `λ₋=0.4577`.
-The `λ₊>1` growth **is** the binding extensivity (`Lever1Tau.binding_extensive_at_substrate`, #2767).
-By contrast the topological PF monodromy at the `I₁` nodal fibres (squarefree Δ, #2755 Step 1) is
+The `λ₊>1` growth witnesses the **seed kernel's** extensivity (`Lever1Tau.binding_extensive_at_substrate`,
+#2767) — a correct conditional. **Per the #2752 calibration, the *physical* `lw` sequence grows
+super-geometrically *past* `λ₊`** (ratios 1.34→2.76 > 2.185), so `λ₊` is the seed rate, **not** the full
+physical binding rate. By contrast the topological PF monodromy at the `I₁` nodal fibres (squarefree Δ, #2755 Step 1) is
 **parabolic, trace exactly 2** — marginal, `λ₊=λ₋=1`, no growth.
 
 ## (b)-exclusion + indicated direction
@@ -51,12 +53,14 @@ By contrast the topological PF monodromy at the `I₁` nodal fibres (squarefree 
 >
 > **Indicated (not excluded):** `M` is a real / q-difference `SL₂(ℝ)` operator with bar-even trace
 > `τ([2]_q) > 2`. The `[2]_q`-dependence (Result 2) is the q-difference fingerprint; the hyperbolic
-> `λ₊>1` is the binding. Constructing the **explicit q-difference PF operator** with this trace is the
+> `λ₊>1` is the seed kernel's extensivity (the physical `lw` is super-geometric past it, #2752).
+> Constructing the **explicit q-difference PF operator** with this trace is the
 > open keystone (owner-gated; `M` per #2755).
 
 **Honest scope.** The integer-trace exclusion itself is the 2026-06-24 audit's; this probe's new
 content is the bar-even `[2]_q` form (Result 2, Lean-formalised) and the `SL₂`-trace framing that unifies
-the three threads and reads `λ₊` as the binding rate. The construction of `M` remains genuine
+the three threads and reads `λ₊` as the seed kernel's extensivity rate (not the full physical rate —
+physical `lw` is super-geometric past `λ₊`, #2752). The construction of `M` remains genuine
 multi-session math — *not* attempted here as a fit. The bar-even `[2]_q` collapse is a falsifiable
 structural constraint any candidate `M` must reproduce.
 

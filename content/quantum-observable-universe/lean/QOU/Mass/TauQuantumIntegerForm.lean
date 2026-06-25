@@ -19,7 +19,8 @@ This file records three structural facts that sharpen what kind of operator the 
    Markov-trace / quantum-dimension object must be.
 3. `transfer_det_one` — the depth-2 transfer matrix `!![τ,-1;1,0]` has **det = 1**, so `M ∈ SL₂`:
    its eigenvalues multiply to 1 and sum to τ. With `τ > 2` (`Lever1Tau.tauAnchor_gt_two`) the
-   element is **hyperbolic** (`λ₊ > 1`, extensive binding) — distinguishing it from the topological
+   element is **hyperbolic** (`λ₊ > 1`, the seed kernel's extensivity — the physical `lw` grows
+   super-geometrically *past* `λ₊`, #2752) — distinguishing it from the topological
    Picard–Fuchs monodromy, which is `SL₂(ℤ)` (integer trace, parabolic `trace = 2` at the `I₁` nodal
    fibres of the squarefree-Δ color curve). Since `τ ∉ ℤ` (even `τ(1)=21/8`), `M` is **not** the
    arithmetic monodromy — it is a real / q-difference `SL₂(ℝ)` operator.
