@@ -22,6 +22,8 @@ abstract-axiom dependency.
 
 namespace QOU.BraidKnot
 
+noncomputable section
+
 /-- **¹¹B empty-constraint SDP** at `heckeDim 33`. -/
 abbrev boron11_emptySDP := nucleusEmptySDP 33
 
@@ -49,4 +51,5 @@ abbrev boron11_optimum_is_zero := nucleus_optimum_is_zero 33
 /-- ¹¹B objective at optimum equals 0. -/
 abbrev boron11_objAt_optimum_eq_zero := nucleus_objAt_optimum_eq_zero 33
 
+end  -- noncomputable section
 end QOU.BraidKnot
