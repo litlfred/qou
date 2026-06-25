@@ -185,6 +185,9 @@ near-match. Do NOT wire as a derivation.
     **(a)-scope** negative (this construction alone), **not** a structural
     exclusion of KL data from every closure. Probe:
     `kl_betti_cell_dependence_probe.py`; witness: `kl-betti-cell-dependence.witness.json`.
+    Cross-checked against the canonical Rust engine: 76/76 S_6 left cells match
+    `pyhecke_native.kl_betti_sum_rust` (zero mismatches; per-shape ranges agree
+    exactly) — `kl_betti_rust_parity_crosscheck.py`.
 
 ## Anti-patterns (DO NOT repeat)
 
