@@ -149,3 +149,29 @@ classified GREEN (compiles to olean) / RED (real source error) / blocked
 - `QOU/Interactions/GramMatrixH3Symbolic.lean` — TIMEOUT(150s)
 - `QOU/Knots/KauffmanTL3.lean` — TIMEOUT(150s)
 
+
+## Fixed in this PR (verified `exit 0` via lean-direct)
+
+5 files driven fully green — the reliably-mechanical, fully-verifiable subset:
+- `Substrate/MuWenzlClosure` + `BraidKnot/H4SignBlockIsospinLimit` — superscript powers `q⁻ⁿ` → `(q⁻¹)^n`.
+- `Mathlib/RSKBridge` — reserved `λ` Big-Operator binder → `Λ` + dangling `/--` → `/-!`.
+- `Information/toffoli_transfer_matrix` — imports moved above the `/-!` module docstring.
+- `LiftingDescent/CosimplicialCrossedGroupoid` — `noncomputable section` moved above its docstring + missing bare `end` added.
+
+## Cascade caveat (read before draining the rest)
+
+The per-class counts above are **first-error** classifications. Fixing a file's first
+(e.g. SYNTAX) error frequently reveals further pre-existing errors masked beneath it —
+only ~5 of the 18 SYNTAX files were one/two-fix green. Verified-but-deferred (correct
+first fix applied locally, then reverted because the file stays red):
+- `BraidKnot/DeltaLambdaSignRule` (λ→Λ leaves 32 errs), `BraidsAndKnots/qmn_recursive_memoized`,
+  `BraidsAndKnots/y_lambda_recipe_from_partition`, `BraidKnot/hoefsmit_scattering_pipeline`
+  — λ→Λ needed but carry deeper typeclass / binder errors.
+- `Braiding/skein_crossing_asymmetry`, `BraidsAndKnots/demazure_fiber_markov_trace`,
+  `WedderburnMass/confinement_categorical` — import-move needed + deeper errors.
+- `BraidKnot/QuaternionFromHecke` — import-move correct, but full verification needs
+  `Mathlib.Algebra.Quaternion` (absent from the partial cache).
+- `CategoricalDynamics` — multiple doc-comments on `variable`.
+
+Treat the per-class counts as an **upper bound** on "mechanical" effort; each needs
+per-file verification. The λ→Λ rename convention matches main commit `30efeb30`.
