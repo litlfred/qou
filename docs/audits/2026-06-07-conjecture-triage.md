@@ -401,13 +401,43 @@ genuine defect:
 |-------|----------------------|-------------|
 | [`conj-rho-k-pair-gen-canonical-form`](../../content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md) | (1) `def pair_gen_functional … : R := trivial` — a **type error** (`trivial : True`, expected `R`); the file did not compile. (2) `theorem pair_gen_kashaev_limit : ∃ f, ∀ args, pair_gen_functional = f args := ⟨pair_gen_functional, rfl⟩` — a **vacuous self-projection** (true for *any* function) whose docstring claimed it proved the Kashaev limit (AGENTS.md §1a violation). The sibling `.md`'s own "Lean formalization" block already documented the honest `:= sorry` form — the committed `.lean` had drifted from its own spec. | Fixed to the §3b sanctioned form: `pair_gen_functional := sorry` (cited placeholder, disposition 2) + the conjecture axiomatised as `class PairGenCanonical : Prop where holds : True` (disposition 3), replacing the vacuous theorem. `.ts` `lean.ref` repointed to the class; `.md` snippet synced. **lean-direct exit 0** (only the expected `uses 'sorry'` warning). Block stays a correctly-classified Tier-S open conjecture (per §F line "mass-endomorphism: `conj-rho-k-pair-gen-canonical-form`"). |
 | [`conj-staircase-ew-residual`](../../content/quantum-observable-universe/mass-theory/staircase-ew-residual.md) | The block's `lean.ref` (`QOU.StaircaseCornerHook.StaircaseEWResidual`) resolved (§0a candidate-2 path) to a **degenerate duplicate** `StaircaseCornerHook/StaircaseEWResidual.lean`: `class StaircaseEWResidual where residual : ℝ; residual_eq_zero : residual = 0` + `noncomputable instance := sorry`. That class is **trivially inhabited** (`⟨0, rfl⟩`), so the `sorry` axiomatises nothing — a §3b-cond rule-5 / §1a vacuous-placeholder anti-pattern. A **faithful** same-named class (rich `Prop`, references the real Hoefsmit eigenvalue spectrum `HasEigenvalueRatio (wordImage (betaEWWord …))`, correct hypothesis-only §3b-cond) already existed in `QOU/StaircaseCornerHook.lean`, unreferenced. No module imported the degenerate file (no live build collision). | Deleted the degenerate `StaircaseCornerHook/StaircaseEWResidual.lean`; the `lean.ref` now resolves (§0a grep-fallback) to the faithful class; `.md` "Lean status" updated to the hypothesis-only encoding (no instance/sorry). Not lean-direct-verifiable in-sandbox (faithful file imports a mathlib module absent from the partial olean cache; pipeline ref-resolution out of scope → CI-verified); the deletion is build-safe (no importers, not in the `QOU.lean` aggregator). Block stays a correctly-classified Tier-E open conjecture. |
+| [`conj-kashaev-volume-conjecture`](../../content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.md) | Surfaced by the full 147-sibling sweep (below). **Two** structural defects: (1) `noncomputable def pieceVolume … : ℝ := trivial` — a **type error** (`trivial : True`, expected `ℝ`); the in-code comment even said "we leave the value as `sorry`". (2) the `/-! -/` module docstring **preceded** `import QOU.PhiQPiece` → illegal import order in Lean 4 (the file never compiled). Latent because the file is a content-block sibling *outside* the CI `lean/QOU/**` target. | `trivial → sorry`; moved the import above the docstring. `lean`-direct confirms the import-order error is gone (then stops at the sibling `QOU.PhiQPiece` olean, absent in-sandbox → body CI-gated). `VolumeConjecture` itself is a faithful §3b class (real fields `hypVolume`/`kashaevLimit`/`kvc_holds`), unchanged. Block stays a correctly-classified imported-famous open conjecture. |
 
-Net 2026-06-25: **no kind-flips** (consistent with the prior sweeps); two
-Lean-internal integrity fixes — one red→green compile fix + de-vacuified
-theorem (rho-k, lean-direct verified) and one degenerate duplicate-class
-deletion (staircase, CI-verified). The content-block triage's conclusion is
-unchanged and reaffirmed — the only thing it had not covered was the
-Lean-internal integrity of the conjecture siblings, now swept.
+### Full Lean-internal sweep of all 147 conjecture siblings (2026-06-25)
+
+A static analyzer (comments/docstrings stripped **before** matching — to avoid
+the comment-false-positives that fooled earlier ad-hoc greps), cross-checked by
+targeted reads + `lean`-direct, classified every `conjecture()` sibling.
+Result: **37 flagged, 110 clean**, of which exactly **3 genuine defects** (all
+now fixed) — rho-k, staircase, kashaev above. The other 34 flags are
+**sanctioned / known patterns**:
+
+- **34 `class … where residual : ℝ; residual_eq_zero` + global
+  `instance := sorry`** — degenerate auto-generated §3b stubs (identical
+  boilerplate). These are *known placeholder backlog* (cf. the
+  `zslh`/`b3pe`/`mlt7` "resolve N placeholders" beans); maturing them to real
+  §3b content is per-conjecture math, **not** a mechanical sweep — left to the
+  backlog/owner.
+- **5 duplicate FQNs** — all the intentional local-copy pattern (`…Local`
+  suffix; the two `HyperbolicVolumeIndependence` copies are commented "package
+  sibling for the canonical declaration", the real one in
+  `QOU/Archimedean/HyperbolicVolumeTranscendence.lean`). Never co-imported →
+  benign latent smells, not active collisions.
+- **`native_decide` (many)** — all legitimate finite enumerate-then-assert
+  checks (magic-number lists, dimension sums, Seifert genus, crossing-
+  minimality), **not** the §1a kernel-masking dodge.
+
+**Systemic insight.** All three genuine defects live in **content-block `.lean`
+siblings** (`mass-theory/…`, `mass-endomorphism/…`) that sit *outside* the
+CI-built `lean/QOU/**` library target — so they are never compile-checked and
+accumulate latent type-errors / import-order breakage that both block-kind
+triage and library CI miss. The library tree itself is clean. Closing this gap
+(compile-checking content-block siblings) would catch the next such drift
+automatically.
+
+Net 2026-06-25: **no kind-flips**; **3** Lean-internal integrity fixes across
+the session (rho-k, staircase, kashaev). The conjecture corpus is otherwise
+sound; the closeable set remains ≈ empty — the 147 are genuine open problems.
 
 ### Method note (2026-06-25)
 
