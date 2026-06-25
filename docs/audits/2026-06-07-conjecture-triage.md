@@ -524,6 +524,56 @@ an exact duplicate — deleting it would dangle the ref.
 #2753), and ~37 genuine open conjectures needing the per-conjecture
 infrastructure above — not a mechanical batch.
 
+### QOU categorical-keystone + mass-endo triage (2026-06-25, owner-directed)
+
+Owner directed the triage to the **QOU-native categorical keystones**
+(drop the imported-famous problems) and the **mass-endomorphism scaffolds**.
+Each named item classified into *genuine-conjecture* / *infra-scaffold* /
+*spurious-duplicate* / *false*.
+
+**Keystones — 14 genuine, 1 spurious, 0 false.** All carry a proper
+`conjecture()` content block with a `lean.ref` resolving (§0a candidate-2)
+to a degenerate `residual : ℝ` + `residual_eq_zero := 0` + `instance :=
+sorry` placeholder class; all are orphans (imported-by = 0); none shadow a
+faithful twin (each class declared in exactly one file) — **except** NSym:
+
+| Keystone class | `.ts` block | verdict |
+|---|---|---|
+| `q_oper_hecke`, `q_gl_fiber_functor`, `q_gl_kummer_filtration`, `q_gl_classical_limit` | ✓ conjecture | genuine (fundamental) |
+| `GBResidueSpectralSum.{residue,spectral_decomposition}`, `spectral_sum_finite` | ✓ | genuine |
+| `TwoFiltrationBridge`, `JointGaloisBraidAction` | ✓ | genuine — docstring **truncation** repaired (see below) |
+| `GradedBaerStarHq`, `Cl3Zeta5GeometricRealization`, `jet_convergence_classical_limit`, `jet_filtered_knot_factor` | ✓ | genuine |
+| `AlphaKCategoricalClosure` | ✓ conjecture | genuine — most mature (3 named residuals + status §) |
+| **`NSymSymmetricChannelNormalization`** | **✗ 0 refs, label undefined** | **spurious — deleted** |
+
+**Deleted (1):** `BraidKnot/NSymSymmetricChannelNormalization.lean`. The
+conjecture `conj:n-sym-symmetric-channel-normalization` no longer exists as
+a content block — it was upgraded into **`prop:weak-symmetric-normalization`**
+(a *proposition*), which carries its own **faithful, sorry-free** sibling
+`mass-theory/weak-symmetric-normalization.lean` (real `IsRootOfUnity` /
+`EWSpectralCompletenessHolds` defs + `class WeakSymmetricNormalization` +
+two proved theorems, 0 sorry, 0 residual-marker) at FQN
+`QOU.BraidsAndKnots.weak_symmetric_normalization`. The stub (0 `.ts` refs,
+0 imports) is the leftover degenerate placeholder — same shadowing-duplicate
+pattern as the AppendixSurreals deletions.
+
+**Docstring-truncation repair (2):** the §3b stub auto-generator truncated
+the manuscript `**Conjecture statement**` mid-sentence (cut at the first
+list item, `- *the`) in `TwoFiltrationBridge` and `JointGaloisBraidAction`
+— the only two stubs carrying a partial statement docstring. Restored
+complete faithful paraphrases from the `.md` (comment-only; the Lean
+encoding stays a §3b placeholder).
+
+**Mass-endomorphism "scaffolds" — all infra, not conjectures (owner
+hypothesis confirmed).** Every named item is `kind = remark`, **no sorry**,
+titled "forward-reference to WIP-scaffolding" / "type scaffold":
+`hecke-algebra-type-scaffold` (HeckeRelations), `markov-trace-operator-construction`
+(HnHilbertRep), `phi-d-syt-count-conjecture` (PhiD4F),
+`ck-extraction-from-algebraic-rules` (YangBaxterRule),
+`typed-b3-sub-braid-extraction`, `markov-trace-inductive-limit`. Correctly
+classified already — interpretive remarks with explicit-residual scaffolds,
+no logical claim, no action needed.
+
 ### Method note (2026-06-25)
 
 Inventory = a grep classifier over all `conjecture()` `.ts` blocks
