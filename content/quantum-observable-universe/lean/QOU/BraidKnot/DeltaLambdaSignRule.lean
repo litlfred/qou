@@ -30,6 +30,7 @@
 
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Data.List.Basic
+import Mathlib.Data.List.Range
 import Mathlib.Data.Int.Lemmas
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
@@ -116,17 +117,144 @@ def Partition.dimIrrep {n : ℕ} (Λ : Partition n) : ℕ :=
   Nat.factorial n / Λ.hookProduct
 
 -- ═══════════════════════════════════════════════════════════════
+--  ROW/COLUMN STATISTICS — raw-list scaffolding for the Macdonald identity
+-- ═══════════════════════════════════════════════════════════════
+
+section MacdonaldScaffold
+open List
+
+/-- Row statistic on a raw list: `Σ_i i·L[i]` via `zipIdx`; `Λ.nStat = rowStat Λ.parts`. -/
+def rowStat (L : List ℕ) : ℕ := (L.zipIdx.map fun x => x.2 * x.1).sum
+
+/-- Column statistic with explicit column bound `M`: `Σ_{j<M} C(#{x∈L : x>j}, 2)`. For
+`M = λ_1` (the largest part) this is `(conjugate.map choose2).sum`. -/
+def colStat (L : List ℕ) (M : ℕ) : ℕ :=
+  ((List.range M).map fun j => choose2 (L.filter (· > j)).length).sum
+
+/-- Pascal step for `choose2`: `C(c+1, 2) = C(c, 2) + c`. -/
+theorem choose2_succ (c : ℕ) : choose2 (c + 1) = choose2 c + c := by
+  have h2 : ∀ k, choose2 k = k.choose 2 := fun k => (Nat.choose_two_right k).symm
+  rw [h2, h2, Nat.choose_succ_succ']
+  simp [Nat.choose_one_right, Nat.add_comm]
+
+/-- Indicator count: `Σ_{j<M} [j<b] = min b M`. -/
+theorem indicator_lt_sum (b : ℕ) :
+    ∀ M, ((range M).map (fun j => if j < b then (1 : ℕ) else 0)).sum = min b M := by
+  intro M
+  induction M with
+  | zero => simp
+  | succ M ih =>
+    rw [List.sum_range_succ, ih]
+    by_cases h : M < b <;> simp [h] <;> omega
+
+/-- `rowStat` peels the index-0 (largest) row: `rowStat (a :: l) = rowStat l + l.sum`. The
+remaining rows drop their index by one, reducing `n(λ)` by `Σ l = l.sum`. -/
+theorem rowStat_cons (a : ℕ) (l : List ℕ) : rowStat (a :: l) = rowStat l + l.sum := by
+  unfold rowStat
+  rw [zipIdx_cons]
+  simp only [List.map_cons, List.sum_cons, Nat.zero_mul, Nat.zero_add]
+  rw [zipIdx_succ, List.map_map]
+  have hcomp : ((fun x : ℕ × ℕ => x.2 * x.1) ∘
+      (fun z : ℕ × ℕ => match z with | (a, i) => (a, i + 1)))
+      = (fun x : ℕ × ℕ => x.2 * x.1 + x.1) := by
+    funext x; obtain ⟨p, i⟩ := x; simp [Function.comp]; ring
+  rw [hcomp, sum_map_add]
+  congr 1
+  rw [List.zipIdx_map_fst]
+
+/-- `colStat` peels column-0, leaving an explicit double-count remainder (no sortedness). -/
+theorem colStat_cons (a : ℕ) (l : List ℕ) (M : ℕ) :
+    colStat (a :: l) M
+      = colStat l M
+        + ((range M).map (fun j => if j < a then (l.filter (· > j)).length else 0)).sum := by
+  have pt : ∀ j ∈ range M,
+      choose2 ((a :: l).filter (· > j)).length
+        = choose2 (l.filter (· > j)).length + (if j < a then (l.filter (· > j)).length else 0) := by
+    intro j _
+    have hfc : ((a :: l).filter (· > j)).length
+        = (if j < a then 1 else 0) + (l.filter (· > j)).length := by
+      rw [List.filter_cons]; split <;> simp_all [List.length_cons, Nat.add_comm]
+    rw [hfc]
+    by_cases h : j < a
+    · rw [if_pos h, if_pos h, Nat.add_comm 1, choose2_succ]
+    · rw [if_neg h, if_neg h, Nat.zero_add, Nat.add_zero]
+  unfold colStat
+  rw [map_congr_left pt, sum_map_add]
+
+/-- The double-count remainder equals `l.sum` when `a` dominates `l` and `a ≤ M`:
+`Σ_{j<M} (if j<a then #{x∈l : x>j} else 0) = Σ_{x∈l} x`. -/
+theorem Ssum_eq (a : ℕ) :
+    ∀ (l : List ℕ) (M : ℕ), (∀ x ∈ l, x ≤ a) → a ≤ M →
+      ((range M).map (fun j => if j < a then (l.filter (· > j)).length else 0)).sum = l.sum := by
+  intro l
+  induction l with
+  | nil => intro M _ _; simp
+  | cons b t ih =>
+    intro M hmax haM
+    have hb : b ≤ a := hmax b (by simp)
+    have htmax : ∀ x ∈ t, x ≤ a := fun x hx => hmax x (List.mem_cons_of_mem _ hx)
+    have step : ∀ j ∈ range M,
+        (if j < a then ((b :: t).filter (· > j)).length else 0)
+          = (if j < b then 1 else 0) + (if j < a then (t.filter (· > j)).length else 0) := by
+      intro j _
+      have hfc : ((b :: t).filter (· > j)).length
+          = (if j < b then 1 else 0) + (t.filter (· > j)).length := by
+        rw [List.filter_cons]; split <;> simp_all [List.length_cons, Nat.add_comm]
+      rw [hfc]
+      by_cases h : j < a
+      · rw [if_pos h, if_pos h]
+      · rw [if_neg h, if_neg h, Nat.add_zero, if_neg (by omega : ¬ j < b)]
+    rw [map_congr_left step, sum_map_add, ih M htmax haM,
+        indicator_lt_sum b M, Nat.min_eq_left (le_trans hb haM), List.sum_cons]
+
+/-- For a weakly-decreasing list bounded by `M`, the row statistic equals the column
+statistic: `rowStat L = colStat L M`. The Fubini swap over Young-diagram cells, proved by
+peeling the largest row (`rowStat_cons`) against the column peel (`colStat_cons`). -/
+theorem rowStat_eq_colStat : ∀ (L : List ℕ), L.Pairwise (· ≥ ·) →
+    ∀ (M : ℕ), (∀ x ∈ L, x ≤ M) → rowStat L = colStat L M := by
+  intro L
+  induction L with
+  | nil => intro _ M _; simp [rowStat, colStat, choose2]
+  | cons a l ih =>
+    intro hsorted M hbound
+    have hal : ∀ x ∈ l, a ≥ x := (List.pairwise_cons.mp hsorted).1
+    have hlsorted : l.Pairwise (· ≥ ·) := (List.pairwise_cons.mp hsorted).2
+    have haM : a ≤ M := hbound a (by simp)
+    have hlbound : ∀ x ∈ l, x ≤ M := fun x hx => hbound x (List.mem_cons_of_mem _ hx)
+    rw [rowStat_cons, colStat_cons, Ssum_eq a l M hal haM, ih hlsorted M hlbound]
+
+end MacdonaldScaffold
+
+-- ═══════════════════════════════════════════════════════════════
 --  SIGN RULE (Macdonald I.1.5)
 -- ═══════════════════════════════════════════════════════════════
 
 /-- The Macdonald identity `n(λ) = Σ_j C(λ'_j, 2)`: `n(λ) = Σ_i i·λ_i` counts each
 cell `(i,j)` by its row index `i`; grouping by column `j`, column `j` has `λ'_j`
 cells in rows `0,…,λ'_j-1`, contributing `Σ_{i<λ'_j} i = C(λ'_j, 2)`.
-Formalisation target. -/
+Proved sorry-free via the row/column peel `rowStat_eq_colStat` (the Fubini swap over
+diagram cells; both sides satisfy the same column-peeling recursion). -/
 theorem nStat_eq_sum_choose2_conjugate {n : ℕ} (Λ : Partition n) :
     Λ.nStat = (Λ.conjugate.map choose2).sum := by
   -- Ref: [macdonald1995] Macdonald §I.1, eq. (1.5).
-  sorry
+  -- `n(λ) = rowStat λ = colStat λ λ₁ = Σ_j C(λ'_j, 2)` (Fubini over the diagram, via the
+  -- shared row/column peel — see `rowStat_eq_colStat`).
+  have hnst : Λ.nStat = rowStat Λ.parts := rfl
+  rw [hnst]
+  unfold Partition.conjugate
+  cases hp : Λ.parts with
+  | nil => simp [rowStat]
+  | cons p rest =>
+    have hsorted : (p :: rest).Pairwise (· ≥ ·) := hp ▸ Λ.sorted
+    have hbound : ∀ x ∈ (p :: rest), x ≤ p := by
+      intro x hx
+      rcases List.mem_cons.mp hx with rfl | hmem
+      · exact le_refl _
+      · exact (List.pairwise_cons.mp hsorted).1 x hmem
+    have hmain := rowStat_eq_colStat (p :: rest) hsorted p hbound
+    unfold colStat at hmain
+    rw [hmain, List.map_map]
+    rfl
 
 /-- `(-1)^(Σ m) = Π_j (-1)^{mⱼ}` over a list of naturals — the sign is multiplicative
 over a sum. -/
@@ -138,9 +266,9 @@ private theorem neg_one_pow_list_sum (m : List ℕ) :
 
 /-- Corollary `(-1)^{n(λ)} = Π_j (-1)^{C(λ'_j,2)} = Π_j sgn(w_0^{S_{λ'_j}})` — the
 sign of the longest element of the conjugate parabolic `S_{λ'} ⊂ S_n`. The sign-
-multiplicativity step (`neg_one_pow_list_sum`) is proved here; this theorem is
-therefore sorry-free in its own right, depending only on the still-open Macdonald
-identity `nStat_eq_sum_choose2_conjugate`. -/
+multiplicativity step (`neg_one_pow_list_sum`) and the Macdonald identity
+`nStat_eq_sum_choose2_conjugate` it rests on are now both proved, so this corollary is
+fully sorry-free. -/
 theorem sign_rule_conjugate_parabolic {n : ℕ} (Λ : Partition n) :
     (-1 : ℤ) ^ Λ.nStat = (Λ.conjugate.map fun p => (-1 : ℤ) ^ choose2 p).prod := by
   rw [nStat_eq_sum_choose2_conjugate, neg_one_pow_list_sum, List.map_map]
