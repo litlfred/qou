@@ -77,6 +77,36 @@ arithmetic already runs at 70 dps in pure mpmath). The blocker is the explicit
 prolongation map. Until step 2 exists, there is no well-posed residue to compute —
 which is why a probe now would manufacture a number, not test the claim.
 
+## Step 1 EXECUTED (2026-06-25) — geometry pinned; residue gap rigorously located
+
+Probe [`computations/substrate/lever1_coral_sigma_geometry_probe.py`](../../computations/substrate/lever1_coral_sigma_geometry_probe.py)
+→ `lever1-coral-sigma-geometry-probe.witness.json` (6/6 assertions). Pure
+sympy+mpmath, **no Sage**. Verified, all decidable:
+
+- **Six singular fibres** (coral-bundles.md): `deg Δ(z)=6`,
+  `Δ=−16z⁶−24z⁵−35z⁴−50z³−35z²−24z−16` — **palindromic** (the z↔1/z bar
+  symmetry) and **squarefree** (simple ramification).
+- **Genus 1** (= coral/descartes `E_q`): Riemann–Hurwitz `2g−2 = 3(−2)+6 = 0`.
+- **Branch locus** = 3 bar-symmetric conjugate pairs at `|z| ≈ {1.000, 0.943,
+  1.060}` (`0.943·1.060 ≈ 1`, reciprocal).
+- **CRUX — `Res(λ_SW = X dz) = 0` at every finite branch point.** With the
+  Puiseux uniformizer `z−z_c=t²`, the slope `(X−X_c)/t ≈ 1.00` is *finite*, so
+  `λ_SW = X·2t dt` has lowest power `t¹` — **no `1/t` pole**. The bare
+  differential carries no residue at the finite branch points.
+- **Only `z=∞` carries residue:** `Res_∞(X_i dz) = {0, +5i/16, −5i/16}` on the
+  three sheets (leading slopes `{−1, +i, −i}`), summing to `0` (`ΣX_i=−(z+1)`).
+
+**Finding (rigorous, not asserted).** The residue structure `a_D^(n)=2πiΣRes` is
+**empty at the finite branch points for the bare n=0 differential** — the n=0
+period lives entirely at `z=∞`. Since `a_D^(n)=lw(n−1)` for `n≥2` are the
+*prolonged* periods, they cannot arise from residues of `λ_SW=X dz`; they require
+the poles introduced by the **prolongation `λ_SW^(n)` (n≥1)** — the jet-bundle map
+left "by induction" in `mi-sw-abelianisation-proof.md`. The first genuinely
+*decidable* `a_D^(n)=lw(n−1)` check (`n=2`, muon, `lw(1)=1`) is unreachable until
+`λ_SW^(2)` is made explicit. So Step 1 **confirms and sharpens** the gap: it is the
+explicit prolongation map, and nothing upstream of it. (The `5i/16` per-sheet
+∞-residue is reported as a datum, no interpretation claimed.)
+
 ## Recommendation
 
 Treat the binding-τ keystone as a **multi-step construction** (mirroring the `W_λ`
