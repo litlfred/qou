@@ -915,6 +915,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "698ebfda9628",
+          "ts": "37b3209fbef1"
+        },
+        "result": "pass",
+        "notes": "Conjecture w/ proved empirical half (9 isotopes Delta-i in {0,1} via decide) + LR-fusion mechanism; falsifiable (no Delta-i>=2 double-magic).",
+        "reviewed_at": "2026-06-25T17:04:55.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ]
   },

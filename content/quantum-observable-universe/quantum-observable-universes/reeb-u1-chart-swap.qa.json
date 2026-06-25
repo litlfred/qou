@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "notes": "Clear strategy: both subgroups = T_q ⇒ equal by transitivity. SU_q(2)/P(V) infra absent from Mathlib so the two inclusions are honest hypotheses; .md gives full 4-step argument.",
+        "reviewed_at": "2026-06-25T17:05:25.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "notes": "Well-posed: two one-parameter U(1)s (chart-swap, Reeb flow) on P(V)=G_q/T_q both equal the torus. Standard orbit identification.",
+        "reviewed_at": "2026-06-25T17:05:25.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "notes": "Adds the transitivity composition + structural packaging; identifies five physical roles (Wick rotation, i, chart-swap, Reeb, q-deform) with one torus.",
+        "reviewed_at": "2026-06-25T17:05:25.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "notes": "eqReeb derives chartSwap=reebFlow by transitivity through torusT from two non-degenerate structure-field hypotheses (Step2/Step3 inclusions). Faithful §3b-cond pattern; conclusion not carried as a field. No sorry.",
+        "reviewed_at": "2026-06-25T17:05:25.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1403,6 +1487,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "notes": "ChartSwapReebData satisfiable (torusT=chartSwap=reebFlow=⊤). No contradictory field.",
+        "reviewed_at": "2026-06-25T17:05:25.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1434,6 +1536,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e70e3e8d4f89",
+          "ts": "1dd21cd5f424",
+          "lean": "3ce457aa3c74"
+        },
+        "result": "pass",
+        "notes": "G,[Group G],d all used; both fields chartSwap_eq_torus + reebFlow_eq_torus consumed by the rw. No unused binder.",
+        "reviewed_at": "2026-06-25T17:05:25.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

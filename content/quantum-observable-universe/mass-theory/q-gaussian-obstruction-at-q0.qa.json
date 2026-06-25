@@ -1207,6 +1207,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d655d5353fc7",
+          "ts": "6ef1c6db70d5",
+          "lean": "1f8453ba4d4f"
+        },
+        "result": "pass",
+        "notes": ".md proof is clear (max crossings = C(n,2), retain M* term, exp(Theta(n^2)) lower bound + BS positivity). Lean proof deferred to a cited sorry, so Lean-side strategy not exhibited.",
+        "reviewed_at": "2026-06-25T17:07:43.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1248,6 +1270,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "d655d5353fc7",
+          "ts": "6ef1c6db70d5",
+          "lean": "1f8453ba4d4f"
+        },
+        "result": "pass",
+        "notes": "Well-posed, standard result (Bozejko-Speicher |q|<=1; q0>1 obstruction). Substantive: rules out q-Gaussian model for braid fluctuations at q0.",
+        "reviewed_at": "2026-06-25T17:07:43.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
         }
       }
     ],
@@ -1291,6 +1335,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d655d5353fc7",
+          "ts": "6ef1c6db70d5",
+          "lean": "1f8453ba4d4f"
+        },
+        "result": "pass",
+        "notes": "Application of a known BS theorem to the substrate q0; modest novelty but a genuine load-bearing obstruction (backs rem:markov-chain-fluctuations).",
+        "reviewed_at": "2026-06-25T17:07:43.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1329,6 +1395,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d655d5353fc7",
+          "ts": "6ef1c6db70d5",
+          "lean": "1f8453ba4d4f"
+        },
+        "result": "pass",
+        "notes": "Statement faithful (q>1 + maximal-crossing lower bound hT => moments unbounded); proof body is a single CITED sorry (-- Ref: [bozejko-speicher1991]) — honest 'stated not yet proved' (has_sorry), not a vacuity/weaker-claim dodge. .md gives full combinatorial proof.",
+        "reviewed_at": "2026-06-25T17:07:43.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1360,6 +1444,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "d655d5353fc7",
+          "ts": "6ef1c6db70d5",
+          "lean": "1f8453ba4d4f"
+        },
+        "result": "pass",
+        "notes": "No projection; statement is an honest open goal with sorry. Conclusion is not a hypothesis field.",
+        "reviewed_at": "2026-06-25T17:07:43.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1443,6 +1545,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d655d5353fc7",
+          "ts": "6ef1c6db70d5",
+          "lean": "1f8453ba4d4f"
+        },
+        "result": "pass",
+        "notes": "Premises jointly satisfiable: q>1 and hT (q^(m(m-1)/2)<=T m) both hold for the actual Touchard moment sequence at q0. Not vacuous.",
+        "reviewed_at": "2026-06-25T17:07:43.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1474,6 +1594,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "d655d5353fc7",
+          "ts": "6ef1c6db70d5",
+          "lean": "1f8453ba4d4f"
+        },
+        "result": "pass",
+        "notes": "All binders (q, hq:1<q, T, hT:crossing-bound) are required by the statement; hT is load-bearing (the divergence engine). None spurious.",
+        "reviewed_at": "2026-06-25T17:07:43.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

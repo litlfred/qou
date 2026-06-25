@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e0a0074abaaf",
+          "ts": "bdb3bfa7180e",
+          "lean": "6c4280430b69"
+        },
+        "result": "pass",
+        "notes": "Conjecture; §3b class (LightNucleus enum, binding-K decomposition T_w=K·⊗T_w(constituent)). Joint mass-tower SDP uniquely selects canonical Hecke elts for 2H/3H/3He. Well-posed.",
+        "reviewed_at": "2026-06-25T17:06:31.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ]
   },

@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b60bdef8d629",
+          "ts": "b60217ea3a77",
+          "lean": "36ad3941b9cc"
+        },
+        "result": "warn",
+        "notes": ".md admits depth is currently read post-hoc from log_q0(v/m_e)=125.41 (circular); 90 vs 89/91 +/-10% but factorisation 5*18 vs 6*15 undecided — speculative.",
+        "reviewed_at": "2026-06-25T17:07:29.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.6
+        }
       }
     ]
   },

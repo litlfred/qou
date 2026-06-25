@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "be8ca6b9bf54",
+          "ts": "29e6a0f46ada",
+          "lean": "bf429eae5836"
+        },
+        "result": "pass",
+        "notes": "Conjecture: Geom(K) is the UNIQUE additive/functorial/normalized volume functional (Vol for hyperbolic, CS for torus), via Neumann-Zagier + Yekutieli rigidity; well-posed, substantive. Sibling proves ∃! conditional on classes.",
+        "reviewed_at": "2026-06-25T17:07:48.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.76
+        }
       }
     ],
     "proof-no-trivial-true": [

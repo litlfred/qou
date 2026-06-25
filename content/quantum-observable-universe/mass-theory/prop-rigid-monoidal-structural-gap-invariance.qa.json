@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "dcb2fc211c49",
+          "ts": "a91390d9a2e4",
+          "lean": "c229c1a1075b"
+        },
+        "result": "pass",
+        "notes": "Clear 3-step (trace uniqueness -> all conventions respect tau -> gap convention-indep); Lean derives via rw on the class field.",
+        "reviewed_at": "2026-06-25T17:06:10.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "dcb2fc211c49",
+          "ts": "a91390d9a2e4",
+          "lean": "c229c1a1075b"
+        },
+        "result": "pass",
+        "notes": "Substantive: structural gap depends only on categorical Markov trace, not on operator-volume convention (Jones-Wenzl uniqueness). Well-posed unification of 3 closure findings.",
+        "reviewed_at": "2026-06-25T17:06:09.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "dcb2fc211c49",
+          "ts": "a91390d9a2e4",
+          "lean": "c229c1a1075b"
+        },
+        "result": "pass",
+        "notes": "Genuine conceptual content (convention-independence of the categorical invariant); Lean part is a thin conditional wrapper but the framing is non-trivial.",
+        "reviewed_at": "2026-06-25T17:06:10.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1320,6 +1386,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "dcb2fc211c49",
+          "ts": "a91390d9a2e4",
+          "lean": "c229c1a1075b"
+        },
+        "result": "pass",
+        "notes": "§3b-cond: theorems trace_convention_independence + structural_gap_convention_independent derive convention-independence via rw[R.convention_factorisation]; sorry-free, sorry isolated to the conjectural canonical instance (Jones-Wenzl uniqueness) per §3b-cond.",
+        "reviewed_at": "2026-06-25T17:06:09.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1405,6 +1489,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "dcb2fc211c49",
+          "ts": "a91390d9a2e4",
+          "lean": "c229c1a1075b"
+        },
+        "result": "pass",
+        "notes": "Premises satisfiable; OperatorVolumeConvention/class inhabited (canonical instance exists). No contradictory hypothesis.",
+        "reviewed_at": "2026-06-25T17:06:09.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1436,6 +1538,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "dcb2fc211c49",
+          "ts": "a91390d9a2e4",
+          "lean": "c229c1a1075b"
+        },
+        "result": "fail",
+        "notes": "convention_equivalence_refl/symm/trans each declare [R: RigidMonoidalStructuralGapInvariance α] but never reference R (bodies use only rfl/h); unused instance binder. (Also file declares 'instance canonical' twice — name clash.)",
+        "reviewed_at": "2026-06-25T17:06:09.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

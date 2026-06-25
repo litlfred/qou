@@ -953,6 +953,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6d96d7d479e9",
+          "ts": "650a541ff25a",
+          "lean": "896c2006e4a1"
+        },
+        "result": "pass",
+        "notes": "Conjecture (honestly labeled, conditional on 2 conjs): BW liquid-drop coeffs as [n]_q*m_e products, 0.020% MAE/32 isotopes. Goal well-posed/substantive; but integer prefactors (2[2]_q[7]_q etc.) + which [n]_q look post-hoc/fitted — derivation rigor weaker than goal.",
+        "reviewed_at": "2026-06-25T17:08:15.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.67
+        }
       }
     ]
   },

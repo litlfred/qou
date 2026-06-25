@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5b42f8bb30a7",
+          "ts": "5f55ba2fe404",
+          "lean": "2dabb305a819"
+        },
+        "result": "warn",
+        "notes": ".md proof sketch (involutive via S²=id+Frobenius assoc; positivity via non-degeneracy) is clear, but Lean does none of it: one file sorries, the other assumes the implication.",
+        "reviewed_at": "2026-06-25T17:08:05.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "5b42f8bb30a7",
+          "ts": "5f55ba2fe404",
+          "lean": "2dabb305a819"
+        },
+        "result": "pass",
+        "notes": "Well-posed: Frobenius dagger f†=∫∘μ(S(f)⊗-) is involutive + positive-definite (categorical GNS positivity, Kock Ch.2).",
+        "reviewed_at": "2026-06-25T17:08:05.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5b42f8bb30a7",
+          "ts": "5f55ba2fe404",
+          "lean": "2dabb305a819"
+        },
+        "result": "warn",
+        "notes": "Lean adds no derivation; positivity claim axiomatised as a field; existence file is sorry+True. PositiveDefiniteStructure def itself is mild content.",
+        "reviewed_at": "2026-06-25T17:08:06.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.3
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1327,6 +1393,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5b42f8bb30a7",
+          "ts": "5f55ba2fe404",
+          "lean": "2dabb305a819"
+        },
+        "result": "fail",
+        "notes": "Both Lean files deficient: positive-definite-dagger.lean proves ∃p,True := sorry (vacuous True goal + sorry); frobenius_dagger_positive_definite.lean axiomatises the positivity implication as class field claim_dagger_positive. Neither derives f†∘f>0.",
+        "reviewed_at": "2026-06-25T17:08:05.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1358,6 +1442,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "5b42f8bb30a7",
+          "ts": "5f55ba2fe404",
+          "lean": "2dabb305a819"
+        },
+        "result": "fail",
+        "notes": "frobenius_dagger_positive_definite := ctx.claim_dagger_positive f h — projects the class field that IS the positivity conclusion. Self-assuming projection.",
+        "reviewed_at": "2026-06-25T17:08:05.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1441,6 +1543,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5b42f8bb30a7",
+          "ts": "5f55ba2fe404",
+          "lean": "2dabb305a819"
+        },
+        "result": "pass",
+        "notes": "FrobeniusDaggerContext satisfiable (isPositive:=True etc.); PositiveDefiniteStructure C inhabitable. No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:08:05.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1472,6 +1592,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "5b42f8bb30a7",
+          "ts": "5f55ba2fe404",
+          "lean": "2dabb305a819"
+        },
+        "result": "pass",
+        "notes": "File2: ctx,f,h all used. File1: C + instances used. No unused binder (vacuity is the sorry + projection, not unused binders).",
+        "reviewed_at": "2026-06-25T17:08:05.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

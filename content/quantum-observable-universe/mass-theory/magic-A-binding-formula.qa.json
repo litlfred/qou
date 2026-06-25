@@ -1101,6 +1101,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "pass",
+        "notes": "Classes inhabitable; isDoublyMagic 2 2 proved true (he4_is_doubly_magic); regime iffs hold both ways. No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:07:54.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1257,6 +1275,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "pass",
+        "notes": "Clear regime classifier + dispatcher; 4He/D/T/3He dispatch proved by decide; §3b-cond banner present; rho_F derivation tied to kashaev-density conjecture.",
+        "reviewed_at": "2026-06-25T17:07:54.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.75
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1298,6 +1338,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "pass",
+        "notes": "Doubly-magic B=rho_F·m_e·A·8G: 4He 29.96 vs 28.30 MeV (+5.9%); regime split is structurally motivated (LR fusion -> self-conjugate Specht). Well-posed conditional.",
+        "reviewed_at": "2026-06-25T17:07:54.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
         }
       }
     ],
@@ -1341,6 +1403,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "pass",
+        "notes": "Distinct doubly-magic binding path (Borromean 8G residue) + computable two-regime dispatcher; novel within the framework.",
+        "reviewed_at": "2026-06-25T17:07:54.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.74
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1372,6 +1456,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "fail",
+        "notes": "Per §3b-cond item5: class field 'formula' IS the conclusion B=rho_F·m_e·A·8G; magic_A_binding_formula:=hMA.formula projects it (conclusion-as-field). Dispatch infra is genuine though.",
+        "reviewed_at": "2026-06-25T17:07:53.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1450,6 +1552,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "5d392df1415c",
+          "ts": "a8e5e52b7642",
+          "lean": "5a8f0df96555"
+        },
+        "result": "pass",
+        "notes": "Z,N,hZN,hMA used in magic_A_binding_formula; bindingRegime iffs + dispatch theorems use every binder; he4_via_dispatch uses all. No dead binders.",
+        "reviewed_at": "2026-06-25T17:07:53.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "203709b4aa13",
+          "ts": "cd344341c464",
+          "lean": "98f28fd020f5"
+        },
+        "result": "pass",
+        "notes": "Conjecture Higgs=T(2,8): genus-3 spans 3 divisors, spin-0 via Reeb cancellation, uniqueness argument; one sub-claim (genus=3) provable.",
+        "reviewed_at": "2026-06-25T17:07:00.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ]
   },

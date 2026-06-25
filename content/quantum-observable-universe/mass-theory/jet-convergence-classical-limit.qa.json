@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7257c76482dd",
+          "ts": "e04ecc6f38f4"
+        },
+        "result": "pass",
+        "notes": "Conjecture: jet-filtered invariant a_k converges k->inf to q-dim-weighted average d_q(mu)/sum d_q (squared->linear scaling), O(1/sqrt k) via Kerov/Feray-Meliot. Well-posed; k=3 part proved, k=9 numeric err 0.008<0.11 bound. Honest 3b placeholder class.",
+        "reviewed_at": "2026-06-25T17:07:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.76
+        }
       }
     ]
   },

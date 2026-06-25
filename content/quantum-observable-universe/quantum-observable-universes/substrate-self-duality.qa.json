@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "warn",
+        "notes": "Construction (comul≫(◁λ)≫ρ) is explicit and the .md sketches the snake-identity inverse, but IsIso is just an axiom — the zig-zag verification is not performed in Lean.",
+        "reviewed_at": "2026-06-25T17:07:16.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.5
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "notes": "Well-posed: Frobenius form ⟹ self-duality A≅A∨ (rigid dualizing complex). Standard Frobenius-algebra/Yekutieli content.",
+        "reviewed_at": "2026-06-25T17:07:15.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "warn",
+        "notes": "selfDualityMorphism definition is real content; but invertibility (the claim) is axiomatised, so the theorem adds only the construction + a re-export.",
+        "reviewed_at": "2026-06-25T17:07:16.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.5
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "fail",
+        "notes": "selfDualityMorphism is a real construction, but IsIso(it) — the only content, per the docstring's 'non-tautological content is invertibility' — is asserted by bespoke axiom substrate_self_duality_axiom. Conclusion=the axiom; snake-identity derivation absent.",
+        "reviewed_at": "2026-06-25T17:07:15.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1403,6 +1487,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "notes": "FrobeniusHopfSubstrate C is an inhabitable structure (substrate existence assumed elsewhere); no contradictory premise.",
+        "reviewed_at": "2026-06-25T17:07:15.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1434,6 +1536,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "5f9eac9dd4de",
+          "ts": "4eeca4b530ee",
+          "lean": "66ecbf13aa08"
+        },
+        "result": "pass",
+        "notes": "{C},[Category],[MonoidalCategory],S all used in statement and passed to the axiom. No unused binder.",
+        "reviewed_at": "2026-06-25T17:07:15.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

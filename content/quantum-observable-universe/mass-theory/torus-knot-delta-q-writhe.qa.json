@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "pass",
+        "notes": "Clear: writhe w=(m-1)p, bar-odd part of trivial-channel twist q^{(m-1)p}; Lean is a clean div_mul_cancel₀. Symbolic cross-check rosso_jones script.",
+        "reviewed_at": "2026-06-25T17:07:09.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "pass",
+        "notes": "δ_q(T_{m,p})=h[(m-1)p]_q at the writhe: concrete exact identity, well-posed; underpins the derived T_{3,4},T_{3,5} exponents in α_EM.",
+        "reviewed_at": "2026-06-25T17:07:09.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "pass",
+        "notes": "Deriving (not assuming) force-carrier writhe exponents from the trivial-block twist, and distinguishing δ_q from the ribbon a_K factor, is genuine content.",
+        "reviewed_at": "2026-06-25T17:07:09.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "pass",
+        "notes": "Real sorry-free proof: theorem torus_deltaQ_eq_h_qbracket derives δ_q(T_{m,p}) = (q-q⁻¹)·[w]_q via unfold + div_mul_cancel₀. Generic Field R, pre-archimedean. Faithful to md algebraic claim.",
+        "reviewed_at": "2026-06-25T17:07:09.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1403,6 +1487,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "pass",
+        "notes": "hh (q-q⁻¹≠0) is satisfiable over a field (true at substrate q≠±1); not contradictory.",
+        "reviewed_at": "2026-06-25T17:07:09.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1434,6 +1536,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "50c3182979f6",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
+        },
+        "result": "pass",
+        "notes": "q, m, p used (via torusWrithe); hh: q-q⁻¹≠0 is consumed by div_mul_cancel₀ _ hh. No unused binder.",
+        "reviewed_at": "2026-06-25T17:07:09.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

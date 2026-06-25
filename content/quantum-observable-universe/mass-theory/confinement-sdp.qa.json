@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad6dba336a6b",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "pass",
+        "notes": "Clear proof sketch (compact spectrahedron + Slater⇒strong duality, Boyd-Vandenberghe §5.9); library file fully realises it sorry-free.",
+        "reviewed_at": "2026-06-25T17:05:15.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ad6dba336a6b",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "pass",
+        "notes": "Well-posed: matrix Frobenius-positivity SDP, primal-dual + complementary slackness; scalar LP as diagonal projection. Substantive.",
+        "reviewed_at": "2026-06-25T17:05:15.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad6dba336a6b",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "pass",
+        "notes": "SDP generalisation of scalar confinement LP with matrix shadow prices / binding multiplicity μ; substantive.",
+        "reviewed_at": "2026-06-25T17:05:15.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1327,6 +1393,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad6dba336a6b",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "fail",
+        "notes": "Operative sibling (resolves first) is bare 'sorry' (cited): confinement_sdp:primalOpt=nTarget*y0Star := by sorry. Statement faithful but unproved (sorryAx). Richer library file (lean/QOU/Interactions) is sorry-free but SHADOWED.",
+        "reviewed_at": "2026-06-25T17:05:14.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1358,6 +1442,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ad6dba336a6b",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "pass",
+        "notes": "Sibling body is sorry, not a field projection. (Shadowed library theorem ConfinementSDP derives from strong-duality typeclass.)",
+        "reviewed_at": "2026-06-25T17:05:14.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1441,6 +1543,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad6dba336a6b",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "pass",
+        "notes": "slaterStrictFeasible satisfiable (strict-feasible Φ≻0 at generic q); not contradictory.",
+        "reviewed_at": "2026-06-25T17:05:15.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1472,6 +1592,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ad6dba336a6b",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
+        },
+        "result": "pass",
+        "notes": "Sibling h:slaterStrictFeasible bound on a sorry'd body (honest open stmt). Library accessors all use their [HasConfinementSDPData] instance.",
+        "reviewed_at": "2026-06-25T17:05:14.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

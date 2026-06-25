@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a1aaf659d023",
+          "ts": "dc6f9a0e6d22",
+          "lean": "073f6af238d7"
+        },
+        "result": "pass",
+        "notes": "Clear 3-part structure: Mathlib braiding setup, named spectral-decomp wall axiom, then proved pure-algebra derivation of the eigenvalue/Hecke data.",
+        "reviewed_at": "2026-06-25T17:05:34.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a1aaf659d023",
+          "ts": "dc6f9a0e6d22",
+          "lean": "073f6af238d7"
+        },
+        "result": "pass",
+        "notes": "q as braiding eigenvalue on S^2V, forced (lam_sym,lam_anti)=(q,-q^-1) by det=-1, Hecke (T-q)(T+q^-1)=0; well-posed categorical extraction.",
+        "reviewed_at": "2026-06-25T17:05:34.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a1aaf659d023",
+          "ts": "dc6f9a0e6d22",
+          "lean": "073f6af238d7"
+        },
+        "result": "pass",
+        "notes": "Standard Kassel manipulation, but framed as a proof that the substrate q is fully fixed by the categorical braiding (microscopic->macroscopic constraint); modest genuine novelty.",
+        "reviewed_at": "2026-06-25T17:05:34.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a1aaf659d023",
+          "ts": "dc6f9a0e6d22",
+          "lean": "073f6af238d7"
+        },
+        "result": "pass",
+        "notes": "Main thm braiding_eigenvalue_extraction genuinely derives lambda_anti=-q^-1 + Hecke relation from det constraint (field_simp/ring/linarith), sorry-free; spectral decomp honestly axiomatized as the wall (axiom + kassel1995 Ref). Faithful to md.",
+        "reviewed_at": "2026-06-25T17:05:34.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1403,6 +1487,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a1aaf659d023",
+          "ts": "dc6f9a0e6d22",
+          "lean": "073f6af238d7"
+        },
+        "result": "pass",
+        "notes": "Premises lam_sym!=0, lam_anti!=0, lam_sym*lam_anti=-1 jointly satisfiable in R_q=Z[q,q^-1] (q, -q^-1); not contradictory.",
+        "reviewed_at": "2026-06-25T17:05:34.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1434,6 +1536,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a1aaf659d023",
+          "ts": "dc6f9a0e6d22",
+          "lean": "073f6af238d7"
+        },
+        "result": "pass",
+        "notes": "In proved thms hls/hla/hdet all consumed (h_anti_val via field_simp, struct fields); classical_limit/quantum_regime use their hyps. No dead binders in proof bodies.",
+        "reviewed_at": "2026-06-25T17:05:34.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

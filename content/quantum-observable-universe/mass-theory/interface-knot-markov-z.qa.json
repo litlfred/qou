@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "result": "pass",
+        "notes": "Clear: two single-step identities (Markov axiom z; skein z-h) iterated by List.foldr induction. Lean mirrors the .md proof exactly; corollaries correctly scoped per the calibration discipline.",
+        "reviewed_at": "2026-06-25T17:07:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.9
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "result": "pass",
+        "notes": "Interface-knot factor z^p+ (z-h)^p- forced by Markov axiom + Hecke skein; well-posed, witness-exact to 1e-15 on D/T/3He/4He. Derivation-grade (no fit at tau_M level).",
+        "reviewed_at": "2026-06-25T17:07:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.9
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "result": "pass",
+        "notes": "Categorical identification of the interface knot as the Markov-axiom boundary contribution; plus correctly-scoped 4-body deficit-saturation + SU(4) shell-closure + product-model 3-body obstruction results. Substantive.",
+        "reviewed_at": "2026-06-25T17:07:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1327,6 +1393,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "result": "pass",
+        "notes": "Headline (star) tau_M(B_K)=z^p+ (z-h)^p- tau_vac fully proved sorry-free by induction (interface_knot_markov_z, cases+simp+ring). Negative/bar variants proved from Hecke skein. Many real corollaries (InterfaceDeficit saturation, SU4 shell closure via Nat.choose, Ursell/productModel_3body_nonpos via nlinarith). Faithful + complete.",
+        "reviewed_at": "2026-06-25T17:07:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1358,6 +1442,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "result": "pass",
+        "notes": "Headline interface_knot_markov_z derived by induction. _single:=inst.markov_axiom surfaces the trace algebra's DEFINING axiom (a hypothesis of the abstract class), not the block's conclusion -- legit 3b pattern, unlike a := field that IS the headline claim.",
+        "reviewed_at": "2026-06-25T17:07:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1441,6 +1543,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "result": "pass",
+        "notes": "Classes inhabitable (concrete H_n(q)); h_tau_linear is genuine tau_M linearity; bond factors in [0,1], c>=0, t>0 all satisfiable. No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:07:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1472,6 +1592,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "17e4191a88b3",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "result": "pass",
+        "notes": "Inductive ih used; negative/bar variants use h_tau_linear + h_interface + h_below via rw; InterfaceDeficit/Cluster lemmas use all binders (mul_le_of_le_one*, nlinarith hints). No dead binders.",
+        "reviewed_at": "2026-06-25T17:07:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

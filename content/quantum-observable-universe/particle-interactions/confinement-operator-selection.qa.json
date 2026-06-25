@@ -1155,6 +1155,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "notes": "Clear: machine-prove Borromean Brunnian signature in a braid-word model; axiomatize general-n predicate as class; compose. Honestly flags minimality as witnessed.",
+        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1194,6 +1215,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "notes": "Selecting confinement operator by crossing-minimal Brunnian topology (baryon/meson dichotomy as theorem) is well-posed and substantive.",
+        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
         }
       }
     ],
@@ -1235,6 +1277,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "notes": "Topological (Brunnian) selector replacing refuted min-action SDP framing; decidable B₂ sublink-triviality core is a genuine formalization contribution.",
+        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.75
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1271,6 +1334,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "notes": "Lean faithfully states Brunnian-minimality selection + n≥3 dichotomy + Borromean at n=3; BraidModel machine-proves (decide) signature (0,0,0), counts (2,2,2), sublinks-trivial. No sorry/native_decide in-file.",
+        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1300,6 +1380,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "fail",
+        "notes": "Headline confinement_operator_selection composes class fields verbatim (⟨ctx.exists_impl_three_le, ctx.is_nontrivial, ctx.is_brunnian, ctx.is_minimal, ctx.borromean_identity, ctx.confine_three⟩) — conclusion IS the BorromeanConfinement fields.",
+        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1379,6 +1476,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "notes": "BorromeanConfinement instance fields jointly satisfiable (BraidModel realizes the n=3 signature concretely); no contradictory premise.",
+        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1408,6 +1522,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "94183f7d93f2",
+          "ts": "e23cc3d0f3e7"
+        },
+        "result": "pass",
+        "notes": "[ctx:BorromeanConfinement] binder + intro'd n,b,hb all used; every projected field consumed.",
+        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

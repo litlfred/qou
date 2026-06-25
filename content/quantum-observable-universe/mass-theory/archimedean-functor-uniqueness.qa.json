@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "20a0f1af68a4",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "notes": "Clear 3-ingredient proof sketch (pentagon-coherence on substrate, Suslin uniqueness, archimedean matching); Lean cleanly axiomatises the classical input and applies it.",
+        "reviewed_at": "2026-06-25T17:08:32.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "20a0f1af68a4",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "notes": "Uniqueness of τ_arch up to a scalar via Bloch-Suslin pentagon rigidity is well-posed and substantive (foreclosing arbitrary π-imports).",
+        "reviewed_at": "2026-06-25T17:08:32.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "20a0f1af68a4",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "notes": "Applying Bloch-Suslin rigidity to force canonicity of the substrate→ℝ exit + provenance of π is a genuine structural argument, not a restatement.",
+        "reviewed_at": "2026-06-25T17:08:32.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1320,6 +1386,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "20a0f1af68a4",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "notes": "Legit §3b-cond: class BlochSuslinUniqueness axiomatises the GENERAL Suslin theorem (∀φ pentagon-coherent ⇒ φ=c·D); archimedean_functor_uniqueness DERIVES τ_arch=c·D by applying uniqueness to the τ_arch-specific h_cont/h_anti/h_pent. PentagonCoherent fully spelled out. No sorry. Conclusion is not a class field.",
+        "reviewed_at": "2026-06-25T17:08:31.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1405,6 +1489,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "20a0f1af68a4",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "notes": "Premises satisfiable: D itself satisfies cont/anti/pentagon; BlochSuslinUniqueness is the genuine classical theorem (awaiting Mathlib Real.dilog/BlochGroup). Not contradictory.",
+        "reviewed_at": "2026-06-25T17:08:32.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1436,6 +1538,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "20a0f1af68a4",
+          "ts": "603fb337038e",
+          "lean": "2810d8047e3d"
+        },
+        "result": "pass",
+        "notes": "h_cont,h_anti,h_pent all fed to hD.uniqueness; [hD] used. figure8_calibration uses h_realisation,h_dom,h_dom₁. No unused binder.",
+        "reviewed_at": "2026-06-25T17:08:31.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

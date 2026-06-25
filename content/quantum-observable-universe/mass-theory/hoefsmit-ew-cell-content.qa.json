@@ -1277,6 +1277,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "13f591a8a62c",
+          "ts": "f203a5e6db52",
+          "lean": "a6bd41cb1a54"
+        },
+        "result": "pass",
+        "notes": "Discharge thms DisjointStrandPairAssignmentB6_holds / PatternsPairwiseOrthogonal_holds := WZH_indices_far_commute (a separately decide-proved lemma), not a := ctx.field projection. totalPureMultiplicity=20 by decide. EWIdempotentsIdentified honestly :=True (Higgs-conj gated), but that's a def not a projected theorem-conclusion.",
+        "reviewed_at": "2026-06-25T17:05:16.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-trivial-true": [

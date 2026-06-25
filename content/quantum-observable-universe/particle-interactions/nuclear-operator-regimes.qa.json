@@ -1201,6 +1201,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "6435e6e87fd5"
+        },
+        "result": "warn",
+        "notes": "No Lean proof strategy (:=trivial on :True); md gives observed LP transitions but no derivation of why each regime's operator minimizes demand.",
+        "reviewed_at": "2026-06-25T17:06:48.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.3
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1242,6 +1264,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "6435e6e87fd5"
+        },
+        "result": "pass",
+        "notes": "md goal is substantive/well-posed (3 inter-nucleon binding regimes I/II/III with LP-witness demand table A≤6); plausibility rates the md claim, independent of the vacuous Lean.",
+        "reviewed_at": "2026-06-25T17:06:48.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
         }
       }
     ],
@@ -1285,6 +1329,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "6435e6e87fd5"
+        },
+        "result": "pass",
+        "notes": "Regime classification (torus T_{2,5}→Hopf L±→bare crossing) with B_3-is-quark-level-only claim is a substantive empirical observation; cited witness nuclear-binding-lp.",
+        "reviewed_at": "2026-06-25T17:06:48.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1316,6 +1382,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "6435e6e87fd5"
+        },
+        "result": "fail",
+        "notes": "Lean is 'def nuclearOperatorRegimes : True := by trivial' — concludes :True (def-disguised-true per AGENTS.md §1a); encodes none of the md's 3-regime operator-selection claim. Degenerate weakening.",
+        "reviewed_at": "2026-06-25T17:06:48.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1419,6 +1503,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "6435e6e87fd5"
+        },
+        "result": "pass",
+        "notes": "No premise on the :True stub; nothing contradictory.",
+        "reviewed_at": "2026-06-25T17:06:48.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1450,6 +1552,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bf64d7a72d1b",
+          "ts": "e8c10b6e76f3",
+          "lean": "6435e6e87fd5"
+        },
+        "result": "pass",
+        "notes": "No binders on the :True stub; vacuously no unused hypothesis.",
+        "reviewed_at": "2026-06-25T17:06:48.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
