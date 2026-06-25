@@ -1,4 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import QOU.Shared.MarkovTraceClaim
 
 /-!
 # QOU.Information.toffoli_transfer_matrix
@@ -12,7 +13,6 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per AGENTS.md §1.
 -/
 
-import QOU.Shared.MarkovTraceClaim
 
 namespace QOU.Information
 
