@@ -94,9 +94,7 @@ theorem colLen_conj (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (c : ℕ) :
       (if c < (conj l).getD k 0 then (1 : ℕ) else 0) = (if k < l.getD c 0 then 1 else 0) := by
     intro k hk
     rw [conj_getD l k (Finset.mem_range.mp hk)]
-    by_cases h : c < colLen l k
-    · rw [if_pos h, if_pos ((colLen_duality l hl c k).mp h)]
-    · rw [if_neg h, if_neg (fun hh => h ((colLen_duality l hl c k).mpr hh))]
+    simp only [colLen_duality l hl c k]
   rw [Finset.sum_congr rfl hcongr, sum_indicator_lt_eq_min]
   exact min_eq_right (getD_le_headD l hl c)
 
@@ -118,10 +116,7 @@ theorem sumSqHooks_conj (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
     intro r hr
     rw [conj_getD l r (Finset.mem_range.mp hr)]
     apply Finset.sum_congr rfl; intro c _
-    rw [colLen_conj l hl c]
-    have hcomm : (colLen l r - c) + (l.getD c 0 - r) - 1
-        = (l.getD c 0 - r) + (colLen l r - c) - 1 := by omega
-    rw [hcomm]
+    rw [colLen_conj l hl c, Nat.add_comm (colLen l r - c) (l.getD c 0 - r)]
   rw [Finset.sum_congr rfl hL,
     cell_fubini l hl (fun i j => (((l.getD i 0 - j) + (colLen l j - i) - 1 : ℕ) : ℤ) ^ 2)]
 
