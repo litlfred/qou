@@ -94,12 +94,16 @@ group acts on the fibre degrees of freedom; particle exchange
 becomes a representation of $B_n$ inside the Iwahori–Hecke algebra
 $H_n(q)$, with the substrate parameter $q$ tracking the energy
 cost of each crossing.  Specific knot types map to particle
-identities — the empty knot $\varnothing$ (the identity braid
-$\mathbf{1}$, zero crossings) to the photon, and the unknot $0_1$
-(a single closed loop, also zero crossings but topologically
-distinct) to the neutrino; the trefoil $3_1$ to the electron;
-higher torus knots $T_{2,2k+1}$ to the muon and tau through the
-brane tower.
+identities — the unknot $0_1$ (a single closed loop, zero
+crossings) to the neutrino, the trefoil $3_1$ to the electron, and
+the higher torus knots $T_{2,2k+1}$ to the muon and tau through the
+brane tower.  The photon is **not** a knot at all but a four-term
+element of the Hecke algebra,
+$\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
++ \varphi_{01}\sigma_0\sigma_1$ — the superposition of the identity
+and the elementary crossings whose two-photon products generate the
+rest of the spectrum
+([gamma-gamma-generates-particles](#prop:gamma-gamma-generates-particles)).
 
 Chapter \ref{chap:brings-surface}, *Bring's Surface*, develops the genus-four state
 space in depth: the curve with Euler characteristic $-6$ and
@@ -137,9 +141,17 @@ SDP/LP dual is the mechanism by which the framework decides *which*
 particle interaction happens: of the admissible operators at a
 given configuration, the one minimising the categorical action
 wins, and strong duality identifies it uniquely.  The embeddability
-bound on Bring's surface yields exactly $7$ transfer matrices —
-six non-trivial force operators and the identity (**interaction
-completeness**; the seven are enumerated in
+bound on Bring's surface makes the operator content finite, and
+**six-dimensional**: the Iwahori–Hecke algebra $H_3(q)$, with basis
+$\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$, the identity
+$\gamma$ among the six.  Enumerated as physical *processes* rather
+than as a basis, these realise seven transfer matrices — the
+identity, two $\beta$-decays, photon emission and absorption, and
+pair creation and annihilation — but the seven are not seven
+independent directions: pair creation and annihilation re-use the
+very $\pm\Delta_\beta$ that drives $\beta$-decay, and $\Delta_\beta$
+is itself a multiple of the identity (**interaction completeness**;
+the processes are enumerated in
 [tm-interaction-completeness](#tm-interaction-completeness)).
 
 Chapter \ref{chap:climax-volume-mass}, *$q$-Hyperbolic Geometry*, supplies the geometric
@@ -250,8 +262,13 @@ from Nucleon Braids*, extends the knot-word
 formalism from nucleons to molecules.  The molecular Hecke algebra
 describes bond formation as braid concatenation; the Frobenius
 linear-programming problem that stabilised nucleons returns here to
-compute molecular binding energies at the calibrated $q_0$.  Worked
-examples span $\mathrm{H}_2$, $\mathrm{H}_2\mathrm{O}$, and benzene.
+compute molecular binding energies at the calibrated $q_0$.  The
+same braid geometry fixes shape as well as strength: water's
+hydrogens settle at the bent $\mathrm{H}$–$\mathrm{O}$–$\mathrm{H}$
+angle of about $104.5^\circ$ that experiment records — the
+tetrahedral ideal of $109.5^\circ$ relaxed by oxygen's lone pairs.
+Worked examples span $\mathrm{H}_2$, $\mathrm{H}_2\mathrm{O}$, and
+benzene.
 
 Chapter \ref{chap:organic-chemistry}, *Organic Chemistry from
 Hopf Chains*, carries the construction
@@ -268,11 +285,21 @@ $\Delta E \approx 193\text{–}386\;\mathrm{kJ/mol}$, against the
 experimental $200\text{–}400\;\mathrm{kJ/mol}$ window.
 
 **Part IV: Dynamics, Information, Emergence.**
-Chapter \ref{chap:fluid-dynamics}, *Fluid Dynamics of the Brane*, derives the $q$-deformed
-Navier–Stokes equation from the Frobenius–Hopf structure, and
-locates the obstruction to global smoothness in a single
-cohomology class — an obstruction-based perspective on
-Navier–Stokes regularity.
+Chapter \ref{chap:fluid-dynamics}, *Fluid Dynamics of the Brane*, lets the same structure flow.
+The Frobenius–Hopf algebra yields a $q$-deformed Navier–Stokes
+equation, and its **stable vortices** — filaments that hold their
+shape as they twist past one another — braid exactly as the knot
+operators do: each Artin generator $\sigma_i$ is the half-twist
+exchange of two vortex filaments, and the Jones polynomial of a
+vortex tangle is its topological helicity.  The fluid picture and
+the algebraic one are two readings of a single object.  This is the
+place to be plain about a habit of the whole book: we never claim
+that a particle *is* a knot, a string, or a vortex in a fluid —
+these are interchangeable descriptions of how it behaves, not
+assertions of what it is.  The pay-off is sharp: the obstruction to
+a vortex ever blowing up collapses to a single cohomology class,
+recasting Navier–Stokes regularity as the question of whether that
+class can vanish.
 
 Next, Chapter \ref{chap:stochastic-mechanics}, *Stochastic
 Mechanics*, reads the Markov
@@ -336,6 +363,13 @@ The [Glossary](#chap\:glossary) maps paper terminology to Mathlib
 declarations, the [Knot-Periodic Table](#app\:knot-periodic-table)
 collects the elements with their knot assignments, and the
 [Index of Definitions](#app\:index-definitions) provides a
-searchable reference.  Further millennium-problem material — the
-$q$-deformed Birch–Swinnerton-Dyer and Collatz statements, and
-surreal-number bounds — is developed in the surreals appendices.
+searchable reference.  One object ties the book's hardest results
+together: the Yekutieli obstruction class $\kappa_n \in H^2(S, B)$
+of Chapter \ref{chap:torsion} — the precise measure of when local
+categorical data fails to extend globally.  In the $q$-substrate the
+millennium problems the book meets — Navier–Stokes regularity, the
+Yang–Mills mass gap, $P$ versus $NP$, the Riemann hypothesis, and
+the $q$-deformed Birch–Swinnerton-Dyer and Collatz statements — are
+each the question of whether such a class vanishes, and all reduce
+to a single surreal inequality developed in the surreals
+appendices.
