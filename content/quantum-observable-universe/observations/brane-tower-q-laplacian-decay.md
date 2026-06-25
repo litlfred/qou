@@ -1,6 +1,6 @@
 **Proposition (brane-tower convergence via q-Laplacian decay).**
 *Dropping the locality assumption for composite physical observables
-requires summing over the Yekutieli brane tower — an infinite jet
+requires summing over the brane tower — an infinite jet
 prolongation*
 $$
   T(\rho) \;=\; \sum_{n \geq 1} \hbar_q^{2n} \, \Delta^{(n)}(\rho),

@@ -17,7 +17,7 @@ export default paper({
     "Universe (QOU): a rigid braided monoidal category equipped with a " +
     "Frobenius--Hopf object whose differential geometry is controlled by a " +
     "substrate parameter $q$.  Part~I (Chapters 1--3) establishes the " +
-    "categorical foundations and the Yekutieli brane tower.  Part~II " +
+    "categorical foundations and the recursive brane tower.  Part~II " +
     "(Chapters 4--8) develops the structural consequences: braiding and " +
     "knot theory, models over various ground fields, the algebraic " +
     "substrate, fluid dynamics, and information-theoretic " +

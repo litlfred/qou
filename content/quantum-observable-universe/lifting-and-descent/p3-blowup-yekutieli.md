@@ -1,4 +1,4 @@
-> **Summary.** Finite-time NS blowup is identified with a finite obstruction level $n^*$ in the Yekutieli brane tower at which a velocity field ceases to lift.
+> **Summary.** Finite-time NS blowup is identified with a finite obstruction level $n^*$ in the brane tower at which a velocity field ceases to lift (the Yekutieli lifting obstruction).
 > A counter-example is encoded by the cohomological address $(v_0, T^*, \Sigma, n^*, \kappa_{n^*})$, with the singular set $\Sigma$ controlled by local cohomology at the unit defect $z=1$.
 
 The [regularity breakdown](#conj\:regularity-breakdown) at $q = 1$
