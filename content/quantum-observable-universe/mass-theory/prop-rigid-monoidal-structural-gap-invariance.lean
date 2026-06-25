@@ -209,37 +209,6 @@ production-Lean; Layer 1 needs the proposed `MarkovTraceAxiomatic`
 typeclass; Layer 3 then follows by structural induction on the
 Hecke quadratic relation. -/
 
-/-- **§3b-cond canonical skeleton instance.**  Sets
-    `categorical_trace ≡ 0`.  The `sorry` in
-    `convention_factorisation` is the **§3b-cond conjectural input**:
-    Layer-1 Jones-Wenzl uniqueness of the categorical Markov trace
-    τ on `H_n(q)` (Jones 1985, Wenzl 1988).  Per AGENTS.md §3b-cond,
-    this `sorry` is allowed — it encodes the conjectural axiom; all
-    downstream theorems carrying `[R : RigidMonoidalStructuralGapInvariance α]`
-    as an explicit hypothesis are unconditional Lean theorems
-    modulo this single conjectural input.
-
-    The data field `categorical_trace _ := 0` is the **weakest**
-    content-bearing canonical pick (per the trivial-skeleton
-    workplan `docs/audits/2026-05-08-trivial-skeleton-workplan.md`,
-    pattern A upgrade would pin to a substrate-derived τ value
-    once `MarkovTraceAxiomatic` lands in upstream Mathlib —
-    handover doc §2 P4.A long-term path).
-
-    See the "Mathlib LP-duality integration sketch" comment block
-    above for the staged-discharge plan (Layer 1: `MarkovTraceAxiomatic`
-    typeclass; Layer 2: `pair_knot_Z_N_trace_invariance` — done;
-    Layer 3: structural induction on the Hecke quadratic).
-
-    Companion: `docs/audits/2026-05-12-lean-p4-canonical-instance-review.md`. -/
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Skeleton"
--- Ref: [jones1985] V. Jones, BAMS 12.1 (1985)
--- Ref: [wenzl1988] H. Wenzl, Invent. Math. 92 (1988)
-instance canonical (α : Type*) :
-    RigidMonoidalStructuralGapInvariance α where
-  categorical_trace _ := (0 : ℝ)
-  convention_factorisation _ _
-
 theorem structural_gap_convention_independent
     [R : RigidMonoidalStructuralGapInvariance α]
     (c₁ c₂ : OperatorVolumeConvention α)
