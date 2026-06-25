@@ -20,9 +20,9 @@ and the
 [VOA–QOU dictionary](#rem:vertex-operator-dictionary)
 that pins each vertex-algebra datum to the categorical structure.
 
-**Dynamics on coral coordinates.**  We then put the static arena
+**Dynamics on color coordinates.**  We then put the static arena
 in motion: the
-[$q$-Reeb flow on coral coords](#def:q-reeb-flow-on-coral-coords)
+[$q$-Reeb flow on color coords](#def:q-reeb-flow-on-color-coords)
 gives the explicit dynamical equation $\dot\psi = q$ on each
 active sector, with two-strand localisation when only a pair of
 adjacent strands is involved.

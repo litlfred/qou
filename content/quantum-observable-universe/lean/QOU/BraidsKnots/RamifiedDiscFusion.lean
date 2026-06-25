@@ -7,7 +7,7 @@ Compiled formalisation of `prop:ramified-disc-fusion`.
 Sibling docstub at `braids-and-knots/ramified-disc-fusion.md`.
 
 At the foundry boundary latitudes $\phi \in \{0, \pi\}$ of the
-Reeb bundle, the three coral-sector preimages of a small disc on
+Reeb bundle, the three color-sector preimages of a small disc on
 the exceptional divisor fuse into a single topological disc with
 degree-3 ramification at the centre.  The monodromy of this
 branched cover around the boundary circle realises the $S_3$
@@ -22,7 +22,7 @@ namespace QOU.BraidsKnots
 
 /-- Abstract context for the `ramified_disc_fusion` claim. -/
 class RamifiedDiscFusionContext where
-  /-- Number of coral-sector preimages of a small disc on the
+  /-- Number of color-sector preimages of a small disc on the
       exceptional divisor at a foundry boundary latitude. -/
   n_sectors : ℕ
   /-- Ramification degree of the branched cover at the disc centre. -/
@@ -30,7 +30,7 @@ class RamifiedDiscFusionContext where
   /-- Order of the Galois group realised by monodromy around the
       boundary circle (manuscript: `S_3`, order 6). -/
   galois_group_order : ℕ
-  /-- Manuscript claim — three coral sectors. -/
+  /-- Manuscript claim — three color sectors. -/
   claim_three_sectors : n_sectors = 3
   /-- Manuscript claim — degree-3 ramification at the centre
       (matches the sector count). -/

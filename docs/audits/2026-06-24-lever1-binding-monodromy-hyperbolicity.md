@@ -34,7 +34,7 @@ Hodge structure) but under-cited this established resolution.
 
 ## The decisive structural exclusion (b): `B` is hyperbolic, the trefoil holonomy is compact
 
-The coral elliptic curve `E_z` ([`brings-surface/coral-elliptic.md`](../../content/quantum-observable-universe/brings-surface/coral-elliptic.md))
+The color elliptic curve `E_z` ([`brings-surface/color-elliptic.md`](../../content/quantum-observable-universe/brings-surface/color-elliptic.md))
 is the natural rank-2 candidate for that Hodge structure: it is the elliptic fibre of Bring's
 surface, and **its monodromy around the singular fibres recovers the trefoil holonomy
 generators** `H₁ = σ₁, H₂ = σ₂` ([`holonomy-trefoil.md`](../../content/quantum-observable-universe/braids-and-knots/holonomy-trefoil.md)),
@@ -53,7 +53,7 @@ trefoil-holonomy generator** — *(b)-exclusion, invariant cited: the `SL₂(ℝ
 the `|tr| ≤ 2` bound on the 2-dim rep of compact SU(2).*
 
 **Scope (strict (a)/(b)).** This excludes only the **compact evaluation** — it does **not**
-exclude the coral `E_z` as the rank-2 `W`. The curve is fine; its monodromy is simply evaluated
+exclude the color `E_z` as the rank-2 `W`. The curve is fine; its monodromy is simply evaluated
 in the **non-compact** regime at the substrate `q₀ > 1`. `B` is the non-compact
 `SU_q(2) → E_q(2)` hyperbolic continuation, with `τ = 2cosh θ_binding`,
 `θ_binding = 0.78145` (`λ = e^{θ} = 2.18465`).
@@ -86,16 +86,16 @@ Flagging for re-creation if the explicit `B` computation is pursued.
 
 ## Net + next step (tractable, NOT genus-4, NOT owner-gated)
 
-- **Resolved (B):** the rank-2 `W` is the `S₅`-Hodge multiplicity space `= H¹` of the coral
+- **Resolved (B):** the rank-2 `W` is the `S₅`-Hodge multiplicity space `= H¹` of the color
   elliptic `E_z` (Riera–Rodríguez isotypic factor of `Jac(Bring) ~ ` `W`-isotypic) — a rank-2
   *elliptic* object, **not** a fresh genus-4 computation.
-- **Sharpened (A):** `τ = tr B` is the **non-compact hyperbolic** rapidity of the coral `E_z`
+- **Sharpened (A):** `τ = tr B` is the **non-compact hyperbolic** rapidity of the color `E_z`
   Picard–Fuchs / Gauss–Manin monodromy at `q₀`, `θ_binding = 0.78145`. The decisive in-session
-  test for a future session: compute the coral `E_z` (genus-1) Picard–Fuchs monodromy trace and
+  test for a future session: compute the color `E_z` (genus-1) Picard–Fuchs monodromy trace and
   check it equals `2.6424`. This is a rank-2 elliptic period problem (tractable without Sage's
   genus-4 `RiemannSurface`), and the explicit hyperbolic `B` is the keystone's q-family `M`
-  restricted to the coral elliptic factor.
+  restricted to the color elliptic factor.
 - **Honest scope:** **NOT a keystone closure.** The geometric meaning of the rapidity
-  `θ_binding = 0.78145` (vs the torus `2η₀`) is open; the coral-`E_z`-monodromy `= τ_binding`
+  `θ_binding = 0.78145` (vs the torus `2η₀`) is open; the color-`E_z`-monodromy `= τ_binding`
   identity is a well-motivated **hypothesis** (both are rank-2, both carry the trefoil/braid
   monodromy, both Bring-derived), **not** proved here. No fit; nothing wired; no tier change.

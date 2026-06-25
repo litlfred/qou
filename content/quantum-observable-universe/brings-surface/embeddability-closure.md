@@ -40,7 +40,7 @@ $g(K_2) \leq 4$, then both components of
 $K_1 \cup_{\mathrm{Hopf}} K_2$ remain embeddable.
 
 *Color-tube threading $\ell_c$.*
-Threading three knots through the coral tubes $(r, g, b)$ similarly
+Threading three knots through the color tubes $(r, g, b)$ similarly
 preserves each component's knot type.  The three-component link
 $K_1 \cup_r K_2 \cup_g K_3$ has each $K_i$ sitting in its own
 color fiber; the Seifert genus of each component is unchanged.

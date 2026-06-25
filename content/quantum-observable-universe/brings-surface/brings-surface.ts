@@ -12,7 +12,7 @@ import { chapter, section } from "../../schema/builders";
  * Phase 5 (2026-05-25): created by splitting archimedean-universe.
  * Receives 15 sections (129 blocks, including opener): physical-regime
  * preamble, Bring's algebraic substructure, color tube coordinates,
- * coral fibration, smoothness, spectral and gauge structures, $\chi =
+ * color fibration, smoothness, spectral and gauge structures, $\chi =
  * -6$ Descartes condition (statement, leptons, genus completeness),
  * cohomological defect, Descartes theorem, orbital symmetry embedding.
  *
@@ -87,12 +87,12 @@ export default chapter({
       ],
     }),
     section({
-      title: "Coral fibration and elliptic curves",
-      label: "sec:coral-fibration-elliptic",
+      title: "Color fibration and elliptic curves",
+      label: "sec:color-fibration-elliptic",
       blocks: [
-        "coral-fibration-elliptic-intro",
-        "coral-elliptic",
-        "coral-elliptic-proof",
+        "color-fibration-elliptic-intro",
+        "color-elliptic",
+        "color-elliptic-proof",
         "t-duality-elliptic",
         "color-tube-cubic",
         "color-tube-fibers",
@@ -106,7 +106,7 @@ export default chapter({
       label: "sec:brings-smoothness",
       blocks: [
         "brings-smoothness-intro",
-        "coral-bundles",
+        "color-bundles",
         "brings-smoothness-resolution",
         "brings-smoothness",
         "approach-to-exceptional-divisor",
@@ -134,7 +134,7 @@ export default chapter({
         "sw-period-residue-sum-proof",
         "jet-sw-tau-decomposition",
         "jet-sw-tau-decomposition-proof",
-        "coral-sector-coords",
+        "color-sector-coords",
         "descartes-braid-structure",
         "descartes-braid-structure-proof",
         "descartes-knot-eigenbasis",

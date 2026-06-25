@@ -16,14 +16,14 @@ established to reduce to the **same single owner-gated object**: the s5-so3 Habi
 The binding kernel is the depth-2 `det=1` recurrence `R = x² − τx + 1`, and everything reduces to the
 single trace `τ = tr B = 3(3q⁴+8q²+3)/(4q(q+1)²) = 2.6424` at `q₀`. This session mapped `B` exhaustively:
 
-- The rank-2 `W` is the coral/descartes elliptic curve `E_q` (`j(q₀)=129.86`; sibling `Jac(Bring)~E⁴`, on main).
+- The rank-2 `W` is the color/descartes elliptic curve `E_q` (`j(q₀)=129.86`; sibling `Jac(Bring)~E⁴`, on main).
 - `B` is **not** compact SU(2) (`τ>2`, hyperbolic), **not** the topological `SL₂(ℤ)` monodromy (`τ∉ℤ`),
   **not** an `lw`-recurrence rate (the depth-2 recurrence fails past the n=2,3,4 seed), and **not** any
   integer/golden `τ` (the icosahedral `τ=3`, `λ=φ²`, is refuted by the wired seed — 19 % miss).
 - `B` **is** the abelianised `λ_SW` Cartan-connection holonomy on `E_q` — `SL₂(ℝ)`, hyperbolic,
   `θ_binding=0.7815` — which is the keystone q-family `M` restricted to the elliptic factor.
 
-Audits (all on main): `2026-06-24-lever1-{binding-monodromy-hyperbolicity, coral-eq-monodromy-integrality,
+Audits (all on main): `2026-06-24-lever1-{binding-monodromy-hyperbolicity, color-eq-monodromy-integrality,
 lw-depth2-recurrence-falsified, lambda-sw-no-shortcut}.md`.
 
 ## Lever B — Q_β / m_n (`kehn`, sibling #2723)
@@ -40,7 +40,7 @@ the same keystone ring.
 | | Lever A (binding) | Lever B (Q_β/m_n) |
 |---|---|---|
 | observable | binding `B(K)` / Δ_λ | `m_n`, Q_β |
-| reduces to | `τ = tr B` of `M` on the coral `E_q` factor | the Habiro element `F(q)` of `M` |
+| reduces to | `τ = tr B` of `M` on the color `E_q` factor | the Habiro element `F(q)` of `M` |
 | status | near-mapped; `τ=2.6424` exact at seed | near-match (m_n +1.04 ppb) |
 | residual | the abelianised `λ_SW` holonomy of `M` | the cross-anchor Habiro element of `M` |
 

@@ -1,4 +1,4 @@
-Let $z \in \mathbb{P}^1(\mathbb{C})$.  The *coral tube* at $z$ is the
+Let $z \in \mathbb{P}^1(\mathbb{C})$.  The *color tube* at $z$ is the
 affine curve defined over $\mathbb{Z}[z]$ by the color tube
 cubic; we denote it $R_z$, $G_z$, or
 $B_z$ according to which color tube coordinate $\mathbf{r}_z$,
@@ -23,6 +23,6 @@ $$
   \mathbf{b}_z = w_4 - z.
 $$
 
-As varieties, $R_z \cong G_z \cong B_z$ is isomorphic to the coral
-elliptic fiber $\mathcal{E}_z$ of [coral elliptic curve](#prop:coral-elliptic) via
+As varieties, $R_z \cong G_z \cong B_z$ is isomorphic to the color
+elliptic fiber $\mathcal{E}_z$ of [color elliptic curve](#prop:color-elliptic) via
 the shift $X = \mathbf{c} + z$.

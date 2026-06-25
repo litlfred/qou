@@ -1912,18 +1912,18 @@
         "resolved_via": "lake_root"
       },
       {
-        "path": "content/quantum-observable-universe/brings-surface/coral-elliptic.ts",
-        "ref": "qou:QOU.Brings.coral_elliptic",
+        "path": "content/quantum-observable-universe/brings-surface/color-elliptic.ts",
+        "ref": "qou:QOU.Brings.color_elliptic",
         "kind": "proposition",
         "pkg": "qou",
-        "decl_path": "QOU.Brings.coral_elliptic",
+        "decl_path": "QOU.Brings.color_elliptic",
         "sibling_exists": true,
         "sibling_declares": false,
         "lake_root_exists": true,
         "lake_root_declares": true,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/Brings/coral_elliptic.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/Brings/color_elliptic.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,
@@ -1931,18 +1931,18 @@
         "resolved_via": "lake_root"
       },
       {
-        "path": "content/quantum-observable-universe/brings-surface/coral-sector-coords.ts",
-        "ref": "qou:QOU.CoralSectorCoords",
+        "path": "content/quantum-observable-universe/brings-surface/color-sector-coords.ts",
+        "ref": "qou:QOU.ColorSectorCoords",
         "kind": "definition",
         "pkg": "qou",
-        "decl_path": "QOU.CoralSectorCoords",
+        "decl_path": "QOU.ColorSectorCoords",
         "sibling_exists": true,
         "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/brings-surface/coral-sector-coords.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/brings-surface/color-sector-coords.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": false,
@@ -9599,18 +9599,18 @@
         "resolved_via": "sibling"
       },
       {
-        "path": "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-coral-coords.ts",
-        "ref": "qou:QOU.CategoricalReeb.QReebFlowOnCoralCoords",
+        "path": "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts",
+        "ref": "qou:QOU.CategoricalReeb.QReebFlowOnColorCoords",
         "kind": "definition",
         "pkg": "qou",
-        "decl_path": "QOU.CategoricalReeb.QReebFlowOnCoralCoords",
+        "decl_path": "QOU.CategoricalReeb.QReebFlowOnColorCoords",
         "sibling_exists": true,
         "sibling_declares": false,
         "lake_root_exists": true,
         "lake_root_declares": true,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/CategoricalReeb/QReebFlowOnCoralCoords.lean"
+          "/home/runner/work/qou/qou/content/quantum-observable-universe/lean/QOU/CategoricalReeb/QReebFlowOnColorCoords.lean"
         ],
         "grep_hit": true,
         "grep_hit_under_lake_root": true,

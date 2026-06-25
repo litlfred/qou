@@ -32,5 +32,5 @@ restricted to $\mathcal{S}_c$. Then:
 
    where $X$ is the color coordinate cut out as the Higgs-field
    eigenvalue on the single sheet to which the spectral curve
-   ([coral bundles](#rem:coral-bundles)) restricts over
+   ([color bundles](#rem:color-bundles)) restricts over
    $\mathcal{S}_c$.

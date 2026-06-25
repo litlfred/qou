@@ -1,9 +1,9 @@
-Fix the coral-sector parametrisation
+Fix the color-sector parametrisation
 $\mathfrak{r}(\phi,\psi),\,\mathfrak{g}(\phi,\psi),\,\mathfrak{b}(\phi,\psi)$
 on the Reeb bundle $\mathcal{R}_p$ over the exceptional divisor
-([coral-sector coordinates](#def:coral-sector-coords)).  The
+([color-sector coordinates](#def:color-sector-coords)).  The
 $q$-Reeb flow $\phi^q_t$
-([$q$-Reeb flow](#ex:q-reeb-flow)) acts on each coral sector by
+([$q$-Reeb flow](#ex:q-reeb-flow)) acts on each color sector by
 
 $$
   \phi^q_t \cdot \mathfrak{r}(\phi,\psi)
@@ -24,16 +24,16 @@ $\mathcal{R}_p$: $t = 0$ at the **south foundry**
 (input boundary $\phi = 0$) and $t = \pi$ at the **north foundry**
 (output boundary $\phi = \pi$).
 
-**Coral-twist accumulation.**  Substituting the explicit embedding
+**Color-twist accumulation.**  Substituting the explicit embedding
 $\mathfrak{r}(\phi,\psi) = O + R(\sin\phi(\cos(\psi + q\phi)T_1
 + \sin(\psi + q\phi)T_2) - \cos\phi N)$
-shows that the flow accumulates the coral-twist factor $q t$
+shows that the flow accumulates the color-twist factor $q t$
 linearly in the angular coordinate: a strand sitting at $\psi = 0$
 on the south foundry is delivered to the angular position $q\pi$
 on the north foundry, an angular advance of $q\pi$ radians
 (equivalently $q/2$ full turns of the $2\pi$-periodic angle).
 This matches the static embedding in
-[coral-sector coordinates](#def:coral-sector-coords).
+[color-sector coordinates](#def:color-sector-coords).
 
 **Composition.**  Sequential flows compose additively:
 $\phi^q_{t_1} \circ \phi^q_{t_2} = \phi^q_{t_1 + t_2}$, so a braid
@@ -49,7 +49,7 @@ sector remains a spectator ($k = 0$, $\dot\psi = 0$) while the
 two participating sectors counter-rotate ($k = +1$ for the leading
 strand, $k = -1$ for the partner strand) so the two-strand
 centre-of-mass is preserved.  In the Lean class
-`QOU.CategoricalReeb.QReebFlowOnCoralCoords`, this is captured by
+`QOU.CategoricalReeb.QReebFlowOnColorCoords`, this is captured by
 the single rate-multiplier axiom
 `flow_rate : flow t k ψ = ψ + k * q * t` (with corollaries
 `flow_spectator`, `flow_active_pos`, `flow_active_neg` for
@@ -62,5 +62,5 @@ generators by setting $k = +1$ (positive 3-cycle) or $k = -1$
 geometric content of the Hecke generator $\sigma_i$ acting
 nontrivially only on strands $i$ and $i+1$, and is the bridge
 between the algebraic braid action and the explicit ODE on
-coral-sector coordinates exploited in
+color-sector coordinates exploited in
 [six canonical knot operators](#prop:six-canonical-knot-operators).

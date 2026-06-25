@@ -332,7 +332,7 @@ export default chapter({
         "vertex-operator",
         "vertex-operator-dictionary",
         "vertex-operator-dictionary-table-data",
-        "q-reeb-flow-on-coral-coords",
+        "q-reeb-flow-on-color-coords",
         "six-canonical-knot-operators",
         "six-canonical-knot-operators-table-data",
         "garside-as-compound-flow",

@@ -13,10 +13,10 @@ At every interior $q$, each cross-section of the cone carries a
 copy of the Reeb bundle $\mathcal{R}_p \cong S^3$ over the
 exceptional divisor $\mathcal{S}_p$
 ([exceptional divisor](#def:exceptional-divisor)) at brane point
-$p$, with the three coral sectors
+$p$, with the three color sectors
 $\mathfrak{r}, \mathfrak{g}, \mathfrak{b}$
-([coral-sector coordinates](#def:coral-sector-coords)) threaded
-along the cone under the coral twist $q\phi$.  As $q$ varies the
+([color-sector coordinates](#def:color-sector-coords)) threaded
+along the cone under the color twist $q\phi$.  As $q$ varies the
 embedding $(O, R, T_1, T_2, N)$ deforms continuously, sweeping the
 sectors through their $q$-deformed positions while the underlying
 $\mathcal{S}_p$-topology is preserved.
@@ -41,4 +41,4 @@ the $q$-parameter family of QOUs.  It does *not*
 The visualization is included only to give a reader picking up the
 paper from Chapter 7 onward a unifying picture for how the
 substrate parameter, the exceptional divisor, the Reeb bundle, and
-the coral sectors fit on a single axis.
+the color sectors fit on a single axis.

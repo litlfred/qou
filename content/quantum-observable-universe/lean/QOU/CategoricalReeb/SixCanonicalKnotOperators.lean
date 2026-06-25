@@ -1,10 +1,10 @@
-import QOU.CategoricalReeb.QReebFlowOnCoralCoords
+import QOU.CategoricalReeb.QReebFlowOnColorCoords
 
 /-!
 # QOU.CategoricalReeb.SixCanonicalKnotOperators
 
 The six canonical knot operators as $q$-Reeb-flow trajectories on
-the coral sectors.  Conditional on a `QReebFlowOnCoralCoords q`
+the color sectors.  Conditional on a `QReebFlowOnColorCoords q`
 instance, the boundary permutation induced by each canonical
 braid word equals the corresponding element of $S_3$, realising
 $\rho: B_3 \to S_3$ explicitly as a flow-trajectory computation.
@@ -23,7 +23,7 @@ discharge.
 
 namespace QOU.CategoricalReeb
 
-open CoralSector
+open ColorSector
 
 /-- The six canonical braid words on three strands generating $S_3$. -/
 inductive CanonicalBraid where
@@ -47,8 +47,8 @@ theorem CanonicalBraid.all_nodup :
 
 /-- Permutations of the three colour sectors realised on the
     boundary ramified disc.  We encode them as functions
-    `CoralSector → CoralSector`. -/
-def CanonicalBraid.boundaryPerm : CanonicalBraid → CoralSector → CoralSector
+    `ColorSector → ColorSector`. -/
+def CanonicalBraid.boundaryPerm : CanonicalBraid → ColorSector → ColorSector
   | .identity,        s          => s
   | .sigma1,          red        => green
   | .sigma1,          green      => red
@@ -67,7 +67,7 @@ def CanonicalBraid.boundaryPerm : CanonicalBraid → CoralSector → CoralSector
   | .threeCycleNeg,   blue       => green
 
 /-- `boundaryPerm β` is a bijection on the three-element type
-    `CoralSector` for every canonical braid `β`. -/
+    `ColorSector` for every canonical braid `β`. -/
 theorem boundaryPerm_bijective (β : CanonicalBraid) :
     Function.Bijective β.boundaryPerm := by
   refine ⟨?_, ?_⟩
@@ -77,9 +77,9 @@ theorem boundaryPerm_bijective (β : CanonicalBraid) :
   · intro s
     cases β <;> cases s <;>
       (first
-        | (exact ⟨CoralSector.red,   by decide⟩)
-        | (exact ⟨CoralSector.green, by decide⟩)
-        | (exact ⟨CoralSector.blue,  by decide⟩))
+        | (exact ⟨ColorSector.red,   by decide⟩)
+        | (exact ⟨ColorSector.green, by decide⟩)
+        | (exact ⟨ColorSector.blue,  by decide⟩))
 
 /-- The boundary permutation is an involution exactly for the
     identity element and the three transpositions
@@ -94,8 +94,8 @@ theorem boundaryPerm_involution_iff_transposition (β : CanonicalBraid) :
     case sigma1          => exact Or.inr (Or.inl rfl)
     case sigma2          => exact Or.inr (Or.inr (Or.inl rfl))
     case garside         => exact Or.inr (Or.inr (Or.inr rfl))
-    case threeCyclePos   => exfalso; have := h CoralSector.red; cases this
-    case threeCycleNeg   => exfalso; have := h CoralSector.red; cases this
+    case threeCyclePos   => exfalso; have := h ColorSector.red; cases this
+    case threeCycleNeg   => exfalso; have := h ColorSector.red; cases this
   · intro h s
     rcases h with h | h | h | h <;> subst h <;> cases s <;> rfl
 
@@ -111,13 +111,13 @@ theorem threeCycles_are_inverse :
 /-- The Garside element coincides with the non-adjacent
     transposition $(rb)$ on the boundary. -/
 theorem garside_swaps_red_blue :
-    CanonicalBraid.garside.boundaryPerm CoralSector.red = CoralSector.blue ∧
-    CanonicalBraid.garside.boundaryPerm CoralSector.blue = CoralSector.red := by
+    CanonicalBraid.garside.boundaryPerm ColorSector.red = ColorSector.blue ∧
+    CanonicalBraid.garside.boundaryPerm ColorSector.blue = ColorSector.red := by
   decide
 
 /-- The boundary permutations of the six canonical braids are
     pairwise distinct, so the map
-    `CanonicalBraid → (CoralSector → CoralSector)` realises an
+    `CanonicalBraid → (ColorSector → ColorSector)` realises an
     injection into the symmetric group on three sectors. -/
 theorem boundaryPerm_injective :
     Function.Injective CanonicalBraid.boundaryPerm := by
@@ -128,7 +128,7 @@ theorem boundaryPerm_injective :
     six canonical braids is exactly $6 = |S_3|$.  Together with
     `boundaryPerm_bijective`, this shows the canonical braids
     realise all six elements of the symmetric group on three
-    coral sectors. -/
+    color sectors. -/
 theorem canonical_braid_count_six :
     CanonicalBraid.all.length = 6 ∧ CanonicalBraid.all.Nodup :=
   ⟨CanonicalBraid.all_length, CanonicalBraid.all_nodup⟩
@@ -136,13 +136,13 @@ theorem canonical_braid_count_six :
 /-- **Six canonical knot operators realise $S_3$.**
 
     The six canonical braid words map to six distinct bijections
-    of `CoralSector`, exhausting the six elements of the
+    of `ColorSector`, exhausting the six elements of the
     symmetric group on three sectors.  This is the combinatorial
     boundary-permutation content of
     `prop:six-canonical-knot-operators`; the geometric
     identification of these permutations with the boundary
     footprints of the $q$-Reeb flow trajectories (which DOES
-    consume the `QReebFlowOnCoralCoords q` class) lives in the
+    consume the `QReebFlowOnColorCoords q` class) lives in the
     manuscript prose, not in this theorem. -/
 -- Ref: [manuscript] content/quantum-observable-universe/braids-and-knots/six-canonical-knot-operators.md
 theorem boundary_perm_realises_S3 :

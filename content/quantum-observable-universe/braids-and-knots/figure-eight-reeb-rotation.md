@@ -38,8 +38,8 @@ eigenvalues are complex conjugates on the unit circle.  $\square$
 ## Connection to the $q$-Reeb flow
 
 The $q$-Reeb flow
-([`ex:q-reeb-flow`](../climax-volume-mass/q-reeb-flow-on-coral-coords.md))
-advances the coral-sector angular coordinate by $q \cdot t$
+([`ex:q-reeb-flow`](../climax-volume-mass/q-reeb-flow-on-color-coords.md))
+advances the color-sector angular coordinate by $q \cdot t$
 per crossing on the active strands.  For an alternating braid
 $\sigma_a\sigma_b^{-1}$, the positive crossing $\sigma_a$
 advances by $+q\pi$ and the negative crossing $\sigma_b^{-1}$

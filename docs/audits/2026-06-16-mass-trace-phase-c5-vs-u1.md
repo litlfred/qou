@@ -136,7 +136,7 @@ and the Markov trace decomposes `V = Σ_{λ⊢r} d_λ χ_λ` over them.
 ([`brings-qou-4tuple.md`](../../content/quantum-observable-universe/brings-surface/brings-qou-4tuple.md) L4-10),
 the **S₃ permutes the three color sheets while fixing spacetime**
 (`:31` → SO(3) holonomy), and there are **three copies of S₃ ⊂ S₅**
-([`coral-sector-coords.md`](../../content/quantum-observable-universe/brings-surface/coral-sector-coords.md) L34-37),
+([`color-sector-coords.md`](../../content/quantum-observable-universe/brings-surface/color-sector-coords.md) L34-37),
 ℤ/3-permuted (r→g→b, ψ+2πk/3), each a trefoil-group quotient ⟨x,y|x²=y³⟩
 permuted by the remaining S₅ generators
 ([`chirality-trefoil.md`](../../content/quantum-observable-universe/brings-surface/chirality-trefoil.md) L5-11).

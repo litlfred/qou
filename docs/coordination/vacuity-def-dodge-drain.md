@@ -60,7 +60,7 @@ stub lets the ref resolve to the real decl:
 
 | Deleted stub (mass-theory/) | Resolves to |
 |---|---|
-| `q-reeb-flow-on-coral-coords.lean` | `qou:QOU.CategoricalReeb.QReebFlowOnCoralCoords` |
+| `q-reeb-flow-on-color-coords.lean` | `qou:QOU.CategoricalReeb.QReebFlowOnColorCoords` |
 | `ramified-disc-fusion.lean` | `qou:QOU.BraidsKnots.RamifiedDiscFusion` |
 | `reeb-bundle-complement-equals-volume.lean` | `qou:QOU.BraidsKnots.ReebBundleComplementEqualsVolume` |
 | `six-canonical-knot-operators.lean` | `qou:QOU.CategoricalReeb.boundary_perm_realises_S3` |

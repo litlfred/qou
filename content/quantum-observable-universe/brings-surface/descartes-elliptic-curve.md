@@ -3,8 +3,8 @@
 **Proposition.**
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with
 $\chi(A) = -6$ and substrate parameter $q$.  Set
-$s = \sqrt{q}$.  The coral elliptic fiber
-([coral elliptic](#prop:coral-elliptic)) of Bring's surface
+$s = \sqrt{q}$.  The color elliptic fiber
+([color elliptic](#prop:color-elliptic)) of Bring's surface
 at spacetime ratio $z = s - s^{-1}$ is the elliptic curve
 
 $$
@@ -81,8 +81,8 @@ As $q$ varies from $1$ to $\infty$:
 | Deep quantum | $q \to \infty$ | $\to 0$ | $j \to 0$; curve approaches CM curve |
 
 *Proof.*
-The coral elliptic curve
-([coral elliptic](#prop:coral-elliptic)) at spacetime ratio $z$
+The color elliptic curve
+([color elliptic](#prop:color-elliptic)) at spacetime ratio $z$
 is $X^3 + (z + 1)X^2 + (z^2 + z + 1)X + (z^3 + z^2 + z + 1) = 0$.
 The Weierstrass normal form is obtained by the standard shift
 $X = x - (z + 1)/3$, giving $y^2 = x^3 + p(z)x + r(z)$ with

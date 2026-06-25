@@ -10,7 +10,7 @@ export default lemma({
   uses: [
     "rem:brings-smoothness",
     "rem:weight-space-decomposition",
-    "rem:coral-bundles",
+    "rem:color-bundles",
   ],
   proofs: ["prf:mi-sw-abelianisation-cartan"],
   tags: [

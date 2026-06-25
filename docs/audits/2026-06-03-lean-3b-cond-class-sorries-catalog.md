@@ -472,9 +472,9 @@ Discharge guidance:
 
 - `class BringsIsQouContext` (line 18) — **1** sorry
 
-### [`Brings/coral_elliptic.lean`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/Brings/coral_elliptic.lean)
+### [`Brings/color_elliptic.lean`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/Brings/color_elliptic.lean)
 
-- `class CoralEllipticContext` (line 21) — **1** sorry
+- `class ColorEllipticContext` (line 21) — **1** sorry
 
 ### [`CategoricalReeb/ofWeightDecomposition.lean`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/CategoricalReeb/ofWeightDecomposition.lean)
 

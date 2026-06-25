@@ -7,7 +7,7 @@ unpacked.
 **Three-stage compound flow.**  The Garside word factorises the
 latitude interval $[0,\pi]$ into three equal sub-intervals
 $[0,\pi/3]$, $[\pi/3, 2\pi/3]$, $[2\pi/3, \pi]$.  Inside each
-sub-interval, exactly two of the three coral sectors participate
+sub-interval, exactly two of the three color sectors participate
 in a localised two-strand spiral while the third remains a
 spectator:
 
@@ -67,7 +67,7 @@ of $\xi_q$ never has to be proved directly:
 |---|---|
 | combinatorial $S_3$ bijection on the six braid words | `sorry`-free in Lean (`QOU.CategoricalReeb.boundary_perm_realises_S3`, a finite case check on six `CanonicalBraid` constructors) |
 | closed-form ODE per sub-interval | Python-verified (`computations/reeb_flow_garside_closed_form_verification.py`, witness status `verified`) |
-| existence of $\phi^q_t$ as a continuous group on $\mathcal{R}_p$ | axiomatised via [$q$-Reeb flow on coral coords](#def:q-reeb-flow-on-coral-coords) per AGENTS.md §3b-cond |
+| existence of $\phi^q_t$ as a continuous group on $\mathcal{R}_p$ | axiomatised via [$q$-Reeb flow on color coords](#def:q-reeb-flow-on-color-coords) per AGENTS.md §3b-cond |
 
 Discharging the third row — Picard–Lindelöf for the
 $q$-deformed Reeb vector field — is a separate research direction,

@@ -1,4 +1,4 @@
-The terminology *coral tube* reflects two features of the geometry.
+The terminology *color tube* reflects two features of the geometry.
 
 **Color.**
 The coordinates $r, g, b$ label the three color degrees of freedom

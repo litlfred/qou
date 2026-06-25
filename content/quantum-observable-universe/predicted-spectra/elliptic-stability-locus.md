@@ -1,13 +1,13 @@
-The stability curve and the coral fibration of Bring's surface
+The stability curve and the color fibration of Bring's surface
 share the same algebraic origin.  We conjecture that the
 nuclear degeneracy locus — the curve in the $(p, A)$-plane where
 adjacent nuclei have equal energy — is an elliptic curve
-isogenous to the coral fiber $\mathcal{E}_z$.
+isogenous to the color fiber $\mathcal{E}_z$.
 
 **The two cubics.**
 
-The coral elliptic curve
-([coral elliptic](#prop:coral-elliptic)) at spacetime ratio
+The color elliptic curve
+([color elliptic](#prop:color-elliptic)) at spacetime ratio
 $z$ is
 
 $$
@@ -137,7 +137,7 @@ locus would intersect the stability curve.
 
 If the conjecture holds, then:
 
-- The **three coral tubes** $(r, g, b)$ of the color
+- The **three color tubes** $(r, g, b)$ of the color
   fibration correspond to the **three sectors** of nuclear
   binding: volume (strong), Coulomb (electromagnetic), and
   Pauli (exclusion).

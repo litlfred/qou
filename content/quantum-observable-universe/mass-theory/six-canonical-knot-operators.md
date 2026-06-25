@@ -1,11 +1,11 @@
 **Proposition (conditional on
-[`def:q-reeb-flow-on-coral-coords`](#def:q-reeb-flow-on-coral-coords)).**
+[`def:q-reeb-flow-on-color-coords`](#def:q-reeb-flow-on-color-coords)).**
 *Let $\mathcal{R}_p$ be the Reeb bundle over the exceptional
-divisor at brane point $p$, equipped with the coral-sector
+divisor at brane point $p$, equipped with the color-sector
 coordinates $\mathfrak{r}, \mathfrak{g}, \mathfrak{b}$
-([coral-sector coordinates](#def:coral-sector-coords)) and the
+([color-sector coordinates](#def:color-sector-coords)) and the
 $q$-Reeb flow $\phi^q_t$
-([$q$-Reeb flow on coral coords](#def:q-reeb-flow-on-coral-coords)).
+([$q$-Reeb flow on color coords](#def:q-reeb-flow-on-color-coords)).
 For each of the six elements $w \in S_3 = \langle \sigma_1, \sigma_2 \mid
 \sigma_i^2 = \mathbf{1},\; \sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2 \rangle$
 the corresponding braid word $\beta_w \in B_3$ generates a unique
@@ -15,7 +15,7 @@ ramified output disc.*
 
 The six trajectories are tabulated below.  Each row specifies
 (i) the braid word $\beta_w$, (ii) the per-sector flow rate
-$\dot\psi^{(s)}$, (iii) the explicit trajectory in coral-sector
+$\dot\psi^{(s)}$, (iii) the explicit trajectory in color-sector
 coordinates, and (iv) the induced boundary permutation $\sigma_w$
 on the colour-tube triple $(r,g,b)$.
 
@@ -24,7 +24,7 @@ See [Table](#tbl:six-canonical-knot-operators-table-data).
 **Sketch of proof.**
 
 1. **Identity.**  When no braid generator acts, the localisation
-   rule of [`def:q-reeb-flow-on-coral-coords`](#def:q-reeb-flow-on-coral-coords)
+   rule of [`def:q-reeb-flow-on-color-coords`](#def:q-reeb-flow-on-color-coords)
    reduces all three sectors to spectators, so each strand traces
    the meridian $\psi^{(s)} = \mathrm{const}$ from the south
    foundry to the north foundry.  The boundary footprint is the
@@ -75,7 +75,7 @@ from [$\rho$ as $S_3$ holonomy on Lagrange resolvents](#rem:rho-s3-holonomy-expo
 *explicitly as a trajectory computation* in the Reeb bundle. $\square$
 
 **Why this is conditional.**  The proof above takes the
-[$q$-Reeb flow on coral coords](#def:q-reeb-flow-on-coral-coords)
+[$q$-Reeb flow on color coords](#def:q-reeb-flow-on-color-coords)
 class as given: it uses only the additive composition rule and
 the two-strand localisation rule.  The underlying differential-
 geometric existence of $\phi^q_t$ — the integrability of $\xi_q$,
@@ -88,7 +88,7 @@ discharged by the Lean theorem
 (which combines `boundaryPerm_injective`, `boundaryPerm_bijective`,
 and the count `canonical_braid_count_six`: the six constructors
 of `CanonicalBraid` form a nodup list of length six, so the
-induced map to permutations of `CoralSector` is an injection
+induced map to permutations of `ColorSector` is an injection
 onto a set of size six $= |S_3|$).  This Lean theorem is
 unconditional — it is a finite case check on six branches —
 because the boundary-permutation table is itself purely
@@ -96,7 +96,7 @@ combinatorial; the geometric identification of those
 permutations as the boundary footprints of the $q$-Reeb-flow
 trajectories is the content of the manuscript prose above and
 remains conditional on
-[$q$-Reeb flow on coral coords](#def:q-reeb-flow-on-coral-coords).
+[$q$-Reeb flow on color coords](#def:q-reeb-flow-on-color-coords).
 
 **Volume corollaries.**  The two 3-cycle trajectories lie on a
 Heegaard torus, so their knot complement contains a Seifert-fibered

@@ -1,5 +1,5 @@
 """Lever-1 (owner-ungated 2026-06-25), follow-up: the curve-INTRINSIC candidate for
-theta_binding -- the Tate/multiplicative period 2*pi*Im(tau_E) of the coral E_q.
+theta_binding -- the Tate/multiplicative period 2*pi*Im(tau_E) of the color E_q.
 
 Single PRE-REGISTERED principled candidate (no fishing):
   theta_cand(q) = 2*pi*Im(tau_E^reduced(q)),
@@ -7,13 +7,13 @@ calibrated by the substrate torus, where theta_torus = 2 log q0 = 2*pi*Im(tau_to
 (Tate curve q_Tate = q0^2, tau_torus = log(q0^2)/(2 pi i)).
 
 DECISIVE q-sensitivity test: theta_binding(q) = acosh(tau_binding(q)/2) genuinely moves
-with q (0.7714 at q=1 -> 0.7815 at q0). A single-curve intrinsic invariant of the coral
+with q (0.7714 at q=1 -> 0.7815 at q0). A single-curve intrinsic invariant of the color
 E_q is nearly q-independent (j: 128 -> 129.86 over [1,q0]). So we compute theta_cand at
 BOTH q=1 and q0 and compare value AND q-slope to theta_binding. If theta_cand barely
 moves and/or misses the value, the intrinsic-period reading is ruled out (scope-(a)),
 completing the trilemma: theta_binding is neither loop-monodromy, nor path-transport,
 nor single-curve intrinsic period -> it is the W_lambda-side localization (MTC matching),
-not a coral-E_q period.
+not a color-E_q period.
 
 tau_E via the elliptic modulus m = (e2-e3)/(e1-e3), tau = i K(1-m)/K(m); validated by
 kleinj(tau) == j(curve). Reduced to the fundamental domain before taking Im.
@@ -111,13 +111,13 @@ assertions = {
 solid = r1["j_validates"] and r0["j_validates"]
 hit = hit_value and tracks_q
 witness = {
-    "computation": "lever1_coral_eq_intrinsic_tau_rapidity",
+    "computation": "lever1_color_eq_intrinsic_tau_rapidity",
     "description": (
         "Single pre-registered curve-intrinsic candidate for theta_binding: the Tate/"
-        "multiplicative period theta_cand = 2 pi Im(tau_E) of the coral E_q (torus-"
+        "multiplicative period theta_cand = 2 pi Im(tau_E) of the color E_q (torus-"
         "calibrated: theta_torus = 2 log q0 = 2 pi Im(tau_torus)). Decisive q-sensitivity "
         "test at q=1 vs q0: theta_binding(q) moves with q but a single-curve invariant of "
-        "the barely-deformed coral E_q (j: 128->129.86) does not. tau_E via m=(e2-e3)/"
+        "the barely-deformed color E_q (j: 128->129.86) does not. tau_E via m=(e2-e3)/"
         "(e1-e3), validated by kleinj(tau)=j."
     ),
     "discipline": (
@@ -125,7 +125,7 @@ witness = {
         "reported hit/miss; tau_E independently validated by the Klein j-function. Decisive "
         "q-slope comparison rather than a single-point coincidence."
     ),
-    "auditOnly": "docs/audits/2026-06-25-lever1-coral-eq-lambda-sw-rapidity.md",
+    "auditOnly": "docs/audits/2026-06-25-lever1-color-eq-lambda-sw-rapidity.md",
     "results": results, "assertions": assertions, "allPassed": bool(solid),
 }
 witness["verdict"] = (
@@ -136,15 +136,15 @@ witness["verdict"] = (
      "to <1e-6), but the torus-calibrated candidate theta_cand = 2 pi Im(tau_E) = " +
      r0["theta_cand_2pi_Im"] + " misses theta_binding = " + r0["theta_binding"] +
      f" at q0 (6.5x), and its q-slope ({dtheta_cand:.2e}) is ~6x flatter than theta_binding's "
-     f"({dtheta_binding:.2e}). Reason: Im(tau_E)~0.93 -> the coral E_q is GENERIC, not near the "
+     f"({dtheta_binding:.2e}). Reason: Im(tau_E)~0.93 -> the color E_q is GENERIC, not near the "
      "Tate/cusp regime where the torus calibration (theta_torus=2 pi Im tau_torus, Im~0.03) lives. "
      "Scope (a): rules out THIS principled candidate, not every intrinsic invariant (a j-tuned one "
      "would be fishing). With the monodromy (integer-trace) and transport (too-small) negatives, "
-     "the geometric origin of theta_binding is NOT a coral-E_q period -- it points to the W_lambda-"
+     "the geometric origin of theta_binding is NOT a color-E_q period -- it points to the W_lambda-"
      "side Plancherel/MTC localization (keystone residual i, the already-open frontier).")
     + " No fit; nothing wired."
 )
-out = os.path.join(os.path.dirname(__file__), "lever1-coral-eq-intrinsic-tau-rapidity.witness.json")
+out = os.path.join(os.path.dirname(__file__), "lever1-color-eq-intrinsic-tau-rapidity.witness.json")
 with open(out, "w") as f:
     json.dump(witness, f, indent=2, default=str)
 

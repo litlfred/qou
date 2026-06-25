@@ -118,7 +118,7 @@ The corpus already carries a *geometric* construction that realizes the $S_3$ si
 on the exceptional divisor $\mathcal{S}_p\cong\mathbb{CP}^1=S^2$ (Reeb/Hopf bundle $S^3\to S^2$),
 threading the six $S_3$ braid words into six knot operators with boundary monodromy $=$ the $S_3$
 Galois action ([`exceptional-divisor-reeb-intro.md`](../../content/quantum-observable-universe/mass-theory/exceptional-divisor-reeb-intro.md),
-[`q-reeb-flow-on-coral-coords`](../../content/quantum-observable-universe/mass-theory/q-reeb-flow-on-coral-coords.md)). Since
+[`q-reeb-flow-on-color-coords`](../../content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.md)). Since
 $S^2$ is exactly where $\mathrm{SO}(3)\supset A_5\cong I$ acts, this is the right arena for the
 *geometric* fibre map — but **as built it realizes only the cyclic $C_5$ (Lagrange-resolvent
 diagonalization) and is a 3-strand construction**, i.e. the $S_3$ *target*, not the $S_5$ *source*.

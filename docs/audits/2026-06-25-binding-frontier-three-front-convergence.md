@@ -9,7 +9,7 @@ fronts in parallel: (1) the A=4 interface operator (Option E PROBE 2),
 note records what a thorough corpus investigation found: **every actionable,
 non-owner-gated piece of all three fronts is already banked / recorded /
 pruned, and all three converge on a single owner-gated object** — the
-abelianised λ_SW Cartan-connection holonomy on the coral elliptic curve `E_q`
+abelianised λ_SW Cartan-connection holonomy on the color elliptic curve `E_q`
 reproducing `θ = 0.7815` (equivalently `tr B = τ = 2.6424`).
 
 ## The convergence (one picture)
@@ -25,7 +25,7 @@ A=4 interface operator (front 1)         Lever-1 R(q,x) (front 2)
                               │                              │
                      geometric origin of τ                  │
                               ▼                              │
-        s5-so3 keystone (front 3): coral E_q identified,     │
+        s5-so3 keystone (front 3): color E_q identified,     │
         Picard–Fuchs route pruned ─ open step = abelianised  │
         λ_SW holonomy = θ=0.7815  ── OWNER-GATED ────────────┘
 ```
@@ -87,9 +87,9 @@ session via `binding_selection_rule_tau_closure.py`:
 
 ## Front 3 — s5-so3 keystone pre-work: curve identified, route pruned
 
-From [`lever1-coral-eq-monodromy-integrality.witness.json`](../../computations/lever1-coral-eq-monodromy-integrality.witness.json)
-(probe, no fit) and `docs/audits/2026-06-24-lever1-coral-eq-monodromy-integrality.md`:
-- **Curve identified:** coral `E_q` = descartes `E_q`, `j(q₀) ≈ 129.86`;
+From [`lever1-color-eq-monodromy-integrality.witness.json`](../../computations/lever1-color-eq-monodromy-integrality.witness.json)
+(probe, no fit) and `docs/audits/2026-06-24-lever1-color-eq-monodromy-integrality.md`:
+- **Curve identified:** color `E_q` = descartes `E_q`, `j(q₀) ≈ 129.86`;
   classical limit `j(1)=128`, `p(1)=2/3`, `r(1)=20/27` exact.
 - **Picard–Fuchs route formalize-first-pruned.** The topological Gauss–Manin
   monodromy of an elliptic family lies in `SL₂(ℤ)` (preserves `H¹(E,ℤ)`) →
@@ -112,7 +112,7 @@ extensive piece (front 2) is banked; the magnitude τ that sets the extensive
 piece has its geometric origin in **one owner-gated object** (front 3). So:
 
 - **No non-gated, non-fitting forward step remains on binding *magnitude*.**
-- The genuine unlock is the owner-gated keystone holonomy (θ=0.7815 from coral
+- The genuine unlock is the owner-gated keystone holonomy (θ=0.7815 from color
   `E_q`'s abelianised λ_SW connection). Everything else is done.
 - ρ-free *ratios* (Lever 3, bean `thb7`) remain the one parameter-free
   *falsifiable-prediction* avenue (A=3 mirror `B(³H)/B(³He)` ≈ +1.67% banked;
@@ -147,17 +147,17 @@ The author asked to push all remaining fronts. Honest dispositions:
 
 ### Option 2 — keystone holonomy (the only unlock; documented gate)
 Open object: the **explicit abelianised λ_SW Cartan-connection 1-form** on
-coral `E_q`, whose holonomy at q₀ must reproduce `θ = 0.7815`
+color `E_q`, whose holonomy at q₀ must reproduce `θ = 0.7815`
 (`τ = 2cosh θ = 2.6424`).
-- Topological route **pruned** (`lever1_coral_eq_monodromy_integrality.py`):
+- Topological route **pruned** (`lever1_color_eq_monodromy_integrality.py`):
   the period monodromy is `SL₂(ℤ)` (integer trace), `τ ∉ ℤ` — wrong object.
 - **Sandbox attempt:** the symbolic Weierstrass form of `E_q` is in hand
-  (`lever1_coral_eq_monodromy_integrality.py:38–46`), but the λ_SW connection
+  (`lever1_color_eq_monodromy_integrality.py:38–46`), but the λ_SW connection
   1-form is **not yet constructed** — that is the owner-reversed M-workplan
   abelianisation (DG), and Sage/RiemannSurface is absent here (period
   integration blocked). Cannot complete in this sandbox.
 - **What a Sage/DG session needs:** (i) the explicit λ_SW connection from the
-  Cartan reduction of the SW differential on the Bring/coral fibre;
+  Cartan reduction of the SW differential on the Bring/color fibre;
   (ii) parallel-transport its abelianised holonomy around the q₀ fibre;
   (iii) verify `tr = 2.6424`. This is the s5-so3 keystone proper (#2503/#2524).
 

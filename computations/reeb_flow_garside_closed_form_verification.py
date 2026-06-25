@@ -4,12 +4,12 @@
 W5 of the 1ppb compute tranche / cheat-sheet §5 Migration Backlog #5:
 compute verification for the Reeb-flow / Garside closed form.
 
-Verifies the closed-form trajectory + net coral-twist predictions of
+Verifies the closed-form trajectory + net color-twist predictions of
 the four paper-only commits (`b6ed74635`, `88d7934b4`, `172263c6e`,
 `6ce96b4ce`) for all six canonical knot operators in
 `prop:six-canonical-knot-operators`.
 
-The Reeb flow on coral sectors (r, g, b) is piecewise-affine in the
+The Reeb flow on color sectors (r, g, b) is piecewise-affine in the
 angular coordinate φ ∈ [0, π]; within each sub-interval the rate
 `k^(s)·q` is constant, so the closed-form trajectory is
 
@@ -21,7 +21,7 @@ This script tests two things per operator:
   (A) **Closed-form consistency** — evaluate the closed-form at
       each sub-interval boundary and confirm it equals the direct
       iterative composition (apply each sub-flow sequentially).
-  (B) **Net coral-twist Δψ^(s)** — match the predicted value at
+  (B) **Net color-twist Δψ^(s)** — match the predicted value at
       φ=π against the table in `prop:six-canonical-knot-operators`.
   (C) **Centre-of-mass invariance class** — transpositions preserve
       Σ_s Δψ^(s) = 0; 3-cycles shift by ±2qπ.
@@ -32,7 +32,7 @@ WitnessBuilder.
 Cross-references:
   - prop:six-canonical-knot-operators (the table)
   - rem:garside-flow-explicit-closed-form (the Garside formula)
-  - def:q-reeb-flow-on-coral-coords (the dynamical rule)
+  - def:q-reeb-flow-on-color-coords (the dynamical rule)
   - prop:hyperbolic-knot-positive-volume-via-reeb
   - prop:torus-knot-zero-volume-via-reeb
 """
@@ -53,7 +53,7 @@ set_compute_dps()
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-# ── Coral-sector flow rate table (from prop:six-canonical-knot-operators) ──
+# ── Color-sector flow rate table (from prop:six-canonical-knot-operators) ──
 #
 # Each operator decomposes [0, π] into sub-intervals; each sub-interval
 # has a constant per-sector rate (k_r, k_g, k_b) — the rate as a
@@ -173,7 +173,7 @@ def main() -> int:
     builder = WitnessBuilder("reeb-flow-garside-closed-form-verification")
     builder.set_description(
         "Compute verification of the Reeb-flow / Garside closed-form "
-        "trajectory on coral sectors (r, g, b) for the six canonical "
+        "trajectory on color sectors (r, g, b) for the six canonical "
         "knot operators in prop:six-canonical-knot-operators. Cross-"
         "validates the closed-form trajectory at q_0 (50 dps) against "
         "direct iterative composition over the piecewise-affine sub-"

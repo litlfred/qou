@@ -1,0 +1,44 @@
+{
+  "computation": "lever1_color_eq_intrinsic_tau_rapidity",
+  "description": "Single pre-registered curve-intrinsic candidate for theta_binding: the Tate/multiplicative period theta_cand = 2 pi Im(tau_E) of the color E_q (torus-calibrated: theta_torus = 2 log q0 = 2 pi Im(tau_torus)). Decisive q-sensitivity test at q=1 vs q0: theta_binding(q) moves with q but a single-curve invariant of the barely-deformed color E_q (j: 128->129.86) does not. tau_E via m=(e2-e3)/(e1-e3), validated by kleinj(tau)=j.",
+  "discipline": "no fit; mpmath 30dps; ONE pre-registered principled candidate (2 pi Im tau_E), reported hit/miss; tau_E independently validated by the Klein j-function. Decisive q-slope comparison rather than a single-point coincidence.",
+  "auditOnly": "docs/audits/2026-06-25-lever1-color-eq-lambda-sw-rapidity.md",
+  "results": {
+    "classical_q1": {
+      "label": "classical q=1",
+      "q": "1.0",
+      "j_curve": "128.0",
+      "j_from_tau_kleinj": "128.0",
+      "j_validates": true,
+      "tau_E": "(0.3668084052 + 0.9302965086j)",
+      "Im_tau_E": "0.9302965086",
+      "theta_cand_2pi_Im": "5.845225354",
+      "theta_binding": "0.7713074592",
+      "rel_err": 6.578333755969679
+    },
+    "substrate_q0": {
+      "label": "substrate q0",
+      "q": "1.10997859556",
+      "j_curve": "129.86035",
+      "j_from_tau_kleinj": "129.86035",
+      "j_validates": true,
+      "tau_E": "(0.366098721 + 0.9305760187j)",
+      "Im_tau_E": "0.9305760187",
+      "theta_cand_2pi_Im": "5.846981568",
+      "theta_binding": "0.781453946",
+      "rel_err": 6.482183175911754
+    },
+    "dtheta_binding_q1_to_q0": 0.0101464868,
+    "dtheta_cand_q1_to_q0": 0.001756214,
+    "theta_binding_q0": "0.781453946",
+    "theta_cand_q0": "5.846981568"
+  },
+  "assertions": {
+    "tau_E_validated_by_kleinj_q1": true,
+    "tau_E_validated_by_kleinj_q0": true,
+    "theta_cand_matches_binding_value_1pct_q0": false,
+    "theta_cand_tracks_binding_q_dependence": false
+  },
+  "allPassed": true,
+  "verdict": "INTRINSIC MISS (scope-(a) on the principled candidate): tau_E is validated (kleinj*1728=j to <1e-6), but the torus-calibrated candidate theta_cand = 2 pi Im(tau_E) = 5.846981568 misses theta_binding = 0.781453946 at q0 (6.5x), and its q-slope (1.76e-03) is ~6x flatter than theta_binding's (1.01e-02). Reason: Im(tau_E)~0.93 -> the color E_q is GENERIC, not near the Tate/cusp regime where the torus calibration (theta_torus=2 pi Im tau_torus, Im~0.03) lives. Scope (a): rules out THIS principled candidate, not every intrinsic invariant (a j-tuned one would be fishing). With the monodromy (integer-trace) and transport (too-small) negatives, the geometric origin of theta_binding is NOT a color-E_q period -- it points to the W_lambda-side Plancherel/MTC localization (keystone residual i, the already-open frontier). No fit; nothing wired."
+}

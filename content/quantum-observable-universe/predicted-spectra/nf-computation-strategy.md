@@ -14,7 +14,7 @@ needed.
 
 **Regime 2: Symbolic Gröbner--Shirshov with stripping ($O(A^3)$).**
 The full NF is needed for the Pauli factor $F_{\mathrm{Pauli}}$,
-the coral content, and the per-length weight distribution.  With
+the color content, and the per-length weight distribution.  With
 inductive quotient stripping at strand boundaries (I$_{8}$ + I$_{9}$
 applied after each strand), the intermediate term count stays
 bounded at $O(A^2)$ per strand, giving $O(A^3)$ total.  All
@@ -132,7 +132,7 @@ quotient ideal, further reducing term counts.
 | $\leq 40$ | Transfer matrix only | $< 1$s | $< 1$MB | $O(A^2)$ |
 
 For $Q$-values: the transfer matrix ($O(A^2)$) suffices for any $A$.
-For $F_{\mathrm{Pauli}}$ and coral content: the symbolic engine
+For $F_{\mathrm{Pauli}}$ and color content: the symbolic engine
 handles $A \leq 16$ in minutes and $A \leq 20$ with big integer
 arithmetic.  Beyond $A = 20$: float engine (v6) with per-length
 accumulation, sacrificing exact-in-$q$ for tractability.

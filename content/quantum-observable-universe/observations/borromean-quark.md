@@ -1,11 +1,11 @@
 Quarks are not fundamental knots.  A quark is a **neutrino
-(unknot) trapped in a coral tube of Bring's surface,
+(unknot) trapped in a color tube of Bring's surface,
 Borromean-linked with two other unknots** in the exceptional
 divisor.
 
 **Conjecture.**
 *The baryon is the Borromean link $\mathcal{B}_3$ of three
-unknots threaded through the coral tubes $(r, g, b)$ of the
+unknots threaded through the color tubes $(r, g, b)$ of the
 Bring's surface ([color tube coordinates](#def:color-tube-coordinates)),
 bound by the Hopf link $\mathcal{L}_H$:*
 
@@ -18,7 +18,7 @@ $$
 
 *where $\nu_r$, $\nu_g$, $\nu_b$ are unknots
 ([neutrino](#def:neutrino-knot)) localized in the red, green,
-and blue coral tubes respectively.  The "up" and "down" quark
+and blue color tubes respectively.  The "up" and "down" quark
 flavours correspond to the crossing orientation of each unknot
 within the Borromean structure.*
 
@@ -58,17 +58,17 @@ $\sim 10$ MeV.
 **Up and down from crossing orientation.**
 
 Within $\mathcal{B}_3$, the three components are related by
-the cyclic symmetry of the coral tubes.  The $S_3$ permutation
+the cyclic symmetry of the color tubes.  The $S_3$ permutation
 symmetry acts on the color assignment $(r, g, b)$.  Breaking
 this symmetry into a $2 + 1$ partition gives two components
 with one crossing orientation (**up quarks**) and one with the
 reversed orientation (**down quark**):
 
-- **Up quark** $u$: unknot in coral tube with positive
+- **Up quark** $u$: unknot in color tube with positive
   crossing orientation within $\mathcal{B}_3$.
   Coulomb charge contribution: $+2/3$ of the proton charge.
 
-- **Down quark** $d$: unknot in coral tube with negative
+- **Down quark** $d$: unknot in color tube with negative
   (reversed) crossing orientation within $\mathcal{B}_3$.
   Coulomb charge contribution: $-1/3$ of the proton charge.
 
@@ -93,11 +93,11 @@ invariant $\bar{\mu}_{123} = \pm 1$ encodes confinement.
 **The exceptional divisor as quark habitat.**
 
 The Borromean linking happens in the **exceptional divisor**
-of the brane tower — the blow-up locus where the coral tubes
+of the brane tower — the blow-up locus where the color tubes
 of Bring's surface meet.  The unknots (neutrinos) are
 spacetime objects; their Borromean linking is a **fiber
 phenomenon** that exists only in the exceptional divisor.
-A free neutrino (unknot not in a coral tube) has no Borromean
+A free neutrino (unknot not in a color tube) has no Borromean
 partners and no mass from linking.
 
 This explains why quarks are never observed in isolation: the

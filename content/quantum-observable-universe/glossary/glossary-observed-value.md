@@ -1,8 +1,8 @@
-Let $\mathbf{r}_z, \mathbf{g}_z, \mathbf{b}_z$ be the coral tube
+Let $\mathbf{r}_z, \mathbf{g}_z, \mathbf{b}_z$ be the color tube
 coordinates at a point of Bring's surface
 ([colour tube fibres](#def:color-tube-fibers)).  The
 :defterm[observed spacetime value]{#observed-value} is the element of $\mathbb{A}^1$
-recovered from the coral tube coordinates by the Vieta
+recovered from the color tube coordinates by the Vieta
 identity:
 
 ```tex

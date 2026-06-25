@@ -1,12 +1,12 @@
-The spacetime--coral decomposition of Bring's surface maps accordingly onto
+The spacetime--color decomposition of Bring's surface maps accordingly onto
 three classical bundle structures over the $\mathbb{P}^1(\mathbb{C})$ base $z=x_0/x_1$.
 
 **Cotangent bundle.**
-The three-sheeted cubic ([coral elliptic curve](#prop:coral-elliptic)) realises the coral
+The three-sheeted cubic ([color elliptic curve](#prop:color-elliptic)) realises the color
 variables $X=(x_2,x_3,x_4)$ as a *spectral curve*
 $\Sigma\subset T^{*}\mathbb{P}^1(\mathbb{C})$: the base coordinate $z$ parametrises
 spacetime position, and the three roots $X_1,X_2,X_3$ of
-[coral elliptic curve](#prop:coral-elliptic) are eigenvalues of a Higgs-like
+[color elliptic curve](#prop:color-elliptic) are eigenvalues of a Higgs-like
 field $\Phi$ on the base. The six singular fibres (where the discriminant
 $\Delta(z)$ vanishes) are the loci at which eigenvalues coincide and the
 differential $dX$ degenerates in the cotangent fibre.
@@ -14,7 +14,7 @@ differential $dX$ degenerates in the cotangent fibre.
 **Spinor bundle.**
 The spectral modes $w_1,\dots,w_4$
 ([Lagrange resolvents](#rem:lagrange-resolvents)) live in a rank-$2$ complex vector
-bundle over $\mathbb{P}^1(\mathbb{C})$. The coral doublet
+bundle over $\mathbb{P}^1(\mathbb{C})$. The color doublet
 $\Psi_L=(w_1,w_2)^T$ and its conjugate $\Psi_R=(w_4,w_3)^T$ transform
 under the $\mathrm{SU}(2)$ holonomy generators
 $H_1,H_2$ of

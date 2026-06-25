@@ -11,13 +11,13 @@ export default remark({
     "heat-death",
     "exceptional-divisor",
     "reeb-bundle",
-    "coral-sectors",
+    "color-sectors",
     "schematic",
   ],
   uses: [
     "conj:bigbang-heatdeath",
     "def:exceptional-divisor",
-    "def:coral-sector-coords",
+    "def:color-sector-coords",
     "def:substrate-parameter",
   ],
 });

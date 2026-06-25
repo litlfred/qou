@@ -31,7 +31,7 @@ The substrate symmetry $S_5$ acts on all five coordinates. Its block-diagonal
 subgroup $S_2\times S_3$ permutes spacetime and color **separately**: the
 $S_3$ permutes the three color sheets while holding spacetime fixed (the
 three copies of $S_3\subset S_5$ of
-[`coral-sector-coords`](../brings-surface/coral-sector-coords.md),
+[`color-sector-coords`](../brings-surface/color-sector-coords.md),
 [`rem:chirality-trefoil`](#rem:chirality-trefoil)), and the $S_2$ permutes the
 two spacetime coordinates while holding color fixed. Parts (1)–(2) make this
 precise: the product embeds faithfully and each factor fixes the other

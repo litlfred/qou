@@ -3,7 +3,7 @@
 **Date:** 2026-06-24
 **Probe:** [`computations/substrate/lever1_lw_depth2_recurrence_test.py`](../../computations/substrate/lever1_lw_depth2_recurrence_test.py)
 **Witness:** [`computations/substrate/lever1-lw-depth2-recurrence-test.witness.json`](../../computations/substrate/lever1-lw-depth2-recurrence-test.witness.json) (7/7)
-**Status:** the "derive `θ_binding`" step (option 3), with a decisive negative. No fit; symbolic in `q` + 50-dps at `q₀`; not owner-gated (pure recurrence arithmetic). Follows [`2026-06-24-lever1-coral-eq-monodromy-integrality.md`](2026-06-24-lever1-coral-eq-monodromy-integrality.md).
+**Status:** the "derive `θ_binding`" step (option 3), with a decisive negative. No fit; symbolic in `q` + 50-dps at `q₀`; not owner-gated (pure recurrence arithmetic). Follows [`2026-06-24-lever1-color-eq-monodromy-integrality.md`](2026-06-24-lever1-color-eq-monodromy-integrality.md).
 
 ## The question
 
@@ -56,7 +56,7 @@ tending to a constant `λ`: `lw(c)` grows **super-geometrically** (like the invo
 - **What this does NOT refute** (scope guard): it does **not** refute the
   `Jac(Bring) ~ E⁴` isogeny (sibling branch `mass-open-keystone-w-l2-root`,
   `2026-06-24-keystone-bring-jacobian-E4-elliptic-W-plane.md` — correct and complementary), nor the
-  existence of a 2×2 `M` on the elliptic factor, nor the coral `E_q` curve identification
+  existence of a 2×2 `M` on the elliptic factor, nor the color `E_q` curve identification
   (`j(q₀)=129.86`, confirmed). It refutes that the **selection-rule `lw` values ARE that `M`'s
   prolonged periods** beyond the seed.
 
@@ -67,7 +67,7 @@ recurrence is over-determined (3 anchors, 1 kernel) and fails on the 4th. Two ho
 remain:
 
 1. **Drop `a_D = lw` beyond the seed.** Compute the *genuine* prolonged periods of the abelianised
-   `λ_SW` connection on the coral `E_q` (the sibling's elliptic factor `E = Bring/S₄`); they will be
+   `λ_SW` connection on the color `E_q` (the sibling's elliptic factor `E = Bring/S₄`); they will be
    *some* sequence whose depth-2 `M` is exact by construction — and `lw` is then only the c=1,2,3
    physical anchors, not the period sequence.
 2. **Accept `a_D = lw` and drop depth-2-constant.** Then `B` is not a fixed `SL₂` element; the
@@ -77,4 +77,4 @@ remain:
 Either way, `τ_binding = 2.6424` stands only as the **seed (c=1,2,3) kernel**, and `θ_binding` is
 not a keystone-derived constant. **Not a closure; a falsification that redirects the path.** No fit;
 nothing wired; no tier change. Coordinated with `mass-open-keystone-w-l2-root` (whose open `j(E)` is
-answered by the coral `j(q₀)=129.86`).
+answered by the color `j(q₀)=129.86`).

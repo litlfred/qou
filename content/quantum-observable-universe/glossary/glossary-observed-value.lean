@@ -4,7 +4,7 @@ import Mathlib.Data.Real.Basic
 /-!
 # QOU.ObservedValue — Glossary: observed spacetime value
 
-The spacetime coordinate z recovered from coral tube coordinates
+The spacetime coordinate z recovered from color tube coordinates
 via the Vieta identity z = S/D.
 
 LaTeX label: `rem:glossary-observed-value`
@@ -18,7 +18,7 @@ See `GroundRingAnnotations.lean`.
 namespace QOU
 
 /-- The observed spacetime value: the element of 𝔸¹ recovered
-    from coral tube coordinates by the Vieta identity z = S/D,
+    from color tube coordinates by the Vieta identity z = S/D,
     where S = Σ cᵢ and D = Σ cᵢcⱼ. -/
 -- Ref: [manuscript] Ch. 8 Glossary
 structure ObservedValue where

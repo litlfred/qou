@@ -1,7 +1,7 @@
-_[draft]_ The coral fibration of the previous section is well-defined
+_[draft]_ The color fibration of the previous section is well-defined
 generically, but the geometry needs a smooth bundle to support the
-spectral resolvents that follow. **Coral space as spectral curve
-and spinor bundle** (rem) packages the coral data as a spectral
+spectral resolvents that follow. **Color space as spectral curve
+and spinor bundle** (rem) packages the color data as a spectral
 curve carrying a spinor bundle, and **Smoothness of the Bring's
 surface and intrinsic resolution of projection singularities** (prop)
 together with **Smoothness of Bring's surface and resolution of

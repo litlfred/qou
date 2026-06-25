@@ -81,7 +81,7 @@ the tau ($T_{2,7}$) acquires mass through the same Higgs
 mechanism at Reeb degree $3$.
 
 **Step 4: Color-tube linking generates hadronic mass.**
-Baryons require three generators threaded through the coral tubes
+Baryons require three generators threaded through the color tubes
 $(r, g, b)$
 ([color tube coordinates](#def:color-tube-coordinates)).  The proton
 is:
@@ -93,7 +93,7 @@ $$
 $$
 
 where $\ell_c$ threads two trefoils (up quarks) and one Skein
-descendant $T_{2,3}^{\sigma}$ (down quark) through the coral tubes and
+descendant $T_{2,3}^{\sigma}$ (down quark) through the color tubes and
 $\mathcal{L}_{\mathrm{Hopf}}$ binds them.  The mass is:
 
 $$

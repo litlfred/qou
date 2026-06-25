@@ -21,7 +21,7 @@ See [Table 2](#tbl:linking-relations-table-table2-data).
 
 ## Table 3: Color-tube linking $[K_1, K_2, K_3]_p$ — Borromean construction
 
-Three knots threaded through the three coral tubes of the Bring
+Three knots threaded through the three color tubes of the Bring
 surface form a Borromean-linked baryon.
 
 See [Table 3](#tbl:linking-relations-table-table3-data).

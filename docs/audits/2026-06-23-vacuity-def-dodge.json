@@ -766,13 +766,13 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-coral-coords.lean": [
+    "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.lean": [
       {
         "line": 30,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true",
-        "snippet": "def QReebFlowOnCoralCoords_stub : True := trivial",
-        "decl": "QReebFlowOnCoralCoords_stub",
+        "snippet": "def QReebFlowOnColorCoords_stub : True := trivial",
+        "decl": "QReebFlowOnColorCoords_stub",
         "severity": "critical"
       }
     ],

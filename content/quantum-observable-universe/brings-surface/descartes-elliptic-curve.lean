@@ -4,7 +4,7 @@ import Mathlib.Data.Real.Basic
 /-!
 # QOU.Archimedean.descartes_elliptic_curve — The Descartes elliptic curve E_q
 
-The coral elliptic fiber of Bring's surface at spacetime ratio
+The color elliptic fiber of Bring's surface at spacetime ratio
 z = s - s⁻¹ (s = √q) is the elliptic curve
 
   E_q : y² = x³ + p(q)·x + r(q)
@@ -57,15 +57,15 @@ noncomputable def j_invariant (p r : ℝ) : ℝ :=
 
 /-- **Descartes elliptic curve** (Proposition):
 
-    The coral elliptic fiber of Bring's surface at spacetime ratio
+    The color elliptic fiber of Bring's surface at spacetime ratio
     z = s - s⁻¹ (s = √q) is the elliptic curve E_q with Weierstrass
     coefficients p(q) and r(q).
 
-    The proof proceeds by substituting z = s - s⁻¹ into the coral
+    The proof proceeds by substituting z = s - s⁻¹ into the color
     cubic X³ + (z+1)X² + (z²+z+1)X + (z³+z²+z+1) = 0, applying the
     standard Weierstrass shift X = x - (z+1)/3, and simplifying. -/
 -- Ref: [manuscript] §5/descartes-elliptic-curve
-/-- **External axiom (manuscript §5): coral-cubic ↦ Weierstrass
+/-- **External axiom (manuscript §5): color-cubic ↦ Weierstrass
     substitution.**  Verified symbolically via sympy; full Lean
     proof needs Mathlib's `Real.rpow` arithmetic. -/
 -- Ref: [manuscript] §5/descartes-elliptic-curve

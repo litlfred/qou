@@ -196,7 +196,7 @@ See [Table 3](#tbl:groebner-nf-computation-table3-data).
 
 For each nucleus through $A = 12$, the symbolic witnesses are
 **exact in $q$**: the polynomials $\mathrm{tr}_{\mathrm{alt}}(\check{q})$,
-$\mathrm{net}(\check{q})$, $\mathrm{observable}(\check{q})$, and $\mathrm{coral}(\check{q})$
+$\mathrm{net}(\check{q})$, $\mathrm{observable}(\check{q})$, and $\mathrm{color}(\check{q})$
 are elements of $\mathbb{Z}[\check{q}, \check{q}^{-1}]$ (Laurent polynomials over
 $\mathbb{Z}$ in $\check{q} = q^{1/2}$, the spinor information rate). The denominator $2^{p_n}$ is
 tracked separately (from the doubled pn crossing convention).

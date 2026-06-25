@@ -1,9 +1,9 @@
 import QOU.Basic
 
 /-!
-# QOU.CategoricalReeb.QReebFlowOnCoralCoords
+# QOU.CategoricalReeb.QReebFlowOnColorCoords
 
-Axiomatisation of the $q$-Reeb flow action on the coral-sector
+Axiomatisation of the $q$-Reeb flow action on the color-sector
 coordinates over the exceptional divisor.
 
 The class encodes three pieces of structure:
@@ -26,21 +26,21 @@ The signed-rate dictionary between braid generators and per-sector
 multipliers is supplied by the consumer (see
 `SixCanonicalKnotOperators`).
 
-LaTeX label: `def:q-reeb-flow-on-coral-coords`
+LaTeX label: `def:q-reeb-flow-on-color-coords`
 -/
 
 namespace QOU.CategoricalReeb
 
-/-- The three coral sectors over the exceptional divisor.  Each
+/-- The three color sectors over the exceptional divisor.  Each
 sector carries an angular coordinate $\psi$; the latitude
 coordinate $\phi$ is shared. -/
-inductive CoralSector where
+inductive ColorSector where
   | red
   | green
   | blue
 deriving DecidableEq, Repr
 
-/-- The $q$-Reeb flow on coral-sector coordinates.
+/-- The $q$-Reeb flow on color-sector coordinates.
 
     `flow q t k ψ` is the angular position $\psi'$ of a sector
     after applying the flow $\phi^q_t$ to the starting position
@@ -51,7 +51,7 @@ deriving DecidableEq, Repr
     particular `k = 0` gives the spectator rule and `k = ±1` the
     centre-of-mass-preserving two-strand action.  Composition is
     additive in $t$. -/
-class QReebFlowOnCoralCoords (q : ℝ) where
+class QReebFlowOnColorCoords (q : ℝ) where
   /-- The flow on the angular coordinate.  `k` is the signed
       rate multiplier under the current braid generator. -/
   flow : ℝ → ℤ → ℝ → ℝ
@@ -65,9 +65,9 @@ class QReebFlowOnCoralCoords (q : ℝ) where
   flow_rate : ∀ (t ψ : ℝ) (k : ℤ),
     flow t k ψ = ψ + (k : ℝ) * q * t
 
-namespace QReebFlowOnCoralCoords
+namespace QReebFlowOnColorCoords
 
-variable {q : ℝ} [QReebFlowOnCoralCoords q]
+variable {q : ℝ} [QReebFlowOnColorCoords q]
 
 /-- Corollary: spectator sectors ($k = 0$) are stationary. -/
 theorem flow_spectator (t ψ : ℝ) : flow (q := q) t 0 ψ = ψ := by
@@ -83,15 +83,15 @@ theorem flow_active_neg (t ψ : ℝ) :
     flow (q := q) t (-1) ψ = ψ - q * t := by
   simp [flow_rate]; ring
 
-end QReebFlowOnCoralCoords
+end QReebFlowOnColorCoords
 
--- Ref: [manuscript] content/quantum-observable-universe/braids-and-knots/q-reeb-flow-on-coral-coords.md
+-- Ref: [manuscript] content/quantum-observable-universe/braids-and-knots/q-reeb-flow-on-color-coords.md
 
-/-- The coral-twist accumulated by a $k = +1$ sector over the full
+/-- The color-twist accumulated by a $k = +1$ sector over the full
     divisor traversal of latitude length `T`.  At `T = π` this is
     the substrate-parameter advance of `q π`. -/
-def coralTwist (q T : ℝ) : ℝ := q * T
+def colorTwist (q T : ℝ) : ℝ := q * T
 
-theorem coralTwist_eq (q T : ℝ) : coralTwist q T = q * T := rfl
+theorem colorTwist_eq (q T : ℝ) : colorTwist q T = q * T := rfl
 
 end QOU.CategoricalReeb

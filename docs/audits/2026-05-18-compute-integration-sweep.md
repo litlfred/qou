@@ -322,7 +322,7 @@ Full sweep results — 558 blocks, sorted by verdict (WIRED → PROBE-ONLY → N
 | `prop:confinement-topological` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:confinement-topological at q0; emit witness with contentBlock="prop:confinement-topological". |
 | `prop:confinement-universality` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:confinement-universality at q0; emit witness with contentBlock="prop:confinement-universality". |
 | `prop:content-scaling-correspondence` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:content-scaling-correspondence at q0; emit witness with contentBlock="prop:content-scaling-correspondence". |
-| `prop:coral-elliptic` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:coral-elliptic at q0; emit witness with contentBlock="prop:coral-elliptic". |
+| `prop:color-elliptic` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:color-elliptic at q0; emit witness with contentBlock="prop:color-elliptic". |
 | `prop:core-levi-form` | proposition | NOT-WIRED | I1-stated | Lean stated with 1 sorrys; once proved, author probe per I1. |
 | `prop:corrected-markov-trace` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:corrected-markov-trace at q0; emit witness with contentBlock="prop:corrected-markov-trace". |
 | `prop:cosimplicial-crossed-groupoid` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:cosimplicial-crossed-groupoid at q0; emit witness with contentBlock="prop:cosimplicial-crossed-groupoid". |

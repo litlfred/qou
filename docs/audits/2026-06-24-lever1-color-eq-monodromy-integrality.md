@@ -1,14 +1,14 @@
-# Lever-1 option 2: coral `E_q` confirmed, but `tr B` is non-integer — `B` is the abelianised connection holonomy, not the topological monodromy
+# Lever-1 option 2: color `E_q` confirmed, but `tr B` is non-integer — `B` is the abelianised connection holonomy, not the topological monodromy
 
 **Date:** 2026-06-24
-**Probe:** [`computations/substrate/lever1_coral_eq_monodromy_integrality.py`](../../computations/substrate/lever1_coral_eq_monodromy_integrality.py)
-**Witness:** [`computations/substrate/lever1-coral-eq-monodromy-integrality.witness.json`](../../computations/substrate/lever1-coral-eq-monodromy-integrality.witness.json) (7/7)
-**Status:** the "compute the genus-1 coral `E_q` Picard–Fuchs monodromy to test `tr B = 2.6424`" step (option 2), executed analytically (Sage unavailable). One confirmation + one decisive reframing. No fit; not owner-gated (curve algebra + a trace-integrality argument). Follows [`2026-06-24-lever1-binding-monodromy-hyperbolicity.md`](2026-06-24-lever1-binding-monodromy-hyperbolicity.md).
+**Probe:** [`computations/substrate/lever1_color_eq_monodromy_integrality.py`](../../computations/substrate/lever1_color_eq_monodromy_integrality.py)
+**Witness:** [`computations/substrate/lever1-color-eq-monodromy-integrality.witness.json`](../../computations/substrate/lever1-color-eq-monodromy-integrality.witness.json) (7/7)
+**Status:** the "compute the genus-1 color `E_q` Picard–Fuchs monodromy to test `tr B = 2.6424`" step (option 2), executed analytically (Sage unavailable). One confirmation + one decisive reframing. No fit; not owner-gated (curve algebra + a trace-integrality argument). Follows [`2026-06-24-lever1-binding-monodromy-hyperbolicity.md`](2026-06-24-lever1-binding-monodromy-hyperbolicity.md).
 
-## 1. The coral `E_q` IS the descartes elliptic curve (direction-B curve confirmed)
+## 1. The color `E_q` IS the descartes elliptic curve (direction-B curve confirmed)
 
-The [`2026-06-24` hyperbolicity audit](2026-06-24-lever1-binding-monodromy-hyperbolicity.md) proposed the rank-2 `W` is `H¹(coral E_z)`. The coral cubic
-([`coral-elliptic.md`](../../content/quantum-observable-universe/brings-surface/coral-elliptic.md))
+The [`2026-06-24` hyperbolicity audit](2026-06-24-lever1-binding-monodromy-hyperbolicity.md) proposed the rank-2 `W` is `H¹(color E_z)`. The color cubic
+([`color-elliptic.md`](../../content/quantum-observable-universe/brings-surface/color-elliptic.md))
 and the Weierstrass form
 ([`descartes-elliptic-curve.md`](../../content/quantum-observable-universe/brings-surface/descartes-elliptic-curve.md),
 `y² = x³ + p(q)x + r(q)`) are now confirmed to be the same curve, by the invariant `j`:
@@ -25,7 +25,7 @@ minimal-model discriminant; `j` — the actual invariant — matches.) So the ra
 
 ## 2. The decisive obstruction — `tr B = 2.6424 ∉ ℤ`
 
-Option 2's literal goal was to compute the coral `E_q` **Picard–Fuchs monodromy** and test it equals
+Option 2's literal goal was to compute the color `E_q` **Picard–Fuchs monodromy** and test it equals
 `τ_binding = 2.6424`. That computation would yield the **wrong object**, for a one-line reason:
 
 > The **topological** Gauss–Manin monodromy of an elliptic-curve family acts on `H¹(E, ℤ) ≅ ℤ²`
@@ -46,19 +46,19 @@ binding side).
 
 ## 3. Net
 
-- **Confirmed:** coral `E_q` = descartes `E_q` (`j(q₀) = 129.86`); the rank-2 `W` is this identified curve.
+- **Confirmed:** color `E_q` = descartes `E_q` (`j(q₀) = 129.86`); the rank-2 `W` is this identified curve.
 - **Reframed (decisive):** `tr B = 2.6424 ∉ ℤ` ⇒ `B` is **not** the topological `SL₂(ℤ)` monodromy; the
   genus-1 Picard–Fuchs **topological**-monodromy computation (option 2's literal target) would return an
   integer-trace object, not `2.6424`. The right object is the **abelianised `λ_SW` connection holonomy**
   (real, hyperbolic), consistent with the M-workplan's Cartan reduction and the keystone non-compact arena.
 - **Still open (the keystone step):** the explicit abelianised-connection holonomy `= θ_binding = 0.78145`
   — its derivation from the `λ_SW` connection at `q₀` — is the owner-gated keystone `M` restricted to the
-  coral elliptic factor. **Not closed here.** No fit; nothing wired; no tier change.
+  color elliptic factor. **Not closed here.** No fit; nothing wired; no tier change.
 
 ## Honest scope
 
 This identifies the *type* of object `B` is (abelianised connection holonomy, real trace) and rules out
 the *type* it is not (integral topological monodromy) — it does **not** derive `2.6424` from the
-connection. The (b)-exclusion is on the **object class** (topological vs connection), not on the coral
+connection. The (b)-exclusion is on the **object class** (topological vs connection), not on the color
 `E_q` (which is confirmed). The curve algebra (`j(q₀)`) and the trace-integrality argument are both
 parameter-free and tool-independent (no Sage); the residual is the keystone connection holonomy.

@@ -90,7 +90,7 @@ witness = {
         "vs 2.53, 19% miss). So the binding 2x2 object is NOT a topological SL2(Z) monodromy and "
         "the golden hypothesis is REFUTED by the seed (numerology guard held). The genuine "
         "2.6424-producing object is the owner-gated abelianised lambda_SW REAL connection "
-        "holonomy on the coral E_q -- no algebraic shortcut. Concrete owner-gated next step: "
+        "holonomy on the color E_q -- no algebraic shortcut. Concrete owner-gated next step: "
         "integrate the SW differential lambda_SW = x dz on E_q and its Gauss-Manin prolongation "
         "to recover the real-holonomy 2x2 B with tr=2.6424. No fit; nothing wired."
     ),

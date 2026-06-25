@@ -9,7 +9,7 @@ Date: 2026-04-04 (session 2 + 3)
 1. **Optimal Gröbner--Shirshov basis**: achieve n_terms ≈ n_strands for each
    atom's NF, prove minimality via Hilbert basis theorem
 2. **Beta decay at degree ≥ 1**: show the interaction operates in
-   the coral fibre (degree ≥ 1, not visible at degree 0)
+   the color fibre (degree ≥ 1, not visible at degree 0)
 
 ## Where We Are
 
@@ -220,7 +220,7 @@ protium NF, the +0.196 · YB(𝔲₀·𝔥₁) term IS the mediator — it
 carries energy but is not directly observable (degree ≥ 1).
 
 **Step B**: For beta decay, the T_{3,5} weak vertex acts at
-degree ≥ 1 in the coral fibre. When N_n × T_{3,5} is reduced,
+degree ≥ 1 in the color fibre. When N_n × T_{3,5} is reduced,
 the output should decompose into:
 - degree 0 terms (proton + electron + neutrino — VISIBLE)
 - degree ≥ 1 terms (interaction mediators — NOT visible)
@@ -228,10 +228,10 @@ the output should decompose into:
 The g_A = 1.255 result already shows this: the ratio of
 observable to consumed amplitudes IS the axial coupling.
 
-**Step C**: The coral fibre is where the torus knot operators
+**Step C**: The color fibre is where the torus knot operators
 (T_{2,3}, T_{2,5}, ..., T_{3,5}) act. At magic shell closures,
 the palindromic NF means ALL Bruhat lattice words are occupied —
-the coral fibre is FULL. Beta decay across a shell boundary
+the color fibre is FULL. Beta decay across a shell boundary
 must un-fill the parent shell (degree ≥ 1 operation) and
 re-fill the daughter shell (degree ≥ 1 operation).
 
@@ -239,7 +239,7 @@ re-fill the daughter shell (degree ≥ 1 operation).
 (complete vs incomplete neutron tail) is the prototype. At
 magic numbers, the split will involve torus knot operators
 instead of 𝔫₁: the complete shell (palindromic) vs incomplete
-shell (missing one bond). These are the degree ≥ 1 coral
+shell (missing one bond). These are the degree ≥ 1 color
 fibre operations for beta decay.
 
 ## Files

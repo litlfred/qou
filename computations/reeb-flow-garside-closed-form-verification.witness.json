@@ -127,7 +127,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Compute verification of the Reeb-flow / Garside closed-form trajectory on coral sectors (r, g, b) for the six canonical knot operators in prop:six-canonical-knot-operators. Cross-validates the closed-form trajectory at q_0 (50 dps) against direct iterative composition over the piecewise-affine sub-intervals. Closes cheat-sheet §5 Migration Backlog #5.",
+  "description": "Compute verification of the Reeb-flow / Garside closed-form trajectory on color sectors (r, g, b) for the six canonical knot operators in prop:six-canonical-knot-operators. Cross-validates the closed-form trajectory at q_0 (50 dps) against direct iterative composition over the piecewise-affine sub-intervals. Closes cheat-sheet §5 Migration Backlog #5.",
   "contentBlock": "prop:six-canonical-knot-operators",
   "parameters": {
     "q_str": "1.1099785955573347198997632204832250266562084087802",

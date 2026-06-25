@@ -3,7 +3,7 @@
 //! Each certificate records:
 //! - The isotope (Z, N, A)
 //! - The engine version and git commit that produced it
-//! - The 4 summary polynomials (tr_alt, net, observable, coral)
+//! - The 4 summary polynomials (tr_alt, net, observable, color)
 //!   as sparse Laurent polynomial coefficients
 //! - Per-strand metadata (word counts, timing)
 //! - F_Pauli evaluated at q₀ (when computable)
@@ -72,7 +72,7 @@ pub struct WitnessCertificate {
     pub tr_alt: SparsePoly,
     pub net: SparsePoly,
     pub observable: SparsePoly,
-    pub coral: SparsePoly,
+    pub color: SparsePoly,
 
     // Jet bundle: net_by_len[ℓ] = Σ c_w for words of length ℓ
     pub jets: Vec<SparsePoly>,

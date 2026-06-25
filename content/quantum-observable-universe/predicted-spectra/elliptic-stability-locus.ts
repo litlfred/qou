@@ -13,7 +13,7 @@ export default remark({
     "elliptic-curve",
     "stability",
     "diophantine",
-    "coral-fibration",
+    "color-fibration",
     "coulomb",
     "pairing",
     "bring-surface",

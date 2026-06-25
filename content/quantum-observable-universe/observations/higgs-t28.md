@@ -5,7 +5,7 @@ spans all three exceptional divisors simultaneously.*
 
 **The three exceptional divisors.**
 
-The Bring's surface ($\chi = -6$, genus $4$) has three coral
+The Bring's surface ($\chi = -6$, genus $4$) has three color
 tubes $(r, g, b)$
 ([color tube coordinates](#def:color-tube-coordinates)).  The
 brane tower blow-up produces three exceptional divisors
@@ -27,7 +27,7 @@ to their genus:
 
 The torus link $T(2,8)$ is the **first and only** link whose Seifert surface
 has genus large enough to span all three exceptional divisors.
-Its genus $3$ exactly matches the number of coral tubes on the
+Its genus $3$ exactly matches the number of color tubes on the
 Bring's surface.
 
 **Why $T(2,8)$ is scalar (spin $0$).**
@@ -92,7 +92,7 @@ $$
 $$
 
 The Higgs mass is set by the genus-$3$ Seifert surface volume,
-which in turn is set by the three coral tube volumes of the
+which in turn is set by the three color tube volumes of the
 Bring's surface.
 
 **Why the Higgs is unique.**

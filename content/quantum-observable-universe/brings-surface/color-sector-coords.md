@@ -17,8 +17,8 @@ $\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$.  Define the
 \end{align*}
 ```
 
-The *coral twist* $q\phi$ -- so named because the resulting geometry
-resembles a coral reef: colorful twisted tubes with fractal boundary
+The *color twist* $q\phi$ -- so named because the resulting geometry
+is a weave of colorful twisted tubes with fractal boundary
 structure -- rotates each sector by $q$ full turns as
 the latitude $\phi$ runs from the south pole ($0$) to the north pole ($\pi$),
 encoding the chirality of the substrate parameter.

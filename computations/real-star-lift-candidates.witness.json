@@ -130,7 +130,7 @@
       "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellNeutrality.lean",
       "content/quantum-observable-universe/lean/QOU/BraidKnot/ZeqNRhoCorrection.lean",
       "content/quantum-observable-universe/lean/QOU/BraidKnot/eigenvalue_product_expansion.lean",
-      "content/quantum-observable-universe/lean/QOU/CategoricalReeb/QReebFlowOnCoralCoords.lean",
+      "content/quantum-observable-universe/lean/QOU/CategoricalReeb/QReebFlowOnColorCoords.lean",
       "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean",
       "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Hoefsmit.lean",
       "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/JonesMarkovWenzl.lean",
@@ -307,7 +307,7 @@
         ]
       },
       {
-        "file": "content/quantum-observable-universe/archimedean-universe/coral-sector-coords.lean",
+        "file": "content/quantum-observable-universe/archimedean-universe/color-sector-coords.lean",
         "evidence": [
           "Real.cos ×2",
           "Real.sin ×2",

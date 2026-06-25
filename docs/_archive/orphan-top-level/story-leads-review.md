@@ -1652,7 +1652,7 @@ author refinement pass.
 > 
 > 1. **Three colors.** The strong interaction is mediated by exactly
 >    three color charges — red, green, blue — corresponding to
->    the three coral tubes of Bring's surface
+>    the three color tubes of Bring's surface
 >    ([color tube coordinates](#def:color-tube-coordinates)).
 > 
 > 2. **A sense of time passing.** Time pushes us forward just as
@@ -1725,18 +1725,18 @@ author refinement pass.
 > coordinates** (rem) records the residual cyclic symmetry that
 > survives after the $S_5$ quotient, and **Intrinsic color cubic:
 > pairing structure** (rem) extracts the pairing that the next section
-> on coral fibration and elliptic curves treats as the defining datum
+> on color fibration and elliptic curves treats as the defining datum
 > of the elliptic structure $\mathcal{E}_q$.
 > 
 > _(draft.)_
 
-### §7.4 Coral fibration and elliptic curves  `sec:coral-fibration-elliptic`  · 🆕 **DRAFT**  · [`coral-fibration-elliptic-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/coral-fibration-elliptic-intro.md)
+### §7.4 Color fibration and elliptic curves  `sec:color-fibration-elliptic`  · 🆕 **DRAFT**  · [`color-fibration-elliptic-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/color-fibration-elliptic-intro.md)
 
 > _[draft]_ The intrinsic color cubic of the previous section sets up
 > exactly the data needed to identify an elliptic curve over the color
-> parameter. **Coral fibre as an elliptic curve** (prop) realises this:
-> the generic coral fibre carries the Weierstrass structure $\mathcal{E}_q$,
-> and **Self-duality of the coral elliptic curve** (rem) records the
+> parameter. **Color fibre as an elliptic curve** (prop) realises this:
+> the generic color fibre carries the Weierstrass structure $\mathcal{E}_q$,
+> and **Self-duality of the color elliptic curve** (rem) records the
 > $T$-duality that pairs $q \leftrightarrow q^{-1}$ on this curve.
 > **Color tube cubic** (rem) and **Color tube fibers** (rem) translate
 > the elliptic data back into the tube coordinates, and **T-duality in
@@ -1748,7 +1748,7 @@ author refinement pass.
 > discriminant locus where the elliptic fibre degenerates, and
 > **Pure colour sublocus and confinement constraint** (rem) extracts
 > the explicit constraint a pure-color state must satisfy. This is the
-> form bundle structures and smoothness pick up next: the coral
+> form bundle structures and smoothness pick up next: the color
 > fibration extends to a bundle whose smoothness on $\mathbb{P}^1$ is
 > the subject of §1d.
 > 
@@ -1756,10 +1756,10 @@ author refinement pass.
 
 ### §7.5 Bundle structures and smoothness  `sec:brings-smoothness`  · 🆕 **DRAFT**  · [`brings-smoothness-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/brings-smoothness-intro.md)
 
-> _[draft]_ The coral fibration of the previous section is well-defined
+> _[draft]_ The color fibration of the previous section is well-defined
 > generically, but the geometry needs a smooth bundle to support the
-> spectral resolvents that follow. **Coral space as spectral curve
-> and spinor bundle** (rem) packages the coral data as a spectral
+> spectral resolvents that follow. **Color space as spectral curve
+> and spinor bundle** (rem) packages the color data as a spectral
 > curve carrying a spinor bundle, and **Smoothness of the Bring's
 > surface and intrinsic resolution of projection singularities** (prop)
 > together with **Smoothness of Bring's surface and resolution of
@@ -1802,7 +1802,7 @@ author refinement pass.
 > differential** (lem) provide the abelianisation needed to evaluate
 > those integrals.
 > 
-> The closing blocks bridge to the next section. **Coral sector
+> The closing blocks bridge to the next section. **Color sector
 > coordinates $\mathfrak{r}, \mathfrak{g}, \mathfrak{b}$** (def) fixes
 > the color sectorisation in resolvent variables, **Braid-group
 > structure of a Descartes universe** (cor) and **Knot eigenbasis

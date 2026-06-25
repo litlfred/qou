@@ -146,7 +146,7 @@ Systematic scan of all mathematical notation in `intro.md`:
 | Speed of light | `$c_q$` | `$c_q = 1/(q-1)$` (line 248) | ✓ Correct |
 | Planck constant | `$\hbar_q$` | `$\hbar_q = (q-1)/q$` (line 301) | ✓ Correct |
 | Lie algebra | `$\mathfrak{su}(2)$` | Not present (SU(2) in Roman: OK) | N/A |
-| Coral tubes | Plain text | "coral tubes" (line 75, 258) | ✓ Correct |
+| Color tubes | Plain text | "color tubes" (line 75, 258) | ✓ Correct |
 | Color tube coords | Plain text | "color tube coordinates" not found | N/A |
 | Jones polynomial | `$J_K(q)$` | Not present in intro | N/A |
 | Hecke algebra | `$H_n(q)$` | `$H_n(q)$` (lines 97, 185, 290) | ✓ Correct |

@@ -44,7 +44,7 @@ equivariant, so $2I$ is the direct analogue.
 | Object | Verified source | What it supplies |
 |---|---|---|
 | The existing $S_3$-side Reeb construction: $\mathcal{S}_p\cong\mathbb{CP}^1=S^2$, Hopf bundle $S^3\to S^2$, six $S_3$ knot operators, $S_3$-Galois boundary monodromy | [`mass-theory/exceptional-divisor-reeb-intro.md`](../../content/quantum-observable-universe/mass-theory/exceptional-divisor-reeb-intro.md) | the geometric $=$ algebraic identity **at the 3-strand base** (ingredient-4 piece 1) |
-| The q-Reeb field $\xi_q$ ($\dot\psi=q$) itself | [`mass-theory/q-reeb-flow-on-coral-coords.md`](../../content/quantum-observable-universe/mass-theory/q-reeb-flow-on-coral-coords.md) (+ sibling `.lean`, and [`lean/QOU/CategoricalReeb/QReebFlowOnCoralCoords.lean`](../../content/quantum-observable-universe/lean/QOU/CategoricalReeb/QReebFlowOnCoralCoords.lean)) | the flow whose $2I$-equivariance is asserted |
+| The q-Reeb field $\xi_q$ ($\dot\psi=q$) itself | [`mass-theory/q-reeb-flow-on-color-coords.md`](../../content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.md) (+ sibling `.lean`, and [`lean/QOU/CategoricalReeb/QReebFlowOnColorCoords.lean`](../../content/quantum-observable-universe/lean/QOU/CategoricalReeb/QReebFlowOnColorCoords.lean)) | the flow whose $2I$-equivariance is asserted |
 
 **What remains (not piece 2's fault).** Piece 2 supplies the *binary-equivariant Reeb field*; the open object
 is the **5-strand** extension of this flow (ingredient 4 geometric leg), not the equivariance of the field.

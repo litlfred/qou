@@ -20,10 +20,10 @@ noncomputable def F_Pauli_3h_denom : ℕ := 4
 noncomputable def observable_3h : LaurentPolynomial ℤ :=
   -LaurentPolynomial.T (-1) + 2 • LaurentPolynomial.T 1 + 2 • LaurentPolynomial.T 2 - LaurentPolynomial.T 3 - 3 • LaurentPolynomial.T 4 + 5 • LaurentPolynomial.T 6 + 2 • LaurentPolynomial.T 7 - 4 • LaurentPolynomial.T 8 - LaurentPolynomial.T 9 + 3 • LaurentPolynomial.T 10 + LaurentPolynomial.T 12 - LaurentPolynomial.T 13
 
-/-- Coral content: Σ_{ℓ≥2} net(ℓ) — the degree ≥ 1 interaction content.
+/-- Color content: Σ_{ℓ≥2} net(ℓ) — the degree ≥ 1 interaction content.
     This is the "M" in the CMB analogy — the multi-body correlations
     that the transfer matrix cannot capture per-generator. -/
-noncomputable def coral_3h : LaurentPolynomial ℤ :=
+noncomputable def color_3h : LaurentPolynomial ℤ :=
   -LaurentPolynomial.T 2 + 2 • LaurentPolynomial.T 5 - LaurentPolynomial.T 6 - 2 • LaurentPolynomial.T 7 + 2 • LaurentPolynomial.T 9 + LaurentPolynomial.T 10 - 2 • LaurentPolynomial.T 11 + LaurentPolynomial.T 14
 
 end QOU.Archimedean.PauliWitness

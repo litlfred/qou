@@ -227,12 +227,12 @@ fn crossing_sym(ti: u8, tj: u8) -> (LPoly, LPoly, bool) {
 // Engine with junction-only reduction + stable/pending separation
 // ════════════════════════════════════════════════════════════════
 
-/// Symbolic accumulator for Pauli + coral content data (exact in q).
+/// Symbolic accumulator for Pauli + color content data (exact in q).
 ///
 /// Tracks per-length net(ℓ) = Σ_{|w|=ℓ} c_w as a polynomial in q.
 /// This gives the full degree decomposition:
 ///   net(0) + net(1) = observable (optimal basis, degree ≤ 1)
-///   Σ_{ℓ≥2} net(ℓ) = coral content (degree ≥ 1, the "M in CMB")
+///   Σ_{ℓ≥2} net(ℓ) = color content (degree ≥ 1, the "M in CMB")
 ///   tr_alt = Σ_ℓ net(ℓ) × (-q⁻¹)^ℓ = alternating channel (Pauli)
 #[derive(Clone)]
 struct SymPauliAcc {
@@ -282,11 +282,11 @@ impl SymPauliAcc {
         if let Some(n1) = self.net_by_len.get(1) { obs = obs.add(n1); }
         obs
     }
-    /// Coral content: Σ_{ℓ≥2} net(ℓ) = degree ≥ 1 interaction content
-    fn coral_content(&self) -> LPoly {
-        let mut coral = LPoly::zero();
-        for p in self.net_by_len.iter().skip(2) { coral = coral.add(p); }
-        coral
+    /// Color content: Σ_{ℓ≥2} net(ℓ) = degree ≥ 1 interaction content
+    fn color_content(&self) -> LPoly {
+        let mut color = LPoly::zero();
+        for p in self.net_by_len.iter().skip(2) { color = color.add(p); }
+        color
     }
 }
 
@@ -666,7 +666,7 @@ fn main() {
         std::process::exit(1);
     }
 
-    // Compute Pauli + coral from kept terms + accumulated stripped terms
+    // Compute Pauli + color from kept terms + accumulated stripped terms
     let mut kept_acc = SymPauliAcc::zero();
     kept_acc.add_from_elem(&elem);
     let mut total = accum.clone();
@@ -675,7 +675,7 @@ fn main() {
     let tr_alt = total.tr_alt.clone();
     let net_poly = total.net.clone();
     let observable = total.observable();
-    let coral = total.coral_content();
+    let color = total.color_content();
     let ms = t_start.elapsed().as_millis();
 
     // Evaluate at q₀
@@ -685,7 +685,7 @@ fn main() {
     let tr_alt_val = tr_alt.eval(t0_val) / denom;
     let net_val = net_poly.eval(t0_val) / denom;
     let obs_val = observable.eval(t0_val) / denom;
-    let coral_val = coral.eval(t0_val) / denom;
+    let color_val = color.eval(t0_val) / denom;
     let f = if net_val.abs() > 1e-30 { tr_alt_val.abs() / net_val.abs() } else { 0.0 };
 
     println!();
@@ -699,14 +699,14 @@ fn main() {
     println!("  tr_alt(t)     = {}", tr_alt.display_short());
     println!("  net(t)        = {}", net_poly.display_short());
     println!("  observable(t) = {} ({} terms)", observable.display_short(), observable.n_terms());
-    println!("  coral(t)      = {} ({} terms)", coral.display_short(), coral.n_terms());
+    println!("  color(t)      = {} ({} terms)", color.display_short(), color.n_terms());
     println!();
     println!("  At q₀ = {}:", Q0);
     println!("  F_Pauli    = {:.10}", f);
     println!("  Observable = {:+.10e} / 2^{}", obs_val * denom, elem.pn_count);
-    println!("  Coral      = {:+.10e} / 2^{}", coral_val * denom, elem.pn_count);
-    println!("  Coral/Net  = {:.6} (fraction of amplitude in degree ≥ 1)",
-        if net_val.abs() > 1e-30 { coral_val / net_val } else { 0.0 });
+    println!("  Color      = {:+.10e} / 2^{}", color_val * denom, elem.pn_count);
+    println!("  Color/Net  = {:.6} (fraction of amplitude in degree ≥ 1)",
+        if net_val.abs() > 1e-30 { color_val / net_val } else { 0.0 });
     println!();
     // Per-length distribution
     let max_len = total.net_by_len.len();
@@ -727,18 +727,18 @@ fn main() {
     }
     println!("════════════════════════════════════════════════════════");
 
-    // Lean witness output — now includes observable and coral
-    write_lean_witness(z, n, a, sym, &tr_alt, &net_poly, &observable, &coral,
+    // Lean witness output — now includes observable and color
+    write_lean_witness(z, n, a, sym, &tr_alt, &net_poly, &observable, &color,
         elem.pn_count, f, ms, dm);
 
     // JSON checkpoint
-    write_json_checkpoint(z, n, a, sym, &tr_alt, &net_poly, &observable, &coral,
+    write_json_checkpoint(z, n, a, sym, &tr_alt, &net_poly, &observable, &color,
         elem.pn_count, f, ms,
         elem.n_terms(), elem.total_poly_terms(), elem.max_coeff());
 }
 
 fn write_lean_witness(z: usize, n: usize, a: usize, sym: &str,
-    tr_alt: &LPoly, net_poly: &LPoly, observable: &LPoly, coral: &LPoly,
+    tr_alt: &LPoly, net_poly: &LPoly, observable: &LPoly, color: &LPoly,
     pn_count: u32, f: f64, ms: u128, dm: bool)
 {
     use std::io::Write;
@@ -775,11 +775,11 @@ fn write_lean_witness(z: usize, n: usize, a: usize, sym: &str,
     writeln!(file).ok();
     writeln!(file).ok();
 
-    writeln!(file, "/-- Coral content: Σ_{{ℓ≥2}} net(ℓ) — the degree ≥ 1 interaction content.").ok();
+    writeln!(file, "/-- Color content: Σ_{{ℓ≥2}} net(ℓ) — the degree ≥ 1 interaction content.").ok();
     writeln!(file, "    This is the \"M\" in the CMB analogy — the multi-body correlations").ok();
     writeln!(file, "    that the transfer matrix cannot capture per-generator. -/").ok();
-    write!(file, "noncomputable def coral_{}{} : LaurentPolynomial ℤ :=\n  ", a, lsym).ok();
-    write_lpoly(&mut file, coral);
+    write!(file, "noncomputable def color_{}{} : LaurentPolynomial ℤ :=\n  ", a, lsym).ok();
+    write_lpoly(&mut file, color);
     writeln!(file).ok();
     writeln!(file).ok();
 
@@ -803,7 +803,7 @@ fn write_lpoly(file: &mut std::fs::File, poly: &LPoly) {
 }
 
 fn write_json_checkpoint(z: usize, n: usize, a: usize, sym: &str,
-    tr_alt: &LPoly, net_poly: &LPoly, observable: &LPoly, coral: &LPoly,
+    tr_alt: &LPoly, net_poly: &LPoly, observable: &LPoly, color: &LPoly,
     pn_count: u32, f: f64, ms: u128,
     n_words: usize, n_poly: usize, max_coeff: i128)
 {
@@ -842,12 +842,12 @@ fn write_json_checkpoint(z: usize, n: usize, a: usize, sym: &str,
     }
     write!(file, "],\n").ok();
 
-    // Observable and coral content
+    // Observable and color content
     let obs_coeffs: Vec<(i32, i128)> = observable.terms.iter().map(|(&k, &v)| (k, v)).collect();
-    let coral_coeffs: Vec<(i32, i128)> = coral.terms.iter().map(|(&k, &v)| (k, v)).collect();
+    let color_coeffs: Vec<(i32, i128)> = color.terms.iter().map(|(&k, &v)| (k, v)).collect();
 
     write!(file, "  \"observable_n_terms\": {},\n", observable.n_terms()).ok();
-    write!(file, "  \"coral_n_terms\": {},\n", coral.n_terms()).ok();
+    write!(file, "  \"color_n_terms\": {},\n", color.n_terms()).ok();
 
     write!(file, "  \"observable_coeffs\": [").ok();
     for (i, (k, v)) in obs_coeffs.iter().enumerate() {
@@ -856,8 +856,8 @@ fn write_json_checkpoint(z: usize, n: usize, a: usize, sym: &str,
     }
     write!(file, "],\n").ok();
 
-    write!(file, "  \"coral_coeffs\": [").ok();
-    for (i, (k, v)) in coral_coeffs.iter().enumerate() {
+    write!(file, "  \"color_coeffs\": [").ok();
+    for (i, (k, v)) in color_coeffs.iter().enumerate() {
         if i > 0 { write!(file, ",").ok(); }
         write!(file, "[{},\"{}\"]", k, v).ok();
     }
@@ -919,7 +919,7 @@ fn batch_witness(a_min: usize, a_max: usize) {
         let tr_alt = total_batch.tr_alt.clone();
         let net_poly = total_batch.net.clone();
         let observable = total_batch.observable();
-        let coral = total_batch.coral_content();
+        let color = total_batch.color_content();
         let ms = t0.elapsed().as_millis();
 
         let t0_val = 1.10998_f64.sqrt();
@@ -934,9 +934,9 @@ fn batch_witness(a_min: usize, a_max: usize) {
             ms as f64 / 1000.0,
             if dm { " ★★" } else { "" });
 
-        write_lean_witness(z, n, a, sym, &tr_alt, &net_poly, &observable, &coral,
+        write_lean_witness(z, n, a, sym, &tr_alt, &net_poly, &observable, &color,
             elem.pn_count, f, ms, dm);
-        write_json_checkpoint(z, n, a, sym, &tr_alt, &net_poly, &observable, &coral,
+        write_json_checkpoint(z, n, a, sym, &tr_alt, &net_poly, &observable, &color,
             elem.pn_count, f, ms,
             elem.n_terms(), elem.total_poly_terms(), elem.max_coeff());
         } // end for z
