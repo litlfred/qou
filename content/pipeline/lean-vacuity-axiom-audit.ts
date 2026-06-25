@@ -693,8 +693,6 @@ function detectTrivialTypeMismatch(d: Decl): Hit | undefined {
  * Plain `--` / `/- -/` comments and a leading `prelude` legally precede
  * imports and do not count as content. */
 const IMPORT_LINE = /^\s*import\b/;
-const CMD_START_RAW =
-  /^\s*(?:@\[|namespace\b|section\b|open\b|variable\b|universe\b|set_option\b|theorem\b|lemma\b|proposition\b|corollary\b|example\b|def\b|abbrev\b|instance\b|axiom\b|structure\b|class\b|inductive\b)/;
 function detectImportOrder(origLines: string[]): Hit | undefined {
   let inBlock = false;
   let sawContent = false;
@@ -729,8 +727,9 @@ function detectImportOrder(origLines: string[]): Hit | undefined {
       if (!line.includes("-/")) inBlock = true; // plain block comment: trivia
       continue;
     }
-    if (CMD_START_RAW.test(line)) sawContent = true;
-    else sawContent = true; // any other token before imports = content
+    // A `/-!` docstring is handled above; any other non-blank, non-comment,
+    // non-import token before the imports finish is a command → content.
+    sawContent = true;
   }
   return undefined;
 }
@@ -1007,13 +1006,22 @@ function main() {
     else if (a === "--write-sidecars") writeSc = true;
     else if (a === "--quiet") quiet = true;
     else if (a === "--only") onlyCat = argv[++i] as Category;
-    else if (a === "--fail-on")
-      failOn = new Set(
-        (argv[++i] ?? "proof-no-trivial-type-mismatch,lean-import-after-content")
-          .split(",")
-          .map((s) => s.trim())
-          .filter(Boolean),
-      );
+    else if (a === "--fail-on") {
+      // Only consume the next token if it is a comma-list of valid categories;
+      // otherwise (a flag, a path, or end-of-args) fall back to the default
+      // compile-validity classes WITHOUT advancing the index (Gemini #2753).
+      const DEFAULT_FAIL = [
+        "proof-no-trivial-type-mismatch",
+        "lean-import-after-content",
+      ];
+      const next = argv[i + 1];
+      const explicit =
+        next !== undefined &&
+        !next.startsWith("-") &&
+        next.split(",").every((s) => (ALL_CATEGORIES as string[]).includes(s.trim()));
+      const cats = explicit ? (i++, next.split(",")) : DEFAULT_FAIL;
+      failOn = new Set(cats.map((s) => s.trim()).filter(Boolean));
+    }
     else roots.push(a);
   }
   const scanRoots = roots.length ? roots : DEFAULT_ROOTS;
