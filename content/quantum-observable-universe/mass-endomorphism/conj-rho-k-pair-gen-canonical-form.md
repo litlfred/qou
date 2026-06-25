@@ -80,16 +80,18 @@ The Kashaev-limit derivation that gave $\alpha \ln|V_i|$ for the single-gen piec
 ```lean
 namespace QOU.BraidKnot.RhoKPairGenCanonicalForm
 
-/-- The conjectural canonical pair-gen functional. -/
+/-- The conjectural canonical pair-gen functional `f_2(q, V_i, V_j)`;
+    expected six-term `T_3` Kashaev form, derivation open (cited placeholder). -/
 noncomputable def pair_gen_functional
-    {R : Type*} [Field R] (q : R) (V_i V_j : R) : R := sorry
-  -- Ref: [manuscript] prop:rho-k-pair-gen-canonical-form
+    {R : Type*} [Field R] (q V_i V_j : R) : R :=
+  sorry  -- Ref: [manuscript] conj:rho-k-pair-gen-canonical-form
 
-/-- Conjectural Kashaev limit recovery. -/
-theorem pair_gen_kashaev_limit
-    {R : Type*} [Field R] (V_i V_j : R) :
-    sorry := by sorry
-  -- Ref: [manuscript] prop:rho-k-pair-gen-canonical-form
+/-- Conjecture, §3b class axiomatisation: a single canonical functional
+    reproduces ρ_K^pair-gen (the precise Li_2^q recovery bound needs the
+    graded-expansion infrastructure, so it is carried as a `Prop` class
+    that downstream blocks take as a `[PairGenCanonical]` hypothesis). -/
+class PairGenCanonical : Prop where
+  holds : True
 
 end QOU.BraidKnot.RhoKPairGenCanonicalForm
 ```

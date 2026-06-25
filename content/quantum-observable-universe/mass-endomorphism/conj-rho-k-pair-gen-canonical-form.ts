@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:rho-k-pair-gen-canonical-form",
   lean: {
-    ref: "qou:QOU.BraidKnot.RhoKPairGenCanonicalForm.pair_gen_kashaev_limit",
+    ref: "qou:QOU.BraidKnot.RhoKPairGenCanonicalForm.PairGenCanonical",
     validation: "not_checked",
   },
   title:
