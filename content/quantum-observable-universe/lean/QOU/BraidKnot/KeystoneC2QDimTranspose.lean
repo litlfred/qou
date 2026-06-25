@@ -192,4 +192,23 @@ theorem qDim_conj (q : ℝ) (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
   have hnum : Partition.size (conj l) = Partition.size l := sz_conj l hl
   rw [conjugate_eq_conj l hl, qDim_eq_prod, qDim_eq_prod, hnum, e1, e2, qHookProd_conj q l hl]
 
+/-! ## C2 at the weight level — the q-Plancherel weight `W_λ = W_{λ′}` -/
+
+/-- The **q-Plancherel weight** of a partition `λ ⊢ n`: `W_λ = d_q(λ)² / [n]_q!`.  This is the
+quantity whose conjugation symmetry `W_λ = W_{λ′}` is the s5-so3 keystone's necessary condition
+C2 (the weight is *chirality-blind*). -/
+noncomputable def qPlancherelWeight (q : ℝ) (lam : Partition) : ℝ :=
+  qDim q lam ^ 2 / qFactorial q (Partition.size lam)
+
+/-- **Keystone necessary condition C2 (weight level): `W_λ = W_{λ′}`.**  The q-Plancherel weight is
+transpose-invariant — the direct corollary of `qDim_conj` (the q-dimension `d_q` is transpose-
+invariant) and `sz_conj` (`|λ′| = |λ|`, so the `[n]_q!` normaliser is unchanged).  This is the
+keystone's chirality-blindness of the weight, now Lean-proved for the genuine q-weight at any real
+`q` (no fit, no `q₀`). -/
+theorem qPlancherelWeight_conj (q : ℝ) (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    qPlancherelWeight q (Partition.conjugate l) = qPlancherelWeight q l := by
+  unfold qPlancherelWeight
+  rw [qDim_conj q l hl, conjugate_eq_conj l hl,
+    show Partition.size (conj l) = Partition.size l from sz_conj l hl]
+
 end QOU.BraidKnot.IdentityI
