@@ -51,11 +51,15 @@ physical binding rate. By contrast the topological PF monodromy at the `I₁` no
 > Picard–Fuchs monodromy.** This formalises (via the explicit `SL₂` trace) the 2026-06-24
 > monodromy-integrality finding.
 >
-> **Indicated (not excluded):** `M` is a real / q-difference `SL₂(ℝ)` operator with bar-even trace
-> `τ([2]_q) > 2`. The `[2]_q`-dependence (Result 2) is the q-difference fingerprint; the hyperbolic
-> `λ₊>1` is the seed kernel's extensivity (the physical `lw` is super-geometric past it, #2752).
-> Constructing the **explicit q-difference PF operator** with this trace is the
-> open keystone (owner-gated; `M` per #2755).
+> **Indicated (not excluded):** `M` is a q-difference operator with bar-even trace `τ([2]_q)`.
+> **Base ring (§7c):** `M ∈ SL₂(ℤ[q,q⁻¹])` at the *fibre* level — `det = 1` holds over **any
+> `CommRing`** (Lean `transfer_det_one` is generic) and the bar-even `[2]_q` trace lives over the
+> Hecke ring `ℤ[q,q⁻¹]` / `ℚ(q)` with `q` formal (Lean `tau_quantum_integer_form`, `tau_bar_even`
+> over any field). `SL₂(ℝ)` is **only** the *archimedean evaluation* at the substrate `q₀∈ℝ`, where the
+> *order* statement `τ([2]_q) > 2` (hyperbolic, `λ₊>1` — the seed kernel's extensivity; the physical
+> `lw` is super-geometric past it, #2752) lives. The `[2]_q`-dependence (Result 2) is the q-difference
+> fingerprint. Constructing the **explicit q-difference PF operator** with this trace is the open
+> keystone (owner-gated; `M` per #2755).
 
 **Honest scope.** The integer-trace exclusion itself is the 2026-06-24 audit's; this probe's new
 content is the bar-even `[2]_q` form (Result 2, Lean-formalised) and the `SL₂`-trace framing that unifies
