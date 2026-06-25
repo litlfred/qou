@@ -116,7 +116,6 @@ theorem numOffDiagonalEntriesH3_formula :
     numOffDiagonalEntriesH3 = (reducedWordsH3.length * (reducedWordsH3.length - 1)) / 2 := by
   unfold numOffDiagonalEntriesH3
   rw [reducedWordsH3_length]
-  decide
 
 /-! ## Open: closed-form σ-basis Gram as Z[q,q⁻¹] polynomials
 

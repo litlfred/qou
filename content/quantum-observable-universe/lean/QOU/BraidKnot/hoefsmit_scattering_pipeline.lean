@@ -1,3 +1,4 @@
+import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
@@ -46,7 +47,7 @@ class HoefsmitScatteringPipelineContext where
       `J_K(q) = Σ_λ w_λ · χ_λ(β) / dim(λ)`. -/
   claim_stage_2_markov_trace :
     J_K = (Finset.range n_partitions).sum
-      (fun λ => w_lambda λ * chi_lambda λ / dim_lambda λ)
+      (fun lam => w_lambda lam * chi_lambda lam / dim_lambda lam)
   /-- The Yekutieli geometric invariant `Geom(K)`. -/
   Geom_K : ℝ
   /-- Yekutieli rigid-dualising functor coefficient `c_ω`. -/
@@ -133,7 +134,7 @@ $\chi_\lambda(\beta)$ is determined by Young's lattice path c
 def hoefsmit_scattering_pipeline [ctx : HoefsmitScatteringPipelineContext] :
     ctx.hoefsmit_nnz_per_row ≤ 2 ∧
     ctx.J_K = (Finset.range ctx.n_partitions).sum
-      (fun λ => ctx.w_lambda λ * ctx.chi_lambda λ / ctx.dim_lambda λ) ∧
+      (fun lam => ctx.w_lambda lam * ctx.chi_lambda lam / ctx.dim_lambda lam) ∧
     ctx.Geom_K = ctx.ω_coeff * ctx.J_K ∧
     ctx.m_total = ctx.Geom_K * ctx.m_e :=
   ⟨ctx.claim_stage_1_hoefsmit, ctx.claim_stage_2_markov_trace,

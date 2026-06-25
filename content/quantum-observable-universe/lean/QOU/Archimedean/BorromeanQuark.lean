@@ -1,5 +1,8 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Finset.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Fintype.Fin
+import Mathlib.Data.Fin.VecNotation
 
 
 /-!
@@ -58,7 +61,7 @@ def borromean_volume : ℝ := 7.32772
 
 /-- The baryon mass from the topological mass formula. -/
 -- Ref: [manuscript] Ch. 6, §3
-def baryon_mass (q : ℝ) (hq : q > 1) : ℝ :=
+def baryon_mass (q : ℝ) (_hq : q > 1) : ℝ :=
   borromean_volume / (1 - 1/q)^2
 
 -- ── Conjecture class (AGENTS.md §3b-cond axiomatisation) ───────
