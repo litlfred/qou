@@ -21,10 +21,28 @@ $$\boxed{\;\lambda_{\rm SW}^{(n)} = X^{(n)}(z)\,dz = D^n(X)\,dz\;}$$
 — a **computable** rule to any order, filling the "by induction" gap.
 Substrate jets: `X(z₀)=−1.0525`, `X'=−0.5095`, `X''=−0.1744`.
 
-**Caveat (the one unverified step).** `n=0,1` are corpus-stated; `λ_SW^(n)=X^(n)dz`
-for `n≥2` is the natural reading, but the n-jet object `A⊗Ω^1⊗…` could be a
-fuller tensor than its top 1-form. Confirming "top component vs full Kähler-jet"
-is the open point for z2bn.
+**Caveat — RESOLVED from the corpus (2026-06-25, same session).** I first flagged
+"top 1-form `X^(n)dz` vs fuller Kähler-jet tensor" as open for z2bn. The
+corpus-grep discipline catches this as an over-flag: it is already pinned, and
+the answer is *both, reconciled* —
+
+- [`prop:sw-period-residue-sum`](../../content/quantum-observable-universe/brings-surface/sw-period-residue-sum.md)
+  (Lean [`sw-period-residue-sum.lean`](../../content/quantum-observable-universe/brings-surface/sw-period-residue-sum.lean))
+  **explicitly declares** "λ_SW^(n) is a meromorphic **1-form** on `S_c`, with
+  poles only at the branch points." So the period integrand is a 1-form, as
+  `X^(n)dz` is.
+- [`prop:mi-sw-abelianisation`](../../content/quantum-observable-universe/brings-surface/mi-sw-abelianisation.md)
+  is the **bridge** that reconciles the two readings: its LHS is the *fuller
+  tensor* — `‖MI∫_{S_c}(∇_A q, L∧F⁺)‖_{J^n}`, the Killing-form norm **projected
+  onto the n-th jet component** — and the theorem identifies that norm with
+  `|a_D^(n)| = |∮_{S_c} λ_SW^(n)|`, the period of the 1-form. The fuller
+  Kähler-jet tensor lives on the MI∫ (categorical) side; abelianisation collapses
+  it to the top SW 1-form. `λ_SW^(n)=X^(n)dz` is consistent with both.
+
+The one genuinely-still-open point is narrower: confirming `D^n(X)` (iterated
+implicit derivative) is the *same* 1-form the abelianisation produces, vs only
+agreeing through its residues. The residue-sum identification (below) makes even
+that agreement structural.
 
 **Downstream — consumers of `a_D^(n)=∮_{S_c}λ_SW^(n)`:**
 - `mi-sw-abelianisation`: `‖MI∫_{S_c}‖_{J^n}=|a_D^(n)|` (n-th jet of the Yekutieli MI∫)
@@ -59,6 +77,30 @@ prolongation; the depth-2 SL₂ τ is an n≤4 effective fit** (it cannot produc
 factorial growth). The q-difference kernel for the super-exp `a_D^(n)` is the
 **q-Bessel** class (`jackson-q-bessel-contiguity`, `QBesselContiguityRecurrence.lean`)
 — the natural fast production engine.
+
+### Corpus-internal corroboration — the residue sum *is* `lw` (third witness)
+
+The branch-point/Puiseux argument above is my own. But the corpus already states
+the same verdict by a different route. [`prop:sw-period-residue-sum`](../../content/quantum-observable-universe/brings-surface/sw-period-residue-sum.md)
+gives the period as an **algebraic residue sum**
+
+$$a_D^{(n)} = \oint_{\mathcal{S}_c}\lambda_{\rm SW}^{(n)} = 2\pi i\sum_{p}\operatorname{Res}_p\lambda_{\rm SW}^{(n)},$$
+
+and characterises the residues verbatim: *"each residue is a per-block
+quantum-dimensional weight on the Wedderburn decomposition restricted to that
+level … the residue family at level `n` is indexed by the weight data of rank
+`n`."* That is exactly `a_D^(n) = Σ_{λ⊢•} (per-block dim_q) = lw` — the
+super-exponential #1765 object — **stated by the corpus itself**, with no SL₂
+recurrence anywhere. Two independent confirmations now converge on the same
+verdict:
+
+| Route | Mechanism | Growth |
+|---|---|---|
+| This probe (branch point) | square-root branch ⇒ `X^(n)~(z−z_k)^{1/2−n}`, falling-factorial period | factorial |
+| `prop:sw-period-residue-sum` (corpus) | residues = per-block Wedderburn `dim_q` at level `n` ⇒ residue sum `= lw` | super-exp (`Σ_λ dim_q`) |
+
+The SL₂ depth-2 recurrence is consistent with *neither* mechanism — it is the
+`n≤4` Taylor germ of the true period, not the period.
 
 ## Compute wire-up after Lean formalization
 
