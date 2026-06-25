@@ -1409,6 +1409,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e4568adb528e",
+          "ts": "1be9ce23b091"
+        },
+        "result": "fail",
+        "notes": "def observation_energy := ⟨⟨ctx.hbar_diff,ctx.hbar_diff_pos⟩,ctx.S_deform,⟨ctx.E_inc,ctx.E_dec⟩⟩ — every conjunct projected directly from a context-class field that IS that conjunct. Textbook self-assuming projection.",
+        "reviewed_at": "2026-06-25T17:14:03.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-trivial-true": [

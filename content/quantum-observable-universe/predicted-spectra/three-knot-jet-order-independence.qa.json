@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5bdcfd9eec5a",
+          "ts": "207706ecbcc0"
+        },
+        "result": "pass",
+        "notes": "Goal: coloured-Jones cyclotomic Jacobians of 4_1,5_2,B_3 are full-rank-3 per truncation (jet-order independence) ⇒ algebraic independence via a named surreal-transport bridge. Honest finite-decidable QOU-attackable reduction; base order Lean-certified (det=1/16). Well-posed, substantive.",
+        "reviewed_at": "2026-06-25T17:13:59.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
       }
     ]
   },

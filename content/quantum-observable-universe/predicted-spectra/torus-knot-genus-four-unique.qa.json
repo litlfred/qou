@@ -1157,6 +1157,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "notes": "Crystal-clear: g=(m-1)(n-1)/2=4 ⇒ product∈{8,9} ⇒ m,n≤10 ⇒ finite interval_cases + coprimality. Fully discharged.",
+        "reviewed_at": "2026-06-25T17:14:09.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.9
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1196,6 +1217,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "notes": "Goal: exact classification of genus-4 torus knots as {T_{2,9},T_{3,5}}. Sharp, well-posed, true Diophantine fact.",
+        "reviewed_at": "2026-06-25T17:14:09.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1237,6 +1279,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "warn",
+        "notes": "The Diophantine classification itself is standard knot theory (Rolfsen); cleanly formalized but low new-math content — its novelty is as the force-carrier-uniqueness lemma it feeds (prop:force-carrier-bring-uniqueness).",
+        "reviewed_at": "2026-06-25T17:14:09.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.5
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1273,6 +1336,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "notes": "Genuinely proved sorry-free: torus_knot_genus_four_unique(genus=4):(m=2∧n=9)∨(m=3∧n=5) via omega bounds (m,n≤10) + interval_cases + decide (coprimality kills (2,10),(4,4)); genus_four_crossing_numbers gives 9,10. Faithful to .md Diophantine (m-1)(n-1)=8.",
+        "reviewed_at": "2026-06-25T17:14:09.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1302,6 +1382,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "notes": "No context-class projection; real proof by interval_cases/decide over the TorusKnot structure. Conclusion derived, not assumed.",
+        "reviewed_at": "2026-06-25T17:14:09.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1381,6 +1478,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "notes": "Premise genus=4 satisfiable (T_{2,9},T_{3,5} both have genus 4); structure constraints (2≤m≤n, coprime) consistent. Not vacuous — conclusion is a real two-solution disjunction.",
+        "reviewed_at": "2026-06-25T17:14:09.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1410,6 +1524,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2f5b027efe7b",
+          "ts": "63ee910fc371"
+        },
+        "result": "pass",
+        "notes": "h:genus=4 drives the omega bounds; structure fields m_ge_two/m_le_n/coprime all revert into the decide. No idle binders.",
+        "reviewed_at": "2026-06-25T17:14:09.000Z",
+        "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
