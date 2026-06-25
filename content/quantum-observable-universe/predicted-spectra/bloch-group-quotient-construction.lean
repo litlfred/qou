@@ -114,7 +114,7 @@ noncomputable def RogersPair.shape₃
     -- apply r.hxy_ne (which is r.x ≠ r.y, i.e. r.x = r.y → False)
     apply r.hxy_ne
     -- new goal: r.x = r.y
-    field_simp at h
+    field_simp [r.hx_ne_zero] at h
     -- h is now: r.y = r.x
     exact h.symm
 
@@ -191,7 +191,7 @@ noncomputable def RogersPair.shape₅
       field_simp [hd] at h
       linear_combination h
     -- 1 - y = 1 - x ⇒ y = x ⇒ x = y
-    linear_combination -hnd
+    linear_combination hnd
 
 /-- The pentagon-relation generator at a Rogers pair, using only
     its `e₁ = x`, `e₂ = y`, `e₃ = y/x` shape parameters and
@@ -286,11 +286,11 @@ def BlochGroup (F : Type*) [Field F] [DecidableEq F] :
 
 /-- `BlochGroup F` carries the `AddCommGroup` structure inherited
     from the quotient. -/
-instance : AddCommGroup (BlochGroup F) :=
+noncomputable instance : AddCommGroup (BlochGroup F) :=
   QuotientAddGroup.Quotient.addCommGroup _
 
 /-- The **canonical projection** `PreBlochGroup F → BlochGroup F`. -/
-def quot : PreBlochGroup F →+ BlochGroup F :=
+noncomputable def quot : PreBlochGroup F →+ BlochGroup F :=
   QuotientAddGroup.mk' _
 
 /-- The zero of `BlochGroup F` is the image of zero under
@@ -314,15 +314,15 @@ theorem quot_universal_property
     ∃! (φ : BlochGroup F →+ G),
       φ.comp (quot (F := F)) = f := by
   refine ⟨QuotientAddGroup.lift _ f h, ?_, ?_⟩
-  · ext x
-    simp [QuotientAddGroup.lift, quot]
-  · intro φ' hφ'
+  · -- existence: the lift composed with the projection recovers `f`.
+    unfold quot
+    exact QuotientAddGroup.lift_comp_mk' _ f h
+  · -- uniqueness: two homs out of the quotient agreeing after `mk'` are equal.
+    intro φ' hφ'
     apply QuotientAddGroup.addMonoidHom_ext
-    intro x
-    simp only [AddMonoidHom.comp_apply] at hφ'
-    rw [show φ' (quot x) = (φ'.comp (quot (F := F))) x from rfl,
-        hφ']
-    simp [QuotientAddGroup.lift, quot]
+    rw [QuotientAddGroup.lift_comp_mk']
+    unfold quot at hφ'
+    exact hφ'
 
 /-- **Rogers-generator membership lemma.** Every Rogers-form
     pentagon generator lies inside the pentagon `AddSubgroup`
