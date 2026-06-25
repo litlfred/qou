@@ -1157,6 +1157,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "warn",
+        "notes": "Lean offers no strategy: predicates are opaque Props supplied as class fields; the LP annihilator argument lives only in prose.",
+        "reviewed_at": "2026-06-25T17:20:12.000Z",
+        "reviewed_sha": "aa0d6ab1453bd1edbf74d9ee098450ece6ed76ad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1196,6 +1217,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "notes": "Well-posed: bare H LP-unstable, B₃ dressing stabilises via annihilation-ratio shift 0.537->q⁻¹⁰=0.352; concrete LP mechanism.",
+        "reviewed_at": "2026-06-25T17:20:00.000Z",
+        "reviewed_sha": "aa0d6ab1453bd1edbf74d9ee098450ece6ed76ad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
         }
       }
     ],
@@ -1237,6 +1279,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "notes": "LP-instability-of-bare-atom resolved by B₃ dressing is a substantive structural claim (ties hydrogen stability to proton internal topology).",
+        "reviewed_at": "2026-06-25T17:20:31.000Z",
+        "reviewed_sha": "aa0d6ab1453bd1edbf74d9ee098450ece6ed76ad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1273,6 +1336,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "fail",
+        "notes": "Main thm projects two opaque Prop fields (bareAnnihilatorExists, ¬dressedAnnihilatorExists); no encoding of annihilator/ratio-shift mechanism (0.537->0.352); degenerate.",
+        "reviewed_at": "2026-06-25T17:19:02.000Z",
+        "reviewed_sha": "aa0d6ab1453bd1edbf74d9ee098450ece6ed76ad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1302,6 +1382,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "fail",
+        "notes": "atomic_lp_stability := ⟨ctx.h_bare, ctx.h_dressed⟩ — both conjuncts ARE the class fields stating the conclusion verbatim; pure projection.",
+        "reviewed_at": "2026-06-25T17:19:18.000Z",
+        "reviewed_sha": "aa0d6ab1453bd1edbf74d9ee098450ece6ed76ad",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1381,6 +1478,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "notes": "Fields h_bare:P and h_dressed:¬Q with P,Q distinct opaque Props are jointly satisfiable; not contradictory.",
+        "reviewed_at": "2026-06-25T17:19:47.000Z",
+        "reviewed_sha": "aa0d6ab1453bd1edbf74d9ee098450ece6ed76ad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1410,6 +1524,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "9adb1ca7705e",
+          "ts": "2b29d6d77a77"
+        },
+        "result": "pass",
+        "notes": "Both fields used (h_bare, h_dressed); separate annihilation_ratios_distinct uses the two def constants. No orphan binder.",
+        "reviewed_at": "2026-06-25T17:19:34.000Z",
+        "reviewed_sha": "aa0d6ab1453bd1edbf74d9ee098450ece6ed76ad",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
