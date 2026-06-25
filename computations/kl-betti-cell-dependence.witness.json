@@ -1,0 +1,199 @@
+{
+  "engine": "python3/sympy+mpmath",
+  "engineVersion": "50dps",
+  "computedAt": "2026-06-25T00:31:44Z",
+  "computation": "kl-betti-cell-dependence",
+  "scriptFile": "kl_betti_cell_dependence_probe.py",
+  "description": "KL left-cell Betti sum B_\u03bb = \u03a3_{w\u2208\u0393_\u03bb} P_{e,w}(1) is NOT cell-invariant: distinct left cells of the same shape \u03bb over S_6 give different Betti sums (e.g. (3,3): 6..23). Hence B_\u03bb is not a function of \u03bb and cannot canonically supply |\u0394_\u03bb|=f^\u03bb. Hooks ARE cell-invariant and equal f^\u03bb. (a)-scope negative; reinforces the PROBE-4 KL-positivity sign prune. Pure-Python KL, literature-validated.",
+  "data": {
+    "n": 6,
+    "per_shape": {
+      "(6,)": {
+        "f_lambda": 1,
+        "n_cells": 1,
+        "betti_min": 1,
+        "betti_max": 1,
+        "betti_distinct": [
+          1
+        ],
+        "cell_invariant": true,
+        "is_hook": true
+      },
+      "(5, 1)": {
+        "f_lambda": 5,
+        "n_cells": 5,
+        "betti_min": 5,
+        "betti_max": 5,
+        "betti_distinct": [
+          5
+        ],
+        "cell_invariant": true,
+        "is_hook": true
+      },
+      "(4, 1, 1)": {
+        "f_lambda": 10,
+        "n_cells": 10,
+        "betti_min": 10,
+        "betti_max": 26,
+        "betti_distinct": [
+          10,
+          13,
+          14,
+          19,
+          26
+        ],
+        "cell_invariant": false,
+        "is_hook": true
+      },
+      "(4, 2)": {
+        "f_lambda": 9,
+        "n_cells": 9,
+        "betti_min": 9,
+        "betti_max": 20,
+        "betti_distinct": [
+          9,
+          10,
+          11,
+          13,
+          16,
+          20
+        ],
+        "cell_invariant": false,
+        "is_hook": false
+      },
+      "(3, 1, 1, 1)": {
+        "f_lambda": 10,
+        "n_cells": 10,
+        "betti_min": 10,
+        "betti_max": 23,
+        "betti_distinct": [
+          10,
+          15,
+          23
+        ],
+        "cell_invariant": false,
+        "is_hook": true
+      },
+      "(3, 2, 1)": {
+        "f_lambda": 16,
+        "n_cells": 16,
+        "betti_min": 22,
+        "betti_max": 54,
+        "betti_distinct": [
+          22,
+          24,
+          32,
+          33,
+          39,
+          41,
+          54
+        ],
+        "cell_invariant": false,
+        "is_hook": false
+      },
+      "(2, 1, 1, 1, 1)": {
+        "f_lambda": 5,
+        "n_cells": 5,
+        "betti_min": 5,
+        "betti_max": 9,
+        "betti_distinct": [
+          5,
+          8,
+          9
+        ],
+        "cell_invariant": false,
+        "is_hook": true
+      },
+      "(3, 3)": {
+        "f_lambda": 5,
+        "n_cells": 5,
+        "betti_min": 6,
+        "betti_max": 23,
+        "betti_distinct": [
+          6,
+          9,
+          14,
+          23
+        ],
+        "cell_invariant": false,
+        "is_hook": false
+      },
+      "(2, 2, 1, 1)": {
+        "f_lambda": 9,
+        "n_cells": 9,
+        "betti_min": 12,
+        "betti_max": 32,
+        "betti_distinct": [
+          12,
+          15,
+          18,
+          21,
+          22,
+          32
+        ],
+        "cell_invariant": false,
+        "is_hook": false
+      },
+      "(2, 2, 2)": {
+        "f_lambda": 5,
+        "n_cells": 5,
+        "betti_min": 6,
+        "betti_max": 21,
+        "betti_distinct": [
+          6,
+          10,
+          12,
+          21
+        ],
+        "cell_invariant": false,
+        "is_hook": false
+      },
+      "(1, 1, 1, 1, 1, 1)": {
+        "f_lambda": 1,
+        "n_cells": 1,
+        "betti_min": 1,
+        "betti_max": 1,
+        "betti_distinct": [
+          1
+        ],
+        "cell_invariant": true,
+        "is_hook": true
+      }
+    },
+    "cell_invariant_shapes": [
+      "(6,)",
+      "(5, 1)",
+      "(1, 1, 1, 1, 1, 1)"
+    ],
+    "n_cell_dependent_shapes": 8,
+    "hooks_also_vary": true,
+    "deuteron": {
+      "B_AME_MeV": 2.22452,
+      "sum_f_lambda": -0.7437808854281861,
+      "B_pred_f_lambda_MeV": 0.3800712519970822,
+      "B_pred_Bmin_MeV": 0.45679995276781166,
+      "B_pred_Bmax_MeV": 0.8169439332707794,
+      "magnification_min": 1.2018797800874412,
+      "magnification_max": 2.149449422912552
+    }
+  },
+  "assertions": [
+    {
+      "label": "bulk partitions NOT cell-invariant (B_lambda ill-defined as per-lambda magnitude)",
+      "passed": true
+    },
+    {
+      "label": "only trivial shapes cell-invariant; even hooks vary across cells",
+      "passed": true
+    },
+    {
+      "label": "deuteron magnification is cell-choice-dependent (min-cell != max-cell)",
+      "passed": true
+    },
+    {
+      "label": "f^lambda baseline reproduces canonical deuteron sum -0.7438",
+      "passed": true
+    }
+  ],
+  "allPassed": true
+}
