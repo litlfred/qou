@@ -35,7 +35,11 @@ namespace QOU.BraidKnot
 /-- A **standard Young tableau** of shape `μ`: a filling of the cells of `μ` by the
 integers `0, …, |μ| − 1`, each used once, strictly increasing along rows
 (left → right) and down columns (top → bottom). Entries are carried by
-`entry : ℕ → ℕ → ℕ`, constrained only on the cells `(i, j) ∈ μ`. Surjectivity onto
+`entry : ℕ → ℕ → ℕ`, constrained on the cells `(i, j) ∈ μ` and pinned to `0` off the
+diagram (`zero_off`) so the type is **finite** — an SYT is fully determined by its
+values on the finitely many cells of `μ` — which is what makes `numSYT` via
+`Nat.card` well-defined (without `zero_off` the entry field would be free off-cells,
+the type infinite, and `Nat.card` would collapse to `0`). Surjectivity onto
 `{0, …, |μ| − 1}` is *omitted*: it is forced by `inj_on` together with
 `μ.cells.card = μ.card`, so stating it would be redundant. -/
 structure StandardYoungTableau (μ : YoungDiagram) where
@@ -43,6 +47,9 @@ structure StandardYoungTableau (μ : YoungDiagram) where
   entry : ℕ → ℕ → ℕ
   /-- Entries lie in `{0, …, |μ| − 1}`. -/
   lt_card : ∀ i j, (i, j) ∈ μ → entry i j < μ.card
+  /-- Off the diagram the filling is pinned to `0`, so the structure is finite (an
+  SYT is determined by its values on the finitely many cells of `μ`). -/
+  zero_off : ∀ i j, (i, j) ∉ μ → entry i j = 0
   /-- Distinct cells carry distinct entries. -/
   inj_on : ∀ i j i' j', (i, j) ∈ μ → (i', j') ∈ μ → entry i j = entry i' j' → i = i' ∧ j = j'
   /-- Entries strictly increase along each row. -/
@@ -52,8 +59,14 @@ structure StandardYoungTableau (μ : YoungDiagram) where
 
 /-- `numSYT μ = #SYT(μ)`, the number of standard Young tableaux of shape `μ`.
 This is the dimension `f^μ = dim V_μ` of the irreducible `S_{|μ|}`-representation
-indexed by `μ` (program brick 1 / phase P2). Noncomputable: it counts an
-unbundled structure via `Nat.card`. -/
+indexed by `μ` (program brick 1 / phase P2). Well-defined because
+`StandardYoungTableau μ` is finite (the `zero_off` normalisation pins entries off
+the diagram, so an SYT is determined by its finitely many on-cell values).
+Noncomputable: it counts an unbundled structure via `Nat.card`.
+
+Open brick-1 targets (next session, build-capable env): a `Finite`/`Fintype`
+instance for `StandardYoungTableau`, the base case `numSYT ⊥ = 1`, and the FRT
+identity `numSYT_mul_hookProduct` below. -/
 noncomputable def numSYT (μ : YoungDiagram) : ℕ := Nat.card (StandardYoungTableau μ)
 
 /-- The **hook length** of cell `(i, j)` in `μ`: arm (cells strictly to the right in
