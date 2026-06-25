@@ -61,7 +61,11 @@ physical binding coefficients run *away* from it — faster, not slower.
   and exceeds `λ₊` by `n = 6`. `λ₊ > 1` is a correct-but-weaker **witness of extensivity from the
   seed kernel only** — the fixed-τ depth-2 kernel *under-counts* the true growth (#2708's
   `(b)`-exclusion: `lw` is not `A·λᶜ + B·λ⁻ᶜ` for any fixed `λ`; window-`τ` drifts
-  `2.6424 → 2.6505 → 2.9933`).
+  `2.6424 → 2.6505 → 2.9933`). **This `(b)`-exclusion is now Lean-formalized sorry-free** —
+  `QOU/Mass/Lever1Depth2Exclusion.lean` (PR #2764), `depth2_no_fixed_tau : ∀ τ, ¬(seed ∧ next)`
+  at `q = 1` (seed forces `τ = 21/8`, the `c = 4` check needs `26/5`, residual `−7/240 ≠ 0`). The
+  present finding is its **spectral-bridge complement**: the bridge that appeared to *validate* the
+  fixed-τ kernel did so tautologically — it iterated that very kernel.
 - **Lean is correct and unchanged.** `QOU/Mass/BindingRecurrenceSpectral.lean`
   (`lambdaPlus_isRoot`, `lambda_product_eq_one`, `lambdaPlus_gt_one`: `τ > 2 ⇒ λ₊ > 1`) is pure,
   unconditional algebra about the roots of `x² − τx + 1`. It states a true **conditional** (*if* the
@@ -74,9 +78,12 @@ physical binding coefficients run *away* from it — faster, not slower.
 "is a finite-truncation residual of the geometric series" — the over-claim the bridge's **own audit
 retracted** the same day (`2026-06-24-binding-recurrence-spectral-bridge.md:60-67`, cross-ref
 `2026-06-24-magic-a-truncation-overclaim-correction.md`). The producer prose (comment + caveat +
-description) is corrected on this branch; the **witness JSON regen is a full-env follow-up** (mpmath
-absent in this sandbox, same constraint as bean `ct80`/#2747) — the witness *numbers* are correct,
-only the framing strings are stale.
+description) is corrected on this branch. **Correction (2026-06-25): the witness regen is runnable
+here, not a full-env follow-up.** This probe is pure `mpmath`/`sympy` (no `pyhecke_native`), and
+`mpmath` pip-installs (PyPI reachable, verified) — so it carries **none** of the ct80-class
+`mpf → f64` regression risk (that risk is specific to `pyhecke_native`-dependent producers, and
+that wheel is *not* on PyPI). The regen merely propagates the corrected framing strings; the witness
+*numbers* are already correct.
 
 ## What to do next (no closure; redirects the lever)
 
@@ -84,11 +91,13 @@ The honest continuations are #2708's two, unchanged:
 
 1. **Drop `a_D = lw` beyond the seed** — compute the genuine prolonged periods of the abelianised
    `λ_SW` connection on the coral `E_q`; `lw` is then only the `c = 1,2,3` physical anchors.
-   *(owner-gated keystone `M`; Sage-blocked in sandbox.)*
+   *(Owner **lifted** this gate 2026-06-25, PR #2764 — the coral `E_q` `λ_SW` holonomy `τ`-derivation
+   is now in-scope; formalize-first, no-fit guard. Numerical elliptic-period integration may suffice
+   without full Sage.)*
 2. **Keep `a_D = lw`, drop depth-2-constant** — `B` is then a variable-kernel `q`/`n`-dependent
    object (consistent with super-geometric growth), forfeiting the clean `τ = 2cosh θ` rapidity.
 
-**Producer enhancement (full-env follow-up):** have
+**Producer enhancement (runnable here — pure `mpmath`/`sympy`):** have
 `binding_recurrence_spectral_bridge_probe.py` also emit the *physical* `lw` sequence beside the
 iterated one and assert the divergence honestly (reference algorithm: this audit's q-hook recompute),
 so the witness shows the comparison rather than only the tautological tail. No fit; nothing wired;
