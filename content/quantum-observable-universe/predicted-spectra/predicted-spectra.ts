@@ -53,6 +53,7 @@ export default chapter({
         "q-value-transition",
         "breit-wheeler-pair-production",
         "breit-wheeler-pair-production-table-data",
+        "gamma-gamma-generates-particles",
         "knot-operator-selection",
         "frobenius-gram-matrix-table1-data",
         "frobenius-gram-matrix-table2-data",
