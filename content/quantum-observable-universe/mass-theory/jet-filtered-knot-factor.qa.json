@@ -915,6 +915,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1c34b86f1aff",
+          "ts": "3d8a0b3b5f0c"
+        },
+        "result": "pass",
+        "notes": "Conjecture: BW knot factor a(Z,N)=J_quotient-braid(q); A<=4 verified (1, 1-h^2, (1-h^2)^2), A>=5 open. Well-posed + substantive (6Li 1.134 vs 1.133), Part-4 closed form genuinely open. Honest 3b placeholder class.",
+        "reviewed_at": "2026-06-25T17:07:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ]
   },

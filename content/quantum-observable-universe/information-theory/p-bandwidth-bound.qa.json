@@ -1157,6 +1157,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba8751db99da",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "warn",
+        "notes": "md proof-sketch (interference funnel + transfer-matrix simulation) is heuristic; the iff is assumed not derived in Lean",
+        "reviewed_at": "2026-06-25T17:05:25.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.6
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1196,6 +1217,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ba8751db99da",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "notes": "P-time decidability <-> bandwidth-bounded Skein evaluation is a substantive, well-posed characterisation",
+        "reviewed_at": "2026-06-25T17:05:25.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.74
         }
       }
     ],
@@ -1237,6 +1279,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba8751db99da",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "warn",
+        "notes": "bandwidth/information-funnel framing is interpretive; the one genuine fact (B(q)>0) is elementary arithmetic",
+        "reviewed_at": "2026-06-25T17:05:25.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.58
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1273,6 +1336,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba8751db99da",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "fail",
+        "notes": "headline claim is the iff inP<->bandwidthBounded; def p_bandwidth_bound:=ctx.claim_p_iff_bandwidth projects it (self-assuming, vacuous per 3b-cond item5). informationBandwidth_pos is a genuine but auxiliary side-lemma",
+        "reviewed_at": "2026-06-25T17:05:25.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1302,6 +1382,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ba8751db99da",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "fail",
+        "notes": "def p_bandwidth_bound : ctx.inP <-> ctx.bandwidthBounded := ctx.claim_p_iff_bandwidth — returns the class field that IS the conclusion",
+        "reviewed_at": "2026-06-25T17:05:25.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1381,6 +1478,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ba8751db99da",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "notes": "q>1, eta_q>0 satisfiable; claim_p_iff_bandwidth is an iff between two opaque Props, no contradiction",
+        "reviewed_at": "2026-06-25T17:05:25.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1410,6 +1524,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ba8751db99da",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "pass",
+        "notes": "informationBandwidth_pos uses q_gt_one + eta_q_pos via linarith; p_bandwidth_bound uses ctx; no unused binder",
+        "reviewed_at": "2026-06-25T17:05:25.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

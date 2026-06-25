@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d43bf0546a41",
+          "ts": "edc4eddcc89a",
+          "lean": "c9313586cda0"
+        },
+        "result": "warn",
+        "notes": "q=1 reductions proved by ring; but main inequality is asserted via a bespoke axiom, and compares fringe_spacing(q=1) vs envelope_width(q) — strategy unclear.",
+        "reviewed_at": "2026-06-25T17:06:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.5
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "d43bf0546a41",
+          "ts": "edc4eddcc89a",
+          "lean": "c9313586cda0"
+        },
+        "result": "pass",
+        "notes": "Well-posed: q-deformed double-slit envelope/fringe formulas, q=1 -> Fraunhofer; excess width claim ties to bach2013 data.",
+        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d43bf0546a41",
+          "ts": "edc4eddcc89a",
+          "lean": "c9313586cda0"
+        },
+        "result": "pass",
+        "notes": "q-corrected interference pattern with three-scale Laplacian split (classical/spin/cross) is a substantive physical prediction.",
+        "reviewed_at": "2026-06-25T17:06:37.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "d43bf0546a41",
+          "ts": "edc4eddcc89a",
+          "lean": "c9313586cda0"
+        },
+        "result": "fail",
+        "notes": "Main thm double_slit_massive_pattern discharged by custom 'axiom double_slit_massive_pattern_axiom' — substantive (envelope>Fraunhofer) claim asserted, not proved.",
+        "reviewed_at": "2026-06-25T17:05:35.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1403,6 +1487,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d43bf0546a41",
+          "ts": "edc4eddcc89a",
+          "lean": "c9313586cda0"
+        },
+        "result": "pass",
+        "notes": "Premises q!=0, q!=1, a!=0, 0<lambda*L/a, 0<ratio jointly satisfiable (e.g. q=q_0~1.11); not vacuous.",
+        "reviewed_at": "2026-06-25T17:06:00.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1434,6 +1536,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "d43bf0546a41",
+          "ts": "edc4eddcc89a",
+          "lean": "c9313586cda0"
+        },
+        "result": "pass",
+        "notes": "All binders (q,hq,hq1,lambda_,L,a_slit,ha,hpos,ratio,hr) forwarded to the axiom application; none orphaned.",
+        "reviewed_at": "2026-06-25T17:05:51.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

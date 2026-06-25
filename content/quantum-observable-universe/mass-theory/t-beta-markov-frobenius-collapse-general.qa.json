@@ -1159,6 +1159,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0d5091392898",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "pass",
+        "notes": "Clear completing-the-square / Lagrangian argument: identity, constraint substitution, PSD bound, non-deg equality case — 4 explicit steps with named Lean lemmas.",
+        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.88
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1198,6 +1219,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0d5091392898",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "pass",
+        "notes": "Min-Frobenius-norm collapse: τ(X)=S ⇒ S²≤τ(X·X), equality iff X=S·1, over unital R-algebra with PSD non-deg trace. Standard, well-posed, lifts substrate version to Hecke.",
+        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1239,6 +1281,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0d5091392898",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "pass",
+        "notes": "General-algebra lift (non-commutative, infinite-dim) of the substrate collapse, with the canonical SDP T_β=S·1 Hecke application; more than a restatement.",
+        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1275,6 +1338,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0d5091392898",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "n/a",
+        "notes": "Batch lists lean: [] (no resolved Lean file for this block); judgment criteria n/a. md references t-beta-markov-collapse-general-lift.lean but it is not in scope here.",
+        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1304,6 +1384,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0d5091392898",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "n/a",
+        "notes": "No Lean in batch scope (lean: []).",
+        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1383,6 +1480,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0d5091392898",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "n/a",
+        "notes": "No Lean in batch scope (lean: []).",
+        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1412,6 +1526,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0d5091392898",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "n/a",
+        "notes": "No Lean in batch scope (lean: []).",
+        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

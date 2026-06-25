@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "warn",
+        "notes": "md criteria clear with worked H/He examples, but Lean only assumes the three sub-claims on a context class; no derivation.",
+        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.5
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "pass",
+        "notes": "Demand profile (negative NF coeffs) as stability diagnostic — beta-stable/shell-closed/doubly-magic criteria are well-posed and substantive.",
+        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "pass",
+        "notes": "Unifies beta-stability, shell closure, and double-magicity under one demand-profile diagnostic; genuine framework content.",
+        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1293,6 +1356,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "fail",
+        "notes": "Lean collapses 3 distinct iff-characterizations (beta-stable, shell-closed=∅, doubly-magic) of the md into ONE assumed conjunction at a single (Z,N); drops the 'iff' and full neighbor-minimization quantification.",
+        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1322,6 +1402,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "fail",
+        "notes": "theorem demand_stability := ⟨ctx.claim_i_beta_stable, ctx.claim_ii_shell_closed, ctx.claim_iii_doubly_magic⟩ — conclusion is verbatim the 3 class fields.",
+        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1498,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "pass",
+        "notes": "claim_i (dem ≤ neighbors) ∧ claim_ii (dem=0) ∧ claim_iii (trM minimal) jointly satisfiable (dem=0 ≤ all); no contradiction.",
+        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1544,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e7f405288cff",
+          "ts": "2f8ce1f759c4"
+        },
+        "result": "pass",
+        "notes": "Only binder [ctx] used; q, Atom are class data fields not theorem hypotheses.",
+        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

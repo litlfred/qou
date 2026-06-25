@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad63cd44bc6c",
+          "ts": "3c2d55d2cf3a",
+          "lean": "9a92414dd3c1"
+        },
+        "result": "pass",
+        "notes": "Clear: LP complementary slackness + strong duality + LR branching; §3b-cond axiomatises only missing Mathlib LP lib.",
+        "reviewed_at": "2026-06-25T17:05:14.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ad63cd44bc6c",
+          "ts": "3c2d55d2cf3a",
+          "lean": "9a92414dd3c1"
+        },
+        "result": "pass",
+        "notes": "Well-posed: T1 (maximizer in active set), T2 (shift decomp), T3 (duality gap=0) for operator-selection LP. Substantive.",
+        "reviewed_at": "2026-06-25T17:05:14.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad63cd44bc6c",
+          "ts": "3c2d55d2cf3a",
+          "lean": "9a92414dd3c1"
+        },
+        "result": "pass",
+        "notes": "Genuine partial proof reducing conj to Sub-lemma 2.1 + LP duality; matches W-3 closed form 18Z+21N+1.",
+        "reviewed_at": "2026-06-25T17:05:14.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1320,6 +1386,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ad63cd44bc6c",
+          "ts": "3c2d55d2cf3a",
+          "lean": "9a92414dd3c1"
+        },
+        "result": "pass",
+        "notes": "Honest §3b-cond: T1 derives via complementary_slackness.mpr h_max_tight; T2 combines bbl bound; T3 consumes HasFiniteLPDuality (LP duality is std external math, cited Schrijver). Sorry-free.",
+        "reviewed_at": "2026-06-25T17:05:14.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1405,6 +1489,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad63cd44bc6c",
+          "ts": "3c2d55d2cf3a",
+          "lean": "9a92414dd3c1"
+        },
+        "result": "pass",
+        "notes": "HasFiniteLPDuality / HasBranchingBlockLemma classes instantiable; OperatorSelectionLP bounded+feasible witnesses given. Satisfiable.",
+        "reviewed_at": "2026-06-25T17:05:14.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1436,6 +1538,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ad63cd44bc6c",
+          "ts": "3c2d55d2cf3a",
+          "lean": "9a92414dd3c1"
+        },
+        "result": "pass",
+        "notes": "theorem_1 uses h_max_tight + instance; theorem_2 uses bbl + 3 reals; theorem_3 uses [HasFiniteLPDuality]. No unused binder.",
+        "reviewed_at": "2026-06-25T17:05:14.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

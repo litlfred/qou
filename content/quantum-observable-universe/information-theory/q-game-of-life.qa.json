@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c89b737b2d1b",
+          "ts": "f56cbee92412",
+          "lean": "31bae00ca204"
+        },
+        "result": "warn",
+        "notes": "md sketch clear (Toffoli unitary -> composite unitary; Bennett universality; 3-Planck-step counting) but Lean models the automaton as id, so no real strategy is realised",
+        "reviewed_at": "2026-06-25T17:06:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.62
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c89b737b2d1b",
+          "ts": "f56cbee92412",
+          "lean": "31bae00ca204"
+        },
+        "result": "pass",
+        "notes": "a unitary/reversible q-deformed Game of Life from q-Toffoli+Hadamard (Pena 2022) is a plausible, well-posed construction goal",
+        "reviewed_at": "2026-06-25T17:06:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c89b737b2d1b",
+          "ts": "f56cbee92412",
+          "lean": "31bae00ca204"
+        },
+        "result": "warn",
+        "notes": "q-deformation of GoL with golden-ratio stability threshold is a modest contribution over the cited prior art (Pena 2022, 't Hooft)",
+        "reviewed_at": "2026-06-25T17:06:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.55
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c89b737b2d1b",
+          "ts": "f56cbee92412",
+          "lean": "31bae00ca204"
+        },
+        "result": "fail",
+        "notes": "qGameOfLife := id; 'unitary'=bijective_id, 'reversible'=id∘id=id, 'universal'=<qGameOfLife 1,rfl>, 'stable'=axiom. The substantive q-Toffoli CA of the .md is modelled as the identity map => degenerate weakening to trivial id-facts",
+        "reviewed_at": "2026-06-25T17:06:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1403,6 +1487,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c89b737b2d1b",
+          "ts": "f56cbee92412",
+          "lean": "31bae00ca204"
+        },
+        "result": "pass",
+        "notes": "sp.field p > 1 satisfiable; no contradictory premise",
+        "reviewed_at": "2026-06-25T17:06:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1434,6 +1536,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c89b737b2d1b",
+          "ts": "f56cbee92412",
+          "lean": "31bae00ca204"
+        },
+        "result": "pass",
+        "notes": "gens appears in each statement's goal; qGameOfLife_stable forwards sp,p,_h into the axiom; no unused binder",
+        "reviewed_at": "2026-06-25T17:06:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

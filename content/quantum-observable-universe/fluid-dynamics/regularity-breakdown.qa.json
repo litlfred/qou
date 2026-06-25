@@ -953,6 +953,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e3cde0bc6e1b",
+          "ts": "148952983f58",
+          "lean": "d2ef138e215c"
+        },
+        "result": "pass",
+        "notes": "conjecture: q->1 classical NS limit as a regularity phase transition (Clay-problem-adjacent); deep, well-posed, substantive goal",
+        "reviewed_at": "2026-06-25T17:04:53.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
+        }
       }
     ]
   },

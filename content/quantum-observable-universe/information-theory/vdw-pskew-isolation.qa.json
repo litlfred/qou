@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0b289a78a9a3",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "notes": "fully formalised over generic CommRing by ring; division-free x +/- sigma x forms; clear and complete",
+        "reviewed_at": "2026-06-25T17:07:52.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0b289a78a9a3",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "notes": "isolating van der Waals as the discarded bar-odd sinh(2lambda)(e+-e-) Hopf channel: a clean, true algebraic decomposition",
+        "reviewed_at": "2026-06-25T17:07:52.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0b289a78a9a3",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "warn",
+        "notes": "as a proof object it is a 2-line ring identity; the conceptual novelty (vdW = discarded sinh channel) sits in the narrative, not the lemma",
+        "reviewed_at": "2026-06-25T17:07:52.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.6
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1320,6 +1386,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0b289a78a9a3",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "notes": "GENUINE: hopf_bar_even_odd_decomposition (2(q^2 a+qi^2 b)=barEven*(a+b)+barOdd*(a-b), pure ring) + vdw_is_bar_odd_residual (uses hpart:a+b=1, ring) faithfully encode the md bar-even/bar-odd split; sorry-free, no projection",
+        "reviewed_at": "2026-06-25T17:07:52.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1405,6 +1489,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0b289a78a9a3",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "notes": "hpart : a+b=1 is satisfiable (idempotent completeness e+ + e- = 1); no contradiction",
+        "reviewed_at": "2026-06-25T17:07:52.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1436,6 +1538,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0b289a78a9a3",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
+        },
+        "result": "pass",
+        "notes": "hopf_...: q,qi,a,b all consumed by ring; vdw_is_bar_odd_residual: hpart used via rw[hpart]",
+        "reviewed_at": "2026-06-25T17:07:52.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

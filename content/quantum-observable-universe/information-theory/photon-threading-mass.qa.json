@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d7e7bafc2970",
+          "ts": "e7c015b9dccb"
+        },
+        "result": "warn",
+        "notes": "md sketch (free YB/far-comm moves vs costly Hecke steps, diamond-lemma path-independence) is clear but unformalised; Lean assumes the identity",
+        "reviewed_at": "2026-06-25T17:05:51.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.64
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "d7e7bafc2970",
+          "ts": "e7c015b9dccb"
+        },
+        "result": "pass",
+        "notes": "mass = Groebner-Shirshov photon-threading cost = (q-1)^2 * Hecke-step sum: a substantive equivalence claim",
+        "reviewed_at": "2026-06-25T17:05:51.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d7e7bafc2970",
+          "ts": "e7c015b9dccb"
+        },
+        "result": "warn",
+        "notes": "third-of-three-methods identity; interpretive (photon measures mass) but no independent derivation here",
+        "reviewed_at": "2026-06-25T17:05:51.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.6
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1293,6 +1356,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d7e7bafc2970",
+          "ts": "e7c015b9dccb"
+        },
+        "result": "fail",
+        "notes": "def photon_threading_mass := ctx.claim_photon_threading_mass; the entire mass identity m_H=(q-1)^2|q-q^-1|*sum|c_w| is an assumed class field, projected (vacuous self-assumption, 3b-cond item5)",
+        "reviewed_at": "2026-06-25T17:05:51.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1322,6 +1402,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "d7e7bafc2970",
+          "ts": "e7c015b9dccb"
+        },
+        "result": "fail",
+        "notes": "body is exactly ctx.claim_photon_threading_mass — returns the field that states the conclusion",
+        "reviewed_at": "2026-06-25T17:05:51.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1498,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d7e7bafc2970",
+          "ts": "e7c015b9dccb"
+        },
+        "result": "pass",
+        "notes": "fields (q, m_H, c_w_abs, n_steps + one equation) satisfiable; no contradiction",
+        "reviewed_at": "2026-06-25T17:05:51.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1544,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "d7e7bafc2970",
+          "ts": "e7c015b9dccb"
+        },
+        "result": "pass",
+        "notes": "[ctx] instance projected; no separate unused binder",
+        "reviewed_at": "2026-06-25T17:05:51.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

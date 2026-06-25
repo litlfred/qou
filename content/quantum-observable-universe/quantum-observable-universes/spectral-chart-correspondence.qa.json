@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b6f76f3d13ad",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "pass",
+        "notes": "Clear: prove λ_sym⁻¹=-λ_anti algebraically, isolate the one missing-infra step as a named axiom, compose. Classical limit lemma included.",
+        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "b6f76f3d13ad",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "pass",
+        "notes": "Substantive: Hecke braiding eigenvalues (q,-q⁻¹) fix the P_q(V) chart-glue κ=q⁻¹; both readings well-posed.",
+        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b6f76f3d13ad",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "pass",
+        "notes": "Real algebraic content (anti_eq_neg_inv, glue_eq_inv_sym, glue_classical_limit proved); ties spectral data to geometric chart-glue.",
+        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "b6f76f3d13ad",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "pass",
+        "notes": "Core identity λ_sym⁻¹=-λ_anti genuinely proved (field_simp/linear_combination from det_constraint=-1). Only axiom is the categorical chart-glue interpretation (flagged missing-infra wall), not the algebraic conclusion. Faithful to .md.",
+        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1403,6 +1487,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b6f76f3d13ad",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "pass",
+        "notes": "det_constraint λ_sym·λ_anti=-1 with both ≠0 satisfiable (λ_sym=q,λ_anti=-q⁻¹). No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1434,6 +1536,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "b6f76f3d13ad",
+          "ts": "1f84ecfc2633",
+          "lean": "cb3e0980427a"
+        },
+        "result": "pass",
+        "notes": "bed:SCBraidingEigenvalueData used in all 4 lemmas; K,[Field K] used. No unused binder.",
+        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

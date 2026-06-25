@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0c7faf3b2a0d",
+          "ts": "081ee9db7897",
+          "lean": "91280c112058"
+        },
+        "result": "warn",
+        "notes": "Narrative strategy (Markov trace of exp_q composite, coproduct-derived functoriality) sketched but Lean defers construction to an axiom; no constructive Lean strategy.",
+        "reviewed_at": "2026-06-25T17:07:46.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.5
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0c7faf3b2a0d",
+          "ts": "081ee9db7897",
+          "lean": "91280c112058"
+        },
+        "result": "pass",
+        "notes": "Existence of categorical Laplace functor (q-convolution -> pointwise product via Markov pairing w/ exp_q); well-posed monoidal-functor existence.",
+        "reviewed_at": "2026-06-25T17:07:45.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.74
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0c7faf3b2a0d",
+          "ts": "081ee9db7897",
+          "lean": "91280c112058"
+        },
+        "result": "pass",
+        "notes": "Categorical/Hopf reformulation of the Laplace transform as a monoidal functor; modest framing novelty.",
+        "reviewed_at": "2026-06-25T17:07:46.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1320,6 +1386,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0c7faf3b2a0d",
+          "ts": "081ee9db7897",
+          "lean": "91280c112058"
+        },
+        "result": "pass",
+        "notes": "md claims monoidal functor L exists; Lean asserts Nonempty(CategoricalLaplace A) via named axiom (3b). CategoricalLaplace (QIntegralTransforms.lean) is substantive (transform + monoidal_mul + monoidal_unit laws), so Nonempty is NOT degenerate-weakening; honest existence axiom, no sorry.",
+        "reviewed_at": "2026-06-25T17:07:45.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1405,6 +1489,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0c7faf3b2a0d",
+          "ts": "081ee9db7897",
+          "lean": "91280c112058"
+        },
+        "result": "pass",
+        "notes": "Sole premise [Nonempty A] satisfiable; no contradiction.",
+        "reviewed_at": "2026-06-25T17:07:45.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1436,6 +1538,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0c7faf3b2a0d",
+          "ts": "081ee9db7897",
+          "lean": "91280c112058"
+        },
+        "result": "pass",
+        "notes": "Thm forwards A + [Nonempty A] to the axiom; both used. No dead binders.",
+        "reviewed_at": "2026-06-25T17:07:45.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

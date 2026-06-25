@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "pass",
+        "notes": ".md proof is the explicit two-line derivation; Lean statement matches. Strategy fully clear, only mechanical discharge deferred.",
+        "reviewed_at": "2026-06-25T17:04:57.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "pass",
+        "notes": "Elementary true field fact; well-posed; cleanly captures the q=1 channel-collapse of {σ,σ⁻¹,(σ+σ⁻¹)/2} on the μ₂ torsion locus.",
+        "reviewed_at": "2026-06-25T17:04:57.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "pass",
+        "notes": "Trivial algebra in isolation, but identifies it as the common core of all q=1 channel degenerations tying to the mass-gap μ₂ locus — modest framing value.",
+        "reviewed_at": "2026-06-25T17:04:57.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1320,6 +1386,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "fail",
+        "notes": "Statement faithfully encodes .md (s²=1, 2≠0 ⊢ s⁻¹=s ∧ (s+s⁻¹)/2=s); proof is sorry with -- Ref (honest deferred field discharge), so not actually proved.",
+        "reviewed_at": "2026-06-25T17:04:57.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1405,6 +1489,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "pass",
+        "notes": "s²=1 ∧ (2:R)≠0 jointly satisfiable (R=ℚ, s=1); no contradiction.",
+        "reviewed_at": "2026-06-25T17:04:57.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1436,6 +1538,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "aa4cd3b420d9",
+          "ts": "97c9d450c125",
+          "lean": "e6305c2c9a94"
+        },
+        "result": "pass",
+        "notes": "Body is sorry; hs:s²=1 gives s⁻¹=s and h2:2≠0 lets (s+s)/2=s — both genuinely needed for the stated discharge.",
+        "reviewed_at": "2026-06-25T17:04:57.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8db11d5c5506",
+          "ts": "0ebb385897de",
+          "lean": "8bda5288d9d4"
+        },
+        "result": "warn",
+        "notes": "Existence is honest (project qu.frobHopf field), and docstring explains the hypothesis reframe; but the non-degeneracy/adjoint-iso part of the .md is simply not formalised.",
+        "reviewed_at": "2026-06-25T17:07:16.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "8db11d5c5506",
+          "ts": "0ebb385897de",
+          "lean": "8bda5288d9d4"
+        },
+        "result": "pass",
+        "notes": "Goal substantive: existence + non-degeneracy of the Frobenius pairing on a quantum universe (Kock Ch.2).",
+        "reviewed_at": "2026-06-25T17:07:16.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8db11d5c5506",
+          "ts": "0ebb385897de",
+          "lean": "8bda5288d9d4"
+        },
+        "result": "warn",
+        "notes": "Lean adds only ⟨qu.frobHopf⟩ projection; the canonical pairing λ∘μ and adjoint-iso live elsewhere / are unstated here.",
+        "reviewed_at": "2026-06-25T17:07:16.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.3
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "8db11d5c5506",
+          "ts": "0ebb385897de",
+          "lean": "8bda5288d9d4"
+        },
+        "result": "fail",
+        "notes": ".md claims pairing exists AS A MORPHISM + adjoint A→A∨ is iso (non-degeneracy). Lean only proves Nonempty(FrobeniusHopfData) := ⟨qu.frobHopf⟩ — projects an existing field, drops the pairing+adjoint-iso content. Weaker/different claim.",
+        "reviewed_at": "2026-06-25T17:07:16.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1403,6 +1487,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8db11d5c5506",
+          "ts": "0ebb385897de",
+          "lean": "8bda5288d9d4"
+        },
+        "result": "pass",
+        "notes": "QuantumUniverse k is satisfiable. No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:07:16.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1434,6 +1536,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "8db11d5c5506",
+          "ts": "0ebb385897de",
+          "lean": "8bda5288d9d4"
+        },
+        "result": "pass",
+        "notes": "{k},[Field k],qu all used in the conclusion type. No unused binder.",
+        "reviewed_at": "2026-06-25T17:07:16.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "warn",
+        "notes": "md proof sketch (Slater openness + complementary-slackness constancy) is clear, but Lean only states it (sorry / typeclass-field projection), not derived.",
+        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.55
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "pass",
+        "notes": "SDP confinement locus open + μ/σ_F locally constant on phases (Boyd-Vandenberghe §5.6) is well-posed, substantive phase-scoping result.",
+        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "pass",
+        "notes": "Phase-scoping discipline (every confinement theorem read within one component) is a useful structural contribution beyond restatement.",
+        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1327,6 +1393,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "fail",
+        "notes": "Sibling proves headline (IsOpen + μ-constant) via two sorry's; library projects typeclass Prop fields that ARE the conclusions (locus_open:=h.locus_open). Statement faithful but not derived (not downstream of a conj, so conclusion-as-axiom is degenerate).",
+        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1358,6 +1442,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "fail",
+        "notes": "Library theorems phase_locus_open/_mu_constant/_sigmaF return HasPhaseStratification fields whose types ARE the conclusions; conclusion axiomatized as class field then projected (§3b-cond non-degeneracy item-5 violated).",
+        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1441,6 +1543,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "pass",
+        "notes": "Premises (connected C ⊆ locus, real-axis data) satisfiable (unit-particle model: universal locus); no contradiction.",
+        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1472,6 +1592,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "366ae0556c8d",
+          "ts": "08d5240ba178",
+          "lean": "006ae4472536"
+        },
+        "result": "pass",
+        "notes": "All binders (P, [HasRealAxisData], [HasPhaseStratification], C, hC, hsub, q₁q₂, h₁h₂) referenced; Fact-instance fields all consumed.",
+        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

@@ -1201,6 +1201,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "11ae502521d0",
+          "ts": "00cd9d803fd8",
+          "lean": "89ab3945904a"
+        },
+        "result": "pass",
+        "notes": ".md gives clear spectral-sequence + Cauchy-kernel symbolic strategy with explicit analytic caveat. Lean uses §3b-cond class + fromCrystalData constructor.",
+        "reviewed_at": "2026-06-25T17:05:22.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1242,6 +1264,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "11ae502521d0",
+          "ts": "00cd9d803fd8",
+          "lean": "89ab3945904a"
+        },
+        "result": "pass",
+        "notes": "Mass = descended + Σ stratum-residues (E∞ of GS-filtered spectral seq) is well-posed as a SYMBOLIC (not analytic) identity, explicitly flagged. Feeds Habiro coeffs.",
+        "reviewed_at": "2026-06-25T17:05:22.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.74
         }
       }
     ],
@@ -1285,6 +1329,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "11ae502521d0",
+          "ts": "00cd9d803fd8",
+          "lean": "89ab3945904a"
+        },
+        "result": "pass",
+        "notes": "GS-filtration residue spectral sum feeding cyclotomic Habiro coefficients is a novel structural decomposition of categorical mass.",
+        "reviewed_at": "2026-06-25T17:05:22.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1316,6 +1382,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "11ae502521d0",
+          "ts": "00cd9d803fd8",
+          "lean": "89ab3945904a"
+        },
+        "result": "pass",
+        "notes": "Sibling .lean (resolves first): class encodes mass=|descended|+Σresidue; classical_limit_descended + spectral_sum_finite genuinely proved (rw/simp); fromCrystalData forces spectral_decomposition by rfl (not self-assumed). No vacuity/sorry.",
+        "reviewed_at": "2026-06-25T17:05:21.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1485,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "11ae502521d0",
+          "ts": "00cd9d803fd8",
+          "lean": "89ab3945904a"
+        },
+        "result": "pass",
+        "notes": "GBResidueSpectralSum inhabitable via fromCrystalData; premises satisfiable. No contradiction.",
+        "reviewed_at": "2026-06-25T17:05:22.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1432,6 +1534,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "11ae502521d0",
+          "ts": "00cd9d803fd8",
+          "lean": "89ab3945904a"
+        },
+        "result": "pass",
+        "notes": "classical_limit_descended uses hres in simp; spectral_sum_finite uses S; fromCrystalData binders all populate fields. No unused binder.",
+        "reviewed_at": "2026-06-25T17:05:22.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "dda1a269b642",
+          "ts": "d302fc71849f",
+          "lean": "c41be4b37bc1"
+        },
+        "result": "pass",
+        "notes": "Conjecture: S_5=Aut(Bring) acts on Hecke EW slice, rescale=120; candid (-0.58% residual, (a)-(c) gaps); plausible but identification open.",
+        "reviewed_at": "2026-06-25T17:07:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ]
   },

@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e578265519f9",
+          "ts": "bdcc349e5255"
+        },
+        "result": "pass",
+        "notes": "Conjecture: e_λ bridges II-depth ↔ GB-depth with explicit d_II(λ) (2 self-conj / 3 chiral pair); concrete predictions table at n≤4. Speculative but well-posed; honestly a §3b conjecture-class with sorry instance.",
+        "reviewed_at": "2026-06-25T17:07:57.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ]
   },

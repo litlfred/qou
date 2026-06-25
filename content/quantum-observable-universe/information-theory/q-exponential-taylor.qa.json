@@ -1201,6 +1201,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "20eca7de6e3e",
+          "ts": "64315720531a",
+          "lean": "52185ffb1e0b"
+        },
+        "result": "pass",
+        "notes": "md gives a complete derivation (D_q ansatz -> recursion a_{n+1}=a_n/[n+1]_q -> 1/[n]_q!) + convergence by super-geometric factorial growth",
+        "reviewed_at": "2026-06-25T17:06:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1242,6 +1264,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "20eca7de6e3e",
+          "ts": "64315720531a",
+          "lean": "52185ffb1e0b"
+        },
+        "result": "pass",
+        "notes": "exp_q(x)=sum x^n/[n]_q! with convergence: a true, well-posed q-calculus statement",
+        "reviewed_at": "2026-06-25T17:06:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1285,6 +1329,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "20eca7de6e3e",
+          "ts": "64315720531a",
+          "lean": "52185ffb1e0b"
+        },
+        "result": "warn",
+        "notes": "standard q-exponential series; the categorical-grouplike framing adds little beyond a restatement of classical q-calculus",
+        "reviewed_at": "2026-06-25T17:06:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.55
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1316,6 +1382,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "20eca7de6e3e",
+          "ts": "64315720531a",
+          "lean": "52185ffb1e0b"
+        },
+        "result": "fail",
+        "notes": "headline convergence claim Summable(qExpSeries) is discharged by a custom 'axiom qExponentialTaylor_axiom' then re-exported as theorem qExponentialTaylor — presented as proved but axiom-masked (unexpected axiom). Only qExpSeries_classical_limit (jacksonFactorial 1 = n!) is genuinely proved",
+        "reviewed_at": "2026-06-25T17:06:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1485,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "20eca7de6e3e",
+          "ts": "64315720531a",
+          "lean": "52185ffb1e0b"
+        },
+        "result": "pass",
+        "notes": "q!=1 and forall n [n]_q!!=0 are simultaneously satisfiable (e.g. q=2); no contradiction",
+        "reviewed_at": "2026-06-25T17:06:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1432,6 +1534,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "20eca7de6e3e",
+          "ts": "64315720531a",
+          "lean": "52185ffb1e0b"
+        },
+        "result": "pass",
+        "notes": "qExponentialTaylor forwards hq (q!=1) and hfac ([n]_q!!=0) into the axiom; both used",
+        "reviewed_at": "2026-06-25T17:06:24.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

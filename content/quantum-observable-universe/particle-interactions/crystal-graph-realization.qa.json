@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2edb47581fb3",
+          "ts": "f0d33541da64"
+        },
+        "result": "pass",
+        "notes": "Conjecture: GS canonical basis T_w ↔ indecomposable graded projective KLR module = crystal highest-weight (ẽ_i T_w=0) via Brundan-Kleshchev; well-posed, honestly conjectural.",
+        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.74
+        }
       }
     ]
   },

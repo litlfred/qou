@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "912d5c6d0cb3",
+          "ts": "755cdc25adf6"
+        },
+        "result": "pass",
+        "notes": "conjecture P!=NP at non-torsion q_0: a Clay Millennium Problem — maximally well-posed and substantive (framework's chi(A)=-6 'fourth evaluation' framing is speculative, but the GOAL is canonical)",
+        "reviewed_at": "2026-06-25T17:07:05.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.9
+        }
       }
     ]
   },

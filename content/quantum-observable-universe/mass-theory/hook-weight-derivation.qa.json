@@ -1062,6 +1062,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "21019959d90b",
+          "ts": "b9da186ed782"
+        },
+        "result": "fail",
+        "notes": "beta4_hook [ctx:Beta4HookContext] : <conclusion> := ctx.claim_beta4_hook -- the proof IS the context field that equals the conclusion. Textbook self-assuming projection.",
+        "reviewed_at": "2026-06-25T17:06:01.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-placeholder-stub": [
@@ -1231,6 +1248,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "21019959d90b",
+          "ts": "b9da186ed782"
+        },
+        "result": "pass",
+        "notes": ".md proof is a clear Wedderburn-weight computation (w_[2,2]=dim_q^2/[4]_q!, pn-doubling 1/2 factor, hook trace [2]_q-2). But the Lean realization assumes the conclusion rather than executing this.",
+        "reviewed_at": "2026-06-25T17:06:01.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1270,6 +1308,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "21019959d90b",
+          "ts": "b9da186ed782"
+        },
+        "result": "pass",
+        "notes": "beta_4 = -1/2 w_[2,2](4) hook coefficient of Phi_4 in 4-channel mass formula; well-posed, improves accuracy 0.074->0.072% mean. Conditional on shell-transition-knot conj.",
+        "reviewed_at": "2026-06-25T17:06:01.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1311,6 +1370,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "21019959d90b",
+          "ts": "b9da186ed782"
+        },
+        "result": "pass",
+        "notes": "Fourth (hook) channel beyond the three extremal channels, with magic-number vanishing giving shell structure; substantive extension of the mass formula.",
+        "reviewed_at": "2026-06-25T17:06:01.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1340,6 +1420,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "21019959d90b",
+          "ts": "b9da186ed782"
+        },
+        "result": "fail",
+        "notes": "Lean does NOT derive beta_4=-1/2 w_22; it axiomatises the block's OWN conclusion as context field claim_beta4_hook and beta4_hook:=ctx.claim_beta4_hook projects it. Vacuous self-assuming projection (3b-cond non-degeneracy violation); .md claim not derived from sub-hypotheses.",
+        "reviewed_at": "2026-06-25T17:06:01.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1419,6 +1516,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "21019959d90b",
+          "ts": "b9da186ed782"
+        },
+        "result": "pass",
+        "notes": "Context fields satisfiable: beta4~=-0.083, w_22~=0.166, -1/2*0.166=-0.083, |.|<0.005 all hold. Not contradictory.",
+        "reviewed_at": "2026-06-25T17:06:01.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1448,6 +1562,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "21019959d90b",
+          "ts": "b9da186ed782"
+        },
+        "result": "pass",
+        "notes": "beta4_hook references ctx (projects claim_beta4_hook); no dead binder. (Defect is self-projection, captured separately.)",
+        "reviewed_at": "2026-06-25T17:06:01.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

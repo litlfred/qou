@@ -1157,6 +1157,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "eaf82f3c1f47",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "notes": "md proof is clear: det=(-1)^n, |tr|≤2 ⇒ unit circle; char poly (λ+1)² for Borromean from tr=-2,det=1. Lean realises the algebra but stubs the trace inputs.",
+        "reviewed_at": "2026-06-25T17:08:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1196,6 +1217,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "eaf82f3c1f47",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "notes": "Unit-modulus of ρ_(2,1)(β) for even-length β, Borromean λ=-1 degenerate, baryon/meson sign duality: well-posed, substantive (eigenvalue table + θ values).",
+        "reviewed_at": "2026-06-25T17:08:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
         }
       }
     ],
@@ -1237,6 +1279,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "eaf82f3c1f47",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "notes": "Baryon-meson duality from the sign of the (2,1) phase channel, and Borromean as the θ=π fixed point, is a genuine structural reading.",
+        "reviewed_at": "2026-06-25T17:08:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1273,6 +1336,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "eaf82f3c1f47",
+          "ts": "40a734632f4a"
+        },
+        "result": "fail",
+        "notes": "Load-bearing claims are vacuous: borromean_trace_21_eq_neg_two and all_positive_trace_positive are 'def : True := trivial'. The crucial χ_(2,1)(β_Bor)=-2 is NOT derived; only the discriminant algebra (tr²-4det=0) and det=±1 toy lemmas are real.",
+        "reviewed_at": "2026-06-25T17:08:11.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1302,6 +1382,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "eaf82f3c1f47",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "notes": "No class-field projection; failures are vacuous True-stubs, not projections of a hypothesis equal to the conclusion.",
+        "reviewed_at": "2026-06-25T17:08:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1381,6 +1478,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "eaf82f3c1f47",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "notes": "Premises (q≠0; tr=-2,det=1) are satisfiable; no contradiction.",
+        "reviewed_at": "2026-06-25T17:08:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1410,6 +1524,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "eaf82f3c1f47",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "notes": "hecke_generator_det_neg_one(hq used by field_simp); borromean_eigenvalue_neg_one h_tr,h_det both subst-used. No unused binder.",
+        "reviewed_at": "2026-06-25T17:08:12.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

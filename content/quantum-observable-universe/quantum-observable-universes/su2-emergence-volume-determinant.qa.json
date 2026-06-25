@@ -1157,6 +1157,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "warn",
+        "notes": "No strategy: lift assumed as class field. (su2_emergence_combined does genuinely compose the two siblings, but each base lemma is self-assuming.)",
+        "reviewed_at": "2026-06-25T17:06:30.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.25
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1196,6 +1217,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "notes": "Substantive: det=1 on every gauge automorphism ⟹ G⊆SL(2) (volume/qdet constraint). Well-posed.",
+        "reviewed_at": "2026-06-25T17:06:30.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
         }
       }
     ],
@@ -1237,6 +1279,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "warn",
+        "notes": "Implication axiomatised verbatim and re-applied; only the combined corollary adds a trivial ⟨_,_⟩ pairing.",
+        "reviewed_at": "2026-06-25T17:06:30.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.22
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1273,6 +1336,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "fail",
+        "notes": "Same degenerate pattern as sibling: implication (∀g det=1 ⟹ G⊆SL2) is class field claim_pointwise_det_lifts_to_SL2; theorem applies it. Conclusion carried as a field; lift not derived.",
+        "reviewed_at": "2026-06-25T17:06:30.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1302,6 +1382,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "fail",
+        "notes": ":= ctx.claim_pointwise_det_lifts_to_SL2 h_all_det_one — projects a field that IS the lemma's implication. Self-assuming projection.",
+        "reviewed_at": "2026-06-25T17:06:30.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1381,6 +1478,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "notes": "SU2VolumeContext satisfiable (contained_in_SL2:=True). No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:06:30.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1410,6 +1524,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e5e555fd2487",
+          "ts": "231a79d4d266"
+        },
+        "result": "pass",
+        "notes": "h_all_det_one consumed by the field; [ctx] used. Binders used.",
+        "reviewed_at": "2026-06-25T17:06:30.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

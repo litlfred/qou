@@ -933,6 +933,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b1a11469c28b",
+          "ts": "6abfdce32faf"
+        },
+        "result": "pass",
+        "notes": "Geom(K)=Yekutieli rigid-dualizing evaluation, piecewise hyperbolic(Vol/ℏ²)/torus(CS·ℏ²)/unknot(0), is well-posed; Lean §3b-cond class genuinely DERIVES the 3-case formula from one master identity (rw/zero_mul), conjectural input = holonomy↔trM join only.",
+        "reviewed_at": "2026-06-25T17:06:07.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ]
   },

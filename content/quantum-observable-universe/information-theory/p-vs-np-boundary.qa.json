@@ -1277,6 +1277,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a9ff52add0d3",
+          "ts": "d4b902c48a21",
+          "lean": "e383a6d19ff3"
+        },
+        "result": "pass",
+        "notes": "theorems (boundary_dichotomy, obstruction_implies_boundary, both_topologically_obstructed) are derived from defs by real tactic proofs; P!=NP modelled via boundaryEmpty/Nonempty defs, not asserted as a projected field",
+        "reviewed_at": "2026-06-25T17:05:25.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-trivial-true": [

@@ -1157,6 +1157,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "notes": "Strategy clear and division-free over Laurent ring; substantive content (spectral completeness, Bring uniqueness) cited to other props, not re-derived here.",
+        "reviewed_at": "2026-06-25T17:06:29.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1196,6 +1217,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "notes": "Goal: α_EM=q⁻¹/([9]_q[10]_q) as singlet-trace / Bring force-carrier complexity. Well-posed over the ground ring; q→1 gives 1/90.",
+        "reviewed_at": "2026-06-25T17:05:54.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
         }
       }
     ],
@@ -1237,6 +1279,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "warn",
+        "notes": "Lean lemma itself is just a definitional iff (low novelty); the novelty is in the cited derivation (singlet idempotent / Bring complexity) not formalized in this file.",
+        "reviewed_at": "2026-06-25T17:06:30.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.5
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1273,6 +1336,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "notes": "Lean states the cleared-denominator relation [9]_q·[10]_q·α=q⁻¹ exactly as .md says 'this is the form carried by the formalisation'. isEmCoupling_iff sorry-free (Iff.rfl). Definitional but faithful; not vacuous (real equation).",
+        "reviewed_at": "2026-06-25T17:05:54.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1302,6 +1382,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "notes": "isEmCoupling_iff unfolds strongCrossingNumber=9/weakCrossingNumber=10/antisymmetricEigenvalue=q_inv via Iff.rfl; not a hypothesis-field projection.",
+        "reviewed_at": "2026-06-25T17:05:54.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1381,6 +1478,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "notes": "No premises; α universally quantified over R_q=ℤ[q,q⁻¹]. Not vacuous.",
+        "reviewed_at": "2026-06-25T17:05:54.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1410,6 +1524,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "93c3c1866e92",
+          "ts": "f9656f636a3f"
+        },
+        "result": "pass",
+        "notes": "Only binder is (α:R_q), used in both sides of the iff. No idle hypotheses.",
+        "reviewed_at": "2026-06-25T17:05:54.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

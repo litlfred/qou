@@ -1277,6 +1277,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6ed296279c98",
+          "ts": "1c7445d218e6",
+          "lean": "cd3d2a3524c2"
+        },
+        "result": "fail",
+        "notes": "Library theorem alpha_shift_torus_knot := HasAlphaShiftTorus.alpha_shift_eq returns the class field that IS its conclusion. Field is rfl-trivial because alphaShift is DEFINED as k*(p-1) — the .md's pole-order-max content is collapsed into the def, so the projection is vacuous-by-construction (sibling variant is def-then-rfl).",
+        "reviewed_at": "2026-06-25T17:07:34.000Z",
+        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-trivial-true": [
