@@ -1,10 +1,10 @@
 import Mathlib.Tactic
 
 /-!
-# Coral spectral cubic — color-root power sums are q-free
+# Color spectral cubic — color-root power sums are q-free
 
 The lever-1 binding Seiberg–Witten differential is `λ_SW = X dz`, with the color coordinate `X` cut
-out by the **coral spectral cubic**
+out by the **color spectral cubic**
 
     X³ + (z+1)X² + (z²+z+1)X + (z³+z²+z+1) = 0
 
@@ -23,11 +23,11 @@ jet prolongation of `λ_SW` yields **q-independent** periods `∮λ_SW^(n)`, whi
 absence of any quantum parameter in the statement is the point.
 -/
 
-namespace QOU.Mass.CoralPowerSums
+namespace QOU.Mass.ColorPowerSums
 
 variable {R : Type*} [CommRing R]
 
-/-- First elementary symmetric function of the coral cubic's roots: `e₁ = −(z+1)`. -/
+/-- First elementary symmetric function of the color cubic's roots: `e₁ = −(z+1)`. -/
 def e1 (z : R) : R := -(z + 1)
 
 /-- Second elementary symmetric function: `e₂ = z²+z+1`. -/
@@ -45,12 +45,12 @@ def psum2 (z : R) : R := e1 z * psum1 z - 2 * e2 z
 /-- Power sum `p₃ = e₁p₂ − e₂p₁ + 3e₃` (Newton). -/
 def psum3 (z : R) : R := e1 z * psum2 z - e2 z * psum1 z + 3 * e3 z
 
-/-- **Coral-cubic color-root power sums are the q-free polynomials `−(zⁿ+1)`** for `n = 1,2,3`.
+/-- **Color-cubic color-root power sums are the q-free polynomials `−(zⁿ+1)`** for `n = 1,2,3`.
 The statement lives over a generic commutative ring with `z : R` — **no quantum parameter appears**,
 which is exactly the q-freeness that forces the binding prolongation operator to be q-difference
 rather than a classical jet (z2bn second probe). Pure ring identities. -/
-theorem coral_power_sums (z : R) :
+theorem color_power_sums (z : R) :
     psum1 z = -(z + 1) ∧ psum2 z = -(z ^ 2 + 1) ∧ psum3 z = -(z ^ 3 + 1) := by
   refine ⟨?_, ?_, ?_⟩ <;> simp only [psum1, psum2, psum3, e1, e2, e3] <;> ring
 
-end QOU.Mass.CoralPowerSums
+end QOU.Mass.ColorPowerSums
