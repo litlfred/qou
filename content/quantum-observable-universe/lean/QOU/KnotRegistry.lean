@@ -131,7 +131,9 @@ noncomputable def figureEightEntry : KnotEntry where
     strand at all in its bare presentation.  Both have Jones
     polynomial $1$, so transfer-matrix arithmetic coincides, but the
     physical roles differ: photon (empty knot, $\varnothing$) vs.
-    neutrino (unknot, $0_1$).
+    neutrino (unknot, $0_1$).  This entry records only the **bare**
+    photon; the genuine photon is the four-term Hecke element
+    `PhotonHeckeElement` defined below.
 
     Knot Atlas (closest entry, single-strand limit):
     <http://katlas.org/wiki/0_1> -/
@@ -151,6 +153,42 @@ noncomputable def photonEntry : KnotEntry where
   }
   identity := .photon
   atlas_url := "http://katlas.org/wiki/0_1"
+
+/-! ## The Photon as a Four-Term Hecke Element
+
+The registry's `photonEntry` records the photon's **bare** limit — the
+identity braid `𝟙` — because `KnotEntry` carries a single `BraidWord`,
+not a Hecke-algebra superposition.  The genuine photon is a four-term
+element of `H₃(q)`, `γ = 𝟙 + φ₀·σ₀ + φ₁·σ₁ + φ₀₁·σ₀σ₁`, over the basis
+words `{𝟙, σ₀, σ₁, σ₀σ₁}` with real colour weights.  It is therefore
+**not** the unknot `0₁` (which is the neutrino): its support has four
+words, and its two-photon products generate the full operator basis
+(see the `gamma-gamma-generates-particles` proposition). -/
+
+/-- The photon as a four-term element of the Hecke algebra `H₃(q)`:
+    `γ = 𝟙 + φ₀·σ₀ + φ₁·σ₁ + φ₀₁·σ₀σ₁`.  The colour weights are formal,
+    so this is stated over a generic commutative ring (no `q₀`). -/
+structure PhotonHeckeElement (R : Type*) [CommRing R] where
+  /-- Colour weight of `σ₀`. -/
+  phi0 : R
+  /-- Colour weight of `σ₁`. -/
+  phi1 : R
+  /-- Colour weight of `σ₀σ₁ = L₊`. -/
+  phi01 : R
+
+/-- The four basis words carrying the photon, as `σ`-index sequences:
+    `𝟙 = []`, `σ₀ = [0]`, `σ₁ = [1]`, `σ₀σ₁ = [0,1]`. -/
+def photonSupportWords : List (List ℕ) := [[], [0], [1], [0, 1]]
+
+/-- The photon is a **four-term** element: its support has four basis
+    words, distinguishing it from the single-component unknot `0₁`
+    (the neutrino). -/
+theorem photonSupportWords_length : photonSupportWords.length = 4 := by
+  decide
+
+/-- The bare (free) photon: all colour weights vanish, leaving the
+    identity term `𝟙` alone — the limit recorded by `photonEntry`. -/
+def barePhoton (R : Type*) [CommRing R] : PhotonHeckeElement R := ⟨0, 0, 0⟩
 
 /-- **Hopf Link (L2a1)** — the simplest non-trivial link (2 components).
     QOU identity: **Strong Force**.  The Hopf link represents the
