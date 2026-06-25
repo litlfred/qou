@@ -116,9 +116,17 @@ polynomial targets, both q₀-free:
 
 That **both** leading coefficients are clean low-degree polynomials in `n` is itself a structural
 fact about the defect — and it sharpens the keystone gate from one falsifiable number per `n`
-(phase G2) to two. `D(n)` is *not yet* Lean-proved (a follow-on, via the same Identity-I /
-content-hook machinery that gave `C(n)`); it is interpolation-derived with held-out validation, and
-flagged as such.
+(phase G2) to two. `D(n)`'s closed-form polynomial is now **partially Lean-formalized**
+([`WLambdaDefectSubleadingD.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaDefectSubleadingD.lean),
+sorry-free): the factored↔expanded `ring` identity (confirming the witness's
+`int_coeffs_low_to_high`), the shared `n(n−1)` vanishing at `n=0,1`, the `1036800 = 50·144²`
+denominator and the `144^k` denominator ladder (`144`, `50·144²`, `7350·144³`), and the value table
+cross-checking `1036800·D(n)` for `n=2..10` (held-out `n=9,10` included). What stays **deferred** —
+exactly parallel to `C(n)`'s general-`n` Identity I — is the *derivation* of `D(n)` from the defect:
+`D(n)` was extracted numerically (`mp.taylor`, method-validated to `0.0` against proved-exact `C(n)`)
+and interpolated with held-out validation; the symbolic `h⁴`-order collapse into named Plancherel
+moments (the `h⁴` analogue of Identity I) is not yet in hand. The Lean file is honest about this in
+its docstring — it formalizes the closed form's algebra and witness cross-check, not a derivation.
 
 ## The coefficient ladder — `deg c_{2k}(n) = 3k` (every coefficient is polynomial)
 
