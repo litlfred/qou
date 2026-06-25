@@ -6,6 +6,7 @@ import QOU.BraidKnot.WLambdaDefectLadderE
 import QOU.BraidKnot.IdentityIContentDecomposition
 import QOU.BraidKnot.IdentityIPlancherelInstances
 import QOU.BraidKnot.KeystoneC2ContentTranspose
+import QOU.BraidKnot.KeystoneC2DimTranspose
 import QOU.BraidKnot.CyclotomicLValueDecomposition
 import QOU.BraidKnot.CyclotomicTrilogImaginary
 import QOU.BraidKnot.CyclotomicCl3OrbitSum
