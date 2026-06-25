@@ -229,3 +229,16 @@ prolongation λ_SW^(n) (n≥1). Gap rigorously located (not asserted): the expli
 jet-prolongation map, nothing upstream. First decidable lw(1)=1 check unreachable
 until λ_SW^(2) is explicit. Consistent with merged sibling #2764 ((b)-exclusion of
 constant-τ depth-2: my aD5(q=1)=251/48 ≠ lw(4)=26/5, residual 7/240; τ(q=1)=21/8 = their seed).
+## Progress 2026-06-25 cont. (PRs #2767, #2768) — converges with Step 1; operator NARROWED to q-difference
+
+Parallel to the #2755 Step-1 probe above (same coral Σ, same `λ_SW=X dz`). My two probes:
+- **Probe 1 (PR #2767, merged):** τ closed form `(a_D²+a_D⁴)/a_D³ = 3(3q⁴+8q²+3)/(4q(q+1)²)`
+  Lean-proved sorry-free (`Lever1TauClosedForm.lean`; #2755 deduped against it, commit 8558da53); coral
+  `E_q` confirmed (`j(q₀)=129.86`, `j(1)=128`; flagged a −16 bug in `descartes-elliptic-curve.lean::j_invariant`).
+- **Probe 2 (PR #2768):** sorry-free `coral_power_sums` (coral cubic + classical d/dz jets + power sums all
+  q-FREE) ⇒ **(b)-EXCLUSION of the classical-jet identification** (q-indep periods ≠ q-dep anchor `(q+1)²/(3q)`).
+  **Increment over #2755 Step 1:** Step 1 showed `Res(X dz)=0` at finite branch points (residues only at z=∞);
+  Probe 2 adds *why a classical prolongation can't rescue it* — the operator **must be q-DIFFERENCE** (`R(q,x)`).
+- **Convergent target (both probes + Step 1):** construct the explicit q-difference `R(q,x)` whose `∮λ_SW^(n)`
+  residues reproduce `1, (q+1)²/(3q), Family-A`. Owner-gated keystone; coordinate with the #2755 sibling +
+  #2722 (geometric `tr B`) before constructing. No fit; nothing wired.
