@@ -257,6 +257,8 @@ export default chapter({
             "prolonged-periods-fixed-depth-proof",
             "sl2-prolongation-recurrence",
             "sl2-prolongation-recurrence-proof",
+            "sl2-period-conserved-quantity",
+            "sl2-period-conserved-quantity-proof",
           ],
         }),
         section({
