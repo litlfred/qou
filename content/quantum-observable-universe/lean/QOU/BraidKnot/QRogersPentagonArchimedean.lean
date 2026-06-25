@@ -22,9 +22,12 @@ Ref: [lewin1981] Polylogarithms and Associated Functions §1.6
 Ref: prop:q-rogers-pentagon-archimedean.md
 -/
 
-import Mathlib.Algebra.Ring.Defs
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
 
 namespace QOU.BraidKnot
 
@@ -51,7 +54,7 @@ theorem rogersAlpha_beta_symmetry (u v : ℝ) :
     1 - u·v ≠ 0). -/
 theorem rogersAlphaBeta_complement (u v : ℝ) (h : 1 - u * v ≠ 0) :
     (1 - rogersAlpha u v) * (1 - rogersBeta u v) =
-      (1 - u) * (1 - v) / (1 - u * v) := by
+      (1 - u) * (1 - v) / (1 - u * v) ^ 2 := by
   unfold rogersAlpha rogersBeta
   field_simp
   ring
@@ -206,30 +209,12 @@ theorem rogers_correction_leading_h_order [c : RogersCorrectionLeadingOrderH4] :
     the denominator 1 - uv is non-zero).  Stated as a positivity
     bound for the well-definedness of the recursive pentagon. -/
 theorem rogersAlpha_bounded_under_convergence
-    (u v : ℝ) (hu : 0 ≤ u) (hv : 0 ≤ v) (huv_lt : u * v < 1) :
+    (u v : ℝ) (hu : 0 ≤ u) (hu1 : u ≤ 1) (hv : 0 ≤ v) (huv_lt : u * v < 1) :
     rogersAlpha u v ≤ u := by
   unfold rogersAlpha
-  -- α(u, v) = u(1-v)/(1-uv); for 0 ≤ v < 1 and 0 ≤ uv < 1,
-  -- we have (1-v) ≤ 1 and (1-uv) ≤ 1 (when uv ≤ 0 the inequality
-  -- flips, but in the convergence regime 0 ≤ uv < 1 both inputs
-  -- are positive).
-  --
-  -- The fine-grained chain requires positivity in 1-uv; full
-  -- proof tracked as a future structural lemma.  For now record
-  -- the structural shape via classical-limit witnesses elsewhere.
-  by_cases hv1 : v ≥ 1
-  · -- v ≥ 1: numerator (1-v) ≤ 0, so α ≤ 0 ≤ u
-    nlinarith [mul_nonneg hu hv]
-  · push_neg at hv1
-    -- 0 ≤ v < 1; numerator and denominator positive
-    have h_one_minus_v : 1 - v ≥ 0 := by linarith
-    have h_one_minus_uv : 1 - u * v > 0 := by linarith
-    have h_num_pos : u * (1 - v) ≤ u * 1 := by
-      apply mul_le_mul_of_nonneg_left _ hu
-      linarith
-    have h_div : u * (1 - v) / (1 - u * v) ≤ u * (1 - v) := by
-      apply div_le_self (mul_nonneg hu h_one_minus_v)
-      linarith
-    linarith
+  have hden : 0 < 1 - u * v := by linarith
+  rw [div_le_iff₀ hden]
+  -- u·(1−v) ≤ u·(1−u·v)  ⇔  u·v·(1−u) ≥ 0
+  nlinarith [mul_nonneg (mul_nonneg hu hv) (by linarith : (0:ℝ) ≤ 1 - u)]
 
 end QOU.BraidKnot
