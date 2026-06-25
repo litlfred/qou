@@ -1,0 +1,53 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-25T15:31:08.038010+00:00",
+  "commitSha": "c1a690f02669aa011c54f727898fa17ea23c1d47",
+  "assertions": [
+    {
+      "name": "published_near_misses_1plusq_2sqrtq_are_bar_odd_excluded",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "bar-involution q↦q⁻¹; ⁴He self-mirror ⇒ magic factor bar-even"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 498,
+  "computation": "probe-he4-magic-baryeven-prune",
+  "scriptFile": "probe_he4_magic_baryeven_prune.py",
+  "scriptHash": "da5a08b6f7de",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "EXPLORATORY structural pruning: the ⁴He magic-closure factor must be bar-even (q↦q⁻¹ invariant) because ⁴He is self-mirror (N=Z=2); this structurally excludes the published near-misses 1+q and 2√q (bar-odd). No closed form proposed; no near-match promoted (Δ_λ gate).",
+  "auditOnly": "docs/audits/2026-06-25-he4-magic-factor-bar-even-pruning.md",
+  "parameters": {
+    "q0": "1.1099785955573347",
+    "target_f_he4_over_ZN": "2.0715"
+  },
+  "data": {
+    "excluded_bar_odd": [
+      "1+q                (a567)",
+      "2*sqrt(q)          (a567)"
+    ],
+    "bar_even_survivors_not_promoted": {
+      "[2]_q = q+q^-1": "-2.93%",
+      "1+(q+q^-1)/2": "-3.19%",
+      "[2]_q + (q-q^-1)^2": "-0.82%",
+      "cosh(2 ln q) + 1": "-2.40%"
+    }
+  }
+}
