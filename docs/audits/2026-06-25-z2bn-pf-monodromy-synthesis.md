@@ -12,7 +12,7 @@ Three independent threads now bear on the binding-τ keystone operator `M` (the 
 recurrence `a_D^(n+2) = τ a_D^(n+1) − a_D^(n)`):
 
 - **Sibling #2755 (merged)** conjectured `M` = the Bring **Picard–Fuchs operator**, and Step-1
-  computed the coral curve has **six `I₁` nodal fibres** (Δ degree-6, *squarefree*).
+  computed the color curve has **six `I₁` nodal fibres** (Δ degree-6, *squarefree*).
 - **Probe 2 (#2768, merged)** showed `M` is **not a classical `d/dz` jet** (those give q-free periods);
   it must be **q-difference**.
 - **The 2026-06-24 monodromy-integrality audit** showed the topological PF monodromy is `SL₂(ℤ)`
@@ -64,6 +64,6 @@ structural constraint any candidate `M` must reproduce.
 
 - [`docs/audits/2026-06-25-z2bn-prolongation-qdifference-constraint.md`](2026-06-25-z2bn-prolongation-qdifference-constraint.md) — Probe 2 (q-difference, #2768).
 - [`docs/audits/2026-06-25-z2bn-tau-derivation-first-probe.md`](2026-06-25-z2bn-tau-derivation-first-probe.md) — Probe 1 (τ closed form, #2767).
-- `docs/audits/2026-06-24-lever1-coral-eq-monodromy-integrality.md` — integer-trace exclusion.
-- `computations/substrate/lever1_coral_sigma_geometry_probe.py` — #2755 Step 1 (I₁ fibres, residue gap).
+- `docs/audits/2026-06-24-lever1-color-eq-monodromy-integrality.md` — integer-trace exclusion.
+- `computations/substrate/lever1_color_sigma_geometry_probe.py` — #2755 Step 1 (I₁ fibres, residue gap).
 - [`docs/coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md) — keystone ledger; #2722 geometric `tr B`.
