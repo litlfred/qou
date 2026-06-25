@@ -153,3 +153,19 @@ Probe `lever1_lambda_sw_no_shortcut.py` (4/4); audit `2026-06-24-lever1-lambda-s
 `λ_SW` real holonomy (not compact SU(2), not topological `SL₂(ℤ)`, not an `lw`-recurrence rate, no
 integer/golden shortcut); the explicit holonomy = θ_binding is the owner-gated keystone `M` on the
 elliptic factor. No fit; nothing wired. Owner closes (§4a).
+
+## Progress 2026-06-25 — depth-2 (b)-exclusion Lean-formalized; τ-derivation OWNER-AUTHORIZED
+
+- **(b)-exclusion now Lean-backed (PR #2764):** `QOU/Mass/Lever1Depth2Exclusion.lean` (sorry-free,
+  lean-direct exit 0) proves `∀ τ, ¬(lw₃=τ·lw₂−lw₁ ∧ lw₄=τ·lw₃−lw₂)` at the classical limit q=1
+  (lw=(1,4/3,5/2,26/5); seed forces τ=21/8, c=4 needs 26/5=251/48, residual −7/240). Substrate-free
+  (pure ℚ); the q=1 residual ≠ 0 ⇒ the q-rational residual is not identically zero ⇒ q-general
+  failure. Dims computed via hook-length (decide, dodge-proof). Backs the audit "θ_binding is a
+  seed-fit artifact". (b)-scope: const-coeff model only; variable-τ monodromy B untouched.
+- **Owner LIFTED the gate (2026-06-25):** authorized the gated τ-derivation (abelianised λ_SW
+  holonomy on coral E_q) AND confirmed Sage is gettable. Tooling now present in-container
+  (mpmath 1.3.0 + sympy 1.14.0 pip-installed; full Sage may not be needed — numerical
+  elliptic-period integration suffices). Coordinated with sibling #2722 (geometric tr B side) to
+  avoid double-work. **Next focused step (formalize-first):** locate the coral/descartes E_q curve
+  eqn in corpus, set up λ_SW = x dz period/Gauss-Manin holonomy, derive τ WITHOUT fitting to 2.6424
+  (numerology guard). NOT yet started — deep effort, pending owner go / #2722 coordination.
