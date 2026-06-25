@@ -263,3 +263,18 @@ mpmath absent — same constraint as ct80/#2747): witness JSON regen + producer 
 beside the iterated seq (reference q-hook algorithm in the audit). Audit:
 `docs/audits/2026-06-25-spectral-bridge-tautology-recurrence-vs-lw.md`. No fit; nothing wired; no tier
 change. Owner closes (§4a).
+## Probe 3 (PR #2774) — PF-monodromy SL₂ synthesis; τ is bar-even in [2]_q
+
+Synthesises #2755 (M=Bring PF operator), #2768 (M must be q-difference), 2026-06-24 integer-trace audit.
+Derived, no fit; Lean `QOU/Mass/TauQuantumIntegerForm.lean` sorry-free:
+- **M∈SL₂**: transfer `!![τ,−1;1,0]` has det=1 (`transfer_det_one`); λ_± ×=1, +=τ.
+- **NEW: τ = 3(3[2]²+2)/(4([2]+2)), [2]=q+q⁻¹** — rational in the quantum integer ALONE ⇒ **bar-even**
+  (`tau_quantum_integer_form`, `tau_bar_even`). The Hecke/q-difference fingerprint (a classical-jet trace
+  wouldn't collapse onto [2]_q) — falsifiable constraint any candidate `R(q,x)` must satisfy.
+- **τ>2 ∀q** (min 21/8 at q=1; [2]≥2 & 9[2]²−8[2]−10>0) ⇒ M hyperbolic, λ₊(q₀)=2.185. **Per the #2752
+  calibration above, λ₊ is the SEED kernel's extensivity rate (λ₊>1), NOT the full physical binding rate
+  — the physical lw grows super-geometrically PAST λ₊.** Topological PF monodromy at the I₁ fibres
+  (squarefree Δ, #2755) is parabolic trace 2.
+- **(b)**: τ∉ℤ ⇒ M∉SL₂(ℤ) ⇒ M is NOT the topological monodromy (formalises the 2026-06-24 audit via the
+  SL₂ trace). **Indicated:** real/q-difference SL₂(ℝ) operator with bar-even trace τ([2]_q). Construction
+  of M still genuine multi-session math — NOT faked. Three probes done; operator now sharply characterised.
