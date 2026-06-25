@@ -191,3 +191,23 @@ skeleton is now machine-checked, so the ONLY open thing is sharply the geometric
 `a_D^(n)=∮λ_SW^(n)=lw(n−1)` identification (owner-gated keystone `M`). MBA
 step-09b appendix synced. Non-overlapping with sibling #2524 (W_λ facet). No fit;
 nothing wired. Owner closes (§4a).
+
+## Owner reversal — binding-τ keystone geometry GREEN-LIT (2026-06-25)
+
+Owner (chat, this session) **extended the narrow Subgoal-2 reversal to the
+binding-τ side**: authorized attempting the `λ_SW`-holonomy / SW-residue
+derivation of `a_D^(n) = ∮_{S_c} λ_SW^(n) = lw(n−1)` on coral `E_q`. (The prior
+narrow reversal, 2026-06-19 / AGENTS.md §Subgoal-2, covered ONLY the `W_λ` side —
+#2503/#2524.) **AGENTS.md §Subgoal-2 + the s5-so3 ledger should be updated to
+record this binding-τ extension** (flagged to owner; STRICT-rule edit deferred to
+explicit confirm).
+
+**Scoping verdict (PR #2755 Explore agent, formalize-first preflight):**
+- Curve explicit: coral `E_q` = descartes `y²=x³+p(q)x+r(q)` (`s=√q`), j(q₀)=129.86.
+- `λ_SW^(0) = X dz` explicit; `λ_SW^(1) = dX` (implicit deriv of coral cubic).
+- **GAP located:** `λ_SW^(n≥2)` is "higher jets follow by induction" —
+  abstract, NOT a closed-form/computable rule. Residue framework
+  (`sw-period-residue-sum`) *interprets* each residue as a per-block `dim_q`
+  weight (= `lw`), but that identity is **asserted, not computed**.
+- ⇒ Option 2 is a **CONSTRUCTION** (make the prolongation explicit), not a
+  turn-crank compute. Falsifiable first step: low-jet residue (n=0,1) vs lw(1).
