@@ -28,7 +28,30 @@ kernel class is **not** warranted (formalize-first already pruned it — the
 spectral invariant λ₊(τ)>1 is Lean-proved and the kernel satisfies it).
 So the live, non-redundant work is **front 1 (A=4)** + **front 3 pre-work**.
 
-## Plan
+## Outcome (2026-06-25)
+
+Full synthesis: [`docs/audits/2026-06-25-binding-frontier-three-front-convergence.md`](../audits/2026-06-25-binding-frontier-three-front-convergence.md).
+
+**All actionable, non-owner-gated work across the three fronts is already
+banked / recorded / pruned in the corpus; the three converge on one
+owner-gated object** — the abelianised λ_SW holonomy on coral `E_q`
+(`θ=0.7815`, `τ=2.6424`).
+
+- **Front 1 (A=4):** interface operator exists + evaluated — under-binds ⁴He
+  **−70.8%**, deficit **saturates** (⁴He/D = 2.70 vs AME 12.72). Bounded piece;
+  cannot supply the extensive term (scope-(a), not exclusion). Fresh re-run
+  native-gated (clarabel fork dep unfetchable here). Witness-emission hygiene
+  gap in `a4_interface_trace_integration_all.py` filed as follow-up.
+- **Front 2 (Lever-1):** banked (#2718); τ(q₀)=2.6423863133015 reproduced.
+- **Front 3 (keystone):** curve identified (coral E_q, j≈129.86); Picard–Fuchs
+  route formalize-first-pruned (integer-trace obstruction). Open step
+  owner-gated.
+
+**No non-gated, non-fitting forward step remains on binding *magnitude*.** The
+unlock is the owner-gated keystone holonomy. ρ-free *ratios* (Lever 3 `thb7`)
+remain the parameter-free falsifiable-prediction avenue.
+
+## Plan (status)
 
 ### Front 1 — A=4 interface operator scaffolding (PRIMARY)
 - [ ] Map existing A=3 interface-operator / Option-E v9 mirror-pair code (agent running).
