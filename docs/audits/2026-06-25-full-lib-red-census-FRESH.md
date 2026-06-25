@@ -137,6 +137,45 @@ double-counts files main already fixed:
 per-file authoring (honest §1a dispositions, v4.24 hierarchy migration, instance derivation) or a
 corrected fixpoint census to unblock the 8 dep-blocked files.
 
+## Corrected fixpoint census (2026-06-25, DEFINITIVE — supersedes the "35 lower bound")
+
+Ran the corrected `lean_red_census.py` (proper bottom-up fixpoint: wipe QOU oleans, rebuild,
+re-try blocked modules until no new green). On HEAD with this PR's drains applied:
+
+| class | count | meaning |
+|---|---|---|
+| **GREEN** | 633 | compiles (all 17 of this PR's drains are here) |
+| **RED** | **50** | genuine source error — the TRUE count (the "35" was the lower bound the caveat warned of) |
+| cache-artifact | 90 | missing *Mathlib* submodule olean (compiles in CI; not a source error) |
+| blocked-by-red | 31 | downstream of a RED/cache dep; indeterminate until the dep builds |
+
+The fixpoint **unblocked** the 3 dep-blocked λ files from the batch-3 list (their
+`MarkovTraceClaim`/`Hecke` deps now build), letting them be drained — entries 14–17.
+
+### Drained 14–17 (post-census, GREEN via lean-direct) → 17 total, 46 RED remaining
+
+14. **`TraceLocalityMeetsGsNonLocality.lean`** — `[LinearOrderedField R]` is no longer a class in
+    v4.24; body uses R only for `*`/`∏`, so per §7c → `[CommMonoid R]` (drop unused order/field).
+15. **`y_lambda_recipe_from_partition.lean`** — ∀λ→∀lam (×2) + `import Real.Basic` (ℝ `Div`).
+16. **`qmn_recursive_memoized.lean`** — λ→lam (×4) + missing-witness field
+    `claim_ii_miss_computes_via_holds` (§3b-cond, the demazure pattern) + `import Real.Basic`.
+17. **`confinement_categorical.lean`** — fun λ→fun lam (×2) + `import Real.Basic` (ℝ `AddCommMonoid`).
+
+### Still-RED docstring trio (census-unblocked but layered → deferred)
+
+The census also unblocked 3 dangling-docstring files, but each carries a non-mechanical 2nd
+error, so they are **deferred** not drained: `PentagonUvCommutation` (`/--` at 88 + `unknown
+tactic` at 123), `WenzlBridgeConcrete` (`/-!` at 117 + `QOU.qFactorial`/`QOU.qInteger` unknown
+identifiers), `NucleonNFWitness` (multiple dangling `/-!`/`/--` + dangling `end`).
+
+### The 46 remaining RED — class profile
+
+Dominated by genuine proof/authoring work, NOT mechanical: ~11 `typeclass-stuck (metavariables)`,
+~9 `failed-to-synthesize`, ~6 `rewrite failed`, ~5 `unsolved/No goals`, ~4 `Function expected`,
+plus malformed `: trivial` placeholders, `unknown identifier` API-rot, a stack-overflow
+(`AllKnownIsotopesUniqueness`), and the 1 timeout (`Witness12B`). Re-run `lean_red_census.py`
+for the live annotated breakdown.
+
 ## Lesson + next step
 
 Reds are **layered** (tau_leptonic had 2 distinct errors; ConditionalClasses had 3). Draining
