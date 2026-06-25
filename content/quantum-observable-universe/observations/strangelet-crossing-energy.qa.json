@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4fdf1acbbc53",
+          "ts": "ecf3fab17a11"
+        },
+        "result": "pass",
+        "notes": ".md proof clear (charge partition {+,-,-}, braid crossing counts); Lean derives the 8>6 inequality but axiomatises the binding formulas as fields.",
+        "reviewed_at": "2026-06-25T17:16:17.000Z",
+        "reviewed_sha": "f72ffba437d37db9fd6bcb7ffcfb9e712b9b6ff5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4fdf1acbbc53",
+          "ts": "ecf3fab17a11"
+        },
+        "result": "pass",
+        "notes": "Well-posed: strangelet EM-neutral, strong-only crossing energy, more binding/baryon than neutron matter; concrete crossing counts (8 vs 6).",
+        "reviewed_at": "2026-06-25T17:15:59.000Z",
+        "reviewed_sha": "f72ffba437d37db9fd6bcb7ffcfb9e712b9b6ff5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1346,6 +1388,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4fdf1acbbc53",
+          "ts": "ecf3fab17a11"
+        },
+        "result": "fail",
+        "notes": "Conjuncts i (Q=0) and ii (E_cross formula) are := ctx.claim_i / ctx.claim_ii — class fields that ARE those sub-claims; only conjunct iii is derived.",
+        "reviewed_at": "2026-06-25T17:15:05.000Z",
+        "reviewed_sha": "f72ffba437d37db9fd6bcb7ffcfb9e712b9b6ff5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1418,6 +1477,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4fdf1acbbc53",
+          "ts": "ecf3fab17a11"
+        },
+        "result": "pass",
+        "notes": "Fields satisfiable for q>0 (Q=0, n±, binding 8q⁻¹/6q⁻¹, q⁻¹>0); no contradiction; conjunct iii is conditional on 0<q_real.",
+        "reviewed_at": "2026-06-25T17:15:36.000Z",
+        "reviewed_sha": "f72ffba437d37db9fd6bcb7ffcfb9e712b9b6ff5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1447,6 +1523,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4fdf1acbbc53",
+          "ts": "ecf3fab17a11"
+        },
+        "result": "pass",
+        "notes": "All fields used: claim_i, claim_ii, uds_binding, udd_binding, q_real_inv_pos (in linarith for 6q⁻¹<8q⁻¹); none orphaned.",
+        "reviewed_at": "2026-06-25T17:15:17.000Z",
+        "reviewed_sha": "f72ffba437d37db9fd6bcb7ffcfb9e712b9b6ff5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
