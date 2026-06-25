@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: symbolic spectral-curve geometry, verified symbolically + mpmath.
-"""Lever-1 Construction Step 1 — make the coral spectral-curve geometry explicit.
+"""Lever-1 Construction Step 1 — make the color spectral-curve geometry explicit.
 
 Owner green-lit (2026-06-25) the binding-τ keystone geometry. Step 1 of the
 construction path (docs/audits/2026-06-25-lever1-binding-tau-construction-vs-compute-scoping.md):
 pin the EXPLICIT geometry of the exceptional-divisor / residue setup before any
 period claim, and run the smallest decidable checks.
 
-The coral spectral curve (coral-bundles.md, coral-elliptic.md) is
+The color spectral curve (color-bundles.md, color-elliptic.md) is
 
     Σ ⊂ T*P¹ :   X³ + (z+1)X² + (z²+z+1)X + (z³+z²+z+1) = 0,
 
@@ -28,7 +28,7 @@ residue structure a_D^(n)=2πiΣRes lives. It does NOT compute a_D^(n)=lw(n−1)
 n≥2 — that needs the prolonged λ_SW^(n) (n≥1), the abstract jet-bundle map the
 proof leaves "by induction". The finding is the precise construction gap.
 
-Audit-only. Output: lever1-coral-sigma-geometry-probe.witness.json
+Audit-only. Output: lever1-color-sigma-geometry-probe.witness.json
 """
 from __future__ import annotations
 
@@ -118,7 +118,7 @@ def main() -> int:
     sheet_sum = sum(sheet_res)
 
     # ---------------- witness ----------------
-    w = WitnessBuilder("lever1-coral-sigma-geometry-probe", engine="python+sympy+mpmath")
+    w = WitnessBuilder("lever1-color-sigma-geometry-probe", engine="python+sympy+mpmath")
     w.set_audit_only("docs/audits/2026-06-25-lever1-binding-tau-construction-vs-compute-scoping.md")
     w.add_parameter("cubic", "X^3+(z+1)X^2+(z^2+z+1)X+(z^3+z^2+z+1)")
     w.add_parameter("lambda_SW", "X dz (Liouville tautological 1-form on T*P^1)")
@@ -136,11 +136,11 @@ def main() -> int:
     )
 
     w.add_assertion("six_singular_fibres", computed=int(deg), expected=6, tolerance=0,
-                    source="coral-bundles.md: 'six singular fibres where Δ(z) vanishes'")
+                    source="color-bundles.md: 'six singular fibres where Δ(z) vanishes'")
     w.add_assertion("discriminant_squarefree", computed=int(squarefree), expected=1, tolerance=0,
                     source="simple ramification ⇒ Riemann–Hurwitz applies")
     w.add_assertion("genus_one", computed=int(genus), expected=1, tolerance=0,
-                    source="coral/descartes E_q is genus-1 (j(q0)=129.86)")
+                    source="color/descartes E_q is genus-1 (j(q0)=129.86)")
     w.add_assertion("branch_locus_bar_symmetric", computed=int(palindromic), expected=1, tolerance=0,
                     source="z↔1/z bar symmetry (palindromic Δ)")
     w.add_assertion("X_dz_holomorphic_at_branchpts_Res0", computed=int(finite_residue_at_branchpts),
@@ -151,7 +151,7 @@ def main() -> int:
                     source="ΣX_i=−(z+1) has no 1/z term ⇒ Σ Res_∞=0")
 
     out = w.save()
-    print("=== Lever-1 Step 1: coral spectral-curve geometry ===")
+    print("=== Lever-1 Step 1: color spectral-curve geometry ===")
     print(f"Δ(z) deg = {deg}  (six singular fibres: {int(deg)==6})  palindromic={palindromic}")
     print(f"squarefree={squarefree}  ⇒ genus = {genus}")
     print("branch points (3 bar-symmetric pairs):")

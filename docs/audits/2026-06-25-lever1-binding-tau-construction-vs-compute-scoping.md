@@ -9,14 +9,14 @@ run, per the formalize-first discipline (AGENTS.md §Formalize-first).
 
 ## What is already settled (do not re-derive)
 
-- **Curve:** coral `E_q` = descartes `y² = x³ + p(q)x + r(q)` (`s=√q`), confirmed by
-  the invariant `j(q₀)=129.86` ([`2026-06-24-lever1-coral-eq-monodromy-integrality.md`](2026-06-24-lever1-coral-eq-monodromy-integrality.md)).
+- **Curve:** color `E_q` = descartes `y² = x³ + p(q)x + r(q)` (`s=√q`), confirmed by
+  the invariant `j(q₀)=129.86` ([`2026-06-24-lever1-color-eq-monodromy-integrality.md`](2026-06-24-lever1-color-eq-monodromy-integrality.md)).
 - **Kernel shape:** depth-2, `det=1`, `R(q,x)=x²−τx+1` (`prop:sl2-prolongation-recurrence`, sorry-free).
 - **Algebraic τ-closure (NEW, PR #2755):** the three wired anchors
   `a_D^(2,3,4)=lw(1,2,3)` force `τ=3(3q⁴+8q²+3)/(4q(q+1)²)` and `τ>2` ⇒ kernel
   extensive — now sorry-free in `QOU.Mass.BindingTauAnchorClosure`.
 - **What is NOT topological:** `τ=2.6424∉ℤ`, so `B` is not the integral `SL₂(ℤ)`
-  Gauss–Manin monodromy ([integrality audit](2026-06-24-lever1-coral-eq-monodromy-integrality.md)).
+  Gauss–Manin monodromy ([integrality audit](2026-06-24-lever1-color-eq-monodromy-integrality.md)).
 
 ## The open object, stated precisely
 
@@ -27,7 +27,7 @@ $$ a_D^{(n)} \;=\; \oint_{\mathcal{S}_c} \lambda_{\mathrm{SW}}^{(n)} \;\stackrel
 From [`mi-sw-abelianisation-proof.md`](../../content/quantum-observable-universe/brings-surface/mi-sw-abelianisation-proof.md)
 + [`sw-period-residue-sum.md`](../../content/quantum-observable-universe/brings-surface/sw-period-residue-sum.md):
 
-- `λ_SW^(0) = X dz` (explicit; `X` = color coordinate, root of the coral cubic
+- `λ_SW^(0) = X dz` (explicit; `X` = color coordinate, root of the color cubic
   `X³+(z+1)X²+(z²+z+1)X+(z³+z²+z+1)=0`);
 - `λ_SW^(1)`: "the 1-jet component is `dX`" (implicit derivative of the cubic);
 - **`λ_SW^(n≥2)`: "higher jets follow by induction"** — abstract; **no explicit /
@@ -79,14 +79,14 @@ which is why a probe now would manufacture a number, not test the claim.
 
 ## Step 1 EXECUTED (2026-06-25) — geometry pinned; residue gap rigorously located
 
-Probe [`computations/substrate/lever1_coral_sigma_geometry_probe.py`](../../computations/substrate/lever1_coral_sigma_geometry_probe.py)
-→ `lever1-coral-sigma-geometry-probe.witness.json` (6/6 assertions). Pure
+Probe [`computations/substrate/lever1_color_sigma_geometry_probe.py`](../../computations/substrate/lever1_color_sigma_geometry_probe.py)
+→ `lever1-color-sigma-geometry-probe.witness.json` (6/6 assertions). Pure
 sympy+mpmath, **no Sage**. Verified, all decidable:
 
-- **Six singular fibres** (coral-bundles.md): `deg Δ(z)=6`,
+- **Six singular fibres** (color-bundles.md): `deg Δ(z)=6`,
   `Δ=−16z⁶−24z⁵−35z⁴−50z³−35z²−24z−16` — **palindromic** (the z↔1/z bar
   symmetry) and **squarefree** (simple ramification).
-- **Genus 1** (= coral/descartes `E_q`): Riemann–Hurwitz `2g−2 = 3(−2)+6 = 0`.
+- **Genus 1** (= color/descartes `E_q`): Riemann–Hurwitz `2g−2 = 3(−2)+6 = 0`.
 - **Branch locus** = 3 bar-symmetric conjugate pairs at `|z| ≈ {1.000, 0.943,
   1.060}` (`0.943·1.060 ≈ 1`, reciprocal).
 - **CRUX — `Res(λ_SW = X dz) = 0` at every finite branch point.** With the

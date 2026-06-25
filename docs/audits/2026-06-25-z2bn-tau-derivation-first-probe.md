@@ -9,7 +9,7 @@
 ## Context
 
 The owner **authorized** (2026-06-25) the previously gated derivation of the lever-1 binding-kernel
-trace `τ = tr B = 2.6424` as the abelianised `λ_SW` Gauss–Manin holonomy on the coral elliptic curve
+trace `τ = tr B = 2.6424` as the abelianised `λ_SW` Gauss–Manin holonomy on the color elliptic curve
 `E_q` (a Subgoal-2 step distinct from the s5-so3 reversal; see
 [`docs/coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md) and the `z2bn` bean). This
 is the **first non-fitted probe**: establish the clean geometric anchors and test principled holonomy
@@ -20,7 +20,7 @@ The corpus setup (`descartes-elliptic-curve.{md,lean}`, `mi-sw-abelianisation-ca
 `sl2-prolongation-recurrence.md`, `lever1_lambda_sw_no_shortcut.py`):
 
 - **Curve** `E_q : y² = x³ + p(q)x + r(q)`, `p(q)=2(q²−q+1)/(3q)+(q−1)/(3√q)`, `r(q)=…+20/27`.
-- **Spectral (coral) cubic** `X³+(z+1)X²+(z²+z+1)X+(z³+z²+z+1)=0`, `z=√q−1/√q`, color coordinate `X`.
+- **Spectral (color) cubic** `X³+(z+1)X²+(z²+z+1)X+(z³+z²+z+1)=0`, `z=√q−1/√q`, color coordinate `X`.
 - **SW differential** `λ_SW = X dz`; prolonged periods `a_D^(n) = ∮ λ_SW^(n)`; depth-2 recurrence
   `a_D^(n+2)=τ·a_D^(n+1)−a_D^(n)`, `det B = 1`.
 - **Anchors** `a_D^(2)=1`, `a_D^(3)=(q+1)²/(3q)`, `a_D^(4)=(3q²+4+3q⁻²)/4`;
@@ -39,11 +39,11 @@ At `q₀ = 1.1099785955573347199`: `τ = 2.6423863133…`, `θ_binding = acosh(�
 [`tau_kernel_closed_form`](../../content/quantum-observable-universe/lean/QOU/Mass/Lever1TauClosedForm.lean)
 (`ℝ`, `q≠0`, `q+1≠0`).
 
-### (B) The coral curve `E_q` is confirmed — `j(q₀) = 129.86`
+### (B) The color curve `E_q` is confirmed — `j(q₀) = 129.86`
 
 Computing the periods of `y²=x³+p(q₀)x+r(q₀)` (roots + complete elliptic integrals) and the Klein
 invariant `1728·kleinj(ω₂/ω₁)` gives **`j(q₀) = 129.860`** (corpus 129.86) and **`j(1) = 128`**, with
-`p(1)=2/3`, `r(1)=20/27` exact — the descartes/coral `E_q` is the right curve.
+`p(1)=2/3`, `r(1)=20/27` exact — the descartes/color `E_q` is the right curve.
 
 > **Side finding (corpus bug, low-priority):** `descartes-elliptic-curve.lean`'s `j_invariant p r`
 > def is `-1728(4p)³/(4p³+27r²)` — it **omits the `−16`** of `Δ = −16(4p³+27r²)`, so it returns
@@ -51,7 +51,7 @@ invariant `1728·kleinj(ω₂/ω₁)` gives **`j(q₀) = 129.860`** (corpus 129.
 > formula); only that one Lean def is off. It is annotated "NOT part of the formal proof chain", so
 > this is a flag for a follow-up, not a blocker.
 
-### (C) The coral-cubic color-root power sums
+### (C) The color-cubic color-root power sums
 
 By Newton's identities on `X³+(z+1)X²+(z²+z+1)X+(z³+z²+z+1)`:
 
@@ -84,5 +84,5 @@ is the owner-gated keystone residual. No fit anywhere; `q₀` and `2.6424` never
 
 - [`computations/substrate/lever1_lambda_sw_no_shortcut.py`](../../computations/substrate/lever1_lambda_sw_no_shortcut.py) — anchors; no algebraic shortcut to τ.
 - [`computations/substrate/lever1_binding_monodromy_hyperbolicity.py`](../../computations/substrate/lever1_binding_monodromy_hyperbolicity.py) — `τ>2 ⇒ B` hyperbolic `SL₂(ℝ)`.
-- [`docs/audits/2026-06-24-lever1-coral-eq-monodromy-integrality.md`](2026-06-24-lever1-coral-eq-monodromy-integrality.md) — coral `E_q` = descartes `E_q`; `tr B ∉ ℤ`.
+- [`docs/audits/2026-06-24-lever1-color-eq-monodromy-integrality.md`](2026-06-24-lever1-color-eq-monodromy-integrality.md) — color `E_q` = descartes `E_q`; `tr B ∉ ℤ`.
 - [`docs/coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md) — keystone ledger; PR #2722 holds the geometric `tr B` side.

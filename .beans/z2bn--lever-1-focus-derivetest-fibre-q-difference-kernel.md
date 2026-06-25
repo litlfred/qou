@@ -174,7 +174,7 @@ elliptic factor. No fit; nothing wired. Owner closes (§4a).
 
 Rather than chase the owner-gated `λ_SW` holonomy (the obvious period probe is
 already refuted — topological PF monodromy is integer-trace `SL₂(ℤ)`, but
-`τ=2.6424∉ℤ`, per `2026-06-24-lever1-coral-eq-monodromy-integrality.md`),
+`τ=2.6424∉ℤ`, per `2026-06-24-lever1-color-eq-monodromy-integrality.md`),
 formalized the **algebraic** lever-1 skeleton in Lean
 (`QOU/Mass/BindingTauAnchorClosure.lean`, sorry-free + axiom-free, lean-direct
 exit 0, v4.24.0):
@@ -196,15 +196,15 @@ nothing wired. Owner closes (§4a).
 
 Owner (chat, this session) **extended the narrow Subgoal-2 reversal to the
 binding-τ side**: authorized attempting the `λ_SW`-holonomy / SW-residue
-derivation of `a_D^(n) = ∮_{S_c} λ_SW^(n) = lw(n−1)` on coral `E_q`. (The prior
+derivation of `a_D^(n) = ∮_{S_c} λ_SW^(n) = lw(n−1)` on color `E_q`. (The prior
 narrow reversal, 2026-06-19 / AGENTS.md §Subgoal-2, covered ONLY the `W_λ` side —
 #2503/#2524.) **AGENTS.md §Subgoal-2 + the s5-so3 ledger should be updated to
 record this binding-τ extension** (flagged to owner; STRICT-rule edit deferred to
 explicit confirm).
 
 **Scoping verdict (PR #2755 Explore agent, formalize-first preflight):**
-- Curve explicit: coral `E_q` = descartes `y²=x³+p(q)x+r(q)` (`s=√q`), j(q₀)=129.86.
-- `λ_SW^(0) = X dz` explicit; `λ_SW^(1) = dX` (implicit deriv of coral cubic).
+- Curve explicit: color `E_q` = descartes `y²=x³+p(q)x+r(q)` (`s=√q`), j(q₀)=129.86.
+- `λ_SW^(0) = X dz` explicit; `λ_SW^(1) = dX` (implicit deriv of color cubic).
 - **GAP located:** `λ_SW^(n≥2)` is "higher jets follow by induction" —
   abstract, NOT a closed-form/computable rule. Residue framework
   (`sw-period-residue-sum`) *interprets* each residue as a per-block `dim_q`
@@ -214,11 +214,11 @@ explicit confirm).
 
 ## Construction Step 1 EXECUTED (2026-06-25, PR #2755) — residue gap rigorously located
 
-Probe `computations/substrate/lever1_coral_sigma_geometry_probe.py` (6/6, pure
-sympy+mpmath, **no Sage**): coral spectral curve Σ: X³+(z+1)X²+(z²+z+1)X+(z³+z²+z+1)=0
+Probe `computations/substrate/lever1_color_sigma_geometry_probe.py` (6/6, pure
+sympy+mpmath, **no Sage**): color spectral curve Σ: X³+(z+1)X²+(z²+z+1)X+(z³+z²+z+1)=0
 over the z-line, λ_SW=X dz (Liouville form on T*ℙ¹). Verified:
 - **six singular fibres** (deg Δ=6, Δ palindromic ⇒ z↔1/z bar symmetry), squarefree;
-- **genus 1** (Riemann–Hurwitz 2g−2=3(−2)+6=0) = coral/descartes E_q;
+- **genus 1** (Riemann–Hurwitz 2g−2=3(−2)+6=0) = color/descartes E_q;
 - branch locus = 3 bar-symmetric pairs at |z|≈{1.000,0.943,1.060} (reciprocal);
 - **CRUX: Res(X dz)=0 at every finite branch point** (Puiseux slope finite ⇒ no 1/t
   pole); only z=∞ carries residue {0,±5i/16}, sheet-sum 0.

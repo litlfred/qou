@@ -10,7 +10,7 @@
       "expected": 6,
       "passed": true,
       "tolerance": 0,
-      "source": "coral-bundles.md: 'six singular fibres where Δ(z) vanishes'"
+      "source": "color-bundles.md: 'six singular fibres where Δ(z) vanishes'"
     },
     {
       "name": "discriminant_squarefree",
@@ -26,7 +26,7 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "source": "coral/descartes E_q is genus-1 (j(q0)=129.86)"
+      "source": "color/descartes E_q is genus-1 (j(q0)=129.86)"
     },
     {
       "name": "branch_locus_bar_symmetric",
@@ -55,8 +55,8 @@
   ],
   "allPassed": true,
   "durationMs": 19,
-  "computation": "lever1-coral-sigma-geometry-probe",
-  "scriptFile": "lever1_coral_sigma_geometry_probe.py",
+  "computation": "lever1-color-sigma-geometry-probe",
+  "scriptFile": "lever1_color_sigma_geometry_probe.py",
   "scriptHash": "e65c8d5ec32f",
   "scriptCommitSha": "unknown",
   "precisionMetadata": {

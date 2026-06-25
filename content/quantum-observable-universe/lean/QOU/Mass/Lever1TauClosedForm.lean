@@ -19,7 +19,7 @@ proves the **exact closed form** of that trace:
 At the substrate `q₀ ≈ 1.10998` this evaluates to `τ ≈ 2.64239` (`θ_binding = acosh(τ/2) ≈ 0.78145`),
 the hyperbolic `SL₂(ℝ)` rapidity of the abelianised `λ_SW` connection — see the first geometric
 probe `computations/substrate/z2bn_tau_derivation_probe.py` (which cross-checks this closed form to
-50 dps and confirms the coral curve `E_q` via `j(q₀) = 129.86`).
+50 dps and confirms the color curve `E_q` via `j(q₀) = 129.86`).
 
 **Scope.** This formalizes the *algebraic* reduction of the kernel trace to a closed form in `q` from
 the three anchors — an exact, substrate-independent rational identity (pure field algebra; `q₀`
@@ -27,7 +27,7 @@ never used). It is **not** the geometric derivation of `τ` as the `λ_SW` Gauss
 owner-gated keystone residual): the first probe found that no bare-period quantity of `E_q`
 reproduces `τ = 2.6424` (the prolongation operator `λ_SW^(n) → a_D^(n)` is non-trivial — the anchors
 are not the curve's bare power sums), so that step stays open. Base ring `ℝ` (the analytic/archimedean
-realisation, matching the coral-curve and `BindingRecurrenceSpectral` files).
+realisation, matching the color-curve and `BindingRecurrenceSpectral` files).
 Ref: [manuscript] content/.../mass-theory/sl2-prolongation-recurrence.md
 -/
 
