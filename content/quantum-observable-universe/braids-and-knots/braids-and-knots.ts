@@ -111,6 +111,7 @@ export default chapter({
         "knot-notation-convention",
         "knot-notation-convention-table2-data",
         "knot-notation-convention-table1-data",
+        "fundamental-knots-operator-basis",
       ],
     }),
 
