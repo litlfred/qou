@@ -1201,6 +1201,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "50d9ec194e10",
+          "ts": "8f26b1dacf49",
+          "lean": "e946e6d57ca4"
+        },
+        "result": "pass",
+        "notes": ".md gives a clear graded-sum identity tau(MI int)=sum a_D^(n)=sum oint lambda_SW^(n); Lean packages exhaustiveness/additivity as a structure hypothesis rather than proving it",
+        "reviewed_at": "2026-06-25T16:57:51.000Z",
+        "reviewed_sha": "9d2d6c1ab790538665b366cdf22b72136052600f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.6
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1242,6 +1264,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "50d9ec194e10",
+          "ts": "8f26b1dacf49",
+          "lean": "e946e6d57ca4"
+        },
+        "result": "pass",
+        "notes": "well-posed and substantive: SW differential as the jet-graded decomposition of the archimedean functor tau (observe-last principle on the realisation side)",
+        "reviewed_at": "2026-06-25T16:57:51.000Z",
+        "reviewed_sha": "9d2d6c1ab790538665b366cdf22b72136052600f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.74
         }
       }
     ],
@@ -1285,6 +1329,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "50d9ec194e10",
+          "ts": "8f26b1dacf49",
+          "lean": "e946e6d57ca4"
+        },
+        "result": "pass",
+        "notes": "genuine structural claim linking SW periods to the jet tower of tau; but the Lean realisation only restates the assumed field (no derived content)",
+        "reviewed_at": "2026-06-25T16:57:51.000Z",
+        "reviewed_sha": "9d2d6c1ab790538665b366cdf22b72136052600f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.6
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1316,6 +1382,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "50d9ec194e10",
+          "ts": "8f26b1dacf49",
+          "lean": "e946e6d57ca4"
+        },
+        "result": "fail",
+        "notes": "self-assuming: theorem jet_sw_tau_decomposition concludes D.tauValue = sum period n by projecting the structure field D.tau_eq that IS the conclusion; the exhaustiveness/additivity content is assumed, not derived",
+        "reviewed_at": "2026-06-25T16:57:51.000Z",
+        "reviewed_sha": "9d2d6c1ab790538665b366cdf22b72136052600f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1485,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "50d9ec194e10",
+          "ts": "8f26b1dacf49",
+          "lean": "e946e6d57ca4"
+        },
+        "result": "pass",
+        "notes": "JetSWArchDecomposition is satisfiable (maxOrder=0, period=0, tauValue=0 satisfies tau_eq by sum_range_zero); not contradictory",
+        "reviewed_at": "2026-06-25T16:57:51.000Z",
+        "reviewed_sha": "9d2d6c1ab790538665b366cdf22b72136052600f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1432,6 +1534,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "50d9ec194e10",
+          "ts": "8f26b1dacf49",
+          "lean": "e946e6d57ca4"
+        },
+        "result": "pass",
+        "notes": "the only binder (D : JetSWArchDecomposition) is used via D.tau_eq; no unused binder",
+        "reviewed_at": "2026-06-25T16:57:51.000Z",
+        "reviewed_sha": "9d2d6c1ab790538665b366cdf22b72136052600f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
