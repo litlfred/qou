@@ -27,6 +27,16 @@ that reshape what a "derivation" can be here:
 So a direct non-fitted residue computation of the anchors is **not yet possible** — the operator to
 integrate does not exist in computable form. But finding (3) yields a rigorous constraint.
 
+> **Convergence with sibling #2755 (Construction Step 1, merged to main).** In parallel, the #2755
+> Step-1 probe (`computations/substrate/lever1_coral_sigma_geometry_probe.py`) independently set up the
+> same coral spectral curve Σ and `λ_SW = X dz`, and **computed** the residues directly: `Res(X dz)=0`
+> at every finite branch point (Puiseux slope finite ⇒ no `1/t` pole); only `z=∞` carries residue
+> `{0, ±5i/16}` (sheet-sum 0). That locates the gap as the explicit jet-prolongation map. **My increment
+> here is orthogonal and complementary:** Step 1 shows the bare `n=0` residues are empty at finite
+> points; this audit shows *why a CLASSICAL prolongation cannot rescue it either* (q-free ⇒ q-independent
+> periods), thereby **narrowing the open operator to the q-difference class**. The two findings agree the
+> prolongation is the gap; this one constrains its type.
+
 ## Result — (b)-exclusion of the classical-jet identification; the operator must be q-difference
 
 Because the coral cubic is q-free, every **classical** (`d/dz`) object built from it is q-free
