@@ -1,46 +1,45 @@
-import Mathlib.Tactic
+import Mathlib.NumberTheory.LSeries.RiemannZeta
 
 /-!
-# QOU.BraidKnot.ClassicalRiemannHypothesis — conjectural class (placeholder)
+# QOU.BraidKnot.ClassicalRiemannHypothesis — conjectural class (§3b)
 
-**§3b-cond class axiomatisation** for content block
-[`conj:classical-riemann-hypothesis`](../../../quantum-observable-universe/braids-and-knots/classical-riemann-hypothesis.md): *The Riemann hypothesis*.
+**§3b class axiomatisation** for content block
+[`conj:classical-riemann-hypothesis`](../../../quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.md): *The Riemann hypothesis*.
 
-This is a **conjecture**: the class `ClassicalRiemannHypothesis` carries a placeholder
-field; the `noncomputable instance` is the conjectural witness whose
-`sorry` represents the open conjecture itself (per AGENTS.md §3b),
-NOT a missing proof.  Downstream theorems may take
+This is a **conjecture**: the class `ClassicalRiemannHypothesis` carries the
+conjecture's actual content — every non-trivial zero of `riemannZeta` lies on
+the critical line `Re s = 1/2`. The `noncomputable instance` is the conjectural
+witness whose `sorry` represents the open conjecture itself (per AGENTS.md §3b),
+NOT a missing proof. Downstream theorems may take
 `[ClassicalRiemannHypothesis]` as an explicit `[Instance]` hypothesis to derive
-unconditional Lean theorems modulo this single conjectural input
-(per §3b-cond).
+rigorous-conditional results (per §3b-cond).
 
-The field schema below is a structural placeholder; refine the
-fields to match the conjecture's actual content as the
-formalisation matures.
+Matured 2026-06-25 from a degenerate `residual : ℝ := 0` placeholder to the
+faithful statement over Mathlib's `riemannZeta`. The trivial zeros of
+`riemannZeta` are the negative even integers `s = -2(n+1)` (`n : ℕ`); RH
+constrains the remaining (non-trivial) zeros. Statement shape typechecked
+against `opaque riemannZeta : ℂ → ℂ`; full compile is CI-gated (the
+`Mathlib.NumberTheory.LSeries.RiemannZeta` olean is absent from the partial
+sandbox cache, and Mathlib search was network-blocked).
+
+Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.md
 -/
 
 namespace QOU.BraidKnot
 
-/-- The Riemann hypothesis
+/-- **Conjecture (Riemann, 1859).** Every non-trivial zero `s` of the Riemann
+zeta function lies on the critical line `Re s = 1/2`. "Non-trivial" excludes the
+trivial zeros at the negative even integers `s = -2(n+1)`, `n : ℕ`.
 
-    Conjectural class — see [`conj:classical-riemann-hypothesis`](../../../quantum-observable-universe/braids-and-knots/classical-riemann-hypothesis.md). -/
-class ClassicalRiemannHypothesis where
-  -- Witness: computations/none
-  /-- **Content statement** (from manuscript):
+    Conjectural class — see
+    [`conj:classical-riemann-hypothesis`](../../../quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.md). -/
+class ClassicalRiemannHypothesis : Prop where
+  /-- All non-trivial zeros of `ζ` satisfy `Re s = 1/2`. -/
+  rh : ∀ s : ℂ, riemannZeta s = 0 → (∀ n : ℕ, s ≠ -2 * ((n : ℂ) + 1)) → s.re = 1 / 2
 
-      **Conjecture (Riemann, 1859).** All non-trivial zeros of the Riemann
-zeta function $\zeta(s)$ satisfy
-
-      Field schema below is a structural placeholder; refine per §3b
-      to match the conjecture's actual content. The single sorry on
-      the `noncomputable instance` is the conjecture itself. -/
-  residual : ℝ
-  /-- The residual vanishes (the conjecture is the assertion that
-      this holds). -/
-  residual_eq_zero : residual = 0
-
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/classical-riemann-hypothesis.ts
+-- The conjecture itself.  The `sorry` represents the **open conjecture**
+-- per §3b — not a missing proof.
+-- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.ts
 noncomputable instance : ClassicalRiemannHypothesis := sorry
+
 end QOU.BraidKnot
