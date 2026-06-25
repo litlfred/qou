@@ -119,6 +119,9 @@ import QOU.BraidsAndKnots.IcosahedralCharacterGoldenRatio
 -- D15 Pachner–Pentagon (conj:pachner-pentagon-borromean): §3b conjecture-class
 -- with sorry-free consumer theorems. Wired so CI type-checks it (not an orphan).
 import QOU.BraidsAndKnots.PachnerPentagonBorromean
+-- q-Rogers archimedean pentagon (post-τ log² correction). Wired so CI type-checks
+-- it (was a broken orphan: insufficient imports + 2 false statements, now fixed).
+import QOU.BraidKnot.QRogersPentagonArchimedean
 import QOU.Information.p_bandwidth_bound
 import QOU.ParticleInteractions.atomic_lp_stability
 import QOU.ParticleInteractions.silver_ratio_beta_decay_null
