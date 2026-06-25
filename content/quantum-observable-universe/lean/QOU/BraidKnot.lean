@@ -8,6 +8,7 @@ import QOU.BraidKnot.IdentityIPlancherelInstances
 import QOU.BraidKnot.KeystoneC2ContentTranspose
 import QOU.BraidKnot.KeystoneC2DimTranspose
 import QOU.BraidKnot.KeystoneC2QDimTranspose
+import QOU.BraidKnot.KeystoneG2Gate
 import QOU.BraidKnot.CyclotomicLValueDecomposition
 import QOU.BraidKnot.CyclotomicTrilogImaginary
 import QOU.BraidKnot.CyclotomicCl3OrbitSum
