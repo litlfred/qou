@@ -1,3 +1,8 @@
+import QOU.QuantumObservableUniverse
+import QOU.Torsion
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+
 /-!
 # Proposition: Archimedean Topological Mass Formula
 
@@ -31,10 +36,6 @@ indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
 -/
 
-import QOU.QuantumObservableUniverse
-import QOU.Torsion
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
 
 open QOU QOU.Torsion
 

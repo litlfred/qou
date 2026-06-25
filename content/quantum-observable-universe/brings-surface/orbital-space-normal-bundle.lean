@@ -1,3 +1,9 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic
+import Mathlib.LinearAlgebra.Dimension
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+
 /-!
 # QOU.OrbitalSpaceNormalBundle
 
@@ -22,11 +28,6 @@ numerical evaluation.
 
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 
-import Mathlib.Data.Nat.Basic
-import Mathlib.Tactic
-import Mathlib.LinearAlgebra.Dimension
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
 
 open Finset
 

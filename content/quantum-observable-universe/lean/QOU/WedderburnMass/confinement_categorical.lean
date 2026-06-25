@@ -1,4 +1,5 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import QOU.Shared.MarkovTraceClaim
 
 /-!
 # QOU.WedderburnMass.confinement_categorical
@@ -12,7 +13,6 @@ package. The body is `sorry` carrying the manuscript citation per
 AGENTS.md §1.
 -/
 
-import QOU.Shared.MarkovTraceClaim
 
 namespace QOU.WedderburnMass
 

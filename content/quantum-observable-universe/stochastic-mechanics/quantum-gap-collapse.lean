@@ -1,3 +1,7 @@
+import Mathlib.Order.Filter.Basic
+import Mathlib.Topology.Order.Basic
+import Mathlib.Topology.Algebra.Order.Field
+
 /-!
 # QOU.AlgebraicSubstrate.quantum_gap_collapse
 
@@ -16,9 +20,6 @@ numerical evaluation.
 
 set_option autoImplicit false
 
-import Mathlib.Order.Filter.Basic
-import Mathlib.Topology.Order.Basic
-import Mathlib.Topology.Algebra.Order.Field
 
 open Filter Topology
 

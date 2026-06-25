@@ -1,4 +1,6 @@
 import Mathlib.Tactic
+import QOU.BraidKnot.BraidGroupNStrand
+import QOU.BraidKnot.MarkovAxiomsPrimitive
 
 /-!
 # QOU.BraidKnot.markov_trace_inductive_limit
@@ -34,8 +36,6 @@ LaTeX label: `rem:markov-trace-inductive-limit`
 
 -- Sibling dependencies: BraidWord type from `braid-group-n-strand`,
 -- markovZax from `markov-axioms-primitive`.
-import QOU.BraidKnot.BraidGroupNStrand
-import QOU.BraidKnot.MarkovAxiomsPrimitive
 
 namespace QOU.BraidKnot
 

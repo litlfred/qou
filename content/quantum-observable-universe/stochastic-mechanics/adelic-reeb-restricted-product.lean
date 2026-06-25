@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Order.BigOperators.Group.Finset
+
 /-!
 # QOU.AlgebraicSubstrate.AdelicReebRestrictedProduct
 
@@ -34,7 +36,6 @@ LaTeX label: `prop:adelic-reeb-restricted-product`
 - [conway1976] Conway, *On Numbers and Games* (the surreal value group).
 -/
 
-import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
 set_option autoImplicit false
 -- The additive theorem does not consume the order instances; silence the

@@ -1,3 +1,6 @@
+import Mathlib.RingTheory.Polynomial.Cyclotomic.Basic
+import Mathlib.RingTheory.Polynomial.Cyclotomic.Eval
+
 /-!
 # Cyclotomic doubling identity Φ_8(X) = Φ_4(X²)
 
@@ -33,8 +36,6 @@ was wrong.
 --      Cyclotomic Fields", Springer GTM 83, 1997. Chapter 2.
 -/
 
-import Mathlib.RingTheory.Polynomial.Cyclotomic.Basic
-import Mathlib.RingTheory.Polynomial.Cyclotomic.Eval
 
 namespace QOU.BraidKnot.CyclotomicStrandDoubling
 

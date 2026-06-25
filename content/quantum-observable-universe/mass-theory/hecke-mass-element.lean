@@ -1,3 +1,5 @@
+import QOU.Torsion.HeckeMassElement
+
 /-!
 Sibling Lean file for `def:hecke-mass-element`.
 
@@ -10,4 +12,3 @@ the `.ts`/`.md`) is satisfied.
 -- Ref: [manuscript] §Hecke mass element — content block
 -/
 
-import QOU.Torsion.HeckeMassElement

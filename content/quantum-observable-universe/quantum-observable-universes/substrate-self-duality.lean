@@ -1,3 +1,6 @@
+import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.CategoryTheory.Category.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.substrate_self_duality
 
@@ -9,8 +12,6 @@ LaTeX label: `thm:substrate-self-duality`
 
 set_option autoImplicit false
 
-import Mathlib.CategoryTheory.Monoidal.Category
-import Mathlib.CategoryTheory.Category.Basic
 
 open CategoryTheory MonoidalCategory
 

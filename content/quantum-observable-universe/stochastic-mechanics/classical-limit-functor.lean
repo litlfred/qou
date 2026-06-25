@@ -1,3 +1,7 @@
+import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.CategoryTheory.Monoidal.Braided.Basic
+import Mathlib.CategoryTheory.Functor.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.ClassicalLimitFunctor
 
@@ -10,9 +14,6 @@ LaTeX label: `def:classical-limit-functor`
 
 set_option autoImplicit false
 
-import Mathlib.CategoryTheory.Monoidal.Category
-import Mathlib.CategoryTheory.Monoidal.Braided.Basic
-import Mathlib.CategoryTheory.Functor.Basic
 
 open CategoryTheory MonoidalCategory BraidedCategory
 

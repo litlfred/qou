@@ -1,3 +1,5 @@
+import Mathlib.Data.List.Basic
+
 /-!
 # QOU.Aeon — Aeon (connected component of the observable subcategory)
 
@@ -18,7 +20,6 @@ Source declaration: `QOU.Aeon` in jet-horizon.lean
 -- Prerequisite types from jet-horizon.lean
 -- (not independently compilable; see jet-horizon.lean for full context)
 
-import Mathlib.Data.List.Basic
 
 namespace QOU
 

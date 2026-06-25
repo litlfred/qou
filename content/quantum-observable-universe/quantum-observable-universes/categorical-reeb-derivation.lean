@@ -1,3 +1,6 @@
+import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.CategoryTheory.Category.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.CategoricalReebDerivation
 
@@ -9,8 +12,6 @@ LaTeX label: `def:categorical-reeb-derivation`
 
 set_option autoImplicit false
 
-import Mathlib.CategoryTheory.Monoidal.Category
-import Mathlib.CategoryTheory.Category.Basic
 
 open CategoryTheory MonoidalCategory
 

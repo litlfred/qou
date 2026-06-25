@@ -1,4 +1,5 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import QOU.Shared.OperatorSelectionLP
 
 /-!
 # QOU.BraidsAndKnots.demazure_fiber_markov_trace
@@ -15,7 +16,6 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 `.ts` lean.ref URIs (a pre-existing convention drift).
 -/
 
-import QOU.Shared.OperatorSelectionLP
 
 namespace QOU.BraidsAndKnots
 

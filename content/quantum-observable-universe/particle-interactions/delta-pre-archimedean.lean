@@ -1,3 +1,5 @@
+import QOU.ParticleInteractions.delta_pre_archimedean
+
 /-!
 Sibling Lean file for [`prop:delta-pre-archimedean`](delta-pre-archimedean.md).
 
@@ -13,4 +15,3 @@ next to the `.ts`/`.md`) is satisfied.
 -- Ref: [manuscript] prop:delta-pre-archimedean — content block
 -/
 
-import QOU.ParticleInteractions.delta_pre_archimedean
