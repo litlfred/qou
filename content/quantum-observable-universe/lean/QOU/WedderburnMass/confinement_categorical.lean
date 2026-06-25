@@ -1,4 +1,5 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Real.Basic
 import QOU.Shared.MarkovTraceClaim
 
 /-!
@@ -29,7 +30,7 @@ class ConfinementCategoricalContext extends QOU.Shared.MarkovTraceContext where
   E_infinity_00 : ℝ
   /-- Survival: centre decomposes into block sum. -/
   survival_page :
-    E_infinity_00 = (Finset.range n_blocks).sum (fun λ => e_block λ)
+    E_infinity_00 = (Finset.range n_blocks).sum (fun lam => e_block lam)
   /-- Frobenius integral evaluated on an arbitrary algebra element. -/
   integral : A → ℝ
   /-- Projector onto the center of `A`. -/
@@ -58,7 +59,7 @@ elements of $A = H_n(R, q)$ survive as physical observables, and
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-categorical.ts
 def confinement_categorical [ctx : ConfinementCategoricalContext] :
     ctx.E_infinity_00 = (Finset.range ctx.n_blocks).sum
-                          (fun λ => ctx.e_block λ) ∧
+                          (fun lam => ctx.e_block lam) ∧
     (∀ x : ctx.A, ctx.integral x = ctx.integral (ctx.pi_centre x)) ∧
     (∀ x : ctx.A, ctx.observable x → ctx.pi_centre x = x) := by
   exact ⟨ctx.survival_page, ctx.trace_factorization, ctx.observables_central⟩

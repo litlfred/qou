@@ -1,3 +1,4 @@
+import Mathlib.Data.Real.Basic
 import QOU.Shared.MarkovTraceClaim
 
 /-!
@@ -29,19 +30,22 @@ class QmnRecursiveMemoizedContext extends QOU.Shared.MarkovTraceContext where
   /-- Manuscript sub-claim (i) — Cache identity: memoized lookup
       agrees with the recursive computation (the recursion is the
       authoritative answer). -/
-  claim_i_looks_up_cache : ∀ λ ρ : ℕ, chi λ ρ = chi_recursion λ ρ
+  claim_i_looks_up_cache : ∀ lam ρ : ℕ, chi lam ρ = chi_recursion lam ρ
   /-- Manuscript sub-claim (ii) — Recursion structure: the border-strip
       recursion stays abstract because it requires enumeration of
       border strips of size `ρ_1`. -/
   claim_ii_miss_computes_via : Prop
+  /-- Witness that the recursion-structure sub-claim holds (§3b-cond;
+      the predicate is conjectural, an instance supplies the proof). -/
+  claim_ii_miss_computes_via_holds : claim_ii_miss_computes_via
   /-- Cache lookup operation `cache_get λ ρ` returns `some v` on hit,
       `none` on miss. -/
   cache_get : ℕ → ℕ → Option ℝ
   /-- Manuscript sub-claim (iii) — Cache invariant: when the cache
       returns a value, it equals the canonical character value (the
       stored result is faithful — no mutation effect). -/
-  claim_iii_stores_result_cache : ∀ (λ ρ : ℕ) (v : ℝ),
-    cache_get λ ρ = some v → v = chi λ ρ
+  claim_iii_stores_result_cache : ∀ (lam ρ : ℕ) (v : ℝ),
+    cache_get lam ρ = some v → v = chi lam ρ
 /-- **Proposition statement** (from manuscript):
 
 The classical Murnaghan-Nakayama rule expresses $\chi_\rho^\lambda$
@@ -65,10 +69,10 @@ $\rho \setminus \rho_1$ is $\rho$ with its first part removed.*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts
 def qmn_recursive_memoized [ctx : QmnRecursiveMemoizedContext] :
-    (∀ λ ρ : ℕ, ctx.chi λ ρ = ctx.chi_recursion λ ρ) ∧
+    (∀ lam ρ : ℕ, ctx.chi lam ρ = ctx.chi_recursion lam ρ) ∧
     ctx.claim_ii_miss_computes_via ∧
-    (∀ (λ ρ : ℕ) (v : ℝ), ctx.cache_get λ ρ = some v → v = ctx.chi λ ρ) :=
-  ⟨ctx.claim_i_looks_up_cache, ctx.claim_ii_miss_computes_via,
+    (∀ (lam ρ : ℕ) (v : ℝ), ctx.cache_get lam ρ = some v → v = ctx.chi lam ρ) :=
+  ⟨ctx.claim_i_looks_up_cache, ctx.claim_ii_miss_computes_via_holds,
    ctx.claim_iii_stores_result_cache⟩
 
 end QOU.BraidsAndKnots

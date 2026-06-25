@@ -33,7 +33,7 @@ function `nf`, and per-vertex local volume `vertexVolume`, packages
 the three identities of the reconciliation. -/
 class HasReconciliation
     (A : Type u) (R : Type v)
-    [LinearOrderedField R] [Mul A] where
+    [CommMonoid R] [Mul A] where
   /-- The Markov trace on `A`. -/
   trM : A → R
   /-- The Markov parameter `z = 1/(q^{1/2} + q^{-1/2})`. -/
