@@ -1,0 +1,194 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-25T00:22:23.863311+00:00",
+  "commitSha": "30efeb3064a09efd317ca87e4d4749b66914d626",
+  "assertions": [
+    {
+      "name": "interface_alone_does_not_predict_tower_scope_a",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "test B off-diagonal max |ln err|=2.20664; test C ceiling |ln err|=0.878473"
+    },
+    {
+      "name": "interface_linearity_preflight_below_1e_20",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "tr_M^atom(1,1;c,d)=c·t_sigma+d·t_free resid=6.682e-52"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "probe-sdp-interface-selection",
+  "scriptFile": "probe_sdp_interface_selection.py",
+  "scriptHash": "fac0ecef00c3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "EXPLORATORY: does SDP-selecting the p-n interface operator derive the binding tower or merely fit one isotope? Linear-chain bond model; interface moves only L_pn.",
+  "auditOnly": "docs/audits/2026-06-25-sdp-interface-selection-fit-vs-derivation.md",
+  "parameters": {
+    "compute_dps": 50,
+    "q0": "1.1099785955573347",
+    "alpha_E0_MeV": "4.185980827582892",
+    "tower": [
+      "2H",
+      "3H",
+      "3He",
+      "4He",
+      "6Li",
+      "7Li"
+    ]
+  },
+  "data": {
+    "L_pp": "0.6945074372225794244",
+    "L_nn": "1.2369781644668707788",
+    "canonical_L_pn": "0.9292185759225478854",
+    "menu_tower_errs": {
+      "identity 1   (L_0)": [
+        "-3.2449155e-16",
+        "0.61047999",
+        "0.37667521",
+        "0.28573856",
+        "0.50541757",
+        "0.54397366"
+      ],
+      "e_+  (q-sym proj)": [
+        "0.68106143",
+        "0.78910563",
+        "0.57297712",
+        "0.33928267",
+        "0.55277229",
+        "0.58257891"
+      ],
+      "sigma  (d=0)": [
+        "1.3068592",
+        "0.95323697",
+        "0.75335042",
+        "0.38848204",
+        "0.59628449",
+        "0.6180516"
+      ],
+      "sigma-h/2 (blind avg)": [
+        "1.7488597",
+        "1.0691628",
+        "0.88074794",
+        "0.42323151",
+        "0.62701712",
+        "0.64310594"
+      ],
+      "sigma-h(half-d/4) CANON": [
+        "1.7485167",
+        "1.0690728",
+        "0.88064908",
+        "0.42320454",
+        "0.62699327",
+        "0.6430865"
+      ],
+      "sigma^-1 (d=-h)": [
+        "2.3276299",
+        "1.22096",
+        "1.0475665",
+        "0.46873363",
+        "0.66725945",
+        "0.67591292"
+      ],
+      "e_-  (q-antisym proj)": [
+        "2.2426153",
+        "1.1986627",
+        "1.0230628",
+        "0.46204989",
+        "0.66134832",
+        "0.67109395"
+      ]
+    },
+    "mirage_matrix": {
+      "2H": {
+        "d_star": "0.0884420705475",
+        "predict_errs": [
+          "1.0",
+          "0.87275536",
+          "0.66490458",
+          "0.36435718",
+          "0.57494833",
+          "0.60065761"
+        ]
+      },
+      "3H": {
+        "d_star": "-0.0451397962298",
+        "predict_errs": [
+          "1.4851567",
+          "1.0",
+          "0.80474098",
+          "0.40249954",
+          "0.60868164",
+          "0.62815821"
+        ]
+      },
+      "3He": {
+        "d_star": "-0.182454176188",
+        "predict_errs": [
+          "2.1625998",
+          "1.1776767",
+          "1.0",
+          "0.45575919",
+          "0.65578478",
+          "0.66655836"
+        ]
+      },
+      "4He": {
+        "d_star": "-0.491318942542",
+        "predict_errs": [
+          "9.0851424",
+          "2.993289",
+          "2.9952801",
+          "1.0",
+          "1.1371144",
+          "1.0589554"
+        ]
+      },
+      "6Li": {
+        "d_star": "-0.476501220463",
+        "predict_errs": [
+          "7.1131458",
+          "2.4760829",
+          "2.4268928",
+          "0.84496433",
+          "1.0",
+          "0.94717487"
+        ]
+      },
+      "7Li": {
+        "d_star": "-0.485414008465",
+        "predict_errs": [
+          "8.0450698",
+          "2.7205036",
+          "2.6955006",
+          "0.91823092",
+          "1.0647974",
+          "1.0"
+        ]
+      }
+    },
+    "joint_ceiling_errs": {
+      "2H": "1.6494616",
+      "3H": "1.0430931",
+      "3He": "0.8520985",
+      "4He": "0.41541697",
+      "6Li": "0.62010589",
+      "7Li": "0.63747166"
+    }
+  }
+}
