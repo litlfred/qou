@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0d2672c5e929",
+          "ts": "a6e7aebb4a5e"
+        },
+        "result": "pass",
+        "notes": "md gives a complete explicit symbolic computation (basis, d1 matrix [[0,1],[1,0]], d2 Yang-Baxter, trM pairings); strategy is clear. Lean stub does not realise it.",
+        "reviewed_at": "2026-06-25T17:03:17.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.75
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0d2672c5e929",
+          "ts": "a6e7aebb4a5e"
+        },
+        "result": "pass",
+        "notes": "Explicit d1/d2 of GB-filtered Hochschild SS on H_3(R,q), E_inf ranks matching 6-term structure: substantive, well-posed (full symbolic md derivation).",
+        "reviewed_at": "2026-06-25T17:03:17.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0d2672c5e929",
+          "ts": "a6e7aebb4a5e"
+        },
+        "result": "pass",
+        "notes": "Explicit single-nucleon spectral-sequence computation tying E_inf classes to the 6-term mass decomposition is novel structural content.",
+        "reviewed_at": "2026-06-25T17:03:17.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1293,6 +1356,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0d2672c5e929",
+          "ts": "a6e7aebb4a5e"
+        },
+        "result": "fail",
+        "notes": "Substantive d1/d2/page claims are opaque 'claim_i..iii : Prop' fields with matching _holds fields; Lean encodes none of the matrix content. Only n_strands=3 is real.",
+        "reviewed_at": "2026-06-25T17:03:17.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1322,6 +1402,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0d2672c5e929",
+          "ts": "a6e7aebb4a5e"
+        },
+        "result": "fail",
+        "notes": "def := ⟨claim_strand_count, claim_i_holds, claim_ii_holds, claim_iii_holds⟩ — the three substantive conjuncts are projected class fields that ARE the conclusion (§3b-cond rule 5 degenerate).",
+        "reviewed_at": "2026-06-25T17:03:17.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1498,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0d2672c5e929",
+          "ts": "a6e7aebb4a5e"
+        },
+        "result": "pass",
+        "notes": "Opaque Prop fields are satisfiable (no contradiction); class is non-empty in principle.",
+        "reviewed_at": "2026-06-25T17:03:17.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1544,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0d2672c5e929",
+          "ts": "a6e7aebb4a5e"
+        },
+        "result": "pass",
+        "notes": "All projected fields (strand_count + 3 _holds) are used in the anonymous constructor.",
+        "reviewed_at": "2026-06-25T17:03:17.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

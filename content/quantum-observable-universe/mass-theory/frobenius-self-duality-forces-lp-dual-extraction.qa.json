@@ -1207,6 +1207,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ce0c23c8dc00",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "notes": ".md gives clear 5-step proof (Frobenius pairing, self-duality iso, LP primal/dual, Slater, τ-extraction=Φ_τ). Lean statement faithful but sorry.",
+        "reviewed_at": "2026-06-25T17:04:33.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1248,6 +1270,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ce0c23c8dc00",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "notes": "Markov trace non-degenerate => H_n Frobenius self-dual => Obs_τ IS the LP-dual map is well-posed; explains mass coeffs as shadow prices.",
+        "reviewed_at": "2026-06-25T17:04:33.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
         }
       }
     ],
@@ -1291,6 +1335,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ce0c23c8dc00",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "notes": "Identifying τ-extraction with the canonical Frobenius self-duality map (mass coeffs = LP shadow prices) is a substantive structural claim.",
+        "reviewed_at": "2026-06-25T17:04:33.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.76
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1329,6 +1395,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ce0c23c8dc00",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "notes": "Sibling .lean (resolves first) thm states Obs_τ=Φ_τ ∧ Bijective(Obs_τ) — faithful to .md — via honest sorry+[manuscript]. Helper defs also sorry (construction pending). No vacuity/self-projection. Library file is empty-struct stub (shadowed).",
+        "reviewed_at": "2026-06-25T17:04:33.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1360,6 +1444,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ce0c23c8dc00",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "notes": "Proof is 'by sorry', not ':= ctx.field'. observationFrame/frobeniusSelfDualityMap are sorry-defs, not class fields carrying the conclusion.",
+        "reviewed_at": "2026-06-25T17:04:33.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1443,6 +1545,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ce0c23c8dc00",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "notes": "FrobeniusTraceAlgebra satisfiable (Hecke algebra with Markov trace). No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:04:33.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1474,6 +1594,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ce0c23c8dc00",
+          "ts": "221545be3a9d",
+          "lean": "86b9247abf20"
+        },
+        "result": "pass",
+        "notes": "FA:FrobeniusTraceAlgebra used in both sides of the stated equality+bijectivity. No unused binder.",
+        "reviewed_at": "2026-06-25T17:04:33.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

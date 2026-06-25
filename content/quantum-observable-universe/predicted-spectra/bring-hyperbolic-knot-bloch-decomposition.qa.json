@@ -957,6 +957,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "03e86b904073",
+          "ts": "a82db280369a",
+          "lean": "bd83915cb58a"
+        },
+        "result": "pass",
+        "notes": "Well-posed Bloch-group decomposition Σn_i D[Z_K_i]=2/(3π) in B(Q(ζ_15)); concrete finite candidate set, K-theory framing. Substantive open conjecture.",
+        "reviewed_at": "2026-06-25T17:03:08.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
+        }
       }
     ]
   },

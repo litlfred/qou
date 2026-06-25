@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4878cd76a53e",
+          "ts": "25afe31a8f87"
+        },
+        "result": "pass",
+        "notes": "Strategy clear (direct algebra + Wenzl inequality) but Lean axiomatises term positivity into class rather than deriving from q^{1/2}+q^{-1/2}>2.",
+        "reviewed_at": "2026-06-25T17:03:45.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4878cd76a53e",
+          "ts": "25afe31a8f87"
+        },
+        "result": "pass",
+        "notes": "Well-posed arithmetic: variance positivity of centred Hecke generator, concrete formula, numerically checkable at q_0.",
+        "reviewed_at": "2026-06-25T17:03:36.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4878cd76a53e",
+          "ts": "25afe31a8f87"
+        },
+        "result": "pass",
+        "notes": "Non-degeneracy input to q-CLT; modest novelty as an arithmetic positivity lemma feeding conj:q-clt-non-commutative.",
+        "reviewed_at": "2026-06-25T17:04:16.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1293,6 +1356,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4878cd76a53e",
+          "ts": "25afe31a8f87"
+        },
+        "result": "pass",
+        "notes": "Lean states Var=formula AND 0<Var, matching .md; sorry-free, proved by linarith from class fields term1_pos/term2_pos.",
+        "reviewed_at": "2026-06-25T17:02:27.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1322,6 +1402,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4878cd76a53e",
+          "ts": "25afe31a8f87"
+        },
+        "result": "fail",
+        "notes": "First conjunct (Var=formula) is := ctx.var_formula — returns the class field that IS half the conjunctive conclusion, not derived.",
+        "reviewed_at": "2026-06-25T17:02:45.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1498,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4878cd76a53e",
+          "ts": "25afe31a8f87"
+        },
+        "result": "pass",
+        "notes": "Class fields satisfiable at q_0~1.110 (Var~0.855>0, both terms positive in Wenzl regime); no contradiction.",
+        "reviewed_at": "2026-06-25T17:03:22.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1544,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4878cd76a53e",
+          "ts": "25afe31a8f87"
+        },
+        "result": "pass",
+        "notes": "All three class fields used: var_formula (conjunct 1 + linarith), term1_pos+term2_pos (linarith for 0<Var).",
+        "reviewed_at": "2026-06-25T17:02:56.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

@@ -915,6 +915,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "575e51b88c36",
+          "ts": "aeba27f2e97d"
+        },
+        "result": "pass",
+        "notes": "Conjecture; std §3b placeholder class. md: Li_3(zeta_5) depth-3, functional-eq cross-validated to 5.5e-51. Well-posed, strong numerics.",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
+        }
       }
     ]
   },

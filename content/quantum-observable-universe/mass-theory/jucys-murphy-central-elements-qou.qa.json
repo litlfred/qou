@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "511bef937f16",
+          "ts": "66d0930b6fde",
+          "lean": "046d46ce88f2"
+        },
+        "result": "pass",
+        "notes": ".md proof is clear 3-step (commute, central by induction, seminormal spectrum + Schur); Lean axiomatises the core rather than proving it.",
+        "reviewed_at": "2026-06-25T17:03:28.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "511bef937f16",
+          "ts": "66d0930b6fde",
+          "lean": "046d46ce88f2"
+        },
+        "result": "pass",
+        "notes": "Standard true result (Murphy 1992): e_l(JM) central, acts by e_l(q-contents) on V_lambda. Well-posed and correct.",
+        "reviewed_at": "2026-06-25T17:03:28.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "511bef937f16",
+          "ts": "66d0930b6fde",
+          "lean": "046d46ce88f2"
+        },
+        "result": "pass",
+        "notes": "Applies known JM theory to QOU level-l mass corrections; corollary closed form is conjectural+refuted, but framework wiring is substantive.",
+        "reviewed_at": "2026-06-25T17:03:28.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1327,6 +1393,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "511bef937f16",
+          "ts": "66d0930b6fde",
+          "lean": "046d46ce88f2"
+        },
+        "result": "fail",
+        "notes": "Murphy 1992 spectrum (the substantive .md result) is axiomatised as structure field spectrum_theorem, not proved; jm_commute & jm_esymm_central are sorry (cited).",
+        "reviewed_at": "2026-06-25T17:03:28.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1358,6 +1442,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "511bef937f16",
+          "ts": "66d0930b6fde",
+          "lean": "046d46ce88f2"
+        },
+        "result": "fail",
+        "notes": "jm_central_scalar_eq_esymm_qcontent := sp.spectrum_theorem; conclusion centralScalar=esymm(qContent) IS the structure field, returned directly.",
+        "reviewed_at": "2026-06-25T17:03:28.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1441,6 +1543,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "511bef937f16",
+          "ts": "66d0930b6fde",
+          "lean": "046d46ce88f2"
+        },
+        "result": "pass",
+        "notes": "CommRing R + HeckeJMSpectrum is inhabitable (abstract esymm/centralScalar fields); spectrum_theorem field consistent. No contradiction.",
+        "reviewed_at": "2026-06-25T17:03:28.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1472,6 +1592,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "511bef937f16",
+          "ts": "66d0930b6fde",
+          "lean": "046d46ce88f2"
+        },
+        "result": "pass",
+        "notes": "q,n,sp,lambda all referenced in the projection statement; level_ell_correction also forwards all args. No dead binders.",
+        "reviewed_at": "2026-06-25T17:03:28.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

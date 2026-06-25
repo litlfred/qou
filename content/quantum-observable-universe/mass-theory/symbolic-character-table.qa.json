@@ -1257,6 +1257,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5cd8a289db0f",
+          "ts": "8fa9d2ce48e0"
+        },
+        "result": "warn",
+        "notes": "md gives the seminormal-form recipe a_ρ=h/(1-q^{-2ρ}) and a results table but no step-by-step proof; Lean self-assumes the factorisation.",
+        "reviewed_at": "2026-06-25T17:04:08.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.5
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1297,6 +1318,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "5cd8a289db0f",
+          "ts": "8fa9d2ce48e0"
+        },
+        "result": "pass",
+        "notes": "χ_λ(σ)=c_λ·h with integer c_λ for self-conjugate λ (1,3,8,10) is a concrete, checkable seminormal-form fact; well-posed.",
+        "reviewed_at": "2026-06-25T17:04:08.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1339,6 +1381,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5cd8a289db0f",
+          "ts": "8fa9d2ce48e0"
+        },
+        "result": "pass",
+        "notes": "Explicit symbolic single-generator character table through n=7 with the c_λ·h factorisation is concrete useful content.",
+        "reviewed_at": "2026-06-25T17:04:08.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1369,6 +1432,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "5cd8a289db0f",
+          "ts": "8fa9d2ce48e0"
+        },
+        "result": "fail",
+        "notes": "theorem := ctx.claim_chi_factorisation lam (self-assumed field = conclusion). chi_311_far_commuting is 'h^2-2 = h^2-2 := rfl', a vacuous tautology not encoding χ=h²-2.",
+        "reviewed_at": "2026-06-25T17:04:08.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1413,6 +1493,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5cd8a289db0f",
+          "ts": "8fa9d2ce48e0"
+        },
+        "result": "fail",
+        "notes": "theorem symbolic_character_table := ctx.claim_chi_factorisation lam — directly projects the class field whose type IS the goal χ_λ(σ)=c_λ·h.",
+        "reviewed_at": "2026-06-25T17:04:08.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-false-premise": [
@@ -1450,6 +1547,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "5cd8a289db0f",
+          "ts": "8fa9d2ce48e0"
+        },
+        "result": "pass",
+        "notes": "h_def + chiSigma fields are satisfiable; cCoefficient is a concrete total function. No contradiction.",
+        "reviewed_at": "2026-06-25T17:04:08.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1480,6 +1594,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "5cd8a289db0f",
+          "ts": "8fa9d2ce48e0"
+        },
+        "result": "pass",
+        "notes": "ctx + lam both used in the projection; chiSigma/h_def present but class fields, not theorem binders.",
+        "reviewed_at": "2026-06-25T17:04:08.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

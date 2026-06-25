@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a969a053d40d",
+          "ts": "64cc48f765c5"
+        },
+        "result": "pass",
+        "notes": "Fibre-functor tau determines L_q uniquely up to nat-iso via rigidity; well-posed uniqueness statement conditional on the q-GL conjecture.",
+        "reviewed_at": "2026-06-25T17:03:08.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ]
   },

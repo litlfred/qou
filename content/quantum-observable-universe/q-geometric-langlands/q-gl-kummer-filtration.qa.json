@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1c4c579c47bd",
+          "ts": "630bfa9747fa"
+        },
+        "result": "pass",
+        "notes": "Kummer-tower descending filtration on LocSys with level-n restriction of L_q; lifts iff n|chi(A). Coherent conditional conjecture.",
+        "reviewed_at": "2026-06-25T17:03:08.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ]
   },

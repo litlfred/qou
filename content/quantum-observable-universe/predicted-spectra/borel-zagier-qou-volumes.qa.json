@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "047ae3717d81",
+          "ts": "2184abb1355f"
+        },
+        "result": "pass",
+        "notes": "Well-posed: Q-linear independence of Vol(4_1),Vol(5_2),Vol(B_3); a named special case of Borel-Zagier with K_3-regulator framing. Substantive open conjecture.",
+        "reviewed_at": "2026-06-25T17:02:55.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.9
+        }
       }
     ]
   },

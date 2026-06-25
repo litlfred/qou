@@ -1157,6 +1157,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a947b578e89d",
+          "ts": "b44b60fa7183"
+        },
+        "result": "pass",
+        "notes": "Clear Bezout/minimal-polynomial split strategy; eigenvalue distinctness proved from unit fields, idempotent existence cited to Jones 1987.",
+        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1196,6 +1217,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a947b578e89d",
+          "ts": "b44b60fa7183"
+        },
+        "result": "pass",
+        "notes": "Two-strand spectral completeness (rank-2 End(A⊗A), 2 idempotents, braiding eigenvalues q^{±1/2}) is standard Hecke H_2 structure, well-posed.",
+        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1237,6 +1279,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a947b578e89d",
+          "ts": "b44b60fa7183"
+        },
+        "result": "pass",
+        "notes": "Mostly standard SU_q(2) H_2 decomposition; novelty is the R-enriched framing + EM-coupling uniqueness corollary.",
+        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1273,6 +1336,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a947b578e89d",
+          "ts": "b44b60fa7183"
+        },
+        "result": "pass",
+        "notes": "eigenvalues_distinct + hecke_minimal_polynomial_splits genuinely proved (ring/unit algebra). Core idempotent-existence via cited axiom [jones1987] §3-4, faithfully encodes thm parts 1-2. No sorry.",
+        "reviewed_at": "2026-06-25T17:02:39.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1302,6 +1382,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a947b578e89d",
+          "ts": "b44b60fa7183"
+        },
+        "result": "pass",
+        "notes": "em_spectral_completeness := em_spectral_completeness_axiom S (a standalone cited axiom), not a ctx field projection. eigenvalues_distinct derived from SpectralRing fields.",
+        "reviewed_at": "2026-06-25T17:02:39.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1381,6 +1478,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a947b578e89d",
+          "ts": "b44b60fa7183"
+        },
+        "result": "pass",
+        "notes": "SpectralRing satisfiable (e.g. localised Laurent ring); q,q^{1/2} units + q-q⁻¹ unit are consistent. No contradiction.",
+        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1410,6 +1524,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a947b578e89d",
+          "ts": "b44b60fa7183"
+        },
+        "result": "pass",
+        "notes": "S:SpectralRing used throughout (qHalf_sq, qDiff_unit consumed in eigenvalues_distinct). No unused binder.",
+        "reviewed_at": "2026-06-25T17:02:39.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

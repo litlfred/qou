@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "485723b90537",
+          "ts": "0e2281e82959",
+          "lean": "ad817f9c298c"
+        },
+        "result": "pass",
+        "notes": "Well-posed: does E_h=m_e c_q² α_EM² arise from Hecke vs empirical input? .md gives honest conditional theorem with 3 named open items + 4 mechanisms. Substantive open conjecture.",
+        "reviewed_at": "2026-06-25T17:04:40.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-no-trivial-true": [

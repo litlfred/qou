@@ -1157,6 +1157,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "50ba2d279417",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "notes": "Clear: reduce off-diagonal Hecke quadratic to CH via trace/det, then class-axiomatise the eigenphase spectrum and define the cos-symmetrized character. Lean matches the .md table.",
+        "reviewed_at": "2026-06-25T17:04:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1196,6 +1217,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "50ba2d279417",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "notes": "Hoefsmit seminormal V_(2,1) action + Markov cos-symmetrization; well-posed, matrix entries empirically anchored, Q_beta cos-resummation 305 ppm vs CODATA.",
+        "reviewed_at": "2026-06-25T17:04:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
         }
       }
     ],
@@ -1237,6 +1279,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "50ba2d279417",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "notes": "Hoefsmit matrices are classical, but the Markov cos-symmetrization closed form + eigenphase_forced kinematic core (with honest exploratory caveat on the mass /8h^2 factor) are substantive.",
+        "reviewed_at": "2026-06-25T17:04:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1273,6 +1336,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "50ba2d279417",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "notes": "Core .md matrix claims fully proved sorry-free: sigma0/sigma1 Hecke quadratic M^2=(q-q^-1)M+I, trace=q-q^-1, det=-1, b^2>=0, eigenphase_forced 2cos(arccos(t/2))=t. Eigenphase spectrum honestly class-axiomatised (V21Eigenphase). Replaced a prior 'True:=trivial' stub. Faithful.",
+        "reviewed_at": "2026-06-25T17:04:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1302,6 +1382,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "50ba2d279417",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "notes": "Top-level export composes the proved lemmas via exact (sigma0/sigma1 quadratic, trace, det); not a bare := field projection of the conclusion.",
+        "reviewed_at": "2026-06-25T17:04:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1381,6 +1478,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "50ba2d279417",
+          "ts": "19a179a2a47d"
+        },
+        "result": "pass",
+        "notes": "hq:q!=0 satisfiable; V21Eigenphase q inhabitable (|2cos|<=2 and cos even both always hold). No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:04:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1410,6 +1524,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "50ba2d279417",
+          "ts": "19a179a2a47d"
+        },
+        "result": "fail",
+        "notes": "hoefsmit_V21_cos_symmetrization (and hoefsmit_V21_markov_symmetrized_character) take [V21Eigenphase q] but never reference its fields (symmetrized_character_bounded/cos_bar_invariant) -- all 5 conjuncts proved from hq + defs (last is rfl). Instance binder unused.",
+        "reviewed_at": "2026-06-25T17:04:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

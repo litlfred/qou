@@ -1261,6 +1261,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f1785a5cdd7",
+          "ts": "6d7ebe576c37",
+          "lean": "52e169cfc74c"
+        },
+        "result": "pass",
+        "notes": "Clear §3b-cond: axiomatise contour integral as pole-nonzero class, derive resolvent eq; Phase-3 concrete cascade.",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1302,6 +1324,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2f1785a5cdd7",
+          "ts": "6d7ebe576c37",
+          "lean": "52e169cfc74c"
+        },
+        "result": "pass",
+        "notes": "Well-posed: derive resolvent F_n=1/(1-h_q q^n) from Bring residue; shared across alpha_EM/p-n/meson PRs.",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1345,6 +1389,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f1785a5cdd7",
+          "ts": "6d7ebe576c37",
+          "lean": "52e169cfc74c"
+        },
+        "result": "pass",
+        "notes": "Consolidates 3 PRs' residue gaps into one class; strengthened past rfl-loophole to genuine pole hyp.",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1376,6 +1442,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2f1785a5cdd7",
+          "ts": "6d7ebe576c37",
+          "lean": "52e169cfc74c"
+        },
+        "result": "pass",
+        "notes": "§3b-cond: class BringResidueAtOrder (field pole_nonzero, a real hyp not the concl); bring_residue_equation proves (1-h_q q^n)F=1 sorry-free + concrete q=2 instances.",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1461,6 +1545,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f1785a5cdd7",
+          "ts": "6d7ebe576c37",
+          "lean": "52e169cfc74c"
+        },
+        "result": "pass",
+        "notes": "pole_nonzero satisfiable: bring_residue_q_eq_2_pole_nonzero_at_{3,4,9,10} prove it concretely at q=2:Q.",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1492,6 +1594,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2f1785a5cdd7",
+          "ts": "6d7ebe576c37",
+          "lean": "52e169cfc74c"
+        },
+        "result": "pass",
+        "notes": "[h:BringResidueAtOrder] used via h.pole_nonzero in mul_inv_cancel0; specialisations apply the n,q binders.",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

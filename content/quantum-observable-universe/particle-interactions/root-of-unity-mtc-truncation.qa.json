@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1bda54085fb4",
+          "ts": "31b505cf6501"
+        },
+        "result": "pass",
+        "notes": "Well-posed: q=e^{2pi i/k} truncates KLR/Kashiwara crystal to MTC_k; honest about what's established (BK MTC, crystal trunc) vs conjectural (QOU anyon id); falsifiable.",
+        "reviewed_at": "2026-06-25T17:03:07.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.75
+        }
       }
     ]
   },

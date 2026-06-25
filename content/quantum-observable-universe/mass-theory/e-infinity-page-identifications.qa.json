@@ -1175,6 +1175,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c113e79fa763",
+          "ts": "3c6d28f1995c"
+        },
+        "result": "warn",
+        "notes": ".md per-page derivations clear but several 'still needed' d_r computations; Lean encodes claim as self-assumed class fields, no actual derivation.",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.6
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1214,6 +1235,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c113e79fa763",
+          "ts": "3c6d28f1995c"
+        },
+        "result": "pass",
+        "notes": "Identifying each E_∞^{p,*} page with a mass-formula term is well-posed; .md derives 5/6 terms with status flags.",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
         }
       }
     ],
@@ -1255,6 +1297,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c113e79fa763",
+          "ts": "3c6d28f1995c"
+        },
+        "result": "pass",
+        "notes": "GB spectral-sequence E_∞ page = mass-term identification is a novel structural mapping, not a restatement.",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1291,6 +1354,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c113e79fa763",
+          "ts": "3c6d28f1995c"
+        },
+        "result": "fail",
+        "notes": "Lean 'def' bundles class fields claim_mass_formula_unified/claim_descended/etc that ARE the conclusions; class carries conclusions not hypotheses (violates §3b-cond rule 5). Degenerate.",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1320,6 +1400,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c113e79fa763",
+          "ts": "3c6d28f1995c"
+        },
+        "result": "fail",
+        "notes": "Body is ':= ⟨ctx.claim_mass_formula_unified, ctx.claim_descended, ctx.claim_brane_tower_single, ...⟩' — each conjunct IS a class field equal to the conclusion. Pure self-projection.",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1399,6 +1496,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c113e79fa763",
+          "ts": "3c6d28f1995c"
+        },
+        "result": "pass",
+        "notes": "Class is satisfiable (fields independently inhabitable); premises not contradictory. (The defect is self-projection, not a false premise.)",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1428,6 +1542,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c113e79fa763",
+          "ts": "3c6d28f1995c"
+        },
+        "result": "pass",
+        "notes": "Single [ctx] binder; every conjunct of the goal projects one of its fields, so all referenced. No unused binder.",
+        "reviewed_at": "2026-06-25T17:01:37.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

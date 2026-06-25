@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "419844315875",
+          "ts": "5a9b5aa610d1",
+          "lean": "346bcc4e6e21"
+        },
+        "result": "pass",
+        "notes": "Conjecture: Borromean->Hopf CFL transition w/ Milnor mu order parameter; falsifiable (M-R kink, cooling, GW); concrete topological mechanism.",
+        "reviewed_at": "2026-06-25T17:04:38.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ]
   },

@@ -953,6 +953,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "92c8afb80ff9",
+          "ts": "b20c4daf0526",
+          "lean": "7be586da829c"
+        },
+        "result": "pass",
+        "notes": "Well-posed: identifies q_0 with point on X(B_3) via dual Stokes/Hom views; honest PROVED(Mostow-Prasad,Reid,AJ)/CONJECTURED(specific id) split; substantive open gap A.",
+        "reviewed_at": "2026-06-25T17:03:06.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ]
   },

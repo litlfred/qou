@@ -953,6 +953,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4cb65cbad5c3",
+          "ts": "9a404877f7e9",
+          "lean": "0193f1de0d11"
+        },
+        "result": "pass",
+        "notes": "Well-posed D11: SU(4)=SU(2)_S x SU(2)_I, A=4 He as first supermultiplet singlet; conditional on D9+D10; magic A.8G=SU(4)-singlet projection is a concrete conjectural identification.",
+        "reviewed_at": "2026-06-25T17:03:39.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ]
   },

@@ -1155,6 +1155,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f8e216f845a5",
+          "ts": "59bbaec2c823"
+        },
+        "result": "pass",
+        "notes": ".md proof is a clean one-line trace-cyclicity substitution into prop:knot-factor-spectral-form; clear. (Lean diverges, but rates the proof strategy.)",
+        "reviewed_at": "2026-06-25T17:03:58.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1194,6 +1215,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f8e216f845a5",
+          "ts": "59bbaec2c823"
+        },
+        "result": "pass",
+        "notes": "Goal (knot factor for amphicheiral knots = sum of positive squares) is well-posed and correct per the .md corrected derivation with 4_1 worked example.",
+        "reviewed_at": "2026-06-25T17:03:58.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1235,6 +1277,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f8e216f845a5",
+          "ts": "59bbaec2c823"
+        },
+        "result": "warn",
+        "notes": "Mostly a corollary/restatement of the spectral-form prop under conjugation invariance; modest novelty (the Markov-amphicheiral reframing).",
+        "reviewed_at": "2026-06-25T17:03:58.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.6
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1271,6 +1334,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f8e216f845a5",
+          "ts": "59bbaec2c823"
+        },
+        "result": "fail",
+        "notes": ".md states a=Sum w_l chi^2/chi(1)^2 and REFUTES a=1-h^2; Lean still encodes the refuted 1-h^2 form via trivial exists a,a=expr (rfl).",
+        "reviewed_at": "2026-06-25T17:03:58.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1300,6 +1380,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f8e216f845a5",
+          "ts": "59bbaec2c823"
+        },
+        "result": "pass",
+        "notes": "Proof is <_, rfl> constructing a trivial existential, not projecting a hypothesis field; degenerate but not self-assuming-projection per se.",
+        "reviewed_at": "2026-06-25T17:03:58.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1379,6 +1476,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f8e216f845a5",
+          "ts": "59bbaec2c823"
+        },
+        "result": "fail",
+        "notes": "Amphicheiral.alt_block asserts the sign-flip chi(beta*)=-chi(beta) that the .md proves empirically FALSE on 4_1 (writhe 0 -> both +1); premise contradicts the block.",
+        "reviewed_at": "2026-06-25T17:03:58.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1408,6 +1522,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f8e216f845a5",
+          "ts": "59bbaec2c823"
+        },
+        "result": "fail",
+        "notes": "Both _amphi (Amphicheiral) and _off_block_norm binders are unused (underscore); proof exists a,a=expr := <_,rfl> ignores them entirely.",
+        "reviewed_at": "2026-06-25T17:03:58.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

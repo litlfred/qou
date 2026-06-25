@@ -1207,6 +1207,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "7a5def704548"
+        },
+        "result": "warn",
+        "notes": "Neutron leg clear (witness intervals + nlinarith). Proton leg incomplete (sorry); the .md co-Casimir derivation is heuristic, not the Lean content.",
+        "reviewed_at": "2026-06-25T17:03:45.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.55
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1248,6 +1270,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "7a5def704548"
+        },
+        "result": "pass",
+        "notes": "Substantive: identify proton tower residual with Frobenius co-Casimir trace 2+1/[2]_q; neutron-fail localises the gap. Well-posed.",
+        "reviewed_at": "2026-06-25T17:03:45.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
         }
       }
     ],
@@ -1291,6 +1335,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "7a5def704548"
+        },
+        "result": "pass",
+        "notes": "Frobenius co-Casimir trace identity + explicit neutron-fails impossibility are non-trivial structural claims.",
+        "reviewed_at": "2026-06-25T17:03:45.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1322,6 +1388,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "7a5def704548"
+        },
+        "result": "fail",
+        "notes": "proton_tower_residual_frobenius has live 'by sorry' (line 89) masking the eps-bound — the .md's <0.15% residual identity is NOT fully proved; neutron-fails thm is clean.",
+        "reviewed_at": "2026-06-25T17:03:45.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1407,6 +1491,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "7a5def704548"
+        },
+        "result": "pass",
+        "notes": "Premises satisfiable (concrete real constants 938.72/938.27/0.511); neutron negation derives genuine contradiction, not vacuous.",
+        "reviewed_at": "2026-06-25T17:03:45.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1438,6 +1540,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a82717a74be7",
+          "ts": "2a09407349f5",
+          "lean": "7a5def704548"
+        },
+        "result": "pass",
+        "notes": "proton thm takes no binders; neutron_tower_residual_5halves_fails uses all three witness obtains (he_lo/he_hi, hnc_lo, hnt_hi) via nlinarith/linarith.",
+        "reviewed_at": "2026-06-25T17:03:45.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

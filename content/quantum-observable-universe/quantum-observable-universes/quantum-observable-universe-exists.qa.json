@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "warn",
+        "notes": "No strategy in Lean: existence asserted by a bare axiom. The .md construction (Haar state, qdet volume) is not formalised at all.",
+        "reviewed_at": "2026-06-25T17:04:34.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.3
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "pass",
+        "notes": "Existence of a QOU structure over Rep(SU_q(2)) is a substantive, well-posed claim with cited construction (Woronowicz, Kassel).",
+        "reviewed_at": "2026-06-25T17:04:34.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "warn",
+        "notes": "Lean adds nothing; Nonempty(QOU k) is axiom-asserted for every field, discarding the measurability/construction content of the .md.",
+        "reviewed_at": "2026-06-25T17:04:34.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.25
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "fail",
+        "notes": "Severe weakening: .md (G semisimple, c1=c2=0, explicit Rep(U_q(g)) construction) reduced to [Field k]→Nonempty(QOU k), proved by an axiom. .md says 'proof is constructive' but no construction; conclusion assumed.",
+        "reviewed_at": "2026-06-25T17:04:34.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1403,6 +1487,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "pass",
+        "notes": "[Field k] is satisfiable (e.g. k=ℚ). No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:04:34.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1434,6 +1536,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "60e126a06902"
+        },
+        "result": "pass",
+        "notes": "Binders k + [Field k] appear in the conclusion type Nonempty(QuantumObservableUniverse k); used. (Hypothesis-dropping is an integrity issue, not unused-binder.)",
+        "reviewed_at": "2026-06-25T17:04:34.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
