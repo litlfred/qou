@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e63cba14f5f2",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "notes": "clear axiomatization strategy (Yekutieli pattern): 3 properties as structure fields, downstream consequences derived; .md cites Jones1987 sections 3-5",
+        "reviewed_at": "2026-06-25T16:51:23.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e63cba14f5f2",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "notes": "well-posed: existence/non-degeneracy/link-invariance of Jones-Markov trace; the keystone external result for knot eigenbasis completeness",
+        "reviewed_at": "2026-06-25T16:51:22.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e63cba14f5f2",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "notes": ".md openly states the theorem is standard (Jones); novelty is the faithful structure-encoding + ground-ring framing for downstream machine-checked proofs",
+        "reviewed_at": "2026-06-25T16:51:23.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1320,6 +1386,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e63cba14f5f2",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "notes": "honest external-proof-axiom (Jones1987 Fields result): structure JonesMarkovTrace encodes the 3 properties faithfully; axiom jones_markov_trace_exists (declared, cited); consequence thms project structure; no sorry",
+        "reviewed_at": "2026-06-25T16:51:22.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1405,6 +1489,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e63cba14f5f2",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "notes": "HeckeAlgebraData is inhabitable (q_ne_one only constraint over R_q); premises satisfiable",
+        "reviewed_at": "2026-06-25T16:51:22.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1436,6 +1538,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e63cba14f5f2",
+          "ts": "172b3ff4ecc2",
+          "lean": "65d9d9531559"
+        },
+        "result": "pass",
+        "notes": "consequence theorems (markov_trace_one, markov_z_ne_zero, all_irreps_detected) use H and i; no unused binders",
+        "reviewed_at": "2026-06-25T16:51:22.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

@@ -955,6 +955,156 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b36ad9a77db1",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "notes": "Well-posed: ⟨θφ,φ⟩_F≥0 reflection positivity from antipodal ℤ2⊂Reeb U(1); supplies the open OS2 axiom for YM Wightman.",
+        "reviewed_at": "2026-06-25T16:53:17.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b36ad9a77db1",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "notes": "Conjecture; class OSReflectionPositivity carries single holds:Prop marker field, no instance/no sorry. Honest §3b-cond stub, no theorem masquerade.",
+        "reviewed_at": "2026-06-25T16:53:17.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "b36ad9a77db1",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "notes": "No instance/proof body; nothing projected.",
+        "reviewed_at": "2026-06-25T16:53:17.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "b36ad9a77db1",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "notes": "Class has no hypotheses/binders.",
+        "reviewed_at": "2026-06-25T16:53:17.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "b36ad9a77db1",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "notes": "No hypotheses; holds:Prop is an open propositional field, not contradictory.",
+        "reviewed_at": "2026-06-25T16:53:17.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "b36ad9a77db1",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "notes": "Clear 3-step reduction (reflection=Reeb ℤ2; antipode-twisted pairing=state-positive; τ_arch stability); OS0/1/3/4 built-in.",
+        "reviewed_at": "2026-06-25T16:53:17.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "b36ad9a77db1",
+          "ts": "ab249eaf4f4e",
+          "lean": "11b087b6d1fa"
+        },
+        "result": "pass",
+        "notes": "Novel: reduces Wightman-axiom portion of YM millennium statement to one substrate C*-Frobenius positivity axiom.",
+        "reviewed_at": "2026-06-25T16:53:17.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ]
   },

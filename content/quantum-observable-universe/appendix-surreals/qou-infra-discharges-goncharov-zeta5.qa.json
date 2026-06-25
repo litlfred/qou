@@ -913,6 +913,149 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "82c0e00e76e9",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "notes": "Well-posed reduced target: {Li_3(ζ_5^k)} span rank-2 Borel image mod 22-term; Hecke-NF supplies Jones-coincident pairs / G_22 braid realisation.",
+        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "82c0e00e76e9",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "notes": "Conjecture; class QouInfraDischargesGoncharovZeta5 is honest §3b placeholder (residual=0 + instance:=sorry), self-labeled placeholder. No theorem masquerade.",
+        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "82c0e00e76e9",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "notes": "Instance body is sorry (the conjecture), not a hypothesis projection.",
+        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "82c0e00e76e9",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "notes": "Class/instance take no explicit hyps.",
+        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "82c0e00e76e9",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "notes": "No hypotheses; residual:ℝ=0 satisfiable.",
+        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "82c0e00e76e9",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "notes": "Two concrete avenues (A: enumerate Jones-coincident NF pairs; B: realise G_22(ζ5) as Markov trace + NF-reduce to identity); honest 'partial result' scope.",
+        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "82c0e00e76e9",
+          "ts": "fb74e8106d9f"
+        },
+        "result": "pass",
+        "notes": "Novel attempt to discharge Goncharov depth-3 conjecture at Q(ζ5) via Hecke-NF redundancy / Markov-trace realisation.",
+        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ]
   },

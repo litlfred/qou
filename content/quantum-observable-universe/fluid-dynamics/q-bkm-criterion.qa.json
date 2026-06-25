@@ -1159,6 +1159,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad6f41fb354a",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "notes": ".md frames BKM as q->1 obstruction indicator; Lean cleanly composes the iff from both directions.",
+        "reviewed_at": "2026-06-25T16:54:48.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.76
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1198,6 +1219,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ad6f41fb354a",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "notes": "Goal (q-BKM: smooth extension iff time-integrated Linf vorticity finite) substantive, classical-BKM analogue.",
+        "reviewed_at": "2026-06-25T16:54:48.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1239,6 +1281,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad6f41fb354a",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "notes": "Real result: q-deformed BKM criterion; modest (algebraic translation of classical BKM) but genuine and well-encoded.",
+        "reviewed_at": "2026-06-25T16:54:48.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1275,6 +1338,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad6f41fb354a",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "notes": "Faithful: thm derives 'extendsSmoothly iff vorticityIntegralFinite' via Iff.intro from 2 directional hyps; no sorry; verified §3b-cond exemplar (AGENTS.md).",
+        "reviewed_at": "2026-06-25T16:54:48.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1304,6 +1384,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ad6f41fb354a",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "notes": "Not a projection: iff built by Iff.intro from bkm_necessity (forward) + bkm_continuation (backward), separate fields.",
+        "reviewed_at": "2026-06-25T16:54:48.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1383,6 +1480,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ad6f41fb354a",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "notes": "BKM directional implications satisfiable; no contradiction.",
+        "reviewed_at": "2026-06-25T16:54:48.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1412,6 +1526,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ad6f41fb354a",
+          "ts": "949aea0a9766"
+        },
+        "result": "pass",
+        "notes": "Both directional fields used in Iff.intro; single [ctx] binder used.",
+        "reviewed_at": "2026-06-25T16:54:48.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

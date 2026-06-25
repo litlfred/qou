@@ -1205,6 +1205,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "c1ddde67f181"
+        },
+        "result": "warn",
+        "notes": ".md gives short algebraic argument but admits Lean is placeholder :True; commented-out real proof exists but not active.",
+        "reviewed_at": "2026-06-25T16:50:47.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1246,6 +1268,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "c1ddde67f181"
+        },
+        "result": "pass",
+        "notes": "Goal (skein q vs q^-1 asymmetry: delta=1/2(q-q^-1)>0, Coulomb/strong ratio=tanh ln q) substantive.",
+        "reviewed_at": "2026-06-25T16:50:47.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
         }
       }
     ],
@@ -1289,6 +1333,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "c1ddde67f181"
+        },
+        "result": "warn",
+        "notes": "Result is elementary q-algebra; Lean adds nothing (vacuous :True + projection stub).",
+        "reviewed_at": "2026-06-25T16:50:47.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1327,6 +1393,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "c1ddde67f181"
+        },
+        "result": "fail",
+        "notes": "Sibling .lean: theorem skein_crossing_asymmetry : True := sorry (vacuous+sorry); QOU/Braiding file is def := ctx.claim_... projection. Neither proves .md (delta>0, ratio=tanh ln q).",
+        "reviewed_at": "2026-06-25T16:50:47.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1358,6 +1442,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "c1ddde67f181"
+        },
+        "result": "fail",
+        "notes": "QOU/Braiding skein_crossing_asymmetry := ctx.claim_skein_crossing_asymmetry returns the field equal to the conclusion (self-projection).",
+        "reviewed_at": "2026-06-25T16:50:47.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1438,6 +1540,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "c1ddde67f181"
+        },
+        "result": "pass",
+        "notes": "Skein-relation field hypotheses satisfiable; sibling :True has no premise. No contradiction.",
+        "reviewed_at": "2026-06-25T16:50:47.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1469,6 +1589,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "18c823f97e93",
+          "ts": "4123e4bea16a",
+          "lean": "c1ddde67f181"
+        },
+        "result": "pass",
+        "notes": "Sibling thm has no hypotheses; projection file uses its ctx instance. No unused explicit binders.",
+        "reviewed_at": "2026-06-25T16:50:47.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

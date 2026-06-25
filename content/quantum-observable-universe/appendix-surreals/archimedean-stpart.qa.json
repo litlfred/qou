@@ -913,6 +913,149 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7977b343cb8c",
+          "ts": "5e755efe58b9"
+        },
+        "result": "pass",
+        "notes": "Well-posed: St_QOU functor essentially surjective onto archimedean QOUs; whole-tuple counterpart of classical-limit conj.",
+        "reviewed_at": "2026-06-25T16:52:06.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "7977b343cb8c",
+          "ts": "5e755efe58b9"
+        },
+        "result": "pass",
+        "notes": "Conjecture; class ArchimedeanIsStandardPart sorry-free, kernel=essential-surjectivity of QOU St-functor; placeholder QOU types disclosed honestly.",
+        "reviewed_at": "2026-06-25T16:52:06.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "7977b343cb8c",
+          "ts": "5e755efe58b9"
+        },
+        "result": "pass",
+        "notes": "instProvable builds witness (0:K) with Subsingleton.elim, not projecting a conclusion.",
+        "reviewed_at": "2026-06-25T16:52:06.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "7977b343cb8c",
+          "ts": "5e755efe58b9"
+        },
+        "result": "pass",
+        "notes": "instProvable nullary; conditional consequence uses its [class] hyp + Nonempty arg.",
+        "reviewed_at": "2026-06-25T16:52:06.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "7977b343cb8c",
+          "ts": "5e755efe58b9"
+        },
+        "result": "pass",
+        "notes": "No false premise; placeholder semantics keep kernel satisfiable.",
+        "reviewed_at": "2026-06-25T16:52:06.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "7977b343cb8c",
+          "ts": "5e755efe58b9"
+        },
+        "result": "pass",
+        "notes": "Component-wise reduction strategy over (C,Θ,G,S) tuple; ess-surj automatic, axiom-recovery via sub-conjectures.",
+        "reviewed_at": "2026-06-25T16:52:06.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "7977b343cb8c",
+          "ts": "5e755efe58b9"
+        },
+        "result": "pass",
+        "notes": "Novel whole-framework surreal lift with infinitesimal-physics fibre over each archimedean QOU.",
+        "reviewed_at": "2026-06-25T16:52:06.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ]
   },

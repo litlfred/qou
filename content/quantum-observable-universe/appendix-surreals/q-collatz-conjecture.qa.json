@@ -913,6 +913,149 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a33d125903ce",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "notes": "Well-posed Skein-Collatz map on ℤ[q^±1] with q-parity; odd branch well-defined via Skein identity [3]_q=q[2]_q+1; orbit reaches 1 for q>1.",
+        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a33d125903ce",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "notes": "Conjecture; class QCollatz is honest §3b placeholder (residual=0 + instance:=sorry), self-labeled placeholder. No theorem masquerade.",
+        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "a33d125903ce",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "notes": "Instance body is sorry (the conjecture), not a hypothesis projection.",
+        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "a33d125903ce",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "notes": "Class/instance take no explicit hyps.",
+        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "a33d125903ce",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "notes": "No hypotheses; residual:ℝ=0 satisfiable.",
+        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "a33d125903ce",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "notes": "Concrete contraction estimate: [2]_q²-[3]_q=q margin, net factor [3]_q/[2]_q³<1; Skein crossing-resolution interpretation.",
+        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "a33d125903ce",
+          "ts": "dca4ac77df81"
+        },
+        "result": "pass",
+        "notes": "Novel q-deformation of Collatz via Skein-module crossing resolution with genuine new divisibility identities; κ_C=0 reformulation.",
+        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ]
   },

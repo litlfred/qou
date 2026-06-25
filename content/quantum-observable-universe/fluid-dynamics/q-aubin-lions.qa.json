@@ -953,6 +953,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "eb47fbc03ef4",
+          "ts": "07a6e0fcb430",
+          "lean": "843dae199cb2"
+        },
+        "result": "pass",
+        "notes": "Conjecture: q-deformed Aubin-Lions compactness — {v_q} has subsequence converging to weak NS solution as q->1, energy ineq, singular set dim<=1; well-posed.",
+        "reviewed_at": "2026-06-25T16:54:47.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
+        }
       }
     ]
   },

@@ -953,6 +953,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6b65f415e71f",
+          "ts": "728a466ac8f7",
+          "lean": "08bccab1afa5"
+        },
+        "result": "pass",
+        "notes": "Conjecture: well-posed exclusive dichotomy (A) C_L=O(1) NS-blowup vs (B) C_L~kappa NS-regular; 5 equivalent formulations; class-axiomatised.",
+        "reviewed_at": "2026-06-25T16:51:13.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
       }
     ]
   },

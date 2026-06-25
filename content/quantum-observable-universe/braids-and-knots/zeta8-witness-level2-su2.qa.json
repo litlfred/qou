@@ -1207,6 +1207,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "notes": ".md gives clean cyclotomic proofs of (1)-(3); Lean states them with correct -- Ref citations but leaves 2 as sorry and Wenzl as a stub",
+        "reviewed_at": "2026-06-25T16:52:43.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1248,6 +1270,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "notes": "the three identities + level-2 SU(2) Verlinde truncation witness are well-posed and substantive; .md proofs are correct",
+        "reviewed_at": "2026-06-25T16:52:43.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1291,6 +1335,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "notes": "vindicates the level-2 SU(2) hypothesis (a) via Wenzl-annihilator-forced Delta a_m interference; a genuine reframing of an earlier-ruled-out mechanism",
+        "reviewed_at": "2026-06-25T16:52:43.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1322,6 +1388,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "fail",
+        "notes": "2 of 3 claimed identities are sorry (qPoch_seven_eq_eight, qInt_four_eq_zero); wenzl_annihilator is vacuous (exists x, x=0 := <0,rfl>), not the real chi^lambda vanishing; only identity (2) genuinely proved",
+        "reviewed_at": "2026-06-25T16:52:43.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1407,6 +1491,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "notes": "premises (IsPrimitiveRoot zeta 8, 4<=firstCol) are satisfiable, not contradictory; the defect is sorry/vacuity not a false premise",
+        "reviewed_at": "2026-06-25T16:52:43.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1438,6 +1540,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "cb0d32b3aa0f",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "fail",
+        "notes": "wenzl_annihilator takes firstCol and _h:4<=firstCol but conclusion exists x,x=0 is independent of them; hypothesis never used (hallmark of vacuous statement)",
+        "reviewed_at": "2026-06-25T16:52:43.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

@@ -915,6 +915,149 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "36fd11a7c908",
+          "ts": "3b53b619ed6d"
+        },
+        "result": "pass",
+        "notes": "Well-posed mathematical kernel (QOU rational in q, evaluable at named surreals ω, 1+ε^ω); cosmo interpretation bracketed.",
+        "reviewed_at": "2026-06-25T16:52:06.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "36fd11a7c908",
+          "ts": "3b53b619ed6d"
+        },
+        "result": "pass",
+        "notes": "Conjecture; class BigBangHeatDeath sorry-free; kernel honestly narrowed to Nonempty(QOU_Surreal K) w/ explicit 'missing infrastructure' note (cosmo content in prose).",
+        "reviewed_at": "2026-06-25T16:52:06.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "36fd11a7c908",
+          "ts": "3b53b619ed6d"
+        },
+        "result": "pass",
+        "notes": "instProvable witness (0:K); conditional consequences extract witness, no conclusion-projection.",
+        "reviewed_at": "2026-06-25T16:52:06.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "36fd11a7c908",
+          "ts": "3b53b619ed6d"
+        },
+        "result": "pass",
+        "notes": "instProvable nullary; no unused binders.",
+        "reviewed_at": "2026-06-25T16:52:06.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "36fd11a7c908",
+          "ts": "3b53b619ed6d"
+        },
+        "result": "pass",
+        "notes": "No hypotheses; inhabitation kernel satisfiable.",
+        "reviewed_at": "2026-06-25T16:52:06.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "36fd11a7c908",
+          "ts": "3b53b619ed6d"
+        },
+        "result": "pass",
+        "notes": "Clear math kernel (c_q=ω at 1+ε already proved) + explicit interpretive-vs-math split + falsification.",
+        "reviewed_at": "2026-06-25T16:52:06.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "36fd11a7c908",
+          "ts": "3b53b619ed6d"
+        },
+        "result": "warn",
+        "notes": "Lean kernel captures only inhabitation (self-stated); cosmo singularity-as-named-surreal idea is speculative, thinly formalised.",
+        "reviewed_at": "2026-06-25T16:52:06.000Z",
+        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.6
+        }
       }
     ]
   },
