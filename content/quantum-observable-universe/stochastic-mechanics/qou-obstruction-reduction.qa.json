@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4bb6405cb852",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "warn",
+        "notes": ".md gives a real 3-step proof (observability kills HH⁰, Van den Bergh/Frobenius duality, Drinfeld uniqueness ⇒ HH²≅k), but Lean derives nothing — all three claims are context fields re-exposed.",
+        "reviewed_at": "2026-06-25T17:11:56.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4bb6405cb852",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "pass",
+        "notes": "Goal substantive: dim Obs(C,q→1)=HH²=1, obstruction=χ(A), Kummer vanish↔n∣χ(A), unifying RH/NS/BSD via one HH² class. Ambitious (.md links 3 millennium problems); well-posed.",
+        "reviewed_at": "2026-06-25T17:11:56.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4bb6405cb852",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "warn",
+        "notes": "Conceptually rich (one obstruction scalar controls 3 millennium problems), but Lean adds no formal content; conclusions axiomatised as fields.",
+        "reviewed_at": "2026-06-25T17:11:56.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.4
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1293,6 +1356,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4bb6405cb852",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "fail",
+        "notes": "All 3 conclusions axiomatised as context fields: (a) obs_dim=1 IS field obs_dim_eq; (b) phi_1_image=chi_A is a 2-field rewrite (phi_1_image_eq+obstruction_class_eq); (c) Kummer-iff is kappa_vanishes_iff+obstruction_class_eq. Substantive math (HH² duality, Drinfeld, Kummer) not derived; §3b-cond item5 degenerate.",
+        "reviewed_at": "2026-06-25T17:11:56.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1322,6 +1402,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4bb6405cb852",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "fail",
+        "notes": "Conjunct (a) := ctx.obs_dim_eq is a direct field projection equal to the conclusion; (b),(c) re-expose class fields via a cosmetic obstruction_class=chi_A rewrite. Class carries conclusions, not inputs.",
+        "reviewed_at": "2026-06-25T17:11:56.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1498,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4bb6405cb852",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "pass",
+        "notes": "Fields jointly consistent (obstruction_class=chi_A, phi_1_image=(obstruction_class:ℝ), obs_dim=1, kappa_vanishes_iff) — all definitional ties. Satisfiable.",
+        "reviewed_at": "2026-06-25T17:11:56.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1544,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "4bb6405cb852",
+          "ts": "5d6e440eb0be"
+        },
+        "result": "pass",
+        "notes": "Sole binder [ctx] used; obstruction_class/chi_A/phi_1_image/obs_dim/kappa fields all referenced. No unused binder.",
+        "reviewed_at": "2026-06-25T17:11:56.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

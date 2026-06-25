@@ -1203,6 +1203,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "notes": "Very clear: define barPoly:=comp(-X), derive ring-hom axioms from Polynomial.comp lemmas, induct for power/truncation identities, then generic CommRing + concrete ℝ specialisations. Each Lean theorem mirrors a narrative proof.",
+        "reviewed_at": "2026-06-25T17:10:45.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.9
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,6 +1266,28 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "notes": "Well-posed: p(X)↦p(-X) is a ring involution; R[X²] is the bar-sym subring; X models the Hecke skein h with h↦-h. Concrete, standard, fully realisable.",
+        "reviewed_at": "2026-06-25T17:10:45.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
         }
       }
     ],
@@ -1287,6 +1331,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "notes": "Provides the canonical non-trivial bar-involution model (R[X],X↦-X) with R[X²] bar-sym subring; arbitrary-degree even/odd truncation theorems; ties to the three-layer synthesis avatars.",
+        "reviewed_at": "2026-06-25T17:10:46.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1318,6 +1384,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "notes": "~25 sorry-free theorems faithfully formalising the .md: barPoly_X=-X, involutive, additive/multiplicative, X^n=(-1)^n X^n (induction), even/odd power lemmas, natCast, c5 denominator, arbitrary-degree even/odd truncation (Finset induction), generic CommRing versions. All via Mathlib Polynomial.comp.",
+        "reviewed_at": "2026-06-25T17:10:45.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1403,6 +1487,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "notes": "CommRing R satisfiable; no constraints. No false premise.",
+        "reviewed_at": "2026-06-25T17:10:45.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1434,6 +1536,24 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0a596b7b0b0d",
+          "ts": "7857d1393ac1",
+          "lean": "7b880b0431f7"
+        },
+        "result": "pass",
+        "notes": "Each theorem uses its binders (p,q,n,c,…); [CommRing R] used throughout. No unused binder.",
+        "reviewed_at": "2026-06-25T17:10:45.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

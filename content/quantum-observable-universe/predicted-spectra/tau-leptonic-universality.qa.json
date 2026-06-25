@@ -1157,6 +1157,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e2952559b198",
+          "ts": "7affd32254cf"
+        },
+        "result": "warn",
+        "notes": "Lean has NO real strategy for the headline (masked by 'trivial'); only phaseSpace boundary values f(0)=1,f(1)=0 are honestly proved. .md proof-sketch (factorization vs product model) is clear but unformalized.",
+        "reviewed_at": "2026-06-25T17:12:51.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.4
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1196,6 +1217,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e2952559b198",
+          "ts": "7affd32254cf"
+        },
+        "result": "pass",
+        "notes": "Goal (factorized Markov-trace ⇒ tau leptonic universality, BR ratio = pure phase-space ratio f(x)=1-8x+8x³-x⁴-12x²lnx) is well-posed and physically meaningful.",
+        "reviewed_at": "2026-06-25T17:12:51.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.78
         }
       }
     ],
@@ -1237,6 +1279,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e2952559b198",
+          "ts": "7affd32254cf"
+        },
+        "result": "pass",
+        "notes": ".md derivation of lepton universality from T_{3,5} weak-vertex Markov trace being daughter-independent (factorized vs product model, 0.69≠1 contrast) is a substantive framing; the Lean is vacuous.",
+        "reviewed_at": "2026-06-25T17:12:51.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1273,6 +1336,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e2952559b198",
+          "ts": "7affd32254cf"
+        },
+        "result": "fail",
+        "notes": "Masking: tau_leptonic_universality concludes BR_e/BR_μ = phaseSpace(m_e²/m_τ²)/phaseSpace(m_μ²/m_τ²) by 'trivial', but TauLeptonicContext has NO field supplying this equality (only m_*,BR_*,positivity). 'trivial' cannot honestly close it; comment concedes the Markov-trace factorisation is un-translated — an uncited-sorry-equivalent.",
+        "reviewed_at": "2026-06-25T17:12:51.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1302,6 +1382,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e2952559b198",
+          "ts": "7affd32254cf"
+        },
+        "result": "pass",
+        "notes": "Failure mode is tactic-masking ('trivial'), not a := ctx.field projection; no self-assuming projection occurs (captured under statement-integrity).",
+        "reviewed_at": "2026-06-25T17:12:51.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1381,6 +1478,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "e2952559b198",
+          "ts": "7affd32254cf"
+        },
+        "result": "pass",
+        "notes": "TauLeptonicContext satisfiable (positive masses, BR_μ≠0); premises consistent. The vacuity is via tactic-masking, not a contradictory premise.",
+        "reviewed_at": "2026-06-25T17:12:51.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1410,6 +1524,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e2952559b198",
+          "ts": "7affd32254cf"
+        },
+        "result": "pass",
+        "notes": "Theorem binder is just [ctx] (structurally needed to state the goal). phaseSpace_at_zero/at_one are separate sorry-free lemmas using their args. No dangling theorem binder per se (the defect is masking, not unused binders).",
+        "reviewed_at": "2026-06-25T17:12:51.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

@@ -991,6 +991,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "4a3415a2b718",
+          "ts": "0ef709563107",
+          "lean": "492b59a00e50"
+        },
+        "result": "pass",
+        "notes": "Conjecture: mass=knot invariant (R-I/II/III via hyperbolic volume); binding=embedding invariant (R-II/III not R-I); shell transitions=R-I. Well-posed, physically motivated. (.md uses purged 'lambda_scale' - currency nit, not goal flaw.)",
+        "reviewed_at": "2026-06-25T17:09:58.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ],
     "proof-no-trivial-true": [

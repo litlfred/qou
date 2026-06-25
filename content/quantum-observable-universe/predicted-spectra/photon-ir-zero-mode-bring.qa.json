@@ -1157,6 +1157,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "notes": "Clear: Hodge b₁=2g + Gauss-Bonnet Area=4π(g-1) ⇒ b₁/Area; naive M×S¹ refuted by explicit (16π-9)/(24π²)>0; n=1↔n=2 Betti unification computed.",
+        "reviewed_at": "2026-06-25T17:09:50.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1196,6 +1217,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "notes": "Goal: photon IR zero-mode = dim H¹/Area = 2/(3π) at Bring g=4, from-Lagrangian source of the α correction; well-posed, geometrically grounded.",
+        "reviewed_at": "2026-06-25T17:09:50.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
         }
       }
     ],
@@ -1237,6 +1279,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "notes": "Locating the 2/(3π) on the 2-surface (not M×S¹) + the n=1/n=2 single-Betti unification (b₁ in numerator vs π·b₁ in denominator, product π-free) is a genuine structural insight.",
+        "reviewed_at": "2026-06-25T17:09:50.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.74
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1273,6 +1336,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "notes": "Genuine: photonZeroModeShift_eq=2g/(4π(g-1)), _at_g4=2/(3π), area_eq_neg_two_pi_chi (Gauss-Bonnet), surface_minus_naive_g4=(16π-9)/(24π²), betti_product — all sorry-free from betti1/area defs. .md honestly cites heat-kernel '=b₁/Vol' as standard, not claimed proved.",
+        "reviewed_at": "2026-06-25T17:09:50.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1302,6 +1382,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "notes": "No context class; theorems compute from eulerChar/betti1/area definitions via push_cast/field_simp/ring. Not field projections.",
+        "reviewed_at": "2026-06-25T17:09:50.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1381,6 +1478,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "notes": "Premises satisfiable (g≥2 surfaces; hg:(g:ℝ)≠1 holds for g≥2). Not vacuous — g4 instances are concrete.",
+        "reviewed_at": "2026-06-25T17:09:50.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1410,6 +1524,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "d2d185416e8f",
+          "ts": "b4a975f48155"
+        },
+        "result": "pass",
+        "notes": "g:ℕ used throughout; in betti_product hg:(g:ℝ)≠1 is used (sub_ne_zero for field_simp). No idle binders.",
+        "reviewed_at": "2026-06-25T17:09:50.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

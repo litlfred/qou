@@ -1177,6 +1177,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "29a6aae81269",
+          "ts": "910053cb3da7"
+        },
+        "result": "warn",
+        "notes": "No Lean strategy: optimality assumed, consequences read off postulated impl_* (one of which is false). .md LP-dual electronegativity argument not realized.",
+        "reviewed_at": "2026-06-25T17:12:35.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.3
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1216,6 +1237,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "29a6aae81269",
+          "ts": "910053cb3da7"
+        },
+        "result": "warn",
+        "notes": "Aufbau/Hund as Φ₁-minimisation LP is meaningful, but the Hund encoding (∀other≤singly_occupied) is mis-stated (unbounded), and optimality is postulated. Mis-formalised goal.",
+        "reviewed_at": "2026-06-25T17:12:35.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.55
         }
       }
     ],
@@ -1257,6 +1299,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "29a6aae81269",
+          "ts": "910053cb3da7"
+        },
+        "result": "pass",
+        "notes": "Reading aufbau + Hund's rule + electronegativity (y_0 marginal Φ₁ cost) from a braid electron-assignment LP is a novel framing.",
+        "reviewed_at": "2026-06-25T17:12:36.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.68
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1286,6 +1349,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "29a6aae81269",
+          "ts": "910053cb3da7"
+        },
+        "result": "fail",
+        "notes": "Placeholder stub: aufbau ASSUMED via opaque ctx.aufbau_holds; theorem projects 3 consequences from impl_* fields. Headline (config minimises Φ₁ = aufbau) not proved. Worse: 2nd conjunct ∀other:ℕ,other≤singly_occupied is false.",
+        "reviewed_at": "2026-06-25T17:12:35.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1401,6 +1481,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "29a6aae81269",
+          "ts": "910053cb3da7"
+        },
+        "result": "fail",
+        "notes": "Class field impl_hunds_rule_max : aufbau_holds → ∀ other:ℕ, other ≤ singly_occupied. With aufbau_active:aufbau_holds also a field, this forces ∀other:ℕ, other≤singly_occupied — false for other=singly_occupied+1. ShellFillingRuleContext is UNINHABITABLE; the [ctx] premise is contradictory.",
+        "reviewed_at": "2026-06-25T17:12:35.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1430,6 +1527,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "29a6aae81269",
+          "ts": "910053cb3da7"
+        },
+        "result": "pass",
+        "notes": "Sole binder [ctx] used (aufbau_active fed through 3 impl_* fields).",
+        "reviewed_at": "2026-06-25T17:12:35.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

@@ -1157,6 +1157,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ce1885796a4f",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "warn",
+        "notes": "Lean exhibits no proof strategy (projects the assumed sum). The .md is a completeness INDEX (per-term derivation status), not a proof of the master claim; no Lean-side strategy.",
+        "reviewed_at": "2026-06-25T17:12:21.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.45
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1196,6 +1217,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ce1885796a4f",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "notes": "Six-term decomposition is a substantive organizing claim (.md is a detailed per-term status index), but it's essentially a definitional sum; .md honestly flags T2/T3 archimedean pathology (-737 MeV mirror error).",
+        "reviewed_at": "2026-06-25T17:12:21.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
         }
       }
     ],
@@ -1237,6 +1279,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ce1885796a4f",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "notes": "The six-term organizing framework + honest trace-invariance audit is genuinely informative narratively; the Lean restatement adds nothing beyond assuming the sum.",
+        "reviewed_at": "2026-06-25T17:12:21.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1273,6 +1336,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ce1885796a4f",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "fail",
+        "notes": "Lean 'theorem' (a def) six_term_mass_formula_complete proves nothing: body is := ctx.claim_six_term_sum, the SixTermMassFormulaContext field that IS the conclusion (cat_mass = term1+...+term6). Self-assuming projection; no derivation for a thm-kind block.",
+        "reviewed_at": "2026-06-25T17:12:20.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1302,6 +1382,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ce1885796a4f",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "fail",
+        "notes": "Textbook self-projection: class carries claim_six_term_sum (= the six-term decomposition) as a field; the 'theorem' is := ctx.claim_six_term_sum. Degenerate per AGENTS.md 3b-cond non-degenerate clause.",
+        "reviewed_at": "2026-06-25T17:12:20.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1381,6 +1478,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ce1885796a4f",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "notes": "Class inhabitable (6 reals + their sum identity); no contradictory premise — vacuity here is self-projection, not false-premise.",
+        "reviewed_at": "2026-06-25T17:12:20.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1410,6 +1524,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ce1885796a4f",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "notes": "[ctx : SixTermMassFormulaContext] is referenced (ctx.claim_six_term_sum). No unused binder (the projection trivially uses its only hypothesis).",
+        "reviewed_at": "2026-06-25T17:12:20.000Z",
+        "reviewed_sha": "7aa1a135c76d5a1bd8a9b63d65c9f4b6ea2c2baf",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",

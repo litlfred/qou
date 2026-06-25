@@ -953,6 +953,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "dc3ee389286f",
+          "ts": "0e29422fe829",
+          "lean": "fa1f8655c4ab"
+        },
+        "result": "pass",
+        "notes": "Conjecture: EW triplet T(2,4/6/8) admits complete idempotent decomposition in End(V^⊗6); bar-self-dual cell-content trace 4(q^18+q^-18)+... Well-posed completeness claim; NV-1 closure part is hedged (?=) but the core decomposition is concrete.",
+        "reviewed_at": "2026-06-25T17:09:36.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ]
   },

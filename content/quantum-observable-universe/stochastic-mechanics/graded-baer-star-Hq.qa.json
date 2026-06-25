@@ -913,6 +913,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "35ee35090d71",
+          "ts": "76492850576c"
+        },
+        "result": "pass",
+        "notes": "Goal substantive/well-posed: graded Baer-* projections on H_q across depth filtration (depth 2 reduces to Hoefsmit e_λ via Schur-Weyl). Lean class is a DEGENERATE placeholder (residual:ℝ=0, doesn't yet encode the claim) but the conjecture itself is genuine.",
+        "reviewed_at": "2026-06-25T17:09:40.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.7
+        }
       }
     ]
   },

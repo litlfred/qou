@@ -1155,6 +1155,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bde3ddc13140",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "notes": "Clear: encode S4 irrep branching data, fold half-sym weights, compute 2/5 factor and 5/2 x 2/5 = 1. Straightforward verified arithmetic.",
+        "reviewed_at": "2026-06-25T17:11:02.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1194,6 +1215,27 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bde3ddc13140",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "notes": "Well-posed combinatorial bijection (S4 down S3 branching, 5/2 x 2/5 = 1 selects 1 of 8 ideal octahedra). Honestly scoped to 'which cell', not 'how much curvature'; purged Yekutieli over-claim documented.",
+        "reviewed_at": "2026-06-25T17:11:02.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.74
         }
       }
     ],
@@ -1235,6 +1277,27 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bde3ddc13140",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "notes": "Modest: a branching-rule computation tying H_4 half-sym projection to the Borromean octahedral cell count; honest structural input, not over-claimed.",
+        "reviewed_at": "2026-06-25T17:11:02.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.66
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1271,6 +1334,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bde3ddc13140",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "notes": "Genuine: s4_s3_half_symmetric_projection proves effectiveCellCount=1 & /8=1/8 by composing kernel-checked steps (s3TrivialFactor_eq via rw+norm_num). HYGIENE FLAG: halfSymTotalDim_eq/halfSymTrivialS3_eq use native_decide (on concrete true rational folds, not masking an open goal — decide/norm_num would suffice).",
+        "reviewed_at": "2026-06-25T17:11:02.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1300,6 +1380,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bde3ddc13140",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "notes": "Main thm composes computed lemmas (not := field). conditional_on_BorromeanCommonScale derives scale=1/8 by rw[scale_eq_per_cell, perCellRatio_eq] — non-degenerate §3b-cond (class carries scale-id hypothesis, thm composes with proved ratio).",
+        "reviewed_at": "2026-06-25T17:11:02.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -1379,6 +1476,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "bde3ddc13140",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "notes": "BorromeanCommonScale inhabitable (scale:=1/8 satisfies scale_eq_per_cell given perCellRatio_eq); premises consistent. No contradictory premise.",
+        "reviewed_at": "2026-06-25T17:11:02.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1408,6 +1522,23 @@
         "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
         "reviewed_at": "2026-06-25T15:49:07.000Z",
         "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bde3ddc13140",
+          "ts": "cca0dabb0bee"
+        },
+        "result": "pass",
+        "notes": "inst:BorromeanCommonScale used (scale_eq_per_cell) in conditional thm; unconditional theorems take no extra binders. No unused hypothesis.",
+        "reviewed_at": "2026-06-25T17:11:02.000Z",
+        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
