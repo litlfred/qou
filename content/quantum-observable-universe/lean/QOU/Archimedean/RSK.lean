@@ -80,7 +80,7 @@ theorem rowBump_mem (row : List ℕ) (x b : ℕ)
     · -- x ≥ a: result = a :: (rowBump rest x).1
       simp at hb
       rcases hb with rfl | hr
-      · left; exact List.mem_cons_self _ _
+      · left; exact List.mem_cons_self
       · rcases ih hr with hrest | hx
         · left; exact List.mem_cons_of_mem a hrest
         · right; exact hx
@@ -103,7 +103,6 @@ theorem rowBump_bumped_gt (row : List ℕ) (x : ℕ) (b : ℕ)
       next hge =>
       have hsort_rest : rest.Sorted (· < ·) := by
         cases hsort with
-        | nil => exact List.sorted_nil
         | cons h1 h2 => exact h2
       exact ih hsort_rest (by simpa using hbump)
 
@@ -126,7 +125,7 @@ theorem rowBump_sorted (row : List ℕ) (x : ℕ)
     · -- x ≥ a: result = a :: (rowBump rest x).1
       next hge =>
       have ha_ne : x ≠ a := by
-        intro heq; exact hfresh (heq ▸ List.mem_cons_self a rest)
+        intro heq; exact hfresh (heq ▸ List.mem_cons_self)
       have hax : a < x := by omega
       have hfresh_rest : x ∉ rest := by
         intro hm; exact hfresh (List.mem_cons_of_mem a hm)
@@ -154,8 +153,8 @@ def schenstedInsertRows : List (List ℕ) → ℕ → List (List ℕ) × (ℕ ×
 
 /-- Schensted insertion adds exactly one cell. -/
 theorem schenstedInsertRows_size (rows : List (List ℕ)) (x : ℕ) :
-    (schenstedInsertRows rows x).1.map List.length |>.sum =
-    rows.map List.length |>.sum + 1 := by
+    ((schenstedInsertRows rows x).1.map List.length).sum =
+    (rows.map List.length).sum + 1 := by
   induction rows generalizing x with
   | nil => simp [schenstedInsertRows]
   | cons row rest ih =>
@@ -165,12 +164,12 @@ theorem schenstedInsertRows_size (rows : List (List ℕ)) (x : ℕ) :
     cases hbump : (rowBump row x).2 with
     | none =>
       -- appended at current row: length grows by 1 (from hlen)
-      simp only [hbump, List.map_cons, List.sum_cons]
+      simp only [List.map_cons, List.sum_cons]
       simp [hbump] at hlen
       omega
     | some b =>
       -- bumped: length of new row preserved; recurse with b on rest
-      simp only [hbump, List.map_cons, List.sum_cons]
+      simp only [List.map_cons, List.sum_cons]
       simp [hbump] at hlen
       have := ih b
       omega
@@ -186,7 +185,7 @@ def addEntry (rows : List (List ℕ)) (val r : ℕ) : List (List ℕ) :=
 
 /-- The RSK map on raw row data (no invariant proofs). -/
 def rskRaw (w : List ℕ) : List (List ℕ) × List (List ℕ) :=
-  w.enum.foldl (fun (pR, qR) (i, x) =>
+  w.zipIdx.foldl (fun (pR, qR) (x, i) =>
     let (newP, (r, _)) := schenstedInsertRows pR x
     (newP, addEntry qR (i + 1) r)
   ) ([], [])
