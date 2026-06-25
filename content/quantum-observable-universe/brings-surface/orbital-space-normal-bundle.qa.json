@@ -955,6 +955,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "3aa21ff6af95",
+          "ts": "576969162c3e",
+          "lean": "3b81c71853fb"
+        },
+        "result": "pass",
+        "notes": "Conjecture: orbital dim O_n=n^2 via SO(3) V_l decomposition; substantive, well-posed; Lean proves Sum(2l+1)=n^2 by induction+ring.",
+        "reviewed_at": "2026-06-25T16:47:49.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.85
+        }
       }
     ],
     "proof-no-trivial-true": [

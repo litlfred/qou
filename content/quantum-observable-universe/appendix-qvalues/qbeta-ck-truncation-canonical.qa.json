@@ -957,6 +957,28 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "96829a83b341",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "notes": "Well-posed: existence of anchor-independent canonical c_k (Habiro element); substantive, matches Q_beta ladder prop.",
+        "reviewed_at": "2026-06-25T16:50:07.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.9
+        }
       }
     ],
     "da-reproducibility": [
@@ -1093,6 +1115,134 @@
         },
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "96829a83b341",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "notes": "Honest conjecture: class QbetaCkTruncationCanonicalClass fields encode tiered c_k status; sorry IS the conjecture w/ full -- Ref (jones1985/habiro2004). No masking.",
+        "reviewed_at": "2026-06-25T16:50:07.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "96829a83b341",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "notes": "Theorem body is a cited sorry (the open conjecture), not a projection of a hypothesis field.",
+        "reviewed_at": "2026-06-25T16:50:07.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "96829a83b341",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "notes": "qbeta_ck_truncation_canonical_conjecture takes no explicit hyps/instances; nothing unused.",
+        "reviewed_at": "2026-06-25T16:50:07.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "96829a83b341",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "notes": "No hypotheses; class fields (c2=-1, c3=-2, canonical-form existence) are consistent.",
+        "reviewed_at": "2026-06-25T16:50:07.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "96829a83b341",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "notes": "Clear route stated (identify Q_beta Habiro element, parallel alpha_EM); c2 proved, c3 near-match documented.",
+        "reviewed_at": "2026-06-25T16:50:07.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.82
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "96829a83b341",
+          "ts": "a35caf7d18c4",
+          "lean": "5ca960c6d000"
+        },
+        "result": "pass",
+        "notes": "Novel tiered framing (proved/near-match/cal-anchored) + canonical c_k existence claim; not a restatement.",
+        "reviewed_at": "2026-06-25T16:50:07.000Z",
+        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.8
+        }
       }
     ]
   },
