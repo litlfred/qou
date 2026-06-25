@@ -1,5 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.PSeries
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Tactic
 import QOU.Archimedean.ClausenFunctionMathlibFiller
@@ -60,7 +61,7 @@ noncomputable def complexLiTwo (z : ℂ) : ℂ :=
     formula reduces to `D(e^{iθ}) = Im(Li_2(e^{iθ})) = Cl_2(θ)`. -/
 -- Ref: [bloch2000]
 noncomputable def blochWigner (z : ℂ) : ℝ :=
-  (complexLiTwo z).im + Real.log (Complex.abs z) * (1 - z).arg
+  (complexLiTwo z).im + Real.log ‖z‖ * (1 - z).arg
 
 /-- **Boundary lemma:** at `z = 0`, `D(0) = 0` (by `Li_2(0) = 0`
     and `Real.log 0 = 0` in Mathlib's convention). Note: `D` is
@@ -160,19 +161,13 @@ theorem Cl_2_reflection_2pi (θ : ℝ) : Cl_2 (2 * Real.pi - θ) = -Cl_2 θ := b
     the comparison series for `complexLiTwo` summability. -/
 theorem one_div_nat_succ_sq_summable :
     Summable (fun k : ℕ => (1 : ℝ) / ((k : ℝ) + 1) ^ 2) := by
-  -- Equivalent to ∑ 1/n² over n ≥ 1, which is convergent (= π²/6 - 1
-  -- via reindexing); Mathlib has Real.summable_one_div_nat_rpow_iff
-  -- or summable_one_div_nat_pow with an exponent > 1.
-  have h := Real.summable_one_div_nat_rpow.mpr (by norm_num : (1 : ℝ) < 2)
-  -- Convert: 1/((k:ℝ)+1)² is a reindex of 1/(n^2)_{n≥1}
-  refine (h.subtype_compl ({0} : Set ℕ).toFinite.toFinset.toSet).comp_injective
-    (fun k : ℕ => ⟨k + 1, by simp⟩) ?_ |>.congr ?_
-  · intro a b hab
-    simp [Subtype.mk_eq_mk] at hab
-    omega
-  · intro k
-    simp [Real.rpow_natCast]
-    ring
+  -- `∑ 1/(k+1)²` is the `n ↦ n+1` reindex of the convergent `p`-series
+  -- `∑ 1/n²` (`Real.summable_one_div_nat_pow`, exponent `1 < 2`).
+  have h : Summable (fun n : ℕ => (1 : ℝ) / (n : ℝ) ^ 2) :=
+    Real.summable_one_div_nat_pow.mpr (by norm_num)
+  refine ((summable_nat_add_iff 1).mpr h).congr (fun n => ?_)
+  push_cast
+  ring
 
 /-- **Theorem: `complexLiTwo` is summable on the closed unit disk
     `‖z‖ ≤ 1` (proof attempt).** Compares each term
@@ -197,15 +192,17 @@ theorem complexLiTwo_summable_on_unit_disk
     one_div_nat_succ_sq_summable
   intro k
   rw [norm_div, norm_pow]
-  -- ‖z^(k+1)/((k+1)²)‖ = ‖z‖^(k+1) / ‖((k+1):ℂ)²‖
-  -- Need: ‖z‖^(k+1) / ‖((k+1):ℂ)²‖ ≤ 1 / ((k+1)² : ℝ)
-  have hnz : ‖z‖ ^ (k + 1) ≤ 1 := pow_le_one (k + 1) (norm_nonneg z) hz
-  -- and the denominator ‖((k+1):ℂ)²‖ = ((k+1)² : ℝ)
+  -- ‖z^(k+1)/((k+1)²)‖ = ‖z‖^(k+1) / ‖((k+1):ℂ)²‖ ≤ 1 / ((k+1)² : ℝ)
+  have hnz : ‖z‖ ^ (k + 1) ≤ 1 := pow_le_one₀ (norm_nonneg z) hz
+  -- ‖(↑k+1 : ℂ)‖ = ↑k+1: the complex denominator equals its real value.
+  have hk1 : ‖(↑k + 1 : ℂ)‖ = (↑k + 1 : ℝ) := by
+    rw [show ((k : ℂ) + 1) = ((k + 1 : ℕ) : ℂ) by push_cast; ring,
+        Complex.norm_natCast]
+    push_cast; ring
   have hdenom : ‖((↑k + 1 : ℂ)) ^ 2‖ = ((↑k + 1 : ℝ)) ^ 2 := by
-    rw [norm_pow, Complex.norm_natCast]
+    rw [norm_pow, hk1]
   rw [hdenom]
-  apply div_le_div_of_nonneg_right hnz
-  positivity
+  gcongr
 
 /-- **Class form for downstream use.** Some downstream blocks
     take `complexLiTwo`'s summability as a typeclass hypothesis;
