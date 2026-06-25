@@ -1,0 +1,20 @@
+{
+  "description": "z2bn lever-1 τ-derivation second probe: rigorous q-type-consistency constraint that the λ_SW prolongation operator must be q-difference, not a classical jet.",
+  "coral_cubic": "X^3+(z+1)X^2+(z^2+z+1)X+(z^3+z^2+z+1) (q-free)",
+  "classical_1_jet_dX_dz": "(-X**2 - X*(2*z + 1) - 3*z**2 - 2*z - 1)/(3*X**2 + 2*X*(z + 1) + z**2 + z + 1)",
+  "color_root_power_sums": {
+    "p1": "-z - 1",
+    "p2": "-z**2 - 1",
+    "p3": "-z**3 - 1"
+  },
+  "q_free": {
+    "cubic": true,
+    "classical_jet": true,
+    "power_sums": true
+  },
+  "anchor_a_D3": "(q+1)^2/(3q)",
+  "anchor_q_dependent": true,
+  "lambda_sw_prolongation_status": "inductive only (1-jet=dX, higher by induction); NO explicit closed form in corpus — cannot integrate directly yet",
+  "anchors_status": "production-wired Wedderburn-H4 inputs; identification ∮λ_SW^(n)=a_D^(n) is the OPEN keystone; a_D^(4)=Family-A is a CODATA-implied near-match",
+  "verdict": "(b)-EXCLUSION of the CLASSICAL-jet identification a_D^(n)=∮λ_SW^(n): the coral spectral cubic, its classical jets (d/dz), and all color-root power sums are q-FREE polynomials in z, so any ∮ over q-free cycles is q-INDEPENDENT — but a_D^(3)=(q+1)²/(3q) is q-DEPENDENT. Invariant cited: q-independence of classical-jet periods vs q-dependence of the anchor. Therefore the prolongation operator is NOT a classical jet; it MUST be a q-DIFFERENCE operator (the fibre q-difference kernel R(q,x) of the z2bn bean). The q-difference class is NOT excluded — it is the surviving/indicated direction. The explicit q-difference prolongation (and thus the residue derivation of the anchors) remains the open keystone; the anchors stay wired Wedderburn-H₄ inputs (a_D^(4)=Family-A flagged a CODATA near-match). No fit; nothing tuned."
+}
