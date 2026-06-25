@@ -58,11 +58,4 @@ class CriticalExponent where
   enstrophy_diverges :
     ∀ M : ℝ, ∃ q : ℝ, q ≠ 1 ∧ M < enstrophy q
 
-    Ref: [manuscript] §Critical exponent of the enstrophy divergence at q = 1, `conj:critical-exponent` -/
-class CriticalExponent : Prop where
-  /-- A critical Sobolev exponent  exists such that the
-      q-deformed Navier-Stokes regularity gap holds at exactly
-      that exponent. -/
-  critical_exponent_exists : ∃ s_c : ℝ, s_c > 0
-
 end QOU.FluidDynamics
