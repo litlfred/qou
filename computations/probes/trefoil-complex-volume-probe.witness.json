@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python (stdlib decimal, 60 dps)",
-  "computedAt": "2026-06-25T01:05:41.537410+00:00",
-  "commitSha": "c7e18466119bfb47ee5dec35344ec132dadfdc33",
+  "computedAt": "2026-06-25T10:38:48.256756+00:00",
+  "commitSha": "2788a7800dbf491cc158f07eaf0e1c4670bef26b",
   "assertions": [
     {
       "name": "trefoil_markov_trace_nonzero",
@@ -29,8 +29,8 @@
   "durationMs": 2,
   "computation": "trefoil-complex-volume-probe",
   "scriptFile": "trefoil_complex_volume_probe.py",
-  "scriptHash": "21985664055e",
-  "scriptCommitSha": "",
+  "scriptHash": "f284c0e39372",
+  "scriptCommitSha": "2788a7800dbf491cc158f07eaf0e1c4670bef26b",
   "precisionMetadata": {
     "compute_dps": 60,
     "output_dps": 30,
