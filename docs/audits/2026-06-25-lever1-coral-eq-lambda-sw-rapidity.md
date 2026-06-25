@@ -1,4 +1,4 @@
-# Lever-1: the coral E_q Gauss–Manin connection, and an (a)-negative on the transport reading of θ_binding
+# Lever-1: coral E_q Gauss–Manin connection + three (a)-negatives → θ_binding's geometric origin is the W_λ side, not an elliptic period
 
 **Date:** 2026-06-25
 **Owner reversal:** the narrow s5-so3 keystone reversal (2026-06-19, PRs #2503/#2524) is **extended** by explicit owner sign-off (2026-06-25) to the **λ_SW Seiberg–Witten-period side** of the same keystone — the coral `E_q` elliptic factor. Ledger: [`docs/coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md). Parameter-free; not a fit-based q₀ derivation.
@@ -78,30 +78,63 @@ confirmed), and the connection `N(q)` is a **permanent correct contribution**
 (PF-validated). What is excluded is only the *transport-integral* identification of
 `θ_binding`.
 
-## 3. The keystone, sharpened
+## 2c. (a)-negative: the curve-intrinsic Tate-period candidate also misses
 
-`θ_binding` is now caught between two failed natural geometric constructions:
+The one principled *intrinsic* candidate (probe
+[`lever1_coral_eq_intrinsic_tau_rapidity.py`](../../computations/substrate/lever1_coral_eq_intrinsic_tau_rapidity.py),
+witness `lever1-coral-eq-intrinsic-tau-rapidity.witness.json`): the **Tate / multiplicative
+period** `θ_cand = 2π·Im(τ_E)`, calibrated by the substrate torus where
+`θ_torus = 2 log q₀ = 2π·Im(τ_torus)` (Tate parameter `q₀²`). `τ_E` validated by
+`1728·kleinj(τ_E) = j` to `<10⁻⁶`.
 
-1. **topological monodromy** (closed `q`-loop) — `SL₂(ℤ)`, integer trace, `2.6424 ∉ ℤ`
-   ([prior session](2026-06-24-lever1-coral-eq-monodromy-integrality.md));
-2. **abelianised transport** (open path `1 → q₀`) — too small by ~55× (this session).
+| | q = 1 (classical) | q₀ (substrate) |
+|---|---|---|
+| `Im(τ_E)` | 0.93030 | 0.93058 |
+| `θ_cand = 2π·Im(τ_E)` | 5.8452 | **5.8470** |
+| `θ_binding = acosh(τ_binding/2)` | 0.7713 | **0.7815** |
 
-So the object producing `θ_binding` is **neither** the loop monodromy **nor** the path
-transport of the (now explicit) Gauss–Manin connection. The remaining candidate class is
-a **curve-intrinsic** quantity at `q₀` (a period/regulator of `λ_SW` itself, not of the
-`q`-family connection) — the genuine residual of the keystone. Testing intrinsic
-curve-invariant combinations was **not** attempted here: without a pre-registered
-principled prescription it would be numerology (AGENTS.md §formalize-first). The next
-disciplined step is to pin that prescription (which `λ_SW` period/regulator at `q₀`),
-then test it once.
+**Clean miss, two ways.** (i) *Value:* `5.847` vs `0.7815` — **6.5× too large**. (ii)
+*q-slope:* `θ_binding` rises `1.0×10⁻²` from q=1 to q₀, but `θ_cand` rises only
+`1.8×10⁻³` — **~6× too flat**. The reason is structural: `Im(τ_E) ≈ 0.93` puts the coral
+`E_q` **deep in the fundamental domain** (a *generic* curve), **not** near the Tate/cusp
+regime (`Im ≈ 0.03`) where the torus calibration lives — and the curve barely deforms
+over `[1, q₀]` (`j: 128 → 129.86`), so no single-curve invariant carries `θ_binding`'s
+q-sensitivity. **Scope (a):** this rules out *this* principled candidate, not literally
+every intrinsic invariant (a `j`-tuned one could be forced — but that is fishing,
+AGENTS.md §formalize-first).
+
+## 3. The keystone, sharpened — three geometric candidates, three misses → redirect
+
+`θ_binding` has now been confronted with the three natural geometric constructions on the
+coral `E_q` / `λ_SW` side, and **all three miss**:
+
+| # | construction | result |
+|---|---|---|
+| 1 | **loop monodromy** (closed q-loop of `N`) | `SL₂(ℤ)`, integer trace, `2.6424 ∉ ℤ` — [prior session](2026-06-24-lever1-coral-eq-monodromy-integrality.md) |
+| 2 | **abelianised transport** (path `1→q₀` of `N`) | `0.0141`, ~55× too small — §2 |
+| 3 | **intrinsic Tate period** (`2π·Im τ_E`) | `5.847`, 6.5× too large, 6× too q-flat — §2c |
+
+So the geometric origin of `θ_binding` is **not a coral-`E_q` period quantity at all** —
+neither family (monodromy/transport) nor single-curve (intrinsic). This **redirects** the
+keystone: `θ_binding` lives on the **`W_λ`-side Plancherel/MTC localization** (keystone
+**residual (i)** — pin the Beasley–Witten gauge datum on `S³/2I` to the Hecke
+`Rep U_q(sl_N)` blocks so `W_λ = d_q²/D²` is provably our category's Plancherel measure),
+which is the corpus's already-open frontier and the active subject of the `W_λ`-defect
+ladder (#2744, just landed on `main`). The coral `E_q` is the correct *curve* (the rank-2
+`W`), but `θ_binding = log λ₊` is read off the **representation-theoretic** `tr B`
+(the selection rule), whose geometric face is the `W_λ` index — not an elliptic period.
 
 ## 4. Net
 
 - **Delivered (new, validated):** the explicit Picard–Fuchs / Gauss–Manin connection
   `N(q)` of the coral `E_q` family — trace-free `sl₂` (re-derives `det B = 1`),
-  PF-validated to `1.2×10⁻⁵`, hyperbolic on `[1, q₀]`.
-- **(a)-negative:** the abelianised transport integral `∫√(−det N) dq = 0.0141 ≠ θ_binding`
-  (undershoots ~55×). Rules out the transport reading; constrains, does not exclude.
-- **Keystone sharpened:** `θ_binding` is neither loop-monodromy (integer trace) nor
-  path-transport (too small) — it is a curve-intrinsic `λ_SW` period/regulator at `q₀`,
-  still open. No fit; nothing wired; no tier change to any production quantity.
+  PF-validated to `1.2×10⁻⁵`, hyperbolic on `[1, q₀]`; and `τ_E(q)` validated by the
+  Klein `j`-function.
+- **Three (a)-negatives** on the three natural geometric constructions: loop monodromy
+  (integer trace), abelianised transport (`0.0141`, ~55× small), intrinsic Tate period
+  (`5.847`, 6.5× large + 6× too q-flat). Each constrains, none excludes the curve.
+- **Redirect (the useful outcome):** `θ_binding` is **not** a coral-`E_q` period — its
+  geometric origin is the **`W_λ`-side Plancherel/MTC localization** (keystone residual i,
+  the open frontier of #2744). The coral `E_q` is the right *curve* (rank-2 `W`); the
+  rapidity is read off the rep-theoretic `tr B`, whose geometric face is the `W_λ` index.
+- No fit; nothing wired; no tier change to any production quantity.
