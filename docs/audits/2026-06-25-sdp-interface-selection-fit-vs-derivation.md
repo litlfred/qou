@@ -144,10 +144,55 @@ in AGENTS.md anticipates.
    sub-problem is *closed* (canonical = optimal) and the open residual is
    entirely collective.
 
+## Follow-up — structural form of the collective residual
+
+Probe: [`computations/probe_collective_binding_residual.py`](../../computations/probe_collective_binding_residual.py)
+(EXPLORATORY; witness `probe-collective-binding-residual.witness.json`).
+
+Having established the residual is collective, this follow-up pins down its
+**structural form** (formalize-first; **no** closed-form fit — Δ_λ gate
+stands). Per-nucleon binding across ²H–¹⁶O (B_sym = the canonical-interface
+linear chain):
+
+| iso | A | B_sym | B_AME | F=AME/sym | B_sym/A | B_AME/A |
+|---|--:|--:|--:|--:|--:|--:|
+| ²H | 2 | 3.890 | 2.225 | 0.572 | 1.945 | 1.112 |
+| ³H | 3 | 9.068 | 8.482 | 0.935 | 3.023 | 2.827 |
+| ³He | 3 | 6.797 | 7.718 | 1.136 | 2.266 | 2.573 |
+| ⁴He | 4 | 11.975 | 28.296 | 2.363 | 2.994 | **7.074** |
+| ⁶Li | 6 | 20.060 | 31.994 | 1.595 | 3.343 | 5.332 |
+| ⁷Li | 7 | 25.238 | 39.245 | 1.555 | 3.605 | 5.606 |
+| ⁹Be | 9 | 33.323 | 58.164 | 1.745 | 3.703 | 6.463 |
+| ¹²C | 12 | 44.315 | 92.162 | 2.080 | 3.693 | 7.680 |
+| ¹⁶O | 16 | 60.486 | 127.619 | 2.110 | 3.780 | 7.976 |
+
+Two honest signals (an initial "B_sym/A is globally monotone, B_AME/A peaks at
+⁴He" hypothesis was **refuted** by the data — B_sym/A wiggles with isospin
+composition and the *global* B/A peak is ¹⁶O; the real signal is the **local**
+⁴He spike):
+
+- **(A) General collective under-binding (grows with A).** `F = B_AME/B_sym`
+  rises 0.94 (³H) → 2.11 (¹⁶O); `B_sym/A` saturates ~3.8 while `B_AME/A`
+  climbs to ~8.0. The per-bond chain misses a non-additive term that grows
+  with A — the tower-wide face of the 2.41× interface-probe ceiling.
+- **(B) ⁴He α-magic local spike.** Over the linear A=3↔A=6 interpolation of
+  `B/A`, ⁴He's excess is **+98% in AME** but only **+4% in B_sym** — the
+  additive sum of fixed bond constants is smooth through A=4 and **cannot**
+  produce a doubly-magic α-core singularity.
+
+**Narrowing (scope-(a), no exclusion):** the missing physics is collective;
+the ⁴He spike fingerprints a **4-body α-core (⁴He / Borromean)** term, **not**
+a per-bond or pairwise correction. This is consistent with the magic-volume's
+"exact-at-⁴He" construction and points the keystone (beans `w5tg`/`z2bn`/
+`thb7`, A=4 interface operator [#2750](https://github.com/litlfred/qou/pull/2750),
+s5-so3 4-body assembly) at the 4-body channel — away from any per-bond
+collective ansatz.
+
 ## Reproduce
 
 ```bash
-cd computations && python3 -u probe_sdp_interface_selection.py
+cd computations && python3 -u probe_sdp_interface_selection.py    # interface (A/B/C)
+cd computations && python3 -u probe_collective_binding_residual.py # collective form
 ```
 
 Pure-python (no `pyhecke_native`); runs in seconds — the whole tower comes
