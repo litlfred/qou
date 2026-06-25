@@ -42,6 +42,16 @@ So `τ > 2 ⇒ λ₊ > 1`: the kernel encodes the extensive (A-scaling) binding 
 saturating multiplicative trace (sitting at the degenerate `τ = 2`, `λ = 1`
 no-growth boundary) cannot source. `τ(q₀) = 2.6424 > 2` satisfies the hypothesis.
 
+**Scope (PR #2752).** These are unconditional facts about the roots of
+`x² − τx + 1`; read as a claim about binding they are a *conditional* — IF the
+binding generating function had this fixed-τ depth-2 kernel, THEN it is
+extensive. The physical body-order coefficients `a_D^(n) = lw(n−1)` in fact grow
+*super-geometrically* (#2708; ratios → 2.76, past `λ₊`), so `λ₊ > 1` witnesses
+that the *seed* kernel is extensive — correct but weaker than "the binding grows
+at rate `λ₊`". The qualitative "extensive, not saturating" conclusion is thereby
+reinforced, not weakened. See
+`docs/audits/2026-06-25-spectral-bridge-tautology-recurrence-vs-lw.md`.
+
 LaTeX label: `prop:binding-recurrence-extensive` (interprets
 `prop:binding-genfun-qdifference`).
 
