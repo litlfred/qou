@@ -2,14 +2,14 @@
 """z2bn lever-1 τ-derivation — FIRST non-fitted geometric probe (owner-authorized 2026-06-25).
 
 Goal: derive τ_binding = 3(3q⁴+8q²+3)/(4q(q+1)²) = 2.6424 as a geometric quantity of the
-coral/descartes elliptic curve E_q + its Seiberg–Witten differential λ_SW = X dz — WITHOUT
+color/descartes elliptic curve E_q + its Seiberg–Witten differential λ_SW = X dz — WITHOUT
 fitting to 2.6424. This is a FIRST probe: establish the clean non-fitted anchors and test
 principled holonomy candidates ONCE (no tuning), reporting honestly where the geometry lands.
 
 Curve (descartes-elliptic-curve.lean):  E_q : y² = x³ + p(q) x + r(q)
   p(q) = 2(q²−q+1)/(3q) + (q−1)/(3√q)
   r(q) = 20(q−1)³/(27 q^{3/2}) + 5(q−1)²/(9q) + 5(√q − 1/√q)/9 + 20/27
-Spectral curve (coral cubic, X = color coord, z = √q − 1/√q):
+Spectral curve (color cubic, X = color coord, z = √q − 1/√q):
   X³ + (z+1)X² + (z²+z+1)X + (z³+z²+z+1) = 0 ;  λ_SW = X dz
 Anchors (lever1_lambda_sw_no_shortcut.py): a_D²=1, a_D³=(q+1)²/(3q), a_D⁴=(3q²+4+3q⁻²)/4
 Target: τ=(a_D²+a_D⁴)/a_D³ ;  θ=acosh(τ/2)=0.78145 ;  λ=e^θ=2.18465.  No fit; q₀ never tuned.
@@ -56,9 +56,9 @@ print("\n(B) curve confirmation (exact p,r):")
 print(f"    p(q₀)={mp.nstr(p0,12)}  r(q₀)={mp.nstr(r0,12)}  j(q₀)={mp.nstr(j0,10)}  (corpus 129.86)")
 print(f"    p(1)={mp.nstr(p1,8)} (=2/3? {mp.nstr(p1-mp.mpf(2)/3,3)})  r(1)={mp.nstr(r1,8)} (=20/27? {mp.nstr(r1-mp.mpf(20)/27,3)})  j(1)={mp.nstr(j1,8)} (=128)")
 
-# ---------- (C) coral cubic structure: power sums of the color roots X ----------
+# ---------- (C) color cubic structure: power sums of the color roots X ----------
 z = sp.symbols('z')
-# coral cubic X³+(z+1)X²+(z²+z+1)X+(z³+z²+z+1)=0  → e1,e2,e3 (elementary symm of roots)
+# color cubic X³+(z+1)X²+(z²+z+1)X+(z³+z²+z+1)=0  → e1,e2,e3 (elementary symm of roots)
 e1 = -(z+1); e2 = z**2+z+1; e3 = -(z**3+z**2+z+1)
 # Newton power sums p_n = Σ X_i^n
 psum = {1: e1}
@@ -66,7 +66,7 @@ psum[2] = sp.expand(e1*psum[1] - 2*e2)
 psum[3] = sp.expand(e1*psum[2] - e2*psum[1] + 3*e3)
 for n in range(4, 7):
     psum[n] = sp.expand(e1*psum[n-1] - e2*psum[n-2] + e3*psum[n-3])
-print("\n(C) coral-cubic color-root power sums p_n(z)=Σ Xᵢⁿ  (Newton):")
+print("\n(C) color-cubic color-root power sums p_n(z)=Σ Xᵢⁿ  (Newton):")
 for n in range(1, 7):
     nice = sp.factor(psum[n])
     print(f"    p_{n}(z) = {psum[n]}      [factored: {nice}]")
@@ -80,12 +80,12 @@ print("    a_D³=(q+1)²/(3q) = (q+2+1/q)/3 = (z²+4)/3 ;  compare p_2(z)=", psu
 print("    a_D⁴=(3q²+4+3q⁻²)/4 ; q²+q⁻²=(z²+2)²−2 ⇒ a_D⁴=(3z⁴+12z²+10)/4 ; compare p_4(z)=", psum[4])
 
 # ---------- (D) spectral-curve branch points + λ_SW=X dz period attempt ----------
-# branch points in z: where coral cubic has a double root in X ⇔ disc_X = 0
+# branch points in z: where color cubic has a double root in X ⇔ disc_X = 0
 Xs = sp.symbols('X')
 cubic = Xs**3 + (z+1)*Xs**2 + (z**2+z+1)*Xs + (z**3+z**2+z+1)
 discX = sp.discriminant(cubic, Xs)
 print("\n(D) spectral curve λ_SW=X dz — branch structure:")
-print("    disc_X(coral cubic) =", sp.factor(discX))
+print("    disc_X(color cubic) =", sp.factor(discX))
 roots_z = sp.solve(sp.Eq(discX, 0), z)
 print(f"    branch points in z (disc=0): {len(roots_z)} roots")
 # z(q₀):
@@ -125,7 +125,7 @@ import json
 jk = mp.re(1728*mp.kleinj(tau_mod))
 witness = {
   "description": ("z2bn lever-1 τ-derivation — FIRST non-fitted geometric probe. Establishes the "
-                  "clean anchors (τ closed form; curve j confirmation; coral-cubic power-sum structure) "
+                  "clean anchors (τ closed form; curve j confirmation; color-cubic power-sum structure) "
                   "and tests principled λ_SW-holonomy candidates ONCE (no tuning). Owner-authorized "
                   "2026-06-25."),
   "dps": mp.mp.dps,
@@ -143,7 +143,7 @@ witness = {
                                       "Δ=−16(4p^3+27r^2) → returns −16·j (j(1)=−2048 not 128). "
                                       "Curve itself correct; def is 'not part of formal proof chain'."),
   },
-  "coral_cubic_power_sums": {
+  "color_cubic_power_sums": {
     "p1": "-(z+1)", "p2": "-(z^2+1)", "p3": "-(z^3+1)",
     "p4": "3z^4+4z^3+4z^2+4z+3", "p5": "-(z^5+5z^4+5z^3+5z^2+5z+1)", "p6": "-(z^6+1)",
     "note": "p_n=-(z^n+1) for n=1,2,3 (and 6); anchors are NOT the bare power sums (a_D^3=(z^2+4)/3 != p2).",
@@ -154,7 +154,7 @@ witness = {
     "2cosh_abs_z_q0": mp.nstr(2*mp.cosh(abs(z_q0)), 12),
   },
   "verdict": ("(a) τ closed form EXACTLY = (a_D^2+a_D^4)/a_D^3 (Lean-formalizable). Curve CONFIRMED: "
-              "j(q0)=129.86 via period/kleinj. Coral-cubic power sums p_n=-(z^n+1) (n<=3). "
+              "j(q0)=129.86 via period/kleinj. Color-cubic power sums p_n=-(z^n+1) (n<=3). "
               "(a)-NEGATIVE on the holonomy: NO bare-period candidate reproduces τ=2.6424; Im(τ_mod)=0.734 "
               "is ~6% from θ=0.781 — a near-coincidence, NOT a derivation. The prolongation operator "
               "λ_SW^(n)→anchors (the q-family Gauss–Manin monodromy) is the genuine deep residual. No fit; "

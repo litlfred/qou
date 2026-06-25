@@ -25,9 +25,9 @@ Plus the bar-antisymmetric **odd partner** `a_D^(5) = τ·a_D^(4) − a_D^(3)` a
 
 Algebraic half only: the wired anchor *values* force this `τ`, `τ > 2`, hence extensivity. It does
 **not** derive the geometric residual `a_D^(n) = ∮ λ_SW^(n) = lw(n−1)` (this `τ` = abelianised
-`λ_SW` Gauss–Manin holonomy on coral `E_q`) — the owner-gated keystone
+`λ_SW` Gauss–Manin holonomy on color `E_q`) — the owner-gated keystone
 (`conj:qdifference-kernel-prolongation-symbol`). The Step-1 geometry probe
-`computations/substrate/lever1_coral_sigma_geometry_probe.py` shows the bare differential carries
+`computations/substrate/lever1_color_sigma_geometry_probe.py` shows the bare differential carries
 zero residue at the finite branch points, so that identification needs the prolongation operator
 `λ_SW^(n) → a_D^(n)`, left "by induction" (the construction gap).
 

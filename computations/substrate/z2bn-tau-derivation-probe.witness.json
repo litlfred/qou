@@ -1,5 +1,5 @@
 {
-  "description": "z2bn lever-1 τ-derivation — FIRST non-fitted geometric probe. Establishes the clean anchors (τ closed form; curve j confirmation; coral-cubic power-sum structure) and tests principled λ_SW-holonomy candidates ONCE (no tuning). Owner-authorized 2026-06-25.",
+  "description": "z2bn lever-1 τ-derivation — FIRST non-fitted geometric probe. Establishes the clean anchors (τ closed form; curve j confirmation; color-cubic power-sum structure) and tests principled λ_SW-holonomy candidates ONCE (no tuning). Owner-authorized 2026-06-25.",
   "dps": 50,
   "q0": "1.1099785955573347199",
   "tau_closed_form_exact_match": true,
@@ -15,7 +15,7 @@
     "j_1": 128,
     "note_j_invariant_lean_def_bug": "descartes-elliptic-curve.lean j_invariant omits the −16 of Δ=−16(4p^3+27r^2) → returns −16·j (j(1)=−2048 not 128). Curve itself correct; def is 'not part of formal proof chain'."
   },
-  "coral_cubic_power_sums": {
+  "color_cubic_power_sums": {
     "p1": "-(z+1)",
     "p2": "-(z^2+1)",
     "p3": "-(z^3+1)",
@@ -30,5 +30,5 @@
     "Im_tau_mod_vs_theta": "0.73400705 vs θ=0.78145395 (~6% off, NOT a match)",
     "2cosh_abs_z_q0": "2.01090676786"
   },
-  "verdict": "(a) τ closed form EXACTLY = (a_D^2+a_D^4)/a_D^3 (Lean-formalizable). Curve CONFIRMED: j(q0)=129.86 via period/kleinj. Coral-cubic power sums p_n=-(z^n+1) (n<=3). (a)-NEGATIVE on the holonomy: NO bare-period candidate reproduces τ=2.6424; Im(τ_mod)=0.734 is ~6% from θ=0.781 — a near-coincidence, NOT a derivation. The prolongation operator λ_SW^(n)→anchors (the q-family Gauss–Manin monodromy) is the genuine deep residual. No fit; q0 never tuned."
+  "verdict": "(a) τ closed form EXACTLY = (a_D^2+a_D^4)/a_D^3 (Lean-formalizable). Curve CONFIRMED: j(q0)=129.86 via period/kleinj. Color-cubic power sums p_n=-(z^n+1) (n<=3). (a)-NEGATIVE on the holonomy: NO bare-period candidate reproduces τ=2.6424; Im(τ_mod)=0.734 is ~6% from θ=0.781 — a near-coincidence, NOT a derivation. The prolongation operator λ_SW^(n)→anchors (the q-family Gauss–Manin monodromy) is the genuine deep residual. No fit; q0 never tuned."
 }
