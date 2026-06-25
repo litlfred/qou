@@ -37,11 +37,46 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LEAN_ROOT = "content/quantum-observable-universe/lean/QOU"
 
 # --- comment stripping -------------------------------------------------------
-_BLOCK = re.compile(r"/-.*?-/", re.DOTALL)   # covers /- -/ and /-- -/ docstrings
-_LINE = re.compile(r"--[^\n]*")
-
+# State-machine stripper (per Gemini review on PR #2775): a regex stripper
+# mishandles nested block comments `/- /- -/ -/`, line comments containing `/-`,
+# and tokens like `decide` inside string literals. This walks the source.
 def strip_comments(src: str) -> str:
-    return _LINE.sub("", _BLOCK.sub("", src))
+    out = []
+    i, n = 0, len(src)
+    state = "normal"  # normal | string | line_comment | block_comment
+    depth = 0
+    while i < n:
+        if state == "normal":
+            if src[i:i + 2] == "/-":
+                state, depth, i = "block_comment", 1, i + 2
+            elif src[i:i + 2] == "--":
+                state, i = "line_comment", i + 2
+            elif src[i] == '"':
+                state = "string"; out.append(src[i]); i += 1
+            else:
+                out.append(src[i]); i += 1
+        elif state == "string":
+            if src[i] == "\\":
+                i += 2
+            elif src[i] == '"':
+                state = "normal"; out.append(src[i]); i += 1
+            else:
+                i += 1
+        elif state == "line_comment":
+            if src[i] == "\n":
+                state = "normal"; out.append(src[i]); i += 1
+            else:
+                i += 1
+        else:  # block_comment
+            if src[i:i + 2] == "/-":
+                depth += 1; i += 2
+            elif src[i:i + 2] == "-/":
+                depth -= 1; i += 2
+                if depth == 0:
+                    state = "normal"
+            else:
+                i += 1
+    return "".join(out)
 
 # --- token signals -----------------------------------------------------------
 _DECIDE = re.compile(r"(?<![A-Za-z_])(?:native_decide|decide)(?![A-Za-z_])")
@@ -62,7 +97,8 @@ def resolve_lean(qa_path: str) -> list[str]:
         out.append(sib)
     ts_path = base + ".ts"
     if os.path.exists(ts_path):
-        ts = open(ts_path, encoding="utf-8").read()
+        with open(ts_path, encoding="utf-8") as f:
+            ts = f.read()
         m = re.search(r'ref:\s*"qou:QOU\.([^"]+)"', ts)
         if m:
             decl = m.group(1)
@@ -76,7 +112,8 @@ def resolve_lean(qa_path: str) -> list[str]:
 def file_hash(path: str) -> str | None:
     if not os.path.exists(path):
         return None
-    return hashlib.sha256(open(path, "rb").read()).hexdigest()[:12]
+    with open(path, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()[:12]
 
 def current_field_hash(qa_path: str) -> dict:
     base = qa_path[: -len(".qa.json")]
@@ -110,8 +147,11 @@ def main() -> int:
 
     for qa in sorted(glob.glob("content/**/*.qa.json", recursive=True)):
         try:
-            d = json.load(open(qa, encoding="utf-8"))
-        except Exception:
+            with open(qa, encoding="utf-8") as f:
+                d = json.load(f)
+            if isinstance(d, list):  # tolerate list-wrapped sidecars
+                d = d[0] if d else {}
+        except Exception:  # noqa: BLE001  (skip any unreadable/invalid sidecar)
             continue
         crit = d.get("criteria") or {}
         lean_paths = None  # lazy
@@ -126,8 +166,9 @@ def main() -> int:
                 src = ""
                 for lp in lean_paths:
                     try:
-                        src += open(lp, encoding="utf-8").read() + "\n"
-                    except Exception:
+                        with open(lp, encoding="utf-8") as f:
+                            src += f.read() + "\n"
+                    except Exception:  # noqa: BLE001  (skip unreadable Lean)
                         pass
                 stripped = strip_comments(src)
             if not lean_paths:

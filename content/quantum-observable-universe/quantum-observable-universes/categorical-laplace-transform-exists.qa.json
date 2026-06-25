@@ -1481,6 +1481,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "0c7faf3b2a0d",
+          "ts": "081ee9db7897",
+          "lean": "91280c112058"
+        },
+        "result": "pass",
+        "notes": "Re-audit correction 2026-06-25: prior note mis-stated 'no token' (regex stripper edge case, fixed per Gemini review on PR #2775). Resolved Lean uses plain `decide` (`rw [...]; decide` on a sign inequality) — accepted, no `native_decide`; verdict pass stands.",
+        "reviewed_at": "2026-06-25T15:58:24.000Z",
+        "reviewed_sha": "40352568533fa16a68cf40b7fb87a593c6345c49",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
       }
     ]
   },
