@@ -144,9 +144,32 @@ class MarkovTraceCyclic (H : IwahoriHeckeAlgebra n R q h_unit) : Prop where
       letI : Ring H.carrier := H.ring
       H.markov_trace (a * b) = H.markov_trace (b * a)
 
-/-- Markov trace stabilisation: with the natural inclusion
-    `incl : H_n ↪ H_{n+1}` and the new top generator `σ_n` of `H_{n+1}`
-    (index `n-1` of its `Fin n` generators), the Markov trace satisfies
+/-- **Tower inclusion** `H_n ↪ H_{n+1}`: the unital ring hom that sends each
+    braid generator `σ_i` of `H_n` to the same-indexed generator of `H_{n+1}`,
+    realising `H_n` as the subalgebra of `H_{n+1}` on the first `n-1` strands.
+    The Markov stabilisation move is stated against this map. -/
+class HeckeInclusion
+    (H : IwahoriHeckeAlgebra n R q h_unit)
+    (H_succ : IwahoriHeckeAlgebra (n + 1) R q h_unit) where
+  /-- The underlying inclusion of carriers. -/
+  incl : H.carrier → H_succ.carrier
+  /-- The inclusion is unital. -/
+  map_one :
+    letI : Ring H.carrier := H.ring
+    letI : Ring H_succ.carrier := H_succ.ring
+    incl 1 = 1
+  /-- The inclusion is multiplicative (a ring hom). -/
+  map_mul :
+    letI : Ring H.carrier := H.ring
+    letI : Ring H_succ.carrier := H_succ.ring
+    ∀ a b, incl (a * b) = incl a * incl b
+  /-- The inclusion preserves generators: `σ_i ↦ σ_i`. -/
+  map_sigma :
+    ∀ i : Fin (n - 1), incl (H.sigma i) = H_succ.sigma ⟨i.val, by omega⟩
+
+/-- Markov trace stabilisation: with the tower inclusion `incl : H_n ↪ H_{n+1}`
+    (`HeckeInclusion`) and the new top generator `σ_n` of `H_{n+1}` (index `n-1`
+    of its `Fin n` generators), the Markov trace satisfies
 
     `tr_{M, n+1}(incl a · σ_n) = z · tr_{M, n}(a)`
 
@@ -159,14 +182,33 @@ class MarkovTraceCyclic (H : IwahoriHeckeAlgebra n R q h_unit) : Prop where
 class MarkovTraceStabilisation
     (H : IwahoriHeckeAlgebra n R q h_unit)
     (H_succ : IwahoriHeckeAlgebra (n + 1) R q h_unit)
-    (incl : H.carrier → H_succ.carrier) (z : R) (hn : 0 < n) : Prop where
+    [HeckeInclusion H H_succ] (z : R) (hn : 0 < n) : Prop where
   stabilisation :
     ∀ a : H.carrier,
       letI : Ring H_succ.carrier := H_succ.ring
-      H_succ.markov_trace (incl a * H_succ.sigma ⟨n - 1, by omega⟩)
+      H_succ.markov_trace (HeckeInclusion.incl a * H_succ.sigma ⟨n - 1, by omega⟩)
         = z * H.markov_trace a
   -- Ref: [jones1987] Jones, Hecke algebra representations of braid groups
   -- and link polynomials — §3 uniqueness of Markov trace on H_∞(q).
+
+/-- **Consumer (the two Markov moves compose).**  Cyclicity of `tr_{M, n+1}`
+    lets the stabilisation move be read in either order: the Markov trace of the
+    new generator times an included element equals `z · tr_{M, n}` regardless of
+    side.  A genuine derivation from the two axioms — `MarkovTraceStabilisation`
+    is not decorative. -/
+theorem markovTrace_stab_comm
+    {H : IwahoriHeckeAlgebra n R q h_unit}
+    {H_succ : IwahoriHeckeAlgebra (n + 1) R q h_unit}
+    [HeckeInclusion H H_succ] {z : R} {hn : 0 < n}
+    [MarkovTraceCyclic H_succ]
+    [MarkovTraceStabilisation H H_succ z hn]
+    (a : H.carrier) :
+    letI : Ring H_succ.carrier := H_succ.ring
+    H_succ.markov_trace (H_succ.sigma ⟨n - 1, by omega⟩ * HeckeInclusion.incl a)
+      = z * H.markov_trace a := by
+  letI : Ring H_succ.carrier := H_succ.ring
+  rw [MarkovTraceCyclic.cyclic (H_succ.sigma ⟨n - 1, by omega⟩) (HeckeInclusion.incl a)]
+  exact MarkovTraceStabilisation.stabilisation a
 
 /-! ## Wedderburn decomposition (axiomatic, generic q) -/
 
