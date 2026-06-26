@@ -73,6 +73,30 @@ theorem qBracket_two {q : ℝ} (hq_ne : q ≠ 0)
   rw [h2]
   exact mul_div_cancel_left₀ (q + q⁻¹) h_denom_ne
 
+/-- **The if-guard is redundant: the closed formula already vanishes at `n = 0`.**
+`qBracket q n = (q^n − q^{-n}) / (q − q⁻¹)` for *every* `n` (at `n = 0` both sides are
+`0`), so downstream proofs may use the uniform formula without case-splitting. -/
+theorem qBracket_eq_formula (q : ℝ) (n : ℕ) :
+    qBracket q n = (q ^ n - q ^ (-(n : ℤ))) / (q - q⁻¹) := by
+  rcases Nat.eq_zero_or_pos n with h | h
+  · subst h; simp [qBracket]
+  · rw [qBracket, if_neg h.ne']
+
+/-- **Balanced quantum-integer addition identity** `[a+b]_q = q^b·[a]_q + q^{-a}·[b]_q`.
+The defining relation behind the q-Pascal rule for the Gaussian binomial (and hence the
+Rogers–Szegő / continuous q-Hermite three-term recurrence). Verified at the formula level:
+`q^b(q^a−q^{-a}) + q^{-a}(q^b−q^{-b}) = q^{a+b} − q^{-a-b}`. -/
+theorem qBracket_add (q : ℝ) (hq : q ≠ 0) (a b : ℕ) :
+    qBracket q (a + b) = q ^ b * qBracket q a + q ^ (-(a : ℤ)) * qBracket q b := by
+  simp only [qBracket_eq_formula]
+  rw [mul_div_assoc', mul_div_assoc', ← add_div]
+  congr 1
+  have e1 : (q : ℝ) ^ (a + b) = q ^ a * q ^ b := pow_add q a b
+  have e2 : q ^ (-((a + b : ℕ) : ℤ)) = q ^ (-(a : ℤ)) * q ^ (-(b : ℤ)) := by
+    rw [← zpow_add₀ hq]; congr 1; push_cast; ring
+  rw [e1, e2, ← zpow_natCast q a, ← zpow_natCast q b]
+  ring
+
 /-- The **q-factorial** `[n]_q! = ∏_{k=1}^n [k]_q`.
 
     Empty product convention: `[0]_q! = 1`. -/
