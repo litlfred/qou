@@ -119,6 +119,25 @@ Two findings:
   substrate (rather than calibrating it) is the genuine open question for Path 3.
   Note $\alpha_M\approx 5.73 \approx 11.2\,m_e$ — relating it to the
   $E_0$/$m_e$ fibre-functor calibration is the formalize-first target.
+- **`α_M` is a calibration, not a derivable number (2026-06-26, formalize-first).**
+  The probe's own header declares `α_M` an "acknowledged input, NOT an
+  independent calibration" — it is fixed by `α_M = B_D / |tr_M(D)|` from the
+  **deuteron**. Asking to "derive `α_M`" as a single substrate number is the
+  entropy-bound-forbidden identification the corpus repeatedly warns against
+  (cf. the c₃ flip-flop, the A-identification): a lone ~5-sig-fig constant is
+  low-information against a basis of substrate constants. A cheap decisive check
+  confirms there is **no clean structural match**: `α_M/m_e = 11.21180`, and the
+  best single candidate `c_q·q₀ = 11.20266` misses by **~800 ppm** — five orders
+  worse than the ~11.5 ppb proton-anchor theory residual, i.e. coincidence, not
+  identity. **Do not launch a PSLQ/closed-form hunt for `α_M`.**
+- **The genuine open question is structural, not numerical.** `α_M` is the
+  binding-sector calibration — the analog of `m_e`/`E₀` for binding energy. The
+  real content of Path 3 is that **one** binding calibration (`α_M`, from the
+  deuteron) then predicts p, n at sub-1%. The formalize-first question is whether
+  the single-prefactor model `B = α_M·|tr_M^Habiro|` is *forced* by the
+  categorical identity `m = m_e·ρ·|tr_M|` — i.e. whether `α_M = m_e·ρ_binding`
+  for a **derived** (not fitted) categorical density `ρ_binding`. That is a
+  derivation target; the bare number is not.
 - **Data-integrity flag (not fixed here):** re-running the producer
   `path_b_habiro_mass_probe.py` crashes on the $A\ge3$ rows with an unsubstituted
   free symbol (`-74.0*check_q - 74.0`); the committed witness's $\{p,n,D\}$ rows
