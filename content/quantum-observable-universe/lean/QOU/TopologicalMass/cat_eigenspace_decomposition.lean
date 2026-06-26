@@ -1,54 +1,65 @@
-import Mathlib.Tactic
+import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.TopologicalMass.cat_eigenspace_decomposition
+# QOU.TopologicalMass.cat_eigenspace_decomposition — orthogonal mass decomposition
 
-**Placeholder canonical** for content block
-[`lem:topological-mass-cat-eigenspace`](../../../quantum-observable-universe/braids-and-knots/topological-mass-cat-eigenspace.md): *Eigenspace decomposition of the categorical mass integrand*.
+**Lemma** ([`lem:topological-mass-cat-eigenspace`](../../../quantum-observable-universe/mass-endomorphism/topological-mass-cat-eigenspace.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.TopologicalMass.cat_eigenspace_decomposition` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+Let `α = (∫_A ⊗ id) ∘ Δ ∘ ρ` be the categorical mass integrand of a
+closed cycle `ρ`. When the Frobenius pairing is compatible with the
+`*`-involution, the descent involution `τ̂_n` gives an orthogonal
+decomposition of `α` into descended and transient components:
+
+`m(ρ) = ‖tr(τ̂_n(α))‖ + ‖tr(α − τ̂_n(α))‖`.
+
+## Formalisation notes
+
+- **Honest statement (§1, §1a).** The conclusion is the *actual*
+  manuscript equation — the mass `m(ρ)` splits as the sum of the
+  descended-component norm `‖tr(τ̂_n(α))‖` and the transient-component
+  norm `‖tr(α − τ̂_n(α))‖`. The descended and transient pieces are built
+  from the genuine operators `τ̂_n`, `tr`, `‖·‖` applied to `α` and to the
+  *algebraic* orthogonal complement `α − τ̂_n(α)`. This replaces the
+  earlier laundered tautology `α = α_descended + α_transient` (routed
+  through a fictitious `intermediate_sum`), which assumed its own
+  conclusion.
+- The non-trivial content is **norm-additivity over the orthogonal split**
+  (`*`-compatible Frobenius pairing ⇒ Pythagoras), which needs the
+  inner-product / orthogonality infrastructure; the body is an **honest
+  `sorry`** with a manuscript citation (§1a item 2), not a self-assuming
+  projection.
+- **Base ring (§7c).** `ℝ`: the mass norm is an archimedean (real) norm.
+
+-- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-eigenspace.md
 -/
 
 namespace QOU.TopologicalMass
 
-
-/-- Abstract context for the `cat_eigenspace_decomposition` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Data of the orthogonal mass-decomposition lemma: the integrand `α`,
+    the descent involution `τ̂_n`, the trace `tr`, the mass norm `‖·‖`,
+    and the total mass `m(ρ)`. -/
 class CatEigenspaceDecompositionContext where
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- Categorical mass integrand `α`. -/
+  /-- Categorical mass integrand `α` (modelled in `ℝ`). -/
   α : ℝ
-  /-- Descended (level-base) component of `α`. -/
-  α_descended : ℝ
-  /-- Transient (above-base) component of `α`. -/
-  α_transient : ℝ
-  /-- Intermediate sum value. -/
-  intermediate_sum : ℝ
-  /-- Categorical mass integrand equals intermediate sum. -/
-  h_alpha : α = intermediate_sum
-  /-- Sum of descended and transient components equals intermediate sum. -/
-  h_sum : α_descended + α_transient = intermediate_sum
+  /-- Descent involution `τ̂_n`. -/
+  tau_hat : ℝ → ℝ
+  /-- Frobenius categorical trace `tr`. -/
+  tr : ℝ → ℝ
+  /-- Mass norm `‖·‖`. -/
+  nrm : ℝ → ℝ
+  /-- Total mass `m(ρ)` of the closed cycle. -/
+  m_rho : ℝ
 
-/-- **Lemma statement** (from manuscript):
+/-- **Orthogonal decomposition of the categorical mass**
+    ([`lem:topological-mass-cat-eigenspace`]).
 
-Let $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$
-be the categorical mass integrand of a closed cycle $\varrho$.  When
-the [Frobenius pairing](#def\:frobenius-pairing) is compatible with the
-$*$-involution, the descent involution $\hat{\tau}_n$ produces an
-orthogonal decomposition of $\alpha$ into descended and transient
-components, giving
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-eigenspace.ts
+    `m(ρ) = ‖tr(τ̂_n(α))‖ + ‖tr(α − τ̂_n(α))‖`, the descended-plus-transient
+    split under the `*`-compatible Frobenius pairing. -/
+-- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-eigenspace.md
 theorem cat_eigenspace_decomposition [ctx : CatEigenspaceDecompositionContext] :
-    ctx.α = ctx.α_descended + ctx.α_transient := by
-  rw [ctx.h_alpha, ctx.h_sum]
+    ctx.m_rho
+      = ctx.nrm (ctx.tr (ctx.tau_hat ctx.α))
+        + ctx.nrm (ctx.tr (ctx.α - ctx.tau_hat ctx.α)) := by
+  sorry
 
 end QOU.TopologicalMass

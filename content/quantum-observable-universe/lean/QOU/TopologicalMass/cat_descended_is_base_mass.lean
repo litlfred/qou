@@ -1,49 +1,59 @@
-import Mathlib.Tactic
+import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.TopologicalMass.cat_descended_is_base_mass
+# QOU.TopologicalMass.cat_descended_is_base_mass — descended term equals base mass
 
-**Placeholder canonical** for content block
-[`lem:topological-mass-cat-descended`](../../../quantum-observable-universe/braids-and-knots/topological-mass-cat-descended.md): *Descended term equals the base-level mass*.
+**Lemma** ([`lem:topological-mass-cat-descended`](../../../quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.TopologicalMass.cat_descended_is_base_mass` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+Let `α = (∫_A ⊗ id) ∘ Δ ∘ ρ` be the categorical mass integrand of a
+closed cycle `ρ` at level `n + 1`, and `ρ₀` its base-level descent. Then
+
+`‖tr(τ̂_n(α))‖ = m(ρ₀)`.
+
+## Formalisation notes
+
+- **Honest statement (§1, §1a).** The conclusion is the *actual*
+  manuscript equation `‖tr(τ̂_n(α))‖ = m(ρ₀)` — the norm of the trace of
+  the descended integrand equals the base-level mass. It is **not** the
+  earlier laundered tautology `α = base_mass` (routed through a fictitious
+  `intermediate_mass`); that relay assumed both halves of its own
+  conclusion. The descent involution `τ̂_n`, the Frobenius trace `tr`, and
+  the mass norm `‖·‖` are carried as the genuine operators of the claim.
+- The proof needs the descent / Frobenius-trace / `*`-norm infrastructure
+  (the level-`(n+1)`→base descent recovers the base-level mass), which is
+  not yet formalised; the body is an **honest `sorry`** with a manuscript
+  citation, i.e. the "stated, not yet proved" disposition (§1a item 2),
+  not a self-assuming projection.
+- **Base ring (§7c).** `ℝ`: the mass norm is an archimedean (real) norm.
+
+-- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
 -/
 
 namespace QOU.TopologicalMass
 
-
-/-- Abstract context for the `cat_descended_is_base_mass` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Data of the descended-mass lemma: the categorical mass integrand `α`
+    at level `n + 1`, the descent involution `τ̂_n`, the Frobenius trace
+    `tr`, the mass norm `nrm = ‖·‖`, and the base-level mass `m(ρ₀)`. -/
 class CatDescendedIsBaseMassContext where
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- Categorical mass integrand `α` at level `n + 1`. -/
+  /-- Categorical mass integrand `α` at level `n + 1` (modelled in the
+      observation algebra, here `ℝ`). -/
   α : ℝ
-  /-- Base-level descended mass. -/
+  /-- Descent involution `τ̂_n` on the integrand. -/
+  tau_hat : ℝ → ℝ
+  /-- Frobenius categorical trace `tr`. -/
+  tr : ℝ → ℝ
+  /-- Mass norm `‖·‖`. -/
+  nrm : ℝ → ℝ
+  /-- Base-level mass `m(ρ₀)`. -/
   base_mass : ℝ
-  /-- Intermediate mass value. -/
-  intermediate_mass : ℝ
-  /-- Categorical mass integrand equals intermediate mass. -/
-  h_alpha : α = intermediate_mass
-  /-- Base level mass equals intermediate mass. -/
-  h_base : base_mass = intermediate_mass
 
-/-- **Lemma statement** (from manuscript):
+/-- **Descended term equals the base-level mass**
+    ([`lem:topological-mass-cat-descended`]).
 
-Let $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$
-be the categorical mass integrand of a closed cycle $\varrho$ at level
-$n+1$, and let $\varrho_0$ be its base-level descent.  Then
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-descended.ts
+    `‖tr(τ̂_n(α))‖ = m(ρ₀)`. -/
+-- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
 theorem cat_descended_is_base_mass [ctx : CatDescendedIsBaseMassContext] :
-    ctx.α = ctx.base_mass :=
-  by rw [ctx.h_alpha, ctx.h_base]
+    ctx.nrm (ctx.tr (ctx.tau_hat ctx.α)) = ctx.base_mass := by
+  sorry
 
 end QOU.TopologicalMass

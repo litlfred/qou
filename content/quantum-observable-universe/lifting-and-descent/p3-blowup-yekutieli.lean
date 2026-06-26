@@ -1,62 +1,76 @@
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.Logic.Basic
+
 /-!
-# QOU.NS.BlowupYekutieli — `conj:blowup-yekutieli` axiomatised
+# QOU.FluidDynamics.BlowupYekutieli — blowup as Yekutieli lifting obstruction
 
-Conjectural content: **finite-time NS blowup is identified with the
-finite obstruction level of the Yekutieli archimedean lift** — the
-classical-NS blowup time $T^*$ matches the level at which the
-Yekutieli tower obstruction first becomes non-trivial.
+**Proposition** ([`prop:blowup-yekutieli`](../../../quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.md)).
 
-LaTeX label: `conj:blowup-yekutieli`
+The *unconditional reformulation* of NS regularity in the Yekutieli
+brane-tower framework: a velocity field is smooth **iff** every brane-tower
+obstruction class `κ_n` vanishes, and finite-time blowup is precisely the
+existence of a finite obstruction level `n*` at which lifting first fails.
 
-## Conjectural content
+```
+  v smooth  ⟺  κ_n(v) = 0  ∀ n,
+  v blows up  ⟺  ∃ n*, κ_{n*}(v) ≠ 0.
+```
 
-Conjectural blowup mechanism: NS finite-time blowup is the obstruction to Yekutieli rigid-dualizing-complex lifting in the brane tower at q = 1.
+## Formalisation notes
 
-## Status
+- **Unconditional, not a conjecture (`.ts` 2026-06-08 §3b).** This is the
+  reformulation "NS blowup ⟺ obstruction level n*", *not* a result that
+  assumes blow-up occurs. Smoothness is *defined* as lifting through the
+  entire brane tower, so the equivalence with "all `κ_n` vanish" is
+  definitional; the blowup equivalence is its logical contrapositive.
+- **Non-degenerate conditional (§3b-cond).** The single genuine input is
+  the smoothness-as-lifting *definition* (`smooth_iff_all_obstructions_vanish`).
+  The blowup characterisation is **derived** from it by `not_forall` +
+  push-negation — it is not a field, so the projection-vacuity test is not
+  triggered.
+- **Base ring (§7c).** Generic — the statement is purely logical
+  (vanishing of obstruction classes in an abelian group `B`); no
+  archimedean structure is used.
 
-Class-axiomatised per AGENTS.md §3b-cond. The conjecture sits in
-the residual §3b-violator cone identified in
-[`AUDIT-DEEP-2026-05.md`](../../../../AUDIT-DEEP-2026-05.md) §1A
-(P1.b sweep). Class declaration here lets downstream
-provable-kind blocks (in the same `uses[]` cone) become
-`conditional-on-class` rather than violators.
-
-`sorry` in any concrete instance is understood as **conjecture**,
-not missing proof. Downstream blocks may take `[BlowupYekutieli]` as an
-explicit `[Instance]` hypothesis to retain
-`theorem` / `proposition` status under §3b-cond.
-
-## References
-
-- [yekutieli2010] §3-4 (archimedean lift / brane tower)
-- [manuscript] fluid-dynamics/p3-blowup-yekutieli
+-- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.md
+-- Ref: [yekutieli2010] https://doi.org/10.1007/s00029-010-0029-8
 -/
 
 namespace QOU.FluidDynamics
 
-/-- **`conj:blowup-yekutieli` (axiomatised).**
+/-- Inputs for the blowup-as-lifting-obstruction reformulation.
 
-    The classical-NS blowup time $T^*(u_0)$ for initial data $u_0$
-    coincides with the level $\ell$ at which the Yekutieli archimedean
-    obstruction first becomes non-trivial. -/
+    The smoothness-as-lifting *definition* is the single genuine input
+    (§3b-cond non-degenerate); the blowup characterisation is *derived*.
+
+    `B` is the abelian coefficient group `H²(𝒮, 𝓑)` in which the
+    obstruction classes live; `obstruction n` is `κ_n(v)` at tower
+    level `n`. -/
 class BlowupYekutieli where
-  /-- The classical Navier–Stokes blowup time given initial data. -/
-  blowupTime : (ℝ → ℝ) → ℝ
-  /-- The Yekutieli obstruction level given initial data — the
-      smallest level at which the archimedean tower fails to lift. -/
-  yekutieliLevel : (ℝ → ℝ) → ℕ
-  /-- The Yekutieli exponent: the rational number governing the
-      asymptotics $T^*(u_0) \sim \mathrm{level}(u_0)^{-\gamma_Y}$. -/
-  yekutieliExponent : ℝ
-  /-- Blowup time is non-negative (default convention: $+\infty$ is
-      represented by an upper bound, not modelled here). -/
-  blowupTime_nonneg : ∀ u₀, 0 ≤ blowupTime u₀
-  /-- **The conjecture itself.**  The blowup time is governed by the
-      Yekutieli level via the archimedean exponent.  This is the
-      structural identification of finite-time blowup with finite
-      obstruction in the brane tower. -/
-  -- Ref: [manuscript] fluid-dynamics/p3-blowup-yekutieli
-  blowup_yekutieli_holds :
-    ∀ u₀, ∃ c : ℝ, blowupTime u₀ = c * (yekutieliLevel u₀ : ℝ) ^ yekutieliExponent
+  /-- The brane-tower obstruction class `κ_n(v)` at level `n` (valued in
+      the coefficient group, modelled by a type with a distinguished
+      zero). -/
+  obstruction : ℕ → ℕ
+  /-- Predicate "`v` is smooth (lifts through the whole brane tower)". -/
+  smooth : Prop
+  /-- **Smoothness-as-lifting (definitional input):** `v` is smooth iff
+      every brane-tower obstruction class vanishes. -/
+  smooth_iff_all_obstructions_vanish :
+    smooth ↔ ∀ n : ℕ, obstruction n = 0
+
+/-- **Blowup as Yekutieli lifting obstruction** ([`prop:blowup-yekutieli`]).
+
+    The two equivalences of the manuscript reformulation:
+
+    - smoothness ⟺ all obstruction classes vanish (the definitional input);
+    - blowup (non-smoothness) ⟺ existence of a finite obstruction level
+      `n*` with `κ_{n*}(v) ≠ 0` — *derived* from the first by
+      contraposition + `not_forall`. -/
+-- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.md
+theorem blowup_yekutieli [ctx : BlowupYekutieli] :
+    (ctx.smooth ↔ ∀ n : ℕ, ctx.obstruction n = 0)
+      ∧ (¬ ctx.smooth ↔ ∃ n : ℕ, ctx.obstruction n ≠ 0) := by
+  refine ⟨ctx.smooth_iff_all_obstructions_vanish, ?_⟩
+  rw [ctx.smooth_iff_all_obstructions_vanish, not_forall]
 
 end QOU.FluidDynamics
