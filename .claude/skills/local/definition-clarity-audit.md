@@ -12,7 +12,9 @@ description: >-
   statement itself. Use when asked to "bold defined terms", "tighten
   definitions", "no rambling definitions", "one definition per block", "tight
   theorem/proposition/lemma statements", or to set up / run a clarity audit.
-  Emits per-block QA sidecar params under the `clarity-*` criteria via
+  Also runs the inverse audit — a non-`definition` block that secretly carries
+  a definition (`clarity-defn-misplaced`). Emits per-block QA sidecar params
+  under the `clarity-*` criteria via
   `content/pipeline/definition-clarity-audit.ts`.
 ---
 
@@ -21,7 +23,7 @@ description: >-
 A content block can be **schema-clean, ref-resolving, Lean-backed** and still be
 hard to read. The four QA axes that already exist guard *correctness* and
 *voice*; none guards **clarity of the statement itself**. This skill adds that
-axis — `clarity` — with four audit parameters.
+axis — `clarity` — with five audit parameters (four forward + one inverse).
 
 The owner's framing (2026-06-26):
 
@@ -30,7 +32,10 @@ The owner's framing (2026-06-26):
 > own definition… no multiple definitions in a content block… similarly,
 > theorem/prop/lemma should have a no-rambling/tight-statement audit param.*
 
-## The four audit parameters (criterion ids)
+## The five audit parameters (criterion ids)
+
+The first four are **forward** checks on blocks that *are* definitions/statements;
+the fifth is the **inverse** — a definition hiding in the wrong block kind.
 
 | Criterion | Applies to | Passes when | Fails when |
 |---|---|---|---|
@@ -38,6 +43,7 @@ The owner's framing (2026-06-26):
 | **`clarity-defn-single`** | `definition` | the block defines exactly **one** concept | the block bundles several definienda (many bold section-headers, ≥2 `defines[]` entries, or several "we define / is defined as" lead-ins) |
 | **`clarity-defn-tight`** | `definition` | the definition is stated tightly, near the top | rambling: long prose, a stack of downstream-realisation sub-sections, or a long motivational preamble before the actual definition |
 | **`clarity-stmt-tight`** | `theorem` / `proposition` / `lemma` / `corollary` | the claim is stated tightly | the statement rambles. Proofs live in separate `*-proof` blocks in this corpus, so a provable block is *just* its statement and should not ramble |
+| **`clarity-defn-misplaced`** | **non-**`definition` kinds (remark, prose, theorem, conjecture, example, …) | the block carries no definition — no `defines[]`, no `:defterm[…]`, few defining verbs | the block secretly **is** a definition: it declares `defines[]` or marks a `:defterm[…]{#slug}` define-site (→ **major**), or leads in with ≥ 2 defining verbs (→ **minor**). **Glossary blocks** (tag `"glossary"`) are exempt (`n/a`) — they define terminology by design |
 
 ### Worked example — `def:q-dilogarithm`
 
@@ -102,6 +108,11 @@ there, not in the per-criterion functions.
   `3`, or preamble words (before the first display-math / marked term) > `60`.
 - **`clarity-stmt-tight`** — fail if prose words > `300`, or bold sub-sections ≥
   `3`, or preamble words (before the first display-math) > `80`.
+- **`clarity-defn-misplaced`** — runs on every block whose kind is **not**
+  `definition` / `diagram` / `simulator`. `defines[]` ≥ `1` **or** a
+  `:defterm[…]` directive → **major** (a canonical define-site on a
+  non-`definition` block); otherwise defining-verb lead-ins ≥ `2` → **minor**.
+  Glossary blocks (tag `"glossary"`) short-circuit to `n/a`.
 
 ## Agent-confirm protocol (high-recall → adjudicated)
 
@@ -125,6 +136,7 @@ heuristics are deliberately high-recall. For a durable disposition the agent:
 | `clarity-defn-single` | split the block — one `definition` per definiendum; demote interpretation sub-sections to `remark` blocks with `interprets:`; promote sub-statements to their own `proposition`/`lemma`. Mind the `uses[]` graph: downstream blocks that cite the old label point at the *primary* split product. |
 | `clarity-defn-tight` | move motivation to a sibling `prose`/`remark` block; lead with the definition; push "downstream realisation" / "physical meaning" paragraphs out to `remark` blocks (`interprets:` the definition). |
 | `clarity-stmt-tight` | strip preamble from the statement block; the hypotheses + conclusion only. Motivation → a preceding `prose` block; consequences → a following `remark`. |
+| `clarity-defn-misplaced` | promote the hidden definition to its own `definition` block (with a `.lean` sibling, per the type system); leave behind a `remark`/`prose` that `uses:` (or `interprets:`) it. Move the `defines[]` entry and the `:defterm[…]` site to the new block. If the block legitimately defines terminology as a Mathlib wrapper, retag it `"glossary"` instead. |
 
 > **Content fixes are collaborator-level and graph-aware.** Splitting a block
 > touches `uses[]`, chapter manifests, and any `:refterm`/`#label` links. Run
@@ -148,7 +160,7 @@ heuristics are deliberately high-recall. For a durable disposition the agent:
 ## Registry note (folio-assistant companion)
 
 The canonical qa-sweep criterion registry lives in the external
-`litlfred/folio-assistant` repo (qou is content-only). Registering the four
+`litlfred/folio-assistant` repo (qou is content-only). Registering the five
 `clarity-*` ids there — so `qa-sweep.ts` / `qa-staleness.ts` schedule and
 hash-track them like every other criterion — is a **companion change out of qou
 scope**. Until it lands, this scanner is **standalone**: it produces the

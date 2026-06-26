@@ -36,6 +36,16 @@
  *       in separate `*-proof` blocks in this corpus, so a provable block
  *       is just its statement and should not ramble.
  *
+ *   clarity-defn-misplaced (NON-definition kinds)    — the INVERSE audit: a
+ *       block whose kind is *not* `definition` (a remark, prose, theorem,
+ *       example, …) that secretly carries a definition — it declares
+ *       `defines:[…]` in its manifest, marks a canonical define site with
+ *       `:defterm[…]{#slug}`, or leads in with several defining verbs ("we
+ *       define", "is defined as"). Such a definition should be promoted to
+ *       its own `definition` block. Chapter-8 glossary blocks (tag
+ *       `"glossary"`) are exempt — they legitimately define terminology as
+ *       light Mathlib wrappers.
+ *
  * Heuristics are deliberately high-recall / agent-confirmed, exactly like
  * `lean-vacuity-axiom-audit.ts`: a `fail` here is a *candidate*, not a
  * verdict. The `definition-clarity-audit` skill opens the block, applies
@@ -59,6 +69,7 @@
  * Criterion ids (the "audit parameters"):
  *   clarity-defterm-bold   clarity-defn-single
  *   clarity-defn-tight     clarity-stmt-tight
+ *   clarity-defn-misplaced
  *
  * @module content/pipeline/definition-clarity-audit
  */
@@ -129,6 +140,9 @@ const T = {
   stmtHeaders: 3,
   /** clarity-stmt-tight: preamble words before the first display-math. */
   stmtPreamble: 80,
+  /** clarity-defn-misplaced: defining-verb lead-ins in a non-definition block
+   *  that has no `defines[]`/`:defterm[…]` marker — softer (minor) signal. */
+  misplacedVerbs: 2,
 };
 
 type Result = "pass" | "fail" | "n/a";
@@ -154,6 +168,7 @@ const CRITERIA = [
   "clarity-defn-single",
   "clarity-defn-tight",
   "clarity-stmt-tight",
+  "clarity-defn-misplaced",
 ] as const;
 type Criterion = (typeof CRITERIA)[number];
 
@@ -177,11 +192,17 @@ interface Block {
   title: string;
   label: string;
   definesCount: number;
+  isGlossary: boolean;
   mdPath: string;
   tsPath: string;
   md: string;
   ts: string;
 }
+
+/** non-definition kinds NOT subject to the misplaced-definition inverse audit:
+ *  `definition` is the audit's own home; `diagram`/`simulator` carry no prose
+ *  definitional content to mis-place. */
+const MISPLACE_SKIP: DefnKind[] = ["definition", "diagram", "simulator"];
 
 // ---------------------------------------------------------------------------
 // Manifest / prose parsing — regex only, no schema import (self-contained).
@@ -218,6 +239,14 @@ function parseDefinesCount(ts: string): number {
   // count quoted entries
   const entries = inner.match(/["'`][^"'`]+["'`]/g);
   return entries ? entries.length : 0;
+}
+
+/** glossary blocks (Ch 8) carry the `"glossary"` tag and legitimately define
+ *  terminology; exempt from the misplaced-definition inverse audit. */
+function parseIsGlossary(ts: string): boolean {
+  const arr = ts.match(/tags?\s*:\s*\[([\s\S]*?)\]/);
+  if (arr && /["'`]glossary["'`]/.test(arr[1])) return true;
+  return /\btag\s*:\s*["'`]glossary["'`]/.test(ts);
 }
 
 const STOP = new Set([
@@ -283,6 +312,12 @@ const DEFINING_VERB =
 
 function definingVerbs(s: string): number {
   const m = s.match(DEFINING_VERB);
+  return m ? m.length : 0;
+}
+
+/** count of `:defterm[…]` canonical-define-site directives in the prose. */
+function deftermCount(md: string): number {
+  const m = md.match(/:defterm\[[^\]]+\]/g);
   return m ? m.length : 0;
 }
 
@@ -448,6 +483,43 @@ function checkStmtTight(b: Block): Finding {
   return base;
 }
 
+function checkDefnMisplaced(b: Block): Finding {
+  const base = mkFinding(b, "clarity-defn-misplaced");
+  // Glossary blocks legitimately define terminology — exempt.
+  if (b.isGlossary) {
+    base.result = "n/a";
+    base.evidence = 'glossary block (tag "glossary") — definitions expected';
+    return base;
+  }
+  const dts = deftermCount(b.md);
+  const verbs = definingVerbs(prose(b.md));
+  base.metrics = {
+    definesCount: b.definesCount,
+    deftermDirectives: dts,
+    definingVerbs: verbs,
+  };
+  // Strong structural signals → major: the manifest/prose marks a canonical
+  // definition site on a block whose kind is not `definition`.
+  if (b.definesCount >= 1 || dts >= 1) {
+    base.result = "fail";
+    base.severity = "major";
+    const bits: string[] = [];
+    if (b.definesCount >= 1)
+      bits.push(`${b.definesCount} defines[] entr${b.definesCount === 1 ? "y" : "ies"}`);
+    if (dts >= 1)
+      bits.push(`${dts} :defterm[…] define-site marker${dts === 1 ? "" : "s"}`);
+    base.evidence = `${b.kind} block carries a definition (${bits.join("; ")}) — promote to a \`definition\` block`;
+  } else if (verbs >= T.misplacedVerbs) {
+    base.result = "fail";
+    base.severity = "minor";
+    base.evidence = `${b.kind} block has ${verbs} defining-verb lead-ins (>=${T.misplacedVerbs}) — may hide a definition`;
+  } else {
+    base.result = "pass";
+    base.evidence = `no misplaced definition (${verbs} defining verbs, ${dts} defterm, ${b.definesCount} defines[])`;
+  }
+  return base;
+}
+
 function mkFinding(b: Block, criterion: Criterion): Finding {
   return {
     label: b.label || `(${b.root})`,
@@ -502,6 +574,7 @@ function loadBlock(mdPath: string, repoRoot: string): Block | null {
     title: parseStringField(ts, "title"),
     label: parseStringField(ts, "label"),
     definesCount: parseDefinesCount(ts),
+    isGlossary: parseIsGlossary(ts),
     mdPath: relative(repoRoot, mdPath),
     tsPath: relative(repoRoot, tsPath),
     md,
@@ -519,6 +592,9 @@ function findingsFor(b: Block, only?: Criterion): Finding[] {
   }
   if (PROVABLE.includes(b.kind) && want("clarity-stmt-tight")) {
     out.push(checkStmtTight(b));
+  }
+  if (!MISPLACE_SKIP.includes(b.kind) && want("clarity-defn-misplaced")) {
+    out.push(checkDefnMisplaced(b));
   }
   return out;
 }
