@@ -80,13 +80,13 @@ recurrence `rsSeq_neg_one_step` on the even subsequence gives the explicit finit
 `Finset.prod` (no dependency on Mathlib's `QPochhammer`). Together with
 `rsSeq_odd_vanishes_at_neg_one` this is the full closed form of the inhabited Rogers–Szegő
 model at the binding anchor `t = −1`. -/
-theorem rsSeq_even_at_neg_one (q : ℝ) :
-    ∀ j, rsSeq q (-1) (2 * j) = ∏ i ∈ Finset.range j, (1 - q ^ (2 * i + 1))
-  | 0 => by simp [rsSeq]
-  | (j + 1) => by
+theorem rsSeq_even_at_neg_one (q : ℝ) (j : ℕ) :
+    rsSeq q (-1) (2 * j) = ∏ i ∈ Finset.range j, (1 - q ^ (2 * i + 1)) := by
+  induction j with
+  | zero => simp [rsSeq]
+  | succ j ih =>
     have h2 : 2 * (j + 1) = 2 * j + 2 := by ring
-    rw [h2, rsSeq_neg_one_step q (2 * j), rsSeq_even_at_neg_one q j,
-      Finset.prod_range_succ]
+    rw [h2, rsSeq_neg_one_step q (2 * j), ih, Finset.prod_range_succ]
     ring
 
 end QOU.Mass.BindingQHermiteOscillator
