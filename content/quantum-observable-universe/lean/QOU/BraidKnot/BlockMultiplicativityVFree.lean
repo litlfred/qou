@@ -23,8 +23,10 @@ Ref: conj:block-multiplicativity-v-free.md
 -/
 
 import Mathlib.Algebra.Ring.Defs
-import Mathlib.Algebra.GroupPower.Basic
+import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.FieldSimp
 
 namespace QOU.BraidKnot
 
@@ -124,6 +126,7 @@ theorem t1_free_eq_block_product
     blockFactorProduct (h.v_p) (h.v_n) Z N =
       (h.v_p) ^ Z * (h.v_n) ^ N := by
   unfold blockFactorProduct
+  rfl
 
 /-- Empirical block-factor record at q_0 (from
     binding-via-interface-knot.witness.json):
@@ -139,7 +142,7 @@ theorem v_p_v_n_ratio_at_q_0_empirical :
     (0.7084 : ℝ) / 0.6005 < 1.2 ∧ (0.7084 : ℝ) / 0.6005 > 1.15 := by
   refine ⟨?_, ?_⟩ <;> norm_num
 
-/-- Per-atom T_1^free explicit closed forms, derived from
+/-! ### Per-atom T_1^free explicit closed forms, derived from
     `blockFactorProduct` via `pow_one` and definitional unfolding. -/
 section PerAtomT1Free
 
@@ -184,7 +187,6 @@ theorem t1_free_mirror_nuclei
       v_n / v_p := by
   unfold blockFactorProduct
   field_simp
-  ring
 
 end PerAtomT1Free
 
