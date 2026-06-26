@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import Mathlib.LinearAlgebra.UnitaryGroup
 
 /-!
 # QOU.su2_emergence_dagger_unitarity — gauge-group containment `G ⊆ U(2)`
@@ -9,56 +10,59 @@ import Mathlib.Tactic
 every tensor automorphism `g ∈ G` preserves the Frobenius dagger
 on `τ(V)`; equivalently, `G ⊆ U(2)`.*
 
-The Lean encoding records the assertion as a `Prop`-valued class
-field hypothesised against an abstract `GaugeContext` carrying
-the data of [`thm:su2-emergence`].  Concretising the abstract
-classes to the standard Mathlib unitary group is downstream work
-once [`thm:su2-emergence`] is itself Lean-translated.
+## Archimedean realisation (this file)
+
+After the substrate→archimedean functor `τ`, the fibre `τ(V)` is the
+standard 2-dimensional Hermitian space `ℂ²`, the Frobenius dagger is the
+conjugate-transpose `g ↦ gᴴ`, and "`g` preserves the Frobenius dagger"
+is the concrete identity `g · gᴴ = 1`.  The lemma's content at this level
+is the (non-tautological) implication
+
+  `g · gᴴ = 1  ⟹  g ∈ U(2)`,
+
+which we **derive** from `Matrix.mem_unitaryGroup_iff`: each gauge
+element that preserves the dagger on the fibre lands in
+`Matrix.unitaryGroup (Fin 2) ℂ`, hence `G ⊆ U(2)`.  This is the
+archimedean face required by §7c (Hermitian pairing ⇒ `ℂ`).  The
+pointwise statement is the full mathematical content — the "lift to the
+whole group" is the universal statement over all `g ∈ G` below.
 
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md
 -/
 
+open Matrix
+
 namespace QOU
 
-/-- Abstract container for the emergence-of-gauge-group context
-    of [`thm:su2-emergence`]: a 2-dimensional categorical object `V`,
-    a gauge group `G` of tensor automorphisms acting on it, and a
-    Frobenius dagger structure on the fibre `τ(V)`. -/
-class SU2EmergenceContext where
-  /-- The categorical object `V` of dimension 2 (treated abstractly). -/
-  V : Type
-  /-- The fibre functor's image `τ(V)`. -/
-  tauV : Type
-  /-- The gauge group `G` (abstract; substitute for `Matrix.Unitary 2 ℂ`
-      or similar at the concretisation step). -/
-  G : Type
-  /-- A predicate "the element `g : G` preserves the Frobenius dagger
-      on `τ(V)`". -/
-  preserves_dagger : G → Prop
-  /-- A predicate "the gauge group `G` is contained in the unitary group
-      `U(2)` on `τ(V)`". -/
-  contained_in_U2 : Prop
-  /-- Manuscript pointwise-to-group lift: if every element preserves
-      the Frobenius dagger on `τ(V)`, the whole gauge group sits
-      inside `U(2)`. -/
-  claim_pointwise_dagger_lifts_to_U2 :
-    (∀ g : G, preserves_dagger g) → contained_in_U2
+/-- **`g ∈ U(2)` from Frobenius-dagger preservation — archimedean realisation**
+    ([`lem:su2-emergence-dagger-unitarity`]).
 
-/-- **`G ⊆ U(2)` from Frobenius-dagger preservation** ([`lem:su2-emergence-dagger-unitarity`]).
+    A `2×2` complex matrix `g` that preserves the standard Hermitian
+    pairing on the fibre `τ(V) = ℂ²` (i.e. `g · gᴴ = 1`, the concrete
+    form of "`g` preserves the Frobenius dagger") is unitary,
+    `g ∈ U(2)`.
 
-    Under the QOU hypothesis that every `g ∈ G` preserves the Frobenius
-    dagger on `τ(V)`, the gauge group `G` is contained in `U(2)`.
-
-    The implication is recorded abstractly: a context whose every
-    element preserves the dagger satisfies the `contained_in_U2`
-    predicate.  Concretising both sides to Mathlib's `Matrix.unitary`
-    structure is downstream work (requires the
-    [`thm:su2-emergence`] Lean translation). -/
+    Genuine derivation: the hypothesis `g * star g = 1` is the full
+    content of `Matrix.mem_unitaryGroup_iff`, and the conclusion is
+    membership in `Matrix.unitaryGroup (Fin 2) ℂ`. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md
 theorem su2_emergence_dagger_unitarity
-    [ctx : SU2EmergenceContext]
-    (h_all_preserve : ∀ g : ctx.G, ctx.preserves_dagger g) :
-    ctx.contained_in_U2 :=
-  ctx.claim_pointwise_dagger_lifts_to_U2 h_all_preserve
+    (g : Matrix (Fin 2) (Fin 2) ℂ) (h_preserves_dagger : g * star g = 1) :
+    g ∈ Matrix.unitaryGroup (Fin 2) ℂ := by
+  rw [Matrix.mem_unitaryGroup_iff]
+  exact h_preserves_dagger
+
+/-- **`G ⊆ U(2)`** ([`lem:su2-emergence-dagger-unitarity`]).
+
+    If every element `g` of the gauge group `G` (realised as a set of
+    `2×2` complex matrices on the fibre `τ(V)`) preserves the Frobenius
+    dagger, i.e. `g · gᴴ = 1`, then `G ⊆ U(2)`.  Derived pointwise from
+    `su2_emergence_dagger_unitarity`. -/
+-- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md
+theorem su2_emergence_gauge_group_unitary
+    (G : Set (Matrix (Fin 2) (Fin 2) ℂ))
+    (h_all_preserve : ∀ g ∈ G, g * star g = 1) :
+    G ⊆ (Matrix.unitaryGroup (Fin 2) ℂ : Set (Matrix (Fin 2) (Fin 2) ℂ)) :=
+  fun g hg => su2_emergence_dagger_unitarity g (h_all_preserve g hg)
 
 end QOU
