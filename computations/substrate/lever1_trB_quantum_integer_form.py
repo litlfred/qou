@@ -222,5 +222,5 @@ witness = {
     "verdict": verdict,
 }
 out = pathlib.Path(__file__).resolve().parent / "lever1-trB-quantum-integer-form.witness.json"
-out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
+out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 print(f"\nwitness → {out}")
