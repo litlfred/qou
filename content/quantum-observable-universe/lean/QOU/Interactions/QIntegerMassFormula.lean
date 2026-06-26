@@ -133,8 +133,18 @@ noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
     `theorem`/`proposition` per AGENTS.md §3b-cond.
 
     Ref: [manuscript] Ch 11 §8, conj:q-integer-mass-formula -/
-/-- **Predicate:** Identifies experimental binding energies from the Atomic Mass Evaluation (AME) database. -/
-class IsAMEValue (Z N : ℕ) (B_AME : ℝ) : Prop
+/-- **Predicate:** `B_AME` is the experimental binding energy of the
+    nuclide `(Z, N)` in the Atomic Mass Evaluation (AME) database.
+    Not every `(Z, N, B_AME)` triple is a database entry — the fields
+    record the two physical invariants every real entry satisfies, so
+    `[IsAMEValue Z N B_AME]` is a genuine restriction (e.g. the
+    null nuclide `Z = N = 0` and negative binding energies are
+    excluded). -/
+class IsAMEValue (Z N : ℕ) (B_AME : ℝ) : Prop where
+  /-- A real nuclide has at least one nucleon. -/
+  has_nucleon : 1 ≤ Z + N
+  /-- Measured binding energies are non-negative. -/
+  binding_nonneg : 0 ≤ B_AME
 
 class QIntegerMassFormula where
   /-- Magic-proximity function. Peaks at the nuclear magic numbers

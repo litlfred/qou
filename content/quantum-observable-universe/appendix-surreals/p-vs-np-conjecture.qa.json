@@ -9,7 +9,7 @@
   "source_hashes": {
     "md": "b8f4a8f0ef70",
     "ts": "ecf260cb77e0",
-    "lean": "7dd511acf810"
+    "lean": "831b87ab2d56"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1062,21 +1062,19 @@
     "proof-no-empty-prop-carrier": [
       {
         "field_hash": {
-          "lean": "7dd511acf810"
+          "lean": "831b87ab2d56"
         },
-        "result": "fail",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean:56 [empty-conjecture-class] class PvsNPQou : Prop",
+        "result": "pass",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
-          "version": "v1",
-          "script_hash": "41257aaac83b",
-          "script_commit_sha": "1691f2b4a0f15493fb0ff4e4a61ef03994d71ab7"
+          "kind": "agent",
+          "id": "local/lean-conjecture-discipline",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-26",
+          "agent_skill": "local/lean-conjecture-discipline"
         },
-        "reviewed_at": "2026-06-26T14:24:18.745Z",
-        "reviewed_sha": "d9e1f48662ce4036c45a4fc6973f6a9ffd769de3",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "reviewed_at": "2026-06-26T15:55:00.000Z",
+        "reviewed_sha": "d2573cd72a2a6cc410bec93726dbc466f6defeac",
+        "notes": "RESOLVED. `class PvsNPQou : Prop` was an empty marker; now carries two content-bearing fields encoding the conjecture's defining properties — `strict_separation` (`P ⊊ BQP_q` for every ε>0) and `noncompressible` (separation survives ε→0). No instance (honest open state)."
       }
     ]
   },
