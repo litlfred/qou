@@ -23,6 +23,30 @@ binding-link search at `H_3(q_0)`.
   optimum lies in the strict interior of the feasible region ⟹
   strict complementarity vacuously satisfied.
 
+## Witness divergence (2026-06-22 regen) — the cited JSON no longer backs these values
+
+`r5-full-canonical-knot-solver.witness.json` was **regenerated 2026-06-22**
+(`computedAt 2026-06-22T14:48Z`, `scriptCommitSha c4ab12b6`) with a **single-term**
+binding cost `B = m_e·ρ·|tr_M(T_w)|`, which under-constrains the search. Its current
+`he3` winner is therefore a **different, degraded** result:
+
+* word `σ₁⁶σ₂² = [1,1,1,1,1,1,2,2]` (≠ the canonical `L_6a4 = (σ₁σ₂⁻¹)³` recorded above);
+* `winner.rho_star := 4` (≠ 3); `winner.cost := 0.14291`;
+  `rel_residual := 0.5716` (**57 % off `B_AME = 7.718 MeV`**).
+
+The values in this module are the **frozen PR #608 `L_6a4` solve** (canonical binding
+link, strict-interior optimum), retained **intentionally**: wiring to the current JSON
+would *regress* to the 57 %-residual single-term winner, and its `cost = 0.14291` is that
+degraded objective — **not** a canonical primal/dual to refresh into the placeholders
+below. The clean refresh is the **multi-term-cost re-run** (T2–T6 of
+`thm:knot-mass-formula-unified`); until it lands, this witness is pinned to PR #608, not
+to the current file contents. The divergence does **not** affect the downstream
+uniqueness consumer (`AppliedHelium3Uniqueness`): it depends only on `rho_star_pos`
+(holds for both `3` and `4`) and `alpha_gap = 0` (holds for both); likewise the
+strict-complementarity cert needs only `min_block_eig > 0`, which holds for both the
+frozen `0.53` and the regen's `min_eig_overall ≈ 0.434`. See
+`docs/audits/2026-06-25-r5-witness-staleness-and-rescoped-todo-triage.md` §1–2.
+
 ## What this module provides
 
 - `instR5FullWitness_helium3` — the concrete instance with the
@@ -33,14 +57,17 @@ binding-link search at `H_3(q_0)`.
 
 ## Verification
 
-The numerical values are quoted directly from the witness JSON;
-the Lean side just records them.  Empirical correctness of the
-SDP search is the Python compute layer's responsibility (PR #608
-+ R5-full enumerator regression tests).
+The numerical values are the **frozen PR #608 `L_6a4` solve** (see the
+*Witness divergence* note above — the current JSON contents have since diverged).
+Empirical correctness of that SDP search is the Python compute layer's
+responsibility (PR #608 + R5-full enumerator regression tests); re-witnessing is
+gated on the multi-term-cost re-run.
 
 ## References
 
-- `r5-full-canonical-knot-solver.witness.json` (PR #608)
+- `r5-full-canonical-knot-solver.witness.json` — values **frozen at PR #608**;
+  the file was regenerated 2026-06-22 with a degraded single-term cost (see the
+  *Witness divergence* note above)
 - `joint-tower-sdp-h6-h9.witness.json` (related Hopf
   identification at H_6)
 -/
@@ -53,14 +80,17 @@ namespace QOU.BraidKnot
     0.53, 0.53), so the active set is empty and the optimum is
     in the strict interior of the feasible region.
 
-    Field source (per Copilot review):
-    - `alpha_gap := 0`            ← from JSON winner.alpha_gap
-    - `rho_star := 3`             ← from JSON winner.rho_star
-    - `primal_obj := 1.0`         ← **PLACEHOLDER** (actual numerical
-      value not extracted to Lean yet; under strong duality must
-      equal dual_obj)
-    - `dual_obj := 1.0`           ← **PLACEHOLDER** (matches primal
-      placeholder; concrete value awaits a JSON-to-Lean adapter)
+    Field source (frozen at PR #608 — see the *Witness divergence* note in
+    the module header):
+    - `alpha_gap := 0`            ← PR #608 winner.alpha_gap (also `0` in the regen)
+    - `rho_star := 3`             ← PR #608 winner.rho_star (regen diverged to `4`)
+    - `primal_obj := 1.0`         ← **PLACEHOLDER** (PR #608's primal not extracted
+      to Lean; under strong duality must equal dual_obj). **Do NOT** wire to the
+      current JSON `cost = 0.14291` — that is the regen's *degraded single-term
+      objective*, not a canonical primal/dual (Witness divergence). Refresh only
+      from the multi-term-cost re-run.
+    - `dual_obj := 1.0`           ← **PLACEHOLDER** (matches primal placeholder;
+      same divergence caveat as above)
 
     Mixed sourcing is acceptable here because downstream
     consumers (notably the empty-constraint SDP setup in
