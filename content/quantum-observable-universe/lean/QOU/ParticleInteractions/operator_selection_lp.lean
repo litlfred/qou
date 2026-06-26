@@ -5,22 +5,43 @@ import Mathlib.Data.Fintype.Fin
 /-!
 # QOU.ParticleInteractions.operator_selection_lp
 
-**Placeholder canonical** for content block
-[`prop:operator-selection-lp`](../../../quantum-observable-universe/particle-interactions/operator-selection-lp.md): *Knot operator selection as linear program with LP duality*.
+**Proposition** ([`prop:operator-selection-lp`](../../../quantum-observable-universe/mass-theory/operator-selection-lp.md)):
+*Knot operator selection as a linear program with LP duality.*
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.ParticleInteractions.operator_selection_lp` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
--/
+The knot operator `Φ = Σᵢ xᵢ bᵢ ∈ Hₙ(q)` for a target interaction
+with net value `n_target` is the optimum of
+
+  minimise   Σᵢ tᵢ xᵢ
+  subject to Σᵢ xᵢ = n_target           (net constraint)
+             Σⱼ G_{ij} xⱼ ≥ 0  ∀ i      (Frobenius positivity)
+             xᵢ ≥ -M          ∀ i       (boundedness),
+
+and the dual certificate `(y₀*, y*)` satisfies strong duality
+`Σᵢ tᵢ xᵢ* = n_target · y₀*` and complementary slackness.
+
+## Disposition (integrity)
+
+The class below carries only the **LP data** — the cost vector `t`,
+the Frobenius Gram matrix `G`, a candidate `x*`, the target
+`n_target`, and the dual variable `y₀*`.  It does **not** carry the
+optimality / strong-duality conclusions as fields (the previous
+version did, then projected them — a self-assuming projection
+forbidden by AGENTS.md §3b-cond item 5).
+
+`operator_selection_lp` states the genuine conclusion — `x*` is
+primal-feasible AND optimal among all feasible points AND strong
+duality holds — and ends in `sorry` (disposition B): proving it
+requires the LP strong-duality theorem for feasible bounded programs,
+which is not yet available in the `QOU` library / Mathlib.  The
+feasible-set definition `IsFeasible` is genuine (no opaque `Prop`
+field projected). -/
 
 namespace QOU.ParticleInteractions
 
-
-/-- Abstract context for the `operator_selection_lp` claim —
-    manuscript-themed typed fields below; sub-claims encode the
-    primal-feasibility net constraint, Frobenius positivity, and
-    strong-duality identity of the operator-selection LP. -/
+/-- Data of the operator-selection LP: the cost vector `t`, the
+    Frobenius Gram matrix `G`, the target net value `n_target`, a
+    candidate primal point `x*`, and the net-constraint dual variable
+    `y₀*`.  These are *inputs*; nothing here asserts the conclusion. -/
 class OperatorSelectionLpContext where
   /-- The strand number `n ≥ 2`. -/
   n : ℕ
@@ -28,84 +49,52 @@ class OperatorSelectionLpContext where
   d : ℕ
   /-- The target net value `n_target ∈ ℝ_{>0}`. -/
   n_target : ℝ
-  /-- The Markov-trace coefficients `t : Fin d → ℝ`. -/
+  /-- The Markov-trace cost coefficients `t : Fin d → ℝ`. -/
   t : Fin d → ℝ
   /-- The Frobenius Gram matrix `G : Fin d → Fin d → ℝ`. -/
   G : Fin d → Fin d → ℝ
-  /-- The primal optimum `x* : Fin d → ℝ`. -/
+  /-- The candidate primal point `x* : Fin d → ℝ`. -/
   x_star : Fin d → ℝ
-  /-- The Markov-trace dual variable `y_0* : ℝ`. -/
+  /-- The Markov-trace dual variable `y₀* : ℝ`. -/
   y_0_star : ℝ
-  /-- The Frobenius-positivity dual variables `y* : Fin d → ℝ`. -/
-  y_star : Fin d → ℝ
-  /-- Manuscript sub-claim — primal optimum satisfies the net
-      constraint `Σ x*_i = n_target`. -/
-  claim_primal_net :
-    (Finset.univ.sum fun i : Fin d => x_star i) = n_target
-  /-- Manuscript sub-claim — primal feasibility:
-      `Σ_j G_{ij} x*_j ≥ 0` for every `i`. -/
-  claim_primal_feasible :
-    ∀ i : Fin d,
-      0 ≤ (Finset.univ.sum fun j : Fin d => G i j * x_star j)
-  /-- Manuscript sub-claim — strong duality:
-      `primal_obj = dual_obj`, i.e.
-      `Σ t_i x*_i = n_target · y_0*`. -/
-  claim_strong_duality :
-    (Finset.univ.sum fun i : Fin d => t i * x_star i)
-      = n_target * y_0_star
 
-/-- **Proposition statement** (from manuscript):
+namespace OperatorSelectionLpContext
 
-The knot operator $\Phi = \sum_{i=1}^{d} x_i b_i \in H_n(q)$ for a
-target interaction with net value $n_{\mathrm{target}}$ is the solution
-of the linear program:*
+variable [ctx : OperatorSelectionLpContext]
 
-$$
-  \min_{x \in \mathbb{R}^d} \quad \sum_{i=1}^{d} t_i \, x_i
-$$
+/-- A vector `x : Fin d → ℝ` is LP-feasible: it satisfies the net
+    constraint and Frobenius positivity. (Boundedness `xᵢ ≥ -M` is
+    absorbed into the existence of a large `M`; we keep the two
+    binding constraints, which are the ones that select the optimum.)
 
-*subject to:*
+    This is a genuine predicate on the data, not a projected field. -/
+def IsFeasible (x : Fin ctx.d → ℝ) : Prop :=
+  (Finset.univ.sum fun i : Fin ctx.d => x i) = ctx.n_target ∧
+  (∀ i : Fin ctx.d, 0 ≤ (Finset.univ.sum fun j : Fin ctx.d => ctx.G i j * x j))
 
-$$
-  \sum_{i=1}^{d} x_i = n_{\mathrm{target}}
-  \qquad (\text{net constraint})
-$$
+/-- The objective value `Σᵢ tᵢ xᵢ` of a candidate `x`. -/
+def objective (x : Fin ctx.d → ℝ) : ℝ :=
+  Finset.univ.sum fun i : Fin ctx.d => ctx.t i * x i
 
-$$
-  \sum_{j=1}^{d} G_{ij}\, x_j \geq 0
-  \quad \forall\, i \in \{1, \ldots, d\}
-  \qquad (\text{Frobenius positivity})
-$$
+end OperatorSelectionLpContext
 
-$$
-  x_i \geq -M \quad \forall\, i
-  \qquad (\text{boundedness})
-$$
+/-- **Operator selection LP** ([`prop:operator-selection-lp`]).
 
-*where $M > 0$ is a sufficiently large constant ensuring boundedness of
-the feasible polyhedron.*
-
-The objective $\sum_{i} t_i x_i = \mathrm{tr}_M(\Phi)$ is the categorical
-action ([knot operator selection](#prop:knot-operator-selection), part iv).
-Minimizing it selects the operator of least action among all operators
-compatible with the Frobenius structure.
-
-The Frobenius positivity constraints $Gx \geq 0$ encode the
-demand--supply balance: $\Phi$ must pair non-negatively with every
-basis element under the Frobenius inner product, so no channel
-carries unbounded demand.
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/operator-selection-lp.ts
+`x*` is feasible, is the minimum-objective feasible point, and the
+dual variable `y₀*` certifies optimality via strong duality
+`objective x* = n_target · y₀*`. -/
+-- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality, feasible bounded programs)
+-- Ref: [manuscript] quantum-observable-universe/mass-theory/operator-selection-lp.md
 theorem operator_selection_lp [ctx : OperatorSelectionLpContext] :
-    (Finset.univ.sum fun i : Fin ctx.d => ctx.x_star i) = ctx.n_target ∧
-    (∀ i : Fin ctx.d,
-      0 ≤ (Finset.univ.sum fun j : Fin ctx.d => ctx.G i j * ctx.x_star j)) ∧
-    (Finset.univ.sum fun i : Fin ctx.d => ctx.t i * ctx.x_star i)
-      = ctx.n_target * ctx.y_0_star :=
-  ⟨ctx.claim_primal_net, ctx.claim_primal_feasible, ctx.claim_strong_duality⟩
+    OperatorSelectionLpContext.IsFeasible ctx.x_star ∧
+    (∀ x : Fin ctx.d → ℝ, OperatorSelectionLpContext.IsFeasible x →
+      OperatorSelectionLpContext.objective ctx.x_star ≤
+        OperatorSelectionLpContext.objective x) ∧
+    OperatorSelectionLpContext.objective ctx.x_star
+      = ctx.n_target * ctx.y_0_star := by
+  -- Missing infra: the LP strong-duality theorem (no duality gap for
+  -- feasible, bounded linear programs) and the simplex/vertex
+  -- optimality argument selecting x*. Not yet formalised in QOU/Mathlib.
+  sorry
 
 end QOU.ParticleInteractions
