@@ -618,14 +618,19 @@ function buildMd(
   lines.push("");
   lines.push("## Summary");
   lines.push("");
-  lines.push("| Criterion | pass | fail | n/a |");
-  lines.push("|---|--:|--:|--:|");
+  lines.push("Lead with the **major** column — those are the high-confidence");
+  lines.push("candidates. `minor` candidates (e.g. an unbolded term, a slightly");
+  lines.push("over-length statement) are cheaper, lower-stakes fixes.");
+  lines.push("");
+  lines.push("| Criterion | pass | fail · major | fail · minor | n/a |");
+  lines.push("|---|--:|--:|--:|--:|");
   for (const c of CRITERIA) {
     const fc = findings.filter((f) => f.criterion === c);
     const p = fc.filter((f) => f.result === "pass").length;
-    const fl = fc.filter((f) => f.result === "fail").length;
+    const maj = fc.filter((f) => f.result === "fail" && f.severity === "major").length;
+    const min = fc.filter((f) => f.result === "fail" && f.severity === "minor").length;
     const na = fc.filter((f) => f.result === "n/a").length;
-    lines.push(`| \`${c}\` | ${p} | ${fl} | ${na} |`);
+    lines.push(`| \`${c}\` | ${p} | ${maj} | ${min} | ${na} |`);
   }
   lines.push("");
   lines.push(`Blocks scanned: **${scanned}**. Total candidate fails: **${fails.length}**.`);
