@@ -8,6 +8,9 @@ build/
 # scripts/setup-folio-assistant.sh symlinks <root>/folio-assistant to a
 # local clone of it; the symlink (and any in-place clone) is not tracked.
 /folio-assistant
+# Local build convenience: `latex` -> folio-assistant/latex (shared preamble).
+# Not tracked — qou has no committed preamble; the build resolves it via this link.
+/latex
 
 # Generated LaTeX chapters (from content pipeline)
 chapters/*.tex
