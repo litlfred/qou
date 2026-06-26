@@ -69,38 +69,49 @@ namespace IwahoriHeckeAlgebra
 
 variable {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
 
+/-- `H.carrier` is nonempty: it carries a `Ring` (the `ring` field), hence
+    has `0`.  Registered so `opaque`/placeholder constants valued in
+    `H.carrier` (`jucysMurphy`, `centralIdempotent`) elaborate (an `opaque`
+    constant of type `T` requires `Nonempty T`). -/
+instance instNonemptyCarrier (H : IwahoriHeckeAlgebra n R q h_unit) :
+    Nonempty H.carrier :=
+  letI : Ring H.carrier := H.ring
+  ⟨0⟩
+
 /-! ## Hecke relations (axioms)
 
 Note: These relation classes assume an `Algebra R H.carrier`
-instance providing the scalar action `R → H.carrier`, plus a
-`Field R` constraint so `q⁻¹` is well-defined. The instance is
-declared as a separate field on the structure.
+instance providing the scalar action `R → H.carrier`. The inverse
+`q⁻¹` is taken via the substrate unit witness `h_unit : IsUnit q`
+— i.e. `↑(h_unit.unit)⁻¹ : R` — so the whole API stays over a generic
+`[CommRing R]` (per AGENTS.md §7c base-ring convention); no `[Field R]`
+specialisation is needed, which also removes the `CommRing`/`Field`
+instance diamond on `R`.
 
 Per Copilot PR #634 review: the previous formulation used
 `Ring.inverse q` (incorrect — that's the standard `Ring` partial
 inverse, not the Hecke-algebra-natural inverse via `IsUnit`) and
 `(q : R) • (1 : H.carrier)` without an `SMul R H.carrier` instance.
-This rewrite restricts to `[Field R]` so `q⁻¹` is `R`'s field
-inverse and the scalar action comes from any algebra-style
-embedding `R → H.carrier`. -/
+This rewrite uses the `IsUnit`-natural inverse and an algebra-style
+embedding `R → H.carrier` for the scalar action. -/
 
 /-- Algebra hom from `R` to the Hecke-algebra carrier — provides
     the scalar embedding required to write `(q : R) ↪ H.carrier`. -/
-class HeckeRingHom {R : Type*} [Field R] {q : R} {h_unit : IsUnit q}
-    (H : IwahoriHeckeAlgebra n R q h_unit) where
+class HeckeRingHom (H : IwahoriHeckeAlgebra n R q h_unit) where
   scalarOf : R → H.carrier
   scalarOf_one :
     letI : Ring H.carrier := H.ring
     scalarOf 1 = (1 : H.carrier)
 
-/-- The quadratic Hecke relation: `(σ_i - q)(σ_i + q⁻¹) = 0`. -/
-class HeckeQuadratic [Field R]
+/-- The quadratic Hecke relation: `(σ_i - q)(σ_i + q⁻¹) = 0`, with `q⁻¹`
+    the `IsUnit`-natural inverse `↑(h_unit.unit)⁻¹`. -/
+class HeckeQuadratic
     (H : IwahoriHeckeAlgebra n R q h_unit) [HeckeRingHom H] : Prop where
   quadratic :
     ∀ i : Fin (n - 1),
       letI : Ring H.carrier := H.ring
       (H.sigma i - HeckeRingHom.scalarOf (R := R) q) *
-        (H.sigma i + HeckeRingHom.scalarOf (R := R) (q⁻¹ : R)) = 0
+        (H.sigma i + HeckeRingHom.scalarOf (R := R) (((h_unit.unit)⁻¹ : Rˣ) : R)) = 0
 
 /-- The braid relation: `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}`. -/
 class HeckeBraid (H : IwahoriHeckeAlgebra n R q h_unit) : Prop where
@@ -226,8 +237,8 @@ def IsGeneric (n : ℕ) (q : R) : Prop :=
     Stated axiomatically; cites `prop:wedderburn-weight-canonical`
     and `prop:hoefsmit-seminormal-form` from the manuscript. -/
 def wedderburn_decomposition_generic
-    (H : IwahoriHeckeAlgebra n R q h_unit)
-    [Field R] (h_gen : IsGeneric n q) :
+    (_H : IwahoriHeckeAlgebra n R q h_unit)
+    (_h_gen : IsGeneric n q) :
     True := by
   -- Ref: [kassel1995] §V.5 — Iwahori–Hecke algebra structure
   -- theorem at generic q; semisimplicity criterion via [k]_q.
@@ -241,14 +252,16 @@ def wedderburn_decomposition_generic
 /-- The **Jucys–Murphy element** `J_k` of `H_n(q)`. Definition uses
     the formula `J_k = q^{1-k} Σ_{i < k} σ_{i, k}` from
     `prop:jucys-murphy-central-elements-qou`. Placeholder. -/
-opaque jucysMurphy
-    (H : IwahoriHeckeAlgebra n R q h_unit) (k : Fin n) : H.carrier
+noncomputable def jucysMurphy
+    (H : IwahoriHeckeAlgebra n R q h_unit) (_k : Fin n) : H.carrier :=
+  Classical.ofNonempty
 
 /-- The **central primitive idempotent** `e_λ` for partition
     `λ ⊢ n`. Constructed via Lagrange interpolation in JM elements
     per `prop:explicit-central-idempotent`. Placeholder. -/
-opaque centralIdempotent
-    (H : IwahoriHeckeAlgebra n R q h_unit) (lam : List ℕ) : H.carrier
+noncomputable def centralIdempotent
+    (H : IwahoriHeckeAlgebra n R q h_unit) (_lam : List ℕ) : H.carrier :=
+  Classical.ofNonempty
 
 /-- **External axiom (Murphy 1981; Dipper–James 1986):**
 
@@ -322,6 +335,7 @@ axiom bar_centralIdempotent_transpose_axiom :
     ∀ {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
       (H : IwahoriHeckeAlgebra n R q h_unit) [HeckeBar H]
       (lam : List ℕ),
+        letI : Ring H.carrier := H.ring
         letI : StarRing H.carrier := H.star_ring
         star (centralIdempotent H lam) =
           centralIdempotent H (partitionTranspose lam)
@@ -331,6 +345,7 @@ axiom bar_centralIdempotent_transpose_axiom :
 theorem bar_central_idempotent_transpose
     (H : IwahoriHeckeAlgebra n R q h_unit) [HeckeBar H]
     (lam : List ℕ) :
+    letI : Ring H.carrier := H.ring
     letI : StarRing H.carrier := H.star_ring
     star (centralIdempotent H lam) =
       centralIdempotent H (partitionTranspose lam) :=
@@ -346,21 +361,19 @@ theorem bar_central_idempotent_transpose
 
     Co-located with the Volume Conjecture asymptotic regime
     (`rem:vc-as-depth-2-instance`). -/
-def failureLocus (n : ℕ) (R : Type*) [Field R] : Set R :=
+def failureLocus (n : ℕ) (R : Type*) [CommRing R] : Set R :=
   { q : R | ∃ k : ℕ, 2 ≤ k ∧ k ≤ n ∧ q ^ (2 * k) = 1 }
 
 /-- A `q` outside the failure locus is generic. -/
 theorem not_in_failure_locus_iff_generic
-    [Field R] (q : R) :
+    (q : R) :
     q ∉ failureLocus n R ↔ IsGeneric n q := by
-  -- Direct definitional unfolding plus rearrangement.
+  -- Direct definitional unfolding: both sides reduce to the same
+  -- `∀ k, 2 ≤ k → k ≤ n → q ^ (2 * k) ≠ 1` after pushing negation
+  -- through the set-membership existential (HPow over the single
+  -- `[CommRing R]` instance — no Field/CommRing diamond).
   unfold failureLocus IsGeneric
   simp only [Set.mem_setOf_eq, not_exists, not_and]
-  constructor
-  · intro h k hk_2 hk_n hq
-    exact h k hk_2 hk_n hq
-  · intro h k hk_2 hk_n hq
-    exact h k hk_2 hk_n hq
 
 /-! ## Summary: API surface ready for downstream blocks -/
 
