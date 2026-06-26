@@ -255,6 +255,43 @@ git config --global url."file:///home/user/mathlib4".insteadOf \
 # return real diagnostics rather than timing out.
 ```
 
+> **🟦 When even the mathlib `git clone` 403s (repo-scoped git proxy) —
+> use the codeload tarball via the egress proxy (proven 2026-06-26, PR
+> #2858).** On stricter web sandboxes the git `insteadOf` rewrites
+> *every* `https://github.com/` to a **repo-scoped** git proxy that only
+> allows this repo, so Step 1's `git clone …/mathlib4` returns **403**
+> (and so does `lake exe cache get`). But the **HTTPS egress proxy still
+> reaches `codeload.github.com`** — only the *git* path is scoped — so
+> fetch the source tarball at the **pinned manifest rev** (must match the
+> restored cache oleans) directly:
+>
+> ```bash
+> REV=$(python3 -c "import json,sys; print(next(p['rev'] for p in json.load(open('lake-manifest.json'))['packages'] if p['name']=='mathlib'))")
+> curl -fsS --cacert /root/.ccr/ca-bundle.crt \
+>   "https://codeload.github.com/leanprover-community/mathlib4/tar.gz/$REV" \
+>   -o /tmp/mathlib-src.tar.gz
+> tar xzf /tmp/mathlib-src.tar.gz -C /tmp
+> cp -r "/tmp/mathlib4-$REV/Mathlib" .lake/packages/mathlib/   # stage source ALONGSIDE restored oleans
+> ```
+>
+> **Then build the missing delta with `lean`-direct — NOT `lake build`.**
+> With source staged next to restored oleans, `lake build <anything>`
+> sees the package dir differs from the manifest, prints
+> `mathlib: URL has changed; deleting … and cloning again`, **deletes the
+> restored oleans**, and re-clones (→ 403). Instead compute the
+> missing-olean closure of your target and compile each missing module
+> with `lean --root=<pkgRoot> -o <lib>/<Mod>.olean <src>` (set `LEAN_PATH`
+> to every `*/.lake/build/lib/lean`). For a QOU file pass
+> `-D autoImplicit=false` to match the package `leanOptions` — otherwise
+> you get spurious `Field ?m`/instance-diamond errors that look like real
+> bugs but are just the missing option. This staged + compiled the two
+> oleans absent from the `qou-v4-24-0` cache
+> (`Mathlib.Data.Nat.Dist`, `Mathlib.RingTheory.Idempotents`) plus the
+> `IwahoriHeckeAPI` cone in ~5 min total, verifying PR #2858 — after the
+> prior session wrongly declared that file "environmentally impossible"
+> to compile. Don't declare Lean verification impossible until codeload
+> is also blocked.
+
 After Step 3 succeeds, `lean_diagnostic_messages` returns real error /
 warning items (not the `success: false, items: []` timeout sentinel),
 unblocking iterative Lean proof development.
