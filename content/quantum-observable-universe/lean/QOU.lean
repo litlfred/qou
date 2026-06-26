@@ -30,6 +30,7 @@ import QOU.MathlibExt.PosSemidefDiagZero
 import QOU.MathlibExt.FrobeniusInnerProduct
 import QOU.MathlibExt.QPlancherel
 import QOU.MathlibExt.MonoidalCalcVar
+import QOU.MathlibExt.QGaussianBinomialPascal
 import QOU.HeckeAlgebra
 import QOU.Glossary
 import QOU.KnotTheory
