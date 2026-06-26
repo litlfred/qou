@@ -1,97 +1,86 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Real.Basic
 
-
 /-!
 # QOU.Archimedean.knot_operator_selection
 
-**Placeholder canonical** for content block
-[`prop:knot-operator-selection`](../../../quantum-observable-universe/archimedean-universe/knot-operator-selection.md): *Knot operator selection via Frobenius dual*.
+**Proposition** ([`prop:knot-operator-selection`](../../../quantum-observable-universe/predicted-spectra/knot-operator-selection.md)):
+*Knot operator selection via the Frobenius dual.*
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Archimedean.knot_operator_selection` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
--/
+Let `(C, A, τ)` be a QOU with archimedean realisation `Hᵣ(q)`. Then
+
+(i) **Spectral decomposition.** The physics endomorphism `Φ`
+    decomposes via Schur orthogonality as `tr(Φ) = Σ_λ d_λ(q)·tr(Φ_λ)`.
+(ii) **Multi-channel pair production.** The categorical action of two
+    photons equals the per-channel sum `Σ_λ d_λ·tr_λ(…)`.
+(iii) **Frobenius demand–supply.** The Frobenius pairing is
+    non-degenerate (kernel dimension `0`).
+(iv) **Minimum-action selection.** Among all on-shell `Φ_alt`, the
+    selected `Φ` minimises `|tr(Φ)|`.
+
+## Disposition (integrity)
+
+The class carries only the **categorical / Hecke data** — the object
+`A`, the endomorphism `Φ` and its traces, the per-isotypic
+contributions, the pairing kernel, and the action functional.  It does
+**not** carry the four conclusions as fields (the previous version did,
+then projected them — the self-assuming projection forbidden by
+AGENTS.md §3b-cond item 5).
+
+`knot_operator_selection` states the genuine four-part conjunction over
+that data and ends in `sorry` (disposition B): the Wedderburn /
+Schur-orthogonality decomposition (i)–(ii), the QUO-1 non-degeneracy
+of the Frobenius pairing (iii), and the minimum-action variational
+selection (iv) all require semisimple-algebra representation theory
+and the Markov-trace projection machinery, which is not yet available
+in the `QOU` library / Mathlib. -/
 
 namespace QOU.Archimedean
 
-
-/-- Abstract context for the `knot_operator_selection` claim — manuscript-themed
-    typed fields below; sub-claims encode the four numbered parts of the
-    manuscript proposition (spectral decomposition / pair-production /
-    Frobenius demand–supply / min-action selection). -/
+/-- Data of the knot-operator-selection claim. All fields are
+    *inputs*; none asserts a conclusion. -/
 class KnotOperatorSelectionContext where
   /-- The categorical object `A` of the QOU `(C, A, τ)`. -/
   CategoricalObj : Type
-  /-- The topological-link / torus-knot type. -/
-  Link : Type
-  /-- The physics endomorphism Φ ∈ End_C(A). -/
+  /-- The physics endomorphism `Φ ∈ End_C(A)`. -/
   Phi : CategoricalObj → CategoricalObj
-  /-- Number of partitions of `r` (size of Schur-Weyl decomposition). -/
+  /-- Number of partitions of `r` (size of the Schur–Weyl decomposition). -/
   n_partitions : ℕ
-  /-- The trace of `Φ` evaluated through the isotypic projections. -/
+  /-- The trace of `Φ` (categorical action `|tr(Φ)|`). -/
   tr_Phi : ℝ
-  /-- Per-isotypic contribution `d_λ(q) · tr(Φ_λ)`. -/
+  /-- Per-isotypic contribution `d_λ(q)·tr(Φ_λ)`, indexed by partition. -/
   tr_Phi_lambda : ℕ → ℝ
-  /-- Manuscript sub-claim (i) — Spectral decomposition: trace of `Φ`
-      equals the sum of isotypic contributions
-      `tr(Φ) = Σ_λ d_λ(q) · tr(Φ_λ)`. -/
-  claim_i_spectral_decomposition :
-    tr_Phi = (Finset.range n_partitions).sum (fun l => tr_Phi_lambda l)
   /-- Pair-production action value `S(γ₁, γ₂)`. -/
   action_pair : ℝ
-  /-- Sum of per-channel contributions `Σ_λ d_λ · tr_λ(...)`. -/
+  /-- Sum of per-channel contributions `Σ_λ d_λ·tr_λ(…)`. -/
   channel_sum : ℝ
-  /-- Manuscript sub-claim (ii) — Multi-channel pair-production:
-      the categorical action equals the per-channel sum. -/
-  claim_ii_multichannel_pair_production : action_pair = channel_sum
-  /-- Frobenius pairing kernel dimension. -/
+  /-- Dimension of the kernel of the Frobenius pairing. -/
   pairing_kernel_dim : ℕ
-  /-- Manuscript sub-claim (iii) — Frobenius pairing non-degeneracy:
-      `pairing_kernel_dim = 0` (so every demand profile has a unique
-      minimal-norm matching supply). -/
-  claim_iii_frobenius_demand_supply : pairing_kernel_dim = 0
   /-- Action value of the selected endomorphism `Φ`. -/
   action_Phi : ℝ
-  /-- Action functional on alternative endomorphisms (takes an
-      endomorphism, returns ℝ). -/
+  /-- Action functional on alternative endomorphisms. -/
   action_alt : (CategoricalObj → CategoricalObj) → ℝ
-  /-- Predicate: endomorphism `Φ` is on-shell (compatible with the
-      `⋆_q F_∇ = F_∇` constraint). -/
+  /-- On-shell predicate (`⋆_q F_∇ = F_∇` compatibility). -/
   is_on_shell : (CategoricalObj → CategoricalObj) → Prop
-  /-- Manuscript sub-claim (iv) — Minimum-action selection: among
-      all `Φ_alt` compatible with the on-shell condition, the
-      selected `Φ` minimises the action. -/
-  claim_iv_minimum_action_selection :
-    ∀ Φ_alt : CategoricalObj → CategoricalObj,
-      is_on_shell Φ_alt → action_Phi ≤ action_alt Φ_alt
 
-/-- **Proposition statement** (from manuscript):
+/-- **Knot operator selection via the Frobenius dual**
+    ([`prop:knot-operator-selection`]).
 
-Let $(\mathbf{C}, A, \tau)$ be a QOU with archimedean
-realisation $H_r(q)$, and let
-$\{\tau(r_i, s_i)\}_{i=1}^{6}$ be the embeddable torus knots on
-$\Sigma_4$
-([cohomological embedding](#prop\:cohomological-embedding)).
-Let $\gamma_1, \gamma_2 \in H_3(q)$ be two incoming particle
-states.*
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/knot-operator-selection.ts
+(i) spectral decomposition, (ii) multi-channel pair production, (iii)
+Frobenius non-degeneracy, (iv) minimum-action selection. -/
+-- Ref: [wenzl1990] https://doi.org/10.1007/BF02097372 (Schur orthogonality / Markov-trace projection)
+-- Ref: [manuscript] quantum-observable-universe/predicted-spectra/knot-operator-selection.md
 theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] :
     ctx.tr_Phi = (Finset.range ctx.n_partitions).sum
                    (fun l => ctx.tr_Phi_lambda l) ∧
     ctx.action_pair = ctx.channel_sum ∧
     ctx.pairing_kernel_dim = 0 ∧
     (∀ Φ_alt : ctx.CategoricalObj → ctx.CategoricalObj,
-      ctx.is_on_shell Φ_alt → ctx.action_Phi ≤ ctx.action_alt Φ_alt) :=
-  ⟨ctx.claim_i_spectral_decomposition,
-   ctx.claim_ii_multichannel_pair_production,
-   ctx.claim_iii_frobenius_demand_supply,
-   ctx.claim_iv_minimum_action_selection⟩
+      ctx.is_on_shell Φ_alt → ctx.action_Phi ≤ ctx.action_alt Φ_alt) := by
+  -- Missing infra: Wedderburn decomposition of End_{Hᵣ(q)}(V^⊗r),
+  -- Schur orthogonality with weight d_λ(q), QUO-1 non-degeneracy of
+  -- the Frobenius pairing, and the on-shell min-action variational
+  -- principle. Not yet formalised in QOU/Mathlib.
+  sorry
 
 end QOU.Archimedean

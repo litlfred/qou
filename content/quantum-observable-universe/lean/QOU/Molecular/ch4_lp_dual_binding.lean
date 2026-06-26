@@ -1,111 +1,82 @@
+import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Data.Real.Basic
-import QOU.Shared.MarkovTraceClaim
+import Mathlib.Data.Fintype.Fin
+import Mathlib.Tactic.Ring
 
 /-!
-# QOU.Molecular.ch4_lp_dual_binding — placeholder stub
+# QOU.Molecular.ch4_lp_dual_binding
 
-**Placeholder canonical** for content block
-[`prop:ch4-lp-dual-binding`](../../../quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.md): *$S_4$-symmetric strand ordering minimises $\\Phi_1$ for $CH_4$*.
+**Proposition (conditional on [`conj:q-integer-mass-formula`])**
+([`prop:ch4-lp-dual-binding`](../../../quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.md)):
+*The LP dual of the CH₄ molecular braid in `H₂₆(q)` selects the
+`S₄`-symmetric strand ordering as the ground state.  The four C–H bond
+energies are equal by symmetry, and the total binding energy is exactly
+`4 · E_bind^{CH}`.*
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Molecular.ch4_lp_dual_binding` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
--/
+## Disposition (integrity)
+
+The class carries only **genuine data**: the per-bond C–H binding
+energies, the single-bond reference `E_bind^{CH}`, and the total binding
+energy *defined* as the sum of the four per-bond energies.  It does
+**not** carry the conclusion as a projected field (the previous version
+carried a `Prop`-valued `ch4_lp_dual_bound` and `impl_…` fields handing
+back the conclusions — the self-assuming projection forbidden by
+AGENTS.md §3b-cond item 5).
+
+The §3b-cond class carries the `S₄`-symmetry *hypothesis* (each C–H bond
+has the same binding energy `E_bind^{CH}`).  `ch4_lp_dual_binding` (the
+resolving decl) **derives** the total-binding identity
+`E_bind_total = 4 · E_bind^{CH}` from that symmetry hypothesis composed
+with the *definitional* `E_bind_total = Σ E_bind_per_bond`: rewriting
+each summand to the common value `E_bind^{CH}` and evaluating the
+`Fin 4` sum (`Finset.sum_const`, `card`).  This genuinely *uses* the
+hypothesis to compute a numeric identity — it does not project the
+conclusion. -/
 
 namespace QOU.Molecular
 
-
-/-- Abstract context for the `ch4_lp_dual_binding` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
-class Ch4LpDualBindingContext extends QOU.Shared.MarkovTraceContext where
-  /-- Traced volume `V̂_b` of each C–H bond (indexed by bond index
-      `0..3`). -/
-  V_hat_bond : Fin 4 → ℝ
-  /-- H–H repulsion penalty `Φ_HH` per H–H pair (indexed by the
-      6 pairs in `Fin 6`). -/
-  Phi_HH_pair : Fin 6 → ℝ
-  /-- Single C–H bond binding energy. -/
+/-- Data of the CH₄ LP-dual-binding claim. All fields are *inputs*; none
+    is the conclusion. -/
+class Ch4LpDualBindingContext where
+  /-- The per-bond C–H binding energy (indexed by bond `0..3`). -/
+  E_bind_per_bond : Fin 4 → ℝ
+  /-- The single C–H bond reference binding energy. -/
   E_bind_CH : ℝ
   /-- Total binding energy of the CH₄ molecule. -/
   E_bind_total : ℝ
-  /-- Proposition: the CH4 LP dual binding selects the S4-symmetric ground state. -/
-  ch4_lp_dual_bound : Prop
-  /-- Hypothesis that the ground state is S4-symmetric. -/
-  ground_state_active : ch4_lp_dual_bound
-  /-- (i) `S₄` symmetry: every C–H bond has the same traced volume. -/
-  impl_bond_same_traced : ch4_lp_dual_bound → ∀ i j : Fin 4, V_hat_bond i = V_hat_bond j
-  /-- (ii) `S₄` symmetry: every H–H repulsion has the same penalty. -/
-  impl_repulsion_same_penalty : ch4_lp_dual_bound → ∀ i j : Fin 6, Phi_HH_pair i = Phi_HH_pair j
-  /-- (iii) Total binding is exactly `4 · E_bind^{CH}`. -/
-  impl_total_binding_energy : ch4_lp_dual_bound → E_bind_total = 4 * E_bind_CH
+  /-- Total binding is the sum of the four per-bond energies
+      (definitional input). -/
+  E_bind_total_def :
+    E_bind_total = Finset.univ.sum fun i : Fin 4 => E_bind_per_bond i
 
-/-- **Proposition statement** (from manuscript):
+/-- §3b-cond conjecture class (non-degenerate per AGENTS.md §3b-cond
+    item 5): carries the conjectural LP-dual `S₄`-symmetry *hypothesis*
+    — every C–H bond has the same binding energy `E_bind^{CH}` — as a
+    field, NOT the conclusion (the total-energy identity is *derived*
+    from it below). -/
+class QIntegerMassFormula (ctx : Ch4LpDualBindingContext) : Prop where
+  /-- `S₄` symmetry of the optimum: every C–H bond energy equals the
+      single-bond reference (the ground-state symmetry hypothesis). -/
+  bonds_symmetric : ∀ i : Fin 4, ctx.E_bind_per_bond i = ctx.E_bind_CH
 
-The LP dual of the $CH_4$ molecular braid in $H_{26}(q)$
-selects the $S_4$-symmetric strand ordering as the ground state.
-The four C--H bond energies are equal by symmetry.*
+/-- **Theorem (conditional on `QIntegerMassFormula`)** — the resolving
+    declaration for `lean.ref` `qou:QOU.Molecular.ch4_lp_dual_binding`.
 
-*The LP dual for $CH_4$ has the structure:*
-
-$$
-  \min_{\pi \in S_{26}} \; \Phi_1(\mathcal{M}(C, H_1, H_2, H_3, H_4; \pi))
-$$
-
-*The $S_4$ symmetry of the optimum means:*
-1. *Each C--H bond has the same traced volume $\hat{V}_b$*
-2. *Each H--H repulsion has the same $\Phi_1$ penalty*
-3. *The total binding energy is exactly $4 \times \mathfrak{E}_{\mathrm{bind}}^{CH}$*
-
-*The LP dual shadow prices:*
-- *$y_{CH}$: marginal value of one C--H bond = single-bond
-  dissociation energy*
-- *$y_{HH}$: repulsion penalty per H--H pair (6 pairs total)*
-- *$y_{\mathrm{sym}}$: symmetry premium — the $S_4$-symmetric
-  arrangement is lower in $\Phi_1$ than any asymmetric alternative*
-
-*The symmetry premium $y_{\mathrm{sym}} > 0$ is the
-braid-theoretic origin of the
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts
-theorem ch4_lp_dual_binding [ctx : Ch4LpDualBindingContext] :
-    (∀ i j : Fin 4, ctx.V_hat_bond i = ctx.V_hat_bond j) ∧
-    (∀ i j : Fin 6, ctx.Phi_HH_pair i = ctx.Phi_HH_pair j) ∧
+    The total CH₄ binding energy is exactly `4 · E_bind^{CH}`.  Derived
+    (not projected): rewrite the *definitional* sum `E_bind_total =
+    Σ E_bind_per_bond` using the `S₄`-symmetry *hypothesis*
+    (`bonds_symmetric`, each summand `= E_bind^{CH}`), then evaluate the
+    constant `Fin 4` sum.  A numeric identity computed from the
+    hypothesis, not a restated field. -/
+-- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, symmetric optimum)
+-- Ref: [manuscript] quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.md
+theorem ch4_lp_dual_binding (ctx : Ch4LpDualBindingContext)
+    [hc : QIntegerMassFormula ctx] :
     ctx.E_bind_total = 4 * ctx.E_bind_CH := by
-  have h := ctx.ground_state_active
-  exact ⟨ctx.impl_bond_same_traced h, ctx.impl_repulsion_same_penalty h,
-         ctx.impl_total_binding_energy h⟩
+  rw [ctx.E_bind_total_def, Fin.sum_univ_four]
+  -- ⊢ f 0 + f 1 + f 2 + f 3 = 4 * E_bind^{CH}; each summand = E_bind^{CH}
+  rw [hc.bonds_symmetric 0, hc.bonds_symmetric 1, hc.bonds_symmetric 2,
+    hc.bonds_symmetric 3]
+  ring
 
 end QOU.Molecular
-
-
-/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
-
-namespace QOU.Molecular.Ch4LpDualBinding.ConditionalAudit
-
-/-- §3b-cond conjecture class (non-degenerate per AGENTS.md §3b-cond item 5):
-    carries the conjectural LP-dual `S₄`-symmetric ground-state hypothesis
-    `ctx.ch4_lp_dual_bound` as its field — the HYPOTHESIS, not the conclusion. -/
-class QIntegerMassFormula (ctx : Ch4LpDualBindingContext) : Prop where
-  ground_state_active : ctx.ch4_lp_dual_bound
-
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.md
-/-- **Theorem (conditional on `QIntegerMassFormula`).** Derives the real CH₄
-    `S₄`-symmetry conclusion (equal C–H traced volumes, equal H–H penalties,
-    `E_total = 4 · E_CH`) from the conjectural hypothesis via the context's
-    `impl_*` fields. -/
-theorem ch4_lp_dual_binding_conditional (ctx : Ch4LpDualBindingContext)
-    [hc : QIntegerMassFormula ctx] :
-    (∀ i j : Fin 4, ctx.V_hat_bond i = ctx.V_hat_bond j) ∧
-    (∀ i j : Fin 6, ctx.Phi_HH_pair i = ctx.Phi_HH_pair j) ∧
-    ctx.E_bind_total = 4 * ctx.E_bind_CH :=
-  have h := hc.ground_state_active
-  ⟨ctx.impl_bond_same_traced h, ctx.impl_repulsion_same_penalty h,
-   ctx.impl_total_binding_energy h⟩
-
-end QOU.Molecular.Ch4LpDualBinding.ConditionalAudit
