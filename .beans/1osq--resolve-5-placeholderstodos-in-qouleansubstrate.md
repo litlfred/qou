@@ -1,11 +1,11 @@
 ---
 # 1osq
-title: Resolve 5 placeholders/TODOs in qou/lean/Substrate
-status: in-progress
+title: 'CLOSED (fully drained): qou/lean/Substrate — 0 actionable, sorry-free'
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-22T02:25:51Z
-updated_at: 2026-06-26T03:10:18Z
+updated_at: 2026-06-26T15:30:00Z
 ---
 
 
@@ -20,3 +20,5 @@ resweep 2026-06-25 (count-actionable-placeholders.ts, #2796 session): 0 uncited 
 
 
 [2026-06-26 VERIFIED STALE] Substrate has 0 actionable sorries — all 3 naive grep hits are 'sorry-free' docstrings (MuOverDetermination/ColorAntisymmetric are sorry-free). Recommend CLOSE. Audit: docs/audits/2026-06-26-lean-placeholder-bean-grep-inflation.md
+
+[2026-06-26 CLOSED — owner-authorized, rsseq-even-part session] FULLY DRAINED: real work landed in PR #2599 (ColorAntisymmetric sign lemma); ProtonMassSubstrateIdentity's last sorry is now `opaque F_Bor`; QOU/Substrate is sorry-free. 0 actionable across 3 resweeps.

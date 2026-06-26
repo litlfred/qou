@@ -1,11 +1,11 @@
 ---
 # 95jh
-title: Resolve 213 placeholders/TODOs in qou/lean/BraidKnot
+title: 'qou/lean/BraidKnot — track 5 intentional TODO markers (0 actionable sorries; §3b excluded) [re-scoped from 213]'
 status: todo
 type: task
 priority: normal
 created_at: 2026-06-22T02:25:51Z
-updated_at: 2026-06-26T03:10:18Z
+updated_at: 2026-06-26T15:30:00Z
 ---
 
 resweep 2026-06-22: honest counter = 7 actionable (claimed 213) via scripts/count-actionable-placeholders.ts.
@@ -21,3 +21,5 @@ resweep 2026-06-25 (count-actionable-placeholders.ts, #2796 session): 0 uncited 
 
 
 [2026-06-26 grep-inflated] Claimed 213; naive 316; refined actionable ~23 (many are §3b open-conjecture sorries, NOT to-resolve). Re-scope excluding §3b. Audit: docs/audits/2026-06-26-lean-placeholder-bean-grep-inflation.md
+
+[2026-06-26 RE-SCOPED — owner-authorized, rsseq-even-part session] Title now reflects verified scope: 0 actionable sorries (JucysMurphy already cited/drained #2656; Helium3/Tritium/Deuteron/QBeta sorries are §3b or witness-dep markers, not missing proofs); residual is 5 intentional `-- TODO` markers. Kept open as low-priority tracking, NOT a drainable count.

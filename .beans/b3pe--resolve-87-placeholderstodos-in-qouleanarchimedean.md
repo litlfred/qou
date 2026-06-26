@@ -1,11 +1,11 @@
 ---
 # b3pe
-title: Resolve 87 placeholders/TODOs in qou/lean/Archimedean
+title: 'qou/lean/Archimedean — track 3 intentional research-grade TODO markers (0 actionable sorries; §3b excluded) [re-scoped from 87]'
 status: todo
 type: task
 priority: normal
 created_at: 2026-06-22T02:25:51Z
-updated_at: 2026-06-26T03:10:18Z
+updated_at: 2026-06-26T15:30:00Z
 ---
 
 resweep 2026-06-22: honest counter = 4 actionable (claimed 87) via scripts/count-actionable-placeholders.ts.
@@ -21,3 +21,5 @@ resweep 2026-06-25 (count-actionable-placeholders.ts, #2796 session): 0 uncited 
 
 
 [2026-06-26 grep-inflated] Claimed 87; naive 49; refined actionable ~11 (subset are §3b instances, NOT to-resolve per AGENTS.md §3b). Re-scope excluding §3b. Audit: docs/audits/2026-06-26-lean-placeholder-bean-grep-inflation.md
+
+[2026-06-26 RE-SCOPED — owner-authorized, rsseq-even-part session] Title now reflects the verified scope: 0 actionable sorries (the Archimedean sorries — HyperbolicVolumeIndependence, SingleVolumeIrrationality, BorelZagierQouVolumes, EmCouplingBringZeroMode — are §3b conjecture INSTANCES, not missing proofs); the only residual is 3 intentional research-grade `-- TODO` markers (SnapPyAxioms 2 future-migration rows, BorromeanVolumeCatalan open-questions §6). Kept open as a low-priority tracking bean, NOT a drainable count.

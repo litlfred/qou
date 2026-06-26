@@ -1,11 +1,11 @@
 ---
 # i6p9
-title: Resolve 10 placeholders/TODOs in qou/lean
-status: todo
+title: 'CLOSED (misclassified, duplicate-of-subbeans): qou/lean whole-tree — 0 distinct actionable'
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-22T02:25:51Z
-updated_at: 2026-06-26T03:10:18Z
+updated_at: 2026-06-26T15:30:00Z
 ---
 
 
@@ -16,3 +16,5 @@ resweep 2026-06-25 (count-actionable-placeholders.ts, #2796 session): 0 uncited 
 
 
 [2026-06-26 grep-inflated] qou/lean whole-tree naive 757 → refined ~157 actionable (loose upper bound; excludes sorry-free; still over-counts §3b + comment-prose). Re-scope. Audit: docs/audits/2026-06-26-lean-placeholder-bean-grep-inflation.md
+
+[2026-06-26 CLOSED — owner-authorized, rsseq-even-part session] This is a whole-tree grep that DUPLICATES the per-dir sub-beans (95jh/b3pe/ekb8/ixx4). The "10" are §3b comment-prose (`-- The Lean encoding below is a 'theorem … := by sorry' placeholder`), not real sorries — 0 distinct actionable. Closing as duplicate; track any real residual via the per-dir beans (95jh/b3pe), which are themselves re-scoped to §3b-excluded counts.
