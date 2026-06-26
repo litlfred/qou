@@ -24,7 +24,7 @@ discharge is `ring`. $\square$
 
 - The class `CanonicalMarkovWeightsH3` has at least one inhabitant.
 - All §3b-cond conditional theorems stated under
-  `[CanonicalMarkovWeightsH3]` (notably
+  `[CanonicalMarkovWeightsH3]` (in particular
   [`delta_tau_M_canonical_has_q2_minus_1_factor`](qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.md)
   and its corollary `delta_tau_M_canonical_vanish_at_one_via_factor`)
   are NOT vacuous — they hold for at least this concrete instance.
