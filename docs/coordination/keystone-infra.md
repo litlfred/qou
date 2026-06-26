@@ -101,3 +101,24 @@ orphan (generalise + wire-in).
 - **No open sibling overlaps #2817** (its predecessor #2807 is merged; nobody
   else is touching `QPartitionCombinatorics`'s `qBracket`). No intent comments
   posted — clean follow-on infra.
+
+### RESOLVED (2026-06-26 — #2823 + the consolidation/Rogers–Szegő PR)
+
+- **Gap 1 (q-Pascal): CLOSED.** #2823 (merged) proves `qBinom_pascal`
+  `[k+m+2 ; k+1]_q = q^{m+1}[k+1+m ; k]_q + q^{-(k+1)}[k+1+m ; k+1]_q` from
+  `qBracket_add`.
+- **Gap 2 (3 defs): RESOLVED — 2 balanced duplicates + 1 distinct standard.**
+  Verified bit-for-bit (numeric + algebra): `GaugeFieldFluidDynamics.qBinomial`
+  **≡** the canonical balanced `QPartitionCombinatorics.qBinom` (`qInteger ≡
+  qBracket`); `QPochhammer.qBinomial` is the **standard** `(q;q)` form — a
+  *different* normalization (`[2;1] = q+q⁻¹` balanced vs `1+q` standard), NOT a
+  duplicate. Consolidation = canonical designation on `qBinom`, deprecation note
+  on the Gauge duplicate, distinctness note on the Pochhammer standard (doc-only,
+  no consumer breakage).
+- **Concrete Rogers–Szegő: DEFINED, with the instantiation blocker pinned.**
+  `rogersSzego q t n = Σ_k qBinom·tᵏ` + `H_0=1`, `H_1=1+t`,
+  `H_2=1+(q+q⁻¹)t+t²` (balanced). It does **NOT** instantiate the standard
+  `FollowsRogersSzego` (#2800): the balanced q-Pascal's `q^{±}` factors give a
+  *scaled-argument* q-difference relation, not the standard `(1−qⁿ)` 3-term.
+  Instantiating the standard class needs the **standard** q-Pascal (for
+  `QPochhammer.qBinomial`) — the genuine remaining `5ldf` follow-on.
