@@ -72,7 +72,7 @@ Both are genuine **compute-infra gaps**, not Lean edits:
 | `Helium3Witness` `dual_obj` placeholder | 95jh | partial | as above |
 | `TritiumWitness` placeholder | 95jh | no | H_5 Hoefsmit Python port (§2) |
 | `DeuteronWitness` placeholder | 95jh | no | multi-term cost re-run (§2) |
-| `QBetaPerBlockChiClosedForms` order-3..7 Taylor coeffs | 95jh | **partly DONE** | order-3 *infrastructure* (`delta_tau_M_surrogate_deriv2` + its `HasDerivAt`) now formalized + verified (this branch); order-3 *value* theorem (`g'''(1) = −82/3`) + orders 4–7 remain |
+| `QBetaPerBlockChiClosedForms` order-3..7 Taylor coeffs | 95jh | **order-3 DONE** | `c₃ = −41/9` now fully proved sorry-free (`delta_tau_M_surrogate_taylor_coeff_3`, via `deriv2` + its two `HasDerivAt` lemmas + the `eventuallyEq` chain); orders 4–7 remain (one `HasDerivAt` level each) |
 | `qbeta-per-block-chi-closed-forms` (mass-endo duplicate) | mlt7 | (sibling) | same `delta_tau_M_surrogate` content; apply the same infra |
 
 ## 4. Recommendations
@@ -84,13 +84,13 @@ Both are genuine **compute-infra gaps**, not Lean edits:
 2. **Tritium / Deuteron** — keep the explicit, non-`instance` placeholders;
    they correctly signal the H_5-Hoefsmit / multi-term-cost dependencies. Close
    only when those compute tasks land.
-3. **QBeta order-3..7** — the one genuinely-formalizable item. **Order-3
-   infrastructure landed on this branch**: `delta_tau_M_surrogate_deriv2`
-   (the explicit second-derivative closed form) + `..._deriv_hasDerivAt2`
-   (q>0) + `..._deriv2_eventuallyEq`, all `lean`-direct exit 0 and
-   independently value-checked (`f''(q)` exact at q ∈ {2,3,5/2}). The
-   remaining order-3 *value* theorem (`deriv (deriv (deriv f)) 1 / 6 = −41/9`)
-   chains these three; orders 4–7 add one `HasDerivAt` level each.
+3. **QBeta order-3..7** — the one genuinely-formalizable item. **Order-3 is
+   now fully proved sorry-free on this branch**: `c₃ = −41/9`
+   (`delta_tau_M_surrogate_taylor_coeff_3 : deriv (deriv (deriv f)) 1 / 6 = −41/9`),
+   built from `delta_tau_M_surrogate_deriv2` (second-derivative closed form) +
+   `..._deriv_hasDerivAt2` (q>0) + `..._deriv2_hasDerivAt_one` (`g'''(1) = −82/3`,
+   all-numeric at q=1) + the `eventuallyEq` chain. Independently value-checked
+   (`c₃..c₇` exact vs the witness JSON). Orders 4–7 add one `HasDerivAt` level each.
 4. **SnapPy / Borromean §6** — leave; gated on producer scripts / Mathlib
    integration infra.
 
