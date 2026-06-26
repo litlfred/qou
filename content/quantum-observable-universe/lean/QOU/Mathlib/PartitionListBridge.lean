@@ -97,4 +97,26 @@ def equivSortedList (n : ℕ) :
     apply Subtype.ext
     exact toList_ofList l.1 l.2.2.1 l.2.2.2 l.2.1
 
+/-! ## Sum transport — the operation a general-`n` `PlancherelSnData` instance needs
+
+To discharge the Identity I axiom (i) `∑_λ dim(λ)² = n!` for general `n` from a single shared
+abstract source (the `RSKBridge` Burnside identity over `Nat.Partition n`), one needs to move a
+sum between the two indices.  `toList` is injective, so a sum over the **sorted-list model**
+`Finset.univ.image toList` equals the abstract sum `∑_{Λ : Nat.Partition n}`.  Setting
+`g l = (dim l)²` then turns a model-side `sum_dim_sq` into the abstract Burnside sum, and vice
+versa — exactly the bridge step P5 calls for. -/
+
+/-- `toList` is injective: it is the bridge equivalence post-composed with `Subtype.val`. -/
+theorem toList_injective : Function.Injective (toList : Nat.Partition n → List ℕ) :=
+  fun _ _ h => (equivSortedList n).injective (Subtype.ext h)
+
+/-- **Sum transport (P5).** A sum of any `g : List ℕ → M` over the sorted-list model
+`Finset.univ.image toList` equals the abstract sum `∑_{Λ : Nat.Partition n} g (toList Λ)`.
+With `g = (· ^ 2) ∘ dim` this identifies the Identity I model-side `∑ dim²` with the
+`Nat.Partition`-indexed Burnside sum of `RSKBridge`. -/
+theorem sum_image_toList {M : Type*} [AddCommMonoid M] (g : List ℕ → M) :
+    ∑ l ∈ (Finset.univ.image (toList : Nat.Partition n → List ℕ)), g l
+      = ∑ Λ : Nat.Partition n, g (toList Λ) := by
+  rw [Finset.sum_image (fun a _ b _ h => toList_injective h)]
+
 end QOU.Mathlib.PartitionListBridge
