@@ -44,7 +44,7 @@ theorem A5Irrep.firstEll_appears :
     (icosBranchingMult (A5Irrep.H.firstEll)).get! 4 = 1 ∧
     (icosBranchingMult (A5Irrep.T₂.firstEll)).get! 2 = 1 ∧
     (icosBranchingMult (A5Irrep.G.firstEll)).get! 3 = 1 := by
-  native_decide
+  decide
 
 /-- Reeb-spin Casimir at first appearance: `ℓ(ℓ+1)` (classical limit of the
     content-Casimir `μ_λ`). -/
