@@ -1,3 +1,6 @@
 import { prose } from "../../schema/builders";
 
-export default prose({ label: "sec:garside-gram-intro" });
+export default prose({
+  authorNotes: [{ kind: "status", date: "2026-06-26", body: "Draft." }],
+  label: "sec:garside-gram-intro",
+});

@@ -1,4 +1,4 @@
-_[draft]_ The examples of the previous section showed how the
+The examples of the previous section showed how the
 abstract QOU triple realises over different base rings; the
 substrate parameter $q$, the connection $\nabla$, and the Reeb
 derivation $\xi$ are now in hand as universal data. We combine

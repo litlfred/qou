@@ -1,4 +1,4 @@
-_[draft]_ The transport equation $\mathcal{D}_\nabla \psi = 0$
+The transport equation $\mathcal{D}_\nabla \psi = 0$
 selects on-shell solutions, but does not yet say what a particle
 is. We define a particle as a $q$-harmonic form, then read off
 the fermion--boson decomposition from the weight splitting,

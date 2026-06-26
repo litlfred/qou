@@ -1,3 +1,6 @@
 import { prose } from "../../schema/builders";
 
-export default prose({ label: "sec:q-gl-classical-limit-intro" });
+export default prose({
+  authorNotes: [{ kind: "status", date: "2026-06-26", body: "Draft." }],
+  label: "sec:q-gl-classical-limit-intro",
+});

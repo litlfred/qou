@@ -1,4 +1,4 @@
-_[draft]_ The previous section fixed the QOU triple
+The previous section fixed the QOU triple
 $(\mathbf{C}, A, \tau)$ and named the four axioms it satisfies.
 We now read structural consequences off those axioms without
 assuming any further analytic input. The headline is that the

@@ -1,4 +1,4 @@
-_[draft]_ The color fibration of the previous section is well-defined
+The color fibration of the previous section is well-defined
 generically, but the geometry needs a smooth bundle to support the
 spectral resolvents that follow. **Color space as spectral curve
 and spinor bundle** (rem) packages the color data as a spectral

@@ -1,4 +1,4 @@
-_[draft]_ The categorical $d_q$, $\delta_q$, $\Delta_q$, and
+The categorical $d_q$, $\delta_q$, $\Delta_q$, and
 the fermion--boson decomposition are now in hand; we read them
 through the dictionary of classical vector calculus to make their
 geometric content visible to a reader more comfortable with

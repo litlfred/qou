@@ -1,4 +1,4 @@
-_[draft]_ Self-duality controlled the gauge sector; we now ask
+Self-duality controlled the gauge sector; we now ask
 how the deformed differential $d_q$ behaves under iteration.
 The answer is that $d_q^2$ does not vanish in general, and the
 obstruction is concentrated on non-Reeb-invariant forms. The

@@ -1,4 +1,4 @@
-_[draft]_ The previous section delivered the $q$-deformed
+The previous section delivered the $q$-deformed
 operators in coordinate form on $M$; we now build heat-flow,
 Laplace, Fourier, and resolvent calculus on top of them. The
 whole package is organised around the $q$-shuffle Hopf algebra

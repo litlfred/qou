@@ -1,4 +1,4 @@
-_[draft]_ We now state the central conjecture of the chapter and the
+We now state the central conjecture of the chapter and the
 structural results that surround it. The section opens with the
 **$q$-Langlands dual group** (def) $\check{G}_q$, the deformation of
 the classical dual that absorbs the substrate parameter into the

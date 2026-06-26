@@ -1,4 +1,4 @@
-_[draft]_ With the conjecture in place, we turn to the spectral side
+With the conjecture in place, we turn to the spectral side
 and the canonical objects that realise it. The section introduces the
 **$q$-Oper** (def) — a $\check{G}_q$-bundle on $X$ equipped with a
 reduction to the Borel and a $q$-flat connection in oper position —

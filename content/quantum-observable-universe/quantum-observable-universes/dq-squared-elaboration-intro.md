@@ -1,4 +1,4 @@
-_[draft]_ The categorical $d_q^2$ obstruction was computed in
+The categorical $d_q^2$ obstruction was computed in
 the earlier core development; we now specialise it to a
 concrete manifold $M$ and explore the parallel failure of the
 Jacobi identity for the $q$-deformed Lie bracket.

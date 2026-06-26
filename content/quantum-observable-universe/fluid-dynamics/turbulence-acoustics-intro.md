@@ -1,4 +1,4 @@
-_[draft]_ With the vortex spectrum and helicity invariant in hand,
+With the vortex spectrum and helicity invariant in hand,
 we treat collective behaviour: how the discrete modes assemble into
 turbulent tangles and how perturbations propagate on the brane
 fluid as acoustic excitations.

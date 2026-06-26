@@ -1,4 +1,4 @@
-_[draft]_ The deformed operators of the previous sections have
+The deformed operators of the previous sections have
 direct physical readings; we collect the four that the rest of
 the paper will refer back to. **$q$-torsion leaves as $q$-curvature
 minima** (rem) characterises a $q$-torsion leaf as a local

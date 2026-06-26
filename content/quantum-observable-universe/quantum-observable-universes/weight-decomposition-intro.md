@@ -1,4 +1,4 @@
-_[draft]_ With $G \cong \mathrm{SU}(2)$ in hand and the simple
+With $G \cong \mathrm{SU}(2)$ in hand and the simple
 objects $V_j$ labelled by spin, we now isolate the rank-one
 subgroup $T \subset G$ that diagonalises the action of every
 $V_j$ and read off the resulting decomposition of differential

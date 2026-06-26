@@ -1,4 +1,4 @@
-_[draft]_ The atomic and nuclear spectra of the previous sections
+The atomic and nuclear spectra of the previous sections
 are all consequences of one structural choice: $\chi(A) = -6$. The
 Descartes theorem turns that observation into a uniqueness statement.
 **Descartes theorem** (thm) is the load-bearing claim of the

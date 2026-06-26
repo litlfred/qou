@@ -1,4 +1,4 @@
-_[draft]_ We set up the geometric objects on which the rest of the
+We set up the geometric objects on which the rest of the
 chapter operates. The section introduces the **$q$-Local system** (def)
 on a brane curve $X$, together with the **$q$-Flat connection** (def)
 that supplies its $q$-holonomy residue. Two interpretive remarks track

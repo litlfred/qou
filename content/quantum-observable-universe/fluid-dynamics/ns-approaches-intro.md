@@ -1,4 +1,4 @@
-_[draft]_ The NS obstruction places the classical Navier--Stokes
+The NS obstruction places the classical Navier--Stokes
 regularity question inside a one-parameter family of well-posed
 $q$-deformed equations. We collect the conjectures, partial
 results, and proof strategies that organise the degeneration at
