@@ -15,6 +15,7 @@ honestly bound the research-grade walls. Tiered breakdown in bean epic
 | 2026-06-25 | #2801 | `gbDepth` (max `hookLength`) + tiered epic `08a2` | merged | `gbDepth`/`hookLength` on `YoungDiagram` |
 | 2026-06-25 | #2803 | `JointGalois`→`Equiv.Perm` + jet/AlphaK→`QPlancherel` | merged | `jetWedderburnWeight`/`_nonneg`, `Equiv.Perm` braid wire |
 | 2026-06-25 | #2807 | Gaussian binomial `qBinom` + 4 proved lemmas | merged | `qBinom` + lemmas in `QPartitionCombinatorics` |
+| 2026-06-26 | #2817 | `qBracket_add` `[a+b]=q^b[a]+q^{-a}[b]` + if-guard removal | open | `qBracket_add`/`qBracket_eq_formula` (q-Pascal primitive) |
 
 ## Tiered status (epic `08a2`)
 
@@ -53,3 +54,25 @@ honestly bound the research-grade walls. Tiered breakdown in bean epic
 - **main** `KnotRegistry` / photon-as-4-term-Hecke-element / 6-dim operator
   basis (72c2308b, 6ecfd1a2): knot+Hecke infra landing — Tier-3 Jones
   building blocks; fold in if/when `60iz` proceeds.
+
+## Coordination findings (2026-06-26, `5ldf` follow-on — #2817)
+
+- **`5ldf` was marked Tier-2 DONE, but two gaps remained** (not a reframing
+  of #2807 — a follow-on):
+  1. **No q-Pascal primitive.** `qBinom` shipped with only `zero`/`self`/
+     `symm`/`pos`; the recurrence `[n+1;k] = …` (needed for the Rogers–Szegő /
+     continuous q-Hermite three-term recurrence, the concrete instantiation of
+     `QOU.Mass.BindingQHermiteOscillator.FollowsRogersSzego` from #2800) was
+     unreachable. #2817 adds the **balanced addition identity**
+     `qBracket_add : [a+b]_q = q^b·[a]_q + q^{-a}·[b]_q` (the relation behind
+     q-Pascal) + `qBracket_eq_formula` (if-guard removal). lean-direct exit 0.
+  2. **Three parallel q-binomial defs still live** — a genuine consolidation
+     gap (#2807's "no duplication" only audited its own module):
+     `QPartitionCombinatorics.qBinom (q n k)` (canonical),
+     `Machinery/QPochhammer.qBinomial (n k q)`,
+     `GaugeFieldFluidDynamics.qBinomial (q n k)`. Low-priority but real
+     `5ldf` residue: pick the `QPartitionCombinatorics` canonical and
+     `uses[]`/alias the other two (separate follow-on, not in #2817 scope).
+- **No open sibling overlaps #2817** (its predecessor #2807 is merged; nobody
+  else is touching `QPartitionCombinatorics`'s `qBracket`). No intent comments
+  posted — clean follow-on infra.
