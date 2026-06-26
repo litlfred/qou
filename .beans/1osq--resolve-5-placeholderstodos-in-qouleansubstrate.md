@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-06-22T02:25:51Z
-updated_at: 2026-06-25T17:05:00Z
+updated_at: 2026-06-26T03:10:18Z
 ---
 
 
@@ -16,3 +16,7 @@ resweep 2026-06-22: honest counter = 1 actionable (claimed 5) via scripts/count-
 resweep 2026-06-23 (#2637): honest actionable = 1 (claimed 5): ProtonMassSubstrateIdentity (1 sorry). See docs/audits/2026-06-23-placeholder-bean-resweep.md.
 
 resweep 2026-06-25 (count-actionable-placeholders.ts, #2796 session): 0 uncited / missing-proof sorries — every `sorry` in scope is §3b-cited (intentional conjecture) or `-- Ref:`-cited. Honest actionable = 0 (claimed 5): ProtonMassSubstrateIdentity's last sorry is now `opaque F_Bor`; QOU/Substrate is sorry-free. FULLY DRAINED — recommend close.
+
+
+
+[2026-06-26 VERIFIED STALE] Substrate has 0 actionable sorries — all 3 naive grep hits are 'sorry-free' docstrings (MuOverDetermination/ColorAntisymmetric are sorry-free). Recommend CLOSE. Audit: docs/audits/2026-06-26-lean-placeholder-bean-grep-inflation.md
