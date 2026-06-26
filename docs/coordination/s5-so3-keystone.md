@@ -97,6 +97,17 @@ is its *geometric origin*.
    no knowledge of the #2517 record (it was 475 commits stale). Two agents re-walking the same dead end within
    one day is exactly the recurrence the canonical-no-negative-result discipline exists to stop; treat this item
    as high-priority inoculation, not a one-off footnote.
+5. **Finite-colour Schur–Weyl *multiplicity* → `W_λ`** — refuted 2026-06-22 (PR #2608). After the #2603
+   colour-resolution and the #2604 SU(2) row-count split, the tempting next step is "use a higher colour
+   ℂ³/ℂ^d Schur–Weyl weighting to land the Plancherel `W_λ`." Foreclosed for **all** `d`: the gl_d
+   colour-multiplicity `m_d(λ) = #SSYT(λ,≤d)` (i) has support `{rows≤d}`, missing `W_λ`'s 4-/5-row blocks
+   for `d<5`, and (ii) is strongly conjugation-**asymmetric** (`m₅(5)=126` vs `m₅(1⁵)=1`) while
+   `W_λ = W_{λ'}` — so no `d` makes it match. `W_λ` is the **symmetric-pairing** (`d_q²`, `d→∞` full
+   Hecke) measure, the production/principal-spec `y_λ` is the colour-multiplicity side; the colour functor
+   lands the *wrong weight system*. Inoculation: do not re-attempt a finite-colour-multiplicity → `W_λ`
+   map. A colored-WRT-*invariant* route (#2604) is not refuted but is **constrained** — it must reproduce
+   the conjugation-symmetric Plancherel measure. Audits:
+   [`2026-06-22-keystone-wrt-schurweyl-{plancherel-4count,higher-colour-foreclosure}.md`](../audits/2026-06-22-keystone-wrt-schurweyl-higher-colour-foreclosure.md).
 
 ## Sessions log
 
