@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
 
 /-!
 # QOU.BraidsAndKnots.QSchurYLambdaClosedForm
@@ -86,17 +87,22 @@ confirms this numerically against `pn.trace_weights_n_q_schur(2, q)`.
 namespace QOU.BraidsAndKnots
 
 /-- Row contribution to content sum for a row of length `row` starting at
-    row-index `i`: `Σ_{j=0}^{row-1} (j - i)`. -/
-def rowContentSum (row : ℕ) (i : ℕ) : ℤ :=
-  (Finset.range row).sum (fun j => (j : ℤ) - (i : ℤ))
+    row-index `i`: `Σ_{j=0}^{row-1} (j - i)`.
+
+    Defined by structural recursion on `row` (rather than `Finset.range`)
+    so that closed evaluations `rowContentSum r i` reduce in the kernel —
+    used by the `decide` proofs of the H_2 / H_3 content sums below. -/
+def rowContentSum : ℕ → ℕ → ℤ
+  | 0, _ => 0
+  | (row + 1), i => rowContentSum row i + ((row : ℤ) - (i : ℤ))
 
 /-- Content sum `c(λ) = Σ_{(i,j) ∈ λ} (j − i)` for a partition `λ`
     represented as a list of row lengths.
 
     Row index `i` (0-based) and column index `j` (0-based); each cell
     `(i, j)` contributes `j - i` to the sum. -/
-def contentSum (λ : List ℕ) : ℤ :=
-  go λ 0
+def contentSum (lam : List ℕ) : ℤ :=
+  go lam 0
 where
   go : List ℕ → ℕ → ℤ
   | [], _ => 0
@@ -111,8 +117,8 @@ where
     - `[2]_q = q + q⁻¹`
     - `[n]_q = q^{n-1} + q^{n-3} + ... + q^{-(n-1)}` (n terms) -/
 noncomputable def qBracket (k : ℕ) (q : ℝ) : ℝ :=
-  if h : q - q⁻¹ = 0 then 0
-  else (q ^ k - q ^ (-(k : ℤ))) / (q - q⁻¹)
+  if _h : q - q⁻¹ = 0 then 0
+  else (q ^ (k : ℤ) - q ^ (-(k : ℤ))) / (q - q⁻¹)
 
 /-- q-factorial `[n]_q! = Π_{k=1}^{n} [k]_q`. At `n = 0` returns 1. -/
 noncomputable def qFactorial : ℕ → ℝ → ℝ
@@ -121,8 +127,8 @@ noncomputable def qFactorial : ℕ → ℝ → ℝ
 
 /-- q-Schur Plancherel weight closed form: `y_λ(q) = q^{c(λ)} / [n]_q!`
     where `n = |λ|` is the partition size. -/
-noncomputable def ySchurClosedForm (λ : List ℕ) (q : ℝ) : ℝ :=
-  q ^ (contentSum λ) / qFactorial λ.sum q
+noncomputable def ySchurClosedForm (lam : List ℕ) (q : ℝ) : ℝ :=
+  q ^ (contentSum lam) / qFactorial lam.sum q
 
 /-- **Conjecture (axiomatised as class per AGENTS.md §3b-cond)**.
 
@@ -157,14 +163,60 @@ class QSchurYLambdaClosedFormClaim where
       every valid q. Equivalent to the Lusztig 1990 / BLM identity
       `y_λ^{qSchur}(q) = q^{c(λ)} / [n]_q!`. Any instance of this
       class commits to this extensional identification. -/
-  closed_form_holds : ∀ λ q, ySchurClosedForm λ q = qSchurWeight λ q
+  closed_form_holds : ∀ lam q, ySchurClosedForm lam q = qSchurWeight lam q
+
+/-! ## q-bracket and q-factorial closed-form values
+
+The H_2 / H_3 identities below are cleanest when the `qBracket` /
+`qFactorial` denominators are first reduced to their closed forms.
+These value lemmas isolate the `field_simp + ring` work onto a single
+bracket at a time (mirrors `YLambdaQSchur.qInt_two_eq_q_plus_q_inv`),
+so the downstream theorems are pure rewrites. -/
+
+/-- **`[1]_q = 1`** (for valid `q`, i.e. `q − q⁻¹ ≠ 0`). -/
+theorem qBracket_one (q : ℝ) (h2 : q - q⁻¹ ≠ 0) : qBracket 1 q = 1 := by
+  unfold qBracket
+  rw [dif_neg h2]
+  norm_num
+  exact div_self h2
+
+/-- **`[2]_q = q + q⁻¹`**. -/
+theorem qBracket_two (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
+    qBracket 2 q = q + q⁻¹ := by
+  unfold qBracket
+  rw [dif_neg h2, div_eq_iff h2]
+  simp only [zpow_neg, zpow_natCast]
+  field_simp
+  ring
+
+/-- **`[3]_q = q² + 1 + q⁻²`** — difference of cubes over `q − q⁻¹`. -/
+theorem qBracket_three (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
+    qBracket 3 q = q ^ 2 + 1 + (q⁻¹) ^ 2 := by
+  unfold qBracket
+  rw [dif_neg h2, div_eq_iff h2]
+  simp only [zpow_neg, zpow_natCast]
+  field_simp
+  ring
+
+/-- **`[2]_q! = q + q⁻¹`** (`= [2]_q · [1]_q`). -/
+theorem qFactorial_two (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
+    qFactorial 2 q = q + q⁻¹ := by
+  show qBracket 2 q * (qBracket 1 q * 1) = q + q⁻¹
+  rw [qBracket_one q h2, qBracket_two q hq h2]
+  ring
+
+/-- **`[3]_q! = (q² + 1 + q⁻²)(q + q⁻¹)`** (`= [3]_q · [2]_q!`). -/
+theorem qFactorial_three (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
+    qFactorial 3 q = (q ^ 2 + 1 + (q⁻¹) ^ 2) * (q + q⁻¹) := by
+  show qBracket 3 q * qFactorial 2 q = (q ^ 2 + 1 + (q⁻¹) ^ 2) * (q + q⁻¹)
+  rw [qBracket_three q hq h2, qFactorial_two q hq h2]
 
 /-! ## H_2 explicit identities
 
 The audit `docs/audits/2026-05-25-markov-trace-convention-audit.md`
 verifies these at H_2 numerically. The Lean theorems below discharge
-the algebraic identities sorry-free via the numerical-simplification
-chain `qFactorial + qBracket + field_simp + ring`.
+the algebraic identities sorry-free via the `qFactorial`/`qBracket`
+value lemmas above plus a single `zpow` reduction of the numerator.
 -/
 
 /-- **H_2 case for `(2)`**: `y_(2)(q) = q / (q + q⁻¹)`. -/
@@ -173,16 +225,7 @@ theorem qSchur_H2_top (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
   unfold ySchurClosedForm
   have hc : contentSum [2] = 1 := by decide
   have hs : ([2] : List ℕ).sum = 2 := by decide
-  rw [hc, hs]
-  have hsum_ne : q + q⁻¹ ≠ 0 := by
-    intro heq
-    have : q * (q + q⁻¹) = 0 := by rw [heq]; ring
-    rw [mul_add, mul_inv_cancel₀ hq] at this
-    have hsq : 0 ≤ q * q := mul_self_nonneg q
-    linarith
-  simp only [qFactorial, qBracket, dif_neg h2]
-  field_simp [hsum_ne]
-  ring
+  rw [hc, hs, qFactorial_two q hq h2, zpow_one]
 
 /-- **H_2 case for `(1,1)`**: `y_{(1,1)}(q) = q⁻¹ / (q + q⁻¹)`. -/
 theorem qSchur_H2_bottom (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
@@ -190,16 +233,8 @@ theorem qSchur_H2_bottom (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
   unfold ySchurClosedForm
   have hc : contentSum [1, 1] = -1 := by decide
   have hs : ([1, 1] : List ℕ).sum = 2 := by decide
-  rw [hc, hs]
-  have hsum_ne : q + q⁻¹ ≠ 0 := by
-    intro heq
-    have : q * (q + q⁻¹) = 0 := by rw [heq]; ring
-    rw [mul_add, mul_inv_cancel₀ hq] at this
-    have hsq : 0 ≤ q * q := mul_self_nonneg q
-    linarith
-  simp only [qFactorial, qBracket, dif_neg h2]
-  field_simp [hsum_ne]
-  ring
+  rw [hc, hs, qFactorial_two q hq h2]
+  simp only [zpow_neg, zpow_one]
 
 /-- **H_2 Plancherel normalization**: `y_(2)(q) + y_{(1,1)}(q) = 1`. -/
 theorem qSchur_H2_normalization (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
@@ -264,9 +299,11 @@ theorem qSchur_H3_top (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
   unfold ySchurClosedForm
   have hc : contentSum [3] = 3 := by decide
   have hs : ([3] : List ℕ).sum = 3 := by decide
-  rw [hc, hs]
-  simp only [qFactorial, qBracket, dif_neg h2]
-  field_simp [q_add_inv_ne_zero hq, q_sq_add_one_add_inv_sq_ne_zero q]
+  rw [hc, hs, qFactorial_three q hq h2, show (3 : ℤ) = ((3 : ℕ) : ℤ) from rfl,
+    zpow_natCast]
+  rw [div_eq_div_iff
+    (mul_ne_zero (q_sq_add_one_add_inv_sq_ne_zero q) (q_add_inv_ne_zero hq))
+    (mul_ne_zero (q_add_inv_ne_zero hq) (q_sq_add_one_add_inv_sq_ne_zero q))]
   ring
 
 /-- **H_3 case for `(2,1)`**: `y_{(2,1)}(q) = 1 / ((q + q⁻¹)(q^2 + 1 + q⁻²))`. -/
@@ -275,9 +312,10 @@ theorem qSchur_H3_mid (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
   unfold ySchurClosedForm
   have hc : contentSum [2, 1] = 0 := by decide
   have hs : ([2, 1] : List ℕ).sum = 3 := by decide
-  rw [hc, hs]
-  simp only [qFactorial, qBracket, dif_neg h2]
-  field_simp [q_add_inv_ne_zero hq, q_sq_add_one_add_inv_sq_ne_zero q]
+  rw [hc, hs, qFactorial_three q hq h2, zpow_zero]
+  rw [div_eq_div_iff
+    (mul_ne_zero (q_sq_add_one_add_inv_sq_ne_zero q) (q_add_inv_ne_zero hq))
+    (mul_ne_zero (q_add_inv_ne_zero hq) (q_sq_add_one_add_inv_sq_ne_zero q))]
   ring
 
 /-- **H_3 case for `(1,1,1)`**: `y_{(1,1,1)}(q) = (q⁻¹)^3 / ((q + q⁻¹)(q^2 + 1 + q⁻²))`. -/
@@ -286,9 +324,11 @@ theorem qSchur_H3_bottom (q : ℝ) (hq : q ≠ 0) (h2 : q - q⁻¹ ≠ 0) :
   unfold ySchurClosedForm
   have hc : contentSum [1, 1, 1] = -3 := by decide
   have hs : ([1, 1, 1] : List ℕ).sum = 3 := by decide
-  rw [hc, hs]
-  simp only [qFactorial, qBracket, dif_neg h2]
-  field_simp [q_add_inv_ne_zero hq, q_sq_add_one_add_inv_sq_ne_zero q]
+  rw [hc, hs, qFactorial_three q hq h2,
+    show (-3 : ℤ) = -((3 : ℕ) : ℤ) from rfl, zpow_neg, zpow_natCast]
+  rw [div_eq_div_iff
+    (mul_ne_zero (q_sq_add_one_add_inv_sq_ne_zero q) (q_add_inv_ne_zero hq))
+    (mul_ne_zero (q_add_inv_ne_zero hq) (q_sq_add_one_add_inv_sq_ne_zero q))]
   ring
 
 end QOU.BraidsAndKnots
