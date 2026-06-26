@@ -195,7 +195,7 @@ $(Q, z_{\mathrm{GL}}) = (q^2, q \cdot z)$ is recorded at two layers:
 
 1. **`wenzl_bridge_unique_definitional q`** — `rfl`-discharge of the
    convention iso definitions: `wenzlQ q = q^2` and `wenzlZ q = q
-   \cdot \mathrm{jonesMarkovZ}\,q$ are forced by the eigenvalue
+   \cdot \mathrm{jonesMarkovZ}\,q` are forced by the eigenvalue
    transport `(q, -q^{-1}) \mapsto (q^2, -1)` and the Markov-axiom
    transport `\mathrm{tr}(x \cdot \sigma_n) = z \cdot \mathrm{tr}(x)
    \mapsto \mathrm{tr}(x \cdot g_n) = (q \cdot z) \cdot \mathrm{tr}(x)`.
