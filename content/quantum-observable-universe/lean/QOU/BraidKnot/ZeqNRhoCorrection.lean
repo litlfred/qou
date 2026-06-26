@@ -1,5 +1,5 @@
 import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.GroupPower.Basic
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.BraidKnot.ZeqNRhoCorrection
