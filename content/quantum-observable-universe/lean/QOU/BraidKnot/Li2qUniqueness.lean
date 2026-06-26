@@ -1,7 +1,7 @@
 import Mathlib.Tactic
-import Mathlib.Algebra.BigOperators.Group.Finset
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.MeasureTheory.Integral.IntervalIntegral
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
 /-!
 # QOU.BraidKnot.Li2qUniqueness
@@ -36,7 +36,9 @@ noncomputable def li2qTrunc (q : ℝ) (z : ℝ) (N : ℕ) : ℝ :=
 /-- **THEOREM.** Li₂^q(0) = 0 (initial condition). -/
 theorem li2q_at_zero (q : ℝ) (N : ℕ) : li2qTrunc q 0 N = 0 := by
   unfold li2qTrunc
-  simp [zero_pow]
+  apply Finset.sum_eq_zero
+  intro n _
+  by_cases h : n = 0 <;> simp [h, zero_pow]
 
 /-- **THEOREM.** Termwise derivative: d/dz [z^n/(n·[n]_q)] = z^{n-1}/[n]_q. -/
 theorem li2q_deriv_term (q : ℝ) (z : ℝ) (n : ℕ) (hn : n ≥ 1)
@@ -44,7 +46,6 @@ theorem li2q_deriv_term (q : ℝ) (z : ℝ) (n : ℕ) (hn : n ≥ 1)
     (n : ℝ) * (z ^ (n - 1) / ((n : ℝ) * symQInt q n))
     = z ^ (n - 1) / symQInt q n := by
   field_simp
-  ring
 
 /-- **THEOREM (Briggs-Klein = negated Li₂^q via FTC).**
 
