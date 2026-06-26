@@ -143,7 +143,7 @@ def perPartitionTowerSigned (lamDom : Partition) : ℝ :=
 theorem he3_per_partition_tower_magnitude_bounded :
     |perPartitionTowerSigned he3DominantPartition| < 2 := by
   unfold perPartitionTowerSigned he3DominantPartition
-    domContribK1 domContribK2 nonDomSumK2
+    domContribK1 nonDomSumK2
   -- Goal: |(-0.028) + 1.094| < 2
   -- = |1.066| = 1.066 < 2 ✓
   norm_num [abs_lt]
@@ -154,7 +154,7 @@ theorem he3_per_partition_tower_magnitude_bounded :
 theorem deuteron_per_partition_tower_magnitude_bounded :
     |perPartitionTowerSigned deuteronDominantPartition| < 2 := by
   unfold perPartitionTowerSigned deuteronDominantPartition
-    domContribK1 domContribK2 nonDomSumK2
+    domContribK1 nonDomSumK2
   -- Goal: |0.0 + 0.876| < 2 = 0.876 < 2 ✓
   norm_num [abs_lt]
 
@@ -164,7 +164,7 @@ theorem deuteron_per_partition_tower_magnitude_bounded :
 theorem tritium_per_partition_tower_magnitude_bounded :
     |perPartitionTowerSigned tritiumDominantPartition| < 2 := by
   unfold perPartitionTowerSigned tritiumDominantPartition
-    domContribK1 domContribK2 nonDomSumK2
+    domContribK1 nonDomSumK2
   -- Goal: |0.050 + (-1.987)| < 2 = |-1.937| = 1.937 < 2 ✓
   norm_num [abs_lt]
 
@@ -210,9 +210,11 @@ theorem open_per_partition_witnessed_empirically :
   -- a SUBSTRATE-DERIVABLE selector; the trivial witness here
   -- ratifies the structural shape only.
   refine ⟨fun _ => false, ?_⟩
-  intro lamDom h_mem
-  simp [List.mem_cons] at h_mem
-  rcases h_mem with rfl | rfl | rfl
+  -- The conjecture body opens with `let rule := …`, so the first
+  -- `intro` binds that let; then the ∀-partition and its membership.
+  intro _rule lamDom h_mem
+  simp only [List.mem_cons, List.not_mem_nil, or_false] at h_mem
+  obtain rfl | rfl | rfl := h_mem
   · exact deuteron_per_partition_tower_magnitude_bounded
   · exact tritium_per_partition_tower_magnitude_bounded
   · exact he3_per_partition_tower_magnitude_bounded
