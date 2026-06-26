@@ -137,7 +137,6 @@ type Category =
   // term to inspect. These four close that gap.
   | "proof-no-empty-prop-carrier"
   | "proof-claims-unencoded"
-  | "proof-conjecture-unclassified"
   | "proof-dependent-conjecture-not-conditional";
 
 const ALL_CATEGORIES: Category[] = [
@@ -151,7 +150,6 @@ const ALL_CATEGORIES: Category[] = [
   "lean-import-after-content",
   "proof-no-empty-prop-carrier",
   "proof-claims-unencoded",
-  "proof-conjecture-unclassified",
   "proof-dependent-conjecture-not-conditional",
 ];
 
@@ -174,7 +172,6 @@ const SEVERITY: Record<Category, "critical" | "major" | "minor"> = {
   // and unclassified findings are high-recall candidates → major.
   "proof-no-empty-prop-carrier": "critical",
   "proof-claims-unencoded": "major",
-  "proof-conjecture-unclassified": "major",
   "proof-dependent-conjecture-not-conditional": "critical",
 };
 
@@ -775,16 +772,24 @@ function docBlockAbove(origLines: string[], declIdx0: number): string {
   return collected.join("\n");
 }
 
-/** True when the decl carries a conjecture label/citation — a
- * `\label{conj:…}`, a `conj:` reference, or explicit "conjecture" /
- * "axiomatis(e)" prose in its doc block. These are the §3b carriers. */
+/** True when the decl is itself a §3b conjecture carrier — a strong
+ * signal that the *class* axiomatises a conjecture, not merely that its
+ * prose mentions one. We require a `conj:` label/reference or explicit
+ * "axiomatis(e)" wording; a bare "conjecture"/"conjectural" word in the
+ * prose is NOT enough (it flags definitions that merely discuss a
+ * conjecture, e.g. a `def:`-labelled substrate). A `def:`-labelled
+ * carrier with no `conj:` self-reference is a definition, not a
+ * conjecture, and is excluded. */
 function isConjectureCarrier(doc: string): boolean {
-  return (
-    /conj:[a-z0-9-]+/i.test(doc) ||
-    /\\label\{conj:/i.test(doc) ||
-    /\bconjectur/i.test(doc) ||
-    /axiomatis/i.test(doc)
-  );
+  const hasConjRef = /conj:[a-z0-9-]+/i.test(doc) || /\\label\{conj:/i.test(doc);
+  const axiomatises = /axiomatis/i.test(doc);
+  if (!hasConjRef && !axiomatises) return false;
+  // A `def:`-labelled carrier that only *references* a conjecture (no
+  // `conj:` self-label, no axiomatisation) is a definition — exclude.
+  const ownDefLabel = /\\label\{def:/i.test(doc) || /\bdef:[a-z0-9-]+/i.test(doc);
+  const ownConjLabel = /\\label\{conj:/i.test(doc);
+  if (ownDefLabel && !ownConjLabel && !axiomatises) return false;
+  return true;
 }
 
 /** A field type that encodes an actual proposition (quantifier / relation /
@@ -798,7 +803,6 @@ function isPropBearingType(type: string): boolean {
 }
 
 const MARKER_OPT_OUT = /@marker\b|opaque\s+(tag|marker|predicate)/i;
-const CLASSIFY_RE = /@conjecture[:\s]+(primary|dependent)\b/i;
 
 function detectEmptyPropCarrier(
   d: Decl,
@@ -852,38 +856,130 @@ function detectClaimsUnencoded(d: Decl, doc: string): Hit | undefined {
   return h;
 }
 
-function detectConjectureUnclassified(d: Decl, doc: string): Hit | undefined {
-  // Conjectures are axiomatised as Lean `class`es (§3b). A Type-sorted
-  // data `structure` that merely *mentions* a conjecture in its
-  // docstring is a definition, not a carrier — exclude it.
-  const isCarrierKind =
-    d.kind === "class" || (d.kind === "structure" && declSort(d) === "Prop");
-  if (!isCarrierKind) return undefined;
-  if (!isConjectureCarrier(doc)) return undefined;
-  if (CLASSIFY_RE.test(doc)) return undefined; // already primary/dependent
-  return mk(d, "proof-conjecture-unclassified", "missing-primary-dependent", false);
+// ── Derived primary/dependent classification (no hand tags) ────────────
+// A dependent conjecture takes its primary as an `[Instance]` (or other
+// binder / `extends`) hypothesis — the §3b-cond pattern. That edge is
+// already in the Lean type, so the primary-vs-dependent split is a graph
+// computation over signatures, not something an author must tag.
+// `classifyConjectures` does a global two-pass: (1) collect every
+// conjecture carrier (`conj:` label / axiomatises), (2) read instance
+// binders to build the dependency graph. Primary = no conjecture
+// hypothesis; dependent = ≥1. The only emitted *defect* is the genuine
+// unsound case: prose that explicitly claims conditionality on `conj:Y`
+// while the type binds no such class.
+
+interface ConjCarrier {
+  name: string;
+  file: string;
+  line: number;
+  sig: string;
+  doc: string;
+  ownLabels: string[];
 }
 
-function detectDependentNotConditional(d: Decl, doc: string): Hit | undefined {
-  if (d.kind !== "class" && d.kind !== "structure") return undefined;
-  const m = doc.match(CLASSIFY_RE);
-  if (!m || m[1].toLowerCase() !== "dependent") return undefined;
-  // A dependent conjecture must be conditional on its primary: the carrier
-  // must take the primary as an `[Instance]` hypothesis, `extends` it, or
-  // bind it as a parameter. With none of these it is stated unconditionally.
-  const conditional =
-    /\[[^\]]+\]/.test(d.sig) || // instance-implicit binder
-    declExtends(d) ||
-    // explicit `(…)`, implicit `{…}`, or strict-implicit `⦃…⦄` binder
-    // carrying a capitalised (class/type) hypothesis on the primary.
-    /[({⦃]\s*\w[\w']*\s*:\s*[A-Z][\w'.]*\b/.test(d.sig);
-  if (conditional) return undefined;
-  return mk(
-    d,
-    "proof-dependent-conjecture-not-conditional",
-    "dependent-stated-unconditionally",
-    false,
-  );
+interface ConjGraph {
+  total: number;
+  primary: string[];
+  dependent: { name: string; file: string; line: number; dependsOn: string[] }[];
+}
+
+/** conj: labels this carrier *declares* as its own (`\label{conj:X}`). */
+function ownConjLabels(doc: string): string[] {
+  const out = new Set<string>();
+  for (const m of doc.matchAll(/\\label\{conj:([a-z0-9-]+)\}/gi))
+    out.add(m[1].toLowerCase());
+  return [...out];
+}
+
+/** Conjecture-class names referenced in `sig`'s binders — instance `[…]`,
+ * implicit `{…}`, strict-implicit `⦃…⦄`, or `extends …` — restricted to
+ * the known carrier `names`. */
+function bindersReferencing(sig: string, names: Set<string>): string[] {
+  const found = new Set<string>();
+  for (const m of sig.matchAll(/[[{⦃]([^\]}⦄]*)[\]}⦄]/g))
+    for (const w of m[1].split(/[^A-Za-z0-9_'.]+/))
+      if (names.has(w)) found.add(w);
+  for (const m of sig.matchAll(/\bextends\s+([A-Z][\w'.]*)/g))
+    if (names.has(m[1])) found.add(m[1]);
+  return [...found];
+}
+
+function classifyConjectures(files: string[]): {
+  graph: ConjGraph;
+  hitsByFile: Map<string, Hit[]>;
+} {
+  const carriers: ConjCarrier[] = [];
+  for (const f of files) {
+    let src: string;
+    try {
+      src = readFileSync(f, "utf-8");
+    } catch {
+      continue;
+    }
+    const orig = src.split("\n");
+    const code = stripCommentLines(src);
+    for (const d of splitDecls(orig, code)) {
+      if (d.kind !== "class" && !(d.kind === "structure" && declSort(d) === "Prop"))
+        continue;
+      const doc = docBlockAbove(orig, d.startLine - 1);
+      if (!isConjectureCarrier(doc)) continue;
+      carriers.push({
+        name: d.name,
+        file: relative(REPO_ROOT, f),
+        line: d.startLine,
+        sig: d.sig,
+        doc,
+        ownLabels: ownConjLabels(doc),
+      });
+    }
+  }
+  const names = new Set(carriers.map((c) => c.name));
+  const labelToName = new Map<string, string>();
+  for (const c of carriers)
+    for (const l of c.ownLabels) if (!labelToName.has(l)) labelToName.set(l, c.name);
+
+  const primary: string[] = [];
+  const dependent: ConjGraph["dependent"] = [];
+  const hitsByFile = new Map<string, Hit[]>();
+
+  for (const c of carriers) {
+    const edges = bindersReferencing(c.sig, names).filter((n) => n !== c.name);
+    if (edges.length > 0)
+      dependent.push({ name: c.name, file: c.file, line: c.line, dependsOn: edges });
+    else primary.push(c.name);
+
+    // Derived defect: the doc *explicitly* claims conditionality on a
+    // `conj:Y` (another carrier) yet the type binds no such class. This is
+    // the intent-vs-type mismatch — a result that reads as conditional but
+    // is stated unconditionally. Plain prose mentions are NOT flagged.
+    const claimed = [
+      ...c.doc.matchAll(
+        /(?:conditional on|assuming|given|depends on|modulo)\s+[[`]?\s*conj:([a-z0-9-]+)/gi,
+      ),
+    ].map((m) => m[1].toLowerCase());
+    const unmet = claimed
+      .filter((l) => !c.ownLabels.includes(l))
+      .map((l) => labelToName.get(l))
+      .filter((n): n is string => !!n && n !== c.name && !edges.includes(n));
+    if (unmet.length > 0) {
+      const abs = resolve(REPO_ROOT, c.file);
+      const hit: Hit = {
+        line: c.line,
+        category: "proof-dependent-conjecture-not-conditional",
+        pattern: "prose-conditional-not-in-type",
+        snippet: c.name,
+        decl: c.name,
+        severity: SEVERITY["proof-dependent-conjecture-not-conditional"],
+        detail: `doc claims conditionality on ${unmet
+          .map((n) => `\`${n}\``)
+          .join(", ")} but the signature takes no binder on it`,
+      };
+      const arr = hitsByFile.get(abs) ?? [];
+      arr.push(hit);
+      hitsByFile.set(abs, arr);
+    }
+  }
+  return { graph: { total: carriers.length, primary: primary.sort(), dependent }, hitsByFile };
 }
 
 // ── Compile-validity detectors (guaranteed Lean errors, not heuristics) ──
@@ -984,13 +1080,14 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     push(detectFalsePremise(d));
     push(detectProvableAxiom(d, origLines));
     push(detectTrivialTypeMismatch(d));
-    // Conjecture-discipline detectors operate on the `class`/`structure`
-    // carrier + its raw doc block (markdown + `-- @conjecture` annotation).
+    // Conjecture-discipline *content* detectors operate on the
+    // `class`/`structure` carrier + its raw doc block. The primary-vs-
+    // dependent classification is NOT a per-file check — it is derived
+    // globally from instance binders in `classifyConjectures` (the
+    // dependency is already in the Lean type; no hand tag is needed).
     const doc = docBlockAbove(origLines, d.startLine - 1);
     push(detectEmptyPropCarrier(d, doc));
     push(detectClaimsUnencoded(d, doc));
-    push(detectConjectureUnclassified(d, doc));
-    push(detectDependentNotConditional(d, doc));
   }
   const importHit = detectImportOrder(origLines);
   if (importHit && (!onlyCat || onlyCat === "lean-import-after-content"))
@@ -1286,6 +1383,29 @@ function main() {
       }
   }
 
+  // Derived primary/dependent classification — a global graph pass over
+  // instance binders. Merge its `not-conditional` defects into the per-
+  // file map (respecting `--only`) so they are counted, written, and
+  // gated like any other category.
+  const { graph, hitsByFile: conjHits } = classifyConjectures(files);
+  for (const [abs, hits] of conjHits) {
+    const keep = hits.filter((h) => !onlyCat || h.category === onlyCat);
+    if (keep.length === 0) continue;
+    flaggedByLean.set(abs, [...(flaggedByLean.get(abs) ?? []), ...keep]);
+    for (const h of keep) {
+      counts[h.category] = (counts[h.category] ?? 0) + 1;
+      totalHits++;
+      if (!quiet)
+        console.log(
+          `${relative(REPO_ROOT, abs)}:${h.line}  ${h.category}  [${h.severity.toUpperCase()}]  ${h.snippet}${h.detail ? ` — ${h.detail}` : ""}`,
+        );
+    }
+  }
+  if (!quiet)
+    console.log(
+      `\nconjecture graph: ${graph.total} carrier(s) — ${graph.primary.length} primary, ${graph.dependent.length} dependent (derived from instance binders).`,
+    );
+
   const flagged: Record<string, Hit[]> = {};
   for (const [f, hits] of flaggedByLean)
     flagged[relative(REPO_ROOT, f)] = hits;
@@ -1298,6 +1418,7 @@ function main() {
     total_defects: totalHits,
     total_exempt: exemptHits,
     categories: counts,
+    conjecture_graph: graph,
     flagged,
   };
   writeFileSync(resolve(REPO_ROOT, jsonOut), JSON.stringify(witness, null, 2) + "\n");

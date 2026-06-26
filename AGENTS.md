@@ -1421,36 +1421,45 @@ theorem downstream_result {M : Type*} [MyConjecture M]
   MyConjecture.compatibility x
 ```
 
-#### §3b-tax — Primary vs dependent conjectures (taxonomy + enforcement)
+#### §3b-tax — Primary vs dependent conjectures (taxonomy, derived)
 
-Every conjecture carrier is exactly one of two kinds, and **must
-declare which** with an explicit annotation in its doc block:
+Every conjecture carrier is exactly one of two kinds. **The kind is
+*derived* from the Lean type — not hand-tagged** — because the
+dependency is already encoded in the signature's binders:
 
 - **Primary conjecture** — an open problem that is *not* downstream of
-  another conjecture. It is the genuine unproved input. Annotate the
-  class with `@conjecture: primary`.
+  another conjecture (a *root*): its signature takes **no** other
+  conjecture class as a hypothesis.
 - **Dependent conjecture** — a statement that holds *if* a primary (or
-  another dependent) conjecture holds. It **must be stated
-  conditionally** — "if the primary conjecture is true, then …" — by
-  taking the primary's class as an explicit `[Instance]` hypothesis
-  (the §3b-cond pattern). Annotate with
-  `@conjecture: dependent on conj:<primary-label>`.
+  another dependent) conjecture holds. It is stated conditionally — "if
+  the primary conjecture is true, then …" — by taking the primary's
+  class as an explicit `[Instance]` hypothesis (the §3b-cond pattern).
+  That `[Instance]` binder **is** the dependency edge.
+
+Because the edge lives in the type, `lean-vacuity-axiom-audit.ts`
+computes the primary/dependent split as a graph over instance binders
+(`classifyConjectures`) and records it in the audit witness
+(`conjecture_graph`). **You do not annotate primary-vs-dependent** — the
+compiler already knows it. (An optional `-- @conjecture: primary`
+comment may be added for human readers; it is documentation only and is
+not required or enforced.)
 
 A dependent conjecture written as a *flat, unconditional* assertion is
 **wrong**: it silently smuggles the primary conjecture in as if it were
 established. Always thread the dependency through the type:
 
 ```lean
--- @conjecture: primary
 class PrimaryConj (M : Type*) : Prop where
   content : ∀ x : Real, 0 < x → ∃ y : Real, 0 ≤ y ∧ y ≤ x   -- real content, not `True`
 
--- @conjecture: dependent on conj:primary
--- WRONG — stated unconditionally, hides its dependence on PrimaryConj:
+-- WRONG — stated unconditionally, hides its dependence on PrimaryConj
+-- (the audit classifies it as primary because nothing in the type says
+--  otherwise — the dependency is lost):
 class DependentBad (M : Type*) : Prop where
   consequence : ...
 
--- RIGHT — conditional on the primary (`if PrimaryConj then …`):
+-- RIGHT — conditional on the primary (`if PrimaryConj then …`); the
+-- `[PrimaryConj M]` binder is the derived dependency edge:
 class DependentGood (M : Type*) [PrimaryConj M] : Prop where
   consequence : ...
 ```
@@ -1480,8 +1489,12 @@ to flag, yet asserts nothing:
 |---|---|---|
 | `proof-no-empty-prop-carrier` | critical | a `class`/`structure : Prop` with **zero fields** (and no `extends`); opt out a genuine opaque tag with `@marker` |
 | `proof-claims-unencoded` | major | a carrier whose docstring **enumerates ≥2 named properties** that are not encoded as Prop fields |
-| `proof-conjecture-unclassified` | major | a conjecture carrier (a `conj:` label / "conjecture" / "axiomatise" doc) with **no** `@conjecture: primary\|dependent` annotation |
-| `proof-dependent-conjecture-not-conditional` | critical | a class annotated `@conjecture: dependent` whose signature takes **no** `[Instance]` / hypothesis on its primary (stated unconditionally) |
+| `proof-dependent-conjecture-not-conditional` | critical | a carrier whose doc **explicitly claims conditionality** ("conditional on / assuming / given conj:Y") while its signature binds **no** such class — the prose says conditional, the type does not (derived, intent-vs-type mismatch) |
+
+The primary/dependent split itself is **not a criterion** — it is the
+derived `conjecture_graph` in the witness (primary count, dependent
+edges). There is nothing to "drain": classification is recomputed from
+the Lean each run.
 
 Worked exemplar (the bug that motivated these checks):
 [`ReebEpsilon.lean`](content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ReebEpsilon.lean)

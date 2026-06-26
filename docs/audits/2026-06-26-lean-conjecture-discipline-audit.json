@@ -1,13 +1,12 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-06-26T14:33:41.831Z",
+  "generated": "2026-06-26T15:01:18.136Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 1770,
-  "files_flagged": 410,
-  "total_defects": 504,
+  "files_flagged": 168,
+  "total_defects": 164,
   "total_exempt": 40,
   "categories": {
-    "proof-conjecture-unclassified": 340,
     "proof-no-trivial-true": 72,
     "proof-no-false-premise": 12,
     "proof-no-decide-masking": 16,
@@ -15,27 +14,260 @@
     "proof-no-self-assuming-projection": 55,
     "proof-no-placeholder-stub": 6
   },
+  "conjecture_graph": {
+    "total": 211,
+    "primary": [
+      "AeonRecycling",
+      "AlgebraicGeometricEquivalence",
+      "AlphaEmGluonOctetConjecture",
+      "AlphaKCategoricalClosure",
+      "ArchimedeanLimit",
+      "AtomBraidStep4Hypothesis",
+      "BigBangHeatDeath",
+      "BlochWignerInjective",
+      "BlowupYekutieli",
+      "BlowupYekutieli",
+      "BlowupYekutieli",
+      "BlowupYekutieli",
+      "BorelZagierQOU",
+      "BorelZagierQouVolumes",
+      "BorromeanQuark",
+      "BorromeanQuark",
+      "BorromeanQuark",
+      "BorromeanQuark",
+      "BorromeanQuark",
+      "BorromeanQuark",
+      "BorromeanQuark",
+      "BringFigureEightDepth2Witness",
+      "BringHyperbolicDecomposition",
+      "BringResidueAtOrder",
+      "BringTrilogDepth3Witness",
+      "CanonicalKnotIdSDP",
+      "CanonicalMarkovWeightsH3",
+      "CanonicalMarkovWeightsH3",
+      "CasimirEpsilonVacuum",
+      "ChebyshevDegreeGenusAxiom",
+      "ChernSimonsCorrectionConjecture",
+      "Cl3Zeta5GeometricRealization",
+      "Cl_2_DoubleAngle",
+      "Cl_2_PentagonHolds",
+      "Cl_2_PentagonIdentity",
+      "ClassicalRiemannHypothesis",
+      "ComplexChiralityRotation",
+      "ConfinementNfStructureForcing",
+      "ContentAdditive",
+      "CriticalExponent",
+      "CriticalExponent",
+      "CriticalExponent",
+      "CriticalExponent",
+      "CrystalEigenlineSignBlind",
+      "CrystalGraphRealization",
+      "DeltaCouplingSubstrateForm",
+      "DeltaIBoundConjecture",
+      "DiophantineBirthday",
+      "DirectionSanityGateClass",
+      "DoubleMagicConjecture",
+      "DoubleMagicConjecture",
+      "E2Degenerates",
+      "FaddeevQuantumDilogContext",
+      "FirstInteractingCasimirCorrection",
+      "FullTwistContentFormula",
+      "GActionOnSubstrate",
+      "GSOrderMatch",
+      "GeneralPhiD4FConjecture",
+      "GenerationBranchingFunctor",
+      "GeomFullFunctorial",
+      "GradedBaerStarHq",
+      "GradedMarkovTraceDescent",
+      "GradedMarkovTraceFromGSFiltration",
+      "GradedTraceResidueSplit",
+      "HabiroCompletion",
+      "HahnSubstrate",
+      "HasAlphaShiftTorus",
+      "HasBlochGroup",
+      "HasFiniteLPDuality",
+      "HasFiniteLPDuality",
+      "HasThurstonTriangulation",
+      "HasTwoRowCardinality",
+      "HasTwoRowProjection",
+      "HeckeAlgebra",
+      "HeckeAnyonicSubstrate",
+      "HeckeBranchingTraceDecomposition",
+      "HeckeQuadraticAllGenerators",
+      "HeckeQuotient",
+      "HeckeWedderburn",
+      "HiggsAsT28",
+      "HnInductiveEmbedding",
+      "HomologicalConjecture",
+      "HyperbolicVolumeIndependence",
+      "HyperbolicVolumeIndependence",
+      "HyperbolicVolumeIndependence",
+      "HyperbolicVolumeTranscendence",
+      "InterNucleonChannelColorTube",
+      "IsAMEValue",
+      "IsPieriShift",
+      "JetTowerUniformDeltaMax",
+      "JetTowerUniformDeltaMax",
+      "JointGaloisBraidAction",
+      "KLRCategorifiesNegativeHalfUqg",
+      "KappaZeroImpliesSelfConjugate",
+      "KashiwaraCrystal",
+      "LRCoefficientHecke",
+      "LagrangeResolventEquivarianceAxiom",
+      "LeviDegeneracy",
+      "LinkEquivalence",
+      "LocalInfinitesimalField",
+      "MRatioInversionMonotone",
+      "MagicABindingFormula",
+      "MagicEqualsEmpirical",
+      "MagicNumbersBring",
+      "MarkovDisjointStabilisation",
+      "MarkovTraceCyclic",
+      "MarkovTraceUniqueness",
+      "MassEndomorphism",
+      "MassEndomorphism",
+      "MassFormula",
+      "MassVolumeFactorization",
+      "ModularSTransformQQTilde",
+      "MotivicSubstrate",
+      "MotivicSubstrate",
+      "NSCounterexample",
+      "NSCounterexample",
+      "NSCounterexample",
+      "NSCounterexample",
+      "NVBringAction",
+      "PLCorrectnessHypotheses",
+      "PSDTrace",
+      "PachnerPentagonBorromean",
+      "PairGenCanonical",
+      "PeriodicTableDemand",
+      "PhiD4FConjecture",
+      "PlancherelSnData",
+      "ProlongationPeriodMeanQuantumDim",
+      "PvsNPQou",
+      "QAubinLions",
+      "QAubinLions",
+      "QAubinLions",
+      "QAubinLions",
+      "QBKMContext",
+      "QBetaCKClosedForms",
+      "QBirchSwinnertonDyer",
+      "QCollatz",
+      "QGeometricLanglandsConjecture",
+      "QIntegerMassFormula",
+      "QOneShadowGateClass",
+      "QPochhammerHabiroEvaluation",
+      "QSchurYLambdaClosedFormClaim",
+      "QYoungSymmetrizers",
+      "QbetaC3StructuralFormClass",
+      "QbetaC4StructuralFormClass",
+      "QbetaC5StructuralFormClass",
+      "QbetaC6StructuralFormClass",
+      "QbetaC7StructuralFormClass",
+      "QbetaHabiroTaylorBridgeClass",
+      "QouInfraDischargesGoncharovZeta5",
+      "QouPNeqNp",
+      "QuantumComputationalUniversality",
+      "RadiusOfConvergenceGateClass",
+      "RegularityBreakdown",
+      "RegularityBreakdown",
+      "RegularityBreakdown",
+      "RegularityBreakdown",
+      "ResidueAtRoot",
+      "RhoKH3ARefinement",
+      "RhoPrefactorStructural",
+      "SDPSlaterUniqueness",
+      "SaturatedShellConjecture",
+      "SharedDenominatorCuspHolonomy",
+      "ShellClosureNFTermCount",
+      "ShellClosureNFTermCount",
+      "ShellCondensationConjecture",
+      "ShellThreadingEnergy",
+      "SingleVolumeIrrational",
+      "SingleVolumeIrrational",
+      "SingleVolumeIrrationality",
+      "SpectralNormalForm",
+      "StembridgeCrystal",
+      "SurrealField",
+      "SymmetricCrystalPairProduction",
+      "SymmetricCrystalPairProduction",
+      "TauBandedKernelMap",
+      "TauDistinctInvariants",
+      "TauOrderMixingMap",
+      "Term7ShellCorrectionClass",
+      "ThreeFoldMarkovHopfExtraction",
+      "TopologicalDecompositionMass",
+      "TowerSummandRealization",
+      "TowerSummandRealization",
+      "TrackCReducedAxiom",
+      "TwoFiltrationBridge",
+      "V21Eigenphase",
+      "VacuumEpsilon",
+      "VolumeConjecture",
+      "VolumeConjecture",
+      "WeakSpectralCompleteness",
+      "WeakSpectralCompletenessSkeleton",
+      "WeakSymmetricNormalization",
+      "WoronowiczLeftCalculus",
+      "YangBaxterRule",
+      "YekutieliSurfaceToBoundary",
+      "ZHabiroConvergenceClass",
+      "ZRecursionCoeffs",
+      "ZRecursionCoeffs",
+      "ZeqNRhoCorrection",
+      "archimedean_agreement",
+      "archimedean_agreement",
+      "jet_convergence_classical_limit",
+      "jet_filtered_knot_factor",
+      "q_gl_classical_limit",
+      "q_gl_fiber_functor",
+      "q_gl_kummer_filtration",
+      "q_oper_hecke"
+    ],
+    "dependent": [
+      {
+        "name": "OmegaOrder",
+        "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Asymptotics.lean",
+        "line": 57,
+        "dependsOn": [
+          "SurrealField"
+        ]
+      },
+      {
+        "name": "JonesBirthday",
+        "file": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
+        "line": 487,
+        "dependsOn": [
+          "SurrealField"
+        ]
+      },
+      {
+        "name": "CrystalRMatrixSubLemma",
+        "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean",
+        "line": 74,
+        "dependsOn": [
+          "CrystalGraphRealization"
+        ]
+      },
+      {
+        "name": "SaturatedShellConjecture",
+        "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellNeutrality.lean",
+        "line": 334,
+        "dependsOn": [
+          "FullTwistContentFormula"
+        ]
+      },
+      {
+        "name": "WKBGreensFunction",
+        "file": "content/quantum-observable-universe/mass-theory/phi-q-wkb-greens-function.lean",
+        "line": 80,
+        "dependsOn": [
+          "ArchimedeanLimit"
+        ]
+      }
+    ]
+  },
   "flagged": {
-    "content/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.lean": [
-      {
-        "line": 59,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QbetaCkTruncationCanonicalClass (c : ℕ → ℝ → ℝ) : Prop where",
-        "decl": "QbetaCkTruncationCanonicalClass",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/appendix-surreals-archimedean/wenzl-positivity-implies-substrate-positivity.lean": [
-      {
-        "line": 25,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class WenzlPositivityImpliesSubstratePositivity where",
-        "decl": "WenzlPositivityImpliesSubstratePositivity",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.lean": [
       {
         "line": 16,
@@ -96,57 +328,7 @@
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AppendixSurreals/BorelPartialResolution.lean)"
       }
     ],
-    "content/quantum-observable-universe/appendix-surreals/casimir-first-q-correction.lean": [
-      {
-        "line": 6,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class FigureEightCasimirWeight where",
-        "decl": "FigureEightCasimirWeight",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.lean": [
-      {
-        "line": 13,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QAubinLions : Prop where",
-        "decl": "QAubinLions",
-        "severity": "major"
-      },
-      {
-        "line": 18,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class NSCounterexample : Prop where",
-        "decl": "NSCounterexample",
-        "severity": "major"
-      },
-      {
-        "line": 23,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CriticalExponent : Prop where",
-        "decl": "CriticalExponent",
-        "severity": "major"
-      },
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BlowupYekutieli : Prop where",
-        "decl": "BlowupYekutieli",
-        "severity": "major"
-      },
-      {
-        "line": 32,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class RegularityBreakdown : Prop where",
-        "decl": "RegularityBreakdown",
-        "severity": "major"
-      },
       {
         "line": 37,
         "category": "proof-no-trivial-true",
@@ -188,58 +370,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class OSReflectionPositivity where",
-        "decl": "OSReflectionPositivity",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.lean": [
-      {
-        "line": 20,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QAubinLions : Prop where",
-        "decl": "QAubinLions",
-        "severity": "major"
-      },
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class NSCounterexample : Prop where",
-        "decl": "NSCounterexample",
-        "severity": "major"
-      },
-      {
-        "line": 32,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CriticalExponent : Prop where",
-        "decl": "CriticalExponent",
-        "severity": "major"
-      },
-      {
-        "line": 37,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BlowupYekutieli : Prop where",
-        "decl": "BlowupYekutieli",
-        "severity": "major"
-      },
-      {
-        "line": 43,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class RegularityBreakdown : Prop where",
-        "decl": "RegularityBreakdown",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean": [
       {
         "line": 179,
@@ -260,25 +390,7 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.lean": [
-      {
-        "line": 168,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QbetaHabiroTaylorBridgeClass : Prop where",
-        "decl": "QbetaHabiroTaylorBridgeClass",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation-woronowicz.lean": [
-      {
-        "line": 76,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class WoronowiczLeftCalculus",
-        "decl": "WoronowiczLeftCalculus",
-        "severity": "major"
-      },
       {
         "line": 149,
         "category": "proof-no-trivial-true",
@@ -308,35 +420,7 @@
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/Observations/TraceLocalityMeetsGsNonLocality.lean)"
       }
     ],
-    "content/quantum-observable-universe/brings-surface/c-from-color-flavor-swap.lean": [
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CFromColorFlavorSwap where",
-        "decl": "CFromColorFlavorSwap",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.lean": [
-      {
-        "line": 108,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class InterNucleonChannelColorTube (R : Type _) where",
-        "decl": "InterNucleonChannelColorTube",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/brings-surface/orbital-fourier-decomposition.lean": [
-      {
-        "line": 247,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BorromeanQuark : Prop where",
-        "decl": "BorromeanQuark",
-        "severity": "major"
-      },
       {
         "line": 254,
         "category": "proof-no-trivial-true",
@@ -349,14 +433,6 @@
       }
     ],
     "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean": [
-      {
-        "line": 183,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BorromeanQuark : Prop where",
-        "decl": "BorromeanQuark",
-        "severity": "major"
-      },
       {
         "line": 190,
         "category": "proof-no-trivial-true",
@@ -414,16 +490,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.lean": [
-      {
-        "line": 62,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class LeviDegeneracy where",
-        "decl": "LeviDegeneracy",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/fluid-dynamics/observability-q-independent.lean": [
       {
         "line": 19,
@@ -434,46 +500,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/GaugeFieldFluidDynamics.lean)"
-      }
-    ],
-    "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean": [
-      {
-        "line": 42,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CriticalExponent where",
-        "decl": "CriticalExponent",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/fluid-dynamics/p5-counterexample.lean": [
-      {
-        "line": 41,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class NSCounterexample where",
-        "decl": "NSCounterexample",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean": [
-      {
-        "line": 43,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QAubinLions : Prop where",
-        "decl": "QAubinLions",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.lean": [
-      {
-        "line": 43,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class RegularityBreakdown : Prop where",
-        "decl": "RegularityBreakdown",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean": [
@@ -494,26 +520,6 @@
         "snippet": "def vorticity_lower_bound_conditional",
         "decl": "vorticity_lower_bound_conditional",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/gravity-spacetime/lqg-entropy-qdim-partition-pole.lean": [
-      {
-        "line": 6,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class LQGEntropyQDimPartitionPole where",
-        "decl": "LQGEntropyQDimPartitionPole",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.lean": [
-      {
-        "line": 37,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class AeonRecycling (V : Type*) : Prop where",
-        "decl": "AeonRecycling",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/information-theory/composite-crossing-parity.lean": [
@@ -570,102 +576,6 @@
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/JetHorizon.lean)"
       }
     ],
-    "content/quantum-observable-universe/information-theory/quantum-computational-universality.lean": [
-      {
-        "line": 79,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QuantumComputationalUniversality : Prop where",
-        "decl": "QuantumComputationalUniversality",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean": [
-      {
-        "line": 43,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QAubinLions : Prop where",
-        "decl": "QAubinLions",
-        "severity": "major"
-      },
-      {
-        "line": 56,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class NSCounterexample : Prop where",
-        "decl": "NSCounterexample",
-        "severity": "major"
-      },
-      {
-        "line": 68,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CriticalExponent : Prop where",
-        "decl": "CriticalExponent",
-        "severity": "major"
-      },
-      {
-        "line": 79,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BlowupYekutieli : Prop where",
-        "decl": "BlowupYekutieli",
-        "severity": "major"
-      },
-      {
-        "line": 92,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class RegularityBreakdown : Prop where",
-        "decl": "RegularityBreakdown",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/MetallicLPIdentities.lean": [
-      {
-        "line": 318,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class GaloisPairCharacterSum where",
-        "decl": "GaloisPairCharacterSum",
-        "severity": "major"
-      },
-      {
-        "line": 333,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CSCSilverIsCFLTransition where",
-        "decl": "CSCSilverIsCFLTransition",
-        "severity": "major"
-      },
-      {
-        "line": 346,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BarMirrorPhi2CFLgCFLTransition where",
-        "decl": "BarMirrorPhi2CFLgCFLTransition",
-        "severity": "major"
-      },
-      {
-        "line": 390,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SDPDegeneracyDetectsMetallic where",
-        "decl": "SDPDegeneracyDetectsMetallic",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/MotivicSubstrate.lean": [
-      {
-        "line": 69,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MotivicSubstrate",
-        "decl": "MotivicSubstrate",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean": [
       {
         "line": 56,
@@ -674,156 +584,6 @@
         "snippet": "class PvsNPQou : Prop",
         "decl": "PvsNPQou",
         "severity": "critical"
-      },
-      {
-        "line": 56,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PvsNPQou : Prop",
-        "decl": "PvsNPQou",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Asymptotics.lean": [
-      {
-        "line": 57,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class OmegaOrder (K : Type u) [SurrealField K] where",
-        "decl": "OmegaOrder",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Basic.lean": [
-      {
-        "line": 54,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SurrealField (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedRing K where",
-        "decl": "SurrealField",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/CasimirEpsilonVacuum.lean": [
-      {
-        "line": 46,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CasimirEpsilonVacuum where",
-        "decl": "CasimirEpsilonVacuum",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/ClassicalLimitStpart.lean": [
-      {
-        "line": 44,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ClassicalLimitStpart where",
-        "decl": "ClassicalLimitStpart",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean": [
-      {
-        "line": 296,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ClassicalLimitIsStandardPart where",
-        "decl": "ClassicalLimitIsStandardPart",
-        "severity": "major"
-      },
-      {
-        "line": 314,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ArchimedeanIsStandardPart where",
-        "decl": "ArchimedeanIsStandardPart",
-        "severity": "major"
-      },
-      {
-        "line": 327,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class InfinitesimalFrobenius where",
-        "decl": "InfinitesimalFrobenius",
-        "severity": "major"
-      },
-      {
-        "line": 339,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class InfinitesimalObservability where",
-        "decl": "InfinitesimalObservability",
-        "severity": "major"
-      },
-      {
-        "line": 394,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class VacuumEpsilon' where",
-        "decl": "VacuumEpsilon'",
-        "severity": "major"
-      },
-      {
-        "line": 432,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BigBangHeatDeath where",
-        "decl": "BigBangHeatDeath",
-        "severity": "major"
-      },
-      {
-        "line": 447,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class KashaevSurreal where",
-        "decl": "KashaevSurreal",
-        "severity": "major"
-      },
-      {
-        "line": 487,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class JonesBirthday (K : Type u) [SurrealField K] where",
-        "decl": "JonesBirthday",
-        "severity": "major"
-      },
-      {
-        "line": 525,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HahnSubstrate where",
-        "decl": "HahnSubstrate",
-        "severity": "major"
-      },
-      {
-        "line": 539,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class OnPModularHecke (p : ℕ) [Fact (Nat.Prime p)] where",
-        "decl": "OnPModularHecke",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/DiophantineBirthday.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class DiophantineBirthday where",
-        "decl": "DiophantineBirthday",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/FigureEightCasimirWeight.lean": [
-      {
-        "line": 132,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class FirstInteractingCasimirCorrection where",
-        "decl": "FirstInteractingCasimirCorrection",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/AppendixSurreals/HoefsmitBridge.lean": [
@@ -836,66 +596,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/LocalInfinitesimalField.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class LocalInfinitesimalField where",
-        "decl": "LocalInfinitesimalField",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/QBirchSwinnertonDyer.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QBirchSwinnertonDyer where",
-        "decl": "QBirchSwinnertonDyer",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/QCollatz.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QCollatz where",
-        "decl": "QCollatz",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/QouInfraDischargesGoncharovZeta5.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QouInfraDischargesGoncharovZeta5 where",
-        "decl": "QouInfraDischargesGoncharovZeta5",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/SpectralNormalForm.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SpectralNormalForm where",
-        "decl": "SpectralNormalForm",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/VacuumEpsilon.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class VacuumEpsilon where",
-        "decl": "VacuumEpsilon",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/BetaDecay.lean": [
       {
         "line": 267,
@@ -906,61 +606,7 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/Archimedean/BorelZagierQouVolumes.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BorelZagierQouVolumes where",
-        "decl": "BorelZagierQouVolumes",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Archimedean/BorromeanQuark.lean": [
-      {
-        "line": 88,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BorromeanQuark where",
-        "decl": "BorromeanQuark",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean": [
-      {
-        "line": 151,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BringZeroModeBlochClass : Prop where",
-        "decl": "BringZeroModeBlochClass",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean": [
-      {
-        "line": 442,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HyperbolicVolumeIndependence where",
-        "decl": "HyperbolicVolumeIndependence",
-        "severity": "major"
-      },
-      {
-        "line": 463,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SingleVolumeIrrational where",
-        "decl": "SingleVolumeIrrational",
-        "severity": "major"
-      },
-      {
-        "line": 477,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BorelZagierQOU where",
-        "decl": "BorelZagierQOU",
-        "severity": "major"
-      },
       {
         "line": 499,
         "category": "proof-no-false-premise",
@@ -968,66 +614,6 @@
         "snippet": "theorem HyperbolicVolumeIndependence.implies_single_irrational",
         "decl": "HyperbolicVolumeIndependence.implies_single_irrational",
         "severity": "critical"
-      },
-      {
-        "line": 690,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class TowerNoncollapseImpliesIndependence",
-        "decl": "TowerNoncollapseImpliesIndependence",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Archimedean/JetOrderIndependence.lean": [
-      {
-        "line": 90,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class JetOrderIndependence where",
-        "decl": "JetOrderIndependence",
-        "severity": "major"
-      },
-      {
-        "line": 104,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SurrealParallelTransportBound where",
-        "decl": "SurrealParallelTransportBound",
-        "severity": "major"
-      },
-      {
-        "line": 167,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class JetTransportImpliesIndependence",
-        "decl": "JetTransportImpliesIndependence",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean": [
-      {
-        "line": 62,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class Term7ShellCorrectionClass : Prop where",
-        "decl": "Term7ShellCorrectionClass",
-        "severity": "major"
-      },
-      {
-        "line": 161,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ZHabiroConvergenceClass : Prop where",
-        "decl": "ZHabiroConvergenceClass",
-        "severity": "major"
-      },
-      {
-        "line": 194,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class AlphaOver4PiClass : Prop where",
-        "decl": "AlphaOver4PiClass",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/PauliWitness/witness_12C.lean": [
@@ -1058,34 +644,6 @@
         "snippet": "theorem witness_8Be [ctx : Witness8BeContext] :",
         "decl": "witness_8Be",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Archimedean/SingleVolumeIrrationality.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SingleVolumeIrrationality where",
-        "decl": "SingleVolumeIrrationality",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Archimedean/ThreeSubstantiveMathlibFillers.lean": [
-      {
-        "line": 78,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HasBlochGroup",
-        "decl": "HasBlochGroup",
-        "severity": "major"
-      },
-      {
-        "line": 100,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class Cl_2_PentagonHolds : Prop where",
-        "decl": "Cl_2_PentagonHolds",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/archimedean_braid_structure.lean": [
@@ -1126,16 +684,6 @@
         "snippet": "theorem borromean_hopf_energy_crossover [ctx : BorromeanHopfEnergyCrossoverContext] :",
         "decl": "borromean_hopf_energy_crossover",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Archimedean/chebyshev_degree_genus.lean": [
-      {
-        "line": 47,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ChebyshevDegreeGenusAxiom : Prop where",
-        "decl": "ChebyshevDegreeGenusAxiom",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/eos_borromean_cfl.lean": [
@@ -1268,36 +816,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/AlphaShiftTorus/AlphaShiftTorusKnot.lean": [
-      {
-        "line": 81,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HasAlphaShiftTorus (p k : ℕ) : Prop where",
-        "decl": "HasAlphaShiftTorus",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/BlockMultiplicativityVFree.lean": [
-      {
-        "line": 96,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BlockMultiplicativityVFree (R : Type*) [CommSemiring R] where",
-        "decl": "BlockMultiplicativityVFree",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/BraidGroupNStrand.lean": [
-      {
-        "line": 169,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HeckeQuotient (n : ℕ) (q : ℝ) : Type where",
-        "decl": "HeckeQuotient",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/BraneTowerNStar.lean": [
       {
         "line": 202,
@@ -1306,106 +824,6 @@
         "snippet": "def betaDecayRecoveryTarget_1ppb_remains_conjectural :",
         "decl": "betaDecayRecoveryTarget_1ppb_remains_conjectural",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/BringFigureEightDepth2Witness.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BringFigureEightDepth2Witness where",
-        "decl": "BringFigureEightDepth2Witness",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/BringTrilogDepth3Witness.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BringTrilogDepth3Witness where",
-        "decl": "BringTrilogDepth3Witness",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/BringWPlaneMonodromy.lean": [
-      {
-        "line": 65,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BringWPlaneMonodromy where",
-        "decl": "BringWPlaneMonodromy",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CemeteryGroupEmergence.lean": [
-      {
-        "line": 34,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CemeteryGroupEmergence (R : Type u) [CommRing R] (q : R)",
-        "decl": "CemeteryGroupEmergence",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/ChiralityWritheRibbon.lean": [
-      {
-        "line": 312,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PNCrossingRule (q : ℝ) where",
-        "decl": "PNCrossingRule",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/Cl3Zeta5GeometricRealization.lean": [
-      {
-        "line": 39,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class Cl3Zeta5GeometricRealization where",
-        "decl": "Cl3Zeta5GeometricRealization",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/ClassicalRiemannHypothesis.lean": [
-      {
-        "line": 36,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ClassicalRiemannHypothesis : Prop where",
-        "decl": "ClassicalRiemannHypothesis",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/ConditionalClasses.lean": [
-      {
-        "line": 37,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SingleVolumeIrrational : Prop where",
-        "decl": "SingleVolumeIrrational",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/ConfinementGradingCorrespondence.lean": [
-      {
-        "line": 34,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ConfinementGradingCorrespondence (R : Type u) [CommRing R] (q : R)",
-        "decl": "ConfinementGradingCorrespondence",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/ConfinementNfStructureForcing.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ConfinementNfStructureForcing where",
-        "decl": "ConfinementNfStructureForcing",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/CrossedModuleEulerCharacteristic.lean": [
@@ -1426,126 +844,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalGraphRealization.lean": [
-      {
-        "line": 45,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CrystalGraphRealization (R : Type u) [CommRing R] (q : R) where",
-        "decl": "CrystalGraphRealization",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean": [
-      {
-        "line": 74,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CrystalRMatrixSubLemma (R : Type u) [CommRing R] (q : R)",
-        "decl": "CrystalRMatrixSubLemma",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicLValueDecomposition.lean": [
-      {
-        "line": 62,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class LValueDecomposition where",
-        "decl": "LValueDecomposition",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/DepthStratifiedFrobeniusReciprocity.lean": [
-      {
-        "line": 113,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class DepthStratifiedFrobeniusReciprocity where",
-        "decl": "DepthStratifiedFrobeniusReciprocity",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/GSReductionOrder.lean": [
-      {
-        "line": 99,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class GSOrderMatch (R : Type u) [CommRing R] (q : R) where",
-        "decl": "GSOrderMatch",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedBaerStarHq.lean": [
-      {
-        "line": 35,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class GradedBaerStarHq (Hq : Type*) [InvolutiveStar Hq] where",
-        "decl": "GradedBaerStarHq",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean": [
-      {
-        "line": 45,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class GradedMarkovTraceFromGSFiltration (R : Type u) [CommRing R] where",
-        "decl": "GradedMarkovTraceFromGSFiltration",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/HabiroResidueSumEquivalence/archimedean_agreement.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class archimedean_agreement where",
-        "decl": "archimedean_agreement",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/HabiroResidueSumEquivalence/protonExample/archimedean_agreement.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class archimedean_agreement where",
-        "decl": "archimedean_agreement",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/HeckeAnyonicSubstrate.lean": [
-      {
-        "line": 54,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HeckeAnyonicSubstrate (R : Type u) [CommRing R] (q : R) where",
-        "decl": "HeckeAnyonicSubstrate",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean": [
-      {
-        "line": 213,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class V21Eigenphase (q : ℝ) : Prop where",
-        "decl": "V21Eigenphase",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/IdentityIPlancherelConditional.lean": [
-      {
-        "line": 52,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PlancherelSnData (n : ℕ) where",
-        "decl": "PlancherelSnData",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean": [
       {
         "line": 228,
@@ -1554,56 +852,6 @@
         "snippet": "def wedderburn_decomposition_generic",
         "decl": "wedderburn_decomposition_generic",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/JetTowerUniformDeltaMax.lean": [
-      {
-        "line": 43,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class JetTowerUniformDeltaMax (ρ : Type*) where",
-        "decl": "JetTowerUniformDeltaMax",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/JointGaloisBraidAction.lean": [
-      {
-        "line": 38,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class JointGaloisBraidAction (n : ℕ) where",
-        "decl": "JointGaloisBraidAction",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/KazhdanLusztigClassicalLimit.lean": [
-      {
-        "line": 43,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class KazhdanLusztigClassicalLimit (R : Type u) [CommRing R] (q : R)",
-        "decl": "KazhdanLusztigClassicalLimit",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorFrobeniusPairing.lean": [
-      {
-        "line": 47,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class KnotFactorFrobeniusPairing where",
-        "decl": "KnotFactorFrobeniusPairing",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/Li2qPhiqBarSymmetrization.lean": [
-      {
-        "line": 82,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class Li2qPhiqBarSymmetrization where",
-        "decl": "Li2qPhiqBarSymmetrization",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/Li2qUniqueness.lean": [
@@ -1624,16 +872,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/LpDualityHypothesisClass.lean": [
-      {
-        "line": 84,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where",
-        "decl": "HasFiniteLPDuality",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/MassGapKeystone.lean": [
       {
         "line": 204,
@@ -1644,26 +882,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/OperatorValuedCombiner.lean": [
-      {
-        "line": 62,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class WenzlAOperator (R : Type u) [CommRing R] (q : R)",
-        "decl": "WenzlAOperator",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/PhiQTowerAlgebraicStratification.lean": [
-      {
-        "line": 67,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PhiQTowerAlgebraicStratification (R : Type u) [CommRing R] where",
-        "decl": "PhiQTowerAlgebraicStratification",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCategoricalPrecisionLadder.lean": [
       {
         "line": 363,
@@ -1672,74 +890,6 @@
         "snippet": "def qbeta_inductive_categorical_closure_conjecture",
         "decl": "qbeta_inductive_categorical_closure_conjecture",
         "severity": "critical"
-      },
-      {
-        "line": 423,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QbetaC3StructuralFormClass : Prop where",
-        "decl": "QbetaC3StructuralFormClass",
-        "severity": "major"
-      },
-      {
-        "line": 505,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QbetaC4StructuralFormClass : Prop where",
-        "decl": "QbetaC4StructuralFormClass",
-        "severity": "major"
-      },
-      {
-        "line": 543,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QbetaC5StructuralFormClass : Prop where",
-        "decl": "QbetaC5StructuralFormClass",
-        "severity": "major"
-      },
-      {
-        "line": 581,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QbetaC6StructuralFormClass : Prop where",
-        "decl": "QbetaC6StructuralFormClass",
-        "severity": "major"
-      },
-      {
-        "line": 622,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QbetaC7StructuralFormClass : Prop where",
-        "decl": "QbetaC7StructuralFormClass",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean": [
-      {
-        "line": 1075,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CanonicalMarkovWeightsH3 where",
-        "decl": "CanonicalMarkovWeightsH3",
-        "severity": "major"
-      },
-      {
-        "line": 1129,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ZRecursionCoeffs where",
-        "decl": "ZRecursionCoeffs",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean": [
-      {
-        "line": 118,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QRogersAnalyticContinuation where",
-        "decl": "QRogersAnalyticContinuation",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/QSchurWeightsGeneral.lean": [
@@ -1768,46 +918,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean": [
-      {
-        "line": 200,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ZHabiroRogersSaddle where",
-        "decl": "ZHabiroRogersSaddle",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/ResidueAtRoot.lean": [
-      {
-        "line": 37,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ResidueAtRoot (R : Type u) [CommRing R] where",
-        "decl": "ResidueAtRoot",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/RootOfUnityMTCTruncation.lean": [
-      {
-        "line": 45,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class RootOfUnityMTCTruncation (R : Type u) [CommRing R] (q : R)",
-        "decl": "RootOfUnityMTCTruncation",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellClosureStability.lean": [
-      {
-        "line": 81,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ShellClosureMonotone",
-        "decl": "ShellClosureMonotone",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellNeutrality.lean": [
       {
         "line": 252,
@@ -1816,30 +926,6 @@
         "snippet": "class Saturated (lam : YoungDiagram) : Prop",
         "decl": "Saturated",
         "severity": "critical"
-      },
-      {
-        "line": 276,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class FullTwistContentFormula (q : ℝ) where",
-        "decl": "FullTwistContentFormula",
-        "severity": "major"
-      },
-      {
-        "line": 290,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class KappaZeroImpliesSelfConjugate where",
-        "decl": "KappaZeroImpliesSelfConjugate",
-        "severity": "major"
-      },
-      {
-        "line": 334,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SaturatedShellConjecture (lam : YoungDiagram) [Saturated lam] (q : ℝ)",
-        "decl": "SaturatedShellConjecture",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/SixTermPerDerivationWeights.lean": [
@@ -1852,36 +938,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/StructuralRank.lean": [
-      {
-        "line": 86,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PanelRankDecomposition",
-        "decl": "PanelRankDecomposition",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean": [
-      {
-        "line": 96,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SubstrateEWDerivations where",
-        "decl": "SubstrateEWDerivations",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/SymmetricCrystalPairProduction.lean": [
-      {
-        "line": 39,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SymmetricCrystalPairProduction (R : Type u) [CommRing R] (q : R)",
-        "decl": "SymmetricCrystalPairProduction",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/ThreeCalibrationInputs.lean": [
       {
         "line": 59,
@@ -1892,114 +948,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/TorusKnotMass.lean": [
-      {
-        "line": 56,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class TorusKnotMass where",
-        "decl": "TorusKnotMass",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/TwoFiltrationBridge.lean": [
-      {
-        "line": 50,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class TwoFiltrationBridge where",
-        "decl": "TwoFiltrationBridge",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/TwoRowStratum.lean": [
-      {
-        "line": 97,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HasTwoRowCardinality (n : ℕ) where",
-        "decl": "HasTwoRowCardinality",
-        "severity": "major"
-      },
-      {
-        "line": 130,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HasTwoRowProjection (HeckeAlg : Type*) where",
-        "decl": "HasTwoRowProjection",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/ZeqNRhoCorrection.lean": [
-      {
-        "line": 76,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ZeqNRhoCorrection (A : ℕ) (K : KnotAssignment A) where",
-        "decl": "ZeqNRhoCorrection",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/jet_convergence_classical_limit.lean": [
-      {
-        "line": 32,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class jet_convergence_classical_limit where",
-        "decl": "jet_convergence_classical_limit",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/jet_filtered_knot_factor.lean": [
-      {
-        "line": 52,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class jet_filtered_knot_factor where",
-        "decl": "jet_filtered_knot_factor",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/nonabelian_stokes_surface_boundary_stokes.lean": [
-      {
-        "line": 165,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class YekutieliSurfaceToBoundary (G : Type*) [Group G] where",
-        "decl": "YekutieliSurfaceToBoundary",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/GapA4MuonBranching.lean": [
-      {
-        "line": 28,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class GenerationBranchingFunctor (H5 H3 : Type) where",
-        "decl": "GenerationBranchingFunctor",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/PachnerPentagonBorromean.lean": [
-      {
-        "line": 53,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PachnerPentagonBorromean (R : Type*) [CommRing R] where",
-        "decl": "PachnerPentagonBorromean",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QSchurYLambdaClosedForm.lean": [
-      {
-        "line": 149,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QSchurYLambdaClosedFormClaim where",
-        "decl": "QSchurYLambdaClosedFormClaim",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ReebChiralitySeparation.lean": [
       {
         "line": 60,
@@ -2008,16 +956,6 @@
         "snippet": "theorem A5Irrep.reebCasimir_not_injective :",
         "decl": "A5Irrep.reebCasimir_not_injective",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S4S3HalfSymmetricProjection.lean": [
-      {
-        "line": 127,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BorromeanCommonScale where",
-        "decl": "BorromeanCommonScale",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/UnitModulusEigenvalue.lean": [
@@ -2038,16 +976,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidsKnots/ReebBundleComplementEqualsVolume.lean": [
-      {
-        "line": 31,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MassVolumeFactorization where",
-        "decl": "MassVolumeFactorization",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/Brings/brings_is_qou.lean": [
       {
         "line": 67,
@@ -2066,16 +994,6 @@
         "snippet": "theorem color_elliptic [ctx : ColorEllipticContext] :",
         "decl": "color_elliptic",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BringsSurface/lagrange_resolvent_transform.lean": [
-      {
-        "line": 57,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class LagrangeResolventEquivarianceAxiom : Prop where",
-        "decl": "LagrangeResolventEquivarianceAxiom",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/CategoricalReeb/SixCanonicalKnotOperators.lean": [
@@ -2172,14 +1090,6 @@
     ],
     "content/quantum-observable-universe/lean/QOU/FluidDynamics/q_bkm_criterion.lean": [
       {
-        "line": 45,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QBKMContext (R : Type*) [CommRing R] where",
-        "decl": "QBKMContext",
-        "severity": "major"
-      },
-      {
         "line": 69,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
@@ -2200,16 +1110,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/Habiro/FlowSolution.lean": [
-      {
-        "line": 49,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HabiroFlowSolution where",
-        "decl": "HabiroFlowSolution",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/HadronicMass/nucleon_borromean_topology.lean": [
       {
         "line": 55,
@@ -2218,16 +1118,6 @@
         "snippet": "theorem nucleon_borromean_topology [ctx : NucleonBorromeanTopologyContext] :",
         "decl": "nucleon_borromean_topology",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Hecke/Algebra.lean": [
-      {
-        "line": 47,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HeckeAlgebra (R : Type u) (n : ℕ) (q : R) (A : Type u)",
-        "decl": "HeckeAlgebra",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Hecke/Hoefsmit.lean": [
@@ -2250,16 +1140,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/Information/QouPNeqNp.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QouPNeqNp where",
-        "decl": "QouPNeqNp",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/Interactions/AlgebraicPrimality.lean": [
       {
         "line": 149,
@@ -2268,60 +1148,6 @@
         "snippet": "theorem zero_not_isAlgebraicallyPrime (q : ℝ) :",
         "decl": "zero_not_isAlgebraicallyPrime",
         "severity": "critical"
-      },
-      {
-        "line": 159,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class IsKnownMagic (n : ℕ) (q : ℝ) : Prop where",
-        "decl": "IsKnownMagic",
-        "severity": "major"
-      },
-      {
-        "line": 194,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MagicEqualsEmpirical where",
-        "decl": "MagicEqualsEmpirical",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Interactions/BringShellBinding.lean": [
-      {
-        "line": 133,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BringShellBindingConjecture where",
-        "decl": "BringShellBindingConjecture",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Interactions/DoubleMagicDeltaI.lean": [
-      {
-        "line": 98,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class DeltaIBoundConjecture where",
-        "decl": "DeltaIBoundConjecture",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Interactions/LRFusion.lean": [
-      {
-        "line": 63,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ContentAdditive (C : Composite) : Prop where",
-        "decl": "ContentAdditive",
-        "severity": "major"
-      },
-      {
-        "line": 133,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class DoubleMagicConjecture where",
-        "decl": "DoubleMagicConjecture",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Interactions/QIntegerMassFormula.lean": [
@@ -2332,14 +1158,6 @@
         "snippet": "class IsAMEValue (Z N : ℕ) (B_AME : ℝ) : Prop",
         "decl": "IsAMEValue",
         "severity": "critical"
-      },
-      {
-        "line": 137,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class IsAMEValue (Z N : ℕ) (B_AME : ℝ) : Prop",
-        "decl": "IsAMEValue",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Interactions/UniversalILP.lean": [
@@ -2362,62 +1180,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/Kashaev.lean": [
-      {
-        "line": 57,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class VolumeConjecture (q : ℝ) where",
-        "decl": "VolumeConjecture",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/KnotTheory/Brunnian.lean": [
-      {
-        "line": 94,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class LinkEquivalence where",
-        "decl": "LinkEquivalence",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/KnotTheory/JonesPolynomial.lean": [
-      {
-        "line": 93,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class JonesPolynomialDef where",
-        "decl": "JonesPolynomialDef",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/KnotTheory/MetallicPiecewise.lean": [
-      {
-        "line": 70,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HigherStrandCharacterBifurcation where",
-        "decl": "HigherStrandCharacterBifurcation",
-        "severity": "major"
-      },
-      {
-        "line": 93,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CatalogBlindSDPCount where",
-        "decl": "CatalogBlindSDPCount",
-        "severity": "major"
-      },
-      {
-        "line": 113,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class DeltaLambdaPiecewise where",
-        "decl": "DeltaLambdaPiecewise",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean": [
       {
         "line": 267,
@@ -2426,16 +1188,6 @@
         "snippet": "theorem borromean_crossing_minimal :",
         "decl": "borromean_crossing_minimal",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/LiftingDescent/HomologicalCondensation.lean": [
-      {
-        "line": 105,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ShellCondensationConjecture where",
-        "decl": "ShellCondensationConjecture",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/LightningPath.lean": [
@@ -2448,26 +1200,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/Machinery/KLRAlgebraBasic.lean": [
-      {
-        "line": 69,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class KLRCategorifiesNegativeHalfUqg (Γ : KLRQuiver) : Prop where",
-        "decl": "KLRCategorifiesNegativeHalfUqg",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Machinery/KashiwaraCrystalBasic.lean": [
-      {
-        "line": 64,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class StembridgeCrystal (G : CrystalGraph) : Prop where",
-        "decl": "StembridgeCrystal",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/Machinery/LambdaScaleAbsorbed.lean": [
       {
         "line": 73,
@@ -2478,85 +1210,7 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean": [
-      {
-        "line": 102,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ResidueACompositeIdentification : Prop where",
-        "decl": "ResidueACompositeIdentification",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Machinery/QDilogarithm.lean": [
-      {
-        "line": 94,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class FaddeevQuantumDilogContext (q : ℝ) : Prop where",
-        "decl": "FaddeevQuantumDilogContext",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Machinery/QPochhammer.lean": [
-      {
-        "line": 136,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QPochhammerHabiroEvaluation (q : ℝ) : Prop where",
-        "decl": "QPochhammerHabiroEvaluation",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Machinery/SpectralSequenceBasic.lean": [
-      {
-        "line": 59,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class E2Degenerates (S : SpectralSequencePage) : Prop where",
-        "decl": "E2Degenerates",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/MagicShell/DeltaCouplingSubstrateForm.lean": [
-      {
-        "line": 46,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class DeltaCouplingSubstrateForm where",
-        "decl": "DeltaCouplingSubstrateForm",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Mass/BindingQBesselKernel.lean": [
-      {
-        "line": 51,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BindingFollowsQBessel (aD : ℕ → K) (q a : K) : Prop where",
-        "decl": "BindingFollowsQBessel",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Mass/NaStokesKeystone.lean": [
-      {
-        "line": 81,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ProlongationPeriodMeanQuantumDim (aD lw : ℕ → ℝ) : Prop where",
-        "decl": "ProlongationPeriodMeanQuantumDim",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean": [
-      {
-        "line": 86,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MRatioInversionMonotone (M_ratio_codata : ℝ) where",
-        "decl": "MRatioInversionMonotone",
-        "severity": "major"
-      },
       {
         "line": 142,
         "category": "proof-no-trivial-true",
@@ -2640,26 +1294,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/MassEndomorphism/MassEndomorphismConjecture.lean": [
-      {
-        "line": 53,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MassEndomorphism (R : Type*) [CommRing R] (β : Type*) where",
-        "decl": "MassEndomorphism",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Mathlib/RSKBridge.lean": [
-      {
-        "line": 60,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class RSKBijection (n : ℕ) where",
-        "decl": "RSKBijection",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/MathlibExt.lean": [
       {
         "line": 134,
@@ -2680,36 +1314,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean": [
-      {
-        "line": 429,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SDPSlaterUniqueness",
-        "decl": "SDPSlaterUniqueness",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Molecular/PalindromicityOrbitalType.lean": [
-      {
-        "line": 75,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PalindromicityOrbitalType (Z : ℕ) where",
-        "decl": "PalindromicityOrbitalType",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Molecular/ShellClosureNfTermCount.lean": [
-      {
-        "line": 381,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ShellClosureNFTermCount where",
-        "decl": "ShellClosureNFTermCount",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/Molecular/benzene_threading_emergence.lean": [
       {
         "line": 1,
@@ -2717,14 +1321,6 @@
         "pattern": "placeholder-stub-file",
         "snippet": "# QOU... — placeholder stub",
         "severity": "critical"
-      },
-      {
-        "line": 78,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QIntegerMassFormula (ctx : BenzeneThreadingEmergenceContext) : Prop where",
-        "decl": "QIntegerMassFormula",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Molecular/ch4_lp_dual_binding.lean": [
@@ -2734,14 +1330,6 @@
         "pattern": "placeholder-stub-file",
         "snippet": "# QOU... — placeholder stub",
         "severity": "critical"
-      },
-      {
-        "line": 94,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QIntegerMassFormula (ctx : Ch4LpDualBindingContext) : Prop where",
-        "decl": "QIntegerMassFormula",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Molecular/co2_lp_dual_binding.lean": [
@@ -2751,14 +1339,6 @@
         "pattern": "placeholder-stub-file",
         "snippet": "# QOU... — placeholder stub",
         "severity": "critical"
-      },
-      {
-        "line": 94,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QIntegerMassFormula (ctx : Co2LpDualBindingContext) : Prop where",
-        "decl": "QIntegerMassFormula",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Molecular/co_lp_dual_binding.lean": [
@@ -2768,14 +1348,6 @@
         "pattern": "placeholder-stub-file",
         "snippet": "# QOU... — placeholder stub",
         "severity": "critical"
-      },
-      {
-        "line": 100,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QIntegerMassFormula (ctx : CoLpDualBindingContext) : Prop where",
-        "decl": "QIntegerMassFormula",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Molecular/h2_lp_dual_binding.lean": [
@@ -2785,14 +1357,6 @@
         "pattern": "placeholder-stub-file",
         "snippet": "# QOU... — placeholder stub",
         "severity": "critical"
-      },
-      {
-        "line": 72,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QIntegerMassFormula (ctx : H2LpDualBindingContext) : Prop where",
-        "decl": "QIntegerMassFormula",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/ParticleInteractions/SpectatorNormalization.lean": [
@@ -2892,14 +1456,6 @@
         "pattern": "placeholder-stub-file",
         "snippet": "# QOU... — placeholder stub",
         "severity": "critical"
-      },
-      {
-        "line": 83,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BorromeanQuark where",
-        "decl": "BorromeanQuark",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/ParticleInteractions/operator_selection_lp.lean": [
@@ -2932,24 +1488,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/PhiQJSJ.lean": [
-      {
-        "line": 55,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class TowerSummandRealization (q : ℝ) where",
-        "decl": "TowerSummandRealization",
-        "severity": "major"
-      },
-      {
-        "line": 74,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PerPieceBridge (q : ℝ) [VolumeConjecture q] [TowerSummandRealization q] where",
-        "decl": "PerPieceBridge",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/PhotonThreading.lean": [
       {
         "line": 91,
@@ -2958,66 +1496,6 @@
         "snippet": "theorem crossing_energy_gauge_invariant {M : Type*}",
         "decl": "crossing_energy_gauge_invariant",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean": [
-      {
-        "line": 408,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QGeometricLanglandsConjecture (M : Type u) where",
-        "decl": "QGeometricLanglandsConjecture",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/QGeometricLanglands/q_gl_classical_limit.lean": [
-      {
-        "line": 29,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class q_gl_classical_limit where",
-        "decl": "q_gl_classical_limit",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/QGeometricLanglands/q_gl_fiber_functor.lean": [
-      {
-        "line": 25,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class q_gl_fiber_functor where",
-        "decl": "q_gl_fiber_functor",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/QGeometricLanglands/q_gl_kummer_filtration.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class q_gl_kummer_filtration where",
-        "decl": "q_gl_kummer_filtration",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/QGeometricLanglands/q_oper_hecke.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class q_oper_hecke where",
-        "decl": "q_oper_hecke",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean": [
-      {
-        "line": 108,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HasCategoricalIrreducibility {C : Type u} [CategoryTheory.Category.{v} C]",
-        "decl": "HasCategoricalIrreducibility",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/exists_axiom_1_frobenius.lean": [
@@ -3038,56 +1516,6 @@
         "snippet": "theorem exists_axiom_3_chern [ctx : ExistsAxiom3ChernContext] :",
         "decl": "exists_axiom_3_chern",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/GActionOnSubstrate.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class GActionOnSubstrate where",
-        "decl": "GActionOnSubstrate",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/StaircaseCornerHook.lean": [
-      {
-        "line": 139,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class StaircaseEWResidual",
-        "decl": "StaircaseEWResidual",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Substrate/ColorAntisymmetric.lean": [
-      {
-        "line": 80,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class FermiColorSinglet (Baryon : Type*) : Prop where",
-        "decl": "FermiColorSinglet",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Substrate/ProtonMassEMSignBlock.lean": [
-      {
-        "line": 103,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class EmSignBlockCorrection (α_em : ℝ) (m_p_residual : ℝ) : Prop where",
-        "decl": "EmSignBlockCorrection",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Torsion/MassGap.lean": [
-      {
-        "line": 223,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HasYangMillsMassGap (q : ℝ) (tm : CategoricalTransferMatrix) where",
-        "decl": "HasYangMillsMassGap",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/orbital_fourier_decomposition.lean": [
@@ -3130,84 +1558,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lifting-and-descent/motivic-substrate.lean": [
-      {
-        "line": 79,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MotivicSubstrate",
-        "decl": "MotivicSubstrate",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli.lean": [
-      {
-        "line": 42,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BlowupYekutieli where",
-        "decl": "BlowupYekutieli",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.lean": [
-      {
-        "line": 119,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ComplexVolumeMatch (K : Type*) where",
-        "decl": "ComplexVolumeMatch",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-endomorphism/categorical-chain-convergence-mechanisms.lean": [
-      {
-        "line": 102,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MarkovDisjointStabilisation (q : ℝ) where",
-        "decl": "MarkovDisjointStabilisation",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.lean": [
-      {
-        "line": 45,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MassEndoModule (n : ℕ) where",
-        "decl": "MassEndoModule",
-        "severity": "major"
-      },
-      {
-        "line": 65,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SaturatedShellConjecture (n : ℕ) extends MassEndoModule n where",
-        "decl": "SaturatedShellConjecture",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean": [
-      {
-        "line": 55,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QBetaCKClosedForms where",
-        "decl": "QBetaCKClosedForms",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.lean": [
-      {
-        "line": 56,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PairGenCanonical : Prop where",
-        "decl": "PairGenCanonical",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/mass-endomorphism/gb-spectral-sequence.lean": [
       {
         "line": 19,
@@ -3218,16 +1568,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/GBSpectralSequence.lean)"
-      }
-    ],
-    "content/quantum-observable-universe/mass-endomorphism/hecke-algebra-type-scaffold.lean": [
-      {
-        "line": 85,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HeckeWedderburn (n : ℕ) (q : ℝ) : Type where",
-        "decl": "HeckeWedderburn",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic.lean": [
@@ -3242,38 +1582,12 @@
     ],
     "content/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.lean": [
       {
-        "line": 34,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HeckeBranchingTraceDecomposition (q : ℝ) where",
-        "decl": "HeckeBranchingTraceDecomposition",
-        "severity": "major"
-      },
-      {
         "line": 48,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true",
         "snippet": "def branch_trace {q : ℝ} [HeckeBranchingTraceDecomposition q] : True := by",
         "decl": "branch_trace",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/mass-endomorphism/homological-shell-condensation.lean": [
-      {
-        "line": 40,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BBSpectralSequence (n : ℕ) where",
-        "decl": "BBSpectralSequence",
-        "severity": "major"
-      },
-      {
-        "line": 59,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HomologicalConjecture (n : ℕ) extends BBSpectralSequence n where",
-        "decl": "HomologicalConjecture",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean": [
@@ -3286,44 +1600,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/mass-endomorphism/markov-trace-operator-construction.lean": [
-      {
-        "line": 51,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HnInductiveEmbedding (n : ℕ) (q : ℝ) : Type where",
-        "decl": "HnInductiveEmbedding",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.lean": [
-      {
-        "line": 48,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MassEndomorphism (R : Type*) [CommRing R] (β : Type*) where",
-        "decl": "MassEndomorphism",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-endomorphism/phi-d-syt-count-conjecture.lean": [
-      {
-        "line": 111,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PhiD4FConjecture (n : ℕ) (λ_syt_count : ℕ) (q : ℝ) : Type where",
-        "decl": "PhiD4FConjecture",
-        "severity": "major"
-      },
-      {
-        "line": 211,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class GeneralPhiD4FConjecture : Type where",
-        "decl": "GeneralPhiD4FConjecture",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.lean": [
       {
         "line": 16,
@@ -3334,64 +1610,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/QHeckeSeminormalCharacterClosure.lean)"
-      }
-    ],
-    "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean": [
-      {
-        "line": 390,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CanonicalMarkovWeightsH3 where",
-        "decl": "CanonicalMarkovWeightsH3",
-        "severity": "major"
-      },
-      {
-        "line": 444,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ZRecursionCoeffs where",
-        "decl": "ZRecursionCoeffs",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.lean": [
-      {
-        "line": 48,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class KashiwaraCrystal (Λ : Type*) [Fintype Λ] where",
-        "decl": "KashiwaraCrystal",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture.lean": [
-      {
-        "line": 68,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class TopologicalDecompositionMass (R : Type*) [OrderedAddCommMonoid R]",
-        "decl": "TopologicalDecompositionMass",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean": [
-      {
-        "line": 60,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class AlgebraicGeometricEquivalence",
-        "decl": "AlgebraicGeometricEquivalence",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/alpha-k-categorical-closure.lean": [
-      {
-        "line": 64,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class AlphaKCategoricalClosure (q : ℝ) : Type where",
-        "decl": "AlphaKCategoricalClosure",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-proof.lean": [
@@ -3428,120 +1646,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.lean": [
-      {
-        "line": 204,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class AtomKnotMassDerivationConjecture where",
-        "decl": "AtomKnotMassDerivationConjecture",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/binding-closure-conditional.lean": [
-      {
-        "line": 40,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BindingClosureInput where",
-        "decl": "BindingClosureInput",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean": [
-      {
-        "line": 36,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BindingManyBodyJetFiltration (R : Type*) [CommRing R] where",
-        "decl": "BindingManyBodyJetFiltration",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean": [
-      {
-        "line": 59,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BorromeanCommonScale where",
-        "decl": "BorromeanCommonScale",
-        "severity": "major"
-      },
-      {
-        "line": 129,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MassFormula where",
-        "decl": "MassFormula",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/borromean-bloch-group-element.lean": [
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BorromeanBlochGroupElement where",
-        "decl": "BorromeanBlochGroupElement",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/brane-tower-z-habiro.lean": [
-      {
-        "line": 44,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BraneTowerZHabiro (n₀ : ℕ) (q : ℝ) where",
-        "decl": "BraneTowerZHabiro",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean": [
-      {
-        "line": 87,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BringResidueAtOrder {R : Type u} [Field R] (n : ℕ) (q : R) : Prop where",
-        "decl": "BringResidueAtOrder",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/categorical-linking-operation.lean": [
-      {
-        "line": 44,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MarkovTraceCyclic",
-        "decl": "MarkovTraceCyclic",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean": [
-      {
-        "line": 71,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class YangBaxterRule (n : ℕ) (q : ℝ) : Type where",
-        "decl": "YangBaxterRule",
-        "severity": "major"
-      },
-      {
-        "line": 95,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QYoungSymmetrizers (n : ℕ) (q : ℝ) : Type where",
-        "decl": "QYoungSymmetrizers",
-        "severity": "major"
-      },
-      {
-        "line": 112,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HeckeQuadraticAllGenerators (n : ℕ) (q : ℝ) : Type where",
-        "decl": "HeckeQuadraticAllGenerators",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/mass-theory/confinement-categorical.lean": [
       {
         "line": 46,
@@ -3558,112 +1662,6 @@
         "snippet": "def observables_are_wedderburn_sum",
         "decl": "observables_are_wedderburn_sum",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean": [
-      {
-        "line": 97,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where",
-        "decl": "HasFiniteLPDuality",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean": [
-      {
-        "line": 56,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class AtomBraidExteriorAlgebraStructure (Z N : ℕ) where",
-        "decl": "AtomBraidExteriorAlgebraStructure",
-        "severity": "major"
-      },
-      {
-        "line": 324,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class AtomBraidStep4Hypothesis (Z N : ℕ) where",
-        "decl": "AtomBraidStep4Hypothesis",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.lean": [
-      {
-        "line": 171,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CanonicalKnotIdSDP (n : LightNucleus) where",
-        "decl": "CanonicalKnotIdSDP",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/conj-psd-trace-orthogonality.lean": [
-      {
-        "line": 87,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PSDTraceOrthogonalDecomp (A : ℕ) where",
-        "decl": "PSDTraceOrthogonalDecomp",
-        "severity": "major"
-      },
-      {
-        "line": 106,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PSDTraceOrthogonalityHolds where",
-        "decl": "PSDTraceOrthogonalityHolds",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.lean": [
-      {
-        "line": 74,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class RhoPrefactorStructural (Z N : ℕ) (q : ℝ) where",
-        "decl": "RhoPrefactorStructural",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean": [
-      {
-        "line": 38,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CrossingGradedMassExpansion (K : Type*) where",
-        "decl": "CrossingGradedMassExpansion",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy.lean": [
-      {
-        "line": 118,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CrystalEigenlineSignBlind (R : Type u) [Ring R] where",
-        "decl": "CrystalEigenlineSignBlind",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.lean": [
-      {
-        "line": 64,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ArchimedeanLimit (x : ℝ) : Prop where",
-        "decl": "ArchimedeanLimit",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/dim-master-pentagon.lean": [
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class DimMasterPentagon where",
-        "decl": "DimMasterPentagon",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/mass-theory/eigenvalue-product-expansion.lean": [
@@ -3696,76 +1694,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace.lean": [
-      {
-        "line": 104,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HabiroCompletion where",
-        "decl": "HabiroCompletion",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/gb-depth-period-correspondence.lean": [
-      {
-        "line": 56,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class GBDepthPeriodCorrespondence (q : R) where",
-        "decl": "GBDepthPeriodCorrespondence",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/graded-hecke-energy-truncation-bound.lean": [
-      {
-        "line": 63,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class GradedMarkovTraceDescent (K : Type*) [ConfinementLevel K] where",
-        "decl": "GradedMarkovTraceDescent",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/graded-trace-residue-split.lean": [
-      {
-        "line": 64,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class GradedTraceResidueSplit (R : Type u) [Field R] where",
-        "decl": "GradedTraceResidueSplit",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/gs-archimedean-agreement-residue.lean": [
-      {
-        "line": 19,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class GsArchimedeanAgreementResidue where",
-        "decl": "GsArchimedeanAgreementResidue",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace.lean": [
-      {
-        "line": 19,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class GsArchimedeanAgreementTrace where",
-        "decl": "GsArchimedeanAgreementTrace",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/gs-graded-markov-trace-existence.lean": [
-      {
-        "line": 19,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class GsGradedMarkovTraceExistence where",
-        "decl": "GsGradedMarkovTraceExistence",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean": [
       {
         "line": 248,
@@ -3788,14 +1716,6 @@
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
       },
       {
-        "line": 121,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HyperbolicVolumeIndependence : Prop where",
-        "decl": "HyperbolicVolumeIndependence",
-        "severity": "major"
-      },
-      {
         "line": 128,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true-conjecture",
@@ -3806,45 +1726,7 @@
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
       }
     ],
-    "content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.lean": [
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class IsospinFromCanonicalBowtie where",
-        "decl": "IsospinFromCanonicalBowtie",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/jet-tower-uniform-delta-max.lean": [
-      {
-        "line": 38,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class JetTowerUniformDeltaMax (ρ : Type*) where",
-        "decl": "JetTowerUniformDeltaMax",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean": [
-      {
-        "line": 27,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class KashaevDensityEqualsSdpMultiplicity where",
-        "decl": "KashaevDensityEqualsSdpMultiplicity",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.lean": [
-      {
-        "line": 51,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class VolumeConjecture (q : ℝ) where",
-        "decl": "VolumeConjecture",
-        "severity": "major"
-      },
       {
         "line": 106,
         "category": "proof-no-trivial-true",
@@ -3866,16 +1748,6 @@
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
       }
     ],
-    "content/quantum-observable-universe/mass-theory/knot-factor-frobenius-pairing.lean": [
-      {
-        "line": 41,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class KnotFactorFrobeniusPairing where",
-        "decl": "KnotFactorFrobeniusPairing",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.lean": [
       {
         "line": 151,
@@ -3888,35 +1760,7 @@
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
       }
     ],
-    "content/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean": [
-      {
-        "line": 31,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class LiftedCrossingLocality",
-        "decl": "LiftedCrossingLocality",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/lr-coefficient-hecke.lean": [
-      {
-        "line": 63,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class LRCoefficientHecke where",
-        "decl": "LRCoefficientHecke",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/mass-theory/magic-A-binding-formula.lean": [
-      {
-        "line": 103,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MagicABindingFormula {R : Type u} [Field R] [CatalanPrefactor R]",
-        "decl": "MagicABindingFormula",
-        "severity": "major"
-      },
       {
         "line": 170,
         "category": "proof-no-false-premise",
@@ -3934,16 +1778,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.lean": [
-      {
-        "line": 117,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MarkovTraceUniqueness (R : Type u) [Field R] (n : ℕ) (q : R) where",
-        "decl": "MarkovTraceUniqueness",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/mass-theory/markov-trace-product.lean": [
       {
         "line": 274,
@@ -3952,154 +1786,6 @@
         "snippet": "def degree_bound (mtp : MarkovTraceProduct) :",
         "decl": "degree_bound",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/mass-element-nf.lean": [
-      {
-        "line": 50,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HeckeMassNF (β : Type*) where",
-        "decl": "HeckeMassNF",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean": [
-      {
-        "line": 128,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class Cl_2_PentagonIdentity : Prop where",
-        "decl": "Cl_2_PentagonIdentity",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/mass-volume-factorization.lean": [
-      {
-        "line": 116,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MassVolumeFactorization",
-        "decl": "MassVolumeFactorization",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/p-from-braid-mirror.lean": [
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PFromBraidMirror where",
-        "decl": "PFromBraidMirror",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean": [
-      {
-        "line": 50,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class TowerSummandRealization (q : ℝ) where",
-        "decl": "TowerSummandRealization",
-        "severity": "major"
-      },
-      {
-        "line": 69,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PerPieceBridge (q : ℝ) [VolumeConjecture q] [TowerSummandRealization q] where",
-        "decl": "PerPieceBridge",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/phi-q-wkb-greens-function.lean": [
-      {
-        "line": 80,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class WKBGreensFunction (x : ℝ) extends ArchimedeanLimit x : Prop where",
-        "decl": "WKBGreensFunction",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean": [
-      {
-        "line": 51,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class IsPieriShift (P : PieriInterface) where",
-        "decl": "IsPieriShift",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.lean": [
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PoincareLefschetzBorromean where",
-        "decl": "PoincareLefschetzBorromean",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance.lean": [
-      {
-        "line": 92,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class RigidMonoidalStructuralGapInvariance (α : Type*) where",
-        "decl": "RigidMonoidalStructuralGapInvariance",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.lean": [
-      {
-        "line": 73,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ThreeFoldMarkovHopfExtraction (q : ℝ) : Type where",
-        "decl": "ThreeFoldMarkovHopfExtraction",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.lean": [
-      {
-        "line": 76,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class DirectionSanityGateClass (m_candidate : ℝ) : Prop where",
-        "decl": "DirectionSanityGateClass",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.lean": [
-      {
-        "line": 66,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QOneShadowGateClass (c2 c3 : ℝ → ℝ) : Prop where",
-        "decl": "QOneShadowGateClass",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.lean": [
-      {
-        "line": 88,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class RadiusOfConvergenceGateClass : Prop where",
-        "decl": "RadiusOfConvergenceGateClass",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/q-integer-mass-formula.lean": [
-      {
-        "line": 135,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QIntegerMassFormula where",
-        "decl": "QIntegerMassFormula",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/mass-theory/q-pochhammer-partial-product.lean": [
@@ -4112,25 +1798,7 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/mass-theory/qdifference-kernel-prolongation-symbol.lean": [
-      {
-        "line": 33,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QDifferenceKernelIsProlongationSymbol (R : Type*) [CommRing R] where",
-        "decl": "QDifferenceKernelIsProlongationSymbol",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean": [
-      {
-        "line": 144,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BorromeanQuark : Prop where",
-        "decl": "BorromeanQuark",
-        "severity": "major"
-      },
       {
         "line": 151,
         "category": "proof-no-trivial-true",
@@ -4140,92 +1808,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/rho-k-h3a-refinement.lean": [
-      {
-        "line": 58,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class RhoKH3ARefinement (Z N : ℕ) : Prop where",
-        "decl": "RhoKH3ARefinement",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.lean": [
-      {
-        "line": 39,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SharedDenominatorCuspHolonomy",
-        "decl": "SharedDenominatorCuspHolonomy",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/sigma-shell-from-beta-chain-derivation.lean": [
-      {
-        "line": 68,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SigmaShellFromBetaChainDerivation : Prop where",
-        "decl": "SigmaShellFromBetaChainDerivation",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/spectral-sequence-collapse.lean": [
-      {
-        "line": 65,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class WhiteheadHH (R : Type u) [CommRing R]",
-        "decl": "WhiteheadHH",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/t-beta-markov-collapse-general-lift.lean": [
-      {
-        "line": 93,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PSDTrace (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]",
-        "decl": "PSDTrace",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/tau-all-orders-bridge.lean": [
-      {
-        "line": 46,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class TauOrderMixingMap (α κ : ℕ → ℝ) where",
-        "decl": "TauOrderMixingMap",
-        "severity": "major"
-      },
-      {
-        "line": 77,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class TauBandedKernelMap (α κ : ℕ → ℝ) where",
-        "decl": "TauBandedKernelMap",
-        "severity": "major"
-      },
-      {
-        "line": 105,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class TauDistinctInvariants (α κ : ℕ → ℝ) where",
-        "decl": "TauDistinctInvariants",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.lean": [
-      {
-        "line": 63,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HasThurstonTriangulation",
-        "decl": "HasThurstonTriangulation",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean": [
@@ -4284,34 +1866,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean": [
-      {
-        "line": 41,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class WeakSpectralCompleteness where",
-        "decl": "WeakSpectralCompleteness",
-        "severity": "major"
-      },
-      {
-        "line": 62,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class WeakSpectralCompletenessSkeleton : Prop where",
-        "decl": "WeakSpectralCompletenessSkeleton",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/weak-symmetric-normalization.lean": [
-      {
-        "line": 78,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class WeakSymmetricNormalization",
-        "decl": "WeakSymmetricNormalization",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.lean": [
       {
         "line": 65,
@@ -4340,84 +1894,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.lean": [
-      {
-        "line": 33,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class H2SAngleS3HolonomyConjecture (d : H2SChiralData) : Prop where",
-        "decl": "H2SAngleS3HolonomyConjecture",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.lean": [
-      {
-        "line": 75,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PalindromicityOrbitalType (Z : ℕ) where",
-        "decl": "PalindromicityOrbitalType",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.lean": [
-      {
-        "line": 363,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ShellClosureNFTermCount where",
-        "decl": "ShellClosureNFTermCount",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/observations/borromean-quark.lean": [
-      {
-        "line": 85,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BorromeanQuark where",
-        "decl": "BorromeanQuark",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/observations/complex-chirality-rotation.lean": [
-      {
-        "line": 46,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ComplexChiralityRotation : Prop where",
-        "decl": "ComplexChiralityRotation",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/observations/cp-violation-spectral-form.lean": [
-      {
-        "line": 22,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ComplexSubstrate where",
-        "decl": "ComplexSubstrate",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean": [
-      {
-        "line": 40,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class LRFusionData (Z N : ℕ) where",
-        "decl": "LRFusionData",
-        "severity": "major"
-      },
-      {
-        "line": 58,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class DoubleMagicConjecture (Z N : ℕ) extends LRFusionData Z N where",
-        "decl": "DoubleMagicConjecture",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/observations/flavor-split-substrate.lean": [
       {
         "line": 20,
@@ -4430,16 +1906,6 @@
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/HadronicMass.lean)"
       }
     ],
-    "content/quantum-observable-universe/observations/higgs-t28.lean": [
-      {
-        "line": 42,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HiggsAsT28 : Prop where",
-        "decl": "HiggsAsT28",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/observations/magic-numbers-from-q.lean": [
       {
         "line": 27,
@@ -4450,26 +1916,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AtomicMass/MagicNumbersFromQ.lean)"
-      }
-    ],
-    "content/quantum-observable-universe/observations/n-v-bring-action.lean": [
-      {
-        "line": 122,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class NVBringAction (Σ : ElectroweakSlice) : Prop where",
-        "decl": "NVBringAction",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/observations/shell-threading-conjecture.lean": [
-      {
-        "line": 39,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ShellThreadingEnergy : Prop where",
-        "decl": "ShellThreadingEnergy",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/organic-chemistry/chain-ring-comparison.lean": [
@@ -4492,16 +1938,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean": [
-      {
-        "line": 181,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SymmetricCrystalPairProduction (n : ℕ) where",
-        "decl": "SymmetricCrystalPairProduction",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean": [
       {
         "line": 93,
@@ -4510,26 +1946,6 @@
         "snippet": "def photon_neutrino_requires_T35 :",
         "decl": "photon_neutrino_requires_T35",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/particle-interactions/brunnian-property-of-borromean.lean": [
-      {
-        "line": 21,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BrunnianPropertyOfBorromean where",
-        "decl": "BrunnianPropertyOfBorromean",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean": [
-      {
-        "line": 65,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CrystalGraphRealization (n : ℕ) (q : ℝ) where",
-        "decl": "CrystalGraphRealization",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/particle-interactions/confinement-lp.lean": [
@@ -4558,14 +1974,6 @@
     ],
     "content/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.lean": [
       {
-        "line": 25,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class CPTD6D7D8Closure where",
-        "decl": "CPTD6D7D8Closure",
-        "severity": "major"
-      },
-      {
         "line": 34,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true-conjecture",
@@ -4577,14 +1985,6 @@
       }
     ],
     "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean": [
-      {
-        "line": 167,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SymmetricCrystalPairProduction : Prop where",
-        "decl": "SymmetricCrystalPairProduction",
-        "severity": "major"
-      },
       {
         "line": 174,
         "category": "proof-no-trivial-true",
@@ -4598,38 +1998,6 @@
     ],
     "content/quantum-observable-universe/particle-interactions/geom-universality.lean": [
       {
-        "line": 14,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HyperbolicVolumeTranscendence : Prop where",
-        "decl": "HyperbolicVolumeTranscendence",
-        "severity": "major"
-      },
-      {
-        "line": 21,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PLCorrectnessHypotheses : Prop where",
-        "decl": "PLCorrectnessHypotheses",
-        "severity": "major"
-      },
-      {
-        "line": 88,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class GeomFullFunctorial {Knot : Type} (G : GeomFullEval Knot) where",
-        "decl": "GeomFullFunctorial",
-        "severity": "major"
-      },
-      {
-        "line": 192,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HyperbolicVolumeIndependence : Prop where",
-        "decl": "HyperbolicVolumeIndependence",
-        "severity": "major"
-      },
-      {
         "line": 199,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true-conjecture",
@@ -4638,16 +2006,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
-      }
-    ],
-    "content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean": [
-      {
-        "line": 19,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HeckeAnyonicSubstrate where",
-        "decl": "HeckeAnyonicSubstrate",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.lean": [
@@ -4660,16 +2018,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean": [
-      {
-        "line": 52,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class PeriodicTableDemand : Prop where",
-        "decl": "PeriodicTableDemand",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.lean": [
       {
         "line": 195,
@@ -4678,42 +2026,6 @@
         "snippet": "def q_beta_cos_conditional [_inst : BorromeanQuark] : True := trivial",
         "decl": "q_beta_cos_conditional",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/particle-interactions/q-zero-stokes-region-identification.lean": [
-      {
-        "line": 80,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MostowPrasadDistinguished (K : KnotComplement) where",
-        "decl": "MostowPrasadDistinguished",
-        "severity": "major"
-      },
-      {
-        "line": 95,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ReidTraceField (K : KnotComplement) [MostowPrasadDistinguished K] where",
-        "decl": "ReidTraceField",
-        "severity": "major"
-      },
-      {
-        "line": 115,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QZeroStokesIdentification (K : KnotComplement) (R : Type*)",
-        "decl": "QZeroStokesIdentification",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.lean": [
-      {
-        "line": 38,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QBetaTraceCounitConvergence (q me : ℝ) where",
-        "decl": "QBetaTraceCounitConvergence",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/particle-interactions/quark-antiquark-production.lean": [
@@ -4784,14 +2096,6 @@
         "severity": "critical"
       },
       {
-        "line": 142,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BorromeanQuark : Prop where",
-        "decl": "BorromeanQuark",
-        "severity": "major"
-      },
-      {
         "line": 149,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true-conjecture",
@@ -4800,36 +2104,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
-      }
-    ],
-    "content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.lean": [
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SpinFromSo3Fiber where",
-        "decl": "SpinFromSo3Fiber",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/particle-interactions/t-from-trace-cyclicity.lean": [
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class TFromTraceCyclicity where",
-        "decl": "TFromTraceCyclicity",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean": [
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class TypeBFoldingCpt where",
-        "decl": "TypeBFoldingCpt",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/particle-interactions/typed-garside-element.lean": [
@@ -4860,16 +2134,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/particle-interactions/wigner-su4-from-spin-isospin.lean": [
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class WignerSu4FromSpinIsospin where",
-        "decl": "WignerSu4FromSpinIsospin",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.lean": [
       {
         "line": 25,
@@ -4878,32 +2142,6 @@
         "snippet": "def breit_wheeler_pair_production (q : ℝ) (γ₁ γ₂ : ColoredPhoton q) :",
         "decl": "breit_wheeler_pair_production",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.lean": [
-      {
-        "line": 128,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BringHyperbolicDecomposition : Prop where",
-        "decl": "BringHyperbolicDecomposition",
-        "severity": "major"
-      },
-      {
-        "line": 191,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BWQIndependence",
-        "decl": "BWQIndependence",
-        "severity": "major"
-      },
-      {
-        "line": 281,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BlochWignerInjective (D : ℝ → ℝ) : Prop where",
-        "decl": "BlochWignerInjective",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean": [
@@ -4928,14 +2166,6 @@
     ],
     "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.lean": [
       {
-        "line": 69,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class EHartreeCategoricalDerivation where",
-        "decl": "EHartreeCategoricalDerivation",
-        "severity": "major"
-      },
-      {
         "line": 103,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true-conjecture",
@@ -4956,53 +2186,7 @@
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
       }
     ],
-    "content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.lean": [
-      {
-        "line": 36,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ElectronShellsHopf : Prop where",
-        "decl": "ElectronShellsHopf",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/predicted-spectra/elliptic-stability-locus.lean": [
-      {
-        "line": 38,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class EllipticStabilityLocus : Prop where",
-        "decl": "EllipticStabilityLocus",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean": [
-      {
-        "line": 63,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class AlphaEmGluonOctetConjecture (q : ℝ) (hq : q > 1) : Prop where",
-        "decl": "AlphaEmGluonOctetConjecture",
-        "severity": "major"
-      },
-      {
-        "line": 83,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ChernSimonsCorrectionConjecture (q : ℝ) (hq : q > 1) : Prop where",
-        "decl": "ChernSimonsCorrectionConjecture",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean": [
-      {
-        "line": 55,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class BorromeanQuark : Prop where",
-        "decl": "BorromeanQuark",
-        "severity": "major"
-      },
       {
         "line": 62,
         "category": "proof-no-trivial-true",
@@ -5014,16 +2198,6 @@
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
       }
     ],
-    "content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean": [
-      {
-        "line": 19,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class HyperbolicVolumeTranscendence where",
-        "decl": "HyperbolicVolumeTranscendence",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.lean": [
       {
         "line": 139,
@@ -5032,16 +2206,6 @@
         "snippet": "def shell_eigenvalues_conditional [_inst : BorromeanQuark] : True := trivial",
         "decl": "shell_eigenvalues_conditional",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/predicted-spectra/skein-shell-correction.lean": [
-      {
-        "line": 30,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class SkeinShellCorrection : Prop where",
-        "decl": "SkeinShellCorrection",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean": [
@@ -5056,28 +2220,12 @@
     ],
     "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.lean": [
       {
-        "line": 230,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ComplexLiTwoUnitCircleClassical : Prop where",
-        "decl": "ComplexLiTwoUnitCircleClassical",
-        "severity": "major"
-      },
-      {
         "line": 237,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true",
         "snippet": "def blochWigner_unit_circle_eq_Cl_2",
         "decl": "blochWigner_unit_circle_eq_Cl_2",
         "severity": "critical"
-      },
-      {
-        "line": 270,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class Cl_2_DoubleAngle : Prop where",
-        "decl": "Cl_2_DoubleAngle",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition.lean": [
@@ -5092,36 +2240,6 @@
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicLValueDecomposition.lean)"
       }
     ],
-    "content/quantum-observable-universe/q-geometric-langlands/mirror-3d-3d-correspondence.lean": [
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class Mirror3d3dCorrespondence where",
-        "decl": "Mirror3d3dCorrespondence",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean": [
-      {
-        "line": 113,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ModularSTransformQQTilde where",
-        "decl": "ModularSTransformQQTilde",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean": [
-      {
-        "line": 23,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QGeometricLanglands where",
-        "decl": "QGeometricLanglands",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/q-geometric-langlands/q-hecke-eigenvalue.lean": [
       {
         "line": 20,
@@ -5134,16 +2252,6 @@
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean)"
       }
     ],
-    "content/quantum-observable-universe/q-geometric-langlands/quantum-langlands-dual.lean": [
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QuantumLanglandsDual where",
-        "decl": "QuantumLanglandsDual",
-        "severity": "major"
-      }
-    ],
     "content/quantum-observable-universe/quantum-observable-universes/categorical-dq-squared-proof.lean": [
       {
         "line": 34,
@@ -5154,26 +2262,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/CategoricalDqSquared.lean)"
-      }
-    ],
-    "content/quantum-observable-universe/quantum-observable-universes/magic-numbers-bring.lean": [
-      {
-        "line": 50,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class MagicNumbersBring where",
-        "decl": "MagicNumbersBring",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/quantum-observable-universes/q-harmonic-flow.lean": [
-      {
-        "line": 46,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QHarmonicFlow (V : Type*) [AddCommGroup V] where",
-        "decl": "QHarmonicFlow",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.lean": [
@@ -5208,46 +2296,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/JointGaloisBraidFigure8.lean)"
-      }
-    ],
-    "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean": [
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class LusztigCanonicalBasisQEq1 where",
-        "decl": "LusztigCanonicalBasisQEq1",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.lean": [
-      {
-        "line": 75,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class TrackCReducedAxiom (q : ℝ) [MarkovClosureMap2Strand] : Prop where",
-        "decl": "TrackCReducedAxiom",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean": [
-      {
-        "line": 70,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class QuantumAPolynomial (K : KnotComplement) where",
-        "decl": "QuantumAPolynomial",
-        "severity": "major"
-      }
-    ],
-    "content/quantum-observable-universe/stochastic-mechanics/reverse-limit-q-to-infinity.lean": [
-      {
-        "line": 26,
-        "category": "proof-conjecture-unclassified",
-        "pattern": "missing-primary-dependent",
-        "snippet": "class ReverseLimitQToInfinity where",
-        "decl": "ReverseLimitQToInfinity",
-        "severity": "major"
       }
     ],
     "content/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases.lean": [

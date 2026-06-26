@@ -956,7 +956,7 @@
         "notes": "The two defining properties the docstring promises — positivity (`⟨v, ε·v⟩ > 0`) and archimedean smallness (`n·ε < λ`) — are now each encoded as a Lean class field, not merely described in prose while the structure carried only `ε ≠ 𝟙`. Narrative and Lean are now in correspondence."
       }
     ],
-    "proof-conjecture-unclassified": [
+    "proof-dependent-conjecture-not-conditional": [
       {
         "field_hash": {
           "md": "29d2418e92ad",
@@ -971,7 +971,7 @@
         },
         "reviewed_at": "2026-06-26T14:30:00.000Z",
         "reviewed_sha": "d9e1f48662ce4036c45a4fc6973f6a9ffd769de3",
-        "notes": "Both conjecture classes carry an explicit `@conjecture: primary` classification."
+        "notes": "Both `ReebPositive` and `ArchimedeanInfinitesimal` are derived as PRIMARY conjectures (roots) by classifyConjectures — their signatures bind no other conjecture class, and their prose claims no unmet conditionality. Primary/dependent is derived from Lean instance binders, not tagged."
       }
     ]
   },
