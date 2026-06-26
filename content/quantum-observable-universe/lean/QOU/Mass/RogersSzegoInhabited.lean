@@ -1,5 +1,6 @@
 import QOU.Mass.BindingQHermiteOscillator
 import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
 # QOU.Mass.RogersSzegoInhabited — `FollowsRogersSzego` is non-vacuous
@@ -65,5 +66,21 @@ discharges the hypothesis, so the q-deformed even/odd parity holds of a real wit
 theorem rsSeq_odd_vanishes_at_neg_one (q : ℝ) (j : ℕ) : rsSeq q (-1) (2 * j + 1) = 0 := by
   have hH1 : rsSeq q (-1) 1 = 0 := by simp [rsSeq]
   exact rogers_szego_odd_vanishes_at_neg_one (rsSeq q (-1)) q hH1 j
+
+open scoped BigOperators
+
+/-- **The EVEN part of the inhabited model at `t = −1` is the odd-base q-Pochhammer**
+`rsSeq q (−1) (2j) = ∏_{i<j} (1 − q^{2i+1}) = (q;q²)_j`. While the odd terms vanish
+(`rsSeq_odd_vanishes_at_neg_one`), the even subsequence — by the two-step decoupling
+`rsSeq q (−1) (m+2) = (1−q^{m+1})·rsSeq q (−1) m` — accumulates the odd-power factors, a clean
+closed form (stated as an explicit `Finset.prod`, self-contained — no `QPochhammer` dependency). -/
+theorem rsSeq_even_at_neg_one (q : ℝ) (j : ℕ) :
+    rsSeq q (-1) (2 * j) = ∏ i ∈ Finset.range j, (1 - q ^ (2 * i + 1)) := by
+  induction j with
+  | zero => simp [rsSeq]
+  | succ j ih =>
+    have step := rogers_szego_t_neg_one_two_step (rsSeq q (-1)) q (2 * j)
+    rw [show 2 * (j + 1) = 2 * j + 2 from by ring, step, ih, Finset.prod_range_succ]
+    ring
 
 end QOU.Mass.BindingQHermiteOscillator
