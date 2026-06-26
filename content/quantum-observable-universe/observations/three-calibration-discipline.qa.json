@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/three-calibration-discipline.lean"
   },
   "source_hashes": {
-    "md": "bb8810d18a58",
+    "md": "fcccaf0db5f6",
     "ts": "094d70097cfe",
     "lean": "01c4db759618"
   },
@@ -30,6 +30,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "fcccaf0db5f6",
+          "ts": "094d70097cfe",
+          "lean": "01c4db759618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-emoji-content": [
@@ -49,6 +66,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "fcccaf0db5f6",
+          "ts": "094d70097cfe",
+          "lean": "01c4db759618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-first-person-work": [
@@ -68,6 +102,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "fcccaf0db5f6",
+          "ts": "094d70097cfe",
+          "lean": "01c4db759618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-time-stamped-notes": [
@@ -87,6 +138,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "fcccaf0db5f6",
+          "ts": "094d70097cfe",
+          "lean": "01c4db759618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-unicode-crash": [
@@ -106,6 +174,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "fcccaf0db5f6",
+          "ts": "094d70097cfe",
+          "lean": "01c4db759618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-editorializing": [
@@ -125,6 +210,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "fcccaf0db5f6",
+          "ts": "094d70097cfe",
+          "lean": "01c4db759618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-scholarly-default": [
@@ -144,6 +246,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "fcccaf0db5f6",
+          "ts": "094d70097cfe",
+          "lean": "01c4db759618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-title-scholarly": [
@@ -182,6 +301,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "fcccaf0db5f6",
+          "ts": "094d70097cfe",
+          "lean": "01c4db759618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-author-notes-pollution": [
@@ -203,6 +339,23 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
         "evidence": "quantum-observable-universe/observations/three-calibration-discipline.md:102: P4:date-ref: the re-pin of 2026-05-28). This is a precision substitution within"
+      },
+      {
+        "field_hash": {
+          "md": "fcccaf0db5f6",
+          "ts": "094d70097cfe",
+          "lean": "01c4db759618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-status-section": [
@@ -222,6 +375,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "fcccaf0db5f6",
+          "ts": "094d70097cfe",
+          "lean": "01c4db759618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "framework-canonical": [
@@ -241,6 +411,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "fcccaf0db5f6",
+          "ts": "094d70097cfe",
+          "lean": "01c4db759618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "wall-side-correct": [
@@ -260,6 +447,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "fcccaf0db5f6",
+          "ts": "094d70097cfe",
+          "lean": "01c4db759618"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1351,8 +1555,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "Prose asserts 'exactly three inputs, a fourth is a hard audit failure'; the Lean class carries mass_factorisation (the conclusion) as an axiom field and the theorem merely projects it \u2014 encodes neither 'exactly three' nor 'no fourth'.",
-        "rebuttal": "none \u2014 survived as narrative-Lean gap; honestly labelled a stub but does not prove the headline count.",
+        "referee_argument": "Prose asserts 'exactly three inputs, a fourth is a hard audit failure'; the Lean class carries mass_factorisation (the conclusion) as an axiom field and the theorem merely projects it — encodes neither 'exactly three' nor 'no fourth'.",
+        "rebuttal": "none — survived as narrative-Lean gap; honestly labelled a stub but does not prove the headline count.",
         "evidence": [
           {
             "text": "three-calibration-discipline.lean:133-140 ':= c.mass_factorisation X'"
@@ -1381,7 +1585,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": "Block states Q_beta derivation as fact; corpus says the key link is an unproved ansatz with undischarged fit/residual ambiguity.",
-        "rebuttal": "partial \u2014 sibling epistemic-status-of-calibrations.md:80-88 concedes 'postulated, not derived', but the honesty is in siblings not this block's assertive prose.",
+        "rebuttal": "partial — sibling epistemic-status-of-calibrations.md:80-88 concedes 'postulated, not derived', but the honesty is in siblings not this block's assertive prose.",
         "evidence": [
           {
             "text": "three-calibration-discipline.md:25; audit 2026-05-24-q-beta-net-ansatz-fitting-finding.md:27 'POSTULATED, NOT DERIVED'"
@@ -1409,8 +1613,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "'Exactly three' survives relabeling \u2014 the corpus has >=3 mutually inconsistent calibration triples (m_pi vs Q_beta(n) vs {m_e,m_p,m_n}).",
-        "rebuttal": "partial\u2192survived: a 2026-06-16 refined-framing note canonicalises (m_e, m_mu/m_e, m_pi) but corpus-wide convergence is incomplete.",
+        "referee_argument": "'Exactly three' survives relabeling — the corpus has >=3 mutually inconsistent calibration triples (m_pi vs Q_beta(n) vs {m_e,m_p,m_n}).",
+        "rebuttal": "partial→survived: a 2026-06-16 refined-framing note canonicalises (m_e, m_mu/m_e, m_pi) but corpus-wide convergence is incomplete.",
         "evidence": [
           {
             "text": "three-calibration-discipline.md (CAL-3=m_pi) vs 2026-05-11-...-violations.md:16-18 (CAL-3=Q_beta(n))"
@@ -1439,7 +1643,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "Anchoring q_0 on m_p/m_e looks like a 4th input.",
-        "rebuttal": "rebutted \u2014 re-determines the same H1 modulus (one datum); m_mu/m_e becomes a 9.5-sigma cross-check, not a new DOF.",
+        "rebuttal": "rebutted — re-determines the same H1 modulus (one datum); m_mu/m_e becomes a 9.5-sigma cross-check, not a new DOF.",
         "evidence": [
           {
             "text": "three-calibration-discipline.md:99-108"
@@ -1468,7 +1672,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "uses[] cites three-calibration-inputs / calibration-cohomology-alignment.",
-        "rebuttal": "rebutted \u2014 both cited props back the 2+1=3 count and the m_pi independence (Vol(Hopf)=0).",
+        "rebuttal": "rebutted — both cited props back the 2+1=3 count and the m_pi independence (Vol(Hopf)=0).",
         "evidence": [
           {
             "text": "three-calibration-discipline.ts uses[]"
@@ -1495,7 +1699,7 @@
         },
         "result": "warn",
         "verdict": "survivable-objection",
-        "referee_argument": "The 'exactly three calibrations, Q_beta derived' claim presents as settled what the corpus's own audits flag as open \u2014 Q_beta's derivation rests on a relation the corpus labels 'POSTULATED, NOT DERIVED', and the Lean sibling proves only a tautological factorisation, not the count.",
+        "referee_argument": "The 'exactly three calibrations, Q_beta derived' claim presents as settled what the corpus's own audits flag as open — Q_beta's derivation rests on a relation the corpus labels 'POSTULATED, NOT DERIVED', and the Lean sibling proves only a tautological factorisation, not the count.",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
@@ -1508,5 +1712,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T03:58:58Z"
+  "updated_at": "2026-06-26T15:20:59.452Z"
 }

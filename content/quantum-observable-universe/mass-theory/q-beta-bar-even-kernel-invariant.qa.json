@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.lean"
   },
   "source_hashes": {
-    "md": "2af6839f2278",
+    "md": "98c341e373e6",
     "ts": "db624ec82f98",
     "lean": "03bd5da4dd1a"
   },
@@ -30,6 +30,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-emoji-content": [
@@ -49,6 +66,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-first-person-work": [
@@ -68,6 +102,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-time-stamped-notes": [
@@ -87,6 +138,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-unicode-crash": [
@@ -106,6 +174,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-editorializing": [
@@ -127,6 +212,25 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "minor",
         "evidence": "quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.md:29: even powers of $t$, which the $u$-grading absorbs cleanly: $R(u)$ admits | quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.md:58: and higher, which the bar-even ladder absorbs trivially). $\\blacksquare$"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.md:58: and higher, which the bar-even ladder absorbs trivially). $\\blacksquare$"
       }
     ],
     "voice-scholarly-default": [
@@ -146,6 +250,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-title-scholarly": [
@@ -184,6 +305,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-author-notes-pollution": [
@@ -203,6 +341,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-status-section": [
@@ -222,6 +377,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "framework-canonical": [
@@ -241,6 +413,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "wall-side-correct": [
@@ -260,6 +449,23 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "98c341e373e6",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1354,7 +1560,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": ".md:9-11 states the iff; .lean proves only bar_even_quadratic_term_in_t_squared + bar_even_test_n2 (N=2 prototype, three ring lines); the iff is unformalized.",
-        "rebuttal": "partial \u2014 .md Proof section explicitly scopes itself ('the N=2 instance is the prototype', line 43); the iff is stated as a structural discriminant not claimed Lean-proved; honest but the iff remains a narrative assertion.",
+        "rebuttal": "partial — .md Proof section explicitly scopes itself ('the N=2 instance is the prototype', line 43); the iff is stated as a structural discriminant not claimed Lean-proved; honest but the iff remains a narrative assertion.",
         "evidence": [
           {
             "text": "q-beta-bar-even-kernel-invariant.md:9-11 vs .lean"
@@ -1383,7 +1589,7 @@
         "scope": "limited",
         "ruling": "surviving",
         "referee_argument": ".md:50-58 calls the N=2 factor 'bar-even at the Taylor level' yet .lean:116-120 + witness show it is bar-ASYMMETRIC archimedean (vanishes iff q^4=1).",
-        "rebuttal": "partial\u2192survived \u2014 reconciled by the Taylor/archimedean split and the block discloses both, but the two-sided 'bar-even'/'bar-asymmetric' usage invites confusion (cosmetic).",
+        "rebuttal": "partial→survived — reconciled by the Taylor/archimedean split and the block discloses both, but the two-sided 'bar-even'/'bar-asymmetric' usage invites confusion (cosmetic).",
         "evidence": [
           {
             "text": "q-beta-bar-even-kernel-invariant.md:50-58 vs .lean:116-120"
@@ -1411,7 +1617,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": ".qa.json:626-645 compute-witness-exists result:fail severity:critical ('declared witness does not exist').",
-        "rebuttal": "rebutted \u2014 witness + probe now exist (computations/qbeta/qbeta-bar-even-kernel-invariant-probe.{witness.json,py}, allPassed:true); the sidecar entry is STALE (idle-time refresh would clear it). Not a live defect.",
+        "rebuttal": "rebutted — witness + probe now exist (computations/qbeta/qbeta-bar-even-kernel-invariant-probe.{witness.json,py}, allPassed:true); the sidecar entry is STALE (idle-time refresh would clear it). Not a live defect.",
         "evidence": [
           {
             "text": "q-beta-bar-even-kernel-invariant.qa.json:626-645 (stale)"
@@ -1438,8 +1644,8 @@
         "result": "pass",
         "scope": "limited",
         "ruling": "rebutted",
-        "referee_argument": "Q_\u03b2 formula m_e|q^2-2q-1|... as a fit (2026-05-24 audit POSTULATED NOT DERIVED).",
-        "rebuttal": "rebutted \u2014 that formula is NOT this block; this is the bar-even discriminant gate (no-fit structural meta-test, tags:[no-fit,formalize-first]); the fitting concern lives in other blocks, already documented.",
+        "referee_argument": "Q_β formula m_e|q^2-2q-1|... as a fit (2026-05-24 audit POSTULATED NOT DERIVED).",
+        "rebuttal": "rebutted — that formula is NOT this block; this is the bar-even discriminant gate (no-fit structural meta-test, tags:[no-fit,formalize-first]); the fitting concern lives in other blocks, already documented.",
         "evidence": [
           {
             "text": "q-beta-bar-even-kernel-invariant.ts tags"
@@ -1465,7 +1671,7 @@
         },
         "result": "warn",
         "verdict": "survivable-objection",
-        "referee_argument": "The block's headline claim \u2014 the iff 'clean integer-u Taylor representation \u27fa R bar-even' \u2014 is asserted, not proved: the Lean formalizes only the N=2 prototype's three ring identities, not the biconditional; the substantive discriminant is a narrative assertion.",
+        "referee_argument": "The block's headline claim — the iff 'clean integer-u Taylor representation ⟺ R bar-even' — is asserted, not proved: the Lean formalizes only the N=2 prototype's three ring identities, not the biconditional; the substantive discriminant is a narrative assertion.",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
@@ -1478,5 +1684,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T04:37:26Z"
+  "updated_at": "2026-06-26T15:20:59.452Z"
 }

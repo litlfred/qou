@@ -3,12 +3,12 @@
   "label": "prop:unit-modulus-eigenvalue",
   "kind": "proposition",
   "paths": {
-    "ts": "../qou/content/quantum-observable-universe/braids-and-knots/unit-modulus-eigenvalue.ts",
-    "md": "../qou/content/quantum-observable-universe/braids-and-knots/unit-modulus-eigenvalue.md"
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/unit-modulus-eigenvalue.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/unit-modulus-eigenvalue.md"
   },
   "source_hashes": {
     "md": "eaf82f3c1f47",
-    "ts": "1000db4bf4a4"
+    "ts": "40a734632f4a"
   },
   "criteria": {
     "voice-status-leak": [
@@ -153,6 +153,22 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "eaf82f3c1f47",
+          "ts": "40a734632f4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
       }
     ],
     "voice-ai-slop": [
@@ -1587,5 +1603,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-06-26T15:20:59.452Z"
 }
