@@ -18,24 +18,30 @@ cover.
 
 Hash-accurate buckets (12-char SHA-256 prefix of each sibling vs the
 sidecar's recorded `field_hash`; an entry is *stale* when the source
-changed since it was written):
+changed since it was written). Counts below are the **post-fix** state —
+the 3 blocks edited in this PR (§Fixes) are now stale across all 11
+criteria, so each row's `stale` is 238 and every row sums to the 2222
+total sidecars:
 
 | criterion | pass | fail | n/a | stale | missing |
 |---|---|---|---|---|---|
-| voice-ai-slop | 1917 | 0 | 2 | 235 | 68 |
-| voice-author-notes-pollution | 1917 | 0 | 2 | 235 | 68 |
-| voice-editorializing | 1916 | 1→0 | 2 | 235 | 68 |
-| voice-emoji-content | 1917 | 0 | 2 | 235 | 68 |
-| voice-first-person-work | 1917 | 0 | 2 | 235 | 68 |
-| voice-scholarly-default | 1914 | 3 | 2 | 235 | 68 |
-| voice-status-leak | 1917 | 0 | 2 | 235 | 68 |
-| voice-status-section | 1907 | 2→0 | 2 | 235 | 76 |
-| voice-time-stamped-notes | 1917 | 0 | 2 | 235 | 68 |
-| voice-title-scholarly | 1647 | 0 | 272 | 235 | 68 |
-| voice-unicode-crash | 1917 | 0 | 2 | 235 | 68 |
+| voice-ai-slop | 1914 | 0 | 2 | 238 | 68 |
+| voice-author-notes-pollution | 1914 | 0 | 2 | 238 | 68 |
+| voice-editorializing | 1914 | 0 | 2 | 238 | 68 |
+| voice-emoji-content | 1914 | 0 | 2 | 238 | 68 |
+| voice-first-person-work | 1914 | 0 | 2 | 238 | 68 |
+| voice-scholarly-default | 1911 | 3 | 2 | 238 | 68 |
+| voice-status-leak | 1914 | 0 | 2 | 238 | 68 |
+| voice-status-section | 1906 | 0 | 2 | 238 | 76 |
+| voice-time-stamped-notes | 1914 | 0 | 2 | 238 | 68 |
+| voice-title-scholarly | 1644 | 0 | 272 | 238 | 68 |
+| voice-unicode-crash | 1914 | 0 | 2 | 238 | 68 |
 
-(`voice-statement-no-interpretation` is statement-block-only; its ~1578
-"missing" is by-design N/A, so it is excluded from the universal set.)
+Pre-fix state (before this PR's 3 edits): `stale` was 235 and the three
+now-cleared fails sat in the `fail` column — `voice-editorializing` 1,
+`voice-status-section` 2. (`voice-statement-no-interpretation` is
+statement-block-only; its ~1578 "missing" is by-design N/A, so it is
+excluded from the universal set.)
 
 **Headline:** the one-voice audit *has* been run broadly — ~1917/2222
 fresh-pass per universal criterion. The drift is the work:
