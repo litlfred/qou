@@ -1,16 +1,15 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-06-26T15:01:18.136Z",
+  "generated": "2026-06-26T15:22:55.758Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 1770,
-  "files_flagged": 168,
-  "total_defects": 164,
-  "total_exempt": 40,
+  "scanned_files": 1772,
+  "files_flagged": 167,
+  "total_defects": 162,
+  "total_exempt": 41,
   "categories": {
     "proof-no-trivial-true": 72,
     "proof-no-false-premise": 12,
-    "proof-no-decide-masking": 16,
-    "proof-no-empty-prop-carrier": 3,
+    "proof-no-decide-masking": 17,
     "proof-no-self-assuming-projection": 55,
     "proof-no-placeholder-stub": 6
   },
@@ -252,7 +251,7 @@
       {
         "name": "SaturatedShellConjecture",
         "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellNeutrality.lean",
-        "line": 334,
+        "line": 342,
         "dependsOn": [
           "FullTwistContentFormula"
         ]
@@ -576,16 +575,6 @@
         "exempt_reason": "shadow-stub (real formalisation: content/quantum-observable-universe/lean/QOU/JetHorizon.lean)"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean": [
-      {
-        "line": 56,
-        "category": "proof-no-empty-prop-carrier",
-        "pattern": "empty-conjecture-class",
-        "snippet": "class PvsNPQou : Prop",
-        "decl": "PvsNPQou",
-        "severity": "critical"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/AppendixSurreals/HoefsmitBridge.lean": [
       {
         "line": 139,
@@ -808,7 +797,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BaryonWeight/beta4_hook.lean": [
       {
-        "line": 66,
+        "line": 67,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem beta4_hook [ctx : Beta4HookContext] :",
@@ -846,7 +835,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/IwahoriHeckeAPI.lean": [
       {
-        "line": 228,
+        "line": 239,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true",
         "snippet": "def wedderburn_decomposition_generic",
@@ -856,7 +845,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/Li2qUniqueness.lean": [
       {
-        "line": 63,
+        "line": 64,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true",
         "snippet": "def briggs_klein_is_neg_li2q (q : ℝ) (V : ℝ) (hq : 1 < q) :",
@@ -864,7 +853,7 @@
         "severity": "critical"
       },
       {
-        "line": 103,
+        "line": 104,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true",
         "snippet": "def li2q_unique_from_ftc (q : ℝ) (hq : 1 < q) :",
@@ -894,7 +883,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/QSchurWeightsGeneral.lean": [
       {
-        "line": 52,
+        "line": 54,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true",
         "snippet": "def contentSum_add_cell (μ : Partition) (i j : ℕ) :",
@@ -902,7 +891,7 @@
         "severity": "critical"
       },
       {
-        "line": 72,
+        "line": 74,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true",
         "snippet": "def qSchur_weight_by_induction (q : ℝ) (hq : 1 < q) [WenzlBranching q] :",
@@ -910,7 +899,7 @@
         "severity": "critical"
       },
       {
-        "line": 83,
+        "line": 85,
         "category": "proof-no-trivial-true",
         "pattern": "def-disguised-true",
         "snippet": "def qSchur_normalisation (q : ℝ) (hq : 1 < q) [WenzlBranching q] :",
@@ -920,12 +909,14 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellNeutrality.lean": [
       {
-        "line": 252,
+        "line": 260,
         "category": "proof-no-empty-prop-carrier",
-        "pattern": "empty-prop-class",
+        "pattern": "annotated-marker",
         "snippet": "class Saturated (lam : YoungDiagram) : Prop",
         "decl": "Saturated",
-        "severity": "critical"
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "explicit @marker opaque-tag opt-out"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/SixTermPerDerivationWeights.lean": [
@@ -955,6 +946,16 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem A5Irrep.reebCasimir_not_injective :",
         "decl": "A5Irrep.reebCasimir_not_injective",
+        "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean": [
+      {
+        "line": 705,
+        "category": "proof-no-decide-masking",
+        "pattern": "native_decide",
+        "snippet": "theorem hopf_generation_selection :",
+        "decl": "hopf_generation_selection",
         "severity": "critical"
       }
     ],
@@ -988,7 +989,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Brings/color_elliptic.lean": [
       {
-        "line": 49,
+        "line": 48,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem color_elliptic [ctx : ColorEllipticContext] :",
@@ -1008,7 +1009,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/CategoricalReeb/ofWeightDecomposition.lean": [
       {
-        "line": 59,
+        "line": 60,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem ofWeightDecomposition [ctx : OfWeightDecompositionContext] :",
@@ -1058,7 +1059,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Experimental/terminal_resolution.lean": [
       {
-        "line": 47,
+        "line": 48,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem terminal_resolution [ctx : TerminalResolutionContext] :",
@@ -1112,7 +1113,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/HadronicMass/nucleon_borromean_topology.lean": [
       {
-        "line": 55,
+        "line": 56,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
         "snippet": "theorem nucleon_borromean_topology [ctx : NucleonBorromeanTopologyContext] :",
@@ -1132,7 +1133,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/HyperellipticQuintic/minimal_z5_classification.lean": [
       {
-        "line": 87,
+        "line": 86,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem minimal_z5_classification [ctx : MinimalZ5ClassificationContext] :",
@@ -1147,16 +1148,6 @@
         "pattern": "discharged-impossible-hyp",
         "snippet": "theorem zero_not_isAlgebraicallyPrime (q : ℝ) :",
         "decl": "zero_not_isAlgebraicallyPrime",
-        "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Interactions/QIntegerMassFormula.lean": [
-      {
-        "line": 137,
-        "category": "proof-no-empty-prop-carrier",
-        "pattern": "empty-conjecture-class",
-        "snippet": "class IsAMEValue (Z N : ℕ) (B_AME : ℝ) : Prop",
-        "decl": "IsAMEValue",
         "severity": "critical"
       }
     ],
@@ -1391,7 +1382,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/ParticleInteractions/deuterium_derived_binding.lean": [
       {
-        "line": 130,
+        "line": 131,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
         "snippet": "theorem deuterium_derived_binding [ctx : DeuteriumDerivedBindingContext] :",
@@ -1401,7 +1392,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean": [
       {
-        "line": 56,
+        "line": 57,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
         "snippet": "theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :",
@@ -1411,7 +1402,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/ParticleInteractions/frobenius_positivity_filter.lean": [
       {
-        "line": 70,
+        "line": 69,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
         "snippet": "theorem frobenius_positivity_filter [ctx : FrobeniusPositivityFilterContext] :",
@@ -1480,7 +1471,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/ParticleInteractions/transfer_matrix_identities.lean": [
       {
-        "line": 59,
+        "line": 58,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
         "snippet": "theorem transfer_matrix_identities [ctx : TransferMatrixIdentitiesContext] :",
@@ -1510,7 +1501,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/exists_axiom_3_chern.lean": [
       {
-        "line": 48,
+        "line": 47,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
         "snippet": "theorem exists_axiom_3_chern [ctx : ExistsAxiom3ChernContext] :",
@@ -1540,7 +1531,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/qou_canonical_action.lean": [
       {
-        "line": 104,
+        "line": 105,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem qou_canonical_action [ctx : QouCanonicalActionContext] :",
@@ -1550,7 +1541,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/variational_equations.lean": [
       {
-        "line": 106,
+        "line": 107,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
         "snippet": "theorem variational_equations [ctx : VariationalEquationsContext] :",

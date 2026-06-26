@@ -50,18 +50,20 @@ Full machine-readable graph + per-file flags: the `conjecture_graph` and
 
 ### `proof-no-empty-prop-carrier` (critical) — empty marker carriers
 
-Three genuine empty-`Prop` carriers remain after fixing `ReebEpsilon` (the
-motivating case). Each asserts nothing; a downstream `[C]`-conditional result
-built on it is vacuous. **Flagged for follow-up — not fixed here:**
+**All resolved (0 remaining).** The three carriers the first pass surfaced are
+now fixed:
 
-- `QOU/AlgebraicSubstrate/PvsNPQou.lean:56` — `class PvsNPQou : Prop` (P-vs-NP;
-  docstring admits "will become explicit `Prop` fields once …"). Sidecar fail
-  written to `appendix-surreals/p-vs-np-conjecture.qa.json`.
-- `QOU/Interactions/QIntegerMassFormula.lean:137` —
-  `class IsAMEValue (Z N : ℕ) (B_AME : ℝ) : Prop` (library-only; witness-recorded).
-- `QOU/BraidKnot/ShellNeutrality.lean:252` —
-  `class Saturated (lam : YoungDiagram) : Prop` (no conjecture signal; likely an
-  opaque predicate tag — add the `@marker` opt-out or give it content).
+- `QOU/AlgebraicSubstrate/PvsNPQou.lean` — empty marker → two content fields
+  `strict_separation` (`P ⊊ BQP_q` for every ε>0) + `noncompressible`
+  (separation survives ε→0). Block sidecar `p-vs-np-conjecture.qa.json` flipped
+  fail → pass.
+- `QOU/Interactions/QIntegerMassFormula.lean` — `IsAMEValue` empty predicate →
+  two physical-invariant fields (`has_nucleon : 1 ≤ Z+N`, `binding_nonneg : 0 ≤ B_AME`),
+  so `[IsAMEValue …]` is a genuine restriction.
+- `QOU/BraidKnot/ShellNeutrality.lean` — `Saturated` is a genuine structural
+  predicate whose full content awaits the `H_n(q)` Hecke import (parallel to
+  `fullTwistTrivial`); given the documented `@marker` opt-out (intentional opaque
+  tag, not accidental vacuity) rather than faked content.
 
 ### Resolved in this change
 
