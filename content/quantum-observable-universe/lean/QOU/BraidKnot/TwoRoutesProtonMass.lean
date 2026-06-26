@@ -18,6 +18,8 @@
 -/
 
 import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
 
 namespace QOU.BraidKnot.TwoRoutes
 
@@ -78,8 +80,15 @@ def lwProduction : ℝ := 0 -- m_p_N0 / (8G/ℏ²)
     (transcendental, from the arccos Taylor truncation). -/
 -- Ref: [habiro2000] https://doi.org/10.1007/s002220000013
 theorem two_routes_agree :
-    trivial /- |lwSpectral q - lwProduction q| / lwProduction q < 2e-4 -/ := by
-  trivial
+    |lwSpectral q - lwProduction| / lwProduction < 0.0002 := by
+  -- §1a honest disposition: the 130 ppm agreement is an empirical /
+  -- witness fact (PR #1298 production route + this session's spectral
+  -- route); it is NOT derivable from the current stub definitions
+  -- (`F_Bor` and `lwProduction` are `0` placeholders), so this is
+  -- stated-but-not-yet-proved rather than discharged by the
+  -- division-by-zero degeneracy of the stub.
+  -- Ref: [habiro2000] https://doi.org/10.1007/s002220000013
+  sorry
 
 /-- KEY IDENTITY: h = (q+1)·ℏ.
     This connects the two routes through the substrate structure. -/
@@ -124,16 +133,19 @@ theorem mpOverMe_factored (G : ℝ) :
 
     At N=3 (h¹⁴): precision < 1 ppQ. -/
 theorem spectral_series_rational :
-    trivial /- spectralCorr q = (q+1)²√(3+h²)/8 × (1 + rational_corrections) -/ := by
-  trivial
+    spectralCorr q =
+      Real.arccos (1 - 3 * (h q) ^ 4 / 2 - (h q) ^ 6 / 2) / (8 * (hbar q) ^ 2) := by
+  unfold spectralCorr
+  rw [borromean_char_arccos_arg q]
 
 /-- The Habiro rational function gives the EXACT Markov trace.
     tr_M(B₃, q) = p(√q)/d(√q) with p, d ∈ ℤ[u].
     This is NOT a Taylor series — it's a FINITE rational evaluation. -/
 -- Ref: [habiro2000] https://doi.org/10.1007/s002220000013
-theorem habiro_is_exact :
-    trivial /- tr_M = p(u)/d(u), degree p ≤ 40, degree d ≤ 21, coefficients in ℤ -/ := by
-  trivial
+theorem habiro_is_exact (hq : q ≠ 0) :
+    borromeanChar q =
+      -q ^ 6 + 3 * q ^ 4 - 3 * q ^ 2 + 4 - 3 / q ^ 2 + 3 / q ^ 4 - 1 / q ^ 6 :=
+  borromeanChar_laurent q hq
 
 -- ═══════════════════════════════════════════════════════════════
 --  INTERFACE QUADRATIC STRUCTURE (binding key identity)
@@ -176,7 +188,9 @@ theorem five_averaged_crossings (q : ℝ) (hq : q ≠ 0)
     (σ - (q - 1/q) / 2) ^ 5 =
     (1 + (q - 1/q) ^ 2 / 4) ^ 2 * (σ - (q - 1/q) / 2) := by
   have sq := averaged_crossing_squared_scalar q hq σ hecke
-  nlinarith [sq, sq]
+  have expand : (σ - (q - 1/q) / 2) ^ 5
+      = ((σ - (q - 1/q) / 2) ^ 2) ^ 2 * (σ - (q - 1/q) / 2) := by ring
+  rw [expand, sq]
 
 end
 end QOU.BraidKnot.TwoRoutes
