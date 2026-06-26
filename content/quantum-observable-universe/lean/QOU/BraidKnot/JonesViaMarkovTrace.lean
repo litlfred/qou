@@ -54,4 +54,18 @@ theorem jonesHopf_canonical (hq : 1 < q) :
       (q ^ ((5 : ℝ) / 2) - q ^ ((1 : ℝ) / 2) + q ^ 2 + q) / (q ^ 2 + q) :=
   rfl
 
+/-- **The Hopf-link Jones value is positive** in the Wenzl regime (`q > 1`):
+    the canonical closed form is a ratio of positive reals (numerator
+    `≥ (q² + q) > 0` since `q^{5/2} ≥ q^{1/2}` for `q ≥ 1`). In particular it is
+    nonzero, so it is a valid normalization. Sorry-free. -/
+theorem jonesHopf_pos (hq : 1 < q) :
+    0 < jonesHopf q (T := markovTraceTower_canonical q hq) := by
+  rw [jonesHopf_canonical q hq]
+  have hq0 : (0 : ℝ) < q := lt_trans zero_lt_one hq
+  have h52 : q ^ ((1 : ℝ) / 2) ≤ q ^ ((5 : ℝ) / 2) :=
+    Real.rpow_le_rpow_of_exponent_le hq.le (by norm_num)
+  have hden : 0 < q ^ 2 + q := by positivity
+  apply div_pos _ hden
+  nlinarith [h52, hq0, sq_nonneg q]
+
 end QOU.BraidKnot
