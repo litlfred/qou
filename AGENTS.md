@@ -656,7 +656,7 @@ The QOU framework derives every observable (m_p, m_n, m_He, Q_β, B_AME, lifetim
 | CAL-2 | 𝔇_β (neutron β-decay width, h²) | q₀ (via m_μ/m_e = Vol(4₁)/ℏ_q²) | Q_β = ℏ/𝔇_β; modulus pinned most precisely by m_μ/m_e | W-plane modulus |
 | CAL-3 | 𝔇_π (pion decay width, h³) | the orthogonal meson scale | m_π (PDG) | orthogonal class |
 
-> **🟧 Owner ruling (2026-06-26): the ideal *mathematical* canonical is the decay-width triple (m_e, 𝔇_β, 𝔇_π), NOT three masses.** Masses (m_e, m_μ/m_e, m_π) and Q_β are the *numerical proxies*; **Q_β is the proxy for CAL-2 (𝔇_β), not "derived, not a calibration".** This supersedes the prior "three measured masses / Q_β derived" wording. (PR #2866. The ~28 downstream echoes + the §"q₀ anchor convention" STRICT section below + the Lean witness are Stage-2 follow-up.)
+> **🟧 Owner ruling (2026-06-26): the ideal *mathematical* canonical is the decay-width triple (m_e, 𝔇_β, 𝔇_π), NOT three masses.** Masses (m_e, m_μ/m_e, m_π) and Q_β are the *numerical proxies*; **Q_β is the proxy for CAL-2 (𝔇_β), not "derived, not a calibration".** This supersedes the prior "three measured masses / Q_β derived" wording. (PR #2866, Stage 1 + Stage 2: the two Propositions + their `.ts`/`.lean` siblings, `epistemic-status-of-calibrations`, and the §"q₀ anchor convention" STRICT section below are relabeled. The Lean witness `calibrations_eq_cohomology` is a count/alignment claim — 3 calibrations = 3 H¹ DOF — unchanged by the relabel.)
 
 All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-plane scale + modulus + one orthogonal class; 2+1=3) — **not** three distinct degrees H⁰/H¹/H² (per `calibration-cohomology-alignment`, Lean `QOU.Mass.calibrations_eq_cohomology` — a count/alignment claim, unchanged). The canonical inputs are **weak-sector observables** (m_e, 𝔇_β, 𝔇_π); their proxies are the masses (m_e, m_π) plus the Q-value Q_β. m_e sets the unit; since q₀ is dimensionless it is pinned by m_μ *in that unit* — the ratio m_μ/m_e, the most precise CAL-2 anchor. The exact maps:
 
@@ -803,13 +803,14 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 
 | Layer | q₀ pin | m_μ status |
 |---|---|---|
-| **Ideal / canonical 3-CAL** | **CAL-2 = m_μ/m_e** via `m_μ/m_e = Vol(4₁)/ℏ_q²` | calibration **input** — exact *by construction* |
+| **Ideal / canonical 3-CAL** | **CAL-2 = 𝔇_β**, pinned via its proxy `m_μ/m_e = Vol(4₁)/ℏ_q²` | proxy/anchor **input** — exact *by construction* when used to pin q₀ |
 | **Experimental / Physical-Observations** | **m_p/m_e** (0.06 ppb; re-pin 2026-05-28) | **9.5σ prediction**; misses L2 100× by **963.6×** (~210 ppb) — the μ–p substrate tension |
 
 The proton re-pin is a **precision substitution within the same
 overdetermined H¹ datum — NOT a 4th calibration and NOT a change to
-CAL-2.** (CAL-1 = m_e, CAL-2 = m_μ/m_e, CAL-3 = m_π; Q_β is **derived**,
-not CAL-3.) Pin on the most precise ratio so the unavoidable ~11.5 ppb
+CAL-2.** (CAL-1 = m_e; CAL-2 = 𝔇_β, proxy m_μ/m_e; CAL-3 = 𝔇_π, proxy
+m_π; Q_β = ℏ/𝔇_β is the **CAL-2 proxy**, not CAL-3 — see the decay-width
+cheat-sheet ruling above.) Pin on the most precise ratio so the unavoidable ~11.5 ppb
 theory residual lands where least significant (proton-anchor → 9.5σ on
 muon; muon-anchor → ~4000σ on proton).
 

@@ -64,13 +64,16 @@ research-grade workplan tracks candidate derivation paths
 (spectral collapse, K-theoretic period, Bring $\chi = -6$
 fixed-point, categorical endomorphism fixed-point).
 
-## CAL-3 ($m_\pi$) and the derived $\mathfrak{Q}_\beta$ — conditional net-ansatz
+## CAL-3 ($\mathfrak{D}_\pi$, proxy $m_\pi$) and the CAL-2 proxy $\mathfrak{Q}_\beta$ — conditional net-ansatz
 
-**CAL-3 is $m_\pi$** (the charged-pion mass — the orthogonal
-$\mathrm{Vol}(\mathrm{Hopf})=0$ meson scale, genuinely independent of
-$(m_e, q_0)$). $\mathfrak{Q}_\beta$ below is the **derived** hadronic observable
-(bar-odd $\sinh$ partner of $m_\pi$), **not** the third calibration;
-its derivation status is what this section assesses.
+**CAL-3 is $\mathfrak{D}_\pi$, the pion decay width** (proxy: the
+charged-pion mass $m_\pi$ — the orthogonal $\mathrm{Vol}(\mathrm{Hopf})=0$
+meson scale, genuinely independent of $(m_e, q_0)$). $\mathfrak{Q}_\beta$
+below is the **proxy for CAL-2** ($\mathfrak{D}_\beta$; bar-odd $\sinh$
+partner of $m_\pi$), **not** the third calibration; because the modulus
+is overdetermined and pinned most precisely by $m_\mu/m_e$, whether
+$q_0$ reproduces $\mathfrak{Q}_\beta$ as a cross-check is what this section
+assesses.
 
 The derived $\mathfrak{Q}_\beta$ fixes the hadronic energy scale $\mathfrak{E}_0$ via
 $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$. Per sibling
