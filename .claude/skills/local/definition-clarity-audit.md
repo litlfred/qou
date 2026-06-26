@@ -130,8 +130,11 @@ there, not in the per-criterion functions.
   term counts as *marked* if any `**…**` or `:defterm[…]` span shares ≥ `0.5` of
   the term's tokens. Titles that are *fully mathematical* (no plain-text term)
   return `n/a`.
-- **`clarity-defn-single`** — fail if bold section-headers ≥ `3`, or `defines[]`
-  entries ≥ `2`, or defining-verb lead-ins ≥ `3`.
+- **`clarity-defn-single`** — fail if `defines[]` entries ≥ `2`, or defining-verb
+  lead-ins ≥ `3`. **Bold section-headers do NOT trigger this** (calibration
+  2026-06-26: 59/59 bold-header majors were false positives — a stack of bold
+  sub-sections is a *tightness* signal owned by `defn-tight`, not a
+  multiple-definienda signal). `boldHeaders` is kept as an informational metric.
 - **`clarity-defn-tight`** — fail if prose words > `250`, or bold sub-sections ≥
   `3`, or preamble words (before the first display-math / marked term) > `60`.
 - **`clarity-stmt-tight`** — fail if prose words > `300`, or bold sub-sections ≥
