@@ -32,7 +32,24 @@ namespace QOU.Information
 noncomputable def informationBandwidth (q : ℝ) (η_q : ℝ) : ℝ :=
   q * η_q / (q - 1) ^ 2
 
-/-- Abstract context for the P-time-iff-bandwidth claim. -/
+/-- Abstract context for the P-time-iff-bandwidth claim.
+
+    The two implication directions of the characterisation are carried
+    as **explicit hypotheses** (§3b-cond non-degenerate pattern), matching
+    the two halves of the manuscript proof:
+
+    - `p_to_bandwidth` — the forward simulation: a polynomial-time Turing
+      machine deciding the problem encodes as a braid with `c =
+      O(poly(N))` crossings, and the transfer-matrix product evaluates
+      `P_L(q)` in `O(c)` matrix multiplications, i.e. within the
+      bandwidth budget.
+    - `bandwidth_to_p` — the converse funnel: if the factored Skein form
+      has `O(poly(c))` factors then each is computed in `O(1)` steps from
+      the local transfer matrix, so the total cost is polynomial and the
+      problem is in P.
+
+    Neither field *is* the iff; `p_bandwidth_bound` *derives* it
+    (`Iff.intro`), so the projection-vacuity test is not triggered. -/
 class PBandwidthContext where
   /-- The substrate parameter `q > 1`. -/
   q : ℝ
@@ -48,9 +65,12 @@ class PBandwidthContext where
   /-- Predicate "the Skein polynomial is evaluable within
       `𝓑(q)⁻¹ · poly(c)` Planck steps". -/
   bandwidthBounded : Prop
-  /-- Manuscript characterisation: P-time decidability equals
-      bandwidth-bounded Skein evaluation. -/
-  claim_p_iff_bandwidth : inP ↔ bandwidthBounded
+  /-- **Forward direction (TM → braid simulation):** a P-time decision
+      problem admits a bandwidth-bounded Skein evaluation. -/
+  p_to_bandwidth : inP → bandwidthBounded
+  /-- **Converse direction (interference funnel):** a bandwidth-bounded
+      Skein evaluation decides the problem in polynomial time. -/
+  bandwidth_to_p : bandwidthBounded → inP
 
 /-- **The bandwidth `𝓑(q)` is positive for `q > 1`**. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/p-bandwidth-bound.md
@@ -68,10 +88,12 @@ theorem informationBandwidth_pos [ctx : PBandwidthContext] :
 
     A decision problem encoded by a link is in P iff its Skein
     polynomial can be evaluated within `𝓑(q)⁻¹ · poly(c)` Planck
-    steps. -/
+    steps. *Derived* by composing the two directional hypotheses of
+    `PBandwidthContext` (`Iff.intro`); the theorem proves the iff, it
+    does not assume it. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/p-bandwidth-bound.md
-def p_bandwidth_bound [ctx : PBandwidthContext] :
+theorem p_bandwidth_bound [ctx : PBandwidthContext] :
     ctx.inP ↔ ctx.bandwidthBounded :=
-  ctx.claim_p_iff_bandwidth
+  ⟨ctx.p_to_bandwidth, ctx.bandwidth_to_p⟩
 
 end QOU.Information

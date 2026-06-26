@@ -1,90 +1,101 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.Information.reeb_operations_per_planck
+# QOU.Information.reeb_operations_per_planck — discrete iterations per Reeb circuit
 
-**Placeholder canonical** for content block
-[`prop:reeb-operations-per-planck`](../../../quantum-observable-universe/information-theory/reeb-operations-per-planck.md): *Discrete iterations per Reeb circuit*.
+**Proposition** ([`prop:reeb-operations-per-planck`](../../../quantum-observable-universe/information-theory/reeb-operations-per-planck.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Information.reeb_operations_per_planck` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+Let `q ∈ k^× ∖ {1}` and `t_P(q) = q/(q − 1)` the Planck time. The number
+of discrete `f_q`-iterations composing one Reeb circuit is
+
+`n_R(q) = t_P(q) = q/(q − 1) = 1/ℏ_q`,  with  `ℏ_q = (q − 1)/q`.
+
+Each iteration is one braiding evaluation (one `R`-matrix application) and
+one jet-prolongation step, advancing the phase by `ℏ_q` of a full circuit.
+
+## Formalisation notes
+
+- **Derived arithmetic, not assumed.** The headline chain
+  `n_R = t_P = q/(q−1) = 1/ℏ_q` is *derived* from the definitions
+  `ℏ_q = (q − 1)/q`, `t_P = q/(q − 1)`, and `n_R = t_P` (the iteration
+  count equals the Planck time, from the Reeb-time coordinate
+  `t = ℏ_q · 𝒯`). The non-trivial step `t_P = 1/ℏ_q` is `field_simp`
+  + `ring`. The phase-increment bound `0 < ℏ_q < 1` is likewise
+  *derived* from `ℏ_q = (q − 1)/q` with `q > 1`.
+- The per-iteration counts (`n_connection_apps = 1`, `n_R_matrix_evals
+  = 1`) are structural *definitions* of the discrete dynamics (one `∇_q`
+  application, one `R`-matrix evaluation per `f_q`-iteration), carried as
+  honest data fields — not self-assumed conclusions.
+
+-- Ref: [manuscript] quantum-observable-universe/information-theory/reeb-operations-per-planck.md
 -/
 
 namespace QOU.Information
 
+/-- Inputs for the Reeb-operations-per-Planck identity.
 
-/-- Abstract context for the `reeb_operations_per_planck` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+    The substrate definitions (`ℏ_q = (q−1)/q`, `t_P = q/(q−1)`,
+    `n_R = t_P`) are carried as fields; the arithmetic identities
+    `t_P = 1/ℏ_q` and `0 < ℏ_q < 1` are *derived* in the theorem, not
+    assumed. The per-iteration operation counts are modelling data. -/
 class ReebOperationsPerPlanckContext extends QOU.Shared.MarkovTraceContext where
   /-- Real substrate parameter `q_real : ℝ` (specialisation of the
       generic shared `q : R` to ℝ for the analytic identity below). -/
   q_real : ℝ
-  /-- Substrate q-Planck constant `ℏ_q = (q − 1)/q`. -/
+  /-- `q > 1` (QOU regime). -/
+  q_gt_one : 1 < q_real
+  /-- Substrate q-Planck constant `ℏ_q`. -/
   hbar_q : ℝ
-  /-- Planck time `t_P(q) = q/(q − 1)`. -/
+  /-- **Definition:** `ℏ_q = (q − 1)/q`. -/
+  hbar_q_eq : hbar_q = (q_real - 1) / q_real
+  /-- Planck time `t_P(q)`. -/
   t_P : ℝ
+  /-- **Definition:** `t_P = q/(q − 1)`. -/
+  t_P_eq : t_P = q_real / (q_real - 1)
   /-- Number of iterations per Reeb circuit `n_R(q)`. -/
   n_R : ℝ
-  /-- Manuscript identity: `n_R(q) = t_P(q) = q/(q − 1) = 1/ℏ_q`. -/
-  claim_n_R_eq_t_P : n_R = t_P ∧ t_P = q_real / (q_real - 1) ∧
-                     t_P = 1 / hbar_q
-  /-- Manuscript sub-claim (i) — Each iteration advances the Reeb-
-      vector phase by `ℏ_q` of a full circuit (per-step phase
-      increment). -/
-  claim_i_advances_phase_reeb : 0 < hbar_q ∧ hbar_q < 1
+  /-- **Definition (Reeb-time coordinate `t = ℏ_q · 𝒯`):** the iteration
+      count composing one circuit equals the Planck time. -/
+  n_R_eq_t_P : n_R = t_P
   /-- Number of `∇_q` connection applications per iteration. -/
   n_connection_apps : ℕ
-  /-- Manuscript sub-claim (ii) — Each iteration applies the
-      `q`-connection `∇_q` exactly once. -/
-  claim_ii_applies_connection_once : n_connection_apps = 1
+  /-- Modelling datum (ii): each iteration applies `∇_q` exactly once. -/
+  n_connection_apps_eq : n_connection_apps = 1
   /-- Number of `R`-matrix evaluations per iteration. -/
   n_R_matrix_evals : ℕ
-  /-- Manuscript sub-claim (iii) — Each iteration evaluates exactly
-      one `R`-matrix. -/
-  claim_iii_evaluates_matrix_resolving : n_R_matrix_evals = 1
-/-- **Proposition statement** (from manuscript):
+  /-- Modelling datum (iii): each iteration evaluates exactly one
+      `R`-matrix. -/
+  n_R_matrix_evals_eq : n_R_matrix_evals = 1
 
-Let $q \in k^\times \setminus \{1\}$ and let $t_P(q) = q/(q-1)$
-be the Planck time ([Planck time](#def:planck-time)).  The number
-of discrete $f_q$-iterations — evaluations of
-$f_q(z) = z^2 + c(q)$ on the exceptional divisor — that compose
-one Reeb circuit is*
+/-- **Discrete iterations per Reeb circuit** ([`prop:reeb-operations-per-planck`]).
 
-$$
-  n_R(q) =  t_P(q) =  \frac{q}{q - 1} =  \frac{1}{\hbar_q}.
-$$
-
-*Each iteration is one braiding evaluation (one $R$-matrix
-application) and one jet prolongation step, advancing the phase
-by the fraction $\hbar_q$ of a full circuit.*
-
-*Proof.*
-From the definition of the Reeb time coordinate
-($t = \hbar_q \cdot \mathcal{T}$,
-[information-theoretic time](#def:information-theoretic-time)),
-each discrete $f_q$-iteration (an increment of $\mathcal{T}$
-by $1$) corresponds to a continuous time duration of $\hbar_q$.
-Therefore the number of iterations that compose one full Reeb
-circuit (continuous duration $1$) is $1/\hbar_q = t_P(q)$.
-$\square$
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/information-theory/reeb-operations-per-planck.ts
-def reeb_operations_per_planck [ctx : ReebOperationsPerPlanckContext] :
+    `n_R = t_P = q/(q − 1) = 1/ℏ_q`, the phase increment satisfies
+    `0 < ℏ_q < 1`, and each iteration performs one `∇_q` application and
+    one `R`-matrix evaluation — all *derived* from the substrate
+    definitions and `q > 1`. -/
+-- Ref: [manuscript] quantum-observable-universe/information-theory/reeb-operations-per-planck.md
+theorem reeb_operations_per_planck [ctx : ReebOperationsPerPlanckContext] :
     (ctx.n_R = ctx.t_P ∧ ctx.t_P = ctx.q_real / (ctx.q_real - 1) ∧
      ctx.t_P = 1 / ctx.hbar_q) ∧
     (0 < ctx.hbar_q ∧ ctx.hbar_q < 1) ∧
     ctx.n_connection_apps = 1 ∧
-    ctx.n_R_matrix_evals = 1 :=
-  ⟨ctx.claim_n_R_eq_t_P, ctx.claim_i_advances_phase_reeb,
-   ctx.claim_ii_applies_connection_once,
-   ctx.claim_iii_evaluates_matrix_resolving⟩
+    ctx.n_R_matrix_evals = 1 := by
+  have hq0 : (0 : ℝ) < ctx.q_real := lt_trans one_pos ctx.q_gt_one
+  have hq1 : (0 : ℝ) < ctx.q_real - 1 := by linarith [ctx.q_gt_one]
+  refine ⟨⟨ctx.n_R_eq_t_P, ctx.t_P_eq, ?_⟩, ⟨?_, ?_⟩,
+          ctx.n_connection_apps_eq, ctx.n_R_matrix_evals_eq⟩
+  · -- t_P = 1 / ℏ_q
+    rw [ctx.t_P_eq, ctx.hbar_q_eq]
+    rw [one_div, inv_div]
+  · -- 0 < ℏ_q
+    rw [ctx.hbar_q_eq]
+    exact div_pos hq1 hq0
+  · -- ℏ_q < 1
+    rw [ctx.hbar_q_eq, div_lt_one hq0]
+    linarith
 
 end QOU.Information

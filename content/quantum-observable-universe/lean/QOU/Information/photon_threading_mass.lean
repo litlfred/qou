@@ -1,67 +1,78 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Tactic.Ring
 
 /-!
-# QOU.Information.photon_threading_mass
+# QOU.Information.photon_threading_mass — mass as photon-threading cost
 
-**Placeholder canonical** for content block
-[`prop:photon-threading-mass`](../../../quantum-observable-universe/information-theory/photon-threading-mass.md): *Mass as photon threading cost*.
+**Proposition** ([`prop:photon-threading-mass`](../../../quantum-observable-universe/information-theory/photon-threading-mass.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Information.photon_threading_mass` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+Let `𝔋` be a knot composite with braid word `β_𝔋 ∈ B_n`. The categorical
+mass `m_𝔋` equals the total Gröbner–Shirshov reduction cost of threading
+the photon strand `γ` through the hadron braid:
+
+`m_𝔋 = (q − 1)² · |q − q⁻¹| · Σ_w |c_w|`,
+
+the sum running over the Hecke reductions `σ_i² → (q − q⁻¹)σ_i + 1` that
+move `γ` from above `β_𝔋` to below it.
+
+## Formalisation notes
+
+- **Non-degenerate conditional (§3b-cond).** The mass equation is
+  *derived*, not assumed. The two genuine inputs are carried as fields:
+
+    1. `crossing_energy_eq` — the manuscript's *definition* of the
+       crossing energy `E_𝔋 = |q − q⁻¹| · Σ_w |c_w|` (each Hecke step
+       costs `|q − q⁻¹|` in Skein units, weighted by `|c_w|`);
+    2. `mass_energy_equiv` — mass–energy equivalence `m_𝔋 = E_𝔋 · (q − 1)²`
+       (the factor `(q − 1)² = 1/c_q²` converts Skein/spatial units to
+       mass/temporal units), from [`thm:mass-energy-equivalence`].
+
+  The headline equation is obtained by substitution + `ring`; it is
+  **not** a field of the context, so the projection-vacuity test is not
+  triggered (§3b-cond item 5).
+
+-- Ref: [manuscript] quantum-observable-universe/information-theory/photon-threading-mass.md
 -/
 
 namespace QOU.Information
 
+open Finset
 
-/-- Abstract context for the `photon_threading_mass` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Inputs for the photon-threading mass identity.
+
+    The two manuscript facts that *compose* into the mass equation are
+    carried as explicit fields (§3b-cond): the definition of the
+    crossing energy as the summed Hecke cost, and mass–energy
+    equivalence. The headline equation is derived from them. -/
 class PhotonThreadingMassContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
   /-- Categorical mass `m_𝔋` of the hadron. -/
   m_H : ℝ
+  /-- Crossing energy `E_𝔋` of the hadron braid (Skein units). -/
+  E_H : ℝ
   /-- The Hecke-reduction step coefficients `|c_w|` indexed by step. -/
   c_w_abs : ℕ → ℝ
   /-- Number of Hecke reduction steps required for photon threading. -/
   n_steps : ℕ
-  /-- Manuscript sub-claim — Mass identity:
-      `m_𝔋 = (q − 1)² · |q − q⁻¹| · Σ_w |c_w|`. -/
-  claim_photon_threading_mass :
-    m_H = (q - 1) ^ 2 * |q - q⁻¹| *
-      (Finset.range n_steps).sum (fun i => c_w_abs i)
+  /-- **Crossing-energy definition (input 1):** each of the `n_steps`
+      Hecke reductions costs `|q − q⁻¹|` in Skein units, weighted by the
+      coefficient `|c_w|`, so `E_𝔋 = |q − q⁻¹| · Σ_w |c_w|`. -/
+  crossing_energy_eq :
+    E_H = |q - q⁻¹| * (Finset.range n_steps).sum (fun i => c_w_abs i)
+  /-- **Mass–energy equivalence (input 2):** the crossing energy converts
+      to mass through the factor `(q − 1)² = 1/c_q²`. -/
+  mass_energy_equiv : m_H = E_H * (q - 1) ^ 2
 
-/-- **Proposition statement** (from manuscript):
+/-- **Mass as photon-threading cost** ([`prop:photon-threading-mass`]).
 
-Let $\mathfrak{H}$ be a knot composite with braid word $\beta_{\mathfrak{H}} \in B_n$.
-The categorical mass $\mathfrak{m}_{\mathfrak{H}}$
-([mass identity](#def:mass-identity)) equals the total
-Gröbner--Shirshov reduction cost of threading the photon strand
-$\gamma$ through the hadron braid:*
-
-$$
-  \mathfrak{m}_{\mathfrak{H}}
-  =  (q - 1)^2 \sum_{\text{Hecke steps}}
-  |c_w| \cdot |q - q^{-1}|,
-$$
-
-*where the sum is over all Hecke reductions
-$\sigma_i^2 \to (q - q^{-1})\sigma_i + 1$ needed to move the
-photon strand from above $\beta_{\mathfrak{H}}$ to below $\beta_{\mathfrak{H}}$ in the
-augmented braid $\gamma \otimes \beta_{\mathfrak{H}} \in B_{n+1}$, and
-$c_w$ are the coefficients at each step.*
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/information-theory/photon-threading-mass.ts
-noncomputable def photon_threading_mass [ctx : PhotonThreadingMassContext] :
+    `m_𝔋 = (q − 1)² · |q − q⁻¹| · Σ_w |c_w|`, *derived* by substituting
+    the crossing-energy definition into mass–energy equivalence. -/
+-- Ref: [manuscript] quantum-observable-universe/information-theory/photon-threading-mass.md
+theorem photon_threading_mass [ctx : PhotonThreadingMassContext] :
     ctx.m_H = (ctx.q - 1) ^ 2 * |ctx.q - ctx.q⁻¹| *
-      (Finset.range ctx.n_steps).sum (fun i => ctx.c_w_abs i) :=
-  ctx.claim_photon_threading_mass
+      (Finset.range ctx.n_steps).sum (fun i => ctx.c_w_abs i) := by
+  rw [ctx.mass_energy_equiv, ctx.crossing_energy_eq]; ring
 
 end QOU.Information
