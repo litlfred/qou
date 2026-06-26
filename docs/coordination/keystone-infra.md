@@ -15,6 +15,8 @@ honestly bound the research-grade walls. Tiered breakdown in bean epic
 | 2026-06-25 | #2801 | `gbDepth` (max `hookLength`) + tiered epic `08a2` | merged | `gbDepth`/`hookLength` on `YoungDiagram` |
 | 2026-06-25 | #2803 | `JointGalois`→`Equiv.Perm` + jet/AlphaK→`QPlancherel` | merged | `jetWedderburnWeight`/`_nonneg`, `Equiv.Perm` braid wire |
 | 2026-06-25 | #2807 | Gaussian binomial `qBinom` + 4 proved lemmas | merged | `qBinom` + lemmas in `QPartitionCombinatorics` |
+| 2026-06-25 | #2812 | coordination ledger (this file) | merged | tiered-status template |
+| 2026-06-26 | #2815 | T3 `60iz` Jones-Hopf layer (`JonesViaMarkovTrace`, sorry-free) | merged | Jones-via-Markov-trace + stabilisation-invariance pattern |
 | 2026-06-26 | #2817 | `qBracket_add` `[a+b]=q^b[a]+q^{-a}[b]` + if-guard removal | open | `qBracket_add`/`qBracket_eq_formula` (q-Pascal primitive) |
 
 ## Tiered status (epic `08a2`)
@@ -25,19 +27,42 @@ honestly bound the research-grade walls. Tiered breakdown in bean epic
   identity → honest-abstract).
 - **Tier 2 — DONE.** `5ldf` `qBinom` (q-int/q-factorial pre-existed; only
   the Gaussian-binomial gap filled).
-- **Tier 3 — research-grade walls:**
-  - `60iz` **Jones polynomial** — *coordination-gated*. The Jones layer is
-    `H_n(q)` Markov-trace → knot invariant, complementary to (not
-    duplicative of) #2743's `k[S_n]` (q = 1) Wedderburn build. Intent +
-    boundary posted on #2743; awaiting scope confirmation before building
-    on `Braiding/HnMarkovTrace`. The main-landed `KnotRegistry` /
-    photon-as-4-term-Hecke-element work also assembles knot+Hecke building
-    blocks.
+- **Tier 3 — at drainable boundary:**
+  - `60iz` **Jones polynomial** — **partial DONE** (#2815, merged). Built the
+    `H_n(q)` Markov-trace → knot-invariant layer on the cached
+    `Braiding/HnMarkovTrace`: `JonesViaMarkovTrace.lean` (sorry-free, in-build
+    via the `BraidKnot` aggregator) — `jonesHopf` (Jones value of the Hopf
+    link = `tr_M(σ₁²)`), `jonesHopf_invariant` (**proved** Markov-stabilisation
+    ⇒ link invariant), `jonesHopf_canonical` (closed form), `jonesHopf_pos`
+    (positivity, q>1). Complementary to (not duplicative of) #2743's `k[S_n]`
+    (q = 1) Wedderburn build; boundary posted on #2743. **REMAINING (blocked):**
+    wiring `jonesHopf` into `jet_filtered_knot_factor.jonesQuotient` needs the
+    general `H_n(q)` element algebra (`IwahoriHecke` olean, **not cached**) to
+    express the Jones polynomial of an arbitrary nuclear-quotient braid
+    `β̄(Z,N)`; the cached `MarkovTraceTower` only exposes `trM_sigma1_sq` (the
+    Hopf/σ₁² case).
   - `6chz` **geometric-Langlands** (q-opers/eigensheaves/LocSys/Bun_G) —
     **BLOCKED**: no infra in Mathlib *or* QOU. q-GL family stays
     honestly-abstract §3b.
   - `hhl9` **motivic-Galois** (Goncharov periods) — **BLOCKED**: no infra.
     JointGalois Galois-side stays abstract.
+
+## §7c base-ring follow-up (bean `z1lz`) — currency note (2026-06-26)
+
+Re-checking the four "content-verified genuine leaks" listed in
+[`docs/audits/2026-06-25-lean-library-tree-7c-coverage-gap.md` §3](../audits/2026-06-25-lean-library-tree-7c-coverage-gap.md)
+against the live tree:
+
+| file | audit flag | live state (2026-06-26) |
+|------|-----------|-------------------------|
+| `BraidKnot/H3HeckeIdempotents.lean` | ℝ q-integers/eigenvalues | **already generic** `{R} [Field R]` (line 42; §7c docstring present) — **flag STALE, no work** (in-build via `BraidKnot`) |
+| `BraidsAndKnots/YLambdaQSchur.lean` | ℝ q-Schur weights | **still ℝ** — true **orphan** (0 Lean importers, 0 block refs ⇒ not in any build ⇒ a §7c fix there is CI-unenforced). Clean but low live value; generalise **+ wire into the `BraidsAndKnots` aggregator** to make its ~30 proved q-Schur theorems CI-enforced. |
+| `HeckeAlgebra/MarkovTrace.lean` | `markovTrace_smul (c : ℝ)` | **cascade, not a clean fix** — `markovTrace`'s codomain ℝ is baked into upstream `HeckeAlgebra.Common`; generalising just `c` is incoherent in isolation. |
+| `Shared/WedderburnBlockDecompositionContext` | `dim_q`/`w`/`w_tilde : … → ℝ` | **big** — ~15 extenders; structural refactor, defer. |
+
+Net: the highest-value §7c member (the in-build `H3HeckeIdempotents`) is
+**already compliant**; the remaining clean target is the `YLambdaQSchur`
+orphan (generalise + wire-in).
 
 ## Coordination findings (2026-06-25)
 

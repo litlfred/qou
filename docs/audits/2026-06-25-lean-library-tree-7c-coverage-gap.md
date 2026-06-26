@@ -68,6 +68,17 @@ orphan hole harboured real §7c leaks beyond the one already fixed. Generalising
 follow-up** (each is a structural `ℝ → {R}/[Field R]` refactor; `Wedderburn…Context` has ~15 extenders) —
 **beaned**, not done here (NOT a mass-fix, per the folio-assistant guidance).
 
+> **Currency correction (2026-06-26, bean `z1lz`).** Re-checked the four against the live tree:
+> `BraidKnot/H3HeckeIdempotents.lean` is **already generic** `{R} [Field R]` (line 42; carries a §7c
+> docstring) — this flag is **STALE** (the file was generalised after the audit snapshot; no work). It is
+> the only one of the four that is **in-build** (via the `BraidKnot` aggregator), so the highest-value §7c
+> member is already compliant. Of the remaining three: `YLambdaQSchur` is a true **orphan** (0 importers,
+> 0 block refs ⇒ CI-unenforced) — generalise **+ wire into the `BraidsAndKnots` aggregator** to make it
+> count; `HeckeAlgebra/MarkovTrace.lean` is a **cascade** (`markovTrace`'s ℝ codomain is fixed upstream in
+> `HeckeAlgebra.Common`, so generalising just `markovTrace_smul`'s `c` is incoherent); `Wedderburn…Context`
+> stays deferred (~15 extenders). Full table:
+> [`docs/coordination/keystone-infra.md` §"§7c base-ring follow-up"](../coordination/keystone-infra.md).
+
 ## 4. `check-sidecars.sh` — now content-based
 
 Aligned with the real checker: the path heuristic is **removed**. For standalone library Lean it now
