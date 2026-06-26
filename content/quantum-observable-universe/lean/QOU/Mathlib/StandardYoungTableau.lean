@@ -75,6 +75,28 @@ theorem row_strict (T : StandardYoungTableau μ) {i j1 j2 : ℕ}
   · exact absurd (congrArg Prod.snd
       (T.injOn_cells (mem_coe_cells hc1) (mem_coe_cells hcell) h)) (Nat.ne_of_lt hlt)
 
+/-- Encode a standard tableau by its (bounded) entries on the cells — the values lie in
+`{1,…,|μ|} ⊆ Fin (|μ|+1)`, and a tableau is determined by them (off-cell entries are `0`).  This
+injection into a finite function type witnesses finiteness of `StandardYoungTableau μ`. -/
+def encode (T : StandardYoungTableau μ) : {x : ℕ × ℕ // x ∈ μ.cells} → Fin (μ.cells.card + 1) :=
+  fun c => ⟨T.entry c.1.1 c.1.2, Nat.lt_succ_of_le
+    (T.mapsTo_cells (by rw [Finset.mem_coe]; exact c.2)).2⟩
+
+theorem encode_injective : Function.Injective (encode : StandardYoungTableau μ → _) := by
+  intro T1 T2 h
+  have hall : ∀ i j, T1.toSsyt.entry i j = T2.toSsyt.entry i j := by
+    intro i j
+    by_cases hij : (i, j) ∈ μ
+    · have hc : ((i, j) : ℕ × ℕ) ∈ μ.cells := (YoungDiagram.mem_cells (i, j)).mpr hij
+      have := congrArg Fin.val (congrFun h ⟨(i, j), hc⟩)
+      simpa [encode, entry] using this
+    · exact (T1.toSsyt.zeros hij).trans (T2.toSsyt.zeros hij).symm
+  have hssyt : T1.toSsyt = T2.toSsyt := SemistandardYoungTableau.ext hall
+  cases T1; cases T2; cases hssyt; rfl
+
+instance instFinite : Finite (StandardYoungTableau μ) :=
+  Finite.of_injective _ encode_injective
+
 end StandardYoungTableau
 
 /-- **`#SYT(μ)`** — the number of standard Young tableaux of shape `μ`, as `Nat.card` (total; no
