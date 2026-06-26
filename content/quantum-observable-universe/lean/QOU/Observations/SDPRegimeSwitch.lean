@@ -1,24 +1,48 @@
+import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 
 /-!
-# QOU.Observations.SDPRegimeSwitch
+# QOU.Observations.SDPRegimeSwitch — SDP dual block is positive semidefinite
 
-**Placeholder canonical** for content block
-[`prop:sdp-regime-switch`](../../../quantum-observable-universe/observations/sdp-regime-switch.md): *QOU.Observations.SDPRegimeSwitch*.
+**Proposition** ([`prop:sdp-regime-switch`](../../../quantum-observable-universe/observations/sdp-regime-switch.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Observations.SDPRegimeSwitch` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+The SDP extension of the LP-dual operator-selection framework introduces
+matrix-valued cross-block couplings `c_{λλ'}` between conjugate-partition
+pairs in the Wedderburn decomposition of `H_n(q)`. The SDP dual carries a
+`2×2` PSD block per conjugate pair `(λ, λ')`:
+
+```
+  ⎛ μ_λ − y₀ − y_λ        c_{λλ'}      ⎞
+  ⎝ c_{λλ'}          μ_{λ'} − y₀ − y_{λ'} ⎠  ⪰  0
+```
+
+## Disposition (derived, not projected)
+
+The previous encoding carried a `holds`-style restatement: the class
+fields `diag_nonneg` / `det_cond` already *are* the scalar Sylvester
+conditions, and the "theorem" merely re-emitted them. Here those two
+conditions are the genuine **dual-feasibility inputs** (the SDP solution's
+slack), and the theorem **derives** the actual positive-semidefiniteness
+of the block — its quadratic form is non-negative for *every* test vector
+`(x₀, x₁)`:
+
+  `(μ_λ − y₀ − y_λ)·x₀² + 2·c_{λλ'}·x₀x₁ + (μ_{λ'} − y₀ − y_{λ'})·x₁² ≥ 0`.
+
+This is Sylvester's criterion for a real symmetric `2×2` matrix
+(`d ≥ 0`, `d' ≥ 0`, `dd' ≥ c²` ⇒ PSD), proved over `ℝ` via the identity
+`d·Q = (d·x₀ + c·x₁)² + (dd' − c²)·x₁²` (case `d > 0`) and the degenerate
+`d = 0 ⇒ c = 0` collapse. The "regime switch" of the manuscript — the
+isolated `(Z, N)` values where `c_{λλ'} = 0` — is exactly where the block
+diagonalises; the PSD feasibility derived here holds throughout.
+
+-- Ref: [manuscript] quantum-observable-universe/observations/sdp-regime-switch.md
 -/
-
 
 namespace QOU.Observations
 
-
-/-- Abstract context for the `SDPRegimeSwitch` claim — manuscript-themed
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Dual-feasibility data for the SDP regime-switch block. All fields are
+    *inputs* (the SDP solution and its slack); the block's
+    positive-semidefiniteness is **derived** in `SDPRegimeSwitch`. -/
 class SDPRegimeSwitchContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
@@ -34,63 +58,48 @@ class SDPRegimeSwitchContext where
   y : ℕ → ℝ
   /-- Per-conjugate-pair coupling `c_{λλ'}`. -/
   c_couple : ℕ → ℕ → ℝ
-  /-- The 2×2 matrix diagonal entries are non-negative. -/
+  /-- Dual feasibility (diagonal slack ≥ 0): the `2×2` block diagonal
+      entries `μ − y₀ − y` are non-negative. -/
   diag_nonneg : ∀ l l' : ℕ,
     0 ≤ μ l - y_0 - y l ∧
     0 ≤ μ l' - y_0 - y l'
-  /-- The determinant condition: the product of diagonals is at least the squared coupling. -/
+  /-- Dual feasibility (determinant slack ≥ 0): the product of diagonals
+      dominates the squared coupling. -/
   det_cond : ∀ l l' : ℕ,
     (c_couple l l') ^ 2 ≤ (μ l - y_0 - y l) * (μ l' - y_0 - y l')
 
-/-- **Proposition statement** (from manuscript):
+/-- **SDP dual block is positive semidefinite** ([`prop:sdp-regime-switch`]).
 
-The semidefinite-programming (SDP) extension of the LP-dual
-operator-selection framework
-([BW coefficient shadow price](#prop:mass-coefficient-shadow-price))
-introduces matrix-valued cross-block couplings
-$c_{\lambda\lambda'}$ between conjugate-partition pairs in the
-Wedderburn decomposition of $H_n(q)$.  These couplings vary
-discretely as $(Z, N)$ varies at fixed substrate parameter $q_0$,
-with isolated zeros that mark nuclear-structure regime switches —
-shell closures, pairing transitions, and jet-level crossings.*
+    For every conjugate pair `(l, l')` the `2×2` dual block is PSD: its
+    quadratic form is non-negative for every test vector `(x₀, x₁)`,
 
-*At each $(Z, N)$, the atom braid word $W_{\mathrm{atom}}$ has
-a YSN character $\chi_\lambda(W)$ in every irrep $\lambda$.
-These characters serve as primal OBSERVABLES driving the SDP:*
+      `d·x₀² + 2c·x₀x₁ + d'·x₁² ≥ 0`,   `d := μ_l − y₀ − y_l`, etc.
 
-$$
-  \Phi_{\lambda\lambda} \;=\; \frac{|\chi_\lambda(W)|^2}{\lVert W \rVert^2}
-$$
-
-*The SDP dual has a $2 \times 2$ PSD block per conjugate pair
-$(\lambda, \lambda')$:*
-
-$$
-  \begin{pmatrix}
-    \mu_\lambda - y_0 - y_\lambda & c_{\lambda\lambda'} \\
-    c_{\lambda\lambda'} & \mu_{\lambda'} - y_0 - y_{\lambda'}
-  \end{pmatrix}
-  \;\succeq\; 0
-$$
-
-*where $\mu_\lambda$ is the $q$-Laplacian eigenvalue
-([$q$-heat kernel Peter-Weyl](#prop:q-heat-kernel-peter-weyl))
-and $c_{\lambda\lambda'}$ is the coupling, determined by the atom
-observables.*
-
-*A
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
--- Ref: [manuscript] quantum-observable-universe/observations/sdp-regime-switch.ts
-theorem SDPRegimeSwitch [ctx : SDPRegimeSwitchContext] :
-    ∀ l l' : ℕ,
-      0 ≤ ctx.μ l - ctx.y_0 - ctx.y l ∧
-      0 ≤ ctx.μ l' - ctx.y_0 - ctx.y l' ∧
-      0 ≤ (ctx.μ l - ctx.y_0 - ctx.y l) *
-          (ctx.μ l' - ctx.y_0 - ctx.y l') -
-          (ctx.c_couple l l') ^ 2 :=
-  fun l l' => ⟨(ctx.diag_nonneg l l').1, (ctx.diag_nonneg l l').2, sub_nonneg.mpr (ctx.det_cond l l')⟩
+    **Derived** (Sylvester) from the dual-feasibility inputs `diag_nonneg`
+    (`d, d' ≥ 0`) and `det_cond` (`c² ≤ dd'`) — the genuine
+    semidefiniteness of the block, not a restatement of the scalar slacks.
+    Proof: for `d > 0`, `d·Q = (d·x₀ + c·x₁)² + (dd' − c²)·x₁² ≥ 0`; for
+    `d = 0`, `c² ≤ 0` forces `c = 0` and `Q = d'·x₁² ≥ 0`. -/
+-- Ref: [manuscript] quantum-observable-universe/observations/sdp-regime-switch.md
+theorem SDPRegimeSwitch [ctx : SDPRegimeSwitchContext] (l l' : ℕ) (x0 x1 : ℝ) :
+    0 ≤ (ctx.μ l - ctx.y_0 - ctx.y l) * x0 ^ 2
+      + 2 * ctx.c_couple l l' * x0 * x1
+      + (ctx.μ l' - ctx.y_0 - ctx.y l') * x1 ^ 2 := by
+  obtain ⟨hd, hd'⟩ := ctx.diag_nonneg l l'
+  have hdet := ctx.det_cond l l'
+  set d := ctx.μ l - ctx.y_0 - ctx.y l with hd_def
+  set d' := ctx.μ l' - ctx.y_0 - ctx.y l' with hd'_def
+  set c := ctx.c_couple l l' with hc_def
+  rcases lt_or_eq_of_le hd with hdpos | hd0
+  · -- d > 0:  d·Q = (d·x₀ + c·x₁)² + (dd' − c²)·x₁² ≥ 0,  d > 0 ⇒ Q ≥ 0.
+    nlinarith [sq_nonneg (d * x0 + c * x1),
+      mul_nonneg (sub_nonneg.mpr hdet) (sq_nonneg x1), hdpos]
+  · -- d = 0:  c² ≤ d·d' = 0 ⇒ c = 0,  Q = d'·x₁² ≥ 0.
+    have hc0 : c = 0 := by
+      have hc2 : c ^ 2 ≤ 0 := by rw [← hd0] at hdet; simpa using hdet
+      have : c ^ 2 = 0 := le_antisymm hc2 (sq_nonneg c)
+      exact pow_eq_zero_iff (by norm_num : (2 : ℕ) ≠ 0) |>.mp this
+    rw [hc0, ← hd0]
+    nlinarith [mul_nonneg hd' (sq_nonneg x1)]
 
 end QOU.Observations
