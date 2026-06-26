@@ -208,8 +208,7 @@ theorem habiroT25_framing_family_exists (q : ℝ) :
   -- Ref: [habiro2004cyclotomic] arXiv:math/0209324 (Habiro ring of unity)
   refine ⟨fun n _ => quantumInt 3 q / (n : ℝ) ^ 2, ?_, fun _ => rfl⟩
   unfold habiroT25
-  have h25 : ((5 : ℕ) : ℝ) ^ 2 = (25 : ℝ) := by norm_num
-  simp [h25]
+  norm_num
 
 /-! ## Cross-observable identities (proved)
 
@@ -414,9 +413,8 @@ theorem habiroTnSq_times_n_sq_eq_quantumInt_three (n : ℕ) (hn : 0 < n) (q : �
     (n : ℝ) ^ 2 * habiroTnSq n q = quantumInt 3 q := by
   unfold habiroTnSq
   have hne : (n : ℝ) ^ 2 ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hn.ne')
-  -- `field_simp` clears the `/ n²`, leaving `n² * [3]_q = [3]_q * n²`; `ring` closes.
+  -- `field_simp` clears the `/ n²` and closes `n² * [3]_q = [3]_q * n²`.
   field_simp
-  ring
 
 /-- **Theorem 20 (proved).** Cross-rung product identity for Q_β c_3.
 
