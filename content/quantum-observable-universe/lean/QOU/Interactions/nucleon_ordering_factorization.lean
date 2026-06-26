@@ -1,31 +1,54 @@
-import Mathlib.Tactic
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Group.List.Basic
+import Mathlib.Data.List.Perm.Basic
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.Interactions.nucleon_ordering_factorization
 
-**Placeholder canonical** for content block
-[`prop:nucleon-ordering-factorization`](../../../quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.md): *QOU.Interactions.nucleon_ordering_factorization*.
+**Proposition** for content block
+[`prop:nucleon-ordering-factorization`](../../../quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.md):
+*For a nuclear braid `𝒩(Z, N)` in `H_A(q)` with nucleon ordering
+`π = (t₁, …, t_A)`, the Markov trace decomposes by Wedderburn channel:*
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Interactions.nucleon_ordering_factorization` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+  tr_M(𝒩) = W_sym · S(π) + W_std · (z · a_π + b_π) + W_alt · A(π),
+
+*with `S(π) = ∏ₖ(q + d_k)` and `A(π) = ∏ₖ(−q⁻¹ + d_k)` products of
+commuting scalars (hence ordering-independent), and `(a_π, b_π)` a `2 × 2`
+matrix product over the standard representation.*
+
+The **master factorisation** is the Wedderburn block decomposition of
+`H_3(q)` (sym ⊕ std ⊕ alt) applied to the braid word — it requires the Hecke
+representation-theory engine (not yet in Lean), so it is stated faithfully
+and discharged by `sorry`.  The **genuinely derivable** sub-claim (i) —
+ordering-independence of the scalar channels `S`, `A` (a product of commuting
+scalars is permutation-invariant) — is *proved* sorry-free below.
+
+-- Ref: [manuscript] quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.md
 -/
 
 namespace QOU.Interactions
 
+/-- **Scalar-channel ordering independence (derived).**
 
-/-- Abstract context for the `nucleon_ordering_factorization` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+    Sub-claim (i) of the proposition: the symmetric / alternating channel
+    value `∏ₖ f(d_k)` is a product of commuting real scalars, so it is
+    invariant under any reordering `π → π'` of the nucleon sequence.  Here
+    `ds`/`ds'` are the per-nucleon channel data and `f` is the scalar map
+    (`f d = q + d` for `S`, `f d = −q⁻¹ + d` for `A`).
+
+    Proved by `List.Perm.prod_eq` — real content, not a projection. -/
+-- Ref: [manuscript] quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.md
+theorem scalar_channel_ordering_independent
+    (f : ℝ → ℝ) (ds ds' : List ℝ) (hperm : ds.Perm ds') :
+    (ds.map f).prod = (ds'.map f).prod :=
+  (hperm.map f).prod_eq
+
+/-- Inputs for the master factorisation: the three Wedderburn channel weights
+    `W_sym, W_std, W_alt`, the symmetric/alternating channel values `S(π)`,
+    `A(π)`, the standard-channel state `(a_π, b_π)` with Markov parameter `z`,
+    and the nuclear Markov trace `tr_M(𝒩)`. -/
 class NucleonOrderingFactorizationContext where
-  /-- Proton number `Z`. -/
-  Z : ℕ
-  /-- Neutron number `N`. -/
-  N : ℕ
-  /-- Mass number `A = Z + N`. -/
-  A : ℕ
-  A_eq : A = Z + N
   /-- Markov trace of the nucleus. -/
   trM_N : ℝ
   /-- Symmetric / standard / alternating channel weights `W_*`. -/
@@ -40,56 +63,29 @@ class NucleonOrderingFactorizationContext where
   z : ℝ
   /-- Alternating channel value `A(π)`. -/
   A_pi : ℝ
-  /-- Master factorisation identity. -/
-  h_master : trM_N = W_sym * S_pi + W_std * (z * a_pi + b_pi) + W_alt * A_pi
-  /-- Per-crossing cost in the standard channel `O(4)`. -/
-  cost_std : ℕ
-  /-- Per-crossing cost without factorisation `O(36)`. -/
-  cost_naive : ℕ
-  /-- Standard channel cost bound. -/
-  h_cost_std : cost_std = 4
-  /-- Naive channel cost bound. -/
-  h_cost_naive : cost_naive = 36
-  /-- Number of distinct orderings of the nucleon sequence of length `A`. -/
-  n_orderings : ℕ
-  /-- Number of symmetric-channel evaluations actually performed
-      (channel elimination → 1 per `(Z, N)`, not 1 per ordering). -/
-  n_symmetric_evaluations : ℕ
-  /-- Number of alternating-channel evaluations actually performed. -/
-  n_alternating_evaluations : ℕ
-  /-- Symmetric evaluation count bound. -/
-  h_symmetric_evaluations : n_symmetric_evaluations = 1
-  /-- Alternating evaluation count bound. -/
-  h_alternating_evaluations : n_alternating_evaluations = 1
 
-/-- **Proposition statement** (from manuscript):
+/-- **Nucleon-ordering Markov-trace factorisation** ([`prop:nucleon-ordering-factorization`]).
 
-Let $\mathcal{N}(Z, N)$ be a nuclear braid in $H_A(q)$ with
-nucleon ordering $\pi = (t_1, \ldots, t_A)$ where
-$t_k \in \{\mathfrak{p}, \mathfrak{n}\}$.  Then the Markov trace
-decomposes as:*
+    The master identity
 
-$$
-  \mathrm{tr}_M(\mathcal{N})
-  =
-  W_{\mathrm{sym}} \cdot S(\pi)
-  + W_{\mathrm{std}} \cdot (z \cdot a_\pi + b_\pi)
-  + W_{\mathrm{alt}} \cdot A(\pi)
-$$
+      tr_M(𝒩) = W_sym · S(π) + W_std · (z · a_π + b_π) + W_alt · A(π).
 
-*where:*
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts
+    Honest `sorry`: this is the Wedderburn block decomposition of `H_3(q)`
+    (symmetric ⊕ standard ⊕ alternating) evaluated on the nuclear braid word,
+    which requires the Hecke representation-theory / Markov-trace engine — not
+    yet in Lean (compute: the GS-reduction + Hoefsmit pipeline in
+    `computations/`).  The scalar-channel ordering-independence half is proved
+    sorry-free above (`scalar_channel_ordering_independent`). -/
+-- Ref: [manuscript] quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.md
 theorem nucleon_ordering_factorization [ctx : NucleonOrderingFactorizationContext] :
     ctx.trM_N = ctx.W_sym * ctx.S_pi +
                 ctx.W_std * (ctx.z * ctx.a_pi + ctx.b_pi) +
-                ctx.W_alt * ctx.A_pi ∧
-    (ctx.cost_std = 4 ∧ ctx.cost_naive = 36) ∧
-    (ctx.n_symmetric_evaluations = 1 ∧ ctx.n_alternating_evaluations = 1) :=
-  ⟨ctx.h_master, ⟨ctx.h_cost_std, ctx.h_cost_naive⟩, ⟨ctx.h_symmetric_evaluations, ctx.h_alternating_evaluations⟩⟩
+                ctx.W_alt * ctx.A_pi := by
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.md
+  -- Missing infra: Wedderburn decomposition of H_3(q) into sym ⊕ std ⊕ alt
+  -- and the Markov-trace evaluation on the nuclear braid (GS reduction +
+  -- Hoefsmit seminormal). Not yet in Lean (compute: computations/).
+  sorry
 
 end QOU.Interactions
