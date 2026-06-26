@@ -37,7 +37,7 @@ transition. Evaluated with $\mathrm{tr}_M$ in place of $\varepsilon$,
 the predicted $Q$-value falls short of the measured value by roughly a
 factor of two; evaluated with the counit, it matches to $+0.17\%$.
 
-## Status of the agreement
+## Agreement with the measured value
 
 The $+0.17\%$ residual is the $N=0$ brane-tower truncation, the same
 residual that separates the derived energy scale

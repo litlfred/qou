@@ -49,7 +49,7 @@ relation internal to the $U(1)$ phase. Mass, electromagnetism, and color are
 one trace object read on its modulus, its spacetime phase, and its color
 grading.
 
-## Archimedean status
+## Archimedean realization
 
 The polar split is the archimedean reading: the modulus and argument require
 the realization of the trace over $\mathbb{C}$, on the far side of the
