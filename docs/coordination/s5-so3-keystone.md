@@ -113,6 +113,7 @@ is its *geometric origin*.
 
 | Date | PR | What landed |
 |---|---|---|
+| 2026-06-26 | (trB/L2 refresh) | lever-1 `tr B` is `[2]_q`-rational: with `s=[2]_q`, `tr B = 3(3s²+2)/(4(s+2))`, `tr B(q₀)=2.6424` (50-dps symbolic+numeric). `det B=1` + non-integer trace ⇒ hyperbolic q-difference connection, **not** `SL₂(ℤ)` topological monodromy. Rank-2 `W` forced by `A₅`-irreducibility of `H^{1,0}(Bring)` (Sage-free). Target restated; Sage/owner-gated. (Salvaged clean part of the stale #2722.) |
 | 2026-06-16 | #2352 | S₅↓S₃ backbone + SO(3)↓A₅↪S₅ bridge verified; ing-4/5 close-out (210 ppb **refuted**) |
 | 2026-06-16 | #2361 | propagate refutation to the GAP-A-4 doc; ingredient-4 geometric-leg formalize-first prune |
 | 2026-06-16 | #2364 | Schur–Weyl: strand fibre forced to colour ℂ³ (spinor kills electron) |
