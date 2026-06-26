@@ -38,19 +38,23 @@ theorem eigenvalue_product_expansion (q : ℝ) (Z N : ℕ) :
     lambdaSym q Z N
       = q ^ (((Z : ℝ) - N) * (((Z + N) : ℝ) - 1) / 2)
         * (qInt2 q / 2) ^ (Z * N) := by
-  -- Direct by definition.
-  rfl
+  -- Definitional modulo `Nat.cast_add` (the `let A := Z + N` produces
+  -- `↑(Z + N)`, the statement uses `↑Z + ↑N`).
+  unfold lambdaSym
+  push_cast
+  ring_nf
 
 /-- **Boundary value at `Z = N`** (isospin-symmetric).
     For `Z = N`, the `q^{(Z−N)(A−1)/2}` factor is `q^0 = 1`, so
     `Λ_sym(Z, Z) = ([2]_q/2)^{Z²}`. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/eigenvalue-product-expansion.md
-theorem lambdaSym_at_isospin_symmetric (q : ℝ) (Z : ℕ) (h_q_pos : 0 < q) :
+theorem lambdaSym_at_isospin_symmetric (q : ℝ) (Z : ℕ) (_h_q_pos : 0 < q) :
     lambdaSym q Z Z = (qInt2 q / 2) ^ (Z * Z) := by
-  unfold lambdaSym
-  simp only []
-  -- The `((Z : ℝ) - Z) * _ / 2` is `0`; `q^0 = 1`.
-  have h_zero : ((Z : ℝ) - Z) * (((Z + Z) : ℝ) - 1) / 2 = 0 := by ring
+  simp only [lambdaSym]
+  -- The `((Z : ℝ) - Z) * _ / 2` exponent is `0`; `q^0 = 1`.
+  -- `((Z + Z : ℕ) : ℝ)` matches the `↑(Z + Z)` the `let A := Z + Z`
+  -- produces after zeta-reduction (cast of the nat sum, not `↑Z + ↑Z`).
+  have h_zero : ((Z : ℝ) - Z) * (((Z + Z : ℕ) : ℝ) - 1) / 2 = 0 := by ring
   rw [h_zero, Real.rpow_zero, one_mul]
 
 end QOU.BraidKnot
