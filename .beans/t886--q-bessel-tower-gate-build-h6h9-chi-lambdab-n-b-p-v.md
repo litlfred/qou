@@ -3,9 +3,34 @@
 title: 'q-Bessel tower gate: build H6/H9 chi_lambda(B_n - B_p) via canonical A-nucleon braid lift (T2/T3 trace-invariance frontier)'
 status: todo
 type: task
+priority: normal
 created_at: 2026-06-26T14:55:05Z
-updated_at: 2026-06-26T14:55:05Z
+updated_at: 2026-06-26T15:11:32Z
 ---
+
+## RE-SCOPED (2026-06-26, PR #2849) — the build exists; the gate is DECIDED
+
+**Correction:** the original task below ("build H6/H9") was filed on a stale
+premise. `atom_canonical_crossings` **already supports A>1**, and the gate has
+been run at n=3,6,9 by `bn_minus_bp_brane_tower_parity_probe.py` (re-ran
+2026-06-26, all assertions PASS). **Verdict: parity obstruction** — bar-odd
+order-parity alternates odd(n=3)/even(n=6)/odd(n=9); at n=6 the odd-order
+q-Bessel tower coeffs {1,3,5} vanish (W_1=0), so the §4a single-x Bessel test is
+0/0 undefined. This is a **(b)-exclusion** (order-parity is a level invariant of
+the canonical embedding), not a missing-compute gap.
+
+**Remaining open (narrow, formalize-first-gated):** whether a *parity-preserving*
+brane-tower embedding can exist must be **derived** from categorical structure —
+**NOT** scanned for (scan-to-fit over embeddings is forbidden by the
+formalize-first discipline and by the probe's own a-priori commitment). Until a
+structural derivation motivates a different embedding, the canonical-embedding
+q-Bessel tower is ruled out at n=6. **Lower priority than originally implied.**
+
+Ref: `docs/audits/2026-06-26-t2t3-trace-invariance-status-synthesis.md` §"Item 4" (corrected).
+
+---
+
+## ORIGINAL goal (stale premise — see re-scope above)
 
 ## Goal (2026-06-26, PR #2849)
 

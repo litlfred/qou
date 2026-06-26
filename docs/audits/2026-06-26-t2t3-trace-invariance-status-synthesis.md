@@ -125,21 +125,39 @@ Two findings:
   are clean. Tracked as a separate data-integrity item, not in scope for this
   framing PR.
 
-## Item 4 — q-Bessel tower-convergence gate is genuinely blocked (scoped, not attempted)
+## Item 4 — q-Bessel tower-convergence gate is **already decided**: a parity obstruction
 
-The live frontier attack (`2026-06-19`) is the Jacobi–Anger gate: does the
-bar-odd residual of $\chi_\lambda(\mathcal B_n-\mathcal B_p)$ shrink along
-$n=3\to6\to9$ toward the Hahn–Exton q-Bessel coefficients? The **blocker is
-structural and unchanged**: the corpus has explicit proton/neutron braids only
-at $H_3$; the $H_6/H_9$ difference objects require a *first-principles braid
-construction* (the canonical $A$-nucleon embedding
-`β = atom_canonical_crossings(A,0,include_inter=False)` at level $3A$), which is
-**not** a mechanical evaluation. Per the formalize-first discipline this must be
-committed *a priori* (no scan-to-fit over embeddings). This PR does **not**
-attempt the construction — fabricating an $H_6/H_9$ braid without the principled
-builder would be exactly the fitting the discipline forbids. Recommended as a
-dedicated follow-up bean, gated on the canonical word-builder being lifted to
-$A>1$ (the same lift `2026-06-19` §"deferred item-A" names).
+**Correction (2026-06-26, this branch).** An earlier draft of this item said the
+$H_6/H_9$ build was "blocked on a first-principles construction, not attempted."
+That was **wrong** — corpus-grep caught it. The canonical $A$-nucleon braid
+builder `atom_canonical_crossings(A,0,include_inter=False)` **already supports
+$A>1$**, and the gate **has been run** at $n=3,6,9$ by
+[`bn_minus_bp_brane_tower_parity_probe.py`](../../computations/probes/bn_minus_bp_brane_tower_parity_probe.py)
+(witness [`bn-minus-bp-brane-tower-parity.witness.json`](../../computations/bn-minus-bp-brane-tower-parity.witness.json)).
+Re-ran it 2026-06-26 — **all assertions PASS, verdict unchanged**:
+
+| level | bar-odd orders | parity | §4a single-$x$ Bessel test |
+|---|---|---|---|
+| $n=3$ ($A{=}1$) | $\{1,3,5\}$ | **odd** | defined; residual **6.84%**, $x=4.5249$ |
+| $n=6$ ($A{=}2$) | $\{2,4,6,8,10,14,16\}$ | **even** | **0/0 undefined** — odd orders $\{1,3,5\}$ vanish ($W_1=0$) |
+| $n=9$ ($A{=}3$) | $\{1,3,\dots\}$ | **odd** | (parity flips back) |
+
+The bar-odd **order-parity alternates** odd/even/odd with $A$, and the
+conjugation-invariant sign $s=(-1)^{A-1}$ alternates in lockstep. The
+Hahn–Exton q-Bessel identification needs a *consistent odd-order* tower
+($\sinh((2m{+}1)\eta)$ coeff $=2J_{2m+1}(x)$); at $n=6$ those coefficients
+**vanish identically**, so the gate is **structurally obstructed** at the second
+rung — this is a **(b)-exclusion** with a cited invariant (order-parity is a
+level invariant under the canonical embedding), not a "more compute needed" gap.
+
+**What is actually open is narrower and formalize-first-gated.** The witness's
+own conclusion — "a valid brane-tower embedding must preserve odd order-parity"
+— is *not* a license to scan embeddings for one that does: the formalize-first
+discipline (and the probe's own a-priori-embedding commitment) forbids
+scan-to-fit. The genuine residual is to **derive** (not search) whether any
+parity-preserving embedding exists from the categorical structure, or to accept
+the obstruction as ruling the canonical-embedding q-Bessel tower out. Bean
+`t886` is re-scoped accordingly.
 
 ## Next steps (owner-selected 2026-06-26, all four)
 
