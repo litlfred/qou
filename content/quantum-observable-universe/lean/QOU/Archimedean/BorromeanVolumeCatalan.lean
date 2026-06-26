@@ -2,7 +2,7 @@ import QOU.Archimedean.HyperbolicVolumeTranscendence
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Analysis.SpecificLimits.Basic
-import Mathlib.MeasureTheory.Integral.IntervalIntegral
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
 /-!
 # Borromean rings volume — Catalan-constant categorical identity
