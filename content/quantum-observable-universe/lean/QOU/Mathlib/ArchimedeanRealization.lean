@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.NormNum
 
 /-!
 # QOU.Mathlib.ArchimedeanRealization — scalar evaluation `q ↦ q₀`
@@ -116,7 +117,7 @@ class ArchimedeanRealizationFunctor where
   q0_canonical : q0 = q_zero
 
 /-- Canonical instance: pin `q₀` to the QOU substrate value. -/
-instance canonical : ArchimedeanRealizationFunctor where
+noncomputable instance canonical : ArchimedeanRealizationFunctor where
   q0 := q_zero
   q0_gt_one := q_zero_gt_one
   q0_canonical := rfl
