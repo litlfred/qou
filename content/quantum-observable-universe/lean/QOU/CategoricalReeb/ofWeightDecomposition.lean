@@ -1,4 +1,5 @@
-import Mathlib
+import Mathlib.Tactic
+import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.CategoricalReeb.ofWeightDecomposition

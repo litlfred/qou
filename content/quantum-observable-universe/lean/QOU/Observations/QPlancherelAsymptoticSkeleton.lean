@@ -1,4 +1,5 @@
-import Mathlib
+import Mathlib.Tactic
+import Mathlib.Analysis.SpecialFunctions.Sqrt
 
 /-!
 # QOU.Observations.QPlancherelAsymptoticSkeleton
