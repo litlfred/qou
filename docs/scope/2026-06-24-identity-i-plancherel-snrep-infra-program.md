@@ -21,6 +21,26 @@
 > - **HLF / RSK is NOT on the critical path for axiom (i).** Via the regular-rep route, `∑_λ dim_Specht(λ)² = n!` needs only P1 (Specht irreps complete + partition-indexed) + the built degree-square sum — **no hook-length formula**. HLF only re-enters if one insists `dim = dimHLF` (the concrete `List ℕ` model), which the `n ≤ 12` instances already discharge *computationally* (`dim_validated_le12`). So a future general-`n` instance is cleaner with `dim := dim_Specht` than with `dim := dimHLF`.
 > - **P1 (Specht) remains the foundational blocker**, confirmed genuinely absent — consistent with the doc's Decision 2 ("rigor hygiene, not frontier progress; the keystone's *open* object is the geometric `W_λ` realization, not Identity I").
 
+> **Update (2026-06-26, cont.) — Lean build restored; sandbox-verifiability mapped; P5 bridge landed.** Owner directed "build all needed infra." Established a `lean`-direct verification path (restored `lake-cache/qou-v4-24-0` → 2951 Mathlib oleans; `lean`-direct exit 0 confirmed) and probed the pinned tree authoritatively from the oleans (not GitHub-search this time). Hard findings that bound what is *buildable here*:
+>
+> - **No `Mathlib.Combinatorics.RSK` module at all** at the pin (the `RSKBridge.lean` docstring's "partial Mathlib RSK" is stale for v4.24.0) — RSK is wholly absent, not partial.
+> - **`Combinatorics.Young` has only `YoungDiagram` + `SemistandardTableau`** — **no `StandardYoungTableau` type, no `numStandardYoungTableaux`.** Even *stating* `∑_λ #SYT(λ)² = n!` needs an SYT type built from `YoungDiagram` first.
+> - **`Mathlib.RepresentationTheory.*` oleans are ABSENT from the restored cache (0 present)** — they are outside QOU's dependency cone, so they were never cached, and the release server / `cache get` are network-blocked. **Consequence: the entire representation-theory half of this program (P1 Specht, P3 Jucys–Murphy, P4 Plancherel-average, and the regular-rep `∑dim²=|G|`) is *not lean-direct verifiable in this sandbox at all*** — it can only be built where a full-Mathlib olean tree (or CI from-source build) is available.
+>
+> **What landed (the one verifiable, sorry-free, genuinely-additive piece): phase P5's index bridge.** [`QOU/Mathlib/PartitionListBridge.lean`](../../content/quantum-observable-universe/lean/QOU/Mathlib/PartitionListBridge.lean) — `Nat.Partition n ≃ {weakly-decreasing positive List ℕ summing to n}` (`toList`/`ofList`/`equivSortedList` + the landing lemmas `toList_sorted/pos/sum/coe`), core-Mathlib only, **`lean`-direct exit 0, sorry-free, axiom-clean**. This bridges Mathlib's abstract `λ ⊢ n` index to the computable `List ℕ` model the (A)/`PlancherelSnData` combinatorics use, so an abstract `∑_{Λ : Nat.Partition n}` (e.g. the `RSKBridge` Burnside sum for axiom (i)) transports to the sorted-list model and back. P5's "sorted-list ↔ `Nat.Partition`" prerequisite is now **done**.
+>
+> **Honest status of "all needed infra."** The bulk — the rep-theory tower for axioms (i)/(ii) — is **0% present in pinned Mathlib and un-verifiable in this sandbox**, confirming the doc's "multi-PR / multi-session, deliberately not one session" framing and Decision 2 ("rigor hygiene, not frontier progress"). The dependency-ordered remaining work, and *where* each piece can be built:
+>
+> | Piece | Buildable here? | Why / next step |
+> |---|---|---|
+> | **P5 index bridge** | ✅ **done** | `PartitionListBridge.lean`, sorry-free |
+> | **SYT type + `numStandardYoungTableaux`** over `YoungDiagram` | ✅ verifiable here | Mathlib lacks it; build from `YoungDiagram` (next most foundational verifiable target) |
+> | **P2/(i) RSK `∑#SYT²=n!`** | ⚠ verifiable but large | needs SYT type first; RSK bijection from scratch (Mathlib has none) |
+> | **HLF `dimHLF=#SYT`** | ⚠ verifiable but large | Greene–Nijenhuis–Wilf / hook-walk; needs SYT type |
+> | **P1 Specht / P3 JM / P4 + regular-rep `∑dim²=\|G\|`** | ❌ not verifiable here | `RepresentationTheory` oleans absent + unfetchable; needs full-Mathlib env or upstream Mathlib |
+>
+> So: continuing "in this sandbox" means the **combinatorial route** (SYT type → RSK/HLF), each a multi-session theorem; the **representation-theory route** (cleaner for (i) via `∑dim²=|G|`, and the only route for (ii)) needs an environment with the full Mathlib olean tree or lands upstream in Mathlib. This is an owner-steering fork (Decision 1: in-repo vs upstream), recorded here.
+
 ## Goal
 
 Fully close **Identity I** `M(n) = (1/n!)·Σ_{λ⊢n} dim(λ)²·Σ_{c∈λ} h_c² = n(3n−1)/2` in Lean,
