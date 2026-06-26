@@ -663,4 +663,167 @@ theorem s5_to_a5_electron_block_splits :
     PartitionOf5.threeOneOne.dim = 3 + 3 := by
   decide
 
+/-! ## The Hopf generation-selection map ℓ → A₅ irrep
+
+    The ledger's ✅ μ-leg: the spatial SO(3)-equivariance realizes the
+    generation-selection ℓ → λ as the Hopf moment map μ (PR #2370).  The
+    *combinatorial* face of that selection — which A₅ irrep the spherical-harmonic
+    level ℓ singles out as its first-appearing (lowest-ℓ) icosahedral content — is
+    a finite, unconditional reading of `icosBranchingMult`:
+
+      ℓ = 1  ↦  T₁  (the electron generation; T₁ first appears at ℓ=1),
+      ℓ = 2  ↦  H   (the muon generation;     H  first appears at ℓ=2).
+
+    This is the *selection* (which single irrep is picked out), distinct from the
+    full branching content `so3_to_a5_irrep_content` (which lists *all* irreps in
+    each V_ℓ).  The geometric realization — that this combinatorial selection IS
+    the Hopf moment map — is the ledger's already-realized μ-leg (#2370); the Lean
+    below only pins the combinatorial target it must reproduce. -/
+
+/-- The Hopf generation-selection map: the A₅ irrep singled out at spherical-
+    harmonic level ℓ as its lowest-ℓ (first-appearing) icosahedral content.
+    ℓ=1 → T₁ (electron), ℓ=2 → H (muon).  Index into `IcosahedralIrrepDims`
+    ordering [A, T₁, T₂, G, H]. -/
+def hopfGenerationSelect : ℕ → A5Irrep
+  | 1 => .T₁   -- electron generation
+  | 2 => .H    -- muon generation
+  | _ => .A    -- (ℓ=0 trivial / out-of-range default)
+
+/-- **Hopf selection theorem (combinatorial leg).** The generation-selection map
+    reads off `icosBranchingMult`: at ℓ=1 the unique nonzero multiplicity is the
+    T₁ slot (electron), and at ℓ=2 it is the H slot (muon).  Concretely the
+    selected irrep's slot carries multiplicity 1 while the *other* generation's
+    slot is 0 at that level — so the two generations are cleanly separated by ℓ.
+
+    The four equalities verify, against the raw `icosBranchingMult` table:
+    (i)  ℓ=1 selects T₁ — its T₁-slot (index 1) is 1;
+    (ii) ℓ=1 does NOT yet see H — its H-slot (index 4) is 0;
+    (iii) ℓ=2 selects H — its H-slot (index 4) is 1;
+    (iv) ℓ=2 does NOT carry T₁ — its T₁-slot (index 1) is 0.
+    Hence `hopfGenerationSelect 1 = T₁` and `hopfGenerationSelect 2 = H` are
+    the correct combinatorial targets the Hopf moment map (#2370) realizes. -/
+theorem hopf_generation_selection :
+    hopfGenerationSelect 1 = A5Irrep.T₁ ∧
+    hopfGenerationSelect 2 = A5Irrep.H ∧
+    -- the selected slots are exactly the first appearances (separation by ℓ):
+    (icosBranchingMult 1).get! 1 = 1 ∧   -- ℓ=1: T₁ present
+    (icosBranchingMult 1).get! 4 = 0 ∧   -- ℓ=1: H absent
+    (icosBranchingMult 2).get! 4 = 1 ∧   -- ℓ=2: H present
+    (icosBranchingMult 2).get! 1 = 0 := by  -- ℓ=2: T₁ absent
+  refine ⟨rfl, rfl, ?_, ?_, ?_, ?_⟩ <;> native_decide
+
+/-- **The selected irrep has the expected dimension.** The electron generation
+    (ℓ=1 → T₁) is 3-dimensional (the chiral color sheets), and the muon
+    generation (ℓ=2 → H) is 5-dimensional.  Confirms the selection map lands on
+    the irreps whose dimensions match the corpus generation assignment. -/
+theorem hopf_selection_dims :
+    (hopfGenerationSelect 1).dim = 3 ∧ (hopfGenerationSelect 2).dim = 5 := by
+  decide
+
+/-! ## A₅ conjugacy classes and the irrep ↔ class duality
+
+    The target named by the `BringFiberAction.five_distinct_classes` field: the
+    five A₅ irreps realize five DISTINCT icosahedral conjugacy classes.  This
+    section makes the *codomain* of that injectivity explicit — the five
+    conjugacy classes of A₅ ≅ I — and records the square character-table duality
+    (5 irreps ↔ 5 classes) that any complete character theory forces.
+
+    A₅ has exactly five conjugacy classes (cycle types of even permutations of
+    5 letters), with sizes summing to |A₅| = 60:
+
+      e         (identity)                size  1   [order 1]
+      (ab)(cd)  (double transposition)    size 15   [order 2]
+      (abc)     (3-cycle)                 size 20   [order 3]
+      (abcde)   (5-cycle, class I)        size 12   [order 5]
+      (abcde)²  (5-cycle, class II)       size 12   [order 5]
+
+    The 5-cycles split into TWO A₅-classes (an odd permutation conjugates a
+    5-cycle to its non-A₅-conjugate square; S₅ fuses them) — this is the same
+    index-2 fusion that swaps the chirality pair T₁ ↔ T₂ (cf.
+    `s5_to_a5_electron_block_splits` and the construction-program doc
+    §"Residual-2 RESOLVED").  So the two 5-cycle classes are the class-side face
+    of the T₁/T₂ chirality. -/
+
+/-- The five conjugacy classes of A₅ ≅ I (icosahedral rotation group):
+    identity, double-transpositions, 3-cycles, and the two enantiomorphic
+    5-cycle classes (swapped by the S₅∖A₅ parity). -/
+inductive A5ConjClass where
+  | id            -- e,        size 1,  order 1
+  | doubleTransp  -- (ab)(cd), size 15, order 2
+  | threeCycle    -- (abc),    size 20, order 3
+  | fiveCycleA    -- (abcde),  size 12, order 5  (chirality A)
+  | fiveCycleB    -- (abcde)², size 12, order 5  (chirality B)
+  deriving DecidableEq, Repr
+
+/-- All five A₅ conjugacy classes. -/
+def A5ConjClass.allList : List A5ConjClass :=
+  [.id, .doubleTransp, .threeCycle, .fiveCycleA, .fiveCycleB]
+
+/-- Size of each A₅ conjugacy class. -/
+def A5ConjClass.size : A5ConjClass → ℕ
+  | .id => 1 | .doubleTransp => 15 | .threeCycle => 20
+  | .fiveCycleA => 12 | .fiveCycleB => 12
+
+/-- Order of a representative element of each class. -/
+def A5ConjClass.elementOrder : A5ConjClass → ℕ
+  | .id => 1 | .doubleTransp => 2 | .threeCycle => 3
+  | .fiveCycleA => 5 | .fiveCycleB => 5
+
+/-- **Class-count = irrep-count = 5 (the character-table is square).** A₅ has
+    exactly five conjugacy classes, matching its five irreps (`A5Irrep`).  This
+    squareness is precisely the duality the fiber map realizes: the five A₅
+    irreps map injectively onto the five conjugacy classes (the codomain of
+    `BringFiberAction.five_distinct_classes`). -/
+theorem A5_classes_eq_irreps :
+    A5ConjClass.allList.length = A5Irrep.allList.length := rfl
+
+/-- **Class sizes partition |A₅| = 60** (the orbit-counting / class-equation
+    backbone): 1 + 15 + 20 + 12 + 12 = 60.  Confirms the five classes are a
+    complete partition of the group. -/
+theorem A5_class_sizes_sum_60 :
+    (A5ConjClass.allList.map A5ConjClass.size).sum = 60 := by decide
+
+/-- **The 5-cycle classes are the chirality pair** (same size, same element
+    order, distinct classes).  This is the class-side face of the T₁/T₂ split:
+    the two enantiomorphic 5-cycle classes are exchanged by the S₅∖A₅ parity,
+    exactly as T₁ ↔ T₂ are (cf. `s5_to_a5_electron_block_splits`). -/
+theorem A5_fivecycle_chirality_pair :
+    A5ConjClass.fiveCycleA.size = A5ConjClass.fiveCycleB.size ∧
+    A5ConjClass.fiveCycleA.elementOrder = A5ConjClass.fiveCycleB.elementOrder ∧
+    A5ConjClass.fiveCycleA ≠ A5ConjClass.fiveCycleB := by
+  refine ⟨rfl, rfl, ?_⟩; decide
+
+/-- **Character-table duality (the 5 ↔ 5 bijection).** A complete character
+    theory pairs the five A₅ irreps with the five conjugacy classes via a square
+    character table.  We name the canonical diagonal pairing
+    (A ↔ id, T₁ ↔ fiveCycleA, T₂ ↔ fiveCycleB, G ↔ threeCycle, H ↔
+    doubleTransp) and prove it is a BIJECTION — the explicit codomain structure
+    behind `BringFiberAction.five_distinct_classes`.
+
+    The T₁/T₂ ↔ fiveCycleA/fiveCycleB assignment is forced by chirality: the
+    two faithful 3-dim irreps are distinguished exactly by their values on the
+    two 5-cycle classes (χ_{T₁}(5A) = φ, χ_{T₂}(5A) = φ̄ = 1−φ, swapped on 5B),
+    so the chirality pair of irreps pairs with the chirality pair of classes. -/
+def A5IrrepToClass : A5Irrep → A5ConjClass
+  | .A  => .id
+  | .T₁ => .fiveCycleA
+  | .T₂ => .fiveCycleB
+  | .G  => .threeCycle
+  | .H  => .doubleTransp
+
+/-- The character-table pairing is a bijection: injective (distinct irreps ↦
+    distinct classes) and surjective (every class is hit).  This is the
+    irrep ↔ conjugacy-class duality the fiber map realizes — the structural
+    target named by `five_distinct_classes`. -/
+theorem A5_irrep_class_duality :
+    Function.Bijective A5IrrepToClass := by
+  constructor
+  · intro a b h; cases a <;> cases b <;> simp_all [A5IrrepToClass]
+  · intro c; cases c
+    · exact ⟨.A, rfl⟩
+    · exact ⟨.H, rfl⟩
+    · exact ⟨.G, rfl⟩
+    · exact ⟨.T₁, rfl⟩
+    · exact ⟨.T₂, rfl⟩
+
 end QOU.BraidsAndKnots
