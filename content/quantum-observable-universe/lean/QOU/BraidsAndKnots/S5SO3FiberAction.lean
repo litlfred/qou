@@ -24,7 +24,8 @@
   -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron (Bring)
 -/
 import Mathlib.Data.Fintype.Basic
-import Mathlib.Algebra.BigOperators.Group.List
+import Mathlib.Algebra.BigOperators.Group.List.Basic
+import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NormNum
 
 namespace QOU.BraidsAndKnots
@@ -82,7 +83,7 @@ theorem PartitionOf5.conjugate_preserves_dim (p : PartitionOf5) :
 /-- Sum of dim² over partitions of 5 = |S_5| = 120 (Burnside / Wedderburn). -/
 theorem total_dim_squared_eq_120 :
     (PartitionOf5.allList.map (fun p => p.dim ^ 2)).sum = 120 := by
-  native_decide
+  decide
 
 /-! ## A_5 ⊂ S_5 — the alternating subgroup, isomorphic to the
     icosahedral rotation group I ⊂ SO(3) -/
@@ -108,7 +109,7 @@ def PartitionOf5.restrictsToA5Irrep : PartitionOf5 → Bool
 theorem A5_order_eq_60 :
     let a5_dims : List ℕ := [1, 3, 3, 4, 5]
     (a5_dims.map (· ^ 2)).sum = 60 := by
-  native_decide
+  decide
 
 /-! ## The five A₅ irreps — the CORRECTED domain of the fiber map
 
@@ -158,7 +159,14 @@ theorem PartitionOf5.conjugate_same_a5_irrep (p : PartitionOf5) :
 
 /-! ## The Bring's surface fiber-action map — conditional class -/
 
-/-- A rotation in SO(3) about a given axis, by a given angle. -/
+/-- A rotation in SO(3) about a given axis, by a given angle.
+
+    Base ring (§7c): `ℝ` is intrinsic, not gratuitous — SO(3) is a real Lie
+    group, the axis is a real 3-vector, and `angle` is a real rotation angle
+    (compared for injectivity in `BringFiberAction.five_distinct_classes`, and
+    the archimedean home of the owner-gated geometric realization
+    `conj:s5-so3-fiber-action`).  Do NOT generalize to a generic ring: a
+    "rotation axis" over an arbitrary commutative ring is meaningless. -/
 structure SO3Rotation where
   axis_x : ℝ
   axis_y : ℝ
@@ -270,7 +278,7 @@ theorem icos_branching_dim_check :
     ∀ ℓ ∈ [0, 1, 2, 3, 4, 5, 6],
       ((List.zip (icosBranchingMult ℓ) IcosahedralIrrepDims).map
         (fun p => p.1 * p.2)).sum = 2 * ℓ + 1 := by
-  native_decide
+  decide
 
 /-- **The ℓ=2 reading.** The SO(3) angular-momentum level ℓ=2 restricts to
     EXACTLY ONE copy of the dim-5 icosahedral irrep H (the fifth entry), and
@@ -282,7 +290,7 @@ theorem ell2_yields_one_copy_of_H :
     (icosBranchingMult 2).get! 4 = 1 ∧
     (icosBranchingMult 0).get! 4 = 0 ∧
     (icosBranchingMult 1).get! 4 = 0 := by
-  native_decide
+  decide
 
 /-- **The S₃-rotation-subgroup branching (corrects the source-file premise).**
     S₃ realised as the triangle-rotation subgroup of SO(3) (irreps triv,
@@ -304,7 +312,7 @@ def s3RotBranchingMult : ℕ → List ℕ
 theorem s3_std_appears_at_ell1_and_ell2 :
     (s3RotBranchingMult 1).get! 2 = 1 ∧
     (s3RotBranchingMult 2).get! 2 = 2 := by
-  native_decide
+  decide
 
 /-- **SU(2) double cover: spin ℤ₂ ≠ sign ℤ₂.**  The binary icosahedral group
     2I (the SU(2)-preimage of I ≅ A₅) has order 120 = |S₅|, but 2I is PERFECT
@@ -316,7 +324,7 @@ theorem spin_Z2_ne_sign_Z2 :
     let binaryIcosahedralAbelianizationOrder : ℕ := 1   -- 2I is perfect
     let s5AbelianizationOrder : ℕ := 2                  -- sign character
     binaryIcosahedralAbelianizationOrder ≠ s5AbelianizationOrder := by
-  native_decide
+  decide
 
 /-! ## The S_5 → S_3 Restriction Functor (GAP-A-4 Functor Resolution)
 
@@ -350,7 +358,7 @@ theorem restriction_functor_yields_h4_irrep :
     (s5_to_s3_restriction_mults .threeOneOne).get! 2 = 2 ∧
     -- Muon block (ℓ=2):
     (s5_to_s3_restriction_mults .threeTwo).get! 2 = 2 := by
-  native_decide
+  decide
 
 /-- Dimensions of the 3 irreps of S_3, in the order
     [(3) trivial, (1,1,1) sign, (2,1) standard]. -/
@@ -621,7 +629,7 @@ theorem affineE8_marks_sum_eq_coxeter_30 :
 /-- |2I| = 4 · h(E₈): the order of the McKay group is four times the
     Coxeter number (120 = 4 · 30). -/
 theorem order_2I_eq_four_times_coxeter :
-    binaryIcosahedralIrrepDims.map (· ^ 2) |>.sum =
+    (binaryIcosahedralIrrepDims.map (· ^ 2)).sum =
       4 * binaryIcosahedralIrrepDims.sum := by decide
 
 /-- dim E₈ = 248 = rank · (h + 1) = 8 · 31, with rank = 8 and Coxeter h = 30. -/
