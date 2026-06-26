@@ -81,14 +81,19 @@ witness assertions passing.
 class HasAlphaShiftTorus (p k : ℕ) : Prop where
   alpha_shift_eq : alphaShift p k = k * (p - 1)
 
-/-- The closed-form theorem, stated as a class field accessor.
+/-- The closed-form theorem.
 
-Given an instance of `HasAlphaShiftTorus p k`, we recover the
-witness-verified equation. -/
+Since `alphaShift p k` is *defined* as `k * (p - 1)`, the closed
+form holds definitionally — it is proved here directly by `rfl`,
+not by projecting the `HasAlphaShiftTorus` class field (which would
+be a vacuous self-assuming projection: the class field restates the
+conclusion).  The `[HasAlphaShiftTorus p k]` instance is retained in
+the signature for compatibility with downstream call sites that pass
+it, but it is not used in the proof. -/
 theorem alpha_shift_torus_knot
     (p k : ℕ) [HasAlphaShiftTorus p k] :
     alphaShift p k = k * (p - 1) :=
-  HasAlphaShiftTorus.alpha_shift_eq
+  rfl
 
 /-- Witness-backed instance for T_{2,9}.
 α_shift(T_{2,9}) = 9 = 9 · (2 − 1).

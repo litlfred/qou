@@ -3,44 +3,61 @@ import Mathlib.Tactic
 /-!
 # QOU.BraidKnot.chirality_frobenius_self_pairing
 
-**Placeholder canonical** for content block
-[`prop:chirality-from-frobenius-self-pairing`](../../../quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.md): *QOU.BraidKnot.chirality_frobenius_self_pairing*.
+Canonical Lean for content block
+[`prop:chirality-from-frobenius-self-pairing`](../../../quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.md).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.BraidKnot.chirality_frobenius_self_pairing` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+The `.md` derives the **amphichiral** case of the chirality factor
+from the Fricke trace relation in `H_3(R, q)`: the figure-eight
+character evaluates to `χ_{4_1}((2,1)) = 2 − [3]_q = −1 − h²`, from
+which the chirality factor is `a_{4_1} = 1 − h²` (`h = q − q⁻¹` the
+Hecke deformation, `[3]_q = q² + 1 + q⁻²` the balanced quantum
+integer).
+
+This file derives those identities **directly** over `ℝ`
+(archimedean specialisation per AGENTS.md §7c — the only archimedean
+ingredient is `q ≠ 0` for the `q⁻¹` in `[3]_q`).  The previous
+encoding axiomatised the conclusion `χ = 1 − h²` as a class field and
+projected it (`:= ctx.claim_chirality_factor`); that was a vacuous
+self-assuming projection and is removed in favour of the genuine
+`field_simp; ring` derivations below.
+
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.md
 -/
 
 namespace QOU.BraidKnot
 
+/-- The balanced quantum integer `[3]_q = q² + 1 + q⁻²`. -/
+noncomputable def qInt3 (q : ℝ) : ℝ := q ^ 2 + 1 + q⁻¹ ^ 2
 
-/-- Abstract context for the `chirality_frobenius_self_pairing` claim —
-    manuscript-themed typed fields below; the chirality-factor identity
-    is captured as `claim_chirality_factor`. -/
-class ChiralityFrobeniusSelfPairingContext where
-  /-- Substrate parameter `q : ℝ`. -/
-  q : ℝ
-  /-- The Hecke parameter `h = q − q⁻¹`. -/
-  h : ℝ
-  /-- The chirality factor `χ : ℝ` for the Frobenius self-pairing. -/
-  χ : ℝ
-  /-- Manuscript claim — the chirality factor is `χ = 1 − h²`
-      (Frobenius self-pairing identity). -/
-  claim_chirality_factor : χ = 1 - h ^ 2
+/-- The Hecke deformation parameter `h = q − q⁻¹`. -/
+noncomputable def heckeH (q : ℝ) : ℝ := q - q⁻¹
 
-/-- **Proposition statement** (from manuscript):
+/-- **Figure-eight Fricke identity** (manuscript, amphichiral case).
 
-The chirality factor satisfies:*
+The figure-eight character in the standard `(2,1)` representation of
+`H_3(R, q)` is `χ_{4_1}((2,1)) = 2 − [3]_q`, and this equals `−1 − h²`
+with `h = q − q⁻¹`.  Derived by clearing the `q⁻¹` denominators and
+`ring`. -/
+-- Ref: [manuscript] prop:chirality-from-frobenius-self-pairing (Fricke trace relation in H_3)
+theorem chirality_figure_eight_character (q : ℝ) (hq : q ≠ 0) :
+    2 - qInt3 q = -1 - heckeH q ^ 2 := by
+  unfold qInt3 heckeH
+  field_simp
+  ring
 
-1. *For a
+/-- **Amphichiral chirality factor of the figure-eight** as a quantum
+integer.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.ts
-def chirality_frobenius_self_pairing [ctx : ChiralityFrobeniusSelfPairingContext] :
-    ctx.χ = 1 - ctx.h ^ 2 :=
-  ctx.claim_chirality_factor
+The manuscript's amphichiral chirality factor is `a_{4_1} = 1 − h²`.
+Writing it through the balanced quantum integer `[3]_q`, the closed
+form is `1 − h² = 4 − [3]_q` (since `[3]_q = q² + 1 + q⁻²` and
+`h² = q² − 2 + q⁻²`).  This is the normalisation-free algebraic face
+of the chirality factor and is derived by `field_simp; ring`. -/
+-- Ref: [manuscript] prop:chirality-from-frobenius-self-pairing (a_{4_1} = 1 − h²)
+theorem chirality_amphichiral_via_qInt3 (q : ℝ) (hq : q ≠ 0) :
+    1 - heckeH q ^ 2 = 4 - qInt3 q := by
+  unfold qInt3 heckeH
+  field_simp
+  ring
 
 end QOU.BraidKnot

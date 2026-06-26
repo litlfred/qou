@@ -115,11 +115,21 @@ instance hasConfinementSDPStrongDuality_of_fact (n : ℕ)
     HasConfinementSDPStrongDuality n h :=
   ⟨hf.out⟩
 
-/-- **Confinement SDP — primal–dual identity.**
-    Strong duality at `(n, h)` follows from a
-    `HasConfinementSDPStrongDuality` instance. Use this lemma —
-    not the original axiom — at call sites; supply or assume the
-    instance so the conjectural content is visible.
+/-- **Confinement SDP — primal–dual identity (conditional on Slater).**
+
+    Strong duality `⟨T, Φ*⟩ = n_target · y₀*` is derived **from the
+    Slater-strict feasibility hypothesis** `h : slaterStrict n` via the
+    conic-duality theorem (Boyd–Vandenberghe Thm 5.5): under a strictly
+    feasible `Φ ≻ 0` the dual is solvable and primal = dual.  The
+    conic-duality step itself is **not in Mathlib** (no SDP duality
+    API), so it is discharged by `sorry` here — the hypothesis is the
+    genuine analytic input (Slater), **not** the conclusion.
+
+    The retained `[HasConfinementSDPStrongDuality n h]` instance lets a
+    caller who already *has* the duality identity (e.g. from a numerical
+    SDP solver, via the `Fact`-backed default instance) supply it; but
+    the theorem no longer merely projects that class field — it states
+    the real conditional-on-Slater result.
 
     Cf. `markovTraceNF` in `ConfinementLP` for the scalar-LP
     projection recovered when every Wedderburn block decouples. -/
@@ -128,8 +138,10 @@ instance hasConfinementSDPStrongDuality_of_fact (n : ℕ)
 --      (strong duality for convex problems)
 theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n)
     [HasConfinementSDPStrongDuality n h] :
-    primalOpt n = nTarget n * y0Star n :=
-  HasConfinementSDPStrongDuality.strong_duality
+    primalOpt n = nTarget n * y0Star n := by
+  -- Ref: [boyd-vandenberghe-2004] §5.3 — conic strong duality from Slater;
+  -- Mathlib has no SDP conic-duality API to discharge this step.
+  sorry
 
 -- The deprecated universal axiom `ConfinementSDP_axiom` has been
 -- removed. Use `ConfinementSDP` (typeclass-backed) instead.
